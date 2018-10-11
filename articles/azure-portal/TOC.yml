@@ -1,0 +1,44 @@
+items:
+- name: Документация по настройке портала Azure
+  href: index.yml
+- name: Панели мониторинга Azure
+  items:
+  - name: Создание панелей мониторинга Azure и предоставление общего доступа к ним
+    href: azure-portal-dashboards.md
+  - name: Предоставление общего доступа с управлением доступом на основе ролей
+    href: azure-portal-dashboard-share-access.md
+  - name: Структура панелей мониторинга Azure
+    href: azure-portal-dashboards-structure.md
+  - name: Создание панелей мониторинга Azure программными средствами
+    href: azure-portal-dashboards-create-programmatically.md
+- name: Параметры
+  items:
+  - name: Сочетания клавиш
+    href: azure-portal-keyboard-shortcuts.md
+  - name: Поддерживаемые браузеры и устройства
+    href: ../azure-preview-portal-supported-browsers-devices.md
+  - name: Включение режима высокой контрастности или изменение темы
+    href: azure-portal-change-theme-high-contrast.md
+  - name: Экспорт или удаление параметров пользователя
+    href: azure-portal-export-delete-settings.md
+  expanded: true
+- name: Ресурсы
+  items:
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/updates/
+  - name: Развитие навыков с помощью Microsoft Learn
+    href: /learn/browse/?products=azure-portal
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Доступ по регионам
+    href: https://azure.microsoft.com/regions/services/
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-management-portal
+  - name: Видеоролики
+    href: https://azure.microsoft.com/documentation/videos/index/?services=azure-portal&sort=newest
+ms.openlocfilehash: d2918197e211cc40662d51fa9f6d6131df426ef6
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49079730"

@@ -11,12 +11,12 @@ ms.date: 09/24/2018
 ms.topic: hub-page
 ms.prod: cognitive-services
 ms.technology: cognitive-services
-ms.openlocfilehash: 5403ec448725504c0b0a57a3d82853d0884c7c48
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 1c07a02369af90580615fd9e7eaf6e239949ea36
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46985442"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49068474"
 ---
 <h1>Документация по службам Azure Cognitive Services</h1>
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, позволяющие видеть, слышать, говорить и понимать потребности клиентов с помощью обычных средств связи. Руководства, краткие инструкции, справочники по API и примеры использования.</p>
@@ -28,7 +28,7 @@ ms.locfileid: "46985442"
                     <div class="cardPadding">
                         <div class="card">
                             <div class="cardImageOuter">
-                                <div class="cardImage"> 
+                                <div class="cardImage">
                                     <img src="media/index/i_overview.svg" alt="" />
                                 </div>
                             </div>
@@ -115,6 +115,8 @@ ms.locfileid: "46985442"
                         <h3>Распознавание речи с помощью службы "Речь"</h3>
                         <p><a href="/azure/cognitive-services/speech-service/quickstart-csharp-windows/">С использованием C#</a></p>
                         <p><a href="/azure/cognitive-services/speech-service/quickstart-java-jre">С использованием Java</a></p>
+                        <p><a href="/azure/cognitive-services/speech-service/quickstart-objectivec-ios">С использованием Objective-C</a></p>
+                        <p><a href="/azure/cognitive-services/speech-service/quickstart-js-browser">С использованием JavaScript</a></p>
                         <p><a href="/azure/cognitive-services/speech-service/quickstart-cpp-windows">С использованием C++</a></p>
                     </div>
                 </div>
@@ -274,7 +276,7 @@ ms.locfileid: "46985442"
                 <div class="card">
                     <div class="cardText">
                         <h3>SAPI</h3>
-                        <p><a href="/azure/cognitive-services/speech-service">Служба "Речь"</a></p>
+                        <p><a href="/azure/cognitive-services/speech-service">API службы "Речь"</a></p>
                         <p><a href="/azure/cognitive-services/speech/home">API распознавания речи Bing</a></p>
                         <p><a href="/azure/cognitive-services/custom-speech-service/cognitive-services-custom-speech-home"><span>Пользовательская служба распознавания речи&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
                         <p><a href="/azure/cognitive-services/speaker-recognition/home"><span>API распознавания говорящего&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
