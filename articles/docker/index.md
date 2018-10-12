@@ -11,12 +11,12 @@ ms.devlang: devops
 ms.topic: landing-page
 ms.date: 06/19/2017
 ms.author: carolz
-ms.openlocfilehash: 76afc558048f1890e5e2440fd002361172acbea2
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: c1dab114ddd010daa88222f380ad7a47f1dd1767
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47433843"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49090711"
 ---
 <div class="content">
    <h1>Docker в Azure</h1>   
@@ -38,7 +38,7 @@ Docker — это популярная платформа управления �
 </ol>
 <h2>Ресурсы</h2>
 <p>См. следующие ссылки на дополнительные справочные материалы и средства для работы с Docker в Azure.</p>
-<a href="https://www.docker.com/docker-azure">Сайт Docker Azure</a><br/>
+<a href="https://docs.docker.com/docker-for-azure/why/">Сайт Docker Azure</a><br/>
 <a href="https://docs.docker.com/machine/drivers/azure/">Драйвер Docker Azure</a><br/>
 <a href="https://docker.com">Дополнительные сведения о Docker</a><br/>
 </div>
