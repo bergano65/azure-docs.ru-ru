@@ -4,6 +4,18 @@ items:
   items:
   - name: Что такое Content Moderator?
     href: overview.md
+- name: Быстрое начало работы
+  items:
+  - name: Начало работы с Content Moderator
+    href: quick-start.md
+  - name: Использование пакета .NET SDK
+    items:
+    - name: Проверка содержимого изображения
+      href: image-moderation-quickstart-dotnet.md
+    - name: Проверка содержимого текста
+      href: text-moderation-quickstart-dotnet.md
+    - name: Проверка содержимого видео
+      href: video-moderation-api.md
 - name: Примеры
   items:
   - name: Примеры пакета SDK для .NET
@@ -26,30 +38,20 @@ items:
   items:
   - name: Попробовать Content Moderator
     items:
-    - name: Начало работы с Content Moderator
-      href: quick-start.md
     - name: API модерации
       items:
-      - name: Библиотека вспомогательного приложения для .NET
-        href: content-moderator-helper-quickstart-dotnet.md
       - name: Изображения (консоль API)
         href: try-image-api.md
-      - name: Изображения (.NET)
-        href: image-moderation-quickstart-dotnet.md
+      - name: Проверка изображений с использованием настраиваемых списков
+        href: image-lists-quickstart-dotnet.md
       - name: Пользовательские изображения (консоль API)
         href: try-image-list-api.md
-      - name: Пользовательские изображения (.NET)
-        href: image-lists-quickstart-dotnet.md
       - name: Текст (консоль API)
         href: try-text-api.md
-      - name: Текст (.NET)
-        href: text-moderation-quickstart-dotnet.md
+      - name: Проверка текста с использованием настраиваемого списка терминов
+        href: term-lists-quickstart-dotnet.md
       - name: Пользовательские термины (консоль API)
         href: try-terms-list-api.md
-      - name: Пользовательские термины (.NET)
-        href: term-lists-quickstart-dotnet.md
-      - name: Видео (.NET)
-        href: video-moderation-api.md
     - name: Просмотр API-интерфейсов
       items:
       - name: Задания (консоль API)
@@ -132,9 +134,9 @@ items:
     href: https://azure.microsoft.com/roadmap/?category=ai-machine-learning
   - name: Вебинар по запросу
     href: https://info.microsoft.com/cognitive-services-content-moderator-ondemand.html
-ms.openlocfilehash: 32f0c64253836d3080cc815753e361d810e1f2e8
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 68febbe4e4206c774f75e1a07216eddf86dc5888
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47433811"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49309831"

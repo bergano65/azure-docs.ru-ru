@@ -28,6 +28,7 @@
 ### [Контроль доступа](data-lake-store-access-control.md)
 ### [Защита хранимых данных](data-lake-store-secure-data.md)
 ### [Шифрование](data-lake-store-encryption.md)
+### [Интеграция виртуальной сети (предварительная версия)](data-lake-store-network-security.md)
 
 ## Аутентификация с использованием Data Lake Storage Gen1
 ### [Параметры аутентификации](data-lakes-store-authentication-using-azure-active-directory.md)
@@ -91,7 +92,7 @@
 ## [Python (управление учетными записями)](https://docs.microsoft.com/python/api/azure.mgmt.datalake.store?view=azure-python)
 ## [Python (управление файловой системой)](http://azure-datalake-store.readthedocs.io/en/latest)
 ## [REST](/rest/api/datalakestore)
-## [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/dls)
+## [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/dls)
 
 # Ресурсы
 ## [Стратегия развития Azure](https://azure.microsoft.com/roadmap/)

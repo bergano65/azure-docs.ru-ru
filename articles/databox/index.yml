@@ -1,23 +1,22 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: f4ef48157896d7cf4947fbc8ef6eba8b59ec414b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 7056f5478838eec1cccf6329e172d86ea90d4dd8
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46986526"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49311054"
 documentType: LandingData
-title: Azure Data Box для автономной передачи данных
+title: Документация по Azure Data Box. Автономная передача данных
 metadata:
-  title: Документация по Azure Data Box для автономной передачи данных
-  description: Семейство Azure Data Box позволяет передавать сотни терабайтов данных в Azure быстрым, недорогим и надежным способом. Используйте устройства Data Box для автономной передачи данных, когда вы ограничены во времени, сетевых ресурсах или средствах.
+  title: Документация по Azure Data Box. Автономная передача данных
+  description: Используйте устройства Data Box для автономной передачи данных в Azure, когда вы ограничены во времени, сетевых ресурсах или средствах.
   services: databox
   author: alkohli
   manager: twooley
   ms.service: databox
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: pod
   ms.topic: landing-page
-  ms.date: 09/24/2018
+  ms.date: 10/12/2018
   ms.author: alkohli
 abstract:
   description: 'Семейство Azure Data Box позволяет передавать сотни терабайтов данных в Azure быстрым, недорогим и надежным способом. Используйте устройства Data Box для автономной передачи данных, когда вы ограничены во времени, сетевых ресурсах или средствах.<p>В зависимости от размера данных выберите Диск Data Box, Data Box<SUP>Предварительная версия</SUP> или Data Box Heavy<SUP>Предварительная версия</SUP>. Для каждого из устройств передача в Azure осуществляется за 4 простых шага: заказ, получение, копирование данных на устройство и возвращение устройства в Azure. Данные передаются в центр обработки данных Azure, а затем удаляются с носителя.</p><p>Узнайте, как использовать Data Box для автономной передачи данных, ознакомившись с нашими руководствами и краткими руководствами.</p>'
