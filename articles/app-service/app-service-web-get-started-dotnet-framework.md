@@ -12,15 +12,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 08/29/2018
+ms.date: 09/05/2018
 ms.author: cephalin
 ms.custom: mvc, devcenter
-ms.openlocfilehash: f6f443dfe637e68b0e1e13f7c3b9e718ae48a85d
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: cce14d91509fe051beef87acdaeac9a92d998ef6
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43191320"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44053784"
 ---
 # <a name="create-an-aspnet-framework-web-app-in-azure"></a>Создание веб-приложения ASP.NET Framework в Azure
 
@@ -32,11 +32,12 @@ ms.locfileid: "43191320"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим руководством установите <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017</a> с рабочей нагрузкой **ASP.NET и разработка веб-приложений**.
 
-Установите <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017</a> с рабочей нагрузкой **ASP.NET и веб-разработка**.
+Если у вас уже установлена версия Visual Studio 2017, сделайте следующее:
 
-Если вы уже установили Visual Studio, добавьте в него рабочие нагрузки. Для этого последовательно выберите **Инструменты** > **Get Tools and Features (Получить инструменты и функции)**.
+- Установите последние обновления для Visual Studio, выбрав **Справка** > **Проверить наличие обновлений**.
+- Добавьте рабочую нагрузку, выбрав **Инструменты** > **Get Tools and Features** (Получить инструменты и компоненты).
 
 ## <a name="create-an-aspnet-web-app"></a>Создание веб-приложения ASP.NET
 
@@ -58,17 +59,15 @@ ms.locfileid: "43191320"
 
 ![Локальный запуск приложения](./media/app-service-web-get-started-dotnet-framework/local-web-app.png)
 
-## <a name="publish-to-azure"></a>Публикация в Azure
+## <a name="launch-the-publish-wizard"></a>Запуск мастера публикации
 
 Щелкните правой кнопкой мыши проект **myFirstAzureWebApp** в **обозревателе решений** и выберите **Опубликовать**.
 
 ![Публикация в обозревателе решений](./media/app-service-web-get-started-dotnet-framework/solution-explorer-publish.png)
 
-Выберите **Служба приложений Microsoft Azure** и нажмите кнопку **Опубликовать**.
+Мастер публикации запустится автоматически. Выберите **Служба приложений** > **Опубликовать**, чтобы открыть диалоговое окно **Создать службу приложений**.
 
 ![Публикация с помощью страницы обзора проекта](./media/app-service-web-get-started-dotnet-framework/publish-to-app-service.png)
-
-Откроется диалоговое окно **Создать службу приложений**, с помощью которого вы можете создать все ресурсы Azure, необходимые для запуска веб-приложения ASP.NET в Azure.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -93,9 +92,9 @@ ms.locfileid: "43191320"
 
 [!INCLUDE [app-service-plan](../../includes/app-service-plan.md)]
 
-Рядом с **планом службы приложений** выберите команду **Создать**. 
+Рядом с полем **План размещения** выберите **Создать**. 
 
-В диалоговом окне **Настроить план службы приложений** используйте параметры в таблице, которая находится под снимком экрана.
+В диалоговом окне **Настроить план размещения** используйте параметры из таблицы, которая находится под снимком экрана.
 
 ![Создание плана службы приложений](./media/app-service-web-get-started-dotnet-framework/configure-app-service-plan.png)
 
@@ -109,17 +108,17 @@ ms.locfileid: "43191320"
 
 ## <a name="create-and-publish-the-web-app"></a>Создание и публикация веб-приложения
 
-В поле **Имя веб-приложения** введите уникальное имя (допустимые символы: `a-z`, `0-9` и `-`) или примите уникальное имя, созданное автоматически. URL-адрес веб-приложения: `http://<app_name>.azurewebsites.net`, где `<app_name>` — имя веб-приложения.
+В поле **Имя приложения** введите уникальное имя (допустимые символы: `a-z`, `0-9` и `-`) или примите уникальное имя, созданное автоматически. URL-адрес веб-приложения: `http://<app_name>.azurewebsites.net`, где `<app_name>` — имя приложения.
 
 Нажмите кнопку **Создать**, чтобы начать создавать ресурсы Azure.
 
-![Настройка имени веб-приложения](./media/app-service-web-get-started-dotnet-framework/web-app-name.png)
+![Указание имени приложения](./media/app-service-web-get-started-dotnet-framework/web-app-name.png)
 
 По завершении работы мастера веб-приложение ASP.NET будет опубликовано в Azure и запущено в браузере по умолчанию.
 
 ![Опубликованное веб-приложение ASP.NET в Azure](./media/app-service-web-get-started-dotnet-framework/published-azure-web-app.png)
 
-Имя веб-приложения, указанное [на этапе создания и публикации](#create-and-publish-the-web-app), используется как префикс URL-адреса в формате `http://<app_name>.azurewebsites.net`.
+Имя приложения, указанное [на этапе создания и публикации](#create-and-publish-the-web-app), используется как префикс URL-адреса в формате `http://<app_name>.azurewebsites.net`.
 
 Поздравляем, ваше веб-приложение ASP.NET работает в службе приложений Azure в режиме реального времени.
 

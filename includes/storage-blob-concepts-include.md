@@ -8,14 +8,16 @@ ms.topic: include
 ms.date: 04/09/2018
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: 63593ff5f02f5e37fc25c988c4cef071a03a00b4
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: a934a1b75e85e03b6803be5c8afcd8fe74b0fad5
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37066039"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45739204"
 ---
 Хранилище BLOB-объектов Azure — это решение корпорации Майкрософт для хранения объектов в облаке. Хранилище BLOB-объектов оптимизировано для хранения больших объемов неструктурированных данных, например текстовых или двоичных данных.
+
+Массово масштабируемое хранилище объектов для неструктурированных данных
 
 Хранилище BLOB-объектов идеально подходит для следующих целей:
 
@@ -36,7 +38,7 @@ ms.locfileid: "37066039"
 
 ### <a name="storage-account"></a>Учетная запись хранения
 
-Весь доступ к объектам данных в службе хранилища Azure осуществляется с помощью учетной записи хранения. Дополнительные сведения см. в статье [Об учетных записях хранения Azure](../articles/storage/common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
+Весь доступ к объектам данных в службе хранилища Azure осуществляется с помощью учетной записи хранения. Дополнительные сведения см. в статье [Общие сведения об учетной записи хранения](../articles/storage/common/storage-account-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 ### <a name="container"></a>Контейнер
 

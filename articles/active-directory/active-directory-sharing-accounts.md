@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.component: users-groups-roles
 ms.topic: article
-ms.date: 11/13/2017
+ms.date: 09/11/2018
 ms.author: curtand
 ms.reviewer: jeffsta
 ms.custom: it-pro
-ms.openlocfilehash: c8d7f1f5b793fcb684e9896bb93213a23d489860
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 163972329161f90ad364b25e7e60e9e5a04324d5
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37448549"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44720010"
 ---
 # <a name="sharing-accounts-with-azure-ad"></a>Совместное использование учетных записей в Azure AD
 ## <a name="overview"></a>Обзор
@@ -71,7 +71,7 @@ Azure AD поддерживает общие учетные записи для 
 Можно также сделать свою общую учетную запись более безопасной с помощью службы Многофакторной идентификации (MFA) (ознакомьтесь с дополнительными сведениями о [защите приложений с помощью Azure AD](authentication/concept-mfa-whichversion.md)). Кроме того, можно делегировать возможность управления доступом к приложению с помощью функции управления группами в компоненте [самообслуживания Azure AD](users-groups-roles/groups-self-service-management.md).
 
 ## <a name="related-articles"></a>Связанные статьи
-* [Указатель статьей по управлению приложениями в Azure Active Directory](active-directory-apps-index.md)
+* [Управление приложениями в Azure Active Directory](manage-apps/what-is-application-management.md)
 * [Защита приложений с помощью условного доступа](active-directory-conditional-access-azure-portal.md)
 * [Самостоятельное управление группами/SSAA](users-groups-roles/groups-self-service-management.md)
 

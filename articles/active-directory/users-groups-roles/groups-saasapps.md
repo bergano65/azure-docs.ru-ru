@@ -14,12 +14,12 @@ ms.date: 03/14/2017
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: 8c04f2723466ea7abc8ea3c3cc1f1efb953da764
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 5d8e6c0db2ce6c35935c2b00aa40de2a5d5a050f
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37449383"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46297628"
 ---
 # <a name="using-a-group-to-manage-access-to-saas-applications"></a>Использование группы для управления доступом к приложениям SaaS
 В Azure Active Directory (Azure AD) с лицензией Azure AD Premium или Azure AD Basic можно использовать группы для предоставления доступа к приложению SaaS, интегрированному с Azure AD. Например, если вы хотите предоставить отделу маркетинга доступ к пяти разным приложениям SaaS, можно создать группу, содержащую пользователей из отдела маркетинга, и затем предоставить этой группе доступ к пяти приложениям SaaS, необходимым этому отделу. Таким образом можно сэкономить время, управляя членством пользователей отдела маркетинга в одном месте. Пользователи приложения назначаются при добавлении в группу маркетинга, и их назначения будут удалены из приложения, когда они будут удалены из группы. Эту возможность можно использовать для сотен приложений, которые можно добавлять из коллекции приложений Azure AD.
@@ -40,7 +40,7 @@ ms.locfileid: "37449383"
 В следующих статьях содержатся дополнительные сведения об Azure Active Directory.
 
 * [Управление доступом к ресурсам с помощью групп Azure Active Directory](../fundamentals/active-directory-manage-groups.md)
-* [Указатель статьей по управлению приложениями в Azure Active Directory](../active-directory-apps-index.md)
+* [Управление приложениями в Azure Active Directory](../manage-apps/what-is-application-management.md)
 * [Настройка параметров групп с помощью командлетов Azure Active Directory](groups-settings-cmdlets.md)
 * [Что такое Microsoft Azure Active Directory](../fundamentals/active-directory-whatis.md)
-* [Интеграция локальных удостоверений с Azure Active Directory](../connect/active-directory-aadconnect.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](../hybrid/whatis-hybrid-identity.md)

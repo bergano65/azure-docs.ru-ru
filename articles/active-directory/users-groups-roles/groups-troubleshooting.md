@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.component: users-groups-roles
 ms.topic: article
-ms.date: 08/01/2018
+ms.date: 09/11/2018
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: 82a5c57ce874e77a7912945a6fca07acee339197
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: e189fb8b2bc5079d1560d3b7a54fea2db7366fe7
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39444493"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46293980"
 ---
 # <a name="troubleshooting-dynamic-memberships-for-groups"></a>Устранение неполадок, связанных с динамическим членством в группах
 
@@ -42,6 +42,6 @@ ms.locfileid: "39444493"
 В следующих статьях содержатся дополнительные сведения об Azure Active Directory.
 
 * [Управление доступом к ресурсам с помощью групп Azure Active Directory](../fundamentals/active-directory-manage-groups.md)
-* [Указатель статьей по управлению приложениями в Azure Active Directory](../active-directory-apps-index.md)
+* [Управление приложениями в Azure Active Directory](../manage-apps/what-is-application-management.md)
 * [Что такое Microsoft Azure Active Directory](../fundamentals/active-directory-whatis.md)
-* [Интеграция локальных удостоверений с Azure Active Directory](../connect/active-directory-aadconnect.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](../hybrid/whatis-hybrid-identity.md)

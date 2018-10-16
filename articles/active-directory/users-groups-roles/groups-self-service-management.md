@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.component: users-groups-roles
 ms.topic: get-started-article
-ms.date: 09/07/2017
+ms.date: 09/11/2018
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: 8254f6c72141f7a9babfc5af3c319e7e66f30bbf
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 7966705df2a352f2011d5f7611277e92d8e2d11a
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37448675"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46294243"
 ---
 # <a name="set-up-azure-active-directory-for-self-service-group-management"></a>Настройка Azure Active Directory для самостоятельного управления группами
 Пользователи могут создавать свои группы безопасности или группы Office 365 и управлять ими в Azure Active Directory (Azure AD). Таким образом, ежедневный контроль членства в группе можно делегировать другим пользователям, которые понимают бизнес-контекст этого членства. Ежедневное управление членством в группах можно делегировать пользователям, которые понимают значение членства в этих группах для бизнеса. Они недоступны для групп безопасности и списков рассылки, поддерживающих почту.
@@ -46,6 +46,6 @@ ms.locfileid: "37448675"
 
 * [Управление доступом к ресурсам с помощью групп Azure Active Directory](../fundamentals/active-directory-manage-groups.md)
 * [Настройка параметров групп с помощью командлетов Azure Active Directory](groups-settings-cmdlets.md)
-* [Указатель статьей по управлению приложениями в Azure Active Directory](../active-directory-apps-index.md)
+* [Управление приложениями в Azure Active Directory](../manage-apps/what-is-application-management.md)
 * [Что такое Microsoft Azure Active Directory](../fundamentals/active-directory-whatis.md)
-* [Интеграция локальных удостоверений с Azure Active Directory](../connect/active-directory-aadconnect.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](../hybrid/whatis-hybrid-identity.md)
