@@ -1,0 +1,37 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 74743b3e9e32a844098f3097e3c036b38c391c02
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49323019"
+documentType: LandingData
+title: Документация по Azure Digital Twins
+metadata:
+  title: Документация по Azure Digital Twins. Руководства и справочник по API | Документация Майкрософт
+  description: Создавайте пространственные интеллектуальные решения с помощью Azure Digital Twins.
+  author: dsk-2015
+  manager: timlt
+  ms.service: digital-twins
+  services: digital-twins
+  ms.topic: landing-page
+  ms.date: 10/15/2018
+  ms.author: dkshir
+abstract:
+  description: Узнайте, как с помощью Azure Digital Twins создавать связи между людьми, местами и вещами, а также создавать пространственные интеллектуальные решения для Интернета вещей. Изучите краткое руководство и пошаговые инструкции, с помощью которых вы сможете подробно рассмотреть основные понятия, научиться отслеживать условное интеллектуальное здание и создать решение следующего поколения для Интернета вещей, которое моделирует физическое окружение.
+sections:
+- title: 5-минутное руководство по началу работы
+  items:
+  - type: paragraph
+    text: Узнайте, как <a href="quickstart-view-occupancy-dotnet">найти помещения с хорошим качеством воздуха с помощью примеров Azure Digital Twins для .NET</a>.
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Сведения о том, как настроить и использовать ваше решение Azure Digital Twins для мониторинга помещений.
+  - type: list
+    style: ordered
+    items:
+    - html: <a href="/azure/digital-twins/tutorial-facilities-setup">Подготовка примера здания</a>
+    - html: <a href="/azure/digital-twins/tutorial-facilities-udf">Мониторинг рабочих условий в здании</a>
+    - html: <a href="/azure/digital-twins/tutorial-facilities-events">Получение уведомлений от системы управления зданием</a>
+    - html: <a href="/azure/digital-twins/tutorial-facilities-analyze">Анализ событий в здании</a>

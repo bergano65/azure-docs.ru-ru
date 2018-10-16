@@ -229,9 +229,9 @@ items:
           href: ../monitoring-and-diagnostics/metrics-store-custom-guestos-classic-cloud-service.md?toc=/azure/azure-monitor/toc.json
       - name: Устранение неполадок
         items:
-        - name: Устранение неполадок с расширением для виртуальных машин
+        - name: Расширение виртуальной машины Log Analytics
           href: ../log-analytics/log-analytics-azure-vmext-troubleshoot.md?toc=/azure/azure-monitor/toc.json
-        - name: Устранение неполадок с агентом Linux
+        - name: Агент Log Analytics для Linux
           href: ../log-analytics/log-analytics-agent-linux-support.md?toc=/azure/azure-monitor/toc.json
     - name: Источники данных в Log Analytics
       items:
@@ -405,9 +405,9 @@ items:
         href: ../application-insights/app-insights-custom-data-correlation.md?toc=/azure/azure-monitor/toc.json
     - name: Сбор пользовательских данных
       items:
-      - name: API сборщика данных для хранения журналов
+      - name: API сборщика данных для Log Analytics
         href: ../log-analytics/log-analytics-data-collector-api.md?toc=/azure/azure-monitor/toc.json
-      - name: Пример конвейера, созданного с помощью API сборщика данных, для хранения журналов
+      - name: Пример конвейера, созданного с помощью API сборщика данных, для Log Analytics
         href: ../log-analytics/log-analytics-create-pipeline-datacollector-api.md?toc=/azure/azure-monitor/toc.json
       - name: Данные приложения
         href: ../application-insights/app-insights-analytics-import.md?toc=/azure/azure-monitor/toc.json
@@ -976,9 +976,9 @@ items:
     href: https://stackoverflow.com/search?q=monitoring
   - name: Примеры кода
     href: https://azure.microsoft.com/resources/samples/?service=monitor
-ms.openlocfilehash: 5b7956ee962c7f7bde31646617b86c55aaf32234
-ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
+ms.openlocfilehash: 81c83444280a3641ca210d9014d12e989249f4cd
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49311037"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49318934"

@@ -1,0 +1,111 @@
+items:
+- name: Принципы работы Azure IoT
+  href: /azure/iot-fundamentals
+- name: Azure Digital Twins
+  href: index.yml
+- name: Обзор
+  items:
+  - name: Сведения об Azure Digital Twins
+    href: about-digital-twins.md
+- name: Быстрое начало работы
+  items:
+  - name: Поиск доступных помещений
+    href: quickstart-view-occupancy-dotnet.md
+- name: Учебники
+  items:
+  - name: Мониторинг зданий с помощью Digital Twins
+    items:
+    - name: Развертывание и настройка
+      href: tutorial-facilities-setup.md
+    - name: Подготовка и мониторинг условий
+      href: tutorial-facilities-udf.md
+    - name: Получение уведомления с помощью Logic Apps
+      href: tutorial-facilities-events.md
+    - name: Визуализация событий с помощью TSI
+      href: tutorial-facilities-analyze.md
+- name: Основные понятия
+  items:
+  - name: Объектная модель и пространственный интеллектуальный граф в Digital Twins
+    href: concepts-objectmodel-spatialgraph.md
+  - name: Возможность подключения устройств и входящие данные телеметрии
+    href: concepts-device-ingress.md
+  - name: Обработка данных и определяемые пользователем функции
+    href: concepts-user-defined-functions.md
+  - name: Маршрутизация событий и сообщений
+    href: concepts-events-routing.md
+  - name: Ограничения в общедоступной предварительной версии службы
+    href: concepts-service-limits.md
+  - name: Безопасность
+    items:
+    - name: Рекомендации по обеспечению безопасности
+      href: security-best-practices.md
+    - name: Управление доступом на основе ролей
+      href: security-role-based-access-control.md
+    - name: Создание назначений ролей и управление ими
+      href: security-create-manage-role-assignments.md
+    - name: Управление аутентификацией API
+      href: security-authenticating-apis.md
+- name: Практические руководства
+  items:
+  - name: Как включить многопользовательские приложения
+    href: how-to-multitenant-applications.md
+  - name: Как создать функции, определяемые пользователем
+    href: how-to-user-defined-functions.md
+  - name: Как выполнять маршрутизацию событий и сообщений через конечные точки
+    href: how-to-egress-endpoints.md
+  - name: Как использовать Swagger с Digital Twins
+    href: how-to-use-swagger.md
+- name: Сопутствующие материалы
+  items:
+  - name: Решения
+    items:
+    - name: Акселераторы решений для Интернета вещей
+      href: /azure/iot-accelerators
+    - name: IoT Central
+      href: https://docs.microsoft.com/microsoft-iot-central/
+  - name: Службы платформы
+    items:
+    - name: Центр Интернета вещей
+      href: /azure/iot-hub
+    - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
+      href: /azure/iot-dps
+    - name: Пакеты SDK для служб Интернета вещей
+      href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
+    - name: Карты
+      href: /azure/azure-maps
+    - name: Аналитика временных рядов Azure
+      href: /azure/time-series-insights
+  - name: Edge
+    items:
+    - name: IoT Edge
+      href: /azure/iot-edge
+    - name: Пакеты SDK для устройств IoT
+      href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
+- name: Ресурсы
+  items:
+  - name: Примеры Azure Digital Twins для C# (.NET)
+    href: https://github.com/Azure-Samples/digital-twins-samples-csharp
+  - name: REST API для Azure Digital Twins
+    href: https://docs.westcentralus.azuresmartspaces.net/management/swagger
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/digital-twins/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Переполнение стека
+    href: https://stackoverflow.com/questions/tagged/azure-digital-twins
+  - name: Форум MSDN
+    href: https://social.msdn.microsoft.com/Forums/azure/home?forum=azuredigitaltwins
+  - name: Истории клиентов
+    href: https://blogs.microsoft.com/iot/2018/09/24/announcing-azure-digital-twins-create-digital-replicas-of-spaces-and-infrastructure-using-cloud-ai-and-iot/
+  - name: Центр разработчика IoT Azure
+    href: https://azure.microsoft.com/develop/iot/
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=iot
+  - name: Видеоролики
+    href: https://channel9.msdn.com/Search?term=%22Azure%20Digital%20Twins%22&lang-en=true
+ms.openlocfilehash: ac70217527d885eeaaa52d4715421d2560393d91
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49323035"

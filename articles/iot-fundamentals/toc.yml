@@ -1,42 +1,51 @@
+items:
 - name: Принципы работы Azure IoT
   href: index.yml
 - name: Обзор
   items:
-    - name: Введение
-      href: iot-introduction.md
-    - name: Службы и технологии безопасности служб Azure IoT
-      href: iot-services-and-technologies.md
+  - name: Введение
+    href: iot-introduction.md
+  - name: Службы и технологии безопасности служб Azure IoT
+    href: iot-services-and-technologies.md
 - name: Решения
   items:
-    - name: Акселераторы решений для Интернета вещей
-      href: /azure/iot-suite
-    - name: IoT Central
-      href: 'https://docs.microsoft.com/microsoft-iot-central/'
+  - name: Акселераторы решений для Интернета вещей
+    href: /azure/iot-suite
+  - name: IoT Central
+    href: https://docs.microsoft.com/microsoft-iot-central/
 - name: Службы платформы
   items:
-    - name: Центр Интернета вещей
-      href: /azure/iot-hub
-    - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
-      href: /azure/iot-dps
-    - name: Карты Azure
-      href: /azure/azure-maps
-    - name: Пакеты SDK службы
-      href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
-    - name: Аналитика временных рядов Azure
-      href: /azure/time-series-insights
+  - name: Центр Интернета вещей
+    href: /azure/iot-hub
+  - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
+    href: /azure/iot-dps
+  - name: Azure Digital Twins
+    href: /azure/digital-twins
+  - name: Карты Azure
+    href: /azure/azure-maps
+  - name: Аналитика временных рядов Azure
+    href: /azure/time-series-insights
+  - name: Пакеты SDK службы
+    href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
 - name: Edge
   items:
-    - name: IoT Edge
-      href: /azure/iot-edge
-    - name: Пакеты SDK для устройств IoT
-      href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
+  - name: IoT Edge
+    href: /azure/iot-edge
+  - name: Пакеты SDK для устройств IoT
+    href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
 - name: Безопасность
   items:
-    - name: Архитектура безопасности
-      href: iot-security-architecture.md
-    - name: Рекомендации по обеспечению безопасности
-      href: iot-security-best-practices.md
-    - name: Безопасное развертывание
-      href: iot-security-deployment.md
-    - name: Все аспекты безопасности
-      href: iot-security-ground-up.md
+  - name: Архитектура безопасности
+    href: iot-security-architecture.md
+  - name: Рекомендации по обеспечению безопасности
+    href: iot-security-best-practices.md
+  - name: Безопасное развертывание
+    href: iot-security-deployment.md
+  - name: Все аспекты безопасности
+    href: iot-security-ground-up.md
+ms.openlocfilehash: df43416b0d1e72e152a2917846ba0407c861421b
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49321375"

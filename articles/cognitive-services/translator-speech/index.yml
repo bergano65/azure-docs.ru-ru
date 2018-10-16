@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 879dd4e9b20a57257dd7b93fddb54168d6bceb33
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: ac2b928e73031adb77616161f844f3f7fabdf146
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47095071"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49339854"
 documentType: LandingData
 title: Документация по API перевода речи
 metadata:
@@ -21,8 +21,12 @@ metadata:
   ms.date: 3/5/2018
   ms.author: v-jansko
 abstract:
-  description: API перевода речи от Майкрософт, входящий в коллекцию API-интерфейсов Microsoft Cognitive Services, — это облачная служба автоматического перевода, которая позволяет переводить речь в речь и речь в текст. В его основе лежит технология REST, поэтому интерфейс можно использовать для добавления перевода непрерывной речи в режиме реального времени, для перевода речи в приложения, средства или решения, работа которых предусматривает перевод речи на несколько языков независимо от языка перевода операционной системы или разработки. Список поддерживаемых языков см. в статье <a href="languages.md">Языки, поддерживаемые в API перевода речи Microsoft Translator</a>.
+  description: API перевода речи от Майкрософт, входящий в коллекцию API-интерфейсов Microsoft Cognitive Services, — это облачная служба автоматического перевода, которая позволяет переводить речь в речь и речь в текст. В его основе лежит технология REST, поэтому интерфейс можно использовать для добавления перевода непрерывной речи в режиме реального времени, для перевода речи в приложения, средства или решения, работа которых предусматривает перевод речи на несколько языков независимо от языка перевода операционной системы или разработки. Список поддерживаемых языков см. в статье <a href="languages.md">Языки, поддерживаемые в API перевода речи</a>.
 sections:
+- title: 
+  items:
+  - type: paragraph
+    text: <b>ПРИМЕЧАНИЕ. API перевода речи не будет работать с 15 октября 2019 г. Вместо него будет использоваться обновленная служба "Речь" с пакетом SDK. Сведения о переходе на службу "Речь" см. в статье <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-migrate-from-translator-speech-api">Migrating from the Translator Speech API to the Speech Service</a></b> (Миграция с API перевода речи в службу "Речь").
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph

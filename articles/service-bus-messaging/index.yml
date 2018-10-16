@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: a798b64e0b6b8b90ce902d99b779f31e6558f90e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 87d068208b90e86ff64cec3e84f3f96411f6c878
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46947403"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49340993"
 documentType: LandingData
 title: Документация по обмену сообщениями с помощью службы "Служебная шина Azure"
 metadata:
@@ -21,7 +21,7 @@ metadata:
   ms.date: 05/16/2018
   ms.author: spelluru
 abstract:
-  description: Служба "Служебная шина Azure" — это мультитенантное облачное решение для обмена сообщениями, которое позволяет пересылать информацию между приложениями и службами. Асинхронная работа обеспечивает гибкий обмен сообщениями через брокер и обработку сообщений в порядке поступления, а также возможность публикации и подписки.
+  description: Служба "Служебная шина Azure" — это мультитенантное облачное решение для обмена сообщениями, которое позволяет пересылать информацию между приложениями и службами. Асинхронная работа обеспечивает гибкий обмен сообщениями через брокер и обработку сообщений в порядке поступления, а также возможность публикации и подписки.<p>Узнайте, как с помощью служб обмена сообщениями Служебной шины Azure отправлять сообщения в очередь и получать их из очереди, а также как публиковать сообщения и подписываться на них с использованием разделов и подписок.</p>
   aside:
     image:
       alt: 
@@ -35,18 +35,79 @@ sections:
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: 'Узнайте, как отправлять и получать сообщения в службе "Служебная шина Azure":'
+    text: Сведения об отправке сообщений в <b>очереди</b> Служебной шины и получении сообщений из них.
   - type: list
     style: icon48
     items:
     - image:
+        src: /azure/service-bus-messaging/media/index/logo_net.svg
+      text: .NET
+      href: /azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues
+    - image:
+        src: /azure/service-bus-messaging/media/index/logo_java.svg
+      text: Java
+      href: /azure/service-bus-messaging/service-bus-java-how-to-use-queues
+    - image:
+        src: /azure/service-bus-messaging/media/index/logo_nodejs.svg
+      text: Node.js
+      href: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues
+    - image:
+        src: /azure/service-bus-messaging/media/index/logo_python.svg
+      text: Python
+      href: /azure/service-bus-messaging/service-bus-python-how-to-use-queues
+    - image:
+        src: /azure/service-bus-messaging/media/index/ruby.svg
+      text: Ruby
+      href: /azure/service-bus-messaging/service-bus-ruby-how-to-use-queues
+    - image:
         src: /azure/service-bus-messaging/media/index/portal.svg
       text: Портал Azure
-      href: /azure/service-bus-messaging/service-bus-quickstart-portal?branch=release-mvc-service-bus
+      href: /azure/service-bus-messaging/service-bus-quickstart-portal
     - image:
         src: /azure/service-bus-messaging/media/index/cli.svg
       text: Инфраструктура CLI Azure
-      href: /azure/service-bus-messaging/service-bus-quickstart-cli?branch=release-mvc-service-bus
+      href: /azure/service-bus-messaging/service-bus-quickstart-cli
+    - image:
+        src: /azure/service-bus-messaging/media/index/logo_powershell.svg
+      text: Azure PowerShell
+      href: /azure/service-bus-messaging/service-bus-quickstart-powershell
+  - type: paragraph
+    text: Сведения о публикации сообщений и подписки на них с использованием <b>разделов и подписок</b> Служебной шины.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: /azure/service-bus-messaging/media/index/logo_net.svg
+      text: .NET
+      href: /azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions
+    - image:
+        src: /azure/service-bus-messaging/media/index/logo_java.svg
+      text: Java
+      href: /azure/service-bus-messaging/service-bus-java-how-to-use-topics-subscriptions
+    - image:
+        src: /azure/service-bus-messaging/media/index/logo_nodejs.svg
+      text: Node.js
+      href: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-topics-subscriptions
+    - image:
+        src: /azure/service-bus-messaging/media/index/logo_php.svg
+      text: PHP
+      href: /azure/service-bus-messaging/service-bus-php-how-to-use-topics-subscriptions
+    - image:
+        src: /azure/service-bus-messaging/media/index/logo_python.svg
+      text: Python
+      href: /azure/service-bus-messaging/service-bus-python-how-to-use-topics-subscriptions
+    - image:
+        src: /azure/service-bus-messaging/media/index/ruby.svg
+      text: Ruby
+      href: /azure/service-bus-messaging/service-bus-ruby-how-to-use-topics-subscriptions
+    - image:
+        src: /azure/service-bus-messaging/media/index/portal.svg
+      text: Портал Azure
+      href: /azure/service-bus-messaging/service-bus-quickstart-portal
+    - image:
+        src: /azure/service-bus-messaging/media/index/cli.svg
+      text: Инфраструктура CLI Azure
+      href: /azure/service-bus-messaging/service-bus-quickstart-cli
     - image:
         src: /azure/service-bus-messaging/media/index/logo_powershell.svg
       text: Azure PowerShell
@@ -72,7 +133,7 @@ sections:
       image:
         src: /learn/achievements/implement-message-workflows-with-service-bus.svg
   - type: paragraph
-    text: <a href="/learn/browse/?products=azure-service-bus">Дополнительные интерактивные руководства…</a>
+    text: <a href="/learn/browse/?products=azure-service-bus">Другие интерактивные руководства</a>
 - title: Бесплатные видеоуроки PluralSight
   items:
   - type: list
@@ -93,7 +154,7 @@ sections:
     className: spaced noBullet
     items:
     - html: <a href="https://github.com/Azure/azure-service-bus/tree/master/samples/Management">Azure PowerShell</a>
-    - html: <a href="https://github.com/Azure/azure-service-bus/tree/master/samples/Management">интерфейс командной строки Azure</a>
+    - html: <a href="https://github.com/Azure/azure-service-bus/tree/master/samples/Management">Интерфейс командной строки Azure</a>
 - title: Справочные материалы
   items:
   - type: list
@@ -101,7 +162,7 @@ sections:
     className: cardsD
     items:
     - title: Командная строка
-      html: <p><a href="/powershell/module/azurerm.servicebus/">Azure PowerShell</a></p><p><a href="/cli/azure/servicebus">интерфейс командной строки Azure</a></p>
+      html: <p><a href="/powershell/module/azurerm.servicebus/">Azure PowerShell</a></p><p><a href="/cli/azure/servicebus">Интерфейс командной строки Azure</a></p>
     - title: Языки
       html: <p><a href="/dotnet/api/microsoft.servicebus.messaging">.NET Framework</a></p><p><a href="/dotnet/api/microsoft.azure.servicebus">.NET Standard</a></p><p><a href="/java/api/overview/azure/servicebus">Java</a></p>
     - title: REST
