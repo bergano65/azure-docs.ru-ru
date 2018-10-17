@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: get-started-article
-ms.date: 02/15/2018
+ms.date: 09/15/2018
 ms.author: spelluru
-ms.openlocfilehash: 2b6f46c10603e54f0f77a635b3233073aadac0cd
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 9e7e853ad7562bf5d449479ad730a5dabd6a97b8
+ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43700129"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47585430"
 ---
 # <a name="azure-service-bus-to-event-grid-integration-overview"></a>Общие сведения об интеграции служебной шины Azure со службой "Сетка событий"
 
@@ -129,9 +129,9 @@ ms.locfileid: "43700129"
 2. В области слева щелкните **Сетка событий**. 
 3. Выберите **Подписка на события**.  
 
-   На следующем изображении показано пространство имен с несколькими подписками на службу "Сетка событий":
+   На следующем изображении показано пространство имен, которое содержит подписку на службу "Сетка событий":
 
-   ![20][]
+   ![Подписки на службу "Сетка событий"](./media/service-bus-to-event-grid-integration-concept/sbtoeventgridportal.png)
 
    На следующем изображении показано, как подписаться на функцию или веб-перехватчик без применения конкретной фильтрации:
 
@@ -176,7 +176,7 @@ New-AzureRmEVentGridSubscription -EventSubscriptionName “<YOUR EVENT GRID SUBS
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Примеры](service-bus-to-event-grid-integration-example.md) использования служебной шины со службой "Сетка событий".
-* Дополнительные сведения о [службе "Сетка событий Azure"](https://docs.microsoft.com/azure/azure-functions/).
+* Дополнительные сведения о [службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/).
 * Дополнительные сведения о решении "Функции Azure" см. [здесь](https://docs.microsoft.com/azure/azure-functions/).
 * Дополнительные сведения о [Logic Apps](https://docs.microsoft.com/azure/logic-apps/).
 * Дополнительные сведения о [служебной шине](https://docs.microsoft.com/azure/azure-functions/).

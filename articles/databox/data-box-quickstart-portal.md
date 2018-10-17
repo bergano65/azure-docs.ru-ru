@@ -12,14 +12,14 @@ ms.devlang: NA
 ms.topic: quickstart
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 09/24/2018
+ms.date: 10/04/2018
 ms.author: alkohli
-ms.openlocfilehash: 514b2a026ea34f4bd82f13ebc73c09f71637ce30
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: fe15167a5e88dbc9a97383c9a074a32c91f4219a
+ms.sourcegitcommit: 4edf9354a00bb63082c3b844b979165b64f46286
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46978358"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48784643"
 ---
 # <a name="quickstart-deploy-azure-data-box-using-the-azure-portal"></a>Краткое руководство. Развертывание Azure Data Box с помощью портала Azure
 
@@ -35,10 +35,11 @@ ms.locfileid: "46978358"
     - Соглашение Microsoft Enterprise (EA). См. дополнительные сведения о [подписке EA](https://azure.microsoft.com/pricing/enterprise-agreement/).
     - Поставщик облачных решений (CSP). Дополнительные сведения см. в статье [Обзор Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview).
     - Потребление. Оплата по мере использования. Дополнительные сведения см. в статье о [подписках Azure с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/).
+    - Спонсорское предложение Microsoft Azure. Дополнительные сведения см. в статье о [спонсорском предложении Microsoft Azure](https://azure.microsoft.com/en-in/offers/ms-azr-0036p/). 
 
 - Убедитесь, что у вас есть доступ владельца или участника подписки для заказа Data Box.
 - Просмотрите [рекомендации по безопасности Data Box](data-box-safety.md).
-- У вас есть главный компьютер с данными, которые требуется скопировать в Data Box. На главном компьютере должно быть следующее ПО:
+- У вас есть главный компьютер с данными, которые необходимо скопировать в Data Box. На главном компьютере должно быть следующее ПО:
     - [поддерживаемая операционная система](data-box-system-requirements.md);
     - Компьютер должен быть подключен к высокоскоростной сети. Настоятельно рекомендуем использовать хотя бы одно соединение Ethernet со скоростью передачи данных 10 Гбит/с. Если такое соединение недоступно, можно использовать канал передачи данных 1 Гбит/с, но это повлияет на скорость копирования. 
 - Data Box нужно разместить на плоской поверхности. Если вы хотите расположить устройство на стандартной полке в стойке центра обработки данных, в ней должен быть слот на 7 U. Устройство можно разместить в стойке горизонтально или вертикально.

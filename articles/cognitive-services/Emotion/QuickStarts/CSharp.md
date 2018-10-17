@@ -1,27 +1,29 @@
 ---
-title: Начало работы с API распознавания эмоций для C# | Документация Майкрософт
-description: Информация и примеры кода, которые помогут быстро приступить к работе с API распознавания эмоций для C# в Cognitive Services.
+title: Краткое руководство по распознаванию эмоций лица на изображении — API распознавания эмоций с использованием C#
+titlesuffix: Azure Cognitive Services
+description: Информация и примеры кода, которые помогут быстро приступить к работе с API распознавания эмоций для C#.
 services: cognitive-services
 author: anrothMSFT
-manager: corncar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: emotion-api
-ms.topic: article
+ms.topic: quickstart
 ms.date: 11/02/2017
 ms.author: anroth
-ms.openlocfilehash: 89735ae54395447e3cb421f45db3d6b99001ecd6
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ROBOTS: NOINDEX
+ms.openlocfilehash: 530d05887e585884b184635e01031c1332fad3fb
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37016571"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48239376"
 ---
-# <a name="emotion-api-c-quick-start"></a>Быстрое начало работы с AP распознавания эмоций для C#
+# <a name="quickstart-build-an-app-to-recognize-emotions-on-faces-in-an-image"></a>Краткое руководство по созданию приложения для распознавания эмоций лица на изображении
 
 > [!IMPORTANT]
-> Срок действия предварительной версии API для поиска видео истек 30 октября 2017 г. Чтобы легко извлекать сведения из видео, попробуйте применить новый [API Индексатора видео (предварительная версия)](https://azure.microsoft.com/services/cognitive-services/video-indexer/). Также вы можете с его помощью дополнить процессы поиска содержимого, например обнаруживая в результатах поиска произнесенные слова, лица, персонажей и эмоции. Дополнительные сведения см. [в обзоре Индексатора видео (предварительная версия)](https://docs.microsoft.com/azure/cognitive-services/video-indexer/video-indexer-overview).
+> API распознавания эмоций будет объявлен устаревшим 15 февраля 2019 г. Сейчас функция распознавания эмоций является общедоступной в составе [API распознавания лиц](https://docs.microsoft.com/azure/cognitive-services/face/).
 
-В этой статье представлены сведения и примеры кода, которые помогут быстро приступить к работе с [методом Recognize из API распознавания эмоций](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa) для C#. Он позволяет распознавать эмоции одного или нескольких человек на изображении. 
+В этой статье представлены сведения и примеры кода, которые помогут быстро приступить к работе с [методом Recognize из API распознавания эмоций](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa) для C#. Он позволяет распознавать эмоции одного или нескольких человек на изображении.
 
 ## <a name="prerequisites"></a>Предварительные требования
 * Получите [пакет Windows SDK для API распознавания эмоций](https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/) из Cognitive Services.
@@ -71,10 +73,10 @@ namespace CSHttpClientSample
             var client = new HttpClient();
 
             // Request headers - replace this example key with your valid key.
-            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "<your-subscription-key>"); // 
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "<your-subscription-key>"); //
 
             // NOTE: You must use the same region in your REST call as you used to obtain your subscription keys.
-            //   For example, if you obtained your subscription keys from westcentralus, replace "westus" in the 
+            //   For example, if you obtained your subscription keys from westcentralus, replace "westus" in the
             //   URI below with "westcentralus".
             string uri = "https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize?";
             HttpResponseMessage response;
@@ -124,10 +126,10 @@ namespace CSHttpClientSample
 При успешном вызове возвращается массив записей лиц и связанные с ними оценки эмоций. Они сортируются по убыванию в зависимости от размера прямоугольника с лицом. Пустой ответ указывает на то, что лица не обнаружены. Запись об эмоции содержит следующие поля:
 
 * faceRectangle — расположение прямоугольника с лицом на изображении;
-* scores — результаты оценки эмоций для каждого лица на изображении. 
+* scores — результаты оценки эмоций для каждого лица на изображении.
 
 ```json
-application/json 
+application/json
 [
   {
     "faceRectangle": {

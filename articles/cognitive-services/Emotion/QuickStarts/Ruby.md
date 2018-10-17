@@ -1,30 +1,32 @@
 ---
-title: Краткое руководство по API распознавания эмоций с использованием Ruby | Документация Майкрософт
-description: Получение информации и примеров кода, которые помогут вам приступить к работе с API распознавания эмоций с использованием Ruby в Cognitive Services.
+title: Краткое руководство по распознаванию эмоций лица на изображении — API распознавания эмоций с использованием Ruby
+titlesuffix: Azure Cognitive Services
+description: Информация и примеры кода, которые помогут вам приступить к работе с API распознавания эмоций с использованием Ruby.
 services: cognitive-services
 author: anrothMSFT
-manager: corncar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: emotion-api
-ms.topic: article
+ms.topic: quickstart
 ms.date: 05/23/2017
 ms.author: anroth
-ms.openlocfilehash: 733127bb3656d86a7f3f57cd26c72909900f4899
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ROBOTS: NOINDEX
+ms.openlocfilehash: bcab24334c1ee4e47061ce6ea28bd60039e17b3f
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37021055"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48239035"
 ---
-# <a name="emotion-api-ruby-quick-start"></a>Краткое руководство по API распознавания эмоций с использованием Ruby
+# <a name="quickstart-build-an-app-to-recognize-emotions-on-faces-in-an-image"></a>Краткое руководство по созданию приложения для распознавания эмоций лица на изображении
 
 > [!IMPORTANT]
-> Срок действия предварительной версии API для видео истекает 30 октября 2017 г. Оцените новую [предварительную версию API индексатора видео](https://azure.microsoft.com/services/cognitive-services/video-indexer/), которая позволяет легко извлекать аналитические сведения из видео и оптимизировать возможности обнаружения содержимого (например, результаты поиска) по обнаружению произнесенных слов, лиц, символов и эмоций. [Узнайте больше](https://docs.microsoft.com/azure/cognitive-services/video-indexer/video-indexer-overview).
+> API распознавания эмоций будет объявлен устаревшим 15 февраля 2019 г. Сейчас функция распознавания эмоций является общедоступной в составе [API распознавания лиц](https://docs.microsoft.com/azure/cognitive-services/face/). 
 
 В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с помощью метода [API распознавания эмоций](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa) с использованием Ruby для распознавания эмоций, выраженных одним или несколькими людьми на изображении.
 
 ## <a name="prerequisite"></a>Предварительные требования
-* Получите бесплатный ключ подписки [здесь](https://azure.microsoft.com/try/cognitive-services/)
+* Получите бесплатный ключ подписки [здесь](https://azure.microsoft.com/try/cognitive-services/).
 
 ## <a name="recognize-emotions-ruby-example-request"></a>Пример запроса Ruby для распознавания эмоций
 
@@ -34,7 +36,7 @@ ms.locfileid: "37021055"
 require 'net/http'
 
 # NOTE: You must use the same region in your REST call as you used to obtain your subscription keys.
-#   For example, if you obtained your subscription keys from westcentralus, replace "westus" in the 
+#   For example, if you obtained your subscription keys from westcentralus, replace "westus" in the
 #   URL below with "westcentralus".
 uri = URI('https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize')
 uri.query = URI.encode_www_form({
@@ -59,10 +61,10 @@ puts response.body
 ## <a name="recognize-emotions-sample-response"></a>Пример ответа на распознавание эмоций
 При успешном вызове возвращается массив записей лиц и связанные с ними оценки эмоций, отсортированные по убыванию в зависимости от размера прямоугольника с лицом. Пустой ответ указывает на то, что лица не обнаружены. Запись об эмоции содержит следующие поля:
 * faceRectangle — расположение прямоугольника с лицом на изображении;
-* scores — результаты оценки эмоций для каждого лица на изображении. 
+* scores — результаты оценки эмоций для каждого лица на изображении.
 
 ```json
-application/json 
+application/json
 [
   {
     "faceRectangle": {

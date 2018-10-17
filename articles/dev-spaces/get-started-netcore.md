@@ -6,27 +6,30 @@ ms.service: azure-dev-spaces
 ms.component: azds-kubernetes
 author: ghogen
 ms.author: ghogen
-ms.date: 07/09/2018
+ms.date: 09/26/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 0055276e8ce6ba6e22b8c2e664b3d2ae58b12345
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: f740d1b95b2150d8d814531c88f5578b543b2922
+ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44159730"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47585668"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-net-core"></a>Начало работы в Azure Dev Spaces с .NET Core
 
-[!INCLUDE [](includes/learning-objectives.md)]
+Из этого руководства вы узнаете, как выполнить следующие задачи:
 
-[!INCLUDE [](includes/see-troubleshooting.md)]
+- создание в Azure оптимизированной для разработки среды на основе Kubernetes — _пространства разработки_;
+- итеративная разработка кода в контейнерах с помощью VS Code и командной строки;
+- эффективная разработка и тестирование кода в среде командной работы.
+
+> [!Note]
+> **Если на каком-то этапе у вас возникли трудности**, см. статью [Устранение неполадок](troubleshooting.md) или оставьте комментарий на этой странице.
 
 Теперь вы готовы создать среду разработки на основе Kubernetes в Azure.
-
-[!INCLUDE [](includes/portal-aks-cluster.md)]
 
 ## <a name="install-the-azure-cli"></a>Установка Azure CLI
 Для Azure Dev Spaces требуется минимальная настройка локального компьютера. Большая часть конфигурации среды разработки хранится в облаке и доступна для других пользователей. Локальный компьютер может работать под управлением Windows, Mac или Linux. Для Linux поддерживаются следующие дистрибутивы: Ubuntu (18.04, 16.04 и 14.04), Debian 8 и 9, RHEL 7, Fedora 26 и более поздней версии, CentOS 7, openSUSE 42.2 и SLES 12.
@@ -36,13 +39,58 @@ ms.locfileid: "44159730"
 > [!IMPORTANT]
 > Если интерфейс Azure CLI уже установлен, убедитесь, что используется версия 2.0.43 или выше.
 
-[!INCLUDE [](includes/sign-into-azure.md)]
+### <a name="sign-in-to-azure-cli"></a>Вход в Azure CLI
+Войдите в Azure. В окне терминала введите следующую команду:
 
-[!INCLUDE [](includes/use-dev-spaces.md)]
+```cmd
+az login
+```
 
-[!INCLUDE [](includes/install-vscode-extension.md)]
+> [!Note]
+> Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 
-Пока вы ждете создания кластера, вы можете начать писать код.
+#### <a name="if-you-have-multiple-azure-subscriptions"></a>Если у вас несколько подписок Azure...
+Можно просматривать свои подписки, выполнив следующую команду: 
+
+```cmd
+az account list
+```
+Найдите подписку с `isDefault: true` в выходных данных JSON.
+Если это не та подписка, которую нужно использовать, вы можете изменить подписку по умолчанию:
+
+```cmd
+az account set --subscription <subscription ID>
+```
+
+## <a name="create-a-kubernetes-cluster-enabled-for-azure-dev-spaces"></a>Создание и включение кластера Kubernetes для Azure Dev Spaces
+
+В командной строке создайте группу ресурсов. Используйте один из поддерживаемых регионов (EastUS, CentralUS, WestUS2, WestEurope, CanadaCentral или CanadaEast).
+
+```cmd
+az group create --name MyResourceGroup --location <region>
+```
+
+Чтобы создать кластер Kubernetes, выполните следующую команду:
+
+```cmd
+az aks create -g MyResourceGroup -n MyAKS --location <region> --kubernetes-version 1.11.2 --enable-addons http_application_routing
+```
+
+Создание кластера занимает несколько минут.
+
+### <a name="configure-your-aks-cluster-to-use-azure-dev-spaces"></a>Настройка кластера AKS для использования Azure Dev Spaces
+
+В окне командной строки Azure CLI введите приведенную ниже команду, используя группу ресурсов, в которую входит кластер AKS, и имя кластера AKS. Эта команда настраивает в кластере поддержку Azure Dev Spaces.
+
+   ```cmd
+   az aks use-dev-spaces -g MyResourceGroup -n MyAKS
+   ```
+
+## <a name="get-kubernetes-debugging-for-vs-code"></a>Получение функции отладки Kubernetes для VS Code
+Для разработчиков .NET Core и Node.js, которые используют VS Code, доступны широкие возможности, такие как функция отладки Kubernetes.
+
+1. Если у вас не установлен язык [VS Code](https://code.visualstudio.com/Download), установите его.
+1. Скачайте и установите [ расширение VS Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds). Один раз щелкните "Установить" на странице расширения в Marketplace и еще раз — в VS Code. 
 
 ## <a name="create-a-web-app-running-in-a-container"></a>Создание веб-приложения для работы в контейнере
 
@@ -57,9 +105,54 @@ dotnet new mvc --name webfrontend
 
 Можно также **скачать пример кода из GitHub**, перейдя по ссылке https://github.com/Azure/dev-spaces и выбрав **Clone or Download** (Клонировать или скачать), чтобы скачать репозиторий GitHub в локальную среду. Код для этого руководства находится в папке `samples/dotnetcore/getting-started/webfrontend`.
 
-[!INCLUDE [](includes/azds-prep.md)]
+## <a name="preparing-code-for-docker-and-kubernetes-development"></a>Подготовка кода для разработки Docker и Kubernetes
+На данный момент у вас есть базовое веб-приложение, которое можно запустить локально. Теперь вы упакуете его в контейнер, создав ресурсы, определяющие контейнер приложения и способ его развертывания в Kubernetes. Эту задачу легко выполнить с помощью Azure Dev Spaces: 
 
-[!INCLUDE [](includes/build-run-k8s-cli.md)]
+1. Запустите VS Code и откройте папку `webfrontend`. (Вы можете игнорировать любые запросы по умолчанию на добавление ресурсов отладки или восстановления проекта.)
+1. Откройте встроенный терминал в VS Code (выберите **Представление > Интегрированный терминал**).
+1. Запустите эту команду (убедитесь, что ваша текущая папка — **webfrontend**):
+
+    ```cmd
+    azds prep --public
+    ```
+
+Команда `azds prep` Azure CLI создает ресурсы Docker и Kubernetes с параметрами по умолчанию:
+* `./Dockerfile` описывает образ контейнера приложения и способ создания и запуска исходного кода в контейнере.
+* В [диаграмме Helm](https://docs.helm.sh) в разделе `./charts/webfrontend` описано, как развернуть контейнер в Kubernetes.
+
+Сейчас изучать все содержимое этих файлов не требуется. Однако стоит отметить, что **те же ресурсы Kubernetes и Docker конфигурации как кода, могут использоваться для разработки и производства, обеспечивая тем самым лучшую согласованность в разных средах.**
+ 
+С помощью команды `prep` также создается файл `./azds.yaml`. Он является файлом конфигурации для Azure Dev Spaces. Он предоставляет артефактам Docker и Kubernetes дополнительную конфигурацию, которая обеспечивает последовательную разработку в Azure.
+
+## <a name="build-and-run-code-in-kubernetes"></a>Сборка и запуск кода в Kubernetes
+Давайте запустим код! В окне терминала запустите следующую команду из **корневой папки кода**, webfrontend:
+
+```cmd
+azds up
+```
+
+Следите за выходными данными команды, и по мере ее выполнения вы заметите следующее:
+- Исходный код синхронизируется в пространство разработки в Azure.
+- Образ контейнера создается в Azure, как указано в ресурсах Docker в вашей папке кода.
+- Создаются объекты Kubernetes, использующие образ контейнера в соответствии с диаграммой Helm в вашей папке кода.
+- Отображаются сведения о конечной точке контейнера. В нашем случае нам необходим общедоступный URL-адрес HTTP.
+- Если приведенные выше этапы выполнены успешно, после запуска контейнера должны отобразиться выходные данные `stdout` (и `stderr`).
+
+> [!Note]
+> При первом запуске команды `up` на выполнение этих шагов потребуется больше времени, но последующие запуски должны выполняться быстрее.
+
+### <a name="test-the-web-app"></a>Тестирование веб-приложения
+Просмотрите выходные данные консоли, чтобы найти сведения об общедоступном URL-адресе, который был создан командой `up`. Он будет выглядеть следующим образом: 
+
+```
+(pending registration) Service 'webfrontend' port 'http' will be available at <url>
+Service 'webfrontend' port 80 (TCP) is available at http://localhost:<port>
+```
+
+При открытии этого URL-адреса в окне браузера должна начаться загрузка веб-приложения. По мере выполнения контейнера в окно терминала передаются выходные данные `stdout` и `stderr`.
+
+> [!Note]
+> При первом запуске подготовка общедоступной записи DNS может занять несколько минут. Если не удается разрешить общедоступный URL-адрес, вместо него можно использовать альтернативный URL-адрес http://localhost:<portnumber>, который отображается в выходных данных консоли. Если вы используете URL-адрес localhost, может показаться, что контейнер выполняется локально, но на самом деле он выполняется в AKS. Для вашего удобства и упрощения взаимодействия со службой на локальном компьютере служба Azure Dev Spaces создает временный туннель SSH для контейнера, запущенного в Azure. Вы можете опробовать общедоступный URL-адрес позже, когда запись DNS будет готова.
 
 ### <a name="update-a-content-file"></a>Обновление файла содержимого
 Azure Dev Spaces — это не просто среда выполнения кода в Kubernetes. Она позволяет быстро и итеративно видеть, как изменения вашего кода вступают в силу в среде Kubernetes в облаке.
@@ -85,9 +178,21 @@ Azure Dev Spaces — это не просто среда выполнения к
 
 ## <a name="debug-a-container-in-kubernetes"></a>Отладка контейнера в Kubernetes
 
-[!INCLUDE [](includes/debug-intro.md)]
+В этом разделе используется VS Code для прямой отладки контейнера, работающего в Azure. Также вы узнаете, как быстрее вносить изменения, выполнять тестирование и запуск.
 
-[!INCLUDE [](includes/init-debug-assets-vscode.md)]
+![](media/common/edit-refresh-see.png)
+
+> [!Note]
+> **Если на каком-то этапе у вас возникли трудности**, см. статью [Устранение неполадок](troubleshooting.md) или оставьте комментарий на этой странице.
+
+### <a name="initialize-debug-assets-with-the-vs-code-extension"></a>Инициализация ресурсов отладки с помощью расширения VS Code
+Сначала необходимо настроить проект кода, чтобы редактор VS Code мог взаимодействовать со средой разработки в Azure. Расширение VS Code для Azure Dev Spaces содержит вспомогательную команду для настройки конфигурации отладки. 
+
+Откройте **палитру команд** (с помощью меню **Вид | Палитра команд**), включите автоматическое завершение ввода и выберите эту команду: `Azure Dev Spaces: Prepare configuration files for Azure Dev Spaces`. 
+
+В папку `.vscode` будет добавлена конфигурация отладки для Azure Dev Spaces. Не следует путать эту команду с командой `azds prep`, которая позволяет настроить проект для развертывания.
+
+![](media/common/command-palette.png)
 
 
 ### <a name="select-the-azds-debug-configuration"></a>Выбор конфигурации отладки AZDS
@@ -105,7 +210,10 @@ Azure Dev Spaces — это не просто среда выполнения к
 
 Как и команда `up`, код синхронизируется со средой разработки, а контейнер создается и развертывается в Kubernetes. На этот раз, конечно, отладчик подключен к удаленному контейнеру.
 
-[!INCLUDE [](includes/tip-vscode-status-bar-url.md)]
+> [!Tip]
+> В строке состояния VS Code отобразится URL-адрес, щелкнув по которому, можно перейти на соответствующий ресурс.
+
+![](media/common/vscode-status-bar-url.png)
 
 Установите точку останова в файле кода на стороне сервера, например в функции `Index()` в исходном файле `Controllers/HomeController.cs`. Обновление страницы браузера инициирует срабатывание точки останова.
 

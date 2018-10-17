@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/02/2018
+ms.date: 10/01/2018
 ms.author: jaredro
-ms.openlocfilehash: 122a227429dace3ee4a85565d47366d31b6c3ddf
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: 78cc4875bd0dabba1c9cfebcb5e35160695fdc4e
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39576837"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48042416"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -43,9 +43,9 @@ ExpressRoute поддерживается во всех регионах и ра
 | **Геополитический регион** | **Регионы Azure** | **Расположения ExpressRoute** |
 | --- | --- | --- |
 | **Северная Америка** |Восточная часть США, западная часть США, восточная часть США 2, западная часть США 2, центральная часть США, центрально-южная часть США, центрально-северная часть США, центрально-западная часть США, Центральная Канада, Восточная Канада |Атланта, Вашингтон (округ Колумбия), Даллас, Денвер, Квебек, Кремниевая долина, Лас-Вегас, Лос-Анджелес, Майами, Монреаль, Нью-Йорк, Сан-Антонио, Сиэтл, Торонто, Чикаго |
-| **Северная Америка** |Южная часть Бразилии |Сан-Паулу |
-| **Европа** |Центральная Франция, Южная Франция, Северная Европа, Западная Европа, западная часть Соединенного Королевства, южная часть Соединенного Королевства |Амстердам, Дублин, Лондон, Ньюпорт (Уэльс), Париж |
-| **Азия** |Восточная Азия, Юго-Восточная Азия |Гонконг, Сингапур, Сингапур 2 |
+| **Южная Америка** |Южная часть Бразилии |Сан-Паулу |
+| **Европа** |Центральная Франция, Южная Франция, Северная Европа, Западная Европа, западная часть Соединенного Королевства, южная часть Соединенного Королевства |Амстердам, Амстердам 2, Дублин, Марсель, Лондон, Ньюпорт (Уэльс), Париж |
+| **Азия** |Восточная Азия, Юго-Восточная Азия |Гонконг, Куала-Лумпур, Сингапур, Сингапур 2 |
 | **Япония** |Западная Япония, Восточная Япония |Осака, Токио |
 | **Австралия** |Восточная Австралия, Юго-Восточная Австралия |Мельбурн, Сидней |
 | **Государственные организации Австралии** | Центральная Австралия, Центральная Австралия 2 |Канберра, Канберра 2 | 
@@ -74,44 +74,49 @@ ExpressRoute поддерживается во всех регионах и ра
 
 
 ### <a name="production-azure"></a>Рабочая среда Azure
-| **Местоположение.** | **Поставщики услуг** |
-| --- | --- |
-| **Амстердам** |Aryaka Networks, AT&T NetBond, British Telecom, Colt, Equinix, euNetworks, GÉANT, InterCloud, Interxion, KPN, Level 3 Communications, Megaport, NTT Communications, Orange, Tata Communications, TeleCity Group, Telefonica, Telenor, Verizon, Zayo |
-| **Атланта** |Equinix, Megaport |
-| **Пусан** |LG CNS |
-| **Канберра** | CDC |
-| **Канберра 2** | CDC |
-| **Кейптаун** |Internet Solutions - Cloud Connect, Liquid Telecom, Teraco |
-| **Ченнай** | Airtel+, Global CloudXchange (GCX), SIFY, Tata Communications |
-| **Чикаго** |AT&T NetBond, Comcast, Coresite, Equinix, PacketFabric, Level 3 Communications, Megaport, Sprint, Verizon, Zayo |
-| **Даллас** |Aryaka Networks, AT&T NetBond, Cologix, Equinix, Level 3 Communications, Megaport, Neutrona Networks, Telmex Uninet+, Verizon, Zayo|
-| **Денвер** |CoreSite, Megaport |
-| **Дублин** |Colt, eir, Equinix, Interxion, Megaport |
-| **Специальный административный регион Гонконг** |Aryaka Networks, British Telecom, China Telecom Global, Equinix, Megaport, NTT Communications, Orange, PCCW Global Limited, Tata Communications, Verizon |
-| **Йоханнесбург** |Internet Solutions - Cloud Connect, Liquid Telecom, Teraco |
-| **Лас-Вегас** |CenturyLink Cloud Connect, Megaport |
-| **Лондон** |AT&T NetBond, British Telecom, Colt, Equinix, InterCloud, Internet Solutions - Cloud Connect, Interxion, Jisc, Level 3 Communications, Megaport, MTN, NTT Communications, Orange, Tata Communications, Telehouse — KDDI, Telenor, Telia Carrier, Verizon, Vodafone, Zayo |
-| **Лос-Анджелес** |CoreSite, Equinix, Megaport, NTT, Zayo |
-| **Мельбурн** |AARNet, Equinix, Megaport, NEXTDC, Optus+, Telstra Corporation |
-| **Майами** |C3ntro+, Equinix, Megaport, Neutrona Networks |
-| **Монреаль** |Bell Canada, Cologix, Telus, Zayo |
-| **Мумбай** |Airtel+, Global CloudXchange (GCX), Sify, Tata Communications |
-| **Нью-Йорк** |CenturyLink Cloud Connect, Coresite, Equinix, Megaport, Zayo |
-| **Ньюпорт (Уэльс)** |Level 3 Communications, Next Generation Data |
-| **Осака** |Equinix, Internet Initiative Japan Inc. (IIJ), NTT Communications, NTT SmartConnect, Softbank |
-| **Париж** |Colt, Intercloud, Interxion, Equinix, Orange |
-| **Квебек** | Bell Canada, Megaport |
-| **Сан-Антонио** |CenturyLink Cloud Connect, Megaport |
-| **Сан-Паулу** |Ascenty Data Centers, Equinix, Level 3 Communications, Neutrona Networks, Telefonica, UOLDIVEO |
-| **Сиэтл;** |Equinix, Level 3 Communications, Megaport |
-| **Сеул** |KINX, LG CNS, Sejong Telecom |
-| **Кремниевая долина** |Aryaka Networks, AT&T NetBond, British Telecom, CenturyLink Cloud Connect, Comcast, Coresite, Equinix, IXReach, PacketFabric, Level 3 Communications, Megaport, Orange, Sprint, Tata Communications, Verizon, Zayo Group |
-| **Сингапур** |Aryaka Networks, AT&T NetBond, British Telecom, Epsilon Global Communications, Equinix, InterCloud, Level 3 Communications, Megaport, NTT Communications, Orange, SingTel, Tata Communications, Verizon |
-| **Сингапур 2** |Megaport, SingTel |
-| **Сидней** |AARNet, AT&T NetBond, British Telecom, Equinix, Megaport, NEXTDC, NTT Communications, Optus, Orange, Telstra Corporation, Verizon |
-| **Токио** |Aryaka Networks, AT&T NetBond, British Telecom, CenturyLink Cloud Connect, Colt, Equinix, Internet Initiative Japan Inc. - IIJ, NTT Communications, NTT EAST, Softbank, Verizon |
-| **Торонто** |AT&T NetBond, Bell Canada, CenturyLink Cloud Connect, Cologix, Equinix, Megaport, Telus, Zayo |
-| **Вашингтон, округ Колумбия** |Aryaka Networks, AT&T NetBond, British Telecom, Comcast, Coresite, Equinix, Internet2, InterCloud, Level 3 Communications, Megaport, NTT Communications, Orange, PacketFabric, Sprint, Tata Communications, Telia Carrier, Verizon, Zayo |
+| **Местоположение.** | **Владелец однорангового расположения** | **Поставщики услуг** |
+| --- | --- | --- |
+| **Амстердам** | Equinix | Aryaka Networks, AT&T NetBond, British Telecom, Colt, Equinix, euNetworks, GÉANT, InterCloud, Interxion, KPN, Level 3 Communications, Megaport, NTT Communications, Orange, Tata Communications, TeleCity Group, Telefonica, Telenor, Verizon, Zayo |
+| **Амстердам 2** | Interxion | Interxion |
+| **Атланта** | Equinix | Equinix, Megaport |
+| **Пусан** |LG CNS | LG CNS |
+| **Канберра** | CDC | CDC |
+| **Канберра 2** | CDC | CDC |
+| **Кейптаун** | Teraco | Internet Solutions - Cloud Connect, Liquid Telecom, Teraco |
+| **Ченнай** | Tata Communications | Global CloudXchange (GCX), SIFY, Tata Communications |
+| **Chennai2** | Airtel | Airtel |
+| **Чикаго** | Equinix | AT&T NetBond, Comcast, Coresite, Equinix, PacketFabric, PCCW Global Limited, Level 3 Communications, Megaport, Sprint, Verizon, Zayo |
+| **Даллас** | Equinix | Aryaka Networks, AT&T NetBond, Cologix, Equinix, Level 3 Communications, Megaport, Neutrona Networks, Telmex Uninet+, Verizon, Zayo|
+| **Денвер** | CoreSite | CoreSite, Megaport |
+| **Дублин** | Equinix | Colt, eir, Equinix, Interxion, Megaport |
+| **Специальный административный регион Гонконг** | Equinix | Aryaka Networks, British Telecom, China Telecom Global, Equinix, Megaport, NTT Communications, Orange, PCCW Global Limited, Tata Communications, Verizon |
+| **Йоханнесбург** | Teraco | Internet Solutions - Cloud Connect, Liquid Telecom, Teraco |
+| **Куала-Лумпур** | TIME | TIME |
+| **Лас-Вегас** | Switch | CenturyLink Cloud Connect, Megaport |
+| **Лондон** | Equinix | AT&T NetBond, British Telecom, Colt, Equinix, InterCloud, Internet Solutions - Cloud Connect, Interxion, Jisc, Level 3 Communications, Megaport, MTN, NTT Communications, Orange, PCCW Global Limited, Tata Communications, Telehouse — KDDI, Telenor, Telia Carrier, Verizon, Vodafone, Zayo |
+| **Лос-Анджелес** | CoreSite | CoreSite, Equinix, Megaport, NTT, Zayo |
+| **Марсель** |Interxion | Interxion |
+| **Мельбурн** | NextDC | AARNet, Equinix, Megaport, NEXTDC, Optus+, Telstra Corporation |
+| **Майами** | Equinix | C3ntro+, Equinix, Megaport, Neutrona Networks |
+| **Монреаль** | Cologix | Bell Canada, Cologix, Telus, Zayo |
+| **Мумбай** | Tata Communications | Global CloudXchange (GCX), Sify, Tata Communications |
+| **Мумбаи 2** | Airtel | Airtel, Sify |
+| **Нью-Йорк** | Equinix | CenturyLink Cloud Connect, Coresite, Equinix, Megaport, Zayo |
+| **Ньюпорт (Уэльс)** | Next Generation Data | Level 3 Communications, Next Generation Data |
+| **Осака** | Equinix | Equinix, Internet Initiative Japan Inc. (IIJ), NTT Communications, NTT SmartConnect, Softbank |
+| **Париж** | Interxion | Colt, Intercloud, Interxion, Equinix, Orange |
+| **Квебек** | 4Degrees | Bell Canada, Megaport |
+| **Сан-Антонио** | CyrusOne | CenturyLink Cloud Connect, Megaport |
+| **Сан-Паулу** | Equinix | Ascenty Data Centers, Equinix, Level 3 Communications, Neutrona Networks, Telefonica, UOLDIVEO |
+| **Сиэтл;** | Equinix | Equinix, Level 3 Communications, Megaport |
+| **Сеул** | KINX | KINX, LG CNS, Sejong Telecom |
+| **Кремниевая долина** | Equinix | Aryaka Networks, AT&T NetBond, British Telecom, CenturyLink Cloud Connect, Comcast, Coresite, Equinix, IXReach, PacketFabric, Level 3 Communications, Megaport, Orange, Sprint, Tata Communications, Verizon, Zayo Group |
+| **Сингапур** | Equinix | Aryaka Networks, AT&T NetBond, British Telecom, Epsilon Global Communications, Equinix, InterCloud, Level 3 Communications, Megaport, NTT Communications, Orange, SingTel, Tata Communications, Verizon |
+| **Сингапур 2** | Global Switch | Megaport, SingTel |
+| **Сидней** | Equinix | AARNet, AT&T NetBond, British Telecom, Equinix, Megaport, NEXTDC, NTT Communications, Optus, Orange, Telstra Corporation, Verizon |
+| **Токио** | Equinix | Aryaka Networks, AT&T NetBond, British Telecom, CenturyLink Cloud Connect, Colt, Equinix, Internet Initiative Japan Inc. - IIJ, NTT Communications, NTT EAST, Softbank, Verizon |
+| **Торонто** | Cologix | AT&T NetBond, Bell Canada, CenturyLink Cloud Connect, Cologix, Equinix, Megaport, Telus, Zayo |
+| **Вашингтон, округ Колумбия** | Equinix | Aryaka Networks, AT&T NetBond, British Telecom, Comcast, Coresite, Equinix, Internet2, InterCloud, Level 3 Communications, Megaport, NTT Communications, Orange, PacketFabric, Sprint, Tata Communications, Telia Carrier, Verizon, Zayo |
 
  **+** означает "скоро"
 
@@ -192,7 +197,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **Австралия** | Ensyst, IT Consultancy, MOQdigital, Vigilant.IT |
 | **Европа** |Avanade Inc., Altogee, Bright Skies GmbH, Inframon, MSG Services, New Signature, Nelite, Orange Networks, sol-tec |
 | **Северная Америка** |Avanade Inc., Equinix Professional Services, FlexManage, Lightstream, Perficient, Presidio |
-| **Северная Америка** |Avanade Inc. |
+| **Южная Америка** |Avanade Inc. |
 ## <a name="next-steps"></a>Дополнительная информация
 * Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
 * Убедитесь, что выполнены все необходимые условия. Ознакомьтесь с разделом [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).

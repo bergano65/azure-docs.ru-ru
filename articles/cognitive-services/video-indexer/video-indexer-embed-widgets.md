@@ -10,12 +10,12 @@ ms.component: video-indexer
 ms.topic: sample
 ms.date: 09/15/2018
 ms.author: juliako
-ms.openlocfilehash: 0d75a58ddf0607286d41867828119fdd05e07d22
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.openlocfilehash: 3d9e00a97355c03da5360846d4cd9f27a8540ed6
+ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45985585"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48017437"
 ---
 # <a name="example-embed-video-indexer-widgets-into-your-applications"></a>Пример. Внедрение мини-приложений Индексатора видео в приложение
 
@@ -47,15 +47,16 @@ ms.locfileid: "45985585"
 ## <a name="embedding-public-content"></a>Внедрение общедоступного содержимого
 
 1. Откройте веб-сайт [Индексатора видео](https://www.videoindexer.ai/) и выполните вход.
-2. Нажмите кнопку "Внедрить", расположенную под видео.
+2. Щелкните видео, с которым вы собираетесь работать.
+3. Нажмите кнопку "Внедрить", расположенную под видео.
 
     ![Мини-приложение](./media/video-indexer-embed-widgets/video-indexer-widget01.png)
 
     Когда вы нажмете кнопку, на экране появится модальное окно внедрения, в котором можно выбрать, какое мини-приложение нужно внедрить в приложение.
     После выбора мини-приложения (**Player** или **Cognitive Insights**) создается код внедрения, который нужно вставить в приложение.
  
-3. Выберите необходимый тип мини-приложения (**Cognitive Insights** или **Player**).
-4. Скопируйте и добавьте код внедрения в приложение. 
+4. Выберите необходимый тип мини-приложения (**Cognitive Insights** или **Player**).
+5. Скопируйте и добавьте код внедрения в приложение. 
 
     ![Мини-приложение](./media/video-indexer-embed-widgets/video-indexer-widget02.png)
 

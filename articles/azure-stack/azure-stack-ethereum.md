@@ -1,40 +1,45 @@
 ---
 title: Шаблон решения блокчейна Ethereum Azure Stack
-description: Использование шаблонов настраиваемых решений для развертывания и настройки сети блокчейна консорциума Ethereum в Azure Stack
+description: Руководство по использованию шаблонов настраиваемых решений для развертывания и настройки сети блокчейна консорциума Ethereum в Azure Stack
 services: azure-stack
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 07/03/2018
-ms.topic: article
+ms.date: 09/13/2018
+ms.topic: tutorial
 ms.service: azure-stack
-ms.reviewer: coborn
+ms.reviewer: seyadava
+ms.custom: mvc
 manager: femila
-ms.openlocfilehash: 0e03b524834f528ddb7555a344fbebe720b4d9ff
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: acfa94799f36728f4e0041f1a51403edf6ffe37e
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37446981"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48239478"
 ---
-# <a name="azure-stack-ethereum-blockchain-solution-templates"></a>Шаблоны решений блокчейна Ethereum в Azure Stack
+# <a name="tutorial-use-the-azure-stack-ethereum-blockchain-solution-template"></a>Руководство. Использование шаблона решения блокчейна Ethereum Azure Stack
 
 Шаблон решения Ethereum должен помочь проще и быстрее развертывать и настраивать сеть блокчейна со множеством членов консорциума Ethereum с минимальными понятиями об Azure и Ethereum.
 
 Небольшой объем входных пользовательских данных и развертывание одним щелчком на клиентском портале Azure Stack позволяют каждому члену подготовить сетевое расположение. Сетевое расположение каждого члена состоит из набора узлов с балансировкой нагрузки транзакций, с помощью которого приложение или пользователь могут взаимодействовать для отправки транзакций, набора узлов майнинга для записи транзакций и сетевого виртуального модуля (NVA). На следующем этапе добавляется подключение NVA для создания полностью настроенной сети блокчейна со множеством членов.
 
-## <a name="prerequisites"></a>предварительным требованиям
+Для этого вам потребуется выполнить следующие действия:
 
-Загрузите следующие элементы из Marketplace [Azure Stack](azure-stack-download-azure-marketplace-item.md).
+> [!div class="checklist"]
+> * Выбор архитектуры развертывания
+> * Развертывание автономной сети или сети лидера либо члена консорциума
 
-* Ubuntu Server 16.04 LTS версии 16.04.201802220
-* Windows Server 2016 
-* Настраиваемый скрипт для Linux 2.0 
-* Расширение пользовательских сценариев 
+## <a name="prerequisites"></a>Предварительные требования
 
-Дополнительные сведения о сценариях блокчейна в Azure см. в статье[Шаблон решения консорциума Proof-of-Work для Ethereum](../blockchain-workbench/ethereum-deployment-guide.md).
+Загрузите самые новые элементы [из Marketplace](azure-stack-download-azure-marketplace-item.md):
 
-Нужна также подписка Azure, которая может поддерживать развертывание нескольких виртуальных машин. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
+* Ubuntu Server 16.04 LTS
+* Windows Server 2016
+* Настраиваемый скрипт для Linux 2.0
+* Расширение Custom Script в ОС Windows
+
+Дополнительные сведения о сценариях блокчейна см. в статье[Шаблон решения консорциума Proof-of-Work для Ethereum](../blockchain/templates/ethereum-deployment.md).
 
 ## <a name="deployment-architecture"></a>Архитектура развертывания
 
@@ -43,6 +48,7 @@ ms.locfileid: "37446981"
 ## <a name="deployment-use-cases"></a>Варианты использования развертывания
 
 Шаблон консорциума Ethereum может быть развернут для ведущего, а члены могут присоединяться разными способами. Ниже приведены проверенные способы подключения.
+
 - Во многоузловой системе Azure Stack с помощью Azure AD или AD FS выполняется развертывание ведущего и члена с использованием одной и той же подписки или с разными подписками.
 - В одноузловой системе Azure Stack (с Azure AD) развертывание ведущего и члена выполняется с использованием одной подписки.
 
@@ -51,7 +57,7 @@ ms.locfileid: "37446981"
 Расположение первого члена в сети настраивается в шаблоне ведущего консорциума. 
 
 1. Загрузите [шаблон ведущего из GitHub](https://raw.githubusercontent.com/Azure/AzureStack-QuickStart-Templates/master/ethereum-consortium-blockchain/marketplace/ConsortiumLeader/mainTemplate.json)
-2. Чтобы выполнить развертывание из настраиваемого шаблона, на портале администрирования Azure Stack выберите **Создать > Шаблон развертывания**.
+2. Чтобы выполнить развертывание из настраиваемого шаблона, на портале администрирования Azure Stack выберите **+ Создать ресурс > Развертывание шаблона**.
 3. Чтобы изменить новый настраиваемый шаблон, выберите **Изменить шаблон**.
 4. На панели редактирования справа скопируйте и вставьте шаблон ведущего JSON, который был загружен ранее.
     
@@ -106,7 +112,7 @@ ms.locfileid: "37446981"
 ### <a name="joining-consortium-member-deployment"></a>Развертывание присоединения членов консорциума
 
 1. Загрузите [шаблон членов консорциума из GitHub](https://raw.githubusercontent.com/Azure/AzureStack-QuickStart-Templates/master/ethereum-consortium-blockchain/marketplace/JoiningMember/mainTemplate.json)
-2. Чтобы выполнить развертывание из настраиваемого шаблона, на портале администрирования Azure Stack выберите **Создать > Шаблон развертывания**.
+2. Чтобы выполнить развертывание из настраиваемого шаблона, на портале администрирования Azure Stack выберите **+ Создать ресурс > Развертывание шаблона**.
 3. Чтобы изменить новый настраиваемый шаблон, выберите **Изменить шаблон**.
 4. На панели редактирования, справа, скопируйте и вставьте шаблон ведущего JSON, который был загружен ранее.
 5. Щелкните **Сохранить**.
@@ -158,7 +164,7 @@ ms.locfileid: "37446981"
 При помощи этого шаблона создается подключение между ведущим и удаленным членом. 
 
 1. Загрузите [шаблон подключения ведущего и членов из GitHub](https://raw.githubusercontent.com/Azure/AzureStack-QuickStart-Templates/master/ethereum-consortium-blockchain/marketplace/Connection/mainTemplate.json)
-2. Чтобы выполнить развертывание из настраиваемого шаблона, на портале администрирования Azure Stack выберите **Создать > Шаблон развертывания**.
+2. Чтобы выполнить развертывание из настраиваемого шаблона, на портале администрирования Azure Stack выберите **+ Создать ресурс > Развертывание шаблона**.
 3. Чтобы изменить новый настраиваемый шаблон, выберите **Изменить шаблон**.
 4. На панели редактирования, справа, скопируйте и вставьте шаблон ведущего JSON, который был загружен ранее.
     
@@ -199,5 +205,13 @@ ms.locfileid: "37446981"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения об Ethereum и Azure см. в статье [Блокчейн-технология и приложения | Microsoft Azure](https://azure.microsoft.com/solutions/blockchain/).
-- Дополнительные сведения о сценариях блокчейна в Azure см. в статье[Шаблон решения консорциума Proof-of-Work для Ethereum](../blockchain-workbench/ethereum-deployment-guide.md).
+Из этого руководства вы узнали, как выполнить следующие задачи:
+
+> [!div class="checklist"]
+> * Выбор архитектуры развертывания
+> * Развертывание автономной сети или сети лидера либо члена консорциума
+
+Дополнительные сведения об Ethereum и Azure см. по указанной ниже ссылке.
+
+> [!div class="nextstepaction"]
+> [Блокчейн-технология и приложения](https://azure.microsoft.com/solutions/blockchain/)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 08/20/2018
 ms.author: daveba
-ms.openlocfilehash: 548111a6c2b9e0cf8c5b20eee5cc8fa45fe02da8
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 1d1e0d8f5a030daadb8dab1233dee52d5485c8fb
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47453121"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48237489"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-ad-graph-api"></a>Руководство. Использование назначаемого системой управляемого удостоверения на виртуальной машине Linux для доступа к API Graph AAD
 
@@ -61,7 +61,7 @@ az login
 
 ## <a name="add-your-vms-identity-to-a-group-in-azure-ad"></a>Добавление удостоверения виртуальной машины в группу Azure AD
 
-При включении назначаемого системой управляемого удостоверения на виртуальной машине Linux оно создает субъект-службу в Azure AD.  Теперь необходимо добавить виртуальную машину в группу. Инструкции по добавлению виртуальной машины в группу AAD вы найдете в следующей статье:
+При включении назначаемого системой управляемого удостоверения на виртуальной машине Linux оно создает субъект-службу в Azure AD.  Вам нужно добавить виртуальную машину в группу. Инструкции по добавлению виртуальной машины в группу AAD вы найдете в следующей статье:
 
 - [Добавление членов группы](/cli/azure/ad/group/member?view=azure-cli-latest#az-ad-group-member-add)
 
@@ -137,7 +137,7 @@ Azure AD Graph:
    curl "https://graph.windows.net/myorganization/servicePrincipals/<VM Object ID>/appRoleAssignments?api-version=1.6" -X POST -d '{"id":"5778995a-e1bf-45b8-affa-663a9f3f4d04","principalId":"<VM Object ID>","resourceId":"81789304-ff96-402b-ae73-07ec0db26721"}'-H "Content-Type: application/json" -H "Authorization: Bearer <ACCESS TOKEN>"
    ``` 
  
-## <a name="get-an-access-token-using-the-vms-identity-and-use-it-to-call-azure-ad-graph"></a>Получение маркера доступа с использованием удостоверения виртуальной машины и применение маркера в вызове к API Graph AAD 
+## <a name="get-an-access-token-using-the-vms-identity-to-call-azure-ad-graph"></a>Получение маркера доступа с использованием удостоверения виртуальной машины в вызове к Azure AD Graph 
 
 Для выполнения этих действий вам потребуется клиент SSH. Если вы используете Windows, можно использовать клиент SSH в [подсистеме Windows для Linux](https://msdn.microsoft.com/commandline/wsl/about). Если вам нужна помощь в настройке ключей SSH-клиента, ознакомьтесь с разделом [Использование ключей SSH с Windows в Azure](../../virtual-machines/linux/ssh-from-windows.md) или [Как создать и использовать пару из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](../../virtual-machines/linux/mac-create-ssh-keys.md).
 

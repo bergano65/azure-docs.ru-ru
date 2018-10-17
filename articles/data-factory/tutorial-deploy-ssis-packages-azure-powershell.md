@@ -13,12 +13,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: d57e350bc63a8acf7c4719572d43b4e703de019e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: b630fb9ed9bccc50948ca6bc938c78e22169c528
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46990932"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48248845"
 ---
 # <a name="provision-the-azure-ssis-integration-runtime-in-azure-data-factory-with-powershell"></a>Подготовка среды выполнения интеграции Azure SSIS в фабрике данных Azure с помощью PowerShell
 В этом руководстве представлены шаги по подготовке среды выполнения интеграции (IR) Azure SSIS в фабрике данных. Затем можно использовать SQL Server Data Tools (SSDT) ​​или SQL Server Management Studio (SSMS) для запуска и развертывания пакетов служб SQL Server Integration Services (SSIS) в этой среде выполнения в Azure. Вот какие шаги выполняются в этом руководстве:
@@ -39,7 +39,7 @@ ms.locfileid: "46990932"
     - В зависимости от выбранного сервера базы данных SSISDB может быть создана от вашего имени как отдельная база данных, а также как часть эластичного пула или Управляемого экземпляра. Доступ к ней можно получить через общедоступную сеть или после присоединения к виртуальной сети. Инструкции по выбору типа сервера базы данных для размещения SSISDB см. в разделе [Сравнение логического сервера Базы данных SQL и Управляемого экземпляра Базы данных SQL](../data-factory/create-azure-ssis-integration-runtime.md#compare-sql-database-logical-server-and-sql-database-managed-instance). Если База данных SQL Azure используется с конечными точками службы виртуальной сети или Управляемого экземпляра для размещения SSISDB или требования доступа к локальным данным, необходимо присоединить к виртуальной сети вашу среду выполнения интеграции Azure SSIS. Сведения об этом см. в статье [Создание среды выполнения интеграции Azure SSIS в службе "Фабрика данных Azure"](https://docs.microsoft.com/en-us/azure/data-factory/create-azure-ssis-integration-runtime). 
     - Убедитесь, что для сервера базы данных **включена** настройка **Разрешить доступ к службам Azure**. Этот параметр не применяется, когда База данных SQL Azure используется с конечными точками службы виртуальной сети или Управляемого экземпляра для размещения базы данных SSISDB. Дополнительные сведения см. в разделе [Создание правила брандмауэра на уровне сервера с помощью портала Azure](../sql-database/sql-database-security-tutorial.md#create-a-server-level-firewall-rule-in-the-azure-portal). Сведения о включении этого параметра с помощью PowerShell см. в статье о [New-AzureRmSqlServerFirewallRule](/powershell/module/azurerm.sql/new-azurermsqlserverfirewallrule?view=azurermps-4.4.1). 
     - Добавьте IP-адрес клиентского компьютера или диапазон IP-адресов, который включает IP-адрес клиентского компьютера, в список IP-адресов клиента в параметрах брандмауэра для сервера базы данных. Дополнительные сведения см. в разделе [Правила брандмауэра уровня сервера и уровня базы данных SQL Azure](../sql-database/sql-database-firewall-configure.md). 
-    - Можно подключиться к серверу базы данных, выполнив аутентификацию SQL с использованием учетных данных администратора сервера, или аутентификацию Azure Active Directory (AAD) с помощью Управляемого удостоверения службы Фабрики данных Azure (MSI).  Для последнего варианта необходимо добавить в группу AAD Управляемое удостоверение службы Фабрики данных Azure с разрешениями на доступ к серверу базы данных. Эта процедура описана в разделе [Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime). 
+    - Можно подключиться к серверу базы данных, выполнив аутентификацию SQL с использованием учетных данных администратора сервера или аутентификацию Azure Active Directory (AAD) с помощью управляемого удостоверения Фабрики данных Azure для ресурсов Azure.  Для последнего варианта необходимо добавить в группу AAD Управляемое удостоверение службы Фабрики данных Azure с разрешениями на доступ к серверу базы данных. Эта процедура описана в разделе [Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime). 
     - Убедитесь, что на сервере базы данных SQL Azure нет каталога SSIS (базы данных SSISDB). При подготовке среды Azure SSIS IR не поддерживается использование существующего каталога SSIS. 
 - **Azure PowerShell**. Следуйте инструкциям по [установке и настройке Azure PowerShell](/powershell/azure/install-azurerm-ps). Вы используете PowerShell для запуска скрипта, чтобы подготовить среду выполнения интеграции Azure SSIS, запускающую пакеты SSIS в облаке. 
 

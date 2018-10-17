@@ -1,27 +1,28 @@
 ---
-title: Краткое руководство по работе с API распознавания эмоций с использованием Python | Документация Майкрософт
-description: Информация и примеры кода, которые помогут вам приступить к работе с API распознавания эмоций с использованием Python в Cognitive Services.
+title: Краткое руководство по распознаванию эмоций лица на изображении — API распознавания эмоций с использованием Python
+description: Информация и примеры кода, которые помогут вам приступить к работе с API распознавания эмоций с использованием Python.
 services: cognitive-services
 author: anrothMSFT
-manager: corncar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: emotion-api
-ms.topic: article
+ms.topic: quickstart
 ms.date: 02/05/2018
 ms.author: anroth
-ms.openlocfilehash: ff1f6b2ddc872d0ee63d9885b04b1f007bc86e33
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: c7611628918cf40800d173dc9404b0948b9a68a4
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380177"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48236573"
 ---
-# <a name="emotion-api-python-quickstart"></a>Краткое руководство по работе с API распознавания эмоций с использованием Python
+# <a name="quickstart-build-an-app-to-recognize-emotions-on-faces-in-an-image"></a>Краткое руководство по созданию приложения для распознавания эмоций лица на изображении
 
 > [!IMPORTANT]
-> Срок действия предварительной версии API для поиска видео истек 30 октября 2017 года. Оцените новую [предварительную версию API индексатора видео](https://azure.microsoft.com/services/cognitive-services/video-indexer/), которая позволяет легко извлекать аналитические сведения из видео и оптимизировать возможности обнаружения содержимого (например, результаты поиска) по обнаружению произнесенных слов, лиц, символов и эмоций. [Узнайте больше](https://docs.microsoft.com/azure/cognitive-services/video-indexer/video-indexer-overview).
+> API распознавания эмоций будет объявлен устаревшим 15 февраля 2019 г. Сейчас функция распознавания эмоций является общедоступной в составе [API распознавания лиц](https://docs.microsoft.com/azure/cognitive-services/face/). 
 
-В этом пошаговом руководстве содержатся сведения и примеры кода, которые помогут вам быстро приступить к распознаванию эмоций одного человека или нескольких людей на изображении с помощью Python и [метода API распознавания эмоций](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa). 
+В этом пошаговом руководстве содержатся сведения и примеры кода, которые помогут вам быстро приступить к распознаванию эмоций одного человека или нескольких людей на изображении с помощью Python и [метода API распознавания эмоций](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa).
 
 Этот пример можно запустить как объект Jupyter Notebook в [MyBinder](https://mybinder.org), щелкнув эмблему запуска Binder: [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/Microsoft/cognitive-services-notebooks/master?filepath=EmotionAPI.ipynb)
 
@@ -101,7 +102,7 @@ analysis
 
 
 
-Возвращаемый объект JSON содержит ограничивающие прямоугольники вокруг лиц, которые были распознаны вместе с эмоциями. Каждой эмоции присваивается оценка от 0 до 1. Чем выше оценка, тем выразительнее эмоция. 
+Возвращаемый объект JSON содержит ограничивающие прямоугольники вокруг лиц, которые были распознаны вместе с эмоциями. Каждой эмоции присваивается оценка от 0 до 1. Чем выше оценка, тем выразительнее эмоция.
 
 Ниже приведены строки кода для обнаружения эмоций на лицах на изображении с помощью библиотеки `matplotlib`. Чтобы избежать нагромождения, отображаются только три первые эмоции.
 

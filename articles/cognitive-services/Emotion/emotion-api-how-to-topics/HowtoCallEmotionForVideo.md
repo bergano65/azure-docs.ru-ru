@@ -1,32 +1,34 @@
 ---
-title: Вызов API распознавания эмоций для видео | Документация Майкрософт
+title: Пример. Вызов API распознавания эмоций для видео
+titlesuffix: Azure Cognitive Services
 description: Узнайте, как вызывать API распознавания эмоций для видео в Cognitive Services.
 services: cognitive-services
 author: anrothMSFT
-manager: corncar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: emotion-api
-ms.topic: article
+ms.topic: sample
 ms.date: 02/06/2017
 ms.author: anroth
-ms.openlocfilehash: 0875013b2061a84e3e23ae90c1106382672fdca6
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: 2687145a89c11efb4a3bcb1494a39806e9aae551
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380721"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48238613"
 ---
-# <a name="how-to-call-emotion-api-for-video"></a>Как вызвать API распознавания эмоций для видео
+# <a name="example-call-emotion-api-for-video"></a>Пример. Вызов API распознавания эмоций для видео
 
 > [!IMPORTANT]
-> Срок действия предварительной версии API для видео истекает 30 октября 2017 г. Оцените новую [предварительную версию API индексатора видео](https://azure.microsoft.com/services/cognitive-services/video-indexer/), которая позволяет легко извлекать аналитические сведения из видео и оптимизировать возможности обнаружения содержимого (например, результаты поиска) по обнаружению произнесенных слов, лиц, символов и эмоций. [Узнайте больше](https://docs.microsoft.com/azure/cognitive-services/video-indexer/video-indexer-overview).
+> API распознавания эмоций будет объявлен устаревшим 15 февраля 2019 г. Сейчас функция распознавания эмоций является общедоступной в составе [API распознавания лиц](https://docs.microsoft.com/azure/cognitive-services/face/). 
 
 В этом руководстве показано, как вызвать API распознавания эмоций для видео. Примеры написаны на языке C# с помощью API распознавания эмоций для клиентской библиотеки видео.
 
-### <a name="Prep">Подготовка</a> 
+### <a name="Prep">Подготовка</a>
 Чтобы использовать API распознавания эмоций для видео, вам понадобится видео с людьми, стоящими лицом к камере.
 
-### <a name="Step1">Шаг 1. Авторизация вызова API</a> 
+### <a name="Step1">Шаг 1. Авторизация вызова API</a>
 Для каждого вызова API распознавания эмоций для видео требуется ключ подписки. Этот ключ должен быть либо передан через параметр строки запроса, либо указан в заголовке запроса. Чтобы передать ключ подписки через строку запроса, см. пример URL-адреса запроса ниже для API распознавания эмоций для видео:
 
 ```
@@ -44,7 +46,7 @@ ocp-apim-subscription-key: <Your subscription key>
 ```
 var emotionServiceClient = new emotionServiceClient("Your subscription key");
 ```
-Чтобы получить ключ подписки, см. раздел [Подписки] (https://azure.microsoft.com/try/cognitive-services/). 
+Чтобы получить ключ подписки, см. раздел [Подписки] (https://azure.microsoft.com/try/cognitive-services/).
 
 ### <a name="Step2">Шаг 2. Отправка видео в службу и проверка состояния</a>
 Самый простой способ выполнить любой из вызовов API распознавания эмоций для видео — это напрямую отправить видео. Для этого нужно отправить запрос "POST" с типом содержимого application/octet-stream вместе с данными, считываемыми из видеофайла. Максимальный размер видео —100 МБ.
@@ -71,7 +73,7 @@ Operation videoOperation = await videoServiceClient.CreateOperationAsync(videoUr
 
 ```
 
-Этот метод отправки будет одинаковым для всех вызовов API распознавания эмоций для видео. 
+Этот метод отправки будет одинаковым для всех вызовов API распознавания эмоций для видео.
 
 После отправки видео нужно проверить его статус. Так как видеофайлы обычно крупнее и разнообразнее других файлов, на этом этапе пользователи могут столкнуться с длительным временем обработки. Время зависит от размера и длины файла.
 

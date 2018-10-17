@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 author: garyericson
 ms.author: garye
 ms.date: 09/24/2018
-ms.openlocfilehash: 6e0294f99d1c2291e84bf2ac5d5b1f771222b551
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 660e5515b765e133d5bc9309be5439209b957353
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47433418"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48238527"
 ---
 # <a name="what-is-azure-machine-learning-service-preview"></a>Что такое служба машинного обучения Azure (предварительная версия)?
 
@@ -48,7 +48,7 @@ ms.locfileid: "47433418"
 Служба машинного обучения Azure может автоматически создавать модели и настраивать их для вас.
 Пример см. в руководстве [Автоматическое обучение модели классификации с помощью автоматического машинного обучения Azure](tutorial-auto-train-models.md).
 
-Кроме того, используя <a href="http://aka.ms/aml-sdk" target="_blank">SDK</a> машинного обучения Azure для Python с пакетами Python с открытым исходным кодом, вы сможете сами создавать и обучать высокоточные модели машинного и глубокого обучения в рабочем пространстве машинного обучения Azure.
+Кроме того, используя <a href="http://aka.ms/aml-sdk" target="_blank">SDK</a> службы "Машинное обучение Azure" для Python с пакетами Python с открытым кодом, вы сможете сами создавать и обучать высокоточные модели машинного и глубокого обучения в рабочей области этой службы.
 Пакеты Python с открытым исходным кодом предлагают различные компоненты машинного обучения, такие как:
 
 - <a href="http://scikit-learn.org/stable/" target="_blank">Scikit-learn</a>
@@ -80,7 +80,7 @@ ms.locfileid: "47433418"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Инструкции по созданию рабочего пространства машинного обучения см. в статье [Начало работы с помощью портала Azure](quickstart-get-started.md)
+- Инструкции по созданию рабочей области службы машинного обучения см. в статье [Краткое руководство. Начало работы со службой машинного обучения Azure](quickstart-get-started.md).
  
 - Полные инструкции см. в руководстве [Обучение модели классификации изображений с помощью машинного обучения Azure](tutorial-train-models-with-aml.md), где рассказывается, как обучать и развертывать модели со службой машинного обучения Azure
 

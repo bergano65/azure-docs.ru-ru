@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: quickstart
 ms.date: 06/20/2018
 ms.author: jingwang
-ms.openlocfilehash: d314c04a40155fccc99660bacdb9f646ce77b22f
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: a4e41408a3af2e6bb68c14f2e34bf1141bf349c1
+ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43107594"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48017813"
 ---
 # <a name="use-the-copy-data-tool-to-copy-data"></a>Копирование данных с помощью средства копирования данных 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service that you are using:"]
@@ -52,13 +52,9 @@ ms.locfileid: "43107594"
 1. Укажите **V2** при выборе **версии**.
 1. В поле **Расположение** выберите расположение фабрики данных. 
 
-   В списке отображены только поддерживаемые расположения. Хранилища данных (такие как служба хранилища Azure и база данных SQL Azure) и вычислительные среды (например, Azure HDInsight), используемые фабрикой данных, могут находиться в других расположениях и/или регионах.
+   В списке отображаются только расположения, которые поддерживаются Фабрикой данных и в которых будут храниться метаданные Фабрики данных Azure. Учтите, что связанные хранилища данных, (такие как служба хранилища Azure и база данных SQL Azure) и вычислительные среды (например, Azure HDInsight), используемые фабрикой данных, могут находиться в других регионах.
 
-1. Кроме того, установите флажок **Закрепить на панели мониторинга**.     
 1. Нажмите кнопку **Создать**.
-1. На панели мониторинга вы увидите приведенный ниже элемент с состоянием **Deploying data factory** (Развертывание фабрики данных). 
-
-    ![Элемент Deploying data factory (Развертывание фабрики данных)](media/quickstart-create-data-factory-copy-data-tool/deploying-data-factory.png)
 1. Когда создание завершится, откроется страница **Фабрика данных**. Выберите элемент **Author & Monitor** (Создание и мониторинг), чтобы открыть на отдельной вкладке приложение пользовательского интерфейса службы "Фабрика данных Azure".
    
    ![Домашняя страница фабрики данных с элементом Author & Monitor (Создание и мониторинг)](./media/quickstart-create-data-factory-copy-data-tool/data-factory-home-page.png)

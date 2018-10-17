@@ -6,13 +6,13 @@ author: mamccrea
 ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.topic: overview
-ms.date: 09/24/2018
-ms.openlocfilehash: 152a145601dcf4282ec0a3a3b6ebcf37bd11848b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.date: 10/04/2018
+ms.openlocfilehash: ade162d0261b765336cbff9ea8a6429f9bd2d871
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46992972"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48801843"
 ---
 # <a name="hdinsight-40-overview-preview"></a>HDInsight 4.0 (предварительная версия)
 
@@ -93,6 +93,12 @@ Apache Oozie 4.3.1 входит в состав HDI 4.0 со следующим�
 * HDI 4.0 не поддерживает MapReduce. Вместо этого компонента используйте Tez. Узнайте больше об [Apache Tez](https://tez.apache.org/).
 
 * В HDI 4.0 больше не используется представление Hive. 
+
+* Интерпретатор оболочки в Apache Zeppelin не поддерживается в кластерах Spark и Interactive Query.
+
+* Вы не можете *запретить* использование LLAP в кластере Spark LLAP. LLAP можно только выключить.
+
+* Azure Data Lake Storage 2-го поколения не поддерживает сохранение записных книжек Juypter в кластере Spark.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

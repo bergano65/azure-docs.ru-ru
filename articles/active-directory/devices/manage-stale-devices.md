@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 09/20/2018
+ms.date: 10/03/2018
 ms.author: markvi
-ms.reviewer: jairoc
-ms.openlocfilehash: f9664e22be5d7a17dd2a2a7c328593d8168c26f0
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.reviewer: spunukol
+ms.openlocfilehash: 1b8a6e6a6b5f482a4e3575c4da18a02a958c4081
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47434744"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48249372"
 ---
 # <a name="how-to-manage-the-stale-devices-in-azure-ad"></a>Практическое руководство. Управление устаревшими устройствами в Azure AD
 
@@ -101,7 +101,7 @@ ms.locfileid: "47434744"
 
 ### <a name="disable-devices"></a>Отключение устройств
 
-Мы не рекомендуем немедленно удалять устаревшее устройство, ведь в случае ложных положительных срабатываний отменить эту операцию не удастся. Лучше всего перед удалением отключать такое устройство на указанный период. Определите в политике интервал времени, в течение которого устройство будет отключенным перед удалением.
+Мы не рекомендуем немедленно удалять устаревшее устройство, ведь в случае ложных положительных срабатываний отменить эту операцию не удастся. Лучше всего перед удалением отключать такое устройство на указанный период. Определите в политике интервал времени, в течение которого устройство будет отключено перед удалением.
 
 
 ### <a name="mdm-controlled-devices"></a>Устройства, управляемые MDM
@@ -111,7 +111,7 @@ ms.locfileid: "47434744"
 
 ### <a name="system-managed-devices"></a>Устройства, управляемые системой
 
-Не удаляйте устройства, управляемые системой. Это могут быть такие устройства, как автопилот. После удаления их невозможно инициализировать повторно. Новый командлет Get-MmsolDevice по умолчанию пропускает устройства, управляемые системой. 
+Не удаляйте устройства, управляемые системой. Это могут быть такие устройства, как автопилот. После удаления их невозможно инициализировать повторно. Новый командлет `get-msoldevice` по умолчанию пропускает устройства, управляемые системой. 
 
 
 ### <a name="hybrid-azure-ad-joined-devices"></a>Гибридные устройства, присоединенные к Azure AD
@@ -137,7 +137,7 @@ ms.locfileid: "47434744"
 
 
 
-## <a name="cleanup-stale-devices-in-the-azure-portal"></a>Очистка устаревших устройств на портале Azure  
+## <a name="clean-up-stale-devices-in-the-azure-portal"></a>Очистка устаревших устройств на портале Azure  
 
 Хотя вы можете очистить устаревшие устройства на портале Azure, этот процесс удобнее выполнять с помощью скрипта PowerShell. Используйте последнюю версию модуля PowerShell (версия 1), чтобы применить фильтр по метке времени, исключив управляемые системой устройств, такие как автопилот. Сейчас мы не рекомендуем применять PowerShell версии 2.
 
@@ -150,7 +150,9 @@ ms.locfileid: "47434744"
 
 3. отключение устройства с помощью командлета [Disable-MsolDevice](https://docs.microsoft.com/powershell/module/msonline/disable-msoldevice?view=azureadps-1.0); 
 
-4. удаление устройства с помощью командлета [Remove-MsolDevice](https://docs.microsoft.com/powershell/module/msonline/remove-msoldevice?view=azureadps-1.0).
+4. Ожидание периода времени перед удалением, в зависимости от количества указанных вами дней.
+
+5. удаление устройства с помощью командлета [Remove-MsolDevice](https://docs.microsoft.com/powershell/module/msonline/remove-msoldevice?view=azureadps-1.0).
 
 ### <a name="get-the-list-of-devices"></a>Получение списка устройств
 

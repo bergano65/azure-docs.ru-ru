@@ -1,27 +1,29 @@
 ---
-title: Краткое руководство по API распознавания эмоций с использованием PHP | Документация Майкрософт
-description: Информация и примеры кода, которые помогут вам приступить к работе с API распознавания эмоций с использованием PHP в Cognitive Services.
+title: Краткое руководство по распознаванию эмоций лица на изображении — API распознавания эмоций, PHP
+titlesuffix: Azure Cognitive Services
+description: Информация и примеры кода, которые помогут вам приступить к работе с API распознавания эмоций с использованием PHP.
 services: cognitive-services
 author: anrothMSFT
-manager: corncar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: emotion-api
-ms.topic: article
+ms.topic: quickstart
 ms.date: 05/23/2017
 ms.author: anroth
-ms.openlocfilehash: 987d5a3eedaa17f1127be34e5f90ec2456fab99b
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ROBOTS: NOINDEX
+ms.openlocfilehash: c3dffa3c42df4a30b634417b551dd0e8af04145b
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37019403"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48239512"
 ---
-# <a name="emotion-api-php-quick-start"></a>Краткое руководство по API распознавания эмоций с использованием PHP
+# <a name="quickstart-build-an-app-to-recognize-emotions-on-faces-in-an-image"></a>Краткое руководство по созданию приложения для распознавания эмоций лица на изображении
 
 > [!IMPORTANT]
-> Срок действия предварительной версии API для видео истекает 30 октября 2017 г. Оцените новую [предварительную версию API индексатора видео](https://azure.microsoft.com/services/cognitive-services/video-indexer/), которая позволяет легко извлекать аналитические сведения из видео и оптимизировать возможности обнаружения содержимого (например, результаты поиска) по обнаружению произнесенных слов, лиц, символов и эмоций. [Узнайте больше](https://docs.microsoft.com/azure/cognitive-services/video-indexer/video-indexer-overview).
+> API распознавания эмоций будет объявлен устаревшим 15 февраля 2019 г. Сейчас функция распознавания эмоций является общедоступной в составе [API распознавания лиц](https://docs.microsoft.com/azure/cognitive-services/face/). 
 
-В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к распознаванию эмоций одного человека или нескольких людей на изображении с помощью PHP и [метода API распознавания эмоций](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa). 
+В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к распознаванию эмоций одного человека или нескольких людей на изображении с помощью PHP и [метода API распознавания эмоций](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa).
 
 ## <a name="prerequisite"></a>Предварительные требования
 * Получите бесплатный ключ подписки [здесь](https://azure.microsoft.com/try/cognitive-services/).
@@ -36,7 +38,7 @@ ms.locfileid: "37019403"
 require_once 'HTTP/Request2.php';
 
 // NOTE: You must use the same region in your REST call as you used to obtain your subscription keys.
-//   For example, if you obtained your subscription keys from westcentralus, replace "westus" in the 
+//   For example, if you obtained your subscription keys from westcentralus, replace "westus" in the
 //   URL below with "westcentralus".
 $request = new Http_Request2('https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize');
 $url = $request->getUrl();
@@ -78,10 +80,10 @@ catch (HttpException $ex)
 ## <a name="recognize-emotions-sample-response"></a>Пример ответа API распознавания эмоций
 При успешном вызове возвращается массив записей лиц и связанные с ними оценки эмоций, отсортированные по убыванию в зависимости от размера прямоугольника с лицом. Пустой ответ указывает на то, что лица не обнаружены. Запись об эмоции содержит следующие поля:
 * faceRectangle — расположение прямоугольника с лицом на изображении;
-* scores — результаты оценки эмоций для каждого лица на изображении. 
+* scores — результаты оценки эмоций для каждого лица на изображении.
 
 ```json
-application/json 
+application/json
 [
   {
     "faceRectangle": {
@@ -102,4 +104,3 @@ application/json
     }
   }
 ]
-

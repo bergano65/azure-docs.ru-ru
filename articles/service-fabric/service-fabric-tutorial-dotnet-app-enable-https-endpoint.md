@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 04/12/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 70bbeabe2c2b14e8e0dcccac9ffa63f2e19230a2
-ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
+ms.openlocfilehash: 27167b011e23befda5d0c3703adeafc1581f4b98
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "41918115"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48268941"
 ---
 # <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство. Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
 
@@ -41,7 +41,7 @@ ms.locfileid: "41918115"
 > * [Создание приложения .NET Service Fabric](service-fabric-tutorial-deploy-app-to-party-cluster.md).
 > * [Развертывание приложения в удаленном кластере](service-fabric-tutorial-deploy-app-to-party-cluster.md).
 > * Добавление конечной точки HTTPS к интерфейсной службе ASP.NET Core.
-> * [Настройка непрерывной интеграции и непрерывного развертывания с помощью Visual Studio Team Services](service-fabric-tutorial-deploy-app-with-cicd-vsts.md).
+> * [Настройка CI/CD с помощью Azure Pipelines](service-fabric-tutorial-deploy-app-with-cicd-vsts.md)
 > * [Настройка мониторинга и диагностики приложения](service-fabric-tutorial-monitoring-aspnet.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -232,6 +232,7 @@ powershell.exe -ExecutionPolicy Bypass -Command ".\SetCertAccess.ps1"
 ```
 
 Измените свойства файла *Setup.bat*, чтобы установить для параметра **Копировать в выходной каталог** значение "Копировать, если новее".
+
 ![Настройка свойств файла][image1]
 
 В обозревателе решений щелкните правой кнопкой мыши **VotingWeb** и щелкните **Добавить**->**Новый элемент** и добавьте новый файл с именем SetCertAccess.ps1.  Измените файл *SetCertAccess.ps1* и добавьте следующий скрипт:
@@ -265,7 +266,7 @@ if ($cert -eq $null)
     $hasPermissionsAlready = ($acl.Access | where {$_.IdentityReference.Value.Contains($userGroup.ToUpperInvariant()) -and $_.FileSystemRights -eq [System.Security.AccessControl.FileSystemRights]::FullControl}).Count -eq 1
 
     if ($hasPermissionsAlready){
-        Write-Host "Account $userGroupCertificate already has permissions to certificate '$subject'." -ForegroundColor Green
+        Write-Host "Account $userGroup already has permissions to certificate '$subject'." -ForegroundColor Green
         return $false;
     } else {
         Write-Host "Need add permissions to '$subject' certificate..." -ForegroundColor DarkYellow
@@ -281,8 +282,9 @@ if ($cert -eq $null)
     }
 }
 
-Modify the *SetCertAccess.ps1* file properties to set **Copy to Output Directory** to "Copy if newer".
 ```
+
+Измените свойства файла *SetCertAccess.ps1*, чтобы установить для параметра **Копировать в выходной каталог** значение "Копировать более позднюю версию".
 
 ### <a name="run-the-setup-script-as-a-local-administrator"></a>Запуск скрипта установки с правами локального администратора
 
@@ -442,7 +444,7 @@ $slb | Set-AzureRmLoadBalancer
 
 Перейдите к следующему руководству:
 > [!div class="nextstepaction"]
-> [Настройка непрерывной интеграции и непрерывного развертывания с помощью Visual Studio Team Services](service-fabric-tutorial-deploy-app-with-cicd-vsts.md).
+> [Настройка CI/CD с помощью Azure Pipelines](service-fabric-tutorial-deploy-app-with-cicd-vsts.md)
 
 [image1]: ./media/service-fabric-tutorial-dotnet-app-enable-https-endpoint/SetupBatProperties.png
 [image2]: ./media/service-fabric-tutorial-dotnet-app-enable-https-endpoint/VotingAppLocal.png

@@ -6,20 +6,19 @@ documentationcenter: ''
 author: mattbriggs
 manager: femila
 editor: ''
-ms.assetid: 23322a49-fb7e-4dc2-8d0e-43de8cd41f80
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/07/2018
+ms.date: 09/28/2018
 ms.author: mabrigg
-ms.openlocfilehash: 4239eb31afd4abc8b3555f0ee353f5d96716d623
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: e35a63a36a84316815d609afa178f9a896415c2b
+ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34068983"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47584122"
 ---
 # <a name="create-a-virtual-machine-using-a-secure-password-stored-in-azure-stack-key-vault"></a>Создание виртуальной машины с помощью безопасного пароля, хранящегося в Key Vault Azure Stack
 
@@ -34,11 +33,11 @@ ms.locfileid: "34068983"
 * не нужно вручную вводить секрет при каждом развертывании ресурса;
 * можно указать, какие пользователи или субъекты-службы могут получить доступ к секрету.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Необходимо подписаться на предложение, включающее службу Key Vault.
 * [Установите PowerShell для Azure Stack](azure-stack-powershell-install.md).
-* [Настройте пользовательскую среду PowerShell в Azure Stack.](azure-stack-powershell-configure-user.md)
+* [Настройте среду PowerShell.](azure-stack-powershell-configure-user.md)
 
 Следующие шаги описывают процесс, необходимый для создания виртуальной машины путем извлечения пароля, хранящегося в хранилище ключей:
 
@@ -46,13 +45,14 @@ ms.locfileid: "34068983"
 2. Обновление файла azuredeploy.parameters.json соответствующим образом.
 3. Разверните шаблон.
 
->[ПРИМЕЧАНИЕ] Эти шаги можно выполнить из Пакета средств разработки Azure Stack или из внешнего клиента при подключении через VPN.
+> ![ПРИМЕЧАНИЕ]  
+> Эти шаги можно выполнить из Пакета средств разработки Azure Stack или из внешнего клиента при подключении через VPN.
 
 ## <a name="create-a-key-vault-secret"></a>Создание секрета хранилища ключей
 
 Следующий скрипт создает хранилище ключей и сохраняет в нем пароль в виде секрета. Используйте параметр `-EnabledForDeployment` при создании хранилища ключей. Благодаря этому параметру на хранилище ключей можно ссылаться из шаблонов Azure Resource Manager.
 
-```powershell
+```PowerShell
 
 $vaultName = "contosovault"
 $resourceGroup = "contosovaultrg"
@@ -117,7 +117,7 @@ Set-AzureKeyVaultSecret `
 
 Теперь разверните шаблон с помощью следующего скрипта PowerShell:
 
-```powershell
+```PowerShell  
 New-AzureRmResourceGroupDeployment `
   -Name KVPwdDeployment `
   -ResourceGroupName $resourceGroup `

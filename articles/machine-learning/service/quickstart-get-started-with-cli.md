@@ -9,12 +9,12 @@ author: rastala
 ms.author: roastala
 ms.reviewer: sgilley
 ms.date: 09/24/2018
-ms.openlocfilehash: 296bbc12cb326c416c87948db0ce6d7b5ff114da
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 856f9629e97f8cf7cf811e7d591cbcad6067f47a
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46972731"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48237166"
 ---
 # <a name="quickstart-get-started-with-azure-machine-learning-using-the-cli-extension"></a>Краткое руководство. Приступая к работе со службой машинного обучения Azure с использованием расширения CLI
 
@@ -83,7 +83,7 @@ az extension add azureml-sdk
 
 ## <a name="create-a-workspace-and-a-project-folder"></a>Создание рабочей области и папки проекта
 
-В окне командной строки создайте рабочую область машинного обучения Azure в группе ресурсов.
+В окне командной строки создайте рабочую область службы "Машинное обучение Azure" в группе ресурсов.
 
 
    В этом кратком руководстве:

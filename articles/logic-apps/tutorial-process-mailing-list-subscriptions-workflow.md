@@ -10,14 +10,14 @@ ms.reviewer: klam, LADocs
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 01/12/2018
-ms.openlocfilehash: 4ac5861dabbc473099886b4f099824cde60f38b9
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 96a151b3de5d59ad74eaf7061b1a3ff91d602759
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43122875"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48044422"
 ---
-# <a name="manage-mailing-list-requests-with-a-logic-app"></a>Управление запросами для списка рассылки с помощью приложения логики
+# <a name="manage-mailing-list-requests-with-azure-logic-apps"></a>Управление запросами для списка рассылки с помощью Azure Logic Apps
 
 Azure Logic Apps дает возможность автоматизировать рабочие процессы и интегрировать данные в различные службы Azure, Майкрософт, локальные системы и другие приложения SaaS (программное обеспечение как услуга). В этом руководстве описывается, как создать [приложение логики](../logic-apps/logic-apps-overview.md), обрабатывающее запросы на подписку для списка рассылки, управляемого службой [MailChimp](https://mailchimp.com/).
 Это приложение логики отслеживает учетную запись электронной почты для этих запросов, отправляет их на утверждение и добавляет утвержденных участников в список рассылки.

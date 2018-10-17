@@ -1,20 +1,21 @@
 ---
-title: Краткое руководство. Использование Azure Cognitive Services и API "Поиск новостей Bing" для Node.js | Документация Майкрософт
-description: В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API Bing для поиска новостей, который входит в состав Microsoft Cognitive Services в Azure.
+title: Краткое руководство по использованию API Bing для поиска новостей с Node.js
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API Bing для поиска новостей.
 services: cognitive-services
-documentationcenter: ''
 author: v-jerkin
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-news-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 9/21/2017
 ms.author: v-jerkin
-ms.openlocfilehash: 1c68e75319a34f4ac9726c047fc7d6d0269634ba
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 923566dc2764037164725f795e411beef939d92a
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382329"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48802076"
 ---
 # <a name="quickstart-for-bing-news-search-api-with-nodejs"></a>Краткое руководство по API Bing для поиска новостей с использованием Node.js
 
@@ -22,7 +23,7 @@ ms.locfileid: "35382329"
 
 Пример кода написан на языке JavaScript и выполняется в Node.js 6.
 
-Технические сведения об интерфейсах API приведены в [справочнике по API](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference).
+Технические сведения об API-интерфейсах см. в [справочнике по API](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -34,7 +35,7 @@ ms.locfileid: "35382329"
 
 1. Создайте проект Node.js в используемой вами интегрированной среде разработки или редакторе.
 2. Добавьте указанный ниже код.
-3. Замените значение `subscriptionKey` ключом доступа, допустимым для своей подписки.
+3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```javascript
@@ -97,7 +98,7 @@ bing_news_search(term);
 
 **Ответ**
 
-Успешный ответ возвращается в формате JSON, как показано в примере ниже: 
+Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
 ```json
 {

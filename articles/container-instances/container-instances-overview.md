@@ -6,15 +6,15 @@ author: seanmck
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: overview
-ms.date: 07/19/2018
+ms.date: 10/02/2018
 ms.author: seanmck
 ms.custom: mvc
-ms.openlocfilehash: 953d1dfd633f2fee52a2e6d197c6f32e7ab053f7
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 33d6d89e91ecdec00c1b17ecddf91128e9d07526
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39160456"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48802106"
 ---
 # <a name="azure-container-instances"></a>Экземпляры контейнеров Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "39160456"
 
 ## <a name="fast-startup-times"></a>Быстрый запуск
 
-Контейнеры обеспечивают значительные преимущества для запуска по сравнению с виртуальными машинами. Служба "Экземпляры контейнеров Azure" может в считаные секунды запустить контейнер в Azure без подготовки виртуальных машин и управления ими.
+В вопросе скорости запуска контейнеры обеспечивают значительные преимущества по сравнению с виртуальными машинами. Служба "Экземпляры контейнеров Azure" может в считаные секунды запустить контейнер в Azure без подготовки виртуальных машин и управления ими.
 
 ## <a name="public-ip-connectivity-and-dns-name"></a>Подключение по общедоступному IP-адресу и DNS-имя
 
@@ -54,9 +54,19 @@ ms.locfileid: "39160456"
 
 Служба "Экземпляры контейнеров Azure" поддерживает установку расписания для [многоконтейнерных групп](container-instances-container-groups.md), для которых задан одни и те же хост-компьютер, локальная сеть, хранилище и жизненный цикл. Это позволяет объединить основной контейнер приложений с другими дополнительными контейнерами, такими как расширения для ведения журналов.
 
+## <a name="virtual-network-deployment-preview"></a>Развертывания виртуальной сети (предварительная версия)
+
+Эта функция Экземпляров контейнеров Azure сейчас доступна в виде предварительной версии. Она позволяет [развертывать экземпляры контейнеров в виртуальную сеть Azure](container-instances-vnet.md). Экземпляры контейнеров, развернутые в подсети виртуальной сети, могут безопасно взаимодействовать с другими ресурсами виртуальной сети, включая локальные ресурсы. Взаимодействие происходит через [шлюз VPN ](../vpn-gateway/vpn-gateway-about-vpngateways.md) или [ExpressRoute](../expressroute/expressroute-introduction.md).
+
+> [!IMPORTANT]
+> Функция развертывания групп контейнеров в виртуальную сеть доступна в виде предварительной версии. Действуют некоторые [ограничения](container-instances-vnet.md#preview-limitations). Предварительные версии предоставляются только в том случае, если вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 Разверните контейнер Azure с помощью одной команды, воспользовавшись нашим кратким руководством.
 
 > [!div class="nextstepaction"]
 > [Краткое руководство по Экземплярам контейнеров Azure](container-instances-quickstart.md)
+
+<!-- LINKS - External -->
+[terms-of-use]: https://azure.microsoft.com/support/legal/preview-supplemental-terms/

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: c9350704943bebada217338488e51b97acc550ca
-ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
+ms.openlocfilehash: 188e3c0e8b9a9d421b40e142e534aca2741fee56
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47423618"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48248893"
 ---
 # <a name="tutorial-deploy-azure-machine-learning-as-an-iot-edge-module-preview"></a>Руководство: развертывание службы "Машинное обучение Azure" в качестве модуля IoT Edge (предварительная версия)
 
@@ -46,11 +46,8 @@ ms.locfileid: "47423618"
 Облачные ресурсы.
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) (цен. категории "Бесплатный") в Azure. 
-* Учетная запись Студии машинного обучения Azure. Выполните инструкции из статьи [Create Azure Machine Learning accounts and install Azure Machine Learning Workbench](../machine-learning/desktop-workbench/quickstart-installation.md) (Создание учетной записи для службы "Машинное обучение Azure" и установка Azure Machine Learning Workbench). Для этого руководства не нужно устанавливать приложение рабочего места (Workbench). 
+* Рабочая область машинного обучения Azure. Чтобы создать ее, следуйте инструкциям в статье [Подготовка к развертыванию моделей в IoT Edge](../machine-learning/service/how-to-deploy-to-iot.md).
 
-Ресурсы разработки.
-
-* Служба "Управление моделями" для службы "Машинное обучение Azure". Чтобы настроить среду и создать учетную запись, выполните инструкции из раздела о [настройке управления моделью](../machine-learning/desktop-workbench/deployment-setup-configuration.md). Во время установки развертывания рекомендуется выбирать локальную настройку вместо кластера, когда это возможно.
 
 ### <a name="disable-process-identification"></a>Отключение процесса идентификации
 
@@ -94,18 +91,7 @@ export IOTEDGE_HOST="http://172.17.0.1:15580"
 ## <a name="create-the-azure-ml-container"></a>Создание контейнера машинного обучения Azure
 В этом разделе выполняется скачивание файлов обученной модели и их преобразование в контейнер Azure ML.
 
-На компьютере с запущенной службой "Управление моделями" для службы "Машинное обучение Azure" скачайте и сохраните файлы [iot_score.py](https://github.com/Azure/ai-toolkit-iot-edge/blob/master/IoT%20Edge%20anomaly%20detection%20tutorial/iot_score.py) и [model.pkl](https://github.com/Azure/ai-toolkit-iot-edge/blob/master/IoT%20Edge%20anomaly%20detection%20tutorial/model.pkl) из набора средств Azure ML IoT на GitHub. Эти файлы определяют обученную модель машинного обучения, которую вы развернете на своем устройстве Iot Edge.
-
-С помощью обученной модели создайте контейнер, который можно развернуть на устройствах IoT Edge. Используйте эту команду для следующих задач:
-
-   * регистрация модели;
-   * Создайте манифест.
-   * создание образа контейнера Docker с именем *machinelearningmodule*;
-   * развертывание образа в кластере службы Azure Kubernetes (AKS).
-
-```cmd
-az ml service create realtime --model-file model.pkl -f iot_score.py -n machinelearningmodule -r python
-```
+Следуйте инструкциям в документации [Подготовка к развертыванию моделей в IoT Edge](../machine-learning/service/how-to-deploy-to-iot.md), чтобы создать контейнер Docker с помощью вашей модели машинного обучения.  Все компоненты, необходимые для образа Docker, содержатся в [наборе средств для работы с искусственным интеллектом для репозитория Git службы Azure IoT Edge](https://github.com/Azure/ai-toolkit-iot-edge/tree/master/IoT%20Edge%20anomaly%20detection%20tutorial).
 
 ### <a name="view-the-container-repository"></a>Просмотр репозитория контейнеров
 
