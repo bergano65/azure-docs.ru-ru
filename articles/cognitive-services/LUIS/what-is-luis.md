@@ -7,14 +7,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: overview
-ms.date: 08/15/2018
+ms.date: 10/06/2018
 ms.author: diberry
-ms.openlocfilehash: a8e9deb7c677d04634b223045adc2d31fa74ba6e
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 0520c00ab20ca7210b3bb13567f9998e7231be43
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47033045"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48867680"
 ---
 # <a name="what-is-language-understanding-luis"></a>Что такое служба "Распознавание речи" (LUIS)?
 
@@ -151,7 +151,7 @@ An example [utterance](luis-how-to-add-example-utterances.md) is text input from
 
 ## <a name="improve-model-prediction"></a>Повышение точности прогнозирования модели
 
-Когда модель LUIS будет опубликована и получит реальные пользовательские фразы, в LUIS можно применить несколько методов для повышения точности прогнозирования: [активное обучение](#active-learning) фраз конечных точек, [списки фраз](#phrase-lists) для включения слов в домен и [шаблоны](#patterns), чтобы уменьшить количество требуемых фраз.
+Когда модель LUIS будет опубликована и получит реальные пользовательские фразы, в LUIS можно применить несколько методов для повышения точности прогнозирования: [активное обучение](luis-concept-review-endpoint-utterances.md) фраз конечных точек, [списки фраз](luis-concept-feature.md) для включения слов в домен и [шаблоны](luis-concept-patterns.md), чтобы уменьшить количество требуемых фраз.
 <!--
 ### Active learning
 
@@ -171,25 +171,37 @@ Patterns allow you to simplify an intent's utterance collection into common [tem
 Author LUIS from the [authoring](https://aka.ms/luis-authoring-apis) APIs or from the LUIS portal. Query the published prediction endpoint of the model from the [endpoint](https://aka.ms/luis-endpoint-apis) APIs.
 -->
 
-## <a name="integrating-with-luis"></a>Интеграция с LUIS
+## <a name="development-lifecycle"></a>Жизненный цикл разработки
+LUIS предоставляет инструменты, функцию управления версиями и средства совместной работы с другими авторами LUIS для интеграции в полный жизненный цикл разработки на уровне клиентского приложения и языковой модели. 
+
+## <a name="implementing-luis"></a>Реализация LUIS
 Так как LUIS является REST API, это решение можно использовать с любым продуктом, службой или платформой, которая отправляет HTTP-запрос. Следующий список содержит основные продукты и службы корпорации Майкрософт, используемые с LUIS.
 
-Клиентские приложения Майкрософт для LUIS:
+Основное применение клиента для LUIS:
 * [Бот веб-приложения](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-3.0). Быстро создает чат-бот с поддержкой LUIS для общения с пользователем с помощью ввода текста. Для эффективной работы с ботом используется [Bot Framework][bot-framework] версии [3.x](https://github.com/Microsoft/BotBuilder) или [4.x](https://github.com/Microsoft/botbuilder-dotnet).
-* [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/). Узнайте больше с помощью этого курса о [смешанной реальности](https://docs.microsoft.com/windows/mixed-reality/mr-azure-303) с LUIS. 
 
-Средства корпорации Майкрософт для использования LUIS с чат-ботом:
+Средства быстрого и простого использования LUIS с ботом:
+* [LUIS CLI.](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUIS) Пакет NPM предоставляет средства разработки и прогнозирования как с помощью автономной программы командной строки так и путем импорта. 
+* [LUISGen.](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUISGen) LUISGen — это средство для создания строго типизированного исходного кода C# и TypeScript из экспортированной модели LUIS.
 * [Диспетчеризация](https://aka.ms/dispatch-tool). Позволяет использовать несколько приложений LUIS и QnA Maker из родительского приложения с помощью модели диспетчера.
-* [Средство для обучения ведению диалога](https://docs.microsoft.com/azure/cognitive-services/labs/conversation-learner/overview). Позволяет создавать диалоги с чат-ботом быстрее с помощью LUIS.
-* [Индивидуальный чат в проекте](https://docs.microsoft.com/azure/cognitive-services/project-personality-chat/overview), позволяющий чат-боту обрабатывать непринужденные разговоры на общие темы.
+* [LUDown.](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Ludown) LUDown — это программа командной строки, которая помогает управлять языковыми моделями для вашего бота.
 
 Другие службы Cognitive Services, используемые в LUIS:
 * [QnA Maker][qnamaker] позволяет объединять несколько типов текста в базу знаний вопросов и ответов.
 * [API Bing для проверки орфографии](../bing-spell-check/proof-text.md) обеспечивает коррекцию текста перед предсказанием. 
 * [Служба "Речь"](../Speech-Service/overview.md) преобразует запросы на разговорном языке в текст. 
+* [Средство для обучения ведению диалога](https://docs.microsoft.com/azure/cognitive-services/labs/conversation-learner/overview). Позволяет создавать диалоги с чат-ботом быстрее с помощью LUIS.
+* [Индивидуальный чат в проекте](https://docs.microsoft.com/azure/cognitive-services/project-personality-chat/overview), позволяющий чат-боту обрабатывать непринужденные разговоры на общие темы.
+<!--
+## Other ways of implementing LUIS
+
+A client application for LUIS is:
+* [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/) - learn more with this [Mixed reality course](https://docs.microsoft.com/windows/mixed-reality/mr-azure-303) with LUIS. 
 
 
+Labs: 
 
+-->
 ## <a name="next-steps"></a>Дополнительная информация
 
 Создайте приложение LUIS с [предварительно созданным](luis-get-started-create-app.md) или [пользовательским](luis-quickstart-intents-only.md) доменом. [Отправьте запрос к конечной точке прогнозирования](luis-get-started-cs-get-intent.md) общедоступного приложения Интернета вещей.

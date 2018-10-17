@@ -3,7 +3,7 @@ title: Создание плана в Azure Stack | Документация М�
 description: Создание администратором служб облака, которое позволяет подписчикам подготавливать виртуальные машины.
 services: azure-stack
 documentationcenter: ''
-author: brenduns
+author: sethmanheim
 manager: femila
 editor: ''
 ms.assetid: 3dc92e5c-c004-49db-9a94-783f1f798b98
@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 06/07/2018
-ms.author: brenduns
+ms.date: 09/12/2018
+ms.author: sethm
 ms.reviewer: ''
-ms.openlocfilehash: 1fa01d23108ce92fbd7c854442c0474b19395d25
-ms.sourcegitcommit: 50f82f7682447245bebb229494591eb822a62038
+ms.openlocfilehash: ec8fabfce8c26aef98217947da33a56222288b3c
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35248709"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49077568"
 ---
 # <a name="create-a-plan-in-azure-stack"></a>Создание плана в Azure Stack
 
@@ -30,7 +30,7 @@ ms.locfileid: "35248709"
 
 1. Войдите на портал администратора Azure Stack (https://adminportal.local.azurestack.external).
 
-2. Чтобы создать план и предложение, на которое могут подписываться пользователи, щелкните **Создать** > **Offers + Plans** (Предложения + планы) > **План**.
+2. Чтобы создать план и предложение, на которое могут подписываться пользователи, щелкните **Создать ресурс** > **Offers + Plans** (Предложения и планы) > **План**.
   
    ![Выбор плана](media/azure-stack-create-plan/select-plan.png)
 

@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по пакету SDK для пользовательского поиска для C# | Документация Майкрософт
-titleSuffix: Cognitive Services
+title: Краткое руководство. Пакет SDK для пользовательского поиска (C#)
+titleSuffix: Azure Cognitive Services
 description: Установка компонентов консольного приложения пакета SDK для пользовательского поиска для C#.
 services: cognitive-services
 author: swhite-msft
-manager: ehansen
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-custom-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 09/06/2018
 ms.author: scottwhi
-ms.openlocfilehash: 6c9917e3a63515f36b386e444edcc53de07799fc
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 5abf1027059bed9c685e0eb44f17ab41dfabf655
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46949933"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48816775"
 ---
-# <a name="c-sdk-quickstart"></a>Краткое руководство по пакету SDK для C#
+# <a name="quickstart-using-the-bing-custom-search-sdk-with-c"></a>Краткое руководство. Использование пакета SDK для Пользовательского поиска Bing (C#)
 
 Пакет SDK для API пользовательского поиска Bing предоставляет более простую модель программирования, чем REST API пользовательского поиска Bing. Здесь описывается, как выполнить первые вызовы службы пользовательского поиска с помощью пакета SDK для C#.
 

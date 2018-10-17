@@ -1,23 +1,23 @@
 ---
-title: 'Краткое руководство: публикация базы знаний с использованием Java — QnA Maker'
+title: Краткое руководство. Публикация базы знаний с использованием Java — QnA Maker
 titleSuffix: Azure Cognitive Services
 description: Сведения о том, как опубликовать базу знаний на Java для QnA Maker.
 services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
-ms.technology: qna-maker
+ms.component: qna-maker
 ms.topic: quickstart
 ms.date: 09/12/2018
 ms.author: diberry
-ms.openlocfilehash: a625151a0f6595e02ed899f2f8f7273c8e4f5cde
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: defd0cb7fc22423db9b2c7d25960b5dc27042506
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47036928"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48885090"
 ---
-# <a name="publish-a-knowledge-base-in-java"></a>Публикация базы знаний на Java
+# <a name="quickstart-publish-a-knowledge-base-in-java"></a>Краткое руководство. Публикация базы знаний с использованием Java
 
 Следующий код публикует существующую базу знаний с помощью метода [Publish](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fe) (Публикация).
 

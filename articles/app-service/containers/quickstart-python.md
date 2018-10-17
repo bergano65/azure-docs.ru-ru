@@ -12,15 +12,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 09/13/2018
+ms.date: 10/09/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: c3089ad11dc951d3105b25b6857b7697f8c38d1a
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 52429d44c41d990fb0de4c01c63d4af9fe5863d4
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47432075"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48902898"
 ---
 # <a name="create-a-python-web-app-in-azure-app-service-on-linux-preview"></a>Создание веб-приложения Python в Службе приложений Azure на платформе Linux (предварительная версия)
 
@@ -172,13 +172,13 @@ git push azure master
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Встроенный образ Python в службе приложений на платформе Linux доступен в предварительной версии. Рабочие приложения Python можно создавать с помощью настраиваемого контейнера.
+Сейчас встроенный образ Python в Службе приложений на платформе Linux доступен в предварительной версии. Вы можете настроить команду для запуска приложения. Также приложения Python для рабочей среды можно создавать с помощью настраиваемого контейнера.
 
 > [!div class="nextstepaction"]
 > [Использование Python и PostgreSQL](tutorial-python-postgresql-app.md)
 
 > [!div class="nextstepaction"]
-> [Configure built-in Python image in Azure App Service](how-to-configure-python.md) (Настройка встроенного образа Python в Службе приложений Azure)
+> [Настройка пользовательской команды запуска](how-to-configure-python.md#custom-startup-command)
 
 > [!div class="nextstepaction"]
 > [Использование пользовательского образа Docker для платформы "Веб-приложения для контейнеров"](tutorial-custom-docker-image.md)

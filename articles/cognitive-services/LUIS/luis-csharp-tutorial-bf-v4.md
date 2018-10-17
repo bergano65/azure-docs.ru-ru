@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/25/2018
 ms.author: diberry
-ms.openlocfilehash: f8350d46fecff726dd9f591fe3df0272f556b3e7
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: ce5b704a7ac251621698352608ea3eefa4629aea
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47168196"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48886587"
 ---
 # <a name="tutorial-luis-bot-in-c"></a>Руководство. Бот LUIS в C#
 С помощью C# можно создавать чат-боты, интегрированные со службой распознавания речи (LUIS). Этот бот использует приложение HomeAutomation, чтобы реализовать решение ботов. Бот создается с помощью [бота веб-приложения Azure](https://docs.microsoft.com/azure/bot-service/) и [Bot Framework версии 4](https://github.com/Microsoft/botbuilder-js).
@@ -46,14 +46,14 @@ ms.locfileid: "47168196"
 
     |Параметр|Назначение|Предлагаемый параметр|
     |--|--|--|
-    |Имя бота|Имя ресурса|`luis-csharp-bot-` + `<your-name>`, например `luis-csharp-bot-johnsmith`.|
+    |Имя бота|Имя ресурса|`luis-csharp-bot-` + `<your-name>`, например `luis-csharp-bot-johnsmith`|
     |Подписка|Подписка, в которой нужно создать бот.|Основная подписка.
     |Группа ресурсов|Логическая группа ресурсов Azure|Создайте группу для хранения всех ресурсов, используемых с этим ботом, и назовите эту группу `luis-csharp-bot-resource-group`.|
     |Расположение|Регион Azure не обязательно должен совпадать с регионом разработки или публикации LUIS.|`westus`|
     |Ценовой уровень|Используется для ограничения запросов службы и выставления счетов.|`F0` — уровень "Бесплатный".
-    |Имя приложения.|При развертывании бота в облаке имя используется в качестве поддомена (например, humanresourcesbot.azurewebsites.net).|`luis-csharp-bot-` + `<your-name>`, например `luis-csharp-bot-johnsmith`.|
+    |Имя приложения.|При развертывании бота в облаке имя используется в качестве поддомена (например, humanresourcesbot.azurewebsites.net).|`luis-csharp-bot-` + `<your-name>`, например `luis-csharp-bot-johnsmith`|
     |Шаблон бота|Параметры Bot Framework (см. следующую таблицу)|
-    |Расположение приложения LUIS|Должен совпадать с регионом ресурса LUIS|`westus`|
+    |Расположение приложения LUIS|Должно совпадать с регионом ресурса LUIS|`westus`|
 
 4. Выберите следующие компоненты в **параметрах шаблона бота**, а затем нажмите кнопку **Выбрать**:
 
@@ -67,47 +67,47 @@ ms.locfileid: "47168196"
 
     [ ![Создание бота веб-приложения](./media/bfv4-csharp/create-web-app-service.png) ](./media/bfv4-csharp/create-web-app-service.png#lightbox)
 
-6. Не закрывайте эту вкладку браузера. Для каждого последующего шага на портале LUIS открывайте новую вкладку браузера. По завершении развертывания новой службы ботов перейдите к следующему разделу.
+6. Не закрывайте эту вкладку браузера. Откройте новую вкладку браузера для работы с порталом LUIS. После завершения развертывания новой службы ботов перейдите к следующему разделу.
 
 ## <a name="add-prebuilt-domain-to-model"></a>Добавление предварительно созданного домена в модель
-Элемент развертывания службы ботов создает новое приложение LUIS с намерениями и примерами фраз. В новом приложении LUIS бот предоставляет сопоставление намерений для следующих намерений: 
+Элемент развертывания службы ботов создает новое приложение LUIS с намерениями и примерами высказываний. В новом приложении LUIS бот предоставляет сопоставление намерений для следующих целей. 
 
-|Намерения базового бота LUIS|пример фразы|
+|Намерения базового бота LUIS|Пример высказывания|
 |--|--|
 |Отмена|`stop`|
 |Greeting|`hello`|
 |Справка|`help`|
-|None|все, что находится за пределами домена приложения.|
+|None|Все, что находится за пределами домена приложения.|
 
-Добавьте в модель предварительно созданное приложение HomeAutomation для обработки фраз, таких как: `Turn off the living room lights`
+Добавление предварительно созданного приложения HomeAutomation в модель для обработки высказывания, например `Turn off the living room lights`.
 
 1. Перейдите на портал [LUIS](https://www.luis.ai) и войдите в систему.
-2. Чтобы отсортировать приложения по дате создания, выберите столбец **Дата создания** на странице **Мои приложения**. В предыдущем разделе служба Azure Bot создала новое приложение. Его имя `luis-csharp-bot-` + `<your-name>` + 4 случайных символа.
+2. Чтобы отсортировать приложения по дате создания, выберите столбец **Дата создания** на странице **Мои приложения**. В предыдущем разделе служба Azure Bot создала новое приложение. Его имя — `luis-csharp-bot-` + `<your-name>` + 4 случайных символа.
 3. Откройте приложение и выберите раздел **Сборка** на верхней панели навигации.
-4. В левой панели навигации выберите **Предварительно созданные домены**
-5. Выберите домен **HomeAutomation**, выбрав **Добавить домен** на карте.
-6. В правом верхнем меню выберите **Обучить**.
-7. В правом верхнем меню выберите **Опубликовать**. 
+4. В левой области навигации выберите **Prebuilt Domains** (Предварительно созданные домены).
+5. Выберите домен **HomeAutomation**, на его карте выбрав **Добавить домен**.
+6. Выберите **Train** (Обучать) в правом верхнем меню.
+7. Выберите **Опубликовать** в правом верхнем меню. 
 
     Теперь приложение, созданное службой Azure Bot, имеет новые намерения:
 
-    |Новые намерения базового бота|пример фразы|
+    |Новые намерения базового бота|Пример высказывания|
     |--|--|
     |HomeAutomation.TurnOn|`turn the fan to high`
     |HomeAutomation.TurnOff|`turn off ac please`|
 
 ## <a name="download-the-web-app-bot"></a>Загрузка бота веб-приложения 
-Чтобы разрабатывать код бота веб-приложения, загрузите код и используйте его на локальном компьютере. 
+Чтобы разработать код бота веб-приложения, загрузите код и используйте его на локальном компьютере. 
 
-1. На портале Azure, по-прежнему в ресурсе бота веб-приложения, выберите **Параметры приложения** и скопируйте значения **botFilePath** и **botFileSecret**. Позже необходимо добавить эти значения в файл среды. 
+1. На портале Azure, по-прежнему в ресурсе бота веб-приложения, выберите **Параметры приложения** и скопируйте значения **botFilePath** и **botFileSecret**. Позже их необходимо добавить в файл среды. 
 
-2. На портале Azure в разделе **Управление ботом** выберите **Сборка**. 
+2. Выберите **Сборка** в разделе **Bot management** (Управление ботом) на портале Azure. 
 
-3. Выберите **Загрузить исходный код бота**. 
+3. Выберите **Download Bot source code** (Загрузка исходного кода бота). 
 
     [ ![Загрузка исходного кода бота веб-приложения для базового бота](../../../includes/media/cognitive-services-luis/bfv4/download-code.png) ](../../../includes/media/cognitive-services-luis/bfv4/download-code.png#lightbox)
 
-4. Когда исходный код запакован, сообщение предоставит ссылку для загрузки кода. Перейдите по ссылке. 
+4. Когда исходный код запакован, появляется сообщение со ссылкой для загрузки кода. Перейдите по ссылке. 
 
 5. Сохраните ZIP-файл на локальном компьютере и извлеките файлы. Откройте проект. 
 
@@ -176,7 +176,7 @@ ms.locfileid: "47168196"
     }
     ```
 
-    Бот отправляет фразу пользователя в LUIS и получает результаты. Главное намерение определяет последовательность общения. 
+    Бот отправляет высказывание пользователя в LUIS и возвращает результаты. Главное намерение определяет последовательность общения. 
 
 
 ## <a name="start-the-bot"></a>Запуск бота
@@ -202,7 +202,7 @@ ms.locfileid: "47168196"
 
 1. Запустите Bot Emulator.
 
-2. В Bot Emulator выберите файл с расширением *.bot в корневой папке проекта. Этот файл `.bot` включает конечную точку URL-адреса бота для сообщений:
+2. В эмуляторе бота выберите файл *.bot в корневой папке проекта. Этот файл `.bot` включает в себя конечную точку URL-адреса бота для сообщений.
 
     [ ![Bot Emulator версии 4](../../../includes/media/cognitive-services-luis/bfv4/bot-emulator-v4.png) ](../../../includes/media/cognitive-services-luis/bfv4/bot-emulator-v4.png#lightbox)
 
@@ -280,26 +280,26 @@ ms.locfileid: "47168196"
 
 ## <a name="view-results-in-bot"></a>Просмотр результатов в боте
 
-1. В эмуляторе бота введите фразу: `Turn on the livingroom lights to 50%`
+1. В эмуляторе бота введите высказывание `Turn on the livingroom lights to 50%`.
 
-2. Бот выдает:
+2. Бот выдает следующее.
 
     ```JSON
     TurnOn intent found, JSON response: {"$instance":{“HomeAutomation_Device”:[{“startIndex”:23,“endIndex”:29,“score”:0.9776345,“text”:“lights”,“type”:“HomeAutomation.Device”}],“HomeAutomation_Room”:[{“startIndex”:12,“endIndex”:22,“score”:0.9079433,“text”:“livingroom”,“type”:“HomeAutomation.Room”}]},“HomeAutomation_Device”:[“lights”],“HomeAutomation_Room”:[“livingroom”]}
-    ```    ```
+    ```    
 
-## Learn more about Bot Framework
-Azure Bot service uses the Bot Framework SDK. Learn more about the SDK and bot framework:
+## <a name="learn-more-about-bot-framework"></a>Дополнительные сведения о платформе Bot Framework
+Служба Azure Bot использует Bot Framework SDK. Дополнительные сведения о пакете SDK и платформе Bot Framework см. в следующих статьях.
 
-* [Azure Bot Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0) v4 documentation
-* [Bot Builder Samples](https://github.com/Microsoft/botbuilder-samples)
-* [Bot Builder SDK](https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/?view=botbuilder-ts-latest)
-* [Bot Builder tools](https://github.com/Microsoft/botbuilder-tools):
+* [Общие сведения о службе Azure Bot](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0) версии 4
+* [Bot Builder Samples](https://github.com/Microsoft/botbuilder-samples) (Примеры Bot Builder)
+* [botbuilder-core package](https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/?view=botbuilder-ts-latest)
+* [Bot Builder tools](https://github.com/Microsoft/botbuilder-tools) (Средства для Bot Builder)
 
-## Next steps
+## <a name="next-steps"></a>Дополнительная информация
 
-You created an Azure bot service, copied the bot secret and `.bot` file path, downloaded the zip file of the code. You added the prebuilt HomeAutomation domain to the LUIS app created as part of the new Azure bot service, then trained and published the app again. You extracted the code project, created an environment file (`.env`), and set the bot secret and the `.bot` file path. In the bot.js file, you added code to handle the two new intents. Then you tested the bot in the bot emulator to see the LUIS response for an utterance of one of the new intents. 
+Вы создали службу Azure Bot, скопировали секрет бота и путь к файлу с расширением `.bot`, а также скачали ZIP-файл кода. Вы добавили предварительно созданный домен HomeAutomation к приложению LUIS, созданному как часть новой службы Azure Bot, а затем обучили и опубликовали приложение снова. Вы извлекли проект кода, создали файл среды (`.env`) и задали секрет бота и путь к файлу с расширением `.bot`. Вы добавили код для обработки двух новых намерений в файл bot.js. Затем вы протестировали бота в Bot Emulator, чтобы увидеть ответ LUIS для высказывания одного из новых намерений. 
 
 
 > [!div class="nextstepaction"]
-> [Build a custom domain in LUIS](luis-quickstart-intents-only.md)
+> [Руководство: 1. Создание приложения с личным доменом](luis-quickstart-intents-only.md)

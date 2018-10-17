@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по API автозаполнения Bing с использованием Ruby | Документация Майкрософт
-description: В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API автозаполнения Bing, который входит в состав Azure Cognitive Services.
+title: Краткое руководство. API автозаполнения Bing (Ruby)
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API автозаполнения Bing.
 services: cognitive-services
-documentationcenter: ''
 author: v-jaswel
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-autosuggest
-ms.topic: article
+ms.topic: quickstart
 ms.date: 09/14/2017
 ms.author: v-jaswel
-ms.openlocfilehash: 30bb2986b90bc20efa96dba6f490948dce3e4ade
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 643b9173b57b9f8e8596fe6a8b49358d34297b97
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382261"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48831183"
 ---
 # <a name="quickstart-for-bing-autosuggest-api-with-ruby"></a>Краткое руководство по API автозаполнения Bing с использованием Ruby 
-<a name="HOLTop"></a>
 
 В этой статье описано, как использовать [API автозаполнения Bing](https://azure.microsoft.com/services/cognitive-services/autosuggest/) с Ruby. API автозаполнения Bing возвращает список предлагаемых запросов на основе частичной строки запроса, которую пользователь вводит в поле поиска. Как правило, этот API вызывается каждый раз при вводе пользователем нового символа в поле поиска, и предложения отображаются в виде раскрывающегося списка под полем поиска. В этой статье показано, как отправить запрос, который возвращает предлагаемые строки запроса для слова *sail*.
 
@@ -25,13 +25,13 @@ ms.locfileid: "35382261"
 
 Для выполнения этого кода потребуется [Ruby 2.4](https://www.ruby-lang.org/en/downloads/) или более поздней версии.
 
-Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API автозаполнения Bing версии 7**. Для этого краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/#search). Требуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
+Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API автозаполнения Bing версии 7**. Для этого краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/#search). Потребуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
 
 ## <a name="get-autosuggest-results"></a>Получение результатов автозаполнения
 
 1. Создайте проект Ruby в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `subscriptionKey` ключом доступа, допустимым для своей подписки.
+3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```ruby
@@ -67,7 +67,7 @@ puts JSON::pretty_generate (JSON (response.body))
 
 ### <a name="response"></a>Ответ
 
-Успешный ответ возвращается в формате JSON, как показано в примере ниже:
+Успешный ответ возвращается в формате JSON, как показано в примере ниже.
 
 ```json
 {
@@ -136,7 +136,7 @@ puts JSON::pretty_generate (JSON (response.body))
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по Автозаполнению Bing](../tutorials/autosuggest.md)
+> [Руководство по API автозаполнения Bing](../tutorials/autosuggest.md)
 
 ## <a name="see-also"></a>См. также
 

@@ -1,25 +1,25 @@
 ---
-title: Краткое руководство по пакету SDK для поиска новостей для C# | Документация Майкрософт
-description: Установка консольного приложения пакета SDK для поиска новостей.
-titleSuffix: Azure cognitive services News search SDK C# quickstart
+title: Краткое руководство по работе с пакетом SDK для API Bing для поиска новостей, C#
+titleSuffix: Azure Cognitive Services
+description: Настройка консольного приложения, созданного с помощью пакета SDK для API Bing для поиска новостей.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-news-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 01/30/2018
 ms.author: v-gedod
-ms.openlocfilehash: e803fd579c6b71b8b1754546446715795a12087a
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 416557b11ebef953411fb6fabcddb72d08dcb5af
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382608"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48802990"
 ---
-# <a name="news-search-sdk-c-quickstart"></a>Краткое руководство по пакету SDK для поиска новостей для C#
+# <a name="quickstart-bing-news-search-sdk-with-c"></a>Краткое руководство по работе с пакетом SDK для API Bing для поиска новостей с использованием C#
 
-Пакет SDK Bing для поиска новостей содержит функции REST API для обработки запросов новостей и анализа результатов. 
+Пакет SDK для API Bing для поиска новостей содержит функции REST API для обработки запросов новостей и анализа результатов. 
 
 [Исходный код примеров для пакета SDK Bing для поиска новостей для C#](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/BingSearchv7/BingNewsSearch) доступен на сайте GitHub.
 
@@ -30,7 +30,7 @@ ms.locfileid: "35382608"
 При установке [пакета NuGet SDK для поиска новостей](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.NewsSearch/1.2.0) также устанавливаются зависимости, включая следующие:
 * Microsoft.Rest.ClientRuntime
 * Microsoft.Rest.ClientRuntime.Azure
-* Newtonsoft.Json
+* Newtonsoft.Json.
 
 ## <a name="news-search-client"></a>Клиент для поиска новостей
 Чтобы создать экземпляр клиента `NewsSearchAPI`, добавьте директиву using:
@@ -265,4 +265,4 @@ namespace NewsSrchSDK
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Примеры для пакета SDK для .NET в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/BingSearchv7)
+[Примеры пакета SDK для .NET в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/BingSearchv7)

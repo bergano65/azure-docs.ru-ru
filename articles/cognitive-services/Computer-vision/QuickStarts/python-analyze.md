@@ -1,63 +1,56 @@
 ---
-title: Краткое руководство. Использование API компьютерного зрения с Python для анализа удаленного изображения | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: В этом кратком руководстве описано, как анализировать удаленное изображение с помощью API компьютерного зрения Cognitive Services и Python.
+title: Краткое руководство. Анализ удаленного изображения c помощью API компьютерного зрения (REST, Python)
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве описано, как проанализировать удаленное изображение с помощью API компьютерного зрения с Python.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: 65f9b0d4fb007a6a9b8ef489ca59f384e047a0dd
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 1fc7c58ec4e5c200ae62c70698db7ec813d82703
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43772342"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48883947"
 ---
-# <a name="quickstart-analyze-a-remote-image---rest-python"></a>Краткое руководство. Анализ удаленного изображения (REST, Python)
+# <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API и Python в API компьютерного зрения
 
-В этом кратком руководстве описано, как проанализировать удаленное изображение с помощью API компьютерного зрения. См. дополнительные сведения об [анализе локального изображения с помощью Python](python-disk.md).
+Из этого краткого руководства вы узнаете, как анализировать удаленное изображение с помощью REST API в API компьютерного зрения, чтобы извлечь визуальные признаки. С помощью [метода Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные признаки на основе содержимого изображения.
 
 Процедуры из этого руководства можно выполнять пошагово из записной книжки Jupyter с помощью [MyBinder](https://mybinder.org). Чтобы запустить модуль привязки, нажмите следующую кнопку:
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/Microsoft/cognitive-services-notebooks/master?filepath=VisionAPI.ipynb)
 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
+
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- Установите [Python](https://www.python.org/downloads/), если хотите выполнить этот пример кода в локальной среде.
+- У вас должен быть ключ подписки для API компьютерного зрения. Получение ключа подписки описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
-## <a name="analyze-a-remote-image"></a>Анализ удаленного изображения
+## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
-С помощью [метода Analyze Image](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные признаки на основе содержимого изображения. Вы можете передать изображение или указать его URL-адрес, а также настроить следующие возвращаемые компоненты:
+Чтобы создать и запустить пример, сделайте следующее.
 
-* подробный список тегов, связанных с содержимым изображения;
-* описание содержимого изображения в виде полного предложения;
-* координаты, пол и возраст любого лица, показанного на изображении;
-* значение ImageType (картинки или линейный рисунок);
-* преобладающий цвет, контрастный цвет, наличие или отсутствие цветности;
-* категория, определенная в этой [таксономии](../Category-Taxonomy.md);
-* наличие на изображении содержимого для взрослых или содержимого сексуального характера.
-
-Чтобы выполнить наш пример, сделайте следующее:
-
-1. Скопируйте приведенный ниже код в новый файл скрипта Python.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. При необходимости замените `vision_base_url` расположением, в котором вы получили ключи подписки.
-1. При необходимости укажите в значении параметра `image_url` другое изображение.
-1. Выполните скрипт.
-
-В следующем коде используется библиотека `requests` для Python, которая обращается к API компьютерного зрения для анализа изображений. Результаты возвращаются в виде объектов JSON. Ключ API передается через словарь `headers`. Типы распознаваемых функций передаются через словарь `params`.
-
-## <a name="analyze-image-request"></a>Запрос на анализ изображения
+1. Скопируйте приведенный ниже код в текстовый редактор.
+1. При необходимости внесите следующие изменения в код:
+    1. замените значение `subscription_key` своим ключом подписки;
+    1. замените значение `vision_base_url` URL-адресом конечной точки ресурса API компьютерного зрения в регионе Azure, где вы получили ключи подписки, если это необходимо;
+    1. при необходимости замените значение `image_url` URL-адресом другого изображения, анализ которого следует выполнить.
+1. Сохраните код как файл с расширением PY (`.py`). Например, `analyze-image.py`.
+1. Откройте окно командной строки.
+1. В командной строке выполните пример кода с помощью команды `python`. Например, `python analyze-image.py`.
 
 ```python
 import requests
 # If you are using a Jupyter notebook, uncomment the following line.
 #%matplotlib inline
 import matplotlib.pyplot as plt
+import json
 from PIL import Image
 from io import BytesIO
 
@@ -89,7 +82,7 @@ response.raise_for_status()
 # The 'analysis' object contains various fields that describe the image. The most
 # relevant caption for the image is obtained from the 'description' property.
 analysis = response.json()
-print(analysis)
+print(json.dumps(response.json()))
 image_caption = analysis["description"]["captions"][0]["text"].capitalize()
 
 # Display the image and overlay it with the caption.
@@ -97,11 +90,12 @@ image = Image.open(BytesIO(requests.get(image_url).content))
 plt.imshow(image)
 plt.axis("off")
 _ = plt.title(image_caption, size="x-large", y=-0.1)
+plt.show()
 ```
 
-## <a name="analyze-image-response"></a>Результат анализа изображения
+## <a name="examine-the-response"></a>Изучите ответ
 
-В случае успешного выполнения возвращается ответ в формате JSON, например:
+Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера веб-страницы и в окне командной строки отобразится успешный ответ, аналогичный следующему:
 
 ```json
 {
@@ -175,9 +169,13 @@ _ = plt.title(image_caption, size="x-large", y=-0.1)
 }
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Удалите файл, если он больше не нужен.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с приложением Python, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с приложением Python, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
 > [Руководство по API компьютерного зрения для Python](../Tutorials/PythonTutorial.md)

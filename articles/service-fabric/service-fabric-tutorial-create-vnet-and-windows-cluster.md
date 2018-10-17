@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/27/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 1ee3000ab26dbb0eea33de828812959fe709aaa2
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 2f503a534f79440e6e6c572b7fb29ce3048ee7bc
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47410023"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48831575"
 ---
 # <a name="tutorial-deploy-a-service-fabric-windows-cluster-into-an-azure-virtual-network"></a>Руководство. Развертывание кластера Service Fabric на платформе Windows в виртуальной сети Azure
 
@@ -88,7 +88,7 @@ ms.locfileid: "47410023"
 
 ### <a name="service-fabric-cluster"></a>Кластер Service Fabric
 
-Кластер Windows развертывается со следующими характеристиками:
+В ресурсе **Microsoft.ServiceFabric/clusters** кластер Windows настроен со следующими характеристиками:
 
 * один тип узла;
 * пять узлов на первичном типе узла (можно настроить в параметрах шаблона);
@@ -103,7 +103,7 @@ ms.locfileid: "47410023"
 
 ### <a name="azure-load-balancer"></a>Azure Load Balancer
 
-Подсистема балансировки нагрузки развернута, а проверки и правила настроены для следующих портов:
+В ресурсе **Microsoft.Network/loadBalancers** настроена подсистема балансировки нагрузки, а также указаны пробы и правила для следующих портов:
 
 * конечная точка подключения клиента: 19000;
 * конечная точка HTTP шлюза: 19080;
@@ -111,16 +111,16 @@ ms.locfileid: "47410023"
 * порт приложения: 443;
 * обратный прокси-сервер Service Fabric: 19081.
 
-Если нужны другие порты приложений, нужно настроить ресурсы Microsoft.Network/loadBalancers и Microsoft.Network/networkSecurityGroups, чтобы разрешить входящий трафик.
+Если нужны другие порты приложений, нужно настроить ресурсы **Microsoft.Network/loadBalancers** и **Microsoft.Network/networkSecurityGroups**, чтобы разрешить входящий трафик.
 
 ### <a name="virtual-network-subnet-and-network-security-group"></a>Виртуальная сеть, подсеть и группа безопасности сети
 
-Названия виртуальной сети, подсети и группы безопасности сети указаны в параметрах шаблона.  В параметрах шаблона также объявляются адресные пространства виртуальной сети и подсети:
+Названия виртуальной сети, подсети и группы безопасности сети указаны в параметрах шаблона.  Адресные пространства виртуальной сети и подсети также объявляются в параметрах шаблона и настраиваются в ресурсе **Microsoft.Network/virtualNetworks**.
 
 * Адресное пространство виртуальной сети: 172.16.0.0/20.
 * Адресное пространство подсети Service Fabric: 172.16.2.0/23.
 
-Следующие правила входящего трафика включены в группе безопасности сети. Значения порта можно изменить, изменив переменные шаблона.
+Следующие правила входящего трафика включаются в ресурсе **Microsoft.Network/networkSecurityGroups** Значения порта можно изменить, изменив переменные шаблона.
 
 * ClientConnectionEndpoint (протокол TCP): 19000.
 * HttpGatewayEndpoint (HTTP или TCP): 19080.
@@ -131,7 +131,7 @@ ms.locfileid: "47410023"
 * Диапазон портов приложений — от 49152 до 65 534 (используются для взаимодействия служб и не открыты в подсистеме балансировки нагрузки).
 * Блокировка остальных портов.
 
-Если нужны другие порты приложений, нужно настроить ресурсы Microsoft.Network/loadBalancers и Microsoft.Network/networkSecurityGroups, чтобы разрешить входящий трафик.
+Если нужны другие порты приложений, нужно настроить ресурсы **Microsoft.Network/loadBalancers** и **Microsoft.Network/networkSecurityGroups**, чтобы разрешить входящий трафик.
 
 ## <a name="set-template-parameters"></a>Установка параметров шаблона
 

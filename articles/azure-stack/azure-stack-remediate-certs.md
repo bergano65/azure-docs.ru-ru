@@ -3,7 +3,7 @@ title: Устранение проблем с сертификатом для Az
 description: Использование средства проверки готовности Azure Stack для просмотра и устранения проблем с сертификатом.
 services: azure-stack
 documentationcenter: ''
-author: brenduns
+author: sethmanheim
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,17 +13,21 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 05/08/2018
-ms.author: brenduns
+ms.author: sethm
 ms.reviewer: ''
-ms.openlocfilehash: 0d2c4d848f861e4e07dbd0de4609344955ca26f7
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 5e96c731496d79ca081091e2059a35545f963bd6
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33937574"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49078642"
 ---
 # <a name="remediate-common-issues-for-azure-stack-pki-certificates"></a>Устранение распространенных проблем с сертификатами PKI Azure Stack
 Сведения в этой статье помогут вам понять и устранить распространенные проблемы с сертификатами PKI Azure Stack. Вы можете обнаруживать проблемы, [проверяя сертификаты PKI Azure Stack](azure-stack-validate-pki-certs.md) с помощью средства проверки готовности Azure Stack. Средство проверяет, чтобы сертификаты соответствовали требованиям PKI к развертыванию и смене секретов Azure Stack, и записывает результаты в файл [report.json](azure-stack-validation-report.md).  
+
+## <a name="pfx-encryption"></a>Шифрование PFX-файлов
+**Ошибка**. Алгоритм шифрования PFX-файлов не соответствует TripleDES-SHA1.   
+**Исправление**. Экспортируйте PFX-файлы, используя шифрование **TripleDES-SHA1**. Это стандартный вариант для всех клиентов Windows 10 при экспорте из оснастки сертификатов или при использовании командлета Export-PFXCertificate. 
 
 ## <a name="read-pfx"></a>Чтение PFX-файла
 **Предупреждение.** Пароль защищает только конфиденциальные сведения в сертификате.  
@@ -66,12 +70,13 @@ ms.locfileid: "33937574"
 
 ## <a name="fix-common-packaging-issues"></a>Устранение распространенных неполадок с упаковкой
 Средство AzsReadinessChecker может импортировать, а затем экспортировать PFX-файл, чтобы устранить неполадки с упаковкой, включая: 
+ - *Алгоритм шифрования PFX-файлов* не соответствует TripleDES-SHA1.
  - Отсутствие атрибута локального компьютера в *закрытом ключе*.
  - Незавершенная или неправильная *цепочка сертификатов*. (Локальный компьютер должен содержать цепочки сертификатов, если их нет в пакете PFX.) 
  - *Другие сертификаты*.
 Однако, если вам нужно создать новый CSR и повторно выдать сертификат, средство AzsReadinessChecker не поможет. 
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 На компьютере, где выполняется средство, должны быть установлены следующие обязательные компоненты: 
  - работает Windows 10 или Windows Server 2016 и есть подключение к Интернету;
  - установлен PowerShell 5.1 или более поздней версии. Чтобы проверить используемую версию, запустите следующий командлет PowerShell и проверьте значения *Major* (основной номер версии) и *Minor* (дополнительный номер версии).

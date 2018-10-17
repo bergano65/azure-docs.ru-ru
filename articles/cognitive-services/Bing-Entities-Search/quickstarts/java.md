@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по Azure Cognitive Services и API "Поиск сущностей Bing" для Java | Документация Майкрософт
-description: Получите информацию и примеры кода, которые помогут вам приступить к работе с API Bing для поиска сущностей с использованием Microsoft Cognitive Services в Azure.
+title: Краткое руководство. API Bing для поиска сущностей с использованием Java
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API Bing для поиска сущностей.
 services: cognitive-services
-documentationcenter: ''
 author: v-jaswel
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-entity-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 11/28/2017
 ms.author: v-jaswel
-ms.openlocfilehash: 9b11471e08360cb5fe92f1506516bf88dd5ee72a
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 0cf1103b37572b43585e4a977dc4d034e7a50e2f
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382309"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48814480"
 ---
-# <a name="quickstart-for-microsoft-bing-entity-search-api-with-java"></a>Краткое руководство по API Bing для поиска сущностей с использованием Java 
-<a name="HOLTop"></a>
+# <a name="quickstart-for-bing-entity-search-api-with-java"></a>Краткое руководство по API Bing для поиска сущностей с использованием Java 
 
 В этой статье описано, как использовать [API Bing для поиска сущностей](https://docs.microsoft.com/azure/cognitive-services/bing-entities-search/search-the-web) с Java.
 
@@ -33,7 +33,7 @@ ms.locfileid: "35382309"
 
 1. Создайте проект Java в любой интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для своей подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```java
@@ -119,7 +119,7 @@ public class EntitySearch {
 
 **Ответ**
 
-Успешный ответ возвращается в формате JSON, как показано в примере ниже: 
+Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
 ```json
 {

@@ -1,5 +1,5 @@
 ---
-title: Обзор виртуальных машин Windows | Документация Майкрософт
+title: Обзор виртуальных машин Windows — Azure | Документация Майкрософт
 description: Узнайте о создании виртуальных машинах Windows в Azure и управлении ими.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -13,15 +13,15 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/17/2017
+ms.date: 10/04/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: e12b8153494eaefb1f7e2d27fc667ef0070c68d0
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 6ec151222bda3d87386cc3be4c54821775880795
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "41919920"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48816843"
 ---
 # <a name="overview-of-windows-virtual-machines-in-azure"></a>Обзор виртуальных машин Windows в Azure
 
@@ -83,9 +83,9 @@ Azure предоставляет множество [образов из Marketp
 | Метод | ОПИСАНИЕ |
 | --- | --- |
 | Портал Azure |При выборе используемого образа значения задаются автоматически. |
-| Azure PowerShell |[Get-AzureRMVMImagePublisher](https://docs.microsoft.com/powershell/module/azurerm.compute/get-azurermvmimagepublisher). Параметр -Location указывает расположение.<BR>[Get-AzureRMVMImageOffer](https://docs.microsoft.com/powershell/module/azurerm.compute/get-azurermvmimageoffer). Параметр -Location указывает расположение, -PublisherName — издателя.<BR>[Get-AzureRMVMImageSku](/powershell/module/azurerm.compute/get-azurermvmimagesku). Параметр -Location указывает расположение, -PublisherName — издателя, а -Offer — предложение. |
+| Azure PowerShell |[Get-AzureRMVMImagePublisher](https://docs.microsoft.com/powershell/module/azurerm.compute/get-azurermvmimagepublisher). Параметр *-Location* указывает расположение.<BR>[Get-AzureRMVMImageOffer](https://docs.microsoft.com/powershell/module/azurerm.compute/get-azurermvmimageoffer). Параметр *-Location* указывает расположение, а *-PublisherName* — имя издателя.<BR>[Get-AzureRMVMImageSku](/powershell/module/azurerm.compute/get-azurermvmimagesku). Параметр *-Location* указывает расположение, *-PublisherName* — имя издателя, а *-Offer* — имя предложение. |
 | Интерфейсы API REST |[Получение списка издателей образов](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publishers)<BR>[Получение списка предложений для образа](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publisher-offers)<BR>[Получение списка SKU для образа](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publisher-offer-skus) |
-| Инфраструктура CLI Azure |[az vm image list-publishers](https://docs.microsoft.com/cli/azure/vm/image?view=azure-cli-latest#az_vm_image_list_publishers). Параметр --location указывает расположение.<BR>[az vm image list-offers](https://docs.microsoft.com/cli/azure/vm/image?view=azure-cli-latest#az_vm_image_list_offers) Параметр --location указывает расположение, --publisher — имя издателя.<BR>[az vm image list-skus](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az_vm_list_skus). Параметр --location указывает расположение, --publisher — имя издателя, а --offer — имя предложения.|
+| Инфраструктура CLI Azure |[az vm image list-publishers](https://docs.microsoft.com/cli/azure/vm/image?view=azure-cli-latest#az_vm_image_list_publishers). Параметр *--location* указывает расположение.<BR>[az vm image list-offers](https://docs.microsoft.com/cli/azure/vm/image?view=azure-cli-latest#az_vm_image_list_offers). Параметр *--location* указывает расположение, *--publisher* — имя издателя.<BR>[az vm image list-skus](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az_vm_list_skus). Параметр *--location* указывает расположение, *--publisher* — имя издателя, а *--offer* — имя предложения.|
 
 Вы можете [передать и использовать собственный образ](upload-generalized-managed.md#upload-the-vhd-to-your-storage-account). В этом случае имя издателя, предложение и SKU не используются.
 
@@ -124,7 +124,7 @@ Azure предоставляет множество [образов из Marketp
 | Интерфейсы API REST |[Создание или обновление виртуальной машины](https://docs.microsoft.com/rest/api/compute/virtualmachines/virtualmachines-create-or-update) |
 | Инфраструктура CLI Azure |[Создание виртуальной машины с помощью Azure CLI](https://docs.microsoft.com/azure/virtual-machines/scripts/virtual-machines-windows-cli-sample-create-vm) |
 
-Так или иначе, иногда вы будете сталкиваться с проблемами. В этом случае см. сведения в статье [Устранение неполадок в развертывании Resource Manager при создании виртуальной машины Windows в Azure](troubleshoot-deployment-new-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Так или иначе, иногда вы будете сталкиваться с проблемами. В этом случае см. сведения в статье [Устранение неполадок в развертывании Resource Manager при создании виртуальной машины Windows в Azure](../troubleshooting/troubleshoot-deployment-new-vm-windows.md).
 
 ## <a name="how-do-i-manage-the-vm-that-i-created"></a>Как управлять созданной виртуальной машиной?
 Управление виртуальными машинами осуществляется с помощью браузерного портала, программ командной строки с поддержкой создания скриптов или напрямую с помощью интерфейсов API. Некоторые стандартные задачи администрирования включают в себя получение сведений о виртуальной машине, вход в виртуальную машину, управление доступностью и архивацию.
@@ -141,10 +141,10 @@ Azure предоставляет множество [образов из Marketp
 | Инфраструктура CLI Azure |Сведения об использовании Azure CLI для управления виртуальными машинами см. в [справочнике по Azure CLI](https://docs.microsoft.com/cli/azure/vm). |
 
 ### <a name="log-on-to-the-vm"></a>Вход в виртуальную машину
-Чтобы [запустить сеанс удаленного рабочего стола](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json), на портале Azure нажмите кнопку "Подключиться". Иногда при попытке использования удаленного подключения может произойти сбой. В этом случае см. справочные сведения в статье [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Чтобы [запустить сеанс удаленного рабочего стола](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json), на портале Azure нажмите кнопку "Подключиться". Иногда при попытке использования удаленного подключения может произойти сбой. В этом случае см. справочные сведения в статье [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](../troubleshooting/troubleshoot-rdp-connection.md).
 
 ### <a name="manage-availability"></a>Управление доступностью
-Важно понимать, как [обеспечить высокий уровень доступности](manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) для приложения. Эта конфигурация требует создания нескольких виртуальных машин, чтобы гарантировать работу хотя бы одной из них.
+Важно понимать, как [обеспечить высокий уровень доступности](manage-availability.md) для приложения. Эта конфигурация требует создания нескольких виртуальных машин, чтобы гарантировать работу хотя бы одной из них.
 
 Чтобы обеспечить соответствие соглашению об уровне обслуживания на 99,95 %, необходимо развернуть две или больше виртуальные машины для выполнения рабочих нагрузок в рамках [группы доступности](tutorial-availability-sets.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Такая конфигурация гарантирует, что виртуальные машины распределяются по нескольким доменам сбоя, а также развертываются на узлах с разными периодами обслуживания. В полном [соглашении об уровне обслуживания Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/) поясняется гарантированная доступность Azure в целом.
 
@@ -152,5 +152,5 @@ Azure предоставляет множество [образов из Marketp
 [Хранилище служб восстановления](../../backup/backup-introduction-to-azure-backup.md) используется для защиты данных и ресурсов в службе архивации Azure и службах Azure Site Recovery. Хранилище служб восстановления позволяет [развертывать резервные копии виртуальных машин, развернутых с помощью Resource Manager, и управлять ими с использованием PowerShell](../../backup/backup-azure-vms-automation.md). 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Если планируется работать с виртуальными машинами Linux, см. сведения в статье [Azure и Linux](../linux/overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
-* Дополнительные рекомендации по настройке инфраструктуры см. в статье [Пошаговое руководство по примеру инфраструктуры Azure](infrastructure-example.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+* Если планируется работать с виртуальными машинами Linux, см. сведения в статье [Azure и Linux](../linux/overview.md).
+* Дополнительные рекомендации по настройке инфраструктуры см. в статье [Пошаговое руководство по примеру инфраструктуры Azure](infrastructure-example.md).

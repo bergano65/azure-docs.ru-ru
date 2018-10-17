@@ -12,12 +12,12 @@ ms.author: daredis
 ms.reviewer: vanto, carlrab
 manager: craigg
 ms.date: 09/07/2018
-ms.openlocfilehash: 7db0276f03511273e2607378f993957ce3a6c094
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: ceed69503900b38d7f6a29bbe116ab9a4d54e396
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47160440"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48857964"
 ---
 # <a name="secure-your-azure-sql-database"></a>Защита базы данных SQL Azure
 
@@ -174,7 +174,7 @@ ms.locfileid: "47160440"
 
 1. В меню слева выберите **Базы данных SQL** и на странице **Базы данных SQL** щелкните имя своей базы данных. 
 
-2. В колонке "Параметры" выберите **Аудит и обнаружение угроз**. Обратите внимание на то, что аудит уровня сервера отключен и в колонке имеется ссылка **Просмотр настроек аудита сервера**, позволяющая просмотреть или изменить настройки аудита сервера в данном контексте.
+2. В колонке "Параметры" выберите **Аудит и обнаружение угроз**. Обратите внимание на то, что аудит на уровне сервера отключен и в колонке имеется ссылка **Просмотреть параметры сервера**, позволяющая просмотреть или изменить настройки аудита сервера в этом контексте.
 
     ![Колонка "Аудит"](./media/sql-database-security-tutorial/auditing-get-started-settings.png)
 

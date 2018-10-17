@@ -5,19 +5,19 @@ services: event-grid
 keywords: ''
 author: tfitzmac
 ms.author: tomfitz
-ms.date: 07/05/2018
+ms.date: 10/09/2018
 ms.topic: quickstart
 ms.service: event-grid
-ms.openlocfilehash: d550812f9cb23fd17d3c73c851a306190be293fa
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 7ca8311c97faed980555c46d977a5df85c20353d
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39423646"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49067468"
 ---
 # <a name="route-custom-events-to-azure-queue-storage-with-azure-cli-and-event-grid"></a>Перенаправление пользовательских событий в хранилище очередей Azure с помощью Azure CLI и службы "Сетка событий"
 
-"Сетка событий Azure" — это служба обработки событий для облака. А хранилище очередей Azure — это один из поддерживаемых обработчиков событий. В этой статье используется интерфейс командной строки Azure, чтобы создать пользовательскую тему, подписаться на тему и активировать событие, чтобы увидеть результат. Вы также отправите события в хранилище очередей.
+"Сетка событий Azure" — это служба обработки событий для облака. А хранилище очередей Azure — это один из поддерживаемых обработчиков событий. В этой статье описано, как с помощью Azure CLI создать пользовательский раздел, подписаться на него и активировать событие для просмотра результата. Вы также отправите события в хранилище очередей.
 
 [!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
 
@@ -39,7 +39,7 @@ az group create --name gridResourceGroup --location westus2
 
 ## <a name="create-a-custom-topic"></a>Создание пользовательской темы
 
-Раздел сетки событий содержит определяемую пользователем конечную точку, в которой можно размещать свои события. В приведенном ниже примере создается пользовательский раздел в вашей группе ресурсов. Замените `<topic_name>` уникальным именем для вашей темы. Имя раздела должно быть уникальным, так как оно представлено записью службы доменных имен (DNS).
+Раздел сетки событий содержит определяемую пользователем конечную точку, в которой можно размещать свои события. В приведенном ниже примере создается пользовательский раздел в вашей группе ресурсов. Замените `<topic_name>` уникальным именем для вашего пользовательского раздела. Имя раздела сетки событий должно быть уникальным, так как оно представлено записью службы доменных имен (DNS).
 
 ```azurecli-interactive
 # if you have not already installed the extension, do it now.
@@ -51,7 +51,7 @@ az eventgrid topic create --name <topic_name> -l westus2 -g gridResourceGroup
 
 ## <a name="create-queue-storage"></a>Создание хранилища очередей
 
-Перед подпиской на раздел необходимо создать конечную точку для сообщения о событии. Хранилище очередей создается для сбора событий.
+Перед подпиской на пользовательский раздел необходимо создать конечную точку для сообщения о событии. Хранилище очередей создается для сбора событий.
 
 ```azurecli-interactive
 storagename="<unique-storage-name>"
@@ -61,9 +61,9 @@ az storage account create -n $storagename -g gridResourceGroup -l westus2 --sku 
 az storage queue create --name $queuename --account-name $storagename
 ```
 
-## <a name="subscribe-to-a-topic"></a>Оформление подписки на тему
+## <a name="subscribe-to-a-custom-topic"></a>Создание подписки на события пользовательского раздела
 
-Подпишитесь на тему, чтобы определить в сетке событий Azure, какие события вам необходимо отслеживать. В следующем примере создается подписка на созданный раздел и передается идентификатор ресурса хранилища очередей для конечной точки. С помощью Azure CLI можно передать идентификатор хранилища очередей в качестве конечной точки. Конечная точка имеет следующий формат:
+Подпишитесь на пользовательский раздел, чтобы определить в Сетке событий, какие события вам необходимо отслеживать. В следующем примере создается подписка на созданный пользовательский раздел и передается идентификатор ресурса хранилища очередей для конечной точки. С помощью Azure CLI можно передать идентификатор хранилища очередей в качестве конечной точки. Конечная точка имеет следующий формат:
 
 `/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/<storage-name>/queueservices/default/queues/<queue-name>`
 
@@ -81,6 +81,8 @@ az eventgrid event-subscription create \
   --endpoint $queueid
 ```
 
+Учетная запись, в который создается подписка на события, должна предоставлять доступ для записи в хранилище очередей.
+
 При использовании REST API для создания подписки идентификатор учетной записи хранения и имя очереди передаются как отдельный параметр.
 
 ```json
@@ -93,22 +95,22 @@ az eventgrid event-subscription create \
   ...
 ```
 
-## <a name="send-an-event-to-your-topic"></a>Отправка события в тему
+## <a name="send-an-event-to-your-custom-topic"></a>Отправка события в пользовательский раздел
 
-Давайте активируем событие, чтобы увидеть, как сообщение отправляется в конечную точку при помощи службы "Сетка событий". Сначала получите URL-адрес и ключ для пользовательского раздела. Еще раз используйте имя раздела для `<topic_name>`.
+Давайте активируем событие, чтобы увидеть, как сообщение отправляется в конечную точку при помощи службы "Сетка событий". Сначала получите URL-адрес и ключ для пользовательского раздела. Снова используйте имя пользовательского раздела для `<topic_name>`.
 
 ```azurecli-interactive
 endpoint=$(az eventgrid topic show --name <topic_name> -g gridResourceGroup --query "endpoint" --output tsv)
 key=$(az eventgrid topic key list --name <topic_name> -g gridResourceGroup --query "key1" --output tsv)
 ```
 
-Для простоты используйте пример данных события для отправки в раздел. Как правило, приложение или служба Azure отправит данные события. CURL — это служебная программа, которая отправляет HTTP-запросы. В этой статье мы используем CURL для отправки события в раздел.  В следующем примере в раздел сетки событий отправляется три события:
+Для простоты используйте пример данных события для отправки в пользовательский раздел. Как правило, приложение или служба Azure отправит данные события. CURL — это служебная программа, которая отправляет HTTP-запросы. В этой статье мы используем CURL для отправки события в пользовательский раздел.  В следующем примере в раздел сетки событий отправляется три события:
 
 ```azurecli-interactive
 for i in 1 2 3
 do
-   body=$(eval echo "'$(curl https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/event-grid/customevent.json)'")
-   curl -X POST -H "aeg-sas-key: $key" -d "$body" $endpoint
+   event='[ {"id": "'"$RANDOM"'", "eventType": "recordInserted", "subject": "myapp/vehicles/motorcycles", "eventTime": "'`date +%Y-%m-%dT%H:%M:%S%z`'", "data":{ "make": "Ducati", "model": "Monster"},"dataVersion": "1.0"} ]'
+   curl -X POST -H "aeg-sas-key: $key" -d "$event" $endpoint
 done
 ```
 

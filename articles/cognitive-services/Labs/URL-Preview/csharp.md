@@ -1,21 +1,23 @@
 ---
-title: Краткое руководство по C#. Использование службы предварительного просмотра URL-адресов в проектах в Microsoft Cognitive Services | Документация Майкрософт
-description: Начало работы со службой предварительного просмотра URL-адресов в проектах, входящей в состав Microsoft Cognitive Services в Azure.
+title: Краткое руководство по использованию C# для службы предварительного просмотра URL-адресов в проектах
+titlesuffix: Azure Cognitive Services
+description: Начало работы со службой предварительного просмотра URL-адресов в проектах с использованием C#.
 services: cognitive-services
 author: mikedodaro
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: project-url-preview
-ms.topic: article
+ms.component: project-url-preview
+ms.topic: quickstart
 ms.date: 03/16/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: 17d44bd0c23d0a1e67da5a0e91248700d3166c1a
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: rosh
+ms.openlocfilehash: 8d31d3a83f9873ce550b9c78626eea0d96ac39bb
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381776"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48867448"
 ---
-# <a name="url-preview-query-in-c"></a>Запрос на предварительный просмотр URL-адреса в C#
+# <a name="quickstart-url-preview-query-in-c"></a>Краткое руководство. Запрос на предварительный просмотр URL-адреса в C#
 
 Следующий пример C# создает представление для предварительного просмотра URL-адреса веб-сайта SwiftKey: https://swiftkey.com/en.
 
@@ -161,7 +163,7 @@ namespace UrlPrevCshp
 4. Запустите программу.
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Краткое руководство — Java](java-quickstart.md)
-- [Краткое руководство — JavaScript](javascript.md)
-- [Краткое руководство — Node](node-quickstart.md)
-- [Краткое руководство — Python](python-quickstart.md)
+- [Краткое руководство для Java](java-quickstart.md)
+- [Краткое руководство для JavaScript](javascript.md)
+- [Краткое руководство для Node](node-quickstart.md)
+- [Краткое руководство для Python](python-quickstart.md)

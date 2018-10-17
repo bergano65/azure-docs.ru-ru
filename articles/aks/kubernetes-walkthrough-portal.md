@@ -1,20 +1,19 @@
 ---
-title: Краткое руководство по порталу кластера Azure Kubernetes
-description: Вы быстро научитесь создавать кластер Kubernetes для контейнеров Linux в AKS при помощи портала Azure.
+title: Краткое руководство. Создание кластера Службы Azure Kubernetes на портале
+description: Узнайте, как с помощью портала Azure быстро создать кластер Службы Azure Kubernetes Service (AKS), а затем развертывать и отслеживать приложения.
 services: container-service
 author: iainfoulds
-manager: jeconnoc
 ms.service: container-service
 ms.topic: quickstart
-ms.date: 07/27/2018
+ms.date: 09/24/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: aceddc2594065c9c36f8dbf63fce2ad03577a383
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 5d70f00294b1f08d2cc4cede6575efd3149599dd
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39443373"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49067467"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster"></a>Краткое руководство по развертыванию кластера службы Azure Kubernetes (AKS)
 
@@ -40,15 +39,13 @@ ms.locfileid: "39443373"
     - *Масштаб*. Выберите размер виртуальной машины для узлов AKS. Размер виртуальной машины **невозможно** изменить после развертывания кластера с AKS.
         - Выберите количество узлов для развертывания в кластере. В этом кратком руководстве задайте параметру **Число узлов** значение *1*. Количество узлов **можно** изменить после развертывания кластера.
     
-    ![Создание кластера AKS — предоставление основных сведений](media/kubernetes-walkthrough-portal/create-cluster-1.png)
+    ![Создание кластера AKS — предоставление основных сведений](media/kubernetes-walkthrough-portal/create-cluster-basics.png)
 
     По завершении выберите **Далее: проверка подлинности**.
 
 1. **Проверка подлинности**. Настройте следующие параметры.
     - Создайте новую субъект-службу или *настройте* для использования существующую. При использовании существующего имени субъекта-службы необходимо указать для него идентификатор клиента и секрет.
     - Включите параметр для элементов управления доступом на основе ролей (RBAC) Kubernetes. Эти элементы управления предоставляют более точный контроль над доступом к ресурсам Kubernetes, развернутых в кластере AKS.
-
-    ![Создание кластера AKS — настройка проверки подлинности](media/kubernetes-walkthrough-portal/create-cluster-2.png)
 
     По завершении выберите **Next: Networking** (Далее: сети).
 
@@ -59,7 +56,7 @@ ms.locfileid: "39443373"
     
     По завершении выберите **Next: Monitoring** (Далее: мониторинг).
 
-1. При развертывании кластера AKS службу аналитики для контейнеров Azure можно настроить для отслеживания работоспособности кластера AKS и модулей pod, работающих в кластере. Дополнительные сведения о мониторинге работоспособности контейнеров см. в разделе [Мониторинг работоспособности службы Azure Kubernetes (AKS) (предварительная версия)][aks-monitor].
+1. При развертывании кластера AKS службу Azure Monitor для контейнеров можно настроить для отслеживания работоспособности кластера AKS и модулей pod, работающих в кластере. Дополнительные сведения о мониторинге работоспособности контейнеров см. в разделе [Мониторинг работоспособности службы Azure Kubernetes (AKS) (предварительная версия)][aks-monitor].
 
     Выберите **Yes** (Да), чтобы включить мониторинг контейнеров, и выберите существующую рабочую область Log Analytics или создайте новую.
     
@@ -93,7 +90,7 @@ kubectl get nodes
 
 ```
 NAME                       STATUS    ROLES     AGE       VERSION
-aks-agentpool-14693408-0   Ready     agent     10m       v1.10.5
+aks-agentpool-14693408-0   Ready     agent     10m       v1.11.2
 ```
 
 ## <a name="run-the-application"></a>Выполнение приложения
@@ -117,6 +114,13 @@ spec:
       containers:
       - name: azure-vote-back
         image: redis
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
         ports:
         - containerPort: 6379
           name: redis
@@ -145,6 +149,13 @@ spec:
       containers:
       - name: azure-vote-front
         image: microsoft/azure-vote-front:v1
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
         ports:
         - containerPort: 80
         env:
@@ -209,13 +220,20 @@ azure-vote-front   LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
 
 При создании кластера была включена аналитика для мониторинга контейнеров. Эта функция мониторинга предоставляет метрики работоспособности кластера AKS и модулей, запущенных в кластере. Дополнительные сведения о мониторинге работоспособности контейнеров см. в разделе [Мониторинг работоспособности службы Azure Kubernetes (AKS) (предварительная версия)][aks-monitor].
 
-Он может потребоваться несколько минут, чтобы эти данные отобразились на портале Azure. Чтобы просмотреть текущее состояние, время непрерывной работы и использование ресурсов для модулей pod Azure для голосования, перейдите обратно к ресурсу AKS на портале Azure, например *myAKSCluster*. Выберите **Работоспособность контейнера монитора**, а затем — пространство имен **по умолчанию** и выберите **Контейнеры**.  Представление контейнеров *azure-vote-back* и *azure-vote-front*.
+Он может потребоваться несколько минут, чтобы эти данные отобразились на портале Azure. Чтобы просмотреть текущее состояние, время непрерывной работы и использование ресурсов для модулей pod Azure для голосования, перейдите обратно к ресурсу AKS на портале Azure, например *myAKSCluster*. Сведения о состоянии работоспособности можно получить следующим образом:
+
+1. В разделе **Мониторинг** в левой части окна выберите **Insights (Предварительная версия)**
+1. В верхней части выберите **+Добавить фильтр**.
+1. Выберите *Пространство имен* как свойство, а затем — элемент *\<All but kube-system\>* (Все, кроме kube-system).
+1. Выберите **Контейнеры** для просмотра.
+
+Отобразятся представления контейнеров *azure-vote-back* и *azure-vote-front*, как показано ниже:
 
 ![Представление работоспособности запущенных контейнеров в AKS](media/kubernetes-walkthrough-portal/monitor-containers.png)
 
-Чтобы просмотреть журналы для модуля pod `azure-vote-front`, щелкните ссылку **Просмотреть журналы** в правой части списка контейнеров. Эти журналы содержат потоки *stdout* и *stderr* из контейнера.
+Чтобы просмотреть журналы для модуля pod `azure-vote-front`, щелкните ссылку **Просмотреть журналы контейнера** в правой части списка контейнеров. Эти журналы содержат потоки *stdout* и *stderr* из контейнера.
 
-![Представление журналов контейнеров в AKS](media/kubernetes-walkthrough-portal/monitor-containers-logs.png)
+![Представление журналов контейнеров в AKS](media/kubernetes-walkthrough-portal/monitor-container-logs.png)
 
 ## <a name="delete-cluster"></a>Удаление кластера
 
@@ -224,6 +242,9 @@ azure-vote-front   LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
 ```azurecli-interactive
 az aks delete --resource-group myResourceGroup --name myAKSCluster --no-wait
 ```
+
+> [!NOTE]
+> Когда вы удаляете кластер, субъект-служба Azure Active Directory, используемый в кластере AKS, не удаляется. Инструкции по удалению субъекта-службы см. в разделе [Дополнительные замечания][sp-delete].
 
 ## <a name="get-the-code"></a>Получение кода
 
@@ -258,3 +279,4 @@ az aks delete --resource-group myResourceGroup --name myAKSCluster --no-wait
 [aks-network]: ./networking-overview.md
 [aks-tutorial]: ./tutorial-kubernetes-prepare-app.md
 [http-routing]: ./http-application-routing.md
+[sp-delete]: kubernetes-service-principal.md#additional-considerations

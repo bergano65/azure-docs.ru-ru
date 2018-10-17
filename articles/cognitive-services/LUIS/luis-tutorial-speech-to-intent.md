@@ -6,16 +6,16 @@ services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
-ms.technology: language-understanding
-ms.topic: article
+ms.component: language-understanding
+ms.topic: tutorial
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 14956fd716a6939d5e7dd9d670cc78b58adf7f45
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: f98d640f032fed5f91df8e9d4fb55d3f20550339
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47042080"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48883930"
 ---
 # <a name="integrate-speech-service"></a>Интеграция службы распознавания речи
 [Служба распознавания речи](https://docs.microsoft.com/azure/cognitive-services/Speech-Service/) позволяет использовать один запрос для получения аудио и возврата объектов JSON с предсказаниями LUIS. В этой статье описано, как загрузить и использовать проект C# в Visual Studio, чтобы произнести фразу в микрофон и получить информацию о предсказании LUIS. В этом проекте используется уже включенный в качестве ссылки пакет [NuGet](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/) для распознавания речи. 
@@ -26,7 +26,7 @@ ms.locfileid: "47042080"
 На портале Azure [создайте](luis-how-to-azure-subscription.md#create-luis-endpoint-key) ключ **службы "Распознавание речи"** (LUIS). 
 
 ## <a name="import-human-resources-luis-app"></a>Импорт приложения LUIS Human Resources
-Намерения и фразы для этой статьи взяты из приложения LUIS Human Resources, доступного в репозитории GitHub [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples). Загрузите файл [HumanResources.json](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/HumanResources.json), сохраните его с расширением JSON и [импортируйте](luis-how-to-start-new-app.md#import-new-app) в LUIS. 
+Намерения и фразы для этой статьи взяты из приложения LUIS Human Resources, доступного в репозитории GitHub [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples). Скачайте файл [HumanResources.json](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/HumanResources.json), сохраните его с расширением `.json`, а затем — [импортируйте](luis-how-to-start-new-app.md#import-new-app) в LUIS. 
 
 Это приложение имеет намерения, сущности и фразы, относящиеся к кадровым ресурсам. Ниже приведены примеры фраз.
 
@@ -68,57 +68,29 @@ ms.locfileid: "47042080"
 [![](./media/luis-tutorial-speech-to-intent/nuget-package.png "Снимок экрана Visual Studio 2017 с пакетом NuGet Microsoft.CognitiveServices.Speech")](./media/luis-tutorial-speech-to-intent/nuget-package.png#lightbox)
 
 ## <a name="modify-the-c-code"></a>Изменение кода C#
-Откройте файл **LUIS_samples.cs** и измените следующие переменные:
+Откройте файл `Program.cs` и измените следующие переменные:
 
 |Имя переменной|Назначение|
 |--|--|
-|luisSubscriptionKey|Соответствует значению ключа подписки в URL-адресе конечной точки со страницы публикации|
-|luisRegion|Соответствует первому поддомену URL-адреса конечной точки|
-|luisAppId|Соответствует URL-адресу конечной точки после **apps/**|
+|LUIS_assigned_endpoint_key|Соответствует значению ключа подписки в URL-адресе конечной точки со страницы публикации|
+|LUIS_endpoint_key_region|Соответствует первому поддомену URL-адреса конечной точки, например `westus`|
+|LUIS_app_ID|Соответствует URL-адресу конечной точки после **apps/**|
 
-[![](./media/luis-tutorial-speech-to-intent/change-variables.png "Снимок экрана Visual Studio 2017 с отображением переменных LUIS_samples.cs")](./media/luis-tutorial-speech-to-intent/change-variables.png#lightbox)
-
-В файле уже сопоставлены намерения Human Resources.
-
-[![](./media/luis-tutorial-speech-to-intent/intents.png "Снимок экрана Visual Studio 2017 с отображением намерений LUIS_samples.cs")](./media/luis-tutorial-speech-to-intent/intents.png#lightbox)
+В файле `Program.cs` уже сопоставлены намерения из приложения Human Resources.
 
 Выполните сборку и запустите приложение. 
 
 ## <a name="test-code-with-utterance"></a>Проверка кода с фразой
-Выберите **1** и скажите в микрофон: "Who is the manager of John Smith".
+Скажите в микрофон: "Who are the approved dentists in Redmond?" (Какие в Редмонде есть сертифицированные стоматологи?).
 
-```cmd
-1. Speech recognition of LUIS intent.
-0. Stop.
-Your choice: 1
-LUIS...
-Say something...
-ResultId:cc83cebc9d6040d5956880bcdc5f5a98 Status:Recognized IntentId:<GetEmployeeOrgChart> Recognized text:<Who is the manager of John Smith?> Recognized Json:{"DisplayText":"Who is the manager of John Smith?","Duration":25700000,"Offset":9200000,"RecognitionStatus":"Success"}. LanguageUnderstandingJson:{
-  "query": "Who is the manager of John Smith?",
-  "topScoringIntent": {
-    "intent": "GetEmployeeOrgChart",
-    "score": 0.617331
-  },
-  "entities": [
-    {
-      "entity": "manager of john smith",
-      "type": "builtin.keyPhrase",
-      "startIndex": 11,
-      "endIndex": 31
-    }
-  ]
-}
+[!code-console[Command line response from spoken utterance](~/samples-luis/documentation-samples/tutorial-speech-intent-recognition/console-output.txt "Command line response from spoken utterance")]
 
-Recognition done. Your Choice:
-
-```
-
-Правильное намерение **GetEmployeeOrgChart** обнаружено с показателем точности 61 %. Сущность keyPhrase была возвращена. 
+Правильное намерение, **GetEmployeeBenefits**, обнаружено с показателем точности 85 %. Сущность keyPhrase была возвращена. 
 
 Пакет SDK для распознавания речи возвращает полный ответ LUIS. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS HumanResources, если оно больше не нужно. Для этого нажмите кнопку многоточия (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
+Удалите приложение LUIS HumanResources, если оно больше не нужно. Для этого выберите приложение, а затем на контекстной панели инструментов над списком щелкните **Delete** (Удалить). Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
 
 Не забудьте удалить каталог LUIS-Samples, когда вы закончите использовать пример кода.
 

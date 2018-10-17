@@ -1,28 +1,29 @@
 ---
-title: Краткое руководство. Использование Azure Cognitive Services и API "Поиск новостей Bing" для C# | Документация Майкрософт
-description: В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API Bing для поиска новостей, который входит в состав Microsoft Cognitive Services в Azure.
+title: Краткое руководство по API Bing для поиска новостей с использованием C#
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API Bing для поиска новостей.
 services: cognitive-services
-documentationcenter: ''
 author: v-jerkin
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-news-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 9/21/2017
 ms.author: v-jerkin
-ms.openlocfilehash: 0364d5754539c0e83318d595fd00b3e7b7e79c08
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 48c6bf413ab2b5a45b5daa54ad31afe2c0fdf8f1
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382328"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48804272"
 ---
-# <a name="quickstart-for-bing-news-search-api-with-c"></a>Краткое руководство по API Bing для поиска новостей с использованием C#
+# <a name="quickstart-bing-news-search-api-with-c"></a>Краткое руководство по API Bing для поиска новостей с использованием C#
 
 В этой статье показано, как использовать API-интерфейсы поиска Bing, входящие в состав Microsoft Cognitive Services в Azure. Хотя в статье представлены сведения для языка C#, этот API является веб-службой RESTful, совместимой с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON. 
 
 Пример кода написан на языке C# как приложение .NET Core с минимальными внешними зависимостями, поэтому его также можно запустить в Linux или Mac OS X с помощью Mono.
 
-Технические сведения об интерфейсах API приведены в [справочнике по API](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference).
+Технические сведения об API-интерфейсах см. в [справочнике по API](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -34,7 +35,7 @@ ms.locfileid: "35382328"
 
 1. В Visual Studio (подойдет выпуск Community Edition) создайте консольное приложение.
 1. Замените файл Program.cs кодом, указанным ниже.
-1. Замените значение `accessKey` ключом доступа, допустимым для своей подписки.
+1. Замените значение `accessKey` ключом доступа, допустимым для подписки.
 1. Запустите программу.
 
 ```csharp
@@ -190,7 +191,7 @@ namespace BingNewsSearchCSharpCore
 
 **Ответ**
 
-Успешный ответ возвращается в формате JSON, как показано в примере ниже:
+Успешный ответ возвращается в формате JSON, как показано в примере ниже.
 
 ```json
 {

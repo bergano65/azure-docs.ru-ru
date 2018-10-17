@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/28/2018
+ms.date: 10/04/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: e984dc985100bcdabbee4fb86bd1819a329301a5
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 95a0ffc6deecb7fd3bd6fce740f578352fdf2d66
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452638"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48888159"
 ---
 # <a name="custom-installation-of-azure-ad-connect"></a>Выборочная установка Azure AD Connect
 **Настраиваемые параметры** в Azure AD Connect используются, когда для установки необходимо указать больше параметров. В частности, если есть несколько лесов или требуется настроить дополнительные компоненты, которые не входят в экспресс-установку. Они также используются в тех случаях, когда [**экспресс-установка**](how-to-connect-install-express.md) не соответствует требованиям развертывания или топологии.
@@ -156,12 +156,19 @@ ms.locfileid: "47452638"
 ### <a name="optional-features"></a>Дополнительные функции
 В этом диалоговом окне вы можете выбрать дополнительные функции для конкретных сценариев.
 
+>[!WARNING]
+>Средство Azure AD Connect **1.0.8641.0** и более ранних версий связано со службой контроля доступа Azure для компонента обратной записи паролей.  Поддержка этой службы будет прекращена **7 ноября 2018 года**.  Если вы используете любую из этих версий Azure AD Connect и включили компонент обратной записи паролей, возможно, пользователи не смогут изменить или сбросить свои пароли после прекращения поддержки службы. Компонент обратной записи паролей не будет поддерживаться с этими версиями Azure AD Connect.
+>
+>Дополнительные сведения см. в статье о [миграции из Службы контроля доступа Azure](../develop/active-directory-acs-migration.md)
+>
+>Чтобы загрузить новейшую версию Azure AD Connect, щелкните [здесь](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
+
 ![Дополнительные функции](./media/how-to-connect-install-custom/optional2.png)
 
 > [!WARNING]
 > Если у вас запущено средство синхронизации DirSync или Azure AD Sync, не активируйте функции обратной записи в Azure AD Connect.
->
->
+
+
 
 | Дополнительные функции | ОПИСАНИЕ |
 | --- | --- |
@@ -190,6 +197,9 @@ ms.locfileid: "47452638"
 
 ### <a name="directory-extension-attribute-sync"></a>Синхронизация атрибутов расширения каталога
 Вы можете расширить схему в Azure AD, используя настраиваемые атрибуты, добавленные в вашей организации, или другие атрибуты в Active Directory. Чтобы использовать эту функцию, на странице **Дополнительные возможности** щелкните **Directory Extension attribute sync** (Синхронизация атрибутов расширений каталога). На этой странице можно выбрать дополнительные атрибуты для синхронизации.
+
+>[!NOTE]
+>Значения в поле доступных атрибутов следует вводить с учетом регистра.
 
 ![Расширения каталогов](./media/how-to-connect-install-custom/extension2.png)
 

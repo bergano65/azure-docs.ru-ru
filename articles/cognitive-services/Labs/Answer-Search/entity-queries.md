@@ -1,22 +1,23 @@
 ---
-title: Запрос сущностей из службы поиска ответов в проектах в Microsoft Cognitive Services | Документация Майкрософт
+title: 'Краткое руководство: Запрос сущностей API поиска ответов в проекте'
+titlesuffix: Azure Cognitive Services
 description: Запросы сущностей с использованием службы поиска ответов в проектах.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: project-answer-search
-ms.topic: article
+ms.component: project-answer-search
+ms.topic: quickstart
 ms.date: 04/16/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: 2b8382b791c02514e5110097700e223d98fafd6a
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: rosh
+ms.openlocfilehash: 0845f491772b905599bb60e8ec555d14b6d6b15f
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381744"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48883607"
 ---
-# <a name="query-for-entities"></a>Запрос для сущностей
+# <a name="quickstart-query-for-entities"></a>Краткое руководство: Запрос сущностей
 
 Если запрос извлекает сведения о человеке, месте или предмете, результат может содержать ответ `entities`.  Запросы всегда возвращают веб-страницы, [факты](fact-queries.md) и (или) [сущности](entity-queries.md), которые зависят от запроса.
 

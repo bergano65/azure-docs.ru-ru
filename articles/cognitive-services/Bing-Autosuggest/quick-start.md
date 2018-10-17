@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по API автозаполнения | Документация Майкрософт
+title: Краткое руководство. API автозаполнения Bing
+titlesuffix: Azure Cognitive Services
 description: В этой статье показано, как начать работу с API автозаполнения Bing.
 services: cognitive-services
 author: swhite-msft
-manager: ehansen
-ms.assetid: 1482E781-7352-4A3F-B1D5-B896381348C4
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-autosuggest
-ms.topic: article
+ms.topic: quickstart
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: a7b54a1fb0b7c76eb72097357a6b51aa02e6e2fd
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 446d271854a4e45bcea8c261a0dc078e549f8229
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382144"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48830759"
 ---
-# <a name="making-your-first-autosuggest-query"></a>Создание первого запроса для Автозаполнения
+# <a name="quickstart-making-your-first-autosuggest-query"></a>Краткое руководство. Создание первого запроса к API автозаполнения Bing
 
 Прежде чем выполнить первый вызов, необходимо получить ключ подписки Cognitive Services. Сведения о получении ключа см. на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=autosuggest-api).
 
@@ -36,20 +36,20 @@ https://api.cognitive.microsoft.com/bing/v5.0/Suggestions
 
 В запросе должен использоваться протокол HTTPS.
 
-Рекомендуется, чтобы все запросы поступали с сервера. Распространение ключа в рамках клиентского приложения создает больше возможностей для доступа злоумышленников к нему. Осуществление вызовов с сервера также предоставляет единую точку обновления для будущих версий API.
+Рекомендуется, чтобы все запросы поступали с сервера. Распространение ключа в рамках клиентского приложения создает больше возможностей для доступа к нему злоумышленников. Осуществление вызовов с сервера также предоставляет единую точку обновления для будущих версий API.
 
 В запросе необходимо указать параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#query), который содержит частичный поисковый запрос пользователя. В запросе также можно указать необязательный параметр [mkt](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#mkt), который определяет рынок, для которого будут отображаться результаты. Список необязательных параметров запроса см. в [этом разделе](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#query-parameters). Все значения параметров запроса должны быть указаны в формате URL-адреса.
 
 Запрос должен содержать заголовок [Ocp-Apim-Subscription-Key](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#subscriptionkey). Приведенные ниже заголовки являются необязательными, но их также рекомендуется указать:
 
-- [User-Agent](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#useragent);
-- [X-MSEdge-ClientID](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#clientid);
-- [X-Search-ClientIP](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#clientip);
-- [X-Search-Location](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#location).
+- [User-Agent](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#useragent)
+- [X-MSEdge-ClientID](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#clientid)
+- [X-Search-ClientIP](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#clientip)
+- [X-Search-Location](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#location)
 
-Заголовки IP-адреса и расположения клиента требуются для отображения содержимого с учетом расположения.
+Заголовки IP-адреса и расположения клиента важны для отображения содержимого с учетом расположения.
 
-Список всех заголовков в запросах и ответах см. в разделе [Заголовки](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#headers).
+Список всех заголовков в запросах и ответах приведен в разделе [Заголовки](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#headers).
 
 ## <a name="the-request"></a>Запрос
 

@@ -3,7 +3,7 @@ title: Создание предложения в Azure Stack | Документ
 description: Узнайте, как администратор облака может создать предложение для пользователей в Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: brenduns
+author: sethmanheim
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,21 +11,21 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/20/2018
-ms.author: brenduns
+ms.date: 09/12/2018
+ms.author: sethm
 ms.reviewer: efemmano
-ms.openlocfilehash: 66a89c3cb14dd642ae993cbf3c45885635f59759
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 4ccff997c7e9f29aafc6966730ab36dfcf72ca9f
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "43050474"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49077346"
 ---
 # <a name="create-an-offer-in-azure-stack"></a>Создание предложения в Azure Stack
 
 [Предложения](azure-stack-key-features.md) — это группы, содержащие один или несколько планов, которые поставщики предлагают пользователям купить (подписаться на них). В этом документе показано, как создать предложение, которое включает в себя [созданный план](azure-stack-create-plan.md). Это предложение даст подписчикам возможность настраивать виртуальные машины.
 
-1. Войдите на портал администрирования Azure Stack (https://adminportal.local.azurestack.external) и выберите **Создать** > **Предложения и планы клиента** > **Предложение**.
+1. Войдите на портал администрирования Azure Stack (https://adminportal.local.azurestack.external) и выберите **Создать ресурс** > **Tenant Offers + Plans** (Предложения и планы клиента) > **Предложение**.
 
    ![Создание предложения](media/azure-stack-create-offer/image01.png)
   

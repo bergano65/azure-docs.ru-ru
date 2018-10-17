@@ -12,14 +12,14 @@ ms.devlang: NA
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 09/25/2018
+ms.date: 10/10/2018
 ms.author: alkohli
-ms.openlocfilehash: 9bc84a9b08c4cfbdf7f24416c923e0dbd7076556
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: d606b7b536147b7e1d96bfb6cebf2522e5b4f85f
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47161936"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49078864"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box"></a>Руководство: копирование данных в Azure Data Box 
 
@@ -88,11 +88,11 @@ ms.locfileid: "47161936"
     The command completed successfully.
     ```
 
-4. Нажмите клавиши WINDOWS+R. В окне **Выполнить** введите `\\<device IP address>`. Последовательно выберите **ОК**. Откроется проводник.
+4. Нажмите клавиши WINDOWS+R. В окне **Выполнить** введите `\\<device IP address>`. Последовательно выберите **ОК**. Откроется проводник. Должны отобразиться папки, в том числе общие.
     
     ![Подключение к общей папке с помощью проводника 2](media/data-box-deploy-copy-data/connect-shares-file-explorer1.png)
 
-5. Должны отобразиться папки, в том числе общие. Создайте папку для файлов, которые вы собираетесь скопировать (в этом случае шаблоны). Иногда папки могут быть помечены серым крестом. Этот крест не означает ошибку. Папки помечены приложением для отслеживания их состояния.
+5.  **Всегда создавайте отдельную папку для файлов, которые вы собираетесь скопировать в общую папку**. Иногда папки могут быть помечены серым крестом. Этот крест не означает ошибку. Папки помечены приложением для отслеживания их состояния.
     
     ![Подключение к общей папке с помощью проводника 2](media/data-box-deploy-copy-data/connect-shares-file-explorer2.png) ![Подключение к общей папке с помощью проводника 2](media/data-box-deploy-copy-data/connect-shares-file-explorer2.png) 
 
@@ -239,11 +239,14 @@ ms.locfileid: "47161936"
 
  - Установите пакет **CIFS Utils** или **NFS Utils** (в зависимости от того, какая файловая система используется в клиенте с ОС Linux).
 
-    `sudo apt-get install cifs-utils` `sudo apt-get install nfs-utils`
+    `sudo apt-get install cifs-utils`
+
+    `sudo apt-get install nfs-utils`
 
  -  Установите программу **Rsync** и **Parallel** (в зависимости от версии используемого дистрибутива ОС Linux).
 
     `sudo apt-get install rsync`
+   
     `sudo apt-get install parallel` 
 
  - Создайте точку подключения.

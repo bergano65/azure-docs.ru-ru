@@ -9,22 +9,22 @@ author: nacharya1
 ms.author: nilesha
 ms.reviewer: sgilley
 ms.date: 09/24/2018
-ms.openlocfilehash: 1db13ee31ea826833d2b13f20b3b0a2be8ef4444
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: df1c19c0e16b9862b09dcc652ef2831e0c5bf3a5
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47220874"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48802361"
 ---
-# <a name="tutorial-train-a-classification-model-with-automated-machine-learning-in-azure-machine-learning"></a>Руководство. Автоматическое машинное обучение модели классификации с помощью Машинного обучения Azure
+# <a name="tutorial-train-a-classification-model-with-automated-machine-learning-in-azure-machine-learning-service"></a>Руководство. Автоматическое машинное обучение модели классификации в службе "Машинное обучение Azure"
 
-В этом руководстве вы узнаете, как создать модель машинного обучения с помощью автоматического машинного обучения.  Машинное обучение Azure может автоматически выполнять предварительную обработку данных, а также выбор алгоритма и гиперпараметров. Затем окончательная модель может быть развернута в соответствии с рабочим процессом, приведенным в руководстве по [развертыванию модели](tutorial-deploy-models-with-aml.md).
+В этом руководстве вы узнаете, как создать модель машинного обучения с помощью автоматического машинного обучения.  Служба "Машинное обучение Azure" может автоматически выполнять предварительную обработку данных, а также выбор алгоритма и гиперпараметров. Затем окончательная модель может быть развернута в соответствии с рабочим процессом, приведенным в руководстве по [развертыванию модели](tutorial-deploy-models-with-aml.md).
 
-[ ![Схема процесса](./media/tutorial-auto-train-models/flow2.png) ](./media/tutorial-auto-train-models/flow2.png#lightbox)
+![Схема процесса](./media/tutorial-auto-train-models/flow2.png)
 
 Как и в [руководстве по обучению моделей](tutorial-train-models-with-aml.md), в этом руководстве выполняется классификация изображений рукописных цифр (0–9) из набора данных [MNIST](http://yann.lecun.com/exdb/mnist/). Но сейчас не требуется указывать алгоритм или настраивать гиперпараметры. Метод автоматического машинного обучения позволяет выполнить итерацию множества сочетаний алгоритмов и гиперпараметров, пока не будет найдена лучшая модель на основе выбранных критериев.
 
-Вы изучите следующие темы:
+Вы узнаете, как:
 
 > [!div class="checklist"]
 > * Настройка среды разработки
@@ -38,7 +38,8 @@ ms.locfileid: "47220874"
 
 ## <a name="get-the-notebook"></a>Получение записной книжки
 
-Для удобства это руководство доступно в виде Jupyter Notebook. Используйте любой из приведенных далее методов для запуска записной книжки `tutorials/03.auto-train-models.ipynb`.
+Для удобства это руководство доступно в виде [записной книжки Jupyter](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/03.auto-train-models.ipynb). Запустите записную книжку `03.auto-train-models.ipynb` в службе "Записные книжки Azure" или на своем сервере Jupyter Notebook.
+
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-in-azure-notebook.md)]
 
@@ -104,13 +105,9 @@ from sklearn import datasets
 
 digits = datasets.load_digits()
 
-# only take the first 100 rows if you want the training steps to run faster
-X_digits = digits.data[:100,:]
-y_digits = digits.target[:100]
-
-# use full dataset
-#X_digits = digits.data
-#y_digits = digits.target
+# Exclude the first 100 rows from training so that they can be used for test.
+X_train = digits.data[100:,:]
+y_train = digits.target[100:]
 ```
 
 ### <a name="display-some-sample-images"></a>Отображение некоторых примеров изображений
@@ -121,13 +118,13 @@ y_digits = digits.target[:100]
 count = 0
 sample_size = 30
 plt.figure(figsize = (16, 6))
-for i in np.random.permutation(X_digits.shape[0])[:sample_size]:
+for i in np.random.permutation(X_train.shape[0])[:sample_size]:
     count = count + 1
     plt.subplot(1, sample_size, count)
     plt.axhline('')
     plt.axvline('')
-    plt.text(x = 2, y = -2, s = y_digits[i], fontsize = 18)
-    plt.imshow(X_digits[i].reshape(8, 8), cmap = plt.cm.Greys)
+    plt.text(x = 2, y = -2, s = y_train[i], fontsize = 18)
+    plt.imshow(X_train[i].reshape(8, 8), cmap = plt.cm.Greys)
 plt.show()
 ```
 Случайный пример изображений приведен ниже.
@@ -153,7 +150,7 @@ plt.show()
 |**iterations**|20|Число итераций. В каждой итерации модель обучается на данных с помощью определенного конвейера.|
 |**n_cross_validations**|3|Количество разделений перекрестной проверки.|
 |**preprocess**|Ложь| *True или False* Позволяет эксперименту выполнять предварительную обработку входных данных.  На этом этапе обрабатываются *отсутствующие данные* и выполняется *извлечение общих признаков*.|
-|**exit_score**|0,995|Значение *double*, указывающее цель *primary_metric*. Выполнение завершается после превышения целевого значения.|
+|**exit_score**|0.9985|Значение *double*, указывающее цель *primary_metric*. Выполнение завершается после превышения целевого значения.|
 |**blacklist_algos**|['kNN','LinearSVM']|*Массив* *строк*, указывающий алгоритмы, которые пропускаются.
 |
 
@@ -167,10 +164,10 @@ Automl_config = AutoMLConfig(task = 'classification',
                              iterations = 20,
                              n_cross_validations = 3,
                              preprocess = False,
-                             exit_score = 0.995,
+                             exit_score = 0.9985,
                              blacklist_algos = ['kNN','LinearSVM'],
-                             X = X_digits,
-                             y = y_digits,
+                             X = X_train,
+                             y = y_train,
                              path=project_folder)
 ```
 
@@ -497,8 +494,10 @@ local_run.model_id # Use this id to deploy the model as a web service in Azure
 ```python
 # find 30 random samples from test set
 n = 30
-sample_indices = np.random.permutation(X_digits.shape[0])[0:n]
-test_samples = X_digits[sample_indices]
+X_test = digits.data[:100, :]
+y_test = digits.target[:100]
+sample_indices = np.random.permutation(X_test.shape[0])[0:n]
+test_samples = X_test[sample_indices]
 
 
 # predict using the  model
@@ -514,11 +513,11 @@ for s in sample_indices:
     plt.axvline('')
     
     # use different color for misclassified sample
-    font_color = 'red' if y_digits[s] != result[i] else 'black'
-    clr_map = plt.cm.gray if y_digits[s] != result[i] else plt.cm.Greys
+    font_color = 'red' if y_test[s] != result[i] else 'black'
+    clr_map = plt.cm.gray if y_test[s] != result[i] else plt.cm.Greys
     
     plt.text(x = 2, y = -2, s = result[i], fontsize = 18, color = font_color)
-    plt.imshow(X_digits[s].reshape(8, 8), cmap = clr_map)
+    plt.imshow(X_test[s].reshape(8, 8), cmap = clr_map)
     
     i = i + 1
 plt.show()
@@ -534,7 +533,7 @@ plt.show()
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве по Машинному обучению Azure вы использовали Python для выполнения следующих задач.
+В этом руководстве по службе "Машинное обучение Azure" вы использовали Python для выполнения следующих задач.
 
 > [!div class="checklist"]
 > * Настройка среды разработки

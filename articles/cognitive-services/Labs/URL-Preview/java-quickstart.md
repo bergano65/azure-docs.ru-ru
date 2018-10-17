@@ -1,21 +1,23 @@
 ---
-title: Краткое руководство по Java. Использование службы предварительного просмотра URL-адресов в проектах в Microsoft Cognitive Services | Документация Майкрософт
-description: Пример скрипта для начала работы со службой предварительного просмотра URL-адресов в проектах, входящей в состав Microsoft Cognitive Services в Azure.
+title: Краткое руководство по использованию Java для службы предварительного просмотра URL-адресов в проектах
+titlesuffix: Azure Cognitive Services
+description: Пример скрипта для начала работы со службой предварительного просмотра URL-адресов в проектах с использованием Java.
 services: cognitive-services
 author: mikedodaro
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: project-url-preview
-ms.topic: article
+ms.component: project-url-preview
+ms.topic: quickstart
 ms.date: 04/24/2018
 ms.author: rosh, v-gedod
-ms.openlocfilehash: 2de74f48882605bfcf05f65723ba5d8993587f51
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 95e33ceddc2fbbab51d3c4f0164b410847430244
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381777"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48867123"
 ---
-# <a name="url-preview-java-quickstart"></a>Краткое руководство по использованию службы предварительного просмотра URL-адресов в проектах для Java
+# <a name="quickstart-url-preview-with-java"></a>Краткое руководство по использованию Java для службы предварительного просмотра URL-адресов
 
 Следующий пример Java создает представление для предварительного просмотра URL-адреса веб-сайта SwiftKey: https://swiftkey.com/en.
 
@@ -166,7 +168,7 @@ class SearchResults{
 ````
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Краткое руководство — C#](csharp.md)
+- [Краткое руководство для C#](csharp.md)
 - [Краткое руководство — JavaScript](javascript.md)
 - [Краткое руководство — Node](node-quickstart.md)
 - [Краткое руководство — Python](python-quickstart.md)

@@ -5,16 +5,16 @@ description: Узнайте, как распознать речь в Java (Windo
 services: cognitive-services
 author: fmegen
 ms.service: cognitive-services
-ms.technology: Speech
+ms.component: Speech
 ms.topic: quickstart
 ms.date: 09/24/2018
 ms.author: fmegen
-ms.openlocfilehash: 00603c467ec96e52fc2b7745263153a68d20f584
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.openlocfilehash: c0963fa8453dd51dfb05af20a5468e1eed1fc7cf
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47053968"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48885224"
 ---
 # <a name="quickstart-recognize-speech-in-java-on-windows-or-linux-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в Java в Windows или Linux с помощью пакета SDK службы "Речь"
 
@@ -69,11 +69,11 @@ ms.locfileid: "47053968"
 
 1. Откройте файл **pom.xml** и измените его.
 
-   * В конце файла перед закрывающим тегом `</project>` создайте раздел репозиториев со ссылкой на репозиторий Maven для пакета SDK службы "Речь", как показано ниже.
+   * В конце файла перед закрывающим тегом `</project>` создайте элемент `repositories` со ссылкой на репозиторий Maven для пакета SDK службы "Речь", как показано ниже.
 
      [!code-xml[POM Repositories](~/samples-cognitive-services-speech-sdk/quickstart/java-jre/pom.xml#repositories)]
 
-  * Также после этого добавьте раздел зависимостей, в качестве зависимости указав пакет SDK для распознавания речи версии 1.0.0.
+  * Также добавьте элемент `dependencies`, указав пакет SDK службы "Речь" версии 1.0.0 в виде зависимости.
 
      [!code-xml[POM Dependencies](~/samples-cognitive-services-speech-sdk/quickstart/java-jre/pom.xml#dependencies)]
 
@@ -102,7 +102,7 @@ ms.locfileid: "47053968"
 Нажмите клавишу F11 или выберите **Запустить** > **Отладка**.
 Слова, произносимые в микрофон, в течение следующих 15 секунд будут распознаны и записаны в окне консоли.
 
-![Снимок экрана: вывод на консоль после успешного распознавания](media/sdk/qs-java-jre-07-console-output.png)
+![Снимок экрана выходных данных консоли после успешного распознавания](media/sdk/qs-java-jre-07-console-output.png)
 
 [!INCLUDE [Download this sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 Этот пример можно найти в папке `quickstart/java-jre`.

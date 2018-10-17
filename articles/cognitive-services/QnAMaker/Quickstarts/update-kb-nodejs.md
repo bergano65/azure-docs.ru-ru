@@ -1,226 +1,154 @@
 ---
-title: 'Краткое руководство: обновление базы знаний с использованием Node.js — QnA Maker'
+title: Краткое руководство. Обновление базы знаний QnA Maker с использованием Node.js и REST
 titleSuffix: Azure Cognitive Services
-description: Сведения о том, как обновить базу знаний на Node.js для QnA Maker.
+description: В этом кратком руководстве описано, как программным способом обновить имеющуюся базу знаний QnA Maker.  Этот код JSON позволяет обновить базу знаний путем добавления, изменения или удаления источников данных.
 services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: quickstart
-ms.date: 09/12/2018
+ms.date: 10/02/2018
 ms.author: diberry
-ms.openlocfilehash: a987993da5202abc9b543aa2dba0f080a622e199
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 3bbc55b3bb064b2cf4b140a395e99209b71a5ce1
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47033624"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48816241"
 ---
-# <a name="update-a-knowledge-base-in-nodejs"></a>Обновление базы знаний на Node.js
+# <a name="quickstart-update-a-qna-maker-knowledge-base-in-nodejs"></a>Краткое руководство. Обновление базы знаний QnA Maker с использованием Node.js
 
-Следующий код обновляет существующую базу знаний с помощью метода [Update](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600) (Обновление).
+В этом кратком руководстве описано, как программным способом обновить имеющуюся базу знаний QnA Maker.  Этот код JSON позволяет обновить базу знаний путем добавления, изменения или удаления источников данных.
 
-[!INCLUDE [Code is available in Azure-Samples Github repo](../../../../includes/cognitive-services-qnamaker-nodejs-repo-note.md)]
+Этот API является эквивалентом изменения и нажатия кнопки **Save and train** (Сохранение и обучение) на портале QnA Maker.
 
-Если у вас еще нет базы знаний, создайте пример для этого краткого руководства по инструкциям из [этой статьи](create-new-kb-nodejs.md).
+В этом кратком руководстве вызываются API службы QnA Maker:
+* [Обновление.](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600) Модель базы знаний определяется в коде JSON, отправляемом в теле запроса API. 
+* [Получение сведений об операции](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/operations_getoperationdetails)
 
-1. Создайте проект на Node.js в используемой вами интегрированной среде разработки. Используйте JavaScript версии ECMAScript 6+.
-1. Добавьте указанный ниже код.
-1. Замените значение `subscriptionKey` действительным ключом подписки.
-1. Замените значение `kb` действительным идентификатором базы знаний. Это значение можно найти в одной из ваших [баз знаний QnA Maker](https://www.qnamaker.ai/Home/MyServices). Выберите базу знаний, которую нужно обновить. На этой же странице найдите значение kdid= в строке URL-адреса, как показано ниже. Используйте его в примере кода.
+## <a name="prerequisites"></a>Предварительные требования
+
+* [Node.js 6+](https://nodejs.org/en/download/)
+* У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить этот ключ, выберите **Ключи** в разделе **Управление ресурсами** на информационной панели. 
+* Идентификатор базы знаний QnA Maker, который находится в URL-адресе в параметре строки запроса kbid, как показано ниже.
 
     ![Идентификатор базы знаний QnA Maker](../media/qnamaker-quickstart-kb/qna-maker-id.png)
 
-1. Запустите программу.
+Если у вас еще нет базы знаний, создайте пример для этого краткого руководства по инструкциям из [этой статьи](create-new-kb-nodejs.md).
 
-```nodejs
-'use strict';
+[!INCLUDE [Code is available in Azure-Samples Github repo](../../../../includes/cognitive-services-qnamaker-nodejs-repo-note.md)]
 
-let fs = require ('fs');
-let https = require ('https');
+## <a name="create-a-knowledge-base-nodejs-file"></a>Создание файла базы знаний Node.js
 
-// **********************************************
-// *** Update or verify the following values. ***
-// **********************************************
+Создайте файл с именем `update-knowledge-base.js`.
 
-// Replace this with a valid subscription key.
-let subscriptionKey = 'ADD KEY HERE';
+## <a name="add-the-required-dependencies"></a>Добавление необходимых зависимостей
 
-// Replace this with a valid knowledge base ID.
-let kb = 'ADD ID HERE';
+Чтобы добавить необходимые зависимости в проект, в верхней части файла `update-knowledge-base.js` укажите следующие строки:
 
-// Represents the various elements used to create HTTP request URIs
-// for QnA Maker operations.
-let host = 'westus.api.cognitive.microsoft.com';
-let service = '/qnamaker/v4.0';
-let method = '/knowledgebases/';
+[!code-nodejs[Add the dependencies](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/update-knowledge-base/update-knowledge-base.js?range=1-4 "Add the dependencies")]
 
-// Formats and indents JSON for display.
-let pretty_print = function(s) {
-    return JSON.stringify(JSON.parse(s), null, 4);
-}
+## <a name="add-required-constants"></a>Добавление необходимых констант
+После указания зависимостей добавьте необходимые константы, чтобы получить доступ к QnA Maker. Замените значение переменной `subscriptionKey` собственным ключом QnA Maker. 
 
-// Call 'callback' after we have the entire response.
-let response_handler = function (callback, response) {
-    let body = '';
-    response.on('data', function(d) {
-        body += d;
-    });
-    response.on('end', function() {
-    // Calls 'callback' with the status code, headers, and body of the response.
-    callback ({ status : response.statusCode, headers : response.headers, body : body });
-    });
-    response.on('error', function(e) {
-        console.log ('Error: ' + e.message);
-    });
-};
+[!code-nodejs[Add required constants](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/update-knowledge-base/update-knowledge-base.js?range=10-17 "Add required constants")]
 
-// HTTP response handler calls 'callback' after we have the entire response.
-let get_response_handler = function(callback) {
-    // Return a function that takes an HTTP response and is closed over the specified callback.
-    // This function signature is required by https.request, hence the need for the closure.
-    return function(response) {
-        response_handler(callback, response);
-    }
-}
+## <a name="add-knowledge-base-id"></a>Добавление идентификатора базы знаний
 
-// Calls 'callback' after we have the entire PATCH request response.
-let patch = function(path, content, callback) {
-    let request_params = {
-        method : 'PATCH',
-        hostname : host,
-        path : path,
-        headers : {
-            'Content-Type' : 'application/json',
-            'Content-Length' : content.length,
-            'Ocp-Apim-Subscription-Key' : subscriptionKey,
-        }
-    };
+После определения констант далее необходимо добавить идентификатор базы знаний и указать его в пути:
 
-    // Pass the callback function to the response handler.
-    let req = https.request(request_params, get_response_handler(callback));
-    req.write(content);
-    req.end ();
-}
+[!code-nodejs[Add knowledge base ID](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/update-knowledge-base/update-knowledge-base.js?range=19-23 "Add knowledge base ID")]
 
-// Calls 'callback' after we have the entire GET request response.
-let get = function(path, callback) {
-    let request_params = {
-        method : 'GET',
-        hostname : host,
-        path : path,
-        headers : {
-            'Ocp-Apim-Subscription-Key' : subscriptionKey,
-        }
-    };
+## <a name="add-the-kb-update-model-definition"></a>Добавление определения модели обновления базы знаний
 
-    // Pass the callback function to the response handler.
-    let req = https.request(request_params, get_response_handler(callback));
-    req.end ();
-}
+После констант добавьте следующее определение обновления базы знаний. Это определение содержит три раздела:
 
-// Calls 'callback' after we have the response from the /knowledgebases PATCH method.
-let update_kb = function(path, req, callback) {
-    console.log('Calling ' + host + path + '.');
-    // Send the PATCH request.
-    patch(path, req, function (response) {
-        // Extract the data we want from the PATCH response and pass it to the callback function.
-        callback({ operation : response.headers.location, response : response.body });
-    });
-}
+* добавление
+* обновить
+* удалить
 
-// Calls 'callback' after we have the response from the GET request to check the status.
-let check_status = function(path, callback) {
-    console.log('Calling ' + host + path + '.');
-    // Send the GET request.
-    get(path, function (response) {
-        // Extract the data we want from the GET response and pass it to the callback function.
-        callback({ wait : response.headers['retry-after'], response : response.body });
-    });
-}
+Каждый раздел может использоваться в одном запросе к API. 
 
-// Dictionary that holds the knowledge base. Modify knowledge base here.
-let req = {
-  'add': {
-    'qnaList': [
-      {
-        'id': 1,
-        'answer': 'You can change the default message if you use the QnAMakerDialog. See this for details: https://docs.botframework.com/en-us/azure-bot-service/templates/qnamaker/#navtitle',
-        'source': 'Custom Editorial',
-        'questions': [
-          'How can I change the default message from QnA Maker?'
-        ],
-        'metadata': []
-      }
-    ],
-    'urls': []
-  },
-  'update' : {
-    'name' : 'New KB Name'
-  },
-  'delete': {
-    'ids': [
-      0
-    ]
-  }
-};
+[!code-nodejs[Add the KB update definition](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/update-knowledge-base/update-knowledge-base.js?range=25-53 "Add the KB update definition")]
 
-var path = service + method + kb;
-// Convert the request to a string.
-let content = JSON.stringify(req);
 
-// Sends the request to update the knowledge base.
-update_kb(path, content, function (result) {
-    console.log(pretty_print(result.response));
-    // Loop until the operation is complete.
-    let loop = function() {
-        path = service + result.operation;
-        // Check the status of the operation.
-        check_status(path, function(status) {
-            // Write out the status.
-            console.log(pretty_print(status.response));
-            // Convert the status into an object and get the value of the operationState field.
-            var state = (JSON.parse(status.response)).operationState;
-            // If the operation isn't complete, wait and query again.
-            if (state == 'Running' || state == 'NotStarted') {
-                console.log('Waiting ' + status.wait + ' seconds...');
-                setTimeout(loop, status.wait * 1000);
-            }
-        });
-    }
-    // Begin the loop.
-    loop();
-});
-```
+## <a name="add-supporting-functions"></a>Добавление вспомогательных функций
 
-## <a name="understand-what-qna-maker-returns"></a>Описание ответа QnA Maker
+Далее необходимо добавить приведенные ниже вспомогательные функции.
 
-При успешной обработке ответ возвращается в формате JSON, как показано в примере ниже. Ваши результаты могут немного отличаться. Если последний вызов возвращает состояние Succeeded, база знаний успешно обновлена. Для поиска и устранения неполадок воспользуйтесь описанием кодов ответа при [обновлении базы знаний](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600) в API службы QnA Maker.
+1. Добавьте следующую функцию, чтобы распечатать файл JSON в доступном для чтения формате:
 
-```json
+   [!code-nodejs[Add supporting functions, step 1](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/update-knowledge-base/update-knowledge-base.js?range=55-58 "Add supporting functions, step 1")]
+
+2. Добавьте следующие функции, чтобы управлять HTTP-ответом и получить состояние операции создания:
+
+   [!code-nodejs[Add supporting functions, step 2](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/update-knowledge-base/update-knowledge-base.js?range=60-82 "Add supporting functions, step 2")]
+
+## <a name="add-patch-request-to-update-kb"></a>Добавление запроса PATCH для обновления базы знаний
+
+Добавьте приведенные ниже функции, чтобы отправить HTTP-запрос PATCH на обновление базы знаний. `Ocp-Apim-Subscription-Key` — это ключ службы QnA Maker, используемый в процессе аутентификации.
+
+[!code-nodejs[Add PATCH request to update KB](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/update-knowledge-base/update-knowledge-base.js?range=84-111 "Add PATCH request to update KB")]
+
+Этот вызов API возвращает ответ JSON, который содержит идентификатор операции. Этот идентификатор используется во время запроса состояния, если операция не завершена.
+
+```JSON
 {
   "operationState": "NotStarted",
-  "createdTimestamp": "2018-04-13T01:49:48Z",
-  "lastActionTimestamp": "2018-04-13T01:49:48Z",
-  "userId": "2280ef5917bb4ebfa1aae41fb1cebb4a",
-  "operationId": "5156f64e-e31d-4638-ad7c-a2bdd7f41658"
+  "createdTimestamp": "2018-10-02T01:23:00Z",
+  "lastActionTimestamp": "2018-10-02T01:23:00Z",
+  "userId": "335c3841df0b42cdb00f53a49d51a89c",
+  "operationId": "e7be3897-88ff-44e5-a06c-01df0e05b78c"
 }
-...
-{
-  "operationState": "Succeeded",
-  "createdTimestamp": "2018-04-13T01:49:48Z",
-  "lastActionTimestamp": "2018-04-13T01:49:50Z",
-  "resourceLocation": "/knowledgebases/140a46f3-b248-4f1b-9349-614bfd6e5563",
-  "userId": "2280ef5917bb4ebfa1aae41fb1cebb4a",
-  "operationId": "5156f64e-e31d-4638-ad7c-a2bdd7f41658"
-}
-Press any key to continue.
 ```
 
-Обновленную базу знаний вы можете просмотреть на странице [My knowledge bases](https://www.qnamaker.ai/Home/MyServices) (Мои базы знаний) на портале QnA Maker. Обратите внимание на новое имя базы знаний "New KB Name" и дополнительную пару QnA в ней.
+## <a name="add-get-request-to-determine-operation-status"></a>Добавление запроса GET для определения состояния операции
 
-Чтобы изменить другие элементы базы знаний, изучите [схему JSON](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600) QnA Maker и измените строку `req`.
+Проверьте состояние операции.
+    
+[!code-nodejs[Add GET request to determine operation status](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/update-knowledge-base/update-knowledge-base.js?range=113-137 "Add GET request to determine operation status")]
+
+Этот вызов API возвращает ответ JSON, который содержит состояние операции: 
+
+```JSON
+{
+  "operationState": "NotStarted",
+  "createdTimestamp": "2018-09-26T05:22:53Z",
+  "lastActionTimestamp": "2018-09-26T05:22:53Z",
+  "userId": "XXX9549466094e1cb4fd063b646e1ad6",
+  "operationId": "177e12ff-5d04-4b73-b594-8575f9787963"
+}
+```
+
+Повторяйте вызов до успешного или неудачного выполнения: 
+
+```JSON
+{
+  "operationState": "Succeeded",
+  "createdTimestamp": "2018-09-26T05:22:53Z",
+  "lastActionTimestamp": "2018-09-26T05:23:08Z",
+  "resourceLocation": "/knowledgebases/XXX7892b-10cf-47e2-a3ae-e40683adb714",
+  "userId": "XXX9549466094e1cb4fd063b646e1ad6",
+  "operationId": "177e12ff-5d04-4b73-b594-8575f9787963"
+}
+```
+
+## <a name="add-updatekb-method"></a>Добавление метода update_kb
+
+Следующий метод обновляет базы знаний и повторяет проверки состояния. Так как создание базы знаний может занять некоторое время, необходимо повторять вызовы, чтобы проверить состояние, пока не вернется успешный или неудачный ответ.
+
+[!code-nodejs[Add update_kb method](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/update-knowledge-base/update-knowledge-base.js?range=139-169 "Add update_kb method")]
+
+## <a name="run-the-program"></a>Запуск программы
+
+В командной строке введите приведенную ниже команду, чтобы запустить программу. Она будет отправлять запрос к API службы QnA Maker для обновления базы знаний. Затем она будет запрашивать результаты каждые 30 секунд. Каждый ответ будет выводиться в окне консоли.
+
+```bash
+node update-knowledge-base.js
+```
+
+Обновленную базу знаний вы можете просмотреть на странице [My knowledge bases](https://www.qnamaker.ai/Home/MyServices) (Мои базы знаний) на портале QnA Maker. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

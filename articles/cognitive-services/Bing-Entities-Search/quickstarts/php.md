@@ -1,29 +1,29 @@
 ---
-title: Краткое руководство по Azure Cognitive Services и API "Поиск сущностей Bing" для PHP | Документация Майкрософт
-description: Получите информацию и примеры кода, которые помогут вам приступить к работе с API Bing для поиска сущностей с использованием Microsoft Cognitive Services в Azure.
+title: Краткое руководство. API Bing для поиска сущностей с использованием PHP
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API Bing для поиска сущностей.
 services: cognitive-services
-documentationcenter: ''
 author: v-jaswel
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-entity-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 11/28/2017
 ms.author: v-jaswel
-ms.openlocfilehash: 448064de764775c497de467b235837d66ef7093b
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 30cfa98fc38f92d834e908b6d77306bed1d2b5cb
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382320"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48815534"
 ---
-# <a name="quickstart-for-microsoft-bing-entity-search-api-with-php"></a>Краткое руководство по API Bing для поиска сущностей с использованием PHP 
-<a name="HOLTop"></a>
+# <a name="quickstart-for-bing-entity-search-api-with-php"></a>Краткое руководство по API Bing для поиска сущностей с использованием PHP
 
 В этой статье описано, как использовать [API Bing для поиска сущностей](https://docs.microsoft.com/azure/cognitive-services/bing-entities-search/search-the-web) с PHP.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для запуска этого кода понадобится [PHP 5.6.x](http://php.net/downloads.php).
+Для выполнения этого кода потребуется [PHP 5.6.x](http://php.net/downloads.php).
 
 Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API Bing для поиска сущностей**. Для данного краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-entity-search-api). Требуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
 
@@ -33,7 +33,7 @@ ms.locfileid: "35382320"
 
 1. Создайте проект PHP в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для своей подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```php
@@ -82,7 +82,7 @@ echo json_encode (json_decode ($result), JSON_PRETTY_PRINT);
 
 **Ответ**
 
-Успешный ответ возвращается в формате JSON, как показано в примере ниже: 
+Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
 ```json
 {

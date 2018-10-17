@@ -6,15 +6,15 @@ author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: quickstart
-ms.date: 07/31/2018
+ms.date: 09/24/2018
 ms.author: iainfou
 ms.custom: H1Hack27Feb2017, mvc, devcenter
-ms.openlocfilehash: f52551e9d57ccfc44502992b59412878c4092c0d
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: caf3607dbd33d75916ff65b0ab498fa228e2a823
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39436909"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49068920"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster"></a>Краткое руководство по развертыванию кластера службы Azure Kubernetes (AKS)
 
@@ -26,7 +26,7 @@ ms.locfileid: "39436909"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.43 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
+Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.46 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -55,7 +55,7 @@ az group create --name myAKSCluster --location eastus
 
 ## <a name="create-aks-cluster"></a>Создание кластера AKS
 
-Используйте команду [az aks create][az-aks-create], чтобы создать кластер AKS. В следующем примере создается кластер *myAKSCluster* с одним узлом. Также с помощью параметра *--enable-addons monitoring* можно включить мониторинг работоспособности контейнера. Дополнительные сведения о включении решения для мониторинга работоспособности контейнеров см. в разделе [Мониторинг работоспособности службы Azure Kubernetes][aks-monitor].
+Используйте команду [az aks create][az-aks-create], чтобы создать кластер AKS. В следующем примере создается кластер *myAKSCluster* с одним узлом. Также с помощью параметра *--enable-addons monitoring* можно включить Azure Monitor для контейнеров. Дополнительные сведения о включении решения для мониторинга работоспособности контейнеров см. в разделе [Мониторинг работоспособности службы Azure Kubernetes][aks-monitor].
 
 ```azurecli-interactive
 az aks create --resource-group myAKSCluster --name myAKSCluster --node-count 1 --enable-addons monitoring --generate-ssh-keys
@@ -114,6 +114,13 @@ spec:
       containers:
       - name: azure-vote-back
         image: redis
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
         ports:
         - containerPort: 6379
           name: redis
@@ -142,6 +149,13 @@ spec:
       containers:
       - name: azure-vote-front
         image: microsoft/azure-vote-front:v1
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
         ports:
         - containerPort: 80
         env:
@@ -209,16 +223,19 @@ azure-vote-front   LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
 Чтобы увидеть текущее состояние, время доступности и использование ресурсов для модулей pod Azure для голосования, выполните следующие действия:
 
 1. В веб-браузере перейдите на портал Azure [https://portal.azure.com][azure-portal].
-1. Выберите свою группу ресурсов, например *myResourceGroup*, а затем — кластер AKS, например *myAKSCluster*. 
-1. Выберите **Работоспособность контейнера монитора**, а затем — пространство имен **по умолчанию** и выберите **Контейнеры**.
+1. Выберите свою группу ресурсов, например *myResourceGroup*, а затем — кластер AKS, например *myAKSCluster*.
+1. В разделе **Мониторинг** в левой части окна выберите **Insights (Предварительная версия)**
+1. В верхней части выберите **+Добавить фильтр**.
+1. Выберите *Пространство имен* как свойство, а затем *\<Все, кроме kube-system\>*.
+1. Выберите **Контейнеры** для просмотра.
 
-Может потребоваться несколько минут, чтобы эти данные отобразились на портале Azure, как показано в примере ниже:
+Отобразятся представления контейнеров *azure-vote-back* и *azure-vote-front*, как показано ниже:
 
-![Создание кластера AKS, шаг первый](media/kubernetes-walkthrough/view-container-health.png)
+![Представление работоспособности запущенных контейнеров в AKS](media/kubernetes-walkthrough-portal/monitor-containers.png)
 
-Чтобы просмотреть журналы для модуля pod `azure-vote-front`, щелкните ссылку **Просмотреть журналы** в правой части списка контейнеров. Эти журналы содержат потоки *stdout* и *stderr* из контейнера.
+Чтобы просмотреть журналы для модуля pod `azure-vote-front`, щелкните ссылку **Просмотреть журналы контейнера** в правой части списка контейнеров. Эти журналы содержат потоки *stdout* и *stderr* из контейнера.
 
-![Создание кластера AKS, шаг первый](media/kubernetes-walkthrough/view-container-logs.png)
+![Представление журналов контейнеров в AKS](media/kubernetes-walkthrough-portal/monitor-container-logs.png)
 
 ## <a name="delete-cluster"></a>Удаление кластера
 

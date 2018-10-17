@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по пакету SDK для API "Поиск новостей" для Python | Документация Майкрософт
-description: Установка консольного приложения пакета SDK для API "Поиск новостей".
-titleSuffix: Azure News Search SDK Python quickstart
+title: Краткое руководство по работе с пакетом SDK для API Bing для поиска новостей, Python
+titleSuffix: Azure Cognitive Services
+description: Настройка консольного приложения, созданного с помощью пакета SDK для API Bing для поиска новостей.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-news-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 02/14/2018
 ms.author: v-gedod
-ms.openlocfilehash: 6d212d1477ecf583a038e33e72aab3d60f6aa050
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 8e4343b053835c0fc2219373ad60f96c7b80636a
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382605"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48803347"
 ---
-# <a name="news-search-sdk-python-quickstart"></a>Краткое руководство по пакету SDK для API "Поиск новостей" для Python
+# <a name="quickstart-bing-news-search-sdk-with-python"></a>Краткое руководство по работе с пакетом SDK для API Bing для поиска новостей с использованием Python
 
 Пакет SDK для API "Поиск новостей" содержит функции REST API для обработки веб-запросов и анализа результатов. 
 
@@ -26,7 +26,7 @@ ms.locfileid: "35382605"
 ## <a name="application-dependencies"></a>Зависимости приложения
 Если у вас не установлен язык Python, установите его. Пакет SDK совместим с Python 2.7, 3.3, 3.4, 3.5 и 3.6.
 
-Общей рекомендацией для разработки на Python является использование [виртуальной среды](https://docs.python.org/3/tutorial/venv.html). Установите и инициализируйте виртуальную среду с помощью [модуля venv](https://pypi.python.org/pypi/virtualenv). Необходимо установить virtualenv для Python 2.7.
+Общей рекомендацией для разработки на Python является использование [виртуального окружения](https://docs.python.org/3/tutorial/venv.html). Установите и инициализируйте виртуальное окружение с помощью [модуля venv](https://pypi.python.org/pypi/virtualenv). Необходимо установить virtualenv для Python 2.7.
 ```
 python -m venv mytestenv
 ```

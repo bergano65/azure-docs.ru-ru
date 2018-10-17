@@ -6,16 +6,16 @@ description: >
 services: cognitive-services
 author: wolfma61
 ms.service: cognitive-services
-ms.technology: Speech
+ms.component: Speech
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: wolfma
-ms.openlocfilehash: 16424c44003be14e3ba04f6b5cce0ce518a0d7e8
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 9210aaf2ddfa917ff480f4126c02137f46788dc3
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47063036"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48884352"
 ---
 # <a name="tutorial-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Распознавание намерений в речи с помощью пакета SDK службы "Речь" для C#
 
@@ -123,7 +123,7 @@ static async Task RecognizeIntentAsync()
 Первым шагом распознавания намерений в речи является создание конфигурации речи с помощью ключа конечной точки LUIS и региона. Конфигурации речи могут использоваться для создания распознавателей, обладающих различными возможностями, используемыми в пакете SDK службы "Речь". При использовании конфигурации речи вы можете указать подписку несколькими способами. В данном руководстве будет использован способ `FromSubscription`, для которого требуется ключ подписки и регион.
 
 > [!NOTE]
-> Используйте ключ и регион подписки LUIS вместо подписки "Речь".
+> Используйте ключ и регион своей подписки LUIS вместо ключа и региона подписки службы "Речь".
 
 Затем с помощью `new IntentRecognizer(config)` создайте распознаватель намерений. Поскольку в конфигурации уже было указано, какую из подписок использовать, повторное указание ключа подписки и конечной точки при создании распознавателя не требуется.
 
@@ -166,7 +166,7 @@ result.Properties.GetProperty(PropertyId.LanguageUnderstandingServiceResponse_Js
 
 ## <a name="specify-recognition-language"></a>Указание языка распознавания
 
-По умолчанию язык распознавания намерений — английский (США) (`en-us`). Чтобы распознавать намерения на других языках, свойству `SpeechRecognitionLanguage` необходимо присвоить код языкового стандарта. Например, перед созданием распознавателя добавьте параметр `config.SpeechRecognitionLanguage = "de-de";` в программу, приведенную в руководстве. Это позволит распознавать намерения на немецком языке. См. сведения о [поддерживаемых языках](supported-languages.md#speech-to-text).
+По умолчанию язык распознавания намерений — английский (США) (`en-us`). Чтобы распознавать намерения на других языках, свойству `SpeechRecognitionLanguage` необходимо присвоить код языкового стандарта. Например, перед созданием распознавателя добавьте параметр `config.SpeechRecognitionLanguage = "de-de";` в программу, приведенную в руководстве. Это позволит распознавать намерения на немецком языке. См. сведения о [поддерживаемых языках](language-support.md#speech-to-text).
 
 ## <a name="continuous-recognition-from-a-file"></a>Непрерывное распознавание из файла
 

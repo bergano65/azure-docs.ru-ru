@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 09/19/2018
 ms.author: cshoe
-ms.openlocfilehash: a325029ded60a1cd8274743a88f7a4d410466dea
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 6e23e888a1c90e1c6c7eecf25491f048e9077f11
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46987583"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48857896"
 ---
 # <a name="quickstart-upload-download-list-and-delete-blobs-using-azure-storage-v10-sdk-for-javascript-preview"></a>Краткое руководство. Передача, скачивание, составление списков и удаление больших двоичных объектов с помощью пакета SDK версии 10 службы хранилища Azure для JavaScript (предварительная версия)
 
@@ -128,7 +128,7 @@ const ACCOUNT_ACCESS_KEY = process.env.AZURE_STORAGE_ACCOUNT_ACCESS_KEY;
 const ONE_MEGABYTE = 1024 * 1024;
 const FOUR_MEGABYTES = 4 * ONE_MEGABYTE;
 ```
-Время ожидания запросов, отправляемых API, может истечь после указанного интервала. Класс*Aborter* отвечает за управление тем, как истекает время ожидания запросов. Следующие константы в этом примере используются для определения времени ожидания.
+Время ожидания запросов, отправляемых API, может истечь после указанного интервала. Класс[Aborter](/javascript/api/%40azure/storage-blob/aborter?view=azure-node-preview) отвечает за управление тем, как истекает время ожидания запросов. Следующие константы в этом примере используются для определения времени ожидания.
 ```javascript
 const ONE_MINUTE = 60 * 1000;
 ```
@@ -163,13 +163,13 @@ const serviceURL = new ServiceURL(`https://${STORAGE_ACCOUNT_NAME}.blob.core.win
 ```
 В этом блоке кода используются следующие классы.
 
-- Класс *SharedKeyCredential* отвечает за создание программы-оболочки учетных данных учетной записи хранения для предоставления их в конвейере запросов.
+- Класс [SharedKeyCredential](/javascript/api/%40azure/storage-blob/sharedkeycredential?view=azure-node-preview) отвечает за создание программы-оболочки учетных данных учетной записи хранения для предоставления их в конвейере запросов.
 
-- Класс *StorageURL* отвечает за создание нового конвейера.
+- Класс [StorageURL](/javascript/api/%40azure/storage-blob/storageurl?view=azure-node-preview) отвечает за создание нового конвейера.
 
-- *ServiceURL* моделирует URL-адрес, используемый в REST API. Экземпляры этого класса позволяют выполнять такие действия, как перечисление контейнеров и предоставление информации контекста для формирования URL-адресов контейнеров.
+- [ServiceURL](/javascript/api/%40azure/storage-blob/serviceurl?view=azure-node-preview) моделирует URL-адрес, используемый в REST API. Экземпляры этого класса позволяют выполнять такие действия, как перечисление контейнеров и предоставление информации контекста для формирования URL-адресов контейнеров.
 
-Экземпляр класса *ServiceURL* используется с экземплярами классов *ContainerURL* и *BlockBlobURL* для управления контейнерами и большими двоичными объектами в учетной записи хранения.
+Экземпляр класса *ServiceURL* используется с экземплярами классов [ContainerURL](/javascript/api/%40azure/storage-blob/containerurl?view=azure-node-preview) и [BlockBlobURL](/javascript/api/%40azure/storage-blob/blockbloburl?view=azure-node-preview) для управления контейнерами и большими двоичными объектами в учетной записи хранения.
 
 ```javascript
 const containerURL = ContainerURL.fromServiceURL(serviceURL, containerName);
@@ -202,7 +202,7 @@ const aborter = Aborter.timeout(30 * ONE_MINUTE);
 - определять время для пакета запросов;
 - определять, как долго должен выполняться отдельный запрос в пакете;
 - отменять запросы;
-- использовать статический элемент *Aborter.None* для остановки истечения времени ожидания всех запросов.
+- использовать статический элемент *Aborter.none* для остановки истечения времени ожидания всех запросов.
 
 ### <a name="show-container-names"></a>Отображение имен контейнеров
 Учетные записи могут хранить большое число контейнеров. Следующий код демонстрирует, как перечислять контейнеры сегментированным образом, что позволяет циклически просматривать большое количество контейнеров. Функция *showContainerNames* — это экземпляры классов *ServiceURL* и *Aborter*.

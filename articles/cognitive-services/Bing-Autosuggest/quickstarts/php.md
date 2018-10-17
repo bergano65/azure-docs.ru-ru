@@ -1,27 +1,27 @@
 ---
-title: Краткое руководство по API автозаполнения Bing с использованием PHP | Документация Майкрософт
-description: В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API автозаполнения Bing, который входит в состав Azure Cognitive Services.
+title: Краткое руководство. API автозаполнения Bing (PHP)
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API автозаполнения Bing.
 services: cognitive-services
-documentationcenter: ''
 author: v-jaswel
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-autosuggest
-ms.topic: article
+ms.topic: quickstart
 ms.date: 09/14/2017
 ms.author: v-jaswel
-ms.openlocfilehash: 2a1a79d9868c577fa13fe8299421e7fbc99952af
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 837fdfef0df0c8589a7395c49c3b25753039acd8
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382245"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48831523"
 ---
 # <a name="quickstart-for-bing-autosuggest-api-with-php"></a>Краткое руководство по API автозаполнения Bing с использованием PHP
-<a name="HOLTop"></a>
 
 В этой статье описано, как использовать [API автозаполнения Bing](https://azure.microsoft.com/services/cognitive-services/autosuggest/) с PHP. API автозаполнения Bing возвращает список предлагаемых запросов на основе частичной строки запроса, которую пользователь вводит в поле поиска. Как правило, этот API вызывается каждый раз при вводе пользователем нового символа в поле поиска, и предложения отображаются в виде раскрывающегося списка под полем поиска. В этой статье показано, как отправить запрос, который возвращает предлагаемые строки запроса для слова *sail*.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этого кода потребуется [PHP 5.6.x](http://php.net/downloads.php).
 
@@ -30,8 +30,8 @@ ms.locfileid: "35382245"
 ## <a name="get-autosuggest-results"></a>Получение результатов автозаполнения
 
 1. Создайте проект PHP в используемой вами интегрированной среде разработки.
-2. Добавьте приведенный ниже код.
-3. Замените значение `subscriptionKey` ключом доступа, действующим для вашей подписки.
+2. Добавьте указанный ниже код.
+3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```php

@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 09/27/2018
 ms.author: cephalin;msangapu
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 05dd53fdfda5446cf848a7b8503a09bc5e5c2d20
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 347fc291fc7357481bfdc88c9019c3d688925c2f
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47433469"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49067523"
 ---
 # <a name="create-a-nodejs-web-app-in-azure"></a>Создание веб-приложений Node.js в Azure
 
@@ -46,10 +46,15 @@ ms.locfileid: "47433469"
 
 Скачайте пример проекта Node.js с [https://github.com/Azure-Samples/nodejs-docs-hello-world/archive/master.zip](https://github.com/Azure-Samples/nodejs-docs-hello-world/archive/master.zip) и извлеките ZIP-архив.
 
-В окне терминала перейдите в корневой каталог примера проекта Node.js (с _index.js_).
+Откройте файл _index.js_ и найдите следующую строку:
 
-> [!NOTE]
-> Не обязательно использовать наш пример приложения. При необходимости вы можете использовать собственный код Node.js. Но имейте в виду, что переменная PORT для вашего приложения устанавливается во время выполнения в Azure и доступна в виде `process.env.PORT`. При использовании модуля Express убедитесь, что во время запуска (`app.listen`) задана переменная `process.env.PORT || 3000`. Если этого не сделать или порт не соответствует указанному во время выполнения в Azure, появится сообщение `Service Unavailable`. 
+```javascript
+var port = process.env.PORT || 1337;
+```
+
+Служба приложений внедряет process.env.PORT, чтобы указать в коде приложения, использующего эту переменную, на каком порту ожидать передачи данных. 
+
+В окне терминала перейдите в корневой каталог примера проекта Node.js (с _index.js_).
 
 ## <a name="run-the-app-locally"></a>Локальный запуск приложения
 
@@ -68,7 +73,7 @@ npm start
 В окне терминала нажмите клавиши **CTRL+C**, чтобы выйти из веб-сервера.
 
 > [!NOTE]
-> В Службе приложений Azure приложение запускается в IIS с помощью [iisnode](https://github.com/tjanczuk/iisnode). Чтобы разрешить приложению запускаться с помощью iisnode, корневой каталог приложения должен содержать файл web.config. Файл доступен для чтения в IIS. Связанные параметры iisnode описаны в [репозитории GitHub iisnode](https://github.com/tjanczuk/iisnode/blob/master/src/samples/configuration/web.config).
+> В Службе приложений Azure приложение запускается в IIS с помощью [iisnode](https://github.com/Azure/iisnode). Чтобы разрешить приложению запускаться с помощью iisnode, корневой каталог приложения должен содержать файл web.config. Файл доступен для чтения в IIS. Связанные параметры iisnode описаны в [репозитории GitHub iisnode](https://github.com/Azure/iisnode/blob/master/src/samples/configuration/web.config).
 
 [!INCLUDE [Create ZIP file](../../includes/app-service-web-create-zip.md)]
 

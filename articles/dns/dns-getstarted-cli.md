@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: quickstart
 ms.date: 7/16/2018
 ms.author: victorh
-ms.openlocfilehash: 3fb39558ff99c35786dedc133a9d1d1a450b5928
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: f80488f555cfa3b7be6f35b9f23ea0a501a27fd9
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39090128"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48831603"
 ---
 # <a name="quickstart-create-an-azure-dns-zone-and-record-using-azure-cli"></a>Краткое руководство. Создание зоны и записи Azure DNS с помощью Azure CLI
 
@@ -20,7 +20,7 @@ ms.locfileid: "39090128"
 
 Зона DNS используется для размещения DNS-записей определенного домена. Чтобы разместить свой домен в Azure DNS, необходимо создать зону DNS для этого доменного имени. Каждая запись DNS для вашего домена создается внутри этой зоны DNS. Наконец, чтобы опубликовать зону DNS в Интернете, необходимо настроить серверы доменных имен для домена. Каждый из этих шагов описан ниже.
 
-Теперь Azure DNS также поддерживает частные зоны DNS (сейчас в виде общедоступной предварительной версии). Дополнительные сведения об использовании частных зон DNS см. в статье [Using Azure DNS for private domains](private-dns-overview.md) (Использование Azure DNS для частных доменов). Инструкции по созданию частной зоны DNS см. в статье [Get started with Azure DNS private zones using CLI](./private-dns-getstarted-cli.md) (Начало работы с частными зонами Azure DNS с помощью CLI).
+Теперь Azure DNS также поддерживает частные зоны DNS (сейчас в виде общедоступной предварительной версии). Дополнительные сведения об использовании частных зон DNS см. в статье [Using Azure DNS for private domains](private-dns-overview.md) (Использование Azure DNS для частных доменов). Дополнительные сведения о создании частной зоны DNS см. в руководстве по [началу работы с частными зонами Azure DNS с использованием CLI](./private-dns-getstarted-cli.md).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -46,7 +46,7 @@ az network dns zone create -g MyResourceGroup -n contoso.com
 
 ## <a name="create-a-dns-record"></a>Создание записи DNS
 
-Чтобы создать запись DNS, используйте команду `az network dns record-set [record type] add-record`. Чтобы получить справку, например по записям типа A, см. `azure network dns record-set A add-record -h`.
+Чтобы создать запись DNS, используйте команду `az network dns record-set [record type] add-record`. Справочные сведения о записях А см. здесь: `azure network dns record-set A add-record -h`.
 
 В следующем примере создается запись с относительным именем www в зоне DNS contoso.com, в группе ресурсов MyResourceGroup. Полное доменное имя набора записей — www.contoso.com. Используется тип записи A с IP-адресом 1.2.3.4 и сроком жизни по умолчанию 3600 секунд (1 час).
 
@@ -64,7 +64,7 @@ az network dns record-set list -g MyResourceGroup -z contoso.com
 
 ## <a name="update-name-servers"></a>Обновление серверов доменных имен
 
-Когда вы убедитесь, что зона и записи DNS настроены правильно, необходимо настроить доменное имя для использования серверов доменных имен службы DNS Azure. Это позволит другим пользователям в Интернете находить ваши записи DNS.
+Когда вы убедитесь, что зона и записи DNS настроены правильно, необходимо настроить доменное имя для использования серверов доменных имен службы Azure DNS, чтобы другие пользователи в Интернете могли найти ваши записи DNS.
 
 Для получения списка серверов доменных имен для определенной зоны используется команда `az network dns zone show`. Чтобы просмотреть имена серверов доменных имен, используйте выходные данные JSON, как показано в следующем примере:
 

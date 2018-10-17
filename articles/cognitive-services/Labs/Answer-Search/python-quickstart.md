@@ -1,21 +1,23 @@
 ---
-title: Краткое руководство по службе поиска ответов в проектах с использованием Python — Microsoft Cognitive Services | Документация Майкрософт
-description: Начало работы со службой поиска ответов в проектах, входящей в состав Microsoft Cognitive Services в Azure, с использованием примера на Python.
+title: Краткое руководство по работе с API поиска ответов в проектах, Python
+titlesuffix: Azure Cognitive Services
+description: Пример на Python для быстрого начала работы с API поиска ответов в проектах.
 services: cognitive-services
 author: mikedodaro
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: project-answer-search
-ms.topic: article
+ms.component: project-answer-search
+ms.topic: quickstart
 ms.date: 04/13/2018
 ms.author: rosh, v-gedod
-ms.openlocfilehash: 9cb5406c616ed8e96d73c00c788a0d20f66dcabd
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: c33a88b65dcdf5ddddff9f5109afbe0cca7247c4
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381712"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48869835"
 ---
-# <a name="project-answer-search-python-quickstart"></a>Краткое руководство по службе поиска ответов в проектах с использованием Python
+# <a name="quickstart-project-answer-search-with-python"></a>Краткое руководство по работе с API поиска ответов в проектах с использованием Python
 
 В следующем примере для Python создается и отправляется запрос для получения сведений о "Rock of Gibraltar" (Гибралтарская скала).
 
@@ -65,6 +67,6 @@ print (json.dumps(json.loads(result), indent=4))
 
 ````
 ## <a name="next-steps"></a>Дополнительная информация
-- [Краткое руководство — C#](c-sharp-quickstart.md)
-- [Краткое руководство — Java](java-quickstart.md)
+- [Краткое руководство для C#](c-sharp-quickstart.md)
+- [Краткое руководство для Java](java-quickstart.md)
 - [Краткое руководство — Node](node-quickstart.md)

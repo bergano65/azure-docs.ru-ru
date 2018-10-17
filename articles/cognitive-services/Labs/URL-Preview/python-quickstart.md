@@ -1,21 +1,23 @@
 ---
-title: Краткое руководство по Python. Использование службы предварительного просмотра URL-адресов в проектах в Microsoft Cognitive Services | Документация Майкрософ
-description: Пример скрипта для быстрого начала работы со службой предварительного просмотра URL-адресов в проектах, входящей в состав Microsoft Cognitive Services в Azure.
+title: Краткое руководство по использованию Python для службы предварительного просмотра URL-адресов в проектах
+titlesuffix: Azure Cognitive Services
+description: Пример скрипта для быстрого начала работы со службой предварительного просмотра URL-адресов в проектах с использованием Python.
 services: cognitive-services
 author: mikedodaro
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: project-url-preview
-ms.topic: article
+ms.component: project-url-preview
+ms.topic: quickstart
 ms.date: 03/29/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: 78b2d83b02aa9ea32509029c7456e04e420b8572
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: rosh
+ms.openlocfilehash: c4af701188c6453bd3c067b838519c32862af13d
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381768"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48867278"
 ---
-# <a name="url-preview-python-quickstart"></a>Краткое руководство по использованию службы предварительного просмотра URL-адресов для Python
+# <a name="quickstart-url-preview-with-python"></a>Краткое руководство по использованию Python для службы предварительного просмотра URL-адресов
 
 Следующий пример Python создает представление для предварительного просмотра URL-адреса веб-сайта SwiftKey: https://swiftkey.com/en.
 
@@ -64,7 +66,7 @@ result = get_preview ()
 print (json.dumps(json.loads(result), indent=4))
 ````
 ## <a name="next-steps"></a>Дополнительная информация
-- [Краткое руководство — C#](csharp.md)
-- [Краткое руководство — Java](java-quickstart.md)
+- [Краткое руководство для C#](csharp.md)
+- [Краткое руководство для Java](java-quickstart.md)
 - [Краткое руководство — JavaScript](javascript.md)
 - [Краткое руководство по использованию службы предварительного просмотра URL-адресов для Node](node-quickstart.md)

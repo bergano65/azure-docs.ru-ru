@@ -1,27 +1,30 @@
 ---
-title: Приложение Java для обнаружения аномалий. Microsoft Cognitive Services | Документация Майкрософт
-description: Изучите приложение Java, в котором используется API обнаружения аномалий в службах Microsoft Cognitive Services. Отправьте исходные точки данных в API и получите ожидаемое значение и точки аномалий.
+title: Руководство по обнаружению аномалий с использованием Java
+titlesuffix: Azure Cognitive Services
+description: Изучите приложение Java, в котором используется API обнаружения аномалий. Отправьте исходные точки данных в API и получите ожидаемое значение и точки аномалий.
 services: cognitive-services
 author: wenya
 manager: bix
 ms.service: cognitive-services
-ms.technology: anomaly-detection
-ms.topic: article
+ms.component: anomaly-detection
+ms.topic: tutorial
 ms.date: 05/01/2018
 ms.author: wenya
-ms.openlocfilehash: 228d440da358eba1322e2228c54f21e925e36ecd
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 4b544e2e59a40cebf75042c4040b84bceebcecf7
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38597954"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48887706"
 ---
-# <a name="anomaly-detection-java-application"></a>Приложение Java для обнаружения аномалий
+# <a name="tutorial-anomaly-detection-with-java-application"></a>Руководство по обнаружению аномалий с использованием приложения Java
+
+[!INCLUDE [PrivatePreviewNote](../../../../../includes/cognitive-services-anomaly-finder-private-preview-note.md)]
 
 В этой статье демонстрируется использование простого приложения Java для вызова API обнаружения аномалий.  
 В примере выполняется отправка данных временных рядов в API обнаружения аномалий с ключом подписки и последующее получение всех точек аномалий и ожидаемого значения для каждой точки данных из API-интерфейса.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="platform-requirements"></a>Требования платформы
 

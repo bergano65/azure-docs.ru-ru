@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 08/14/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 11e082ae235706613b0a60b12bc2b27896953508
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 1c0710be11b95b66d16661b5aff9cbf739ccda92
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41917751"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48901945"
 ---
 # <a name="tutorial-upgrade-kubernetes-in-azure-kubernetes-service-aks"></a>Руководство. Обновление Kubernetes в службе Azure Kubernetes (AKS)
 
@@ -101,6 +101,17 @@ Name          Location    ResourceGroup    KubernetesVersion    ProvisioningStat
 myAKSCluster  eastus      myResourceGroup  1.10.6               Succeeded            myaksclust-myresourcegroup-19da35-bd54a4be.hcp.eastus.azmk8s.io
 ```
 
+## <a name="delete-the-cluster"></a>Удаление кластера
+
+Это последняя часть в этой серии руководств. Вы можете удалить кластер AKS. Поскольку узлы Kubernetes выполняются в виртуальных машинах Azure, за них продолжает начисляться плата, даже если кластер не используется. Используйте команду [az group delete][az-group-delete], чтобы удалить группу ресурсов, службу контейнеров и все связанные с ними ресурсы.
+
+```azurecli-interactive
+az group delete --name myResourceGroup --yes --no-wait
+```
+
+> [!NOTE]
+> Когда вы удаляете кластер, субъект-служба Azure Active Directory, используемый в кластере AKS, не удаляется. Инструкции по удалению субъекта-службы см. в разделе [Дополнительные замечания][sp-delete].
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 В этом руководстве вы обновили Kubernetes в кластере AKS. Вы научились выполнять следующие задачи:
@@ -125,3 +136,5 @@ myAKSCluster  eastus      myResourceGroup  1.10.6               Succeeded       
 [az aks get-upgrades]: /cli/azure/aks#az-aks-get-upgrades
 [az aks upgrade]: /cli/azure/aks#az-aks-upgrade
 [azure-cli-install]: /cli/azure/install-azure-cli
+[az-group-delete]: /cli/azure/group#az-group-delete
+[sp-delete]: kubernetes-service-principal.md#additional-considerations

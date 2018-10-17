@@ -1,20 +1,21 @@
 ---
-title: Academic Knowledge API для Microsoft Academic Graph | Документация Майкрософт
-description: Academic Knowledge API используется для обработки запросов пользователей и получения подробных сведений из службы Academic Graph, входящей в состав Microsoft Cognitive Services.
+title: Что такое Academic Knowledge API?
+titlesuffix: Azure Cognitive Services
+description: Academic Knowledge API используется для обработки запросов пользователей и получения подробных сведений из службы Academic Graph.
 services: cognitive-services
 author: mvorvoreanu
-manager: kuansanw
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: academic-knowledge
-ms.topic: article
+ms.topic: overview
 ms.date: 03/27/2017
 ms.author: mivorvor
-ms.openlocfilehash: e241f9a87cd58b62eafd754bd3cb4283aa0a1e92
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: d08cd7124b232e50365e72753eba97c6309f401c
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380653"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48901216"
 ---
 # <a name="academic-knowledge-api"></a>Academic Knowledge API
 

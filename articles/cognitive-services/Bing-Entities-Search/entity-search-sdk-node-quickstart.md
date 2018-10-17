@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по пакету SDK для поиска сущностей для Node | Документация Майкрософт
-description: Установка компонентов консольного приложения пакета SDK для поиска сущностей.
-titleSuffix: Azure cognitive services
+title: Краткое руководство по работе с пакетом SDK для API Bing для поиска сущностей, Node
+titleSuffix: Azure Cognitive Services
+description: Настройка консольного приложения, созданного с помощью пакета SDK для API для поиска сущностей, с использованием Node.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-entity-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 02/12/2018
 ms.author: v-gedod
-ms.openlocfilehash: 2904ecfed33334458f9b6a9ca2500cd0bfef13bc
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 1f2a5f6a1473cde40928ada6e30f6bd9b780543d
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "35382960"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48814888"
 ---
-# <a name="entity-search-sdk-node-quickstart"></a>Краткое руководство по пакету SDK для поиска сущностей для Node
+# <a name="quickstart-bing-entity-search-sdk-with-node"></a>Краткое руководство по работе с пакетом SDK для API Bing для поиска сущностей с использованием Node
 
 Пакет SDK Bing для поиска сущностей содержит функции REST API для обработки запросов сущностей и анализа результатов. 
 

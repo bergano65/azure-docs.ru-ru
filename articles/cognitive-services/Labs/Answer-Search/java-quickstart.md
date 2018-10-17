@@ -1,27 +1,28 @@
 ---
-title: Краткое руководство по API поиска ответов в проектах с использованием Java. Microsoft Cognitive Services | Документация Майкрософт
+title: 'Краткое руководство: API поиска ответов в проектах с использованием Java'
+titlesuffix: Azure Cognitive Services
 description: Начало использования API поиска ответов в проектах на языке Java.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: project-answer-search
-ms.topic: article
+ms.component: project-answer-search
+ms.topic: quickstart
 ms.date: 04/13/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: 4e1f606e1564981589e638e0e51a8b42633ca7b0
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: rosh
+ms.openlocfilehash: 1e10ecf685aaf5b60b94a5e9e0d8e118f45e5168
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381717"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48867043"
 ---
-# <a name="project-answer-search-query-in-java"></a>Запрос к API поиска ответов в проектах на Java
+# <a name="quickstart-project-answer-search-query-in-java"></a>Краткое руководство: Запрашивание API поиска ответов в проектах на Java
 В этой статье с помощью Java демонстрируется API поиска ответов Bing, входящий в состав служб Microsoft Cognitive Services в Azure. API представляет собой веб-службу REST, совместимую с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON.
  
 В примере кода используется Java с минимальными внешними зависимостями.  Его также можно выполнить в Linux или Mac OS X с помощью Mono.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Получите ключ доступа для бесплатной пробной версии [Cognitive Services Labs](https://aka.ms/answersearchsubscription).
 
@@ -150,6 +151,6 @@ public class KnowledgeSrch {
 ````
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Краткое руководство — C#](c-sharp-quickstart.md)
-- [Краткое руководство — Java](java-quickstart.md)
+- [Краткое руководство для C#](c-sharp-quickstart.md)
+- [Краткое руководство для Java](java-quickstart.md)
 - [Краткое руководство — Node](node-quickstart.md)

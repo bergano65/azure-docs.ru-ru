@@ -1,25 +1,26 @@
 ---
-title: Краткое руководство по службе поиска ответов в проектах с использованием Node — Microsoft Cognitive Services | Документация Майкрософт
-description: Начало работы со службой поиска ответов в проектах, входящей в состав Microsoft Cognitive Services в Azure.
+title: Краткое руководство по работе с API поиска ответов в проектах, Node
+description: Начало работы с API поиска ответов в проектах с использованием Node.
 services: cognitive-services
 author: mikedodaro
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: project-answer-search
-ms.topic: article
+ms.component: project-answer-search
+ms.topic: quickstart
 ms.date: 04/13/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: 36b2709d39230aae7929164ba4c9306f57043b43
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: rosh
+ms.openlocfilehash: 99dba482c9dec4448110301201c7c9e79a7a6380
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381740"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48867431"
 ---
-# <a name="project-answer-search-node-quickstart"></a>Краткое руководство по службе поиска ответов в проектах с использованием Node
+# <a name="quickstart-project-answer-search-with-node"></a>Краткое руководство по работе с API поиска ответов в проектах с использованием Node
 
 С помощью приведенного здесь примера кода Node создается запрос на информацию о Йосемитском национальном парке.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Получите ключ доступа для бесплатной пробной версии [Cognitive Services Labs](https://aka.ms/answersearchsubscription).
 

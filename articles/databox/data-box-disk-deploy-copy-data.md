@@ -12,15 +12,15 @@ ms.devlang: NA
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 09/28/2018
+ms.date: 10/09/2018
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 776f70b6b24288006d52cb0e91797d1074180160
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 7eb17138f42cdada10edd5ef08873eb2afee91fe
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452621"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49068984"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-disk-and-verify"></a>Руководство. Копирование данных на диск Microsoft Azure Data Box и проверка
 
@@ -163,7 +163,75 @@ ms.locfileid: "47452621"
 > -  При копировании данных убедитесь, что размер данных соответствует ограничениям размера, указанным в разделе [Azure Data Box Disk limits (Preview)](data-box-disk-limits.md) (Ограничения для дисков Azure Data Box (предварительная версия)). 
 > - Если данные, которые загружаются с помощью диска Data Box, одновременно загружаются другими приложениями за пределами диска Data Box, это может привести к сбоям задания загрузки и повреждению данных.
 
-## <a name="verify-data"></a>Проверка данных 
+### <a name="split-and-copy-data-to-disks"></a>Разделение данных и их копирование на диски
+
+Эту дополнительную процедуру можно применять при использовании нескольких дисков и при наличии большого набора данных, который нужно разделить и скопировать на все диски. Инструмент Data Box Split Copy позволяет разделить и скопировать данные на компьютере с Windows.
+
+1. Скачайте инструмент Data Box Split Copy на компьютер с Windows и извлеките его в локальную папку. Этот инструмент был скачан при скачивании набора инструментов Диска Data Box для Windows.
+2. Откройте проводник. Запишите диск источника данных и буквы диска, назначенного Диску Data Box. 
+
+     ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-1.png)
+ 
+3. Определите исходные данные для копирования. Так, в нашем примере:
+    - Были определены следующие данные блочного BLOB-объекта.
+
+         ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-2.png)    
+
+    - Были определены следующие данные страничного BLOB-объекта.
+
+         ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-3.png)
+ 
+4. Перейдите в папку, в которой извлекается программное обеспечение. В этой папке найдите файл SampleConfig.json. Это файл только для чтения, который можно изменить и сохранить.
+
+   ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-4.png)
+ 
+5. Измените файл SampleConfig.json.
+ 
+    - Укажите имя задания. На Диске Data Box будет создана папка, которая в конечном итоге станет контейнером в учетной записи хранения Azure, связанной с этими дисками. Имя задания должно соответствовать соглашениям об именовании контейнеров Azure. 
+    - Укажите путь источника, записав формат пути в файле SampleConfigFile.json. 
+    - Введите буквы дисков, соответствующие целевым дискам. Данные берутся из исходного пути и копируются на несколько дисков.
+    - Укажите путь для файлов журналов. По умолчанию он отправляется в текущий каталог, в котором находится EXE-файл.
+
+     ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-5.png)
+
+6. Чтобы проверить формат этого файла, перейдите в JSONlint. Сохраните файл как ConfigFile.json. 
+
+     ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-6.png)
+ 
+7. Откройте окно командной строки и 
+
+8. Запустите файл DataBoxDiskSplitCopy.exe. type
+
+    `DataBoxDiskSplitCopy.exe PrepImport /config:<Your-config-file-name.json>`
+
+     ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-7.png)
+ 
+9. Чтобы продолжить выполнение сценария, введите следующее:
+
+    ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-8.png)
+  
+10. Когда набор данных разделен и скопирован, отображается сводка инструмента Split Copy для сеанса копирования. Результат выполнения команды показан ниже.
+
+    ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-9.png)
+ 
+11. Убедитесь, что данные на целевых дисках разделены. 
+ 
+    ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-10.png)
+    ![Split copy data ](media/data-box-disk-deploy-copy-data/split-copy-11.png)
+     
+    Если вы изучите содержимое диска n, вы увидите, что созданы две подпапки, соответствующие данным формата блочного и страничного BLOB-объектов.
+    
+     ![Разбиение и копирование данных ](media/data-box-disk-deploy-copy-data/split-copy-12.png)
+
+12. Если сеанс копирования завершается ошибкой, для восстановления используйте следующую команду:
+
+    `DataBoxDiskSplitCopy.exe PrepImport /config:<configFile.json> /ResumeSession`
+
+
+После копирования данные нужно проверить. 
+
+
+## <a name="validate-data"></a>Проверка данных 
 
 Чтобы проверить данные, выполните описанные ниже действия.
 

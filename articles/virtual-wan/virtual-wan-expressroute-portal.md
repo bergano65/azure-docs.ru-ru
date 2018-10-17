@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: tutorial
-ms.date: 09/26/2018
+ms.date: 10/5/2018
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my corporoate on-premises network(s) to my VNets using Virtual WAN and ExpressRoute.
-ms.openlocfilehash: 0b8de4d04d9cca47423634164e458e8699154f30
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 10b73843e2ca2e0ee0af766ef1ad7ee9cbf61f94
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47405314"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48854617"
 ---
 # <a name="tutorial-create-an-expressroute-association-using-azure-virtual-wan-preview"></a>Руководство. Создание связи ExpressRoute с помощью Виртуальной глобальной сети Azure (предварительная версия)
 
@@ -41,28 +41,12 @@ ms.locfileid: "47405314"
 
 ## <a name="register"></a>Регистрация этой возможности
 
-Нажмите **TryIt** (Попробовать), чтобы зарегистрировать эту возможность с помощью Azure Cloud Shell.
+Прежде чем настраивать Виртуальную глобальную сеть, вы должны зарегистрировать свою подписку для использования предварительной версии. В противном случае вы не сможете работать с Виртуальной глобальной сетью на портале. Чтобы зарегистрировать подписку, отправьте сообщение с идентификатором подписки по адресу **azurevirtualwan@microsoft.com**. После активации подписки на электронную почту будет отправлено письмо.
 
->[!NOTE]
->Если не зарегистрировать эту возможность, вы не сможете ею пользоваться и не увидите ее на портале.
->
->
+**Рекомендации по использованию предварительной версии:**
 
-После нажатия **TryIt**, чтобы открыть Azure Cloud Shell, скопируйте и вставьте следующие команды:
-
-```azurepowershell-interactive
-Register-AzureRmProviderFeature -ProviderNamespace Microsoft.Network -FeatureName AllowCortexExpressRouteGateway
-```
- 
-```azurepowershell-interactive
-Get-AzureRmProviderFeature -ProviderNamespace Microsoft.Network -FeatureName AllowCortexExpressRouteGateway
-```
-
-Когда возможность отобразится как зарегистрированная, зарегистрируйте подписку на пространство имен Microsoft.Network.
-
-```azurepowershell-interactive
-Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
-```
+* Доступность в регионах: центрально-западная часть США.
+* Необходимо включить канал ExpressRoute в стране, где поддерживается [ExpressRoute Global Reach](https://docs.microsoft.com/azure/expressroute/expressroute-faqs#where-is-expressroute-global-reach-supported)
 
 ## <a name="vnet"></a>1. Создать виртуальную сеть
 

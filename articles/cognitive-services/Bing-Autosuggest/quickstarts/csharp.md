@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по API автозаполнения Bing с использованием C# | Документация Майкрософт
-description: В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API автозаполнения Bing, который входит в состав Azure Cognitive Services.
+title: Краткое руководство. API автозаполнения Bing (C#)
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API автозаполнения Bing.
 services: cognitive-services
-documentationcenter: ''
 author: v-jaswel
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-autosuggest
-ms.topic: article
+ms.topic: quickstart
 ms.date: 09/14/2017
 ms.author: v-jaswel
-ms.openlocfilehash: 8115950c3b6f3ad439f077847d6645ddaec88dc4
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: c735145724577f92e75079f550c99aa9e6656542
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382249"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48829587"
 ---
-# <a name="quickstart-for-bing-autosuggest-api-with-c"></a>Краткое руководство по API автозаполнения Bing с использованием C\#
-<a name="HOLTop"></a>
+# <a name="quickstart-for-bing-autosuggest-api-with-c"></a>Краткое руководство по API автозаполнения Bing с использованием C#
 
 В этой статье описано, как использовать [API автозаполнения Bing](https://azure.microsoft.com/services/cognitive-services/autosuggest/) с C#. API автозаполнения Bing возвращает список предлагаемых запросов на основе частичной строки запроса, которую пользователь вводит в поле поиска. Как правило, этот API вызывается каждый раз при вводе пользователем нового символа в поле поиска, и предложения отображаются в виде раскрывающегося списка под полем поиска. В этой статье показано, как отправить запрос, который возвращает предлагаемые строки запроса для слова *sail*.
 
@@ -25,13 +25,13 @@ ms.locfileid: "35382249"
 
 Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017](https://www.visualstudio.com/downloads/). (Подойдет бесплатный выпуск Community Edition.)
 
-Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API автозаполнения Bing версии 7**. Для этого краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/#search). Требуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
+Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API автозаполнения Bing версии 7**. Для этого краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/#search). Потребуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
 
 ## <a name="get-autosuggest-results"></a>Получение результатов автозаполнения
 
 1. Создайте проект C# в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `subscriptionKey` ключом доступа, допустимым для своей подписки.
+3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```csharp
@@ -160,7 +160,7 @@ namespace AutosuggestSample1
 
 ### <a name="response"></a>Ответ
 
-Успешный ответ возвращается в формате JSON, как показано в примере ниже: 
+Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
 ```json
 {
@@ -229,7 +229,7 @@ namespace AutosuggestSample1
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по Автозаполнению Bing](../tutorials/autosuggest.md)
+> [Руководство по API автозаполнения Bing](../tutorials/autosuggest.md)
 
 ## <a name="see-also"></a>См. также
 

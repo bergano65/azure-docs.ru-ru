@@ -2,19 +2,18 @@
 title: Краткое руководство. Создание частного реестра Docker в Azure с помощью Azure CLI
 description: Быстрый способ изучить создание частного реестра контейнеров Docker с помощью Azure CLI.
 services: container-registry
-author: mmacy
-manager: jeconnoc
+author: dlepow
 ms.service: container-registry
 ms.topic: quickstart
 ms.date: 03/03/2018
-ms.author: marsma
+ms.author: danlep
 ms.custom: H1Hack27Feb2017, mvc
-ms.openlocfilehash: b17df81dd1d972f3e559140e9f43963e9c8cab2a
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 57c72056b669865278fa8109cd7f4963a1f0887a
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "42023021"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48855244"
 ---
 # <a name="quickstart-create-a-container-registry-using-the-azure-cli"></a>Краткое руководство. Создание реестра контейнеров с использованием Azure CLI
 
@@ -22,7 +21,7 @@ ms.locfileid: "42023021"
 
 Для этого руководства требуется Azure CLI 2.0.27 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli].
 
-Также необходим локально установленный модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в любой системе [Mac][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
+Также необходим локально установленный модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в любой системе: [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 

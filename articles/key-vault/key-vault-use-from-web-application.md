@@ -9,14 +9,14 @@ ms.assetid: 9b7d065e-1979-4397-8298-eeba3aec4792
 ms.service: key-vault
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 07/20/2018
+ms.date: 10/09/2018
 ms.author: barclayn
-ms.openlocfilehash: ff59e39e54433aa673b093e2ee1fbe8c74010e54
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: b66c9912ba0b6508c2beb786d2327efa779c6645
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39171329"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49079469"
 ---
 # <a name="tutorial-use-azure-key-vault-from-a-web-application"></a>Руководство по использованию Azure Key Vault из веб-приложения
 
@@ -40,10 +40,9 @@ ms.locfileid: "39171329"
 * Идентификатор клиента и секрет клиента для веб-приложения, зарегистрированного в Azure Active Directory, которое имеет доступ к вашему хранилищу ключей
 * Веб-приложение. В этом руководстве показаны действия для приложения ASP.NET MVC, развернутого в Azure в качестве веб-приложения.
 
-Выполните действия, описанные в статье по [началу работы с Azure Key Vault](key-vault-get-started.md), чтобы получить URI секрета, идентификатор клиента, секрет клиента и зарегистрировать приложение. Веб-приложение будет обращаться для доступа к хранилищу и должно быть зарегистрировано в Azure Active Directory. Ему также требуются права доступа к хранилищу ключей. Если эти условия не выполнены, вернитесь к разделу "Регистрация приложения" в учебнике "Приступая к работе" и повторите перечисленные шаги. Дополнительные сведения о веб-приложениях Azure см. в статье [Обзор веб-приложений](../app-service/app-service-web-overview.md).
+Выполните действия, описанные в статье по [началу работы с Azure Key Vault](key-vault-get-started.md), чтобы получить URI секрета, идентификатор клиента, секрет клиента и зарегистрировать приложение. Веб-приложение будет обращаться к хранилищу и должно быть зарегистрировано в Azure Active Directory. Ему также требуются права доступа к хранилищу ключей. Если эти условия не выполнены, вернитесь к разделу "Регистрация приложения" в учебнике "Приступая к работе" и повторите перечисленные шаги. Дополнительные сведения о веб-приложениях Azure см. в статье [Обзор веб-приложений](../app-service/app-service-web-overview.md).
 
-В этом примере показана подготовка удостоверений AAD вручную. Вместо этого следует использовать [Управляемое удостоверение службы (MSI)](https://docs.microsoft.com/azure/active-directory/msi-overview). MSI автоматически подготавливает удостоверения Azure AD. Для получения дополнительных сведений см. пример на сайте [GitHub](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet/) и связанное [руководство пр MSI со службой приложений и функциями](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity). См. дополнительные сведения о связанном с Key Vault [MSI](tutorial-web-application-keyvault.md).
-
+В этом примере удостоверения Azure Active Directory подготавливаются вручную. Вам же для автоматической подготовки удостоверений Azure AD нужно использовать [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md). Для получения дополнительных сведений см. пример на сайте [GitHub](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet/) и статью [Использование управляемых удостоверений в Службе приложений и Функциях Azure](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity). Кроме того, дополнительные сведения можно найти в статье [Руководство по настройке веб-приложения Azure для считывания секрета из Key Vault](tutorial-web-application-keyvault.md).
 
 ## <a id="packages"></a>Добавление пакетов NuGet
 
@@ -145,14 +144,19 @@ Utils.EncryptSecret = sec.Value;
 
 ```powershell
 #Create self-signed certificate and export pfx and cer files 
-$PfxFilePath = "c:\data\KVWebApp.pfx" 
-$CerFilePath = "c:\data\KVWebApp.cer" 
-$DNSName = "MyComputer.Contoso.com" 
-$Password ="MyPassword" 
+$PfxFilePath = 'KVWebApp.pfx'
+$CerFilePath = 'KVWebApp.cer'
+$DNSName = 'MyComputer.Contoso.com'
+$Password = 'MyPassword"'
+
+$StoreLocation = 'CurrentUser' #be aware that LocalMachine requires elevated privileges
+$CertBeginDate = Get-Date
+$CertExpiryDate = $CertBeginDate.AddYears(1)
+
 $SecStringPw = ConvertTo-SecureString -String $Password -Force -AsPlainText 
-$Cert = New-SelfSignedCertificate -DnsName $DNSName -CertStoreLocation "cert:\LocalMachine\My" -NotBefore 05/15/2018 -NotAfter 05/15/2019 
-Export-PfxCertificate -cert $cert -FilePath $PFXFilePath -Password $SecStringPw 
-Export-Certificate -cert $cert -FilePath $CerFilePath 
+$Cert = New-SelfSignedCertificate -DnsName $DNSName -CertStoreLocation "cert:\$StoreLocation\My" -NotBefore $CertBeginDate -NotAfter $CertExpiryDate -KeySpec Signature
+Export-PfxCertificate -cert $Cert -FilePath $PFXFilePath -Password $SecStringPw 
+Export-Certificate -cert $Cert -FilePath $CerFilePath 
 ```
 
 Запишите дату окончания и пароль для PFX-файла (в этом примере: 15 мая 2019 г. и test123). Они потребуются для приведенного ниже сценария. 
@@ -172,7 +176,7 @@ $adapp = New-AzureRmADApplication -DisplayName "KVWebApp" -HomePage "http://kvwe
 $sp = New-AzureRmADServicePrincipal -ApplicationId $adapp.ApplicationId
 
 
-Set-AzureRmKeyVaultAccessPolicy -VaultName 'contosokv' -ServicePrincipalName "http://kvwebapp" -PermissionsToSecrets all -ResourceGroupName 'contosorg'
+Set-AzureRmKeyVaultAccessPolicy -VaultName 'contosokv' -ServicePrincipalName "http://kvwebapp" -PermissionsToSecrets get,list,set,delete,backup,restore,recover,purge -ResourceGroupName 'contosorg'
 
 # get the thumbprint to use in your app settings
 $x509.Thumbprint

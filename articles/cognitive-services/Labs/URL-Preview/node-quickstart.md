@@ -1,21 +1,23 @@
 ---
-title: Краткое руководство по Node.js. Использование службы предварительного просмотра URL-адресов в проектах в Microsoft Cognitive Services | Документация Майкрософт
+title: Краткое руководство. API предварительного просмотра URL-адресов в проектах (Node.js)
+titlesuffix: Azure Cognitive Services
 description: Пример скрипта для начала работы со службой предварительного просмотра URL-адресов, входящей в состав Microsoft Cognitive Services в Azure.
 services: cognitive-services
 author: mikedodaro
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: project-url-preview
-ms.topic: article
+ms.component: project-url-preview
+ms.topic: quickstart
 ms.date: 03/16/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: 195033d2740b11873baae095cec028dc8d19ce49
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: rosh
+ms.openlocfilehash: b8410127ed9a0444ab400eb3242868a85bd5b2c9
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381765"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48883573"
 ---
-# <a name="url-preview-node-quickstart"></a>Краткое руководство по использованию службы предварительного просмотра URL-адресов для Node
+# <a name="quickstart-url-preview-with-nodejs"></a>Краткое руководство. API предварительного просмотра URL-адресов (Node.js) 
 
 Следующий пример Node создает представление для предварительного просмотра URL-адреса веб-сайта SwiftKey: https://swiftkey.com/en.
 

@@ -1,22 +1,23 @@
 ---
-title: Запрос фактов из службы поиска ответов в проектах в Microsoft Cognitive Services | Документация Майкрософт
+title: Краткое руководство. Запрашивание фактов с помощью API поиска ответов в проектах
+titlesuffix: Azure Cognitive Services
 description: Запросы фактов с использованием службы поиска ответов в проектах
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: project-answer-search
-ms.topic: article
+ms.component: project-answer-search
+ms.topic: quickstart
 ms.date: 04/16/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: 0a9d1925d5ae26f40824676fbebdcb0ffc450c53
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: rosh
+ms.openlocfilehash: ae8a42b95df70cff9cb845d4d553fbbb33cbdec9
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381729"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48868352"
 ---
-# <a name="query-for-facts"></a>Запрос фактов
+# <a name="quickstart-query-for-facts"></a>Краткое руководство. Запрашивание фактов
 
 Если запрос относится к факту, например дате или идентифицируемому знанию, ответ может содержать ответы `facts`. Ответы фактов содержат соответствующие запросу результаты, извлеченные из абзацев в веб-документах.  Такие запросы всегда возвращают веб-страницы, а [факты](fact-queries.md) и (или) [сущности](entity-queries.md) зависят от запроса.
 
@@ -198,7 +199,7 @@ https://labsportalppe.azure-api.net/answerSearch/v7.0/search?q=coffee+vs+tea&mkt
 ````
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Краткое руководство — C#](c-sharp-quickstart.md)
-- [Краткое руководство — Java](java-quickstart.md)
-- [Краткое руководство — Node](node-quickstart.md)
-- [Краткое руководство — Python](python-quickstart.md)
+- [Краткое руководство для C#](c-sharp-quickstart.md)
+- [Краткое руководство для Java](java-quickstart.md)
+- [Краткое руководство для Node](node-quickstart.md)
+- [Краткое руководство для Python](python-quickstart.md)

@@ -1,23 +1,23 @@
 ---
-title: Получение результатов автозаполнения с помощью API автозаполнения Bing (Azure Cognitive Services) | Документация Майкрософт
+title: Руководство. Получение результатов автозаполнения с помощью API автозаполнения Bing
+titlesuffix: Azure Cognitive Services
 description: Демонстрация использования API автозаполнения Bing.
 services: cognitive-services
 author: v-jaswel
-manager: kamrani
-ms.assetid: 2575A80C-FC74-4631-AE5D-8101CF2591D3
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-autosuggest
-ms.topic: article
+ms.topic: tutorial
 ms.date: 09/28/2017
 ms.author: v-jaswel
-ms.openlocfilehash: f66af61ed06f4c6a7fe36cd44aa7781b71bb18ea
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: b93ab8ebb4bb50723ec6ebae617fe9d95c6c7a47
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382148"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48831444"
 ---
-# <a name="build-a-web-page-autosuggest-client"></a>Создание клиента для автозаполнения веб-страницы
+# <a name="tutorial-build-a-web-page-autosuggest-client"></a>Руководство. Создание клиента для автозаполнения веб-страницы
 
 В рамках работы с этим руководством мы создадим веб-страницу, которая позволит пользователям запрашивать API автозаполнения Bing.
 
@@ -27,7 +27,7 @@ ms.locfileid: "35382148"
 > - Выполнение простого запроса к API автозаполнения Bing.
 > - Отображение результатов запроса.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить задания, описанные в этом руководстве, требуется ключ подписки для API автозаполнения Bing. Если у вас его нет, [зарегистрируйтесь, чтобы воспользоваться бесплатной пробной версией](https://azure.microsoft.com/try/cognitive-services/?api=autosuggest-api).
 
@@ -206,7 +206,7 @@ function bingAutosuggest(query, key) {
     request.setRequestHeader("Ocp-Apim-Subscription-Key", key);
 ```
 
-Обработайте ответ конечной точки. Если состояние равно 200 (ОК), отобразите результаты, в противном случае отобразите сведения об ошибке.
+Обработайте ответ конечной точки. Если указано состояние "200 (ОК)", отобразите результаты. В противном случае отобразите сведения об ошибке.
 
 ```html
     request.addEventListener("load", function() {

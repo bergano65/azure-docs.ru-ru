@@ -7,15 +7,15 @@ manager: jeconnoc
 ms.service: batch
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 01/16/2018
+ms.date: 09/06/2018
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: b5431feec23e2e0681967a9fe0345edc1db567aa
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: d22e5111a0413c1774d4d41290741414c82039f7
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31513832"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48814837"
 ---
 # <a name="quickstart-run-your-first-azure-batch-job-with-the-net-api"></a>Краткое руководство по выполнению первого пакетного задания Azure с помощью API для .NET
 
@@ -25,9 +25,9 @@ ms.locfileid: "31513832"
 
 [!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-* [Visual Studio IDE](https://www.visualstudio.com/vs) (Visual Studio 2015 или более поздняя версия); 
+* [Visual Studio 2017](https://www.visualstudio.com/vs) либо [.NET Core 2.1](https://www.microsoft.com/net/download/dotnet-core/2.1) для Linux, macOS или Windows. 
 
 * учетная запись пакетной службы и связанная учетная запись службы хранилища Azure. Чтобы создать эти учетные записи, см. примеры быстрого начала работы с пакетной службой с помощью [портала Azure](quick-create-portal.md) или [Azure CLI](quick-create-cli.md). 
 
@@ -60,9 +60,11 @@ private const string StorageAccountName = "mystorageaccount";
 private const string StorageAccountKey  = "xxxxxxxxxxxxxxxxy4/xxxxxxxxxxxxxxxxfwpbIC5aAWA8wDu+AFXZB827Mt9lybZB1nUcQbQiUrkPtilK5BQ==";
 ```
 
+[!INCLUDE [batch-credentials-include](../../includes/batch-credentials-include.md)]
+
 ## <a name="build-and-run-the-app"></a>Создание и запуск приложения
 
-Чтобы просмотреть действие рабочего процесса пакетной службы, создайте и запустите приложение. После запуска приложения просмотрите код, чтобы узнать, как работает каждый компонент приложения. 
+Чтобы просмотреть на рабочий процесс пакетной службы в действии, создайте и запустите приложение в Visual Studio или с помощью команд `dotnet build` и `dotnet run` в командной строке. После запуска приложения просмотрите код, чтобы узнать, как работает каждый компонент приложения. Например, в Visual Studio:
 
 * Щелкните правой кнопкой мыши решение в обозревателе решений и выберите **Build Solution** (Сборка решения). 
 
@@ -122,9 +124,9 @@ CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 ```csharp
 List<string> inputFilePaths = new List<string>
 {
-    @"..\..\taskdata0.txt",
-    @"..\..\taskdata1.txt",
-    @"..\..\taskdata2.txt"
+    "taskdata0.txt",
+    "taskdata1.txt",
+    "taskdata2.txt"
 };
 
 List<ResourceFile> inputFiles = new List<ResourceFile>();
@@ -192,7 +194,7 @@ try
 
     job.Commit(); 
 }
-...       
+...
 ```
 
 ### <a name="create-tasks"></a>Создание задач

@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по пакету SDK для API "Поиск сущностей" для Python | Документация Майкрософт
-description: Установка компонентов консольного приложения пакета SDK для API "Поиск сущностей".
-titleSuffix: Azure Entity Search SDK Python quickstart
+title: Краткое руководство по работе с пакетом SDK для API Bing для поиска сущностей, Python
+titlesuffix: Azure Cognitive Services
+description: Настройка консольного приложения, созданного с помощью пакета SDK для API Bing для поиска сущностей.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-entity-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 02/15/2018
 ms.author: v-gedod
-ms.openlocfilehash: 95449fa3753291269e1a83d1431df3bf0cbe372f
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 908373a216d0b14bb2dd41d3bb740b5582ac3ab1
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382592"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48814242"
 ---
-# <a name="entity-search-sdk-python-quickstart"></a>Краткое руководство по пакету SDK для API "Поиск сущностей" для Python
+# <a name="quickstart-bing-entity-search-sdk-with-python"></a>Краткое руководство по работе с пакетом SDK для API Bing для поиска сущностей с использованием Python
 
 Пакет SDK для API "Поиск сущностей" содержит функции REST API для обработки веб-запросов и анализа результатов.
 

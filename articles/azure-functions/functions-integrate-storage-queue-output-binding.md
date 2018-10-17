@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 09/19/2017
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: 84783472adda9a4a74670f0579790aac69feb23d
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: e48eac4cdc1e98e21a122850b1dc7d3e8f4efe07
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44095000"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48854530"
 ---
 # <a name="add-messages-to-an-azure-storage-queue-using-functions"></a>Добавление сообщений в очередь службы хранилища Azure с помощью Функций
 
@@ -25,7 +25,7 @@ ms.locfileid: "44095000"
 
 ![Сообщение очереди в Обозревателе службы хранилища](./media/functions-integrate-storage-queue-output-binding/function-queue-storage-output-view-queue.png)
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством сделайте следующее:
 
@@ -39,15 +39,19 @@ ms.locfileid: "44095000"
 
 1. На портале Azure откройте страницу приложения-функции для приложения, созданного [ранее](functions-create-first-azure-function.md). Для этого последовательно выберите **Все службы > Приложения-функции**, а затем выберите приложение-функцию.
 
-2. Выберите созданную ранее функцию.
+1. Выберите созданную ранее функцию.
 
 1. Выберите **Интегрировать > Создать выходные данные > Хранилище очередей Azure**.
 
 1. Нажмите кнопку **Выбрать**.
-    
+
     ![Добавление выходной привязки хранилища очередей к функции на портале Azure.](./media/functions-integrate-storage-queue-output-binding/function-add-queue-storage-output-binding.png)
 
-3. В разделе **Azure Queue Storage output** (Выходные данные хранилища очередей Azure) используйте параметры, указанные в следующей таблице: 
+1. Если появится сообщение **Расширения не установлены**, щелкните **Установить**, чтобы установить в приложение-функцию расширение привязки Службы хранилища. Это может занять несколько минут.
+
+    ![Установка расширения привязки Службы хранилища](./media/functions-integrate-storage-queue-output-binding/functions-integrate-install-binding-extension.png)
+
+1. В разделе **Azure Queue Storage output** (Выходные данные хранилища очередей Azure) используйте параметры, указанные в следующей таблице: 
 
     ![Добавление выходной привязки хранилища очередей к функции на портале Azure.](./media/functions-integrate-storage-queue-output-binding/function-add-queue-storage-output-binding-2.png)
 
@@ -57,52 +61,58 @@ ms.locfileid: "44095000"
     | **Подключение к учетной записи хранения** | AzureWebJobsStorage | Вы можете использовать подключение к учетной записи хранения, которое уже используется вашим приложением-функцией, или создать его.  |
     | **Имя очереди**   | outqueue    | Имя очереди для подключения к вашей учетной записи хранения. |
 
-4. Щелкните **Сохранить**, чтобы добавить привязку.
- 
+1. Щелкните **Сохранить**, чтобы добавить привязку.
+
 Теперь, когда выходная привязка определена, вам нужно обновить код, чтобы использовать привязку для добавления сообщений в очередь.  
 
 ## <a name="add-code-that-uses-the-output-binding"></a>Добавление кода, который использует выходную привязку
 
 В этом разделе вы добавляете код, который записывает сообщение в выходную очередь. Сообщение содержит значение, которое передается в триггер HTTP в строке запроса. Например, если строка запроса содержит `name=Azure`, в сообщении очереди будет указано: *Имя передано функции: Azure*.
 
-1. Щелкните функцию для отображения ее кода в редакторе. 
+1. Щелкните функцию для отображения ее кода в редакторе.
 
-2. Для функции C # добавьте параметр метода для привязки и напишите код, чтобы использовать его:
+1. Измените код функции в соответствии с ее языком.
 
-   Добавьте параметр **outputQueueItem** в сигнатуру метода, как показано в следующем примере. Имя параметра совпадает с тем, что вы ввели в поле **Имя параметра сообщения** при создании привязки.
+    # <a name="ctabcsharp"></a>[C\#](#tab/csharp)
 
-   ```cs   
-   public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, 
-       ICollector<string> outputQueueItem, TraceWriter log)
-   {
-       ...
-   }
-   ```
+    Добавьте параметр **outputQueueItem** в сигнатуру метода, как показано в следующем примере.
 
-   В теле функции C # непосредственно перед инструкцией `return` добавьте код, который создает сообщения очереди с помощью этого параметра.
+    ```cs
+    public static async Task<IActionResult> Run(HttpRequest req,
+        ICollector<string> outputQueueItem, ILogger log)
+    {
+        ...
+    }
+    ```
 
-   ```cs
-   outputQueueItem.Add("Name passed to the function: " + name);     
-   ```
+    В теле функции непосредственно перед инструкцией `return` добавьте код, который создает сообщение очереди с помощью этого параметра.
 
-3. Для функции JavaScript добавьте код, который использует выходную привязку, к объекту `context.bindings` для создания сообщения очереди. Добавьте этот код перед инструкцией `context.done`.
+    ```cs
+    outputQueueItem.Add("Name passed to the function: " + name);
+    ```
 
-   ```javascript
-   context.bindings.outputQueueItem = "Name passed to the function: " + 
-               (req.query.name || req.body.name);
-   ```
+    # <a name="javascripttabnodejs"></a>[JavaScript](#tab/nodejs)
 
-4. Щелкните **Сохранить**, чтобы сохранить изменения.
- 
-## <a name="test-the-function"></a>Проверка функции 
+    Добавьте код, который использует привязку для вывода в объекте `context.bindings` для создания сообщения очереди. Добавьте этот код перед инструкцией `context.done`.
+
+    ```javascript
+    context.bindings.outputQueueItem = "Name passed to the function: " + 
+                (req.query.name || req.body.name);
+    ```
+
+    ---
+
+1. Щелкните **Сохранить**, чтобы сохранить изменения.
+
+## <a name="test-the-function"></a>Проверка функции
 
 1. Сохранив изменения в коде, щелкните **ОК**. 
 
     ![Добавление выходной привязки хранилища очередей к функции на портале Azure.](./media/functions-integrate-storage-queue-output-binding/functions-test-run-function.png)
 
-   Обратите внимание, что **тело запроса** содержит `name` значение *Azure*. Это значение находится в сообщении очереди, которое создается при вызове функции.
-
-   Кроме выбора элемента **Запуск** можно вызвать функцию, введя URL-адрес в браузере и указав значение `name` в строке запроса. Метод браузера описан в предыдущем [кратком руководстве](functions-create-first-azure-function.md#test-the-function).
+    Обратите внимание, что **тело запроса** содержит `name` значение *Azure*. Это значение находится в сообщении очереди, которое создается при вызове функции.
+    
+    Кроме выбора элемента **Запуск** можно вызвать функцию, введя URL-адрес в браузере и указав значение `name` в строке запроса. Метод браузера описан в предыдущем [кратком руководстве](functions-create-first-azure-function.md#test-the-function).
 
 2. Проверьте журналы, чтобы убедиться, что функция успешно выполнена. 
 

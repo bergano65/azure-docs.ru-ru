@@ -1,23 +1,23 @@
 ---
-title: Проверка орфографии с помощью API Bing для проверки орфографии (Microsoft Cognitive Services в Azure) | Документация Майкрософт
+title: Руководство по получению результатов проверки орфографии с помощью API проверки орфографии Bing
+titlesuffix: Azure Cognitive Services
 description: Сведения об использовании Проверки орфографии Bing.
 services: cognitive-services
 author: v-jaswel
-manager: kamrani
-ms.assetid: 2575A80C-FC74-4631-AE5D-8101CF2591D3
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-spell-check
-ms.topic: article
+ms.topic: tutorial
 ms.date: 09/28/2017
 ms.author: v-jaswel
-ms.openlocfilehash: 4e4cdbb8a3d6ab01888d8f273083155c33eb06c1
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: d7afcd18e00e820ad63b8b12bbc352faaca24c84
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380668"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48803602"
 ---
-# <a name="build-a-web-page-spell-check-client"></a>Создание веб-страницы клиента для проверки орфографии
+# <a name="tutorial-build-a-web-page-spell-check-client"></a>Руководство по созданию клиента для проверки орфографии на веб-странице
 
 В рамках работы с этим руководством мы создадим веб-страницу, с помощью которой пользователи смогут запрашивать API Bing для проверки орфографии.
 
@@ -27,7 +27,7 @@ ms.locfileid: "35380668"
 > - Выполнение простого запроса к API Bing для проверки орфографии.
 > - Отображение результатов запроса.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить задачи, описанные в этом руководстве, вам потребуется ключ подписки для API Bing для проверки орфографии. Если у вас его нет, [зарегистрируйтесь, чтобы воспользоваться бесплатной пробной версией](https://azure.microsoft.com/try/cognitive-services/?api=spellcheck-api).
 

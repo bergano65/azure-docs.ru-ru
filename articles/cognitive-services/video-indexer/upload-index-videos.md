@@ -10,12 +10,12 @@ ms.component: video-indexer
 ms.topic: sample
 ms.date: 09/15/2018
 ms.author: juliako
-ms.openlocfilehash: e84411535b82b3e4861b529f490bdde0eb25fd42
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.openlocfilehash: f3889d1cddce92cbdd3049d4421bfdffc69da41e
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45983890"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48884311"
 ---
 # <a name="example-upload-and-index-your-videos"></a>Пример. Отправка и индексирование видео  
 
@@ -36,6 +36,11 @@ ms.locfileid: "45983890"
 - При загрузке видео на основе URL-адреса (предпочтительно) конечная точка должна быть защищена с использованием протокола TLS версии 1.2 (или выше).
 - Размер байтового массива ограничен 2 ГБ, а время ожидания истекает через 30 минут.
 - URL-адрес, указанный в параметре `videoURL`, нужно закодировать.
+
+> [!Tip]
+> Рекомендуем использовать .NET Framework 4.6.2 или более поздней версии, так как для более ранних версий .NET Framework протокол TLS 1.2 не используется по умолчанию.
+>
+> Если нужно использовать более ранние версии .NET Framework, прежде чем вызывать REST API, добавьте в код следующую строку:  <br/> System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
 
 ## <a name="configurations-and-params"></a>Конфигурации и параметры
 
@@ -243,8 +248,14 @@ public class AccountContractSlim
     public string AccessToken { get; set; }
 }
 ```
+## <a name="common-errors"></a>Распространенные ошибки
 
+После операции отправки могут возвращаться коды состояния, перечисленные в приведенной ниже таблице.
 
+|Код состояния|ErrorType (в тексте ответа)|ОПИСАНИЕ|
+|---|---|---|
+|400|VIDEO_ALREADY_IN_PROGRESS|То же самое видео уже обрабатывается в указанной учетной записи.|
+|400|VIDEO_ALREADY_FAILED|Менее 2 часов назад обработка того же самого видео завершилась сбоем. Клиентам API следует подождать не менее 2 часов, прежде чем повторно отправлять видео.|
 
 ## <a name="next-steps"></a>Дополнительная информация
 

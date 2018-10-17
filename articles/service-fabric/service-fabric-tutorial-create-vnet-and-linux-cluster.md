@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/27/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 27600cd4656f70b4cd01745667c0e0fd2a2f4997
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 33b95c1b0e3d654ce8bb6eda3e96b7b3e9c9bc13
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47405825"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48831489"
 ---
 # <a name="tutorial-deploy-a-linux-service-fabric-cluster-into-an-azure-virtual-network"></a>Руководство. Развертывание кластера Service Fabric на платформе Linux в виртуальной сети Azure
 
@@ -85,7 +85,7 @@ ms.locfileid: "47405825"
 
 ### <a name="service-fabric-cluster"></a>Кластер Service Fabric
 
-Кластер Linux развернут со следующими характеристиками:
+В ресурсе **Microsoft.ServiceFabric/clusters** развернут кластер Linux со следующими характеристиками:
 
 * один тип узла;
 * пять узлов на первичном типе узла (можно настроить в параметрах шаблона);
@@ -99,7 +99,7 @@ ms.locfileid: "47405825"
 
 ### <a name="azure-load-balancer"></a>Azure Load Balancer
 
-Подсистема балансировки нагрузки развернута, а проверки и правила настроены для следующих портов:
+В ресурсе **Microsoft.Network/loadBalancers** настроена подсистема балансировки нагрузки, а также указаны пробы и правила для следующих портов:
 
 * конечная точка подключения клиента: 19000;
 * конечная точка HTTP шлюза: 19080;
@@ -108,7 +108,7 @@ ms.locfileid: "47405825"
 
 ### <a name="virtual-network-and-subnet"></a>Виртуальная сеть и подсеть
 
-В параметрах шаблона объявляются имена виртуальной сети и подсети.  В параметрах шаблона также объявляются адресные пространства виртуальной сети и подсети:
+В параметрах шаблона объявляются имена виртуальной сети и подсети.  Адресные пространства виртуальной сети и подсети также объявляются в параметрах шаблона и настраиваются в ресурсе **Microsoft.Network/virtualNetworks**:
 
 * адресное пространство виртуальной сети: 10.0.0.0/16;
 * адресное пространство подсети Service Fabric: 10.0.2.0/24.

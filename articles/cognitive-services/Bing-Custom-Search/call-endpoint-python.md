@@ -1,22 +1,23 @@
 ---
-title: Вызов конечной точки службы пользовательского поиска Bing с помощью Python и Microsoft Cognitive Services
+title: Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью Python
+titlesuffix: Azure Cognitive Services
 description: В этом кратком руководстве показано, как для запрашивать результаты поиска из экземпляра службы пользовательского поиска с помощью Python для вызова конечной точки службы пользовательского поиска Bing.
 services: cognitive-services
 author: brapel
-manager: ehansen
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-custom-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 05/07/2018
 ms.author: v-brapel
-ms.openlocfilehash: 3666e92372e9bed80e5c0c7991dcac730cebb588
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: d16b7354b0ef727ba3c670b97105e1bd6f99034e
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46967598"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48815466"
 ---
-# <a name="call-bing-custom-search-endpoint-python"></a>Конечная точка службы пользовательского поиска Bing (Python)
+# <a name="quickstart-call-bing-custom-search-endpoint-python"></a>Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" (Python)
 
 В этом кратком руководстве показано, как запрашивать результаты поиска из экземпляра службы пользовательского поиска с помощью Python для вызова конечной точки службы пользовательского поиска Bing. 
 

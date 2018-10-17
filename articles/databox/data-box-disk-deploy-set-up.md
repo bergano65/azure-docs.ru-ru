@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/24/2018
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: e4a913aaeb6eeb3c58b70dbcd714f1360875594f
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: b1e647c6aee251bebd257db5e4e631deba0be3fa
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47161542"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49068814"
 ---
 # <a name="tutorial-unpack-connect-and-unlock-azure-data-box-disk"></a>Руководство. Распаковка, подключение и разблокировка диска Azure Data Box
 
@@ -76,12 +76,14 @@ ms.locfileid: "47161542"
 Выполните следующие действия для подключения и разблокировки дисков.
      
 1. На портале Azure перейдите в раздел **Общие > Сведения об устройстве**. 
-2. Скачайте набор средств для диска Data Box, соответствующий клиенту Windows. 
+2. Скачайте набор средств для диска Data Box, соответствующий клиенту Windows. Этот набор средств содержит 3 средства: средство разблокировки дисков, средство проверки дисков и средство раздельного копирования дисков. 
+
+    В этой процедуре используется только средство разблокировки дисков. Два других средства будут использованы позднее.
 
     > [!div class="nextstepaction"]
     > [Скачать набор средств для диска Data Box для Windows](http://aka.ms/databoxdisktoolswin)         
 
-3. Извлеките средство на тот же компьютер, который будет использоваться для копирования данных.
+3. Извлеките набор средств на тот же компьютер, который будет использоваться для копирования данных. 
 4. Откройте окно командной строки или запустите Windows PowerShell от имени администратора на том же компьютере.
 5. (Необязательно). Чтобы убедиться, что компьютер, используемый для разблокировки диска, соответствует требованиям операционной системы, выполните команду проверки системы. Результат выполнения команды показан ниже. 
 

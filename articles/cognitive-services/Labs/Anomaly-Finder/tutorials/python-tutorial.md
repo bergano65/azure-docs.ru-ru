@@ -1,22 +1,25 @@
 ---
-title: Приложение Python для обнаружения аномалий — Microsoft Cognitive Services | Документация Майкрософт
-description: Изучите записную книжку Python, в которой используется API обнаружения аномалий, входящий в состав служб Microsoft Cognitive Services. Отправьте исходные точки данных в API и получите ожидаемое значение и точки аномалий.
+title: Руководство по обнаружению аномалий с использованием Python
+titlesuffix: Azure Cognitive Services
+description: Изучите записную книжку Python, в которой используется API обнаружения аномалий. Отправьте исходные точки данных в API и получите ожидаемое значение и точки аномалий.
 services: cognitive-services
 author: chliang
 manager: bix
 ms.service: cognitive-services
-ms.technology: anomaly-detection
-ms.topic: article
+ms.component: anomaly-detection
+ms.topic: tutorial
 ms.date: 05/01/2018
 ms.author: chliang
-ms.openlocfilehash: d35f41ddab21aa155376ad52ff4084298dab8fc5
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 98f83fbc4db8685526833c3d4f1d15903419ad3f
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381716"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48887757"
 ---
-# <a name="anomaly-detection-python-application"></a>Приложение Python для обнаружения аномалий
+# <a name="tutorial-anomaly-detection-with-python-application"></a>Руководство по обнаружению аномалий с использованием приложения Python
+
+[!INCLUDE [PrivatePreviewNote](../../../../../includes/cognitive-services-anomaly-finder-private-preview-note.md)]
 
 В этом руководстве показано, как использовать API обнаружения аномалий в Python и как визуализировать результаты с использованием популярных библиотек. С помощью Jupyter можно запустить учебное руководство и проверить собственные данные, используя свой ключ подписки. Чтобы узнать, как начать работу с интерактивными записными книжками Jupyter Notebook, обратитесь к [документации по Jupyter](http://jupyter.readthedocs.io/en/latest/index.html). 
 

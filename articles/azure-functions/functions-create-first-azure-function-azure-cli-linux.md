@@ -11,16 +11,16 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: azure-cli
 manager: jeconnoc
-ms.openlocfilehash: 608d15afaaff15ad960a0fe8b7a56854f41662b6
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 1cf20a4a93ef1b5bfb9c7818f35be5e75e45a3d2
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46993414"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48901096"
 ---
 # <a name="create-your-first-function-running-on-linux-using-the-azure-cli-preview"></a>Создание первой функции, выполняемой в Linux, с помощью Azure CLI (предварительная версия)
 
-Функции Azure позволяют размещать в Linux собственные функции в контейнере службы приложения Azure по умолчанию. Также можно [использовать собственный настраиваемый контейнер](functions-create-function-linux-custom-image.md). Эта функция сейчас доступна в режиме в предварительной версии. Для ее работы требуется [среда выполнения функций 2.0](functions-versions.md), которая также доступна в режиме предварительной версии.
+Функции Azure позволяют размещать в Linux собственные функции в контейнере службы приложения Azure по умолчанию. Также можно [использовать собственный настраиваемый контейнер](functions-create-function-linux-custom-image.md). Эта функция сейчас доступна в виде предварительной версии. Для ее работы требуется [среда выполнения Функций версии 2.0](functions-versions.md).
 
 В этом разделе краткого руководства рассматривается, как использовать Функции Azure с Azure CLI для создания первого приложения-функции в Linux, размещенного в контейнере службы приложений по умолчанию. Сам код функции развертывается в образе из примера репозитория GitHub.    
 
@@ -83,6 +83,18 @@ az functionapp create --name <app_name> --storage-account  <storage_name>  --res
 
 >[!NOTE]  
 >Пример репозитория сейчас содержит два файла скриптов — [deploy.sh](https://github.com/Azure-Samples/functions-quickstart-linux/blob/master/deploy.sh) и [.deployment](https://github.com/Azure-Samples/functions-quickstart-linux/blob/master/.deployment). Файл .deployment указывает процессу развертывания использовать deploy.sh как [пользовательский скрипт развертывания](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script). В текущей предварительной версии скрипты необходимы для развертывания приложения-функции в образе Linux.  
+
+## <a name="configure-the-function-app"></a>Настройка приложения-функции
+
+Для проекта в репозитории GitHub требуется среда выполнения Функций версии 1.x. Задайте значение `~1` для параметра `FUNCTIONS_WORKER_RUNTIME`, чтобы закрепить приложение-функцию в последней версии 1.x. Задайте параметры приложения с помощью команды [az functionapp config appsettings set](https://docs.microsoft.com/cli/azure/functionapp/config/appsettings#set).
+
+В следующей команде Azure CLI замените <app_name> именем приложения-функции.
+
+```azurecli-interactive
+az functionapp config appsettings set --name <app_name> \
+--resource-group myResourceGroup \
+--settings FUNCTIONS_WORKER_RUNTIME=~1
+```
 
 [!INCLUDE [functions-test-function-code](../../includes/functions-test-function-code.md)]
 

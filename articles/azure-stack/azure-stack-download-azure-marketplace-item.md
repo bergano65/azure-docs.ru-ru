@@ -3,7 +3,7 @@ title: Скачивание элементов Marketplace из Azure | Доку
 description: Оператор облака может скачивать элементы marketplace из Azure в свое развертывание Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: brenduns
+author: sethmanheim
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/27/2018
-ms.author: brenduns
-ms.reviewer: jeffgo
-ms.openlocfilehash: 418b2f6b156853c1a2820271808bdba922d41a87
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.date: 10/09/2018
+ms.author: sethm
+ms.reviewer: ''
+ms.openlocfilehash: cf6bc980f6fd821056a987d0c830863bd15ba779
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39412905"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48902014"
 ---
 # <a name="download-marketplace-items-from-azure-to-azure-stack"></a>Скачивание элементов Marketplace из Azure в Azure Stack
 
@@ -66,7 +66,7 @@ ms.locfileid: "39412905"
 
     После завершения скачивания можно развернуть новый элемент marketplace от имени оператора или пользователя Azure Stack.
 
-5. Чтобы развернуть скачанный элемент, щелкните **+Создать**, выберите новый элемент, выполнив поиск в категориях. Выберите элемент, чтобы начать процесс развертывания. Процесс различается для разных элементов marketplace. 
+5. Чтобы развернуть скачанный элемент Marketplace, щелкните **+ Создать ресурс**, выберите новый элемент, выполнив поиск в категориях. Выберите элемент, чтобы начать процесс развертывания. Процесс различается для разных элементов marketplace. 
 
 ## <a name="disconnected-or-a-partially-connected-scenario"></a>Сценарий отключенного или частично подключенного режима
 
@@ -121,15 +121,15 @@ ms.locfileid: "39412905"
 
    ```
 
-5. Импортируйте модуль синдикации и запустите средство, выполнив следующий скрипт. Замените *Destination folder path* на расположение для хранения файлов, скачанных из Azure Marketplace.   
+5. Импортируйте модуль синдикации и запустите средство, выполнив следующие команды. Замените `Destination folder path` на расположение для хранения файлов, скачанных из Azure Marketplace.   
 
    ```PowerShell  
    Import-Module .\Syndication\AzureStack.MarketplaceSyndication.psm1
 
-   Sync-AzSOfflineMarketplaceItem `
-     -destination "Destination folder path" `
-     -AzureTenantID $AzureContext.Tenant.TenantId `
-     -AzureSubscriptionId $AzureContext.Subscription.Id  
+   Sync-AzSOfflineMarketplaceItem 
+      -Destination "Destination folder path in quotes" `
+      -AzureTenantID $AzureContext.Tenant.TenantId `
+      -AzureSubscriptionId $AzureContext.Subscription.Id 
    ```
 
 6. При запуске средства появится запрос на ввод учетных данных Azure. Войдите в учетную запись Azure, которая использовалась для регистрации Azure Stack. Если вход выполнен успешно, появится следующий экран со списком доступных элементов marketplace.  
@@ -148,10 +148,10 @@ ms.locfileid: "39412905"
 ### <a name="import-the-download-and-publish-to-azure-stack-marketplace"></a>Импорт скачанного пакета и его публикация в Azure Stack Marketplace
 1. Файлы образов виртуальных машин или шаблонов решений, которые вы [скачали ранее](#use-the-marketplace-syndication-tool-to-download-marketplace-items), должны быть локально доступны для вашей среды Azure Stack.  
 
-2. Используя портал администратора, отправьте пакет элементов marketplace (файл AZPKG) в хранилище BLOB-объектов Azure Stack. Загрузка пакета делает его доступным для Azure Stack, поэтому вы сможете позже опубликовать элемент в Azure Stack Marketplace.
+2. Используя портал администратора, отправьте пакет элементов Marketplace (файл AZPKG) и образ виртуального жесткого диска в хранилище BLOB-объектов Azure Stack. Загрузка пакета и файлов диска делают их доступными в Azure Stack, поэтому вы сможете позже опубликовать элемент в Azure Stack Marketplace.
 
-   Для загрузки требуется наличие учетной записи хранения с общедоступным контейнером (см. предварительные условия для этого сценария).   
-   1. На портале администрирования Azure Stack выберите **Больше служб** > **Учетные записи хранения**.  
+   Для загрузки требуется наличие учетной записи хранения с общедоступным контейнером (см. предварительные условия для этого сценария).  
+   1. На портале администрирования Azure Stack перейдите в раздел **Все службы** и затем в категории **Данные+хранилище** выберите **Учетные записи хранения**.  
    
    2. Выберите учетную запись хранения из своей подписки, а затем в колонке **службы BLOB-объектов** выберите **Контейнеры**.  
       ![Служба BLOB-объектов](media/azure-stack-download-azure-marketplace-item/blob-service.png)  
@@ -159,7 +159,7 @@ ms.locfileid: "39412905"
    3. Выберите контейнер, который вы хотите использовать, а затем нажмите кнопку **Отправить**, чтобы открыть панель **Отправить BLOB-объект**.  
       ![Контейнер](media/azure-stack-download-azure-marketplace-item/container.png)  
    
-   4. На панели "Отправить BLOB-объект" перейдите к файлам, которые вы хотите загрузить в хранилище, а затем нажмите кнопку **Отправить**.  
+   4. На панели "Отправить BLOB-объект" перейдите к пакету и файлам диска, которые вы хотите загрузить в хранилище, а затем нажмите кнопку **Отправить**.  
       ![upload](media/azure-stack-download-azure-marketplace-item/upload.png)  
 
    5. Переданные файлы отображаются в области контейнера. Выберите файл, а затем скопируйте URL-адрес из панели **Свойства BLOB-объекта**. Вы будете использовать этот URL-адрес на следующем шаге при импорте элементов marketplace в Azure Stack.  На следующем изображении контейнером является *blob-test-storage*, а файлом — *Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg*.  URL-адрес файла — *https://testblobstorage1.blob.local.azurestack.external/blob-test-storage/Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg*.  
@@ -169,7 +169,7 @@ ms.locfileid: "39412905"
 
    Вы можете получить значения *publisher*, *offer* и *sku* образа из текстового файла, который скачивается вместе с файлом AZPKG. Текстовый файл хранится в целевом расположении. Значение *версии* — это версия, указанная при скачивании элемента из Azure в предыдущей процедуре. 
  
-   В следующем примере скрипта используются значения для виртуальной машины Windows Server 2016 Datacenter Server Core. Замените *URI_path* на путь к расположению хранилища BLOB-объектов для элемента.
+   В следующем примере скрипта используются значения для виртуальной машины Windows Server 2016 Datacenter Server Core. Значение *-Osuri* — это пример пути к хранилищу BLOB-объектов элемента.
 
    ```PowerShell  
    Add-AzsPlatformimage `
@@ -178,7 +178,7 @@ ms.locfileid: "39412905"
     -sku "2016-Datacenter-Server-Core" `
     -osType Windows `
     -Version "2016.127.20171215" `
-    -OsUri "URI_path"  
+    -OsUri "https://mystorageaccount.blob.local.azurestack.external/cont1/Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.vhd"  
    ```
    **О шаблонах решений**. Некоторые шаблоны могут содержать небольшой VHD-файл размером 3 МБ с именем **fixed3.vhd**. Вам не нужно импортировать этот файл в Azure Stack. Fixed3.vhd.  Этот файл входит в состав некоторых шаблонов решений, чтобы были выполнены требования к публикации в Azure Marketplace.
 
@@ -198,7 +198,7 @@ ms.locfileid: "39412905"
      -GalleryItemUri "https://mystorageaccount.blob.local.azurestack.external/cont1/Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg" `
      –Verbose
     ```
-5. После публикации элемента коллекции его можно просмотреть, щелкнув **Больше служб** > **Marketplace**.  Если вы загружаете шаблон решения, обязательно добавьте любой зависимый образ VHD для этого шаблона решения.  
+5. После публикации элемента коллекции его можно использовать. Чтобы убедиться, что элемент коллекции опубликован, перейдите в раздел **Все службы**, а затем в категории **Общее** выберите **Marketplace**.  Если вы загружаете шаблон решения, обязательно добавьте любой зависимый образ VHD для этого шаблона решения.  
   ![Представление в Marketplace](media/azure-stack-download-azure-marketplace-item/view-marketplace.png)  
 
 > [!NOTE]

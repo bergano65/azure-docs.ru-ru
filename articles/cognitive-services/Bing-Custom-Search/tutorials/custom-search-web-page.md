@@ -1,22 +1,23 @@
 ---
-title: Создание веб-страницы пользовательского поиска в службе "Пользовательский поиск Bing" | Документация Майкрософт
+title: Руководство по созданию веб-страницы пользовательского поиска в службе "Пользовательский поиск Bing"
+titlesuffix: Azure Cognitive Services
 description: В этой статье описано, как настроить экземпляр пользовательского поиска и интегрировать его в веб-страницу.
 services: cognitive-services
 author: brapel
-manager: ehansen
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-custom-search
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/16/2017
 ms.author: v-brapel
-ms.openlocfilehash: 8bc1520325afc256ac62cc1f1dfaf24c53da4b83
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 3e892131a0109d2fff924940542b5d8b2b701950
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46980004"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48815381"
 ---
-# <a name="build-a-custom-search-web-page"></a>Создание веб-страницы пользовательского поиска
+# <a name="tutorial-build-a-custom-search-web-page"></a>Руководство по созданию веб-страницы пользовательского поиска
 
 Служба "Пользовательский поиск Bing" позволяет создавать специально адаптированные интерфейсы поиска по темам, которые действительно важны для вас. Например, если веб-сайт боевых искусств предоставляет функцию поиска, то вы можете указать домены, веб-сайты и веб-страницы, по которым Bing будет выполнять поиск. Пользователи увидят результаты поиска, адаптированные к интересующей их информации, вместо того, чтобы пролистывать страницы результатов поиска с несоответствующим содержимым. 
 

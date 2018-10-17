@@ -1,29 +1,29 @@
 ---
-title: Руководство по API компьютерного зрения для Python | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Подключение к API компьютерного зрения в Cognitive Services из веб-приложения ASP.NET Core.
+title: Руководство по использованию API компьютерного зрения с C#
+titleSuffix: Azure Cognitive Services
+description: Подключение к API компьютерного зрения из веб-приложения ASP.NET Core.
 services: cognitive-services
 author: ghogen
-manager: douge
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
-ms.topic: conceptual
+ms.topic: Tutorial
 ms.date: 03/01/2018
 ms.author: ghogen
-ms.openlocfilehash: 76ca1215144a5caa40971e1eda23f6462f7bf27b
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: ebfcabdea1e83a83af5eea8025ba5a411c3f9880
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38663912"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49077956"
 ---
-# <a name="connecting-to-cognitive-services-computer-vision-api-by-using-connected-services-in-visual-studio"></a>Подключение к API компьютерного зрения в Cognitive Services с помощью компонента "Подключенные службы" в Visual Studio
+# <a name="use-connected-services-in-visual-studio-to-connect-to-the-computer-vision-api"></a>Подключение к API компьютерного зрения с помощью компонента "Подключенные службы" в Visual Studio
 
 С помощью API компьютерного зрения в Cognitive Services можно извлекать из изображений ценные сведения для классификации и обработки визуальных данных, а функция машинной модерации изображений обеспечит необходимый контроль за вашими службами.
 
 В этой статье и других статьях этой серии приводятся сведения об использовании компонента "Подключенные службы" Visual Studio для API компьютерного зрения в Cognitive Services. Эта возможность доступна как в Visual Studio 2017 15.7, так и в более поздней версии с установленным расширением Cognitive Services.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Подписка Azure**. Если у вас нет подписки, вы можете зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
 - **Visual Studio 2017 версии 15.7** с установленной рабочей нагрузкой **Веб-разработка**. [Скачайте это приложение](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
@@ -60,7 +60,7 @@ ms.locfileid: "38663912"
    [4/26/2018 5:15:31.664 PM] Adding Computer Vision API to the project.
    [4/26/2018 5:15:32.084 PM] Creating new ComputerVision...
    [4/26/2018 5:15:32.153 PM] Creating new Resource Group...
-   [4/26/2018 5:15:40.286 PM] Installing NuGet package 'Microsoft.Azure.CognitiveServices.Vision.ComputerVision' version 1.0.2-preview.
+   [4/26/2018 5:15:40.286 PM] Installing NuGet package 'Microsoft.Azure.CognitiveServices.Vision.ComputerVision' version 2.1.0.
    [4/26/2018 5:15:44.117 PM] Retrieving keys...
    [4/26/2018 5:15:45.602 PM] Changing appsettings.json setting: ComputerVisionAPI_ServiceKey=<service key>
    [4/26/2018 5:15:45.606 PM] Changing appsettings.json setting: ComputerVisionAPI_ServiceEndPoint=https://australiaeast.api.cognitive.microsoft.com/vision/v2.0

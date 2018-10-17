@@ -1,26 +1,29 @@
 ---
-title: Приложение Javascript для обнаружения аномалий в Microsoft Cognitive Services | Документация Майкрософт
-description: Изучите веб-приложение Javascript, в котором используется API обнаружения аномалий в Microsoft Cognitive Services. Отправьте исходные точки данных в API и получите ожидаемое значение и точки аномалий.
+title: Руководство по обнаружению аномалий с использованием JavaScript
+titlesuffix: Azure Cognitive Services
+description: Изучите веб-приложение Javascript, в котором используется API обнаружения аномалий. Отправьте исходные точки данных в API и получите ожидаемое значение и точки аномалий.
 services: cognitive-services
 author: wenya
 manager: bix
 ms.service: cognitive-services
-ms.technology: anomaly-detection
-ms.topic: article
+ms.component: anomaly-detection
+ms.topic: tutorial
 ms.date: 05/01/2018
 ms.author: wenya
-ms.openlocfilehash: 42c3941a05efe8b74f818cd99f3606b3073892a9
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: cd65a5275fac651968197c9000b2d4cd3962693b
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38453175"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48883709"
 ---
-# <a name="anomaly-detection-javascript-application"></a>Приложение Javascript для обнаружения аномалий
+# <a name="tutorial-anomaly-detection-with-javascript-application"></a>Руководство по обнаружению аномалий с использованием приложения JavaScript
+
+[!INCLUDE [PrivatePreviewNote](../../../../../includes/cognitive-services-anomaly-finder-private-preview-note.md)]
 
 Изучите веб-приложение, которое использует REST API обнаружения аномалий для обнаружения аномалий. В примере выполняется отправка данных временных рядов в API обнаружения аномалий с ключом подписки и последующее получение всех точек аномалий и ожидаемого значения для каждой точки данных из API.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="platform-requirements"></a>Требования платформы
 

@@ -10,14 +10,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/20/2018
+ms.date: 10/05/2018
 ms.author: sharadag
-ms.openlocfilehash: 8e3bdd402cbd16469fb333cc470471629f85538c
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 3df96451838fe90b7d45d1aedd272fc10d798e57
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47045460"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48883981"
 ---
 # <a name="tutorial-configure-https-on-a-front-door-custom-domain"></a>Руководство. Настройка протокола HTTPS на личном домене Front Door
 
@@ -45,15 +45,14 @@ ms.locfileid: "47045460"
 
 Прежде чем перейти к выполнению шагов в этом руководстве, создайте службу Front Door и разверните в ней как минимум один личный домен. Дополнительные сведения см. в статье [Tutorial: Add a custom domain to your Front Door](front-door-custom-domain.md) (Руководство. Добавление личного домена в службу Front Door).
 
----
-
 ## <a name="ssl-certificates"></a>SSL-сертификаты
+
 Чтобы включить протокол HTTPS для безопасной доставки содержимого в личном домене Front Door, необходимо использовать SSL-сертификат. Вы можете использовать сертификат под управлением Azure Front Door Service или собственный сертификат.
 
 
-# <a name="option-1-default-enable-https-with-an-afd-managed-certificatetaboption-1-default-enable-https-with-an-afd-managed-certificate"></a>[Вариант 1 (по умолчанию). Включение протокола HTTPS с помощью управляемого AFD сертификата](#tab/option-1-default-enable-https-with-an-afd-managed-certificate)
+### <a name="option-1-default-use-a-certificate-managed-by-front-door"></a>Вариант 1 (по умолчанию). Использование сертификата под управлением Front Door
 
-При использовании управляемого AFD сертификата протокол HTTPS можно включить всего несколькими щелчками мышью. Azure Front Door Service полностью управляет задачами управления сертификатами, такими как приобретение и продление. Как только функция будет включена, процесс сразу же запустится. Если личный домен уже сопоставлен с интерфейсным узлом Front Door по умолчанию (`{hostname}.azurefd.net`), дальнейших действий не требуется. Front Door предпримет нужные действия и автоматически выполнит запрос. Тем не менее, если личный домен сопоставлен в другом месте, используйте электронную почту, чтобы проверить принадлежность домена.
+При использовании сертификата под управлением Azure Front Door Service вы можете включить HTTPS несколькими щелчками. Azure Front Door Service полностью управляет задачами управления сертификатами, такими как приобретение и продление. Как только функция будет включена, процесс сразу же запустится. Если личный домен уже сопоставлен с интерфейсным узлом Front Door по умолчанию (`{hostname}.azurefd.net`), дальнейших действий не требуется. Front Door предпримет нужные действия и автоматически выполнит запрос. Тем не менее, если личный домен сопоставлен в другом месте, используйте электронную почту, чтобы проверить принадлежность домена.
 
 Ниже описана процедура включения протокола HTTPS для личного домена.
 
@@ -68,11 +67,11 @@ ms.locfileid: "47045460"
 5. Перейдите к [проверке домена](#validate-the-domain).
 
 
-# <a name="option-2-enable-https-with-your-own-certificatetaboption-2-enable-https-with-your-own-certificate"></a>[Вариант 2. Включение HTTPS с помощью собственного сертификата](#tab/option-2-enable-https-with-your-own-certificate)
+### <a name="option-2-use-your-own-certificate"></a>Вариант 2. Использование собственного сертификата
 
 Для включения функции HTTPS можно использовать собственный сертификат. Этот процесс выполняется путем интеграции с Azure Key Vault, что позволяет безопасно хранить сертификаты. Azure Front Door Service использует этот механизм безопасности, чтобы получить сертификат. При этом вам потребуется выполнить ряд дополнительных действий. При создании SSL-сертификата, необходимо создать его с разрешенного центра сертификации (ЦС). В противном случае при использовании недопустимого ЦС, ваш запрос, будет отклонен. Список разрешенных ЦС приведен в разделе [Разрешенные центры сертификации для включения настраиваемого протокола HTTPS в Azure Front Door Service](front-door-troubleshoot-allowed-ca.md).
 
-### <a name="prepare-your-azure-key-vault-account-and-certificate"></a>Подготовка учетной записи Azure Key Vault и сертификата
+#### <a name="prepare-your-azure-key-vault-account-and-certificate"></a>Подготовка учетной записи Azure Key Vault и сертификата
  
 1. Azure Key Vault. Требуется активная учетная запись Azure Key Vault в той же подписке, что и служба Front Door, для которой нужно включить настраиваемый протокол HTTPS. Если у вас ее еще нет, создайте учетную запись Azure Key Vault.
  
@@ -83,7 +82,7 @@ ms.locfileid: "47045460"
 > </br> — В настоящее время Azure Front Door Service поддерживает только сертификаты Key Vault, хранящиеся в разделе "Секреты". Импорт сертификата завершится ошибкой, если он хранится в разделе "Сертификаты", а не в разделе "Секреты".
 > </br> — Сейчас Azure Front Door Service поддерживает только сертификаты, переданные в PFX-файле **без** пароля.
 
-### <a name="register-azure-front-door-service"></a>Регистрация в Azure Front Door Service
+#### <a name="register-azure-front-door-service"></a>Регистрация в Azure Front Door Service
 
 Зарегистрируйте субъект-службу для Azure Front Door Service в качестве приложения в Azure Active Directory с помощью PowerShell.
 
@@ -93,7 +92,7 @@ ms.locfileid: "47045460"
 
      `New-AzureRmADServicePrincipal -ApplicationId "ad0e1c7e-6d38-4ba4-9efd-0bc77ba9f037"`              
 
-### <a name="grant-azure-front-door-service-access-to-your-key-vault"></a>Предоставление Azure Front Door Service доступа к хранилищу ключей
+#### <a name="grant-azure-front-door-service-access-to-your-key-vault"></a>Предоставление Azure Front Door Service доступа к хранилищу ключей
  
 Предоставьте Azure Front Door Service разрешение на доступ к сертификатам в разделе "Секреты" в учетной записи Azure Key Vault.
 
@@ -108,7 +107,7 @@ ms.locfileid: "47045460"
 
     Теперь у Azure Front Door Service есть доступ к этому хранилищу ключей и сертификатам (секретам), которые в нем хранятся.
  
-### <a name="select-the-certificate-for-azure-front-door-service-to-deploy"></a>Выбор сертификата для развертывания в Azure Front Door Service
+#### <a name="select-the-certificate-for-azure-front-door-service-to-deploy"></a>Выбор сертификата для развертывания в Azure Front Door Service
  
 1. Вернитесь к службе Front Door на портале. 
 
@@ -126,8 +125,6 @@ ms.locfileid: "47045460"
     - доступные версии сертификатов. 
  
 5. При использовании собственного сертификата проверка домена не является обязательной. Переходите к разделу [Ожидание распространения](#wait-for-propagation).
-
----
 
 ## <a name="validate-the-domain"></a>проверка домена;
 

@@ -1,37 +1,37 @@
 ---
-title: Краткое руководство по API автозаполнения Bing с использованием Java | Документация Майкрософт
-description: Сведения и примеры кода для быстрого начала работы с API автозаполнения Bing в Azure Cognitive Services.
+title: Краткое руководство. API автозаполнения Bing (Java)
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API автозаполнения Bing.
 services: cognitive-services
-documentationcenter: ''
 author: v-jaswel
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-autosuggest
-ms.topic: article
+ms.topic: quickstart
 ms.date: 09/14/2017
 ms.author: v-jaswel
-ms.openlocfilehash: c3a6b7119521772dbb60f3702c84e9bbd94217c4
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 6f79416c28631a47209558fd0c415ae79cff93bc
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382272"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48831404"
 ---
 # <a name="quickstart-for-bing-autosuggest-api-with-java"></a>Краткое руководство по API автозаполнения Bing с использованием Java
-<a name="HOLTop"></a>
 
 В этой статье описано, как использовать [API автозаполнения Bing](https://azure.microsoft.com/services/cognitive-services/autosuggest/) с Java. API автозаполнения Bing возвращает список предлагаемых запросов на основе частичной строки запроса, которую пользователь вводит в поле поиска. Как правило, этот API вызывается каждый раз при вводе пользователем нового символа в поле поиска, и предложения отображаются в виде раскрывающегося списка под полем поиска. В этой статье показано, как отправить запрос, который возвращает предлагаемые строки запроса для слова *sail*.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для компиляции и запуска этого кода вам потребуется [пакет JDK 7 или 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). При желании можно воспользоваться интегрированной средой разработки Java, но и обычного текстового редактора будет достаточно.
 
-Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API автозаполнения Bing версии 7**. Для этого краткого руководства достаточно иметь [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/#search). Требуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
+Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API автозаполнения Bing версии 7**. Для этого краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/#search). Потребуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
 
 ## <a name="get-autosuggest-results"></a>Получение результатов автозаполнения
 
 1. Создайте новый проект Java в избранной интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `subscriptionKey` ключом доступа, допустимым для вашей подписки.
+3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```java
@@ -186,7 +186,7 @@ public class Autosuggest {
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по автозаполнению Bing](../tutorials/autosuggest.md)
+> [Руководство по API автозаполнения Bing](../tutorials/autosuggest.md)
 
 ## <a name="see-also"></a>См. также
 

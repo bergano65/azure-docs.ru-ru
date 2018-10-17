@@ -1,21 +1,23 @@
 ---
-title: Машинное обучение в Azure Cognitive Services | Документация Майкрософт
-description: Руководство по машинному обучению в Пользовательской службе принятия решений Azure (облачного API для контекстного принятия решений).
+title: Руководство по созданию и определению признаков в Пользовательской службе принятия решений
+titlesuffix: Azure Cognitive Services
+description: В этом руководстве описывается, как создавать и определять признаки для машинного обучения в Пользовательской службе принятия решений.
 services: cognitive-services
 author: slivkins
-manager: slivkins
+manager: cgronlun
 ms.service: cognitive-services
-ms.topic: article
+ms.component: custom-decision-service
+ms.topic: tutorial
 ms.date: 05/08/2018
-ms.author: slivkins;marcozo;alekh
-ms.openlocfilehash: 50814d67ee39c6657954610358462d877843416e
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: slivkins
+ms.openlocfilehash: 1e5d012706d1de5a201eecb8ad805b4d6faaf411
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382156"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48869598"
 ---
-# <a name="machine-learning"></a>Машинное обучение
+# <a name="tutorial-featurization-and-feature-specification"></a>Руководство по созданию и определению признаков
 
 В этом руководстве описаны дополнительные функциональные возможности машинного обучения в Пользовательской службе принятия решений. Это руководство состоит из двух частей: [добавление функциональных средств](#featurization-concepts-and-implementation) и [определение компонентов](#feature-specification-format-and-apis). Раздел о добавлении функциональных средств описывает предоставление данных как "компонентов" для машинного обучения. Раздел определения компонентов содержит данные о формате JSON и вспомогательных API-интерфейсах для указания компонентов.
 

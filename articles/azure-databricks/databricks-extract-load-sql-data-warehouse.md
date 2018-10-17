@@ -11,12 +11,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.workload: Active
 ms.date: 07/26/2018
-ms.openlocfilehash: 11046089bd25e1ca9e117d5d8908471858450e6d
-ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
+ms.openlocfilehash: c416937f98f6bcb49f86fce18213ca4ed349c513
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39308802"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48902065"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-azure-databricks"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
@@ -47,7 +47,7 @@ ms.locfileid: "39308802"
 Прежде чем приступить к изучению этого руководства, убедитесь, что выполнены следующие требования.
 - Создайте хранилище данных SQL Azure, создайте правило брандмауэра на уровне сервера и подключитесь к серверу с правами администратора. Инструкции см. в статье [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](../sql-data-warehouse/create-data-warehouse-portal.md).
 - Создайте главный ключ базы данных для хранилища данных SQL Azure. Инструкции см. в статье [Создание главного ключа базы данных](https://docs.microsoft.com/sql/relational-databases/security/encryption/create-a-database-master-key).
-- Создайте учетную запись хранилища BLOB-объектов Azure, содержащую контейнер. Также получите ключ для доступа к учетной записи хранения. Инструкции см. в статье [Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью портала Azure](../storage/blobs/storage-quickstart-blobs-portal.md).
+- Создайте учетную запись хранилища BLOB-объектов Azure, содержащую контейнер. Также получите ключ для доступа к учетной записи хранения. Инструкции см. в [кратком руководстве по созданию учетной записи хранения BLOB-объектов Azure](../storage/blobs/storage-quickstart-blobs-portal.md).
 
 ## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.
 
@@ -450,7 +450,7 @@ ms.locfileid: "39308802"
 > * Преобразование данных в Azure Databricks.
 > * Загрузка данных в хранилище данных Azure SQL
 
-Перейдите к следующему руководству, чтобы узнать о потоковой передачи данных в реальном времени в Azure Databricks с помощью концентраторов событий Azure.
+Перейдите к следующему руководству, чтобы узнать о потоковой передачи данных в реальном времени в Azure Databricks с помощью Центров событий Azure.
 
 > [!div class="nextstepaction"]
->[Потоковая передача данных в Azure Databricks при помощи службы "Концентраторы событий"](databricks-stream-from-eventhubs.md)
+>[Потоковая передача данных в Azure Databricks при помощи службы "Центры событий"](databricks-stream-from-eventhubs.md)

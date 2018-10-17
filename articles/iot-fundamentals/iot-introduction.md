@@ -1,19 +1,18 @@
 ---
-title: Общие сведения о службе "Интернет вещей Azure"
-description: Общие сведения о службе "Интернет вещей Azure", а также о связанных службах и технологиях.
-author: BryanLa
-manager: timlt
+title: Общие сведения об Azure и Интернете вещей (IoT)
+description: Общие сведения об Интернете вещей Azure и содержащихся в нем служб
+author: robinsh
 ms.service: iot-fundamentals
 services: iot-fundamentals
 ms.topic: overview
-ms.date: 05/18/2018
-ms.author: bryanla
-ms.openlocfilehash: ed96181606e2db4102aa609973ade9ecbfde6c90
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.date: 10/09/2018
+ms.author: robinsh
+ms.openlocfilehash: d7e5949be9ea09f94ff6ee86c9f996f2e203eac7
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39187280"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49069443"
 ---
 # <a name="introduction-to-azure-and-the-internet-of-things"></a>Общие сведения об Azure и Интернете вещей
 
@@ -28,10 +27,10 @@ ms.locfileid: "39187280"
 * другие бизнес-приложения;
 * операторам через панель мониторинга или другое устройство для предоставления данных.
 
-![Архитектура решения IoT][img-solution-architecture]
+![Архитектура решения IoT](./media/iot-introduction/iot-reference-architecture.png)
 
 > [!NOTE]
-> Подробное рассмотрение архитектуры Центра Интернета вещей см. в документе [Microsoft Azure IoT Reference Architecture][lnk-refarch] (Эталонная архитектура Microsoft Azure IoT).
+> Подробное рассмотрение архитектуры Интернета вещей см. в документе [Microsoft Azure IoT Reference Architecture](https://aka.ms/iotrefarchitecture) (Эталонная архитектура Microsoft Azure IoT).
 
 ### <a name="device-connectivity"></a>Взаимодействие устройств
 
@@ -82,8 +81,10 @@ ms.locfileid: "39187280"
 
 Служба "Интернет вещей Azure" снижает сложность проектов Интернета вещей и решает задачи безопасности, несовместимости инфраструктуры и масштабирования вашего решения Интернета вещей. Вот как это происходит.
 
-**Гибкая методика** <br>
-Ускорьте свое путешествие по Интернету вещей
+### <a name="agile"></a>Гибкая методика
+
+Ускорьте свое путешествие по Интернету вещей.
+
 * Масштабирование: начните с малого и увеличьте свое решение до любого размера, передавай терабайты данных и предоставляя это решение где угодно и везде — на миллионах устройств в большинстве регионов по всему миру.
 
 * Открытая среда: используйте то, что у вас есть, или модернизируйте решение на будущее благодаря подключению любых устройств, программного обеспечения или служб.
@@ -92,8 +93,9 @@ ms.locfileid: "39187280"
 
 * Темп: развертывайте решения быстрее, сократите время выхода на рынок и повысьте свою конкурентоспособность с помощью ведущего разработчика ускорителей решений и новатора в области Интернета вещей.
 
-**Комплексный подход** <br>
-Обеспечьте влияние компании
+### <a name="comprehensive"></a>Комплексный подход
+
+Обеспечьте влияние компании.
 
 * Полный цикл: корпорация Майкрософт является единственным поставщиком решений Интернета вещей с полной платформой, охватывающей взаимодействие устройств и облака, большие данные, расширенную аналитику и управляемые службы.
 
@@ -103,8 +105,9 @@ ms.locfileid: "39187280"
 
 * Ориентация на устройство: Microsoft IoT позволяет подключить что угодно, от устаревшего оборудования до огромной экосистемы сертифицированного оборудования, и дает возможность создавать собственные устройства в пограничных, мобильных и внедряемых системах.
 
-**Безопасность** <br>
-Решение наиболее сложной задачи Интернета вещей — обеспечения безопасности
+### <a name="secure"></a>Безопасность
+
+Решение наиболее сложной задачи Интернета вещей — обеспечения безопасности.
 
 * Расширение возможностей: Microsoft IoT позволяет свести воедино свое видение благодаря технологиям, рекомендациям и возможностям для решения наиболее сложной задачи Интернета вещей — обеспечения безопасности.
 
@@ -116,69 +119,21 @@ ms.locfileid: "39187280"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Изучите приведенные ниже области технологий и решений или ознакомьтесь с содержанием слева от списка служб "Интернет вещей Azure".
+Изучите приведенные ниже области технологий и решений.
 
-<ul class="panelContent cardsF">  
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Решения</h3>
-                        <a href="/azure/iot-suite">акселераторы решений Интернета вещей</a>;<br/>
-                        <a href="/azure/iot-central">IoT Central</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Службы платформы</h3>
-                        <a href="/azure/iot-hub">Центр Интернета вещей</a><br/>
-                        <a href="/azure/iot-dps">Служба подготовки устройств для Центра Интернета вещей</a><br/>
-                        <a href="/azure/azure-maps">Карты</a><br/>
-                        <a href="/azure/time-series-insights">Аналитика временных рядов Azure</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>  
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Edge</h3>
-                        <a href="/azure/iot-edge">IoT Edge</a><br/>
-                        <a href="/azure/iot-edge/how-iot-edge-works">Что такое IoT Edge?</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>      
-</ul>
+**Решения**
 
-[img-paas-saas-technologies-solutions]: media/index/paas-saas-technologies-solutions.png
-[img-solution-architecture]: ./media/iot-introduction/iot-reference-architecture.png
-[img-dashboard]: ./media/iot-introduction/iot-suite.png
+* [акселераторы решений Интернета вещей](/azure/iot-suite);
+* [IoT Central](/azure/iot-central)
 
-[lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks
-[lnk-iot-central-land]: https://docs.microsoft.com/microsoft-iot-central/
-[lnk-iot-dps-land]: /azure/iot-dps/index.yml
-[lnk-iot-edge-land]: /azure/iot-edge/index.yml
-[lnk-iot-hub-land]: /azure/iot-hub/index.md
-[lnk-iot-maps-land]: /azure/maps/index.yml
-[lnk-iot-sa-land]: ../iot-accelerators/index.yml
-[lnk-iot-tsi-land]: /azure/time-series-insights/index.yml
+**Службы платформы**
 
-[lnk-iot-hub]: ../iot-hub/about-iot-hub.md
-[lnk-iot-sa]: ../iot-accelerators/about-iot-accelerators.md
-[lnk-machinelearning]: http://azure.microsoft.com/documentation/services/machine-learning/
-[lnk-protocol-gateway]:  ../iot-hub/iot-hub-protocol-gateway.md
-[lnk-refarch]: https://aka.ms/iotrefarchitecture
+* [Центр Интернета вещей](/azure/iot-hub)
+* [Служба подготовки устройств для Центра Интернета вещей](/azure/iot-dps)
+* [служба "Карты Azure"](/azure/azure-maps/);
+* [Аналитика временных рядов](/azure/time-series-insights)
 
+**Edge**
 
+* [Общие сведения об IoT Edge](/azure/iot-edge)
+* [Что такое IoT Edge?](/azure/how-iot-edge-works)
