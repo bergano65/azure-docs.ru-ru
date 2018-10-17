@@ -11,14 +11,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-xamarin
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 05/25/2018
+ms.date: 09/24/2018
 ms.author: crdun
-ms.openlocfilehash: b2dafbcf0e41e7387157590e145f74430686321c
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: ef371447e851fece207d77fe656283abe3dc4164
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38307125"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47063869"
 ---
 # <a name="create-a-xamarinforms-app-with-azure"></a>Создание приложения Xamarin.Forms в Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "38307125"
 
 Завершение изучения этого учебника является необходимым условием для работы со всеми другими учебниками, посвященными мобильным приложениям для приложений Xamarin.Forms.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником требуется:
 
@@ -181,7 +181,9 @@ ms.locfileid: "38307125"
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-При проблемах со сборкой проекта запустите диспетчер пакетов NuGet и выполните обновление до последней версии Xamarin.Forms, а для проекта Android — обновите еще и пакеты поддержки Xamarin.Android. Проекты быстрого запуска не всегда включают самые свежие версии.
+При проблемах со сборкой проекта запустите диспетчер пакетов NuGet и выполните обновление до последней версии `Xamarin.Forms`, а для проекта Android — обновите еще и пакеты поддержки `Xamarin.Android`. Проекты быстрого запуска не всегда включают самые свежие версии.
+
+Обратите внимание, что все пакеты поддержки, на которые содержатся ссылки в проекте Android, должны быть одной версии. [Пакет NuGet для мобильных приложений Azure](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) имеет зависимость `Xamarin.Android.Support.CustomTabs` для платформы Android, поэтому если в проекте используются пакеты поддержки более новой версии, во избежание конфликтов необходимо установить требуемую версию пакета.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

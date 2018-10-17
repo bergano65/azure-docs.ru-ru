@@ -2,20 +2,20 @@
 title: Общие сведения о Базе данных Azure для PostgreSQL
 description: Общие сведения о базе данных Azure для службы реляционной базы данных PostgreSQL.
 services: postgresql
-author: kamathsun
-ms.author: sukamat
+author: rachel-msft
+ms.author: raagyema
 manager: kfile
 editor: jasonwhowell
 ms.custom: mvc
 ms.service: postgresql
 ms.topic: overview
-ms.date: 06/02/2018
-ms.openlocfilehash: fab3aa7d0b1fe0f4fafd4b2fdca24ad0e8a3d03c
-ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
+ms.date: 06/15/2018
+ms.openlocfilehash: 86a8b824479173024b1a14bb8612073ffbfac468
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34737237"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47092163"
 ---
 # <a name="what-is-azure-database-for-postgresql"></a>Что такое база данных Azure для PostgreSQL
 
@@ -56,7 +56,7 @@ ms.locfileid: "34737237"
 По умолчанию в службе "База данных Azure для PostgreSQL" настроено обязательное использование [безопасного SSL-соединения](./concepts-ssl-connection-security.md) для данных, перемещаемых по сети. Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением. При необходимости можно отключить обязательное использование SSL при подключении к службе базы данных, если клиентское приложение не поддерживает SSL-соединения.
 
 ## <a name="contacts"></a>Контакты
-Если у вас возникли вопросы или предложения, связанные с использованием Базы данных Azure для MySQL, вы можете отправить электронное сообщение команде разработчиков Базы данных Azure для MySQL ([@AskБазы данных Azure для PostgreSQL](mailto:AskAzureDBforPostgreSQL@service.microsoft.com)). Учтите, что это не служба технической поддержки.
+Если у вас возникли вопросы или предложения, связанные с использованием Базы данных Azure для PostgreSQL, вы можете отправить сообщение команде разработчиков Базы данных Azure для PostgreSQL ([@AskБазы данных Azure для PostgreSQL](mailto:AskAzureDBforPostgreSQL@service.microsoft.com)). Учтите, что это не служба технической поддержки.
 
 Кроме того, попробуйте обратиться сюда:
 - Для обращения в службу поддержки Azure [отправьте запрос с портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).

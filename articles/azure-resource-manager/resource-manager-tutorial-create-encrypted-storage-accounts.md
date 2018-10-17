@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 08/27/2018
+ms.date: 09/07/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 57d5f7039831c9fd617926f20f3ff001b22ef314
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: d48374d7919be3d141ea199e8238a220dbfe0332
+ms.sourcegitcommit: 3150596c9d4a53d3650cc9254c107871ae0aab88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43097891"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47419531"
 ---
 # <a name="tutorial-create-an-azure-resource-manager-template-for-deploying-an-encrypted-storage-account"></a>Руководство. Создание шаблона Azure Resource Manager для развертывания зашифрованной учетной записи хранения
 
@@ -112,9 +112,14 @@ ms.locfileid: "43097891"
 В этом руководстве описано, как определить шаблон для создания зашифрованной учетной записи хранения.  Этот шаблон создает только базовую незашифрованную учетную запись хранения. Связанную с шифрованием конфигурацию см. в справочнике по шаблонам учетной записи хранения Azure.
 
 1. Перейдите к [шаблонам Azure](https://docs.microsoft.com/azure/templates/).
-2. В оглавлении в левой части выберите **Ссылка**->**Хранилище**->**Учетные записи хранения**. Можно также ввести **хранилище** в поле **Фильтр по названию**.  На странице приведена схема для определения сведений об учетной записи хранения.
-3. Изучите сведения, связанные с шифрованием.  
-4. В элементе свойств для определения ресурсов учетной записи хранения добавьте следующий код json.
+2. В **фильтр по названию** введите **учетные записи хранения**.
+3. Как показано на следующем снимке экрана, выберите **ссылку или ссылка шаблона, или хранилище, или учетные записи хранения**.
+
+    ![Учетная запись хранения ссылки на шаблон Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-resources-reference-storage-accounts.png)
+
+    ресурс, менеджер, шаблон, ресурсы, ссылка, хранилище, учетные записи
+1. Изучите сведения, связанные с шифрованием.  
+1. В элементе свойств для определения ресурсов учетной записи хранения добавьте следующий код json.
 
     ```json
     "encryption": {
@@ -151,7 +156,7 @@ ms.locfileid: "43097891"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве описано, как использовать справочник по шаблонам для настройки существующего шаблона. Шаблон, использованный в этом руководстве, содержит только один ресурс Azure.  Сведения о том, как разработать шаблон с несколькими ресурсами, можно узнать из следующего руководства. Некоторые ресурсы обладают зависимыми ресурсами.
+В этом руководстве описано, как использовать справочник по шаблонам для настройки существующего шаблона. Узнайте, как создать несколько экземпляров учетной записи хранения
 
 > [!div class="nextstepaction"]
-> [Tutorial: create Azure Resource Manager templates with dependent resources](./resource-manager-tutorial-create-templates-with-dependent-resources.md) (Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами)
+> [Развертывание нескольких экземпляров ресурсов в шаблонах Azure Resource Manager](./resource-manager-tutorial-create-multiple-instances.md)

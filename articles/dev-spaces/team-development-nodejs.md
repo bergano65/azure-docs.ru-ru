@@ -11,12 +11,12 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: b4c355c864f83bcd76c310fecb0f26dd3372e760
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: 215807798e6ae15f11302fa647e21238bdfb7751
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44162756"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47434274"
 ---
 # <a name="team-development-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces
 
@@ -62,6 +62,7 @@ ms.locfileid: "44162756"
        });
     });
     ```
+ 4. *Удалите* строку `server.close()` в конце `server.js`
 
 В предыдущем примере код перенаправляет заголовок `azds-route-as` из входящего запроса в исходящий. Позже вы увидите, как это помогает повысить производительность при коллективной разработке.
 
@@ -76,7 +77,7 @@ ms.locfileid: "44162756"
 
 ## <a name="learn-about-team-development"></a>Сведения о коллективной разработке
 
-[!INCLUDE [](includes/team-development-1.md)]
+[!INCLUDE [](../../includes/team-development-1.md)]
 
 Давайте посмотрим на это в действии.
 1. Перейдите в окно VS Code для `mywebapi` и измените код в обработчике GET `/` по умолчанию, например:
@@ -87,11 +88,28 @@ ms.locfileid: "44162756"
     });
     ```
 
-[!INCLUDE [](includes/team-development-2.md)]
+[!INCLUDE [](../../includes/team-development-2.md)]
 
-[!INCLUDE [](includes/well-done.md)]
+### <a name="well-done"></a>Все готово!
+Вы выполнили руководство по началу работы. Вы научились выполнять следующие задачи:
 
-[!INCLUDE [](includes/clean-up.md)]
+> [!div class="checklist"]
+> * Настройка Azure Dev Spaces с помощью управляемого кластера Kubernetes в Azure.
+> * итеративная разработка кода в контейнерах;
+> * независимая разработка двух отдельных служб и вызов другой службы с помощью обнаружения службы DNS Kubernetes;
+> * эффективная разработка и тестирование кода в среде командной работы.
+
+Теперь, после ознакомления с Azure Dev Spaces, [предоставьте доступ к пространству разработки своему сотруднику](how-to/share-dev-spaces.md) и покажите ему, как просто работать вместе.
+
+## <a name="clean-up"></a>Очистка
+Чтобы полностью удалить экземпляр Azure Dev Spaces из кластера, включая все среды разработки и работающие службы, используйте команду `az aks remove-dev-spaces`. Не забывайте, что это действие необратимо. Позднее вы сможете снова добавить в кластер поддержку Azure Dev Spaces, но в этом случае вам придется начать работу с нуля. Прежние службы и среды не будут восстановлены.
+
+С помощью приведенного ниже примера кода можно вывести список контроллеров Azure Dev Spaces в активной подписке, а затем удалить контроллер Azure Dev Spaces, связанный с кластером AKS myaks в группе ресурсов myaks-rg.
+
+```cmd
+    azds controller list
+    az aks remove-dev-spaces --name myaks --resource-group myaks-rg
+```
 
 
 

@@ -7,12 +7,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: tutorial
 ms.date: 09/24/2018
-ms.openlocfilehash: c21236026af960af0697978e49a0075fc9cf77ef
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 2e4d625cd123583baa30fde8e9826f5b57da49fe
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46960300"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47393594"
 ---
 # <a name="tutorial-monitor-and-tune-azure-database-for-postgresql"></a>Руководство. Мониторинг и настройка базы данных Azure для PostgreSQL
 
@@ -28,7 +28,7 @@ ms.locfileid: "46960300"
 Вам нужна база данных Azure для сервера PostgreSQL с PostgreSQL версии 9.6 или 10. Для создания сервера выполните действия, описанные в [этом руководстве](tutorial-design-database-using-azure-portal.md).
 
 > [!IMPORTANT]
-> **Хранилище запросов**, **анализ производительности запросов** и **рекомендации по производительности** сейчас находятся на этапе общедоступной предварительной версии.
+> **Хранилище запросов**, **анализ производительности запросов** и **рекомендации по производительности** сейчас находятся на этапе общедоступной предварительной версии в ограниченном количестве регионов.
 
 ## <a name="enabling-data-collection"></a>Включение сбора данных
 [Хранилище запросов](concepts-query-store.md) записывает историю запросов, а также собирает статистику по серверу и сохраняет ее в базу данных **azure_sys** на вашем сервере. Это подключаемая возможность. Чтобы ее включить, выполните следующие действия:

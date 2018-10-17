@@ -9,16 +9,16 @@ ms.topic: quickstart
 ms.service: resource-graph
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: 7a706c65fbdd64103854b02e891c96cbf927f8a1
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 1a2bc5626e94f5fcb0ec8c2be8d91c8fc6484e0b
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46962544"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47224568"
 ---
 # <a name="run-your-first-resource-graph-query-using-azure-powershell"></a>Выполните первый запрос графика ресурсов с помощью Azure PowerShell
 
-Первым шагом при использовании графика ресурсов Azure необходимо убедиться, что установлен модуль для Azure PowerShell. В этом кратком руководстве описывается процесс добавления модуля к установке Azure PowerShell. Можно использовать модуль Azure PowerShell, установленный локально или через [Azure Cloud Shell](https://shell.azure.com).
+Первым шагом при использовании графика ресурсов Azure необходимо убедиться, что установлен модуль для Azure PowerShell. В этом кратком руководстве описывается процесс добавления модуля к установке Azure PowerShell.
 
 В конце этого процесса будет добавлен модуль к установке Azure PowerShell, по выбору и выполнению самого первого запроса графика ресурсов.
 
@@ -26,23 +26,63 @@ ms.locfileid: "46962544"
 
 ## <a name="add-the-resource-graph-module"></a>Добавить модуль "График ресурсов"
 
-Чтобы позволить Azure PowerShell выполнять запрос графических ресурсов Azure, необходимо добавить модуль. Этот модуль работает везде, где может использоваться оболочка Azure PowerShell, включая [Cloud Shell](https://shell.azure.com) (как автономно, так и внутри портала), [образ Azure PowerShell Docker](https://hub.docker.com/r/azuresdk/azure-powershell/) или установленную локально.
+Чтобы позволить Azure PowerShell выполнять запрос графических ресурсов Azure, необходимо добавить модуль. Этот модуль можно использовать с локально установленного Windows PowerShell и PowerShell Core, а также [образа Docker в Azure PowerShell](https://hub.docker.com/r/azuresdk/azure-powershell/).
 
-1. Убедитесь, что установлена Azure PowerShell версии 6.3.0 или более поздней. Если она еще не установлена, выполните [эти инструкции](/powershell/azure/install-azurerm-ps).
+### <a name="base-requirements"></a>Основные требования
 
-1. Убедитесь, что установлена PowerShellGet. Если она еще не установлена или не обновлена, выполните [эти инструкции](/powershell/gallery/installing-psget).
+Модуль Azure Resource Graph требует следующее программное обеспечение.
+
+- Azure PowerShell версии 6.3.0 и более поздней. Если она еще не установлена, выполните [эти инструкции](/powershell/azure/install-azurerm-ps).
+
+  - Для PowerShell Core используйте версию модуля Azure PowerShell **Az**.
+
+  - Для Windows PowerShell используйте версию модуля Azure PowerShell **AzureRm**.
+
+  > [!NOTE]
+  > В настоящее время не рекомендуется устанавливать модуль в Cloud Shell.
+
+- PowerShellGet. Если она еще не установлена или не обновлена, выполните [эти инструкции](/powershell/gallery/installing-psget).
+
+### <a name="powershell-core"></a>PowerShell Core
+
+Модуль Resource Graph для PowerShell Core — **Az.ResourceGraph**.
 
 1. Запустите следующие команды из командной строки PowerShell **с правами администратора**.
 
-   ```azurepowershell-interactive
+   ```powershell
    # Install the Resource Graph module from PowerShell Gallery
-   Install-Module AzureRm.ResourceGraph
+   Install-Module -Name Az.ResourceGraph
    ```
 
-1. Проверьте, что модуль был импортирован и имеет требуемую версию (0.1.0):
+1. Проверьте, что модуль был импортирован и имеет требуемую версию (0.2.0).
 
-   ```azurepowershell-interactive
-   # Get a list of commands for the imported AzureRm.Graph module
+   ```powershell
+   # Get a list of commands for the imported Az.ResourceGraph module
+   Get-Command -Module 'Az.ResourceGraph' -CommandType 'Cmdlet'
+   ```
+
+1. Обеспечьте обратные псевдонимы для **Az** для **AzureRm**, выполнив команду приведенную ниже.
+
+   ```powershell
+   # Enable backwards alias compatibility
+   Enable-AzureRmAlias
+   ```
+
+### <a name="windows-powershell"></a>Windows PowerShell
+
+Модуль Resource Graph для Windows PowerShell — **AzureRm.ResourceGraph**.
+
+1. Запустите следующие команды из командной строки Windows PowerShell **с правами администратора**.
+
+   ```powershell
+   # Install the Resource Graph (prerelease) module from PowerShell Gallery
+   Install-Module -Name AzureRm.ResourceGraph -AllowPrerelease
+   ```
+
+1. Проверьте, что модуль был импортирован и имеет требуемую версию (0.1.0).
+
+   ```powershell
+   # Get a list of commands for the imported AzureRm.ResourceGraph module
    Get-Command -Module 'AzureRm.ResourceGraph' -CommandType 'Cmdlet'
    ```
 
@@ -52,8 +92,8 @@ ms.locfileid: "46962544"
 
 1. Запустите ваш первый запрос графика ресурсов Azure, используя командлет `Search-AzureRmGraph`:
 
-   ```azurepowershell-interactive
-   # Login first with Connect-AzureRmAccount if not using Cloud Shell
+   ```powershell
+   # Login first with Connect-AzureRmAccount
 
    # Run Azure Resource Graph query
    Search-AzureRmGraph -Query 'project name, type | limit 5'
@@ -64,7 +104,7 @@ ms.locfileid: "46962544"
 
 1. Обновите запрос свойством `order by` **Имя**:
 
-   ```azurepowershell-interactive
+   ```powershell
    # Run Azure Resource Graph query with 'order by'
    Search-AzureRmGraph -Query 'project name, type | limit 5 | order by name asc'
    ```
@@ -74,18 +114,18 @@ ms.locfileid: "46962544"
 
 1. Обновите запрос сначала `order by` свойства **Имя**, а затем `limit` 5 лучшими результатами:
 
-   ```azurepowershell-interactive
+   ```powershell
    # Run Azure Resource Graph query with `order by` first, then with `limit`
    Search-AzureRmGraph -Query 'project name, type | order by name asc | limit 5'
    ```
 
 Когда окончательный запрос выполняется несколько раз, при условии, что ничего в вашей среде не изменяется, возвращаемые результаты будут последовательны и ожидаемы — упорядочены по свойству **Имя** и ограничены 5 лучшими результатами.
 
-## <a name="clean-up"></a>Очистка
+## <a name="cleanup"></a>Очистка
 
 Если вы хотите удалить модуль "График ресурсов" из среды Azure PowerShell, это можно сделать с помощью следующей команды:
 
-```azurepowershell-interactive
+```powershell
 # Remove the Resource Graph module from the Azure PowerShell environment
 Remove-Module -Name 'AzureRm.ResourceGraph'
 ```
@@ -99,4 +139,5 @@ Remove-Module -Name 'AzureRm.ResourceGraph'
 - Подробнее о [просмотре ресурсов](./concepts/explore-resources.md)
 - Выполните первый запрос с помощью [Azure CLI](first-query-azurecli.md)
 - См. примеры в разделе [начальных запросов](./samples/starter.md)
-- См. примеры в разделе [продвинутых запросов](./samples/advanced.md)
+- Изучите примеры в разделе [Усложненные запросы](./samples/advanced.md).
+- Оставьте отзыв о [UserVoice](https://feedback.azure.com/forums/915958-azure-governance)

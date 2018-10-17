@@ -8,15 +8,15 @@ ms.service: app-service
 ms.topic: article
 ms.date: 04/27/2017
 ms.author: sewatson
-ms.openlocfilehash: c01fcc7e69cf5af26b127519f183062ccf4923cc
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 50e6b714bc28ce383f06580d0e35b0b0e4066835
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39172750"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47432229"
 ---
 # <a name="app-service-documentation"></a>Документация по службе приложений
-Служба приложений Azure позволяет создавать и размещать веб-приложения на любых языках программирования без необходимости управлять инфраструктурой, языком или средой выполнения платформы. Эта служба поддерживает Windows и Linux, а также обеспечивает автоматическое масштабирование, высокий уровень доступности и автоматическое развертывание из GitHub, Visual Studio Team Services или любого репозитория Git. Узнайте, как использовать службу приложений Azure, изучив краткие инструкции, примеры и руководства.
+Служба приложений Azure позволяет создавать и размещать веб-приложения на любых языках программирования без необходимости управлять инфраструктурой, языком или средой выполнения платформы. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из GitHub, Azure DevOps или любого репозитория Git. Узнайте, как использовать службу приложений Azure, изучив краткие инструкции, примеры и руководства.
 
 ## <a name="windows-linux-and-docker"></a>Windows, Linux и Docker
 [Веб-приложения](/app-service/app-service-web-overview) службы приложений используются для создания и размещения веб-приложений с использованием сред Windows. Разработчикам, которые предпочитают работать с Linux, предлагается [служба приложений для Linux](/app-service/containers/app-service-linux-intro). Для развертывания пользовательских сред выполнения и платформ разработчики могут развертывать образы Docker непосредственно в службу приложений для Linux.
@@ -40,7 +40,7 @@ ms.locfileid: "39172750"
   - [.NET с Базой данных SQL Azure](/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase)
   - [Node.js с MongoDB](/azure/app-service/app-service-web-tutorial-nodejs-mongodb-app)
   - [Java с MySQL](/app-service/app-service-web-tutorial-java-mysql)
-  - [Использование Python и PostgreSQL](/app-service/containers/tutorial-docker-python-postgresql-app)
+  - [Использование Python и PostgreSQL](/app-service/containers/tutorial-python-postgresql-app)
 - [Сопоставление имени личного домена с приложением](/azure/app-service/app-service-web-tutorial-custom-domain)
 - [Bind an existing custom SSL certificate to Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-SSL) (Привязка существующего SSL-сертификата к приложению)
 

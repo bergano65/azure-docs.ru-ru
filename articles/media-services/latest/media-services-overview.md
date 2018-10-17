@@ -4,7 +4,7 @@ description: В этой статье приводится обобщенный 
 services: media-services
 documentationcenter: na
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 tags: ''
 keywords: azure media services, stream, broadcast, live, offline
@@ -13,15 +13,15 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 07/14/2018
+ms.date: 09/25/2018
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: 6c3fb7391c25628ba12526a04c022215bdbd9d40
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: 3641806870c3eab0b3a05f538015a72d9a0b34ef
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39325937"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47221940"
 ---
 # <a name="what-is-azure-media-services-v3"></a>Что такое Службы мультимедиа Azure версии 3?
 
@@ -55,7 +55,7 @@ ms.locfileid: "39325937"
 Эта версия предоставляет следующие возможности.  
 
 * **Преобразования** позволяют определить простые рабочие процессы обработки и аналитики мультимедиа. Преобразование — это способ обработки аудио- и видеофайлов. Вы можете применять эту функцию несколько раз для обработки всех файлов в библиотеке содержимого, отправляя задания на преобразование.
-* **Задания** предназначены для обработки (шифрования или анализа) видеосодержимого. Содержимое входных данных можно указывать в задании с помощью URL-адресов протоколов HTTP, URL-адресов SAS или путей к файлам, находящимся в хранилище BLOB-объектов Azure. 
+* **Задания** предназначены для обработки (шифрования или анализа) видеосодержимого. Содержимое входных данных можно указывать в задании с помощью URL-адресов протоколов HTTP, URL-адресов SAS или путей к файлам, находящимся в хранилище BLOB-объектов Azure. В настоящее время AMS версии 3 не поддерживает кодирование блочной передачи по URL-адресам HTTPS.
 * **Уведомления**, отслеживающие ход выполнения задания или состояния, а также события включения, выключения и возникновения ошибок динамического канала. Уведомления интегрированы с системой уведомлений службы "Сетка событий Azure". Вы можете легко подписаться на события в нескольких ресурсах на платформе "Службы мультимедиа Azure". 
 * Шаблоны **управления ресурсами Azure** можно использовать для создания и развертывания преобразований, конечных точек потоковой передачи, каналов и т. д.
 * **Управление доступом на основе ролей** можно задать на уровне ресурсов, что позволит заблокировать доступ к определенным ресурсам (например, к преобразователям, каналам и т. д.).
@@ -129,7 +129,7 @@ private static async Task<ContentKeyPolicy> GetOrCreateContentKeyPolicyAsync(
 |[Справочник по Azure CLI](https://aka.ms/ams-v3-cli-ref)|[интерфейс командной строки Azure](https://aka.ms/ams-v3-cli)|[Примеры использования интерфейса командной строки Azure](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/media-services)||
 |[Справочник по .NET](https://aka.ms/ams-v3-dotnet-ref)|[ПАКЕТ SDK .NET](https://aka.ms/ams-v3-dotnet-sdk)|[Примеры .NET](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials)||
 ||[Пакет SDK для .NET Core](https://aka.ms/ams-v3-dotnet-sdk) (выберите вкладку **.NET CLI**)|[Примеры .NET Core](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials)||
-|[Справочник по Java](https://aka.ms/ams-v3-java-ref)|[Пакет SDK для Java](https://aka.ms/ams-v3-java-sdk)||
+|[Справочник по Java](https://aka.ms/ams-v3-java-ref)|[пакет SDK для Java](https://aka.ms/ams-v3-java-sdk)||
 |[Справочник по Node.js](https://aka.ms/ams-v3-nodejs-ref)|[Пакет SDK для Node.js](https://aka.ms/ams-v3-nodejs-sdk)|[Примеры для Node.js](https://github.com/Azure-Samples/media-services-v3-node-tutorials)||
 |[Справочник по Python](https://aka.ms/ams-v3-python-ref)|[Пакет SDK для Python](https://aka.ms/ams-v3-python-sdk)||
 |[Справочник по Go](https://aka.ms/ams-v3-go-ref)|[Пакет SDK для GO](https://aka.ms/ams-v3-go-sdk)||

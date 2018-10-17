@@ -14,12 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 08/16/2018
 ms.author: spelluru
-ms.openlocfilehash: 4f7aa0b0c5142237f3b6fc66bb8593302c95f5af
-ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
+ms.openlocfilehash: e66a1651a46cfaeb7fb8b232eeb7cf6a2fb8044d
+ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41919193"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47451228"
 ---
 # <a name="get-started-with-relay-hybrid-connections-http-requests-in-net"></a>Начало работы с HTTP-запросами гибридных подключений Azure Relay в .NET
 [!INCLUDE [relay-selector-hybrid-connections](../../includes/relay-selector-hybrid-connections.md)]
@@ -64,9 +64,14 @@ ms.locfileid: "41919193"
 [!INCLUDE [relay-hybrid-connections-http-requests-dotnet-get-started-client](../../includes/relay-hybrid-connections-http-requests-dotnet-get-started-client.md)]
 
 ## <a name="5-run-the-applications"></a>5. Запуск приложений
-1. Запустите серверное приложение.
-2. Запустите клиентское приложение и введите любой текст.
-3. Убедитесь, что в серверном консольном приложении отображается текст, введенный в клиентском приложении.
+1. Запустите серверное приложение. В консоли отображается пример выходных данных.
+
+    ```
+    Online
+    Server listening
+    ```
+1. Выполните клиентское приложение В окне клиента вы увидите `hello!`. Клиент отправил HTTP-запрос серверу, и получил ответ `hello!`. 
+3. Теперь, чтобы закрыть окна консоли, в обоих ее окнах нажмите клавишу **ВВОД**. 
 
 Поздравляем, вы создали приложение для гибридных подключений.
 

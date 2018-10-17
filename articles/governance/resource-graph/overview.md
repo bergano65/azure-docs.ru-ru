@@ -9,12 +9,12 @@ ms.topic: overview
 ms.service: resource-graph
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: bcfee71af25ccb996f9467922aa38cabe2b252ac
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: d68183f4d0a928ac72f3f73ea5225ad174820cb7
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46959025"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162106"
 ---
 # <a name="what-is-azure-resource-graph"></a>Что такое Azure Resource Graph
 
@@ -29,7 +29,7 @@ Azure Resource Graph — это служба в Azure, призванная р�
 > [!NOTE]
 > Azure Resource Graph используется новой функцией поиска "Все ресурсы" на портале Azure. Она предназначена для клиентов, которым нужно управлять масштабными средами.
 
-## <a name="how-does-azure-resource-graph-complement-azure-resource-manager"></a>Как Azure Resource Graph дополняет Azure Resource Manager
+## <a name="how-does-resource-graph-complement-azure-resource-manager"></a>Как Azure Resource Graph дополняет Azure Resource Manager
 
 На данный момент Azure Resource Manager отправляет данные в кэш с ограниченными ресурсами, предоставляющий несколько полей ресурсов: имя ресурса, идентификатор, тип, группа ресурсов, подписки и расположение. Сейчас, чтобы работать с дополнительными свойствами ресурсов, нужно вызывать каждый отдельный поставщик ресурсов и запрашивать данные свойств для каждого ресурса.
 
@@ -39,7 +39,7 @@ Azure Resource Graph дает вам доступ к свойствам, воз�
 
 Теперь, когда вы разобрались, что такое Azure Resource Graph, рассмотрим порядок создания запросов.
 
-Важно понимать, что язык запросов Azure Resource Graph похож на [язык запросов Kusto](https://docs.loganalytics.io/docs/Language-Reference/) (KQL), но все же отличается от него.
+Важно понимать, что язык запросов Azure Resource Graph похож на [язык запросов Azure Data Explorer](../../data-explorer/data-explorer-overview.md).
 
 Сведения об операциях и функциях, которые можно использовать с Azure Resource Graph, см. в статье [Язык запросов Resource Graph](./concepts/query-language.md). Информацию о ресурсах см. в статье о [просмотре ресурсов](./concepts/explore-resources.md).
 
