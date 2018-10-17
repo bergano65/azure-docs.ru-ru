@@ -22,7 +22,7 @@
 #### [Модули IoT Edge](./iot-edge-module.md) 
 #### [Консультационная услуга](./consulting-services.md)  
 #### [Руководство по публикации в Office 365, Dynamics 365 и Power BI](./appsource-offer-publishing-guide.md)
-#### [Включение описания в Microsoft AppSource и Azure Marketplace с помощью Azure Active Directory](./enable-appsource-marketplace-using-azure-ad.md)
+#### [Включение описания в AppSource и Marketplace с помощью Azure Active Directory](./enable-appsource-marketplace-using-azure-ad.md)
 
 ### [Развитие бизнеса с помощью marketplace](./grow-your-business-with-azure-marketplace.md)  
 #### [Предпочтительные решения](./preferred-solutions.md) 
@@ -35,7 +35,7 @@
 
 # [Облачный портал для партнеров](./cloud-partner-portal-orig/cloud-partner-portal-getting-started-with-the-cloud-partner-portal.md) 
 ## Виртуальные машины
-### [Регистрация учетной записи центра разработки](./cloud-partner-portal-orig/cloud-partner-portal-dev-center-accounts-registration.md)
+### [Регистрация учетной записи центра разработчиков](./cloud-partner-portal-orig/cloud-partner-portal-dev-center-accounts-registration.md)
 ### [Создание предложения виртуальной машины](./cloud-partner-portal-orig/cloud-partner-portal-publish-virtual-machine.md)
 ### [Частные номера SKU](./cloud-partner-portal-orig/cloud-partner-portal-azure-private-skus.md)
 ### [Руководство по SEO](./cloud-partner-portal-orig/cloud-partner-portal-seo-guidance.md)

@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 5ed6a94eb0a8737cc8a6a7d5b26d3aa7e84ef1e1
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: a0ee180475c0264d8fce5856b6354830a42ff963
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46952534"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49352526"
 documentType: LandingData
 title: Документация по Центрам событий Azure
 metadata:
@@ -12,28 +12,28 @@ metadata:
   title: Документация по Центрам событий Azure. Учебные материалы, краткие руководства и справочник по API
   meta.description: Learn how to use Event Hubs to ingest millions of events per second from connected IoT devices and applications on a broad set of platforms.
   services: event-hubs
-  author: sethmanheim
+  author: spelluru
   manager: timlt
   ms.service: event-hubs
   ms.topic: landing-page
-  ms.date: 05/14/2018
-  ms.author: sethm
+  ms.date: 10/15/2018
+  ms.author: spelluru
 abstract:
-  description: Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. <p>Служба поддерживает протоколы HTTPS, AMQP 1.0 и Apache Kafka 1.0 для публикации событий в концентраторе событий. Также она поддерживает Apache Kafka MirrorMaker, Apache Flink и Akka Streams в экосистемах Apache Kafka.</p>
+  description: Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Решение Event Hubs для Apache Kafka обеспечивает полную поддержку службы Event Hubs в собственных клиентах, инструментах и приложениях Kafka, таких как Mirror Maker, Apache Flink и Akka Streams. Для этого требуется лишь внести небольшие изменения в конфигурацию.
   aside:
     image:
       alt: 
       height: 110
-      src: /azure/event-hubs/media/index/azure-messaging-and-event-based-architecture.png
+      src: /azure/event-hubs/media/index/stream-big-data-kafka-event-hubs.png
       width: 250
-    title: Обмен сообщениями в Azure и архитектура на основе событий (1:24:32)
-    href: https://azure.microsoft.com/resources/videos/build-2018-azure-messaging-and-event-based-architecture-in-the-real-world-lessons-learned-rebuilding-microsoft-s-supply-chain-on-azure-serverless/
+    title: Потоковая передача больших данных в Azure с помощью Kafka и Event Hubs (1:20:13)
+    href: https://azure.microsoft.com/resources/videos/streaming-big-data-in-azure-with-kafka-and-event-hubs/
     width: 250
 sections:
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: 'Узнайте, как выполнять потоковую передачу данных с помощью Центров событий:'
+    text: 'Узнайте, как <b>создать</b> концентратор событий:'
   - type: list
     style: icon48
     items:
@@ -49,6 +49,68 @@ sections:
         src: /azure/event-hubs/media/index/logo_powershell.svg
       text: Azure PowerShell
       href: /azure/event-hubs/event-hubs-quickstart-powershell
+  - type: paragraph
+    text: 'Узнайте, как <b>отправлять события</b> в концентратор событий:'
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: /azure/event-hubs/media/index/logo_net.svg
+      text: .NET Framework
+      href: /azure/event-hubs/event-hubs-dotnet-framework-getstarted-send
+    - image:
+        src: /azure/event-hubs/media/index/logo_netcore.svg
+      text: .NET Standard
+      href: /azure/event-hubs/event-hubs-dotnet-standard-getstarted-send
+    - image:
+        src: /azure/event-hubs/media/index/logo_java.svg
+      text: Java
+      href: /azure/event-hubs/event-hubs-java-get-started-send
+    - image:
+        src: /azure/event-hubs/media/index/logo_python.svg
+      text: Python
+      href: /azure/event-hubs/event-hubs-python-get-started-send
+    - image:
+        src: /azure/event-hubs/media/index/logo_nodejs.svg
+      text: Node.js
+      href: /azure/event-hubs/event-hubs-node-get-started-send
+    - image:
+        src: /azure/event-hubs/media/index/logo_go.svg
+      text: Go
+      href: /azure/event-hubs/event-hubs-go-get-started-send
+    - image:
+        src: /azure/event-hubs/media/index/logo_c.svg
+      text: C
+      href: /azure/event-hubs/event-hubs-c-getstarted-send
+  - type: paragraph
+    text: 'Узнайте, как <b>получать события</b> в концентраторе событий:'
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: /azure/event-hubs/media/index/logo_net.svg
+      text: .NET Framework
+      href: /azure/event-hubs/event-hubs-dotnet-framework-getstarted-receive-eph
+    - image:
+        src: /azure/event-hubs/media/index/logo_netcore.svg
+      text: .NET Standard
+      href: /azure/event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph
+    - image:
+        src: /azure/event-hubs/media/index/logo_java.svg
+      text: Java
+      href: /azure/event-hubs/event-hubs-java-get-started-receive-eph
+    - image:
+        src: /azure/event-hubs/media/index/logo_python.svg
+      text: Python
+      href: /azure/event-hubs/event-hubs-python-get-started-receive
+    - image:
+        src: /azure/event-hubs/media/index/logo_nodejs.svg
+      text: Node.js
+      href: /azure/event-hubs/event-hubs-node-get-started-receive
+    - image:
+        src: /azure/event-hubs/media/index/logo_go.svg
+      text: Go
+      href: /azure/event-hubs/event-hubs-go-get-started-receive-eph
 - title: Пошаговые руководства
   items:
   - type: paragraph
@@ -90,7 +152,7 @@ sections:
     className: spaced noBullet
     items:
     - html: <a href="https://github.com/Azure/azure-event-hubs/tree/master/samples/Management">Azure PowerShell</a>
-    - html: <a href="https://github.com/Azure/azure-event-hubs/tree/master/samples/Management">интерфейс командной строки Azure</a>
+    - html: <a href="https://github.com/Azure/azure-event-hubs/tree/master/samples/Management">Интерфейс командной строки Azure</a>
 - title: Справочные материалы
   items:
   - type: list
@@ -98,7 +160,7 @@ sections:
     className: cardsD
     items:
     - title: Командная строка
-      html: <p><a href="/powershell/module/azurerm.eventhub/">Azure PowerShell</a></p><p><a href="/cli/azure/eventhubs">интерфейс командной строки Azure</a></p>
+      html: <p><a href="/powershell/module/azurerm.eventhub/">Azure PowerShell</a></p><p><a href="/cli/azure/eventhubs">Интерфейс командной строки Azure</a></p>
     - title: Языки
       html: <p><a href="/dotnet/api/microsoft.servicebus.messaging">.NET Framework</a></p><p><a href="/dotnet/api/microsoft.azure.eventhubs">.NET Standard</a></p><p><a href="/java/api/overview/azure/eventhub">Java</a></p>
     - title: REST

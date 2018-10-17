@@ -10,7 +10,7 @@ items:
   items:
   - name: Создание приложения, использующего предварительно созданный домен
     href: luis-get-started-create-app.md
-  - name: Использование API
+  - name: Использование REST API
     items:
     - name: Получение намерения
       items:
@@ -164,7 +164,7 @@ items:
       href: luis-how-to-add-example-utterances.md
     - name: Добавление сущностей
       href: luis-how-to-add-entities.md
-    - name: С API-интерфейсами
+    - name: С использованием REST API
       items:
       - name: Создание приложения программным способом с помощью Node.js
         href: luis-tutorial-node-import-utterances-csv.md
@@ -172,7 +172,7 @@ items:
         href: luis-tutorial-list-entity.md
   - name: Интеграция
     items:
-    - name: С API проверки орфографии Bing версии 7
+    - name: С API проверки орфографии Bing версии 7
       href: luis-tutorial-bing-spellcheck.md
     - name: С помощью службы распознавания речи
       href: luis-tutorial-speech-to-intent.md
@@ -234,13 +234,13 @@ items:
         href: luis-how-to-manage-from-cloud-shell.md
       - name: Распределение квоты для конечной точки между ключами с помощью диспетчера трафика
         href: luis-traffic-manager.md
-  - name: Миграция в API версии 2
+  - name: Миграция в REST API версии 2
     href: luis-migration-api-v1-to-v2.md
   - name: Поиск регионов программным образом
     items:
-    - name: Использование C#
+    - name: С помощью REST API и C#
       href: luis-find-region-csharp.md
-    - name: Использование Node.js
+    - name: С помощью REST API и Node.js
       href: luis-find-region-nodejs.md
 - name: Справочные материалы
   items:
@@ -286,16 +286,18 @@ items:
       href: luis-reference-prebuilt-url.md
   - name: Справочник по предварительно созданным доменам
     href: luis-reference-prebuilt-domains.md
-  - name: Создание API версии 2
-    href: https://aka.ms/luis-authoring-apis
-  - name: API конечной точки версии 2
-    href: https://aka.ms/luis-endpoint-apis
-  - name: Коды HTTP
-    href: luis-reference-response-codes.md
   - name: Инфраструктура CLI Azure
     href: https://aka.ms/az-cli-cognitiveservices
   - name: Azure RM PowerShell
     href: https://aka.ms/azure-powershell-cognitiveservices
+  - name: Интерфейсы API REST
+    items:
+    - name: Разработка REST API версии 2
+      href: https://aka.ms/luis-authoring-apis
+    - name: Конечная точка REST API версии 2
+      href: https://aka.ms/luis-endpoint-apis
+    - name: Коды HTTP
+      href: luis-reference-response-codes.md
   - name: Пакеты SDK
     items:
     - name: C#
@@ -374,9 +376,9 @@ items:
     href: https://blog.botframework.com/category/luis/
   - name: База знаний
     href: https://cognitive.uservoice.com/knowledgebase/topics/127872-luis-language-understanding-intelligent-service
-ms.openlocfilehash: bf82f62fac518c0442ad67c346c422b06aa73088
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: fe393a2c92cf9391dc620acae4878996d107a68e
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47432777"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49364546"
