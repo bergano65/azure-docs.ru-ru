@@ -38,13 +38,13 @@
 ### [Общедоступный IP-адрес](../virtual-network/virtual-network-public-ip-address.md#create-a-public-ip-address)
 
 ### База данных SQL
-#### [Использование зон доступности с Базой данных SQL](../sql-database/sql-database-high-availability.md#availability-zones)
+#### [Использование зон доступности с Базой данных SQL](../sql-database/sql-database-high-availability.md#zone-redundant-configuration)
 
-### Служба хранилища
+### Хранилище
 #### [Хранилище, избыточное в пределах зоны](../storage/common/storage-redundancy-zrs.md)
 
-### Концентраторы событий
-#### [Географическое аварийное восстановление в концентраторах событий](../event-hubs/event-hubs-geo-dr.md#availability-zones-preview)
+### Центры событий;
+#### [Географическое аварийное восстановление в Центрах событий](../event-hubs/event-hubs-geo-dr.md#availability-zones-preview)
 
 ### Служебная шина Azure
 #### [Географическое аварийное восстановление в служебной шине](../service-bus-messaging/service-bus-geo-dr.md#availability-zones-preview)
