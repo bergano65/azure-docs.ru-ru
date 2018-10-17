@@ -1,5 +1,5 @@
 ---
-title: Руководство. Непрерывная интеграция и непрерывное развертывание из Jenkins на виртуальных машинах Azure с помощью Team Services | Документация Майкрософт
+title: Руководство. Непрерывная интеграция и непрерывное развертывание из Jenkins на виртуальных машинах Azure с помощью Azure DevOps | Документация Майкрософт
 description: В этом руководстве описано, как настроить непрерывную интеграцию (CI) и непрерывное развертывание (CD) приложения Node.js с помощью Jenkins на виртуальных машинах Azure из Release Management в Visual Studio Team Services или Microsoft Team Foundation Server.
 author: tomarcher
 manager: jpconnock
@@ -13,38 +13,40 @@ ms.workload: infrastructure
 ms.date: 07/31/2018
 ms.author: tarcher
 ms.custom: jenkins
-ms.openlocfilehash: d3a4a81f60f4e70c2c7576c3176e2b4d6de08d04
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.openlocfilehash: cfe67fbed61b4af9b4a4f5b490397ca1a6e1d752
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39390601"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44299497"
 ---
-# <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-with-using-jenkins-and-visual-studio-team-services"></a>Руководство. Развертывание приложения на виртуальных машинах Linux в Azure с помощью Jenkins и Visual Studio Team Services
+# <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-with-using-jenkins-and-azure-devops-services"></a>Руководство. Развертывание приложения на виртуальных машинах Linux в Azure с помощью Jenkins и Azure DevOps Services
 
-Непрерывная интеграция (CI) и непрерывное развертывание (CD) представляют собой конвейер, с помощью которого можно выполнить сборку, выпустить и развернуть свой код. Visual Studio Team Services предоставляет полнофункциональный набор инструментов для автоматизации CI и CD для развертывания в Azure. Jenkins — это популярный сторонний серверный инструмент CI и CD стороннего поставщика, который также обеспечивает автоматизацию этих процессов. Вы можете использовать Team Services и Jenkins вместе, чтобы настроить способ доставки своего облачного приложения или службы.
+Непрерывная интеграция (CI) и непрерывное развертывание (CD) представляют собой конвейер, с помощью которого можно выполнить сборку, выпустить и развернуть свой код. Azure DevOps Services предоставляет полнофункциональный набор инструментов для автоматизации CI и CD для развертывания в Azure. Jenkins — это популярный сторонний серверный инструмент CI и CD стороннего поставщика, который также обеспечивает автоматизацию этих процессов. Вы можете использовать Azure DevOps Services и Jenkins вместе, чтобы настроить способ доставки своего облачного приложения или службы.
 
-В этом руководстве для создания веб-приложения Node.js используется Jenkins. Затем вы используете Team Services или Team Foundation Server, чтобы развернуть его в [группе развертывания](https://www.visualstudio.com/docs/build/concepts/definitions/release/deployment-groups/), содержащей виртуальные машины Linux. Вы узнаете, как выполнять следующие задачи:
+В этом руководстве для создания веб-приложения Node.js используется Jenkins. Затем вы развернете его с помощью DevOps
+
+в [группе развертывания](https://docs.microsoft.com/en-us/azure/devops/pipelines/release/deployment-groups/index?view=vsts), состоящей из виртуальных машин Linux. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Получение примера приложения.
 > * Настройка подключаемых модулей Jenkins.
 > * Настройка универсального проекта Jenkins для Node.js.
-> * Настройка Jenkins для интеграции с Team Services.
+> * Настройка Jenkins для интеграции с Azure DevOps Services.
 > * Создание конечной точки службы Jenkins.
 > * Создание группы развертывания для виртуальных машин Azure.
-> * Создание определения выпуска в Team Services.
+> * Создайте конвейер выпуска в Azure Pipelines.
 > * Выполнение развертывания вручную и с помощью непрерывной интеграции.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
 * Вам нужен доступ к серверу Jenkins. Если вы еще не создали сервер Jenkins, см. сведения в статье [Создание сервера Jenkins на виртуальной машине Azure под управлением Linux на портале Azure](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template). 
 
-* Войдите в учетную запись Team Services (**https://{ваша_учетная _запись}.visualstudio.com**). 
-  Вы можете получить [бесплатную учетную запись Team Services](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308).
+* Войдите в вашу организацию Azure DevOps Services (**https://{имя_организации}.visualstudio.com**). 
+  Вы можете получить [бесплатную организацию Azure DevOps Services](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308).
 
   > [!NOTE]
-  > Дополнительные сведения см. в разделе [Connect to Visual Studio Team Services from Eclipse, Xcode, Visual Studio, and more](https://www.visualstudio.com/docs/setup-admin/team-services/connect-to-visual-studio-team-services) (Подключение к Visual Studio Team Services из Eclipse, Xcode, Visual Studio и других сред).
+  > Дополнительные сведения см. в статье [о подключении к Azure DevOps Services](https://docs.microsoft.com/azure/devops/organizations/projects/connect-to-projects?view=vsts).
 
 *  Для целевого развертывания понадобится виртуальная машина Linux.  Для получения дополнительной информации см. статью [Создание виртуальных машин Linux и управление ими с помощью Azure CLI](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm).
 
@@ -89,22 +91,22 @@ ms.locfileid: "39390601"
 6. На вкладке **Build** (Сборка) выберите **оболочку выполнения** и введите команду `npm install`, чтобы обновить все зависимости.
 
 
-## <a name="configure-jenkins-for-team-services-integration"></a>Настройка Jenkins для интеграции с Team Services.
+## <a name="configure-jenkins-for-azure-devops-services-integration"></a>Настройка Jenkins для интеграции с Azure DevOps Services.
 
 > [!NOTE]
-> Убедитесь, что используемый для следующих шагов личный маркер доступа (PAT) включает в себя разрешение *выпуска* (чтение, запись, выполнение и управление) в Team Services.
+> Убедитесь, что используемый для следующих шагов личный маркер доступа (PAT) включает в себя разрешение *выпуска* (чтение, запись, выполнение и управление) в Azure DevOps Services.
  
-1.  Создайте личный маркер доступа в учетной записи Team Services, если у вас его еще нет. Эти данные требуются Jenkins для доступа к учетной записи Team Services. Убедитесь, что данные маркера безопасности для будущих шагов хранятся в этом разделе.
+1.  Создайте личный маркер доступа в организации Azure DevOps Services, если у вас его нет. Эти данные требуются Jenkins для доступа к организации Azure DevOps Services. Убедитесь, что данные маркера безопасности для будущих шагов хранятся в этом разделе.
   
-    Чтобы узнать, как создать такой маркер, прочтите статью [Authenticate access with personal access tokens for VSTS and TFS](https://www.visualstudio.com/docs/setup-admin/team-services/use-personal-access-tokens-to-authenticate) (Аутентификация доступа с помощью личных маркеров доступа для VSTS и TFS).
+    Чтобы узнать, как создать такой маркер, прочтите статью [Authenticate access with personal access tokens for Azure DevOps Services and TFS](https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts) (Аутентификация доступа с помощью личных маркеров доступа для Azure DevOps и TFS).
 2. На вкладке **Post-build Actions** (Действия после сборки) выберите **Add post-build action** (Добавить действие после сборки). Выберите **Archive the artifacts** (Архивировать артефакты).
 3. Для **Files to archive** (Файлы для архивации) введите `**/*`, чтобы включить в архив все файлы.
 4. Чтобы создать другое действие, выберите **Add post-build action** (Добавить действие после сборки).
-5. Выберите **Trigger release in TFS/Team Services** (Активация выпуска в TFS и Team Services). Введите универсальный код ресурса (URI) для учетной записи Team Services, например **https://{имя_учетной_записи}.visualstudio.com**.
-6. Введите имя **командного проекта**.
-7. Выберите имя для определения выпуска. (Позже вы создадите определение выпуска в Team Services.)
-8. Выберите учетные данные для подключения к среде Team Services или Team Foundation Server:
-   - Оставьте пустым поле **Имя пользователя**, если вы используете Team Services. 
+5. Выберите **Trigger release in TFS/Team Services** (Активация выпуска в TFS и Team Services). Введите URI для организации Azure DevOps Services в формате **https://{имя_организации}.visualstudio.com**.
+6. Введите имя **проекта**.
+7. Выберите имя конвейера выпуска. (Позже вы создадите этот конвейер выпуска в службах Azure DevOps).
+8. Выберите учетные данные для подключения к среде Azure DevOps Services или Team Foundation Server:
+   - Оставьте пустым поле **Имя пользователя**, если вы используете Azure DevOps Services. 
    - Если вы используете локальную версию Team Foundation Server, введите имя пользователя и пароль.    
    ![Настройка действий после сборки Jenkins](media/tutorial-build-deploy-jenkins/trigger-release-from-jenkins.png)
 5. Сохраните проект Jenkins.
@@ -112,9 +114,9 @@ ms.locfileid: "39390601"
 
 ## <a name="create-a-jenkins-service-endpoint"></a>Создание конечной точки службы Jenkins
 
-Конечная точка службы позволяет Team Services подключаться к Jenkins.
+Конечная точка службы позволяет Azure DevOps Services подключаться к Jenkins.
 
-1. Откройте страницу **Службы** в Team Services, откройте список **Новая конечная точка службы**, а затем выберите **Jenkins**.
+1. Откройте страницу **Службы** в Azure DevOps Services, затем откройте список **Новая конечная точка службы** и выберите **Jenkins**.
    ![Добавление конечной точки Jenkins](media/tutorial-build-deploy-jenkins/add-jenkins-endpoint.png)
 2. Введите имя для подключения.
 3. Введите URL-адрес сервера Jenkins и выберите параметр **Принимать ненадежные SSL-сертификаты**. Пример URL-адреса — **http://{URL_адрес_сервера_Jenkins}.westcentralus.cloudapp.azure.com**.
@@ -124,7 +126,7 @@ ms.locfileid: "39390601"
 
 ## <a name="create-a-deployment-group-for-azure-virtual-machines"></a>Создание группы развертывания для виртуальных машин Azure
 
-Для регистрации агента в Team Services требуется [группа развертывания](https://www.visualstudio.com/docs/build/concepts/definitions/release/deployment-groups/), чтобы определения выпуска можно было развернуть на виртуальной машине. Группы развертывания позволяют легко определить логические группы целевых компьютеров для развертывания и установить требуемый агент на каждом компьютере.
+Для регистрации агента Azure DevOps Services требуется [группа развертывания](https://www.visualstudio.com/docs/build/concepts/definitions/release/deployment-groups/), чтобы развернуть конвейер выпуска на виртуальной машине. Группы развертывания позволяют легко определить логические группы целевых компьютеров для развертывания и установить требуемый агент на каждом компьютере.
 
    > [!NOTE]
    > В следующей процедуре убедитесь, что установлены необходимые компоненты, и *не выполняйте сценарий с привилегиями sudo.*
@@ -137,15 +139,15 @@ ms.locfileid: "39390601"
 6. Чтобы скопировать сценарий, выберите **Скопировать сценарий в буфер обмена**.
 7. Войдите в целевую виртуальную машину развертывания и выполните этот сценарий. Не запускайте сценарий с привилегиями sudo.
 8. После установки вам будет предложено ввести теги группы развертывания. Примите значения по умолчанию.
-9. В Team Services проверьте недавно зарегистрированную виртуальную машину в разделе **Целевые объекты** области **Группы развертываний**.
+9. В Azure DevOps Services проверьте недавно зарегистрированную виртуальную машину в разделе **Целевые объекты** области **Группы развертываний**.
 
-## <a name="create-a-team-services-release-definition"></a>Создание определения выпуска в Team Services
+## <a name="create-a-azure-pipelines-release-pipeline"></a>Создайте конвейер выпуска в Azure Pipelines.
 
-Определение выпуска задает процесс, выполняемый Team Services для развертывания приложения. В этом примере выполняется сценарий оболочки.
+Конвейер выпуска задает процесс, выполняемый Azure Pipelines для развертывания приложения. В этом примере выполняется сценарий оболочки.
 
-Вот как можно создать определение выпуска в Team Services.
+Чтобы создать конвейер выпуска в Azure Pipelines, выполните следующее.
 
-1. Откройте вкладку **Выпуски** в центре **Сборка &amp; Выпуск** и выберите **Создать определение выпуска**. 
+1. Откройте вкладку **Выпуски** в центре **Сборка &amp; Выпуск** и выберите **Создать конвейер выпуска**. 
 2. Выберите шаблон **Empty** (Пустой), выбрав команду, позволяющую начать работу с **пустого процесса**.
 3. В разделе **Артефакты** щелкните **+ Add Artifact** (+ Добавить артефакт) и выберите **Jenkins** в качестве **типа источника**. Выберите подключение к конечной точке службы Jenkins. Затем выберите исходное задание Jenkins и щелкните **Добавить**.
 4. Щелкните многоточие рядом с пунктом **Среда 1**. Выберите **Этап добавления группы развертывания**.
@@ -155,8 +157,8 @@ ms.locfileid: "39390601"
 8. В качестве **пути сценария** введите **$(System.DefaultWorkingDirectory)/Fabrikam-Node/deployscript.sh**.
 9. Выберите **Дополнительно**, а затем включите параметр **Указать рабочий каталог**.
 10. В качестве **рабочей папки** введите **$(System.DefaultWorkingDirectory)/Fabrikam-Node**.
-11. Измените имя определения выпуска, указав имя, введенное на вкладке **Post-build Actions** (Действия после сборки) для сборки в Jenkins. Jenkins необходимо это имя, чтобы активировать новый выпуск при обновлении исходных артефактов.
-12. Щелкните **Сохранить** и **ОК**, чтобы сохранить определение выпуска.
+11. Измените имя конвейера выпуска, указав имя, введенное на вкладке **Post-build Actions** (Действия после сборки) для сборки в Jenkins. Jenkins необходимо это имя, чтобы активировать новый выпуск при обновлении исходных артефактов.
+12. Щелкните **Сохранить** и **ОК**, чтобы сохранить конвейер выпуска.
 
 ## <a name="execute-manual-and-ci-triggered-deployments"></a>Выполнение развертывания вручную и с помощью непрерывной интеграции
 
@@ -167,7 +169,7 @@ ms.locfileid: "39390601"
 5. Откройте в браузере URL-адрес одного из серверов, добавленных в группу развертывания. Например, введите **http://{IP-адрес_вашего_сервера}**.
 6. Перейдите в исходный репозиторий Git и измените содержимое заголовка **h1** в файле app/views/index.jade, заменив его текст.
 7. Зафиксируйте изменения.
-8. Через несколько минут вы увидите созданный выпуск на странице **Выпуски** в Team Services или Team Foundation Server. Откройте этот выпуск, чтобы увидеть, как выполняется развертывание. Поздравляем!
+8. Через несколько минут вы увидите созданный выпуск на странице **Выпуски** для Azure DevOps. Откройте этот выпуск, чтобы увидеть, как выполняется развертывание. Поздравляем!
 
 ## <a name="troubleshooting-the-jenkins-plugin"></a>Устранение неполадок подключаемого модуля Jenkins
 
@@ -175,13 +177,13 @@ ms.locfileid: "39390601"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы автоматизировали развертывание приложения в Azure, используя сборку Jenkins и Team Services для выпуска. Вы научились выполнять следующие задачи:
+В этом руководстве вы автоматизировали развертывание приложения в Azure, настроив Jenkins для сборки и Azure DevOps Services для выпуска. Вы научились выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Выполнение сборки приложения в Jenkins.
-> * Настройка Jenkins для интеграции с Team Services.
+> * Настройка Jenkins для интеграции с Azure DevOps Services.
 > * Создание группы развертывания для виртуальных машин Azure.
-> * Создание определения выпуска, которое настраивает виртуальные машины и развертывает приложение.
+> * Создание конвейера выпуска, который настраивает виртуальные машины и развертывает приложение.
 
 Чтобы узнать, как развернуть стек LAMP (Linux, Apache, MySQL и PHP), перейдите к следующему руководству.
 

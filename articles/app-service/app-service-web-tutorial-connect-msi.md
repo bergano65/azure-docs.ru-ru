@@ -1,6 +1,6 @@
 ---
-title: Безопасное подключение базы данных Azure SQL со службой приложений с использованием управляемого удостоверения службы | Документация Майкрософт
-description: Узнайте, как сделать подключение к базе данных более безопасным с использованием управляемого удостоверения службы, а также как применить это к другим службам Azure.
+title: Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения | Документация Майкрософт
+description: Узнайте, как сделать подключение к базе данных более безопасным с использованием управляемого удостоверения, а также как применить это к другим службам Azure.
 services: app-service\web
 documentationcenter: dotnet
 author: cephalin
@@ -14,24 +14,24 @@ ms.topic: tutorial
 ms.date: 04/17/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 173588c0200666c52f3ac0a5d2e70d667cfe3294
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 3125db03dc13f70524fd094736f50b563ef712a4
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39445567"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44379933"
 ---
-# <a name="tutorial-secure-sql-database-connection-with-managed-service-identity"></a>Руководство. Безопасное подключение базы данных Azure SQL с использованием управляемого удостоверения службы
+# <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство. Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
-[Служба приложений](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости в Azure. Она также предоставляет [управляемое удостоверение службы](app-service-managed-service-identity.md) для вашего приложения, которое является готовым решением для обеспечения доступа к [базе данных Azure SQL](/azure/sql-database/) и другим службам Azure. Управляемые удостоверения службы в службе приложений делают ваше приложение более безопасным, устраняя секреты из вашего приложения, такие как учетные данные в строках подключения. В этом руководстве вы добавите управляемое удостоверение службы в пример веб-приложения ASP.NET, которое вы создали при работе с руководством [Руководство. Создание приложения ASP.NET в Azure с подключением к базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md). Когда вы закончите, ваш пример приложения будет безопасно подключаться к базе данных SQL без необходимости использования имен пользователей и паролей.
+[Служба приложений](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости в Azure. Она также предоставляет [управляемое удостоверение](app-service-managed-service-identity.md) для вашего приложения, которое является готовым решением для защиты доступа к [Базе данных SQL Azure](/azure/sql-database/) и другим службам Azure. Управляемые удостоверения в службе приложений делают ваше приложение более безопасным, устраняя из него секреты, такие как учетные данные в строках подключения. В этом руководстве вы добавите управляемое удостоверение в пример веб-приложения ASP.NET, которое вы создали при работе с руководством [по созданию приложения ASP.NET в Azure с подключением к Базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md). Когда вы закончите, ваш пример приложения будет безопасно подключаться к базе данных SQL без необходимости использования имен пользователей и паролей.
 
 Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Включение удостоверения управляемой службы
-> * Предоставление доступа к базе данных SQL для удостоверения службы.
+> * Включение управляемых удостоверений
+> * Предоставление управляемому удостоверению доступа к Базе данных SQL
 > * Настройка кода приложения для проверки подлинности с помощью базы данных SQL с использованием проверки подлинности Azure Active Directory.
-> * Предоставление минимальных привилегий для удостоверения службы в базе данных SQL.
+> * Предоставление управляемому удостоверению минимальных привилегий в Базе данных SQL
 
 > [!NOTE]
 > Аутентификация Azure Active Directory _отличается_ от [ интегрированной аутентификации Windows](/previous-versions/windows/it-pro/windows-server-2003/cc758557(v=ws.10)) в локальном экземпляре Active Directory (AD DS). AD DS и Azure Active Directory используют разные протоколы аутентификации. См. дополнительные сведения о [различии между Windows Server AD DS и Azure AD](../active-directory/fundamentals/understand-azure-identity-solutions.md#the-difference-between-windows-server-ad-ds-and-azure-ad).
@@ -46,9 +46,9 @@ ms.locfileid: "39445567"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="enable-managed-service-identity"></a>Включение удостоверения управляемой службы
+## <a name="enable-managed-identities"></a>Включение управляемых удостоверений
 
-Чтобы включить удостоверение службы для вашего приложения Azure, используйте команду [​​az webapp identity](/cli/azure/webapp/identity?view=azure-cli-latest#az-webapp-identity-assign) в Cloud Shell. В следующей команде замените *\<app name>*.
+Чтобы включить управляемое удостоверение для приложения Azure, используйте команду [az webapp identity assign](/cli/azure/webapp/identity?view=azure-cli-latest#az-webapp-identity-assign) в Cloud Shell. В следующей команде замените *\<app name>*.
 
 ```azurecli-interactive
 az webapp identity assign --resource-group myResourceGroup --name <app name>
@@ -73,13 +73,13 @@ az ad sp show --id <principalid>
 
 ## <a name="grant-database-access-to-identity"></a>Предоставление доступа к базе данных
 
-Затем вы предоставляете доступ к базе данных удостоверению службы приложения, используя команду [`az sql server ad-admin create`](/cli/azure/sql/server/ad-admin?view=azure-cli-latest#az-sql-server-ad-admin_create) в Cloud Shell. В следующей команде замените *\<server_name>* и <principalid_from_last_step>. Введите имя администратора вместо *\<admin_user>*.
+Теперь вы предоставите удостоверению службы приложения доступ к базе данных, используя команду [`az sql server ad-admin create`](/cli/azure/sql/server/ad-admin?view=azure-cli-latest#az-sql-server-ad-admin_create) в Cloud Shell. В следующей команде замените *\<server_name>* и <principalid_from_last_step>. Введите имя администратора вместо *\<admin_user>*.
 
 ```azurecli-interactive
 az sql server ad-admin create --resource-group myResourceGroup --server-name <server_name> --display-name <admin_user> --object-id <principalid_from_last_step>
 ```
 
-Теперь управляемое удостоверение службы имеет доступ к вашему серверу базы данных Azure SQL.
+Теперь управляемое удостоверение имеет доступ к вашему серверу Базы данных SQL Azure.
 
 ## <a name="modify-connection-string"></a>Изменение строки подключения
 
@@ -119,7 +119,7 @@ public MyDatabaseContext(SqlConnection conn) : base(conn, true)
 }
 ```
 
-Этот конструктор настраивает собственный объект SqlConnection для использования маркера доступа базы данных Azure SQL из службы приложений. С помощью маркера доступа приложение службы приложений проходит проверку подлинности в базе данных Azure SQL с использованием управляемого удостоверения службы. Дополнительные сведения см. в разделе [Получение маркеров для ресурсов Azure](app-service-managed-service-identity.md#obtaining-tokens-for-azure-resources). Оператор `if` позволяет продолжить тестирование приложения локально с помощью LocalDB.
+Этот конструктор настраивает собственный объект SqlConnection для использования маркера доступа базы данных Azure SQL из службы приложений. С помощью маркера доступа приложение службы приложений проходит проверку подлинности в Базе данных SQL Azure с использованием управляемого удостоверения. Дополнительные сведения см. в разделе [Получение маркеров для ресурсов Azure](app-service-managed-service-identity.md#obtaining-tokens-for-azure-resources). Оператор `if` позволяет продолжить тестирование приложения локально с помощью LocalDB.
 
 > [!NOTE]
 > `SqlConnection.AccessToken` в настоящее время поддерживается только в .NET Framework 4.6 и выше, но не в [.NET Core](https://www.microsoft.com/net/learn/get-started/windows).
@@ -141,7 +141,7 @@ private MyDatabaseContext db = new MyDatabaseContext(new SqlConnection());
 
 ![Публикация в обозревателе решений](./media/app-service-web-tutorial-dotnet-sqldatabase/solution-explorer-publish.png)
 
-На странице публикации щелкните **Опубликовать**. Когда на новой веб-странице отображается список дел, ваше приложение подключается к базе данных с использованием управляемого удостоверения службы.
+На странице публикации щелкните **Опубликовать**. Когда на новой веб-странице отображается список дел, ваше приложение подключается к базе данных с управляемым удостоверением.
 
 ![Веб-приложение Azure после включения Code First Migrations](./media/app-service-web-tutorial-dotnet-sqldatabase/this-one-is-done.png)
 
@@ -151,11 +151,11 @@ private MyDatabaseContext db = new MyDatabaseContext(new SqlConnection());
 
 ## <a name="grant-minimal-privileges-to-identity"></a>Предоставление удостоверению минимальных привилегий
 
-На предыдущих шагах вы, вероятно, заметили, что ваше удостоверение подключено к SQL Server в качестве администратора Azure AD. Чтобы предоставить минимальные привилегии для удостоверения, вам необходимо войти на сервер базы данных Azure SQL в качестве администратора Azure AD, а затем добавить группу Azure Active Directory, которая содержит удостоверение. 
+На предыдущих шагах вы могли заметить, что управляемое удостоверение подключается к SQL Server с правами администратора Azure AD. Чтобы предоставить управляемому удостоверению минимальные привилегии, вам необходимо войти на сервер Базы данных SQL Azure в качестве администратора Azure AD и добавить группу Azure Active Directory, которая содержит это управляемое удостоверение. 
 
-### <a name="add-managed-service-identity-to-an-azure-active-directory-group"></a>Добавление управляемого удостоверения службы (MSI) в группу Azure Active Directory
+### <a name="add-managed-identity-to-an-azure-active-directory-group"></a>Добавление управляемого удостоверения в группу Azure Active Directory
 
-В Cloud Shell добавьте управляемое удостоверение службы для своего приложения в новую группу Azure Active Directory с именем _myAzureSQLDBAccessGroup_ , показанную в следующем скрипте:
+В Cloud Shell добавьте управляемое удостоверение, назначенное приложению, в новую группу Azure Active Directory с именем _myAzureSQLDBAccessGroup_ , как демонстрируется в следующем сценарии:
 
 ```azurecli-interactive
 groupid=$(az ad group create --display-name myAzureSQLDBAccessGroup --mail-nickname myAzureSQLDBAccessGroup --query objectId --output tsv)
@@ -168,7 +168,7 @@ az ad group member list -g $groupid
 
 ### <a name="reconfigure-azure-ad-administrator"></a>Перенастройка администратора Azure AD
 
-Ранее вы назначили управляемое удостоверение службы в качестве администратора Azure AD для своей базы данных SQL. Вы не можете использовать это удостоверение для интерактивного входа (для добавления пользователей базы данных), поэтому вам нужно использовать настоящего пользователя Azure AD. Чтобы сделать это, выполните шаги, описанные в разделе [Подготовка администратора Azure Active Directory для сервера базы данных SQL Azure](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server). 
+Ранее вы назначили для управляемого удостоверения роль администратора Azure AD в Базе данных SQL. Вы не можете использовать это удостоверение для интерактивного входа (для добавления пользователей базы данных), поэтому вам нужно использовать настоящего пользователя Azure AD. Чтобы сделать это, выполните шаги, описанные в разделе [Подготовка администратора Azure Active Directory для сервера базы данных SQL Azure](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server). 
 
 ### <a name="grant-permissions-to-azure-active-directory-group"></a>Предоставление разрешений группе Azure Active Directory
 
@@ -204,10 +204,10 @@ GO
 Вы научились выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Включение удостоверения управляемой службы
-> * Предоставление доступа к базе данных SQL для удостоверения службы.
+> * Включение управляемых удостоверений
+> * Предоставление управляемому удостоверению доступа к Базе данных SQL
 > * Настройка кода приложения для проверки подлинности с помощью базы данных SQL с использованием проверки подлинности Azure Active Directory.
-> * Предоставление минимальных привилегий для удостоверения службы в базе данных SQL.
+> * Предоставление управляемому удостоверению минимальных привилегий в Базе данных SQL
 
 Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с веб-приложением.
 

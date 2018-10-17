@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/15/2018
+ms.date: 09/05/2018
 ms.author: mabrigg
 ms.reviewer: jiahan
-ms.openlocfilehash: fc17ce0ebd13fb7e89405fcf4d6633551f340a27
-ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
+ms.openlocfilehash: bdf31c72fbcd8941161e6b9df0a490df7f6a16e0
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "43050452"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44026524"
 ---
 # <a name="provision-virtual-machine-disk-storage-in-azure-stack"></a>Подготовка хранилища для дисков виртуальных машин в Azure Stack
 
@@ -30,9 +30,13 @@ ms.locfileid: "43050452"
 
 ## <a name="overview"></a>Обзор
 
-Azure Stack поддерживает использование на виртуальных машинах [неуправляемых дисков](https://docs.microsoft.com/azure/virtual-machines/windows/about-disks-and-vhds#unmanaged-disks) в качестве дисков операционной системы и (или) дисков данных.
+Начиная с версии 1808, Azure Stack поддерживает использование на виртуальных машинах управляемых и неуправляемых дисков в качестве дисков операционной системы и дисков данных. До выпуска версии 1808 поддерживались только неуправляемые диски. 
 
-Чтобы использовать неуправляемые диски, создайте [учетную запись хранилища](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account) для их хранения. Созданные диски называются дисками виртуальной машины и хранятся в контейнерах в учетной записи хранения.
+**[Управляемые диски](https://docs.microsoft.com/azure/virtual-machines/windows/about-disks-and-vhds#managed-disks)** упрощают управление дисками виртуальных машин Azure IaaS. Они управляют учетными записями хранения, связанными с этими дисками. Вам нужно только выбрать размер диска, а Azure Stack самостоятельно создаст диск и будет управлять им.
+
+**[Неуправляемые диски](https://docs.microsoft.com/azure/virtual-machines/windows/about-disks-and-vhds#unmanaged-disks)** требуют создания [учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account) для их хранения. Созданные диски называются дисками виртуальной машины и хранятся в контейнерах в учетной записи хранения.
+
+ 
 
 ### <a name="best-practice-guidelines"></a>Рекомендации
 

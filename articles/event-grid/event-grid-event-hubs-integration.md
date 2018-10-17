@@ -8,12 +8,12 @@ ms.service: event-grid
 ms.topic: tutorial
 ms.date: 08/22/2018
 ms.author: tomfitz
-ms.openlocfilehash: 432436ee13519cf342313ad369c168ba764f9264
-ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.openlocfilehash: aad7a24d8b0e0bc74815cad3604db1cc21a6db96
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42616521"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44163232"
 ---
 # <a name="stream-big-data-into-a-data-warehouse"></a>Потоковая передача больших данных в хранилище данных
 
@@ -184,6 +184,7 @@ WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
 
 ## <a name="next-steps"></a>Дополнительная информация
 
+* Сведения о различиях между службами обмена сообщениями в Azure см. в статье [Выбор между службами обмена сообщениями Azure](compare-messaging-services.md).
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).
 * Общие сведения о функции "Сбор" в Центрах событий см. в статье [Включение функции "Сбор" в Центрах событий с помощью портала Azure](../event-hubs/event-hubs-capture-enable-through-portal.md).
 * Дополнительные сведения о настройке и запуске примера см. в [примере использования функции "Сбор" в Центрах событий и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo).

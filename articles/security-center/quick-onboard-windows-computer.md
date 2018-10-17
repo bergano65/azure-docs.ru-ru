@@ -3,7 +3,7 @@ title: Начало работы с центром безопасности Azur
 description: В этом кратком руководстве показано, как подготовить агент Microsoft Monitoring Agent на компьютере Windows.
 services: security-center
 documentationcenter: na
-author: TerryLanfear
+author: rkarlin
 manager: MBaldwin
 editor: ''
 ms.assetid: 61e95a87-39c5-48f5-aee6-6f90ddcd336e
@@ -13,21 +13,21 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/22/2018
-ms.author: terrylan
-ms.openlocfilehash: b872153278810ce92f19c7c71fe473a2b77def35
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.date: 09/2/2018
+ms.author: rkarlin
+ms.openlocfilehash: 55bb7242427bf85d10fac0a44e2b2eac3a5181ad
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38702663"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44023006"
 ---
 # <a name="quickstart-onboard-windows-computers-to-azure-security-center"></a>Краткое руководство. Подключение компьютеров Windows к центру безопасности Azure
 После подключения подписок Azure можно включить центр безопасности для ресурсов, работающих вне среды Azure, например в локальной среде или в других облаках, подготовив агент Microsoft Monitoring Agent.
 
 В этом кратком руководстве показано, как установить агент Microsoft Monitoring Agent на компьютере Windows.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для начала работы с Центром безопасности необходима подписка Microsoft Azure. Если у вас нет подписки, вы можете зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
 
 Для работы с этим руководством требуется центр безопасности с ценовой категорией "Стандартный". См. руководство по [подключению подписки Azure к центру безопасности с ценовой категорией "Стандартный"](security-center-get-started.md). Ценовая категория "Стандартный" центра безопасности доступна для использования бесплатно в течение первых 60 дней.
@@ -39,14 +39,14 @@ ms.locfileid: "38702663"
 
  ![Обзор центра безопасности][2]
 
-3. В главном меню центра безопасности выберите **Переход на улучшенную безопасность**.
-4. Выберите **Добавить компьютеры, не относящиеся к Azure?**
+3. В главном меню Центра безопасности выберите **Начало работы**.
+4. Выберите вкладку **Начало работы**.
 
-   ![Переход на улучшенную безопасность][3]
+   ![Начало работы][3]
 
-5. В области **Добавление новых компьютеров, не относящихся к Azure** отображается список рабочих областей Log Analytics. В этот список входит, если это применимо, рабочая область по умолчанию, созданная центром безопасности при включении автоматической подготовки. Выберите эту или другую рабочую область, которую следует использовать.
+5. Выберите **Настроить** в разделе **Добавление новых компьютеров, не относящихся к Azure**. Отобразится список ваших рабочих областей Log Analytics. В этот список входит, если это применимо, рабочая область по умолчанию, созданная центром безопасности при включении автоматической подготовки. Выберите эту или другую рабочую область, которую следует использовать.
 
-    ![Добавление компьютера, который не относится к Azure][4]
+    ![Добавление компьютера, который не относится к Azure](./media/quick-onboard-windows-computer/non-azure.png)
 
   Откроется колонка **Прямой агент** со ссылкой для загрузки агента Windows и ключей для идентификатора рабочей области, используемого при настройке агента.
 
@@ -104,7 +104,7 @@ ms.locfileid: "38702663"
 
 <!--Image references-->
 [2]: ./media/quick-onboard-windows-computer/overview.png
-[3]: ./media/quick-onboard-windows-computer/onboard-windows-computer.png
+[3]: ./media/quick-onboard-windows-computer/get-started.png
 [4]: ./media/quick-onboard-windows-computer/add-computer.png
 [5]: ./media/quick-onboard-windows-computer/log-analytics-mma-setup-laworkspace.png
 [6]: ./media/quick-onboard-windows-computer/compute.png

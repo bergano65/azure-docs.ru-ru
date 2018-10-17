@@ -6,20 +6,19 @@ documentationcenter: ''
 author: mattbriggs
 manager: femila
 editor: ''
-ms.assetid: 0f77be49-eafe-4886-8c58-a17061e8120f
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/28/2018
+ms.date: 09/10/2018
 ms.author: mabrigg
-ms.openlocfilehash: 50bf01d6de6105d3041c6bb88e803f3d110f751d
-ms.sourcegitcommit: 782d5955e1bec50a17d9366a8e2bf583559dca9e
+ms.openlocfilehash: 6207a77555d0d4656c0728dddec769e483f4d762
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2018
-ms.locfileid: "29742464"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44378250"
 ---
 # <a name="view-public-ip-address-consumption-in-azure-stack"></a>Просмотр данных об использовании общедоступных IP-адресов в Azure Stack
 
@@ -39,9 +38,8 @@ ms.locfileid: "29742464"
 ## <a name="view-the-public-ip-address-usage-information"></a>Просмотр данных об использовании общедоступных IP-адресов
 Чтобы просмотреть количество всех общедоступных IP-адресов, которые были использованы в регионе:
 
-1. На портале администратора Azure Stack в разделе **Ресурсы администрирования** щелкните **Больше служб**, а затем выберите **Поставщики ресурсов**.
-2. В списке **Поставщики ресурсов** выберите **Сеть**.
-3. В области **Сеть** в разделе **Обзор** показана плитка **Public IP pools usage** (Использование пулов общедоступных IP-адресов).
+1. На портале администратора Azure Stack выберите **Все службы**. Затем в категории **Администрирование** выберите **Сеть**.
+1. В области **Сеть** в разделе **Обзор** показана плитка **Public IP pools usage** (Использование пулов общедоступных IP-адресов).
 
 ![Область "Сеть", колонка "Поставщики ресурсов"](media/azure-stack-viewing-public-ip-address-consumption/image01.png)
 

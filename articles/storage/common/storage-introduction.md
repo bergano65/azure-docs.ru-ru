@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 07/11/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: 59e6f4126e8a39ab695015fae2a2013529383418
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 693ba07e46900ba6f3e025d97cb34aad9e244ace
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41919566"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44027050"
 ---
 # <a name="introduction-to-azure-storage"></a>Общие сведения о службе хранилища Azure
 
@@ -93,7 +93,7 @@ ms.locfileid: "41919566"
 
 |**Тип учетной записи хранения**|**Общего назначения, класс "Стандартный"**|**Общего назначения, класс "Премиум"**|**Хранилище BLOB-объектов, "горячий" и "холодный" уровни доступа**|
 |-----|-----|-----|-----|
-|**Поддерживаемые службы**| Службы BLOB-объектов, файлов, очередей | Служба BLOB-объектов | Служба BLOB-объектов|
+|**Поддерживаемые службы**| Службы BLOB-объектов, файлов, очередей и таблиц | Служба BLOB-объектов | Служба BLOB-объектов|
 |**Типы поддерживаемых BLOB-объектов**|Блочные, страничные и добавочные BLOB-объекты | Blob-страницы | Блочные и добавочные BLOB-объекты|
 
 ### <a name="general-purpose-storage-accounts"></a>Учетные записи хранения общего назначения

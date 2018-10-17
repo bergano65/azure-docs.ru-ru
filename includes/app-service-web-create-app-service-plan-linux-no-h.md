@@ -2,10 +2,10 @@
 
 <!-- [!INCLUDE [app-service-plan](app-service-plan-linux.md)] -->
 
-В следующем примере создается план службы приложений с именем `myAppServicePlan` в ценовой категории **Стандартный** (`--sku S1`) в контейнере Linux (`--is-linux`).
+В следующем примере создается план службы приложений с именем `myAppServicePlan` в ценовой категории **Базовый** (`--sku B1`) в контейнере Linux (`--is-linux`).
 
 ```azurecli-interactive
-az appservice plan create --name myAppServicePlan --resource-group myResourceGroup --sku S1 --is-linux
+az appservice plan create --name myAppServicePlan --resource-group myResourceGroup --sku B1 --is-linux
 ```
 
 После создания плана службы приложений в Azure CLI отображается информация следующего вида:

@@ -14,12 +14,12 @@ ms.date: 08/28/2017
 ms.author: lizross
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: 02c1cb90fef4472e97ec16f9eca0fc8a3b6a11c0
-ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
+ms.openlocfilehash: 3b2264817dce63885ce0c428fe4df8427f7cdde6
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43842817"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44049253"
 ---
 # <a name="restore-a-deleted-office-365-group-in-azure-active-directory"></a>Восстановление удаленной группы Office 365 в Azure Active Directory
 
@@ -34,7 +34,7 @@ ms.locfileid: "43842817"
 --------- | ---------
 Администратор компании, партнер с поддержкой 2 уровня; администратор службы InTune | Восстановление любой удаленной группы Office 365
 Администратор учетных записей, партнер с поддержкой 1 уровня | Восстановление любой удаленной группы Office 365, кроме тех, которым назначена роль администратора компании
-Пользователь | Восстановление любой удаленной группы Office 365, которая принадлежала пользователю
+Пользователь | Восстановление любой удаленной группы Office 365, которая принадлежала им
 
 
 ## <a name="view-the-deleted-office-365-groups-that-are-available-to-restore"></a>Просмотр удаленных групп Office 365, которые можно восстановить

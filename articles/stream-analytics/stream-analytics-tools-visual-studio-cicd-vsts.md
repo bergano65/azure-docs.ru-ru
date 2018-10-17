@@ -1,6 +1,6 @@
 ---
-title: Руководство по развертыванию задания Azure Stream Analytics с помощью CI/CD, используя Visual Studio Team Services
-description: В этой статье описывается развертывание задания Stream Analytics с помощью CI/CD, используя Visual Studio Team Services.
+title: Руководство по развертыванию заданий Azure Stream Analytics с помощью CI/CD и Azure DevOps Services
+description: В этой статье описывается развертывание заданий Stream Analytics с помощью CI/CD и Azure DevOps Services.
 services: stream-analytics
 author: su-jie
 ms.author: sujie
@@ -9,22 +9,22 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: tutorial
 ms.date: 7/10/2018
-ms.openlocfilehash: d4f1e188a1a145ba3be5fb45d2b0ea4d0bfd57a7
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: adacbaf718c5ef293b4ee3fa833083704aa41f5c
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "41917967"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44297948"
 ---
-# <a name="tutorial-deploy-an-azure-stream-analytics-job-with-cicd-using-vsts"></a>Руководство. Развертывание заданий Azure Stream Analytics с помощью CI/CD, используя Visual Studio Team Services
-В этом руководстве описано, как настроить непрерывную интеграцию и развертывание для задания Azure Stream Analytics с помощью Visual Studio Team Services. 
+# <a name="tutorial-deploy-an-azure-stream-analytics-job-with-cicd-using-azure-pipelines"></a>Руководство. Развертывание заданий Azure Stream Analytics с помощью CI/CD и Azure Pipelines
+В этом руководстве описано, как настроить непрерывную интеграцию и развертывание для задания Azure Stream Analytics с помощью CI/CD и Azure Pipelines. 
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Добавление проекта в систему управления версиями
-> * Создание определения сборки в Team Services
-> * Создание определения выпуска в Team Services
+> * Создание конвейера сборки в Azure Pipelines
+> * Создание конвейера выпуска в Azure Pipelines
 > * Автоматическое развертывание и обновление приложения
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -33,7 +33,7 @@ ms.locfileid: "41917967"
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Установите [Visual Studio](stream-analytics-tools-for-visual-studio-install.md) и рабочие нагрузки **разработки Azure** или **службы хранения и обработки данных**.
 * Создайте [проект Stream Analytics в Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-quick-create-vs).
-* Создайте [учетную запись Visual Studio Team Services](https://visualstudio.microsoft.com/team-services/).
+* Создайте организацию [Azure DevOps](https://visualstudio.microsoft.com/team-services/).
 
 ## <a name="configure-nuget-package-dependency"></a>Настройка зависимостей пакета NuGet
 Для автоматического построения и развертывания на любом компьютере необходимо использовать пакет NuGet `Microsoft.Azure.StreamAnalytics.CICD`. Он предоставляет MSBuild, локальное выполнение и средства развертывания, которые поддерживают процесс непрерывной интеграции и развертывания проектов Stream Analytics Visual Studio. Дополнительные сведения см. на странице [Средства Stream Analytics CI/CD](stream-analytics-tools-for-visual-studio-cicd.md).
@@ -47,34 +47,35 @@ ms.locfileid: "41917967"
 </packages>
 ```
 
-## <a name="share-your-visual-studio-solution-to-a-new-team-services-git-repo"></a>Поделитесь своим решением Visual Studio в новом репозитории Git Team Services
-Поделитесь исходными файлами приложения в проекте команды в Team Services, чтобы создавать сборки.  
+## <a name="share-your-visual-studio-solution-to-a-new-azure-repos-git-repo"></a>Публикация решения Visual Studio в новом репозитории Azure Repos Git
+
+Поместите исходные файлы приложения в проект Azure DevOps, чтобы создавать сборки.  
 
 1. Создайте новый локальный репозиторий Git, выбрав **Добавить в систему управления версиями**, а затем**Git** в строке состояния в правом нижнем углу Visual Studio. 
 
-2. В представлении **Синхронизация** в **Team Explorer** выберите **Опубликовать репозиторий Git** в разделе **Принудительная отправка в Visual Studio Team Services**.
+2. В представлении **Синхронизация** в **Team Explorer** нажмите кнопку **Опубликовать репозиторий Git** в разделе **Принудительная отправка в Azure DevOps Services**.
 
    ![Принудительная отправка репозитория Git](./media/stream-analytics-tools-visual-studio-cicd-vsts/publishgitrepo.png)
 
-3. Проверьте почту и выберите свою учетную запись в раскрывающемся списке **Домен Team Services**. Введите имя репозитория и выберите **Опубликовать репозиторий**.
+3. Проверьте адрес электронной почты и в раскрывающемся списке **Домен Azure DevOps Services** выберите организацию. Введите имя репозитория и выберите **Опубликовать репозиторий**.
 
    ![Принудительная отправка репозитория Git](./media/stream-analytics-tools-visual-studio-cicd-vsts/publishcode.png)
 
-    При публикации репозитория в вашей учетной записи создается новый командный проект с тем же именем, что и у локального репозитория. Чтобы создать репозиторий в существующем командном проекте, щелкните **Расширенный** рядом с **именем репозитория** и выберите командный проект. Код можно просматривать в браузере, выбрав **Просмотреть на веб-сайте**.
+    При публикации репозитория в вашей организации создается новый проект с тем же именем, что и у локального репозитория. Чтобы создать репозиторий в существующем проекте, щелкните **Расширенный** рядом с **именем репозитория** и выберите нужный проект. Код можно просматривать в браузере, выбрав **Просмотреть на веб-сайте**.
  
-## <a name="configure-continuous-delivery-with-vsts"></a>Настройка непрерывной поставки с помощью VSTS
-Определение сборки Team Services описывает рабочий процесс, состоящий из шагов сборки, которые выполняются последовательно. Дополнительные сведения об [определениях сборок Team Services](https://www.visualstudio.com/docs/build/define/create). 
+## <a name="configure-continuous-delivery-with-azure-devops"></a>Настройка непрерывной поставки с помощью Azure DevOps
+Конвейер сборки в Azure Pipelines описывает рабочий процесс, состоящий из шагов сборки, которые выполняются последовательно. Дополнительные сведения [о конвейерах сборки в Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer?view=vsts&tabs=new-nav). 
 
-Определение выпуска Team Services описывает рабочий процесс развертывания пакета приложения в кластере. При совместном использовании определение сборки и определение выпуска выполняют весь рабочий процесс начиная с исходных файлов и заканчивая запуском приложения в кластере. Узнайте больше об [определениях выпуска](https://www.visualstudio.com/docs/release/author-release-definition/more-release-definition)Team Services.
+Конвейер выпуска Azure Pipelines описывает рабочий процесс, развертывающий пакет приложения в кластере. При совместном использовании конвейер сборки и конвейер выпуска выполняют весь рабочий процесс от получения файлов с исходным кодом до запуска приложения в кластере. Дополнительные сведения [о конвейерах выпуска Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/release/define-multistage-release-process?view=vsts).
 
-### <a name="create-a-build-definition"></a>Создание определения сборки
-Откройте браузер и перейдите к созданному командному проекту [Visual Studio Team Services](https://app.vsaex.visualstudio.com/). 
+### <a name="create-a-build-pipeline"></a>Создание конвейера сборки
+Откройте браузер и перейдите к только что созданному проекту [Azure DevOps](https://app.vsaex.visualstudio.com/). 
 
-1. На вкладке **Сборка и выпуск** выберите **Сборки**, а затем **+ создать**.  Выберите **VSTS Git** и **Продолжить**.
+1. На вкладке **Сборка и выпуск** выберите **Сборки**, а затем **+ создать**.  Выберите **Git Azure DevOps Services** и щелкните **Продолжить**.
     
     ![Выбор источника](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-select-source.png)
 
-2. В разделе**Выбор шаблона**, щелкните **Пустой процесс** чтобы запустить пустое определение.
+2. В разделе**Выбор шаблона** щелкните **Пустой процесс**, чтобы запустить пустой конвейер.
     
     ![Выбор шаблона сборки](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-select-template.png)
 
@@ -82,7 +83,7 @@ ms.locfileid: "41917967"
     
     ![Состояние триггера](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-trigger.png)
 
-4. Сборки также активируются после принудительного запуска или возврата. Чтобы проверить ход сборки, перейдите на вкладку **Сборки**.  Убедившись, что сборка запускается успешно, необходимо создать определение выпуска, которое развертывает приложение в кластер. Щелкните правой кнопкой мыши троеточие рядом с определением сборки и выберите **Правка**.
+4. Сборки также активируются после принудительного запуска или возврата. Чтобы проверить ход сборки, перейдите на вкладку **Сборки**.  Убедившись, что сборка запускается успешно, необходимо создать конвейер выпуска, который развертывает приложение в кластер. Щелкните правой кнопкой мыши троеточие рядом с конвейером сборки и выберите пункт **Правка**.
 
 5.  В **Задачах**, введите "Размещен" в качестве значения параметра **Очередь агента**.
     
@@ -125,17 +126,17 @@ ms.locfileid: "41917967"
     
     ![Настройка свойств](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-deploy-2.png)
 
-12. Щелкните **Сохранить и поместить в очередь**, чтобы проверить определение сборки.
+12. Щелкните **Сохранить и поместить в очередь**, чтобы проверить конвейер сборки.
     
     ![Настройка параметров переопределения](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-save-queue.png)
 
 ### <a name="failed-build-process"></a>Сбой процесса сборки
-Может произойти ошибка развертывания параметров со значением null, если не выполнялось переопределение параметров шаблона в задаче определения сборки **развертывание группы ресурсов Azure**. Чтобы устранить эту ошибку вернитесь к определению сборки и переопределите параметры со значением null.
+Может произойти ошибка развертывания параметров со значением NULL, если не выполнялось переопределение параметров шаблона в задаче конвейера сборки **Развертывание группы ресурсов Azure**. Чтобы устранить эту ошибку, вернитесь к конвейеру сборки и переопределите параметры со значением NULL.
 
    ![Сбой процесса сборки](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-process-failed.png)
 
 ### <a name="commit-and-push-changes-to-trigger-a-release"></a>Фиксация и отправка изменений для инициации выпуска
-Проверьте работу конвейера непрерывной интеграции, направив некоторые изменения кода в Team Services.    
+Отправьте некоторые изменения кода в Azure DevOps, чтобы проверить работу конвейера непрерывной интеграции.    
 
 При написании кода в Visual Studio изменения отслеживаются автоматически. Зафиксировать изменения в локальном репозитории Git можно, щелкнув значок ожидающих изменений в строке состояния справа внизу.
 
@@ -143,11 +144,11 @@ ms.locfileid: "41917967"
 
     ![Фиксирование и отправка изменений](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-push-changes.png)
 
-2. Щелкните значок неопубликованных изменений в строке состояния или "представлении синхронизации" в Team Explorer. Выберите **Отправить изменения**, чтобы обновить код в Team Services/TFS.
+2. Щелкните значок неопубликованных изменений в строке состояния или "представлении синхронизации" в Team Explorer. Выберите **Отправить**, чтобы обновить код в Azure DevOps.
 
     ![Фиксирование и отправка изменений](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-push-changes-2.png)
 
-При отправке изменений в Team Services автоматически запускается сборка.  После создания определения сборки автоматически создается выпуск и начинается обновление задания в кластере.
+При отправке изменений в Azure DevOps Services автоматически запускается сборка.  После успешного создания конвейера сборки автоматически создается выпуск и начинается обновление задания в кластере.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

@@ -3,7 +3,7 @@ title: Начало работы с центром безопасности Azur
 description: В этом кратком руководстве показано, как подключить компьютеры Linux к центру безопасности.
 services: security-center
 documentationcenter: na
-author: TerryLanfear
+author: rkarlin
 manager: MBaldwin
 editor: ''
 ms.assetid: 61e95a87-39c5-48f5-aee6-6f90ddcd336e
@@ -13,21 +13,21 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/22/2018
-ms.author: terrylan
-ms.openlocfilehash: 05e4bed0f9b4dfb6d1879408085447ef53db8655
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.date: 09/02/2018
+ms.author: rkarlin
+ms.openlocfilehash: 1eab54d16dcc0facace9a51a4cf5b5d1243baf4f
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38630103"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44025399"
 ---
 # <a name="quickstart-onboard-linux-computers-to-azure-security-center"></a>Краткое руководство: подключение компьютеров Linux к центру безопасности Azure
 После подключения подписок Azure можно включить центр безопасности для ресурсов под управлением Linux, работающих вне среды Azure, например в локальной среде или в других облаках, подготовив агент Linux.
 
 В этом кратком руководстве показано, как установить агент Linux на компьютер под управлением Linux.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для начала работы с Центром безопасности необходима подписка Microsoft Azure. Если у вас нет подписки, вы можете зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
 
 Для работы с этим руководством требуется центр безопасности с ценовой категорией "Стандартный". См. руководство по [подключению подписки Azure к центру безопасности с ценовой категорией "Стандартный"](security-center-get-started.md). Вы можете использовать центр безопасности категории "Стандартный" бесплатно в течение первых 60 дней.
@@ -39,13 +39,12 @@ ms.locfileid: "38630103"
 
  ![Обзор центра безопасности][2]
 
-3. В главном меню центра безопасности выберите **Переход на улучшенную безопасность**.
-4. Выберите **Do you want to add new non-Azure computers** (Добавить новые компьютеры, не относящиеся к Azure?).
-   ![][3]
+3. В главном меню Центра безопасности выберите **Начало работы**.
+4. Выберите вкладку **Начало работы**. ![Начало работы][3]
 
-5. В области **Добавление новых компьютеров, не относящихся к Azure** отображается список рабочих областей Log Analytics. В этот список входит, если это применимо, рабочая область по умолчанию, созданная центром безопасности при включении автоматической подготовки. Выберите эту или другую рабочую область, которую следует использовать.
+5. Нажмите **Настроить**в разделе **Добавление новых компьютеров, не относящихся к Azure**, чтобы отобразить список рабочих областей Log Analytics. В этот список входит, если это применимо, рабочая область по умолчанию, созданная центром безопасности при включении автоматической подготовки. Выберите эту или другую рабочую область, которую следует использовать.
 
-    ![Добавление компьютера, который не относится к Azure][4]
+    ![Добавление компьютера, который не относится к Azure](./media/quick-onboard-linux-computer/non-azure.png)
 
 6.  На странице **Прямой агент** в разделе **Скачать и подключить агент для Linux** нажмите кнопку **Копировать** для копирования команды *wget*.
 
@@ -91,7 +90,7 @@ ms.locfileid: "38630103"
 <!--Image references-->
 [1]: ./media/quick-onboard-linux-computer/portal.png
 [2]: ./media/quick-onboard-linux-computer/overview.png
-[3]: ./media/quick-onboard-linux-computer/onboard-windows-computer.png
+[3]: ./media/quick-onboard-linux-computer/get-started.png
 [4]: ./media/quick-onboard-linux-computer/add-computer.png
 [5]: ./media/quick-onboard-linux-computer/pgrep-command.png
 [6]: ./media/quick-onboard-linux-computer/logs-for-agent.png

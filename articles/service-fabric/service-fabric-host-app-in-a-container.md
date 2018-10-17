@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/18/2018
 ms.author: ryanwi
-ms.openlocfilehash: a1e8c53263093554bb616ec130cd17a0d6d4339c
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: 7573746b91f057d83a299d54801785118cc1c878
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43302921"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44380137"
 ---
 # <a name="tutorial-deploy-a-net-application-in-a-windows-container-to-azure-service-fabric"></a>Руководство по развертыванию приложения .NET в контейнере Windows в Azure Service Fabric
 
@@ -225,7 +225,7 @@ $vnetRuleObject1 = New-AzureRmSqlServerVirtualNetworkRule `
 ![Веб-пример Fabrikam][fabrikam-web-page-deployed]
 
 ## <a name="set-up-continuous-integration-and-deployment-cicd-with-a-service-fabric-cluster"></a>Настройка непрерывной интеграции и развертывания (CI/CD) с помощью кластера Service Fabric
-См. дополнительные сведения о том, как использовать VSTS для настройки [развертывания приложений CI/CD в кластере Service Fabric](service-fabric-tutorial-deploy-app-with-cicd-vsts.md). Процесс, описанный в этом руководстве, такой же и для проекта (FabrikamFiber). Просто пропустите загрузку примера Voting и замените FabrikamFiber именем репозитория вместо Voting.
+Дополнительные сведения о том, как использовать Azure DevOps для настройки развертывания приложений с помощью CI/CD в кластере Service Fabric см. в статье [Tutorial: Deploy an application with CI/CD to a Service Fabric cluster](service-fabric-tutorial-deploy-app-with-cicd-vsts.md) (Руководство. Развертывание приложения с помощью CI/CD в кластере Service Fabric). Процесс, описанный в этом руководстве, такой же и для проекта (FabrikamFiber). Просто пропустите загрузку примера Voting и замените FabrikamFiber именем репозитория вместо Voting.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 После завершения работы не забудьте удалить все созданные ресурсы.  Простейший способ — это удалить группы ресурсов, которые содержат кластер Service Fabric, базу данных SQL Azure и службу "Реестр контейнеров Azure".
@@ -254,8 +254,7 @@ Remove-AzureRmResourceGroup -Name $clusterresourcegroupname
 > * Создание реестра контейнеров Azure.
 > * Развертывание приложения Service Fabric в Azure.
 
-В следующей части руководства описывается настройка [мониторинга контейнера](service-fabric-tutorial-monitoring-wincontainers.md).
-
+В следующей части этого руководства вы научитесь [развертывать приложение в контейнере с помощью CI/CD в кластере Service Fabric](service-fabric-tutorial-deploy-container-app-with-cicd-vsts.md).
 
 [link-fabrikam-github]: https://aka.ms/fabrikamcontainer
 [link-azure-powershell-install]: /powershell/azure/install-azurerm-ps

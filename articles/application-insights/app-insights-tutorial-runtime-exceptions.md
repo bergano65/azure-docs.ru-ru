@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: tutorial
 manager: carmonm
-ms.openlocfilehash: 7c2e67605cd2489f2c8d9da5ac80386056464afa
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: f45cb6a47756fae7b75d8c3df80a0bc754742063
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42815119"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44299010"
 ---
 # <a name="find-and-diagnose-run-time-exceptions-with-azure-application-insights"></a>Поиск и диагностика исключений во время выполнения с помощью Azure Application Insights
 
@@ -101,6 +101,15 @@ Application Insights собирает сведения об ошибках в в
     ![Код](media/app-insights-tutorial-runtime-exceptions/codelens.png)
 
 9. Выберите **Анализировать влияние**, чтобы открыть аналитику Application Insights.  Она содержит несколько запросов, предоставляющих сведения о неудачных запросах, например сведения о затронутых пользователях, браузерах и регионах.<br><br>![Аналитика в Application Insights](media/app-insights-tutorial-runtime-exceptions/analytics.png)<br>
+
+## <a name="add-work-item"></a>Добавление рабочего элемента
+Если подключить Application Insights к системе отслеживания, например Azure DevOps или GitHub, можно создать рабочий элемент непосредственно в Application Insights.
+
+1. Вернитесь на панель **Свойства исключения** в Application Insights.
+2. Выберите **Создать рабочий элемент**.
+3. Откроется панель **Создать рабочий элемент**, содержащая сведения об уже добавленных исключениях.  Вы можете добавить любую дополнительную информацию, прежде чем ее сохранить.
+
+    ![Создать рабочий элемент](media/app-insights-tutorial-runtime-exceptions/new-work-item.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 Теперь, когда вы узнали, как определить исключения времени выполнения, перейдите к следующему руководству, чтобы научиться определять и диагностировать проблемы с производительностью.
