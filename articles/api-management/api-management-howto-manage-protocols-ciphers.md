@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/15/2018
 ms.author: apimpm
-ms.openlocfilehash: 454ba5c42694581bfa8fb1ec69ce97ac906b53d4
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 5d18b0265d2b1c114ed9ef326241ed531e015288
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47094581"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49385145"
 ---
 # <a name="manage-protocols-and-ciphers-in-azure-api-management"></a>Управление протоколами и шифрами в службе управления API Azure
 
@@ -45,5 +45,5 @@ ms.locfileid: "47094581"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Дополнительные сведения о [протоколе TLS](https://docs.microsoft.com/en-us/dotnet/framework/network-programming/tls).
+* Дополнительные сведения о [протоколе TLS](https://docs.microsoft.com/dotnet/framework/network-programming/tls).
 * См. другие [видео](https://azure.microsoft.com/documentation/videos/index/?services=api-management) об управлении API.

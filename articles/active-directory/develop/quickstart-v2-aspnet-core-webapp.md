@@ -16,12 +16,12 @@ ms.workload: identity
 ms.date: 09/25/2018
 ms.author: andret
 ms.custom: aaddev
-ms.openlocfilehash: ba67acec778a48c084897095aa457e5637240a57
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 4ab3d0b74e8305d67af862020197c69b15221086
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47227444"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48830231"
 ---
 # <a name="add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Добавление возможности входа в веб-приложение ASP.NET Core с помощью учетной записи Майкрософт
 
@@ -42,7 +42,7 @@ ms.locfileid: "47227444"
 > 1. Введите имя своего приложения, снимите флажок **Пошаговая установка** и нажмите кнопку **Создать**.
 > 1. Щелкните `Add Platform`, а затем выберите `Web`.
 > 1. *Установите флажок* **Разрешить неявный поток**.
-> 1. В поле **URL-адреса перенаправления** введите значение `https://localhost:3110/`.
+> 1. В поле **URL-адреса перенаправления** введите значение `http://localhost:3110/`.
 > 1. Перейдите вниз страницы и нажмите кнопку **Сохранить**.
 
 > [!div class="sxs-lookup" renderon="portal"]
@@ -60,7 +60,7 @@ ms.locfileid: "47227444"
 
 #### <a name="step-3-configure-your-project"></a>Шаг 3. Настройка проекта
 
-1. Извлеките ZIP-файл в локальную папку (например, **C:\Azure-Samples**).
+1. Извлеките ZIP-файл в локальную папку, расположенную как можно ближе к корневой папке (например, **C:\Azure-Samples**).
 1. Если вы используете Visual Studio 2017, откройте проект в Visual Studio (необязательно).
 1. Измените файл **appsettings.json** и замените `ClientId` на идентификатор зарегистрированного приложения:
 

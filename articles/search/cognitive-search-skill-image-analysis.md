@@ -10,16 +10,19 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: luisca
-ms.openlocfilehash: 7f7d447edd0d73084a46aeff81f27b3ab0f072d3
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: 8ec3b6c5dfdd63de45e287cf0b68e90c7b0cbbd8
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43286240"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48829552"
 ---
 #   <a name="image-analysis-cognitive-skill"></a>Когнитивный навык анализа изображений
 
 Навык **анализа изображений** извлекает полноценный набор визуальных компонентов на основе содержимого изображения. Например, можно создать заголовок из изображения, сформировать теги, а также определить знаменитостей и ориентиры.
+
+> [!NOTE]
+> Служба "Когнитивный поиск" находится в общедоступной предварительной версии. Выполнение набора навыков, а также извлечение и нормализация изображений в настоящее время предлагаются бесплатно. Цена на эти функции будет объявлена позже. 
 
 ## <a name="odatatype"></a>@odata.type  
 Microsoft.Skills.Vision.ImageAnalysisSkill 
@@ -44,7 +47,6 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 
 
 ##  <a name="sample-definition"></a>Пример определения
-
 ```json
 {
     "@odata.type": "#Microsoft.Skills.Vision.ImageAnalysisSkill",
@@ -105,8 +107,16 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
     "values": [
         {
             "recordId": "1",
-            "data": {
-                "url": "https://storagesample.blob.core.windows.net/sample-container/image.jpg"
+            "data": {                
+                "image":  {
+                               "data": "BASE64 ENCODED STRING OF A JPEG IMAGE",
+                               "width": 500,
+                               "height": 300,
+                               "originalWidth": 5000,  
+                               "originalHeight": 3000,
+                               "rotationFromOriginal": 90,
+                               "contentOffset": 500  
+                           }
             }
         }
     ]
@@ -217,7 +227,7 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
                         "Black"
                     ],
                     "accentColor": "873B59",
-                    "isBWImg": false
+                    "isBwImg": false
                     },
                 "imageType": {
                     "clipArtType": 0,
