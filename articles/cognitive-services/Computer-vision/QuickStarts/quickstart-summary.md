@@ -3,19 +3,19 @@ title: Сводка кратких руководств по использов�
 titleSuffix: Azure Cognitive Services
 description: Из этих кратких руководств вы узнаете, как анализировать изображения, создавать эскизы и извлекать печатный и рукописный текст с помощью API компьютерного зрения.
 services: cognitive-services
-author: noellelacharite
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
-ms.author: v-deken
-ms.openlocfilehash: 89502fe49f5eb4b9692d7ee4233c7c46d645b3fb
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.author: pafarley
+ms.openlocfilehash: e44eb52323a93bddd629f3591cdbfbf021768629
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45576890"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49344101"
 ---
 # <a name="quickstart-summary"></a>Сводка по кратким руководствам
 

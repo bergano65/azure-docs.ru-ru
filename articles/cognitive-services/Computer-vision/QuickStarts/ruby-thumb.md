@@ -3,19 +3,19 @@ title: Краткое руководство по созданию эскиза 
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как создать эскиз изображения с помощью API компьютерного зрения и Ruby.
 services: cognitive-services
-author: noellelacharite
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
-ms.author: v-deken
-ms.openlocfilehash: 117e1fcc49aea5b3cef3e8d3b299a1eec90527db
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.author: pafarley
+ms.openlocfilehash: 16cfadb1b1dec90324739427656a6587ba6314cc
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45632948"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49343050"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-ruby-in-computer-vision"></a>Краткое руководство по созданию эскизов с помощью REST API и Ruby в службе "Компьютерное зрение"
 
@@ -33,7 +33,7 @@ ms.locfileid: "45632948"
 Чтобы создать и запустить пример, сделайте следующее.
 
 1. Скопируйте приведенный ниже код в текстовый редактор.
-1. При необходимости внесите следующие изменения в код:
+1. При необходимости внесите в код следующие изменения.
     1. Замените `<Subscription Key>` ключом своей подписки.
     1. Замените значение `https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/analyze` URL-адресом конечной точки для метода [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) в регионе Azure, где вы получили ключи подписки, если это необходимо.
     1. При необходимости замените значение `https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Shorkie_Poo_Puppy.jpg/1280px-Shorkie_Poo_Puppy.jpg\` URL-адресом другого изображения, для которого вы хотите создать эскиз.
@@ -73,7 +73,7 @@ end
 #puts response.body
 ```
 
-## <a name="examine-the-response"></a>Изучение ответа
+## <a name="examine-the-response"></a>Изучите ответ.
 
 Успешный ответ возвращается в виде двоичных данных, которые представляют данные изображения для эскиза. Если запрос завершается сбоем, ответ отображается в окне консоли. Ответ на невыполненный запрос содержит код ошибки и сообщение с описанием проблемы.
 

@@ -3,19 +3,19 @@ title: Краткое руководство. Анализ удаленного 
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как проанализировать изображение с помощью API компьютерного зрения на Ruby.
 services: cognitive-services
-author: noellelacharite
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
-ms.author: v-deken
-ms.openlocfilehash: bf17e8213ad2bbdc793f979471d9861578cac8e2
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.author: pafarley
+ms.openlocfilehash: a00b7d8fd56c28edd220d90f85df76892a54db6a
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45628868"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49341580"
 ---
 # <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-ruby-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API и Ruby в Компьютерном зрении
 
@@ -26,7 +26,7 @@ ms.locfileid: "45628868"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Установите [Ruby](https://www.ruby-lang.org/en/downloads/) 2.4.x или более поздней версии.
-- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Как получить ключи подписки).
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
 ## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
@@ -73,7 +73,7 @@ end
 puts response.body
 ```
 
-## <a name="examine-the-response"></a>Изучите ответ
+## <a name="examine-the-response"></a>Изучите ответ.
 
 Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера и в окне командной строки отобразится успешный ответ, аналогичный следующему.
 

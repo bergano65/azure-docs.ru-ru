@@ -3,23 +3,23 @@ title: Краткое руководство. Анализ удаленного 
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как проанализировать изображение с помощью API компьютерного зрения на PHP.
 services: cognitive-services
-author: noellelacharite
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 09/10/2018
-ms.author: v-deken
-ms.openlocfilehash: bc7803860e092d23c245bd425fc27f11fac41047
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.author: pafarley
+ms.openlocfilehash: d9e65b5fa42cc9026f8b1e3f18901f988c38cc46
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45629425"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49341010"
 ---
 # <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-php-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API и PHP в службе "Компьютерное зрение"
 
-Из этого краткого руководства вы узнаете, как анализировать удаленное изображение с помощью REST API в API компьютерного зрения, чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные признаки на основе содержимого изображения.
+Из этого краткого руководства вы узнаете, как анализировать удаленное изображение с помощью REST API в API компьютерного зрения, чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные функции на основе содержимого изображения.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
@@ -44,10 +44,10 @@ ms.locfileid: "45629425"
    1. После успешной установки пакета закройте окно командной строки.
 
 1. Скопируйте приведенный ниже код в текстовый редактор.
-1. При необходимости внесите следующие изменения в код:
+1. При необходимости внесите в код следующие изменения.
     1. Замените значение `subscriptionKey` своим ключом подписки.
     1. Замените значение `uriBase` URL-адресом конечной точки для метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) из региона Azure, где вы получили ключи подписки, если это необходимо.
-    1. при необходимости замените значение `imageUrl` URL-адресом другого изображения, анализ которого следует выполнить.
+    1. При необходимости замените значение `imageUrl` URL-адресом другого изображения, анализ которого следует выполнить.
     1. При необходимости замените значение параметра запроса `language` на другой язык.
 1. Сохраните код как файл с расширением `.php`. Например, `analyze-image.php`.
 1. Откройте окно браузера с поддержкой PHP.
@@ -113,9 +113,9 @@ catch (HttpException $ex)
 </html>
 ```
 
-## <a name="examine-the-response"></a>Изучение ответа
+## <a name="examine-the-response"></a>Изучите ответ.
 
-Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера веб-сайта и в окне браузера отобразится успешный ответ, аналогичный следующему:
+Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера веб-сайта и в окне браузера отобразится успешный ответ, аналогичный следующему.
 
 ```json
 {

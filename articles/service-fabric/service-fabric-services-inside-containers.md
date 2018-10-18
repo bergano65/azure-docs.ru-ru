@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 5/23/2018
 ms.author: anmola
-ms.openlocfilehash: d3ed1ff46bf4c82a172954828ec74bae80241288
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: 5672f5fffd9c93f710f8001285380fdbfcab0c5d
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44056942"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49386995"
 ---
 # <a name="containerize-your-service-fabric-reliable-services-and-reliable-actors-on-windows"></a>Контейнеризация служб Service Fabric Reliable Services и Reliable Actors в Windows
 
@@ -103,7 +103,7 @@ Service Fabric поддерживает контейнеризацию микр�
 </Policies>
  ```
 
-9. Ознакомьтесь с инструкциями по [настройке режима изоляции для контейнера]( https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-get-started-containers#configure-isolation-mode). Windows поддерживает два режима изоляции для контейнеров: режим изоляции процессов и Hyper-V. В указанных ниже фрагментах кода показано, как режим изоляции указывается в файле манифеста приложения.
+9. Ознакомьтесь с инструкциями по [настройке режима изоляции для контейнера]( https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-containers#configure-isolation-mode). Windows поддерживает два режима изоляции для контейнеров: режим изоляции процессов и Hyper-V. В указанных ниже фрагментах кода показано, как режим изоляции указывается в файле манифеста приложения.
 
  ```xml
 <Policies>

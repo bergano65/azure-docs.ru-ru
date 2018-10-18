@@ -3,19 +3,19 @@ title: Краткое руководство по созданию эскиза 
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как создать эскиз изображения с помощью API компьютерного зрения в cURL.
 services: cognitive-services
-author: noellelacharite
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
-ms.author: v-deken
-ms.openlocfilehash: afe9aad1981c53d2ce0e06d68a4b36401272e333
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.author: pafarley
+ms.openlocfilehash: 51c6a8e5693602cdc839de80f268891c247c63a9
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45634667"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49344070"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-curl-in-computer-vision"></a>Краткое руководство по созданию эскизов с помощью REST API и cURL в службе "Компьютерное зрение"
 
@@ -54,13 +54,13 @@ ms.locfileid: "45634667"
 Чтобы создать и запустить пример, сделайте следующее.
 
 1. Скопируйте приведенную ниже команду в текстовый редактор.
-1. При необходимости внесите следующие изменения в команду:
+1. При необходимости внесите следующие изменения в команду.
     1. Замените значение `<subscriptionKey>` своим ключом подписки.
     1. Замените значение `<thumbnailFile>` путем и именем файла, в котором следует сохранить эскиз.
     1. Замените URL-адрес запроса `https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/generateThumbnail` URL-адресом конечной точки для метода [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) из региона Azure, где вы получили ключи подписки, если это необходимо.
     1. При необходимости замените URL-адрес изображения в тексте запроса (`https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Shorkie_Poo_Puppy.jpg/1280px-Shorkie_Poo_Puppy.jpg\`) на URL-адрес другого изображения для создания эскиза.
 1. Откройте окно командной строки.
-1. Вставьте команду из текстового редактора в окне командной строки и выполните команду.
+1. Вставьте команду из текстового редактора в окно командной строки и выполните команду.
 
 ```console
 curl -H "Ocp-Apim-Subscription-Key: <subscriptionKey>" -o <thumbnailFile> -H "Content-Type: application/json" "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/generateThumbnail?width=100&height=100&smartCropping=true" -d "{\"url\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Shorkie_Poo_Puppy.jpg/1280px-Shorkie_Poo_Puppy.jpg\"}"

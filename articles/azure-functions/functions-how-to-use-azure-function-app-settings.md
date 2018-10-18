@@ -4,23 +4,19 @@ description: Узнайте, как настроить параметры при
 services: ''
 documentationcenter: .net
 author: ggailey777
-manager: cfowler
-editor: ''
+manager: jeconnoc
 ms.assetid: 81eb04f8-9a27-45bb-bf24-9ab6c30d205c
-ms.service: functions
-ms.workload: na
-ms.tgt_pltfrm: dotnet
-ms.devlang: na
-ms.topic: article
+ms.service: azure-functions
+ms.topic: conceptual
 ms.date: 03/28/2018
 ms.author: glenga
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 8974b2ca243da5dd2f7202c66602f7254496d040
-ms.sourcegitcommit: 34e0b4a7427f9d2a74164a18c3063c8be967b194
+ms.openlocfilehash: 18e4adb47ecf8e6d44edea873a4b3cc73492b273
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2018
-ms.locfileid: "30283808"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44301489"
 ---
 # <a name="how-to-manage-a-function-app-in-the-azure-portal"></a>Управление приложением-функцией на портале Azure 
 
@@ -32,9 +28,9 @@ ms.locfileid: "30283808"
 
 ## <a name="favorite"></a>Избранные функции на портале 
 
-Иногда бывает трудно найти ресурсы на [портале Azure]. Чтобы упростить поиск приложений-функций, которые вы создали, добавьте их в список "Избранное" на портале. 
+Иногда бывает трудно найти ресурсы на [портал Azure]. Чтобы упростить поиск приложений-функций, которые вы создали, добавьте их в список "Избранное" на портале. 
 
-1. Войдите на [портале Azure].
+1. Войдите на [портал Azure].
 
 2. Щелкните стрелку в нижнем левом углу, чтобы развернуть все службы, введите `Functions` в поле **Фильтр**, а затем щелкните звездочку рядом с пунктом **Приложения-функции**.  
  
@@ -46,7 +42,7 @@ ms.locfileid: "30283808"
  
     ![Приложения-функции в разделе "Избранное"](./media/functions-how-to-use-azure-function-app-settings/functions-function-apps-hub.png)
  
-[портале Azure]: https://portal.azure.com/
+[портал Azure]: https://portal.azure.com/
 
 ## <a name="manage-app-service-settings"></a>Вкладка параметров приложения-функции
 
@@ -115,7 +111,7 @@ ms.locfileid: "30283808"
 
 | | |
 |-|-|
-| ![Варианты развертывания приложения-функции на портале Azure](./media/functions-how-to-use-azure-function-app-settings/function-app-deployment-source.png) | Компонент функции позволяет разрабатывать код функций на локальном компьютере. Позднее вы можете передать локальный проект приложения-функции в Azure. Кроме традиционной передачи по FTP, компонент функции позволяет развернуть приложение-функцию с помощью популярных решений непрерывной интеграции, таких как GitHub, VSTS, Dropbox, Bitbucket и др. Дополнительные сведения см. в статье [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md). Чтобы отправить данные вручную с помощью FTP или локального Git, нужно [настроить учетные данные развертывания](functions-continuous-deployment.md#credentials). |
+| ![Варианты развертывания приложения-функции на портале Azure](./media/functions-how-to-use-azure-function-app-settings/function-app-deployment-source.png) | Компонент функции позволяет разрабатывать код функций на локальном компьютере. Позднее вы можете передать локальный проект приложения-функции в Azure. Кроме традиционной отправки по FTP, компонент функции позволяет развернуть приложение-функцию с помощью популярных решений непрерывной интеграции, таких как GitHub, Azure DevOps, Dropbox, Bitbucket и др. Дополнительные сведения см. в статье [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md). Чтобы отправить данные вручную с помощью FTP или локального Git, нужно [настроить учетные данные развертывания](functions-continuous-deployment.md#credentials). |
 
 
 ### <a name="cors"></a>CORS

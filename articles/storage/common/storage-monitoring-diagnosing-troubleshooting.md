@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/11/2017
 ms.author: fhryo-msft
 ms.component: common
-ms.openlocfilehash: e560eb9e0bbce09c541bfc66ea760ea3e636f841
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 0807bc5df9d4ee8782ae017dbb7ed63c38a13443
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39528720"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44304685"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -73,7 +73,7 @@ ms.locfileid: "39528720"
   * [Приложение 2. Отслеживание сетевого трафика с помощью Wireshark]
   * [Приложение 3. Отслеживание сетевого трафика с помощью Microsoft Message Analyzer]
   * [Приложение 4. Просмотр метрик и данных журналов с помощью Excel]
-  * [Приложение 5. Мониторинг с использованием Application Insights для Visual Studio Team Services]
+  * [Приложение 5. Мониторинг с использованием Application Insights для Azure DevOps]
 
 ## <a name="introduction"></a>Введение
 В этом руководстве показано, как с помощью таких функций, как Azure Storage Analytics, ведение журналов на стороне клиента в клиентской библиотеке хранилища Azure и прочих сторонних инструментов, выявлять, диагностировать и устранять неполадки, связанные с хранилищем Azure.
@@ -125,7 +125,7 @@ ms.locfileid: "39528720"
 Кроме того, [портал Azure](https://portal.azure.com) может рассылать уведомления об инцидентах, влияющих на различные службы Azure.
 Ранее эта информация, наряду с данными журналов, была доступна на [панели мониторинга служб Azure](http://status.azure.com).
 
-[Портал Azure](https://portal.azure.com) собирает сведения о работоспособности из центров обработки данных Azure (внутренний мониторинг), но вы также можете использовать внешний мониторинг для создания искусственных транзакций, которые периодически поступают в ваше веб-приложение на базе Azure из нескольких расположений. Например, подобный подход может быть реализован с использованием [Dynatrace](http://www.dynatrace.com/en/synthetic-monitoring) и Application Insights для Visual Studio Team Services. Дополнительные сведения об Application Insights для Visual Studio Team Services см. в разделе [приложении 5 "Мониторинг с использованием Application Insights для Visual Studio Team Services"](#appendix-5).
+[Портал Azure](https://portal.azure.com) собирает сведения о работоспособности из центров обработки данных Azure (внутренний мониторинг), но вы также можете использовать внешний мониторинг для создания искусственных транзакций, которые периодически поступают в ваше веб-приложение на базе Azure из нескольких расположений. Например, подобный подход можно реализовать с использованием [Dynatrace](http://www.dynatrace.com/en/synthetic-monitoring) и Application Insights для Azure DevOps. Дополнительные сведения об Application Insights для Azure DevOps см. в [приложении 5 "Мониторинг с использованием Application Insights для Azure DevOps"](#appendix-5).
 
 ### <a name="monitoring-capacity"></a>Мониторинг мощностей
 В метриках емкости учитывается только служба BLOB-объектов, так как именно они обычно занимают больше всего места (на момент подготовки этой статьи метрики хранилища невозможно использовать для мониторинга емкости таблиц и очередей). Если вы включили мониторинг службы BLOB-объектов, то можете найти эти данные в таблице **$MetricsCapacityBlob**. Метрики хранилища регистрируют подобные сведения каждый день. По значению **RowKey** вы можете определить, к чему относится запись в строке: к пользовательским (значение **data**) или к аналитическим данным (значение **analytics**). Каждая сохраненная запись содержит информацию о занятом месте (показатель **Capacity** в байтах), а также о том, сколько контейнеров (**ContainerCount**) и BLOB-объектов (**ObjectCount**) на данный момент используется в учетной записи хранилища. Дополнительные сведения о метриках емкости, хранящихся в таблице **$MetricsCapacityBlob**, см. в статье [Storage Analytics Metrics Table Schema](http://msdn.microsoft.com/library/azure/hh343264.aspx) (Схема таблицы метрик аналитики хранилища).
@@ -799,8 +799,8 @@ contosodata.blob.core.windows.net contosodata.table.core.windows.net contosodata
 
 На втором шаге **мастера импорта текста** выберите **точку с запятой** в качестве единственного разделителя и двойные кавычки в качестве **ограничителя строк**. Нажмите кнопку **Готово** и выберите место размещения данных в книге.
 
-### <a name="appendix-5"></a>Приложение 5. Мониторинг с использованием Application Insights для Visual Studio Team Services
-Вы также можете использовать компонент Application Insights для Visual Studio Team Services при мониторинге производительности и доступности. Это средство предоставляет указанные ниже возможности.
+### <a name="appendix-5"></a>Приложение 5. Мониторинг с использованием Application Insights для Azure DevOps
+Вы также можете использовать компонент Application Insights для Azure DevOps при мониторинге производительности и доступности. Это средство предоставляет указанные ниже возможности.
 
 * Проверка того, что веб-служба доступна и отвечает на запросы. Вне зависимости от того, является ли ваше приложение, использующее веб-службу, приложением для веб-сайта или для устройства, этот инструмент может каждые несколько минут тестировать ваш URL-адрес из разных мест мира и сообщать о возникших проблемах.
 * Быстрая диагностика любых проблем с производительностью или исключений в веб-службе. Определяйте, не исчерпаны ли ресурсы ЦП и другие ресурсы, получайте данные трассировки стека исключений и легко выполняйте поиск по журналам трассировки. Если производительность приложения опустится ниже допустимого предела, мы можем оповестить вас по электронной почте. Вы можете отслеживать веб-службы .NET и Java.
@@ -865,7 +865,7 @@ contosodata.blob.core.windows.net contosodata.table.core.windows.net contosodata
 [Приложение 2. Отслеживание сетевого трафика с помощью Wireshark]: #appendix-2
 [Приложение 3. Отслеживание сетевого трафика с помощью Microsoft Message Analyzer]: #appendix-3
 [Приложение 4. Просмотр метрик и данных журналов с помощью Excel]: #appendix-4
-[Приложение 5. Мониторинг с использованием Application Insights для Visual Studio Team Services]: #appendix-5
+[Приложение 5. Мониторинг с использованием Application Insights для Azure DevOps]: #appendix-5
 
 <!--Image references-->
 [1]: ./media/storage-monitoring-diagnosing-troubleshooting/overview.png

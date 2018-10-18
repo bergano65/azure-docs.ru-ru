@@ -3,19 +3,19 @@ title: Краткое руководство. Анализ удаленного 
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как проанализировать удаленное изображение с помощью API компьютерного зрения с cURL.
 services: cognitive-services
-author: noellelacharite
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 09/10/2018
-ms.author: v-deken
-ms.openlocfilehash: 51122da84e3845bba4919e4f2b2e46d513bbb3f4
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.author: pafarley
+ms.openlocfilehash: 04ad5ff2e148a5f5469cd13ce6106e6466d645b3
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45633492"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49344036"
 ---
 # <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-curl-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API и cURL в Компьютерном зрении
 
@@ -25,8 +25,8 @@ ms.locfileid: "45633492"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Необходимо иметь [cURL](https://curl.haxx.se/windows).
-- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Как получить ключи подписки).
+- [cURL](https://curl.haxx.se/windows).
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
 ## <a name="create-and-run-the-sample-command"></a>Создание и запуск примера команды
 

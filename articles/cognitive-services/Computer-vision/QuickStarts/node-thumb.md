@@ -3,19 +3,19 @@ title: Краткое руководство по созданию эскиза 
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как создать эскиз изображения с помощью API компьютерного зрения и Node.js.
 services: cognitive-services
-author: noellelacharite
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
-ms.author: v-deken
-ms.openlocfilehash: 9029806119f6ee308ba9f0a5c2d45bfce38b5b54
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.author: pafarley
+ms.openlocfilehash: 940d5f87e8e411d520c3d30f3e9f08e982162748
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45633289"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49338596"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-nodejs-in-computer-vision"></a>Краткое руководство по созданию эскизов с помощью REST API и Node.js в службе "Компьютерное зрение"
 
@@ -44,7 +44,7 @@ ms.locfileid: "45633289"
    1. После успешной установки пакета закройте окно командной строки.
 
 1. Скопируйте приведенный ниже код в текстовый редактор.
-1. При необходимости внесите следующие изменения в код:
+1. При необходимости внесите в код следующие изменения.
     1. Замените значение `subscriptionKey` своим ключом подписки.
     1. Замените значение `uriBase` URL-адресом конечной точки для метода [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) из региона Azure, где вы получили ключи подписки, если это необходимо.
     1. При необходимости замените значение `imageUrl` URL-адресом другого изображения, анализ которого следует выполнить.
@@ -94,7 +94,7 @@ request.post(options, (error, response, body) => {
 });
 ```
 
-## <a name="examine-the-response"></a>Изучение ответа
+## <a name="examine-the-response"></a>Изучите ответ.
 
 Успешный ответ возвращается в виде двоичных данных, которые представляют данные изображения для эскиза. Если запрос завершается сбоем, ответ отображается в окне консоли. Ответ на невыполненный запрос содержит код ошибки и сообщение с описанием проблемы.
 

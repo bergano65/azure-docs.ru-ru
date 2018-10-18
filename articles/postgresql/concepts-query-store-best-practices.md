@@ -7,19 +7,19 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/26/2018
-ms.openlocfilehash: c449aaff9741250cfcfaaa4ee490aafc857c4369
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 54a86a7ea1852efba0776451291820f4174a1f1f
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47395310"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49377593"
 ---
 # <a name="best-practices-for-query-store"></a>Рекомендации по использованию хранилища запросов
 
 **Применимо к**: база данных Azure для PostgreSQL 9.6 и 10
 
 > [!IMPORTANT]
-> Компонент "Хранилище запросов" доступен в общедоступной предварительной версии в ограниченном числе регионов.
+> Компонент "Хранилище запросов" доступен в рамках общедоступной предварительной версии.
 
 
 В этой статье приводятся рекомендации по использованию хранилища запросов в базе данных Azure для PostgreSQL.

@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 08/23/2018
 ms.author: meladie
-ms.openlocfilehash: ea9c9d773cb863c6ee2b052fcbd097275f00fc87
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: bd6ac05da5f60fdbe86897ce03ccd6646e6bf191
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44300993"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49390268"
 ---
 # <a name="azure-security-and-compliance-blueprint---paas-web-application-for-australia-protected"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение PaaS для среды AU-PROTECTED
 
@@ -82,7 +82,6 @@ ms.locfileid: "44300993"
 -   [Расширение системы диагностики Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-diagnostics-template)
 -   [шифрование дисков Azure](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) с помощью хранилища ключей Azure Key Vault;
 -   [политика автоматического завершения работы](https://azure.microsoft.com/blog/announcing-auto-shutdown-for-vms-using-azure-resource-manager/) для уменьшения степени использования ресурсов виртуальной машины во время простоя.
--   функция [Credential Guard в Защитнике Windows](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard) должна быть включена, чтобы учетные данные и другие секретные сведения обрабатывались в защищенной среде, изолированной от работающей операционной системы.
 
 **Среда службы приложений версии 2**. [Среда службы приложений Azure](https://docs.microsoft.com/azure/app-service/environment/intro) — это компонент службы приложений, предоставляющий полностью изолированную выделенную среду для безопасного выполнения приложений службы приложений Azure в большом масштабе.
 
@@ -202,7 +201,7 @@ Azure по умолчанию шифрует весь обмен данными 
 
 **Azure Monitor.** [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/) помогает пользователям отслеживать производительность, поддерживать безопасность и выявлять тенденции. Решение предоставляет организациям возможность аудита, создания оповещений и архивации данных, включая отслеживание вызовов API в ресурсах Azure клиентов.
 
-Наблюдатель за сетями Azure [Azure Network Watcher]9 https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview) предоставляет инструменты для мониторинга, диагностики, просмотра метрик, включения или отключения журналов для ресурсов в виртуальной сети Azure.  Организации Австралийского союза должны поддерживать журналы потоков Наблюдателя за сетями для всех групп безопасности сети и Виртуальных машин. Эти журналы должны храниться в выделенной учетной записи хранения, предназначенной только для журналов безопасности, доступ к которой следует защитить с помощью элементов управления доступом на основе ролей.
+Наблюдатель за сетями Azure [Azure Network Watcher]9 https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview) предоставляет инструменты для мониторинга, диагностики, просмотра метрик, включения или отключения журналов для ресурсов в виртуальной сети Azure.  Организации Австралийского союза должны поддерживать журналы потоков Наблюдателя за сетями для всех групп безопасности сети и Виртуальных машин. Эти журналы должны храниться в выделенной учетной записи хранения, предназначенной только для журналов безопасности, доступ к которой следует защитить с помощью элементов управления доступом на основе ролей.
 
 ## <a name="threat-model"></a>Модель рисков
 

@@ -3,23 +3,23 @@ title: Краткое руководство. Анализ удаленного 
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как проанализировать изображение с помощью API компьютерного зрения на Java.
 services: cognitive-services
-author: noellelacharite
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
-ms.author: v-deken
-ms.openlocfilehash: 901fb2c592d78bf26e36e0ecd0417ee995bc5771
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.author: pafarley
+ms.openlocfilehash: 6dae10262c40a127cb24dd40f0d5389c0cdd7c20
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45631095"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49340024"
 ---
 # <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-java-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API и Java в службе "Компьютерное зрение"
 
-Из этого краткого руководства вы узнаете, как анализировать удаленное изображение с помощью REST API в API компьютерного зрения, чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные признаки на основе содержимого изображения.
+Из этого краткого руководства вы узнаете, как анализировать удаленное изображение с помощью REST API в API компьютерного зрения, чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные функции на основе содержимого изображения.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
@@ -52,7 +52,7 @@ ms.locfileid: "45631095"
    import org.json.JSONObject;
    ```
 
-1. Замените общий класс `Main` следующим кодом, а затем внесите в него следующие изменения (там, где это необходимо):
+1. Замените общий класс `Main` следующим кодом, а затем внесите в него следующие изменения (там, где это необходимо).
    1. Замените значение `subscriptionKey` своим ключом подписки.
    1. Замените значение `uriBase` URL-адресом конечной точки для метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) из региона Azure, где вы получили ключи подписки, если это необходимо.
    1. При необходимости замените значение `imageToAnalyze` URL-адресом другого изображения, анализ которого следует выполнить.
@@ -125,7 +125,7 @@ public class Main {
 }
 ```
 
-## <a name="examine-the-response"></a>Изучение ответа
+## <a name="examine-the-response"></a>Изучите ответ.
 
 Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера приложения и в окне консоли отобразится успешный ответ, аналогичный следующему.
 

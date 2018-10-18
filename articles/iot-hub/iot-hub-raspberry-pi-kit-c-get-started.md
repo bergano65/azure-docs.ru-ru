@@ -10,12 +10,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 04/11/2018
 ms.author: rangv
-ms.openlocfilehash: 8962f41d971ac88134f639a61ef0b42c60bbd419
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: c8e2dcfef1db8bfe3d76ac917f8c14a4060e3968
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44161498"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49318764"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-c"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (C)
 
@@ -61,10 +61,9 @@ ms.locfileid: "44161498"
 * 6 оптоволоконных кабелей с разъемом на одном конце и гнездом на другом.
 * Светодиодный индикатор 10 мм с рассеянным освещением.
 
-
 > [!NOTE] 
-Эти компоненты необязательны, поскольку пример кода поддерживает использование смоделированных данных датчиков.
-
+> Эти компоненты необязательны, поскольку пример кода поддерживает использование смоделированных данных датчиков.
+>
 
 [!INCLUDE [iot-hub-get-started-create-hub-and-device](../../includes/iot-hub-get-started-create-hub-and-device.md)]
 
@@ -97,7 +96,8 @@ ms.locfileid: "44161498"
    ![Включение SPI и SSH на Raspberry Pi](media/iot-hub-raspberry-pi-kit-c-get-started/2_enable-spi-ssh-on-raspberry-pi.png)
 
 > [!NOTE] 
-Сведения о том, как включить SSH и SPI, можно найти в дополнительных справочных документах на [raspberrypi.org](https://www.raspberrypi.org/documentation/remote-access/ssh/) и [RASPI-CONFIG](https://www.raspberrypi.org/documentation/configuration/raspi-config.md).
+> Сведения о том, как включить SSH и SPI, можно найти в дополнительных справочных документах на [raspberrypi.org](https://www.raspberrypi.org/documentation/remote-access/ssh/) и [RASPI-CONFIG](https://www.raspberrypi.org/documentation/configuration/raspi-config.md).
+>
 
 ### <a name="connect-the-sensor-to-pi"></a>Подключение датчика к Pi
 
@@ -171,6 +171,7 @@ ms.locfileid: "44161498"
 
    > [!NOTE] 
    > Если у вас **нет физического устройства BME280**, можно использовать параметр командной строки --simulated-data для имитации данных температуры и влажности. `sudo ./setup.sh --simulated-data`
+   >
 
 ### <a name="build-and-run-the-sample-application"></a>Создание и запуск примера приложения
 
@@ -179,6 +180,7 @@ ms.locfileid: "44161498"
    ```bash
    cmake . && make
    ```
+   
    ![Выходные данные при создании](media/iot-hub-raspberry-pi-kit-c-get-started/7_build-output.png)
 
 1. Запустите пример приложения, выполнив следующую команду:
@@ -188,8 +190,8 @@ ms.locfileid: "44161498"
    ```
 
    > [!NOTE] 
-   Обязательно скопируйте и вставьте строку подключения устройства, заключив ее в одинарные кавычки.
-
+   > Обязательно скопируйте и вставьте строку подключения устройства, заключив ее в одинарные кавычки.
+   >
 
 Должны отобразиться следующие результаты, содержащие данные датчика и сообщения, которые отправляются в Центр Интернета вещей.
 
@@ -197,6 +199,6 @@ ms.locfileid: "44161498"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Вы запустили пример приложения, чтобы собрать данные датчика и отправить их в Центр Интернета вещей. Сведения о том, как просматривать сообщения, отправляемые Raspberry Pi в Центр Интернета вещей, или отправлять сообщений на устройство Raspberry Pi, см. в разделе [Обмен сообщениями между устройством и Центром Интернета вещей с помощью расширения Azure IoT Toolkit для Visual Studio Code](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md).
+Вы запустили пример приложения, чтобы собрать данные датчика и отправить их в Центр Интернета вещей. Сведения о том, как просматривать сообщения, отправляемые Raspberry Pi в Центр Интернета вещей, или отправлять сообщения на устройство Raspberry Pi, см. в статье [Обмен сообщениями между устройством и Центром Интернета вещей с помощью расширения Azure IoT Toolkit для Visual Studio Code](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md).
 
 [!INCLUDE [iot-hub-get-started-next-steps](../../includes/iot-hub-get-started-next-steps.md)]

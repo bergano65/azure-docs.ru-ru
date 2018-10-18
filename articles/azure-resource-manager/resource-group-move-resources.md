@@ -10,14 +10,14 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/25/2018
+ms.date: 10/17/2018
 ms.author: tomfitz
-ms.openlocfilehash: 33d5560f2bfef04678cf7a2236fd920385d68aac
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: c32c4f97a963485e87e36afc44e9cea2ebcebd90
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452162"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49394420"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -110,7 +110,7 @@ ms.locfileid: "47452162"
 
 ## <a name="validate-move"></a>Проверка перемещения
 
-[Операция проверки перемещения](/rest/api/resources/resources/validatemoveresources) позволяет проверить сценарий перемещения без фактического перемещения ресурсов. Используйте эту операцию, чтобы определить, будет ли перемещение успешным. Для запуска этой операции вам необходимо:
+[Операция проверки перемещения](/rest/api/resources/resources/resources_validatemoveresources) позволяет проверить сценарий перемещения без фактического перемещения ресурсов. Используйте эту операцию, чтобы определить, будет ли перемещение успешным. Для запуска этой операции вам необходимо:
 
 * имя исходной группы ресурсов;
 * идентификатор ресурса целевой группы ресурсов;

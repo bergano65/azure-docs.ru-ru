@@ -10,12 +10,12 @@ ms.component: translator-text
 ms.topic: overview
 ms.date: 05/10/2018
 ms.author: nolachar
-ms.openlocfilehash: 47ac3c81b85424a5cacab00863cd88fab9463fb9
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: c0004960b7a234d374ec0ae1bdc2f6576b197705
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46124666"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49385031"
 ---
 # <a name="what-is-translator-text-api"></a>Что собой представляет API перевода текстов?
 
@@ -27,7 +27,7 @@ API перевода текстов является частью коллекц
 
 Майкрософт Translator — это облачная служба автоматического перевода. В основе этой службы лежит API перевода текстов и [API перевода речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-translation), которые используют различные продукты и услуги корпорации Майкрософт и применяются тысячами компаний по всему миру в своих приложениях и рабочих процессах, что позволяет их содержимому достигать всемирной аудитории.
 
-Функция перевода речи также доступна в [предварительной версии службы "Речь" Cognitive Services](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/), которая объединяет имеющиеся API перевода речи, API распознавания речи Bing и пользовательскую службу распознавания речи (предварительная версия) в единую и полностью настраиваемую службу.  
+Функция перевода речи также доступна в [предварительной версии службы "Речь" Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/speech-service/), которая объединяет имеющиеся API перевода речи, API распознавания речи Bing и пользовательскую службу распознавания речи (предварительная версия) в единую и полностью настраиваемую службу.  
 
 Дополнительные сведения о [службе Microsoft Translator](https://www.microsoft.com/en-us/translator/home.aspx)
 

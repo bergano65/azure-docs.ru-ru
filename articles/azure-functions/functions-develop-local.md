@@ -5,20 +5,17 @@ services: functions
 documentationcenter: na
 author: ggailey777
 manager: jeconnoc
-editor: ''
-ms.service: functions
-ms.workload: na
-ms.tgt_pltfrm: multiple
+ms.service: azure-functions
 ms.devlang: multiple
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/04/2018
 ms.author: glenga
-ms.openlocfilehash: fdc66da6ed7645d72ad43c885cc1491f56f5442b
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 0f1d4fdbb9e5d2b05b8ec43c1393951a4c6a87b8
+ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43699684"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44094768"
 ---
 # <a name="code-and-test-azure-functions-locally"></a>Как программировать и тестировать Функции Azure в локальной среде
 
@@ -31,7 +28,7 @@ ms.locfileid: "43699684"
 |Среда                              |Языки         |ОПИСАНИЕ|
 |-----------------------------------------|------------|---|
 | [Командная строка или терминал](functions-run-local.md) | [C# (библиотека классов)](functions-dotnet-class-library.md), [скрипт C# (CSX)](functions-reference-csharp.md), [JavaScript](functions-reference-node.md) | [Основные инструменты службы "Функции Azure"] предоставляют базовую среду выполнения и шаблоны для создания функций, которые обеспечивают возможность локальной разработки. Версия 2.x поддерживает разработку в Linux, MacOS и Windows. Во всех средах применяют основные инструменты для локальной среды выполнения средства "Функции". |
-|[Visual Studio Code](https://code.visualstudio.com/tutorials/functions-extension/getting-started)| [Скрипт C# (.csx)](functions-reference-csharp.md), [JavaScript](functions-reference-node.md) | [Расширение Функций Azure для VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) добавляет поддержку средства "Функции" в VS Code. Требуются основные инструменты. Поддерживает разработку на платформах Linux, MacOS и Windows при использовании версии 2.x основных инструментов. Дополнительные сведения см. в статье [Развертывание в Azure с использованием Функций Azure](https://code.visualstudio.com/tutorials/functions-extension/getting-started).  |
+|[Visual Studio Code](functions-create-first-function-vs-code.md)| [C# (библиотека классов)](functions-dotnet-class-library.md), [скрипт C# (CSX)](functions-reference-csharp.md), [JavaScript](functions-reference-node.md) | [Расширение Функций Azure для VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) добавляет поддержку средства "Функции" в VS Code. Требуются основные инструменты. Поддерживает разработку на платформах Linux, MacOS и Windows при использовании версии 2.x основных инструментов. Для получения дополнительных сведений см. статью [Создание функции в Azure с помощью Visual Studio Code](functions-create-first-function-vs-code.md). |
 | [Visual Studio 2017](functions-develop-vs.md) | [C# (библиотека классов)](functions-dotnet-class-library.md) | Инструменты решения "Функции Azure" включены в рабочую нагрузку **разработки Azure** в [Visual Studio 2017 версии 15.5](https://www.visualstudio.com/vs/) или более поздних версий. Позволяет компилировать функции в библиотеке классов и публиковать библиотеки DLL в Azure. Включает основные инструменты для локального тестирования. Дополнительные сведения см. в статье [Инструменты Функций Azure для Visual Studio](functions-develop-vs.md). |
 | [Maven](functions-create-first-java-maven.md) (различные) | [Java](functions-reference-java.md) | Интегрируется с основными инструментами и обеспечивает возможность разработки функций Java. Версия 2.x поддерживает разработку в Linux, MacOS и Windows. Дополнительные сведения см. в статье [Создание первой функции с помощью Java и Maven](functions-create-first-java-maven.md). Также поддерживает разработку с помощью [Eclipse](functions-create-maven-eclipse.md) и [IntelliJ IDEA](functions-create-maven-intellij.md). |
 

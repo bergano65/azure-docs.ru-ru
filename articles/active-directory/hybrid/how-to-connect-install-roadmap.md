@@ -12,14 +12,14 @@ ms.topic: get-started-article
 ms.date: 09/18/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 1fdfea3ac6b84088002521700e1d50d17398be31
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 04d950b0a8001fd76e3754b73a9d7c4c5fe2893d
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46303100"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49318645"
 ---
-#<a name="azure-ad-connect-and-azure-ad-connect-health-installation-roadmap"></a>План установки Azure AD Connect и Azure AD Connect Health
+# <a name="azure-ad-connect-and-azure-ad-connect-health-installation-roadmap"></a>План установки Azure AD Connect и Azure AD Connect Health
 
 ## <a name="install-azure-ad-connect"></a>Установка Azure AD Connect
 
@@ -169,7 +169,6 @@ Azure AD Connect поставляется с несколькими функци
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-
 - [Оборудование и предварительные требования](how-to-connect-install-prerequisites.md) 
 - [Стандартные параметры](how-to-connect-install-express.md)
 - [Настраиваемые параметры](how-to-connect-install-custom.md)
@@ -178,6 +177,3 @@ Azure AD Connect поставляется с несколькими функци
 - [Azure AD Connect и федерация](how-to-connect-fed-whatis.md)
 - [Установка агентов Azure AD Connect Health](how-to-connect-health-agent-install.md) 
 - [Службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md)
-
-
-

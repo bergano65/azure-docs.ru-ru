@@ -3,19 +3,19 @@ title: Краткое руководство по извлечению печа�
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как, используя API компьютерного зрения, извлекать печатный текст из изображения с помощью C#.
 services: cognitive-services
-author: noellelacharite
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 09/10/2018
-ms.author: v-deken
-ms.openlocfilehash: d3074b9c5b62ea41aa0ee4c577a18b9f582dc80a
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.author: pafarley
+ms.openlocfilehash: 83abf15e638ab8caf867126361d81198aa3ad7e2
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45631537"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49340228"
 ---
 # <a name="quickstart-extract-printed-text-ocr-using-the-rest-api-and-c35-in-computer-vision"></a>Краткое руководство по извлечению печатного текста (OCR) с помощью REST API и C# в службе "Компьютерное зрение"
 
@@ -25,7 +25,7 @@ ms.locfileid: "45631537"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- У вас должна быть [Visual Studio 2015](https://visualstudio.microsoft.com/downloads/) или более поздней версии.
+- У вас должна быть [Visual Studio 2015 или более поздней версии](https://visualstudio.microsoft.com/downloads/).
 - У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
 ## <a name="create-and-run-the-sample-application"></a>Создание и запуск примера приложения
@@ -167,7 +167,7 @@ namespace CSHttpClientSample
 }
 ```
 
-## <a name="examine-the-response"></a>Изучение ответа
+## <a name="examine-the-response"></a>Изучите ответ.
 
 Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера приложения и в окне консоли отобразится успешный ответ, аналогичный следующему.
 

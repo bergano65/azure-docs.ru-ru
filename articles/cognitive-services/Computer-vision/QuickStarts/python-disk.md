@@ -3,23 +3,23 @@ title: Краткое руководство. Анализ локального 
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как проанализировать локальное изображение с помощью API компьютерного зрения и Python.
 services: cognitive-services
-author: noellelacharite
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
-ms.author: v-deken
-ms.openlocfilehash: 48a6602c9f3029cc008f3db7d4701499c14e7ce1
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.author: pafarley
+ms.openlocfilehash: ff06a06fb22abba3b666828f0594e70e4db99f57
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45633866"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49342002"
 ---
 # <a name="quickstart-analyze-a-local-image-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство. Анализ локального изображения с помощью REST API и Python в службе "Компьютерное зрение"
 
-Из этого краткого руководства вы узнаете, как анализировать локальное изображение с помощью REST API в службе "Компьютерное зрение", чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные признаки на основе содержимого изображения.
+Из этого краткого руководства вы узнаете, как анализировать локальное изображение с помощью REST API в службе "Компьютерное зрение", чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные функции на основе содержимого изображения.
 
 Процедуры из этого руководства можно выполнять пошагово из записной книжки Jupyter с помощью [MyBinder](https://mybinder.org). Чтобы запустить модуль привязки, нажмите следующую кнопку:
 
@@ -37,7 +37,7 @@ ms.locfileid: "45633866"
 Чтобы создать и запустить пример, сделайте следующее.
 
 1. Скопируйте приведенный ниже код в текстовый редактор.
-1. При необходимости внесите следующие изменения в код:
+1. При необходимости внесите в код следующие изменения.
     1. Замените значение `subscription_key` своим ключом подписки.
     1. Замените значение `vision_base_url` URL-адресом конечной точки ресурса Компьютерного зрения в регионе Azure, где вы получили ключи подписки, если это необходимо.
     1. При необходимости замените значение `image_path` именем файла и URL-адресом другого изображения, анализ которого следует выполнить.
@@ -93,9 +93,9 @@ plt.axis("off")
 _ = plt.title(image_caption, size="x-large", y=-0.1)
 ```
 
-## <a name="examine-the-response"></a>Изучение ответа
+## <a name="examine-the-response"></a>Изучите ответ.
 
-Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера веб-страницы и в окне командной строки отобразится успешный ответ, аналогичный следующему:
+Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера веб-страницы и в окне командной строки отобразится успешный ответ, аналогичный следующему.
 
 ```json
 {

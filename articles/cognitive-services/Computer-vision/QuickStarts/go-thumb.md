@@ -3,19 +3,19 @@ title: Краткое руководство по созданию эскиза 
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как создать эскиз изображения с помощью API компьютерного зрения в Go.
 services: cognitive-services
-author: noellelacharite
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
-ms.author: v-deken
-ms.openlocfilehash: e49c664fc17750d427d33fbb49b3af9ea10002ad
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.author: pafarley
+ms.openlocfilehash: 9c2d460d3c8cfb4aac6e09eeb26ac23c98f82b24
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45629549"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49341622"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-go-in-computer-vision"></a>Краткое руководство по созданию эскизов с помощью REST API и Go в службе "Компьютерное зрение"
 
@@ -33,7 +33,7 @@ ms.locfileid: "45629549"
 Чтобы создать и запустить пример, сделайте следующее.
 
 1. Скопируйте приведенный ниже код в текстовый редактор.
-1. При необходимости внесите следующие изменения в код:
+1. При необходимости внесите в код следующие изменения.
     1. Замените значение `subscriptionKey` своим ключом подписки.
     1. Замените значение `uriBase` URL-адресом конечной точки для метода [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) из региона Azure, где вы получили ключи подписки, если это необходимо.
     1. При необходимости замените значение `imageUrl` URL-адресом другого изображения, из которого вы хотите создать эскиз.
@@ -117,7 +117,7 @@ func main() {
 }
 ```
 
-## <a name="examine-the-response"></a>Изучение ответа
+## <a name="examine-the-response"></a>Изучите ответ.
 
 В случае успешного выполнения ответ будет содержать данные двоичного файла эскиза изображения. Если запрос завершается сбоем, ответ будет содержать код ошибки и сообщение с описанием проблемы.
 

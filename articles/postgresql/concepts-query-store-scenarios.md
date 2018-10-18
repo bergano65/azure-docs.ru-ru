@@ -7,19 +7,19 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/26/2018
-ms.openlocfilehash: 3cd3ebf86221db1531bd19e94bb072b4559d07d6
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: fc354a9545f3073a858c2b669d428d1fa4185073
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47395599"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49377486"
 ---
 # <a name="usage-scenarios-for-query-store"></a>Сценарии использования хранилища запросов
 
 **Применимо к**: база данных Azure для PostgreSQL 9.6 и 10
 
 > [!IMPORTANT]
-> Компонент "Хранилище запросов" доступен в общедоступной предварительной версии в ограниченном числе регионов.
+> Компонент "Хранилище запросов" доступен в рамках общедоступной предварительной версии.
 
 Хранилище запросов можно использовать в разнообразных сценариях, где важно отслеживать и сохранять прогнозируемую производительность рабочих нагрузок. Рассмотрим следующие примеры. 
 - Определение и настройка наиболее ресурсоемких запросов 

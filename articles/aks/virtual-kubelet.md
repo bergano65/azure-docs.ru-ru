@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/14/2018
 ms.author: iainfou
-ms.openlocfilehash: f613fb9bd3e9cf6d070b34403bab617e23261c56
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: b52e491162dcf17eff2ca07bc067586358aa9a35
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47226454"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49393298"
 ---
 # <a name="use-virtual-kubelet-with-azure-kubernetes-service-aks"></a>Использование Virtual Kubelet со службой Azure Kubernetes (AKS)
 
@@ -45,7 +45,7 @@ metadata:
   name: tiller
   namespace: kube-system
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: tiller
@@ -118,12 +118,15 @@ virtual-kubelet-virtual-kubelet-win     Ready     agent     4m        v1.8.3
 Создайте файл `virtual-kubelet-linux.yaml` и скопируйте в него следующий код YAML. Замените значение `kubernetes.io/hostname` на имя узла Virtual Kubelet Linux. Обратите внимание, что [nodeSelector][node-selector] и [toleration][toleration] используются для назначения контейнера на узел.
 
 ```yaml
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: aci-helloworld
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: aci-helloworld
   template:
     metadata:
       labels:
@@ -163,12 +166,15 @@ aci-helloworld-2559879000-8vmjw     1/1       Running   0          39s       52.
 Создайте файл `virtual-kubelet-windows.yaml` и скопируйте в него следующий код YAML. Замените значение `kubernetes.io/hostname` на имя узла Virtual Kubelet Windows. Обратите внимание, что [nodeSelector][node-selector] и [toleration][toleration] используются для назначения контейнера на узел.
 
 ```yaml
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nanoserver-iis
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: aci-helloworld
   template:
     metadata:
       labels:
