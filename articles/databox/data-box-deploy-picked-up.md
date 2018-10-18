@@ -2,24 +2,18 @@
 title: Отправка Microsoft Azure Data Box | Документация Майкрософт
 description: Сведения о том, как отправить Azure Data Box в Майкрософт
 services: databox
-documentationcenter: NA
 author: alkohli
-manager: twooley
-editor: ''
-ms.assetid: ''
 ms.service: databox
-ms.devlang: NA
+ms.subservice: pod
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 10/03/2018
 ms.author: alkohli
-ms.openlocfilehash: 05bfba9fffa7db75ef4e1a1167b3170a775e1d34
-ms.sourcegitcommit: 4edf9354a00bb63082c3b844b979165b64f46286
+ms.openlocfilehash: 7676360d71dab4da58693221645517c69b56dff8
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48785466"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49090694"
 ---
 # <a name="tutorial-return-azure-data-box-and-verify-data-upload-to-azure"></a>Руководство. Отправка Azure Data Box и проверка передачи данных в Azure
 

@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 05/30/2018
 ms.author: sethm
 ms.reviewer: alfredop
-ms.openlocfilehash: 54a81e6c5c6e1fe5c37b985e40174dc369edfe6d
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.openlocfilehash: cf6604730ab3bd9ee04fac36e703022f63dcb949
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45630415"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49090371"
 ---
 # <a name="report-azure-stack-usage-data-to-azure"></a>Передача в Azure данных об использовании из Azure Stack 
 
@@ -95,10 +95,6 @@ ms.locfileid: "45630415"
 ## <a name="does-usage-data-reporting-work-in-sovereign-clouds"></a>Работает ли передача данных о потреблении в независимых облаках?
 
 Для передачи данных о потреблении в Пакете средств разработки Azure Stack необходимы подписки, созданные в глобальной системе Azure. Подписки, созданные в одном из независимых облаков (Azure для государственных организаций, Azure для Германии или Azure для Китая), невозможно зарегистрировать в Azure, поэтому они не поддерживают передачу данных об использовании.
-
-## <a name="how-can-users-identify-azure-stack-usage-data-in-the-azure-billing-portal"></a>Как пользователи могут определить данные об использовании Azure Stack на портале управления счетами и подписками Azure?
-
-Пользователи могут просмотреть данные об использовании Azure Stack в файле со сведениями о потреблении. Чтобы узнать о том, как получить этот файл, см. раздел [Скачивание данных об использовании в Центре управления учетной записью (в формате CSV)](https://docs.microsoft.com/azure/billing/billing-download-azure-invoice-daily-usage-date#download-usage-from-the-account-center-csv). Файл со сведениями об использовании содержит единицы измерения Azure Stack, определяющие хранилище и виртуальные машины Azure Stack. Данные о всех ресурсах, используемых в Azure Stack, отправляются в области с именем "Azure Stack".
 
 ## <a name="why-doesnt-the-usage-reported-in-azure-stack-match-the-report-generated-from-azure-account-center"></a>Почему данные об использовании в Azure Stack не соответствуют данным, созданным в Центре управления учетной записью Azure?
 
