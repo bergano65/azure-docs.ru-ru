@@ -7,14 +7,14 @@ author: wolfma61
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: quickstart
-ms.date: 09/24/2018
+ms.date: 10/12/2018
 ms.author: wolfma
-ms.openlocfilehash: 2cb89606986645d567136655d5ab3f07223ba70d
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 04cdfd487036e79eccbb4fb879902a12e077d104
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47434778"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49341656"
 ---
 # <a name="quickstart-recognize-speech-in-c-under-net-core-on-windows-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C# для .NET Core в Windows с помощью пакета SDK для службы "Речь"
 
@@ -46,11 +46,11 @@ ms.locfileid: "47434778"
 
     ![Снимок экрана обозревателя решений, где выделен параметр "Управление пакетами NuGet для решения"](media/sdk/qs-csharp-dotnetcore-windows-02-manage-nuget-packages.png "Управление пакетами NuGet для решения")
 
-1. В верхнем правом углу в поле **Источник пакета** выберите **Nuget.org**. Найдите пакет `Microsoft.CognitiveServices.Speech`, а затем установите его в проект **helloworld**.
+1. В верхнем правом углу в поле **Источник пакета** выберите **nuget.org**. Найдите пакет `Microsoft.CognitiveServices.Speech`, а затем установите его в проект **helloworld**.
 
-    ![Снимок экрана диалогового окна "Управление пакетами для решения"](media/sdk/qs-csharp-dotnetcore-windows-03-nuget-install-1.0.0.png " Установить пакет Nuget")
+    ![Снимок экрана диалогового окна управления пакетами для решения](media/sdk/qs-csharp-dotnetcore-windows-03-nuget-install-1.0.0.png "Установка пакета NuGet")
 
-1. Примите условия отображаемого лицензионного соглашения, чтобы начать установку пакета NuGet.
+1. Примите условия отображаемой лицензии, чтобы начать установку пакета NuGet.
 
     ![Снимок экрана диалогового окна принятия условий лицензионного соглашения](media/sdk/qs-csharp-dotnetcore-windows-04-nuget-license.png "Принять условия лицензионного соглашения")
 
@@ -61,7 +61,7 @@ ms.locfileid: "47434778"
 
 1. Откройте файл `Program.cs` и замените все содержимое приведенным ниже кодом.
 
-    [!code-csharp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/csharp-dotnetcore-windows/helloworld/Program.cs#code)]
+    [!code-csharp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/csharp-dotnetcore/helloworld/Program.cs#code)]
 
 1. В том же файле замените строку `YourSubscriptionKey` своим ключом подписки.
 
@@ -77,11 +77,11 @@ ms.locfileid: "47434778"
 
 1. Запустите приложение. В строке меню последовательно выберите **Отладка** > **Начать отладку** или нажмите клавишу **F5**.
 
-    ![Снимок экрана приложения Visual Studio с выделенным параметром "Начать отладку"](media/sdk/qs-csharp-dotnetcore-windows-06-start-debugging.png "Начать отладку приложения")
+    ![Снимок экрана приложения Visual Studio с выделенным параметром "Начать отладку"](media/sdk/qs-csharp-dotnetcore-windows-06-start-debugging.png "Start the app into debugging")
 
 1. Появится всплывающее окно консоли с запросом произнести что-либо. Произнесите фразу или предложение на английском языке. Ваша речь передается в службу "Речь" и транскрибируется в текст, который отображается в том же окне.
 
-    ![Снимок экрана выходных данных консоли после успешного распознавания](media/sdk/qs-csharp-dotnetcore-windows-07-console-output.png "Выходные данные консоли после успешного распознавания")
+    ![Снимок экрана с выходными данными консоли после успешного распознавания](media/sdk/qs-csharp-dotnetcore-windows-07-console-output.png "Console output after successful recognition")
 
 [!INCLUDE [Download this sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 Этот пример можно найти в папке `quickstart/csharp-dotnetcore-windows`.
@@ -89,7 +89,7 @@ ms.locfileid: "47434778"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Распознавание намерений из речи с помощью пакета SDK службы "Речь" для C#](how-to-recognize-intents-from-speech-csharp.md)
+> [Распознавание намерений на основе речи с помощью пакета SDK службы "Речь" для C#](how-to-recognize-intents-from-speech-csharp.md)
 
 ## <a name="see-also"></a>См. также
 

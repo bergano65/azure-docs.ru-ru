@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 6193a515f0d8136e0d420b7554cf26fee8f50953
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: a80577bb226cbec080edf5e06dbd0f31c80a5890
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39173107"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49321433"
 ---
 # <a name="how-to-use-multi-value-entities-with-a-conversation-learner-model"></a>Использование многозначных сущностей в модели Conversation Learner
 В этом руководстве показано, как использовать многозначные свойства для сущностей.
@@ -24,7 +24,7 @@ ms.locfileid: "39173107"
 
 [![Предварительная версия руководства 6](http://aka.ms/cl-tutorial-06-preview)](http://aka.ms/blis-tutorial-06)
 
-##<a name="requirements"></a>Требования
+## <a name="requirements"></a>Требования
 Для работы с этим руководством требуется запущенный бот обучения общего назначения.
 
     npm run tutorial-general
@@ -58,13 +58,13 @@ ms.locfileid: "39173107"
 1. Нажмите "Actions" (Действия), затем "New Action" (Создать действие).
 2. В поле "Response" (Ответ) введите строку "What toppings do you want?" (Какие начинки вы хотите добавить?)
 3. В поле "Disqualifying Entities" (Блокирующие сущности) введите "Toppings" (Начинки).
-3. Нажмите кнопку "Создать"
+3. Щелкните Создать. 
 
 Теперь создайте второе действие.
 
 1. Выберите "Actions" (Действия), затем "New Action" (Создать действие), чтобы создать второе действие.
 3. В поле Response (Ответ) введите "Here are your toppings: $Toppings" (Вы выбрали такие начинки: $Toppings).
-4. Нажмите кнопку "Создать"
+4. Щелкните Создать. 
 
 Теперь у вас есть два действия.
 

@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: ffb0b9ceeb181e2d9922ab8e257a4df7f3d51ee0
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 67299955e00f2bb5fb409420dd951357f89e1996
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46364454"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49384928"
 documentType: LandingData
 title: Документация по Azure IoT Central
 metadata:
@@ -23,7 +23,7 @@ sections:
 - title: Оповещение о новых возможностях
   items:
   - type: paragraph
-    text: Azure IoT Central переходит на использование Службы подготовки устройств к добавлению в Центр Интернета вещей (DPS) для всех подключений устройств. Вам нужно будет обновить пакет SDK для Службы подготовки устройств, чтобы зарегистрировать и подключить устройства к приложению Azure IoT Central <a href="https://docs.microsoft.com/en-us/azure/iot-central/concepts-connectivity">См. дополнительные сведения о возможности подключения устройств в Azure IoT Central.</a> Для всех приложений, использующих функцию непрерывного экспорта данных и (или) шаблоны решений Power BI, нужно будет изменить целевой контейнер хранилища и создать новый шаблон решения.
+    text: Azure IoT Central переходит на использование Службы подготовки устройств к добавлению в Центр Интернета вещей (DPS) для всех подключений устройств. Вам нужно будет обновить пакет SDK для Службы подготовки устройств, чтобы зарегистрировать и подключить устройства к приложению Azure IoT Central <a href="https://docs.microsoft.com/azure/iot-central/concepts-connectivity">См. дополнительные сведения о возможности подключения устройств в Azure IoT Central.</a> Для всех приложений, использующих функцию непрерывного экспорта данных и (или) шаблоны решений Power BI, нужно будет изменить целевой контейнер хранилища и создать новый шаблон решения.
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph

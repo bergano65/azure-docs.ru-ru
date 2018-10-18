@@ -1,25 +1,19 @@
 ---
 title: Системные требования для шлюза Microsoft Azure Data Box | Документация Майкрософт
 description: Дополнительные сведения о требованиях к программному обеспечению и сети для шлюза Microsoft Azure Data Box
-services: databox-edge-gateway
-documentationcenter: NA
+services: databox
 author: alkohli
-manager: twooley
-editor: ''
-ms.assetid: ''
-ms.service: databox-edge-gateway
-ms.devlang: NA
+ms.service: databox
+ms.subservice: gateway
 ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.date: 09/24/2018
+ms.date: 10/17/2018
 ms.author: alkohli
-ms.openlocfilehash: 915190f6f2773d22d14c75be1140f96b7dd40559
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f70cd5de29cc3050142dfff905acae2008dab115
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46991578"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49379128"
 ---
 # <a name="azure-data-box-gateway-system-requirements-preview"></a>Системные требования для шлюза Azure Data Box (предварительная версия)
 
@@ -114,11 +108,11 @@ ms.locfileid: "46991578"
 
 > [!NOTE]
 > - В качестве IP-адресов устройств (источников) всегда должны устанавливаться все сетевые интерфейсы с поддержкой облака.
-> - В качестве IP-адресов назначения должны устанавливаться [диапазоны IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/confirmation.aspx?id=41653).
+> - В качестве IP-адресов назначения должны быть заданы [диапазоны IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/confirmation.aspx?id=41653).
 
 |     Шаблон URL-адреса                                                                                                                                                                                                                                                                                                                                                                                                                                       |     Компонент или функция                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-|    https://*.databoxedge.azure.com/*<br>https://*.accesscontrol.windows.net/*<br>https://*.servicebus.windows.net/*<br>https://login.windows.net                                                                                                                                                                                                                                                                                                        |    Служба шлюза Data Box<br>Служба контроля доступа<br>Azure Service Bus<br>Служба проверки подлинности    |
+|    https://*.databoxedge.azure.com/*<br>https://*.servicebus.windows.net/*<br>https://login.windows.net                                                                                                                                                                                                                                                                                                        |    Служба шлюза Data Box<br>Azure Service Bus<br>Служба проверки подлинности    |
 |    http://*.backup.windowsazure.com                                                                                                                                                                                                                                                                                                                                                                                                                   |    Активация устройства                                                                                    |
 |    http://crl.microsoft.com/pki/*   http://www.microsoft.com/pki/*                                                                                                                                                                                                                                                                                                                                                                                    |    Отзыв сертификатов                                                                               |
 |    https://*.core.windows.net/* https://*.data.microsoft.com http://*.msftncsi.com                                                                                                                                                                                                                                                                                                                                                                |    Учетные записи хранения Azure и мониторинг                                                                |

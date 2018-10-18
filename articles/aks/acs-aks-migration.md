@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 06/13/2018
 ms.author: nobun
 ms.custom: mvc
-ms.openlocfilehash: cb143998ac46f7f86b2dbf47b69cee7843418f5d
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: e42b0e7bd1bce40b7c58d75cb07f5a3f8afa5836
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43191470"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49385047"
 ---
 # <a name="migrating-from-azure-container-service-acs-to-azure-kubernetes-service-aks"></a>Миграция со службы контейнеров Azure (ACS) на службу Azure Kubernetes (AKS)
 
@@ -29,7 +29,7 @@ ms.locfileid: "43191470"
     * Настраиваемые объекты `StorageClass` для дисков Azure потребуется перевести из состояния `unmanaged` в состояние `managed`
     * Любой объект `PersistentVolumes` должен использовать `kind: Managed`
 * Служба AKS в настоящее время поддерживает только один пул агентов
-* В настоящее время узлы под управлением Windows Server находятся в режиме [закрытой предварительной версии](https://azure.microsoft.com/en-us/blog/kubernetes-on-azure/)
+* В настоящее время узлы под управлением Windows Server находятся в режиме [закрытой предварительной версии](https://azure.microsoft.com/blog/kubernetes-on-azure/)
 * Проверьте список [поддерживаемых регионов](https://docs.microsoft.com/azure/aks/container-service-quotas) AKS
 * AKS — это управляемая служба с размещенной панелью управления Kubernetes. Может потребоваться изменить приложения, если ранее вы изменяли конфигурацию мастеров ACS
 
@@ -53,7 +53,7 @@ ms.locfileid: "43191470"
 | agentpool0 | 3 | Standard_D8_v2 | Linux |
 | agentpool1 | 1 | Standard_D2_v2 | Windows |
 
-Так как дополнительные виртуальные машины будут развернуты в рамках подписки во время миграции, следует убедиться, что квоты и ограничения достаточны для этих ресурсов. Чтобы узнать больше, просмотрите [ограничения по подпискам и службам Azure](https://docs.microsoft.com/en-us/azure/azure-subscription-service-limits). Чтобы проверить текущие квоты, перейдите к [колонке подписок](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) на портале Azure, выберите свою подписку, а затем — `Usage + quotas`.
+Так как дополнительные виртуальные машины будут развернуты в рамках подписки во время миграции, следует убедиться, что квоты и ограничения достаточны для этих ресурсов. Чтобы узнать больше, просмотрите [ограничения по подпискам и службам Azure](https://docs.microsoft.com/azure/azure-subscription-service-limits). Чтобы проверить текущие квоты, перейдите к [колонке подписок](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) на портале Azure, выберите свою подписку, а затем — `Usage + quotas`.
 
 ### <a name="networking"></a>Сеть
 
@@ -86,7 +86,7 @@ ms.locfileid: "43191470"
 2. Создание теневых копий дисков
 3. Создание новых управляемых дисков из теневых копий
 4. Создание постоянных томов в службе AKS
-5. Обновление спецификаций Pod для [использования существующих томов](https://docs.microsoft.com/en-us/azure/aks/azure-disk-volume) вместо PersistentVolumeClaims (статической подготовки)
+5. Обновление спецификаций Pod для [использования существующих томов](https://docs.microsoft.com/azure/aks/azure-disk-volume) вместо PersistentVolumeClaims (статической подготовки)
 6. Развертывание приложения в AKS
 7. Проверка
 8. Направление трафика в кластер AKS
@@ -112,7 +112,7 @@ ms.locfileid: "43191470"
 4. Проверка
 5. Направление трафика в кластер AKS
 
-Если нужно начать с пустым ресурсом, а затем создать копию исходных данных, для переноса данных можно использовать команды [`az storage file copy`](https://docs.microsoft.com/en-us/cli/azure/storage/file/copy?view=azure-cli-latest).
+Если нужно начать с пустым ресурсом, а затем создать копию исходных данных, для переноса данных можно использовать команды [`az storage file copy`](https://docs.microsoft.com/cli/azure/storage/file/copy?view=azure-cli-latest).
 
 ### <a name="deployment-strategy"></a>Стратегия развертывания
 
@@ -134,7 +134,7 @@ kubectl get deployment -o=yaml --export > deployments.yaml
 
 ### <a name="1-create-an-aks-cluster"></a>1. Создание кластера AKS
 
-Можно следовать документации, чтобы [создать кластер AKS](https://docs.microsoft.com/en-us/azure/aks/create-cluster) с помощью портала Azure, Azure CLI или шаблона Resource Manager.
+Можно следовать документации, чтобы [создать кластер AKS](https://docs.microsoft.com/azure/aks/create-cluster) с помощью портала Azure, Azure CLI или шаблона Resource Manager.
 
 > Примеры шаблонов Azure Resource Manager для AKS можно найти в репозитории [Azure/AKS](https://github.com/Azure/AKS/tree/master/examples/vnet) на сайте GitHub
 

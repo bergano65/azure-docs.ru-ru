@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/02/2018
 ms.author: apimpm
-ms.openlocfilehash: 8c4ae9c7b8be8cf390ad4ad6d99cd1ec41cd3d08
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: ce4ff33a8af9cf864ad4902599a0ab18b2b27182
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "42142933"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49387231"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Сохранение и настройка конфигурации службы управления API с помощью Git
 
@@ -219,14 +219,14 @@ git push
 ### <a name="apis-folder"></a>Папка apis
 Папка `apis` содержит папку для каждого API в экземпляре службы, в котором находятся указанные далее элементы.
 
-* `apis\<api name>\configuration.json` — это конфигурация для API, которая содержит сведения о серверном URL-адресе службы и операциях. Это те же сведения, которые возвращаются при вызове операции [Получить определенный API](https://docs.microsoft.com/en-us/rest/api/apimanagement/api/get) с `export=true` в формате `application/json`.
-* `apis\<api name>\api.description.html` — это описание API, которое соответствует свойству `description` [сущности API](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.table._entity_property).
-* `apis\<api name>\operations\` — эта папка содержит файлы `<operation name>.description.html`, соответствующие операциям в API. Каждый файл содержит описание одной операции в API, которая сопоставляется со свойством `description` [сущности operation](https://docs.microsoft.com/en-us/rest/api/visualstudio/operations/list#operationproperties) в REST API.
+* `apis\<api name>\configuration.json` — это конфигурация для API, которая содержит сведения о серверном URL-адресе службы и операциях. Это те же сведения, которые возвращаются при вызове операции [Получить определенный API](https://docs.microsoft.com/rest/api/apimanagement/api/get) с `export=true` в формате `application/json`.
+* `apis\<api name>\api.description.html` — это описание API, которое соответствует свойству `description` [сущности API](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.table._entity_property).
+* `apis\<api name>\operations\` — эта папка содержит файлы `<operation name>.description.html`, соответствующие операциям в API. Каждый файл содержит описание одной операции в API, которая сопоставляется со свойством `description` [сущности operation](https://docs.microsoft.com/rest/api/visualstudio/operations/list#operationproperties) в REST API.
 
 ### <a name="groups-folder"></a>Папка groups
 Папка `groups` содержит папку для каждой группы, определенной в экземпляре службы.
 
-* `groups\<group name>\configuration.json` — это конфигурация для группы. Это те же сведения, которые возвращаются при вызове операции [Получить определенную группу](https://docs.microsoft.com/en-us/rest/api/apimanagement/group/get) .
+* `groups\<group name>\configuration.json` — это конфигурация для группы. Это те же сведения, которые возвращаются при вызове операции [Получить определенную группу](https://docs.microsoft.com/rest/api/apimanagement/group/get) .
 * `groups\<group name>\description.html` — это описание группы, которое соответствует свойству `description` [сущности group](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-group-entity).
 
 ### <a name="policies-folder"></a>Папка policies
@@ -246,7 +246,7 @@ git push
 ### <a name="products-folder"></a>Папка products
 Папка `products` содержит папку для каждого продукта, определенного в экземпляре службы.
 
-* `products\<product name>\configuration.json` — это конфигурация для продукта. Это те же сведения, которые возвращаются при вызове операции [Получить определенный продукт](https://docs.microsoft.com/en-us/rest/api/apimanagement/product/get) .
+* `products\<product name>\configuration.json` — это конфигурация для продукта. Это те же сведения, которые возвращаются при вызове операции [Получить определенный продукт](https://docs.microsoft.com/rest/api/apimanagement/product/get) .
 * `products\<product name>\product.description.html` — это описание продукта, которое соответствует свойству `description` [сущности product](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-product-entity) в REST API.
 
 ### <a name="templates"></a>шаблоны

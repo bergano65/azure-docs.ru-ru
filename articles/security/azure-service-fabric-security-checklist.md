@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/04/2017
 ms.author: tomsh
-ms.openlocfilehash: ef404b106d600f5cb25a46319d75c8978148b466
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: d0826d60d766874ddd186bcf406ea987134dab16
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33895880"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49385874"
 ---
 # <a name="azure-service-fabric-security-checklist"></a>Контрольный список для обеспечения безопасности Azure Service Fabric
 Эта статья содержит удобный контрольный список, который поможет обеспечить защиту среды Azure Service Fabric.
@@ -43,7 +43,7 @@ Azure Service Fabric — это платформа распределенных 
 |[ServerCertificate](https://docs.microsoft.com/azure/service-fabric/service-fabric-windows-cluster-x509-security)| <ul><li>Этот сертификат предоставляется клиенту при попытке подключиться к этому кластеру. Для обновления можно использовать два разных сертификата сервера — основной и дополнительный.</li></ul>|
 |ClientCertificateThumbprints| <ul><li>Это набор сертификатов, которые требуется установить на клиентских компьютерах, прошедших аутентификацию. </li></ul>|
 |ClientCertificateCommonNames| <ul><li>Укажите общее имя первого сертификата клиента для параметра CertificateCommonName. CertificateIssuerThumbprint — это отпечаток издателя сертификата. </li></ul>|
-|ReverseProxyCertificate| <ul><li>Это необязательный сертификат, который можно указать, если вы хотите защитить [обратный прокси-сервер](https://docs.microsoft.com/en-in/azure/service-fabric/service-fabric-reverseproxy). </li></ul>|
+|ReverseProxyCertificate| <ul><li>Это необязательный сертификат, который можно указать, если вы хотите защитить [обратный прокси-сервер](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy). </li></ul>|
 |Key Vault| <ul><li>Используется для управления сертификатами кластеров Service Fabric в Azure.  </li></ul>|
 
 

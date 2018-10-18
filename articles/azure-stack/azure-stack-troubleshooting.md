@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/09/2018
+ms.date: 10/16/2018
 ms.author: jeffgilb
 ms.reviewer: unknown
-ms.openlocfilehash: 53bb89daee47d5f380786246070cf5cddb69b731
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: c463599190c5bfaac47a70dbca7b8a67dc830f3a
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37929565"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49363490"
 ---
 # <a name="microsoft-azure-stack-troubleshooting"></a>Устранение неполадок, связанных с Microsoft Azure Stack
 
@@ -62,7 +62,7 @@ ms.locfileid: "37929565"
 
 Вы можете больше узнать о настройке порогового значения периода удержания и освобождении по запросу в статье об [управлении учетными записями хранения](azure-stack-manage-storage-accounts.md).
 
-## <a name="storage"></a>Служба хранилища
+## <a name="storage"></a>Хранилище
 ### <a name="storage-reclamation"></a>Освобождение хранилища
 Для отображения освобожденной емкости на портале может понадобиться до 14 часов. Освобождение пространства зависит от различных факторов, включая процент использования файлов внутреннего контейнера в хранилище блочных BLOB-объектов. Поэтому, в зависимости от того, какое количество данных удалено, нет гарантии касательно объема пространства, которое можно освободить, запустив сборщик мусора.
 

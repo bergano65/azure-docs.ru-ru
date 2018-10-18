@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью Node.js
+title: Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью C#
 titlesuffix: Azure Cognitive Services
-description: В этом кратком руководстве показано, как для запрашивать результаты поиска из экземпляра службы пользовательского поиска с помощью Node.js для вызова конечной точки службы пользовательского поиска Bing.
+description: В этом кратком руководстве показано, как запрашивать результаты поиска из экземпляра пользовательского поиска с помощью C# для вызова конечной точки службы "Пользовательский поиск Bing".
 services: cognitive-services
 author: brapel
 manager: cgronlun
@@ -10,24 +10,25 @@ ms.component: bing-custom-search
 ms.topic: quickstart
 ms.date: 05/07/2018
 ms.author: v-brapel
-ms.openlocfilehash: af77b4c06b61cda4fd18d19ac3578129004c4914
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: 1c3b1031c2d08b1f346216b54d351c99f01db933
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48816707"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49167313"
 ---
-# <a name="quickstart-call-bing-custom-search-endpoint-nodejs"></a>Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" (Node.js)
+# <a name="quickstart-call-bing-custom-search-endpoint-c"></a>Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" (C#)
 
-В этом кратком руководстве показано, как запрашивать результаты поиска из экземпляра службы пользовательского поиска с помощью Node.js для вызова конечной точки службы пользовательского запроса Bing. 
+В этом кратком руководстве показано, как запрашивать результаты поиска из экземпляра пользовательского поиска с помощью C# для вызова конечной точки службы "Пользовательский поиск Bing". 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
 - Готовый экземпляр службы пользовательского поиска. Ознакомьтесь с разделом [Create your first Bing Custom Search instance](quick-start.md) (Создание первого экземпляра службы "Пользовательский поиск Bing").
-- Установленный компонент [Node.js](https://www.nodejs.org/).
+- Установлена среда [.NET Core](https://www.microsoft.com/net/download/core).
 - ключ подписки; Ключ подписки можно получить при активации [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search). Кроме того, вы можете использовать ключ платной подписки из панели мониторинга Azure (см. раздел об [учетной записи API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)).    
+
 
 ## <a name="run-the-code"></a>Выполнение кода
 
@@ -37,48 +38,99 @@ ms.locfileid: "48816707"
   
 2. Из командной строки или терминала перейдите в эту папку.  
   
-3. Установите модуль Node **request**.
-    <pre>
-    npm install request
-    </pre>  
-    
-4. Создайте файл с именем BingCustomSearch.js в созданной папке и скопируйте в него следующий код. Замените **YOUR-SUBSCRIPTION-KEY** и **YOUR-CUSTOM-CONFIG-ID** своими ключом подписки и идентификатором конфигурации.  
+3. Выполните следующие команды:
+    ```
+    dotnet new console -o BingCustomSearch
+    cd BingCustomSearch
+    dotnet add package Newtonsoft.Json
+    dotnet restore
+    ```
   
-    ``` javascript
-    var request = require("request");
+4. Скопируйте приведенный ниже код в файл Program.cs. Замените **YOUR-SUBSCRIPTION-KEY** и **YOUR-CUSTOM-CONFIG-ID** своими ключом подписки и идентификатором конфигурации.
+
+    ```csharp
+    using System;
+    using System.Net.Http;
+    using System.Web;
+    using Newtonsoft.Json;
     
-    var subscriptionKey = 'YOUR-SUBSCRIPTION-KEY';
-    var customConfigId = 'YOUR-CUSTOM-CONFIG-ID';
-    var searchTerm = 'microsoft';
+    namespace bing_custom_search_example_dotnet
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                var subscriptionKey = "YOUR-SUBSCRIPTION-KEY";
+                var customConfigId = "YOUR-CUSTOM-CONFIG-ID";
+                var searchTerm = args.Length > 0 ? args[0]: "microsoft";            
     
-    var options = {
-        url: 'https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/search?' + 
-          'q=' + searchTerm + 
-          '&customconfig=' + customConfigId,
-        headers: {
-            'Ocp-Apim-Subscription-Key' : subscriptionKey
+                var url = "https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/search?" +
+                    "q=" + searchTerm +
+                    "&customconfig=" + customConfigId;
+    
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
+                var httpResponseMessage = client.GetAsync(url).Result;
+                var responseContent = httpResponseMessage.Content.ReadAsStringAsync().Result;
+                BingCustomSearchResponse response = JsonConvert.DeserializeObject<BingCustomSearchResponse>(responseContent);
+                
+                for(int i = 0; i < response.webPages.value.Length; i++)
+                {                
+                    var webPage = response.webPages.value[i];
+                    
+                    Console.WriteLine("name: " + webPage.name);
+                    Console.WriteLine("url: " + webPage.url);                
+                    Console.WriteLine("displayUrl: " + webPage.displayUrl);
+                    Console.WriteLine("snippet: " + webPage.snippet);
+                    Console.WriteLine("dateLastCrawled: " + webPage.dateLastCrawled);
+                    Console.WriteLine();
+                }            
+            }
+        }
+    
+        public class BingCustomSearchResponse
+        {        
+            public string _type{ get; set; }            
+            public WebPages webPages { get; set; }
+        }
+    
+        public class WebPages
+        {
+            public string webSearchUrl { get; set; }
+            public int totalEstimatedMatches { get; set; }
+            public WebPage[] value { get; set; }        
+        }
+    
+        public class WebPage
+        {
+            public string name { get; set; }
+            public string url { get; set; }
+            public string displayUrl { get; set; }
+            public string snippet { get; set; }
+            public DateTime dateLastCrawled { get; set; }
+            public string cachedPageUrl { get; set; }
+            public OpenGraphImage openGraphImage { get; set; }        
+        }
+        
+        public class OpenGraphImage
+        {
+            public string contentUrl { get; set; }
+            public int width { get; set; }
+            public int height { get; set; }
         }
     }
+    ```
+6. Запустите сборку приложения с помощью следующей команды. Запишите путь к DLL, на который ссылаются выходные данные команды.
+
+    <pre>
+    dotnet build 
+    </pre>
     
-    request(options, function(error, response, body){
-        var searchResponse = JSON.parse(body);
-        for(var i = 0; i < searchResponse.webPages.value.length; ++i){
-            var webPage = searchResponse.webPages.value[i];
-            console.log('name: ' + webPage.name);
-            console.log('url: ' + webPage.url);
-            console.log('displayUrl: ' + webPage.displayUrl);
-            console.log('snippet: ' + webPage.snippet);
-            console.log('dateLastCrawled: ' + webPage.dateLastCrawled);
-            console.log();
-        }
-    })
-    ```  
-  
-6. Выполните код с помощью приведенной ниже команды:  
-  
-    ```    
-    node BingCustomSearch.js
-    ``` 
+7. Запустите приложение с помощью следующей команды, заменив **PATH TO OUTPUT** значением пути к DLL, записанным на шаге 6.
+
+    <pre>    
+    dotnet **PATH TO OUTPUT**
+    </pre>
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Настройка размещенного пользовательского интерфейса](./hosted-ui.md)

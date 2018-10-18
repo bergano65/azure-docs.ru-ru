@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/25/2018
 ms.author: diberry
-ms.openlocfilehash: ce5b704a7ac251621698352608ea3eefa4629aea
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: 3ccec4fbd0fd69539e29e2f15f71115444bf0a48
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48886587"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49389298"
 ---
 # <a name="tutorial-luis-bot-in-c"></a>Руководство. Бот LUIS в C#
 С помощью C# можно создавать чат-боты, интегрированные со службой распознавания речи (LUIS). Этот бот использует приложение HomeAutomation, чтобы реализовать решение ботов. Бот создается с помощью [бота веб-приложения Azure](https://docs.microsoft.com/azure/bot-service/) и [Bot Framework версии 4](https://github.com/Microsoft/botbuilder-js).
@@ -291,9 +291,9 @@ ms.locfileid: "48886587"
 ## <a name="learn-more-about-bot-framework"></a>Дополнительные сведения о платформе Bot Framework
 Служба Azure Bot использует Bot Framework SDK. Дополнительные сведения о пакете SDK и платформе Bot Framework см. в следующих статьях.
 
-* [Общие сведения о службе Azure Bot](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0) версии 4
+* [Общие сведения о службе Azure Bot](https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0) версии 4
 * [Bot Builder Samples](https://github.com/Microsoft/botbuilder-samples) (Примеры Bot Builder)
-* [botbuilder-core package](https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/?view=botbuilder-ts-latest)
+* [botbuilder-core package](https://docs.microsoft.com/javascript/api/botbuilder-core/?view=botbuilder-ts-latest)
 * [Bot Builder tools](https://github.com/Microsoft/botbuilder-tools) (Средства для Bot Builder)
 
 ## <a name="next-steps"></a>Дополнительная информация

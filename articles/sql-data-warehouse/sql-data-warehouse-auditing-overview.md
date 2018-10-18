@@ -10,12 +10,12 @@ ms.component: manage
 ms.date: 04/11/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
-ms.openlocfilehash: c894fed56393e1504f54999e57bba6f9ffed27a7
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: 18a6234eb56902625fdcc8f150a41b7551d229cc
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43288260"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49318543"
 ---
 # <a name="auditing-in-azure-sql-data-warehouse"></a>Аудит в хранилище данных SQL Azure
 
@@ -112,7 +112,7 @@ ms.locfileid: "43288260"
 
 ## <a id="subheading-3"></a>Анализ журналов и отчетов аудита
 
-###<a name="server-level-policy-audit-logs"></a>Журналы аудита на уровне сервера
+### <a name="server-level-policy-audit-logs"></a>Журналы аудита на уровне сервера
 Журналы аудита на уровне сервера записываются в **добавочные большие двоичные объекты** в хранилище BLOB-объектов Azure в подписке Azure. Они сохраняются в виде коллекции файлов больших двоичных объектов в контейнере **sqldbauditlogs**.
 
 Дополнительные сведения об иерархии папки для хранения, соглашении об именовании и формате журнала см. в [документации по формату журнала аудита больших двоичных объектов](https://go.microsoft.com/fwlink/?linkid=829599).
@@ -147,7 +147,7 @@ ms.locfileid: "43288260"
 
 
 <br>
-###<a name="database-level-policy-audit-logs"></a>Журналы аудита на уровне базы данных
+### <a name="database-level-policy-audit-logs"></a>Журналы аудита на уровне базы данных
 Журналы аудита на уровне базы данных объединяются в коллекцию таблиц хранилища с префиксом **SQLDBAuditLogs** в учетной записи хранилища Azure, выбранной во время установки. Просматривать файлы журнала можно с помощью таких инструментов, как [обозреватель хранилищ Azure](http://azurestorageexplorer.codeplex.com).
 
 Для скачивания доступен предварительно настроенный шаблон отчета панели мониторинга в виде [таблицы Excel](http://go.microsoft.com/fwlink/?LinkId=403540), что позволит быстро проанализировать данные журнала. Чтобы использовать шаблон с журналами аудита, вам потребуется Excel 2013 или более поздней версии и надстройка Power Query, которую можно скачать по [этой ссылке](http://www.microsoft.com/download/details.aspx?id=39379).

@@ -10,12 +10,12 @@ ms.workload: identity
 ms.date: 08/04/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 1697830f699c9cd50548bcfcdd038348db314020
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 67e57faf37697697bee74597a40db39149699fe5
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38969665"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49320243"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 
@@ -24,7 +24,7 @@ Azure Active Directory B2C (Azure AD B2C) создает журналы ауди
 > [!IMPORTANT]
 > Журналы аудита хранятся всего семь дней. Если требуется более длительный срок хранения, спланируйте скачивание и хранение журналов с помощью одного из описанных ниже методов. 
 
-##<a name="overview-of-activities-available-in-the-b2c-category-of-audit-logs"></a>Общие сведения о действиях, доступных в категории B2C для журналов аудита
+## <a name="overview-of-activities-available-in-the-b2c-category-of-audit-logs"></a>Общие сведения о действиях, доступных в категории B2C для журналов аудита
 Категория **B2C** в журналах аудита содержит следующие типы действий:
 |тип действия; |ОПИСАНИЕ  |
 |---------|---------|
@@ -38,10 +38,10 @@ Azure Active Directory B2C (Azure AD B2C) создает журналы ауди
 > [!NOTE]
 > Сведения о действиях CRUD для объектов пользователя см. в категории **основного каталога**.
 
-##<a name="example-activity"></a>Пример действия
+## <a name="example-activity"></a>Пример действия
 Приведенный ниже пример показывает данные, полученные при входе пользователя с помощью внешнего поставщика удостоверений: ![Журналы аудита — пример](./media/active-directory-b2c-reference-audit-logs/audit-logs-example.png)
 
-##<a name="accessing-audit-logs-through-the-azure-portal"></a>Доступ к журналам аудита через портал Azure
+## <a name="accessing-audit-logs-through-the-azure-portal"></a>Доступ к журналам аудита через портал Azure
 1. Перейдите на [портал Azure](https://portal.azure.com). Перейдите в каталог B2C.
 2. Щелкните **Azure Active Directory** на панели "Избранное" слева. 
     
@@ -62,18 +62,18 @@ Azure Active Directory B2C (Azure AD B2C) создает журналы ауди
 - Если щелкнуть определенную строку в списке, справа отображается контекстно-зависимое окно с дополнительными атрибутами, связанными с этим действием.
 - Нажмите кнопку **Скачать**, чтобы скачать действия в виде CSV-файла.
 
-##<a name="accessing-audit-logs-through-the-azure-ad-reporting-api"></a>Доступ к журналам аудита через API отчетов Azure AD
+## <a name="accessing-audit-logs-through-the-azure-ad-reporting-api"></a>Доступ к журналам аудита через API отчетов Azure AD
 Журналы аудита публикуются в том же конвейере, что и другие действия для Azure Active Directory, поэтому к ним можно обратиться через [API отчетов Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-audit-reference). 
 
-###<a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 Чтобы проверить подлинность в API отчетов Azure AD, нужно сначала зарегистрировать приложение. Выполните действия из раздела [Предварительные требования для доступа к интерфейсам API отчетов Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-reporting-api-getting-started/).
 
-###<a name="accesing-the-api"></a>Доступ к API
+### <a name="accesing-the-api"></a>Доступ к API
 Чтобы скачать журналы аудита Azure AD B2C через API, нужно отфильтровать журналы категории **B2C**. Для фильтрации по категории используйте параметр строки запроса при вызове конечной точки API отчетов Azure AD, как показано ниже:
 
 `https://graph.windows.net/your-b2c-tentant.onmicrosoft.com/activities/audit?api-version=beta&$filter=category eq 'B2C'`
 
-###<a name="powershell-script"></a>Сценарий PowerShell
+### <a name="powershell-script"></a>Сценарий PowerShell
 Следующий сценарий показывает пример использования PowerShell для запроса API отчетов Azure AD и сохранения результатов в файле JSON:
 
 ```powershell

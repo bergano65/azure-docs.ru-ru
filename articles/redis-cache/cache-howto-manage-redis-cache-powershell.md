@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2017
 ms.author: wesmc
-ms.openlocfilehash: 980a183261c394bd83292170ab133fe17229013d
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 11b399bdbbbe92d1e1544f4cbae0824140ce52c1
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42142489"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49364512"
 ---
 # <a name="manage-azure-redis-cache-with-azure-powershell"></a>Управление кэшем Redis для Azure с использованием Azure PowerShell
 > [!div class="op_single_selector"]
@@ -783,7 +783,7 @@ ms.locfileid: "42142489"
 * [Документация по командлету кэша Redis для Azure на MSDN](https://docs.microsoft.com/powershell/module/azurerm.rediscache/?view=azurermps-6.6.0)
 * [Командлеты диспетчера ресурсов Azure](http://go.microsoft.com/fwlink/?LinkID=394765): узнайте, как использовать командлеты в модуле диспетчера ресурсов Azure.
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure](../azure-resource-manager/resource-group-template-deploy-portal.md): узнайте, как создавать группы ресурсов и управлять ими на портале Azure.
-* [Блог Azure](https://azure.microsoft.com/en-us/blog/): узнайте о новых возможностях в Azure.
+* [Блог Azure](https://azure.microsoft.com/blog/): узнайте о новых возможностях в Azure.
 * [Блог Windows PowerShell](http://blogs.msdn.com/powershell): узнайте о новых возможностях в Windows PowerShell.
 * [Блог "Hey, Scripting Блог](http://blogs.technet.com/b/heyscriptingguy/): реальные советы и рекомендации от сообщества Windows PowerShell.
 

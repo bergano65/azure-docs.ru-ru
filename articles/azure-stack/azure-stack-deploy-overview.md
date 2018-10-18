@@ -12,21 +12,21 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 06/04/2018
+ms.date: 10/15/2018
 ms.author: jeffgilb
 ms.custom: mvc
-ms.openlocfilehash: a0e742ab3ac43cc7977761dd94c9689e3a7c2e0b
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: bf07fe56c65e53f5485b9927e0d704f80842cf3a
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35235191"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49338712"
 ---
 # <a name="quickstart-evaluate-the-azure-stack-development-kit"></a>Краткое руководство по оценке пакета средств разработки Azure Stack
 
 [Пакет средств разработки Azure Stack (ASDK)](.\asdk\asdk-what-is.md) — это среда тестирования и разработки, которую можно развернуть для оценки и демонстрации функций и служб Azure Stack. Чтобы приступить к работе с ASDK, необходимо подготовить оборудование компьютера для размещения пакета, а затем запустить несколько скриптов (установка займет несколько часов). После этого вы сможете войти на портал администратора или портал пользователя, чтобы начать использовать Azure Stack.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="asdk-host-computer-requirements"></a>Требования к компьютеру узла ASDK
 

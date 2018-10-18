@@ -3,8 +3,8 @@ title: Краткое руководство по созданию профил�
 description: Из этого краткого руководства вы узнаете, как включить Azure CDN, создав профиль CDN и конечную точку CDN.
 services: cdn
 documentationcenter: ''
-author: dksimpson
-manager: cfowler
+author: mdgattuso
+manager: danielgi
 editor: ''
 ms.assetid: 4ca51224-5423-419b-98cf-89860ef516d2
 ms.service: cdn
@@ -13,21 +13,21 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
 ms.date: 05/24/2018
-ms.author: v-deasim
+ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: cf0a0b10d8df3b119f5abbd8060f8821d54172bb
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: b1e287ee949aedf084d4390fe672f0fe41899c34
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34607877"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49091775"
 ---
 # <a name="quickstart-create-an-azure-cdn-profile-and-endpoint"></a>Краткое руководство по созданию профиля и конечной точки Azure CDN
 С помощью этого краткого руководства вы включите сеть доставки содержимого (CDN) Azure, создав профиль и конечную точку CDN. Когда профиль и конечная точка будут созданы, можете приступить к доставке содержимого своим клиентам.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим кратким руководством вам потребуется созданная учетная запись хранения с именем *mystorageacct123*, которое будет использоваться в качестве имени узла источника. Дополнительные сведения см. в статье [Интеграция учетной записи хранения Azure с Azure CDN](cdn-create-a-storage-account-with-cdn.md).
 
 ## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.

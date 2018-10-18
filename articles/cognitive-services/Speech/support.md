@@ -10,15 +10,16 @@ ms.component: bing-speech
 ms.topic: article
 ms.date: 09/08/2018
 ms.author: zhouwang
-ROBOTS: NOINDEX
-ms.openlocfilehash: cbeaa8f1c0a950bf3941de775a2d62584e5f5dfa
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 710ba6596303bbbd46d95301bf10b0e6e434a4c1
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46986410"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49343628"
 ---
 # <a name="support"></a>Поддержка
+
+[!INCLUDE [Deprecation note](../../../includes/cognitive-services-bing-speech-api-deprecation-note.md)]
 
 Если у вас есть вопросы, отзывы или предложения о Распознавании речи Bing, вы можете связаться с нами на сайте GitHub. 
  - [Вопросы, связанные с REST API](https://github.com/Azure-Samples/SpeechToText-REST/issues)

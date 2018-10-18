@@ -4,20 +4,20 @@ description: Используя инструкции этого руководс
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 06/28/2018
+ms.date: 10/15/2018
 ms.author: juliako
-ms.openlocfilehash: 314ffce8a9f8dde62cac670099afbc2223df37e4
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 96ed5c17501aeb195ee584ce6d41a84fc2118bac
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38972004"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49376658"
 ---
 # <a name="tutorial-analyze-videos-with-azure-media-services"></a>Руководство. Анализ видео с помощью Служб мультимедиа Azure 
 
@@ -39,7 +39,7 @@ ms.locfileid: "38972004"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Вы можете скачать [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) бесплатно, если у вас нет Visual Studio.
 

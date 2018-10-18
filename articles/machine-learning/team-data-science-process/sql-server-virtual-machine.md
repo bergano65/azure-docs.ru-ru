@@ -4,8 +4,8 @@ description: Изучение данных и создание характер�
 services: machine-learning
 documentationcenter: ''
 author: deguhath
-manager: jhubbard
-editor: ''
+manager: cgronlun
+editor: cgronlun
 ms.assetid: 3949fb2c-ffab-49fb-908d-27d5e42f743b
 ms.service: machine-learning
 ms.component: team-data-science-process
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: deguhath
-ms.openlocfilehash: 39bdbce4ada225c0fa7df8559f68b591ccfc68b7
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 350e634ce87e2f61352beb194b4468828aea60c6
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34838662"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49394959"
 ---
 # <a name="heading"></a>Обработка данных в виртуальной машине SQL Server на платформе Azure
 В этом документе описывается изучение данных и создание характеристик для данных, хранящихся в виртуальной машине SQL Server в Azure. Это можно сделать путем структурирования данных с помощью SQL или с использованием языка программирования, например Python.

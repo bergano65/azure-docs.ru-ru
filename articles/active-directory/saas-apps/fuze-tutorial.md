@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
 ms.author: jeedes
-ms.openlocfilehash: 0b50e317fc8a94a5cd8ddd19dbe24d4f9125fedc
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 6a3fa8db14f2b155a471fd42d0d20ccf543fdbba
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39432999"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49115761"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-fuze"></a>Руководство по интеграции Azure Active Directory с Fuze
 
@@ -48,7 +48,7 @@ ms.locfileid: "39432999"
 При проверке действий в этом учебнике соблюдайте следующие рекомендации:
 
 - Не следует использовать рабочую среду при отсутствии необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
 
 
 ## <a name="scenario-description"></a>Описание сценария

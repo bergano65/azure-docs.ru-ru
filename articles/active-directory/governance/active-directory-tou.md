@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.component: compliance
 ms.date: 09/04/2018
 ms.author: rolyon
-ms.openlocfilehash: 9fa966999e220ea4357d5b5c37f0038c75fe2339
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: b6cc81a49875739a61aa397a65eb70c6b4f082ef
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45607114"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49393989"
 ---
 # <a name="azure-active-directory-terms-of-use-feature"></a>Функция "Условия использования Azure Active Directory"
 Функция "Условия использования Azure AD" — это простой способ, которым организации могут предоставлять сведения своим пользователям. Благодаря этой презентации пользователи видят соответствующие заявления об отказе согласно юридическим требованиям и для соответствия стандартам. В этой статье описывается, как приступить к работе с условиями использования в Azure AD.
@@ -242,4 +242,4 @@ ms.locfileid: "45607114"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Рекомендации по работе с условным доступом в Azure Active Directory](../../cognitive-services/qnamaker/concepts/best-practices.md)
+- [Рекомендации по работе с условным доступом в Azure Active Directory](../../active-directory/conditional-access/best-practices.md)

@@ -4,21 +4,21 @@ description: В этой статье приводятся обзор сцена
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
-ms.date: 07/10/2017
-ms.author: juliako;anilmur
-ms.openlocfilehash: 8381cdfffd34ffa25d1b87be3a3aca3de69c2802
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.date: 10/15/2018
+ms.author: juliako
+ms.openlocfilehash: 0e9537f09049d5fe056819e6f8b9718cfc52f489
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34809287"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49352820"
 ---
 # <a name="scenarios-and-availability-of-media-services-features-across-datacenters"></a>Сценарии и доступность функций служб мультимедиа в центрах обработки данных
 
@@ -30,7 +30,7 @@ ms.locfileid: "34809287"
 
 ## <a name="overview"></a>Обзор
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 Приступить к использованию служб мультимедиа Azure можно только при наличии следующих компонентов.
 
@@ -158,7 +158,7 @@ ms.locfileid: "34809287"
     Дополнительные сведения см. в статье [Изменение типа зарезервированных единиц](media-services-portal-scale-media-processing.md).
 * Можно также масштабировать учетную запись служб мультимедиа, добавляя к ней учетные записи хранения. Каждая учетная запись хранения ограничена 500 ТБ. Чтобы увеличить емкость хранилища за пределы ограничений по умолчанию, можно присоединить несколько учетных записей хранения для одной учетной записи служб мультимедиа. Дополнительные сведения см. в статье [Управление активами служб мультимедиа в нескольких учетных записях хранения](meda-services-managing-multiple-storage-accounts.md).
 
-##<a id="availability"></a>Доступность функций служб мультимедиа в центрах обработки данных
+## <a id="availability"></a>Доступность функций служб мультимедиа в центрах обработки данных
 
 Этот раздел предоставляет сведения о доступности функций служб мультимедиа в центрах обработки данных.
 
@@ -222,7 +222,7 @@ AMS предлагает два кодировщика по требованию
 
 |Шифрование|Status|Центры обработки данных|
 |---|---|---| 
-|Служба хранилища|GA|Все|
+|Хранилище|GA|Все|
 |Ключи AES-128|GA|Все|
 |FairPlay|GA|Все|
 |PlayReady|GA|Все|

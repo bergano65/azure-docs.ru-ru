@@ -3,15 +3,15 @@ title: Исключение дисков из защиты с помощью Azu
 description: В статье объясняется, как и зачем исключать диски виртуальных машин из репликации Hyper-V в Azure.
 author: nsoneji
 ms.service: site-recovery
-ms.topic: article
-ms.date: 07/06/2018
+ms.topic: conceptual
+ms.date: 10/11/2018
 ms.author: nisoneji
-ms.openlocfilehash: 14b825b7b7f14efc0bf35a1e61e40e6248a4d3d1
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 38b7e965a85bf7014167f9a5c3fd66202c02e0fa
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37920626"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49091918"
 ---
 # <a name="exclude-disks-from-replication"></a>Исключение дисков из репликации
 В этой статье описывается, как исключать диски из репликации. Благодаря этому можно оптимизировать использование пропускной способности при репликации или же ресурсы целевой стороны, используемые такими дисками.
@@ -19,7 +19,7 @@ ms.locfileid: "37920626"
 ## <a name="supported-scenarios"></a>Поддерживаемые сценарии использования.
 **Компонент** | **VMware в VMware** | **Hyper-V в Azure** | **Из Azure в Azure**| **Из Hyper-V в Hyper-V** 
 --|--|--|--|--
-Исключение диска | Yes | Yes | Нет  | Нет 
+Исключение диска | Yes | Да | Нет  | Нет 
 
 ## <a name="why-exclude-disks-from-replication"></a>Зачем исключать диски из репликации
 Исключение дисков из репликации часто бывает необходимо:

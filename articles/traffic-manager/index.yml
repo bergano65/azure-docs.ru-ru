@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 0366a92030d63986a5a2229594ecf30c744e0925
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: d7f1c1d523bc9c9d717accf7667c8bd7402bbc72
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46957624"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49388380"
 documentType: LandingData
 title: Диспетчер трафика
 metadata:
@@ -32,7 +32,7 @@ sections:
     style: icon48
     items:
     - image:
-        src: https://docs.microsoft.com/en-us/media/common/i_portal.svg
+        src: https://docs.microsoft.com/media/common/i_portal.svg
       text: Портал Azure
       href: /azure/traffic-manager/traffic-manager-create-profile
 - title: Пошаговые руководства
@@ -76,7 +76,7 @@ sections:
     style: unordered
     className: spaced noBullet
     items:
-    - html: <a href="/azure/traffic-manager/cli-samples">интерфейс командной строки Azure</a>
+    - html: <a href="/azure/traffic-manager/cli-samples">Интерфейс командной строки Azure</a>
     - html: <a href="/azure/traffic-manager/powershell-samples">PowerShell</a>
 - title: Справочные материалы
   items:
@@ -85,7 +85,7 @@ sections:
     className: cardsD
     items:
     - title: Командная строка
-      html: <p><a href="https://docs.microsoft.com/powershell/module/azurerm.trafficmanager/?view=azurermps-6.8.1#traffic_manager">PowerShell</a></p><p><a href="/cli/azure/network/traffic-manager">интерфейс командной строки Azure</a></p>
+      html: <p><a href="https://docs.microsoft.com/powershell/module/azurerm.trafficmanager/?view=azurermps-6.8.1#traffic_manager">PowerShell</a></p><p><a href="/cli/azure/network/traffic-manager">Интерфейс командной строки Azure</a></p>
     - title: Языки
       html: <p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/virtual-network?view=azure-dotnet">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.trafficmanager">Java</a></p><p><a href="http://azure.github.io/azure-sdk-for-node/azure-arm-trafficmanager/latest/">Node.js</a></p><p><a href="https://docs.microsoft.com/python/api/overview/azure/traffic-manager">Python</a></p>
     - title: REST

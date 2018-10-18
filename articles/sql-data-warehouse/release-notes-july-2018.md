@@ -10,12 +10,12 @@ ms.component: manage
 ms.date: 08/06/2018
 ms.author: twounder
 ms.reviewer: twounder
-ms.openlocfilehash: 5c54505625f40d7c0bd00111e2ff260dc9afaf1c
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: c7d2211ca69fcd18588ea1b20b638b2970b8439c
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43288010"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49318849"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-july-2018"></a>Что нового в Хранилище данных SQL Azure? Июль 2018 г.
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с июля 2018 г.
@@ -30,7 +30,7 @@ ms.locfileid: "43288010"
 ![Хранилище данных SQL Azure — быстрее и дешевле, чем Amazon Redshift](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/cb76447e-621e-414b-861e-732ffee5345a.png)
 <sub>Источник: [аналитический отчет Gigaom Research. Тест производительности хранилища данных в облаке](https://gigaom.com/report/data-warehouse-in-the-cloud-benchmark/)</sub>
 
-###<a name="query-concurrency"></a>Параллелизм запросов
+### <a name="query-concurrency"></a>Параллелизм запросов
 Хранилище данных SQL также гарантирует доступность данных в ваших организациях. Корпорация Майкрософт расширила службу для поддержки 128 одновременных запросов, чтобы больше пользователей могли запрашивать одну и ту же базу данных и не блокироваться другими запросами. Для сравнения в Amazon Redshift максимальное количество одновременных запросов составляет 50, что ограничивает доступ к данным в организации.
 
 Хранилище данных SQL обеспечивает эти улучшения производительности и параллелизма запросов без увеличения цены и опирается на уникальную архитектуру с разделением хранилища и вычислительных ресурсов.

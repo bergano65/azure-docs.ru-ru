@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 08/23/2018
 ms.author: meladie
-ms.openlocfilehash: b269a145c78aaf025ef05a4562cf55124c17e2ee
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: f25e054f0273d770807dad6788f184a876a00fe7
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42818011"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49319206"
 ---
 # <a name="azure-security-and-compliance-blueprint---iaas-web-application-for-australia-protected"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение IaaS для среды AU-PROTECTED
 
@@ -79,7 +79,6 @@ ms.locfileid: "42818011"
 -   [Расширение системы диагностики Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-diagnostics-template)
 -   [шифрование дисков Azure](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) с помощью хранилища ключей Azure Key Vault;
 -   [политика автоматического завершения работы](https://azure.microsoft.com/blog/announcing-auto-shutdown-for-vms-using-azure-resource-manager/) для уменьшения степени использования ресурсов виртуальной машины во время простоя.
--   функция [Credential Guard в Защитнике Windows](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard) должна быть включена, чтобы учетные данные и другие секретные сведения обрабатывались в защищенной среде, изолированной от работающей операционной системы.
 
 ### <a name="virtual-network"></a>Виртуальная сеть
 Архитектура определяет частную виртуальную сеть с пространством адресов 10.200.0.0/16.

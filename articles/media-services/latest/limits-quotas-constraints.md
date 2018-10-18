@@ -4,19 +4,19 @@ description: В этом разделе описываются квоты и о�
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 08/26/2018
+ms.date: 10/15/2018
 ms.author: juliako
-ms.openlocfilehash: 49b834325ce819f20978e06d85ee308955510ac1
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 5c0fbf396faa0e07ecca4ae16c775a39404c6fc9
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43051115"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49376522"
 ---
 # <a name="quotas-and-limitations-in-azure-media-services-v3"></a>Квоты и ограничения платформы "Службы мультимедиа Azure" версии 3
 

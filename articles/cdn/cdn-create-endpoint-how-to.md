@@ -3,8 +3,8 @@ title: Создание конечной точки Azure CDN | Документ
 description: В этой статье показано, как создать новую конечную точку сети доставки содержимого Azure, включая дополнительные параметры.
 services: cdn
 documentationcenter: ''
-author: dksimpson
-manager: cfowler
+author: mdgattuso
+manager: danielgi
 editor: ''
 ms.service: cdn
 ms.workload: media
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 06/12/2018
-ms.author: v-deasim
+ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: 16a939c69d9ed9be597306765f316ffe32db6665
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: a3fd85d1dbcba769f47e537e0231f63110752492
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47094042"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49093686"
 ---
 # <a name="create-an-azure-cdn-endpoint"></a>Создание конечной точки сети CDN Azure
 В этой статье описываются все параметры для создания конечной точки [сети доставки содержимого Azure](cdn-overview.md) в существующем профиле CDN. Когда профиль и конечная точка будут созданы, можете приступить к доставке содержимого своим клиентам. Сведения о создании профиля и конечной точки см. в разделе [Краткое руководство по созданию профиля и конечной точки Azure CDN](cdn-create-new-endpoint.md).

@@ -10,15 +10,17 @@ ms.component: translator-speech
 ms.topic: overview
 ms.date: 3/5/2018
 ms.author: v-jansko
-ROBOTS: NOINDEX
-ms.openlocfilehash: fd974d153e9db48b25c1b732b9719c21b16b5e01
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 77e60fe39f7cbb985ee0e7ed2785805e80c389ae
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46948780"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49341146"
 ---
 # <a name="what-is-translator-speech-api"></a>Что представляет собой API перевода речи?
+
+[!INCLUDE [Deprecation note](../../../includes/cognitive-services-translator-speech-deprecation-note.md)]
+
 API перевода речи можно использовать для добавления перевода непрерывной речи, в режиме реального времени, для перевода речи в приложения, средства или решения, работа которых предусматривает перевод речи на несколько языков независимо от языка перевода операционной системы или разработки. API может использоваться для преобразования речи в речь и речи в текст.
 
 API перевода текстов является службой Azure, частью машинного обучения [коллекции API Azure Cognitive Services](https://docs.microsoft.com/azure/#pivot=products&panel=cognitive) и алгоритмов в ИИ в облаке, готовых к использованию в проектах по разработке.

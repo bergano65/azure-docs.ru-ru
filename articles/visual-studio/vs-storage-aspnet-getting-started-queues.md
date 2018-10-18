@@ -12,14 +12,15 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/23/2016
 ms.author: ghogen
-ms.openlocfilehash: 26f303318320eb8b039503666841e518f75348e4
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: a114833b40fe834aa0108d1a2f3821f0b7cbddbc
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42142637"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49321858"
 ---
 # <a name="get-started-with-azure-queue-storage-and-visual-studio-connected-services-aspnet"></a>Приступая к работе с хранилищем очередей Azure и подключенными службами Visual Studio (ASP.NET)
+
 [!INCLUDE [storage-try-azure-tools-queues](../../includes/storage-try-azure-tools-queues.md)]
 
 ## <a name="overview"></a>Обзор
@@ -28,7 +29,7 @@ ms.locfileid: "42142637"
 
 В этом руководстве показано, как написать код ASP.NET для некоторых распространенных сценариев с использованием сущностей хранилища очередей Azure. Сюда относятся такие задачи, как создание очереди Azure, а также добавление, изменение, чтение и удаление сообщений очереди.
 
-##<a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 * [Учетная запись хранения Azure](../storage/common/storage-quickstart-create-account.md)
@@ -452,7 +453,7 @@ ms.locfileid: "42142637"
     queue.FetchAttributes();
     ```
 
-6. Просмотрите свойство **CloudQueue.ApproximateMessageCount**, чтобы узнать длину очереди.
+1. Просмотрите свойство **CloudQueue.ApproximateMessageCount**, чтобы узнать длину очереди.
  
     ```csharp
     int? nMessages = queue.ApproximateMessageCount;

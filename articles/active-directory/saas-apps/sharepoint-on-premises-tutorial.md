@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/21/2018
 ms.author: jeedes
-ms.openlocfilehash: e2037ff2f1b95a5ce5de69d76d66ec81cc9badb4
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 100ea0147bf56242ba15bee39e4bda1b65af27da
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47064209"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49390097"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sharepoint-on-premises"></a>Руководство по интеграции Azure Active Directory с локальной версией SharePoint
 
@@ -144,7 +144,7 @@ ms.locfileid: "47064209"
     Войдите в систему на сервере SharePoint Server 2016 и откройте командную консоль SharePoint 2016. Заполните значения $realm (значение идентификатора из локального домена и URL-адресов SharePoint на портале Azure), $wsfedurl (URL-адрес службы единого входа) и $filepath (путь к файлу, по которому вы загрузили файл сертификата) с портала Azure и выполните следующие команды для настройки нового доверенного поставщика удостоверений.
 
     > [!TIP]
-    > Если вы не знаете, как использовать PowerShell, или хотите получить дополнительные сведения о том, как работает PowerShell, см. статью [SharePoint PowerShell](https://docs.microsoft.com/en-us/powershell/sharepoint/overview?view=sharepoint-ps). 
+    > Если вы не знаете, как использовать PowerShell, или хотите получить дополнительные сведения о том, как работает PowerShell, см. статью [SharePoint PowerShell](https://docs.microsoft.com/powershell/sharepoint/overview?view=sharepoint-ps). 
 
     ```
     $realm = "<Identifier value from the SharePoint on-premises Domain and URLs section in the Azure portal>"
@@ -310,7 +310,7 @@ ms.locfileid: "47064209"
 
 * [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
-* [Использование Azure AD для проверки подлинности SharePoint Server](https://docs.microsoft.com/en-us/office365/enterprise/using-azure-ad-for-sharepoint-server-authentication)
+* [Использование Azure AD для проверки подлинности SharePoint Server](https://docs.microsoft.com/office365/enterprise/using-azure-ad-for-sharepoint-server-authentication)
 
 <!--Image references-->
 

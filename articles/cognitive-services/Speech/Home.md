@@ -10,23 +10,21 @@ ms.component: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ROBOTS: NOINDEX
-ms.openlocfilehash: 3b4ab55f4bd8bbd66f2edc8c262524169c79d7f5
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 960d2d402f223b306aa6ff05b567d13525e3d525
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46975643"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49340364"
 ---
 # <a name="what-is-bing-speech"></a>Что такое Распознавание речи Bing?
+
+[!INCLUDE [Deprecation note](../../../includes/cognitive-services-bing-speech-api-deprecation-note.md)]
 
 Облачный интерфейс API распознавания речи Bing корпорации Майкрософт предоставляет разработчикам возможность легко создавать в приложениях эффективные функции с поддержкой речи, например управление с помощью голосовых команд, диалоги с пользователем с применением естественной речи, транскрибирование речи и средства диктовки. Microsoft SAPI поддерживает как преобразование *речи в текст*, так и *текста в речь*.
 
 - API **преобразование речи в текст** преобразовывает человеческую речь в текст, который может использоваться как входные данные или команды для управления приложением.
 - API **преобразование текста в речь** преобразовывает текст в аудиопотоки, которые могут быть воспроизведены пользователю приложения.
-
-> [!NOTE] 
-> В мае 2018 года в была выпущена общедоступная предварительная версия [службы распознавания речи](../speech-service/overview.md). Мы приглашаем [опробовать ее бесплатно](../speech-service/get-started.md).
 
 ## <a name="speech-to-text-speech-recognition"></a>Преобразование речи в текст (распознавание речи)
 

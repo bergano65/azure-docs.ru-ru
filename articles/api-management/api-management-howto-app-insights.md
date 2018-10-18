@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
-ms.openlocfilehash: a660b36f383eaf1fd0e868200ad7f59aba0f8225
-ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
+ms.openlocfilehash: 52e034f9a0c11c2b27888d181304bc16c3369e4a
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42146664"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49390029"
 ---
 # <a name="how-to-integrate-azure-api-management-with-azure-application-insights"></a>Интеграция управления API Azure в Azure Application Insights
 
@@ -51,7 +51,7 @@ ms.locfileid: "42146664"
     ![Средство ведения журнала App Insights](media/api-management-howto-app-insights/apim-app-insights-logger-2.png)  
 
 > [!NOTE]
-> Фактически сущность [средства ведения журнала](https://docs.microsoft.com/en-us/rest/api/apimanagement/logger/createorupdate) создается в экземпляре службы управления API с ключом инструментирования экземпляра Application Insights.
+> Фактически сущность [средства ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/logger/createorupdate) создается в экземпляре службы управления API с ключом инструментирования экземпляра Application Insights.
 
 ## <a name="enable-application-insights-logging-for-your-api"></a>Включение ведения Application Insights для вашего API
 
@@ -68,7 +68,7 @@ ms.locfileid: "42146664"
 10. Выберите команду **Сохранить**.
 
 > [!NOTE]
-> Фактически сущность [Диагностика](https://docs.microsoft.com/en-us/rest/api/apimanagement/diagnostic/createorupdate) с именем applicationinsights создается на уровне API.
+> Фактически сущность [Диагностика](https://docs.microsoft.com/rest/api/apimanagement/diagnostic/createorupdate) с именем applicationinsights создается на уровне API.
 
 | Имя параметра                        | Тип значения                        | ОПИСАНИЕ                                                                                                                                                                                                                                                                                                                                      |
 |-------------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -123,5 +123,5 @@ Azure Application Insights получает следующие данные:
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-+ Дополнительные сведения об [Azure Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/).
++ Дополнительные сведения об [Azure Application Insights](https://docs.microsoft.com/azure/application-insights/).
 + См. раздел [ведение журналов с помощью Центров событий Azure](api-management-howto-log-event-hubs.md).

@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 08/27/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: c7ccfd53b52416c8216b90f93f8d08f382c859d8
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 6e3026ea3aca897ab63f4ad7d72eac438fdb7199
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48042110"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49389117"
 ---
 # <a name="oms-portal-moving-to-azure"></a>Перемещение портала OMS в Azure
 
@@ -98,7 +98,7 @@ ms.locfileid: "48042110"
 
 
 ## <a name="azure-network-security-group-analytics"></a>Анализ групп безопасности сети Azure
-Решение [Аналитика групп безопасности сетей Azure](log-analytics-azure-networking-analytics.md#azure-network-security-group-analytics-solution-in-log-analytics) будет заменено новой платформой [Аналитика трафика](https://azure.microsoft.com/en-in/blog/traffic-analytics-in-preview/), которая отображает действия пользователей и приложений в облачных сетях. Решение "Аналитика трафика" полезно для аудита сетевой активности вашей организации, защиты приложений и данных, оптимизации производительности рабочих нагрузок и обеспечения соответствия требованиям. 
+Решение [Аналитика групп безопасности сетей Azure](log-analytics-azure-networking-analytics.md#azure-network-security-group-analytics-solution-in-log-analytics) будет заменено новой платформой [Аналитика трафика](https://azure.microsoft.com/blog/traffic-analytics-in-preview/), которая отображает действия пользователей и приложений в облачных сетях. Решение "Аналитика трафика" полезно для аудита сетевой активности вашей организации, защиты приложений и данных, оптимизации производительности рабочих нагрузок и обеспечения соответствия требованиям. 
 
 Это решение анализирует журналы потоков NSG и предоставляет следующие сведения:
 

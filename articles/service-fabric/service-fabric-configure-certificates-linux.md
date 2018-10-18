@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/26/2018
 ms.author: v-jamebr
-ms.openlocfilehash: 97f33a1c0c42b534dafd1e4ed378b655b339395a
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: aa84dc4cb23a0fa2fa854e1f3d6da1234ec00bd6
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42143193"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49386643"
 ---
 # <a name="certificates-and-security-on-linux-clusters"></a>Сертификаты и безопасность в кластерах Linux
 
@@ -35,7 +35,7 @@ Service Fabric обычно ожидает, что сертификаты X.509 
 
 ## <a name="certificates-referenced-in-the-application-manifest"></a>Сертификаты, на которые имеются ссылки в манифесте приложения
 
-Сертификаты, определенные в манифесте приложения, например в элементе [**SecretsCertificate**](https://docs.microsoft.com/azure/service-fabric/service-fabric-service-model-schema-elements#secretscertificate-element) или [**EndpointCertificate**](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-service-model-schema-elements#endpointcertificate-element), должны присутствовать в каталоге */var/lib/sfcerts*. Элементы, используемые для указания сертификатов в манифесте приложения, не принимают атрибут path, поэтому сертификаты должны присутствовать в каталоге по умолчанию. Эти элементы принимают необязательный атрибут **X509StoreName**. По умолчанию используется значение My, что указывает на каталог */var/lib/sfcerts* в узлах Linux. Любое другое значение в кластере Linux не определено. Мы рекомендуем пропустить атрибут **X509StoreName** для приложений, которые выполняются в кластерах Linux. 
+Сертификаты, определенные в манифесте приложения, например в элементе [**SecretsCertificate**](https://docs.microsoft.com/azure/service-fabric/service-fabric-service-model-schema-elements#secretscertificate-element) или [**EndpointCertificate**](https://docs.microsoft.com/azure/service-fabric/service-fabric-service-model-schema-elements#endpointcertificate-element), должны присутствовать в каталоге */var/lib/sfcerts*. Элементы, используемые для указания сертификатов в манифесте приложения, не принимают атрибут path, поэтому сертификаты должны присутствовать в каталоге по умолчанию. Эти элементы принимают необязательный атрибут **X509StoreName**. По умолчанию используется значение My, что указывает на каталог */var/lib/sfcerts* в узлах Linux. Любое другое значение в кластере Linux не определено. Мы рекомендуем пропустить атрибут **X509StoreName** для приложений, которые выполняются в кластерах Linux. 
 
 ## <a name="certificates-referenced-in-the-configuration-package-settingsxml"></a>Сертификаты, на которые имеются ссылки в пакете конфигурации (Settings.xml)
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2018
 ms.author: msangapu
-ms.openlocfilehash: 012f78fc07f237e8ed532246c81a3c86bb6ab4ac
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: c619ae164f8f8b6e94d9061c4346de58bd6cb795
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33764348"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49319444"
 ---
 # <a name="custom-image-multi-container-or-built-in-platform-image"></a>Выбор между пользовательским, многоконтейнерным или встроенным образом платформы
 
@@ -30,7 +30,7 @@ ms.locfileid: "33764348"
 - **Многоконтейнерное развертывание.** Поместите свое приложение в несколько контейнеров с помощью файла конфигурации Docker Compose или Kubernetes. Дополнительные сведения см. в разделе о [многоконтейнерном приложении](#multi-container-apps-supportability).
 - **Развертывание приложения со встроенным образом платформы.** Наши встроенные в платформу образы содержат распространенные среды выполнения веб-приложений и зависимости, такие как Node и PHP. Используйте один из [методов развертывания службы приложений Azure](../app-service-deploy-local-git.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) для развертывания приложения в хранилище веб-приложений, а затем используйте встроенный образ платформы для его запуска.
 
-##<a name="which-method-is-right-for-your-app"></a>Какой метод подходит для приложения? 
+## <a name="which-method-is-right-for-your-app"></a>Какой метод подходит для приложения? 
 
 Ниже приведены основные факторы, которые следует учитывать:
 
@@ -46,12 +46,12 @@ ms.locfileid: "33764348"
 ## <a name="multi-container-apps-supportability"></a>Поддержка многоконтейнерного приложения
 
 ### <a name="supported-docker-compose-configuration-options"></a>Поддерживаемые параметры конфигурации Docker Compose:
-- command;
+- command
 - entrypoint;
-- environment;
-- image;
+- Среда
+- изображение
 - ports;
-- restart;
+- restart
 - services;
 - volumes.
 
@@ -66,11 +66,11 @@ ms.locfileid: "33764348"
 > Другие параметры, которые не указаны здесь явно, также игнорируются в общедоступной предварительной версии.
 
 ### <a name="supported-kubernetes-configuration-options"></a>Поддерживаемые параметры конфигурации Kubernetes:
-- args;
-- command;
-- containers;
-- image;
-- name;
+- args
+- command
+- containers
+- изображение
+- name
 - ports;
 - spec.
 

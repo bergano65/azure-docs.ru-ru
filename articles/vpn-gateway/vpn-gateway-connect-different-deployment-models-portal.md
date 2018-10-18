@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/13/2018
 ms.author: cherylmc
-ms.openlocfilehash: 5e51027455da1f8be34d99c79bc79bc37df57d14
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 6a585155e1d1050498754f5b9a7ec3dfc82d7a2c
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38721561"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49319937"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-the-portal"></a>Подключение виртуальных сетей из разных моделей развертывания с помощью портала
 
@@ -84,7 +84,7 @@ ms.locfileid: "38721561"
 | Виртуальная сеть | Пространство адресов | Регион | Подключается к сайту локальной сети |
 |:--- |:--- |:--- |:--- |
 | ClassicVNet |(10.0.0.0/24) |Запад США | RMVNetLocal (192.168.0.0/16) |
-| RMVNet | (192.168.0.0/16) |Восток США |ClassicVNetLocal (10.0.0.0/24) |
+| RMVNet | (192.168.0.0/16) |Восточная часть США |ClassicVNetLocal (10.0.0.0/24) |
 
 ## <a name="classicvnet"></a>Раздел 1. Настройка классической виртуальной сети
 
@@ -183,7 +183,7 @@ ms.locfileid: "38721561"
 | Виртуальная сеть | Пространство адресов | Регион | Подключается к сайту локальной сети |Общедоступный IP-адрес|
 |:--- |:--- |:--- |:--- |:--- |
 | ClassicVNet |(10.0.0.0/24) |Запад США | RMVNetLocal (192.168.0.0/16) |Общедоступный IP-адрес, назначенный шлюзу ClassicVNet|
-| RMVNet | (192.168.0.0/16) |Восток США |ClassicVNetLocal (10.0.0.0/24) |Общедоступный IP-адрес, назначенный шлюзу RMVNet|
+| RMVNet | (192.168.0.0/16) |Восточная часть США |ClassicVNetLocal (10.0.0.0/24) |Общедоступный IP-адрес, назначенный шлюзу RMVNet|
 
 Шлюз локальной сети задает диапазон адресов и общедоступный IP-адрес, связанный с классической виртуальной сетью и ее шлюзом. При выполнении этих действий в качестве упражнения используйте примеры значений.
 
@@ -294,7 +294,7 @@ Set-AzureVNetGatewayKey -VNetName "Group ClassicRG ClassicVNet" `
 -LocalNetworkSiteName "172B9E16_RMVNetLocal" -SharedKey abc123
 ```
 
-##<a name="verify"></a>Раздел 6. Проверка подключений
+## <a name="verify"></a>Раздел 6. Проверка подключений
 
 Подключения можно проверить на портале Azure или с помощью PowerShell. При проверке может потребоваться подождать пару минут, пока подключение не будет создано. В случае успешного подключения его состояние изменится с "Подключение" на "Подключено".
 

@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 09/27/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: ee2a72a65902347a2e58f79d0f621c9d08178104
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: d9cf46a1fd28985d9ca98d173bbef17380b7de21
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47410312"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49354399"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -3346,8 +3346,6 @@ ms.locfileid: "47410312"
 > | Действие | Microsoft.Network/loadBalancers/backendAddressPools/join/action | Выполняет присоединение к внутреннему пулу адресов подсистемы балансировки нагрузки. |
 > | Действие | Microsoft.Network/loadBalancers/backendAddressPools/read | Возвращает определение внутреннего пула адресов подсистемы балансировки нагрузки. |
 > | Действие | Microsoft.Network/loadBalancers/delete | Удаляет подсистему балансировки нагрузки. |
-> | Действие | Microsoft.Network/loadBalancers/frontendIPConfigurations/join/action | Объединяет внешнюю IP-конфигурацию Load Balancer. |
-> | Действие | Microsoft.Network/loadBalancers/frontendIPConfigurations/read | Возвращает определение внешней IP-конфигурации подсистемы балансировки нагрузки. |
 > | Действие | Microsoft.Network/loadBalancers/inboundNatPools/join/action | Присоединяет пул входящих подключений NAT подсистемы балансировки нагрузки. |
 > | Действие | Microsoft.Network/loadBalancers/inboundNatPools/read | Возвращает определение пула входящих подключений NAT подсистемы балансировки нагрузки. |
 > | Действие | Microsoft.Network/loadBalancers/inboundNatRules/delete | Удаляет правило NAT для входящего трафика подсистемы балансировки нагрузки. |
@@ -3477,10 +3475,6 @@ ms.locfileid: "47410312"
 > | Действие | Microsoft.Network/publicIPAddresses/dnsAliases/read | Получает ресурс псевдонима DNS общедоступного IP-адреса. |
 > | Действие | Microsoft.Network/publicIPAddresses/dnsAliases/write | Создает ресурс псевдонима DNS общедоступного IP-адреса. |
 > | Действие | Microsoft.Network/publicIPAddresses/join/action | Присоединяет общедоступный IP-адрес. |
-> | Действие | Microsoft.Network/publicIPAddresses/loadBalancerPools/delete | Удаляет серверный пул подсистемы балансировки нагрузки с общедоступным IP-адресом. |
-> | Действие | Microsoft.Network/publicIPAddresses/loadBalancerPools/join/action | Подключает серверный пул подсистемы балансировки нагрузки с общедоступным IP-адресом. |
-> | Действие | Microsoft.Network/publicIPAddresses/loadBalancerPools/read | Возвращает определение серверного пула подсистемы балансировки нагрузки с общедоступным IP-адресом. |
-> | Действие | Microsoft.Network/publicIPAddresses/loadBalancerPools/write | Создает серверный пул подсистемы балансировки нагрузки с общедоступным IP-адресом или обновляет имеющийся. |
 > | Действие | Microsoft.Network/publicIPAddresses/providers/Microsoft.Insights/diagnosticSettings/read | Получение параметров диагностики общедоступного IP-адреса. |
 > | Действие | Microsoft.Network/publicIPAddresses/providers/Microsoft.Insights/diagnosticSettings/write | Создание или обновление параметров диагностики общедоступного IP-адреса. |
 > | Действие | Microsoft.Network/publicIPAddresses/providers/Microsoft.Insights/logDefinitions/read | Получение определений журнала общедоступного IP-адреса. |

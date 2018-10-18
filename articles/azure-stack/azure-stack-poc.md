@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 06/04/2018
+ms.date: 10/15/2018
 ms.author: jeffgilb
 ms.reviewer: unknown
 ms.custom: mvc
-ms.openlocfilehash: 848df59b01cc0c03b9a5f3dae2644d469c8651bb
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: b2b81938eafe104369e52e72f9958e2adf2cca6f
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35234892"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49345226"
 ---
 # <a name="what-is-azure-stack"></a>Что такое Azure Stack?
 
@@ -47,5 +47,6 @@ ASDK имеет такие ограничения:
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Основные возможности и концепции](azure-stack-key-features.md)
-- [Azure Stack: An extension of Azure](https://azure.microsoft.com/resources/azure-stack-an-extension-of-azure/) (Azure Stack: расширение Azure), PDF
+[Основные возможности и концепции](azure-stack-key-features.md)
+
+[Azure Stack: An extension of Azure](https://azure.microsoft.com/resources/azure-stack-an-extension-of-azure/) (Azure Stack: расширение Azure), PDF

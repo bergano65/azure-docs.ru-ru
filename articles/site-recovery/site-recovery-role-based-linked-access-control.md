@@ -5,16 +5,16 @@ ms.service: site-recovery
 ms.workload: backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 07/06/2018
-author: mayanknayar
+ms.date: 10/16/2018
+author: mayurigupta13
 ms.topic: conceptual
-ms.author: manayar
-ms.openlocfilehash: dfd880b6ff3a7e199ea259acc5e5ec59f89c897d
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.author: mayg
+ms.openlocfilehash: 9ec9acab4ad83af22504058c21b102df94b8692d
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37919732"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49353243"
 ---
 # <a name="use-role-based-access-control-to-manage-site-recovery-access"></a>Использование управления доступом на основе ролей для управления доступом к Azure Site Recovery
 
@@ -62,7 +62,7 @@ Azure Site Recovery предоставляет 3 встроенные роли �
 |  |  | Microsoft.Network/virtualNetworks/subnets/join/action |
 |  | Классический | Microsoft.ClassicNetwork/virtualNetworks/read |
 |  |  | Microsoft.ClassicNetwork/virtualNetworks/join/action |
-| Служба хранилища | Диспетчер ресурсов | Microsoft.Storage/storageAccounts/read |
+| Хранилище | Диспетчер ресурсов | Microsoft.Storage/storageAccounts/read |
 |  |  | Microsoft.Storage/storageAccounts/listkeys/action |
 |  | Классический | Microsoft.ClassicStorage/storageAccounts/read |
 |  |  | Microsoft.ClassicStorage/storageAccounts/listKeys/action |
@@ -75,6 +75,6 @@ Azure Site Recovery предоставляет 3 встроенные роли �
 * [Управление доступом на основе ролей](../role-based-access-control/role-assignments-portal.md). Начало работы с RBAC на портале Azure.
 * Сведения об управлении доступом с помощью следующих средств:
   * [PowerShell](../role-based-access-control/role-assignments-powershell.md)
-  * [интерфейс командной строки Azure](../role-based-access-control/role-assignments-cli.md)
+  * [Интерфейс командной строки Azure](../role-based-access-control/role-assignments-cli.md)
   * [REST API](../role-based-access-control/role-assignments-rest.md)
 * [Устранение неполадок при управлении доступом на основе ролей](../role-based-access-control/troubleshooting.md). Рекомендации по устранению распространенных проблем.

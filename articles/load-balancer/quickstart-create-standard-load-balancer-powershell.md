@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 08/22/2018
 ms.author: kumud
 ms:custom: mvc
-ms.openlocfilehash: 67d514fe6315604016dc10b7dfc8154c3919f914
-ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.openlocfilehash: e197d5306d0df93c243b765ba9154dd8661c6908
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42616549"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49319531"
 ---
 # <a name="get-started"></a>Краткое руководство. Создание Load Balancer уровня "Стандартный" с помощью Azure PowerShell
 Из этого краткого руководства вы узнаете, как с помощью Azure PowerShell создать Load Balancer уровня "Стандартный" Чтобы проверить работу подсистемы балансировки нагрузки, вы развернете две виртуальные машины с Windows Server и распределите между ними нагрузку веб-приложения. См. дополнительные сведения о [Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md).
@@ -209,7 +209,7 @@ $nsg = New-AzureRmNetworkSecurityGroup`
 -SecurityRules $rule1,$rule2
 ```
 
-###<a name="create-nics"></a>Создание сетевых адаптеров
+### <a name="create-nics"></a>Создание сетевых адаптеров
 Создайте виртуальные сетевые адаптеры с помощью командлета [New-AzureRmNetworkInterface](/powershell/module/azurerm.network/new-azurermnetworkinterface). В приведенном ниже примере создаются два виртуальных сетевых адаптера. (по одной виртуальной сетевой карте для каждой виртуальной машины, используемой приложением). Вы можете в любое время создать дополнительные виртуальные сетевые карты и виртуальные машины и добавить их в балансировщик нагрузки:
 
 ```azurepowershell-interactive

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/03/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: 297ba626d8b80d9362476ca4578e34140df5f91a
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.openlocfilehash: f0a982e8a0cb358e29375e05c1752a33b15ec255
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48248659"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49319716"
 ---
 # <a name="send-data-to-log-analytics-with-the-http-data-collector-api-public-preview"></a>Отправка данных в Log Analytics c помощью API сборщика данных HTTP (общедоступная предварительная версия)
 В этой статье показано, как с помощью API сборщика данных HTTP отправить данные в Log Analytics из клиента REST API.  Здесь также описано, как отформатировать данные, собранные сценарием или приложением, добавить их в запрос и авторизовать этот запрос в Log Analytics.  В этой статье приведены примеры для PowerShell, C# и Python.
@@ -101,7 +101,7 @@ Signature=Base64(HMAC-SHA256(UTF8(StringToSign)))
 ## <a name="request-body"></a>Тело запроса
 Текст сообщения должен иметь формат JSON. Он должен содержать одну или несколько записей с парами имени и значения свойств в следующем формате:
 
-```
+```json
 [
     {
         "property 1": "value1",
@@ -114,7 +114,7 @@ Signature=Base64(HMAC-SHA256(UTF8(StringToSign)))
 
 Вы можете сгруппировать в одном запросе несколько записей, используя следующий формат. Все записи должны принадлежать к одному типу.
 
-```
+```json
 [
     {
         "property 1": "value1",
@@ -218,7 +218,7 @@ Signature=Base64(HMAC-SHA256(UTF8(StringToSign)))
 Также можно изменить переменные для типа журнала и данных JSON.
 
 ### <a name="powershell-sample"></a>Пример для PowerShell
-```
+```powershell
 # Replace with your Workspace ID
 $CustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"  
 
@@ -301,7 +301,7 @@ Post-LogAnalyticsData -customerId $customerId -sharedKey $sharedKey -body ([Syst
 ```
 
 ### <a name="c-sample"></a>Пример на языке C#
-```
+```csharp
 using System;
 using System.Net;
 using System.Net.Http;
@@ -387,7 +387,7 @@ namespace OIAPIExample
 ```
 
 ### <a name="python-2-sample"></a>Пример на языке Python версии 2
-```
+```python
 import json
 import requests
 import datetime

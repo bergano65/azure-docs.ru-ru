@@ -12,15 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/16/2018
+ms.date: 10/16/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: c4bf76aa07ec5025d9e53b5518929199ace27e18
-ms.sourcegitcommit: a36a1ae91968de3fd68ff2f0c1697effbb210ba8
+ms.openlocfilehash: 0b65f37310b911184c05fd8fb8554eeb824814b8
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "29974116"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49364818"
 ---
 # <a name="advanced-azure-stack-development-kit-evaluation-tasks"></a>Расширенные задачи оценки пакета средств разработки Azure Stack
 Ознакомившись с основными функциями и возможностями пакета средств разработки Azure Stack (ASDK), можно подробнее рассмотреть возможности Azure Stack путем тестирования более сложных сценариев. Полный список этих расширенных задач оценки можно найти в документации оператора по Azure Stack.

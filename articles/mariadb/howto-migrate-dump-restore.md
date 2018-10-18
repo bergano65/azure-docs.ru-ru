@@ -8,12 +8,12 @@ services: mariadb
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 9b22890bceba6205c995a01105cdf11a08a9c10b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 551fe303994f6c72f8a4bf39e76f12c62f58026b
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46998752"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49309541"
 ---
 # <a name="migrate-your-mariadb-database-to-azure-database-for-mariadb-using-dump-and-restore"></a>Перенос базы данных MariaDB в базу данных Azure для MariaDB с помощью резервного копирования и восстановления
 В этой статье описываются два распространенных способа архивации и восстановления баз данных в базе данных Azure для MariaDB.
@@ -30,7 +30,9 @@ ms.locfileid: "46998752"
 Используйте распространенные инструменты и служебные программы, такие как MySQL Workbench, mysqldump, Toad или Navicat, для удаленного подключения и восстановления данных в базу данных Azure для MariaDB. Используйте эти инструменты на своем клиентском компьютере, подключенном к Интернету, чтобы подключиться к базе данных Azure для MariaDB. Для обеспечения безопасности используйте подключение с SSL-шифрованием, а также см. статью [SSL-соединения в базе данных Azure для MariaDB](concepts-ssl-connection-security.md). При переносе в базу данных Azure для MariaDB не нужно перемещать файлы дампа в особое облачное расположение. 
 
 ## <a name="common-uses-for-dump-and-restore"></a>Распространенные варианты использования дампа и восстановления
-Вы можете использовать такие служебные программы MySQL, как mysqldump и mysqlpump, для дампа и загрузки баз данных в базу данных Azure для сервера MariaDB в нескольких распространенных сценариях. <!--In other scenarios, you may use the [Import and Export](concepts-migrate-import-export.md) approach instead.-->
+Вы можете использовать такие служебные программы MySQL, как mysqldump и mysqlpump, для дампа и загрузки баз данных в базу данных Azure для сервера MariaDB в нескольких распространенных сценариях. 
+
+<!--In other scenarios, you may use the [Import and Export](howto-migrate-import-export.md) approach instead.-->
 
 - Используйте дампы базы данных при перемещении всей базы данных. Мы рекомендуем использовать этот способ при перемещении большого количества данных MariaDB, или если вы не хотите прерывать работу службы для динамичных сайтов или приложений. 
 -  Все таблицы в базе данных должны использовать подсистему хранилища InnoDB при загрузке данных в базу данных Azure для MariaDB. База данных Azure для MariaDB поддерживает только подсистему хранилища InnoDB и не поддерживает другие подсистемы хранилища. Если таблицы настроены с помощью других подсистем хранилища, преобразуйте их в формат ядра InnoDB перед перемещением в базу данных Azure для MariaDB.

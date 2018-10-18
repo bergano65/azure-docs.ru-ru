@@ -3,7 +3,7 @@ title: Основы администрирования Azure Stack | Докум�
 description: Важные сведения об администрировании Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: jeffgilb
 manager: femila
 editor: ''
 ms.assetid: 856738a7-1510-442a-88a8-d316c67c757c
@@ -12,14 +12,14 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/28/2018
-ms.author: mabrigg
-ms.openlocfilehash: ead76fd2f03a5d445f9fdbb6c10edb852fd046cf
-ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
+ms.date: 10/15/2018
+ms.author: jeffgilb
+ms.openlocfilehash: 37b8eff2d4ed89c90f1fa6f128673ed5bacaaa90
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47585770"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49339956"
 ---
 # <a name="azure-stack-administration-basics"></a>Основы администрирования Azure Stack
 Если вы не знакомы с администрированием Azure Stack, вам необходимо знать несколько моментов. В этом руководстве представлен обзор роли оператора Azure Stack и сведения, которые необходимо сообщить пользователям, чтобы они сразу же начали продуктивно работать.
@@ -144,6 +144,6 @@ Azure Stack использует Azure Resource Manager в качестве ос
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Region management in Azure Stack](azure-stack-region-management.md) (Управление регионами в Azure Stack)
+[Region management in Azure Stack](azure-stack-region-management.md) (Управление регионами в Azure Stack)
 
 

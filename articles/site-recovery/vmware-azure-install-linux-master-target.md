@@ -3,15 +3,15 @@ title: Установка главного целевого сервера Linux
 description: Для повторного включения защиты виртуальной машины Linux необходим главный целевой сервер Linux. Узнайте, как его установить.
 author: nsoneji
 ms.service: site-recovery
-ms.topic: article
-ms.date: 07/06/2018
+ms.topic: conceptual
+ms.date: 10/11/2018
 ms.author: nisoneji
-ms.openlocfilehash: 4443d8fcbf40240e1a7bd718416e522192b4efb3
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 470d4547a63105e319f072461a4d8f24ebe3dbe8
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37921075"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49094128"
 ---
 # <a name="install-a-linux-master-target-server"></a>Установка главного целевого сервера Linux
 После отработки отказа виртуальных машин в Azure для них можно восстановить размещение на локальном сайте. Для восстановления размещения из Azure на локальном сайте необходимо повторно включить защиту виртуальной машины. Для этого понадобится локальный главный целевой сервер, который будет получать трафик. 
@@ -26,7 +26,7 @@ ms.locfileid: "37921075"
 
 Комментарии или вопросы можно добавить в конце этой статьи или на [форуме по службам восстановления Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Чтобы выбрать узел для развертывания главного целевого сервера, определите метод восстановления размещения: на существующую локальную виртуальную машину или на новую виртуальную машину. 
     * Если выбрана существующая виртуальная машина, узел главного целевого сервера должен иметь доступ к ее хранилищам данных.

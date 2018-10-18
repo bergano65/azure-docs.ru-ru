@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/10/2018
 ms.author: raynew
-ms.openlocfilehash: cd0af3bc9489452dfc98efaa3ded768a8ca775ab
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 71d96d7e88404c1f8b617370ef5cc841aad882f8
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49079486"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49390046"
 ---
 # <a name="azure-site-recovery-frequently-asked-questions-faq"></a>Azure Site Recovery: вопросы и ответы
 Данная статья содержит часто задаваемые вопросы об Azure Site Recovery. Если после прочтения статьи у вас возникли какие-либо вопросы, вы можете задать их на [форуме, посвященном службам восстановления Azure](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr).
@@ -70,7 +70,7 @@ ms.locfileid: "49079486"
 Да. Используя службу Site Recovery для управления репликацией и отработкой отказа в офисах филиалов, вы получаете объединенные возможности управления и представление для всех рабочих нагрузок офисов филиалов в центральном расположении. Таким образом, можно легко выполнить отработку отказа и управлять аварийным восстановлением для всех филиалов, не выходя из главного офиса.
 
 ## <a name="pricing"></a>Цены
-Если у вас возникли вопросы о ценах, см. раздел вопросов и ответов на [странице цен на Azure Site Recovery](https://azure.microsoft.com/en-in/pricing/details/site-recovery/).
+Если у вас возникли вопросы о ценах, см. раздел вопросов и ответов на [странице цен на Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
 
 ## <a name="security"></a>Безопасность
 ### <a name="is-replication-data-sent-to-the-site-recovery-service"></a>Отправляются ли данные репликации в службу Site Recovery?

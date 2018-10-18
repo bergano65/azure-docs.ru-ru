@@ -4,7 +4,7 @@ description: В этой статье описаны изменения, кот�
 services: media-services
 documentationcenter: na
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 tags: ''
 keywords: azure media services, stream, broadcast, live, offline
@@ -13,19 +13,16 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 06/12/2018
+ms.date: 10/16/2018
 ms.author: juliako
-ms.openlocfilehash: a382af644d30f9f0ebb586273c982ef1766f50b0
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: a17bad5beb651aaa085c626296c200a00c30647e
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36292049"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49376368"
 ---
 # <a name="migrate-from-media-services-v2-to-v3"></a>Миграция из версии 2 в версию 3 Служб мультимедиа
-
-> [!NOTE]
-> Последняя версия Служб мультимедиа Azure представлена в предварительной версии и может называться версией 3.
 
 В этой статье описаны изменения, которые впервые появились в версии 3 Служб мультимедиа Azure (AMS), и приведены различия между двумя версиями.
 

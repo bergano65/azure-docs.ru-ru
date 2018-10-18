@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/25/2018
 ms.author: barclayn
-ms.openlocfilehash: 0addad1db4d9f897736a7793c5489897bca2cd38
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 32174af9edcd6da7b87b6b38c0824fa7f07aa8f9
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47093432"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49384893"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Службы и технологии безопасности, доступные в Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "47093432"
 | [Подписанные URL-адреса службы хранилища Azure](../storage/common/storage-dotnet-shared-access-signature-part-1.md)|Подпись общего доступа обеспечивает делегированный доступ к ресурсам в вашей учетной записи хранения.  |
 |[Ключи учетной записи хранения Azure](../storage/common/storage-create-storage-account.md)| Метод управления доступом к службе хранилища Azure, используемый для аутентификации при получении доступа к учетной записи хранения. |
 |[Разработка для хранилища файлов Azure с помощью .NET](../storage/files/storage-files-introduction.md)|Технология безопасности сети, которая обеспечивает автоматическое сетевое шифрование для протокола общего доступа к файлам SMB. |
-|[Аналитика службы хранилища Azure](https://docs.microsoft.com/en-us/rest/api/storageservices/Storage-Analytics)| Технология ведения журнала и создания метрики для данных в учетной записи хранения. |
+|[Аналитика службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/Storage-Analytics)| Технология ведения журнала и создания метрики для данных в учетной записи хранения. |
 
 <!------>
 
@@ -58,8 +58,8 @@ ms.locfileid: "47093432"
 | [Брандмауэр&nbsp;SQL&nbsp;Azure](../sql-database/sql-database-firewall-configure.md)|Функция управления доступом сети, обеспечивающая защиту от сетевых атак базы данных. |
 |[Уровень шифрования&nbsp;ячейки&nbsp;SQL&nbsp;Azure](https://blogs.msdn.microsoft.com/sqlsecurity/2015/05/12/recommendations-for-using-cell-level-encryption-in-azure-sql-database/)| Технология безопасности базы данных, которая обеспечивает шифрование на более детальном уровне.  |
 | [Шифрование подключений&nbsp;SQL&nbsp;Azure](../sql-database/sql-database-control-access.md)|Чтобы обеспечить безопасность, база данных SQL управляет доступом с помощью правил брандмауэра, ограничивающих подключение по IP-адресу, механизмов проверки подлинности, требующих удостоверений пользователей, и методов авторизации, ограничивающих действия и данные для пользователей. |
-| [Постоянное шифрование в Azure SQL](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=sql-server-2017)|Защищает конфиденциальные данные, такие как номера кредитных карт или номера национальной идентификации (например, номера социального страхования США), которые хранятся в базах данных SQL Server и базах данных SQL Azure.  |
-| [Прозрачное шифрование данных&nbsp;SQL&nbsp;Azure](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql?view=azuresqldb-current)| Компонент безопасности базы данных, который шифрует хранилище всей базы данных. |
+| [Постоянное шифрование в Azure SQL](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=sql-server-2017)|Защищает конфиденциальные данные, такие как номера кредитных карт или номера национальной идентификации (например, номера социального страхования США), которые хранятся в базах данных SQL Server и базах данных SQL Azure.  |
+| [Прозрачное шифрование данных&nbsp;SQL&nbsp;Azure](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql?view=azuresqldb-current)| Компонент безопасности базы данных, который шифрует хранилище всей базы данных. |
 | [Аудит баз данных SQL Azure](../sql-database/sql-database-auditing.md)|Возможность аудита базы данных SQL, позволяющая отслеживать события базы данных и записывать их в журнал аудита в учетной записи хранения Azure.  |
 
 

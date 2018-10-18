@@ -10,15 +10,16 @@ ms.component: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ROBOTS: NOINDEX
-ms.openlocfilehash: 6ee61a38615ac8cbf4c4fcf6b8d631c5f9a8f7d1
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0bbc6b638d11335e6d46501fa651996f05957dd5
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46962782"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49341826"
 ---
 # <a name="bing-speech-websocket-protocol"></a>Использование протокола WebSocket для Распознавания речи Bing
+
+[!INCLUDE [Deprecation note](../../../../includes/cognitive-services-bing-speech-api-deprecation-note.md)]
 
 Распознавание речи Bing — это облачная платформа, в которой реализованы самые передовые алгоритмы, доступные для преобразования устной речи в текст. Протокол Распознавания речи Bing определяет [подключение](#connection-establishment) между клиентскими приложениями и службой, а также сообщения распознавания речи, которыми обмениваются участники ([сообщения, инициированные клиентом](#client-originated-messages), и [сообщения, инициированные службой](#service-originated-messages)). Кроме того, описаны [сообщения телеметрии](#telemetry-schema) и [обработка ошибок](#error-handling).
 

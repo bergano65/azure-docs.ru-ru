@@ -1,4 +1,10 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: 0183261a561e139105a93421af06f581b67fb926
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49393596"
 documentType: LandingData
 title: Документация оператора по Azure Stack
 metadata:
@@ -12,14 +18,8 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 04/13/2018
+  ms.date: 10/16/2018
   ms.author: jeffgilb
-  ms.openlocfilehash: 9da39d733c51c637fdf13d1fb9c5649276ea8a23
-  ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/23/2018
-  ms.locfileid: "31786542"
 abstract:
   description: Microsoft Azure Stack ― это гибридная облачная платформа, позволяющая предоставлять службы Azure из центра обработки данных. Сведения о том, как с помощью наших руководств управлять инфраструктурой интегрированных систем Azure Stack и предлагать службы.<br/><br/>Если вы используете службы и создаете приложения для Azure Stack, ознакомьтесь с нашей <a href="/azure/azure-stack/user">пользовательской документацией</a>.<br/><br/>Если вы — оператор Azure Stack и хотите использовать Пакет средств разработки Azure Stack (ASDK), развертывание Azure Stack с использованием одного узла, см. <a href="/azure/azure-stack/asdk">документацию по скачиванию и бесплатному использованию ASDK</a>.
 sections:
@@ -43,6 +43,8 @@ sections:
     items:
     - html: <a href="/azure/azure-stack/azure-stack-tutorial-tenant-vm">Make virtual machines available to your Azure Stack users</a> (Создание предложения по виртуальным машинам для пользователей Azure Stack)
     - html: <a href="/azure/azure-stack/azure-stack-tutorial-sql-server">Make SQL databases available to your Azure Stack users</a> (Создание предложения по базам данных SQL для пользователей Azure Stack)
+    - html: <a href="/azure/azure-stack/azure-stack-tutorial-sql">Создание высокодоступных баз данных SQL</a>
+    - html: <a href="/azure/azure-stack/azure-stack-tutorial-mysql">Создание высокодоступных баз данных MySQL</a>
     - html: <a href="/azure/azure-stack/azure-stack-tutorial-app-service">Make web, mobile, and API apps available to your Azure Stack users</a> (Создание предложения по веб-приложениям, мобильным приложениям и приложениям API для пользователей Azure Stack)
 - title: Бесплатные видеоуроки PluralSight
   items:

@@ -10,15 +10,16 @@ ms.component: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ROBOTS: NOINDEX
-ms.openlocfilehash: e9d1bf1a6a2383a58a890ce9add816f9e9060273
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 2682236ae9f9256b91d1259248e72139c907c8e5
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46948151"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49345022"
 ---
 # <a name="get-started-with-bing-speech-service-client-libraries"></a>Знакомство с клиентскими библиотеками для службы "Распознавание речи Bing"
+
+[!INCLUDE [Deprecation note](../../../../includes/cognitive-services-bing-speech-api-deprecation-note.md)]
 
 Помимо перенаправления HTTP-запросов через REST API, служба "Распознавание речи Bing" предоставляет разработчикам клиентские библиотеки для работы с речью на разных языках. Клиентские библиотеки для работы с речью:
 
@@ -33,9 +34,6 @@ ms.locfileid: "46948151"
 - [Библиотека для JavaScript](GetStartedJSWebsockets.md)
 - [Библиотека Java для Android](GetStartedJavaAndroid.md)
 - [Библиотека Objective-C для iOS](Get-Started-ObjectiveC-iOS.md)
-
-> [!NOTE] 
-В мае 2018 года мы также выпустили новую [Службу распознавания речи](../../speech-service/index.yml) в общедоступной предварительной версии. Мы приглашаем [опробовать ее бесплатно](../../speech-service/get-started.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -11,15 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/20/2018
+ms.date: 10/11/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: d06ad47dc2962b249b4e7aef5667492e642be35e
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.openlocfilehash: 19206163a07964b564300bbed1fed45973c8fc74
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48830129"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49311071"
 ---
 # <a name="azure-stack-registration"></a>Регистрация Azure Stack
 Вы можете зарегистрировать устанавливаемый Пакет средств разработки Azure Stack (ASDK) в Azure, чтобы скачивать элементы Marketplace из Azure и настраивать передачу коммерческих данных в корпорацию Майкрософт. Регистрация требуется для поддержки полной функциональности Azure Stack, включая синдикацию marketplace. Рекомендуем использовать регистрацию, так как она позволяет протестировать важные функции Azure Stack, например синдикацию Marketplace и отчеты о потреблении. После регистрации Azure Stack данные о потреблении передаются в коммерческий отдел Azure. Вы сможете увидеть их в той подписке, которую использовали для регистрации. Но с пользователей ASDK не взимается плата на основе отчетов о потреблении.
@@ -62,13 +62,13 @@ $ExecutionContext.SessionState.LanguageMode
     $AzureContext = Get-AzureRmContext
     $CloudAdminCred = Get-Credential -UserName AZURESTACK\CloudAdmin -Message "Enter the credentials to access the privileged endpoint."
     $RegistrationName = "<unique-registration-name>"
-    $UsageReporting = True # Set to False if you using a Capacity Billing Model
+    $UsageReporting = $true # Set to $false if using the Capacity Billing model
     Set-AzsRegistration `
-        -PrivilegedEndpointCredential $CloudAdminCred `
-        -PrivilegedEndpoint AzS-ERCS01 `
-        -BillingModel Development `
-        -RegistrationName $RegistrationName `
-        -EnableUsageReporting $UsageReporting
+    -PrivilegedEndpointCredential $CloudAdminCred `
+    -PrivilegedEndpoint AzS-ERCS01 `
+    -BillingModel Development `
+    -RegistrationName $RegistrationName `
+    -UsageReportingEnabled:$UsageReporting
     ```
 3. После выполнения сценария должно отобразиться сообщение **Your environment is now registered and activated using the provided parameters** (Ваша среда зарегистрирована и активирована с помощью предоставленных параметров).
 

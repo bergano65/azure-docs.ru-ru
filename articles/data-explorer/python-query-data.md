@@ -2,18 +2,18 @@
 title: Краткое руководство. Запрос данных с помощью библиотеки Python в обозревателе данных Azure
 description: В этом кратком руководстве вы узнаете, как запрашивать данные из обозревателя данных Azure с помощью библиотеки Python.
 services: data-explorer
-author: mgblythe
-ms.author: mblythe
+author: orspod
+ms.author: v-orspod
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.openlocfilehash: fee982812456548ed6d1e15d86151df88532389f
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 17504cec6ddf98aca8ddfc6c91d21d34055902f6
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46956104"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49394862"
 ---
 # <a name="quickstart-query-data-using-the-azure-data-explorer-python-library"></a>Краткое руководство. Запрос данных с помощью библиотеки Python в обозревателе данных Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "46956104"
 Установите библиотеку *azure-kusto-data*.
 
 ```python
-pip install azure-kusto-data
+pip install azure-kusto-data==0.0.13
 ```
 
 ## <a name="add-import-statements-and-constants"></a>Добавление операторов и констант импорта
@@ -42,6 +42,7 @@ pip install azure-kusto-data
 ```python
 from azure.kusto.data.request import KustoClient, KustoConnectionStringBuilder
 from azure.kusto.data.exceptions import KustoServiceError
+from azure.kusto.data.helpers import dataframe_from_result_table
 import pandas as pd
 ```
 
@@ -51,10 +52,10 @@ import pandas as pd
 https://login.windows.net/<YourDomain>/.well-known/openid-configuration/
 ```
 
-Например, если ваш домен называется *contoso.com*, URL-адрес будет следующим: [https://login.windows.net/contoso.com/.well-known/openid-configuration/](https://login.windows.net/contoso.com/.well-known/openid-configuration/). Щелкните этот URL-адрес, чтобы просмотреть результаты. Первая строка выглядит следующим образом: 
+Например, если ваш домен называется *contoso.com*, URL-адрес будет следующим: [https://login.windows.net/contoso.com/.well-known/openid-configuration/](https://login.windows.net/contoso.com/.well-known/openid-configuration/). Щелкните этот URL-адрес, чтобы просмотреть результаты. Первая строка выглядит следующим образом:
 
 ```
-`"authorization_endpoint":"https://login.windows.net/6babcaad-604b-40ac-a9d7-9fd97c0b779f/oauth2/authorize"`
+"authorization_endpoint":"https://login.windows.net/6babcaad-604b-40ac-a9d7-9fd97c0b779f/oauth2/authorize"
 ```
 
 В данном случае идентификатор клиента — `6babcaad-604b-40ac-a9d7-9fd97c0b779f`. Перед выполнением этого кода задайте значение для AAD_TENANT_ID.
@@ -80,7 +81,7 @@ KCSB.authority_id = AAD_TENANT_ID
 KUSTO_CLIENT  = KustoClient(KCSB)
 KUSTO_QUERY  = "StormEvents | sort by StartTime desc | take 10"
 
-df = KUSTO_CLIENT.execute_query(KUSTO_DATABASE, KUSTO_QUERY).primary_results[0].to_dataframe()
+RESPONSE = KUSTO_CLIENT.execute(KUSTO_DATABASE, KUSTO_QUERY)
 ```
 
 ## <a name="explore-data-in-dataframe"></a>Изучение данных в кадре данных
@@ -88,6 +89,7 @@ df = KUSTO_CLIENT.execute_query(KUSTO_DATABASE, KUSTO_QUERY).primary_results[0].
 После входа запрос возвращает результаты, которые сохраняются в кадре данных. С результатами можно работать так же, как с любыми кадрами данных.
 
 ```python
+df = dataframe_from_result_table(RESPONSE.primary_results[0])
 df
 ```
 

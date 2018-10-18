@@ -1,24 +1,25 @@
 ---
-title: Получение ключей подписки — Пользовательская служба распознавания речи
-titlesuffix: Azure Cognitive Services
-description: Сведения о том, как получить ключи подписки для вызовов Пользовательской службы распознавания речи.
+title: Получение ключей подписки для Пользовательской службы распознавания речи в Azure | Документация Майкрософт
+description: Узнайте, как для получить ключи подписки для вызовов к Пользовательской службе распознавания речи в Cognitive Services.
 services: cognitive-services
 author: PanosPeriorellis
-manager: cgronlun
+manager: onano
 ms.service: cognitive-services
 ms.component: custom-speech
-ms.topic: conceptual
+ms.topic: article
 ms.date: 02/08/2017
 ms.author: panosper
-ROBOTS: NOINDEX
-ms.openlocfilehash: e4694928baf98bdb0d6aacead8dffec6bb73d6f7
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 84ef657af2cc3dc4a7168a815b5e51d6f4f33fd7
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47224778"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49338375"
 ---
 # <a name="obtain-subscription-keys"></a>Получение ключей подписки
+
+[!INCLUDE [Deprecation note](../../../../includes/cognitive-services-custom-speech-deprecation-note.md)]
+
 Чтобы приступить к работе с Пользовательской службой распознавания речи Azure, необходимо сначала связать свою учетную запись с подпиской Azure. Доступны подписки для бесплатных и платных уровней. Сведения об уровнях можно узнать на [странице цен](https://www.microsoft.com/cognitive-services/en-us/pricing).
 
 ## <a name="get-a-subscription-key"></a>Получение ключа подписки

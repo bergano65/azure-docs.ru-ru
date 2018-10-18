@@ -1,27 +1,20 @@
 ---
 title: Преобразование данных с помощью Azure Data Box Edge | Документация Майкрософт
 description: Узнайте, как настроить роль вычислений в Data Box Edge и использовать ее для преобразования данных перед отправкой в Azure.
-services: databox-edge-gateway
-documentationcenter: NA
+services: databox
 author: alkohli
-manager: twooley
-editor: ''
-ms.assetid: ''
-ms.service: databox-edge-gateway
-ms.devlang: NA
+ms.service: databox
+ms.subservice: edge
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 10/08/2018
 ms.author: alkohli
-ms.custom: ''
 Customer intent: As an IT admin, I need to understand how to configure compute on Data Box Edge so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: fd04c906f57a9378879ef6357e2724695533d370
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.openlocfilehash: 4729e08399132243543c6f4e1cadd537d185e9e3
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48833107"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49166259"
 ---
 # <a name="tutorial-transform-data-with-azure-data-box-edge-preview"></a>Руководство по преобразованию данных с помощью Azure Data Box Edge (предварительная версия)
 
@@ -32,7 +25,7 @@ ms.locfileid: "48833107"
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создание ресурса центра Интернета вещей.
+> * Создание ресурса центра Интернета вещей
 > * Настройка роли вычислений.
 > * Добавление модуля вычислений.
 > * Проверка преобразования и передачи данных.
@@ -76,7 +69,7 @@ ms.locfileid: "48833107"
  
 2. В раскрывающемся списке выберите **ресурс центра Интернета вещей**, который вы создали на предыдущем шаге. На данный момент доступна только платформа Linux для устройства IoT Edge. Нажмите кнопку **Создать**.
 
-    ![Настройка роли вычислений](./media/data-box-edge-deploy-configure-compute/setup-compute-3.png)
+    ![Настройка роли вычислений.](./media/data-box-edge-deploy-configure-compute/setup-compute-3.png)
  
 3. Для создания роли вычислений требуется несколько минут. Из-за ошибки в этом выпуске даже при создании роли вычислений экран не обновляется. Перейдите в раздел **Модули**, и вы увидите, что пограничные вычисления настроены.  
 

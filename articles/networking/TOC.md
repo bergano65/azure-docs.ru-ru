@@ -17,7 +17,7 @@
 ##  Основные понятия
 ### [Виртуальные сети](../virtual-network/virtual-networks-overview.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [Балансировка сетевой нагрузки](../load-balancer/load-balancer-overview.md?toc=%2fazure%2fnetworking%2ftoc.json)
-### [Балансировка нагрузки приложений](../application-gateway/application-gateway-introduction.md?toc=%2fazure%2fnetworking%2ftoc.json)
+### [Балансировка нагрузки приложений](../application-gateway/overview.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [DNS](../dns/dns-overview.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [Распределение трафика на основе DNS](../traffic-manager/traffic-manager-overview.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [VPN-подключение к локальной среде](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fnetworking%2ftoc.json)
@@ -49,7 +49,7 @@
 ### [Просмотр топологии сети](../network-watcher/network-watcher-topology-powershell.md?toc=%2fazure%2fnetworking%2ftoc.json)
 
 ## Примеры сценариев
-### [интерфейс командной строки Azure](cli-samples.md)
+### [Интерфейс командной строки Azure](cli-samples.md)
 ### [Azure PowerShell](powershell-samples.md)
 
 ## Учебники
@@ -57,7 +57,7 @@
 ### [Подключение компьютера к виртуальной сети](../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md?toc=%2fazure%2fnetworking%2ftoc.json)
 
 # Справочные материалы
-## [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/network)
+## [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/network)
 ## [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.network/?view=azurermps-3.8.0)
 ## [.Net](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.network?view=azuremgmtnetwork-9.1.0-preview)
 ## [Node.js](https://azure.microsoft.com/develop/nodejs/#azure-sdk)

@@ -2,25 +2,18 @@
 title: Часто задаваемые вопросы по диску Microsoft Azure Data Box | Документация Майкрософт
 description: Здесь содержатся ответы на наиболее часто задаваемые вопросы о диске Azure Data Box, облачном решении, которое позволяет передавать большие объемы данных в Azure
 services: databox
-documentationcenter: NA
 author: alkohli
-manager: twooley
-editor: ''
-ms.assetid: ''
 ms.service: databox
-ms.devlang: NA
+ms.subservice: disk
 ms.topic: overview
-ms.custom: mvc
-ms.tgt_pltfrm: NA
-ms.workload: TBD
 ms.date: 09/28/2018
 ms.author: alkohli
-ms.openlocfilehash: 611dcb2cb904b5d3ee6ce0f571c2d04cfd7e7c35
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 8acb808e4b60926fbe6b3faa3fa6a7174a190884
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47451756"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49094247"
 ---
 # <a name="what-is-azure-data-box-disk-preview"></a>Что такое диск Azure Data Box (предварительная версия)
 

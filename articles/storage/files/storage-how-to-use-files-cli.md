@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 03/26/2018
 ms.author: wgries
 ms.component: files
-ms.openlocfilehash: 07d1d1f7050437306d5c2737b9f62b5615753869
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: de48789c42ccd2d7e090af6f430f323b16416e9c
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46980429"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49389791"
 ---
 # <a name="manage-azure-file-shares-using-azure-cli"></a>Управление файловыми ресурсами Azure с помощью Azure CLI
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Файловые ресурсы Azure можно подключить в Windows, Linux и macOS. В статье рассматриваются основы работы с файловыми ресурсами Azure с помощью Azure CLI. Вы узнаете, как выполнять следующие задачи: 
@@ -180,7 +180,7 @@ az storage file list \
 Еще одна полезная задача, которую можно выполнить с файловым ресурсом Azure, — создать его моментальные снимки. Моментальный снимок сохраняет состояние общего файлового ресурса Azure на момент определенной точки во времени. Моментальные снимки файловых ресурсов аналогичны тем, которые создаются с помощью уже знакомых вам технологий, например:
 - [диспетчер логических томов (LVM)](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)#Basic_functionality) для систем Linux;
 - [файловая система Apple (APFS)](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/APFS_Guide/Features/Features.html) для macOS;
-- [служба теневого копирования томов (VSS)](https://docs.microsoft.com/en-us/windows/desktop/VSS/volume-shadow-copy-service-portal) для файловых систем Windows, таких как NTFS и ReFS.
+- [служба теневого копирования томов (VSS)](https://docs.microsoft.com/windows/desktop/VSS/volume-shadow-copy-service-portal) для файловых систем Windows, таких как NTFS и ReFS.
 
 Вы можете создать моментальный снимок общих ресурсов с помощью команды [`az storage share snapshot`](/cli/azure/storage/share#az_storage_share_snapshot).
 

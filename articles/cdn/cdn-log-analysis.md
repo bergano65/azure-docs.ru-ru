@@ -3,8 +3,8 @@ title: Анализ вариантов использования Azure CDN | Д
 description: В этой статье описываются разные типы аналитических отчетов, доступные для продуктов Azure CDN.
 services: cdn
 documentationcenter: ''
-author: dksimpson
-manager: akucer
+author: mdgattuso
+manager: danielgi
 editor: ''
 ms.assetid: 95e18b3c-b987-46c2-baa8-a27a029e3076
 ms.service: cdn
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/05/2017
-ms.author: rli; v-deasim
-ms.openlocfilehash: 61fbe6e29df787048a9694138d3c9095f5cba76b
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.author: magattus
+ms.openlocfilehash: 45b3698dd77bda815218b43405d64819c3e4789f
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33764899"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49091272"
 ---
 # <a name="analyze-azure-cdn-usage-patterns"></a>Анализ вариантов использования CDN Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "33764899"
 
 ## <a name="core-analytics-via-azure-diagnostic-logs"></a>Базовая аналитика с использованием журналов диагностики Azure
 
-Эта функция доступна на конечных точках CDN всех ценовых категорий. Журналы диагностики Azure разрешают экспортировать базовую аналитику в хранилище Azure, концентраторы событий или службу Azure Log Analytics. Azure Log Analytics предлагает решение с настраиваемыми графами. См. дополнительные сведения о [журналах диагностики Azure](cdn-azure-diagnostic-logs.md).
+Эта функция доступна на конечных точках CDN всех ценовых категорий. Журналы диагностики Azure разрешают экспортировать базовую аналитику в хранилище Azure, Центры событий или службу Azure Log Analytics. Azure Log Analytics предлагает решение с настраиваемыми графами. См. дополнительные сведения о [журналах диагностики Azure](cdn-azure-diagnostic-logs.md).
 
 ## <a name="verizon-core-reports"></a>С помощью базовых отчетов Verizon
 

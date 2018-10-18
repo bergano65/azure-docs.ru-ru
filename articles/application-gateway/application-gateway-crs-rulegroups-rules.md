@@ -12,12 +12,12 @@ ms.custom: ''
 ms.workload: infrastructure-services
 ms.date: 4/16/2018
 ms.author: victorh
-ms.openlocfilehash: 5ba291eaa93a48e3aadc11b1f0f7b48b01683b07
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: 15a86410e8ca853c2ca2431cb9a62de628972703
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31515532"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49320107"
 ---
 # <a name="list-of-web-application-firewall-crs-rule-groups-and-rules-offered"></a>Список групп правил и правил CRS брандмауэра веб-приложения
 
@@ -292,7 +292,7 @@ ms.locfileid: "31515532"
 |943017|Правило 943017|
 |943018|Правило 943018|
 
-##<a name="owasp229"></a> OWASP_2.2.9
+## <a name="owasp229"></a> OWASP_2.2.9
 
 ### <a name="crs20"></a> crs_20_protocol_violations
 

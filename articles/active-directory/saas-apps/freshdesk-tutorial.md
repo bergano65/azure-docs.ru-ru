@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 09/17/2018
 ms.author: jeedes
 ms.reviewer: jeedes
-ms.openlocfilehash: ce302db74f831e67b576e4c0001f21473fd7f2e0
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 3f640d729d002e89c4968442e8d8ab761f78d090
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47037530"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49115170"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-freshdesk"></a>Руководство по интеграции Azure Active Directory с FreshDesk
 
@@ -47,7 +47,7 @@ ms.locfileid: "47037530"
 При проверке действий в этом учебнике соблюдайте следующие рекомендации:
 
 - Не следует использовать рабочую среду при отсутствии необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Описание сценария
 

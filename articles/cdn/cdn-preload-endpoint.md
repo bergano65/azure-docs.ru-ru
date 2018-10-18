@@ -3,8 +3,8 @@ title: Предварительная загрузка ресурсов на к�
 description: Узнайте, как предварительно загружать кэшированное содержимое в конечной точке Azure CDN.
 services: cdn
 documentationcenter: ''
-author: dksimpson
-manager: akucer
+author: mdgattuso
+manager: danielgi
 editor: ''
 ms.assetid: 5ea3eba5-1335-413e-9af3-3918ce608a83
 ms.service: cdn
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2018
-ms.author: mazha
-ms.openlocfilehash: bf3161d756759e4b278e48ad7a49615e4a73d17f
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.author: magattus
+ms.openlocfilehash: d2dc8ad1e4b7e429dc758a96e49aa4825ae108e5
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32150140"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49091323"
 ---
 # <a name="pre-load-assets-on-an-azure-cdn-endpoint"></a>Предварительная загрузка ресурсов на конечной точке CDN Azure
 [!INCLUDE [cdn-verizon-only](../../includes/cdn-verizon-only.md)]

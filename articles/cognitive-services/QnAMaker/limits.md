@@ -10,12 +10,12 @@ ms.component: qna-maker
 ms.topic: article
 ms.date: 09/12/2018
 ms.author: tulasim
-ms.openlocfilehash: efdcf57fb0f175be51e6b9f8e72e4a02fcbeb5f3
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 76024266a8ae3eb03e910e140184a07ae363e881
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47162327"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49384964"
 ---
 # <a name="qna-maker-limits"></a>Ограничения QnA Maker
 Полный список ограничений в QnA Maker.
@@ -29,7 +29,7 @@ ms.locfileid: "47162327"
 |Максимальное разрешенное число опубликованных баз знаний (макс. индексы — 1 (зарезервировано для тестирования)|2|14|49|199|199|2999|
 
 ## <a name="extraction-limits"></a>Ограничения на извлечение
-* Сведения о максимальном числе файлов, которые можно извлечь, и максимальном размере файла см. в разделе, посвященном [расценкам на QnA Maker](https://azure.microsoft.com/en-in/pricing/details/cognitive-services/qna-maker/).
+* Сведения о максимальном числе файлов, которые можно извлечь, и максимальном размере файла см. в разделе, посвященном [расценкам на QnA Maker](https://azure.microsoft.com/pricing/details/cognitive-services/qna-maker/).
 * Максимальное число прямых ссылок, обход которых можно выполнить для извлечения вопросов и ответов из HTML-страниц часто задаваемых вопросов: 20
 
 ## <a name="metadata-limits"></a>Ограничения на метаданные
@@ -49,7 +49,7 @@ ms.locfileid: "47162327"
 * Длина имени файла: 200
 * Поддерживаемые форматы файлов: TSV, PDF, TXT, DOCX, XLSX.
 * Максимальное число альтернативных вопросов: 100
-* Максимальное число пар "вопрос-ответ": зависит от выбранной [категории службы поиска Azure](https://docs.microsoft.com/en-in/azure/search/search-limits-quotas-capacity#document-limits) 
+* Максимальное число пар "вопрос-ответ": зависит от выбранной [категории службы поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity#document-limits) 
 
 ## <a name="create-knowledge-base-call-limits"></a>Ограничения на вызовы создания базы знаний
 Эти значения представляют ограничения для каждого действия создания базы знаний, то есть нажатия кнопки *Создать базу знаний* или вызова API CreateKnowledgeBase.

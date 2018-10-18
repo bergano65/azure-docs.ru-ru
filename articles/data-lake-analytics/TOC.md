@@ -4,7 +4,7 @@
 ## [Что такое Data Lake Analytics?](data-lake-analytics-overview.md)
 
 # Начало работы
-## [портала Azure](data-lake-analytics-get-started-portal.md)
+## [портал Azure](data-lake-analytics-get-started-portal.md)
 ## [Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
 ## [Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md)
 ## [Azure PowerShell](data-lake-analytics-get-started-powershell.md)
@@ -13,7 +13,7 @@
 # Практическое руководство
 
 ## Управление службой Data Lake Analytics
-### [портала Azure](data-lake-analytics-manage-use-portal.md)
+### [портал Azure](data-lake-analytics-manage-use-portal.md)
 ### Команда
 #### [Интерфейс командной строки Azure](data-lake-analytics-manage-use-cli.md)
 #### [Azure PowerShell](data-lake-analytics-manage-use-powershell.md)
@@ -71,7 +71,7 @@
 ## [Azure PowerShell](/powershell/module/azurerm.datalakeanalytics)
 ## [.NET](/dotnet/api/microsoft.azure.management.datalake.analytics)
 ## [Node.js](https://www.npmjs.com/package/azure-arm-datalake-analytics)
-## [Python](https://docs.microsoft.com/en-us/python/api/overview/azure/data-lake-analytics?view=azure-python)
+## [Python](https://docs.microsoft.com/python/api/overview/azure/data-lake-analytics?view=azure-python)
 ## [REST](/rest/api/datalakeanalytics/)
 ## [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](https://docs.microsoft.com/cli/azure/dla)
 

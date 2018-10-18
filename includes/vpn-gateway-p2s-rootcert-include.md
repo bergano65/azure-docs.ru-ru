@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/06/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: afee9450bc1485f781eb0d70b5d4dd2f50424573
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 5ceb2d737083e2a218fc624c4e1a2f6d8fd0db1d
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44343198"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49312618"
 ---
 Можно либо использовать корневой сертификат, созданный с помощью корпоративного решения (рекомендуется), либо создать самозаверяющий сертификат. После создания корневого сертификата данные общедоступного сертификата (а не закрытый ключ) следует экспортировать в виде CER-файла X.509 в кодировке Base-64 и передать в Azure.
 
@@ -22,4 +22,4 @@ ms.locfileid: "44343198"
 
   * [Создание и экспорт сертификатов для подключений типа "точка — сеть" с помощью PowerShell в Windows 10.](../articles/vpn-gateway/vpn-gateway-certificates-point-to-site.md) Для создания сертификатов с помощью этих инструкций требуется Windows 10 и PowerShell. Сертификаты клиентов, которые создаются из корневого сертификата, можно установить на любом поддерживаемом клиенте P2S.
   * [Создание и экспорт сертификатов для подключений типа "точка — сеть" с помощью MakeCert](../articles/vpn-gateway/vpn-gateway-certificates-point-to-site-makecert.md). Если у вас нет компьютера с Windows 10, создайте сертификаты с помощью MakeCert. Это нерекомендуемое средство, но его все же можно использовать создания сертификатов. Сертификаты клиентов, которые создаются из корневого сертификата, можно установить на любом поддерживаемом клиенте P2S.
-  * [Инструкции для Linux](../articles/vpn-gateway/vpn-gateway-certificates-point-to-site-makecert.md)
+  * [Инструкции для Linux](../articles/vpn-gateway/vpn-gateway-certificates-point-to-site-linux.md)

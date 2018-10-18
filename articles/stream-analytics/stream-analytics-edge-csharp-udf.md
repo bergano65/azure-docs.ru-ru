@@ -9,12 +9,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: tutorial
 ms.date: 09/24/2018
-ms.openlocfilehash: cad5ec059c88290b94919c58ff6bd1071a2b8fdf
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: d593930705c7455d03e20af2affd2de3c418d4a5
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46972114"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49389074"
 ---
 # <a name="tutorial-write-a-c-user-defined-function-for-an-azure-stream-analytics-edge-job-in-visual-studio-preview"></a>Руководство. Написание пользовательской функции C# для задания Edge в Azure Stream Analytics с помощью Visual Studio (предварительная версия)
 
@@ -37,7 +37,7 @@ ms.locfileid: "46972114"
 
 ## <a name="create-a-container-in-your-azure-storage-account"></a>Создание контейнера в учетной записи хранения
 
-Созданный вами контейнер будет использоваться для хранения скомпилированного пакета C# и развертывания этого пакета на устройстве IoT Edge. Для каждого задания Stream Analytics используйте отдельный контейнер. Использование одного и того же контейнера для разных заданий Edge в Stream Analytics не поддерживается. Если у вас уже есть учетная запись хранения с существующими контейнерами, вы можете их использовать. Если нет, [создайте новый контейнер](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal). 
+Созданный вами контейнер будет использоваться для хранения скомпилированного пакета C# и развертывания этого пакета на устройстве IoT Edge. Для каждого задания Stream Analytics используйте отдельный контейнер. Использование одного и того же контейнера для разных заданий Edge в Stream Analytics не поддерживается. Если у вас уже есть учетная запись хранения с существующими контейнерами, вы можете их использовать. Если нет, [создайте новый контейнер](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal). 
 
 ## <a name="create-a-stream-analytics-edge-project-in-visual-studio"></a>Создание проекта Edge в Stream Analytics с помощью Visual Studio
 
@@ -146,7 +146,7 @@ ms.locfileid: "46972114"
 ![Отправка задания Edge в Stream Analytics из Visual Studio в Azure](./media/stream-analytics-edge-csharp-udf/stream-analytics-udf-submit-job.png)
 
 ## <a name="deploy-to-iot-edge-devices"></a>Развертывание на устройствах IoT Edge
-Теперь задание Stream Analytics готово к развертыванию в качестве модуля IoT Edge. Согласно [краткому руководству по IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/quickstart) создайте центр IoT, зарегистрируйте устройство IoT Edge, а затем установите и запустите среду выполнения IoT Edge на своем устройстве. Далее в соответствии с руководством по [развертыванию заданий](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-stream-analytics#deploy-the-job) разверните задание Stream Analytics как модуль IoT Edge. 
+Теперь задание Stream Analytics готово к развертыванию в качестве модуля IoT Edge. Согласно [краткому руководству по IoT Edge](https://docs.microsoft.com/azure/iot-edge/quickstart) создайте центр IoT, зарегистрируйте устройство IoT Edge, а затем установите и запустите среду выполнения IoT Edge на своем устройстве. Далее в соответствии с руководством по [развертыванию заданий](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics#deploy-the-job) разверните задание Stream Analytics как модуль IoT Edge. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

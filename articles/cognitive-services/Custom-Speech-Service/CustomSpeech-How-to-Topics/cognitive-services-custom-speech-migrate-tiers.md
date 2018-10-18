@@ -1,24 +1,25 @@
 ---
-title: Изменение ценовых уровней для конечных точек — Пользовательская служба распознавания речи
-titlesuffix: Azure Cognitive Services
-description: Сведения о миграции развертываний с уровней S0 и S1 на уровень S2 для конечных точек Пользовательской службы распознавания речи в Cognitive Services.
+title: Перенос конечных точек Пользовательской службы распознавания речи в Azure на новые ценовые категории | Документация Майкрософт
+description: Сведения о миграции с уровней S0 и S1 на уровень S2 для развернутых конечных точек Пользовательской службы распознавания речи в Cognitive Services.
 services: cognitive-services
 author: PanosPeriorellis
-manager: cgronlun
+manager: onano
 ms.service: cognitive-services
 ms.component: custom-speech
-ms.topic: conceptual
+ms.topic: article
 ms.date: 07/05/2017
 ms.author: panosper
-ROBOTS: NOINDEX
-ms.openlocfilehash: 560aa0a7b9748f75cdde99691db7f33e2fc10221
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: a9bdb257137db0063d39f028a69e2164eccbdc31
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47224857"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49340466"
 ---
 # <a name="migrate-deployments-to-the-new-pricing-model"></a>Перенос развертываний на новую модель ценообразования
+
+[!INCLUDE [Deprecation note](../../../../includes/cognitive-services-custom-speech-deprecation-note.md)]
+
 Начиная с июля 2017 г. для Пользовательской службы распознавания речи предлагается [новая модель ценообразования](https://azure.microsoft.com/pricing/details/cognitive-services/custom-speech-service/). Новая модель *более понятна*, *упрощает расчет затрат* и *дает больше гибкости* с точки зрения масштабирования. Для масштабирования корпорация Майкрософт ввела новую концепцию единиц масштабирования. Каждая единица масштабирования может обрабатывать пять параллельных запросов. В старой модели для параллельных запросов предлагались лишь фиксированные варианты — 5 одновременных запросов для уровня S0 или 12 одновременных запросов для уровня S1. Мы сняли эти ограничения, предоставляя вам больше гибкости в выборе параметров в соответствии с конкретными требованиями.
 
 Если вы еще используете старый уровень S0 или S1, мы рекомендуем перенести все существующие развертывания на новый уровень S2. На новом уровне S2 реализованы возможности старых уровней S0 и S1. Доступные параметры представлены на следующей схеме:

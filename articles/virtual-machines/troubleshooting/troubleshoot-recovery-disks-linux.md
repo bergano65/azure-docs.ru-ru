@@ -1,12 +1,25 @@
-<a name="-headarticlesvirtual-machinestroubleshootingtroubleshoot-recovery-disks-linuxmd"></a><<<<<<< HEAD:articles/virtual-machines/troubleshooting/troubleshoot-recovery-disks-linux.md
 ---
-
-title: Устранение неполадок на виртуальной машине Linux с помощью Azure CLI | Документация Майкрософт description: Узнайте, как устранять неполадки виртуальных машин Linux, подключив диск ОС к виртуальной машине восстановления с помощью служб Azure CLI: virtual-machines-linux documentationCenter: '' authors: genlin manager: jeconnoc editor: ''
-
-ms.service: virtual-machines-linux ms.devlang: azurecli ms.topic: troubleshooting ms.tgt_pltfrm: vm-linux ms.workload: infrastructure ms.date: 02/16/2017 ms.author: genli
-
+title: Использование виртуальной машины Linux для устранения неполадок с помощью Azure CLI | Документы Майкрософт
+description: Узнайте, как устранять неполадки виртуальных машин Linux, подключив диск операционной системы к виртуальной машине восстановления с помощью Azure CLI
+services: virtual-machines-linux
+documentationCenter: ''
+authors: genlin
+manager: jeconnoc
+editor: ''
+ms.service: virtual-machines-linux
+ms.devlang: azurecli
+ms.topic: troubleshooting
+ms.tgt_pltfrm: vm-linux
+ms.workload: infrastructure
+ms.date: 02/16/2017
+ms.author: genli
+ms.openlocfilehash: 2f10a231c4edc3e01d3f8c5f7f4db1854f83044d
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49392408"
 ---
-
 # <a name="troubleshoot-a-linux-vm-by-attaching-the-os-disk-to-a-recovery-vm-with-the-azure-cli"></a>Устранение неполадок виртуальной машины Linux путем подключения диска ОС к виртуальной машине восстановления с помощью Azure CLI
 Если возникает проблема с загрузкой или диском на виртуальной машине Linux, возможно, вам нужно устранить неполадки, связанные с самим виртуальным жестким диском. Например, такая ситуация возникает из-за неправильной записи в `/etc/fstab`, которая мешает успешно загрузить виртуальную машину. В этой статье подробно описано, как с помощью Azure CLI подключить виртуальный жесткий диск к другой виртуальной машине Linux для устранения ошибок, а затем восстановить исходную виртуальную машину. 
 

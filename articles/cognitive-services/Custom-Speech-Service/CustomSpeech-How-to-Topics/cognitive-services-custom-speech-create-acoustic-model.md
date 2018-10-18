@@ -1,24 +1,24 @@
 ---
-title: 'Руководство: создание акустической модели — Пользовательская служба распознавания речи'
-titlesuffix: Azure Cognitive Services
-description: Из этого руководства вы узнаете, как создать акустическую модель с помощью Пользовательской службы распознавания речи.
+title: Руководство по созданию акустической модели с помощью Пользовательской службы распознавания речи в Microsoft Cognitive Services | Документация Майкрософт
+description: Из этого руководства вы узнаете, как создать акустическую модель с помощью Пользовательской службы распознавания речи в Microsoft Cognitive Services.
 services: cognitive-services
 author: PanosPeriorellis
-manager: cgronlun
+manager: onano
 ms.service: cognitive-services
 ms.component: custom-speech
 ms.topic: tutorial
 ms.date: 05/03/2017
 ms.author: panosper
-ROBOTS: NOINDEX
-ms.openlocfilehash: 72c5a0dfb8f33f273ba850378c1fefeef82b4d7a
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 53e93a08782ba66e69b903c32c4c3c7417e5a801
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47220237"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49344580"
 ---
 # <a name="tutorial-create-a-custom-acoustic-model"></a>Учебник. Создание пользовательской акустической модели
+
+[!INCLUDE [Deprecation note](../../../../includes/cognitive-services-custom-speech-deprecation-note.md)]
 
 В рамках этого руководства вы создадите пользовательскую акустическую модель для данных речи, которые приложение должно распознать. Пользовательская акустическая модель полезна в тех случаях, когда ваше приложение разработано для особых условий применения, например на шумном производстве, или предназначено для определенной категории пользователей.
 
@@ -140,4 +140,4 @@ ms.locfileid: "47220237"
 В рамках этого руководства вы разработали пользовательскую акустическую модель для использования с звуковыми файлами и расшифровками. Чтобы создать пользовательский языковой файл для использования с текстовыми файлами, перейдите к руководству по созданию пользовательской языковой модели.
 
 > [!div class="nextstepaction"]
-> [Руководство по созданию пользовательской акустической модели](cognitive-services-custom-speech-create-language-model.md)
+> [Создание пользовательской языковой модели](cognitive-services-custom-speech-create-language-model.md)

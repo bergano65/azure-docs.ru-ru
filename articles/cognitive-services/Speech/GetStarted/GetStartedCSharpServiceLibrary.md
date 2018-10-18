@@ -10,15 +10,16 @@ ms.component: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ROBOTS: NOINDEX
-ms.openlocfilehash: 5716f7a0af16bd3e40dea4468e2fae884f911718
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: e9b3d3207f5aca6cba3555ba2578b5c66b3bd193
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46967563"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49343697"
 ---
 # <a name="quickstart-use-the-bing-speech-recognition-service-library-in-c35-for-net-windows"></a>Краткое руководство. Приступая к работе с библиотекой службы "Распознавание речи Bing" в C&#35; для .NET на платформе Windows
+
+[!INCLUDE [Deprecation note](../../../../includes/cognitive-services-bing-speech-api-deprecation-note.md)]
 
 Библиотека службы предназначена для разработчиков, у которых есть своя облачная служба и которым нужно вызывать из нее службу распознавания речи. Если вам нужно вызывать службу распознавания речи из приложений, связанных с устройством, не используйте этот пакет SDK. (Для этого используйте другие клиентские библиотеки или REST API.)
 

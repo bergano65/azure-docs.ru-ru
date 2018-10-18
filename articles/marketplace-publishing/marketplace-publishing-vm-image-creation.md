@@ -14,12 +14,12 @@ ms.tgt_pltfrm: Azure
 ms.workload: na
 ms.date: 01/05/2017
 ms.author: hascipio; v-divte
-ms.openlocfilehash: 893b0ee70f577d9240d577e76062eea36b704058
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 2a3c317dc9abdb861a007be9aaed714089e9f453
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46989878"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49388200"
 ---
 # <a name="guide-to-create-a-virtual-machine-image-for-the-azure-marketplace"></a>Руководство по созданию образа виртуальной машины для Azure Marketplace
 Эта статья ( **шаг 2**) содержит инструкции по подготовке виртуальных жестких дисков (VHD), развертываемых в Azure Marketplace. Виртуальные жесткие диски являются основой номера SKU. Процесс подготовки будет отличаться в зависимости от типа номера SKU (на основе Linux или Windows). В этой статье рассматриваются оба сценария. Описываемую процедуру можно выполнять параллельно с [созданием учетной записи разработчика Майкрософт][link-acct-creation].
@@ -199,14 +199,14 @@ VHD с операционной системой Windows в образе вир�
 
 * [API](https://msdn.microsoft.com/library/mt163560.aspx)
 * [PowerShell](../virtual-machines/windows/capture-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-* [интерфейс командной строки Azure](../virtual-machines/linux/capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Интерфейс командной строки Azure](../virtual-machines/linux/capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ### <a name="generalize-image"></a>Подготовка образа
 Рекомендации по записи виртуальной машины с помощью API, PowerShell или Azure CLI см. в следующих источниках.
 
 * [API](https://msdn.microsoft.com/library/mt269439.aspx)
 * [PowerShell](../virtual-machines/windows/capture-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-* [интерфейс командной строки Azure](../virtual-machines/linux/capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Интерфейс командной строки Azure](../virtual-machines/linux/capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ### <a name="42-deploy-a-vm-from-a-user-vm-image"></a>4.2 Развертывание виртуальной машины из пользовательского образа VM
 Чтобы развернуть виртуальную машину из пользовательского образа VM, можно использовать текущую версию [портала Azure](https://manage.windowsazure.com) или PowerShell.
@@ -433,7 +433,7 @@ VHD с операционной системой Windows в образе вир�
 
 [!INCLUDE [outdated-cli-content](../../includes/contains-classic-cli-content.md)]
 
-1.  Загрузите классический Azure CLI [здесь](https://azure.microsoft.com/en-in/documentation/articles/xplat-cli-install/). Также можно использовать ссылки для **[Windows](http://aka.ms/webpi-azure-cli)** и **[MAC OS](http://aka.ms/mac-azure-cli)**.
+1.  Загрузите классический Azure CLI [здесь](https://azure.microsoft.com/documentation/articles/xplat-cli-install/). Также можно использовать ссылки для **[Windows](http://aka.ms/webpi-azure-cli)** и **[MAC OS](http://aka.ms/mac-azure-cli)**.
 
 2.  Установите скачанные файлы.
 

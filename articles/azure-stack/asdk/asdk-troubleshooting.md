@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/22/2018
+ms.date: 10/15/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: 6c715f07f75c9196b7cf2cc8659c6e541e1260da
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 999017e24f6c4c24735b7e0cc818bf20aaabab62
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30167906"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49338579"
 ---
 # <a name="microsoft-azure-stack-development-kit-asdk-troubleshooting"></a>Устранение неполадок с Пакетом средств разработки Azure Stack (ASDK)
 В этом документе содержатся общие сведения об устранении неполадок для ASDK. Если возникли проблемы, которые не описаны в этой статье, посетите [форум MSDN Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack) для получения дополнительной помощи и сведений.  

@@ -11,12 +11,12 @@ ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: mmontwil
-ms.openlocfilehash: 3d7244144567b3303d383f0dc29a51af302b3bcf
-ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
+ms.openlocfilehash: 7fcdd2d41f5fe76776acd5642cda11ef8a65f82d
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47585029"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49353764"
 ---
 # <a name="quickstart-create-a-kubernetes-dev-space-with-azure-dev-spaces-java-and-vs-code"></a>Краткое руководство. Создание среды разработки Kubernetes с помощью Azure Dev Spaces (Java и VS Code)
 
@@ -37,8 +37,8 @@ ms.locfileid: "47585029"
 - Кластер Kubernetes, работающий с Kubernetes 1.10.3 или выше, в регионах EastUS, CentralUS, WestUS2, WestEurope, CanadaCentral или CanadaEast, с включенным параметром **Маршрутизация HTTP для приложений**.
 
     ```cmd
-    az group create --name MyResourceGroup --region <region>
-    az aks create -g MyResourceGroup -n myAKS --location <region> --kubernetes-version 1.11.2 --enable-addons http_application_routing
+    az group create --name MyResourceGroup --location <region>
+    az aks create -g MyResourceGroup -n myAKS --location <region> --kubernetes-version 1.11.2 --enable-addons http_application_routing --generate-ssh-keys
     ```
 
 ## <a name="set-up-azure-dev-spaces"></a>Настройка Azure Dev Spaces
@@ -93,7 +93,7 @@ ms.locfileid: "47585029"
 
 ### <a name="select-the-azds-debug-configuration"></a>Выбор конфигурации отладки AZDS
 1. Чтобы открыть представление отладки, щелкните значок "Отладка" на **панели действия** сбоку VS Code.
-1. Выберите **Launch Java Program (AZDS)** (Запустить программу (AZDS)) как активную конфигурацию отладки.
+1. Выберите **Launch Java Program (AZDS)** (Запустить программу на Java (AZDS)) как активную конфигурацию отладки.
 
 ![](media/get-started-java/debug-configuration.png)
 
