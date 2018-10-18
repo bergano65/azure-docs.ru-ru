@@ -7,15 +7,15 @@ manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 07/09/2018
+ms.date: 09/11/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 06a79250bac977fc4ade7853594c5307bb11d983
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 4600ec9d76f682f0dedf8c802d23b32fd6126481
+ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336951"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47181504"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-weibo-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Weibo через Azure Active Directory B2C
 
@@ -45,20 +45,13 @@ ms.locfileid: "43336951"
 6. Выберите **保存以上信息** (Сохранить).
 7. Выберите **高级信息** (Дополнительные сведения).
 8. Выберите **编辑** (Изменить) рядом с полем **授权设置** (URL-адрес перенаправления) для OAuth2.0.
-9. Введите `https://{tenant_name}.b2clogin.com/te/{tenant_name}.onmicrosoft.com/oauth2/authresp` в поле **授权设置** (URL-адрес перенаправления) для OAuth2.0. Например, если `tenant_name` — contoso, задайте URL-адрес `https://contoso.b2clogin.com/te/contoso.onmicrosoft.com/oauth2/authresp`.
+9. Введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` в поле **授权设置** (URL-адрес перенаправления) для OAuth2.0. Например, если имя клиента — contoso, задайте URL-адрес `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp`.
 10. Выберите **提交** (Отправить).  
 
 ## <a name="configure-a-weibo-account-as-an-identity-provider"></a>Настройка учетной записи Weibo в качестве поставщика удостоверений
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
-2. Убедитесь, что используется каталог с вашим клиентом Azure AD B2C, переключившись на него в правом верхнем углу окна портала Azure. Выберите сведения о подписке, а затем выберите **Переключение каталога**. 
-
-    ![Переключение на клиент Azure AD B2C](./media/active-directory-b2c-setup-weibo-app/switch-directories.png)
-
-    Выберите каталог, содержащий ваш клиент.
-
-    ![Выбор каталога](./media/active-directory-b2c-setup-weibo-app/select-directory.png)
-
+2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
 4. Щелкните **Поставщики удостоверений** и выберите **Добавить**.
 5. Укажите **Имя**. Например, введите *Weibo*.

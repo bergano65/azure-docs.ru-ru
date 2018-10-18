@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 7/10/2018
 ms.author: subramar
-ms.openlocfilehash: 5092bf377f6ab213a2db52e01fb7b89ff0c218ce
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: 6ebe83794f23ed3cf637f668d2810b9ba7521084
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39127491"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44295876"
 ---
 # <a name="production-readiness-checklist"></a>Контрольный список готовности рабочей среды
 
@@ -45,7 +45,7 @@ ms.locfileid: "39127491"
 15. Установите целевую точку восстановления (RPO) для службы, а также настройте [процесс аварийного восстановления](service-fabric-disaster-recovery.md) и протестируйте его.
 16. Запланируйте [масштабирование](service-fabric-cluster-scaling.md) кластера вручную или программным способом.
 17. Запланируйте [установку исправлений](service-fabric-patch-orchestration-application.md) на узлах кластера. 
-18. Установите конвейер CI/CD, чтобы последние внесенные изменения постоянно проверялись. Например, можно использовать [VSTS](service-fabric-tutorial-deploy-app-with-cicd-vsts.md) или [Jenkins](service-fabric-cicd-your-linux-applications-with-jenkins.md).
+18. Установите конвейер CI/CD, чтобы последние внесенные изменения постоянно проверялись. Например, можно использовать [Azure DevOps](service-fabric-tutorial-deploy-app-with-cicd-vsts.md) или [Jenkins](service-fabric-cicd-your-linux-applications-with-jenkins.md).
 19. Выполните нагрузочное тестирование кластеров разработки и промежуточных кластеров с помощью [службы анализа сбоев](service-fabric-testability-overview.md) и вызовите управляемый [хаос](service-fabric-controlled-chaos.md). 
 20. Запланируйте [масштабирование](service-fabric-concepts-scalability.md) приложений. 
 

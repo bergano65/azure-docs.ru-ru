@@ -10,8 +10,7 @@
     - [служба автоматизации Azure](#azure-automation), которая может выполнять действия в инфраструктуре Azure и локальной среде.
 
 - Автоматизация развертывания и доставки приложений:
-    - [Visual Studio Team Services](#visual-studio-team-services) и [Jenkins](#jenkins).
-
+    - [Azure DevOps Services](#visual-studio-team-services) и [Jenkins](#jenkins).
 
 ## <a name="ansible"></a>Ansible
 [Ansible](https://www.ansible.com/) — это модуль автоматизации управления конфигурацией, создания виртуальных машин и развертывания приложений. Это средство выполняет проверку подлинности целевых машин и управление ими на основе модели без агентов (обычно с помощью ключей SSH). Задачи конфигурации и количество модулей Ansible для их выполнения определены в сборниках схем. Дополнительные сведения см. в статье [How Ansible works](https://www.ansible.com/how-ansible-works) (Принципы работы Ansible).
@@ -114,12 +113,12 @@
 - [Приступая к работе с DSC службы автоматизации Azure](../articles/automation/automation-dsc-getting-started.md)
 
 
-## <a name="visual-studio-team-services"></a>Visual Studio Team Services
-[Team Services](https://www.visualstudio.com/team-services/) — это набор средств, позволяющих отслеживать код и предоставлять к нему общий доступ, использовать автоматизированные сборки и создавать конвейеры непрерывной интеграции и разработки. Team Services интегрируется с Visual Studio и другими редакторами, что упрощает его использование. Кроме того, этот набор средств позволяет создавать и настраивать виртуальные машины Azure, а затем развертывать их код.
+## <a name="azure-devops-services"></a>Azure DevOps Services
+[Azure DevOps Services](https://www.visualstudio.com/team-services/) — это набор средств, позволяющих отслеживать код и предоставлять к нему общий доступ, использовать автоматизированные сборки и создавать конвейеры непрерывной интеграции и разработки (CI/CD). Azure DevOps Services интегрируется с Visual Studio и другими редакторами, что упрощает его использование. Кроме того, этот набор средств позволяет создавать и настраивать виртуальные машины Azure, а затем развертывать код на них.
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Создание конвейера для непрерывной интеграции с помощью Visual Studio Team Services и IIS](../articles/virtual-machines/windows/tutorial-vsts-iis-cicd.md)
+- [Создание конвейера для непрерывной интеграции с помощью Azure DevOps Services](../articles/virtual-machines/windows/tutorial-vsts-iis-cicd.md).
 
 
 ## <a name="jenkins"></a>Jenkins

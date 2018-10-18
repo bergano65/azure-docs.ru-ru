@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/20/2018
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: 67144407b078a30c521201cbc31c6087c839fa26
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 4aa4809c57eaf26b10053d432f9191580ec143a0
+ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39029989"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44381099"
 ---
 Фабрика данных — это мультитенантная служба со следующими ограничениями по умолчанию, которые гарантируют, что подписки клиентов защищены от рабочих нагрузок друг друга. Многие ограничения для подписки можно легко увеличить до максимального значения, обратившись в службу поддержки.
 
@@ -38,6 +38,8 @@ ms.locfileid: "39029989"
 | Число единиц интеграции данных на одно выполнение действия копирования<sup>3</sup> | 256 | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
 | Количество вызовов API записи | 2500 в час<br/><br/> Это ограничение накладывается Azure Resource Manager, а не фабрикой данных Azure. | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Количество вызовов API чтения | 12 500 в час<br/><br/> Это ограничение накладывается Azure Resource Manager, а не фабрикой данных Azure. | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
+| Мониторинг запросов в минуту | 1000 | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
+| Операции CRUD с сущностями в минуту | 50 | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
 
 
 ### <a name="version-1"></a>версия 1

@@ -1,6 +1,6 @@
 ---
-title: Повторный вход в микрослужбах Azure на основе субъектов | Документация Майкрософт
-description: Общие сведения о повторном входе для надежных субъектов Service Fabric
+title: Повторный вход субъектов Azure Service Fabric | Документация Майкрософт
+description: Общие сведения о повторном входе Reliable Actors Service Fabric.
 services: service-fabric
 documentationcenter: .net
 author: vturecek
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/02/2017
 ms.author: vturecek
-ms.openlocfilehash: 40f52cb399f2d7391657ce4356a0c30921d46e5f
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: c7a4066a949ad6e66c45dff67f1e80801f2fa4cd
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34207100"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44055266"
 ---
 # <a name="reliable-actors-reentrancy"></a>Повторный вход надежных субъектов
 Среда выполнения Reliable Actors по умолчанию разрешает повторный вход на основе логического контекста вызова. Это позволяет субъектам выполнять повторный вход, если они находятся в той же цепочке контекста вызова. Например, субъект A отправляет сообщение субъекту B, который отправляет сообщение субъекту C. В ходе обработки сообщения, если субъект C осуществит вызов субъекта A, сообщение будет означать повторный вход, поэтому будет разрешено. Любые другие сообщения, являющиеся частью другого контекста вызова, будут заблокированы на субъекте A до тех пор, пока он не завершит обработку.

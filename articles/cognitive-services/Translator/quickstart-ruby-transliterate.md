@@ -1,21 +1,21 @@
 ---
-title: Скрипт для преобразования текста с помощью API перевода текстов и Ruby | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как преобразовать текст на одном языке из одного скрипта в другой, используя API перевода текстов с Ruby в Cognitive Services.
+title: Краткое руководство. Преобразование набора символов текста с помощью Перевода текстов и Ruby
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как с помощью API перевода текстов и Ruby преобразовать текст на одном языке из одного набора символов в другой.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/22/2018
 ms.author: nolachar
-ms.openlocfilehash: 56872ed6b6d7168fb1bf2c45de8104a592af34e3
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 6595e486a93811fdded21050c39e99d4f7e5a760
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "43771168"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46121759"
 ---
 # <a name="quickstart-transliterate-text-with-ruby"></a>Краткое руководство по транслитерации текста с помощью Ruby
 
@@ -23,7 +23,7 @@ ms.locfileid: "43771168"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого кода потребуется [Ruby 2.4](https://www.ruby-lang.org/en/downloads/) или более поздней версии.
+Для выполнения этого кода потребуется [Ruby версии 2.4](https://www.ruby-lang.org/en/downloads/) или более поздней версии.
 
 Чтобы использовать API перевода текстов, вам также потребуется ключ подписки. Сведения об этом см. в статье [Регистрация для использования API перевода текстов](translator-text-how-to-signup.md).
 

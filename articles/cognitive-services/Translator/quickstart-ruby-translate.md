@@ -1,21 +1,21 @@
 ---
-title: Перевод текста с помощью API перевода текстов и Ruby | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как перевести текст с одного языка на другой с помощью Ruby, используя API перевода текстов в Cognitive Services.
+title: Краткое руководство. Перевод текста с помощью Перевода текстов и Ruby
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как перевести текст с одного языка на другой, используя API перевода текстов и Ruby.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/22/2018
 ms.author: nolachar
-ms.openlocfilehash: b4d2e04d67fea140148e626ee94b46fdfcd6bac7
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 38b4ee3a2122e0151490ef1a29ee02d498a06b7d
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "43771203"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46126553"
 ---
 # <a name="quickstart-translate-text-with-ruby"></a>Краткое руководство по переводу текста с помощью Ruby
 

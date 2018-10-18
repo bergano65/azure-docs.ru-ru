@@ -15,12 +15,12 @@ ms.devlang: javascript
 ms.topic: article
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: 7463d41382c59e4f7f03b58dbcbc3f5c45e9d15c
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 49ee6b7fabe78c2328a2a772347c612ad38cfe7a
+ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33778364"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44091736"
 ---
 # <a name="sending-push-notifications-with-azure-notification-hubs-and-nodejs"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure и Node.js
 [!INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "33778364"
 Центры уведомлений Azure — это простая в использовании масштабируемая многоплатформенная инфраструктура для отправки push-уведомлений на мобильные устройства. Подробные сведения об инфраструктуре служб приведены на странице [Центры уведомлений Azure](http://msdn.microsoft.com/library/windowsazure/jj927170.aspx) .
 
 ## <a name="create-a-nodejs-application"></a>Создание приложения Node.js
-Первый шаг этого руководства представляет собой создание пустого приложения Node.js. Указания по созданию приложения Node.js см. в статьях [Создание и развертывание простого веб-приложения Node.js][nodejswebsite], [Построение и развертывание приложения Node.js в облачной службе Azure][Node.js Cloud Service] (с использованием Windows PowerShell) или [Веб-сайт с WebMatrix].
+Первый шаг этого руководства представляет собой создание пустого приложения Node.js. Указания по созданию приложения Node.js см. в статьях [Создание и развертывание простого веб-приложения Node.js][nodejswebsite], [Построение и развертывание приложения Node.js в облачной службе Azure][Node.js Cloud Service] (с использованием Windows PowerShell) или [Создание и развертывание веб-приложения Node.js в Azure с использованием WebMatrix][webmatrix].
 
 ## <a name="configure-your-application-to-use-notification-hubs"></a>Настройка приложения для использования центров уведомлений
 Для использования центров уведомлений Azure необходимо загрузить и использовать [пакет Azure](https://www.npmjs.com/package/azure)для Node.js, который включает встроенный набор вспомогательных библиотек, взаимодействующих со службами push-уведомлений REST.
@@ -96,7 +96,7 @@ ms.locfileid: "33778364"
 ### <a name="how-to-send-push-notifications-to-android-applications"></a>Практическое руководство. Отправка push-уведомлений в приложения Android
 Объект **GcmService** предоставляет метод **send**, который может использоваться для отправки push-уведомлений в приложения Android. Метод **Отправить** принимает следующие параметры:
 
-* **Tags** — идентификатор тега. Если тег отсутствует, уведомления отправляются всем клиентам.
+* **Tags** — идентификатор тега. Если тег отсутствует, уведомление отправляется всем клиентам.
 * **Payload** — полезные данные JSON или строковые полезные данные сообщения.
 * **Callback** — функция обратного вызова.
 
@@ -118,7 +118,7 @@ ms.locfileid: "33778364"
 ### <a name="how-to-send-push-notifications-to-ios-applications"></a>Практическое руководство. Отправка push-уведомлений в приложения iOS
 Как и в случае с описанными выше приложениями Android, объект **ApnsService** предоставляет метод **send**, который может использоваться для отправки push-уведомлений в приложения iOS. Метод **Отправить** принимает следующие параметры:
 
-* **Tags** — идентификатор тега. Если тег отсутствует, уведомления отправляются всем клиентам.
+* **Tags** — идентификатор тега. Если тег отсутствует, уведомление отправляется всем клиентам.
 * **Payload** — полезные данные JSON или строковые полезные данные сообщения.
 * **Callback** — функция обратного вызова.
 
@@ -205,10 +205,11 @@ ms.locfileid: "33778364"
 [SqlFilter.SqlExpression]: http://msdn.microsoft.com/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
 [Azure Service Bus Notification Hubs]: http://msdn.microsoft.com/library/windowsazure/jj927170.aspx
 [SqlFilter]: http://msdn.microsoft.com/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx
-[Веб-сайт с WebMatrix]: /develop/nodejs/tutorials/web-site-with-webmatrix/
+[Web Site with WebMatrix]: /develop/nodejs/tutorials/web-site-with-webmatrix/
 [Node.js Cloud Service]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
 [Previous Management Portal]: .media/notification-hubs-nodejs-how-to-use-notification-hubs/previous-portal.png
-[nodejswebsite]: /develop/nodejs/tutorials/create-a-website-(mac)/
+[nodejswebsite]: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs
+[webmatrix]: https://docs.microsoft.com/aspnet/web-pages/videos/introduction/create-a-website-using-webmatrix
 [Node.js Cloud Service with Storage]: /develop/nodejs/tutorials/web-app-with-storage/
 [Node.js Web Application with Storage]: /develop/nodejs/tutorials/web-site-with-storage/
 [портал Azure]: https://portal.azure.com

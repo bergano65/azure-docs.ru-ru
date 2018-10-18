@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/30/2018
 ms.author: gokuma
-ms.openlocfilehash: 8131122f78f743d04e332bfc8dfeba87a8c34236
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: 37a30055e567b27f4e215dac162642d4447a8e49
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43782660"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44298211"
 ---
 # <a name="provision-the-windows-data-science-virtual-machine-on-azure"></a>Подготовка виртуальной машины Windows для обработки и анализа данных в Azure
 Виртуальная машина Майкрософт для обработки и анализа данных (DSVM) представляет собой образ виртуальной машины Windows Azure. В ней предварительно установлено и настроено несколько средств, которые обычно используются для аналитики данных и машинного обучения. В их число входят следующие:
@@ -40,7 +40,7 @@ ms.locfileid: "43782660"
   * [Weka](http://www.cs.waikato.ac.nz/ml/weka/). Программное обеспечение на языке Java для визуального интеллектуального анализа данных и машинного обучения.
   * [Apache Drill](https://drill.apache.org/). Обработчик SQL-запросов без схемы для Hadoop, NoSQL и облачного хранилища.  Он поддерживает интерфейсы ODBC и JDBC для запросов по NoSQL и файлам стандартных средств бизнес-аналитики, таких как PowerBI, Excel и Tableau.
 * Библиотеки R и Python для машинного обучения Azure и других служб Azure.
-* Git, включая Git Bash, для работы с репозиториями исходного кода, такими как GitHub и Visual Studio Team Services. Git предоставляет несколько популярных служебных программ Linux, которые можно использовать как в Git Bash, так и в командной строке. Сюда входят, например, awk, sed, perl, grep, find, wget и curl.
+* Git, включая Git Bash, для работы с репозиториями исходного кода, такими как GitHub и Azure DevOps Services. Git предоставляет несколько популярных служебных программ Linux, которые можно использовать как в Git Bash, так и в командной строке. Сюда входят, например, awk, sed, perl, grep, find, wget и curl.
 
 При обработке и анализе данных выполняются следующие задачи:
 

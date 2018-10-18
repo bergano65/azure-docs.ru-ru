@@ -1,22 +1,23 @@
 ---
-title: Инструкции по извлечению ключевой фразы в REST API анализа текста (Microsoft Cognitive Services в Azure) | Документация Майкрософт
-description: Инструкции по извлечению ключевой фразы с помощью REST API анализа текста в Microsoft Cognitive Services в Azure в этом пошаговом руководстве.
+title: Пример. Как извлечь ключевые фразы с помощью Анализа текста
+titleSuffix: Azure Cognitive Services
+description: Узнайте, как извлечь ключевые фразы с помощью REST API анализа текста.
 services: cognitive-services
 author: HeidiSteen
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: text-analytics
-ms.topic: article
-ms.date: 3/07/2018
+ms.topic: sample
+ms.date: 09/12/2018
 ms.author: heidist
-ms.openlocfilehash: 78b100e737242fa9f56e50275ef2038d8895349e
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 62c078a8a72cd0a3633b7dd5fda1545f01067dbc
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380580"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45605493"
 ---
-# <a name="how-to-extract-key-phrases-in-text-analytics"></a>Инструкции по извлечению ключевых фраз при анализе текста
+# <a name="example-how-to-extract-key-phrases-in-text-analytics"></a>Пример. Как извлечь ключевые фразы с помощью Анализа текста
 
 [API извлечения ключевых фраз](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6) оценивает неструктурированный текст и для каждого документа JSON возвращает список ключевых фраз. 
 

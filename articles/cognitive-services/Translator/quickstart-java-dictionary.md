@@ -1,21 +1,21 @@
 ---
-title: Получение вариантов перевода с помощью API перевода текстов и Java | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как найти варианты перевода и примеры контекстуальных терминов, используя API перевода текстов с Java в Cognitive Services.
+title: Краткое руководство. Поиск вариантов перевода с помощью Перевода текстов и Java
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как искать варианты перевода и контекстуальные термины, используя API перевода текстов и Java.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/21/2018
 ms.author: nolachar
-ms.openlocfilehash: 0abb9c1a39b8183730bacde285eff05607754191
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: c0e7fc3d51772df40bd5da7c762c15c40ad5744f
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "43771133"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46127080"
 ---
 # <a name="quickstart-find-alternate-translations-and-usage-with-java"></a>Краткое руководство по поиску вариантов перевода с использованием Java
 

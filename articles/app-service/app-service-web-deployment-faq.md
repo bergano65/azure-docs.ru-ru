@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/11/2018
 ms.author: genli
-ms.openlocfilehash: 54c99cc9dde6a9706c75401dd75b98f8f5de7cec
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: ab8750e5824cf9f7635d11a6b2be332b2f9a761c
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34068076"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44302594"
 ---
 # <a name="deployment-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о развертывании в веб-приложениях Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "34068076"
 
 ## <a name="how-do-i-set-up-continuous-deployment-for-my-app-service-web-app"></a>Как настроить непрерывное развертывание веб-приложения служб приложений?
 
-Непрерывное развертывание можно настроить из нескольких ресурсов, в том числе Visual Studio Team Services, OneDrive, GitHub, Bitbucket, Dropbox и других репозиториев Git. Эти параметры доступны на портале. Дополнительные сведения о настройке непрерывного развертывания см. в [этом полезном руководстве](app-service-continuous-deployment.md).
+Непрерывное развертывание можно настроить из нескольких ресурсов, в том числе Azure DevOps, OneDrive, GitHub, Bitbucket, Dropbox и других репозиториев Git. Эти параметры доступны на портале. Дополнительные сведения о настройке непрерывного развертывания см. в [этом полезном руководстве](app-service-continuous-deployment.md).
 
 ## <a name="how-do-i-troubleshoot-issues-with-continuous-deployment-from-github-and-bitbucket"></a>Как устранить проблемы с непрерывным развертыванием из GitHub и Bitbucket?
 
@@ -85,9 +85,9 @@ ms.locfileid: "34068076"
 
 Дополнительные сведения об условиях, при которых приложение может перезапускаться после развертывания, см. в статье [Deployment vs. runtime issues](https://github.com/projectkudu/kudu/wiki/Deployment-vs-runtime-issues#deployments-and-web-app-restarts") (Проблемы развертывания и среды выполнения). Как упомянуто в этой статье, служба приложений развертывает файлы в папку wwwroot. Она никогда напрямую не перезапускает приложение.
 
-## <a name="how-do-i-integrate-visual-studio-team-services-code-with-app-service"></a>Как интегрировать код Visual Studio Team Services с помощью службы приложений?
+## <a name="how-do-i-integrate-azure-devops-code-with-app-service"></a>Как интегрировать код Azure DevOps с помощью службы приложений?
 
-Реализовать непрерывное развертывание с помощью Visual Studio Team Services можно двумя способами:
+Реализовать непрерывное развертывание с помощью Azure DevOps можно двумя способами:
 
 *   Используйте проект Git. Подключитесь через службу приложений, используя параметры развертывания этого репозитория.
 *   Используйте проект системы управления версиями Team Foundation (TFVC). Разверните код с помощью агента сборки службы приложений.
@@ -95,7 +95,7 @@ ms.locfileid: "34068076"
 В обоих случаях непрерывное развертывание кода зависит от имеющихся рабочих процессов разработчика и процедур проверки. Дополнительные сведения вы найдете в следующих статьях: 
 
 *   [Implement continuous deployment of your app to an Azure website](https://www.visualstudio.com/docs/release/examples/azure/azure-web-apps-from-build-and-release-hubs) (Реализация непрерывного развертывания приложения на веб-сайте Azure)
-*   [Set up a Visual Studio Team Services account so it can deploy to a web app](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App) (Настройка параметров развертывания в веб-приложение для учетной записи Visual Studio Team Services)
+*   [Setting up a VSTS account so it can deploy to a Web App](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App) (Настройка учетной записи VSTS для развертывания в веб-приложении)
 
 ## <a name="how-do-i-use-ftp-or-ftps-to-deploy-my-app-to-app-service"></a>Как развернуть приложение в службу приложений по протоколу FTP или FTPS?
 

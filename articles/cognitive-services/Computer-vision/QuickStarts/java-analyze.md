@@ -1,73 +1,65 @@
 ---
-title: Краткое руководство. Использование API компьютерного зрения для Java | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как анализировать изображения с помощью API компьютерного зрения и Java в Cognitive Services.
+title: Краткое руководство. Анализ удаленного изображения c помощью службы "Компьютерное зрение" (REST, Java)
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве описано, как проанализировать изображение с помощью API компьютерного зрения на Java.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: 9faa8d05a747855ceb0a468845c3d3a82aa71337
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 901fb2c592d78bf26e36e0ecd0417ee995bc5771
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43772151"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45631095"
 ---
-# <a name="quickstart-analyze-a-remote-image---rest-java"></a>Краткое руководство по анализу удаленного изображения (REST, Java)
+# <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-java-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API и Java в службе "Компьютерное зрение"
 
-Из этого краткого руководства вы узнаете, как анализировать изображение с помощью API компьютерного зрения, чтобы извлечь визуальные признаки.
+Из этого краткого руководства вы узнаете, как анализировать удаленное изображение с помощью REST API в API компьютерного зрения, чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные признаки на основе содержимого изображения.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- У вас должна быть установлена платформа [Java&trade;, комплект разработчика Java, выпуск "Стандартный" версии 7 или 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (JDK 7 или 8).
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
-## <a name="analyze-image-request"></a>Запрос на анализ изображения
+## <a name="create-and-run-the-sample-application"></a>Создание и запуск примера приложения
 
-С помощью [метода Analyze Image](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные признаки на основе содержимого изображения. Вы можете передать изображение или указать его URL-адрес, а также настроить следующие возвращаемые компоненты:
+Чтобы создать и запустить пример, сделайте следующее.
 
-* подробный список тегов, связанных с содержимым изображения;
-* описание содержимого изображения в виде полного предложения;
-* координаты, пол и возраст любого лица, показанного на изображении;
-* значение ImageType (картинки или линейный рисунок);
-* преобладающий цвет, контрастный цвет, наличие или отсутствие цветности;
-* категорию, определенную в этой [таксономии](../Category-Taxonomy.md);
-* наличие на изображении содержимого для взрослых или содержимого сексуального характера.
+1. Создайте проект Java в используемой вами интегрированной среде разработки или редакторе. Если этот параметр доступен, создайте проект Java из шаблона приложения командной строки.
+1. Импортируйте следующие библиотеки в свой проект Java. Если вы используете Maven — его координаты предоставляются для каждой библиотеки.
+   - [HTTP-клиент Apache](https://hc.apache.org/downloads.cgi) (org.apache.httpcomponents:httpclient:4.5.5)
+   - [HTTP-ядро Apache](https://hc.apache.org/downloads.cgi) (org.apache.httpcomponents:httpcore:4.4.9)
+   - [Библиотека JSON](https://github.com/stleary/JSON-java) (org.json:json:20180130)
+1. Добавьте следующие операторы `import` в файл, содержащий общий класс `Main` для вашего проекта.  
 
-Чтобы выполнить наш пример, сделайте следующее:
+   ```java
+   import java.net.URI;
+   import org.apache.http.HttpEntity;
+   import org.apache.http.HttpResponse;
+   import org.apache.http.client.methods.HttpPost;
+   import org.apache.http.entity.StringEntity;
+   import org.apache.http.client.utils.URIBuilder;
+   import org.apache.http.impl.client.CloseableHttpClient;
+   import org.apache.http.impl.client.HttpClientBuilder;
+   import org.apache.http.util.EntityUtils;
+   import org.json.JSONObject;
+   ```
 
-1. Создайте приложение командной строки.
-1. Замените класс Main следующим кодом (сохранив все инструкции `package`).
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. При необходимости замените `uriBase` расположением, в котором вы получили ключи подписки.
-1. При необходимости укажите в значении параметра `imageToAnalyze` другое изображение.
-1. Скачайте эти библиотеки из репозитория Maven в каталог `lib` в своем проекте:
-   * `org.apache.httpcomponents:httpclient:4.5.5`
-   * `org.apache.httpcomponents:httpcore:4.4.9`
-   * `org.json:json:20180130`
-1. Выполните класс Main.
+1. Замените общий класс `Main` следующим кодом, а затем внесите в него следующие изменения (там, где это необходимо):
+   1. Замените значение `subscriptionKey` своим ключом подписки.
+   1. Замените значение `uriBase` URL-адресом конечной точки для метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) из региона Azure, где вы получили ключи подписки, если это необходимо.
+   1. При необходимости замените значение `imageToAnalyze` URL-адресом другого изображения, анализ которого следует выполнить.
+1. Сохраните, а затем создайте проект Java.
+1. Если вы используете интегрированную среду разработки, запустите `Main`. В противном случае откройте окно командной строки и затем используйте команду `java` для выполнения скомпилированного класса. Например, `java Main`.
 
 ```java
-// This sample uses the following libraries:
-//  - Apache HTTP client (org.apache.httpcomponents:httpclient:4.5.5)
-//  - Apache HTTP core (org.apache.httpcomponents:httpccore:4.4.9)
-//  - JSON library (org.json:json:20180130).
-
-import java.net.URI;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONObject;
-
 public class Main {
     // **********************************************
     // *** Update or verify the following values. ***
@@ -76,12 +68,14 @@ public class Main {
     // Replace <Subscription Key> with your valid subscription key.
     private static final String subscriptionKey = "<Subscription Key>";
 
-    // You must use the same region in your REST call as you used to get your
-    // subscription keys. For example, if you got your subscription keys from
-    // westus, replace "westcentralus" in the URI below with "westus".
+    // You must use the same Azure region in your REST API method as you used to
+    // get your subscription keys. For example, if you got your subscription keys
+    // from the West US region, replace "westcentralus" in the URL
+    // below with "westus".
     //
-    // Free trial subscription keys are generated in the westcentralus region. If you
-    // use a free trial subscription key, you shouldn't need to change this region.
+    // Free trial subscription keys are generated in the West Central US region.
+    // If you use a free trial subscription key, you shouldn't need to change
+    // this region.
     private static final String uriBase =
             "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/analyze";
 
@@ -99,7 +93,7 @@ public class Main {
             builder.setParameter("visualFeatures", "Categories,Description,Color");
             builder.setParameter("language", "en");
 
-            // Prepare the URI for the REST API call.
+            // Prepare the URI for the REST API method.
             URI uri = builder.build();
             HttpPost request = new HttpPost(uri);
 
@@ -112,7 +106,7 @@ public class Main {
                     new StringEntity("{\"url\":\"" + imageToAnalyze + "\"}");
             request.setEntity(requestEntity);
 
-            // Make the REST API call and get the response entity.
+            // Call the REST API method and get the response entity.
             HttpResponse response = httpClient.execute(request);
             HttpEntity entity = response.getEntity();
 
@@ -131,9 +125,9 @@ public class Main {
 }
 ```
 
-## <a name="analyze-image-response"></a>Результат анализа изображения
+## <a name="examine-the-response"></a>Изучение ответа
 
-В случае успешного выполнения возвращается ответ в формате JSON, например:
+Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера приложения и в окне консоли отобразится успешный ответ, аналогичный следующему.
 
 ```json
 REST Response:
@@ -192,9 +186,13 @@ REST Response:
 }
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если проект Java больше не нужен, удалите его вместе со скомпилированным классом и импортированными библиотеками.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Изучите приложение Java Swing, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных компонентов изображения, включая лица. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Изучите приложение Java Swing, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных компонентов изображения, включая лица. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
 > [Руководство по использованию API компьютерного зрения для Java](../Tutorials/java-tutorial.md)

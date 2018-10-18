@@ -7,15 +7,15 @@ manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 07/09/2018
+ms.date: 09/11/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 11bb5bf132103bed9e154a12c0e628177ca6a57a
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 23e44763b773835583d255104771d2329851aac8
+ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43344930"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47181420"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-qq-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью QQ через Azure Active Directory B2C
 
@@ -40,7 +40,7 @@ ms.locfileid: "43344930"
 1. Перейдите к [https://connect.qq.com/index.html](https://connect.qq.com/index.html).
 2. Выберите **应用管理**(Управление приложениями).
 5. Выберите **创建应用**(Создать приложение) и введите необходимые сведения.
-7. Введите значение `https://{tenant_name}.b2clogin.com/te/{tenant_name}.onmicrosoft.com/oauth2/authresp` в поле **授权回调域** (URL-адрес обратного вызова). Например, если `tenant_name` — contoso, задайте URL-адрес `https://contoso.b2clogin.com/te/contoso.onmicrosoft.com/oauth2/authresp`.
+7. Введите значение `https://your-tenant-name.b2clogin.com/your-tenant-name}.onmicrosoft.com/oauth2/authresp` в поле **授权回调域** (URL-адрес обратного вызова). Например, если `tenant_name` — contoso, задайте URL-адрес `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp`.
 8. Выберите **创建应用** (Создать приложение).
 9. На странице подтверждения выберите **应用管理** (Управление приложениями), чтобы вернуться на страницу управления приложениями.
 10. Выберите **查看** (Просмотр) рядом с только что созданным приложением.
@@ -50,14 +50,7 @@ ms.locfileid: "43344930"
 ## <a name="configure-qq-as-an-identity-provider"></a>Настройка QQ в качестве поставщика удостоверений
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
-2. Убедитесь, что используется каталог с вашим клиентом Azure AD B2C, переключившись на него в правом верхнем углу окна портала Azure. Выберите сведения о подписке, а затем выберите **Переключение каталога**. 
-
-    ![Переключение на клиент Azure AD B2C](./media/active-directory-b2c-setup-qq-app/switch-directories.png)
-
-    Выберите каталог, содержащий ваш клиент.
-
-    ![Выбор каталога](./media/active-directory-b2c-setup-qq-app/select-directory.png)
-
+2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
 4. Щелкните **Поставщики удостоверений** и выберите **Добавить**.
 5. Укажите **Имя**. Например, введите *QQ*.

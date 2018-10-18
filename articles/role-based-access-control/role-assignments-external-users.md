@@ -16,12 +16,12 @@ ms.date: 03/20/2018
 ms.author: rolyon
 ms.reviewer: skwan
 ms.custom: it-pro
-ms.openlocfilehash: 58108bd2851050e96df1b5453ce96856374b7163
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: bd75ecde75d0f22dc66f047cd063dd85807f6f33
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37437041"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44304447"
 ---
 # <a name="manage-access-for-external-users-using-rbac"></a>Управление доступом внешних пользователей с использованием RBAC
 

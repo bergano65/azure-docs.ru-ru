@@ -4,36 +4,20 @@ description: Создание самозаверяющего корневого 
 services: vpn-gateway
 documentationcenter: na
 author: cherylmc
-manager: jpconnock
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 02/12/2018
+ms.date: 09/05/2018
 ms.author: cherylmc
-ms.openlocfilehash: b2f31761e4560cf4b9b9a5b92f5de9982a663a75
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 3ff7e754a55e15a8fa8a32f846efbbbe5025e46e
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38651793"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44297865"
 ---
 # <a name="generate-and-export-certificates-for-point-to-site-connections-using-makecert"></a>Создание и экспорт сертификатов для подключений типа "точка — сеть" с помощью MakeCert
 
-Для аутентификации подключений типа "точка — сеть" используются сертификаты. Эта статья поможет создать самозаверяющий корневой сертификат, а также сертификаты клиента с помощью MakeCert. Чтобы ознакомится с инструкциями по настройке подключения "точка — сеть", например как передать корневые сертификаты, выберите одну из статей в следующем списке:
-
-> [!div class="op_single_selector"]
-> * [Создание самозаверяющих сертификатов с помощью PowerShell](vpn-gateway-certificates-point-to-site.md)
-> * [Создание и экспорт сертификатов для подключений типа "точка — сеть" с помощью MakeCert](vpn-gateway-certificates-point-to-site-makecert.md)
-> * [Настройка подключения "точка — сеть" модели Resource Manager на портале Azure](vpn-gateway-howto-point-to-site-resource-manager-portal.md)
-> * [Настройка подключения "точка-сеть" — Resource Manager — PowerShell](vpn-gateway-howto-point-to-site-rm-ps.md)
-> * [Настройка подключения "точка —сеть" классической модели на портале Azure](vpn-gateway-howto-point-to-site-classic-azure-portal.md)
-> 
-> 
+Для аутентификации подключений типа "точка — сеть" используются сертификаты. Эта статья поможет создать самозаверяющий корневой сертификат, а также сертификаты клиента с помощью MakeCert. Если вы ищете инструкции для других сертификатов, ознакомьтесь со статьями [Создание и экспорт сертификатов для подключений "точка-сеть" с помощью PowerShell](vpn-gateway-certificates-point-to-site.md) или [Generate and export certificates for Point-to-Site using Linux strongSwan CLI](vpn-gateway-certificates-point-to-site-linux.md) (Создание и экспорт сертификатов для подключений "точка-сеть" с помощью Linux strongSwan CLI).
 
 Хотя для создания сертификатов мы рекомендуем использовать сведения статьи [Создание и экспорт сертификатов для подключений типа "точка — сеть" с помощью PowerShell](vpn-gateway-certificates-point-to-site.md), мы предоставили инструкции по MakeCert в качестве необязательного метода. Сертификаты, созданные с помощью другого метода, можно установить [на любой поддерживаемой клиентской операционной системе](vpn-gateway-howto-point-to-site-resource-manager-portal.md#faq). Однако MakeCert имеет такие ограничения:
 

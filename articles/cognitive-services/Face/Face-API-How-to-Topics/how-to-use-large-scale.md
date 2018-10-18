@@ -1,29 +1,29 @@
 ---
-title: Использование функции увеличения масштаба в API распознавания лиц | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Использование функции увеличения масштаба в API распознавания лиц в Cognitive Services.
+title: Пример. Использование функции увеличения масштаба в API распознавания лиц
+titleSuffix: Azure Cognitive Services
+description: Использование функции увеличения масштаба в API распознавания лиц.
 services: cognitive-services
 author: SteveMSFT
-manager: corncar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: face-api
-ms.topic: article
+ms.topic: sample
 ms.date: 03/01/2018
 ms.author: sbowles
-ms.openlocfilehash: f7b3ac57cf6b24c8a90b4ea59757d3a2cfafd781
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: e8bbf78da84ddb77ce956e37f91be46e96144991
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380332"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46123085"
 ---
-# <a name="how-to-use-the-large-scale-feature"></a>Как использовать функцию увеличения масштаба
+# <a name="example-how-to-use-the-large-scale-feature"></a>Пример. Как использовать функцию увеличения масштаба
 
 Это руководство представляет собой расширенную статью о переносе кода для увеличения масштаба существующих PersonGroup и FaceList до LargePersonGroup и LargeFaceList соответственно.
 В нем демонстрируется процесс переноса и предполагается, что пользователь владеет базовыми навыками работы с PersonGroup и FaceList.
 Чтобы ознакомиться с базовыми операциями, обратитесь к другим руководствам, например [Как идентифицировать лица на изображениях](HowtoIdentifyFacesinImage.md).
 
-Недавно в API распознавания лиц Майкрософт были добавлены две функции для крупномасштабных сценариев, LargePersonGroup и LargeFaceList, далее называемые крупномасштабными операциями.
+Недавно в API распознавания лиц были добавлены две функции для крупномасштабных сценариев, LargePersonGroup и LargeFaceList, далее называемые крупномасштабными операциями.
 LargePersonGroup может содержать до 1 000 000 человек и до 248 лиц для каждого из них, а LargeFaceList может содержать до 1 000 000 лиц.
 
 Крупномасштабные операции аналогичны обычным PersonGroup и FaceList, но из-за новой архитектуры имеют некоторые важные отличия.
@@ -35,7 +35,7 @@ LargePersonGroup может содержать до 1 000 000 человек и 
 В ходе обучения можно выполнять операции Identification и FindSimilar, если перед этим уже было выполнено успешное обучение.
 Однако недостаток заключается в том, что новые добавленные люди и лица не появятся в результатах, пока не будет завершено обучение после перехода на крупномасштабные операции.
 
-## <a name="concepts"></a> Основные понятия
+## <a name="concepts"></a>Основные понятия
 
 Если вы не знакомы с приведенными ниже понятиями в этом руководстве, их определения можно найти в нашем [глоссарии](../Glossary.md).
 
@@ -45,7 +45,7 @@ LargePersonGroup может содержать до 1 000 000 человек и 
 - Identification: определение одного или нескольких лиц в PersonGroup или LargePersonGroup.
 - FindSimilar: поиск похожих лиц в FaceList или LargeFaceList.
 
-## <a name="initialization"></a> Шаг 1. Авторизация вызова API
+## <a name="step-1-authorize-the-api-call"></a>Шаг 1. Авторизация вызова API
 
 При использовании клиентской библиотеки API распознавания лиц ключ и конечная точка подписки передаются через конструктор класса FaceServiceClient. Например: 
 
@@ -59,14 +59,14 @@ FaceServiceClient FaceServiceClient = new FaceServiceClient(SubscriptionKey, Sub
 Ключ подписки и соответствующую конечную точку можно получить на странице "Marketplace" портала Azure.
 Ознакомьтесь со страницей [подписок](https://azure.microsoft.com/services/cognitive-services/directory/vision/).
 
-## <a name="migrate"></a> Шаг 2. Перенос кода
+## <a name="step-2-code-migration-in-action"></a>Шаг 2. Перенос кода
 
 Этот раздел посвящен только переносу реализации PersonGroup и FaceList в LargePersonGroup и LargeFaceList.
 Хотя структура и внутренняя реализация LargePersonGroup и LargeFaceList отличается от PersonGroup и FaceList, их интерфейсы API схожи, что обеспечивает обратную совместимость.
 
 Перенос данных не поддерживается, вам потребуется воссоздать LargePersonGroup и LargeFaceList.
 
-## <a name="largepersongroup"></a> Шаг 2.1. Перенос PersonGroup в LargePersonGroup
+## <a name="step-21-migrate-persongroup-to-largepersongroup"></a>Шаг 2.1. Перенос PersonGroup в LargePersonGroup
 
 Перенести PersonGroup в LargePersonGroup просто, так как они используют одинаковые операции уровня группы.
 
@@ -74,7 +74,7 @@ FaceServiceClient FaceServiceClient = new FaceServiceClient(SubscriptionKey, Sub
 
 С переносом данных можно ознакомиться в разделе [Как добавлять лица](how-to-add-faces.md).
 
-## <a name="largefacelist"></a> Шаг 2.2. Перенос FaceList в LargeFaceList
+## <a name="step-22-migrate-facelist-to-largefacelist"></a>Шаг 2.2. Перенос FaceList в LargeFaceList
 
 | Интерфейсы API FaceList | Интерфейсы API LargeFaceList |
 |:---:|:---:|
@@ -212,7 +212,7 @@ using (Stream stream = File.OpenRead(QueryImagePath))
 Как показано выше, управление данными и часть FindSimilar почти идентичны.
 Единственным исключением является новая операция предварительной обработки Train, которую необходимо выполнить в LargeFaceList перед операцией FindSimilar.
 
-## <a name="train"></a>Шаг 3. Формирование вариантов поиска
+## <a name="step-3-train-suggestions"></a>Шаг 3. Формирование вариантов поиска
 
 Хотя операция Train ускоряет операции [FindSimilar](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237) и [Identification](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239), время обучения при большом масштабе особенно увеличивается.
 В следующей таблице приведено предполагаемое время обучения при различных масштабах.
@@ -226,7 +226,7 @@ using (Stream stream = File.OpenRead(QueryImagePath))
 
 Для оптимального использования крупномасштабных функций рекомендуется рассмотреть несколько стратегий.
 
-## <a name="interval"></a>Шаг 3.1. Интервал времени настройки
+## <a name="step-31-customize-time-interval"></a>Шаг 3.1. Интервал времени настройки
 
 Как показано в `TrainLargeFaceList()`, имеется параметр `timeIntervalInMilliseconds`, позволяющий отложить процесс проверки бесконечного состояния обучения.
 Если указать больший интервал для LargeFaceList с большим числом лиц, это сократит количество вызовов и затраты.
@@ -235,7 +235,7 @@ using (Stream stream = File.OpenRead(QueryImagePath))
 Эта стратегия применима и к LargePersonGroup.
 Например, при обучении LargePersonGroup с 1 000 000 людьми интервал `timeIntervalInMilliseconds` может быть равен 60 000 (то есть 1 минуте).
 
-## <a name="buffer"></a>Шаг 3.2. Небольшой буфер
+## <a name="step-32-small-scale-buffer"></a>Шаг 3.2. Небольшой буфер
 
 Поиск элементов Person и Faces в LargePersonGroup и LargeFaceList будет возможен только после обучения.
 В случае динамического сценария новые люди и лица добавляются постоянно и должны немедленно становиться доступными для поиска, хотя обучение может занимать больше времени, чем хотелось бы.
@@ -251,14 +251,15 @@ using (Stream stream = File.OpenRead(QueryImagePath))
 1. Когда размер буферной коллекции достигнет порога или наступит простой системы, создайте новую буферную коллекцию и активируйте обучение на данных основной коллекции.
 1. Удалите старую буферную коллекцию после завершения обучения на данных основной коллекции.
 
-## <a name="standalone"></a>Шаг 3.3. Отдельное обучение
+## <a name="step-33-standalone-training"></a>Шаг 3.3. Автономное обучение
 
 Если допускается относительно большая задержка, не обязательно активировать операцию Train сразу же после добавления новых данных.
 Вместо этого операцию Train можно отделить от главной логики и активировать с регулярным интервалом.
 Эта стратегия подходит для динамических сценариев с допустимой задержкой и может применяться для статических сценариев для уменьшения частоты операции Train.
 
 Допустим, существует функция `TrainLargePersonGroup`, аналогичная `TrainLargeFaceList`.
-Типичная реализация изолированного обучения на данных LargePersonGroup путем вызова класса [`Timer`](https://msdn.microsoft.com/library/system.timers.timer(v=vs.110).aspx) в `System.Timers` будет следующей.
+Типичная реализация автономного обучения на данных LargePersonGroup путем вызова[`Timer`](https://msdn.microsoft.com/library/system.timers.timer(v=vs.110).aspx)
+класса в `System.Timers` будет следующей.
 
 ```CSharp
 private static void Main()
@@ -288,14 +289,14 @@ private static void TrainTimerOnElapsed(string largePersonGroupId, int timeInter
 
 Дополнительные сведения о реализации управления данными и идентификации см. в разделах [Как добавлять лица](how-to-add-faces.md) и [Практическое руководство по идентификации лиц на изображении](HowtoIdentifyFacesinImage.md).
 
-## <a name="summary"></a> Сводная информация
+## <a name="summary"></a>Сводка
 
 В этом руководстве вы узнали, как перенести существующий код PersonGroup и FaceList (а не данные) в LargePersonGroup и LargeFaceList.
 
 - LargePersonGroup и LargeFaceList работают аналогично PersonGroup и FaceList, за исключением того, что перед операцией LargeFaceList нужно выполнять операцию Train.
 - Выберите соответствующую стратегию для динамического обновления данных в крупномасштабном наборе данных.
 
-## <a name="related"></a> Связанные разделы
+## <a name="related-topics"></a>Связанные темы
 
 - [Практическое руководство по идентификации лиц на изображении](HowtoIdentifyFacesinImage.md)
 - [Как добавлять лица](how-to-add-faces.md)

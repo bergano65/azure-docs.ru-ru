@@ -6,14 +6,14 @@ keywords: ansible, azure, devops, overview, cloud provision, configuration manag
 author: tomarcher
 manager: jeconnoc
 ms.author: tarcher
-ms.date: 01/19/2018
+ms.date: 09/02/2018
 ms.topic: article
-ms.openlocfilehash: e710770131c844598762feebe09ba50dc120de0c
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 977fef390c0efecd47ec5e19b1a82c05e2ecfd0f
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43106906"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44160751"
 ---
 # <a name="ansible-with-azure"></a>Использование Ansible с Azure
 
@@ -37,13 +37,17 @@ Ansible содержит набор [модулей Ansible](http://docs.ansible
 
 ## <a name="automate-cloud-native-application-in-azure"></a>Автоматизация нативного облачного приложения в Azure
 
-Ansible позволяет автоматизировать нативные облачные приложения в Azure с помощью таких микрослужб Azure, как [Функции Azure](https://azure.microsoft.com//services/functions/) и [Kubernetes в Azure](https://azure.microsoft.com/services/container-service/kubernetes/).  
+Ansible позволяет автоматизировать собственные облачные приложения в Azure с помощью таких микрослужб Azure, как [Функции Azure](https://azure.microsoft.com//services/functions/) и [Kubernetes в Azure](https://azure.microsoft.com/services/container-service/kubernetes/).  
 
 ## <a name="manage-deployments-with-dynamic-inventory"></a>Управление развертываниями с помощью динамического списка
 С помощью [динамического списка](http://docs.ansible.com/ansible/intro_dynamic_inventory.html) в Ansible можно извлекать список из ресурсов Azure. Вы можете обозначить тегами существующие развертывания Azure и управлять этими отмеченными развертываниями с помощью Ansible.
 
 ## <a name="additional-azure-marketplace-options"></a>Дополнительные параметры Azure Marketplace
 Образ [Ansible Tower](https://azuremarketplace.microsoft.com/marketplace/apps/redhat.ansible-tower) Red Hat, доступный в Azure Marketplace, позволяет организациям автоматизировать ИТ-процессы в нужном масштабе и управлять сложными развертываниями в физической, виртуальной или облачной инфраструктуре. Ansible Tower включает возможности, которые обеспечивают дополнительные уровни видимости, управления, безопасности и эффективности, необходимые современным предприятиям. Ansible Tower шифрует учетные данные, такие как ключи Azure и SSH, чтобы можно было делегировать задания менее опытным сотрудникам без риска раскрытия учетных данных.
+
+## <a name="ansible-module-and-version-matrix-for-azure"></a>Таблица версий и модулей Ansible для Azure
+Ansible поставляется с большим количеством модулей, которые могут выполняться прямо на удаленных узлах или с помощью наборов инструкций playbook.
+В статье [Таблица версий и модулей Ansible](./ansible-matrix.md) перечислены модули Ansible для Azure, которые могут использоваться для подготовки таких облачных ресурсов Azure, как виртуальные машины, сети и службы контейнеров. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Install and configure Ansible to manage virtual machines in Azure](/azure/virtual-machines/linux/ansible-install-configure?toc=%2Fen-us%2Fazure%2Fansible%2Ftoc.json&bc=%2Fen-us%2Fazure%2Fbread%2Ftoc.json) (Установка и настройка Ansible для управления виртуальными машинами в Azure)

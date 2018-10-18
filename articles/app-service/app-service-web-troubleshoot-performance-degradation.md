@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/03/2016
 ms.author: cephalin
-ms.openlocfilehash: 0f053c0293488f19adcd058f1ba8304d8d238738
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 3ec67488b238118067e771baf3dd5124308a84cf
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43128312"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44296199"
 ---
 # <a name="troubleshoot-slow-web-app-performance-issues-in-azure-app-service"></a>Устранение причин низкой производительности веб-приложения в службе приложений Azure
 Эта статья поможет устранить причины снижения производительности веб-приложения, размещенного в [службе приложений Azure](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -88,7 +88,7 @@ Microsoft Azure информирует о каждом случае прерыв
 
 Каждое веб-приложение службы приложений дает возможность использовать расширяемую конечную точку управления, которая позволяет применять набор мощных инструментов, развернутых в виде расширений сайта. Расширения включают в себя: 
 
-- редакторы исходного кода, например [Visual Studio Team Services](https://www.visualstudio.com/products/what-is-visual-studio-online-vs.aspx); 
+- Редакторы исходного кода, такие как [Azure DevOps](https://www.visualstudio.com/products/what-is-visual-studio-online-vs.aspx). 
 - инструменты управления для подключенных ресурсов, таких как база данных MySQL, подключенная к веб-приложению.
 
 Также доступно расширение сайта для мониторинга производительности [Azure Application Insights](https://azure.microsoft.com/services/application-insights/). Чтобы использовать Application Insights, перестройте код с помощью пакета SDK. Кроме того, вы можете установить расширение, которое предоставляет доступ к дополнительным данным. Пакет SDK позволяет писать код для более подробного отслеживания использования и производительности приложения. Дополнительные сведения см. в разделе о [мониторинге производительности в веб-приложениях](../application-insights/app-insights-web-monitor-performance.md).
@@ -158,7 +158,7 @@ Application Insights Profiler предоставляет статистику п
 
 У консоли Kudu есть еще одна очень полезная функция. Если приложение создает обрабатываемые исключения, с помощью консоли Kudu и средства SysInternals Procdump вы можете получать дампы памяти. Эти дампы представляют собой снимок процессов, выполняемых в момент создания исключения. Вы можете использовать эти данные при анализе сложных проблем в веб-приложении.
 
-Дополнительные сведения о возможностях консоли Kudu см. в статье об [инструментах в Интернете для веб-сайтов Microsoft Azure](https://azure.microsoft.com/blog/windows-azure-websites-online-tools-you-should-know-about/).
+Дополнительные сведения о возможностях консоли Kudu см. в статье [Azure DevOps tools you should know about](https://azure.microsoft.com/blog/windows-azure-websites-online-tools-you-should-know-about/) (Инструменты Azure DevOps, о которых вам нужно знать).
 
 <a name="mitigate" />
 

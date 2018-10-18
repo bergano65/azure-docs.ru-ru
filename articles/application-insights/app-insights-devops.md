@@ -13,12 +13,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 03/14/2017
 ms.author: mbullwin
-ms.openlocfilehash: a9a6e513d95df5dafba82556f74ec209529ff58d
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: e77389411e52853efb52252a17c8612f0480fa61
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35294917"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44298648"
 ---
 # <a name="deep-diagnostics-for-web-apps-and-services-with-application-insights"></a>Углубленная диагностика для веб-приложений и служб с помощью Application Insights
 ## <a name="why-do-i-need-application-insights"></a>Зачем мне Application Insights?
@@ -152,7 +152,7 @@ Visual Studio и Eclipse оснащены инструментами для на
 Во время отладки у вас есть возможность сохранять данные телеметрии на компьютере разработки, просматривая их в Visual Studio, но не отправляя на портал. Этот локальный параметр позволяет не смешивать отладку с рабочей телеметрией.
 
 ### <a name="build-annotations"></a>Аннотации к сборке
-При использовании Visual Studio Team Services для сборки и развертывания приложения на диаграммах, просматриваемых на портале, отображаются заметки к развертыванию. Если последний выпуск оказал какое-либо влияние на метрики, это будет заметно.
+При использовании Azure DevOps для сборки и развертывания приложения на диаграммах, просматриваемых на портале, отображаются заметки к развертыванию. Если последний выпуск оказал какое-либо влияние на метрики, это будет заметно.
 
 ![Аннотации к сборке](./media/app-insights-devops/070.png)
 

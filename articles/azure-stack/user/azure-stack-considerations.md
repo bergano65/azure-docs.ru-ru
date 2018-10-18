@@ -12,14 +12,14 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 08/15/2018
+ms.date: 09/12/2018
 ms.author: sethm
-ms.openlocfilehash: a8d211992f52c9719cad76f16133e23eba24d422
-ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
+ms.openlocfilehash: 9f229caa76059db403ced5b74c7a35ec2f0b8e9d
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "43775062"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44721897"
 ---
 # <a name="key-considerations-using-services-or-building-apps-for-azure-stack"></a>Важные аспекты использования служб и создания приложений в Azure Stack
 
@@ -33,7 +33,7 @@ Azure Stack ― это гибридная облачная платформа, 
 
 В технической документации по Azure предполагается, что приложения разрабатываются именно для службы Azure, а не для Azure Stack. При разработке и развертывании приложений в Azure Stack важно учитывать несколько важных различий.
 
-* Azure Stack предоставляет подмножество служб и функций, доступных в Azure.
+* Azure Stack предоставляет **подмножество** служб и функций, доступных в Azure.
 * Компания или поставщик услуг могут самостоятельно выбрать, какие службы они будут предоставлять. Это могут быть настраиваемые службы или приложения. Также они могут предоставлять собственные версии документации.
 * Необходимо использовать правильные конечные точки, предназначенные для работы с Azure Stack (например, URL-адрес портала и конечную точку Azure Resource Manager).
 * Необходимо использовать версии PowerShell и API, которые поддерживаются в Azure Stack. Только в этом случае можно гарантировать, что приложения будут работать в Azure Stack и Azure.
@@ -75,11 +75,11 @@ Azure Stack поддерживает конкретные версии Azure Pow
 Чтобы гарантировать правильность версии Azure PowerShell, используйте [профили версий API](azure-stack-version-profiles.md). Чтобы определить самый свежий профиль версии API, который можно использовать, узнайте номер используемой сборки Azure Stack. Эти сведения можно получить у администратора Azure Stack.
 
 >[!NOTE]
- Если вы используете Пакет средств разработки Azure Stack и имеете учетные данные администратора, воспользуйтесь разделом об определении текущей версии из статьи по [управлению обновлениями](https://docs.microsoft.com/azure/azure-stack/azure-stack-updates#determine-the-current-version).
+ Если вы используете Пакет средств разработки Azure Stack и имеете учетные данные администратора, воспользуйтесь разделом об определении текущей версии из статьи по [управлению обновлениями](../azure-stack-updates.md#determine-the-current-version).
 
 Для получения информации о других API выполните приведенную ниже команду PowerShell, которая выводит все пространства имен, типы ресурсов и версии API, поддерживаемые для подписки Azure Stack. Обратите внимание, что на уровне свойств могут сохраниться некоторые различия. (Для выполнения этой команды необходимо [установить](azure-stack-powershell-install.md) и [настроить](azure-stack-powershell-configure-user.md) среду PowerShell для Azure Stack. Также вам потребуется подписка на действующее предложение Azure Stack.)
 
- ```powershell
+```powershell
 Get-AzureRmResourceProvider | Select ProviderNamespace -Expand ResourceTypes | Select * -Expand ApiVersions | `
 Select ProviderNamespace, ResourceTypeName, @{Name="ApiVersion"; Expression={$_}} 
 ```

@@ -2,24 +2,20 @@
 title: Привязка внешних файлов в службе "Функции Azure" (экспериментальная возможность)
 description: Использование привязок внешних файлов в Функциях Azure
 services: functions
-documentationcenter: ''
 author: alexkarcher-msft
-manager: cfowler
-editor: ''
+manager: jeconnoc
 ms.assetid: ''
-ms.service: functions
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-functions
 ms.devlang: multiple
-ms.topic: article
+ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: alkarche
-ms.openlocfilehash: 4e9c2c336df465d7488de84bd2a02cc5d9e42f30
-ms.sourcegitcommit: d6984ef8cc057423ff81efb4645af9d0b902f843
+ms.openlocfilehash: be2d34202b88d0d424eb23c4e078c2fdc45c6ab6
+ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "27607927"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44093776"
 ---
 # <a name="azure-functions-external-file-bindings-experimental"></a>Привязки внешних файлов в службе "Функции Azure" (экспериментальная возможность)
 В этой статье показано, как управлять файлами различных поставщиков SaaS (например, Dropbox или Google Диск) в службе "Функции Azure". Служба "Функции Azure" поддерживают привязки триггера, а также входные и выходные привязки внешних файлов. Привязка создает подключения API к поставщикам SaaS или использует имеющиеся подключения API из группы ресурсов приложения-функции.

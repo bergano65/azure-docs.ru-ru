@@ -1,21 +1,21 @@
 ---
-title: Руководство по API распознавания лиц в Java для Android | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: С помощью этого руководства вы создадите простое приложение Android, которое использует службу распознавания лиц Cognitive Services для обнаружения и выделения лиц на изображении.
+title: Руководство. Обнаружение и выделение лиц на изображении с помощью API распознавания лиц и Java для Android
+titleSuffix: Azure Cognitive Services
+description: С помощью этого руководства вы создадите простое приложение Android, которое использует API распознавания лиц для обнаружения и выделения лиц на изображении.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: face-api
 ms.topic: tutorial
 ms.date: 07/12/2018
 ms.author: nolachar
-ms.openlocfilehash: ad7b85b378db9e9687b5f8081bc9832e91e9ee5e
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: 50185588b77f01bced9462d5fd1ad67bb5de6e08
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39125642"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46129732"
 ---
 # <a name="tutorial-create-an-android-app-to-detect-and-frame-faces-in-an-image"></a>Руководство. Создание приложения Android для обнаружения и выделения лиц на изображении
 
@@ -23,13 +23,13 @@ ms.locfileid: "39125642"
 
 ![Снимок экрана устройства Android с фотографией, на которой лица выделены красными прямоугольниками](../Images/android_getstarted2.1.PNG)
 
-В этом учебнике описаны следующие процедуры:
+В этом учебнике описаны следующие процедуры.
 
 > [!div class="checklist"]
-> - создание приложения Android;
+> - Создание приложения Android
 > - установка клиентской библиотеки службы распознавания лиц;
 > - использование клиентской библиотеки для обнаружения лиц на изображении;
-> - выделение рамкой каждого обнаруженного лица.
+> - выделение рамкой каждого обнаруженного лица;
 
 ## <a name="prerequisites"></a>Предварительные требования
 

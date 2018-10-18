@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.component: B2C
-ms.openlocfilehash: 469a3662b5bc4db467dde3285d557ac8bbae368e
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 2b70ed174331b88f9afc9aa30d14a585986496a5
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39609095"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45604347"
 ---
 # <a name="tutorial-grant-access-to-an-aspnet-web-api-from-a-web-app-using-azure-active-directory-b2c"></a>Руководство. Предоставление доступа к веб-API ASP.NET из веб-приложения с помощью Azure Active Directory B2C
 
@@ -40,19 +40,13 @@ ms.locfileid: "39609095"
 
 Ресурсы веб-API необходимо зарегистрировать в клиенте, чтобы они могли принимать [запросы защищенных ресурсов](../active-directory/develop/developer-glossary.md#resource-server) от [клиентских приложений](../active-directory/develop/developer-glossary.md#client-application), которые представляют [токен доступа](../active-directory/develop/developer-glossary.md#access-token) из Azure Active Directory, и отвечать на них. Регистрация устанавливает [приложение и объект субъекта-службы](../active-directory/develop/developer-glossary.md#application-object) в клиенте. 
 
-1. Войдите на [портал Azure](https://portal.azure.com/) как глобальный администратор клиента Azure AD B2C.
+Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
 
-2. Убедитесь, что используется каталог с вашим клиентом Azure AD B2C, переключившись на него в правом верхнем углу окна портала Azure. Выберите сведения о подписке, а затем выберите **Переключение каталога**.
+[!INCLUDE [active-directory-b2c-switch-b2c-tenant](../../includes/active-directory-b2c-switch-b2c-tenant.md)]
 
-    ![Переключение каталогов](./media/active-directory-b2c-tutorials-web-api/switch-directories.png)
+1. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее. Нужно использовать клиент, созданный в рамках предыдущего руководства.
 
-3. Выберите каталог, содержащий ваш клиент.
-
-    ![Выбор каталога](./media/active-directory-b2c-tutorials-web-api/select-directory.png)
-
-4. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее. Нужно использовать клиент, созданный в рамках предыдущего руководства.
-
-5. Щелкните **Приложения**, а затем выберите **Добавить**.
+2. Щелкните **Приложения**, а затем выберите **Добавить**.
 
     Чтобы зарегистрировать пример веб-API в клиенте, используйте следующие параметры.
     
@@ -67,7 +61,7 @@ ms.locfileid: "39609095"
     | **URI кода приложения** | myAPISample | URI уникально идентифицирует API в клиенте. Это позволяет регистрировать несколько API-интерфейсов в каждом клиенте. [Области](../active-directory/develop/developer-glossary.md#scopes) управляют доступом к защищенному ресурсу API и определяются для каждого URI идентификатора приложения. |
     | **Собственный клиент** | Нет  | Так как это веб-API, а не собственный клиент, выберите "Нет". |
     
-6. Чтобы зарегистрировать API, щелкните **Создать**.
+3. Чтобы зарегистрировать API, щелкните **Создать**.
 
 Зарегистрированные API отобразятся в списке приложений для клиента Azure AD B2C. Выберите веб-API в списке. Откроется панель свойств веб-API.
 

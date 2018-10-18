@@ -4,19 +4,19 @@ description: Чтобы вы оставались в курсе последни
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/19/2018
+ms.date: 09/25/2018
 ms.author: juliako
-ms.openlocfilehash: fc6c5ba6cd97c261dd44eade33bf21e8d1b74bf0
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: ed2550c1df4645933fb968c54ee536995c810136
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33782643"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47219335"
 ---
 # <a name="azure-media-services-v3-preview-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3 (предварительная версия) 
 
@@ -43,9 +43,7 @@ ms.locfileid: "33782643"
 
 ### <a name="known-issues"></a>Известные проблемы
 
-Известная проблема:
-
-При отправке задания через URL-адрес HTTPS (JobInputHttp), указывающий на исходное содержимое, убедитесь, что HTTP-сервер поддерживает запрос HEAD. В противном случае задание будет отклонено.
+* При отправке задания можно указать исходное видео для приема, используя URL-адреса HTTPS, URL-адреса SAS или пути к файлам, находящимся в хранилище BLOB-объектов Azure. В настоящее время AMS версии 3 не поддерживает кодирование блочной передачи по URL-адресам HTTPS.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

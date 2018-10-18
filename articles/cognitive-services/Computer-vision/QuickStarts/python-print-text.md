@@ -1,49 +1,49 @@
 ---
-title: Краткое руководство по API компьютерного зрения для Python. Распознавание текста | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как извлекать печатный текст из изображения с помощью API компьютерного зрения и Python в Cognitive Services.
+title: Краткое руководство по извлечению печатного текста (OCR) в Компьютерном зрении (REST, Python)
+titleSuffix: Azure Cognitive Services
+description: Из этого краткого руководства вы узнаете, как, используя API компьютерного зрения, извлекать печатный текст из изображения с помощью Python.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: 60d0435083bdb38b3aee4ff8a8f022e76d06407f
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: b02a3f382dd0049b635ca2ca99c2e102d364a1f6
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43771908"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45629392"
 ---
-# <a name="quickstart-extract-printed-text-ocr---rest-python"></a>Краткое руководство по извлечению печатного текста (OCR) — REST, Python
+# <a name="quickstart-extract-printed-text-ocr-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство по извлечению печатного текста (OCR) с помощью REST API и Python в Компьютерном зрении
 
-Из этого краткого руководства вы узнаете, как извлекать печатный текст из изображения (распознавать текст) с помощью API компьютерного зрения.
+Из этого краткого руководства вы узнаете, как извлекать печатный текст с оптическим распознаванием символов из изображения с помощью REST API компьютерного зрения. С помощью метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) можно определить печатный текст на изображении и извлечь распознанные символы в поток символов, пригодный для машинной обработки.
 
 Процедуры из этого руководства можно выполнять пошагово из записной книжки Jupyter с помощью [MyBinder](https://mybinder.org). Чтобы запустить модуль привязки, нажмите следующую кнопку:
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/Microsoft/cognitive-services-notebooks/master?filepath=VisionAPI.ipynb)
 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
+
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- Установите [Python](https://www.python.org/downloads/), если хотите выполнить этот пример кода в локальной среде.
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Как получить ключи подписки).
 
-## <a name="extract-printed-text"></a>Извлечение печатного текста
+## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
-С помощью [метода OCR](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) можно определить печатный текст на изображении и извлечь распознанные символы в поток символов, пригодный для машинной обработки.
+Чтобы создать и запустить пример, сделайте следующее.
 
-Чтобы выполнить наш пример, сделайте следующее:
-
-1. Скопируйте приведенный ниже код в новый файл скрипта Python.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. При необходимости замените `vision_base_url` расположением, в котором вы получили ключи подписки.
-1. При необходимости укажите в значении параметра `image_url` другое изображение.
-1. Выполните скрипт.
-
-В следующем коде используется библиотека `requests` для Python, которая обращается к API компьютерного зрения для анализа изображений. Результаты возвращаются в виде объектов JSON. Ключ API передается через словарь `headers`.
-
-## <a name="ocr-request"></a>Запрос на распознавание текста (OCR)
+1. Скопируйте приведенный ниже код в текстовый редактор.
+1. При необходимости внесите в код следующие изменения.
+    1. Замените значение `subscription_key` своим ключом подписки.
+    1. Замените значение `vision_base_url` URL-адресом конечной точки ресурса Компьютерного зрения в регионе Azure, где вы получили ключи подписки, если это необходимо.
+    1. При необходимости замените значение `image_url` URL-адресом другого изображения, из которого вы хотите извлечь печатный текст.
+1. Сохраните код как файл с расширением `.py`. Например, `get-printed-text.py`.
+1. Откройте окно командной строки.
+1. В командной строке выполните пример кода с помощью команды `python`. Например, `python get-printed-text.py`.
 
 ```python
 import requests
@@ -104,9 +104,9 @@ for word in word_infos:
 plt.axis("off")
 ```
 
-## <a name="ocr-response"></a>Результат распознавания текста
+## <a name="examine-the-response"></a>Изучите ответ
 
-В случае успешного выполнения возвращается ответ в формате JSON, например:
+Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера веб-страницы и в окне командной строки отобразится успешный ответ, аналогичный следующему.
 
 ```json
 {
@@ -207,9 +207,13 @@ plt.axis("off")
 }
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Удалите файл, если он больше не нужен.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с приложением Python, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с приложением Python, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
 > [Руководство по API компьютерного зрения для Python](../Tutorials/PythonTutorial.md)

@@ -4,14 +4,14 @@ description: Эта статья содержит обзор известных 
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 08/25/2018
+ms.date: 09/28/2018
 ms.author: raynew
-ms.openlocfilehash: ca34f27e1d22c6235ec0d6b965d49ec5266f17f6
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 906c6e56b670dfc26b5905a453fd43a3c72086c3
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43126370"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47433503"
 ---
 # <a name="troubleshoot-azure-migrate"></a>Устранение неполадок в службе "Миграция Azure"
 
@@ -34,6 +34,12 @@ ms.locfileid: "43126370"
 ### <a name="i-installed-agents-and-used-the-dependency-visualization-to-create-groups-now-post-failover-the-machines-show-install-agent-action-instead-of-view-dependencies"></a>Мной были установлены агенты и созданы группы с помощью визуализации зависимостей. Теперь после отработки отказа на компьютере отображается действие "Установить агент" вместо "Просмотреть зависимости"
 * После плановой или внеплановой отработки отказа локальные компьютеры отключаются и запускаются эквивалентные компьютеры в Azure. Эти компьютеры получают другие MAC-адреса. Они могут получить другой IP-адрес, если пользователь не указал сохранение локального IP-адреса. Если MAC-адрес и IP-адрес отличаются, служба "Миграция Azure" не связывает локальные компьютеры с какими-либо данными зависимостей сопоставления служб и предлагает пользователю установить агенты вместо просмотра зависимостей.
 * Поле тестовой отработки отказа локальные компьютеры остаются включенными, как ожидается. Каждый эквивалентный компьютер, запускаемый в Azure, получает другой MAC-адрес и может получить другой IP-адрес. Если только пользователь не блокирует исходящий трафик Log Analytics с этих компьютеров, служба "Миграция Azure" не связывает локальные компьютеры с какими-либо данными зависимостей сопоставления служб и предлагает пользователю установить агенты вместо просмотра зависимостей.
+
+### <a name="i-specified-an-azure-geography-while-creating-a-migration-project-how-do-i-find-out-the-exact-azure-region-where-the-discovered-metadata-would-be-stored"></a>Во время создания проекта по миграции была выбрана географическая территория Azure. Как узнать точное название региона Azure, в котором будут храниться обнаруженные метаданные?
+
+Перейдите к разделу **Основное** на странице **Обзор** проекта, чтобы определить точное расположение, где хранятся метаданные. Служба "Миграция Azure" выбирает расположение случайным образом в пределах географической территории, и его нельзя изменить. Если вы хотите создать проект только в определенном регионе, создайте проект миграции с помощью REST API, передав нужный регион.
+
+   ![Расположение проекта](./media/troubleshooting-general/geography-location.png)
 
 ## <a name="collector-errors"></a>Ошибки сборщика
 
@@ -86,9 +92,11 @@ ms.locfileid: "43126370"
 
 ### <a name="error-unhandledexception-internal-error-occured-systemiofilenotfoundexception"></a>Ошибка UnhandledException. Произошла внутренняя ошибка: System.IO.FileNotFoundException
 
-Эта проблема возникает в версиях сборщика ниже 1.0.9.5. Вы можете столкнуться с ней при работе в версии сборщика 1.0.9.2 или общедоступной предварительной версии, например 1.0.8.59. Щелкните [эту ссылку, чтобы найти подробный ответ на форумах](https://social.msdn.microsoft.com/Forums/azure/en-US/c1f59456-7ba1-45e7-9d96-bae18112fb52/azure-migrate-connect-to-vcenter-server-error?forum=AzureMigrate).
+Эта ошибка может возникать из-за проблемы с установкой VMware PowerCLI. Устранить проблему можно следующим образом:
 
-[Обновите сборщик, чтобы устранить проблему](https://aka.ms/migrate/col/checkforupdates).
+1. Если вы используете не самую новую версию модуля сборщика, обновите его до [последней версии](https://aka.ms/migrate/col/checkforupdates) и проверьте, устранена ли проблема.
+2. Если установлена последняя версия сборщика, вручную установите [VMware PowerCLI 6.5.2](https://www.powershellgallery.com/packages/VMware.PowerCLI/6.5.2.6268016) и проверьте, устранена ли проблема.
+3. Если описанные выше действия не устраняют проблему, перейдите в папку C:\Program Files\ProfilerService и удалите в ней файлы VMware.dll и VimService65.dll, а затем перезапустите службу "Сборщик Миграции Azure" в диспетчере служб Windows (откройте "Выполнить" и ведите services.msc, чтобы открыть диспетчер служб Windows).
 
 ### <a name="error-unabletoconnecttoserver"></a>Ошибка UnableToConnectToServer
 
@@ -102,6 +110,37 @@ ms.locfileid: "43126370"
 2. Если не удается выполнить шаг 1, попробуйте подключиться к серверу vCenter Server по IP-адресу.
 3. Определите правильный номер порта для подключения к серверу vCenter Server.
 4. Наконец, проверьте, работает ли сервер vCenter Server.
+
+## <a name="troubleshoot-dependency-visualization-issues"></a>Устранение неполадок с визуализацией зависимостей
+
+### <a name="i-installed-the-microsoft-monitoring-agent-mma-and-the-dependency-agent-on-my-on-premises-vms-but-the-dependencies-are-now-showing-up-in-the-azure-migrate-portal"></a>На локальные виртуальные машины установлены Microsoft Monitoring Agent (MMA) и агент зависимостей, однако зависимости не отображаются на портале службы "Миграция Azure".
+
+После того как в системе будут установлены агенты, службе "Миграция Azure" обычно требуется 15–30 минут, чтобы отобразить зависимости на портале. Если прошло более 30 минут, убедитесь, что агент MMA может обмениваться данными с рабочей областью OMS, выполнив следующие действия:
+
+Для виртуальной машины Windows:
+1. Перейдите на **панель управления** и запустите **Microsoft Monitoring Agent**.
+2. Перейдите на вкладку **Azure Log Analytics (OMS)** во всплывающем окне свойств MMA.
+3. Убедитесь, что **состояние** рабочей области отображается зеленым цветом.
+4. Если состояние не зеленое, попробуйте удалить рабочую область и снова добавить ее в MMA.
+        ![Состояние MMA](./media/troubleshooting-general/mma-status.png)
+
+Для виртуальной машины Linux убедитесь, что команды установки для MMA и агента зависимостей были выполнены успешно.
+
+### <a name="what-are-the-operating-systems-supported-by-mma"></a>Какие операционные системы поддерживаются агентом MMA?
+
+Список операционных систем Windows, поддерживаемых MMA, см. в [этой статье](https://docs.microsoft.com/azure/log-analytics/log-analytics-concept-hybrid#supported-windows-operating-systems).
+Список операционных систем Linux, поддерживаемых MMA, см. в [этой статье](https://docs.microsoft.com/azure/log-analytics/log-analytics-concept-hybrid#supported-linux-operating-systems).
+
+### <a name="what-are-the-operating-systems-supported-by-dependency-agent"></a>Какие операционные системы поддерживаются агентом зависимостей?
+
+Список операционных систем Windows, поддерживаемых агентом зависимостей, см. в [этой статье](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#supported-windows-operating-systems).
+Список операционных систем Linux, поддерживаемых агентом зависимостей, см. в [этой статье](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#supported-linux-operating-systems).
+
+### <a name="i-am-unable-to-visualize-dependencies-in-azure-migrate-for-more-than-one-hour-duration"></a>В службе "Миграция Azure" нельзя визуализировать зависимости за период свыше одного часа?
+В службе "Миграция Azure" можно визуализировать зависимости за период не больше одного часа. Хотя служба "Миграция Azure" позволяет вернуться к определенной дате в журнале за последний месяц, максимальный период, для которого можно визуализировать зависимости, составляет не более 1 часа. Например, вы можете использовать функцию периода времени на карте зависимостей, чтобы просмотреть вчерашние зависимости, однако просматривать их можно только для периода времени в один час.
+
+### <a name="i-am-unable-to-visualize-dependencies-for-groups-with-more-than-10-vms"></a>Можно ли визуализировать зависимости для групп из более чем 10 виртуальных машин?
+Вы можете [визуализировать зависимости групп](https://docs.microsoft.com/azure/migrate/how-to-create-group-dependencies), в которых имеется до 10 виртуальных машин. Если в группе более 10 виртуальных машин, рекомендуем разбить ее на более мелкие группы, а после этого приступить к визуализации зависимостей.
 
 ## <a name="troubleshoot-readiness-issues"></a>Устранение проблемы готовности
 

@@ -1,5 +1,5 @@
 ---
-title: События в микрослужбах Azure на основе субъектов | Документация Майкрософт
+title: События субъекта в субъектах Azure Service Fabric | Документация Майкрософт
 description: Общие сведения о событиях для Reliable Actors Service Fabric.
 services: service-fabric
 documentationcenter: .net
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/06/2017
 ms.author: amanbha
-ms.openlocfilehash: ed920c8d4ff7254b19c6eef8f5961593bb56bacf
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: c228821383a1bfedf380f97e3411fdacc322a6f9
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34207083"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44054484"
 ---
 # <a name="actor-events"></a>События субъекта
 События субъекта — это способ отправки уведомлений от субъекта клиентам без гарантии доставки. Они предназначены для взаимодействия между субъектом и клиентами, и их не следует использовать для обмена данными между субъектами.

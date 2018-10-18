@@ -1,21 +1,21 @@
 ---
-title: Краткое руководство по API распознавания лиц для Node.js | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
+title: Краткое руководство. Обнаружение лиц на изображении с помощью API распознавания лиц и Node.js
+titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как определять лица на изображениях с помощью API распознавания лиц для Node.js в Cognitive Services.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: face-api
 ms.topic: quickstart
 ms.date: 06/08/2018
 ms.author: nolachar
-ms.openlocfilehash: 15e6db9c9d92e60f18bf2d7708403fd8b0b7a990
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 53d5ed6c13c2f2822374134d8b403493079e1956
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "43770580"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46124003"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-nodejs"></a>Краткое руководство. Определение лиц на изображении с помощью Node.js
 
@@ -276,4 +276,4 @@ request.post(options, (error, response, body) => {
 Ознакомьтесь с API-интерфейсами распознавания лиц, которые используются для обнаружения лиц, обозначения их границ и возврата таких атрибутов, как возраст и пол.
 
 > [!div class="nextstepaction"]
-> [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
+> [API-интерфейсы распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

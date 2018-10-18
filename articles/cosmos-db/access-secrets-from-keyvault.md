@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.author: rafats
-ms.openlocfilehash: 11aac0ab4476494f74453ca64a1b77964197adaa
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: b090c1593b49bec4f51fea8d498860e8af8b2f4b
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42751581"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44053090"
 ---
 # <a name="use-key-vault-to-store-and-access-azure-cosmos-db-keys"></a>Хранение ключей Azure Cosmos DB и получение доступа к ним в Key Vault
 
@@ -25,7 +25,7 @@ ms.locfileid: "42751581"
 * создать хранилище ключей;  
 * добавление ключей доступа Azure Cosmos DB в Key Vault;  
 * создание веб-приложения Azure;  
-* регистрация приложения и предоставление ему разрешений на чтение из Key Vault.  
+* Регистрация приложения и предоставление ему разрешений на чтение из Key Vault  
 
 
 ## <a name="create-a-key-vault"></a>создать хранилище ключей;
@@ -56,7 +56,7 @@ ms.locfileid: "42751581"
 
 ## <a name="create-an-azure-web-application"></a>Создание веб-приложения Azure
 
-1. Создайте веб-приложение Azure или загрузите его из [репозитория GitHub](https://github.com/rsarosh/CosmosDB-KeyVault). Это простое приложение MVC.  
+1. Создайте веб-приложение Azure или загрузите его из [репозитория GitHub](https://github.com/Azure/azure-cosmosdb-dotnet/tree/master/Demo/keyvaultdemo). Это простое приложение MVC.  
 
 2. Распакуйте загруженное приложение и откройте файл **HomeController.cs**. Обновите идентификатор секрета в следующей строке:
 
@@ -87,11 +87,9 @@ ms.locfileid: "42751581"
 
 ![Развернутое приложение, в котором отображается секрет](./media/access-secrets-from-keyvault/app-deployed-with-access.png)
  
-Аналогичным образом вы можете предоставить пользователю доступ к Key Vault. Вам нужно добавить себя в Key Vault. Для этого щелкните "Политики доступа", а затем предоставьте все необходимые разрешения для запуска приложения из Visual Studio. Если это приложение запускается с вашего рабочего стола, оно использует ваш идентификатор.
+Аналогичным образом вы можете предоставить пользователю доступ к Key Vault. Вам нужно добавить себя в Key Vault. Для этого выберите **Политики доступа**, а затем предоставьте все необходимые разрешения для запуска приложения из Visual Studio. Если это приложение запускается с вашего рабочего стола, оно использует ваш идентификатор.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Чтобы настроить брандмауэр для Azure Cosmos DB, см. статью [Поддерживаемые брандмауэры](firewall-support.md).
 * Чтобы настроить конечную точку службы виртуальной сети, перейдите к статье [Безопасный доступ к учетной записи Azure Cosmos DB с использованием конечной точки службы виртуальной сети Azure](vnet-service-endpoint.md).
-
-

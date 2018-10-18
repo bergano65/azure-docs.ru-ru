@@ -12,14 +12,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-multiple
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 01/04/2017
+ms.date: 09/24/2018
 ms.author: crdun
-ms.openlocfilehash: f0f28d4b6573e4e6fecf0e6dd84814d4fc66cd60
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 5e399a237fe533b46997365c16b75dce14149dec
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37050504"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47064328"
 ---
 # <a name="how-to-use-the-managed-client-for-azure-mobile-apps"></a>Использование управляемого клиента для мобильных приложений Azure
 [!INCLUDE [app-service-mobile-selector-client-library](../../includes/app-service-mobile-selector-client-library.md)]
@@ -75,6 +75,9 @@ public class TodoItem
 ```
 using Microsoft.WindowsAzure.MobileServices;
 ```
+
+> [!NOTE]
+> Обратите внимание, что все пакеты поддержки, на которые содержатся ссылки в проекте Android, должны быть одной версии. Пакет SDK имеет зависимость `Xamarin.Android.Support.CustomTabs` для платформы Android, поэтому если в проекте используются пакеты поддержки более новой версии, необходимо установить требуемую версию пакета во избежание конфликтов.
 
 ### <a name="symbolsource"></a>Практическое руководство. Работа с отладочными символами в Visual Studio
 Символы для пространства имен Microsoft.Azure.Mobile доступны в [SymbolSource][10].  Ознакомьтесь с [инструкциями по SymbolSource][11], чтобы интегрировать SymbolSource с Visual Studio.
@@ -1116,7 +1119,7 @@ public class MyHandler : DelegatingHandler
 [OrderBy]: https://msdn.microsoft.com/library/azure/dn250572(v=azure.10).aspx
 [OrderByDescending]: https://msdn.microsoft.com/library/azure/dn250568(v=azure.10).aspx
 [ReadAsync]: https://msdn.microsoft.com/library/azure/mt691741(v=azure.10).aspx
-[Take]: https://msdn.microsoft.com/library/azure/dn250574(v=azure.10).aspx
+[take]: https://msdn.microsoft.com/library/azure/dn250574(v=azure.10).aspx
 [Select]: https://msdn.microsoft.com/library/azure/dn250569(v=azure.10).aspx
 [Skip]: https://msdn.microsoft.com/library/azure/dn250573(v=azure.10).aspx
 [UpdateAsync]: https://msdn.microsoft.com/library/azure/dn250536.(v=azure.10)aspx

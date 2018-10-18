@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.component: B2C
-ms.openlocfilehash: 98c86f5613116dce5423aa9ca6a2ff43e5414592
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: b8cdf6cb07215f4c1e2a472f60513aff765dcfb5
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39594786"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45603200"
 ---
 # <a name="tutorial-grant-access-to-a-nodejs-web-api-from-a-desktop-app-using-azure-active-directory-b2c"></a>Руководство. Предоставление доступа к веб-API Node.js из классического приложения с помощью Azure Active Directory B2C
 
@@ -41,7 +41,7 @@ ms.locfileid: "39594786"
 
 Ресурсы веб-API необходимо зарегистрировать в клиенте, чтобы они могли принимать [запросы защищенных ресурсов](../active-directory/develop/developer-glossary.md#resource-server) от [клиентских приложений](../active-directory/develop/developer-glossary.md#client-application), которые представляют [токен доступа](../active-directory/develop/developer-glossary.md#access-token) из Azure Active Directory, и отвечать на них. Регистрация устанавливает [приложение и объект субъекта-службы](../active-directory/develop/developer-glossary.md#application-object) в клиенте. 
 
-Войдите на [портал Azure](https://portal.azure.com/) как глобальный администратор клиента Azure AD B2C.
+Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
 
 [!INCLUDE [active-directory-b2c-switch-b2c-tenant](../../includes/active-directory-b2c-switch-b2c-tenant.md)]
 

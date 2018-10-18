@@ -1,22 +1,23 @@
 ---
-title: Обнаружение объектов при использовании Python и API пользовательского визуального распознавания — Azure Cognitive Services | Документация Майкрософт
-description: Изучите базовое приложение Windows, в котором используется API пользовательского визуального распознавания в службах Microsoft Cognitive Services. Создайте проект, добавьте теги, загрузите изображения, обучите проект и выполните прогнозирование с использованием конечной точки по умолчанию.
+title: Руководство по созданию проекта обнаружения объектов — API Пользовательской службы визуального распознавания, Python
+titlesuffix: Azure Cognitive Services
+description: Создайте проект, добавьте теги, загрузите изображения, обучите проект и выполните прогнозирование с использованием конечной точки по умолчанию.
 services: cognitive-services
 author: areddish
-manager: chbuehle
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: custom-vision
-ms.topic: article
+ms.topic: tutorial
 ms.date: 05/03/2018
 ms.author: areddish
-ms.openlocfilehash: 37bdb9ebf7c74586c728e171a9897903b8ad2ee8
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: f49f5ab32d834b32de54be2d96c3671ad46f79f3
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39213587"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46363706"
 ---
-# <a name="use-custom-vision-api-to-build-an-object-detection-project-with-python"></a>Применение API пользовательского визуального распознавания для создания на Python проекта обнаружения объектов
+# <a name="tutorial-build-an-object-detection-project-with-python"></a>Руководство по применению проекта обнаружения объектов с помощью Python
 
 Изучите простой скрипт Python, который использует API компьютерного зрения для создания проекта обнаружения объектов. Создав проект, вы можете добавить регионы с тегами, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример с открытым кодом можно применить как шаблон для создания собственного приложения с помощью API Пользовательской службы визуального распознавания.
 

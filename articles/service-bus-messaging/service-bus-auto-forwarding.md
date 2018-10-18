@@ -12,22 +12,22 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/22/2018
+ms.date: 09/22/2018
 ms.author: spelluru
-ms.openlocfilehash: 563fa6f38bb5baffb9a4ae86f944b7597d325d30
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 608510f76d54cc5f3e10587a6f9d1306612672ad
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43699001"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47391114"
 ---
-# <a name="chaining-service-bus-entities-with-auto-forwarding"></a>Объединение в цепочки сущностей служебной шины с помощью автоматической переадресации
+# <a name="chaining-service-bus-entities-with-autoforwarding"></a>Объединение в цепочки сущностей служебной шины с помощью автоматической переадресации
 
-Функция *автоматической переадресации* служебной шины позволяет привязать очередь или подписку к другой очереди или разделу, которые являются частью одного и того же пространства имен. Если включена автоматическая переадресация, служебная шина автоматически удаляет сообщения, помещенные в первую очередь или подписку (источник), и помещает их во вторую очередь или раздел (место назначения). Обратите внимание, что при этом сохраняется возможность отправить сообщение в конечную сущность напрямую. Кроме того, подочередь (например, очередь недоставленных сообщений) нельзя привязать к другой очереди или разделу.
+Функция *автоматической переадресации* служебной шины позволяет привязать очередь или подписку к другой очереди или разделу, которые являются частью одного и того же пространства имен. Если включена автоматическая переадресация, служебная шина автоматически удаляет сообщения, помещенные в первую очередь или подписку (источник), и помещает их во вторую очередь или раздел (место назначения). При этом сохраняется возможность отправить сообщение в конечную сущность напрямую. Кроме того, подочередь (например, очередь недоставленных сообщений) нельзя привязать к другой очереди или разделу.
 
-## <a name="using-auto-forwarding"></a>Использование автоматической переадресации
+## <a name="using-autoforwarding"></a>Использование автоматической переадресации
 
-Автоматическую пересылку можно включить, задав свойства [QueueDescription.ForwardTo][QueueDescription.ForwardTo] или [SubscriptionDescription.ForwardTo][SubscriptionDescription.ForwardTo] объектов источника [QueueDescription][QueueDescription] или [SubscriptionDescription][SubscriptionDescription], как показано в следующем примере:
+Автоматическую переадресацию можно включить, задав свойства [QueueDescription.ForwardTo][QueueDescription.ForwardTo] или [SubscriptionDescription.ForwardTo][SubscriptionDescription.ForwardTo] объектов источника [QueueDescription][QueueDescription] или [SubscriptionDescription][SubscriptionDescription], как показано в следующем примере:
 
 ```csharp
 SubscriptionDescription srcSubscription = new SubscriptionDescription (srcTopic, srcSubscriptionName);
@@ -47,7 +47,7 @@ namespaceManager.CreateSubscription(srcSubscription));
 
 Если Алиса уйдет в отпуск, то заполнится ее личная очередь, а не очередь раздела ERP. В этом сценарии ни один из разделов ERP не достигнет выделенной квоты, так как торговый представитель не получил ни одного сообщения.
 
-## <a name="auto-forwarding-considerations"></a>Рекомендации при использовании автоматической пересылки
+## <a name="autoforwarding-considerations"></a>Рекомендации по автоматической переадресации
 
 Если целевая сущность накапливает слишком много сообщений и превышает квоту или целевая сущность отключена, то исходная сущность добавляет сообщения в [очередь недоставленных сообщений](service-bus-dead-letter-queues.md) до тех пор, пока в целевой сущности не появится место (или пока целевая сущность не будет снова включена). Эти сообщения будут находиться в очереди недоставленных сообщений, поэтому необходимо явным образом получать и обрабатывать их из этой очереди.
 
@@ -59,7 +59,7 @@ namespaceManager.CreateSubscription(srcSubscription));
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Подробные сведения об автоматической пересылке см. в следующих разделах:
+Подробные сведения об автоматической переадресации см. в следующих разделах:
 
 * [ForwardTo][QueueDescription.ForwardTo]
 * [QueueDescription][QueueDescription]

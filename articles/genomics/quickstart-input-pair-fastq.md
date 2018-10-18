@@ -1,24 +1,22 @@
 ---
-title: Краткое руководство. Отправка рабочего процесса с помощью входных FASTQ-файлов | Документация Майкрософт
+title: Краткое руководство. Отправка рабочего процесса с помощью входных FASTQ-файлов в Microsoft Genomics
 titleSuffix: Azure
 description: В этом руководстве предполагается, что вы установили клиент msgen и успешно запустили примеры данных через службу.
-services: microsoft-genomics
+services: genomics
 author: grhuynh
-manager: jhubbard
-editor: jasonwhowell
+manager: cgronlun
 ms.author: grhuynh
-ms.service: microsoft-genomics
-ms.workload: genomics
+ms.service: genomics
 ms.topic: quickstart
 ms.date: 12/07/2017
-ms.openlocfilehash: f093397803f21c023a2c32e42709ecfcd0e3aec7
-ms.sourcegitcommit: 922687d91838b77c038c68b415ab87d94729555e
+ms.openlocfilehash: acbcceb32ec54ab85db05ef743e9c10cd8cf025c
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2017
-ms.locfileid: "26684489"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45735855"
 ---
-# <a name="submit-a-workflow-using-fastq-file-inputs"></a>Отправка рабочего процесса с помощью входных FASTQ-файлов
+# <a name="submit-a-workflow-using-fastq-file-inputs-in-microsoft-genomics"></a>Отправка рабочего процесса с помощью входных FASTQ-файлов в Microsoft Genomics
 
 В этом руководстве показано, как отправить рабочий процесс в службу Microsoft Genomics, если входные файлы являются одной парой FASTQ-файлов. В этом разделе предполагается, что вы уже установили и запустили клиент `msgen` и знаете, как использовать службу хранилища Azure. Если вы успешно отправили рабочий процесс с использованием предоставленного примера данных, можно продолжать работу с этим кратким руководством. 
 

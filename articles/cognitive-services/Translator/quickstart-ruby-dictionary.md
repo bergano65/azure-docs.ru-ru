@@ -1,21 +1,21 @@
 ---
-title: Получение вариантов перевода с помощью Ruby в API перевода текстов | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как найти варианты перевода и контекстуальные термины, используя API перевода текстов с Ruby в Cognitive Services.
+title: Краткое руководство. Поиск вариантов перевода с помощью Перевода текстов и Ruby
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как искать варианты перевода и контекстуальные термины, используя API перевода текстов и Ruby.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/22/2018
 ms.author: nolachar
-ms.openlocfilehash: 6462a48c2f15c8ac4a6b9bce49d23ea3d38dcbd5
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 7cd34e3482df666de8b974380302ee6b4c592496
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "43771070"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46122813"
 ---
 # <a name="quickstart-find-alternate-translations-and-usage-with-ruby"></a>Краткое руководство. Поиск вариантов перевода и использования с помощью Ruby
 
@@ -23,7 +23,7 @@ ms.locfileid: "43771070"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого кода потребуется [Ruby 2.4](https://www.ruby-lang.org/en/downloads/) или более поздней версии.
+Для выполнения этого кода потребуется [Ruby версии 2.4](https://www.ruby-lang.org/en/downloads/) или более поздней версии.
 
 Чтобы использовать API перевода текстов, вам также потребуется ключ подписки. Сведения об этом см. в статье [Регистрация для использования API перевода текстов](translator-text-how-to-signup.md).
 

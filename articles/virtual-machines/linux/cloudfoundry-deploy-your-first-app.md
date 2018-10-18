@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/14/2017
 ms.author: seanmck
-ms.openlocfilehash: 5e7b321c9fc8f8568cd8109cea0ae877048d3663
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: 6e2fa77273ef35fae6c3b232cb36fa913faf879d
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "30841424"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44299055"
 ---
 # <a name="deploy-your-first-app-to-cloud-foundry-on-microsoft-azure"></a>Развертывание первого приложения в Cloud Foundry в Microsoft Azure
 
@@ -145,7 +145,7 @@ cf scale -i 2 hello-spring-cloud
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [Ознакомьтесь с документацией по Cloud Foundry][cloudfoundry-docs]
-- [Настройте подключаемый модуль Visual Studio Team Services для Cloud Foundry][vsts-plugin]
+- [Настройте подключаемый модуль Azure DevOps Services для Cloud Foundry][vsts-plugin]
 - [Настройте Microsoft Log Analytics Nozzle для Cloud Foundry][loganalytics-nozzle]
 
 <!-- LINKS -->

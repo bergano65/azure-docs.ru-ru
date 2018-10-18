@@ -1,8 +1,8 @@
 ---
-title: "Отделение телеметрии стадий разработки, тестирования и выпуска в Azure Application Insights | Документация Майкрософт"
-description: "Отправка телеметрии к различным ресурсам для меток разработки, тестирования и эксплуатации."
+title: Отделение телеметрии стадий разработки, тестирования и выпуска в Azure Application Insights | Документация Майкрософт
+description: Отправка телеметрии к различным ресурсам для меток разработки, тестирования и эксплуатации.
 services: application-insights
-documentationcenter: 
+documentationcenter: ''
 author: mrbullwinkle
 manager: carmonm
 ms.assetid: 578e30f0-31ed-4f39-baa8-01b4c2f310c9
@@ -10,14 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: mbullwin
-ms.openlocfilehash: 8d95958bce0597bfb16ef1c6b99b72ce9134e66f
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: 88626c3a4bfd4a1ff3a2e9cbc8c3f2b1c5553295
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44303631"
 ---
 # <a name="separating-telemetry-from-development-test-and-production"></a>Отделение телеметрии стадий разработки, тестирования и эксплуатации
 
@@ -153,7 +154,7 @@ ms.lasthandoff: 11/01/2017
 Обратите внимание, что номер версии сборки создается только Microsoft Build Engine, а не в процессе сборки в Visual Studio.
 
 ### <a name="release-annotations"></a>Примечания к выпуску
-Если используется Visual Studio Team Services, можно настроить [добавление маркера заметки](app-insights-annotations.md) к диаграммам при выпуске новой версии. На следующем рисунке показано, как появляется этот маркер.
+Если используется Azure DevOps, можно настроить [добавление маркера заметки](app-insights-annotations.md) к диаграммам при выпуске новой версии. На следующем рисунке показано, как появляется этот маркер.
 
 ![Снимок экрана, где показана диаграмма с примером заметки о новом выпуске](./media/app-insights-asp-net/release-annotation.png)
 ## <a name="next-steps"></a>Дополнительная информация

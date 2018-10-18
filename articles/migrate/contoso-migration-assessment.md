@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: raynew
-ms.openlocfilehash: 700c90e8fd9b4b14370d4a5ac471c3f7d267bbcc
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: 3969286b4a748a9dde8c126f91a5b19ee14a7c0d
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43783201"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44303320"
 ---
 # <a name="contoso-migration-assess-on-premises-workloads-for-migration-to-azure"></a>Миграция компании Contoso. Оценка локальных рабочих нагрузок для миграции в Azure
 
@@ -32,9 +32,9 @@ ms.locfileid: "43783201"
 [Статья 8. Повторное размещение приложения Linux на виртуальных машинах Azure и в Базе данных Azure для MySQL](contoso-migration-rehost-linux-vm-mysql.md) | Компания Contoso выполняет миграцию приложения osTicket для Linux на виртуальные машины Azure с помощью Site Recovery. Она перемещает базу данных приложения в Базу данных Azure для MySQL с помощью MySQL Workbench. | Доступна
 [Статья 9. Рефакторинг приложения в веб-приложении Azure и Базе данных SQL Azure](contoso-migration-refactor-web-app-sql.md) | Специалисты компании Contoso переносят приложение SmartHotel360 в веб-приложение Azure, а базу данных приложения — в экземпляр SQL Server Azure с помощью Помощника по миграции баз данных. | Доступна
 [Статья 10. Рефакторинг приложения Linux в веб-приложении Azure и Базе данных SQL Azure](contoso-migration-refactor-linux-app-service-mysql.md) | Специалисты компании Contoso переносят свое приложение osTicket для Linux в веб-приложение Azure в нескольких регионах Azure с помощью диспетчера трафика Azure, интегрированного с GitHub для непрерывной поставки. Компания Contoso переносит базу данных приложения в экземпляр Базы данных Azure для MySQL. | Доступна
-[Статья 11. Рефакторинг Team Foundation Server на Visual Studio Team Services](contoso-migration-tfs-vsts.md) | Специалисты компании Contoso переносят локальное развертывание Team Foundation Server в Visual Studio Team Services в Azure. | Доступна
-[Статья 12. Перепроектирование приложения в контейнерах Azure и Базе данных SQL Azure](contoso-migration-rearchitect-container-sql.md) | Специалисты компании Contoso переносят приложение SmartHotel360 в Azure. Затем уровень веб-приложений преобразуется в контейнер Windows, работающий в Azure Service Fabric, и базу данных в службе "База данных SQL Azure". | Доступна
-[Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | Специалисты компании Contoso выполняют повторную сборку приложения SmartHotel360, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Службу Azure Kubernetes (AKS), Функции Azure, Cognitive Services и Azure Cosmos DB. | Доступна
+[Статья 11. Рефакторинг развертывания Team Foundation Server в Azure DevOps Services](contoso-migration-tfs-vsts.md) | Специалисты компании Contoso переносят локальное развертывание Team Foundation Server в Azure DevOps Services в Azure. | Доступна
+[Статья 12. Перепроектирование приложения в контейнерах Azure и Базе данных SQL Azure](contoso-migration-rearchitect-container-sql.md) | Специалисты компании Contoso переносят приложение SmartHotel в Azure. Затем уровень веб-приложений преобразуется в контейнер Windows, работающий в Azure Service Fabric, и базу данных в службе "База данных SQL Azure". | Доступна
+[Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | Специалисты компании Contoso выполняют повторную сборку приложения SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Службу Azure Kubernetes (AKS), Функции Azure, Cognitive Services и Azure Cosmos DB. | Доступна
 
 
 ## <a name="overview"></a>Обзор

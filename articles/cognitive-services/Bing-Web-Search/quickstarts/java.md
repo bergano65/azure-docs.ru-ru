@@ -1,19 +1,21 @@
 ---
-title: Краткое руководство. Вызов API Bing для поиска в Интернете с использованием Java
+title: Краткое руководство. Поиск с помощью Java и API Bing для поиска в Интернете
+titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON, используя Java.
 services: cognitive-services
 author: erhopf
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 8/16/2018
 ms.author: erhopf
-ms.openlocfilehash: 8d3e01aef8efdf1503ad7056220e0cba9fb38ed3
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: e0c1a038a0d63bcae8620c89462bdecfd88d8227
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42888230"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46121980"
 ---
 # <a name="quickstart-use-java-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием Java  
 
@@ -23,7 +25,7 @@ ms.locfileid: "42888230"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить это руководство, вам потребуется следующее:
+Для работы с этим кратким руководством вам потребуется следующее:
 
 * [пакет JDK 7 или 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html);
 * [библиотека Gson](https://github.com/google/gson);
@@ -70,7 +72,7 @@ public class BingWebSearch {
 
 ## <a name="define-variables"></a>Определение переменных
 
-Этот код задает `subscriptionKey`, `host`, `path` и `searchTerm`. Убедитесь, что конечная точка указана верно, и замените значение `subscriptionKey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение `searchTerm`.
+Этот код задает `subscriptionKey`, `host`, `path` и `searchTerm`. Убедитесь, что конечная точка указана верно, и замените значение `subscriptionKey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `searchTerm`.
 
 ```java
 // Enter a valid subscription key.

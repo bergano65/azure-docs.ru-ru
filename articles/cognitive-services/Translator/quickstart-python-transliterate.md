@@ -1,21 +1,21 @@
 ---
-title: Скрипт для преобразования текста с помощью API перевода текстов и Python | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как преобразовать текст на одном языке из одного скрипта в другой, используя API перевода текстов с Python в Cognitive Services.
+title: Краткое руководство. Преобразование набора символов текста с помощью Перевода текстов и Python
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как с помощью API перевода текстов и Java преобразовать текст на одном языке из одного набора символов в Python.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/21/2018
 ms.author: nolachar
-ms.openlocfilehash: 41fb0f72c5974a1ab034680a820dca6aa7bbdc6d
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 24fe0dc23703bdca4ce74ba1a527990a70ac2ffc
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "43770886"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46122117"
 ---
 # <a name="quickstart-transliterate-text-with-python"></a>Краткое руководство по транслитерации текста с помощью Python
 

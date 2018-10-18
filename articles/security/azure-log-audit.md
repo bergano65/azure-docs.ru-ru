@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 93b0a7e382c27cab5f050166ec8fa89fc7cf6b96
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: e2dabc66a906d35525f51bf9a1c09b62430ded55
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45576108"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47434013"
 ---
 # <a name="azure-logging-and-auditing"></a>Ведение журналов и аудит Azure
 
@@ -323,7 +323,7 @@ Log Analytics — это служба в Azure, которая помогает 
 |Application Insights||     Соединитель|  Соединитель|  [Соединитель Application Insights](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/) [(предварительная версия)](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/)|
 |Учетные записи для службы автоматизации Azure| Microsoft.Automation/<br>AutomationAccounts|    Диагностика||       [Дополнительные сведения](https://docs.microsoft.com/azure/automation/automation-manage-send-joblogs-log-analytics)|
 |Учетные записи для пакетной службы Azure|  Microsoft.Batch/<br>batchAccounts|  Диагностика|    Диагностика||
-|Классические облачные службы||       служба хранилища.||       [Дополнительные сведения](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage-iis-table)|
+|Классические облачные службы||       Хранилище||       [Дополнительные сведения](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage-iis-table)|
 |Cognitive Services|    Microsoft.CognitiveServices/<br>accounts|       Диагностика|||
 |Аналитика озера данных Azure| Microsoft.DataLakeAnalytics/<br>accounts|   Диагностика|||
 |Хранилище озера данных Azure| Microsoft.DataLakeStore/<br>accounts|   Диагностика|||
@@ -340,7 +340,7 @@ Log Analytics — это служба в Azure, которая помогает 
 |Service Fabric||       Хранилище||    [Анализ Service Fabric (предварительная версия)](https://docs.microsoft.com/azure/log-analytics/log-analytics-service-fabric)|
 |SQL (версия 12)| Microsoft.Sql/<br>servers/<br>databases||       Диагностика||
 ||Microsoft.Sql/<br>servers/<br>elasticPools||||
-|служба хранилища.|||         Скрипт| [Служба анализа службы хранилища Azure (предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-azure-storage-analytics-solution)|
+|Хранилище|||         Скрипт| [Служба анализа службы хранилища Azure (предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-azure-storage-analytics-solution)|
 |Виртуальные машины Azure|    Microsoft.Compute/<br>virtualMachines|  Добавочный номер|  Добавочный номер||
 ||||Диагностика||
 |наборы для масштабирования виртуальных машин|    Microsoft.Compute/<br>virtualMachines    ||Диагностика||
@@ -351,7 +351,7 @@ Log Analytics — это служба в Azure, которая помогает 
 
 
 ## <a name="log-integration-with-on-premises-siem-systems"></a>Интеграция журналов с локальными системами SIEM
-Служба [Интеграция журналов данных Azure](https://www.microsoft.com/download/details.aspx?id=53324) позволяет интегрировать необработанные журналы из ресурсов Azure с использованием локальной системы SIEM.
+Служба [Интеграция журналов данных Azure](https://www.microsoft.com/download/details.aspx?id=53324) позволяет интегрировать необработанные журналы из ресурсов Azure с локальными системами SIEM (управление информационной безопасностью и событиями безопасности).
 
 ![Схема интеграции журналов](./media/azure-log-audit/azure-log-audit-fig9.png)
 

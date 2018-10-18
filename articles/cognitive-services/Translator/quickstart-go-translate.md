@@ -1,21 +1,21 @@
 ---
-title: Перевод текста с помощью API перевода текстов и Go | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как перевести текст с одного языка на другой, используя API перевода текстов с Go в Cognitive Services.
+title: Краткое руководство. Перевод текста с помощью Перевода текстов и Go
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как перевести текст с одного языка на другой, используя API перевода текстов и Go.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/29/2018
 ms.author: nolachar
-ms.openlocfilehash: 72d4a3bc7563d6427335f1536f787eab6d7a0de4
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: df8b938c9541a4f57a337065af0ab02fe6815c6d
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "43771315"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46126706"
 ---
 # <a name="quickstart-translate-text-with-go"></a>Краткое руководство по переводу текста с помощью Go
 

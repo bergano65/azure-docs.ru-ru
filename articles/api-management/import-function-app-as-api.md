@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 08/28/2018
 ms.author: apimpm
-ms.openlocfilehash: ea6078088417099045006f81dcaf1f769bbd64d7
-ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
+ms.openlocfilehash: b5a38b9f16224c8b2b128b464106fe83d018b308
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43246821"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46129766"
 ---
 # <a name="import-an-azure-function-app-as-an-api-in-azure-api-management"></a>Импорт приложения-функции Azure в качестве API в службу управления API Azure
 
@@ -71,9 +71,11 @@ ms.locfileid: "43246821"
     > [!NOTE]
     > Вы можете импортировать только функции, которые основаны на триггере HTTP и имеют уровень авторизации *Анонимный* или *Функция*.
 
-7. При необходимости измените предварительно заполненные поля. Нажмите кнопку **Создать**.
+7. Переключитесь в **полное** представление и назначьте **продукт** вашему новому API. При необходимости измените другие предварительно заполненные поля.
 
     ![Добавление из приложения-функции](./media/import-function-app-as-api/add-06.png)
+
+8. Нажмите кнопку **Создать**.
 
 ## <a name="append-azure-function-app-to-api"></a> Добавление приложения-функции Azure в API
 

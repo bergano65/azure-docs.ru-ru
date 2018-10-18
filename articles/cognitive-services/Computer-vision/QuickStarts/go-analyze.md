@@ -1,52 +1,46 @@
 ---
-title: Краткое руководство по API компьютерного зрения для Go. Анализ изображения | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как с помощью API компьютерного зрения и Go анализировать изображения в Cognitive Services.
+title: Краткое руководство. Анализ удаленного изображения c помощью API компьютерного зрения (REST, Go)
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве описано, как проанализировать изображение с помощью API компьютерного зрения на Go.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: ef7d6ac818f517615fc98f40ac073e6bfc9a65fd
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: ccdd8922993fb1ea3e723a68f28f95f7b6ffe93b
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43772291"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45632234"
 ---
-# <a name="quickstart-analyze-a-remote-image---rest-go"></a>Краткое руководство по анализу удаленного изображения (REST, Go)
+# <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-go-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API и Go в API компьютерного зрения
 
-Из этого краткого руководства вы узнаете, как анализировать изображение с помощью API компьютерного зрения, чтобы извлечь визуальные признаки.
+Из этого краткого руководства вы узнаете, как анализировать удаленное изображение с помощью REST API в API компьютерного зрения, чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные функции на основе содержимого изображения.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- Необходимо установить [Go](https://golang.org/dl/).
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Как получить ключи подписки).
 
-## <a name="analyze-image-request"></a>Запрос на анализ изображения
+## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
-С помощью [метода Analyze Image](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные признаки на основе содержимого изображения. Вы можете передать изображение или указать его URL-адрес, а также настроить следующие возвращаемые компоненты:
+Чтобы создать и запустить пример, сделайте следующее.
 
-* подробный список тегов, связанных с содержимым изображения;
-* описание содержимого изображения в виде полного предложения;
-* координаты, пол и возраст любого лица, показанного на изображении;
-* значение ImageType (картинки или линейный рисунок);
-* преобладающий цвет, контрастный цвет, наличие или отсутствие цветности;
-* категорию, определенную в этой [таксономии](../Category-Taxonomy.md);
-* наличие на изображении содержимого для взрослых или содержимого сексуального характера.
-
-Чтобы выполнить наш пример, сделайте следующее:
-
-1. Скопируйте приведенный ниже код в редактор.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. В качестве значения для `uriBase` укажите расположение, в котором вы получили ключи подписки, если нужно.
-1. При необходимости в качестве значения для `imageUrl` укажите анализируемое изображение.
-1. Сохраните файл с расширением `.go`.
-1. Откройте командную строку на компьютере, на котором установлен язык Go.
-1. Скомпилируйте файл, например: `go build analyze-image.go`.
-1. Запустите файл, например: `analyze-image`.
+1. Скопируйте приведенный ниже код в текстовый редактор.
+1. При необходимости внесите в код следующие изменения.
+    1. Замените значение `subscriptionKey` своим ключом подписки.
+    1. Замените значение `uriBase` URL-адресом конечной точки для метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) из региона Azure, где вы получили ключи подписки, если это необходимо.
+    1. При необходимости замените значение `imageUrl` URL-адресом другого изображения, анализ которого следует выполнить.
+1. Сохраните код как файл с расширением `.go`. Например, `analyze-image.go`.
+1. Откройте окно командной строки.
+1. В командной строке запустите команду `go build` для компиляции пакета из файла. Например, `go build analyze-image.go`.
+1. Запустите скомпилированный пакет в командной строке Например, `analyze-image`.
 
 ```go
 package main
@@ -61,12 +55,17 @@ import (
 )
 
 func main() {
-    // For example, subscriptionKey = "0123456789abcdef0123456789ABCDEF"
+    // Replace <Subscription Key> with your valid subscription key.
     const subscriptionKey = "<Subscription Key>"
 
-    // You must use the same location in your REST call as you used to get your
-    // subscription keys. For example, if you got your subscription keys from
-    // westus, replace "westcentralus" in the URL below with "westus".
+    // You must use the same Azure region in your REST API method as you used to
+    // get your subscription keys. For example, if you got your subscription keys
+    // from the West US region, replace "westcentralus" in the URL
+    // below with "westus".
+    //
+    // Free trial subscription keys are generated in the West Central US region.
+    // If you use a free trial subscription key, you shouldn't need to change
+    // this region.
     const uriBase =
         "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/analyze"
     const imageUrl =
@@ -78,18 +77,18 @@ func main() {
 
     reader := strings.NewReader(imageUrlEnc)
 
-    // Create the Http client
+    // Create the HTTP client
     client := &http.Client{
         Timeout: time.Second * 2,
     }
 
-    // Create the Post request, passing the image URL in the request body
+    // Create the POST request, passing the image URL in the request body
     req, err := http.NewRequest("POST", uri, reader)
     if err != nil {
         panic(err)
     }
 
-    // Add headers
+    // Add request headers
     req.Header.Add("Content-Type", "application/json")
     req.Header.Add("Ocp-Apim-Subscription-Key", subscriptionKey)
 
@@ -101,26 +100,26 @@ func main() {
 
     defer resp.Body.Close()
 
-    // Read the response body.
+    // Read the response body
     // Note, data is a byte array
     data, err := ioutil.ReadAll(resp.Body)
     if err != nil {
         panic(err)
     }
 
-    // Parse the Json data
+    // Parse the JSON data from the byte array
     var f interface{}
     json.Unmarshal(data, &f)
 
-    // Format and display the Json result
+    // Format and display the JSON result
     jsonFormatted, _ := json.MarshalIndent(f, "", "  ")
     fmt.Println(string(jsonFormatted))
 }
 ```
 
-## <a name="analyze-image-response"></a>Результат анализа изображения
+## <a name="examine-the-response"></a>Изучите ответ.
 
-В случае успешного выполнения возвращается ответ в формате JSON, например:
+Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера приложения и в окне командной строки отобразится успешный ответ, аналогичный следующему.
 
 ```json
 {
@@ -178,9 +177,13 @@ func main() {
 }
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Удалите скомпилированный пакет и файл, из которого был скомпилирован пакет, если они вам больше не нужны, а затем закройте окно командной строки и текстовый редактор.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с API-интерфейсами компьютерного зрения, которые позволяют анализировать изображения, обнаруживать знаменитостей и достопримечательности, создавать эскизы, извлекать печатный и рукописный текст. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с API компьютерного зрения, который позволяет анализировать изображения, обнаруживать знаменитостей и достопримечательности, создавать эскизы, извлекать печатный и рукописный текст. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
-> [Сведения об API-интерфейсах компьютерного зрения](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44)
+> [Обзор API компьютерного зрения](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44)

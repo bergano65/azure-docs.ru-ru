@@ -6,20 +6,20 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: 25ab2f735cfd4b0870729cb86992665fa8984580
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.date: 09/26/2018
+ms.openlocfilehash: 6de302dbcfa9d6d1d2b311f41b03d8e54aeb63f6
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46976382"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47395446"
 ---
 # <a name="performance-recommendations-in-azure-database-for-postgresql"></a>Рекомендации по производительности в базе данных Azure для PostgreSQL
 
 **Применимо к**: база данных Azure для PostgreSQL 9.6 и 10
 
 > [!IMPORTANT]
-> Рекомендации по повышению производительности вышли в общедоступной предварительной версии.
+> Компонент "Рекомендации по производительности" доступен в общедоступной предварительной версии в ограниченном числе регионов.
 
 Функция рекомендаций по повышению производительности определяет верхние индексы, которые можно создать в базе данных Azure для сервера PostgreSQL, чтобы повысить производительность. Для создания рекомендаций по индексам функция учитывает различные характеристики базы данных, включая его схемы и рабочую нагрузку по данным Query Store. После реализации любой из рекомендаций по повышению производительности клиенты должны протестировать производительность, чтобы оценить результаты внесенных изменений. 
 

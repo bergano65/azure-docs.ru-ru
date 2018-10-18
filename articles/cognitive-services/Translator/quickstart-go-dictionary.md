@@ -1,21 +1,21 @@
 ---
-title: Получение вариантов перевода с помощью API перевода текстов и Go | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как найти варианты перевода и примеры контекстуальных терминов, используя API перевода текстов с Go в Cognitive Services.
+title: Краткое руководство. Поиск вариантов перевода с помощью Перевода текстов и Go
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как искать варианты перевода и контекстуальные термины, используя API перевода текстов и Go.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/29/2018
 ms.author: nolachar
-ms.openlocfilehash: a076418dbf969a61107c28f191457fc336a8b907
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: 4ea21673c993c6dd9478f42bfee790b62317946f
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "43771294"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46128882"
 ---
 # <a name="quickstart-find-alternate-translations-and-usage-with-go"></a>Краткое руководство по поиску вариантов перевода с использованием Go
 

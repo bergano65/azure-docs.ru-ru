@@ -1,25 +1,27 @@
 ---
-title: Краткое руководство по API компьютерного зрения для cURL. Создание эскиза | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как создать эскиз изображения, используя API компьютерного зрения с cURL в Cognitive Services.
+title: Краткое руководство по созданию эскиза с помощью API компьютерного зрения для REST, cURL
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как создать эскиз изображения с помощью API компьютерного зрения в cURL.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: 4056f05f3f4bf97761f683b5f3a9053666d4ea26
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: afe9aad1981c53d2ce0e06d68a4b36401272e333
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43771941"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45634667"
 ---
-# <a name="quickstart-generate-a-thumbnail---rest-curl"></a>Краткое руководство по созданию эскиза (REST, cURL)
+# <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-curl-in-computer-vision"></a>Краткое руководство по созданию эскизов с помощью REST API и cURL в службе "Компьютерное зрение"
 
-В этом кратком руководстве описано, как создать эскиз изображения с помощью API компьютерного зрения.
+Из этого краткого руководства вы узнаете, как создать эскиз изображения с помощью REST API компьютерного зрения. Метод [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) позволяет создать эскиз изображения. Вы можете указать нужную высоту и ширину. При этом пропорции могут отличаться от пропорций исходного изображения. API компьютерного зрения использует интеллектуальную обрезку для идентификации интересующей области и создания координат обрезки для этой области.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -42,17 +44,39 @@ ms.locfileid: "43771941"
 >[!NOTE]
 >В вызове REST необходимо использовать то же расположение, что и для получения ключей подписки. Например, если вы получили ключи подписки в регионе "Западная часть США", в URL-адресе ниже замените westcentralus на westus.
 
-```json
-curl -H "Ocp-Apim-Subscription-Key: <Subscription Key>" -o <File> -H "Content-Type: application/json" "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/generateThumbnail?width=100&height=100&smartCropping=true" -d "{\"url\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Shorkie_Poo_Puppy.jpg/1280px-Shorkie_Poo_Puppy.jpg\"}"
+## <a name="prerequisites"></a>Предварительные требования
+
+- [cURL](https://curl.haxx.se/windows).
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+
+## <a name="create-and-run-the-sample-command"></a>Создание и запуск примера команды
+
+Чтобы создать и запустить пример, сделайте следующее.
+
+1. Скопируйте приведенную ниже команду в текстовый редактор.
+1. При необходимости внесите следующие изменения в команду:
+    1. Замените значение `<subscriptionKey>` своим ключом подписки.
+    1. Замените значение `<thumbnailFile>` путем и именем файла, в котором следует сохранить эскиз.
+    1. Замените URL-адрес запроса `https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/generateThumbnail` URL-адресом конечной точки для метода [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) из региона Azure, где вы получили ключи подписки, если это необходимо.
+    1. При необходимости замените URL-адрес изображения в тексте запроса (`https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Shorkie_Poo_Puppy.jpg/1280px-Shorkie_Poo_Puppy.jpg\`) на URL-адрес другого изображения для создания эскиза.
+1. Откройте окно командной строки.
+1. Вставьте команду из текстового редактора в окне командной строки и выполните команду.
+
+```console
+curl -H "Ocp-Apim-Subscription-Key: <subscriptionKey>" -o <thumbnailFile> -H "Content-Type: application/json" "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/generateThumbnail?width=100&height=100&smartCropping=true" -d "{\"url\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Shorkie_Poo_Puppy.jpg/1280px-Shorkie_Poo_Puppy.jpg\"}"
 ```
 
-## <a name="get-thumbnail-response"></a>Ответ Get Thumbnail
+## <a name="examine-the-response"></a>Изучение ответа
 
-При успешном получении ответа файл эскиза изображения будет записан в `<File>`. Если запрос завершается сбоем, ответ будет содержать код ошибки и сообщение с описанием проблемы.
+При успешном получении ответа файл эскиза изображения будет записан в файл, указанный в `<thumbnailFile>`. Если запрос завершается сбоем, ответ будет содержать код ошибки и сообщение с описанием проблемы.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если окно командной строки больше не нужно, закройте его и текстовый редактор.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с API-интерфейсами компьютерного зрения, которые позволяют анализировать изображения, обнаруживать знаменитостей и достопримечательности, создавать эскизы, извлекать печатный и рукописный текст. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с API компьютерного зрения, который позволяет анализировать изображения, обнаруживать знаменитостей и достопримечательности, создавать эскизы, извлекать печатный и рукописный текст. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
-> [Сведения об API-интерфейсах компьютерного зрения](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44)
+> [Обзор API компьютерного зрения](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44)

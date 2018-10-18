@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 06/01/2018
 ms.author: jomolesk
-ms.openlocfilehash: 20aa842fb8168bc28a388c817f4e4eedbdd63ebd
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: eb8db75a8ff5af11b98ee2c61628f923a8422153
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34726694"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44299939"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-for-fedramp"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение PaaS для FedRAMP
 
@@ -28,7 +28,7 @@ ms.locfileid: "34726694"
 ## <a name="architecture-diagram-and-components"></a>Схема и компоненты архитектуры
 Это решение предоставляет эталонную архитектуру для веб-приложения PaaS с внутренним сервером базы данных SQL Azure. Веб-приложение размещается в изолированной среде службы приложений Azure, представляющей собой частную выделенную среду в центре обработки данных Azure. В этой среде осуществляется балансировка нагрузки трафика для веб-приложения между виртуальными машинами под управлением Azure. Эта архитектура также включает в себя группы безопасности сети и шлюз приложений, а также службы Azure DNS и Load Balancer. Кроме того, Operations Management Suite предоставляет данные аналитики в режиме реального времени о работоспособности и безопасности системы. **Azure рекомендует настроить подключение VPN или ExpressRoute для управления и импорта данных в подсеть эталонной архитектуры.**
 
-![Схема эталонной архитектуры веб-приложения PaaS для FedRAMP](images/fedramp-paaswa-architecture.png?raw=true) "Схема эталонной архитектуры веб-приложения PaaS для FedRAMP"
+![Схема эталонной архитектуры веб-приложения PaaS для FedRAMP](images/fedramp-paaswa-architecture.png?raw=true "Схема эталонной архитектуры веб-приложения PaaS для FedRAMP")
 
 Это решение использует следующие службы Azure. Подробные сведения об архитектуре развертывания см. в [этом разделе](#deployment-architecture).
 
@@ -73,7 +73,7 @@ ms.locfileid: "34726694"
 
 В разделе [Инструкции и рекомендации](#guidance-and-recommendations) содержатся дополнительные сведения об ASE.
 
-**Веб-приложение Azure**. [Служба веб-приложений Azure](https://docs.microsoft.com/azure/app-service/) позволяет клиентам создавать и размещать веб-приложения на любых языках программирования без необходимости управлять инфраструктурой. Эта служба поддерживает Windows и Linux, а также обеспечивает автоматическое масштабирование, высокий уровень доступности и автоматическое развертывание из GitHub, Visual Studio Team Services или любого репозитория Git.
+**Веб-приложение Azure**. [Служба веб-приложений Azure](https://docs.microsoft.com/azure/app-service/) позволяет клиентам создавать и размещать веб-приложения на любых языках программирования без необходимости управлять инфраструктурой. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из GitHub, Azure DevOps или любого репозитория Git.
 
 ### <a name="virtual-network"></a>Виртуальная сеть
 Архитектура определяет частную виртуальную сеть с пространством адресов 10.200.0.0/16.
@@ -101,8 +101,8 @@ Azure по умолчанию шифрует весь обмен данными 
 
 **Служба хранилища Azure**. Для выполнения требований к шифрованию неактивных данных во всей [службе хранилища Azure](https://azure.microsoft.com/services/storage/) используется [шифрование службы хранилища](https://docs.microsoft.com/azure/storage/storage-service-encryption).
 
-**Шифрование дисков Azure**
-[Служба шифрования дисков Azure](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) использует компонент BitLocker в Windows, чтобы обеспечить шифрование томов для дисков данных. Решение интегрируется с Azure Key Vault, помогая контролировать ключи шифрования дисков и управлять ими.
+**Шифрование дисков Azure**. Служба 
+[шифрования дисков Azure](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) использует компонент BitLocker в Windows, чтобы обеспечить шифрование томов для дисков данных. Решение интегрируется с Azure Key Vault, помогая контролировать ключи шифрования дисков и управлять ими.
 
 **База данных SQL Azure**. В экземпляре Базы данных SQL Azure используются следующие меры безопасности базы данных:
 -   [Аутентификация и авторизация AD](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication) обеспечивает централизованное управление удостоверениями для пользователей баз данных и других служб Майкрософт.

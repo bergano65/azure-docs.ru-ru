@@ -1,25 +1,25 @@
 ---
-title: Отправка изображений Bing для аналитики | Документация Майкрософт
-description: Консольное приложение, которое использует интерфейс "API Bing для поиска изображений" для отправки изображений и получения сведений о них.
+title: Руководство. Извлечение сведений об изображении с помощью C# (API Bing для поиска изображений)
+titleSuffix: Azure Cognitive Services
+description: Воспользуйтесь этой статьей, чтобы создать приложение C#, извлекающее сведения об изображении с помощью API Bing для поиска изображений.
 services: cognitive-services
-author: mikedodaro
-manager: rosh
+author: aahill
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-image-search
-ms.topic: article
-ms.date: 12/07/2017
-ms.author: v-gedod
-ms.openlocfilehash: f0bf32a9951527a072fffe464f6b5f50d0f237a2
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.topic: tutorial
+ms.date: 9/14/2018
+ms.author: aahi
+ms.openlocfilehash: 96d011a04c97d309409062a286bdd7a17db9cda5
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380064"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46297662"
 ---
-# <a name="tutorial-bing-image-upload-for-insights"></a>Руководство по отправке изображений Bing для аналитики
+# <a name="tutorial-extract-image-details-using-the-bing-image-search-api-and-c"></a>Руководство. Извлечение сведений об изображении с помощью API Bing для поиска изображений и C#
 
-API Bing для поиска изображений предоставляет параметр `POST`, который можно использовать для отправки изображения и поиска сведений, связанных с этим изображением. Это консольное приложение C# отправляет изображение с помощью конечной точки для поиска изображений, чтобы получить сведения об этом изображении.
-Результаты, если коротко, являются объектами JSON и представлены в таком виде:
+Существует несколько [конечных точек](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/image-search-endpoint), доступ к которым можно получить с помощью API Bing для поиска изображений. Конечная точка `/details` принимает запрос POST с изображением и может возвращать различные сведения об изображении. Это приложение C# отправляет изображение с помощью этого API и отображает сведения, возвращенные Bing, которые являются объектами JSON, например следующие:
 
 ![[Результаты JSON]](media/cognitive-services-bing-images-api/jsonResult.jpg)
 
@@ -32,154 +32,85 @@ API Bing для поиска изображений предоставляет �
 > * Отправка данных изображений и отправка запроса `POST`.
 > * Печать результатов JSON в консоль.
 
-## <a name="app-components"></a>Добавление компонентов
+Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/Tutorials/BingGetSimilarImages.cs).
 
-Это учебное приложение состоит из трех частей:
+## <a name="prerequisites"></a>Предварительные требования
 
-> [!div class="checklist"]
-> * Настройка конечной точки для указания конечной точки API Bing для поиска изображений и обязательных заголовков.
-> * Отправка файла изображения для запроса `POST` к конечной точке.
-> * Анализ результатов JSON, которые являются сведениями, возвращаемыми запросом `POST`.
+* Любой выпуск [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/).
 
-## <a name="scenario-overview"></a>Обзор сценария
-Существует [три конечные точки для поиска изображений](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/image-search-endpoint). Конечная точка `/details` может использовать запрос `POST` с данными изображения в теле запроса.
+[!INCLUDE [cognitive-services-bing-image-search-signup-requirements](../../../includes/cognitive-services-bing-image-search-signup-requirements.md)]
+
+## <a name="construct-an-image-details-search-request"></a>Составление запроса на поиск сведений об изображении
+
+Ниже приведена конечная точка `/details`, принимающая запросы POST с данными изображения в тексте запроса.
 ```
 https://api.cognitive.microsoft.com/bing/v7.0/images/details
 ```
-Параметр `modules` URL-адреса, следующий за параметром `/details?`, указывает, какой тип сведений содержится в результатах:
+
+При создании URL-адреса запроса на поиск параметр `modules` указывает типы сведений, которые будут содержаться в результатах, с учетом конечной точки выше:
+
 * `modules=All`
 * `modules=RecognizedEntities` (люди или места, видимые в изображении).
 
-Если в запросе `POST` указать `modules=All`, то полученный текст JSON будет содержать такой список:
+Если в запросе POST указать `modules=All`, то полученный текст JSON будет содержать такой список:
+
 * `bestRepresentativeQuery` — запрос Bing, который возвращает изображения, похожие на отправленное изображение.
-* `detectedObjects` — обнаруженные в изображении объекты, например ограничивающий прямоугольник или гиперобъекты.
+* `detectedObjects` — объекты, найденные на изображении.
 * `image` — метаданные изображения.
-* `imageInsightsToken` — токен для последующего запроса `GET`, который возвращает результат `RecognizedEntities` (люди или места, видимые в изображении). 
-* `imageTags`
+* `imageInsightsToken` — токен для последующих запросов GET, которые получают `RecognizedEntities` (люди или места на изображении) с изображения.
+* `imageTags` — теги для изображения.
 * `pagesIncluding` — веб-страницы, содержащие данное изображение.
-* `relatedSearches`
-* `visuallySimilarImages`
+* `relatedSearches` — поисковые запросы по сведениям на изображении.
+* `visuallySimilarImages` — похожие изображения в Интернете.
 
-Если в запросе `POST` указать `modules=RecognizedEntities`, то вы получите только токен `imageInsightsToken`, который используется в последующем запросе `GET`. Он идентифицирует людей или места, которые можно увидеть в изображении.
+Укажите `modules=RecognizedEntities` в запросе POST, чтобы получить только тот токен `imageInsightsToken`, который может использоваться в последующем запросе GET для определения людей или места на изображении.
 
-## <a name="webclient-and-headers-for-the-post-request"></a>WebClient и заголовки для запроса POST
+## <a name="create-a-webclient-object-and-set-headers-for-the-api-request"></a>Создание объекта WebClient и установка заголовков для запроса API
+
 Создайте объект `WebClient` и задайте заголовки. Во всех запросах к API-интерфейсам поиска Bing необходимо указывать параметр `Ocp-Apim-Subscription-Key`. В запросе `POST` на отправку изображения необходимо также указать `ContentType: multipart/form-data`.
 
-```
-            WebClient client = new WebClient();
-            client.Headers["Ocp-Apim-Subscription-Key"] = accessKey;
-            client.Headers["ContentType"] = "multipart/form-data"; 
-```
-
-## <a name="upload-the-image-and-get-results"></a>Отправка изображения и получение результатов
-
-Класс `WebClient` включает в себя метод `UpLoadFile`, который форматирует данные для запроса `POST`. Он форматирует `RequestStream` и вызывает `HttpWebRequest`, что позволяет избежать более сложных действий.
-Вызовите `WebClient.UpLoadFile`, указав конечную точку `/details` и файл изображения для отправки. Ответом являются двоичные данные, которые легко преобразуются в формат JSON. 
-
-Используйте текст JSON для инициализации экземпляра структуры `SearchResult` (контекст можно найти в [исходном коде приложения](tutorial-image-post-source.md)).
-```        
-         const string uriBase = "https://api.cognitive.microsoft.com/bing/v7.0/images/details";
-
-        // The image to upload. Replace with your file and path.
-        const string imageFile = "ansel-adams-tetons-snake-river.jpg";
-            
-        byte[] resp = client.UploadFile(uriBase + "?modules=All", imageFile);
-        var json = System.Text.Encoding.Default.GetString(resp);
-
-        // Create result object for return
-        var searchResult = new SearchResult()
-        {
-            jsonResult = json,
-            relevantHeaders = new Dictionary<String, String>()
-        };
+```javascript
+WebClient client = new WebClient();
+client.Headers["Ocp-Apim-Subscription-Key"] = accessKey;
+client.Headers["ContentType"] = "multipart/form-data";
 ```
 
-## <a name="print-the-results"></a>Отображение результатов
-Остальная часть кода анализирует результат JSON и выводит его на консоль.
+## <a name="upload-the-image-and-display-the-results"></a>Отправка изображения и отображение результатов
 
+Метод `UpLoadFile()` класса `WebClient` форматирует данные для запроса `POST`, включая форматирование `RequestStream` и вызов `HttpWebRequest`.
+
+Вызовите `WebClient.UpLoadFile()`, указав конечную точку `/details` и файл изображения для отправки. Используйте ответ JSON для инициализации экземпляра структуры `SearchResult` и сохраните ответ.
+
+```javascript        
+const string uriBase = "https://api.cognitive.microsoft.com/bing/v7.0/images/details";
+// The image to upload. Replace with your file and path.
+const string imageFile = "your-image.jpg";
+byte[] resp = client.UploadFile(uriBase + "?modules=All", imageFile);
+var json = System.Text.Encoding.Default.GetString(resp);
+// Create result object for return
+var searchResult = new SearchResult()
+{
+    jsonResult = json,
+    relevantHeaders = new Dictionary<String, String>()
+};
 ```
-        /// <summary>
-        /// Formats the given JSON string by adding line breaks and indents.
-        /// </summary>
-        /// <param name="json">The raw JSON string to format.</param>
-        /// <returns>The formatted JSON string.</returns>
-        static string JsonPrettyPrint(string json)
-        {
-            if (string.IsNullOrEmpty(json))
-                return string.Empty;
+Затем этот ответ JSON можно вывести в консоли.
 
-            json = json.Replace(Environment.NewLine, "").Replace("\t", "");
+## <a name="use-an-image-insights-token-in-a-request"></a>Использование токена аналитических сведений изображения в запросе
 
-            StringBuilder sb = new StringBuilder();
-            bool quote = false;
-            bool ignore = false;
-            char last = ' ';
-            int offset = 0;
-            int indentLength = 2;
+Для использования токена `ImageInsightsToken`, возвращенного с результатами запроса `POST`, его можно добавить в запрос `GET`. Например: 
 
-            foreach (char ch in json)
-            {
-                switch (ch)
-                {
-                    case '"':
-                        if (!ignore) quote = !quote;
-                        break;
-                    case '\\':
-                        if (quote && last != '\\') ignore = true;
-                        break;
-                }
-
-                if (quote)
-                {
-                    sb.Append(ch);
-                    if (last == '\\' && ignore) ignore = false;
-                }
-                else
-                {
-                    switch (ch)
-                    {
-                        case '{':
-                        case '[':
-                            sb.Append(ch);
-                            sb.Append(Environment.NewLine);
-                            sb.Append(new string(' ', ++offset * indentLength));
-                            break;
-                        case '}':
-                        case ']':
-                            sb.Append(Environment.NewLine);
-                            sb.Append(new string(' ', --offset * indentLength));
-                            sb.Append(ch);
-                            break;
-                        case ',':
-                            sb.Append(ch);
-                            sb.Append(Environment.NewLine);
-                            sb.Append(new string(' ', offset * indentLength));
-                            break;
-                        case ':':
-                            sb.Append(ch);
-                            sb.Append(' ');
-                            break;
-                        default:
-                            if (quote || ch != ' ') sb.Append(ch);
-                            break;
-                    }
-                }
-                last = ch;
-            }
-
-            return sb.ToString().Trim();
-        }
-```
-## <a name="get-request-using-the-imageinsightstoken"></a>Запрос GET с применением токена ImageInsightsToken
-Чтобы использовать токен `ImageInsightsToken`, возвращаемый с результатами запроса `POST`, создайте запрос `GET`, аналогичный приведенному ниже:
 ```
 https://api.cognitive.microsoft.com/bing/v7.0/images/details?InsightsToken="bcid_A2C4BB81AA2C9EF8E049C5933C546449*ccid_osS7gaos*mid_BF7CC4FC4A882A3C3D56E644685BFF7B8BACEAF2
 ```
+
 Если в изображении удается идентифицировать людей или места, то этот запрос возвращает сведения о них.
-[Краткие руководства](https://docs.microsoft.com/azure/cognitive-services/bing-image-search) содержат многочисленные примеры кода.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Справочник по API Bing для поиска изображений](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference)
+> [Руководство по одностраничным веб-приложениям](tutorial-bing-image-search-single-page-app.md)
 
+## <a name="see-also"></a>См. также
+
+* [Справочник по API Bing для поиска изображений](//docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference)

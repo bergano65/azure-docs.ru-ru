@@ -5,22 +5,20 @@ services: azure-resource-manager,virtual-machines
 documentationcenter: ''
 tags: top-support-issue
 author: tfitzmac
-manager: timlt
-editor: tysonn
 ms.assetid: ''
 ms.service: azure-resource-manager
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: vm-multiple
 ms.workload: infrastructure
-ms.date: 04/23/2018
+ms.date: 09/28/2018
 ms.author: tomfitz
-ms.openlocfilehash: 523ea3bf5d41231ab3281f9d8eb1fac8c3dfb55f
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 9320e3089e02e1ca6b6bcce0287946baaf0558d9
+ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34359151"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47452043"
 ---
 # <a name="view-deployment-operations-with-azure-resource-manager"></a>Просмотр операций развертывания с помощью Azure Resource Manager
 
@@ -67,7 +65,13 @@ ms.locfileid: "34359151"
   Get-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup | Where-Object ProvisioningState -eq Failed
   ```
    
-2. Каждое развертывание включает в себя несколько операций. Каждая операция представляет шаг в процессе развертывания. Чтобы определить, что пошло не так при развертывании, обычно требуется просмотреть сведения об операциях развертывания. Состояние операций можно просмотреть с помощью команды **Get AzureRmResourceGroupDeploymentOperation**.
+1. Чтобы получить идентификатор корреляции, используйте:
+
+  ```powershell
+  (Get-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName azuredeploy).CorrelationId
+  ```
+
+1. Каждое развертывание включает в себя несколько операций. Каждая операция представляет шаг в процессе развертывания. Чтобы определить, что пошло не так при развертывании, обычно требуется просмотреть сведения об операциях развертывания. Состояние операций можно просмотреть с помощью команды **Get AzureRmResourceGroupDeploymentOperation**.
 
   ```powershell 
   Get-AzureRmResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -DeploymentName vmDeployment
@@ -85,7 +89,7 @@ ms.locfileid: "34359151"
                    serviceRequestId:0196828d-8559-4bf6-b6b8-8b9057cb0e23...}
   ```
 
-3. Чтобы получить дополнительные сведения о завершившихся сбоем операциях, получите свойства для операций с состоянием **Failed** .
+1. Чтобы получить дополнительные сведения о завершившихся сбоем операциях, получите свойства для операций с состоянием **Failed** .
 
   ```powershell
   (Get-AzureRmResourceGroupDeploymentOperation -DeploymentName Microsoft.Template -ResourceGroupName ExampleGroup).Properties | Where-Object ProvisioningState -eq Failed
@@ -108,7 +112,7 @@ ms.locfileid: "34359151"
   ```
 
     Обратите внимание на значения serviceRequestId и trackingId операции. serviceRequestId может быть полезным при работе с технической поддержкой для устранения проблемы развертывания. trackingId понадобится вам на следующем шаге, чтобы рассмотреть конкретную операцию.
-4. Чтобы получить сообщение о состоянии конкретной завершившейся сбоем операции, используйте следующую команду:
+1. Чтобы получить сообщение о состоянии конкретной завершившейся сбоем операции, используйте следующую команду:
 
   ```powershell
   ((Get-AzureRmResourceGroupDeploymentOperation -DeploymentName Microsoft.Template -ResourceGroupName ExampleGroup).Properties | Where-Object trackingId -eq f4ed72f8-4203-43dc-958a-15d041e8c233).StatusMessage.error
@@ -121,7 +125,7 @@ ms.locfileid: "34359151"
   ----           -------                                                                        -------
   DnsRecordInUse DNS record dns.westus.cloudapp.azure.com is already used by another public IP. {}
   ```
-4. Каждая операция развертывания в Azure включает в себя содержимое запроса и ответа. Содержимое запроса — это данные, отправляемые в Azure во время развертывания (например, создание виртуальной машины, диск операционной системы и другие ресурсы). Содержимое ответа — это данные, отправляемые Azure из запроса на развертывание. Во время развертывания можно воспользоваться параметром **DeploymentDebugLogLevel**, чтобы указать необходимость сохранения запроса или ответа в журнале. 
+1. Каждая операция развертывания в Azure включает в себя содержимое запроса и ответа. Содержимое запроса — это данные, отправляемые в Azure во время развертывания (например, создание виртуальной машины, диск операционной системы и другие ресурсы). Содержимое ответа — это данные, отправляемые Azure из запроса на развертывание. Во время развертывания можно воспользоваться параметром **DeploymentDebugLogLevel**, чтобы указать необходимость сохранения запроса или ответа в журнале. 
 
   Получить эту информацию из журнала и сохранить ее локально можно с помощью следующих команд PowerShell:
 

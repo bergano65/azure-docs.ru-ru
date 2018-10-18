@@ -13,14 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/11/2018
+ms.date: 08/23/2018
 ms.author: genli
-ms.openlocfilehash: ab0fa22e9ba776db3d4af301499545f6e0822478
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 034d59c39628a08c389c5ceb67c5872bbea10d59
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34070178"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47223174"
 ---
 # <a name="connectivity-and-networking-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы подключения и сетей для облачных служб Azure. Вопросы и ответы (FAQ)
 
@@ -110,3 +110,19 @@ Azure реализует многоуровневую сетевую безоп�
 ## <a name="how-can-i-use-azure-resource-manager-virtual-networks-with-cloud-services"></a>Как использовать виртуальные сети Azure Resource Manager совместно с облачными службами? 
 
 Облачные службы нельзя разместить в виртуальных сетях Azure Resource Manager. Виртуальные сети с развертыванием Resource Manager и классическим развертыванием можно соединить через пиринг. Дополнительные сведения см. в статье [Пиринг между виртуальными сетями](../virtual-network/virtual-network-peering-overview.md).
+
+
+## <a name="how-can-i-get-the-list-of-public-ips-used-by-my-cloud-services"></a>Как получить список общедоступных IP-адресов, используемых моими облачными службами?
+
+Можно использовать следующий сценарий PS, чтобы получить список общедоступных IP-адресов, используемых облачными службами в вашей подписке.
+
+    $services = Get-AzureService  | Group-Object -Property ServiceName
+
+    foreach ($service in $services) 
+    {
+        "Cloud Service '$($service.Name)'"
+
+        $deployment = Get-AzureDeployment -ServiceName $service.Name 
+        "VIP - " +  $deployment.VirtualIPs[0].Address
+        "================================="
+    }

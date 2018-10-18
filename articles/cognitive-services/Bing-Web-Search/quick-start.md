@@ -1,28 +1,29 @@
 ---
-title: Быстрое начало работы с API для поиска в Интернете | Документация Майкрософт
+title: Краткое руководство по работе с API для поиска в Интернете
+titleSuffix: Azure Cognitive Services
 description: В этой статье показано, как начать работу с API Bing для поиска в Интернете.
 services: cognitive-services
 author: swhite-msft
-manager: ehansen
+manager: cgronlun
 ms.assetid: 27B4B51A-D017-44C8-8E4E-9684DC553886
 ms.service: cognitive-services
 ms.component: bing-web-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: 0b8c4678a518985a4be3ee426a85b0a85dd2365d
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: af32abe1c61c44b14d0f70033aee54aa7eba7c8b
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380256"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46126247"
 ---
 # <a name="your-first-bing-search-query"></a>Ваш первый поисковый запрос к службе Bing
 
-Прежде чем выполнить первый вызов, необходимо получить ключ подписки Cognitive Services. Сведения о получении ключа см. в на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).
+Прежде чем выполнить первый вызов, необходимо получить ключ подписки Cognitive Services. Сведения о получении ключа см. на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).
 
 Для получения результатов поиска в Интернете необходимо отправить запрос GET к следующей конечной точке.  
-  
+
 ```
 https://api.cognitive.microsoft.com/bing/v7.0/search
 ```  
@@ -30,24 +31,24 @@ https://api.cognitive.microsoft.com/bing/v7.0/search
 В запросе должен использоваться протокол HTTPS.
 
 Рекомендуется, чтобы все запросы поступали с сервера. Распространение ключа в рамках клиентского приложения создает больше возможностей для доступа к нему злоумышленников. Осуществление вызовов с сервера также предоставляет единую точку обновления для будущих версий API.  
-  
-В запросе необходимо указать параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#query), который содержит условия поиска пользователя. В запросе можно также указать необязательный параметр [mkt](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#mkt), определяющий рынок, для которого будут отображаться результаты. Список необязательных параметров запроса, таких как `responseFilter` и `textDecorations`, можно найти в разделе [Параметры запроса](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#query-parameters). Все значения параметров запроса должны быть указаны в формате URL-адреса.  
-  
+
+В запросе необходимо указать параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#query), который содержит условие поиска пользователя. В запросе можно также указать необязательный параметр [mkt](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#mkt), определяющий рынок, для которого будут отображаться результаты. Список необязательных параметров запроса, таких как `responseFilter` и `textDecorations`, можно найти в разделе [Параметры запроса](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#query-parameters). Все значения параметров запроса должны быть указаны в формате URL-адреса.  
+
 Запрос должен содержать заголовок [Ocp-Apim-Subscription-Key](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#subscriptionkey). Приведенные ниже заголовки являются необязательными, но их также рекомендуется указать:  
-  
+
 -   [User-Agent](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#useragent)  
 -   [X-MSEdge-ClientID](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#clientid)  
 -   [X-Search-ClientIP](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#clientip)  
 -   [X-Search-Location](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#location)  
 
-Заголовки IP-адреса и расположения клиента важны для отображения содержимого с учетом расположения. Например, если запрос пользователя — *кораблевождение+занятия*, вероятно, его интересуют занятия неподалеку от его расположения. Если требуется, чтобы результаты содержали занятия, проводящиеся вблизи расположения пользователя, необходимо добавить в запрос заголовок расположения. Можно также добавить в него IP-заголовок клиента. Это не так важно, если в условии запроса явно указывается расположение (например, "кораблевождение+занятия+сочи+ключи"). 
+Заголовки IP-адреса и расположения клиента важны для отображения содержимого с учетом расположения. Например, если запрос пользователя — *кораблевождение+занятия*, вероятно, его интересуют занятия неподалеку от его расположения. Если требуется, чтобы результаты содержали занятия, проводящиеся вблизи расположения пользователя, необходимо добавить в запрос заголовок расположения. Можно также добавить в него IP-заголовок клиента. Это не так важно, если в условии запроса явно указывается расположение (например, "кораблевождение+занятия+сочи+ключи").
 
 Список всех заголовков в запросах и ответах приведен в разделе [Заголовки](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#headers).
 
 ## <a name="the-request"></a>Запрос
 
-Ниже показан поисковый запрос, который включает в себя все рекомендуемые параметры и заголовки запроса. Если вы впервые вызовете любой из API-интерфейсов Bing, не включайте заголовок идентификатора клиента. Включите идентификатор клиента, только если вы ранее вызывали API Bing, а Bing возвратил идентификатор клиента для комбинации пользователей и устройств. 
-  
+Ниже показан поисковый запрос, который включает в себя все рекомендуемые параметры и заголовки запроса. Если вы впервые вызовете любой из API-интерфейсов Bing, не включайте заголовок идентификатора клиента. Идентификатор клиента следует включать, только если вы ранее вызывали API Bing, а Bing вернул идентификатор клиента для определенной комбинации пользователей и устройств.
+
 ```  
 GET https://api.cognitive.microsoft.com/bing/v7.0/search?q=sailing+lessons+seattle&mkt=en-us HTTP/1.1  
 Ocp-Apim-Subscription-Key: 123456789ABCDE  
@@ -265,6 +266,6 @@ BingAPIs-Market: en-US
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Проверьте, как работает API. Перейдите на страницу [консоли тестирования API для поиска в Интернете](https://dev.cognitive.microsoft.com/docs/services/56b43eeccf5ff8098cef3807/operations/56b4447dcf5ff8098cef380d). 
+Проверьте, как работает API. Перейдите на страницу [консоли тестирования API для поиска в Интернете](https://dev.cognitive.microsoft.com/docs/services/56b43eeccf5ff8098cef3807/operations/56b4447dcf5ff8098cef380d).
 
 Дополнительные сведения об использовании объектов ответа см. в разделе о [поиске в Интернете](./search-the-web.md).

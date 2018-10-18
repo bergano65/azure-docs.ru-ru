@@ -14,12 +14,12 @@ ms.tgt_pltfrm: cache-redis
 ms.workload: tbd
 ms.date: 05/01/2017
 ms.author: wesmc
-ms.openlocfilehash: bb0c53433af8a679811f00bfff2efee94d211a24
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: 047d23184ccf640dd6510faca9f508eef0dc50cb
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31518762"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44050819"
 ---
 # <a name="aspnet-session-state-provider-for-azure-redis-cache"></a>Поставщик состояний сеансов ASP.NET для кэша Redis для Azure
 Кэш Redis для Azure предоставляет поставщик состояний сеансов, который вы можете использовать для сохранения состояния сеансов в памяти с помощью кэша Redis, а не в базе данных SQL Server. Для использования поставщика состояний сеансов с кэшированием сначала настройте кэш, а затем настройте приложение ASP.NET для использования кэша, используя пакет Redis NuGet для состояний сеансов.
@@ -51,23 +51,33 @@ Install-Package Microsoft.Web.RedisSessionStateProvider
 
 ```xml
 <sessionState mode="Custom" customProvider="MySessionStateStore">
-    <providers>
+  <providers>
+    <!-- Either use 'connectionString' OR 'settingsClassName' and 'settingsMethodName' OR use 'host','port','accessKey','ssl','connectionTimeoutInMilliseconds' and 'operationTimeoutInMilliseconds'. -->
+    <!-- 'throwOnError','retryTimeoutInMilliseconds','databaseId' and 'applicationName' can be used with both options. -->
     <!--
-    <add name="MySessionStateStore"
-           host = "127.0.0.1" [String]
+      <add name="MySessionStateStore" 
+        host = "127.0.0.1" [String]
         port = "" [number]
         accessKey = "" [String]
         ssl = "false" [true|false]
         throwOnError = "true" [true|false]
-        retryTimeoutInMilliseconds = "0" [number]
+        retryTimeoutInMilliseconds = "5000" [number]
         databaseId = "0" [number]
         applicationName = "" [String]
         connectionTimeoutInMilliseconds = "5000" [number]
-        operationTimeoutInMilliseconds = "5000" [number]
-    />
+        operationTimeoutInMilliseconds = "1000" [number]
+        connectionString = "<Valid StackExchange.Redis connection string>" [String]
+        settingsClassName = "<Assembly qualified class name that contains settings method specified below. Which basically return 'connectionString' value>" [String]
+        settingsMethodName = "<Settings method should be defined in settingsClass. It should be public, static, does not take any parameters and should have a return type of 'String', which is basically 'connectionString' value.>" [String]
+        loggingClassName = "<Assembly qualified class name that contains logging method specified below>" [String]
+        loggingMethodName = "<Logging method should be defined in loggingClass. It should be public, static, does not take any parameters and should have a return type of System.IO.TextWriter.>" [String]
+        redisSerializerType = "<Assembly qualified class name that implements Microsoft.Web.Redis.ISerializer>" [String]
+      />
     -->
-    <add name="MySessionStateStore" type="Microsoft.Web.Redis.RedisSessionStateProvider" host="127.0.0.1" accessKey="" ssl="false"/>
-    </providers>
+    <add name="MySessionStateStore" type="Microsoft.Web.Redis.RedisSessionStateProvider"
+         host=""
+         accessKey=""
+         ssl="true" />
 </sessionState>
 ```
 
@@ -86,6 +96,7 @@ Install-Package Microsoft.Web.RedisSessionStateProvider
 * **applicationName** — ключи хранятся в кэше Redis как `{<Application Name>_<Session ID>}_Data`. Такая схема именования позволяет нескольким приложениям совместно использовать один экземпляр Redis. Этот параметр — необязательный, и, если для него не указано другое значение, используется значение по умолчанию.
 * **connectionTimeoutInMilliseconds** — этот параметр позволяет переопределить параметр connectTimeout в клиенте StackExchange.Redis. Если для параметра connectTimeout значение не указано, по умолчанию используется значение 5000. Дополнительную информацию см. в статье [Модель конфигурации StackExchange.Redis](http://go.microsoft.com/fwlink/?LinkId=398705).
 * **operationTimeoutInMilliseconds** — этот параметр позволяет переопределить параметр syncTimeout в клиенте StackExchange.Redis. Если для параметра syncTimeout значение не указано, по умолчанию используется значение 1000. Дополнительную информацию см. в статье [Модель конфигурации StackExchange.Redis](http://go.microsoft.com/fwlink/?LinkId=398705).
+* **redisSerializerType** — этот параметр позволяет задать пользовательскую сериализацию содержимого сеанса, отправляемого в Redis. Указанный тип должен реализовывать `Microsoft.Web.Redis.ISerializer` и объявить общедоступный конструктор без параметров. По умолчанию используется `System.Runtime.Serialization.Formatters.Binary.BinaryFormatter`.
 
 Дополнительные сведения об этих свойствах см. в записи блога [Объявление поставщика состояний сеансов ASP.NET для кэша Redis](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx).
 

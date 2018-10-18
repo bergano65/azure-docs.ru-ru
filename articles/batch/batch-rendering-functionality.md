@@ -6,12 +6,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3f2fa055af63ab3920fec79ad93c25b8ea7e5ed9
-ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
+ms.openlocfilehash: 6d79cdf279022320f654fbbeadb870f82db88cab
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2018
-ms.locfileid: "42140110"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47392792"
 ---
 # <a name="azure-batch-rendering-capabilities"></a>Возможности рендеринга в пакетной службе Azure
 
@@ -50,9 +50,12 @@ ms.locfileid: "42140110"
 * Укажите свойство `applicationLicenses` при [создании пула](https://docs.microsoft.com/rest/api/batchservice/pool/add#request-body).  В массиве строк можно указать следующие значения: "vray", "arnold", "3dsmax", "maya".
 * При указании одного или нескольких приложений стоимость этих приложений добавляется к стоимости виртуальных машин.  Цены на приложения цены указаны на [странице с ценами на пакетную службу Azure](https://azure.microsoft.com/pricing/details/batch/#graphic-rendering).
 
+> [!NOTE]
+> Если же вы подключаетесь к серверу лицензирования, чтобы использовать приложения для рендеринга, не указывайте свойство `applicationLicenses`.
+
 Вы можете использовать портал Azure или Batch Explorer для выбора приложений и отображения цен на них.
 
-Если предпринята попытка использовать приложение, но оно еще не было указано в свойстве `applicationLicenses` конфигурации пула, тогда выполнение приложения завершится сбоем с ошибкой лицензирования и ненулевым кодом завершения.
+Если предпринята попытка использовать приложение, но оно еще не было указано в свойстве `applicationLicenses` конфигурации пула или не может получить доступ к серверу лицензирования, тогда выполнение приложения завершится сбоем с ошибкой лицензирования и ненулевым кодом завершения.
 
 ### <a name="environment-variables-for-pre-installed-applications"></a>Переменные среды для предварительно установленных приложений
 

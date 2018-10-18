@@ -7,15 +7,15 @@ manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 07/06/2018
+ms.date: 09/11/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 477bd6047da639dcf21592a7ec0c1b80844e031e
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 1ddcbba4eacad040420efaf087f170e6c06ab2a0
+ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43337740"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47182405"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-google-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Google через Azure Active Directory B2C
 
@@ -25,26 +25,19 @@ ms.locfileid: "43337740"
 
 1. Выполните вход в [консоль разработчиков Google](https://console.developers.google.com/) с учетными данными для учетной записи Google.
 2. Выберите действие **Создать проект** и щелкните **Создать**. Если вы уже создавали проекты ранее, откройте список проектов, а затем выберите **Новый проект**.
-3. Введите **имя проекта** и нажмите кнопку **Создать**.
+3. Введите значение в поле **Имя проекта**, нажмите кнопку **Создать**, а затем убедитесь, что вы используете новый проект.
 3. Выберите **Учетные данные** в меню слева, а затем выберите **Создать учетные данные** > **Идентификатор клиента Oauth**.
 4. Выберите **Настроить экран согласия**.
 5. Выберите или укажите допустимый **электронный адрес**, заполните поле **Product name shown to users** (Отображаемое для пользователей название продукта) и щелкните **Сохранить**.
 6. Из списка **Application type** (Тип приложения) выберите **Web application** (Веб-приложение).
-7. В поле **Name** (Имя) введите имя приложения, затем введите `https://{tenant}.b2clogin.com` в поле **Authorized JavaScript origins** (Авторизованные источники JavaScript) и `https://{tenant}.b2clogin.com/te/{tenant}.onmicrosoft.com/oauth2/authresp` — в поле **Authorized redirect URIs** (Авторизованные URI перенаправления). Замените **{tenant}** именем своего клиента (например, contosob2c).
+7. В поле **Name** (Имя) введите имя приложения, затем введите `https://your-tenant-name.b2clogin.com` в поле **Authorized JavaScript origins** (Авторизованные источники JavaScript) и `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` — в поле **Authorized redirect URIs** (Авторизованные URI перенаправления). Замените `your-tenant-name` именем вашего клиента. При вводе имени вашего клиента необходимо использовать только строчные буквы, даже если в Azure AD B2C имя клиента определено с прописными буквами.
 8. Нажмите кнопку **Создать**.
 9. Скопируйте значения **Идентификатор клиента** и **Секрет клиента**. Оба значения потребуются для настройки Google в качестве поставщика удостоверений в вашем клиенте. **Секрет клиента** — это важные учетные данные безопасности.
 
 ## <a name="configure-a-google-account-as-an-identity-provider"></a>Настройка учетной записи Google в качестве поставщика удостоверений
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
-2. Убедитесь, что используется каталог с вашим клиентом Azure AD B2C, переключившись на него в правом верхнем углу окна портала Azure. Выберите сведения о подписке, а затем выберите **Переключение каталога**. 
-
-    ![Переключение на клиент Azure AD B2C](./media/active-directory-b2c-setup-fb-app/switch-directories.png)
-
-    Выберите каталог, содержащий ваш клиент.
-
-    ![Выбор каталога](./media/active-directory-b2c-setup-fb-app/select-directory.png)
-
+2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
 4. Щелкните **Поставщики удостоверений** и выберите **Добавить**.
 5. Введите **Имя**. Например, введите *Google*.

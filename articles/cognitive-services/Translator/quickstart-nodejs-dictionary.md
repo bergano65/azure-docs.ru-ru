@@ -1,21 +1,21 @@
 ---
-title: Получение вариантов перевода с помощью API перевода текстов и Node.js | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как найти варианты перевода и примеры контекстуальных терминов, используя API перевода текстов с Node.js в Cognitive Services.
+title: Краткое руководство. Поиск вариантов перевода с помощью Перевода текстов и Node.js
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как искать варианты перевода и контекстуальные термины, используя API перевода текстов и Node.js.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/21/2018
 ms.author: nolachar
-ms.openlocfilehash: aeb97e1c4e7c4e8df852bea55383e857f7d5a690
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 5361dce567743e239e0499352affa179b7d40382
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "43771084"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46127233"
 ---
 # <a name="quickstart-find-alternate-translations-and-usage-with-nodejs"></a>Краткое руководство по поиску вариантов перевода с использованием Node.js
 

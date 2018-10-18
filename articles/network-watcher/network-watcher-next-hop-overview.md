@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: bbb782e700781dcfedbbd340c7d10db53767b035
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 28eacdce922e26d391cf34f78cb03ead9c6887a1
+ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32180391"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44391272"
 ---
 # <a name="use-next-hop-to-diagnose-virtual-machine-routing-problems"></a>Используйте следующий прыжок для диагностики проблем маршрутизации виртуальной машины
 
@@ -32,8 +32,10 @@ ms.locfileid: "32180391"
 * Интернет
 * VirtualAppliance
 * VirtualNetworkGateway
-* VnetLocal
-* VnetPeering
+* Виртуальная сеть
+* VirtualNetworkPeering
+* VirtualNetworkServiceEndpoint 
+* MicrosoftEdge
 * None
 
 Дополнительные сведения о каждом типе следующего прыжка см. в [этой статье](../virtual-network/virtual-networks-udr-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json).

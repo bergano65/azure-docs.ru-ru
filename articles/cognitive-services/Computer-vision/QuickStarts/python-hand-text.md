@@ -1,49 +1,52 @@
 ---
-title: Краткое руководство по распознаванию рукописного текста с помощью API компьютерного зрения для Python | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения, используя API компьютерного зрения с Python в Cognitive Services.
+title: Краткое руководство по извлечению рукописного текста (REST, Python) в службе "Компьютерное зрение"
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как извлечь рукописный текст из изображения с помощью API компьютерного зрения на Python.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: 43b541daf8632af7fb8111886b53981c4c646772
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 91cff6205af70968b6397af9756a5385ddb0c989
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43771964"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45631367"
 ---
-# <a name="quickstart-extract-handwritten-text---rest-python"></a>Краткое руководство по извлечению рукописного текста (REST, Python)
+# <a name="quickstart-extract-handwritten-text-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство по извлечению рукописного текста с помощью REST API и Python в службе "Компьютерное зрение"
 
-Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения, используя API компьютерного зрения.
+Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения с помощью REST API компьютерного зрения. С помощью методов [Recognize Text](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) и [Get Recognize Text Operation Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201) можно определить рукописный текст на изображении, а потом извлечь распознанные знаки в поток знаков, пригодный для машинной обработки.
+
+> [!IMPORTANT]
+> В отличие от метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) метод [Recognize Text](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) выполняется асинхронно. Этот метод не возвращает данные в тексте успешного ответа. Вместо этого метод Recognize Text возвращает URI в значении поля заголовка ответа `Operation-Content`. Затем можно вызвать этот URI, который представляет метод [Get Recognize Text Operation Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201), чтобы проверить состояние и вернуть результаты вызова метода Recognize Text.
 
 Процедуры из этого руководства можно выполнять пошагово из записной книжки Jupyter с помощью [MyBinder](https://mybinder.org). Чтобы запустить модуль привязки, нажмите следующую кнопку:
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/Microsoft/cognitive-services-notebooks/master?filepath=VisionAPI.ipynb)
 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
+
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- Установите [Python](https://www.python.org/downloads/), если хотите выполнить этот пример кода в локальной среде.
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
-## <a name="extract-handwritten-text"></a>Извлечение рукописного текста
+## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
-С помощью методов [Recognize Text](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) и [Get Recognize Text Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201) можно определить рукописный текст на изображении и извлечь распознанные символы в поток символов, пригодный для машинной обработки.
+Чтобы создать и запустить пример, сделайте следующее.
 
-Чтобы выполнить наш пример, сделайте следующее:
-
-1. Скопируйте приведенный ниже код в новый файл скрипта Python.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. При необходимости замените `vision_base_url` расположением, в котором вы получили ключи подписки.
-1. При необходимости укажите в значении параметра `image_url` другое изображение.
-1. Выполните скрипт.
-
-В следующем коде используется библиотека `requests` для Python, которая обращается к API компьютерного зрения для анализа изображений. Результаты возвращаются в виде объектов JSON. Ключ API передается через словарь `headers`.
-
-## <a name="recognize-text-request"></a>Запрос на распознавание текста
+1. Скопируйте приведенный ниже код в текстовый редактор.
+1. При необходимости внесите следующие изменения в код:
+    1. Замените значение `subscription_key` своим ключом подписки.
+    1. Замените значение `vision_base_url` URL-адресом конечной точки ресурса Компьютерного зрения в регионе Azure, где вы получили ключи подписки, если это необходимо.
+    1. При необходимости замените значение `image_url` URL-адресом другого изображения, из которого вы хотите извлечь рукописный текст.
+1. Сохраните код как файл с расширением `.py`. Например, `get-handwritten-text.py`.
+1. Откройте окно командной строки.
+1. В командной строке выполните пример кода с помощью команды `python`. Например, `python get-handwritten-text.py`.
 
 ```python
 import requests
@@ -122,9 +125,9 @@ for polygon in polygons:
 _ = plt.axis("off")
 ```
 
-## <a name="recognize-text-response"></a>Результат распознавания текста
+## <a name="examine-the-response"></a>Изучение ответа
 
-В случае успешного выполнения возвращается ответ в формате JSON, например:
+Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера веб-страницы и в окне командной строки отобразится успешный ответ, аналогичный следующему:
 
 ```json
 {
@@ -402,9 +405,13 @@ _ = plt.axis("off")
 }
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Удалите файл, если он больше не нужен.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с приложением Python, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с приложением Python, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
 > [Руководство по API компьютерного зрения для Python](../Tutorials/PythonTutorial.md)

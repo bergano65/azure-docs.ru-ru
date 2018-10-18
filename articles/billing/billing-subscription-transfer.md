@@ -15,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.author: genli
+ms.author: cwatson
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b6055dbab85acb1e5fed9679a5072144bc84712c
-ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
+ms.openlocfilehash: 7e9b5d1a84417cf6e6264211ea6e542ab712f9fe
+ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42917129"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47422612"
 ---
 # <a name="transfer-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения подпиской Azure другой учетной записи
 
@@ -77,12 +77,11 @@ ms.locfileid: "42917129"
 
 ## <a name="next-steps-after-accepting-ownership-of-a-subscription"></a>Дальнейшие действия после принятия владения подпиской
 
-1. Теперь вы являетесь администратором учетной записи. Просмотрите и обновите роли администратора служб, соадминистраторов и другие роли RBAC. Дополнительные сведения см. в статье [Добавление или изменение ролей администратора Azure, управляющих подписками и службами](billing-add-change-azure-subscription-administrator.md).
+1. Теперь вы являетесь администратором учетной записи. Просмотрите и обновите роли администратора служб, соадминистраторов и другие роли RBAC. Дополнительные сведения см. в статьях [Добавление или изменение администраторов подписки Azure](billing-add-change-azure-subscription-administrator.md) и [Управление доступом с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md).
 1. Обновите учетные данные, связанные со службами этой подписки, включая следующие:
    1. Сертификаты управления, которые предоставляют пользователю доступ к ресурсам подписки с правами администратора. Дополнительные сведения см. в статье [Создание и передача сертификата управления для Azure](../cloud-services/cloud-services-certs-create.md).
    1. Ключи доступа для служб, таких как служба хранилища. Дополнительные сведения см. в статье [Об учетных записях хранения Azure](../storage/common/storage-create-storage-account.md).
    1. Учетные данные удаленного доступа для служб, таких как Виртуальные машины Azure. 
-1. [Измените настройки оповещений о выставлении счетов для этой подписки](billing-set-up-alerts.md) в [Центре управления учетной записью Azure](https://account.windowsazure.com/Subscriptions). 
 1. Если вы работаете с партнером, мы рекомендуем изменить идентификатор партнера для этой подписки. Вы можете обновить идентификатор партнера на [портале Azure](https://portal.azure.com).
 
 <a id="supported"></a>

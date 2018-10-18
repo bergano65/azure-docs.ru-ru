@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 08/16/2018
+ms.date: 09/27/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: a2855ca5dbb76d3fcc30c4b1007c20bb48c91c9b
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: e164488a1bf176d5b6c0e28a84cd1ec22cae4cce
+ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42146834"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47423584"
 ---
 # <a name="import-a-power-bi-desktop-file"></a>Импорт файла Power BI Desktop
 
@@ -22,10 +22,13 @@ ms.locfileid: "42146834"
 **Ограничения**   
 
 - Импорт из pbix-файла использует функцию веб-дизайнера на портале, которая является **предварительной версией**. Функциональность ограничена. Для разработки и тестирования более сложных моделей лучше использовать Visual Studio (SSDT) и SQL Server Management Studio (SSMS).
+- Если ваша модель данных создана в Power BI Desktop с обновлением за июль 2018 г. (2.60.5169.3201) или более поздней версии, убедитесь, что в ней не включены предварительные версии функций. Предварительные версии функций еще не поддерживаются в Azure Analysis Services.  
+Если при импорте появится следующая ошибка, в PBIX-файле включены предварительные версии функций, которые пока не поддерживаются в Azure Analysis Services.
+
+    ![Предупреждение касательно уровня совместимости](./media/analysis-services-import-pbix/aas-import-pbix-cl-warning.png)   
 - Необходимо иметь разрешения администратора сервера для импорта из pbix-файлов.
 - PBIX-модель может подключаться только к таким источникам данных, как **База данных SQL Azure** и **Хранилище данных SQL Azure**.
 - Для PBIX-модели не должны быть установлены активные подключения или подключения DirectQuery. 
-- Если PBIX-модель данных содержит метаданные, которые не поддерживаются в Analysis Services, импорт может завершиться ошибкой.
 
 
 ## <a name="to-import-from-pbix"></a>Импорт из PBIX-файла

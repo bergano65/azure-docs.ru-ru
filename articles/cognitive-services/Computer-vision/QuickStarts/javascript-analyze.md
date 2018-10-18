@@ -1,51 +1,45 @@
 ---
-title: Краткое руководство по использованию API компьютерного зрения для JavaScript | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как анализировать изображения с помощью API компьютерного зрения и JavaScript в Cognitive Services.
+title: Краткое руководство. Анализ удаленного изображения c помощью службы "Компьютерное зрение" (REST, JavaScript)
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве описано, как проанализировать изображение с помощью API компьютерного зрения на JavaScript.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: 5ae39743a812bca9716e8022c192d6a0d06b6fd4
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: e6874bde0231199b6a6805b5f27842d80dab6aaf
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43772221"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45631112"
 ---
-# <a name="quickstart-analyze-a-remote-image---rest-javascript"></a>Краткое руководство по анализу удаленного изображения (REST, JavaScript)
+# <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-javascript-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API и JavaScript в службе "Компьютерное зрение"
 
-В рамках работы с этим кратким руководством вы выполните анализ изображения с помощью API компьютерного зрения.
+Из этого краткого руководства вы узнаете, как анализировать удаленное изображение с помощью REST API в API компьютерного зрения, чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные признаки на основе содержимого изображения.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
-## <a name="analyze-image-request"></a>Запрос на анализ изображения
+## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
-С помощью [метода Analyze Image](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные признаки на основе содержимого изображения. Вы можете передать изображение или указать его URL-адрес, а также настроить следующие возвращаемые компоненты:
+Чтобы создать и запустить пример, сделайте следующее.
 
-* подробный список тегов, связанных с содержимым изображения;
-* описание содержимого изображения в виде полного предложения;
-* координаты, пол и возраст любого лица, показанного на изображении;
-* значение ImageType (картинки или линейный рисунок);
-* преобладающий цвет, контрастный цвет, наличие или отсутствие цветности;
-* категорию, определенную в этой [таксономии](../Category-Taxonomy.md);
-* наличие на изображении содержимого для взрослых или содержимого сексуального характера.
-
-Чтобы выполнить наш пример, сделайте следующее:
-
-1. Скопируйте следующий код и сохраните его в файл, например `analyze.html`.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. При необходимости замените `uriBase` расположением, в котором вы получили ключи подписки.
-1. Перетащите файл в браузер.
-1. Нажмите кнопку `Analyze image`.
-
-В этом примере используется jQuery версии 1.9.0. Пример на JavaScript без использования jQuery см. в статье об [интеллектуальном создании эскиза](javascript-thumb.md).
+1. Скопируйте приведенный ниже код в текстовый редактор.
+1. При необходимости внесите следующие изменения в код:
+    1. Замените значение `subscriptionKey` своим ключом подписки.
+    1. Замените значение `uriBase` URL-адресом конечной точки для метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) из региона Azure, где вы получили ключи подписки, если это необходимо.
+    1. При необходимости замените значение атрибута `value` для элемента управления `inputImage` URL-адресом другого изображения, анализ которого следует выполнить.
+1. Сохраните код как файл с расширением `.html`. Например, `analyze-image.html`.
+1. Откройте окно браузера.
+1. В браузере перетащите файл в окно браузера.
+1. При отображении веб-страницы в браузере нажмите кнопку **Analyze Image** (Анализ изображения).
 
 ```html
 <!DOCTYPE html>
@@ -65,11 +59,12 @@ ms.locfileid: "43772221"
         // Replace <Subscription Key> with your valid subscription key.
         var subscriptionKey = "<Subscription Key>";
 
-        // You must use the same region in your REST call as you used to get your
-        // subscription keys. For example, if you got your subscription keys from
-        // westus, replace "westcentralus" in the URI below with "westus".
+        // You must use the same Azure region in your REST API method as you used to
+        // get your subscription keys. For example, if you got your subscription keys
+        // from the West US region, replace "westcentralus" in the URL
+        // below with "westus".
         //
-        // Free trial subscription keys are generated in the westcentralus region.
+        // Free trial subscription keys are generated in the West Central US region.
         // If you use a free trial subscription key, you shouldn't need to change
         // this region.
         var uriBase =
@@ -144,9 +139,9 @@ Image to analyze:
 </html>
 ```
 
-## <a name="analyze-image-response"></a>Результат анализа изображения
+## <a name="examine-the-response"></a>Изучение ответа
 
-В случае успешного выполнения возвращается ответ в формате JSON, например:
+Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера веб-страницы и в окне браузера отобразится успешный ответ, аналогичный следующему:
 
 ```json
 {
@@ -214,9 +209,13 @@ Image to analyze:
 }
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Удалите файл, если он больше не нужен.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с приложением JavaScript, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с приложением JavaScript, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
 > [Руководство по использованию API компьютерного зрения для JavaScript](../Tutorials/javascript-tutorial.md)

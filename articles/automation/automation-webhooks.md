@@ -9,16 +9,16 @@ ms.author: gwallace
 ms.date: 06/04/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 241fd1f9168ce6bfb8a4dfe97bbb1ef45ddf3f74
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: a65a0b8e054b1d0bb6cd4cbeb2daf9be2b132a9e
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "42146017"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44304541"
 ---
 # <a name="starting-an-azure-automation-runbook-with-a-webhook"></a>Запуск Runbook службы автоматизации Azure с помощью объекта webhook
 
-*Webhook* позволяет запустить модуль Runbook в службе автоматизации Azure с помощью одного HTTP-запроса. Это позволяет внешним службам, таким как Visual Studio Team Services, GitHub, Azure Log Analytics или пользовательским приложениям, запускать модули runbook без реализации полного решения с помощью API службы автоматизации Azure.  
+*Webhook* позволяет запустить модуль Runbook в службе автоматизации Azure с помощью одного HTTP-запроса. Это позволяет внешним службам, таким как Azure DevOps Services, GitHub, Azure Log Analytics или пользовательским приложениям запускать модули Runbook без реализации полного решения с помощью API службы автоматизации Azure.  
 ![Обзор веб-перехватчиков](media/automation-webhooks/webhook-overview-image.png)
 
 Сравнение объектов webhook с другими методами запуска модуля Runbook см. в разделе [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: dariagrigoriu;cephalin
-ms.openlocfilehash: f461a9a7cc900ce5f8fdba7b255417b1790d3f4d
-ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
+ms.openlocfilehash: ae8739a65efbe7662a8f72e961d772fecaf4b527
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42142716"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44303701"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Развертывание локального репозитория Git в службе приложений Azure
 
@@ -101,10 +101,10 @@ git push azure master
 
 Перейдите к своему приложению, чтобы убедиться, что содержимое развернуто.
 
-## <a name="deploy-from-local-git-with-vsts-builds"></a>Развертывание из локального Git с помощью сборок VSTS
+## <a name="deploy-from-local-git-with-azure-devops-services-builds"></a>Развертывание из локального репозитория Git с использованием сборок Azure DevOps Services
 
 > [!NOTE]
-> Чтобы служба приложений создавала необходимые сборки и определяла выпуск в учетной записи VSTS, ваша учетная запись Azure должна иметь роль **владельца** в подписке Azure.
+> Чтобы служба приложений создавала необходимые конвейеры Azure Pipelines в организации Azure DevOps Services, ваша учетная запись Azure должна иметь роль **владельца** в подписке Azure.
 >
 
 Чтобы включить локальное развертывание Git для вашего приложения с сервера сборки с помощью Kudu, перейдите в свое приложение на [портале Azure](https://portal.azure.com).
@@ -113,14 +113,14 @@ git push azure master
 
 ![](media/app-service-deploy-local-git/portal-enable.png)
 
-Щелкните **Непрерывная поставка VSTS** > **Продолжить**.
+Выберите **Azure DevOps Services Continuous Delivery** (Непрерывная поставка Azure DevOps Services) > **Продолжить**.
 
 ![](media/app-service-deploy-local-git/vsts-build-server.png)
 
-На странице **Настройка** настройте новую учетную запись VSTS или укажите существующую учетную запись. По завершении нажмите кнопку **Продолжить**.
+На странице **Настройка** настройте новую организацию Azure DevOps Services или укажите существующую. По завершении нажмите кнопку **Продолжить**.
 
 > [!NOTE]
-> Если хотите использовать существующую учетную запись VSTS, которая не указана в списке, необходимо [связать учетную запись VSTS с подпиской Azure](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App).
+> Чтобы использовать существующую организацию Azure DevOps Services, не указанную в списке, [ее необходимо связать с подпиской Azure](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App).
 
 На странице **Тест** выберите, следует ли включать тесты нагрузки, затем нажмите **Продолжить**.
 
@@ -128,7 +128,7 @@ git push azure master
 
 На странице **Сводка** проверьте параметры и нажмите **Готово**.
 
-Подготовка учетной записи VSTS занимает несколько минут. Когда она будет готова, скопируйте URL-адрес репозитория Git в центре развертывания.
+Настройка организации Azure DevOps Services займет несколько минут. Когда она будет готова, скопируйте URL-адрес репозитория Git в центре развертывания.
 
 ![](media/app-service-deploy-local-git/vsts-repo-ready.png)
 
@@ -138,7 +138,7 @@ git push azure master
 git remote add vsts <url>
 ```
 
-Отправьте код в удаленное приложение Azure, чтобы развернуть приложение. При запросе диспетчера ввода учетных данных Git войдите с помощью пользователя visualstudio.com. Дополнительные методы проверки подлинности см. в разделе [Обзор проверки подлинности VSTS](/vsts/git/auth-overview?view=vsts).
+Отправьте код в удаленное приложение Azure, чтобы развернуть приложение. При запросе диспетчера ввода учетных данных Git войдите с помощью пользователя visualstudio.com. Дополнительные методы проверки подлинности см. в статье [Authentication overview](/vsts/git/auth-overview?view=vsts) (Общие сведения о проверке подлинности).
 
 ```bash
 git push vsts master

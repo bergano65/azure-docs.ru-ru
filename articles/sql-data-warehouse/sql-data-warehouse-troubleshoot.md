@@ -10,12 +10,12 @@ ms.component: manage
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: befb4cc075841d45cae769b5ddf924434e65eff3
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: 3500754c7e9cb14ea86e9c0e562ec5f98fc1fc94
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43307253"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44377774"
 ---
 # <a name="troubleshooting-azure-sql-data-warehouse"></a>Устранение неполадок хранилища данных SQL Azure
 В этой статье даны рекомендации по устранению распространенных неполадок.
@@ -27,7 +27,7 @@ ms.locfileid: "43307253"
 | Субъект-сервер "MyUserName" не может получить доступ к базе данных master в текущем контексте безопасности. Не удается открыть пользовательскую базу данных по умолчанию. Вход в систему не выполнен. Пользователю "MyUserName" не удалось войти в систему. (Microsoft SQL Server, ошибка: 916) |Эта ошибка возникает, когда пользователь AAD пытается подключиться к базе данных master, в которой нет соответствующей учетной записи пользователя.  Для устранения этой проблемы либо укажите хранилище данных SQL, к которому необходимо подключиться, во время подключения, либо добавьте учетную запись пользователя в базу данных master.  Дополнительные сведения см. в статье [Защита базы данных в хранилище данных SQL][Security overview]. |
 | Ошибка CTAIP |Эта ошибка может возникнуть, когда имя для входа создано в базе данных master SQL Server, но не создано в базе данных хранилища данных SQL.  Если возникла эта ошибка, ознакомьтесь со статьей [Защита базы данных в хранилище данных SQL][Security overview].  В этой статье объясняется, как создать имя для входа и пользователя в базе данных master, а затем создать пользователя в базе данных хранилища данных SQL. |
 | Заблокировано брандмауэром |Базы данных SQL Azure защищены брандмауэрами на уровне сервера и базы данных. Это гарантирует, что доступ к базам данных возможен только с известных IP-адресов. Брандмауэры являются безопасными по умолчанию. Это означает, что перед подключением необходимо прямо разрешить доступ для IP-адреса или диапазона IP-адресов.  Чтобы настроить брандмауэр для предоставления доступа, выполните указания в разделе [Создание правила брандмауэра на уровне сервера с помощью портала Azure][Configure server firewall access for your client IP] статьи [Создание хранилища данных SQL Azure][Provisioning instructions]. |
-| Не удается подключиться с помощью средства или драйвера |В хранилище данных SQL для запроса данных рекомендуется использовать [SSMS][SSMS], [SSDT для Visual Studio][SSDT for Visual Studio] или [sqlcmd][sqlcmd]. Дополнительные сведения о необходимых драйверах и подключении к хранилищу данных SQL см. статьях [Драйверы для хранилища данных SQL Azure][Drivers for Azure SQL Data Warehouse] и [Подключение к хранилищу данных SQL Azure][Connect to Azure SQL Data Warehouse]. |
+| Не удается подключиться с помощью средства или драйвера |В хранилище данных SQL для запроса данных рекомендуется использовать [SSMS][SSMS], [SSDT для Visual Studio][SSDT for Visual Studio] или [sqlcmd][sqlcmd]. Дополнительные сведения о необходимых драйверах и подключении к Хранилищу данных SQL см. статьях [Строки подключения для хранилища данных SQL Azure][Drivers for Azure SQL Data Warehouse] и [Подключение к хранилищу данных SQL Azure][Connect to Azure SQL Data Warehouse]. |
 
 ## <a name="tools"></a>Средства
 | Проблема | Способы устранения: |
@@ -56,7 +56,7 @@ ms.locfileid: "43307253"
 ## <a name="polybase"></a>PolyBase
 | Проблема | Способы устранения: |
 |:--- |:--- |
-| Ошибка загрузки из-за большого размера строк |В настоящее время для Polybase не поддерживаются строки большого размера.  Таким образом, если ваша таблица содержит данные типа VARCHAR(MAX), NVARCHAR(MAX) или VARBINARY(MAX), для их загрузки нельзя использовать внешние таблицы.  Строки больших размеров можно загружать только с помощью фабрики данных Azure (с использованием BCP), Azure Stream Analytics, Integration Services, программы BCP или класса .NET SQLBulkCopy. Поддержка строк большого размера для PolyBase будет добавлена в будущем выпуске. |
+| Ошибка загрузки из-за большого размера строк |В настоящее время для Polybase не поддерживаются строки большого размера.  Таким образом, если ваша таблица содержит данные типа VARCHAR(MAX), NVARCHAR(MAX) или VARBINARY(MAX), для их загрузки нельзя использовать внешние таблицы.  Строки больших размеров можно загружать только с помощью Фабрики данных Azure (с использованием BCP), Azure Stream Analytics, SQL Server Integration Services, программы BCP или класса .NET SQLBulkCopy. Поддержка строк большого размера для PolyBase будет добавлена в будущем выпуске. |
 | Ошибка загрузки таблицы с типом данных MAX с использованием BCP |Это известная проблема. Для ее решения в некоторых сценариях нужно поместить данные VARCHAR(MAX), NVARCHAR(MAX) или VARBINARY(MAX) в конец таблицы.  Попытайтесь переместить столбцы с типом данных MAX в конец таблицы. |
 
 ## <a name="differences-from-sql-database"></a>Отличия от базы данных SQL
@@ -102,7 +102,7 @@ ms.locfileid: "43307253"
 [Unsupported data types]: sql-data-warehouse-tables-data-types.md#unsupported-data-types
 [Overview]: sql-data-warehouse-tables-overview.md
 [Data types]: sql-data-warehouse-tables-data-types.md
-[Distribute]:/sql-data-warehouse-tables-distribute.md
+[Distribute]: sql-data-warehouse-tables-distribute.md
 [Index]: sql-data-warehouse-tables-index.md
 [Partition]: sql-data-warehouse-tables-partition.md
 [Statistics]: sql-data-warehouse-tables-statistics.md

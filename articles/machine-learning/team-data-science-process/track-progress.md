@@ -14,24 +14,24 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/28/2017
 ms.author: deguhath
-ms.openlocfilehash: e50390a1b6385cabfd0e6b30340634860a062d8d
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 32390b05d2ec258a68ed4f53135399675105a7e9
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34838948"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44302091"
 ---
 # <a name="track-progress-of-data-science-projects"></a>Ход выполнения проектов обработки и анализа данных
 
 Менеджеры групп обработки и анализа данных, руководители команд и проектов должны отслеживать ход выполнения своих проектов, в том числе контролировать, кто и какую работу выполнил и что осталось в списке задач. 
 
-## <a name="vsts-dashboards"></a>Панели мониторинга VSTS
-При помощи Visual Studio Team Services (VSTS) вы можете создавать панели мониторинга для отслеживания действий и рабочих элементов, связанных с заданным проектом гибкой разработки. 
+## <a name="azure-devops-dashboards"></a>Панели мониторинга Azure DevOps
+При помощи Azure DevOps вы можете создавать панели мониторинга для отслеживания действий и рабочих элементов, связанных с заданным проектом гибкой разработки. 
 
-Дополнительные сведения о том, как создавать и настраивать панели мониторинга и мини-приложения в Visual Studio Team Services, приведены в следующих наборах инструкций:
+Дополнительные сведения о том, как создавать и настраивать панели мониторинга и мини-приложения в Azure DevOps, приведены в следующих наборах инструкций:
 
-- [Добавление панелей мониторинга и управление ими](https://docs.microsoft.com/vsts/report/dashboards/dashboards)
-- [Добавление мини-приложений на панель мониторинга](https://docs.microsoft.com/vsts/report/dashboards/add-widget-to-dashboard)
+- [Добавление панелей мониторинга и управление ими](https://docs.microsoft.com/azure/devops/report/dashboards/dashboards)
+- [Добавление мини-приложений на панель мониторинга](https://docs.microsoft.com/azure/devops/report/dashboards/add-widget-to-dashboard)
 
 ## <a name="example-dashboard"></a>Пример панели мониторинга
 
@@ -49,7 +49,7 @@ ms.locfileid: "34838948"
 
 !["Веб-транзакции"](./media/track-progress/dashboard.png)
 
-Описание способов построения диаграмм приведено в кратких руководствах и руководствах по [панелям мониторинга](https://docs.microsoft.com/vsts/report/dashboards/).
+Описание способов построения диаграмм приведено в кратких руководствах и руководствах по [панелям мониторинга](https://docs.microsoft.com/azure/devops/report/dashboards/).
  
 ## <a name="next-steps"></a>Дополнительная информация
 

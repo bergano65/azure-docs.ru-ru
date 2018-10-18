@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 02/27/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 543c03c22b31389c3d6e048cc9f13c24add5aae7
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.openlocfilehash: da69cc22fbb071ce3fa4b2c53aaf0b1ec4ba5e46
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30314727"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47096316"
 ---
 # <a name="run-job-preparation-and-job-release-tasks-on-batch-compute-nodes"></a>Выполнение задач подготовки и задач завершения заданий на вычислительных узлах пакетной службы
 
@@ -118,7 +118,7 @@ await myBatchClient.JobOperations.TerminateJobAsync("JobPrepReleaseSampleJob");
 ## <a name="code-sample-on-github"></a>Пример кода на GitHub
 В примере проекта [JobPrepRelease][job_prep_release_sample] с сайта GitHub можно ознакомиться с действием задач подготовки и снятия задания. Это консольное приложение выполняет следующее.
 
-1. Создает пул с двумя "небольшими" узлами.
+1. Создает пул с двумя узлами.
 2. Создает задание с задачами подготовки задания, снятия задания и стандартными задачами.
 3. Запускает задачу подготовки задания, которая сначала записывает идентификатор узла в текстовый файл в общем каталоге узла.
 4. Запускает на каждом узле задачу, которая записывает свой идентификатор в тот же текстовый файл.
@@ -131,7 +131,7 @@ await myBatchClient.JobOperations.TerminateJobAsync("JobPrepReleaseSampleJob");
 
 ```
 Attempting to create pool: JobPrepReleaseSamplePool
-Created pool JobPrepReleaseSamplePool with 2 small nodes
+Created pool JobPrepReleaseSamplePool with 2 nodes
 Checking for existing job JobPrepReleaseSampleJob...
 Job JobPrepReleaseSampleJob not found, creating...
 Submitting tasks and awaiting completion...

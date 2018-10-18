@@ -1,6 +1,6 @@
 ---
-title: Копирование данных из WASB в Data Lake Store и обратно с помощью Distcp | Документация Майкрософт
-description: Использование средства Distcp для копирования данных из BLOB-объектов хранилища Azure в хранилище озера данных и обратно
+title: Копирование данных из WASB в Azure Data Lake Storage 1-го поколения и обратно с помощью DistCp | Документация Майкрософт
+description: Узнайте, как с помощью средства DistCp копировать данные из Azure Storage Blobs (WASB) в Azure Data Lake Storage 1-го поколения и обратно.
 services: data-lake-store
 documentationcenter: ''
 author: nitinme
@@ -12,34 +12,34 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: d6f4d1f7b974a3cd44e7cb9ffc2c63548f0bc321
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 9740de34fe7cf7d06af1803cc6d77d7e89bbb73f
+ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34624401"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44391527"
 ---
-# <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-data-lake-store"></a>Использование Distcp для копирования данных между BLOB-объектами и хранилищем озера данных
+# <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-azure-data-lake-storage-gen1"></a>Копирование данных между Azure Storage Blobs и Azure Data Lake Storage 1-го поколения
 > [!div class="op_single_selector"]
 > * [С помощью DistCp](data-lake-store-copy-data-wasb-distcp.md)
 > * [С помощью AdlCopy](data-lake-store-copy-data-azure-storage-blob.md)
 >
 >
 
-При наличии кластера HDInsight с доступом к Data Lake Store можно использовать такие средства экосистемы Hadoop, как DistCp, для **копирования** данных из хранилища кластера HDInsight (WASB) в учетную запись Data Lake Store и обратно. В этой статье содержатся инструкции по использованию средства DistCp.
+При наличии кластера HDInsight с доступом к Azure Data Lake Storage 1-го поколения с помощью таких средств экосистемы Hadoop, как DistCp, можно копировать данные **из системы хранения данных кластера HDInsight (WASB) в учетную запись Data Lake Storage 1-го поколения и обратно**. В этой статье содержатся инструкции по использованию средства DistCp.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись хранения озера данных Azure**. Инструкции по созданию учетной записи см. в статье [Начало работы с Azure Data Lake Store с помощью портала Azure](data-lake-store-get-started-portal.md).
-* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Store. См. статью [Создание кластера HDInsight с Data Lake Store](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
+* **Учетная запись Azure Data Lake Storage 1-го поколения**. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
+* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
 
 ## <a name="do-you-learn-fast-with-videos"></a>Учитесь быстрее с помощью видео?
-[Просмотрите это видно](https://mix.office.com/watch/1liuojvdx6sie) об использовании Distcp для копирования данных между большими двоичными объектами службы хранилища Azure и хранилищем озера данных Azure.
+[Просмотрите это видео](https://mix.office.com/watch/1liuojvdx6sie) о копировании данных между большими двоичными объектами службы хранилища Azure и Data Lake Storage 1-го поколения с помощью DistCp.
 
 ## <a name="use-distcp-from-an-hdinsight-linux-cluster"></a>Использование Distcp из кластера HDInsight на платформе Linux
 
-В состав кластера HDInsight входит служебная программа Distcp, которую можно использовать для копирования данных из различных источников в кластер HDInsight. При настройке кластера HDInsight для использования хранилища Data Lake Store в качестве дополнительного хранилища служебную программу DistCp можно использовать для копирования данных в учетную запись Data Lake Store и обратно без дополнительной настройки. В этом разделе мы рассмотрим, как использовать служебную программу DistCp.
+В состав кластера HDInsight входит служебная программа Distcp, которую можно использовать для копирования данных из различных источников в кластер HDInsight. При настройке кластера HDInsight для использования Data Lake Storage 1-го поколения в качестве дополнительного хранилища с помощью служебной программы DistCp можно копировать данные в учетную запись Data Lake Storage 1-го поколения и обратно без дополнительной настройки. В этом разделе мы рассмотрим, как использовать служебную программу DistCp.
 
 1. На своем настольном компьютере используйте SSH, чтобы подключиться к кластеру. См. раздел [Подключение к кластеру HDInsight на основе Linux](../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md). Выполните команды в командной строке SSH.
 
@@ -49,31 +49,31 @@ ms.locfileid: "34624401"
 
     Она должна вывести список содержимого в хранилище BLOB-объектов.
 
-3. Аналогичным образом проверьте, доступна ли учетная запись хранилища озера данных из кластера. Выполните следующую команду:
+3. Аналогичным образом проверьте, доступна ли учетная запись хранилища Data Lake Storage 1-го поколения из кластера. Выполните следующую команду:
 
-        hdfs dfs -ls adl://<data_lake_store_account>.azuredatalakestore.net:443/
+        hdfs dfs -ls adl://<data_lake_storage_gen1_account>.azuredatalakestore.net:443/
 
-    Она должна вывести список файлов и папок в учетной записи Data Lake Store.
+    Она должна вывести список файлов и папок в учетной записи хранилища Data Lake Storage 1-го поколения.
 
-4. Используйте Distcp для копирования данных из WASB в учетную запись хранилища озера данных.
+4. С помощью DistCp копируйте данные из WASB в учетную запись хранилища Data Lake Storage 1-го поколения.
 
-        hadoop distcp wasb://<container_name>@<storage_account_name>.blob.core.windows.net/example/data/gutenberg adl://<data_lake_store_account>.azuredatalakestore.net:443/myfolder
+        hadoop distcp wasb://<container_name>@<storage_account_name>.blob.core.windows.net/example/data/gutenberg adl://<data_lake_storage_gen1_account>.azuredatalakestore.net:443/myfolder
 
-    Эта команда копирует содержимое папки **/example/data/gutenberg/** в WASB в папку **/myfolder** в учетной записи Data Lake Store.
+    Эта команда копирует содержимое папки **/example/data/gutenberg/** в WASB в папку **/myfolder** в учетной записи Data Lake Storage 1-го поколения.
 
-5. Аналогичным образом используйте Distcp для копирования данных из учетной записи хранилища озера данных в WASB.
+5. Аналогичным образом с помощью DistCp копируйте данные из учетной записи хранилища Data Lake Storage 1-го поколения в WASB.
 
-        hadoop distcp adl://<data_lake_store_account>.azuredatalakestore.net:443/myfolder wasb://<container_name>@<storage_account_name>.blob.core.windows.net/example/data/gutenberg
+        hadoop distcp adl://<data_lake_storage_gen1_account>.azuredatalakestore.net:443/myfolder wasb://<container_name>@<storage_account_name>.blob.core.windows.net/example/data/gutenberg
 
-    Эта команда копирует содержимое папки **/myfolder** в учетной записи Data Lake Store в папку **/example/data/gutenberg/** в WASB.
+    Эта команда копирует содержимое папки **/myfolder** в учетной записи Data Lake Storage 1-го поколения в папку **/example/data/gutenberg/** в WASB.
 
 ## <a name="performance-considerations-while-using-distcp"></a>Рекомендации по производительности при использовании DistCp
 
-Так как наименьшей степенью детализации DistCp является один файл, установка максимального количества одновременных копий является самым важным параметром оптимизации для Data Lake Store. Количество одновременных копий регулируется установкой параметра, отвечающего за количество модулей сопоставления (m), в командной строке. Этот параметр указывает максимальное количество модулей сопоставления, которые используются для копирования данных. Значение по умолчанию — 20.
+Так как наименьшей степенью детализации DistCp является один файл, установка максимального количества одновременных копий — это самый важный параметр оптимизации хранилища Data Lake Storage 1-го поколения. Количество одновременных копий регулируется установкой параметра, отвечающего за количество модулей сопоставления (m), в командной строке. Этот параметр указывает максимальное количество модулей сопоставления, которые используются для копирования данных. Значение по умолчанию — 20.
 
 **Пример**
 
-    hadoop distcp wasb://<container_name>@<storage_account_name>.blob.core.windows.net/example/data/gutenberg adl://<data_lake_store_account>.azuredatalakestore.net:443/myfolder -m 100
+    hadoop distcp wasb://<container_name>@<storage_account_name>.blob.core.windows.net/example/data/gutenberg adl://<data_lake_storage_gen1_account>.azuredatalakestore.net:443/myfolder -m 100
 
 ### <a name="how-do-i-determine-the-number-of-mappers-to-use"></a>Как определить количество модулей сопоставления, которые следует использовать?
 
@@ -114,7 +114,7 @@ ms.locfileid: "34624401"
 * При копировании из учетной записи хранилища BLOB-объектов Azure задание копирования может регулироваться на стороне хранилища BLOB-объектов. Это снижает производительность задания копирования. Дополнительные сведения об ограничениях хранилища BLOB-объектов Azure см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).
 
 ## <a name="see-also"></a>См. также
-* [Copy data from Azure Storage Blobs to Data Lake Store](data-lake-store-copy-data-azure-storage-blob.md)
-* [Защита данных в хранилище озера данных](data-lake-store-secure-data.md)
-* [Использование аналитики озера данных Azure с хранилищем озера данных](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
-* [Использование Azure HDInsight с хранилищем озера данных](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Копирование данных из больших двоичных объектов хранилища Azure в хранилище озера данных](data-lake-store-copy-data-azure-storage-blob.md)
+* [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
+* [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)

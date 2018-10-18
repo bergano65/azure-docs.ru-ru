@@ -1,27 +1,27 @@
 ---
-title: Руководство по использованию API распознавания лиц для Python | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Сведения о том, как использовать API распознавания лиц с пакетом SDK для Python, чтобы обнаруживать лица на изображении в службе Cognitive Services.
+title: Руководство. Обнаружение и выделение лиц на изображении с помощью API распознавания лиц и Python
+titleSuffix: Azure Cognitive Services
+description: Узнайте, как использовать API распознавания лиц с пакетом SDK для Python, чтобы обнаруживать лица на изображении.
 services: cognitive-services
 author: SteveMSFT
-manager: corncar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: face-api
-ms.topic: article
+ms.topic: tutorial
 ms.date: 03/01/2018
 ms.author: sbowles
-ms.openlocfilehash: 90d74d8df2ed59e6f3313ef7c620284d1022a667
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 6cc3ac25d2196c0275b445503b79b9ac06a791d3
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37049117"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46127743"
 ---
-# <a name="getting-started-with-face-api-in-python-tutorial"></a>Руководство. Начало работы с API распознавания лиц в Python
+# <a name="tutorial-detect-and-frame-faces-with-the-face-api-and-python"></a>Руководство. Обнаружение и выделение лиц с помощью API распознавания лиц и Python 
 
 Из этого руководства вы узнаете, как вызвать API распознавания лиц с использованием пакета SDK для Python, чтобы обнаружить на изображении человеческие лица.
 
-## <a name="prerequisites"></a> Предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством необходимо сделать следующее:
 
@@ -35,7 +35,7 @@ pip install cognitive_face
 
 - получить [ключ подписки ](https://azure.microsoft.com/try/cognitive-services/) для Microsoft Cognitive Services. При работе с этим руководством можно использовать основной или дополнительный ключ. (Обратите внимание, что для работы с любым API распознавания лиц требуется действительный ключ подписки.)
 
-## <a name="sdk-example"></a> Распознавание лиц на изображении
+## <a name="detect-a-face-in-an-image"></a>Распознавание лиц на изображении
 
 ```python
 import cognitive_face as CF
@@ -93,7 +93,7 @@ for face in faces:
 img.show()
 ```
 
-## <a name='further'></a> Дальнейшее изучение
+## <a name="further-exploration"></a>Дальнейшее изучение
 
 Чтобы помочь вам разобраться с API распознавания лиц, в этом руководстве содержится пример с графическим пользовательским интерфейсом. Чтобы использовать этот пример, сначала установите [wxPython](https://wxpython.org/pages/downloads/), а затем выполните приведенные ниже команды.
 
@@ -103,11 +103,11 @@ cd Cognitive-Face-Python
 python sample
 ```
 
-## <a name="summary"></a> Сводная информация
+## <a name="summary"></a>Сводка
 
 В этом руководстве вы изучили базовый процесс использования API распознавания лиц через вызовы пакета SDK для Python. Дополнительные сведения об этом API вы можете найти в практическом руководстве и в [разделе справки по API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
 
-## <a name="related"></a> Связанные разделы
+## <a name="related-topics"></a>Связанные темы
 
 - [Начало работы с API распознавания лиц в CSharp](FaceAPIinCSharpTutorial.md)
 - [Начало работы с API распознавания лиц в Java для Android](FaceAPIinJavaForAndroidTutorial.md)

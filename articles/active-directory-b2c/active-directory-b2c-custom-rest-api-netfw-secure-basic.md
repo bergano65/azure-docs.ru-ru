@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/25/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: f157602ce3a9c5b6f15a03ad816d8aece4e22805
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: e6cff4e2daf86b63bc0db0d4f2d537322d2841df
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43339173"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47409309"
 ---
 # <a name="secure-your-restful-services-by-using-http-basic-authentication"></a>Защита служб RESTful с использованием обычной проверки подлинности HTTP
 
@@ -237,7 +237,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 6. В поле **Секрет** введите ИД приложения, который вы задали ранее.
 
-7. Для параметра **Key usage** (Использование ключа) выберите **Секрет**.
+7. Для параметра **Использование ключа** выберите **Подпись**.
 
 8. Нажмите кнопку **Создать**.
 
@@ -257,7 +257,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 6. В поле **Секрет** введите секрет приложения, который вы задали ранее.
 
-7. Для параметра **Key usage** (Использование ключа) выберите **Секрет**.
+7. Для параметра **Использование ключа** выберите **Подпись**.
 
 8. Нажмите кнопку **Создать**.
 

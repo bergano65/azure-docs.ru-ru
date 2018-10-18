@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/18/2018
 ms.author: genli
-ms.openlocfilehash: 59a9011edef49494288716ab16f30e28e440293b
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 5dd87c75638c3d084226becaace5c9454660c907
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34195188"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44303682"
 ---
 # <a name="troubleshoot-domain-and-ssl-certificate-problems-in-azure-web-apps"></a>Устранение проблем доменов и SSL-сертификата в веб-приложениях Azure
 
@@ -167,7 +167,7 @@ ms.locfileid: "34195188"
 
 - Вы не являетесь владельцем подписки, поэтому у вас нет разрешения на покупку домена.
 
-    **Решение.** [Добавьте роль владельца](../billing/billing-add-change-azure-subscription-administrator.md) в учетную запись. Или свяжитесь с администратором, чтобы получить разрешение на приобретение домена.
+    **Решение.** [Назначьте роль "Владелец" ](../role-based-access-control/role-assignments-portal.md) своей учетной записи. Или свяжитесь с администратором, чтобы получить разрешение на приобретение домена.
 - Вы достигли предельного числа приобретений доменов для подписки. Текущее ограничение — 20.
 
     **Решение.** Чтобы отправить запрос на увеличение ограничения, обратитесь в [службу поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).

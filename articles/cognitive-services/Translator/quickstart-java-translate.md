@@ -1,21 +1,21 @@
 ---
-title: Перевод текста с помощью API перевода текстов и Java | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как перевести текст с одного языка на другой, используя API перевода текстов с Java в Cognitive Services.
+title: Краткое руководство. Перевод текста с помощью Перевода текстов и Java
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как перевести текст с одного языка на другой, используя API перевода текстов и Java.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/21/2018
 ms.author: nolachar
-ms.openlocfilehash: c4c1774d2e02ffa17ee49cc7ff3a2c0d5bf29cb5
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: 806ab636827d873c5c23e4964492c144d1489a95
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "43770726"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46126196"
 ---
 # <a name="quickstart-translate-text-with-java"></a>Краткое руководство по переводу текста с помощью Java
 

@@ -1,6 +1,6 @@
 ---
-title: Создание первой микрослужбы Azure на основе субъектов на языке C# | Документация Майкрософт
-description: В этом учебнике последовательно описаны этапы создания, отладки и развертывания простой службы на основе субъекта с использованием Service Fabric Reliable Actors.
+title: Создание службы на основе субъекта в Azure Service Fabric | Документация Майкрософт
+description: Узнайте, как создать, выполнить отладку и развернуть первую службу на основе субъекта на C#, используя Reliable Actors в Service Fabric.
 services: service-fabric
 documentationcenter: .net
 author: vturecek
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/16/2018
 ms.author: vturecek
-ms.openlocfilehash: 32d3fa09c863c47753267e97e7c4730dff869887
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 4ff896902c1a92c244c3bcd147c3daeeb9e49c77
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34211411"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44054763"
 ---
 # <a name="getting-started-with-reliable-actors"></a>Приступая к работе с Reliable Actors
 > [!div class="op_single_selector"]
@@ -28,7 +28,7 @@ ms.locfileid: "34211411"
 
 В этой статье описывается создание и отладка простого приложения Reliable Actor в Visual Studio. Дополнительные сведения о Reliable Actors см. в статье [Общие сведения о надежных субъектах Service Fabric](service-fabric-reliable-actors-introduction.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Приступая к работе, убедитесь, что на вашем компьютере установлена и настроена среда разработки Service Fabric, включая Visual Studio. Дополнительные сведения см. в разделе [Подготовка среды разработки в Linux](service-fabric-get-started.md).
 

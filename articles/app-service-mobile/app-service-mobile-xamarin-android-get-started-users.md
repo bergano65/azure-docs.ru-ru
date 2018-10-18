@@ -12,14 +12,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-xamarin-android
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 07/05/2017
+ms.date: 09/24/2018
 ms.author: panarasi
-ms.openlocfilehash: 97207b722b65ccf98c57304cd559b0927aacd5a4
-ms.sourcegitcommit: df4ddc55b42b593f165d56531f591fdb1e689686
+ms.openlocfilehash: d496801894560310a4225eae8a32fced52bcc428
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2018
-ms.locfileid: "27595301"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47063546"
 ---
 # <a name="add-authentication-to-your-xamarinandroid-app"></a>Добавление проверки подлинности в приложение Xamarin.Android
 [!INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
@@ -125,6 +125,12 @@ ms.locfileid: "27595301"
         </activity>
 
 6. В Visual Studio или Xamarin Studio запустите клиентский проект на устройстве или в эмуляторе либо выполните вход с помощью выбранного поставщика удостоверений. После успешного выполнения входа в приложении отобразится ваш идентификатор для входа и список элементов задач, и вы сможете внести изменения в данные.
+
+## <a name="troubleshooting"></a>Устранение неполадок
+
+**Сбой приложения с ошибкой `Java.Lang.NoSuchMethodError: No static method startActivity`**
+
+В некоторых случаях конфликты в пакетах поддержки отображаются в виде обычного предупреждения в Visual Studio, но во время выполнения происходит сбой приложения с этим исключением. В этом случае необходимо убедиться, что у всех пакетов поддержки, на которые содержатся ссылки в проекте, одинаковая версия. [Пакет NuGet для мобильных приложений Azure](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) имеет зависимость `Xamarin.Android.Support.CustomTabs` для платформы Android, поэтому если в проекте используются пакеты поддержки более новой версии, необходимо установить требуемую версию пакета во избежание конфликтов.
 
 <!-- URLs. -->
 [Создание приложения Xamarin.Android]: app-service-mobile-xamarin-android-get-started.md

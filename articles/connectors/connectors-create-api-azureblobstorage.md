@@ -1,22 +1,21 @@
 ---
 title: Подключение к хранилищу BLOB-объектов Azure с помощью Azure Logic Apps | Документация Майкрософт
 description: Создание и администрирование больших двоичных объектов в хранилище Azure с помощью Azure Logic Apps
-author: ecfan
-manager: jeconnoc
-ms.author: estfan
-ms.date: 05/21/2018
-ms.topic: article
-ms.service: logic-apps
 services: logic-apps
-ms.reviewer: klam, LADocs
+ms.service: logic-apps
 ms.suite: integration
+author: ecfan
+ms.author: estfan
+ms.reviewer: klam, LADocs
+ms.topic: article
+ms.date: 05/21/2018
 tags: connectors
-ms.openlocfilehash: 49d08135dee4568d1a9d65ec2d22d17ee3bda2ea
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: d8658740772ed4a11fdfd70a0c925ac1b597dd69
+ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "35294685"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47452026"
 ---
 # <a name="create-and-manage-blobs-in-azure-blob-storage-with-azure-logic-apps"></a>Создание и администрирование больших двоичных объектов в хранилище BLOB-объектов Azure с помощью Azure Logic Apps
 
@@ -24,10 +23,19 @@ ms.locfileid: "35294685"
 
 Предположим, что у вас есть средство, которое обновляется на веб-сайте Azure. Оно используется как триггер для приложения логики. Когда это событие происходит, приложение логики может обновить некоторые файлы в контейнере хранилища BLOB-объектов, что является действием в приложении логики. 
 
-Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. Если вы не работали с приложениями логики, см. руководства по [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [созданию первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+> [!NOTE]
+> Logic Apps не поддерживает непосредственное подключение к учетным записям хранения Azure через брандмауэры. Чтобы получить доступ к этим учетным записям хранения, используйте любой из этих вариантов: 
+>
+> * Создайте [среду службы интеграции](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), которая может подключаться к ресурсам в виртуальной сети Azure. 
+> 
+> * Если вы уже используете службу управления API, ее можно применить в этом сценарии. Дополнительные сведения см. в статье [Простая архитектура корпоративной интеграции](http://aka.ms/aisarch).
+
+Если вы не работали с приложениями логики, см. руководства по [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [созданию первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 См. технические сведения о <a href="https://docs.microsoft.com/connectors/azureblobconnector/" target="blank">соединителях хранилища BLOB-объектов Azure</a>.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
+
+* Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. 
 
 * [Учетная запись хранения Azure и контейнер хранилища.](../storage/blobs/storage-quickstart-blobs-portal.md)
 

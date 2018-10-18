@@ -1,21 +1,21 @@
 ---
-title: Получение списка поддерживаемых языков с помощью API перевода текстов и Node.js | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, результаты поиска по словарю и примеры с помощью API перевода текстов и Node.js в Cognitive Services.
+title: Краткое руководство. Получение списка поддерживаемых языков с помощью Перевода текстов и Node.js
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, результаты поиска по словарю и примеры с помощью API перевода текстов и Node.js.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/21/2018
 ms.author: nolachar
-ms.openlocfilehash: dd37aab3707c6f06b8cc2e942366e19746694252
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: a3b9dde8983b87a63858b3eb1381f7c74545cb1a
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "43770870"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46122864"
 ---
 # <a name="quickstart-get-supported-languages-with-nodejs"></a>Краткое руководство по получению списка поддерживаемых языков с помощью Node.js
 

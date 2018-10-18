@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/29/2017
 ms.author: mbullwin
-ms.openlocfilehash: 4ae5adaf37f49e9909fa80fd31f088ed6ee1b081
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 91b5c2c23445e5cd3445d1d5b640cb3ecb8e5e7a
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39450444"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44301197"
 ---
 # <a name="automate-application-insights-processes-by-using-logic-apps"></a>Автоматизация процессов Application Insights с помощью Logic Apps
 
@@ -25,7 +25,7 @@ ms.locfileid: "39450444"
 
 Благодаря этой интеграции можно автоматизировать множество процессов, не написав ни строчки кода. Можно создать приложение логики с соединителем Application Insights, чтобы быстро автоматизировать любой процесс Application Insights. 
 
-Вы также можете добавить дополнительные действия. Компонент Logic Apps службы приложений Azure предоставляет сотни действий. Например, вы можете использовать приложение логики, чтобы автоматически отправить уведомление по электронной почте или создать ошибку в Visual Studio Team Services. Вы можете также воспользоваться одним из множества доступных [шаблонов](https://docs.microsoft.com/azure/logic-apps/logic-apps-use-logic-app-templates). С их помощью можно ускорить процесс создания приложения логики. 
+Вы также можете добавить дополнительные действия. Компонент Logic Apps службы приложений Azure предоставляет сотни действий. Например, используя приложение логики, вы можете автоматически отправить уведомление по электронной почте или создать ошибку в Azure DevOps. Вы можете также воспользоваться одним из множества доступных [шаблонов](https://docs.microsoft.com/azure/logic-apps/logic-apps-use-logic-app-templates). С их помощью можно ускорить процесс создания приложения логики. 
 
 ## <a name="create-a-logic-app-for-application-insights"></a>Создание приложения логики для Application Insights
 

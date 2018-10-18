@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: mareat
-ms.openlocfilehash: 8f5bb54e12348fd915b2c4413bbacdc083a2a879
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: bcd67d2e879d199296289dbaef2141ba659b2412
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42142977"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47032686"
 ---
 # <a name="visualizing-network-security-group-flow-logs-with-power-bi"></a>Визуализация журналов потоков для групп безопасности сети с помощью Power BI
 
@@ -54,7 +54,7 @@ ms.locfileid: "42142977"
 1. Скачайте и откройте следующий шаблон Power BI в приложении Power BI Desktop: [шаблон журнала потоков Наблюдателя за сетями Power BI](https://aka.ms/networkwatcherpowerbiflowlogstemplate).
 1. Введите обязательные параметры запроса.
     1. **StorageAccountName** — указывает имя учетной записи хранения, содержащей журналы потоков для групп безопасности сети, которые вы хотите загрузить и визуализировать.
-    1. **NumberOfLogFiles** — указывает количество файлов журнала, которые нужно скачать и визуализировать в Power BI. Например, если указано значение 50, используются 50 последних файлов журнала. Если в этой учетной записи мы настроили отправку журналов потоков от двух групп безопасности сети, то мы сможем просмотреть журналы за последние 25 часов.
+    1. **NumberOfLogFiles** — указывает количество файлов журнала, которые нужно скачать и визуализировать в Power BI. Например, если указано значение 50, используются 50 последних файлов журнала. Если в этой учетной записи мы настроили отправку журналов потоков от двух групп безопасности сети, то сможем просмотреть журналы за последние 25 часов.
 
     ![Главный экран Power BI][2]
 

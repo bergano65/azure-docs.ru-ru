@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/02/2018
 ms.author: tomfitz
-ms.openlocfilehash: 62e376a345be837e910ea615f8648e6b8d196ae1
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: c5f1c5add069be99f7a6f467f6e3e2bd9c2b3535
+ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39006253"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45543094"
 ---
 # <a name="creating-and-deploying-azure-resource-groups-through-visual-studio"></a>Создание и развертывание групп ресурсов Azure с помощью Visual Studio
 С помощью Visual Studio можно создать проект для развертывания инфраструктуры и кода в Azure. Например, можно определить веб-узел, веб-сайт и базу данных для приложения, а затем развернуть эту инфраструктуру вместе с кодом. Visual Studio предоставляет разные начальные шаблоны для распространенных сценариев развертывания. В этой статье показано, как развернуть веб-приложение и базу данных SQL.  
@@ -305,5 +305,8 @@ ms.locfileid: "39006253"
 Доступом к панели мониторинга можно управлять с помощью групп RBAC. Кроме того, после развертывания панели мониторинга можно настроить ее внешний вид. Однако если вы повторно развернете группу ресурсов, панель мониторинга будет сброшена до значений по умолчанию в шаблоне. Дополнительные сведения о создании панелей мониторинга см. в статье [Создание панелей мониторинга Azure программными средствами](../azure-portal/azure-portal-dashboards-create-programmatically.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Дополнительные сведения о шаблонах см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 
+В этом кратком руководстве вы узнали, как создать и развернуть шаблоны с помощью Visual Studio. В следующем руководстве показано, как в справочнике по шаблону найти информацию, чтобы создать зашифрованную учетную запись хранения Azure.
+
+> [!div class="nextstepaction"]
+> [Создание шаблона Azure Resource Manager для развертывания зашифрованной учетной записи хранения](./resource-manager-tutorial-create-encrypted-storage-accounts.md)

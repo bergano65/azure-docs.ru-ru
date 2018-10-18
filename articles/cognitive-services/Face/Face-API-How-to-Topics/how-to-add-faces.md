@@ -1,29 +1,29 @@
 ---
-title: Добавление лиц с помощью API распознавания лиц | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Использование API распознавания лиц в Cognitive Services для добавления лиц на изображения.
+title: Пример. Добавление лиц в API распознавания лиц
+titleSuffix: Azure Cognitive Services
+description: Использование API распознавания лиц для добавления лиц в изображения.
 services: cognitive-services
 author: SteveMSFT
-manager: corncar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: face-api
-ms.topic: article
+ms.topic: sample
 ms.date: 03/01/2018
 ms.author: sbowles
-ms.openlocfilehash: 3306c13d6c3d231ddbda38cfcbc5419fcdbd30db
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: fb5d03e2cb3c11daf7a94966fda46345ee910ded
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380140"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46125108"
 ---
-# <a name="how-to-add-faces"></a>Как добавлять лица
+# <a name="example-how-to-add-faces"></a>Пример. Как добавлять лица
 
 В этом руководстве демонстрируются лучшие методики добавления значительного числа людей и лиц в PersonGroup.
 Та же стратегия применима к FaceList и LargePersonGroup.
 Примеры написаны на языке C# с помощью клиентской библиотеки API распознавания лиц.
 
-## <a name="step1"></a> Шаг 1. Инициализация
+## <a name="step-1-initialization"></a>Шаг 1. Инициализация
 
 Объявляется несколько переменных и реализуется вспомогательная функция для планирования запросов.
 
@@ -60,7 +60,7 @@ static async Task WaitCallLimitPerSecondAsync()
 }
 ```
 
-## <a name="step2"></a>Шаг 2. Авторизация вызова API
+## <a name="step-2-authorize-the-api-call"></a>Шаг 2. Авторизация вызова API
 
 При использовании клиентской библиотеки ключ подписки передается через конструктор класса FaceServiceClient. Например: 
 
@@ -70,7 +70,7 @@ FaceServiceClient faceServiceClient = new FaceServiceClient("<Subscription Key>"
 
 Ключ подписки можно получить на странице "Marketplace" портала Azure. Ознакомьтесь со страницей [подписок](https://www.microsoft.com/cognitive-services/en-us/sign-up).
 
-## <a name="step3"></a>Шаг 3. Создание PersonGroup
+## <a name="step-3-create-the-persongroup"></a>Шаг 3. Создание PersonGroup
 
 Для сохранения данных людей лиц создается PersonGroup с именем MyPersonGroup.
 Время запроса ставится в очередь `_timeStampQueue` для обеспечения общей проверки.
@@ -82,7 +82,7 @@ _timeStampQueue.Enqueue(DateTime.UtcNow);
 await faceServiceClient.CreatePersonGroupAsync(personGroupId, personGroupName);
 ```
 
-## <a name="step4"></a>Шаг 4. Создание данных людей в PersonGroup
+## <a name="step-4-create-the-persons-to-the-persongroup"></a>Шаг 4. Создание данных людей в PersonGroup
 
 Данные людей создаются одновременно. Кроме того, во избежание превышения предельного количества вызовов применяется `await WaitCallLimitPerSecondAsync()`.
 
@@ -97,7 +97,7 @@ Parallel.For(0, PersonCount, async i =>
 });
 ```
 
-## <a name="step5"></a>Шаг 5. Добавление лиц людей
+## <a name="step-5-add-faces-to-the-persons"></a>Шаг 5. Добавление лиц людей
 
 Добавление лиц разных людей выполняется параллельно, в то время как для одного определенного пользователя это выполняется последовательно.
 Опять же, во избежание превышения предельной частоты запросов вызывается `await WaitCallLimitPerSecondAsync()`.
@@ -120,7 +120,7 @@ Parallel.For(0, PersonCount, async i =>
 });
 ```
 
-## <a name="summary"></a> Сводная информация
+## <a name="summary"></a>Сводка
 
 В этом руководстве вы узнали о процессе создания PersonGroup с большим числом людей и лиц. Несколько напоминаний:
 
@@ -135,7 +135,8 @@ Parallel.For(0, PersonCount, async i =>
 - Создание данных людей с помощью API [PersonGroup Person - Create](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523c).
 - Добавление лиц людей с помощью API [PersonGroup Person - Add Face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b).
 
-## <a name="related"></a> Связанные разделы
+## <a name="related-topics"></a>Связанные темы
+
 - [Практическое руководство по идентификации лиц на изображении](HowtoIdentifyFacesinImage.md)
 - [Практическое руководство по обнаружению лиц на изображении](HowtoDetectFacesinImage.md)
 - [Как использовать функцию увеличения масштаба](how-to-use-large-scale.md)

@@ -12,14 +12,14 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 08/28/2018
+ms.date: 09/06/2018
 ms.author: alkohli
-ms.openlocfilehash: 2fdd574adf3587f11984bee2a2549d9bcd0c4c0d
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: aaa4e4bb24ca42adb9d283e6286dbef879bcb1ea
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43126011"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44299854"
 ---
 # <a name="azure-data-box-disk-system-requirements-preview"></a>Системные требования для диска Azure Data Box (предварительная версия)
 
@@ -35,17 +35,29 @@ ms.locfileid: "43126011"
 
 Ниже приведен список поддерживаемых операционных систем для операций разблокировки диска и копирования данных при помощи клиентов, подключенных к диску Data Box.
 
-| **Операционная система и (или) платформа** | **Версии** |
+| **Операционная система** | **Проверенные версии** |
 | --- | --- |
 | Windows Server |2008 R2 с пакетом обновления 1 (SP1) <br> 2012 <br> 2012 R2 <br> 2016 |
 | Windows |7, 8, 10 |
-| Windows PowerShell |4,0 |
+|Linux <br> <li> Ubuntu </li><li> Debian </li><li> Red Hat Enterprise Linux (RHEL) </li><li> CentOS| <br>14.04, 16.04, 18.04 <br> 8.11, 9 <br> 7.0 <br> 6.5, 6.9, 7.0, 7.5 |  
+
+## <a name="other-required-software-for-windows-clients"></a>Другое необходимое программное обеспечение для клиентов Windows
+
+Для клиента Windows нужно также установить следующие компоненты.
+
+| **Программное обеспечение**| **Версия** |
+| --- | --- |
+| Windows PowerShell |5.0 |
 | .NET Framework |4.5.1 |
-| Windows Management Framework |4,0|
+| Windows Management Framework |5.0|
+| BitLocker| - |
 
-> [!NOTE] 
-> На клиентах, которые выполняют средство разблокировки диска и используются для копирования данных, должен быть включен BitLocker.
+## <a name="other-required-software-for-linux-clients"></a>Другое необходимое программное обеспечение для клиентов Linux
 
+Набор инструментов для диска Data Box позволяет установить следующее необходимое программное обеспечение для клиента Linux:
+
+- DisLocker;
+- OpenSSL.
 
 ## <a name="supported-storage-accounts"></a>Учетные записи хранилища BLOB-объектов
 

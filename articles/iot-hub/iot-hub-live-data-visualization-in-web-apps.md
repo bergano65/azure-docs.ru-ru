@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
 ms.author: rangv
-ms.openlocfilehash: 3d127afa94b761d96db17bcb59700a275a44a265
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 445bc4b693c8129c4faf42fee3b2be34d90846ae
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38677269"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44160257"
 ---
 # <a name="visualize-real-time-sensor-data-from-your-azure-iot-hub-by-using-the-web-apps-feature-of-azure-app-service"></a>Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью веб-приложений службы приложений Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "38677269"
 
    | Ключ                                   | Значение                                                        |
    |---------------------------------------|--------------------------------------------------------------|
-   | Azure.IoT.IoTHub.ConnectionString     | Получено из обозревателя Центра Интернета вещей                                |
+   | Azure.IoT.IoTHub.ConnectionString     | Из интерфейса командной строки Azure                                      |
    | Azure.IoT.IoTHub.ConsumerGroup        | Имя группы потребителей, добавленной в Центр Интернета вещей.  |
 
    ![Добавление параметров для веб-приложения с помощью пар "ключ — значение"](media/iot-hub-live-data-visualization-in-web-apps/4_web-app-settings-key-value-azure.png)

@@ -1,26 +1,27 @@
 ---
-title: Обзор API перевода текстов Microsoft Translator — Azure Cognitive Services | Документация Майкрософт
-description: Интеграция API перевода текстов Microsoft Translator в приложения, веб-сайты, инструменты и другие решения для обеспечения многоязычного взаимодействия с пользователем.
+title: Что собой представляет API перевода текстов?
+titlesuffix: Azure Cognitive Services
+description: Интеграция API перевода текстов в приложения, веб-сайты, инструменты и другие решения обеспечивает многоязычное взаимодействие с пользователем.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: overview
 ms.date: 05/10/2018
 ms.author: nolachar
-ms.openlocfilehash: bfbb316ac41045add7f424b5d478581aa226fc19
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 47ac3c81b85424a5cacab00863cd88fab9463fb9
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42889308"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46124666"
 ---
-# <a name="what-is-microsoft-translator"></a>Что такое Microsoft Translator?
+# <a name="what-is-translator-text-api"></a>Что собой представляет API перевода текстов?
 
-API перевода текстов Microsoft Translator легко интегрируется в приложения, веб-сайты, инструменты и другие решения, обеспечивая взаимодействие с пользователем [более чем на 60 языках](languages.md). Этот программный интерфейс выполняет перевод текста и поддерживается на любой аппаратной платформе и в любой операционной системе.
+API перевода текстов легко интегрируется в приложения, веб-сайты, инструменты и другие решения, обеспечивая взаимодействие с пользователем [более чем на 60 языках](languages.md). Этот программный интерфейс выполняет перевод текста и поддерживается на любой аппаратной платформе и в любой операционной системе.
 
-API перевода текстов Microsoft Translator является частью коллекции алгоритмов машинного обучения и ИИ [API Microsoft Cognitive Services](https://docs.microsoft.com/azure/#pivot=products&panel=ai) в облаке, готовых к использованию в проектах по разработке.
+API перевода текстов является частью коллекции [API Azure Cognitive Services](https://docs.microsoft.com/azure/#pivot=products&panel=ai) для служб машинного обучения и алгоритмов ИИ в облаке, готовых к использованию в проектах по разработке.
 
 ## <a name="about-microsoft-translator"></a>О Microsoft Translator
 

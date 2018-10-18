@@ -1,19 +1,21 @@
 ---
-title: Краткое руководство. Вызов API Bing для поиска в Интернете с использованием Ruby
+title: Краткое руководство. Поиск с помощью Ruby и Поиска в Интернете Bing
+titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как выполнить первый вызов к API Bing для поиска в Интернете и получить ответ в формате JSON, используя Ruby.
 services: cognitive-services
 author: erhopf
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 8/16/2018
 ms.author: erhopf
-ms.openlocfilehash: a60bf0ef12272be3b224fdbf9f9819057fe4aa55
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: e1819be51c339b302dbc1181e2a8f998170b2413
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42888711"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46127063"
 ---
 # <a name="quickstart-use-ruby-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием Ruby  
 
@@ -26,7 +28,7 @@ ms.locfileid: "42888711"
 Для работы с этим кратким руководством вам потребуется следующее:
 
 * [Ruby 2.4 или более поздней версии](https://www.ruby-lang.org/en/downloads/);
-* ключ подписки.
+* ключ подписки;
 
 ## <a name="create-a-project-and-declare-required-modules"></a>Создание проекта и объявление обязательных модулей
 
@@ -40,7 +42,7 @@ require 'json'
 
 ## <a name="define-variables"></a>Определение переменных
 
-Прежде чем продолжить, необходимо задать несколько переменных. Убедитесь, что `$uri` и `path` указаны верно, и замените значение `accessKey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение для `term`.
+Прежде чем продолжить, необходимо задать несколько переменных. Убедитесь, что `$uri` и `path` указаны правильно, и замените значение `accessKey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `term`.
 
 ```ruby
 accessKey = "YOUR_SUBSCRIPTION_KEY"

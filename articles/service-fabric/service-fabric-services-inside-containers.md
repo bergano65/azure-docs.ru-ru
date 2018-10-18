@@ -1,34 +1,34 @@
 ---
-title: Как контейнеризовать микрослужбы Azure Service Fabric (предварительная версия)
-description: К платформе Azure Service Fabric добавлены новые функции для контейнеризации микрослужб Service Fabric. Эта функция в настоящее время находится на стадии предварительной версии.
+title: Контейнеризация служб Azure Service Fabric в Windows
+description: Узнайте, как контейнеризовать службы Service Fabric Reliable Services и Reliable Actors в Windows.
 services: service-fabric
 documentationcenter: .net
 author: anmolah
 manager: anmolah
-editor: anmolah
+editor: roroutra
 ms.assetid: 0b41efb3-4063-4600-89f5-b077ea81fa3a
 ms.service: service-fabric
 ms.devlang: dotNet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 8/04/2017
+ms.date: 5/23/2018
 ms.author: anmola
-ms.openlocfilehash: 3741e74e70769d186da2757b43ca60bbb1e78a1f
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: d3ed1ff46bf4c82a172954828ec74bae80241288
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34212659"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44056942"
 ---
-# <a name="how-to-containerize-your-service-fabric-reliable-services-and-reliable-actors-preview"></a>Как контейнеризовать Azure Service Fabric Reliable Services и Reliable Actors (предварительная версия)
+# <a name="containerize-your-service-fabric-reliable-services-and-reliable-actors-on-windows"></a>Контейнеризация служб Service Fabric Reliable Services и Reliable Actors в Windows
 
 Service Fabric поддерживает контейнеризацию микрослужб Service Fabric (службы на основе Reliable Services и Reliable Actors). Дополнительные сведения см. в статье [Service Fabric и контейнеры](service-fabric-containers-overview.md).
 
-Это предварительная версия функции. В этой статье объясняется, как получить службу, работающую в контейнере.  
+Из этого документа вы узнаете, как обеспечить работу службы в контейнере Windows.
 
 > [!NOTE]
-> Эта функция доступна в режиме предварительной версии и не поддерживается в рабочей среде. Сейчас эта функция работает только в Windows. Чтобы запустить контейнеры, кластер должен работать на компьютере под управлением Windows Server 2016 с контейнерами.
+> Сейчас эта функция работает только в Windows. Чтобы запустить контейнеры, кластер должен работать на компьютере под управлением Windows Server 2016 с контейнерами.
 
 ## <a name="steps-to-containerize-your-service-fabric-application"></a>Инструкции по контейнеризации приложения Service Fabric
 
@@ -58,13 +58,22 @@ Service Fabric поддерживает контейнеризацию микр�
 4. Выполните сборку проекта и [упакуйте](service-fabric-package-apps.md#Package-App) его. Чтобы выполнить сборку проекта и создать пакет, щелкните правой кнопкой проект приложения в обозревателе решений и выберите команду **Пакет**.
 
 5. Для каждого пакета кода, который нужно контейнеризовать, запустите скрипт PowerShell [CreateDockerPackage.ps1](https://github.com/Azure/service-fabric-scripts-and-templates/blob/master/scripts/CodePackageToDockerPackage/CreateDockerPackage.ps1). Оно используется следующим образом.
-  ```powershell
-    $codePackagePath = 'Path to the code package to containerize.'
-    $dockerPackageOutputDirectoryPath = 'Output path for the generated docker folder.'
-    $applicationExeName = 'Name of the ode package executable.'
-    CreateDockerPackage.ps1 -CodePackageDirectoryPath $codePackagePath -DockerPackageOutputDirectoryPath $dockerPackageOutputDirectoryPath -ApplicationExeName $applicationExeName
- ```
-  Скрипт создает папку с артефактами Docker в папке $dockerPackageOutputDirectoryPath. Измените созданный файл Dockerfile, чтобы открыть порты, запустить скрипты установки и при необходимости выполнить другие действия.
+
+    Полная версия .NET
+      ```powershell
+        $codePackagePath = 'Path to the code package to containerize.'
+        $dockerPackageOutputDirectoryPath = 'Output path for the generated docker folder.'
+        $applicationExeName = 'Name of the Code package executable.'
+        CreateDockerPackage.ps1 -CodePackageDirectoryPath $codePackagePath -DockerPackageOutputDirectoryPath $dockerPackageOutputDirectoryPath -ApplicationExeName $applicationExeName
+      ```
+    .NET Core
+      ```powershell
+        $codePackagePath = 'Path to the code package to containerize.'
+        $dockerPackageOutputDirectoryPath = 'Output path for the generated docker folder.'
+        $dotnetCoreDllName = 'Name of the Code package dotnet Core Dll.'
+        CreateDockerPackage.ps1 -CodePackageDirectoryPath $codePackagePath -DockerPackageOutputDirectoryPath $dockerPackageOutputDirectoryPath -DotnetCoreDllName $dotnetCoreDllName
+      ```
+      Скрипт создает папку с артефактами Docker в папке $dockerPackageOutputDirectoryPath. Измените созданный файл Dockerfile, чтобы выполнить `expose` для всех портов, запустить скрипты установки и выполнить другие действия в соответствии с потребностями.
 
 6. Теперь [выполните сборку](service-fabric-get-started-containers.md#Build-Containers) пакета контейнера Docker и [отправьте](service-fabric-get-started-containers.md#Push-Containers) его в репозиторий.
 
@@ -79,7 +88,7 @@ Service Fabric поддерживает контейнеризацию микр�
       <ImageName>myregistry.azurecr.io/samples/helloworldapp</ImageName>
     </ContainerHost>
   </EntryPoint>
-  <!-- Pass environment variables to your container: -->    
+  <!-- Pass environment variables to your container: -->
 </CodePackage>
   ```
 
@@ -94,7 +103,24 @@ Service Fabric поддерживает контейнеризацию микр�
 </Policies>
  ```
 
-9. Чтобы протестировать это приложение, необходимо развернуть его в кластере под управлением версии 5.7 или более поздней. Кроме того, необходимо изменить и обновить параметры кластера, чтобы включить эту предварительную версию функции. Выполните инструкции из этой [статьи](service-fabric-cluster-fabric-settings.md), чтобы добавить параметр, показанный далее.
+9. Ознакомьтесь с инструкциями по [настройке режима изоляции для контейнера]( https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-get-started-containers#configure-isolation-mode). Windows поддерживает два режима изоляции для контейнеров: режим изоляции процессов и Hyper-V. В указанных ниже фрагментах кода показано, как режим изоляции указывается в файле манифеста приложения.
+
+ ```xml
+<Policies>
+  <ContainerHostPolicies CodePackageRef="Code" Isolation="process">
+  ...
+  </ContainerHostPolicies>
+</Policies>
+ ```
+  ```xml
+<Policies>
+  <ContainerHostPolicies CodePackageRef="Code" Isolation="hyperv">
+  ...
+  </ContainerHostPolicies>
+</Policies>
+ ```
+
+10. Чтобы протестировать это приложение, необходимо развернуть его в кластере под управлением версии 5.7 или более поздней. Для версий среды выполнения 6.1 и ниже необходимо изменить и обновить параметры кластера, чтобы включить эту предварительную версию функции. Выполните инструкции из этой [статьи](service-fabric-cluster-fabric-settings.md), чтобы добавить параметр, показанный далее.
 ```
       {
         "name": "Hosting",
@@ -106,7 +132,8 @@ Service Fabric поддерживает контейнеризацию микр�
         ]
       }
 ```
-10. Затем [разверните](service-fabric-deploy-remove-applications.md) измененный пакет приложения в этом кластере.
+
+11. Затем [разверните](service-fabric-deploy-remove-applications.md) измененный пакет приложения в этом кластере.
 
 Теперь в вашем кластере работает контейнерное приложение Service Fabric.
 

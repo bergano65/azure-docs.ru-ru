@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 05/11/2018
-ms.author: genli
-ms.openlocfilehash: 475a4ad72a1c2fc2ebf99387e193713797cc2586
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.author: cwatson
+ms.openlocfilehash: a1e90f946508f1ffc0a1ee812dde46ee733d715a
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34070623"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47392445"
 ---
 # <a name="no-subscriptions-found-error-in-azure-portal-or-azure-account-center"></a>Ошибка "Подписки не найдены" на портале Azure или в Центре управления учетной записью Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "34070623"
 * Убедитесь, что выбран надлежащий каталог Azure, щелкнув учетную запись в правом верхнем углу.
 
   ![Выберите каталог в верхней правой части портала Azure](./media/billing-no-subscriptions-found/directory-switch.png)
-* Если вы выбрали надлежащий каталог Azure, но по-прежнему получаете сообщение об ошибке, [добавьте учетную запись с правами владельца](billing-add-change-azure-subscription-administrator.md).
+* Если вы выбрали надлежащий каталог Azure, но по-прежнему получаете сообщение об ошибке, [назначьте учетной записи роль владельца](../role-based-access-control/role-assignments-portal.md).
 
 ### <a name="scenario-2-error-message-is-received-in-the-azure-account-centerhttpsaccountwindowsazurecomsubscriptions"></a>Сценарий 2. Сообщение об ошибке получено в [Центре управления учетной записью Azure](https://account.windowsazure.com/Subscriptions)
 

@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.author: tomfitz
-ms.openlocfilehash: c16d584f17aa2c209c9c0ec94d35f6fe78ba1907
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
+ms.openlocfilehash: b8a6d58ad79b591548542d69e69b71ec61af79af
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39494094"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47220131"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-azure-portal"></a>Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure
 
@@ -137,4 +137,4 @@ ms.locfileid: "39494094"
 * Сведения о просмотре журналов аудита см. в статье [Операции аудита с помощью Resource Manager](resource-group-audit.md).
 * Сведения об устранении неполадок развертывания см. в статье [Просмотр операций развертывания с помощью Azure Resource Manager](resource-manager-deployment-operations.md).
 * Чтобы извлечь шаблон из развернутой службы или группы ресурсов, ознакомьтесь со статьей [Экспорт шаблона Azure Resource Manager из существующих ресурсов](resource-manager-export-template.md).
-* Инструкции по использованию Resource Manager для эффективного управления подписками в организациях см. в статье [Корпоративный каркас Azure: рекомендуемая система управления подписками](/azure/architecture/cloud-adoption-guide/subscription-governance).
+* Для безопасного развертывания службы в нескольких регионах обратитесь к статье о [диспетчере развертывания Azure](deployment-manager-overview.md).

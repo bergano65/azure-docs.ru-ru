@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/26/2018
 ms.author: yili
-ms.openlocfilehash: cd107ddc5ac443daee592c40bbed451c913a8a3b
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: aba6a1f7028ac09cad8acf587fd56dcc2c16919b
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39444595"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44295724"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Служба приложений Azure на платформе Linux: вопросы и ответы
 
@@ -74,7 +74,7 @@ ms.locfileid: "39444595"
 
 В случае сбоя развертывания Git для веб-приложения Linux можно выбрать следующие варианты развертывания кода приложения:
 
-- Используйте функцию непрерывной доставки (предварительная версия). Чтобы использовать непрерывную доставку Azure, исходный код приложения можно хранить в репозитории Git для Team Services или в репозитории GitHub. Дополнительные сведения см. в блоге [Use Azure portal to setup Continuous Delivery for Web App On Linux](https://blogs.msdn.microsoft.com/devops/2017/05/10/use-azure-portal-to-setup-continuous-delivery-for-web-app-on-linux/) (Настройка непрерывной доставки для веб-приложения на платформе Linux с помощью портала Azure).
+- Используйте функцию непрерывной поставки (предварительная версия). Чтобы использовать непрерывную поставку Azure, исходный код приложения можно хранить в репозитории Git для Azure DevOps или в репозитории GitHub. Дополнительные сведения см. в блоге [Use Azure portal to setup Continuous Delivery for Web App On Linux](https://blogs.msdn.microsoft.com/devops/2017/05/10/use-azure-portal-to-setup-continuous-delivery-for-web-app-on-linux/) (Настройка непрерывной доставки для веб-приложения на платформе Linux с помощью портала Azure).
 
 - Используйте [API развертывания ZIP-файлов](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file). Чтобы использовать этот API, [установите SSH-подключение к веб-приложению](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-ssh-support#making-a-client-connection) и перейдите в папку, в которую требуется развернуть код. Выполните следующий код:
 

@@ -1,42 +1,45 @@
 ---
-title: Краткое руководство по распознаванию текста при помощи API компьютерного зрения для Ruby | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как извлекать печатный текст из изображения с помощью API компьютерного зрения и Ruby в Cognitive Services.
+title: Краткое руководство по извлечению печатного текста (OCR) — REST, Ruby в службе "Компьютерное зрение"
+titleSuffix: Azure Cognitive Services
+description: Из этого краткого руководства вы узнаете, как, используя API компьютерного зрения, извлекать печатный текст из изображения с помощью Ruby.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: 4f381444401718906bb352860aec525d73da1eb2
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: d222615e3c6a884fa77f34dd1f87c3211f631c39
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43772403"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45629532"
 ---
-# <a name="quickstart-extract-printed-text-ocr---rest-ruby"></a>Краткое руководство по извлечению печатного текста (OCR) — REST, Ruby
+# <a name="quickstart-extract-printed-text-ocr-using-the-rest-api-and-ruby-in-computer-vision"></a>Краткое руководство по извлечению печатного текста (OCR) с помощью REST API и Ruby в службе "Компьютерное зрение"
 
-Из этого краткого руководства вы узнаете, как извлекать печатный текст из изображения (распознавать текст) с помощью API компьютерного зрения.
+Из этого краткого руководства вы узнаете, как извлекать печатный текст с оптическим распознаванием символов из изображения с помощью REST API компьютерного зрения. С помощью метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) можно определить печатный текст на изображении и извлечь распознанные знаки в поток знаков, пригодный для машинной обработки.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- Установите [Ruby](https://www.ruby-lang.org/en/downloads/) 2.4.x или более поздней версии.
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
-## <a name="ocr-request"></a>Запрос на распознавание текста (OCR)
+## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
-С помощью [метода OCR](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) можно определить печатный текст на изображении и извлечь распознанные символы в поток символов, пригодный для машинной обработки.
+Чтобы создать и запустить пример, сделайте следующее.
 
-Чтобы выполнить наш пример, сделайте следующее:
-
-1. Скопируйте приведенный ниже код в редактор.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. При необходимости замените `uri` расположением, в котором вы получили ключи подписки.
-1. Если нужно, измените анализируемое изображение (`{\"url\":\"...`).
-1. Сохраните файл с расширением `.rb`.
-1. Откройте командную строку Ruby и запустите файл, например `ruby myfile.rb`.
+1. Скопируйте приведенный ниже код в текстовый редактор.
+1. При необходимости внесите следующие изменения в код:
+    1. Замените `<Subscription Key>` ключом своей подписки.
+    1. Замените значение `https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/ocr` URL-адресом конечной точки для метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) в регионе Azure, где вы получили ключи подписки, если это необходимо.
+    1. При необходимости замените `https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Atomist_quote_from_Democritus.png/338px-Atomist_quote_from_Democritus.png\` URL-адресом другого изображения, из которого вы хотите извлечь печатный текст.
+1. Сохраните код как файл с расширением `.rb`. Например, `get-printed-text.rb`.
+1. Откройте окно командной строки.
+1. В командной строке выполните пример кода с помощью команды `ruby`. Например, `ruby get-printed-text.rb`.
 
 ```ruby
 require 'net/http'
@@ -69,9 +72,9 @@ end
 puts response.body
 ```
 
-## <a name="ocr-response"></a>Результат распознавания текста
+## <a name="examine-the-response"></a>Изучение ответа
 
-Если операция выполнена успешно, результат OCR будет содержать текст и ограничивающие прямоугольники для областей, строк и слов, например:
+Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера и в окне командной строки отобразится успешный ответ, аналогичный следующему:
 
 ```json
 {
@@ -139,9 +142,13 @@ puts response.body
 }
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Удалите файл, если он больше не нужен.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с API-интерфейсами компьютерного зрения, которые позволяют анализировать изображения, обнаруживать знаменитостей и достопримечательности, создавать эскизы, извлекать печатный и рукописный текст. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с API компьютерного зрения, который позволяет анализировать изображения, обнаруживать знаменитостей и достопримечательности, создавать эскизы, извлекать печатный и рукописный текст. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
-> [Сведения об API-интерфейсах компьютерного зрения](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44)
+> [Обзор API компьютерного зрения](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44)

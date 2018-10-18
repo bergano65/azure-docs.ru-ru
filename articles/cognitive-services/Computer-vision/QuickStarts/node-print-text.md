@@ -1,44 +1,56 @@
 ---
-title: Краткое руководство по API компьютерного зрения для Node.js. Распознавание текста | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как извлекать печатный текст из изображения с помощью API компьютерного зрения и Node.js в Cognitive Services.
+title: Краткое руководство по извлечению печатного текста (OCR) — REST, Node.js в службе "Компьютерное зрение"
+titleSuffix: Azure Cognitive Services
+description: Из этого краткого руководства вы узнаете, как, используя API компьютерного зрения, извлекать печатный текст из изображения с помощью Node.js.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: 73fe11800d7141c9e6e7272a0d008d2bcdf6d6af
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: af22b17d52b654438ae52c1eb85e523dbaf638fa
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43772006"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45628919"
 ---
-# <a name="quickstart-extract-printed-text-ocr---rest-nodejs"></a>Краткое руководство по извлечению печатного текста (OCR) — REST, Node.js
+# <a name="quickstart-extract-printed-text-ocr-using-the-rest-api-and-nodejs-in-computer-vision"></a>Краткое руководство по извлечению печатного текста (OCR) с помощью REST API и Node.js в службе "Компьютерное зрение"
 
-Из этого краткого руководства вы узнаете, как извлекать печатный текст из изображения (распознавать текст) с помощью API компьютерного зрения.
+Из этого краткого руководства вы узнаете, как извлекать печатный текст с оптическим распознаванием символов из изображения с помощью REST API компьютерного зрения. С помощью метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) можно определить печатный текст на изображении и извлечь распознанные знаки в поток знаков, пригодный для машинной обработки.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- Установите платформу [Node.js](https://nodejs.org) 4.x или более поздней версии.
+- Установите [npm](https://www.npmjs.com/).
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
-## <a name="ocr-request"></a>Запрос на распознавание текста (OCR)
+## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
-С помощью [метода OCR](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) можно определить печатный текст на изображении и извлечь распознанные символы в поток символов, пригодный для машинной обработки.
+Чтобы создать и запустить пример, сделайте следующее.
 
-Чтобы выполнить наш пример, сделайте следующее:
+1. Установите пакет npm [`request`](https://www.npmjs.com/package/request).
+   1. Откройте окно командной строки с правами администратора.
+   1. Выполните следующую команду:
 
-1. Скопируйте приведенный ниже код в редактор.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. В качестве значения для `uriBase` укажите расположение, в котором вы получили ключи подписки, если нужно.
-1. При необходимости в качестве значения для `imageUrl` укажите анализируемое изображение.
-1. Сохраните файл с расширением `.js`.
-1. Откройте командную строку Node.js и запустите файл, например `node myfile.js`.
+      ```console
+      npm install request
+      ```
 
-В этом примере используется пакет npm [request](https://www.npmjs.com/package/request).
+   1. После успешной установки пакета закройте окно командной строки.
+
+1. Скопируйте приведенный ниже код в текстовый редактор.
+1. При необходимости внесите следующие изменения в код:
+    1. Замените значение `subscriptionKey` своим ключом подписки.
+    1. Замените значение `uriBase` URL-адресом конечной точки для метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) из региона Azure, где вы получили ключи подписки, если это необходимо.
+    1. при необходимости замените значение `imageUrl` URL-адресом другого изображения, из которого вы хотите извлечь печатный текст.
+1. Сохраните код как файл с расширением `.js`. Например, `get-printed-text.js`.
+1. Откройте окно командной строки.
+1. В командной строке запустите файл с помощью команды `node`. Например, `node get-printed-text.js`.
 
 ```nodejs
 'use strict';
@@ -84,9 +96,9 @@ request.post(options, (error, response, body) => {
 });
 ```
 
-## <a name="ocr-response"></a>Результат распознавания текста
+## <a name="examine-the-response"></a>Изучение ответа
 
-Если операция выполнена успешно, результат OCR будет содержать текст и ограничивающие прямоугольники для областей, строк и слов, например:
+Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера и в окне командной строки отобразится успешный ответ, аналогичный следующему:
 
 ```json
 {
@@ -187,9 +199,22 @@ request.post(options, (error, response, body) => {
 }
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если файл больше не нужен, удалите его, а затем удалите пакет `request` npm. Чтобы удалить пакет, сделайте следующее:
+
+1. Откройте окно командной строки с правами администратора.
+2. Выполните следующую команду:
+
+   ```console
+   npm uninstall request
+   ```
+
+3. После успешного удаления пакета закройте окно командной строки.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с API-интерфейсами компьютерного зрения, которые позволяют анализировать изображения, обнаруживать знаменитостей и достопримечательности, создавать эскизы, извлекать печатный и рукописный текст. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с API компьютерного зрения, который позволяет анализировать изображения, обнаруживать знаменитостей и достопримечательности, создавать эскизы, извлекать печатный и рукописный текст. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
-> [Сведения об API-интерфейсах компьютерного зрения](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44)
+> [Обзор API компьютерного зрения](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44)

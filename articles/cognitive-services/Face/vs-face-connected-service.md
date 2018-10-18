@@ -1,29 +1,29 @@
 ---
-title: Руководство по использованию API распознавания лиц для C# | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
+title: Руководство. Использование API распознавания лиц и C#
+titleSuffix: Azure Cognitive Services
 description: Создание простого приложения Windows, которое использует API распознавания лиц Cognitive Services для обнаружения особенностей лиц на изображении.
 services: cognitive-services
 author: ghogen
-manager: douge
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: face-api
-ms.topic: conceptual
+ms.topic: tutorial
 ms.date: 05/07/2018
 ms.author: ghogen
-ms.openlocfilehash: b51760f889db27aa25e54582070ee7d3adcf66f8
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 70414674e563cf3703d2cf3ebc57f09afcdf2691
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38663892"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46129528"
 ---
 # <a name="connecting-to-cognitive-services-face-api-by-using-connected-services-in-visual-studio"></a>Подключение к API распознавания лиц Cognitive Services с помощью Подключенных служб в Visual Studio
 
 С помощью API распознавания лиц Cognitive Services можно обнаруживать, анализировать, систематизировать и помечать лица на фотографиях.
 
-В этой статье и других статьях этой серии приводятся сведения об использовании компонента Подключенной службы Visual Studio для API распознавания лиц Cognitive Services. Эта возможность доступна как в Visual Studio 2017 15.7, так и в более поздней версии, с установленным расширением Cognitive Services.
+В этой статье и других статьях этой серии приводятся сведения об использовании компонента Подключенной службы Visual Studio для API распознавания лиц Cognitive Services. Эта возможность доступна как в Visual Studio 2017 15.7, так и в более поздней версии с установленным расширением Cognitive Services.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Подписка Azure**. Если у вас нет подписки, вы можете зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
 - **Visual Studio 2017 версии 15.7** с установленной рабочей нагрузкой **Веб-разработка**. [Скачайте это приложение](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
@@ -37,7 +37,7 @@ ms.locfileid: "38663892"
 1. В **обозревателе решений** выберите **Добавить** > **Подключенная служба**.
    Откроется страница "Подключенная служба" с перечнем служб, которые можно добавить в проект.
 
-   ![Добавление пункта меню Подключенной службы](./media/vs-face-connected-service/Connected-Service-Menu.PNG)
+   ![Пункт меню "Добавить подключенную службу"](./media/vs-face-connected-service/Connected-Service-Menu.PNG)
 
 1. В меню доступных служб выберите **API распознавания лиц Cognitive Services**.
 

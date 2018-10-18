@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: tutorial
 ms.date: 6/27/2018
 ms.author: dineshm
-ms.openlocfilehash: 7d951a959da28187a5971ee218f2bd921d331727
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: fd9dfaa2042cae0923c919f4e76d7b59a170918e
+ms.sourcegitcommit: 06724c499837ba342c81f4d349ec0ce4f2dfd6d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43301804"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46466036"
 ---
 # <a name="tutorial-access-azure-data-lake-storage-gen2-preview-data-with-azure-databricks-using-spark"></a>Руководство. Получение доступа к данным предварительной версии Azure Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark
 
@@ -22,7 +22,6 @@ ms.locfileid: "43301804"
 > [!div class="checklist"]
 > * Создание кластера Databricks
 > * Прием неструктурированных данных в учетной записи хранения
-> * Активация обработки данных в службе "Функции Azure"
 > * Выполнение анализа данных в хранилище BLOB-объектов
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -36,11 +35,8 @@ ms.locfileid: "43301804"
 
 Чтобы приступить к работе, создайте [учетную запись Azure Data Lake Storage Gen2](quickstart-create-account.md) и присвойте ей уникальное имя. Перейдите к учетной записи хранения, чтобы получить параметры конфигурации.
 
-> [!IMPORTANT]
-> При использовании предварительной версии служба "Функции Azure" работает только с учетными записями Azure Data Lake Storage Gen2, созданными с использованием неструктурированного пространства имен.
-
 1. В разделе **Settings** (Параметры) щелкните **Ключи доступа**.
-3. Нажмите кнопку **Копировать** рядом с **key1**, чтобы скопировать значение ключа.
+2. Нажмите кнопку **Копировать** рядом с **key1**, чтобы скопировать значение ключа.
 
 В рамках этого руководства ключ и имя учетной записи необходимы для выполнения следующих действий. Откройте текстовый редактор и скопируйте в него имя учетной записи и ключ для дальнейшего использования.
 
@@ -74,7 +70,7 @@ ms.locfileid: "43301804"
 
 ### <a name="copy-source-data-into-the-storage-account"></a>Копирование исходных данных в учетную запись хранения
 
-Далее нужно использовать средство AzCopy для копирования данных из *CSV-файла* в хранилище Azure. Откройте окно командной строки и введите следующие команды: Обязательно замените заполнители `<DOWNLOAD_FILE_PATH>`, `<ACCOUNT_NAME>` и `<ACCOUNT_KEY>` соответствующими значениями, сохраненными при выполнении предыдущего шага.
+Далее нужно использовать средство AzCopy для копирования данных из *CSV-файла* в хранилище Azure. Откройте окно командной строки и введите следующие команды: Обязательно замените заполнители `<DOWNLOAD_FILE_PATH>` и `<ACCOUNT_KEY>` соответствующими значениями, сохраненными при выполнении предыдущего шага.
 
 ```bash
 set ACCOUNT_NAME=<ACCOUNT_NAME>
@@ -159,7 +155,7 @@ dbutils.fs.ls(source + "/temp/parquet/flights")
 acDF = spark.read.format('csv').options(header='true', inferschema='true').load(accountsource + "/<YOUR_CSV_FILE_NAME>.csv")
 acDF.write.parquet(accountsource + '/parquet/airlinecodes')
 
-#read the existing parquet file for the flights database that was created via the Azure Function
+#read the existing parquet file for the flights database that was created earlier
 flightDF = spark.read.format('parquet').options(header='true', inferschema='true').load(accountsource + "/parquet/flights")
 
 #print the schema of the dataframes

@@ -12,15 +12,15 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
-ms.date: 04/06/2018
+ms.date: 06/15/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f982e859892965379b7ffb08e15dd1cf51b9801f
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: 333161042e968b4baf4b962869d688fd0b696b24
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31515685"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47094141"
 ---
 # <a name="deploy-applications-to-compute-nodes-with-batch-application-packages"></a>Развертывание приложений на вычислительных узлах с помощью пакетов приложений пакетной службы
 
@@ -98,7 +98,7 @@ ms.locfileid: "31515685"
 > В настоящее время невозможно использовать пакеты приложений с учетной записью хранения Azure, для которой настроены [правила брандмауэра](../storage/common/storage-network-security.md).
 > 
 
-Пакетная служба использует службу хранилища Azure для хранения пакетов приложений в виде блочных BLOB-объектов. За использование данных блочных BLOB-объектов [взимается обычная плата][storage_pricing]. Вам обязательно следует учитывать размер и количество пакетов приложений, периодически удаляя устаревшие пакеты для минимизации расходов.
+Пакетная служба использует службу хранилища Azure для хранения пакетов приложений в виде блочных BLOB-объектов. С вас [взимается обычная плата][storage_pricing] за данные блочных BLOB-объектов, и размер каждого пакета не может превышать [максимальный размер блочного BLOB-объекта](../storage/common/storage-scalability-targets.md#azure-blob-storage-scale-targets). Вам обязательно следует учитывать размер и количество пакетов приложений, периодически удаляя устаревшие пакеты для минимизации расходов.
 > 
 > 
 
@@ -204,8 +204,8 @@ CloudPool myCloudPool =
     batchClient.PoolOperations.CreatePool(
         poolId: "myPool",
         targetDedicatedComputeNodes: 1,
-        virtualMachineSize: "small",
-        cloudServiceConfiguration: new CloudServiceConfiguration(osFamily: "4"));
+        virtualMachineSize: "standard_d1_v2",
+        cloudServiceConfiguration: new CloudServiceConfiguration(osFamily: "5"));
 
 // Specify the application and version to install on the compute nodes
 myCloudPool.ApplicationPackageReferences = new List<ApplicationPackageReference>

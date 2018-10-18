@@ -1,24 +1,22 @@
 ---
-title: Отправка рабочего процесса с использованием SAS вместо ключа учетной записи хранения | Документация Майкрософт
+title: Отправка рабочего процесса с использованием SAS вместо ключа учетной записи хранения в Microsoft Genomics
 titleSuffix: Azure
 description: В этом руководстве предполагается, что вы установили клиент msgen и успешно запустили примеры данных через службу.
-services: microsoft-genomics
+services: genomics
 author: grhuynh
-manager: jhubbard
-editor: jasonwhowell
+manager: cgronlun
 ms.author: grhuynh
-ms.service: microsoft-genomics
-ms.workload: genomics
+ms.service: genomics
 ms.topic: quickstart
 ms.date: 03/02/2018
-ms.openlocfilehash: 802e300ac453baa4ea9bd9183223315abced2ea1
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 9a22e4bb0949544e18237e789ca807e57ed59abf
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32177220"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45733503"
 ---
-# <a name="submit-a-workflow-using-a-sas-instead-of-a-storage-account-key"></a>Отправка рабочего процесса с использованием SAS вместо ключа учетной записи хранения
+# <a name="submit-a-workflow-to-microsoft-genomics-using-a-sas-instead-of-a-storage-account-key"></a>Отправка рабочего процесса в Microsoft Genomics с использованием SAS вместо ключа учетной записи хранения 
 
 Это краткое руководство демонстрирует, как отправить рабочий процесс в службу Microsoft Genomics, используя файл config.txt, содержащий [подписанный URL-адрес (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) вместо ключей учетной записи хранения. Эта функция может быть полезна, если есть опасения в отношении раскрытия ключа учетной записи хранения в файле config.txt. В этой статье предполагается, что вы уже установили и запустили клиент `msgen` и знаете, как использовать службу хранилища Azure. Если вы успешно отправили рабочий процесс с использованием предоставленного примера данных, можно продолжать работу с этим кратким руководством. 
 

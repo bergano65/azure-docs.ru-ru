@@ -1,67 +1,70 @@
 ---
-title: Краткое руководство. Использование API компьютерного зрения для Java | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения, используя API компьютерного зрения с Java в Cognitive Services.
+title: Краткое руководство по извлечению рукописного текста (REST, Java) в Компьютерном зрении
+titleSuffix: Azure Cognitive Services
+description: Из этого краткого руководства вы узнаете, как, используя API компьютерного зрения, извлекать рукописный текст из изображения с помощью Java.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: 04e6beda3bdcb97b425190d2e4d5c564e8a5f205
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: b69d36652838f5d5d6caa3ebb7a3287e234b32cf
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43771955"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45629449"
 ---
-# <a name="quickstart-extract-handwritten-text---rest-java"></a>Краткое руководство по извлечению рукописного текста (REST, Java)
+# <a name="quickstart-extract-handwritten-text-using-the-rest-api-and-java-in-computer-vision"></a>Краткое руководство по извлечению рукописного текста с помощью REST API и Java в Компьютерном зрении
 
-Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения, используя API компьютерного зрения.
+Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения с помощью REST API компьютерного зрения. С помощью методов [Recognize Text](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) и [Get Recognize Text Operation Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201) можно определить рукописный текст на изображении, а потом извлечь распознанные символы в поток символов, пригодный для машинной обработки.
+
+> [!IMPORTANT]
+> В отличие от метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc), метод [Recognize Text](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Recognize Text возвращает URI в значение поля заголовка ответа `Operation-Content`. Затем можно вызвать этот URI, который представляет метод [Get Recognize Text Operation Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201), чтобы проверить статус и вернуть результаты вызова метода распознавания текста.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- У вас должна быть установлена платформа [Java&trade;, комплект разработчика Java, выпуск "Стандартный" версии 7 или 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (JDK 7 или 8).
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Как получить ключи подписки).
 
-## <a name="recognize-text-request"></a>Запрос на распознавание текста
+## <a name="create-and-run-the-sample-application"></a>Создание и запуск примера приложения
 
-С помощью методов [Recognize Text](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) и [Get Recognize Text Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201) можно определить рукописный текст на изображении и извлечь распознанные символы в поток символов, пригодный для машинной обработки.
+Чтобы создать и запустить пример, сделайте следующее.
 
-Чтобы выполнить наш пример, сделайте следующее:
+1. Создайте проект Java в используемой вами интегрированной среде разработки или редакторе. Если этот параметр доступен, создайте проект Java из шаблона приложения командной строки.
+1. Импортируйте следующие библиотеки в свой проект Java. Если вы используете Maven — его координаты предоставляются для каждой библиотеки.
+   - [HTTP-клиент Apache](https://hc.apache.org/downloads.cgi) (org.apache.httpcomponents:httpclient:4.5.5)
+   - [HTTP-ядро Apache](https://hc.apache.org/downloads.cgi) (org.apache.httpcomponents:httpcore:4.4.9)
+   - [Библиотека JSON](https://github.com/stleary/JSON-java) (org.json:json:20180130)
+1. Добавьте следующие операторы `import` в файл, содержащий общий класс `Main` для вашего проекта.  
 
-1. Создайте приложение командной строки.
-1. Замените класс Main следующим кодом (сохранив все инструкции `package`).
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. При необходимости замените `uriBase` расположением, в котором вы получили ключи подписки.
-1. При необходимости укажите в значении параметра `imageToAnalyze` другое изображение.
-1. Скачайте эти библиотеки из репозитория Maven в каталог `lib` в своем проекте:
-   * `org.apache.httpcomponents:httpclient:4.5.5`
-   * `org.apache.httpcomponents:httpcore:4.4.9`
-   * `org.json:json:20180130`
-1. Выполните класс Main.
+   ```java
+   import java.net.URI;
+   import org.apache.http.HttpEntity;
+   import org.apache.http.HttpResponse;
+   import org.apache.http.client.methods.HttpGet;
+   import org.apache.http.client.methods.HttpPost;
+   import org.apache.http.client.utils.URIBuilder;
+   import org.apache.http.entity.StringEntity;
+   import org.apache.http.impl.client.CloseableHttpClient;
+   import org.apache.http.impl.client.HttpClientBuilder;
+   import org.apache.http.util.EntityUtils;
+   import org.apache.http.Header;
+   import org.json.JSONObject;
+   ```
+
+1. Замените общий класс `Main` следующим кодом, а затем внесите в него следующие изменения (там, где это необходимо).
+   1. Замените значение `subscriptionKey` своим ключом подписки.
+   1. Замените значение `uriBase` URL-адресом конечной точки для метода [Recognize Text](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) из региона Azure, где вы получили ключи подписки, если это необходимо.
+   1. При необходимости замените значение `imageToAnalyze` URL-адресом другого изображения, из которого вы хотите извлечь рукописный текст.
+1. Сохраните, а затем создайте проект Java.
+1. Если вы используете интегрированную среду разработки, запустите `Main`. В противном случае откройте окно командной строки и затем используйте команду `java` для выполнения скомпилированного класса. Например, `java Main`.
 
 ```java
-// This sample uses the following libraries:
-//  - Apache HTTP client (org.apache.httpcomponents:httpclient:4.5.5)
-//  - Apache HTTP core (org.apache.httpcomponents:httpccore:4.4.9)
-//  - JSON library (org.json:json:20180130).
-
-import java.net.URI;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.util.EntityUtils;
-import org.apache.http.Header;
-import org.json.JSONObject;
-
 public class Main {
     // **********************************************
     // *** Update or verify the following values. ***
@@ -70,12 +73,14 @@ public class Main {
     // Replace <Subscription Key> with your valid subscription key.
     private static final String subscriptionKey = "<Subscription Key>";
 
-    // You must use the same region in your REST call as you used to get your
-    // subscription keys. For example, if you got your subscription keys from
-    // westus, replace "westcentralus" in the URI below with "westus".
+    // You must use the same Azure region in your REST API method as you used to
+    // get your subscription keys. For example, if you got your subscription keys
+    // from the West US region, replace "westcentralus" in the URL
+    // below with "westus".
     //
-    // Free trial subscription keys are generated in the westcentralus region. If you
-    // use a free trial subscription key, you shouldn't need to change this region.
+    // Free trial subscription keys are generated in the West Central US region.
+    // If you use a free trial subscription key, you shouldn't need to change
+    // this region.
     private static final String uriBase =
         "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/recognizeText";
 
@@ -94,11 +99,9 @@ public class Main {
             URIBuilder builder = new URIBuilder(uriBase);
 
             // Request parameter.
-            // Note: The request parameter changed for APIv2.
-            // For APIv1, it is "handwriting", "true".
             builder.setParameter("mode", "Handwritten");
 
-            // Prepare the URI for the REST API call.
+            // Prepare the URI for the REST API method.
             URI uri = builder.build();
             HttpPost request = new HttpPost(uri);
 
@@ -111,7 +114,11 @@ public class Main {
                     new StringEntity("{\"url\":\"" + imageToAnalyze + "\"}");
             request.setEntity(requestEntity);
 
-            // Make the first REST API call to detect the text.
+            // Two REST API methods are required to extract handwritten text.
+            // One method to submit the image for processing, the other method
+            // to retrieve the text found in the image.
+
+            // Call the first REST API method to detect the text.
             HttpResponse response = httpTextClient.execute(request);
 
             // Check for success.
@@ -125,11 +132,12 @@ public class Main {
                 return;
             }
 
-            // Stores the URI where you can get the text recognition operation result.
+            // Store the URI of the second REST API method.
+            // This URI is where you can get the results of the first REST API method.
             String operationLocation = null;
 
-            // 'Operation-Location' in the response contains the URI to
-            // retrieve the recognized text.
+            // The 'Operation-Location' response header value contains the URI for
+            // the second REST API method.
             Header[] responseHeaders = response.getAllHeaders();
             for (Header header : responseHeaders) {
                 if (header.getName().equals("Operation-Location")) {
@@ -143,16 +151,19 @@ public class Main {
                 System.exit(1);
             }
 
+            // If the first REST API method completes successfully, the second
+            // REST API method retrieves the text written in the image.
+            //
             // Note: The response may not be immediately available. Handwriting
-            // recognition is an asynchronous operation, which takes a variable
-            // amount of time dependent on the length of the text analyzed. You
-            // may need to wait or retry the Get operation.
+            // recognition is an asynchronous operation that can take a variable
+            // amount of time depending on the length of the handwritten text.
+            // You may need to wait or retry this operation.
 
             System.out.println("\nHandwritten text submitted.\n" +
                     "Waiting 10 seconds to retrieve the recognized text.\n");
             Thread.sleep(10000);
 
-            // Make the second REST API call and get the response.
+            // Call the second REST API method and get the response.
             HttpGet resultRequest = new HttpGet(operationLocation);
             resultRequest.setHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
 
@@ -173,11 +184,9 @@ public class Main {
 }
 ```
 
-## <a name="recognize-text-response"></a>Результат распознавания текста
+## <a name="examine-the-response"></a>Изучите ответ
 
-Успешный ответ будет возвращен в формате JSON. Результаты распознавания рукописного текста содержат обнаруженный текст, а также ограничивающие прямоугольники для областей изображения, строк и слов.
-
-Выходные данные программы должны быть похожи на следующий код JSON:
+Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера приложения и в окне консоли отобразится успешный ответ, аналогичный следующему.
 
 ```json
 Handwritten text submitted. Waiting 10 seconds to retrieve the recognized text.
@@ -455,9 +464,13 @@ Text recognition result response:
 }
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если проект Java больше не нужен — удалите его вместе со скомпилированным классом и импортированными библиотеками.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Изучите приложение Java Swing, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных компонентов изображения, включая лица. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Изучите приложение Java Swing, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных компонентов изображения, включая лица. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
 > [Руководство по использованию API компьютерного зрения для Java](../Tutorials/java-tutorial.md)

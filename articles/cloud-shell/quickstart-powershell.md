@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по PowerShell в Azure Cloud Shell (предварительная версия) | Документация Майкрософт
+title: Краткое руководство по PowerShell в Azure Cloud Shell | Документация Майкрософт
 description: Краткое руководство по использованию PowerShell в Cloud Shell.
 services: Azure
 documentationcenter: ''
@@ -14,16 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2018
 ms.author: damaerte
-ms.openlocfilehash: cb4b7f8851c6c891ca43f6c215ba812a0c784d28
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 83fb07d718681a9d14176868d11b45a199f60543
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43108144"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47166213"
 ---
-# <a name="quickstart-for-powershell-in-azure-cloud-shell-preview"></a>Краткое руководство по использованию PowerShell в Azure Cloud Shell (предварительная версия)
+# <a name="quickstart-for-powershell-in-azure-cloud-shell"></a>Краткое руководство по использованию PowerShell в Azure Cloud Shell
 
-В этом документе объясняется, как использовать PowerShell в Cloud Shell на [портале Azure](https://aka.ms/PSCloudPreview).
+В этом документе объясняется, как использовать PowerShell в Cloud Shell на [портале Azure](https://portal.azure.com/).
 
 > [!NOTE]
 > Также вы можете ознакомиться с кратким руководством по использованию [Bash в Azure Cloud Shell](quickstart.md).

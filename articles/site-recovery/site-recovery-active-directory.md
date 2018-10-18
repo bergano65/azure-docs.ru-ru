@@ -9,12 +9,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 07/19/2018
 ms.author: manayar
-ms.openlocfilehash: 3a2ad35a5382394a6886ed14dcc4f659762f2833
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 28ea6c58eed110cfb57f3feaa6b828289bd20e64
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39172244"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44054552"
 ---
 # <a name="use-azure-site-recovery-to-protect-active-directory-and-dns"></a>Защита Active Directory и DNS с помощью Azure Site Recovery
 

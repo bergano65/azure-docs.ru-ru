@@ -1,5 +1,5 @@
 ---
-title: Создание первой надежной микрослужбы Azure на языке Java | Документация Майкрософт
+title: Создание первой надежной службы Azure Service Fabric на Java | Документация Майкрософт
 description: Вводные сведения о создании приложения Service Fabric Microsoft Azure со службами с отслеживанием состояния и без него.
 services: service-fabric
 documentationcenter: java
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/02/2017
 ms.author: suhuruli
-ms.openlocfilehash: 7e83f141791bb49130f7cf01086537f8ae08c406
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: d4e3419241d44744f8a692896848edb6cebb56a0
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37019701"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44049700"
 ---
 # <a name="get-started-with-reliable-services"></a>Приступая к работе с надежными службами
 > [!div class="op_single_selector"]
@@ -236,7 +236,7 @@ return map.computeAsync(tx, "counter", (k, v) -> {
 Операции Reliable HashMap являются *транзакционными*, так что вы можете сохранять согласованное состояние между несколькими службами Reliable HashMap и операциями. Например, вы можете получить рабочий элемент из надежного словаря, выполнить с ним операцию и сохранить результат в другой службе Reliable HashMap, и это все в пределах одной транзакции. Такая операция называется атомарной. Предусматривается, что либо вся операция завершится успешно, либо она будет полностью отменена. Если ошибка возникнет после выведения элемента из очереди, но до сохранения результата, будет выполнен откат всей транзакции, а элемент останется в очереди для обработки.
 
 
-## <a name="build-the-application"></a>Создание приложения
+## <a name="build-the-application"></a>создание приложения;
 
 Формирование шаблонов Yeoman включает в себя сценарий Gradle, используемый для создания приложения, и сценарии bash, используемые для развертывания и удаления приложения. Чтобы запустить приложение, сначала его нужно создать с помощью следующего скрипта Gradle:
 

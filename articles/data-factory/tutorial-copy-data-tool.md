@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
-ms.date: 06/21/2018
+ms.date: 09/11/2018
 ms.author: jingwang
-ms.openlocfilehash: 1be4769a8a07ac5d4a968ed5aa15ed2e0a2b6db2
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: c1f94c04db69ad44203ef1ada1c3b9fa3df2d779
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43086832"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44718095"
 ---
 # <a name="copy-data-from-azure-blob-storage-to-a-sql-database-by-using-the-copy-data-tool"></a>Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL Azure с помощью средства копирования данных
 > [!div class="op_single_selector" title1="Select the version of the Data Factory service that you're using:"]
@@ -72,13 +72,7 @@ ms.locfileid: "43086832"
     CREATE CLUSTERED INDEX IX_emp_ID ON dbo.emp (ID);
     ```
 
-1. Предоставьте службам Azure доступ к серверу SQL Server. Убедитесь, что параметр **Разрешить доступ к службам Azure** включен для вашего сервера SQL Server. Этот параметр позволяет фабрике данных записывать данные в экземпляр SQL Server. Чтобы проверить и при необходимости включить этот параметр, сделайте следующее.
-
-    a. Слева выберите **Больше служб**, а затем — **Серверы SQL Server**.
-
-    b. Выберите свой сервер, а затем — **Параметры** > **Брандмауэр**.
-
-    c. На странице **Параметры брандмауэра** выберите **Вкл.** для параметра **Разрешить доступ к службам Azure**.
+2. Предоставьте службам Azure доступ к серверу SQL Server. Убедитесь, что параметр **Разрешить доступ к службам Azure** включен для Базы данных SQL. Этот параметр позволяет фабрике данных записывать данные в экземпляр базы данных. Чтобы проверить и при необходимости включить этот параметр, перейдите к серверу Azure SQL Server, выберите **Безопасность** > **Брандмауэры и виртуальные сети**, задайте для параметра **Разрешить доступ к службам Azure** значение **Вкл.**
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 

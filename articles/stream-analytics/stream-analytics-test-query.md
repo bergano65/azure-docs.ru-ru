@@ -10,12 +10,12 @@ manager: kfile
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/27/2018
-ms.openlocfilehash: d699d69362b2d28c205aab14a4bfb26570a68a4e
-ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
+ms.openlocfilehash: 63f9b98bcd70378ae02769298f0ffcd796378612
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42143862"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44027271"
 ---
 # <a name="test-a-stream-analytics-query-with-sample-data"></a>Проверка запроса Stream Analytics с демонстрационными данными
 
@@ -29,7 +29,7 @@ ms.locfileid: "42143862"
 
 3. На странице задания Stream Analytics в разделе **Топологии задания** установите флажок **Запрос**, чтобы открыть окно редактора запросов. 
 
-4. Чтобы проверить запрос с использованием примера входных данных, щелкните любые входные данные правой кнопкой мыши.  Затем выберите **Отправить образец данных из файла**. Данные должны быть сериализованы в JSON, CSV или AVRO.
+4. Чтобы проверить запрос с использованием примера входных данных, щелкните любые входные данные правой кнопкой мыши.  Затем выберите **Отправить образец данных из файла**. Данные должны быть сериализованы в JSON, CSV или AVRO. Пример входных данных должен быть в кодировке UTF-8 и не сжат. При тестировании входных данных в формате CSV в качестве разделителя поддерживается только запятая (,).
 
     ![Проверка запроса редактора запросов Stream Analytics](media/stream-analytics-test-query/stream-analytics-test-query-editor-upload.png)
 

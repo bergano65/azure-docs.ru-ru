@@ -1,6 +1,6 @@
 ---
 title: Управление Azure Key Vault с помощью интерфейса командной строки | Документация Майкрософт
-description: Из этой статьи вы узнаете об автоматизации основных задач в хранилище ключей с использованием CLI 2.0
+description: Из этой статьи вы узнаете об автоматизации основных задач в Key Vault с использованием Azure CLI.
 services: key-vault
 documentationcenter: ''
 author: barclayn
@@ -14,18 +14,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/28/2018
 ms.author: barclayn
-ms.openlocfilehash: f88e98561a88380fbe40ecc9627ffabe39b0071c
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: ba39ba2d4206fa86ed32bddf0538a2e997a79339
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44295180"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47220573"
 ---
-# <a name="manage-key-vault-using-cli-20"></a>Управление Key Vault с помощью интерфейса командной строки 2.0
+# <a name="manage-key-vault-using-the-azure-cli"></a>Управление Key Vault с помощью интерфейса командной строки Azure 
 
-В этой статье описывается, как начать работу с Azure Key Vault с помощью Azure CLI 2.0. Вы можете просмотреть следующие данные:
+В этой статье описывается, как начать работу с Azure Key Vault с помощью Azure CLI.  Вы можете просмотреть следующие данные:
 
-- Предварительные требования
 - как создать контейнер (хранилище) с усиленной защитой в Azure;
 - Добавление ключа, секрета или сертификата в хранилище ключей
 - Регистрация приложения в Azure Active Directory
@@ -50,7 +49,7 @@ ms.locfileid: "44295180"
 Чтобы использовать команды Azure CLI из этой строки, вам необходимо следующее:
 
 * подписка на Microsoft Azure. Если у вас ее нет, зарегистрируйтесь, чтобы воспользоваться [бесплатной пробной версией](https://azure.microsoft.com/pricing/free-trial).
-* Интерфейс командной строки версии 2.0 или более поздней версии. Сведения об установке последней версии см. в разделе [Установка и настройка кроссплатформенного интерфейса командной строки Azure 2.0](/cli/azure/install-azure-cli).
+* Интерфейс командной строки Azure версии 2.0 или более поздней версии. Чтобы установить последнюю версию, обратитесь к статье [Установка Azure CLI](/cli/azure/install-azure-cli).
 * Приложение, для которого вы будете настраивать использование ключа или пароля, созданного по этой статье. Пример приложения доступен в [Центре загрузки Майкрософт](http://www.microsoft.com/download/details.aspx?id=45343). Инструкции см. в приложенном файле README.
 
 ### <a name="getting-help-with-azure-cross-platform-command-line-interface"></a>Справка по межплатформенному интерфейсу командной строки Azure
@@ -67,7 +66,7 @@ az account set -h
 Чтобы узнать, как работать с Azure Resource Manager в кроссплатформенном интерфейсе командной строки Azure, также прочитайте следующие статьи:
 
 * [Установка Azure CLI](/cli/azure/install-azure-cli)
-* [Get started with Azure CLI 2.0](/cli/azure/get-started-with-azure-cli) (Приступая к работе с Azure CLI 2.0)
+* [Приступая к работе с Azure CLI](/cli/azure/get-started-with-azure-cli)
 
 ## <a name="how-to-create-a-hardened-container-a-vault-in-azure"></a>как создать контейнер (хранилище) с усиленной защитой в Azure;
 
@@ -200,7 +199,7 @@ az keyvault certificate list --vault-name 'ContosoKeyVault'
 
 Для получения маркера приложение должно предоставить Azure Active Directory оба этих значения. Настройка приложения для получения маркера будет зависеть от приложения. В [примере приложения, использующего Key Vault](https://www.microsoft.com/download/details.aspx?id=45343), владелец приложения задает эти значения в файле app.config.
 
-Пошаговые инструкции по регистрации приложения с помощью Azure Active Directory см. в статье [Интеграция приложений с Azure Active Directory](../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md), [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../azure-resource-manager/resource-group-create-service-principal-portal.md) и [Создание субъекта-службы Azure с помощью Azure CLI 2.0](/cli/azure/create-an-azure-service-principal-azure-cli).
+Пошаговые инструкции по регистрации приложения с помощью Azure Active Directory см. в статьях [Краткое руководство. Регистрация приложения в конечной точке Azure Active Directory версии 1.0](../active-directory/develop/active-directory-integrating-applications.md), [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../azure-resource-manager/resource-group-create-service-principal-portal.md) и [Создание субъекта-службы Azure с помощью Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli).
 
 Чтобы зарегистрировать приложение в Azure Active Directory:
 

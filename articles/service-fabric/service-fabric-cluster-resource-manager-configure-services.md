@@ -1,6 +1,6 @@
 ---
-title: Указание метрик и параметров размещения в микрослужбах Azure | Документация Майкрософт
-description: Описание службы Service Fabric с указанием метрик, ограничений на размещение и других политик размещения.
+title: Указание метрик и параметров размещения в Azure Service Fabric | Документация Майкрософт
+description: Сведения об описании службы Service Fabric с указанием метрик, ограничений на размещение и других политик размещения.
 services: service-fabric
 documentationcenter: .net
 author: masnider
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: 16e19a02bf12e30e81eb1743fc637bce435df914
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: ea781b5dbbf09c0a21fbcf781ae129295d02dbad
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34210585"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44054797"
 ---
 # <a name="configuring-cluster-resource-manager-settings-for-service-fabric-services"></a>Настройка параметров Cluster Resource Manager для служб Service Fabric
 Диспетчер кластерных ресурсов Service Fabric позволяет точно управлять правилами, регулирующими работу отдельных именованных служб. Для каждой именованной службы можно указать правила ее выделения в кластере. Для каждой именованной службы можно также определить набор метрик, о которых она должна сообщать, включая их важность для данной службы. Настройка служб делится на три задачи:

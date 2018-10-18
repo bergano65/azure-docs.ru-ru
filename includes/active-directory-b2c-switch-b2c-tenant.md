@@ -1,7 +1,16 @@
-Убедитесь, что используется каталог с вашим клиентом Azure AD B2C, переключившись на него в правом верхнем углу окна портала Azure. Выберите сведения о подписке, а затем выберите **Переключение каталога**. 
+---
+author: davidmu1
+ms.service: active-directory-b2c
+ms.topic: include
+ms.date: 09/13/2018
+ms.author: davidmu
+ms.openlocfilehash: 76d6d522f6d0bfec04de2ea54d1f42f80d916030
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45636915"
+---
+Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент. 
 
 ![Переключение на клиент Azure AD B2C](./media/active-directory-b2c-switch-b2c-tenant/switch-directories.png)
-
-Выберите каталог, содержащий ваш клиент.
-
-![Выбор каталога](./media/active-directory-b2c-switch-b2c-tenant/select-directory.png) 

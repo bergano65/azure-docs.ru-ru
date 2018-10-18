@@ -9,12 +9,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 07/10/2018
-ms.openlocfilehash: db26dd12d7c44f6079ee38364a4e9e240d2e7bc8
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: cc4372a8a8a8f39bf4f77f637b459c5281b8852d
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40246614"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44299531"
 ---
 # <a name="test-stream-analytics-queries-locally-with-visual-studio"></a>Локальное тестирование запросов Stream Analytics с помощью Visual Studio
 
@@ -76,5 +76,5 @@ ms.locfileid: "40246614"
 
 * [Просмотр заданий Azure Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools.md)
 * [Краткое руководство. Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
-* [Руководство. Развертывание заданий Azure Stream Analytics с помощью CI/CD, используя Visual Studio Team Services](stream-analytics-tools-visual-studio-cicd-vsts.md)
+* [Руководство. Развертывание заданий Azure Stream Analytics с помощью CI/CD и Azure DevOps](stream-analytics-tools-visual-studio-cicd-vsts.md)
 * [Непрерывная интеграция и разработка с помощью инструментов Stream Analytics](stream-analytics-tools-for-visual-studio-cicd.md)

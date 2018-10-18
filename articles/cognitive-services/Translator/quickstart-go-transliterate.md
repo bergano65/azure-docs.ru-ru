@@ -1,21 +1,21 @@
 ---
-title: Скрипт для преобразования текста с помощью API перевода текстов и Go | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как преобразовать текст на одном языке из одного скрипта в другой, используя API перевода текстов с Go в Cognitive Services.
+title: Краткое руководство. Преобразование набора символов текста с помощью Перевода текстов и Node.js
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как с помощью API перевода текстов и Go преобразовать текст на одном языке из одного набора символов в другой.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/29/2018
 ms.author: nolachar
-ms.openlocfilehash: f01fe38ef0605ad399edc03b52dc5b8ecc75275b
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: c4930e03f5d366eb3f21b44c5be90c20230065c3
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "43771301"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46126757"
 ---
 # <a name="quickstart-transliterate-text-with-go"></a>Краткое руководство по транслитерации текста с помощью Go
 

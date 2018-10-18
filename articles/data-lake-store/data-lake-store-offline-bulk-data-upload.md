@@ -1,6 +1,6 @@
 ---
-title: Отправка больших объемов данных в Data Lake Store автономными методами | Документация Майкрософт
-description: Использование средства AdlCopy для копирования данных из больших двоичных объектов хранилища Azure в Data Lake Store
+title: Отправка больших объемов данных в Data Lake Storage 1-го поколения автономными методами | Документация Майкрософт
+description: Узнайте, как с помощью средства AdlCopy копировать данные из больших двоичных объектов службы хранилища Azure в Azure Data Lake Storage 1-го поколения.
 services: data-lake-store
 documentationcenter: ''
 author: nitinme
@@ -12,24 +12,24 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: 2b3ae9e4ecb8b8db4eee109f0867c7884bea37c2
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 6430bf524ac81af242bf7afb4c2c8196309806ab
+ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34625684"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44391686"
 ---
-# <a name="use-the-azure-importexport-service-for-offline-copy-of-data-to-data-lake-store"></a>Использование службы импорта и экспорта Azure для автономного копирования данных в Data Lake Store
-В этой статье вы узнаете о том, как скопировать огромные наборы данных (> 200 ГБ) в Azure Data Lake Store, используя методы автономного копирования, такие как [служба импорта и экспорта Azure](../storage/common/storage-import-export-service.md). В частности, в качестве примера в этой статье используется файл размером 339 420 860 416 байт, т. е. 319 ГБ на диске. Давайте назовем этот файл 319GB.tsv.
+# <a name="use-the-azure-importexport-service-for-offline-copy-of-data-to-azure-data-lake-storage-gen1"></a>Автономное копирование данных в Azure Data Lake Storage 1-го поколения с помощью службы импорта и экспорта Azure
+В этой статье описано, как скопировать огромные наборы данных (>200 ГБ) в Azure Data Lake Storage 1-го поколения, используя методы автономного копирования, такие как [служба импорта и экспорта Azure](../storage/common/storage-import-export-service.md). В частности, в качестве примера в этой статье используется файл размером 339 420 860 416 байт, т. е. 319 ГБ на диске. Давайте назовем этот файл 319GB.tsv.
 
 Служба импорта и экспорта Azure позволяет безопасно переносить большие объемы данных в хранилище BLOB-объектов Azure, отправляя жесткие диски в центр обработки данных Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Перед началом работы убедитесь, что у вас есть такие компоненты.
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись хранения Azure.**
-* **Учетная запись Azure Data Lake Store.** Инструкции по созданию учетной записи см. в статье [Начало работы с Azure Data Lake Store с помощью портала Azure](data-lake-store-get-started-portal.md).
+* **Учетная запись Azure Data Lake Storage 1-го поколения**. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
 
 ## <a name="preparing-the-data"></a>Подготовка данных
 
@@ -66,10 +66,10 @@ ms.locfileid: "34625684"
 ## <a name="physically-ship-the-disks"></a>Физическая доставка дисков
 Теперь можно выполнить физическую доставку дисков в центр обработки данных Azure. Там данные копируются в большие двоичные объекты службы хранилища Azure, указанные при создании задания импорта. Кроме того, если при создании задания было решено указать сведения об отслеживании позже, теперь можно вернуться к заданию импорта и обновить номер отслеживания.
 
-## <a name="copy-data-from-azure-storage-blobs-to-azure-data-lake-store"></a>Копирование данных из больших двоичных объектов службы хранилища Azure в Azure Data Lake Store
-После того как задание импорта перейдет в состояние "Завершено", можно проверить, доступны ли данные в указанных больших двоичных объектах службы хранилища Azure. Затем можно переместить данные из больших двоичных объектов в Azure Data Lake Store, используя различные методы. Сведения о всех доступных вариантах передачи данных см. в разделе [Прием данных в Data Lake Store](data-lake-store-data-scenarios.md#ingest-data-into-data-lake-store).
+## <a name="copy-data-from-azure-storage-blobs-to-azure-data-lake-storage-gen1"></a>Копирование данных из больших двоичных объектов службы хранилища Azure в Azure Data Lake Storage 1-го поколения
+После того как задание импорта перейдет в состояние "Завершено", можно проверить, доступны ли данные в указанных больших двоичных объектах службы хранилища Azure. Затем можно переместить данные из больших двоичных объектов в Azure Data Lake Storage 1-го поколения, используя различные методы. Сведения о всех доступных вариантах передачи данных см. в разделе [Прием данных в Azure Data Lake Storage 1-го поколения](data-lake-store-data-scenarios.md#ingest-data-into-data-lake-storage-gen1).
 
-В этом разделе указаны определения JSON, с помощью которых можно создать конвейер фабрики данных Azure для копирования данных. Эти определения JSON доступны на [портале Azure](../data-factory/v1/data-factory-copy-activity-tutorial-using-azure-portal.md), а также в [Visual Studio](../data-factory/v1/data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](../data-factory/v1/data-factory-copy-activity-tutorial-using-powershell.md).
+В этом разделе указаны определения JSON, с помощью которых можно создать конвейер фабрики данных Azure для копирования данных. Эти определения JSON доступны на [портале Azure](../data-factory/tutorial-copy-data-portal.md), а также в [Visual Studio](../data-factory/tutorial-copy-data-dot-net.md).
 
 ### <a name="source-linked-service-azure-storage-blob"></a>Связанная служба источника (большой двоичный объект службы хранилища Azure)
 ````
@@ -85,16 +85,16 @@ ms.locfileid: "34625684"
 }
 ````
 
-### <a name="target-linked-service-azure-data-lake-store"></a>Связанная служба назначения (Azure Data Lake Store)
+### <a name="target-linked-service-azure-data-lake-storage-gen1"></a>Связанная целевая служба (Azure Data Lake Storage 1-го поколения)
 ````
 {
-    "name": "AzureDataLakeStoreLinkedService",
+    "name": "AzureDataLakeStorageGen1LinkedService",
     "properties": {
         "type": "AzureDataLakeStore",
         "description": "",
         "typeProperties": {
-            "authorization": "<Click 'Authorize' to allow this data factory and the activities it runs to access this Data Lake Store with your access rights>",
-            "dataLakeStoreUri": "https://<adls_account_name>.azuredatalakestore.net/webhdfs/v1",
+            "authorization": "<Click 'Authorize' to allow this data factory and the activities it runs to access this Data Lake Storage Gen1 account with your access rights>",
+            "dataLakeStoreUri": "https://<adlsg1_account_name>.azuredatalakestore.net/webhdfs/v1",
             "sessionId": "<OAuth session id from the OAuth authorization session. Each session id is unique and may only be used once>"
         }
     }
@@ -127,7 +127,7 @@ ms.locfileid: "34625684"
 "properties": {
   "published": false,
   "type": "AzureDataLakeStore",
-  "linkedServiceName": "AzureDataLakeStoreLinkedService",
+  "linkedServiceName": "AzureDataLakeStorageGen1LinkedService",
   "typeProperties": {
     "folderPath": "/importeddatafeb8job/"
     },
@@ -187,12 +187,12 @@ ms.locfileid: "34625684"
     }
 }
 ````
-Дополнительные сведения см. в статье [Перемещение данных в Azure Data Lake Store и обратно с помощью фабрики данных Azure](../data-factory/connector-azure-data-lake-store.md).
+Дополнительные сведения см. в статье [Копирование данных в Azure Data Lake Storage 1-го поколения и из него с помощью Фабрики данных Azure](../data-factory/connector-azure-data-lake-store.md).
 
-## <a name="reconstruct-the-data-files-in-azure-data-lake-store"></a>Воссоздание файлов данных в Azure Data Lake Store
-Мы начали работу с файлом размером 319 ГБ и разделили его на файлы меньшего размера для передачи с помощью службы импорта и экспорта Azure. Теперь после передачи данных в Azure Data Lake Store мы можем воссоздать исходный файл. Для этого вы также можете воспользоваться следующими командлетами Azure PowerShell.
+## <a name="reconstruct-the-data-files-in-azure-data-lake-storage-gen1"></a>Воссоздание файлов данных в Azure Data Lake Storage 1-го поколения
+Мы начали работу с файлом размером 319 ГБ и разделили его на файлы меньшего размера для передачи с помощью службы импорта и экспорта Azure. Теперь после передачи данных в Azure Data Lake Storage 1-го поколения мы можем воссоздать исходный файл. Для этого вы также можете воспользоваться приведенными ниже командлетами Azure PowerShell.
 
-````
+```
 # Login to our account
 Connect-AzureRmAccount
 
@@ -204,10 +204,10 @@ Set-AzureRmContext -SubscriptionId
 Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.DataLakeStore"
 
 # Join  the files
-Join-AzureRmDataLakeStoreItem -AccountName "<adls_account_name" -Paths "/importeddatafeb8job/319GB.tsv-part-aa","/importeddatafeb8job/319GB.tsv-part-ab", "/importeddatafeb8job/319GB.tsv-part-ac", "/importeddatafeb8job/319GB.tsv-part-ad" -Destination "/importeddatafeb8job/MergedFile.csv"
+Join-AzureRmDataLakeStoreItem -AccountName "<adlsg1_account_name" -Paths "/importeddatafeb8job/319GB.tsv-part-aa","/importeddatafeb8job/319GB.tsv-part-ab", "/importeddatafeb8job/319GB.tsv-part-ac", "/importeddatafeb8job/319GB.tsv-part-ad" -Destination "/importeddatafeb8job/MergedFile.csv"
 ````
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Защита данных в хранилище озера данных](data-lake-store-secure-data.md)
-* [Использование аналитики озера данных Azure с хранилищем озера данных](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
-* [Использование Azure HDInsight с хранилищем озера данных](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
+* [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)

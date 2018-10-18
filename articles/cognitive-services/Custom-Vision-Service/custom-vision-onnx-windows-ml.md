@@ -1,20 +1,21 @@
 ---
-title: Использование модели ONNX из пользовательской службы визуального распознавания с Windows ML в Cognitive Services | Документы Майкрософт
-description: Сведения о создании приложения Windows UWP, в котором используется модель ONNX, экспортированная из Cognitive Services.
+title: Руководство. Использование модели ONNX с Windows ML — Пользовательская служба визуального распознавания
+titlesuffix: Azure Cognitive Services
+description: Сведения о создании приложения Windows UWP, в котором используется модель ONNX, экспортированная из Azure Cognitive Services.
 services: cognitive-services
 author: larryfr
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: custom-vision
-ms.topic: conceptual
+ms.topic: tutorial
 ms.date: 06/19/2018
 ms.author: larryfr
-ms.openlocfilehash: 0b128ba1800e74c20c09a9c5711c8473f1dd00d0
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 3a9e9bc92ce38c4bb8d6d83c8017fa223342e7d2
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36939429"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46365610"
 ---
 # <a name="tutorial-use-an-onnx-model-from-custom-vision-with-windows-ml-preview"></a>Руководство по использованию модели ONNX из пользовательской службы визуального распознавания с Windows ML (предварительная версия)
 
@@ -28,7 +29,7 @@ ms.locfileid: "36939429"
 > * Выполнение примера
 > * Использование своей модели
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Устройство Windows 10 с:
 

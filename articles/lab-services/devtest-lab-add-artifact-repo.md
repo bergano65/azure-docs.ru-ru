@@ -1,6 +1,6 @@
 ---
 title: Добавление репозитория Git в лабораторию в Azure DevTest Labs | Документы Майкрософт
-description: Узнайте, как добавить репозиторий GitHub или Visual Studio Team Services, предназначенный для источника пользовательских артефактов, в Azure DevTest Labs.
+description: Узнайте, как добавить репозиторий GitHub или Azure DevOps Services, предназначенный для источника пользовательских артефактов, в Azure DevTest Labs.
 services: devtest-lab,virtual-machines,visual-studio-online
 documentationcenter: na
 author: spelluru
@@ -14,30 +14,30 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: 80724a7d8d2b5cec19bdbce27cdafd4a9c09eb47
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: e6c6f36d877f220bcc8d83b75750f54f85dcc198
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38452504"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44299888"
 ---
 # <a name="add-a-git-repository-to-store-custom-artifacts-and-resource-manager-templates"></a>Добавление репозитория Git для хранения пользовательских артефактов и шаблонов Resource Manager
 
-Вы можете [создать пользовательские артефакты](devtest-lab-artifact-author.md) для виртуальных машин в лаборатории или [использовать шаблоны Azure Resource Manager для создания настраиваемой тестовой среды](devtest-lab-create-environment-from-arm.md). Для артефактов или шаблонов Resource Manager, создаваемых вашей группой, необходимо добавить частный репозиторий Git. Репозиторий артефактов может находиться в [GitHub](https://github.com) или [Visual Studio Team Services](https://visualstudio.com).
+Вы можете [создать пользовательские артефакты](devtest-lab-artifact-author.md) для виртуальных машин в лаборатории или [использовать шаблоны Azure Resource Manager для создания настраиваемой тестовой среды](devtest-lab-create-environment-from-arm.md). Для артефактов или шаблонов Resource Manager, создаваемых вашей группой, необходимо добавить частный репозиторий Git. Репозиторий артефактов может находиться в [GitHub](https://github.com) или [Azure DevOps Services](https://visualstudio.com).
 
 Мы предоставляем [репозиторий GitHub для артефактов](https://github.com/Azure/azure-devtestlab/tree/master/Artifacts), который можно развернуть в исходном виде либо настроить для своей лаборатории. Настроенные или созданные артефакты нельзя сохранять в общедоступном репозитории. Нужно создать собственный частный репозиторий для пользовательских и создаваемых артефактов. 
 
 При создании виртуальной машины можно сохранить шаблон Resource Manager, при необходимости настроить его, а затем использовать для создания дополнительных виртуальных машин. Нужно создать собственный частный репозиторий для хранения настраиваемых шаблонов Resource Manager.  
 
 * Сведения о создании репозитория GitHub см. в [этой статье](https://help.github.com/categories/bootcamp/).
-* Дополнительные сведения о создании проекта Team Services с репозиторием Git см. в статье [Connect to Visual Studio Team Services from Eclipse, Xcode, Visual Studio, and more](https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online) (Подключение к Visual Studio Team Services из Eclipse, Xcode, Visual Studio и других служб).
+* Дополнительные сведения о создании проекта Azure DevOps Services с репозиторием Git см. в статье о [подключении к Azure DevOps Services](https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online).
 
 Вот как может выглядеть содержащий артефакты репозиторий в GitHub:  
 
 ![Пример репозитория артефактов GitHub](./media/devtest-lab-add-repo/devtestlab-github-artifact-repo-home.png)
 
 ## <a name="get-the-repository-information-and-credentials"></a>Получение сведений о репозитории и его учетных данных
-Чтобы добавить репозиторий в лабораторию, сначала нужно получить из него основные сведения. В следующих подразделах описывается, как получить необходимые сведения для репозиториев, размещенных на портале GitHub или в Visual Studio Team Services.
+Чтобы добавить репозиторий в лабораторию, сначала нужно получить из него основные сведения. Из следующих разделов вы узнаете, как получить необходимые сведения для репозиториев, размещенных на портале GitHub или в Azure DevOps Services.
 
 ### <a name="get-the-github-repository-clone-url-and-personal-access-token"></a>Получение URL-адреса клона и персонального маркера доступа из репозитория GitHub
 
@@ -52,7 +52,7 @@ ms.locfileid: "38452504"
 9. Закройте GitHub.   
 10. Перейдите к разделу [Подключение лаборатории к репозиторию](#connect-your-lab-to-the-repository).
 
-### <a name="get-the-visual-studio-team-services-repository-clone-url-and-personal-access-token"></a>Получение URL-адреса клона и личного маркера доступа из репозитория Visual Studio Team Services
+### <a name="get-the-azure-repos-clone-url-and-personal-access-token"></a>Получение URL-адреса клона и персонального маркера доступа из Azure Repos
 
 1. Перейдите на домашнюю страницу групповой коллекции (например, https://contoso-web-team.visualstudio.com)) и выберите свой проект.
 2. На домашней странице проекта выберите **Код**.
@@ -79,9 +79,9 @@ ms.locfileid: "38452504"
     ![Кнопка добавления репозитория](./media/devtest-lab-add-repo/devtestlab-add-repo.png)
 5. На второй странице **Репозитории** укажите следующие сведения:
   1. **Имя**. Введите имя репозитория.
-  2. **URL-адрес клона Git.** Введите URL-адрес клона HTTPS Git, скопированный ранее из GitHub или Visual Studio Team Services.
+  2. **URL-адрес клона Git.** Введите URL-адрес клона HTTPS Git, скопированный ранее из GitHub или Azure DevOps Services.
   3. **Ветвь.** Укажите ветвь для получения определений.
-  4. **Личный маркер доступа.** Укажите личный маркер доступа, полученный ранее из GitHub или Visual Studio Team Services.
+  4. **Личный маркер доступа.** Укажите личный маркер доступа, полученный ранее из GitHub или Azure DevOps Services.
   5. **Путь к папке.** Введите по меньшей мере один путь к папке относительно URL-адреса клона, содержащего определения артефактов или шаблонов Resource Manager. При указании подкаталога обязательно включите косую черту в путь к папке.
 
      ![Область "Репозитории"](./media/devtest-lab-add-repo/devtestlab-repo-blade.png)

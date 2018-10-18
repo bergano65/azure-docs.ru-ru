@@ -10,14 +10,14 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/04/2018
+ms.date: 09/25/2018
 ms.author: tomfitz
-ms.openlocfilehash: 35bd895636bcedf0fd3fad073819d238c7850326
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: 33d5560f2bfef04678cf7a2236fd920385d68aac
+ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43783344"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47452162"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -163,7 +163,7 @@ Authorization: Bearer <access-token>
 
 ## <a name="services-that-can-be-moved"></a>Службы, которые можно переместить
 
-Указанные ниже службы поддерживают перемещение в новую группу ресурсов и подписку.
+В следующем списке представлена общая сводка служб Azure, которые можно перенести в новую группу ресурсов и подписку. Более подробные сведения см. в статье [Поддержка операций перемещения ресурсов](move-support-resources.md).
 
 * Analysis Services
 * Управление API
@@ -173,6 +173,9 @@ Authorization: Bearer <access-token>
 * Служба автоматизации
 * Azure Active Directory B2C
 * Azure Cosmos DB
+* База данных Azure для MySQL
+* База данных Azure для PostgreSQL
+* Azure DevOps. Организации Azure DevOps с приобретенными расширениями сторонних производителей должны [отменить свои приобретения](https://go.microsoft.com/fwlink/?linkid=871160), прежде чем смогут перемещать учетную запись между подписками.
 * Карты Azure
 * Ретранслятор Azure
 * Azure Stack — регистрации
@@ -193,6 +196,7 @@ Authorization: Bearer <access-token>
 * DNS
 * Служба "Сетка событий Azure"
 * Центры событий;
+* Front Door
 * Кластеры HDInsight — см. раздел [Ограничения HDInsight](#hdinsight-limitations).
 * IoT Central
 * Центры Интернета вещей;
@@ -201,44 +205,41 @@ Authorization: Bearer <access-token>
 * Log Analytics
 * Logic Apps
 * Машинное обучение. Веб-службы Студии машинного обучения Microsoft Azure можно переместить в группу ресурсов, размещенную в той же подписке, но не в другую подписку. Другие ресурсы машинного обучения можно перемещать между подписками.
+* Управляемые диски. См. сведения об [ограничениях для виртуальных машин](#virtual-machines-limitations).
 * Управляемое удостоверение, назначаемое пользователем
 * Службы мультимедиа
-* Службы мобильного взаимодействия
 * Центры уведомлений
 * Operational Insights;
 * Пакет Operations Management
 * Панели мониторинга на портале
 * Power BI (Power BI Embedded и коллекция рабочих областей Power BI)
 * Общедоступный IP-адрес — см. [ограничения общедоступного IP-адреса](#pip-limitations)
-* кэш Redis;
+* Кэш Redis. Если экземпляр кэша Redis настроен с виртуальной сетью, его нельзя перенести в другую подписку. Обратитесь к разделу [Ограничения для виртуальных сетей](#virtual-networks-limitations).
 * Планировщик
 * поиска
 * Служебная шина Azure
 * Service Fabric
 * Служба Microsoft Azure Service Fabric
 * Служба SignalR
-* служба хранилища.
+* Хранилище. Учетные записи хранения, находящиеся в разных регионах, не могут перемещаться в одной и той же операции. Вместо этого используйте отдельные операции для каждого региона.
 * Служба хранилища (классическая) — см. раздел [Ограничения классического развертывания](#classic-deployment-limitations).
 * Stream Analytics — задание Stream Analytics в состоянии выполнения нельзя переместить.
 * Сервер базы данных SQL — база данных и сервер должны находиться в одной группе ресурсов. При перемещении сервера SQL Server все его базы данных также перемещаются. Такое поведение также характерно для баз данных SQL Azure и баз данных хранилища данных SQL Azure.
 * Аналитика временных рядов Azure
 * Диспетчер трафика
-* Виртуальные машины — виртуальные машины с управляемыми дисками переместить нельзя. См. сведения об [ограничениях для виртуальных машин](#virtual-machines-limitations)
+* Виртуальные машины. Для виртуальных машин с управляемыми дисками см. сведения в разделе об [ограничениях для виртуальных машин](#virtual-machines-limitations).
 * Виртуальные машины (классические) — см. раздел [Ограничения классического развертывания](#classic-deployment-limitations).
 * Масштабируемые наборы виртуальных машин — см. сведения об [ограничениях для виртуальных машин](#virtual-machines-limitations)
 * Виртуальные сети — см. сведения об [ограничениях виртуальных сетей](#virtual-networks-limitations)
-* Visual Studio Team Services: учетные записи VSTS с приобретенными расширениями сторонних производителей должны [отменить свои приобретения](https://go.microsoft.com/fwlink/?linkid=871160), прежде чем смогут перемещать учетную запись между подписками.
 * VPN-шлюз
 
 ## <a name="services-that-cannot-be-moved"></a>Службы, которые невозможно переместить
 
-Службы, которые в настоящее время не поддерживают перемещение ресурсов:
+В следующем списке представлена общая сводка служб Azure, которые нельзя перенести в новую группу ресурсов и подписку. Более подробные сведения см. в статье [Поддержка операций перемещения ресурсов](move-support-resources.md).
 
 * доменные службы Active Directory;
 * служба работоспособности гибридного AD;
 * Шлюз приложений
-* База данных Azure для MySQL
-* База данных Azure для PostgreSQL
 * Azure Database Migration Service
 * Azure Databricks
 * Служба "Миграция Azure"
@@ -254,7 +255,6 @@ Authorization: Bearer <access-token>
 * Службы лабораторий — переход на новую группу ресурсов в одной подписке включен, но перемещение между подписками не доступно.
 * Подсистемы балансировки нагрузки — см. [ограничения подсистемы балансировки нагрузки](#lb-limitations)
 * Управляемые приложения
-* Управляемые диски — см. сведения об [ограничениях для виртуальных машин](#virtual-machines-limitations).
 * Microsoft Genomics
 * NetApp
 * Общедоступный IP-адрес — см. [ограничения общедоступного IP-адреса](#pip-limitations)
@@ -267,22 +267,62 @@ Authorization: Bearer <access-token>
 
 ## <a name="virtual-machines-limitations"></a>Ограничения для виртуальных машин
 
-Управляемые диски не поддерживают перемещение. Это ограничение означает, что несколько связанных ресурсов переместить также нельзя. Нельзя перемещать:
+Перемещение управляемых дисков поддерживается по состоянию на 24 сентября 2018 г. 
 
-* Управляемые диски
+1. Необходимо зарегистрироваться, чтобы включить эту функцию.
+
+  ```azurepowershell-interactive
+  Register-AzureRmProviderFeature -FeatureName ManagedResourcesMove -ProviderNamespace Microsoft.Compute
+  ```
+
+  ```azurecli-interactive
+  az feature register --namespace Microsoft.Compute --name ManagedResourcesMove
+  ```
+
+1. Запрос на регистрацию изначально вернет состояние `Registering`. Вы можете проверить текущее состояние с помощью следующей команды:
+
+  ```azurepowershell-interactive
+  Get-AzureRmProviderFeature -FeatureName ManagedResourcesMove -ProviderNamespace Microsoft.Compute
+  ```
+
+  ```azurecli-interactive
+  az feature show --namespace Microsoft.Compute --name ManagedResourcesMove
+  ```
+
+1. Подождите несколько минут, пока состояние не изменится на `Registered`.
+
+1. После регистрации функции следует зарегистрировать поставщика ресурсов `Microsoft.Compute`. Выполните этот шаг, даже если поставщик ресурсов был ранее зарегистрирован.
+
+  ```azurepowershell-interactive
+  Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Compute
+  ```
+
+  ```azurecli-interactive
+  az provider register --namespace Microsoft.Compute
+  ```
+
+Эта поддержка означает, что вы также можете перемещать следующие компоненты:
+
 * Виртуальные машины с управляемыми дисками.
-* Образы, созданные из управляемых дисков.
-* Моментальные снимки, созданные из управляемых дисков.
+* управляемые образы;
+* управляемые моментальные снимки;
 * Группы доступности, содержащие виртуальные машины с управляемыми дисками.
 
-Несмотря на то, что нельзя переместить управляемый диск, вы можете создать копию, а затем создать виртуальную машину из имеющегося управляемого диска. Дополнительные сведения можно найти в разделе 
+Ниже приведены ограничения (неподдерживаемые возможности).
 
-* Копирование управляемых дисков в ту же или другую подписку с помощью [PowerShell](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-copy-managed-disks-to-same-or-different-subscription.md) или [Azure CLI](../virtual-machines/scripts/virtual-machines-linux-cli-sample-copy-managed-disks-to-same-or-different-subscription.md).
-* Создание виртуальной машины с помощью имеющегося управляемого диска ОС с использованием [PowerShell](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm-from-managed-os-disks.md) или [Azure CLI](../virtual-machines/scripts/virtual-machines-linux-cli-sample-create-vm-from-managed-os-disks.md).
+* Виртуальные машины с сертификатами, хранящимися в Key Vault, можно переместить в новую группу ресурсов в той же подписке. Между разными подписками их переместить нельзя.
+* Виртуальные машины, настроенные с помощью службы Azure Backup. Используйте приведенное ниже обходное решение для перемещения этих виртуальных машин:
+  * Найдите расположение виртуальной машины.
+  * Найдите группу ресурсов со схемой именования `AzureBackupRG_<location of your VM>_1`, например AzureBackupRG_westus2_1.
+  * Затем на портале Azure щелкните "Показать скрытые типы".
+  * В PowerShell используйте командлет `Get-AzureRmResource -ResourceGroupName AzureBackupRG_<location of your VM>_1`
+  * В CLI используйте команду `az resource list -g AzureBackupRG_<location of your VM>_1`.
+  * Теперь найдите ресурс с типом `Microsoft.Compute/restorePointCollections` и шаблоном именования `AzureBackup_<name of your VM that you're trying to move>_###########`.
+  * Удалите этот ресурс.
+  * По завершении удаления вы сможете перенести виртуальную машину.
+* Масштабируемые наборы виртуальных машин Load Balancer со SKU ценовой категории "Стандартный" и общедоступные IP-адреса со SKU ценовой категории "Стандартный" не могут быть перемещены.
+* Виртуальные машины, созданные из ресурсов Marketplace с подключенными планами, невозможно переместить между группами ресурсов или подписками. Отзовите виртуальную машину в текущей подписке и разверните ее в новой подписке.
 
-Виртуальные машины, созданные из ресурсов Marketplace с подключенными планами, невозможно переместить между группами ресурсов или подписками. Отзовите виртуальную машину в текущей подписке и разверните ее в новой подписке.
-
-Виртуальные машины с сертификатами, хранящимися в Key Vault, можно переместить в новую группу ресурсов в той же подписке. Между разными подписками их переместить нельзя.
 
 ## <a name="virtual-networks-limitations"></a>Ограничения для виртуальных сетей
 

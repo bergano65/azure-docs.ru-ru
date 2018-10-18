@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/08/2018
 ms.author: kumud
-ms.openlocfilehash: d608378f9b3ff3179f9e37ef13f88c65a645d018
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: ce3e8f31c7fee6afdeabf931485a49934e98f81b
+ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37112992"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44391357"
 ---
 # <a name="disaster-recovery-using-azure-dns-and-traffic-manager"></a>Аварийное восстановление с помощью Azure DNS и диспетчера трафика
 

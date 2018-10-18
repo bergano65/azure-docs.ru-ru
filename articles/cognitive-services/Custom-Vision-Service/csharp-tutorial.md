@@ -1,22 +1,23 @@
 ---
-title: Использование Пользовательской службы визуального распознавания в приложении C# в Azure Cognitive Services | Документация Майкрософт
-description: Изучите базовое приложение C#, в котором используется API Пользовательского визуального распознавания в службах Microsoft Cognitive Services. Создайте проект, добавьте теги, загрузите изображения, обучите проект и выполните прогнозирование с использованием конечной точки по умолчанию.
+title: Руководство по созданию приложения Windows для Пользовательской службы визуального распознавания с помощью C#
+titlesuffix: Azure Cognitive Services
+description: Создайте проект, добавьте теги, загрузите изображения, обучите проект и выполните прогнозирование с использованием конечной точки по умолчанию.
 services: cognitive-services
 author: anrothMSFT
-manager: corncar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: custom-vision
-ms.topic: article
+ms.topic: tutorial
 ms.date: 05/03/2018
 ms.author: anroth
-ms.openlocfilehash: d3c2ffb0fd9578458bd07241eed4a87cf70d3c3c
-ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.openlocfilehash: 9e5ed71d4620f7ffeac8acb15f90d67964a86870
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42617440"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46366647"
 ---
-# <a name="use-the-custom-vision-service-from-a-c35-application"></a>Использование Пользовательской службы визуального распознавания в приложении C&#35;
+# <a name="tutorial-use-the-custom-vision-service-from-a-c-application"></a>Руководство по использованию Пользовательской службы визуального распознавания в приложении C#
 
 Сведения о том, как использовать Пользовательскую службу визуального распознавания в приложении C#. Создав проект, вы можете добавить теги, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования проекта по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример с открытым исходным кодом можно применить как шаблон для построения собственного приложения для Windows на базе API Пользовательской службы визуального распознавания.
 

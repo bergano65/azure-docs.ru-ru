@@ -1,25 +1,27 @@
 ---
-title: Получение вариантов перевода с помощью API перевода текстов и C# | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как найти варианты перевода и примеры контекстуальных терминов, используя API перевода текстов с C# в Cognitive Services.
+title: Краткое руководство. Поиск вариантов перевода с помощью API перевода текстов и C#
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как искать варианты перевода и контекстуальные термины, используя API перевода текстов и C#.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/15/2018
 ms.author: nolachar
-ms.openlocfilehash: 3f45e7281456f9ae09912a2ee665cb480dc5052f
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.openlocfilehash: 328f5996a9b830ea6c2ff4b4a535d5311f39e08e
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "43770643"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46365262"
 ---
 # <a name="quickstart-find-alternate-translations-and-usage-with-c35"></a>Краткое руководство по поиску вариантов перевода с использованием C&#35;
 
 Из этого краткого руководства вы узнаете, как с помощью API перевода текстов найти варианты перевода определенного термина и примеры их использования.
+
+Исходный код этого примера доступен на [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-C-Sharp).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

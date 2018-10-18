@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/20/2018
 ms.author: barclayn
-ms.openlocfilehash: 21438b107632166f3717c07b0fd01a56a2944f34
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: 71351a979e8bb443864c975b91539c527bea7f2a
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36294062"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47033436"
 ---
 # <a name="azure-data-encryption-at-rest"></a>Шифрование неактивных данных в Azure
 
@@ -261,7 +261,7 @@ ms.locfileid: "36294062"
 | **Хранилище и базы данных**        |                    |                    |                    |                    |                    |
 | Диск (IaaS)                      | -                  | Да, 2048-разрядный RSA  | Yes               | -                  |
 | SQL Server (IaaS)                | Yes                | Да, 2048-разрядный RSA  | Yes                | Yes                |
-| База данных SQL Azure (PaaS)        | Yes                | Да, 2048-разрядный RSA  | -                  | Yes                |
+| SQL Azure (база данных/хранилище данных) | Yes                | Да, 2048-разрядный RSA  | -                  | Yes                |
 | Хранилище Azure (блочные и страничные BLOB-объекты) | Yes                | Да, 2048-разрядный RSA  | -                  | Yes                |
 | Хранилище Azure (файлы)            | Yes                | Да, 2048-разрядный RSA  | -                  | -                  |
 | Хранилище Azure (таблицы, очереди)   | Yes                | -                  | -                  | Yes                |
@@ -280,7 +280,7 @@ ms.locfileid: "36294062"
 | **Службы Интернета вещей**                 |                    |                    |                    |                    |
 | Центр Интернета вещей                          | -                  | -                  | -                  | Yes                |
 | Служебная шина Azure                      | Yes                | -                  | -                  | Yes                |
-| Концентраторы событий                       | Yes                | -                  | -                  | -                  |
+| Центры событий;                       | Yes                | -                  | -                  | -                  |
 
 
 ## <a name="conclusion"></a>Заключение

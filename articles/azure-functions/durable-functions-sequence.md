@@ -3,29 +3,25 @@ title: Цепочки функций в устойчивых функциях (A
 description: Ознакомьтесь с примером устойчивой функции, которая выполняет последовательность функций.
 services: functions
 author: cgillum
-manager: cfowler
-editor: ''
-tags: ''
+manager: jeconnoc
 keywords: ''
-ms.service: functions
+ms.service: azure-functions
 ms.devlang: multiple
-ms.topic: article
-ms.tgt_pltfrm: multiple
-ms.workload: na
-ms.date: 03/19/2018
+ms.topic: conceptual
+ms.date: 09/06/2018
 ms.author: azfuncdf
-ms.openlocfilehash: a5b337e5318154e299f82b1102ca832303d752f7
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: c84977dacddcf9ccca7fde735ad4acb8a1523fa9
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38970060"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44378709"
 ---
 # <a name="function-chaining-in-durable-functions---hello-sequence-sample"></a>Цепочки функций в устойчивых функциях — пример последовательности Hello
 
 Цепочкой функций называют схему выполнения последовательности функций в определенном порядке. Часто требуется передать выходные данные одной функции во входные данные другой. В этой статье приведен пример использования [устойчивых функций](durable-functions-overview.md) для реализации цепочки функций.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Установите устойчивые функции](durable-functions-install.md).
 
@@ -108,6 +104,9 @@ ms.locfileid: "38970060"
 ```
 POST http://{host}/orchestrators/E1_HelloSequence
 ```
+
+> [!NOTE]
+> В предыдущем фрагменте HTTP предполагается, что в файле `host.json` существует запись, которая позволяет удалить префикс `api/` по умолчанию из всех URL-адресов функций для триггеров HTTP. Разметку для этой конфигурации можно найти в файле `host.json` в примерах.
 
 Скажем, если пример выполняется в приложении-функции с именем myfunctionapp, замените {host} значением myfunctionapp.azurewebsites.net.
 

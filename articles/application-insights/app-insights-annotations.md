@@ -13,50 +13,50 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/16/2016
 ms.author: mbullwin
-ms.openlocfilehash: 660080a629e00884dd61a49bc0950ebe25b6a0c5
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: f943f0e371b3092717a62a2e83a98211723e5302
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42144414"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44304413"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Заметки к диаграммам метрик в Application Insights
-Заметки к диаграммам [обозревателя метрик](app-insights-metrics-explorer.md) показывают, где развернута новая сборка, а также отображают другие важные события. С их помощью легко увидеть, повлияли ли ваши изменения на производительность приложения. Заметки могут быть созданы автоматически [системой сборки Visual Studio Team Services](https://docs.microsoft.com/vsts/pipelines/tasks/). Заметки можно также создавать, чтобы помечать какие-либо события, [используя PowerShell](#create-annotations-from-powershell).
+Заметки к диаграммам [обозревателя метрик](app-insights-metrics-explorer.md) показывают, где развернута новая сборка, а также отображают другие важные события. С их помощью легко увидеть, повлияли ли ваши изменения на производительность приложения. Заметки могут создаваться автоматически [системой сборки Azure DevOps Services](https://docs.microsoft.com/azure/devops/pipelines/tasks/). Заметки можно также создавать, чтобы помечать какие-либо события, [используя PowerShell](#create-annotations-from-powershell).
 
 ![Пример заметок с видимой корреляцией с временем ответа сервера](./media/app-insights-annotations/00.png)
 
 
 
-## <a name="release-annotations-with-vsts-build"></a>Заметки о выпуске сборки VSTS
+## <a name="release-annotations-with-azure-devops-services-build"></a>Заметки к выпуску со сборкой Azure DevOps Services
 
-Заметки к выпуску являются функцией службы облачной сборки и выпуска Visual Studio Team Services. 
+Заметки к выпуску — это функция облачной службы Azure Pipelines в службе Azure DevOps Services. 
 
 ### <a name="install-the-annotations-extension-one-time"></a>Установка расширения заметок (однократно)
-Чтобы получить возможность создания заметок к выпуску, необходимо установить одно из расширений Team Service, доступных в магазине Visual Studio.
+Чтобы получить возможность создания заметок к выпуску, необходимо установить одно из расширений Azure DevOps Services, доступных в Visual Studio Marketplace.
 
-1. Войдите в свой проект в [Visual Studio Team Services](https://visualstudio.microsoft.com/vso/).
-2. В магазине Visual Studio [найдите расширение заметок к выпуску](https://marketplace.visualstudio.com/items/ms-appinsights.appinsightsreleaseannotations)и добавьте его к своей учетной записи Team Services.
+1. Войдите в проект [Azure DevOps Services](https://visualstudio.microsoft.com/vso/).
+2. В Visual Studio Marketplace [найдите расширение заметок к выпуску](https://marketplace.visualstudio.com/items/ms-appinsights.appinsightsreleaseannotations) и добавьте его в свою организацию Azure DevOps Services.
 
-![В верхнем правом углу веб-страницы Team Services откройте "Магазин". Выберите Visual Team Services и нажмите кнопку "Дополнительно" в разделе "Сборка и выпуск".](./media/app-insights-annotations/10.png)
+![В верхнем правом углу веб-страницы Azure DevOps Services откройте Marketplace. Выберите Azure DevOps Services, а затем в разделе Azure Pipelines щелкните "Больше".](./media/app-insights-annotations/10.png)
 
-Это необходимо сделать только один раз для учетной записи Visual Studio Team Services. Теперь можно настроить заметки к выпуску для любого проекта в вашей учетной записи. 
+Для вашей организации Azure DevOps Services это необходимо сделать всего один раз. Теперь вы можете настроить заметки к выпуску для любого проекта в организации. 
 
 ### <a name="configure-release-annotations"></a>Настройка заметок к выпуску
 
-Для каждого шаблона выпуска VSTS необходимо получить отдельный ключ API.
+Для каждого шаблона выпуска Azure DevOps Services необходимо получить отдельный ключ API.
 
 1. Выполните вход на [портал Microsoft Azure](https://portal.azure.com) и откройте ресурс Application Insights, который используется для мониторинга вашего приложения. (Или [создайте новый](app-insights-overview.md), если вы этого еще не сделали.)
 2. Откройте **Доступ через API** и выберите **Идентификатор Application Insights**.
    
     ![На сайте portal.azure.com откройте ресурс Application Insights и выберите "Параметры". Откройте "Доступ к API". Скопируйте идентификатор приложения.](./media/app-insights-annotations/20.png)
 
-4. В отдельном окне браузера откройте (или создайте) шаблон выпуска, который управляет развертываниями из Visual Studio Team Services. 
+4. В отдельном окне браузера откройте (или создайте) шаблон выпуска, который управляет развертываниями из Azure DevOps Services. 
    
     Добавьте задачу и выберите в меню задачу заметок к выпуску Application Insights.
    
     Вставьте **идентификатор приложения** , скопированный из колонки "Доступ к API".
    
-    ![В Visual Studio Team Services откройте "Выпуск", выберите определение выпуска и нажмите кнопку "Изменить". Щелкните "Добавьте задачу" и выберите "Заметки к выпуску Application Insights". Вставьте ИД Application Insights.](./media/app-insights-annotations/30.png)
+    ![В Azure DevOps Services откройте выпуск, выберите конвейер выпуска и щелкните "Изменить". Щелкните "Добавьте задачу" и выберите "Заметки к выпуску Application Insights". Вставьте ИД Application Insights.](./media/app-insights-annotations/30.png)
 4. Задайте в качестве значения поля **APIKey** переменную `$(ApiKey)`.
 
 5. В окне Azure создайте ключ API и скопируйте его.
@@ -69,19 +69,19 @@ ms.locfileid: "42144414"
    
     Вставьте ключ API в определение переменной ApiKey.
    
-    ![В окне Team Services перейдите на вкладку "Конфигурация" и щелкните "Добавить переменную". Задайте "ApiKey" в качестве имени и в поле "Значение" вставьте ключ, который был только что создан, и щелкните значок замка.](./media/app-insights-annotations/50.png)
-7. Наконец, **сохраните** определение выпуска.
+    ![В окне Azure DevOps Services перейдите на вкладку "Конфигурация" и щелкните "Добавить переменную". Задайте "ApiKey" в качестве имени и в поле "Значение" вставьте ключ, который был только что создан, и щелкните значок замка.](./media/app-insights-annotations/50.png)
+7. Наконец, **сохраните** конвейер выпуска.
 
 
 ## <a name="view-annotations"></a>Просмотр заметок
 Теперь при каждом развертывании нового выпуска с помощью шаблона выпуска заметки будут отправляться в Application Insights. Заметки будут отображаться на диаграммах в обозревателе метрик.
 
-Щелкните любой маркер заметки, чтобы открыть подробные сведения о выпуске, включая запросившую сторону, ветвь системы управления версиями, определение выпуска, среду и многое другое.
+Щелкните любой маркер заметки, чтобы открыть подробные сведения о выпуске, включая запросившую сторону, ветвь системы управления версиями, конвейер выпуска, среду и многое другое.
 
 ![Щелкните любой маркер заметки о выпуске.](./media/app-insights-annotations/60.png)
 
 ## <a name="create-custom-annotations-from-powershell"></a>Создание настраиваемых заметок в PowerShell
-Вы можете создать аннотации из любого процесса на свой выбор (без использования Visual Studio Team System). 
+Вы также можете создать заметки из любого необходимого процесса (без использования Azure DevOps Services). 
 
 
 1. Создайте локальную копию [сценария PowerShell из GitHub](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1).

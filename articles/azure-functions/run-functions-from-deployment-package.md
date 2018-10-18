@@ -5,27 +5,24 @@ services: functions
 documentationcenter: na
 author: ggailey777
 manager: jeconnoc
-editor: ''
-tags: ''
-ms.service: functions
+ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.workload: na
-ms.date: 08/22/2018
+ms.date: 09/10/2018
 ms.author: glenga
-ms.openlocfilehash: 2b9cc3618bf21eac268e3c25f08b80124d52e6af
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: a0e643397372e5b132119a7c23f251ecec876916
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43669297"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44346583"
 ---
 # <a name="run-your-azure-functions-from-a-package-file"></a>Запуск функций Azure из файла пакета
 
 > [!NOTE]
-> Функциональные возможности, описываемые в этой статье, в настоящее время находятся в предварительной версии. Они недоступны для функций в Linux.
+> Функциональные возможности, описываемые в этой статье, недоступны для Функций Azure в Linux.
 
-В Azure можно запустить функции непосредственно из файла пакета развертывания в приложении-функции. Другой вариант — развернуть файлы проекта функции в каталоге `d:\home\site\wwwroot` приложения-функции.
+В Azure можно запустить функции непосредственно из файла пакета развертывания в приложении-функции. Другой вариант — развернуть файлы в каталоге `d:\home\site\wwwroot` приложения-функции.
 
 В этой статье описываются преимущества запуска функций из пакета. Здесь также показано, как включить эту функцию в приложении-функции.
 
@@ -37,13 +34,13 @@ ms.locfileid: "43669297"
 + Можно выполнить развертывание в рабочее приложение (с помощью перезапуска).
 + Обеспечивается надежность файлов, выполняемых в приложении.
 + Повышается производительность [развертываний Azure Resource Manager](functions-infrastructure-as-code.md).
-+ Может уменьшаться время "холодного запуска" функций JavaScript.
++ Может сократиться время "холодного запуска", особенно для функций JavaScript с большими деревьями пакетов npm.
 
 Дополнительные сведения см. в [этом объявлении](https://github.com/Azure/app-service-announcements/issues/84).
 
 ## <a name="enabling-functions-to-run-from-a-package"></a>Настройка запуска функций из пакета
 
-Чтобы настроить запуск приложения-функции из пакета, нужно просто добавить `WEBSITE_RUN_FROM_ZIP` в параметрах приложения-функции. Параметр `WEBSITE_RUN_FROM_ZIP` может иметь одно из следующих значений:
+Чтобы настроить запуск приложения-функции из пакета, нужно просто добавить `WEBSITE_RUN_FROM_PACKAGE` в параметрах приложения-функции. Параметр `WEBSITE_RUN_FROM_PACKAGE` может иметь одно из следующих значений:
 
 | Значение  | ОПИСАНИЕ  |
 |---------|---------|
@@ -59,9 +56,9 @@ ms.locfileid: "43669297"
 
 ## <a name="integration-with-zip-deployment"></a>Интеграция с помощью развертывания из ZIP-файла
 
-[Развертывание из ZIP-файла][Zip deployment for Azure Functions] — это функция Службы приложений Azure, которая позволяет развертывать проект приложения-функции в каталог `wwwroot`. Проект упакован как ZIP-файл развертывания. Те же API можно использовать для развертывания пакета в папку `d:\home\data\SitePackages`. Если для параметра приложения `WEBSITE_RUN_FROM_ZIP` задано значение `1`, API-интерфейсы развертывания из ZIP-файла копируют пакет в папку `d:\home\data\SitePackages`, а не извлекают файлы в `d:\home\site\wwwroot`. Также создается файл `packagename.txt`. Затем после перезагрузки приложение-функция запускается из пакета и `wwwroot` становится доступным только для чтения. Дополнительные сведения о развертывании из ZIP-файла см. в статье [Непрерывное развертывание Функций Azure из ZIP-файла](deployment-zip-push.md).
+[Развертывание из ZIP-файла][Zip deployment for Azure Functions] — это функция Службы приложений Azure, которая позволяет развертывать проект приложения-функции в каталог `wwwroot`. Проект упакован как ZIP-файл развертывания. Те же API можно использовать для развертывания пакета в папку `d:\home\data\SitePackages`. Если для параметра приложения `WEBSITE_RUN_FROM_PACKAGE` задано значение `1`, API-интерфейсы развертывания из ZIP-файла копируют пакет в папку `d:\home\data\SitePackages`, а не извлекают файлы в `d:\home\site\wwwroot`. Также создается файл `packagename.txt`. Затем после перезагрузки приложение-функция запускается из пакета и `wwwroot` становится доступным только для чтения. Дополнительные сведения о развертывании из ZIP-файла см. в статье [Непрерывное развертывание Функций Azure из ZIP-файла](deployment-zip-push.md).
 
-## <a name="adding-the-websiterunfromzip-setting"></a>Добавление параметра WEBSITE_RUN_FROM_ZIP
+## <a name="adding-the-websiterunfrompackage-setting"></a>Добавление параметра WEBSITE_RUN_FROM_PACKAGE
 
 [!INCLUDE [Function app settings](../../includes/functions-app-settings.md)]
 

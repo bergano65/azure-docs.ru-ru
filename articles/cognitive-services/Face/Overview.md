@@ -1,24 +1,24 @@
 ---
-title: Обзор службы API распознавания лиц | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
+title: Что такое служба API распознавания лиц?
+titleSuffix: Azure Cognitive Services
 description: В глоссарии объясняются термины, с которыми вы можете столкнуться при работе со службой API распознавания лиц.
 author: SteveMSFT
-manager: corncar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: face-api
-ms.topic: article
+ms.topic: overview
 ms.date: 03/01/2018
 ms.author: sbowles
-ms.openlocfilehash: fb1d14ff80bf53adc3008d79cc998739ffffde1b
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 15de899be5ab85e9fe84ba1b6284bc9419fcf8a1
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37048675"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46123476"
 ---
-# <a name="what-is-face-api"></a>Что собой представляет API распознавания лиц
+# <a name="what-is-the-face-api-service"></a>Что такое служба API распознавания лиц?
 
-Вас приветствует API распознавания лиц Майкрософт, облачная служба, предоставляющая самые современные алгоритмы распознавания лиц. API распознавания лиц имеет две основные функции: определение лиц с атрибутами и распознавание лиц.
+Вас приветствует API распознавания лиц — облачная служба, предоставляющая самые современные алгоритмы распознавания лиц. API распознавания лиц имеет две основные функции: определение лиц с атрибутами и распознавание лиц.
 
 ## <a name="face-detection"></a>Обнаружение лиц
 

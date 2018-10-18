@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 08/02/2018
 ms.author: markgal;anuragm
 ms.custom: ''
-ms.openlocfilehash: c3321fb64c423b1b3c80f48fb97a70cc7dbc83f9
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: aab0ac2dfba47741eaf5a75ef46d9ca5f8873d50
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39433572"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47434251"
 ---
 # <a name="back-up-sql-server-databases-to-azure"></a>Резервное копирование баз данных SQL Server в Azure
 
@@ -823,6 +823,10 @@ backup_size AS BackupSizeInBytes
 ### <a name="can-i-protect-sql-always-on-availability-groups-where-the-primary-replica-is-on-premises"></a>Как защитить группы доступности SQL Always On, где первичная реплика находится в локальной среде?
 
 Нет. Azure Backup обеспечивает защиту серверов SQL Server, работающих в Azure. Если группа доступности распределена между Azure и локальными компьютерами, ее можно защитить только в том случае, если первичная реплика работает в Azure. Кроме того, Azure Backup защищает только узлы, работающие в том же регионе Azure, что и хранилище служб восстановления.
+
+### <a name="can-i-protect-sql-always-on-availability-groups-which-are-spread-across-azure-regions"></a>Как защитить группы доступности AlwaysOn SQL, которые распределены между регионами Azure?
+Хранилище Служб восстановления Azure Backup может обнаруживать и защищать все узлы, которые находятся в том же регионе, что и хранилище Служб восстановления. Если у вас есть группа доступности AlwaysOn SQL, охватывающая множество регионов Azure, необходимо настроить резервное копирование из региона, в котором находится основной узел. Azure Backup будет иметь возможность обнаруживать и защищать все базы данных в группе доступности согласно требованиям к резервному копированию. Если требования к резервному копированию не выполняются, резервные копирования будут завершаться ошибкой и вы будете получать оповещения о сбое.
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 

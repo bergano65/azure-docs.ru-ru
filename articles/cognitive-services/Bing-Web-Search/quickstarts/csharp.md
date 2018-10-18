@@ -1,19 +1,21 @@
 ---
-title: Краткое руководство. Вызов API Bing для поиска в Интернете с использованием C#
+title: Краткое руководство. Поиск с помощью C# и API Bing для поиска в Интернете
+titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON, используя C#.
 services: cognitive-services
 author: erhopf
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 8/16/2018
 ms.author: erhopf
-ms.openlocfilehash: 9db551f89a3b7834119fe85a22e4cdc8d0402252
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: 7f0555a9bb655109ff8786d3a0873d997d715477
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42888514"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46124768"
 ---
 # <a name="quickstart-use-c-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием C#  
 
@@ -23,7 +25,7 @@ ms.locfileid: "42888514"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить это руководство, вам потребуется следующее:
+Для работы с этим кратким руководством вам потребуется следующее:
 
 * на платформе Windows: [Visual Studio 2017](https://www.visualstudio.com/downloads/);
 * на платформах Linux/MacOS: [Mono](http://www.mono-project.com/);  

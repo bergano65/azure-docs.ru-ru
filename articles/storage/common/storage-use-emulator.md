@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/10/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: af2a3da788fd26387ccdcc36422ffa5b11893212
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: 529612aeecfcea1d775c2f4359c5135ca3c6885e
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42888089"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44052549"
 ---
 # <a name="use-the-azure-storage-emulator-for-development-and-testing"></a>Использование эмулятора хранения Azure для разработки и тестирования
 
@@ -68,7 +68,7 @@ ms.locfileid: "42888089"
 
   Можно использовать следующую команду, которая указывает эмулятору использовать экземпляр SQL Server по умолчанию:
 
-  `AzureStorageEmulator.exe init /server .\\`
+  `AzureStorageEmulator.exe init /server .`
 
   Кроме этого, вы можете также использовать следующую команду, которая повторно инициализирует базу данных до экземпляра LocalDB по умолчанию.
 
@@ -93,10 +93,10 @@ ms.locfileid: "42888089"
 Кроме того, для этого можно использовать Azure PowerShell. Следующий пример создает токен SAS с полными правами на контейнер BLOB-объектов:
 
 1. Установите Azure PowerShell, если это еще не сделано (рекомендуется использовать последнюю версию командлетов Azure PowerShell). Инструкции по установке см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/install-azurerm-ps).
-2. Откройте Azure PowerShell и выполните приведенные ниже команды, заменив `ACCOUNT_NAME` и `ACCOUNT_KEY==` своими учетными данными, а `CONTAINER_NAME` — именем на свой выбор.
+2. Откройте Azure PowerShell и выполните приведенные ниже команды, заменив `CONTAINER_NAME` именем на свой выбор.
 
 ```powershell
-$context = New-AzureStorageContext -StorageAccountName "ACCOUNT_NAME" -StorageAccountKey "ACCOUNT_KEY=="
+$context = New-AzureStorageContext -Local
 
 New-AzureStorageContainer CONTAINER_NAME -Permission Off -Context $context
 
@@ -108,7 +108,7 @@ New-AzureStorageContainerSASToken -Name CONTAINER_NAME -Permission rwdl -ExpiryT
 Полученный универсальный код ресурса (URI) для подписанного URL-адреса нового контейнера должен быть аналогичен следующему:
 
 ```
-https://storageaccount.blob.core.windows.net/sascontainer?sv=2012-02-12&se=2015-07-08T00%3A12%3A08Z&sr=c&sp=wl&sig=t%2BbzU9%2B7ry4okULN9S0wst%2F8MCUhTjrHyV9rDNLSe8g%3Dsss
+http://127.0.0.1:10000/devstoreaccount1/sascontainer?sv=2012-02-12&se=2015-07-08T00%3A12%3A08Z&sr=c&sp=wl&sig=t%2BbzU9%2B7ry4okULN9S0wst%2F8MCUhTjrHyV9rDNLSe8g%3Dsss
 ```
 
 Подписанный URL-адрес, созданный с помощью этого примера, действителен один день. Подписанный URL-адрес предоставляет полные права (чтение, запись, удаление и создание списка) для BLOB-объектов в контейнере.

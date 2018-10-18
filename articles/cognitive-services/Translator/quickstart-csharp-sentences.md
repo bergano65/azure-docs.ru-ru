@@ -1,25 +1,27 @@
 ---
-title: Получение длины предложения с помощью API перевода текстов и C# | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: В этом кратком руководстве описано, как получать длину предложений в тексте с помощью API перевода текстов и C# в Cognitive Services.
+title: Краткое руководство. Получение длины предложений с помощью API перевода текстов и C#
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве объясняется, как определять длину предложений в тексте с помощью API перевода текстов и C#.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/15/2018
 ms.author: nolachar
-ms.openlocfilehash: b3e7f1099b1a7584435646fe3fae237cd458967f
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.openlocfilehash: 4569a580dfdad3a71201e607ae5b7895d0d01099
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "43770622"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46364352"
 ---
 # <a name="quickstart-get-sentence-lengths-with-c35"></a>Краткое руководство. Получение длины предложения с помощью C#
 
 В этом кратком руководстве объясняется, как определять длину предложений в тексте с помощью API перевода текстов.
+
+Исходный код этого примера доступен на [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-C-Sharp).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

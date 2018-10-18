@@ -1,48 +1,47 @@
 ---
-title: Краткое руководство по API компьютерного зрения для C#. Создание эскиза | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как создать эскиз изображения, используя API компьютерного зрения с C# в Cognitive Services.
+title: Краткое руководство по созданию эскиза с помощью службы "Компьютерное зрение" для REST, C#
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как создать эскиз изображения с помощью API компьютерного зрения в C#.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: 0f5e3be75ce34d10c223e6a157a89fca12b9c3dc
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: f6353f0f99d34121e29de46c62e6f840a69806ed
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43772123"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45630755"
 ---
-# <a name="quickstart-generate-a-thumbnail---rest-c35"></a>Краткое руководство по созданию эскиза (REST, C&#35;)
+# <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-c35-in-computer-vision"></a>Краткое руководство по созданию эскизов с помощью REST API и C# в службе "Компьютерное зрение"
 
-В этом кратком руководстве описано, как создать эскиз изображения с помощью API компьютерного зрения.
+Из этого краткого руководства вы узнаете, как создать эскиз изображения с помощью REST API компьютерного зрения. Метод [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) позволяет создать эскиз изображения. Вы можете указать нужную высоту и ширину. При этом пропорции могут отличаться от пропорций исходного изображения. API компьютерного зрения использует интеллектуальную обрезку для идентификации интересующей области и создания координат обрезки для этой области.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- У вас должна быть [Visual Studio 2015 или более поздней версии](https://visualstudio.microsoft.com/downloads/).
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
-## <a name="get-thumbnail-request"></a>Запрос Get Thumbnail
+## <a name="create-and-run-the-sample-application"></a>Создание и запуск примера приложения
 
-Метод [Get Thumbnail](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) позволяет создать эскиз изображения. Вы можете указать нужную высоту и ширину. При этом пропорции могут отличаться от пропорций исходного изображения. API компьютерного зрения использует интеллектуальную обрезку для идентификации интересующей области и создания координат обрезки для этой области.
+Чтобы создать пример в Visual Studio, сделайте следующее:
 
-Чтобы выполнить наш пример, сделайте следующее:
-
-1. Создайте консольное приложение Visual C# в Visual Studio.
+1. Создайте решение Visual Studio в Visual Studio, используя шаблон консольного приложения Visual C#.
 1. Установите пакет NuGet Newtonsoft.Json.
     1. В меню щелкните **Средства**, выберите **Диспетчер пакетов NuGet**, а затем **Управление пакетами NuGet для решения**.
     1. Перейдите на вкладку **Обзор** и в поле **Поиск** введите Newtonsoft.Json.
-    1. Выберите **Newtonsoft.Json**, затем установите флажок рядом с именем проекта и нажмите **Установить**.
-1. Замените `Program.cs` следующим кодом.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. При необходимости замените `uriBase` расположением, в котором вы получили ключи подписки.
+    1. Выберите **Newtonsoft.Json**, затем установите флажок рядом с именем проекта и щелкните **Установить**.
+1. Замените код в файле `Program.cs` следующим кодом, а затем внесите в него следующие изменения (там, где это необходимо):
+    1. Замените значение `subscriptionKey` своим ключом подписки.
+    1. Замените значение `uriBase` URL-адресом конечной точки для метода [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) из региона Azure, где вы получили ключи подписки, если это необходимо.
 1. Запустите программу.
 1. Введите путь к локальному изображению в командной строке.
-
-Эскиз сохранится в ту же папку, где находится локальный файл, с исходным именем и суффиксом "_thumb".
 
 ```csharp
 using Newtonsoft.Json.Linq;
@@ -59,12 +58,12 @@ namespace CSHttpClientSample
         // Replace <Subscription Key> with your valid subscription key.
         const string subscriptionKey = "<Subscription Key>";
 
-        // You must use the same region in your REST call as you used to
-        // get your subscription keys. For example, if you got your
-        // subscription keys from westus, replace "westcentralus" in the URL
+        // You must use the same Azure region in your REST API method as you used to
+        // get your subscription keys. For example, if you got your subscription keys
+        // from the West US region, replace "westcentralus" in the URL
         // below with "westus".
         //
-        // Free trial subscription keys are generated in the westcentralus region.
+        // Free trial subscription keys are generated in the West Central US region.
         // If you use a free trial subscription key, you shouldn't need to change
         // this region.
         const string uriBase =
@@ -80,7 +79,7 @@ namespace CSHttpClientSample
 
             if (File.Exists(imageFilePath))
             {
-                // Make the REST API call.
+                // Call the REST API method.
                 Console.WriteLine("\nWait a moment for the results to appear.\n");
                 MakeThumbNailRequest(imageFilePath).Wait();
             }
@@ -108,35 +107,41 @@ namespace CSHttpClientSample
                     "Ocp-Apim-Subscription-Key", subscriptionKey);
 
                 // Request parameters.
+                // The width and height parameters specify a thumbnail that's 
+                // 200 pixels wide and 150 pixels high.
+                // The smartCropping parameter is set to true, to enable smart cropping.
                 string requestParameters = "width=200&height=150&smartCropping=true";
 
-                // Assemble the URI for the REST API Call.
+                // Assemble the URI for the REST API method.
                 string uri = uriBase + "?" + requestParameters;
 
                 HttpResponseMessage response;
 
-                // Request body.
-                // Posts a locally stored JPEG image.
+                // Read the contents of the specified local image
+                // into a byte array.
                 byte[] byteData = GetImageAsByteArray(imageFilePath);
 
+                // Add the byte array as an octet stream to the request body.
                 using (ByteArrayContent content = new ByteArrayContent(byteData))
                 {
-                    // This example uses content type "application/octet-stream".
+                    // This example uses the "application/octet-stream" content type.
                     // The other content types you can use are "application/json"
                     // and "multipart/form-data".
                     content.Headers.ContentType =
                         new MediaTypeHeaderValue("application/octet-stream");
 
-                    // Make the REST API call.
+                    // Asynchronously call the REST API method.
                     response = await client.PostAsync(uri, content);
                 }
 
+                // Check the HTTP status code of the response. If successful, display
+                // display the response and save the thumbnail.
                 if (response.IsSuccessStatusCode)
                 {
                     // Display the response data.
                     Console.WriteLine("\nResponse:\n{0}", response);
 
-                    // Get the image data.
+                    // Get the image data for the thumbnail from the response.
                     byte[] thumbnailImageData =
                         await response.Content.ReadAsByteArrayAsync();
 
@@ -169,9 +174,11 @@ namespace CSHttpClientSample
         /// <returns>The byte array of the image data.</returns>
         static byte[] GetImageAsByteArray(string imageFilePath)
         {
+            // Open a read-only file stream for the specified file.
             using (FileStream fileStream =
                 new FileStream(imageFilePath, FileMode.Open, FileAccess.Read))
             {
+                // Read the file's contents into a byte array.
                 BinaryReader binaryReader = new BinaryReader(fileStream);
                 return binaryReader.ReadBytes((int)fileStream.Length);
             }
@@ -180,9 +187,11 @@ namespace CSHttpClientSample
 }
 ```
 
-## <a name="get-thumbnail-response"></a>Ответ Get Thumbnail
+## <a name="examine-the-response"></a>Изучение ответа
 
-В случае успешного выполнения ответ будет содержать двоичный файл эскиза изображения. Если запрос завершается сбоем, ответ будет содержать код ошибки и сообщение с описанием проблемы.
+Успешный ответ возвращается в виде двоичных данных, которые представляют данные изображения для эскиза. Если запрос успешно выполнен, эскиз сохранится в ту же папку, где находится локальный файл, с исходным именем и суффиксом "_thumb". Если запрос завершается сбоем, ответ будет содержать код ошибки и сообщение с описанием проблемы.
+
+После этого пример приложения в окне консоли отобразит успешный ответ, аналогичный следующему.
 
 ```text
 Response:
@@ -202,6 +211,10 @@ StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.Stre
   Expires: -1
 }
 ```
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Удалите решение Visual Studio, если оно больше не требуется. Чтобы сделать это, откройте проводник, перейдите в папку, в которой вы создали решение Visual Studio, и удалите эту папку.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

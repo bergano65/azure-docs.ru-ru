@@ -1,5 +1,5 @@
 ---
-title: Преобразование приложений облачных служб Azure в микрослужбы | Документация Майкрософт
+title: Перенос приложений облачных служб Azure в Service Fabric | Документация Майкрософт
 description: В этом руководстве веб-роли и рабочие роли облачных служб сравниваются со службами без отслеживания состояния Service Fabric в плане переноса из облачных служб на платформу Service Fabric.
 services: service-fabric
 documentationcenter: .net
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/02/2017
 ms.author: vturecek
-ms.openlocfilehash: c6bdd6f88c9008a8d9c15d22bdcf263190424649
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 4eed3825d52fe52025077980e21f3763cc5751ac
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34206688"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44049955"
 ---
 # <a name="guide-to-converting-web-and-worker-roles-to-service-fabric-stateless-services"></a>Руководство по преобразованию рабочих ролей и веб-ролей в службы без отслеживания состояния Service Fabric
 В этой статье описано, как переносить рабочие роли и веб-роли облачных служб в службы без отслеживания состояния Service Fabric. Это самый простой способ переноса из облачных служб в службы Service Fabric при работе с приложениями, общая архитектура которых почти не изменяется.

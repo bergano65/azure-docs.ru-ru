@@ -1,57 +1,54 @@
 ---
-title: Аутентификация в Azure AD с помощью функции "Управляемое удостоверение службы Azure" (предварительная версия) | Документация Майкрософт
-description: Аутентификация в Azure AD с помощью функции "Управляемое удостоверение службы Azure" (предварительная версия).
+title: Проверка подлинности доступа к большим двоичным объектам и очередям с помощью управляемых удостоверений Azure Active Directory для ресурсов Azure (предварительная версия) (служба хранилища Azure) | Документация Майкрософт
+description: Хранилище BLOB-объектов и хранилище очередей поддерживает проверку подлинности Azure Active Directory с помощью управляемых удостоверений для ресурсов Azure. Вы можете использовать управляемые удостоверения для ресурсов Azure, чтобы проверить подлинность доступа к BLOB-объектам и очередям из приложений, запущенных на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и т д. Используя управляемые экземпляры для ресурсов Azure и мощные возможности проверки подлинности Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 05/18/2018
+ms.date: 09/05/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: 6ddae66ee6408a3cab905826cd0d7c0831607d33
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 67e0731c1f10bb635baa4e0d1a26dce0a336b555
+ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39526391"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44090361"
 ---
-# <a name="authenticate-with-azure-ad-from-an-azure-managed-service-identity-preview"></a>Аутентификация в Azure AD с помощью функции "Управляемое удостоверение службы Azure" (предварительная версия)
+# <a name="authenticate-access-to-blobs-and-queues-with-azure-managed-identities-for-azure-resources-preview"></a>Проверки подлинности доступа к BLOB-объектам и очередям с помощью управляемых удостоверений Azure для ресурсов Azure (предварительная версия)
 
-Служба хранилища Azure поддерживает аутентификацию Azure Active Directory (Azure AD) с использованием функции [Управляемое удостоверение службы](../../active-directory/managed-service-identity/overview.md). Функция "Управляемое удостоверение службы" (MSI) предоставляет автоматически управляемые удостоверения в Azure Active Directory (Azure AD). MSI можно использовать для аутентификации из приложений, запущенных на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и других ресурсов. Используя MSI и мощные возможности аутентификации Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке.  
+Хранилище BLOB-объектов и очередей поддерживают проверку подлинности Azure Active Directory (Azure AD) с использованием [управляемых удостоверений для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md). Вы можете использовать управляемые удостоверения для ресурсов Azure, чтобы проверить подлинность доступа к BLOB-объектам и очередям из приложений, запущенных на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и т д. Используя управляемые экземпляры для ресурсов Azure и мощные возможности проверки подлинности Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке.  
 
-Чтобы предоставить разрешения удостоверению управляемой службы для контейнеров или очередей службы хранилища, следует назначить MSI роль RBAC, охватывающую разрешения службы хранилища. Дополнительные сведения о ролях RBAC в службе хранилища см. в разделе [Manage access rights to Azure Storage data with RBAC (Preview)](storage-auth-aad-rbac.md) (Управление правами доступа к данным в службе хранилища Azure с помощью RBAC (предварительная версия)). 
+Чтобы предоставить разрешения управляемому удостоверению на доступ к контейнеру больших двоичных объектов или очереди, управляемому удостоверению, которое включает в себя разрешения для этого ресурса в соответствующей области, необходимо назначить контроль доступа на основе ролей. Дополнительные сведения о ролях RBAC в службе хранилища см. в разделе [Manage access rights to Azure Storage data with RBAC (Preview)](storage-auth-aad-rbac.md) (Управление правами доступа к данным в службе хранилища Azure с помощью RBAC (предварительная версия)). 
 
-> [!IMPORTANT]
-> Эта предварительная версия не предназначена для использования в рабочей среде. Соглашения об уровне обслуживания (SLA) для рабочих сред не будут доступны до выпуска общедоступной версии интеграции с Azure AD для службы хранилища Azure. Если интеграция с Azure AD пока не поддерживается для вашего сценария, продолжайте использовать в приложениях авторизацию по общему ключу или маркеры SAS. Дополнительные сведения о предварительной версии см. в статье об [аутентификации доступа к службе хранилища Azure с помощью Azure Active Directory (предварительная версия)](storage-auth-aad.md).
->
-> На этапе предварительной версии распространение назначенных ролей RBAC может занимать до пяти минут.
+В этой статье описана проверка подлинности в хранилище BLOB-объектов или очередей Azure с помощью управляемого удостоверения с виртуальной машины Azure.  
 
-В этой статье описана аутентификация в службе хранилища Azure с помощью MSI из виртуальной машины Azure.  
+[!INCLUDE [storage-auth-aad-note-include](../../../includes/storage-auth-aad-note-include.md)]
 
-## <a name="enable-msi-on-the-vm"></a>Включение MSI на виртуальной машине
+## <a name="enable-managed-identities-on-a-vm"></a>Включение управляемых удостоверений на виртуальной машине
 
-Прежде чем использовать MSI для аутентификации в службе хранилища Azure из виртуальной машины, необходимо включить MSI на этой виртуальной машине. Чтобы узнать, как включить MSI, ознакомьтесь с одной из следующих статей:
+Перед тем, как вы сможете использовать управляемые удостоверения для ресурсов Azure, чтобы проверить подлинность доступа к большим двоичным объектам или очередям с виртуальной машины, нужно включить эти управляемые удостоверения для ресурсов Azure на виртуальной машине. Сведения о включении управляемых удостоверений для ресурсов Azure см. в одной из следующих статей.
 
 - [портал Azure](https://docs.microsoft.com/azure/active-directory/managed-service-identity/qs-configure-portal-windows-vm)
-- [Azure PowerShell](../../active-directory/managed-service-identity/qs-configure-powershell-windows-vm.md)
-- [интерфейс командной строки Azure](../../active-directory/managed-service-identity/qs-configure-cli-windows-vm.md)
-- [Шаблон Azure Resource Manager](../../active-directory/managed-service-identity/qs-configure-template-windows-vm.md)
-- [Пакеты SDK для Azure](../../active-directory/managed-service-identity/qs-configure-sdk-windows-vm.md)
+- [Azure PowerShell](../../active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md)
+- [интерфейс командной строки Azure](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md)
+- [Шаблон Azure Resource Manager](../../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md)
+- [Пакеты SDK для Azure](../../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md)
 
-## <a name="get-an-msi-access-token"></a>Получение маркера доступа MSI
+## <a name="get-a-managed-identity-access-token"></a>Получение маркера доступа управляемого удостоверения
 
-Для выполнения аутентификации с помощью MSI приложению или сценарию необходимо получить маркер доступа MSI. Чтобы узнать, как получить маркер доступа, ознакомьтесь с разделом [Использование управляемого удостоверения службы (MSI) виртуальной машины Azure для получения маркера](../../active-directory/managed-service-identity/how-to-use-vm-token.md).
+Чтобы проверить подлинность с помощью управляемого удостоверения, приложение или скрипт должны получить маркер доступа управляемого удостоверения. Дополнительные сведения о том, как получить маркер доступа, см. в статье [Как использовать управляемые удостоверения для ресурсов Azure на виртуальной машине Azure для получения маркера доступа](../../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md).
 
 ## <a name="net-code-example-create-a-block-blob"></a>Пример кода .NET: создание блочного BLOB-объекта
 
-В этом примере кода предполагается наличие маркера доступа MSI. Маркер доступа используется для авторизации удостоверения управляемой службы для создания блочного BLOB-объекта.
+В этом примере кода предполагается наличие маркера доступа управляемого удостоверения. Маркер доступа используется для авторизации управляемого удостоверения для создания блочного BLOB-объекта.
 
 ### <a name="add-references-and-using-statements"></a>Добавление ссылок и инструкций using  
 
 В Visual Studio установите предварительную версию клиентской библиотеки службы хранилища Azure. В меню **Сервис** выберите **Диспетчер пакетов NuGet**, а затем — **Консоль диспетчера пакетов**. Введите приведенную ниже команду в консоли.
 
 ```
-Install-Package https://www.nuget.org/packages/WindowsAzure.Storage/9.2.0  
+Install-Package https://www.nuget.org/packages/WindowsAzure.Storage  
 ```
 
 Добавьте приведенные ниже инструкции using в код.
@@ -60,13 +57,13 @@ Install-Package https://www.nuget.org/packages/WindowsAzure.Storage/9.2.0
 using Microsoft.WindowsAzure.Storage.Auth;
 ```
 
-### <a name="create-credentials-from-the-msi-access-token"></a>Создание учетных данных на основе маркера доступа MSI
+### <a name="create-credentials-from-the-managed-identity-access-token"></a>Создание учетных данных на основе маркера доступа управляемого удостоверения
 
-Чтобы создать блочный BLOB-объект, используйте класс **TokenCredentials**, предоставляемый предварительной версией пакета. Создайте новый экземпляр **TokenCredentials**, передав полученный ранее маркер доступа MSI.
+Чтобы создать блочный BLOB-объект, используйте класс **TokenCredentials**, предоставляемый предварительной версией пакета. Создайте экземпляр **TokenCredentials**, передав полученный ранее маркер доступа управляемого удостоверения.
 
 ```dotnet
-// Create storage credentials from your MSI access token.
-TokenCredential tokenCredential = new TokenCredential(msiAccessToken);
+// Create storage credentials from your managed identity access token.
+TokenCredential tokenCredential = new TokenCredential(accessToken);
 StorageCredentials storageCredentials = new StorageCredentials(tokenCredential);
 
 // Create a block blob using the credentials.

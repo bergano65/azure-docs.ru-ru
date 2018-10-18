@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: get-started-article
-ms.date: 08/30/2018
+ms.date: 09/05/2018
 ms.author: mabrigg
 ms.reviewer: kivenkat
-ms.openlocfilehash: 7f16f53af7d1c2f46c5c61974601833fafc8f828
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 7a5c6875f080655e69f549e45ec474958128754f
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43698780"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45575819"
 ---
 # <a name="make-a-virtual-machine-image-available-in-azure-stack"></a>Размещение образа виртуальной машины через Azure Stack
 
@@ -54,7 +54,7 @@ ms.locfileid: "43698780"
 
    ![Установка общего доступа к большим двоичным объектам](./media/azure-stack-add-vm-image/image2.png)
 
-2. Войдите в Azure Stack как оператор. В меню выберите **Больше служб**. Выберите **Среда выполнения приложений** > **Образы виртуальных машин** > **Добавить**.
+2. Войдите в Azure Stack как оператор. В меню выберите **Все службы**. Затем в категории **Администрирование** выберите **Вычисления** > **Образы виртуальных машин** > **Добавить**.
 
 3. В колонке **Add a VM Image** (Добавление образа виртуальной машины) введите издателя, предложение, номер SKU и версию образа виртуальной машины. Эти сегменты имен ссылаются на образ виртуальной машины в шаблонах Resource Manager. Выберите правильное значение для параметра **osType**. В поле **OS Disk Blob URI** (URI большого двоичного объекта диска ОС) введите URI большого двоичного объекта, куда был отправлен образ, и нажмите кнопку **Создать**, чтобы создать образ виртуальной машины.
 
@@ -75,7 +75,7 @@ ms.locfileid: "43698780"
 ## <a name="add-a-vm-image-to-the-marketplace-by-using-powershell"></a>Добавление образа виртуальной машины в Marketplace с помощью PowerShell
 
 > [!Note]  
-> Добавляемый образ будет доступен только для шаблонов на базе Azure Resource Manager и развертываний PowerShell. Чтобы обеспечить пользователям доступ к образу в Marketplace, опубликуйте его в качестве элемента Marketplace, как описывается в статье [Создание и публикация элемента Marketplace](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-create-and-publish-marketplace-item)
+> Добавляемый образ будет доступен только для шаблонов на базе Azure Resource Manager и развертываний PowerShell. Чтобы обеспечить пользователям доступ к образу в Marketplace, опубликуйте его в качестве элемента Marketplace, как описывается в статье [Создание и публикация элемента Marketplace](https://docs.microsoft.com/azure/azure-stack/azure-stack-create-and-publish-marketplace-item)
 
 1. [Установите PowerShell для Azure Stack](azure-stack-powershell-install.md).  
 
@@ -115,7 +115,7 @@ ms.locfileid: "43698780"
     Дополнительные сведения см. в справочнике PowerShell в разделах о командлетах [Add-AzsPlatformimage](https://docs.microsoft.com/powershell/module/azs.compute.admin/add-azsplatformimage) и [New-DataDiskObject](https://docs.microsoft.com/powershell/module/Azs.Compute.Admin/New-DataDiskObject).
 
 ## <a name="add-a-custom-vm-image-to-the-marketplace-by-using-powershell"></a>Добавление пользовательского образа виртуальной машины в Marketplace с помощью PowerShell
-
+ 
 1. [Установите PowerShell для Azure Stack](azure-stack-powershell-install.md).
 
   ```PowerShell  

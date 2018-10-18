@@ -11,12 +11,12 @@ ms.assetid: d565873c-6b1b-4057-9250-cf81a96180ae
 ms.custom: vs-azure
 ms.topic: article
 ms.date: 08/01/2018
-ms.openlocfilehash: a69c129d5ae1405462e3a54a24cd2edbad2a86a7
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: f5555d9a60934529bf8fed6db6a18dd783f46075
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43126783"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44297474"
 ---
 # <a name="build-your-first-serverless-app-with-azure-logic-apps-and-azure-functions---visual-studio"></a>Создание первого бессерверного приложения на основе Azure Logic Apps и Функций Azure (Visual Studio)
 
@@ -122,7 +122,7 @@ ms.locfileid: "43126783"
 
 ## <a name="deploy-functions-from-visual-studio"></a>Развертывание функций из Visual Studio
 
-Шаблон развертывания позволяет развернуть все включенные в решение функции Azure из репозитория Git, который определяется переменными в файле `azuredeploy.json`. Если вы проектируете и создаете в вашем решении проект Функций Azure, его можно передать в систему управления версиями Git, например GitHub или Visual Studio Team Services, а затем указать значение переменной `repo` таким образом, чтобы с этим шаблоном развертывалась нужная функция Azure.
+Шаблон развертывания позволяет развернуть все включенные в решение функции Azure из репозитория Git, который определяется переменными в файле `azuredeploy.json`. Если вы проектируете и создаете в вашем решении проект Функций Azure, его можно передать в систему управления версиями Git, например GitHub или Azure DevOps, а затем указать значение переменной `repo` таким образом, чтобы с этим шаблоном развертывалась нужная функция Azure.
 
 ## <a name="manage-logic-apps-and-view-run-history"></a>Управление приложениями логики и просмотр журнала выполнения
 

@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/05/2017
+ms.date: 09/28/2018
 ms.author: tomfitz
-ms.openlocfilehash: cdc8222675a9f0099edccb24310bcea03bf963f4
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: 81638136589fc474d5183341d2fe0f9f896d6b41
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37929686"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47434472"
 ---
 # <a name="array-and-object-functions-for-azure-resource-manager-templates"></a>Функции массивов и объектов для шаблонов Azure Resource Manager 
 
@@ -330,7 +330,7 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -Temp
 ## <a name="contains"></a>contains
 `contains(container, itemToFind)`
 
-Проверяет, содержит ли массив значение, содержит ли объект ключ или содержит ли строка подстроку.
+Проверяет, содержит ли массив значение, содержит ли объект ключ или содержит ли строка подстроку. При сравнении строк учитывается регистр. Тем не менее при проверке объекта на наличие ключа сравнение выполняется без учета регистра.
 
 ### <a name="parameters"></a>Параметры
 
@@ -738,6 +738,10 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -Temp
 
 Объект JSON из указанной строки или пустой объект, если указано значение **null**.
 
+### <a name="remarks"></a>Примечания
+
+Если необходимо включить значение параметра или переменную в объект JSON, используйте функцию [concat](resource-group-template-functions-string.md#concat) для создания строки, передаваемой в функцию.
+
 ### <a name="example"></a>Пример
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/json.json) показано, как использовать функцию json с массивами и объектами.
@@ -746,6 +750,12 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -Temp
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
+    "parameters": {
+        "testValue": {
+            "type": "string",
+            "defaultValue": "demo value"
+        }
+    },
     "resources": [
     ],
     "outputs": {
@@ -756,6 +766,10 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -Temp
         "nullOutput": {
             "type": "bool",
             "value": "[empty(json('null'))]"
+        },
+        "paramOutput": {
+            "type": "object",
+            "value": "[json(concat('{\"a\": \"', parameters('testValue'), '\"}'))]"
         }
     }
 }
@@ -767,6 +781,7 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -Temp
 | ---- | ---- | ----- |
 | jsonOutput | Объект. | {"a": "b"} |
 | nullOutput | Логическое | Истина |
+| paramOutput | Объект. | {"a": "demo value"}
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:
 

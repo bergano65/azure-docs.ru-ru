@@ -11,17 +11,21 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/30/2018
+ms.date: 06/15/2018
 ms.author: tomfitz
-ms.openlocfilehash: 9507280bf5df1e63c81f0b2488b9676784c69812
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: abd1329f2ebac90bf846dfd5fc5b307ddb5e52bd
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34260880"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47095486"
 ---
 # <a name="microsoftcommoninfobox-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.InfoBox
-Элемент управления, который добавляет поле сведений.
+Элемент управления, который добавляет поле сведений. Поле содержит важный текст или предупреждения, которые помогают пользователям понять, какие значения нужно указать. Он также может быть связан с URI, по которому можно получить более подробную информацию.
+
+## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
+![Microsoft.Common.InfoBox](./media/managed-application-elements/microsoft.common.infobox.png)
+
 
 ## <a name="schema"></a>Схема
 ```json

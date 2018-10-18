@@ -1,28 +1,21 @@
 ---
-title: Настройка сосуществующих подключений VPN типа ExpressRoute и "сеть — сеть" с помощью модели Azure Resource Manager | Документация Майкрософт
-description: В этой статье описывается настройка параллельных подключений ExpressRoute и VPN-подключений типа "сеть — сеть" для модели развертывания Resource Manager.
-documentationcenter: na
+title: Настройка сосуществующих подключений VPN типа ExpressRoute и "сеть — сеть" с помощью PowerShell в Azure | Документация Майкрософт
+description: В этой статье описывается, как настроить параллельные подключения ExpressRoute и VPN-подключений типа "сеть — сеть" для модели развертывания Resource Manager с помощью PowerShell.
 services: expressroute
 author: charwen
 manager: rossort
-editor: ''
-tags: azure-resource-manager
-ms.assetid: c7717b14-3da3-4a6d-b78e-a5020766bc2c
 ms.service: expressroute
-ms.devlang: na
-ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 08/17/2018
-ms.author: charwen,cherylmc,rambala
-ms.openlocfilehash: 0e69a85f320a0a8d77bd07fc0dedb77eb99efb36
-ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
+ms.topic: conceptual
+ms.date: 09/07/2018
+ms.author: charwen
+ms.openlocfilehash: c267e5002fbd603e4bb749550c19e8d022ce4d54
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41919211"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44162348"
 ---
-# <a name="configure-expressroute-and-site-to-site-coexisting-connections"></a>Настройка параллельных подключений ExpressRoute и "сайт-сайт"
+# <a name="configure-expressroute-and-site-to-site-coexisting-connections-using-powershell"></a>Настройка параллельных подключений "сеть — сеть" и ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
 > * [PowerShell — Resource Manager](expressroute-howto-coexist-resource-manager.md)
 > * [PowerShell — классическая модель](expressroute-howto-coexist-classic.md)
@@ -34,7 +27,7 @@ ms.locfileid: "41919211"
 * VPN типа "сеть — сеть" можно настроить как безопасный путь отработки отказа для ExpressRoute. 
 * Кроме того, VPN типа "сеть — сеть" можно использовать для подключения к сайтам, которые не подключены через ExpressRoute. 
 
-В этой статье описан порядок действий для каждого из этих вариантов. Эта статья посвящена модели развертывания Resource Manager. Кроме того, в ней используется PowerShell. 
+В этой статье описан порядок действий для каждого из этих вариантов. Эта статья посвящена модели развертывания Resource Manager. Кроме того, в ней используется PowerShell. Эти сценарии можно также настроить с помощью портала Azure, несмотря на то, что документация еще недоступна.
 
 >[!NOTE]
 >Если вы хотите создать VPN типа "сеть — сеть" через канал ExpressRoute, см. [эту статью](site-to-site-vpn-over-microsoft-peering.md).

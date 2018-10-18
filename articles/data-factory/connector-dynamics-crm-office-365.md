@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/02/2018
+ms.date: 09/26/2018
 ms.author: jingwang
-ms.openlocfilehash: e8e106bc71b87af8cd36f7edb0fe64fcddd6133e
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: ce3c494dc0b8c962c8dae0af38d3cb5476cdf48b
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45574680"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47406181"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Копирование данных из Dynamics 365 (Common Data Service) или Dynamics CRM и в эти решения с помощью фабрики данных Azure
 
@@ -158,7 +158,8 @@ ms.locfileid: "45574680"
 | entityName | Логическое имя сущности, которое требуется получить. | "Нет" для источника (если свойство query указано в источнике действия), "Да" для приемника |
 
 > [!IMPORTANT]
->- При копировании данных из Dynamics раздел structure является обязательным в наборе данных Dynamics. Он определяет столбец имени и тип данных для данных Dynamics, которые требуется скопировать. Дополнительные сведения см. в разделах [Структура набора данных](concepts-datasets-linked-services.md#dataset-structure) и [Сопоставление типов данных для Dynamics](#data-type-mapping-for-dynamics).
+>- При копировании данных из Dynamics раздел structure необязателен, но рекомендуется в наборе данных Dynamics, чтобы обеспечить детерминированный результат копирования. Он определяет столбец имени и тип данных для данных Dynamics, которые требуется скопировать. Дополнительные сведения см. в разделах [Структура набора данных](concepts-datasets-linked-services.md#dataset-structure) и [Сопоставление типов данных для Dynamics](#data-type-mapping-for-dynamics).
+>- При импорте схемы в пользовательском интерфейсе разработки ADF выводит схему путем выборки верхних строк из результата запроса Dynamics для инициализации создания структуры. При этом столбцы без значений будут опущены. Вы можете просмотреть схему и при необходимости добавить в нее или структуру набора данных Dynamics дополнительные столбцы, которые будут учитываться во время копирования.
 >- При копировании данных в Dynamics раздел structure является необязательным в наборе данных Dynamics. В какие столбцы выполняется копирование, определяет схема исходных данных. Если источником является CSV-файл без заголовка, во входном наборе данных укажите параметр structure с именем столбца и тип данных. Они последовательно сопоставляются с полями в CSV-файле.
 
 **Пример.**

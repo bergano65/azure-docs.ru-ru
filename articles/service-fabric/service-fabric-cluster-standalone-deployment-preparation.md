@@ -11,14 +11,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 9/12/2017
+ms.date: 9/11/2018
 ms.author: dekapur
-ms.openlocfilehash: 89fb9d97acd5cb658b58f957d35d426ecdacc75d
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 7357577ea7aff467288578673110b1a6dda7ccef
+ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34205116"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44391053"
 ---
 <a id="preparemachines"></a>
 
@@ -66,7 +66,7 @@ ms.locfileid: "34205116"
 * Наличие не менее 40 ГБ свободного дискового пространства.
 * Центральный процессор с 4 ядрами или больше.
 * Подключение к защищенной сети или сетям для всех компьютеров.
-* Windows Server 2012 R2 или Windows Server 2016.
+* Установленная ОС Windows Server (допустимые версии: 2012 R2, 2016, 1709 или 1803)
 * Полностью установленная платформа [.NET Framework 4.5.1 или более поздней версии](https://www.microsoft.com/download/details.aspx?id=40773).
 * [Windows PowerShell 3.0](https://msdn.microsoft.com/powershell/scripting/setup/installing-windows-powershell).
 * На всех компьютерах должна быть запущена [служба RemoteRegistry](https://technet.microsoft.com/library/cc754820).

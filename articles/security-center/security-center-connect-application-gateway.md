@@ -3,23 +3,23 @@ title: Подключение шлюза приложений Microsoft Azure к
 description: Узнайте, как интегрировать шлюз приложений с центром безопасности Azure, чтобы повысить общий уровень безопасности ваших ресурсов.
 services: security-center
 documentationcenter: na
-author: TerryLanfear
+author: rkarlin
 manager: mbaldwin
 editor: ''
 ms.assetid: 6af354da-f27a-467a-8b7e-6cbcf70fdbcb
 ms.service: security-center
-ms.topic: article
+ms.topic: conceptual
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/07/2018
-ms.author: terrylan
-ms.openlocfilehash: 7c15e5a86df7ff2a374aa9b62d2775b1eb035fc6
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.date: 08/30/2018
+ms.author: rkarlin
+ms.openlocfilehash: 5638b71147592ae71c741ca86da68ddfec668af5
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
-ms.locfileid: "29854286"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44299072"
 ---
 # <a name="connecting-microsoft-azure-application-gateway-to-azure-security-center"></a>Подключение шлюза приложений Microsoft Azure к центру безопасности Azure
 В этом документе объясняется, как настроить интеграцию брандмауэра веб-приложения (WAF) шлюза приложений с центром безопасности.
@@ -37,9 +37,9 @@ WAF в шлюзе приложений защищает веб-приложен�
 
 1. Войдите на [портал Azure](https://azure.microsoft.com/features/azure-portal/).
 
-2. В меню **Microsoft Azure** выберите пункт **Центр безопасности**. Откроется окно **Security Center - Overview** (Центр безопасности — обзор).
+2. В меню **Microsoft Azure** выберите пункт **Центр безопасности**.
 
-3. В разделе **Обзор** выберите **Решения безопасности**.
+3. В разделе **Гигиена безопасности ресурсов** выберите **Решения безопасности**.
 
   ![Обзор центра безопасности](./media/security-center-connect-application-gateway/overview.png)
 

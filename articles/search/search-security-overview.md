@@ -6,14 +6,14 @@ manager: cgronlun
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 06/19/2018
+ms.date: 09/06/2018
 ms.author: heidist
-ms.openlocfilehash: 888f7c3ced0ef48cff222bffdbf0f278fa5f42b3
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: 4b1307aa00fae26d7425c9a95ed673b11ba2e9b4
+ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36285735"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44092637"
 ---
 # <a name="security-and-data-privacy-in-azure-search"></a>Безопасность и конфиденциальность данных в службе "Поиск Azure"
 
@@ -23,9 +23,7 @@ ms.locfileid: "36285735"
 
 ## <a name="standards-compliance-iso-27001-soc-2-hipaa"></a>Соответствие стандартам ISO 27001, SOC 2 и HIPAA
 
-Неполный список сведений о соответствии содержит такие стандарты, как SOC 2 типа 2 и HIPAA для общедоступных функций. Функции в предварительной версии сертифицированы как общедоступные. Не следует их использовать в решениях с определенными требованиями к соответствию стандартам. Сведения о сертификатах соответствия см. в документе [Overview of Microsoft Azure compliance](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) (Общие сведения о соответствии требованиям Microsoft Azure) и в [центре управления безопасностью](https://www.microsoft.com/en-us/trustcenter). 
-
-[В июне 2018 г. была объявлена](https://azure.microsoft.com/blog/azure-search-is-now-certified-for-several-levels-of-compliance/) сертификация на соответствие следующим стандартам:
+[Как было объявлено в июне 2018 г.](https://azure.microsoft.com/blog/azure-search-is-now-certified-for-several-levels-of-compliance/), служба "Поиск Azure" сертифицирована на соответствие следующим стандартам:
 
 + [ISO 27001:2013](https://www.iso.org/isoiec-27001-information-security.html). 
 + [SOC 2 типа 2](https://www.aicpa.org/interestareas/frc/assuranceadvisoryservices/aicpasoc2report.html). Чтобы просмотреть полный отчет, перейдите к [отчету SOC 2 типа II для Azure для государственных организаций](https://servicetrust.microsoft.com/ViewPage/MSComplianceGuide?command=Download&downloadType=Document&downloadId=93292f19-f43e-4c4e-8615-c38ab953cf95&docTab=4ce99610-c9c0-11e7-8c2c-f908a777fa4d_SOC%20%2F%20SSAE%2016%20Reports). 
@@ -35,13 +33,15 @@ ms.locfileid: "36285735"
 + [PCI DSS, уровень 1](https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard).
 + [Программа IRAP австралийского правительства (без грифа секретности)](https://asd.gov.au/infosec/irap/certified_clouds.htm).
 
+Соответствие стандартам относится к общедоступным функциям. Функции в предварительной версии будут сертифицированы, когда станут общедоступными. Не следует их использовать в решениях со строгими требованиями к соответствию стандартам. Сведения о сертификатах соответствия см. в документе [Overview of Microsoft Azure compliance](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) (Общие сведения о соответствии требованиям Microsoft Azure) и в [центре управления безопасностью](https://www.microsoft.com/en-us/trustcenter). 
+
 ## <a name="encrypted-transmission-and-storage"></a>Зашифрованная передача и хранение
 
 Шифрование действует во всем конвейере индексирования — от соединений, при передачах и до индексированных данных, хранящихся в службе поиска Azure.
 
 | Уровень безопасности | ОПИСАНИЕ |
 |----------------|-------------|
-| Шифрование при передаче | Поиск Azure прослушивает через HTTPS-порт 443. Подключения к службам Azure по всей платформе зашифрованы. |
+| Шифрование при передаче <br>(HTTPS, SSL, TLS) | Поиск Azure прослушивает через HTTPS-порт 443. Подключения к службам Azure по всей платформе зашифрованы. <br/><br/>Все взаимодействия между клиентом и службой "Поиск Azure" осуществляются по протоколу SSL/TLS 1.2  Обязательно используйте TLS версии 1.2 для SSL-подключений к службе.|
 | Шифрование при хранении | Шифрование происходит внутренне в процессе индексирования и не оказывает заметного влияния на время выполнения индексирования или размер индекса. Оно выполняется автоматически во всех процессах индексирования, включая добавочные обновления индекса, который не полностью зашифрован (создан до января 2018 г.).<br><br>На внутреннем уровне шифрование основывается на [шифровании службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-service-encryption) с использованием 256-разрядного [шифрования AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard).|
 
 Шифрование является внутренним для службы поиска Azure, а сертификаты и ключи шифрования внутренне управляются корпорацией Майкрософт и применяются ко всем компонентам. Вы не можете включать или отключать шифрование, подставлять собственные ключи или управлять ими, просматривать параметры шифрования на портале или с помощью программных средств. 

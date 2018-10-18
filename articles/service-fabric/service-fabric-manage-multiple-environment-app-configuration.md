@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/23/2018
 ms.author: mikhegn
-ms.openlocfilehash: 15ad606578970290cef440ec4efdd967ca0c0b32
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: dac96ef6fce38a0557444e181fa6eccb649cfb9a
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34205235"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44298341"
 ---
 # <a name="manage-applications-for-multiple-environments"></a>Управление приложениями для использования в нескольких средах
 
@@ -42,7 +42,7 @@ Azure Service Fabric позволяет создавать кластеры, д�
 
 > [!NOTE]
 > Не все атрибуты в файле манифеста приложения и файле манифеста служб поддерживают использование параметров.
-> В таких случаях следует полагаться на замену строк в рабочем процессе развертывания. В Visual Studio Team Services можно воспользоваться таким расширением, как Replace Tokens: https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens, а в Jenkins можно запустить задачу скрипта для замены значений.
+> В таких случаях следует полагаться на замену строк в рабочем процессе развертывания. В Azure DevOps можно воспользоваться таким расширением, как Replace Tokens (https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens), а в Jenkins можно запустить задачу скрипта для замены значений.
 >
 
 ## <a name="specifying-parameters-during-application-creation"></a>Указание параметров при создании приложения
@@ -51,7 +51,7 @@ Azure Service Fabric позволяет создавать кластеры, д�
 
   - В PowerShell командлет [`New-ServiceFabricApplication`](https://docs.microsoft.com/powershell/module/servicefabric/new-servicefabricapplication?view=azureservicefabricps) принимает параметры приложения в виде хэш-таблицы.
   - При использовании sfctl команда [`sfctl application create`](https://docs.microsoft.com/azure/service-fabric/service-fabric-sfctl-application#sfctl-application-create) принимает параметры в виде строки JSON. Сценарий install.sh использует sfctl.
-  - Visual Studio предоставляет набор файлов параметров в папке Parameters в проекте приложения. Эти файлы параметров используются при публикации из Visual Studio с помощью Visual Studio Team Service или Team Foundation Server. В Visual Studio файлы параметров передаются в сценарий Deploy-FabricApplication.ps1.
+  - Visual Studio предоставляет набор файлов параметров в папке Parameters в проекте приложения. Эти файлы параметров используются при публикации из Visual Studio с помощью Azure DevOps Services или Team Foundation Server. В Visual Studio файлы параметров передаются в сценарий Deploy-FabricApplication.ps1.
 
 ## <a name="next-steps"></a>Дополнительная информация
 В приведенных ниже статьях описывается, как использовать некоторые основные понятия, приведенные в этой статье:

@@ -1,22 +1,23 @@
 ---
-title: Руководство по использованию API компьютерного зрения для Python | Документация Майкрософт
-description: Узнайте о том, как использовать API компьютерного зрения с Python с помощью записных книжек Jupyter в службах Microsoft Cognitive Services. Визуализируйте результаты с помощью популярных библиотек.
+title: Руководство по API компьютерного зрения для Python
+titlesuffix: Azure Cognitive Services
+description: Узнайте о том, как использовать API компьютерного зрения с Python с помощью записных книжек Jupyter. Визуализируйте результаты с помощью популярных библиотек.
 services: cognitive-services
 author: KellyDF
-manager: corncar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
-ms.topic: article
+ms.topic: tutorial
 ms.date: 02/25/2017
 ms.author: kefre
-ms.openlocfilehash: a093c2d066e70a8daf1fe1cd33ccf794ecb196af
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 59e88ecb253bc6da803ddf34a4a02229b99e259d
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380676"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45981717"
 ---
-# <a name="computer-vision-api-python-tutorial"></a>Руководство по API компьютерного зрения для Python
+# <a name="tutorial-computer-vision-api-python"></a>Руководство по API компьютерного зрения для Python
 
 В этом руководстве показано, как использовать API компьютерного зрения с помощью Python и как визуализировать результаты с помощью популярных библиотек. Для работы с этим руководством используется Jupyter. Чтобы узнать, как приступить к работе с интерактивными записными книжками Jupyter, обратитесь к [документации по Jupyter](http://jupyter.readthedocs.io/en/latest/index.html). 
 
@@ -30,7 +31,7 @@ ms.locfileid: "35380676"
 
 ### <a name="running-the-tutorial"></a>Запуск примера
 
-Для использования этой записной книжки потребуется ключ подписки на API компьютерного зрения. Перейдите на страницу [Подписка](https://azure.microsoft.com/try/cognitive-services/), чтобы зарегистрироваться. На странице "Вход" войдите с помощью учетной записи Майкрософт. После этого вы сможете оформить подписку и получить бесплатные ключи. Завершив регистрацию, вставьте ключ в раздел переменных записной книжки (см. ниже). Будет использоваться либо первичный, либо вторичный ключ. Не забудьте заключить ключ в кавычки, чтобы сделать его строковым значением.
+Для использования этой записной книжки потребуется ключ подписки на API компьютерного зрения. Перейдите на страницу [Подписка](https://azure.microsoft.com/try/cognitive-services/), чтобы зарегистрироваться. На странице "Вход" войдите с помощью учетной записи Майкрософт. После этого вы сможете оформить подписку и получить бесплатные ключи. Завершив регистрацию, вставьте ключ в раздел переменных записной книжки (см. ниже). Подойдет как первичный, так и вторичный ключ. Не забудьте заключить ключ в кавычки, чтобы сделать его строковым значением.
 
 ```python
 # Variables

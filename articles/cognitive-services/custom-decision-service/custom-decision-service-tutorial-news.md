@@ -1,21 +1,23 @@
 ---
-title: Персонализация статей Azure Cognitive Services | Документация Майкрософт
-description: Руководство по персонализации статей с помощью Пользовательской службы принятия решений Azure — облачного API для контекстного принятия решений.
+title: Руководство. Персонализация статей — Пользовательская служба принятия решений
+titlesuffix: Azure Cognitive Services
+description: Руководство по персонализации статей для принятия решений на основе контекста.
 services: cognitive-services
 author: slivkins
-manager: slivkins
+manager: cgronlun
 ms.service: cognitive-services
-ms.topic: article
+ms.component: custom-decision-service
+ms.topic: tutorial
 ms.date: 05/08/2018
-ms.author: slivkins;marcozo;alekh;marossi
-ms.openlocfilehash: 35d0567f81a23d4726461059eb6fd31e04228697
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: slivkins
+ms.openlocfilehash: b142fe2051c017d0c0ec3c4cac6aaedd563f6cd7
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382149"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46366341"
 ---
-# <a name="article-personalization"></a>Персонализация статей
+# <a name="tutorial-article-personalization-for-contextual-decision-making"></a>Руководство. Персонализация статей для принятия решений на основе контекста
 
 Это руководство посвящено персонализации выбранных статей на главной странице веб-сайта. Например, Пользовательская служба принятия решений влияет на *несколько* списков статей на главной странице. Возможно, страница — это новостной сайт, который охватывает только политику и спорт. Он будет показывать три ранжированные списка статей: политика, спорт и недавние события.
 
@@ -137,4 +139,4 @@ function callback(data) {
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Обратитесь к [справочнику по API](custom-decision-service-api-reference.md), чтобы получить дополнительные сведения о предоставляемых функциональных возможностях.
+* Обратитесь к [справочнику по API](custom-decision-service-api-reference.md), чтобы получить дополнительные сведения о предоставляемых возможностях.

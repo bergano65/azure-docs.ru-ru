@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: 4c5599cc-99a1-430f-895f-601615ef12a0
 ms.service: security-center
-ms.topic: hero-article
+ms.topic: conceptual
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/20/2017
 ms.author: yurid
-ms.openlocfilehash: 699903ff874ace4991c5c4b0584d4661d3e45f33
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: a0a218fc18c1c9ede71de590179b0c93221eb80c
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33894263"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44161039"
 ---
 # <a name="azure-security-center-detection-capabilities"></a>Возможности обнаружения центра безопасности Azure
 Этот документ содержит информацию о расширенных возможностях обнаружения в центре безопасности Azure. С их помощью вы сможете выявлять активные угрозы для ресурсов Microsoft Azure и оперативно на них реагировать.

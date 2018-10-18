@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 08/14/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: b2bb187e5ad55b466da0b9b06ffbb047ac539717
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 20a57a0d528fa6a291aa66f91ff6ddd71053f478
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43105005"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46297066"
 ---
 # <a name="tutorial-prepare-an-application-for-azure-kubernetes-service-aks"></a>Руководство. Подготовка приложения для Службы Azure Kubernetes (AKS)
 
@@ -35,7 +35,7 @@ ms.locfileid: "43105005"
 
 Для выполнения действий, описанных в этом руководстве, необходимо базовое понимание основных понятий Docker, таких как контейнеры, образы контейнеров и команды `docker`. [Руководство по началу работы с Docker][docker-get-started] содержит базовые сведения о контейнерах.
 
-Для работы с этим руководством требуется локальная среда разработки Docker. Docker предоставляет пакеты, которые позволяют настроить Docker в системе [Mac][docker-for-mac], [Windows][docker-for-windows] или [Linux][docker-for-linux].
+Для работы с этим руководством требуется локальная среда разработки Docker для выполнения контейнеров Linux. Docker предоставляет пакеты, которые позволяют настроить Docker в системе [Mac][docker-for-mac], [Windows][docker-for-windows] или [Linux][docker-for-linux].
 
 Azure Cloud Shell не включает в себя компоненты Docker, необходимые для выполнения каждого шага этих руководств. Таким образом мы рекомендуем полную среду разработки Docker.
 

@@ -1,21 +1,21 @@
 ---
-title: Получение списка поддерживаемых языков с помощью API перевода текстов и языка Ruby | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, результаты поиска по словарю и примеры с помощью API перевода текстов и Ruby в Cognitive Services.
+title: Краткое руководство. Получение списка поддерживаемых языков с помощью Перевода текстов и Ruby
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, результаты поиска по словарю и примеры с помощью API перевода текстов и Ruby.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/22/2018
 ms.author: nolachar
-ms.openlocfilehash: 1080d79f6dddfd57816989b7d1c4f95348493ad6
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: f000d2c4c1519f26b4d82a36803b86f016716c5e
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "43771049"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46121844"
 ---
 # <a name="quickstart-get-supported-languages-with-ruby"></a>Краткое руководство по получению списка поддерживаемых языков с помощью Ruby
 
@@ -23,7 +23,7 @@ ms.locfileid: "43771049"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого кода потребуется [Ruby 2.4](https://www.ruby-lang.org/en/downloads/) или более поздней версии.
+Для выполнения этого кода потребуется [Ruby версии 2.4](https://www.ruby-lang.org/en/downloads/) или более поздней версии.
 
 Чтобы использовать API перевода текстов, вам также потребуется ключ подписки. Сведения об этом см. в статье [Регистрация для использования API перевода текстов](translator-text-how-to-signup.md).
 

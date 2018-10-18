@@ -15,18 +15,20 @@ ms.workload: identity
 ms.date: 07/16/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: a7060f9204690e5e7b84693042cecb164c36b45b
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: d52ec316f9f5540d4d0d0fe0bc4e4bf778e1daf7
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39366343"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44345452"
 ---
 # <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>Руководство по интеграции Azure Active Directory с приложениями
-## <a name="overview"></a>Обзор
-В этой статье описан план интеграции приложений с Azure Active Directory (AD). Каждый из приведенных ниже разделов содержит краткое содержание более подробной статьи. Таким образом, вы сможете определить, какие части этого руководства по началу работы соответствуют вашим потребностям.  Для более подробного изучения каждой темы воспользуйтесь соответствующими ссылками.
 
-## <a name="before-you-begin-take-inventory"></a>Инвентаризация перед началом работы
+В этой статье кратко описан процесс интеграции приложений с Azure Active Directory (AD). Каждый из приведенных ниже разделов содержит краткое содержание более подробной статьи. Таким образом, вы сможете определить, какие части этого руководства по началу работы соответствуют вашим потребностям.
+
+Чтобы скачать подробные планы развертывания, см. раздел [Дополнительная информация](#next-steps).
+
+## <a name="take-inventory"></a>Инвентаризация
 Прежде чем перейти к интеграции приложений с Azure AD, нужно узнать, чем вы располагаете и что требуется сделать.  Перечисленные ниже вопросы помогут вам обдумать проект интеграции приложений с Azure AD.
 
 ### <a name="application-inventory"></a>Инвентаризация приложений
@@ -57,12 +59,16 @@ ms.locfileid: "39366343"
 
 Возможно, вы сразу не сможете ответить на все эти вопросы, но это нормально.  Это руководство поможет вам ответить на некоторые из этих вопросов и принять обоснованные решения.
 
-## <a name="prerequisites"></a>Предварительные требования
-* Подписка Azure и каталог Azure Active Directory.  Если у вас еще нет подписки Azure, вы можете получить бесплатную пробную версию Azure на 30 дней. [Просто попробуйте!](https://azure.microsoft.com/trial/get-started-active-directory/)
+### <a name="find-unsanctioned-cloud-applications-with-cloud-discovery"></a>Поиск несанкционированных облачных приложений с помощью Cloud Discovery
 
-## <a name="application-integration-with-azure-ad"></a>Интеграция приложений с Azure AD
-### <a name="finding-unsanctioned-cloud-applications-with-cloud-discovery"></a>Поиск несанкционированных облачных приложений с помощью Cloud Discovery
 Как было сказано выше, могут обнаружиться приложения, которые до сих пор были вне поля зрения вашей организации.  В процессе инвентаризации можно найти несанкционированные облачные приложения. Сведения см. в статье [Настройка Cloud Discovery](/cloud-app-security/set-up-cloud-discovery).
+
+## <a name="integrating-applications-with-azure-ad"></a>Интеграция приложений с Azure AD
+В следующих статьях рассматриваются разные способы интеграции приложений с Azure AD и приводятся некоторые рекомендации.
+
+* [Администрирование каталога Azure AD.](../fundamentals/active-directory-administer.md)
+* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](what-is-single-sign-on.md)
+* [Список учебников по интеграции приложений SaaS с Azure Active Directory.](../active-directory-saas-tutorial-list.md)
 
 ### <a name="authentication-types"></a>Типы проверки подлинности
 Каждое приложение может иметь разные требования к проверке подлинности. С помощью Azure AD сертификаты подписи можно использовать с приложениями, использующими SAML 2.0, WS-Federation или протоколы подключения OpenID, а также единый вход с паролем. Дополнительные сведения о типах аутентификации в приложениях для использования с Azure AD см. в статье [Управление сертификатами для федеративного единого входа в Azure Active Directory](manage-certificates-for-federated-single-sign-on.md) и разделе [Единый вход на основе пароля](what-is-single-sign-on.md).
@@ -70,27 +76,26 @@ ms.locfileid: "39366343"
 ### <a name="enabling-sso-with-azure-ad-app-proxy"></a>Включение единого входа с помощью прокси приложений Azure AD
 С помощью прокси приложений Microsoft Azure AD вы можете предоставлять безопасный доступ к приложениям, расположенным в частной сети, из любого места и с любого устройства. После установки в своей среде соединителя прокси-сервера приложения его можно легко настроить с Azure AD.
 
-### <a name="integrating-applications-with-azure-ad"></a>Интеграция приложений с Azure AD
-В следующих статьях рассматриваются разные способы интеграции приложений с Azure AD и приводятся некоторые рекомендации.
+### <a name="integrating-custom-applications"></a>Интеграция пользовательских приложений
+Если вы создаете новое приложение и хотите помочь разработчикам в использовании мощных возможностей Azure AD, то см. статью [Руководство для разработчиков](../active-directory-applications-guiding-developers-for-lob-applications.md).
 
-* [Администрирование каталога Azure AD.](../fundamentals/active-directory-administer.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](what-is-single-sign-on.md)
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory.](../saas-apps/tutorial-list.md)
+Если вы хотите добавить пользовательское приложение в коллекцию приложений Azure, то см. запись блога [“Bring your own app” with Azure AD Self-Service SAML configuration](https://cloudblogs.microsoft.com/enterprisemobility/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-now-in-preview/) (Использование собственных приложений с конфигурацией SAML самообслуживания Azure AD).
 
 ## <a name="managing-access-to-applications"></a>Управление доступом к приложениям
 В следующих статьях описываются способы управления доступом к приложениям после интеграции с Azure AD с помощью соединителей Azure AD и Azure AD.
 
 * [Управление доступом к приложениям с помощью Azure AD.](what-is-access-management.md)
-* [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory.](../active-directory-saas-app-provisioning.md)
+* [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory.](user-provisioning.md)
 * [Назначение пользователей для приложения](../active-directory-applications-guiding-developers-assigning-users.md)
 * [Назначение групп для приложения](../active-directory-applications-guiding-developers-assigning-groups.md)
 * [Совместное использование учетных записей.](../active-directory-sharing-accounts.md)
 
-## <a name="integrating-custom-applications"></a>Интеграция пользовательских приложений
-Если вы создаете новое приложение и хотите помочь разработчикам в использовании мощных возможностей Azure AD, то см. статью [Руководство для разработчиков](../active-directory-applications-guiding-developers-for-lob-applications.md).
+## <a name="next-steps"></a>Дополнительная информация
+Для получения подробных сведений можно скачать планы развертывания Azure Active Directory с сайта [GitHub](https://aka.ms/deploymentplans). Для приложений из коллекции вы можете скачать планы развертывания для единого входа, условного доступа и подготовки пользователей на [портале Azure](https://portal.azure.com). 
 
-Если вы хотите добавить пользовательское приложение в коллекцию приложений Azure, то см. запись блога [“Bring your own app” with Azure AD Self-Service SAML configuration](https://cloudblogs.microsoft.com/enterprisemobility/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-now-in-preview/) (Использование собственных приложений с конфигурацией SAML самообслуживания Azure AD).
+Чтобы скачать план развертывания на портале Azure, сделайте следующее.
 
-## <a name="see-also"></a>См. также
-* [Указатель статьей по управлению приложениями в Azure Active Directory](../active-directory-apps-index.md)
+1. Войдите на [портале Azure](https://portal.azure.com).
+2. Выберите **Корпоративные приложения** | **Выбор приложения** | **План развертывания**.
 
+Оставьте отзыв о планах развертывания, приняв участие в этом [опросе](https://aka.ms/DeploymentPlanFeedback).

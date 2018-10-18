@@ -7,15 +7,15 @@ manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 07/09/2018
+ms.date: 09/11/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 11f3f190c0f55e45c549a8bd1de35f78eb7b752d
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 7f8b2c6dc570f7a610c0d661da0c6df7491647bd
+ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43337435"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47182184"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-github-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью GitHub через Azure Active Directory B2C
 
@@ -28,23 +28,16 @@ ms.locfileid: "43337435"
 ## <a name="create-a-github-oauth-application"></a>Создание приложения OAuth GitHub
 
 1. Войдите на сайт [разработчика GitHub](https://github.com/settings/developers), используя учетные данные GitHub.
-2. Выберите **Приложения OAuth**, а затем щелкните **Зарегистрировать новое приложение**.
+2. Выберите **Приложения OAuth**, а затем — **New OAuth App** (Создать приложение OAuth).
 3. Заполните поля **Application name** (Имя приложения) и **Homepage URL** (URL-адрес домашней страницы).
-4. Введите значение `https://{tenant}.b2clogin.com/te/{tenant}.onmicrosoft.com/oauth2/authresp` в поле **Authorization callback URL** (URL-адрес обратного вызова авторизации). Замените **{tenant}** именем своего клиента Azure AD B2C (например, contosob2c).
+4. Введите значение `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` в поле **Authorization callback URL** (URL-адрес обратного вызова авторизации). Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
 5. Щелкните **Register application** (Зарегистрировать приложение).
 6. Скопируйте значения **Идентификатор клиента** и **Секрет клиента**. Оба этих значения потребуются при добавлении поставщика удостоверений для вашего клиента.
 
 ## <a name="configure-a-github-account-as-an-identity-provider"></a>Настройка учетной записи GitHub в качестве поставщика удостоверений
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
-2. Убедитесь, что используется каталог с вашим клиентом Azure AD B2C, переключившись на него в правом верхнем углу окна портала Azure. Выберите сведения о подписке, а затем выберите **Переключение каталога**. 
-
-    ![Переключение на клиент Azure AD B2C](./media/active-directory-b2c-setup-github-app/switch-directories.png)
-
-    Выберите каталог, содержащий ваш клиент.
-
-    ![Выбор каталога](./media/active-directory-b2c-setup-github-app/select-directory.png)
-
+2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
 4. Щелкните **Поставщики удостоверений** и выберите **Добавить**.
 5. Укажите **имя**. Например, введите значение *GitHub*.

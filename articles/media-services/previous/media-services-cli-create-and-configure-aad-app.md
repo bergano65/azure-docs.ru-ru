@@ -1,6 +1,6 @@
 ---
-title: Создание приложения Azure AD и его настройка для доступа к API служб мультимедиа Azure с помощью Azure CLI 2.0 | Документация Майкрософт
-description: В этом разделе описывается, как создать и настроить приложение Azure AD для доступа к API служб мультимедиа Azure с помощью Azure CLI 2.0.
+title: Создание приложения Azure AD и его настройка для доступа к API Служб мультимедиа Azure с помощью Azure CLI | Документация Майкрософт
+description: В этой статье описывается, как создать и настроить приложение Azure AD для доступа к API Служб мультимедиа Azure с помощью Azure CLI.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/17/2017
 ms.author: juliako
-ms.openlocfilehash: 7685be97213f0b298499d474c0a6a772ca608fb2
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: fcd0ea10bd39f9e7252e114e8d6401a4fe0ecadb
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33782733"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47096554"
 ---
-# <a name="use-cli-20-to-create-an-aad-app-and-configure-it-to-access-azure-media-services-api"></a>Создание и настройка приложения Azure AD для доступа к API служб мультимедиа Azure с помощью Azure CLI 2.0
+# <a name="use-azure-cli-to-create-an-aad-app-and-configure-it-to-access-azure-media-services-api"></a>Создание и настройка приложения Azure AD для доступа к API Служб мультимедиа Azure с помощью Azure CLI
 
-В этом разделе показано, как с помощью Azure CLI 2.0 создать приложение Azure Active Directory (Azure AD) и участник-службу для доступа к ресурсам служб мультимедиа Azure. 
+В этой статье показано, как с помощью Azure CLI создать приложение Azure Active Directory (Azure AD) и субъект-службу для доступа к ресурсам Служб мультимедиа Azure. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure. Дополнительные сведения см. на странице с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/). 
 - Учетная запись служб мультимедиа. Дополнительные сведения см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
@@ -38,7 +38,7 @@ ms.locfileid: "33782733"
 
 Дополнительные сведения см. в [обзоре Azure Cloud Shell](../../cloud-shell/overview.md).
 
-## <a name="create-an-azure-ad-app-and-configure-access-to-the-media-account-with-cli-20"></a>Создание приложения Azure AD и настройка доступа к учетной записи служб мультимедиа с помощью Azure CLI 2.0
+## <a name="create-an-azure-ad-app-and-configure-access-to-the-media-account-with-azure-cli"></a>Создание приложения Azure AD и настройка доступа к учетной записи Служб мультимедиа с помощью Azure CLI
  
 ```azurecli
 az login
@@ -60,7 +60,7 @@ az role assignment create --assignee a3e068fa-f739-44e5-ba4d-ad57866e25a1 --role
 * **группа ресурсов**;
 * **ресурс** (например, учетная запись служб мультимедиа).
 
-Дополнительные сведения см. в статье [Создание субъекта-службы Azure с помощью Azure CLI 2.0](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli).
+Дополнительные сведения см. в статье [Создание субъекта-службы Azure с помощью Azure CLI](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli).
 
 Ознакомьтесь также с разделом [Управление доступом на основе ролей с помощью интерфейса командной строки Azure](../../role-based-access-control/role-assignments-cli.md). 
 

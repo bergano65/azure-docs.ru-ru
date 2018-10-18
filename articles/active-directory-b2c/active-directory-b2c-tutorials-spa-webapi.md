@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.component: B2C
-ms.openlocfilehash: 54ddafbf0e4fe02bfc1445aad23ac3e20b42acb0
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: efe975fa4f89a262faef82df3cc79820d393b60e
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43339392"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45605765"
 ---
 # <a name="tutorial-grant-access-to-an-aspnet-core-web-api-from-a-single-page-app-using-azure-active-directory-b2c"></a>Руководство. Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения с помощью Azure Active Directory B2C
 
@@ -42,13 +42,13 @@ ms.locfileid: "43339392"
 
 Ресурсы веб-API необходимо зарегистрировать в клиенте, чтобы они могли принимать [запросы защищенных ресурсов](../active-directory/develop/developer-glossary.md#resource-server) от [клиентских приложений](../active-directory/develop/developer-glossary.md#client-application), которые представляют [токен доступа](../active-directory/develop/developer-glossary.md#access-token) из Azure Active Directory, и отвечать на них. Регистрация устанавливает [приложение и объект субъекта-службы](../active-directory/develop/developer-glossary.md#application-object) в клиенте. 
 
-Войдите на [портал Azure](https://portal.azure.com/) как глобальный администратор клиента Azure AD B2C.
+Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
 
 [!INCLUDE [active-directory-b2c-switch-b2c-tenant](../../includes/active-directory-b2c-switch-b2c-tenant.md)]
 
-1. Выберите **Azure AD B2C** из списка служб на портале Azure.
+1. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее. Нужно использовать клиент, созданный в рамках предыдущего руководства.
 
-2. В разделе параметров B2C щелкните **Приложения**, а затем — **Добавить**.
+2. Щелкните **Приложения**, а затем выберите **Добавить**.
 
     Чтобы зарегистрировать пример веб-API в клиенте, используйте следующие параметры.
     
@@ -59,7 +59,7 @@ ms.locfileid: "43339392"
     | **Имя** | Hello Core API | Введите **имя**, которое описывает веб-API для разработчиков. |
     | **Включить веб-приложение или веб-интерфейс API** | Yes | Выберите **Да** для веб-API. |
     | **Разрешить неявный поток** | Yes | Выберите **Да**, так как API использует [вход в OpenID Connect](active-directory-b2c-reference-oidc.md). |
-    | **URL-адрес ответа** | `http://localhost:44332` | URL-адреса ответа — это конечные точки, куда Azure AD B2C возвращает все токены, запрашиваемые вашим API. В этом руководстве пример веб-API выполняется локально (localhost) и ожидает передачи данных через порт 5000. |
+    | **URL-адрес ответа** | `http://localhost:5000` | URL-адреса ответа — это конечные точки, куда Azure AD B2C возвращает все токены, запрашиваемые вашим API. В этом руководстве пример веб-API выполняется локально (localhost) и ожидает передачи данных с порта 5000 (после настройки позже в этом руководстве). |
     | **URI кода приложения** | HelloCoreAPI | URI уникально идентифицирует API в клиенте. Это позволяет регистрировать несколько API-интерфейсов в каждом клиенте. [Области](../active-directory/develop/developer-glossary.md#scopes) управляют доступом к защищенному ресурсу API и определяются для каждого URI идентификатора приложения. |
     | **Собственный клиент** | Нет  | Так как это веб-API, а не собственный клиент, выберите "Нет". |
     
@@ -111,7 +111,7 @@ ms.locfileid: "43339392"
 
 5. Последовательно выберите **ОК**.
 
-Приложение **My sample single page app** зарегистрировано для вызова защищенного **Hello Core API**. Пользователь [выполняет аутентификацию](../active-directory/develop/developer-glossary.md#authentication) с помощью Azure AD B2C для использования классического приложения WPF. Классическое приложение получает [предоставление авторизации](../active-directory/develop/developer-glossary.md#authorization-grant) из Azure AD B2C для доступа к защищенному веб-API.
+Приложение **My sample single page app** зарегистрировано для вызова защищенного **Hello Core API**. Пользователь [выполняет аутентификацию](../active-directory/develop/developer-glossary.md#authentication) в Azure AD B2C для использования одностраничного приложения. Одностраничное приложение получает [предоставление авторизации](../active-directory/develop/developer-glossary.md#authorization-grant) из Azure AD B2C для доступа к защищенному веб-API.
 
 ## <a name="update-code"></a>Обновление кода
 
@@ -158,7 +158,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webap
         builder.WithOrigins("http://localhost:6420").AllowAnyHeader().AllowAnyMethod());
     ```
 
-3. Откройте файл **launchSettings.json** в разделе **Свойства**, найдите параметр *applicationURL* и запишите его значение. Оно будет использоваться в следующем разделе.
+3. Откройте файл **launchSettings.json** в разделе **Свойства**, найдите параметр **iisSettings** *applicationURL* и задайте номер порта, зарегистрированный для URL-адреса ответа API `http://localhost:5000`.
 
 ### <a name="configure-the-single-page-app"></a>Настройка одностраничного приложения
 
@@ -174,7 +174,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webap
         clientID: '<Application ID for your SPA obtained from portal app registration>',
         authority: "https://<your-tenant-name>.b2clogin.com/tfp/<your-tenant-name>.onmicrosoft.com/B2C_1_SiUpIn",
         b2cScopes: ["https://<Your tenant name>.onmicrosoft.com/HelloCoreAPI/demo.read"],
-        webApi: 'http://localhost:64791/api/values',
+        webApi: 'http://localhost:5000/api/values',
     };
     ```
 

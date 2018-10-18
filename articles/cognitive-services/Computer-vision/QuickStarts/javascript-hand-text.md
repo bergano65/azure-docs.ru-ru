@@ -1,43 +1,48 @@
 ---
-title: Краткое руководство по использованию API компьютерного зрения для JavaScript | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения, используя API компьютерного зрения с JavaScript в Cognitive Services.
+title: Краткое руководство по извлечению рукописного текста (REST, JavaScript). Компьютерное зрение
+titleSuffix: Azure Cognitive Services
+description: Из этого краткого руководства вы узнаете, как, используя API компьютерного зрения, извлекать рукописный текст из изображения с помощью JavaScript.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: c6b52bfdf1c42499772da1e5f72897baa65a4786
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 82c51c95bf8a538ce50dd190cce737b0295abc6e
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43771927"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45634682"
 ---
-# <a name="quickstart-extract-handwritten-text---rest-javascript"></a>Краткое руководство по извлечению рукописного текста (REST, JavaScript)
+# <a name="quickstart-extract-handwritten-text-using-the-rest-api-and-javascript-in-computer-vision"></a>Краткое руководство по извлечению рукописного текста с помощью REST API и JavaScript в Компьютерном зрении
 
-Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения, используя API компьютерного зрения.
+Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения с помощью REST API компьютерного зрения. С помощью методов [Recognize Text](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) и [Get Recognize Text Operation Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201) можно определить рукописный текст на изображении, а потом извлечь распознанные знаки в поток знаков, пригодный для машинной обработки.
+
+> [!IMPORTANT]
+> В отличие от метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) метод [Recognize Text](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) выполняется асинхронно. Этот метод не возвращает данные в тексте успешного ответа. Вместо этого метод Recognize Text возвращает URI в значении поля заголовка ответа `Operation-Content`. Затем можно вызвать этот URI, который представляет метод [Get Recognize Text Operation Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201), чтобы проверить состояние и вернуть результаты вызова метода Recognize Text.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
-## <a name="recognize-text-request"></a>Запрос на распознавание текста
+## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
-С помощью методов [Recognize Text](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) и [Get Recognize Text Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201) можно определить рукописный текст на изображении и извлечь распознанные символы в поток символов, пригодный для машинной обработки.
+Чтобы создать и запустить пример, сделайте следующее.
 
-Чтобы выполнить наш пример, сделайте следующее:
-
-1. Скопируйте следующий код и сохраните его в файл, например `handwriting.html`.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. При необходимости замените `uriBase` расположением, в котором вы получили ключи подписки.
-1. Перетащите файл в браузер.
-1. Нажмите кнопку `Read image`.
-
-В этом примере используется jQuery версии 1.9.0. Пример на JavaScript без использования jQuery см. в статье об [интеллектуальном создании эскиза](javascript-thumb.md).
+1. Скопируйте приведенный ниже код в текстовый редактор.
+1. При необходимости внесите следующие изменения в код:
+    1. Замените значение `subscriptionKey` своим ключом подписки.
+    1. Замените значение `uriBase` URL-адресом конечной точки для метода [Recognize Text](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) из региона Azure, где вы получили ключи подписки, если это необходимо.
+    1. при необходимости замените значение атрибута `value` для элемента управления `inputImage` URL-адресом другого изображения, из которого вы хотите извлечь рукописный текст.
+1. Сохраните код как файл с расширением `.html`. Например, `get-handwriting.html`.
+1. Откройте окно браузера.
+1. В браузере перетащите файл в окно браузера.
+1. При отображении веб-страницы в браузере нажмите кнопку **Read image** (Распознать изображение).
 
 ```html
 <!DOCTYPE html>
@@ -57,19 +62,18 @@ ms.locfileid: "43771927"
         // Replace <Subscription Key> with your valid subscription key.
         var subscriptionKey = "<Subscription Key>";
 
-        // You must use the same region in your REST call as you used to get your
-        // subscription keys. For example, if you got your subscription keys from
-        // westus, replace "westcentralus" in the URI below with "westus".
+        // You must use the same Azure region in your REST API method as you used to
+        // get your subscription keys. For example, if you got your subscription keys
+        // from the West US region, replace "westcentralus" in the URL
+        // below with "westus".
         //
-        // Free trial subscription keys are generated in the westcentralus region.
+        // Free trial subscription keys are generated in the West Central US region.
         // If you use a free trial subscription key, you shouldn't need to change
         // this region.
         var uriBase =
             "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/recognizeText";
 
         // Request parameter.
-        // Note: The request parameter changed for APIv2.
-        // For APIv1, it is "handwriting": "true".
         var params = {
             "mode": "Handwritten",
         };
@@ -186,11 +190,9 @@ Image to read:
 </html>
 ```
 
-## <a name="recognize-text-response"></a>Результат распознавания текста
+## <a name="examine-the-response"></a>Изучение ответа
 
-Успешный ответ будет возвращен в формате JSON. Результаты распознавания рукописного текста будут содержать текст, ограничивающий прямоугольник для областей, строки и слова.
-
-Выходные данные программы должны быть похожи на приведенный ниже код JSON:
+Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера веб-страницы и в окне браузера отобразится успешный ответ, аналогичный следующему:
 
 ```json
 {
@@ -468,9 +470,13 @@ Image to read:
 }
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Удалите файл, если он больше не нужен.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с приложением JavaScript, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с приложением JavaScript, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
 > [Руководство по использованию API компьютерного зрения для JavaScript](../Tutorials/javascript-tutorial.md)

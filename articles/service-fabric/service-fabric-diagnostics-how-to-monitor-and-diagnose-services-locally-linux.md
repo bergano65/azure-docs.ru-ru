@@ -1,6 +1,6 @@
 ---
-title: Отладка микрослужб Azure в Linux | Документация Майкрософт
-description: Узнайте, как осуществлять мониторинг и диагностику состояния служб с использованием платформы Microsoft Azure Service Fabric на локальном компьютере для разработки.
+title: Отладка приложений Azure Service Fabric в Linux | Документация Майкрософт
+description: Сведения о мониторинге и диагностике служб Service Fabric на локальном компьютере разработчика под управлением Linux.
 services: service-fabric
 documentationcenter: .net
 author: mani-ramaswamy
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: 563f9d73d5a8d56e834c36d03aed75812ec123ba
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 5aeb87538968304d3eaf73873d4c4c762c07329c
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34212716"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44051380"
 ---
 # <a name="monitor-and-diagnose-services-in-a-local-machine-development-setup"></a>Мониторинг и диагностика состояния служб в локальной среде разработки
 

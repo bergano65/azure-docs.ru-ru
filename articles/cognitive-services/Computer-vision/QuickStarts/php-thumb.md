@@ -1,44 +1,56 @@
 ---
-title: Краткое руководство по API компьютерного зрения для PHP. Создание эскиза | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как создать эскиз изображения, используя API компьютерного зрения с PHP в Cognitive Services.
+title: Краткое руководство по созданию эскиза с помощью API компьютерного зрения для REST, PHP
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как создать эскиз изображения с помощью API компьютерного зрения в PHP.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: 7170e469d042c4406a555fddaa25bff53236f365
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 5cc432a2f6a471ec1d5dfd4acae8733df7065e4f
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43772263"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45631664"
 ---
-# <a name="quickstart-generate-a-thumbnail---rest-php"></a>Краткое руководство по созданию эскиза (REST, PHP)
+# <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-php-in-computer-vision"></a>Краткое руководство по созданию эскиза с помощью REST API и PHP в API компьютерного зрения
 
-В этом кратком руководстве описано, как создать эскиз изображения с помощью API компьютерного зрения.
+Из этого краткого руководства вы узнаете, как создать эскиз изображения с помощью REST API компьютерного зрения. Метод [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) позволяет создать эскиз изображения. Вы можете указать нужную высоту и ширину. При этом пропорции могут отличаться от пропорций исходного изображения. API компьютерного зрения использует интеллектуальную обрезку для идентификации интересующей области и создания координат обрезки для этой области.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- Необходимо установить [PHP](https://secure.php.net/downloads.php).
+- Необходимо установить [Pear](https://pear.php.net).
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Как получить ключи подписки).
 
-## <a name="get-thumbnail-request"></a>Запрос Get Thumbnail
+## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
-Метод [Get Thumbnail](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) позволяет создать эскиз изображения. Вы можете указать нужную высоту и ширину. При этом пропорции могут отличаться от пропорций исходного изображения. API компьютерного зрения использует интеллектуальную обрезку для идентификации интересующей области и создания координат обрезки для этой области.
+Чтобы создать и запустить пример, сделайте следующее.
 
-Чтобы выполнить наш пример, сделайте следующее:
+1. Установите пакет [`HTTP_Request2`](http://pear.php.net/package/HTTP_Request2) для PHP5.
+   1. Откройте окно командной строки с правами администратора.
+   1. Выполните следующую команду:
 
-1. Скопируйте приведенный ниже код в редактор.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. Вместо `uriBase` укажите расположение, в котором вы получили ключи подписки, если нужно.
-1. При необходимости укажите в параметре `imageUrl` изображение для анализа.
-1. Сохраните файл с расширением `.php`.
-1. Откройте файл в окне браузера с поддержкой PHP.
+      ```console
+      pear install HTTP_Request2
+      ```
 
-В этом примере используется пакет [HTTP_Request2](http://pear.php.net/package/HTTP_Request2) для PHP5.
+   1. После успешной установки пакета закройте окно командной строки.
+
+1. Скопируйте приведенный ниже код в текстовый редактор.
+1. При необходимости внесите в код следующие изменения.
+    1. Замените значение `subscriptionKey` своим ключом подписки.
+    1. Замените значение `uriBase` URL-адресом конечной точки для метода [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) из региона Azure, где вы получили ключи подписки, если это необходимо.
+    1. При необходимости замените значение `imageUrl` URL-адресом другого изображения, для которого вы хотите создать эскиз.
+1. Сохраните код как файл с расширением `.php`. Например, `get-thumbnail.php`.
+1. Откройте окно браузера с поддержкой PHP.
+1. Перетащите файл в окно браузера.
 
 ```php
 <html>
@@ -101,13 +113,26 @@ catch (HttpException $ex)
 </html>
 ```
 
-## <a name="get-thumbnail-response"></a>Ответ Get Thumbnail
+## <a name="examine-the-response"></a>Изучите ответ.
 
-В случае успешного выполнения ответ будет содержать двоичный файл эскиза изображения. Если запрос завершается сбоем, ответ будет содержать код ошибки и сообщение с описанием проблемы.
+Успешный ответ возвращается в виде двоичных данных, которые представляют данные изображения для эскиза. Если запрос завершается сбоем, ответ отображается в окне браузера. Ответ на невыполненный запрос содержит код ошибки и сообщение с описанием проблемы.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если файл больше не нужен, удалите его, а затем удалите пакет `HTTP_Request2` на PHP5. Чтобы удалить пакет, выполните следующие действия.
+
+1. Откройте окно командной строки с правами администратора.
+2. Выполните следующую команду:
+
+   ```console
+   pear uninstall HTTP_Request2
+   ```
+
+3. После успешного удаления пакета закройте окно командной строки.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с API-интерфейсами компьютерного зрения, которые позволяют анализировать изображения, обнаруживать знаменитостей и достопримечательности, создавать эскизы, извлекать печатный и рукописный текст. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с API компьютерного зрения, который позволяет анализировать изображения, обнаруживать знаменитостей и достопримечательности, создавать эскизы, извлекать печатный и рукописный текст. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
-> [Сведения об API-интерфейсах компьютерного зрения](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44)
+> [Обзор API компьютерного зрения](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44)

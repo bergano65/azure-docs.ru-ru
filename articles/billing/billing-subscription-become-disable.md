@@ -15,13 +15,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/11/2018
-ms.author: genli
-ms.openlocfilehash: d76d02ba326cf93582c03937b3ab54d806acaff1
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.author: cwatson
+ms.openlocfilehash: 3fc7e316289201f5a800b56a7dc63f559c1f90a2
+ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34067611"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47422666"
 ---
 # <a name="why-is-my-azure-subscription-disabled-and-how-do-i-reactivate-it"></a>Почему подписка Azure отключена и как активировать ее повторно?
 
@@ -38,7 +38,7 @@ ms.locfileid: "34067611"
 > [!NOTE] 
 > Если у вас есть бесплатная пробная подписка, после отключения предельной суммы расходов оплата за эту подписку в конце срока ее действия будет выставлена по мере использования. После создания подписки оставшиеся деньги на счете хранятся в течение полных 30 дней. Кроме того, вам предоставляется доступ к бесплатным службам в течение 12 месяцев.
 
-Сведения об отслеживании действий по выставлению счетов для Azure и управлении этими действиями см. в статьях [Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure](billing-getting-started.md) и [Настройка оповещений о выставлении счетов или предоставлении кредитов для подписок Microsoft Azure](billing-set-up-alerts.md).
+Сведения об отслеживании действий по выставлению счетов для Azure и управлении этими действиями см. в статье [Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure](billing-getting-started.md).
 
 
 ## <a name="your-bill-is-past-due"></a>Счет просрочен

@@ -1,47 +1,57 @@
 ---
-title: Краткое руководство по API компьютерного зрения для PHP. Модель предметной области| Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как использовать модель предметной области, используя API компьютерного зрения с PHP в Cognitive Services.
+title: Краткое руководство. Использование модели предметной области (REST, PHP) в Компьютерном зрении
+titleSuffix: Azure Cognitive Services
+description: Из этого краткого руководства вы узнаете, как использовать модель предметной области для распознавания достопримечательностей с помощью API компьютерного зрения в PHP.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: 335065b45781dd2712f5416fb03a2f8726182472
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 40a4fa90442a5771f6b221a25ddca46d3ebc4f5c
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43772258"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45629497"
 ---
-# <a name="quickstart-use-a-domain-model---rest-php"></a>Краткое руководство. Использование модели предметной области (REST, PHP)
+# <a name="quickstart-use-a-domain-model-using-the-rest-api-and-php-in-computer-vision"></a>Краткое руководство по использованию моделей предметной области с помощью REST API и PHP в Компьютерном зрении
 
-Из этого краткого руководства вы узнаете, как использовать модель предметной области для поиска ориентиров или знаменитостей с помощью API компьютерного зрения.
+Из этого краткого руководства вы узнаете, как использовать модель предметной области для поиска достопримечательностей или, при необходимости, знаменитостей на изображении в удаленном расположении с REST API компьютерного зрения. Вы можете применить модель предметной области для распознавания содержимого на изображении с помощью метода [Recognize Domain Specific Content](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e200).
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- Необходимо установить [PHP](https://secure.php.net/downloads.php).
+- Необходимо установить [Pear](https://pear.php.net).
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Как получить ключи подписки).
 
-## <a name="recognize-landmark-request"></a>Запрос на распознание ориентиров
+## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
-С помощью [метода Recognize Domain Specific Content](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e200) (распознавание содержимого по определенной предметной области) можно найти на изображении определенный набор объектов. Сейчас поддерживаются две модели предметной области: _знаменитости_ и _достопримечательности_.
+Чтобы создать и запустить пример, сделайте следующее.
 
-Чтобы выполнить наш пример, сделайте следующее:
+1. Установите пакет [`HTTP_Request2`](http://pear.php.net/package/HTTP_Request2) для PHP5.
+   1. Откройте окно командной строки с правами администратора.
+   1. Выполните следующую команду:
 
-1. Скопируйте приведенный ниже код в редактор.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. Вместо `uriBase` укажите расположение, в котором вы получили ключи подписки, если нужно.
-1. При необходимости укажите в параметре `imageUrl` изображение для анализа.
-1. При желании задайте для `domain` значение `celebrities`, чтобы использовать модель знаменитостей.
-1. Сохраните файл с расширением `.php`.
-1. Откройте файл в окне браузера с поддержкой PHP.
+      ```console
+      pear install HTTP_Request2
+      ```
 
-Следующий пример распознает ориентиры на изображении.
+   1. После успешной установки пакета закройте окно командной строки.
 
-В этом примере используется пакет [HTTP_Request2](http://pear.php.net/package/HTTP_Request2) для PHP5.
+1. Скопируйте приведенный ниже код в текстовый редактор.
+1. При необходимости внесите в код следующие изменения.
+    1. Замените значение `subscriptionKey` своим ключом подписки.
+    1. Замените значение `uriBase` URL-адресом конечной точки для метода [Recognize Domain Specific Content](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e200) из региона Azure, где вы получили ключи подписки, если это необходимо.
+    1. При необходимости замените значение `imageUrl` URL-адресом другого изображения, анализ которого следует выполнить.
+    1. При необходимости замените значение `domain` параметра запроса на значение `celebrites`, если вы хотите использовать модель предметной области `celebrities` вместо модели `landmarks`.
+1. Сохраните код как файл с расширением `.php`. Например, `use-domain-model.php`.
+1. Откройте окно браузера с поддержкой PHP.
+1. Перетащите файл в окно браузера.
 
 ```php
 <html>
@@ -105,9 +115,9 @@ catch (HttpException $ex)
 </html>
 ```
 
-## <a name="recognize-landmark-response"></a>Ответ метода распознания ориентиров
+## <a name="examine-the-response"></a>Изучите ответ
 
-В случае успешного выполнения возвращается ответ в формате JSON, например:
+Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера веб-сайта и в окне браузера отобразится успешный ответ, аналогичный следующему.
 
 ```json
 {
@@ -128,9 +138,22 @@ catch (HttpException $ex)
 }
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если файл больше не нужен, удалите его, а затем удалите пакет `HTTP_Request2` на PHP5. Чтобы удалить пакет, выполните следующие действия.
+
+1. Откройте окно командной строки с правами администратора.
+2. Выполните следующую команду:
+
+   ```console
+   pear uninstall HTTP_Request2
+   ```
+
+3. После успешного удаления пакета закройте окно командной строки.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с API-интерфейсами компьютерного зрения, которые позволяют анализировать изображения, обнаруживать знаменитостей и достопримечательности, создавать эскизы, извлекать печатный и рукописный текст. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с API компьютерного зрения, который позволяет анализировать изображения, обнаруживать знаменитостей и достопримечательности, создавать эскизы, извлекать печатный и рукописный текст. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
-> [Сведения об API-интерфейсах компьютерного зрения](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44)
+> [Обзор API компьютерного зрения](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44)

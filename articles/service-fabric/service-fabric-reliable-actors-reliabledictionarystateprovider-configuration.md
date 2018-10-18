@@ -1,5 +1,5 @@
 ---
-title: Изменение параметров ReliableDictionaryActorStateProvider в микрослужбах Azure | Документация Майкрософт
+title: Изменение параметров ReliableDictionaryActorStateProvider в субъектах Azure Service Fabric | Документация Майкрософт
 description: Узнайте о настройке субъектов Azure Service Fabric с отслеживанием состояния и типом ReliableDictionaryActorStateProvider.
 services: Service-Fabric
 documentationcenter: .net
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/2/2017
 ms.author: sumukhs
-ms.openlocfilehash: 1c7e31f9da2b2f9fe7a3a7c64cd6927224cb9fa1
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: 13cf9c148e36201bd8ee81d4072d8b8cd8660bd1
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37017901"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44053154"
 ---
 # <a name="configuring-reliable-actors--reliabledictionaryactorstateprovider"></a>Настройка надежных субъектов: ReliableDictionaryActorStateProvider
 Конфигурацию ReliableDictionaryActorStateProvider по умолчанию можно изменить. Для этого нужно обновить файл settings.xml, созданный в папке Config корневого каталога пакета Visual Studio для данного субъекта.

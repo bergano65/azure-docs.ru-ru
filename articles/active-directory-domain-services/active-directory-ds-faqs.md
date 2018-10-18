@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/30/2018
 ms.author: maheshu
-ms.openlocfilehash: 02b722feece5458a31e89e4041d51104b94e52c6
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: 8747e597883d96756e676061bde04b920b13cadd
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39505871"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44023211"
 ---
 # <a name="azure-active-directory-domain-services-frequently-asked-questions-faqs"></a>Доменные службы Azure Active Directory: часто задаваемые вопросы
 На этой странице вы найдете ответы на часто задаваемые вопросы о доменных службах Azure Active Directory. Следите за обновлениями.
@@ -96,6 +96,9 @@ ms.locfileid: "39505871"
 
 ### <a name="can-i-pause-an-azure-ad-domain-services-managed-domain"></a>Можно ли приостановить управляемый домен доменных служб Azure AD? 
 Нет. Когда вы включите управляемый домен доменных служб Azure AD, служба будет доступной в пределах выбранной виртуальной сети, пока не отключите или удалите управляемый домен. Приостановить работу службы нельзя. Счета выставляются на почасовой основе, пока вы не удалите управляемый домен.
+
+### <a name="can-i-failover-azure-ad-domain-services-to-another-region-for-a-dr-event"></a>Можно ли выполнить отработку отказа доменных служб Azure AD с переходом в другой регион при аварийном восстановлении?
+Нет.  Сейчас для доменных служб Azure AD не предусмотрена геоизбыточная модель развертывания. Развертывание можно выполнить в одной виртуальной сети в регионе Azure. Чтобы использовать несколько регионов Azure, необходимо запустить контроллеры домена Active Directory на виртуальных машинах IaaS Azure.  Руководство по архитектуре можно найти [здесь](https://docs.microsoft.com/azure/architecture/reference-architectures/identity/adds-extend-domain).
 
 ### <a name="can-i-get-azure-ad-domain-services-as-part-of-enterprise-mobility-suite-ems-do-i-need-azure-ad-premium-to-use-azure-ad-domain-services"></a>Можно ли получить доменные службы Azure AD в составе Enterprise Mobility Suite (EMS)? Требуется ли Azure AD Premium для использования доменных служб Azure AD?
 Нет. Доменные службы Azure — это служба Azure с оплатой по мере использования, не входящая в предложение EMS. Доменные службы Azure AD можно использовать со всеми выпусками Azure AD ("Бесплатный", "Базовый" и "Премиум"). Счет выставляется каждый час в зависимости от использования.

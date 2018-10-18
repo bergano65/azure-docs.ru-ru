@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/14/2018
 ms.author: jeedes
-ms.openlocfilehash: 55a271e49977feb6d8e5c188f1724b66db4cb4f5
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: a7d77df4d6be1572d2076684cfa4702cb32b5ed6
+ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "42142600"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44391918"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-multiple-amazon-web-services-aws-accounts"></a>Руководство по интеграции Azure Active Directory с несколькими учетными записями Amazon Web Services (AWS)
 
@@ -317,6 +317,9 @@ ms.locfileid: "42142600"
 27. После создания групп выберите группу и присвойте ее приложению.
 
     ![Добавление атрибута для настройки единого входа](./media/aws-multi-accounts-tutorial/graph-explorer-new5.png)
+
+> [!Note]
+> Вложенные группы не поддерживаются при назначении групп.
 
 28. Чтобы присвоить роль группе, выберите роль и нажмите кнопку **Присвоить** в нижней части страницы.
 

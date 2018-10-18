@@ -8,12 +8,12 @@ services: time-series-insights
 ms.topic: tutorial
 ms.date: 06/05/2018
 ms.author: anshan
-ms.openlocfilehash: 445584ef8f9a2534d7f183a4452df19ee87d0025
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 85d6ac0084343dc821a4eaf91c8053c9885ccfeb
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39627000"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46366052"
 ---
 # <a name="tutorial-explore-the-azure-time-series-insights-javascript-client-library"></a>Руководство. Изучение клиентской библиотеки JavaScript для службы "Аналитика временных рядов Azure"
 
@@ -27,6 +27,12 @@ ms.locfileid: "39627000"
 > * пример приложения TSI;
 > * клиентскую библиотеку TSI JavaScript;
 > * как пример приложения использует библиотеку для визуализации данных TSI.
+
+## <a name="video"></a>Видео: 
+
+### <a name="in-this-video-we-introduce-the-open-source-time-series-insights-javascript-sdkbr"></a>В этом видео мы представляем пакет SDK JavaScript Аналитики временных рядов.</br>
+
+> [!VIDEO https://www.youtube.com/embed/X8sSm7Pl9aA]
 
 ## <a name="prerequisites"></a>Предварительные требования
 

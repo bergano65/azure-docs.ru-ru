@@ -6,18 +6,18 @@ author: bryanla
 manager: mbaldwin
 services: key-vault
 ms.author: bryanla
-ms.date: 11/15/2017
-ms.topic: article
+ms.date: 09/05/2018
+ms.topic: conceptual
 ms.prod: ''
 ms.service: key-vault
 ms.technology: ''
 ms.assetid: 4be434c4-0c99-4800-b775-c9713c973ee9
-ms.openlocfilehash: b158414e7a2954981534fe6fb26c987eb2f4ce67
-ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
+ms.openlocfilehash: d9fc845316d6e785d8215ac738b893ebc080d911
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42144540"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44300976"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET
 
@@ -29,12 +29,12 @@ ms.locfileid: "42144540"
 
 Библиотека `Microsoft.Azure.Services.AppAuthentication` автоматически управляет проверкой подлинности, которая, в свою очередь, позволяет сконцентрироваться на решении, а не на учетных данных.
 
-Библиотека `Microsoft.Azure.Services.AppAuthentication` поддерживает локальную разработку с Microsoft Visual Studio, Azure CLI и встроенную проверку подлинности Azure AD. При развертывании в службах приложений Azure или в виртуальных машинах Azure библиотека автоматически использует [управляемое удостоверение службы](/azure/active-directory/msi-overview) (MSI). Изменение кода или конфигурации не требуется. Библиотека также поддерживает непосредственное использование [учетных данных клиента](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authenticate-service-principal) Azure AD, если MSI недоступно или когда контекст безопасности разработчика не удается определить во время локальной разработки.
+Библиотека `Microsoft.Azure.Services.AppAuthentication` поддерживает локальную разработку с Microsoft Visual Studio, Azure CLI и встроенную проверку подлинности Azure AD. При развертывании в Службах приложений Azure или на виртуальных машинах Azure библиотека автоматически использует [управляемые удостоверения служб Azure](/azure/active-directory/msi-overview). Изменение кода или конфигурации не требуется. Библиотека также поддерживает непосредственное использование [учетных данных клиента](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authenticate-service-principal) Azure AD, если управляемое удостоверение недоступно или когда контекст безопасности разработчика не удается определить во время локальной разработки.
 
 <a name="asal"></a>
 ## <a name="using-the-library"></a>Использование библиотеки
 
-Для приложений .NET для работы с управляемым удостоверением службы проще всего использовать пакет `Microsoft.Azure.Services.AppAuthentication`. Узнайте, как начать работу.
+Для приложений .NET для работы с управляемым удостоверением проще всего использовать пакет `Microsoft.Azure.Services.AppAuthentication`. Узнайте, как начать работу.
 
 1. Добавьте ссылку на пакет NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) в приложение.
 
@@ -58,7 +58,7 @@ ms.locfileid: "42144540"
 
 Класс `AzureServiceTokenProvider` кэширует токен в памяти и извлекает его из Azure AD прямо перед истечением срока действия. Следовательно, вам больше не нужно проверять срок действия перед вызовом метода `GetAccessTokenAsync`. Просто вызовите метод, когда необходимо использовать токен. 
 
-Для метода `GetAccessTokenAsync` требуется наличие идентификатора ресурса. Дополнительные сведения см. в разделе [Какие службы Azure поддерживают управляемое удостоверение службы?](https://docs.microsoft.com/azure/active-directory/msi-overview#which-azure-services-support-managed-service-identity)
+Для метода `GetAccessTokenAsync` требуется наличие идентификатора ресурса. Дополнительные сведения см. в статье об [управляемых удостоверениях для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/msi-overview#which-azure-services-support-managed-service-identity).
 
 
 <a name="samples"></a>
@@ -66,11 +66,11 @@ ms.locfileid: "42144540"
 
 В следующих примерах показана библиотека `Microsoft.Azure.Services.AppAuthentication` в действии:
 
-1. [Использование управляемого удостоверения службы для извлечения секрета из Azure Key Vault во время выполнения](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
+1. [Извлечение секрета из Azure Key Vault во время выполнения с помощью управляемого удостоверения](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet)
 
-2. [Развертывание программным способом шаблона Azure Resource Manager из виртуальной машины Azure с помощью MSI](https://github.com/Azure-Samples/windowsvm-msi-arm-dotnet).
+2. [Развертывание программным способом шаблона Azure Resource Manager из виртуальной машины Azure с помощью управляемого удостоверения](https://github.com/Azure-Samples/windowsvm-msi-arm-dotnet)
 
-3. [Использование примера .NET Core и MSI для вызова служб Azure из виртуальной машины Azure под управлением Linux](https://github.com/Azure-Samples/linuxvm-msi-keyvault-arm-dotnet/).
+3. [Вызов служб Azure из виртуальной машины Azure под управлением Linux с использованием примера .NET Core и управляемого удостоверения](https://github.com/Azure-Samples/linuxvm-msi-keyvault-arm-dotnet/)
 
 
 <a name="local"></a>
@@ -86,7 +86,7 @@ ms.locfileid: "42144540"
 
 ### <a name="authenticating-to-azure-services"></a>Проверка подлинности в службах Azure
 
-Локальные компьютеры не поддерживают управляемое удостоверение службы.  В результате библиотека `Microsoft.Azure.Services.AppAuthentication` использует учетные данные разработчика для запуска в среде локальной разработки. При развертывании решения в Azure библиотека использует MSI для переключения на поток предоставления учетных данных клиента OAuth 2.0.  Это значит, что вы можете без проблем тестировать один и тот же код локально и удаленно.
+Локальные компьютеры не поддерживают управляемые удостоверения для ресурсов Azure.  В результате библиотека `Microsoft.Azure.Services.AppAuthentication` использует учетные данные разработчика для запуска в среде локальной разработки. При развертывании решения в Azure библиотека использует управляемое удостоверение для переключения на поток предоставления учетных данных клиента OAuth 2.0.  Это значит, что вы можете без проблем тестировать один и тот же код локально и удаленно.
 
 Для локальной разработки `AzureServiceTokenProvider` получает токены с помощью **Visual Studio**, **интерфейса командной строки Azure** (CLI) или **встроенной проверки подлинности Azure AD**. Каждый вариант применяется последовательно, и библиотека использует первый вариант, который завершается успешно. Если ни один вариант не работает, выводится исключение `AzureServiceTokenProviderException` с подробными сведениями.
 
@@ -160,12 +160,12 @@ az account list
 
 После входа в Azure `AzureServiceTokenProvider` использует субъект-службу, чтобы извлечь токен для локальной разработки.
 
-Это относится только к локальной разработке. При развертывании решения в Azure библиотека переключается на выполнение проверки подлинности MSI.
+Это относится только к локальной разработке. При развертывании решения в Azure библиотека переключается на выполнение проверки подлинности с использованием управляемого удостоверения.
 
 <a name="msi"></a>
-## <a name="running-the-application-using-a-managed-service-identity"></a>Запуск приложения с помощью управляемого удостоверения службы 
+## <a name="running-the-application-using-managed-identity"></a>Запуск приложения с помощью управляемого удостоверения 
 
-При выполнении кода в службе приложений Azure или на виртуальной машине Azure с включенным MSI библиотека автоматически использует управляемое удостоверение службы. Изменения кода не требуются. 
+При выполнении кода в Службе приложений Azure или на виртуальной машине Azure с включенным управляемым удостоверением библиотека автоматически использует это удостоверение. Изменения кода не требуются. 
 
 
 <a name="sp"></a>
@@ -177,7 +177,7 @@ az account list
  
 2. Ваш код выполняется в среде локальной разработки и выполняется проверка подлинности в пользовательской службе, поэтому вы не можете использовать удостоверение разработчика. 
  
-3. Ваш код выполняется в вычислительном ресурсе Azure, который еще не поддерживает управляемое удостоверение службы, например в пакетной службе Azure.
+3. Ваш код выполняется в вычислительном ресурсе Azure, который еще не поддерживает управляемые удостоверения для ресурсов Azure, например в пакетной службе Azure.
 
 Чтобы войти в Azure AD с помощью сертификата, сделайте следующее:
 
@@ -228,7 +228,7 @@ az account list
 | `RunAs=Developer; DeveloperTool=AzureCli` | Локальная разработка | AzureServiceTokenProvider использует Azure CLI для получения токена. |
 | `RunAs=Developer; DeveloperTool=VisualStudio` | Локальная разработка | AzureServiceTokenProvider использует Visual Studio для получения токена. |
 | `RunAs=CurrentUser;` | Локальная разработка | AzureServiceTokenProvider использует встроенную проверку подлинности Azure AD для получения токена. |
-| `RunAs=App;` | Удостоверение управляемой службы | AzureServiceTokenProvider использует управляемое удостоверение службы для получения токена. |
+| `RunAs=App;` | Управляемые удостоверения для ресурсов Azure | AzureServiceTokenProvider использует управляемое удостоверение для получения токена. |
 | `RunAs=App;AppId={AppId};TenantId={TenantId};CertificateThumbprint`<br>`   ={Thumbprint};CertificateStoreLocation={LocalMachine or CurrentUser}`  | Субъект-служба | `AzureServiceTokenProvider` использует сертификат для получения токена из Azure AD. |
 | `RunAs=App;AppId={AppId};TenantId={TenantId};`<br>`   CertificateSubjectName={Subject};CertificateStoreLocation=`<br>`   {LocalMachine or CurrentUser}` | Субъект-служба | `AzureServiceTokenProvider` использует сертификат для получения токена из Azure AD.|
 | `RunAs=App;AppId={AppId};TenantId={TenantId};AppKey={ClientSecret}` | Субъект-служба |`AzureServiceTokenProvider` использует секрет для получения токена из Azure AD. |
@@ -236,7 +236,7 @@ az account list
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Узнайте больше об [управляемых удостоверениях службы](/azure/app-service/app-service-managed-service-identity).
+- Дополнительные сведения см. в статье [Использование управляемых удостоверений в Службе приложений и Функциях Azure](/azure/app-service/app-service-managed-service-identity).
 
 - Узнайте о различных способах [выполнения проверки подлинности и авторизации приложений](/azure/app-service/app-service-authentication-overview).
 

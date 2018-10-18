@@ -1,21 +1,21 @@
 ---
-title: Получение длины предложения с помощью API перевода текстов и Python | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: В этом кратком руководстве объясняется, как определить длину предложений в тексте, используя API перевода текстов и Python в Cognitive Services.
+title: Краткое руководство. Получение длины предложений с помощью Перевода текстов и Python
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве объясняется, как определять длину предложений в тексте с помощью API перевода текстов и Python.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/21/2018
 ms.author: nolachar
-ms.openlocfilehash: 7b822dfa2db1b9d106d6d569fb26d9f6e8109c83
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 2b014f5b52249cf316889e5637e76ee7b7d23e91
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "43770989"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46125703"
 ---
 # <a name="quickstart-get-sentence-lengths-with-python"></a>Краткое руководство. Определение длины предложения с помощью Python
 

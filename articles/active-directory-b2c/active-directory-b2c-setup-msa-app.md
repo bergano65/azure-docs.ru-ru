@@ -7,15 +7,15 @@ manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 07/05/2018
+ms.date: 09/21/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 338c2a197cb50091c3b272e0ce590341ffda1d7f
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: e9c42429a8feb60ade27afe998cb9a267f1603dd
+ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43341089"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47180910"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-microsoft-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Microsoft через Azure Active Directory B2C
 
@@ -25,23 +25,16 @@ ms.locfileid: "43341089"
 
 1. Войдите на [портал регистрации приложений Майкрософт](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/documentation/articles&deeplink=/appList) и войдите учетные данные от учетной записи Майкрософт.
 2. В правом верхнем углу выберите **Добавить приложение**.
-3. Укажите **имя** приложения и щелкните **Создать**.
-4. На странице регистрации скопируйте значение **Идентификатор приложения**. Оно потребуется для настройки учетной записи Майкрософт в качестве поставщика удостоверений в вашем клиенте.
+3. Введите значение **Name** (Имя) для приложения. Например, *MSAapp1*.
+4. Выберите **Создать новый пароль** и скопируйте пароль. Он понадобится вам при настройке поставщика удостоверений. Скопируйте также **идентификатор приложения**. 
 5. Щелкните **Add platform** (Добавить платформу) и выберите вариант **Веб**.
-6. Введите значение `https://{tenant}.b2clogin.com/te/{tenant}.onmicrosoft.com/oauth2/authresp` в поле **Redirect URLs** (URI перенаправления). Замените **{tenant}** именем своего клиента (например, contosob2c).
-7. Выберите **Generate New Password** (Создать новый пароль) в разделе **Application Secrets** (Секреты приложения) Скопируйте новый пароль с экрана. Он необходим для настройки учетной записи Майкрософт в качестве поставщика удостоверений в вашем клиенте. Данный пароль — важный элемент обеспечения безопасности.
+4. Введите значение `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` в поле **Redirect URLs** (URI перенаправления). Замените `your-tenant-name` именем вашего клиента.
+5. Щелкните **Сохранить**.
 
 ## <a name="configure-a-microsoft-account-as-an-identity-provider"></a>Настройка учетной записи Microsoft в качестве поставщика удостоверений
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
-2. Убедитесь, что используется каталог с вашим клиентом Azure AD B2C, переключившись на него в правом верхнем углу окна портала Azure. Выберите сведения о подписке, а затем выберите **Переключение каталога**. 
-
-    ![Переключение на клиент Azure AD B2C](./media/active-directory-b2c-setup-msa-app/switch-directories.png)
-
-    Выберите каталог, содержащий ваш клиент.
-
-    ![Выбор каталога](./media/active-directory-b2c-setup-msa-app/select-directory.png)
-
+2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
 4. Щелкните **Поставщики удостоверений** и выберите **Добавить**.
 5. Укажите **Имя**. Например, введите *MSA*.

@@ -1,25 +1,25 @@
 ---
-title: 'Краткое руководство: запуск рабочего процесса в службе Microsoft Genomics | Документация Майкрософт'
+title: Краткое руководство. Запуск рабочего процесса в Microsoft Genomics
 description: В этом кратком руководстве объясняется, как загрузить входные данные в хранилище BLOB-объектов и запустить рабочий процесс в службе Microsoft Genomics.
-services: microsoft-genomics
+services: genomics
 author: grhuynh
-manager: jhubbard
-editor: jasonwhowell
+manager: cgronlun
 ms.author: grhuynh
-ms.service: microsoft-genomics
-ms.workload: genomics
+ms.service: genomics
 ms.topic: quickstart
 ms.date: 12/07/2017
-ms.openlocfilehash: 4387e1c935ada99e1f9c335fb7e1b67905c01188
-ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
+ms.openlocfilehash: e1d10b578d33ba8d96f43666b82e94ef5503fe77
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42023595"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45731093"
 ---
 # <a name="quickstart-run-a-workflow-through-the-microsoft-genomics-service"></a>Краткое руководство: запуск рабочего процесса в службе Microsoft Genomics
 
-Microsoft Genomics — это масштабируемая надежная служба вторичного анализа, которая может быстро обрабатывать геном, начиная с простых операций чтения до выполнения согласованного считывания и вызовов вариантов. Начните работу, выполнив несколько шагов: 
+В этом кратком руководстве объясняется, как загрузить входные данные в хранилище BLOB-объектов Azure и запустить рабочий процесс в службе Microsoft Genomics. Microsoft Genomics — это масштабируемая надежная служба вторичного анализа, которая может быстро обрабатывать геном, начиная с простых операций чтения до выполнения согласованного считывания и вызовов вариантов. 
+
+Начните работу, выполнив несколько шагов: 
 1.  Настройка. Создайте учетную запись Microsoft Genomics на портале Azure и установите клиент Python Microsoft Genomics в локальной среде. 
 2.  Передача входных данных. Создайте учетную запись хранения Microsoft Azure на портале Azure и отправьте входные файлы. Входные файлы должны быть парными файлами для чтения (FASTQ или BAM).
 3.  Запуск. Запустите рабочие процессы в службе Microsoft Genomics с помощью интерфейса командной строки Microsoft Genomics. 

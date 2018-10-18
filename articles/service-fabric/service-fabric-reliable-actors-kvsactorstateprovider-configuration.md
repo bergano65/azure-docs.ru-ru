@@ -1,5 +1,5 @@
 ---
-title: Изменение параметров KVSActorStateProvider в микрослужбах Azure | Документация Майкрософт
+title: Изменение параметров KVSActorStateProvider в субъектах Azure Service Fabric | Документация Майкрософт
 description: Сведения о настройке субъектов Azure Service Fabric с отслеживанием состояния и типом KVSActorStateProvider.
 services: Service-Fabric
 documentationcenter: .net
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/2/2017
 ms.author: sumukhs
-ms.openlocfilehash: c01bcfecea8d79784b764e715f077c76e7d4be45
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: 81c09d61a5213319fa01ef5cc7070ffe385bbab1
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37017653"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44049516"
 ---
 # <a name="configuring-reliable-actors--kvsactorstateprovider"></a>Настройка надежных субъектов — KVSActorStateProvider
 Используемую по умолчанию конфигурацию KVSActorStateProvider можно изменить. Для этого нужно обновить файл settings.xml, созданный в папке Config заданного субъекта в корневом каталоге пакета Microsoft Visual Studio.

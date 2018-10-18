@@ -1,51 +1,46 @@
 ---
-title: Краткое руководство по API компьютерного зрения для Ruby. Анализ изображения | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как анализировать изображения с помощью API компьютерного зрения и Ruby в Cognitive Services.
+title: Краткое руководство. Анализ удаленного изображения c помощью Компьютерного зрения (REST, Ruby)
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве описано, как проанализировать изображение с помощью API компьютерного зрения на Ruby.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: 3ce89bf29cc7f1f436e54d398e458f559b79a425
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: bf17e8213ad2bbdc793f979471d9861578cac8e2
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43771992"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45628868"
 ---
-# <a name="quickstart-analyze-a-remote-image---rest-ruby"></a>Краткое руководство по анализу удаленного изображения (REST, Ruby)
+# <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-ruby-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API и Ruby в Компьютерном зрении
 
-Из этого краткого руководства вы узнаете, как анализировать изображение с помощью API компьютерного зрения, чтобы извлечь визуальные признаки.
+Из этого краткого руководства вы узнаете, как анализировать удаленное изображение с помощью REST API в API компьютерного зрения, чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные функции на основе содержимого изображения.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- Установите [Ruby](https://www.ruby-lang.org/en/downloads/) 2.4.x или более поздней версии.
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Как получить ключи подписки).
 
-## <a name="analyze-image-request"></a>Запрос на анализ изображения
+## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
-С помощью [метода Analyze Image](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные признаки на основе содержимого изображения. Вы можете передать изображение или указать его URL-адрес, а также настроить следующие возвращаемые компоненты:
+Чтобы создать и запустить пример, сделайте следующее.
 
-* подробный список тегов, связанных с содержимым изображения;
-* описание содержимого изображения в виде полного предложения;
-* координаты, пол и возраст любого лица, показанного на изображении;
-* значение ImageType (картинки или линейный рисунок);
-* преобладающий цвет, контрастный цвет, наличие или отсутствие цветности;
-* категорию, определенную в этой [таксономии](../Category-Taxonomy.md);
-* наличие на изображении содержимого для взрослых или содержимого сексуального характера.
-
-Чтобы выполнить наш пример, сделайте следующее:
-
-1. Скопируйте приведенный ниже код в редактор.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. При необходимости замените `uri` расположением, в котором вы получили ключи подписки.
-1. При необходимости измените язык ответа (`'language' => 'en'`).
-1. Если нужно, измените анализируемое изображение (`{\"url\":\"...`).
-1. Сохраните файл с расширением `.rb`.
-1. Откройте командную строку Ruby и запустите файл, например `ruby myfile.rb`.
+1. Скопируйте приведенный ниже код в текстовый редактор.
+1. При необходимости внесите в код следующие изменения.
+    1. Замените `<Subscription Key>` ключом своей подписки.
+    1. Замените значение `https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/analyze` URL-адресом конечной точки для метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) в регионе Azure, где вы получили ключи подписки, если это необходимо.
+    1. При необходимости замените значение параметра запроса `language` на другой язык. 
+    1. При необходимости замените `http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg\` URL-адресом другого изображения, анализ которого следует выполнить.
+1. Сохраните код как файл с расширением `.rb`. Например, `analyze-image.rb`.
+1. Откройте окно командной строки.
+1. В командной строке выполните пример кода с помощью команды `ruby`. Например, `ruby analyze-image.rb`.
 
 ```ruby
 require 'net/http'
@@ -78,9 +73,9 @@ end
 puts response.body
 ```
 
-## <a name="analyze-image-response"></a>Результат анализа изображения
+## <a name="examine-the-response"></a>Изучите ответ
 
-В случае успешного выполнения возвращается ответ в формате JSON, например:
+Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера и в окне командной строки отобразится успешный ответ, аналогичный следующему.
 
 ```json
 {
@@ -183,9 +178,13 @@ puts response.body
 
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Удалите файл, если он больше не нужен.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с API-интерфейсами компьютерного зрения, которые позволяют анализировать изображения, обнаруживать знаменитостей и достопримечательности, создавать эскизы, извлекать печатный и рукописный текст. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с API компьютерного зрения, который позволяет анализировать изображения, обнаруживать знаменитостей и достопримечательности, создавать эскизы, извлекать печатный и рукописный текст. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
-> [Сведения об API-интерфейсах компьютерного зрения](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44)
+> [Обзор API компьютерного зрения](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44)

@@ -3,23 +3,19 @@ title: Обработка ошибок в устойчивых функциях 
 description: Сведения о том, как обрабатывать ошибки в расширении устойчивых функций для Функций Azure.
 services: functions
 author: cgillum
-manager: cfowler
-editor: ''
-tags: ''
+manager: jeconnoc
 keywords: ''
-ms.service: functions
+ms.service: azure-functions
 ms.devlang: multiple
-ms.topic: article
-ms.tgt_pltfrm: multiple
-ms.workload: na
-ms.date: 04/30/2018
+ms.topic: conceptual
+ms.date: 09/05/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 944fab5ccc55bc9a697e870208338bd0e697672d
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 6bf9eb2cd2ebdf5f6d53e00923146bab49a142bf
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33763311"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44377911"
 ---
 # <a name="handling-errors-in-durable-functions-azure-functions"></a>Обработка ошибок в устойчивых функциях (Функции Azure)
 
@@ -72,7 +68,7 @@ public static async Task Run(DurableOrchestrationContext context)
 
 ## <a name="automatic-retry-on-failure"></a>Автоматическое повторение попыток при сбое
 
-При вызове функций действий или функций суборкестрации можно указать автоматическую политику повтора. В следующем примере предпринимается попытка вызова функции до 3 раз с ожиданием в течение 5 секунд между попытками:
+При вызове функций действий или функций суборкестрации можно указать автоматическую политику повтора. В следующем примере предпринимается попытка вызова функции до трех раз с ожиданием в течение 5 секунд между попытками:
 
 ```csharp
 public static async Task Run(DurableOrchestrationContext context)
@@ -96,7 +92,7 @@ API `CallActivityWithRetryAsync` принимает параметр `RetryOptio
 * **Backoff coefficient** (Коэффициент отсрочки): коэффициент, позволяющий определить степень увеличения отсрочки. По умолчанию равен 1.
 * **Max retry interval** (Максимальный интервал повтора): максимальное время ожидания между повторными попытками.
 * **Retry timeout** (Время ожидания повтора): максимальное время, отведенное на выполнение повторных попыток. Поведение по умолчанию — бесконечное повторение.
-* **Custom** (Настраиваемый): можно указать определенный пользователем обратный вызов, который определяет, следует ли повторять попытку вызова функции.
+* **Handle** (Обработка): можно указать определенный пользователем обратный вызов, который определяет, следует ли повторять попытку вызова функции.
 
 ## <a name="function-timeouts"></a>Время ожидания функций
 

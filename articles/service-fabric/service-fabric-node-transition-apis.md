@@ -1,5 +1,5 @@
 ---
-title: Запуск и остановка узлов кластера для проверки микрослужб Azure | Документация Майкрософт
+title: Запуск и остановка узлов кластера для проверки приложений Azure Service Fabric | Документация Майкрософт
 description: Узнайте, как использовать внесение ошибок для тестирования приложения Service Fabric, запуская и останавливая узлы кластера.
 services: service-fabric
 documentationcenter: .net
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 6/12/2017
 ms.author: lemai
-ms.openlocfilehash: 0ed18097fa18101c237b4408d26dd1bc9c5d5648
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 95c3726caeb19d6bbf7153533951bb18cd7d0e57
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34212584"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44055409"
 ---
 # <a name="replacing-the-start-node-and-stop-node-apis-with-the-node-transition-api"></a>Замена API-интерфейсов запуска и остановки узла API-интерфейсом перехода узла
 
@@ -29,7 +29,7 @@ API остановки узла (управляемый: [StopNodeAsync()][stopn
 
 ## <a name="why-are-we-replacing-these"></a>Зачем их заменять?
 
-Как было описано ранее, *остановленный* узел Service Fabric — это узел, к которому намеренно применен API остановки узла.  *Отключенный*  узел — это узел, который не работает по какой-либо другой причине (например, из-за отключения компьютера или виртуальной машины).  При использовании API остановки узла в системе не отображаются сведения, с помощью которых можно различить *остановленные* и *отключенные* узлы.
+Как было описано ранее, *остановленный* узел Service Fabric — это узел, к которому намеренно применен API остановки узла.  *Отключенный*  узел — это узел, который не работает по какой-либо другой причине (например, из-за отключения компьютера или виртуальной машины).  При использовании API остановки узла в системе не отображаются сведения, с помощью которых можно различить *остановленные* и *отключенные* узлы.
 
 Кроме того, некоторые сообщения об ошибках, возвращаемые этими API-интерфейсами, недостаточно содержательны.  Например, при вызове API остановки узла на уже *остановленном* узле возвращается ошибка *InvalidAddress*.  Это поведение можно оптимизировать.
 
@@ -45,9 +45,9 @@ API остановки узла (управляемый: [StopNodeAsync()][stopn
 Если при вызове API перехода узла не возвращается исключение, это означает, что система приняла асинхронную операцию и собирается ее выполнить.  Успешный вызов еще не означает, что операция завершена.  Для получения сведений о текущем состоянии операции вызовите API хода выполнения перехода узла (управляемый: [GetNodeTransitionProgressAsync()][gntp]) с помощью идентификатора GUID, используемого при вызове API перехода узла для этой операции.  API хода выполнения перехода узла возвращает объект NodeTransitionProgress.  Это свойство State объекта указывает текущее состояние операции.  Если свойство имеет значение Running, операция выполняется.  Значение Completed указывает на то, что операция завершена без ошибок.  А значение Faulted — на ошибку, возникшую при выполнении операции.  Свойство Exception в свойстве Result указывает на наличие проблемы.  Дополнительные сведения о свойстве State доступны в статье https://docs.microsoft.com/dotnet/api/system.fabric.testcommandprogressstate. Ознакомьтесь также с примерами кода в разделе "Пример использования" ниже.
 
 
-**Определение остановленного и отключенного узла.** Если узел *остановлен* с помощью API перехода узла, в выходных данных запроса узла (управляемый: [GetNodeListAsync()][nodequery], PowerShell: [Get-ServiceFabricNode][nodequeryps]) свойство *IsStopped* этого узла будет иметь значение true.  Обратите внимание, что оно отличается от значения свойства *NodeStatus*, которое равно *Down*.  Если свойство *NodeStatus* имеет значение *Down*, но свойство *IsStopped* имеет значение false, это значит, что узел не остановлен с помощью API перехода узла, а *отключен* по какой-то другой причине.  Если свойство *IsStopped* имеет значение true, а свойство *NodeStatus* — значение *Down*, это значит, что узел остановлен с помощью API перехода узла.
+**Определение остановленного и отключенного узла.** Если узел *остановлен* с помощью API перехода узла, в выходных данных запроса узла (управляемый: [GetNodeListAsync()][nodequery], PowerShell: [Get-ServiceFabricNode][nodequeryps]) свойство *IsStopped* этого узла будет иметь значение true.  Обратите внимание, что оно отличается от значения свойства *NodeStatus*, которое равно *Down*.  Если свойство *NodeStatus* имеет значение *Down*, но свойство *IsStopped* имеет значение false, это значит, что узел не был остановлен с помощью API перехода узла, а *отключен* по какой-то другой причине.  Если свойство *IsStopped* имеет значение true, а свойство *NodeStatus* — значение *Down*, это значит, что узел остановлен с помощью API перехода узла.
 
-Запуск *остановленного* узла с помощью API перехода узла вернет его к работе в качестве обычного элемента кластера.  В выходных данных API запроса узла для свойства *IsStopped* будет отображаться значение false, а для свойства *NodeStatus* — значение, отличное от Down (например, Up).
+Запуск *остановленного* узла с помощью API перехода узла вернет его к работе в качестве обычного элемента кластера.  В выходных данных API запроса узла для свойства *IsStopped* будет отображаться значение false, а для свойства *NodeStatus* — значение, отличное от Down (например, Up).
 
 
 **Ограниченное время.** При использовании API перехода узла для остановки узла один из обязательных параметров, *stopNodeDurationInSeconds*, отображает время в секундах, в течение которого узел будет оставаться *остановленным*.  Это должно быть значение в разрешенном диапазоне — не менее 600 и не более 14 400.  По истечении этого времени узел автоматически перезапустится и перейдет в рабочее состояние (Up).  Использование этого API показано в примере 1 ниже.
@@ -285,6 +285,6 @@ API остановки узла (управляемый: [StopNodeAsync()][stopn
 [startnode]: https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.faultmanagementclient?redirectedfrom=MSDN#System_Fabric_FabricClient_FaultManagementClient_StartNodeAsync_System_String_System_Numerics_BigInteger_System_String_System_Int32_System_Fabric_CompletionMode_System_Threading_CancellationToken_
 [startnodeps]: https://msdn.microsoft.com/library/mt163520.aspx
 [nodequery]: https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient#System_Fabric_FabricClient_QueryClient_GetNodeListAsync_System_String_
-[nodequeryps]: https://docs.microsoft.com/powershell/servicefabric/vlatest/Get-ServiceFabricNode?redirectedfrom=msdn
+[nodequeryps]: https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricnode
 [snt]: https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.testmanagementclient#System_Fabric_FabricClient_TestManagementClient_StartNodeTransitionAsync_System_Fabric_Description_NodeTransitionDescription_System_TimeSpan_System_Threading_CancellationToken_
 [gntp]: https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.testmanagementclient#System_Fabric_FabricClient_TestManagementClient_GetNodeTransitionProgressAsync_System_Guid_System_TimeSpan_System_Threading_CancellationToken_

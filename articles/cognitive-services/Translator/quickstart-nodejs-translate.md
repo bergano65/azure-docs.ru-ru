@@ -1,21 +1,21 @@
 ---
-title: Перевод текста с помощью API перевода текстов и Node.js | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как перевести текст с одного языка на другой, используя API перевода текстов с Node.js в Cognitive Services.
+title: Краткое руководство. Перевод текста с помощью Перевода текстов и Node.js
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как перевести текст с одного языка на другой, используя API перевода текстов и Node.js.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/21/2018
 ms.author: nolachar
-ms.openlocfilehash: 6d862125dc6c248afa8d8322ec1b008959abb7cd
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: fe81b7fffd1705cb940e3aa52f397cf0f2cf1b14
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "43770845"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46122191"
 ---
 # <a name="quickstart-translate-text-with-nodejs"></a>Краткое руководство по переводу текста с использованием Node.js
 

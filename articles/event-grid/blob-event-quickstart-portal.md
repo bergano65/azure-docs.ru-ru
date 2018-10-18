@@ -8,12 +8,12 @@ ms.author: tomfitz
 ms.date: 08/13/2018
 ms.topic: quickstart
 ms.service: event-grid
-ms.openlocfilehash: a47beb3e4299c62ec4b7959b4834d0440fee06f7
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: 17fba267e85c7b1421e632930c8bea2bfaf6ff5f
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42744591"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45736501"
 ---
 # <a name="create-and-route-blob-storage-events-with-the-azure-portal-and-event-grid"></a>Создание и перенаправление событий хранилища BLOB-объектов с помощью службы "Сетка событий Azure" и портала Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "42744591"
 
    ![Выбор хранилища](./media/blob-event-quickstart-portal/create-storage.png)
 
-1. Чтобы использовать события, создайте [учетную запись хранилища BLOB-объектов](../storage/common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#blob-storage-accounts) или [учетную запись хранения общего назначения версии 2](../storage/common/storage-account-options.md#general-purpose-v2-accounts). Для приложений, требующих только блокировки или добавления больших двоичных объектов, рекомендуется использовать учетные записи хранения больших двоичных объектов. Укажите значения для учетной записи хранилища BLOB-объектов или учетной записи хранения общего назначения версии 2. Присвойте учетной записи уникальное имя. Введя все значения, выберите **Создать**.
+1. Чтобы подписаться на события, создайте учетную запись хранения общего назначения версии 2 или учетную запись хранения BLOB-объектов. Дополнительные сведения см. в разделе [Создание учетной записи хранения](../storage/common/storage-quickstart-create-account.md).
 
    ![Начальные шаги](./media/blob-event-quickstart-portal/provide-blob-values.png)
 

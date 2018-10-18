@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 01/19/2017
 ms.author: seanmck
-ms.openlocfilehash: 42910675bcf512a3d6c76369adc9f41215420a78
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 18aa5ab16a1690fdcead46ebc15d72837f62612d
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38972297"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44302475"
 ---
 # <a name="cloud-foundry-on-azure"></a>Cloud Foundry в Azure
 
@@ -60,9 +60,9 @@ Cloud Foundry придерживается методики [12-факторно
 
 ## <a name="related-resources"></a>Связанные ресурсы
 
-### <a name="visual-studio-team-services-plugin"></a>Подключаемый модуль Visual Studio Team Services
+### <a name="azure-devops-services-plugin"></a>Подключаемый модуль Azure DevOps Services
 
-Cloud Foundry идеально подходит для гибкой разработки программного обеспечения, включая использование непрерывной интеграции (CI) и непрерывной доставки (CD). Если вы используете Visual Studio Team Services (VSTS) для управления проектами и хотите установить конвейер непрерывной интеграции и непрерывной доставки, нацеленный на Cloud Foundry, то можете использовать [расширение для сборки Cloud Foundry для VSTS](https://marketplace.visualstudio.com/items?itemName=ms-vsts.cloud-foundry-build-extension). Этот подключаемый модуль упрощает настройку и автоматизацию развертываний на платформе Cloud Foundry, работающей в Azure или в другой среде.
+Cloud Foundry идеально подходит для гибкой разработки программного обеспечения, включая использование непрерывной интеграции (CI) и непрерывной доставки (CD). Если вы используете Azure DevOps Services для управления проектами и хотите установить конвейер CI/CD, нацеленный на Cloud Foundry, то можете использовать [расширение для сборки Cloud Foundry для Azure DevOps Services](https://marketplace.visualstudio.com/items?itemName=ms-vsts.cloud-foundry-build-extension). Этот подключаемый модуль упрощает настройку и автоматизацию развертываний на платформе Cloud Foundry, работающей в Azure или в другой среде.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

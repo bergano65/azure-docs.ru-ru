@@ -1,22 +1,24 @@
 ---
-title: Создание проекта обнаружения объектов на C# с помощью Пользовательской службы визуального распознавания в Azure Cognitive Services | Документация Майкрософт
-description: Изучите базовое приложение Windows, в котором используется API Пользовательской службы визуального распознавания в службах Microsoft Cognitive Services. Создайте проект, добавьте теги, загрузите изображения, обучите проект и выполните прогнозирование с использованием конечной точки по умолчанию.
+title: Руководство. Создание проекта обнаружения объектов на C# — Пользовательская служба визуального распознавания
+titlesuffix: Azure Cognitive Services
+description: Создайте проект, добавьте теги, загрузите изображения, обучите проект и выполните прогнозирование с использованием конечной точки по умолчанию.
 services: cognitive-services
 author: areddish
-manager: chbuehle
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: custom-vision
-ms.topic: article
+ms.topic: tutorial
 ms.date: 05/07/2018
 ms.author: areddish
-ms.openlocfilehash: e3def864267a590c86a2dd6663561d8488081ad6
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: d04fb86abbc0f174e895c166d97fc5467831206f
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "36301086"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46366919"
 ---
-# <a name="use-custom-vision-api-to-build-an-object-detection-project-in-c35"></a>Применение API Пользовательской службы визуального распознавания для создания проекта обнаружения объектов на C&#35; 
+# <a name="tutorial-use-custom-vision-api-to-build-an-object-detection-project-in-c"></a>Руководство по применению API Пользовательской службы визуального распознавания для создания проекта обнаружения объектов на C#
+
 Сведения о том, как с помощью простого приложения Windows, использующего API компьютерного зрения, создать проект обнаружения объектов. Создав проект, вы можете добавить регионы с тегами, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример с открытым кодом можно применить как шаблон для создания собственного приложения для Windows на базе API Пользовательской службы визуального распознавания.
 
 ## <a name="prerequisites"></a>Предварительные требования

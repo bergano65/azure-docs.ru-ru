@@ -8,14 +8,14 @@ tags: billing
 ms.assetid: 60d848f9-ff26-496e-a5ec-ccf92ad7d125
 ms.service: billing
 ms.topic: article
-ms.date: 08/16/2018
+ms.date: 09/11/2018
 ms.author: byvinyal
-ms.openlocfilehash: 00955d5de314e6efb0e491e33708495fbdd14f3b
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: efaca1b9506ada02c52ad0833139d3b4e441d456
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43782596"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47393619"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет расширен и обновлен, чтобы охватить больше платформ.
@@ -52,10 +52,12 @@ ms.locfileid: "43782596"
 * [База данных Azure для PostgreSQL](#azure-database-for-postgresql)
 * [Сетка событий Azure](#azure-event-grid-limits)
 * [служба "Карты Azure"](#azure-maps-limits);
+* [Azure Monitor](#monitor-limits)
 * [Политика Azure](#azure-policy-limits)
 * [кэш Azure Redis](#azure-redis-cache-limits)
 * [Архивация](#backup-limits)
 * [Пакетная служба](#batch-limits)
+* [Искусственный интеллект пакетной службы](#batch-ai-limits)
 * [Службы BizTalk](#biztalk-services-limits)
 * [CDN](#cdn-limits)
 * [Облачные службы](#cloud-services-limits)
@@ -69,6 +71,7 @@ ms.locfileid: "43782596"
 * [DNS](#dns-limits)
 * [Центры событий](#event-hubs-limits)
 * [Брандмауэр Azure](#azure-firewall-limits)
+* [Front Door](#azure-front-door-service-limits)
 * [Центр Интернета вещей](#iot-hub-limits)
 * [Служба подготовки устройств для Центра Интернета вещей](#iot-hub-device-provisioning-service-limits)
 * [хранилище ключей;](#key-vault-limits)
@@ -77,7 +80,6 @@ ms.locfileid: "43782596"
 * [Службы мультимедиа](#media-services-limits)
 * [Службы мобильного взаимодействия;](#mobile-engagement-limits)
 * [Мобильные службы](#mobile-services-limits)
-* [Мониторинг](#monitor-limits)
 * [Многофакторная идентификация](#multi-factor-authentication)
 * [Сеть](#networking-limits)
 * [Наблюдатель за сетями](#network-watcher-limits)
@@ -87,6 +89,7 @@ ms.locfileid: "43782596"
 * [Планировщик](#scheduler-limits)
 * [Поиск](#search-limits)
 * [Служебная шина](#service-bus-limits)
+* [Служба SignalR](#signalr-service-limits)
 * [Site Recovery](#site-recovery-limits)
 * [База данных SQL](#sql-database-limits)
 * [Хранилище данных SQL](#sql-data-warehouse-limits)
@@ -156,11 +159,16 @@ ms.locfileid: "43782596"
 #### <a name="azure-firewall-limits"></a>Ограничения брандмауэра Azure
 [!INCLUDE [azure-firewall-limits](../includes/firewall-limits.md)]
 
-### <a name="storage-limits"></a>Ограничения хранилища
-Дополнительные сведения об ограничениях учетных записей хранения см. в статье [Целевые показатели по производительности и масштабируемости для хранилища Azure](storage/common/storage-scalability-targets.md).
+#### <a name="azure-front-door-service-limits"></a>Ограничения службы Azure Front Door Service
+[!INCLUDE [azure-front-door-service-limits](../includes/front-door-limits.md)]
 
+### <a name="storage-limits"></a>Ограничения хранилища
 <!--like # storage accts -->
 [!INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
+
+Дополнительные сведения об ограничениях учетных записей хранения см. в статье [Целевые показатели по производительности и масштабируемости для хранилища Azure](storage/common/storage-scalability-targets.md).
+
+#### <a name="storage-resource-provider-limits"></a>Ограничения поставщика ресурсов хранилища 
 
 [!INCLUDE [azure-storage-limits-azure-resource-manager](../includes/azure-storage-limits-azure-resource-manager.md)]
 
@@ -211,6 +219,9 @@ ms.locfileid: "43782596"
 ### <a name="batch-limits"></a>Ограничения пакета
 [!INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)]
 
+### <a name="batch-ai-limits"></a>Ограничения службы Batch AI
+[!INCLUDE [azure-batch-ai-limits](../includes/azure-batch-ai-limits.md)]
+
 ### <a name="biztalk-services-limits"></a>Ограничения служб BizTalk
 В следующей таблице показаны ограничения для служб BizTalk Azure.
 
@@ -224,9 +235,6 @@ Azure Cosmos DB — это глобальная база данных, проп�
 
 ### <a name="azure-database-for-postgresql"></a>База данных Azure для PostgreSQL
 Сведения об ограничениях базы данных Azure для PostgreSQL см. в статье [Ограничения базы данных Azure для PostgreSQL](postgresql/concepts-limits.md).
-
-### <a name="mobile-engagement-limits"></a>Ограничения Служб мобильного взаимодействия
-[!INCLUDE [azure-mobile-engagement-limits](../includes/azure-mobile-engagement-limits.md)]
 
 ### <a name="search-limits"></a>Ограничения поиска
 Ценовые категории определяют емкость и ограничения службы поиска. Существуют следующие категории:
@@ -307,6 +315,9 @@ Azure Cosmos DB — это глобальная база данных, проп�
 
 ### <a name="backup-limits"></a>Ограничения резервного копирования
 [!INCLUDE [azure-backup-limits](../includes/azure-backup-limits.md)]
+
+### <a name="signalr-service-limits"></a>Ограничения службы SignalR
+[!INCLUDE [signalr-service-limits](../includes/signalr-service-limits.md)]
 
 ### <a name="site-recovery-limits"></a>Ограничения Site Recovery
 [!INCLUDE [site-recovery-limits](../includes/site-recovery-limits.md)]

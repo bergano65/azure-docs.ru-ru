@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/22/2018
 ms.author: sngun
-ms.openlocfilehash: 131ba3dfb8bd8ad8be893e26fcc22c5a0e65f145
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 010556dae1649754df5199fb81c10efcf4c5a226
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39431646"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44050006"
 ---
 # <a name="connect-to-azure-cosmos-db-using-bi-analytics-tools-with-the-odbc-driver"></a>Подключение к Azure Cosmos DB с помощью драйвера ODBC с использованием инструментов бизнес-аналитики
 
@@ -173,7 +173,7 @@ Invalid use of schema or catalog for OLE DB provider "MSDASQL" for linked server
 
 Чтобы создать представление данных, в окне **Редактор схем** в столбце **Определения представлений** щелкните **Добавить** в строке коллекции для выборки. Затем в окне **Определения представлений** сделайте следующее:
 1. Щелкните **Создать**, введите имя представления, например EmployeesfromSeattleView, и нажмите кнопку **ОК**.
-1. В окне **Изменить представление** введите запрос Azure Cosmos DB. Это должен быть SQL-запрос Azure Cosmos DB, например `SELECT c.City, c.EmployeeName, c.Level, c.Age, c.Gender, c.Manager FROM c WHERE c.City = “Seattle”`. Затем нажмите кнопку **ОК**.
+1. В окне **Изменить представление** введите запрос Azure Cosmos DB. Это должен быть SQL-запрос Azure Cosmos DB, например `SELECT c.City, c.EmployeeName, c.Level, c.Age, c.Gender, c.Manager FROM c WHERE c.City = "Seattle"`. Затем нажмите кнопку **ОК**.
 
 Количество создаваемых представлений не ограничено. Завершив определение представлений, можно приступить к выборке данных. 
 

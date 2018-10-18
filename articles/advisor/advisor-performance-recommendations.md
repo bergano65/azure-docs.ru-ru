@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/16/2016
 ms.author: makohli
-ms.openlocfilehash: c2d7cc21b1546c9594a2ef174927777f583a6841
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.openlocfilehash: 9516534216c4a2c0f61e33ea3cbf1bbcb2ab58c7
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42143260"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44301316"
 ---
 # <a name="advisor-performance-recommendations"></a>Рекомендации Azure Advisor по производительности
 
@@ -60,6 +60,10 @@ Azure Advisor объединяет практические рекомендац
 ## <a name="create-or-update-outdated-table-statistics-on-your-sql-data-warehouse-table-to-increase-query-performance"></a>Создание или обновление устаревшей статистики таблиц в таблице хранилища данных SQL для повышения производительности запросов
 
 Помощник определяет таблицы без актуальной [статистики таблиц](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics) и рекомендует создать или обновить эту статистику. Оптимизатор запросов хранилища данных SQL использует актуальную статистику, чтобы оценить кратность или число строк в результате запроса. Это позволяет ему создать план запросов высокого качества для обеспечения максимальной производительности.
+
+## <a name="migrate-your-storage-account-to-azure-resource-manager-to-get-all-of-the-latest-azure-features"></a>Перенос учетной записи хранения в Azure Resource Manager для получения доступа ко всем новым компонентам Azure
+
+Перенос модели развертывания учетной записи хранения в Azure Resource Manager (ARM) позволит получить функции развертывания шаблонов, дополнительные параметры безопасности и возможность обновления до учетной записи GPv2 для использования новых компонентов службы хранилища Azure. Помощник определит все изолированные учетные записи хранения, которые используют классическую модель развертывания, и предложит перенести их в модель развертывания ARM. 
 
 ## <a name="how-to-access-performance-recommendations-in-advisor"></a>Как получить доступ к рекомендации по производительности в Advisor
 

@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/27/2018
+ms.date: 09/05/2018
 ms.author: tomfitz
-ms.openlocfilehash: c41ff548ed4020ab85d15f610503a3b1592910a5
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 2886dbafe6bf20718f4e3cd2976764fc432dbb04
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37059895"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44021758"
 ---
 # <a name="microsoftcommonfileupload-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.FileUpload
 Элемент управления, который позволяет пользователю указать один или несколько файлов для отправки.
@@ -51,6 +51,7 @@ ms.locfileid: "37059895"
 - `constraints.accept` — указывает типы файлов, которые отображаются в файловом диалоговом окне браузера. Сведения о допустимых значениях см. в [спецификации HTML5](http://www.w3.org/TR/html5/forms.html#attr-input-accept). Значение по умолчанию — **null**.
 - Если `options.multiple` имеет значение **true**, пользователь может выбрать несколько файлов в файловом диалоговом окне браузера. Значение по умолчанию — **false**.
 - Этот элемент поддерживает отправку файлов в двух режимах, которые задаются в параметре `options.uploadMode`. Если указан **file**, выходные данные предоставляют содержимое файла в виде большого двоичного объекта. Если указан **url**, файл передается во временное расположение и выходные данные содержат URL-адрес большого двоичного объекта. Временные большие двоичные объекты очищаются через 24 часа. Значение по умолчанию — **file**.
+- Отправленный файл защищен. Выходной URL-адрес включает в себя [маркер SAS](../storage/common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) для доступа к файлу во время развертывания.
 - Значение `options.openMode` определяет режим, в котором открывается файл. Если предполагается, что файл содержит обычный текст, укажите **text**. В противном случае укажите **binary**. Значение по умолчанию — **text**.
 - Если `options.uploadMode` имеет значение **file**, а `options.openMode` имеет значение **binary**, то выходные данные закодированы в формате Base64.
 - `options.encoding` — указывает кодирование, которое используется при чтении файла. Значение по умолчанию — **UTF-8**, которое используется только если для параметра `options.openMode` задано значение **text**.

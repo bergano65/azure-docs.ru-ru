@@ -1,30 +1,31 @@
 ---
-title: Руководство по использованию API компьютерного зрения для JavaScript | Документация Майкрософт
-description: Изучите базовое приложение JavaScript, в котором используется API компьютерного зрения в Microsoft Cognitive Services. Узнайте, как выполнять распознавание текста, создавать эскизы и работать с визуальными компонентами в изображении.
+title: Руководство по использованию API компьютерного зрения для JavaScript
+titlesuffix: Azure Cognitive Services
+description: Изучите базовое приложение JavaScript, в котором используется API компьютерного зрения в Azure Cognitive Services. Узнайте, как выполнять распознавание текста, создавать эскизы и работать с визуальными компонентами в изображении.
 services: cognitive-services
 author: KellyDF
-manager: corncar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
-ms.topic: article
+ms.topic: tutorial
 ms.date: 09/19/2017
 ms.author: kefre
-ms.openlocfilehash: 89bdc0524e07c1cb6a1473e0a52791fe20271e06
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 6dc6eec729fc1be3f0a859834597bf2d5785d9bc
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380365"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45984930"
 ---
-# <a name="computer-vision-api-javascript-tutorial"></a>Руководство по использованию API компьютерного зрения для JavaScript
+# <a name="tutorial-computer-vision-api-javascript"></a>Руководство по использованию API компьютерного зрения для JavaScript
 
-В этом руководстве демонстрируются функции REST API компьютерного зрения в Microsoft Cognitive Services.
+В этом руководстве демонстрируются функции REST API компьютерного зрения в Azure Cognitive Services.
 
 Исследуйте приложение JavaScript, которое использует REST API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных компонентов изображения, включая лица. В этом примере можно отправить URL-адрес изображения для анализа или обработки. Вы можете использовать этот пример с открытым кодом как шаблон для создания приложения на языке JavaScript, которое использует REST API компьютерного зрения.
 
 Приложение форм JavaScript уже написано, но в нем нет функциональных возможностей API компьютерного зрения. В этом руководстве вы добавите код для API компьютерного зрения, чтобы дополнить функциональные возможности приложения.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="platform-requirements"></a>Требования платформы
 
@@ -32,7 +33,7 @@ ms.locfileid: "35380365"
 
 ### <a name="subscribe-to-computer-vision-api-and-get-a-subscription-key"></a>Получение подписки API компьютерного зрения и ключа подписки 
 
-Перед созданием примера необходимо получить подписку API компьютерного зрения, который является частью Microsoft Cognitive Services. Сведения о подписках и управлении ключами см. в разделе [Подписки](https://azure.microsoft.com/try/cognitive-services/). В этом руководстве можно использовать как первичный, так и вторичный ключ. 
+Перед созданием примера необходимо получить подписку API компьютерного зрения, который является частью Azure Cognitive Services. Сведения о подписках и управлении ключами см. в разделе [Подписки](https://azure.microsoft.com/try/cognitive-services/). В этом руководстве можно использовать как первичный, так и вторичный ключ. 
 
 ## <a name="download-the-tutorial-project"></a>Скачивание учебного проекта
 

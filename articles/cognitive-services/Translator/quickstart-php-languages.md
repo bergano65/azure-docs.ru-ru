@@ -1,21 +1,21 @@
 ---
-title: Получение списка поддерживаемых языков с помощью API перевода текстов и PHP | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, результаты поиска по словарю и примеры с помощью API перевода текстов и PHP в Cognitive Services.
+title: Краткое руководство. Получение списка поддерживаемых языков с помощью Перевода текстов и PHP
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, результаты поиска по словарю и примеры с помощью API перевода текстов и PHP.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/22/2018
 ms.author: nolachar
-ms.openlocfilehash: 95b48f15ffe8cea14f9ffb7612193b819e03f5f3
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 2924a61a31037fcf52986d250007b906ffb40b98
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "43771077"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46128713"
 ---
 # <a name="quickstart-get-supported-languages-with-php"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью PHP
 

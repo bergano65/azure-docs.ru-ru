@@ -10,12 +10,12 @@ ms.component: manage
 ms.date: 07/27/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 35ae3d1a8a6de2d348f90e2f55b732421b879917
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: 57bce631a570f549d46a9b0beefcb5adce4decfc
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43307643"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44380120"
 ---
 # <a name="sql-data-warehouse-recommendations"></a>Рекомендации в Хранилище данных SQL
 
@@ -37,6 +37,6 @@ ms.locfileid: "43307643"
 
 Неоптимальная статистика может существенно ухудшать производительность запросов из-за того, что оптимизатор запросов Хранилища данных SQL создает неоптимальные планы запросов. В следующем документе приводятся рекомендации по созданию и обновлению статистики:
 
-- [Создание и обновление статистики для таблицы](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistic)
+- [Создание и обновление статистики для таблицы](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics)
 
-Для этих двух рекомендаций Помощник непрерывно выполняет этот [скрипт T-SQL](https://github.com/Microsoft/sql-data-warehouse-samples/blob/master/samples/sqlops/MonitoringScripts/ImpactedTables), чтобы обнаруживать таблицы, затронутые неравномерным распределением данных, и определять рекомендации по статистике.
+Чтобы просмотреть список таблиц, которых касаются эти рекомендации, выполните [скрипт T-SQL](https://github.com/Microsoft/sql-data-warehouse-samples/blob/master/samples/sqlops/MonitoringScripts/ImpactedTables). Для создания этих рекомендаций Помощник непрерывно выполняет один и тот же скрипт T-SQL.

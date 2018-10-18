@@ -1,24 +1,25 @@
 ---
-title: Средства Azure HDInsight — использование Visual Studio Code для Hive, LLAP или PySpark
+title: Средства Azure HDInsight — использование Visual Studio Code для Hive, LLAP или PySpark | Документация Майкрософт
 description: Сведения о создании и отправке запросов и скриптов с помощью средств Azure HDInsight для Visual Studio Code.
-keywords: VS Code, Azure HDInsight Tools, Hive, Python, PySpark, Spark, HDInsight, Hadoop, LLAP, Interactive Hive, Interactive Query
-services: hdinsight
+Keywords: VS Code,Azure HDInsight Tools,Hive,Python,PySpark,Spark,HDInsight,Hadoop,LLAP,Interactive Hive,Interactive Query
+services: HDInsight
+documentationcenter: ''
 author: jejiang
 ms.author: jejiang
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/27/2017
-ms.openlocfilehash: 58f930b7bb1dee8f8f95b6627ebf70fe095126c0
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 5cf3a18dc01ba5670e73aa93cb6c9aab2d5de660
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43697855"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44378625"
 ---
 # <a name="use-azure-hdinsight-tools-for-visual-studio-code"></a>Использование средств Azure HDInsight для Visual Studio Code
 
-Сведения об использовании средств Azure HDInsight для Visual Studio Code (VS Code) для создания и отправки пакетных заданий Hive, интерактивных запросов Hive и скриптов pySpark. Средства Azure HDInsight можно устанавливать на всех платформах, поддерживаемых VS Code. К ним относятся Windows, Linux и macOS. Здесь описаны предварительные требования для различных платформ.
+Сведения об использовании средств Azure HDInsight для Visual Studio Code (VS Code) с целью создания и отправки пакетных заданий Hive, интерактивных запросов Hive и скриптов PySpark. Средства Azure HDInsight можно устанавливать на всех платформах, поддерживаемых VS Code. К ним относятся Windows, Linux и macOS. Здесь описаны предварительные требования для различных платформ.
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -33,7 +34,7 @@ ms.locfileid: "43697855"
    
 После установки всех необходимых компонентов можно переходить к установке средств Azure HDInsight для VS Code. 
 
-**Установка средств Azure HDInsight**
+### <a name="to-install-azure-hdinsight-tools"></a>Установка средств Azure HDInsight
 
 1. Откройте Visual Studio Code.
 
@@ -41,9 +42,9 @@ ms.locfileid: "43697855"
 
 3. Рядом с элементом **Azure HDInsight tools** (Средства Azure HDInsight) нажмите кнопку **Установить**. Через несколько секунд кнопка **Установить** изменится на **Перезагрузить**.
 
-4. Выберите **Перезагрузить** для активации расширения **Средства Azure HDInsight**.
+4. Выберите **Перезагрузить**, чтобы активировать расширение **Средства Azure HDInsight**.
 
-5. Выберите **Перезагрузить окно** для подтверждения. **Средства Azure HDInsight** появятся в области **Extensions** (Расширения).
+5. Выберите **Перезагрузить окно** для подтверждения. В области **Расширения** появится элемент **Azure HDInsight Tools** (Средства Azure HDInsight).
 
    ![Установка расширения Python средств HDInsight для Visual Studio Code](./media/hdinsight-for-vscode/install-hdInsight-plugin.png)
 
@@ -51,7 +52,7 @@ ms.locfileid: "43697855"
 
 Перед подключением к Azure создайте рабочую область в VS Code.
 
-**Переход к рабочей области**
+### <a name="to-open-a-workspace"></a>Открытие рабочей области
 
 1. В меню **Файл** выберите **Открыть папку**. Затем назначьте имеющуюся папку в качестве рабочей или создайте папку. Папка появится в левой области.
 
@@ -59,15 +60,13 @@ ms.locfileid: "43697855"
 
    ![Создание файла](./media/hdinsight-for-vscode/new-file.png)
 
-3. Назовите новый файл, используя расширение HQL (запросы Hive) или PY (сценарий Spark). Обратите внимание, что файл конфигурации **XXXX_hdi_settings.json** автоматически добавляется в рабочую папку.
-
-4. Откройте файл **XXXX_hdi_settings.json** с помощью **проводника** или щелкните правой кнопкой мыши редактор скриптов и выберите пункт **Задать конфигурацию**. Вы можете настроить запись для входа, кластер по умолчанию и параметры отправки заданий, как показано в примере в файле. Также можно оставить остальные параметры пустыми.
+3. Назовите новый файл, используя расширение HQL (запросы Hive) или PY (сценарий Spark). 
 
 ## <a name="connect-to-hdinsight-cluster"></a>Подключение к кластеру HDInsight
 
 Прежде чем отправлять скрипты для кластеров HDInsight из VS Code, необходимо подключиться к учетной записи Azure либо связать кластер (с помощью имени пользователя и пароля Ambari или учетной записи присоединения к домену).
 
-**Подключение к Azure**
+### <a name="to-connect-to-azure"></a>Подключение к Azure
 
 1. Создайте рабочую папку и файл сценария, если у вас их еще нет.
 
@@ -76,8 +75,13 @@ ms.locfileid: "43697855"
     ![Вход в средства HDInsight для Visual Studio Code](./media/hdinsight-for-vscode/hdinsight-for-vscode-extension-login.png)
 
 3. Чтобы войти, следуйте инструкциям на панели **вывода**.
+    + В глобальном окружении вход в HDInsight вызовет процедуру входа в Azure.
 
-    **Azure:** ![данные для входа в средства HDInsight для Visual Studio Code](./media/hdinsight-for-vscode/hdinsight-for-vscode-extension-Azurelogin-info.png)
+        ![Инструкции по входу в Azure](./media/hdinsight-for-vscode/hdi-azure-hdinsight-azure-signin.png)
+
+    + Для других окружений следуйте инструкциям по входу.
+
+        ![Инструкции по входу для других сред](./media/hdinsight-for-vscode/hdi-azure-hdinsight-hdinsight-signin.png)
 
     После подключения имя учетной записи Azure будет отображаться в строке состояния в левом нижнем углу окна VS Code. 
 
@@ -94,12 +98,12 @@ ms.locfileid: "43697855"
     - Отправка пакетных сценариев Hive
     - Отправка интерактивных запросов PySpark
     - отправка пакетных сценариев PySpark;
-    - настройка конфигурации.
+    - задание конфигурации.
 
-<a id="linkcluster"></a>**Связывание кластера**
+<h3 id="linkcluster">Связывание кластера</h3>
 
 Вы можете связать обычный кластер с помощью управляемого имени пользователя Ambari, а кластер безопасности — с помощью имени пользователя домена (например, user1@contoso.com).
-1. Откройте палитру команд, нажав **CTRL+SHIFT+P** и введите **HDInsight: Link a cluster** (HDInsight: связать кластер).
+1. Откройте палитру команд, нажав **CTRL+SHIFT+P**, и введите **HDInsight: Link a cluster** (HDInsight: связать кластер).
 
    ![команда связывания кластера](./media/hdinsight-for-vscode/link-cluster-command.png)
 
@@ -110,18 +114,31 @@ ms.locfileid: "43697855"
    > [!NOTE]
    > Если кластер зарегистрирован в подписке Azure и связан, используется имя пользователя и пароль для связывания. 
    
-3. Данные связанного кластера можно просмотреть с помощью команды **перечисления кластеров**. Теперь в этот связанный кластер можно отправить скрипт.
+3. Связанный кластер можно просмотреть с помощью команды **List Cluster**. Теперь в этот связанный кластер можно отправить скрипт.
 
    ![связанный кластер](./media/hdinsight-for-vscode/linked-cluster.png)
 
 4. Также можно удалить связь кластера. Для этого введите **HDInsight: Unlink a cluster** (HDInsight: удалить связь кластера) в палитре команд.
 
+
+### <a name="to-link-a-generic-livy-endpoint"></a>Связывание общей конечной точки Livy
+
+1. Откройте палитру команд, нажав **CTRL+SHIFT+P**, и введите **HDInsight: Link a cluster** (HDInsight: связать кластер).
+2. Выберите **Generic Livy Endpoint** (Общая конечная точка Livy).
+3. Введите общую конечную точку Livy, например http://10.172.41.42:18080.
+4. Если общая конечная точка Livy требует авторизации, выберите **Basic** (Базовая). Если нет, выберите **None** (Нет).
+5. Введите имя пользователя, если на шаге 4 вы выбрали **Basic** (Базовая).
+6. Введите пароль, если на шаге 4 вы выбрали **Basic** (Базовая).
+7. Связывание общей конечной точки Livy выполнено успешно.
+
+   ![Связанный общий кластер Livy](./media/hdinsight-for-vscode/link-cluster-process-generic-livy.png)
+
 ## <a name="list-hdinsight-clusters"></a>Получение списка кластеров HDInsight
 
 Чтобы проверить подключение, можно составить список кластеров HDInsight.
 
-**Получение списка кластеров HDInsight в подписке Azure**
-1. Откройте рабочую область, а затем подключитесь к Azure. Дополнительную информацию см. в разделе [Переход к рабочей области HDInsight](#open-hdinsight-workspace) и [Подключение к Azure](#connect-to-azure).
+### <a name="to-list-hdinsight-clusters-under-your-azure-subscription"></a>Получение списка кластеров HDInsight в подписке Azure
+1. Откройте рабочую область, а затем подключитесь к Azure. Дополнительную информацию см. в разделе [Переход к рабочей области HDInsight](#open-hdinsight-workspace) и [Подключение к Azure](#connect-to-hdinsight-cluster).
 
 2. Щелкните правой кнопкой мыши редактор сценариев, а затем выберите **HDInsight: список кластеров** в контекстном меню. 
 
@@ -130,39 +147,41 @@ ms.locfileid: "43697855"
     ![Установка конфигурации кластера по умолчанию](./media/hdinsight-for-vscode/list-cluster-result.png)
 
 ## <a name="set-a-default-cluster"></a>Установка кластера по умолчанию
-1. Откройте рабочую область и подключитесь к Azure. См. разделы [Переход к рабочей области HDInsight](#open-hdinsight-workspace) и [Подключение к Azure](#connect-to-azure).
+1. Откройте рабочую область и подключитесь к Azure. См. разделы [Переход к рабочей области HDInsight](#open-hdinsight-workspace) и [Подключение к Azure](#connect-to-hdinsight-cluster).
 
 2. Щелкните редактор скриптов правой кнопкой мыши и выберите **HDInsight: Set Default Cluster** (HDInsight: задание кластера по умолчанию). 
 
-3. Выберите кластер в качестве кластера по умолчанию для текущего файла сценария. Средства автоматически обновят файл конфигурации **XXXX_hdi_settings.json**. 
+3. Выберите кластер в качестве кластера по умолчанию для текущего файла сценария. Средства автоматически обновят файл конфигурации **.VSCode\settings.json**. 
 
    ![Задание конфигурации кластера по умолчанию](./media/hdinsight-for-vscode/set-default-cluster-configuration.png)
 
-## <a name="set-the-azure-environment"></a>Настройка среды Azure 
+## <a name="set-the-azure-environment"></a>Настройка среды Azure
 1. Откройте палитру команд, нажав клавиши **CTRL+SHIFT+P**.
 
 2. Введите **HDInsight: задать среду Azure**.
 
 3. Выберите один из вариантов (Azure или AzureChina) в качестве записи для входа по умолчанию.
 
-4. В свою очередь, средство уже сохранило запись для входа по умолчанию в файле **XXXX_hdi_settings.json**. Вы также можете изменить ее напрямую в файле конфигурации. 
+4. В свою очередь, средство уже сохранило запись для входа по умолчанию в файле **.VSCode\settings.json**. Вы также можете изменить ее напрямую в файле конфигурации. 
 
    ![Задание конфигурации записи для входа по умолчанию](./media/hdinsight-for-vscode/set-default-login-entry-configuration.png)
 
-## <a name="submit-interactive-hive-queries"></a>Отправка интерактивных запросов Hive
+## <a name="submit-interactive-hive-queries-hive-batch-scripts"></a>Отправка интерактивных запросов Hive и пакетных сценариев Hive
 
-С помощью Средств HDInsight для VS Code вы можете отправлять интерактивные запросы Hive в кластеры интерактивных запросов HDInsight.
+Средства HDInsight для VS Code позволяют отправлять интерактивные запросы Hive и пакетные сценарии Hive в кластеры HDInsight.
 
 1. Создайте рабочую папку и файл сценария Hive, если у вас их еще нет.
 
-2. Подключитесь к учетной записи Azure, а затем настройте кластер по умолчанию, если вы еще этого не сделали.
+2. Подключитесь к своей учетной записи Azure или связанным кластерам.
 
 3. Скопируйте следующий код и вставьте его в файл Hive, а затем сохраните файл.
 
     ```hiveql
     SELECT * FROM hivesampletable;
     ```
-3. Щелкните редактор скриптов правой кнопкой мыши и выберите **HDInsight: Hive Interactive** (HDInsight: интерактивный запрос Hive), чтобы отправить запрос. Средства также позволяют отправить блок кода вместо целого файла сценария с помощью контекстного меню. Вскоре после этого результаты запроса появятся на новой вкладке.
+4. Щелкните правой кнопкой мыши окно редактора сценариев и выберите **HDInsight: Hive Interactive** (HDInsight: интерактивный запрос Hive), чтобы отправить запрос, или воспользуйтесь сочетанием клавиш **CTRL+ALT+I**. Выберите **HDInsight: Hive Batch** (HDInsight: пакетный сценарий Hive), чтобы отправить сценарий, или воспользуйтесь сочетанием клавиш **CTRL+ALT+H**. 
+
+5. При необходимости выберите кластер. Средства также позволяют отправить блок кода вместо целого файла сценария с помощью контекстного меню. Вскоре после этого результаты запроса появятся на новой вкладке.
 
    ![Результат Interactive Hive](./media/hdinsight-for-vscode/interactive-hive-result.png)
 
@@ -170,31 +189,10 @@ ms.locfileid: "43697855"
 
     - Область **сообщений**: выбрав номер **строки**, можно перейти к нужной строке выполняемого скрипта.
 
-Выполнение интерактивного запроса занимает гораздо меньше времени, чем [выполнение пакетного задания Hive](#submit-hive-batch-scripts).
-
-## <a name="submit-hive-batch-scripts"></a>Отправка пакетных сценариев Hive
-
-1. Создайте рабочую папку и файл сценария Hive, если у вас их еще нет.
-
-2. Подключитесь к учетной записи Azure, а затем настройте кластер по умолчанию, если вы еще этого не сделали.
-
-3. Скопируйте следующий код и вставьте его в файл Hive, а затем сохраните файл.
-
-    ```hiveql
-    SELECT * FROM hivesampletable;
-    ```
-3. Щелкните редактор скриптов правой кнопкой мыши и выберите **HDInsight: Hive Batch** (HDInsight: пакет Hive), чтобы отправить задание Hive. 
-
-4. Выберите кластер для отправки.  
-
-    После отправки задания Hive сведения о состоянии отправки и идентификатор задания появятся в области **вывода**. Задание Hive также открывает **веб-браузер**, в котором показаны журналы заданий и их состояние в режиме реального времени.
-
-   ![отправка результатов задания Hive](./media/hdinsight-for-vscode/submit-Hivejob-result.png)
-
-[Отправка интерактивных запросов Hive](#submit-interactive-hive-queries) происходит намного быстрее, чем отправка пакетного задания.
-
 ## <a name="submit-interactive-pyspark-queries"></a>Отправка интерактивных запросов PySpark
-Средства HDInsight для VS Code также позволяют отправлять интерактивные запросы PySpark в кластеры Spark.
+
+### <a name="to-submit-interactive-pyspark-queries-to-spark-clusters"></a>Отправка интерактивных запросов PySpark в кластеры Spark
+
 1. Создайте рабочую папку и файл сценария с расширением PY, если у вас их еще нет.
 
 2. Подключитесь к учетной записи Azure, если вы еще этого не сделали.
@@ -213,7 +211,7 @@ ms.locfileid: "43697855"
    for i in range(0, 5):
         print(sortedCollection[i])
    ```
-4. Выделите эти скрипты. Затем щелкните редактор скриптов правой кнопкой мыши и выберите **HDInsight: PySpark Interactive**.
+4. Выделите эти скрипты. Затем щелкните правой кнопкой мыши окно редактора сценариев и выберите **HDInsight: PySpark Interactive** (HDInsight: интерактивный запрос PySpark) или воспользуйтесь сочетанием клавиш **CTRL+ALT+I**.
 
 5. Если вы еще не установили расширение **Python** в VS Code, нажмите кнопку **Установить**, как показано на следующей иллюстрации:
 
@@ -233,7 +231,32 @@ ms.locfileid: "43697855"
 
 >[!NOTE]
 >Кластеры могут сохранять сведения о сеансе. Определенная переменная, функция и соответствующие значения хранятся в сеансе, поэтому к ним можно обращаться в нескольких вызовах службы одного кластера. 
- 
+
+### <a name="to-disable-environment-check"></a>Отключение проверки окружения
+
+По умолчанию при отправке интерактивных запросов PySpark средства HDInsight проверяют окружение и устанавливают пакеты зависимостей. Чтобы отключить проверку среды, установите для параметра **hdinsight.disablePysparkEnvironmentValidation** значение **yes** в разделе **Параметры пользователя**.
+
+   ![Установка проверки окружения в настройках](./media/hdinsight-for-vscode/hdi-azure-hdinsight-environment-check.png)
+
+Также можно нажать копку **Disable Validation** (Отключить проверку) во всплывающем диалоговом окне.
+
+   ![Установка проверки окружения в диалоговом окне](./media/hdinsight-for-vscode/hdi-azure-hdinsight-environment-check-dialog.png)
+
+### <a name="pyspark3-is-not-supported-with-spark2223"></a>Spark версий 2.2 и 2.3 не поддерживает PySpark3
+
+Кластеры Spark версий 2.2 и 2.3 больше не поддерживают PySpark3. Для языка Python поддерживается только PySpark. Невозможность отправки запросов в Spark версий 2.2 и 2.3 при использовании Python 3 — это известная проблема.
+
+   ![Ошибка при отправке запросов из Python 3](./media/hdinsight-for-vscode/hdi-azure-hdinsight-py3-error.png)
+
+Чтобы использовать Python 2.x, выполните следующие шаги: 
+
+1. Установите Python 2.7 на локальный компьютер и добавьте его в системную переменную PATH.
+
+2. Перезапустите VSCode.
+
+3. Переключитесь на Python 2, щелкнув **Python XXX** в строке состояния, а затем выберите целевую версию Python.
+
+   ![Выбор версии Python](./media/hdinsight-for-vscode/hdi-azure-hdinsight-select-python.png)
 
 ## <a name="submit-pyspark-batch-job"></a>Отправка пакетного задания PySpark
 
@@ -263,7 +286,7 @@ ms.locfileid: "43697855"
             print("%s: %i" % (word, count))
         spark.stop()
     ```
-4. Щелкните редактор скриптов правой кнопкой мыши и выберите **HDInsight: PySpark Batch** (HDInsight: пакет PySpark). 
+4. Щелкните правой кнопкой мыши окно редактора сценариев, а затем выберите **HDInsight: PySpark Batch** (HDInsight: пакетный сценарий PySpark) или воспользуйтесь сочетанием клавиш **CTRL+ALT+H**. 
 
 5. Выберите кластер, к которому будет отправлено задание PySpark. 
 
@@ -271,15 +294,22 @@ ms.locfileid: "43697855"
 
 После отправки задания Python в окне **вывода** в VS Code отобразятся журналы отправки. Также отображаются **URL-адрес пользовательского интерфейса Spark** и **URL-адрес пользовательского интерфейса Yarn**. URL-адрес можно открыть в веб-браузере, чтобы отследить состояние задания.
 
->[!NOTE]
->PySpark3 больше не поддерживается в Livy 0.4 (который является кластером HDI Spark 2.2). Python поддерживает только PySpark. Это известная проблема, при которой отправляется сбой Spark 2.2 с помощью python3.
-   
 ## <a name="livy-configuration"></a>Конфигурация Livy
-Поддерживается конфигурация Livy, ее можно установить в настройках проекта в папке рабочего пространства. Дополнительные сведения см. в [файле сведений Livy](https://github.com/cloudera/livy/blob/master/README.rst ).
+
+Поддерживается конфигурация Livy. Ее можно настроить в файле **.VSCode\settings.json**, который находится в папке рабочей области. Сейчас конфигурация Livy поддерживает только скрипт Python. Дополнительные сведения см. в [файле сведений Livy](https://github.com/cloudera/livy/blob/master/README.rst ).
+
+<a id="triggerlivyconf"></a>**Активация конфигурации Livy**
+   
+В меню **Файл** выберите **Параметры**, также выберите **Параметры** в контекстном меню. Щелкните вкладку **Параметры рабочей области**. Здесь можно настроить конфигурацию Livy.
+
+Также можно отправить файл. Обратите внимание, что в рабочую папку автоматически добавлена подпапка .vscode. Чтобы найти конфигурацию Livy, щелкните **.vscode\settings.json**.
 
 + Параметры проекта:
 
     ![Конфигурация Livy](./media/hdinsight-for-vscode/hdi-livyconfig.png)
+
+>[!NOTE]
+>Для параметров **driverMomory** и **executorMomry** значения нужно указывать с единицей измерения, например 1g или 1024m. 
 
 + Поддерживаемые конфигурации Livy:   
 
@@ -316,6 +346,30 @@ ms.locfileid: "43697855"
     | log | Строки журнала | Список строк |
     | state |   Состояние пакета | строка |
 
+>[!NOTE]
+>При отправке скрипта присвоенная конфигурация Livy отобразится в области выходных данных.
+
+## <a name="integrate-with-azure-hdinsight-from-explorer"></a>Интеграция с Azure HDInsight в проводнике
+
+Раздел Azure HDInsight добавлен на левую панель. Вы можете просматривать кластер и управлять им непосредственно с панели.
+
+1. Разверните раздел **Azure HDInsight**. Если вы не вошли в Azure, отобразится ссылка **Войти в Azure…**
+
+    ![Снимок экрана со ссылкой входа](./media/hdinsight-for-vscode/hid-azure-hdinsight-sign-in.png)
+
+2. Щелкните **Войти в Azure**. В правом нижнем углу отобразится всплывающее окно со ссылкой и кодом для входа.
+
+    ![Инструкции по входу для других сред](./media/hdinsight-for-vscode/hdi-azure-hdinsight-azure-signin-code.png)
+
+3. Нажмите кнопку **Copy & Open** (Скопировать и открыть). Когда откроется браузер, вставьте код и нажмите кнопку **Продолжить**. Вы увидите сообщение о том, что вход выполнен успешно.
+
+4. После входа в разделе **Azure HDInsight** отобразится список доступных подписок и кластеров (поддерживаются Spark, Hadoop и HBase). 
+
+   ![Подписка HDInsight Azure](./media/hdinsight-for-vscode/hdi-azure-hdinsight-subscription.png)
+
+5. Разверните кластер, чтобы просмотреть базу метаданных Hive и схему таблиц.
+
+   ![Кластер Azure HDInsight](./media/hdinsight-for-vscode/hdi-azure-hdinsight-cluster.png)
 
 ## <a name="additional-features"></a>Дополнительные функции
 

@@ -10,15 +10,16 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/20/2017
-ms.author: mbullwin; aruna
-ms.openlocfilehash: 53a4d7fe1d92826b92866e170fd731edbd5ba1bf
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.reviewer: aruna
+ms.author: mbullwin
+ms.openlocfilehash: 016d13a08ea3fe591529ad6dd29b25534d9c603d
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33869552"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44303750"
 ---
 # <a name="release-notes-for-developer-analytics-tools"></a>Заметки о выпуске — средства анализа для разработчиков
 
@@ -193,7 +194,7 @@ Application Insights теперь поддерживает проекты ASP.NE
 
 Обратите внимание на новое поле для указания версии приложения в этом мастере. Для универсальных приложений это поле заполняется сведениями из манифеста. В Windows Forms эквивалентной функции, к сожалению, нет, поэтому это поле приходится заполнять вручную.
 
-Оставшиеся действия аналогичны универсальным приложениям Windows — выбор сборки и вариантов выпуска, добавление заметок о выпуске, отправка и управление сборкой на портале HockeyApp.
+Оставшиеся действия аналогичны универсальным приложениям Windows — выбор вариантов Azure Pipelines, добавление заметок о выпуске, отправка и управление на портале HockeyApp.
 
 Это просто и понятно. Попробуйте и сообщите нам свое мнение.
 

@@ -1,3 +1,21 @@
+---
+title: включение файла
+description: включение файла
+services: site-recovery
+author: rayne-wiselman
+manager: carmonm
+ms.service: site-recovery
+ms.topic: include
+ms.date: 09/06/2018
+ms.author: raynew
+ms.custom: include file
+ms.openlocfilehash: 2ca4916d48da6fe8a2c061056a1ea0fed9a78bb6
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44058610"
+---
 1. Запустите файл единой установки.
 2. На странице **Перед началом работы** выберите **Install the configuration server and process server** (Установить сервер конфигурации и сервер обработки).
 
@@ -21,10 +39,7 @@
 7. На странице **Конфигурация MySQL** создайте учетные данные для входа в экземпляр сервера MySQL, который будет установлен.
 
     ![MySQL](./media/site-recovery-add-configuration-server/combined-wiz6.png)
-8. На странице **Сведения о среде** укажите, нужно ли выполнять репликацию виртуальных машин VMware. Если нужно, программа установки проверяет, установлен ли компонент PowerCLI 6.0.
-
-    ![MySQL](./media/site-recovery-add-configuration-server/combined-wiz7.png)
-
+8. В **сведениях о среде** выберите "Нет", если вы выполняете репликацию виртуальных машин Azure Stack или физических серверов. 
 9. На странице **Расположение установки** выберите место для установки двоичных файлов и хранения кэша. Выбранный вами диск кэша должен иметь не менее 5 ГБ доступной памяти. Однако рекомендуемый объем — не менее 600 ГБ.
 
     ![Расположение установки](./media/site-recovery-add-configuration-server/combined-wiz8.png)

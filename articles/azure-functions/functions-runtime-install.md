@@ -2,24 +2,20 @@
 title: Установка среды выполнения Функций Azure | Документация Майкрософт
 description: Как установить предварительную версию 2 среды выполнения службы "Функции Azure"
 services: functions
-documentationcenter: ''
 author: apwestgarth
 manager: stefsch
-editor: ''
 ms.assetid: ''
-ms.service: functions
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-functions
 ms.devlang: multiple
-ms.topic: article
+ms.topic: conceptual
 ms.date: 11/28/2017
 ms.author: anwestg
-ms.openlocfilehash: f8ce27bf28f73818932f2ac9056d4fdd573679e8
-ms.sourcegitcommit: a48e503fce6d51c7915dd23b4de14a91dd0337d8
+ms.openlocfilehash: 1ad1d2c74be97afcb62f3f8e8161111f4938f645
+ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2017
-ms.locfileid: "26290663"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44093674"
 ---
 # <a name="install-the-azure-functions-runtime-preview-2"></a>Узнайте, как установить предварительную версию 2 среды выполнения службы "Функции Azure"
 
@@ -32,7 +28,7 @@ ms.locfileid: "26290663"
 1. Завершите настройку предварительной версии 2 среды выполнения службы "Функции Azure".
 1. Создайте первую функцию в предварительной версии среды выполнения службы "Функции Azure".
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед установкой предварительной версии среды выполнения службы "Функции Azure" вам понадобятся следующие ресурсы:
 
@@ -53,7 +49,7 @@ ms.locfileid: "26290663"
 
     ![Установщик предварительной версии среды выполнения службы "Функции Azure"][1]
 
-1. Нажмите кнопку **Далее**.
+1. Щелкните **Далее**.
 1. Ознакомившись с условиями **лицензионного соглашения**, **установите флажок**, чтобы принять их, и нажмите кнопку **Далее** для перехода.
 1. Выберите роли, которые необходимо установить на этом компьютере (**роль управления функций** или **рабочую роль функций**), и нажмите кнопку **Далее**.
 

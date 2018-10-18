@@ -5,14 +5,14 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 07/19/2018
+ms.date: 09/10/2018
 ms.author: cherylmc
-ms.openlocfilehash: d89463826cb05bf4cafd36cf4a38e60852d93094
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.openlocfilehash: 34d84a27406f0ebabd7bca576ee443da1d0c9bcd
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42142579"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44348810"
 ---
 # <a name="about-virtual-network-gateways-for-expressroute"></a>Сведения о шлюзах виртуальных сетей ExpressRoute
 Шлюз виртуальной сети используется для обмена сетевым трафиком между виртуальными и локальными сетями Azure. Вы можете использовать шлюз виртуальных сетей для трафика ExpressRoute или VPN. Эта статья посвящена шлюзам виртуальных сетей ExpressRoute.
@@ -31,7 +31,7 @@ ms.locfileid: "42142579"
 ## <a name="gwsku"></a>SKU шлюзов
 [!INCLUDE [expressroute-gwsku-include](../../includes/expressroute-gwsku-include.md)]
 
-Если требуется выполнить обновление до шлюза с большими возможностями согласно SKU, в большинстве случаев можно использовать командлет PowerShell Resize-AzureRmVirtualNetworkGateway. Это подойдет для обновлений до SKU Standard и HighPerformance. Однако для обновления до SKU UltraPerformance шлюз необходимо создать заново.
+Если требуется выполнить обновление до шлюза с большими возможностями согласно SKU, в большинстве случаев можно использовать командлет PowerShell Resize-AzureRmVirtualNetworkGateway. Это подойдет для обновлений до SKU Standard и HighPerformance. Однако для обновления до SKU UltraPerformance шлюз необходимо создать заново. Повторное создание шлюза вызовет простой.
 
 ### <a name="aggthroughput"></a>Приблизительная производительность в зависимости от номера SKU шлюза
 В таблице ниже приведены типы шлюзов с приблизительной производительностью. Эта таблица относится к классической модели развертывания и модели диспетчера ресурсов.

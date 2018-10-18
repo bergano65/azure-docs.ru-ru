@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/23/2018
 ms.author: rkarlin
-ms.openlocfilehash: 03c4a36330ca17eea4233e928d6b728e94e15292
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 18b7b1b3d2a74b6e3aeb671154de48bd7b7f1e00
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44299201"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47218060"
 ---
 # <a name="alert-confidence-score"></a>Оценка надежности предупреждения 
 
