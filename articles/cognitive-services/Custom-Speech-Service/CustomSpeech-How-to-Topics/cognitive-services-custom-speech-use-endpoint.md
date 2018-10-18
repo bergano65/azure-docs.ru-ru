@@ -1,24 +1,25 @@
 ---
-title: Использование пользовательской конечной точки для распознавания речи — Пользовательская служба распознавания речи
-titlesuffix: Azure Cognitive Services
-description: Узнайте, как использовать пользовательскую конечную точку для преобразования речи в текст с помощью Пользовательской службы распознавания речи.
+title: Использование пользовательской конечной точки распознавания речи с помощью Пользовательской службы распознавания речи в Azure | Документация Майкрософт
+description: Узнайте, как использовать пользовательскую конечную точку преобразования речи в текст с помощью Пользовательской службы распознавания речи в Cognitive Services.
 services: cognitive-services
 author: PanosPeriorellis
-manager: cgronlun
+manager: onano
 ms.service: cognitive-services
 ms.component: custom-speech
-ms.topic: conceptual
+ms.topic: article
 ms.date: 02/08/2017
 ms.author: panosper
-ROBOTS: NOINDEX
-ms.openlocfilehash: 98c1b58e58490199b0258dfcc8df183c3fe9a8bd
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 9f1a21d6f099bc27c81e8c254f7df73d6c3e585d
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47223378"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49341810"
 ---
 # <a name="use-a-custom-speech-to-text-endpoint"></a>Использование пользовательской конечной точки преобразования речи в текст
+
+[!INCLUDE [Deprecation note](../../../../includes/cognitive-services-custom-speech-deprecation-note.md)]
+
 Запросы к пользовательской конечной точке преобразования речи в текст Azure можно отправлять точно так же, как к используемой по умолчанию конечной точке распознавания речи Cognitive Services. Эти конечные точки функционально идентичны конечным точкам SAPI. Поэтому функциональные возможности, предоставляемые SAPI посредством клиентской библиотеки или REST API, доступны и для вашей пользовательской конечной точки.
 
 Конечные точки, созданные с помощью этой службы, могут обрабатывать различное число параллельных запросов. Этот объем зависит от ценовой категории, связанной с вашей подпиской. Если получено слишком много запросов, возникает ошибка. Для уровня "Бесплатный" действует месячный лимит запросов.

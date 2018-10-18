@@ -1,27 +1,20 @@
 ---
 title: Руководство по установке физического устройства Azure Data Box Edge | Документация Майкрософт
 description: Во втором руководстве по установке Azure Data Box Edge описано, как распаковать, установить в стойку и подключить физическое устройство.
-services: databox-edge-gateway
-documentationcenter: NA
+services: databox
 author: alkohli
-manager: twooley
-editor: ''
-ms.assetid: ''
-ms.service: databox-edge-gateway
-ms.devlang: NA
+ms.service: databox
+ms.subservice: edge
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 10/08/2018
 ms.author: alkohli
-ms.custom: ''
 Customer intent: As an IT admin, I need to understand how to install Data Box Edge in datacenter so I can use it to transfer data to Azure.
-ms.openlocfilehash: 17602abd9dab590c806c33779cf127f9a5305f64
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.openlocfilehash: 21ac3de793f5ce559c3a03de2a09f11ccb86b12a
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48833205"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49167364"
 ---
 # <a name="tutorial-install-azure-data-box-edge-preview"></a>Руководство по установке Azure Data Box Edge (предварительная версия)
 
@@ -70,7 +63,7 @@ ms.locfileid: "48833205"
 - Убедитесь, что минимальная пропускная способность интернет-канала, необходимая для оптимальной работы устройства, составляет 20 Мбит/с.
 
 
-## <a name="unpack-the-device"></a>Распаковка устройства
+## <a name="unpack-the-device"></a>распаковка устройства;
 
 Данное устройство поставляется в одной упаковке. Выполните следующие действия для распаковки устройства. 
 
@@ -83,7 +76,7 @@ ms.locfileid: "48833205"
 4. Если вы не получили какие-либо элементы из перечисленных выше, обратитесь в службу технической поддержки Data Box Edge. Следующим шагом является установка устройства в стойку.
 
 
-## <a name="rack-the-device"></a>Установка устройства в стойку
+## <a name="rack-the-device"></a>установка устройства в стойку;
 
 Устройства должны устанавливаться в стандартную 19-дюймовую стойку. Используйте следующую процедуру, чтобы установить устройство в стандартную 19-дюймовую стойку с помощью передних и задних опор.
 

@@ -5,15 +5,15 @@ author: dkamstra
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 06/1/2018
+ms.date: 09/12/2018
 ms.author: dukek
 ms.component: alerts
-ms.openlocfilehash: 998f35c8957b63d73d7a3d15be76711198fa4833
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: 6163a099894a823614355f71a3e1af4a6a9026ec
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42745713"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44717681"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Создание групп действий и управление ими на портале Azure
 ## <a name="overview"></a>Обзор ##
@@ -33,9 +33,9 @@ ms.locfileid: "42745713"
 1. На [портале](https://portal.azure.com) выберите **Монитор**. В колонке **Монитор** объединены все параметры мониторинга и данные в одном представлении.
 
     ![Служба "Монитор"](./media/monitoring-action-groups/home-monitor.png)
-1. В разделе **Параметры** выберите **Группы действий**.
+1. Выберите **Оповещения**, а затем **Управлять группами действий**.
 
-    ![Вкладка Action groups (Группы действий)](./media/monitoring-action-groups/action-groups-blade.png)
+    ![Кнопка "Управлять группами действий"](./media/monitoring-action-groups/manage-action-groups.png)
 1. Выберите **Add action group** (Добавить группу действий) и заполните поля.
 
     ![Команда Add action group (Добавить группу действий)](./media/monitoring-action-groups/add-action-group.png)
@@ -83,6 +83,7 @@ ms.locfileid: "42745713"
 
 <dt>Модуль runbook</dt>
 <dd>Можно иметь не более 10 действий модуля runbook в группе действий.</dd>
+<dd>Дополнительные сведения об ограничениях на полезные данные модуля Runbook см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).</dd>
 
 <dt>SMS</dt>
 <dd>Можно иметь не более 10 действий SMS в группе действий.</dd>
@@ -96,6 +97,17 @@ ms.locfileid: "42745713"
 <dt>Веб-перехватчик</dt>
 <dd>Можно иметь не более 10 действий веб-перехватчика в группе действий
 <dd>Логика повторных попыток: период ожидания ответа — 10 секунд. Повторный вызов веб-перехватчика выполняется не более двух раз, когда возвращаются коды состояния HTTP 408, 429, 503 или 504 либо конечная точка HTTP не отвечает. Первый повторный вызов происходит через 10 секунд, второй (он же последний) — через 100 секунд.</dd>
+<dd>Исходные диапазоны IP-адресов
+<ul>
+    <li>13.106.57.181</li>
+    <li>13.106.54.3</li>
+    <li>13.106.54.19</li>
+    <li>13.106.38.142</li>
+    <li>13.106.38.148</li>
+    <li>13.106.57.196</li>
+</ul>
+Для получения обновлений об изменениях этих IP-адресов рекомендуется настроить [оповещение работоспособности служб](./monitoring-service-notifications.md), которое отслеживает информационные уведомления о службе группы действий.
+</dd>
 </dl>
 
 ## <a name="manage-your-action-groups"></a>Управление группами действий ##

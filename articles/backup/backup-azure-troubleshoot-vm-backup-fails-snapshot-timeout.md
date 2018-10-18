@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: troubleshooting
 ms.date: 06/25/2018
 ms.author: genli
-ms.openlocfilehash: 09cfda3c2c790297b0961ecac92cba61c9e6de6f
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: ce4a889cae852d333ea9862138f4d44471677c26
+ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36754331"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45544019"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -111,6 +111,8 @@ ms.locfileid: "36754331"
 > Теги службы хранилища находятся на этапе предварительной версии. Они доступны только в определенных регионах. Список регионов см. в разделе [Теги служб](../virtual-network/security-overview.md#service-tags).
 
 Если вы используете "Управляемые диски Azure", может потребоваться открыть в брандмауэрах дополнительный порт (8443).
+
+Кроме того, если в подсети отсутствует маршрут для исходящего интернет-трафика, необходимо добавить конечную точку службы с тегом службы "Microsoft.Storage" в подсеть. 
 
 ### <a name="the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms"></a>Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)
 

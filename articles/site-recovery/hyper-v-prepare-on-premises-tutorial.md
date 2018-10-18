@@ -5,19 +5,19 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: article
-ms.date: 07/06/2018
+ms.date: 09/12/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: fb820d124fd9b5e882cad538ad436532d7865fbc
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: f1899817ee2d0efec4ab561a64f24e49cb173c29
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37923492"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44720775"
 ---
 # <a name="prepare-on-premises-hyper-v-servers-for-disaster-recovery-to-azure"></a>Подготовка локальных серверов Hyper-V для аварийного восстановления в Azure
 
-В этом руководстве показано, как подготовить локальную инфраструктуру Hyper-V к репликации виртуальных машин Hyper-V в Azure для аварийного восстановления. Узлами Hyper-V может управлять решение System Center Virtual Machine Manager (VMM), но это не обязательно.  Из этого руководства вы узнали, как выполнять такие задачи:
+В этом руководстве показано, как подготовить локальную инфраструктуру Hyper-V к репликации виртуальных машин Hyper-V в Azure для аварийного восстановления. Узлами Hyper-V может управлять решение System Center Virtual Machine Manager (VMM), но это не обязательно.  Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
 > * Проверка соответствия требованиям Hyper-V и VMM (если это применимо).
@@ -60,13 +60,15 @@ ms.locfileid: "37923492"
 ## <a name="verify-internet-access"></a>Проверка доступа к Интернету
 
 1. В этом руководстве рассматривается простейшая конфигурация — прямой доступ к Интернету для узлов Hyper-V и сервера VMM без использования прокси-сервера. 
-2. Убедитесь, что узлы Hyper-V (а также сервер VMM, если это применимо), имеют доступ к следующим URL-адресам: 
-
-    [!INCLUDE [site-recovery-URLS](../../includes/site-recovery-URLS.md)]
-    
+2. Убедитесь, что узлы Hyper-V (а также сервер VMM, если это применимо), имеют доступ к необходимым URL-адресам.   
 3. Если осуществляется контроль доступом по IP-адресу, убедитесь, что:
     - Правила брандмауэра на основе IP-адресов могут подключиться к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/confirmation.aspx?id=41653) и порту HTTPS (443).
     - Необходимо разрешить диапазоны IP-адресов для региона Azure в вашей подписке.
+    
+### <a name="required-urls"></a>Необходимые URL-адреса
+
+
+[!INCLUDE [site-recovery-URLS](../../includes/site-recovery-URLS.md)]
 
 
 ## <a name="prepare-to-connect-to-azure-vms-after-failover"></a>Подготовка к подключению виртуальных машин Azure после отработки отказа

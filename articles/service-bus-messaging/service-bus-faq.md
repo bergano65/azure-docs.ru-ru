@@ -8,16 +8,16 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 09/05/2018
 ms.author: spelluru
-ms.openlocfilehash: 87a6ccf61e10a6a8c7feeccad3690cdcb9b63641
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: c851c8a9384acf909dc88d3565d49021e1ee67e9
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48857862"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49362027"
 ---
 # <a name="service-bus-faq"></a>Часто задаваемые вопросы о служебной шине
 
-В этой статье обсуждаются некоторые часто задаваемые вопросы о служебной шине Microsoft Azure. Вы также можете посетить страницу [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/en-us/support/faq/), чтобы получить общие сведения о ценах и поддержке Azure.
+В этой статье обсуждаются некоторые часто задаваемые вопросы о служебной шине Microsoft Azure. Вы также можете посетить страницу [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq/), чтобы получить общие сведения о ценах и поддержке Azure.
 
 ## <a name="general-questions-about-azure-service-bus"></a>Общие вопросы о служебной шине Azure
 ### <a name="what-is-azure-service-bus"></a>Что такое служебная шина Azure?
@@ -56,7 +56,7 @@ ms.locfileid: "48857862"
 
 В [этой статье](service-bus-pricing-billing.md) объясняются единицы измерения, на основе которых выставляются счета за использование служебной шины. Подробные сведения о ценах смотрите [здесь](https://azure.microsoft.com/pricing/details/service-bus/).
 
-Вы также можете посетить страницу [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/en-us/support/faq/), чтобы получить общие сведения о ценах на Azure. 
+Вы также можете посетить страницу [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq/), чтобы получить общие сведения о ценах на Azure. 
 
 ### <a name="how-do-you-charge-for-service-bus"></a>Как выставляется цена на служебную шину?
 Все сведения о ценах на использование служебной шины приведены на [странице с ценами][Pricing overview]. Помимо указанной платы, также взимается плата за связанные операции передачи данных, исходящих из центра обработки данных, в котором подготавливается ваше приложение.

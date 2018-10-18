@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: timlt
-ms.openlocfilehash: aa2d8f50d8fb4ba356af20a290976b8b32601ebf
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: b5632db57e902eef76860f85de6e76f85861090a
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43188797"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45728969"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-python"></a>Подключение устройства Raspberry Pi к приложению Azure IoT Central (Python)
 
@@ -27,7 +27,7 @@ ms.locfileid: "43188797"
 
 * Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](howto-create-application.md).
 * Устройство Raspberry Pi с операционной системой Raspbian. Вам понадобится подключить монитор, клавиатуру и мышь к устройству Raspberry Pi, чтобы получить доступ к среде графического пользовательского интерфейса. Устройство Raspberry Pi должно иметь возможность [подключения к Интернету](https://www.raspberrypi.org/learning/software-guide/wifi/).
-* Дополнительная плата [Sense Hat](https://www.raspberrypi.org/products/sense-hat/) для Raspberry Pi (необязательно). Эта плата собирает данные телеметрии с различных датчиков, а затем отправляет эти данные в приложение Azure IoT Central. Если у вас нет платы **Sense Hat**, вместо нее можно использовать эмулятор.
+* Дополнительная плата [Sense Hat](https://www.raspberrypi.org/products/sense-hat/) для Raspberry Pi (необязательно). Эта плата собирает данные телеметрии с различных датчиков, а затем отправляет эти данные в приложение Azure IoT Central. Если у вас нет платы **Sense Hat**, вместо нее можно использовать эмулятор (доступный в образе Raspberry Pi).
 
 ## <a name="sample-devkits-application"></a>Пример **приложения Devkits**
 
@@ -43,7 +43,8 @@ ms.locfileid: "43188797"
 
 ## <a name="add-a-real-device"></a>Добавление реального устройства
 
-В приложение Azure IoT Central добавьте реальное устройство на основе шаблона приложения **Raspberry Pi** и запишите строку подключения к устройству. Дополнительные сведения см. в статье [Добавление реального устройства в приложение Azure IoT Central](tutorial-add-device.md).
+В приложении Azure IoT Central добавьте реальное устройство на основе шаблона устройства **Raspberry Pi** и запишите сведения о подключении для устройства (**идентификатор области, идентификатор устройства и первичный ключ**). Дополнительные сведения см. в статье [Добавление реального устройства в приложение Azure IoT Central](tutorial-add-device.md).
+
 
 ### <a name="configure-the-raspberry-pi"></a>Настройка Raspberry Pi
 
@@ -52,30 +53,14 @@ ms.locfileid: "43188797"
 * отправляет данные телеметрии и значения свойств в Azure IoT Central;
 * реагирует на изменения параметров, внесенные в Azure IoT Central.
 
+Чтобы настроить устройство, [следуйте пошаговым инструкциям на сайте GitHub.](http://aka.ms/iotcentral-docs-Raspi-releases)
+
+
 > [!NOTE]
-> Дополнительные сведения о примере Python Raspberry Pi см. в файле [Readme](https://github.com/Azure/iot-central-firmware/blob/master/RaspberryPi/README.md) на сайте GitHub.
+> Дополнительные сведения о примере Python Raspberry Pi см. в файле [Readme](http://aka.ms/iotcentral-docs-Raspi-releases) на сайте GitHub.
 
-1. В веб-браузере на настольном Raspberry Pi перейдите на страницу [выпусков встроенного ПО Azure IoT Central](https://github.com/Azure/iot-central-firmware/releases).
 
-1. Скачайте ZIP-файл, содержащий последнюю версию встроенного ПО, в домашнюю папку в Raspberry Pi. Имя файла будет выглядеть примерно так: `RaspberryPi-IoTCentral-X.X.X.zip`.
-
-1. Чтобы распаковать файл встроенного ПО, используйте **диспетчер файлов** в настольном Raspberry Pi. Щелкните ZIP-файл правой кнопкой мыши и выберите **Extract here** (Извлечь сюда). В результате будет создана папка с именем `RaspberryPi-IoTCentral-X.X.X` в домашней папке.
-
-1. Если у вас нет платы **Sense Hat**, подключенной к Raspberry Pi, необходимо включить эмулятор:
-    1. В **диспетчере файлов** в папке `RaspberryPi-IoTCentral-X.X.X` щелкните правой кнопкой мыши файл **config.iot** и выберите **текстовый редактор**.
-    1. Измените строку `"simulateSenseHat": false,` на `"simulateSenseHat": true,`.
-    1. Сохраните изменения и закройте **текстовый редактор**.
-
-1. Запустите сеанс **терминала** и используйте команду `cd`, чтобы перейти в папку, созданную на предыдущем шаге.
-
-1. Чтобы запустить выполнение примера приложения, введите `./start.sh` в окне **терминала**. Если вы используете **эмулятор Sense HAT**, отобразится его графический пользовательский интерфейс. В этом интерфейсе можно изменить значения телеметрии, отправленные в приложение Azure IoT Central.
-
-1. В окне **терминала** отобразится сообщение, которое выглядит примерно так: `Device information being served at http://192.168.0.60:8080`. URL-адрес может отличаться в вашей среде. Скопируйте URL-адрес, откройте веб-браузер и перейдите на страницу настройки.
-
-    ![Настройка устройства](media/howto-connect-raspberry-pi-python/configure.png)
-
-1. Введите строку подключения к устройству, записанную при добавлении реального устройства в приложение Azure IoT Central. Выберите **Настройка устройства**. Появится сообщение **Device configured, your device should start sending data to Azure IoT Central momentarily** (Устройство настроено. Передача данных в Azure IoT Central начнется немедленно).
-
+1. После настройки устройство сразу же начнет передавать данные в Azure IoT Central.
 1. В приложении Azure IoT Central вы увидите, как код, выполняющийся в Raspberry Pi, взаимодействует с приложением:
 
     * На странице **Measurements** (Измерения) для реального устройства можно просмотреть данные телеметрии, отправленные из Raspberry Pi. Если вы используете **эмулятор Sense HAT**, вы можете изменить значения данных телеметрии в графическом пользовательском интерфейсе Raspberry Pi.

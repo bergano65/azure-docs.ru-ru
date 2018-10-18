@@ -1,56 +1,65 @@
 ---
-title: Управление участниками группы в Azure Active Directory | Документация Майкрософт
-description: Сведения о том, как добавлять или удалять пользователей и устройства, которые входят в группу в Azure Active Directory
+title: Как добавить или удалить участников группы с помощью Azure Active Directory | Документы Майкрософт
+description: Узнайте, как добавлять или удалять пользователей и устройства, которые входят в группу в Azure Active Directory.
 services: active-directory
-documentationcenter: ''
 author: eross-msft
 manager: mtillman
-editor: ''
 ms.service: active-directory
 ms.workload: identity
 ms.component: fundamentals
-ms.topic: quickstart
-ms.date: 08/28/2017
+ms.topic: conceptual
+ms.date: 08/23/2018
 ms.author: lizross
 ms.custom: it-pro
 ms.reviewer: krbain
-ms.openlocfilehash: 947b0c11aba211530e3ae25d6617079bcaf2995f
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 7c1a83d83dcbf247550c66602a6f53d4ef0d7930
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37860493"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45733370"
 ---
-# <a name="manage-group-membership-for-users-in-your-azure-active-directory-tenant"></a>Управление участниками групп в клиенте Azure Active Directory
-В этой статье объясняется, как управлять участниками группы в Azure Active Directory (Azure AD).
+# <a name="how-to-add-or-remove-group-members-using-azure-active-directory"></a>Практическое руководство. Как добавить или удалить участников группы с помощью Azure Active Directory
+С помощью Azure Active Directory можно добавлять и удалять участников группы.
 
-## <a name="how-do-i-find-the-members-and-manage-them"></a>Как можно найти участников и управлять ими?
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи глобального администратора каталога.
-2. Выберите **Все службы**, введите **Пользователи и группы** в текстовое поле, а затем нажмите клавишу **ВВОД**.
+## <a name="to-add-group-members"></a>Добавление участников группы
 
-   ![Открытие страницы "Управление пользователями"](./media/active-directory-groups-members-azure-portal/search-user-management.png)
-3. В колонке **Пользователи и группы** выберите **Все группы**.
+1. Войдите на [портал Azure](https://portal.azure.com) с учетной записью глобального администратора каталога.
 
-   ![Открытие колонки группы](./media/active-directory-groups-members-azure-portal/view-groups-blade.png)
-4. Выберите группу в колонке **Пользователи и группы — Все группы** .
-5. В колонке **Группа — *имя_группы*** выберите **Участники**.
+2. Выберите **Azure Active Directory**, а затем щелкните **Группы**.
 
-   ![Открытие колонки "Участники"](./media/active-directory-groups-members-azure-portal/view-group-members.png)
-6. Чтобы добавить участников в группу, в колонке **Группа — Участники** щелкните **Добавить участников**.
+3. На странице **Группы — Все группы** найдите и выберите группу, в которую вы хотите добавить участника. В этом случае используйте ранее созданную группу **Политика управления мобильными устройствами — Запад**.
 
-   ![Команда "Добавить участников"](./media/active-directory-groups-members-azure-portal/add-group-members-command.png)
-7. В колонке **Участники** выберите одного или несколько пользователей или устройств для добавления в группу, а затем нажмите кнопку **Выбрать**, расположенную в нижней части колонки, чтобы добавить их в группу. В поле **Пользователь** можно ввести часть имени пользователя или устройства, чтобы отфильтровать по нему список отображенных элементов. Подстановочные знаки в поле не допускаются.
-8. Чтобы удалить участника из группы, выберите его в колонке **Группы — Участники** .
-9. В колонке ***имя_участника*** выберите команду **Удалить** и подтвердите свой выбор при появлении соответствующего запроса.
+    ![Страница "Группы — Все группы" с выделенным именем группы](media/active-directory-groups-members-azure-portal/group-all-groups-screen.png)
 
-   ![Команда "Удалить участников"](./media/active-directory-groups-members-azure-portal/remove-group-members-command.png)
-10. Завершив изменение состава группы, щелкните **Сохранить**.
+4. На странице **Обзор политики управления мобильными устройствами — Запад** выберите **Члены** из области **Управление**.
 
-## <a name="additional-information"></a>Дополнительная информация
-В следующих статьях содержатся дополнительные сведения об Azure Active Directory.
+    ![Страница обзора группы "Политика управления мобильными устройствами — Запад" с выделенным параметром "Участники"](media/active-directory-groups-members-azure-portal/group-overview-blade.png)
 
-* [Просмотр существующих групп](active-directory-groups-view-azure-portal.md)
-* [Создание группы и добавление участников](active-directory-groups-create-azure-portal.md)
-* [Управление параметрами группы](active-directory-groups-settings-azure-portal.md)
-* [Управление членством в группе](active-directory-groups-membership-azure-portal.md)
-* [Управление динамическими правилами для пользователей в группе](../users-groups-roles/groups-dynamic-membership.md)
+5. Выберите **Добавить участников**, а затем найдите и выберите всех участников, которых вы хотите добавить в группу, и нажмите **Выбрать**.
+
+    Вы получите сообщение о том, что участники успешно добавлены.
+
+    ![Страница "Добавить участников" с поиском участников](media/active-directory-groups-members-azure-portal/update-members.png)
+
+6. Обновите экран для просмотра имен всех добавленных в группу частников.
+
+## <a name="to-remove-group-members"></a>Удаление участников группы
+
+1. На странице **Группы — Все группы** найдите и выберите группу, из которой вы хотите удалить участника. Мы снова выберем группу **Политика управления мобильными устройствами — Запад**.
+
+2. Выберите **Участники** в области **Управление**, найдите и выберите имя участника, которого требуется удалить, и нажмите **Удалить**.
+
+    ![Страница сведений об участниках с параметром "Удалить"](media/active-directory-groups-members-azure-portal/remove-members-from-group.png)
+
+## <a name="next-steps"></a>Дополнительная информация
+
+- [Просмотр групп и участников](active-directory-groups-view-azure-portal.md)
+
+- [Изменение параметров группы](active-directory-groups-settings-azure-portal.md)
+
+- [Управление доступом к ресурсам с помощью групп](active-directory-manage-groups.md)
+
+- [Управление динамическими правилами для пользователей в группе](../users-groups-roles/groups-create-rule.md)
+
+- [Связывание подписки Azure с Azure Active Directory или добавление ее в службу](active-directory-how-subscriptions-associated-directory.md)

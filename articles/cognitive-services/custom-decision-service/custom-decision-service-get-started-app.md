@@ -1,20 +1,21 @@
 ---
-title: Вызов API из приложения в Azure Cognitive Services | Документация Майкрософт
-description: Начало работы с Пользовательской службой принятия решений Azure при вызове API-интерфейсов из приложения для смартфона.
+title: Вызов API из приложения — пользовательская служба принятия решений
+titlesuffix: Azure Cognitive Services
+description: Как вызывать API пользовательской службы принятия решений из приложения для смартфона.
 services: cognitive-services
 author: slivkins
-manager: slivkins
+manager: cgronlun
 ms.service: cognitive-services
-ms.topic: article
+ms.component: custom-decision-service
+ms.topic: conceptual
 ms.date: 05/10/2018
 ms.author: slivkins
-ms.reviewer: marcozo, alekh
-ms.openlocfilehash: 2d02b0deaaa701dd0b4818638827c04e2c946558
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: e7df982c178bff19dcad8df1ba42a5a97904cd4c
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382915"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46365023"
 ---
 # <a name="call-api-from-an-app"></a>Вызов API из приложения
 
@@ -88,4 +89,4 @@ curl -v https://ds.microsoft.com/api/v2/<appId>/reward/<eventId> -X POST
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Изучите [руководство](custom-decision-service-tutorial-news.md) с более подробным примером.
-* Обратитесь к справочнику по [API](custom-decision-service-api-reference.md), чтобы получить дополнительные сведения о предоставляемых функциональных возможностях.
+* Обратитесь к справочнику по [API](custom-decision-service-api-reference.md), чтобы получить дополнительные сведения о предоставляемых возможностях.

@@ -1,28 +1,29 @@
 ---
-title: Метод BreakSentence в API перевода текстов Microsoft Translator | Документация Майкрософт
-description: Использование метода BreakSentence в API перевода текстов Microsoft Translator.
+title: Метод BreakSentence в API перевода текстов
+titlesuffix: Azure Cognitive Services
+description: Использование метода BreakSentence в API перевода текстов.
 services: cognitive-services
 author: Jann-Skotdal
-manager: chriswendt1
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: microsoft translator
-ms.topic: article
+ms.component: translator-text
+ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-jansko
-ms.openlocfilehash: 8ce6644d21b397ea0e7f2e71e3c3a5a96638eec5
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 1202d49688bfd6aee50d1fa21c10423c071c6d92
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382412"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46124989"
 ---
-# <a name="text-api-30-breaksentence"></a>API перевода текстов 3.0: BreakSentence
+# <a name="translator-text-api-30-breaksentence"></a>API перевода текстов 3.0: BreakSentence
 
 Определяет расположение границ предложения в фрагменте текста.
 
 ## <a name="request-url"></a>Request URL (URL-адрес запроса)
 
-Отправьте запрос `POST` по адресу:
+Отправьте запрос `POST` на следующий адрес.
 
 ```HTTP
 https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
@@ -30,14 +31,14 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 ## <a name="request-parameters"></a>Параметры запроса
 
-В этой строке запроса передаются следующие параметры запроса:
+В таблице ниже приведены параметры, которые передаются в строке запроса.
 
 <table width="100%">
   <th width="20%">Параметр запроса</th>
   <th>ОПИСАНИЕ</th>
   <tr>
     <td>api-version</td>
-    <td>*Обязательный параметр запроса*.<br/>Версия API, запрошенная клиентом. Этот параметр должен содержать значение `3.0`.</td>
+    <td>*Обязательный параметр запроса*.<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`.</td>
   </tr>
   <tr>
     <td>Язык</td>
@@ -56,7 +57,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
   <th>ОПИСАНИЕ</th>
   <tr>
     <td>_Один заголовок_<br/>_авторизации_</td>
-    <td>*Обязательный заголовок запроса*.<br/>См. [описание доступных способов проверки подлинности](./v3-0-reference.md#authentication).</td>
+    <td>*Обязательный заголовок запроса*.<br/>См. [описание доступных способов аутентификации](./v3-0-reference.md#authentication).</td>
   </tr>
   <tr>
     <td>Content-Type</td>
@@ -91,7 +92,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 ## <a name="response-body"></a>Тело ответа
 
-Успешный ответ возвращается в формиате массива JSON с одним результатом для каждой строки входного массива. Объект результата содержит следующие свойства.
+Успешный ответ возвращается в формате массива JSON с одним результатом для каждой строки входного массива. Объект результата содержит следующие свойства.
 
   * `sentLen` — массив целых чисел, представляющих значения длины предложений в текстовом элементе. Длина массива соответствует количеству предложений, а значения — длине каждого предложения. 
 
@@ -145,7 +146,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
   </tr>
   <tr>
     <td>401</td>
-    <td>Не удалось выполнить проверку подлинности запроса. Убедитесь, что указаны допустимые учетные данные.</td>
+    <td>Не удалось выполнить аутентификацию запроса. Убедитесь, что указаны допустимые учетные данные.</td>
   </tr>
   <tr>
     <td>403</td>
@@ -157,11 +158,11 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
   </tr>
   <tr>
     <td>500</td>
-    <td>Произошла непредвиденная ошибка. Если ошибка повторяется, сообщите о ней, указав следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
+    <td>Произошла непредвиденная ошибка. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
   </tr>
   <tr>
     <td>503</td>
-    <td>Сервер временно недоступен. Повторите запрос. Если ошибка повторяется, сообщите о ней, указав следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
+    <td>Сервер временно недоступен. Повторите запрос. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
   </tr>
 </table> 
 

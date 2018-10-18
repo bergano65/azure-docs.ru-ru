@@ -1,24 +1,24 @@
 ---
-title: 'Руководство: создание языковой модели — Пользовательская служба распознавания речи'
-titlesuffix: Azure Cognitive Services
-description: Из этого руководства вы узнаете, как создать языковую модель с помощью Пользовательской службы распознавания речи.
+title: 'Руководство по созданию языковой модели с помощью пользовательской службы распознавания речи: Microsoft Cognitive Services | Документация Майкрософт'
+description: В этом руководстве вы узнаете, как создать языковую модель с помощью пользовательской службы распознавания речи в Microsoft Cognitive Services.
 services: cognitive-services
 author: PanosPeriorellis
-manager: cgronlun
+manager: onano
 ms.service: cognitive-services
 ms.component: custom-speech
 ms.topic: tutorial
 ms.date: 05/03/2017
 ms.author: panosper
-ROBOTS: NOINDEX
-ms.openlocfilehash: b7216688efb6a2124748cd08111d57b122085143
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 6af2da9ffc7678a58fcf1c647ba89c586066d2ad
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47219324"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49339102"
 ---
 # <a name="tutorial-create-a-custom-language-model"></a>Руководство по созданию пользовательской языковой модели
+
+[!INCLUDE [Deprecation note](../../../../includes/cognitive-services-custom-speech-deprecation-note.md)]
 
 В этом руководстве вы создадите пользовательскую языковую модель для текстовых запросов или фраз, которые, как вы ожидаете, пользователи произнесут или напечатают при работе с приложением. Затем вы можете использовать эту пользовательскую языковую модель в сочетании с имеющимися новейшими моделями речи от Майкрософт, чтобы добавить в приложение голосовое взаимодействие.
 

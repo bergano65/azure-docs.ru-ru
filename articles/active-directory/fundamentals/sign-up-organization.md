@@ -1,38 +1,43 @@
 ---
-title: Регистрация организации в Azure AD | Документация Майкрософт
-description: Узнайте, как с помощью рабочей или учебной учетной записи можно использовать существующие учетные записи пользователей, политики, параметры или локальные развертывания серверов и повышать эффективность взаимодействия локальной инфраструктуры удостоверений вашей организации и Azure AD.
+title: Регистрация организации в Azure Active Directory | Документы Майкрософт
+description: Узнайте, как зарегистрировать организацию для использования Azure и Azure Active Directory.
 services: active-directory
-documentationcenter: ''
 author: eross-msft
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.component: fundamentals
 ms.topic: conceptual
-ms.date: 08/28/2017
+ms.date: 09/14/2018
 ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro
-ms.openlocfilehash: a8d4781af0320f86eb5dd0b4b5e71c0ca7db5a18
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: ccff64b88787291832b9d2ed84eb81919152d887
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37064517"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46364777"
 ---
-# <a name="how-to-sign-up-for-azure-ad-as-an-organization"></a>Практическое руководство. Регистрация организации в Azure AD
-До недавнего времени пользователь мог получить доступ к новой подписке Microsoft Azure только под своей учетной записью Майкрософт (Windows Live ID). Теперь Azure поддерживает один из двух методов входа по учетным записям:
+# <a name="how-to-sign-up-for-azure-active-directory-as-an-organization"></a>Практическое руководство. Регистрация организации в Azure Active Directory
+Зарегистрируйтесь в службе Azure Active Directory (Azure AD) с новой подпиской Microsoft Azure через:
 
-* **Учетные записи Майкрософт** (созданные для личного использования) — обеспечивают доступ ко всем потребительским продуктам и облачным службам Майкрософт, таким как Outlook (Hotmail), Messenger, OneDrive, MSN, Xbox LIVE или Office 365. Регистрация почтового ящика Outlook.com автоматически создает учетную запись Майкрософт. После создания учетную запись Майкрософт можно использовать для доступа к потребительским облачным службам Майкрософт или Azure. [Подробнее](https://account.microsoft.com/account)
-* **Рабочие или школьные учетные записи** (выдаются администратором для использования на предприятии или в учебном заведении) — обеспечивают доступ ко всем облачным службам Майкрософт для малого, среднего бизнеса и корпораций. В число таких служб входят Azure, Microsoft Intune и Office 365. При регистрации в любой из этих служб от имени организации для представления вашей организации в Azure Active Directory автоматически выделяется каталог на основе облака. [Подробнее](active-directory-administer.md)
-  
-    После создания этого каталога администратор может создавать пользователей и назначить им лицензии в зависимости от необходимого доступа к подпискам на облачные службы, например на Azure.
+- **Учетную запись Майкрософт.** Используйте персональную учетную запись Майкрософт, чтобы получить доступ к Azure и ко всем потребительским продуктам и облачным службам Майкрософт, таким как Outlook (Hotmail), Messenger, OneDrive, MSN, Xbox LIVE или Office 365. Регистрация почтового ящика Outlook.com автоматически создает учетную запись Майкрософт. Дополнительные сведения см. в статье [Общие сведения об учетной записи Майкрософт](https://account.microsoft.com/account).
 
-Желаете подписаться на Azure как организация? [**Зарегистрируйтесь сейчас**](https://azure.microsoft.com/pricing/purchase-options/)
+- **Рабочую или учебную учетную запись.** Используйте рабочую или учебную учетную запись, чтобы получить доступ к облачным службам для малого и среднего бизнеса и корпоративным облачным службам Майкрософт, таким как Azure, Microsoft Intune или Office 365. После регистрации в любой из этих служб от имени организации Azure AD автоматически подготавливает каталог на основе облака для вашей организации. Дополнительные сведения см. в руководстве по [управлению каталогом Azure AD](active-directory-administer.md).
 
-**Дополнительные ресурсы**
+    >[!Note]
+    Мы рекомендуем использовать рабочую или учебную учетную запись, если у вас уже есть доступ к Azure AD. В любом случае следует использовать тип учетной записи, связанный с вашей подпиской Azure.
 
-* [Блог Microsoft Azure](https://azure.microsoft.com/blog/)
-* [Что такое Azure AD?](active-directory-whatis.md)
-* [Использование локальной инфраструктуры удостоверений в облаке](../connect/active-directory-aadconnect.md)
+## <a name="next-steps"></a>Дополнительная информация
+
+- [Приобретение Azure](https://azure.microsoft.com/pricing/purchase-options/)
+
+- [Регистрация для работы с выпусками Azure Active Directory Premium](active-directory-get-started-premium.md)
+
+- [Дополнительные сведения об Azure AD](active-directory-whatis.md)
+
+- [Использование локальной инфраструктуры удостоверений в облаке](../connect/active-directory-aadconnect.md)
+
+- [Посетите блог Microsoft Azure](https://azure.microsoft.com/blog/)
 

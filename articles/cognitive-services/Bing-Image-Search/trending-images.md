@@ -1,23 +1,24 @@
 ---
-title: Поиск в Интернете изображений, набирающих популярность | Документация Майкрософт
-description: В этой статье показано, как с помощью API Bing для поиска изображений искать в Интернете изображения, набирающие популярность.
+title: Поиск в Интернете изображений, набирающих популярность — API Bing для поиска изображений
+titleSuffix: Azure Cognitive Services
+description: Узнайте, как с помощью API Bing для поиска изображений искать в Интернете изображения, набирающие популярность.
 services: cognitive-services
 author: swhite-msft
-manager: ehansen
+manager: cgronlun
 ms.assetid: EAB92D35-5C0B-4A0A-8F49-02DF7FAD44B4
 ms.service: cognitive-services
 ms.component: bing-image-search
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: b12524cd4c1896501820209b3a45746b8f38b210
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 00d992da1d061ddbbee59e93898a92b6701f1ffb
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380073"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46296317"
 ---
-# <a name="get-trending-images"></a>Получение изображений, набирающих популярность  
+# <a name="get-trending-images-from-the-bing-image-search-api"></a>Получение набирающих популярность изображений из API Bing для поиска изображений
 
 Чтобы получить изображения, набирающие сегодня популярность, отправьте следующий запрос GET:  
 
@@ -38,7 +39,7 @@ Host: api.cognitive.microsoft.com
 - zh-CN (китайский, Китай)
 
 Ответ содержит объект [TrendingImages](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#trendingimages), который представляет собой список изображений, разделенных по категориям. Используйте параметр `title` категории, чтобы сгруппировать изображения для удобства пользователей. Категории могут изменяться каждый день.  
-  
+
 ```json
 {
     "_type" : "TrendingImages",  
@@ -85,8 +86,8 @@ Host: api.cognitive.microsoft.com
     }]  
 }  
 ```  
-  
-Каждый элемент содержит изображение и способы получения связанных изображений. Для получения связанных изображений можно использовать параметр запроса `text`, чтобы вызвать [API для поиска изображений](./search-the-web.md) и отобразить связанные изображения самостоятельно. Также можно использовать URL-адрес в параметре `webSearchUrl`, чтобы перенаправить пользователя на страницу Bing с результатами поиска изображений, которая содержит связанные изображения. 
+
+Каждый элемент содержит изображение и способы получения связанных изображений. Для получения связанных изображений можно использовать параметр запроса `text`, чтобы вызвать [API для поиска изображений](./search-the-web.md) и отобразить связанные изображения самостоятельно. Также можно использовать URL-адрес в параметре `webSearchUrl`, чтобы перенаправить пользователя на страницу Bing с результатами поиска изображений, которая содержит связанные изображения.
 
 Если для получения связанных изображений вы вызываете API для поиска изображений, то задайте для параметра запроса [id](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#id) значение идентификатора в поле `id`. Указав идентификатор, вы гарантируете, что ответ будет содержать изображение (это первое изображение в ответе) и связанные с ним изображения. Кроме того, в качестве значения параметра запроса [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#q) укажите текст из поля `text` объекта `query`.
 

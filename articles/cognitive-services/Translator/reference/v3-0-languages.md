@@ -1,24 +1,25 @@
 ---
-title: Метод Languages в API перевода текстов Microsoft | Документация Майкрософт
-description: Использование метода Languages в API перевода текстов Microsoft.
+title: Метод Languages в API перевода текстов
+titlesuffix: Azure Cognitive Services
+description: Используйте метод Languages в API перевода текстов.
 services: cognitive-services
 author: Jann-Skotdal
-manager: chriswendt1
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: microsoft translator
-ms.topic: article
+ms.component: translator-text
+ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-jansko
-ms.openlocfilehash: 93c06218a560faf439f05903438d021b372ce257
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 51f15bd9c75f24be0d477d10de55c93a51cfbf3f
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381861"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46129647"
 ---
-# <a name="text-api-30-languages"></a>API текста 3.0: языки
+# <a name="translator-text-api-30-languages"></a>API перевода текстов 3.0: Languages
 
-Получение набора языков, поддерживаемых в настоящее время другими операциями API текста. 
+Возвращает набор языков, поддерживаемых в настоящее время другими операциями API перевода текстов. 
 
 ## <a name="request-url"></a>Request URL (URL-адрес запроса)
 

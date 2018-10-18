@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: cf803c03d266f2a400e47fc551dea62936456177
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 4b4ded86075e49277bca84f5261b6762b0f4fcae
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36937624"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45737317"
 ---
 # <a name="manage-devices-in-your-azure-iot-central-application"></a>Управление устройствами в приложении Azure IoT Central
 
@@ -51,12 +51,9 @@ ms.locfileid: "36937624"
 
 ## <a name="import-devices"></a>Импорт устройств
 
-Для подключения к приложению большого количества устройств Azure IoT Central предоставляет функцию массового импорта устройств с помощью CSV-файла. 
-
-Требования к файлу CSV:
-1. В CSV-файле должен быть только один столбец, содержащий идентификаторы устройств.
-
-1. Файл не должен содержать заголовок.
+Для подключения к приложению большого количества устройств Azure IoT Central предоставляет функцию массового импорта устройств с помощью CSV-файла. Файл CSV должен содержать следующие столбцы (и заголовки)
+1.  IOTC_DeviceID **<span style="color:Red">(должен состоять из символов нижнего регистра)</span>**
+1.  IOTC_DeviceName (необязательно)
 
 
 Для массовой регистрации устройств в приложении сделайте следующее:
@@ -119,11 +116,13 @@ ms.locfileid: "36937624"
 
     [![Успешное завершение экспорта](./media/howto-manage-devices/Export2.png)](./media/howto-manage-devices/Export2.png#lightbox)
 
-1. В экспортированном CSV-файле будет содержаться следующая информация:
-    1. ИМЯ
-    1. Идентификатор устройства.
-    1. Первичная строка подключения.
-
+1. Экспортированный CSV-файл будет содержать следующие столбцы: **идентификатор устройства, имя устройства, первичный/вторичный ключи устройства и отпечаток основного/дополнительного сертификата**
+    *   IOTC_DEVICEID
+    *   IOTC_DEVICENAME
+    *   IOTC_SASKEY_PRIMARY
+    *   IOTC_SASKEY_SECONDARY
+    *   IOTC_X509THUMBPRINT_PRIMARY 
+    *   IOTC_X509THUMBPRINT_SECONDARY
 
 ## <a name="delete-a-device"></a>Удалить устройство.
 

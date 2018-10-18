@@ -11,15 +11,15 @@ ms.service: ''
 ms.workload: web, azure
 ms.tgt_pltfrm: vs-getting-started
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 11/09/2017
 ms.author: cawa
-ms.openlocfilehash: 61cb9fadd60ba35f11e2f3ade94bc647fac9ed72
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 1635d0fa51fb56f30dc7cf5864e49000d30cc25d
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35235929"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44719789"
 ---
 # <a name="securely-save-secret-application-settings-for-a-web-application"></a>Безопасное хранение секретных параметров веб-приложения
 
@@ -40,7 +40,7 @@ ms.locfileid: "35235929"
 Чтобы безопасно хранить секрет при работе с консольным приложением .NET Сore, используйте хранилище Key Vault.
 
 ### <a name="save-secret-settings-in-azure-key-vault"></a>Хранение секретных параметров в Azure Key Vault
-Если вы разрабатываете командный проект и вам необходимо обеспечить безопасность при совместном использовании исходного кода, используйте хранилище [Azure Key Vault](https://azure.microsoft.com/services/key-vault/).
+Если вы разрабатываете проект и вам необходимо обеспечить безопасность при совместном использовании исходного кода, используйте хранилище [Azure Key Vault](https://azure.microsoft.com/services/key-vault/).
 
 1. Создайте хранилище ключей в своей подписке Azure. Заполните все обязательные поля пользовательского интерфейса и щелкните *Создать* в нижней части колонки.
 
@@ -106,14 +106,13 @@ ms.locfileid: "35235929"
 2. Создайте файл, похожий на приведенный ниже. Сохраните его за пределами папки проекта.
 
     ```xml
-
-       <root>
-              <secrets ver="1.0">
-                     <secret name="secret1" value="foo_one" />
-                        <secret name="secret2" value="foo_two" />
-                       </secrets>
-      </root>
-      ```
+    <root>
+        <secrets ver="1.0">
+            <secret name="secret1" value="foo_one" />
+            <secret name="secret2" value="foo_two" />
+        </secrets>
+    </root>
+    ```
 
 3. Определите файл секрета как построитель конфигурации в файле Web.config. Поместите этот раздел перед разделом *appSettings*.
 

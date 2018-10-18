@@ -9,15 +9,15 @@ ms.service: active-directory
 ms.component: user-help
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 05/11/18
+ms.date: 09/11/2018
 ms.author: lizross
 ms.reviewer: asteen
-ms.openlocfilehash: e382f53678806aa3442151703277c3a57bb30830
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: 1caf69ee822ec11e8797ca23c9c163d36344edc7
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43302283"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44719993"
 ---
 # <a name="what-is-the-myapps-portal"></a>Что такое портал MyApps?
 
@@ -109,16 +109,6 @@ ms.locfileid: "43302283"
 
 > [!NOTE]
 > Вы можете войти в приложения, поддерживающие федерацию с Azure AD (включая Salesforce, Google Apps, Dropbox, Box, Concur, Workday, Office 365 и более 70 других приложений), практически в любом веб-браузере на любом устройстве без подключаемого модуля или мобильного приложения. Для остальных компонентов [интерфейса портала MyApps](https://myapps.microsoft.com/) мобильное приложение My Apps на мобильном устройстве также не требуется.
->
->
-
-### <a name="my-apps-for-android"></a>My Apps для Android
-
-Приложение My Apps для Android поддерживается на любом устройстве Android версии 4.1 или более поздней.  
-
-Оно доступно в [Google Play Маркет](https://play.google.com/store/apps/details?id=com.microsoft.myapps).
-
-![My Apps для Android][3]   
 
 ### <a name="my-apps-for-iphone-and-ipad"></a>My Apps для iPhone и iPad
 
@@ -129,13 +119,13 @@ ms.locfileid: "43302283"
 ![My Apps для iOS][4]    
 
 
-## <a name="managed-browser-for-my-apps"></a>Управляемый браузер для My Apps
+## <a name="intune-managed-browser-for-my-apps"></a>Intune Managed Browser для My Apps
 
-My Apps также интегрируется с управляемым браузером Intune Managed Browser. Intune Managed Browser для iOS и Android играет ключевую роль в обеспечении безопасности данных на мобильных устройствах. Этот браузер позволяет безопасно просматривать и использовать веб-страницы, которые могут содержать сведения об организации, и обеспечивает безопасную работу в Интернете.  
+My Apps также интегрируется с управляемым браузером Intune Managed Browser. Intune Managed Browser для устройств iOS и Android поможет вам более безопасно просматривать веб-страницы, которые могут содержать сведения об организации, обеспечивая более безопасную работу в Интернете.  
 
-Быстрый доступ к My Apps предусмотрен на домашней странице управляемого браузера и в закладках. Таким образом вы гораздо быстрее можете получить доступ к любым приложениям.
+Доступ к My Apps можно получить как с домашней страницы Managed Browser, так и из своих закладок, то есть для получения доступа к вашим приложениям требуется еще меньше кликов.
 
-Intune Managed Browser доступен в [Apple App Store](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8) и в [Google Play Маркет](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser&hl=en).
+Intune Managed Browser доступен в [Apple App Store](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8) и в [Google Play Маркет](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser).
 
 ![Управляемый браузер для My Apps][5]    
 
@@ -210,17 +200,16 @@ Intune Managed Browser доступен в [Apple App Store](https://itunes.appl
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Список всех статей, связанных с управлением приложениями, см. в статье [Указатель статей по управлению приложениями в Azure Active Directory](../active-directory-apps-index.md).
+- Дополнительные сведения об управлении приложениями см. в статье [Управление приложениями с помощью Azure Active Directory](../manage-apps/what-is-application-management.md).
  
 - Сведения об интеграции приложения SaaS в Azure AD см. в [этой статье](../saas-apps/tutorial-list.md).
  
 - Дополнительные сведения об управлении приложениями с помощью Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
  
-- Дополнительные сведения о подготовке пользователей см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../active-directory-saas-app-provisioning.md).
+- Дополнительные сведения о подготовке пользователей см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
 <!--Image references-->
 [1]: ./media/active-directory-saas-access-panel-introduction/01.png
 [2]: ./media/active-directory-saas-access-panel-introduction/02.png
-[3]: ./media/active-directory-saas-access-panel-introduction/03.png
 [4]: ./media/active-directory-saas-access-panel-introduction/04.png
 [5]: ./media/active-directory-saas-access-panel-introduction/05.png

@@ -1,24 +1,24 @@
 ---
-title: Начало работы с Пользовательской службой распознавания речи
-titlesuffix: Azure Cognitive Services
+title: Приступая к работе с Пользовательской службой распознавания речи в Azure | Документация Майкрософт
 description: Описывается, как подписаться на Пользовательскую службу распознавания речи и связать действия службы с подпиской Azure для обучения модели и ее развертывания.
 services: cognitive-services
 author: PanosPeriorellis
-manager: cgronlun
+manager: onano
 ms.service: cognitive-services
 ms.component: custom-speech
-ms.topic: conceptual
+ms.topic: article
 ms.date: 02/08/2017
 ms.author: panosper
-ROBOTS: NOINDEX
-ms.openlocfilehash: ae72edd626bd91dea7cd2812a3ef821b905f59a4
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 4bbd4c57556fd4bfd176c915e26be4a4d198418a
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47225248"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49339939"
 ---
 # <a name="get-started-with-custom-speech-service"></a>Приступая к работе с Пользовательской службой распознавания речи
+
+[!INCLUDE [Deprecation note](../../../includes/cognitive-services-custom-speech-deprecation-note.md)]
 
 Изучите основные возможности Пользовательской службы распознавания речи и узнайте, как создавать, развертывать и использовать акустические и языковые модели для потребностей приложения. Дополнительную документацию и пошаговые инструкции можно будет найти на портале Пользовательской службы распознавания речи после регистрации.
 
@@ -52,7 +52,7 @@ ms.locfileid: "47225248"
 Подробно описание того, как создать пользовательскую конечную точку преобразования речи в текст, можно найти [здесь](CustomSpeech-How-to-Topics/cognitive-services-custom-speech-create-endpoint.md).
 
 ## <a name="using-a-custom-speech-endpoint"></a>Использование пользовательской конечной точки распознавания речи
-Запросы могут отправляться в конечную точку преобразования речи в текст CRIS почти так же, как и в используемую по умолчанию конечную точку распознавания речи Azure Cognitive Services. Обратите внимание на то, что эти конечные точки функционально идентичны конечным точкам SAPI. Поэтому функциональные возможности, предоставляемые SAPI посредством клиентской библиотеки или REST API, доступны и для вашей пользовательской конечной точки.
+Запросы могут отправляться на конечную точку преобразования речи в текст CRIS почти так же, как и на используемую по умолчанию конечную точку распознавания речи Microsoft Cognitive Services. Обратите внимание на то, что эти конечные точки функционально идентичны конечным точкам SAPI. Поэтому функциональные возможности, предоставляемые SAPI посредством клиентской библиотеки или REST API, доступны и для вашей пользовательской конечной точки.
 
 Подробное описание того, как работать с пользовательской конечной точкой преобразования речи в текст, можно найти [здесь](CustomSpeech-How-to-Topics/cognitive-services-custom-speech-use-endpoint.md).
 

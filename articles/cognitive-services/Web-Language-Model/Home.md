@@ -11,17 +11,17 @@ ms.topic: overview
 ms.date: 08/12/2016
 ms.author: pibehre
 ROBOTS: NOINDEX
-ms.openlocfilehash: f6cfaa05a6107d3e1ef689103da43960ea4df366
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 79b126fc33175b7cd6df96ab07cd7b726d6065a7
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48039997"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49389944"
 ---
 # <a name="what-is-the-web-language-model-api-preview"></a>Что такое API языковой модели на основе веб-содержимого? (предварительная версия)
 
 > [!IMPORTANT]
-> Поддержка предварительной версии службы "Языковая модель на основе веб-содержимого" прекращена 9 августа 2018 г. Мы рекомендуем использовать [модули текстовой аналитики Машинного обучения Azure](https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/text-analytics) для анализа и обработки текста.
+> Поддержка предварительной версии службы "Языковая модель на основе веб-содержимого" прекращена 9 августа 2018 г. Мы рекомендуем использовать [модули текстовой аналитики Машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/studio-module-reference/text-analytics) для анализа и обработки текста.
 
 API языковой модели на основе веб-содержимого Microsoft — это облачная служба на основе REST, которая предоставляет современные инструментальные средства для обработки естественного языка. Этот API позволяет вашему приложению использовать потенциал больших данных с помощью языковых моделей, обученных с помощью веб-данных, собранных Bing на рынке en-US (английский, США).
 

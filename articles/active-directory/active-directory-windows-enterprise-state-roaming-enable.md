@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/23/2018
 ms.author: markvi
-ms.openlocfilehash: 56df09f461458071093088159d3b468755b0e4ad
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 71d8bfa116fd4d0e824d80da26df7271121a595c
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47434948"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49311377"
 ---
 # <a name="enable-enterprise-state-roaming-in-azure-active-directory"></a>Включение службы Enterprise State Roaming в Azure Active Directory
 Enterprise State Roaming доступна для любой организации с лицензий Azure AD Premium или Enterprise Mobility + Security (EMS). Дополнительные сведения о том, как получить подписку Azure AD, см. на [странице продукта Azure Active Directory](https://azure.microsoft.com/services/active-directory).
@@ -32,9 +32,9 @@ Enterprise State Roaming доступна для любой организаци
 
 1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com/)
 
-2. Последовательно выберите **Azure Active Directory** &gt; **Устройства** &gt; **Enterprise State Roaming**.
+1. Последовательно выберите **Azure Active Directory** &gt; **Устройства** &gt; **Enterprise State Roaming**.
 
-3. Включите параметр **Пользователи могут выполнять синхронизацию параметров и данных разных устройств**. Дополнительные сведения см. в статье [о настройке параметров устройств](https://docs.microsoft.com/azure/active-directory/device-management-azure-portal).
+1. Включите параметр **Пользователи могут выполнять синхронизацию параметров и данных разных устройств**. Дополнительные сведения см. в статье [о настройке параметров устройств](https://docs.microsoft.com/azure/active-directory/device-management-azure-portal).
   
   ![Изображение с настройкой параметра "Пользователи могут выполнять синхронизацию параметров и данных разных устройств"](./media/active-directory-windows-enterprise-state-roaming-enable/device-settings.png)
   
@@ -57,15 +57,15 @@ Enterprise State Roaming доступна для любой организаци
 
 1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com/)
 
-2. Выберите **Azure Active Directory** &gt; **Пользователи** &gt; **Все пользователи**.
+1. Выберите **Azure Active Directory** &gt; **Пользователи** &gt; **Все пользователи**.
 
-3. Выберите пользователя, а затем элемент **Устройства**.
+1. Выберите пользователя, а затем элемент **Устройства**.
 
-4. Чтобы увидеть состояние синхронизации, в пункте **Показать** выберите вариант **Devices syncing settings and app data** (Параметры синхронизации устройств и данные приложений).
+1. Чтобы увидеть состояние синхронизации, в пункте **Показать** выберите вариант **Devices syncing settings and app data** (Параметры синхронизации устройств и данные приложений).
   
   ![Изображение с настройками данных о синхронизации устройств](./media/active-directory-windows-enterprise-state-roaming-enable/sync-status.png)
   
-5. Если для этого пользователя зарегистрированы устройства, для которых выполняется синхронизация, вы увидите их список, как показано ниже.
+1. Если для этого пользователя зарегистрированы устройства, для которых выполняется синхронизация, вы увидите их список, как показано ниже.
   
   ![Изображение таблицы с информацией о синхронизации устройств](./media/active-directory-windows-enterprise-state-roaming-enable/device-status-row.png)
 

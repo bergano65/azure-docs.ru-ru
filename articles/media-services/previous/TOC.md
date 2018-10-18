@@ -64,6 +64,7 @@
 ##### [Настройка предустановок Media Encoder Standard](media-services-custom-mes-presets-with-dotnet.md)
 ##### [Создание эскизов с помощью Media Encoder Standard c использованием .NET](media-services-dotnet-generate-thumbnail-with-mes.md)
 ##### [Обрезка видео с помощью стандартного кодировщика мультимедиа](media-services-crop-video.md)
+##### [Создание эскиза спрайта](generate-thumbnail-sprite.md)
 #### Схемы MES
 ##### [Схема Media Encoder Standard](media-services-mes-schema.md)
 ##### [Входные метаданные](media-services-input-metadata-schema.md)

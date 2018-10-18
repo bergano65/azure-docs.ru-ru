@@ -1,6 +1,6 @@
 ---
-title: Рекомендации по настройке производительности для MapReduce в Azure Data Lake Store | Документация Майкрософт
-description: Рекомендации по настройке производительности для MapReduce в Azure Data Lake Store
+title: Рекомендации по настройке производительности для MapReduce в Azure Data Lake Storage 1-го поколения | Документы Майкрософт
+description: Рекомендации по настройке производительности для MapReduce в Azure Data Lake Storage 1-го поколения
 services: data-lake-store
 documentationcenter: ''
 author: stewu
@@ -12,26 +12,26 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/19/2016
 ms.author: stewu
-ms.openlocfilehash: f5586e7706d4dad7e3c943b2a661fa296b4d30bf
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: b661499786057a3083f79684dfd12c85266b7b5c
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34198639"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46128797"
 ---
-# <a name="performance-tuning-guidance-for-mapreduce-on-hdinsight-and-azure-data-lake-store"></a>Рекомендации по настройке производительности для MapReduce в HDInsight и Azure Data Lake Store
+# <a name="performance-tuning-guidance-for-mapreduce-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для MapReduce в HDInsight и Azure Data Lake Storage 1-го поколения
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись хранения озера данных Azure**. Инструкции по созданию учетной записи см. в статье [Начало работы с Azure Data Lake Store с помощью портала Azure](data-lake-store-get-started-portal.md).
-* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Store. См. статью [Создание кластера HDInsight с Data Lake Store](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
+* **Учетная запись Azure Data Lake Storage 1-го поколения**. Инструкции по созданию учетной записи см. в статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
+* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. См. статью [Создание кластера HDInsight с Data Lake Storage 1-го поколения](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
 * **Использование MapReduce в HDInsight**.  См. дополнительные сведения об [использовании MapReduce в Hadoop и HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-use-mapreduce)
-* **Рекомендации по настройке производительности в Azure Data Lake Store**.  См. [рекомендации по настройке производительности для Azure Data Lake Store](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance).
+* **Рекомендации по настройке производительности для Data Lake Storage 1-го поколения**.  Общие вопросы производительности описаны в [рекомендациях по настройке производительности Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance).
 
 ## <a name="parameters"></a>Параметры
 
-Ниже перечислены наиболее важные параметры, которые можно настроить, чтобы оптимизировать производительность ADLS при выполнении заданий MapReduce.
+Ниже перечислены наиболее важные параметры, которые можно настроить, чтобы оптимизировать производительность Data Lake Storage 1-го поколения при выполнении заданий MapReduce.
 
 * **Mapreduce.map.memory.mb** — объем памяти, выделяемой для каждого модуля сопоставления.
 * **Mapreduce.job.maps** — число задач сопоставления на задание.
@@ -83,9 +83,9 @@ ms.locfileid: "34198639"
 
 ## <a name="limitations"></a>Ограничения
 
-**Регулирование Azure Data Lake Store**
+**Регулирование Data Lake Storage 1-го поколения**
 
-Как мультитенантная служба, ADLS определяет ограничения пропускной способности на уровне учетной записи.  При превышении этих ограничений происходит сбой задач. Это можно определить, отслеживая ошибки регулирования в журналах задач.  Если для обработки задания требуется большая пропускная способность, свяжитесь с нами.   
+Как мультитенантная служба, Data Lake Storage 1-го поколения определяет ограничения пропускной способности на уровне учетной записи.  При превышении этих ограничений происходит сбой задач. Это можно определить, отслеживая ошибки регулирования в журналах задач.  Если для обработки задания требуется большая пропускная способность, свяжитесь с нами.   
 
 Чтобы проверить, применяется ли для вас регулирование, включите ведение журнала отладки на стороне клиента. Вот как это сделать.
 
@@ -97,7 +97,7 @@ ms.locfileid: "34198639"
 
 ## <a name="examples-to-run"></a>Примеры выполнения кода
 
-Чтобы показать, как MapReduce выполняется в Azure Data Lake Store, ниже приведен пример кода, выполняемого в кластере со следующими параметрами:
+Чтобы показать, как MapReduce выполняется в Data Lake Storage 1-го поколения, ниже приведен пример кода, выполняемого в кластере со следующими параметрами:
 
 * 16 узлов D14v2;
 * кластер Hadoop под управлением HDI 3.6.

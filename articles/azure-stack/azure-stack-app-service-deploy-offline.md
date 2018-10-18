@@ -12,14 +12,14 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/15/2018
+ms.date: 09/12/2018
 ms.author: anwestg
-ms.openlocfilehash: 9e36e470c3516c55089ce1e44540b6b1eacbb6b2
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 4b6ad2e237d73d5d8ca414bffc3a679ee552105f
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41946400"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44718735"
 ---
 # <a name="add-an-app-service-resource-provider-to-a-disconnected-azure-stack-environment-secured-by-ad-fs"></a>Добавление поставщика ресурсов службы приложений в автономную среду Azure Stack, защищенную с помощью службы федерации Active Directory (AD FS)
 
@@ -226,7 +226,7 @@ ms.locfileid: "41946400"
 >
 Начиная с третьей технической предварительной версии, для создания веб-приложения, приложения API и приложения Функций Azure необходимо использовать портал клиента и иметь подписку клиента.
 
-1. На портале клиента Azure Stack щелкните **Создать** > **Интернет и мобильные устройства** > **Веб-приложение**.
+1. На портале клиента Azure Stack последовательно выберите команды **+ Создать ресурс** > **Интернет + мобильные устройства** > **Веб-приложение**.
 
 2. В колонке **Веб-приложение** введите имя в поле **Веб-приложение**.
 

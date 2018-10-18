@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: timlt
-ms.openlocfilehash: 63843797cca7fe84cdb9ce91d2282b1c0c288f0c
-ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
+ms.openlocfilehash: a9390ac9046ad1e0ec5a1689052ee99bf76ec6f4
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39205142"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45734241"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-c"></a>Подключение Raspberry Pi к приложению Azure IoT Central (C#)
 
@@ -262,6 +262,9 @@ ms.locfileid: "39205142"
 ## <a name="run-your-net-application"></a>Запуск приложения .NET
 
 Добавьте строку подключения к устройству в код, чтобы устройство выполнило проверку подлинности в Azure IoT Central. Вы записали эту строку подключения при добавлении реального устройства в приложение Azure IoT Central.
+
+  > [!NOTE]
+   > Azure IoT Central перешел на использование службы подготовки устройств к добавлению в центр Интернета вещей Azure (DPS) для подключения всех устройств. Следуйте инструкциям, чтобы [получить строку подключения устройства](concepts-connectivity.md#getting-device-connection-string) и продолжите выполнение оставшейся части руководства.
 
 1. Замените `{your device connection string}` в файле **Program.cs** ранее записанной строкой подключения.
 

@@ -7,13 +7,13 @@ author: tomarcher
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 07/23/2018
-ms.openlocfilehash: d3d3ed8aaac16bc0a8cf817f4972ed3b771ed8d0
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.date: 10/11/2018
+ms.openlocfilehash: 6cd3938844d7f6977c7b0912acffbfb1679dc42e
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43093560"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49387395"
 ---
 # <a name="deploy-to-azure-kubernetes-service-aks-by-using-jenkins-and-the-bluegreen-deployment-pattern"></a>Развертывание в службе Azure Kubernetes (AKS) с помощью Jenkins и сине-зеленого шаблона развертывания
 
@@ -32,7 +32,7 @@ ms.locfileid: "43093560"
 
 ## <a name="prerequisites"></a>Предварительные требования
 - [Учетная запись GitHub](https://github.com). Вам понадобится учетная запись GitHub, чтобы клонировать пример из репозитория.
-- [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest). Для создания кластера Kubernetes используйте Azure CLI 2.0.
+- [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Для создания кластера Kubernetes используйте Azure CLI 2.0.
 - [Chocolatey](https://chocolatey.org). Это диспетчер пакетов, используемый для установки kubectl.
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/). Интерфейс командной строки, используемый для выполнения команд кластеров Kubernetes.
 - [jq](https://stedolan.github.io/jq/download/). Небольшой процессор командной строки JSON.
@@ -82,9 +82,6 @@ ms.locfileid: "43093560"
 - Использование Azure CLI 2.0 для создания управляемого кластера Kubernetes.
 - Узнайте, как настроить кластер с помощью скрипта установки или вручную.
 - Создайте экземпляр службы "Реестр контейнеров Azure".
-
-> [!NOTE]   
-> Сейчас служба AKS доступна в предварительной версии. Сведения о включении предварительной версии для подписки Azure см. в статье [Краткое руководство по развертыванию кластера службы Azure Kubernetes (AKS)](/azure/aks/kubernetes-walkthrough#enabling-aks-preview-for-your-azure-subscription).
 
 ### <a name="use-the-azure-cli-20-to-create-a-managed-kubernetes-cluster"></a>Использование Azure CLI 2.0 для создания управляемого кластера Kubernetes
 Для создания управляемого кластера Kubernetes с [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) убедитесь, что вы используете Azure CLI версии 2.0.25 или более поздней версии.

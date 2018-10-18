@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/27/2018
+ms.date: 09/13/2018
 ms.author: jeffgilb
 ms.reviewer: jeffgo
-ms.openlocfilehash: b73deebb10d0c81a06df9cd192eaa2ef28de744d
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: 42d8a5a8073d2650b9e023305472f28d4f1c738f
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37083046"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45580105"
 ---
 # <a name="remove-the-sql-resource-provider"></a>Удаление поставщика ресурсов SQL
 
@@ -52,6 +52,7 @@ ms.locfileid: "37083046"
 
     * **Uninstall**. Удаляет поставщик ресурсов и все связанные с ним ресурсы.
     * **PrivilegedEndpoint**. IP-адрес или DNS-имя привилегированной конечной точки.
+    * **AzureEnvironment**. Среда Azure, используемая для развертывания Azure Stack. Требуется только для развертываний Azure AD.
     * **CloudAdminCredential**. Учетные данные администратора облака, необходимые для доступа к привилегированной конечной точке.
     * **AzCredential**. Учетные данные администратора службы Azure Stack. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack.
 

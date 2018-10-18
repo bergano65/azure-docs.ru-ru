@@ -1,6 +1,6 @@
 ---
-title: Аутентификация пользователей в Data Lake Store с помощью Azure Active Directory и REST API | Документация Майкрософт
-description: Узнайте, как реализовать аутентификацию пользователей в Data Lake Store с помощью Azure Active Directory и REST API.
+title: Проверка подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory и REST API | Документы Майкрософт
+description: Узнайте, как реализовать проверку подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory и REST API.
 services: data-lake-store
 documentationcenter: ''
 author: nitinme
@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: 7b339c989a21abff34b885a8cba219aba701ca79
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: ea550c0959f5de13f013f135926251bf9f8b450f
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34624256"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46124445"
 ---
-# <a name="end-user-authentication-with-data-lake-store-using-rest-api"></a>Аутентификация пользователей в Data Lake Store с помощью REST API
+# <a name="end-user-authentication-with-azure-data-lake-storage-gen1-using-rest-api"></a>Проверка подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью REST API
 > [!div class="op_single_selector"]
 > * [С использованием Java](data-lake-store-end-user-authenticate-java-sdk.md)
 > * [Использование пакета SDK для .NET](data-lake-store-end-user-authenticate-net-sdk.md)
@@ -27,20 +27,20 @@ ms.locfileid: "34624256"
 > 
 >  
 
-В этой статье описывается, как использовать REST API для аутентификации пользователей с помощью Azure Data Lake Store. См. дополнительные сведения об [аутентификации между службами с помощью Data Lake Store и REST API](data-lake-store-service-to-service-authenticate-rest-api.md).
+В этой статье описывается, как использовать REST API для проверки подлинности пользователей с помощью Azure Data Lake Storage 1-го поколения. См. дополнительные сведения о [проверке подлинности между службами в Data Lake Storage 1-го поколения с помощью REST API](data-lake-store-service-to-service-authenticate-rest-api.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
-* **Создание собственного приложения Active Directory** Вам нужно выполнить инструкции по [аутентификации пользователей в Data Lake Store с помощью Azure Active Directory](data-lake-store-end-user-authenticate-using-active-directory.md).
+* **Создание собственного приложения Active Directory** Вам нужно выполнить инструкции по [аутентификации пользователей в Data Lake Storage 1-го поколения с помощью Azure Active Directory](data-lake-store-end-user-authenticate-using-active-directory.md).
 
-* **[cURL](http://curl.haxx.se/)**. В этой статье для демонстрации вызовов REST API к учетной записи хранения озера данных используется cURL.
+* **[cURL](http://curl.haxx.se/)**. В этой статье для демонстрации вызовов REST API к учетной записи Data Lake Storage 1-го поколения используется cURL.
 
 ## <a name="end-user-authentication"></a>Аутентификация пользователей
 Мы рекомендуем использовать аутентификацию пользователей, если вам нужно, чтобы пользователи входили в приложение с помощью Azure AD. Приложение будет иметь тот же уровень доступа к ресурсам Azure, что и вошедший пользователь. Пользователю нужно периодически вводить свои учетные данные, чтобы обеспечить для приложения возможность доступа.
 
-В результате входа пользователя приложение получает маркер доступа и маркер обновления. Маркер доступа вкладывается в каждый запрос к Data Lake Store и Data Lake Analytics и по умолчанию действителен в течение одного часа. Маркер обновления может использоваться для получения нового маркера доступа. По умолчанию он действителен до двух недель, при условии, что используется регулярно. Для входа пользователей можно использовать два разных подхода.
+В результате входа пользователя приложение получает маркер доступа и маркер обновления. Маркер доступа вкладывается в каждый запрос к Data Lake Storage 1-го поколения и Data Lake Analytics и по умолчанию действителен в течение одного часа. Маркер обновления может использоваться для получения нового маркера доступа. По умолчанию он действителен до двух недель, при условии, что используется регулярно. Для входа пользователей можно использовать два разных подхода.
 
 В этом сценарии приложение предлагает пользователю войти в систему, и все операции выполняются в контексте пользователя. Выполните следующие действия:
 
@@ -71,7 +71,7 @@ ms.locfileid: "34624256"
    > 
    > 
 
-3. Ответ является объектом JSON, который содержит маркер доступа (например, `"access_token": "<ACCESS_TOKEN>"`) и маркер обновления (например, `"refresh_token": "<REFRESH_TOKEN>"`). Приложение использует маркер доступа для обращения к хранилищу озера данных Azure, а маркер обновления — для получения другого маркера доступа, когда срок действия текущего маркера доступа истечет.
+3. Ответ является объектом JSON, который содержит маркер доступа (например, `"access_token": "<ACCESS_TOKEN>"`) и маркер обновления (например, `"refresh_token": "<REFRESH_TOKEN>"`). Приложение использует маркер доступа для обращения к Azure Data Lake Storage 1-го поколения, а маркер обновления — для получения другого маркера доступа, когда срок действия текущего маркера доступа истечет.
    
         {"token_type":"Bearer","scope":"user_impersonation","expires_in":"3599","expires_on":"1461865782","not_before":    "1461861882","resource":"https://management.core.windows.net/","access_token":"<REDACTED>","refresh_token":"<REDACTED>","id_token":"<REDACTED>"}
 
@@ -86,8 +86,8 @@ ms.locfileid: "34624256"
 Дополнительные сведения об интерактивной проверке подлинности пользователей см. в статье [Авторизация доступа к веб-приложениям с помощью OAuth 2.0 и Azure Active Directory](https://msdn.microsoft.com/library/azure/dn645542.aspx).
    
 ## <a name="next-steps"></a>Дополнительная информация
-В этой статье описывается, как использовать аутентификацию между службами, чтобы реализовать проверку подлинности с помощью Azure Data Lake Store и REST API. Дополнительные сведения об использовании REST API для работы с Azure Data Lake Store см. в следующих статьях.
+В этой статье описывается, как использовать проверку подлинности между службами, чтобы реализовать проверку подлинности в Azure Data Lake Storage 1-го поколения с помощью REST API. Дополнительные сведения об использовании REST API для работы с Azure Data Lake Storage 1-го поколения см. в следующих статьях.
 
-* [Начало работы с Azure Data Lake Store с использованием REST API](data-lake-store-get-started-rest-api.md).
-* [Операции с данными в Azure Data Lake Store с использованием REST API](data-lake-store-data-operations-rest-api.md).
+* [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием REST API](data-lake-store-get-started-rest-api.md)
+* [Операции с данными в Data Lake Storage 1-го поколения c использованием REST API](data-lake-store-data-operations-rest-api.md)
 

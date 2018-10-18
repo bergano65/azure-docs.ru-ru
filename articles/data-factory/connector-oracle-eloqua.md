@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из Oracle Eloqua с помощью службы "Фабрика данных Azure" | Документация Майкрософт
+title: Копирование данных из Oracle Eloqua с помощью фабрики данных Azure (предварительная версия) | Документы Майкрософт
 description: Узнайте, как копировать данные из Oracle Eloqua в поддерживаемые хранилища данных, используемые в качестве приемников, с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 821e345933ba52ed2c71251bab3ba159e5412568
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 56160b8db3bad5ebd04fc30442833d36f1633ed1
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37048379"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46123527"
 ---
-# <a name="copy-data-from-oracle-eloqua-using-azure-data-factory"></a>Копирование данных из Oracle Eloqua с помощью службы "Фабрика данных Azure"
+# <a name="copy-data-from-oracle-eloqua-using-azure-data-factory-preview"></a>Копирование данных из Oracle Eloqua с помощью фабрики данных Azure (предварительная версия)
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из Oracle Eloqua. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 

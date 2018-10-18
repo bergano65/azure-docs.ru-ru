@@ -14,15 +14,15 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 08/17/2016
 ms.author: tarcher
-ms.openlocfilehash: 76679ea0ff2c1e88d1923488717a245351437165
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 045250f0b0f97cbefe05b36f1c8d4480244a172d
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23036469"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45575853"
 ---
 # <a name="using-nodejs-modules-with-azure-applications"></a>Использование модулей Node.js с приложениями Azure
-Этот документ содержит указания по использованию модулей Node.js с приложениями, размещенными в Azure. В нем описывается, как обеспечить использование конкретной версии модуля приложением и как использовать собственные модули вместе с Azure.
+Этот документ содержит указания по использованию модулей Node.js с приложениями, размещенными в Azure. В нем описывается, как обеспечить использование конкретной версии модуля приложением и использовать собственные модули в Azure.
 
 Возможно, вы уже знакомы с использованием модулей Node.js, файлов **package.json** и **npm-shrinkwrap.json**. Ниже приводится краткая сводка по тем вопросам, которые рассматриваются в этой статье.
 
@@ -38,7 +38,7 @@ ms.locfileid: "23036469"
 ## <a name="nodejs-modules"></a>Модули Node.js
 Модули — это загружаемые пакеты JavaScript, предоставляющие вашему приложению определенные функциональные возможности. Модули обычно устанавливаются с помощью программы командной строки **npm**, однако некоторые из них (например, HTTP-модуль) предоставляются в составе основного пакета Node.js.
 
-Установленные модули сохраняются в каталоге **node\_modules**, находящемся в корне структуры каталогов приложения. У каждого модуля в каталоге **node\_modules** есть собственный каталог **node\_modules**, который содержит все модули, от которых он зависит. Такие каталоги есть у каждого модуля в цепочке зависимостей. Эта среда позволяет каждому установленному модулю иметь собственные требования к версиям модулей, от которых он зависит, однако это может привести к слишком большому размеру структуры каталогов.
+Установленные модули сохраняются в каталоге **node\_modules**, находящемся в корне структуры каталогов приложения. У каждого модуля в каталоге **node\_modules** есть собственный каталог, который содержит все модули, от которых он зависит. Такие каталоги есть у каждого модуля в цепочке зависимостей. Эта среда позволяет каждому установленному модулю иметь собственные требования к версиям модулей, от которых он зависит, однако это может привести к слишком большому размеру структуры каталогов.
 
 Когда каталог **node\_modules** развертывается в составе приложения, размер развертывания становится больше, чем при использовании файла **package.json** или **npm-shrinkwrap.json**, однако это гарантирует, что в рабочей среде используются те же версии модулей, что и в среде разработки.
 
@@ -51,7 +51,7 @@ ms.locfileid: "23036469"
 
   * Перед компиляцией убедитесь, что локальная установка Node.js имеет соответствующую архитектуру и версию, максимально близкую к той, которая используется в Azure (текущие значения можно проверить в среде выполнения из свойств **process.arch** и **process.version**).
 
-* Службу приложений Azure можно настроить для выполнения пользовательских сценариев Bash или сценариев оболочки во время развертывания, что дает возможность выполнять пользовательские команды и точно настроить способ выполнения **npm install** . Видео о том, как настроить такую среду, см. по этой ссылке: [Custom Web Site Deployment Scripts with Kudu] (Пользовательские сценарии развертывания веб-сайтов с использованием Kudu).
+* Службу приложений Azure можно настроить для выполнения пользовательских сценариев Bash или сценариев оболочки во время развертывания, что дает возможность выполнять пользовательские команды и точно настроить способ выполнения **npm install** . Видео о том, как настроить такую среду, см. по этой ссылке: [Custom Web Site Deployment Scripts with Kudu](https://azure.microsoft.com/resources/videos/custom-web-site-deployment-scripts-with-kudu/) (Пользовательские сценарии развертывания веб-сайтов с использованием Kudu).
 
 ### <a name="using-a-packagejson-file"></a>Использование файла package.json
 
@@ -85,10 +85,10 @@ ms.locfileid: "23036469"
 > 
 
 ## <a name="next-steps"></a>Дополнительная информация
-Теперь, когда вы научились использовать модули Node.js с Azure, узнайте, как [указать версию Node.js], [создать и развернуть веб-приложение Node.js](app-service/app-service-web-get-started-nodejs.md) и [использовать интерфейс командной строки Azure для Mac и Linux].
+Теперь, когда вы научились использовать модули Node.js с Azure, узнайте, как [указать версию Node.js](https://github.com/squillace/staging/blob/master/articles/nodejs-specify-node-version-azure-apps.md), [создать и развернуть веб-приложение Node.js](app-service/app-service-web-get-started-nodejs.md) и [использовать интерфейс командной строки Azure для Mac и Linux](https://azure.microsoft.com/blog/using-windows-azure-with-the-command-line-tools-for-mac-and-linux/).
 
 Дополнительную информацию см. в [центре разработчиков Node.js](/nodejs/azure/).
 
-[указать версию Node.js]: nodejs-specify-node-version-azure-apps.md
-[использовать интерфейс командной строки Azure для Mac и Linux]:cli-install-nodejs.md
-[Custom Web Site Deployment Scripts with Kudu]: https://channel9.msdn.com/Shows/Azure-Friday/Custom-Web-Site-Deployment-Scripts-with-Kudu-with-David-Ebbo
+[specify the Node.js version]: nodejs-specify-node-version-azure-apps.md
+[How to use the Azure Command-Line Interface for Mac and Linux]:cli-install-nodejs.md
+[Custom Website Deployment Scripts with Kudu]: https://channel9.msdn.com/Shows/Azure-Friday/Custom-Web-Site-Deployment-Scripts-with-Kudu-with-David-Ebbo

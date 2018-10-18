@@ -10,12 +10,12 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: luisca
-ms.openlocfilehash: 311f4bd67081de567763783a9d86540eda36d9f8
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 286e1f9d6f6ae09d98aa87b447df7a7524642a1f
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33786773"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45729008"
 ---
 #   <a name="shaper-cognitive-skill"></a>Когнитивный навык формирователя
 
@@ -27,6 +27,8 @@ ms.locfileid: "33786773"
 
 В отклике выходные данные всегда имеют имя "output". На внутреннем уровне конвейер может сопоставить с "output" другое имя, например "analyzedText", как в приведенных ниже примерах, однако сам навык формирователя возвращает в отклике имя "output". Это может оказаться важным при обнаружении несоответствия имен во время отладки обогащенных документов или при создании пользовательского навыка с самостоятельным структурированием отклика.
 
+> [!NOTE]
+> Служба "Когнитивный поиск" находится в общедоступной предварительной версии. Выполнение набора навыков, а также извлечение и нормализация изображений в настоящее время предлагаются бесплатно. Цена на эти функции будет объявлена позже. 
 
 ## <a name="odatatype"></a>@odata.type  
 Microsoft.Skills.Util.ShaperSkill

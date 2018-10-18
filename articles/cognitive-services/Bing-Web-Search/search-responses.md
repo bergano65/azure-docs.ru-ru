@@ -1,23 +1,23 @@
 ---
-title: Отклики API Bing для поиска в Интернете | Microsoft Docs
-titleSuffix: Microsoft Cognitive Services
+title: Отклики на поисковые запросы. API Bing для поиска в Интернете
+titleSuffix: Azure Cognitive Services
 description: Сведения о типах ответов и откликах, которые предоставляет API Bing для поиска в Интернете.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-web-search
-ms.topic: article
+ms.topic: conceptual
 ms.date: 8/13/2018
 ms.author: erhopf
-ms.openlocfilehash: 13e9792f3d5765047dabb4cdef59e85a47a69aba
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: f3a4c8bb024aa5e92365b72b8cc2180cc6f4d6d4
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42889344"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46123782"
 ---
-# <a name="bing-web-search-responses"></a>Отклики службы "Поиск в Интернете Bing"  
+# <a name="bing-web-search-api-response-structure-and-answer-types"></a>Структура откликов и типы ответов API Bing для поиска в Интернете  
 
 При отправке поискового запроса службе "Поиск в Интернете Bing" она возвращает объект [`SearchResponse`](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#searchresponse) в тексте отклика. Объект содержит поле для каждого ответа, который система Bing посчитала соответствующим запросу. Этот пример иллюстрирует объект отклика, если система Bing вернула все ответы:
 

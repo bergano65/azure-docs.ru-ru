@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 03/19/2018
 ms.author: juliako
-ms.openlocfilehash: 6d4c21867b0b46508f348300ae2b9553a75d23b2
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 883aecaa82f1a83af22bf345d364c2b43776e559
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33782573"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45732215"
 ---
 # <a name="storage-accounts"></a>учетные записи хранения;
 
@@ -27,7 +27,7 @@ ms.locfileid: "33782573"
 >[!NOTE]
 > Учетные записи, предназначенные только для большого двоичного объекта, нельзя использовать в качестве **основных**. 
 
-Рекомендуется использовать GPv2, чтобы вы могли выбрать между "холодным" и "горячим" уровнем хранилища. Дополнительные сведения об учетных записях хранения см. в статье [Варианты учетной записи хранения Azure](../../storage/common/storage-account-options.md). 
+Рекомендуется использовать GPv2, чтобы вы могли выбрать между "холодным" и "горячим" уровнем хранилища. Дополнительные сведения об учетных записях хранения см. в статье [Общие сведения об учетной записи хранения Azure](../../storage/common/storage-account-overview.md). 
 
 ## <a name="assets-in-a-storage-account"></a>Ресурсы в учетной записи хранения
 

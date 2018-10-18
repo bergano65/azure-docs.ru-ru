@@ -9,12 +9,12 @@ ms.component: qna-maker
 ms.topic: quickstart
 ms.date: 09/12/2018
 ms.author: diberry
-ms.openlocfilehash: 85b4630492d5f5b3fb71d563b0947d8a72ae4e1d
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: 99f9259c9fa73a9ba4842b2684cde8a44f73145a
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48886577"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49389672"
 ---
 # <a name="quickstart-create-train-and-publish-your-knowledge-base"></a>Краткое руководство. Создание, обучение и публикация базы знаний
 
@@ -41,7 +41,7 @@ ms.locfileid: "48886577"
 
 5. На шаге 3 назовите свою базу знаний **Мой пример базы знаний QnA**.
 
-6. Чтобы добавить содержимое в базу знаний, выберите три типа источников данных. На шаге 4 в разделе **Populate your KB** (Заполнить базу знаний) добавьте URL-адрес страницы [Обзор BitLocker и требования к вопросам и ответам](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-overview-and-requirements-faq) в поле **URL-адрес**.
+6. Чтобы добавить содержимое в базу знаний, выберите три типа источников данных. На шаге 4 в разделе **Populate your KB** (Заполнить базу знаний) добавьте URL-адрес страницы [Обзор BitLocker и требования к вопросам и ответам](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-overview-and-requirements-faq) в поле **URL-адрес**.
 
    ![Выбор базы знаний службы QnA](../media/qnamaker-quickstart-kb/add-datasources.png)
 

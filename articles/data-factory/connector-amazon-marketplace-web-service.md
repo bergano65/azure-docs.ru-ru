@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из Amazon Marketplace Web Service с помощью Фабрики данных Azure | Документация Майкрософт
+title: Копирование данных из Amazon Marketplace Web Service с помощью фабрики данных Azure (предварительная версия) | Документы Майкрософт
 description: Узнайте, как копировать данные из Amazon Marketplace Web Service на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: jingwang
-ms.openlocfilehash: c456f87b451c5876653d704ec367629c2856a1f6
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: bcda662790c1af72e28b8968142bab15f62e83bf
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37052476"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46127185"
 ---
-# <a name="copy-data-from-amazon-marketplace-web-service-using-azure-data-factory"></a>Копирование данных из Amazon Marketplace Web Service с помощью Фабрики данных Azure
+# <a name="copy-data-from-amazon-marketplace-web-service-using-azure-data-factory-preview"></a>Копирование данных из Amazon Marketplace Web Service с помощью фабрики данных Azure (предварительная версия)
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из Amazon Marketplace Web Service. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 

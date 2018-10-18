@@ -1,28 +1,29 @@
 ---
-title: Метод Examples в API перевода текстов корпорации Майкрософт | Документация Майкрософт
-description: Использование метода Examples в API перевода текстов корпорации Майкрософт.
+title: Метод Dictionary Examples в API перевода текстов
+titlesuffix: Azure Cognitive Services
+description: Использование метода Dictionary Examples в API перевода текстов.
 services: cognitive-services
 author: Jann-Skotdal
-manager: chriswendt1
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: microsoft translator
-ms.topic: article
+ms.component: translator-text
+ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-jansko
-ms.openlocfilehash: 9960f3be42090edaec1df935d70e4c1a0d25b691
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 1e6bd1b7ddb38d0fad33ab9d282f8edc4ff8c765
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382409"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46129137"
 ---
-# <a name="text-api-30-dictionary-examples"></a>API перевода текстов 3.0: Dictionary Examples (примеры из словаря)
+# <a name="translator-text-api-30-dictionary-examples"></a>API перевода текстов 3.0: Dictionary Examples
 
 Этот метод предоставляет контекстные примеры использования термина, включенного в словарь. Эта операция используется в сочетании с [поиском по словарю](.\v3-0-dictionary-lookup.md).
 
 ## <a name="request-url"></a>Request URL (URL-адрес запроса)
 
-Отправьте запрос `POST` на адрес:
+Отправьте запрос `POST` на следующий адрес.
 
 ```HTTP
 https://api.cognitive.microsofttranslator.com/dictionary/examples?api-version=3.0
@@ -30,22 +31,22 @@ https://api.cognitive.microsofttranslator.com/dictionary/examples?api-version=3.
 
 ## <a name="request-parameters"></a>Параметры запроса
 
-В этой строке запроса передаются следующие параметры запроса.
+В таблице ниже приведены параметры, которые передаются в строке запроса.
 
 <table width="100%">
   <th width="20%">Параметр запроса</th>
   <th>ОПИСАНИЕ</th>
   <tr>
     <td>api-version</td>
-    <td>*Обязательный параметр*.<br/>Версия API, запрошенная клиентом. Значение должно быть `3.0`.</td>
+    <td>*Обязательный параметр.*<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`.</td>
   </tr>
   <tr>
     <td>from</td>
-    <td>*Обязательный параметр*.<br/>Определяет язык вводимого текста. Целевой язык должен быть одним из [поддерживаемых языков](.\v3-0-languages.md) включенных в область `dictionary`.</td>
+    <td>*Обязательный параметр.*<br/>Определяет язык вводимого текста. Исходный язык должен быть одним из [поддерживаемых языков](.\v3-0-languages.md), включенных в область `dictionary`.</td>
   </tr>
   <tr>
     <td>значение</td>
-    <td>*Обязательный параметр*.<br/>Определяет язык выходного текста. Целевой язык должен быть одним из [поддерживаемых языков](.\v3-0-languages.md) включенных в область `dictionary`.</td>
+    <td>*Обязательный параметр.*<br/>Определяет язык выходного текста. Целевой язык должен быть одним из [поддерживаемых языков](.\v3-0-languages.md), включенных в область `dictionary`.</td>
   </tr>
 </table>
 
@@ -56,7 +57,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/examples?api-version=3.
   <th>ОПИСАНИЕ</th>
   <tr>
     <td>_Один заголовок_<br/>_авторизации_</td>
-    <td>*Обязательный заголовок запроса*.<br/>См. [описание доступных параметров для аутентификации](./v3-0-reference.md#authentication).</td>
+    <td>*Обязательный заголовок запроса*.<br/>См. [описание доступных способов аутентификации](./v3-0-reference.md#authentication).</td>
   </tr>
   <tr>
     <td>Content-Type</td>
@@ -80,7 +81,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/examples?api-version=3.
 
   * `Translation` — строка, содержащая переведенный текст, возвращенный предшествующей операцией [поиска по словарю](.\v3-0-dictionary-lookup.md). Здесь должно передаваться значение из поля `normalizedTarget`, полученного в списке `translations` по предшествующему запросу [поиска по словарю](.\v3-0-dictionary-lookup.md). Служба возвращает примеры для конкретной пары слов на языках оригинала и перевода.
 
-Пример:
+Пример.
 
 ```json
 [
@@ -95,7 +96,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/examples?api-version=3.
 
 ## <a name="response-body"></a>Тело ответа
 
-Успешный ответ возвращается в формате массива JSON с одним результатом для каждого элемента входного массива. Объект результатов содержит следующие свойства.
+Успешный ответ возвращается в формате массива JSON с одним результатом для каждой строки входного массива. Объект результатов содержит следующие свойства.
 
   * `normalizedSource` — строка, задающая нормализованную форму термина в оригинале. Обычно это значение должно совпадать со значением поля `Text` для соответствующего элемента в теле запроса.
     

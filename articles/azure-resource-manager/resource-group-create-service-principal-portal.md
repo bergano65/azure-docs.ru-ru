@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/21/2018
 ms.author: tomfitz
-ms.openlocfilehash: fc0ccd84f493fd69c84515331386592ec11a887e
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
+ms.openlocfilehash: 2f053f6dd98b9f4e97d69e51bce933a003633277
+ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44025299"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46497949"
 ---
 # <a name="use-portal-to-create-an-azure-active-directory-application-and-service-principal-that-can-access-resources"></a>Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала
 
@@ -27,7 +27,7 @@ ms.locfileid: "44025299"
 В этой статье рассказывается, как это сделать с помощью портала Azure. Здесь рассматривается однотенантное приложение — решение, используемое в пределах одной организации. Обычно однотенантная архитектура используется для создания бизнес-приложений в рамках организации.
 
 > [!IMPORTANT]
-> Вместо создания субъекта-службы вы можете применить управляемое удостоверение службы (MSI) Azure AD в качестве удостоверения приложения. MSI Azure AD используется в режиме общедоступной предварительной версии. Эта функция Azure Active Directory упрощает создание удостоверения для кода. Если код выполняется в службе, которая поддерживает MSI Azure AD и обращается к ресурсам, которые поддерживают аутентификацию Azure Active Directory, то MSI Azure AD будет оптимальным выбором. Дополнительные сведения об удостоверении MSI Azure AD, в том числе список поддерживаемых служб, см. в статье [Управляемое удостоверение службы (MSI) для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md).
+> Вместо создания субъекта-службы вы можете применить управляемые удостоверения ресурсов Azure в качестве удостоверения приложения. Если код выполняется в службе, которая поддерживает управляемые удостоверения и обращается к ресурсам, которые поддерживают аутентификацию Azure Active Directory, то управляемые удостоверения будут оптимальным выбором. Дополнительные сведения об управляемых удостоверениях для ресурсов Azure, включая службы, которые в настоящее время поддерживают их, см. в разделе [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 
@@ -53,7 +53,7 @@ ms.locfileid: "44025299"
 
 ### <a name="check-azure-subscription-permissions"></a>Проверка прав доступа к подпискам Azure
 
-Чтобы вы могли назначить роль приложению Active Directory, вашей учетной записи в подписке Azure должно быть предоставлено разрешение `Microsoft.Authorization/*/Write`. Это разрешение предоставляется ролью [владельца](../role-based-access-control/built-in-roles.md#owner) или [администратора доступа пользователей](../role-based-access-control/built-in-roles.md#user-access-administrator). Если вашей учетной записи назначена роль **участник**, значит у вас нет соответствующего разрешения. При попытке назначить роль субъекту-службе вы увидите ошибку.
+Чтобы вы могли назначить роль приложению Active Directory, вашей учетной записи в подписке Azure должно быть предоставлено разрешение `Microsoft.Authorization/*/Write`. Это разрешение предоставляется ролью [владельца](../role-based-access-control/built-in-roles.md#owner) или [администратора доступа пользователей](../role-based-access-control/built-in-roles.md#user-access-administrator). Если вашей учетной записи назначена роль **Участник**, то у вас нет соответствующего разрешения. При попытке назначить роль субъекту-службе вы увидите ошибку.
 
 Чтобы проверить права доступа к подписке, выполните следующие действия.
 
@@ -71,7 +71,7 @@ ms.locfileid: "44025299"
 
 ## <a name="create-an-azure-active-directory-application"></a>Создание приложения Azure Active Directory
 
-1. Войдите в учетную запись Azure на [портале Azure](https://portal.azure.com).
+1. Войдите в учетную запись Azure через [портал Azure](https://portal.azure.com).
 1. Выберите **Azure Active Directory**.
 
    ![Выбор Azure Active Directory](./media/resource-group-create-service-principal-portal/select-active-directory.png)
@@ -114,7 +114,7 @@ ms.locfileid: "44025299"
 
    ![Сохранение ключа](./media/resource-group-create-service-principal-portal/save-key.png)
 
-   После этого отобразится значение ключа. Это значение нельзя будет получить позже, поэтому скопируйте его сразу. Это значение необходимо предоставить вместе с идентификатором приложения для входа от имени приложения. Сохраните значение ключа, чтобы приложение могло получить к нему доступ.
+   После этого отобразится значение ключа. Это значение невозможно будет получить позже, поэтому скопируйте его сразу. Значение ключа необходимо предоставить вместе с идентификатором приложения для входа от имени приложения. Сохраните значение ключа, чтобы приложение могло получить к нему доступ.
 
    ![сохраненный ключ](./media/resource-group-create-service-principal-portal/copy-key.png)
 

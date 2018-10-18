@@ -13,12 +13,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/23/2018
 ms.author: alkohli
-ms.openlocfilehash: d54394a8dc74d04f1922a78826b10a4a421d193b
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: aad5b2d2e451f33a3f4f365fa0702eef5d698e4e
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42814596"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45729169"
 ---
 # <a name="migrate-data-from-storsimple-5000-7000-series-to-azure-file-sync"></a>Перенос данных с устройств StorSimple серий 5000–7000 в службу "Синхронизация файлов Azure"
 
@@ -56,8 +56,7 @@ ms.locfileid: "42814596"
 - Тома StorSimple подключаются на узле и содержат общие файловые ресурсы.
 - В локальном хранилище узла достаточно места для хранения локально кэшированных данных.
 - Права владельца для доступа к подписке Azure, которую вы будете использовать для развертывания службы "Синхронизация файлов Azure". При создании облачной конечной точки для группы синхронизации могут возникнуть проблемы, если у вас нет прав владельца или администратора.
-- Получите доступ к [учетной записи хранения общего назначения версии 2](https://docs.microsoft.com/azure/storage/common/storage-account-options) с общим файловым ресурсом Azure, с которым нужно выполнить синхронизацию. Дополнительные сведения см. в следующих разделах: 
- - [Создание учетной записи хранения общего назначения](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=portal#create-a-general-purpose-storage-account) (версии 2).
+- Получите доступ к [учетной записи хранения общего назначения версии 2](https://docs.microsoft.com/azure/storage/common/storage-account-overview) с общим файловым ресурсом Azure, с которым нужно выполнить синхронизацию. Дополнительные сведения см. в разделе [Создание учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
  - [Создание общей папки с помощью портала Azure](https://docs.microsoft.com/azure/storage/files/storage-how-to-create-file-share#create-file-share-through-the-azure-portal).
 
 ## <a name="migration-process"></a>Процесс миграции

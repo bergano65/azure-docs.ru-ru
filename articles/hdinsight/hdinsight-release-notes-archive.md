@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: jasonh
-ms.openlocfilehash: 1dd0e33b3ec6cc5521d5087d48e9e5467911c2b6
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: f3be4b5e74c0c5cac9acd281b86e55c96b011763
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43109769"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49363798"
 ---
 # <a name="archived-release-notes-for-azure-hdinsight"></a>Архивные заметки о выпуске Azure HDInsight
 
@@ -24,7 +24,7 @@ ms.locfileid: "43109769"
 > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в [статье об управлении версиями HDInsight](hdinsight-component-versioning.md).
 
 ## <a name="notes-for-06272018---release-of-new-open-source-versions-adls-gen2-etc-on-hdinsight-36"></a>Заметки о выпуске от 27 июня 2018 года. Выпуск новых версий с открытым кодом для ADLS поколения 2 и т. п. на HDInsight 3.6
-Выпуск HDInsight от июня 2018 года — это значимый выпуск, который включает множество обновлений и возможностей для клиентов. Дополнительные сведения см. в [этой записи блога](https://azure.microsoft.com/en-us/blog/enterprises-get-deeper-insights-with-hadoop-and-spark-updates-on-azure-hdinsight/).
+Выпуск HDInsight от июня 2018 года — это значимый выпуск, который включает множество обновлений и возможностей для клиентов. Дополнительные сведения см. в [этой записи блога](https://azure.microsoft.com/blog/enterprises-get-deeper-insights-with-hadoop-and-spark-updates-on-azure-hdinsight/).
 
 Ниже перечислены самые важные моменты. Подробные заметки о выпуске, исправленные ошибки, известные проблемы и многое другое см. в [заметках о выпуске Azure HDInsight](hdinsight-release-notes.md).
 

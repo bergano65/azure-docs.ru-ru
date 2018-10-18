@@ -1,6 +1,6 @@
 ---
-title: Анализ данных в Data Lake Store с помощью Power BI | Документация Майкрософт
-description: Использование Power BI для анализа данных в хранилище озера данных Azure
+title: Анализ данных в Azure Data Lake Storage 1-го поколения с помощью Power BI | Документы Майкрософт
+description: Использование Power BI для анализа данных, хранящихся в Azure Data Lake Storage 1-го поколения
 services: data-lake-store
 documentationcenter: ''
 author: nitinme
@@ -12,41 +12,41 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: 37cde17703a15ba5659814e1b65a54d24b67edad
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 5db9d18a31af4d6b407fcd9172ac80fc6f93f085
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34624793"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46297185"
 ---
-# <a name="analyze-data-in-data-lake-store-by-using-power-bi"></a>Анализ данных в хранилище озера данных с помощью Power BI
-В этой статье вы узнаете, как использовать Power BI Desktop для анализа и визуализации данных в хранилище озера данных Azure.
+# <a name="analyze-data-in-azure-data-lake-storage-gen1-by-using-power-bi"></a>Анализ данных в Azure Data Lake Storage 1-го поколения с помощью Power BI
+В этой статье вы узнаете, как использовать Power BI Desktop для анализа и визуализации данных в Azure Data Lake Storage 1-го поколения.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Перед началом работы с этим учебником необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись хранилища озера данных Azure**. Следуйте инструкциям в разделе [Приступая к работе с хранилищем озера данных Azure на портале Azure](data-lake-store-get-started-portal.md). В этой статье предполагается, что вы уже создали учетную запись Data Lake Store с именем **mybidatalakestore** и добавили в нее образец файла данных (**Drivers.txt**). Этот образец файла можно скачать в [репозитории Git для озера данных Azure](https://github.com/Azure/usql/tree/master/Examples/Samples/Data/AmbulanceData/Drivers.txt).
+* **Учетная запись Data Lake Storage 1-го поколения**. Следуйте инструкциям в статье [Начало работы с Azure Data Lake Storage 1-го поколения с помощью портала Azure](data-lake-store-get-started-portal.md). В этой статье предполагается, что вы уже создали учетную запись Data Lake Storage 1-го поколения с именем **myadlsg1** и добавили в нее образец файла данных (**Drivers.txt**). Этот образец файла можно скачать в [репозитории Git для озера данных Azure](https://github.com/Azure/usql/tree/master/Examples/Samples/Data/AmbulanceData/Drivers.txt).
 * **Power BI Desktop**. Это средство можно скачать в [Центре загрузки Майкрософт](https://www.microsoft.com/en-us/download/details.aspx?id=45331). 
 
 ## <a name="create-a-report-in-power-bi-desktop"></a>Создание отчета в Power BI Desktop
 1. Запустите Power BI Desktop на своем компьютере.
 2. На ленте **Главная** нажмите кнопку **Получить данные**, а затем щелкните "Дополнительно". В диалоговом окне **Получение данных** выберите пункт **Azure**, а затем выберите пункт **Azure Data Lake Store** и нажмите кнопку **Подключиться**.
    
-    ![Подключение к Data Lake Store](./media/data-lake-store-power-bi/get-data-lake-store-account.png "Подключение к Data Lake Store")
+    ![Подключение к Data Lake Storage 1-го поколения](./media/data-lake-store-power-bi/get-data-lake-store-account.png "Подключение к Data Lake Storage 1-го поколения")
 3. Если появится диалоговое окно с сообщением о том, что соединитель находится в стадии разработки, выберите вариант "Продолжить".
-4. В диалоговом окне **Хранилище озера данных Microsoft Azure** укажите URL-адрес для своей учетной записи Data Lake Store и нажмите кнопку **ОК**.
+4. В диалоговом окне **Azure Data Lake Store** укажите URL-адрес для своей учетной записи Data Lake Storage 1-го поколения и нажмите кнопку **ОК**.
    
-    ![URL-адрес для Data Lake Store](./media/data-lake-store-power-bi/get-data-lake-store-account-url.png "URL-адрес для Data Lake Store")
-5. В следующем диалоговом окне нажмите кнопку **Вход** , чтобы войти в учетную запись хранилища озера данных. Вы будете перенаправлены на страницу входа своей организации. Следуйте инструкциям для входа в учетную запись.
+    ![URL-адрес для Data Lake Storage 1-го поколения](./media/data-lake-store-power-bi/get-data-lake-store-account-url.png "URL-адрес для Data Lake Storage 1-го поколения")
+5. В следующем диалоговом окне нажмите кнопку **Вход**, чтобы войти в учетную запись Data Lake Storage 1-го поколения. Вы будете перенаправлены на страницу входа своей организации. Следуйте инструкциям для входа в учетную запись.
    
-    ![Вход в Data Lake Store](./media/data-lake-store-power-bi/get-data-lake-store-account-signin.png "Вход в Data Lake Store")
+    ![Вход в Data Lake Storage 1-го поколения](./media/data-lake-store-power-bi/get-data-lake-store-account-signin.png "Вход в Data Lake Storage 1-го поколения")
 6. Успешно выполнив вход, нажмите кнопку **Подключиться**.
    
-    ![Подключение к Data Lake Store](./media/data-lake-store-power-bi/get-data-lake-store-account-connect.png "Подключение к Data Lake Store")
-7. В следующем диалоговом окне будет указан файл, который вы добавили в учетную запись хранилища озера данных. Проверьте информацию и нажмите кнопку **Загрузить**.
+    ![Подключение к Data Lake Storage 1-го поколения](./media/data-lake-store-power-bi/get-data-lake-store-account-connect.png "Подключение к Data Lake Storage 1-го поколения")
+7. В следующем диалоговом окне будет указан файл, который вы добавили в учетную запись Data Lake Storage 1-го поколения. Проверьте информацию и нажмите кнопку **Загрузить**.
    
-    ![Скачивание данных из Data Lake Store](./media/data-lake-store-power-bi/get-data-lake-store-account-load.png "Скачивание данных из Data Lake Store")
+    ![Загрузка данных из Data Lake Storage 1-го поколения](./media/data-lake-store-power-bi/get-data-lake-store-account-load.png "Загрузка данных из Data Lake Storage 1-го поколения")
 8. После успешной загрузки данных в Power BI вы увидите приведенные ниже поля на вкладке **Поля** .
    
     ![Импортированные поля](./media/data-lake-store-power-bi/imported-fields.png "Импортированные поля")
@@ -97,5 +97,5 @@ ms.locfileid: "34624793"
 Создав визуализации в Power BI Desktop, вы можете предоставить общий доступ к ним другим пользователям, опубликовав их в службе Power BI. Инструкции см. в разделе [Публикация из Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-upload-desktop-files/).
 
 ## <a name="see-also"></a>См. также
-* [Анализ данных в хранилище озера данных с помощью Аналитики озера данных](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Анализ данных в Data Lake Storage 1-го поколения с помощью Data Lake Analytics](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
 

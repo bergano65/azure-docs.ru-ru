@@ -16,12 +16,12 @@ ms.component: report-monitor
 ms.date: 12/15/2017
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: f0de2f8700bef83b5a8a9303e90c97aab29722a3
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.openlocfilehash: b81c66acc0a90ba9b74cf1f4fb34ef7a545837f9
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42145572"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45736612"
 ---
 # <a name="azure-active-directory-reporting-latencies"></a>Задержки в отчетах Azure Active Directory
 
@@ -39,15 +39,10 @@ ms.locfileid: "42145572"
 
 В следующей таблице приведены сведения о задержках для отчетов об активности.
 
-| Отчет | Задержка (P95) |Задержка (P99)|
+| Отчет | Задержка (95 %) |Задержка (99 %)|
 | :-- | --- | --- | 
 | Журналы аудита | 2 мин  | 5 мин  |
 | Вход в систему | 2 мин  | 5 мин |
-
-
-
-
-
 
 
 ## <a name="security-reports"></a>Отчеты о безопасности

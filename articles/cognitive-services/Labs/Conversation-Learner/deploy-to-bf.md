@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: bb977df92cf0ada1e50a929a9ea714313a70165a
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 0bcb6262201b3399ca4d759bb306a570bea33b00
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39171482"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45578775"
 ---
 # <a name="how-to-deploy-a-conversation-learner-bot"></a>Развертывание бота Conversation Learner
 
@@ -94,9 +94,9 @@ ms.locfileid: "39171482"
 
 Публикация бота Conversation Learner выполняется почти так же, как и для любого другого бота. Если коротко, то вам нужно лишь передать код на размещенный веб-сайт, задать необходимые значения конфигурации и зарегистрировать бот в нужных каналах. В этом видео представлены подробные инструкции по публикации бота с помощью службы Azure Bot.
 
-Когда бот будет развернут и запущен, вы можете выполнить регистрацию канала Azure Bot и подключить к нему разные каналы взаимодействия, например Facebook, Teams, Skype и т. п. Документация по этому процессу представлена по адресу: https://docs.microsoft.com/en-us/bot-framework/bot-service-quickstart-registration.
+Когда бот будет развернут и запущен, вы можете выполнить регистрацию канала Azure Bot и подключить к нему разные каналы взаимодействия, например Facebook, Teams, Skype и т. п. Документация по этому процессу представлена по адресу: https://docs.microsoft.com/bot-framework/bot-service-quickstart-registration.
 
-Ниже приведены пошаговые инструкции по развертыванию бота Conversation Learner в Azure.  Эти инструкции предполагают, что исходный код вашего бота размещен в облачном источнике, таком как VSTS, GitHub, BitBucket или OneDrive, и что бот будет настроен для непрерывного развертывания.
+Ниже приведены пошаговые инструкции по развертыванию бота Conversation Learner в Azure.  Эти инструкции предполагают, что исходный код вашего бота размещен в облачном источнике, таком как Azure DevOps Services, GitHub, BitBucket или OneDrive, и что бот будет настроен для непрерывного развертывания.
 
 1. Войдите на портал Azure на странице https://portal.azure.com.
 

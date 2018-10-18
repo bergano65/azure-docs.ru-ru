@@ -1,28 +1,29 @@
 ---
-title: Метод поиска по словарю API перевода текстов от корпорации Майкрософт | Документация Майкрософт
-description: Использование метода поиска по словарю в API перевода текстов от корпорации Майкрософт.
+title: Метод поиска по словарю в API перевода текстов
+titlesuffix: Azure Cognitive Services
+description: Использование метода поиска по словарю в API перевода текстов.
 services: cognitive-services
 author: Jann-Skotdal
-manager: chriswendt1
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: microsoft translator
-ms.topic: article
+ms.component: translator-text
+ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-jansko
-ms.openlocfilehash: 5a186f60dc099b095c00056d965aa92618c2c708
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: 41b610f3504a8eb6619613e3ad0aa7c1c4cf9f66
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37868091"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46127851"
 ---
-# <a name="text-api-30-dictionary-lookup"></a>API перевода текстов 3.0. Поиск по словарю
+# <a name="translator-text-api-30-dictionary-lookup"></a>API перевода текстов 3.0: поиск по словарю
 
 Предоставляет альтернативные переводы слова и небольших идиоматических выражений. Каждый перевод содержит части речи и список обратных переводов. Обратные переводы позволяют пользователю понять перевод в контексте. Операция [Dictionary Example](.\v3-0-dictionary-examples.md) позволяет продолжить детализацию, чтобы увидеть пример использования каждой пары переводов.
 
 ## <a name="request-url"></a>Request URL (URL-адрес запроса)
 
-Отправьте запрос `POST` по адресу:
+Отправьте запрос `POST` на следующий адрес.
 
 ```HTTP
 https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
@@ -30,22 +31,22 @@ https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
 
 ## <a name="request-parameters"></a>Параметры запроса
 
-В этой строке запроса передаются следующие параметры запроса:
+В таблице ниже приведены параметры, которые передаются в строке запроса.
 
 <table width="100%">
   <th width="20%">Параметр запроса</th>
   <th>ОПИСАНИЕ</th>
   <tr>
     <td>api-version</td>
-    <td>*Обязательный параметр*.<br/>Версия API, запрошенная клиентом. Этот параметр должен содержать значение `3.0`.</td>
+    <td>*Обязательный параметр.*<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`.</td>
   </tr>
   <tr>
     <td>from</td>
-    <td>*Обязательный параметр*.<br/>Определяет язык вводимого текста. Исходный язык должен быть одним из [поддерживаемых языков](.\v3-0-languages.md), включенных в область `dictionary`.</td>
+    <td>*Обязательный параметр.*<br/>Определяет язык вводимого текста. Исходный язык должен быть одним из [поддерживаемых языков](.\v3-0-languages.md), включенных в область `dictionary`.</td>
   </tr>
   <tr>
     <td>значение</td>
-    <td>*Обязательный параметр*.<br/>Определяет язык выходного текста. Целевой язык должен быть одним из [поддерживаемых языков](.\v3-0-languages.md), включенных в область `dictionary`.</td>
+    <td>*Обязательный параметр.*<br/>Определяет язык выходного текста. Целевой язык должен быть одним из [поддерживаемых языков](.\v3-0-languages.md), включенных в область `dictionary`.</td>
   </tr>
 </table>
 
@@ -56,7 +57,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
   <th>ОПИСАНИЕ</th>
   <tr>
     <td>_Один заголовок_<br/>_авторизации_</td>
-    <td>*Обязательный заголовок запроса*.<br/>См. [описание доступных параметров для аутентификации](./v3-0-reference.md#authentication).</td>
+    <td>*Обязательный заголовок запроса*.<br/>См. [описание доступных способов аутентификации](./v3-0-reference.md#authentication).</td>
   </tr>
   <tr>
     <td>Content-Type</td>
@@ -89,7 +90,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
 
 ## <a name="response-body"></a>Тело ответа
 
-Успешный ответ возвращается в формате массива JSON с одним результатом для каждого элемента входного массива. Объект результатов содержит следующие свойства.
+Успешный ответ возвращается в формате массива JSON с одним результатом для каждой строки входного массива. Объект результатов содержит следующие свойства.
 
   * `normalizedSource`. Строка, задающая нормализованную форму исходного термина. Например если запросом является "JOHN", нормализованной формой будет "john". Содержимое этого поля становится входными данными для [примеров поиска](.\v3-0-dictionary-examples.md).
     

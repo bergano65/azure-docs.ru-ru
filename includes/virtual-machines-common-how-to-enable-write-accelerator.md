@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 6/8/2018
 ms.author: raiye
 ms.custom: include file
-ms.openlocfilehash: 049c5d86bc78a8861faff13d82a47579ac24c516
-ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
+ms.openlocfilehash: a7fe2cf151b79b02f4f8996ad938d8fc262a5f77
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39361402"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49400190"
 ---
 # <a name="enable-write-accelerator"></a>Включение ускорителя записи
 
@@ -74,23 +74,23 @@ ms.locfileid: "39361402"
 
 В командлеты ниже был добавлен новый параметр переключения **-WriteAccelerator**.
 
-- [Set-AzureRmVMOsDisk](https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/set-azurermvmosdisk?view=azurermps-6.0.0)
-- [Add-AzureRmVMDataDisk](https://docs.microsoft.com/en-us/powershell/module/AzureRM.Compute/Add-AzureRmVMDataDisk?view=azurermps-6.0.0)
-- [Set-AzureRmVMDataDisk](https://docs.microsoft.com/en-us/powershell/module/AzureRM.Compute/Set-AzureRmVMDataDisk?view=azurermps-6.0.0)
-- [Add-AzureRmVmssDataDisk](https://docs.microsoft.com/en-us/powershell/module/AzureRM.Compute/Add-AzureRmVmssDataDisk?view=azurermps-6.0.0)
+- [Set-AzureRmVMOsDisk](https://docs.microsoft.com/powershell/module/azurerm.compute/set-azurermvmosdisk?view=azurermps-6.0.0)
+- [Add-AzureRmVMDataDisk](https://docs.microsoft.com/powershell/module/AzureRM.Compute/Add-AzureRmVMDataDisk?view=azurermps-6.0.0)
+- [Set-AzureRmVMDataDisk](https://docs.microsoft.com/powershell/module/AzureRM.Compute/Set-AzureRmVMDataDisk?view=azurermps-6.0.0)
+- [Add-AzureRmVmssDataDisk](https://docs.microsoft.com/powershell/module/AzureRM.Compute/Add-AzureRmVmssDataDisk?view=azurermps-6.0.0)
 
 Если не задать параметр, свойству присваивается значение false и развертываются диски, которые не поддерживаются ускорителем записи.
 
 В командлеты ниже был добавлен новый параметр переключения **-OsDiskWriteAccelerator**.
 
-- [Set-AzureRmVmssStorageProfile](https://docs.microsoft.com/en-us/powershell/module/AzureRM.Compute/Set-AzureRmVmssStorageProfile?view=azurermps-6.0.0)
+- [Set-AzureRmVmssStorageProfile](https://docs.microsoft.com/powershell/module/AzureRM.Compute/Set-AzureRmVmssStorageProfile?view=azurermps-6.0.0)
 
 Отсутствие заданного значения параметра присваивает свойству значение false по умолчанию, возвращая диски, не использующие ускоритель записи.
 
 В командлеты ниже был добавлен новый необязательный логический (не допускающий значения NULL) параметр — **-OsDiskWriteAccelerator**.
 
-- [Update-AzureRmVM](https://docs.microsoft.com/en-us/powershell/module/AzureRM.Compute/Update-AzureRmVM?view=azurermps-6.0.0)
-- [Update-AzureRmVmss](https://docs.microsoft.com/en-us/powershell/module/AzureRM.Compute/Update-AzureRmVmss?view=azurermps-6.0.0)
+- [Update-AzureRmVM](https://docs.microsoft.com/powershell/module/AzureRM.Compute/Update-AzureRmVM?view=azurermps-6.0.0)
+- [Update-AzureRmVmss](https://docs.microsoft.com/powershell/module/AzureRM.Compute/Update-AzureRmVmss?view=azurermps-6.0.0)
 
 Укажите значения $true или $false, чтобы управлять поддержкой ускорителя записи Azure с дисками.
 
@@ -165,13 +165,13 @@ Update-AzureRmVM -ResourceGroupName $rgname -VM $vm
 
 ## <a name="enabling-write-accelerator-using-the-azure-cli"></a>Включение ускорителя записи с помощью Azure CLI
 
-Для включения ускорителя записи можно использовать [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest).
+Для включения ускорителя записи можно использовать [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
 
-Чтобы включить ускоритель записи на существующем диске, выполните команду [az vm update](https://docs.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az-vm-update). Вы можете использовать следующие примеры, заменив diskName, VMName и ResourceGroup собственными значениями: `az vm update -g group1 -n vm1 -write-accelerator 1=true`.
+Чтобы включить ускоритель записи на существующем диске, выполните команду [az vm update](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-update). Вы можете использовать следующие примеры, заменив diskName, VMName и ResourceGroup собственными значениями: `az vm update -g group1 -n vm1 -write-accelerator 1=true`.
 
-Чтобы подключить диск с включенным ускорителем записи, выполните команду [az vm disk attach](https://docs.microsoft.com/en-us/cli/azure/vm/disk?view=azure-cli-latest#az-vm-disk-attach). Вы можете использовать следующий пример, если подставите собственные значения: `az vm disk attach -g group1 -vm-name vm1 -disk d1 --enable-write-accelerator`.
+Чтобы подключить диск с включенным ускорителем записи, выполните команду [az vm disk attach](https://docs.microsoft.com/cli/azure/vm/disk?view=azure-cli-latest#az-vm-disk-attach). Вы можете использовать следующий пример, если подставите собственные значения: `az vm disk attach -g group1 -vm-name vm1 -disk d1 --enable-write-accelerator`.
 
-Чтобы отключить ускоритель записи, выполните команду [az vm update](https://docs.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az-vm-update), задав для свойств значение false: `az vm update -g group1 -n vm1 -write-accelerator 0=false 1=false`.
+Чтобы отключить ускоритель записи, выполните команду [az vm update](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-update), задав для свойств значение false: `az vm update -g group1 -n vm1 -write-accelerator 0=false 1=false`.
 
 ## <a name="enabling-write-accelerator-using-rest-apis"></a>Включение ускорителя записи через интерфейсы REST API
 

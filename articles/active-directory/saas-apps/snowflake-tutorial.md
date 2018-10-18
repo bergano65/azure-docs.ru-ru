@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/29/2018
+ms.date: 09/10/2018
 ms.author: jeedes
-ms.openlocfilehash: 3ad3f42563878d829f900d5cddb0c6866d2deab5
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: c611fd7893a96113a4a9f2454bcd0b11db02be29
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43311500"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45605116"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-snowflake"></a>Руководство по интеграции Azure Active Directory со Snowflake
 
@@ -39,6 +39,7 @@ ms.locfileid: "43311500"
 
 - подписка Azure AD;
 - подписка Snowflake с поддержкой единого входа.
+- Если у вас нет учетной записи Snowflake и вы хотите попробовать его через коллекцию приложений Azure AD, ознакомьтесь с информацией по [этой](https://trial.snowflake.net/?cloud=azure&utm_source=azure-marketplace&utm_medium=referral&utm_campaign=self-service-azure-mp) ссылке.
 
 > [!NOTE]
 > Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
@@ -51,7 +52,7 @@ ms.locfileid: "43311500"
 ## <a name="scenario-description"></a>Описание сценария
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Snowflake из коллекции.
+1. Добавление Snowflake из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-snowflake-from-the-gallery"></a>Добавление Snowflake из коллекции
@@ -103,22 +104,22 @@ ms.locfileid: "43311500"
  
     ![Диалоговое окно "Единый вход"](./media/snowflake-tutorial/tutorial_snowflake_samlbase.png)
 
-3. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Домены и URL-адреса приложения Snowflake** выполните следующие действия.
+3. В разделе **Домены и URL-адреса приложения Snowflake** выполните следующие действия:
 
     ![Сведения о домене и URL-адресах единого входа приложения Snowflake](./media/snowflake-tutorial/tutorial_snowflake_url.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SNOWFLAKE-URL>`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SNOWFLAKE-URL>.snowflakecomputing.com`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SNOWFLAKE-URL>/fed/login`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SNOWFLAKE-URL>.snowflakecomputing.com/fed/login`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
     ![Сведения о домене и URL-адресах единого входа приложения Snowflake](./media/snowflake-tutorial/tutorial_snowflake_url1.png)
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SNOWFLAKE-URL>`
+    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SNOWFLAKE-URL>.snowflakecomputing.com`
      
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить их, обратитесь к [группе поддержки клиентов Snowflake](https://support.snowflake.net/s/snowflake-support). 
+    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа.
 
 5. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -132,7 +133,22 @@ ms.locfileid: "43311500"
 
     ![Конфигурации Snowflake](./media/snowflake-tutorial/tutorial_snowflake_configure.png) 
 
-8. Чтобы настроить единый вход на стороне **Snowflake**, нужно отправить скачанный **сертификат (Base64)** и **URL-адрес службы единого входа SAML** [группе поддержки Snowflake](https://support.snowflake.net/s/snowflake-support). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+8. В другом окне браузера войдите в приложение Snowflake с правами администратора безопасности.
+
+9. Запустите следующий SQL-запрос в рабочей области, задав в **certificate** значение **dowloaded certificate**, а в **ssoUrl** скопированный из Azure **URL-адрес службы единого входа SAML**, как показано ниже.
+
+    ![Snowflake SQL](./media/snowflake-tutorial/tutorial_snowflake_sql.png) 
+
+    ```
+    use role accountadmin;
+    alter account set saml_identity_provider = '{
+    "certificate": "<Paste the content of downloaded certificate from Azure portal>",
+    "ssoUrl":"<SAML single sign-on service URL value which you have copied from the Azure portal>",
+    "type":"custom",
+    "label":"AzureAD"
+    }';
+    alter account set sso_login_page = TRUE;
+    ```
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -168,7 +184,25 @@ ms.locfileid: "43311500"
  
 ### <a name="create-a-snowflake-test-user"></a>Создание тестового пользователя Snowflake
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Snowflake. Обратитесь к [группе поддержки Snowflake](https://support.snowflake.net/s/snowflake-support), чтобы добавить пользователей на платформу Snowflake. Перед использованием единого входа необходимо создать и активировать пользователей.
+Чтобы пользователи Azure AD могли выполнять вход в Snowflake, они должны быть подготовлены в Snowflake. В Snowflake подготовка выполняется вручную.
+
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
+
+1. Войдите в Snowflake с правами администратора безопасности.
+
+2. Щелкните **профиль** в правой верхней части страницы, выберите **Switch Role** (Переключение ролей) и затем **ACCOUNTADMIN**.  
+
+    ![Администратор Snowflake ](./media/snowflake-tutorial/tutorial_snowflake_accountadmin.png)
+
+3. Для создания пользователя выполните в рабочей области приведенный ниже SQL-запрос, указав в качестве LOGIN_NAME имя пользователя Azure AD.
+
+    ![Snowflake adminsql ](./media/snowflake-tutorial/tutorial_snowflake_usersql.png)
+
+    ```
+
+    use role accountadmin;
+    CREATE USER britta_simon PASSWORD = '' LOGIN_NAME = 'BrittaSimon@contoso.com' DISPLAY_NAME = 'Britta Simon';
+    ```
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

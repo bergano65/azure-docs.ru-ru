@@ -10,15 +10,17 @@ ms.component: translator-speech
 ms.topic: conceptual
 ms.date: 3/5/2018
 ms.author: v-jansko
-ROBOTS: NOINDEX
-ms.openlocfilehash: 3c0d0e17026dc0c970138c30f83dc9eb98db4228
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: dd1c60a2c2ad88abf686e89972d29768ef600e4e
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46950188"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49344563"
 ---
 # <a name="languages-supported-by-the-translator-speech-api"></a>Языки, поддерживаемые в API перевода речи
+
+[!INCLUDE [Deprecation note](../../../includes/cognitive-services-translator-speech-deprecation-note.md)]
+
 Для перевода речи поддерживаются указанные ниже языки. Если оба языка поддерживаются для перевода речи, доступен перевод как речи в речь, так и речи в текст. Если перевод речи на целевом языке не поддерживается, доступен перевод только речи в текст. 
 
 | Язык речи    |

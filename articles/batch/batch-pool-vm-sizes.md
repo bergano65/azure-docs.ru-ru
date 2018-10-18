@@ -12,14 +12,14 @@ ms.workload: ''
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/09/2018
+ms.date: 09/12/2018
 ms.author: danlep
-ms.openlocfilehash: 1669d5a2237322f72dce3b172c32e7199900a4e0
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 987cbcc642152a4077cc895ad06e43ac56113497
+ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038575"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45544070"
 ---
 # <a name="choose-a-vm-size-for-compute-nodes-in-an-azure-batch-pool"></a>Выбор размера виртуальной машины для вычислительных узлов в пуле пакетной службы Azure
 
@@ -41,8 +41,8 @@ ms.locfileid: "40038575"
 | Серия Basic A | Basic_A0 (A0) |
 | Серия A | Standard_A0 |
 | Серия B | Все |
-| Серия M | Все |
 
+Виртуальные машины серии M поддерживаются только для узлов с низким приоритетом.
 
 
 ### <a name="pools-in-cloud-service-configuration"></a>Пулы в конфигурации облачной службы

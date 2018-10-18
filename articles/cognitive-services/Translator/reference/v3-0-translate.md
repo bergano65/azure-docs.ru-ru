@@ -1,23 +1,23 @@
 ---
-title: Метод Translate в API перевода текстов Microsoft | Документация Майкрософт
-titleSuffix: Cognitive Services
-description: Использование метода Translate в API перевода текстов Microsoft.
+title: Метод Translate в API перевода текстов
+titleSuffix: Azure Cognitive Services
+description: Использование метода Translate в API перевода текстов.
 services: cognitive-services
 author: Jann-Skotdal
-manager: chriswendt1
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: microsoft translator
-ms.topic: article
+ms.component: translator-text
+ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-jansko
-ms.openlocfilehash: d8d5e1e2fac747fa733f1d92c08008b7eac2a1bc
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 1841730a39d29c5fe1f3451b7614818e924b339f
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382852"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46128763"
 ---
-# <a name="text-api-30-translate"></a>API перевода текстов 3.0
+# <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Translate
 
 Этот интерфейс позволяет переводить текст.
 
@@ -181,11 +181,11 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>401</td>
-    <td>Не удалось выполнить проверку подлинности запроса. Убедитесь, что указаны допустимые учетные данные.</td>
+    <td>Не удалось выполнить аутентификацию запроса. Убедитесь, что указаны допустимые учетные данные.</td>
   </tr>
   <tr>
     <td>403</td>
-    <td>Запрос не авторизован. Подробности можно проверить в сообщении об ошибке. Чаще всего это означает, что достигнут лимит бесплатных переводов, включенных в пробную подписку.</td>
+    <td>Запрос не авторизован. Подробные сведения можно найти в сообщении об ошибке. Чаще всего это означает, что достигнут лимит бесплатных операций перевода, включенных в пробную подписку.</td>
   </tr>
   <tr>
     <td>429</td>

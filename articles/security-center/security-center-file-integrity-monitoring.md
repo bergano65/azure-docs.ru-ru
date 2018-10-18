@@ -1,27 +1,27 @@
 ---
-title: Мониторинг целостности файлов в центре безопасности Azure (предварительная версия) | Документация Майкрософт
+title: Мониторинг целостности файлов в центре безопасности Azure | Документы Майкрософт
 description: " Узнайте, как включить мониторинг целостности файлов в центре безопасности Azure. "
 services: security-center
 documentationcenter: na
-author: TerryLanfear
+author: rkarlin
 manager: MBaldwin
 editor: ''
 ms.assetid: 411d7bae-c9d4-4e83-be63-9f2f2312b075
 ms.service: security-center
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/08/2018
-ms.author: terrylan
-ms.openlocfilehash: 722a4fd11f35f04ed22d73638f07d15c49ea3c26
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.date: 09/21/2018
+ms.author: rkarlin
+ms.openlocfilehash: 56aa756230dc908157a5a3d244d379215935cd2f
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34161837"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46124122"
 ---
-# <a name="file-integrity-monitoring-in-azure-security-center-preview"></a>Мониторинг целостности файлов в центре безопасности Azure (предварительная версия)
+# <a name="file-integrity-monitoring-in-azure-security-center"></a>Мониторинг целостности файлов в центре безопасности Azure
 В этом руководстве объясняется, как настроить мониторинг целостности файлов в центре безопасности Azure.
 
 ## <a name="what-is-fim-in-security-center"></a>Что такое FIM в центре безопасности?
@@ -182,6 +182,14 @@ FIM передает данные в рабочую область службы 
   ![Присвоение значения False параметру "Включено"][19]
 
 6. Щелкните **Сохранить**.
+
+## <a name="folder-and-path-monitoring-using-wildcards"></a>Мониторинг папки и пути мониторинга с использованием подстановочных знаков
+
+Используйте подстановочные знаки для упрощения отслеживания в каталогах. При настройке мониторинга папки с использованием подстановочных знаков применяются следующие правила:
+-   Для отслеживания нескольких файлов необходимы подстановочные знаки.
+-   Подстановочные знаки можно использовать только в последнем сегменте пути, например C:\folder\file или /etc/*.conf.
+-   Если у переменной среды недопустимый путь, проверка будет успешной, но запуск ресурса по этому пути завершится сбоем.
+-   При настройке пути избегайте общих путей, таких как c:\*.*, так как это приведет к переходу к большому количеству папок.
 
 ## <a name="disable-fim"></a>Отключение FIM
 Вы всегда можете отключить FIM. FIM использует решение "Отслеживание изменений" Azure, чтобы отслеживать и обнаруживать изменения в среде. После отключения FIM решение для отслеживания изменений будет удалено из выбранной рабочей области.

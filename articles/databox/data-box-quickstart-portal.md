@@ -2,24 +2,18 @@
 title: Краткое руководство по Microsoft Azure Data Box | Документация Майкрософт
 description: Сведения о быстром развертывании Azure Data Box на портале Azure
 services: databox
-documentationcenter: NA
 author: alkohli
-manager: twooley
-editor: ''
-ms.assetid: ''
 ms.service: databox
-ms.devlang: NA
+ms.subservice: pod
 ms.topic: quickstart
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 10/04/2018
 ms.author: alkohli
-ms.openlocfilehash: fe15167a5e88dbc9a97383c9a074a32c91f4219a
-ms.sourcegitcommit: 4edf9354a00bb63082c3b844b979165b64f46286
+ms.openlocfilehash: a2f8d295ca161ff2263f53b8faa407c7a42a4c6b
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48784643"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49385849"
 ---
 # <a name="quickstart-deploy-azure-data-box-using-the-azure-portal"></a>Краткое руководство. Развертывание Azure Data Box с помощью портала Azure
 
@@ -35,7 +29,7 @@ ms.locfileid: "48784643"
     - Соглашение Microsoft Enterprise (EA). См. дополнительные сведения о [подписке EA](https://azure.microsoft.com/pricing/enterprise-agreement/).
     - Поставщик облачных решений (CSP). Дополнительные сведения см. в статье [Обзор Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview).
     - Потребление. Оплата по мере использования. Дополнительные сведения см. в статье о [подписках Azure с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/).
-    - Спонсорское предложение Microsoft Azure. Дополнительные сведения см. в статье о [спонсорском предложении Microsoft Azure](https://azure.microsoft.com/en-in/offers/ms-azr-0036p/). 
+    - Спонсорское предложение Microsoft Azure. Дополнительные сведения см. в статье о [спонсорском предложении Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/). 
 
 - Убедитесь, что у вас есть доступ владельца или участника подписки для заказа Data Box.
 - Просмотрите [рекомендации по безопасности Data Box](data-box-safety.md).

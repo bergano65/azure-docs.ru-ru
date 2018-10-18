@@ -4,18 +4,18 @@ description: В этом документе описано общее испол
 services: active-directory
 ms.service: active-directory
 ms.component: B2B
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/24/2017
 ms.author: mimart
 author: msmimart
 manager: mtillman
 ms.reviewer: sasubram
-ms.openlocfilehash: 7e0a65e4a5807cb9a6b39feecfd2d5b2643ea4a9
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: fc789283e56d220f0068277544cb6494e265ee39
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39330743"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45981931"
 ---
 # <a name="office-365-external-sharing-and-azure-active-directory-b2b-collaboration"></a>Внешний общий доступ Office 365 и служба совместной работы Azure Active Directory B2B
 
@@ -38,9 +38,14 @@ ms.locfileid: "39330743"
 
 ![Настройка внешнего общего доступа в OneDrive и SharePoint Online](media/o365-external-user/odsp-sharing-setting.png)
 
+Когда вы включите предоставление общего доступа для внешних пользователей, возможность поиска существующих гостевых пользователей в средстве выбора пользователей SharePoint Online (SPO) отключена по умолчанию для согласования с поведением предыдущих версий.
+
+Вы можете включить эту функцию, используя параметр ShowPeoplePickerSuggestionsForGuestUsers на уровне семейства веб-сайтов и коллекции клиентов. Задать параметр этой функции можно с помощью командлетов SPOTenant и SPOSite, которые позволяют участникам искать всех существующих гостевых пользователей в каталоге. Изменения в области клиента не влияют на уже подготовленные сайты SPO.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 * [Добавление пользователя службы совместной работы Azure Active Directory B2B в роль](add-guest-to-role.md)
 * [Делегирование приглашений для службы совместной работы Azure Active Directory B2B](delegate-invitations.md)
 * [Динамические группы и служба совместной работы Azure Active Directory B2B](use-dynamic-groups.md)
+* [Устранение неполадок службы совместной работы Azure Active Directory B2B](troubleshoot.md)

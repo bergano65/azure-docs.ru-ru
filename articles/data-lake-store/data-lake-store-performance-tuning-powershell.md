@@ -1,6 +1,6 @@
 ---
-title: Рекомендации по настройке производительности для использования PowerShell с Data Lake Store | Документация Майкрософт
-description: Советы по повышению производительности при использовании Azure PowerShell с Data Lake Store.
+title: Рекомендации по настройке производительности для использования PowerShell с Azure Data Lake Storage 1-го поколения | Документы Майкрософт
+description: Советы по повышению производительности при использовании Azure PowerShell с Azure Data Lake Storage 1-го поколения
 services: data-lake-store
 documentationcenter: ''
 author: stewu
@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2018
 ms.author: stewu
-ms.openlocfilehash: 7b19972ed4a75ac899a4b78b28ab36ba305a5a64
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: fff26406b036edeb48371b89f7e585160ddc58e0
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34198656"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46123323"
 ---
-# <a name="performance-tuning-guidance-for-using-powershell-with-azure-data-lake-store"></a>Рекомендации по настройке производительности для использования PowerShell с Azure Data Lake Store
+# <a name="performance-tuning-guidance-for-using-powershell-with-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для использования PowerShell с Azure Data Lake Storage 1-го поколения
 
-В этой статье приведены свойства, настроив которые, можно повысить производительность при использовании PowerShell с Data Lake Store.
+В этой статье приведены свойства, настроив которые, можно повысить производительность при использовании PowerShell с Azure Data Lake Storage 1-го поколения.
 
 ## <a name="performance-related-properties"></a>Свойства, связанные с производительностью
 
@@ -31,9 +31,9 @@ ms.locfileid: "34198656"
 
 **Пример**
 
-Эта команда скачивает файлы из Azure Data Lake Store на локальный диск пользователя, используя 20 потоков на один файл и 100 одновременно скачиваемых файлов.
+Эта команда скачивает файлы из Data Lake Storage 1-го поколения на локальный диск пользователя, используя 20 потоков на один файл и 100 одновременно скачиваемых файлов.
 
-    Export-AzureRmDataLakeStoreItem -AccountName <Data Lake Store account name> -PerFileThreadCount 20-ConcurrentFileCount 100 -Path /Powershell/100GB/ -Destination C:\Performance\ -Force -Recurse
+    Export-AzureRmDataLakeStoreItem -AccountName <Data Lake Storage Gen1 account name> -PerFileThreadCount 20-ConcurrentFileCount 100 -Path /Powershell/100GB/ -Destination C:\Performance\ -Force -Recurse
 
 ## <a name="how-do-i-determine-the-value-for-these-properties"></a>Как определить значения этих свойств?
 
@@ -93,8 +93,8 @@ ms.locfileid: "34198656"
 * **Ошибки регулирования.** При слишком высоком уровне параллелизма могут возникнуть ошибки регулирования. При этом необходимо уменьшить уровень параллелизма или обратиться к нам.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Использование Azure Data Lake Store для потребностей больших данных](data-lake-store-data-scenarios.md) 
-* [Защита данных в хранилище озера данных](data-lake-store-secure-data.md)
-* [Использование аналитики озера данных Azure с хранилищем озера данных](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
-* [Использование Azure HDInsight с хранилищем озера данных](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md) 
+* [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
+* [Использование Azure Data Lake Analytics с Data Lake Storage 1-го поколения](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Создание кластеров HDInsight, использующих Data Lake Storage 1-го поколения, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
 

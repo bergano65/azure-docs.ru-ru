@@ -9,14 +9,16 @@ ms.service: application-insights
 ms.workload: TBD
 ms.tgt_pltfrm: ibiza
 ms.devlang: multiple
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/09/2018
-ms.author: mbullwin; sergkanz
-ms.openlocfilehash: 12b46b4abaa17fe9dd0e9055bca5463312bbd15d
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.reviewer: sergkanz
+ms.author: mbullwin
+ms.openlocfilehash: 696843363bc6617bb11c01cdccb9dbbb7b719a82
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46298206"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -72,6 +74,34 @@ Application Insights определяет [модель данных](applicatio
 Стандарт также определяет две схемы создания `Request-Id` — неструктурированная и иерархическая. В неструктурированной схеме для коллекции `Correlation-Context` определяется хорошо известный ключ `Id`.
 
 Служба Application Insights определяет [расширение](https://github.com/lmolkova/correlation/blob/master/http_protocol_proposal_v2.md) для протокола HTTP корреляции. Она использует пары "имя-значение" `Request-Context` для распространения коллекции свойств, используемых непосредственным вызывающим или вызываемым. Пакет SDK для Application Insights использует этот заголовок, чтобы задать значения полей `dependency.target` и `request.source`.
+
+### <a name="w3c-distributed-tracing"></a>Распределенная трассировка W3C
+
+Мы переходим на (формат распределенной трассировки W3C) [https://w3c.github.io/distributed-tracing/report-trace-context.html]. Он определяет следующее:
+- `traceparent` — содержит глобальный уникальный идентификатор операции и уникальный идентификатор вызова;
+- `tracestate` — содержит специфический контекст трассировки системы.
+
+#### <a name="enable-w3c-distributed-tracing-support-for-aspnet-classic-apps"></a>Включение поддержки распределенной трассировки W3C для приложений ASP.NET Classic
+
+Эта функция доступна в пакетах Microsoft.ApplicationInsights.Web и Microsoft.ApplicationInsights.DependencyCollector, начиная с версии 2.8.0-beta1.
+Она **отключена** по умолчанию; чтобы включить ее, измените `ApplicationInsights.config`:
+
+* в разделе `RequestTrackingTelemetryModule` добавьте `EnableW3CHeadersExtraction` элемент со значением `true`;
+* в разделе `DependencyTrackingTelemetryModule` добавьте `EnableW3CHeadersInjection` элемент со значением `true`.
+
+#### <a name="enable-w3c-distributed-tracing-support-for-aspnet-core-apps"></a>Включение поддержки распределенной трассировки W3C для приложений ASP.NET Core
+
+Эта функция доступна в пакетах Microsoft.ApplicationInsights.AspNetCore версии 2.5.0-beta1 и Microsoft.ApplicationInsights.DependencyCollector версии 2.8.0-beta1.
+Она **отключена** по умолчанию; чтобы включить ее, задайте `ApplicationInsightsServiceOptions.RequestCollectionOptions.EnableW3CDistributedTracing` как `true`:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddApplicationInsightsTelemetry(o => 
+        o.RequestCollectionOptions.EnableW3CDistributedTracing = true );
+    // ....
+}
+```
 
 ## <a name="open-tracing-and-application-insights"></a>OpenTracing и Application Insights
 
@@ -134,4 +164,6 @@ telemetry.getContext().getDevice().setRoleName("My Component Name");
 - [API Application Insights для пользовательских событий и метрик](app-insights-api-custom-events-metrics.md)
 - Подключите все компоненты своей микрослужбы с помощью Application Insights. Ознакомьтесь со сведениями о [поддерживаемых платформах](app-insights-platforms.md).
 - В [этой статье](application-insights-data-model.md) представлены типы данных и модель данных для Application Insights.
-- Узнайте, как [расширять и фильтровать данные телеметрии](app-insights-api-filtering-sampling.md).
+- Вы можете узнать, как [расширять и фильтровать данные телеметрии](app-insights-api-filtering-sampling.md).
+- [Справочник по конфигурации в Application Insights](app-insights-configuration-with-applicationinsights-config.md)
+

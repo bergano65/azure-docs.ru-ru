@@ -6,7 +6,7 @@
 | Тип |Для свойства type необходимо задать значение **AzureStorage** |Yes |
 | connectionString |В свойстве connectionString указываются сведения, необходимые для подключения к службе хранилища Azure. |Yes |
 
-Сведения о просмотре или копировании ключа учетной записи для службы хранилища Azure см. в [этой статье](../articles/storage/common/storage-create-storage-account.md#manage-your-storage-account).
+Сведения о просмотре или копировании ключа учетной записи для службы хранилища Azure см. в разделе [Ключи доступа](../articles/storage/common/storage-account-manage.md#access-keys).
 
 **Пример.**  
 

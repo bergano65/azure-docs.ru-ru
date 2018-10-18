@@ -9,12 +9,12 @@ ms.component: speech-service
 ms.topic: quickstart
 ms.date: 09/24/2018
 ms.author: wolfma
-ms.openlocfilehash: 2eb6bda7066a01e5532fe7c0e20b0ee13f4289b6
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: d9a90869e060d2f8f1a1c522a4528e74841caada
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47432993"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49339620"
 ---
 # <a name="quickstart-recognize-speech-in-a-uwp-app-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении UWP с помощью пакета SDK для службы "Речь"
 
@@ -69,7 +69,7 @@ ms.locfileid: "47432993"
 1. В консоли диспетчера пакетов отобразятся следующие выходные данные.
 
    ```text
-   Successfully installed 'Microsoft.CognitiveServices.Speech 1.0.0' to helloworld
+   Successfully installed 'Microsoft.CognitiveServices.Speech 1.0.1' to helloworld
    ```
 
 1. Поскольку приложение использует микрофон для ввода речи, добавьте возможность **Микрофон** к проекту. В обозревателе решений дважды щелкните **Package.appxmanifest**, чтобы изменить манифест приложения. Затем перейдите на вкладку **Возможности**, установите флажок для возможности **Микрофон** и сохраните изменения.
@@ -101,7 +101,7 @@ ms.locfileid: "47432993"
 
 1. Запустите приложение. В строке меню последовательно выберите **Отладка** > **Начать отладку** или нажмите клавишу **F5**.
 
-    ![Снимок экрана приложения Visual Studio с выделенным параметром "Начать отладку"](media/sdk/qs-csharp-uwp-09-start-debugging.png "Начало отладки приложения")
+    ![Снимок экрана приложения Visual Studio с выделенным параметром "Начать отладку"](media/sdk/qs-csharp-uwp-09-start-debugging.png "Start the app into debugging")
 
 1. Откроется окно. Выберите**Включить микрофон** и подтвердите разрешение в появившемся окне запроса.
 

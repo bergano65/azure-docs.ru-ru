@@ -3,8 +3,8 @@ title: Использование Azure CDN с SAS | Документация М
 description: Azure CDN поддерживает использование подписанных URL-адресов (SAS) для предоставления ограниченного доступа к частным контейнерам хранилища.
 services: cdn
 documentationcenter: ''
-author: dksimpson
-manager: cfowler
+author: mdgattuso
+manager: danielgi
 editor: ''
 ms.assetid: ''
 ms.service: cdn
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 06/21/2018
-ms.author: v-deasim
-ms.openlocfilehash: 15a4e0a8d62b38fa7aa542d95e53d29621965666
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.author: magattus
+ms.openlocfilehash: 7180e51a6ac1392e4a3f072097b1aeef3648c605
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36316574"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49093295"
 ---
 # <a name="using-azure-cdn-with-sas"></a>Использование Azure CDN с SAS
 
@@ -32,7 +32,7 @@ SAS дает возможность определить различные па
 ## <a name="setting-up-azure-cdn-to-work-with-storage-sas"></a>Настройка Azure CDN для работы с SAS хранилища
 Для использования SAS с Azure CDN рекомендуются следующие три варианта. Предполагается, что вы уже создали рабочий SAS (см. предварительные требования). 
  
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 Для начала создайте учетную запись хранения, а затем создайте SAS для ресурса. Вы можете создать два типа подписанных URL-адресов: SAS службы или учетной записи. Дополнительные сведения см. в разделе [Типы подписанных URL-адресов](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1#types-of-shared-access-signatures).
 
 После создания маркера SAS можно обращаться к файлу в хранилище BLOB-объектов, добавляя `?sv=<SAS token>` в URL-адрес. Этот URL-адрес имеет следующий формат. 

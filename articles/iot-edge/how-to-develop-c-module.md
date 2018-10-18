@@ -6,25 +6,25 @@ keywords: ''
 author: shizn
 manager: timlt
 ms.author: xshi
-ms.date: 07/20/2018
+ms.date: 09/13/2018
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 5732f6986750dfee49084e2744052bb54e3a8139
-ms.sourcegitcommit: a3a0f42a166e2e71fa2ffe081f38a8bd8b1aeb7b
+ms.openlocfilehash: 3ec7f6043c1d2e8e8f090ffc60822768ab9bc9d9
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43382573"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45984007"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-c-modules-for-azure-iot-edge"></a>Использование Visual Studio Code для разработки и отладки модулей C для Azure IoT Edge
 
 Вы можете превратить бизнес-логику в модули для Azure IoT Edge. Эта статья описывает, как использовать Visual Studio Code (VS Code) в качестве основного средства разработки и отладки модулей C.
 
 ## <a name="prerequisites"></a>Предварительные требования
-В этой статье предполагается, что для разработки вы используете компьютер или виртуальную машину под управлением Windows или Linux. Или вы можете имитировать устройство IoT Edge на компьютере разработки.
+В этой статье предполагается, что для разработки вы используете компьютер или виртуальную машину под управлением Windows или Linux. Либо вы можете имитировать устройство IoT Edge на компьютере разработки с помощью управляющей программы безопасности IoT Edge.
 
 > [!NOTE]
-> В этой статье об отладке показано, как присоединить процесс в контейнер модуля и выполнить отладку модуля с помощью VS Code. Модули C можно отлаживать только в контейнерах amd64 Linux. С возможностями отладки Visual Studio Code можно ознакомиться в [этой статье](https://code.visualstudio.com/Docs/editor/debugging). 
+> В этой статье об отладке показано, как присоединить процесс в контейнер модуля и выполнить отладку модуля с помощью VS Code. Модули C можно отлаживать только в контейнерах amd64 Linux. С возможностями отладки Visual Studio Code можно ознакомиться в [этой статье](https://code.visualstudio.com/Docs/editor/debugging).
 
 Так как в этой статье в качестве основного средства разработки используется Visual Studio Code, установите VS Code. Затем добавьте все необходимые расширения:
 * [Visual Studio Code](https://code.visualstudio.com/) 
@@ -37,7 +37,7 @@ ms.locfileid: "43382573"
 * [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) или [Docker Hub](https://docs.docker.com/docker-hub/repos/#viewing-repository-tags).
    * Вместо облачного реестра можно использовать локальный реестр Docker для создания прототипов и тестирования. 
 
-Для тестирования модуля на устройстве требуется действующий Центр Интернета вещей по крайней мере с одним устройством IoT Edge. Чтобы использовать компьютер в качестве устройства IoT Edge, выполните инструкции в кратком руководстве для [Windows](quickstart.md) или [Linux](quickstart-linux.md). 
+Для тестирования модуля на устройстве требуется действующий Центр Интернета вещей по крайней мере с одним устройством IoT Edge. Чтобы использовать компьютер в качестве устройства IoT Edge, выполните инструкции в кратком руководстве для [Linux](quickstart-linux.md). 
 
 ## <a name="create-a-new-solution-template"></a>Создайте новый шаблон решения
 
@@ -97,7 +97,7 @@ VS Code принимает предоставленные сведения, со
     "createOptions": "{\"HostConfig\": {\"Privileged\": true}}"
     ```
 
-2. В палитре команд VS Code введите и выполните команду **Edge: Build IoT Edge solution**.
+2. В палитре команд VS Code введите и выполните команду **Azure IoT Edge: Build and Push IoT Edge solution**.
 3. Выберите файл `deployment.template.json` для решения из палитры команд. 
 4. В Device Explorer Центра Интернета вещей Azure щелкните правой кнопкой мыши идентификатор устройства IoT Edge. Затем выберите **Create Deployment for Single Device** (Создание развертывания для одного устройства). 
 5. Откройте папку **config** решения. Выберите файл `deployment.json`. Щелкните **Select Edge Deployment Manifest** (Выбрать манифест развертывания Edge). 
@@ -111,7 +111,7 @@ VS Code хранит информацию о конфигурации отлад
 
 1. Перейдите в представление отладки VS Code. Выберите файл конфигурации отладки для модуля. Действие отладки должно иметь такое имя: **ModuleName Remote Debug (C)**.
 
-   ![Выбор конфигурации отладки](./media/how-to-develop-c-module/debug-config.png).
+   ![Выбор конфигурации отладки](./media/how-to-develop-c-module/debug-config.png)
 
 2. Перейдите на страницу `main.c`. Добавьте точку останова в этот файл.
 

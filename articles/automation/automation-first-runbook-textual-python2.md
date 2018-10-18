@@ -6,15 +6,15 @@ ms.service: automation
 ms.component: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 06/26/2018
+ms.date: 09/11/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 386c2ecfdac44158f5d87034657491fa9598e3ad
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: b621c6b9af60637e8bb818545746923c22926ac4
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37018239"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45984990"
 ---
 # <a name="my-first-python-runbook"></a>Мой первый модуль Runbook Python
 
@@ -26,7 +26,7 @@ ms.locfileid: "37018239"
 
 В этом руководстве описана процедура создания [модуля Runbook Python](automation-runbook-types.md#python-runbooks) в службе автоматизации Azure. Для начала вы протестируете и опубликуете простой модуль runbook. Затем мы изменим модуль runbook, настроив его для фактического управления ресурсами Azure (в нашем примере это запуск виртуальной машины Azure). Затем вы сделаете этот модуль runbook еще надежнее, добавив параметры runbook.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником требуется:
 
@@ -92,7 +92,7 @@ print("Hello World!")
 ## <a name="add-authentication-to-manage-azure-resources"></a>Добавление аутентификации для управления ресурсами Azure
 
 Вы протестировали и опубликовали свой модуль runbook, но пока он не выполняет никаких полезных действий. Нужно, чтобы он управлял ресурсами Azure.
-Для управления ресурсами Azure сценарий должен выполнить аутентификацию с помощью учетных данных из [учетной записи службы автоматизации](automation-offering-get-started.md).
+Для управления ресурсами Azure сценарий должен пройти проверку подлинности с помощью учетных данных из учетной записи службы автоматизации. Вы можете использовать [пакет служебной программы службы автоматизации Azure](https://github.com/azureautomation/azure_automation_utility) для упрощения проверки подлинности и взаимодействия с ресурсами Azure.
 
 > [!NOTE]
 > Учетную запись службы автоматизации необходимо создать с помощью функции субъекта-служба, чтобы в ней был сертификат запуска от имени.
@@ -100,7 +100,7 @@ print("Hello World!")
 
 1. Откройте текстовый редактор, щелкнув **Изменить** в области MyFirstRunbook-Python.
 
-1. Добавьте следующий код для аутентификации в Azure:
+2. Добавьте следующий код для аутентификации в Azure:
 
    ```python
    import os
@@ -160,7 +160,7 @@ async_vm_start = compute_client.virtual_machines.start("MyResourceGroup", "TestV
 async_vm_start.wait()
 ```
 
-В этом фрагменте _MyResourceGroup_ — это имя группы ресурсов, в которую входит виртуальная машина, а _TestVM_ — это имя виртуальной машины, которую требуется запустить. 
+В этом фрагменте _MyResourceGroup_ — это имя группы ресурсов, в которую входит виртуальная машина, а _TestVM_ — это имя виртуальной машины, которую требуется запустить.
 
 Протестируйте и выполните модуль Runbook еще раз, чтобы убедиться, что он запускает виртуальную машину.
 

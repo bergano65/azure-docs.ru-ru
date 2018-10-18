@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 06/19/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 1cae7253a4bfcb4f83baf003a4d9d3c367d8f014
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 6c8dc240172451118fd75b042ba267740999882d
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37064477"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49321773"
 ---
 # <a name="troubleshoot-hybrid-runbook-workers"></a>Устранение неполадок с гибридными рабочими ролями Runbook
 
@@ -24,7 +24,7 @@ ms.locfileid: "37064477"
 
 Гибридная рабочая роль Runbook зависит от агента, который используется для взаимодействия с учетной записью автоматизации для регистрации рабочей роли, получения заданий runbook и сообщения о состоянии. В Windows используется агент Microsoft Monitoring Agent. В Linux — агент Operations Management Suite для Linux.
 
-###<a name="runbook-execution-fails"></a>Сценарий: происходит сбой выполнения модуля Runbook
+### <a name="runbook-execution-fails"></a>Сценарий: происходит сбой выполнения модуля Runbook
 
 #### <a name="issue"></a>Проблема
 
@@ -62,7 +62,7 @@ ms.locfileid: "37064477"
 
 Гибридная рабочая роль Runbook Linux зависит от агента OMS для Linux, который используется для взаимодействия с учетной записью службы автоматизации с целью регистрации рабочей роли, получения заданий Runbook и передачи сведений о состоянии. Если при регистрации рабочей роли произошла ошибка, это могло произойти по следующим причинам:
 
-###<a name="oms-agent-not-running"></a>Сценарий: агент OMS для Linux не запущен
+### <a name="oms-agent-not-running"></a>Сценарий: агент OMS для Linux не запущен
 
 Если агент OMS для Linux не запущен, гибридная рабочая роль Runbook Linux не сможет взаимодействовать со службой автоматизации Azure. Проверьте, запущен ли агент, выполнив следующую команду: `ps -ef | grep python`. Вы увидите выходные данные, похожие на следующие; это процессы python, запущенные от имени учетной записи **nxautomation**. Если решения "Управление обновлениями" и "Служба автоматизации Azure" не включены, ни один из следующих процессов не будет запущен.
 
@@ -82,7 +82,7 @@ nxautom+   8595      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfi
 
 Если агент OMS для Linux не запущен, выполните следующую команду, чтобы запустить службу: `sudo /opt/microsoft/omsagent/bin/service_control restart`.
 
-###<a name="class-does-not-exist"></a>Сценарий: указанный класс не существует
+### <a name="class-does-not-exist"></a>Сценарий: указанный класс не существует
 
 Если вы видите сообщение об ошибке о том, что **указанный класс не существует**, в `/var/opt/microsoft/omsconfig/omsconfig.log` необходимо обновить агент OMS для Linux. Выполните следующую команду, чтобы повторно установить агент OMS:
 
@@ -94,7 +94,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 Гибридная рабочая роль Runbook для Windows зависит от службы Microsoft Monitoring Agent, которая используется для взаимодействия с учетной записью службы автоматизации для регистрации рабочей роли, получения заданий Runbook и сообщения о состоянии. Если при регистрации рабочей роли произошла ошибка, это могло произойти по следующим причинам:
 
-###<a name="mma-not-running"></a>Сценарий: Microsoft Monitoring Agent не работает.
+### <a name="mma-not-running"></a>Сценарий: Microsoft Monitoring Agent не работает.
 
 #### <a name="issue"></a>Проблема
 
@@ -108,7 +108,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 Проверьте, запущен ли агент, введя в PowerShell команду `Get-Service healthservice`. Если служба остановлена, введите в PowerShell команду `Start-Service healthservice`, чтобы запустить эту службу.
 
-###<a name="event-4502"></a> Событие 4502 в журнале Operations Manager
+### <a name="event-4502"></a> Событие 4502 в журнале Operations Manager
 
 #### <a name="issue"></a>Проблема
 
@@ -126,7 +126,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Если данные о проблеме не отображаются или не удается решить проблему, воспользуйтесь одним из следующих каналов, чтобы получить дополнительную поддержку.
+Если вы не видите своего варианта проблемы или вам не удается ее решить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
 * Получите ответы специалистов Azure на [форумах Azure](https://azure.microsoft.com/support/forums/).
 * Подключитесь к [@AzureSupport](https://twitter.com/azuresupport) — официальной учетной записи Microsoft Azure. Она помогает оптимизировать работу пользователей благодаря возможности доступа к ресурсам сообщества Azure (ответы на вопросы, поддержка и консультации специалистов).

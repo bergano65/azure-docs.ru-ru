@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: raynew
-ms.openlocfilehash: f744b9bacfb43b5cf4ba81e19d8e543561bcec61
-ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
+ms.openlocfilehash: 7c96f362793ca2697eb2c92c07ff38d2fe6caad2
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43842759"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44716882"
 ---
 # <a name="contoso-migration-rehost-an-on-premises-app-on-azure-vms-and-sql-server-alwayson-availability-group"></a>Миграция Contoso — повторное размещение локального приложения на виртуальных машинах Azure и в группе доступности SQL Server AlwaysOn
 
@@ -33,9 +33,9 @@ ms.locfileid: "43842759"
 [Статья 8. Повторное размещение приложения Linux на виртуальных машинах Azure и MySQL Server в Azure](contoso-migration-rehost-linux-vm-mysql.md) | Специалисты компании Contoso переносят приложение osTicket для Linux на виртуальные машины Azure с помощью Azure Site Recovery, а также переносят базу данных приложения в экземпляр Azure MySQL Server, используя MySQL Workbench. | Доступна
 [Статья 9. Рефакторинг приложения в веб-приложениях Azure и базе данных SQL Azure](contoso-migration-refactor-web-app-sql.md) | Специалисты компании Contoso переносят приложение SmartHotel360 в веб-приложение Azure, а базу данных приложения — в экземпляр SQL Server Azure с помощью Помощника по миграции баз данных. | Доступна
 [Статья 10. Рефакторинг приложения Linux в веб-приложениях Azure и Azure MySQL](contoso-migration-refactor-linux-app-service-mysql.md) | Специалисты компании Contoso переносят свое приложение osTicket для Linux в веб-приложение Azure в нескольких регионах Azure с помощью диспетчера трафика Azure, интегрированного с GitHub для непрерывной поставки. Компания Contoso переносит базу данных приложения в экземпляр Базы данных Azure для MySQL. | Доступна 
-[Статья 11. Рефакторинг TFS в VSTS](contoso-migration-tfs-vsts.md) | Специалисты компании Contoso переносят локальное развертывание Team Foundation Server в Visual Studio Team Services в Azure. | Доступна
-[Статья 12. Перепроектирование приложения для использования контейнеров Azure и Базы данных SQL Azure](contoso-migration-rearchitect-container-sql.md) | Специалисты компании Contoso переносят приложение SmartHotel360 в Azure. Затем уровень веб-приложений преобразуется в контейнер Windows, работающий в Azure Service Fabric, и базу данных в службе "База данных SQL Azure". | Доступна
-[Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | Специалисты компании Contoso выполняют повторную сборку приложения SmartHotel360, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Службу Azure Kubernetes (AKS), Функции Azure, Cognitive Services и Azure Cosmos DB. | Доступна
+[Статья 11. Рефакторинг Team Foundation Server в Azure DevOps Services](contoso-migration-tfs-vsts.md) | Специалисты компании Contoso переносят локальное развертывание Team Foundation Server в Azure DevOps Services в Azure. | Доступна
+[Статья 12. Перепроектирование приложения для использования контейнеров Azure и Базы данных SQL Azure](contoso-migration-rearchitect-container-sql.md) | Специалисты компании Contoso переносят приложение SmartHotel в Azure. Затем уровень веб-приложений преобразуется в контейнер Windows, работающий в Azure Service Fabric, и базу данных в службе "База данных SQL Azure". | Доступна
+[Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | Специалисты компании Contoso выполняют повторную сборку приложения SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Службу Azure Kubernetes (AKS), Функции Azure, Cognitive Services и Azure Cosmos DB. | Доступна
 
 
 В этой статье описывается, как компания Contoso переносит в Azure двухуровневое приложение SmartHotel360, созданное на Windows .NET и работающее на виртуальных машинах VMware. Это приложение с открытым исходным кодом, и если вы хотите использовать его, загрузите его с [GitHub](https://github.com/Microsoft/SmartHotel360).
@@ -107,7 +107,7 @@ Contoso оценивает предлагаемый дизайн, составл
 **Рассмотрение** | **Дополнительные сведения**
 --- | ---
 **Преимущества** | Интерфейс WEBVM будет перемещен в Azure без изменений, упрощая миграцию.<br/><br/> Уровень SQL Server будет работать под управлением SQL Server 2017 и Windows Server 2016. Это позволяет прекратить использование операционной системы Windows Server 2008 R2, а SQL Server 2017 соответствует техническим требованиям и целям компании Contoso. Обеспечивается 100-процентная совместимость, и в то же время прекращается использование SQL Server 2008 R2.<br/><br/> Contoso может использовать свои инвестиции в программу Software Assurance, используя Преимущество гибридного использования Azure.<br/><br/> Развертывание SQL Server с высоким уровнем доступности в Azure обеспечивает отказоустойчивость, благодаря чему уровень данных приложения больше не является единственной точкой отработки отказа.
-**Недостатки** | WEBVM работает под управлением Windows Server 2008 R2. Операционная система поддерживается средой Azure для определенных ролей (июль 2018 г.). [Узнайте больше](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines).<br/><br/> Веб-уровень приложения останется единственной точкой отработки отказа.</br><br/> Компании Contoso потребуется и дальше поддерживать веб-уровень как виртуальную машину Azure, а не переходить на управляемую службу, такую как Служба приложений Azure.<br/><br/> С помощью выбранного решения компании Contoso потребуется и дальше управлять двумя виртуальными машинами SQL Server, а не переходить на управляемую платформу, такую как Управляемый экземпляр SQL Azure. Кроме того, в рамках программы Software Assurance компания Contoso может обменять свои имеющиеся лицензии на сниженные тарифы при использовании Управляемого экземпляра SQL Azure.
+**Недостатки** | WEBVM работает под управлением Windows Server 2008 R2. Операционная система поддерживается средой Azure для определенных ролей (июль 2018 г.). [Узнайте больше](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines).<br/><br/> Веб-уровень приложения останется единственной точкой отработки отказа.</br><br/> Компании Contoso потребуется и дальше поддерживать веб-уровень как виртуальную машину Azure, а не переходить на управляемую службу, такую как Служба приложений Azure.<br/><br/> С помощью выбранного решения компании Contoso потребуется и дальше управлять двумя виртуальными машинами SQL Server, а не переходить на управляемую платформу, такую как управляемый экземпляр базы данных SQL Azure. Кроме того, в рамках программы Software Assurance компания Contoso может обменять свои имеющиеся лицензии на сниженные тарифы при использовании управляемого экземпляра базы данных SQL Azure.
 
 
 ### <a name="azure-services"></a>Службы Azure

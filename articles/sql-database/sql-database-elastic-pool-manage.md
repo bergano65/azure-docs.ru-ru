@@ -11,23 +11,24 @@ author: oslake
 ms.author: moslake
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 09/20/2018
-ms.openlocfilehash: 6418694097c472afd6a2c706e55a9026ab03dcff
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.date: 10/15/2018
+ms.openlocfilehash: 6c43e5bf311d94ff2e5b5c31217c5071ea26746c
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47162724"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49351868"
 ---
 # <a name="create-and-manage-elastic-pools-in-azure-sql-database"></a>Создание эластичных пулов в базе данных SQL Azure и управление ими
 
-С эластичным пулом вы определяете количество ресурсов, которое необходимо эластичному пулу для обработки рабочей нагрузки баз данных, входящих в пул, и количество ресурсов для каждой базы данных в пуле. 
+С эластичным пулом вы определяете количество ресурсов, которое необходимо эластичному пулу для обработки рабочей нагрузки баз данных, входящих в пул, и количество ресурсов для каждой базы данных в пуле.
 
 ## <a name="azure-portal-manage-elastic-pools-and-pooled-databases"></a>Портал Azure: управление эластичными пулами и базами данных в пуле
 
 Все параметры пула можно найти в колонке **Настройка пула**. Чтобы перейти к ней, найдите эластичный пул на портале и щелкните **Настроить пул** в верхней части колонки или в меню ресурсов слева.
 
 Здесь можно внести любое сочетание следующих изменений и сохранить их массово:
+
 1. Изменить уровень служб пула.
 2. Увеличить или уменьшить уровень производительности (единиц DTU или виртуальных ядер) и размер хранилища.
 3. Добавить базы данных в пул или удалить их.
@@ -36,7 +37,7 @@ ms.locfileid: "47162724"
 
 ![Колонка настройки эластичного пула](./media/sql-database-elastic-pool-manage-portal/configure-pool.png)
 
-## <a name="powershell-manage-elastic-pools-and-pooled-databases"></a>PowerShell: управление эластичными пулами и базами данных в пуле 
+## <a name="powershell-manage-elastic-pools-and-pooled-databases"></a>PowerShell: управление эластичными пулами и базами данных в пуле
 
 Для создания эластичных пулов и баз данных в пуле для базы данных SQL и управления ими с помощью Azure PowerShell используйте приведенные ниже командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Сведения о создании логических серверов для эластичного пула и управлении ими см. в [этой статье](sql-database-logical-servers.md). Сведения о создании правил брандмауэра и управлении ими с помощью PowerShell см. в [этой статье](sql-database-firewall-configure.md#manage-firewall-rules-using-azure-powershell).
 
@@ -56,10 +57,8 @@ ms.locfileid: "47162724"
 |[Set-AzureRmSqlDatabase](/powershell/module/azurerm.sql/set-azurermsqldatabase)|Определяет свойства базы данных или перемещает ее в эластичный пул, из пула либо между пулами.|
 |[Remove-AzureRmSqlDatabase](/powershell/module/azurerm.sql/remove-azurermsqldatabase)|Удаляет базу данных.|
 
-
 > [!TIP]
 > Создание большого количества баз данных в эластичном пуле может занять некоторое время, если эта операция выполняется с помощью портала или командлетов PowerShell, которые создают базы данных поочередно. Сведения об автоматическом создании баз данных в эластичном пуле см. в документе [CreateOrUpdateElasticPoolAndPopulate](https://gist.github.com/billgib/d80c7687b17355d3c2ec8042323819ae).
->
 
 ## <a name="azure-cli-manage-elastic-pools-and-pooled-databases"></a>Azure CLI: управление эластичными пулами и базами данных в пуле
 
@@ -100,18 +99,18 @@ ms.locfileid: "47162724"
 
 | Get-Help | ОПИСАНИЕ |
 | --- | --- |
-|[Создание или обновление эластичных пулов](/rest/api/sql/elasticpools/createorupdate)|Создает эластичный пул или обновляет имеющийся.|
-|[Удаление эластичных пулов](/rest/api/sql/elasticpools/delete)|Удаляет эластичный пул.|
-|[Получение эластичных пулов](/rest/api/sql/elasticpools/get)|Получает эластичный пул.|
-|[Список эластичных пулов на сервере](/rest/api/sql/elasticpools/listbyserver)|Возвращает список эластичных пулов на сервере.|
-|[Обновление эластичных пулов](/rest/api/sql/elasticpools/update)|Обновляет имеющийся эластичный пул.|
-|[Действия эластичного пула](/rest/api/sql/elasticpoolactivities)|Возвращает действия эластичного пула.|
-|[Действия базы данных в эластичном пуле](/rest/api/sql/elasticpooldatabaseactivities)|Возвращает действия баз данных в эластичном пуле.|
-|[Создание или обновление баз данных](/rest/api/sql/databases/createorupdate)|Создает новую базу данных или обновляет имеющуюся.|
-|[Базы данных: получение](/rest/api/sql/databases/get)|Получает базу данных.|
-|[Базы данных: вывод списка по эластичному пулу](/rest/api/sql/databases/listbyelasticpool)|Возвращает список баз данных в пуле эластичных баз данных.|
-|[Базы данных: вывод списка по серверу](/rest/api/sql/databases/listbyserver)|Возвращает список баз данных на сервере.|
-|[Базы данных: обновление](/rest/api/sql/databases/update)|Обновляет имеющуюся базу данных.|
+|[Создание или обновление эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/elasticpools_createorupdate)|Создает эластичный пул или обновляет имеющийся.|
+|[Удаление эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/elasticpools_delete)|Удаляет эластичный пул.|
+|[Получение эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/elasticpools_get)|Получает эластичный пул.|
+|[Список эластичных пулов на сервере](https://docs.microsoft.com/rest/api/sql/elasticpools/elasticpools_listbyserver)|Возвращает список эластичных пулов на сервере.|
+|[Обновление эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/elasticpools_listbyserver)|Обновляет имеющийся эластичный пул.|
+|[Действия эластичного пула](https://docs.microsoft.com/rest/api/sql/elasticpoolactivities)|Возвращает действия эластичного пула.|
+|[Действия базы данных в эластичном пуле](https://docs.microsoft.com/rest/api/sql/elasticpooldatabaseactivities)|Возвращает действия баз данных в эластичном пуле.|
+|[Создание или обновление баз данных](https://docs.microsoft.com/rest/api/sql/databases/databases_createorupdate)|Создает новую базу данных или обновляет имеющуюся.|
+|[Базы данных: получение](https://docs.microsoft.com/rest/api/sql/databases/databases_get)|Получает базу данных.|
+|[Базы данных: вывод списка по эластичному пулу](https://docs.microsoft.com/rest/api/sql/databases/databases_listbyelasticpool)|Возвращает список баз данных в пуле эластичных баз данных.|
+|[Базы данных: вывод списка по серверу](https://docs.microsoft.com/rest/api/sql/databases/databases_listbyserver)|Возвращает список баз данных на сервере.|
+|[Базы данных: обновление](https://docs.microsoft.com/rest/api/sql/databases/databases_update)|Обновляет имеющуюся базу данных.|
 
 ## <a name="next-steps"></a>Дополнительная информация
 

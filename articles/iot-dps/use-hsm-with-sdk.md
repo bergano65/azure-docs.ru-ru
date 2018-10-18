@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: arjmands
 ms.custom: mvc
-ms.openlocfilehash: c94b5d4800f5776b51247c6ec2f6662a6ab26abc
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 4ab558b680a0d00d1b9bdfbcb1529219f6c37b37
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42143892"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49319258"
 ---
 # <a name="how-to-use-different-attestation-mechanisms-with-device-provisioning-service-client-sdk-for-c"></a>Использование разных механизмов аттестации с клиентским пакетом SDK для службы подготовки устройств в Azure для С
 
@@ -143,6 +143,7 @@ cmake -Ddps_auth_type=tpm_simulator ..
 Если вы используете TPM, следуйте инструкциям из статьи [Создание и подготовка имитированного устройства доверенного платформенного модуля (ТРМ) с помощью пакета SDK для устройства C для службы подготовки устройств Центра Интернета вещей](./quick-create-simulated-device.md), чтобы создать запись регистрации устройств в службе подготовки устройств и смоделировать первую загрузку.
 
 ### <a name="x509"></a>X **.** 509
+
 1. Чтобы зарегистрировать устройство в службе подготовки, запишите ключ подтверждения и идентификатор регистрации для каждого устройства, которое отображается в средстве подготовки клиентского пакета SDK. Выполните следующую команду, чтобы распечатать сертификат корневого ЦС (для групп регистрации) и конечный сертификат подписавшего (для отдельной регистрации):
       ```
       ./azure-iot-sdk-c/dps_client/tools/x509_device_provision/x509_device_provision.exe
@@ -185,4 +186,3 @@ cmake -Ddps_auth_type=tpm_simulator ..
   ```
   IOTHUB_CLIENT_LL_HANDLE handle = IoTHubClient_LL_CreateFromDeviceAuth(iothub_uri, device_id, iothub_transport);
   ```
-

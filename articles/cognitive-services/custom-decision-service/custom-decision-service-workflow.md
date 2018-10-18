@@ -1,19 +1,21 @@
 ---
-title: Рабочий процесс Пользовательской службы принятия решений в Azure Cognitive Services | Документация Майкрософт
-description: В этой статье приводится обзор рабочего процесса Пользовательской службы принятия решений.
+title: Рабочий процесс Пользовательской службы принятия решений
+titlesuffix: Azure Cognitive Services
+description: В этой статье описывается рекомендуемый рабочий процесс для пользовательской службы принятия решений Azure.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
-ms.topic: article
+ms.component: custom-decision-service
+ms.topic: conceptual
 ms.date: 06/04/2018
 ms.author: nolachar
-ms.openlocfilehash: 851d7f8cc47b455dbced26ff53d841ed0a5ff0db
-ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
+ms.openlocfilehash: b3bc7f90c9238ce58fd9dc8ac630987803d79bfd
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "35383317"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46368024"
 ---
 # <a name="custom-decision-service-workflow"></a>Рабочий процесс Пользовательской службы принятия решений
 
@@ -21,7 +23,7 @@ ms.locfileid: "35383317"
 
 ![Рабочий процесс Пользовательской службы принятия решений](media/custom-decision-service-workflow.png)
 
-Добавьте [строку подключения к службе хранилища Azure](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string).
+Добавьте [строку подключения к службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-configure-connection-string).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

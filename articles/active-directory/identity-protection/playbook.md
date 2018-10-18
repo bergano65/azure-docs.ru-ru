@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 06/27/2018
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: 02d402b7de82631ce459c60cb42e5335c7e7cfe3
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 5c2a37f3753292c6db847a4a9152bd4506f8fa5e
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40003306"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45580500"
 ---
 # <a name="azure-active-directory-identity-protection-playbook"></a>Тренировочное задание по защите идентификации Azure Active Directory
 
@@ -115,7 +115,7 @@ ms.locfileid: "40003306"
 
 ### <a name="user-risk-security-policy"></a>Политика безопасности в отношении риска для пользователя
 
-Дополнительные сведения см. в разделе [Политика безопасности в отношении риска для пользователя](overview.md#user-risk-security-policy).
+Дополнительные сведения см. в разделе [Настройка политики риска пользователя](howto-user-risk-policy.md).
 
 ![Риск пользователя](./media/playbook/02.png "Сборник тренировочных заданий")
 
@@ -140,7 +140,7 @@ ms.locfileid: "40003306"
 
 ### <a name="sign-in-risk-security-policy"></a>Политика безопасности в отношении риска входа
 
-Дополнительные сведения см. в разделе [Политика безопасности в отношении риска для пользователя](overview.md#user-risk-security-policy).
+Дополнительные сведения см. в разделе [Настройка политики риска входа](howto-sign-in-risk-policy.md).
 
 ![Риск при входе](./media/playbook/01.png "Сборник тренировочных заданий")
 

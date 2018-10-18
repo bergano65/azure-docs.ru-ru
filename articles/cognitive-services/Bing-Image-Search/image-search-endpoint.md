@@ -1,38 +1,40 @@
 ---
-title: Конечные точки для поиска изображений | Документация Майкрософт
-description: Сводные сведения о конечной точке API для поиска изображений.
+title: Конечные точки поиска изображений — API Bing для поиска изображений
+titleSuffix: Azure Cognitive Services
+description: Список доступных конечных точек для API Bing для поиска изображений.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-image-search
 ms.topic: article
 ms.date: 11/30/2017
 ms.author: v-gedod
-ms.openlocfilehash: 0d5f28bfdb45b27b04df068f75e8a20d0235d12b
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: ca38943908bf3eee04c40cf4decf81fd20b08a1f
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380024"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46295926"
 ---
 # <a name="image-search-endpoints"></a>Конечные точки для поиска изображений
-**API для поиска изображений** включает три конечные точки.  Конечная точка 1 возвращает изображения из Интернета на основе запроса. Конечная точка 2 возвращает [ImageInsights](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#imageinsightsresponse) (аналитические сведения об изображениях).  Конечная точка 3 возвращает популярные изображения.
+
+**API для поиска изображений** включает три конечные точки.  Конечная точка 1 возвращает изображения из Интернета на основе запроса. Конечная точка 2 возвращает [ImageInsights](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#imageinsightsresponse) (аналитические сведения об изображениях).  Конечная точка 3 возвращает популярные видео.
 ## <a name="endpoints"></a>Конечные точки
 Чтобы получить результаты поиска изображений с помощью API Bing, отправьте запрос на одну из конечных точек, приведенных ниже. Для определения дополнительных спецификаций используйте заголовки и параметры URL-адреса.
 
 **Конечная точка 1** возвращает результаты поиска изображений, соответствующие поисковому запросу пользователя, который определен с помощью `?q=""`.
-``` 
+```
 GET https://api.cognitive.microsoft.com/bing/v7.0/images/search
 ```
 
 **Конечная точка 2** возвращает аналитические сведения об изображении, используя `GET` или `POST`.
-``` 
+```
  GET or POST https://api.cognitive.microsoft.com/bing/v7.0/images/details
 ```
 Запрос GET возвращает аналитические сведения об изображении, например веб-страницы, содержащие данное изображение. Включите в запрос `GET` параметр [insightsToken](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#insightstoken).
 
-Вы также можете включить в текст запроса `POST` двоичный файл изображения и задать для параметра [modules](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#modulesrequested) значение `RecognizedEntities`. При этом будет возвращено значение [insightsToken](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v5-reference#insightstoken), используемое в качестве параметра в следующем запросе `GET`, который возвращает сведения о людях на данном изображении.  Задайте для параметра `modules` значение `All`, чтобы получить в результатах `POST` все аналитические сведения, кроме `RecognizedEntities`. При этом не потребуется выполнять второй вызов, используя параметр `insightsToken`. 
+Вы также можете включить в текст запроса `POST` двоичный файл изображения и задать для параметра [modules](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#modulesrequested) значение `RecognizedEntities`. При этом будет возвращено значение [insightsToken](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v5-reference#insightstoken), используемое в качестве параметра в следующем запросе `GET`, который возвращает сведения о людях на данном изображении.  Задайте для параметра `modules` значение `All`, чтобы получить в результатах `POST` все аналитические сведения, кроме `RecognizedEntities`. При этом не потребуется выполнять второй вызов, используя параметр `insightsToken`.
 
 
 **Конечная точка 3** возвращает изображения, которые набирают популярность. За основу берутся результаты поисковых запросов, выполненных другими пользователями. Изображения разделяются на различные категории, например, если в них фигурируют примечательные люди или события.

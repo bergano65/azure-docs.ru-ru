@@ -6,13 +6,13 @@ ms.service: security
 ms.subservice: Azure Disk Encryption
 ms.topic: article
 ms.author: mstewart
-ms.date: 09/10/2018
-ms.openlocfilehash: 0750ea0877d5f27a8ceb091f8c3904048c9314aa
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.date: 09/14/2018
+ms.openlocfilehash: ad8bf0217dcd07a7272a220f2d91ed6bc40523bc
+ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44348282"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46498595"
 ---
 # <a name="azure-disk-encryption-prerequisites"></a>Предварительные требования для шифрования дисков Azure 
  В этой статье объясняются компоненты, которые должны быть установлены до того, как вы сможете использовать шифрование дисков Azure. Шифрование дисков Azure интегрируется с [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/), обеспечивая управление ключами шифрования. Для настройки шифрования дисков Azure можно использовать [Azure PowerShell](/powershell/azure/overview), [Azure CLI](/cli/azure/) или [портал Azure](https://portal.azure.com).
@@ -67,7 +67,7 @@ ms.locfileid: "44348282"
     - [Установка и настройка Azure PowerShell для Windows](/powershell/azure/install-azurerm-ps). 
         - Установите PowerShellGet, Azure PowerShell и загрузите модуль AzureRM. 
     - [Установка и настройка Azure PowerShell в macOS и Linux](/powershell/azure/install-azurermps-maclinux).
-        -  Установите PowerShell Core, Azure PowerShell для .NET Core и загрузите модуль AzureRM.Netcore.
+        -  Установите PowerShell Core, Azure PowerShell для .NET Core и загрузите модуль Az.
 
 2. Проверьте версии установленных модулей AzureRM. При необходимости [обновите модуль Azure PowerShell](/powershell/azure/install-azurerm-ps#update-the-azure-powershell-module).
     -  Версия модуля AzureRM должна быть не ниже 6.0.0.
@@ -127,6 +127,9 @@ ms.locfileid: "44348282"
 1. При необходимости создайте группу ресурсов.
 2. Создать хранилище ключей. 
 3. Установите политики расширенного доступа к хранилищу ключей.
+
+>[!WARNING]
+>Перед удалением хранилища ключа убедитесь, что никакие из существующих виртуальных машин не зашифрованы этим ключом. Для защиты хранилища от случайного удаления включите для него параметры [Включить обратимое удаление](../key-vault/key-vault-soft-delete-powershell.md#enabling-soft-delete) и [Блокировка ресурса](../azure-resource-manager/resource-group-lock-resources.md). 
  
 ## <a name="bkmk_KeyVault"></a> Создание хранилища ключей 
 Шифрование дисков Azure интегрировано с [Azure Key Vault](https://azure.microsoft.com/documentation/services/key-vault/), что позволяет управлять секретами и ключами шифрования дисков в подписке Key Vault и контролировать их. Вы можете создать хранилище ключей или использовать существующее для шифрования дисков Azure. Дополнительные сведения о хранилищах ключей см. в статье [Приступая к работе с Azure Key Vault](../key-vault/key-vault-get-started.md) и [Защита хранилища ключей](../key-vault/key-vault-secure-your-key-vault.md). Для создания хранилища ключей можно использовать шаблон Resource Manager, Azure PowerShell или Azure CLI. 

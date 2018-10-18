@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из Marketo с помощью Фабрики данных Azure | Документация Майкрософт
+title: Копирование данных из Marketo с помощью фабрики данных Azure (предварительная версия) | Документы Майкрософт
 description: Узнайте, как копировать данные из Marketo на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: jingwang
-ms.openlocfilehash: f9571f610310a78b8c56732a71ea96f638d59d50
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: efbc020f482a46621eb5c3e3cd6137d1114da6de
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37051094"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46129613"
 ---
-# <a name="copy-data-from-marketo-using-azure-data-factory"></a>Копирование данных из Marketo с помощью Фабрики данных Azure
+# <a name="copy-data-from-marketo-using-azure-data-factory-preview"></a>Копирование данных из Marketo с помощью фабрики данных Azure (предварительная версия)
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из Marketo. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 

@@ -1,23 +1,26 @@
 ---
-title: Интерфейс командной строки Службы поиска и распознавания данных | Документация Майкрософт
-description: Использование интерфейса командной строки KES для создания индекса и файлов грамматики на основе структурированных данных, а также для последующего их развертывания в качестве веб-служб в Microsoft Cognitive Services.
+title: Интерфейс командной строки — API службы поиска и распознавания данных
+titlesuffix: Azure Cognitive Services
+description: Используйте интерфейс командной строки для создания индекса и файлов грамматики на основе структурированных данных, а затем разверните их как веб-службы.
 services: cognitive-services
 author: bojunehsu
-manager: stesp
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: knowledge-exploration
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/24/2016
 ms.author: paulhsu
-ms.openlocfilehash: 71a6f5ac93e5605182a55de1bae9a99c5c3eddf4
-ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
+ms.openlocfilehash: 7ec2282317019275b15a8e506753408c75a68561
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39136361"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46127161"
 ---
 # <a name="command-line-interface"></a>Интерфейс командной строки
-Интерфейс KES командной строки предоставляет возможность создавать файлы индекса и грамматики структурированных данных и развертывать их как веб-службы.  Используется следующий общий синтаксис: `kes.exe <command> <required_args> [<optional_args>]`.  Можно выполнить `kes.exe` без аргументов, чтобы отобразить список команд, или можно выполнить `kes.exe <command>`, чтобы отобразить список аргументов для заданной команды.  Ниже приведен список доступных команд:
+
+Интерфейс службы поиска и распознавания данных (KES) командной строки предоставляет возможность создавать файлы индекса и грамматики структурированных данных и развертывать их как веб-службы.  Используется следующий общий синтаксис: `kes.exe <command> <required_args> [<optional_args>]`.  Можно выполнить `kes.exe` без аргументов, чтобы отобразить список команд, или можно выполнить `kes.exe <command>`, чтобы отобразить список аргументов для заданной команды.  Ниже приведен список доступных команд:
+
 * build_index
 * build_grammar
 * host_service

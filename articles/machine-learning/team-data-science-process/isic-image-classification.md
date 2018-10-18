@@ -5,6 +5,7 @@ services: machine-learning, team-data-science-process
 documentationcenter: ''
 author: deguhath
 ms.author: deguhath
+manager: cgronlun
 editor: cgronlun
 ms.assetid: b8fbef77-3e80-4911-8e84-23dbf42c9bee
 ms.service: machine-learning
@@ -14,16 +15,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/18/2018
-ms.openlocfilehash: 427ea1f3f22855b2c54beacbfb89a8f7fd37cce0
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: ee2e797f3838b8b6b36174d14c73e97fe9790315
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40246651"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49392818"
 ---
 # <a name="skin-cancer-image-classification-with-the-azure-machine-learning-package-for-computer-vision-and-team-data-science-process"></a>Классификация изображений рака кожи с помощью пакета машинного обучения Azure для компьютерного зрения и процесса обработки и анализа данных группы
 
-Из этой статьи вы узнаете, как обучать, тестировать и развертывать модели *классификации изображений* с помощью [пакета машинного обучения Azure для компьютерного зрения](https://docs.microsoft.com/en-us/python/api/overview/azure-machine-learning/computer-vision?view=azure-ml-py-latest). В этом примере применяется структура и шаблоны процесса обработки и анализа данных группы (TDSP) в [Azure Machine Learning Workbench](https://docs.microsoft.com/en-us/azure/machine-learning/service/quickstart-installation). В этом пошаговом руководстве приведен полный пример. Он использует [Microsoft Cognitive Toolkit](https://www.microsoft.com/en-us/cognitive-toolkit/) в качестве платформы глубокого обучения, которое выполняется на [виртуальной машине для обработки и анализа данных](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft-ads.dsvm-deep-learning?tab=Overview), развернутой на компьютере с GPU. В развертывании используется CLI ввода в эксплуатацию машинного обучения Azure.
+Из этой статьи вы узнаете, как обучать, тестировать и развертывать модели *классификации изображений* с помощью [пакета машинного обучения Azure для компьютерного зрения](https://docs.microsoft.com/python/api/overview/azure-machine-learning/computer-vision?view=azure-ml-py-latest). В этом примере применяется структура и шаблоны процесса обработки и анализа данных группы (TDSP) в [Azure Machine Learning Workbench](https://docs.microsoft.com/azure/machine-learning/service/quickstart-installation). В этом пошаговом руководстве приведен полный пример. Он использует [Microsoft Cognitive Toolkit](https://www.microsoft.com/en-us/cognitive-toolkit/) в качестве платформы глубокого обучения, которое выполняется на [виртуальной машине для обработки и анализа данных](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft-ads.dsvm-deep-learning?tab=Overview), развернутой на компьютере с GPU. В развертывании используется CLI ввода в эксплуатацию машинного обучения Azure.
 
 Множество задач в области компьютерного зрения можно реализовать, используя классификацию изображений. К ним относятся создание моделей, которые отвечают на простые вопросы, например: "Присутствует ли объект на изображении?". В качестве объекта могут быть изображены собака, автомобиль или корабль. Это также могут быть более сложные вопросы, например: "Какой класс тяжести глазной болезни обнаруживается при сканировании сетчатки пациента?". Пакет машинного обучения Azure для компьютерного зрения упрощает обработку данных для классификации изображений и процесс моделирования. 
 
@@ -32,7 +33,7 @@ ms.locfileid: "40246651"
 
 ## <a name="team-data-science-process-walkthrough"></a>Пошаговые руководства по процессу обработки и анализа данных группы
 
-В руководстве используется [жизненный цикл процесса обработки и анализа данных группы](https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/overview). В рамках этого руководства рассматриваются следующие шаги жизненного цикла.
+В руководстве используется [жизненный цикл процесса обработки и анализа данных группы](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/overview). В рамках этого руководства рассматриваются следующие шаги жизненного цикла.
 
 ### <a name="1-data-acquisitionhttpsgithubcomazuremachinelearningsamples-amlvisionpackage-isicimageclassificationblobmastercode01dataacquisitionandunderstanding"></a>[1. Сбор данных](https://github.com/Azure/MachineLearningSamples-AMLVisionPackage-ISICImageClassification/blob/master/code/01_data_acquisition_and_understanding)
 Для задачи классификации изображений используется набор данных International Skin Imaging Collaboration (ISIC). ISIC — это партнерство между научными и промышленными организациями, созданное с целью облегчения анализа цифровых изображений кожи для изучения и снижения смертности от меланомы. Архив [ISIC](https://isic-archive.com/#images) содержит более 13 000 изображений повреждений кожи с метками о доброкачественности или злокачественности. Скачайте примеры изображений из архива ISIC.
@@ -71,13 +72,13 @@ ms.locfileid: "40246651"
 На этом этапе вводится в эксплуатацию модель, полученная на этапе моделирования. В этом разделе описаны предварительные требования и необходимые действия по настройке. В нем также рассматривается использование веб-службы. Из этого руководства вы узнаете, как создавать модели глубокого обучения с использованием пакета машинного обучения Azure для компьютерного зрения и вводить эти модели в эксплуатацию в Azure.
 
 ## <a name="next-steps"></a>Дополнительная информация
-- Ознакомьтесь с дополнительной документаций о [пакете машинного обучения Azure для компьютерного зрения](https://docs.microsoft.com/en-us/python/api/overview/azure-machine-learning/computer-vision?view=azure-ml-py-latest).
+- Ознакомьтесь с дополнительной документаций о [пакете машинного обучения Azure для компьютерного зрения](https://docs.microsoft.com/python/api/overview/azure-machine-learning/computer-vision?view=azure-ml-py-latest).
 - Чтобы приступить к работе, ознакомьтесь с документацией по [процессу обработки и анализа данных группы](https://aka.ms/tdsp).
 
 
 ## <a name="references"></a>Ссылки
 
-* [Пакет машинного обучения Azure для компьютерного зрения](https://docs.microsoft.com/en-us/python/api/overview/azure-machine-learning/computer-vision?view=azure-ml-py-latest)
-* [Azure Machine Learning Workbench](https://docs.microsoft.com/en-us/azure/machine-learning/service/quickstart-installation).
+* [Пакет машинного обучения Azure для компьютерного зрения](https://docs.microsoft.com/python/api/overview/azure-machine-learning/computer-vision?view=azure-ml-py-latest)
+* [Azure Machine Learning Workbench](https://docs.microsoft.com/azure/machine-learning/service/quickstart-installation).
 * [Виртуальная машина для обработки и анализа данных](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft-ads.dsvm-deep-learning?tab=Overview)
 

@@ -1,23 +1,24 @@
 ---
-title: Часто задаваемые вопросы об API Bing для поиска в Интернете в Azure | Документация Майкрософт
-description: Получите ответы на распространенные вопросы об API Bing для поиска в Интернете для служб Microsoft Cognitive Services в Azure.
+title: Часто задаваемые вопросы — API Bing для поиска в Интернете
+titleSuffix: Azure Cognitive Services
+description: Получите ответы на часто задаваемые вопросы об API Bing для поиска в Интернете.
 services: cognitive-services
 author: v-jerkin
-manager: jhubbard
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-web-search
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 10/06/2017
 ms.author: v-jerkin
-ms.openlocfilehash: 321f571c48f2231d1ced43848cdefd17adaa1a08
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: b0b8fd3eb80d7418546788565402042de20ab3e7
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380205"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46129324"
 ---
-# <a name="frequently-asked-questions-faq-about-bing-web-search-api-cognitive-services"></a>Часто задаваемые вопросы об API Bing для поиска в Интернете (Cognitive Services)
- 
+# <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
+
  Найдите ответы на часто задаваемые вопросы о понятиях, коде и сценариях, связанных с API Bing для поиска в Интернете для служб Microsoft Cognitive Services в Azure.
 
 ## <a name="response-headers-in-javascript"></a>Заголовки ответов в JavaScript
@@ -52,9 +53,9 @@ ms.locfileid: "35380205"
 
 ## <a name="response-headers-in-production"></a>Заголовки ответов в рабочей среде
 
-Подход с использованием прокси-сервера CORS, описанный в предыдущем ответе, подходит для среды разработки, тестовой и учебной сред. 
+Подход с использованием прокси-сервера CORS, описанный в предыдущем ответе, подходит для среды разработки, тестовой и учебной сред.
 
-Однако в рабочей среде серверный сценарий необходимо размещать в одном домене с веб-страницей, которая использует API Bing для поиска в Интернете. Этот сценарий должен фактически выполнять вызовы API по запросу от веб-страницы JavaScript и передавать все результаты, включая заголовки, обратно в клиент. Поскольку два ресурса (страница и сценарий) используют один источник, то CORS не задействуется, и специальные заголовки доступны для JavaScript на веб-странице. 
+Однако в рабочей среде серверный сценарий необходимо размещать в одном домене с веб-страницей, которая использует API Bing для поиска в Интернете. Этот сценарий должен фактически выполнять вызовы API по запросу от веб-страницы JavaScript и передавать все результаты, включая заголовки, обратно в клиент. Поскольку два ресурса (страница и сценарий) используют один источник, то CORS не задействуется, и специальные заголовки доступны для JavaScript на веб-странице.
 
 Такой подход также защищает ключ API от общего доступа, так как он необходим только серверному сценарию. Чтобы обеспечить авторизацию запроса, сценарий может использовать другой метод.
 

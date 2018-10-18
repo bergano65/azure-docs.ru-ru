@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/15/2018
+ms.date: 09/18/2018
 ms.author: sethm
 ms.reviewer: ''
-ms.openlocfilehash: 931c3d8beb9f2ed12228c74f09f84bbdee1798b8
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: 4013b7136fd365b1d37348cfc1f0b46cce787ce2
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "41946419"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46363129"
 ---
 # <a name="deploy-templates-using-the-azure-stack-portal"></a>Развертывание шаблонов с помощью портала Azure Stack
 
@@ -30,7 +30,7 @@ ms.locfileid: "41946419"
 
 ## <a name="to-deploy-a-template"></a>Развертывание шаблона
 
-1. Войдите на портал, выберите **Создать** и выберите **Настраиваемый**.
+1. Войдите на портал, выберите команду **+ Создать ресурс** и выберите **Настраиваемый**.
 2. Выберите **Развертывание шаблона**.
 3. Щелкните **Изменить шаблон** и вставьте код JSON шаблона в окно кода. Щелкните **Сохранить**.
 4. Выберите **Изменить параметры**, укажите значения параметров, которые отображаются, а затем нажмите кнопку **ОК**.
@@ -40,4 +40,6 @@ ms.locfileid: "41946419"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Развертывание шаблонов с помощью PowerShell](azure-stack-deploy-template-powershell.md)
+Дополнительные сведения о развертывании шаблонов см. в разделе:
+
+[Развертывание шаблонов с помощью PowerShell](azure-stack-deploy-template-powershell.md)

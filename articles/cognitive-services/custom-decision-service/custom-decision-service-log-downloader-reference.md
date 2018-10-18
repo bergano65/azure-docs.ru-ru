@@ -1,25 +1,27 @@
 ---
-title: Использование средства загрузки журнала LogDownloader в Azure Cognitive Services | Документация Майкрософт
+title: LogDownloader — пользовательская служба принятия решений
+titlesuffix: Azure Cognitive Services
 description: Загрузка файлов журнала, создаваемых Пользовательской службой принятия решений Azure.
 services: cognitive-services
 author: marco-rossi29
-manager: marco-rossi29
+manager: cgronlun
 ms.service: cognitive-services
-ms.topic: article
+ms.component: custom-decision-service
+ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: marossi
-ms.openlocfilehash: 783b534b3b3f4bb7f5d9f073f491690759edfea5
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 8c5ab0e297690f1fbdb41a2627dd63c3ea522d1b
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382125"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46366818"
 ---
 # <a name="logdownloader"></a>LogDownloader
 
 Вы можете загружать файлы журналов, которые создаются Пользовательской службой принятия решений, и создавать файлы *.gz*, используемые службой Экспериментирования.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Python 3: установлен и указан в переменной path. Рекомендуется использовать 64-разрядную версию для обработки больших файлов.
 - Репозиторий *Microsoft/mwt-ds*: [клонируйте репозиторий](https://github.com/Microsoft/mwt-ds).
@@ -28,7 +30,7 @@ ms.locfileid: "35382125"
 
 ## <a name="usage"></a>Использование
 
-Перейдите к `mwt-ds/DataScience` и запустите `LogDownloader.py` с соответствующими аргументами, как показано в следующем коде:
+Перейдите к `mwt-ds/DataScience` и запустите `LogDownloader.py` с соответствующими аргументами, как показано в следующем коде.
 
 ```cmd
 python LogDownloader.py [-h] -a APP_ID -l LOG_DIR [-s START_DATE]

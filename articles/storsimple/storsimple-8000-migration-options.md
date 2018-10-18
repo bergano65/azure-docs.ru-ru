@@ -11,14 +11,14 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 08/23/2018
+ms.date: 09/20/2018
 ms.author: alkohli
-ms.openlocfilehash: 8f34d5a38f09f015547f52cc4b44819b780932bb
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: 5da67b5141eb61823d3e376b6f0e6b0b3895ca68
+ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42818864"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46498289"
 ---
 # <a name="options-to-migrate-data-from-storsimple-5000-7000-series"></a>Варианты переноса данных с устройств StorSimple серий 5000–7000 
 
@@ -75,13 +75,22 @@ ms.locfileid: "42818864"
 
 О. Перенос данных с устройств серий 5000–7000 — полностью поддерживаемая операция. Более того, корпорация Майкрософт рекомендует обратиться в службу поддержки перед началом миграции. Сейчас миграции — это интерактивная операция. Если вы намерены перенести данные из устройств StorSimple серий 5000 –7000, [откройте запрос в службу поддержки](storsimple-8000-contact-microsoft-support.md).
 
-### <a name="q-how-does-the-cost-compare-for-the-two-listed-migrations-to-azure-hybrid-services"></a>В. Какова стоимость каждого перечисленного варианта переноса в гибридные службы Azure? 
+### <a name="q-what-is-the-pricing-model-for-both-the-migration-options"></a>В. Какова модель ценообразования для обоих вариантов миграции?
 
-О. Стоимость переноса зависит от выбранного варианта. Хотя само перемещение бесплатно, если вы решите выполнить обновление до StorSimple серии 8000, будет включена плата за аппаратное устройство. Аналогичным образом при использовании службы "Синхронизация файлов Azure" может взиматься плата за подписку. В каждом случае клиентам также придется оплачивать текущие расходы на хранение. Для оценки затрат воспользуйтесь [калькулятором цен Майкрософт для соответствующих служб](https://azure.microsoft.com/pricing/#product-picker).  
+О. Стоимость переноса зависит от выбранного варианта. Хотя само перемещение бесплатно, если вы решите выполнить обновление до StorSimple серии 8000, будет включена плата за аппаратное устройство. 
+
+Аналогичным образом при использовании службы "Синхронизация файлов Azure" может взиматься плата за подписку. В каждом случае клиентам также придется оплачивать текущие расходы на хранение. Для оценки стоимости обратитесь к следующим разделам: 
+- [Цены на StorSimple](https://azure.microsoft.com/pricing/details/storsimple/)  
+- [Цены на AFS]( https://azure.microsoft.com/pricing/details/storage/files/)
 
 ### <a name="q--how-long-does-it-take-to-complete-a-migration"></a>В.  Сколько времени занимает процесс переноса данных?
 
 О. Время переноса данных зависит от объема данных и выбранного варианта обновления. 
+
+### <a name="q-what-is-the-end-of-support-date-for-storsimple-8000-series"></a>В. Какова дата окончания поддержки StorSimple серии 8000?
+
+О. Даты окончания поддержки StorSimple серии 8000 публикуется [здесь](https://support.microsoft.com/lifecycle/search?alpha=Azure%20StorSimple%208000%20Series).
+
 
 ## <a name="next-steps"></a>Дополнительная информация
  - [Перенос данных с устройства StorSimple серий 5000–7000 на устройство серии 8000](storsimple-8000-migrate-from-5000-7000.md).

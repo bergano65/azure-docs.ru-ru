@@ -105,6 +105,7 @@
 #### [Архивация журналов действий в учетной записи хранения Azure](reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account.md)
 #### [Интеграция журналов действий со Splunk с помощью Azure Monitor](reports-monitoring/tutorial-integrate-activity-logs-with-splunk.md)
 #### [Интеграция журналов действий с SumoLogic с помощью Azure Monitor](reports-monitoring/howto-integrate-activity-logs-with-sumologic.md)
+#### [Интеграция журналов действий с Log Analytics с помощью Azure Monitor](reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 ### Справочные материалы
 #### [Сохранение](reports-monitoring/reference-reports-data-retention.md)

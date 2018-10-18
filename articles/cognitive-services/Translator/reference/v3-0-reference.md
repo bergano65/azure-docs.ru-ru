@@ -1,26 +1,27 @@
 ---
-title: Справочные материалы о API перевода текстов Microsoft V3.0 | Документация Майкрософт
-description: Справочная документация для API перевода текстов Microsoft V3.0.
+title: Справочник по API перевода текстов версии 3.0
+titlesuffix: Azure Cognitive Services
+description: Справочная документация для API перевода текстов версии 3.0.
 services: cognitive-services
 author: Jann-Skotdal
-manager: chriswendt1
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: microsoft translator
-ms.topic: article
+ms.component: translator-text
+ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-jansko
-ms.openlocfilehash: cfaa9584e833b137b417d9074fbfcf606eb21388
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 9282d8af30cbfb3346394bcd71510faf8d8c8a21
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380892"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46129392"
 ---
-#<a name="translator-text-api-v30"></a>API перевода текстов v3.0
+# <a name="translator-text-api-v30"></a>API перевода текстов v3.0
 
 ## <a name="whats-new"></a>Новые возможности
 
-API перевода текстов Microsoft версии 3 предоставляет современный веб-API на основе JSON. Это улучшает удобство и производительность благодаря объединению существующих функций с меньшим количеством операций и предоставляет новые возможности.
+API перевода текстов версии 3 предоставляет современный веб-API на основе JSON. Это улучшает удобство и производительность благодаря объединению существующих функций с меньшим количеством операций и предоставляет новые возможности.
 
  * Транслитерация для преобразования текста на одном языке из одного сценария в другой.
  * Преобразование на несколько языков в одном запросе.

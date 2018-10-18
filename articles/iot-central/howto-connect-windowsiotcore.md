@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 73a23ace23d2373e238c6887c4a41c6037d233de
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: 12f7e466bdfd6d9b6cf1c36df4daf1e76cc417f2
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43189010"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45729830"
 ---
 # <a name="connect-a-windows-iot-core-device-to-your-azure-iot-central-application"></a>Подключение устройства Windows IoT Core к приложению Azure IoT Central
 
@@ -48,7 +48,10 @@ ms.locfileid: "43189010"
 
 ### <a name="add-a-real-device"></a>Добавление реального устройства
 
-В приложении Azure IoT Central добавьте реальное устройство на основе шаблона приложения **Windows IoT Core** и запишите строку подключения к устройству. Дополнительные сведения см. в статье [Добавление реального устройства в приложение Azure IoT Central](tutorial-add-device.md).
+В приложении Azure IoT Central добавьте реальное устройство на основе шаблона устройства **Windows IoT Core** и запишите сведения о подключении для устройства (**идентификатор области, идентификатор устройства и первичный ключ**). Дополнительные сведения см. в статье [Добавление реального устройства в приложение Azure IoT Central](tutorial-add-device.md).
+
+ > [!NOTE]
+   > Azure IoT Central перешел на использование службы подготовки устройств к добавлению в центр Интернета вещей Azure (DPS) для подключения всех устройств. Следуйте инструкциям, чтобы [получить строку подключения устройства](concepts-connectivity.md#getting-device-connection-string) и продолжите выполнение оставшейся части руководства.
 
 ## <a name="prepare-the-windows-10-iot-core-device"></a>Подготовка устройства Windows 10 IoT Core
 
@@ -66,7 +69,7 @@ ms.locfileid: "43189010"
 * На рабочем столе сохраните строку подключения в текстовом файле с именем connection.string.iothub.
 * Скопируйте текстовый файл в папку с документами устройства: `[device-IP-address]\C$\Data\Users\DefaultAccount\Documents\connection.string.iothub`.
 
-После этого вам понадобится открыть [портал устройств Windows](https://docs.microsoft.com/en-us/windows/iot-core/manage-your-device/deviceportal), введя в любом браузере путь http://[IP-адрес_устройства]:8080.
+После этого вам понадобится открыть [портал устройств Windows](https://docs.microsoft.com/windows/iot-core/manage-your-device/deviceportal), введя в любом браузере путь http://[IP-адрес_устройства]:8080.
 
 Как показано ниже, вам может понадобиться сделать следующее:
 1. Развернуть узел "Приложения" в левой части экрана.

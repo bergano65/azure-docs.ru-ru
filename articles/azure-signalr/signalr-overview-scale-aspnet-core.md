@@ -12,18 +12,18 @@ ms.topic: overview
 ms.workload: tbd
 ms.date: 09/13/2018
 ms.author: zhshang
-ms.openlocfilehash: 380b70ac55bb1f9b447eb07dc475e354956f409e
-ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
+ms.openlocfilehash: af100c015845d095f39ee4245f71689a4d2a43c0
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48267357"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49385013"
 ---
 # <a name="scale-aspnet-core-signalr-applications-with-azure-signalr-service"></a>Масштабирование приложений ASP.NET Core SignalR с помощью службы Azure SignalR.
 
 ## <a name="developing-signalr-apps"></a>Разработка приложений SignalR
 
-Сейчас доступны [две версии](https://docs.microsoft.com/en-us/aspnet/core/signalr/version-differences) SignalR, которые вы можете использовать со своими веб-приложениями: SignalR для ASP.NET и SignalR для ASP.NET Core (самая новая версия). Служба Azure SignalR — это служба, управляемая Azure и созданная на основе Core SignalR ASP.NET. 
+Сейчас доступны [две версии](https://docs.microsoft.com/aspnet/core/signalr/version-differences) SignalR, которые вы можете использовать со своими веб-приложениями: SignalR для ASP.NET и SignalR для ASP.NET Core (самая новая версия). Служба Azure SignalR — это служба, управляемая Azure и созданная на основе Core SignalR ASP.NET. 
 
 ASP.NET Core SignalR — это переписанная предыдущая версия. В результате решение Core SignalR ASP.NET не является обратно совместимым с более ранней версией SignalR. Их API-интерфейсы и поведение отличаются. Пакет SDK для ASP.NET Core SignalR предназначен для .NET Standard, но вы можете использовать его с .NET Framework. Однако вы должны использовать новые API, а не старые. Если вы используете SignalR и хотите перейти на ASP.NET Core SignalR или службу Azure SignalR, вам нужно будет изменить код, чтобы обрабатывать различия в API-интерфейсах.
 

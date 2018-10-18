@@ -1,24 +1,25 @@
 ---
-title: Поддерживаемые языковые стандарты и языки — Пользовательская служба распознавания речи
-titlesuffix: Azure Cognitive Services
+title: Поддерживаемые языковые стандарты и языки в Пользовательской службе распознавания речи в Azure | Документация Майкрософт
 description: Общие сведения о поддерживаемых языках в Пользовательской службе распознавания речи в Cognitive Services.
 services: cognitive-services
 author: PanosPeriorellis
-manager: cgronlun
+manager: onano
 ms.service: cognitive-services
 ms.component: custom-speech
-ms.topic: conceptual
+ms.topic: article
 ms.date: 02/08/2017
 ms.author: panosper
-ROBOTS: NOINDEX
-ms.openlocfilehash: 34af6673689244364ab3a1fe3f2a6ab056ea8598
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 8493aeb3c1c2436900ae626ad0f34cbe8b060163
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47223961"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49342174"
 ---
 # <a name="supported-locales-in-custom-speech-service"></a>Поддерживаемые языковые стандарты в Пользовательской службе распознавания речи
+
+[!INCLUDE [Deprecation note](../../../../includes/cognitive-services-custom-speech-deprecation-note.md)]
+
 Пользовательская служба распознавания речи в настоящее время поддерживает настройку моделей для следующих языковых стандартов.
 
 | Тип модели | Поддержка языков |

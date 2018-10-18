@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 55ce85702804d99d806220d7f0a4ea0820975f4f
-ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
+ms.openlocfilehash: 8a5d880d0238e38fbbaa9de22fc1baf604f0fc07
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39206043"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45733470"
 ---
 # <a name="connect-a-generic-client-application-to-your-azure-iot-central-application-nodejs"></a>Подключение универсального клиентского приложения к приложению Azure IoT Central (Node.js)
 
@@ -129,7 +129,11 @@ ms.locfileid: "39206043"
     var client = clientFromConnectionString(connectionString);
     ```
 
-    Замените заполнитель `{your device connection string}` строкой подключения к устройству. Вы скопировали это значение на странице сведений о подключении при добавлении реального устройства. В этом примере мы инициализируем `targetTemperature` до нуля. При необходимости можно использовать текущие данные с устройства или значение из двойника устройства. 
+  > [!NOTE]
+   > Azure IoT Central перешел на использование службы подготовки устройств к добавлению в центр Интернета вещей Azure (DPS) для подключения всех устройств. Следуйте инструкциям, чтобы [получить строку подключения устройства](concepts-connectivity.md#getting-device-connection-string) и продолжите выполнение оставшейся части руководства.
+
+
+    Замените заполнитель `{your device connection string}` строкой подключения к устройству. В этом примере мы инициализируем `targetTemperature` до нуля. При необходимости можно использовать текущие данные с устройства или значение из двойника устройства. 
 
 1. Для отправки данных телеметрии, состояния и событий в приложение Azure IoT Central необходимо добавить в файл следующую функцию:
 

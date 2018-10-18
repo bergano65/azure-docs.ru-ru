@@ -9,12 +9,12 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: dobett
-ms.openlocfilehash: 340453448d38db66558e59edb845f2caf4454cf9
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: defb9f72148e319b36954a8d448d5f441621fc43
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43104156"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49321586"
 ---
 # <a name="get-started-with-device-twins-netnet"></a>Начало работы с двойниками устройств (.NET/.NET)
 [!INCLUDE [iot-hub-selector-twin-get-started](../../includes/iot-hub-selector-twin-get-started.md)]
@@ -236,4 +236,4 @@ ms.locfileid: "43104156"
 
 * настроить устройства с помощью требуемых свойств двойника устройства ([Руководство. Настройка устройств из внутренней службы](tutorial-device-twins.md));
 
-* управлять устройствами в интерактивном режиме, например включить вентилятор из управляемого пользователем приложения ([Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Node.js)](quickstart-control-device-node.md)).
+* управлять устройствами в интерактивном режиме, например включить вентилятор из управляемого пользователем приложения ([Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Node.js)](quickstart-control-device-dotnet.md)).

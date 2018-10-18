@@ -1,21 +1,25 @@
 ---
-title: Создание пользовательской аналитики для приложения Azure IoT Central | Документация Майкрософт
-description: Вы узнаете, как оператор может создать пользовательскую аналитику для приложения Azure IoT Central.
+title: Анализ данных устройств в приложении Azure IoT Central | Документы Майкрософт
+description: Анализируйте данные устройств в приложении Azure IoT Central.
 author: lmasieri
 ms.author: lmasieri
-ms.date: 08/26/2018
+ms.date: 09/18/2018
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 0a78c534605b6eab08d5b12674689f0459e80b26
-ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
+ms.openlocfilehash: bf86e769aff4a9b03d5df1b1aef702814c605fa4
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43247102"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46368092"
 ---
 # <a name="how-to-use-analytics-to-analyze-your-device-data"></a>Использование аналитики для анализа данных устройства
+
+
+*Эта статья предназначена для операторов, разработчиков и администраторов.*
+
 
 Microsoft Azure IoT Central предоставляет широкие возможности анализа для получения сведений о больших объемах данных, поступающих с устройств. Чтобы начать работу, перейдите в раздел **Аналитика** в меню навигации слева. 
 

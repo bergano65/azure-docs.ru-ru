@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/28/2018
+ms.date: 09/11/2018
 ms.author: jingwang
-ms.openlocfilehash: 1afd64fbd7019164f0e1f5c850f2dcd8250cdbfc
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: db2f3086da41e990e6f87d8086d6e8defa447532
+ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39600342"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45543451"
 ---
 # <a name="copy-data-to-or-from-azure-cosmos-db-using-azure-data-factory"></a>Копирование данных в базу данных Azure Cosmos DB или из нее с помощью фабрики данных Azure
 
@@ -34,10 +34,14 @@ ms.locfileid: "39600342"
 
 В частности, Azure Cosmos DB поддерживает:
 
-- [API SQL](https://docs.microsoft.com/azure/cosmos-db/documentdb-introduction) для Cosmos DB.
+- Копирование данных из Cosmos DB [SQL API](https://docs.microsoft.com/azure/cosmos-db/documentdb-introduction) и обратно.
+- Запись в Cosmos DB в качестве INSERT или UPSERT.
 - Импорт и экспорт документов JSON "как есть", копирование данных в набор табличных данных и из него, например базу данных SQL, CSV-файлы и т. д. Сведения о копировании документов "как есть" в JSON-файлы или другую коллекцию Cosmos DB либо из них см. в разделе [Импорт и экспорт документов JSON](#importexport-json-documents).
 
 Фабрика данных интегрируется с [библиотекой массового исполнителя Cosmos DB](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started), чтобы обеспечить оптимальную производительность при операциях записи в Cosmos DB.
+
+>[!TIP]
+>Посмотрите [это видео](https://youtu.be/5-SRNiC_qOU), где рассказывается о копировании данных из хранилища BLOB-объектов Azure в Cosmos DB и приводятся общие рекомендации по настройке производительности для приема данных в Cosmos DB.
 
 ## <a name="getting-started"></a>Приступая к работе
 

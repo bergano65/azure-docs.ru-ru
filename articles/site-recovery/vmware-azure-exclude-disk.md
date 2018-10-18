@@ -4,21 +4,21 @@ description: В статье объясняется, как и зачем иск
 author: nsoneji
 ms.service: site-recovery
 ms.workload: storage-backup-recovery
-ms.date: 07/06/2018
+ms.date: 10/11/2018
 ms.author: nisoneji
-ms.openlocfilehash: e7c9c1db52dc23c576782ffa8b21426c75230c51
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: ea0e9f3572287139612256863ee28b72c83cd4ef
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37921286"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49092429"
 ---
 # <a name="exclude-disks-from-replication-for-vmware-to-azure-scenario"></a>Исключение дисков из репликации VMware в Azure
 
 В этой статье описано, как исключать диски при репликации виртуальных машин VMware в Azure. Благодаря этому можно оптимизировать использование пропускной способности при репликации или же ресурсы целевой стороны, используемые такими дисками. См. дополнительные сведения об [исключении дисков для Hyper-V](hyper-v-exclude-disk.md).
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 По умолчанию реплицируются все диски на виртуальной машине. Чтобы исключить диск из репликации, вам необходимо установить вручную на компьютер службу Mobility Service до включения репликации (при репликации из VMware в Azure).
 

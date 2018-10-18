@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: b1584d16-e0d2-4019-ad1f-f04be8c5b430
 ms.topic: conceptual
 ms.date: 03/21/2017
-ms.openlocfilehash: 0830f4a6cffb8c1b2dacc8452e52477bb3a3ec91
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 1e6c71a68c4357d82d086f3e2ca098e4039def5a
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43039374"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46295763"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-the-azure-portal"></a>Начало работы с Azure Data Lake Analytics с помощью портала Azure
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "43039374"
 
 ## <a name="create-a-data-lake-analytics-account"></a>Создание учетной записи аналитики озера данных
 
-Теперь мы одновременно создадим учетные записи Data Lake Analytics и Data Lake Store.  Этот простой шаг занимает около минуты.
+Теперь мы одновременно создадим учетные записи Data Lake Analytics и Azure Data Lake Storage 1-го поколения.  Этот простой шаг занимает около минуты.
 
 1. Выполните вход на [портал Azure](https://portal.azure.com).
 2. Последовательно выберите **Создать ресурс** >  **Данные и аналитика** > **Data Lake Analytics**.
@@ -36,14 +36,14 @@ ms.locfileid: "43039374"
    * **Подписка**: выберите подписку Azure, которая используется для учетной записи аналитики.
    * **Группа ресурсов**: выберите существующую группу ресурсов Azure или создайте новую группу. Обычно приложения состоят из множества компонентов, например веб-приложения, базы данных, сервера базы данных, хранилища и служб сторонних поставщиков.
    * **Расположение.** выберите центр обработки данных Azure для учетной записи аналитики озера данных.
-   * **Data Lake Store.** Следуйте инструкциям для создания учетной записи Data Lake Store или выберите имеющуюся. 
+   * **Azure Data Lake Storage 1-го поколения.** Следуйте инструкциям для создания учетной записи Data Lake Storage 1-го поколения или выберите имеющуюся. 
 4. При необходимости выберите ценовую категорию для учетной записи Data Lake Analytics.
 5. Нажмите кнопку **Создать**. 
 
 
 ## <a name="your-first-u-sql-script"></a>Первый скрипт U-SQL
 
-Ниже приводится очень простой скрипт U-SQL. Он определяет небольшой набор данных (в рамках скрипта) и записывает его в Azure Data Lake Store по умолчанию как файл с именем `/data.csv`.
+Ниже приводится очень простой скрипт U-SQL. Он определяет небольшой набор данных (в рамках скрипта) и записывает его в Azure Data Lake Storage 1-го поколения по умолчанию как файл с именем `/data.csv`.
 
 ```
 @a  = 

@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: db35f16e-1565-4873-a851-bd987accdc58
 ms.topic: conceptual
 ms.date: 05/24/2018
-ms.openlocfilehash: 0386406f5fc81a007d55bd5358e7a6b333f63b04
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: f48dc07e27c6cb01a842f1f6d720ed6476028ef7
+ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43048339"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45542318"
 ---
 # <a name="adding-a-user-in-the-azure-portal"></a>Добавление пользователя на портале Azure
 
@@ -31,12 +31,12 @@ ms.locfileid: "43048339"
 Предоставьте нужные разрешения ("R-X" или "RWX") по отношению к папкам, содержащим входные и выходные данные.
 
 
-## <a name="optionally-add-the-user-to-the-azure-data-lake-store-role-reader-role"></a>При необходимости добавьте пользователя в роль **читателя** в Azure Data Lake Store.
-1.  Найдите свою учетную запись Azure Data Lake Store.
+## <a name="optionally-add-the-user-to-the-azure-data-lake-storage-gen1-role-reader-role"></a>При необходимости добавьте пользователя в роль **читателя** в Azure Data Lake Storage 1-го поколения.
+1.  Найдите вашу учетную запись Azure Data Lake Storage 1-го поколения.
 2.  Щелкните **Пользователи**.
 3. Щелкните **Добавить**.
 4.  Выберите роль RBAC Azure, которая будет присвоена этой группе.
-5.  Присвойте роль читателя. Эта роль имеет минимальный набор разрешений, необходимых для просмотра данных, хранящихся в ADLS, и управления ими. Назначьте эту роль, если группа не предназначена для управления службами Azure.
+5.  Присвойте роль читателя. Эта роль имеет минимальный набор разрешений, необходимых для просмотра данных, хранящихся в ADLSGen1, и управления ими. Назначьте эту роль, если группа не предназначена для управления службами Azure.
 6.  Введите имя группы.
 7.  Последовательно выберите **ОК**.
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/02/2018
 ms.author: clemensv
-ms.openlocfilehash: 306a21add76261dce99c954a2ba373e4b5047a75
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 913e702cc72472e81937bfe3b0939695daadc011
+ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33895416"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45543534"
 ---
 # <a name="azure-relay-hybrid-connections-protocol"></a>Протокол гибридных подключений ретранслятора Azure
 
@@ -316,7 +316,7 @@ FEFEFEFEFEFEFEFEFEFEF...
 
 * **requestTarget** — строка. Это свойство содержит ["целевой объект" (RFC7230, раздел 5.3)](https://tools.ietf.org/html/rfc7230#section-5.3) запроса. Сюда входит часть строки запроса, из которой удалены ВСЕ параметры с префиксами `sb-hc-`.
 * **method** — строка. Это метод запроса, как описано в [RFC7231, раздел 4](https://tools.ietf.org/html/rfc7231#section-4). Метод `CONNECT` НЕ ДОЛЖЕН использоваться.
-* **body** — логическое значение. Указывает, что дальше следует еще один двоичный кадр.
+* **body** — логическое значение. Указывает, что дальше следует еще один или несколько двоичных кадров.
 
 ``` JSON
 {

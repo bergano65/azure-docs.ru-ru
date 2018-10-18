@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: a295cad2bf1cafce4dc64909174e9417daa7918e
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 370700f8d146dd626e6e13deceb09dcaea34a9f3
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38235454"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45983956"
 ---
 # <a name="azure-devtest-labs-faq"></a>Часто задаваемые вопросы об Azure DevTest Labs
 В этой статье содержатся ответы на некоторые самые распространенные вопросы об Azure DevTest Labs.
@@ -88,17 +88,17 @@ DevTest Labs предусматривает два типа ролей для п
 
 **Интеграция и автоматизация средств непрерывной интеграции и доставки (CI/CD)**
 ## <a name="does-devtest-labs-integrate-with-my-cicd-toolchain"></a>Можно ли интегрировать DevTest Labs с собственной цепочкой инструментов непрерывной интеграции и доставки?
-При использовании Visual Studio Team Services можно воспользоваться расширением [Задачи DevTest Labs](https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks), чтобы автоматизировать конвейер выпуска в DevTest Labs. Это расширение можно использовать для выполнения следующих задач:
+При использовании Azure DevOps можно воспользоваться расширением [Задачи DevTest Labs](https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks), чтобы автоматизировать конвейер выпуска в DevTest Labs. Это расширение можно использовать для выполнения следующих задач:
 
-* автоматическое создание и развертывание виртуальной машины, а также ее настройка с помощью последней сборки с использованием задачи "Копирование файлов Azure" или задачи PowerShell Team Services;
+* автоматическое создание и развертывание виртуальной машины, а также ее настройка с помощью последней сборки с использованием задачи "Копирование файлов Azure" или задачи PowerShell Azure DevOps Services;
 * автоматическая запись состояния виртуальной машины после тестирования с целью воспроизведения ошибки на таком же экземпляре для дальнейшего исследования;
 * удаление виртуальной машины во время завершения работы конвейера выпуска, если она больше не нужна.
 
-Дополнительные сведения и руководство по использованию расширения Team Services см. в следующих записях блога:
+Дополнительные сведения и руководство по использованию расширения Azure DevOps Services см. в следующих записях блога:
 
-* [General availability of Azure DevTest Labs — VSTS extension](https://blogs.msdn.microsoft.com/devtestlab/2016/06/15/azure-devtest-labs-vsts-extension/) (Общедоступная версия Azure DevTest Labs — расширение VSTS)
-* [Deploying a new VM in an existing AzureDevTestLab from VSTS](http://www.visualstudiogeeks.com/blog/DevOps/Deploy-New-VM-To-Existing-AzureDevTestLab-From-VSTS) (Развертывание новой виртуальной машины из VSTS в имеющейся лаборатории Azure DevTest Labs)
-* [Using VSTS Release Management for Continuous Deployments to AzureDevTestLabs](http://www.visualstudiogeeks.com/blog/DevOps/Use-VSTS-ReleaseManagement-to-Deploy-and-Test-in-AzureDevTestLabs) (Использование управления выпусками VSTS для непрерывного развертывания в Azure DevTest Labs)
+* [Расширение DevTest Labs и Azure DevOps](https://blogs.msdn.microsoft.com/devtestlab/2016/06/15/azure-devtest-labs-vsts-extension/)
+* [Развертывание новой виртуальной машины из Azure DevOps Services в имеющейся лаборатории Azure DevTest Labs](http://www.visualstudiogeeks.com/blog/DevOps/Deploy-New-VM-To-Existing-AzureDevTestLab-From-VSTS)
+* [Использование управления выпусками Azure DevOps Services для непрерывного развертывания в Azure DevTest Labs](http://www.visualstudiogeeks.com/blog/DevOps/Use-VSTS-ReleaseManagement-to-Deploy-and-Test-in-AzureDevTestLabs)
 
 Для других цепочек инструментов непрерывной интеграции (CI) и непрерывной поставки (CD) можно реализовать такие же сценарии путем развертывания [шаблонов Azure Resource Manager](https://aka.ms/dtlquickstarttemplate) с помощью командлетов [Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md) и [пакетов SDK для .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.DevTestLabs/). Для интеграции DevTest Labs с набором инструментов также можно использовать [REST API для DevTest Labs](http://aka.ms/dtlrestapis).  
 
@@ -112,7 +112,7 @@ DevTest Labs предусматривает два типа ролей для п
 
 ## <a name="how-do-i-create-multiple-vms-from-the-same-template-at-once"></a>Как создать несколько виртуальных машин с помощью одного шаблона?
 Существует два варианта одновременного создания нескольких виртуальных машин из одного шаблона:
-* Вы можете использовать [расширение для задач Visual Studio Team Services](https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks). 
+* Вы можете использовать [расширение Azure DevOps Tasks](https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks). 
 * Или [создать шаблон Resource Manager](devtest-lab-add-vm.md#save-azure-resource-manager-template) во время создания виртуальной машины и [развернуть его из Windows PowerShell](../azure-resource-manager/resource-group-template-deploy.md).
 
 ## <a name="how-do-i-move-my-existing-azure-vms-into-my-devtest-labs-lab"></a>Как переместить имеющиеся виртуальные машины Azure в лабораторию DevTest Labs?
@@ -172,7 +172,7 @@ DevTest Labs предусматривает два типа ролей для п
     # Get the VMs from that lab.
     $labVMs = Get-AzureRmResource | Where-Object {
               $_.ResourceType -eq 'microsoft.devtestlab/labs/virtualmachines' -and
-              $_.ResourceName -like "$($lab.ResourceName)/*"}
+              $_.Name -like "$($lab.Name)/*"}
 
     # Delete the VMs.
     foreach($labVM in $labVMs)

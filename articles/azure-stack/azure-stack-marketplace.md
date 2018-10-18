@@ -3,7 +3,7 @@ title: Публикация настраиваемого элемента Market
 description: Сведения о том, как оператор Azure Stack может опубликовать настраиваемый элемент Marketplace в Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: brenduns
+author: sethmanheim
 manager: femila
 editor: ''
 ms.assetid: 60871cbb-eed2-433c-a76d-d605c7aec06c
@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/23/2018
-ms.author: brenduns
+ms.date: 09/12/2018
+ms.author: sethm
 ms.reviewer: jeffgo
-ms.openlocfilehash: 4ea23ed01e6432f24024d7e8cc07c2dfe42ac639
-ms.sourcegitcommit: 680964b75f7fff2f0517b7a0d43e01a9ee3da445
+ms.openlocfilehash: 12310c088777d65bef211747806f942433857e40
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34605575"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45632354"
 ---
 # <a name="the-azure-stack-marketplace-overview"></a>Общие сведения об Azure Stack Marketplace
 
@@ -33,7 +33,7 @@ Marketplace — это коллекция служб, приложений и р
 > [!Caution]  
 > Все артефакты элемента коллекции, известные как образы и JSON-файлы, доступны без аутентификации после внесения их в Azure Stack Marketplace. Дополнительные сведения о публикации пользовательских элементов Marketplace см. в статье [Создание и публикация элемента Marketplace](azure-stack-create-and-publish-marketplace-item.md).
 
-Чтобы открыть marketplace, в консоли администрирования выберите **New** (Создать).
+Чтобы открыть Marketplace, в консоли администрирования выберите команду **Создать**.
 
 ![](media/azure-stack-publish-custom-marketplace-item/image1.png)
 

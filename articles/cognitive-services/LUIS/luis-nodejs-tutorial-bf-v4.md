@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: diberry
-ms.openlocfilehash: acd9d9ff0b97bf0eaaca2f8ae9a6909e18e320d6
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: ad21754b3f55a0d14bb43a2898d5bd4b8b8150ae
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47168184"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49385912"
 ---
 # <a name="tutorial-luis-bot-in-nodejs"></a>Руководство. Бот LUIS в Node.js
 Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), с помощью Node.js. Этот бот использует приложение HomeAutomation, чтобы реализовать решение ботов. Бот создается с помощью [бота веб-приложения Azure](https://docs.microsoft.com/azure/bot-service/) и [Bot Framework версии 4](https://github.com/Microsoft/botbuilder-js).
@@ -84,14 +84,14 @@ https://github.com/Microsoft/BotBuilder-Samples/tree/v4/javascript_nodejs/12.nlp
 Добавление предварительно созданного приложения HomeAutomation в модель для обработки высказывания, например `Turn off the living room lights`.
 
 1. Перейдите на портал [LUIS](https://www.luis.ai) и войдите в систему.
-2. Чтобы отсортировать приложения по дате создания, выберите столбец **Дата создания** на странице **My Apps** (Мои приложения). Служба Azure Bot создала новое приложение в предыдущем разделе. Его имя — `luis-nodejs-bot-` + `<your-name>` + 4 случайных символа.
+2. Чтобы отсортировать приложения по дате создания, выберите столбец **Дата создания** на странице **Мои приложения**. В предыдущем разделе служба Azure Bot создала новое приложение. Его имя — `luis-nodejs-bot-` + `<your-name>` + 4 случайных символа.
 3. Откройте приложение и выберите раздел **Сборка** на верхней панели навигации.
 4. В левой области навигации выберите **Prebuilt Domains** (Предварительно созданные домены).
 5. Выберите домен **HomeAutomation**, на его карте выбрав **Добавить домен**.
 6. Выберите **Train** (Обучать) в правом верхнем меню.
 7. Выберите **Опубликовать** в правом верхнем меню. 
 
-    Приложение, созданное службой Azure Bot, теперь обладает новыми намерениями.
+    Теперь приложение, созданное службой Azure Bot, имеет новые намерения:
 
     |Новые намерения базового бота|Пример высказывания|
     |--|--|
@@ -238,7 +238,7 @@ https://github.com/Microsoft/BotBuilder-Samples/tree/v4/javascript_nodejs/12.nlp
     ![Секрет Bot Emulator версии 4](../../../includes/media/cognitive-services-luis/bfv4/bot-secret.png)
 
 
-4. В эмуляторе бота введите `Hello` и получите корректный ответ базового бота.
+4. В Bot Emulator введите `Hello` и получите корректный ответ базового бота.
 
     [ ![Ответ базового бота в эмуляторе](../../../includes/media/cognitive-services-luis/bfv4/emulator-test.png) ](../../../includes/media/cognitive-services-luis/bfv4/emulator-test.png#lightbox)
 
@@ -246,7 +246,7 @@ https://github.com/Microsoft/BotBuilder-Samples/tree/v4/javascript_nodejs/12.nlp
 
 Добавьте код для обработки новых намерений в файл `bot.js`. 
 
-1. В верхней части файла найдите раздел **Supported LUIS Intents** (Поддерживаемые намерения LUIS) и добавьте константы для намерений HomeAutomation.
+1. В верхней части файла найдите раздел **Поддерживаемые намерения LUIS** и добавьте константы для намерений HomeAutomation.
 
     ```javascript
     // Supported LUIS Intents
@@ -350,9 +350,9 @@ https://github.com/Microsoft/BotBuilder-Samples/tree/v4/javascript_nodejs/12.nlp
 ## <a name="learn-more-about-bot-framework"></a>Дополнительные сведения о платформе Bot Framework
 Служба Azure Bot использует Bot Framework SDK. Дополнительные сведения о пакете SDK и платформе Bot Framework см. в следующих статьях.
 
-* [Общие сведения о службе Azure Bot](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0) версии 4
+* [Общие сведения о службе Azure Bot](https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0) версии 4
 * [Bot Builder Samples](https://github.com/Microsoft/botbuilder-samples) (Примеры Bot Builder)
-* [botbuilder-core package](https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/?view=botbuilder-ts-latest)
+* [botbuilder-core package](https://docs.microsoft.com/javascript/api/botbuilder-core/?view=botbuilder-ts-latest)
 * [Bot Builder tools](https://github.com/Microsoft/botbuilder-tools) (Средства для Bot Builder)
 
 ## <a name="next-steps"></a>Дополнительная информация

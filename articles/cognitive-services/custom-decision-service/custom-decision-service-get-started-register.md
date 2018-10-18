@@ -1,20 +1,22 @@
 ---
-title: Регистрация приложения в Azure Cognitive Services | Документация Майкрософт
-description: Пошаговое руководство по регистрации нового приложения в Пользовательской службе принятия решений Azure
+title: Регистрация приложения — пользовательская служба принятия решений
+titlesuffix: Azure Cognitive Services
+description: Пошаговое руководство по регистрации нового приложения в пользовательской службе принятия решений Azure.
 services: cognitive-services
 author: slivkins
-manager: slivkins
+manager: cgronlun
 ms.service: cognitive-services
-ms.topic: article
+ms.component: custom-decision-service
+ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: slivkins
-ms.reviewer: marcozo;alekh;marossi
-ms.openlocfilehash: 2aa8fbe77c11df4434eefa4c92d8529d5ca1d885
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.reviewer: marcozo
+ms.openlocfilehash: 598300597856d858095ff7c2e2cf9e9264190a9d
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382101"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46365406"
 ---
 # <a name="register-your-application"></a>Регистрация приложения
 

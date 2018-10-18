@@ -11,12 +11,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 04/15/2018
 ms.author: ghogen
-ms.openlocfilehash: d2ab34b3737ec00e4adc464f6d2255203fb6ae08
-ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
+ms.openlocfilehash: 9cf49ae97da3bf67300bdc222c86bb712aeaed37
+ms.sourcegitcommit: 06724c499837ba342c81f4d349ec0ce4f2dfd6d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43840625"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46465798"
 ---
 # <a name="add-key-vault-to-your-web-application-by-using-visual-studio-connected-services"></a>Добавление хранилища ключей в веб-приложение с помощью функции "Подключенные службы" в Visual Studio
 
@@ -39,7 +39,8 @@ ms.locfileid: "43840625"
 
    ![Выбор пункта "Безопасно храните секреты в Azure Key Vault"](media/vs-key-vault-add-connected-service/KeyVaultConnectedService1.PNG)
 
-   Если вы выполнили вход в Visual Studio и с вашей учетной записью связана подписка Azure, отобразится страница с раскрывающимся списком ваших подписок.
+   Если вы выполнили вход в Visual Studio и с вашей учетной записью связана подписка Azure, отобразится страница с раскрывающимся списком ваших подписок. Убедитесь, что вы вошли в Visual Studio и это та же учетная запись, которую вы используете для подписки Azure.
+
 1. Выберите подписку, которую вы хотите использовать, а затем создайте новое или выберите существующее хранилище ключей. Можно также щелкнуть ссылку "Изменить", чтобы изменить автоматически созданное имя.
 
    ![Выберите свою подписку.](media/vs-key-vault-add-connected-service/KeyVaultConnectedService3.PNG)

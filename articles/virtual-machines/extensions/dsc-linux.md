@@ -1,10 +1,10 @@
 ---
-title: Расширение Azure DSC для Linux | Документация Майкрософт
+title: Расширение Azure DSC для Linux
 description: Установка пакетов OMI и DSC для обеспечения возможности настройки виртуальной машины Linux в Azure с помощью Desired State Configuration.
 services: virtual-machines-linux
 documentationcenter: ''
-author: balukambala
-manager: jeconnoc
+author: bobbytreed
+manager: carmonm
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-linux
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
-ms.author: roiyz
-ms.openlocfilehash: 4a057b88d8d511965d694aaf4494f79bba88e47a
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.author: robreed
+ms.openlocfilehash: 70280676453bd146102ca331daae038b947aab58
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39412653"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45632863"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft.OSTCExtensions.DSCForLinux)
 

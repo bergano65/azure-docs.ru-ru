@@ -1,25 +1,28 @@
 ---
-title: Метод interpret в API службы поиска и распознавания данных | Документация Майкрософт
-description: Узнайте, как использовать метод interpret в API службы поиска и распознавания данных (KES) в Cognitive Services.
+title: Метод interpret — API службы поиска и распознавания данных
+titlesuffix: Azure Cognitive Services
+description: Узнайте, как использовать метод interpret в API службы поиска и распознавания данных (KES).
 services: cognitive-services
 author: bojunehsu
-manager: stesp
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: knowledge-exploration
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/26/2016
 ms.author: paulhsu
-ms.openlocfilehash: ef68d98dacf393abf8d030b9312217ea380947d2
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 45badbdbe1a7e1f2028a00d54458db35a4f7d440
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380233"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46128013"
 ---
 # <a name="interpret-method"></a>Метод interpret
+
 Метод *interpret* принимает строку запроса на естественном языке и возвращает отформатированные интерпретации намерений пользователя на основе грамматики и данных индекса.  Для обеспечения интерактивного поиска этот метод может быть вызван при вводе каждого знака пользователем. Для этого параметру *complete* необходимо присвоить значение 1, чтобы включить автозавершение.
 
 ## <a name="request"></a>Запрос
+
 `http://<host>/interpret?query=<query>[&<options>]`
 
 ИМЯ|Значение| ОПИСАНИЕ
@@ -33,6 +36,7 @@ timeout  | Число (по умолчанию — 1000) | Время ожида
 С помощью параметров *count* и *offset* можно постепенно получать все больше результатов, используя несколько запросов.
 
 ## <a name="response-json"></a>Ответ (JSON)
+
 JSONPath     | ОПИСАНИЕ
 ---------|---------
 $.query |Параметр *query* из запроса.
@@ -47,6 +51,7 @@ $.interpretations[\*].rules[\*].output.value|Значение семантиче
 $.aborted | Если истекло время ожидания запроса, то имеет значение true.
 
 ### <a name="parse-xml"></a>Анализ XML
+
 При анализе XML в запрос (выполненный) добавляются аннотации со сведениями о степени соответствия правилам грамматики и атрибутам в индексе.  Ниже приведен пример из области научных публикаций.
 
 ```xml
@@ -65,6 +70,7 @@ $.aborted | Если истекло время ожидания запроса, 
 Элемент `<attr>` задает границы диапазона в запросе, обеспечивая сопоставление с атрибутом индекса, определенным атрибутом `name`.  Если при поиске совпадений во входном запросе используется синоним, атрибут `canonical` будет содержать каноническое значение, соответствующее синониму из индекса.
 
 ## <a name="example"></a>Пример
+
 Приведенный ниже запрос из примера для научных публикаций возвращает не более 2 предложений автозавершения префикса запроса "papers by jaime".
 
 `http://<host>/interpret?query=papers by jaime&complete=1&count=2`

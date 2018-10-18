@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 06/08/2018
 ms.author: dekapur
 ms.custom: mvc
-ms.openlocfilehash: 9eea0cabebb67095d4c6c813e7d13c885a447db4
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 24b4cbe0eb13a41ccd6ae98db90d4bf0cf7d22a7
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44378896"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49311224"
 ---
 # <a name="tutorial-monitor-windows-containers-on-service-fabric-using-log-analytics"></a>Руководство. Мониторинг контейнеров Windows в Service Fabric с помощью Log Analytics
 
@@ -42,7 +42,7 @@ ms.locfileid: "44378896"
 
 ## <a name="setting-up-log-analytics-with-your-cluster-in-the-resource-manager-template"></a>Настройка Log Analytics для кластера в шаблоне Resource Manager
 
-В случае, если вы использовали [шаблон](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/Tutorial), предоставленный в первой части этого руководства, он должен содержать указанные ниже дополнения к универсальному шаблону Azure Resource Manager для Service Fabric. В случае, если вы использовали собственный кластер, для которого необходимо настроить мониторинг контейнеров с помощью Log Analytics, сделайте следующее:
+В случае, если вы использовали [шаблон](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-OMS-UnSecure), предоставленный в первой части этого руководства, он должен содержать указанные ниже дополнения к универсальному шаблону Azure Resource Manager для Service Fabric. В случае, если вы использовали собственный кластер, для которого необходимо настроить мониторинг контейнеров с помощью Log Analytics, сделайте следующее:
 
 * Внесите приведенные ниже изменения в шаблон Resource Manager.
 * [Разверните этот шаблон](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-arm) с помощью PowerShell, чтобы обновить кластер. Azure Resource Manager определит, что ресурс уже существует, поэтому обновит его.

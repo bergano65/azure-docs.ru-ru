@@ -1,20 +1,21 @@
 ---
-title: Возврат определенного количества (N) лучших переводов с помощью API перевода текстов Майкрософт | Документация Майкрософт
+title: Возврат определенного количества (N) лучших переводов — API перевода текстов
+titlesuffix: Azure Cognitive Services
 description: Возврат определенного количества (N) лучших переводов с помощью API перевода текстов Майкрософт.
 services: cognitive-services
 author: Jann-Skotdal
-manager: chriswendt1
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: v-jansko
-ms.openlocfilehash: 3eafe50f69ae1a6748342e64a414ecee4467d0d1
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: e1d310cecb41de00c1d3e3986fe715d1519ceeff
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380824"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46123459"
 ---
 # <a name="how-to-return-n-best-translations"></a>Возврат определенного количества (N) лучших переводов
 
@@ -36,7 +37,7 @@ ms.locfileid: "35380824"
 
 | Параметр | ОПИСАНИЕ |
 |:---|:---|
-| appId | **Обязательный**. Если используется заголовок авторизации, оставьте поле appid пустым, иначе укажите строку, содержащую "Bearer" + " " + access token (маркер носителя и маркер доступа).|
+| appId | **Обязательный**. Если используется заголовок авторизации, оставьте поле appid пустым, иначе укажите строку, содержащую Bearer, пробел и маркер доступа.|
 | текст | **Обязательный**. Строка, представляющая текст для перевода. Размер текста не должен превышать 10 000 знаков.|
 | from | **Обязательный**. Строка, представляющая код языка текста, который подлежит переводу. |
 | значение | **Обязательный**. Строка, представляющая код языка, на который переводится текст. |

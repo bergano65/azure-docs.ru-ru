@@ -2,19 +2,19 @@
 title: Использование средств Azure Data Lake для Visual Studio Code
 description: Узнайте, как с помощью средств Azure Data Lake для Visual Studio Code создавать, тестировать и выполнять скрипты U-SQL.
 services: data-lake-analytics
+ms.service: data-lake-analytics
 author: Jejiang
 ms.author: jejiang
 ms.reviewer: jasonwhowell
 ms.assetid: dc9b21d8-c5f4-4f77-bcbc-eff458f48de2
-ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 02/09/2018
-ms.openlocfilehash: b06b4c4484e3f41b64ff2d60ce558726c555a2e3
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: e470d27ccfea68f628b793f9afd695bb363e295a
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43047917"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45630841"
 ---
 # <a name="use-azure-data-lake-tools-for-visual-studio-code"></a>Использование средств Azure Data Lake для Visual Studio Code
 
@@ -24,7 +24,7 @@ ms.locfileid: "43047917"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Средства Azure Data Lake для VS Code поддерживают Windows, Linux и MacOS.  
+Средства Azure Data Lake для VS Code поддерживают Windows, Linux и MacOS. Локальные запуск и отладка U-SQL работают только в Windows.
 
 - [Visual Studio Code](https://www.visualstudio.com/products/code-vs.aspx)
 
@@ -220,6 +220,8 @@ ms.locfileid: "43047917"
 - Отладка кода программной части C#. 
 - Пошаговая отладка кода. 
 - Проверка скрипта локально.
+
+Функция локального запуска и локальной отладки работает только в средах Windows и не поддерживается в ОС macOS и Linux.
 
 Инструкции по локальному выполнению и отладке см. в статье [Локальный запуск и локальная отладка U-SQL в Visual Studio Code](data-lake-tools-for-vscode-local-run-and-debug.md).
 

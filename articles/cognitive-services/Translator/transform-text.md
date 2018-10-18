@@ -1,20 +1,21 @@
 ---
-title: Преобразование текста с помощью API перевода текстов Microsoft Translator | Документация Майкрософт
-description: Преобразование текста с помощью API перевода текстов Microsoft Translator.
+title: Преобразование текста — API перевода текстов
+titlesuffix: Azure Cognitive Services
+description: Преобразование текста с помощью API перевода текстов.
 services: cognitive-services
 author: Jann-Skotdal
-manager: chriswendt1
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: v-jansko
-ms.openlocfilehash: 5aa88f471a33a668b8385e46c2105a3139c142cb
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: e5061e322b4f0edb416f321cefef73776b9165ff
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380812"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46123952"
 ---
 # <a name="how-to-use-the-transformtext-method"></a>Использование метода TransformText
 

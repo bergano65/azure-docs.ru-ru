@@ -11,14 +11,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/06/2015
+ms.date: 09/11/2017
 ms.author: mbullwin
-ms.openlocfilehash: 7d4bf0c5beeba22569e0000b28b007fb5b0ff68f
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 70086cdff3ed313d2b6851139ca8c8a937426aab
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35294182"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44716797"
 ---
 # <a name="walkthrough-export-to-sql-from-application-insights-using-stream-analytics"></a>Пошаговое руководство. Экспорт в SQL из Application Insights с использованием Stream Analytics
 В этой статье показано, как переместить данные телеметрии из [Azure Application Insights][start] в базу данных SQL Azure, используя [непрерывный экспорт][export] и [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/). 
@@ -143,21 +143,21 @@ CREATE CLUSTERED INDEX [pvTblIdx] ON [dbo].[PageViewsTable]
 ## <a name="create-an-azure-stream-analytics-instance"></a>Создание экземпляра Azure Stream Analytics
 На [портале Azure](https://portal.azure.com/) выберите службу Azure Stream Analytics и создайте новое задание Stream Analytics:
 
-![](./media/app-insights-code-sample-export-sql-stream-analytics/SA001.png)
+![Параметры Stream Analytics](./media/app-insights-code-sample-export-sql-stream-analytics/SA001.png)
 
 ![](./media/app-insights-code-sample-export-sql-stream-analytics/SA002.png)
 
 Создав новое задание, выберите **Перейти к ресурсу**.
 
-![](./media/app-insights-code-sample-export-sql-stream-analytics/SA003.png)
+![Параметры Stream Analytics](./media/app-insights-code-sample-export-sql-stream-analytics/SA003.png)
 
 #### <a name="add-a-new-input"></a>Добавление новых входных данных
 
-![](./media/app-insights-code-sample-export-sql-stream-analytics/SA004.png)
+![Параметры Stream Analytics](./media/app-insights-code-sample-export-sql-stream-analytics/SA004.png)
 
 Задайте расположение для приема входных данных из большого двоичного объекта непрерывного экспорта:
 
-![](./media/app-insights-code-sample-export-sql-stream-analytics/SA005.png)
+![Параметры Stream Analytics](./media/app-insights-code-sample-export-sql-stream-analytics/SA0005.png)
 
 Теперь потребуется первичный ключ доступа из вашей учетной записи хранения, указанной ранее. Задайте его в качестве ключа учетной записи хранения.
 

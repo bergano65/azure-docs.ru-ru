@@ -1,5 +1,6 @@
 ---
-title: Внешнее содержимое и материалы сообщества для API анализа текста в Azure Cognitive Services | Документация Майкрософт
+title: Внешнее содержимое и материалы сообщества для API анализа текста
+titleSuffix: Azure Cognitive Services
 description: Блоги партнеров, видео на YouTube, учебные материалы по API анализа текста Microsoft Cognitive Services в Azure.
 services: cognitive-services
 author: HeidiSteen
@@ -7,16 +8,16 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: text-analytics
 ms.topic: conceptual
-ms.date: 3/07/2018
+ms.date: 09/12/2018
 ms.author: heidist
-ms.openlocfilehash: 63de50bac69c5b7358ee2e37f534d2f997fde592
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: fbea686ba0f67cdab79f1553344bd99dd105fc00
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382532"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45605255"
 ---
-# <a name="external--community-content-for-the-text-analytics-api"></a>Внешнее содержимое и материалы сообщества для API анализа текста
+# <a name="external--community-content-for-the-text-analytics-cognitive-service"></a>Внешнее содержимое и материалы сообщества для API анализа текста (Cognitive Service)
 
  В этой статье приведены ссылки на полезные веб-материалы, разработанные и выпущенные партнерами и специалистами, имеющими опыт использования API анализа текста.
 

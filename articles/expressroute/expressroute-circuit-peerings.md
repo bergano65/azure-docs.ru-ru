@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 10/01/2018
 ms.author: cherylmc
-ms.openlocfilehash: c1fbc99702e077e600f01959224f3321e7543e59
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 8ef231982cfdc9a2c4387ee47e651fdf1af0baaf
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48044405"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49388431"
 ---
 # <a name="expressroute-circuits-and-routing-domains"></a>Каналы ExpressRoute и домены маршрутизации
  *Канал ExpressRoute* необходимо настроить на подключение локальной инфраструктуры к Майкрософт через поставщика услуг подключения. На следующем рисунке показана логическая схема подключения между вашей глобальной сетью и Майкрософт:
@@ -82,7 +82,7 @@ ms.locfileid: "48044405"
 ## <a name="expressroute-health"></a>Работоспособность ExpressRoute
 С помощью [Монитора производительности сети](https://docs.microsoft.com/azure/networking/network-monitoring-overview) (NPM) можно отслеживать доступность каналов ExpressRoute, их подключение к виртуальным сетям и загрузку полосы пропускания.
 
-NPM отслеживает работоспособность частного пиринга Azure и пиринга Майкрософт.  Дополнительные сведения см. [здесь](https://azure.microsoft.com/en-in/blog/monitoring-of-azure-expressroute-in-preview/).
+NPM отслеживает работоспособность частного пиринга Azure и пиринга Майкрософт.  Дополнительные сведения см. [здесь](https://azure.microsoft.com/blog/monitoring-of-azure-expressroute-in-preview/).
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Найти поставщика услуг. Ознакомьтесь с разделом [Поставщики услуг и расположения ExpressRoute](expressroute-locations.md).

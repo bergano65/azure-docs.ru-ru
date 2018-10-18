@@ -1,22 +1,23 @@
 ---
-title: Часто задаваемые вопросы об API анализа текста — Azure Cognitive Services | Документация Майкрософт
-description: Получите ответы на распространенные вопросы об API анализа текста служб Microsoft Cognitive Services в Azure.
+title: Часто задаваемые вопросы об API анализа текста
+titleSuffix: Azure Cognitive Services
+description: Получите ответы на часто задаваемые вопросы об API анализа текста.
 services: cognitive-services
 author: HeidiSteen
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: text-analytics
 ms.topic: conceptual
-ms.date: 3/07/2018
+ms.date: 09/12/2018
 ms.author: heidist
-ms.openlocfilehash: bf82899b4317f0f5ce0f6ca5096dccef7cddd931
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: aa1c5b048c3ef339d01a3a63fd1d565b888ffbbb
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382540"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45603402"
 ---
-# <a name="frequently-asked-questions-faq-about-the-text-analytics-api"></a>Часто задаваемые вопросы об API анализа текста
+# <a name="frequently-asked-questions-faq-about-the-text-analytics-cognitive-service"></a>Часто задаваемые вопросы об API анализа текста (Cognitive Service)
 
  Найдите ответы на часто задаваемые вопросы о понятиях, коде и сценариях, связанных с API анализа текста для служб Microsoft Cognitive Services в Azure.
 

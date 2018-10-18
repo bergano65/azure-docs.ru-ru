@@ -3,19 +3,21 @@ title: Создание веб-перехватчиков на правилах 
 description: Создание веб-перехватчиков в Azure IoT Central для автоматического уведомления других приложений о срабатывании правил.
 author: viv-liu
 ms.author: viviali
-ms.date: 07/17/2018
+ms.date: 09/17/2018
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 1e21076cafe21e6c0efcdf5a8146278eabd9ebc4
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 896d4e9c775fa0b0c8eb062d11d141901daa7242
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39227836"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46295991"
 ---
 # <a name="create-webhook-actions-on-rules-in-azure-iot-central"></a>Создание действий веб-перехватчика на правилах Azure IoT Central
+
+*Этот раздел предназначен для разработчиков и администраторов.*
 
 Веб-перехватчики позволяют подключить приложение IoT Central к другим приложениям и службам для удаленного мониторинга и уведомления. Веб-перехватчики автоматически уведомляют другие приложения и службы, к которым вы подключаетесь, при каждой активации правила в приложении IoT Central. Приложение IoT Central отправляет запрос POST к конечной точке HTTP другого приложения при каждой активации правила. Полезные данные будут содержать сведения об устройстве и об активации правила. 
 
@@ -25,9 +27,9 @@ ms.locfileid: "39227836"
 1. Откройте [RequestBin](http://requestbin.net/). 
 1. Создайте новый RequestBin и скопируйте **Bin URL** (URL-адрес Bin). 
 1. Создайте [Правило телеметрии](howto-create-telemetry-rules.md) или [Правило события](howto-create-event-rules.md). Сохраните правило и добавьте новое действие.
-![Экран создания веб-перехватчика](media/howto-create-webhooks/webhookcreate.png)
+![Экран создания веб-перехватчика](media/howto-create-webhooks/webhookcreate.PNG)
 1. Выберите действие веб-перехватчика, укажите отображаемое имя и вставьте URL-адрес Bin как URL-адрес обратного вызова. 
-1. Сохранение правила
+1. Сохраните правило.
 
 Теперь при срабатывании правила в RequestBin должен отобразиться новый запрос.
 
@@ -42,6 +44,7 @@ ms.locfileid: "39227836"
         "id":"ID",
         "name":  "Refrigerator1",
         "simulated" : true,
+        "deviceId": "deviceID",
         "deviceTemplate":{
             "id": "ID",
             "version":"1.0.0"

@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 08/06/2018
 ms.topic: conceptual
-ms.openlocfilehash: 956cb80ddbf96f23585dd52f3dc1013c7a665113
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: a56cb92dc8870bf3fff6de0b1d5d907a0898c216
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42886316"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46364301"
 ---
 # <a name="configure-role-based-access-controls-in-the-remote-monitoring-solution-accelerator"></a>Настройка управления доступом на основе ролей в акселераторе решений для удаленного мониторинга
 
@@ -134,11 +134,11 @@ ms.locfileid: "42886316"
 
 ### <a name="define-a-policy-for-the-new-role"></a>Определение политики для новой роли
 
-После добавления роли в приложение на портале Azure вам необходимо определить политику в файле [role.json](https://github.com/Azure/remote-monitoring-services-dotnet/blob/master/pcs-auth/Services/data/policies/roles.json) для роли, которая назначает разрешения, необходимые для управления устройствами.
+После добавления роли в приложение на портале Azure вам необходимо определить политику в файле [role.json](https://github.com/Azure/remote-monitoring-services-dotnet/blob/master/auth/Services/data/policies/roles.json) для роли, которая назначает разрешения, необходимые для управления устройствами.
 
-1. Клонируйте репозиторий [микрослужбы проверки подлинности и авторизации](https://github.com/Azure/pcs-auth-dotnet) с сайта GitHub на локальный компьютер.
+1. Клонируйте репозиторий [Remote Monitoring Microservices](https://github.com/Azure/remote-monitoring-services-dotnet) из GitHub на локальный компьютер.
 
-1. Измените файл **Services/data/policies/role.json**, чтобы добавить политику для роли **ManageDevices**, как показано в следующем фрагменте. Значения **ID** и **Role** должны соответствовать определению роли в манифесте приложения из предыдущего раздела. Список разрешенных действий позволяет пользователю с ролью **ManageDevices** создавать, обновлять и удалять устройства, подключенные к решению:
+1. Измените файл **auth/Services/data/policies/roles.json**, чтобы добавить политику для роли **ManageDevices**, как показано в следующем фрагменте. Значения **ID** и **Role** должны соответствовать определению роли в манифесте приложения из предыдущего раздела. Список разрешенных действий позволяет пользователю с ролью **ManageDevices** создавать, обновлять и удалять устройства, подключенные к решению:
 
     ```json
     {
@@ -184,7 +184,7 @@ ms.locfileid: "42886316"
 
 ### <a name="how-the-web-ui-enforces-permissions"></a>Применение разрешений веб-интерфейсом
 
-Веб-интерфейс использует [микрослужбу проверки подлинности и авторизации](https://github.com/Azure/pcs-auth-dotnet), чтобы определить, какие действия пользователь может выполнять и какие элементы управления отображаются в пользовательском интерфейсе. Например, если ваше решение называется **contoso-rm4**, веб-интерфейс извлекает список разрешенных действий для текущего пользователя, отправляя следующий запрос:
+Веб-интерфейс использует [микрослужбу проверки подлинности и авторизации](https://github.com/Azure/remote-monitoring-services-dotnet/tree/master/auth), чтобы определить, какие действия пользователь может выполнять и какие элементы управления отображаются в пользовательском интерфейсе. Например, если ваше решение называется **contoso-rm4**, веб-интерфейс извлекает список разрешенных действий для текущего пользователя, отправляя следующий запрос:
 
 ```http
 http://contoso-rm4.azurewebsites.net/v1/users/current
@@ -226,7 +226,7 @@ Authorization: Bearer <JWT Token from ADAL>
 
 Микрослужбы также проверяют разрешения для защиты от несанкционированных запросов API. Когда микрослужба получает запрос API, она декодирует и проверяет токен JWT, чтобы получить идентификатор пользователя и разрешения, связанные с ролью пользователя.
 
-В следующем фрагменте кода из файла [DevicesController.cs](https://github.com/Azure/iothub-manager-dotnet/blob/master/WebService/v1/Controllers/DevicesController.cs) в [микрослужбе IoTHub Manager](https://github.com/Azure/iothub-manager-dotnet) показано применение разрешений:
+В следующем фрагменте кода из файла [DevicesController.cs](https://github.com/Azure/remote-monitoring-services-dotnet/blob/master/iothub-manager/WebService/v1/Controllers/DevicesController.cs) в [микрослужбе IoTHub Manager](https://github.com/Azure/remote-monitoring-services-dotnet/tree/master/iothub-manager) показано применение разрешений:
 
 ```csharp
 [HttpDelete("{id}")]
@@ -240,6 +240,8 @@ public async Task DeleteAsync(string id)
 ## <a name="next-steps"></a>Дополнительная информация
 
 В этой статье вы узнали, как элементы управления доступом на основе ролей реализуются в акселераторе решений для удаленного мониторинга.
+
+Сведения об управлении доступом к обозревателю аналитики временных рядов в акселераторе решений удаленного мониторинга см. в разделе [Настройка элементов управления доступом для обозревателя службы "Аналитика временных рядов"](iot-accelerators-remote-monitoring-rbac-tsi.md).
 
 Более подробные сведения об акселераторе решений для удаленного мониторинга см. в статье [Архитектура предварительно настроенного решения удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md).
 

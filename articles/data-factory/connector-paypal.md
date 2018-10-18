@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из PayPal с помощью Фабрики данных Azure | Документация Майкрософт
+title: Копирование данных из PayPal с помощью фабрики данных Azure (предварительная версия) | Документы Майкрософт
 description: Узнайте, как копировать данные из PayPal в поддерживаемые хранилища данных, используемые в качестве приемников, с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: jingwang
-ms.openlocfilehash: 844b9979ed3bb61850ff9448d065bc1300fe23d0
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 6d752eb5d638171aa510bbbf17a197eddd2b6f60
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37054404"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46127213"
 ---
-# <a name="copy-data-from-paypal-using-azure-data-factory"></a>Копирование данных из PayPal с помощью Фабрики данных Azure
+# <a name="copy-data-from-paypal-using-azure-data-factory-preview"></a>Копирование данных из PayPal с помощью фабрики данных Azure (предварительная версия)
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из PayPal. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 

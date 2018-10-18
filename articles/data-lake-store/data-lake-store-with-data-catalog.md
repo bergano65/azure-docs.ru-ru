@@ -1,6 +1,6 @@
 ---
-title: Регистрация данных из Data Lake Store в каталоге данных Azure | Документация Майкрософт
-description: Регистрация данных из хранилища озера данных в каталоге данных Azure
+title: Регистрация данных из Azure Data Lake Storage 1-го поколения в каталоге данных Azure | Документы Майкрософт
+description: Регистрация данных из Azure Data Lake Storage 1-го поколения в каталоге данных Azure
 services: data-lake-store,data-catalog
 documentationcenter: ''
 author: nitinme
@@ -12,27 +12,27 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: 8da9f0f8aeb36d9ff2f87511c902dd719bc755b9
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 35fc7b2c713f8d4b88f4a44d9ddef5d92ba4c402
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39441607"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46294319"
 ---
-# <a name="register-data-from-data-lake-store-in-azure-data-catalog"></a>Регистрация данных из хранилища озера данных в каталоге данных Azure
-В этой статье вы узнаете, как интегрировать Azure Data Lake Store со службой "Каталог данных Azure", чтобы в организации можно было обнаруживать данные с помощью интеграции с каталогом данных. Дополнительные сведения о каталогизации данных см. в статье [Каталог данных Azure](../data-catalog/data-catalog-what-is-data-catalog.md). Чтобы понять, в каких сценариях можно использовать каталог данных, см. статью [Типичные сценарии каталога данных Azure](../data-catalog/data-catalog-common-scenarios.md).
+# <a name="register-data-from-azure-data-lake-storage-gen1-in-azure-data-catalog"></a>Регистрация данных из Azure Data Lake Storage 1-го поколения в каталоге данных Azure
+В этой статье вы узнаете, как интегрировать Azure Data Lake Storage 1-го поколения со службой "Каталог данных Azure", чтобы в организации можно было обнаруживать данные с помощью интеграции с каталогом данных. Дополнительные сведения о каталогизации данных см. в статье [Каталог данных Azure](../data-catalog/data-catalog-what-is-data-catalog.md). Чтобы понять, в каких сценариях можно использовать каталог данных, см. статью [Типичные сценарии каталога данных Azure](../data-catalog/data-catalog-common-scenarios.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 Перед началом работы с этим учебником необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Настройте свою подписку Azure** для использования общедоступной предварительной версии Data Lake Store. Ознакомьтесь с [инструкциями](data-lake-store-get-started-portal.md).
-* **Учетная запись хранилища озера данных Azure**. Следуйте инструкциям в разделе [Приступая к работе с хранилищем озера данных Azure на портале Azure](data-lake-store-get-started-portal.md). Давайте в целях этого руководства создадим учетную запись Data Lake Store и назовем ее **datacatalogstore**.
+* **Включите свою подписку Azure** для Data Lake Storage 1-го поколения. Ознакомьтесь с [инструкциями](data-lake-store-get-started-portal.md).
+* **Учетная запись Data Lake Storage 1-го поколения**. Следуйте инструкциям в статье [Начало работы с Azure Data Lake Storage 1-го поколения с помощью портала Azure](data-lake-store-get-started-portal.md). В целях этого руководства создадим учетную запись Data Lake Storage 1-го поколения и назовем ее **datacatalogstore**.
 
     После создания учетной записи передайте в нее пример набора данных. В этом учебнике мы передадим CSV-файлы в папку **AmbulanceData** в [репозитории Git озера данных Azure](https://github.com/Azure/usql/tree/master/Examples/Samples/Data/AmbulanceData/). Чтобы передать данные в контейнер больших двоичных объектов, можно использовать различные клиенты, например [обозреватель хранилищ Azure](http://storageexplorer.com/).
 * **Каталог данных Azure**. В организации уже должен быть создан каталог данных Azure. Для каждой организации допускается только один каталог.
 
-## <a name="register-data-lake-store-as-a-source-for-data-catalog"></a>Регистрация хранилища озера данных в качестве источника для каталога данных
+## <a name="register-data-lake-storage-gen1-as-a-source-for-data-catalog"></a>Регистрация Data Lake Storage 1-го поколения в качестве источника для каталога данных
 
 > [!VIDEO https://channel9.msdn.com/Series/AzureDataLake/ADCwithADL/player]
 
@@ -44,15 +44,15 @@ ms.locfileid: "39441607"
 1. На странице "Приветствие" щелкните **Войти**и введите учетные данные.
 
     ![Экран приветствия](./media/data-lake-store-with-data-catalog/welcome.screen.png "Экран приветствия")
-1. На странице "Выбор источника данных" выберите **Azure Data Lake**, а затем нажмите кнопку **Далее**.
+1. На странице "Выбор источника данных" выберите **Azure Data Lake Store**, а затем нажмите кнопку **Далее**.
 
     ![Выбор источника данных](./media/data-lake-store-with-data-catalog/select-source.png "Выбор источника данных")
-1. На следующей странице укажите имя учетной записи хранилища озера данных, которую необходимо зарегистрировать в каталоге данных. Оставьте значения по умолчанию для остальных параметров и щелкните **Подключиться**.
+1. На следующей странице укажите имя учетной записи Data Lake Storage 1-го поколения, которую необходимо зарегистрировать в каталоге данных. Оставьте значения по умолчанию для остальных параметров и щелкните **Подключиться**.
 
     ![Подключение к источнику данных](./media/data-lake-store-with-data-catalog/connect-to-source.png "Подключение к источнику данных")
 1. Следующую страницу можно разделить на следующие области.
 
-    a. Поле **Иерархия серверов** представляет структуру папки учетной записи хранилища озера данных. **$Root** представляет корень учетной записи Data Lake Store, а **AmbulanceData** — папку, созданную в корне учетной записи Data Lake Store.
+    a. Поле **Иерархия серверов** представляет структуру папки учетной записи Data Lake Storage 1-го поколения. **$Root** представляет корень учетной записи Data Lake Storage 1-го поколения, а **AmbulanceData** — папку, созданную в корне учетной записи Data Lake Storage 1-го поколения.
 
     b. В поле **Доступные объекты** перечислены файлы и папки, расположенные в папке **AmbulanceData**.
 
@@ -80,4 +80,4 @@ ms.locfileid: "39441607"
 ## <a name="see-also"></a>См. также
 * [Создание заметок к источникам данных](../data-catalog/data-catalog-how-to-annotate.md)
 * [Создание документации по источникам данных](../data-catalog/data-catalog-how-to-documentation.md)
-* [Интеграция хранилища озера данных с другими службами Azure](data-lake-store-integrate-with-other-services.md)
+* [Интеграция Data Lake Storage 1-го поколения c другими службами Azure](data-lake-store-integrate-with-other-services.md)

@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: a6ad40f90e12bbf4dd85c3cbd22839d39a734ca1
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
+ms.openlocfilehash: 5f76d18662105df6d278e09e047baa13773ab4ac
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44391171"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49319359"
 ---
 # <a name="deploy-to-azure-app-service-by-using-the-jenkins-plugin"></a>Развертывание в службе приложений Azure с помощью подключаемого модуля Jenkins 
 
@@ -36,8 +36,10 @@ ms.locfileid: "44391171"
 * [службу приложений Azure](https://plugins.jenkins.io/azure-app-service) версии 0.1.
 
 Подключаемый модуль Jenkins можно использовать для развертывания веб-приложений на всех языках, поддерживаемых веб-приложениями, например C#, PHP, Java и Node.js. В этом руководстве мы используем [простое веб-приложение Java для Azure](https://github.com/azure-devops/javawebappsample). Чтобы создать разветвление репозитория для своей учетной записи GitHub, нажмите кнопку **Fork** (Разветвление) в правом верхнем углу интерфейса GitHub.  
+
 > [!NOTE]
 > Для создания проекта Java требуются Java JDK и Maven. Установите эти компоненты в главном экземпляре Jenkins или агенте виртуальной машины при его использовании для обеспечения непрерывной интеграции. Если вы развертываете приложение Java SE, на сервере сборки также потребуется развертывание ZIP.
+>
 
 Чтобы установить эти компоненты, войдите в экземпляр Jenkins с помощью SSH-подключения и выполните следующие команды:
 
@@ -48,7 +50,7 @@ sudo apt-get install -y maven
 
 Чтобы развернуть веб-приложения для контейнеров, установите Docker в главном экземпляре Jenkins или агенте виртуальной машины, который используется для сборки. Инструкции см. в статье [Choose Docker CE or Docker EE on Ubuntu](https://docs.docker.com/engine/installation/linux/ubuntu/) (Выбор Docker CE и Docker EE в Ubuntu).
 
-##<a name="service-principal"></a> Добавление субъекта-службы Azure в учетные данные Jenkins
+## <a name="service-principal"></a> Добавление субъекта-службы Azure в учетные данные Jenkins
 
 Для развертывания в Azure требуется субъект-служба Azure. 
 

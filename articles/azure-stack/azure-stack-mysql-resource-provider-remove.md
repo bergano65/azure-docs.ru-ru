@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/27/2018
+ms.date: 09/13/2018
 ms.author: jeffgilb
 ms.reviewer: jeffgo
-ms.openlocfilehash: d3a615e3b92a62709a787d0463dfa3148f14d07e
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: cd0195796189158650c9c2655062950b71130ad7
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37088372"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45578486"
 ---
 # <a name="remove-the-mysql-resource-provider"></a>Удаление поставщика ресурсов MySQL
 
@@ -53,6 +53,7 @@ ms.locfileid: "37088372"
 5. Запустите скрипт DeployMySqlProvider.ps1 со следующими параметрами:
     - **Uninstall**. Удаляет поставщик ресурсов и все связанные с ним ресурсы.
     - **PrivilegedEndpoint**. IP-адрес или DNS-имя привилегированной конечной точки.
+    - **AzureEnvironment**. Среда Azure, используемая для развертывания Azure Stack. Требуется только для развертываний Azure AD.
     - **CloudAdminCredential**. Учетные данные администратора облака, необходимые для доступа к привилегированной конечной точке.
     - **DirectoryTenantID**
     - **AzCredential**. Учетные данные администратора службы Azure Stack. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack.

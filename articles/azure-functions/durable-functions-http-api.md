@@ -3,23 +3,19 @@ title: API HTTP в устойчивых функциях — Azure
 description: Сведения о том, как внедрять API HTTP в расширении устойчивых функций для Функций Azure.
 services: functions
 author: cgillum
-manager: cfowler
-editor: ''
-tags: ''
+manager: jeconnoc
 keywords: ''
-ms.service: functions
+ms.service: azure-functions
 ms.devlang: multiple
-ms.topic: article
-ms.tgt_pltfrm: multiple
-ms.workload: na
-ms.date: 09/29/2017
+ms.topic: conceptual
+ms.date: 09/06/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 3c000e268c4c926991c3f1928f226065a436c6d2
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: c6d7268a8501c602354d21edc5a0feaae9b1a0b2
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "36264891"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45575480"
 ---
 # <a name="http-apis-in-durable-functions-azure-functions"></a>API HTTP в устойчивых функциях (Функции Azure)
 
@@ -49,6 +45,7 @@ ms.locfileid: "36264891"
 | statusQueryGetUri |URL-адрес состояния экземпляра оркестрации. |
 | sendEventPostUri  |URL-адрес вызова события экземпляра оркестрации. |
 | terminatePostUri  |URL-адрес завершения экземпляра оркестрации. |
+| rewindPostUri     |URL-адрес перемотки экземпляра оркестрации. |
 
 Вот пример ответа на запрос:
 
@@ -56,13 +53,14 @@ ms.locfileid: "36264891"
 HTTP/1.1 202 Accepted
 Content-Length: 923
 Content-Type: application/json; charset=utf-8
-Location: https://{host}/runtime/webhooks/DurableTaskExtension/instances/34ce9a28a6834d8492ce6a295f1a80e2?taskHub=DurableFunctionsHub&connection=Storage&code=XXX
+Location: https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d8492ce6a295f1a80e2?taskHub=DurableFunctionsHub&connection=Storage&code=XXX
 
 {
     "id":"34ce9a28a6834d8492ce6a295f1a80e2",
-    "statusQueryGetUri":"https://{host}/runtime/webhooks/DurableTaskExtension/instances/34ce9a28a6834d8492ce6a295f1a80e2?taskHub=DurableFunctionsHub&connection=Storage&code=XXX",
-    "sendEventPostUri":"https://{host}/runtime/webhooks/DurableTaskExtension/instances/34ce9a28a6834d8492ce6a295f1a80e2/raiseEvent/{eventName}?taskHub=DurableFunctionsHub&connection=Storage&code=XXX",
-    "terminatePostUri":"https://{host}/runtime/webhooks/DurableTaskExtension/instances/34ce9a28a6834d8492ce6a295f1a80e2/terminate?reason={text}&taskHub=DurableFunctionsHub&connection=Storage&code=XXX"
+    "statusQueryGetUri":"https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d8492ce6a295f1a80e2?taskHub=DurableFunctionsHub&connection=Storage&code=XXX",
+    "sendEventPostUri":"https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d8492ce6a295f1a80e2/raiseEvent/{eventName}?taskHub=DurableFunctionsHub&connection=Storage&code=XXX",
+    "terminatePostUri":"https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d8492ce6a295f1a80e2/terminate?reason={text}&taskHub=DurableFunctionsHub&connection=Storage&code=XXX",
+    "rewindPostUri":"https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d8492ce6a295f1a80e2/rewind?reason={text}&taskHub=DurableFunctionsHub&connection=Storage&code=XXX"
 }
 ```
 > [!NOTE]
@@ -114,7 +112,7 @@ GET /admin/extensions/DurableTaskExtension/instances/{instanceId}?taskHub={taskH
 Формат для Функций 2.0 имеет те же параметры, но имеет другой префикс URL-адреса:
 
 ```http
-GET /runtime/webhooks/DurableTaskExtension/instances/{instanceId}?taskHub={taskHub}&connection={connection}&code={systemKey}&showHistory={showHistory}&showHistoryOutput={showHistoryOutput}
+GET /runtime/webhooks/durabletask/instances/{instanceId}?taskHub={taskHub}&connection={connection}&code={systemKey}&showHistory={showHistory}&showHistoryOutput={showHistoryOutput}
 ```
 
 #### <a name="response"></a>Ответ
@@ -125,6 +123,7 @@ GET /runtime/webhooks/DurableTaskExtension/instances/{instanceId}?taskHub={taskH
 * **HTTP 202 (Accepted)** (HTTP 202 (принято)). Указанный экземпляр выполняется.
 * **HTTP 400 (Bad Request)** (HTTP 400 (неверный запрос)). На определенном экземпляре произошел сбой, или его работа была прервана.
 * **HTTP 404 (Not Found)** (HTTP 404 (не найдено)). Указанный экземпляр не существует или не был запущен.
+* **HTTP 500 (внутренняя ошибка сервера)**: сбой указанного экземпляра с необработанным исключением.
 
 Полезные данные ответа для случаев **HTTP 200** и **HTTP 202** являются объектами JSON со следующими полями:
 
@@ -210,7 +209,7 @@ GET /admin/extensions/DurableTaskExtension/instances/?taskHub={taskHub}&connecti
 Формат для Функций 2.0 имеет все те же параметры, но другой префикс URL-адреса: 
 
 ```http
-GET /runtime/webhooks/DurableTaskExtension/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}
+GET /runtime/webhooks/durabletask/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}
 ```
 
 #### <a name="response"></a>Ответ
@@ -267,7 +266,7 @@ GET /runtime/webhooks/DurableTaskExtension/instances/?taskHub={taskHub}&connecti
 ```
 
 > [!NOTE]
-> Эта операция может быть весьма затратной с точки зрения операций ввода-вывода службы хранилища Azure, если в таблице экземпляров много строк. Дополнительные сведения о таблице экземпляров см. в документации по [производительности и масштабируемости в устойчивых функциях (Функциях Azure)](https://docs.microsoft.com/en-us/azure/azure-functions/durable-functions-perf-and-scale#instances-table).
+> Эта операция может быть весьма затратной с точки зрения операций ввода-вывода службы хранилища Azure, если в таблице экземпляров много строк. Дополнительные сведения о таблице экземпляров см. в документации по [производительности и масштабируемости в устойчивых функциях (Функциях Azure)](https://docs.microsoft.com/azure/azure-functions/durable-functions-perf-and-scale#instances-table).
 > 
 
 ### <a name="raise-event"></a>Вызов события
@@ -285,7 +284,7 @@ POST /admin/extensions/DurableTaskExtension/instances/{instanceId}/raiseEvent/{e
 Формат для Функций 2.0 имеет те же параметры, но имеет другой префикс URL-адреса:
 
 ```http
-POST /runtime/webhooks/DurableTaskExtension/instances/{instanceId}/raiseEvent/{eventName}?taskHub=DurableFunctionsHub&connection={connection}&code={systemKey}
+POST /runtime/webhooks/durabletask/instances/{instanceId}/raiseEvent/{eventName}?taskHub=DurableFunctionsHub&connection={connection}&code={systemKey}
 ```
 
 Параметры запроса для этого API включают набор по умолчанию, упомянутый ранее, а также следующие уникальные параметры:
@@ -325,13 +324,13 @@ Content-Length: 6
 Формат запроса для Функций 1.0 имеет такой вид:
 
 ```http
-DELETE /admin/extensions/DurableTaskExtension/instances/{instanceId}/terminate?reason={reason}&taskHub={taskHub}&connection={connection}&code={systemKey}
+POST /admin/extensions/DurableTaskExtension/instances/{instanceId}/terminate?reason={reason}&taskHub={taskHub}&connection={connection}&code={systemKey}
 ```
 
 Формат для Функций 2.0 имеет те же параметры, но имеет другой префикс URL-адреса:
 
 ```http
-DELETE /runtime/webhooks/DurableTaskExtension/instances/{instanceId}/terminate?reason={reason}&taskHub={taskHub}&connection={connection}&code={systemKey}
+POST /runtime/webhooks/durabletask/instances/{instanceId}/terminate?reason={reason}&taskHub={taskHub}&connection={connection}&code={systemKey}
 ```
 
 Параметры запроса для этого API включают набор по умолчанию, упомянутый ранее, а также следующий уникальный параметр.
@@ -351,7 +350,47 @@ DELETE /runtime/webhooks/DurableTaskExtension/instances/{instanceId}/terminate?r
 Ниже приведен пример запроса, который завершает выполнение экземпляра и указывает причину **ошибки**:
 
 ```
-DELETE /admin/extensions/DurableTaskExtension/instances/bcf6fb5067b046fbb021b52ba7deae5a/terminate?reason=buggy&taskHub=DurableFunctionsHub&connection=Storage&code=XXX
+POST /admin/extensions/DurableTaskExtension/instances/bcf6fb5067b046fbb021b52ba7deae5a/terminate?reason=buggy&taskHub=DurableFunctionsHub&connection=Storage&code=XXX
+```
+
+Ответы этого API не содержат какого-либо содержимого.
+
+## <a name="rewind-instance-preview"></a>Экземпляр перемотки (предварительная версия)
+
+Восстанавливает сбойный экземпляр оркестрации в рабочем состоянии путем воспроизведения последних неудачных операций.
+
+#### <a name="request"></a>Запрос
+
+Формат запроса для Функций 1.0 имеет такой вид:
+
+```http
+POST /admin/extensions/DurableTaskExtension/instances/{instanceId}/rewind?reason={reason}&taskHub={taskHub}&connection={connection}&code={systemKey}
+```
+
+Формат для Функций 2.0 имеет те же параметры, но имеет другой префикс URL-адреса:
+
+```http
+POST /runtime/webhooks/durabletask/instances/{instanceId}/rewind?reason={reason}&taskHub={taskHub}&connection={connection}&code={systemKey}
+```
+
+Параметры запроса для этого API включают набор по умолчанию, упомянутый ранее, а также следующий уникальный параметр.
+
+| Поле       | Тип параметра  | Тип данных | ОПИСАНИЕ |
+|-------------|-----------------|-----------|-------------|
+| reason      | Строка запроса    | строка    | Необязательный элемент. Причина перемотки экземпляра оркестрации. |
+
+#### <a name="response"></a>Ответ
+
+Может быть возвращено несколько кодов состояния.
+
+* **HTTP 202 (принято)**. Запрос на перемотку принят для обработки.
+* **HTTP 404 (Not Found)** (HTTP 404 (не найдено)). Указанный экземпляр не найден.
+* **HTTP 410 (потеряно)**. Определенный экземпляр выполнен успешно или был прерван.
+
+Ниже приведен пример запроса, который перематывает сбойный экземпляр и указывает причину **исправления**:
+
+```
+POST /admin/extensions/DurableTaskExtension/instances/bcf6fb5067b046fbb021b52ba7deae5a/rewind?reason=fixed&taskHub=DurableFunctionsHub&connection=Storage&code=XXX
 ```
 
 Ответы этого API не содержат какого-либо содержимого.

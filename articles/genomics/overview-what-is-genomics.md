@@ -1,22 +1,20 @@
 ---
 title: Что такое Microsoft Genomics? | Документация Майкрософт
 titleSuffix: Azure
-description: Сведения о том, как Microsoft Genomics помогает выполнять секвенирование генома, предлагая облачную реализацию BWA и GATK для дополнительного анализа.
-services: microsoft-genomics
+description: Сведения о том, как Microsoft Genomics помогает выполнять секвенирование генома с помощью облачной реализации таких средств, как Burrows-Wheeler Aligner (BWA) и Genome Analysis Toolkit (GATK) для дополнительного анализа. Он имеет сертификацию ISO и соответствует нормативам HIPAA.
+services: genomics
 author: grhuynh
-manager: jhubbard
-editor: jasonwhowell
+manager: cgronlun
 ms.author: grhuynh
-ms.service: microsoft-genomics
-ms.workload: genomics
+ms.service: genomics
 ms.topic: article
 ms.date: 12/07/2017
-ms.openlocfilehash: 8743905d6e415049a563bcd6b4736d6569f59b7f
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 4b4510a02c4212724f8a592c7318aecab3d06275
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36333263"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45733267"
 ---
 # <a name="what-is-microsoft-genomics"></a>Что такое Microsoft Genomics?
 Microsoft Genomics предлагает облачную реализацию таких средств, как Burrows-Wheeler Aligner (BWA) и Genome Analysis Toolkit (GATK) для дополнительного анализа. Служба имеет сертификаты ISO, соответствует нормативам HIPAA и обеспечивает прогнозирование затрат в соответствии с требованиями по секвенированию генома. В кратких руководствах, справочниках и документации представлены сведения об использовании службы Microsoft Genomics и интеграции с API.

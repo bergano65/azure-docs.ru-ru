@@ -1,27 +1,30 @@
 ---
-title: Метод evaluate в API службы поиска и распознавания данных | Документация Майкрософт
-description: Узнайте, как использовать метод evaluate в API службы поиска и распознавания данных (KES) в Cognitive Services.
+title: Метод evaluate — API службы поиска и распознавания данных
+titlesuffix: Azure Cognitive Services
+description: Узнайте, как использовать метод evaluate в API службы поиска и распознавания данных (KES).
 services: cognitive-services
 author: bojunehsu
-manager: stesp
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: knowledge-exploration
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/26/2016
 ms.author: paulhsu
-ms.openlocfilehash: fc3d73b326b565cfe40d1b82cc419357b28a801a
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 45b25ec5cfc6e198b9b125675f4942463cef247a
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380200"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46128270"
 ---
 # <a name="evaluate-method"></a>Метод evaluate
+
 Метод *evaluate* вычисляет и возвращает результат структурированного выражения запроса на основе данных индекса.
 
 Как правило, выражение будет получено из ответа на метод interpret.  Но можно также составить выражения запросов самостоятельно (ознакомьтесь со [структурированным выражением запроса](Expressions.md)).  
 
 ## <a name="request"></a>Запрос 
+
 `http://<host>/evaluate?expr=<expr>&attributes=<attrs>[&<options>]`   
 
 ИМЯ|Значение|ОПИСАНИЕ

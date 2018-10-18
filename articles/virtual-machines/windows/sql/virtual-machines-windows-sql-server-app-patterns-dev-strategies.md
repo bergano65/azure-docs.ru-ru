@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/31/2017
 ms.author: ninarn
-ms.openlocfilehash: 6bfb3092d6b4776499f957183613c951174b1a50
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: 18de5b3d71922effa72414a6a52b126a34076cf3
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36754325"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44722135"
 ---
 # <a name="application-patterns-and-development-strategies-for-sql-server-in-azure-virtual-machines"></a>Шаблоны приложений и стратегии разработки для SQL Server на виртуальных машинах Azure
 [!INCLUDE [learn-about-deployment-models](../../../../includes/learn-about-deployment-models-both-include.md)]
@@ -58,7 +58,7 @@ ms.locfileid: "36754325"
 * Требуется полная совместимость с локальным SQL Server, так как необходимо переместить существующие приложения в Azure "как есть".
 * Вам необходимо использовать возможности среды Azure, но База данных SQL Azure не поддерживает все функции, которые требуются приложению. Это могут быть указанные ниже возможности.
   
-  * **Размер базы данных**: на момент обновления данной статьи, База данных SQL поддерживает базы данных размером до 1 ТБ. Если приложение использует более 1 ТБ данных, и вы не хотите реализовывать собственные решения для сегментирования, рекомендуется использовать SQL Server на виртуальной машине Azure. Последние сведения см. в разделах [Масштабирование баз данных SQL Azure](https://msdn.microsoft.com/library/azure/dn495641.aspx), [Модель приобретения на основе DTU для базы данных SQL Azure](../../../sql-database/sql-database-service-tiers-dtu.md) и [Модель приобретения на основе виртуальных ядер для базы данных SQL Azure (предварительная версия)](../../../sql-database/sql-database-service-tiers-vcore.md).
+  * **Размер базы данных**: на момент обновления данной статьи, База данных SQL поддерживает базы данных размером до 1 ТБ. Если приложение использует более 1 ТБ данных, и вы не хотите реализовывать собственные решения для сегментирования, рекомендуется использовать SQL Server на виртуальной машине Azure. Последние сведения см. в разделах [Масштабирование баз данных SQL Azure](https://msdn.microsoft.com/library/azure/dn495641.aspx), [Модель приобретения на основе DTU ](../../../sql-database/sql-database-service-tiers-dtu.md) и [Модель приобретения на основе виртуальных ядер](../../../sql-database/sql-database-service-tiers-vcore.md) (предварительная версия).
   * **Соответствие требованиям HIPAA**. Клиенты из сферы здравоохранения и независимые поставщики программного обеспечения могут предпочесть [SQL Server на виртуальной машине Azure](virtual-machines-windows-sql-server-iaas-overview.md) вместо [базы данных SQL Azure](../../../sql-database/sql-database-technical-overview.md), так как вариант с SQL Server на виртуальной машине Azure оговорен в соглашении с бизнес-партнерами HIPAA. Сведения о соответствии требованиям см. в [центре управления безопасностью Microsoft Azure](https://azure.microsoft.com/support/trust-center/compliance/) — раздел "Compliance" (Соответствие требованиям).
   * **Функции на уровне экземпляра**: в настоящее время База данных SQL не поддерживает функции, находящиеся вне базы данных (например, связанные серверы, задания агентов, файловые потоки, компонент Service Broker и т. д.). Дополнительные сведения см. в статье [Общие ограничения и рекомендации для базы данных SQL Azure](https://msdn.microsoft.com/library/azure/ff394102.aspx).
 

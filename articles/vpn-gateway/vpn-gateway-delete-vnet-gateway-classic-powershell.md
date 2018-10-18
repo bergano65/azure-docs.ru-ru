@@ -15,24 +15,24 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/11/2017
 ms.author: cherylmc
-ms.openlocfilehash: 0c5d045cb949f5393bb2d9da54715b2b84229c36
-ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
+ms.openlocfilehash: 2c92db96820b9796ba2c952affcb3b3eef5b985e
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39036294"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49319852"
 ---
 # <a name="delete-a-virtual-network-gateway-using-powershell-classic"></a>Удаление шлюза виртуальной сети с помощью PowerShell (классическая модель)
+
 > [!div class="op_single_selector"]
 > * [Resource Manager — портал Azure](vpn-gateway-delete-vnet-gateway-portal.md)
 > * [Resource Manager — PowerShell](vpn-gateway-delete-vnet-gateway-powershell.md)
 > * [Классическая модель: PowerShell](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
 >
->
 
 В этой статье описано, как удалить VPN-шлюз в классической модели развертывания с помощью PowerShell. После удаления шлюза виртуальной сети измените файл конфигурации сети, чтобы удалить элементы, которые больше не используются.
 
-##<a name="connect"></a>Шаг 1. Подключение к Azure
+## <a name="connect"></a>Шаг 1. Подключение к Azure
 
 ### <a name="1-install-the-latest-powershell-cmdlets"></a>1. Установите последнюю версию командлетов Azure PowerShell.
 
@@ -101,7 +101,7 @@ Status : Successful
  </Gateway>
 ```
 
-###<a name="lns"></a>Сайты локальной сети
+### <a name="lns"></a>Сайты локальной сети
 
 Удалите все локальные сайты, которые больше не используются. В зависимости от созданной конфигурации элемент **LocalNetworkSite** может отсутствовать.
 

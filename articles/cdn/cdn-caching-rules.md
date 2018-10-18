@@ -3,8 +3,8 @@ title: Управление режимом кэширования Azure CDN с �
 description: Вы можете использовать правила кэширования сети доставки содержимого (CDN) или изменять истечение срока действия кэша по умолчанию как глобально, так и с условиями (например, URL-путь и расширения файла).
 services: cdn
 documentationcenter: ''
-author: dksimpson
-manager: cfowler
+author: mdgattuso
+manager: danielgi
 editor: ''
 ms.service: cdn
 ms.workload: tbd
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 06/11/2018
-ms.author: v-deasim
-ms.openlocfilehash: 4095ed763de378a673908d033d87b2aa6d72f13c
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.author: magattus
+ms.openlocfilehash: 10275b2938ce66a2816b1d4a5589a5e88ee22e80
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35260012"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49093924"
 ---
 # <a name="control-azure-cdn-caching-behavior-with-caching-rules"></a>Управление режимом кэширования Azure CDN с помощью правил кэширования
 

@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/03/2018
+ms.date: 09/28/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 29517f057599c7bf108d1c4d525b6c67c1b6b46a
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 8b45acebf95d5bf24ff2045f5739c8584f374842
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46305173"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49320464"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quick-start"></a>Краткое руководство по сквозной проверке подлинности Azure Active Directory
 
@@ -48,7 +48,7 @@ ms.locfileid: "46305173"
 2. Установите [последнюю версию Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594) на сервер, указанный на предыдущем шаге. Если вы уже используете Azure AD Connect, убедитесь, что установлена версия 1.1.750.0 или выше.
 
     >[!NOTE]
-    >В Azure AD Connect версий 1.1.557.0, 1.1.558.0, 1.1.561.0 и 1.1.614.0 есть проблема, связанная с синхронизацией хэшей паролей. Если вы _не_ собираетесь использовать синхронизацию хэшей паролей в сочетании со сквозной аутентификацией, прочитайте [заметки о выпуске Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-version-history#116470).
+    >В Azure AD Connect версий 1.1.557.0, 1.1.558.0, 1.1.561.0 и 1.1.614.0 есть проблема, связанная с синхронизацией хэшей паролей. Если вы _не_ собираетесь использовать синхронизацию хэшей паролей в сочетании со сквозной аутентификацией, прочитайте [заметки о выпуске Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-version-history#116470).
 
 3. Укажите один или несколько дополнительных серверов (под управлением Windows Server 2012 R2 или более поздней версии), на которых необходимо запустить изолированные агенты аутентификации. Эти дополнительные серверы нужны для обеспечения высокого уровня доступности запросов на вход. Добавьте эти серверы в лес Active Directory, в котором размещены пользователи, пароли которых требуется проверить.
 
@@ -57,13 +57,13 @@ ms.locfileid: "46305173"
 
 4. Если между серверами и Azure AD настроен брандмауэр, необходимо настроить указанные ниже элементы.
    - Убедитесь, что агенты аутентификации могут передавать *исходящие* запросы в Azure AD через приведенные ниже порты.
-   
+
     | Номер порта | Как он используется |
     | --- | --- |
     | **80** | Скачивание списков отзыва сертификатов при проверке SSL-сертификата. |
     | **443** | Обработка всего исходящего трафика для службы. |
     | **8080** (необязательно) | Агенты аутентификации передают данные о своем состоянии каждые десять минут через порт 8080, если порт 443 недоступен. Это данные о состоянии отображаются на портале Azure AD. Порт 8080 _не_ используется для входа пользователей в систему. |
-   
+
     Если брандмауэр применяет правила в соответствии с отправляющими трафик пользователями, откройте эти порты для трафика, поступающего от служб Windows, которые работают как сетевая служба.
    - Если брандмауэр или прокси-сервер поддерживают внесение DNS в список разрешений, то добавьте подключения к **\*msappproxy.net** и **\*servicebus.windows.net** в список разрешений. Если нет, разрешите доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
    - Агентам аутентификации требуется доступ к адресам **login.windows.net** и **login.microsoftonline.com** для первоначальной регистрации. Откройте эти URL-адреса в брандмауэре.
@@ -132,13 +132,13 @@ ms.locfileid: "46305173"
 
 1. Выполните следующую команду, чтобы установить агент аутентификации: `AADConnectAuthAgentSetup.exe REGISTERCONNECTOR="false" /q`.
 2. Агент аутентификации можно зарегистрировать в службе с помощью Windows PowerShell. Создайте объект учетных данных PowerShell `$cred`, содержащий имя пользователя и пароль глобального администратора для вашего клиента. Выполните следующую команду, заменив *\<username\>* и *\<password\>* на нужные имя пользователя и пароль:
-   
+
         $User = "<username>"
         $PlainPassword = '<password>'
         $SecurePassword = $PlainPassword | ConvertTo-SecureString -AsPlainText -Force
         $cred = New-Object –TypeName System.Management.Automation.PSCredential –ArgumentList $User, $SecurePassword
 3. Перейдите в каталог **C:\Program Files\Microsoft Azure AD Connect Authentication Agent** и запустите следующий сценарий с использованием созданного объекта `$cred`.
-   
+
         RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft Azure AD Connect Authentication Agent\Modules\" -moduleName "AppProxyPSModule" -Authenticationmode Credentials -Usercredentials $cred -Feature PassthroughAuthentication
 
 ## <a name="next-steps"></a>Дополнительная информация
@@ -151,4 +151,3 @@ ms.locfileid: "46305173"
 - [Руководство по безопасности](how-to-connect-pta-security-deep-dive.md). Получите дополнительные технические сведения о сквозной аутентификации.
 - [Простой единый вход Azure Active Directory](how-to-connect-sso.md). Узнайте подробнее об этой дополнительной функции.
 - [UserVoice](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect). Оставить запрос на новые функции можно на форуме по Azure Active Directory.
-

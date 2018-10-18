@@ -1,6 +1,6 @@
 ---
-title: Рекомендации по настройке производительности Hive в Azure Data Lake Store | Документация Майкрософт
-description: Рекомендации по настройке производительности Hive в Azure Data Lake Store
+title: Рекомендации по настройке производительности Hive в Azure Data Lake Storage 1-го поколения | Документы Майкрософт
+description: Рекомендации по настройке производительности Hive в Azure Data Lake Storage 1-го поколения
 services: data-lake-store
 documentationcenter: ''
 author: stewu
@@ -12,28 +12,28 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/19/2016
 ms.author: stewu
-ms.openlocfilehash: c46eb1b2da62d70337e60066ed0706c3a4fdedcf
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: e9d0ad0398dfc238d48060247cdb6f29b0f34a60
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34198975"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46123340"
 ---
-# <a name="performance-tuning-guidance-for-hive-on-hdinsight-and-azure-data-lake-store"></a>Рекомендации по настройке производительности Hive в HDInsight и Azure Data Lake Store
+# <a name="performance-tuning-guidance-for-hive-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для Hive в HDInsight и Azure Data Lake Storage 1-го поколения
 
-По умолчанию устанавливаются параметры, которые должны обеспечить оптимальную производительность для самых разных сценариев использования.  Но для запросов, предполагающих интенсивное выполнение операций ввода-вывода, производительность Hive в Azure Data Lake Store можно повысить, изменив некоторые настройки.  
+По умолчанию устанавливаются параметры, которые должны обеспечить оптимальную производительность для самых разных сценариев использования.  Но для запросов, предполагающих интенсивное выполнение операций ввода-вывода, производительность Hive в Azure Data Lake Storage 1-го поколения можно повысить, изменив некоторые настройки.  
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись хранения озера данных Azure**. Инструкции по созданию учетной записи см. в статье [Начало работы с Azure Data Lake Store с помощью портала Azure](data-lake-store-get-started-portal.md).
-* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Store. См. статью [Создание кластера HDInsight с Data Lake Store](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
+* **Учетная запись Data Lake Storage 1-го поколения**. Инструкции по созданию учетной записи см. в статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
+* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. См. статью [Создание кластера HDInsight с Data Lake Storage 1-го поколения](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
 * **Запустите Hive в HDInsight**.  Дополнительные сведения о выполнении заданий Hive в HDInsight см. в разделе [Использование Hive в HDInsight]https://docs.microsoft.com/azure/hdinsight/hdinsight-use-hive)
-* **Рекомендации по настройке производительности в Azure Data Lake Store**.  См. [рекомендации по настройке производительности для Azure Data Lake Store](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance).
+* **Рекомендации по настройке производительности для Data Lake Storage 1-го поколения**.  Общие вопросы производительности описаны в [рекомендациях по настройке производительности Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance).
 
 ## <a name="parameters"></a>Параметры
 
-Ниже приведены наиболее важные параметры, которые помогут повысить производительность Azure Data Lake Store:
+Ниже приведены наиболее важные параметры, которые помогут повысить производительность Azure Data Lake Storage 1-го поколения:
 
 * **hive.tez.container.size** — объем памяти, используемой для каждой задачи;
 
@@ -63,7 +63,7 @@ ms.locfileid: "34198975"
 
         Total YARN memory = nodes * YARN memory per node
         # of YARN containers = Total YARN memory / Tez container size
-При использовании Azure Data Lake Store повышение производительности достигается за счет максимально возможного уровня параллелизма.  Tez автоматически вычисляет число задач, которые нужно создать, поэтому нет необходимости настраивать этот параметр.   
+При использовании Azure Data Lake Storage 1-го поколения повышение производительности достигается за счет максимально возможного уровня параллелизма.  Tez автоматически вычисляет число задач, которые нужно создать, поэтому нет необходимости настраивать этот параметр.   
 
 ## <a name="example-calculation"></a>Пример вычисления
 
@@ -75,9 +75,9 @@ ms.locfileid: "34198975"
 
 ## <a name="limitations"></a>Ограничения
 
-**Регулирование Azure Data Lake Store** 
+**Регулирование Data Lake Storage 1-го поколения** 
 
-Если вы достигнете пределов пропускной способности, предоставляемой Azure Data Lake Store, начнут происходить сбои задач. Это можно заметить, отслеживая ошибки регулирования в журналах задач.  Можно уменьшить параллелизм, увеличив размер контейнера Tez.  Если для обработки задания требуется больший параллелизм, свяжитесь с нами.
+Если вы достигнете пределов пропускной способности, предоставленной Data Lake Storage 1-го поколения, вы увидите сбои задач. Это можно заметить, отслеживая ошибки регулирования в журналах задач.  Можно уменьшить параллелизм, увеличив размер контейнера Tez.  Если для обработки задания требуется больший параллелизм, свяжитесь с нами.
 
 Чтобы проверить, применяется ли для вас регулирование, включите ведение журнала отладки на стороне клиента. Вот как это сделать.
 

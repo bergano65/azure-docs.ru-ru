@@ -13,20 +13,20 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/06/2017
+ms.date: 09/12/2018
 ms.author: cynthn
-ms.openlocfilehash: 168ba57399b2649af29820f7321dd0151618346e
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: 1daf04e3f878d0748bfa0904259c7b7187481843
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37436486"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45580496"
 ---
 # <a name="move-a-windows-vm-to-another-azure-subscription-or-resource-group"></a>Перемещение виртуальной машины Windows в другую подписку или группу ресурсов Azure
 В этой статье описано перемещение виртуальной машины Windows между группами ресурсов или подписками. Перемещение между подписками может понадобиться, если вы создали виртуальную машину в личной подписке и вам нужно переместить ее в корпоративную подписку, чтобы продолжить работу.
 
 > [!IMPORTANT]
->В настоящее время переместить управляемые диски невозможно. 
+>В настоящее время переместить управляемые диски Azure невозможно. 
 >
 >Во время перемещения создаются новые идентификаторы ресурсов. После перемещения виртуальной машины вам нужно будет обновить средства и сценарии, чтобы использовать новые идентификаторы ресурсов. 
 > 
@@ -36,16 +36,15 @@ ms.locfileid: "37436486"
 
 ## <a name="use-powershell-to-move-a-vm"></a>Использование PowerShell для перемещения виртуальной машины
 
-Чтобы переместить виртуальную машину в другую группу ресурсов, необходимо убедиться, что также перемещаются все зависимые ресурсы. Чтобы воспользоваться командлетом Move-AzureRMResource, следует указать ResourceId для каждого ресурса. ResourceId можно получить с помощью командлета [Get-AzureRMResource](/powershell/module/azurerm.resources/get-azurermresource).
+Чтобы переместить виртуальную машину в другую группу ресурсов, необходимо убедиться, что также перемещаются все зависимые ресурсы. Чтобы получить список с идентификатором каждого ресурса, используйте командлет [Get-AzureRMResource](/powershell/module/azurerm.resources/get-azurermresource).
 
 ```azurepowershell-interactive
  Get-AzureRMResource -ResourceGroupName <sourceResourceGroupName> | Format-table -Property ResourceId 
 ```
 
-Чтобы переместить виртуальную машину, необходимо перенести несколько ресурсов. С помощью выходных данных Get-AzureRMResource можно создать список значений ResourceId с разделителями-запятыми и передать его в командлет [Move-AzureRMResource](/powershell/module/azurerm.resources/move-azurermresource), чтобы переместить эти значения в нужное расположение. 
+Вы можете использовать выходные данные предыдущей команды как список идентификаторов ресурсов с разделителями-запятыми в командлете [Move-AzureRMResource](/powershell/module/azurerm.resources/move-azurermresource), чтобы переместить каждый ресурс в нужное расположение. 
 
 ```azurepowershell-interactive
-
 Move-AzureRmResource -DestinationResourceGroupName "<myDestinationResourceGroup>" `
     -ResourceId <myResourceId,myResourceId,myResourceId>
 ```
@@ -59,7 +58,7 @@ Move-AzureRmResource -DestinationSubscriptionId "<myDestinationSubscriptionID>" 
 ```
 
 
-Вам будет предложено подтвердить перемещение указанных ресурсов. 
+При появлении запроса на подтверждение перемещения указанных ресурсов введите **Да** для подтверждения.
 
 ## <a name="next-steps"></a>Дополнительная информация
 Вы можете перемещать разные типы ресурсов между группами ресурсов и подписками. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../../resource-group-move-resources.md).    

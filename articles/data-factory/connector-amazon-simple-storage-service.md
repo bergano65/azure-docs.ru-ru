@@ -8,14 +8,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 05/25/2018
+ms.date: 09/13/2018
 ms.author: jingwang
-ms.openlocfilehash: 3635e8bf1d9ba4061da5b8f416a3b755f7064000
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: bdbf0b74b6e851e0dd84ff5d9aafb84d878d8ea2
+ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37045642"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45542080"
 ---
 # <a name="copy-data-from-amazon-simple-storage-service-using-azure-data-factory"></a>Копирование данных из Amazon Simple Storage Service с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -35,7 +35,10 @@ ms.locfileid: "37045642"
 Чтобы скопировать данные из Amazon S3, убедитесь, что вы предоставили следующие разрешения:
 
 - `s3:GetObject` и `s3:GetObjectVersion` для операций с объектами Amazon S3.
-- `s3:ListBucket` или `s3:GetBucketLocation` для операций в контейнере Amazon S3. Если вы используете мастер копирования фабрики данных, также требуется разрешение `s3:ListAllMyBuckets`.
+- `s3:ListBucket` или `s3:GetBucketLocation` для операций в контейнере Amazon S3. 
+
+>[!NOTE]
+>При использовании графического пользовательского интерфейса фабрики данных для разработки разрешение `s3:ListAllMyBuckets` также обязательно для таких операций, как проверка соединения и обзор или навигация путей к файлам. Если вы не хотите предоставлять это разрешение, пропустите проверку соединения на странице создания связанной службы и укажите путь непосредственно в параметрах набора данных.
 
 Полный список разрешений Amazon S3 см. в статье, посвященной [назначению разрешений в политике](https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html).
 

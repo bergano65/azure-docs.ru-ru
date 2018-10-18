@@ -1,25 +1,25 @@
 ---
-title: Изменение размера и обрезка эскизов Bing | Документация Майкрософт
-description: В этой статье описывается, как изменять размер и обрезать эскизы, которые включены в ответ Bing.
+title: Изменение размера и обрезка эскизов Bing — API Bing для поиска изображений
+description: Узнайте, как изменить размер и обрезать эскизы в ответе от API Bing для поиска изображений.
 services: cognitive-services
 author: swhite-msft
-manager: ehansen
+manager: cgronlun
 ms.assetid: F4FFAE91-A003-4F7C-8E60-83A142485E28
 ms.service: cognitive-services
 ms.component: bing-image-search
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: 98c4caa50ca5e861f4276e26983ef501d17bd349
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: de82cc5554af91294dda3826dfb394cc94dbf3d0
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "41936749"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46296233"
 ---
 # <a name="resizing-and-cropping-thumbnail-images"></a>Изменение размера и обрезка эскизов изображений
 
-При обработке поискового запроса Bing создаст информацию эскизов для всех образов в [ответе](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/concepts/bing-image-search-get-images#bing-image-search-response-format). Эти сведения можно использовать для отображения всех или подмножества возвращенных эскизов. Если вы отобразите подмножество, предоставьте возможность просмотра оставшихся изображений. 
+При обработке поискового запроса Bing создаст информацию эскизов для всех образов в [ответе](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/concepts/bing-image-search-get-images#bing-image-search-response-format). Эти сведения можно использовать для отображения всех или подмножества возвращенных эскизов. Если вы отобразите подмножество, предоставьте возможность просмотра оставшихся изображений.
 
 
 <!-- Removing image until we can replace it with a sanatized version.
@@ -38,8 +38,8 @@ ms.locfileid: "41936749"
 
 ## <a name="resizing-and-cropping-thumbnails"></a>Изменение размера и обрезка эскизов
 
-Можно также изменить размер и развернуть эскизы, например, когда пользователь наводит на них курсор. 
+Можно также изменить размер и развернуть эскизы, например, когда пользователь наводит на них курсор.
 > [!NOTE]
-> Обязательно описывайте изображение, если оно будет раскрываться. Например, извлекая узел из [hostPageDisplayUrl](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#image-hostpagedisplayurl) и отображая его под изображением. 
+> Обязательно описывайте изображение, если оно будет раскрываться. Например, извлекая узел из [hostPageDisplayUrl](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#image-hostpagedisplayurl) и отображая его под изображением.
 
 [!INCLUDE [cognitive-services-bing-resize-crop-thumbnails](../../../includes/cognitive-services-bing-resize-crop-thumbnails.md)]

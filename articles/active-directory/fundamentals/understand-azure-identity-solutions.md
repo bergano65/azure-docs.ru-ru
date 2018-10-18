@@ -1,27 +1,25 @@
 ---
-title: Общие сведения об идентификации Azure | Документация Майкрософт
-description: Основные сведения о решениях идентификации Microsoft Azure и соответствующие понятия, а также рекомендации по выбору оптимального решения по управлению удостоверениями организации.
-keywords: ''
+title: Что представляет собой идентификация в Microsoft Azure? | Документация Майкрософт
+description: Сведения о решениях идентификации Microsoft Azure и соответствующие понятия, а также рекомендации по выбору оптимального решения по управлению удостоверениями организации.
+services: active-directory
 author: eross-msft
 manager: mtillman
-ms.reviewer: jsnow
-ms.author: lizross
-ms.date: 7/17/2017
-ms.topic: overview
-ms.prod: ''
-ms.service: azure-directory
+ms.service: active-directory
 ms.component: fundamentals
-ms.technology: ''
-ms.assetid: ''
-ms.custom: it-pro
-ms.openlocfilehash: ec84cdb4e226eea4d16d28d63acd7be59241b973
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.workload: identity
+ms.topic: conceptual
+ms.date: 7/17/2017
+ms.author: lizross
+ms.reviewer: jsnow
+custom: it-pro
+ms.openlocfilehash: e22f5ced30e30d6f53a1d29c8be2f318161d4fc0
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44346922"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46294855"
 ---
-# <a name="understand-azure-identity-solutions"></a>Общие сведения о решениях идентификации Azure
+# <a name="what-is-microsoft-azure-identity"></a>Что представляет собой идентификация в Microsoft Azure?
 Microsoft Azure Active Directory (Azure AD) — это облачное решение по управлению идентификацией и доступом, предоставляющее службы каталогов, функции контроля удостоверений и управления доступом к приложениям. Azure AD позволяет быстро [выполнять единый вход](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-apps-manage-sso) в 1000 предварительно интегрированных пользовательских и коммерческих приложений в [коллекции приложений Azure AD](https://azure.microsoft.com/marketplace/active-directory/all/). Вы наверняка уже используете многие из этих приложений, например Office 365, Salesforce.com, Box, ServiceNow и Workday.
 
 Единый каталог Azure AD автоматически ассоциируется с подпиской Azure при ее создании. Как служба идентификации в Azure, Azure AD предоставляет все функции управления доступом и удостоверениями облачных ресурсов, таких как пользователи, приложения и группы, для отдельного клиента (организации), как показано на следующей схеме:
@@ -108,7 +106,7 @@ Microsoft Azure предоставляет несколько вариантов
 ## <a name="where-can-i-learn-more"></a>Где можно получить дополнительную информацию?
 В сети есть множество полезных ресурсов, которые помогут вам больше узнать об Azure AD. Ниже приведен список отличных статей для начала работы.
 
-* [Обеспечение гибридного управления для каталога с помощью Azure AD Connect](../connect/active-directory-aadconnect.md)
+* [Обеспечение гибридного управления для каталога с помощью Azure AD Connect](../hybrid/whatis-hybrid-identity.md)
 * [Повышенная безопасность для постоянного подключения к Интернету](../authentication/multi-factor-authentication.md)
 * [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md)
 * [Управление паролями из любой точки мира](../user-help/active-directory-passwords-update-your-own-password.md)

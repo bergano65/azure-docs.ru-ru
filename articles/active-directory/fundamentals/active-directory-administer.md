@@ -1,26 +1,25 @@
 ---
-title: 'Обзор: как использовать каталог клиента Azure AD | Документы Майкрософт'
-description: В этой статье объясняется, что такое клиент Azure AD и как управлять Azure с помощью Azure Active Directory
+title: Управление клиентом Azure Active Directory | Документы Майкрософт
+description: Узнайте, что такое клиент Azure AD и как управлять Azure с помощью Azure Active Directory.
 services: active-directory
-documentationcenter: ''
 author: eross-msft
 manager: mtillman
 ms.service: active-directory
-ms.workload: identity
 ms.component: fundamentals
-ms.topic: overview
-ms.date: 08/23/2017
+ms.workload: identity
+ms.topic: conceptual
+ms.date: 08/23/2018
 ms.author: lizross
 ms.reviewer: jeffsta
-ms.custom: it-pro;oldportal
-ms.openlocfilehash: b18ff1f59a46e98544159b488294e2d3f7bd9cd7
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+custom: it-pro
+ms.openlocfilehash: eb9cf7c21613ab91cc0b8e41a4454835d18f2c34
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37767534"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46297934"
 ---
-# <a name="manage-your-azure-ad-directory"></a>Управление каталогом Azure AD
+# <a name="manage-your-azure-active-directory-tenant"></a>Управление клиентом Azure Active Directory
 
 ## <a name="what-is-an-azure-ad-tenant"></a>Что такое клиент Azure AD?
 В Azure Active Directory (Azure AD) клиент — это выделенный экземпляр Azure AD, который ваша организация получает после регистрации в облачной службе Майкрософт, например Azure или Office 365. Каждый каталог Azure AD отделен от других каталогов Azure AD. Как и офисное здание представляет безопасный актив только для вашей организации, каталог Azure AD также может безопасно использоваться только вашей организацией. Архитектура Azure AD изолирует данные клиента и сведения об идентификации, чтобы пользователи и администраторы одного каталога Azure AD не могли случайно или злонамеренно получить доступ к данным в другом каталоге.
@@ -43,7 +42,7 @@ Azure AD предоставляет основные возможности уп
 
 Например, если вы зарегистрировались для подписки на Microsoft Intune, а затем синхронизируете локальный каталог Active Directory с каталогом Azure AD, вы можете зарегистрироваться в другой службе Майкрософт, например Office 365, и использовать те же преимущества интеграции, что и в Microsoft Intune.
 
-Дополнительные сведения об интеграции локального каталога с Azure AD см. в статье [Интеграция локальных каталогов с Azure Active Directory](../connect/active-directory-aadconnect.md).
+Дополнительные сведения об интеграции локального каталога с Azure AD см. в статье [Интеграция локальных каталогов с Azure Active Directory](../hybrid/whatis-hybrid-identity.md).
 
 ### <a name="associate-an-existing-azure-ad-directory-with-a-new-azure-subscription"></a>Привязка существующего каталога Azure AD к новой подписке Azure
 Новую подписку Azure можно связать с тем же каталогом, который выполняет проверку подлинности входа для существующей подписки Office 365 или Microsoft Intune. Дополнительные сведения об этом сценарии см. в статье [Передача прав владения подпиской Azure другой учетной записи](../../billing/billing-subscription-transfer.md).
@@ -114,7 +113,7 @@ Azure AD предоставляет основные возможности уп
 * С каталогом не должны быть связаны подписки на любые службы Microsoft Online Services, такие как Microsoft Azure, Office 365 или Azure AD Premium. Например, если каталог по умолчанию создан в Azure, его невозможно удалить, если ваша подписка Azure по-прежнему использует его для проверки подлинности. Точно так же нельзя удалить каталог, если у другого пользователя есть связанная с ним подписка. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * [Форум Azure AD](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=windowsazuread)
 * [Форум Многофакторной идентификации Azure](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=windowsazureactiveauthentication)
 * [Вопросы об Azure на сайте StackOverflow](https://stackoverflow.com/questions/tagged/azure-active-directory)

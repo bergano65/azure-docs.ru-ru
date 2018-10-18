@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: 0a1cd8eb-a8f7-4228-ab84-9449e0b2887b
 ms.service: site-recovery
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
-ms.date: 07/06/2018
+ms.date: 10/11/2018
 ms.author: nisoneji
-ms.openlocfilehash: d177dae71cd0787a343bbada7c900aebdbad86cc
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 3df7bd5ed44bdf514d48e451468329bd11fdf596
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37920667"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49094043"
 ---
 # <a name="plan-capacity-for-protecting-hyper-v-vms-with-site-recovery"></a>Планирование загрузки для защиты виртуальных машин Hyper-V с помощью Site Recovery
 
@@ -60,7 +60,7 @@ ms.locfileid: "37920667"
 
    a. В списке **Select your scenario** (Выберите сценарий) выберите пункт **Из Hyper-V в Azure** или **Из VMware или физического сервера в Azure**.
 
-   Б. В поле **Average daily data change rate (%)** (Средняя частота ежедневного изменения данных (%)) введите данные, полученные с помощью [инструмента планирования ресурсов Hyper-V](site-recovery-capacity-planning-for-hyper-v-replication.md) или [планировщика ресурсов Site Recovery](./site-recovery-deployment-planner.md).
+   b. В поле **Average daily data change rate (%)** (Средняя частота ежедневного изменения данных (%)) введите данные, полученные с помощью [инструмента планирования ресурсов Hyper-V](site-recovery-capacity-planning-for-hyper-v-replication.md) или [планировщика ресурсов Site Recovery](./site-recovery-deployment-planner.md).
 
    c. Параметр **Compression** (Сжатие) не используется при репликации виртуальных машин Hyper-V в Azure. Чтобы использовать сжатие, воспользуйтесь устройством сторонних производителей, например Riverbed.
 
@@ -98,7 +98,7 @@ ms.locfileid: "37920667"
 
    a. В поле **Processor Cores** (Ядра процессора) укажите общее число ядер исходного сервера.
 
-   Б. В поле **Memory allocation (in MBs)** (Выделение памяти (в МБ)) укажите объем ОЗУ исходного сервера.
+   b. В поле **Memory allocation (in MBs)** (Выделение памяти (в МБ)) укажите объем ОЗУ исходного сервера.
 
    c. В поле **Number of NICs** (Число сетевых карт) укажите количество сетевых карт исходного сервера.
 
@@ -106,7 +106,7 @@ ms.locfileid: "37920667"
 
    д. В поле **Number of disks attached** (Число подключенных дисков) укажите общее число дисков исходного сервера.
 
-   f. В поле **Disk capacity utilization (%)** (Уровень использования емкости диска (в %)) укажите среднее значение использования.
+   Е. В поле **Disk capacity utilization (%)** (Уровень использования емкости диска (в %)) укажите среднее значение использования.
 
    ж. В поле **Daily data change rate (%)** (Частота ежедневного изменения данных (%)) укажите частоту ежедневных изменений данных исходного сервера.
 

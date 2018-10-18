@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: a8f7ccf79e750c9f3c21c25c50c3e275db7e4195
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: f349dab23b9156d3a5656e8275533ebe6a82cdf9
+ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39173090"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45540928"
 ---
 # <a name="wait-and-non-wait-actions"></a>Действия с ожиданием и без ожидания
 
@@ -33,7 +33,7 @@ ms.locfileid: "39173090"
 ## <a name="details"></a>Сведения
 
 - Действие с ожиданием — в этом режиме система останавливает выполнение действий и ожидает ввода от пользователя.
-- Действие без ожидания — в этом режиме система сразу же выбирает следующее действие (не дожидаясь ввода от пользователя).
+- Действие без ожидания — в этом режиме система сразу же выбирает следующее действие (не дожидаясь ввода от пользователя).
 
 ## <a name="steps"></a>Действия
 
@@ -54,14 +54,14 @@ ms.locfileid: "39173090"
 1. Щелкните New Action (Новое действие).
 2. В поле ответа введите Cows say moo (Коровы мычат).
 3. Снимите флажок Wait for Response (Ожидать ответа).
-4. Нажмите кнопку "Создать"
+4. Щелкните Создать. 
 
 ### <a name="create-a-second-non-wait-action"></a>Создание второго действия без ожидания
 
 1. Щелкните New Action (Новое действие).
 2. В поле ответа введите Ducks say quack (Утки крякают).
 3. Снимите флажок Wait for Response (Ожидать ответа).
-4. Нажмите кнопку "Создать"
+4. Щелкните Создать. 
 
 ![](../media/tutorial2_actions.PNG)
 

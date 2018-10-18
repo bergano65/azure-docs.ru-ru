@@ -1,6 +1,6 @@
 ---
-title: Руководство. Загрузка из Azure Data Lake Store в хранилище данных SQL Azure | Документация Майкрософт
-description: Используйте внешние таблицы PolyBase для загрузки данных из Azure Data Lake Store в хранилище данных SQL Azure.
+title: Руководство. Загрузка из Azure Data Lake Storage 1-го поколения в хранилище данных SQL Azure | Документы Майкрософт
+description: Используйте внешние таблицы PolyBase для загрузки данных из Azure Data Lake Storage 1-го поколения в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: ckarst
 manager: craigg
@@ -10,19 +10,19 @@ ms.component: implement
 ms.date: 04/17/2018
 ms.author: cakarst
 ms.reviewer: igorstan
-ms.openlocfilehash: 04676db3048cf747e9a20d91a404f29c6cfc6853
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: c3902061264b75ba177ba150176d784ad5384a9f
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43306399"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46297202"
 ---
-# <a name="load-data-from-azure-data-lake-store-to-sql-data-warehouse"></a>Загрузка данных из Azure Data Lake Store в хранилище данных SQL
-Используйте внешние таблицы PolyBase для загрузки данных из Azure Data Lake Store в хранилище данных SQL Azure. Несмотря на то, что можно запускать специальные запросы данных, хранящихся в ADLS, мы рекомендуем импортировать данные в хранилище данных SQL для обеспечения максимальной производительности.
+# <a name="load-data-from-azure-data-lake-storage-gen1-to-sql-data-warehouse"></a>Загрузка данных из Azure Data Lake Storage 1-го поколения в хранилище данных SQL
+Используйте внешние таблицы PolyBase для загрузки данных из Azure Data Lake Storage 1-го поколения в хранилище данных SQL Azure. Несмотря на то, что можно запускать специальные запросы данных, хранящихся в Data Lake Storage 1-го поколения, мы рекомендуем импортировать данные в хранилище данных SQL для обеспечения максимальной производительности.
 
 > [!div class="checklist"]
-> * Создание объектов базы данных, требуемых для загрузки данных из Azure Data Lake Store.
-> * Подключение к каталогу Azure Data Lake Store.
+> * Создание объектов базы данных, требуемых для загрузки данных из Data Lake Storage 1-го поколения.
+> * Подключение к Data Lake Storage 1-го поколения.
 > * Загрузка данных в хранилище данных SQL Azure.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
@@ -35,17 +35,17 @@ ms.locfileid: "43306399"
 * Приложение Azure Active Directory для проверки подлинности между службами. Создать его помогут инструкции из [этой статьи](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
 
 >[!NOTE] 
-> Вам нужно получить из приложения Active Directory идентификатор клиента, ключ и значение конечной точки маркера OAuth2.0, чтобы подключаться к Azure Data Lake из хранилища данных SQL. Чтобы узнать, как получить эти значения, см. статью по приведенной выше ссылке. Для регистрации приложения Azure Active Directory используйте идентификатор приложения как идентификатор клиента.
+> Вам нужно получить из приложения Active Directory идентификатор клиента, ключ и значение конечной точки маркера OAuth2.0, чтобы подключаться к Data Lake Storage 1-го поколения из хранилища данных SQL. Чтобы узнать, как получить эти значения, см. статью по приведенной выше ссылке. Для регистрации приложения Azure Active Directory используйте идентификатор приложения как идентификатор клиента.
 > 
 
 * Хранилище данных SQL Azure Ознакомьтесь со статьей [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md).
 
-* Azure Data Lake Store Ознакомьтесь со статьей [Начало работы с Azure Data Lake Store с помощью портала Azure](../data-lake-store/data-lake-store-get-started-portal.md). 
+* Учетная запись Data Lake Storage 1-го поколения. Ознакомьтесь со статьей [Начало работы с Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-get-started-portal.md). 
 
 ##  <a name="create-a-credential"></a>Создание учетных данных
-Чтобы открыть Azure Data Lake Store, нужно создать главный ключ базы данных для шифрования секрета учетных данных, который мы будем использовать на следующем шаге. Затем вы создадите учетные данные для базы данных, которые содержат учетные данные для субъекта-службы, настроенные в AAD. Если вы ранее пользовались PolyBase для подключения к большим двоичным объектам Microsoft Azure Storage Blob, обратите внимание на отличия в синтаксисе учетных данных.
+Чтобы открыть учетную запись Data Lake Storage 1-го поколения, нужно создать главный ключ базы данных для шифрования секрета учетных данных, который мы будем использовать на следующем шаге. Затем вы создадите учетные данные для базы данных, которые содержат учетные данные для субъекта-службы, настроенные в AAD. Если вы ранее пользовались PolyBase для подключения к большим двоичным объектам Microsoft Azure Storage Blob, обратите внимание на отличия в синтаксисе учетных данных.
 
-Для подключения к Azure Data Lake Store необходимо **сначала** создать приложение Azure Active Directory, затем создать ключ доступа и предоставить этому приложению доступ к ресурсу Azure Data Lake. Инструкции см. в статье [Аутентификация между службами в Data Lake Store с помощью Azure Active Directory](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
+Для подключения к Data Lake Storage 1-го поколения необходимо **сначала** создать приложение Azure Active Directory, затем создать ключ доступа и предоставить этому приложению доступ к ресурсу Data Lake Storage 1-го поколения. Инструкции см. в статье [Аутентификация между службами в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
 
 ```sql
 -- A: Create a Database Master Key.
@@ -61,14 +61,14 @@ CREATE MASTER KEY;
 -- SECRET: Provide your AAD Application Service Principal key.
 -- For more information on Create Database Scoped Credential: https://msdn.microsoft.com/library/mt270260.aspx
 
-CREATE DATABASE SCOPED CREDENTIAL ADLCredential
+CREATE DATABASE SCOPED CREDENTIAL ADLSG1Credential
 WITH
     IDENTITY = '<client_id>@<OAuth_2.0_Token_EndPoint>',
     SECRET = '<key>'
 ;
 
 -- It should look something like this:
-CREATE DATABASE SCOPED CREDENTIAL ADLCredential
+CREATE DATABASE SCOPED CREDENTIAL ADLSG1Credential
 WITH
     IDENTITY = '536540b4-4239-45fe-b9a3-629f97591c0c@https://login.microsoftonline.com/42f988bf-85f1-41af-91ab-2d2cd011da47/oauth2/token',
     SECRET = 'BjdIlmtKp4Fpyh9hIvr8HJlUida/seM5kQ3EpLAmeDI='
@@ -80,20 +80,20 @@ WITH
 
 ```sql
 -- C: Create an external data source
--- TYPE: HADOOP - PolyBase uses Hadoop APIs to access data in Azure Data Lake Store.
--- LOCATION: Provide Azure Data Lake accountname and URI
+-- TYPE: HADOOP - PolyBase uses Hadoop APIs to access data in Azure Data Lake Storage Gen1.
+-- LOCATION: Provide Data Lake Storage Gen1 account name and URI
 -- CREDENTIAL: Provide the credential created in the previous step.
 
-CREATE EXTERNAL DATA SOURCE AzureDataLakeStore
+CREATE EXTERNAL DATA SOURCE AzureDataLakeStorageGen1
 WITH (
     TYPE = HADOOP,
-    LOCATION = 'adl://<AzureDataLake account_name>.azuredatalakestore.net',
-    CREDENTIAL = ADLCredential
+    LOCATION = 'adl://<datalakestoregen1accountname>.azuredatalakestore.net',
+    CREDENTIAL = ADLSG1Credential
 );
 ```
 
 ## <a name="configure-data-format"></a>Настройка формата данных
-Чтобы импортировать данные из ADLS, укажите формат внешнего файла. Этот объект определяет, каким образом файлы записываются в ADLS.
+Чтобы импортировать данные из Azure Data Lake Storage 1-го поколения, укажите формат внешнего файла. Этот объект определяет, каким образом файлы записываются в Data Lake Storage 1-го поколения.
 Полный список форматов, доступных для команды [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql), см. в документации по T-SQL.
 
 ```sql
@@ -119,7 +119,7 @@ WITH
 
 ```sql
 -- D: Create an External Table
--- LOCATION: Folder under the ADLS root folder.
+-- LOCATION: Folder under the Data Lake Storage Gen1 root folder.
 -- DATA_SOURCE: Specifies which Data Source Object to use.
 -- FILE_FORMAT: Specifies which File Format Object to use
 -- REJECT_TYPE: Specifies how you want to deal with rejected rows. Either Value or percentage of the total
@@ -134,7 +134,7 @@ CREATE EXTERNAL TABLE [dbo].[DimProduct_external] (
 WITH
 (
     LOCATION='/DimProduct/'
-,   DATA_SOURCE = AzureDataLakeStore
+,   DATA_SOURCE = AzureDataLakeStorageGen1
 ,   FILE_FORMAT = TextFileFormat
 ,   REJECT_TYPE = VALUE
 ,   REJECT_VALUE = 0
@@ -151,10 +151,10 @@ WITH
 
 С помощью параметров REJECT_TYPE и REJECT_VALUE вы можете определить, сколько строк или какой процент данных должны попасть в итоговую таблицу. Если в ходе загрузки будет достигнуто указанное ограничение, загрузка завершится ошибкой. Чаще всего строки отклоняются из-за несоответствия определению схемы. Например, если для столбца в схеме ошибочно указан формат int (целое число), а сами данные в файле имеют строковый формат, будут отклонены все строки.
 
- Хранилище Azure Data Lake использует управление доступом на основе ролей (RBAC) для управления доступом к данным. Это означает, что субъект-служба должна иметь разрешения на чтение для каталогов, указанных в параметре расположения, и для дочерних элементов конечного каталога и файлов. Это позволяет PolyBase выполнять аутентификацию и загрузку данных. 
+Хранилище Data Lake Storage 1-го поколения использует управление доступом на основе ролей (RBAC) для управления доступом к данным. Это означает, что субъект-служба должна иметь разрешения на чтение для каталогов, указанных в параметре расположения, и для дочерних элементов конечного каталога и файлов. Это позволяет PolyBase выполнять аутентификацию и загрузку данных. 
 
 ## <a name="load-the-data"></a>Загрузка данных
-Чтобы загрузить данные из Azure Data Lake Store, используйте инструкцию [CREATE TABLE AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse). 
+Чтобы загрузить данные из Data Lake Storage 1-го поколения, используйте инструкцию [CREATE TABLE AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse). 
 
 Компонент CTAS создает новую таблицу и заполняет ее результатам инструкции Select. CTAS определяет новую таблицу так, чтобы в ней содержались те же столбцы и типы данных, которые были выведены инструкцией Select. Если вы выбираете все столбцы из внешней таблицы, новая таблица получает точную копию всех столбцов и типов данных этой внешней таблицы.
 
@@ -192,12 +192,12 @@ ALTER INDEX ALL ON [dbo].[DimProduct] REBUILD;
 Данные успешно загружены в хранилище данных SQL Azure. Отличная работа!
 
 ## <a name="next-steps"></a>Дополнительная информация 
-В этом руководстве вы создали внешние таблицы для определения структуры данных, хранящихся в Azure Data Lake Store, а затем использовали инструкцию PolyBase CREATE TABLE AS SELECT для загрузки данных в хранилище данных. 
+В этом руководстве вы создали внешние таблицы для определения структуры данных, хранящихся в Data Lake Storage 1-го поколения, а затем использовали инструкцию PolyBase CREATE TABLE AS SELECT для загрузки данных в хранилище данных. 
 
 Вы выполнили такие действия:
 > [!div class="checklist"]
-> * Создание объектов базы данных, необходимые для загрузки данных из Azure Data Lake Store.
-> * Подключение к каталогу Azure Data Lake Store.
+> * Создали объекты базы данных, требуемые для загрузки данных из Data Lake Storage 1-го поколения.
+> * Подключились к Data Lake Storage 1-го поколения.
 > * Загрузка данных в хранилище данных SQL Azure.
 > 
 

@@ -1,3 +1,20 @@
+---
+title: включение файла
+description: включение файла
+services: storage
+author: alkohli
+ms.service: storage
+ms.topic: include
+ms.date: 09/15/2018
+ms.author: alkohli
+ms.custom: include file
+ms.openlocfilehash: 4285ee94d2f2a9b5fff9d1896cdf7013f88801ab
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45979514"
+---
 #### <a name="to-create-a-new-service"></a>Создание новой службы
 
 1.  Используя данные учетной записи Майкрософт, войдите на портал Azure по этому URL-адресу: <https://portal.azure.com/>. Если развертывание устройства выполняется на портале для государственных организаций, для входа используйте адрес <https://portal.azure.us/>.
@@ -18,7 +35,7 @@
 
         -   Если у вас уже есть рабочие нагрузки в Azure, которые будут развернуты вместе с устройством StorSimple, рекомендуем использовать этот центр обработки данных.
 
-        -   Диспетчер устройств StorSimple и служба хранилища Azure могут находиться в разных расположениях. В этом случае следует отдельно создать диспетчер устройств StorSimple и учетную запись хранения Azure. Чтобы создать учетную запись хранения Azure, перейдите в службу хранилища Azure на портале Azure и следуйте указаниям из раздела [Создайте учетную запись хранения](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account). Создав учетную запись, добавьте ее в службу диспетчера устройств StorSimple. Для этого выполните действия, описанные в разделе [Настройка новой учетной записи хранения для службы](https://azure.microsoft.com/documentation/articles/storsimple-deployment-walkthrough/#configure-a-new-storage-account-for-the-service).
+        -   Диспетчер устройств StorSimple и служба хранилища Azure могут находиться в разных расположениях. В этом случае следует отдельно создать диспетчер устройств StorSimple и учетную запись хранения Azure. Чтобы создать учетную запись хранения Azure, перейдите в службу хранилища Azure на портале Azure и следуйте указаниям из раздела [Создание учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account). Создав учетную запись, добавьте ее в службу диспетчера устройств StorSimple. Для этого выполните действия, описанные в разделе [Настройка новой учетной записи хранения для службы](https://azure.microsoft.com/documentation/articles/storsimple-deployment-walkthrough/#configure-a-new-storage-account-for-the-service).
 
         -   Если развертывание устройства выполняется на портале для государственных организаций, то служба диспетчера устройств StorSimple доступна в расположениях "Айова (для обслуживания государственных организаций США)" и "Виргиния (для обслуживания государственных организаций США)".
 

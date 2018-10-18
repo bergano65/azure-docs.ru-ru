@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из QuickBooks с помощью службы "Фабрика данных Azure" | Документация Майкрософт
+title: Копирование данных из QuickBooks с помощью службы фабрики данных Azure (предварительная версия) | Документы Майкрософт
 description: Узнайте, как копировать данные из QuickBooks в поддерживаемые хранилища данных в качестве приемников с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: jingwang
-ms.openlocfilehash: 4e73b444335fe0e96ff453570ee0092f38ab9a4d
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 83e3007a7c3198c5ae37cf95d2b21cde88bd8210
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37053808"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46127157"
 ---
-# <a name="copy-data-from-quickbooks-using-azure-data-factory"></a>Копирование данных из QuickBooks с помощью службы "Фабрика данных Azure"
+# <a name="copy-data-from-quickbooks-using-azure-data-factory-preview"></a>Копирование данных из QuickBooks с помощью фабрики данных Azure (предварительная версия)
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из QuickBooks. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 

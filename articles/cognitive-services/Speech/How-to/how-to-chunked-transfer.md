@@ -10,15 +10,16 @@ ms.component: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ROBOTS: NOINDEX
-ms.openlocfilehash: cf21b11f76592f5df2d81e6bdc10413c79fe895e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 510bc258aae80582e85478936c3281198e89d755
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46979232"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49343169"
 ---
 # <a name="chunked-transfer-encoding"></a>Кодирование блочной передачи
+
+[!INCLUDE [Deprecation note](../../../../includes/cognitive-services-bing-speech-api-deprecation-note.md)]
 
 Для преобразования речи в текст API распознавания речи Microsoft позволяет отправить аудио как один сплошной блок или разделить его на небольшие фрагменты. Для эффективной потоковой передачи аудио и сокращения задержки транскрибирования рекомендуется использовать [кодирование блочной передачи](https://en.wikipedia.org/wiki/Chunked_transfer_encoding) для передачи аудиозаписи в службу. Другие реализации могут привести к более высокой задержке, которую заметит пользователь. Дополнительные сведения о требованиях см. на странице [Аудиопотоки](../concepts.md#audio-streams).
 

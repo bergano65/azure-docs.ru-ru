@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
-ms.openlocfilehash: aefb9142e5954b2e4598c73eb36fa25de99e9584
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 255fe84f0d155902b2a3ac477a1e677efef42bb4
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452264"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49386666"
 ---
 # <a name="virtual-machine-extensions-and-features-for-linux"></a>Обзор расширений и компонентов виртуальных машин под управлением Linux
 
@@ -65,7 +65,7 @@ ms.locfileid: "47452264"
 > [!IMPORTANT]
 > Если в гостевом брандмауэре вы заблокировали доступ к IP-адресу *168.63.129.1*, запуск расширения всегда будет завершаться ошибкой, независимо от описанных выше условий.
 
-Агенты можно использовать только для скачивания пакетов расширений и отправки отчетов о состоянии. Например, если для установки расширения требуется скачать сценарий из GitHub (пользовательский сценарий) или требуется доступ к службе хранилища Azure (Azure Backup), откройте дополнительные порты в брандмауэре или в группе безопасности сети (NSG). Разные расширения имеют разные требования, ведь они по сути являются самостоятельными приложениями. Для расширений, которым нужен доступ к службе хранилища Azure, вы можете разрешить доступ с помощью тегов службы Azure NSG для [хранилища](https://docs.microsoft.com/en-us/azure/virtual-network/security-overview#service-tags).
+Агенты можно использовать только для скачивания пакетов расширений и отправки отчетов о состоянии. Например, если для установки расширения требуется скачать сценарий из GitHub (пользовательский сценарий) или требуется доступ к службе хранилища Azure (Azure Backup), откройте дополнительные порты в брандмауэре или в группе безопасности сети (NSG). Разные расширения имеют разные требования, ведь они по сути являются самостоятельными приложениями. Для расширений, которым нужен доступ к службе хранилища Azure, вы можете разрешить доступ с помощью тегов службы Azure NSG для [хранилища](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags).
 
 Агент Linux поддерживает перенаправление запросов через прокси-сервер. Однако при такой поддержке прокси-сервера не применяются расширения. Чтобы работать с прокси-сервером, необходимо настроить каждое отдельное расширение.
 
@@ -259,7 +259,7 @@ Goal state agent: 2.2.18
 
 Версия агента состояния цели обновляется автоматически.
 
-Настоятельно рекомендуется всегда включать автоматическое обновление агента [AutoUpdate.Enabled=y](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/update-agent). Если эта функция отключена, вам потребуется обновлять агент вручную и избегать ошибок и исправлений безопасности.
+Настоятельно рекомендуется всегда включать автоматическое обновление агента [AutoUpdate.Enabled=y](https://docs.microsoft.com/azure/virtual-machines/linux/update-agent). Если эта функция отключена, вам потребуется обновлять агент вручную и избегать ошибок и исправлений безопасности.
 
 #### <a name="extension-updates"></a>Обновление расширений
 
@@ -408,7 +408,7 @@ az vm extension delete \
 | Расширение пользовательских сценариев для Linux |Выполняет сценарии на виртуальных машинах Azure. |[Расширение пользовательских сценариев для Linux](custom-script-linux.md) |
 | Расширение для доступа к виртуальной машине |Восстанавливает доступ к виртуальной машине Azure. |[Расширение для доступа к виртуальной машине](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess) |
 | Расширение системы диагностики Azure |Управляет системой диагностики Azure. |[Расширение системы диагностики Azure](https://azure.microsoft.com/blog/windows-azure-virtual-machine-monitoring-with-wad-extension/) |
-| Расширение Azure VM Access |Управляет пользователями и учетными данными. |[Расширение VM Access для Linux](https://azure.microsoft.com/en-us/blog/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/) |
+| Расширение Azure VM Access |Управляет пользователями и учетными данными. |[Расширение VM Access для Linux](https://azure.microsoft.com/blog/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/) |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

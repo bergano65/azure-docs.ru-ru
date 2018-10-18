@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2018
+ms.date: 09/14/2018
 ms.author: jeedes
-ms.openlocfilehash: 8f79926d0d4729c6ad939bc604e9eb885dbe9f03
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 5b1099e46cf1aa2fd4b948fee8407cfd859390ce
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421266"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46129122"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-slack"></a>Учебник. Интеграция Azure Active Directory с Slack
 
@@ -114,11 +114,8 @@ ms.locfileid: "39421266"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.slack.com`
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес `https://slack.com`.
+    b. В текстовом поле **Идентификатор** укажите URL-адрес единого входа. Это домен вашей рабочей области. Например: `https://contoso.slack.com`
 
-    > [!NOTE] 
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес для входа. Чтобы получить это значение, обратитесь к [группе поддержки Slack](https://slack.com/help/contact).
-     
 1. Приложение Slack ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На следующем снимке экрана приведен пример.
     
     ![Настройка единого входа](./media/slack-tutorial/tutorial_slack_attribute.png)
@@ -220,6 +217,9 @@ ms.locfileid: "39421266"
 
 > [!NOTE]
 > Чтобы создать пользователя вручную, обратитесь к [группе поддержки Slack](https://slack.com/help/contact).
+
+> [!NOTE]
+> Azure AD Connect — это средство синхронизации, которое синхронизирует локальные удостоверения Active Directory с Azure AD, а затем эти синхронизированные пользователи могут использовать приложения так же, как другие пользователи облака.
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

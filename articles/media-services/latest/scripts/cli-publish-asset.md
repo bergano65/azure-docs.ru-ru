@@ -4,7 +4,7 @@ description: Для публикации ресурса используйте �
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.assetid: ''
 ms.service: media-services
@@ -12,14 +12,14 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 05/11/2018
+ms.date: 10/16/2018
 ms.author: juliako
-ms.openlocfilehash: 9b23fba88f8a6f6d7ecd211f8ad9c137cb92789d
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: dbc13e2765c98bdcd265b5cc3760001b6099f223
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47095568"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49376189"
 ---
 # <a name="cli-example-publish-an-asset"></a>Пример CLI. Публикация ресурса
 

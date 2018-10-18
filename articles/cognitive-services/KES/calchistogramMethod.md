@@ -1,20 +1,21 @@
 ---
-title: Метод calchistogram в API службы поиска и распознавания данных | Документация Майкрософт
-description: Узнайте, как использовать метод calchistogram в API службы поиска и распознавания данных (KES) в Cognitive Services.
+title: Метод CalcHistogram — API службы поиска и распознавания данных
+titlesuffix: Azure Cognitive Services
+description: Узнайте, как использовать метод CalcHistogram в API службы поиска и распознавания данных (KES).
 services: cognitive-services
 author: bojunehsu
-manager: stesp
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: knowledge-exploration
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/26/2016
 ms.author: paulhsu
-ms.openlocfilehash: 6ed694b0cc9cf41b815cc54b9f6d12adb2b7cd64
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 0ca43d6f6879198b8f80794c1948439e15f312ad
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380173"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46122762"
 ---
 # <a name="calchistogram-method"></a>Метод calchistogram
 Метод *calchistogram* вычисляет объекты, соответствующие структурированному выражению запроса, и вычисляет распределение значений их атрибутов.
@@ -42,7 +43,7 @@ $.histograms[\*].histogram | Данные гистограммы для этог
 $.histograms[\*].histogram[\*].value | Значение атрибута.
 $.histograms[\*].histogram[\*].logprob  | Общая вероятность на основе натурального логарифма для соответствующих сущностей с этим значением атрибута.
 $.histograms[\*].histogram[\*].count    | Количество соответствующих сущностей с этим значением атрибута.
-$.aborted | Если истекло время ожидания запроса, то имеет значение true.
+$.aborted | Если истекло время ожидания запроса, то значение true.
 
 ### <a name="example"></a>Пример
 В приведенном ниже примере для области научных публикаций вычисляется гистограмма числа публикаций по году и ключевому слову для конкретного автора после 2013 года.

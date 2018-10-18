@@ -10,12 +10,12 @@ ms.date: 08/31/2018
 ms.topic: conceptual
 manager: carmonm
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0707726ec86b0a0c69d1ec752ebd6761327f3f0f
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: 713c0f676067cb32a84361dd7801031295e2244f
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43669489"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45634444"
 ---
 # <a name="track-changes-in-your-environment-with-the-change-tracking-solution"></a>Отслеживание изменений в среде с помощью решения для отслеживания изменений
 
@@ -33,13 +33,23 @@ ms.locfileid: "43669489"
 
 Официально поддерживаются следующие дистрибутивы Linux. Однако агент Linux может выполняться и на других дистрибутивах, помимо следующих: Если не указано иное, все вспомогательные версии поддерживаются для каждого основного номера версии в списке.  
 
-* Amazon Linux 2012.09–2015.09 (x86/x64)
-* CentOS Linux 5, 6 и 7 (x86/x64)  
-* Oracle Linux 5, 6 и 7 (x86/x64)
-* Red Hat Enterprise Linux Server 5, 6 и 7 (x86/x64)
-* Debian GNU/Linux 6, 7 и 8 (x86/x64)
-* Ubuntu 12.04 LTS, 14.04 LTS, 16.04 LTS (x86/x64)
-* SUSE Linux Enterprise Server 11 и 12 (x86/x64)
+### <a name="64-bit"></a>64-разрядная
+
+* CentOS 6 и 7
+* Amazon Linux 2017.09
+* Oracle Linux 6 и 7
+* Red Hat Enterprise Linux Server 6 и 7
+* Debian GNU/Linux 8 и 9
+* Ubuntu Linux 14.04 LTS, 16.04 LTS и 18.04 LTS
+* SUSE Linux Enterprise Server 12
+
+### <a name="32-bit"></a>32-битная
+
+* CentOS 6
+* Oracle Linux 6
+* Red Hat Enterprise Linux Server 6
+* Debian GNU/Linux 8 и 9
+* Ubuntu Linux 14.04 LTS и 16.04 LTS
 
 ## <a name="enable-change-tracking-and-inventory"></a>Включение решения для отслеживания изменений и инвентаризации
 
@@ -146,6 +156,7 @@ ms.locfileid: "43669489"
 В настоящее время известны следующие проблемы решения для отслеживания изменений.
 
 * Для компьютеров Windows 10 Creators Update и Windows Server 2016 Core RS3 не собираются исправления.
+* Для файлов Windows отслеживание изменений в настоящее время не обнаруживает добавление нового файла в путь отслеживаемой папки.
 
 ## <a name="change-tracking-data-collection-details"></a>Сведения о сборе данных отслеживания изменений.
 

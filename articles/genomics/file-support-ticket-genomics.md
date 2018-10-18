@@ -1,23 +1,21 @@
 ---
-title: Microsoft Genomics. Как зарегистрировать запрос на поддержку | Документация Майкрософт
+title: Microsoft Genomics. Как зарегистрировать запрос на поддержку | Документы Майкрософт
 titleSuffix: Azure
-description: Сведения о том, как зарегистрировать запрос в службу поддержки
+description: Здесь описываются общие сведения о регистрации запроса на поддержку для обращения в службу поддержки Microsoft Genomics. Вы можете обратиться за помощью, если не можете устранить проблему с помощью руководства по устранению неполадок или часто задаваемых вопросов.
 keywords: troubleshooting, error, debugging, support
-services: microsoft-genomics
+services: genomics
 author: grhuynh
-manager: jhubbard
-editor: jasonwhowell
+manager: cgronlun
 ms.author: grhuynh
-ms.service: microsoft-genomics
-ms.workload: genomics
+ms.service: genomics
 ms.topic: article
 ms.date: 05/23/2018
-ms.openlocfilehash: b50de691c9ac6085a416405ece600afcb5575e92
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: d5e33f5b22012b297cdceacbe38425934f0f65b4
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34659947"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45734375"
 ---
 # <a name="how-to-contact-microsoft-genomics-for-support"></a>Как обращаться в службу поддержки Microsoft Genomics
 Здесь описываются общие сведения о регистрации запроса на поддержку для обращения в службу поддержки Microsoft Genomics. Вы можете обратиться за помощью, если не можете устранить проблему с помощью [руководства по устранению неполадок](troubleshooting-guide-genomics.md) или [часто задаваемых вопросов](frequently-asked-questions-genomics.md). 

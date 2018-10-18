@@ -1,24 +1,24 @@
 ---
-title: Часто задаваемые вопросы — Пользовательская служба распознавания речи
-titlesuffix: Azure Cognitive Services
+title: Часто задаваемые вопросы о Пользовательской службе распознавания речи в Azure | Документация Майкрософт
 description: В статье приведены ответы на самые распространенные вопросы о Пользовательской службе распознавания речи.
 services: cognitive-services
 author: PanosPeriorellis
-manager: cgronlun
+manager: onano
 ms.service: cognitive-services
 ms.component: custom-speech
-ms.topic: faq
+ms.topic: article
 ms.date: 11/21/2016
 ms.author: panosper
-ROBOTS: NOINDEX
-ms.openlocfilehash: 2de2efe3287cbb0b915434c2c9ad982fe162d741
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 8e3d5e0e2b70d8f97099103ed369e48dd74d56e2
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47223732"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49341367"
 ---
 # <a name="custom-speech-service-frequently-asked-questions"></a>Часто задаваемые вопросы о Пользовательской службе распознавания речи
+
+[!INCLUDE [Deprecation note](../../../includes/cognitive-services-custom-speech-deprecation-note.md)] 
 
 Если вы не найдете ответ на свой вопрос в этом списке, попробуйте обратиться в сообщество Пользовательской службы распознавания речи на сайтах [StackOverflow](https://stackoverflow.com/questions/tagged/project-oxford+or+microsoft-cognitive) и (или) [UserVoice](https://cognitive.uservoice.com/).
 

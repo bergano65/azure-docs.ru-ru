@@ -10,12 +10,12 @@ ms.component: bing-visual-search
 ms.topic: tutorial
 ms.date: 06/21/2018
 ms.author: rosh
-ms.openlocfilehash: bda4bdeea019d8cf3ae677d5eaf81e631ca38d16
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 06d6bc8e53276b5542210c2843d7221d6fd79c09
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47222579"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49386440"
 ---
 # <a name="tutorial-bing-visual-search-sdk-imageinsightstoken-and-results"></a>Руководство по ImageInsightsToken в пакете SDK для визуального поиска Bing и результаты применения
 В пакет SDK для визуального поиска входит возможность поиска изображений в Интернете из предыдущей операции поиска, возвращающей `ImageInsightsToken`.  В этом примере показано получение `ImageInsightsToken` и использование токена в последующих операциях поиска.  Код отправляет `ImageInsightsToken` в Bing и возвращает результаты, содержащие URL-адреса поиска Bing и URL-адреса схожих изображений, найденных в Интернете.
@@ -25,7 +25,7 @@ Visual Studio 2017. При необходимости можно скачать
 Для проверки подлинности вызовов пакета SDК требуется ключ API Cognitive Services. Зарегистрируйтесь для получения ключа бесплатной пробной версии. Ключ бесплатной пробной версии действует в течение семи дней с одним вызовом в секунду. Для производственной эксплуатации следует приобрести ключ доступа. Ознакомьтесь также со сведениями о ценах.
 Поддерживается возможность запуска пакета SDK для .NET Core, приложений .NET Core 1.1. Загрузить .NET Core, Framework и среду выполнения можно по адресу https://www.microsoft.com/net/download/.
 
-##<a name="application-dependencies"></a>Зависимости приложения
+## <a name="application-dependencies"></a>Зависимости приложения
 Чтобы настроить консольное приложение с помощью пакета SDK для поиска в Интернете Bing, в Visual Studio в обозревателе решений перейдите к параметру "Управление пакетами NuGet". Добавьте следующие пакеты:
 * Microsoft.Azure.CognitiveServices.Search.VisualSearch;
 * Microsoft.Azure.CognitiveServices.Search.ImageSearchpackage.
@@ -37,7 +37,8 @@ Visual Studio 2017. При необходимости можно скачать
 * Newtonsoft.Json.
 
 ## <a name="get-the-imageinsightstoken-from-image-search"></a>Получение токена ImageInsightsToken из поиска изображений
-В этом примере используется токен `ImageInsightsToken`, полученный с помощью следующего метода.  Дополнительные сведения об этом вызове см. в статье [Краткое руководство по пакету SDK для поиска изображений для C#](https://docs.microsoft.com/en-us/azure/cognitive-services/bing-image-search/image-search-sdk-quickstart).
+
+В этом примере используется токен `ImageInsightsToken`, полученный с помощью следующего метода.  Дополнительные сведения об этом вызове см. в статье [Краткое руководство по пакету SDK для поиска изображений для C#](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/image-search-sdk-quickstart).
 
 Код выполняет поиск результатов по запросу "Canadian Rockies" и получает токен ImageInsightsToken. Он выводит первый токен аналитики изображения, URL-адрес эскиза и URL-адрес содержимого изображения.  Метод возвращает `ImageInsightsToken` для использования в последующих запросах визуального поиска.
 
@@ -86,12 +87,15 @@ Visual Studio 2017. При необходимости можно скачать
 ```
 
 ## <a name="specify-the-imageinsightstoken-for-visual-search-request"></a>Указание токена ImageInsightsToken для запроса визуального поиска
+
 В этом примере используется токен аналитики, возвращенный предыдущим методом. Следующий код создает объект `ImageInfo` из токена `ImageInsightsToken` и загружает объект ImageInfo в `VisualSearchRequest`. Укажите токен `ImageInsightsToken` в `ImageInfo` для `VisualSearchRequest`.
 
 ```
 ImageInfo ImageInfo = new ImageInfo(imageInsightsToken: insightsTok);
 ```
+
 ## <a name="use-visual-search-to-find-images-from-an-imageinsightstoken"></a>Использование визуального поиска для обнаружения изображений из токена ImageInsightsToken
+
 `VisualSearchRequest` содержит сведения об изображении, поиск которого выполняется в объекте `ImageInfo`.  Метод `VisualSearchMethodAsync` получает результаты.
 ```
 // An image binary is not necessary here, as the image is specified by insights token.
@@ -135,7 +139,8 @@ Console.WriteLine("\r\n" + "ActionType: " + i.ActionType + " -> WebSearchUrl: " 
         }
     }
 ```
-Дополнительные сведения об этих типах данных см. в статье [Images - Visual Search](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bingvisualsearch/images/visualsearch) (Изображения — визуальный поиск).
+Дополнительные сведения об этих типах данных см. в статье [Images - Visual Search](https://docs.microsoft.com/rest/api/cognitiveservices/bingvisualsearch/images/visualsearch) (Изображения — визуальный поиск).
+
 ## <a name="complete-code"></a>Полный код
 
 Далее приводится код для выполнения предыдущих примеров. Он отправляет `ImageInsightsToken` в запросе POST. Затем он выводит URL-адреса поиска Bing для каждого ActionType. Если ActionType имеет значение `PagesIncluding`, код получает элементы `ImageObject` в `Data`.  `Data` содержит список значений, которые являются URL-адресами изображений на веб-страницах.  Скопируйте и вставьте полученные URL-адреса визуального поиска в браузер, чтобы показать результаты. Скопируйте и вставьте элементы ContentUrl в браузер, чтобы показать изображения.
@@ -283,5 +288,6 @@ namespace VisualSearchFeatures
 }
 
 ```
+
 ## <a name="next-steps"></a>Дополнительная информация
 [Ответ визуального поиска](https://docs.microsoft.com/azure/cognitive-services/bing-visual-search/overview#the-response)

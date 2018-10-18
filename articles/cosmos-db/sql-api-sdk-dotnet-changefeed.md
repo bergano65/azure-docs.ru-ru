@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 05/21/2018
 ms.author: maquaran
-ms.openlocfilehash: 443cb2786c12bddd87535a7267d66c0332473b1b
-ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
+ms.openlocfilehash: 6c4dafa5b15548b3dbc02a9c093232197b3f1400
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2018
-ms.locfileid: "42143391"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44716559"
 ---
 # <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>Пакет SDK для обработчика канала изменений в .NET: скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -42,6 +42,10 @@ ms.locfileid: "42143391"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 ### <a name="v2-builds"></a>Сборки версии 2
+
+### <a name="a-name210210"></a><a name="2.1.0"/>2.1.0
+* Добавлен новый API, Task&lt;IReadOnlyList&lt;RemainingPartitionWork&gt;&gt; IRemainingWorkEstimator.GetEstimatedRemainingWorkPerPartitionAsync(). Его можно использовать для получения оценки работ для каждого раздела.
+* Поддерживает Microsoft.Azure.DocumentDB SDK 2.0. Требуется Microsoft.Azure.DocumentDB 2.0 или более поздней версии.
 
 ### <a name="a-name206206"></a><a name="2.0.6"/>2.0.6
 * Добавлено общедоступное свойство ChangeEventHost.HostName для совместимости с версией 1.

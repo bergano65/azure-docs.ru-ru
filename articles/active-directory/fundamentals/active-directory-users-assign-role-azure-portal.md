@@ -1,44 +1,68 @@
 ---
-title: Назначение пользователю ролей администратора в Azure Active Directory | Документы Майкрософт
-description: Как изменить административную информацию о пользователе в Azure Active Directory
+title: Назначение ролей каталога пользователям в Azure Active Directory | Документы Майкрософт
+description: Узнайте, как назначить роли каталога пользователям в Azure Active Directory.
 services: active-directory
-documentationcenter: ''
 author: eross-msft
 manager: mtillman
-editor: ''
 ms.service: active-directory
 ms.workload: identity
 ms.component: fundamentals
-ms.topic: quickstart
-ms.date: 06/25/2018
+ms.topic: conceptual
+ms.date: 09/06/2018
 ms.author: lizross
 ms.reviewer: jeffsta
-ms.openlocfilehash: ec30f1507bfa45c29709a7f4b7dc1e91aa25ca57
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: b73df5ec0381e83c54c8cd9f8c0335448def0c6d
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37440754"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45733048"
 ---
-# <a name="assign-a-user-to-administrator-roles-in-azure-active-directory"></a>Назначение пользователю ролей администратора в Azure Active Directory
-В этой статье описывается назначение роли администратора пользователю в Azure Active Directory (Azure AD). Сведения о добавлении новых пользователей в организации см. в статье [Добавление пользователей из других каталогов или организаций-партнеров в предварительной версии Azure Active Directory](../add-users-azure-active-directory.md). По умолчанию добавленные пользователи не имеют прав администратора, но вы можете назначать им роли в любое время.
+# <a name="how-to-assign-roles-and-administrators-to-users-with-azure-active-directory"></a>Практическое руководство. Назначение ролей и администраторов пользователям в Azure Active Directory
+Если пользователю в вашей организации требуется разрешение на управление ресурсами Azure Active Directory (Azure AD), необходимо назначить пользователю соответствующую роль в Azure AD в зависимости от действий, которые пользователю нужно выполнять.
 
-## <a name="assign-a-role-to-a-user"></a>Назначение роли пользователю
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи глобального администратора или привилегированного администратора каталога.
+Дополнительные сведения о доступных ролях см. в статье [Назначение ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md). Сведения о добавлении пользователей см. в статье [Добавление новых пользователей в Azure Active Directory](add-users-azure-active-directory.md).
 
-2. Щелкните **Azure Active Directory**, выберите **Пользователи**, а затем выберите из списка определенного пользователя.
+## <a name="assign-roles"></a>Назначение ролей
+Обычно в Azure AD роли назначаются пользователю на странице пользователя **Роль каталога**.
 
-    ![Открытие страницы "Управление пользователями"](./media/active-directory-users-assign-role-azure-portal/create-users-user-management.png)
+Вы также можете назначать роли с помощью управления привилегированными пользователями (PIM). Более подробные сведения о том, как использовать PIM, см. в разделе [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management).
 
-3. Для выбранного пользователя щелкните **Роль каталога**, выберите **Добавить роль**, а затем выберите соответствующие роли администратора из списка **Роли каталога**, например **Администратор условного доступа**. Дополнительные сведения о ролях администраторов см. в статье [Назначение ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md). 
+### <a name="to-assign-a-role-to-a-user"></a>Назначение роли пользователю
+1. Войдите на [портал Azure](https://portal.azure.com/) с учетной записью глобального администратора каталога.
 
-    ![Назначение пользователя для роли](./media/active-directory-users-assign-role-azure-portal/create-users-assign-role.png)
+2. Выберите **Azure Active Directory**, нажмите **Пользователи**, а затем найдите и выберите пользователя, которому необходимо назначить роль. Например, _Alain Charon_.
 
-1. Нажмите кнопку **Выбрать**, чтобы сохранить изменения.
+3. На странице **Ален Чарон — профиль** выберите **Роль каталога**.
+
+    Откроется страница **Ален Чарон — роль каталога**.
+
+4. Выберите **Добавить роль**, выберите роль для Алена (например, _Администратор приложения_), а затем нажмите **Выбрать**.
+
+    ![Страница роли каталога с выбранной ролью](media/active-directory-users-assign-role-azure-portal/directory-role-select-role.png)
+
+    Алену Чарону назначена роль администратора приложения. Она отображается на странице **Ален Чарон — роль каталога**.
+
+## <a name="remove-a-role-assignment"></a>Удаление назначения ролей
+Если необходимо удалить назначение роли для пользователя, это также можно сделать на странице **Ален Чарон — роль каталога**.
+
+### <a name="to-remove-a-role-assignment-from-a-user"></a>Удаление назначения роли
+
+1. Выберите **Azure Active Directory**, нажмите **Пользователи**, а затем найдите и выберите пользователя, у которого необходимо удалить роль. Например, _Alain Charon_.
+
+2. Выберите **Роль каталога**, **Администратор приложения**, а затем нажмите **Удалить роль**.
+
+    ![Страница роли каталога с выбранной ролью и параметром удаления](media/active-directory-users-assign-role-azure-portal/directory-role-remove-role.png)
+
+    Назначение роли удалено, она больше не отображается на странице **Ален Чарон — роль каталога**.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Краткое руководство по добавлению новых пользователей в Azure Active Directory](add-users-azure-active-directory.md)
-* [Управление профилями пользователей](active-directory-users-profile-azure-portal.md)
-* [Добавление гостевых пользователей из другого каталога](../b2b/what-is-b2b.md) 
-* [Назначение пользователей в предварительной версии Azure AD](active-directory-users-assign-role-azure-portal.md)
-* [Восстановление удаленного пользователя](active-directory-users-restore.md)
+- [Добавление или удаление пользователей](add-users-azure-active-directory.md)
+
+- [Добавление или изменение данных профиля](active-directory-users-profile-azure-portal.md)
+
+- [Добавление гостевых пользователей из другого каталога](../b2b/what-is-b2b.md)
+
+Кроме того, можно выполнять другие задачи по управлению пользователями, например назначение делегатов, использование политик и совместное использование учетных записей пользователей. Дополнительные сведения о других доступных действиях см. в [документации по управлению пользователями Azure Active Directory](../users-groups-roles/index.yml).
+
+

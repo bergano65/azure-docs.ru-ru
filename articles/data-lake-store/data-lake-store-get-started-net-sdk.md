@@ -1,26 +1,25 @@
 ---
-title: "Пакет SDK для .NET. Операции управления учетными записями в Azure Data Lake Store | Документация Майкрософт"
-description: "Используйте пакет SDK для .NET, чтобы выполнять операции управления учетными записями в Data Lake Store."
+title: .NET SDK. Операции управления учетными записями в Azure Data Lake Storage 1-го поколения | Документы Майкрософт
+description: Используйте пакет .NET SDK для Azure Data Lake Storage 1-го поколения, чтобы выполнять операции управления учетными записями в Azure Data Lake Storage 1-го поколения
 services: data-lake-store
-documentationcenter: 
+documentationcenter: ''
 author: nitinme
 manager: jhubbard
 editor: cgronlun
 ms.assetid: ea57d5a9-2929-4473-9d30-08227912aba7
 ms.service: data-lake-store
 ms.devlang: na
-ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: big-data
-ms.date: 01/30/2018
+ms.topic: conceptual
+ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: cb44fb1cbc279f12f970237f1498a570a63544bd
-ms.sourcegitcommit: 9d317dabf4a5cca13308c50a10349af0e72e1b7e
+ms.openlocfilehash: 2ed9f534c0eb27601243428f8e4b9d95db5d16b0
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46123918"
 ---
-# <a name="account-management-operations-on-azure-data-lake-store-using-net-sdk"></a>Операции управления учетными записями в Azure Data Lake Store с использованием пакета SDK для .NET
+# <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-net-sdk"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием .NET SDK
 > [!div class="op_single_selector"]
 > * [ПАКЕТ SDK .NET](data-lake-store-get-started-net-sdk.md)
 > * [REST API](data-lake-store-get-started-rest-api.md)
@@ -28,11 +27,11 @@ ms.lasthandoff: 02/01/2018
 >
 >
 
-В этой статье содержатся сведения о выполнении операций управления учетными записями в Data Lake Store с использованием пакета SDK для .NET. К операциям управления учетными записями относятся создание учетной записи Data Lake Store, перечисление учетных записей в подписке Azure, удаление учетных записей и т. д.
+В этой статье содержатся сведения о выполнении операций управления учетными записями в Azure Data Lake Storage 1-го поколения с использованием .NET SDK. К операциям управления учетными записями относятся создание учетной записи Data Lake Storage 1-го поколения, перечисление учетных записей в подписке Azure, удаление учетных записей и т.д.
 
-Дополнительные сведения о том, как выполнять операции управления данными в Data Lake Store с помощью Python, см. в статье [Filesystem operations on Azure Data Lake Store using .NET SDK](data-lake-store-data-operations-net-sdk.md) (Операции файловой системы в Azure Data Lake Store с использованием пакета SDK для .NET).
+Дополнительные сведения о том, как выполнять операции управления данными в Data Lake Storage 1-го поколения с помощью .NET SDK, см. в статье [Операции файловой системы в Data Lake Storage 1-го поколения с использованием пакета SDK для .NET SDK](data-lake-store-data-operations-net-sdk.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * **Visual Studio 2013, 2015 или 2017**. В инструкциях ниже используется Visual Studio 2017.
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -90,7 +89,7 @@ ms.lasthandoff: 02/01/2018
 
                 private static void Main(string[] args)
                 {
-                    _adlsAccountName = "<DATA-LAKE-STORE-NAME>.azuredatalakestore.net"; 
+                    _adlsAccountName = "<DATA-LAKE-STORAGE-GEN1-NAME>.azuredatalakestore.net"; 
                     _resourceGroupName = "<RESOURCE-GROUP-NAME>"; 
                     _location = "East US 2";
                     _subId = "<SUBSCRIPTION-ID>";                    
@@ -102,26 +101,26 @@ ms.lasthandoff: 02/01/2018
 
 ## <a name="authentication"></a>Authentication
 
-* Дополнительные сведения о проверке подлинности пользователей в приложении см. в статье [End-user authentication with Data Lake Store using .NET SDK](data-lake-store-end-user-authenticate-net-sdk.md) (Аутентификация пользователей в Data Lake Store с использованием пакета SDK для .NET).
-* Дополнительные сведения о проверке подлинности между службами в приложении см. в статье [Service-to-service authentication with Data Lake Store using .NET SDK](data-lake-store-service-to-service-authenticate-net-sdk.md) (Аутентификация между службами в Data Lake Store с использованием пакета SDK для .NET).
+* Дополнительные сведения о проверке подлинности пользователей в приложении см. в статье [Проверка подлинности пользователей в Data Lake Storage 1-го поколения с использованием .NET SDK](data-lake-store-end-user-authenticate-net-sdk.md).
+* Дополнительные сведения о проверке подлинности между службами в приложении см. в статье [Проверка подлинности между службами в Data Lake Storage 1-го поколения с использованием .NET SDK](data-lake-store-service-to-service-authenticate-net-sdk.md).
 
 ## <a name="create-client-object"></a>Создание клиентского объекта
-В следующем фрагменте кода создается объект клиента учетной записи Data Lake Store, который используется для выдачи запросов управления учетной записью для службы, таких как создание учетной записи, удаление учетной записи и т. д.
+В следующем фрагменте кода создается объект клиента учетной записи Data Lake Storage 1-го поколения, который используется для выдачи запросов управления учетной записью для службы, таких как создание учетной записи, удаление учетной записи и т. д.
 
     // Create client objects and set the subscription ID
     _adlsClient = new DataLakeStoreAccountManagementClient(armCreds) { SubscriptionId = _subId };
     
-## <a name="create-a-data-lake-store-account"></a>Создание учетной записи хранения озера данных
-В следующем фрагменте кода создается учетная запись Data Lake Store в подписке Azure, предоставленной при создании объекта клиента учетной записи Data Lake Store.
+## <a name="create-a-data-lake-storage-gen1-account"></a>Создание учетной записи Data Lake Storage 1-го поколения
+В следующем фрагменте кода создается учетная запись Data Lake Storage 1-го поколения в подписке Azure, предоставленной при создании объекта клиента учетной записи Data Lake Storage 1-го поколения.
 
-    // Create Data Lake Store account
+    // Create Data Lake Storage Gen1 account
     var adlsParameters = new DataLakeStoreAccount(location: _location);
     _adlsClient.Account.Create(_resourceGroupName, _adlsAccountName, adlsParameters);
 
-## <a name="list-all-data-lake-store-accounts-within-a-subscription"></a>Получение списка всех учетных записей Data Lake Store в рамках подписки
-Добавьте в определение класса следующий метод. С помощью следующего фрагмента можно получить список всех учетных записей Data Lake Store в рамках определенной подписки Azure.
+## <a name="list-all-data-lake-storage-gen1-accounts-within-a-subscription"></a>Получение списка всех учетных записей Data Lake Storage 1-го поколения в рамках подписки
+Добавьте в определение класса следующий метод. С помощью следующего фрагмента можно получить список всех учетных записей Data Lake Storage 1-го поколения в рамках определенной подписки Azure.
 
-    // List all Data Lake Store accounts within the subscription
+    // List all Data Lake Storage Gen1 accounts within the subscription
     public static List<DataLakeStoreAccountBasic> ListAdlStoreAccounts()
     {
         var response = _adlsClient.Account.List(_adlsAccountName);
@@ -136,15 +135,15 @@ ms.lasthandoff: 02/01/2018
         return accounts;
     }
 
-## <a name="delete-a-data-lake-store-account"></a>Удаление учетной записи хранения озера данных
-Следующий фрагмент кода удаляет учетную запись Data Lake Store, созданную ранее.
+## <a name="delete-a-data-lake-storage-gen1-account"></a>Удаление учетной записи Data Lake Storage 1-го поколения
+Следующий фрагмент кода удаляет учетную запись Data Lake Storage 1-го поколения, созданную ранее.
 
-    // Delete Data Lake Store account
+    // Delete Data Lake Storage Gen1 account
     _adlsClient.Account.Delete(_resourceGroupName, _adlsAccountName);
 
 ## <a name="see-also"></a>См. также
-* [Операции файловой системы в Data Lake Store с помощью пакета SDK для .NET](data-lake-store-data-operations-net-sdk.md)
-* [Data Lake Store .NET Reference (Справочник по пакету SDK .NET для Data Lake Store)](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
+* [Операции файловой системы в Data Lake Storage 1-го поколения c использованием SDK для .NET](data-lake-store-data-operations-net-sdk.md)
+* [Справочник по Data Lake Storage 1-го поколения для .NET SDK](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Защита данных в хранилище озера данных](data-lake-store-secure-data.md)
+* [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

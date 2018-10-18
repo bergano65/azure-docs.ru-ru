@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из Couchbase с помощью Фабрики данных Azure | Документация Майкрософт
+title: Копирование данных из Couchbase с помощью фабрики данных Azure (предварительная версия) | Документы Майкрософт
 description: Узнайте, как копировать данные из Couchbase в поддерживаемые хранилища данных, используемые в качестве приемников, с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: jingwang
-ms.openlocfilehash: 9806ec19df0a68ac71cf639f5cb9b2b600a574ba
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: fee9deb43b4619f26cb9e4c0044b25bd34af93d2
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37053928"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46126842"
 ---
-# <a name="copy-data-from-couchbase-using-azure-data-factory"></a>Копирование данных из Couchbase с помощью Фабрики данных Azure
+# <a name="copy-data-from-couchbase-using-azure-data-factory-preview"></a>Копирование данных из Couchbase с помощью фабрики данных Azure (предварительная версия)
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из Couchbase. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 

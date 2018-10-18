@@ -1,26 +1,25 @@
 ---
-title: Сравнение разрешений пользователя по умолчанию в Azure AD | Документация Майкрософт
-description: Сравнение разрешений участника, гостя, владельца приложения и владельца группы.
+title: Разрешения пользователя по умолчанию в Azure Active Directory | Документация Майкрософт
+description: Дополнительные сведения о различных разрешениях пользователя в Azure Active Directory.
 services: active-directory
-documentationcenter: ''
 author: eross-msft
 manager: mtillman
-editor: ''
 ms.service: active-directory
-ms.workload: identity
 ms.component: fundamentals
-ms.topic: overview
+ms.workload: identity
+ms.topic: conceptual
 ms.date: 01/29/2018
 ms.author: lizross
 ms.reviewer: vincesm
-ms.openlocfilehash: e2571a6854d2c3de2425547b69c5435286182ef7
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+custom: it-pro
+ms.openlocfilehash: 9a9bd33dce4b2be9e15df2745dd25338cdb42702
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37448158"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45730485"
 ---
-# <a name="default-user-permissions-in-azure-active-directory"></a>Разрешения пользователя по умолчанию в Azure Active Directory
+# <a name="what-are-the-default-user-permissions-in-azure-active-directory"></a>Разрешения пользователя по умолчанию в Azure Active Directory
 
 В Azure Active Directory (Azure AD) набор разрешений по умолчанию предоставляется всем пользователям. Доступ пользователей зависит от назначенного типа пользователя, [принадлежности к роли](https://docs.microsoft.com/azure/active-directory/active-directory-users-assign-role-azure-portal) и владения отдельными объектами. В этой статье описываются эти разрешения по умолчанию и содержится сравнение значений по умолчанию для участников и гостевых пользователей.
 
@@ -52,7 +51,7 @@ ms.locfileid: "37448158"
 ---------- | ------------
 Возможность создания групп безопасности | Если установить для этого параметра значение "Нет", пользователи не смогут создавать группы безопасности. Глобальные администраторы и администраторы учетных записей пользователей все еще могут создавать группы безопасности. Дополнительные сведения см. в статье [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-cmdlets.md).
 Возможность создавать группы Office 365 | Если установить для этого параметра значение "Нет", пользователи не смогут создавать группы Office 365. Если установить для этого параметра значение "Некоторые", можно выбрать набор пользователей для создания групп Office 365. Глобальные администраторы и администраторы учетных записей пользователей по-прежнему смогут создавать группы Office 365. Дополнительные сведения см. в статье [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-cmdlets.md).
-Ограничить доступ к порталу администрирования Azure AD | Если установить для этого параметра значение "Нет", пользователи не смогут получать доступ к порталу Azure Active Directory.
+Ограничить доступ к порталу администрирования Azure AD | Если установить для этого параметра значение "Нет", пользователи не смогут получать доступ к Azure Active Directory.
 Возможность чтения других пользователей | Этот параметр доступен только в PowerShell. Если установить для этого параметра значение $false, пользователи без прав администратора не смогут читать информацию пользователей из каталога. Это не запрещает чтение информации пользователей в других службах Майкрософт, например Exchange Online. Этот параметр предназначен для особых обстоятельств, и устанавливать для него значение $false не рекомендуется.
 
 ## <a name="object-ownership"></a>Владелец объекта
@@ -70,7 +69,7 @@ When a user adds a new enterprise application, they are automatically added as a
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Дополнительные сведения об изменении администраторов для подписки Azure см. в статье [Добавление или изменение ролей администратора Azure](../../billing/billing-add-change-azure-subscription-administrator.md).
+* Дополнительные сведения о назначении административных ролей в Azure AD см. в статье [Назначение пользователю ролей администратора в Azure Active Directory](active-directory-users-assign-role-azure-portal.md)
 * Дополнительные сведения о том, как осуществляется доступ к ресурсам в Microsoft Azure, см. в статье [Основные сведения о доступе к ресурсам в Azure](../../role-based-access-control/rbac-and-directory-admin-roles.md).
 * Дополнительные сведения о связи Azure Active Directory с подпиской Azure см. в статье [Связь между подписками Azure и Azure Active Directory](active-directory-how-subscriptions-associated-directory.md).
 * [Управление пользователями](add-users-azure-active-directory.md)

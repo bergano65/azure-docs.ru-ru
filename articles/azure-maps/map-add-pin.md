@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 0dafb09e1704e8e446b034975f0c25a740050599
-ms.sourcegitcommit: a3a0f42a166e2e71fa2ffe081f38a8bd8b1aeb7b
+ms.openlocfilehash: 35b22e28a6a339af6f6f6e8db0655f2ae6de0118
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43382590"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46122180"
 ---
 # <a name="add-pins-to-the-map"></a>Добавление маркеров на карту
 
@@ -25,17 +25,21 @@ ms.locfileid: "43382590"
 <iframe height='500' scrolling='no' title='Добавление маркера на карту' src='//codepen.io/azuremaps/embed/ZrVpEa/?height=504&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/ZrVpEa/'>Добавление маркера на карту</a> службы "Карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-В первом блоке приведенного выше кода создается объект карты. Инструкции см. в статье о [создании карты](./map-create.md).
+В первом блоке приведенного выше кода создается объект карты. См. инструкции по [созданию карты](./map-create.md).
 
-Во втором блоке кода создается маркер, который добавляется на карту. Маркер — это класс [Feature](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.feature?view=azure-iot-typescript-latest) класса [Point](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.point?view=azure-iot-typescript-latest) со свойством компонента [PinProperties](https://docs.microsoft.com/javascript/api/azure-maps-control/models.pinproperties?view=azure-iot-typescript-latest). Чтобы создать маркер и определить его свойства, используйте `new atlas.data.Feature(new atlas.data.Point())`. Слой маркеров представляет собой массив маркеров. С помощью функции [addPins](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#addpins) класса карты добавьте на карту слой маркеров и определите его свойства. Просмотрите свойства слоя маркеров в [PinLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/models.pinlayeroptions?view=azure-iot-typescript-latest). 
+Во втором блоке кода создается маркер, который добавляется на карту. Маркер — это класс [Feature](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.feature?view=azure-iot-typescript-latest) класса [Point](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.point?view=azure-iot-typescript-latest) со свойством компонента [PinProperties](https://docs.microsoft.com/javascript/api/azure-maps-control/models.pinproperties?view=azure-iot-typescript-latest). Чтобы создать маркер и определить его свойства, используйте `new atlas.data.Feature(new atlas.data.Point())`. Слой маркеров представляет собой массив маркеров. С помощью функции [addPins](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#addpins) класса карты добавьте на карту слой маркеров и определите его свойства. Просмотрите свойства слоя маркеров в [PinLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/models.pinlayeroptions?view=azure-iot-typescript-latest).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о классах и методах, которые используются в этой статье: 
-* класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest);
-    * [addPins](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#addpins).
-    
-Дополнительные примеры кода для добавления в карты см. в следующих статьях: 
-* [Добавление всплывающего окна](./map-add-popup.md)
-* [Добавление фигуры](./map-add-shape.md)
+Дополнительные сведения о классах и методах, которые используются в этой статье:
 
+> [!div class="nextstepaction"]
+> класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest);
+
+Дополнительные примеры кода для добавления в карты см. в следующих статьях:
+
+> [!div class="nextstepaction"]
+> [Добавление всплывающего окна](./map-add-popup.md)
+
+> [!div class="nextstepaction"]
+> [Добавление фигуры](./map-add-shape.md)
