@@ -14,12 +14,12 @@ ms.devlang: php
 ms.topic: article
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: 339029f14c4fd9a0158f2b7a4fb80bf03bd83cf3
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: b0aa61c86b08a4fe2eddb5eb1fb5b33c4cb901a0
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "42144989"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49386593"
 ---
 # <a name="how-to-use-notification-hubs-from-python"></a>Использование концентраторов уведомлений с Python
 [!INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
@@ -261,7 +261,7 @@ ms.locfileid: "42144989"
 Указанные выше методы отправляют запрос HTTP POST к конечной точке "/messages" центра уведомлений с соответствующим текстом и заголовками для отправки уведомления.
 
 ### <a name="using-debug-property-to-enable-detailed-logging"></a>Включение подробного ведения журнала с помощью свойства отладки
-Если включить свойство отладки при инициализации центра уведомлений, в журнал будут записаны подробные сведения о дампе запроса и ответа HTTP, а также детальные выходные данные об отправке уведомлений. [Свойство TestSend службы "Центры уведомлений"](https://docs.microsoft.com/en-us/previous-versions/azure/reference/dn495827(v=azure.100)) возвращает подробные сведения о результатах отправки уведомлений. Чтобы его использовать, выполните инициализацию с помощью приведенного кода.
+Если включить свойство отладки при инициализации центра уведомлений, в журнал будут записаны подробные сведения о дампе запроса и ответа HTTP, а также детальные выходные данные об отправке уведомлений. [Свойство TestSend службы "Центры уведомлений"](https://docs.microsoft.com/previous-versions/azure/reference/dn495827(v=azure.100)) возвращает подробные сведения о результатах отправки уведомлений. Чтобы его использовать, выполните инициализацию с помощью приведенного кода.
 
     hub = NotificationHub("myConnectionString", "myNotificationHubName", isDebug)
 

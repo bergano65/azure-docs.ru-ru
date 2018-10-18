@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 09/06/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: f3b80af1dfaca921efbe656356e85aeb353a576b
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 93bd141b591cda5ec6ff1d9d042222070d3146e6
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46310683"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49390318"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect. История выпусков версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -112,7 +112,7 @@ ms.locfileid: "46310683"
 
 ### <a name="fixed-issues"></a>Исправленные проблемы 
 
-- Этот выпуск обновляет установку SQL Server Express до версии SQL Server 2012 SP4, которая, помимо прочего, содержит исправления для ряда уязвимостей.  См. [дополнительные сведения о версии SQL Server 2012 SP4](https://support.microsoft.com/en-ca/help/4018073/sql-server-2012-service-pack-4-release-information).
+- Этот выпуск обновляет установку SQL Server Express до версии SQL Server 2012 SP4, которая, помимо прочего, содержит исправления для ряда уязвимостей.  См. [дополнительные сведения о версии SQL Server 2012 SP4](https://support.microsoft.com/help/4018073/sql-server-2012-service-pack-4-release-information).
 - Обработка правил синхронизации: отмена исходящих правил синхронизации соединения без условия соединения, если родительское правило синхронизации больше не применяется.
 - В пользовательском интерфейсе Synchronization Service Manager и редакторе правил синхронизации исправлен ряд проблем со специальными возможностями.
 - Мастер Azure AD Connect: ошибка при создании соединителя AD, если Azure AD Connect входит в рабочую группу

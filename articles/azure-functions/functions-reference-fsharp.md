@@ -12,12 +12,12 @@ ms.devlang: fsharp
 ms.topic: reference
 ms.date: 09/09/2016
 ms.author: syclebsc
-ms.openlocfilehash: ec4260363aa0af3062a6d61db44a75d9ebd599db
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: 5593f76511f43106d6743a158b051e118ef2a4a6
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44090750"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46125261"
 ---
 # <a name="azure-functions-f-developer-reference"></a>Справочник разработчика F# по Функциям Azure
 
@@ -29,6 +29,29 @@ F# для Функций Azure — это решение для быстрого
 Файл `.fsx` — это скрипт F#. Он может рассматриваться как проект F#, содержащийся в одном файле. Этот файл содержит код для программы (в этом случае функция Azure) и директивы для управления зависимостями.
 
 При использовании `.fsx` для функции Azure обычно необходимые сборки добавляются автоматически, что позволяет сосредоточиться на функции, а не на стандартном коде.
+
+## <a name="folder-structure"></a>Структура папок
+
+Структура папок для проекта на F# выглядит следующим образом.
+
+```
+FunctionsProject
+ | - MyFirstFunction
+ | | - run.fsx
+ | | - function.json
+ | | - function.proj
+ | - MySecondFunction
+ | | - run.fsx
+ | | - function.json
+ | | - function.proj
+ | - host.json
+ | - extensions.csproj
+ | - bin
+```
+
+Существует общий файл [host.json] (functions-host-json.md), который может использоваться для настройки приложения-функции. У каждой функции есть собственный файл кода (.fsx) и файл конфигурации привязки (function.json).
+
+Расширения привязки, необходимые в [версии 2.x](functions-versions.md) среды выполнения функций, определены в файле `extensions.csproj` с фактическими файлами библиотеки в папке `bin`. При локальной разработке необходимо [зарегистрировать расширения привязки](functions-triggers-bindings.md#local-development-azure-functions-core-tools). При разработке функций на портале Azure эта регистрация выполняется автоматически.
 
 ## <a name="binding-to-arguments"></a>Привязка к аргументам
 Каждая привязка поддерживает набор аргументов. Это подробно описано в [справочнике разработчика по триггерам и привязкам в Функциях Azure](functions-triggers-bindings.md). Например, одной из привязок аргументов, поддерживаемых триггером больших двоичных объектов, выступает POCO. Эту привязку можно представить с помощью записи F#. Например: 

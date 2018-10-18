@@ -5,14 +5,14 @@ services: event-grid
 author: tfitzmac
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 08/21/2018
+ms.date: 09/19/2018
 ms.author: tomfitz
-ms.openlocfilehash: 15fe97e39fbc1c669762ddb7523cfd043638d3de
-ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
+ms.openlocfilehash: adef9d2f2d859c62d3b3b3a542536698fa668f9a
+ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43144235"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46498306"
 ---
 # <a name="event-sources-in-azure-event-grid"></a>Источники событий в службе "Сетка событий Azure"
 
@@ -58,7 +58,7 @@ ms.locfileid: "43144235"
 | [Создание подписки на события, связанные с пользовательским разделом, с использованием PowerShell](./scripts/event-grid-powershell-subscribe-custom-topic.md)|Пример сценария, который создает подписку на пользовательский раздел. Он отправляет события в веб-перехватчик.|
 | [Шаблон Resource Manager для создания пользовательского раздела и конечной точки веб-перехватчика](https://github.com/Azure/azure-quickstart-templates/tree/master/101-event-grid) | Шаблон Resource Manager, который создает пользовательский раздел и подписку для этого раздела. Он отправляет события в веб-перехватчик. |
 |
-| [Шаблон Resource Manager для создания пользовательского раздела и конечной точки Центров событий](https://github.com/Azure/azure-docs-json-samples/blob/master/event-grid/subscribeCustomTopicToEventHub.json)| Шаблон Resource Manager, который создает подписку для пользовательского раздела. Он отправляет события в Центры событий Azure. |
+| [Шаблон Resource Manager для создания пользовательского раздела и конечной точки Центров событий](https://github.com/Azure/azure-quickstart-templates/tree/master/101-event-grid-event-hubs-handler)| Шаблон Resource Manager, который создает подписку для пользовательского раздела. Он отправляет события в Центры событий Azure. |
 | [Схема событий службы "Сетка событий Azure" для подписок](event-schema.md) | Содержит сведения о полях в пользовательских событиях. |
 
 ## <a name="event-hubs"></a>Центры событий;
@@ -104,7 +104,7 @@ ms.locfileid: "43144235"
 | [Подписка на события группы ресурсов и фильтрация событий для ресурса с использованием Azure CLI](./scripts/event-grid-cli-resource-group-filter.md) | Пример сценария, позволяющий подписаться на события группы ресурсов и отфильтровать события для ресурса. |
 | [Создание подписки на события, связанные с группой ресурсов, с использованием PowerShell](./scripts/event-grid-powershell-resource-group.md) | Пример сценария, позволяющий подписаться на события, связанные с группой ресурсов. Он отправляет события в веб-перехватчик. |
 | [Подписка на события группы ресурсов и фильтрация по ресурсу с использованием PowerShell](./scripts/event-grid-powershell-resource-group-filter.md) | Пример сценария, позволяющий подписаться на события группы ресурсов и отфильтровать события для ресурса. |
-| [Шаблон Resource Manager для создания подписки на группу ресурсов](https://github.com/Azure/azure-docs-json-samples/blob/master/event-grid/subscribeResourceGroupToWebHook.json) | Создает подписку на события для группы ресурсов. Он отправляет события в веб-перехватчик. |
+| [Шаблон Resource Manager: подписка на ресурсы](https://github.com/Azure/azure-quickstart-templates/tree/master/101-event-grid-resource-events-to-webhook) | Подписывается на события для группы ресурсов или подписки Azure. Он отправляет события в веб-перехватчик. |
 | [Схема событий](event-schema-resource-groups.md) | Содержит сведения о полях в событиях группы ресурсов. |
 
 ## <a name="service-bus"></a>Служебная шина Azure
@@ -128,7 +128,7 @@ ms.locfileid: "43144235"
 | [Создание и перенаправление событий хранилища BLOB-объектов с помощью службы "Сетка событий Azure" и портала Azure](blob-event-quickstart-portal.md) | Содержит сведения об отправке событий хранилища BLOB-объектов в веб-перехватчик с помощью портала. |
 | [Создание подписки на события, связанные с учетной записью хранения больших двоичных объектов, с использованием Azure CLI](./scripts/event-grid-cli-blob.md) | Пример сценария, позволяющий подписаться на события, связанные с учетной записью хранения больших двоичных объектов. Он отправляет событие в веб-перехватчик. |
 | [Создание подписки на события, связанные с учетной записью хранения больших двоичных объектов, с помощью PowerShell](./scripts/event-grid-powershell-blob.md) | Пример сценария, позволяющий подписаться на события, связанные с учетной записью хранения больших двоичных объектов. Он отправляет событие в веб-перехватчик. |
-| [Шаблон Resource Manager для создания хранилища BLOB-объектов и подписки](https://github.com/Azure/azure-docs-json-samples/blob/master/event-grid/createBlobAndSubscribe.json) | Развертывает учетную запись службы хранилища больших двоичных объектов Azure и создает подписку на события для этой учетной записи хранения. Он отправляет события в веб-перехватчик. |
+| [Шаблон Resource Manager для создания хранилища BLOB-объектов и подписки](https://github.com/Azure/azure-quickstart-templates/tree/master/101-event-grid-subscription-and-storage) | Развертывает учетную запись службы хранилища больших двоичных объектов Azure и создает подписку на события для этой учетной записи хранения. Он отправляет события в веб-перехватчик. |
 | [Реагирование на события хранилища BLOB-объектов](../storage/blobs/storage-blob-event-overview.md) | Общие сведения об интеграции хранилища BLOB-объектов со службой "Сетка событий". |
 | [Схема событий службы "Сетка событий Azure" для хранилища BLOB-объектов](event-schema-blob-storage.md) | Содержит сведения о полях в событиях хранилища BLOB-объектов. |
 
