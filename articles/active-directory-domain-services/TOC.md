@@ -34,6 +34,7 @@
 ## Администрирование управляемого домена
 ### [Администрирование управляемого домена](active-directory-ds-admin-guide-administer-domain.md)
 ### [Администрирование DNS на управляемом домене](active-directory-ds-admin-guide-administer-dns.md)
+### [Обновление уведомлений, отправляемых по электронной почте](active-directory-ds-notifications.md)
 ### Настройка защищенного протокола LDAP для управляемого домена
 #### [Задача 1. Получение сертификата для защищенного протокола LDAP](active-directory-ds-admin-guide-configure-secure-ldap.md)
 #### [Задача 2. Экспорт сертификата защищенного протокола LDAP](active-directory-ds-admin-guide-configure-secure-ldap-export-pfx.md)

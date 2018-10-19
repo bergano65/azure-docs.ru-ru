@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 88bc55bfcf1fef825ab7475f6008d49ed274d534
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: 474cae69353555064f4e866e9f3fc756a127a64f
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49393224"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49403293"
 documentType: LandingData
 title: Документация пользователя по Azure Stack
 metadata:
@@ -73,6 +73,7 @@ sections:
     - html: <a href="/azure/azure-stack/user/azure-stack-solution-staged-data-analytics">Создание решения аналитики промежуточных данных с помощью Azure и Azure Stack</a>
     - html: <a href="/azure/azure-stack/user/azure-stack-solution-cloud-burst">Создание решений для масштабирования в нескольких облаках в Azure</a>
     - html: <a href="/azure/azure-stack/user/azure-stack-solution-geo-distributed">Создание решения для географически распределенного приложения с помощью Azure и Azure Stack</a>
+    - html: <a href="/azure/azure-stack/userazure-stack-solution-hybrid-cloud">Развертывание гибридного облачного решения с помощью Azure и Azure Stack</a>
 - title: Справочные материалы
   items:
   - type: list

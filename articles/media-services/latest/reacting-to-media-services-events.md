@@ -9,16 +9,16 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 09/19/2018
+ms.date: 10/16/2018
 ms.author: juliako
-ms.openlocfilehash: 143fec2ddb168b0fff0e419fa5767e9718637241
-ms.sourcegitcommit: 06724c499837ba342c81f4d349ec0ce4f2dfd6d6
+ms.openlocfilehash: 3541a5b33aa0bb98d9381b51caefc63b6aa677ad
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46465543"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49377554"
 ---
-# <a name="reacting-to-media-services-events"></a>Реагирование на события Служб мультимедиа Azure
+# <a name="handling-event-grid-events"></a>Обработка событий Сетки событий
 
 События Служб мультимедиа позволяют приложениям реагировать на различные события (например, событие изменения состояния задания) с помощью современных безсерверных архитектур. При этом не требуется сложный код или дорогостоящие и неэффективные службы опроса. Вместо этого события отправляются через службу [Сетка событий Azure](https://azure.microsoft.com/services/event-grid/) обработчикам событий, таким как [Функции Azure](https://azure.microsoft.com/services/functions/), [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/), или даже в веб-перехватчик. При этом вы оплачиваете только то, что используете. Дополнительные сведения о ценах см. на странице [с ценами на службу"Сетка событий Azure"](https://azure.microsoft.com/pricing/details/event-grid/).
 
