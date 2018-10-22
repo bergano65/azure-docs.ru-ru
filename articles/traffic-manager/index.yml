@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: d7f1c1d523bc9c9d717accf7667c8bd7402bbc72
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: ecfb8cff995d471a480226bc44164107b50eda84
+ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49388380"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49458026"
 documentType: LandingData
 title: Диспетчер трафика
 metadata:
@@ -19,7 +19,7 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 04/26/2018
+  ms.date: 10/15/2018
   ms.author: kumud
 abstract:
   description: Узнайте, как использовать диспетчер трафика Azure. Из кратких и полных руководств, примеров и других материалов вы узнаете, как управлять входящим трафиком для оптимальной производительности приложений, а также как распределять трафик, направляемый в Azure или на внешние конечные точки службы.
@@ -43,10 +43,11 @@ sections:
     style: unordered
     items:
     - html: <a href="/azure/traffic-manager/traffic-manager-configure-geographic-routing-method">Перенаправление трафика, исходя из географического расположения конечной точки</a>
-    - html: <a href="/azure/traffic-manager/traffic-manager-configure-performance-routing-method">Перенаправление трафика для обеспечения минимальной задержки</a>
+    - html: <a href="/azure/traffic-manager/tutorial-traffic-manager-improve-website-response">Перенаправление трафика для обеспечения минимальной задержки</a>
     - html: <a href="/azure/traffic-manager/traffic-manager-configure-weighted-routing-method">Распределение трафика между несколькими конечными точками</a>
     - html: <a href="/azure/traffic-manager/traffic-manager-configure-priority-routing-method">Перенаправление трафика к приоритетной конечной точке</a>
-    - html: <a href="/azure/traffic-manager/traffic-manager-configure-priority-routing-method">Маршрутизация трафика через подсеть пользователя</a>
+    - html: <a href="/azure/traffic-manager/tutorial-traffic-manager-weighted-endpoint-routing">Управление трафиком с помощью весовых коэффициентов конечных точек</a>
+    - html: <a href="/azure/traffic-manager/tutorial-traffic-manager-subnet-routing">Маршрутизация трафика через подсеть пользователя</a>
 - title: Бесплатные видеоуроки PluralSight
   items:
   - type: list

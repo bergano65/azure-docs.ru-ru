@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: ca2cba56bd84b1e1b5056e3308410ced3b620193
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: a22269560d485dcd98aaaabb88dbbba545d26a2d
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47063631"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49467914"
 documentType: LandingData
 title: Служба Azure Kubernetes (AKS)
 metadata:
@@ -38,6 +38,27 @@ sections:
         src: https://docs.microsoft.com/media/common/i_portal.svg
       text: Портал Azure
       href: /azure/aks/kubernetes-walkthrough-portal
+  - type: paragraph
+    text: 'Узнайте, как разрабатывать приложения и выполнять их отладку с помощью AKS:'
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/media/logos/logo_java.svg
+      text: Java
+      href: ../dev-spaces/quickstart-java.md
+    - image:
+        src: https://docs.microsoft.com/media/logos/logo_NETcore.svg
+      text: .NET и VS Code
+      href: ../dev-spaces/quickstart-netcore.md
+    - image:
+        src: https://docs.microsoft.com/media/logos/logo_visual-studio.svg
+      text: .NET и Visual Studio
+      href: ../dev-spaces/quickstart-netcore-visualstudio.md
+    - image:
+        src: https://docs.microsoft.com/media/logos/logo_nodejs.svg
+      text: Node.js
+      href: ../dev-spaces/quickstart-nodejs.md
 - title: Пошаговые руководства
   items:
   - type: paragraph
@@ -82,7 +103,7 @@ sections:
     className: cardsD
     items:
     - title: Команда
-      html: <p><a href="/cli/azure/aks">интерфейс командной строки Azure</a></p>
+      html: <p><a href="/cli/azure/aks">Интерфейс командной строки Azure</a></p>
     - title: Языки
       html: <p><a href="/dotnet/api/overview/azure/containerservice">.NET</a></p><p><a href="/python/api/overview/azure/containerservice">Python</a></p><p><a href="/java/api/overview/azure/containerservice">Java</a></p><p><a href="/javascript/api/overview/azure/container-service">Node.js</a></p>
     - title: REST
