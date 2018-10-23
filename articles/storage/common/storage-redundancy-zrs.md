@@ -1,6 +1,6 @@
 ---
-title: Создание высокодоступных приложений службы хранилища Azure в хранилище, избыточном между зонами (ZRS) | Документация Майкрософт
-description: Хранилище, избыточное между зонами (ZRS), предлагает простой способ по созданию высокодоступных приложений. ZRS обеспечивает защиту от сбоев оборудования в центре обработки данных, а также защиту от некоторых региональных сбоев.
+title: Создание высокодоступных приложений службы хранилища Azure в хранилище, избыточное в пределах зоны (ZRS) | Документация Майкрософт
+description: хранилище, избыточное в пределах зоны (ZRS), предлагает простой способ по созданию высокодоступных приложений. ZRS обеспечивает защиту от сбоев оборудования в центре обработки данных, а также защиту от некоторых региональных сбоев.
 services: storage
 author: tolandmike
 ms.service: storage
@@ -15,7 +15,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 09/17/2018
 ms.locfileid: "45733622"
 ---
-# <a name="zone-redundant-storage-zrs-highly-available-azure-storage-applications"></a>Хранилище, избыточное между зонами (ZRS). Высокодоступные приложения для службы хранилища Azure
+# <a name="zone-redundant-storage-zrs-highly-available-azure-storage-applications"></a>хранилище, избыточное в пределах зоны (ZRS). Высокодоступные приложения для службы хранилища Azure
 [!INCLUDE [storage-common-redundancy-ZRS](../../../includes/storage-common-redundancy-zrs.md)]
 
 ## <a name="support-coverage-and-regional-availability"></a>Доступность в регионах и действие поддержки
