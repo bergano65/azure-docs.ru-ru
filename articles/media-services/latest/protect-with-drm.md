@@ -4,21 +4,21 @@ description: Службы мультимедиа Azure можно использ
 services: media-services
 documentationcenter: ''
 author: juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/15/2018
+ms.date: 10/16/2018
 ms.author: juliako
-ms.openlocfilehash: 8bfe2fb7274fb8c6dcf977e8bd72af525d8ce8a5
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 2a8a00ab034016e7121e4601b3ff5a16d8c721ac
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39528176"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49395085"
 ---
 # <a name="use-drm-dynamic-encryption-and-license-delivery-service"></a>Использование динамического шифрования DRM и службы доставки лицензий
 
@@ -147,7 +147,7 @@ ms.locfileid: "39528176"
 
 Процесс создания **StreamingLocator** называется публикацией. По умолчанию **StreamingLocator** допустим сразу после выполнения вызова API и действует, пока не будет удален, если не настроить дополнительное начальное и конечное время. 
 
-При создании [StreamingLocator](https://docs.microsoft.com/rest/api/media/streaminglocators) необходимо указать желаемое имя **StreamingPolicyName**. В этом руководстве используется один из PredefinedStreamingPolicies, который сообщает службам мультимедиа Azure, как публиковать контент для потоковой передачи. В этом примере в качестве параметра политики SecureStreaming задается значение StreamingLocator.StreamingPolicyName. Эта политика указывает, что для получения созданного и настроенного указателя требуются два ключа содержимого (конверт и CENC). Таким образом применяются шифрования типа конверт, PlayReady и Widevine (ключ доставляется клиенту воспроизведения на основе настроенных лицензий DRM). Если необходимо выполнить шифрование потока с помощью CBCS (FairPlay), используйте PredefinedStreamingPolicy.SecureStreamingWithFairPlay. 
+При создании [StreamingLocator](https://docs.microsoft.com/rest/api/media/streaminglocators) необходимо указать желаемое имя **StreamingPolicyName**. В этом руководстве используется одна из предопределенных политик потоковой передачи, которая указывает службам мультимедиа Azure, как публиковать контент для потоковой передачи. В этом примере для StreamingLocator.StreamingPolicyName задается значение Predefined_MultiDrmCencStreaming. Эта политика указывает, что для получения созданного и настроенного указателя требуются два ключа содержимого (конверт и CENC). Таким образом применяются шифрования типа конверт, PlayReady и Widevine (ключ доставляется клиенту воспроизведения на основе настроенных лицензий DRM). Если необходимо выполнить шифрование потока с помощью CBCS (FairPlay), используйте Predefined_MultiDrmStreaming. 
 
 > [!IMPORTANT]
 > При использовании пользовательской политики [StreamingPolicy](https://docs.microsoft.com/rest/api/media/streamingpolicies) следует разработать ограниченный набор таких политик для учетной записи Служб мультимедиа и повторно использовать их для StreamingLocators всякий раз, когда требуются те же параметры шифрования и протоколы. У вашей учетной записи Служб мультимедиа есть квота на количество записей StreamingPolicy. Вы не должны создавать новый StreamingPolicy для каждого StreamingLocator.

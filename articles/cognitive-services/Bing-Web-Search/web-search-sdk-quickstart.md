@@ -10,18 +10,16 @@ ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 08/16/2018
 ms.author: erhopf
-ms.openlocfilehash: cebeab562a54ec68b69eb6422685cc4b596ac223
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 04a70c2afbd499d3965e23487cd49540b38e08af
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46127890"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49318662"
 ---
 # <a name="quickstart-use-the-bing-web-search-sdk-for-c"></a>Краткое руководство. Использование пакета SDK Поиска в Интернете Bing для C#
 
 Пакет SDK Поиска в Интернете Bing позволяет интегрировать поиск Bing в любое приложение C#. Из этого краткого руководства вы узнаете, как создать экземпляр клиента, отправить запрос и вывести ответ.
-
-Хотите увидеть код прямо сейчас? [Примеры использования пакета SDK Поиска в Интернете Bing для C#](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/) доступны в GitHub.
 
 [!INCLUDE [bing-web-search-quickstart-signup](../../../includes/bing-web-search-quickstart-signup.md)]
 
@@ -36,6 +34,9 @@ ms.locfileid: "46127890"
 * [пакет SDK для .NET Core](https://www.microsoft.com/net/download).
 
 ## <a name="create-a-project-and-install-dependencies"></a>Создание проекта и установка зависимостей
+
+> [!TIP]
+> Получите последнюю версию кода, предоставленного в решении Visual Studio, с сайта [GitHub](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/).
 
 Первым шагом является создание проекта консольного приложения. Если вам требуется помощь по настройке проекта консольного приложения, см. [руководство по созданию программы Hello World на C#](https://docs.microsoft.com/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Чтобы использовать в приложении SDK Поиска в Интернете Bing, необходимо установить `Microsoft.Azure.CognitiveServices.Search.WebSearch` с помощью диспетчера пакетов NuGet.
 

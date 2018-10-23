@@ -12,12 +12,12 @@ ms.author: srbozovi
 ms.reviewer: carlrab, bonova
 manager: craigg
 ms.date: 09/20/2018
-ms.openlocfilehash: 6cad73c8b8fa6a2fa95a6ea0c1fdb5d4114ffd41
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.openlocfilehash: fa9686e7f9ca7f14a51ea2b9c313dd69a2e40cec
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47180105"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49362260"
 ---
 # <a name="restore-a-database-backup-to-an-azure-sql-database-managed-instance"></a>Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "47180105"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этом кратком руководстве выполняются следующие требования.
+В этом кратком руководстве:
 - В качестве начальной точки используются ресурсы, созданные в кратком руководстве [Создание Управляемого экземпляра SQL Azure](sql-database-managed-instance-get-started.md).
 - Требуется последняя версия [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms) на локальном клиентском компьютере.
 - Требуется подключение к Управляемому экземпляру с помощью SQL Server Management Studio. Различные возможности подключения см. в следующих кратких руководствах.
@@ -38,7 +38,7 @@ ms.locfileid: "47180105"
 - Используется предварительно настроенная учетная запись хранилища BLOB-объектов Azure, содержащая Wide World Importers — стандартный файл резервной копии (загруженный с https://github.com/Microsoft/sql-server-samples/releases/download/wide-world-importers-v1.0/WideWorldImporters-Standard.bak)).
 
 > [!NOTE]
-> Дополнительные сведения о резервном копировании и восстановлении базы данных SQL Server при помощи хранилища BLOB-объектов Azure и подписанного URL-адреса (SAS) см. в разделе [Резервное копирование в SQL Server по URL-адресу](sql-database-managed-instance-get-started-restore.md).
+> Дополнительные сведения о резервном копировании и восстановлении базы данных SQL Server при помощи хранилища BLOB-объектов Azure и подписанного URL-адреса (SAS) см. в статье [Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-get-started-restore.md).
 
 ## <a name="restore-the-wide-world-importers-database-from-a-backup-file"></a>Восстановление базы данных Wide World Importers из файла резервной копии
 

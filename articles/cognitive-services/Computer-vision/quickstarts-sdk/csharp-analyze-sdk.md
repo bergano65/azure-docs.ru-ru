@@ -3,25 +3,23 @@ title: Краткое руководство по анализу изображ�
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как анализировать изображения с помощью клиентской библиотеки API компьютерного зрения для C# в Windows.
 services: cognitive-services
-author: noellelacharite
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 09/14/2018
-ms.author: nolachar
-ms.openlocfilehash: 0315b1c90eeae27d30a237aea76e66465818fba4
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.author: pafarley
+ms.openlocfilehash: 81a7b32ef2970efc7f53ec8d25350efb217d7b36
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47056090"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49343652"
 ---
 # <a name="quickstart-analyze-an-image-using-the-computer-vision-sdk-and-c"></a>Краткое руководство. Анализ изображения с использованием пакета SDK API компьютерного зрения для C#
 
 Из этого краткого руководства вы узнаете, как с помощью клиентской библиотеки компьютерного зрения для Windows анализировать локальные и удаленные изображения, чтобы извлекать визуальные признаки.
-
-Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-vision-csharp-sdk-quickstarts/tree/master/ComputerVision).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,6 +28,9 @@ ms.locfileid: "47056090"
 * Пакет NuGet клиентской библиотеки [Microsoft.Azure.CognitiveServices.Vision.ComputerVision](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.ComputerVision). Скачивать пакет не нужно. Инструкции по установке приведены ниже.
 
 ## <a name="analyzeimageasync-method"></a>Метод AnalyzeImageAsync
+
+> [!TIP]
+> Получите последнюю версию кода, предоставленного в решении Visual Studio, с сайта [GitHub](https://github.com/Azure-Samples/cognitive-services-vision-csharp-sdk-quickstarts/tree/master/ComputerVision).
 
 Методы `AnalyzeImageAsync` и `AnalyzeImageInStreamAsync` создают программу-оболочку [API анализа изображений](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) для удаленных и локальных изображений соответственно. С помощью этих методов можно извлекать визуальные признаки на основе содержимого изображения и выбирать, какие из них следуя вернуть, в частности:
 

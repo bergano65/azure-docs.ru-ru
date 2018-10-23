@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 09/05/2018
 ms.author: barclayn
 ms.custom: mvc
-ms.openlocfilehash: d1776fc2347eb1a1f03a834b6a5f847ef5c551e4
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 521b6423550bf3e2d0bc90212b7e3fe0cbeddfc4
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46948889"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49167077"
 ---
 # <a name="tutorial-configure-an-azure-web-application-to-read-a-secret-from-key-vault"></a>Руководство по настройке веб-приложения Azure для считывания секрета из Key Vault
 
@@ -126,10 +126,11 @@ az keyvault secret show --name "AppSecret" --vault-name "ContosoKeyVault"
 1. В обозревателе решений щелкните правой кнопкой мыши имя веб-сайта.
 2. Выберите **Управление пакетами NuGet для решения**.
 3. Установите флажок рядом с полем поиска. **Включить предварительные выпуски**
-4. Найдите два указанных ниже пакета NuGet и подтвердите их добавление в решение.
+4. Найдите три указанных ниже пакета NuGet и подтвердите их добавление в решение:
 
     * [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) позволяет легко получать маркеры доступа для аутентификации службы в службах Azure. 
     * [Microsoft.Azure.KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault) содержит методы для взаимодействия с Key Vault.
+    * [Microsoft.Extensions.Configuration.AzureKeyVault](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureKeyVault/) содержит расширения `IConfiguration` для Azure Key Vault.
 
 5. С помощью обозревателя решений откройте `Program.cs` и замените все содержимое файла Program.cs приведенным ниже кодом. Вместо ```<YourKeyVaultName>``` укажите имя вашего хранилища ключей.
 

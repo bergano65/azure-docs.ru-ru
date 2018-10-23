@@ -13,14 +13,14 @@ ms.devlang: na
 ms.date: 10/04/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: ae0d37dd8df9b076e72959e9036ba35d322e4e63
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 5d18a1f86e1d870db64199c575450dd475590b55
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48803721"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49394483"
 ---
-# <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-public-preview"></a>Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (предварительная версия)
+# <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-private-preview"></a>Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)
 
 Узнайте, как использовать [диспетчер развертывания Azure](./deployment-manager-overview.md) для развертывания приложений в нескольких регионах. Чтобы использовать диспетчер развертывания, необходимо создать два шаблона:
 
@@ -31,7 +31,7 @@ ms.locfileid: "48803721"
 
 > [!div class="checklist"]
 > * Ознакомление со сценарием
-> * Скачивание учебных файлов.
+> * Скачивание учебных файлов
 > * Подготовка артефактов.
 > * Создание определяемого пользователем управляемого удостоверения.
 > * Создание шаблона топологии службы.
@@ -48,7 +48,7 @@ ms.locfileid: "48803721"
 Для работы с этой статьей необходимо иметь следующее.
 
 * Опыт разработки [шаблонов Azure Resource Manager](./resource-group-overview.md).
-* Диспетчер развертывания Azure предоставляется в общедоступной предварительной версии. Чтобы зарегистрироваться с помощью диспетчера развертывания Azure, заполните [регистрационный лист](https://aka.ms/admsignup). 
+* Диспетчер развертывания Azure предоставляется в закрытой предварительной версии. Чтобы зарегистрироваться с помощью диспетчера развертывания Azure, заполните [регистрационный лист](https://aka.ms/admsignup). 
 * Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
 * Командлеты диспетчера развертывания. Чтобы установить эти командлеты предварительной версии, вам понадобится последняя версия PowerShellGet. Сведения о получении последней версии см. в статье [Установка PowerShellGet](/powershell/gallery/installing-psget). После установки PowerShellGet закройте окно PowerShell. Откройте новое окно PowerShell и используйте следующую команду:
 

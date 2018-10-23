@@ -10,18 +10,16 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/15/2018
 ms.author: nolachar
-ms.openlocfilehash: 53ac3f4aa85e889c86d09927ece7df012427e4a9
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 7fa8c5dc76e59ec236d6b9662bd2ba41db0add0f
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46367599"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49320413"
 ---
 # <a name="quickstart-transliterate-text-with-c35"></a>Краткое руководство по транслитерации текста с помощью C#
 
 Из этого краткого руководства вы узнаете, как с помощью API перевода текстов преобразовать текст на одном языке из одного набора символов в другой.
-
-Исходный код этого примера доступен на [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-C-Sharp).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,6 +28,9 @@ ms.locfileid: "46367599"
 Чтобы использовать API перевода текстов, вам также потребуется ключ подписки. Сведения об этом см. в статье [Регистрация для использования API перевода текстов](translator-text-how-to-signup.md).
 
 ## <a name="transliterate-request"></a>Запрос на транслитерацию
+
+> [!TIP]
+> Получите последнюю версию кода на сайте [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-C-Sharp).
 
 Приведенный ниже код преобразует текст на одном языке из одного набора символов в другой с помощью метода [Transliterate](./reference/v3-0-transliterate.md).
 

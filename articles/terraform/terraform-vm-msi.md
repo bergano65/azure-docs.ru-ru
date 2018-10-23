@@ -1,6 +1,6 @@
 ---
-title: Использование образа Azure Marketplace для создания виртуальной машины Terraform Linux с управляемым удостоверением службы
-description: Используйте образ Marketplace для создания виртуальной машины Terraform Linux с управляемым удостоверением службы и управлением удаленным состоянием, чтобы легко развернуть ресурсы в Azure.
+title: Использование образа Azure Marketplace для создания виртуальной машины Terraform Linux с управляемым удостоверением
+description: Используйте образ Marketplace для создания виртуальной машины Terraform Linux с управляемым удостоверением и управлением удаленным состоянием, чтобы легко развертывать ресурсы в Azure.
 services: terraform
 ms.service: terraform
 keywords: terraform, devops, MSI, виртуальная машина, удаленное состояние, azure
@@ -9,16 +9,16 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 3/12/2018
-ms.openlocfilehash: 0136966576e3fbb22855d74cc1866e48b4ac24c9
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: 1ec6228993c516ce2974c64bfa5b6dcdf63e7f91
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43669393"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49343832"
 ---
-# <a name="use-an-azure-marketplace-image-to-create-a-terraform-linux-virtual-machine-with-managed-service-identity"></a>Использование образа Azure Marketplace для создания виртуальной машины Terraform Linux с управляемым удостоверением службы
+# <a name="use-an-azure-marketplace-image-to-create-a-terraform-linux-virtual-machine-with-managed-identities-for-azure-resources"></a>Использование образа Azure Marketplace для создания виртуальной машины Terraform Linux с управляемым удостоверением для ресурсов Azure
 
-В статье описано, как использовать [образ Terraform из Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/azure-oss.terraform?tab=Overview) для создания виртуальной машины Ubuntu Linux (16.04 LTS) с последней версией [Terraform](https://www.terraform.io/intro/index.html), установленной и настроенной с [управляемым удостоверением службы (MSI)](https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview). Этот образ также настраивает удаленный сервер, чтобы включить управление [удаленным состоянием](https://www.terraform.io/docs/state/remote.html) с помощью Terraform. 
+В статье описано, как использовать [образ Terraform из Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/azure-oss.terraform?tab=Overview) для создания виртуальной машины Ubuntu Linux (16.04 LTS) с последней версией [Terraform](https://www.terraform.io/intro/index.html), установленной и настроенной с помощью [управляемых удостоверений для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview). Этот образ также настраивает удаленный сервер, чтобы включить управление [удаленным состоянием](https://www.terraform.io/docs/state/remote.html) с помощью Terraform. 
 
 С помощью образа Terraform Marketplace можно быстро приступить к работе с Terraform в Azure без необходимости устанавливать и настраивать Terraform вручную. 
 
@@ -79,13 +79,13 @@ ms.locfileid: "43669393"
 
 После создания виртуальной машины вы можете войти в нее с помощью протокола SSH. Для входа с помощью интерфейса текстовой оболочки используйте учетную запись, созданную в разделе "Основные сведения" на шаге 3. В Windows можно скачать клиент SSH, например [Putty](http://www.putty.org/).
 
-После подключения к виртуальной машине по SSH управляемому удостоверению службы на виртуальной машине нужно предоставить права участника на всю подписку. 
+После подключения к виртуальной машине по SSH управляемым удостоверениям для ресурсов Azure на виртуальной машине нужно предоставить права участника на всю подписку. 
 
 Таким образом с помощью MSI на виртуальной машине можно создавать ресурсы вне группы ресурсов этой машины, используя Terraform. Это можно сделать, выполнив скрипт один раз. Используйте следующую команду:
 
 `. ~/tfEnv.sh`
 
-В предыдущем скрипте для аутентификации в Azure и назначения управляемому удостоверению службы виртуальной машины прав участника на всю подписку используется механизм [интерактивного входа с помощью Azure CLI 2.0](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest#interactive-log-in). 
+В предыдущем скрипте для аутентификации в Azure и назначения управляемому удостоверению виртуальной машины прав участника на всю подписку используется механизм [интерактивного входа с помощью Azure CLI 2.0](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest#interactive-log-in). 
 
  У виртуальной машины есть сервер удаленного состояния Terraform. Чтобы включить его в развертывание Terraform, скопируйте файл remoteState.tf из каталога tfTemplate в корень скриптов Terraform.  
 

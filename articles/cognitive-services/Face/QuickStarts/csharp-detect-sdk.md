@@ -3,25 +3,23 @@ title: Краткое руководство. Обнаружение лиц на
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как обнаруживать лица на изображениях, используя клиентскую библиотеку службы распознавания лиц для Windows для C# в Cognitive Services.
 services: cognitive-services
-author: noellelacharite
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: face-api
 ms.topic: quickstart
 ms.date: 09/14/2018
-ms.author: nolachar
-ms.openlocfilehash: a9a7efd89f8e7462812064615d07acf12acbc3a3
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.author: pafarley
+ms.openlocfilehash: b5fd10aaab28303079d3eef9c4c5c25207bb672e
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46364119"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49344988"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-c35---face"></a>Краткое руководство. Обнаружение лиц на изображении с помощью Распознавания лиц и C#
 
 В этом кратком руководстве вы узнаете, как определять лица людей на изображении с помощью клиентской библиотеки распознавания лиц для Windows.
-
-Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-vision-csharp-sdk-quickstarts/tree/master/Face).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,6 +28,9 @@ ms.locfileid: "46364119"
 * Пакет NuGet клиентской библиотеки [Microsoft.Azure.CognitiveServices.Vision.Face 2.2.0-preview](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.2.0-preview). Скачивать пакет не нужно. Инструкции по установке приведены ниже.
 
 ## <a name="detectwithurlasync-method"></a>Метод DetectWithUrlAsync
+
+> [!TIP]
+> Получите последнюю версию кода, предоставленного в решении Visual Studio, с сайта [GitHub](https://github.com/Azure-Samples/cognitive-services-vision-csharp-sdk-quickstarts/tree/master/Face).
 
 Методы `DetectWithUrlAsync` и `DetectWithStreamAsync` создают программу-оболочку [API распознавания лиц](https://westcentralus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) для удаленных и локальных изображений соответственно. С помощью этих методов можно распознать лица на изображении и вернуть их атрибуты, в том числе:
 

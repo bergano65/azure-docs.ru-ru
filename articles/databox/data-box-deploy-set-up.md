@@ -2,24 +2,18 @@
 title: Настройка Azure Data Box | Документация Майкрософт
 description: Узнайте, как присоединять кабели и подключаться к Azure Data Box
 services: databox
-documentationcenter: NA
 author: alkohli
-manager: twooley
-editor: ''
-ms.assetid: ''
 ms.service: databox
-ms.devlang: NA
+ms.subservice: pod
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.date: 10/03/2018
+ms.date: 10/17/2018
 ms.author: alkohli
-ms.openlocfilehash: f9671e3acdb71affe2187258582254561785780e
-ms.sourcegitcommit: 4edf9354a00bb63082c3b844b979165b64f46286
+ms.openlocfilehash: c3766713c87dd721f7e4c9a90624192cdb402be9
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48785642"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49393836"
 ---
 # <a name="tutorial-cable-and-connect-to-your-azure-data-box"></a>Руководство: присоединение кабелей и подключение к Azure Data Box
 
@@ -91,6 +85,8 @@ ms.locfileid: "48785642"
     - Если протокол DHCP не включен, перейдите на страницу **Задать сетевые интерфейсы** и присвойте статические IP-адреса (при необходимости).
 
     ![Панель мониторинга устройства](media/data-box-deploy-set-up/data-box-dashboard-1.png)
+
+После настройки сетевых интерфейсов DATA можно также использовать IP-адрес любого интерфейса в диапазоне DATA 1–DATA 3 для доступа к локальному веб-интерфейсу по адресу `https://<IP address of a data network interface>`. 
 
 После настройки устройства можно подключаться к общим папкам устройства и скопировать данные с компьютера на устройство. 
 

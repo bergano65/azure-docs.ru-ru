@@ -3,25 +3,23 @@ title: Краткое руководство. Извлечение текста 
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как извлечь текст из изображения с помощью клиентской библиотеки API компьютерного зрения для Windows на C#.
 services: cognitive-services
-author: noellelacharite
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 09/27/2018
-ms.author: nolachar
-ms.openlocfilehash: 86808756721b2dc983df6eaf8a9e643a12d73969
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.author: pafarley
+ms.openlocfilehash: d819aee7c42759e2427e27e0f640d79536069ccb
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47409022"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49343611"
 ---
 # <a name="quickstart-extract-text-using-the-computer-vision-sdk-and-c"></a>Краткое руководство. Извлечение текста с помощью C# и пакета SDK для API компьютерного зрения
 
 Из этого краткого руководства вы узнаете, как извлечь рукописный или печатный текст из изображения с помощью клиентской библиотеки компьютерного зрения для Windows.
-
-Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-vision-csharp-sdk-quickstarts/tree/master/ComputerVision).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,6 +28,9 @@ ms.locfileid: "47409022"
 * Пакет NuGet клиентской библиотеки [Microsoft.Azure.CognitiveServices.Vision.ComputerVision](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.ComputerVision). Скачивать пакет не нужно. Инструкции по установке приведены ниже.
 
 ## <a name="recognizetextasync-method"></a>Метод RecognizeTextAsync
+
+> [!TIP]
+> Получите последнюю версию кода, предоставленного в решении Visual Studio, с сайта [GitHub](https://github.com/Azure-Samples/cognitive-services-vision-csharp-sdk-quickstarts/tree/master/ComputerVision).
 
 Методы `RecognizeTextAsync` и `RecognizeTextInStreamAsync` создают программу-оболочку [API распознавания текста](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) для удаленных и локальных изображений, соответственно. `GetTextOperationResultAsync` служит оболочкой для [API получения результатов операции распознавания текста](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201).  С помощью этих методов можно обнаружить текст на изображении и извлечь распознанные символы в поток символов, пригодный для машинной обработки.
 

@@ -10,12 +10,12 @@ ms.component: bing-custom-search
 ms.topic: overview
 ms.date: 09/29/2017
 ms.author: v-brapel
-ms.openlocfilehash: 2483bf36bb18af21bc454e08f3321b33094c43c8
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: f2946918f0c1a7a516788989042825e8f49d7b0b
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48814310"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49318730"
 ---
 # <a name="what-is-bing-custom-search"></a>Что такое "Пользовательский поиск Bing"?
 
@@ -29,7 +29,7 @@ ms.locfileid: "48814310"
 
 На следующем рисунке показана простота интеграции пользовательского поиска.
 
-![Рисунок](./media/bcs-overview.png "Как работает \"Пользовательский поиск Bing\".")
+![Рисунок](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/cognitive-services/Bing-Custom-Search/media/BCS-Overview.png "Как работает \"Пользовательский поиск Bing\".")
 
 ## <a name="adding-custom-search-box-suggestions"></a>Добавление предложений пользовательского поиска
 
@@ -57,7 +57,7 @@ ms.locfileid: "48814310"
 
 - [API пользовательского поиска](https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-search-api-v7-reference)
 - [API пользовательского изображения](https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-images-api-v7-reference)
-- [API пользовательского видео](https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-videos-api-v7-reference)
+- [API для поиска пользовательских видео](https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-videos-api-v7-reference)
 - [API пользовательского автозаполнения](https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-autosuggest-api-v7-reference)
 
 

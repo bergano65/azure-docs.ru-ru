@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 06/07/2018
+ms.date: 10/15/2018
 ms.author: jeffgilb
 ms.reviewer: comartin
-ms.openlocfilehash: ed3f09f942bdaa803ae8024d5c02230173190107
-ms.sourcegitcommit: 50f82f7682447245bebb229494591eb822a62038
+ms.openlocfilehash: 6b73cf04d768381bcc0e27cc76b6c2a25d4d9a2c
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35248203"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49341061"
 ---
 # <a name="azure-stack-telemetry"></a>Телеметрия Azure Stack
 
@@ -163,6 +163,4 @@ if($psSession)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Скачивание пакета развертывания Пакета средств разработки Azure Stack](https://azure.microsoft.com/overview/azure-stack/try/?v=try)
-
-- [Развертывание Пакета средств разработки Azure Stack](azure-stack-run-powershell-script.md)
+[Регистрация Azure Stack в Azure](azure-stack-registration.md)

@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 09/22/2018
 ms.custom: mvc
 ms.author: spelluru
-ms.openlocfilehash: 08295ceeb2ebe94a96eaade0a6443f0f59212d60
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 870cfcf8712cc5bee2674b82d5292e4241433386
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47394035"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49342213"
 ---
 # <a name="what-is-azure-service-bus"></a>Что такое служебная шина Azure?
 
@@ -95,9 +95,9 @@ ms.locfileid: "47394035"
 
 В случае ошибок, которые не позволяют клиенту точно установить состояние операции отправки, можно выполнить [поиск повторяющихся сообщений](duplicate-detection.md). Отправитель может повторно отправить то же самое сообщение, а очередь или раздел автоматически отклонит возможные дубликаты.
 
-### <a name="sas-rbac-and-msi"></a>SAS, RBAC и MSI
+### <a name="sas-rbac-and-managed-identities-for-azure-resources"></a>Использование управляемых удостоверений, RBAC и подписанного URL-адреса для ресурсов Azure
 
-Служебная шина поддерживает такие протоколы безопасности, как [подписанный URL-адрес](service-bus-sas.md) (SAS), [управление доступом на основе ролей](service-bus-role-based-access-control.md) (RBAC) и [управляемое удостоверение службы](service-bus-managed-service-identity.md) (MSI).
+Служебная шина поддерживает такие протоколы безопасности, как [подписанный URL-адрес](service-bus-sas.md) (SAS), [управление доступом на основе ролей](service-bus-role-based-access-control.md) (RBAC) и [управляемые удостоверения для ресурсов Azure](service-bus-managed-service-identity.md).
 
 ### <a name="geo-disaster-recovery"></a>Геоизбыточное аварийное восстановление
 
@@ -119,7 +119,7 @@ ms.locfileid: "47394035"
 - [Logic Apps](https://azure.microsoft.com/services/logic-apps/) 
 - [Функции](https://azure.microsoft.com/services/functions/) 
 - [Dynamics 365](https://dynamics.microsoft.com)
-- [Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)
+- [Анализ потока](https://azure.microsoft.com/services/stream-analytics/)
  
 ## <a name="next-steps"></a>Дополнительная информация
 

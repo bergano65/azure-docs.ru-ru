@@ -10,18 +10,16 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/15/2018
 ms.author: nolachar
-ms.openlocfilehash: 4569a580dfdad3a71201e607ae5b7895d0d01099
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 699c4b775f2c5745a5b52593d44a0af408c5e73a
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46364352"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49319614"
 ---
 # <a name="quickstart-get-sentence-lengths-with-c35"></a>Краткое руководство. Получение длины предложения с помощью C#
 
 В этом кратком руководстве объясняется, как определять длину предложений в тексте с помощью API перевода текстов.
-
-Исходный код этого примера доступен на [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-C-Sharp).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,6 +28,9 @@ ms.locfileid: "46364352"
 Чтобы использовать API перевода текстов, вам также потребуется ключ подписки. Сведения об этом см. в статье [Регистрация для использования API перевода текстов](translator-text-how-to-signup.md).
 
 ## <a name="breaksentence-request"></a>Запрос метода BreakSentence
+
+> [!TIP]
+> Получите последнюю версию кода на сайте [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-C-Sharp).
 
 Приведенный ниже код позволяет разбить исходный текст на предложения с помощью метода [BreakSentence](./reference/v3-0-break-sentence.md).
 

@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 08/27/2018
 ms.author: wesmc
-ms.openlocfilehash: 77b76ac5b30c4f5f647c532dbc5db68b396b3d20
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.openlocfilehash: 3fa4c536313375ed88f6f0223218a663d4be3eb3
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45636147"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49364782"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-the-telemetry-from-the-hub-with-a-back-end-application-c"></a>Краткое руководство. Отправка данных телеметрии с устройства в Центр Интернета вещей и чтение данных телеметрии из центра с помощью внутреннего приложения (C)
 
@@ -118,25 +118,32 @@ ms.locfileid: "45636147"
 
 ## <a name="register-a-device"></a>Регистрация устройства
 
-Устройство должно быть зарегистрировано в Центре Интернета вещей, прежде чем оно сможет подключиться. В этом разделе вы используете Azure CLI с [расширением Интернета вещей](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot?view=azure-cli-latest) для регистрации имитированного устройства.
+Устройство должно быть зарегистрировано в Центре Интернета вещей, прежде чем оно сможет подключиться. В этом разделе описано, как регистрировать имитированное устройство с помощью [расширения Интернета вещей](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot?view=azure-cli-latest) для Azure Cloud Shell.
 
-1. Добавьте расширение CLI Центра Интернета вещей и создайте удостоверение устройства. Замените переменную `{YourIoTHubName}` именем своего Центра Интернета вещей:
+1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы добавить расширение CLI Центра Интернета вещей и создать удостоверение устройства. 
+
+   **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
+
+   **MyCDevice** — это имя, присвоенное зарегистрированному устройству. Используйте имя MyCDevice, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az extension add --name azure-cli-iot-ext
-    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyCDevice
+    az iot hub device-identity create --hub-name YourIoTHubName --device-id MyCDevice
     ```
 
-    Если вы выбрали другое имя для устройства, обновите имя устройства в примерах приложений перед их запуском.
+2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства.
 
-2. Выполните следующую команду, чтобы получить _строку подключения устройства_ для зарегистрированного устройства:
+   **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyCDevice --output table
+    az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyCDevice --output table
     ```
 
-    Запишите строку подключения устройства, которая выглядит как `Hostname=...=`. Это значение понадобится позже в рамках этого краткого руководства.
+    Запишите строку подключения устройства, которая выглядит так:
 
+   `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyNodeDevice;SharedAccessKey={YourSharedAccessKey}`
+
+    Это значение понадобится позже в рамках этого краткого руководства.
 
 ## <a name="send-simulated-telemetry"></a>Отправка имитированной телеметрии
 
@@ -156,19 +163,19 @@ ms.locfileid: "45636147"
     ```
     Замените значение константы `connectionString` записанной ранее строкой подключения к устройству. Затем сохраните изменения, внесенные в файл **iothub_convenience_sample.c**.
 
-3. В окне терминала перейдите в каталог проекта *iothub_convenience_sample* в каталоге CMake, созданном в пакете SDK Интернета вещей Azure для C.
+3. В окне терминала на локальном компьютере перейдите в каталог проекта *iothub_convenience_sample* в каталоге CMake, созданном в пакете SDK Интернета вещей Azure для C.
 
     ```
     cd /azure-iot-sdk-c/cmake/iothub_client/samples/iothub_convenience_sample
     ```
 
-4. Запустите CMake, выполнив приведенную команду в командной строке, чтобы выполнить сборку примера с обновленным значением `connectionString`.
+4. Запустите CMake в окне терминала на локальном компьютере, чтобы выполнить сборку примера с обновленным значением `connectionString`:
 
     ```cmd/sh
     cmake --build . --target iothub_convenience_sample --config Debug
     ```
 
-5. В командной строке выполните приведенную ниже команду, чтобы запустить приложение имитированного устройства.
+5. Запустите приложение имитированного устройства, выполнив в окне терминала на локальном компьютере следующие команды:
 
     ```cmd/sh
     Debug\iothub_convenience_sample.exe
@@ -181,12 +188,14 @@ ms.locfileid: "45636147"
 ## <a name="read-the-telemetry-from-your-hub"></a>Чтение данных телеметрии из концентратора
 
 
-В этом разделе вы используете Azure CLI с [расширением Интернета вещей](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot?view=azure-cli-latest) для мониторинга сообщений, отправляемых имитированным устройством.
+В этом разделе описано, как использовать Azure Cloud Shell с [расширением Интернета вещей](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot?view=azure-cli-latest) для мониторинга сообщений, отправляемых имитированным устройством.
 
-1. С помощью Azure CLI выполните следующую команду для установления подключения и чтения сообщений из центра Интернета вещей.
+1. С помощью Azure Cloud Shell выполните следующую команду для установки подключения к центру Интернета вещей и чтения поступающих из него сообщений:
+
+   **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub monitor-events --hub-name {YourIoTHubName} --output table
+    az iot hub monitor-events --hub-name YourIoTHubName --output table
     ```
 
     ![Чтение сообщений устройства с помощью Azure CLI](media/quickstart-send-telemetry-c/read-device-to-cloud-messages-app.png)
@@ -199,7 +208,7 @@ ms.locfileid: "45636147"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы настроили центр Интернета вещей, зарегистрировали устройство, отправили имитированные данные телеметрии в центр с помощью приложения C, а также считали данные телеметрии из центра, используя Azure CLI.
+При работе с этим кратким руководством вы настроили центр Интернета вещей, зарегистрировали устройство, отправили имитированные данные телеметрии в центр с помощью приложения C, а также считали данные телеметрии из центра, используя Azure Cloud Shell.
 
 Чтобы узнать больше о разработке с помощью пакета SDK Центра Интернета вещей Azure для C, перейдите к следующему практическому руководству:
 

@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 10/01/2018
 ms.author: glenga
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: bcaec2f49d58edfec6c41f35cb22a57289e12c8a
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: fd2d19119c5be91942d9587a073be30d59c8fd6c
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48858950"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49113773"
 ---
 # <a name="create-a-function-triggered-by-azure-queue-storage"></a>Создание функции, активируемой хранилищем очередей Azure
 
@@ -43,17 +43,17 @@ ms.locfileid: "48858950"
 
 ## <a name="create-a-queue-triggered-function"></a>Создание функции, активируемой очередью
 
-1. Разверните приложение-функцию и нажмите кнопку **+** рядом с элементом **Функции**. Если это первая функция в приложении-функции, последовательно выберите **На портале** и **Продолжить**. В противном случае перейдите к шагу 3.
+1. Разверните приложение-функцию и нажмите кнопку **+** рядом с элементом **Функции**. Если это первая функция в приложении-функции, последовательно выберите **На портале** и **Продолжить**. Если нет, перейдите к шагу 3.
 
    ![Страница быстрого начала работы с функциями на портале Azure](./media/functions-create-storage-queue-triggered-function/function-app-quickstart-choose-portal.png)
 
-1. Выберите **More templates** (Дополнительные шаблоны), а затем — **Finish and view templates** (Закончить и просмотреть шаблоны).
+1. Последовательно выберите **Дополнительные шаблоны** и **Finish and view templates** (Закончить и просмотреть шаблоны).
 
     ![Быстрый запуск функций: просмотр дополнительных шаблонов](./media/functions-create-storage-queue-triggered-function/add-first-function.png)
 
 1. В поле поиска введите `queue` и выберите шаблон **Триггер очереди**.
 
-1. Если появится соответствующий запрос, щелкните **Установить**, чтобы установить в приложение-функцию расширение Службы хранилища Azure и другие необходимые зависимости. После завершения установки щелкните **Продолжить**.
+1. Если появится соответствующий запрос, щелкните **Установить**, чтобы установить в приложение-функцию расширение Службы хранилища Azure и другие необходимые зависимости. По завершении установки щелкните **Продолжить**.
 
     ![Установка расширений привязки](./media/functions-create-storage-queue-triggered-function/functions-create-queue-storage-trigger-portal.png)
 

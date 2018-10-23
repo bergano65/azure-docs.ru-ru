@@ -11,15 +11,15 @@ ms.workload: infrastructure
 ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/20/2018
+ms.date: 10/12/2018
 ms.author: tomfitz
 ms.custom: mvc
-ms.openlocfilehash: a785a18ac4aec3006397b6d681c476f8acf982a7
-ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
+ms.openlocfilehash: 6377a54cc862bb5f62726c3ce91a41cc6eb0763d
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39205679"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49311394"
 ---
 # <a name="tutorial-learn-about-windows-virtual-machine-governance-with-azure-powershell"></a>Руководство по управлению виртуальными машинами Windows с помощью Azure PowerShell
 
@@ -55,24 +55,19 @@ New-AzureRmResourceGroup -Name myResourceGroup -Location EastUS
 * [Участник сети](../../role-based-access-control/built-in-roles.md#network-contributor)
 * [Участник учетной записи хранения](../../role-based-access-control/built-in-roles.md#storage-account-contributor)
 
-Вместо назначения ролей для отдельных пользователей зачастую бывает проще [создать группу Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md) для пользователей, которым необходимо выполнять подобные действия. А затем назначить этой группе соответствующую роль. Чтобы упростить работу, создайте группу Azure Active Directory без членов. Вы по-прежнему можете назначить группе роль для области. 
+Чтобы не назначать роли для отдельных пользователей, зачастую бывает проще создать группу Azure Active Directory для пользователей, которым нужно выполнять подобные действия. А затем назначить этой группе соответствующую роль. В этой статье описано, как использовать существующую группу, чтобы управлять виртуальной машиной, или портал, чтобы [создать группу Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
-В следующем примере создается группа Azure Active Directory с именем *VMDemoContributors* и почтовым псевдонимом *vmDemoGroup*. Почтовый псевдоним служит в качестве псевдонима для группы.
-
-```azurepowershell-interactive
-$adgroup = New-AzureADGroup -DisplayName VMDemoContributors `
-  -MailNickName vmDemoGroup `
-  -MailEnabled $false `
-  -SecurityEnabled $true
-```
-
-После возврата командной строки распространение группы по Azure Active Directory занимает некоторое время. Подождав 20 или 30 секунд, воспользуйтесь командой [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment), чтобы назначить новую группу Azure Active Directory роли участника виртуальных машин для группы ресурсов.  Если выполнить следующую команду до ее распространения, будет выдана ошибка с сообщением о том, что **субъект<guid> не существует в каталоге**. Попробуйте выполнить команду снова.
+Создав новую группу или найдя существующую, воспользуйтесь командой [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment), чтобы назначить группе Azure Active Directory роль участника виртуальных машин для группы ресурсов.  
 
 ```azurepowershell-interactive
-New-AzureRmRoleAssignment -ObjectId $adgroup.ObjectId `
+$adgroup = Get-AzureRmADGroup -DisplayName <your-group-name>
+
+New-AzureRmRoleAssignment -ObjectId $adgroup.id `
   -ResourceGroupName myResourceGroup `
   -RoleDefinitionName "Virtual Machine Contributor"
 ```
+
+Если возникнет ошибка с сообщением о том, что **участник <guid> не существует в каталоге**, это значит, что новая группа еще не используется в Azure Active Directory. Попробуйте выполнить команду снова.
 
 Как правило, нужно повторить эту процедуру для *участника сети* и *участника учетной записи хранения*, чтобы назначить пользователей для управления развернутыми ресурсами. В текущей статье эти действия можно пропустить.
 
@@ -90,7 +85,7 @@ New-AzureRmRoleAssignment -ObjectId $adgroup.ObjectId `
 * ограничивают номера SKU для виртуальных машин;
 * выполняют аудит виртуальных машин, не использующих управляемые диски.
 
-В приведенном ниже примере вы получите три определения политик на основе отображаемого имени. Назначьте эти определения группе ресурсов с помощью команды [New-AzureRMPolicyAssignment](/powershell/module/azurerm.resources/new-azurermpolicyassignment). Для некоторых политик нужно указать допустимые значения, задав значения параметров.
+В следующем примере вы получите три определения политик на основе отображаемого имени. Назначьте эти определения группе ресурсов с помощью команды [New-AzureRMPolicyAssignment](/powershell/module/azurerm.resources/new-azurermpolicyassignment). Для некоторых политик нужно указать допустимые значения, задав значения параметров.
 
 ```azurepowershell-interactive
 # Values to use for parameters

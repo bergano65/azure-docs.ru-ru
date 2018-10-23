@@ -10,18 +10,16 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/15/2018
 ms.author: nolachar
-ms.openlocfilehash: 328f5996a9b830ea6c2ff4b4a535d5311f39e08e
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 35903b0da707e5167781c3a7595c3be938a4fc07
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46365262"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49321353"
 ---
 # <a name="quickstart-find-alternate-translations-and-usage-with-c35"></a>Краткое руководство по поиску вариантов перевода с использованием C&#35;
 
 Из этого краткого руководства вы узнаете, как с помощью API перевода текстов найти варианты перевода определенного термина и примеры их использования.
-
-Исходный код этого примера доступен на [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-C-Sharp).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,6 +28,9 @@ ms.locfileid: "46365262"
 Чтобы использовать API перевода текстов, вам также потребуется ключ подписки. Сведения об этом см. в статье [Регистрация для использования API перевода текстов](translator-text-how-to-signup.md).
 
 ## <a name="dictionary-lookup-request"></a>Запрос на поиск в словаре
+
+> [!TIP]
+> Получите последнюю версию кода на сайте [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-C-Sharp).
 
 Выполнив следующие действия, можно найти варианты перевода слова с помощью метода [поиска в словаре](./reference/v3-0-dictionary-lookup.md).
 

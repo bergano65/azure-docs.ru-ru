@@ -11,19 +11,23 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 04/17/2018
+ms.date: 10/24/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 3125db03dc13f70524fd094736f50b563ef712a4
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 6a3bb5511828d9f8ea7168ffa4748b141484299f
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44379933"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49376436"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство. Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
 [Служба приложений](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости в Azure. Она также предоставляет [управляемое удостоверение](app-service-managed-service-identity.md) для вашего приложения, которое является готовым решением для защиты доступа к [Базе данных SQL Azure](/azure/sql-database/) и другим службам Azure. Управляемые удостоверения в службе приложений делают ваше приложение более безопасным, устраняя из него секреты, такие как учетные данные в строках подключения. В этом руководстве вы добавите управляемое удостоверение в пример веб-приложения ASP.NET, которое вы создали при работе с руководством [по созданию приложения ASP.NET в Azure с подключением к Базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md). Когда вы закончите, ваш пример приложения будет безопасно подключаться к базе данных SQL без необходимости использования имен пользователей и паролей.
+
+> [!NOTE]
+> Этот сценарий сейчас поддерживается только в .NET Framework версии 4.6 и выше, но не в [.NET Core 2.1](https://www.microsoft.com/net/learn/get-started/windows). [.NET Core 2.2](https://www.microsoft.com/net/download/dotnet-core/2.2) поддерживает этот сценарий, но без включения в стандартные образы в Службе приложений. 
+>
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -95,6 +99,7 @@ az webapp config connection-string set --resource-group myResourceGroup --name <
 
 ```xml
 <package id="Microsoft.Azure.Services.AppAuthentication" version="1.1.0-preview" targetFramework="net461" />
+<package id="Microsoft.IdentityModel.Clients.ActiveDirectory" version="3.14.2" targetFramework="net461" />
 ```
 
 Откройте _Models\MyDatabaseContext.cs_ и добавьте следующие инструкции `using` в начало файла:
@@ -122,7 +127,7 @@ public MyDatabaseContext(SqlConnection conn) : base(conn, true)
 Этот конструктор настраивает собственный объект SqlConnection для использования маркера доступа базы данных Azure SQL из службы приложений. С помощью маркера доступа приложение службы приложений проходит проверку подлинности в Базе данных SQL Azure с использованием управляемого удостоверения. Дополнительные сведения см. в разделе [Получение маркеров для ресурсов Azure](app-service-managed-service-identity.md#obtaining-tokens-for-azure-resources). Оператор `if` позволяет продолжить тестирование приложения локально с помощью LocalDB.
 
 > [!NOTE]
-> `SqlConnection.AccessToken` в настоящее время поддерживается только в .NET Framework 4.6 и выше, но не в [.NET Core](https://www.microsoft.com/net/learn/get-started/windows).
+> `SqlConnection.AccessToken` сейчас поддерживается только в .NET Framework версии 4.6 и выше и [.NET Core 2.2](https://www.microsoft.com/net/download/dotnet-core/2.2), но не в [.NET Core2.1](https://www.microsoft.com/net/learn/get-started/windows).
 >
 
 Чтобы использовать этот новый конструктор, откройте `Controllers\TodosController.cs` и найдите строку `private MyDatabaseContext db = new MyDatabaseContext();`. В имеющемся коде используется контроллер по умолчанию `MyDatabaseContext` для создания базы данных с использованием стандартной строки подключения, в которой есть имя пользователя и пароль в виде обычного текста до [того, как вы его измените](#modify-connection-string).
@@ -130,7 +135,7 @@ public MyDatabaseContext(SqlConnection conn) : base(conn, true)
 Замените всю эту строку следующим кодом.
 
 ```csharp
-private MyDatabaseContext db = new MyDatabaseContext(new SqlConnection());
+private MyDatabaseContext db = new MyDatabaseContext(new System.Data.SqlClient.SqlConnection());
 ```
 
 ### <a name="publish-your-changes"></a>Публикация изменений
@@ -172,32 +177,23 @@ az ad group member list -g $groupid
 
 ### <a name="grant-permissions-to-azure-active-directory-group"></a>Предоставление разрешений группе Azure Active Directory
 
-В Cloud Shell войдите в базу данных SQL с помощью команды SQLCMD. Замените _\<servername>_ на имя сервера базы данных SQL, а _\<AADusername>_ и _\<AADpassword>_ учетными данными пользователя Azure AD.
-
-```azurecli-interactive
-sqlcmd -S <server_name>.database.windows.net -U <AADuser_name> -P "<AADpassword>" -G -l 30
-```
-
-В командной строке SQL запустите следующие команды, которые добавляют группу Azure Active Directory, созданную ранее в качестве пользователя.
-
-```sql
-CREATE USER [myAzureSQLDBAccessGroup] FROM EXTERNAL PROVIDER;
-GO
-```
-
-Введите `EXIT`, чтобы вернуться в командную строку Cloud Shell. Затем запустите снова SQLCMD, но укажите имя базы данных вместо _\<dbname>_.
+В Cloud Shell войдите в базу данных SQL с помощью команды SQLCMD. Замените _\<server\_name>_ именем сервера Базы данных SQL Azure, _\<db\_name>_ именем базы данных, которое использует приложение, а _\<AADuser\_name>_ и _\<AADpassword>_ — учетными данными пользователя Azure AD.
 
 ```azurecli-interactive
 sqlcmd -S <server_name>.database.windows.net -d <db_name> -U <AADuser_name> -P "<AADpassword>" -G -l 30
 ```
 
-В командной строке SQL нужной базы данных выполните следующие команды, чтобы предоставить разрешения на чтение и запись группе Azure Active Directory.
+В командной строке SQL нужной базы данных выполните следующие команды, чтобы добавить созданную ранее группу Azure Active Directory и предоставить приложению требуемые разрешения. Например, 
 
 ```sql
+CREATE USER [myAzureSQLDBAccessGroup] FROM EXTERNAL PROVIDER;
 ALTER ROLE db_datareader ADD MEMBER [myAzureSQLDBAccessGroup];
 ALTER ROLE db_datawriter ADD MEMBER [myAzureSQLDBAccessGroup];
+ALTER ROLE db_ddladmin ADD MEMBER [myAzureSQLDBAccessGroup];
 GO
 ```
+
+Введите `EXIT`, чтобы вернуться в командную строку Cloud Shell. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

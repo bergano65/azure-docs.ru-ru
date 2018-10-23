@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/18/2018
 ms.author: zachal
 ms.custom: mvc
-ms.openlocfilehash: 4d504e0488d35c5c606468faa35bece1318503b4
-ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
+ms.openlocfilehash: bc1b52b97897cb1c635fb16e6ef9692de1ca8a44
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46498527"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49167262"
 ---
 # <a name="manage-windows-updates-by-using-azure-automation"></a>Управление обновлениями Windows при помощи службы автоматизации Azure
 
@@ -116,7 +116,8 @@ UpdateRunProgress
 
 #### <a name="runbook-alert"></a>Оповещение на основе модуля runbook
 
-В случае неудачных развертываний нужно настроить отправку оповещения об ошибке работы модуля. На портале Azure откройте **Монитор**, а затем выберите **Создать оповещение**.
+В случае неудачных развертываний нужно настроить отправку оповещения об ошибке работы модуля.
+На портале Azure перейдите к разделу **Монитор** и затем выберите **Создать оповещение**.
 
 В разделе **1. Определение условия оповещения** щелкните **Выбор цели**. В разделе **Фильтр по типу ресурсов** выберите **Учетные записи службы автоматизации**. Выберите вашу учетную запись службы автоматизации и нажмите кнопку **Готово**.
 

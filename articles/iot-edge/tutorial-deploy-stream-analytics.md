@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: de856aed32b596209f7af2861b76ed6648d0caca
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: 2d22e995f489a6379a2f134b461b8bb17160919e
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49067828"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49113841"
 ---
 # <a name="tutorial-deploy-azure-stream-analytics-as-an-iot-edge-module-preview"></a>Руководство по развертыванию Azure Stream Analytics в качестве модуля IoT Edge (предварительная версия)
 
@@ -50,7 +50,7 @@ Azure Stream Analytics предоставляет расширенный син�
 
 Облачные ресурсы.
 
-* [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) (цен. категории "Бесплатный") в Azure. 
+* [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) ценовой категории "Бесплатный" или "Стандартный" в Azure. 
 
 
 ## <a name="create-an-azure-stream-analytics-job"></a>Создание задания Azure Stream Analytics

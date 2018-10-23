@@ -4,6 +4,7 @@ items:
 - name: Обзор
   items:
   - name: Что такое служба машинного обучения Azure
+    displayName: AML, services
     href: overview-what-is-azure-ml.md
   - name: Что происходит с Workbench
     href: overview-what-happened-to-workbench.md
@@ -25,10 +26,12 @@ items:
 - name: Примеры
   items:
   - name: Записные книжки Jupyter (GitHub)
+    displayName: example, examples
     href: http://aka.ms/aml-notebooks
 - name: Основные понятия
   items:
   - name: Как работает служба
+    displayName: architecture
     href: concept-azure-machine-learning-architecture.md
   - name: Управление моделями
     href: concept-model-management-and-deployment.md
@@ -43,6 +46,7 @@ items:
   - name: 'Настройка среды разработки '
     items:
     - name: Выбор среды
+      displayName: local, remote
       href: how-to-choose-a-dev-environment.md
     - name: Настройка среды
       href: how-to-configure-environment.md
@@ -53,6 +57,7 @@ items:
       - name: Обучение и развертывание
         href: how-to-vscode-train-deploy.md
   - name: Подготовка данных
+    displayName: data prep, etl, elt
     href: how-to-data-prep.md
     items:
     - name: Загрузка данных
@@ -142,6 +147,7 @@ items:
   - name: Нерекомендуемая документация
     items:
     - name: Как осуществить перенос
+      displayName: Workbench, upgrade, update, transfer
       href: how-to-migrate.md
     - name: Экспорт или удаление данных учетной записи (не рекомендуется)
       href: ../desktop-workbench/export-delete-experimentation-model-management-data-dsr.md
@@ -238,7 +244,7 @@ items:
         href: ../desktop-workbench/how-to-use-model-data-collection.md
       - name: Руководство по устранению неполадок с развертыванием
         href: ../desktop-workbench/how-to-deploy-troubleshooting-guide.md
-    - name: Инструкции для реальных решений
+    - name: Старые примеры
       items:
       - name: Анализ коллекции документов
         href: ../desktop-workbench/scenario-document-collection-analysis.md
@@ -266,7 +272,7 @@ items:
         href: ../desktop-workbench/scenario-image-classification-using-cntk.md
       - name: Глубокое обучение по прогнозному обслуживанию
         href: ../desktop-workbench/scenario-deep-learning-for-predictive-maintenance.md
-    - name: Справочные материалы
+    - name: Старая ссылка
       items:
       - name: Расширения Python для подготовки данных
         href: ../desktop-workbench/data-prep-python-extensibility-overview.md
@@ -304,7 +310,7 @@ items:
         href: ../desktop-workbench/model-management-cli-reference.md
       - name: API сбора данных модели
         href: ../desktop-workbench/model-data-collection-api-reference.md
-    - name: Основные понятия
+    - name: Старые ключевые понятия
       href: ../desktop-workbench/overview-general-concepts.md
     - name: Пакеты домена
       href: ../desktop-workbench/reference-python-package-overview.md
@@ -341,9 +347,9 @@ items:
       href: ../desktop-workbench/frequently-asked-questions.md
     - name: Старые проблемы
       href: ../desktop-workbench/known-issues-and-troubleshooting-guide.md
-ms.openlocfilehash: 2e5e1d3c925a6b946e340820fc7d259251c0e9b7
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: 56a72b437397c65777c5fd0955c5257d60f3a6a4
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49457071"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49649250"

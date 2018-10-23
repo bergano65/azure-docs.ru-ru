@@ -2,18 +2,18 @@
 title: Руководство. Визуализация данных из обозревателя данных Azure в Power BI
 description: В этом руководстве вы узнаете, как подключиться к обозревателю данных Azure с помощью Power BI и визуализировать ваши данные.
 services: data-explorer
-author: mgblythe
-ms.author: mblythe
+author: orspod
+ms.author: v-orspod
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: tutorial
 ms.date: 09/24/2018
-ms.openlocfilehash: 938d8d6e291ca432ef3f642a0aaec74d5dcf5bf5
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: fc2d96c4dc8184ba26001fd77732ce7c45253d5a
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46977151"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49393718"
 ---
 # <a name="tutorial-visualize-data-from-azure-data-explorer-in-power-bi"></a>Руководство. Визуализация данных из обозревателя данных Azure в Power BI
 
@@ -108,7 +108,7 @@ ms.locfileid: "46977151"
 
     ![Фильтрация столбцов](media/visualize-power-bi/filter-column.png)
 
-1. Щелкните стрелку рядом со столбцом **BeginLat**, снимите флажок **null** и нажмите **OK**.
+1. Щелкните правой кнопкой мыши заголовок столбца **StormSummary** и выберите пункт **Удалить**.
 
     ![Удаление столбца](media/visualize-power-bi/remove-column.png)
 

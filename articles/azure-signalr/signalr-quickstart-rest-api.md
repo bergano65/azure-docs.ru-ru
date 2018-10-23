@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ASP.NET
 ms.workload: tbd
 ms.date: 06/13/2018
 ms.author: zhshang
-ms.openlocfilehash: 93c1198ecfba6db809228ed6dcd99c705f53926c
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 40d5a02f83188330facc82701abdfb950585781c
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46972765"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49310401"
 ---
 # <a name="quickstart-broadcast-real-time-messages-from-console-app"></a>Краткое руководство. Широковещательные сообщения в режиме реального времени из консольного приложения
 
@@ -48,7 +48,7 @@ ms.locfileid: "46972765"
 
 Пока служба развертывается, давайте перейдем к подготовке кода. Клонируйте [пример приложения из GitHub](https://github.com/aspnet/AzureSignalR-samples.git), задайте строку подключения службы SignalR и запустите приложение в локальной среде.
 
-1. Откройте окно терминала git. Перейдите в папку, в которую вы хотите клонировать пример проекта.
+1. Откройте окно терминала Git. Перейдите в папку, в которую вы хотите клонировать пример проекта.
 
 1. Выполните команду ниже, чтобы клонировать репозиторий с примером. Эта команда создает копию примера приложения на локальном компьютере.
 
@@ -120,5 +120,51 @@ broadcast
 
 Можно запустить несколько клиентов с разными именами.
 
+## <a name="usage"> </a> Интеграция со сторонними службами
+Служба Azure SignalR позволяет интегрировать сторонние службы с системой.
+### <a name="usage"> </a> Определение технических спецификаций
+В следующей таблице показаны все версии поддерживаемых REST API. Также можно найти файл с определением для каждой версии.
+Version (версия) | Состояние API | Порт | Стандартный
+--- | --- | --- | ---
+`1.0-preview` | Доступна | 5002 | [Swagger] (https://github.com/Azure/azure-signalr/tree/dev/docs/swagger/v1-preview.json)
+`1.0` | Доступна | Стандартная | [Swagger] (https://github.com/Azure/azure-signalr/tree/dev/docs/swagger/v1.json)
+В следующе таблице показан список доступных API для каждой версии.
+API | `1.0-preview` | `1.0`
+--- | --- | ---
+[Широковещательная передача для всех клиентов] (# broadcast) | : heavy_check_mark: | : Heavy_check_mark:
+[Широковещательная передача для группы] (# broadcast-group) | : heavy_check_mark: | : Heavy_check_mark:
+Широковещательная передача для некоторых групп | : heavy_check_mark: (не рекомендуется) | `N / A`
+[Отправка определенным пользователям] (# send-user) | : heavy_check_mark: | : Heavy_check_mark:
+Отправка некоторым пользователям | : heavy_check_mark: (не рекомендуется) | `N / A`
+[Добавление пользователя в группу] (# add-user-to-group) | `N / A` | : Heavy_check_mark:
+[Удаление пользователя из группы] (# remove-user-from-group) | `N / A` | : Heavy_check_mark:
+<a name="broadcast"> </a>
+### <a name="broadcast-to-everyone"></a>Широковещательная передача для всех
+Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса) | Тело запроса
+--- | --- | --- | ---
+`1.0-preview` | `POST` | `https: // <instance-name> .service.signalr.net: 5002 / api / v1-preview / hub / <hub-name>` | `{" target ":" <method-name> "," arguments ": [...]}`
+`1.0` | `POST` | `https: // <instance-name> .service.signalr.net / api / v1 / hubs / <hub-name>` | См. выше
+<a name="broadcast-group"> </a>
+### <a name="broadcast-to-a-group"></a>Широковещательная передача для группы
+Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса) | Тело запроса
+--- | --- | --- | ---
+`1.0-preview` | `POST` | `https: // <instance-name> .service.signalr.net: 5002 / api / v1-preview / hub / <hub-name> / group / <group-name>` | `{" target ":" <method-name> "," arguments ": [...]}`
+`1.0` | `POST` | `https: // <instance-name> .service.signalr.net / api / v1 / hubs / <hub-name> / groups / <group-name>` | То же, что и выше
+<a name="send-user"> </a>
+### <a name="sending-to-specific-users"></a>Отправка для определенных пользователей
+Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса) | Тело запроса
+--- | --- | --- | ---
+`1.0-preview` | `POST` | `https: // <instance-name> .service.signalr.net: 5002 / api / v1-preview / hub / <hub-name> / user / <user-id>` | `{" target ":" <method-name> "," arguments ": [...]}`
+`1.0` | `POST` | `https: // <instance-name> .service.signalr.net / api / v1 / hubs / <hub-name> / users / <user-id>` | То же, что и выше
+<a name="add-user-to-group"> </a>
+### <a name="adding-a-user-to-a-group"></a>Добавление пользователя в группу
+Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса)
+--- | --- | ---
+`1.0` | `PUT` | `Https: // <instance-name> .service.signalr.net / api / v1 / hubs / <hub-name> / groups / <group-name> / users / <userid>`
+<a name="remove-user-from-group"> </a>
+### <a name="removing-a-user-from-a-group"></a>Удаление пользователя из группы
+Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса)
+--- | --- | ---
+`1.0` | `DELETE` | `Https: // <instance-name> .service.signalr.net / api / v1 / hubs / <hub-name> / groups / <group-name> / users / <userid>`
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]

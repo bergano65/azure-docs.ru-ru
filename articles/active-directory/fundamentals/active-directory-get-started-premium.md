@@ -12,12 +12,12 @@ ms.date: 09/07/2017
 ms.author: lizross
 ms.reviewer: piotrci
 ms.custom: it-pro
-ms.openlocfilehash: bce7a060908e8043390fdce729161cad48a644be
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: a0a992e62e7b1e375ff2591aa82bdc7733e9d26f
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45731076"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49394703"
 ---
 # <a name="how-to-sign-up-for-azure-active-directory-premium"></a>Инструкция по регистрации для работы с Azure Active Directory Premium
 Вы можете приобрести выпуск Azure Active Directory Premium и связать его со своей подпиской Azure. Если вам нужно создать новую подписку Azure, нужно также активировать план лицензирования и доступ к службе Azure AD.
@@ -27,11 +27,11 @@ ms.locfileid: "45731076"
 
 Перед регистрацией для Active Directory Premium 1 или Premium 2 необходимо сначала определить, какие из существующих подписок или планов планируете использовать:
 
-    - существующую подписку Azure или Office 365;
+- существующую подписку Azure или Office 365;
 
-    - план лицензирования Enterprise Mobility + Security;
+- план лицензирования Enterprise Mobility + Security;
 
-    - план корпоративного лицензирования Microsoft.
+- план корпоративного лицензирования Microsoft.
 
 Регистрация с использованием подписки Azure с помощью ранее приобретенной и активированной лицензии Azure AD автоматически активирует лицензии в том же каталоге. Если это не так, вам по-прежнему необходимо активировать план лицензирования и доступ к Azure AD. Дополнительные сведения об активации плана лицензирования см. в разделе [Активация плана лицензирования](#activate-your-new-license-plan). Дополнительные сведения об активации доступа к Azure AD см. в разделе [Активация доступа к Azure Active Directory](#activate-your-azure-ad-access). 
 
@@ -43,20 +43,20 @@ Enterprise Mobility + Security – набор, состоящий из Azure AD 
 
 Дополнительные сведения о EMS см. на веб-сайте [Enterprise Mobility + Security](https://www.microsoft.com/cloud-platform/enterprise-mobility-security).
 
-    - воспользуйтесь бесплатной подпиской на [пробную версию Enterprise Mobility + Security E5](https://signup.microsoft.com/Signup?OfferId=87dd2714-d452-48a0-a809-d2f58c4f68b7&ali=1);
+- воспользуйтесь бесплатной подпиской на [пробную версию Enterprise Mobility + Security E5](https://signup.microsoft.com/Signup?OfferId=87dd2714-d452-48a0-a809-d2f58c4f68b7&ali=1);
 
-    - приобретите [лицензии Enterprise Mobility + Security E5](https://signup.microsoft.com/Signup?OfferId=e6de2192-536a-4dc3-afdc-9e2602b6c790&ali=1);
+- приобретите [лицензии Enterprise Mobility + Security E5](https://signup.microsoft.com/Signup?OfferId=e6de2192-536a-4dc3-afdc-9e2602b6c790&ali=1);
 
-    - приобретите [лицензии Enterprise Mobility + Security E3](https://signup.microsoft.com/Signup?OfferId=4BBA281F-95E8-4136-8B0F-037D6062F54C&ali=1).
+- приобретите [лицензии Enterprise Mobility + Security E3](https://signup.microsoft.com/Signup?OfferId=4BBA281F-95E8-4136-8B0F-037D6062F54C&ali=1).
 
 ## <a name="sign-up-using-your-microsoft-volume-licensing-plan"></a>Регистрация с помощью плана корпоративного лицензирования Майкрософт
 С использованием плана корпоративного лицензирования Майкрософт вы можете зарегистрироваться для Azure Active Directory Premium с помощью одного из этих двух приложений в зависимости от количества лицензий, которые вы хотите получить:
 
-    - **От 250 и больше лицензий.** [Соглашение Microsoft Enterprise (EA)](https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx)
+- **От 250 и больше лицензий.** [Соглашение Microsoft Enterprise (EA)](https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx)
 
-    - **От 5 до 250 лицензий.** [Открытая ** корпоративная лицензия](https://www.microsoft.com/en-us/licensing/licensing-programs/open-license.aspx)
+- **От 5 до 250 лицензий.** [Открытая корпоративная лицензия](https://www.microsoft.com/en-us/licensing/licensing-programs/open-license.aspx)
 
-    Дополнительные сведения о вариантах приобретения корпоративных лицензирований см. на странице [How to purchase through Volume Licensing](https://www.microsoft.com/en-us/licensing/how-to-buy/how-to-buy.aspx) (Как приобрести корпоративную лицензию).
+Дополнительные сведения о вариантах приобретения корпоративных лицензирований см. на странице [How to purchase through Volume Licensing](https://www.microsoft.com/en-us/licensing/how-to-buy/how-to-buy.aspx) (Как приобрести корпоративную лицензию).
 
 ## <a name="activate-your-new-license-plan"></a>Активировать новый план лицензирования
 Если вы выполнили вход с помощью нового плана лицензирования Azure AD, его необходимо активировать для вашей организации с помощью подтверждения по электронной почте, отправленного после покупки.

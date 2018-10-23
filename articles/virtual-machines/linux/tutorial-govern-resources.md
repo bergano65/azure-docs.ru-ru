@@ -11,15 +11,15 @@ ms.workload: infrastructure
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/20/2018
+ms.date: 10/12/2018
 ms.author: tomfitz
 ms.custom: mvc
-ms.openlocfilehash: 2d19488d9b4d6ae6c71610788345b45c38e51cfa
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 715a8e5bab9e5d16b8c0e54298101df856d51a9a
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46968821"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49309865"
 ---
 # <a name="tutorial-learn-about-linux-virtual-machine-governance-with-azure-cli"></a>Руководство. Управление виртуальными машинами Linux с помощью Azure CLI
 
@@ -27,7 +27,7 @@ ms.locfileid: "46968821"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Если вы решили установить и использовать Azure CLI локально, для работы с этим руководством понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 ## <a name="understand-scope"></a>Общие сведения об области
 
@@ -55,19 +55,17 @@ az group create --name myResourceGroup --location "East US"
 * [Участник сети](../../role-based-access-control/built-in-roles.md#network-contributor)
 * [Участник учетной записи хранения](../../role-based-access-control/built-in-roles.md#storage-account-contributor)
 
-Вместо назначения ролей для отдельных пользователей зачастую бывает проще [создать группу Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md) для пользователей, которым необходимо выполнять подобные действия. А затем назначить этой группе соответствующую роль. Чтобы упростить работу, создайте группу Azure Active Directory без членов. Вы по-прежнему можете назначить группе роль для области. 
+Чтобы не назначать роли для отдельных пользователей, зачастую бывает проще создать группу Azure Active Directory для пользователей, которым нужно выполнять подобные действия. А затем назначить этой группе соответствующую роль. В этой статье описано, как использовать существующую группу, чтобы управлять виртуальной машиной, или портал, чтобы [создать группу Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
-В следующем примере создается группа Azure Active Directory с именем *VMDemoContributors* и почтовым псевдонимом *vmDemoGroup*. Почтовый псевдоним служит в качестве псевдонима для группы.
-
-```azurecli-interactive
-adgroupId=$(az ad group create --display-name VMDemoContributors --mail-nickname vmDemoGroup --query objectId --output tsv)
-```
-
-После возврата командной строки распространение группы по Azure Active Directory занимает некоторое время. Подождав 20 или 30 секунд, выполните команду [az role assignment create](/cli/azure/role/assignment#az_role_assignment_create), чтобы назначить новую группу Azure Active Directory роли участника виртуальной машины для группы ресурсов.  Если выполнить следующую команду до ее распространения, будет выдана ошибка с сообщением о том, что **субъект<guid> не существует в каталоге**. Попробуйте выполнить команду снова.
+Создав новую группу или найдя существующую, воспользуйтесь командой [az role assignment create](/cli/azure/role/assignment#az_role_assignment_create), чтобы назначить группе Azure Active Directory роль участника виртуальных машин для группы ресурсов.
 
 ```azurecli-interactive
+adgroupId=$(az ad group show --group <your-group-name> --query objectId --output tsv)
+
 az role assignment create --assignee-object-id $adgroupId --role "Virtual Machine Contributor" --resource-group myResourceGroup
 ```
+
+Если возникнет ошибка с сообщением о том, что **участник <guid> не существует в каталоге**, это значит, что новая группа еще не используется в Azure Active Directory. Попробуйте выполнить команду снова.
 
 Как правило, нужно повторить эту процедуру для *участника сети* и *участника учетной записи хранения*, чтобы назначить пользователей для управления развернутыми ресурсами. В текущей статье эти действия можно пропустить.
 
@@ -179,7 +177,7 @@ az group delete --name myResourceGroup
 
 [!INCLUDE [Resource Manager governance tags CLI](../../../includes/resource-manager-governance-tags-cli.md)]
 
-Чтобы применить теги к виртуальной машине, выполните команду [az resource tag](/cli/azure/resource#az_resource_tag). Имеющиеся теги для ресурса не сохраняются.
+Чтобы применить теги к виртуальной машине, выполните команду [az resource tag](/cli/azure/resource#az_resource_tag). Существующие теги для ресурса не сохраняются.
 
 ```azurecli-interactive
 az resource tag -n myVM \

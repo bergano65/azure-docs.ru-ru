@@ -13,24 +13,17 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 09/25/2018
+ms.date: 10/16/2018
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: 3641806870c3eab0b3a05f538015a72d9a0b34ef
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 66c9b8297254b41156131d795376857029424e97
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47221940"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49377921"
 ---
 # <a name="what-is-azure-media-services-v3"></a>Что такое Службы мультимедиа Azure версии 3?
-
-> [!div class="op_single_selector" title1="Select the version of Media Services that you are using:"]
-> * [Версия 2 — общедоступная](../previous/media-services-overview.md)
-> * [Версия 3 — предварительная](media-services-overview.md)
-
-> [!NOTE]
-> Последняя версия Служб мультимедиа Azure представлена в предварительной версии и может называться версией 3.
 
 Службы мультимедиа Azure — это облачная платформа, которая позволяет создавать решения для потоковой передачи видео широковещательного уровня. Она повышает доступность и уровень распространения, дает возможность анализировать содержимое и предоставляет многие другие функции. Службы мультимедиа позволяют создавать приложения для обработки данных мультимедиа высокого качества для крупных аудиторий на самых популярных современных мобильных устройствах и браузерах для всевозможных сфер деятельности (разработчик приложения, центр обработки вызовов, государственное учреждение или компания, специализирующаяся в сфере индустрии развлечений). 
 
@@ -126,13 +119,14 @@ private static async Task<ContentKeyPolicy> GetOrCreateContentKeyPolicyAsync(
 |Справочники по API|Пакеты SDK и инструменты|Примеры|
 |---|---|---|---|
 |[Справочник по REST](https://aka.ms/ams-v3-rest-ref)|[Пакет SDK для REST](https://aka.ms/ams-v3-rest-sdk)|[Примеры REST Postman](https://github.com/Azure-Samples/media-services-v3-rest-postman)<br/>[REST API на основе Azure Resource Manager](https://github.com/Azure-Samples/media-services-v3-arm-templates)|
-|[Справочник по Azure CLI](https://aka.ms/ams-v3-cli-ref)|[интерфейс командной строки Azure](https://aka.ms/ams-v3-cli)|[Примеры использования интерфейса командной строки Azure](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/media-services)||
+|[Справочник по Azure CLI](https://aka.ms/ams-v3-cli-ref)|[Интерфейс командной строки Azure](https://aka.ms/ams-v3-cli)|[Примеры использования интерфейса командной строки Azure](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/media-services)||
 |[Справочник по .NET](https://aka.ms/ams-v3-dotnet-ref)|[ПАКЕТ SDK .NET](https://aka.ms/ams-v3-dotnet-sdk)|[Примеры .NET](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials)||
 ||[Пакет SDK для .NET Core](https://aka.ms/ams-v3-dotnet-sdk) (выберите вкладку **.NET CLI**)|[Примеры .NET Core](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials)||
 |[Справочник по Java](https://aka.ms/ams-v3-java-ref)|[пакет SDK для Java](https://aka.ms/ams-v3-java-sdk)||
 |[Справочник по Node.js](https://aka.ms/ams-v3-nodejs-ref)|[Пакет SDK для Node.js](https://aka.ms/ams-v3-nodejs-sdk)|[Примеры для Node.js](https://github.com/Azure-Samples/media-services-v3-node-tutorials)||
 |[Справочник по Python](https://aka.ms/ams-v3-python-ref)|[Пакет SDK для Python](https://aka.ms/ams-v3-python-sdk)||
 |[Справочник по Go](https://aka.ms/ams-v3-go-ref)|[Пакет SDK для GO](https://aka.ms/ams-v3-go-sdk)||
+|Ruby|[Пакет SDK для Ruby](https://aka.ms/ams-v3-ruby-sdk)||
 
 ## <a name="next-steps"></a>Дополнительная информация
 

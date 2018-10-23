@@ -9,16 +9,16 @@ ms.custom: hdinsightactive,mvc
 ms.topic: overview
 ms.date: 05/07/2018
 ms.author: jasonh
-ms.openlocfilehash: 9e4cb497a2dc81b9503b03fd2db27ff2538d424a
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 7bc7c95c0d15e0c33f7f9a705fb47d27f9daacec
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43039688"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49378723"
 ---
 # <a name="what-is-apache-spark-in-azure-hdinsight"></a>Apache Spark в Azure HDInsight
 
-*Apache Spark* — это платформа параллельной обработки, которая поддерживает обработку в памяти, чтобы повысить производительность приложений для анализа больших данных. Apache Spark в Azure HDInsight — это реализация Apache Hadoop в облаке, предоставляемая корпорацией Майкрософт. HDInsight упрощает создание и настройку кластера Spark в Azure. Кластеры Spark в HDInsight совместимы со службой хранилища Azure и с Azure Data Lake Store. Поэтому эти кластеры можно использовать для обработки данных, хранящихся в Azure. Дополнительные сведения о компонентах и версиях см. в статье [Что представляют собой компоненты и версии Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md).
+*Apache Spark* — это платформа параллельной обработки, которая поддерживает обработку в памяти, чтобы повысить производительность приложений для анализа больших данных. Apache Spark в Azure HDInsight — это реализация Apache Spark в облаке, предоставляемая корпорацией Майкрософт. HDInsight упрощает создание и настройку кластера Spark в Azure. Кластеры Spark в HDInsight совместимы со службой хранилища Azure и с Azure Data Lake Store. Поэтому эти кластеры можно использовать для обработки данных, хранящихся в Azure. Дополнительные сведения о компонентах и версиях см. в статье [Что представляют собой компоненты и версии Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md).
 
 ![Spark: единая платформа](./media/apache-spark-overview/hdinsight-spark-overview.png)
 

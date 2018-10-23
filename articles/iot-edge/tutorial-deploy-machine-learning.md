@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 188e3c0e8b9a9d421b40e142e534aca2741fee56
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.openlocfilehash: 0af63c7beef0f5268ba078d517556fc64ac7bf87
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48248893"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49116359"
 ---
 # <a name="tutorial-deploy-azure-machine-learning-as-an-iot-edge-module-preview"></a>Руководство: развертывание службы "Машинное обучение Azure" в качестве модуля IoT Edge (предварительная версия)
 
@@ -45,7 +45,7 @@ ms.locfileid: "48248893"
 
 Облачные ресурсы.
 
-* [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) (цен. категории "Бесплатный") в Azure. 
+* [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) ценовой категории "Бесплатный" или "Стандартный" в Azure. 
 * Рабочая область машинного обучения Azure. Чтобы создать ее, следуйте инструкциям в статье [Подготовка к развертыванию моделей в IoT Edge](../machine-learning/service/how-to-deploy-to-iot.md).
 
 

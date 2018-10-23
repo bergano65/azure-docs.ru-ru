@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/25/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: b3a3baaf22fa9c382bb45a5b2a2065ef7678faf5
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: c3c0d9bb6da00272cc7da0ad9f4fae978552c39b
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48855960"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49352616"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по настройке гибридного присоединения к Azure Active Directory для управляемых доменов
 
@@ -172,7 +172,7 @@ ms.locfileid: "48855960"
 
 - Объект с **идентификатором устройства**, который совпадает с идентификатором в клиенте Windows, должен существовать.
 - Значением **DeviceTrustType** должно быть **Присоединено к домену**. Это эквивалентно состоянию **Гибридные устройства, присоединенные к Azure AD** на странице "Устройства" на портале Azure AD.
-- Значением **Включено** должно быть **True** для устройств, которые используются при условном доступе. 
+- Для устройств, которые используются при условном доступе, значением **Включено** должно быть **True**, а значением **DeviceTrustLevel** — **Управляемый**. 
 
 
 **Вот как можно просмотреть сведения о службе.**

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: e68050e4902183b899bf3fee31bef088b1a0faf2
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 4db494de87993a6434eaf5dbf441094578d72ea4
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45576074"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49165970"
 ---
 # <a name="what-is-azure-maps"></a>Что такое Azure Maps?
 
@@ -23,6 +23,14 @@ Azure Maps — это коллекция служб обработки геоп�
 В следующем видео подробно объясняется принцип действия Azure Maps.
 
 <iframe src="https://channel9.msdn.com/Shows/Azure-Friday/Azure-Location-Based-Services/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
+
+## <a name="map-controls"></a>Элементы управления картами
+
+### <a name="web-control"></a>Веб-элемент управления
+
+Веб-элемент управления Azure Maps позволяет настраивать интерактивные карты, используя собственные изображения и содержимое для отображения в веб-приложениях или мобильных приложениях. Этот элемент управления использует WebGL, позволяя вам отображать большие наборы данных с высокой производительностью. Вы можете выполнять разработку с помощью элемента управления, используя JavaScript или TypeScript.
+
+![Веб-элемент управления Azure Maps](media/about-azure-maps/Introduction_WebMapControl.png)
 
 ## <a name="services-in-azure-maps"></a>Службы в Azure Maps
 

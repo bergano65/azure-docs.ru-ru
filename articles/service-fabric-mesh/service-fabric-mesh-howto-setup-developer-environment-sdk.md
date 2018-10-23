@@ -9,12 +9,12 @@ ms.date: 08/08/2018
 ms.topic: get-started-article
 ms.service: service-fabric-mesh
 manager: jeconnoc
-ms.openlocfilehash: e95c0ad90503410601cc0764fdc559579a1dd13d
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 094cab324c7a7c66f5fcb57d488661109fcdabea
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "41918788"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49362676"
 ---
 # <a name="set-up-your-windows-development-environment-to-build-service-fabric-mesh-apps"></a>Чтобы создавать приложения Сетки Service Fabric, настройте среду разработки Windows
 
@@ -69,7 +69,7 @@ Install-WindowsFeature Containers
 Установите Сетку Service Fabric, среду выполнения, пакет SDK и средства в следующем порядке.
 
 1. Установите [пакет SDK Сетки Service Fabric][download-sdkmesh] с помощью установщика веб-платформы. Это позволит установить пакет SDK, средства Microsoft Azure Service Fabric и среду выполнения.
-2. Установите [расширение средств Visual Studio Service Fabric (предварительная версия)][download-tools] из Visual Studio Marketplace.
+2. Установите [расширение средств службы "Сетка Service Fabric" в Visual Studio (предварительная версия)][download-tools] из Visual Studio Marketplace.
 
 ## <a name="build-a-cluster"></a>Создание кластера
 

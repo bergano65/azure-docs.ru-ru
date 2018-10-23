@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/01/2018
 ms.author: bahariri
-ms.openlocfilehash: 2fbca7179d8bc64a92f79f6eaced8d4f1666c530
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: 4b78cef29c64c5c4c522ad5c751c10bbf6a7057c
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49069222"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49363424"
 ---
 # <a name="stream-into-event-hubs-for-the-apache-kafka"></a>Потоковая передача данных в Центры событий для Apache Kafka
 В этом кратком руководстве показано, как выполнять потоковую передачу данных в Центры событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Вы узнаете, как обеспечить взаимодействие отправителей и объектов-получателей с Центрами событий с поддержкой Kafka, изменив конфигурацию в приложениях. Центры событий Azure поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html)
 
 > [!NOTE]
-> Этот пример можно найти на сайте [GitHub](https://github.com/Azure/azure-event-hubs).
+> Этот пример можно найти на сайте [GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/quickstart/java).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -63,9 +63,9 @@ ms.locfileid: "49069222"
 
 ## <a name="send-and-receive-messages-with-kafka-in-event-hubs"></a>Отправка и получение сообщений с использованием Kafka в Центрах событий
 
-1. Клонируйте [репозиторий Центров событий Azure](https://github.com/Azure/azure-event-hubs).
+1. Клонируйте [репозиторий Центров событий Azure для Kafka](https://github.com/Azure/azure-event-hubs-for-kafka).
 
-2. Перейдите на страницу `azure-event-hubs/samples/kafka/quickstart/producer`.
+2. Перейдите на страницу `azure-event-hubs-for-kafka/quickstart/java/producer`.
 
 3. Обновите сведения о конфигурации для отправителя в файле по адресу `src/main/resources/producer.config` следующим образом:
 
@@ -83,7 +83,7 @@ ms.locfileid: "49069222"
     mvn exec:java -Dexec.mainClass="TestProducer"                                    
     ```
     
-5. Перейдите на страницу `azure-event-hubs/samples/kafka/quickstart/consumer`.
+5. Перейдите на страницу `azure-event-hubs-for-kafka/quickstart/java/consumer`.
 
 6. Обновите для объекта-получателя сведения о конфигурации в файле по адресу `src/main/resources/consumer.config` следующим образом.
    
@@ -106,5 +106,8 @@ ms.locfileid: "49069222"
 ## <a name="next-steps"></a>Дополнительная информация
 В этой статье вы узнаете, как выполнять потоковую передачу данных в Центры событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Для получения дополнительных сведений перейдите к следующему руководству:
 
-> [!div class="nextstepaction"]
-> [Использование Kafka MirrorMaker с Центрами событий для экосистем Kafka](event-hubs-kafka-mirror-maker-tutorial.md)
+* [Сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
+* [Azure Event Hubs for Apache Kafka (preview)](event-hubs-for-kafka-ecosystem-overview.md) (Центры событий Azure для Apache Kafka (предварительный просмотр))
+* [Дополнительные примеры для службы "Центры событий" для Kafka на сайте GitHub](https://github.com/Azure/azure-event-hubs-for-kafka)
+* Используйте [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) для [потоковой передачи событий из локальной системы Kafka к Центрам событий с поддержкой Kafka в облаке](event-hubs-kafka-mirror-maker-tutorial.md).
+* Дополнительные сведения о потоковой передаче во включенные Центры событий с поддержкой Kafka с помощью [Apache Flink ](event-hubs-kafka-flink-tutorial.md) или [Akka Streams](event-hubs-kafka-akka-streams-tutorial.md).

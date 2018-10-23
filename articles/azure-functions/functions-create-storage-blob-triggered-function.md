@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 10/01/2018
 ms.author: glenga
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: a98e29ef73275d097dc5c61b3b905193b80b79b3
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: f71db50678ad0f1b37e30a4120b90d47d9090942
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48858851"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49113858"
 ---
 # <a name="create-a-function-triggered-by-azure-blob-storage"></a>Создание функции, активируемой хранилищем BLOB-объектов Azure
 
@@ -42,17 +42,17 @@ ms.locfileid: "48858851"
 
 ## <a name="create-a-blob-storage-triggered-function"></a>Создание функции, активируемой хранилищем BLOB-объектов
 
-1. Разверните приложение-функцию и нажмите кнопку **+** рядом с элементом **Функции**. Если это первая функция в приложении-функции, последовательно выберите **На портале** и **Продолжить**. В противном случае перейдите к шагу 3.
+1. Разверните приложение-функцию и нажмите кнопку **+** рядом с элементом **Функции**. Если это первая функция в приложении-функции, последовательно выберите **На портале** и **Продолжить**. Если нет, перейдите к шагу 3.
 
    ![Страница быстрого начала работы с функциями на портале Azure](./media/functions-create-storage-blob-triggered-function/function-app-quickstart-choose-portal.png)
 
-1. Выберите **More templates** (Дополнительные шаблоны), а затем — **Finish and view templates** (Закончить и просмотреть шаблоны).
+1. Последовательно выберите **Дополнительные шаблоны** и **Finish and view templates** (Закончить и просмотреть шаблоны).
 
     ![Быстрый запуск функций: просмотр дополнительных шаблонов](./media/functions-create-storage-blob-triggered-function/add-first-function.png)
 
 1. В поле поиска введите `blob` и выберите шаблон **Триггер BLOB-объектов**.
 
-1. Если появится соответствующий запрос, щелкните **Установить**, чтобы установить в приложение-функцию расширение Службы хранилища Azure и другие необходимые зависимости. После завершения установки щелкните **Продолжить**.
+1. Если появится соответствующий запрос, щелкните **Установить**, чтобы установить в приложение-функцию расширение Службы хранилища Azure и другие необходимые зависимости. По завершении установки щелкните **Продолжить**.
 
     ![Установка расширений привязки](./media/functions-create-storage-blob-triggered-function/functions-create-blob-storage-trigger-portal.png)
 

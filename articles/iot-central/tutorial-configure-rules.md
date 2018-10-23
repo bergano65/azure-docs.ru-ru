@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: fb13bcee411b4fa27bf3ce5cd62fa3a483ea23e6
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 20dcad571a32638488ce111b5af55623f2305c57
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45731899"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49310442"
 ---
 # <a name="tutorial-configure-rules-and-actions-for-your-device-in-azure-iot-central"></a>Руководство по настройке правил и действий для устройства в Azure IoT Central
 
@@ -96,6 +96,9 @@ ms.locfileid: "45731899"
 Вскоре после сохранения правила оно станет активным. При соблюдении условий, заданных в правиле, приложение отправляет сообщение на адрес электронной почты, указанный в действии.
 
 ![Действие для отправки электронного сообщения](media/tutorial-configure-rules/email.png)
+
+> [!NOTE]
+> Когда завершите тестирование, отключите правило, чтобы не получать уведомления в папке входящих сообщений. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 
