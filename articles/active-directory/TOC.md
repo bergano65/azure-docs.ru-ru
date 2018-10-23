@@ -244,7 +244,6 @@
 
 #### условный доступ;
 ##### [Клиент не соответствует предварительным требованиям для регистрации устройства](active-directory-conditional-access.md)
-##### [Клиент блокируется из-за неправильной настройки политик условного доступа](active-directory-conditional-access-device-remediation.md)
 ##### [Как и когда перестают действовать правила корпоративной сети?](https://aka.ms/calocation)
 ##### [Как увеличить количество устройств, которые пользователь может зарегистрироваться в Azure AD?](active-directory-azureadjoin-setup.md)
 ##### [Как настроить политику условного доступа для Exchange Online?](https://aka.ms/csforexchange)

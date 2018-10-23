@@ -323,8 +323,10 @@ items:
         href: sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md
   - name: Сравнение возможностей SQL
     href: sql-database-features.md
-  - name: Производительность и мониторинг
+  - name: Мониторинг и настройка производительности
     items:
+    - name: Общие сведения о мониторинге и настройке
+      href: sql-database-monitor-tune-overview.md
     - name: Интеллектуальные средства повышения производительности
       items:
       - name: Выполнение запроса
@@ -335,8 +337,6 @@ items:
           href: https://docs.microsoft.com/sql/relational-databases/performance/adaptive-query-processing?toc=/azure/sql-database/toc.json
       - name: Мониторинг и настройка
         items:
-        - name: Общие сведения о мониторинге и настройке
-          href: sql-database-monitor-tune-overview.md
         - name: Рекомендации по производительности Помощника по базам данных
           href: sql-database-advisor.md
         - name: Действия и рекомендации по настройке
@@ -351,11 +351,11 @@ items:
           href: sql-database-metrics-diag-logging.md
         - name: Использование журнала диагностики
           href: sql-database-intelligent-insights-use-diagnostics-log.md
+        - name: анализ производительности запросов
+          href: sql-database-query-performance.md
         - name: Устранение проблем с производительностью
           href: sql-database-intelligent-insights-troubleshoot-performance.md
-      - name: анализ производительности запросов
-        href: sql-database-query-performance.md
-      - name: Автоматическая настройка производительности
+      - name: Автоматическая настройка
         items:
         - name: Общие сведения об автоматической настройке
           href: sql-database-automatic-tuning.md
@@ -634,9 +634,9 @@ items:
     href: /azure/architecture/
   - name: Истории клиентов
     href: http://customers.microsoft.com/en-us/search?sq=%22Azure%20SQL%20Database%22&ff=&p=0&so=story_publish_date%20desc
-ms.openlocfilehash: 38a8ec13b8a5e50d60ed46d1bd4d71af933d61f0
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 416f74c395f331de6af749f3de1d3a3e966b8b35
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49470377"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49650066"
