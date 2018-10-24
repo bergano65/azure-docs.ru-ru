@@ -38,8 +38,8 @@
 ### [Управление сервером](analysis-services-manage.md)
 ### [Отслеживание метрик службы](analysis-services-monitor.md)
 ### [Настройка журнала ведения диагностики](analysis-services-logging.md)
-### [Создание субъекта-службы с помощью портала Azure](../azure-resource-manager/resource-group-create-service-principal-portal.md)
-### [Создание субъекта-службы с помощью PowerShell](../azure-resource-manager/resource-group-authenticate-service-principal.md)
+### [Создание субъекта-службы с помощью портала Azure](../active-directory/develop/howto-create-service-principal-portal.md)
+### [Создание субъекта-службы с помощью PowerShell](../active-directory/develop/howto-authenticate-service-principal-powershell.md)
 ### [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md)
 
 ## Модель
