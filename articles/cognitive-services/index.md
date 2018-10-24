@@ -7,14 +7,14 @@ author: nitinme
 manager: cgronlun
 ms.service: cognitive-services
 ms.author: nitinme
-ms.date: 09/24/2018
+ms.date: 10/23/2018
 ms.topic: hub-page
-ms.openlocfilehash: 87c10bbcec2467808220c3d2351976fb4676e92b
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 0564cd1b2c7acf09ee59b858eafb49a4217afe35
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49319003"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49954845"
 ---
 <h1>Документация по службам Azure Cognitive Services</h1>
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, позволяющие видеть, слышать, говорить и понимать потребности клиентов с помощью обычных средств связи. Руководства, краткие инструкции, справочники по API и примеры использования.</p>
@@ -260,9 +260,9 @@ ms.locfileid: "49319003"
                         <p><a href="/azure/cognitive-services/computer-vision/">Компьютерное зрение</a></p>
                         <p><a href="/azure/cognitive-services/content-moderator/overview">Content Moderator</a></p>
                         <p><a href="/azure/cognitive-services/Custom-Vision-Service/home"><span>Пользовательская служба визуального распознавания&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
-                        <p><a href="/azure/cognitive-services/emotion/home"><span>API распознавания эмоций&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
                         <p><a href="/azure/cognitive-services/face/">API распознавания лиц</a></p>
                         <p><a href="/azure/cognitive-services/video-indexer/video-indexer-overview">Индексатор видео</a></p>
+                        <p><a href="/azure/cognitive-services/emotion/home"><span>API распознавания эмоций&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
                     </div>
                 </div>
             </div>
@@ -275,10 +275,10 @@ ms.locfileid: "49319003"
                     <div class="cardText">
                         <h3>SAPI</h3>
                         <p><a href="/azure/cognitive-services/speech-service">API службы "Речь"</a></p>
-                        <p><a href="/azure/cognitive-services/speech/home">API распознавания речи Bing</a></p>
-                        <p><a href="/azure/cognitive-services/custom-speech-service/cognitive-services-custom-speech-home"><span>Пользовательская служба распознавания речи&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
                         <p><a href="/azure/cognitive-services/speaker-recognition/home"><span>API распознавания говорящего&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
-                        <p><a href="/azure/cognitive-services/translator-speech/">API перевода речи</a></p>
+                        <p><a href="/azure/cognitive-services/speech/home"><span>API распознавания речи Bing&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
+                        <p><a href="/azure/cognitive-services/custom-speech-service/cognitive-services-custom-speech-home"><span>Пользовательская служба распознавания речи&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
+                        <p><a href="/azure/cognitive-services/translator-speech/"><span>Перевод речи&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
                      </div>
                 </div>
             </div>
@@ -292,10 +292,8 @@ ms.locfileid: "49319003"
                         <h3>API речи</h3>
                         <p><a href="/azure/cognitive-services/bing-spell-check/">Проверка орфографии Bing</a></p>
                         <p><a href="/azure/cognitive-services/luis/">Распознавание речи (LUIS)</a></p>
-                        <p><a href="/azure/cognitive-services/linguisticanalysisapi/home"><span>Лингвистический анализ&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
                         <p><a href="/azure/cognitive-services/text-analytics/">Анализ текста</a></p>
                         <p><a href="/azure/cognitive-services/translator/">Перевод текстов</a></p>
-                        <p><a href="/azure/cognitive-services/web-language-model/home"><span>Языковая модель на основе веб-содержимого&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
                     </div>
                 </div>
             </div>
@@ -307,7 +305,6 @@ ms.locfileid: "49319003"
                 <div class="card">
                     <div class="cardText">
                         <h3>Knowledge API</h3>
-                            <p><a href="/azure/cognitive-services/custom-decision-service/"><span>Пользовательская служба принятия решений&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
                             <p><a href="/azure/cognitive-services/qnamaker/index">QnA Maker</a></p>
                     </div>
                 </div>
@@ -351,6 +348,7 @@ ms.locfileid: "49319003"
                         <p><a href="/azure/cognitive-services/labs/anomaly-finder/overview">Средство для поиска аномалий в проекте</a></p>
                         <p><a href="/azure/cognitive-services/labs/conversation-learner/overview">Средство для обучения ведению диалога в проекте</a></p>
                         <p><a href="/azure/cognitive-services/acoustics/what-is-acoustics">Project Acoustics</a></p>
+                        <p><a href="/azure/cognitive-services/custom-decision-service/"><span>Пользовательская служба принятия решений&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
                     </div>
                 </div>
             </div>

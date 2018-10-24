@@ -9,12 +9,12 @@
 ## [Настройка среды разработки](media-services-set-up-computer.md)
 ### [.NET](media-services-dotnet-how-to-use.md)
 ### [REST](media-services-rest-how-to-use.md)  
-## [Использование аутентификации AAD для доступа к API](media-services-use-aad-auth-to-access-ams-api.md)
-### [Использование портала для управления аутентификацией AAD](media-services-portal-get-started-with-aad.md)
+## [Доступ к API с использованием аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md)
+### [Управления аутентификацией Azure AD с использованием портала](media-services-portal-get-started-with-aad.md)
 ### [Доступ к API с помощью .NET](media-services-dotnet-get-started-with-aad.md)
 ### [Доступ к API с помощью REST](media-services-rest-connect-with-aad.md)
-### [Использование интерфейса командной строки Azure для создания и настройки приложения AAD](media-services-cli-create-and-configure-aad-app.md)
-### [Использование Azure PowerShell для создания и настройки приложения AAD](media-services-powershell-create-and-configure-aad-app.md)
+### [Создание и настройка приложения Azure AD с использованием Azure CLI](media-services-cli-create-and-configure-aad-app.md)
+### [Создание и настройка приложения Azure AD с использованием Azure PowerShell](media-services-powershell-create-and-configure-aad-app.md)
 
 ## Предоставление видео по запросу
 ### [портал Azure](media-services-portal-vod-get-started.md)

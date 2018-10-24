@@ -8,7 +8,7 @@ items:
   items:
   - name: Начало работы с Content Moderator
     href: quick-start.md
-  - name: Использование пакета .NET SDK
+  - name: С помощью пакета SDK для .NET
     items:
     - name: Проверка содержимого изображения
       href: image-moderation-quickstart-dotnet.md
@@ -16,12 +16,6 @@ items:
       href: text-moderation-quickstart-dotnet.md
     - name: Проверка содержимого видео
       href: video-moderation-api.md
-- name: Примеры
-  items:
-  - name: Примеры пакета SDK для .NET
-    href: samples-dotnet.md
-  - name: Примеры для REST API на C#
-    href: samples-rest.md
 - name: Основные понятия
   items:
   - name: Модерация изображений
@@ -36,48 +30,48 @@ items:
     href: workflow-api.md
 - name: Практические руководства
   items:
-  - name: Попробовать Content Moderator
+  - name: Использование служб модерации
     items:
     - name: API модерации
       items:
-      - name: Изображения (консоль API)
-        href: try-image-api.md
-      - name: Проверка изображений с использованием настраиваемых списков
-        href: image-lists-quickstart-dotnet.md
-      - name: Пользовательские изображения (консоль API)
-        href: try-image-list-api.md
-      - name: Текст (консоль API)
-        href: try-text-api.md
-      - name: Проверка текста с использованием настраиваемого списка терминов
-        href: term-lists-quickstart-dotnet.md
-      - name: Пользовательские термины (консоль API)
-        href: try-terms-list-api.md
+      - name: С помощью пакета SDK для .NET
+        items:
+        - name: Проверка изображений с использованием настраиваемых списков
+          href: image-lists-quickstart-dotnet.md
+        - name: Проверка текста с использованием настраиваемого списка терминов
+          href: term-lists-quickstart-dotnet.md
+      - name: С помощью REST API
+        items:
+        - name: Изображения (консоль API)
+          href: try-image-api.md
+        - name: Пользовательские изображения (консоль API)
+          href: try-image-list-api.md
+        - name: Текст (консоль API)
+          href: try-text-api.md
+        - name: Пользовательские термины (консоль API)
+          href: try-terms-list-api.md
+  - name: Использование средства проверки
+    items:
     - name: Просмотр API-интерфейсов
       items:
-      - name: Задания (консоль API)
-        href: try-review-api-job.md
-      - name: Задания (.NET)
-        href: moderation-jobs-quickstart-dotnet.md
-      - name: Проверки (консоль API)
-        href: try-review-api-review.md
-      - name: Проверки (.NET)
-        href: moderation-reviews-quickstart-dotnet.md
-      - name: Проверки видео (.NET)
-        href: video-reviews-quickstart-dotnet.md
-      - name: Проверки расшифровок видео (.NET)
-        href: video-transcript-reviews-quickstart-dotnet.md
-      - name: Рабочие процессы (консоль API)
-        href: try-review-api-workflow.md
-  - name: Приложение Content Moderator
-    items:
-    - name: Модерация контента Facebook
-      href: facebook-post-moderation.md
-    - name: Модерация изображений eCommerce
-      href: ecommerce-retail-catalog-moderation.md
-    - name: Модерация видео и расшифровки
-      href: video-transcript-moderation-review-tutorial-dotnet.md
-  - name: Средство проверки
-    items:
+      - name: С помощью пакета SDK для .NET
+        items:
+        - name: Задания (.NET)
+          href: moderation-jobs-quickstart-dotnet.md
+        - name: Проверки (.NET)
+          href: moderation-reviews-quickstart-dotnet.md
+        - name: Проверки видео (.NET)
+          href: video-reviews-quickstart-dotnet.md
+        - name: Проверки расшифровок видео (.NET)
+          href: video-transcript-reviews-quickstart-dotnet.md
+      - name: С помощью REST API
+        items:
+        - name: Задания (консоль API)
+          href: try-review-api-job.md
+        - name: Проверки (консоль API)
+          href: try-review-api-review.md
+        - name: Рабочие процессы (консоль API)
+          href: try-review-api-workflow.md
     - name: Участие человека
       href: Review-Tool-User-Guide/human-in-the-loop.md
     - name: Использование параметров
@@ -98,6 +92,20 @@ items:
       href: Review-Tool-User-Guide/Workflows.md
     - name: Просмотр панели мониторинга
       href: Review-Tool-User-Guide/View-Dashboard.md
+  - name: Приложение Content Moderator
+    items:
+    - name: Модерация контента Facebook
+      href: facebook-post-moderation.md
+    - name: Модерация изображений eCommerce
+      href: ecommerce-retail-catalog-moderation.md
+    - name: Модерация видео и расшифровки
+      href: video-transcript-moderation-review-tutorial-dotnet.md
+- name: Примеры
+  items:
+  - name: Примеры пакета SDK для .NET
+    href: samples-dotnet.md
+  - name: Примеры для REST API на C#
+    href: samples-rest.md
 - name: Справочные материалы
   items:
   - name: API Content Moderator
@@ -134,9 +142,9 @@ items:
     href: https://azure.microsoft.com/roadmap/?category=ai-machine-learning
   - name: Вебинар по запросу
     href: https://info.microsoft.com/cognitive-services-content-moderator-ondemand.html
-ms.openlocfilehash: a6e9e2908a6365c1749e8a5d061779ebc37764e0
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: d162bcaefdde1aceb171d2ad83b5386e54cea890
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49428969"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49944164"
