@@ -5,21 +5,24 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 09/18/2018
+ms.date: 10/05/2018
 ms.topic: conceptual
 ms.service: cost-management
 manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: 09035146fe3211f9fc46d3ad51326a6e76921b7d
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 48f1afcbef873e1af4346199c00ee2fadb1ad858
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46977304"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48830250"
 ---
 # <a name="connect-a-google-cloud-platform-account"></a>Подключение учетной записи Google Cloud Platform
 
 Имеющуюся учетную запись Google Cloud Platform можно подключить к Cloudyn. После этого сведения о затратах и использовании станут доступны для просмотра в отчетах Cloudyn. Информация в этой статье поможет вам настроить учетную запись Google и подключить ее к Cloudyn.
+
+> [!NOTE]
+> Компания Google изменила политику безопасности учетных записей, тем самым предотвратив установление новых подключений между Cloudyn и Google. Cloudyn продолжает собирать данные Google для пользователей, которые уже установили подключение Cloudyn к Google. Тем не менее в настоящее время добавить новые учетные записи Google в Cloudyn невозможно. Команда Cloudyn не знает, когда возобновится поддержка добавления новых учетных записей Google в Cloudyn. Мы удалим это примечание при возобновлении поддержки.
 
 ## <a name="collect-project-information"></a>Сбор сведений о проекте
 

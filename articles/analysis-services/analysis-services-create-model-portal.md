@@ -5,21 +5,23 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/03/2018
+ms.date: 10/11/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: dcfcfb24d2b47a8272c576856fc3accc547f354a
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 837601a55bbe97e904f3dece9f4c87563d6dd4e9
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42146037"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49092683"
 ---
 # <a name="create-a-model-in-azure-portal"></a>Создание модели на портале Azure
 
 Функция веб-конструктора Azure Analysis Services (предварительная версия) на портале Azure позволяет легко и быстро создавать табличные модели и запрашивать данные модели прямо в браузере. 
 
-Помните, что веб-конструктор находится на этапе **предварительной версии**. Функциональность ограничена. Для разработки и тестирования более сложных моделей лучше использовать Visual Studio (SSDT) и SQL Server Management Studio (SSMS).
+> [!IMPORTANT]
+> Эту функцию не рекомендуется использовать. В будущем обновлении она может быть удалена или значительно изменена. Рекомендуется прекратить использование этой функции в новых и существующих проектах, чтобы обеспечить совместимость с последующими обновлениями. Для разработки и тестирования более сложных моделей лучше использовать Visual Studio (SSDT) и SQL Server Management Studio (SSMS).
+
 
 ## <a name="before-you-begin"></a>Перед началом работы
 

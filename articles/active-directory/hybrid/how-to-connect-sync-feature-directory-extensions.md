@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/12/2017
+ms.date: 10/05/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 4809a413ce40532cc0367945fd902188f065baaa
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 9c40cfd9b15f2ae6398b70effc4f4d38111cfe1e
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46306033"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48886071"
 ---
 # <a name="azure-ad-connect-sync-directory-extensions"></a>Синхронизация Azure AD Connect: расширения каталогов
 Расширения каталогов можно использовать для расширения схемы в Azure Active Directory (Azure AD) с помощью собственных атрибутов из локального каталога Active Directory. Эта функция позволяет создавать бизнес-приложения с помощью атрибутов, которыми вы по-прежнему можете управлять локально. Эти атрибуты могут быть использованы через [расширения каталогов API Azure AD Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-directory-schema-extensions) или [Microsoft Graph](https://graph.microsoft.io/). Просмотреть доступные атрибуты можно с помощью [проводника Azure AD Graph](https://graphexplorer.azurewebsites.net/) и [проводника Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer) соответственно.
@@ -28,6 +28,9 @@ ms.locfileid: "46306033"
 В настоящее время рабочие нагрузки Office 365 не используют эти атрибуты.
 
 Дополнительные атрибуты для синхронизации выбираются в разделе пользовательских параметров мастера установки.
+
+>[!NOTE]
+>Значения в поле доступных атрибутов следует вводить с учетом регистра.
 
 ![Мастер расширения схемы](./media/how-to-connect-sync-feature-directory-extensions/extension2.png)  
 

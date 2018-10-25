@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/25/2017
 ms.author: cephalin
-ms.openlocfilehash: 84bd2019e9586fa008560dba07119323ecb7f02e
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: cf3a6fe24082a10db6a5b1267b70435d9e36b720
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36293722"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49115528"
 ---
 # <a name="configure-web-apps-in-azure-app-service"></a>Настройка веб-приложений в службе приложений Azure
 
@@ -73,6 +73,7 @@ ms.locfileid: "36293722"
 Этот раздел содержит пары "имя и значение", которые веб-приложение будет загружать при запуске. 
 
 * Для приложений .NET эти параметры вносятся в конфигурацию .NET `AppSettings` во время выполнения, переопределяя текущие настройки. 
+* Для службы приложений в Linux или Веб-приложений для контейнеров, если у вас есть вложенная ключевая структура json имени, например `ApplicationInsights:InstrumentationKey`, вам понадобиться `ApplicationInsights__InstrumentationKey` в качестве имени ключа. Так что обратите внимание, что все `:` должны быть заменены на `__` (т. е. двойным знаком подчеркивания).
 * Во время выполнения приложения PHP, Python, Java и Node могут обращаться к этим параметрам как к переменным среды. Для каждого параметра приложения создаются две переменные среды: одна с именем, указанным в параметре приложения, и другая с префиксом APPSETTING_. Обе содержат одинаковое значение.
 
 Параметры приложения всегда шифруются при хранении.

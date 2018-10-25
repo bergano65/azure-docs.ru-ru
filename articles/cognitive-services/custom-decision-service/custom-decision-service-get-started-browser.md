@@ -1,19 +1,21 @@
 ---
-title: Вызов API из браузера в Azure Cognitive Services | Документация Майкрософт
-description: Начало работы с Пользовательской службой принятия решений для оптимизации веб-страницы с помощью вызовов API непосредственно из браузера.
+title: Вызов API из браузера — пользовательская служба принятия решений
+titlesuffix: Azure Cognitive Services
+description: Узнайте как оптимизировать веб-страницы с помощью вызовов API непосредственно из браузера в Пользовательскую службу принятия решений.
 services: cognitive-services
 author: slivkins
-manager: slivkins
+manager: cgronlun
 ms.service: cognitive-services
-ms.topic: article
+ms.component: custom-decision-service
+ms.topic: conceptual
 ms.date: 05/09/2018
-ms.author: slivkins,marcozo,alekh
-ms.openlocfilehash: 10236c9d8f70d9b90a896464b4f86a847ee904c2
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: slivkins
+ms.openlocfilehash: 01f75d333e3eea5af35ca57bd44bc76148a481f2
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382256"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48867621"
 ---
 # <a name="call-api-from-a-browser"></a>Вызов API из браузера
 
@@ -62,9 +64,9 @@ $.ajax({
 </rss>
 ```
 
-Здесь каждый элемент `<item>` верхнего уровня описывает одну статью. Элемент `<link>` является обязательным и используется Пользовательской службой принятия решений как идентификатор действия. При наличии более 15 статей укажите `<date>` (в стандартном формате RSS). Используются 15 последних статей. Элемент `<title>` необязателен и используется для создания связанных с текстом характеристик статьи.
+Здесь каждый элемент `<item>` верхнего уровня описывает одну статью. Элемент `<link>` является обязательным и используется Пользовательской службой принятия решений как идентификатор действия. При наличии более 15 статей укажите `<date>` (в стандартном формате RSS). Используются 15 последних статей. Элемент `<title>` необязателен и используется для создания связанных с текстом признаков статьи.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Ознакомьтесь с [руководством](custom-decision-service-tutorial-news.md) с более подробным примером.
+* Изучите [руководство](custom-decision-service-tutorial-news.md) с более подробным примером.
 * Обратитесь к справочнику по [API](custom-decision-service-api-reference.md), чтобы получить дополнительные сведения о предоставляемых возможностях.

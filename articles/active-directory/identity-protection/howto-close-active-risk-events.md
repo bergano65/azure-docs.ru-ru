@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 09/24/2018
 ms.author: markvi
 ms.reviewer: raluthra
-ms.openlocfilehash: 230a4df2c43e8d5e6ae1a5a7e8188cf207461022
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.openlocfilehash: 11b6766533da65f55430d55bd8aa0b7067783e0c
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47057795"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48267476"
 ---
 # <a name="how-to-close-active-risk-events"></a>Практическое руководство. Закрытие активных событий риска
 
@@ -106,4 +106,4 @@ ms.locfileid: "47057795"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Для получения общих сведений о защите идентификации Azure AD см. руководство по [Защите идентификации Azure AD](overview.md).
+См. дополнительные сведения о [защите идентификации Azure AD](overview.md).

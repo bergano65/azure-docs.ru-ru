@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
-ms.openlocfilehash: 66494ca6bd9b4d8276469e85f4c6bb435ae245f7
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: 154d82ab5e309631df0bfa40df7fe14902327f46
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44716406"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48884281"
 ---
 # <a name="frequently-asked-questions-for-iot-solution-accelerators"></a>Часто задаваемые вопросы об акселераторах решений для Интернета вещей
 
@@ -41,6 +41,10 @@ ms.locfileid: "44716406"
 ### <a name="what-advantages-does-the-new-open-sourced-microservices-based-architecture-provide-in-the-new-update"></a>Каковы преимущества новой архитектуры на базе микрослужб с открытым кодом в новом обновлении?
 
 За последние два года облачная архитектура значительно улучшилась. Микрослужбы стали оптимальным вариантом, который обеспечивает масштабируемость и гибкость без снижения скорости разработки. В некоторых службах Майкрософт по умолчанию используется шаблон архитектуры, который обеспечивает высокую надежность и масштабируемость. Мы реализуем полученные знания на практике, чтобы предоставить своим клиентам преимущества.
+
+### <a name="where-can-i-find-information-about-the-previous-version-of-the-remote-monitoring-solution"></a>Где можно найти сведения о предыдущей версии решения удаленного мониторинга?
+
+Предыдущая версия акселератора решений для удаленного мониторинга была известна как предварительно сконфигурированное решение удаленного мониторинга IoT Suite. Можно найти в заархивированную документацию на сайте [https://docs.microsoft.com/previous-versions/azure/iot-suite/](https://docs.microsoft.com/previous-versions/azure/iot-suite/).
 
 ### <a name="is-the-new-solution-accelerator-available-in-the-same-geographic-region-as-the-existing-solution"></a>Доступен ли новый акселератор решений в том же географическом регионе, что и существующее решение?
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/07/2017
 ms.author: mikhegn
-ms.openlocfilehash: f7c36fec7ff58c225e41899e8264ca1dde95ce7c
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 1c8400898dba59f312ba9d994ee711a5e241973a
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34213254"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48268010"
 ---
 # <a name="service-fabric-environment-variables"></a>Переменные среды Service Fabric
 
@@ -37,7 +37,7 @@ ms.locfileid: "34213254"
 | Fabric_NodeId                                | Идентификатор узла, на котором выполняется процесс.                            | bf865279ba277deb864a976fbf4c200e                                     |
 | Fabric_NodeIPOrFQDN                          | IP-адрес или полное доменное имя узла согласно файлу манифеста кластера. | localhost или 10.0.0.1                                                |
 | Fabric_NodeName                              | Имя узла, на котором выполняется процесс.                          | _Node_0                                                              |
-| Fabric_ServiceName                           | Имя службы, если служба размещена в режиме ExclusiveProcess. Значение этой переменной доступно только в том случае, если служба создается с режимом ServicePackageActivationMode ExclusiveProcess.  | MyService                                               |
+| Fabric_ServiceName                           | Универсальный код ресурса (URI) структуры для службы, если служба размещена в режиме ExclusiveProcess. Значение этой переменной доступно только в том случае, если служба создается с режимом ServicePackageActivationMode ExclusiveProcess.  | Fabric:/MyApplication/MyService                                               |
 | Fabric_ServicePackageActivationId            | Идентификатор FabricServicePackageActivationId.                                         | Глобальный уникальный идентификатор.                                                               |
 | Fabric_ServicePackageName                    | Имя пакета службы, частью которого является процесс.                     | Web1Pkg                                                              |
 

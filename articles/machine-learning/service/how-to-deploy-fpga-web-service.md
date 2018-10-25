@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: tedway
 author: tedway
-ms.date: 09/24/2018
-ms.openlocfilehash: ee67585a523ab96b1442d9eee3e9dfd55a758d32
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.date: 10/01/2018
+ms.openlocfilehash: 925173f85301d6481ae3b9cf891041239b06bc8f
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46971490"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49113722"
 ---
 # <a name="deploy-a-model-as-a-web-service-on-an-fpga-with-azure-machine-learning"></a>Как развернуть модель как веб-службу в FPGA с помощью Машинного обучения Azure
 
@@ -24,7 +24,9 @@ ms.locfileid: "46971490"
 
 - Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начать работу.
 
-- Должны быть установлены рабочая область машинного обучения Azure и пакет SDK машинного обучения Azure для Python. Дополнительные сведения о получении этих необходимых компонентов см. в документе [Настройка среды разработки](how-to-configure-environment.md).
+- Вам нужно отправить запрос и получить утверждение на квоту FPGA. Чтобы запросить доступ, заполните форму запроса квоты: https://aka.ms/aml-real-time-ai.
+
+- Должны быть установлены рабочая область службы "Машинное обучение Azure" и пакет SDK Машинного обучения Azure для Python. Дополнительные сведения о получении этих необходимых компонентов см. в документе [Настройка среды разработки](how-to-configure-environment.md).
  
   - Ваша рабочая область должна находиться в регионе *Восточная часть США 2*.
 
@@ -47,11 +49,7 @@ ms.locfileid: "46971490"
 > [!IMPORTANT]
 > Чтобы оптимизировать задержку и пропускную способность, ваш клиент должен находиться в том же регионе Azure, что и конечная точка.  В настоящее время API создаются в регионе Azure "Восточная часть США".
 
-### <a name="get-the-notebook"></a>Получение записной книжки
 
-Для удобства это руководство доступно в виде Jupyter Notebook. Используйте любой из приведенных далее методов для запуска записной книжки `project-brainwave/project-brainwave-quickstart.ipynb`.
-
-[!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-in-azure-notebook.md)]
 
 ### <a name="preprocess-image"></a>Предварительная обработка изображения
 Первый этап конвейера — предварительная обработка изображений.
@@ -66,6 +64,7 @@ in_images = tf.placeholder(tf.string)
 image_tensors = utils.preprocess_array(in_images)
 print(image_tensors.shape)
 ```
+
 ### <a name="add-featurizer"></a>Добавление характеризатора
 Инициализируйте модель и загрузите контрольную точку TensorFlow квантованной версии ResNet50 для использования в качестве характеризатора.
 
@@ -166,154 +165,13 @@ registered_model.delete()
 
 ## <a name="secure-fpga-web-services"></a>Защита веб-служб FPGA
 
-Модели машинного обучения Azure, выполняющиеся в FPGA, обеспечивают поддержку SSL и аутентификацию на основе ключей. Это позволит вам ограничивать доступ к вашей службе и защищать данные, предоставляемые клиентами.
+Модели машинного обучения Azure, выполняющиеся в FPGA, обеспечивают поддержку SSL и аутентификацию на основе ключей. Это позволит вам ограничивать доступ к вашей службе и защищать данные, предоставляемые клиентами. [Узнайте, как защитить веб-службы](how-to-secure-web-service.md).
 
-> [!IMPORTANT]
-> Аутентификация разрешена только для служб, которые предоставили SSL-сертификат и ключ. 
->
-> Если вы не включите SSL, любой пользователь в Интернете сможет совершать вызовы в службу.
->
-> Если вы включите SSL, при доступе к службе потребуется ключ аутентификации.
 
-SSL шифрует данные, отправляемые между клиентом и службой. Он также используется клиентом для проверки удостоверения сервера.
+## <a name="sample-notebook"></a>Пример записной книжки
 
-Вы можете развернуть службу с включенным протоколом SSL или обновить уже развернутую службу, чтобы включить его. Выполняемые действия идентичны.
+Основные понятия из этой статьи демонстрируются в записной книжке [project-brainwave/project-brainwave-quickstart.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/project-brainwave/project-brainwave-quickstart.ipynb).
 
-1. Получите имя домена.
+Получите эту записную книжку:
 
-2. Получите SSL-сертификат.
-
-3. Разверните или обновите службу с включенным протоколом SSL.
-
-4. Обновите DNS, чтобы указать службу.
-
-### <a name="acquire-a-domain-name"></a>Получите имя домена.
-
-Если у вас еще нет имени домена, вы можете приобрести его у __регистратора доменных имен__. Процесс различается у разных регистраторов, как и стоимость. Регистратор также предоставляет вам инструменты для управления доменным именем. Эти инструменты используются для сопоставления полного доменного имени (например, www.contoso.com) с IP-адресом, по которому размещается ваша служба.
-
-### <a name="acquire-an-ssl-certificate"></a>Получение SSL-сертификата
-
-Существует множество способов получить SSL-сертификат. Наиболее распространенным является покупка в одном из __центров сертификации__. Независимо от того, где вы получаете сертификат, вам нужны следующие файлы:
-
-* __Сертификат__. Сертификат должен содержать полную цепочку сертификатов и должен быть в кодировке PEM.
-* __Ключ__. Ключ должен быть в кодировке PEM.
-
-> [!TIP]
-> Если центр сертификации не может предоставить сертификат и ключ в виде файлов в кодировке PEM, вы можете использовать такую служебную программу, как [OpenSSL](https://www.openssl.org/), чтобы изменить формат.
-
-> [!IMPORTANT]
-> Эти самозаверяющие сертификаты следует использовать только для разработки. Они не должны использоваться в рабочей среде.
->
-> Если вы используете самозаверяющий сертификат, см. инструкции в разделе [Использование служб с помощью самозаверяющих сертификатов](#self-signed).
-
-> [!WARNING]
-> При запросе сертификата вы должны предоставить полное доменное имя (FQDN) адреса, который вы планируете использовать для этой службы. Например, www.contoso.com. Адрес, указанный в сертификате, и адрес, используемый клиентами, сравниваются при проверке удостоверения службы.
->
-> Если адреса не совпадают, клиенты получат сообщение об ошибке. 
-
-### <a name="deploy-or-update-the-service-with-ssl-enabled"></a>Развертывание или обновление службы с включенным протоколом SSL
-
-Чтобы развернуть службу с включенным SSL, установите для параметра `ssl_enabled` значение `True`. Установите для параметра `ssl_certificate` значение файла __сертификата__, а для параметра `ssl_key` значение __ключа__. В следующем примере показано развертывание службы с включенным SSL:
-
-```python
-from amlrealtimeai import DeploymentClient
-
-subscription_id = "<Your Azure Subscription ID>"
-resource_group = "<Your Azure Resource Group Name>"
-model_management_account = "<Your AzureML Model Management Account Name>"
-location = "eastus2"
-
-model_name = "resnet50-model"
-service_name = "quickstart-service"
-
-deployment_client = DeploymentClient(subscription_id, resource_group, model_management_account, location)
-
-with open('cert.pem','r') as cert_file:
-    with open('key.pem','r') as key_file:
-        cert = cert_file.read()
-        key = key_file.read()
-        service = deployment_client.create_service(service_name, model_id, ssl_enabled=True, ssl_certificate=cert, ssl_key=key)
-```
-
-Ответ операции `create_service` содержит IP-адрес службы. IP-адрес используется при сопоставлении имени DNS с IP-адресом службы.
-
-Ответ также содержит __первичный__ и __вторичный ключ__, используемые для применения службы.
-
-### <a name="update-your-dns-to-point-to-the-service"></a>Обновите DNS, чтобы указать службу.
-
-Используйте инструменты, предоставленные вашим регистратором доменных имен, чтобы обновить запись DNS для вашего доменного имени. Запись должна указывать на IP-адрес службы.
-
-> [!NOTE]
-> В зависимости от регистратора и срока жизни, настроенного для имени домена, может потребоваться от нескольких минут до нескольких часов, прежде чем клиенты смогут разрешить имя домена.
-
-### <a name="consume-authenticated-services"></a>Использование аутентифицированных служб
-
-В следующих примерах показано, как использовать аутентифицированную службу с помощью Python и C #:
-
-> [!NOTE]
-> Замените `authkey` первичным или вторичным ключом, возвращаемым при создании службы.
-
-```python
-from amlrealtimeai import PredictionClient
-client = PredictionClient(service.ipAddress, service.port, use_ssl=True, access_token="authKey")
-image_file = R'C:\path_to_file\image.jpg'
-results = client.score_image(image_file)
-```
-
-```csharp
-var client = new ScoringClient(host, 50051, useSSL, "authKey");
-float[,] result;
-using (var content = File.OpenRead(image))
-    {
-        IScoringRequest request = new ImageRequest(content);
-        result = client.Score<float[,]>(request);
-    }
-```
-
-Другие клиенты gRPC могут аутентифицировать запросы, установив заголовок авторизации. Общий подход заключается в создании объекта `ChannelCredentials`, который объединяет `SslCredentials` с `CallCredentials`. Это добавляется в заголовок авторизации запроса. Дополнительные сведения о реализации поддержки конкретных заголовков см. на странице [https://grpc.io/docs/guides/auth.html](https://grpc.io/docs/guides/auth.html).
-
-В следующих примерах показано, как установить заголовок для C# и Go:
-
-```csharp
-creds = ChannelCredentials.Create(baseCreds, CallCredentials.FromInterceptor(
-                      async (context, metadata) =>
-                      {
-                          metadata.Add(new Metadata.Entry("authorization", "authKey"));
-                          await Task.CompletedTask;
-                      }));
-
-```
-
-```go
-conn, err := grpc.Dial(serverAddr, 
-    grpc.WithTransportCredentials(credentials.NewClientTLSFromCert(nil, "")),
-    grpc.WithPerRPCCredentials(&authCreds{
-    Key: "authKey"}))
-
-type authCreds struct {
-    Key string
-}
-
-func (c *authCreds) GetRequestMetadata(context.Context, uri ...string) (map[string]string, error) {
-    return map[string]string{
-        "authorization": c.Key,
-    }, nil
-}
-
-func (c *authCreds) RequireTransportSecurity() bool {
-    return true
-}
-```
-
-### <a id="self-signed"></a>Использование служб с помощью самозаверяющих сертификатов
-
-Существует два способа, позволяющих клиенту выполнить аутентификацию на сервере, защищенном с использованием самозаверяющего сертификата:
-
-* В системе клиента установите переменную среды `GRPC_DEFAULT_SSL_ROOTS_FILE_PATH`, чтобы указать файл сертификата.
-
-* При создании объекта `SslCredentials` передайте содержимое файла сертификата в конструктор.
-
-Использование любого из методов приведет к тому, что gRPC будет использовать сертификат в качестве корневого сертификата.
-
-> [!IMPORTANT]
-> gRPC не принимает ненадежные сертификаты. Использование ненадежного сертификата завершится ошибкой с кодом состояния `Unavailable`. Подробные сведения об ошибке будут содержать сообщение `Connection Failed`.
+[!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]

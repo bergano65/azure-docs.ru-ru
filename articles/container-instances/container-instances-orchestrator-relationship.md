@@ -3,18 +3,17 @@ title: Экземпляры контейнеров Azure и оркестраци
 description: Узнайте, как Экземпляры контейнеров Azure взаимодействуют с оркестраторами контейнеров.
 services: container-instances
 author: seanmck
-manager: jeconnoc
 ms.service: container-instances
 ms.topic: article
-ms.date: 03/23/2018
+ms.date: 10/05/2018
 ms.author: seanmck
 ms.custom: mvc
-ms.openlocfilehash: e1455cba004facfa03dca21544eec754f5dc60be
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: c17bdb5a81640a7162ae735a4633a31cdfffbb1d
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32165567"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48803517"
 ---
 # <a name="azure-container-instances-and-container-orchestrators"></a>Экземпляры контейнеров Azure и оркестраторы контейнеров
 
@@ -55,16 +54,13 @@ ms.locfileid: "32165567"
 
 Вместо масштабирования числа виртуальных машин в кластере и развертывания дополнительных контейнеров на этих компьютерах оркестратор может просто составить расписание для добавления контейнеров с помощью службы "Экземпляры контейнеров Azure" и удалить их, когда они больше не требуются.
 
-## <a name="sample-implementation-azure-container-instances-connector-for-kubernetes"></a>Пример реализации: соединитель экземпляров контейнеров Azure для Kubernetes
+## <a name="sample-implementation-virtual-kubelet-for-kubernetes"></a>Пример реализации: Virtual Kubelet для Kubernetes
 
-Чтобы показать, как можно интегрировать платформы оркестрации контейнеров с экземплярами контейнеров Azure, мы приступили к созданию [примера соединителя для Kubernetes][aci-connector-k8s].
+Проект [Virtual Kubelet][aci-connector-k8s] демонстрирует, как платформы оркестрации контейнеров могут интегрировать с экземплярами контейнеров Azure.
 
 Соединитель для Kubernetes имитирует [kubelet][kubelet-doc], выполняя регистрацию в качестве узла с неограниченной емкостью, а также подготавливает создание модулей [pod][pod-doc] в качестве групп контейнеров в экземплярах контейнеров Azure.
 
 Вы можете создать соединители для других оркестраторов, которые аналогичным образом интегрируются с примитивами платформы. Это позволит объединить возможности API оркестратора со скоростью и простотой управления контейнерами в службе "Экземпляры контейнеров Azure".
-
-> [!WARNING]
-> Соединитель ACI для Kubernetes является *экспериментальным* и не должен использоваться в рабочих средах.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

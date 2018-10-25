@@ -6,13 +6,13 @@ ms.service: security
 ms.subservice: Azure Disk Encryption
 ms.topic: article
 ms.author: mstewart
-ms.date: 09/10/2018
-ms.openlocfilehash: 6d08dbe1976363be414597401d7a4efbae82c9b4
-ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
+ms.date: 10/12/2018
+ms.openlocfilehash: 8b0f682e481ef73019d3371af2b84f6270e021ee
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46498442"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49341894"
 ---
 # <a name="azure-disk-encryption-prerequisites-previous-release"></a>Предварительные требования для шифрования дисков Azure (предыдущий выпуск)
 
@@ -49,11 +49,23 @@ ms.locfileid: "46498442"
 
 ## <a name="bkmk_GPO"></a> Сетевые подключения и групповая политика
 
-**Чтобы использовать функцию шифрования дисков Azure, конфигурация конечной точки сети виртуальной машины IaaS должна соответствовать приведенным ниже требованиям:**
+**Чтобы использовать функцию шифрования дисков Azure с применением старого синтаксиса параметров AAD, конфигурация конечной точки сети виртуальной машины IaaS должна соответствовать приведенным ниже требованиям:** 
   - Виртуальная машина IaaS должна иметь возможность подключиться к конечной точке Azure Active Directory \[login.microsoftonline.com\], чтобы получить маркер для подключения к хранилищу ключей.
   - Для записи ключей шифрования в ваше хранилище ключей виртуальная машина IaaS должна иметь возможность подключиться к конечной точке хранилища ключей.
   - Виртуальная машина IaaS должна иметь возможность подключиться к конечной точке службы хранилища Azure, в которой размещен репозиторий расширений Azure, и к учетной записи хранения Azure, в которой размещены VHD-файлы.
-  -  Если ваша политика безопасности ограничивает доступ к Интернету с виртуальных машин Azure, можно разрешить указанный выше универсальный код ресурса (URI) и настроить определенное правило, чтобы разрешить исходящие подключения к данным IP-адресам. Дополнительные сведения см. в статье [Доступ к Azure Key Vault из-за брандмауэра](../key-vault/key-vault-access-behind-firewall.md).    
+  -  Если ваша политика безопасности ограничивает доступ к Интернету с виртуальных машин Azure, можно разрешить указанный выше универсальный код ресурса (URI) и настроить определенное правило, чтобы разрешить исходящие подключения к данным IP-адресам. Дополнительные сведения см. в статье [Доступ к Azure Key Vault из-за брандмауэра](../key-vault/key-vault-access-behind-firewall.md).
+  - Если в Windows протокол TLS 1.0 был явно отключен и платформа .NET не была обновлена до версии 4.6 или более поздней, при следующем изменении в реестре с помощью ADE можно будет выбрать более позднюю версию TLS:
+    
+        [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
+        "SystemDefaultTlsVersions"=dword:00000001
+        "SchUseStrongCrypto"=dword:00000001
+
+        [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319]
+        "SystemDefaultTlsVersions"=dword:00000001
+        "SchUseStrongCrypto"=dword:00000001` 
+     
+
+ 
 
 
 **Групповая политика:**
@@ -65,7 +77,7 @@ ms.locfileid: "46498442"
 ## <a name="bkmk_PSH"></a> Azure PowerShell
 В [Azure PowerShell](/powershell/azure/overview) доступен набор командлетов, которые используют модель [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) для управления ресурсами Azure. Его можно использовать в браузере с [Azure Cloud Shell](../cloud-shell/overview.md), а также установить на локальном компьютере, следуя инструкциям ниже, и применять в любом сеансе PowerShell. Если вы уже установили его локально, убедитесь, что вы используете последнюю версию версии пакета SDK для Azure PowerShell для настройки шифрования дисков Azure. Скачайте последнюю версию [Azure PowerShell](https://github.com/Azure/azure-powershell/releases).
 
-### <a name="install-azure-powershell-for-use-on-your-local-machine-optional"></a>Установите Azure PowerShell для использования на вашем локальном компьютере (необязательно): 
+### <a name="install-azure-powershell-for-use-on-your-local-machine-optional"></a>Установите Azure PowerShell для использования на вашем локальном компьютере (необязательно):  
 1. Следуйте инструкциям по ссылкам для вашей операционной системы, а затем перейдите к остальным шагам.      
     - [Установка и настройка Azure PowerShell для Windows](/powershell/azure/install-azurerm-ps). 
         - Установите PowerShellGet, Azure PowerShell и загрузите модуль AzureRM. 

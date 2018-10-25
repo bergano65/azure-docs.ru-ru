@@ -1,21 +1,21 @@
 ---
-title: 'Пользовательский поиск Bing: разбиение на страницы списка доступных веб-страниц | Документация Майкрософт'
-description: Показано, как разбить на страницы список всех веб-страниц, которые может вернуть Bing.
+title: Разбиение на страницы списка доступных веб-страниц — Пользовательский поиск Bing
+titlesuffix: Azure Cognitive Services
+description: Показано, как разбить на страницы список всех веб-страниц, которые может вернуть API пользовательского поиска Bing.
 services: cognitive-services
 author: brapel
-manager: ehansen
-ms.assetid: 26CA595B-0866-43E8-93A2-F2B5E09D1F3B
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-custom-search
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/28/2017
 ms.author: v-brapel
-ms.openlocfilehash: 5692776736090c55547c2fe934e2c0aaf840d3c5
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f7d0a2f9c5a0e272d9f46ab76360ea7bf91449cc
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46982364"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48815965"
 ---
 # <a name="paging-webpages"></a>Разбиение на страницы списка веб-страниц 
 

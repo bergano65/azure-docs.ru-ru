@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 03/29/2018
 ms.author: cynthn
-ms.openlocfilehash: 03723b8653e42bca371f47e16657e7e973c257ae
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 2cef9673469020d56e549709d6084f37d3a64b87
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44294992"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49341096"
 ---
 # <a name="how-to-use-packer-to-create-windows-virtual-machine-images-in-azure"></a>Использование Packer для создания образов виртуальных машин Windows в Azure
 Каждая виртуальная машина в Azure создается из образа, который определяет дистрибутив Windows и версию операционной системы. Образы могут содержать предварительно установленные приложения и конфигурации. Azure Marketplace предоставляет большое количество образов Майкрософт и сторонних разработчиков для наиболее распространенных операционных систем и приложений. Кроме того, вы можете создать собственные настраиваемые образы, отвечающие конкретным потребностям. В этой статье описывается определение и создание пользовательских образов в Azure с использованием инструмента с открытым кодом [Packer](https://www.packer.io/).
@@ -39,11 +39,11 @@ New-AzureRmResourceGroup -Name $rgName -Location $location
 ## <a name="create-azure-credentials"></a>Создание учетных данных Azure
 Packer выполняет проверку подлинности с помощью субъекта-службы Azure. Субъект-служба Azure является удостоверением безопасности, которое можно использовать с приложениями, службами и средствами автоматизации, такими как Packer. Вы можете определять разрешения на то, какие операции может выполнять субъект-служба в Azure, и управлять ими.
 
-Создайте субъект-службу с помощью команды [New-AzureRmADServicePrincipal](/powershell/module/azurerm.resources/new-azurermadserviceprincipal) и назначьте ей разрешения на создание и управление ресурсами с помощью [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment):
+Создайте субъект-службу с помощью команды [New-AzureRmADServicePrincipal](/powershell/module/azurerm.resources/new-azurermadserviceprincipal) и назначьте ей разрешения на создание ресурсов и управление ими с помощью [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment): Замените *&lt;password&gt;* в примере своим паролем.  
 
 ```powershell
 $sp = New-AzureRmADServicePrincipal -DisplayName "AzurePacker" `
-    -Password (ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force)
+    -Password (ConvertTo-SecureString "<password>" -AsPlainText -Force)
 Sleep 20
 New-AzureRmRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $sp.ApplicationId
 ```

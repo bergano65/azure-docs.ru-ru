@@ -10,16 +10,16 @@ ms.reviewer: klam, estfan, LADocs
 ms.custom: vs-azure
 ms.topic: article
 ms.date: 03/30/2017
-ms.openlocfilehash: 97c928c34a18a5d4f3549c348a273df268ee1db0
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 068e5399073959d2c5aa6c4bbeb0d7bccf7d05e6
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43123314"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49393785"
 ---
 # <a name="overview-azure-serverless-with-azure-logic-apps-and-azure-functions"></a>Обзор бессерверных систем Azure с помощью Azure Logic Apps и Функций Azure
 
-Независимые (бессерверные) приложения обеспечивают такие преимущества, как увеличение скорости разработки, сокращение объема кода, простота и масштабируемость.  В этой статье рассматриваются различные атрибуты бессерверных решений и предложения Azure, независимые от сервера.
+[Независимые (бессерверные)](https://azure.microsoft.com/solutions/serverless/) приложения обеспечивают такие преимущества, как увеличение скорости разработки, сокращение объема кода, простота и масштабируемость.  В этой статье рассматриваются различные атрибуты бессерверных решений и предложения Azure, независимые от сервера.
 
 ## <a name="what-is-serverless"></a>Что значит "без сервера"?
 

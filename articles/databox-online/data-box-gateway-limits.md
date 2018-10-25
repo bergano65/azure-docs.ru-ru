@@ -1,26 +1,19 @@
 ---
 title: Ограничения для шлюза Azure Data Box | Документация Майкрософт
 description: Описание ограничений системы и рекомендуемых размеров для шлюза Microsoft Azure Data Box.
-services: databox-edge-gateway
-documentationcenter: NA
+services: databox
 author: alkohli
-manager: twooley
-editor: ''
-ms.assetid: ''
-ms.service: databox-edge-gateway
-ms.devlang: NA
+ms.service: databox
+ms.subservice: gateway
 ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: TBD
-ms.date: 09/24/2018
+ms.date: 10/03/2018
 ms.author: alkohli
-ms.custom: ''
-ms.openlocfilehash: edb4995b626055be830a7accb74d99f1db3ef8d0
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 60078845c98f2e241b00e184303dce0c860629e9
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46962214"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49164439"
 ---
 # <a name="azure-data-box-gateway-limits-preview"></a>Ограничения для шлюза Azure Data Box (предварительная версия)
 
@@ -44,7 +37,7 @@ ms.locfileid: "46962214"
 |---|---|
 |Нет. файлов на каждом устройстве |100 млн <br> Ограничение составляет ~25 миллионов файлов на каждые 2 ТБ места на диске с максимальным ограничением 100 миллионов |
 |Нет. общих папок на каждом устройстве |24 |
-|Максимальный размер файла, записанного в общую папку|5 ТБ |
+|Максимальный размер файла, записанного в общую папку|Для виртуального устройства объемом в 2 ТБ максимальный размер файла составляет 500 ГБ. <br> Максимальный размер файла пропорционально увеличивается в соответствии с размером диска данных, пока не достигнет 5 ТБ. |
 
 ## <a name="azure-storage-limits"></a>Ограничения службы хранилища Azure
 

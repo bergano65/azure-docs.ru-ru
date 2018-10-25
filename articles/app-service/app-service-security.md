@@ -1,7 +1,7 @@
 ---
 title: Безопасность в службе приложений Azure и службе "Функции Azure" | Документация Майкрософт
 description: Сведения о том, как служба приложений помогает защитить ваше приложение, а также о последующей блокировке приложения для защиты от угроз.
-keywords: azure app service, web app, mobile app, api app, function app, security, secure, secured, compliance, compliant, certificate, certificates, https, ftps, tls, trust, encryption, encrypt, encrypted, ip restriction, authentication, authorization, authn, autho, msi, managed service identity, secrets, secret, patching, patch, patches, version, isolation, network isolation, ddos, mitm
+keywords: azure app service, web app, mobile app, api app, function app, security, secure, secured, compliance, compliant, certificate, certificates, https, ftps, tls, trust, encryption, encrypt, encrypted, ip restriction, authentication, authorization, authn, autho, msi, managed service identity, managed identity, secrets, secret, patching, patch, patches, version, isolation, network isolation, ddos, mitm
 services: app-service
 documentationcenter: ''
 author: cephalin
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/24/2018
 ms.author: cephalin
-ms.openlocfilehash: 40fdd22bdbb3fc0676688430069d58c0422a7ca2
-ms.sourcegitcommit: a3a0f42a166e2e71fa2ffe081f38a8bd8b1aeb7b
+ms.openlocfilehash: 3bacc2bf253a6b8c3b869b7a6d4952d982de3ee6
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43382122"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48857505"
 ---
 # <a name="security-in-azure-app-service-and-azure-functions"></a>Безопасность в службе приложений Azure и службе "Функции Azure"
 
@@ -69,7 +69,7 @@ ms.locfileid: "43382122"
 
 При аутентификации внутренней службы служба приложений предоставляет два разных механизма в зависимости от ваших потребностей:
 
-- **Удостоверение службы**. Войдите в удаленный ресурс, используя удостоверение самого приложения. Служба приложений позволяет легко создать [управляемое удостоверение службы](app-service-managed-service-identity.md), которое вы можете использовать для аутентификации с другими службами, например [базой данных SQL Azure](/azure/sql-database/) или [Azure Key Vault](/azure/key-vault/). Соответствующие сведения о сквозной аутентификации для этого подхода см. в статье [Руководство. Безопасное подключение базы данных Azure SQL с использованием управляемого удостоверения службы](app-service-web-tutorial-connect-msi.md).
+- **Удостоверение службы**. Войдите в удаленный ресурс, используя удостоверение самого приложения. Служба приложений позволяет легко создать [управляемое удостоверение](app-service-managed-service-identity.md), которое можно использовать для проверки подлинности в других службах, например в [Базе данных SQL Azure](/azure/sql-database/) или [Azure Key Vault](/azure/key-vault/). Комплексное руководство по этому подходу см. в статье [Руководство. Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения](app-service-web-tutorial-connect-msi.md).
 - **От имени (OBO)**. Предоставьте делегированный доступ к удаленным ресурсам от имени пользователя. При использовании Azure Active Directory в качестве поставщика аутентификации приложение службы приложений может выполнять делегированный вход в удаленную службу, например [API Graph Azure Active Directory](../active-directory/develop/active-directory-graph-api.md) или приложение удаленного API в службе приложений. Соответствующие сведения о сквозной аутентификации для этого подхода см. в статье [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure](app-service-web-tutorial-auth-aad.md).
 
 ## <a name="connectivity-to-remote-resources"></a>Подключение к удаленным ресурсам
@@ -106,13 +106,13 @@ ms.locfileid: "43382122"
 
 Не храните секреты приложений, такие как учетные данные базы данных, маркеры API и закрытые ключи в файлах кода или конфигурации. Общепринятым подходом является доступ к ним как [переменным среды](https://wikipedia.org/wiki/Environment_variable) с использованием стандартного шаблона на выбранном вами языке. В службе приложений определить переменные среды можно с помощью [параметров приложения](web-sites-configure.md#app-settings) (и, особенно для приложений .NET, [строк подключения](web-sites-configure.md#connection-strings)). Параметры приложения и строки подключения хранятся в зашифрованном виде в Azure, и расшифровываются только перед введением в память процесса приложения при его запуске. Ключи шифрования регулярно меняются.
 
-Кроме того, вы можете интегрировать приложение службы приложений с [Azure Key Vault](/azure/key-vault/) для расширенного управления секретами. При получении [доступа к Key Vault с помощью управляемого удостоверения службы](../key-vault/tutorial-web-application-keyvault.md) приложение службы приложений может безопасно получить доступ к нужным секретам.
+Кроме того, вы можете интегрировать приложение службы приложений с [Azure Key Vault](/azure/key-vault/) для расширенного управления секретами. При получении [доступа к Key Vault с помощью управляемого удостоверения](../key-vault/tutorial-web-application-keyvault.md) приложение службы приложений может безопасно получить доступ к нужным секретам.
 
 ## <a name="network-isolation"></a>Сетевая изоляция
 
 За исключением ценового уровня **Изолированный** на всех уровнях приложения запускаются в общей сетевой инфраструктуре в службе приложений. Например, общедоступные IP-адреса и интерфейсные подсистемы балансировки нагрузки используются совместно с другими клиентами. **Изолированный** уровень обеспечивает полную изоляцию сети с помощью запуска приложений внутри выделенной [среды службы приложений](environment/intro.md). Среда службы приложений запускается в вашем экземпляре [виртуальной сети Azure](/azure/virtual-network/). Это дает такие возможности: 
 
-- ограничить доступ к сети с помощью [групп безопасности сети](../virtual-network/virtual-networks-nsg.md). 
+- ограничить доступ к сети с помощью [групп безопасности сети](../virtual-network/virtual-networks-dmz-nsg.md). 
 - Выполнить обслуживание приложений через выделенную общедоступную конечную точку с выделенными внешними интерфейсами.
 - Выполнить обслуживание внутреннего приложения с помощью внутреннего балансировщика нагрузки (ILB), который обеспечивает доступ только внутри виртуальной сети Azure. У балансировщика ILB есть IP-адрес из частной подсети, который обеспечивает полную изоляцию приложений из Интернета.
 - [Использовать балансировщик ILB за брандмауэром веб-приложения(WAF)](environment/integrate-with-application-gateway.md). WAF предлагает защиту на уровне предприятия для общедоступных приложений, такую как защита от атак DDoS, фильтрация URI и предотвращение внедрения SQL.

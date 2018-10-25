@@ -9,12 +9,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/07/2018
 ms.author: govindk
-ms.openlocfilehash: a4758e5597876112fa7a85850786491e22af8c83
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 868f465cc651043d3ef4b1735b4b528252572dbb
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47037146"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49378091"
 ---
 # <a name="secure-access-to-an-azure-cosmos-db-account-by-using-azure-virtual-network-service-endpoint"></a>Безопасный доступ к учетной записи Azure Cosmos DB с использованием конечной точки службы виртуальной сети Azure
 
@@ -226,7 +226,7 @@ Azure Cosmos DB — это многомодельная глобально ра
 
 Да, конечная точка службы виртуальной сети и брандмауэр могут сосуществовать. В общем случае следует убедиться, что перед настройкой конечной точки службы виртуальной сети доступ к порталу всегда включен, чтобы иметь возможность просматривать метрики, связанные с контейнером.
 
-### <a name="can-i-allow-access-to-other-azure-services-from-a-given-azure-region-when-service-endpoint-access-is-enabled-for-azure-cosmos-db"></a>Могу ли я "разрешить доступ к другим службам Azure из заданного региона Azure", когда доступ к конечным точкам службы включен для базы данных Azure Cosmos?  
+### <a name="can-i-accept-connections-from-within-public-azure-datacenters-when-service-endpoint-access-is-enabled-for-azure-cosmos-db"></a>Можно ли принимать подключения из общедоступных центров данных Azure, если для Azure Cosmos DB включен доступ через конечную точку службы?  
 
 Это необходимо, только если требуется, чтобы к учетной записи Azure Cosmos DB могли получать доступ другие службы Azure, такие как фабрика данных Azure, поиск Azure или любые службы, развернутые в данном регионе Azure.
 

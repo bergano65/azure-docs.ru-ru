@@ -10,12 +10,12 @@ ms.component: computer-vision
 ms.topic: conceptual
 ms.date: 01/26/2017
 ms.author: kefre
-ms.openlocfilehash: 5c0a4e981a290b9a758c8401a75e546c61618b45
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.openlocfilehash: 55b474d0edbb8dc01b9f35d4f8799e53e37862df
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45983907"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49166378"
 ---
 # <a name="computer-vision-api-frequently-asked-questions"></a>Часто задаваемые вопросы об API компьютерного зрения
 
@@ -44,7 +44,7 @@ ms.locfileid: "45983907"
 | Датский (da-DK)  | Нидерландский (nl-NL)     | Английский           | Финский (fi-FI)            |Французский (fr-FR)
 | Немецкий (de-DE)  | Греческий (el-GR)     | Венгерский (hu-HU) | Итальянский (it-IT)            | Японский (ja-JP)
 | Корейский (ko-KR)  | Норвежский (nb-NO) | Польский (pl-PL)    | Португальский (pt-BR), (pt-PT) | Русский (ru-RU)
-| Испанский (es-ES)   | Шведский (sv-SV)     | Турецкий (tr-TU)   |                            |
+| Испанский (es-ES)   | Шведский (sv-SV)     | Турецкий (tr-TR)   |                            |
 
 -----
 

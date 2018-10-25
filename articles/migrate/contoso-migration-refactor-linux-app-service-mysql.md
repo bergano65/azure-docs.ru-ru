@@ -2,16 +2,17 @@
 title: Рефакторинг приложения службы поддержки Linux для Службы приложений Azure и MySQL Azure в Contoso | Документация Майкрософт
 description: Сведения о рефакторинге локального приложения Linux в Contoso путем его перемещения в Службу приложений Azure с использованием GitHub для перехода на веб-уровень и Базу данных SQL Azure.
 author: rayne-wiselman
+manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 09/05/2018
+ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: 3f85d9d18aa49a378c63fa1f1692c7dc665489be
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 588bd5b3edeadb841de54691cf30916dd18c0982
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44296529"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49093007"
 ---
 # <a name="contoso-migration-refactor-a-contoso-linux-service-desk-app-to-multiple-regions-with-azure-app-service-traffic-manager-and-azure-mysql"></a>Миграция в компании Contoso: рефакторинг приложения службы поддержки Linux для использования нескольких регионов со Службой приложений Azure, диспетчером трафика и MySQL Azure в Contoso
 
@@ -34,6 +35,7 @@ ms.locfileid: "44296529"
 [Статья 11. Рефакторинг Team Foundation Server в Azure DevOps Services](contoso-migration-tfs-vsts.md) | Специалисты компании Contoso переносят локальное развертывание Team Foundation Server в Azure DevOps Services в Azure. | Доступна
 [Статья 12. Перепроектирование приложения для использования контейнеров Azure и Базы данных SQL Azure](contoso-migration-rearchitect-container-sql.md) | Специалисты компании Contoso переносят приложение SmartHotel в Azure. Затем уровень веб-приложений преобразуется в контейнер Windows, работающий в Azure Service Fabric, и базу данных в службе "База данных SQL Azure". | Доступна
 [Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | Специалисты компании Contoso выполняют повторную сборку приложения SmartHotel360, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Службу Azure Kubernetes (AKS), Функции Azure, Cognitive Services и Azure Cosmos DB. | Доступна
+[Статья 14. Масштабирование миграции в Azure](contoso-migration-scale.md) | Ознакомившись с вариантами сочетаний миграции, компания Contoso готовится к полномасштабной миграции в Azure. | Доступна
 
 В этой статье описывается, как Contoso переносит в Azure свое двухуровневое приложение службы поддержки osTicket на базе комплекса Linux, Apache, MySQL, PHP (LAMP). Если вы хотите использовать это приложение с открытым исходным кодом, вы можете загрузить его с [GitHub](https://github.com/osTicket/osTicket).
 

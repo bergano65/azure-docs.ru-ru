@@ -2,22 +2,21 @@
 title: Общие сведения о языке запросов Центра Интернета вещей Azure | Документация Майкрософт
 description: Руководство разработчика. Описание похожего на SQL языка запросов Центра Интернета вещей, который используется для получения сведений о двойниках устройств и модулей, а также заданиях из Центра Интернета вещей.
 author: fsautomata
-manager: ''
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 02/26/2018
 ms.author: elioda
-ms.openlocfilehash: 2e4b356fec642e06e3223700967eeacd19f1c49c
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f28a41f4a80806df14e314dae05405b7b45449b1
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46952483"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49318254"
 ---
 # <a name="iot-hub-query-language-for-device-and-module-twins-jobs-and-message-routing"></a>Язык запросов Центра Интернета вещей для двойников устройств и двойников модулей, заданий и маршрутизации сообщений
 
-Центр Интернета вещей предоставляет эффективный язык запросов, похожий на SQL, для получения сведений о [двойниках устройств][lnk-twins], [заданиях][lnk-jobs] и [маршрутизации сообщений][lnk-devguide-messaging-routes]. В этой статье представлены:
+Центр Интернета вещей предоставляет эффективный язык запросов, похожий на SQL, для получения сведений о [двойниках устройств](iot-hub-devguide-device-twins.md), [заданиях](iot-hub-devguide-jobs.md) и [маршрутизации сообщений](iot-hub-devguide-messages-d2c.md). В этой статье представлены:
 
 * общие сведения об основных возможностях языка запросов Центра Интернета вещей;
 * подробное описание языка. Дополнительные сведения о языке запросов для маршрутизации сообщений см. в [этой статье](../iot-hub/iot-hub-devguide-routing-query-syntax.md).
@@ -25,7 +24,9 @@ ms.locfileid: "46952483"
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-partial.md)]
 
 ## <a name="device-and-module-twin-queries"></a>Запросы двойников устройств и модулей
-[Двойники устройств][lnk-twins] и двойники модулей могут содержать произвольные объекты JSON в качестве тегов и свойств. Центр Интернета вещей позволяет выполнять запросы к двойникам устройств и двойникам модулей как к одному документу JSON, содержащему все сведения о двойниках.
+
+[Двойники устройств](iot-hub-devguide-device-twins.md) и двойники модулей могут содержать произвольные объекты JSON в качестве тегов и свойств. Центр Интернета вещей позволяет выполнять запросы к двойникам устройств и двойникам модулей как к одному документу JSON, содержащему все сведения о двойниках.
+
 Предположим, что двойники устройств в Центре Интернета вещей имеют следующую структуру (структура двойников модулей будет выглядеть так же и содержать элемент moduleId):
 
 ```json
@@ -80,15 +81,14 @@ ms.locfileid: "46952483"
 
 ### <a name="device-twin-queries"></a>Запросы двойника устройства
 
-Центр Интернета вещей предоставляет двойники устройства как коллекцию документов с именем **devices**.
-Следующий запрос получает весь набор двойников устройства:
+Центр Интернета вещей предоставляет двойники устройства как коллекцию документов с именем **devices**. Например, следующий запрос получает весь набор двойников устройства:
 
 ```sql
 SELECT * FROM devices
 ```
 
 > [!NOTE]
-> [Пакеты SDK для Azure IoT][lnk-hub-sdks] поддерживают разбивку на страницы объемных результатов.
+> [Пакеты SDK для Azure IoT](iot-hub-devguide-sdks.md) поддерживают разбивку на страницы объемных результатов.
 
 Центр Интернета вещей позволяет получить двойники устройств, отфильтрованные по произвольным условиям. Например, для получения двойников устройств, где тег **location.region** имеет значение **US**, используйте следующий запрос:
 
@@ -101,7 +101,7 @@ WHERE tags.location.region = 'US'
 
 ```sql
 SELECT * FROM devices
-WHERE tags.location.region = 'US'
+  WHERE tags.location.region = 'US'
     AND properties.reported.telemetryConfig.sendFrequencyInSecs >= 60
 ```
 
@@ -109,25 +109,25 @@ WHERE tags.location.region = 'US'
 
 ```sql
 SELECT * FROM devices
-WHERE properties.reported.connectivity IN ['wired', 'wifi']
+  WHERE properties.reported.connectivity IN ['wired', 'wifi']
 ```
 
 Часто требуется определить все двойники устройств, содержащие определенное свойство. Для этой цели Центр Интернета вещей поддерживает функцию `is_defined()`. Например, для получения двойников устройств, которые определяют свойство `connectivity`, используется следующий запрос:
 
 ```SQL
 SELECT * FROM devices
-WHERE is_defined(properties.reported.connectivity)
+  WHERE is_defined(properties.reported.connectivity)
 ```
 
-Полное описание возможностей фильтрации см. в разделе [Предложение WHERE][lnk-query-where].
+Полное описание возможностей фильтрации см. в разделе [Предложение WHERE](iot-hub-devguide-query-language.md#where-clause).
 
 Кроме того, поддерживаются группирование и агрегаты. Например, чтобы найти количество устройств в каждом состоянии конфигурации телеметрии, используйте следующий запрос:
 
 ```sql
 SELECT properties.reported.telemetryConfig.status AS status,
     COUNT() AS numberOfDevices
-FROM devices
-GROUP BY properties.reported.telemetryConfig.status
+  FROM devices
+  GROUP BY properties.reported.telemetryConfig.status
 ```
 
 Этот запрос группировки вернет результат, как в следующем примере:
@@ -159,7 +159,7 @@ SELECT LastActivityTime FROM devices WHERE status = 'enabled'
 
 ### <a name="module-twin-queries"></a>Запросы двойника модуля
 
-Запросы к двойникам модулей похожи на запросы к двойникам устройств, но они используют другую коллекцию или пространство имен. Например, вместо блока FROM devices запрос может содержать следующее:
+Запросы к двойникам модулей похожи на запросы к двойникам устройств, но они используют другую коллекцию или пространство имен. Например, вместо блока FROM devices вы можете указать в запросе device.modules:
 
 ```sql
 SELECT * FROM devices.modules
@@ -174,11 +174,15 @@ Select * from devices.modules where properties.reported.status = 'scanning'
 Этот запрос вернет список всех двойников модулей с состоянием scanning, но только в определенном наборе устройств:
 
 ```sql
-Select * from devices.modules where properties.reported.status = 'scanning' and deviceId IN ('device1', 'device2')  
+Select * from devices.modules 
+  where properties.reported.status = 'scanning' 
+  and deviceId IN ['device1', 'device2']
 ```
 
 ### <a name="c-example"></a>Пример C#
-Функция обработки запросов предоставляется в [пакете SDK для служб C#][lnk-hub-sdks] в классе **RegistryManager**.
+
+Функция обработки запросов предоставляется в [пакете SDK для служб C#](iot-hub-devguide-sdks.md) в классе **RegistryManager**.
+
 Ниже приведен пример простого запроса:
 
 ```csharp
@@ -198,7 +202,9 @@ while (query.HasMoreResults)
 Объект query предоставляет несколько значений **Next**, которые зависят от параметра десериализации, необходимого для запроса. Например, двойник устройства или объекты задания, или обычные JSON при использовании проекций.
 
 ### <a name="nodejs-example"></a>Пример для Node.js
-Функция обработки запросов предоставляется в [пакете SDK службы Azure IoT для Node.js][lnk-hub-sdks] в объекте **Registry**.
+
+Функция обработки запросов предоставляется в [пакете SDK службы Azure IoT для Node.js](iot-hub-devguide-sdks.md) в объекте **Registry**.
+
 Ниже приведен пример простого запроса:
 
 ```nodejs
@@ -233,8 +239,7 @@ query.nextAsTwin(onResults);
 
 ## <a name="get-started-with-jobs-queries"></a>Начало работы с запросами заданий
 
-[Задания][lnk-jobs] позволяют выполнять операции с наборами устройств. Каждый двойник устройства содержит сведения о заданиях, в которых он участвует, в коллекции с именем **jobs**.
-Логически получается следующее:
+[Задания](iot-hub-devguide-jobs.md) позволяют выполнять операции с наборами устройств. Каждый двойник устройства содержит сведения о заданиях, в которых он участвует, в коллекции с именем **jobs**.
 
 ```json
 {
@@ -276,16 +281,18 @@ query.nextAsTwin(onResults);
 
 ```sql
 SELECT * FROM devices.jobs
-WHERE devices.jobs.deviceId = 'myDeviceId'
+  WHERE devices.jobs.deviceId = 'myDeviceId'
 ```
 
 Обратите внимание, как этот запрос предоставляет сведения о состоянии конкретного устройства (и, возможно, ответ на прямой метод) в каждом возвращенном задании.
+
 Все свойства объектов в коллекции **devices.jobs** можно также отфильтровать с помощью произвольных логических условий.
+
 Например, чтобы получить все завершенные задания по обновлению двойников устройств, созданных после сентября 2016 года для определенного устройства, используйте следующий запрос:
 
 ```sql
 SELECT * FROM devices.jobs
-WHERE devices.jobs.deviceId = 'myDeviceId'
+  WHERE devices.jobs.deviceId = 'myDeviceId'
     AND devices.jobs.jobType = 'scheduleTwinUpdate'
     AND devices.jobs.status = 'completed'
     AND devices.jobs.createdTimeUtc > '2016-09-01'
@@ -295,10 +302,11 @@ WHERE devices.jobs.deviceId = 'myDeviceId'
 
 ```sql
 SELECT * FROM devices.jobs
-WHERE devices.jobs.jobId = 'myJobId'
+  WHERE devices.jobs.jobId = 'myJobId'
 ```
 
 ### <a name="limitations"></a>Ограничения
+
 В настоящее время запросы к **devices.jobs** не поддерживают следующие элементы:
 
 * проекции, поэтому можно использовать только `SELECT *`;
@@ -306,24 +314,28 @@ WHERE devices.jobs.jobId = 'myJobId'
 * выполняемые агрегаты, например count, avg, group by.
 
 ## <a name="basics-of-an-iot-hub-query"></a>Основные сведения о запросе Центра Интернета вещей
+
 Каждый запрос Центра Интернета вещей состоит из предложений SELECT и FROM, а также необязательных предложений WHERE и GROUP BY. Каждый запрос выполняется для коллекции документов JSON, например двойников устройств. Предложение FROM указывает коллекцию документов, по которой будет выполняться итерация (**devices** или **devices.jobs**). Затем применяется фильтр в предложении WHERE. С использованием агрегации результаты этого шага сгруппированы, как указано в предложении GROUP BY. Для каждой группы создается строка, как указано в предложении SELECT.
 
 ```sql
 SELECT <select_list>
-FROM <from_specification>
-[WHERE <filter_condition>]
-[GROUP BY <group_specification>]
+  FROM <from_specification>
+  [WHERE <filter_condition>]
+  [GROUP BY <group_specification>]
 ```
 
 ## <a name="from-clause"></a>Предложение FROM
+
 Предложение **FROM <из_спецификации>** может предоставить только два значения: **FROM devices** для запроса двойников устройства или **FROM devices.jobs** для запроса сведений о задании для каждого устройства.
+
 
 ## <a name="where-clause"></a>Предложение WHERE
 Предложение **WHERE <условие_фильтрации>** является необязательным. Оно определяет одно или несколько условий, которым должны соответствовать документы JSON в коллекции FROM, чтобы быть включенными в результат. Любой документ JSON должен при вычислении указанных условий возвращать значение true, чтобы быть включенным в результат.
 
-Допустимые условия описаны в разделе [Выражения и условия][lnk-query-expressions].
+Допустимые условия описаны в разделе [Выражения и условия](iot-hub-devguide-query-language.md#expressions-and-conditions).
 
 ## <a name="select-clause"></a>Предложение SELECT
+
 Предложение **SELECT <список_для_выбора>** является обязательным. Оно указывает значения, которые будут получены из запроса. Здесь задаются значения JSON, которые используются для создания новых объектов JSON.
 На этапе проекции для каждого элемента, отфильтрованного (и при необходимости сгруппированного) подмножества коллекции FROM создается объект JSON. Этот объект собран из значений, которые указаны в предложении SELECT.
 
@@ -349,7 +361,7 @@ SELECT [TOP <max number>] <projection list>
     | max(<projection_element>)
 ```
 
-**Attribute_name** относится к любому свойству документа JSON в коллекции FROM. Некоторые примеры предложений SELECT можно найти в разделе [Начало работы с запросами двойника устройства][lnk-query-getstarted].
+**Attribute_name** относится к любому свойству документа JSON в коллекции FROM. Некоторые примеры предложений SELECT можно найти в разделе [Начало работы с запросами двойника устройства](iot-hub-devguide-query-language.md#get-started-with-device-twin-queries).
 
 В настоящее время предложения для осуществления выбора, отличные от **SELECT*** , поддерживаются только в статистических запросах к двойникам устройств.
 
@@ -483,18 +495,5 @@ GROUP BY <group_by_element>
 | CONTAINS(x,y) | Возвращает значение логического типа, указывающее, содержит ли первое строковое выражение второе. |
 
 ## <a name="next-steps"></a>Дополнительная информация
-Узнайте, как выполнять запросы в своих приложениях с помощью [пакетов SDK для Azure IoT][lnk-hub-sdks].
 
-[lnk-query-where]: iot-hub-devguide-query-language.md#where-clause
-[lnk-query-expressions]: iot-hub-devguide-query-language.md#expressions-and-conditions
-[lnk-query-getstarted]: iot-hub-devguide-query-language.md#get-started-with-device-twin-queries
-
-[lnk-twins]: iot-hub-devguide-device-twins.md
-[lnk-jobs]: iot-hub-devguide-jobs.md
-[lnk-devguide-endpoints]: iot-hub-devguide-endpoints.md
-[lnk-devguide-quotas]: iot-hub-devguide-quotas-throttling.md
-[lnk-devguide-mqtt]: iot-hub-mqtt-support.md
-[lnk-devguide-messaging-routes]: iot-hub-devguide-messages-d2c.md
-[lnk-devguide-messaging-format]: iot-hub-devguide-messages-construct.md
-
-[lnk-hub-sdks]: iot-hub-devguide-sdks.md
+Сведения о выполнении запросов в приложениях с помощью пакетов SDK для Azure IoT см. в статье [Понимание и использование пакетов SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md).

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/27/2017
 ms.author: apimpm
-ms.openlocfilehash: 3eb9d6851c30f11980d47d4e48b158217e41995d
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: 29e918733cc72010aa6aa5c0f42d613331eec2a2
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30233791"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48044728"
 ---
 # <a name="api-management-transformation-policies"></a>Политики преобразования службы управления API
 В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](http://go.microsoft.com/fwlink/?LinkID=398186).
@@ -481,6 +481,20 @@ OriginalUrl.
 
  Чтобы узнать больше, см. статью [API Management policy expressions](api-management-policy-expressions.md) (Выражения политики управления API) и раздел [Context variable](api-management-policy-expressions.md#ContextVariables) (Переменная контекста).
 
+> [!NOTE]
+> Несколько значений заголовка сцепляются в строку CSV, как показано на примере ниже.  
+> `headerName: value1,value2,value3`
+>
+> Исключения включают в себя стандартизированные заголовки, значения которых:
+> - могут содержать запятые (`User-Agent`, `WWW-Authenticate`, `Proxy-Authenticate`);
+> - могут содержать дату (`Cookie`, `Set-Cookie`, `Warning`);
+> - содержат дату (`Date`, `Expires`, `If-Modified-Since`, `If-Unmodified-Since`, `Last-Modified`, `Retry-After`).
+>
+> В случае таких исключений несколько значений заголовка не будут сцеплены в одну строку и будут передаваться как отдельные заголовки, как показано ниже.  
+>`User-Agent: value1`  
+>`User-Agent: value2`  
+>`User-Agent: value3`
+
 ### <a name="elements"></a>Элементы
 
 |ИМЯ|ОПИСАНИЕ|Обязательно|
@@ -638,7 +652,7 @@ OriginalUrl.
 
 -   **Разделы политики:** inbound.
 
--   **Области политики:** product, API, operation.
+-   **Области политики:** global, product, API, operation.
 
 ##  <a name="XSLTransform"></a> Преобразование XML с помощью XSLT
  Политика `Transform XML using an XSLT` применяет преобразование данных в формате XSL в формат XML в тексте запроса или ответа.

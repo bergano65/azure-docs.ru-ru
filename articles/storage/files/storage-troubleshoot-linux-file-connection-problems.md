@@ -6,19 +6,19 @@ author: jeffpatt24
 tags: storage
 ms.service: storage
 ms.topic: article
-ms.date: 05/11/2018
+ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.component: files
-ms.openlocfilehash: 0f99913ab252b94d475f920bd734e68ff5f3b3d3
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 87190a7f46a209ae66ca47d9346ed4b5929ac8fd
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39525126"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49394207"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
 
-В этой статье приведен список распространенных проблем, возникающих в службе файлов Microsoft Azure при подключении из клиентов Linux. Кроме того, здесь представлены возможные причины этих проблем и способы их устранения.
+В этой статье приведен список распространенных проблем, возникающих в службе файлов Microsoft Azure при подключении из клиентов Linux. Кроме того, здесь представлены возможные причины этих проблем и способы их устранения. Помимо действий по устранению неполадок, описываемых в этой статье, можно также использовать [AzFileDiagnostics](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-02184089), чтобы обеспечить выполнение необходимых условий для клиента Linux. AzFileDiagnostics автоматизирует обнаружение большинства симптомов, упомянутых в этой статье, и помогает настроить среду для достижения оптимальной производительности. Эту информацию можно также найти в статье [Troubleshooter for Azure Files storage problems](https://support.microsoft.com/help/4022301/troubleshooter-for-azure-files-shares) (Устранение неполадок в хранилище файлов Azure), где приведены пошаговые инструкции по устранению проблем с подключением и сопоставлением общих ресурсов Azure.
 
 <a id="permissiondenied"></a>
 ## <a name="permission-denied-disk-quota-exceeded-when-you-try-to-open-a-file"></a>Отображается сообщение "[permission denied] Disk quota exceeded" ([Отказано в разрешении]. Превышена дисковая квота) при попытке открыть файл
@@ -82,7 +82,7 @@ ms.locfileid: "39525126"
 
 ### <a name="solution"></a>Решение
 
-Функция шифрования протокола SMB 3.0 для Linux появилась в ядре версии 4.11. Эта функция позволяет подключать общую папку Azure из локальной среды или другого региона Azure. На момент публикации этой статьи функция была добавлена в дистрибутивы Ubuntu 17.04 и Ubuntu 16.10. Если используемый SMB-клиент Linux не поддерживает шифрование, подключите службу файлов Azure с помощью SMB 2.1 с виртуальной машины Linux в Azure, расположенной в том же центре обработки данных, что и учетная запись хранения службы файлов.
+Функция шифрования протокола SMB 3.0 для Linux появилась в ядре версии 4.11. Эта функция позволяет подключать общую папку Azure из локальной среды или другого региона Azure. На момент публикации этой статьи функция была добавлена в дистрибутивы Ubuntu 17.04 и Ubuntu 16.10. Если используемый SMB-клиент Linux не поддерживает шифрование, подключите службу файлов Azure с помощью SMB 2.1 с виртуальной машины Linux в Azure, расположенной в том же центре обработки данных, что и общая папка. Убедитесь, что параметр [Требуется безопасное перемещение]( https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) отключен в учетной записи хранения. 
 
 <a id="slowperformance"></a>
 ## <a name="slow-performance-on-an-azure-file-share-mounted-on-a-linux-vm"></a>Низкая производительность файлового ресурса Azure, подключенного к виртуальной машине Linux
@@ -150,6 +150,7 @@ ms.locfileid: "39525126"
 - На клиенте не поддерживается шифрование SMB 3.0. Шифрование SMB 3.0 доступно в Ubuntu 16.4 и более поздней версии, SUSE 12.3 и более поздней версии. В других дистрибутивах должно использоваться ядро 4.11 или более поздней версии.
 - Вы пытаетесь подключиться к учетной записи хранения через TCP-порт 445, который не поддерживается.
 - Вы пытаетесь подключиться к файловому ресурсу Azure с виртуальной машины Azure, которая не находится в одном регионе с учетной записью хранения.
+- Если для учетной записи хранения включен параметр [Требуется безопасное перемещение]( https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer), то служба файлов Azure разрешит только подключения по протоколу SMB 3.0 с шифрованием.
 
 ### <a name="solution"></a>Решение
 
@@ -190,7 +191,7 @@ ln: failed to create symbolic link 't': Operation not supported
 Команда должна выглядеть примерно так:
 
 ```
-sudo mount -t cifs //<storage-account-name>.file.core.windows.net/<share-name> <mount-point> -o vers=<smb-version>,username=<storage-account-name>,password=<storage-account-key>,dir_mode=0777,file_mode=0777,serverino,mfsynlinks
+sudo mount -t cifs //<storage-account-name>.file.core.windows.net/<share-name> <mount-point> -o vers=<smb-version>,username=<storage-account-name>,password=<storage-account-key>,dir_mode=0777,file_mode=0777,serverino,mfsymlinks
 ```
 
 После добавления вы сможете создавать символьные ссылки, как описано на [вики-сайте](https://wiki.samba.org/index.php/UNIX_Extensions#Storing_symlinks_on_Windows_servers).

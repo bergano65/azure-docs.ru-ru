@@ -4,14 +4,14 @@ description: В этой статье рассматриваются часто 
 author: snehaamicrosoft
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 09/03/2018
+ms.date: 09/21/2018
 ms.author: snehaa
-ms.openlocfilehash: ce9dc4aab26b99bbb1e9f24f018354b8c91f66f4
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 2b704edee55f7d15da1b59d8f8b357b9ba7ca8f3
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43699970"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48239223"
 ---
 # <a name="azure-migrate---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Миграция Azure"
 
@@ -48,7 +48,7 @@ ms.locfileid: "43699970"
 
 ### <a name="which-azure-regions-are-supported-by-azure-migrate"></a>Какие регионы Azure поддерживает служба "Миграция Azure"?
 
-Сейчас для переноса проектов служба "Миграция Azure" поддерживает регионы "Восточная часть США" и "Центрально-западная часть США". Обратите внимание, что, хотя проекты миграции можно создать только в регионах "Восточная часть США" и "Центрально-западная часть США", вы все равно можете оценить [несколько целевых расположений](https://docs.microsoft.com/azure/migrate/how-to-modify-assessment#edit-assessment-properties) для компьютеров. Расположение проекта используется только для хранения обнаруженных данных.
+Сейчас для переноса проектов служба "Миграция Azure" поддерживает регионы "Восточная часть США" и "Центрально-западная часть США". Хотя проекты миграции можно создавать только в регионах "Восточная часть США" и "Центрально-западная часть США", вы все равно можете оценить компьютеры для [нескольких целевых расположений](https://docs.microsoft.com/azure/migrate/how-to-modify-assessment#edit-assessment-properties). Расположение проекта используется только для хранения обнаруженных данных.
 
 ### <a name="how-does-the-on-premises-site-connect-to-azure-migrate"></a>Как локальный сайт подключается к службе "Миграция Azure"?
 
@@ -58,7 +58,7 @@ ms.locfileid: "43699970"
 
 В OVA-файл шаблона можно добавлять дополнительные компоненты (например, антивирусные программы). Важно не изменять правила обмена данными и правила брандмауэра, необходимые для работы устройства в службе "Миграция Azure".   
 
-## <a name="discovery-and-assessment"></a>Обнаружение и оценка
+## <a name="discovery"></a>Обнаружение
 
 ### <a name="what-data-is-collected-by-azure-migrate"></a>Какие данные собираются службой "Миграция Azure"?
 
@@ -87,6 +87,12 @@ ms.locfileid: "43699970"
   - Исходящая скорость сети
 
 Обнаружение на основе агентов — функция в рамках обнаружения на основе устройства, которая помогает клиентам [визуализировать зависимости](how-to-create-group-machine-dependencies.md) локальных виртуальных машин. Агенты зависимостей собирают такие данные, как полное доменное имя, сведения об ОС, IP-адрес, MAC-адрес, сведения о процессах, выполняющихся внутри виртуальной машины, а также о входящих и исходящих TCP-подключениях этой машины. Обнаружение на основе агентов является необязательным. Вы можете не устанавливать агенты, если не требуется визуализировать зависимости виртуальных машин.
+
+### <a name="would-there-be-any-performance-impact-on-the-analyzed-esxi-host-environment"></a>Будет ли снижаться производительность в среде проанализированных узлов ESXi?
+
+В случае использования [подхода однократного обнаружения](https://docs.microsoft.com/azure/migrate/concepts-collector#discovery-methods), чтобы собирать данные о производительности, на сервере vCenter необходимо выставить уровень статистики 3. Установив этот уровень, вы включите сбор большого количества данных об устранении неполадок, которые будут храниться в базе данных vCenter Server. Это, в свою очередь, может привести к определенным проблемам с производительностью в vCenter Server. Последствия для узла ESXi будут пренебрежительно малы.
+
+Мы представили непрерывное профилирование данных о производительности (эта функция доступна в предварительной версии). Благодаря непрерывному профилированию, больше не требуется менять уровень статистики vCenter Server, чтобы провести оценку на основе производительности. Модуль сборщика теперь будет профилировать локальные компьютеры для оценки данных о производительности виртуальных машин. Это практически не повлияет на производительность узлов ESXi, а также vCenter Server.
 
 ### <a name="where-is-the-collected-data-stored-and-for-how-long"></a>Где хранятся собранные данные и как долго?
 
@@ -124,11 +130,14 @@ ms.locfileid: "43699970"
 
 В одном проекте миграции можно обнаружить 1500 виртуальных машин. Если количество машин в локальной среде превышает это число, [см. дополнительные сведения](how-to-scale-assessment.md) о возможностях обнаружения крупномасштабной среды в службе "Миграция Azure".
 
+## <a name="assessment"></a>Оценка
+
 ### <a name="does-azure-migrate-support-enterprise-agreement-ea-based-cost-estimation"></a>Поддерживает ли служба "Миграция Azure" оценку затрат на основе Соглашения Enterprise (EA)?
 
 Служба "Миграция Azure" сейчас не поддерживает оценку затрат для [Соглашение Enterprise](https://azure.microsoft.com/offers/enterprise-agreement-support/). В качестве решения укажите предложение с оплатой по мере использования и вручную введите процент скидки (применяемой к подписке) в поле скидки свойств оценки.
 
   ![Скидка](./media/resources-faq/discount.png)
+  
 
 ## <a name="dependency-visualization"></a>Визуализация зависимостей
 
@@ -138,7 +147,34 @@ ms.locfileid: "43699970"
 
 ### <a name="can-i-use-an-existing-workspace-for-dependency-visualization"></a>Можно ли использовать существующую рабочую область для визуализации зависимостей?
 
-Служба "Миграция Azure" не поддерживает использование существующей рабочей области для визуализации зависимостей. Но Microsoft Monitoring Agent (MMA) поддерживает несколько узлов и позволяет передавать данные в несколько рабочих областей. Поэтому при наличии агентов, развернутых и настроенных в рабочей области, можно задействовать поддержку нескольких узлов в агенте MMA, настроить его на рабочую область службы "Миграция Azure" (в дополнение к существующей рабочей области) и обеспечить его работу. Ознакомьтесь с [публикацией в блоге](https://blogs.technet.microsoft.com/msoms/2016/05/26/oms-log-analytics-agent-multi-homing-support/) со сведениями о том, как включить поддержку нескольких узлов в агенте MMA.
+Да, "Миграция Azure" теперь позволяет вложить существующую рабочую область в проект миграции и применять его для визуализации зависимостей. [Узнайте больше](https://docs.microsoft.com/azure/migrate/concepts-dependency-visualization#how-does-it-work).
+
+### <a name="can-i-export-the-dependency-visualization-report"></a>Можно ли экспортировать отчет о визуализации зависимостей?
+
+Нет, экспортировать отчет о визуализации зависимостей нельзя. Но служба "Миграция Azure" применяет для визуализации зависимостей сопоставление служб, и вы можете использовать [интерфейсы REST API сопоставления служб](https://docs.microsoft.com/rest/api/servicemap/machines/listconnections), чтобы получить зависимости в формате JSON.
+
+### <a name="how-can-i-automate-the-installation-of-microsoft-monitoring-agent-mma-and-dependency-agent"></a>Как автоматизировать установку агентов Microsoft Monitoring Agent (MMA) и Dependency Agent?
+
+[Вот](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#installation-script-examples) сценарий, который можно использовать для установки Dependency Agent. Для MMA это сценарий, который можно использовать, доступен в TechNet [здесь](https://gallery.technet.microsoft.com/scriptcenter/Install-OMS-Agent-with-2c9c99ab).
+
+Помимо сценариев, для развертывания агентов можно использовать инструменты развертывания, такие как System Center Configuration Manager (SCCM), [Intigua](https://www.intigua.com/getting-started-intigua-for-azure-migration) и т. д.
+
+### <a name="what-are-the-operating-systems-supported-by-mma"></a>Какие операционные системы поддерживаются агентом MMA?
+
+Список операционных систем Windows, поддерживаемых MMA, см. в [этой статье](https://docs.microsoft.com/azure/log-analytics/log-analytics-concept-hybrid#supported-windows-operating-systems).
+Список операционных систем Linux, поддерживаемых MMA, см. в [этой статье](https://docs.microsoft.com/azure/log-analytics/log-analytics-concept-hybrid#supported-linux-operating-systems).
+
+### <a name="what-are-the-operating-systems-supported-by-dependency-agent"></a>Какие операционные системы поддерживаются агентом зависимостей?
+
+Список операционных систем Windows, поддерживаемых агентом зависимостей, см. в [этой статье](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#supported-windows-operating-systems).
+Список операционных систем Linux, поддерживаемых агентом зависимостей, см. в [этой статье](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#supported-linux-operating-systems).
+
+### <a name="can-i-visualize-dependencies-in-azure-migrate-for-more-than-one-hour-duration"></a>Возможно ли в службе "Миграция Azure" визуализировать зависимости за период свыше одного часа?
+Нет, в службе "Миграция Azure" визуализация зависимостей не может длиться больше часа. Служба "Миграция Azure" позволяет вернуться к определенной дате в журнале за последний месяц, но максимальный период, для которого можно визуализировать зависимости, составляет не более 1 часа. Например, вы можете использовать функцию периода времени на карте зависимостей, чтобы просмотреть вчерашние зависимости, однако просматривать их можно только для периода времени в один час.
+
+### <a name="is-dependency-visualization-supported-for-groups-with-more-than-10-vms"></a>Поддерживается ли визуализация зависимостей для групп, в которых более 10 виртуальных машин?
+Вы можете [визуализировать зависимости групп](https://docs.microsoft.com/azure/migrate/how-to-create-group-dependencies), в которых имеется до 10 виртуальных машин. Если в группе более 10 виртуальных машин, рекомендуем разбить ее на более мелкие группы, а после этого приступить к визуализации зависимостей.
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 6ceeb9683a979256a8a52347fc74ab758fd1d348
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 4663fc377e795e603bd2484ec4cf98578408501f
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39171441"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48248387"
 ---
 # <a name="how-to-log-dialogs-in-a-conversation-learner-model"></a>Запись диалогов в модели Conversation Learner
 
@@ -51,7 +51,7 @@ ms.locfileid: "39171441"
 1. Щелкните Actions (Действия), а затем New Action (Новое действие).
 2. В поле Response (Ответ) введите Which city? (Какой город?).
 3. В поле "Disqualifying Entities" (Блокирующие сущности) введите $city.
-3. Нажмите кнопку "Создать"
+3. Щелкните Создать. 
 
 Теперь создайте второе действие.
 
@@ -76,7 +76,7 @@ ms.locfileid: "39171441"
 
 Добавьте другой пример диалога.
 
-1. Щелкните New Action (Новое действие), а затем New Train Dialog (Обучение новому диалогу).
+1. Щелкните Train Dialogs (Обучение диалогам), а затем — New Train Dialog (Обучение новому диалогу).
 2. Введите what's the weather in Seattle? (Какая погода в Сиэтле?). Обратите внимание, что Seattle (Сиэтл) помечается как сущность.
 5. Щелкните Score Actions (Оценить действия). 
 6. Выберите The weather in $city is probably sunny (Погода в городе $city скорее всего солнечная).
@@ -86,7 +86,7 @@ ms.locfileid: "39171441"
 Предположим, что мы развернули этот бот для пользователей.
 
 1. Щелкните Log Dialogs (Записать диалоги).
-2. Щелкните New Chat Session (Новый сеанс чата).
+2. Щелкните диалоговое окно создания журнала.
     - Бот будет представлен так, как если бы пользователь взаимодействовал с ним с помощью элемента управления веб-чатом в левой части пользовательского интерфейса. Пустое пространство справа можно просто игнорировать.
 3. Введите hello (Привет).
 4. Бот ответит: which city? (Какой город?)
@@ -97,10 +97,10 @@ ms.locfileid: "39171441"
 
 Начните новый сеанс.
 
-2. Щелкните New Chat Session (Новый сеанс чата).
+2. Щелкните диалоговое окно создания журнала.
 3. Введите forecast for Boston (Прогноз погоды в Бостоне).
 4. Бот ответит: which city? (Какой город?)
-2. Щелкните Done Teaching (Завершить обучение).
+2. Щелкните Done Testing (Завершить тестирование).
 
 Теперь давайте внесем правки во второй диалог.
 

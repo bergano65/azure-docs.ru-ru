@@ -10,12 +10,12 @@ ms.component: core
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 2ec0dea7e50747f8af337874c8f12463cecb8df7
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 1297881373943143578695490531d147d7f5523d
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47163483"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49115328"
 ---
 # <a name="train-models-with-automated-machine-learning-in-the-cloud"></a>Обучение моделей с помощью автоматического машинного обучения в облаке
 
@@ -203,7 +203,7 @@ RunDetails(remote_run).show()
 
 ## <a name="example"></a>Пример
 
-Записная книжка `automl/03.auto-ml-remote-execution.ipynb` иллюстрирует основные понятия, приведенные в этой статье.  Получите эту записную книжку:
+В записной книжке [automl/03.auto-ml-remote-execution.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/automl/03.auto-ml-remote-execution.ipynb) показаны основные понятия из этой статьи.  Получите эту записную книжку:
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 

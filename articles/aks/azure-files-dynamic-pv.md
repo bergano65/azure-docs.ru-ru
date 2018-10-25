@@ -1,28 +1,34 @@
 ---
-title: Использование службы файлов Azure с AKS
-description: Использование дисков Azure с AKS.
+title: Динамическое создание тома "Файлы" для нескольких групп контейнеров в Службе Azure Kubernetes (AKS)
+description: Сведения о том, как динамически создавать постоянный том с файлами Azure для использования с несколькими параллельными pod в Службе Azure Kubernetes (AKS)
 services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 08/15/2018
+ms.date: 10/08/2018
 ms.author: iainfou
-ms.openlocfilehash: dfc9171f54effe3da7a0f13695ab233d561357d4
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: 022ffeaf75f8f03447b931ed9c3a474286a17f89
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43285691"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49067811"
 ---
-# <a name="persistent-volumes-with-azure-files"></a>Использование постоянных томов со службой файлов Azure
+# <a name="dynamically-create-and-use-a-persistent-volume-with-azure-files-in-azure-kubernetes-service-aks"></a>Динамическое создание и использование постоянного тома с файлами Azure в службе Azure Kubernetes (AKS)
 
-Постоянный том — это часть хранилища, которая создана для использования в кластере Kubernetes. Постоянный том может использоваться одним или несколькими модулями pod и может быть создан динамически или статически. В этом документе описано **динамическое создание** файлового ресурса Azure в качестве постоянного тома.
+Постоянный том — это часть хранилища, которая подготовлена к использованию для модулей pod Kubernetes. Постоянный том может использоваться одним или несколькими модулями и может быть подготовлен динамически или статически. Если несколько модулей pod требуют одновременный доступ в то же хранилище, используйте службу файлов Azure для подключения с помощью [протокола Server Message Block (SMB)][smb-overview]. В этой статье показано, как в кластере Службы Azure Kubernetes с помощью нескольких модулей pod предоставлять общий доступ к динамическому созданию файлов Azure.
 
-Дополнительные сведения о постоянных томах Kubernetes, в том числе о статическом создании см. в [этой статье][kubernetes-volumes].
+Дополнительные сведения о постоянных томах Kubernetes см. в разделе [Kubernetes persistent volumes][kubernetes-volumes] (Постоянные тома Kubernetes).
+
+## <a name="before-you-begin"></a>Перед началом работы
+
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+
+Кроме того, нужно установить и настроить Azure CLI 2.0.46 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-При динамическом создании файлового ресурса Azure в качестве тома Kubernetes можно использовать любую учетную запись хранения, если она содержится в той же группе ресурсов **узла** AKS. В названии этой группы есть префикс *MC_*, который был создан при подготовке ресурсов кластера AKS. Получите имя группы ресурсов, выполнив команду [az aks show].
+При динамическом создании файлового ресурса Azure в качестве тома Kubernetes можно использовать любую учетную запись хранения, если она содержится в той же группе ресурсов **узла** AKS. В названии этой группы есть префикс *MC_*, который был создан при подготовке ресурсов кластера AKS. Получите имя группы ресурсов, выполнив команду [az aks show][az-aks-show].
 
 ```azurecli
 $ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
@@ -77,7 +83,7 @@ kubectl apply -f azure-file-sc.yaml
 
 ```yaml
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: system:azure-cloud-provider
@@ -86,7 +92,7 @@ rules:
   resources: ['secrets']
   verbs:     ['get','create']
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: system:azure-cloud-provider
@@ -154,11 +160,18 @@ metadata:
   name: mypod
 spec:
   containers:
-    - name: myfrontend
-      image: nginx
-      volumeMounts:
-      - mountPath: "/mnt/azure"
-        name: volume
+  - name: mypod
+    image: nginx:1.15.5
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 250m
+        memory: 256Mi
+    volumeMounts:
+    - mountPath: "/mnt/azure"
+      name: volume
   volumes:
     - name: volume
       persistentVolumeClaim:
@@ -175,9 +188,9 @@ kubectl apply -f azure-pvc-files.yaml
 
 ```
 Containers:
-  myfrontend:
+  mypod:
     Container ID:   docker://053bc9c0df72232d755aa040bfba8b533fa696b123876108dec400e364d2523e
-    Image:          nginx
+    Image:          nginx:1.15.5
     Image ID:       docker-pullable://nginx@sha256:d85914d547a6c92faa39ce7058bd7529baacab7e0cd4255442b04577c4d1f424
     State:          Running
       Started:      Wed, 15 Aug 2018 22:22:27 +0000
@@ -189,7 +202,7 @@ Containers:
 Volumes:
   volume:
     Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
-    ClaimName:  azurefile2
+    ClaimName:  azurefile
     ReadOnly:   false
 [...]
 ```
@@ -244,7 +257,7 @@ spec:
   - file_mode=0777
   - uid=1000
   - gid=1000
-  ```
+```
 
 При использовании кластера версии 1.8.0–1.8.4 контекст безопасности можно указать, задав для *runAsUser* значение *0*. Дополнительные сведения о контексте безопасности Pod см. в разделе [Configure a Security Context][kubernetes-security-context] (Настройка контекста безопасности).
 
@@ -267,6 +280,7 @@ spec:
 [kubernetes-volumes]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 [pv-static]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#static
 [kubernetes-rbac]: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+[smb-overview]: /windows/desktop/FileIO/microsoft-smb-protocol-and-cifs-protocol-overview
 
 <!-- LINKS - internal -->
 [az-group-create]: /cli/azure/group#az-group-create
@@ -277,3 +291,7 @@ spec:
 [az-storage-key-list]: /cli/azure/storage/account/keys#az-storage-account-keys-list
 [az-storage-share-create]: /cli/azure/storage/share#az-storage-share-create
 [mount-options]: #mount-options
+[aks-quickstart-cli]: kubernetes-walkthrough.md
+[aks-quickstart-portal]: kubernetes-walkthrough-portal.md
+[install-azure-cli]: /cli/azure/install-azure-cli
+[az-aks-show]: /cli/azure/aks#az-aks-show

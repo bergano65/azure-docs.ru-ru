@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 07/02/2017
 ms.author: mfussell
-ms.openlocfilehash: 99d34d59bb9d55ff074d454fe4544917c4e91110
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: a80895db8a89b8d9392d0ed067b95daa23474d8b
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34205993"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49113875"
 ---
 # <a name="package-and-deploy-an-existing-executable-to-service-fabric"></a>Упаковка и развертывание существующего исполняемого файла вручную
 При упаковке существующего исполняемого файла в качестве [гостевого](service-fabric-guest-executables-introduction.md) вы можете использовать шаблон проекта Visual Studio или [создать пакет приложения вручную](#manually). При использовании Visual Studio шаблон проекта создает для вас структуру пакета приложения и файлы манифеста.
@@ -168,7 +168,9 @@ Service Fabric создает расширенную копию содержим
 </EntryPoint>
 ```
 
-Элемент `EntryPoint` в файле манифеста службы указывает, как нужно запускать службу. В элементе `ExeHost` указывается исполняемый файл (вместе с аргументами), который будет использоваться для запуска службы.
+Элемент `EntryPoint` в файле манифеста службы указывает, как нужно запускать службу.
+
+В элементе `ExeHost` указывается исполняемый файл (вместе с аргументами), который будет использоваться для запуска службы. При необходимости можно добавить атрибут `IsExternalExecutable="true"` в `ExeHost`, чтобы указать, что программа является внешним исполняемым файлом вне пакета кода. Например, `<ExeHost IsExternalExecutable="true">`.
 
 * `Program` — имя исполняемого файла, который будет запускать службу.
 * `Arguments` — аргументы, которые нужно передать в исполняемый файл. Здесь можно указать список параметров с аргументами.

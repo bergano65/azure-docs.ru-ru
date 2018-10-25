@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: deguhath
-ms.openlocfilehash: f15596bbd8a9b8bab96eeae738b63df934620648
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: acb02df7a1ca49e822062ec5658b4875388b85ab
+ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34838499"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47586025"
 ---
 # <a name="overview-of-data-science-using-spark-on-azure-hdinsight"></a>Общие сведения об обработке и анализе данных с помощью платформы Spark в Azure HDInsight
 [!INCLUDE [machine-learning-spark-modeling](../../../includes/machine-learning-spark-modeling.md)]
@@ -72,7 +72,7 @@ ms.locfileid: "34838499"
 
 Руководство по применению модели Spark 2.0 и использованию моделей для оценки вы найдете в [этом документе для Spark 1.6](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark1.6/pySpark-machine-learning-data-science-spark-model-consumption.ipynb), который содержит пример с описанием выполняемых шагов. Чтобы использовать этот пример в Spark 2.0, замените файл кода Python [этим файлом](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/Python/Spark2.0_ConsumeRFCV_NYCReg.py).
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 Описанные ниже процедуры относятся к Spark 1.6. Для Spark 2.0 используйте записные книжки, описанные ранее. 
 
 1. У вас должна быть подписка Azure. Если у вас ее нет, см. статью [о получении бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).

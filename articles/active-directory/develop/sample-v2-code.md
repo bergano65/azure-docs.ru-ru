@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/24/2018
+ms.date: 10/17/2018
 ms.author: celested
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: e76097c0d0cbaf14f2fc2b1a407bc2d320a2091d
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 73edb518a7e0c89b3ef510c6e528b6fa76f8dca5
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46964414"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49393427"
 ---
 # <a name="azure-active-directory-code-samples-v2-endpoint"></a>Примеры кода Azure Active Directory (конечная точка версии 2)
 
@@ -49,8 +49,8 @@ Microsoft Azure Active Directory (Azure AD) можно использовать 
  платформа |  Вызывает Microsoft Graph
  -------- |  ---------------------
 ![JavaScript](media/sample-v2-code/logo_js.png) JavaScript (msal.js)  | [javascript-graphapi-web-v2](https://github.com/Azure-Samples/active-directory-javascript-graphapi-web-v2)
-![Angular JS](media/sample-v2-code/logo_angular.png) JavaScript (msal AngularJS) | [MsalAngularjsDemoApp](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-angularjs/samples/MsalAngularjsDemoApp)
-![Angular](media/sample-v2-code/logo_angular.png) JavaScript (msal Angular) | [MSALAngularDemoApp](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-angular/samples/MSALAngularDemoApp)
+![Angular JS](media/sample-v2-code/logo_angular.png) JavaScript (MSAL AngularJS) | [MsalAngularjsDemoApp](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-angularjs/samples/MsalAngularjsDemoApp)
+![Angular](media/sample-v2-code/logo_angular.png) JavaScript (MSAL Angular) | [MSALAngularDemoApp](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-angular/samples/MSALAngularDemoApp)
 
 ## <a name="web-applications"></a>Веб-приложения
 
@@ -65,15 +65,17 @@ Microsoft Azure Active Directory (Azure AD) можно использовать 
 
 ## <a name="desktop-and-mobile-public-client-apps"></a>Общедоступные клиентские приложения — классические и мобильные
 
-В следующих примерах показаны общедоступные клиентские приложения (классические и мобильные), которые обращаются к Microsoft Graph или веб-API от имени пользователя с использованием интерактивного входа. Все эти клиентские приложения используют библиотеки аутентификации Майкрософт (MSAL).
+В следующих примерах показаны общедоступные клиентские приложения (классические и мобильные), которые обращаются к Microsoft Graph или веб-API от имени пользователя. Все эти клиентские приложения используют библиотеки аутентификации Майкрософт (MSAL).
 
-Клиентское приложение | платформа | Вызывает Microsoft Graph | Вызывает веб-API ASP.NET Core 2.0
------------------- | -------- |  -------------------- | -------------------------
-Классическое приложение (WPF)      | ![.NET и C#](media/sample-v2-code/logo_NET.png) | [dotnet-desktop-msgraph-v2](http://github.com/azure-samples/active-directory-dotnet-desktop-msgraph-v2) <p/> [dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) | [dotnet-native-aspnetcore-v2](https://GitHub.com/azure-samples/active-directory-dotnet-native-aspnetcore-v2)
-Мобильное приложение (UWP)   | ![.NET и C# (UWP)](media/sample-v2-code/logo_windows.png) | [dotnet-native-uwp-v2](https://github.com/azure-samples/active-directory-dotnet-native-uwp-v2) |
-Мобильное приложение (Android, iOS, UWP)   | ![.NET и C# (Xamarin)](media/sample-v2-code/logo_xamarin.png) | [xamarin-native-v2](https://Github.com/azure-samples/active-directory-xamarin-native-v2) |
-Мобильное приложение (iOS)       | ![iOS, Objective-C или swift](media/sample-v2-code/logo_iOS.png) | [ios-swift-native-v2](https://github.com/azure-samples/active-directory-ios-swift-native-v2) <p/> [ios-native-nxoauth2-v2](https://github.com/azure-samples/active-directory-ios-native-nxoauth2-v2) |
-Мобильное приложение (Android)   | ![Android и Java](media/sample-v2-code/logo_Android.png) |   [android-native-v2](https://github.com/azure-samples/active-directory-android-native-v2 ) |
+Клиентское приложение | платформа | Поток или предоставление | Вызывает Microsoft Graph | Вызывает веб-API ASP.NET Core 2.0
+------------------ | -------- |  ----------| ---------- | -------------------------
+Классическое приложение (WPF)      | ![.NET и C#](media/sample-v2-code/logo_NET.png) | интерактивный | [dotnet-desktop-msgraph-v2](http://github.com/azure-samples/active-directory-dotnet-desktop-msgraph-v2) <p/> [dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) | [dotnet-native-aspnetcore-v2](https://GitHub.com/azure-samples/active-directory-dotnet-native-aspnetcore-v2)
+Классическое приложение (консольное)   | ![.NET /C# (классическое приложение)](media/sample-v2-code/logo_NET.png) | Встроенная проверка подлинности Windows |[dotnet-iwa-v2](https://github.com/azure-samples/active-directory-dotnet-iwa-v2)
+Классическое приложение (консольное)   | ![.NET /C# (классическое приложение)](media/sample-v2-code/logo_NETcore.png) | Имя пользователя или пароль |[dotnetcore-up-v2](https://github.com/azure-samples/active-directory-dotnetcore-up-v2)
+Мобильное приложение (UWP)   | ![.NET и C# (UWP)](media/sample-v2-code/logo_windows.png) | интерактивный |[dotnet-native-uwp-v2](https://github.com/azure-samples/active-directory-dotnet-native-uwp-v2) |
+Мобильное приложение (Android, iOS, UWP)   | ![.NET и C# (Xamarin)](media/sample-v2-code/logo_xamarin.png) | интерактивный |[xamarin-native-v2](https://Github.com/azure-samples/active-directory-xamarin-native-v2) |
+Мобильное приложение (iOS)       | ![iOS, Objective-C или swift](media/sample-v2-code/logo_iOS.png) | интерактивный |[ios-swift-native-v2](https://github.com/azure-samples/active-directory-ios-swift-native-v2) <p/> [ios-native-nxoauth2-v2](https://github.com/azure-samples/active-directory-ios-native-nxoauth2-v2) |
+Мобильное приложение (Android)   | ![Android и Java](media/sample-v2-code/logo_Android.png) | интерактивный |  [android-native-v2](https://github.com/azure-samples/active-directory-android-native-v2 ) |
 
 ## <a name="daemon-applications"></a>Управляющие программы
 
@@ -81,9 +83,16 @@ Microsoft Azure Active Directory (Azure AD) можно использовать 
 
 Клиентское приложение | платформа | Поток или предоставление | Вызывает Microsoft Graph
 ------------------ | -------- | ---------- | --------------------
+Консоль | ![.NET Core](media/sample-v2-code/logo_NETcore.png)<p/> ASP.NET:  | Учетные данные клиента | [dotnetcore-daemon-v2](https://github.com/azure-samples/active-directory-dotnetcore-daemon-v2)
 Веб-приложение | ![ASP.NET:](media/sample-v2-code/logo_NETframework.png)<p/> ASP.NET:  | Учетные данные клиента | [dotnet-daemon-v2](https://github.com/azure-samples/active-directory-dotnet-daemon-v2)
 
-> Пример классического приложения управляющей программы приведен в невыполненной работе.
+## <a name="headless-applications"></a>Приложения удаленного управления
+
+В следующих примерах показаны общедоступные клиентские приложения, запущенные на устройстве без веб-браузера. Эти приложения могут быть программами командной строки, приложениями, запущенными на Linux или Mac, или приложением Интернета вещей. В образцах есть приложения, которые получают доступ к Microsoft Graph от имени пользователя, который в интерактивном режиме выполняет вход на другом устройстве (например, на мобильном телефоне). Все эти клиентские приложения используют библиотеки аутентификации Майкрософт (MSAL).
+
+Клиентское приложение | платформа | Поток или предоставление | Вызывает Microsoft Graph
+------------------ | -------- |  ----------| ----------
+Классическое приложение (консольное)   | ![.NET /C# (классическое приложение)](media/sample-v2-code/logo_NETcore.png) | Последовательность кода устройства |[dotnetcore-devicecodeflow-v2](https://github.com/azure-samples/active-directory-dotnetcore-devicecodeflow-v2)
 
 ## <a name="web-apis"></a>Веб-API
 

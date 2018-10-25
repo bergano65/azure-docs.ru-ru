@@ -8,12 +8,12 @@ ms.topic: howto
 ms.date: 09/24/2018
 ms.author: ancav
 ms.component: metrics
-ms.openlocfilehash: b9808233e08e545c31e171afe104173dccc6abed
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 7b600bd699ce7f9e4a6c7cba1a41b6bdece16bf0
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47434931"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49343732"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-using-a-resource-manager-template-for-a-windows-virtual-machine-scale-set"></a>Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Resource Manager для масштабируемого набора виртуальных машин Windows
 
@@ -81,7 +81,7 @@ ms.locfileid: "47434931"
 В ресурсе масштабируемого набора виртуальных машин найдите раздел **virtualMachineProfile**. Добавьте новый профиль с именем **extensionsProfile** для управления расширениями.  
 
 
-В профиле **extensionProfile** добавьте новое расширение в шаблон, как показано в **разделе VMSS-WAD-extension**.  Этот раздел представляет собой расширение управляемого удостоверения службы (MSI), которое обеспечивает прием выдаваемых метрик в Azure Monitor. В поле **name** может содержаться любое имя. 
+В профиле **extensionProfile** добавьте новое расширение в шаблон, как показано в **разделе VMSS-WAD-extension**.  Этот раздел представляет собой расширение управляемых удостоверений для ресурсов Azure, которое обеспечивает прием выдаваемых метрик в Azure Monitor. В поле **name** может содержаться любое имя. 
 
 Код ниже из расширения MSI также добавляет расширение диагностики и конфигурации в качестве ресурса расширения в масштабируемый набор виртуальных машин. При необходимости счетчики производительности можно добавлять или удалять. 
 
@@ -89,7 +89,7 @@ ms.locfileid: "47434931"
           "extensionProfile": { 
             "extensions": [ 
             // BEGINNING of added code  
-            // Managed service identity   
+            // Managed identites for Azure resources   
                 { 
                  "name": "VMSS-WAD-extension", 
                  "properties": { 

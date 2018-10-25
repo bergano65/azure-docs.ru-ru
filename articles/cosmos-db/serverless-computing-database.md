@@ -9,16 +9,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: sngun
-ms.openlocfilehash: b7908f9f9aef51857f0ffb07102e1df245b7a259
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: c183bbe2c20bdc1772160cbbd8260dece0b6eb54
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47064464"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49309507"
 ---
-# <a name="azure-cosmos-db-serverless-database-computing-using-azure-functions"></a>Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"
+# <a name="serverless-database-computing-using-azure-cosmos-db-and-azure-functions"></a>Обработка данных бессерверных баз данных с помощью Azure Cosmos DB и Функций Azure
 
-Бессерверные вычисления дают возможность сосредоточиться на отдельных повторяемых элементах логики без отслеживания состояния. Эти элементы не требуют управления инфраструктурой и потребляют ресурсы в течение считанных секунд или миллисекунд, пока выполняются. В основе бессерверных вычислений лежат функции, которые предоставляются в экосистеме Azure посредством службы [Функции Azure](https://azure.microsoft.com/services/functions).
+Бессерверные вычисления дают возможность сосредоточиться на отдельных повторяемых элементах логики без отслеживания состояния. Эти элементы не требуют управления инфраструктурой и потребляют ресурсы в течение считанных секунд или миллисекунд, пока выполняются. В основе бессерверных вычислений лежат функции, которые предоставляются в экосистеме Azure посредством службы [Функции Azure](https://azure.microsoft.com/services/functions). Дополнительные сведения о других бессерверных средах выполнения в Azure доступны на странице [Бессерверные приложения в Azure](https://azure.microsoft.com/solutions/serverless/). 
 
 Благодаря естественной интеграции [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db) и службы "Функции Azure", можно создавать триггеры базы данных, входные привязки и выходные привязки непосредственно с помощью учетной записи Azure Cosmos DB. С помощью службы "Функции Azure" и Azure Cosmos DB можно создавать и развертывать бессерверные приложения, управляемые событиями, которые обеспечивают низкую задержку при обращении к сложным данным глобальной базы пользователей.
 

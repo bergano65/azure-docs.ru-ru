@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/09/2018
+ms.date: 09/28/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: addb99478025757257bce465a02287ebedd40bb1
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: f0791173450d5db3b33762ec9d5ed5c1adf96788
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46310213"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49321637"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure AD Connect.
@@ -29,11 +29,11 @@ ms.locfileid: "46310213"
 Прежде чем установить Azure AD Connect и обновить DirSync, вам потребуется ряд элементов.
 
 ### <a name="azure-ad"></a>Azure AD
-* Подписка Azure или [пробная подписка Azure](https://azure.microsoft.com/pricing/free-trial/). Она необходима только для доступа к порталу Azure и не требуется для использования Azure AD Connect. Если вы используете PowerShell или Office 365, то для работы с Azure AD Connect подписка Azure не требуется. При наличии лицензии на Office 365 можно также использовать портал Office 365. Платная лицензия на Office 365 также позволяет перейти на портал Azure с портала Office 365.
-  * Кроме того, можно использовать [портал Azure](https://portal.azure.com). Для этого не нужна лицензия Azure AD.
+* Клиент Azure AD. Вы получите его с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/). Вы можете использовать один из следующих порталов для управления Azure AD Connect:
+  * [Портал Azure](https://portal.azure.com).
+  * [Портал Office](https://portal.office.com).  
 * [Добавьте и подтвердите домен](../active-directory-domains-add-azure-portal.md) , который вы планируете использовать в Azure AD. Например, если вы планируете использовать для своих пользователей домен contoso.com, убедитесь, что он был подтвержден и вы используете не просто домен по умолчанию contoso.onmicrosoft.com.
 * Клиент Azure AD по умолчанию может вмещать 50 тыс. объектов. После подтверждения домена этот предел увеличивается до 300 тыс. объектов. Если вам нужно еще больше объектов в Azure AD, необходимо отправить обращение в службу технической поддержки, чтобы дополнительно увеличить данный предел. Если вам необходимо более 500 тыс. объектов, то потребуется лицензия, например на Office 365, Azure AD Basic, Azure AD Premium или Enterprise Mobility + Security.
-* ADSyncPrep представляет собой модуль сценария PowerShell, предоставляющий функции, которые используются для подготовки вашей среды Active Directory для Azure AD Connect.  Для работы ADSyncPrep нужен [модуль PowerShell Azure AD Microsoft Online версии 1.1](https://docs.microsoft.com/powershell/azure/active-directory/install-msonlinev1?view=azureadps-1.0).  Версия 2 не будет работать. Для установки модуля можно использовать командлет `Install-Module`.  Чтобы получить дополнительную информацию, щелкните приведенную ниже ссылку.
 
 ### <a name="prepare-your-on-premises-data"></a>Подготовка локальных данных
 * Прежде чем выполнять синхронизацию с Azure AD и Office 365, воспользуйтесь инструментом [IdFix](https://support.office.com/article/Install-and-run-the-Office-365-IdFix-tool-f4bd2439-3e41-4169-99f6-3fabdfa326ac) для выявления в каталоге ошибок, таких как повторяющиеся записи или проблемы с форматированием.
@@ -47,7 +47,7 @@ ms.locfileid: "46310213"
 * Рекомендуется [включить корзину Active Directory](how-to-connect-sync-recycle-bin.md).
 
 ### <a name="azure-ad-connect-server"></a>Сервер Azure AD Connect
-* Службу Azure AD Connect нельзя установить на Small Business Server или Windows Server Essentials. Сервер должен использовать Windows Server Standard или более поздней версии.
+* Службу Azure AD Connect нельзя установить на версии Small Business Server или Windows Server Essentials, которые предшествуют версиям 2019 года (поддерживается Windows Server Essentials 2019). Сервер должен использовать Windows Server Standard или более поздней версии.
 * На сервере Azure AD Connect должен быть установлен полный графический интерфейс пользователя. Установка на ядро сервера **не поддерживается**.
 * Azure AD Connect необходимо установить на сервер под управлением ОС Windows Server, начиная с версии 2008. Это может быть контроллер домена или рядовой сервер, если используются стандартные параметры. Если используются пользовательские параметры, сервер также может работать в автономном режиме и может быть не присоединен к домену.
 * При установке Azure AD Connect в Windows Server 2008 или Windows Server 2008 R2 обязательно примените последние обновления из Центра обновления Windows. Установка на сервер без обновлений невозможна.
@@ -70,7 +70,7 @@ ms.locfileid: "46310213"
 ### <a name="accounts"></a>учетные записи;
 * Учетная запись глобального администратора Azure AD для клиента Azure AD, с которым необходима интеграция. Это должна быть **учебная или рабочая учетная запись**. **Учетную запись Майкрософт** использовать нельзя.
 * Учетная запись администратора предприятия для локальной службы Active Directory при использовании экспресс-параметров или обновлении с DirSync.
-* [Учетные записи в Active Directory](reference-connect-accounts-permissions.md) при использовании пути установки с пользовательскими параметрами.
+* [Учетные записи в Active Directory](reference-connect-accounts-permissions.md) при использовании пути установки с пользовательскими параметрами или учетная запись администратора предприятия для локальной службы Active Directory.
 
 ### <a name="connectivity"></a>Соединение
 * Для серверов Azure AD Connect требуется разрешение DNS как для интрасети, так и для Интернета. DNS-сервер должен иметь возможность разрешения имен как для локальной службы Active Directory, так и для конечных точек Azure AD.
@@ -184,7 +184,6 @@ ms.locfileid: "46310213"
 Ниже приведен перечень компонентов, которые Azure AD Connect установит на сервере, где установлен Azure AD Connect. Этот список предназначен для базовой установки Express. Если на странице "Установить службы синхронизации" вы выбрали другой выпуск SQL Server, то SQL Express LocalDB не устанавливается локально.
 
 * Azure AD Connect Health,
-* Помощник по входу в Microsoft Online Services для ИТ-специалистов (установлен, но не обязателен)
 * Программы командной строки Microsoft SQL Server 2012
 * Microsoft SQL Server 2012 Express LocalDB
 * Microsoft SQL Server 2012 Native Client

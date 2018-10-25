@@ -11,31 +11,29 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 09/14/2018
-ms.openlocfilehash: 5f0e5de7503d06d1aff319434d763d3b034053b3
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.date: 10/15/2018
+ms.openlocfilehash: 12074ad28e27a249a6dc378986f014ede1cd2ab3
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47166374"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49353586"
 ---
 # <a name="azure-sql-database-vcore-based-purchasing-model-limits-for-a-single-database"></a>Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер
 
 Эта статья содержит подробные сведения об ограничениях ресурсов для отдельных баз данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер.
 
-Ограничения в модели приобретения на основе единиц DTU см. в [этой статье](sql-database-dtu-resource-limits.md).
+Сведения об ограничениях модели приобретения на основе DTU для отдельных баз данных на логическом сервере см. в статье [SQL Database resource limits for single and pooled databases on a logical server](sql-database-resource-limits-logical-server.md) (Ограничения ресурсов Базы данных SQL для отдельных баз данных и базы данных в пуле на логическом сервере).
 
 > [!IMPORTANT]
 > Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. в статье об [управлении файловым пространством в Базе данных SQL Azure](sql-database-file-space-management.md).
 
+Уровень служб, объем вычислительных ресурсов и объем хранилища для отдельной базы данных можно задать с помощью [портала Azure](sql-database-single-databases-manage.md#azure-portal-manage-logical-servers-and-databases), [Transact-SQL](sql-database-single-databases-manage.md#transact-sql-manage-logical-servers-and-databases), [PowerShell](sql-database-single-databases-manage.md#powershell-manage-logical-servers-and-databases), [Azure CLI](sql-database-single-databases-manage.md#azure-cli-manage-logical-servers-and-databases) или [REST API](sql-database-single-databases-manage.md#rest-api-manage-logical-servers-and-databases).
 
-## <a name="single-database-storage-sizes-and-compute-sizes"></a>Отдельная база данных: размеры хранилища и объемы вычислительных ресурсов
+## <a name="general-purpose-service-tier-storage-sizes-and-compute-sizes"></a>Уровень служб общего назначения: размеры хранилища и вычислительных ресурсов
 
-В следующих таблицах приведены доступные ресурсы и их объемы для отдельных баз данных на каждом уровне служб. Уровень служб, объем вычислительных ресурсов и объем хранилища для отдельной базы данных можно задать с помощью [портала Azure](sql-database-single-databases-manage.md#azure-portal-manage-logical-servers-and-databases), [Transact-SQL](sql-database-single-databases-manage.md#transact-sql-manage-logical-servers-and-databases), [PowerShell](sql-database-single-databases-manage.md#powershell-manage-logical-servers-and-databases), [Azure CLI](sql-database-single-databases-manage.md#azure-cli-manage-logical-servers-and-databases) или [REST API](sql-database-single-databases-manage.md#rest-api-manage-logical-servers-and-databases).
+### <a name="generation-4-compute-platform"></a>Вычислительная платформа 4-го поколения
 
-### <a name="general-purpose-service-tier"></a>Уровень служб общего назначения
-
-#### <a name="generation-4-compute-platform"></a>Вычислительная платформа 4-го поколения
 |Объем вычислительных ресурсов|GP_Gen4_1|GP_Gen4_2|GP_Gen4_4|GP_Gen4_8|GP_Gen4_16|GP_Gen4_24
 |:--- | --: |--: |--: |--: |--: |--: |
 |Создание аппаратной части|4.|4.|4.|4.|4.|4.|
@@ -57,7 +55,8 @@ ms.locfileid: "47166374"
 |Включенное хранилище резервных копий|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|
 |||
 
-#### <a name="generation-5-compute-platform"></a>Вычислительная платформа 5-го поколения
+### <a name="generation-5-compute-platform"></a>Вычислительная платформа 5-го поколения
+
 |Объем вычислительных ресурсов|GP_Gen5_2|GP_Gen5_4|GP_Gen5_8|GP_Gen5_16|GP_Gen5_24|GP_Gen5_32|GP_Gen5_40| GP_Gen5_80|
 |:--- | --: |--: |--: |--: |---: | --: |--: |--: |--: |
 |Создание аппаратной части|5|5|5|5|5|5|5|
@@ -79,9 +78,10 @@ ms.locfileid: "47166374"
 |Включенное хранилище резервных копий|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|
 |||
 
-### <a name="business-critical-service-tier"></a>Уровень служб "Критически важный для бизнеса"
+## <a name="business-critical-service-tier-storage-sizes-and-compute-sizes"></a>Уровень служб, критически важных для бизнеса: размеры хранилища и вычислительных ресурсов
 
-#### <a name="generation-4-compute-platform"></a>Вычислительная платформа 4-го поколения
+### <a name="generation-4-compute-platform"></a>Вычислительная платформа 4-го поколения
+
 |Объем вычислительных ресурсов|BC_Gen4_1|BC_Gen4_2|BC_Gen4_4|BC_Gen4_8|BC_Gen4_16|BC_Gen4_24|
 |:--- | --: |--: |--: |--: |--: |--: |
 |Создание аппаратной части|4.|4.|4.|4.|4.|4.|
@@ -103,7 +103,8 @@ ms.locfileid: "47166374"
 |Включенное хранилище резервных копий|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|
 |||
 
-#### <a name="generation-5-compute-platform"></a>Вычислительная платформа 5-го поколения
+### <a name="generation-5-compute-platform"></a>Вычислительная платформа 5-го поколения
+
 |Объем вычислительных ресурсов|BC_Gen5_2|BC_Gen5_4|BC_Gen5_8|BC_Gen5_16|BC_Gen5_24|BC_Gen5_32|BC_Gen5_40|BC_Gen5_80|
 |:--- | --: |--: |--: |--: |---: | --: |--: |--: |--: |--: |--: |--: |--: |
 |Создание аппаратной части|5|5|5|5|5|5|5|5|
@@ -125,9 +126,10 @@ ms.locfileid: "47166374"
 |Включенное хранилище резервных копий|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|
 |||
 
-### <a name="hyperscale-service-tier-preview"></a>Уровень служб "Гипермасштабирование" (предварительная версия)
+## <a name="hyperscale-service-tier-preview"></a>Уровень служб "Гипермасштабирование" (предварительная версия)
 
-#### <a name="generation-4-compute-platform"></a>Вычислительная платформа 4-го поколения
+### <a name="generation-4-compute-platform-storage-sizes-and-compute-sizes"></a>Вычислительная платформа 4-го поколения: размеры хранилища и вычислительных ресурсов
+
 |Уровень производительности|HS_Gen4_1|HS_Gen4_2|HS_Gen4_4|HS_Gen4_8|HS_Gen4_16|HS_Gen4_24|
 |:--- | --: |--: |--: |--: |--: |--: |--: |
 |Создание аппаратной части|4.|4.|4.|4.|4.|4.|
@@ -148,7 +150,9 @@ ms.locfileid: "47166374"
 |Горизонтальное масштабирование для чтения|Yes|Да|Да|Да|Да|Yes|
 |Включенное хранилище резервных копий|7|7|7|7|7|7|
 |||
+
 ### <a name="generation-5-compute-platform"></a>Вычислительная платформа 5-го поколения
+
 |Уровень производительности|HS_Gen5_2|HS_Gen5_4|HS_Gen5_8|HS_Gen5_16|HS_Gen5_24|HS_Gen5_32|HS_Gen5_40|HS_Gen5_80|
 |:--- | --: |--: |--: |--: |---: | --: |--: |--: |--: |--: |--: |--: |--: |
 |Создание аппаратной части|5|5|5|5|5|5|5|5|

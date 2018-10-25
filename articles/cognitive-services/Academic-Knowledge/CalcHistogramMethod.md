@@ -1,20 +1,21 @@
 ---
-title: Метод CalcHistogram в Academic Knowledge API | Документация Майкрософт
-description: Используйте метод CalcHistogram для вычисления распределения значений атрибутов для набора сущностей публикаций в Microsoft Cognitive Services.
+title: Метод CalcHistogram — Academic Knowledge API
+titlesuffix: Azure Cognitive Services
+description: Метод Calchistogram используется для вычисления распределения значений атрибутов для набора сущностей публикаций.
 services: cognitive-services
 author: alch-msft
-manager: kuansanw
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: academic-knowledge
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
-ms.openlocfilehash: e0b773fb9791ee638c8cfdbbc9dca40543e50ec0
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 915e2e5a67d068c418ce50eee9d84dc66e61ee00
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380041"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49321298"
 ---
 # <a name="calchistogram-method"></a>Метод CalcHistogram
 
@@ -36,8 +37,10 @@ https:// westus.api.cognitive.microsoft.com/academic/v1.0/calchistogram?
 **attributes** | Текстовая строка | Нет <br>значение по умолчанию: | Список разделительных запятых, который определяет значения атрибутов, которые включены в ответ. Имена атрибутов с учетом регистра.
 **count** |Number | Нет <br>Значение по умолчанию: 10. |Количество результатов для возврата.
 **offset**  |Number | Нет <br>По умолчанию: 0 |Индекс первого результата для возврата.
-<br>
+**timeout**  |Number | Нет <br>Значение по умолчанию: 1000 |Время ожидания в миллисекундах. Возвращаются только интерпретации, которые найденные до истечения время ожидания.
+
 ## <a name="response-json"></a>Ответ (JSON)
+
 ИМЯ | ОПИСАНИЕ
 --------|---------
 **expr**  |Параметр expr из запроса.
@@ -52,7 +55,7 @@ https:// westus.api.cognitive.microsoft.com/academic/v1.0/calchistogram?
 **histograms[x].histogram[y].count**  |Количество совпадающих сущностей с этим значением атрибута.
 **aborted** | Если истекло время ожидания запроса, то значение true.
 
- <br>
+
 #### <a name="example"></a>Пример:
 ```
 https:// westus.api.cognitive.microsoft.com/academic/v1.0/calchistogram?expr=And(Composite(AA.AuN=='jaime teevan'),Y>2012)&attributes=Y,F.FN&count=4

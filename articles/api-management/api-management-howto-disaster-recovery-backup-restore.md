@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/15/2018
 ms.author: apimpm
-ms.openlocfilehash: ed8c34a7e1e11d431d9a3b416067736da0d1612c
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 8983e98bdfb99d71559e1d79d5f6e72c8366b954
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43046385"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48268535"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management
 
@@ -74,7 +74,7 @@ ms.locfileid: "43046385"
 
 7. Щелкните **Делегированные разрешения** рядом с только что добавленным приложением и установите флажок **Access Azure Service Management (preview)** (Доступ к управлению службами Azure (предварительная версия)).
 8. Нажмите кнопку **Выбрать**.
-9. Щелкните **Предоставить разрешения**.
+9. Щелкните **Предоставить разрешение**
 
 ### <a name="configuring-your-app"></a>Настройка приложения
 

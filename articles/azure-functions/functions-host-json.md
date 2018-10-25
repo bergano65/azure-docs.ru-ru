@@ -8,24 +8,98 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 02/12/2018
+ms.date: 09/08/2018
 ms.author: glenga
-ms.openlocfilehash: 11bf136897b5d5b8140fc7ff1bb259c657a71921
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: 704a41ec840e2a252a1bbb5c20688f722bd0cdfd
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44092196"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48887042"
 ---
 # <a name="hostjson-reference-for-azure-functions"></a>Справочник по файлу host.json для Функций Azure
 
 Файл метаданных *host.json* содержит параметры глобальной конфигурации, влияющие на все функции приложения-функции. В этой статье перечислены параметры, которые доступны. Схему JSON можно найти по адресу http://json.schemastore.org/host.
 
-В [параметрах приложения](functions-app-settings.md) и в файле [local.settings.json](functions-run-local.md#local-settings-file) содержатся другие параметры глобальной конфигурации.
+> [!NOTE]
+> Существуют значительные различия в *host.json* между версиями v1 и v2 среды выполнения функций Azure. `"version": "2.0"` является обязательным для приложения-функции, предназначенного для среды выполнения v2.
+
+В [параметрах приложения](functions-app-settings.md) можно управлять другими настройками приложения-функции.
+
+Некоторые параметры host.json используются только при локальном запуске в файле [local.settings.json](functions-run-local.md#local-settings-file).
 
 ## <a name="sample-hostjson-file"></a>Пример файла host.json
 
-В приведенном ниже примере файла *host.json* указаны все возможные параметры.
+В приведенном ниже примере файлов *host.json* указаны все возможные параметры.
+
+### <a name="version-2x"></a>Версия 2.x
+
+```json
+{
+    "version": "2.0",
+    "aggregator": {
+        "batchSize": 1000,
+        "flushTimeout": "00:00:30"
+    },
+    "extensions": {
+        "eventHubs": {
+          "maxBatchSize": 64,
+          "prefetchCount": 256,
+          "batchCheckpointFrequency": 1
+        },
+        "http": {
+            "routePrefix": "api",
+            "maxConcurrentRequests": 100,
+            "maxOutstandingRequests": 30
+        },
+        "queues": {
+            "visibilityTimeout": "00:00:10",
+            "maxDequeueCount": 3
+        },
+        "sendGrid": {
+            "from": "Azure Functions <samples@functions.com>"
+        },
+        "serviceBus": {
+          "maxConcurrentCalls": 16,
+          "prefetchCount": 100,
+          "autoRenewTimeout": "00:05:00"
+        }
+    },
+    "functions": [ "QueueProcessor", "GitHubWebHook" ],
+    "functionTimeout": "00:05:00",
+    "healthMonitor": {
+        "enabled": true,
+        "healthCheckInterval": "00:00:10",
+        "healthCheckWindow": "00:02:00",
+        "healthCheckThreshold": 6,
+        "counterThreshold": 0.80
+    },
+    "id": "9f4ea53c5136457d883d685e57164f08",
+    "logging": {
+        "fileLoggingMode": "debugOnly",
+        "logLevel": {
+          "Function.MyFunction": "Information",
+          "default": "None"
+        },
+        "applicationInsights": {
+            "sampling": {
+              "isEnabled": true,
+              "maxTelemetryItemsPerSecond" : 5
+            }
+        }
+    },
+    "singleton": {
+      "lockPeriod": "00:00:15",
+      "listenerLockPeriod": "00:01:00",
+      "listenerLockRecoveryPollingInterval": "00:01:00",
+      "lockAcquisitionTimeout": "00:01:00",
+      "lockAcquisitionPollingInterval": "00:00:03"
+    },
+    "watchDirectories": [ "Shared", "Test" ]
+}
+```
+
+### <a name="version-1x"></a>Версия 1.x
 
 ```json
 {
@@ -121,7 +195,7 @@ ms.locfileid: "44092196"
 
 ## <a name="applicationinsights"></a>applicationInsights
 
-Управляет [функцией выборки в Application Insights](functions-monitoring.md#configure-sampling).
+Управляет [функцией выборки в Application Insights](functions-monitoring.md#configure-sampling). В версии 2.x, этот параметр является дочерним элементом [ведения журнала](#log).
 
 ```json
 {
@@ -187,13 +261,19 @@ ms.locfileid: "44092196"
 
 ## <a name="eventhub"></a>eventHub
 
-Параметры конфигурации для [триггеров и привязок концентратора событий](functions-bindings-event-hubs.md).
+Параметры конфигурации для [триггеров и привязок концентратора событий](functions-bindings-event-hubs.md). В версии 2.x он является дочерним элементом [расширений](#extensions).
 
 [!INCLUDE [functions-host-json-event-hubs](../../includes/functions-host-json-event-hubs.md)]
 
+## <a name="extensions"></a>extensions
+
+*Только версия 2.x.*
+
+Свойство, которое возвращает объект, содержащий все параметры определенной привязки, такие как [http](#http) и [eventHub](#eventhub).
+
 ## <a name="functions"></a>functions
 
-Список функций, которые будет выполнять узел заданий. Пустой массив означает выполнение всех функций. Предназначен для использования только при [локальном выполнении](functions-run-local.md). В приложениях-функциях используйте свойство `disabled` в *function.json*, а не это свойство в *host.json*.
+Список функций, которые выполняют узел заданий. Пустой массив означает выполнение всех функций. Предназначен для использования только при [локальном выполнении](functions-run-local.md). Чтобы отключить определенные функции в приложениях-функциях Azure, выполните следующие действия в разделе [Способы отключения функций в решении "Функции Azure"](disable-function.md) вместо использования этого параметра.
 
 ```json
 {
@@ -203,7 +283,7 @@ ms.locfileid: "44092196"
 
 ## <a name="functiontimeout"></a>functionTimeout
 
-Указывает время ожидания для всех функций. В планах потребления допускается диапазон от 1 секунды до 10 минут, а значение по умолчанию — 5 минут. В планах службы приложений время не ограничено, а значение по умолчанию — null, что означает отсутствие времени ожидания.
+Указывает время ожидания для всех функций. В бессерверных планах потребления допускается диапазон от 1 секунды до 10 минут, а значение по умолчанию — 5 минут. План службы приложений не имеет общих ограничений, а значение по умолчанию зависит от версии среды выполнения. В версии 2.x значение по умолчанию для плана службы приложений составляет 30 минут. В версии 1.x это значение *null*, что означает отсутствие времени ожидания.
 
 ```json
 {
@@ -237,16 +317,17 @@ ms.locfileid: "44092196"
 
 ## <a name="http"></a>http
 
-Параметры конфигурации для [триггеров и привязок http](functions-bindings-http-webhook.md).
+Параметры конфигурации для [триггеров и привязок http](functions-bindings-http-webhook.md). В версии 2.x он является дочерним элементом [расширений](#extensions).
 
 [!INCLUDE [functions-host-json-http](../../includes/functions-host-json-http.md)]
 
 ## <a name="id"></a>id
 
-Уникальный идентификатор для узла заданий. Это может быть глобальный уникальный идентификатор (GUID), вводимый в нижнем регистре с удаленными дефисами. Необходим при локальном выполнении. При запуске в Функциях Azure идентификатор создается автоматически, если параметр `id` не указан.
+*Только версия 1.x.*
+
+Уникальный идентификатор для узла заданий. Это может быть глобальный уникальный идентификатор (GUID), вводимый в нижнем регистре с удаленными дефисами. Необходим при локальном выполнении. При работе в Azure, мы рекомендуем не задавать значение идентификатора. Идентификатор создается автоматически в Azure, когда `id` пропускается. Невозможно установить пользовательский идентификатор приложения-функции при использовании среды выполнения версии 2.x.
 
 Если вы предоставляете общий доступ к учетной записи хранения для нескольких приложений-функций, убедитесь, что у всех них разные `id`. Можно опустить свойство `id` или вручную задать для `id` всех приложений-функций разные значения. Для триггера таймера используется блокировка хранилища. Это гарантирует наличие только одного экземпляра таймера, когда приложение-функция масштабируется до нескольких экземпляров. Если у двух приложений-функций один `id` и для каждого используется триггер таймера, запустится только один таймер.
-
 
 ```json
 {
@@ -255,6 +336,8 @@ ms.locfileid: "44092196"
 ```
 
 ## <a name="logger"></a>logger
+
+*Только для версии 1.x; для версии 2.x используйте [ведение журнала](#logging).*
 
 Управляет фильтрацией журналов, которые создаются [объектом ILogger](functions-monitoring.md#write-logs-in-c-functions) или [context.log](functions-monitoring.md#write-logs-in-javascript-functions).
 
@@ -279,15 +362,40 @@ ms.locfileid: "44092196"
 |defaultLevel|Информация|Для любых категорий, не указанных в массиве `categoryLevels`, отправляет журналы на этом уровне и выше в Application Insights.| 
 |categoryLevels|Недоступно|Массив категорий, который определяет минимальный уровень ведения журнала для отправки в Application Insights для каждой категории. Указанная здесь категория управляет всеми категориями, которые начинаются с одного значения, при этом более длинные значения имеют приоритет. В предыдущем примере файла *host.json* все категории, которые начинаются с "Host.Aggregator", записываются в журнал на уровне `Information`. Все прочие категории, которые начинаются с "Host" (такие как "Host.Executor"), записываются в журнал на уровне `Error`.| 
 
+## <a name="logging"></a>Ведение журналов
+
+*Только для версии 2.x; для версии 1.x используйте [ведение журнала](#logger).*
+
+Управляет поведением ведения журнала приложения-функции, включая Application Insights.
+
+```json
+"logging": {
+    "fileLoggingMode": "debugOnly",
+    "logLevel": {
+      "Function.MyFunction": "Information",
+      "default": "None"
+    },
+    "applicationInsights": {
+        ...
+    }
+}
+```
+
+|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|---------|---------|---------|
+|fileLoggingMode|информационный.|В Application Insights отправляются журналы этого уровня и выше. |
+|LogLevel|Недоступно|Объект, который определяет фильтрацию категорий журналов для функций в приложении. Версия 2.x соответствует макету ASP.NET Core для фильтрации категорий журналов. Это позволяет фильтровать ведения журнала определенных функций. Дополнительные сведения см. в документации по использованию ASP.NET Core [Фильтрация журнала](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). |
+|applicationInsights|Недоступно| Параметр [applicationInsights](#applicationinsights). |
+
 ## <a name="queues"></a>queues
 
-Параметры конфигурации для [триггеров и привязок очереди хранилища](functions-bindings-storage-queue.md).
+Параметры конфигурации для [триггеров и привязок очереди хранилища](functions-bindings-storage-queue.md). В версии 2.x он является дочерним элементом [расширений](#extensions).
 
 [!INCLUDE [functions-host-json-queues](../../includes/functions-host-json-queues.md)]
 
 ## <a name="servicebus"></a>serviceBus
 
-Параметр конфигурации для [триггеров и привязок служебной шины](functions-bindings-service-bus.md).
+Параметр конфигурации для [триггеров и привязок служебной шины](functions-bindings-service-bus.md). В версии 2.x он является дочерним элементом [расширений](#extensions).
 
 [!INCLUDE [functions-host-json-service-bus](../../includes/functions-host-json-service-bus.md)]
 
@@ -317,7 +425,9 @@ ms.locfileid: "44092196"
 
 ## <a name="tracing"></a>tracing
 
-Параметры конфигурации для журналов, создаваемых с помощью объекта `TraceWriter`. Ознакомьтесь с разделами, посвященными ведению журналов, для [C#](functions-reference-csharp.md#logging) и [Node.js](functions-reference-node.md#writing-trace-output-to-the-console). 
+*Версия 1.x*
+
+Параметры конфигурации для журналов, создаваемых с помощью объекта `TraceWriter`. Ознакомьтесь с разделами, посвященными ведению журналов, для [C#](functions-reference-csharp.md#logging) и [Node.js](functions-reference-node.md#writing-trace-output-to-the-console). В версии 2.x все поведения журнала контролируются [ведением журнала](#logging).
 
 ```json
 {
@@ -332,6 +442,12 @@ ms.locfileid: "44092196"
 |---------|---------|---------| 
 |consoleLevel|info|Уровень трассировки для ведения журнала консоли. Доступны следующие параметры: `off`, `error`, `warning`, `info` и `verbose`.|
 |fileLoggingMode|debugOnly|Уровень трассировки для ведения журнала файлов. Доступны следующие параметры: `never`, `always` и `debugOnly`.| 
+
+## <a name="version"></a>версия
+
+*Версия 2.x*
+
+Строка версии `"version": "2.0"` является обязательной для приложения-функции, предназначенного для среды выполнения v2.
 
 ## <a name="watchdirectories"></a>watchDirectories
 

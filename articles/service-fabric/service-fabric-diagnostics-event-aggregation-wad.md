@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/03/2018
 ms.author: srrengar
-ms.openlocfilehash: 38a026e8995bb7384c866dcd2f12588ca816009f
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: a870c99718ecafe8af33e13be9aa46631888c8cb
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34205779"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49389689"
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Агрегирование и сбор событий с помощью системы диагностики Microsoft Azure
 > [!div class="op_single_selector"]
@@ -30,9 +30,9 @@ ms.locfileid: "34205779"
 
 Во время работы кластера Azure Service Fabric рекомендуется централизованно собирать журналы со всех узлов. Централизованное хранение журналов упрощает анализ и устранение неполадок в кластере, а также в приложениях и службах, работающих в этом кластере.
 
-Один из способов отправки и сбора журналов заключается в использовании расширения системы диагностики Microsoft Azure (WAD), которое отправляет журналы в службу хранилища Azure, а также может отправлять журналы в Azure Application Insights или концентраторы событий Azure. Вы также можете использовать внешний процесс, чтобы считывать события из хранилища и помещать их на платформу обработки, например в [Log Analytics](../log-analytics/log-analytics-service-fabric.md) или другое решение для анализа журналов.
+Один из способов отправки и сбора журналов заключается в использовании расширения системы диагностики Microsoft Azure (WAD), которое отправляет журналы в службу хранилища Azure, а также может отправлять журналы в Azure Application Insights или Центры событий Azure. Вы также можете использовать внешний процесс, чтобы считывать события из хранилища и помещать их на платформу обработки, например в [Log Analytics](../log-analytics/log-analytics-service-fabric.md) или другое решение для анализа журналов.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 В этом руководстве используются инструменты, представленные ниже.
 
 * [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md)
@@ -65,7 +65,7 @@ Service Fabric настраивает несколько [стандартных
 ## <a name="deploy-the-diagnostics-extension-through-azure-resource-manager"></a>Развертывание расширения системы диагностики с помощью Azure Resource Manager
 
 ### <a name="create-a-cluster-with-the-diagnostics-extension"></a>Создание кластера с расширением системы диагностики
-Чтобы создать кластер с помощью Resource Manager, добавьте код JSON с конфигурацией системы диагностики в полный шаблон Resource Manager перед созданием кластера. Мы предоставляем пример шаблона диспетчера ресурсов для кластера из пяти виртуальных машин с конфигурацией системы диагностики (эта конфигурация входит в примеры шаблонов диспетчера ресурсов). Этот шаблон можно найти в коллекции примеров Azure. См. статью [Пример шаблона Resource Manager — кластер из пяти узлов с системой диагностики](https://azure.microsoft.com/en-in/resources/templates/service-fabric-secure-cluster-5-node-1-nodetype/).
+Чтобы создать кластер с помощью Resource Manager, добавьте код JSON с конфигурацией системы диагностики в полный шаблон Resource Manager перед созданием кластера. Мы предоставляем пример шаблона диспетчера ресурсов для кластера из пяти виртуальных машин с конфигурацией системы диагностики (эта конфигурация входит в примеры шаблонов диспетчера ресурсов). Этот шаблон можно найти в коллекции примеров Azure. См. статью [Пример шаблона Resource Manager — кластер из пяти узлов с системой диагностики](https://azure.microsoft.com/resources/templates/service-fabric-secure-cluster-5-node-1-nodetype/).
 
 Чтобы просмотреть параметр системы диагностики в шаблоне Resource Manager, откройте файл azuredeploy.json и выполните поиск **IaaSDiagnostics**. Чтобы создать кластер с помощью этого шаблона, нажмите кнопку **Развернуть в Azure**, которая доступна по ссылке выше.
 
@@ -223,7 +223,7 @@ Service Fabric настраивает несколько [стандартных
 >Этот канал содержит огромный объем сведений о событиях, поэтому включение сбора этих данных приводит к быстрому созданию множества трассировок, которые могут потреблять емкость хранилища. Включайте этот режим только при крайней необходимости.
 
 
-Чтобы включить рекомендуемый режим подробного ведения журналов (**Канал данных и обмена сообщениями — базовые сведения**), используйте следующее значение для `EtwManifestProviderConfiguration` в шаблоне `WadCfg`:
+Чтобы включить рекомендуемый режим подробного ведения журналов с наименьшими помехами (**Операционный канал базовых сведений**), используйте следующее значение `EtwManifestProviderConfiguration` для `WadCfg` в шаблоне :
 
 ```json
   "WadCfg": {
@@ -251,7 +251,7 @@ Service Fabric настраивает несколько [стандартных
               {
                 "provider": "cbd93bc2-71e5-4566-b3a7-595d8eeca6e8",
                 "scheduledTransferLogLevelFilter": "Information",
-                "scheduledTransferKeywordFilter": "4611686018427387928",
+                "scheduledTransferKeywordFilter": "4611686018427387904",
                 "scheduledTransferPeriod": "PT5M",
                 "DefaultEvents": {
                   "eventDestination": "ServiceFabricSystemEventTable"

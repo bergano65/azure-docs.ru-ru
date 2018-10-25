@@ -11,16 +11,18 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 manager: craigg
-ms.date: 04/01/2018
-ms.openlocfilehash: 5af6779bfb6075aa3606cc32939ae715241afe8d
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.date: 10/05/2018
+ms.openlocfilehash: 93408b266a239e897b49ab2482818a5221742685
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47166322"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48870408"
 ---
-# <a name="multi-shard-querying"></a>Многосегментное формирование запросов
+# <a name="multi-shard-querying-using-elastic-database-tools"></a>Многосегментное формирование запросов с использованием средств работы с эластичными базами данных
+
 ## <a name="overview"></a>Обзор
+
 [Средства работы с эластичными базами данных](sql-database-elastic-scale-introduction.md)позволяют создавать решения сегментированных баз данных. **Многосегментное формирование запросов** используется для таких задач, как сбор данных и создание отчетов, требующих запуска запроса, распространяющегося на несколько сегментов. (Сравните с [маршрутизацией, зависящей от данных](sql-database-elastic-scale-data-dependent-routing.md), когда все действия выполняются в пределах одного сегмента.) 
 
 1. Получение **RangeShardMap** ([Java](/java/api/com.microsoft.azure.elasticdb.shard.map._range_shard_map), [.NET](https://msdn.microsoft.com/library/azure/dn807318.aspx)) или **ListShardMap** ([Java](/java/api/com.microsoft.azure.elasticdb.shard.map._list_shard_map), [.NET](https://msdn.microsoft.com/library/azure/dn807370.aspx)) с помощью методов **TryGetRangeShardMap** ([Java](/java/api/com.microsoft.azure.elasticdb.shard.mapmanager._shard_map_manager.trygetrangeshardmap), [.NET](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.trygetrangeshardmap.aspx)), **TryGetListShardMap** ([Java](/java/api/com.microsoft.azure.elasticdb.shard.mapmanager._shard_map_manager.trygetlistshardmap), [.NET](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.trygetlistshardmap.aspx)) или **GetShardMap** ([Java](/java/api/com.microsoft.azure.elasticdb.shard.mapmanager._shard_map_manager.getshardmap), [.NET](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.getshardmap.aspx)). См. раздел **[Создание объекта ShardMapManager](sql-database-elastic-scale-shard-map-management.md#constructing-a-shardmapmanager)** и **[Получение RangeShardMap или ListShardMap](sql-database-elastic-scale-shard-map-management.md#get-a-rangeshardmap-or-listshardmap)**.
@@ -31,6 +33,7 @@ ms.locfileid: "47166322"
 6. Просмотр результатов с помощью класса **MultiShardResultSet или MultiShardDataReader** ([Java](/java/api/com.microsoft.azure.elasticdb.query.multishard._multi_shard_result_set), [.NET](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.query.multisharddatareader.aspx)). 
 
 ## <a name="example"></a>Пример
+
 В следующем примере кода показано применение многосегментного формирования запросов с использованием заданного сопоставления **ShardMap** с именем *myShardMap*. 
 
 ```csharp
@@ -63,8 +66,7 @@ using (MultiShardConnection conn = new MultiShardConnection(myShardMap.GetShards
 В настоящий момент существует ограничение для многосегментного формирования запросов, состоящее в отсутствии проверки для сегментов и шардлетов, к которым обращен запрос. Если при маршрутизации, зависящей от данных, выполняется проверка того, что указанный сегмент является частью карты сегментов на момент выполнения запроса, то при многосегментном формировании запросов такая проверка не происходит. Это может привести к тому, что многосегментные запросы будут обращаться к базам данных, удаленным из карты сегментов.
 
 ## <a name="multi-shard-queries-and-split-merge-operations"></a>Многосегментные запросы и операции разбиения-слияния
+
 При многосегментных запросах не выполняется проверка на участие шардлетов из запрашиваемой базы данных в операциях разбиения или слияния. (См. статью [Перемещение данных между масштабируемыми облачными базами данных](sql-database-elastic-scale-overview-split-and-merge.md).) Это может привести к несогласованности, когда строки одного шардлета отображаются для нескольких баз данных в одном многосегментном запросе. Следует учитывать эти ограничения, фильтрование текущих операций разбиения или слияния, а также изменения сопоставления сегментов при выполнении многосегментных запросов.
 
 [!INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
-
-

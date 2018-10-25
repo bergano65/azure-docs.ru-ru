@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 05/08/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 4fa2bc2dd59a5c62becc7f5cd4c4c9633dac1a29
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: e5414a7607c036f1d60f58e1eb047da1e54f4db9
+ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42142636"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47585346"
 ---
 # <a name="credential-assets-in-azure-automation"></a>Ресурсы учетных данных в службе автоматизации Azure
 
@@ -77,6 +77,9 @@ ms.locfileid: "42142636"
 2. Щелкните элемент **Учетные данные**, чтобы открыть колонку **Учетные данные**.
 3. Щелкните **Добавить учетные данные** в верхней части колонки.
 4. Заполните форму и нажмите кнопку **Создать** для сохранения новых учетных данных.
+
+> [!NOTE]
+> Учетные записи пользователей, которые используют многофакторную проверку подлинности, не поддерживаются для использования в службе автоматизации Azure.
 
 ### <a name="to-create-a-new-credential-asset-with-windows-powershell"></a>Создание нового ресурса учетных данных с помощью Windows PowerShell
 

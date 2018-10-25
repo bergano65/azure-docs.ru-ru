@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: jomolesk
-ms.openlocfilehash: 6fe85d7ac527179ab39e89739f5744f3aa1ef8e2
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 1c2294004245e0ef64b9b708a5b57ec0d34cc45f
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44297561"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49321994"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-hosting-for-uk-official-workloads"></a>Схема безопасности и соответствия требованиям Azure. Размещение веб-приложения PaaS для рабочих нагрузок UK OFFICIAL
 
@@ -52,7 +52,6 @@ ms.locfileid: "44297561"
 Это решение использует следующие службы Azure. Подробные сведения об архитектуре развертывания см. в [этом разделе](#deployment-architecture).
 
 - Azure Active Directory
-- Удостоверение управляемой службы
 - Служба приложений
 - Веб-приложение
 - Приложение API
@@ -107,13 +106,13 @@ ms.locfileid: "44297561"
 
 Служба приложений [соответствует требованиям ISO, SOC и PCI](https://www.microsoft.com/TrustCenter/) и позволяет выполнять аутентификацию пользователей с помощью [Azure Active Directory](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-active-directory-authentication) или учетных записей в социальных сетях ([Google](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-google-authentication), [Facebook](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-facebook-authentication), [Twitter](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-twitter-authentication) и [Microsoft](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-microsoft-authentication)).
 
-Планы "Базовый", "Стандартный" и "Премиум" предназначены для производственных нагрузок и выполняются на выделенных экземплярах виртуальных машин. Каждый экземпляр поддерживает множество приложений и доменов. Службы приложений при необходимости поддерживают [ограничения IP-адресов](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions) для защиты трафика к доверенным IP-адресам, а также [управляемое удостоверение службы](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity) для безопасного подключения к другим службам PaaS, таким как [Key Vault](https://azure.microsoft.com/services/key-vault/) и (или) [База данных Azure SQL](https://azure.microsoft.com/services/sql-database/). Если потребуется более высокий уровень защиты, в рамках плана "Изолированный" приложения можно разместить в частной выделенной среде Azure. Это идеальный вариант, если требуется безопасное подключение к локальной сети, повышенная производительность и дополнительные возможности масштабирования.
+Планы "Базовый", "Стандартный" и "Премиум" предназначены для производственных нагрузок и выполняются на выделенных экземплярах виртуальных машин. Каждый экземпляр поддерживает множество приложений и доменов. Службы приложений при необходимости поддерживают [ограничения IP-адресов](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions) для защиты трафика к доверенным IP-адресам, а также [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity) для безопасного подключения к другим службам PaaS, таким как [Key Vault](https://azure.microsoft.com/services/key-vault/) и [База данных Azure SQL](https://azure.microsoft.com/services/sql-database/). Если потребуется более высокий уровень защиты, в рамках плана "Изолированный" приложения можно разместить в частной выделенной среде Azure. Это идеальный вариант, если требуется безопасное подключение к локальной сети, повышенная производительность и дополнительные возможности масштабирования.
 
 Этот шаблон предназначен для развертывания следующих функций службы приложений:
 
 - план службы приложений уровня [Стандартный](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview);
 - несколько [слотов развертывания](https://docs.microsoft.com/azure/app-service/web-sites-staged-publishing) для веб-приложений: Dev (разработка), Preview (предварительный просмотр), QA (контроль качества), UAT (приемочное тестирование) и, конечно же, слот по умолчанию Production (рабочая среда);
-- [управляемое удостоверение службы](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity) для подключения к [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) (также может использоваться для предоставления доступа к [Базе данных SQL Azure](https://azure.microsoft.com/services/sql-database/)); 
+- [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity) для подключения к [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) (также может использоваться для предоставления доступа к [Базе данных SQL Azure](https://azure.microsoft.com/services/sql-database/)); 
 - интеграция с [Azure Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-azure-web-apps) для мониторинга производительности;
 - [Журналы диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs) 
 - [оповещения метрик](https://docs.microsoft.com/azure/application-insights/app-insights-alerts); 
@@ -164,7 +163,7 @@ ms.locfileid: "44297561"
 
 #### <a name="azure-key-vault-in-this-blueprint"></a>Azure Key Vault в рамках этой схемы:
 
-- содержит ключ доступа к хранилищу с доступом на чтение, предоставленным [управляемым удостоверением службы](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity) для веб-приложения с интерфейсом клиента;
+- содержит ключ доступа к хранилищу с доступом на чтение, предоставленным [управляемым удостоверением](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity) для веб-приложения с интерфейсом клиента;
 - содержит пароль администратора базы данных SQL Server (в отдельном хранилище);
 - ведет журнал диагностики.
 

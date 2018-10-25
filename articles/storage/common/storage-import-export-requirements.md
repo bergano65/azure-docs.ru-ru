@@ -5,15 +5,15 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: article
-ms.date: 07/19/2018
+ms.date: 10/15/2018
 ms.author: alkohli
 ms.component: common
-ms.openlocfilehash: 10e8fb6ac5bcce278de3924ebd3a0d9f90392217
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 3a42f09967ec42b47947823025f2f0dcd081d1b1
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39528060"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49352243"
 ---
 # <a name="azure-importexport-system-requirements"></a>Требования к системе для импорта и экспорта Azure
 
@@ -29,15 +29,24 @@ ms.locfileid: "39528060"
 |Windows     | Windows 7 Корпоративная, Windows 7 Максимальная <br> Windows 8 Pro, Windows 8 Корпоративная, Windows 8.1 Pro, Windows 8.1 Корпоративная <br> Windows 10        |
 |Windows Server     |Windows Server 2008 R2 <br> Windows Server 2012, Windows Server 2012 R2         |
 
+## <a name="other-required-software-for-windows-client"></a>Другое необходимое программное обеспечение для клиента Windows
+
+|платформа |Version (версия) |
+|---------|---------|
+|.NET Framework    | 4.5.1       |
+| BitLocker        |  _          |
+
 
 ## <a name="supported-storage-accounts"></a>Учетные записи хранилища BLOB-объектов
 
-Служба импорта и экспорта Azure поддерживает следующие [учетные записи хранения Azure](storage-account-options.md):
+Служба импорта и экспорта Azure поддерживает следующие типы учетных записей хранения:
+
 - Учетные записи хранения общего назначения версии 1 (как классическое развертывание, так и развертывание с помощью Azure Resource Manager).
 - Учетные записи хранилища BLOB-объектов
-- Учетные записи хранения общего назначения версии 2.
 
-Каждое задание может использоваться для обмена данными только с одной учетной записью хранения. Другими словами, отдельное задание импорта и экспорта не может распространяться на несколько учетных записей хранения. Сведения о создании учетной записи хранения см. в разделе [Создание учетной записи хранения](storage-create-storage-account.md#create-a-storage-account).
+Дополнительные сведения об учетных записях хранения см. в [этой статье](storage-account-overview.md).
+
+Каждое задание может использоваться для обмена данными только с одной учетной записью хранения. Другими словами, отдельное задание импорта и экспорта не может распространяться на несколько учетных записей хранения. Сведения о создании учетной записи хранения см. в разделе [Создание учетной записи хранения](storage-quickstart-create-account.md).
 
 > [!IMPORTANT] 
 > Служба импорта и экспорта Azure не поддерживает учетные записи хранения с включенной функцией [конечных точек службы для виртуальных сетей](../../virtual-network/virtual-network-service-endpoints-overview.md). 

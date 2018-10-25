@@ -11,12 +11,12 @@ ms.component: user-help
 ms.topic: conceptual
 ms.date: 07/30/2018
 ms.author: lizross
-ms.openlocfilehash: 3f98b4e34c4c76efc33395530ef016b26e1ad523
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: f6a574f169310f2779fb20353fda748e6893a4bd
+ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44163045"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48016746"
 ---
 # <a name="set-up-security-info-to-use-email-preview"></a>Настройка сведений для защиты для использования электронной почты (предварительная версия)
 
@@ -46,7 +46,7 @@ ms.locfileid: "44163045"
 
 3. На странице **Безопасность учетной записи** щелкните **Готово**.
 
-    Сведения для защиты обновятся, чтобы при двухфакторной проверке подлинности проверка выполнялась с помощью вашего адреса электронной почты.
+    Сведения для защиты обновятся, чтобы при сбросе пароля проверка выполнялась с помощью вашего адреса электронной почты.
 
 ## <a name="additional-security-info-options"></a>Дополнительные параметры сведений для защиты
 

@@ -1,9 +1,30 @@
-
+---
+title: включение файла
+description: включение файла
+services: active-directory
+documentationcenter: dev-center-name
+author: andretms
+manager: mtillman
+editor: ''
+ms.service: active-directory
+ms.devlang: na
+ms.topic: include
+ms.tgt_pltfrm: na
+ms.workload: identity
+ms.date: 09/13/2018
+ms.author: andret
+ms.custom: include file
+ms.openlocfilehash: 6e20ce083c415bced22231835cc616ede8f0dd04
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48843146"
+---
 ## <a name="register-your-application"></a>Регистрация приложения
 Приложение можно зарегистрировать одним из двух способов, которые описаны в следующих двух разделах.
 
-### <a name="option-1-express-mode"></a>Вариант 1. Экспресс-режим
-Чтобы быстро зарегистрировать приложение, сделайте следующее:
+### <a name="option-1-express"></a>Вариант 1. Экспресс-способ
 1. Перейдите на [портал регистрации приложений Майкрософт](https://apps.dev.microsoft.com/portal/register-app?appType=mobileAndDesktopApp&appTech=android&step=configure).
 2.  В поле **Имя приложения** введите имя приложения.
 
@@ -11,9 +32,8 @@
 
 4. Следуйте инструкциям, чтобы получить идентификатор приложения. Затем вставьте его в свой код.
 
-### <a name="option-2-advanced-mode"></a>Вариант 2. Расширенный режим
-Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение, сделайте следующее:
-1. Если вы еще не зарегистрировали приложение, перейдите на [портал регистрации приложений Майкрософт](https://apps.dev.microsoft.com/portal/register-app).
+### <a name="option-2-advanced"></a>Вариант 2. Расширенный способ 
+1. Перейдите на [портал регистрации приложений Майкрософт](https://apps.dev.microsoft.com/portal/register-app).
 2. В поле **Имя приложения** введите имя приложения. 
 
 3. Обязательно снимите флажок **Guided Setup** (Интерактивная настройка) и нажмите кнопку **Создать**.
@@ -22,7 +42,7 @@
 
 5. В разделе **app** > **java** > **{узел}.{пространство_имен}** откройте `MainActivity`. 
 
-6.  Замените заполнитель *[Enter the application Id here]* в следующей строке только что зарегистрированным идентификатором приложения:
+6.  Замените заполнитель *[Enter application Id here]* идентификатором приложения или клиента.
 
     ```java
     final static String CLIENT_ID = "[Enter the application Id here]";
@@ -30,7 +50,7 @@
 <!-- Workaround for Docs conversion bug -->
 7. В разделе **app** > **manifests** откройте файл *AndroidManifest.xml*.
 
-8. В узел `manifest\application` добавьте указанное ниже действие. Так вы зарегистрируете действие `BrowserTabActivity`, которое позволяет операционной системе возобновить работу приложения после завершения аутентификации.
+8. В узел `manifest\application` добавьте указанное ниже действие. Действие `BrowserTabActivity` позволяет корпорации Майкрософт выполнять обратный вызов приложения после завершения проверки подлинности.
 
     ```xml
     <!--Intent filter to capture System Browser calling back to our app after sign-in-->
@@ -49,4 +69,4 @@
     </activity>
     ```
 <!-- Workaround for Docs conversion bug -->
-9. В узле `BrowserTabActivity` замените заполнитель `[Enter the application Id here]` идентификатором приложения.
+9. Замените заполнитель `[Enter the application Id here]` идентификатором приложения или клиента в `BrowserTabActivity`.

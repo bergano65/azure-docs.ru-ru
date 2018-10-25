@@ -12,15 +12,15 @@ ms.workload: big-compute
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/24/2018
+ms.date: 09/10/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b3f4907d99b25df31ac7f081282cebe700f55b62
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 25a8150a2fcf7cdd4e3c82478c0b3db3dad870b4
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39423748"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48887570"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Квоты и ограничения пакетной службы
 
@@ -53,7 +53,9 @@ ms.locfileid: "39423748"
 | [Количество приложений](batch-application-packages.md) на одну учетную запись пакетной службы |20 |
 | Пакеты приложения на приложение |40 |
 | Максимальное время существования задачи | 7 дней<sup>1</sup> |
-| Вычислительные узлы в пуле с включенной связью между узлами | 100 |
+| Вычислительные узлы в [пуле с включенной связью между узлами](batch-mpi.md) | 100 |
+| Выделенные вычислительные узлы в [пуле, созданные с помощью пользовательского образа виртуальной машины](batch-custom-images.md) | 2500 |
+| Низкоприоритетные вычислительные узлы в [пуле, созданные с помощью пользовательского образа виртуальной машины](batch-custom-images.md) | 1000 |
 
 <sup>1</sup> Максимальное время существования задачи от ее добавления к заданию до завершения составляет 7 дней. Завершенные задачи сохраняются в течение неограниченного времени; данные для задач, которые не были завершены в течение максимального времени существования, недоступны.
 

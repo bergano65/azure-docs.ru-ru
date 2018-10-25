@@ -11,20 +11,22 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 09/18/2018
-ms.openlocfilehash: 0a91139d92570a2ee2828f9295590d580902c501
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.date: 10/04/2018
+ms.openlocfilehash: 1775e1810a164bfbdd1cddea9360674592cf446c
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47164996"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48857539"
 ---
 # <a name="manage-azure-sql-database-long-term-backup-retention"></a>Управление долгосрочным хранением резервных копий базы данных SQL Azure
 
-Вы можете настроить базу данных SQL Azure с политикой [долгосрочного хранения резервных копий](sql-database-long-term-retention.md) (LTR) таким образом, чтобы обеспечивалось автоматическое хранение больших двоичных объектов в Azure на протяжении 10 лет. После этого появляется возможность восстановления базы данных с помощью резервных копий на портале Azure или через PowerShell.
+В Базе данных SQL Azure можно настроить отдельную или объединенную базу данных с политикой [долгосрочного хранения резервных копий](sql-database-long-term-retention.md) (LTR) таким образом, чтобы обеспечивалось автоматическое хранение больших двоичных объектов в Azure на протяжении 10 лет. После этого появляется возможность восстановления базы данных с помощью резервных копий на портале Azure или через PowerShell.
+
+> [!IMPORTANT]
+> [Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance.md) в настоящее время не поддерживает долгосрочное хранение резервных копий.
 
 ## <a name="use-the-azure-portal-to-configure-long-term-retention-policies-and-restore-backups"></a>Настройка политик долгосрочного хранения и восстановление резервных копий с помощью портала Azure
-
 В следующих разделах показано, как настроить долгосрочное хранение, просматривать резервные копии с моделью долгосрочного хранения, а также восстанавливать резервные копии из этой модели на портале Azure.
 
 ### <a name="configure-long-term-retention-policies"></a>Настройка политик долгосрочного хранения
@@ -78,6 +80,24 @@ ms.locfileid: "47164996"
 - [AzureRM.Sql-4.5.0](https://www.powershellgallery.com/packages/AzureRM.Sql/4.5.0) или более поздней версии
 - [AzureRM-6.1.0](https://www.powershellgallery.com/packages/AzureRM/6.1.0) или более поздней версии
 > 
+
+### <a name="rbac-roles-to-manage-long-term-retention"></a>Роли RBAC для управления долгосрочным хранением
+
+Чтобы управлять резервными копиями LTR, необходимо иметь роль 
+- владельца подписки или
+- участника SQL Server в области **Подписки** или
+- участника SQL Server в области **Подписки**.
+
+Если необходим более детальный контроль, можно создать пользовательские роли RBAC и назначить их в области **Подписки**. 
+
+Для **Get-AzureRmSqlDatabaseLongTermRetentionBackup** и **Restore-AzureRmSqlDatabase** роль должна иметь следующие разрешения.
+
+Microsoft.Sql/locations/longTermRetentionBackups/read Microsoft.Sql/locations/longTermRetentionServers/longTermRetentionBackups/read Microsoft.Sql/locations/longTermRetentionServers/longTermRetentionDatabases/longTermRetentionBackups/read
+ 
+Для роли **Remove-AzureRmSqlDatabaseLongTermRetentionBackup** необходимы следующие разрешения.
+
+Microsoft.Sql/locations/longTermRetentionServers/longTermRetentionDatabases/longTermRetentionBackups/delete
+
 
 ### <a name="create-an-ltr-policy"></a>Создание политики LTR
 

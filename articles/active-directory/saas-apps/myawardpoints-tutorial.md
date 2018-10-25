@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/18/2018
+ms.date: 09/27/2018
 ms.author: jeedes
-ms.openlocfilehash: 9e3e3ff05836cb49d46a25ef3fa55d40a0bd134f
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.openlocfilehash: 479fcc0408021ff63dbcabe3734f60a4ad6d542f
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47184675"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48247760"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-my-award-points-top-subtop-team"></a>Руководство по интеграции Azure Active Directory с My Award Points Top Sub/Top Team
 
@@ -50,9 +50,10 @@ ms.locfileid: "47184675"
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
+В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде.
+Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление My Award Points Top Sub/Top Team из коллекции.
+1. Добавление My Award Points Top Sub/Top Team из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-my-award-points-top-subtop-team-from-the-gallery"></a>Добавление My Award Points Top Sub/Top Team из коллекции
@@ -112,7 +113,7 @@ ms.locfileid: "47184675"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://microsoftrr.performnet.com/biwv1auth/Shibboleth.sso/Login?providerId=<SAMLENTITYID>`
 
     > [!NOTE]
-    > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов My Award Points Top Sub/Top Team](mailto:myawardpoints@biworldwide.com).
+    > Вы получите значение `<SAMLENTITYID>` на последующих этапах этого руководства.
 
 4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -122,7 +123,9 @@ ms.locfileid: "47184675"
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/myawardpoints-tutorial/tutorial_general_400.png)
 
-6. Чтобы настроить единый вход на стороне **My Award Points Top Sub/Top Team**, отправьте скачанный **XML-файл метаданных** в [службу поддержки клиентов My Award Points Top Sub/Top Team](mailto:myawardpoints@biworldwide.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+6. В разделе **Настройка My Award Points Top Sub/Top Team** выберите **Настроить My Award Points Top Sub/Top Team**, чтобы открыть окно "Настройка входа". Скопируйте идентификатор сущности SAML из раздела **Краткое руководство** и добавьте значение идентификатора сущности SAML с URL-адресом для входа вместо `<SAMLENTITYID>` в разделе **My Award Points Top Sub/Top Team Domain и URL-адреса** на портале Azure.
+
+7. Чтобы настроить единый вход на стороне **My Award Points Top Sub/Top Team**, отправьте скачанный **XML-файл метаданных** в [службу поддержки клиентов My Award Points Top Sub/Top Team](mailto:myawardpoints@biworldwide.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

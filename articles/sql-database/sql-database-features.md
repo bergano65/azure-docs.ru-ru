@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: bonova, carlrab
 manager: craigg
 ms.date: 09/25/2018
-ms.openlocfilehash: ce4b87735f16b4167605f2897ba96f10155f7c01
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: b68e65bdcefcabb2804b259cff45e0a8719f7ab7
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47222307"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48870522"
 ---
 # <a name="feature-comparison-azure-sql-database-versus-sql-server"></a>Сравнение функций Базы данных SQL Azure и SQL Server 
 
@@ -141,7 +141,7 @@ ms.locfileid: "47222307"
 | [Флаги трассировки](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql) | Нет  | Нет  |
 | [Переменные](https://docs.microsoft.com/sql/t-sql/language-elements/variables-transact-sql) | Yes | Yes |
 | [Прозрачное шифрование данных (TDE)](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-tde) | Да, только уровни служб общего назначения и "Критически важный для бизнеса"| Частично, только с использованием управляемого службой шифрования |
-[Виртуальная сеть](../virtual-network/virtual-networks-overview.md) | Частично. См. раздел [Использование конечных точек службы и правил виртуальной сети для базы данных SQL Azure](sql-database-vnet-service-endpoint-rule-overview.md). | Да, только для модели Azure Resource Manager. |
+[Виртуальная сеть](../virtual-network/virtual-networks-overview.md) | Частично. См. раздел [Использование конечных точек службы и правил виртуальной сети для Базы данных SQL Azure](sql-database-vnet-service-endpoint-rule-overview.md). | Да, только для модели Azure Resource Manager. |
 | [Отказоустойчивая кластеризация Windows Server](https://docs.microsoft.com/sql/sql-server/failover-clusters/windows/windows-server-failover-clustering-wsfc-with-sql-server) | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). |
 | [XML-индексы](https://docs.microsoft.com/sql/t-sql/statements/create-xml-index-transact-sql) | Yes | Yes |
 

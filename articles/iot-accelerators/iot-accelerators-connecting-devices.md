@@ -6,14 +6,14 @@ manager: timlt
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.topic: conceptual
-ms.date: 03/14/2018
+ms.date: 09/17/2018
 ms.author: dobett
-ms.openlocfilehash: 139daea3e885636b352d4c9a1ba2651a24195b21
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 55c8ff799ba3ff7fe9691d46dc90a00d5182d390
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38309876"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48829416"
 ---
 # <a name="connect-your-device-to-the-remote-monitoring-solution-accelerator-windows"></a>Подключение устройства к акселератору решения для удаленного мониторинга в Windows
 
@@ -21,102 +21,41 @@ ms.locfileid: "38309876"
 
 В этом руководстве показано, как подключить физическое устройство к акселератору решений для удаленного мониторинга.
 
-## <a name="create-a-c-client-solution-on-windows"></a>Создание клиентского решения на C в Windows
-
 Как и для большинства внедряемых приложений, работающих на устройствах с ограниченными ресурсами, клиентский код для приложения на устройстве пишется на языке C. В этом руководстве вы создадите приложение на компьютере под управлением Windows.
 
-### <a name="create-the-starter-project"></a>Создание начального проекта
+## <a name="prerequisites"></a>Предварительные требования
 
-Создайте начальный проект в Visual Studio 2017 и добавьте клиентские пакеты NuGet для устройства Центра Интернета вещей:
+Чтобы завершить действия, описанные в этом практическом руководстве, выполните описанные в [настройках среды разработки Windows](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md#set-up-a-windows-development-environment), чтобы добавить необходимые средства разработки и библиотеки на компьютер Windows.
 
-1. В Visual Studio создайте консольное приложение C, используя шаблон **консольного приложения Windows** в Visual C++. Присвойте проекту имя **RMDevice**.
+## <a name="view-the-code"></a>Просмотрите код
 
-    ![Создание консольного приложения Windows в Visual C++](./media/iot-accelerators-connecting-devices/visualstudio01.png)
+[Пример кода](https://github.com/Azure/azure-iot-sdk-c/tree/master/samples/solutions/remote_monitoring_client), используемый в этом руководстве доступный в репозитории GitHub пакета SDK для устройств Azure IoT для C.
 
-1. В **обозревателе решений** удалите файлы `stdafx.h`, `targetver.h` и `stdafx.cpp`.
+### <a name="download-the-source-code-and-prepare-the-project"></a>Загрузка исходного кода и подготовка проекта
 
-1. В **обозревателе решений** переименуйте файл `RMDevice.cpp` в `RMDevice.c`.
+Чтобы подготовить проект, клонируйте или загрузите [репозиторий пакетов SDK для устройств Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c) из GitHub.
 
-    ![Переименованный файл RMDevice.c в обозревателе решений](./media/iot-accelerators-connecting-devices/visualstudio02.png)
+Этот пример находится в папке **samples/solutions/remote_monitoring_client**.
 
-1. В **обозревателе решений** щелкните проект **RMDevice** правой кнопкой мыши и выберите пункт **Управление пакетами NuGet**. Щелкните **Обзор**, а затем найдите и установите следующие пакеты NuGet:
+В текстовом редакторе откройте файл **remote_monitoring.c** в папке **samples/solutions/remote_monitoring_client**.
 
-    * Microsoft.Azure.IoTHub.Serializer
-    * Microsoft.Azure.IoTHub.IoTHubClient
-    * Microsoft.Azure.IoTHub.MqttTransport.
-
-    ![Диспетчер пакетов NuGet с установленными пакетами Microsoft.Azure.IoTHub](./media/iot-accelerators-connecting-devices/visualstudio03.png)
-
-1. В **обозревателе решений** щелкните проект **RMDevice** правой кнопкой мыши, а затем выберите пункт **Свойства**, чтобы открыть диалоговое окно **Страницы свойств** проекта. Дополнительные сведения см. в статье, посвященной [настройке свойств проекта Visual C++](https://docs.microsoft.com/cpp/ide/working-with-project-properties).
-
-1. Выберите папку **C/C++** и щелкните страницу свойств **Предварительно скомпилированные заголовки**.
-
-1. Задайте для параметра **Предварительно скомпилированные заголовки** значение **Не использовать предварительно скомпилированные заголовки**. Нажмите кнопку **Применить**.
-
-    ![Страница свойств проекта, на которой показано, что в проекте не используются предварительно скомпилированные заголовки](./media/iot-accelerators-connecting-devices/visualstudio04.png)
-
-1. Выберите папку **Компоновщик** и щелкните страницу свойств **Входные данные**.
-
-1. В свойство **Дополнительные зависимости** добавьте `crypt32.lib`. Чтобы сохранить значения свойств проекта, нажмите кнопку **ОК**, а затем еще раз **ОК**.
-
-    ![Страница свойств проекта с выбранной папкой "Компоновщик" и добавленным файлом crypt32.lib](./media/iot-accelerators-connecting-devices/visualstudio05.png)
-
-### <a name="add-the-parson-json-library"></a>Добавление библиотеки JSON Parson
-
-Добавьте библиотеку JSON Parson в проект **RMDevice** и добавьте обязательные инструкции `#include`:
-
-1. В подходящей папке на компьютере клонируйте репозиторий GitHub для Parson, используя следующую команду:
-
-    ```cmd
-    git clone https://github.com/kgabis/parson.git
-    ```
-
-1. Скопируйте файлы `parson.h` и `parson.c` из локальной копии репозитория Parson в папку проекта **RMDevice**.
-
-1. В Visual Studio щелкните проект **RMDevice** правой кнопкой мыши, а затем последовательно выберите **Добавить** и **Существующий элемент**.
-
-1. В диалоговом окне **Добавление существующего элемента** выберите файлы `parson.h` и `parson.c` в папке проекта **RMDevice**. Нажмите кнопку **Добавить**, чтобы добавить эти файлы в проект.
-
-    ![Файлы parson.h и parson.c в обозревателе решений](./media/iot-accelerators-connecting-devices/visualstudio06.png)
-
-1. В Visual Studio откройте файл `RMDevice.c`. Замените имеющиеся инструкции `#include` в этом окне следующим кодом.
-
-    ```c
-    #include "iothubtransportmqtt.h"
-    #include "schemalib.h"
-    #include "iothub_client.h"
-    #include "serializer_devicetwin.h"
-    #include "schemaserializer.h"
-    #include "azure_c_shared_utility/threadapi.h"
-    #include "azure_c_shared_utility/platform.h"
-    #include <string.h>
-    ```
-
-    > [!NOTE]
-    > Теперь вы можете выполнить сборку решения, чтобы убедиться, что в проекте настроены правильные зависимости.
-
-[!INCLUDE [iot-suite-connecting-code](../../includes/iot-suite-connecting-code.md)]
+[!INCLUDE [iot-accelerators-connecting-code](../../includes/iot-accelerators-connecting-code.md)]
 
 ## <a name="build-and-run-the-sample"></a>Сборка и запуск примера
 
-Добавьте код для вызова функции **remote\_monitoring\_run**, а затем создайте и запустите приложение устройства.
+1. Измените файл **remote_monitoring.c**, чтобы заменить `<connectionstring>` строкой подключения устройства, которую вы записали в начале этого практического руководства, при добавлении устройства в акселератор решений.
 
-1. Чтобы вызвать функцию **remote\_monitoring\_run**, замените функцию **main** следующим кодом:
+1. Выполните действия, описанные в [сборке пакета SDK для C в Windows](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md#build-the-c-sdk-in-windows), чтобы выполнить сборку пакета SDK и клиентского приложения удаленного мониторинга.
 
-    ```c
-    int main()
-    {
-      remote_monitoring_run();
-      return 0;
-    }
+1. В командной строке, используемой для построения решения, выполните следующую команду.
+
+    ```cmd
+    samples\solutions\remote_monitoring_client\Release\remote_monitoring_client.exe
     ```
 
-1. Щелкните **Сборка**, а затем **Собрать решение**, чтобы выполнить сборку приложения устройства.
+    В консоли появляются сообщения в следующих случаях:
 
-1. В **обозревателе решений** щелкните проект **RMDevice** правой кнопкой мыши, выберите пункт **Отладка**, а затем щелкните **Запустить новый экземпляр**, чтобы запустить пример. В консоли появляются сообщения в следующих случаях:
-
-    * приложение отправляет пример данных телеметрии в акселератор решения;
-    * приложение получает требуемые значения свойств, заданные на панели мониторинга решения;
-    * приложение отвечает на методы, вызываемые из панели мониторинга решения.
+    - приложение отправляет пример данных телеметрии в акселератор решения;
+    - приложение отвечает на методы, вызываемые из панели мониторинга решения.
 
 [!INCLUDE [iot-suite-visualize-connecting](../../includes/iot-suite-visualize-connecting.md)]

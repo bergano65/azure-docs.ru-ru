@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: mvc
 ms.date: 08/06/2018
 ms.author: bahariri
-ms.openlocfilehash: b724ddfc1214ac17c2138dc9875896cf3353f0c7
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: 3642c1b7d3de751ecb8a72edaecfe7a15c0acbdb
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42746632"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49320838"
 ---
 # <a name="use-apache-flink-with-azure-event-hubs-for-apache-kafka"></a>Использование Apache Flink с Центрами событий Azure для Apache Kafka
 В этом руководстве показано, как выполнять подключение Apache Flink к концентраторам событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Центры событий Azure поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html)
@@ -28,6 +28,9 @@ ms.locfileid: "42746632"
 > * Клонирование примера проекта
 > * Запуск производителя Flink 
 > * Запуск потребителя Flink
+
+> [!NOTE]
+> Этот пример можно найти на сайте [GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/flink).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -49,11 +52,11 @@ ms.locfileid: "42746632"
 
 ## <a name="clone-the-example-project"></a>Клонирование примера проекта
 
-Теперь, когда у вас есть строка подключения к Центрам событий с поддержкой Kafka, клонируйте репозиторий концентраторов событий Azure и перейдите к вложенной папке `flink`.
+Теперь, когда у вас есть строка подключения к Центрам событий с поддержкой Kafka, клонируйте репозиторий Центров событий Azure для Kafka и перейдите ко вложенной папке `flink`.
 
 ```shell
-git clone https://github.com/Azure/azure-event-hubs.git
-cd azure-event-hubs/samples/kafka/flink
+git clone https://github.com/Azure/azure-event-hubs-for-kafka.git
+cd azure-event-hubs-for-kafka/tutorials/flink
 ```
 
 ## <a name="run-flink-producer"></a>Запуск производителя Flink
@@ -129,7 +132,10 @@ mvn exec:java -Dexec.mainClass="FlinkTestConsumer"
 > * Запуск производителя Flink 
 > * Запуск потребителя Flink
 
-Перейдите к следующей статье, чтобы узнать больше о Центрах событий Azure для Apache Kafka:
+Дополнительные сведения о Центрах событий и Центрах событий для Kafka см. в статьях:  
 
-> [!div class="nextstepaction"]
-> [Using Akka Streams with Event Hubs for Apache Kafka](event-hubs-kafka-akka-streams-tutorial.md) (Использование Akka Streams с Центрами событий Apache Kafka)
+* [Сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
+* [Azure Event Hubs for Apache Kafka (preview)](event-hubs-for-kafka-ecosystem-overview.md) (Центры событий Azure для Apache Kafka (предварительный просмотр))
+* [Дополнительные примеры для службы "Центры событий" для Kafka на сайте GitHub](https://github.com/Azure/azure-event-hubs-for-kafka)
+* Используйте [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) для [потоковой передачи событий из локальной системы Kafka к Центрам событий с поддержкой Kafka в облаке](event-hubs-kafka-mirror-maker-tutorial.md).
+* Узнайте, как выполнять потоковую передачу в Центры событий с поддержкой Kafka с помощью [собственных приложений Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md) или [Akka Streams](event-hubs-kafka-akka-streams-tutorial.md).

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 02e7d9d26b389e82365f3447cceb5566244236f1
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 618437d0007668800e0a14e8233db1676be2a364
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39440914"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49379269"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-linkedin-learning"></a>Руководство по интеграции Azure Active Directory с LinkedIn Learning
 
@@ -120,9 +120,9 @@ ms.locfileid: "39440914"
 
     a. В текстовом поле **Идентификатор** введите **идентификатор сущности**, скопированный с портала LinkedIn. 
 
-    b. В текстовом поле **URL-адрес ответа** введите **URL-адрес службы обработчика утверждений (ACS)**, скопированный с портала LinkedIn.
+    b. В текстовом поле **URL-адрес ответа** введите **URL-адрес службы обработчика утверждений (ACS)**, скопированный на портале LinkedIn.
 
-1. Если вы хотите настроить единый вход в режиме, **инициированном поставщиком услуг**, то установите флажок "Показать дополнительные параметры URL-адресов" в разделе настроек и настройте URL-адрес входа в таком формате:
+1. Если вы хотите настроить единый вход в режиме, **инициируемом поставщиком услуг**, то установите флажок "Show Advanced URL setting" (Показать дополнительные параметры URL-адресов) в разделе настроек и укажите URL-адрес входа.  Чтобы создать URL-адреса входа, скопируйте **URL-адрес службы обработчика утверждений (ACS)** и замените /saml/ на /login/.   После этого URL-адрес входа должен иметь следующий вид.
 
     `https://www.linkedin.com/checkpoint/enterprise/login/<AccountId>?application=learning&applicationInstanceId=<InstanceId>`
 

@@ -10,12 +10,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 01/09/2018
 ms.author: kakampf
-ms.openlocfilehash: 5be239fd3c77872a59b37efc6de5fc42aca9bb0c
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 170fd402770c091398a25784b18508ae57db6a38
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47395820"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49341860"
 ---
 # <a name="what-are-the-hadoop-components-and-versions-available-with-hdinsight"></a>Что представляют собой компоненты и версии Hadoop, доступные в HDInsight?
 
@@ -34,7 +34,7 @@ Azure HDInsight поддерживает несколько версий кла�
 | Компонент | HDInsight 4.0 (предварительная версия) | HDInsight 3.6 (по умолчанию) | HDInsight 3.5 | HDInsight 3.4 | HDInsight 3.3 | HDInsight 3.2 | HDInsight 3.1 | HDInsight 3.0 |
 | --- | --- | --- | --- | --- | --- | --- | --- |--- |
 | Hortonworks Data Platform |3.0 |2.6 |2.5 |2.4 |2.3 |2.2 |2.1.7 |2,0 |
-| Apache Hadoop и YARN |2.9.1 |2.7.3 |2.7.3 |2.7.1 |2.7.1 |2.6.0 |2.4.0 |2.2.0 |
+| Apache Hadoop и YARN |3.1.1 |2.7.3 |2.7.3 |2.7.1 |2.7.1 |2.6.0 |2.4.0 |2.2.0 |
 | Apache Tez |0.9.1 |0.7.0 |0.7.0 |0.7.0 |0.7.0 |0.5.2 |0.4.0 |-|
 | Apache Pig |0.16.0 |0.16.0 |0.16.0 |0.15.0 |0.15.0 |0.14.0 |0.12.1 |0.12.0 |
 | Apache Hive и HCatalog |-|1.2.1 |1.2.1 |1.2.1 |1.2.1 |0.14.0 |0.13.1 |0.12.0 |
@@ -82,7 +82,7 @@ Azure HDInsight поддерживает несколько версий кла�
 | HDInsight 3.6 |HDP 2.6 |Ubuntu 16.0.4 LTS |4 апреля 2017 г. | | |Yes |Yes |
 | HDInsight 3.5 <br> (Spark)* |HDP 2.6 |Ubuntu 16.0.4 LTS |30 сентября 2016 г. |13 марта 2019 г. |13 марта 2019 г. |Yes |Yes |
 
-*Поддержка HDInsight 3.5 расширена только для типов кластера Spark*
+*&ast; Поддержка HDInsight 3.5 расширена только для типов кластера Spark*
 
 > [!NOTE]
 > По истечении срока поддержки для версии она может стать недоступной на портале Microsoft Azure. Однако доступ к версиям кластера по-прежнему можно будет получить с помощью параметра `Version` в командлете Windows PowerShell [New-AzureHDInsightCluster](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/new-azurermhdinsightcluster) и пакета SDK для .NET до даты вывода.

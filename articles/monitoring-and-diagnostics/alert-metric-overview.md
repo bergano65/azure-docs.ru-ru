@@ -7,12 +7,12 @@ ms.date: 9/18/2018
 ms.topic: conceptual
 ms.service: azure-monitor
 ms.component: alerts
-ms.openlocfilehash: 586ced5b239b77dd9ae596a754613a66cee371a9
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 0ac19ec18c443f677260ba22b6bce1c06237fb2e
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47405926"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48816436"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Сведения о работе оповещений о метриках в Azure Monitor
 
@@ -94,6 +94,42 @@ ms.locfileid: "47405926"
 ## <a name="supported-resource-types-for-metric-alerts"></a>Поддерживаемые типы ресурсов оповещений о метриках
 
 Полный список поддерживаемых типов ресурсов можно найти в этой [статье](monitoring-near-real-time-metric-alerts.md#metrics-and-dimensions-supported).
+
+Если в настоящее время вы используете классические оповещения метрики и необходимо узнать, поддерживают ли они все типы используемых ресурсов, следующая таблица показывает эти ресурсы и актуальность их поддержки на сегодняшний день.
+
+|Тип ресурса, который поддерживается стандартными оповещениями метрики | Поддерживаются оповещениями метрики |
+|-------------------------------------------------|----------------------------|
+| Microsoft.ApiManagement/service | Yes |
+| Microsoft.Batch/batchAccounts| Yes|
+|Microsoft.Cache/redis| Yes
+|Microsoft.classicСompute/virtualMachines | Нет  |
+|Microsoft.ClassicCompute/domainNames/slots/roles | Нет |
+|Microsoft.CognitiveServices/accounts | Нет  |
+|Microsoft.Compute/virtualMachines | Yes|
+|Microsoft.Compute/virtualMachineScaleSets;| Yes|
+|Microsoft.ClassicStorage/storageAccounts| Нет  |
+|Microsoft.DataFactory/datafactories | Yes|
+|Microsoft.DBforMySQL/servers| Yes|
+|Microsoft.DBforPostgreSQL/servers| Yes|
+|Microsoft.Devices/IotHubs | Нет |
+|Microsoft.DocumentDB/databaseAccounts| Нет |
+|Microsoft.EventHub/namespaces | Yes|
+|Microsoft.Logic/workflows | Yes|
+|Microsoft.Network/loadBalancers |Yes|
+|Microsoft.Network/publicIPAddresses| Yes|
+|Microsoft.Network/applicationGateways| Yes|
+|Microsoft.Network/expressRouteCircuits| Yes|
+|Microsoft.Network/trafficManagerProfiles | Yes|
+|Microsoft.Search/searchServices | Нет |
+|Microsoft.ServiceBus/namespaces| Нет |
+|Microsoft.Storage/storageAccounts | Yes|
+|Microsoft.StreamAnalytics/streamingjobs| Yes|
+|Microsoft.TimeSeriesInsights/environments | Yes|
+|Microsoft. Web/serverfarms | Yes |
+|Microsoft. Web/sites (за исключением функций) | Yes|
+|Microsoft. Web/hostingEnvironments/multiRolePools | Нет |
+|Microsoft. Web/hostingEnvironments/workerPools| Нет 
+|Microsoft.SQL/Servers | Нет |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

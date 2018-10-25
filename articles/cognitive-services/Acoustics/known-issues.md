@@ -1,20 +1,21 @@
 ---
-title: Известные проблемы с подключаемым модулем акустики — Cognitive Services
+title: Известные проблемы с плагином Project Acoustics
+titlesuffix: Azure Cognitive Services
 description: При использовании Designer Preview для Project Acoustics вы можете столкнуться со следующими известными проблемами.
 services: cognitive-services
 author: kylestorck
-manager: noelc
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: acoustics
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/17/2018
 ms.author: kylestorck
-ms.openlocfilehash: c19b19cab33ae868f11ded0b7ce87dac99269596
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 6d3605b579a44dccb259bef281392cbfe2b9f916
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47431999"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48902158"
 ---
 # <a name="known-issues"></a>Известные проблемы
 При использовании Designer Preview для Project Acoustics вы можете столкнуться со следующими известными проблемами.
@@ -23,17 +24,9 @@ ms.locfileid: "47431999"
 
 При переименовании сцены все параметры акустики, относящиеся к этой сцене, не будут автоматически перенесены в новую сцену, но останутся в прежнем файле ресурса. Найдите файл **SceneName_AcousticParameters.asset** внутри каталога **редактора** рядом со своим файлом сцены. Переименуйте файл, добавив имя новой сцены.
 
-## <a name="the-default-path-for-the-acousticsdata-folder-in-probes-tab-is-an-absolute-path"></a>Путь по умолчанию для папки AcousticsData на вкладке проб представляет собой абсолютный путь
-
-По умолчанию это должен быть относительный путь, чтобы упростить обмен проектами между сотрудниками. В качестве обходного пути измените путь к каталогу проекта на относительный.
-
 ## <a name="runtime-voxels-are-a-different-size-than-scene-preview-voxels"></a>Объемные пиксели во время выполнения имеют другой размер, чем объемные пиксели при предварительном просмотре сцены.
 
 Если вы выполните **расчет** на вкладке **проб** и просмотрите объемные пиксели, а затем выполните сборку сцены и просмотрите объемные пиксели в среде выполнения для этой же сцены, то увидите, что их размеры отличаются. Объемные пиксели, показанные во время предварительного проектирования, — это пиксели, используемые в моделировании. Объемные пиксели, показанные в среде выполнения, используются для интерполяции между точками размещения проб. Это может привести к несогласованности, когда порталы будут казаться открытыми во время выполнения, но на самом деле будут закрыты.
-
-## <a name="uwp-builds-not-working"></a>Сборки UWP не работают
-
-В последних версиях Unity (2018.2+) сборки UWP не выполняются. Фаза запуска сборки будет остановлена, и вы получите ошибку о том, что расширения Unity еще не инициализированы. Эта проблема Unity [обсуждается здесь](https://fogbugz.unity3d.com/default.asp?1070491_1rgf14bakv5u779d).
 
 ## <a name="unity-crashes-when-closing-project"></a>Unity аварийно завершает работу при закрытии проекта
 
@@ -49,6 +42,9 @@ ms.locfileid: "47431999"
 ## <a name="im-having-authentication-problems-when-connecting-to-azure"></a>У меня проблемы с проверкой подлинности при подключении к Azure
 
 Еще раз проверьте, что вы использовали правильные учетные данные для своей учетной записи Azure, что ваша учетная запись поддерживает тип узла, запрошенного в сборке, и что системные часы точны.
+
+## <a name="canceling-a-bake-leaves-the-bake-tab-in-deleting-state"></a>После отмены наложения состояние вкладки Bake (Наложение) изменится на "удаление".
+Project Acoustics очистит все ресурсы Azure, которые были направлены для завершения или отмены задания. Это займет не более 5 минут.
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Приступите к работе с [интеграцией акустики в проект Unity](getting-started.md).

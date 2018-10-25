@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/20/2018
+ms.date: 10/16/2018
 ms.author: jeffgilb
-ms.reviewer: jeffgo
-ms.openlocfilehash: ad899739dab1dc51d64368d2136ab87f73f6f3a0
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.reviewer: quying
+ms.openlocfilehash: 360661402289ab9b06eb01be447dc98942c93302
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "36300916"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49364101"
 ---
 # <a name="sql-resource-provider-maintenance-operations"></a>Операции поддержки для поставщиков ресурсов SQL
 
@@ -53,9 +53,9 @@ ms.locfileid: "36300916"
 
 ## <a name="secrets-rotation"></a>Смена секретов
 
-*Эти инструкции применяются только к интегрированным системам Azure Stack (1804 и более поздних версий). Не пытайтесь сменить секреты в версиях Azure Stack, предшествующих 1804.*
+*Эти инструкции применяются только к интегрированным системам Azure Stack.*
 
-При использовании поставщиков ресурсов SQL и MySQL с интегрированными системами Azure Stack вы можете сменить следующие секреты инфраструктуры (развертывания):
+При использовании поставщиков ресурсов SQL и MySQL в интегрированных системах Azure Stack оператор Azure Stack отвечает за смену следующих секретов инфраструктуры поставщика ресурсов, чтобы обеспечить их актуальность:
 
 - внешний SSL-сертификат, [предоставленный во время развертывания](azure-stack-pki-certs.md);
 - пароль учетной записи локального администратора виртуальной машины поставщика ресурсов, предоставленный во время развертывания;

@@ -4,22 +4,21 @@ description: Заметки о выпуске служб мультимедиа.
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
-ms.assetid: 3ca2d7af-1cf0-45fa-9585-3b73f3ee057d
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: media
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 07/24/2018
+ms.date: 10/15/2018
 ms.author: juliako
-ms.openlocfilehash: cdfd19f2dfd599eacaa0759b63c94767e760a874
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: 531cdf9a69e0ecfa2d2d8ae02f8f88fd5f400479
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42146993"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49378947"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 В этих заметках для служб мультимедиа Azure описаны изменения по сравнению с предыдущими выпусками, а также известные проблемы.
@@ -45,6 +44,16 @@ ms.locfileid: "42146993"
 
 ## <a name="a-idrestversionhistoryrest-api-version-history"></a><a id="rest_version_history"/>Журнал версий интерфейса API REST
 Сведения о журнале версий интерфейса REST API служб мультимедиа см. в [этой статье].
+
+## <a name="october-2018"></a>Октябрь 2018 г.
+
+### <a name="cmaf-support"></a>Поддержка CMAF
+
+Поддержка шифрования CMAF и cbcs для Apple HLS (iOS 11 и выше) и проигрывателей MPEG-DASH, поддерживающих CMAF.
+
+### <a name="web-vtt-thumbnail-sprites"></a>Спрайты эскизов Web VTT
+
+Теперь для создания эскизов спрайтов Web VTT можно использовать Службы мультимедиа и API-интерфейсы версии 2. Дополнительные сведения см. в статье [Generate a thumbnail sprite](generate-thumbnail-sprite.md) (Создание спрайта эскиза).
 
 ## <a name="july-2018"></a>Июль 2018 г.
 
@@ -533,9 +542,6 @@ REST API служб мультимедиа обновлены до версии 
 * Поддержка асинхронных методов
   
     * Поддержка асинхронного выполнения добавлена для всех методов.
-
-## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
-[!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

@@ -10,17 +10,17 @@ ms.component: qna-maker
 ms.topic: article
 ms.date: 09/12/2018
 ms.author: tulasim
-ms.openlocfilehash: 0cb8a185407c7b180a170f1f9b9d76aa28a24de5
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 6eaa4859ea6346390514325980835750d8e4b6d5
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47031634"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49365566"
 ---
 # <a name="migrate-a-knowledge-base-using-export-import"></a>Миграция базы знаний с помощью экспорта и импорта
 О выпуске общедоступной версии QnA Maker было объявлено 7 мая 2018 г. на конференции \\\build\. Общедоступная версия QnA Maker имеет новую архитектуру, основанную на Azure. Базы знаний, созданные с помощью бесплатной предварительной версии QnA Maker, будет необходимо перенести в общедоступную версию QnA Maker. Предварительная версия QnA Maker будет признана устаревшей в ноябре 2018 г. Дополнительные сведения об изменениях в общедоступной версии QnA Maker см. в объявлении о выпуске общедоступной версии QnA Maker в этой [публикации блога](https://aka.ms/qnamakerga-blog).
 
-Теперь QnA Maker присвоена [модель ценообразования](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/qna-maker/).
+Теперь QnA Maker присвоена [модель ценообразования](https://azure.microsoft.com/pricing/details/cognitive-services/qna-maker/).
 
 Предварительные требования
 > [!div class="checklist"]
@@ -38,9 +38,7 @@ ms.locfileid: "47031634"
 
     ![Скачайте базу знаний](../media/qnamaker-how-to-migrate-kb/preview-download.png)
 
-4. Войдите на [портал QnA Maker](https://qnamaker.ai) с помощью учетных данных Azure и щелкните **Create new service** (Создать службу).
-
-    ![Создание базы знаний ](../media/qnamaker-how-to-create-kb/create-new-service.png)
+4. Войдите на [портал QnA Maker](https://qnamaker.ai) с помощью учетных данных Azure и щелкните **Create a knowledge base** (Создать базу знаний).
     
 5. Если служба QnA Maker еще не создана, выберите **Create a QnA service** (Создать службу QnA). В противном случае выберите службу QnA Maker из раскрывающихся списков на шаге 2. Выберите службу QnA Maker, в которой будет размещаться база знаний.
 

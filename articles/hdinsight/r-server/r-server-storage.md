@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: 5bd5919efa84f2dd22929075b806747b413ac346
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 4c3b36891030ae97f382d5e1d0623fa7c698dbf6
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43051799"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49395097"
 ---
 # <a name="azure-storage-solutions-for-ml-services-on-azure-hdinsight"></a>Решения службы хранилища Azure для служб машинного обучения в Azure HDInsight
 
@@ -159,7 +159,7 @@ ms.locfileid: "43051799"
 
 ## <a name="use-azure-file-storage-with-ml-services-on-hdinsight"></a>Использование хранилища файлов Azure для служб машинного обучения в HDInsight
 
-Для граничных узлов есть еще один удобный вариант хранения — [служба файлов Azure]((https://azure.microsoft.com/services/storage/files/). Они позволяют подключить общую папку службы хранения Azure к файловой системе Linux. Этот вариант может быть удобен для хранения файлов данных, скриптов R и объектов результатов, которые могут понадобиться позже, особенно если на граничном узле есть смысл использовать собственную файловую систему, а не HDFS. 
+Для граничных узлов есть еще один удобный вариант хранения — [служба файлов Azure](https://azure.microsoft.com/services/storage/files/). Они позволяют подключить общую папку службы хранения Azure к файловой системе Linux. Этот вариант может быть удобен для хранения файлов данных, скриптов R и объектов результатов, которые могут понадобиться позже, особенно если на граничном узле есть смысл использовать собственную файловую систему, а не HDFS. 
 
 Основное преимущество файлов Azure заключается в том, что общие папки можно подключить и использовать на любом устройстве с поддерживаемой операционной системой, например Windows или Linux. Например, их можно использовать в другом кластере HDInsight, принадлежащем вам или коллеге, в виртуальной машине Azure, или даже в локальной системе. Дополнительные сведения можно найти в разделе 
 

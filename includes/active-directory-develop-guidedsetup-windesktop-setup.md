@@ -3,24 +3,23 @@ title: включение файла
 description: включение файла
 services: active-directory
 documentationcenter: dev-center-name
-author: andretms
+author: jmprieur
 manager: mtillman
 editor: ''
-ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
 ms.service: active-directory
 ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/19/2018
-ms.author: andret
+ms.date: 09/17/2018
+ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: 5e933406b266b8371019abf0f62365184d8900b3
-ms.sourcegitcommit: c851842d113a7078c378d78d94fea8ff5948c337
+ms.openlocfilehash: 022017015808d72f661f6764e8fa10fdc49e9f61
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "36205250"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48843629"
 ---
 ## <a name="set-up-your-project"></a>Настройка проекта
 
@@ -33,11 +32,13 @@ ms.locfileid: "36205250"
 >
 
 Для создания приложения выполните следующие действия.
+
 1. В Visual Studio выберите **Файл** > **Создать** > **Проект**.
 2. В разделе **Шаблоны** выберите **Visual C#**.
-3. Выберите **WPF App** (Приложение WPF) или **Приложение WPF** в зависимости от используемой версии Visual Studio.
+3. Выберите **WPF App** (.NET Framework) в зависимости от используемой версии Visual Studio.
 
 ## <a name="add-msal-to-your-project"></a>Добавление MSAL в проект
+
 1. В Visual Studio выберите **Сервис** > **Диспетчер пакетов NuGet**> **Консоль диспетчера пакетов**.
 2. В окне консоли диспетчера пакетов вставьте следующую команду Azure PowerShell:
 
@@ -46,10 +47,11 @@ ms.locfileid: "36205250"
     ```
 
     > [!NOTE] 
-    > Эта команда устанавливает библиотеку проверки подлинности Майкрософт. MSAL обрабатывает получение, кэширование и обновление маркеров пользователей, которые используются для доступа к программным интерфейсам, защищенным Azure Active Directory версии 2.
+    > Эта команда устанавливает библиотеку проверки подлинности Майкрософт. MSAL обрабатывает получение, кэширование и обновление маркеров пользователей, которые используются для доступа к программным интерфейсам, защищенным Azure Active Directory версии 2.0
     >
 
 ## <a name="add-the-code-to-initialize-msal"></a>Добавление кода для инициализации MSAL
+
 На этом шаге вы создадите класс для обработки взаимодействия с MSAL, например обработки маркеров.
 
 1. Откройте файл *App.xaml.cs*, а затем добавьте ссылку для MSAL в класс:
@@ -93,4 +95,3 @@ ms.locfileid: "36205250"
     </StackPanel>
 </Grid>
 ```
-

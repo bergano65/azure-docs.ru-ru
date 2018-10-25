@@ -5,14 +5,14 @@ services: storage
 author: seguler
 ms.service: storage
 ms.topic: article
-ms.date: 05/10/2018
+ms.date: 10/11/2018
 ms.author: seguler
-ms.openlocfilehash: 9964aa4d263e0b75eb59b4e1434a9b3f0aac6ea1
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: 4f29933fbd4b9ea5c9868e307a6affa7e2273e3d
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39400187"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49165187"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse
 
@@ -27,7 +27,7 @@ ms.locfileid: "39400187"
 > 
 
 ## <a name="install-blobfuse-on-linux"></a>Установка blobfuse в Linux
-Двоичные файлы blobfuse доступны в [репозиториях программного обеспечения Майкрософт для Linux](https://docs.microsoft.com/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software). Чтобы установить blobfuse, настройте один из этих репозиториев.
+Двоичные файлы blobfuse доступны в [репозиториях программного обеспечения Майкрософт для Linux](https://docs.microsoft.com/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) для дистрибутивов Ubuntu и RHEL. Чтобы установить blobfuse в этих дистрибутивах, настройте один из репозиториев из списка. Вы также можете создавать двоичные файлы из исходного кода, следуя действиям по установке [здесь](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source), если для вашего дистрибутива нет двоичных файлов.
 
 ### <a name="configure-the-microsoft-package-repository"></a>Настройка репозитория пакетов Майкрософт
 Настройте [репозиторий пакетов Linux для продуктов Майкрософт](https://docs.microsoft.com/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software).
@@ -89,7 +89,7 @@ sudo chown <youruser> /mnt/resource/blobfusetmp
 
 ```
 accountName myaccount
-accountKey myaccesskey==
+accountKey 9fD-/KjshdfLDERmcIjabcdefhAUSIHD/asdhfoiasiaAISOIabcdef/askdfewiAASJDNFL+askdlfj==
 containerName mycontainer
 ```
 
@@ -97,6 +97,10 @@ containerName mycontainer
 ```bash
 chmod 700 fuse_connection.cfg
 ```
+
+> [!NOTE]
+> Если вы создали файл конфигурации в Windows, обязательно запустите `dos2unix`, чтобы очистить данные и преобразовать их в формат Unix. 
+>
 
 ### <a name="create-an-empty-directory-for-mounting"></a>Создание пустого каталога для подключения
 ```bash

@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: Java
 ms.topic: article
-ms.date: 08/10/2017
+ms.date: 08/10/2018
 ms.author: spelluru
-ms.openlocfilehash: bfab0c374e4b20b09167f37363fe0681144426ac
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 9a223c67e0c1f2e71d2953be63924a114e7420af
+ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43699351"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48018236"
 ---
 # <a name="how-to-use-the-java-message-service-jms-api-with-service-bus-and-amqp-10"></a>Как использовать API службы сообщений Java (JMS) со служебной шиной и AMQP 1.0
 AMQP 1.0 — это эффективный и надежный протокол обмена сообщениями на уровне соединения, который можно использовать для создания надежных кроссплатформенных приложений для обмена сообщениями.
@@ -29,7 +29,7 @@ AMQP 1.0 — это эффективный и надежный протокол 
 В этой статье описывается использование функций обмена сообщениями через служебную шину (очередей и публикации разделов или подписки на них) из приложений Java, использующих популярный стандарт API JMS. В [связанной статье](service-bus-amqp-dotnet.md) объясняется, как выполнить те же действия, используя API .NET служебной шины. Эти два руководства можно использовать совместно для изучения обмена сообщениями между различными платформами с помощью AMQP 1.0.
 
 ## <a name="get-started-with-service-bus"></a>Приступая к работе со служебной шиной
-В этом руководстве предполагается, что вы уже создали пространство имен служебной шины, содержащее очередь с именем **queue1**. Если это не так, можно [создать пространство имен и очередь](service-bus-create-namespace-portal.md), используя [портал Azure](https://portal.azure.com). Дополнительные сведения о создании пространства имен и очередей служебной шины см. в статье [Приступая к работе с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md).
+В этом руководстве предполагается, что вы уже создали пространство имен служебной шины, содержащее очередь с именем **basicqueue**. Если это не так, можно [создать пространство имен и очередь](service-bus-create-namespace-portal.md), используя [портал Azure](https://portal.azure.com). Дополнительные сведения о создании пространства имен и очередей служебной шины см. в статье [Приступая к работе с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md).
 
 > [!NOTE]
 > Секционированные очереди и разделы также поддерживают AMQP. Дополнительные сведения см. в статьях [Секционированные сущности обмена сообщениями](service-bus-partitioning.md) и [Поддержка AMQP 1.0 для секционированных очередей и разделов служебной шины](service-bus-partitioned-queues-and-topics-amqp-overview.md).
@@ -42,9 +42,9 @@ AMQP 1.0 — это эффективный и надежный протокол 
 При построении и запуске приложений JMS с использованием служебной шины необходимо добавить следующие 4 JAR-файла из архива распространения Apache Qpid JMS AMQP 1.0 в Java CLASSPATH:
 
 * geronimo-jms\_1.1\_spec-1.0.jar
-* qpid-amqp-1-0-client-[version].jar
-* qpid-amqp-1-0-client-jms-[version].jar
-* qpid-amqp-1-0-common-[version].jar
+* qpid-jms-client-[version].jar
+
+> ![ПРИМЕЧАНИЕ] имена и версии JMS JAR могут быть изменены. Дополнительные сведения см. в разделе [Qpid JMS — AMQP 1.0](https://qpid.apache.org/maven.html#qpid-jms-amqp-10).
 
 ## <a name="coding-java-applications"></a>Создание приложений Java
 ### <a name="java-naming-and-directory-interface-jndi"></a>Интерфейс JNDI
@@ -63,56 +63,58 @@ connectionfactory.SBCF = amqps://[SASPolicyName]:[SASPolicyKey]@[namespace].serv
 queue.QUEUE = queue1
 ```
 
-#### <a name="configure-the-connectionfactory"></a>Настройка ConnectionFactory
-Эта запись используется для определения **ConnectionFactory** в поставщике JNDI файла свойств Qpid в следующем формате:
+#### <a name="setup-jndi-context-and-configure-the-connectionfactory"></a>Установка контекста JNDI и настройка ConnectionFactory
 
+Ссылка на **ConnectionString** указывается в "Политике общего доступа" на [портале Azure](https://portal.azure.com) в разделе **Основная строка подключения**
 ```
-connectionfactory.[jndi_name] = [ConnectionURL]
+// The connection string builder is the only part of the azure-servicebus SDK library
+// we use in this JMS sample and for the purpose of robustly parsing the Service Bus 
+// connection string. 
+ConnectionStringBuilder csb = new ConnectionStringBuilder(connectionString);
+        
+// set up JNDI context
+Hashtable<String, String> hashtable = new Hashtable<>();
+hashtable.put("connectionfactory.SBCF", "amqps://" + csb.getEndpoint().getHost() + "?amqp.idleTimeout=120000&amqp.traceFrames=true");
+hashtable.put("queue.QUEUE", "BasicQueue");
+hashtable.put(Context.INITIAL_CONTEXT_FACTORY, "org.apache.qpid.jms.jndi.JmsInitialContextFactory");
+Context context = new InitialContext(hashtable);
+
+ConnectionFactory cf = (ConnectionFactory) context.lookup("SBCF");
+
+// Look up queue
+Destination queue = (Destination) context.lookup("QUEUE");
 ```
 
-Где **[jndi_name]** и **[ConnectionURL]** означают следующее:
-
-* **[jndi_name]**: логическое имя ConnectionFactory. Это имя, которое будет разрешено в Java-приложении с помощью метода JNDI IntialContext.lookup().
-* **[ConnectionURL]**: URL-адрес, предоставляющий библиотеке JMS сведения, необходимые брокеру AMQP.
-
-Формат **ConnectionURL** выглядит следующим образом:
-
-```
-amqps://[SASPolicyName]:[SASPolicyKey]@[namespace].servicebus.windows.net
-```
-Где **[namespace]**, **[SASPolicyName]** и **[SASPolicyKey]** означают следующее:
-
-* **[namespace]**: пространство имен служебной шины;
-* **[SASPolicyName]**: имя политики подписанного URL-адреса;
-* **[SASPolicyKey]**: ключ политики подписанного URL-адреса.
-
-> [!NOTE]
-> Необходимо применить URL-кодирование к паролю вручную. Полезная служебная программа URL-кодирования доступна на странице [http://www.w3schools.com/tags/ref_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp).
-> 
-> 
-
-#### <a name="configure-destinations"></a>Настройка назначений
+#### <a name="configure-producer-and-consumer-destination-queues"></a>Настройка производителя и очередей назначения потребителей
 Эта запись используется для определения назначения в поставщике JNDI файла свойств Qpid в следующем формате:
 
+Чтобы создать очередь назначения для производителя: 
 ```
-queue.[jndi_name] = [physical_name]
+String queueName = "queueName";
+Destination queue = (Destination) queueName;
+
+ConnectionFactory cf = (ConnectionFactory) context.lookup("SBCF");
+Connection connection - cf.createConnection(csb.getSasKeyName(), csb.getSasKey());
+
+Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
+
+// Create Producer
+MessageProducer producer = session.createProducer(queue);
 ```
 
-или
-
+Чтобы создать очередь назначения для потребителя: 
 ```
-topic.[jndi_name] = [physical_name]
+String queueName = "queueName";
+Destination queue = (Destination) queueName;
+
+ConnectionFactory cf = (ConnectionFactory) context.lookup("SBCF");
+Connection connection - cf.createConnection(csb.getSasKeyName(), csb.getSasKey());
+
+Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
+
+// Create Consumer
+MessageConsumer consumer = session.createConsumer(queue);
 ```
-
-Где **[jndi\_name]** и **[physical\_name]** означают следующее:
-
-* **[jndi_name]**: логическое имя назначения. Это имя, которое будет разрешено в Java-приложении с помощью метода JNDI IntialContext.lookup().
-* **[physical_name]**: имя сущности служебной шины, которой приложение отправляет сообщения или от которого оно получает сообщения.
-
-> [!NOTE]
-> При получении данных из подписки раздела служебной шины физическое имя, указанное в JNDI, должно быть именем раздела. Имя подписки предоставляется при создании устойчивой подписки в коде приложения JMS. В [руководстве разработчика AMQP 1.0 для служебной шины](service-bus-amqp-dotnet.md) содержатся дополнительные сведения о работе с разделами служебной шины в JMS.
-> 
-> 
 
 ### <a name="write-the-jms-application"></a>Написание приложения JMS
 Не существует специальных API-интерфейсов или параметров для использования JMS с Service Bus. Однако существует несколько ограничений, которые будут рассмотрены ниже. Как и для любого приложения JMS, первое, что необходимо — это конфигурация среды JNDI, позволяющая разрешать **ConnectionFactory** и назначения.
@@ -121,190 +123,223 @@ topic.[jndi_name] = [physical_name]
 Для настройки среды JNDI хэш-таблица со сведениями о конфигурации передаются в конструктор класса javax.naming.InitialContext. Два обязательных элемента в хэш-таблице — это имя класса фабрики исходного контекста и URL-адрес поставщика. В следующем примере кода показано, как настроить среду JNDI для использования поставщика JNDI на основе файла свойств Qpid с именем **servicebus.properties**.
 
 ```java
-Hashtable<String, String> env = new Hashtable<String, String>(); 
-env.put(Context.INITIAL_CONTEXT_FACTORY, "org.apache.qpid.amqp_1_0.jms.jndi.PropertiesFileInitialContextFactory"); 
-env.put(Context.PROVIDER_URL, "servicebus.properties"); 
-InitialContext context = new InitialContext(env);
+// set up JNDI context
+Hashtable<String, String> hashtable = new Hashtable<>();
+hashtable.put("connectionfactory.SBCF", "amqps://" + csb.getEndpoint().getHost() + \
+"?amqp.idleTimeout=120000&amqp.traceFrames=true");
+hashtable.put("queue.QUEUE", "BasicQueue");
+hashtable.put(Context.INITIAL_CONTEXT_FACTORY, "org.apache.qpid.jms.jndi.JmsInitialContextFactory");
+Context context = new InitialContext(hashtable);
 ``` 
 
 ### <a name="a-simple-jms-application-using-a-service-bus-queue"></a>Простое приложение JMS, использующее очередь служебной шины
 Следующий пример программы отправляет текстовые сообщения JMS в очередь Service Bus с логическим JNDI-именем QUEUE и получает ответные сообщения.
 
+Вы можете получить доступ ко всем исходным кодам и сведениям о конфигурации в [Кратком руководстве. Очередь JMS образцов служебной шины Azure](https://github.com/Azure/azure-service-bus/tree/master/samples/Java/qpid-jms-client/JmsQueueQuickstart)
+
 ```java
-// SimpleSenderReceiver.java
+// Copyright (c) Microsoft. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+package com.microsoft.azure.servicebus.samples.jmsqueuequickstart;
+
+import com.microsoft.azure.servicebus.primitives.ConnectionStringBuilder;
+import org.apache.commons.cli.*;
+import org.apache.log4j.*;
 
 import javax.jms.*;
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Hashtable;
-import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Function;
 
-public class SimpleSenderReceiver implements MessageListener {
-    private static boolean runReceiver = true;
-    private Connection connection;
-    private Session sendSession;
-    private Session receiveSession;
-    private MessageProducer sender;
-    private MessageConsumer receiver;
-    private static Random randomGenerator = new Random();
+/**
+ * This sample demonstrates how to send messages from a JMS Queue producer into
+ * an Azure Service Bus Queue, and receive them with a JMS message consumer.
+ * JMS Queue. 
+ */
+public class JmsQueueQuickstart {
 
-    public SimpleSenderReceiver() throws Exception {
-        // Configure JNDI environment
-        Hashtable<String, String> env = new Hashtable<String, String>();
-        env.put(Context.INITIAL_CONTEXT_FACTORY, 
-                   "org.apache.qpid.amqp_1_0.jms.jndi.PropertiesFileInitialContextFactory");
-        env.put(Context.PROVIDER_URL, "servicebus.properties");
-        Context context = new InitialContext(env);
+    // Number of messages to send
+    private static int totalSend = 10;
+    //Tracking counter for how many messages have been received; used as termination condition
+    private static AtomicInteger totalReceived = new AtomicInteger(0);
+    // log4j logger 
+    private static Logger logger = Logger.getRootLogger();
 
-        // Look up ConnectionFactory and Queue
+    public void run(String connectionString) throws Exception {
+
+        // The connection string builder is the only part of the azure-servicebus SDK library
+        // we use in this JMS sample and for the purpose of robustly parsing the Service Bus 
+        // connection string. 
+        ConnectionStringBuilder csb = new ConnectionStringBuilder(connectionString);
+        
+        // set up JNDI context
+        Hashtable<String, String> hashtable = new Hashtable<>();
+        hashtable.put("connectionfactory.SBCF", "amqps://" + csb.getEndpoint().getHost() + "?amqp.idleTimeout=120000&amqp.traceFrames=true");
+        hashtable.put("queue.QUEUE", "BasicQueue");
+        hashtable.put(Context.INITIAL_CONTEXT_FACTORY, "org.apache.qpid.jms.jndi.JmsInitialContextFactory");
+        Context context = new InitialContext(hashtable);
         ConnectionFactory cf = (ConnectionFactory) context.lookup("SBCF");
+        
+        // Look up queue
         Destination queue = (Destination) context.lookup("QUEUE");
 
-        // Create Connection
-        connection = cf.createConnection();
+        // we create a scope here so we can use the same set of local variables cleanly 
+        // again to show the receive side separately with minimal clutter
+        {
+            // Create Connection
+            Connection connection = cf.createConnection(csb.getSasKeyName(), csb.getSasKey());
+            // Create Session, no transaction, client ack
+            Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
 
-        // Create sender-side Session and MessageProducer
-        sendSession = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-        sender = sendSession.createProducer(queue);
+            // Create producer
+            MessageProducer producer = session.createProducer(queue);
 
-        if (runReceiver) {
-            // Create receiver-side Session, MessageConsumer,and MessageListener
-            receiveSession = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
-            receiver = receiveSession.createConsumer(queue);
-            receiver.setMessageListener(this);
-            connection.start();
+            // Send messages
+            for (int i = 0; i < totalSend; i++) {
+                BytesMessage message = session.createBytesMessage();
+                message.writeBytes(String.valueOf(i).getBytes());
+                producer.send(message);
+                System.out.printf("Sent message %d.\n", i + 1);
+            }
+
+            producer.close();
+            session.close();
+            connection.stop();
+            connection.close();
         }
+
+        {
+            // Create Connection
+            Connection connection = cf.createConnection(csb.getSasKeyName(), csb.getSasKey());
+            connection.start();
+            // Create Session, no transaction, client ack
+            Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
+            // Create consumer
+            MessageConsumer consumer = session.createConsumer(queue);
+            // create a listener callback to receive the messages
+            consumer.setMessageListener(message -> {
+                try {
+                    // receives message is passed to callback
+                    System.out.printf("Received message %d with sq#: %s\n",
+                            totalReceived.incrementAndGet(), // increments the tracking counter
+                            message.getJMSMessageID());
+                    message.acknowledge();
+                } catch (Exception e) {
+                    logger.error(e);
+                }
+            });
+
+            // wait on the main thread until all sent messages have been received
+            while (totalReceived.get() < totalSend) {
+                Thread.sleep(1000);
+            }
+            consumer.close();
+            session.close();
+            connection.stop();
+            connection.close();
+        }
+
+        System.out.printf("Received all messages, exiting the sample.\n");
+        System.out.printf("Closing queue client.\n");
     }
 
     public static void main(String[] args) {
+
+        System.exit(runApp(args, (connectionString) -> {
+            JmsQueueQuickstart app = new JmsQueueQuickstart();
+            try {
+                app.run(connectionString);
+                return 0;
+            } catch (Exception e) {
+                System.out.printf("%s", e.toString());
+                return 1;
+            }
+        }));
+    }
+
+    static final String SB_SAMPLES_CONNECTIONSTRING = "SB_SAMPLES_CONNECTIONSTRING";
+
+    public static int runApp(String[] args, Function<String, Integer> run) {
         try {
 
-            if ((args.length > 0) && args[0].equalsIgnoreCase("sendonly")) {
-                runReceiver = false;
+            String connectionString = null;
+
+            // parse connection string from command line
+            Options options = new Options();
+            options.addOption(new Option("c", true, "Connection string"));
+            CommandLineParser clp = new DefaultParser();
+            CommandLine cl = clp.parse(options, args);
+            if (cl.getOptionValue("c") != null) {
+                connectionString = cl.getOptionValue("c");
             }
 
-            SimpleSenderReceiver simpleSenderReceiver = new SimpleSenderReceiver();
-            System.out.println("Press [enter] to send a message. Type 'exit' + [enter] to quit.");
-            BufferedReader commandLine = new java.io.BufferedReader(new InputStreamReader(System.in));
-
-            while (true) {
-                String s = commandLine.readLine();
-                if (s.equalsIgnoreCase("exit")) {
-                    simpleSenderReceiver.close();
-                    System.exit(0);
-                } else {
-                    simpleSenderReceiver.sendMessage();
-                }
+            // get overrides from the environment
+            String env = System.getenv(SB_SAMPLES_CONNECTIONSTRING);
+            if (env != null) {
+                connectionString = env;
             }
+
+            if (connectionString == null) {
+                HelpFormatter formatter = new HelpFormatter();
+                formatter.printHelp("run jar with", "", options, "", true);
+                return 2;
+            }
+            return run.apply(connectionString);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.printf("%s", e.toString());
+            return 3;
         }
     }
-
-    private void sendMessage() throws JMSException {
-        TextMessage message = sendSession.createTextMessage();
-        message.setText("Test AMQP message from JMS");
-        long randomMessageID = randomGenerator.nextLong() >>>1;
-        message.setJMSMessageID("ID:" + randomMessageID);
-        sender.send(message);
-        System.out.println("Sent message with JMSMessageID = " + message.getJMSMessageID());
-    }
-
-    public void close() throws JMSException {
-        connection.close();
-    }
-
-    public void onMessage(Message message) {
-        try {
-            System.out.println("Received message with JMSMessageID = " + message.getJMSMessageID());
-            message.acknowledge();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-}    
+}
 ```
 
 ### <a name="run-the-application"></a>Выполнение приложения
-Запущенное приложение выводит следующие данные:
+Передайте **Строку подключения** из политики совместного доступа для запуска приложения.
+Ниже приведены следующие данные запуска приложения.
 
 ```
-> java SimpleSenderReceiver
-Press [enter] to send a message. Type 'exit' + [enter] to quit.
+> mvn clean package
+>java -jar ./target/jmsqueuequickstart-1.0.0-jar-with-dependencies.jar -c "<CONNECTION_STRING>"
 
-Sent message with JMSMessageID = ID:2867600614942270318
-Received message with JMSMessageID = ID:2867600614942270318
+Sent message 1.
+Sent message 2.
+Sent message 3.
+Sent message 4.
+Sent message 5.
+Sent message 6.
+Sent message 7.
+Sent message 8.
+Sent message 9.
+Sent message 10.
+Received message 1 with sq#: ID:7f6a7659-bcdf-4af6-afc1-4011e2ddcb3c:1:1:1-1
+Received message 2 with sq#: ID:7f6a7659-bcdf-4af6-afc1-4011e2ddcb3c:1:1:1-2
+Received message 3 with sq#: ID:7f6a7659-bcdf-4af6-afc1-4011e2ddcb3c:1:1:1-3
+Received message 4 with sq#: ID:7f6a7659-bcdf-4af6-afc1-4011e2ddcb3c:1:1:1-4
+Received message 5 with sq#: ID:7f6a7659-bcdf-4af6-afc1-4011e2ddcb3c:1:1:1-5
+Received message 6 with sq#: ID:7f6a7659-bcdf-4af6-afc1-4011e2ddcb3c:1:1:1-6
+Received message 7 with sq#: ID:7f6a7659-bcdf-4af6-afc1-4011e2ddcb3c:1:1:1-7
+Received message 8 with sq#: ID:7f6a7659-bcdf-4af6-afc1-4011e2ddcb3c:1:1:1-8
+Received message 9 with sq#: ID:7f6a7659-bcdf-4af6-afc1-4011e2ddcb3c:1:1:1-9
+Received message 10 with sq#: ID:7f6a7659-bcdf-4af6-afc1-4011e2ddcb3c:1:1:1-10
+Received all messages, exiting the sample.
+Closing queue client.
 
-Sent message with JMSMessageID = ID:7578408152750301483
-Received message with JMSMessageID = ID:7578408152750301483
-
-Sent message with JMSMessageID = ID:956102171969368961
-Received message with JMSMessageID = ID:956102171969368961
-exit
 ```
 
-## <a name="cross-platform-messaging-between-jms-and-net"></a>Межплатформенный обмен сообщениями между JMS и .NET
-В этом руководстве мы рассмотрели, как отправлять и получать сообщения Service Bus с помощью JMS. Однако одно из основных преимуществ использования AMQP 1.0 состоит в том, что этот протокол позволяет приложениям, созданным из компонентов, написанных на разных языках, надежно и точно обмениваться сообщениями.
+## <a name="amqp-disposition-and-service-bus-operation-mapping"></a>Расположение AMQP и сопоставление операции служебной шины
+Вот как расположение AMQP преобразовывается в операцию служебной шины.
 
-Используя пример приложения JMS выше и аналогичное приложение .NET, взятое из связанной статьи [Использование служебной шины на платформе .NET с протоколом AMQP 1.0](service-bus-amqp-dotnet.md), можно организовать обмен сообщениями между .NET и Java. В этой статье представлены сведения о кроссплатформенном обмене сообщениями с помощью служебной шины и AMQP 1.0.
-
-### <a name="jms-to-net"></a>Из JMS в .NET
-Для демонстрации отправки сообщении из JMS в .NET выполните следующее:
-
-* Запустите пример приложения .NET без параметров командной строки.
-* Запустите пример приложения Java с параметром командной строки sendonly. В этом режиме приложение не будет получать сообщения из очереди, оно будет только отправлять сообщения.
-* В консоли приложения Java несколько раз нажмите клавишу **ВВОД**, что приведет к отправке сообщений.
-* Эти сообщения принимаются приложением .NET.
-
-#### <a name="output-from-jms-application"></a>Вывод приложения JMS
 ```
-> java SimpleSenderReceiver sendonly
-Press [enter] to send a message. Type 'exit' + [enter] to quit.
-Sent message with JMSMessageID = ID:4364096528752411591
-Sent message with JMSMessageID = ID:459252991689389983
-Sent message with JMSMessageID = ID:1565011046230456854
-exit
+ACCEPTED = 1; -> Complete()
+REJECTED = 2; -> DeadLetter()
+RELEASED = 3; (just unlock the message in service bus, will then get redelivered)
+MODIFIED_FAILED = 4; -> Abandon() which increases delivery count
+MODIFIED_FAILED_UNDELIVERABLE = 5; -> Defer()
 ```
 
-#### <a name="output-from-net-application"></a>Вывод приложения .NET
-```
-> SimpleSenderReceiver.exe    
-Press [enter] to send a message. Type 'exit' + [enter] to quit.
-Received message with MessageID = 4364096528752411591
-Received message with MessageID = 459252991689389983
-Received message with MessageID = 1565011046230456854
-exit
-```
-
-### <a name="net-to-jms"></a>Из .NET в JMS
-Для демонстрации отправки сообщений из .NET в JMS выполните следующее:
-
-* Запустите пример приложения .NET с параметром командной строки sendonly. В этом режиме приложение не будет получать сообщения из очереди, оно будет только отправлять сообщения.
-* Запустите пример приложения Java без параметров командной строки.
-* В консоли приложения .NET несколько раз нажмите клавишу **ВВОД**, что приведет к отправке сообщений.
-* Эти сообщения принимаются приложением Java.
-
-#### <a name="output-from-net-application"></a>Вывод приложения .NET
-```
-> SimpleSenderReceiver.exe sendonly
-Press [enter] to send a message. Type 'exit' + [enter] to quit.
-Sent message with MessageID = d64e681a310a48a1ae0ce7b017bf1cf3    
-Sent message with MessageID = 98a39664995b4f74b32e2a0ecccc46bb
-Sent message with MessageID = acbca67f03c346de9b7893026f97ddeb
-exit
-```
-
-#### <a name="output-from-jms-application"></a>Вывод приложения JMS
-```
-> java SimpleSenderReceiver    
-Press [enter] to send a message. Type 'exit' + [enter] to quit.
-Received message with JMSMessageID = ID:d64e681a310a48a1ae0ce7b017bf1cf3
-Received message with JMSMessageID = ID:98a39664995b4f74b32e2a0ecccc46bb
-Received message with JMSMessageID = ID:acbca67f03c346de9b7893026f97ddeb
-exit
-```
 
 ## <a name="unsupported-features-and-restrictions"></a>Неподдерживаемые возможности и ограничения
 При использовании JMS по протоколу AMQP 1.0 с Service Bus действуют следующие ограничения:
@@ -312,8 +347,22 @@ exit
 * Для одного **сеанса** допускается только один **MessageProducer** или **MessageConsumer**. Если требуется создать несколько **MessageProducers** или **MessageConsumers** в приложении, создайте специальный **сеанс** для каждого из них.
 * Временные подписки раздела в настоящее время не поддерживаются.
 * **MessageSelectors** сейчас не поддерживаются.
-* Временные назначения, например **TemporaryQueue** и **TemporaryTopic**, сейчас не поддерживаются, как и использующие их API-интерфейсы **QueueRequestor** и **TopicRequestor**.
 * Сеансы транзакций и распределенные транзакции не поддерживаются.
+
+Кроме того, служебная шина Azure разделяет плоскость управления от плоскости данных и, следовательно, не поддерживает несколько функций динамической топологии JMS.
+
+| Неподдерживаемый метод          | Заменить на                                                                             |
+|-----------------------------|------------------------------------------------------------------------------------------|
+| createDurableSubscriber     | создать подписки на раздел для переноса селектора сообщений                                 |
+| createDurableConsumer       | создать подписки на раздел для переноса селектора сообщений                                 |
+| createSharedConsumer        | раздели служебной шины всегда общедоступны (см. выше)                                       |
+| createSharedDurableConsumer | раздели служебной шины всегда общедоступны (см. выше)                                       |
+| createTemporaryTopic        | создать раздел с помощью API управления, или инструментов, или портала с *AutoDeleteOnIdle*, установленным на срок действия |
+| createTopic                 | создать раздел с помощью API управления или инструментов или портала                                           |
+| unsubscribe                 | удалить раздел API управления, или инструментов, или портала                                             |
+| createBrowser               | не поддерживается. используйте функции Peek () API служебной шины                         |
+| createQueue                 | создать очередь с помощью API управления, или инструментов, или портала                                           | 
+| createTemporaryQueue        | создать очередь с помощью API управления или инструментов,или портала с *AutoDeleteOnIdle*, установленным на срок действия |
 
 ## <a name="summary"></a>Сводка
 В этом практическом руководстве показано использование функций обмена сообщениями, выполняемых посредством служебной шины (очередей и разделов публикации/подписки), из Java с использованием популярного JMS API и протокола AMQP 1.0.

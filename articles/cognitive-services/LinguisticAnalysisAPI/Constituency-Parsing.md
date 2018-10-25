@@ -1,22 +1,27 @@
 ---
-title: Анализ групп в API лингвистического анализа | Документация Майкрософт
+title: Анализ групп (API лингвистического анализа)
+titlesuffix: Azure Cognitive Services
 description: Дополнительные сведения об определении фраз в тексте с помощью анализа групп, известного также как "анализ структуры фразы".
 services: cognitive-services
 author: RichardSunMS
-manager: wkwok
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: linguistic-analysis
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/21/2016
 ms.author: lesun
-ms.openlocfilehash: bff5e587621e1278c260d555aec280a0f4c7c8a1
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ROBOTS: NOINDEX
+ms.openlocfilehash: 89832f2d936a08df8b6f9e846c3dd4a5665c06a4
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37082178"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48238630"
 ---
 # <a name="constituency-parsing"></a>Анализ групп
+
+> [!IMPORTANT]
+> Поддержка предварительной версии Лингвистического анализа прекращена 9 августа 2018 г. Мы рекомендуем использовать [модули текстовой аналитики Машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/studio-module-reference/text-analytics) для анализа и обработки текста.
 
 Цель анализа групп (также известного как "анализ структуры фразы") заключается в определении фраз в тексте.
 Это может быть полезно при извлечении информации из текста.

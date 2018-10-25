@@ -12,12 +12,12 @@ ms.author: v-daljep
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: d06d29fb43ea8d8971c3f013c1e66406a30798d3
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 738e78e608dbd819f24125799a1e8d48859f1aa0
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47064262"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48043682"
 ---
 # <a name="find-and-apply-performance-recommendations"></a>Поиск и применение рекомендаций по производительности
 
@@ -105,7 +105,7 @@ ms.locfileid: "47064262"
     ![Рекомендованные индексы](./media/sql-database-automatic-tuning-enable/server.png)
 
 > [!NOTE]
-> Обратите внимание, что параметр **DROP_INDEX** сейчас не поддерживается в приложениях, использующих переключения секций и подсказки индекса. В этих случаях его следует отключить.
+> Обратите внимание, что функция **DROP_INDEX** в настоящее время несовместима с приложениями, которые используют переключения секций и подсказки индекса. 
 >
 
 После выбора соответствующей конфигурации щелкните "Применить".

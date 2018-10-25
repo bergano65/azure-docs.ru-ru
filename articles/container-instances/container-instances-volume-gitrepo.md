@@ -2,18 +2,17 @@
 title: Подключение тома gitRepo в службе "Экземпляры контейнеров Azure"
 description: Сведения о подключении тома gitRepo для клонирования репозитория в экземпляры контейнеров
 services: container-instances
-author: mmacy
-manager: jeconnoc
+author: dlepow
 ms.service: container-instances
 ms.topic: article
 ms.date: 06/15/2018
-ms.author: marsma
-ms.openlocfilehash: 34036c5ec9ccd8c502104ce862e4749c59be62b9
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.author: danlep
+ms.openlocfilehash: af1fbe66c805517c07975b2e4cf6e13e87ec661c
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43105193"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49388278"
 ---
 # <a name="mount-a-gitrepo-volume-in-azure-container-instances"></a>Подключение тома gitRepo в службе "Экземпляры контейнеров Azure"
 
@@ -90,17 +89,17 @@ drwxr-xr-x    2 root     root          4096 Apr 16 16:35 app
 --gitrepo-url https://gituser:abcdef1234fdsa4321abcdef@github.com/GitUser/some-private-repository
 ```
 
-Для репозитория Git VSTS укажите любое имя пользователя (вы можете использовать "vstsuser", как в следующем примере) в сочетании с действительным PAT:
+Для репозитория Git Azure Repos укажите любое имя пользователя (вы можете использовать "azurereposuser", как в следующем примере) в сочетании с действительным PAT.
 
 ```azurecli
---gitrepo-url https://vstsuser:abcdef1234fdsa4321abcdef@vstsaccountname.visualstudio.com/_git/some-private-repository
+--gitrepo-url https://azurereposuser:abcdef1234fdsa4321abcdef@dev.azure.com/your-org/_git/some-private-repository
 ```
 
-Дополнительные сведения о личных маркерах доступа GitHub и VSTS см. по следующим ссылкам:
+Дополнительные сведения о личных маркерах доступа для GitHub и Azure Repos:
 
 GitHub: [создание личных маркеров доступа для командной строки][pat-github]
 
-VSTS: [аутентификация доступа с помощью личных маркеров доступа для VSTS и TFS][pat-vsts]
+Azure Repos: [создание личных маркеров доступа для аутентификации доступа][pat-repos]
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -113,7 +112,7 @@ VSTS: [аутентификация доступа с помощью личны�
 <!-- LINKS - External -->
 [aci-helloworld]: https://github.com/Azure-Samples/aci-helloworld
 [pat-github]: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
-[pat-vsts]: https://docs.microsoft.com/vsts/organizations/accounts/use-personal-access-tokens-to-authenticate
+[pat-repos]: https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate
 
 <!-- LINKS - Internal -->
 [az-container-create]: /cli/azure/container#az-container-create

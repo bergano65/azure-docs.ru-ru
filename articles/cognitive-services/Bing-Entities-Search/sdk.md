@@ -1,24 +1,23 @@
 ---
-title: Пакет SDK для службы "Поиск Bing" | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Пакет SDK для службы "Поиск Bing" для приложений, которые выполняют поиск в Интернете.
+title: Пакет SDK для Поиска сущностей Bing
+titleSuffix: Azure Cognitive Services
+description: Пакет SDK для Поиска сущностей Bing для приложений, которые выполняют поиск в Интернете.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
-ms.assetid: ''
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-entity-search
-ms.topic: article
+ms.topic: conceptual
 ms.date: 1/24/2018
 ms.author: v-gedod
-ms.openlocfilehash: 41e4880eec0df16ee012226389d0c054baa7bd4d
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 8212f4ca5178a5af55a2b91e879f54727711092b
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382585"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48815007"
 ---
-# <a name="bing-search-sdk"></a>Пакет SDK для службы "Поиск Bing"
+# <a name="bing-search-sdk"></a>Пакет SDK для Поиска Bing
 Примеры использования API "Поиск сущностей Bing" включают в себя следующие сценарии:
 1.  Поиск сущности, например Tom Cruise (Том Круз), и получение подробных сведений.
 2.  Обработка неоднозначных терминов для запросов, которые могут иметь несколько значений.
@@ -32,12 +31,12 @@ ms.locfileid: "35382585"
 Пакеты SDK для службы "Поиск Bing" предоставляют доступ к функции поиска в Интернете на перечисленных ниже языках программирования.
 * Начало работы с [примерами для .NET](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/BingSearchv7). 
     * [Пакет NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.EntitySearch/1.2.0).
-    * См. также определения и зависимости в [библиотеках .NET](https://github.com/Azure/azure-sdk-for-net/tree/psSdkJson6/src/SDKs/CognitiveServices/dataPlane/Search/BingEntitySearch).
+    * Ознакомьтесь также с определениями и зависимостями в [библиотеках .NET](https://github.com/Azure/azure-sdk-for-net/tree/psSdkJson6/src/SDKs/CognitiveServices/dataPlane/Search/BingEntitySearch).
 * Начало работы с [примерами для Node.js](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples). 
-    * См. также определения и зависимости в [библиотеках Node.js](https://github.com/Azure/azure-sdk-for-node/tree/master/lib/services/entitySearch).
+    * Ознакомьтесь также с определениями и зависимостями в [библиотеках Node.js](https://github.com/Azure/azure-sdk-for-node/tree/master/lib/services/entitySearch).
 * Начало работы с [примерами для Java](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples). 
-    * См. также определения и зависимости в [библиотеках Java](https://github.com/Azure/azure-sdk-for-java/tree/master/azure-cognitiveservices/search/bingentitysearch).
+    * Ознакомьтесь также с определениями и зависимостями в [библиотеках Java](https://github.com/Azure/azure-sdk-for-java/tree/master/azure-cognitiveservices/search/bingentitysearch).
 * Начало работы с [примерами для Python](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples). 
-    * См. также определения и зависимости в [библиотеках Python](https://github.com/Azure/azure-sdk-for-python/tree/master/azure-cognitiveservices-search-entitysearch).
+    * Ознакомьтесь также с определениями и зависимостями в [библиотеках Python](https://github.com/Azure/azure-sdk-for-python/tree/master/azure-cognitiveservices-search-entitysearch).
 
 Примеры пакетов SDK для каждого языка содержат файл сведений, в котором указаны предварительные требования и инструкции по установке и запуску этих примеров.

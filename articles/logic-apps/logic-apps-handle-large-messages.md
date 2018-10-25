@@ -1,6 +1,6 @@
 ---
-title: Обработка больших сообщений в Azure Logic Apps | Документация Майкрософт
-description: Сведения о том, как обрабатывать сообщения большого размера с фрагментацией в приложениях логики.
+title: Обработка больших сообщений — Azure Logic Apps | Документация Майкрософт
+description: Сведения о том, как обрабатывать сообщения большого размера с фрагментацией в Azure Logic Apps
 services: logic-apps
 documentationcenter: ''
 author: shae-hurst
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.date: 4/27/2018
 ms.author: shhurst
-ms.openlocfilehash: 6064db5455d92d15dca0e2a4a78285f0aeade904
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: e6ac6a4aa46feb768df437ff9d5969b2b41092c3
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299051"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48041651"
 ---
-# <a name="handle-large-messages-with-chunking-in-logic-apps"></a>Обработка больших сообщений с фрагментацией в Logic Apps
+# <a name="handle-large-messages-with-chunking-in-azure-logic-apps"></a>Обработка больших сообщений с фрагментацией в Azure Logic Apps
 
 Содержимое обрабатываемых сообщений в Logic Apps ограничено неким максимальным размером. Это ограничение помогает снизить нагрузку, которая возникает при хранении и обработке больших сообщений. Для обработки сообщений, размер которых превышает это ограничение, Logic Apps может *разбить* их на несколько маленьких. Таким образом, вы все еще можете передавать большие файлы через Logic Apps, но с определенными условиями. При взаимодействии с другими службами через соединители или HTTP служба Logic Apps может принимать большие сообщения, но *только* блоками. Это условие означает, что соединители также должны поддерживать фрагментацию или базовый обмен сообщениями HTTP с Logic Apps и эти службы должны применять фрагментацию.
 

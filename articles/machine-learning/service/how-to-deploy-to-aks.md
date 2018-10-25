@@ -10,12 +10,12 @@ author: raymondlaghaeian
 manager: cgronlun
 ms.reviewer: larryfr
 ms.date: 09/24/2018
-ms.openlocfilehash: f74521f77420fcfc60e99dd3d70574d5e94cf084
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 3ab32388e0a35f4abf3866aa0a84ee0628b0570c
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46967750"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49318203"
 ---
 # <a name="how-to-deploy-models-from-azure-machine-learning-service-to-azure-kubernetes-service"></a>Развертывание моделей из службы машинного обучения Azure в службе Azure Kubernetes
 
@@ -27,7 +27,7 @@ ms.locfileid: "46967750"
 
 - Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начать работу.
 
-- Должны быть установлены рабочая область машинного обучения Azure, локальный каталог со сценариями и пакет SDK машинного обучения Azure для Python. Дополнительные сведения о получении этих необходимых компонентов см. в документе [Настройка среды разработки](how-to-configure-environment.md).
+- Должны быть установлены: рабочая область службы "Машинное обучение Azure", локальный каталог со сценариями и пакет SDK Машинного обучения Azure для Python. Дополнительные сведения о получении этих необходимых компонентов см. в документе [Настройка среды разработки](how-to-configure-environment.md).
 
 - Обученная модель машинного обучения. Если у вас ее нет, обратитесь к [руководству по обучению модели классификации изображений](tutorial-train-models-with-aml.md).
 
@@ -124,7 +124,7 @@ print(aks_target.provisioning_errors)
 Если в вашей подписке Azure уже есть кластер AKS, его можно использовать для развертывания вашего образа. В следующем фрагменте кода показано, как присоединить кластер к рабочей области. 
 
 > [!IMPORTANT]
-> Поддерживается только AKS версии 1.8.7.
+> Поддерживается только AKS версии 1.11.2.
 
 ```python
 # Get the resource id from https://porta..azure.com -> Find your resource group -> click on the Kubernetes service -> Properties
@@ -137,7 +137,7 @@ cluster_name='my-existing-aks'
 aks_target = AksCompute.attach(workspace=ws, name=cluster_name, resource_id=resource_id)
 
 # Wait for the operation to complete
-aks_target.wait_for_provisioning(True)
+aks_target.wait_for_completion(True)
 ```
 
 ## <a name="deploy-your-web-service"></a>Развертывание веб-службы

@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/10/2018
+ms.date: 10/15/2018
 ms.author: barclayn
-ms.openlocfilehash: af4ab892ab84ba2f1a19e72710f23ce5ba1232f9
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: b5e235221d34434b908d605c9077ae2fede2fe94
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44163113"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49365626"
 ---
 # <a name="get-started-with-azure-key-vault"></a>Приступая к работе с хранилищем ключей Azure
 Это руководство поможет вам приступить к работе с Azure Key Vault с использованием PowerShell. Здесь также объясняется, как выполнить следующие задачи:
@@ -34,7 +34,7 @@ ms.locfileid: "44163113"
 ## <a name="requirements"></a>Требования
 Прежде чем перейти к следующим разделам статьи, убедитесь в наличии следующих компонентов:
 
-- **Подписка Azure**. Если у вас нет подписки, вы можете зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/en-us/free/).
+- **Подписка Azure**. Если у вас нет подписки, вы можете зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/).
 - **Azure PowerShell** **начиная с версии 1.1.0**. Чтобы установить решение Azure PowerShell и связать его с подпиской Azure, см. статью [Установка и настройка Azure PowerShell](/powershell/azure/overview). Если средство Azure PowerShell у вас установлено, но вы не знаете его версию, в консоли Azure PowerShell введите `(Get-Module azure -ListAvailable).Version`. Если у вас установлено средство Azure PowerShell версий 0.9.1–0.9.8, вы можете использовать это руководство с некоторыми незначительными поправками. Например, вам нужно использовать команду `Switch-AzureMode AzureResourceManager`; также отличаются некоторые команды хранилища ключей Azure. Полный список командлетов хранилища ключей для Azure PowerShell версий 0.9.1–0.9.8 см. в [этой статье](/powershell/module/azurerm.keyvault/#key_vault).
 - **Приложение, которое можно настроить для использования Key Vault**. Пример приложения доступен в [Центре загрузки Майкрософт](http://www.microsoft.com/download/details.aspx?id=45343). Инструкции см. в сопутствующем файле **README**.
 
@@ -105,13 +105,13 @@ New-AzureRmResourceGroup –Name 'ContosoResourceGroup' –Location 'East US'
 Тогда вам нужно ввести такой код:
 
 ```powershell
-New-AzureRmKeyVault -VaultName 'ContosoKeyVault' -ResourceGroupName 'ContosoResourceGroup' -Location 'East US'
+New-AzureRmKeyVault -Name 'ContosoKeyVault' -ResourceGroupName 'ContosoResourceGroup' -Location 'East US'
 ```
 ![Выходные данные после выполнения команды, создающей хранилище ключей](./media/key-vault-get-started/output-after-creating-keyvault.png)
 
 В выходных данных командлета будут показаны свойства созданного хранилища ключей. Среди всех свойств есть два самых важных:
 
-* **Имя хранилища** — в нашем примере это **ContosoKeyVault**. Вы будете использовать это имя для выполнения других командлетов хранилища ключей;
+* **Имя хранилища**. В нашем примере это **ContosoKeyVault**. Вы будете использовать это имя для выполнения других командлетов хранилища ключей;
 * **Код URI хранилища**. В данном примере это https://contosokeyvault.vault.azure.net/. Необходимо, чтобы приложения, использующие ваше хранилище через REST API, использовали этот URI.
 
 Теперь ваша учетная запись Azure авторизована, и вы можете выполнять любые операции в этом хранилище ключей. Пока что это недоступно для других учетных записей.
@@ -136,11 +136,11 @@ $key = Add-AzureKeyVaultKey -VaultName 'ContosoKeyVault' -Name 'ContosoFirstKey'
 $key.id
 ```
 
-Для доступа к ключу, созданному или отправленному в Azure Key Vault, вы можете использовать его URI. Можно использовать **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey** для получения текущей версии или **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** для получения этой конкретной версии.  
+Для доступа к ключу, созданному или отправленному в Azure Key Vault, вы можете использовать его URI. Вы можете использовать **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey** для получения текущей версии или **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** для получения этой конкретной версии.  
 
 ### <a name="importing-an-existing-pfx-file-into-azure-key-vault"></a>Импорт существующего PFX-файла в Azure Key Vault
 
-Если существующие ключи хранятся в PFX-файле, который требуется отправить в Azure Key Vault, шаги будут отличаться. Например: 
+Если имеющиеся ключи хранятся в PFX-файле, который требуется отправить в Azure Key Vault, шаги будут отличаться. Например: 
 - если у вас есть ключ с программной защитой в PFX-файле;
 - PFX-файлу присвоено имя softkey.pfx; 
 - файл хранится на диске C.
@@ -167,9 +167,10 @@ $Key.id
 ```powershell
 Get-AzureKeyVaultKey –VaultName 'ContosoKeyVault'
 ```
-Если вы хотите просмотреть свойства PFX-файла на портале, вы увидите экран, как на изображении ниже:
+Если вы хотите просмотреть свойства PFX-файла на портале, вы увидите экран, как на приведенном ниже изображении.
 
 ![Вид сертификата на портале](./media/key-vault-get-started/imported-pfx.png)
+
 ### <a name="to-add-a-secret-to-azure-key-vault"></a>Добавление секрета в Azure Key Vault
 
 Чтобы добавить в Azure Key Vault секрет, который представляет собой пароль с именем SQLPassword и значением Pa$$w0rd, сначала преобразуйте значение Pa$$w0rd в защищенную строку. Для этого введите следующее:
@@ -200,27 +201,27 @@ $secret.Id
 ```powershell
 (get-azurekeyvaultsecret -vaultName "Contosokeyvault" -name "SQLPassword").SecretValueText
 ```
-Теперь хранилище ключей и ключ или секрет готовы для использования в приложениях. Необходимо авторизовать приложения для их использования.  
+Теперь хранилище ключей и ключ или секрет готовы для использования в приложениях. Авторизуйте приложения для их использования.  
 
 ## <a id="register"></a>Регистрация приложения в Azure Active Directory
-Обычно этот шаг выполняет разработчик на отдельном компьютере. Он не относится исключительно к Azure Key Vault. Пошаговые инструкции по регистрации приложения с помощью Azure Active Directory см. в статье [Интеграция приложений с Azure Active Directory](../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md) или [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../azure-resource-manager/resource-group-create-service-principal-portal.md)
+Обычно этот шаг выполняет разработчик на отдельном компьютере. Он не относится исключительно к Azure Key Vault. Пошаговые инструкции по регистрации приложения с помощью Azure Active Directory см. в статье [Краткое руководство. Регистрация приложения в конечной точке Azure Active Directory версии 1.0](../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md) или [How to: Use the portal to create an Azure AD application and service principal that can access resources](../azure-resource-manager/resource-group-create-service-principal-portal.md) (Практическое руководство. Создание приложения и субъекта-службы Azure AD, имеющих доступ к ресурсам, с помощью портала).
 
 > [!IMPORTANT]
 > Чтобы завершить прохождение этого учебника, учетная запись, хранилище и приложение, которое вы будете регистрировать на этом шаге, должны находиться в одном каталоге Azure.
 
 
-Приложения, которые используют хранилища ключей, должны пройти аутентификацию с использованием токена Azure Active Directory. Для этого владельцу приложения необходимо сначала зарегистрировать приложение в Azure Active Directory. В конце регистрации владелец приложения получает следующие значения.
+Приложения, которые используют хранилища ключей, должны пройти аутентификацию с использованием токена Azure Active Directory. Владельцу приложения необходимо сначала зарегистрировать приложение в Azure Active Directory. В конце регистрации владелец приложения получает следующие значения.
 
 - **Идентификатор приложения**. 
 - **Ключ проверки подлинности** (также известный как общий секрет). 
 
-Для получения маркера приложение должно предоставить Azure Active Directory оба этих значения. Настроенный способ предоставления зависит от приложения. В [примере приложения, использующего Key Vault](https://www.microsoft.com/download/details.aspx?id=45343), владелец приложения задает эти значения в файле app.config.
+Для получения маркера приложение должно предоставить Azure Active Directory оба этих значения. Конфигурация зависит от приложения. В [примере приложения, использующего Key Vault](https://www.microsoft.com/download/details.aspx?id=45343), владелец приложения задает эти значения в файле app.config.
 
 
 Чтобы зарегистрировать приложение в Azure Active Directory:
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Слева щелкните **Регистрация приложений**. Если зарегистрированные приложения не отображаются, щелкните **Больше служб** и найдите их там.  
+2. Слева щелкните **Регистрация приложений**. Если зарегистрированные приложения не отображаются, щелкните **Больше служб**.  
 >[!NOTE]
 Вам необходимо выбрать каталог, содержащий подписку Azure, которую вы использовали для создания хранилища ключей. 
 3. Щелкните **Регистрация нового приложения**.
@@ -231,7 +232,7 @@ $secret.Id
     Убедитесь, что выбран тип **Веб-приложение и/или веб-API**. В противном случае параметр **Ключи** не отобразится в списке параметров.
 
 5. Нажмите кнопку **Создать** .
-6. Завершив регистрацию приложения, вы увидите список зарегистрированных приложений. Найдите только что зарегистрированное приложение и щелкните его имя.
+6. После регистрации приложения вы увидите список зарегистрированных приложений. Найдите зарегистрированное приложение и щелкните его имя.
 7. Щелкните колонку **Зарегистрированное приложение** и скопируйте **идентификатор приложения**.
 8. Выберите **Все параметры**.
 9. В колонке **Параметры** щелкните **Ключи**.
@@ -244,7 +245,7 @@ $secret.Id
 ### <a name="using-powershell"></a>с использованием PowerShell.
 Для работы с PowerShell используйте командлет [Set-AzureRmKeyVaultAccessPolicy](/powershell/module/azurerm.keyvault/set-azurermkeyvaultaccesspolicy).
 
-Например, если имя хранилища — **ContosoKeyVault** , идентификатор клиента приложения — 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed и вам нужно авторизовать это приложение для расшифровки и подписи с использованием ключей в вашем хранилище, выполните следующую команду:
+Например, если имя хранилища — **ContosoKeyVault**, идентификатор клиента приложения — 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed и вам нужно авторизовать это приложение для расшифровки и подписи с использованием ключей в вашем хранилище, выполните следующий командлет:
 
 ```powershell
 Set-AzureRmKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed -PermissionsToKeys decrypt,sign
@@ -271,7 +272,7 @@ Set-AzureRmKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalNa
 При создании хранилища ключей добавьте параметр **-SKU**:
 
 ```powershell
-New-AzureRmKeyVault -VaultName 'ContosoKeyVaultHSM' -ResourceGroupName 'ContosoResourceGroup' -Location 'East US' -SKU 'Premium'
+New-AzureRmKeyVault -Name 'ContosoKeyVaultHSM' -ResourceGroupName 'ContosoResourceGroup' -Location 'East US' -SKU 'Premium'
 ```
 
 

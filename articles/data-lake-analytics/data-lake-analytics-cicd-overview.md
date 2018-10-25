@@ -9,13 +9,13 @@ ms.assetid: 66dd58b1-0b28-46d1-aaae-43ee2739ae0a
 ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.workload: big-data
-ms.date: 07/03/2018
-ms.openlocfilehash: 49ac9f9603a1b8043b19c327d5a66015959b9dd1
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.date: 09/14/2018
+ms.openlocfilehash: 974ef7a51736c2e2b0a0de3c13d23ddc37fa13b7
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43045880"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48855023"
 ---
 # <a name="how-to-set-up-a-cicd-pipeline-for-azure-data-lake-analytics"></a>Настройка конвейера CI/CD для Azure Data Lake Analytics  
 
@@ -84,9 +84,9 @@ msbuild USQLBuild.usqlproj /p:USQLSDKPath=packages\Microsoft.Azure.DataLake.USQL
 * **DataRoot=<DataRoot path>**. DataRoot используется только в режиме SyntaxCheck. Создавая скрипт в режиме SyntaxCheck, MSBuild проверяет включаемые в этот скрипт ссылки на объекты базы данных. Перед сборкой настройте на компьютере сборки локальную среду так, чтобы она содержала в папке DataRoot все объекты, на которые ссылается база данных U-SQL. Вы также можете управлять этими зависимостями базы данных, используя [ссылки на проект базы данных U-SQL](data-lake-analytics-data-lake-tools-develop-usql-database.md#reference-a-u-sql-database-project). MSBuild проверяет только ссылки на объекты базы данных, но не файлы.
 * **EnableDeployment=true** или **false**. EnableDeployment указывает, разрешено ли развертывать указанные базы данных U-SQL во время процесса сборки. Если вы ссылаетесь на проект базы данных U-SQL и используете объекты базы данных в скрипте U-SQL, установите для этого параметра значение **true**.
 
-### <a name="continuous-integration-with-visual-studio-team-services"></a>Непрерывная интеграция с Visual Studio Team Services
+### <a name="continuous-integration-through-azure-pipelines"></a>Непрерывная интеграция с помощью Azure Pipelines
 
-Кроме командной строки вы можете использовать задачу MSBuild или Visual Studio Build для сборки проектов U-SQL в Visual Studio Team Services. Чтобы настроить конвейер сборки, обязательно добавьте в него две задачи: задачу восстановления NuGet и задачу MSBuild.
+Кроме командной строки вы можете также использовать задачу Visual Studio Build или MSBuild для сборки проектов U-SQL в Azure Pipelines. Чтобы настроить конвейер сборки, обязательно добавьте в него две задачи: задачу восстановления NuGet и задачу MSBuild.
 
 ![Задача MSBuild для проекта U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-msbuild-task.png) 
 
@@ -94,7 +94,7 @@ msbuild USQLBuild.usqlproj /p:USQLSDKPath=packages\Microsoft.Azure.DataLake.USQL
 
     ![Задача восстановления NuGet для проекта U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-nuget-task.png)
 
-2.  Задайте аргументы MSBuild в средствах сборки Visual Studio или в задаче MSBuild, как показано в следующем примере. Также вы можете определить для этих аргументов переменные в определении сборки VSTS.
+2.  Задайте аргументы MSBuild в средствах сборки Visual Studio или в задаче MSBuild, как показано в следующем примере. Вы также можете определить переменные для этих аргументов в конвейере сборки Azure Pipelines.
 
     ![Определение переменных MSBuild CI/CD для проекта U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-msbuild-variables.png) 
 
@@ -115,15 +115,15 @@ msbuild USQLBuild.usqlproj /p:USQLSDKPath=packages\Microsoft.Azure.DataLake.USQL
 
 Azure Data Lake предоставляет тестовые проекты для скриптов U-SQL и кода C# (UDO/UDAG/UDF).
 * См. дополнительные сведения о [добавлении тестовых случаев для скриптов U-SQL и расширенного кода C#](data-lake-analytics-cicd-test.md#test-u-sql-scripts).
-* Узнайте, [как выполнять тестовые примеры в Visual Studio Team Services](data-lake-analytics-cicd-test.md#run-test-cases-in-visual-studio-team-service).
+* См. дополнительные сведения о [запуске тестовых случаев Azure Pipelines](data-lake-analytics-cicd-test.md#run-test-cases-in-azure-devops).
 
 ## <a name="deploy-a-u-sql-job"></a>Развертывание задания U-SQL
 
-Проверив код в ходе сборки и тестирования, вы можете отправить задания U-SQL непосредственно из Visual Studio Team Services с помощью задания Azure PowerShell. Вы также можете развернуть скрипт в Azure Data Lake Storage или хранилище BLOB-объектов, а затем [выполнить запланированные задания в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/transform-data-using-data-lake-analytics).
+Проверив код в ходе сборки и тестирования, вы можете отправить задания U-SQL непосредственно из Azure Pipelines с помощью задания Azure PowerShell. Вы также можете развернуть скрипт в Azure Data Lake Storage или хранилище BLOB-объектов, а затем [выполнить запланированные задания в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/transform-data-using-data-lake-analytics).
 
-### <a name="submit-u-sql-jobs-through-visual-studio-team-services"></a>Отправка заданий U-SQL через Visual Studio Team Services
+### <a name="submit-u-sql-jobs-through-azure-pipelines"></a>Отправка заданий U-SQL через Azure Pipelines
 
-Выходные данные сборки проекта U-SQL — это ZIP-файл с именем **USQLProjectName.usqlpack**. ZIP-файл содержит все скрипты U-SQL в проекте. Вы можете использовать [задачу Azure PowerShell](https://docs.microsoft.com/vsts/pipelines/tasks/deploy/azure-powershell?view=vsts) в Visual Studio Team Services со следующим примером скрипта PowserShell, чтобы отправлять задания U-SQL непосредственно из конвейера сборки и (или) выпуска в Visual Studio Team Services.
+Выходные данные сборки проекта U-SQL — это ZIP-файл с именем **USQLProjectName.usqlpack**. ZIP-файл содержит все скрипты U-SQL в проекте. Вы можете использовать [задачи Azure PowerShell](https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-powershell?view=vsts) в Pipelines со следующим образцом скрипта PowerShell для отправки заданий U-SQL непосредственно из Azure Pipelines.
 
 ```powershell
 <#
@@ -230,9 +230,9 @@ Main
 
 ### <a name="deploy-u-sql-jobs-through-azure-data-factory"></a>Планирование заданий U-SQL в Фабрике данных Azure
 
-Вы можете отправлять задания U-SQL непосредственно из Visual Studio Team Services. Вы также можете передать скрипты сборки в Azure Data Lake Storage или хранилище BLOB-объектов, а затем [выполнить запланированные задания в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/transform-data-using-data-lake-analytics).
+Вы можете отправлять задания U-SQL непосредственно из Azure Pipelines. Вы также можете передать скрипты сборки в Azure Data Lake Storage или хранилище BLOB-объектов, а затем [выполнить запланированные задания в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/transform-data-using-data-lake-analytics).
 
-Используйте [задачу Azure PowerShell](https://docs.microsoft.com/vsts/pipelines/tasks/deploy/azure-powershell?view=vsts) в Visual Studio Team Services со следующим примером скрипта PowerShell, чтобы отправить скрипты U-SQL в учетную запись Azure Data Lake Storage:
+Используйте [задачи Azure PowerShell](https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-powershell?view=vsts) в Azure Pipelines со следующим образцом скрипта PowerShell для отправки скриптов U-SQL в ученую запись Azure Data Lake Store:
 
 ```powershell
 <#
@@ -319,9 +319,9 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 
 Аргумент `USQLSDKPath=<U-SQL Nuget package>\build\runtime` ссылается на путь установки пакета NuGet для языковой службы U-SQL.
 
-### <a name="continuous-integration-with-visual-studio-team-services"></a>Непрерывная интеграция с Visual Studio Team Services
+### <a name="continuous-integration-with-azure-pipelines"></a>Непрерывная интеграция с Azure Pipelines
 
-Помимо командной строки, вы можете использовать задачу MSBuild или Visual Studio Build для создания проектов базы данных U-SQL в Visual Studio Team Services. Чтобы настроить задачу сборки, обязательно добавьте в конвейер сборки две задачи: задачу восстановления NuGet и задачу MSBuild.
+Кроме командной строки вы можете использовать задачу Visual Studio Build или MSBuild для сборки проектов U-SQL в Azure Pipelines. Чтобы настроить задачу сборки, обязательно добавьте в конвейер сборки две задачи: задачу восстановления NuGet и задачу MSBuild.
 
    ![Задача MSBuild CI/CD для проекта U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-msbuild-task.png) 
 
@@ -330,7 +330,7 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 
     ![Задача NuGet CI/CD для проекта U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-nuget-task.png)
 
-2.  Задайте аргументы MSBuild в средствах сборки Visual Studio или в задаче MSBuild, как показано в следующем примере. Также вы можете определить для этих аргументов переменные в определении сборки VSTS.
+2.  Задайте аргументы MSBuild в средствах сборки Visual Studio или в задаче MSBuild, как показано в следующем примере. Вы также можете определить переменные для этих аргументов в конвейере сборки Azure Pipelines.
 
    ![Определение переменных MSBuild CI/CD для проекта базы данных U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-msbuild-variables-database-project.png) 
 
@@ -350,16 +350,16 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 2.  Добавьте ссылку на базу данных в этот проект U-SQL. Чтобы получить определение хранимой процедуры и функций с табличным значением, создайте ссылку на проект базы данных, который содержит инструкцию DDL. См. дополнительные сведения о [создании ссылок на базы данных](data-lake-analytics-data-lake-tools-develop-usql-database.md#reference-a-u-sql-database-project).
 3.  Добавьте тестовые случаи для скриптов U-SQL, которые вызывают функции с табличным значением и хранимые процедуры. Узнайте, как [добавлять тестовые случаи для скриптов U-SQL](data-lake-analytics-cicd-test.md#test-u-sql-scripts).
 
-## <a name="deploy-u-sql-database-through-visual-studio-team-service"></a>Развертывание базы данных U-SQL в Visual Studio Team Service
+## <a name="deploy-u-sql-database-through-azure-pipelines"></a>Развертывание U-SQL database в Azure Pipelines
 
 `PackageDeploymentTool.exe` предоставляет программный интерфейс и интерфейс командной строки, которые помогают развернуть пакеты развертывания базы данных U-SQL (**.usqldbpack**). Этот пакет SDK включен в [пакет SDK NuGet для U-SQL](https://www.nuget.org/packages/Microsoft.Azure.DataLake.USQL.SDK/), размещенный в файле **build/runtime/PackageDeploymentTool.exe**. С помощью `PackageDeploymentTool.exe` можно развертывать базы данных U-SQL в Azure Data Lake Analytics и локальных учетных записях.
 
 > [!NOTE]
 >
-> Поддержка командной строки PowerShell и задач выпуска Visual Studio Team Services для развертывания базы данных U-SQL будет реализована позже.
+> Поддержка командной строки PowerShell и задач выпуска Azure Pipelines для развертывания баз данных U-SQL будет реализована позже.
 >
 
-Чтобы настроить задачу развертывания базы данных в Visual Studio Team Services, выполните следующие шаги.
+Чтобы настроить задачу развертывания базы данных в Azure Pipelines, выполните следующие шаги:
 
 1. Добавьте в конвейер сборки или выпуска задачу скрипта PowerShell,которая выполняет следующий скрипт PowerShell. Эта задача позволяет получить зависимости пакета Azure SDK для `PackageDeploymentTool.exe` и `PackageDeploymentTool.exe`. Можно настроить параметры **-AzureSDK** и **-DBDeploymentTool** для загрузки зависимостей и средства развертывания в определенные папки. На шаге 2 передайте путь **-AzureSDK** в `PackageDeploymentTool.exe` как параметр **-AzureSDKPath**. 
 
@@ -388,8 +388,8 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
     echo "workingfolder=$workingfolder, outputfolder=$outputfolder"
     echo "Downloading required packages..."
 
-    iwr https://www.nuget.org/api/v2/package/Microsoft.Azure.Management.DataLake.Analytics/3.2.3-preview -outf Microsoft.Azure.Management.DataLake.Analytics.3.2.3-preview.zip
-    iwr https://www.nuget.org/api/v2/package/Microsoft.Azure.Management.DataLake.Store/2.3.3-preview -outf Microsoft.Azure.Management.DataLake.Store.2.3.3-preview.zip
+    iwr https://www.nuget.org/api/v2/package/Microsoft.Azure.Management.DataLake.Analytics/3.5.1-preview -outf Microsoft.Azure.Management.DataLake.Analytics.3.5.1-preview.zip
+    iwr https://www.nuget.org/api/v2/package/Microsoft.Azure.Management.DataLake.Store/2.4.1-preview -outf Microsoft.Azure.Management.DataLake.Store.2.4.1-preview.zip
     iwr https://www.nuget.org/api/v2/package/Microsoft.IdentityModel.Clients.ActiveDirectory/2.28.3 -outf Microsoft.IdentityModel.Clients.ActiveDirectory.2.28.3.zip
     iwr https://www.nuget.org/api/v2/package/Microsoft.Rest.ClientRuntime/2.3.11 -outf Microsoft.Rest.ClientRuntime.2.3.11.zip
     iwr https://www.nuget.org/api/v2/package/Microsoft.Rest.ClientRuntime.Azure/3.3.7 -outf Microsoft.Rest.ClientRuntime.Azure.3.3.7.zip
@@ -399,8 +399,8 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 
     echo "Extracting packages..."
 
-    Expand-Archive Microsoft.Azure.Management.DataLake.Analytics.3.2.3-preview.zip -DestinationPath Microsoft.Azure.Management.DataLake.Analytics.3.2.3-preview -Force
-    Expand-Archive Microsoft.Azure.Management.DataLake.Store.2.3.3-preview.zip -DestinationPath Microsoft.Azure.Management.DataLake.Store.2.3.3-preview -Force
+    Expand-Archive Microsoft.Azure.Management.DataLake.Analytics.3.5.1-preview.zip -DestinationPath Microsoft.Azure.Management.DataLake.Analytics.3.5.1-preview -Force
+    Expand-Archive Microsoft.Azure.Management.DataLake.Store.2.4.1-preview.zip -DestinationPath Microsoft.Azure.Management.DataLake.Store.2.4.1-preview -Force
     Expand-Archive Microsoft.IdentityModel.Clients.ActiveDirectory.2.28.3.zip -DestinationPath Microsoft.IdentityModel.Clients.ActiveDirectory.2.28.3 -Force
     Expand-Archive Microsoft.Rest.ClientRuntime.2.3.11.zip -DestinationPath Microsoft.Rest.ClientRuntime.2.3.11 -Force
     Expand-Archive Microsoft.Rest.ClientRuntime.Azure.3.3.7.zip -DestinationPath Microsoft.Rest.ClientRuntime.Azure.3.3.7 -Force
@@ -412,8 +412,8 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 
     mkdir $AzureSDK -Force
     mkdir $DBDeploymentTool -Force
-    copy Microsoft.Azure.Management.DataLake.Analytics.3.2.3-preview\lib\net452\*.dll $AzureSDK
-    copy Microsoft.Azure.Management.DataLake.Store.2.3.3-preview\lib\net452\*.dll $AzureSDK
+    copy Microsoft.Azure.Management.DataLake.Analytics.3.5.1-preview\lib\net452\*.dll $AzureSDK
+    copy Microsoft.Azure.Management.DataLake.Store.2.4.1-preview\lib\net452\*.dll $AzureSDK
     copy Microsoft.IdentityModel.Clients.ActiveDirectory.2.28.3\lib\net45\*.dll $AzureSDK
     copy Microsoft.Rest.ClientRuntime.2.3.11\lib\net452\*.dll $AzureSDK
     copy Microsoft.Rest.ClientRuntime.Azure.3.3.7\lib\net452\*.dll $AzureSDK

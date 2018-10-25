@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/30/2017
+ms.date: 10/3/2018
 ms.author: yurid
-ms.openlocfilehash: 7a7314b3aebd32c4a909bda4c88c5d43ab5df9f0
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: f139f2f967edc03419f41f8c903c71b9ab9e6fcb
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44161447"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48044439"
 ---
 # <a name="managing-and-responding-to-security-alerts-in-azure-security-center"></a>Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них
 Этот документ помогает использовать возможности центра безопасности Azure для управления оповещениями безопасности и реагирования на них.
@@ -57,6 +57,7 @@ ms.locfileid: "44161447"
 * **Дата**— дата возникновения события.
 * **Состояние**— текущее состояние оповещения. Существует два типа состояний.
   * **Активно**— обнаружено оповещение системы безопасности.
+  * **Отклонено**— оповещение системы безопасности отклонено пользователем. Это состояние обычно используется для оповещений, которые были исследованы, однако не были признаны фактической атакой.
 * **Серьезность** — уровень серьезности. Может быть высоким, средним или низким.
 
 > [!NOTE]

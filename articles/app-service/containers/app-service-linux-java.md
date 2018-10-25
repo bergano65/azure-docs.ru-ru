@@ -12,12 +12,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 08/29/2018
 ms.author: routlaw
-ms.openlocfilehash: 2b2256ef5802160dbaa66e2a098a798fcdc653d2
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: e11b115d7a6421c34e7f1371ad8931b6affa0436
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47064518"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48815177"
 ---
 # <a name="java-developers-guide-for-app-service-on-linux"></a>Руководство разработчика для Java для службы приложений в Linux
 
@@ -216,20 +216,24 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
 4. Убедитесь, что файлы драйвера JDBC доступны для загрузчика классов Tomcat, разместив их в каталоге `/home/tomcat/lib`. Чтобы передать эти файлы в экземпляр службы приложений, выполните следующие действия.  
     1. Установите расширение webpp для Службы приложения Azure.
+
       ```azurecli-interactive
       az extension add –name webapp
       ```
+
     2. Выполните следующую команду интерфейса командной строки, чтобы создать туннель SSH между локальной системой и службой приложений.
+
       ```azurecli-interactive
       az webapp remote-connection create –g [resource group] -n [app name] -p [local port to open]
       ```
+
     3. Подключитесь к локальному порту туннелирования с помощью клиента SFTP и передайте эти файлы в папку `/home/tomcat/lib`.
 
 5. Перезапустите приложение службы приложений для Linux. Tomcat сбросит `CATALINA_HOME` до значения `/home/tomcat` и будет использовать обновленную конфигурацию и классы.
 
-## <a name="docker-containers"></a>Контейнеры Docker
+## <a name="docker-containers"></a>контейнеры Docker;
 
-Чтобы использовать JDK Zulu с поддержкой Azure, работающий в службе приложений в контейнерах, убедитесь, что в `Dockerfile` приложения используются образы из [репозитория образов Docker для службы приложения для Java](https://github.com/Azure-App-Service/java).
+Чтобы использовать Zulu JDK, поддерживаемую Azure в ваших контейнерах, обязательно потяните и используйте предварительно созданные образы, перечисленные на [странице загрузки Azul](https://www.azul.com/downloads/azure-only/zulu/#docker), или используйте примеры `Dockerfile` из [репозитория GitHub для Java Microsoft](https://github.com/Microsoft/java/tree/master/docker).
 
 ## <a name="runtime-availability-and-statement-of-support"></a>Доступность среды выполнения и заявление о поддержке
 
@@ -242,7 +246,7 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
 ### <a name="jdk-versions-and-maintenance"></a>Версии JDK и обслуживание
 
-Azure поддерживает пакет Java Development Kit (JDK) [Zulu](https://www.azul.com/products/zulu-and-zulu-enterprise/), предоставляемый компанией [Azul Systems](https://www.azul.com/).
+Azure поддерживает пакет Java Development Kit (JDK) [Zulu](https://www.azul.com/downloads/azure-only/zulu/), предоставляемый компанией [Azul Systems](https://www.azul.com/).
 
 Обновления для основного номера версии будут предоставляться посредством новых вариантов среды выполнения в Службе приложений Azure для Linux. Пользователи, устанавливающие более новые версии Java посредством настройки развернутой службы приложений, несут ответственность за тестирование выбранных обновлений для основного номера версии и их соответствие своим потребностям.
 
@@ -258,15 +262,15 @@ Azure поддерживает пакет Java Development Kit (JDK) [Zulu](http
 
 ### <a name="local-development"></a>Локальная разработка
 
-Разработчики могут скачать выпуск Production Edition пакета Azul Zulu Enterprise JDK для локальной разработки с [сайта загрузки Azul](https://www.azul.com/downloads/zulu/).
+Разработчики могут скачать выпуск Production Edition пакета Azul Zulu Enterprise JDK для локальной разработки с [сайта загрузки Azul](https://www.azul.com/downloads/azure-only/zulu/).
 
 ### <a name="development-support"></a>Поддержка разработки
 
-Техническая поддержка пакета Azul Zulu Enterprise JDK при разработке для Azure или [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) предоставляется при наличии [соответствующего плана поддержки Azure](https://azure.microsoft.com/support/plans/).
+Техническая поддержка [пакета Azul Zulu JDK](https://www.azul.com/downloads/azure-only/zulu/) при разработке для Azure или [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) предоставляется при наличии [соответствующего плана поддержки Azure](https://azure.microsoft.com/support/plans/).
 
 ### <a name="runtime-support"></a>Поддержка времени выполнения
 
-Разработчики могут [сообщить о проблеме](/azure/azure-supportability/how-to-create-azure-support-request) со средой выполнения Java для службы приложений для Linux в службу поддержки Azure при наличии [соответствующего плана поддержки](https://azure.microsoft.com/support/plans/).
+Разработчики могут [сообщить о проблеме](/azure/azure-supportability/how-to-create-azure-support-request) с Azul Zulu JDK в службу поддержки Azure при наличии [соответствующего плана поддержки](https://azure.microsoft.com/support/plans/).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

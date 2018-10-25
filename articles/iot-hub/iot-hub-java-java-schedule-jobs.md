@@ -2,19 +2,18 @@
 title: Планирование заданий с помощью Центра Интернета вещей Azure (Java) | Документация Майкрософт
 description: Планирование заданий в Центре Интернета вещей Azure для вызова прямого метода или изменения требуемых свойств на нескольких устройствах. Вы создадите приложения имитации устройства с помощью пакета SDK для устройств Azure IoT для Java, а также приложение-службу для выполнения заданий с помощью пакета SDK для служб Azure IoT для Java.
 author: dominicbetts
-manager: timlt
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 07/10/2017
 ms.author: dobett
-ms.openlocfilehash: 7d41732103bd76e281c2a669a649645c8ff5bc73
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 1b49303588c785af149bfc5656bccdbab5216249
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46957988"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49376470"
 ---
 # <a name="schedule-and-broadcast-jobs-java"></a>Планирование и трансляция заданий (Java)
 
@@ -31,6 +30,7 @@ ms.locfileid: "46957988"
 Дополнительные сведения об этих возможностях см. в указанных ниже статьях.
 
 * Информация о двойниках устройств и их свойствах представлена в статье [Get started with device twins (Java)](iot-hub-java-java-twin-getstarted.md) (Приступая к работе с двойниками устройств).
+
 * Прямые методы: [Общие сведения о прямых методах и информация о вызове этих методов из Центра Интернета вещей](iot-hub-devguide-direct-methods.md) и [Использование прямых методов (Java)](quickstart-control-device-java.md).
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
@@ -38,6 +38,7 @@ ms.locfileid: "46957988"
 В этом учебнике описаны следующие процедуры.
 
 * Создание приложения для устройств, которое реализует прямой метод c именем **lockDoor**. Приложение для устройств также получает запросы на изменение требуемых свойств от внутреннего приложения.
+
 * Создание внутреннего приложения, которое создает задание для вызова прямого метода **lockDoor** на нескольких устройствах. Еще одно задание отправляет обновления требуемых свойств на несколько устройств.
 
 По завершении работы с этим руководством у вас будут готовы консольное приложение устройства и консольное приложение серверной части.
@@ -54,7 +55,9 @@ ms.locfileid: "46957988"
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
 * Последняя версия [пакета SDK для Java SE 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+
 * [Maven 3](https://maven.apache.org/install.html)
+
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](http://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 [!INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
@@ -68,19 +71,20 @@ ms.locfileid: "46957988"
 В этом разделе приведена процедура создания консольного приложения Java, которое с помощью заданий выполняет следующие действия.
 
 * Вызов прямого метода **lockDoor** на нескольких устройствах.
+
 * Отправка изменений требуемых свойств на несколько устройств.
 
 Создание приложения.
 
 1. На компьютере разработки создайте пустую папку с именем `iot-java-schedule-jobs`.
 
-1. В папке `iot-java-schedule-jobs` создайте проект Maven с именем **schedule-jobs**, выполнив следующую команду в командной строке. Обратите внимание, что это одна длинная команда.
+2. В папке `iot-java-schedule-jobs` создайте проект Maven с именем **schedule-jobs**, выполнив следующую команду в командной строке. Обратите внимание, что это одна длинная команда.
 
     `mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=schedule-jobs -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false`
 
-1. В командной строке перейдите к папке `schedule-jobs`.
+3. В командной строке перейдите к папке `schedule-jobs`.
 
-1. Откройте в текстовом редакторе файл `pom.xml` из папки `schedule-jobs` и добавьте зависимости, приведенные ниже, в узел **dependencies**. Эта зависимость позволит вам использовать в приложении пакет **iot-service-client** для обмена данными с Центром Интернета вещей:
+4. Откройте в текстовом редакторе файл `pom.xml` из папки `schedule-jobs` и добавьте зависимости, приведенные ниже, в узел **dependencies**. Эта зависимость позволит вам использовать в приложении пакет **iot-service-client** для обмена данными с Центром Интернета вещей:
 
     ```xml
     <dependency>
@@ -94,7 +98,7 @@ ms.locfileid: "46957988"
     > [!NOTE]
     > Наличие последней версии пакета **iot-service-client** можно проверить с помощью [поиска Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-service-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22).
 
-1. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
+5. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
 
     ```xml
     <build>
@@ -112,11 +116,11 @@ ms.locfileid: "46957988"
     </build>
     ```
 
-1. Сохраните и закройте файл `pom.xml`.
+6. Сохраните и закройте файл `pom.xml`.
 
-1. Откройте в текстовом редакторе файл `schedule-jobs\src\main\java\com\mycompany\app\App.java`.
+7. Откройте в текстовом редакторе файл `schedule-jobs\src\main\java\com\mycompany\app\App.java`.
 
-1. Добавьте в файл следующие инструкции **import** .
+8. Добавьте в файл следующие инструкции **import** .
 
     ```java
     import com.microsoft.azure.sdk.iot.service.devicetwin.DeviceTwinDevice;
@@ -134,7 +138,7 @@ ms.locfileid: "46957988"
     import java.util.UUID;
     ```
 
-1. Добавьте в класс **App** . Замените `{youriothubconnectionstring}` строкой подключения к вашему центру Интернета вещей, которую вы записали, выполняя инструкции в разделе *Создание центра Интернета вещей*:
+9. Добавьте в класс **App** . Замените `{youriothubconnectionstring}` строкой подключения к вашему центру Интернета вещей, которую вы записали, выполняя инструкции в разделе *Создание центра Интернета вещей*:
 
     ```java
     public static final String iotHubConnectionString = "{youriothubconnectionstring}";
@@ -145,7 +149,7 @@ ms.locfileid: "46957988"
     private static final long maxExecutionTimeInSeconds = 30;
     ```
 
-1. Добавьте следующий метод в класс **App**, чтобы запланировать задание для изменения требуемых свойств **Building** и **Floor** в двойнике устройства:
+10. Добавьте следующий метод в класс **App**, чтобы запланировать задание для изменения требуемых свойств **Building** и **Floor** в двойнике устройства:
 
     ```java
     private static JobResult scheduleJobSetDesiredProperties(JobClient jobClient, String jobId) {
@@ -175,7 +179,7 @@ ms.locfileid: "46957988"
     }
     ```
 
-1. Чтобы запланировать задание для вызова метода **lockDoor**, добавьте следующий метод в класс **App**:
+11. Чтобы запланировать задание для вызова метода **lockDoor**, добавьте следующий метод в класс **App**:
 
     ```java
     private static JobResult scheduleJobCallDirectMethod(JobClient jobClient, String jobId) {
@@ -199,7 +203,7 @@ ms.locfileid: "46957988"
     };
     ```
 
-1. Чтобы отслеживать задания, добавьте приведенный ниже метод в класс **App**.
+12. Чтобы отслеживать задания, добавьте приведенный ниже метод в класс **App**.
 
     ```java
     private static void monitorJob(JobClient jobClient, String jobId) {
@@ -226,7 +230,7 @@ ms.locfileid: "46957988"
     }
     ```
 
-1. Чтобы получить сведения о выполнении запущенных заданий, добавьте следующий метод:
+13. Чтобы получить сведения о выполнении запущенных заданий, добавьте следующий метод:
 
     ```java
     private static void queryDeviceJobs(JobClient jobClient, String start) throws Exception {
@@ -243,13 +247,13 @@ ms.locfileid: "46957988"
     }
     ```
 
-1. Обновите подпись метода **main**, добавив следующее предложение `throws`:
+14. Обновите подпись метода **main**, добавив следующее предложение `throws`:
 
     ```java
     public static void main( String[] args ) throws Exception
     ```
 
-1. Чтобы два задания запускались и отслеживались последовательно, добавьте следующий код в метод **main**:
+15. Чтобы два задания запускались и отслеживались последовательно, добавьте следующий код в метод **main**:
 
     ```java
     // Record the start time
@@ -276,9 +280,9 @@ ms.locfileid: "46957988"
     System.out.println("Shutting down schedule-jobs app");
     ```
 
-1. Сохраните и закройте файл `schedule-jobs\src\main\java\com\mycompany\app\App.java`.
+16. Сохраните и закройте файл `schedule-jobs\src\main\java\com\mycompany\app\App.java`.
 
-1. Создайте приложение **schedule-jobs** и исправьте обнаруженные ошибки. В командной строке перейдите к папке `schedule-jobs` и выполните следующую команду:
+17. Создайте приложение **schedule-jobs** и исправьте обнаруженные ошибки. В командной строке перейдите к папке `schedule-jobs` и выполните следующую команду:
 
     `mvn clean package -DskipTests`
 
@@ -290,9 +294,9 @@ ms.locfileid: "46957988"
 
     `mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=simulated-device -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false`
 
-1. В командной строке перейдите к папке `simulated-device`.
+2. В командной строке перейдите к папке `simulated-device`.
 
-1. Откройте в текстовом редакторе файл `pom.xml` из папки `simulated-device` и добавьте зависимости, приведенные ниже, в узел **dependencies**. Эта зависимость позволит вам использовать в приложении пакет **iot-device-client** для обмена данными с Центром Интернета вещей:
+3. Откройте в текстовом редакторе файл `pom.xml` из папки `simulated-device` и добавьте зависимости, приведенные ниже, в узел **dependencies**. Эта зависимость позволит вам использовать в приложении пакет **iot-device-client** для обмена данными с Центром Интернета вещей:
 
     ```xml
     <dependency>
@@ -305,7 +309,7 @@ ms.locfileid: "46957988"
     > [!NOTE]
     > Наличие последней версии пакета **iot-device-client** можно проверить с помощью [поиска Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-device-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22).
 
-1. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
+4. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
 
     ```xml
     <build>
@@ -323,11 +327,11 @@ ms.locfileid: "46957988"
     </build>
     ```
 
-1. Сохраните и закройте файл `pom.xml`.
+5. Сохраните и закройте файл `pom.xml`.
 
-1. Откройте в текстовом редакторе файл `simulated-device\src\main\java\com\mycompany\app\App.java`.
+6. Откройте в текстовом редакторе файл `simulated-device\src\main\java\com\mycompany\app\App.java`.
 
-1. Добавьте в файл следующие инструкции **import** .
+7. Добавьте в файл следующие инструкции **import** .
 
     ```java
     import com.microsoft.azure.sdk.iot.device.*;
@@ -338,7 +342,7 @@ ms.locfileid: "46957988"
     import java.util.Scanner;
     ```
 
-1. Добавьте в класс **App** . Замените значение `{youriothubname}` именем Центра Интернета вещей, а `{yourdevicekey}` — значением ключа устройства, сформированным при работе с разделом *Создание удостоверения устройства*:
+8. Добавьте в класс **App** . Замените значение `{youriothubname}` именем Центра Интернета вещей, а `{yourdevicekey}` — значением ключа устройства, сформированным при работе с разделом *Создание удостоверения устройства*:
 
     ```java
     private static String connString = "HostName={youriothubname}.azure-devices.net;DeviceId=myDeviceID;SharedAccessKey={yourdevicekey}";
@@ -349,7 +353,7 @@ ms.locfileid: "46957988"
 
     При создании экземпляра объекта **DeviceClient** в этом примере приложения используется переменная **protocol**.
 
-1. Чтобы выводить оповещения двойника устройства в консоль, добавьте следующий вложенный класс в класс **App**:
+9. Чтобы выводить оповещения двойника устройства в консоль, добавьте следующий вложенный класс в класс **App**:
 
     ```java
     // Handler for device twin operation notifications from IoT Hub
@@ -360,7 +364,7 @@ ms.locfileid: "46957988"
     }
     ```
 
-1. Чтобы выводить оповещения прямого метода в консоль, добавьте следующий вложенный класс в класс **App**:
+10. Чтобы выводить оповещения прямого метода в консоль, добавьте следующий вложенный класс в класс **App**:
 
     ```java
     // Handler for direct method notifications from IoT Hub
@@ -371,7 +375,7 @@ ms.locfileid: "46957988"
     }
     ```
 
-1. Чтобы обрабатывать вызовы прямого метода от Центра Интернета вещей, добавьте следующий вложенный класс в класс **App**:
+11. Чтобы обрабатывать вызовы прямого метода от Центра Интернета вещей, добавьте следующий вложенный класс в класс **App**:
 
     ```java
     // Handler for direct method calls from IoT Hub
@@ -396,13 +400,13 @@ ms.locfileid: "46957988"
     }
     ```
 
-1. Обновите подпись метода **main**, добавив следующее предложение `throws`:
+12. Обновите подпись метода **main**, добавив следующее предложение `throws`:
 
     ```java
     public static void main( String[] args ) throws IOException, URISyntaxException
     ```
 
-1. Добавьте в конец метода **main** следующий код, чтобы:
+13. Добавьте в конец метода **main** следующий код, чтобы:
     * Создать клиент устройства для взаимодействия с Центром Интернета вещей.
     * Создать объект **Device** для хранения свойств двойника устройства.
 
@@ -420,7 +424,7 @@ ms.locfileid: "46957988"
     };
     ```
 
-1. Добавьте следующий код в метод **main** для запуска клиентских служб на устройстве:
+14. Добавьте следующий код в метод **main** для запуска клиентских служб на устройстве:
 
     ```java
     try {
@@ -438,7 +442,7 @@ ms.locfileid: "46957988"
     }
     ```
 
-1. Чтобы ожидать нажатия пользователем клавиши **Ввод** перед завершением работы, добавьте следующий код в конец метода **main**:
+15. Чтобы ожидать нажатия пользователем клавиши **Ввод** перед завершением работы, добавьте следующий код в конец метода **main**:
 
     ```java
     // Close the app
@@ -450,9 +454,9 @@ ms.locfileid: "46957988"
     scanner.close();
     ```
 
-1. Сохраните и закройте файл `simulated-device\src\main\java\com\mycompany\app\App.java`.
+16. Сохраните и закройте файл `simulated-device\src\main\java\com\mycompany\app\App.java`.
 
-1. Создайте приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите к папке `simulated-device` и выполните следующую команду:
+17. Создайте приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите к папке `simulated-device` и выполните следующую команду:
 
     `mvn clean package -DskipTests`
 
@@ -464,17 +468,17 @@ ms.locfileid: "46957988"
 
     `mvn exec:java -Dexec.mainClass="com.mycompany.app.App"`
 
-    ![Запуск клиента на устройстве](media/iot-hub-java-java-schedule-jobs/device-app-1.png)
+    ![Запуск клиента на устройстве](./media/iot-hub-java-java-schedule-jobs/device-app-1.png)
 
-1. В командной строке в папке `schedule-jobs` выполните следующую команду, чтобы запустить приложение службы **schedule-jobs** для выполнения двух заданий. Первое задание устанавливает значения требуемых свойств, а второе вызывает прямой метод:
+2. В командной строке в папке `schedule-jobs` выполните следующую команду, чтобы запустить приложение службы **schedule-jobs** для выполнения двух заданий. Первое задание устанавливает значения требуемых свойств, а второе вызывает прямой метод:
 
     `mvn exec:java -Dexec.mainClass="com.mycompany.app.App"`
 
-    ![Java-приложение службы Центра Интернета вещей создает два задания](media/iot-hub-java-java-schedule-jobs/service-app-1.png)
+    ![Java-приложение службы Центра Интернета вещей создает два задания](./media/iot-hub-java-java-schedule-jobs/service-app-1.png)
 
-1. Приложения для устройств обрабатывает изменения требуемого свойства и вызов прямого метода:
+3. Приложения для устройств обрабатывает изменения требуемого свойства и вызов прямого метода:
 
-    ![Клиент устройства реагирует на изменения](media/iot-hub-java-java-schedule-jobs/device-app-2.png)
+    ![Клиент устройства реагирует на изменения](./media/iot-hub-java-java-schedule-jobs/device-app-2.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -483,4 +487,5 @@ ms.locfileid: "46957988"
 Ознакомьтесь со следующими материалами, чтобы узнать как:
 
 * отправить данные телеметрии с устройств (руководство [Подключение устройства к Центру Интернета вещей с помощью Java](quickstart-send-telemetry-java.md));
-* управлять устройствами в интерактивном режиме, например включить вентилятор из управляемого пользователем приложения (руководство [Использование прямых методов (Java)](quickstart-control-device-java.md)).
+
+* управлять устройствами в интерактивном режиме, например включить вентилятор из управляемого пользователем приложения ([Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Java)](quickstart-control-device-java.md)).

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: tomsh
-ms.openlocfilehash: 7712196caefeea8a62045d432d762fbd16f42011
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 7682a733c5630c16d9684ec3cb9e7757b03a8b1b
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33893972"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48855941"
 ---
 # <a name="azure-database-security-checklist"></a>Контрольный список для обеспечения безопасности баз данных
 

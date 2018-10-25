@@ -15,22 +15,22 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2018
 ms.author: gokuma
-ms.openlocfilehash: 30bf0de449596bb749e8f57c63ad056b85396a59
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.openlocfilehash: 1bf3150fc79f86e196be120fef78b76be8e47f63
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36307780"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49344512"
 ---
 # <a name="store-access-credentials-on-the-data-science-virtual-machine-securely"></a>Безопасное хранение учетных данных для доступа на виртуальной машине для обработки и анализа данных
 
 Распространенная проблема при создании облачных приложений — управление учетными данными, которые необходимы в коде для проверки подлинности в облачных службах. Обеспечение безопасности этих учетных данных является важной задачей. В идеальном случае они никогда не передаются на рабочие станции разработчиков и не записываются после изменения в систему управления версиями. 
 
-[Управляемое удостоверение службы (MSI)](https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview) упрощает решение этой задачи, предоставляя службам Azure автоматически управляемое удостоверение в Azure Active Directory (Azure AD). Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде. 
+[Управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview) упрощают решение этой задачи, предоставляя службам Azure автоматически управляемое удостоверение в Azure Active Directory (Azure AD). Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде. 
 
-Одним из способов защиты учетных данных является использование MSI в сочетании с [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/), управляемой службой Azure для безопасного хранения секретов и криптографических ключей. Можно обращаться к службе Key Vault, используя управляемое удостоверение службы, и получать из нее авторизованные секреты и криптографические ключи. 
+Одним из способов защиты учетных данных является использование MSI в сочетании с [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/), управляемой службой Azure для безопасного хранения секретов и криптографических ключей. Вы можете обращаться к хранилищу ключей, используя управляемое удостоверение, и получать из него авторизованные секреты и криптографические ключи. 
 
-Документация по MSI и Key Vault — это всеобъемлющий источник подробных сведений об этих службах. Оставшаяся часть этой статьи представляет собой руководство по использованию MSI и Key Vault на виртуальной машине для обработки и анализа данных (DSVM) для доступа к ресурсам Azure. 
+Документация по управляемым удостоверениям для ресурсов Azure и Key Vault — это всеобъемлющий источник подробных сведений об этих службах. Оставшаяся часть этой статьи представляет собой руководство по использованию MSI и Key Vault на виртуальной машине для обработки и анализа данных (DSVM) для доступа к ресурсам Azure. 
 
 ## <a name="create-a-managed-identity-on-the-dsvm"></a>Создание управляемого удостоверения на DSVM 
 
@@ -106,7 +106,7 @@ print("My secret value is {}".format(secret.value))
 ## <a name="access-the-key-vault-from-azure-cli"></a>Доступ к Key Vault с помощью Azure CLI
 
 ```
-# With a Managed Service Identity set up on the DSVM, users on the DSVM can use Azure CLI to perform the authorized functions. Here are commands to access the key vault from Azure CLI without having to log in to an Azure account. 
+# With managed identities for Azure resources set up on the DSVM, users on the DSVM can use Azure CLI to perform the authorized functions. Here are commands to access the key vault from Azure CLI without having to log in to an Azure account. 
 # Prerequisites: MSI is already set up on the DSVM as indicated earlier. Specific permission, like accessing storage account keys, reading specific secrets, and writing new secrets, is provided to the MSI. 
 
 # Authenticate to Azure CLI without requiring an Azure account. 

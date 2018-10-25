@@ -3,7 +3,7 @@ title: Поддержка Microsoft Azure Marketplace и AppSource | Azure
 description: Сведения о поддержке и ссылки для Azure Marketplace и AppSource
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
 documentationcenter: ''
-author: ellacroi
+author: yijenj
 manager: nunoc
 editor: ''
 ms.assetid: ''
@@ -12,27 +12,27 @@ ms.workload: ''
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: article
-ms.date: 07/02/2018
-ms.author: ellacroi
-ms.openlocfilehash: 0007396ad6d5fc16177d76683f959591e9830ac3
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.date: 10/05/2018
+ms.author: yijenj
+ms.openlocfilehash: 884432d5604868ad2307a7d7ababa3e5a004a982
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43782082"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48854071"
 ---
 # <a name="support-for-the-marketplace"></a>Поддержка Marketplace  
 Варианты поддержки Marketplace.  
 
 ## <a name="onboarding"></a>Переход
 
-[Отправьте запрос](https://support.microsoft.com/en-us/getsupport?wf=0&tenant=classiccommercial&oaspworkflow=start_1.0.0.0&locale=en-us&supportregion=en-us&pesid=16230&forceorigin=esmc&ccsid=636595105151894820) на подключение Marketplace в службу поддержки Майкрософт, чтобы решить все проблемы, связанные с началом работы.
+Откройте билет в [поддержку издателя Microsoft Marketplace](https://support.microsoft.com/en-us/getsupport?wf=0&tenant=classiccommercial&oaspworkflow=start_1.0.0.0&locale=en-us&supportregion=en-us&pesid=16230&forceorigin=esmc&ccsid=636595105151894820) для всех проблем с подключением и началом работы.
 
 ## <a name="cloud-partner-portal"></a>Облачный портал для партнеров  
 
 | Канал поддержки | ОПИСАНИЕ | Доступность |  
 |:--- |:--- |:--- |  
-| Поддержка<ul> <li>Чтобы получить помощь, посетите страницу создания инцидента по адресу [​​go.microsoft.com/fwlink/?linkid=844975](https://go.microsoft.com/fwlink/?linkid=844975)</li> </ul> | Поддержка Портала Cloud Partner. | Поддержка предоставляется круглосуточно. |  
+| Чтобы получить помощь, посетите страницу создания инцидента в [поддержке Marketplace](https://go.microsoft.com/fwlink/?linkid=844975)</li> </ul> | Поддержка Портала Cloud Partner. | Поддержка предоставляется между 6–18 по тихоокеанскому времени. |  
 
 ## <a name="technical"></a>Технические требования  
 
@@ -42,6 +42,7 @@ ms.locfileid: "43782082"
 | Форумы MSDN по Marketplace, расположенные по адресу [social.msdn.microsoft.com/Forums/azure/home?forum=DataMarket](https://social.msdn.microsoft.com/Forums/azure/home?forum=DataMarket) | Форум Microsoft Developer Network. |  
 | Вопросы в Stack Overflow по Azure, расположенные по адресу [stackoverflow.com/questions/tagged/azure](https://stackoverflow.com/questions/tagged/azure) | Среда Stack Overflow, где можно получить решения и задать вопросы, относящиеся к Azure и Marketplace:<ul> <li>Вопросы в Stack Overflow по Azure Marketplace, расположенные по адресу [stackoverflow.com/questions/tagged/azure-marketplace](https://stackoverflow.com/questions/tagged/azure-marketplace)</li> <li>Вопросы в Stack Overflow по Azure Resource Manager, расположенные по адресу [stackoverflow.com/questions/tagged/azure-resource-manager](https://stackoverflow.com/questions/tagged/azure-resource-manager)</li> <li>Вопросы в Stack Overflow по виртуальным машинам Azure: [stackoverflow.com/questions/tagged/azure-virtual-machine](https://stackoverflow.com/questions/tagged/azure-virtual-machine)</li> <li>Вопросы в Stack Overflow по контейнерам Azure: [stackoverflow.com/search?q=azure+container](https://stackoverflow.com/search?q=azure+container)</li> </ul> |
 | Поддержка AppSource: [appsourcecrm@Microsoft.com](mailto:appsourcecrm@microsoft.com) | Поддержка публикации приложений Dynamics |
+
 ## <a name="marketing-resources"></a>Маркетинговые ресурсы  
 
 | Канал поддержки | ОПИСАНИЕ | Доступность |  

@@ -3,7 +3,7 @@ title: Делегирование предложений в Azure Stack | Док
 description: Узнайте, как привлечь других людей к созданию предложений и регистрации пользователей.
 services: azure-stack
 documentationcenter: ''
-author: brenduns
+author: sethmanheim
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/07/2018
-ms.author: brenduns
+ms.date: 09/12/2018
+ms.author: sethm
 ms.reviewer: alfredop
-ms.openlocfilehash: 112586d3ee5f49eab9adb72d41a210e2dd9828d8
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 77819c5592fe8b61ed4e3fcb5f874fc0bf5ca602
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "41954629"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49077990"
 ---
 # <a name="delegate-offers-in-azure-stack"></a>Делегирование предложений в Azure Stack
 
@@ -113,7 +113,7 @@ ms.locfileid: "41954629"
 
 Войдите на портал пользователя в качестве делегированного поставщика и создайте предложение, используя делегированное предложение в качестве шаблона.
 
-1. Выберите **Создать** > **Предложения и планы клиента** > **Предложение**.
+1. Выберите **+ Создать ресурс** > **Предложения и планы клиента** > **Предложение**.
 
     ![Создание нового предложения](media/azure-stack-delegated-provider/image5.png)
 
@@ -128,7 +128,7 @@ ms.locfileid: "41954629"
 
 4. Теперь общедоступные делегированные предложения видимы только на делегированном портале. Чтобы найти и изменить этот URL-адрес:
 
-    a.  Выберите **Обзор** > **Другие службы** > **Подписки**. Выберите подписку делегированного поставщика. Например, последовательно выберите **DPSubscription** > **Свойства**.
+    a.  Выберите **Загрузить** > **Все службы**, а затем в категории **Общие** выберите **Подписки**. Выберите подписки делегированного поставщика. Например, последовательно выберите **DPSubscription** > **Свойства**.
 
     b.  Скопируйте URL-адрес портала в отдельное расположение, например в Блокнот.
 

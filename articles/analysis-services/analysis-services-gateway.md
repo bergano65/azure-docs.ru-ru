@@ -1,22 +1,22 @@
 ---
-title: Локальный шлюз данных | Документация Майкрософт
+title: Локальный шлюз данных
 description: Локальный шлюз данных необходим тогда, когда сервер служб Analysis Services в Azure будет подключен к локальным источникам данных.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/03/2018
+ms.date: 09/11/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 8ba46223f0d0a4db7615bc94fe8a1bbfa18e57f8
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 84c82da933b17679e8c69c08b0c9cc7372951cfd
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37442344"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48802059"
 ---
 # <a name="connecting-to-on-premises-data-sources-with-azure-on-premises-data-gateway"></a>Подключение к локальным источникам данных с помощью локального шлюза данных Azure
-Локальный шлюз данных действует как мост, обеспечивая передачу данных между локальными источниками данных и серверами служб Azure Analysis Services в облаке. Последняя версия шлюза работает с несколькими серверами служб Azure Analysis Services в том же регионе, а также с Azure Logic Apps, Power BI, Power Apps и Microsoft Flow. Несколько служб в одном регионе можно связать с одним шлюзом. 
+Локальный шлюз данных действует как мост, обеспечивая передачу данных между локальными источниками данных и серверами служб Azure Analysis Services в облаке. Последняя версия шлюза работает с несколькими серверами служб Azure Analysis Services в том же регионе, а также с Azure Logic Apps, Power BI, Power Apps и Microsoft Flow. Несколько служб в одном регионе и одной подписке можно связать с одним шлюзом. 
 
 Впервые процесс установки с помощью шлюза проходит в четыре этапа:
 
@@ -26,7 +26,7 @@ ms.locfileid: "37442344"
 
 - **Создание ресурса шлюза в Azure.** На этом шаге необходимо создать ресурс шлюза в подписке Azure.
 
-- **Подключение серверов к ресурсу шлюза.** После получения ресурса шлюза в подписке можно начать подключение к нему серверов. Вы можете подключить несколько серверов и другие ресурсы к ним.
+- **Подключение серверов к ресурсу шлюза.** После получения ресурса шлюза в подписке можно начать подключение к нему серверов. Вы можете подключить несколько серверов и другие ресурсы, если они находятся в одном регионе и одной подписке.
 
 Чтобы начать работу прямо сейчас, см. статью [Установка и настройка локального шлюза данных](analysis-services-gateway-install.md).
 
@@ -172,8 +172,6 @@ ms.locfileid: "37442344"
 #### <a name="configuration-logs"></a>Журналы конфигурации
 
 `C:\Users\<username>\AppData\Local\Microsoft\On-premises data gateway\GatewayConfigurator.log`
-
-
 
 
 #### <a name="event-logs"></a>Журналы событий

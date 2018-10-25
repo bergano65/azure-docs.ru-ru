@@ -1,22 +1,23 @@
 ---
-title: Часто задаваемые вопросы об API автозаполнения Azure | Документация Майкрософт
-description: Получите ответы на распространенные вопросы об API автозаполнения служб Azure Cognitive Services в Azure.
+title: Часто задаваемые вопросы — API автозаполнения Bing
+titlesuffix: Azure Cognitive Services
+description: Получите ответы на часто задаваемые вопросы об API автозаполнения Bing.
 services: cognitive-services
 author: HeidiSteen
-manager: jhubbard
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-autosuggest
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/26/2017
 ms.author: heidist
-ms.openlocfilehash: 00b91728bcfec52ff30697f080d5c2619bab79a8
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 84f1b0555922119e9de4addc3d51ac233e7bae65
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382073"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48831370"
 ---
-# <a name="frequently-asked-questions-faq-about-autosuggest-api-cognitive-services"></a>Часто задаваемые вопросы об API автозаполнения (Cognitive Services)
+# <a name="frequently-asked-questions-faq-about-bing-autosuggest-api"></a>Часто задаваемые вопросы об API автозаполнения Bing
  
  Найдите ответы на часто задаваемые вопросы о понятиях, коде и сценариях, связанных с API автозаполнения для служб Azure Cognitive Services.
 
@@ -44,7 +45,7 @@ ms.locfileid: "35382073"
 
     cors-proxy-server
 
-Не закрывайте командное окно, пока используете учебное приложение. Закрытие этого окна приводит к остановке прокси-сервера. Теперь в развертываемом разделе заголовков HTTP под результатами поиска можно увидеть заголовок `X-MSEdge-ClientID` (среди прочих) и убедиться, что он одинаковый для всех запросов.
+Не закрывайте командное окно, пока используете учебное приложение. Это приведет к остановке прокси-сервера. Теперь в развертываемом разделе заголовков HTTP под результатами поиска можно увидеть заголовок `X-MSEdge-ClientID` (среди прочих) и убедиться, что он одинаковый для всех запросов.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2018
 ms.author: szark
-ms.openlocfilehash: d7c35b79dcdf75dbb3f891dc4c66cbf893b61c03
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 5328ee7e3e3035ebce1ff9fccbfc6e9ccfd86ee8
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33777694"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48888405"
 ---
 # <a name="prepare-a-centos-based-virtual-machine-for-azure"></a>Подготовка виртуальной машины на основе CentOS для Azure
 * [Подготовка виртуальной машины CentOS 6.x для Azure](#centos-6x)
@@ -28,7 +28,7 @@ ms.locfileid: "33777694"
 
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 В этой статье предполагается, что вы уже установили операционную систему CentOS Linux (или аналогичную производную) на виртуальный жесткий диск. Существует несколько средств для создания VHD-файлов, например решение для виртуализации, такое как Hyper-V. Инструкции см. в разделе [Установка роли Hyper-V и настройка виртуальной машины](http://technet.microsoft.com/library/hh846766.aspx).
 
 **Замечания по установке CentOS**
@@ -298,7 +298,7 @@ ms.locfileid: "33777694"
    
         # sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
-10. Создавая образ из **VMWare, VirtualBox или KVM**, убедитесь что драйверы Hyper-V включены в initramfs:
+10. Создавая образ из **VMWare, VirtualBox или KVM**, убедитесь что драйверы Hyper-V включены в initramfs.
    
    Измените файл `/etc/dracut.conf`, добавив в него следующее содержимое:
    

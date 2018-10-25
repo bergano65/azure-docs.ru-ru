@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: deguhath
-ms.openlocfilehash: ff4daf350783e02141a6afea815165ccecfe0116
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: 09ca6fdc40aec84bcc7523bae0dee348d00f6d9f
+ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42143203"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47586127"
 ---
 # <a name="the-team-data-science-process-in-action-use-azure-hdinsight-hadoop-clusters"></a>Процесс обработки и анализа данных группы на практике: использование кластеров Azure HDInsight Hadoop
 В этом пошаговом руководстве показано комплексное использование [процесса обработки и анализа данных группы (TDSP)](overview.md). Мы используем кластер [Azure HDInsight Hadoop](https://azure.microsoft.com/services/hdinsight/) для хранения и просмотра данных из общедоступного набора данных [Поездки такси Нью-Йорка](http://www.andresmh.com/nyctaxitrips/), реконструирования их характеристик и сокращения их выборки. Для обработки двоичных и мультиклассовых классификационных и регрессионных прогнозных задач мы создаем модели данных с помощью Машинного обучения Azure. 

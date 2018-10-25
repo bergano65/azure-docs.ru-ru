@@ -5,20 +5,21 @@ services: machine-learning
 author: rastala
 ms.author: roastala
 ms.service: machine-learning
+ms.component: core
 ms.reviewer: larryfr
 manager: cgronlun
 ms.topic: conceptual
 ms.date: 8/6/2018
-ms.openlocfilehash: 675dae022376fc62292f3b079bd735939b9199c2
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 9938772618e9a85f7d85678c4ddde3147cbc40dd
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47220301"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49091864"
 ---
 # <a name="configure-a-development-environment-for-the-azure-machine-learning-service"></a>Настройка среды разработки для службы "Машинное обучение Azure"
 
-Узнайте, как настроить среду разработки для работы со службой машинного обучения Azure. Вы узнаете, как создать файл конфигурации, который связывает вашу среду с рабочей областью машинного обучения Azure. Кроме того, вы узнаете, как настраивать следующие среды разработки:
+Узнайте, как настроить среду разработки для работы со службой машинного обучения Azure. Вы узнаете, как создать файл конфигурации, который связывает вашу среду с рабочей областью службы "Машинное обучение Azure". Кроме того, вы узнаете, как настраивать следующие среды разработки:
 
 * Jupyter Notebook на вашем компьютере
 * Visual Studio Code.
@@ -35,6 +36,9 @@ ms.locfileid: "47220301"
 
  * [Расширение Python](https://code.visualstudio.com/docs/python/python-tutorial) для среды Visual Studio Code.
 
+> [!NOTE]
+> Команды Shell, используемые в этом документе, проверены с помощью bash в Linux и macOS. Команды также проверяются с помощью cmd.exe в Windows.
+
 ## <a name="create-workspace-configuration-file"></a>Создание файла конфигурации рабочей области
 
 Файл конфигурации рабочей области используется SDK для связи с рабочей областью службы машинного обучения Azure.  Существует два способа получения этого файла:
@@ -49,7 +53,8 @@ ms.locfileid: "47220301"
         ![Портал Azure](./media/how-to-configure-environment/configure.png) 
     
     1. Создайте файл с этим кодом Python. Выполните код в том же каталоге, где находятся сценарии или записные книжки, ссылающиеся на рабочую область:
-        ```
+
+        ```python
         from azureml.core import Workspace
 
         subscription_id ='<subscription-id>'
@@ -113,6 +118,11 @@ ms.locfileid: "47220301"
      ```shell
     pip install --upgrade azureml-sdk[notebooks,automl]
     ```
+
+    > [!NOTE]
+    > Если появится сообщение об ошибке (Невозможно удалить `PyYAML`), вместо этого используйте следующую команду:
+    > 
+    > `pip install --upgrade azureml-sdk[notebooks,automl] --ignore-installed PyYAML` 
 
     Установка пакета SDK может занять несколько минут.
 
@@ -179,7 +189,7 @@ ms.locfileid: "47220301"
     conda install <new package>
     ```
 
-6. Запустите Visual Studio Code, а затем используйте __CTRL-SHIFT-P__ для получения __палитры команд__. Введите *Python: выбор интерпретатора*и выберите созданную среду conda.
+6. Запустите Visual Studio Code, а затем используйте сочетание клавиш __CTRL+SHIFT+P__ для Windows или __COMMAND+SHIFT+P__ для Mac, чтобы получить __палитру команд__. Введите *Python: выбор интерпретатора*и выберите созданную среду conda.
 
     > [!NOTE]
     > Visual Studio Code автоматически учитывает среды conda на компьютере. Дополнительные сведения см. в документации по [Visual Studio Code](https://code.visualstudio.com/docs/python/environments#_conda-environments).

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 09/21/2018
 ms.author: cherylmc
-ms.openlocfilehash: fc8abee93983ce4ea06d0b433eb35ed22e0f61b4
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: fcdaf10ad30cee0e7b79304ff21d67560522875c
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47218077"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49377803"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Мониторинг, метрики и оповещения в ExpressRoute
 
@@ -20,7 +20,7 @@ ms.locfileid: "47218077"
 
 ## <a name="circuit-metrics"></a>Метрики канала
 
-Чтобы перейти в подраздел **Метрики**, откройте страницу канала ExpressRoute, который хотите отслеживать. Подраздел **Метрики** находится в разделе **Мониторинг**.
+Чтобы перейти в подраздел **Метрики**, откройте страницу канала ExpressRoute, который хотите отслеживать. Подраздел **Метрики** находится в разделе **Мониторинг**. Выберите BitsInPerSecond или BitsOutPerSecond и агрегирование. При необходимости можно применить разделение. При этом будут показаны метрики для каждого типа пиринга.
 
 ![метрики канала](./media/expressroute-monitoring-metrics-alerts/ermetricspeering.jpg)
 

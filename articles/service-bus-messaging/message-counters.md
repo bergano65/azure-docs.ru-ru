@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/26/2018
 ms.author: spelluru
-ms.openlocfilehash: bd9d1b813c90be09301eeff1de7580f22c15500b
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 954c16cefe6d7ffe61a0b04b274b9bf92306a587
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47407592"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48857590"
 ---
 # <a name="message-counters"></a>Счетчики сообщений
 
@@ -40,13 +40,12 @@ ms.locfileid: "47407592"
 -   [TransferDeadLetterMessageCount](/dotnet/api/microsoft.servicebus.messaging.messagecountdetails.transferdeadlettermessagecount#Microsoft_ServiceBus_Messaging_MessageCountDetails_TransferDeadLetterMessageCount): число сообщений, которые не удалось перенести в другую очередь или раздел и которые были перемещены в очередь недоставленных сообщений для передачи.
 -   [TransferMessageCount](/dotnet/api/microsoft.servicebus.messaging.messagecountdetails.transfermessagecount#Microsoft_ServiceBus_Messaging_MessageCountDetails_TransferMessageCount): число сообщений, ожидающих передачи в другую очередь или раздел.
 
-Если приложению требуется масштабировать ресурсы в зависимости от длины очереди, оно должно делать это очень размеренно. Получение данных счетчиков сообщений является ресурсоемкой операцией в брокере обмена сообщениями, и частое ее выполнение напрямую негативно влияет на производительность сущности.
+Если приложению требуется масштабировать ресурсы в зависимости от длины очереди, оно должно делать это размеренно. Получение данных счетчиков сообщений является ресурсоемкой операцией в брокере обмена сообщениями, и частое ее выполнение напрямую негативно влияет на производительность сущности.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 
-* [Базовая информация о служебной шине](service-bus-fundamentals-hybrid-solutions.md)
 * [Очереди, разделы и подписки служебной шины](service-bus-queues-topics-subscriptions.md)
 * [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)
 * [Как использовать разделы и подписки служебной шины](service-bus-dotnet-how-to-use-topics-subscriptions.md)

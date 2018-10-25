@@ -1,20 +1,21 @@
 ---
-title: Ограничения и квоты для Пользовательской службы визуального распознавания в Azure Cognitive Services | Документация Майкрософт
-description: Узнайте, какие действуют ограничения и квоты для Пользовательской службы визуального распознавания в Azure Cognitive Services.
+title: Ограничения и квоты. Пользовательская служба визуального распознавания
+titlesuffix: Azure Cognitive Services
+description: Дополнительные сведения об ограничениях и квотах в пользовательской службе визуального распознавания.
 services: cognitive-services
 author: anrothMSFT
-manager: corncar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: custom-vision
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: anroth
-ms.openlocfilehash: 44666d5d7f2a51e4017c704205d21b1f6d06908c
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: ce06effbce12abb6271e050829d3218f4fbbfbf4
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382460"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48902866"
 ---
 # <a name="limits-and-quotas"></a>Ограничения и квоты
 
@@ -25,7 +26,8 @@ ms.locfileid: "35382460"
 ||**Ограниченная пробная версия**|**F0 (Azure)**|**S0 (Azure)**|
 |-----|-----|-----|-----|
 |Проекты|2|2|100|
-|Число учебных изображений на проект|5 000|5 000|50 000|
+|Число учебных изображений на проект классификации|5 000|5 000|50 000|
+|Число учебных изображений на проект по обнаружению объектов|5 000|5 000|10 000|
 |Число прогнозов в месяц|10 000 |10 000|Без ограничений|
 |Число тегов на проект|50|50|250|
 |Количество итераций |10|10|10|

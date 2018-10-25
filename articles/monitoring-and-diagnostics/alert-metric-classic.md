@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/18/2018
 ms.author: snmuvva
 ms.component: alerts
-ms.openlocfilehash: e0c9cc342bb4b06053f53abc891ee1c415327998
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: ffac9511ab93367cba3f006249bd92658a520e09
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47410006"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49386946"
 ---
 # <a name="create-view-and-manage-classic-metric-alerts-using-azure-monitor"></a>Создание и просмотр классических оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -36,7 +36,7 @@ ms.locfileid: "47410006"
 
 6. Установите флажок **Владельцы, авторы и читатели электронных писем**, если администраторы и соадминистраторы должны получать уведомления по электронной почте при срабатывании оповещения.
 
-7. Чтобы отправлять уведомления на дополнительные электронные адреса при срабатывании оповещения, добавьте их в поле **Дополнительные адреса электронной почты администратора**. Разделяйте адреса электронной почты точкой с запятой в следующем формате: *email@contoso.com; email2@contoso.com*.
+7. Чтобы отправлять уведомления на дополнительные электронные адреса при срабатывании оповещения, добавьте их в поле **Дополнительные адреса электронной почты администратора**. Разделяйте адреса электронной почты точкой с запятой в следующем формате: *email@contoso.com;email2@contoso.com*.
 
 8. Укажите допустимый универсальный код ресурса (URI) в поле **Веб-перехватчик**, если его необходимо вызывать при срабатывании оповещения.
 
@@ -54,7 +54,7 @@ ms.locfileid: "47410006"
 
 ## <a name="with-azure-cli"></a>С помощью Azure CLI
 
-В предыдущих разделах описаны создание, просмотр правил генерации оповещений метрики и управление ими с помощью портала Azure. В этом разделе вы узнаете, как сделать то же самое с помощью кроссплатформенного [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest). Самый быстрый способ начать использовать Azure CLI посредством [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview?view=azure-cli-latest).
+В предыдущих разделах описаны создание, просмотр правил генерации оповещений метрики и управление ими с помощью портала Azure. В этом разделе вы узнаете, как сделать то же самое с помощью кроссплатформенного [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest). Самый быстрый способ начать использовать Azure CLI посредством [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest).
 
 ### <a name="get-all-classic-metric-alert-rules-in-a-resource-group"></a>Получение всех классических правил генерации оповещений метрики в группе ресурсов
 

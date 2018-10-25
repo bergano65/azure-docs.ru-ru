@@ -1,26 +1,33 @@
 ---
-title: Создание постоянных томов в службе Azure Kubernetes
-description: Узнайте, как с помощью дисков Azure создавать постоянные тома для модулей pod в службе Azure Kubernetes (AKS)
+title: Динамическое создание тома "Диск" для нескольких групп контейнеров в Службе Azure Kubernetes (AKS)
+description: Сведения о том, как динамически создавать постоянный том с дисками Azure для использования с несколькими параллельными pod в Службе Azure Kubernetes (AKS)
 services: container-service
 author: iainfoulds
-manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 07/20/2018
+ms.date: 10/08/2018
 ms.author: iainfou
-ms.openlocfilehash: 7048ab4e08d25fd5181857a4e7592d0bcb7d3b5f
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: 4fea0f63f3e28f25392ef909d9735c6129df69e7
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42885600"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49067013"
 ---
-# <a name="create-persistent-volumes-with-azure-disks-for-azure-kubernetes-service-aks"></a>Создание постоянных томов в службе Azure Kubernetes (AKS) с помощью дисков Azure
+# <a name="dynamically-create-and-use-a-persistent-volume-with-azure-disks-in-azure-kubernetes-service-aks"></a>Динамическое создание и использование постоянного тома с дисками Azure в службе Azure Kubernetes (AKS)
 
-Постоянный том — это часть хранилища, которая подготовлена к использованию для модулей pod Kubernetes. Постоянный том может использоваться одним или несколькими модулями pod и может быть подготовлен динамически или статически. Дополнительные сведения о постоянных томах Kubernetes см. в разделе [Kubernetes persistent volumes][kubernetes-volumes] (Постоянные тома Kubernetes). В этой статье описывается использование постоянных томов с дисками Azure в кластере службы Azure Kubernetes (AKS).
+Постоянный том — это часть хранилища, которая подготовлена к использованию для модулей pod Kubernetes. Постоянный том может использоваться одним или несколькими модулями и может быть подготовлен динамически или статически. В этой статье описывается динамическое создание постоянных томов с дисками Azure, используемых одним модулем pod в кластере службы Azure Kubernetes (AKS).
 
 > [!NOTE]
-> Диск Azure можно подключить только в *режиме доступа* *ReadWriteOnce*, то есть он будет доступен только для одного узла AKS. Если вам нужно использовать постоянный том на нескольких узлах, попробуйте использовать [службу файлов Azure][azure-files-pvc].
+> Диск Azure можно подключить только в *режиме доступа* *ReadWriteOnce*, то есть он будет доступен только для одного модуля pod AKS. Если потребуется предоставить общий доступ для постоянного тома, используемого несколькими модулями pod, можно применить [Файлы Azure][azure-files-pvc].
+
+Дополнительные сведения о постоянных томах Kubernetes см. в разделе [Kubernetes persistent volumes][kubernetes-volumes] (Постоянные тома Kubernetes).
+
+## <a name="before-you-begin"></a>Перед началом работы
+
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+
+Кроме того, нужно установить и настроить Azure CLI 2.0.46 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
 ## <a name="built-in-storage-classes"></a>Встроенные классы хранения
 
@@ -44,7 +51,7 @@ managed-premium     kubernetes.io/azure-disk   1h
 ```
 
 > [!NOTE]
-> Утверждения постоянных томов указаны в ГиБ, но счета за использование управляемых дисков Azure выставляются по номеру SKU для определенного размера. Эти номера SKU варьируются от 32 ГиБ для дисков S4 или P4 и до 4 ТиБ для дисков S50 или P50. Число операций ввода-вывода в секунду и пропускная способность управляемого диска уровня "Премиум" зависят как от номера SKU, так и от размера экземпляров узлов в кластере AKS. Дополнительные сведения см. на странице [Цены на управляемые диски][managed-disk-pricing-performance].
+> Утверждения постоянных томов указаны в ГиБ, но счета за использование управляемых дисков Azure выставляются по номеру SKU для определенного размера. Эти номера SKU варьируются от 32 ГиБ для дисков S4 или P4 и до 32 ТиБ для дисков S80 или P80. Число операций ввода-вывода в секунду и пропускная способность управляемого диска уровня "Премиум" зависят как от номера SKU, так и от размера экземпляров узлов в кластере AKS. Дополнительные сведения см. на странице [Цены на управляемые диски][managed-disk-pricing-performance].
 
 ## <a name="create-a-persistent-volume-claim"></a>Создание заявки на доступ к постоянному тому
 
@@ -69,10 +76,10 @@ spec:
 > [!TIP]
 > Чтобы создать диск, который использует хранилище уровня "Стандартный", используйте класс `storageClassName: default` вместо *managed-premium*.
 
-Создайте заявку на доступ к постоянному тому с помощью команды [kubectl create][kubectl-create] и укажите файл *azure-premium.yaml*.
+Создайте заявку на доступ к постоянному тому с помощью команды [kubectl apply][kubectl-apply] и укажите файл *azure-premium.yaml*.
 
 ```
-$ kubectl create -f azure-premium.yaml
+$ kubectl apply -f azure-premium.yaml
 
 persistentvolumeclaim/azure-managed-disk created
 ```
@@ -90,21 +97,28 @@ metadata:
   name: mypod
 spec:
   containers:
-    - name: myfrontend
-      image: nginx
-      volumeMounts:
-      - mountPath: "/mnt/azure"
-        name: volume
+  - name: mypod
+    image: nginx:1.15.5
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 250m
+        memory: 256Mi
+    volumeMounts:
+    - mountPath: "/mnt/azure"
+      name: volume
   volumes:
     - name: volume
       persistentVolumeClaim:
         claimName: azure-managed-disk
 ```
 
-Создайте модуль pod с помощью команды [kubectl create][kubectl-create], как показано ниже.
+Создайте модуль pod с помощью команды [kubectl apply][kubectl-apply], как показано ниже.
 
 ```
-$ kubectl create -f azure-pvc-disk.yaml
+$ kubectl apply -f azure-pvc-disk.yaml
 
 pod/mypod created
 ```
@@ -124,7 +138,7 @@ Volumes:
     Type:        Secret (a volume populated by a Secret)
     SecretName:  default-token-smm2n
     Optional:    false
-
+[...]
 Events:
   Type    Reason                 Age   From                               Message
   ----    ------                 ----  ----                               -------
@@ -189,11 +203,18 @@ metadata:
   name: mypodrestored
 spec:
   containers:
-    - name: myfrontendrestored
-      image: nginx
-      volumeMounts:
-      - mountPath: "/mnt/azure"
-        name: volume
+  - name: mypodrestored
+    image: nginx:1.15.5
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 250m
+        memory: 256Mi
+    volumeMounts:
+    - mountPath: "/mnt/azure"
+      name: volume
   volumes:
     - name: volume
       azureDisk:
@@ -202,10 +223,10 @@ spec:
         diskURI: /subscriptions/<guid>/resourceGroups/MC_myResourceGroupAKS_myAKSCluster_eastus/providers/Microsoft.Compute/disks/pvcRestored
 ```
 
-Создайте модуль pod с помощью команды [kubectl create][kubectl-create], как показано ниже.
+Создайте модуль pod с помощью команды [kubectl apply][kubectl-apply], как показано ниже.
 
 ```
-$ kubectl create -f azure-restored.yaml
+$ kubectl apply -f azure-restored.yaml
 
 pod/mypodrestored created
 ```
@@ -237,7 +258,7 @@ Volumes:
 
 <!-- LINKS - external -->
 [access-modes]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
-[kubectl-create]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#create
+[kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
 [kubernetes-storage-classes]: https://kubernetes.io/docs/concepts/storage/storage-classes/
 [kubernetes-volumes]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
@@ -251,3 +272,6 @@ Volumes:
 [az-snapshot-create]: /cli/azure/snapshot#az-snapshot-create
 [az-disk-create]: /cli/azure/disk#az-disk-create
 [az-disk-show]: /cli/azure/disk#az-disk-show
+[aks-quickstart-cli]: kubernetes-walkthrough.md
+[aks-quickstart-portal]: kubernetes-walkthrough-portal.md
+[install-azure-cli]: /cli/azure/install-azure-cli

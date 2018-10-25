@@ -5,15 +5,15 @@ author: johnkemnetz
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: reference
-ms.date: 8/21/2018
+ms.date: 10/11/2018
 ms.author: johnkem
 ms.component: logs
-ms.openlocfilehash: 06d9fda01a89340eb019b4900c02e321e0b73cf5
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: 3b665ed0539a41ffeca87511154f3607a57cff4a
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42818970"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49116199"
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-diagnostic-logs"></a>Поддерживаемые службы, схемы и категории для журналов диагностики Azure
 
@@ -53,13 +53,14 @@ ms.locfileid: "42818970"
 | Шлюзы приложений |[Ведение журнала диагностики для шлюза приложений](../application-gateway/application-gateway-diagnostics.md) |
 | Служба автоматизации Azure |[Log Analytics для службы автоматизации Azure](../automation/automation-manage-send-joblogs-log-analytics.md) |
 | Пакетная служба Azure |[Ведение журналов диагностики пакетной службы Azure](../batch/batch-diagnostics.md) |
+| База данных Azure для MySQL | [Журналы сервера в базе данных Azure для MySQL](../mysql/concepts-server-logs.md#diagnostic-logs) |
+| База данных Azure для PostgreSQL | [Журналы сервера в базе данных Azure для PostgreSQL](../postgresql/concepts-server-logs.md#diagnostic-logs) |
 | Cognitive Services | Схема недоступна. |
 | Сеть доставки содержимого | [Журналы Системы диагностики Azure для CDN](../cdn/cdn-azure-diagnostic-logs.md) |
 | Cosmos DB | [Журнал ведения диагностики Azure Cosmos DB](../cosmos-db/logging.md) |
 | Фабрика данных | [Мониторинг фабрик данных с помощью Azure Monitor](../data-factory/monitor-using-azure-monitor.md) |
 | Data Lake Analytics |[Доступ к журналам диагностики для Azure Data Lake Analytics](../data-lake-analytics/data-lake-analytics-diagnostic-logs.md) |
 | Data Lake Store |[Доступ к журналам диагностики Azure Data Lake Store](../data-lake-store/data-lake-store-diagnostic-logs.md) |
-| База данных для PostgreSQL |  Схема недоступна. |
 | Центры событий; |[Журналы диагностики Центров событий Azure](../event-hubs/event-hubs-diagnostic-logs.md) |
 | ExpressRoute | Схема недоступна. |
 | Брандмауэр Azure | Схема недоступна. |
@@ -104,6 +105,7 @@ ms.locfileid: "42818970"
 |Microsoft.DataLakeAnalytics/accounts|Запросы|Журналы запросов|
 |Microsoft.DataLakeStore/accounts|Аудит|Журналы аудита|
 |Microsoft.DataLakeStore/accounts|Requests|Журналы запросов|
+|Microsoft.DBforMySQL/servers|MySqlSlowLogs|Журналы медленных запросов MySQL|
 |Microsoft.DBforPostgreSQL/servers|PostgreSQLLogs|Журналы сервера PostgreSQL|
 |Microsoft.Devices/IotHubs|Подключения|Подключения|
 |Microsoft.Devices/IotHubs|DeviceTelemetry|Телеметрия устройства|

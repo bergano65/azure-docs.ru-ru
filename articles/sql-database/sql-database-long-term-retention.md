@@ -12,16 +12,20 @@ ms.author: sashan
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 07/16/2018
-ms.openlocfilehash: b2d4166c25014416efbb7392acda3f3f028b4fa9
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 6110773ecaba0ad333e4cfc9f9cc6014bd29a7a6
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47162053"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48249525"
 ---
 # <a name="store-azure-sql-database-backups-for-up-to-10-years"></a>Хранение резервных копий базы данных SQL Azure до 10 лет
 
 В соответствии с нормативными требованиями, стандартами соответствия или бизнес-задачами многие приложения должны хранить резервные копии баз данных более 7–35 дней, то есть дольше, чем при [автоматическом резервном копировании](sql-database-automated-backups.md) базы данных SQL Azure. Используя возможность долгосрочного хранения (LTR), можно хранить полные резервные копии указанной базы данных SQL в хранилище BLOB-объектов [RA-GRS](../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage) сроком до 10 лет. Впоследствии любую резервную копию можно восстановить как новую базу данных.
+
+> [!NOTE]
+> LTR можно включить для базы данных, размещенной в логических серверах базы данных SQL Azure. Это все еще недоступно в управляемых экземплярах.
+> 
 
 ## <a name="how-sql-database-long-term-retention-works"></a>Принципы работы долгосрочного хранения базы данных SQL
 

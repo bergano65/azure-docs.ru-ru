@@ -3,19 +3,18 @@ title: Создание или присоединение параллельны
 description: Способы создания и присоединения параллельных ветвей для рабочих процессов в Azure Logic Apps
 services: logic-apps
 ms.service: logic-apps
+ms.suite: integration
 author: ecfan
 ms.author: estfan
-manager: jeconnoc
-ms.date: 03/05/2018
-ms.topic: article
 ms.reviewer: klam, LADocs
-ms.suite: integration
-ms.openlocfilehash: 2a8dcd82b67ee64e5687d8687415056b0aab39aa
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.topic: article
+ms.date: 10/10/2018
+ms.openlocfilehash: 41823d697139e039703cd47e0bfe3380fd2d20d6
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35298861"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49116092"
 ---
 # <a name="create-or-join-parallel-branches-for-workflow-actions-in-azure-logic-apps"></a>Создание или присоединение параллельных ветвей для действий рабочих процессов в Azure Logic Apps
 
@@ -24,7 +23,7 @@ ms.locfileid: "35298861"
 > [!TIP] 
 > Если есть триггер, который получает массив, и нужно запустить рабочий процесс для каждого элемента массива, вы можете выполнить *индивидуальную обработку* этого массива с помощью [свойства **SplitOn** триггера](../logic-apps/logic-apps-workflow-actions-triggers.md#split-on-debatch).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
@@ -32,33 +31,44 @@ ms.locfileid: "35298861"
 
 <a name="parallel-branches"></a>
 
-## <a name="add-a-parallel-branch"></a>Добавление параллельной ветви
+## <a name="add-parallel-branch"></a>Добавление параллельной ветви
 
 Для одновременного выполнения независимых действий можно добавить параллельные ветви рядом с существующим шагом. 
 
 ![Выполнение шагов в параллельном режиме](media/logic-apps-control-flow-branches/parallel.png)
 
-Перед продолжением рабочего процесса приложение логики ожидает завершения всех ветвей.
-Параллельные ветви выполняются, только если их значения свойств `runAfter` соответствуют состоянию завершенного родительского шага. Например, оба действия `branchAction1` и `branchAction2` настроены для выполнения только тогда, когда действие `parentAction` завершается с состоянием `Succeded`.
+Перед продолжением рабочего процесса приложение логики ожидает завершения всех ветвей. Параллельные ветви выполняются, только если их значения свойств `runAfter` соответствуют состоянию завершенного родительского шага. Например, оба действия `branchAction1` и `branchAction2` настроены для выполнения только тогда, когда действие `parentAction` завершается с состоянием `Succeded`.
 
 > [!NOTE]
 > Прежде чем приступать, в приложении логики уже должен присутствовать шаг, на котором можно добавить параллельные ветви.
 
 1. На <a href="https://portal.azure.com" target="_blank">портале Azure</a> откройте приложение логики в конструкторе приложений логики.
 
-2. Наведите указатель мыши на стрелку над шагом, для которого необходимо добавить параллельные ветви.
-
-3. Выберите знак **плюс** (**+**), **Add a parallel branch** (Добавить параллельную ветвь), а затем элемент, который требуется добавить.
+1. Наведите указатель мыши на стрелку над шагом, для которого необходимо добавить параллельные ветви. Щелкните появившийся знак **плюс** (**+**), а затем выберите **Добавить параллельную ветвь**. 
 
    ![Добавление параллельной ветви](media/logic-apps-control-flow-branches/add-parallel-branch.png)
 
-   Теперь выбранный элемент отображается в параллельной ветви.
+1. В поле поиска найдите и выберите необходимое действие.
 
-4. Добавьте нужные шаги для каждой параллельные ветви. Чтобы добавить последующее действие в параллельную ветвь, необходимо навести указатель мыши над действием, в которое его необходимо добавить. Выберите знак **плюс** (**+**) и шаг, который вы хотите добавить.
+   ![Поиск и выбор нужных действий](media/logic-apps-control-flow-branches/find-select-parallel-action.png)
 
-   ![Добавление последующего шага в параллельную ветвь](media/logic-apps-control-flow-branches/add-sequential-action-parallel-branch.png)
+   Теперь выбранное действие отображается в параллельной ветви, как показано ниже:
 
-5. Для выполнения обратного слияния ветвей [соедините параллельные ветви](#join-branches). 
+   ![Поиск и выбор нужных действий](media/logic-apps-control-flow-branches/added-parallel-branch.png)
+
+1. Теперь добавьте нужные шаги для каждой параллельной ветви. Чтобы добавить последующее действие в ветвь, необходимо навести указатель мыши над действием, в которое его необходимо добавить. Щелкните появившийся знак **плюс** (**+**), затем выберите **Добавить действие**.
+
+   ![Добавление последующего действия в параллельную ветвь](media/logic-apps-control-flow-branches/add-sequential-action.png)
+
+1. В поле поиска найдите и выберите необходимое действие.
+
+   ![Поиск и выбор последующего действия](media/logic-apps-control-flow-branches/find-select-sequential-action.png)
+
+   Теперь выбранное действие отображается в текущей ветви, как показано ниже:
+
+   ![Поиск и выбор последующего действия](media/logic-apps-control-flow-branches/added-sequential-action.png)
+
+Для выполнения обратного слияния ветвей [соедините параллельные ветви](#join-branches). 
 
 <a name="parallel-json"></a>
 
@@ -69,17 +79,17 @@ ms.locfileid: "35298861"
 ``` json
 {
   "triggers": {
-    "myTrigger": { }
+    "myTrigger": {}
   },
   "actions": {
     "parentAction": {
       "type": "<action-type>",
-      "inputs": { },
+      "inputs": {},
       "runAfter": {}
     },
     "branchAction1": {
       "type": "<action-type>",
-      "inputs": { },
+      "inputs": {},
       "runAfter": {
         "parentAction": [
           "Succeeded"
@@ -88,7 +98,7 @@ ms.locfileid: "35298861"
     },
     "branchAction2": {
       "type": "<action-type>",
-      "inputs": { },
+      "inputs": {},
       "runAfter": {
         "parentAction": [
           "Succeeded"
@@ -110,11 +120,17 @@ ms.locfileid: "35298861"
 
 1. На [портале Azure](https://portal.azure.com) найдите приложение логики и откройте его в конструкторе приложений логики. 
 
-2. Внизу параллельных ветвей, которые нужно соединить, добавьте шаг для выполнения.
+1. Под параллельными ветвями, которые нужно соединить, выберите **Новый шаг**. 
 
-   ![Добавление шага, который соединяет параллельные ветви](media/logic-apps-control-flow-branches/join-steps.png)
+   ![Добавление шага для объединения](media/logic-apps-control-flow-branches/add-join-step.png)
+
+1. В поле поиска найдите и выберите необходимое действие в качестве шага, который соединяет ветви.
+
+   ![Поиск и выбор действия, которое соединяет параллельные ветви](media/logic-apps-control-flow-branches/join-steps.png)
 
    Теперь ваши параллельные ветви объединены.
+
+   ![Объединенные ветви](media/logic-apps-control-flow-branches/joined-branches.png)
 
 <a name="join-json"></a>
 

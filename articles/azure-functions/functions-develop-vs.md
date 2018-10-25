@@ -8,14 +8,14 @@ manager: jeconnoc
 ms.service: azure-functions
 ms.custom: vs-azure
 ms.topic: conceptual
-ms.date: 05/23/2018
+ms.date: 10/08/2018
 ms.author: glenga
-ms.openlocfilehash: 39745991f7ab3b181f892bbaa59283d92737ecf3
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: 3ba8919a499da0db8e2deb626d8cf4d5067c1c25
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44093879"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49069183"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Разработка Функций Azure с помощью Visual Studio  
 
@@ -96,7 +96,7 @@ ms.locfileid: "44093879"
 
 3. Повторите предыдущий шаг, чтобы добавить уникальные ключи в массив **Values** для всех других подключений, которые необходимы для функций.
 
-## <a name="create-a-function"></a>Создание функции
+## <a name="add-a-function-to-your-project"></a>Добавление функции в проект
 
 В предварительно скомпилированных функциях привязки, используемые функцией, определяются посредством применения атрибутов в коде. При использовании инструментов Функций Azure для создания функций на основе предоставленных шаблонов эти атрибуты применяются автоматически. 
 
@@ -171,7 +171,9 @@ ms.locfileid: "44093879"
 
 Когда проект запущен, можно протестировать код, как тестируется развернутая функция. Дополнительные сведения см. в статье [Методика тестирования кода с помощью Функций Azure](functions-test-a-function.md). При работе в режиме отладки точки останова срабатывают в Visual Studio должным образом. 
 
-Пример того, как протестировать функцию, активируемую очередью, см. в разделе "Проверка функции" статьи [Создание функции, активируемой хранилищем очередей Azure](functions-create-storage-queue-triggered-function.md#test-the-function).  
+<!---
+For an example of how to test a queue triggered function, see the [queue triggered function quickstart tutorial](functions-create-storage-queue-triggered-function.md#test-the-function).  
+-->
 
 Дополнительные сведения об использовании основных инструментов Функций Azure см. в статье [Как программировать и тестировать функции Azure в локальной среде](functions-run-local.md).
 
@@ -196,6 +198,20 @@ ms.locfileid: "44093879"
 * [С помощью портала Azure](functions-how-to-use-azure-function-app-settings.md#settings).
 * [С помощью параметра публикации `--publish-local-settings` в основных инструментах Функций Azure](functions-run-local.md#publish).
 * [С помощью Azure CLI](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set). 
+
+## <a name="monitoring-functions"></a>Мониторинг функций
+
+Рекомендуемый способ наблюдения за выполнением этой функции в Azure — интеграция с Azure Application Insights. При создании приложения-функции на портале Azure эта интеграция выполняется по умолчанию. Тем не менее при создании приложения-функции во время публикации в Visual Studio интеграция в приложении-функции в Azure не происходит. Вместо этого вы получаете встроенное ведение журнала, которое не рекомендуется.
+
+Чтобы настроить Application Insights для своего приложения-функции, сделайте следующее.
+
+1. Создайте экземпляр Application Insights на [портале Azure](https://portal.azure.com) и скопируйте его ключ инструментирования. Чтобы узнать как это сделать, см. статью [Подключение к ресурсу App Insights вручную](functions-monitoring.md#manually-connect-an-app-insights-resource).  
+
+1. Добавьте параметр приложения с именем `APPINSIGHTS_INSTRUMENTATIONKEY` для параметров приложения-функции в Azure, как описано в разделе [Параметры приложения-функции](#function-app-settings). Этот параметр приложения содержит ключ инструментирования, который был создан на предыдущем шаге.
+
+1. Удалить параметр приложения `AzureWebJobsDashboard` из приложения-функции в Azure, который отключает встроенное ведение журнала.  
+
+Дополнительные сведения см. в статье [Мониторинг Функций Azure](functions-monitoring.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

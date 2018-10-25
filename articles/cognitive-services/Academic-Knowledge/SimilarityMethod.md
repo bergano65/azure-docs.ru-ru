@@ -1,20 +1,21 @@
 ---
-title: Метод сходства в Academic Knowledge API | Документация Майкрософт
-description: Использование метода сходства, чтобы вычислить академическое сходство двух строк в Microsoft Cognitive Services.
+title: Метод сходства — Academic Knowledge API
+titlesuffix: Azure Cognitive Services
+description: Использование метода сходства, чтобы вычислить академическое сходство двух строк.
 services: cognitive-services
 author: alch-msft
-manager: kuansanw
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: academic-knowledge
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/18/2017
 ms.author: alch
-ms.openlocfilehash: 472498d6bfe06ae4477a30f892d44e79c901acf5
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 76e86eb78a06d98e3d5c6c54b244add3c0c245d2
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380020"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48900467"
 ---
 # <a name="similarity-method"></a>Метод сходства
 

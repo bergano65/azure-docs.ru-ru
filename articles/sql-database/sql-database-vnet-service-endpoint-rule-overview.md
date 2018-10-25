@@ -12,12 +12,12 @@ ms.author: dmalik
 ms.reviewer: vanto, genemi
 manager: craigg
 ms.date: 09/18/2018
-ms.openlocfilehash: 90138664e5eab9110f51bbd3d3755dec0ed59ea8
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 3cfff932834682471990236c9e96b499e20d33f1
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47166815"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49092564"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-sql-database-and-sql-data-warehouse"></a>Использование конечных точек службы и правил виртуальной сети для Базы данных SQL Azure и Хранилища данных SQL
 
@@ -148,10 +148,9 @@ ms.locfileid: "47166815"
 
 #### <a name="expressroute"></a>ExpressRoute
 
-Если сеть подключена к сети Azure с использованием [ExpressRoute][expressroute-indexmd-744v], то для каждого канала настроены два общедоступных IP-адреса в Microsoft Edge. Эти два IP-адреса используются для подключения к службам Майкрософт, таким как служба хранилища Azure, с помощью общедоступного пиринга Azure.
-
-Чтобы разрешить взаимодействие канала с базой данных SQL Azure, необходимо создать правила IP-сети для общедоступных IP-адресов каналов. Чтобы найти общедоступные IP-адреса канала ExpressRoute, отправьте запрос по ExpressRoute в службу поддержки через портал Azure.
-
+Если вы используете [ExpressRoute](../expressroute/expressroute-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json) для локальной среды, для общедоступного пиринга или пиринга Майкрософт, то вам необходимо определить используемые IP-адреса NAT. Для общедоступного пиринга в каждом канале ExpressRoute по умолчанию используется два IP-адреса NAT для трафика служб Azure, когда он входит в основную магистральную сеть Microsoft Azure. Для пиринга Майкрософт используются IP-адреса NAT, предоставленные клиентом или поставщиком услуг. Чтобы разрешить доступ к ресурсам служб, необходимо разрешить эти общедоступные IP-адреса в настройках брандмауэра IP-адресов ресурсов. Чтобы найти IP-адреса канала ExpressRoute для общедоступного пиринга, [отправьте запрос по ExpressRoute в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) через портал Azure. Узнайте больше о [NAT для общедоступного пиринга и пиринга Майкрософт](../expressroute/expressroute-nat.md?toc=%2fazure%2fvirtual-network%2ftoc.json#nat-requirements-for-azure-public-peering).
+  
+Чтобы разрешить взаимодействие канала с базой данных SQL Azure, необходимо создать правила IP-сети для общедоступных IP-адресов NAT.
 
 <!--
 FYI: Re ARM, 'Azure Service Management (ASM)' was the old name of 'classic deployment model'.

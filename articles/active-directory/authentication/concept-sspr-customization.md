@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 69f6ed7814feacbd5adf60325aae123d388ffb61
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: f523e2e2d55a34825bbb76a5a879c7c046b6b554
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39222794"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49318968"
 ---
 # <a name="customize-the-azure-ad-functionality-for-self-service-password-reset"></a>Настройка функции самостоятельного сброса пароля в Azure AD
 
@@ -55,7 +55,9 @@ ms.locfileid: "39222794"
 
 Чтобы добавить ссылку на страницу входа в AD FS, используйте следующую команду на сервере AD FS. С помощью этой страницы пользователи могут начать самостоятельный сброс пароля.
 
-``` Set-ADFSGlobalWebContent -SigninPageDescriptionText "<p><A href='https://passwordreset.microsoftonline.com' target='_blank'>Can’t access your account?</A></p>" ```
+``` powershell
+Set-ADFSGlobalWebContent -SigninPageDescriptionText "<p><A href='https://passwordreset.microsoftonline.com' target='_blank'>Can’t access your account?</A></p>"
+```
 
 ## <a name="customize-the-sign-in-page-and-access-panel-look-and-feel"></a>Настройка страницы входа и оформление панели доступа
 
@@ -65,8 +67,8 @@ ms.locfileid: "39222794"
 
 * После того, как пользователь вводит свое имя пользователя.
 * Когда пользователь обращается к настраиваемому URL-адресу:
-    * путем передачи параметра *whr* на страницу сброса пароля, например https://login.microsoftonline.com/?whr=contoso.com;
-    * путем передачи параметра *username* на страницу сброса пароля, например https://login.microsoftonline.com/?username=admin@contoso.com.
+    * путем передачи параметра `whr` на страницу сброса пароля, например https://login.microsoftonline.com/?whr=contoso.com;
+    * путем передачи параметра `username` на страницу сброса пароля, например https://login.microsoftonline.com/?username=admin@contoso.com.
 
 Сведения о настройке фирменной символики компании см. в статье о [добавлении фирменной символики компании на страницу входа в Azure AD](../fundamentals/customize-branding.md).
 

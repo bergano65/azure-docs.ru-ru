@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 8/22/2018
 ms.author: adigan
-ms.openlocfilehash: 873e7066bcf51b32c3a7a54e845ffd5a744f407f
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: 2da5b04f56a5746fb77de6bc954bb5971eb4664b
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42745441"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48885176"
 ---
 # <a name="preparing-to-back-up-workloads-to-azure-with-dpm"></a>Подготовка к архивированию рабочих нагрузок в Azure с помощью DPM
 > [!div class="op_single_selector"]
@@ -170,7 +170,7 @@ ms.locfileid: "42745441"
 14. При использовании Data Protection Manager можно изменить параметры, заданные в процессе регистрации. Для этого на вкладке **Управление** выберите **В сети** и щелкните **Настроить**.
 
 ## <a name="requirements-and-limitations"></a>Требования (и ограничения)
-* Диспетчер DPM может работать в качестве физического сервера или виртуальной машины Hyper-V, установленной в среде System Center 2012 SP1 или System Center 2012 R2. Он также может работать в виде виртуальной машины Azure на базе системы System Center 2012 R2 с накопительным пакетом обновления 3 или выше для DPM 2012 R2 или в качестве виртуальной машины Windows в среде VMWare на базе системы System Center 2012 R2 с накопительным пакетом обновления 5 или выше.
+* Диспетчер DPM может работать в качестве физического сервера или виртуальной машины Hyper-V, установленной в среде System Center 2012 SP1 или System Center 2012 R2. Он также может работать в виде виртуальной машины Azure на базе системы System Center 2012 R2 с накопительным пакетом обновления 3 или выше для DPM 2012 R2 или в качестве виртуальной машины Windows в среде VMware на базе системы System Center 2012 R2 с накопительным пакетом обновления 5 или выше.
 * Если диспетчер DPM работает на базе системы System Center 2012 SP1, необходимо установить накопительный пакет обновления 2 для System Center Data Protection Manager SP1. Это нужно сделать до установки агента службы архивации Azure.
 * На сервере DPM должна быть установлена среда Windows PowerShell и компоненты .NET Framework 4.5.
 * Диспетчер DPM способен создавать резервные копии большинства рабочих нагрузок в службе архивации Azure. Полный список поддерживаемых возможностей см. в разделе поддерживаемых службой архивации Azure компонентов ниже.

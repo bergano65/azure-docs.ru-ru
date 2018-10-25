@@ -12,12 +12,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 08/31/2018
 ms.author: jingwang
-ms.openlocfilehash: d500bc9c910858341d7fdacb4d85bffc8be215e1
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: d8bbc3a5e4ac14ed60fcd6e5f19bdf1df03455a6
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43338768"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48817030"
 ---
 # <a name="copy-data-to-or-from-azure-data-lake-storage-gen1-by-using-azure-data-factory"></a>Копирование данных в Azure Data Lake Storage Gen1 и из него с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -32,7 +32,7 @@ ms.locfileid: "43338768"
 
 В частности, этот соединитель Azure Data Lake Store поддерживает:
 
-- Копирование файлов с использованием аутентификации на основе **субъекта-службы** или **управляемого удостоверения службы (MSI)**.
+- Копирование файлов с использованием аутентификации на основе **субъекта-службы** или **управляемого удостоверения ресурсов Azure**.
 - Копирование файлов "как есть", анализ или создание файлов с использованием [поддерживаемых форматов файлов и кодеков сжатия](supported-file-formats-and-compression-codecs.md).
 
 > [!IMPORTANT]
@@ -65,7 +65,7 @@ ms.locfileid: "43338768"
 В разделах ниже описываются дополнительные свойства и приводятся примеры JSON для разных типов аутентификации:
 
 - [Использование аутентификации на основе субъекта-службы](#using-service-principal-authentication)
-- [Использование аутентификации на основе управляемого удостоверения службы](#using-managed-service-identity-authentication)
+- [Использование аутентификации управляемых удостоверений для ресурсов Azure](#managed-identity)
 
 ### <a name="using-service-principal-authentication"></a>Использование аутентификации на основе субъекта-службы
 
@@ -114,11 +114,11 @@ ms.locfileid: "43338768"
 }
 ```
 
-### <a name="using-managed-service-identity-authentication"></a>Использование аутентификации на основе управляемого удостоверения службы
+### <a name="managed-identity"></a> Использование аутентификации управляемых удостоверений для ресурсов Azure
 
-Фабрика данных может быть связана с [управляемым удостоверением службы](data-factory-service-identity.md), которое представляет это решение. Это удостоверение службы можно использовать для аутентификации Data Lake Store, так же как и собственный субъект-службу. Оно разрешает назначенной фабрике обращаться к данным и копировать их из службы Data Lake Store и в нее.
+Фабрика данных может быть связана с [управляемым удостоверением ресурсов Azure](data-factory-service-identity.md), которое представляет отдельную фабрику данных. Это удостоверение службы можно использовать для аутентификации Data Lake Store, так же как и собственный субъект-службу. Оно разрешает назначенной фабрике обращаться к данным и копировать их из службы Data Lake Store и в нее.
 
-Для использования аутентификации на основе управляемого удостоверения службы (MSI) сделайте следующее:
+Использование аутентификации управляемых удостоверений для ресурсов Azure.
 
 1. [Получите удостоверение службы фабрики данных](data-factory-service-identity.md#retrieve-service-identity), скопировав значение идентификатора приложения удостоверения службы (SERVICE IDENTITY APPLICATION ID), созданного вместе с фабрикой.
 2. Разрешите удостоверению службы обращаться к Data Lake Store так же, как и субъекту-службе, руководствуясь приведенными ниже указаниями.

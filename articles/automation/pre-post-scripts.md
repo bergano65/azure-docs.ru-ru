@@ -9,16 +9,16 @@ ms.author: gwallace
 ms.date: 09/18/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: c906a771a63b3d8320eab1d2d57e8c34916e1d39
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 1c5bcca2571ffee9e1c20f0b7d2608b62c962177
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47433198"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48815347"
 ---
 # <a name="manage-pre-and-post-scripts-preview"></a>Управление сценариями предварительного и последующего выполнения (предварительная версия)
 
-Сценарии предварительного и последующего выполнения позволяют запускать модули Runbook PowerShell в учетной записи Службы автоматизации до и после задач развертывания обновлений. Такие сценарии выполняются в контексте Azure, а не в локальной среде.
+Сценарии предварительного и последующего выполнения позволяют запускать модули Runbook PowerShell в учетной записи Службы автоматизации до и после задач развертывания обновлений. Такие сценарии выполняются в контексте Azure, а не в локальной среде. Предварительные сценарии запускаются в начале развертывания обновлений. Запись сценариев запускается в конце развертывания и после каждой настроенной перезагрузки.
 
 ## <a name="runbook-requirements"></a>Требования к модулям Runbook
 
@@ -56,7 +56,7 @@ ms.locfileid: "47433198"
 
 ### <a name="softwareupdateconfigurationruncontext-properties"></a>Свойства SoftwareUpdateConfigurationRunContext
 
-|Свойство  |Описание  |
+|Свойство  |ОПИСАНИЕ  |
 |---------|---------|
 |SoftwareUpdateConfigurationName     | Имя конфигурации обновления программного обеспечения        |
 |SoftwareUpdateConfigurationRunId     | Уникальный идентификатор для запуска.        |

@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: ff96b9a63e7340788ef2474ce9934145c184e1e1
-ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
+ms.openlocfilehash: b287e7f3846de4391de02cce2cedd6a5df3cbc4a
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45542775"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49167653"
 ---
 # <a name="date-claims-transformations"></a>Преобразования утверждений даты
 
@@ -29,7 +29,7 @@ ms.locfileid: "45542775"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| inputClaim | leftOperand | строка | Тип первого утверждения, который должен быть больше второго утверждения. |
+| InputClaim | leftOperand | строка | Тип первого утверждения, который должен быть больше второго утверждения. |
 | inputClaim | rightOperand | строка | Тип второго утверждения, который должен быть меньше первого утверждения. |
 | InputParameter | AssertIfEqualTo | Логическое | Указывает, выполняется ли это утверждение, если левый операнд равен правому. |
 | InputParameter | AssertIfRightOperandIsNotPresent | Логическое | Указывает, выполняется ли это утверждение, если правый операнд отсутствует. |
@@ -92,8 +92,8 @@ ms.locfileid: "45542775"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | inputClaim | дата | ClaimType, который необходимо преобразовать. |
-| OutputClaim | outputClaim | dateTime | ClaimType, который создается после вызова ClaimsTransformation. |
+| InputClaim | InputClaim | дата | ClaimType, который необходимо преобразовать. |
+| outputClaim | outputClaim | dateTime | ClaimType, который создается после вызова ClaimsTransformation. |
 
 В следующем примере показано преобразование утверждения `dateOfBirth` (тип данных date) в другое утверждение `dateOfBirthWithTime` (тип данных dateTime).
 
@@ -121,7 +121,7 @@ ms.locfileid: "45542775"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| OutputClaim | currentDateTime | dateTime | ClaimType, который создается после вызова ClaimsTransformation. |
+| outputClaim | currentDateTime | dateTime | ClaimType, который создается после вызова ClaimsTransformation. |
 
 ```XML
 <ClaimsTransformation Id="GetSystemDateTime" TransformationMethod="GetCurrentDateTime">
@@ -146,7 +146,7 @@ ms.locfileid: "45542775"
 | InputClaim | secondDateTime | dateTime | Второе утверждение dateTime для сравнения. Значение NULL соответствует текущим дате и времени. |
 | InputParameter | operator | строка | Одно из следующих значений: "same", "later than" или "earlier than" ("равно", "позже" или "раньше"). |
 | InputParameter | timeSpanInSeconds | int | Добавление временного диапазона к первым дате и времени. |
-| OutputClaim | result | Логическое | ClaimType, который создается после вызова ClaimsTransformation. |
+| outputClaim | result | Логическое | ClaimType, который создается после вызова ClaimsTransformation. |
 
 Используйте это преобразование, чтобы определить, являются ли два утверждения ClaimTypes равными, больше или меньше друг друга. Например, вы можете сохранить время, когда пользователь последний раз принимал ваши условия предоставления услуг (TOS). Через 3 месяца вы можете попросить пользователя принять TOS еще раз.
 Чтобы выполнить преобразование утверждений, необходимо сначала получить текущее значение даты и времени, а также время, когда пользователь последний раз принимал TOS.
@@ -158,7 +158,7 @@ ms.locfileid: "45542775"
     <InputClaim ClaimTypeReferenceId="extension_LastTOSAccepted" TransformationClaimType="secondDateTime" />
   </InputClaims>
   <InputParameters>
-    <InputParameter Id="operator" DataType="string" Value="greater than" />
+    <InputParameter Id="operator" DataType="string" Value="later than" />
     <InputParameter Id="timeSpanInSeconds" DataType="int" Value="7776000" />
   </InputParameters>
   <OutputClaims>
@@ -173,7 +173,7 @@ ms.locfileid: "45542775"
     - **firstDateTime**: 2018-01-01T00:00:00.100000Z
     - **secondDateTime**: 2018-04-01T00:00:00.100000Z
 - Входные параметры:
-    - **operator**: greater than
+    - **operator**: later than
     - **timeSpanInSeconds**: 7776000 (90 дней)
 - Исходящие утверждения: 
     - **result**: true

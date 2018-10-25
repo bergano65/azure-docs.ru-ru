@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.author: laevenso
 ms.custom: mvc
-ms.openlocfilehash: 7fb60f3c440b4804ad8c5e6c013ecfa454358833
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: 231d7b875a7163aaa532be4a6477ca4e2eb67286
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39716123"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48043637"
 ---
 # <a name="using-gpus-on-aks"></a>Использование GPU в AKS
 
@@ -63,7 +63,7 @@ aks-nodepool1-22139053-1   Ready     agent     10h       v1.9.6
 aks-nodepool1-22139053-2   Ready     agent     10h       v1.9.6
 ```
 
-Опишите один из узлов, чтобы подтвердить, что процессоры GPU планируются. Для этого можно использовать раздел `Capacity`. Например, `alpha.kubernetes.io/nvidia-gpu:  1`.
+Опишите один из узлов, чтобы подтвердить, что процессоры GPU планируются. Для этого можно использовать раздел `Capacity`. Например, `nvidia.com/gpu:  1`. Если процессоры GPU не отображаются, обратитесь к разделу **Устранение неполадок** ниже.
 
 ```
 $ kubectl describe node aks-nodepool1-22139053-0
@@ -96,12 +96,12 @@ Addresses:
   InternalIP:  10.240.0.4
   Hostname:    aks-nodepool1-22139053-0
 Capacity:
- alpha.kubernetes.io/nvidia-gpu:  1
+ nvidia.com/gpu:                  1
  cpu:                             6
  memory:                          57691688Ki
  pods:                            110
 Allocatable:
- alpha.kubernetes.io/nvidia-gpu:  1
+ nvidia.com/gpu:                  1
  cpu:                             6
  memory:                          57589288Ki
  pods:                            110
@@ -135,7 +135,7 @@ Events:         <none>
 
 Чтобы продемонстрировать, что процессоры GPU действительно работают, запланируйте рабочую нагрузку с поддержкой процессора GPU и соответствующим запросом ресурса. В этом примере будет выполняться задание [Tensorflow](https://www.tensorflow.org/versions/r1.1/get_started/mnist/beginners) для [набора данных MNIST](http://yann.lecun.com/exdb/mnist/).
 
-Следующий манифест задания включает ограничение ресурса `alpha.kubernetes.io/nvidia-gpu: 1`. Соответствующие библиотеки CUDA и инструменты отладки будут доступны на узле `/usr/local/nvidia` и их нужно вставить в модуль pod с помощью соответствующей спецификации объема, как показано ниже.
+Следующий манифест задания включает ограничение ресурса `nvidia.com/gpu: 1`. 
 
 Скопируйте манифест и сохраните его как **samples-tf-mnist-demo.yaml**.
 ```
@@ -158,15 +158,8 @@ spec:
         imagePullPolicy: IfNotPresent
         resources:
           limits:
-            alpha.kubernetes.io/nvidia-gpu: 1
-        volumeMounts:
-        - name: nvidia
-          mountPath: /usr/local/nvidia
+           nvidia.com/gpu: 1
       restartPolicy: OnFailure
-      volumes:
-        - name: nvidia
-          hostPath:
-            path: /usr/local/nvidia
 ```
 
 Используйте команду [kubectl apply][kubectl-apply], чтобы запустить задание. Эта команда анализирует файл манифеста и создает заданные объекты Kubernetes.

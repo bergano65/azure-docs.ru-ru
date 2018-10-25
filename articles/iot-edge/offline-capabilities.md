@@ -8,12 +8,12 @@ ms.date: 09/20/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: f4afad753da4a314ade3fb7433c6be3e489e05b0
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 30b85f15d8718e21af66634db5a4afd5623a77e6
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47033691"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49340177"
 ---
 # <a name="understand-extended-offline-capabilities-for-iot-edge-devices-modules-and-child-devices-preview"></a>Сведения о расширенных возможностях автономной работы устройств, модулей и дочерних устройств IoT Edge (предварительная версия)
 
@@ -126,11 +126,11 @@ Azure IoT Edge поддерживает расширенную автономн�
     "type": "docker",
     "settings": {
         "image": "mcr.microsoft.com/azureiotedge-hub:1.0",
-        "createOptions": "{\"HostConfig\":{\"Binds\":[\"C:\\\\HostStoragePath:C:\\\\ModuleStoragePath\"],\"PortBindings\":{\"8883/tcp\":[{\"HostPort\":\"8883\"}],\"443/tcp\":[{\"HostPort\":\"443\"}],\"5671/tcp\":[{\"HostPort\":\"5671\"}]}}}"
+        "createOptions": "{\"HostConfig\":{\"Binds\":[\"<HostStoragePath>:<ModuleStoragePath>\"],\"PortBindings\":{\"8883/tcp\":[{\"HostPort\":\"8883\"}],\"443/tcp\":[{\"HostPort\":\"443\"}],\"5671/tcp\":[{\"HostPort\":\"5671\"}]}}}"
     },
     "env": {
         "storageFolder": {
-            "value": "C:\\\\ModuleStoragePath"
+            "value": "<ModuleStoragePath>"
         }
     },
     "status": "running",
@@ -138,6 +138,8 @@ Azure IoT Edge поддерживает расширенную автономн�
 }
 ```
 
+Замените `<HostStoragePath>` и `<ModuleStoragePath>` путями к хранилищу узла и модуля соответственно; это должны быть абсолютные пути.  Например, `\"Binds\":[\"/etc/iotedge/storage/:/iotedge/storage/"` означает, что путь к узлу `/etc/iotedge/storage` сопоставляется с путем к контейнеру `/iotedge/storage/`.  Кроме того, дополнительные сведения о createOptions можно найти в [документации docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate).
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Включите расширенные возможности автономной работы при использовании прозрачного шлюза для устройств [Linux](how-to-create-transparent-gateway-linux.md) или [Windows](how-to-create-transparent-gateway-windows.md). 
+Включите расширенные возможности автономной работы при использовании прозрачного шлюза для устройств [Linux](how-to-create-transparent-gateway-linux.md) или [Windows](how-to-create-transparent-gateway-windows.md).

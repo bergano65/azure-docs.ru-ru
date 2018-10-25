@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/10/2018
 ms.author: bwren
-ms.component: na
-ms.openlocfilehash: 7f55b762bda5ff0c7bbedf414b18465656496cbb
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.component: ''
+ms.openlocfilehash: b178744911d03547509de58e35be5cd99e046391
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46984591"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49079061"
 ---
 # <a name="create-and-manage-alert-rules-in-log-analytics-with-rest-api"></a>Создание правил генерации оповещений и управление ими в Log Analytics с помощью REST API
 REST API оповещений в Log Analytics позволяет создавать оповещения и управлять ими в Operations Management Suite (OMS).  В этой статье приводятся сведения об интерфейсе API и примеры выполнения различных операций.
@@ -138,6 +138,7 @@ REST API оповещений в Log Analytics позволяет создава
 |:--- |:--- |:--- |
 | Threshold (Пороговое значение) |Условие для запуска действия.| Требуется для каждого оповещения до или после его отображения в Azure. |
 | Уровень серьезности |Метка, используемая для классификации оповещения при его активации.| Требуется для каждого оповещения до или после его отображения в Azure. |
+| Подавление |Параметр, который прекращает отправку уведомлений из оповещения. | Требуется для каждого оповещения до или после его отображения в Azure. |
 | Группы действий |Идентификаторы группы ActionGroup Azure, в которой указаны необходимые действия, например сообщения электронной почты, текстовые сообщения, голосовые вызовы, веб-перехватчики, модули runbook службы автоматизации, соединители ITSM и т. д.| Требуется после переноса оповещений в Azure.|
 | Настройка действий|Изменение стандартного потока вывода для выбора действий из ActionGroup.| Необязательно для каждого оповещения, может использоваться после переноса оповещений в Azure. |
 | EmailNotification |Отправка сообщения нескольким получателям. | Не требуется, если оповещения перенесены в Azure.|
@@ -213,6 +214,37 @@ Log Analytics позволяет классифицировать оповеще
 
     $thresholdWithSevJson = "{'etag': 'W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"','properties': { 'Name': 'My Threshold', 'Version':'1','Severity': 'critical', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 10 } }"
     armclient put /subscriptions/{Subscription ID}/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/mythreshold?api-version=2015-03-20 $thresholdWithSevJson
+
+#### <a name="suppress"></a>Подавление
+Предупреждения о запросах на основе Log Analytics будут срабатывать каждый раз, когда пороговое значение будет достигнуто или превышено. Основываясь на логике, подразумеваемой в запросе, это может привести к тому, что оповещение будет запущено в течение нескольких интервалов, и, следовательно, будут постоянно отправляться уведомления. Чтобы предотвратить такой сценарий, пользователь может установить опцию "Подавление" в Log Analytics, чтобы некоторое время ожидать получение уведомления во второй раз с целью предупреждения. Поэтому, если подавление установлено на 30 минут, то оповещение будет срабатывать в первый раз и отправлять настроенные уведомления. Прежде чем снова использовать уведомления для правила генерации оповещений, подождите 30 минут. В промежуточный период правило предупреждения будет продолжать выполняться. Уведомление подавляется Log Analytics за указанное время независимо от того, сколько раз срабатывало правило предупреждения в этот период.
+
+Свойства подавления правила генерации оповещений в Log Analytics определены с помощью значения *Throttling* и подавления периода, используя значение *DurationInMinutes*.
+
+Ниже приведен пример ответа для действия, содержащего только пороговое значение, серьезность и подавление.
+
+    "etag": "W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"",
+    "properties": {
+        "Type": "Alert",
+        "Name": "My threshold action",
+        "Threshold": {
+            "Operator": "gt",
+            "Value": 10
+        },
+        "Throttling": {
+          "DurationInMinutes": 30
+        },
+        "Severity": "critical",
+        "Version": 1    }
+
+Чтобы создать действие для расписания с указанием серьезности, используйте метод Put с уникальным идентификатором действия.  
+
+    $AlertSuppressJson = "{'properties': { 'Name': 'My Threshold', 'Version':'1','Severity': 'critical', 'Type':'Alert', 'Throttling': { 'DurationInMinutes': 30 },'Threshold': { 'Operator': 'gt', 'Value': 10 } }"
+    armclient put /subscriptions/{Subscription ID}/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myalert?api-version=2015-03-20 $AlertSuppressJson
+
+Чтобы изменить действие серьезности для расписания, используйте метод Put с идентификатором существующего действия.  Текст запроса должен содержать Etag действия.
+
+    $AlertSuppressJson = "{'etag': 'W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"','properties': { 'Name': 'My Threshold', 'Version':'1','Severity': 'critical', 'Type':'Alert', 'Throttling': { 'DurationInMinutes': 30 },'Threshold': { 'Operator': 'gt', 'Value': 10 } }"
+    armclient put /subscriptions/{Subscription ID}/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myalert?api-version=2015-03-20 $AlertSuppressJson
 
 #### <a name="action-groups"></a>Группы действий
 Все оповещения в Azure используют группу действий в качестве механизма обработки действий по умолчанию. С помощью группы действий можно указать действия один раз, а затем связать группу действий для несколькими оповещениями в Azure. Это избавляет от необходимости повторно объявить одни и те же действия снова и снова. Группы действий поддерживает несколько действий, включая сообщения электронной почты, текстовые сообщения, голосовые вызовы, подключения ITSM, runbook службы автоматизации, универсальный код ресурса (URI) веб-перехватчика и многое другое. 

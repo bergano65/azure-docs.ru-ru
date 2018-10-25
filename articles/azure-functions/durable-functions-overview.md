@@ -3,23 +3,19 @@ title: Обзор устойчивых функций — Azure
 description: Общие сведения о расширении устойчивых функций для Функций Azure.
 services: functions
 author: cgillum
-manager: cfowler
-editor: ''
-tags: ''
+manager: jeconnoc
 keywords: ''
-ms.service: functions
+ms.service: azure-functions
 ms.devlang: multiple
-ms.topic: article
-ms.tgt_pltfrm: multiple
-ms.workload: na
-ms.date: 04/30/2018
+ms.topic: conceptual
+ms.date: 09/06/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 25f7cf6de4f217219e510ae00ce21762e755d2e8
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 79ffa541d16212b21d20a238465a846fad5e4902
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39627412"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48237931"
 ---
 # <a name="durable-functions-overview"></a>Обзор устойчивых функций
 
@@ -70,7 +66,7 @@ public static async Task<object> Run(DurableOrchestrationContext ctx)
 ```js
 const df = require("durable-functions");
 
-module.exports = df(function*(ctx) {
+module.exports = df.orchestrator(function*(ctx) {
     const x = yield ctx.df.callActivityAsync("F1");
     const y = yield ctx.df.callActivityAsync("F2", x);
     const z = yield ctx.df.callActivityAsync("F3", y);
@@ -118,7 +114,7 @@ public static async Task Run(DurableOrchestrationContext ctx)
 ```js
 const df = require("durable-functions");
 
-module.exports = df(function*(ctx) {
+module.exports = df.orchestrator(function*(ctx) {
     const parallelTasks = [];
 
     // get a list of N work items to process in parallel
@@ -239,7 +235,7 @@ public static async Task Run(DurableOrchestrationContext ctx)
 const df = require("durable-functions");
 const df = require("moment");
 
-module.exports = df(function*(ctx) {
+module.exports = df.orchestrator(function*(ctx) {
     const jobId = ctx.df.getInput();
     const pollingInternal = getPollingInterval();
     const expiryTime = getExpiryTime();
@@ -304,7 +300,7 @@ public static async Task Run(DurableOrchestrationContext ctx)
 const df = require("durable-functions");
 const df = require('moment');
 
-module.exports = df(function*(ctx) {
+module.exports = df.orchestrator(function*(ctx) {
     yield ctx.df.callActivityAsync("RequestApproval");
 
     const dueTime = moment.utc(ctx.df.currentUtcDateTime).add(72, 'h');
@@ -338,7 +334,7 @@ public static async Task Run(string instanceId, DurableOrchestrationClient clien
 
 ### <a name="event-sourcing-checkpointing-and-replay"></a>Источники событий, создание контрольных точек и повторное воспроизведение
 
-Функции оркестратора надежно сохраняют свое состояние выполнения с помощью конструктивных шаблонов облачных решений, также известных как [шаблоны источников событий](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing). Вместо непосредственного сохранения *текущего* состояния оркестрации, устойчивое расширение использует инкрементируемое хранилище для записи *полной последовательности действий*, взятых из функции оркестрации. Это обеспечивает много преимуществ, включая повышение производительности, лучшую масштабируемость и более быструю скорость отклика, по сравнению с выгрузкой полного состояния среды выполнения. Другие преимущества включают в себя итоговую согласованность данных о транзакциях и сохранение всех аудиторских следов и журнала. Аудиторские следы сами по себе обеспечивают надежные компенсирующие действия.
+Функции оркестратора надежно сохраняют свое состояние выполнения с помощью конструктивных шаблонов, также известных как [источник событий](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing). Вместо непосредственного сохранения *текущего* состояния оркестрации, устойчивое расширение использует инкрементируемое хранилище для записи *полной последовательности действий*, взятых из функции оркестрации. Это обеспечивает много преимуществ, включая повышение производительности, лучшую масштабируемость и более быструю скорость отклика, по сравнению с выгрузкой полного состояния среды выполнения. Другие преимущества включают в себя итоговую согласованность данных о транзакциях и сохранение всех аудиторских следов и журнала. Аудиторские следы сами по себе обеспечивают надежные компенсирующие действия.
 
 Использование источников событий с помощью этого расширения является прозрачным. На самом деле оркестратор `await` в функции оркестратора передает управление потоком оркестратора обратно диспетчеру платформы устойчивых задач. Затем диспетчер совершает любые новые действия, запланированные функцией оркестратора (например, вызов одной или нескольких дочерних функций или планирование устойчивого таймера) в хранилище. Это прозрачное действие фиксации добавляется в *журнал выполнения* экземпляра оркестрации. Журнал хранится в таблице хранилища. Затем действие фиксации добавляет сообщения в очередь для планирования фактической работы. На этом этапе функцию оркестрации можно выгрузить из памяти. Выставление счетов для нее останавливается, если вы используете план потребления для решения "Функции Azure".  Если есть еще работа, функция перезапускается, а ее состояние восстанавливается.
 
@@ -373,6 +369,8 @@ public static async Task Run(string instanceId, DurableOrchestrationClient clien
 Функции оркестратора планируют функции действий и получают ответы через сообщения во внутренней очереди. Когда приложение-функция использует план потребления для решения "Функции Azure", эти очереди контролируются с помощью [контроллера масштабирования Функций Azure](functions-scale.md#how-the-consumption-plan-works) и при необходимости добавляются новые экземпляры вычислений. При масштабировании на нескольких виртуальных машинах функция оркестратора может запускаться на одной виртуальной машине, в то время как функции действий, которые она вызывает, запускаются на нескольких виртуальных машинах. Дополнительные сведения о поведении масштабирования устойчивых функций см. в статье [Производительность и масштабирование в устойчивых функциях (Функции Azure)](durable-functions-perf-and-scale.md).
 
 Хранилище таблиц используется для хранения журнала выполнения для учетных записей оркестратора. Всякий раз, когда экземпляр восстанавливается на определенной виртуальной машине, он извлекает журнал выполнения из хранилища таблиц, чтобы иметь возможность восстановить свое локальное состояние. Одним из удобств наличия журнала в хранилище таблиц является то, что вы можете просмотреть историю ваших оркестраций, используя такие инструменты, как [обозреватель службы хранилища Microsoft Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).
+
+BLOB-объекты хранилища используются в качестве механизма аренды, чтобы координировать горизонтальное масштабирование экземпляров оркестрации на виртуальных машинах. Они также используются для хранения данных для больших сообщений, которые не могут сохраняться напрямую в таблицах или очередях.
 
 ![Снимок экрана обозревателя службы хранилища](media/durable-functions-overview/storage-explorer.png)
 

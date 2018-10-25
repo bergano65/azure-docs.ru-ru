@@ -13,12 +13,12 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 09/01/2017
 ms.author: cwatson
-ms.openlocfilehash: 405e0d5184880a00c07de55bd968210fa28e45fc
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 76f4a52b702a609d7181b9c6c0f2ce600d8a6aac
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47393083"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48267993"
 ---
 # <a name="the-structure-of-azure-dashboards"></a>Структура панелей мониторинга Azure
 В этом документе описывается структура панели мониторинга Azure. В качестве примера используется следующая панель мониторинга Azure:
@@ -338,7 +338,7 @@ ms.locfileid: "47393083"
 
 1. `Extension/Microsoft_Azure_Monitoring/PartType/MetricsChartPart` — для показа метрик мониторинга.
 1. `Extension[azure]/HubsExtension/PartType/MarkdownPart` — для показа текста или изображений с базовым форматированием для ссылок, списков и т. д.
-1. `Extension[azure]/HubsExtension/PartType/VideoPart` — для показа видео с YouTube, Channel9 и любых других типов видео, которые работают в теге html video.
+1. `Extension[azure]/HubsExtension/PartType/VideoPart` — для показа видео с YouTube, Channel9 и любых других типов видео, которые работают в теге HTML video.
 1. `Extension/Microsoft_Azure_Compute/PartType/VirtualMachinePart` — для показа имени и состояния виртуальной машины Azure.
 
 Каждый тип части имеет собственную конфигурацию. Возможные свойства конфигурации: __inputs__, __settings__ и __asset__. 

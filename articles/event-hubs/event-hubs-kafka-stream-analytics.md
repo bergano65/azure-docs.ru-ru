@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/29/2018
 ms.author: spelluru
-ms.openlocfilehash: 8a7346f884a065a21b6f0a822b2236fa7ce5dff0
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 497249baa10956c37762172bd0c48fad7be14e0b
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45732563"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49319325"
 ---
 # <a name="process-apache-kafka-for-event-hubs-events-using-stream-analytics"></a>Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics 
 В этой статье показано, как выполняется потоковая передача данных в Центры событий с поддержкой Kafka и обработка с помощью Azure Stream Analytics. Здесь подробно описаны следующие действия: 
@@ -73,8 +73,8 @@ ms.locfileid: "45732563"
 
 ## <a name="send-messages-with-kafka-in-event-hubs"></a>Отправка сообщений с использованием Kafka в Центрах событий
 
-1. Клонируйте [репозиторий Центров событий Azure](https://github.com/Azure/azure-event-hubs) на компьютер.
-2. Перейдите в папку `azure-event-hubs/samples/kafka/quickstart/producer`. 
+1. Клонируйте [репозиторий Центров событий Azure для Kafka](https://github.com/Azure/azure-event-hubs-for-kafka) на компьютер.
+2. Перейдите в папку `azure-event-hubs-for-kafka/quickstart/java/producer`. 
 4. Обновите сведения о конфигурации для отправителя в файле по адресу `src/main/resources/producer.config`. Укажите **имя** и **строку подключения** для **пространства имен концентратора событий**. 
 
     ```xml
@@ -84,7 +84,7 @@ ms.locfileid: "45732563"
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{CONNECTION STRING for EVENT HUB NAMESPACE}";
     ```
 
-5. Перейдите в `azure-event-hubs/samples/kafka/quickstart/producer/src/main/java/com/example/app` и откройте файл **TestDataReporter.java** в любом редакторе по своему усмотрению. 
+5. Перейдите в `azure-event-hubs-for-kafka/quickstart/java/producer/src/main/java/com/example/app` и откройте файл **TestDataReporter.java** в любом редакторе по своему усмотрению. 
 6. Закомментируйте следующую строку кода.
 
     ```java
@@ -97,7 +97,7 @@ ms.locfileid: "45732563"
     ```
 
     Этот код отправляет данные события в формате **JSON**. При настройке входных данных для задания Stream Analytics необходимо указать JSON как формат входных данных. 
-7. **Запустите отправителя** и потоковую передачу данных в Центры событий с поддержкой Kafka. При использовании **командной строки Node.js** перед выполнением этих команд на компьютере Windows переключитесь на папку `azure-event-hubs/samples/kafka/quickstart/producer`. 
+7. **Запустите отправителя** и потоковую передачу данных в Центры событий с поддержкой Kafka. При использовании **командной строки Node.js** перед выполнением этих команд на компьютере Windows переключитесь на папку `azure-event-hubs-for-kafka/quickstart/java/producer`. 
    
     ```shell
     mvn clean package
@@ -205,7 +205,10 @@ ms.locfileid: "45732563"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-В этой статье вы узнаете, как выполнять потоковую передачу данных в Центры событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Для получения дополнительных сведений перейдите к следующему руководству:
+В этой статье вы узнаете, как выполнять потоковую передачу данных в Центры событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Дополнительные сведения о Центрах событий и Центрах событий для Kafka см. в статьях:  
 
-> [!div class="nextstepaction"]
-> [Использование Kafka MirrorMaker с Центрами событий для экосистем Kafka](event-hubs-kafka-mirror-maker-tutorial.md)
+* [Сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
+* [Azure Event Hubs for Apache Kafka (preview)](event-hubs-for-kafka-ecosystem-overview.md) (Центры событий Azure для Apache Kafka (предварительный просмотр))
+* [Дополнительные примеры для службы "Центры событий" для Kafka на сайте GitHub](https://github.com/Azure/azure-event-hubs-for-kafka)
+* Используйте [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) для [потоковой передачи событий из локальной системы Kafka к Центрам событий с поддержкой Kafka в облаке](event-hubs-kafka-mirror-maker-tutorial.md).
+* Узнайте, как выполнять потоковую передачу в Центры событий с поддержкой Kafka с помощью [собственных приложений Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md), [платформы Apache Flink](event-hubs-kafka-flink-tutorial.md) или [Akka Streams](event-hubs-kafka-akka-streams-tutorial.md).

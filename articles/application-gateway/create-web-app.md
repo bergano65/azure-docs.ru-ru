@@ -5,16 +5,16 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 8/1/2018
+ms.date: 10/16/2018
 ms.author: victorh
-ms.openlocfilehash: e4b69e6fa587a5d375a1684c982715f8a7ea8166
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: b0bde770e33a08832e7d3a93a745bbba44b04f87
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39579635"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49353345"
 ---
-# <a name="configure-app-service-web-apps-with-application-gateway"></a>Настройка веб-приложений службы приложений с помощью шлюза приложений 
+# <a name="configure-app-service-web-apps-with-application-gateway"></a>Настройка веб-приложений службы приложений с помощью шлюза приложений
 
 Шлюз приложений позволяет иметь веб-приложение Azure или другую мультитенантную службу в качестве участника узла серверной части. В этой статье вы узнаете, как настраивать веб-приложения Azure с помощью шлюза приложений. Первый пример показывает, как настроить шлюз приложений для использования в качестве участника пула серверной части веб-приложения. Второй пример показывает, как создать шлюз приложений с помощью веб-приложения в качестве участника пула серверной части.
 
@@ -41,7 +41,7 @@ Add-AzureRmApplicationGatewayProbeConfig -name webappprobe2 -ApplicationGateway 
 # Retrieve the newly added probe
 $probe = Get-AzureRmApplicationGatewayProbeConfig -name webappprobe2 -ApplicationGateway $gw
 
-# Configure an existing backend http settings 
+# Configure an existing backend http settings
 Set-AzureRmApplicationGatewayBackendHttpSettings -Name appGatewayBackendHttpSettings -ApplicationGateway $gw -PickHostNameFromBackendAddress -Port 80 -Protocol http -CookieBasedAffinity Disabled -RequestTimeout 30 -Probe $probe
 
 # Add the web app to the backend pool
@@ -116,7 +116,7 @@ $fipconfig = New-AzureRmApplicationGatewayFrontendIPConfig -Name fipconfig01 -Pu
 $listener = New-AzureRmApplicationGatewayHttpListener -Name listener01 -Protocol Http -FrontendIPConfiguration $fipconfig -FrontendPort $fp
 
 # Create a new rule
-$rule = New-AzureRmApplicationGatewayRequestRoutingRule -Name rule01 -RuleType Basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool 
+$rule = New-AzureRmApplicationGatewayRequestRoutingRule -Name rule01 -RuleType Basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool
 
 # Define the application gateway SKU to use
 $sku = New-AzureRmApplicationGatewaySku -Name Standard_Small -Tier Standard -Capacity 2
@@ -141,7 +141,7 @@ Id                       : /subscriptions/<subscription_id>/resourceGroups/Conto
 Etag                     : W/"00000d5b-54ed-4907-bae8-99bd5766d0e5"
 ResourceGuid             : 00000000-0000-0000-0000-000000000000
 ProvisioningState        : Succeeded
-Tags                     : 
+Tags                     :
 PublicIpAllocationMethod : Dynamic
 IpAddress                : xx.xx.xxx.xx
 PublicIpAddressVersion   : IPv4
@@ -154,6 +154,12 @@ DnsSettings              : {
                                 "Fqdn": "00000000-0000-xxxx-xxxx-xxxxxxxxxxxx.cloudapp.net"
                             }
 ```
+
+## <a name="restrict-access"></a>Ограничение доступа
+
+Веб-приложения, развернутые в этих примерах, используют общедоступные IP-адреса, доступ к которым можно получить напрямую из Интернета. Это помогает устранить неполадки, когда вы знакомитесь с новыми функциями и пробуете новинки. Однако, если вы хотите развернуть функцию в производственной среде, необходимо добавить дополнительные ограничения.
+
+Один из способов ограничения доступа к веб-приложению — использовать [ограничения статических IP-адресов в Службе приложений Azure](../app-service/app-service-ip-restrictions.md). Например, можно ограничить веб-приложение, чтобы получать трафик только из шлюза приложения. Используйте функцию ограничения IP-адреса для службы приложения, чтобы сделать виртуальный IP-адрес шлюза приложения единственным адресом с доступом.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

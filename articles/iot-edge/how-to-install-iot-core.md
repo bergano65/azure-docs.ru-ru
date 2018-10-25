@@ -9,12 +9,12 @@ ms.date: 03/05/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: f57db00894dab80f96f45111331d47a173520ced
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: ac729963e63bd97c83719e21dad3ad2cfc9b4fee
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39576004"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49392800"
 ---
 # <a name="install-the-iot-edge-runtime-on-windows-iot-core---preview"></a>Установка среды выполнения Azure IoT Edge в ОС Windows IoT Базовая (предварительная версия)
 
@@ -27,7 +27,7 @@ Azure IoT Edge и [Windows IoT Core](https://docs.microsoft.com/windows/iot-core
 ## <a name="install-the-container-runtime"></a>Установка среды выполнения контейнера
 
 1. Настройте плату с помощью образа IoT Базовая **Сборка 17134 (RS4)**. 
-1. Включите устройство и [войдите на него удаленно через PowerShell][lnk-powershell].
+1. Включите устройство и [войдите на него удаленно через PowerShell](https://docs.microsoft.com/windows/iot-core/connect-your-device/powershell).
 1. В консоли PowerShell установите среду выполнения контейнеров. 
 
    ```powershell
@@ -45,15 +45,8 @@ Azure IoT Edge и [Windows IoT Core](https://docs.microsoft.com/windows/iot-core
 
 ## <a name="finish-installing"></a>Завершение установки
 
-Установите управляющую программу для обеспечения безопасности IoT Edge и настройте ее, следуя инструкциям в [этой статье][lnk-install-windows-on-windows]
+Установите управляющую программу для обеспечения безопасности IoT Edge и настройте ее, следуя инструкциям в [этой статье](how-to-install-iot-edge-windows-with-windows.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь, когда на устройстве запущена среда выполнения IoT Edge, узнайте, как [развертывать и отслеживать модули IoT Edge в нужном масштабе][lnk-deploy].
-
-<!--Links-->
-[lnk-install-windows-on-windows]: how-to-install-iot-edge-windows-with-windows.md
-[lnk-powershell]: https://docs.microsoft.com/windows/iot-core/connect-your-device/powershell
-[lnk-deploy]: how-to-deploy-monitor.md
-[lnk-docker-install]: https://docs.docker.com/engine/installation/linux/docker-ce/binaries#install-server-and-client-binaries-on-windows
-[lnk-docker-containers]: https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-10#2-switch-to-windows-containers
+Теперь, когда на устройстве запущена среда выполнения IoT Edge, узнайте, как [развертывать и отслеживать модули IoT Edge в нужном масштабе](how-to-deploy-monitor.md).

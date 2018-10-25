@@ -1,26 +1,18 @@
 ---
-title: Управление наборами записей и записями DNS с помощью службы DNS Azure | Документация Майкрософт
+title: Управление наборами записей и записями DNS с помощью службы DNS Azure
 description: Служба DNS Azure предоставляет возможность управлять наборами записей и записями DNS при размещении домена.
 services: dns
-documentationcenter: na
 author: vhorne
-manager: jeconnoc
-editor: ''
-tags: azure-resource-manager
-ms.assetid: 18ed44a1-7bfe-454f-964e-922ad978264a
 ms.service: dns
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 08/16/2016
+ms.date: 10/6/2018
 ms.author: victorh
-ms.openlocfilehash: e24aa8d0fb72147b0ac30e7c495b598d6e9ea96f
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 891adfacde6e46b1d8fe8e2f6b5fb39c90ce27a0
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47451398"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48853714"
 ---
 # <a name="manage-dns-records-and-record-sets-by-using-the-azure-portal"></a>Управление записями и наборами записей DNS с помощью портала Azure
 
@@ -120,3 +112,4 @@ ms.locfileid: "47451398"
 * Дополнительные сведения об Azure DNS см. в статье [Обзор Azure DNS](dns-overview.md).
 * Дополнительные сведения об автоматизации DNS см. в статье [Создание зон и наборов записей DNS с помощью пакета SDK для .NET](dns-sdk.md).
 * Дополнительные сведения о записях обратной зоны DNS см. в статье [Основные сведения об обратной зоне DNS и ее поддержке в Azure](dns-reverse-dns-overview.md).
+* Дополнительные сведения о записях псевдонимов DNS Azure см. в статье [Обзор Azure DNS](dns-alias.md).

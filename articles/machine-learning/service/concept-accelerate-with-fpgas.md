@@ -1,5 +1,5 @@
 ---
-title: Что такое FPGA и Project Brainwave? — Машинное обучение Azure
+title: Что такое FPGA и Project Brainwave? Служба "Машинное обучение Azure"
 description: Сведения об ускорении модели и глубоких нейронных сетей с помощью FPGA в Azure. В этой статье содержатся общие сведения о программируемых пользователем вентильных матрицах (FPGA) и о том, каким образом служба "Машинное обучение Azure" предоставляет механизм искусственного интеллекта в режиме реального времени при развертывании модели в Azure FPGA.
 services: machine-learning
 ms.service: machine-learning
@@ -9,12 +9,12 @@ ms.author: tedway
 author: tedway
 ms.reviewer: jmartens
 ms.date: 9/24/2018
-ms.openlocfilehash: adcd812bc63f98e4cbde949946bf32a037c6d704
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 411beacd65915c30338ab415b095acc1a0c8cbe6
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47158693"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48238861"
 ---
 # <a name="what-is-fpga-and-project-brainwave"></a>Что такое FPGA и Project Brainwave?
 

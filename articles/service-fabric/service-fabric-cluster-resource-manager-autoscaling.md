@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/17/2018
 ms.author: miradic
-ms.openlocfilehash: db4f83d0d407ad3d9e895759ea2a687662f5620a
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: fbaf6b92a2605d284a749365d542c223e09f730d
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44053301"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49362608"
 ---
 # <a name="introduction-to-auto-scaling"></a>Знакомство с автомасштабированием
 Автомасштабирование — это дополнительная возможность службы Service Fabric, позволяющая динамически масштабировать службы на основе нагрузки, предоставляемой службами, или на основе использования ресурсов. Автомасштабирование предоставляет большую эластичность и позволяет подготовить дополнительные экземпляры или разделы службы по запросу. Весь процесс автомасштабирования автоматизирован и прозрачен, и после настройки политик в службе нет необходимости в выполнении масштабирования на уровне службы вручную. Автомасштабирование можно включить во время создания службы или в любое другое время путем обновления службы.
@@ -120,7 +120,7 @@ Update-ServiceFabricService -Stateless -ServiceName "fabric:/AppName/ServiceName
 * _Верхнее пороговое значение загрузки_ — это значение, определяющее, когда служба будет **развернута**. Если среднее время загрузки всех разделов службы выше этого значения, служба развернется.
 * _Интервал масштабирования_ определяет, как часто будет проверяться триггер. После проверки триггера, если необходимо масштабирование, будет применен соответствующий механизм. Если масштабирование не требуется, никакие действия выполняться не будут. В обоих случаях до истечения интервала масштабирования триггер снова проверяться не будет.
 
-Этот триггер может использоваться со службами с отслеживанием и без отслеживания состояния. AddRemoveIncrementalNamedParitionScalingMechanism — это единственный механизм, который можно использовать с этим триггером. При развертывании службы добавляется новый раздел, а при свертывании — один из имеющихся разделов удаляется. Существуют ограничения, которые необходимо учитывать при создании или обновлении службы. Если эти условия не будут выполнены, создание или обновление закончится ошибкой.
+Этот триггер может использоваться со службами с отслеживанием и без отслеживания состояния. AddRemoveIncrementalNamedPartitionScalingMechanism — это единственный механизм, который можно использовать с этим триггером. При развертывании службы добавляется новый раздел, а при свертывании — один из имеющихся разделов удаляется. Существуют ограничения, которые необходимо учитывать при создании или обновлении службы. Если эти условия не будут выполнены, создание или обновление закончится ошибкой.
 * Для службы должна использоваться именованная схема секционирования.
 * Имена разделов должны состоять из последовательных целых чисел, например 0, 1...
 * Первый раздел должен иметь следующее имя: "0".
@@ -137,7 +137,7 @@ Update-ServiceFabricService -Stateless -ServiceName "fabric:/AppName/ServiceName
 * _Минимальное число экземпляров_ определяет нижний предел для масштабирования. Если число разделов службы достигает этого предела, служба не будет свертываться, независимо от нагрузки.
 
 > [!WARNING] 
-> Если AddRemoveIncrementalNamedParitionScalingMechanism используется со службами с отслеживанием состояния, разделы в Service Fabric добавляются или удаляются **без уведомления либо предупреждения**. Если механизм масштабирования запущен, перераспределение разделов данных не будет выполняться. При увеличении масштаба новые разделы будут пустыми, а при его уменьшении **раздел удаляется вместе со всеми содержащимися в нем данными**.
+> Если AddRemoveIncrementalNamedPartitionScalingMechanism используется со службами с отслеживанием состояния, разделы в Service Fabric добавляются или удаляются **без уведомления либо предупреждения**. Если механизм масштабирования запущен, перераспределение разделов данных не будет выполняться. При увеличении масштаба новые разделы будут пустыми, а при его уменьшении **раздел удаляется вместе со всеми содержащимися в нем данными**.
 
 ## <a name="setting-auto-scaling-policy"></a>Настройка политики автомасштабирования
 
@@ -146,7 +146,7 @@ Update-ServiceFabricService -Stateless -ServiceName "fabric:/AppName/ServiceName
 <ServiceScalingPolicies>
     <ScalingPolicy>
         <AverageServiceLoadScalingTrigger MetricName="servicefabric:/_MemoryInMB" LowerLoadThreshold="300" UpperLoadThreshold="500" ScaleIntervalInSeconds="600"/>
-        <AddRemoveIncrementalNamedParitionScalingMechanism MinPartitionCount="1" MaxPartitionCount="3" ScaleIncrement="1"/>
+        <AddRemoveIncrementalNamedPartitionScalingMechanism MinPartitionCount="1" MaxPartitionCount="3" ScaleIncrement="1"/>
     </ScalingPolicy>
 </ServiceScalingPolicies>
 ```
@@ -155,7 +155,7 @@ Update-ServiceFabricService -Stateless -ServiceName "fabric:/AppName/ServiceName
 FabricClient fabricClient = new FabricClient();
 StatefulServiceUpdateDescription serviceUpdate = new StatefulServiceUpdateDescription();
 AveragePartitionLoadScalingTrigger trigger = new AverageServiceLoadScalingTrigger();
-PartitionInstanceCountScaleMechanism mechanism = new AddRemoveIncrementalNamedParitionScalingMechanism();
+PartitionInstanceCountScaleMechanism mechanism = new AddRemoveIncrementalNamedPartitionScalingMechanism();
 mechanism.MaxPartitionCount = 4;
 mechanism.MinPartitionCount = 1;
 mechanism.ScaleIncrement = 1;
@@ -171,7 +171,7 @@ await fabricClient.ServiceManager.UpdateServiceAsync(new Uri("fabric:/AppName/Se
 ```
 ### <a name="using-powershell"></a>Использование PowerShell
 ```posh
-$mechanism = New-Object -TypeName System.Fabric.Description.AddRemoveIncrementalNamedParitionScalingMechanism
+$mechanism = New-Object -TypeName System.Fabric.Description.AddRemoveIncrementalNamedPartitionScalingMechanism
 $mechanism.MinPartitionCount = 1
 $mechanism.MaxPartitionCount = 3
 $mechanism.ScaleIncrement = 2

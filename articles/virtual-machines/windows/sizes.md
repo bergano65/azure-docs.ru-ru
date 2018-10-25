@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 09/24/2018
+ms.date: 10/01/2018
 ms.author: jonbeck
-ms.openlocfilehash: 47253fd05cb1df96841b30357ac6e7cfe75c12c5
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: cefcad9c427770c083e6451c088ce5cfc10a68f2
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47039690"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49394477"
 ---
 # <a name="sizes-for-windows-virtual-machines-in-azure"></a>Размеры виртуальных машин Windows в Azure
 
@@ -29,12 +29,12 @@ ms.locfileid: "47039690"
 
 | type                     | Размеры           |    ОПИСАНИЕ       |
 |--------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| [Универсальные](sizes-general.md)          | B, Dsv3, Dv3, DSv2, Dv2, Av2 | Сбалансированное соотношение ресурсов ЦП и памяти. Идеальное решение для тестирования и разработки, небольших и средних баз данных, а также веб-серверов с небольшим или средним объемом трафика. |
+| [Универсальные](sizes-general.md)          | B, Dsv3, Dv3, DSv2, Dv2, Av2, DC | Сбалансированное соотношение ресурсов ЦП и памяти. Идеальное решение для тестирования и разработки, небольших и средних баз данных, а также веб-серверов с небольшим или средним объемом трафика. |
 | [Оптимизированные для вычислений](sizes-compute.md)        | Fsv2 Fs, F             | Высокое соотношение ресурсов ЦП и памяти. Подходят для веб-серверов со средним объемом трафика, сетевых устройств, пакетных процессов и серверов приложений.        |
 | [Оптимизированные для памяти](../virtual-machines-windows-sizes-memory.md)         | Esv3, Ev3, M, GS, G, DSv2, Dv2  | Высокое соотношение ресурсов памяти и ядра. Отлично подходят для серверов реляционной базы данных, кэша среднего и большого объема, а также выполняющейся в памяти аналитики.                 |
 | [Оптимизированные для хранилища](../virtual-machines-windows-sizes-storage.md)        | Ls                | Высокая пропускная способность дисков и количество операций ввода-вывода. Идеальный вариант для работы с большими данными, а также с базами данных SQL и NoSQL.                                                         |
 | [GPU](sizes-gpu.md)            | NV, NVv2, NC, NCv2, NCv3, ND            | Специализированные виртуальные машины, предназначенные для ресурсоемкой отрисовки изображений и редактирования видео, а также для обучения моделей и формирования выводов с помощью глубокого обучения. Доступны виртуальные машины одним или несколькими GPU.       |
-| [Для высокопроизводительных вычислений](sizes-hpc.md) | H       | Виртуальные машины с самыми быстрыми и мощными ЦП, для которых можно настроить сетевые интерфейсы с высокой пропускной способностью (RDMA). 
+| [Для высокопроизводительных вычислений](sizes-hpc.md) | H       | Виртуальные машины с самыми быстрыми и мощными ЦП, для которых можно настроить сетевые интерфейсы с высокой пропускной способностью (RDMA). |
 
 
 <br> 
@@ -49,9 +49,9 @@ ms.locfileid: "47039690"
 
 Сведения об использовании Rest API, чтобы получить сведения о размерах виртуальных машин, см. в следующих статьях:
 
-- [List available virtual machine sizes for resizing](https://docs.microsoft.com/rest/api/compute/virtualmachines/listavailablesizes) (Вывод доступных размеров виртуальных машин для изменения размеров)
-- [List available virtual machine sizes for a subscription](https://docs.microsoft.com/rest/api/compute/virtualmachinesizes/list) (Вывод доступных размеров виртуальных машин для подписки)
-- [List available virtual machine sizes in an availability set](https://docs.microsoft.com/rest/api/compute/availabilitysets/listavailablesizes) (Вывод доступных размеров виртуальных машин в группе доступности)
+- [List available virtual machine sizes for resizing](https://docs.microsoft.com/rest/api/compute/virtualmachines/virtualmachines_listavailablesizes) (Вывод доступных размеров виртуальных машин для изменения размеров)
+- [List available virtual machine sizes for a subscription](https://docs.microsoft.com/rest/api/compute/virtualmachines/virtualmachines_listall) (Вывод доступных размеров виртуальных машин для подписки)
+- [List available virtual machine sizes in an availability set](https://docs.microsoft.com/rest/api/compute/availabilitysets/availabilitysets_listavailablesizes) (Вывод доступных размеров виртуальных машин в группе доступности)
 
 ## <a name="acu"></a>ACU
 

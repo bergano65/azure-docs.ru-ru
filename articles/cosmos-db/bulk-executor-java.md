@@ -1,25 +1,26 @@
 ---
-title: Выполнение массовых операций в Azure Cosmos DB с помощью библиотеки Java массового исполнителя | Документы Майкрософт
-description: Массовый импорт и обновление документов в контейнерах Azure Cosmos DB с помощью библиотеки Java массового исполнителя в Azure Cosmos DB.
-keywords: Массовый исполнитель Java
+title: Выполнение операций массового импорта и массового обновления в Azure Cosmos DB с помощью библиотеки массового исполнителя Java | Документация Майкрософт
+description: Массовый импорт и массовое обновление документов Azure Cosmos DB с помощью библиотеки массового исполнителя Java.
 services: cosmos-db
 author: tknandu
 manager: kfile
 ms.service: cosmos-db
 ms.devlang: java
 ms.topic: conceptual
-ms.date: 05/07/2018
+ms.date: 10/16/2018
 ms.author: ramkris
-ms.openlocfilehash: 9285b0ea50b7207aa40cea2dcab50f79863ffda9
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: a22cd65ef5d4ef22038a8506359d1036e829db4d
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44050193"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49362115"
 ---
 # <a name="use-bulk-executor-java-library-to-perform-bulk-operations-on-azure-cosmos-db-data"></a>Выполнение массовых операций с данными Azure Cosmos DB с помощью библиотеки Java массового исполнителя
 
 В этом руководстве приведены инструкции по использованию библиотеки BulkExecutor Java в Azure Cosmos DB для импорта и обновления документов Azure Cosmos DB. Подробнее о библиотеке массового исполнителя и о том, как с ее помощью эффективно использовать пропускную способность и хранилище, можно узнать в статье с [общими сведениями о библиотеке массового исполнителя](bulk-executor-overview.md). В этом руководстве вы создадите приложение Java, формирующее случайные документы, которые массово импортируются в контейнер Azure Cosmos DB. После импорта вы массово обновите некоторые свойства документа. 
+
+Сейчас библиотека массового исполнителя поддерживается только учетными записями API SQL Azure Cosmos DB и API Gremlin. В этой статье описывается, как использовать библиотеку массового исполнителя .NET с учетными записями API SQL. Дополнительные сведения об использовании библиотеки массового исполнителя .NET с помощью API Gremlin см. в разделе [Использование библиотеки BulkExecutor .NET для выполнения массовых операций с графами в API Gremlin в Azure Cosmos DB](bulk-executor-graph-dotnet.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

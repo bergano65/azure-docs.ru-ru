@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/31/2018
 ms.author: cshoe
 ms.component: common
-ms.openlocfilehash: 268459fde7a622079656e637d2c51562cea358a4
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 584db1400ddd2b4f447b7ca397f2c98b701c7848
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45730955"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49341877"
 ---
 # <a name="azure-storage-security-guide"></a>Руководство по безопасности службы хранилища Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "45730955"
 - Все данные, записываемые в службу хранилища Azure, автоматически шифруются с помощью [шифрования службы хранилища (SSE)](storage-service-encryption.md). Дополнительные сведения см. в статье [Announcing Default Encryption for Azure Blobs, Files, Table and Queue Storage](https://azure.microsoft.com/blog/announcing-default-encryption-for-azure-blobs-files-table-and-queue-storage/) (Представление стандартных методов шифрования для хранилища BLOB-объектов, файлов, таблиц и очередей Azure).
 - Служба хранилища Azure поддерживает Azure Active Directory (Azure AD) и управление доступом на основе ролей (RBAC) для операций управления ресурсами и для операций с данными, как описано ниже:   
     - Роли RBAC можно назначать субъектам безопасности в пределах учетной записи хранения и использовать Azure AD для авторизации операций управления ресурсами, таких как управление ключами.
-    - Для операций с данными в службах больших двоичных объектов и очередей функция интеграции Azure AD поддерживается в режиме предварительной версии. Роли RBAC можно назначать субъекту безопасности или управляемому экземпляру службы в пределах подписки, группы ресурсов, учетной записи хранения, отдельного контейнера или очереди. Дополнительные сведения см. в статье [Authenticate access to Azure Storage using Azure Active Directory (Preview)](storage-auth-aad.md) (Аутентификация доступа к службе хранилища Azure с помощью Azure Active Directory (предварительная версия)).   
+    - Для операций с данными в службах больших двоичных объектов и очередей функция интеграции Azure AD поддерживается в режиме предварительной версии. Роли RBAC можно назначать субъекту безопасности или управляемому удостоверению для ресурсов Azure в пределах подписки, группы ресурсов, учетной записи хранения, отдельного контейнера или очереди. Дополнительные сведения см. в статье [Authenticate access to Azure Storage using Azure Active Directory (Preview)](storage-auth-aad.md) (Аутентификация доступа к службе хранилища Azure с помощью Azure Active Directory (предварительная версия)).   
 - Защитить данные, передаваемые между приложением и Azure, можно с помощью [шифрования на стороне клиента](../storage-client-side-encryption.md), HTTPS или SMB 3.0.  
 - Диски ОС и данных, используемые виртуальными машинами Azure, можно шифровать с помощью службы [шифрования дисков Azure](../../security/azure-security-disk-encryption.md). 
 - Делегированный доступ к объектам данных в службе хранилища Azure можно предоставлять с помощью [подписанных URL-адресов](../storage-dotnet-shared-access-signature-part-1.md).

@@ -1,20 +1,21 @@
 ---
-title: Конечная точка для поиска сущностей | Документация Майкрософт
+title: Конечная точка API Bing для поиска сущностей
+titlesuffix: Azure Cognitive Services
 description: Сводные сведения о конечной точке API для поиска сущностей.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-entity-search
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/05/2017
 ms.author: v-gedod
-ms.openlocfilehash: a2557c6000445544b3b47a05d7d356ccaa9928b4
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: d781a4b3cd0119f5624b4dd20b514894ea339414
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380025"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48816588"
 ---
 # <a name="entity-search-endpoint"></a>Конечная точка для поиска сущностей
 **API для поиска сущностей** включает одну конечную точку, которая возвращает сущности из Интернета на основе запроса.

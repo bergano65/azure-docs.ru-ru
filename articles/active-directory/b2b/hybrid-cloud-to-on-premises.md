@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.component: B2B
 ms.topic: conceptual
-ms.date: 04/20/2018
+ms.date: 10/10/2018
 ms.author: mimart
 author: msmimart
 manager: mtillman
 ms.reviewer: sasubram
-ms.openlocfilehash: 65f43eb28ef2ef51409469934d59e1add7e83666
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 57c807b7729b58d2537ee09ddd5d05d4f2afb55e
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46297220"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49068849"
 ---
 # <a name="grant-b2b-users-in-azure-ad-access-to-your-on-premises-applications"></a>Предоставление пользователям B2B в Azure AD доступа к локальным приложениям
 
@@ -65,9 +65,9 @@ ms.locfileid: "46297220"
 - Вы можете настроить для гостевого пользователя политику многофакторной проверки подлинности (MFA), чтобы она обязательно использовалась при аутентификации через прокси приложений. Дополнительные сведения см. в статье [Условный доступ пользователей в службе совместной работы B2B](conditional-access.md).
 - К локальным пользователям применяются любые правила спонсорства, проверки доступа, проверки учетных записей и пр., которые определены для облачного пользователя B2B. Например, если политика управления жизненным циклом удаляет облачного пользователя, соответствующий ему локальный пользователь также удаляется службой синхронизации MIM или AAD Connect. Дополнительные сведения см. в статье [Управление гостевым доступом с помощью проверок доступа Azure AD](../governance/manage-guest-access-with-access-reviews.md).
 
-### <a name="create-b2b-guest-user-objects-through-mim-preview"></a>Создание объектов гостевых пользователей B2B через MIM (предварительная версия)
+### <a name="create-b2b-guest-user-objects-through-mim"></a>Создание объектов гостевых пользователей B2B через MIM
 
-Сведения о том, как с помощью пакета обновления 1 для MIM 2016 и агента управления MIM для Microsoft Graph создавать объекты гостевых пользователей в локальном каталоге см. в руководстве по [совместной работе AAD B2B с Microsoft Identity Manager 2016 SP1 с использованием прокси приложений Azure (предварительная версия)](https://docs.microsoft.com/microsoft-identity-manager/microsoft-identity-manager-2016-graph-b2b-scenario).
+Сведения о том, как с помощью пакета обновления 1 для MIM 2016 и агента управления MIM для Microsoft Graph создавать объекты гостевых пользователей в локальном каталоге, см. в статье [Совместная работа Azure Active Directory B2B с Microsoft Identity Manager (MIM) 2016 с пакетом обновления 1 (SP1) и Azure Active Directory Application Proxy](https://docs.microsoft.com/microsoft-identity-manager/microsoft-identity-manager-2016-graph-b2b-scenario).
 
 ### <a name="create-b2b-guest-user-objects-through-a-script-preview"></a>Создание объектов гостевых пользователей B2B через скрипт (предварительная версия)
 

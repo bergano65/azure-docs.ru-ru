@@ -17,18 +17,18 @@ ms.date: 06/06/2017
 ms.author: celested
 ms.reviewer: hirsin, nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: ce29c6a9df49721ca23f84da3f1c97bcc83ab4a7
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: cf62d961d7bd2b6ff2cb03ee577368f2ee7b8452
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39580893"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49318834"
 ---
 # <a name="service-to-service-calls-using-delegated-user-identity-in-the-on-behalf-of-flow"></a>Вызовы между службами с использованием делегированного удостоверения пользователя в потоке On-Behalf-Of
 Поток On-Behalf-Of (OBO) в OAuth 2.0 используется в том случае, когда приложение вызывает API службы или веб-API, который, в свою очередь, должен вызывать другой API службы или веб-API. Идея состоит в том, чтобы распространить делегированное удостоверение пользователя и разрешения с помощью цепочки запросов. Для того чтобы служба среднего уровня могла выполнять запросы к службе нижнего уровня с проверкой подлинности, служба среднего уровня должна защитить токен доступа из Azure Active Directory (Azure AD) от имени пользователя.
 
 > [!IMPORTANT]
-> Общедоступные клиенты, использующие [неявное предоставление OAuth 2.0](v1-oauth2-implicit-grant-flow.md), не могут использовать поток OBO. Эти клиенты должны передать свой маркер доступа в конфиденциальный клиент среднего уровня для выполнения потоков OBO. Дополнительные сведения о том, какие клиенты могут выполнять вызовы OBO, см. в разделе [Ограничения клиентов](#client-limitations).
+> Начиная с мая 2018 года `id_token` невозможно использовать для потока On-Behalf-Of. Для выполнения потоков OBO одностраничным приложениям необходимо передать свой маркер **доступа** в конфиденциальный клиент среднего уровня. В разделе [Ограничения](#client-limitations) представлены дополнительные сведения о том, какие клиенты могут выполнять вызовы On-Behalf-Of.
 
 ## <a name="on-behalf-of-flow-diagram"></a>Схема потока On-Behalf-Of
 Предположим, что пользователь прошел проверку подлинности для приложения с использованием [потока для предоставления кода проверки подлинности в OAuth 2.0](v1-protocols-oauth-code.md). На этом этапе приложение содержит токен доступа (токен A) с утверждениями пользователя и разрешение на доступ к веб-API среднего уровня (API A). Теперь API A должен выполнить запрос к веб-API нижнего уровня (API B) с проверкой подлинности.
@@ -202,7 +202,7 @@ Host: graph.windows.net
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCIsImtpZCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLndpbmRvd3MubmV0IiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMjYwMzljY2UtNDg5ZC00MDAyLTgyOTMtNWIwYzUxMzRlYWNiLyIsImlhdCI6MTQ5MzQyMzE2OCwibmJmIjoxNDkzNDIzMTY4LCJleHAiOjE0OTM0NjY5NTEsImFjciI6IjEiLCJhaW8iOiJBU1FBMi84REFBQUE1NnZGVmp0WlNjNWdBVWwrY1Z0VFpyM0VvV2NvZEoveWV1S2ZqcTZRdC9NPSIsImFtciI6WyJwd2QiXSwiYXBwaWQiOiI2MjUzOTFhZi1jNjc1LTQzZTUtOGU0NC1lZGQzZTMwY2ViMTUiLCJhcHBpZGFjciI6IjEiLCJlX2V4cCI6MzAyNjgzLCJmYW1pbHlfbmFtZSI6IlRlc3QiLCJnaXZlbl9uYW1lIjoiTmF2eWEiLCJpcGFkZHIiOiIxNjcuMjIwLjEuMTc3IiwibmFtZSI6Ik5hdnlhIFRlc3QiLCJvaWQiOiIxY2Q0YmNhYy1iODA4LTQyM2EtOWUyZi04MjdmYmIxYmI3MzkiLCJwbGF0ZiI6IjMiLCJwdWlkIjoiMTAwMzNGRkZBMTJFRDdGRSIsInNjcCI6IlVzZXIuUmVhZCIsInN1YiI6IjNKTUlaSWJlYTc1R2hfWHdDN2ZzX0JDc3kxa1l1ekZKLTUyVm1Zd0JuM3ciLCJ0aWQiOiIyNjAzOWNjZS00ODlkLTQwMDItODI5My01YjBjNTEzNGVhY2IiLCJ1bmlxdWVfbmFtZSI6Im5hdnlhQGRkb2JhbGlhbm91dGxvb2sub25taWNyb3NvZnQuY29tIiwidXBuIjoibmF2eWFAZGRvYmFsaWFub3V0bG9vay5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiJ4Q3dmemhhLVAwV0pRT0x4Q0dnS0FBIiwidmVyIjoiMS4wIn0.cqmUVjfVbqWsxJLUI1Z4FRx1mNQAHP-L0F4EMN09r8FY9bIKeO-0q1eTdP11Nkj_k4BmtaZsTcK_mUygdMqEp9AfyVyA1HYvokcgGCW_Z6DMlVGqlIU4ssEkL9abgl1REHElPhpwBFFBBenOk9iHddD1GddTn6vJbKC3qAaNM5VarjSPu50bVvCrqKNvFixTb5bbdnSz-Qr6n6ACiEimiI1aNOPR2DeKUyWBPaQcU5EAK0ef5IsVJC1yaYDlAcUYIILMDLCD9ebjsy0t9pj_7lvjzUSrbMdSCCdzCqez_MSNxrk1Nu9AecugkBYp3UVUZOIyythVrj6-sVvLZKUutQ
 ```
 ## <a name="client-limitations"></a>Ограничения клиентов
-Общедоступные клиенты с URL-адресами ответа с подстановочными знаками не могут использовать `id_token` для потоков OBO. Тем не менее, конфиденциальный клиент может активировать маркеры доступа, полученные с помощью потока неявного предоставления, даже если для общедоступного клиента зарегистрирован универсальный код ресурса (URI) перенаправления с подстановочными знаками.
+Общедоступные клиенты с URL-адресами ответа с подстановочными знаками не могут использовать `id_token` для потоков OBO. Тем не менее конфиденциальный клиент может активировать маркеры **доступа**, полученные с помощью потока неявного предоставления, даже если для общедоступного клиента зарегистрирован универсальный код ресурса (URI) перенаправления с подстановочными знаками.
 
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о протоколе OAuth 2.0 и другом способе проверки подлинности между службами с использованием учетных данных клиента.

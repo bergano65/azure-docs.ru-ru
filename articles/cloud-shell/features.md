@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: juluk
-ms.openlocfilehash: 2184d006bb99d57f50e71c0096d68b7a0b69a219
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 9a6f7aeea799787becf0bb99cdfa08bed4e9d355
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47162293"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48867465"
 ---
 # <a name="features--tools-for-azure-cloud-shell"></a>Функции и средства для Azure Cloud Shell
 
@@ -36,9 +36,9 @@ Cloud Shell безопасно и автоматически выполняет 
 ### <a name="home-persistence-across-sessions"></a>Сохранение каталога $Home между сеансами
 
 Чтобы сохранять файлы между сеансами, при первом запуске Cloud Shell предлагается присоединить общую папку Azure.
-По завершении настройки Cloud Shell будет автоматически подключать хранилище (подключенное как `$Home\clouddrive`) для всех будущих сеансов.
-Кроме того, ваш каталог `$Home` сохраняется в виде IMG-файла в файловом ресурсе Azure.
-Файлы вне `$Home` и состояние компьютера не сохраняются между сеансами. Следуйте рекомендациям при хранении секретов, например ключей SSH. Для таких служб, как [Azure Key Vault, предусмотрены руководства по настройке](https://docs.microsoft.com/azure/key-vault/key-vault-manage-with-cli2#prerequisites).
+По завершении настройки Cloud Shell будет автоматически подключать хранилище (подключенное как `$HOME\clouddrive`) для всех будущих сеансов.
+Кроме того, ваш каталог `$HOME` сохраняется в виде IMG-файла в файловом ресурсе Azure.
+Файлы вне `$HOME` и состояние компьютера не сохраняются между сеансами. Следуйте рекомендациям при хранении секретов, например ключей SSH. Для таких служб, как [Azure Key Vault, предусмотрены руководства по настройке](https://docs.microsoft.com/azure/key-vault/key-vault-manage-with-cli2#prerequisites).
 
 [Дополнительные сведения о сохранении файлов в Cloud Shell.](persisting-shell-storage.md)
 
@@ -60,13 +60,13 @@ PowerShell в Cloud Shell запускается на диске Azure (`Azure:`
 |Категория   |ИМЯ   |
 |---|---|
 |Средства Linux            |bash<br> zsh<br> sh<br> tmux<br> dig<br>               |
-|Инструменты Azure            |[Azure CLI](https://github.com/Azure/azure-cli) и [классический интерфейс командной строки Azure](https://github.com/Azure/azure-xplat-cli)<br> [AzCopy](https://docs.microsoft.com/azure/storage/storage-use-azcopy)<br> [Интерфейс командной строки Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli) |
-|Текстовые редакторы           |vim<br> nano<br> emacs       |
+|Инструменты Azure            |[Azure CLI](https://github.com/Azure/azure-cli) и [классический интерфейс командной строки Azure](https://github.com/Azure/azure-xplat-cli)<br> [AzCopy](https://docs.microsoft.com/azure/storage/storage-use-azcopy)<br> [Интерфейс командной строки Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli)<br> [Batch Shipyard](https://github.com/Azure/batch-shipyard)<br> [blobxfer](https://github.com/Azure/blobxfer)|
+|Текстовые редакторы           |vim<br> nano<br> emacs<br> Код       |
 |Система управления версиями         |git                    |
 |Инструменты сборки            |make<br> maven<br> npm<br> pip         |
 |Контейнеры             |[Docker CLI](https://github.com/docker/cli)/[Компьютер Docker](https://github.com/docker/machine)<br> [Kubectl](https://kubernetes.io/docs/user-guide/kubectl-overview/)<br> [Helm](https://github.com/kubernetes/helm)<br> [Интерфейс командной строки DC/OS](https://github.com/dcos/dcos-cli)         |
 |Базы данных              |Клиент MySQL<br> Клиент PostgreSQL<br> [Служебная программа sqlcmd](https://docs.microsoft.com/sql/tools/sqlcmd-utility)<br> [mssql-scripter](https://github.com/Microsoft/sql-xplat-cli) |
-|Другие                  |Клиент iPython<br> [Интерфейс командной строки Cloud Foundry](https://github.com/cloudfoundry/cli)<br> [Terraform](https://www.terraform.io/docs/providers/azurerm/)<br> [Ansible](https://www.ansible.com/microsoft-azure)<br> [Chef InSpec](https://www.chef.io/inspec/)| 
+|Другие                  |Клиент iPython<br> [Интерфейс командной строки Cloud Foundry](https://github.com/cloudfoundry/cli)<br> [Terraform](https://www.terraform.io/docs/providers/azurerm/)<br> [Ansible](https://www.ansible.com/microsoft-azure)<br> [Chef InSpec](https://www.chef.io/inspec/)|
 
 ## <a name="language-support"></a>Поддержка языков
 
@@ -76,7 +76,7 @@ PowerShell в Cloud Shell запускается на диске Azure (`Azure:`
 |Go         |1.9        |
 |Java       |1.8        |
 |Node.js    |8.9.4      |
-|PowerShell |[6.1.0 (предварительная версия 4)](https://github.com/PowerShell/powershell/releases)       |
+|PowerShell |[6.1.0](https://github.com/PowerShell/powershell/releases)       |
 |Python     |2.7 и 3.5 (по умолчанию)|
 
 ## <a name="next-steps"></a>Дополнительная информация

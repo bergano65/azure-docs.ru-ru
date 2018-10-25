@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/27/2018
+ms.date: 10/04/2018
 ms.author: magoedte
-ms.openlocfilehash: df145ebe6276c911ef3064e3f8ff7a23a2faa870
-ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
+ms.openlocfilehash: 9fa0df0bbf363a7c751de460fd98740b4314f996
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47423040"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48831200"
 ---
 # <a name="how-to-onboard-azure-monitor-for-containers"></a>Подключение Azure Monitor для контейнеров
 В этой статье объясняется, как настроить Azure Monitor для контейнеров, чтобы отслеживать производительность рабочих нагрузок, развернутых в средах Kubernetes и размещенных в [Службе Azure Kubernetes](https://docs.microsoft.com/azure/aks/).
@@ -39,8 +39,7 @@ ms.locfileid: "47423040"
 Возможность отслеживать производительность зависит от контейнерного агента Log Analytics для Linux, который собирает данные о событиях и производительности из всех узлов в кластере. Этот агент автоматически развертывается и регистрируется в указанной рабочей области Log Analytics после включения мониторинга контейнеров. 
 
 >[!NOTE] 
->Если вы уже развернули кластер AKS, то можете включить мониторинг с помощью Azure CLI или предоставив шаблон Azure Resource Manager, как показано далее в этой статье. Невозможно использовать `kubectl` для обновления, удаления, повторного развертывания или развертывания агента. 
->
+>Если вы уже развернули кластер AKS, то можете включить мониторинг с помощью Azure CLI или предоставив шаблон Azure Resource Manager, как показано далее в этой статье. Невозможно использовать `kubectl` для обновления, удаления, повторного развертывания или развертывания агента. Развертывание шаблона должно проходить в той же группе ресурсов, что и кластер.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 Войдите на [портале Azure](https://portal.azure.com). 
@@ -71,6 +70,18 @@ ms.locfileid: "47423040"
 
 ```azurecli
 az aks enable-addons -a monitoring -n MyExistingManagedCluster -g MyExistingManagedClusterRG  
+```
+
+Результат должен выглядеть так:
+
+```azurecli
+provisioningState       : Succeeded
+```
+
+Если вместо этого потребуется выполнить интеграцию в существующую рабочую область, то для ее указания используйте следующую команду.
+
+```azurecli
+az aks enable-addons -a monitoring -n MyExistingManagedCluster -g MyExistingManagedClusterRG --workspace-resource-id <ExistingWorkspaceResourceID> 
 ```
 
 Результат должен выглядеть так:
@@ -124,6 +135,10 @@ provisioningState       : Succeeded
 * идентификатор ресурса контейнера AKS; 
 * группу ресурсов, в которой развернут кластер;
 * рабочую область Log Analytics и регион для создания рабочей области. 
+
+>[!NOTE]
+>Развертывание шаблона должно проходить в той же группе ресурсов, что и кластер.
+>
 
 Рабочую область Log Analytics нужно создавать вручную. Для создания рабочей области можно использовать [Azure Resource Manager](../log-analytics/log-analytics-template-workspace-configuration.md), [PowerShell](https://docs.microsoft.com/azure/log-analytics/scripts/log-analytics-powershell-sample-create-workspace?toc=%2fpowershell%2fmodule%2ftoc.json) или [портал Azure](../log-analytics/log-analytics-quick-create-workspace.md).
 

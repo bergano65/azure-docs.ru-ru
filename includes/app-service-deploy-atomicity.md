@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/08/2018
 ms.author: cephalin
 ms.custom: include file
-ms.openlocfilehash: ac2cf4d688b1bdc54ed2d7341f0e195d3b2fe42d
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 91a4a9ae1d3d84f1396adad07d1cda73ee3747c9
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35236475"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49312424"
 ---
 ## <a name="what-happens-to-my-app-during-deployment"></a>Что происходит с моим приложением во время развертывания?
 
@@ -21,4 +21,4 @@ ms.locfileid: "35236475"
 
 - Остановите приложение или включите для него автономный режим на время развертывания. Дополнительные сведения см. в разделе [Dealing with locked files during deployment](https://github.com/projectkudu/kudu/wiki/Dealing-with-locked-files-during-deployment) (Устранение проблем из-за заблокированных файлов при развертывании).
 - Выполняйте развертывание в [промежуточный слот](../articles/app-service/web-sites-staged-publishing.md) с включенным [автоматическим переключением](../articles/app-service/web-sites-staged-publishing.md#configure-auto-swap). 
-- Используйте [Run-from-Zip](https://github.com/Azure/app-service-announcements/issues/84).
+- Используйте [запуск из пакета](https://github.com/Azure/app-service-announcements/issues/84) вместо этого.

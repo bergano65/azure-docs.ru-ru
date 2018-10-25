@@ -1,20 +1,29 @@
 ---
 title: Заметки о выпуске Пользовательской службы визуального распознавания
+titlesuffix: Azure Cognitive Services
 services: cognitive-services
 author: anrothMSFT
-manager: corncar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: custom-vision
+ms.topic: conceptual
 ms.date: 08/28/2018
 ms.author: anroth
-ms.openlocfilehash: 8423051fa5169eb8acddc7297e36188e297cb9e4
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: 8b4ba1601a7c5a9f523f7f8145a032861aac5d8c
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43288660"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48901334"
 ---
 # <a name="custom-vision-service-release-notes"></a>Заметки о выпуске Пользовательской службы визуального распознавания
+
+## <a name="october-9-2018"></a>9 октября 2018 г.
+- Обнаружение объектов вводит предварительную платную версию. Теперь можно создавать проекты обнаружения объекта с ресурсом Azure.
+- Добавлена ​​функция "Переместить в Azure" на веб-сайт, чтобы было проще обновить проект ограниченной пробной версии для связи с Azure. Связанный проект ресурсов (F0 или S0.) Его можно найти на странице "Параметры" для вашего продукта.  
+- Добавлен экспорт ONNX 1.2, для поддержки Windows с обновленной версией Windows "Машинное обучение" (октябрь 2018).
+Исправлены ошибки, включая экспорт ONNX с помощью специальных символов. 
+
 
 ## <a name="august-14-2018"></a>14 августа 2018 г.
 - На сайт customvision.ai добавлено мини-приложение "Начало работы", направляющее пользователя при обучении проекту. 

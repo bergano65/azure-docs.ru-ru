@@ -2,18 +2,17 @@
 title: Рекомендации по использованию реестра контейнеров Azure
 description: Узнайте, как эффективно использовать реестр контейнеров Azure, следуя приведенным ниже рекомендациям.
 services: container-registry
-author: mmacy
-manager: jeconnoc
+author: dlepow
 ms.service: container-registry
-ms.topic: quickstart
-ms.date: 04/10/2018
-ms.author: marsma
-ms.openlocfilehash: a3932ff621782b8ab97f27ef052aeee8e1d2a3ac
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.topic: article
+ms.date: 09/27/2018
+ms.author: danlep
+ms.openlocfilehash: e22acc6e698d9b14a55145d8f23f5f773e6c39fd
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39423510"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48857709"
 ---
 # <a name="best-practices-for-azure-container-registry"></a>Рекомендации по использованию реестра контейнеров Azure
 
@@ -66,31 +65,25 @@ contoso.azurecr.io/marketing/2017-fall/concertpromotions/campaign:218.42
 
 Ограничения хранилища для каждого [номера SKU реестра контейнеров][container-registry-skus] предназначены для согласования с типичным сценарием: **Базовый** — для начала работы, **Стандартный** — для большинства рабочих приложений, **Премиум** — для гипермасштабируемой производительности и [георепликации][container-registry-geo-replication]. На протяжении жизненного цикла вашего реестра вам необходимо управлять его размером, периодически удаляя неиспользуемое содержимое.
 
-Данные о текущем использовании реестра можно найти в колонке **Обзор** реестра контейнеров на портале Azure:
+Используйте команду Azure CLI [az acr show-usage][az-acr-show-usage] для отображения текущего размера реестра.
+
+```console
+$ az acr show-usage --resource-group myResourceGroup --name myregistry --output table
+NAME      LIMIT         CURRENT VALUE    UNIT
+--------  ------------  ---------------  ------
+Size      536870912000  185444288        Bytes
+Webhooks  100                            Count
+```
+
+Также можно найти текущее хранилище, используемое в **обзоре** реестра на портале Azure.
 
 ![Сведения об использовании реестра на портале Azure][registry-overview-quotas]
 
-Размером реестра можно управлять с помощью [Azure CLI][azure-cli] или портала [Azure][azure-portal]. Удаление образов и репозиториев поддерживается только для управляемых номеров SKU ("Базовый", "Стандартный", "Премиум"). Нельзя удалять репозитории, образы или теги в реестре уровня "Классический".
+### <a name="delete-image-data"></a>Удаление данных образа
 
-### <a name="delete-in-azure-cli"></a>Удаление в Azure CLI
+Реестр контейнеров Azure поддерживает несколько методов для удаления данных образа из реестра контейнеров. Можно удалить образы с использованием тега или манифеста хэш-кода или удалить весь репозиторий.
 
-Чтобы удалить репозиторий или его содержимое, используйте команду [az acr repository delete][az-acr-repository-delete].
-
-Чтобы удалить репозиторий, включая все теги и данные на уровне образа в репозитории, при выполнении команды [az acr repository delete][az-acr-repository-delete] укажите только имя репозитория. В следующем примере мы удалим репозиторий *myapplication*, а также все содержащиеся в нем теги и данные на уровне образа.
-
-```azurecli
-az acr repository delete --name myregistry --repository myapplication
-```
-
-Вы также можете удалить данные образа из репозитория с помощью аргументов `--tag` и `--manifest`. Дополнительные сведения об этих аргументах см. в описании команды [az acr repository delete][az-acr-repository-delete].
-
-### <a name="delete-in-azure-portal"></a>Удаление на портале Azure
-
-Чтобы удалить репозиторий из реестра на портале Azure, сначала перейдите к реестру контейнеров. Затем в разделе **Службы** выберите **Репозитории** и щелкните правой кнопкой мыши репозиторий, который необходимо удалить. Выберите **Удалить**, чтобы удалить репозиторий и образы Docker, которые он содержит.
-
-![Удаление репозитория на портале Azure][delete-repository-portal]
-
-Аналогичным образом можно удалить теги из репозитория. Перейдите в репозиторий, в разделе **Теги** щелкните правой кнопкой мыши тег, который нужно удалить, и выберите **Удалить**.
+Дополнительные сведения об удалении данных образа из реестра, включая немаркированные (иногда называемые "висячие" или "потерянные") образы, см. [здесь](container-registry-delete.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -102,6 +95,7 @@ az acr repository delete --name myregistry --repository myapplication
 
 <!-- LINKS - Internal -->
 [az-acr-repository-delete]: /cli/azure/acr/repository#az-acr-repository-delete
+[az-acr-show-usage]: /cli/azure/acr#az-acr-show-usage
 [azure-cli]: /cli/azure
 [azure-portal]: https://portal.azure.com
 [container-registry-geo-replication]: container-registry-geo-replication.md

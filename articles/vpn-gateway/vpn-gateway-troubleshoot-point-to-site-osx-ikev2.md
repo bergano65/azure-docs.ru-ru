@@ -15,21 +15,21 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/27/2018
 ms.author: alzam
-ms.openlocfilehash: 1cf8195cbf65f27c71a4db18c0c61c8a25673acd
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: c370808d06f31f9d79c99ca0f20f613d9e335d60
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30247713"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49339057"
 ---
 # <a name="troubleshoot-point-to-site-vpn-connections-from-mac-os-x-vpn-clients"></a>Устранение неполадок VPN-подключений "точка — сеть" для клиентов Mac OS X
 
 Эта статья поможет вам устранить неполадки, возникающие при установке подключения "точка — сеть" из Mac OS X с использованием встроенного VPN-клиента и IKEv2. VPN-клиент Mac для IKEv2 реализует только базовые возможности и не требует дополнительных настроек. Вы можете проверить в нем только четыре параметра:
 
-* адрес сервера;
+* Адрес сервера
 * удаленный идентификатор;
 * локальный идентификатор;
-* параметры аутентификации;
+* Параметры аутентификации
 * версия ОС (10.11 или более поздняя).
 
 
@@ -63,10 +63,12 @@ ms.locfileid: "30247713"
 
 Если при выполнении описанных выше шагов не возникли ошибки в конфигурации, скачайте средство [Wireshark](https://www.wireshark.org/#download) и выполните захват пакетов.
 
-1. Отфильтруйте результаты по строке *iskmp* и найдите пакеты **IKE_SA**. Сведения о предложении SA вы найдете в разделе **Payload: Security Association** (Полезные данные: сопоставление безопасности). 
+1. Отфильтруйте результаты по строке *isakmp* и найдите пакеты **IKE_SA**. Сведения о предложении SA вы найдете в разделе **Payload: Security Association** (Полезные данные: сопоставление безопасности). 
 2. Убедитесь, что для клиента и сервера используется один и тот же набор.
 
-  ![Пакет](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/packet5.jpg)
+  ![Пакет](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/packet5.jpg) 
+  
+3. Если нет ответа сервера для трассировок сети, убедитесь, что вы включили протокол IKEv2 на странице настройки шлюза Azure на сайте портала Azure.
 
 ## <a name="next-steps"></a>Дополнительная информация
 Если потребуется дополнительная поддержка, обратитесь в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).

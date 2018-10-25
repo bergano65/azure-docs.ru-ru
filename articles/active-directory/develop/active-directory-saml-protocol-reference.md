@@ -1,5 +1,5 @@
 ---
-title: Справочник по протоколу SAML в Azure AD | Документация Майкрософт
+title: Как в Azure AD используется протокол SAML | Документация Майкрософт
 description: В этой статье содержится обзор профилей SAML для единого входа и единого выхода в Azure Active Directory.
 services: active-directory
 documentationcenter: .net
@@ -13,18 +13,19 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/21/2017
+ms.date: 10/05/2018
 ms.author: celested
 ms.custom: aaddev
-ms.reviewer: hirsin, dastrock
-ms.openlocfilehash: 067924294838459c866a0603ab092d139f1e6331
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.reviewer: hirsin
+ms.openlocfilehash: b9ae7cf9d6fd383c7cdfa3957b5d9b94c7207d50
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39579237"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48900661"
 ---
-# <a name="how-azure-active-directory-uses-the-saml-protocol"></a>Как Azure Active Directory использует протокол SAML
+# <a name="how-azure-ad-uses-the-saml-protocol"></a>Как в Azure AD используется протокол SAML
+
 Azure Active Directory (Azure AD) использует протокол SAML 2.0, чтобы приложения могли предоставлять пользователям единый вход. Профили [единого входа](single-sign-on-saml-protocol.md) и [единого выхода](single-sign-out-saml-protocol.md) SAML в Azure AD содержат сведения о том, как в службе поставщика удостоверений используются утверждения SAML, протоколы и привязки.
 
 Протокол SAML подразумевает, что поставщик удостоверений (Azure AD) и поставщик услуг (приложение) обмениваются информацией друг о друге.

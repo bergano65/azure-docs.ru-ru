@@ -13,50 +13,50 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: article
-ms.date: 03/26/2018
+ms.date: 09/25/2018
 ms.author: cynthn
-ms.openlocfilehash: 8fd88a0e3c5b387ce3ea586f6f23b3643a03e58d
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 22e28e208d46a23a2dd7e36e1c3ba4be13be928a
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39618173"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49091963"
 ---
 # <a name="upload-a-generalized-vhd-and-use-it-to-create-new-vms-in-azure"></a>Отправка универсального диска VHD и создание виртуальных машин с его помощью в Azure
 
-В этой статье описывается использование PowerShell для отправки диска VHD универсальной виртуальной машины в Azure, создание образа на основе диска VHD и создание виртуальной машины на основе этого образа. Вы можете отправить диск VHD, экспортированный из локального инструмента виртуализации или из другого облака. При использовании [Управляемых дисков](managed-disks-overview.md) для новой виртуальной машины упрощается управление виртуальными машинами и обеспечивается более высокий уровень доступности виртуальной машины, размещенной в группе доступности. 
+В этой статье описывается, как с помощью PowerShell отправить VHD универсальной виртуальной машины в Azure, создать образ на основе VHD и виртуальную машину на основе этого образа. Вы можете отправить диск VHD, экспортированный из локального инструмента виртуализации или из другого облака. При использовании [Управляемых дисков](managed-disks-overview.md) для новой виртуальной машины упрощается управление виртуальными машинами и обеспечивается более высокий уровень доступности виртуальной машины, размещенной в группе доступности. 
 
-Если необходимо использовать пример скрипта, см. статью [Sample script to upload a VHD to Azure and create a new VM](../scripts/virtual-machines-windows-powershell-upload-generalized-script.md) (Пример скрипта для отправки VHD в Azure и создания виртуальной машины).
+Если необходим пример сценария, см. статью [Пример сценария для отправки VHD в Azure и создания виртуальной машины](../scripts/virtual-machines-windows-powershell-upload-generalized-script.md).
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-- Прежде чем передавать в Azure виртуальный жесткий диск любого типа, следует выполнить инструкции из статьи [Подготовка диска VHD или VHDX для Windows к отправке в Azure](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+- Прежде чем передавать в Azure какой-либо виртуальный жесткий диск, следует выполнить инструкции из статьи [Подготовка диска VHD или VHDX для Windows к отправке в Azure](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 - Прежде чем начать миграцию на [Управляемые диски](managed-disks-overview.md), внимательно изучите [этот раздел](on-prem-to-azure.md#plan-for-the-migration-to-managed-disks).
-- Для работы с этой статьей требуется модуль AzureRM 5.6 или более поздней версии. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable AzureRM.Compute`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
+- Для работы с этой статьей требуется модуль AzureRM 5.6 или более поздней версии. Чтобы узнать, какая версия используется, выполните команду ` Get-Module -ListAvailable AzureRM.Compute`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
 
 
-## <a name="generalize-the-source-vm-using-sysprep"></a>Подготовка исходной виртуальной машины к использованию с помощью Sysprep
+## <a name="generalize-the-source-vm-by-using-sysprep"></a>Подготовка исходной виртуальной машины к использованию с помощью Sysprep
 
 Помимо прочих действий Sysprep удаляет все сведения о вашей учетной записи и подготавливает машину к использованию в качестве образа. Дополнительные сведения о Sysprep приведены в [обзоре Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).
 
-Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в статье [Sysprep Support for Server Roles](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles) (Поддержка серверных ролей в Sysprep).
+Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в разделе [Поддержка ролей сервера в Sysprep](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles).
 
 > [!IMPORTANT]
-> Если вы еще не отправили виртуальный жесткий диск в Azure и собираетесь запустить Sysprep первый раз, прежде чем это делать, [подготовьте виртуальную машину](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
+> Если вы хотите запустить Sysprep перед отправкой виртуального жесткого диска в Azure в первый раз, [подготовьте виртуальную машину](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
 > 
 > 
 
 1. Выполните вход на виртуальную машину Windows.
-2. Откройте окно командной строки с правами администратора. Измените каталог на **%windir%\system32\sysprep** и запустите файл `sysprep.exe`.
+2. Откройте окно командной строки с правами администратора. Измените каталог на %windir%\system32\sysprep и запустите файл `sysprep.exe`.
 3. В диалоговом окне **Программа подготовки системы** выберите **Переход в окно приветствия системы (OOBE)** и убедитесь, что установлен флажок **Подготовка к использованию**.
 4. В разделе **Параметры завершения работы** выберите **Завершение работы**.
-5. Последовательно выберите **ОК**.
+5. Нажмите кнопку **ОК**.
    
     ![Запуск Sysprep](./media/upload-generalized-managed/sysprepgeneral.png)
 6. После выполнения всех необходимых действий Sysprep завершает работу виртуальной машины. Не перезапускайте виртуальную машину.
 
 
-## <a name="get-the-storage-account"></a>Получение учетной записи хранения
+## <a name="get-a-storage-account"></a>Получение учетной записи хранения
 
 Вам необходима учетная запись хранения Azure для хранения переданного образа виртуальной машины. Можно использовать существующую учетную запись хранения или создать новую. 
 
@@ -70,7 +70,7 @@ Get-AzureRmStorageAccount | Format-Table
 
 ## <a name="upload-the-vhd-to-your-storage-account"></a>Передача виртуального жесткого диска в учетную запись хранения
 
-Используйте командлет [Add-AzureRmVhd](https://docs.microsoft.com/powershell/module/azurerm.compute/add-azurermvhd), чтобы передать VHD в контейнер в учетной записи хранения. В этом примере файл *myVHD.vhd* передается из расположения *C:\Users\Public\Documents\Virtual hard disks\"* в учетную запись хранения *mystorageaccount*, входящую в группу ресурсов *myResourceGroup*. Файл будет помещен в контейнер с именем *mycontainer*; новое имя файла — *myUploadedVHD.vhd*.
+Используйте командлет [Add-AzureRmVhd](https://docs.microsoft.com/powershell/module/azurerm.compute/add-azurermvhd), чтобы передать VHD в контейнер в учетной записи хранения. В этом примере файл *myVHD.vhd* передается из расположения *C:\Users\Public\Documents\Virtual hard disks\\* в учетную запись хранения *mystorageaccount*, входящую в группу ресурсов *myResourceGroup*. Файл будет помещен в контейнер с именем *mycontainer*; новое имя файла — *myUploadedVHD.vhd*.
 
 ```powershell
 $rgName = "myResourceGroup"
@@ -105,10 +105,10 @@ C:\Users\Public\Doc...  https://mystorageaccount.blob.core.windows.net/mycontain
 - [Обозреватель хранилищ Azure для передачи больших двоичных объектов](https://azurestorageexplorer.codeplex.com/)
 - [Справочник по API REST служб хранилища импорта и экспорта](https://msdn.microsoft.com/library/dn529096.aspx)
 -   Мы рекомендуем использовать службу импорта и экспорта, если предполагаемое время передачи больше 7 дней. Чтобы оценить предполагаемое время передачи на основе размера данных и средства передачи, используйте компонент [DataTransferSpeedCalculator](https://github.com/Azure-Samples/storage-dotnet-import-export-job-management/blob/master/DataTransferSpeedCalculator.html). 
-    Импорт и экспорт можно использовать для копирования в учетную запись хранения класса Standard. Необходимо осуществить копирование из учетной записи хранения Standard в учетную запись хранения Premium с помощью схожего с AzCopy средства.
+    Импорт и экспорт можно использовать для копирования в учетную запись хранения класса Standard. Необходимо осуществить копирование из учетной записи хранения (цен. категория "Стандартный") в учетную запись хранения (цен. категория "Премиум") с помощью схожего с AzCopy инструмента.
 
 > [!IMPORTANT]
-> Если для отправки виртуального жесткого диска в Azure вы используете службу AzCopy, перед запуском сценария убедитесь, что задано значение [/BlobType:page](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy#blobtypeblock--page--append). Если в качестве места назначения выступает большой двоичный объект и этот параметр не указан, то по умолчанию AzCopy создает блочный BLOB-объект.
+> Если для отправки виртуального жесткого диска в Azure вы используете службу AzCopy, перед запуском сценария убедитесь, что задано значение [**/BlobType:page**](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy#blobtypeblock--page--append). Если в качестве места назначения выступает большой двоичный объект и этот параметр не указан, то по умолчанию AzCopy создает блочный BLOB-объект.
 > 
 > 
 

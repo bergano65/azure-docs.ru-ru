@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 09/10/2018
+ms.date: 10/07/2018
 ms.author: diberry
-ms.openlocfilehash: 78cc2a8a2b9295654d0c6264cbf4a4d634b16544
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: e65e44ec4deb07e85b9514a1685e4dbb692fd512
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47038176"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48857414"
 ---
 # <a name="enable-active-learning-by-reviewing-endpoint-utterances"></a>Включение активного обучения путем проверки фрагментов речи конечной точки
 Активное обучение является одной из трех стратегий повышения точности прогнозов, при этом самой простой в реализации. Чтобы применить активное обучение, вам нужно проверить фразы конечной точки и убедиться в правильности намерений и сущности. Служба LUIS выбирает фразы конечной точки, в правильности которых она не уверена.
@@ -36,7 +36,7 @@ ms.locfileid: "47038176"
 Проверку предлагаемых фрагментов речи необязательно выполнять ежедневно, однако эту задачу необходимо включить в регулярное обслуживание LUIS. 
 
 ## <a name="delete-review-items-programmatically"></a>Удаление элементов проверки программным способом
-Если приложение имеет большой размер, вы можете проверять некоторые фрагменты речи и удалять остальные фрагменты из списка программным способом. Для этого сначала необходимо [получить](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0a) список, а затем [удалить](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/58b6f32139e2bb139ce823c9) фрагменты речи по идентификатору.
+Используйте **[удаление фраз без названия](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/58b6f32139e2bb139ce823c9)** API. Создайте резервную копию этих высказываний перед удалением путем **[экспорта файлов журнала](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36)**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

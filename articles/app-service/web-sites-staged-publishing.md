@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/16/2016
 ms.author: cephalin
-ms.openlocfilehash: ecd58779262f6580287e6c72d3aa2aecf237a562
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.openlocfilehash: 35027b4eadba72776fd27826a389763cc0832eee
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45983115"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48044320"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Настройка промежуточных сред в службе приложений Azure
 <a name="Overview"></a>

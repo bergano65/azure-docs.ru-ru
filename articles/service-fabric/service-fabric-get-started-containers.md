@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/18/2018
 ms.author: ryanwi
-ms.openlocfilehash: 4a5ca4879f81533e3617ca9dfe9cdf8afcf2965b
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 12a2ff3f96fa86ac1b52a3138d9a9b2a30b867db
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43700177"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48803789"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-windows"></a>Создание первого контейнера-приложения Service Fabric в Windows
 > [!div class="op_single_selector"]
@@ -232,6 +232,7 @@ docker push myregistry.azurecr.io/samples/helloworldapp
 ```xml
 <ServiceManifestImport>
   <ServiceManifestRef ServiceManifestName="Guest1Pkg" ServiceManifestVersion="1.0.0" />
+  <EnvironmentOverrides CodePackageRef="FrontendService.Code">
     <EnvironmentVariable Name="HttpGatewayPort" Value="19080"/>
   </EnvironmentOverrides>
   ...
@@ -575,7 +576,7 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
 
 ## <a name="configure-the-runtime-to-remove-unused-container-images"></a>Настройка среды выполнения для удаления неиспользуемых образов контейнера
 
-Можно настроить кластер Service Fabric для удаления неиспользуемых образов контейнера из узла. Эта конфигурация позволяет месту на диске перезаписываться, если на узле находится слишком много образов контейнера. Чтобы включить эту функцию, обновите раздел `Hosting` в манифесте кластера, как показано в следующем фрагменте кода: 
+Можно настроить кластер Service Fabric для удаления неиспользуемых образов контейнера из узла. Эта конфигурация позволяет месту на диске перезаписываться, если на узле находится слишком много образов контейнера. Чтобы включить эту функцию, обновите раздел [Hosting](service-fabric-cluster-fabric-settings.md#hosting) в манифесте кластера, как показано в следующем фрагменте кода: 
 
 
 ```json
@@ -596,7 +597,7 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
 } 
 ```
 
-Образы, которые не должны удаляться, можно указать в параметре `ContainerImagesToSkip`. 
+Образы, которые не должны удаляться, можно указать в параметре `ContainerImagesToSkip`.  
 
 
 ## <a name="configure-container-image-download-time"></a>Настройка времени загрузки образа контейнера

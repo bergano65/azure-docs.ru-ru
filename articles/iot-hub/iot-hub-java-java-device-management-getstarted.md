@@ -2,19 +2,18 @@
 title: Начало работы с функцией управления Центром Интернета вещей Azure (Java) | Документы Майкрософт
 description: Использование функции управления устройствами в Центре Интернета вещей Azure для начала удаленной перезагрузки устройства. Используйте пакет SDK для устройств Azure IoT для Java, чтобы реализовать приложение имитации устройства, включающее прямой метод, и пакет SDK для служб Azure IoT для Java, чтобы реализовать приложение-службу, вызывающее прямой метод.
 author: dominicbetts
-manager: timlt
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/08/2017
 ms.author: dobett
-ms.openlocfilehash: 6a4ba8c2b88520dff028610cf64aa9b3a6e3fefd
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 75216a6be990e6b994bb62b5b833c03d4b4062c2
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38481979"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49378057"
 ---
 # <a name="get-started-with-device-management-java"></a>Начало работы с управлением устройствами (Java)
 
@@ -23,7 +22,9 @@ ms.locfileid: "38481979"
 В этом учебнике описаны следующие процедуры.
 
 * Создание экземпляра Центра Интернета вещей на портале Azure и удостоверения устройства в экземпляре Центра Интернета вещей.
+
 * Создание приложения имитации устройства, которое реализует прямой метод для перезагрузки устройства. Прямые методы вызываются из облака.
+
 * Создание приложения, вызывающего прямой метод перезагрузки в приложении имитации устройства с помощью Центра Интернета вещей. Это приложение затем отслеживает передаваемые свойства с устройства, ожидая завершения операции перезагрузки.
 
 Завершив работу с этим руководством, вы создадите два консольных приложения Java:
@@ -31,23 +32,30 @@ ms.locfileid: "38481979"
 **simulated-device**. Это приложение:
 
 * подключается к вашему Центру Интернета вещей с помощью идентификатора устройства, созданного ранее;
+
 * получает вызов прямого метода перезагрузки;
+
 * имитирует физическую перезагрузку;
+
 * возвращает время последней перезагрузки через переданное свойство.
 
 **trigger-reboot**. Это приложение:
 
 * вызывает прямой метод в приложении имитации устройства;
+
 * отображает ответ на вызов прямого метода, отправленный имитируемым устройством;
+
 * отображает обновленные переданные свойства.
 
 > [!NOTE]
-> Статья о [пакетах SDK для Центра Интернета вещей Azure][lnk-hub-sdks] содержит сведения о различных пакетах SDK, которые можно использовать для создания приложений, работающих на устройствах и в серверной части решения.
+> Статья о [пакетах SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md) содержит сведения о различных пакетах SDK, которые можно использовать для создания приложений, работающих на устройствах и в серверной части решения.
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
-* Java SE 8. <br/> В статье [Prepare your development environment][lnk-dev-setup] (Подготовка среды разработки) описывается, как установить Java для работы с этим руководством в ОС Windows или Linux.
-* Maven 3.  <br/> В статье [Prepare your development environment][lnk-dev-setup] (Подготовка среды разработки) описывается, как установить [Maven][lnk-maven] для работы с этим руководством в ОС Windows или Linux.
+* Java SE 8. <br/> В статье [Prepare your development environment](https://github.com/Azure/azure-iot-sdk-java/blob/master/doc/java-devbox-setup.md) (Подготовка среды разработки) описывается, как установить Java для работы с этим руководством в ОС Windows или Linux.
+
+* Maven 3.  <br/> В статье [Prepare your development environment](https://github.com/Azure/azure-iot-sdk-java/blob/master/doc/java-devbox-setup.md) (Подготовка среды разработки) описывается, как установить [Maven](https://maven.apache.org/what-is-maven.html) для работы с этим руководством в ОС Windows или Linux.
+
 * [Node.js версии 0.10.0 или более поздней](http://nodejs.org).
 
 [!INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
@@ -59,20 +67,22 @@ ms.locfileid: "38481979"
 В этом разделе приведена процедура создания консольного приложения Java, которое выполняет следующие действия:
 
 1. вызывает прямой метод перезагрузки в приложении имитации устройства;
-1. отображает ответ;
-1. опрашивает переданные свойства, отправляемые с устройства, для определения завершения перезагрузки.
+
+2. отображает ответ;
+
+3. опрашивает переданные свойства, отправляемые с устройства, для определения завершения перезагрузки.
 
 Это консольное приложение подключается к Центру Интернета вещей для вызова прямого метода и чтения переданных свойств.
 
 1. Создайте пустую папку с именем dm-get-started.
 
-1. В папке dm-get-started создайте проект Maven с именем **trigger-reboot**, выполнив в командной строке следующую команду. Ниже показана одна длинная команда.
+2. В папке dm-get-started создайте проект Maven с именем **trigger-reboot**, выполнив в командной строке следующую команду. Ниже показана одна длинная команда.
 
     `mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=trigger-reboot -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false`
 
-1. В командной строке перейдите к папке trigger-reboot.
+3. В командной строке перейдите к папке trigger-reboot.
 
-1. Откройте в текстовом редакторе файл pom.xml из папки trigger-reboot и добавьте зависимости, приведенные ниже, в узел **dependency**. Эта зависимость позволит вам использовать в приложении пакет iot-service-client для обмена данными с Центром Интернета вещей:
+4. Откройте в текстовом редакторе файл pom.xml из папки trigger-reboot и добавьте зависимости, приведенные ниже, в узел **dependency**. Эта зависимость позволит вам использовать в приложении пакет iot-service-client для обмена данными с Центром Интернета вещей:
 
     ```xml
     <dependency>
@@ -84,9 +94,9 @@ ms.locfileid: "38481979"
     ```
 
     > [!NOTE]
-    > Наличие последней версии пакета **iot-service-client** можно проверить с помощью [поиска Maven][lnk-maven-service-search].
+    > Наличие последней версии пакета **iot-service-client** можно проверить с помощью [поиска Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-service-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22).
 
-1. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
+5. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
 
     ```xml
     <build>
@@ -104,11 +114,11 @@ ms.locfileid: "38481979"
     </build>
     ```
 
-1. Сохраните и закройте файл pom.xml.
+6. Сохраните и закройте файл pom.xml.
 
-1. Откройте в текстовом редакторе файл trigger-reboot\src\main\java\com\mycompany\app\App.java.
+7. Откройте в текстовом редакторе файл trigger-reboot\src\main\java\com\mycompany\app\App.java.
 
-1. Добавьте в файл следующие инструкции **import** .
+8. Добавьте в файл следующие инструкции **import** .
 
     ```java
     import com.microsoft.azure.sdk.iot.service.devicetwin.DeviceMethod;
@@ -123,7 +133,7 @@ ms.locfileid: "38481979"
     import java.util.concurrent.ExecutorService;
     ```
 
-1. Добавьте в класс **App** . Замените `{youriothubconnectionstring}` строкой подключения к вашему центру Интернета вещей, которую вы записали, выполняя инструкции в разделе *Создание центра Интернета вещей*:
+9. Добавьте в класс **App** . Замените `{youriothubconnectionstring}` строкой подключения к вашему центру Интернета вещей, которую вы записали, выполняя инструкции в разделе *Создание центра Интернета вещей*:
 
     ```java
     public static final String iotHubConnectionString = "{youriothubconnectionstring}";
@@ -134,7 +144,7 @@ ms.locfileid: "38481979"
     private static final Long connectTimeout = TimeUnit.SECONDS.toSeconds(5);
     ```
 
-1. Для реализации потока, который считывает переданные свойства с двойника устройства каждые 10 секунд, добавьте следующий вложенный класс в класс **App**:
+10. Для реализации потока, который считывает переданные свойства с двойника устройства каждые 10 секунд, добавьте следующий вложенный класс в класс **App**:
 
     ```java
     private static class ShowReportedProperties implements Runnable {
@@ -155,13 +165,13 @@ ms.locfileid: "38481979"
     }
     ```
 
-1. Измените сигнатуру **основного** метода, чтобы создавать следующие исключения:
+11. Измените сигнатуру **основного** метода, чтобы создавать следующие исключения:
 
     ```java
     public static void main(String[] args) throws IOException
     ```
 
-1. Добавьте следующий код в метод **main** для вызова прямого метода перезагрузки на имитируемом устройстве:
+12. Добавьте следующий код в метод **main** для вызова прямого метода перезагрузки на имитируемом устройстве:
 
     ```java
     System.out.println("Starting sample...");
@@ -186,7 +196,7 @@ ms.locfileid: "38481979"
     }
     ```
 
-1. Добавьте следующий код в метод **main** для запуска потока, опрашивающего переданные свойства на имитируемом устройстве:
+13. Добавьте следующий код в метод **main** для запуска потока, опрашивающего переданные свойства на имитируемом устройстве:
 
     ```java
     ShowReportedProperties showReportedProperties = new ShowReportedProperties();
@@ -194,7 +204,7 @@ ms.locfileid: "38481979"
     executor.execute(showReportedProperties);
     ```
 
-1. Чтобы иметь возможность остановить приложение, добавьте следующий код в метод **main**:
+14. Чтобы иметь возможность остановить приложение, добавьте следующий код в метод **main**:
 
     ```java
     System.out.println("Press ENTER to exit.");
@@ -203,9 +213,9 @@ ms.locfileid: "38481979"
     System.out.println("Shutting down sample...");
     ```
 
-1. Сохраните и закройте файл trigger-reboot\src\main\java\com\mycompany\app\App.java.
+15. Сохраните и закройте файл trigger-reboot\src\main\java\com\mycompany\app\App.java.
 
-1. Выполните сборку внутреннего приложения **trigger-reboot** и исправьте ошибки (при наличии). В командной строке перейдите к папке trigger-reboot и выполните следующую команду:
+16. Выполните сборку внутреннего приложения **trigger-reboot** и исправьте ошибки (при наличии). В командной строке перейдите к папке trigger-reboot и выполните следующую команду:
 
     `mvn clean package -DskipTests`
 
@@ -217,9 +227,9 @@ ms.locfileid: "38481979"
 
     `mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=simulated-device -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false`
 
-1. В командной строке перейдите к папке simulated-device.
+2. В командной строке перейдите к папке simulated-device.
 
-1. Откройте в текстовом редакторе файл pom.xml из папки simulated-device и добавьте приведенную ниже зависимость в узел **dependency**. Эта зависимость позволит вам использовать в приложении пакет iot-service-client для обмена данными с Центром Интернета вещей:
+3. Откройте в текстовом редакторе файл pom.xml из папки simulated-device и добавьте приведенную ниже зависимость в узел **dependency**. Эта зависимость позволит вам использовать в приложении пакет iot-service-client для обмена данными с Центром Интернета вещей:
 
     ```xml
     <dependency>
@@ -230,9 +240,9 @@ ms.locfileid: "38481979"
     ```
 
     > [!NOTE]
-    > Наличие последней версии пакета **iot-device-client** можно проверить с помощью [поиска Maven][lnk-maven-device-search].
+    > Наличие последней версии пакета **iot-device-client** можно проверить с помощью [поиска Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-device-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22).
 
-1. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
+4. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
 
     ```xml
     <build>
@@ -250,11 +260,11 @@ ms.locfileid: "38481979"
     </build>
     ```
 
-1. Сохраните и закройте файл pom.xml.
+5. Сохраните и закройте файл pom.xml.
 
-1. Откройте в текстовом редакторе исходный файл simulated-device\src\main\java\com\mycompany\app\App.java.
+6. Откройте в текстовом редакторе исходный файл simulated-device\src\main\java\com\mycompany\app\App.java.
 
-1. Добавьте в файл следующие инструкции **import** .
+7. Добавьте в файл следующие инструкции **import** .
 
     ```java
     import com.microsoft.azure.sdk.iot.device.*;
@@ -268,7 +278,7 @@ ms.locfileid: "38481979"
     import java.util.HashSet;
     ```
 
-1. Добавьте в класс **App** . Замените `{yourdeviceconnectionstring}` строкой подключения устройства, записанной в разделе *Создание удостоверения устройства*:
+7. Добавьте в класс **App** . Замените `{yourdeviceconnectionstring}` строкой подключения устройства, записанной в разделе *Создание удостоверения устройства*:
 
     ```java
     private static final int METHOD_SUCCESS = 200;
@@ -279,7 +289,7 @@ ms.locfileid: "38481979"
     private static DeviceClient client;
     ```
 
-1. Чтобы реализовать обработчик обратного вызова для событий состояния прямого метода, добавьте следующий вложенный класс в класс **App**:
+8. Чтобы реализовать обработчик обратного вызова для событий состояния прямого метода, добавьте следующий вложенный класс в класс **App**:
 
     ```java
     protected static class DirectMethodStatusCallback implements IotHubEventCallback
@@ -291,7 +301,7 @@ ms.locfileid: "38481979"
     }
     ```
 
-1. Чтобы реализовать обработчик обратного вызова для событий состояния двойника устройства, добавьте следующий вложенный класс в класс **App**:
+9. Чтобы реализовать обработчик обратного вызова для событий состояния двойника устройства, добавьте следующий вложенный класс в класс **App**:
 
     ```java
     protected static class DeviceTwinStatusCallback implements IotHubEventCallback
@@ -303,7 +313,7 @@ ms.locfileid: "38481979"
     }
     ```
 
-1. Чтобы реализовать обработчик обратного вызова для событий свойства, добавьте следующий вложенный класс в класс **App**:
+10. Чтобы реализовать обработчик обратного вызова для событий свойства, добавьте следующий вложенный класс в класс **App**:
 
     ```java
     protected static class PropertyCallback implements PropertyCallBack<String, String>
@@ -316,7 +326,7 @@ ms.locfileid: "38481979"
     }
     ```
 
-1. Для реализации потока для имитации перезагрузка устройства добавьте указанный ниже вложенный класс в класс **App**. Поток бездействует в течение пяти секунд, а затем устанавливает переданное свойство **lastReboot**:
+11. Для реализации потока для имитации перезагрузка устройства добавьте указанный ниже вложенный класс в класс **App**. Поток бездействует в течение пяти секунд, а затем устанавливает переданное свойство **lastReboot**:
 
     ```java
     protected static class RebootDeviceThread implements Runnable {
@@ -337,7 +347,7 @@ ms.locfileid: "38481979"
     }
     ```
 
-1. Чтобы реализовать прямой метод на устройстве, добавьте указанный ниже вложенный класс в класс **App**. Когда приложение имитации получает вызов прямого метода **reboot**, оно возвращает вызывающему объекту подтверждение, а затем запускает поток для обработки перезагрузки:
+12. Чтобы реализовать прямой метод на устройстве, добавьте указанный ниже вложенный класс в класс **App**. Когда приложение имитации получает вызов прямого метода **reboot**, оно возвращает вызывающему объекту подтверждение, а затем запускает поток для обработки перезагрузки:
 
     ```java
     protected static class DirectMethodCallback implements com.microsoft.azure.sdk.iot.device.DeviceTwin.DeviceMethodCallback
@@ -369,20 +379,20 @@ ms.locfileid: "38481979"
     }
     ```
 
-1. Измените сигнатуру метода **main**, чтобы создавать следующие исключения:
+13. Измените сигнатуру метода **main**, чтобы создавать следующие исключения:
 
     ```java
     public static void main(String[] args) throws IOException, URISyntaxException
     ```
 
-1. Для создания экземпляра **DeviceClient** добавьте следующий код в метод **main**:
+14. Для создания экземпляра **DeviceClient** добавьте следующий код в метод **main**:
 
     ```java
     System.out.println("Starting device client sample...");
     client = new DeviceClient(connString, protocol);
     ```
 
-1. Чтобы запустить прослушивание вызовов прямого метода, добавьте следующий код в метод **main**:
+15. Чтобы запустить прослушивание вызовов прямого метода, добавьте следующий код в метод **main**:
 
     ```java
     try
@@ -400,7 +410,7 @@ ms.locfileid: "38481979"
     }
     ```
 
-1. Для завершения работы симулятора устройства добавьте следующий код в метод **main**:
+16. Для завершения работы симулятора устройства добавьте следующий код в метод **main**:
 
     ```java
     System.out.println("Press any key to exit...");
@@ -411,9 +421,9 @@ ms.locfileid: "38481979"
     System.out.println("Shutting down...");
     ```
 
-1. Сохраните и закройте файл simulated-device\src\main\java\com\mycompany\app\App.java.
+17. Сохраните и закройте файл simulated-device\src\main\java\com\mycompany\app\App.java.
 
-1. Создайте внутреннее приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите к папке simulated-device и выполните следующую команду:
+18. Создайте внутреннее приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите к папке simulated-device и выполните следующую команду:
 
     `mvn clean package -DskipTests`
 
@@ -425,31 +435,16 @@ ms.locfileid: "38481979"
 
     `mvn exec:java -Dexec.mainClass="com.mycompany.app.App"`
 
-    ![Приложение имитации устройства Центра Интернета вещей на языке Java для прослушивания вызовов прямого метода перезагрузки][1]
+    ![Приложение имитации устройства Центра Интернета вещей на языке Java для прослушивания вызовов прямого метода перезагрузки](./media/iot-hub-java-java-device-management-getstarted/launchsimulator.png)
 
-1. В командной строке в папке trigger-reboot выполните следующую команду, чтобы вызвать метод перезагрузки на имитируемом устройстве из Центра Интернета вещей:
+2. В командной строке в папке trigger-reboot выполните следующую команду, чтобы вызвать метод перезагрузки на имитируемом устройстве из Центра Интернета вещей:
 
     `mvn exec:java -Dexec.mainClass="com.mycompany.app.App"`
 
-    ![Приложение службы Центра Интернета вещей на языке Java для вызова прямого метода перезагрузки][2]
+    ![Приложение службы Центра Интернета вещей на языке Java для вызова прямого метода перезагрузки](./media/iot-hub-java-java-device-management-getstarted/triggerreboot.png)
 
-1. Ответ имитируемого устройства на вызов прямого метода перезагрузки:
+3. Ответ имитируемого устройства на вызов прямого метода перезагрузки:
 
-    ![Ответ приложения имитации устройства Центра Интернета вещей на языке Java на вызов прямого метода][3]
+    ![Ответ приложения имитации устройства Центра Интернета вещей на языке Java на вызов прямого метода](./media/iot-hub-java-java-device-management-getstarted/respondtoreboot.png)
 
 [!INCLUDE [iot-hub-dm-followup](../../includes/iot-hub-dm-followup.md)]
-
-<!-- images and links -->
-[1]: ./media/iot-hub-java-java-device-management-getstarted/launchsimulator.png
-[2]: ./media/iot-hub-java-java-device-management-getstarted/triggerreboot.png
-[3]: ./media/iot-hub-java-java-device-management-getstarted/respondtoreboot.png
-<!-- Links -->
-
-[lnk-maven]: https://maven.apache.org/what-is-maven.html
-
-[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdk-java/blob/master/doc/java-devbox-setup.md
-
-[lnk-hub-sdks]: iot-hub-devguide-sdks.md
-
-[lnk-maven-service-search]: http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-service-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22
-[lnk-maven-device-search]: http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-device-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22

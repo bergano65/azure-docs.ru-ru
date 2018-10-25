@@ -12,15 +12,15 @@ author: VanMSFT
 ms.author: vanto
 ms.reviwer: ''
 manager: craigg
-ms.date: 04/01/2018
-ms.openlocfilehash: 4c9b2099308bc6a239a72fe2ebe559cdfa2fd3a1
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.date: 10/05/2018
+ms.openlocfilehash: 343782448d4b508e678108ece268f2ce57b6ac1d
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47064226"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48868146"
 ---
-# <a name="always-encrypted-protect-sensitive-data-in-sql-database-and-store-your-encryption-keys-in-the-windows-certificate-store"></a>Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище сертификатов Windows
+# <a name="always-encrypted-protect-sensitive-data-and-store-encryption-keys-in-the-windows-certificate-store"></a>Always Encrypted: защита конфиденциальных данных и хранение ключей шифрования в хранилище сертификатов Windows
 
 В этой статье показано, как защитить конфиденциальные данные в базе данных SQL с помощью шифрования базы данных, используя [мастер настройки Always Encrypted](https://msdn.microsoft.com/library/mt459280.aspx) в [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/hh213248.aspx). В ней также показано, как сохранить ключи в хранилище сертификатов Windows.
 

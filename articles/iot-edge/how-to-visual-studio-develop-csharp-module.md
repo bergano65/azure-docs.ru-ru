@@ -9,12 +9,12 @@ ms.author: xshi
 ms.date: 09/24/2018
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 9cc8e1db577859ad7637902a5ccd5a044efcd033
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 768ff899ca2c71cb32fe29bdd5d58654d8f7d431
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46978528"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49394754"
 ---
 # <a name="use-visual-studio-2017-to-develop-and-debug-c-modules-for-azure-iot-edge-preview"></a>Сведения об использовании Visual Studio 2017 для разработки и отладки модулей C# для Azure IoT Edge (предварительная версия)
 
@@ -90,6 +90,21 @@ ms.locfileid: "46978528"
 Код модуля C# по умолчанию, который поставляется вместе с решением, находится здесь: **IoTEdgeModule1** > **Program.cs**. Модуль и файл deployment.template.json настраиваются так, чтобы можно было собрать решение, передать его в реестр контейнеров и развернуть на устройстве, чтобы начать тестирование, не меняя код. Модуль просто принимает входные данные из источника (в данном случае модуль tempSensor имитирует данные) и передает их в Центр Интернета вещей. 
 
 Когда вы будете готовы настроить шаблон C# с добавлением собственного кода, используйте [пакеты SDK для Центра Интернета вещей Azure](../iot-hub/iot-hub-devguide-sdks.md), чтобы создать модули, которые удовлетворяют ключевые потребности решений Интернета вещей, такие как безопасность, управление устройствами и надежность. 
+
+## <a name="initialize-iotegehubdev-with-iot-edge-device-connection-string"></a>Инициализация **iotegehubdev** с помощью строки подключения устройства IoT Edge
+
+1. Вам нужно получить строку подключения любого устройства IoT Edge. Вы можете скопировать значение первичной строки подключения из Cloud Explorer в Visual Studio 2017, как показано ниже. Не копируйте строку подключения другого устройства (не Edge), значок устройства IoT Edge отличается от значка другого устройства.
+
+   ![Копирование строки подключения устройства IoT Edge](./media/how-to-visual-studio-develop-csharp-module/copy-edge-conn-string.png)
+
+2. Чтобы открыть контекстное меню, щелкните правой кнопкой мыши проект **AzureIoTEdgeApp1**, затем выберите **Set Edge Device Connection String** (Установить строку подключения устройства Edge). Появится окно настройки Azure IoT Edge.
+
+   ![Открытое окно установки строки подключения к Edge](./media/how-to-visual-studio-develop-csharp-module/set-edge-conn-string.png)
+
+3. В окне программы установки введите строку подключения, полученную на первом шаге, и нажмите кнопку **ОК**.
+
+>[!NOTE]
+>Это одноразовая работа, вам просто нужно выполнить этот шаг один раз на одном компьютере, все последующие решения Azure IoT Edge будут настраиваться автоматически. Конечно, вы можете повторно запустить этот шаг, если строка подключения неверна или вам нужно использовать другую строку подключения.
 
 ## <a name="build-and-debug-single-c-module"></a>Создание и отладка единого модуля C#
 
@@ -190,7 +205,10 @@ ms.locfileid: "46978528"
 
 2. В **Cloud Explorer** разверните подписку, найдите Центр Интернета вещей Azure и устройство Azure IoT Edge, которое нужно развернуть.
 
-3. Щелкните правой кнопкой мыши устройство IoT Edge, чтобы создать для него развертывание. Выберите файл манифеста развертывания: `$AzureIoTEdgeApp1\config\Debug|Release\deployment.json`.
+3. Щелкните правой кнопкой мыши устройство IoT Edge, чтобы создать для него развертывание. Выберите файл манифеста развертывания: `$AzureIoTEdgeAppSolutionDir\config\deployment.(amd64|amd64.debug|windows-amd64).json`.
+
+>>[!NOTE]
+>>Не выбирайте `$AzureIoTEdgeAppSolutionDir\config\deployment_for_local_debug.json`.
 
 4. Нажмите кнопку "Обновить". Появятся новые модули, работающие вместе с модулем **TempSensor**, а также **$edgeAgent** и **$edgeHub**.
 

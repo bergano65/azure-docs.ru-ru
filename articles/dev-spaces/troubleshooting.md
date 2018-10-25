@@ -11,12 +11,12 @@ ms.topic: article
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 91bec065b2c83eac6b646ae6a55bc1ae0aae01db
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 3f30a62a2f351aecabc37206607c3e28ec5e3ab5
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47226897"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49353364"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -76,6 +76,23 @@ azds remove -g <resource group name> -n <cluster name>
 
     ![Снимок экрана диалогового окна "Сервис > Параметры"](media/common/VerbositySetting.PNG)
     
+Эта ошибка может появиться при попытке использовать многоэтапный Dockerfile. Подробные выходные данные будут выглядеть следующим образом:
+
+```cmd
+$ azds up
+Using dev space 'default' with target 'AksClusterName'
+Synchronizing files...6s
+Installing Helm chart...2s
+Waiting for container image build...10s
+Building container image...
+Step 1/12 : FROM [imagename:tag] AS base
+Error parsing reference: "[imagename:tag] AS base" is not a valid repository/tag: invalid reference format
+Failed to build container image.
+Service cannot be started.
+```
+
+Это обусловлено выполнением узлов AKS на старой версии Docker, которая не поддерживает многоэтапные сборки. Вам необходимо повторно создать Dockerfile, чтобы избежать многоэтапных сборок.
+
 ## <a name="dns-name-resolution-fails-for-a-public-url-associated-with-a-dev-spaces-service"></a>Сбой разрешения DNS-имен для общедоступных URL-адресов, связанных со службой Dev Spaces
 
 Если разрешение имен DNS завершается со сбоем, то при попытке подключения к общедоступным URL-адресам, связанным со службой Dev Spaces, в вашем веб-браузере может появиться сообщение об ошибке: "Не удается отобразить страницу" или "Этот сайт недоступен".
@@ -206,6 +223,14 @@ Azure Dev Spaces предоставляет встроенную поддерж�
 ```cmd
 az provider register --namespace Microsoft.DevSpaces
 ```
+
+## <a name="error-could-not-find-a-ready-tiller-pod-when-launching-dev-spaces"></a>"Ошибка. Не удалось найти готовый pod tiller" при запуске Dev Spaces
+
+### <a name="reason"></a>Причина
+Эта ошибка возникает, если клиент Helm больше не может обратиться к модулю pod Tiller, который выполняется в кластере.
+
+### <a name="try"></a>Попробуйте выполнить следующее.
+Перезапуск узлов агента в кластере обычно устраняет эту проблему.
 
 ## <a name="azure-dev-spaces-doesnt-seem-to-use-my-existing-dockerfile-to-build-a-container"></a>Azure Dev Spaces не использует существующий файл Dockerfile для сборки контейнера 
 

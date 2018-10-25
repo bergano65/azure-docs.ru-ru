@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/17/2018
 ms.author: jingwang
-ms.openlocfilehash: ffe7337282d06dd9a7e22d6750ac98b3a56964bd
-ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
+ms.openlocfilehash: db0bc0cb64c0b6d7df9319c8d2c5850a27e767a1
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42144442"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48249219"
 ---
 # <a name="azure-data-factory-service-identity"></a>Удостоверение службы фабрики данных Azure
 
@@ -169,6 +169,6 @@ Type                  : ServicePrincipal
 См. следующие вводные разделы по использованию удостоверения службы фабрики данных:
 
 - [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md)
-- [Копирование данных в хранилище Azure Data Lake Store и из него с помощью фабрики данных Azure](connector-azure-data-lake-store.md)
+- [Копирование данных в Azure Data Lake Storage Gen1 и из него с помощью фабрики данных Azure](connector-azure-data-lake-store.md)
 
-Дополнительные сведения об удостоверении управляемой службы, на котором основано удостоверение службы фабрики данных, см. в [обзоре MSI](~/articles/active-directory/msi-overview.md). 
+Дополнительные сведения об управляемых удостоверениях для ресурсов Azure, на основе которых создается идентификация фабрики данных, см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](~/articles/active-directory/msi-overview.md). 

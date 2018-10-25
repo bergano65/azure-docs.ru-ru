@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/26/2018
 ms.author: clemensv
-ms.openlocfilehash: ccb759a9151d734aa99a6f6b9c68e6072874dd84
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: c6e9eef762d4a9eb95685d94c61ce10d499bb155
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47394834"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48884809"
 ---
 # <a name="use-ip-filters"></a>Использование фильтрации IP-адресов
 
@@ -48,6 +48,8 @@ ms.locfileid: "47394834"
 > Отклонение IP-адресов может препятствовать взаимодействию других служб Azure (таких как Azure Stream Analytics, Виртуальные машины Azure или Device Explorer на портале) со Служебной шиной.
 
 ### <a name="creating-a-virtual-network-rule-with-azure-resource-manager-templates"></a>Создание правила виртуальной сети с использованием шаблонов Azure Resource Manager
+
+> ![ВАЖНО] Виртуальные сети поддерживаются только в службе "Служебная шина" **ценовой категории "Премиум"**.
 
 Следующий шаблон Resource Manager позволяет добавить правило виртуальной сети в пространство имен существующей Служебной шины.
 

@@ -5,15 +5,15 @@ services: automation
 ms.service: automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 06/06/2018
+ms.date: 10/02/2018
 ms.topic: article
 manager: carmonm
-ms.openlocfilehash: 60cdcbeba0c4149d8f049bbab553bd658c965338
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 322b21ae2273b949e9a46e0c47a9f9e4d661603e
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43128601"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48267959"
 ---
 # <a name="run-powershell-scripts-in-your-windows-vm-with-run-command"></a>Выполнение сценариев PowerShell в виртуальной машине Windows с помощью команды "Выполнить"
 
@@ -21,7 +21,7 @@ ms.locfileid: "43128601"
 
 ## <a name="benefits"></a>Преимущества
 
-Существует несколько вариантов, которые можно использовать для доступа к виртуальным машинам. Команда запуска может удаленно выполнять сценарии на виртуальных машинах с помощью их агента. Команда запуска может использоваться на портале Microsoft Azure, [REST API](/rest/api/compute/virtual%20machines%20run%20commands/runcommand), [Azure CLI](/cli/azure/vm/run-command?view=azure-cli-latest#az-vm-run-command-invoke) или [PowerShell](/powershell/module/azurerm.compute/invoke-azurermvmruncommand).
+Существует несколько вариантов, которые можно использовать для доступа к виртуальным машинам. Команда запуска может удаленно выполнять сценарии на виртуальных машинах с помощью их агента. Команда запуска может использоваться на портале Microsoft Azure, [REST API](/rest/api/compute/virtual%20machines%20run%20commands/runcommand) или [PowerShell](/powershell/module/azurerm.compute/invoke-azurermvmruncommand) для виртуальных машин Windows.
 
 Эта возможность может использоваться во всех случаях, когда необходимо запускать сценарии на виртуальных машинах. Она является одним из немногих способов диагностики и устранения неполадок виртуальных машин в тех случаях, когда к ним невозможно подключиться по RDP или у них нет открытого порта SSH из-за неправильной настройки сети или параметров администратора.
 
@@ -33,6 +33,7 @@ ms.locfileid: "43128601"
 * Минимальное время выполнения сценария составляет около 20 секунд.
 * Сценарии выполняются как системные в Windows.
 * Два сценария не могут выполняться одновременно
+* Скрипты, которые запрашивают сведения (в интерактивном режиме), не поддерживаются.
 * Вы не можете отменить выполнение сценария
 * Максимальное время выполнения сценария составляет 90 минут, после чего он выдаст ошибку времени ожидания
 * Чтобы вернуть результаты скрипта, требуется разрешить исходящие подключения из виртуальной машины.

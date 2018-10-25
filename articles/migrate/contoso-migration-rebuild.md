@@ -3,16 +3,17 @@ title: Повторное создание локального приложен
 description: Узнайте, как Contoso перестраивает приложение для использования в Azure с помощью Службы приложений Azure, службы Kubernetes, CosmosDB, службы "Функции Azure" и Cognitive Services.
 services: site-recovery
 author: rayne-wiselman
+manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 09/20/2018
+ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: f0dc199f8a91ac06993f4ccbc9dff7dfad9f8a19
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 6c68d90605590ed8a17296e83276c7ef5396d6a2
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47042488"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49092987"
 ---
 # <a name="contoso-migration-rebuild-an-on-premises-app-to-azure"></a>Миграция в компании Contoso: повторное создание локального приложения для использования в Azure
 
@@ -35,7 +36,8 @@ ms.locfileid: "47042488"
 [Статья 10. Рефакторинг приложения Linux для веб-приложений Azure и MySQL для Azure](contoso-migration-refactor-linux-app-service-mysql.md) | В статье описывается, как Contoso переносит приложение osTicket для Linux в веб-приложения Azure на нескольких сайтах, интегрированных с GitHub для непрерывной поставки. База данных приложения переносится в экземпляр Azure MySQL. | Доступна
 [Статья 11. Рефакторинг Team Foundation Server в Azure DevOps Services](contoso-migration-tfs-vsts.md) | В этой статье показано, как Contoso выполняет миграцию локального развертывания Team Foundation Server (TFS) путем его переноса в Azure DevOps Services в Azure. | Доступна
 [Статья 12. Повторное проектирование приложения для использования контейнеров Azure и Базы данных SQL](contoso-migration-rearchitect-container-sql.md) | В статье описывается, как Contoso переносит и повторно проектирует приложение SmartHotel в Azure. Специалисты компании перепроектируют веб-уровень приложения в контейнер Windows и переносят базу данных приложения в Базу данных SQL Azure. | Доступна
-Статья 13. Повторное создание приложения в Azure | В статье описывается, как Contoso повторно создает свое приложение SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Azure Kubernetes, "Функции Azure", Cognitive Services и Cosmos DB. | Эта статья.
+Статья 13. Повторное создание приложения в Azure | В статье демонстрируется, как Contoso повторно создает свое приложение SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Azure Kubernetes, Функции Azure, Cognitive Services и Cosmos DB. | Эта статья
+[Статья 14. Масштабирование миграции в Azure](contoso-migration-scale.md) | Ознакомившись с вариантами сочетаний миграции, компания Contoso готовится к полномасштабной миграции в Azure. | Доступна
 
 В этой статье рассказывается, как Contoso выполняет миграцию двухуровневого приложения Windows. Приложение .NET SmartHotel360 работает на виртуальных машинах VMware в Azure. Это приложение с открытым исходным кодом, и если вы хотите использовать его, загрузите его с [GitHub](https://github.com/Microsoft/SmartHotel360).
 
@@ -125,7 +127,7 @@ ms.locfileid: "47042488"
 --- | ---
 **Подписка Azure.** | Компания Contoso уже создала подписки (это описывается в одной из предыдущих статей этой серии). Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/pricing/free-trial/).<br/><br/> Если вы создаете бесплатную учетную запись, вы являетесь администратором своей подписки и можете выполнять любые действия.<br/><br/> Если вы используете существующую подписку, в которой не являетесь администратором, администратор должен назначить вам права владельца или участника.
 **Инфраструктура Azure** | [Узнайте, как](contoso-migration-infrastructure.md) компания Contoso настраивает инфраструктуру Azure.
-**Предварительные требования для разработчика** | Contoso необходимы следующие средства на рабочей станции разработчика:<br/><br/> - [выпуск Visual Studio Community 2017 15.5](https://www.visualstudio.com/);<br/><br/> включенная рабочая нагрузка .NET;<br/><br/> [Git](https://git-scm.com/)<br/><br/> [Azure PowerShell](https://azure.microsoft.com/downloads/)<br/><br/> [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)<br/><br/> [Docker CE (Windows 10) или Docker EE (Windows Server)](https://docs.docker.com/docker-for-windows/install/), настроенные на использование контейнеров Windows.
+**Предварительные требования для разработчика** | Contoso необходимы следующие средства на рабочей станции разработчика:<br/><br/> - [выпуск Visual Studio Community 2017 15.5](https://www.visualstudio.com/);<br/><br/> включенная рабочая нагрузка .NET;<br/><br/> [Git](https://git-scm.com/)<br/><br/> [Azure PowerShell](https://azure.microsoft.com/downloads/)<br/><br/> [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)<br/><br/> [Docker CE (Windows 10) или Docker EE (Windows Server)](https://docs.docker.com/docker-for-windows/install/), настроенные на использование контейнеров Windows.
 
 
 

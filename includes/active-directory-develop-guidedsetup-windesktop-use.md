@@ -1,16 +1,37 @@
+---
+title: включение файла
+description: включение файла
+services: active-directory
+documentationcenter: dev-center-name
+author: jmprieur
+manager: mtillman
+editor: ''
+ms.service: active-directory
+ms.devlang: na
+ms.topic: include
+ms.tgt_pltfrm: na
+ms.workload: identity
+ms.date: 09/17/2018
+ms.author: jmprieur
+ms.custom: include file
+ms.openlocfilehash: 538b0c969d8c039079c09232e06f55e24aabf393
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48842912"
+---
+## <a name="use-msal-to-get-a-token-for-the-microsoft-graph-api"></a>Получение маркера для API Microsoft Graph с помощью MSAL
 
-## <a name="use-msal-to-get-a-token-for-the-microsoft-graph-api"></a>Используйте MSAL, чтобы получить маркер для Microsoft Graph API
+В этом разделе вы получите маркер для API Microsoft Graph с помощью MSAL.
 
-В этом разделе MSAL используется для получения маркера для Microsoft Graph API.
-
-1.  В *MainWindow.xaml.cs* файл, добавьте в класс ссылки для MSAL:
+1.  В файле *MainWindow.xaml.cs* добавьте ссылку для MSAL в класс:
 
     ```csharp
     using Microsoft.Identity.Client;
     ```
-<!-- Workaround for Docs conversion bug -->
 
-2. Замените `MainWindow` класса код следующим:
+2. Замените код класса `MainWindow` следующим:
 
     ```csharp
     public partial class MainWindow : Window
@@ -33,9 +54,15 @@
         {
             AuthenticationResult authResult = null;
 
+            var app = App.PublicClientApp;
+            ResultText.Text = string.Empty;
+            TokenInfoText.Text = string.Empty;
+
+            var accounts = await app.GetAccountsAsync();
+
             try
             {
-                authResult = await App.PublicClientApp.AcquireTokenSilentAsync(_scopes, App.PublicClientApp.Users.FirstOrDefault());
+                authResult = await app.AcquireTokenSilentAsync(_scopes, accounts.FirstOrDefault());
             }
             catch (MsalUiRequiredException ex)
             {
@@ -69,24 +96,29 @@
 
 <!--start-collapse-->
 ### <a name="more-information"></a>Дополнительные сведения
-#### <a name="get-a-user-token-interactively"></a>Получение токена пользователя в интерактивном режиме
-Вызов `AcquireTokenAsync` метод результатов в окне с запросом на вход. Приложения обычно требуется пользователям для интерактивного входа в первый раз, необходимые для доступа к защищенному ресурсу. Они могут также необходимо выполнить вход, при сбое операции в фоновом режиме, чтобы получить токен (например, по истечении срока действия пароля пользователя).
 
-#### <a name="get-a-user-token-silently"></a>Автоматическое получение токена пользователя
-`AcquireTokenSilentAsync` Метод обрабатывает приобретения токена и обновления без вмешательства пользователя. После `AcquireTokenAsync` выполняется в первый раз `AcquireTokenSilentAsync` является обычный метод следует использовать для получения токенов, доступ к защищенным ресурсам для последующих вызовов, так как для запроса или обновления токенов вызовов без вмешательства пользователя.
+#### <a name="get-a-user-token-interactively"></a>Интерактивное получение маркера пользователя
 
-Со временем `AcquireTokenSilentAsync` метод завершится с ошибкой. Причины сбоя может быть, что пользователь выход или изменил свой пароль на другом устройстве. Когда MSAL обнаруживает, что эту проблему можно решить, запросив интерактивное действие, возникает исключение `MsalUiRequiredException`. Приложение может обработать это исключение двумя способами:
+При вызове метода `AcquireTokenAsync` появится окно, в котором пользователю предлагается выполнить вход. Когда пользователь впервые запрашивает доступ к защищенному ресурсу, приложение обычно требует выполнить интерактивный вход. Пользователям также может потребоваться выполнить вход при сбое автоматической операции получения маркера (например, по истечении срока действия пароля пользователя).
 
-* Он может вызвать для `AcquireTokenAsync` немедленно. Этот вызов приводит подтверждения от пользователя для входа. Этот шаблон обычно используется в веб-приложений, где нет доступных автономного содержимого для пользователя. Образец, созданные этой интерактивной программы установки следует этого шаблона, в котором вы увидите на время действия первого выполнения образца. 
-    * Поскольку пользователь не использовал приложение, `PublicClientApp.Users.FirstOrDefault()` содержит значение null и `MsalUiRequiredException` исключения. 
-    * В примере кода затем обрабатывает исключение, вызвав `AcquireTokenAsync`, что приводит к подтверждения от пользователя для входа в.
+#### <a name="get-a-user-token-silently"></a>Автоматическое получение маркера пользователя
 
-* Вместо этого он может представлять визуальное пользователям, которые интерактивный вход не требуется, чтобы они могли выбирать для входа в нужное время. Или можно повторить попытку приложения `AcquireTokenSilentAsync` позже. Данный шаблон часто используется, когда пользователи могут использовать другие функциональные возможности приложения без прерывания — например, при это содержимое в приложении. В этом случае пользователи можно решить, когда им требуется вход для доступа к защищенному ресурсу или обновление устаревшей информации. Кроме того, приложение может решать повторить попытку `AcquireTokenSilentAsync` при восстановлении сети после будучи временно недоступна.
+Метод `AcquireTokenSilentAsync` обрабатывает получение и обновление маркера без участия пользователя. После первого выполнения метода `AcquireTokenAsync` обычно используется метод `AcquireTokenSilentAsync`, чтобы получить маркеры для доступа к защищенным ресурсам для последующих вызовов, так как вызовы для запроса или обновления маркеров выполняются автоматически.
+
+Иногда метод `AcquireTokenSilentAsync` завершается ошибкой. Причина может заключаться в том, что пользователь вышел из системы или изменил пароль на другом устройстве. Когда MSAL обнаруживает, что эту проблему можно решить, запросив интерактивное действие, возникает исключение `MsalUiRequiredException`. Приложение может обработать это исключение двумя способами:
+
+* Может немедленно вызвать `AcquireTokenAsync`. Этот вызов приводит к появлению запроса на вход пользователя. Этот шаблон обычно используется в интерактивных приложениях, где пользователю недоступно автономное содержимое. Этот шаблон используется в примере, созданном в ходе настройки с помощью этих инструкций. Вы увидите его в действии при первом запуске примера. 
+
+* Так как приложение еще не использовалось, `PublicClientApp.Users.FirstOrDefault()` будет содержать значение NULL и будет выдано исключение `MsalUiRequiredException`. 
+
+* Код в примере обработает исключение, вызвав `AcquireTokenAsync`, в результате чего пользователю будет предложено войти.
+
+* Также приложение может визуально уведомить пользователей, что требуется интерактивный вход, чтобы они могли выбрать подходящее время для входа. Либо приложение может попытаться повторно выполнить метод `AcquireTokenSilentAsync` позже. Этот шаблон часто применяется, когда пользователи могут использовать другие функциональные возможности приложения без прерывания работы — например, если в приложении доступно автономное содержимое. В этом случае пользователи могут решать, что им нужно сделать после входа — получить доступ к защищенному ресурсу или обновить устаревшие данные. Кроме того, приложение может попытаться повторно выполнить `AcquireTokenSilentAsync` при восстановлении сети после временной недоступности.
 <!--end-collapse-->
 
-## <a name="call-the-microsoft-graph-api-by-using-the-token-you-just-obtained"></a>Вызов API-Интерфейс Microsoft Graph с помощью маркера, который был получен
+## <a name="call-the-microsoft-graph-api-by-using-the-token-you-just-obtained"></a>Вызов API Microsoft Graph с помощью полученного маркера
 
-Добавьте следующий новый метод для вашего `MainWindow.xaml.cs`. Этот метод используется, чтобы сделать `GET` запрос к Graph API, используя заголовок авторизации:
+Добавьте в `MainWindow.xaml.cs` следующий новый метод. Этот метод используется для выполнения запроса `GET` к API Graph с помощью заголовка авторизации "Authorize":
 
 ```csharp
 /// <summary>
@@ -114,27 +146,30 @@ public async Task<string> GetHttpContentWithToken(string url, string token)
     }
 }
 ```
+
 <!--start-collapse-->
 ### <a name="more-information-about-making-a-rest-call-against-a-protected-api"></a>Дополнительные сведения о вызове REST через защищенный API
 
-В этом образце приложения используется `GetHttpContentWithToken` метод HTTP `GET` запрос к защищенному ресурсу, маркера и возвращается вызывающему объекту содержимое. Этот метод добавляет полученные токена в заголовок авторизации HTTP. Для этого образца, то ресурс является Microsoft Graph API *мне* конечную точку, которая отображает сведения о профиле пользователя.
+В этом примере приложения используется метод `GetHttpContentWithToken` для выполнения HTTP-запроса `GET` к защищенному ресурсу, требующему маркер, а затем возвращает содержимое вызывающему объекту. Этот метод добавляет полученный маркер в заголовок авторизации HTTP. В этом примере ресурс — это конечная точка *me* API Microsoft Graph, которая отображает сведения о профиле пользователя.
 <!--end-collapse-->
 
-## <a name="add-a-method-to-sign-out-a-user"></a>Добавьте метод для выхода пользователя
+## <a name="add-a-method-to-sign-out-a-user"></a>Добавление метода для выхода пользователя
 
-Чтобы выйти из системы пользователя, добавьте следующий метод к `MainWindow.xaml.cs` файла:
+Добавьте следующий метод в файл `MainWindow.xaml.cs` для выхода пользователя:
 
 ```csharp
 /// <summary>
 /// Sign out the current user
 /// </summary>
-private void SignOutButton_Click(object sender, RoutedEventArgs e)
+private async void SignOutButton_Click(object sender, RoutedEventArgs e)
 {
-    if (App.PublicClientApp.Users.Any())
+    var accounts = await App.PublicClientApp.GetAccountsAsync(); 
+
+    if (accounts.Any())
     {
         try
         {
-            App.PublicClientApp.Remove(App.PublicClientApp.Users.FirstOrDefault());
+            await App.PublicClientApp.RemoveAsync(accounts.FirstOrDefault()); 
             this.ResultText.Text = "User has signed-out";
             this.CallGraphButton.Visibility = Visibility.Visible;
             this.SignOutButton.Visibility = Visibility.Collapsed;
@@ -146,17 +181,18 @@ private void SignOutButton_Click(object sender, RoutedEventArgs e)
     }
 }
 ```
+
 <!--start-collapse-->
-### <a name="more-information-about-user-sign-out"></a>Дополнительные сведения о выхода пользователя
+### <a name="more-information-about-user-sign-out"></a>Дополнительные сведения о выходе пользователя
 
-`SignOutButton_Click` Метод удаляет пользователей из кэша MSAL пользователя, который фактически сообщает MSAL забыть текущего пользователя, чтобы будущих запрос для получения токена успешно завершится только в том случае, если он станет будут интерактивными.
+Метод `SignOutButton_Click` удаляет пользователей из кэша пользователей MSAL. Фактически это приводит к удалению данных текущего пользователя из MSAL, поэтому в дальнейшем успешно выполняться будут только интерактивные запросы на получение маркеров.
 
-Несмотря на то, что приложение в этом образце поддерживает одиночные пользователи, MSAL поддерживает сценарии, где несколько учетных записей может быть подписана одновременно. Примером является приложение электронной почты, где у пользователя есть несколько учетных записей.
+Хотя приложение в этом примере поддерживает одного пользователя, MSAL поддерживает сценарии, в которых несколько пользователей могут войти в систему одновременно. Пример — приложение электронной почты, в котором у пользователя есть несколько учетных записей.
 <!--end-collapse-->
 
-## <a name="display-basic-token-information"></a>Выводит основные сведения маркера
+## <a name="display-basic-token-information"></a>Отображение основных сведений о маркере
 
-Чтобы отобразить основные сведения о маркере, добавьте следующий метод к *MainWindow.xaml.cs* файла:
+Для отображения основных сведений о маркере добавьте следующий метод в файл *MainWindow.xaml.cs*:
 
 ```csharp
 /// <summary>
@@ -167,16 +203,16 @@ private void DisplayBasicTokenInfo(AuthenticationResult authResult)
     TokenInfoText.Text = "";
     if (authResult != null)
     {
-        TokenInfoText.Text += $"Name: {authResult.User.Name}" + Environment.NewLine;
-        TokenInfoText.Text += $"Username: {authResult.User.DisplayableId}" + Environment.NewLine;
+        TokenInfoText.Text += $"Username: {authResult.Account.Username}" + Environment.NewLine;
         TokenInfoText.Text += $"Token Expires: {authResult.ExpiresOn.ToLocalTime()}" + Environment.NewLine;
         TokenInfoText.Text += $"Access Token: {authResult.AccessToken}" + Environment.NewLine;
     }
 }
 ```
+
 <!--start-collapse-->
 ### <a name="more-information"></a>Дополнительные сведения
 
-Помимо, используемый для вызова Microsoft Graph API, после пользователь входит в токен доступа MSAL также получает маркер идентификатора. Этот маркер содержит небольшое подмножество сведений, которые имеют отношение к пользователям. `DisplayBasicTokenInfo` Метод отображает основные сведения, содержащиеся в маркере. Например отображает отображаемое имя и идентификатор, а также дату истечения срока действия маркера и строка, представляющая сам маркер доступа. Можно выбрать *вызова API Graph Microsoft* кнопку несколько раз и увидеть, что тот же токен был использован повторно для последующих запросов. Вы также можете увидеть, что библиотека MSAL продлила срок действия.
+После входа пользователя MSAL получает идентификатор маркера в дополнение к маркеру доступа, который используется для вызова Microsoft Graph API. Этот маркер содержит небольшое подмножество сведений, имеющие отношение к пользователям. Метод `DisplayBasicTokenInfo` отображает основные сведения, содержащиеся в маркере. Например, он показывает отображаемое имя и идентификатор пользователя, а также дату истечения срока действия маркера и строку, представляющую сам маркер доступа. Нажав кнопку *вызова API Microsoft Graph* несколько раз, вы увидите, что для последующих запросов повторно используется тот же маркер. Вы также можете увидеть, что библиотека MSAL продлила срок действия.
 <!--end-collapse-->
 

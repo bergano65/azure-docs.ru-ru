@@ -3,19 +3,19 @@ title: Фильтрация подключений по протоколу IP д
 description: Использование фильтрации IP-адресов для блокирования подключений к Центрам событий Azure с определенных IP-адресов.
 services: event-hubs
 documentationcenter: ''
-author: ShubhaVijayasarathy
+author: spelluru
 manager: timlt
 ms.service: event-hubs
 ms.devlang: na
 ms.topic: article
-ms.date: 08/26/2018
-ms.author: shvija
-ms.openlocfilehash: 6d96eac3ecd249de3ba0da82eff95c45e45fa02d
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.date: 10/08/2018
+ms.author: spelluru
+ms.openlocfilehash: c229a6f84096ecca892b74f7ce65cb831fa50be3
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42746201"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48886183"
 ---
 # <a name="use-ip-filters"></a>Использование фильтрации IP-адресов
 
@@ -48,6 +48,9 @@ ms.locfileid: "42746201"
 > Отклонение IP-адресов может препятствовать взаимодействию других служб Azure (таких как Azure Stream Analytics, Виртуальные машины Azure или Device Explorer на портале) с Центрами событий.
 
 ### <a name="creating-a-virtual-network-rule-with-azure-resource-manager-templates"></a>Создание правила виртуальной сети с использованием шаблонов Azure Resource Manager
+
+> [!IMPORTANT]
+> Виртуальные сети поддерживаются в **стандартном** и **выделенном** уровнях Центра событий. В "базовом" уровне не поддерживается. 
 
 Следующий шаблон Resource Manager позволяет добавить правило виртуальной сети в существующее пространство имен Центров событий.
 

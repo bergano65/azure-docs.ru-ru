@@ -1,12 +1,34 @@
-
+---
+title: включение файла
+description: включение файла
+services: active-directory
+documentationcenter: dev-center-name
+author: andretms
+manager: mtillman
+editor: ''
+ms.service: active-directory
+ms.devlang: na
+ms.topic: include
+ms.tgt_pltfrm: ios
+ms.workload: identity
+ms.date: 09/19/2018
+ms.author: andret
+ms.custom: include file
+ms.openlocfilehash: 063ca2bbb334c120e285d4b3eac8af00fafa7e5a
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48843120"
+---
 # <a name="call-the-microsoft-graph-api-from-an-ios-application"></a>Вызов API Microsoft Graph из приложения iOS
 
 В этом руководстве описано, как собственное приложение iOS (Swift) может вызывать API-интерфейсы, для которых требуются маркеры доступа от конечной точки Microsoft Azure Active Directory (Azure AD) версии 2.0. В этом руководстве описано, как получить маркеры доступа и использовать их в вызовах к API Microsoft Graph и другим API.
 
 Когда вы выполните все инструкции из этого руководства, ваше приложение сможет вызывать защищенный API из любой компании или организации, где используется Azure AD. Для защищенных вызовов API ваше приложение сможет использовать личные учетные записи, например outlook.com, live.com и другие, а также рабочие или учебные учетные записи.
 
-## <a name="prerequisites"></a>предварительным требованиям
-- Для создания примера в этом руководстве используется XCode версии 8.x. Скачать XCode можно с [сайта iTunes](https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12 "XCode Download URL").
+## <a name="prerequisites"></a>Предварительные требования
+- Для создания примера в этом руководстве используется XCode версии 10.x. Скачать XCode можно с [сайта iTunes](https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12 "XCode Download URL").
 - Для управления пакетами требуется диспетчер зависимостей [Carthage](https://github.com/Carthage/Carthage).
 
 ## <a name="how-this-guide-works"></a>Принцип работы с руководством

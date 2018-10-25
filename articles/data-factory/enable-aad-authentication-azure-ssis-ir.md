@@ -12,16 +12,16 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/21/2018
 ms.author: douglasl
-ms.openlocfilehash: aa06110a6f6fe668388c6aecd98c1ddeeae37edd
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 234fb5af55565602d283539c63076adebad1ed25
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45576635"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48248981"
 ---
 # <a name="enable-azure-active-directory-authentication-for-the-azure-ssis-integration-runtime"></a>Включение аутентификации Azure Active Directory в среде выполнения интеграции Azure-SSIS
 
-В этой статье показано, как создать среду выполнения интеграции с удостоверением службы "Фабрика данных Azure". Чтобы создать среду выполнения интеграции Azure-SSIS с использованием управляемого удостоверения службы "Фабрика данных", а не аутентификации SQL, в ней необходимо настроить аутентификацию Azure Active Directory (Azure AD) и управляемое удостоверение службы (MSI).
+В этой статье показано, как создать среду выполнения интеграции с удостоверением службы "Фабрика данных Azure". Чтобы создать среду выполнения интеграции Azure-SSIS с использованием управляемого удостоверения службы "Фабрика данных", а не аутентификации SQL, в ней необходимо настроить аутентификацию Azure Active Directory (Azure AD) и управляемое удостоверение ADF для ресурсов Azure.
 
 Дополнительные сведения об управляемом удостоверении службы "Фабрика данных" см. в [этой статье](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity).
 

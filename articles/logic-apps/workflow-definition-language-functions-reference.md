@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 08/15/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: 8a2e06d2e6cf3e470d4e0909e5559ac0411292fd
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: bc16b71ad20e2cf2bc61a046336fe6a3618bc403
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43307119"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48269570"
 ---
 # <a name="functions-reference-for-workflow-definition-language-in-azure-logic-apps"></a>Сведенья о функциях языка определения рабочих процессов в Azure Logic Apps
 
@@ -82,7 +82,7 @@ ms.locfileid: "43307119"
 | [indexOf](../logic-apps/workflow-definition-language-functions-reference.md#indexof) | Возвращает начальную позицию подстроки. | 
 | [lastIndexOf](../logic-apps/workflow-definition-language-functions-reference.md#lastindexof) | Возвращает начальную позицию последнего вхождения подстроки. | 
 | [replace](../logic-apps/workflow-definition-language-functions-reference.md#replace) | Заменяет подстроку указанной строкой и возвращает обновленную строку. | 
-| [split](../logic-apps/workflow-definition-language-functions-reference.md#split) | Возвращает массив, который содержит все символы из строки, отделенные разделителем. | 
+| [split](../logic-apps/workflow-definition-language-functions-reference.md#split) | Возвращает массив, содержащий подстроки, разделенные запятыми, из большей строки, основываясь на указанном символе разделителя в исходной строке. | 
 | [startsWith](../logic-apps/workflow-definition-language-functions-reference.md#startswith) | Проверяет, начинается ли строка с определенной подстроки. | 
 | [substring](../logic-apps/workflow-definition-language-functions-reference.md#substring) | Возвращает символы из строки, начиная с указанной позиции. | 
 | [toLower](../logic-apps/workflow-definition-language-functions-reference.md#toLower) | Возвращает строку символов в нижнем регистре. | 
@@ -493,7 +493,7 @@ addDays('<timestamp>', <days>, '<format>'?)
 | --------- | -------- | ---- | ----------- | 
 | <*timestamp*> | Yes | Строка | Строка, содержащая метку времени | 
 | <*days*> | Yes | Целое число  | Положительное или отрицательное число дней для добавления | 
-| <*format*> | Нет  | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для временной метки — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:СС:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*format*> | Нет  | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 ||||| 
 
 | Возвращаемое значение | type | ОПИСАНИЕ | 
@@ -3016,32 +3016,32 @@ skip([0, 1, 2, 3], 1)
 
 ### <a name="split"></a>split
 
-Возвращает массив, который содержит все символы из строки, отделенные *разделителем*.
+Возвращает массив, содержащий подстроки, разделенные запятыми, основываясь на указанном знаке разделителя в исходной строке. 
 
 ```
-split('<text>', '<separator>')
+split('<text>', '<delimiter>')
 ```
 
 | Параметр | Обязательно | type | ОПИСАНИЕ | 
 | --------- | -------- | ---- | ----------- | 
-| <*text*> | Yes | Строка | Строка, содержащая символы, которые требуется разделить |  
-| <*separator*> | Yes | Строка | Разделитель между символами полученного массива | 
+| <*text*> | Yes | Строка | Строка для разделения на подстроки в зависимости от указанного разделителя в исходной строке |  
+| <*delimiter*> | Yes | Строка | Символ в исходной строке для использования в качестве разделителя | 
 ||||| 
 
 | Возвращаемое значение | type | ОПИСАНИЕ | 
 | ------------ | ---- | ----------- | 
-| [<*симв.1*><*разделитель*><*симв.2*><*разделитель*>...] | Массив, | Полученный массив, состоящий из всех элементов в указанной строке. |
+| [<*substring1*>,<*substring2*>,...] | Массив, | Массив, содержащий подстроки из исходной строки, разделенные запятыми |
 |||| 
 
 *Пример* 
 
-В этом примере создается массив из указанной строки с разделителем-запятой между каждым символом:
+В этом примере создается массив подстрок из указанной строки с использованием заданного символа в качестве разделителя. 
 
 ```
-split('abc', ',')
+split('a_b_c', '_')
 ```
 
-Возвращается такой результат: `[a, b, c]`
+В результате возвращается такой массив: `["a","b","c"]`.
 
 <a name="startOfDay"></a>
 

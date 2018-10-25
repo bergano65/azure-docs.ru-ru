@@ -15,12 +15,12 @@ ms.date: 09/27/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 6fe9a106975a03fabc9d674ede694e683dc3cd94
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 88667749d9cdf5239be33f3aca52d1a614556a41
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47410278"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48816623"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 [Управление доступом на основе ролей (RBAC)](overview.md) имеет несколько определений встроенной роли, которую можно назначить для пользователей, групп и субъектов-служб. Назначение ролей является способом управления доступом к ресурсам в Azure. Если встроенные роли не соответствуют потребностям вашей организации, вы можете создать собственные [настраиваемые роли](custom-roles.md).
@@ -786,14 +786,14 @@ ms.locfileid: "47410278"
 > | **Описание** | Позволяет управлять фабриками данных, но не доступом к ним. |
 > | **Id** | 673868aa-7521-48a0-acc6-0f60742d39f5 |
 > | **Действия** |  |
-> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft.Authorization/*/read | Чтение ролей и их назначений. |
 > | Microsoft.DataFactory/dataFactories/* | Создание фабрик данных и дочерних ресурсов внутри их, а также управление ими. |
 > | Microsoft.DataFactory/factories/* | Создание фабрик данных и дочерних ресурсов внутри их, а также управление ими. |
-> | Microsoft.Insights/alertRules/* | Создание правил оповещения и управление ими |
-> | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
-> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
-> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
-> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | Microsoft.Insights/alertRules/* | Создание правил оповещения и управление ими. |
+> | Microsoft.ResourceHealth/availabilityStatuses/read | Получение состояний доступности для всех ресурсов в указанной области. |
+> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими. |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Получение или перечисление групп ресурсов. |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими. |
 
 ## <a name="data-lake-analytics-developer"></a>Разработчик Data Lake Analytics
 > [!div class="mx-tableFixed"]

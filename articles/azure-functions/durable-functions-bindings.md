@@ -3,23 +3,19 @@ title: Привязки для устойчивых функций — Azure
 description: Инструкции по использованию триггеров и привязок в расширении устойчивых функций для Функций Azure.
 services: functions
 author: cgillum
-manager: cfowler
-editor: ''
-tags: ''
+manager: jeconnoc
 keywords: ''
-ms.service: functions
+ms.service: azure-functions
 ms.devlang: multiple
-ms.topic: article
-ms.tgt_pltfrm: multiple
-ms.workload: na
+ms.topic: conceptual
 ms.date: 09/29/2017
 ms.author: azfuncdf
-ms.openlocfilehash: 370e6e2c569aaf6d9289bddccde2174b4dd2ee97
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 29cc7982dbe9991e6b0e3363cd636ac88881fc7b
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33763362"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48237287"
 ---
 # <a name="bindings-for-durable-functions-azure-functions"></a>Привязки для устойчивых функций (Функции Azure)
 
@@ -85,7 +81,7 @@ public static string Run([OrchestrationTrigger] DurableOrchestrationContext cont
 ```javascript
 const df = require("durable-functions");
 
-module.exports = df(function*(context) {
+module.exports = df.orchestrator(function*(context) {
     const name = context.df.getInput();
     return `Hello ${name}!`;
 });
@@ -114,7 +110,7 @@ public static async Task<string> Run(
 ```javascript
 const df = require("durable-functions");
 
-module.exports = df(function*(context) {
+module.exports = df.orchestrator(function*(context) {
     const name = context.df.getInput();
     const result = yield context.df.callActivityAsync("SayHello", name);
     return result;

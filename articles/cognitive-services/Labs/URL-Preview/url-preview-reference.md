@@ -1,20 +1,21 @@
 ---
-title: Справочник по службе предварительного просмотра URL-адресов в проектах в Microsoft Cognitive Services | Документация Майкрософт
+title: Документация по службе предварительного просмотра URL-адресов в проектах
+titlesuffix: Azure Cognitive Services
 description: Справочная документация по конечной точке службе предварительного просмотра URL-адресов в проектах.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: project-url-preview
-ms.topic: article
+ms.component: project-url-preview
+ms.topic: reference
 ms.date: 03/29/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: 46c011d62b6ae51f5f7d292345e6ece0e27a8541
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.author: rosh
+ms.openlocfilehash: 3416fd9bc63c48e976d0b00f42ec9f8119a40eb8
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37865881"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48870814"
 ---
 # <a name="project-url-preview-v7-reference"></a>Документация по службе предварительному просмотру URL-адресов в проектах версии 7
 
@@ -79,7 +80,7 @@ https://api.labs.cognitive.microsoft.com/urlpreview/v7.0/search?q=queryURL
 |<a name="mkt" />mkt|Рынок, по которому возвращаются результаты. <br /><br />Список возможных значений рынка см. в разделе [Коды рынка](#market-codes).<br /><br /> **ПРИМЕЧАНИЕ.** Сейчас API предварительного просмотра URL-адресов поддерживает только рынок США и английский язык.<br /><br />|Строка|Yes|  
 |<a name="query" />q|URL-адрес для предварительного просмотра|Строка|Yes|  
 |<a name="responseformat" />responseFormat|Тип мультимедиа, используемый для ответа. Ниже приведены возможные значения, в которых не учитывается регистр.<br /><ul><li>JSON</li><li>JSONLD</li></ul><br /> По умолчанию используется JSON. Сведения об объектах JSON, которые содержат ответ, см. в разделе [Объекты ответа](#response-objects).<br /><br />  При указании JsonLd текст ответа включает объекты JSON-LD, содержащие результаты поиска. Сведения о JSON-LD см. на [этом сайте](http://json-ld.org/).|Строка|Нет |
-|<a name="safesearch"/>safeSearch|Недопустимое содержимое для взрослых или пиратское содержимое будет заблокировано с кодом ошибки 400, при этом флаг *isFamilyFriendly* не возвращается. <p>Ниже описано поведение, применяемое к разрешенному содержимому для взрослых. Возвращается код состояния 200, а флаг *isFamilyFriendly* имеет значение False.<ul><li>safeSearch = strict: не возвращаются заголовок, описание, URL-адрес и изображение.</li><li>safeSearch=moderate: возвращаются заголовок, URL-адрес и описание, но не изображение.</li><li>safeSearch = off: возвращаются все объекты и элементы ответа — заголовок, URL-адрес, описание и изображение.</li></ul> |Строка|Необязательно. </br> По умолчанию используется значение safeSearch = strict.| 
+|<a name="safesearch"/>safeSearch|Недопустимое содержимое для взрослых или пиратское содержимое будет заблокировано с кодом ошибки 400, при этом флаг *isFamilyFriendly* не возвращается. <p>Ниже описано поведение, применяемое к разрешенному содержимому для взрослых. Возвращается код состояния 200, а флаг *isFamilyFriendly* имеет значение false.<ul><li>safeSearch=strict: не возвращаются заголовок, описание, URL-адрес и изображение.</li><li>safeSearch=moderate: возвращаются заголовок, URL-адрес и описание, но не изображение.</li><li>safeSearch=off: возвращаются все объекты и элементы ответа — заголовок, URL-адрес, описание и изображение.</li></ul> |Строка|Необязательно. </br> По умолчанию используется значение safeSearch = strict.| 
 
 ## <a name="response-objects"></a>Объекты ответа  
 Схема ответа — либо [WebPage], либо ErrorResponse, как для API поиска в Интернете. Если запрос завершается с ошибкой, то объектом верхнего уровня будет являться [ErrorResponse](#errorresponse).
@@ -137,7 +138,7 @@ https://api.labs.cognitive.microsoft.com/urlpreview/v7.0/search?q=queryURL
 |Код состояния|ОПИСАНИЕ|  
 |-----------------|-----------------|  
 |200|Успешно.|  
-|400|Один из параметров запроса отсутствует или является недопустимым.| 
+|400|Один из параметров запроса отсутствует или имеет недопустимое значение.| 
 |400|ServerError, дополнительный код ResourceError: не удалось подключиться к запрошенному URL-адресу|
 |400|ServerError, дополнительный код ResourceError: запрошенный URL-адрес не вернул код успешного завершения (сюда включается и ошибка HTTP 404)|
 |400|InvalidRequest, дополнительный код Blocked: запрошенный URL-адрес заблокирован, так как он может содержать содержимое только для взрослых| 
@@ -180,15 +181,15 @@ https://api.labs.cognitive.microsoft.com/urlpreview/v7.0/search?q=queryURL
 |Код|SubCode (дополнительный код)|ОПИСАНИЕ
 |-|-|-
 |ServerError|UnexpectedError<br/>ResourceError<br/>NotImplemented|Код состояния HTTP — 500.
-|InvalidRequest|ParameterMissing<br/>ParameterInvalidValue<br/>HttpNotAllowed<br/>Заблокировано|Bing возвращает ошибку InvalidRequest (недопустимый запрос) всякий раз, когда любая часть запроса является недопустимой. Например, отсутствует обязательный параметр или значение параметра является недопустимым.<br/><br/>В случае ошибки ParameterMissing или ParameterInvalidValue возвращается код состояния HTTP 400.<br/><br/>Если вместо HTTPS используется протокол HTTP, Bing возвращает HttpNotAllowed и код состояния HTTP 410.
+|InvalidRequest|ParameterMissing<br/>ParameterInvalidValue<br/>HttpNotAllowed<br/>Заблокировано|Bing возвращает ошибку InvalidRequest (недопустимый запрос) всякий раз, когда любая часть запроса недопустима. Например, отсутствует обязательный параметр или значение параметра недопустимо.<br/><br/>В случае ошибки ParameterMissing или ParameterInvalidValue возвращается код состояния HTTP 400.<br/><br/>Если вместо HTTPS используется протокол HTTP, Bing возвращает HttpNotAllowed и код состояния HTTP 410.
 |RateLimitExceeded|Дополнительные коды не используются|Bing возвращает ошибку RateLimitExceeded всякий раз при превышении квоты запросов в секунду (QPS) или запросов в месяц (QPM).<br/><br/>При превышении QPS Bing возвращает код состояния HTTP 429, а если превысить QPM, Bing вернет код 403.
-|InvalidAuthorization|AuthorizationMissing<br/>AuthorizationRedundancy|Bing возвращает InvalidAuthorization, если не может выполнить аутентификацию вызывающего объекта. Например, когда отсутствует заголовок `Ocp-Apim-Subscription-Key` или указан недопустимый ключ подписки.<br/><br/>Избыточность возникает, если указать более одного способа аутентификации.<br/><br/>При ошибке InvalidAuthorization возвращается код состояния HTTP 401.
+|InvalidAuthorization|AuthorizationMissing<br/>AuthorizationRedundancy|Bing возвращает InvalidAuthorization, когда Bing не может проверить подлинность вызывающего объекта. Например, когда заголовок `Ocp-Apim-Subscription-Key` отсутствует или при недопустимом ключе подписки.<br/><br/>Избыточность возникает, если указать более одного способа проверки подлинности.<br/><br/>При ошибке InvalidAuthorization кодом состояния HTTP будет 401.
 |InsufficientAuthorization|AuthorizationDisabled<br/>AuthorizationExpired|Bing возвращает InsufficientAuthorization, когда вызывающая сторона не имеет разрешений на доступ к ресурсу. Это может произойти, если ключ подписки отключен или срок его действия истек. <br/><br/>При ошибке InsufficientAuthorization возвращается код состояния HTTP 403.
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Краткое руководство — C#](csharp.md)
-- [Краткое руководство — Java](java-quickstart.md)
-- [Краткое руководство — JavaScript](javascript.md)
-- [Краткое руководство — Node](node-quickstart.md)
-- [Project Answer Search Python quickstart](python-quickstart.md) (Краткое руководство по запросам Python в службе поиска ответов в проекте)
+- [Краткое руководство для C#](csharp.md)
+- [Краткое руководство для Java](java-quickstart.md)
+- [Краткое руководство для JavaScript](javascript.md)
+- [Краткое руководство для Node](node-quickstart.md)
+- [Краткое руководство для Python](python-quickstart.md)
 

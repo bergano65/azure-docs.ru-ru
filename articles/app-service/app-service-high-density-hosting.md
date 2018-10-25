@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 01/22/2018
 ms.author: byvinyal
-ms.openlocfilehash: 97e1efe34417c3bf2f23801b2112b718f55d3416
-ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
+ms.openlocfilehash: f2cf472ef3c2c9950dd9f9382009e21fbf62771b
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36962406"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48856791"
 ---
 # <a name="high-density-hosting-on-azure-app-service-using-per-app-scaling"></a>Высокая плотность размещения в службе приложений Azure с использованием независимого масштабирования приложений
 По умолчанию масштабирование приложений службы приложений осуществляется путем увеличения [плана службы приложений](azure-web-sites-web-hosting-plans-in-depth-overview.md), в котором они выполняются. Если в одном плане службы приложений выполняется несколько приложений, в каждом масштабируемом экземпляре выполняются все приложения в плане.
@@ -32,7 +32,7 @@ ms.locfileid: "36962406"
 
 ## <a name="per-app-scaling-using-powershell"></a>Независимое масштабирование приложений с помощью PowerShell
 
-Чтобы создать план с независимым масштабированием приложений, передайте атрибут ```-perSiteScaling $true``` в командлет ```New-AzureRmAppServicePlan```.
+Чтобы создать план с независимым масштабированием приложений, передайте параметр ```-PerSiteScaling $true``` в командлет ```New-AzureRmAppServicePlan```.
 
 ```powershell
 New-AzureRmAppServicePlan -ResourceGroupName $ResourceGroup -Name $AppServicePlan `
@@ -41,23 +41,12 @@ New-AzureRmAppServicePlan -ResourceGroupName $ResourceGroup -Name $AppServicePla
                             -NumberofWorkers 5 -PerSiteScaling $true
 ```
 
-Чтобы обновить существующий план службы приложений с независимым масштабированием приложений: 
-
-- получите целевой план (```Get-AzureRmAppServicePlan```);
-- измените свойство локально (```$newASP.PerSiteScaling = $true```);
-- опубликуйте изменения в Azure (```Set-AzureRmAppServicePlan```). 
+Чтобы включить масштабирование с помощью существующего плана службы приложений, передайте параметр `-PerSiteScaling $true` в командлет ```Set-AzureRmAppServicePlan```.
 
 ```powershell
-# Get the new App Service Plan and modify the "PerSiteScaling" property.
-$newASP = Get-AzureRmAppServicePlan -ResourceGroupName $ResourceGroup -Name $AppServicePlan
-$newASP
-
-#Modify the local copy to use "PerSiteScaling" property.
-$newASP.PerSiteScaling = $true
-$newASP
-    
-#Post updated app service plan back to azure
-Set-AzureRmAppServicePlan $newASP
+# Enable per-app scaling for the App Service Plan using the "PerSiteScaling" parameter.
+Set-AzureRmAppServicePlan -ResourceGroupName $ResourceGroup `
+   -Name $AppServicePlan -PerSiteScaling $true
 ```
 
 На уровне приложения настройте несколько экземпляров, которые приложение сможет использовать в плане службы приложений.

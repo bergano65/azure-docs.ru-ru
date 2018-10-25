@@ -11,20 +11,20 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 09/14/2018
-ms.openlocfilehash: e828b288f2c3ab86a74709682eb7f96f8baf73ab
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.date: 10/15/2018
+ms.openlocfilehash: f48e9656aa2f562a1475bc5e0f6e81fdcbfda66a
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48869488"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49361692"
 ---
 # <a name="import-a-bacpac-file-to-a-new-azure-sql-database"></a>Импорт BACPAC-файла в новую базу данных SQL Azure
 
-При необходимости импортировать базу данных из архива или при миграции с другой платформы можно импортировать схему и данные базы данных из [BACPAC](https://msdn.microsoft.com/library/ee210546.aspx#Anchor_4)-файла. BACPAC-файл — это ZIP-файл с расширением BACPAC, содержащий метаданные и данные из базы данных SQL Server. BACPAC-файл можно импортировать из хранилища BLOB-объектов Azure (только уровня "Стандартный") или из локального хранилища. Чтобы обеспечить максимальную скорость импорта, рекомендуем указать более высокий уровень служб и объем вычислительных ресурсов, например P6, и затем, после успешного импорта, понизить его до необходимой емкости. Кроме того, уровень совместимости базы данных после импорта основан на уровне совместимости базы данных-источника. 
+При необходимости импортировать базу данных из архива или при миграции с другой платформы можно импортировать схему и данные базы данных из [BACPAC](https://msdn.microsoft.com/library/ee210546.aspx#Anchor_4)-файла. BACPAC-файл — это ZIP-файл с расширением BACPAC, содержащий метаданные и данные из базы данных SQL Server. BACPAC-файл можно импортировать из хранилища BLOB-объектов Azure (только уровня "Стандартный") или из локального хранилища. Чтобы обеспечить максимальную скорость импорта, рекомендуем указать более высокий уровень служб и объем вычислительных ресурсов, например P6, и затем, после успешного импорта, понизить его до необходимой емкости. Кроме того, уровень совместимости базы данных после импорта основан на уровне совместимости базы данных-источника.
 
-> [!IMPORTANT] 
-> После переноса базы данных в базу данных SQL Azure вы можете работать с ней при текущем уровне совместимости (уровень 100 для базы данных AdventureWorks2008R2) или при более высоком уровне. Дополнительные сведения о последствиях и параметрах работы базы данных с определенным уровнем совместимости см. в разделе [ALTER DATABASE (Transact-SQL) Compatibility Level](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-compatibility-level) (Уровень совместимости ALTER DATABASE (Transact-SQL)). Кроме того, в статье [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql) вы можете получить сведения о дополнительных настройках уровня базы данных, связанных с уровнем совместимости.   >
+> [!IMPORTANT]
+> После переноса базы данных в базу данных SQL Azure вы можете работать с ней при текущем уровне совместимости (уровень 100 для базы данных AdventureWorks2008R2) или при более высоком уровне. Дополнительные сведения о последствиях и параметрах работы базы данных с определенным уровнем совместимости см. в разделе [ALTER DATABASE (Transact-SQL) Compatibility Level](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-compatibility-level) (Уровень совместимости ALTER DATABASE (Transact-SQL)). Кроме того, в статье [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql) вы можете получить сведения о дополнительных настройках уровня базы данных, связанных с уровнем совместимости.
 
 ## <a name="import-from-a-bacpac-file-using-azure-portal"></a>Импорт из BACPAC-файл с помощью портала Azure
 
@@ -37,19 +37,19 @@ ms.locfileid: "48869488"
 Чтобы отслеживать ход выполнения операции импорта, откройте страницу логического сервера, содержащего импортируемую базу данных. Прокрутите ее вниз до раздела **Операции** и щелкните журнал **Импорт и экспорт**.
 
 > [!NOTE]
-> [Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance.md) поддерживает импорт из файла BACPAC и с помощью других методов, указанных в этой статье. Миграция с помощью портала Azure сейчас не поддерживается.
+> [Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance.md) поддерживает импорт из BACPAC-файла и с помощью других методов, указанных в этой статье. Миграция с помощью портала Azure сейчас не поддерживается.
 
 ### <a name="monitor-the-progress-of-an-import-operation"></a>Отслеживание операции импорта
 
 Чтобы отслеживать ход выполнения операции импорта, откройте страницу логического сервера, на который импортируется база данных. Прокрутите ее вниз до раздела **Операции** и щелкните журнал **Импорт и экспорт**.
-   
+
    ![импорт](./media/sql-database-import/import-history.png) ![состояние импорта](./media/sql-database-import/import-status.png)
 
 Щелкните **Базы данных SQL**, чтобы проверить активность базы данных на сервере, и убедитесь, что для новой базы данных задано состояние **В сети**.
 
 ## <a name="import-from-a-bacpac-file-using-sqlpackage"></a>Импорт из BACPAC-файла с помощью SQLPackage
 
-Импорт базы данных SQL с помощью программы командной строки [SqlPackage](https://docs.microsoft.com/sql/tools/sqlpackage) описывается в разделе о [параметрах и свойствах операции импорта](https://docs.microsoft.com/sql/tools/sqlpackage#Import Parameters and Properties). Служебная программа SqlPackage поставляется вместе с последними версиями [SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) и [SQL Server Data Tools для Visual Studio](https://msdn.microsoft.com/library/mt204009.aspx). Кроме того, вы можете скачать последнюю версию [SqlPackage](https://www.microsoft.com/download/details.aspx?id=53876) непосредственно из Центра загрузки Майкрософт.
+Импорт базы данных SQL с помощью программы командной строки [SqlPackage](https://docs.microsoft.com/sql/tools/sqlpackage) описывается в разделе о [параметрах и свойствах операции импорта](https://docs.microsoft.com/sql/tools/sqlpackage#-import-parameters-and-properties). Служебная программа SqlPackage поставляется вместе с последними версиями [SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) и [SQL Server Data Tools для Visual Studio](https://msdn.microsoft.com/library/mt204009.aspx). Кроме того, вы можете скачать последнюю версию [SqlPackage](https://www.microsoft.com/download/details.aspx?id=53876) непосредственно из Центра загрузки Майкрософт.
 
 Рекомендуется использовать служебную программу SqlPackage для масштабирования и обеспечения производительности в большинстве рабочих сред. Сведения о миграции из SQL Server в базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://blogs.msdn.microsoft.com/sqlcat/2016/10/20/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files/).
 
@@ -107,6 +107,7 @@ $importStatus
 Еще один пример сценария приведен в разделе [Импорт базы данных из BACPAC-файла](scripts/sql-database-import-from-bacpac-powershell.md).
 
 ## <a name="limitations"></a>Ограничения
+
 - Импорт базы данных в эластичный пул не поддерживается. Однако вы можете сначала выполнить импорт данных в отдельную базу данных, а затем переместить эту базу данных в пул.
 
 ## <a name="import-using-other-methods"></a>Импорт с использованием других методов
@@ -117,11 +118,8 @@ $importStatus
 - [мастер импорта и экспорта SQL Server](https://docs.microsoft.com/sql/integration-services/import-export-data/start-the-sql-server-import-and-export-wizard).
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Чтобы научиться подключаться к импортированной базе данных SQL и отправлять к ней запросы, ознакомьтесь со статьей [Подключение к базе данных SQL с помощью SQL Server Management Studio и выполнение пробного запроса T-SQL](sql-database-connect-query-ssms.md).
-* Сведения о миграции из SQL Server в базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://blogs.msdn.microsoft.com/sqlcat/2016/10/20/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files/).
-* Описание процесса миграции базы данных SQL Server в базу данных SQL Azure, включая рекомендации по его использованию, см. в [этой статье](sql-database-cloud-migrate.md).
-* Чтобы узнать, как безопасно управлять ключами к хранилищу данных и	подписанными URL-адресами и совместно их использовать, ознакомьтесь с [руководством по безопасности службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-security-guide). 
 
-
-  
-
+- Чтобы научиться подключаться к импортированной базе данных SQL и отправлять к ней запросы, ознакомьтесь со статьей [Подключение к базе данных SQL с помощью SQL Server Management Studio и выполнение пробного запроса T-SQL](sql-database-connect-query-ssms.md).
+- Сведения о миграции из SQL Server в базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://blogs.msdn.microsoft.com/sqlcat/2016/10/20/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files/).
+- Описание процесса миграции базы данных SQL Server в базу данных SQL Azure, включая рекомендации по его использованию, см. в [этой статье](sql-database-cloud-migrate.md).
+- Чтобы узнать, как безопасно управлять ключами к хранилищу данных и подписанными URL-адресами и совместно их использовать, ознакомьтесь с [руководством по безопасности службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-security-guide).

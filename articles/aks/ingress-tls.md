@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/30/2018
 ms.author: iainfou
-ms.openlocfilehash: 87ea88ad84114c4059e9a461beedb656c1d66bf5
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 4679b800126f75596dcb78b46c65c6ac2b616729
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44355466"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49364631"
 ---
 # <a name="create-an-https-ingress-controller-on-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика HTTPS в Службе Azure Kubernetes (AKS)
 
@@ -22,7 +22,7 @@ ms.locfileid: "44355466"
 
 Также можно:
 
-- [Создать основной контроллер входящего трафика с внешним сетевым подключением.][aks-ingress-basic]
+- [Создать базовый контроллер входящего трафика с внешним сетевым подключением.][aks-ingress-basic]
 - [Включить надстройку маршрутизации приложений HTTP.][aks-http-app-routing]
 - [Создать контроллер входящего трафика, который использует внутреннюю, частную сети и IP-адрес.][aks-ingress-internal]
 - [Создать контроллер входящего трафика со статическим общедоступным IP-адресом и настроить шифрование для автоматического создания TLS-сертификатов.][aks-ingress-static-tls]
@@ -35,13 +35,13 @@ ms.locfileid: "44355466"
 
 ## <a name="create-an-ingress-controller"></a>Создание контроллера входящего трафика
 
-Чтобы создать контроллер входящего трафика, установите *nginx ingress* с помощью `Helm`.
+Чтобы создать контроллер входящего трафика, установите *nginx ingress* с помощью `Helm`. Для обеспечения дополнительной избыточности развертываются две реплики контроллеров входящего трафика NGINX с использованием параметра `--set controller.replicaCount`. Чтобы максимально эффективно использовать реплики контроллера входящего трафика, убедитесь, что в кластере AKS используется несколько узлов.
 
 > [!TIP]
 > В следующем примере контроллер входящего трафика устанавливается в пространстве имен `kube-system`. При необходимости вы можете указать другое пространство имен для своей среды. Если в кластере AKS не включено RBAC, добавьте `--set rbac.create=false` в команду.
 
 ```console
-helm install stable/nginx-ingress --namespace kube-system
+helm install stable/nginx-ingress --namespace kube-system --set controller.replicaCount=2
 ```
 
 Во время установки для контроллера входящего трафика создается общедоступный IP-адрес Azure. Этот IP-адрес является статическим только на время жизненного цикла контроллера входящего трафика. При удалении контроллера входящего трафика этот общедоступный IP-адрес теряется. Если создать дополнительный контроллер входящего трафика, ему назначается новый общедоступный IP-адрес. Чтобы сохранить общедоступный IP-адрес, создайте вместо этого [контроллер со статическим общедоступным IP-адресом][aks-ingress-static-tls].
@@ -90,17 +90,21 @@ az network public-ip update --ids $PUBLICIPID --dns-name $DNSNAME
 Чтобы установить контроллер cert-manager в кластере с поддержкой RBAC, используйте следующую команду `helm install`:
 
 ```console
-helm install stable/cert-manager --set ingressShim.defaultIssuerName=letsencrypt-staging --set ingressShim.defaultIssuerKind=ClusterIssuer
+helm install stable/cert-manager \
+    --namespace kube-system \
+    --set ingressShim.defaultIssuerName=letsencrypt-staging \
+    --set ingressShim.defaultIssuerKind=ClusterIssuer
 ```
 
 Если кластер не поддерживает RBAC, используйте следующую команду:
 
 ```console
 helm install stable/cert-manager \
-  --set ingressShim.defaultIssuerName=letsencrypt-staging \
-  --set ingressShim.defaultIssuerKind=ClusterIssuer \
-  --set rbac.create=false \
-  --set serviceAccount.create=false
+    --namespace kube-system \
+    --set ingressShim.defaultIssuerName=letsencrypt-staging \
+    --set ingressShim.defaultIssuerKind=ClusterIssuer \
+    --set rbac.create=false \
+    --set serviceAccount.create=false
 ```
 
 Дополнительные сведения о конфигурации cert-manager см. в описании [проекта cert-manager][cert-manager].
@@ -253,6 +257,50 @@ ingress.extensions/hello-world-ingress created
 
 ![Второй пример приложения](media/ingress/app-two.png)
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+В этой статье для установки компонентов обработки входящего трафика, сертификатов и примеров приложений используется Helm. При развертывании диаграммы Helm создается несколько ресурсов Kubernetes. К ним относятся элементы pod, развертывания и службы. Чтобы очистить их, необходимо сначала удалить ресурсы сертификатов.
+
+```console
+kubectl delete -f certificates.yaml
+kubectl delete -f cluster-issuer.yaml
+```
+
+Теперь получите список выпусков Helm с помощью команды `helm list`. Найдите диаграммы *nginx-ingress*, *cert-manager* и *aks-helloworld*, как показано в следующем примере выходных данных.
+
+```
+$ helm list
+
+NAME                    REVISION    UPDATED                     STATUS      CHART                   APP VERSION NAMESPACE
+billowing-kitten        1           Tue Oct 16 17:24:05 2018    DEPLOYED    nginx-ingress-0.22.1    0.15.0      kube-system
+loitering-waterbuffalo  1           Tue Oct 16 17:26:16 2018    DEPLOYED    cert-manager-v0.3.4     v0.3.2      kube-system
+flabby-deer             1           Tue Oct 16 17:27:06 2018    DEPLOYED    aks-helloworld-0.1.0                default
+linting-echidna         1           Tue Oct 16 17:27:02 2018    DEPLOYED    aks-helloworld-0.1.0                default
+```
+
+Удалить выпуски командой `helm delete`. В следующем примере удаляются развертывание контроллера входящего трафика NGINX, диспетчер сертификатов и два примера приложений hello world для AKS.
+
+```
+$ helm delete billowing-kitten loitering-waterbuffalo flabby-deer linting-echidna
+
+release "billowing-kitten" deleted
+release "loitering-waterbuffalo" deleted
+release "flabby-deer" deleted
+release "linting-echidna" deleted
+```
+
+Затем удалите репозиторий Helm, используемый для приложения hello world для AKS.
+
+```console
+helm repo remove azure-samples
+```
+
+Наконец, удалите маршрут входящего трафика, направлявший трафик в пример приложения.
+
+```console
+kubectl delete -f hello-world-ingress.yaml
+```
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 В данной статье упоминаются некоторые внешние компоненты для AKS. Чтобы узнать больше об этих компонентах, см. следующие страницы проекта:
@@ -263,7 +311,7 @@ ingress.extensions/hello-world-ingress created
 
 Также можно:
 
-- [Создать основной контроллер входящего трафика с внешним сетевым подключением.][aks-ingress-basic]
+- [Создать базовый контроллер входящего трафика с внешним сетевым подключением.][aks-ingress-basic]
 - [Включить надстройку маршрутизации приложений HTTP.][aks-http-app-routing]
 - [Создать контроллер входящего трафика, который использует внутреннюю, частную сети и IP-адрес.][aks-ingress-internal]
 - [Создать контроллер входящего трафика со статическим общедоступным IP-адресом и настроить шифрование для автоматического создания TLS-сертификатов.][aks-ingress-static-tls]

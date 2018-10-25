@@ -11,16 +11,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/06/2018
 ms.author: jingwang
-ms.openlocfilehash: a160c47e12db3c4ef9cefc5cd70293468ddf8234
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 953585ffcc5a40d9ae48055f68a1c1fa84db25cc
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39011362"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48249338"
 ---
 # <a name="copy-data-from-azure-data-lake-storage-gen1-to-gen2-preview-with-azure-data-factory"></a>Копирование данных из Azure Data Lake Storage 1-го поколения в Azure Data Lake Storage 2-го поколения (предварительная версия) с помощью Фабрики данных Azure
 
-[Хранилище Azure Data Lake Storage 2-го поколения (предварительная версия)](../storage/data-lake-storage/introduction.md) добавляет протокол иерархической файловой системы пространства имен и средства безопасности хранилища BLOB-объектов Azure, что упрощает подключение платформы аналитики к долговременному уровню хранения. В Data Lake Storage 2-го поколения (предварительная версия) сохранены все качества хранения объектов при добавлении преимуществ файловой системы.
+[Хранилище Azure Data Lake Storage 2-го поколения (предварительная версия)](../storage/data-lake-storage/introduction.md) добавляет протокол иерархической файловой системы пространства имен и средства безопасности хранилища BLOB-объектов Azure, что упрощает подключение платформы аналитики к долговременному уровню хранения. В Data Lake Storage Gen2 (предварительная версия) сохранены все качества хранения объектов при добавлении преимуществ файловой системы.
 
 Если вы используете Azure Data Lake Storage 1-го поколения, оцените новые возможности 2-го поколения, скопировав данные из Data Lake Storage 1-го поколения в Data Lake Storage 2-го поколения с помощью Фабрики данных Azure.
 
@@ -34,7 +34,7 @@ ms.locfileid: "39011362"
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * Учетная запись Azure Data Lake Storage 1-го поколения с сохраненными в ней данными.
-* Учетная запись службы хранилища с включенным хранилищем Azure Data Lake Storage 2-го поколения. Если у вас еще нет учетной записи хранилища, создайте ее щелкнув [здесь](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM).
+* Учетная запись службы хранилища с включенным хранилищем Azure Data Lake Storage Gen2. Если у вас еще нет учетной записи хранилища, создайте ее щелкнув [здесь](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM).
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
@@ -58,7 +58,7 @@ ms.locfileid: "39011362"
 
    Выберите плитку **Создание и мониторинг**, чтобы открыть на отдельной вкладке приложение интеграции данных.
 
-## <a name="load-data-into-azure-data-lake-storage-gen2"></a>Загрузка данных в Azure Data Lake Storage 2-го поколения
+## <a name="load-data-into-azure-data-lake-storage-gen2"></a>Загрузка данных в Azure Data Lake Storage Gen2
 
 1. Чтобы запустить средство копирования данных, на странице **Get started** (Начало работы) выберите плитку **Copy Data** (Копирование данных): 
 
@@ -80,7 +80,7 @@ ms.locfileid: "39011362"
    3. Щелкните **Далее**.
    
    > [!IMPORTANT]
-   > В этом пошаговом руководстве вы примените _Управляемое удостоверение службы_ для аутентификации в Data Lake Storage 1-го поколения. Не забудьте предоставить Управляемому удостоверению службы соответствующие разрешения в Azure Data Lake Storage 1-го поколения, выполнив [эти инструкции](connector-azure-data-lake-store.md#using-managed-service-identity-authentication).
+   > В этом руководстве вы используете управляемое удостоверение для ресурсов Azure для аутентификации в Data Lake Storage 1-го поколения. Не забудьте предоставить Управляемому удостоверению службы соответствующие разрешения в Azure Data Lake Storage 1-го поколения, выполнив [эти инструкции](connector-azure-data-lake-store.md#managed-identity).
    
    ![Выбор учетной записи Data Lake Storage 1-го поколения](./media/load-azure-data-lake-storage-gen2-from-gen1/specify-adls-gen1-account.png)
    
@@ -100,7 +100,7 @@ ms.locfileid: "39011362"
 
 8. На **странице подключения к Azure Data Lake Storage 2-го поколения** выполните следующие действия.
 
-   1. Из раскрывающегося списка "Имя учетной записи хранения" выберите соответствующую учетную запись Data Lake Storage 2-го поколения.
+   1. Из раскрывающегося списка "Имя учетной записи хранения" выберите соответствующую учетную запись Data Lake Storage Gen2.
    2. Щелкните **Далее**.
    
    ![Выбор учетной записи Data Lake Storage 2-го поколения](./media/load-azure-data-lake-storage-gen2-from-gen1/specify-adls-gen2-account.png)
@@ -129,7 +129,7 @@ ms.locfileid: "39011362"
 
     ![Мониторинг сведений о выполнении действия](./media/load-azure-data-lake-storage-gen2-from-gen1/monitor-activity-run-details.png)
 
-16. Убедитесь, что данные скопированы в Data Lake Storage 2-го поколения.
+16. Убедитесь, что данные скопированы в Data Lake Storage Gen2.
 
 ## <a name="best-practices"></a>Рекомендации
 
@@ -141,4 +141,4 @@ ms.locfileid: "39011362"
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Действие копирования в фабрике данных Azure](copy-activity-overview.md)
-* [Copy data to or from Azure Data Lake Storage Gen2 Preview using Azure Data Factory (Preview)](connector-azure-data-lake-storage.md) (Копирование данных в Azure Data Lake Storage 2-го поколения (предварительная версия) или из него с помощью фабрики данных Azure)
+* [Copy data to or from Azure Data Lake Storage Gen2 Preview using Azure Data Factory (Preview)](connector-azure-data-lake-storage.md) (Копирование данных в Azure Data Lake Storage Gen2 (предварительная версия) или из него с помощью фабрики данных Azure)

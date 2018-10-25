@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/16/2016
 ms.author: makohli
-ms.openlocfilehash: 7bd0737e7fb26af95eed63696d1ac07c88a9dec4
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.openlocfilehash: 2216b915c47ea05d3303ca02e51e976490ea36c6
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42146799"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49068361"
 ---
 # <a name="advisor-high-availability-recommendations"></a>Рекомендации Azure Advisor по высокой доступности
 
@@ -67,6 +67,10 @@ ms.locfileid: "42146799"
 
 Если профиль диспетчера трафика настроен для географической маршрутизации, трафик направляется на конечные точки в указанных регионах. В случае сбоя в регионе нет предварительно заданной процедуры отработки отказа. Наличие конечной точки, в которой группировка по регионам настроена на "Все (мир)", позволит избежать потери трафика и повысить доступность службы. Помощник определяет профили диспетчера трафика, настроенные для географической маршрутизации без конечной точки с группировкой по регионам "Все (мир)", и рекомендует изменить конфигурацию соответствующим образом.
 
+## <a name="use-soft-delete-on-your-azure-storage-account-to-save-and-recover-data-in-the-event-of-accidental-overwrite-or-deletion"></a>Используйте обратимое удаления в учетной записи хранения Azure, чтобы сохранить и восстановить данные в случае случайной перезаписи или удалении.
+
+Включите [обратимое удаление](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete) в вашей учетной записи хранения, чтобы удалить большие двоичные объекты с возможность восстановления вместо безвозвратного удаления. Когда данные перезаписываются, создается теневая копия обратимого удаления, чтобы сохранить состояние перезаписанных данных. Это позволяет восстановить данные в случае случайного удаления или перезаписи. Помощник определяет учетные записи хранения Azure, не имеющие удаление с возможностью восстановления и предлагает отключить его.
+
 ## <a name="how-to-access-high-availability-recommendations-in-advisor"></a>Как получить доступ к рекомендациям по высокой доступности в Advisor
 
 1. Войдите на [портал Azure](https://portal.azure.com) и откройте [Помощник](https://aka.ms/azureadvisordashboard).
@@ -78,7 +82,7 @@ ms.locfileid: "42146799"
 Дополнительные сведения о рекомендациях Помощника см. в следующих разделах.
 * [Общие сведения об Azure Advisor](advisor-overview.md)
 * [Приступая к работе с Azure Advisor](advisor-get-started.md)
-* [Рекомендации Azure Advisor по затратам](advisor-performance-recommendations.md)
+* [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md)
 * [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)
 * [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md)
 

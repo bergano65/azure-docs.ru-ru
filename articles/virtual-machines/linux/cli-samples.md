@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 03/08/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 1e4b7027ecbc6e70fadf8c540fa92903d276956b
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: ca9823a76064e504ee04bf5896f1362b5187bc34
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37931717"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48042042"
 ---
 # <a name="azure-cli-samples-for-linux-virtual-machines"></a>Примеры Azure CLI для виртуальных машин Linux
 
@@ -42,6 +42,7 @@ ms.locfileid: "37931717"
 | [Create a managed disk from a snapshot with CLI](../scripts/virtual-machines-linux-cli-sample-create-managed-disk-from-snapshot.md?toc=%2fcli%2fmodule%2ftoc.json) (Создание управляемого диска из моментального снимка с помощью интерфейса командной строки) | Создание управляемого диска из моментального снимка. |
 | [Copy managed disks in the same subscription or different subscription with PowerShell](../scripts/virtual-machines-linux-cli-sample-copy-managed-disks-to-same-or-different-subscription.md?toc=%2fcli%2fmodule%2ftoc.json) (Копирование управляемых дисков в ту же или другую подписку с помощью PowerShell) | Копирование управляемого диска в ту же или в другую подписку, но в том же регионе, что и родительский управляемый диск. 
 | [Экспорт моментального снимка в виде VHD в учетную запись хранения](../scripts/virtual-machines-linux-cli-sample-copy-snapshot-to-storage-account.md?toc=%2fcli%2fmodule%2ftoc.json) (Export/Copy managed snapshots as VHD to a storage account in different region with PowerShell) | Экспорт управляемого моментального снимка в качестве VHD в учетную запись хранения в другом регионе. |
+| [Экспорт VHD управляемого диска в учетную запись хранения](../scripts/virtual-machines-linux-cli-sample-copy-managed-disks-vhd.md?toc=%2fcli%2fmodule%2ftoc.json) | Экспорт базового VHD управляемого диска в учетную запись хранения в другом регионе. |
 | [Copy snapshot of a managed disk to same or different subscription with CLI](../scripts/virtual-machines-linux-cli-sample-copy-snapshot-to-same-or-different-subscription.md?toc=%2fcli%2fmodule%2ftoc.json) (Копирование моментального снимка управляемого диска в ту же или в другую подписку с помощью интерфейса командной строки) | Копирование моментального снимка в ту же или в другую подписку, но в том же регионе, что и родительский моментальный снимок. |
 |**Сети виртуальных машин**||
 | [Защита сетевого трафика между виртуальными машинами](./../scripts/virtual-machines-linux-cli-sample-create-vm-nsg.md?toc=%2fcli%2fazure%2ftoc.json) | Создает две виртуальные машины, все связанные ресурсы, а также внешние и внутренние группы безопасности сети (NSG). |

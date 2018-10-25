@@ -12,12 +12,12 @@ ms.author: xiwu
 ms.reviewer: mathoma
 manager: craigg
 ms.date: 09/25/2018
-ms.openlocfilehash: 95c27bcc99f08cb1e4998e43a6a2abd508bee0ac
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 25d13ba53eb5a8b411a557b5eaf05d278faa3733
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47228172"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48869318"
 ---
 # <a name="replication-with-sql-database-managed-instance"></a>Репликация с использованием Управляемого экземпляра Базы данных SQL
 
@@ -76,21 +76,22 @@ ms.locfileid: "47228172"
 
 ## <a name="configure-publishing-and-distribution-example"></a>Настройка примера публикации и распространения
 
-1. На портале [создайте Управляемый экземпляр Базы данных SQL Azure](http://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-create-tutorial-portal).
+1. На портале [создайте Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-create-tutorial-portal.md).
+2. [Создайте учетную запись хранения Azure](http://docs.microsoft.com/azure/storage/common/storage-create-storage-account#create-a-storage-account) для рабочей папки.
 
-1. [Создайте учетную запись хранения Azure](http://docs.microsoft.com/azure/storage/common/storage-create-storage-account#create-a-storage-account) для рабочей папки. Обязательно скопируйте ключи к хранилищу данных. Дополнительные сведения см. в статье [Создание учетной записи хранения](http://docs.microsoft.com/azure/storage/common/storage-create-storage-account#manage-your-storage-access-keys).
-
-1. Создайте базу данных для издателя.
+   Обязательно скопируйте ключи к хранилищу данных. Дополнительные сведения см. в статье [Создание учетной записи хранения](../storage/common/storage-account-manage.md#access-keys
+).
+3. Создайте базу данных для издателя.
 
    В следующих сценариях замените `<Publishing_DB>` именем этой базы данных.
 
-1. Создайте пользователя базы данных с использованием аутентификации SQL для распространителя. Дополнительные сведения см. в разделе [Создание пользователей базы данных](http://docs.microsoft.com/azure/sql-database/sql-database-security-tutorial#creating-database-users). Установите надежный пароль.
+4. Создайте пользователя базы данных с использованием аутентификации SQL для распространителя. Дополнительные сведения см. в разделе [Создание пользователей базы данных](http://docs.microsoft.com/azure/sql-database/sql-database-security-tutorial#creating-database-users). Установите надежный пароль.
 
    В примерах сценариев ниже используйте `<SQL_USER>` и `<PASSWORD>` в качестве имени пользователя и пароля для этой учетной записи базы данных SQL Server.
 
-1. [Установите подключение к Управляемому экземпляру Базы данных SQL](http://docs.microsoft.com/azure/sql-database/sql-database-connect-query-ssms).
+5. [Установите подключение к Управляемому экземпляру Базы данных SQL](http://docs.microsoft.com/azure/sql-database/sql-database-connect-query-ssms).
 
-1. Выполните следующий запрос, чтобы добавить распространителя и базу данных распространителя.
+6. Выполните следующий запрос, чтобы добавить распространителя и базу данных распространителя.
 
    ```sql
    USE [master]
@@ -99,7 +100,7 @@ ms.locfileid: "47228172"
    EXEC sp_adddistributiondb @database = N'distribution';
    ```
 
-1. Чтобы издатель использовал указанную базу данных распространителя, обновите и запустите следующий запрос.
+7. Чтобы издатель использовал указанную базу данных распространителя, обновите и запустите следующий запрос.
 
    Замените `<SQL_USER>` и `<PASSWORD>` на имя пользователя и пароль учетной записи SQL Server.
 
@@ -107,7 +108,7 @@ ms.locfileid: "47228172"
 
    Замените `<STORAGE_CONNECTION_STRING>` строкой подключения из вкладки **Ключи доступа** вашей учетной записи хранения Microsoft Azure.
 
-   Обновив следующий запрос, запустите его. 
+   Обновив следующий запрос, запустите его.
 
    ```sql
    USE [master]
@@ -121,7 +122,7 @@ ms.locfileid: "47228172"
    GO
    ```
 
-1. Настройте издателя для репликации. 
+8. Настройте издателя для репликации.
 
     В следующем запросе замените `<Publishing_DB>` именем базы данных издателя.
 
@@ -155,15 +156,13 @@ ms.locfileid: "47228172"
                 @job_password = N'<PASSWORD>'
    ```
 
-1. Добавьте статью, подписку и агент принудительной подписки. 
+9. Добавьте статью, подписку и агент принудительной подписки.
 
    Чтобы добавить эти объекты, обновите следующий сценарий.
 
-   Замените `<Object_Name>` именем объекта публикации.
-
-   Замените `<Object_Schema>` именем исходной схемы. 
-
-   Замените другие параметры в угловых скобках `<>` значениями, используемыми в предыдущем сценарии. 
+   - Замените `<Object_Name>` именем объекта публикации.
+   - Замените `<Object_Schema>` именем исходной схемы.
+   - Замените другие параметры в угловых скобках `<>` значениями, используемыми в предыдущем сценарии.
 
    ```sql
    EXEC sp_addarticle @publication = N'<Publication_Name>',
@@ -183,7 +182,7 @@ ms.locfileid: "47228172"
                 @subscriber_security_mode = 0,
                 @subscriber_login = N'<SQL_USER>',
                 @subscriber_password = N'<PASSWORD>',
-                @job_login = N'<SQL_USER>', 
+                @job_login = N'<SQL_USER>',
                 @job_password = N'<PASSWORD>'
    GO
    ```

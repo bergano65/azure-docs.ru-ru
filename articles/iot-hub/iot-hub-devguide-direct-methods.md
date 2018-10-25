@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/17/2018
 ms.author: nberdy
-ms.openlocfilehash: f2e04c793f5c238716930bcbdcaa090e6a133588
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: f9476d42bbdb9d2a499c08d83eed6696fbbed469
+ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452599"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47586008"
 ---
 # <a name="understand-and-invoke-direct-methods-from-iot-hub"></a>Общие сведения о прямых методах и информация о вызове этих методов из Центра Интернета вещей
 

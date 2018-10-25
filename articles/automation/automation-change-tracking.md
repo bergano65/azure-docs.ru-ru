@@ -6,16 +6,16 @@ ms.service: automation
 ms.component: change-inventory-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 08/31/2018
+ms.date: 10/12/2018
 ms.topic: conceptual
 manager: carmonm
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 713c0f676067cb32a84361dd7801031295e2244f
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.openlocfilehash: 2678b9a1b80b1c9de6f1b554ce43bcd4f2dd5d50
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45634444"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49167007"
 ---
 # <a name="track-changes-in-your-environment-with-the-change-tracking-solution"></a>Отслеживание изменений в среде с помощью решения для отслеживания изменений
 
@@ -224,6 +224,17 @@ ms.locfileid: "45634444"
 |&nbsp;&nbsp;&nbsp;&nbsp;Отслеживается список известных или часто используемых системных библиотек DLL. Эта система предотвращает использование ненадежных разрешений каталога приложений за счет удаления версий вредоносной программы типа "Троянский конь" системных библиотек DLL.|
 > |**HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify**|
 |&nbsp;&nbsp;&nbsp;&nbsp;Отслеживается список пакетов, получающих уведомления о событиях из Winlogon — интерактивной модели поддержки входа в систему для операционной системы Windows.|
+
+## <a name="network-requirements"></a>Требования к сети
+
+Для Отслеживания изменений требуются следующие адреса. Взаимодействие с этими адресами выполняется через порт 443.
+
+|Azure Public  |Azure Government  |
+|---------|---------|
+|*.ods.opinsights.azure.com     |*.ods.opinsights.azure.us         |
+|*.oms.opinsights.azure.com     | *.oms.opinsights.azure.us        |
+|*.blob.core.windows.net|*.blob.core.usgovcloudapi.net|
+|*.azure-automation.net|*.azure-automation.us|
 
 ## <a name="use-change-tracking"></a>Использование функции отслеживания изменений
 

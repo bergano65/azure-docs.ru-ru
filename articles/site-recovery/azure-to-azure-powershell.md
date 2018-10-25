@@ -2,23 +2,23 @@
 title: Azure Site Recovery. Настройка и тестирование аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell | Документация Майкрософт
 description: Сведения о настройке аварийного восстановления в Azure Site Recovery для виртуальных машин Azure с помощью Azure PowerShell.
 services: site-recovery
-author: bsiva
-manager: abhemraj
-editor: raynew
+author: sujayt
+manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 07/06/2018
-ms.author: bsiva
-ms.openlocfilehash: 62dd02d53c14635a386a8c6fa3fbfbd6f91a88f7
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.date: 10/02/2018
+ms.author: sutalasi
+ms.openlocfilehash: 9b7200dab0351b6cd00aef05bf27c5c71a049d76
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37921092"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48044513"
 ---
 # <a name="set-up-disaster-recovery-for-azure-virtual-machines-using-azure-powershell"></a>Настройка аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell
 
-В этой статье описано, как настроить и проверить аварийное восстановление для виртуальных машин Azure с помощью Azure PowerShell. 
+
+В этой статье описано, как настроить и проверить аварийное восстановление для виртуальных машин Azure с помощью Azure PowerShell.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -34,10 +34,9 @@ ms.locfileid: "37921092"
 
 > [!NOTE]
 > Azure PowerShell пока поддерживает не все возможности этого сценария, доступные через портал. Ниже перечислены некоторые возможности, которые пока недоступны через Azure PowerShell:
-> - возможность репликации виртуальных машин Azure, которые используют управляемые диски;
 > - возможность сразу выбрать для репликации все диски виртуальной машины, чтобы не указывать их отдельно по одному.  
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы:
 - Вам должны быть понятны [архитектура и компоненты сценария](azure-to-azure-architecture.md).
@@ -93,13 +92,13 @@ $DataDisk1VhdURI = $VM.StorageProfile.DataDisks[0].Vhd
 
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 
-Создайте группу ресурсов, в которой будет создано хранилище служб восстановления. 
+Создайте группу ресурсов, в которой будет создано хранилище служб восстановления.
 
 > [!IMPORTANT]
 > * Хранилище служб восстановления и защищаемые виртуальные машины должны находиться в разных расположениях Azure.
 > * Группа ресурсов для хранилища служб восстановления и защищаемые виртуальные машины должны находиться в разных расположениях Azure.
 > * Хранилище служб восстановления и группа ресурсов, к которой оно относится, могут размещаться в одном расположении Azure.
- 
+
 В примере для этой статьи защищаемая виртуальная машина находится в регионе "Восточная часть США". Для аварийного восстановления выбран регион "Западная часть США 2". Хранилище служб восстановления и его группа ресурсов размещаются в регионе восстановления (Западная часть США 2).
 
 ```azurepowershell
@@ -110,10 +109,10 @@ New-AzureRmResourceGroup -Name "a2ademorecoveryrg" -Location "West US 2"
 ResourceGroupName : a2ademorecoveryrg
 Location          : westus2
 ProvisioningState : Succeeded
-Tags              : 
+Tags              :
 ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/a2ademorecoveryrg
 ```
-   
+
 Создайте хранилище служб восстановления. В следующем примере создается хранилище служб восстановления с именем a2aDemoRecoveryVault в регионе "Западная часть США 2".
 
 ```azurepowershell
@@ -130,15 +129,15 @@ Location          : westus2
 ResourceGroupName : a2ademorecoveryrg
 SubscriptionId    : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 Properties        : Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties
-``` 
+```
 ## <a name="set-the-vault-context"></a>Задание контекста хранилища
 
 > [!TIP]
 > Модуль PowerShell для Azure Site Recovery (модуль AzureRm.RecoveryServices.SiteRecovery) поставляется с удобными псевдонимами для большинства командлетов. Командлеты в модуле имеют вид *\<Операция>-**AzureRmRecoveryServicesAsr**\<объект>* и поддерживают эквивалентные псевдонимы вида *\<Операция>-**ASR**\<Объект>*. В этой статье для более удобного чтения используется псевдонимы командлетов.
 
-Настройте контекст хранилища для сеанса PowerShell. Для этого скачайте файл параметров хранилища и импортируйте его в сеанс PowerShell. 
+Настройте контекст хранилища для сеанса PowerShell. Для этого скачайте файл параметров хранилища и импортируйте его в сеанс PowerShell.
 
-После этого последующие операции Azure Site Recovery в сеансе PowerShell будут выполняться в контексте выбранного хранилища. 
+После этого последующие операции Azure Site Recovery в сеансе PowerShell будут выполняться в контексте выбранного хранилища.
 
  ```azurepowershell
 #Download the vault settings file for the vault.
@@ -160,21 +159,24 @@ Remove-Item -Path $Vaultsettingsfile.FilePath
 ```
 ## <a name="prepare-the-vault-to-start-replicating-azure-virtual-machines"></a>Подготовка хранилища к началу репликации виртуальных машин Azure
 
-####<a name="1-create-a-site-recovery-fabric-object-to-represent-the-primarysource-region"></a>1. Создание объекта структуры Site Recovery, который будет представлять исходный регион (источник)
+### <a name="create-a-site-recovery-fabric-object-to-represent-the-primary-source-region"></a>Создание объекта структуры Site Recovery, который будет представлять исходный регион (источник)
 
-Объект структуры в хранилище представляет регион Azure. Объект исходной структуры создается для того, чтобы обозначать исходный регион Azure, в котором размещаются защищенные виртуальные машины. В примере для этой статьи защищаемая виртуальная машина находится в регионе "Восточная часть США".
+Объект структуры в хранилище представляет регион Azure. Объект исходной структуры создается для представления региона Azure, в котором размещаются защищенные виртуальные машины. В примере для этой статьи защищаемая виртуальная машина находится в регионе "Восточная часть США".
 
-> [!NOTE]
-> Операции Azure Site Recovery выполняются асинхронно. При запуске операции отправляется задание Azure Site Recovery и возвращается объект отслеживания задания. Используйте объект отслеживания заданий, чтобы получить актуальное состояние задания (Get-ASRJob) и отслеживать состояние операции.
+- Можно создать только один объект структуры для каждого региона. 
+- Если была ранее включена репликация Site Recovery для виртуальной машины на портале Azure, Site Recovery автоматически создает объект структуры. Если в регионе уже существует объект структуры, новый создать не удастся.
+
+
+Прежде чем начать, обратите внимание, что операции Azure Site Recovery выполняются асинхронно. При запуске операции отправляется задание Azure Site Recovery и возвращается объект отслеживания задания. Используйте объект отслеживания заданий, чтобы получить актуальное состояние задания (Get-ASRJob) и отслеживать состояние операции.
 
 ```azurepowershell
 #Create Primary ASR fabric
-$TempASRJob = New-ASRFabric -Azure -Location 'East US'  -Name "A2Ademo-EastUS" 
+$TempASRJob = New-ASRFabric -Azure -Location 'East US'  -Name "A2Ademo-EastUS"
 
 # Track Job status to check for completion
-while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){ 
+while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){
         #If the job hasn't completed, sleep for 10 seconds before checking the job status again
-        sleep 10; 
+        sleep 10;
         $TempASRJob = Get-ASRJob -Job $TempASRJob
 }
 
@@ -185,17 +187,17 @@ $PrimaryFabric = Get-AsrFabric -Name "A2Ademo-EastUS"
 ```
 Если в одном хранилище будут защищаться виртуальные машины из нескольких регионов Azure, создайте отдельный объект структуры для каждого исходного региона Azure.
 
-####<a name="2-create-a-site-recovery-fabric-object-to-represent-the-recovery-region"></a>2. Создание объекта структуры Site Recovery, который будет представлять регион восстановления
+### <a name="create-a-site-recovery-fabric-object-to-represent-the-recovery-region"></a>Создание объекта структуры Site Recovery, который будет представлять регион восстановления
 
 Объект целевой структуры представляет расположение восстановления в Azure. Репликация и восстановление (при отработке отказа) для виртуальных машин будут выполняться в целевом регионе, который представлен структурой восстановления. В нашем примере регионом восстановления (целевым) Azure является регион "Западная часть США 2".
 
 ```azurepowershell
 #Create Recovery ASR fabric
-$TempASRJob = New-ASRFabric -Azure -Location 'West US 2'  -Name "A2Ademo-WestUS" 
+$TempASRJob = New-ASRFabric -Azure -Location 'West US 2'  -Name "A2Ademo-WestUS"
 
 # Track Job status to check for completion
-while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){ 
-        sleep 10; 
+while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){
+        sleep 10;
         $TempASRJob = Get-ASRJob -Job $TempASRJob
 }
 
@@ -206,7 +208,7 @@ $RecoveryFabric = Get-AsrFabric -Name "A2Ademo-WestUS"
 
 ```
 
-####<a name="3-create-a-site-recovery-protection-container-in-the-primary-fabric"></a>3. Создание контейнера защиты Site Recovery в исходной структуре
+### <a name="create-a-site-recovery-protection-container-in-the-primary-fabric"></a>Создание контейнера защиты Site Recovery в исходной структуре
 
 Контейнер защиты — это контейнер, в котором сгруппированы реплицируемые элементы структуры.
 
@@ -215,8 +217,8 @@ $RecoveryFabric = Get-AsrFabric -Name "A2Ademo-WestUS"
 $TempASRJob = New-AzureRmRecoveryServicesAsrProtectionContainer -InputObject $PrimaryFabric -Name "A2AEastUSProtectionContainer"
 
 #Track Job status to check for completion
-while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){ 
-        sleep 10; 
+while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){
+        sleep 10;
         $TempASRJob = Get-ASRJob -Job $TempASRJob
 }
 
@@ -224,15 +226,15 @@ Write-Output $TempASRJob.State
 
 $PrimaryProtContainer = Get-ASRProtectionContainer -Fabric $PrimaryFabric -Name "A2AEastUSProtectionContainer"
 ```
-####<a name="4-create-a-site-recovery-protection-container-in-the-recovery-fabric"></a>4. Создание контейнера защиты Site Recovery в структуре восстановления
+### <a name="create-a-site-recovery-protection-container-in-the-recovery-fabric"></a>Создание контейнера защиты Site Recovery в структуре восстановления
 
 ```azurepowershell
 #Create a Protection container in the recovery Azure region (within the Recovery fabric)
 $TempASRJob = New-AzureRmRecoveryServicesAsrProtectionContainer -InputObject $RecoveryFabric -Name "A2AWestUSProtectionContainer"
 
 #Track Job status to check for completion
-while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){ 
-        sleep 10; 
+while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){
+        sleep 10;
         $TempASRJob = Get-ASRJob -Job $TempASRJob
 }
 
@@ -243,15 +245,15 @@ Write-Output $TempASRJob.State
 $RecoveryProtContainer = Get-ASRProtectionContainer -Fabric $RecoveryFabric -Name "A2AWestUSProtectionContainer"
 ```
 
-####<a name="5-create-a-replication-policy"></a>5. Создание политики репликации
+### <a name="create-a-replication-policy"></a>Создание политики репликации
 
 ```azurepowershell
 #Create replication policy
 $TempASRJob = New-ASRPolicy -AzureToAzure -Name "A2APolicy" -RecoveryPointRetentionInHours 24 -ApplicationConsistentSnapshotFrequencyInHours 4
 
 #Track Job status to check for completion
-while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){ 
-        sleep 10; 
+while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){
+        sleep 10;
         $TempASRJob = Get-ASRJob -Job $TempASRJob
 }
 
@@ -260,7 +262,7 @@ Write-Output $TempASRJob.State
 
 $ReplicationPolicy = Get-ASRPolicy -Name "A2APolicy"
 ```
-####<a name="6-create-a-protection-container-mapping-between-the-primary-and-recovery-protection-container"></a>6. Создание сопоставления между исходным контейнером защиты и целевым контейнером защиты
+### <a name="create-a-protection-container-mapping-between-the-primary-and-recovery-protection-container"></a>Создание сопоставления между исходным контейнером защиты и целевым контейнером защиты
 
 Сопоставление контейнеров защиты связывает между собой исходный контейнер защиты, целевой контейнер защиты и политику репликации. Создайте отдельное сопоставление для каждой политики репликации, которую вы будете применять для репликации виртуальных машин между каждой парой контейнеров защиты.
 
@@ -269,8 +271,8 @@ $ReplicationPolicy = Get-ASRPolicy -Name "A2APolicy"
 $TempASRJob = New-ASRProtectionContainerMapping -Name "A2APrimaryToRecovery" -Policy $ReplicationPolicy -PrimaryProtectionContainer $PrimaryProtContainer -RecoveryProtectionContainer $RecoveryProtContainer
 
 #Track Job status to check for completion
-while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){ 
-        sleep 10; 
+while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){
+        sleep 10;
         $TempASRJob = Get-ASRJob -Job $TempASRJob
 }
 
@@ -280,17 +282,17 @@ Write-Output $TempASRJob.State
 $EusToWusPCMapping = Get-ASRProtectionContainerMapping -ProtectionContainer $PrimaryProtContainer -Name "A2APrimaryToRecovery"
 ```
 
-####<a name="7-create-a-protection-container-mapping-for-failback-reverse-replication-after-a-failover"></a>7. Создание сопоставления контейнеров защиты для восстановления размещения (обратной репликации после отработки отказа)
+### <a name="create-a-protection-container-mapping-for-failback-reverse-replication-after-a-failover"></a>Создание сопоставления контейнеров защиты для восстановления размещения (обратной репликации после отработки отказа)
 
 После отработки отказа, когда вы будете готовы вернуть виртуальную машину в исходный регион Azure, выполняется восстановление размещения. При восстановлении размещения та виртуальная машина, для которой выполнена отработка отказа, реплицируется обратно из региона отработки отказа в исходный регион. Для обратной репликации исходный и целевой регионы меняются ролями. Исходный регион становится новым регионом восстановления, а бывший регион восстановления становится исходным регионом. Сопоставление контейнеров защиты для обратной репликации отражает эту смену ролей исходного и целевого регионов.
 
 ```azurepowershell
-#Create Protection container mapping (for failback) between the Recovery and Primary Protection Containers with the Replication policy 
+#Create Protection container mapping (for failback) between the Recovery and Primary Protection Containers with the Replication policy
 $TempASRJob = New-ASRProtectionContainerMapping -Name "A2ARecoveryToPrimary" -Policy $ReplicationPolicy -PrimaryProtectionContainer $RecoveryProtContainer -RecoveryProtectionContainer $PrimaryProtContainer
 
 #Track Job status to check for completion
-while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){ 
-        sleep 10; 
+while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){
+        sleep 10;
         $TempASRJob = Get-ASRJob -Job $TempASRJob
 }
 
@@ -307,7 +309,7 @@ Write-Output $TempASRJob.State
 $EastUSCacheStorageAccount = New-AzureRmStorageAccount -Name "a2acachestorage" -ResourceGroupName "A2AdemoRG" -Location 'East US' -SkuName Standard_LRS -Kind Storage
 ```
 
-Если виртуальная машина не использует управляемые диски, целевая учетная запись хранения размещается в регионе восстановления, в который реплицируются диски этой виртуальной машины. Целевая учетная запись хранения может иметь категорию "Стандартная" или "Премиум". На выбор типа учетной записи хранения влияют такие факторы, как скорость изменения данных (скорости записи) на реплицируемых дисках и допустимая скорость обработки в Azure Site Recovery для используемого типа хранилища.
+Если виртуальная машина **не использует управляемые диски**, целевая учетная запись хранения размещается в регионе восстановления, в который реплицируются диски этой виртуальной машины. Целевая учетная запись хранения может иметь категорию "Стандартная" или "Премиум". На выбор типа учетной записи хранения влияют такие факторы, как скорость изменения данных (скорости записи) на реплицируемых дисках и допустимая скорость обработки в Azure Site Recovery для используемого типа хранилища.
 
 ```azurepowershell
 #Create Target storage account in the recovery region. In this case a Standard Storage account
@@ -332,7 +334,7 @@ $WestUSTargetStorageAccount = New-AzureRmStorageAccount -Name "a2atargetstorage"
 - Получите данные о виртуальной сети из исходного расположения (к которой сейчас подключена виртуальная машина):
    ```azurepowershell
     #Retrieve the virtual network that the virtual machine is connected to
-    
+
     #Get first network interface card(nic) of the virtual machine
     $SplitNicArmId = $VM.NetworkProfile.NetworkInterfaces[0].Id.split("/")
 
@@ -355,35 +357,72 @@ $WestUSTargetStorageAccount = New-AzureRmStorageAccount -Name "a2atargetstorage"
    ```azurepowershell
     #Create an ASR network mapping between the primary Azure virtual network and the recovery Azure virtual network
     $TempASRJob = New-ASRNetworkMapping -AzureToAzure -Name "A2AEusToWusNWMapping" -PrimaryFabric $PrimaryFabric -PrimaryAzureNetworkId $EastUSPrimaryNetwork -RecoveryFabric $RecoveryFabric -RecoveryAzureNetworkId $WestUSRecoveryNetwork
-    
+
     #Track Job status to check for completion
-    while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){ 
-            sleep 10; 
+    while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){
+            sleep 10;
             $TempASRJob = Get-ASRJob -Job $TempASRJob
     }
-    
+
     #Check if the Job completed successfully. The updated job state of a successfuly completed job should be "Succeeded"
     Write-Output $TempASRJob.State
-    
+
    ```
 - Создайте сетевое сопоставление для восстановления размещения (обратное действие):
     ```azurepowershell
     #Create an ASR network mapping for failback between the recovery Azure virtual network and the primary Azure virtual network
     $TempASRJob = New-ASRNetworkMapping -AzureToAzure -Name "A2AWusToEusNWMapping" -PrimaryFabric $RecoveryFabric -PrimaryAzureNetworkId $WestUSRecoveryNetwork -RecoveryFabric $PrimaryFabric -RecoveryAzureNetworkId $EastUSPrimaryNetwork
-    
+
     #Track Job status to check for completion
-    while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){ 
-            sleep 10; 
+    while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){
+            sleep 10;
             $TempASRJob = Get-ASRJob -Job $TempASRJob
     }
-        
+
     #Check if the Job completed successfully. The updated job state of a successfuly completed job should be "Succeeded"
     Write-Output $TempASRJob.State
     ```
 
 ## <a name="replicate-azure-virtual-machine"></a>Репликация виртуальной машины Azure
 
-Выполните репликацию виртуальной машины Azure:
+Выполните репликацию виртуальной машины Azure с помощью **управляемых дисков**.
+
+```azurepowershell
+
+#Get the resource group that the virtual machine must be created in when failed over.
+$RecoveryRG = Get-AzureRmResourceGroup -Name "a2ademorecoveryrg" -Location "West US 2"
+
+#Specify replication properties for each disk of the VM that is to be replicated (create disk replication configuration)
+
+#OsDisk
+$OSdiskId =  $vm.StorageProfile.OsDisk.ManagedDisk.Id
+$RecoveryOSDiskAccountType = $vm.StorageProfile.OsDisk.ManagedDisk.StorageAccountType
+$RecoveryReplicaDiskAccountType =  $vm.StorageProfile.OsDisk.ManagedDisk.StorageAccountType
+
+$OSDiskReplicationConfig = New-AzureRmRecoveryServicesAsrAzureToAzureDiskReplicationConfig -managed -LogStorageAccountId $storageAccount.Id `
+         -DiskId $OSdiskId -RecoveryResourceGroupId  $ RecoveryRG.ResourceId -RecoveryReplicaDiskAccountType  $RecoveryReplicaDiskAccountType `
+         -RecoveryOSDiskAccountType $RecoveryOSDiskAccountType
+
+# Data disk
+$datadiskId1  = $vm.StorageProfile.DataDisks[0].ManagedDisk.id
+$RecoveryReplicaDiskAccountType =  $vm.StorageProfile.DataDisks[0]. StorageAccountType
+$RecoveryTargetDiskAccountType = $vm.StorageProfile.DataDisks[0]. StorageAccountType
+
+$DataDisk1ReplicationConfig  = New-AzureRmRecoveryServicesAsrAzureToAzureDiskReplicationConfig -managed -LogStorageAccountId $storageAccount.Id `
+         -DiskId $datadiskId1 -RecoveryResourceGroupId  $ RecoveryRG.ResourceId -RecoveryReplicaDiskAccountType  $RecoveryReplicaDiskAccountType `
+         -RecoveryTargetDiskAccountType $RecoveryTargetDiskAccountType
+
+#Create a list of disk replication configuration objects for the disks of the virtual machine that are to be replicated.
+$diskconfigs = @()
+$diskconfigs += $OSDiskReplicationConfig, $DataDisk1ReplicationConfig
+
+
+#Start replication by creating replication protected item. Using a GUID for the name of the replication protected item to ensure uniqueness of name.
+$TempASRJob = New-ASRReplicationProtectedItem -AzureToAzure -AzureVmId $VM.Id -Name (New-Guid).Guid -ProtectionContainerMapping $EusToWusPCMapping -AzureToAzureDiskReplicationConfiguration $diskconfigs -RecoveryResourceGroupId $RecoveryRG.ResourceId
+
+```
+
+Выполните репликацию виртуальной машины Azure с помощью **неуправляемых дисков**.
 
 ```azurepowershell
 #Specify replication properties for each disk of the VM that is to be replicated (create disk replication configuration)
@@ -405,8 +444,8 @@ $RecoveryRG = Get-AzureRmResourceGroup -Name "a2ademorecoveryrg" -Location "West
 $TempASRJob = New-ASRReplicationProtectedItem -AzureToAzure -AzureVmId $VM.Id -Name (New-Guid).Guid -ProtectionContainerMapping $EusToWusPCMapping -AzureToAzureDiskReplicationConfiguration $diskconfigs -RecoveryResourceGroupId $RecoveryRG.ResourceId
 
 #Track Job status to check for completion
-while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){ 
-        sleep 10; 
+while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStarted")){
+        sleep 10;
         $TempASRJob = Get-ASRJob -Job $TempASRJob
 }
 
@@ -415,9 +454,9 @@ while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStart
 Write-Output $TempASRJob.State
 ```
 
-Когда начальная репликация успешно завершится, все данные виртуальной машины будут реплицированы в регион восстановления. 
+Когда начальная репликация успешно завершится, все данные виртуальной машины будут реплицированы в регион восстановления.
 
-Процесс репликации начинается с того, что в регионе восстановления создаются копии реплицируемых дисков виртуальной машины. Этот этап называется начальной репликацией. 
+Процесс репликации начинается с того, что в регионе восстановления создаются копии реплицируемых дисков виртуальной машины. Этот этап называется начальной репликацией.
 
 После завершения начальной репликации начинается этап разностной синхронизации. На этом этапе виртуальная машина считается защищенной и для нее можно выполнять тестовую отработку отказа. Когда завершится начальная репликация, реплицируемый элемент, представляющий виртуальную машину, примет состояние репликации "Защищено".
 
@@ -473,7 +512,7 @@ EndTime          : 4/25/2018 4:33:06 AM
 TargetObjectId   : ce86206c-bd78-53b4-b004-39b722c1ac3a
 TargetObjectType : ProtectionEntity
 TargetObjectName : azuredemovm
-AllowedActions   : 
+AllowedActions   :
 Tasks            : {Prerequisites check for test failover, Create test virtual machine, Preparing the virtual machine, Start the virtual machine}
 Errors           : {}
 ```
@@ -544,7 +583,7 @@ EndTime          : 4/25/2018 4:51:01 AM
 TargetObjectId   : ce86206c-bd78-53b4-b004-39b722c1ac3a
 TargetObjectType : ProtectionEntity
 TargetObjectName : azuredemovm
-AllowedActions   : 
+AllowedActions   :
 Tasks            : {Prerequisite check, Commit}
 Errors           : {}
 ```

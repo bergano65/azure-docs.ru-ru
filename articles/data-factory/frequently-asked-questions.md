@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: shlo
-ms.openlocfilehash: 73bc8b6954470d11d6369bc733bb7c6f794ce892
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: d900c9c438ed40841639d556643a231075f4f194
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45577138"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48249593"
 ---
 # <a name="azure-data-factory-faq"></a>Часто задаваемые вопросы о фабрике данных Azure
 Эта статья содержит ответы на часто задаваемые вопросы о фабрике данных Azure.  
@@ -83,7 +83,7 @@ ms.locfileid: "45577138"
 -   Управляемый экземпляр (MI).
 -   Эластичный пул
 -   Поддержка виртуальной сети Azure Resource Manager поверх классической виртуальной сети (будет прекращена). Благодаря этому вы можете присоединять среду выполнения интеграции Azure SSIS к виртуальной сети, настроенной для базы данных SQL Azure с конечными точками службы виртуальной сети, управляемым экземпляром и доступом к локальным данным. (См. страницу https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network.) 
--   Поддержка проверки подлинности Azure Active Directory (AAD) поверх проверки подлинности SQL для подключения к SSISDB. Таким образом, можно использовать проверку подлинности AAD с управляемым удостоверением службы (MSI).
+-   Поддержка проверки подлинности Azure Active Directory (AAD) поверх проверки подлинности SQL для подключения к SSISDB. Таким образом, можно использовать проверку подлинности AAD с управляемым удостоверением ADF для ресурсов Azure
 -   Поддержка использования собственной лицензии на локальную версию SQL Server для существенной экономии благодаря программе "Преимущество гибридного Azure" (AHB).
 -   Поддержка выпуска Enterprise среды выполнения интеграции Azure SSIS, позволяющего использовать расширенные возможности и премиум-возможности, выборочную установку для установки дополнительных компонентов или расширений и экосистему решений сторонних производителей. (См. страницу https://blogs.msdn.microsoft.com/ssis/2018/04/27/enterprise-edition-custom-setup-and-3rd-party-extensibility-for-ssis-in-adf/.) 
 -   Более глубокая интеграция служб SSIS в ADF, что позволяет вызывать и инициировать действия выполнения пакетов служб SSIS первого класса в конвейерах ADF и планировать их в SSMS. (См. страницу https://blogs.msdn.microsoft.com/ssis/2018/05/23/modernize-and-extend-your-etlelt-workflows-with-ssis-activities-in-adf-pipelines/.) 

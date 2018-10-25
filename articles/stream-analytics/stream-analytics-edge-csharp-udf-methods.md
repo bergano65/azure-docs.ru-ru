@@ -9,12 +9,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 2b6dfe7c8f8ac8d7207659b848abecd04f56c232
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.openlocfilehash: f0da25410fe81a93501df940ffbb0e115456a9e8
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47181448"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48247813"
 ---
 # <a name="develop-net-standard-user-defined-functions-for-azure-stream-analytics-edge-jobs-preview"></a>Разработка пользовательских функций .NET Standard для заданий Edge в Azure Stream Analytics (предварительная версия)
 
@@ -37,16 +37,13 @@ Azure Stream Analytics предлагает язык запросов, анал�
 
 |**Тип пользовательской функции (C#)**  |**Тип Azure Stream Analytics**  |
 |---------|---------|
-|Bool  |  bigint   |
-|int32  |  bigint   |
-|int64  |  bigint   |
-|float;  |  Double   |
+|длинное целое число  |  bigint   |
 |Double  |  Double   |
 |строка  |  nvarchar(max)   |
 |dateTime  |  dateTime   |
 |struct  |  IRecord   |
 |object  |  IRecord   |
-|Массив,  |  IArray   |
+|Массив<object>  |  IArray   |
 |dictionary<string, object>  |  IRecord   |
 
 ## <a name="codebehind"></a>CodeBehind

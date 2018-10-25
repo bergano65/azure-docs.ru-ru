@@ -12,12 +12,12 @@ ms.author: sachinp
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 09/20/2018
-ms.openlocfilehash: b2efdf0b1a8abe91589f56ecbb6dc01f7606f305
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: e3b46620d15f8c08d0da69aef3d8c0920e5ad4ec
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47158993"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48830078"
 ---
 # <a name="resources-limits-for-elastic-pools-using-the-dtu-based-purchasing-model"></a>Ограничения ресурсов для эластичных пулов в модели приобретения на основе DTU 
 
@@ -131,7 +131,7 @@ ms.locfileid: "47158993"
 ## <a name="next-steps"></a>Дополнительная информация
 
 - См. [часто задаваемые вопросы о службе "База данных SQL"](sql-database-faq.md).
-- Сведения об ограничениях на уровнях сервера и подписки см. в статье [Обзор ограничений ресурсов базы данных SQL Azure](sql-database-resource-limits.md).
+- Сведения об ограничениях на уровнях сервера и подписки см. в статье [SQL Database resource limits for single and pooled databases on a logical server](sql-database-resource-limits-logical-server.md) (Ограничения ресурсов Базы данных SQL для отдельных баз данных и баз данных в пуле на логическом сервере).
 - Сведения об общих ограничениях Azure см. в разделе [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).
-- Сведения о DTU и eDTU см. в разделе [Общие сведения об обычных единицах передачи данных (DTU) и единицах передачи данных в эластичной базе данных (eDTU)](sql-database-service-tiers.md#what-are-database-transaction-units-dtus).
+- Сведения о DTU и eDTU см. в разделе [Общие сведения об обычных единицах передачи данных (DTU) и единицах передачи данных в эластичной базе данных (eDTU)](sql-database-service-tiers.md#dtu-based-purchasing-model).
 - Сведения об ограничениях на размер базы данных tempdb см. здесь: https://docs.microsoft.com/sql/relational-databases/databases/tempdb-database#tempdb-database-in-sql-database.

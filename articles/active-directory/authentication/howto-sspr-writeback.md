@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.component: authentication
 ms.topic: conceptual
-ms.date: 07/11/2018
+ms.date: 10/04/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 1ae74f7c43e763962224683954b28e5941136c08
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 57446f068945d74351a77f21e16874d9e24ddcab
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46295824"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48801936"
 ---
 # <a name="how-to-configure-password-writeback"></a>Сведения о настройке компонента обратной записи паролей
 
@@ -34,6 +34,12 @@ ms.locfileid: "46295824"
 8. После завершения настройки нажмите кнопку **Выход**.
 
 Действия по устранению неполадок, связанных с компонентом обратной записи паролей, описаны в разделе [Устранение неполадок с обратной записью паролей](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback) соответствующей статьи.
+
+> [!WARNING]
+> Компонент обратной записи паролей перестанет работать для клиентов, которые используют Azure AD Connect версии 1.0.8641.0 и выше, если [использование службы контроля доступа Azure было прекращено 7 ноября 2018 года](../develop/active-directory-acs-migration.md). Версии Azure AD Connect 1.0.8641.0 и выше больше не допускают компонент обратной записи паролей, поскольку они зависят от этой функции ACS.
+>
+> Чтобы избежать перебоев в работе службы, обновите предыдущую версию Azure AD Connect до более новой, для этого см. статью [Azure AD Connect: обновление до последней версии](../hybrid/how-to-upgrade-previous-version.md)
+>
 
 ## <a name="active-directory-permissions"></a>Разрешения Active Directory
 
@@ -67,7 +73,7 @@ ms.locfileid: "46295824"
 4. На вкладке **Разрешения** нажмите кнопку **Добавить**.
 5. Выберите учетную запись, к которой необходимо применить разрешения (из настроек Azure AD Connect).
 6. Из раскрывающегося списка **Применяется к** выберите **Descendent User objects** (Дочерние объекты-пользователи).
-7. В разделе **Разрешения** установите флажки для следующих разрешений:
+7. В разделе **Разрешения** установите флажки для разрешений приведенных ниже.
     * **Сброс пароля**
     * **Изменить пароль**
     * **Write lockoutTime** (Запись времени блокировки);

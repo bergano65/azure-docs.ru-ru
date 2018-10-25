@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 ms.author: marthalc
 author: marthalc
 ms.date: 09/24/2018
-ms.openlocfilehash: 412871c0c692f60e690f61fa4e6f67f836cd3ef7
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 70c023fc8fe996060d3eff3d5a700b5f910097b4
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47158213"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49113637"
 ---
 # <a name="collect-data-for-models-in-production"></a>Сбор данных для моделей в рабочей среде
 
@@ -50,7 +50,7 @@ ms.locfileid: "47158213"
 
 - Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начать работу.
 
-- Должны быть установлены рабочая область машинного обучения Azure, локальный каталог со сценариями и пакет SDK машинного обучения Azure для Python. Дополнительные сведения о получении этих необходимых компонентов см. в документе [Настройка среды разработки](how-to-configure-environment.md).
+- Должны быть установлены: рабочая область службы "Машинное обучение Azure", локальный каталог со сценариями и пакет SDK Машинного обучения Azure для Python. Дополнительные сведения о получении этих необходимых компонентов см. в документе [Настройка среды разработки](how-to-configure-environment.md).
 
 - Обученная модель машинного обучения для развертывания в службе Azure Kubernetes (AKS). Если у вас ее нет, обратитесь к [руководству по обучению модели классификации изображений](tutorial-train-models-with-aml.md).
 
@@ -161,7 +161,7 @@ ms.locfileid: "47158213"
 
 ## <a name="example-notebook"></a>Пример записной книжки
 
-Записная книжка `00.Getting Started/12.enable-data-collection-for-models-in-aks.ipynb` иллюстрирует основные понятия, приведенные в этой статье.  
+В записной книжке [00.Getting Started/12.enable-data-collection-for-models-in-aks.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/12.enable-data-collection-for-models-in-aks) показаны основные понятия из этой статьи.  
 
 Получите эту записную книжку:
  

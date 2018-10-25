@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/27/2018
+ms.date: 10/03/2018
 ms.author: jeedes
-ms.openlocfilehash: 94b8b935728110cd5dd07b2066e8320274e3b082
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: d28e28a2c4f8144da16c4838f07c9b8bb5ce67f0
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39428423"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48268163"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jamf-pro"></a>Руководство. Интеграция Azure Active Directory с Jamf Pro
 
@@ -50,31 +50,34 @@ ms.locfileid: "39428423"
 - Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
+
+В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде.
+Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление Jamf Pro из коллекции
-1. настройка и проверка единого входа в Azure AD.
+2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-jamf-pro-from-the-gallery"></a>Добавление Jamf Pro из коллекции
+
 Чтобы настроить интеграцию Jamf Pro с Azure AD, нужно добавить Jamf Pro из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Jamf Pro из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![изображение](./media/jamfprosamlconnector-tutorial/selectazuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
+    ![изображение](./media/jamfprosamlconnector-tutorial/a_select_app.png)
     
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![изображение](./media/jamfprosamlconnector-tutorial/a_new_app.png)
 
-1. В поле поиска введите **Jamf Pro**, выберите **Jamf Pro** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **Jamf Pro**, выберите **Jamf Pro** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Jamf Pro в списке результатов](./media/jamfprosamlconnector-tutorial/tutorial_jamfprosamlconnector_addfromgallery.png)
+     ![изображение](./media/jamfprosamlconnector-tutorial/a_add_app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -85,10 +88,10 @@ ms.locfileid: "39428423"
 Чтобы настроить и проверить единый вход Azure AD в Jamf Pro, вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя приложения Jamf Pro](#create-a-jamf-pro-test-user)** требуется для того, чтобы в Jamf Pro существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+3. **[Создание тестового пользователя приложения Jamf Pro](#create-a-jamf-pro-test-user)** требуется для того, чтобы в Jamf Pro существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -96,50 +99,62 @@ ms.locfileid: "39428423"
 
 **Чтобы настроить единый вход Azure AD в Jamf Pro, выполните следующие действия:**
 
-1. На портале Azure на странице интеграции с приложением **Jamf Pro** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Jamf Pro** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![изображение](./media/jamfprosamlconnector-tutorial/b1_b2_select_sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/jamfprosamlconnector-tutorial/tutorial_jamfprosamlconnector_samlbase.png)
+2. В верхней части экрана щелкните **Изменить режим единого входа**, чтобы выбрать режим **SAML**.
 
-1. Если вы хотите настроить приложение в режиме, инициированном **поставщиком удостоверений**, в разделе**Домены и URL-адреса приложения Jamf Pro** выполните следующие действия:
+      ![изображение](./media/jamfprosamlconnector-tutorial/b1_b2_saml_ssso.png)
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Jamf Pro](./media/jamfprosamlconnector-tutorial/tutorial_jamfprosamlconnector_url.png)
+3. В диалоговом окне **Выбрать метод единого входа** щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
 
-    a. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.jamfcloud.com/saml/metadata`
+    ![изображение](./media/jamfprosamlconnector-tutorial/b1_b2_saml_sso.png)
+
+4. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+
+    ![изображение](./media/jamfprosamlconnector-tutorial/b1-domains_and_urlsedit.png)
+
+5. Выполните следующие действия в разделе **Базовая настройка SAML**.
+
+    a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.jamfcloud.com/saml/metadata`.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.jamfcloud.com/saml/SSO`.
 
-1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
+    ![изображение](./media/jamfprosamlconnector-tutorial//b2-domains_and_urls.png)
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Jamf Pro](./media/jamfprosamlconnector-tutorial/tutorial_jamfprosamlconnector_url1.png)
+    c. Щелкните **Задать дополнительные URL-адреса**.
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.jamfcloud.com`
-     
+    d. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.jamfcloud.com`.
+
+    ![изображение](./media/jamfprosamlconnector-tutorial//b4-domains_and_urls.png)
+
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Вы получите фактическое значение идентификатора из раздела **Единый вход** на портале Jamf Pro, что описано ниже. Вы можете извлечь фактическое значение **поддомена** из значения идентификатора и использовать эти сведения о **поддомене** в полях "URL-адрес для входа" и "URL-адрес ответа".
 
-1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
+6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы копировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
-    ![Ссылка для скачивания сертификата](./media/jamfprosamlconnector-tutorial/tutorial_jamfprosamlconnector_certificate.png) 
+    ![изображение](./media/jamfprosamlconnector-tutorial/C2_certificate.png)
 
-1. Нажмите кнопку **Сохранить** .
+7. Для автоматизации настройки в Jamf Pro необходимо установить **Расширение браузера "Безопасный вход в мои приложения"**, щелкнув **Установить расширение**.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/jamfprosamlconnector-tutorial/tutorial_general_400.png)
-    
-1. В другом окне веб-браузера войдите на сайт Jamf Pro своей организации в качестве администратора.
+    ![изображение](./media/jamfprosamlconnector-tutorial/install_extension.png)
+ 
+8. После добавления расширения в браузере щелкните **Установка Jamf Pro**, чтобы перейти к приложению Jamf Pro. После этого укажите учетные данные администратора для входа в Jamf Pro. Расширение браузера автоматически настроит приложение и автоматизирует шаги 9–12.
 
-1. Щелкните **значок параметров** в правом верхнем углу страницы.
+    ![изображение](./media/jamfprosamlconnector-tutorial/d1_saml.png)
+
+9. Если необходимо вручную настроить Jamf Pro, откройте новое окно веб-браузера, зайдите на сайт компании Jamf Pro в роли администратора и выполните следующие шаги.
+
+10. Щелкните **значок параметров** в правом верхнем углу страницы.
 
     ![Конфигурация Jamf Pro](./media/jamfprosamlconnector-tutorial/configure1.png)
 
-1. Выберите **Единый вход**.
+11. Выберите **Единый вход**.
 
     ![Конфигурация Jamf Pro](./media/jamfprosamlconnector-tutorial/configure2.png)
 
-1. На странице **Single Sign-On** (Единый вход) выполните следующие действия:
+12. На странице **Single Sign-On** (Единый вход) выполните следующие действия:
 
     ![Единый вход в Jamf Pro](./media/jamfprosamlconnector-tutorial/tutorial_jamfprosamlconnector_single.png)
 
@@ -152,8 +167,8 @@ ms.locfileid: "39428423"
     d. Выберите значение **Email** (Электронная почта) для параметра **USER MAPPING: JAMF PRO** (Сопоставление пользователей: Jamf Pro). Jamf Pro сопоставляет атрибуты SAML, отправляемые поставщиком удостоверений, одним из следующих способов: по пользователям или по группам. Когда пользователь пытается получить доступ к Jamf Pro, по умолчанию Jamf Pro получает сведения о пользователе от поставщика удостоверений и сопоставляет их с учетными записями пользователей Jamf Pro. Если входящая учетная запись пользователя отсутствует в Jamf Pro, происходит сопоставление по имени группы.
 
     д. Вставьте значение `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups` в текстовое поле **GROUP ATTRIBUTE NAME** (Имя атрибута группы).
- 
-1. Прокрутите эту страницу вниз до элемента **IDENTITY PROVIDER** (Поставщик удостоверений) в разделе **Single Sign-On** (Единый вход) и выполните следующие действия:
+
+13. Прокрутите эту страницу вниз до элемента **IDENTITY PROVIDER** (Поставщик удостоверений) в разделе **Single Sign-On** (Единый вход) и выполните следующие действия:
 
     ![Конфигурация Jamf Pro](./media/jamfprosamlconnector-tutorial/configure3.png)
 
@@ -170,38 +185,31 @@ ms.locfileid: "39428423"
 
     д. Выберите команду **Сохранить**.
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-   ![Создание тестового пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![изображение](./media/jamfprosamlconnector-tutorial/d_users_and_groups.png)
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка "Azure Active Directory"](./media/jamfprosamlconnector-tutorial/create_aaduser_01.png)
+    ![изображение](./media/jamfprosamlconnector-tutorial/d_adduser.png)
 
-1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+3. В разделе свойств "Пользователь" сделайте следующее.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/jamfprosamlconnector-tutorial/create_aaduser_02.png)
-
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
-
-    ![Кнопка "Добавить"](./media/jamfprosamlconnector-tutorial/create_aaduser_03.png)
-
-1. В диалоговом окне **Пользователь** сделайте следующее.
-
-    ![Диалоговое окно "Пользователь"](./media/jamfprosamlconnector-tutorial/create_aaduser_04.png)
+    ![изображение](./media/jamfprosamlconnector-tutorial/d_userproperties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например, BrittaSimon@contoso.com
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+    c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
+
 ### <a name="create-a-jamf-pro-test-user"></a>Создание тестового пользователя Jamf Pro
 
 Чтобы пользователи Azure AD могли выполнять вход в Jamf Pro, они должны быть подготовлены в Jamf Pro. В случае с Jamf Pro подготовка выполняется вручную.
@@ -210,30 +218,30 @@ ms.locfileid: "39428423"
 
 1. Войдите на веб-сайт Jamf Pro организации в качестве администратора.
 
-1. Щелкните **значок параметров** в правом верхнем углу страницы.
+2. Щелкните **значок параметров** в правом верхнем углу страницы.
 
     ![Добавление сотрудника](./media/jamfprosamlconnector-tutorial/configure1.png)
 
-1. Щелкните **Jamf Pro User Accounts & Groups** (Группы и учетные записи пользователей Jamf Pro).
+3. Щелкните **Jamf Pro User Accounts & Groups** (Группы и учетные записи пользователей Jamf Pro).
 
     ![Добавление сотрудника](./media/jamfprosamlconnector-tutorial/user1.png)
 
-1. Нажмите кнопку **Создать**.
+4. Нажмите кнопку **Создать**.
 
     ![Добавление сотрудника](./media/jamfprosamlconnector-tutorial/user2.png)
 
-1. Выберите **Create Standard Account** (Создать стандартную учетную запись).
+5. Выберите **Create Standard Account** (Создать стандартную учетную запись).
 
     ![Добавление сотрудника](./media/jamfprosamlconnector-tutorial/user3.png)
 
-1. В диалоговом окне **Новая учетная запись** сделайте следующее:
+6. В диалоговом окне **Новая учетная запись** сделайте следующее:
 
     ![Добавление сотрудника](./media/jamfprosamlconnector-tutorial/user4.png)
 
     a. В текстовом поле **USERNAME** (Имя пользователя) введите полное имя пользователя BrittaSimon.
 
     b. Выберите соответствующие значения для параметров **ACCESS LEVEL** (Уровень доступа), **PRIVILEGE SET** (Набор привилегий) и **ACCESS STATUS** (Состояние доступа).
-    
+
     c. В текстовом поле **FULL NAME** (Полное имя) введите полное имя пользователя Britta Simon.
 
     d. В текстовом поле **EMAIL ADDRESS** (Электронная почта) введите адрес электронной почты для учетной записи Britta Simon.
@@ -248,55 +256,34 @@ ms.locfileid: "39428423"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Jamf Pro.
 
-![Назначение роли пользователя][200] 
+1. На портале Azure перейдите в колонку **Корпоративные приложения** и последовательно выберите **Все приложения**, **Jamf Pro**.
 
-**Чтобы назначить пользователя Britta Simon приложению Jamf Pro, выполните следующие действия:**
+    ![изображение](./media/jamfprosamlconnector-tutorial/d_all_applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Jamf Pro**.
 
-    ![Назначение пользователя][201] 
+    ![изображение](./media/jamfprosamlconnector-tutorial/d_all_proapplications.png)
 
-1. В списке приложений выберите **Jamf Pro**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка на Jamf Pro в списке приложений](./media/jamfprosamlconnector-tutorial/tutorial_jamfprosamlconnector_app.png)  
+    ![изображение](./media/jamfprosamlconnector-tutorial/d_leftpaneusers.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![изображение](./media/jamfprosamlconnector-tutorial/d_assign_user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Область "Добавление назначения"][203]
+5. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
-
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
-
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Jamf Pro на панели доступа, вы автоматически войдете в приложение Jamf Pro.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
-
-<!--Image references-->
-
-[1]: ./media/jamfprosamlconnector-tutorial/tutorial_general_01.png
-[2]: ./media/jamfprosamlconnector-tutorial/tutorial_general_02.png
-[3]: ./media/jamfprosamlconnector-tutorial/tutorial_general_03.png
-[4]: ./media/jamfprosamlconnector-tutorial/tutorial_general_04.png
-
-[100]: ./media/jamfprosamlconnector-tutorial/tutorial_general_100.png
-
-[200]: ./media/jamfprosamlconnector-tutorial/tutorial_general_200.png
-[201]: ./media/jamfprosamlconnector-tutorial/tutorial_general_201.png
-[202]: ./media/jamfprosamlconnector-tutorial/tutorial_general_202.png
-[203]: ./media/jamfprosamlconnector-tutorial/tutorial_general_203.png
-

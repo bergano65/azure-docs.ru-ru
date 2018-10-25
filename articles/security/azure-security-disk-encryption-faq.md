@@ -6,13 +6,13 @@ ms.service: security
 ms.subservice: Azure Disk Encryption
 ms.topic: article
 ms.author: mstewart
-ms.date: 09/10/2018
-ms.openlocfilehash: 9d1414959ef8eae2277e530e6eca57ec06aaec37
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.date: 10/16/2018
+ms.openlocfilehash: 8da966154f1da8cb1be090f70d80e4484e9bce0d
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44345513"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49377297"
 ---
 # <a name="azure-disk-encryption-faq"></a>Шифрование дисков Azure: часто задаваемые вопросы
 
@@ -132,6 +132,11 @@ ms.locfileid: "44345513"
 Том Bek для Windows или /mnt/azure_bek_disk для Linux — это том локальных данных, который надежно хранит ключи шифрования для зашифрованных виртуальных машин IaaS Azure.
 > [!NOTE]
 > Не удаляйте и не изменяйте содержимое на этом диске. Не отключайте диск, так как ключ шифрования необходим для любой операции шифрования на виртуальной машине IaaS.
+
+
+## <a name="what-encryption-method-does-azure-disk-encryption-use"></a>Какой метод шифрования используется в шифровании дисков Azure?
+
+В Windows ADE использует метод шифрования Bitlocker AES256 (AES256WithDiffuser в версиях, предшествующих Windows Server 2012). В Linux ADE использует метод по умолчанию dmcrypt (aes-xts-plain64) с 256-разрядным основным ключом тома.
 
 ## <a name="if-i-use-encryptformatall-and-specify-all-volume-types-will-it-erase-the-data-on-the-data-drives-that-we-already-encrypted"></a>Если используется параметр EncryptFormatAll и указаны все типы томов, удалятся ли данные из уже зашифрованных дисков?
 Нет. Данные не удаляются из дисков, которые уже зашифрованы с помощью службы шифрования дисков Azure. Так же как и в случае с диском ОС, параметр EncryptFormatAll не шифрует повторно уже зашифрованные диски данных. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).        

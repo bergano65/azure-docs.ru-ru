@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/11/2018
 ms.author: ramkris
-ms.openlocfilehash: e7ed0049e64a7740063f2fab7bdfddff38d45ed9
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: 26479ade27b18e817d7ad03d70d27b0cef687e8d
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43287716"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48269417"
 ---
 # <a name="accelerate-big-data-analytics-by-using-the-apache-spark-to-azure-cosmos-db-connector"></a>Ускорение аналитики больших данных с помощью соединителя Apache Spark для Azure Cosmos DB
  
@@ -179,7 +179,7 @@ df.show()
 
 4. Извлеките содержимое образца веб-канала Twitter и откройте файл "config.py". Обновите значения masterKey, host, databaseId, collectionId и preferredLocations.  
 
-5. Перейдите в `http://apps.twitter.com/` и зарегистрируйте сценарий веб-канала Twitter в качестве нового приложения. **Ключ клиента, секрет клиента, маркер доступа и секрет маркера доступа** будут предоставлены после выбора имени и приложения. Чтобы предоставить программный доступ к Twitter, скопируйте эти значения и обновите их в файле "config.py".   
+5. Перейдите в `http://apps.twitter.com/` и зарегистрируйте приложение веб-канала Twitter. **Ключ клиента, секрет клиента, маркер доступа и секрет маркера доступа** будут предоставлены после выбора имени для приложения. Чтобы предоставить программный доступ к приложению веб-канала Twitter, скопируйте эти значения и обновите их в файле config.py.   
 
 6. Сохраните файл config.py. Откройте командную строку и запустите приложение Python с помощью следующей команды.
 

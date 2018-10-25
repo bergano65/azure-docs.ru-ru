@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/25/2018
+ms.date: 09/25/2018
 ms.author: spelluru
-ms.openlocfilehash: bafc08eae4a32f803f485097401a586a662f64e9
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 7ce2e870be0178420d80682bd18adbef814c162f
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43700413"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48857471"
 ---
 # <a name="message-browsing"></a>Просмотр сообщений
 
@@ -28,15 +28,15 @@ ms.locfileid: "43700413"
 
 Использованные и просроченные сообщения очищаются при асинхронном выполнении"сборки мусора". Это не обязательно происходит сразу же после истечения срока действия сообщения, поэтому операция `Peek` действительно может возвращать сообщения, срок действия которых уже истек и которые будут удалены или отправлены в очередь недоставленных сообщений при последующем вызове операции получения для очереди или подписки.
 
-Это особенно важно учитывать при попытке восстановления отложенных сообщений из очереди. Сообщение, для которого момент [ExpiresAtUtc](/dotnet/api/microsoft.azure.servicebus.message.expiresatutc#Microsoft_Azure_ServiceBus_Message_ExpiresAtUtc) прошел, больше не может быть получено обычным способом какими-либо другими способами, даже если оно возвращается при операции просмотра. Эти сообщения возвращаются намеренно, так как операция просмотра — это инструмент диагностики, отражающий текущее состояние журнала.
+Это особенно важно учитывать при попытке восстановления отложенных сообщений из очереди. Сообщение, для которого момент [ExpiresAtUtc](/dotnet/api/microsoft.azure.servicebus.message.expiresatutc#Microsoft_Azure_ServiceBus_Message_ExpiresAtUtc) прошел, больше не доступно для обычного получения какими-либо другими способами, даже если оно возвращается при операции просмотра. Эти сообщения возвращаются намеренно, так как операция просмотра — это инструмент диагностики, отражающий текущее состояние журнала.
 
-Эта операция также возвращает сообщения, которые были заблокированы и в настоящий момент обрабатываются другими получателями, но эта обработка еще не завершена. Тем не менее, так как операция просмотра возвращает отключенный моментальный снимок, состояние блокировки просматриваемого сообщения просмотреть невозможно, и при попытке приложения прочитать такое сообщение свойства [LockedUntilUtc](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.lockeduntilutc#Microsoft_Azure_ServiceBus_Core_MessageReceiver_LockedUntilUtc) и [LockToken](/dotnet/api/microsoft.azure.servicebus.message.systempropertiescollection.locktoken#Microsoft_Azure_ServiceBus_Message_SystemPropertiesCollection_LockToken) порождают исключение [InvalidOperationException](/dotnet/api/system.invalidoperationexception).
+Эта операция также возвращает сообщения, которые были заблокированы и в настоящий момент обрабатываются другими получателями, но эта обработка еще не завершена. Тем не менее, поскольку операция просмотра возвращает отключенный моментальный снимок, состояние блокировки просматриваемого сообщения просмотреть невозможно, и при попытке приложения прочитать свойства [LockedUntilUtc](/dotnet/api/microsoft.azure.servicebus.message.systempropertiescollection.lockeduntilutc) и [LockToken](/dotnet/api/microsoft.azure.servicebus.message.systempropertiescollection.locktoken#Microsoft_Azure_ServiceBus_Message_SystemPropertiesCollection_LockToken) они порождают исключение [InvalidOperationException](/dotnet/api/system.invalidoperationexception).
 
 ## <a name="peek-apis"></a>Интерфейсы API просмотра
 
 Методы [Peek/PeekAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.peekasync#Microsoft_Azure_ServiceBus_Core_MessageReceiver_PeekAsync) и [PeekBatch/PeekBatchAsync](/dotnet/api/microsoft.servicebus.messaging.queueclient.peekbatchasync#Microsoft_ServiceBus_Messaging_QueueClient_PeekBatchAsync_System_Int64_System_Int32_) имеются во всех клиентских библиотеках .NET и Java и для всех объектов получателей: **MessageReceiver**, **MessageSession**, **QueueClient** и **SubscriptionClient**. Операция просмотра работает для всех очередей, подписок и их соответствующих очередей недоставленных сообщений.
 
-При повторяющихся вызовах метод Peek перечисляет все сообщения, которые существуют в журнале очереди или подписки, по возрастанию порядкового номера. Это порядок, в котором сообщения были поставлены в очередь, а не порядок, в котором сообщения со временем могут быть получены.
+При повторяющихся вызовах метод Peek перечисляет все сообщения, которые существуют в журнале очереди или подписки, по возрастанию порядкового номера. Это порядок, в котором сообщения были поставлены в очередь, но не порядок, в котором сообщения со временем могут быть получены.
 
 [PeekBatch](/dotnet/api/microsoft.servicebus.messaging.queueclient.peekbatch#Microsoft_ServiceBus_Messaging_QueueClient_PeekBatch_System_Int32_) получает несколько сообщений и возвращает их в виде перечисления. Если доступных сообщений нет, объект перечисления является пустым, а не содержащим значения NULL.
 
@@ -46,7 +46,6 @@ ms.locfileid: "43700413"
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 
-* [Базовая информация о служебной шине](service-bus-fundamentals-hybrid-solutions.md)
 * [Очереди, разделы и подписки служебной шины](service-bus-queues-topics-subscriptions.md)
 * [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)
 * [Как использовать разделы и подписки служебной шины](service-bus-dotnet-how-to-use-topics-subscriptions.md)

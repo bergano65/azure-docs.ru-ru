@@ -8,12 +8,12 @@ services: mariadb
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: cf57acdcbcfa792a6c5ab62c6e8ec0589d625df7
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 4fd2f28f52c45a0ec3128302b02ad5ba498c982b
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46994598"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48247777"
 ---
 # <a name="server-concepts-in-azure-database-for-mariadb"></a>Основные понятия работы с сервером в базе данных Azure для MariaDB
 В этой статье приведены рекомендации и указания по работе с серверами базы данных Azure для MariaDB.
@@ -44,12 +44,13 @@ ms.locfileid: "46994598"
 | **Протокол** | Служба поддерживает протокол на основе сообщений, используемый MySQL. |
 | **TCP/IP** | Протокол работает через TCP/IP, а также через сокеты домена Unix. |
 | **Брандмауэр** | Для защиты данных правило брандмауэра запрещает любой доступ к серверу базы данных, пока не будут указаны компьютеры, которые имеют разрешение. См. статью [Правила брандмауэра сервера базы данных Azure для MariaDB](./concepts-firewall-rules.md). |
-| **SSL** | Служба поддерживает применение SSL-соединений между приложениями и сервером базы данных.  <!--See [Configure SSL connectivity in your application to securely connect to Azure Database for MariaDB](./howto-configure-ssl.md).--> |
+| **SSL** | Служба поддерживает применение SSL-соединений между приложениями и сервером базы данных. См. [Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MariaDB](./howto-configure-ssl.md). |
 
 ## <a name="how-do-i-manage-a-server"></a>Как управлять сервером?
 Управлять серверами базы данных Azure для MariaDB можно с помощью портала Azure или Azure CLI.
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Общие сведения об этой службе см. в статье [Обзор базы данных Azure для MariaDB](./overview.md).
-- Сведения о квотах и ограничениях для конкретных ресурсов с учетом вашего **уровня служб** см. в статье об [уровнях обслуживания](./concepts-pricing-tiers.md)
-<!-- - For information about connecting to the service, see [Connection libraries for Azure Database for MariaDB](./concepts-connection-libraries.md). -->.
+- Сведения о квотах и ограничениях для конкретных ресурсов с учетом вашего **уровня служб** представлены в статье [Уровни служб в базе данных Azure для MySQL](./concepts-pricing-tiers.md).
+
+<!-- - For information about connecting to the service, see [Connection libraries for Azure Database for MariaDB](./concepts-connection-libraries.md). -->

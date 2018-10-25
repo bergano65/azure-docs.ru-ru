@@ -11,15 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/24/2018
+ms.date: 09/26/2018
 ms.author: mabrigg
 ms.reviewer: ppacent
-ms.openlocfilehash: e381d2ed3c6a972d776dd31f311fcebe2e35823a
-ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
+ms.openlocfilehash: f7079d54ccae32d06488d12d45d6035c7f372d63
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42917089"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48236613"
 ---
 # <a name="validate-azure-stack-pki-certificates"></a>Проверка сертификатов PKI Azure Stack
 
@@ -66,21 +66,20 @@ ms.locfileid: "42917089"
 
 1. Установите **AzsReadinessChecker** из командной строки PowerShell (версии 5.1 или более поздней), выполнив следующий командлет:
 
-    ````PowerShell  
+    ```PowerShell  
         Install-Module Microsoft.AzureStack.ReadinessChecker -force 
-    ````
+    ```
 
 2. Создайте структуру каталога сертификатов. В приведенном ниже примере вы можете изменить `<c:\certificates>` на новый путь каталога по своему усмотрению.
-
-    ````PowerShell  
+    ```PowerShell  
     New-Item C:\Certificates -ItemType Directory
     
-    $directories = 'ACSBlob','ACSQueue','ACSTable','ADFS','Admin Portal','ARM Admin','ARM Public','Graph','KeyVault','KeyVaultInternal','Public Portal'
+    $directories = 'ACSBlob','ACSQueue','ACSTable','Admin Portal','ARM Admin','ARM Public','KeyVault','KeyVaultInternal','Public Portal'
     
     $destination = 'c:\certificates'
     
     $directories | % { New-Item -Path (Join-Path $destination $PSITEM) -ItemType Directory -Force}
-    ````
+    ```
     
     > [!Note]  
     > Службы федерации Active Directory (AD FS) и Graph необходимы, если вы используете AD FS как свою систему идентификации.
@@ -92,16 +91,15 @@ ms.locfileid: "42917089"
 
 3. В окне PowerShell измените значения **RegionName** и **FQDN** в соответствии со средой Azure Stack и выполните команду ниже:
 
-    ````PowerShell  
+    ```PowerShell  
     $pfxPassword = Read-Host -Prompt "Enter PFX Password" -AsSecureString 
 
-    Start-AzsReadinessChecker -CertificatePath c:\certificates -pfxPassword $pfxPassword -RegionName east -FQDN azurestack.contoso.com -IdentitySystem AAD 
-
-    ````
+    Start-AzsReadinessChecker  -extensionshostfeature -CertificatePath c:\certificates -pfxPassword $pfxPassword -RegionName east -FQDN azurestack.contoso.com -IdentitySystem AAD 
+    ```
 
 4. Проверьте выходные данные. Все сертификаты должны пройти все проверки. Например: 
 
-    ````PowerShell
+    ```PowerShell  
     AzsReadinessChecker v1.1803.405.3 started
     Starting Certificate Validation
 
@@ -134,7 +132,7 @@ ms.locfileid: "42917089"
     AzsReadinessChecker Report location: 
     C:\AzsReadinessChecker\AzsReadinessReport.json
     AzsReadinessChecker Completed
-    ````
+    ```
 
 ### <a name="known-issues"></a>Известные проблемы
 
@@ -144,7 +142,7 @@ ms.locfileid: "42917089"
 
  - Проверка других сертификатов пропускается, если цепочка сертификатов нецелостна.
 
-    ````PowerShell  
+    ```PowerShell  
     Testing: ACSBlob\singlewildcard.pfx
         Read PFX: OK
         Signature Algorithm: OK
@@ -165,7 +163,7 @@ ms.locfileid: "42917089"
     AzsReadinessChecker Log location: C:\AzsReadinessChecker\AzsReadinessChecker.log
     AzsReadinessChecker Report location (for OEM): C:\AzsReadinessChecker\AzsReadinessChecker.log
     AzsReadinessChecker Completed
-    ````
+    ```
 
 **Решение**. Следуйте указаниям в руководстве по инструментам в разделе сведений о каждом наборе проверок сертификата.
 
@@ -175,13 +173,13 @@ ms.locfileid: "42917089"
 
 1.  Установите **AzsReadinessChecker** из командной строки PowerShell (версии 5.1 или более поздней), выполнив следующий командлет:
 
-    ````PowerShell  
+    ```PowerShell  
       Install-Module Microsoft.AzureStack.ReadinessChecker -force
-    ````
+    ```
 
 2.  Создайте вложенную хэш-таблицу, содержащую пути и пароль для каждого сертификата PaaS, который нужно проверить. В окне PowerShell выполните команду ниже:
 
-    ```PowerShell
+    ```PowerShell  
         $PaaSCertificates = @{
         'PaaSDBCert' = @{'pfxPath' = '<Path to DBAdapter PFX>';'pfxPassword' = (ConvertTo-SecureString -String '<Password for PFX>' -AsPlainText -Force)}
         'PaaSDefaultCert' = @{'pfxPath' = '<Path to Default PFX>';'pfxPassword' = (ConvertTo-SecureString -String '<Password for PFX>' -AsPlainText -Force)}
@@ -193,7 +191,7 @@ ms.locfileid: "42917089"
 
 3.  Измените значения **RegionName** и **FQDN** в соответствии со своей средой Azure Stack, чтобы начать проверку. Далее выполните:
 
-    ```PowerShell
+    ```PowerShell  
     Start-AzsReadinessChecker -PaaSCertificates $PaaSCertificates -RegionName east -FQDN azurestack.contoso.com 
     ```
 4.  Проверьте выходные данные. Все сертификаты должны пройти все проверки.

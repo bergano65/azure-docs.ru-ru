@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 07/19/18
 ms.author: sakthivetrivel
 ms.custom: mvc
-ms.openlocfilehash: 3bac6534f43d62e6eb9381b8513025ba9117ed04
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: e16c82f7c49bf90fc074732d0a989b9de94a52c5
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48857012"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49375857"
 ---
 # <a name="cluster-autoscaler-on-azure-kubernetes-service-aks---preview"></a>Автомасштабирование кластера с помощью службы Azure Kubernetes (AKS) — предварительная версия
 
@@ -26,11 +26,22 @@ ms.locfileid: "48857012"
 > Интеграция автомасштабирования кластера Azure Kubernetes (AKS) в данный момент находится в стадии **предварительной версии**. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 >
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites-and-considerations"></a>Предварительные требования и рекомендации
 
 В этом документе предполагается, что у вас есть кластер AKS с поддержкой RBAC. Если вам необходим кластер AKS, обратитесь к [руководству по началу работы со службой Azure Kubernetes][aks-quick-start].
 
  Чтобы использовать автомасштабирование кластера, в кластере необходимо использовать Kubernetes версии 1.10.X или более поздней версии и в нем должен быть включен RBAC. Дополнительные сведения об обновлении кластера см. в статье об [обновлении кластера AKS][aks-upgrade].
+
+Определите запросы ресурсов для элементов pod. Средство автомасштабирования кластера рассматривает ресурсы, запрашиваемые элементами pod, а не ресурсы, которые фактически используются, как средство горизонтального автомасштабирования pod. В разделе `spec: containers` определения развертывания укажите требования к ЦП и памяти. В следующем фрагменте кода для узла запрашиваются 0,5 виртуального процессора и 64 МБ памяти.
+
+  ```yaml
+  resources:
+    requests:
+      cpu: 500m
+      memory: 64Mb
+  ```
+
+Если используется средство автомасштабирования кластера, можно избежать масштабирования количества узлов вручную. Средство автомасштабирования кластера может не определить правильный объем требуемых вычислительных ресурсов и может конфликтовать с количеством узлов, определенным вами вручную.
 
 ## <a name="gather-information"></a>Сбор сведений
 
@@ -127,7 +138,7 @@ metadata:
   name: cluster-autoscaler
   namespace: kube-system
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: cluster-autoscaler
@@ -168,7 +179,7 @@ rules:
   verbs: ["get", "list", "watch"]
 
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: cluster-autoscaler
@@ -186,7 +197,7 @@ rules:
   verbs: ["delete","get","update"]
 
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: cluster-autoscaler
@@ -203,7 +214,7 @@ subjects:
     namespace: kube-system
 
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: cluster-autoscaler
@@ -221,7 +232,7 @@ subjects:
     namespace: kube-system
 
 ---
-apiVersion: extensions/v1beta1
+apiVersion: extensions/v1
 kind: Deployment
 metadata:
   labels:

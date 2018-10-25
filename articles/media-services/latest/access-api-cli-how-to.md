@@ -4,20 +4,20 @@ description: В этом руководстве приведены сведен�
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cflower
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.custom: mvc
-ms.date: 03/19/2018
+ms.date: 10/15/2018
 ms.author: juliako
-ms.openlocfilehash: e20cac5f1063589bdbfee0f384ac6af5a39811ed
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 5d7c338dc9d5028552d9b33802982ffda97a56f0
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47096797"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49389856"
 ---
 # <a name="access-azure-media-services-api-with-the-azure-cli"></a>Доступ к API Служб мультимедиа Azure с помощью Azure CLI
  
@@ -34,13 +34,13 @@ ms.locfileid: "47096797"
 
 Создайте учетную запись Служб мультимедиа Azure, как описано в [этом руководстве](create-account-cli-quickstart.md).
 
-## <a name="log-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на [портал Azure](http://portal.azure.com) и запустите **CloudShell**, чтобы выполнить команды CLI, приведенные на следующих шагах.
 
 [!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
 
-Если вы решили установить и использовать CLI локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
+Если вы решили установить и использовать CLI локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
 
 [!INCLUDE [media-services-v3-cli-access-api-include](../../../includes/media-services-v3-cli-access-api-include.md)]
 
@@ -51,4 +51,4 @@ ms.locfileid: "47096797"
 
 ## <a name="see-also"></a>См. также
 
-[интерфейс командной строки Azure](https://docs.microsoft.com/en-us/cli/azure/ams?view=azure-cli-latest)
+[Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/25/2018
 ms.author: spelluru
-ms.openlocfilehash: a15e726e237bcdbd9d380aaf9232e5d16a2e648f
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 631c4334b1e2ca37dfc87709718b6639c2762c5c
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47409141"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48857692"
 ---
 # <a name="message-sequencing-and-timestamps"></a>Последовательность сообщений и метки времени
 
@@ -50,7 +50,6 @@ ms.locfileid: "47409141"
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 
-* [Базовая информация о служебной шине](service-bus-fundamentals-hybrid-solutions.md)
 * [Очереди, разделы и подписки служебной шины](service-bus-queues-topics-subscriptions.md)
 * [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)
 * [Как использовать разделы и подписки служебной шины](service-bus-dotnet-how-to-use-topics-subscriptions.md)

@@ -12,15 +12,15 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: ''
 manager: craigg
-ms.date: 04/01/2018
-ms.openlocfilehash: d944ead01da81e2fec49d256a4da939067bcceee
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.date: 10/05/2018
+ms.openlocfilehash: 44fc04d4788c4381a4922f1335c393e03045900e
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47064416"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49352399"
 ---
-# <a name="always-encrypted-protect-sensitive-data-in-sql-database-and-store-your-encryption-keys-in-azure-key-vault"></a>Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище ключей Azure
+# <a name="always-encrypted-protect-sensitive-data-and-store-encryption-keys-in-azure-key-vault"></a>Always Encrypted: защита конфиденциальных данных и хранение ключей шифрования в Azure Key Vault
 
 В этой статье показано, как защитить конфиденциальные данные в базе данных SQL с помощью шифрования данных, используя [мастер настройки Always Encrypted](https://msdn.microsoft.com/library/mt459280.aspx) в [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/hh213248.aspx). Она также содержит инструкции, с помощью которых вы узнаете, как сохранить каждый ключ шифрования в хранилище ключей Azure.
 
@@ -55,6 +55,7 @@ Always Encrypted — это новая технология шифровани�
 
 Можно быстро создать хранилище ключей, выполнив следующий сценарий. Подробное описание этих командлетов и дополнительные сведения о создании и настройке хранилища ключей см. в статье [Приступая к работе с хранилищем ключей Azure](../key-vault/key-vault-get-started.md).
 
+```powershell
     $subscriptionName = '<your Azure subscription name>'
     $userPrincipalName = '<username@domain.com>'
     $applicationId = '<application ID from your AAD application>'
@@ -72,7 +73,7 @@ Always Encrypted — это новая технология шифровани�
 
     Set-AzureRmKeyVaultAccessPolicy -VaultName $vaultName -ResourceGroupName $resourceGroupName -PermissionsToKeys create,get,wrapKey,unwrapKey,sign,verify,list -UserPrincipalName $userPrincipalName
     Set-AzureRmKeyVaultAccessPolicy  -VaultName $vaultName  -ResourceGroupName $resourceGroupName -ServicePrincipalName $applicationId -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list
-
+```
 
 
 
@@ -107,6 +108,7 @@ Always Encrypted — это новая технология шифровани�
 2. Щелкните правой кнопкой мыши базу данных **Clinic** и выберите пункт **Создать запрос**.
 3. Вставьте следующий сценарий Transact-SQL в окно нового запроса и нажмите кнопку **Выполнить** .
 
+```sql
         CREATE TABLE [dbo].[Patients](
          [PatientId] [int] IDENTITY(1,1),
          [SSN] [char](11) NOT NULL,
@@ -120,7 +122,7 @@ Always Encrypted — это новая технология шифровани�
          [BirthDate] [date] NOT NULL
          PRIMARY KEY CLUSTERED ([PatientId] ASC) ON [PRIMARY] );
          GO
-
+```
 
 ## <a name="encrypt-columns-configure-always-encrypted"></a>Шифрование столбцов (настройка Always Encrypted)
 В SSMS есть мастер, с помощью которого можно легко настроить функцию Always Encrypted. Он позволяет настроить главный ключ столбца, ключ шифрования столбца и зашифрованные столбцы.
@@ -183,9 +185,10 @@ Always Encrypted — это новая технология шифровани�
 
 В консоли диспетчера пакетов выполните следующие две строки кода.
 
+```powershell
     Install-Package Microsoft.SqlServer.Management.AlwaysEncrypted.AzureKeyVaultProvider
     Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
-
+```
 
 
 ## <a name="modify-your-connection-string-to-enable-always-encrypted"></a>Изменение строки подключения для активации функции постоянного шифрования
@@ -204,6 +207,7 @@ Always Encrypted — это новая технология шифровани�
 ### <a name="enable-always-encrypted-with-sqlconnectionstringbuilder"></a>Включение функции Always Encrypted с помощью SqlConnectionStringBuilder
 В коде ниже показано, как активировать функцию Always Encrypted, указав параметр [SqlConnectionStringBuilder.ColumnEncryptionSetting](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnectionstringbuilder.columnencryptionsetting.aspx) со значением [Enabled](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnectioncolumnencryptionsetting.aspx).
 
+```CS
     // Instantiate a SqlConnectionStringBuilder.
     SqlConnectionStringBuilder connStringBuilder =
        new SqlConnectionStringBuilder("replace with your connection string");
@@ -211,10 +215,12 @@ Always Encrypted — это новая технология шифровани�
     // Enable Always Encrypted.
     connStringBuilder.ColumnEncryptionSetting =
        SqlConnectionColumnEncryptionSetting.Enabled;
+```
 
 ## <a name="register-the-azure-key-vault-provider"></a>Регистрация поставщика хранилища ключей Azure
 В следующем коде показано, как зарегистрировать поставщик хранилища ключей Azure с помощью драйвера ADO.NET.
 
+```C#
     private static ClientCredential _clientCredential;
 
     static void InitializeAzureKeyVaultProvider()
@@ -230,8 +236,7 @@ Always Encrypted — это новая технология шифровани�
        providers.Add(SqlColumnEncryptionAzureKeyVaultProvider.ProviderName, azureKeyVaultProvider);
        SqlConnection.RegisterColumnEncryptionKeyStoreProviders(providers);
     }
-
-
+```
 
 ## <a name="always-encrypted-sample-console-application"></a>Пример консольного приложения с функцией постоянного шифрования
 В этом примере показано, как:
@@ -244,7 +249,7 @@ Always Encrypted — это новая технология шифровани�
 Замените содержимое файла **Program.cs** кодом, приведенным ниже. Замените строку подключения для глобальной переменной connectionString, расположенную в строке прямо над методом Main, действительной строкой подключения с портала Azure. Это единственное изменение, которое необходимо внести в этот код.
 
 Запустите приложение, чтобы увидеть функцию Always Encrypted в действии.
-
+```CS
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -584,7 +589,7 @@ Always Encrypted — это новая технология шифровани�
         public DateTime BirthDate { get; set; }
     }
     }
-
+```
 
 
 ## <a name="verify-that-the-data-is-encrypted"></a>Как проверить, что данные шифруются
@@ -592,13 +597,15 @@ Always Encrypted — это новая технология шифровани�
 
 Выполните следующий запрос к базе данных Clinic.
 
+```sql
     SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
+```
 
 Вы увидите, что в зашифрованных столбцах не содержатся данные в виде открытого текста.
 
    ![Новое консольное приложение](./media/sql-database-always-encrypted-azure-key-vault/ssms-encrypted.png)
 
-Чтобы получить доступ к данным в виде открытого текста, сначала убедитесь, что пользователь имеет необходимые разрешения в Azure Key Vault: *get*, *unwrapKey* и *verify*. Дополнительные сведения см. в статье [Создание и хранение главных ключей столбцов (постоянное шифрование)](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted?view=sql-server-2017).
+Чтобы получить доступ к данным в виде открытого текста, сначала убедитесь, что пользователь имеет необходимые разрешения в Azure Key Vault: *get*, *unwrapKey* и *verify*. Дополнительные сведения см. в статье [Создание и хранение главных ключей столбцов (постоянное шифрование)](https://docs.microsoft.com/sql/relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted?view=sql-server-2017).
 
 Затем во время подключения добавьте параметр *Column Encryption Setting=enabled*.
 
@@ -608,12 +615,13 @@ Always Encrypted — это новая технология шифровани�
    
     ![Новое консольное приложение](./media/sql-database-always-encrypted-azure-key-vault/ssms-connection-parameter.png)
 4. Выполните следующий запрос к базе данных Clinic.
-   
-        SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
-   
-     Теперь в зашифрованных столбцах отображаются незашифрованные данные.
 
-    ![Новое консольное приложение](./media/sql-database-always-encrypted-azure-key-vault/ssms-plaintext.png)
+   ```sql
+      SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
+   ```
+
+     Теперь в зашифрованных столбцах отображаются незашифрованные данные.
+     ![Новое консольное приложение](./media/sql-database-always-encrypted-azure-key-vault/ssms-plaintext.png)
 
 
 ## <a name="next-steps"></a>Дополнительная информация

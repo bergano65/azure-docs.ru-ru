@@ -6,14 +6,14 @@ author: tfitzmac
 manager: timlt
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 05/09/2018
+ms.date: 10/02/2018
 ms.author: tomfitz
-ms.openlocfilehash: 32f93f383ec4044afb0696fcef1705c9ed65d673
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: f79fa096484edc34294ea0a69584e12788dba647
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38578923"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48043403"
 ---
 # <a name="map-custom-fields-to-event-grid-schema"></a>Сопоставление настраиваемых полей со схемой службы "Сетка событий Azure"
 
@@ -43,9 +43,9 @@ ms.locfileid: "38578923"
 
 * Параметр `--input-schema` указывает тип схемы. Доступные варианты: *cloudeventv01schema*, *customeventschema* и *eventgridschema*. Значение по умолчанию — eventgridschema. При создании настраиваемого сопоставления между своей схемой и схемой службы "Сетка событий" используйте значение customeventschema. Если события находятся в схеме CloudEvents, используйте значение cloudeventv01schema.
 
-* Параметр `--input-mapping-default-values` задает значения по умолчанию для полей в схеме службы "Сетка событий". Вы можете задать значения по умолчанию для полей *Subject*, *EventType* и *DataVersion*. Как правило, этот параметр используется, если настраиваемая схема не содержит поле, которое соответствует одному из этих трех полей. Например, можно указать, что поле DataVersion всегда имеет значение **1.0**.
+* Параметр `--input-mapping-default-values` задает значения по умолчанию для полей в схеме службы "Сетка событий". Можно задать значения по умолчанию для `subject`, `eventtype`, и `dataversion`. Как правило, этот параметр используется, если настраиваемая схема не содержит поле, которое соответствует одному из этих трех полей. Например, можно указать, что версия данных всегда имеет значение **1.0**.
 
-* Параметр `--input-mapping-fields` сопоставляет поля из вашей схемы со схемой службы "Сетка событий". Необходимо указать значения в разделенных пробелами парах "ключ — значение". В качестве имени ключа используйте имя поля сетки событий. В качестве значения используйте имя поля. Вы можете указать имена ключа для полей *Id*, *Topic*, *EventTime*, *Subject*, *EventType* и *DataVersion*.
+* Параметр `--input-mapping-fields` сопоставляет поля из вашей схемы со схемой службы "Сетка событий". Необходимо указать значения в разделенных пробелами парах "ключ — значение". В качестве имени ключа используйте имя поля сетки событий. В качестве значения используйте имя поля. Можно использовать имена ключей для `id`, `topic`, `eventtime`, `subject`, `eventtype`, и `dataversion`.
 
 В следующем примере создается настраиваемый раздел с несколькими сопоставленными полями и полями по умолчанию.
 
@@ -58,7 +58,7 @@ az eventgrid topic create \
   -n demotopic \
   -l eastus2 \
   -g myResourceGroup \
-  --input-schema customeventschema
+  --input-schema customeventschema \
   --input-mapping-fields eventType=myEventTypeField \
   --input-mapping-default-values subject=DefaultSubject dataVersion=1.0
 ```
@@ -76,6 +76,7 @@ az eventgrid event-subscription create \
   --topic-name demotopic \
   -g myResourceGroup \
   --name eventsub1 \
+  --event-delivery-schema eventgridschema \
   --endpoint-type storagequeue \
   --endpoint <storage-queue-url>
 ```
@@ -100,9 +101,9 @@ az eventgrid event-subscription create \
 endpoint=$(az eventgrid topic show --name demotopic -g myResourceGroup --query "endpoint" --output tsv)
 key=$(az eventgrid topic key list --name demotopic -g myResourceGroup --query "key1" --output tsv)
 
-body=$(eval echo "'$(curl https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/event-grid/mapeventfields.json)'")
+event='[ { "myEventTypeField":"Created", "resource":"Users/example/Messages/1000", "resourceData":{"someDataField1":"SomeDataFieldValue"} } ]'
 
-curl -X POST -H "aeg-sas-key: $key" -d "$body" $endpoint
+curl -X POST -H "aeg-sas-key: $key" -d "$event" $endpoint
 ```
 
 Теперь просмотрите хранилище очередей. Две подписки доставили события в разных схемах.

@@ -5,24 +5,24 @@ services: event-grid
 author: tfitzmac
 ms.service: event-grid
 ms.topic: reference
-ms.date: 08/17/2018
+ms.date: 10/12/2018
 ms.author: tomfitz
-ms.openlocfilehash: 18f2a64a4354fbd99f1a471c21cc35cbf5df6619
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: ae6513c503b930d9c953f5245a9c98ea096109bb
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42143174"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49310244"
 ---
 # <a name="azure-event-grid-event-schema-for-subscriptions"></a>Схема событий службы "Сетка событий Azure" для подписок
 
 В этой статье описаны свойства и схема для событий подписки Azure. Введение в схемы событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
 
-Подписки и группы ресурсов Azure выдают одинаковые типы событий. Типы событий связаны с изменениями в ресурсах. Основное различие в том, что группы ресурсов выдают события для ресурсов в пределах группы ресурсов, а подписки Azure — для ресурсов во всей подписке.
+Подписки и группы ресурсов Azure выдают одинаковые типы событий. Типы событий связаны с изменениями в ресурсах или действиями. Основное различие в том, что группы ресурсов выдают события для ресурсов в пределах группы ресурсов, а подписки Azure — для ресурсов во всей подписке.
 
-События ресурса создаются для операций PUT, PATCH и DELETE, которые отправляются в `management.azure.com`. Операции POST и GET не создают события. Операции, передаваемые в плоскость данных (например, в `myaccount.blob.core.windows.net`), не создают события.
+События ресурса создаются для операций PUT, PATCH, POST и DELETE, которые отправляются в `management.azure.com`. Операции GET не создают события. Операции, передаваемые в плоскость данных (например, в `myaccount.blob.core.windows.net`), не создают события. События действий предоставляют данные о событиях для операций, таких как создание списка ключей для ресурса.
 
-При оформлении подписки на события, связанные с подпиской Azure, ваша конечная точка получает все события для этой подписки. Это могут быть как события, которые вы хотите просмотреть, например обновление виртуальной машины, так и менее важные события, например появление новой записи в журнале развертывания. Вы можете получать все события в конечной точке и написать код, который обрабатывает нужные события, или задать фильтр при создании подписки на события.
+При оформлении подписки на события, связанные с подпиской Azure, ваша конечная точка получает все события для этой подписки. Это могут быть как события, которые вы хотите просмотреть, например обновление виртуальной машины, так и менее важные события, например появление новой записи в журнале развертывания. Вы можете получать все события в конечной точке и написать код, который обрабатывает нужные события. Кроме того, вы можете задать фильтр при создании подписки на события.
 
 Для программной обработки события можно отсортировать по значению `operationName`. Например, конечная точка событий может обрабатывать только события для операций `Microsoft.Compute/virtualMachines/write` или `Microsoft.Storage/storageAccounts/write`.
 
@@ -36,12 +36,15 @@ ms.locfileid: "42143174"
 
 | Тип события | ОПИСАНИЕ |
 | ---------- | ----------- |
-| Microsoft.Resources.ResourceWriteSuccess | Возникает при успешном создании или обновлении ресурса. |
-| Microsoft.Resources.ResourceWriteFailure | Возникает при неудачном создании или обновлении ресурса. |
-| Microsoft.Resources.ResourceWriteCancel | Возникает при отмене создания или обновления ресурса. |
-| Microsoft.Resources.ResourceDeleteSuccess | Возникает при успешном удалении ресурса. |
-| Microsoft.Resources.ResourceDeleteFailure | Возникает при неудачном удалении ресурса. |
-| Microsoft.Resources.ResourceDeleteCancel | Возникает при отмене удаления ресурса. Это событие происходит при отмене развертывания шаблона. |
+| Microsoft.Resources.ResourceActionCancel | Возникает при отмене выполнения действия с ресурсом. |
+| Microsoft.Resources.ResourceActionFailure | Возникает при сбое выполнения действия с ресурсом. |
+| Microsoft.Resources.ResourceActionSuccess | Возникает при успешном выполнении действия с ресурсом. |
+| Microsoft.Resources.ResourceDeleteCancel | Возникает при отмене удаления. Это событие происходит при отмене развертывания шаблона. |
+| Microsoft.Resources.ResourceDeleteFailure | Возникает при неудачном удалении. |
+| Microsoft.Resources.ResourceDeleteSuccess | Возникает при успешном удалении. |
+| Microsoft.Resources.ResourceWriteCancel | Возникает при отмене создания или обновления. |
+| Microsoft.Resources.ResourceWriteFailure | Возникает при неудачном создании или обновлении. |
+| Microsoft.Resources.ResourceWriteSuccess | Возникает при успешном создании или обновлении. |
 
 ## <a name="example-event"></a>Пример события
 
@@ -171,6 +174,62 @@ ms.locfileid: "42143174"
 }]
 ```
 
+В следующем примере показана схема события **ResourceActionSuccess**. Та же схема используется для событий **ResourceActionFailure** и **ResourceActionCancel** с разными значениями для `eventType`.
+
+```json
+[{   
+  "subject": "/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.EventHub/namespaces/{namespace}/AuthorizationRules/RootManageSharedAccessKey",
+  "eventType": "Microsoft.Resources.ResourceActionSuccess",
+  "eventTime": "2018-10-08T22:46:22.6022559Z",
+  "id": "{ID}",
+  "data": {
+    "authorization": {
+      "scope": "/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.EventHub/namespaces/{namespace}/AuthorizationRules/RootManageSharedAccessKey",
+      "action": "Microsoft.EventHub/namespaces/AuthorizationRules/listKeys/action",
+      "evidence": {
+        "role": "Contributor",
+        "roleAssignmentScope": "/subscriptions/{subscription-id}",
+        "roleAssignmentId": "{ID}",
+        "roleDefinitionId": "{ID}",
+        "principalId": "{ID}",
+        "principalType": "ServicePrincipal"
+      }     
+    },
+    "claims": {
+      "aud": "{audience-claim}",
+      "iss": "{issuer-claim}",
+      "iat": "{issued-at-claim}",
+      "nbf": "{not-before-claim}",
+      "exp": "{expiration-claim}",
+      "aio": "{token}",
+      "appid": "{ID}",
+      "appidacr": "2",
+      "http://schemas.microsoft.com/identity/claims/identityprovider": "{URL}",
+      "http://schemas.microsoft.com/identity/claims/objectidentifier": "{ID}",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": "{ID}",       "http://schemas.microsoft.com/identity/claims/tenantid": "{ID}",
+      "uti": "{ID}",
+      "ver": "1.0"
+    },
+    "correlationId": "{ID}",
+    "httpRequest": {
+      "clientRequestId": "{ID}",
+      "clientIpAddress": "{IP-address}",
+      "method": "POST",
+      "url": "https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.EventHub/namespaces/{namespace}/AuthorizationRules/RootManageSharedAccessKey/listKeys?api-version=2017-04-01"
+    },
+    "resourceProvider": "Microsoft.EventHub",
+    "resourceUri": "/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.EventHub/namespaces/{namespace}/AuthorizationRules/RootManageSharedAccessKey",
+    "operationName": "Microsoft.EventHub/namespaces/AuthorizationRules/listKeys/action",
+    "status": "Succeeded",
+    "subscriptionId": "{subscription-id}",
+    "tenantId": "{tenant-id}"
+  },
+  "dataVersion": "2",
+  "metadataVersion": "1",
+  "topic": "/subscriptions/{subscription-id}" 
+}]
+```
+
 ## <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:
@@ -194,9 +253,9 @@ ms.locfileid: "42143174"
 | claims | object | Свойства утверждений. Дополнительные сведения см. в [спецификациях JWT](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html). |
 | correlationId | строка | Идентификатор операции для устранения неполадок. |
 | httpRequest | object | Подробные сведения об операции. Этот объект включается только при обновлении существующего ресурса или при удалении ресурса. |
-| resourceProvider | строка | Поставщик ресурсов, выполняющий операцию. |
+| resourceProvider | строка | Поставщик ресурсов для операции. |
 | resourceUri | строка | URI ресурса в операции. |
-| operationName | строка | Операция, которая выполнена. |
+| operationName | строка | Выполненная операция. |
 | status | строка | Состояние операции. |
 | subscriptionId | строка | Идентификатор подписки ресурса. |
 | tenantId | строка | Идентификатор клиента ресурса. |

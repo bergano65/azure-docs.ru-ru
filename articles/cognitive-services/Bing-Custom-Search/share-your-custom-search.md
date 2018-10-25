@@ -1,20 +1,21 @@
 ---
-title: 'Пользовательский поиск Bing: совместное использование экземпляра пользовательского поиска | Документация Майкрософт'
+title: Совместное использование экземпляра пользовательского поиска (Пользовательский поиск Bing)
+titlesuffix: Azure Cognitive Services
 description: В данной статье описывается, как совместно использовать экземпляр пользовательского поиска.
 services: cognitive-services
 author: brapel
-manager: ehansen
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-custom-search
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/28/2017
 ms.author: v-brapel
-ms.openlocfilehash: 4a9761ce0671b57d802fe332c92e32d1f410fa6f
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: b6834681f2b6478943c43e44d694ae278ddd4682
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46960963"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48815925"
 ---
 # <a name="share-your-custom-search-instance"></a>Совместное использование экземпляра пользовательского поиска
 

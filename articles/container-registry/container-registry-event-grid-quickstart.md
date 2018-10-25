@@ -2,18 +2,17 @@
 title: Краткое руководство. Отправка событий Реестра контейнеров Azure в Сетку событий
 description: В этом кратком руководстве описано, как включить события Сетки событий для реестра контейнеров, передать образ контейнера, отправить события в пример приложения и удалить их из него.
 services: container-registry
-author: mmacy
-manager: jeconnoc
+author: dlepow
 ms.service: container-registry
 ms.topic: article
 ms.date: 08/23/2018
-ms.author: marsma
-ms.openlocfilehash: 6ff83885ba80f0399f7b085970b1191e8e4cd999
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.author: danlep
+ms.openlocfilehash: 88265ee6f8a340909880ba70bd9f37a49ef85bf5
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42746514"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48857369"
 ---
 # <a name="quickstart-send-container-registry-events-to-event-grid"></a>Краткое руководство. Отправка событий реестра контейнеров в Сетку событий
 
@@ -141,20 +140,20 @@ az eventgrid event-subscription create \
 
 ## <a name="trigger-registry-events"></a>Активация событий реестра
 
-Теперь, когда пример приложения запущен и вы подписались на свой реестр с помощью Сетки событий, вы можете создать события. В этом разделе вы используете сборку ACR для создания и перемещения образа контейнера в реестр. Сборка ACR — это функция Реестра контейнеров Azure, которая позволяет создавать образы контейнеров в облаке без необходимости установки подсистемы Docker на вашем локальном компьютере.
+Теперь, когда пример приложения запущен и вы подписались на свой реестр с помощью Сетки событий, вы можете создать события. В этом разделе вы используете задачи ACR для создания и перемещения образа контейнера в реестр. Задачи ACR — это функция Реестра контейнеров Azure, которая позволяет создавать образы контейнеров в облаке без необходимости установки подсистемы Docker на вашем локальном компьютере.
 
 ### <a name="build-and-push-image"></a>Создание и отправка образа
 
-Выполните следующую команду Azure CLI, чтобы создать образ контейнера из содержимого репозитория GitHub. По умолчанию сборка ACR автоматически передает успешно созданный образ в ваш реестр, который генерирует событие `ImagePushed`.
+Выполните следующую команду Azure CLI, чтобы создать образ контейнера из содержимого репозитория GitHub. По умолчанию задачи ACR автоматически передает успешно созданный образ в ваш реестр, который генерирует событие `ImagePushed`.
 
 ```azurecli-interactive
-az acr build --registry $ACR_NAME --image myimage:v1 https://github.com/Azure-Samples/acr-build-helloworld-node.git
+az acr build --registry $ACR_NAME --image myimage:v1 -f Dockerfile https://github.com/Azure-Samples/acr-build-helloworld-node.git
 ```
 
-Вы должны увидеть выходные данные, похожие на следующие, когда сборка ACR будет создавать, а затем передавать ваш образ. Следующий пример выходных данных усечен для краткости.
+Вы должны увидеть выходные данные, похожие на следующие, когда задачи ACR будут создавать, а затем передавать ваш образ. Следующий пример выходных данных усечен для краткости.
 
 ```console
-$ az acr build -r $ACR_NAME --image myimage:v1 https://github.com/Azure-Samples/acr-build-helloworld-node.git
+$ az acr build -r $ACR_NAME --image myimage:v1 -f Dockerfile https://github.com/Azure-Samples/acr-build-helloworld-node.git
 Sending build context to ACR...
 Queued a build with build ID: aa2
 Waiting for build agent...
@@ -227,10 +226,10 @@ az group delete --name $RESOURCE_GROUP_NAME
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы развернули реестр контейнеров, создали образ с помощью сборки ACR, удалили его и использовали события реестра из Сетки событий с помощью примера приложения. Теперь перейдите к руководству по сборке ACR, чтобы узнать больше о создании образов контейнеров в облаке, включая автоматическую сборку при обновлении базового образа:
+В этом кратком руководстве вы развернули реестр контейнеров, создали образ с помощью задач ACR, удалили его и использовали события реестра из Сетки событий с помощью примера приложения. Теперь перейдите к руководству по задачам ACR, чтобы узнать больше о создании образов контейнеров в облаке, включая автоматическую сборку при обновлении базового образа:
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание образов контейнера в облаке с помощью службы "Сборка Реестра контейнеров Azure"](container-registry-tutorial-quick-build.md)
+> [Руководство. Создание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"](container-registry-tutorial-quick-task.md)
 
 <!-- IMAGES -->
 [sample-app-01]: ./media/container-registry-event-grid-quickstart/sample-app-01.png

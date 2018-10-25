@@ -1,34 +1,35 @@
 ---
-title: Создание внутренней подсистемы балансировки нагрузки Службы Azure Kubernetes (AKS)
+title: Создание внутренней подсистемы балансировки нагрузки в Службе Azure Kubernetes (AKS)
 description: Узнайте, как создать и использовать внутреннюю подсистему балансировки нагрузки для предоставления доступа к службам через AKS (Службу Azure Kubernetes).
 services: container-service
 author: iainfoulds
-manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 07/12/2018
+ms.date: 10/08/2018
 ms.author: iainfou
-ms.custom: mvc
-ms.openlocfilehash: 123fc08995416e0ff9c7e12a526deadc34b3a4a2
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 042d2ee0f615ce5216fc11152f0f65518ff9bd5c
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39001401"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49376385"
 ---
 # <a name="use-an-internal-load-balancer-with-azure-kubernetes-service-aks"></a>Использование внутренней подсистемы балансировки нагрузки со Службой Azure Kubernetes (AKS)
 
-Внутренняя балансировка нагрузки позволяет сделать службу Kubernetes доступной для приложений, работающих в той же виртуальной сети, что и кластер Kubernetes. В этой статье описаны процессы создания и использования внутренней подсистемы балансировки нагрузки со Службой Azure Kubernetes (AKS). Доступно два типа SKU Azure Load Balancer: уровня "Базовый" и "Стандартный". AKS использует SKU уровня "Базовый".
+Чтобы ограничить доступ к приложениям в Службе Azure Kubernetes (AKS), можно создать и использовать внутреннюю подсистему балансировки нагрузки. Внутренняя подсистема балансировки нагрузки позволяет сделать службу Kubernetes доступной только для приложений, работающих в той же виртуальной сети, что и кластер Kubernetes. В этой статье описаны процессы создания и использования внутренней подсистемы балансировки нагрузки со Службой Azure Kubernetes (AKS).
+
+> [!NOTE]
+> Доступны два номера SKU Azure Load Balancer: ценовых категорий *Базовый* и *Стандартный*. Дополнительные сведения см. в разделе [Сравнение номеров SKU для Azure Load Balancer][azure-lb-comparison]. В настоящее время AKS поддерживает номер SKU ценовой категории *Базовый*. Если вы хотите применить номер SKU ценовой категории *Стандартный*, можно использовать вышестоящий [acs-engine][acs-engine].
 
 ## <a name="create-an-internal-load-balancer"></a>Создание внутреннего балансировщика нагрузки
 
-Чтобы создать внутреннюю подсистему балансировки нагрузки, создайте манифест службы с типом службы *LoadBalancer* и заметкой *azure-load-balancer-internal*, как показано в следующем примере:
+Чтобы создать внутреннюю подсистему балансировки нагрузки, создайте манифест службы `internal-lb.yaml` с типом службы *LoadBalancer* и заметкой *azure-load-balancer-internal*, как показано в следующем примере.
 
 ```yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: azure-vote-front
+  name: internal-app
   annotations:
     service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
@@ -36,31 +37,29 @@ spec:
   ports:
   - port: 80
   selector:
-    app: azure-vote-front
+    app: internal-app
 ```
 
-После развертывания с `kubetctl apply` подсистема балансировки нагрузки Azure создается и публикуется в той же виртуальной сети, что и кластер AKS.
+После развертывания с `kubectl apply -f internal-lb.yaml` подсистема балансировки нагрузки Azure создается и публикуется в той же виртуальной сети, что и кластер AKS.
 
-![Изображение внутренней подсистемы балансировки нагрузки AKS](media/internal-lb/internal-lb.png)
-
-При просмотре сведений о службе в столбце *EXTERNAL-IP* вы увидите IP-адрес внутренней подсистемы балансировки нагрузки, как показано в следующем примере:
+При просмотре сведений о службе в столбце IP-адрес внутренней подсистемы балансировки нагрузки отображается в столбце *EXTERNAL-IP*. Для превращения *\<ожидающего\>* IP-адреса в фактический внутренний IP-адрес может потребоваться пара минут, как показано в следующем примере.
 
 ```
-$ kubectl get service azure-vote-front
+$ kubectl get service internal-app
 
-NAME               TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
-azure-vote-front   LoadBalancer   10.0.248.59   10.240.0.7    80:30555/TCP   10s
+NAME           TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
+internal-app   LoadBalancer   10.0.248.59   10.240.0.7    80:30555/TCP   2m
 ```
 
 ## <a name="specify-an-ip-address"></a>Указание IP-адреса
 
-Если вы хотите использовать определенный IP-адрес для внутренней подсистемы балансировки нагрузки, добавьте в ее спецификацию свойство *loadBalancerIP*. Указанный IP-адрес должен находиться в той же подсети, что и кластер AKS, и не должен быть назначен какому-либо ресурсу.
+Если вы хотите использовать определенный IP-адрес для внутренней подсистемы балансировки нагрузки, добавьте в ее YAML-файл манифеста свойство *loadBalancerIP*. Указанный IP-адрес должен находиться в той же подсети, что и кластер AKS, и не должен быть назначен какому-либо ресурсу.
 
 ```yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: azure-vote-front
+  name: internal-app
   annotations:
     service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
@@ -69,16 +68,16 @@ spec:
   ports:
   - port: 80
   selector:
-    app: azure-vote-front
+    app: internal-app
 ```
 
 При просмотре сведений о службе указанный IP-адрес должен отображаться в столбце *EXTERNAL-IP*.
 
 ```
-$ kubectl get service azure-vote-front
+$ kubectl get service internal-app
 
-NAME               TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
-azure-vote-front   LoadBalancer   10.0.184.168   10.240.0.25   80:30225/TCP   4m
+NAME           TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+internal-app   LoadBalancer   10.0.184.168   10.240.0.25   80:30225/TCP   4m
 ```
 
 ## <a name="use-private-networks"></a>Использование частных сетей
@@ -88,10 +87,10 @@ azure-vote-front   LoadBalancer   10.0.184.168   10.240.0.25   80:30225/TCP   4m
 При развертывания внутренней подсистемы балансировки нагрузки в кластере AKS, который использует частную сеть, можно применить описанную выше процедуру без каких-либо изменений. Подсистема балансировки нагрузки создается в той же группе ресурсов, где расположен кластер AKS, но она подключается к виртуальной частной сети и подсети, как показано в следующем примере:
 
 ```
-$ kubectl get service azure-vote-front
+$ kubectl get service internal-app
 
-NAME               TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
-azure-vote-front   LoadBalancer   10.1.15.188   10.0.0.35     80:31669/TCP   1m
+NAME           TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
+internal-app   LoadBalancer   10.1.15.188   10.0.0.35     80:31669/TCP   1m
 ```
 
 > [!NOTE]
@@ -105,7 +104,7 @@ azure-vote-front   LoadBalancer   10.1.15.188   10.0.0.35     80:31669/TCP   1m
 apiVersion: v1
 kind: Service
 metadata:
-  name: azure-vote-front
+  name: internal-app
   annotations:
     service.beta.kubernetes.io/azure-load-balancer-internal: "true"
     service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "apps-subnet"
@@ -114,12 +113,14 @@ spec:
   ports:
   - port: 80
   selector:
-    app: azure-vote-front
+    app: internal-app
 ```
 
 ## <a name="delete-the-load-balancer"></a>удаление подсистемы балансировки нагрузки
 
 Если удалены все службы, использующие внутреннюю подсистему балансировки нагрузки, сама подсистема также удаляется.
+
+Вы можете также напрямую удалить службу, как и любой ресурс Kubernetes, например `kubectl delete service internal-app`. При этом также будет удалена базовая подсистема балансировки нагрузки Azure.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -127,9 +128,10 @@ spec:
 
 <!-- LINKS - External -->
 [kubernetes-services]: https://kubernetes.io/docs/concepts/services-networking/service/
+[acs-engine]: https://github.com/Azure/acs-engine
 
 <!-- LINKS - Internal -->
-[advanced-networking]: networking-overview.md
-[deploy-advanced-networking]: networking-overview.md#configure-networking---cli
+[advanced-networking]: configure-advanced-networking.md
 [az-aks-show]: /cli/azure/aks#az-aks-show
 [az-role-assignment-create]: /cli/azure/role/assignment#az-role-assignment-create
+[azure-lb-comparison]: ../load-balancer/load-balancer-overview.md#skus

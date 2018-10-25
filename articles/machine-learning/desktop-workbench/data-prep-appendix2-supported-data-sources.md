@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 02/01/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: c4686bf01031e30bd9dc94f42d80da524db82931
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: eb84638e2996b0ee9bd5a580b7e827ea30d0ab21
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46969263"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48855992"
 ---
 # <a name="supported-data-sources-for-azure-machine-learning-data-preparation"></a>Поддерживаемые источники данных в инструменте подготовки данных службы "Машинное обучение Azure" 
 

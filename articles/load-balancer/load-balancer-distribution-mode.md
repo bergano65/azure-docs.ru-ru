@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: kumud
-ms.openlocfilehash: ae793bad9cef86158418eb87e0c38ee0370a6bd2
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: cfca7361831734baaf150b3e19b14c7dc88def36
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30176981"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48043655"
 ---
 # <a name="configure-the-distribution-mode-for-azure-load-balancer"></a>Настройка режима распределения для Azure Load Balancer
 
@@ -48,7 +48,15 @@ ms.locfileid: "30176981"
 
 ## <a name="configure-source-ip-affinity-settings"></a>Настройка параметров соответствия исходному IP-адресу
 
-Для виртуальных машин можно использовать Azure PowerShell, чтобы изменить параметры времени ожидания: Добавьте конечную точку Azure в виртуальную машину и установите режим распределения балансировщика нагрузки.
+Для виртуальных машин, развернутых с помощью Resource Manager используйте PowerShell, чтобы изменить параметры распространения подсистемы балансировки нагрузки на существующие правила балансировки нагрузки. Это способствует обновлению режима распределения. 
+
+```powershell 
+$lb = Get-AzureRmLoadBalancer -Name MyLb -ResourceGroupName MyLbRg 
+$lb.LoadBalancingRules[0].LoadDistribution = 'sourceIp' 
+Set-AzureRmLoadBalancer -LoadBalancer $lb 
+```
+
+Чтобы изменить параметры времени ожидания для виртуальных машин можно использовать Azure PowerShell. Добавьте конечную точку Azure в виртуальную машину и установите режим распределения балансировщика нагрузки.
 
 ```powershell
 Get-AzureVM -ServiceName mySvc -Name MyVM1 | Add-AzureEndpoint -Name HttpIn -Protocol TCP -PublicPort 80 -LocalPort 8080 –LoadBalancerDistribution sourceIP | Update-AzureVM

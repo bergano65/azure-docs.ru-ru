@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: 43845a55589be9550e64b4a491b7d3675fb22e8c
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: ff846717287fb2b125b549f6ca0de6c7908d4c35
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34641787"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49344819"
 ---
 # <a name="docker-compose-deployment-support-in-azure-service-fabric-preview"></a>Поддержка развертывания Docker Compose в Azure Service Fabric (предварительная версия)
 
@@ -122,6 +122,15 @@ sfctl compose upgrade-status --deployment-name TestContainerApp
 * Volume & Deploy > Volume
 
 Настройте кластер для принудительного применения ограничения ресурсов, как описано в статье об [управлении ресурсами Service Fabric](service-fabric-resource-governance.md). Другие директивы Docker Compose не поддерживаются в этой предварительной версии.
+
+### <a name="ports-section"></a>Раздел портов
+
+Укажите протокол http или https в разделе "Порты", который будет использовать прослушиватель службы Service Fabric. Это обеспечит правильную публикацию протокола конечной точки с помощью службы именования, позволяя обратному прокси-серверу пересылать запросы:
+* Для маршрутизации в незащищенные службы Compose в Service Fabric укажите **/http**. Например, **80:80/http**.
+* Для маршрутизации в защищенные службы Compose в Service Fabric укажите **/https**. Например, **443:443/https**.
+
+> [!NOTE]
+> Синтаксис раздела портов /http и /https относится к Service Fabric. Он необходим для регистрации правильного URL-адреса прослушивателя Service Fabric.  Если синтаксис файла Docker Compose проверен программно, это может привести к ошибке проверки.
 
 ## <a name="servicednsname-computation"></a>Вычисление ServiceDnsName
 

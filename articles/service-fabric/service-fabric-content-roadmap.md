@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/08/2017
 ms.author: ryanwi
-ms.openlocfilehash: d4b27feab5c1bb5913d2ba26f7f43aca9a899aa0
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: c55e67e24c8f5ff6e243c67b614592874b2cc459
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43697675"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48870661"
 ---
 # <a name="so-you-want-to-learn-about-service-fabric"></a>Что бы вы хотели узнать о Service Fabric?
 Azure Service Fabric — это платформа распределенных систем, которая дает возможность не только легко упаковывать и развертывать масштабируемые и надежные микрослужбы, но и управлять ими.  Service Fabric имеет большую контактную зону и вы можете многому научиться.  Здесь представлен краткий обзор Service Fabric и описаны основные понятия, модели программирования, жизненный цикл приложения, тестирование, кластеры и мониторинг работоспособности. Обзор и сведения о том, как создавать микрослужбы с помощью Service Fabric, см. в статьях [Общие сведения о Service Fabric](service-fabric-overview.md) и [Разработка приложений с использованием микрослужб](service-fabric-overview-microservices.md). Эта статья не содержит полный список связанной документации, но предоставляет ссылки на руководства по началу работы для каждой области Service Fabric. 
@@ -73,7 +73,7 @@ Azure Service Fabric — это платформа распределенных 
 ## <a name="stateless-and-stateful-microservices-for-service-fabric"></a>Микрослужбы Service Fabric с отслеживанием и без отслеживания состояния
 Service Fabric позволяет создавать приложения, состоящие из микрослужб или контейнеров. Микрослужбы без отслеживания состояния (протоколы шлюзов, веб-прокси и т. д.) не поддерживают изменяемые состояния без обработки запроса службой. К службам без отслеживания состояния можно отнести рабочие роли в облачных службах Azure. Микрослужбы с отслеживанием состояния (учетные записи пользователей, базы данных, устройства, корзины интернет-магазинов, очереди и т. д.) поддерживают изменяемые достоверные состояния без обработки запроса службой. Современные веб-приложения могут одновременно содержать микрослужбы с отслеживанием состояния и без него. 
 
-Ключевое отличие Service Fabric — активная ориентация на создание служб с отслеживанием состояния на основе [встроенных моделей программирования ](service-fabric-choose-framework.md) или контейнерных служб с отслеживанием состояния. В [сценариях приложений](service-fabric-application-scenarios.md) описаны ситуации, в которых используются службы с отслеживанием состояния.
+Ключевое отличие Service Fabric — активная ориентация на создание служб с отслеживанием состояния на основе [встроенных моделей программирования](service-fabric-choose-framework.md) или контейнерных служб с отслеживанием состояния. В [сценариях приложений](service-fabric-application-scenarios.md) описаны ситуации, в которых используются службы с отслеживанием состояния.
 
 Зачем существуют микрослужбы с отслеживанием состояния наряду с микрослужбами без отслеживания состояния? Основных преимуществ два.
 
@@ -104,7 +104,7 @@ Service Fabric интегрируется с [ASP.NET Core](service-fabric-relia
 ## <a name="application-lifecycle"></a>Жизненный цикл приложения
 Как и в случае с другими платформами, приложение в Service Fabric обычно проходит следующие фазы: проектирование, разработка, тестирование, развертывание, обновление, техническое обслуживание и удаление. Service Fabric предоставляет первоклассную поддержку полного жизненного цикла приложений в облаке: от разработки, развертывания, ежедневного управления и технического обслуживания до вывода приложения из эксплуатации. Модель службы использует несколько различных ролей для независимого участия в жизненном цикле приложения. [Жизненный цикл приложения в Service Fabric](service-fabric-application-lifecycle.md) представляет обзор интерфейсов API, а также их использование различными ролями на протяжении всех фаз жизненного цикла приложения в Service Fabric. 
 
-Всем жизненным циклом приложения можно управлять с помощью [командлетов PowerShell](/powershell/module/ServiceFabric/), [команд CLI](service-fabric-sfctl.md), [C# APIs](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient), [API Java](/java/api/system.fabric) и [REST API](/rest/api/servicefabric/). Вы также можете настроить конвейеры непрерывной интеграции и разработки с помощью средств [Visual Studio Team Services](service-fabric-set-up-continuous-integration.md) или [Jenkins](service-fabric-cicd-your-linux-applications-with-jenkins.md).
+Всем жизненным циклом приложения можно управлять с помощью [командлетов PowerShell](/powershell/module/ServiceFabric/), [команд CLI](service-fabric-sfctl.md), [C# APIs](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient), [API Java](/java/api/system.fabric._application_management_client) и [REST API](/rest/api/servicefabric/). Вы также можете настроить конвейеры непрерывной интеграции и разработки с помощью средств [Azure Pipelines](service-fabric-set-up-continuous-integration.md) или [Jenkins](service-fabric-cicd-your-linux-applications-with-jenkins.md).
 
 В следующем видео от Академии Microsoft Virtual Academy также описывается процесс управления жизненным циклом приложения: <center><a target="_blank" href="https://mva.microsoft.com/en-US/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=My3Ka56yC_6106218965">
 <img src="./media/service-fabric-content-roadmap/AppLifecycleVid.png" WIDTH="360" HEIGHT="244">

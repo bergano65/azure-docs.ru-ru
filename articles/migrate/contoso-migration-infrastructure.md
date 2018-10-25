@@ -3,16 +3,17 @@ title: Настройка инфраструктуры миграции в Conto
 description: Узнайте, каким образом компания Contoso настраивает инфраструктуру Azure для миграции в Azure.
 services: azure-migrate
 author: rayne-wiselman
+manager: carmonm
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 09/26/2018
+ms.date: 10/1/2018
 ms.author: raynew
-ms.openlocfilehash: bf2562f4772d20f099faec94794e0e908e6636d5
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 2210aaa5d4d0ba9d730e5aee97972565ea0c1090
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47227543"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49092986"
 ---
 # <a name="contoso---deploy-a-migration-infrastructure"></a>Развертывание инфраструктуры миграции в Contoso
 
@@ -38,7 +39,8 @@ ms.locfileid: "47227543"
 [Статья 10. Рефакторинг приложения Linux в веб-приложении Azure и Базе данных SQL Azure](contoso-migration-refactor-linux-app-service-mysql.md) | Специалисты компании Contoso переносят свое приложение Linux osTicket в веб-приложение Azure на нескольких сайтах. Веб-приложение интегрируется с GitHub для непрерывной поставки. База данных приложения переносится в экземпляр Базы данных Azure для MySQL. | Доступна
 [Статья 11. Рефакторинг развертывания Team Foundation Server в Azure DevOps Services](contoso-migration-tfs-vsts.md) | Специалисты компании Contoso переносят локальное развертывание Team Foundation Server в Azure DevOps Services в Azure. | Доступна
 [Статья 12. Перепроектирование приложения в контейнерах Azure и Базе данных SQL Azure](contoso-migration-rearchitect-container-sql.md) | Специалисты компании Contoso переносят приложение SmartHotel в Azure. Затем уровень веб-приложений преобразуется в контейнер Windows, работающий в Azure Service Fabric, и базу данных в службе "База данных Azure SQL". | Доступна    
-[Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | Специалисты компании Contoso выполняют повторную сборку приложения SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Службу Azure Kubernetes (AKS), Функции Azure, Cognitive Services и Azure Cosmos DB. | Доступна 
+[Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | Специалисты компании Contoso выполняют повторную сборку приложения SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Службу Azure Kubernetes (AKS), Функции Azure, Cognitive Services и Azure Cosmos DB. | Доступна
+[Статья 14. Масштабирование миграции в Azure](contoso-migration-scale.md) | Ознакомившись с вариантами сочетаний миграции, компания Contoso готовится к полномасштабной миграции в Azure. | Доступна 
 
 В этой статье рассказывается о том, как специалисты компании Contoso настраивают все элементы инфраструктуры, необходимые для выполнения сценария миграции. 
 

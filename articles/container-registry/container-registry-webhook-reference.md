@@ -2,17 +2,17 @@
 title: Справочник по схеме веб-перехватчика реестра контейнеров Azure
 description: Запрос к веб-перехватчику со ссылкой на полезные данные JSON для реестра контейнеров Azure.
 services: container-registry
-author: mmacy
-manager: jeconnoc
+author: dlepow
 ms.service: container-registry
 ms.topic: article
 ms.date: 12/02/2017
-ms.author: marsma
-ms.openlocfilehash: f62477a4c68abf1617d9689047913fd820ee5461
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.author: danlep
+ms.openlocfilehash: 8bae44215cdc17e9f1617c909ef197f2757fc114
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48857760"
 ---
 # <a name="azure-container-registry-webhook-reference"></a>Справочник по веб-перехватчику реестра контейнеров Azure
 
@@ -150,7 +150,7 @@ docker push myregistry.azurecr.io/hello-world:v1
   }
 ```
 
-Примеры команд [Azure CLI 2.0](/cli/azure/acr), которые приводят к созданию события веб-перехватчика **Delete**:
+Примеры команд [Azure CLI](/cli/azure/acr), которые активируют **удаление** события веб-перехватчика.
 
 ```azurecli
 # Delete repository

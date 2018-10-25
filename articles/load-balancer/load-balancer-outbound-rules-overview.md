@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/24/2018
+ms.date: 10/8/2018
 ms.author: kumud
-ms.openlocfilehash: 63c193b4757c28f809a33b917058df36467d4db4
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 15783822631a5372b181f2d65746664d90b389da
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47163024"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48883964"
 ---
 # <a name="load-balancer-outbound-rules"></a>Правила для исходящего трафика Load Balancer
 
@@ -180,10 +180,10 @@ ms.locfileid: "47163024"
 
 #### <a name="outbound-nat-for-internal-standard-load-balancer-scenarios"></a>NAT для исходящего трафика для внутренних сценариев Load Balancer (цен. категория "Стандартный")
 
-При использовании внутреннего Load Balancer (цен. категория "Стандартный") преобразование NAT для исходящего трафика недоступно до тех пор, пока не будет настроен общедоступный Load Balancer (цен. категория "Стандартный"). Вы можете изменить это, используя правило для исходящего трафика, чтобы создать исходящее подключение для виртуальных машин за внутренним Load Balancer (цен. категория "Стандартный").
+При использовании внутреннего Load Balancer (цен. категория "Стандартный") NAT для исходящего трафика недоступно, пока явным образом не объявлено исходящее подключение. Можно определить исходящее подключение, используя правило для исходящего трафика для создания исходящих подключений для виртуальных машин, защищенных внутренним Load Balancer (цен. категория "Стандартный"), с помощью следующих действий.
 
 1. Создайте общедоступный Load Balancer (цен. категория "Стандартный").
-2. Создайте серверный пул и разместите в этом пуле общедоступного Load Balancer виртуальные машины.
+2. Создайте серверный пул и в дополнение к внутреннему Load Balancer поместите виртуальные машины в серверный пул общедоступного Load Balancer.
 3. Настройте в общедоступном Load Balancer правило для исходящего трафика, позволяющее программно управлять NAT для исходящего трафика этих виртуальных машин.
 
 #### <a name="enable-both-tcp--udp-protocols-for-outbound-nat-with-a-public-standard-load-balancer"></a>Включение протоколов TCP и UDP для NAT для исходящего трафика при использовании общедоступного Load Balancer (цен. категория "Стандартный")

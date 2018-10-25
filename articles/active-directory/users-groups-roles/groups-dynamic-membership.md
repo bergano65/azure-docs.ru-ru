@@ -14,12 +14,12 @@ ms.date: 09/20/2018
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: c3121f8b303d9f82ed949d598a942906d0d24f7e
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: e8f0077bf5a1a2911b3aec032fadacf31ad75463
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47041029"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48855278"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -130,15 +130,29 @@ user.department -eq "Sales"
 | В | -in |
 | Не входит | -notIn |
 
-### <a name="using-the--in-and--notin-operators"></a>Использование операторов -In и -notIn
+### <a name="using-the--in-and--notin-operators"></a>Использование операторов -in и -notIn
 
-Чтобы сравнить значение атрибута пользователя с рядом различных значений, можно использовать оператор -In или -notIn. Символы скобок [ и ] обозначают начало и конец списка значений.
+Чтобы сравнить значение атрибута пользователя с рядом различных значений, можно использовать оператор -in или -notIn. Символы скобок [ и ] обозначают начало и конец списка значений.
 
  Выражение в следующем примере принимает значение true, если значение user.department равно любому значению из списка.
 
 ```
-   user.department -In ["50001","50002","50003",“50005”,“50006”,“50007”,“50008”,“50016”,“50020”,“50024”,“50038”,“50039”,“51100”]
+   user.department -in ["50001","50002","50003",“50005”,“50006”,“50007”,“50008”,“50016”,“50020”,“50024”,“50038”,“50039”,“51100”]
 ```
+
+
+### <a name="using-the--match-operator"></a>Используйте оператор -match 
+Оператор **-match** используется для сопоставления с любым регулярным выражением. Примеры:
+
+```
+user.displayName -match "Da.*"   
+```
+Da, Dav, David имеют значение true, aDa имеет значение false.
+
+```
+user.displayName -match ".*vid"
+```
+Da, Dav, David имеют значение true, aDa имеет значение false.
 
 ## <a name="supported-values"></a>Поддерживаемые значения
 

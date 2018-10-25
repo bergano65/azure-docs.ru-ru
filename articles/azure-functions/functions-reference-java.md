@@ -9,14 +9,14 @@ keywords: azure functions, functions, event processing, webhooks, dynamic comput
 ms.service: azure-functions
 ms.devlang: java
 ms.topic: conceptual
-ms.date: 08/10/2018
+ms.date: 09/14/2018
 ms.author: routlaw
-ms.openlocfilehash: f0dc471e8875ad0d738fce10421c3586752148b9
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: 9e07cddb9d446ea24143d3a6dec5e310d3ed6f1c
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44092315"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48802123"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
@@ -26,7 +26,35 @@ ms.locfileid: "44092315"
 
 Функция Azure должна существовать как метод без отслеживания состояния, который обрабатывает входные данные и создает выходные данные. Вы можете написать методы экземпляра, но функция не должна зависеть от полей экземпляра класса. Все методы функции должны иметь модификатор доступа `public`.
 
-Вы можете добавить несколько функций в проект. Не добавляйте функции в отдельные JAR-файлы.
+## <a name="folder-structure"></a>Структура папок
+
+Структура папок для проекта на Java выглядит следующим образом.
+
+```
+FunctionsProject
+ | - src
+ | | - main
+ | | | - java
+ | | | | - FunctionApp
+ | | | | | - MyFirstFunction.java
+ | | | | | - MySecondFunction.java
+ | - target
+ | | - azure-functions
+ | | | - FunctionApp
+ | | | | - FunctionApp.jar
+ | | | | - host.json
+ | | | | - MyFirstFunction
+ | | | | | - function.json
+ | | | | - MySecondFunction
+ | | | | | - function.json
+ | | | | - bin
+ | | | | - lib
+ | - pom.xml
+```
+
+Существует общий файл [host.json] (functions-host-json.md), который может использоваться для настройки приложения-функции. У каждой функции есть собственный файл кода (.java) и файл конфигурации привязки (function.json).
+
+Вы можете добавить несколько функций в проект. Не добавляйте функции в отдельные JAR-файлы. Приложение-функция в целевом каталоге является тем, что будет развернуто в вашем приложении-функции в Azure.
 
 ## <a name="triggers-and-annotations"></a>Триггеры и заметки
 
@@ -87,9 +115,15 @@ public class MyClass {
 
 ```
 
+## <a name="jdk-runtime-availability-and-support"></a>Обеспечения доступности и предоставления поддержки времени выполнения пакета JDK 
+
+Для локальной разработки приложений функций Java загрузите и используйте [Azul Zulu для пакетов JDK Azure](https://assets.azul.com/files/Zulu-for-Azure-FAQ.pdf) из [Azul Systems](https://www.azul.com/downloads/azure-only/zulu/). Пакеты JDK доступны для Windows, Linux и macOS, а [поддержка Azure](https://support.microsoft.com/en-us/help/4026305/sql-contact-microsoft-azure-support) доступна для проблем, возникших во время разработки, с [планом технической поддержки](https://azure.microsoft.com/support/plans/).
+
 ## <a name="third-party-libraries"></a>Сторонние библиотеки 
 
 Служба "Функции Azure" поддерживает использование сторонних библиотек. По умолчанию все зависимости, указанные в файле `pom.xml` проекта, будут автоматически связаны во время выполнения `mvn package`. Зависимости библиотек, не указанных как зависимости в файле `pom.xml`, поместите в каталог `lib` в корневой папке функции. Зависимости, размещенные в каталоге `lib`, будут добавлены в загрузчик системного класса во время выполнения.
+
+Зависимость `com.microsoft.azure.functions:azure-functions-java-library` предоставляется по пути класса по умолчанию и не требует включения в `lib` каталог.
 
 ## <a name="data-type-support"></a>Поддержка типов данных
 

@@ -4,21 +4,21 @@ description: В этой статье представлен обзор защи
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/30/2018
+ms.date: 10/15/2018
 ms.author: juliako
-ms.openlocfilehash: 2a3e94d37a926bd36b780b45eb3d6cb29fb73597
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: f8ef92a335dd6faee076356dbffc873b08afbdc0
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39521760"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49394283"
 ---
 # <a name="content-protection-overview"></a>Обзор системы защиты содержимого
 
@@ -149,9 +149,7 @@ PlayReady, Widevine и FairPlay обеспечивают более высоки
 
 2. Создание указателя потоковой передачи, который настроен для потоковой передачи зашифрованного ресурса. 
 
-  В этом примере мы задаем для параметра **StreamingPolicyName** имя политики **PredefinedStreamingPolicy.SecureStreaming**, которая поддерживает шифрование конверта и CENC и задает два ключа содержимого для указателя потоковой передачи. 
-
-  Если необходимо выполнить шифрование с помощью FairPlay, укажите для параметра **StreamingPolicyName** имя политики **PredefinedStreamingPolicy.SecureStreamingWithFairPlay**.
+  Например, для StreamingLocator.StreamingPolicyName можно задать значение Predefined_MultiDrmCencStreaming. Эта политика указывает, что для получения созданного и настроенного указателя требуются два ключа содержимого (конверт и CENC). Таким образом применяются шифрования типа конверт, PlayReady и Widevine (ключ доставляется клиенту воспроизведения на основе настроенных лицензий DRM). Если необходимо выполнить шифрование потока с помощью CBCS (FairPlay), используйте Predefined_MultiDrmStreaming.
 
 3. Создание тестового токена.
 

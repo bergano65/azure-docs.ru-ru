@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 11/30/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 27f926a9a5d30d28e2721ffa52695292f794a501
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: 564e8e2968f31b9e2aef8f7eadbf848885037ccb
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31522437"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48040768"
 ---
 # <a name="azure-virtual-machine-powershell-samples"></a>Примеры PowerShell для виртуальной машины Azure
 
@@ -43,6 +43,7 @@ ms.locfileid: "31522437"
 | [Create a managed disk from a snapshot with PowerShell](../scripts/virtual-machines-windows-powershell-sample-create-managed-disk-from-snapshot.md?toc=%2fpowershell%2fmodule%2ftoc.json) (Создание управляемого диска из моментального снимка с помощью PowerShell) | Создание управляемого диска из моментального снимка. |
 | [Copy managed disks in the same subscription or different subscription with PowerShell](../scripts/virtual-machines-windows-powershell-sample-copy-managed-disks-to-same-or-different-subscription.md?toc=%2fcli%2fmodule%2ftoc.json) (Копирование управляемых дисков в ту же или другую подписку с помощью PowerShell) | Копирование управляемого диска в ту же или в другую подписку, но в том же регионе, что и родительский управляемый диск. 
 | [Экспорт моментального снимка в виде VHD в учетную запись хранения](../scripts/virtual-machines-windows-powershell-sample-copy-snapshot-to-storage-account.md?toc=%2fpowershell%2fmodule%2ftoc.json) (Export/Copy managed snapshots as VHD to a storage account in different region with PowerShell) | Экспорт управляемого моментального снимка в качестве VHD в учетную запись хранения в другом регионе. |
+| [Экспорт VHD управляемого диска в учетную запись хранения](../scripts/virtual-machines-windows-powershell-sample-copy-managed-disks-vhd.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Экспорт базового VHD управляемого диска в учетную запись хранения в другом регионе. |
 | [Create a snapshot from a VHD to create multiple identical managed disks in small amount of time with PowerShell](../scripts/virtual-machines-windows-powershell-sample-create-snapshot-from-vhd.md?toc=%2fpowershell%2fmodule%2ftoc.json) (Создание моментального снимка на основе VHD для быстрого создания нескольких идентичных управляемых дисков с помощью PowerShell) | Создание моментального снимка на основе VHD для создания нескольких идентичных управляемых дисков из моментального снимка за короткий промежуток времени.  |
 | [Copy snapshot of a managed disk to same or different subscription with CLI](../scripts/virtual-machines-windows-powershell-sample-copy-snapshot-to-same-or-different-subscription.md?toc=%2fpowershell%2fmodule%2ftoc.json) (Копирование моментального снимка управляемого диска в ту же или в другую подписку с помощью интерфейса командной строки) | Копирование моментального снимка в ту же или в другую подписку, но в том же регионе, что и родительский моментальный снимок. |
 |**Защита виртуальных машин**||

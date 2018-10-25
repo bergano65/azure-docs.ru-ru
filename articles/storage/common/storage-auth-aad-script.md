@@ -8,16 +8,16 @@ ms.topic: article
 ms.date: 09/20/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: 6354d89ff5a23ccb51b85737b3a842c08534683e
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 42422580acec0811b0eb65d6fe1c0bed791eb9bd
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47223616"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49344546"
 ---
 # <a name="use-an-azure-ad-identity-to-access-azure-storage-with-cli-or-powershell-preview"></a>Использование удостоверения Azure AD для доступа к службе хранилища Azure с помощью интерфейса командной строки или PowerShell (предварительная версия)
 
-Служба хранилища Azure предоставляет предварительные версии расширений для Azure CLI и PowerShell, позволяющие войти в систему и выполнять команды сценариев с удостоверением Azure Active Directory (Azure AD). Можно использовать удостоверение Azure AD пользователя, группы или субъекта-службы приложения, а также [удостоверение управляемой службы](../../active-directory/managed-identities-azure-resources/overview.md). Назначить удостоверению Azure AD разрешения для доступа к ресурсам хранилища можно с помощью управления доступом на основе ролей (RBAC). Дополнительные сведения о ролях RBAC в службе хранилища Azure см. в разделе [Manage access rights to Azure Storage data with RBAC (Preview)](storage-auth-aad-rbac.md) (Управление правами доступа к данным в службе хранилища Azure с помощью RBAC (предварительная версия)).
+Служба хранилища Azure предоставляет предварительные версии расширений для Azure CLI и PowerShell, позволяющие войти в систему и выполнять команды сценариев с удостоверением Azure Active Directory (Azure AD). Вы можете использовать удостоверение Azure AD пользователя, группы или субъекта-службы приложения, а также [управляемое удостоверение службы для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md). Назначить удостоверению Azure AD разрешения для доступа к ресурсам хранилища можно с помощью управления доступом на основе ролей (RBAC). Дополнительные сведения о ролях RBAC в службе хранилища Azure см. в разделе [Manage access rights to Azure Storage data with RBAC (Preview)](storage-auth-aad-rbac.md) (Управление правами доступа к данным в службе хранилища Azure с помощью RBAC (предварительная версия)).
 
 При входе в Azure CLI или PowerShell с использованием удостоверения Azure AD возвращается маркер доступа, необходимый для получения доступа к службе хранилища Azure с этим удостоверением. Этот маркер затем автоматически используется интерфейсом командной строки или PowerShell для авторизации операций в службе хранилища Azure. Для поддерживаемых операций больше не требуется передавать ключ учетной записи или маркер SAS с помощью команды.
 

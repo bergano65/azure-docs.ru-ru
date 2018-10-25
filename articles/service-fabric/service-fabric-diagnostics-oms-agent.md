@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/16/2018
 ms.author: srrengar
-ms.openlocfilehash: 3d7cf50bd2c845764aa2c3ac3b3db6891ff5c8d8
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 21c9441e2b3d3ad54d491834e6de097a8880b5b7
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46993856"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49311122"
 ---
 # <a name="performance-monitoring-with-log-analytics"></a>Мониторинг производительности с помощью Log Analytics
 
@@ -66,7 +66,7 @@ ms.locfileid: "46993856"
 
 ## <a name="add-the-agent-via-the-resource-manager-template"></a>Добавление агента через шаблон Resource Manager
 
-Примеры шаблонов Resource Manager, при помощи которых развертывается рабочую область Azure Log Analytics и добавляется агент на каждый из узлов, доступны для [Windows](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/SF%20OMS%20Samples/Windows) и [Linux](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/SF%20OMS%20Samples/Linux).
+Примеры шаблонов Resource Manager, при помощи которых развертывается рабочую область Azure Log Analytics и добавляется агент на каждый из узлов, доступны для [Windows](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-OMS-UnSecure) и [Linux](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/SF%20OMS%20Samples/Linux).
 
 Вы можете скачать и изменить такой шаблон для развертывания кластера с учетом ваших требований.
 
@@ -86,7 +86,7 @@ ms.locfileid: "46993856"
 
 6. Закройте колонку "Дополнительные параметры".
 
-7. Под заголовком "Общие сведения" щелкните **Обзор**.
+7. Под заголовком General (Общие) щелкните **Сводка рабочей области**.
 
 8. Вы увидите плитки в форме графа для каждого включенного решения, включая одну для Service Fabric. Щелкните граф **Service Fabric**, чтобы продолжить решение службы Fabric Analytics.
 

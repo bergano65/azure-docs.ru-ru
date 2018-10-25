@@ -8,52 +8,49 @@ ms.date: 09/18/2018
 ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: 3600fc47a0fb318a49c1b37722cb7fffa51ec6f2
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 6fcf3087feb7f208ea46d0e08824e965160a61d4
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46951956"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48236456"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
-Язык запросов для графика ресурсов Azure поддерживает ряд операторов и функций. Они работают так же, как элементы языка запросов Kusto (KQL). Тем не менее важно понимать, что, хотя язык запросов графика ресурсов аналогичен [KQL](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators), они различаются.
+Язык запросов для графика ресурсов Azure поддерживает ряд операторов и функций. Все из них работают на основе [обозревателя данных Azure](../../../data-explorer/data-explorer-overview.md).
 
-> [!NOTE]
-> Ссылки на документацию KQL могут требовать проверки подлинности.
-
-Для начала работы с языком запросов, используемым графиком ресурсов, рекомендуется изучить документацию по KQL, чтобы получить представление о структуре языка и взаимодействии различных поддерживаемых операторов и функций.
+Для наиболее эффективного ознакомления с языком запросов, используемым графиком ресурсов, рекомендуется начать с документации по [языку запросов](/azure/kusto/query/index) обозревателя данных Azure. Это дает представление о том, как язык структурирован и каким образом различные поддерживаемые операторы и функции работают вместе.
 
 ## <a name="supported-tabular-operators"></a>Поддерживаемые табличные операторы
 
 Ниже приведен список поддерживаемых табличных операторов в графике ресурсов:
 
-- [distinct](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/distinct-operator)
-- [extend](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/extend-operator)
-- [limit](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/limit-operator)
-- [order by](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/order-operator)
-- [project](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/project-operator)
-- [project-away](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/project-away-operator)
-- [sample](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/sample-operator)
-- [sample-distinct](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/sample-distinct-operator)
-- [sort by](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/sort-operator)
-- [summarize](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/summarize-operator)
-- [take](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/take-operator)
-- [В начало](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/top-operator)
-- [top-nested](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/top-nested-operator)
-- [top-hitters](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/top-hitters-operator)
-- [where](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/where-operator)
+- [count](/azure/kusto/query/countoperator)
+- [distinct](/azure/kusto/query/distinctoperator)
+- [extend](/azure/kusto/query/extendoperator)
+- [limit](/azure/kusto/query/limitoperator)
+- [order by](/azure/kusto/query/orderoperator)
+- [project](/azure/kusto/query/projectoperator)
+- [project-away](/azure/kusto/query/projectawayoperator)
+- [sample](/azure/kusto/query/sampleoperator)
+- [sample-distinct](/azure/kusto/query/sampledistinctoperator)
+- [sort by](/azure/kusto/query/sortoperator)
+- [summarize](/azure/kusto/query/summarizeoperator)
+- [take](/azure/kusto/query/takeoperator)
+- [В начало](/azure/kusto/query/topoperator)
+- [top-nested](/azure/kusto/query/topnestedoperator)
+- [top-hitters](/azure/kusto/query/tophittersoperator)
+- [where](/azure/kusto/query/whereoperator)
 
 ## <a name="supported-functions"></a>Поддерживаемые функции
 
 Ниже приведен список поддерживаемых функций в графике ресурсов:
 
-- [ago()](https://docs.loganalytics.io/docs/Language-Reference/Scalar-functions/ago%28%29)
-- [buldschema()](https://docs.loganalytics.io/docs/Language-Reference/Aggregation-functions/buildschema%28%29)
-- [count()](https://docs.loganalytics.io/docs/Language-Reference/Aggregation-functions/count%28%29)
-- [strcat()](https://docs.loganalytics.io/docs/Language-Reference/Scalar-functions/strcat%28%29)
-- [isnotempty()](https://docs.loganalytics.io/docs/Language-Reference/Scalar-functions/isnotempty%28%29_-notempty%28%29)
-- [tostring()](https://docs.loganalytics.io/docs/Language-Reference/Scalar-functions/tostring%28%29)
+- [ago()](/azure/kusto/query/agofunction)
+- [buildschema()](/azure/kusto/query/buildschema-aggfunction)
+- [strcat()](/azure/kusto/query/strcatfunction)
+- [isnotempty()](/azure/kusto/query/isnotemptyfunction)
+- [tostring()](/azure/kusto/query/tostringfunction)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

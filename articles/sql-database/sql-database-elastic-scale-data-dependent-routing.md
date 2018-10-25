@@ -11,15 +11,16 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 manager: craigg
-ms.date: 04/01/2018
-ms.openlocfilehash: 25bb665d9ea9166d099ab7f3f9696d92da8314e9
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.date: 10/05/2018
+ms.openlocfilehash: c54a644b140d65ccad1a3cba6c5a07a8e201cddb
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47161829"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48869624"
 ---
-# <a name="data-dependent-routing"></a>Маршрутизация с зависимостью от данных
+# <a name="use-data-dependent-routing-to-route-a-query-to-appropriate-database"></a>Использование маршрутизации с зависимостью от данных для маршрутизации запроса в соответствующую базу данных
+
 **Маршрутизация с зависимостью от данных** — это возможность использования данных в запросе для направления запроса к соответствующей базе данных. Это основная модель при работе с сегментированными базами данных. Контекст запроса может также использоваться для маршрутизации запроса, особенно в том случае, если ключ сегментирования не является частью запроса. Каждый конкретный запрос или транзакция в приложении, которое использует зависящую от данных маршрутизацию, ограничены обращением только к отдельной базе данных за раз. Для средств эластичной базы данных SQL Azure эта маршрутизация выполняется с помощью класса **ShardMapManager** ([Java](/java/api/com.microsoft.azure.elasticdb.shard.mapmanager._shard_map_manager), [.NET](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.aspx)).
 
 Приложение не должно отслеживать различные строки подключения или расположения базы данных, связанные с различными срезами данных в сегментированной среде. Вместо этого [диспетчер сопоставления сегментов](sql-database-elastic-scale-shard-map-management.md) при необходимости открывает подключения к соответствующим базам данных на основе данных в сопоставлении сегментов и значения ключа сегментирования, которое является целевым объектом запроса приложения. Обычно это ключ *customer_id*, *tenant_id*, *date_key* или другой конкретный идентификатор, являющийся основным параметром запроса к базе данных. 

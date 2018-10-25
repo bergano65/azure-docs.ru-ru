@@ -17,12 +17,12 @@ ms.workload: identity
 ms.date: 08/28/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: 050ccff8501a22526e9382a620258b0f846efe5c
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 6f66deff9052b79265222f052bebb8439a95d269
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43128727"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49352750"
 ---
 # <a name="what-are-access-controls-in-azure-active-directory-conditional-access"></a>Элементы управления условным доступом в Azure Active Directory 
 
@@ -118,13 +118,10 @@ ms.locfileid: "43128727"
 Сейчас поставщики включают следующие совместимые службы:
 
 - [Duo Security](https://duo.com/docs/azure-ca)
-
 - [Entrust Datacard](https://www.entrustdatacard.com/products/authentication/intellitrust);
-
+- [Ping Identity](https://documentation.pingidentity.com/pingid/pingidAdminGuide/index.shtml#pid_c_AzureADIntegration.html);
 - RSA
-
 - [Trusona](https://www.trusona.com/docs/azure-ad-integration-guide)
-
 
 Дополнительные сведения об этих службах можно получить у поставщиков служб.
 

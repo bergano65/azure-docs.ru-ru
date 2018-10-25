@@ -9,15 +9,13 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 09/24/2018
-ms.openlocfilehash: 98e168ccb600bd1371da7f125531f3b4421b3d80
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 46be1c670002b584bac1d1a2d3e5e02e845027c7
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47018632"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49312521"
 ---
 1. [![Записные книжки Azure](https://notebooks.azure.com/launch.png)](https://aka.ms/aml-clone-azure-notebooks)
-[Импортируйте примеры записных книжек в Записные книжки Azure](https://aka.ms/aml-clone-azure-notebooks).
-1.  Создайте рабочую область и соответствующий файл конфигурации (**config.json**) с помощью инструкций в разделе [Настройка среды разработки для службы "Машинное обучение Azure"](https://aka.ms/aml-how-to-configure-environment).
-2. Выберите `+New` на панели инструментов, чтобы добавить файл **config.json** в папку, в которой размещена записная книжка.
-3. Откройте записную книжку.
+[Импортируйте примеры записных книжек в Записные книжки Azure](https://aka.ms/aml-clone-azure-notebooks). (Ваша организация может требовать [согласия администратора](https://notebooks.azure.com/help/signing-up/work-or-school-account/admin-consent) для входа.)
+1. Ознакомьтесь с файлом сведений в импортированной библиотеке для получения дальнейших инструкций для выполнения записных книжек.

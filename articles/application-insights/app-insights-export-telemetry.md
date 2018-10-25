@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/20/2018
 ms.author: mbullwin
-ms.openlocfilehash: a960ace141d5d71559c39c627f96746a25bf5207
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: 31d7f0fd70edf7bbf05a3a180baa6cc078e02ba1
+ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42143196"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47585481"
 ---
 # <a name="export-telemetry-from-application-insights"></a>Экспорт данных телеметрии из Application Insights
 Хотите увеличить период удержания телеметрии или анализировать ее особым образом? Функция "Непрерывный экспорт" идеально подходит для этого. События, которые отображаются на портале Application Insights, можно экспортировать в хранилище Microsoft Azure в формате JSON. Отсюда можно загрузить данные; также вы можете написать любой код, необходимый для их обработки.  
@@ -37,11 +37,9 @@ ms.locfileid: "42143196"
 ## <a name="setup"></a>Создание непрерывного экспорта
 1. В ресурсе Application Insights для своего приложения откройте раздел непрерывного экспорта и выберите **Добавить**:
 
-    ![Прокрутите вниз и щелкните "Непрерывный экспорт"](./media/app-insights-export-telemetry/01-export.png)
-
 2. Выберите типы данных телеметрии, которые хотите экспортировать.
 
-3. Создайте или выберите [учетную запись хранения Azure](../storage/common/storage-introduction.md), в которой необходимо сохранить данные.
+3. Создайте или выберите [учетную запись хранения Azure] (../storage/common/storage-introduction.md), в которой необходимо сохранить данные. Дополнительные сведения о вариантах оплаты см. на [официальной странице цен](https://azure.microsoft.com/pricing/details/storage/).
 
     > [!Warning]
     > По умолчанию учетная запись хранения будет относиться к тому же географическому региону, что и ресурс Application Insights. Если вы выберете другой регион, может взиматься плата за передачу данных.

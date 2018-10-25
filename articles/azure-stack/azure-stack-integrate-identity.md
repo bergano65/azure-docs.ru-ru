@@ -6,16 +6,16 @@ author: jeffgilb
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 08/07/2018
+ms.date: 10/02/2018
 ms.author: jeffgilb
 ms.reviewer: wfayed
 keywords: ''
-ms.openlocfilehash: 9bbe55e08d7a005d38c5608df39f9285d79eb203
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 4ba890f4763fc77981917d9311cf2bf6c97ec80f
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "41947969"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48902449"
 ---
 # <a name="azure-stack-datacenter-integration---identity"></a>Интеграция центра обработки данных Azure Stack: идентификация
 Azure Stack можно развернуть с помощью Azure Active Directory (Azure AD) или служб федерации Active Directory (AD FS) в качестве поставщика удостоверений. Сделать выбор следует перед развертыванием Azure Stack. Развертывание с помощью AD FS также называется развертыванием Azure Stack в отключенном режиме.
@@ -173,9 +173,9 @@ Graph поддерживает только интеграцию с отдель
 1. Откройте сеанс Windows PowerShell с повышенными правами и выполните следующую команду, указав параметры, подходящие для используемой среды.
 
    ```PowerShell  
-   [XML]$Metadata = Invoke-WebRequest -URI https://win-SQOOJN70SGL.contoso.com/federationmetadata/2007-06/federationmetadata.xml -UseBasicParsing
+    $metadata = (Invoke-WebRequest -URI " https://win-SQOOJN70SGL.contoso.com/federationmetadata/2007-06/federationmetadata.xml " -UseBasicParsing).Content
+    Set-Content -Path c:\metadata.xml -Encoding Unicode -Value $metadata 
 
-   $Metadata.outerxml|out-file c:\metadata.xml
    ```
 
 2. Копируйте файл метаданных на компьютер, который может взаимодействовать с привилегированной конечной точкой.
@@ -187,7 +187,7 @@ Graph поддерживает только интеграцию с отдель
 1. Откройте сеанс Windows PowerShell с повышенными привилегиями.
 
    ```PowerShell  
-   $federationMetadataFileContent = get-content c:\metadata.cml
+   $federationMetadataFileContent = get-content c:\metadata.xml
    $creds=Get-Credential
    Enter-PSSession -ComputerName <IP Address of ERCS> -ConfigurationName PrivilegedEndpoint -Credential $creds
    Register-CustomAdfs -CustomAdfsName Contoso -CustomADFSFederationMetadataFileContent $using:federationMetadataFileContent
@@ -236,28 +236,31 @@ Graph поддерживает только интеграцию с отдель
 
    @RuleTemplate = "PassThroughClaims"
    @RuleName = "Pass through all windows account name claims"
-   c:[Type == http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname]
+   c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"]
    => issue(claim = c);
    ```
 
-2. Чтобы включить аутентификацию на основе Windows Forms, откройте сеанс Windows PowerShell от имени привилегированного пользователя и выполните следующую команду.
+2. Подтвердите, что проверка подлинности на основе Windows Forms для экстрасети и интрасети включена. Во-первых ,проверьте, включена ли она с помощью следующего командлета.
 
    ```PowerShell  
-   Set-AdfsProperties -WIASupportedUserAgents @("MSAuthHost/1.0/In-Domain","MSIPC","Windows Rights Management Client","Kloud")
+   Get-AdfsAuthenticationProvider | where-object { $_.name -eq "FormsAuthentication" } | select Name, AllowedForPrimaryExtranet, AllowedForPrimaryIntranet
    ```
+
+    > [!Note]  
+    > Поддерживаемые строки пользовательских агентов Встроенной проверки подлинности Windows (WIA) могут устареть для развертывания службы федерации Active Directory (AD FS). Для поддержки клиентов необходимо последние обновление. Подробнее об обновлении WIA, поддерживаемых строках пользовательских агентов можно прочитать в статье [Настройка интрасети на основе форм проверки подлинности для устройств, не поддерживающих WIA](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia).<br>В статье [Настройка политик аутентификации](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-authentication-policies) описана политика проверки подлинности с помощью форм.
 
 3. Чтобы добавить отношения доверия с проверяющей стороной, выполните следующую команду Windows PowerShell на экземпляре AD FS или элементе фермы. Обязательно обновите конечную точку AD FS и укажите файл, созданный на шаге 1.
 
    **Для AD FS 2016**
 
    ```PowerShell  
-   Add-ADFSRelyingPartyTrust -Name AzureStack -MetadataUrl "https://YourAzureStackADFSEndpoint/FederationMetadata/2007-06/FederationMetadata.xml" -IssuanceTransformRulesFile "C:\ClaimIssuanceRules.txt" -AutoUpdateEnabled:$true -MonitoringEnabled:$true -enabled:$true -AccessControlPolicyName "Permit everyone"
+   Add-ADFSRelyingPartyTrust -Name AzureStack -MetadataUrl "https://YourAzureStackADFSEndpoint/FederationMetadata/2007-06/FederationMetadata.xml" -IssuanceTransformRulesFile "C:\ClaimIssuanceRules.txt" -AutoUpdateEnabled:$true -MonitoringEnabled:$true -enabled:$true -AccessControlPolicyName "Permit everyone" -TokenLifeTime 1440
    ```
 
    **Для AD FS 2012 и AD FS 2012 R2**
 
    ```PowerShell  
-   Add-ADFSRelyingPartyTrust -Name AzureStack -MetadataUrl "https://YourAzureStackADFSEndpoint/FederationMetadata/2007-06/FederationMetadata.xml" -IssuanceTransformRulesFile "C:\ClaimIssuanceRules.txt" -AutoUpdateEnabled:$true -MonitoringEnabled:$true -enabled:$true
+   Add-ADFSRelyingPartyTrust -Name AzureStack -MetadataUrl "https://YourAzureStackADFSEndpoint/FederationMetadata/2007-06/FederationMetadata.xml" -IssuanceTransformRulesFile "C:\ClaimIssuanceRules.txt" -AutoUpdateEnabled:$true -MonitoringEnabled:$true -enabled:$true -TokenLifeTime 1440
    ```
 
    > [!IMPORTANT]
@@ -270,12 +273,6 @@ Graph поддерживает только интеграцию с отдель
 
    ```PowerShell  
    Set-AdfsProperties -IgnoreTokenBinding $true
-   ```
-
-5. Инструментам (Visual Studio) и порталам Azure Stack требуются маркеры обновления. Их необходимо настроить на основе отношения доверия с проверяющей стороной. Откройте сеанс Windows PowerShell с повышенными правами и выполните следующую команду:
-
-   ```PowerShell  
-   Set-ADFSRelyingPartyTrust -TargetName AzureStack -TokenLifeTime 1440
    ```
 
 ## <a name="spn-creation"></a>Создание имени субъекта-службы

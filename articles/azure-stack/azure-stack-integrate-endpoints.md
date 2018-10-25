@@ -6,18 +6,19 @@ author: jeffgilb
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 08/30/2018
+ms.date: 09/13/2018
 ms.author: jeffgilb
 ms.reviewer: wamota
 keywords: ''
-ms.openlocfilehash: 4aaba753a8d61d60cb053a4aa164b5be0a3c50fa
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: bc07d0e7aff2bf9263d89dffccc47ba806ff0fd1
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43307614"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48804214"
 ---
 # <a name="azure-stack-datacenter-integration---publish-endpoints"></a>Интеграция центра обработки данных Azure Stack. Публикация конечных точек
+
 Для ролей инфраструктуры в Azure Stack настраиваются виртуальные IP-адреса (VIP). Эти виртуальные IP-адреса выделяются из пула общедоступных IP-адресов. Каждый виртуальный IP-адрес защищается списком управления доступом (ACL) на уровне программно определяемой сети. Для дополнительной защиты решения списки управления доступом применяются и на физических коммутаторах (стоечные коммутаторы и BMC). Для каждой конечной точки создается DNS-запись во внешней зоне DNS, которая указана во время развертывания.
 
 
@@ -31,20 +32,21 @@ ms.locfileid: "43307614"
 
 Здесь не указаны виртуальные IP-адреса для внутренней инфраструктуры, так как они не используются для публикации Azure Stack.
 
-> [!NOTE]
+> [!Note]  
 > Пользователям виртуальные IP-адреса предоставляются динамически, и они самостоятельно управляют этим процессом без согласования с оператором Azure Stack.
-
 
 |Конечная точка (виртуальный IP-адрес)|Запись A на узле DNS|Протокол|порты;|
 |---------|---------|---------|---------|
 |AD FS|Adfs.*&lt;регион>.&lt;полное доменное имя>*|HTTPS|443|
 |Портал (для администратора)|Adminportal.*&lt;регион>.&lt;полное доменное имя>*|HTTPS|443<br>12495<br>12499<br>12646<br>12647<br>12648<br>12649<br>12650<br>13001<br>13003<br>13010<br>13011<br>13012<br>13020<br>13021<br>13026<br>30015|
+|Adminhosting | *.adminhosting.\<регион>.\<FQDN> | HTTPS | 443 |
 |Azure Resource Manager (для администратора)|Adminmanagement.*&lt;регион>.&lt;полное доменное имя>*|HTTPS|443<br>30024|
 |Портал (для пользователя)|Portal.*&lt;регион>.&lt;полное доменное имя>*|HTTPS|443<br>12495<br>12649<br>13001<br>13010<br>13011<br>13012<br>13020<br>13021<br>30015<br>13003|
 |Azure Resource Manager (для пользователя)|Management.*&lt;регион>.&lt;полное доменное имя>*|HTTPS|443<br>30024|
 |График|Graph.*&lt;регион>.&lt;полное доменное имя>*|HTTPS|443|
 |Список отзыва сертификатов|Crl.*&lt;регион>.&lt;полное доменное имя>*|HTTP|80|
 |DNS|&#42;.*&lt;регион>.&lt;полное доменное имя>*|TCP или UDP|53|
+|Hosting | *.hosting.\<регион>.\<FQDN> | HTTPS | 443 |
 |Хранилище ключей (для пользователя)|&#42;.vault.*&lt;регион>.&lt;полное доменное имя>*|HTTPS|443|
 |Хранилище ключей (для администратора)|&#42;.adminvault.*&lt;регион>.&lt;полное доменное имя>*|HTTPS|443|
 |Очередь службы хранилища|&#42;.queue.*&lt;регион>.&lt;полное доменное имя>*|HTTP<br>HTTPS|80<br>443|
@@ -63,6 +65,8 @@ ms.locfileid: "43307614"
 
 Стек Azure поддерживает только прозрачные прокси-серверы. Если в вашем развертывании прозрачный прокси-сервер перенаправляет соединения к традиционному прокси-серверу, необходимо разрешить следующие порты и URL-адреса для исходящей связи:
 
+> [!Note]  
+> Azure Stack не поддерживает использование Express Route для доступа к службам Azure, перечисленным в следующей таблице.
 
 |Назначение|URL-адрес|Протокол|порты;|
 |---------|---------|---------|---------|
@@ -74,6 +78,7 @@ ms.locfileid: "43307614"
 |Защитник Windows|.wdcp.microsoft.com<br>.wdcpalt.microsoft.com<br>*.updates.microsoft.com<br>*.download.microsoft.com<br>https://msdl.microsoft.com/download/symbols<br>http://www.microsoft.com/pkiops/crl<br>http://www.microsoft.com/pkiops/certs<br>http://crl.microsoft.com/pki/crl/products<br>http://www.microsoft.com/pki/certs<br>https://secure.aadcdn.microsoftonline-p.com<br>|HTTPS|80<br>443|
 |NTP.|     |UDP|123|
 |DNS|     |TCP<br>UDP|53|
+|Список отзыва сертификатов|     |HTTPS|443|
 |     |     |     |     |
 
 > [!Note]  

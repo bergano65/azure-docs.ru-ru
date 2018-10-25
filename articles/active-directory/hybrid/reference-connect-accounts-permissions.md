@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/18/2018
+ms.date: 10/12/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 96d8977a63d26576d4d783dd0661409fdcee90f8
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 03f096bf160c44f7a35f54a73cff6ea701b87d22
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46308863"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49352925"
 ---
 # <a name="azure-ad-connect-accounts-and-permissions"></a>Azure AD Connect: учетные записи и разрешения
 
@@ -113,6 +113,12 @@ Azure AD Connect использует 3 учетные записи, чтобы 
 | Учетная запись службы AD FS (параметр "Использовать учетную запись пользователя домена") |Учетные данные пользователя AD |Пользователь домена |Указанная учетная запись пользователя AD используется для входа в службу AD FS. |
 
 ### <a name="create-the-ad-ds-connector-account"></a>Создание учетной записи соединителя AD DS
+
+>[!IMPORTANT]
+>Новый модуль PowerShell с именем ADSyncConfig.psm1 был представлен в сборке **1.1.880.0** (выпущенной в августе 2018 года). Эта сборка включает в себя коллекцию командлетов, которые помогут вам настроить правильные разрешения Active Directory для учетной записи соединителя Azure AD DS.
+>
+>Дополнительные сведения см. в статье [Azure AD Connect: Configure AD DS Connector Account Permission](how-to-connect-configure-ad-ds-connector-account.md) (Azure AD Connect: настройка разрешения учетной записи соединителя AD DS).
+
 Учетная запись, которая указывается на странице **Подключить каталоги**, на момент установки должна уже существовать в Active Directory.  В Azure AD Connect начиная с версии 1.1.524.0 есть возможность разрешить мастеру Azure AD Connect создать **учетную запись соединителя AD DS**, используемую для подключения к Active Directory.  
 
 Кроме того, у нее должны быть все необходимые разрешения. Мастер установки не проверяет разрешения, поэтому все проблемы выявляются только во время синхронизации.

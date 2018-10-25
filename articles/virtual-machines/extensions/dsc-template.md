@@ -2,10 +2,8 @@
 title: Расширение Desired State Configuration (DSC) с использованием шаблонов Azure Resource Manager
 description: В этой статье описывается шаблон Resource Manager для расширения Desired State Configuration в Azure.
 services: virtual-machines-windows
-documentationcenter: ''
-author: DCtheGeek
+author: bobbytreed
 manager: carmonm
-editor: ''
 tags: azure-resource-manager
 keywords: DSC
 ms.assetid: b5402e5a-1768-4075-8c19-b7f7402687af
@@ -14,18 +12,18 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: na
-ms.date: 05/02/2018
-ms.author: dacoulte
-ms.openlocfilehash: 1dcbc8e0221689a6ece7e061d4b1a2632986ae84
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.date: 10/05/2018
+ms.author: robreed
+ms.openlocfilehash: e24353013110bfa95f23b75bbd81fd6d1048b95a
+ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39224380"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48830847"
 ---
 # <a name="desired-state-configuration-extension-with-azure-resource-manager-templates"></a>Расширение Desired State Configuration (DSC) с использованием шаблонов Azure Resource Manager
 
-В этой статье описывается шаблон Azure Resource Manager для [обработчика расширения Desired State Configuration (DSC)](dsc-overview.md).
+В этой статье описывается шаблон Azure Resource Manager для [обработчика расширения Desired State Configuration (DSC)](dsc-overview.md). Во многих примерах используется **RegistrationURL** (предоставляется в виде строки) и **RegistrationKey** (предоставляется в виде [PSCredential](/dotnet/api/system.management.automation.pscredential)) для подключения к службе автоматизации Azure. Подробнее о получении этих значений см. в разделе [Подключение компьютеров для управления с помощью настройки состояния службы автоматизации Azure (Безопасная регистрация)](/azure/automation/automation-dsc-onboarding#secure-registration).
 
 > [!NOTE]
 > Вы можете встретить немного отличающиеся примеры схемы. Изменение в схеме произошло в выпуске за октябрь 2016 года. Дополнительные сведения см. в разделе об [обновлении предыдущего формата](#update-from-a-previous-format).
@@ -34,13 +32,13 @@ ms.locfileid: "39224380"
 
 В приведенном ниже фрагменте кода показан раздел **Resource** шаблона.
 Расширение DSC наследует свойства расширения по умолчанию.
-Дополнительные сведения см. в статье [о классе VirtualMachineExtension](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.compute.models.virtualmachineextension?view=azure-dotnet.).
+Дополнительные сведения см. в статье [о классе VirtualMachineExtension](/dotnet/api/microsoft.azure.management.compute.models.virtualmachineextension?view=azure-dotnet).
 
 ```json
 {
     "type": "Microsoft.Compute/virtualMachines/extensions",
     "name": "[concat(parameters('VMName'),'/Microsoft.Powershell.DSC')]",
-    "apiVersion": "2017-12-01",
+    "apiVersion": "2018-04-01",
     "location": "[resourceGroup().location]",
     "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', parameters('VMName'))]"
@@ -51,26 +49,17 @@ ms.locfileid: "39224380"
         "typeHandlerVersion": "2.76",
         "autoUpgradeMinorVersion": true,
         "settings": {
-            "protectedSettings": {
-                "Items": {
-                    "registrationKeyPrivate": "registrationKey"
+            "configurationArguments": {
+                "RegistrationUrl" : "registrationUrl",
+                "NodeConfigurationName" : "nodeConfigurationName"
+            }
+        },
+        "protectedSettings": {
+            "configurationArguments": {
+                "RegistrationKey": {
+                    "userName": "NOT_USED",
+                    "Password": "registrationKey"
                 }
-            },
-            "publicSettings": {
-                "configurationArguments": [{
-                        "Name": "RegistrationKey",
-                        "Value": {
-                            "UserName": "PLACEHOLDER_DONOTUSE",
-                            "Password": "PrivateSettingsRef:registrationKeyPrivate"
-                        }
-                    },
-                    {
-                        "RegistrationUrl": "registrationUrl"
-                    },
-                    {
-                        "NodeConfigurationName": "nodeConfigurationName"
-                    }
-                ]
             }
         }
     }
@@ -87,44 +76,37 @@ ms.locfileid: "39224380"
 
 ```json
 "extensionProfile": {
-    "extensions": [{
-        "type": "Microsoft.Compute/virtualMachines/extensions",
-        "name": "[concat(parameters('VMName'),'/Microsoft.Powershell.DSC')]",
-        "apiVersion": "2017-12-01",
-        "location": "[resourceGroup().location]",
-        "dependsOn": [
-            "[concat('Microsoft.Compute/virtualMachines/', parameters('VMName'))]"
-        ],
-        "properties": {
-            "publisher": "Microsoft.Powershell",
-            "type": "DSC",
-            "typeHandlerVersion": "2.76",
-            "autoUpgradeMinorVersion": true,
-            "settings": {
-                "protectedSettings": {
-                    "Items": {
-                        "registrationKeyPrivate": "registrationKey"
+    "extensions": [
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('VMName'),'/Microsoft.Powershell.DSC')]",
+            "apiVersion": "2018-04-01",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', parameters('VMName'))]"
+            ],
+            "properties": {
+                "publisher": "Microsoft.Powershell",
+                "type": "DSC",
+                "typeHandlerVersion": "2.76",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "configurationArguments": {
+                        "RegistrationUrl" : "registrationUrl",
+                        "NodeConfigurationName" : "nodeConfigurationName"
                     }
                 },
-                "publicSettings": {
-                    "configurationArguments": [{
-                            "Name": "RegistrationKey",
-                            "Value": {
-                                "UserName": "PLACEHOLDER_DONOTUSE",
-                                "Password": "PrivateSettingsRef:registrationKeyPrivate"
-                            },
-                        },
-                        {
-                            "RegistrationUrl": "registrationUrl"
-                        },
-                        {
-                            "NodeConfigurationName": "nodeConfigurationName"
+                "protectedSettings": {
+                    "configurationArguments": {
+                        "RegistrationKey": {
+                            "userName": "NOT_USED",
+                            "Password": "registrationKey"
                         }
-                    ]
+                    }
                 }
-            },
+            }
         }
-    }]
+    ]
 }
 ```
 
@@ -178,17 +160,17 @@ ms.locfileid: "39224380"
 
 | Имя свойства | type | ОПИСАНИЕ |
 | --- | --- | --- |
-| settings.wmfVersion |строка |Указывает версию Windows Management Framework (WMF), которую необходимо установить на виртуальной машине. Если задать для этого свойства значение **latest**, будет установлена последняя версия Windows Management Framework. Для этого свойства сейчас доступны только такие значения: **4.0**, **5.0**, **5.0PP** и **latest**. Возможные значения зависят от обновлений. По умолчанию используется значение **latest**. |
+| settings.wmfVersion |строка |Указывает версию Windows Management Framework (WMF), которую необходимо установить на виртуальной машине. Если задать для этого свойства значение **latest**, будет установлена последняя версия Windows Management Framework. В настоящее время для этого свойства доступны только такие значения: **4.0**, **5.0**, **5.1** и **latest**. Возможные значения зависят от обновлений. По умолчанию используется значение **latest**. |
 | settings.configuration.url |строка |Указывает URL-адрес расположения, из которого можно скачать ZIP-файл конфигурации DSC. Если для доступа к предоставленному URL-адресу требуется маркер SAS, задайте для свойства **protectedSettings.configurationUrlSasToken** значение маркера SAS. Это свойство обязательное, если заданы свойства **settings.configuration.script** или **settings.configuration.function**. Если для этих свойств значение не задано, необходимо предоставить расширение, которое вызывает скрипт конфигурации по умолчанию для установки метаданных диспетчера конфигурации расположения (LCM) и аргументов. |
-| settings.configuration.script |строка |Указывает имя файла скрипта, содержащего определение вашей конфигурации DSC. Этот скрипт должен находиться в корневом каталоге ZIP-файла, скачанного по URL-адресу, указанному в свойстве **configuration.url**. Это свойство обязательное, если заданы свойства **settings.configuration.url** или **settings.configuration.script**. Если для этих свойств значение не задано, необходимо предоставить расширение, которое вызывает скрипт конфигурации по умолчанию для установки метаданных LCM и аргументов. |
-| settings.configuration.function |строка |Указывает имя вашей конфигурации DSC. Указанную конфигурацию необходимо добавить в скрипт, который определяет свойство **configuration.script**. Это свойство обязательное, если заданы свойства **settings.configuration.url** или **settings.configuration.function**. Если для этих свойств значение не задано, необходимо предоставить расширение, которое вызывает скрипт конфигурации по умолчанию для установки метаданных LCM и аргументов. |
+| settings.configuration.script |строка |Указывает имя файла скрипта, содержащего определение вашей конфигурации DSC. Этот скрипт должен находиться в корневом каталоге ZIP-файла, скачанного по URL-адресу, указанному в свойстве **settings.configuration.url**. Это свойство обязательное, если заданы свойства **settings.configuration.url** или **settings.configuration.script**. Если для этих свойств значение не задано, необходимо предоставить расширение, которое вызывает скрипт конфигурации по умолчанию для установки метаданных LCM и аргументов. |
+| settings.configuration.function |строка |Указывает имя вашей конфигурации DSC. Указанную конфигурацию необходимо добавить в скрипт, который определяет свойство **settings.configuration.script**. Это свойство обязательное, если заданы свойства **settings.configuration.url** или **settings.configuration.function**. Если для этих свойств значение не задано, необходимо предоставить расширение, которое вызывает скрипт конфигурации по умолчанию для установки метаданных LCM и аргументов. |
 | settings.configurationArguments |Коллекция |Определяет параметры, которые необходимо передать в конфигурацию DSC. Это свойство не зашифровано. |
 | settings.configurationData.url |строка |Указывает URL-адрес расположения, из которого можно скачать файл данных конфигурации (в формате PDS1), используемый в качестве входных данных для вашей конфигурации DSC. Если для доступа к предоставленному URL-адресу требуется маркер SAS, задайте для свойства **protectedSettings.configurationDataUrlSasToken** значение маркера SAS. |
-| settings.privacy.dataEnabled |строка |Включает или отключает сбор данных телеметрии. Для этого свойства доступны только такие значения: **Enable**, **Disable**, **''** или **$null**. Если для этого свойства не задано значение или задано значение null, сбор данных телеметрии будет выполняться. Значение по умолчанию — **''**. Дополнительные сведения см. в записи блога [Azure DSC Extension Data Collection](https://blogs.msdn.microsoft.com/powershell/2016/02/02/azure-dsc-extension-data-collection-2/) (Коллекция данных расширения DSC Azure). |
+| settings.privacy.dataCollection |строка |Включает или отключает сбор данных телеметрии. Для этого свойства доступны только такие значения: **Enable**, **Disable**, **''** или **$null**. Если для этого свойства не задано значение или задано значение null, сбор данных телеметрии будет выполняться. Значение по умолчанию — **''**. Дополнительные сведения см. в записи блога [Azure DSC Extension Data Collection](https://blogs.msdn.microsoft.com/powershell/2016/02/02/azure-dsc-extension-data-collection-2/) (Коллекция данных расширения DSC Azure). |
 | settings.advancedOptions.downloadMappings |Коллекция |Определяет альтернативные расположения для скачивания Windows Management Framework. Дополнительные сведения см. в записи блога [Azure DSC Extension 2.8 & How to map downloads of the extension dependencies to your own location](http://blogs.msdn.com/b/powershell/archive/2015/10/21/azure-dsc-extension-2-2-amp-how-to-map-downloads-of-the-extension-dependencies-to-your-own-location.aspx) (Расширение DSC Azure версии 2.8. Сведения о сопоставлении загрузок зависимостей расширения с вашим расположением). |
 | protectedSettings.configurationArguments |Коллекция |Определяет параметры, которые необходимо передать в конфигурацию DSC. Это свойство зашифровано. |
-| protectedSettings.configurationUrlSasToken |строка |Указывает маркер SAS для доступа к URL-адресу, который определяет свойство **configuration.url**. Это свойство зашифровано. |
-| protectedSettings.configurationDataUrlSasToken |строка |Указывает маркер SAS для доступа к URL-адресу, который определяет свойство **configurationData.url**. Это свойство зашифровано. |
+| protectedSettings.configurationUrlSasToken |строка |Указывает маркер SAS для доступа к URL-адресу, который определяет свойство **settings.configuration.url**. Это свойство зашифровано. |
+| protectedSettings.configurationDataUrlSasToken |строка |Указывает маркер SAS для доступа к URL-адресу, который определяет свойство **settings.configurationData.url**. Это свойство зашифровано. |
 
 ## <a name="default-configuration-script"></a>Скрипт конфигурации по умолчанию
 
@@ -197,7 +179,7 @@ ms.locfileid: "39224380"
 
 | Имя свойства | type | ОПИСАНИЕ |
 | --- | --- | --- |
-| settings.configurationArguments.RegistrationKey |SecureString |Обязательное свойство. Определяет ключ, используемый узлом для регистрации в службе автоматизации Azure в качестве пароля для объекта учетных данных PowerShell. Это значение можно автоматически обнаружить с помощью метода **listkeys** в учетной записи службы автоматизации. Его необходимо защитить в качестве защищенного параметра. |
+| protectedSettings.configurationArguments.RegistrationKey |PSCredential |Обязательное свойство. Определяет ключ, используемый узлом для регистрации в службе автоматизации Azure в качестве пароля для объекта учетных данных PowerShell. Это значение можно автоматически обнаружить с помощью метода **listkeys** в учетной записи службы автоматизации.  См. [пример](#example-using-referenced-azure-automation-registration-values). |
 | settings.configurationArguments.RegistrationUrl |строка |Обязательное свойство. Указывает URL-адрес конечной точки службы автоматизации, в которой пытается зарегистрироваться узел. Это значение можно автоматически обнаружить с помощью метода **reference** в учетной записи службы автоматизации. |
 | settings.configurationArguments.NodeConfigurationName |строка |Обязательное свойство. Указывает конфигурацию узла в учетной записи службы автоматизации, которая будет присвоена узлу. |
 | settings.configurationArguments.ConfigurationMode |строка |Указывает режим для LCM. Допустимые значения: **ApplyOnly**, **ApplyandMonitior** и **ApplyandAutoCorrect**.  Значение по умолчанию — **ApplyAndMonitor**. |
@@ -220,8 +202,8 @@ ms.locfileid: "39224380"
 "protectedSettings": {
     "configurationArguments": {
         "parameterOfTypePSCredential1": {
-            "userName": "UsernameValue1",
-            "password": "PasswordValue1"
+               "userName": "UsernameValue1",
+               "password": "PasswordValue1"
         }
     }
 }
@@ -235,21 +217,15 @@ ms.locfileid: "39224380"
 
 ```json
 "settings": {
-    "configurationArguments": {
-        {
-            "Name": "RegistrationKey",
-            "Value": {
-                "UserName": "PLACEHOLDER_DONOTUSE",
-                "Password": "PrivateSettingsRef:registrationKeyPrivate"
-            },
-        },
-        "RegistrationUrl": "[parameters('registrationUrl1')]",
-        "NodeConfigurationName": "nodeConfigurationNameValue1"
-    }
+    "RegistrationUrl" : "[parameters('registrationUrl1')]",
+    "NodeConfigurationName" : "nodeConfigurationNameValue1"
 },
 "protectedSettings": {
-    "Items": {
-        "registrationKeyPrivate": "[parameters('registrationKey1')]"
+    "configurationArguments": {
+        "RegistrationKey": {
+            "userName": "NOT_USED",
+            "Password": "registrationKey"
+        }
     }
 }
 ```
@@ -276,9 +252,28 @@ ms.locfileid: "39224380"
 }
 ```
 
+## <a name="example-using-referenced-azure-automation-registration-values"></a>Пример использования ссылок на значения регистрации в службе автоматизации Azure
+
+Следующий пример получает **RegistrationUrl** и **RegistrationKey**, ссылаясь на свойства учетной записи службы автоматизации Azure, используя метод **listkeys** для извлечения первичного ключа (0).  В этом примере параметры **automationAccountName** и **NodeConfigName** были предоставлены в шаблоне.
+
+```json
+"settings": {
+    "RegistrationUrl" : "[reference(concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))).registrationUrl]",
+    "NodeConfigurationName" : "[parameters('NodeConfigName')]"
+},
+"protectedSettings": {
+    "configurationArguments": {
+        "RegistrationKey": {
+            "userName": "NOT_USED",
+            "Password": "[listKeys(resourceId('Microsoft.Automation/automationAccounts/', parameters('automationAccountName')), '2018-01-15').Keys[0].value]"
+        }
+    }
+}
+```
+
 ## <a name="update-from-a-previous-format"></a>Обновление из предыдущего формата
 
-Все параметры в предыдущем формате расширения (содержащие общедоступные свойства **ModulesUrl**, **ConfigurationFunction**, **SasToken** или **Properties**) автоматически адаптируются к текущему формату расширения
+Все параметры в предыдущем формате расширения (содержащие общедоступные свойства **ModulesUrl**, **ModuleSource**, **ModuleVersion**, **ConfigurationFunction**, **SasToken** или **Properties**) автоматически адаптируются к текущему формату расширения.
 и выполняются в обычном режиме.
 
 Раньше схема settings выглядела следующим образом:
@@ -313,24 +308,24 @@ ms.locfileid: "39224380"
 
 Вот как меняется предыдущий формат:
 
-| Имя свойства | Предыдущий эквивалент схемы |
+| Имя текущего свойства | Предыдущий эквивалент схемы |
 | --- | --- |
 | settings.wmfVersion |settings.wmfVersion |
 | settings.configuration.url |settings.ModulesUrl |
 | settings.configuration.script |Первая часть свойства settings.ConfigurationFunction (перед \\\\) |
 | settings.configuration.function |Вторая часть свойства settings.ConfigurationFunction (после \\\\) |
+| settings.configuration.module.name | settings.ModuleSource |
+| settings.configuration.module.version | settings.ModuleVersion |
 | settings.configurationArguments |settings.Properties |
 | settings.configurationData.url |protectedSettings.DataBlobUri (без маркера SAS) |
-| settings.privacy.dataEnabled |settings.privacy.dataEnabled |
+| settings.privacy.dataCollection |settings.Privacy.dataCollection |
 | settings.advancedOptions.downloadMappings |settings.advancedOptions.downloadMappings |
 | protectedSettings.configurationArguments |protectedSettings.Properties |
 | protectedSettings.configurationUrlSasToken |settings.SasToken |
 | protectedSettings.configurationDataUrlSasToken |Маркер SAS из свойства protectedSettings.DataBlobUri |
 
-## <a name="troubleshooting---error-code-1100"></a>Устранение неполадок — код ошибки 1100
+## <a name="troubleshooting"></a>Устранение неполадок
 
-Код ошибки 1100 указывает на проблему с входными данными пользователя в расширении DSC.
-Текст этих ошибок может меняться.
 Ниже приведены некоторые общие ошибки и способы их устранения.
 
 ### <a name="invalid-values"></a>Недопустимые значения
@@ -354,14 +349,31 @@ ms.locfileid: "39224380"
 **Решение.** Проверьте все указанные URL-адреса.
 Убедитесь, что все URL-адреса разрешаются в допустимые расположения, к которым расширение может получить доступ на удаленном компьютере.
 
+### <a name="invalid-registrationkey-type"></a>Недопустимый тип RegistrationKey
+
+"Недопустимый тип параметра RegistrationKey типа PSCredential."
+
+**Проблема**. Значение *RegistrationKey* в protectedSettings.configurationArguments не может быть предоставлено как любой тип, отличный от PSCredential.
+
+**Решение**. Измените запись protectedSettings.configurationArguments для RegisterKey на тип PSCredential, используя следующий формат:
+
+```json
+"configurationArguments": {
+    "RegistrationKey": {
+        "userName": "NOT_USED",
+        "Password": "RegistrationKey"
+    }
+}
+```
+
 ### <a name="invalid-configurationargument-type"></a>Недопустимый тип свойства ConfigurationArgument
 
 "Недопустимый тип ConfigurationArgument: {0}"
 
-**Проблема.** Невозможно разрешить свойство *ConfigurationArguments* в объект **Hashtable**.
+**Проблема.** Невозможно разрешить свойство *ConfigurationArguments* в объект **Hash table**.
 
-**Решение.** Задайте для свойства *ConfigurationArguments* тип **Hashtable**.
-Следуйте формату из приведенного выше примера. Обращайте внимание на кавычки, запятые и скобки.
+**Решение**. Задайте для свойства *ConfigurationArguments* тип **Hash table**.
+Следуйте формату из приведенного выше примеров. Обращайте внимание на кавычки, запятые и скобки.
 
 ### <a name="duplicate-configurationarguments"></a>Повторяющееся свойство ConfigurationArguments
 
@@ -373,17 +385,17 @@ ms.locfileid: "39224380"
 
 ### <a name="missing-properties"></a>Отсутствующие свойства
 
-"Configuration.function requires that configuration.url or configuration.module is specified" (Для параметра configuration.function требуется указать свойство configuration.url или configuration.module).
+"settings.сonfiguration.function requires that configuration.url or settings.configuration.module is specified" (Для параметра settings.configuration.function требуется указать свойство settings.configuration.url или configuration.module)
 
-"Configuration.url requires that configuration.script is specified" (Для параметра configuration.url требуется указать свойство configuration.script).
+"settings.сonfiguration.url requires that settings.сonfiguration.script is specified" (Для параметра settings.сonfiguration.url требуется указать свойство settings.сonfiguration.script)
 
-"Configuration.script requires that configuration.url is specified" (Для параметра configuration.script требуется указать свойство configuration.url).
+"settings.сonfiguration.script requires that settings.сonfiguration.url is specified" (Для параметра settings.сonfiguration.script требуется указать свойство settings.сonfiguration.url)
 
-"Configuration.url requires that configuration.function is specified" (Для параметра configuration.url требуется указать свойство configuration.function).
+"settings.сonfiguration.url requires that settings.сonfiguration.function is specified" (Для параметра settings.сonfiguration.function требуется указать свойство settings.сonfiguration.url)
 
-"ConfigurationUrlSasToken requires that configuration.url is specified" (Для параметра ConfigurationUrlSasToken требуется указать свойство configuration.url).
+"protectedSettings.ConfigurationUrlSasToken.url requires that settings.сonfiguration.function is specified" (Для параметра protectedSettings.ConfigurationUrlSasToken.url требуется указать свойство settings.сonfiguration.url)
 
-"ConfigurationDataUrlSasToken requires that configurationData.url is specified" (Для параметра ConfigurationDataUrlSasToken требуется указать свойство configurationData.url).
+"protectedSettings.ConfigurationDataUrlSasToken.url requires that settings.сonfiguration.function is specified" (Для параметра protectedSettings.ConfigurationDataUrlSasToken.url требуется указать свойство settings.сonfiguration.url)
 
 **Проблема.** Для заданного свойства требуется другое свойство, которое отсутствует.
 

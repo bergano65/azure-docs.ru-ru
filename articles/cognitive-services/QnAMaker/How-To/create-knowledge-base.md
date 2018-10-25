@@ -10,12 +10,12 @@ ms.component: qna-maker
 ms.topic: article
 ms.date: 09/12/2018
 ms.author: tulasim
-ms.openlocfilehash: 274c2289c75f44c5a1c8dd3799612a23f46a6d67
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: c9d36014bc364d8b016221e6b9ff380b0bd4b8ed
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47037700"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48854173"
 ---
 # <a name="create-a-knowledge-base"></a>Создание базы знаний
 
@@ -28,9 +28,7 @@ QnA Maker упрощает добавление существующих ист�
 
 ## <a name="steps"></a>Действия
 
-1. Войдите на [портал QnA Maker](https://qnamaker.ai) с помощью учетных данных Azure и выберите **Create new service** (Создать службу).
-
-    ![Создание базы знаний ](../media/qnamaker-how-to-create-kb/create-new-service.png)
+1. Войдите на [портал QnA Maker](https://qnamaker.ai) с помощью учетных данных Azure и выберите **Create a knowledge base** (Создать базу знаний).
 
 2. Если служба QnA Maker еще не создана, выберите **Create a QnA service** (Создать службу QnA). 
 

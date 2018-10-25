@@ -1,31 +1,54 @@
-## <a name="test-your-code"></a>Тестирование кода
+---
+title: включение файла
+description: включение файла
+services: active-directory
+documentationcenter: dev-center-name
+author: andretms
+manager: mtillman
+editor: ''
+ms.service: active-directory
+ms.devlang: na
+ms.topic: include
+ms.tgt_pltfrm: na
+ms.workload: identity
+ms.date: 09/13/2018
+ms.author: andret
+ms.custom: include file
+ms.openlocfilehash: 991709ee635872e33dc89dcededc7f6ac3b28ea3
+ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48843335"
+---
+## <a name="test-your-app"></a>Тестирование приложения
 
-1. Разверните код на своем устройстве или эмуляторе.
+1. Выполните код на своем устройстве или эмуляторе.
 
-2. Когда вы будете готовы протестировать приложение, войдите в систему с помощью учетной записи Azure Active Directory (рабочую или учебную) или учетной записи Майкрософт (live.com, outlook.com). 
+2. Попробуйте войти в учетную запись Azure Active Directory (рабочую или учебную) или учетную запись Майкрософт (live.com, outlook.com). 
 
     ![Тестирование приложения](media/active-directory-develop-guidedsetup-android-test/mainwindow.png)
     <br/><br/>
     ![Введите имя пользователя и пароль](media/active-directory-develop-guidedsetup-android-test/usernameandpassword.png)
 
-### <a name="provide-consent-for-application-access"></a>Предоставление разрешения на доступ к приложению
-Войдя в приложение первый раз, необходимо будет предоставить ему разрешение на использование данных вашего профиля для входа, как показано ниже: 
+### <a name="consent-to-your-app"></a>Предоставление согласия для приложения
+При первом входе пользователя в приложение ему потребуется предоставить согласие на разрешения, необходимые приложению, как показано ниже. 
 
 ![Предоставление разрешения на доступ к приложению](media/active-directory-develop-guidedsetup-android-test/androidconsent.png)
 
 
-### <a name="view-application-results"></a>Просмотр результатов приложения
-После входа можно увидеть результаты, полученные после вызова API Microsoft Graph. Вызов конечной точки API Microsoft Graph **me** возвращает [профиль пользователя](https://graph.microsoft.com/v1.0/me). Список общих конечных точек Microsoft Graph см. в [документации разработчика API Microsoft Graph](https://developer.microsoft.com/graph/docs#common-microsoft-graph-queries).
+### <a name="success"></a>Готово!
+После входа и предоставления согласия приложение отобразит ответ из API Microsoft Graph. Этот вызов совершается на конечную точку **/me** и возвращает [профиль пользователя](https://developer.microsoft.com/graph/docs/api-reference/v1.0/api/user_get). Список конечных точек Microsoft Graph см. в документации [Обзор Microsoft Graph](https://developer.microsoft.com/graph/docs#common-microsoft-graph-queries).
 
 <!--start-collapse-->
-### <a name="more-information-about-scopes-and-delegated-permissions"></a>Дополнительные сведения об областях и делегированных разрешениях
+### <a name="scopes-and-delegated-permissions"></a>Области и делегированные разрешения
 
-Для чтения профиля пользователя API Microsoft Graph требуется область *user.read*. По умолчанию эта область автоматически добавляется в каждое приложение, зарегистрированное на портале регистрации приложений. Для других API Microsoft Graph, а также для пользовательских API вашего внутреннего сервера, могут потребоваться дополнительные области. Для отображения списка календарей пользователя API Microsoft Graph требуется область *Calendars.Read*. 
+Для чтения профиля пользователя API Microsoft Graph требуется область *User.Read*. Эта область автоматически появляется в каждом приложении, зарегистрированном на портале регистрации приложений. Для других интерфейсов API потребуются дополнительные области. Например, для отображения списка календарей пользователя API Microsoft Graph требуется область *Calendars.Read*. 
 
-Чтобы из контекста приложения получить доступ к календарям пользователя, добавьте делегированное разрешение *Calendars.Read* в сведения о регистрации приложения. Затем добавьте область *Calendars.Read* в вызов `acquireTokenSilent`. 
+Чтобы получить доступ к календарям пользователя, добавьте делегированное разрешение *Calendars.Read* в сведения о регистрации приложения. Затем добавьте область *Calendars.Read* в вызов `acquireTokenSilent`. 
 
 >[!NOTE]
->При увеличении количества областей от пользователя могут потребоваться дополнительные согласия.
+>Пользователям может потребоваться предоставить дополнительные согласия при изменении регистрации приложения.
 
 <!--end-collapse-->
 

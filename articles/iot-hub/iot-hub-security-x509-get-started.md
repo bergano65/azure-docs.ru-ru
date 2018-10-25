@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/10/2017
 ms.author: dobett
-ms.openlocfilehash: 19f6f5d360981c743d819da81eb2f68db1853c8b
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: f10f1da93df6a313525e102e4906cfe67a5f6ae3
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43783123"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49351888"
 ---
 # <a name="set-up-x509-security-in-your-azure-iot-hub"></a>Настройка сертификата безопасности X.509 в Центре Интернета вещей Azure
 
@@ -72,9 +72,9 @@ ms.locfileid: "43783123"
 
 ## <a name="create-an-x509-device-for-your-iot-hub"></a>Создание устройства X.509 для Центра Интернета вещей
 
-1. На портале Azure перейдите к **Device Explorer** Центра Интернета вещей.
+1. На портале Azure перейдите к странице Центра Интернета вещей **Обозреватели > 	Устройства Интернета вещей**.
 
-2. Выберите **Добавить**, чтобы добавить новое устройство. 
+2. Щелкните **+ Добавить**, чтобы добавить новое устройство.
 
 3. Присвойте понятное отображаемое имя **идентификатору устройства** и в качестве **типа аутентификации** выберите **_X.509 CA Signed_** (Подписан ЦС X.509). Выберите команду **Сохранить**.
 

@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/22/2018
+ms.date: 09/22/2018
 ms.author: spelluru
-ms.openlocfilehash: f5d5b8064821dfb1aa6d4e99d0152e364f9a83fe
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: b05e23019e7b0a03965e51052bf334d0cbff041d
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43700524"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48269349"
 ---
 # <a name="amqp-10-in-microsoft-azure-service-bus-request-response-based-operations"></a>AMQP 1.0 в служебной шине Microsoft Azure: операции c запросами и ответами
 
@@ -142,6 +142,10 @@ properties: {
 |Ключ|Тип значения|Обязательно|Содержимое значения|  
 |---------|----------------|--------------|--------------------|  
 |`lock-tokens`|Массив UUID|Yes|Маркеры блокировки сообщения для обновления.|  
+
+> [!NOTE]
+> Маркеры блокировки являются свойством `DeliveryTag` в полученных сообщениях. См. следующий пример в [пакете SDK для .NET](https://github.com/Azure/azure-service-bus-dotnet/blob/6f144e91310dcc7bd37aba4e8aebd535d13fa31a/src/Microsoft.Azure.ServiceBus/Amqp/AmqpMessageConverter.cs#L336) которой их извлекает. Маркер может также отображаться в "DeliveryAnnotations" как "x-opt-lock-token" тем не менее, это не гарантируется и `DeliveryTag` будут иметь больший приоритет. 
+> 
   
 #### <a name="response"></a>Ответ  
 
@@ -365,7 +369,7 @@ properties: {
   
 |Ключ|Тип значения|Обязательно|Содержимое значения|  
 |---------|----------------|--------------|--------------------|  
-|операция|строка|Yes|`com.microsoft:peek-message`|  
+|операция|строка|Yes|`com.microsoft:set-session-state`|  
 |`com.microsoft:server-timeout`|uint|Нет |Время ожидания ответа от сервера, на котором выполняется операция, в миллисекундах.|  
   
 Текст запроса должен включать раздел **amqp-value**, содержащий **схему** со следующими элементами.  

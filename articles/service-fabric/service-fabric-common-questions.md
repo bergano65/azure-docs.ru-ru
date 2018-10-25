@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/18/2017
 ms.author: chackdan
-ms.openlocfilehash: 0b731e94675992e59f79b61a2f3a15fa20bdf8a7
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: 70372f30ffaea1fafda3f76d4754489ae89a0a7c
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42146582"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49390182"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
 
@@ -96,6 +96,9 @@ ms.locfileid: "42146582"
 ### <a name="can-i-encrypt-attached-data-disks-in-a-cluster-node-type-virtual-machine-scale-set"></a>Можно ли зашифровать присоединенные диски данных в типе узла кластера (масштабируемый набор виртуальных машин)?
 Да.  Дополнительные сведения см. в разделе [Создание кластера Service Fabric с подключенными дисками данных](../virtual-machine-scale-sets/virtual-machine-scale-sets-attached-disks.md#create-a-service-fabric-cluster-with-attached-data-disks) и статьях о шифровании дисков с помощью [PowerShell](../virtual-machine-scale-sets/virtual-machine-scale-sets-encrypt-disks-ps.md) и [CLI](../virtual-machine-scale-sets/virtual-machine-scale-sets-encrypt-disks-cli.md).
 
+### <a name="can-i-use-low-priority-vms-in-a-cluster-node-type-virtual-machine-scale-set"></a>Можно ли использовать низкоприоритетные виртуальные машины с типом узла кластера (масштабируемый набор виртуальных машин)?
+Нет. Низкоприоритетные виртуальные машины не поддерживаются. 
+
 ### <a name="what-are-the-directories-and-processes-that-i-need-to-exclude-when-running-an-anti-virus-program-in-my-cluster"></a>Какие каталоги и процессы необходимо исключить при запуске антивирусной программы в кластере?
 
 | **Исключаемые при проверке антивирусной программой каталоги** |
@@ -123,7 +126,7 @@ ms.locfileid: "42146582"
 Ниже приведены средства для того, чтобы ваше приложение получило учетные данные для аутентификации в KeyVault:
 
 О. Во время задания сборки и упаковки вы можете внедрить сертификат в пакет данных приложения Service Fabric и использовать его для аутентификации в KeyVault.
-B. Для узлов масштабируемого набора виртуальных машин с поддержкой MSI можно разработать простой PowerShell SetupEntryPoint для приложения Service Fabric, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/en-us/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [получить секреты из хранилища ключей](https://docs.microsoft.com/en-us/powershell/module/azurerm.keyvault/Get-AzureKeyVaultSecret?view=azurermps-6.5.0)
+B. Для узлов масштабируемого набора виртуальных машин с поддержкой MSI можно разработать простой PowerShell SetupEntryPoint для приложения Service Fabric, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [получить секреты из хранилища ключей](https://docs.microsoft.com/powershell/module/azurerm.keyvault/Get-AzureKeyVaultSecret?view=azurermps-6.5.0)
 
 ## <a name="application-design"></a>Проектирование приложений
 

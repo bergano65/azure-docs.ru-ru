@@ -11,17 +11,17 @@ author: DhruvMsft
 ms.author: dmalik
 ms.reviewer: genemi, vanto
 manager: craigg
-ms.date: 06/14/2018
-ms.openlocfilehash: 50e88dd11b8a883a4d2999ad2d0419cbf7176078
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.date: 10/05/2018
+ms.openlocfilehash: f21614757716b860c25436acfa7b6275cd848109
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47161154"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48868214"
 ---
-# <a name="use-powershell-to-create-a-virtual-service-endpoint-and-rule-for-azure-sql-database-and-sql-data-warehouse"></a>Создание конечной точки службы и правила виртуальной сети для Базы данных SQL Azure и Хранилища данных SQL с помощью PowerShell
+# <a name="powershell--create-a-virtual-service-endpoint-and-vnet-rule-for-sql"></a>PowerShell: создание конечной точки службы и правила виртуальной сети для SQL
 
-[База данных SQL Azure](sql-database-technical-overview.md) и [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) поддерживают конечные точки виртуальной службы. 
+[База данных SQL Azure](sql-database-technical-overview.md) и [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) поддерживают конечные точки виртуальной службы.
 
 > [!NOTE]
 > Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
@@ -36,24 +36,20 @@ ms.locfileid: "47161154"
 > [!TIP]
 > Если все, что вам требуется, это оценить или добавить *имя типа* конечной точки службы виртуальной сети для базы данных SQL в подсеть, то вы можете сразу перейти к более [прямолинейному сценарию PowerShell](#a-verify-subnet-is-endpoint-ps-100).
 
-#### <a name="major-cmdlets"></a>Основные командлеты
+## <a name="major-cmdlets"></a>Основные командлеты
 
-В этой статье особое внимание уделяется командлету **New-AzureRmSqlServerVirtualNetworkRule**, который добавляет конечную точку подсети в список управления доступом (ACL) сервера базы данных SQL Azure, тем самым создавая правило.
+В этой статье особое внимание уделяется командлету **New-AzureRmSqlServerVirtualNetworkRule**, который добавляет конечную точку подсети в список управления доступом (ACL) сервера Базы данных SQL Azure, тем самым создавая правило.
 
 В следующем списке приведена последовательность других *основных* командлетов, которые нужно выполнить для подготовки к вызову **New-AzureRmSqlServerVirtualNetworkRule**. В этой статье эти вызовы выполняются в [сценарии 3 "Правило виртуальной сети"](#a-script-30):
 
 1. [New-AzureRmVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/azurerm.network/new-azurermvirtualnetworksubnetconfig): создает объект подсети.
-
 2. [New-AzureRmVirtualNetwork](https://docs.microsoft.com/powershell/module/azurerm.network/new-azurermvirtualnetwork): создает виртуальную сеть, добавив в нее подсеть.
-
 3. [Set-AzureRmVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/azurerm.network/Set-AzureRmVirtualNetworkSubnetConfig): назначает конечную точку службы виртуальной сети в качестве подсети.
-
 4. [Set-AzureRmVirtualNetwork](https://docs.microsoft.com/powershell/module/azurerm.network/Set-AzureRmVirtualNetwork): сохраняет изменения, внесенные в виртуальную сеть.
-
 5. [New-AzureRmSqlServerVirtualNetworkRule](https://docs.microsoft.com/powershell/module/azurerm.sql/new-azurermsqlservervirtualnetworkrule): после указания того, что подсеть является конечной точкой, этот командлет добавляет подсеть в виде правила виртуальной сети в список контроля доступа сервера базы данных SQL Azure.
-    - В версии 5.1.1 модуля Azure RM PowerShell и последующих версиях доступен параметр **-IgnoreMissingVnetServiceEndpoint**.
+   - В версии 5.1.1 модуля Azure RM PowerShell и последующих версиях командлет предоставляет параметр **-IgnoreMissingVnetServiceEndpoint**.
 
-#### <a name="prerequisites-for-running-powershell"></a>Предварительные требования для запуска PowerShell
+## <a name="prerequisites-for-running-powershell"></a>Предварительные требования для запуска PowerShell
 
 - Вы уже можете войти в Azure, например, воспользовавшись [порталом Azure][http-azure-portal-link-ref-477t].
 - Вы уже можете выполнять сценарии PowerShell.
@@ -61,27 +57,22 @@ ms.locfileid: "47161154"
 > [!NOTE]
 > Убедитесь, что конечные точки службы включены для виртуальной сети и подсети, которые требуется добавить на сервер. В противном случае вам не удастся создать правило брандмауэра виртуальной сети.
 
-#### <a name="one-script-divided-into-four-chunks"></a>Один сценарий состоит четырех блоков
+## <a name="one-script-divided-into-four-chunks"></a>Один сценарий состоит четырех блоков
 
 Наш демонстрационный сценарий PowerShell состоит из последовательности сценариев меньшего размера. Такое разделение облегчает обучение и обеспечивает гибкость. Эти сценарии должны запускаться в указанной последовательности. Если сейчас у вас нет времени для выполнения этих сценариев, вы можете ознакомиться с тестовыми выходными данными сценария 4.
 
-
-
-
-
-
 <a name="a-script-10" />
 
-## <a name="script-1-variables"></a>Сценарий 1: переменные
+### <a name="script-1-variables"></a>Сценарий 1: переменные
 
 Первый сценарий PowerShell присваивает переменным значения. Последующие сценарии зависят от этих переменных.
 
 > [!IMPORTANT]
 > При необходимости, прежде чем выполнить этот сценарий, можно изменить значения. Например, если у вас уже есть группа ресурсов, можно изменить присваиваемое значение имени группы ресурсов.
 >
->  Имя вашей подписки необходимо указать в сценарии.
+> Имя вашей подписки необходимо указать в сценарии.
 
-#### <a name="powershell-script-1-source-code"></a>Исходный код сценария 1 PowerShell
+### <a name="powershell-script-1-source-code"></a>Исходный код сценария 1 PowerShell
 
 ```powershell
 ######### Script 1 ########################################
@@ -119,20 +110,16 @@ $ServiceEndpointTypeName_SqlDb = 'Microsoft.Sql';  # Official type name.
 Write-Host 'Completed script 1, the "Variables".';
 ```
 
-
-
-
-
 <a name="a-script-20" />
 
-## <a name="script-2-prerequisites"></a>Сценарий 2: предварительные требования
+### <a name="script-2-prerequisites"></a>Сценарий 2: предварительные требования
 
 Этот сценарий подготавливает среду к следующему сценарию, который выполняет действие с конечной точкой. Этот сценарий создает перечисленные ниже элементы, но только если они еще не существует. Сценарий 2 можно пропустить, если вы уверены, что эти элементы уже существуют:
 
 - Группа ресурсов Azure
 - сервер базы данных SQL Azure;
 
-#### <a name="powershell-script-2-source-code"></a>Исходный код сценария 2 PowerShell
+### <a name="powershell-script-2-source-code"></a>Исходный код сценария 2 PowerShell
 
 ```powershell
 ######### Script 2 ########################################
@@ -214,18 +201,13 @@ $sqlDbServer                 = $null;
 Write-Host 'Completed script 2, the "Prerequisites".';
 ```
 
-
-
-
-
-
 <a name="a-script-30" />
 
 ## <a name="script-3-create-an-endpoint-and-a-rule"></a>Сценарий 3: создание конечной точки и правила
 
 Этот сценарий создает виртуальную сеть с подсетью. Затем он присваивает тип конечной точки **Microsoft.Sql** подсети. Наконец, этот сценарий добавляет подсеть в список управления доступом (ACL) вашего сервера базы данных SQL, тем самым создавая правило.
 
-#### <a name="powershell-script-3-source-code"></a>Исходный код сценария 3 PowerShell
+### <a name="powershell-script-3-source-code"></a>Исходный код сценария 3 PowerShell
 
 ```powershell
 ######### Script 3 ########################################
@@ -302,13 +284,8 @@ $vnetRuleObject2 = Get-AzureRmSqlServerVirtualNetworkRule `
 
 $vnetRuleObject2;
 
-Write-Host 'Completed script 3, the "Virtual-Netowrk-Rule".';
+Write-Host 'Completed script 3, the "Virtual-Network-Rule".';
 ```
-
-
-
-
-
 
 <a name="a-script-40" />
 
@@ -321,7 +298,7 @@ Write-Host 'Completed script 3, the "Virtual-Netowrk-Rule".';
 
 Сценарий 4 можно запустить в любой момент после завершения сценария 1.
 
-#### <a name="powershell-script-4-source-code"></a>Исходный код сценария 4 PowerShell
+### <a name="powershell-script-4-source-code"></a>Исходный код сценария 4 PowerShell
 
 ```powershell
 ######### Script 4 ########################################
@@ -371,14 +348,14 @@ $yesno = Read-Host 'CAUTION !: Do you want to DELETE your Azure SQL Database ser
 if ('yes' -eq $yesno)
 {
     Write-Host "Remove the Azure SQL DB server.";
-    
+
     Remove-AzureRmSqlServer `
       -ServerName        $SqlDbServerName `
       -ResourceGroupName $ResourceGroupName `
       -ErrorAction       SilentlyContinue;
-    
+
     Write-Host "Remove the Azure Resource Group.";
-    
+
     Remove-AzureRmResourceGroup `
       -Name        $ResourceGroupName `
       -ErrorAction SilentlyContinue;
@@ -391,18 +368,13 @@ else
 Write-Host 'Completed script 4, the "Clean-Up".';
 ```
 
-
-
-
-
-
 <a name="a-actual-output" />
 
 ## <a name="actual-output-from-scripts-1-through-4"></a>Фактические выходные данные сценариев 1–4
 
 Ниже в сокращенном виде приведены выходные данные тестового выполнения сценариев. Они могут быть полезны в случае, если в данный момент вы не хотите выполнять сценарии PowerShell.
 
-```
+```cmd
 [C:\WINDOWS\system32\]
 0 >> C:\Demo\PowerShell\sql-database-vnet-service-endpoint-powershell-s1-variables.ps1
 Do you need to log into Azure (only one time per powershell.exe session)?  [yes/no]: yes
@@ -413,7 +385,7 @@ Account               : xx@microsoft.com
 TenantId              : 11111111-1111-1111-1111-111111111111
 SubscriptionId        : 22222222-2222-2222-2222-222222222222
 SubscriptionName      : MySubscriptionName
-CurrentStorageAccount : 
+CurrentStorageAccount :
 
 
 
@@ -426,7 +398,7 @@ Creating your missing Resource Group - RG-YourNameHere.
 ResourceGroupName : RG-YourNameHere
 Location          : westcentralus
 ProvisioningState : Succeeded
-Tags              : 
+Tags              :
 ResourceId        : /subscriptions/22222222-2222-2222-2222-222222222222/resourceGroups/RG-YourNameHere
 
 Check whether your Azure SQL Database server already exists.
@@ -438,14 +410,12 @@ ResourceGroupName        : RG-YourNameHere
 ServerName               : mysqldbserver-forvnet
 Location                 : westcentralus
 SqlAdministratorLogin    : ServerAdmin
-SqlAdministratorPassword : 
+SqlAdministratorPassword :
 ServerVersion            : 12.0
-Tags                     : 
-Identity                 : 
+Tags                     :
+Identity                 :
 
 Completed script 2, the "Prerequisites".
-
-
 
 [C:\WINDOWS\system32\]
 0 >> C:\Demo\PowerShell\sql-database-vnet-service-endpoint-powershell-s3-vnet-rule.ps1
@@ -457,15 +427,13 @@ Persist the updates made to the virtual network > subnet.
 
 Get the subnet object.
 Add the subnet .Id as a rule, into the ACLs for your Azure SQL Database server.
-ProvisioningState Service       Locations      
------------------ -------       ---------      
+ProvisioningState Service       Locations
+----------------- -------       ---------
 Succeeded         Microsoft.Sql {westcentralus}
-                                               
+
 Verify that the rule is in the SQL DB ACL.
-                                               
+
 Completed script 3, the "Virtual-Network-Rule".
-
-
 
 [C:\WINDOWS\system32\]
 0 >> C:\Demo\PowerShell\sql-database-vnet-service-endpoint-powershell-s4-clean-up.ps1
@@ -482,10 +450,10 @@ ResourceGroupName        : RG-YourNameHere
 ServerName               : mysqldbserver-forvnet
 Location                 : westcentralus
 SqlAdministratorLogin    : ServerAdmin
-SqlAdministratorPassword : 
+SqlAdministratorPassword :
 ServerVersion            : 12.0
-Tags                     : 
-Identity                 : 
+Tags                     :
+Identity                 :
 
 Remove the Azure Resource Group.
 True
@@ -493,10 +461,6 @@ Completed script 4, the "Clean-Up".
 ```
 
 На этом выполнение основного сценария PowerShell завершено.
-
-
-
-
 
 <a name="a-verify-subnet-is-endpoint-ps-100" />
 
@@ -510,7 +474,7 @@ Completed script 4, the "Clean-Up".
 2. При необходимости назначьте имя типа, если оно отсутствует.
     - Сценарий запросит *подтверждение*, прежде чем применить отсутствующее имя типа.
 
-#### <a name="phases-of-the-script"></a>Этапы сценария
+### <a name="phases-of-the-script"></a>Этапы сценария
 
 Ниже приведены этапы сценария PowerShell.
 
@@ -522,7 +486,7 @@ Completed script 4, the "Clean-Up".
 > [!IMPORTANT]
 > Прежде чем запустить этот сценарий, необходимо изменить значения, присвоенные $-переменным в верхней части сценария.
 
-#### <a name="direct-powershell-source-code"></a>Исходный код прямолинейного сценария PowerShell
+### <a name="direct-powershell-source-code"></a>Исходный код прямолинейного сценария PowerShell
 
 Этот сценарий PowerShell не обновляет ничего, пока вы не подтвердите это. Этот сценарий может добавить имя типа **Microsoft.Sql** в подсеть. Однако он пытается сделать это, только если у подсети отсутствует имя типа.
 
@@ -618,7 +582,7 @@ for ($nn=0; $nn -lt $vnet.Subnets.Count; $nn++)
 { $vnet.Subnets[0].ServiceEndpoints; }  # Display.
 ```
 
-#### <a name="actual-output"></a>Фактические выходные данные
+### <a name="actual-output"></a>Фактические выходные данные
 
 Следующий блок отображает фактический результат (с окончательными правками).
 
@@ -633,7 +597,7 @@ Account               : xx@microsoft.com
 TenantId              : 11111111-1111-1111-1111-111111111111
 SubscriptionId        : 22222222-2222-2222-2222-222222222222
 SubscriptionName      : MySubscriptionName
-CurrentStorageAccount : 
+CurrentStorageAccount :
 
 
 ProvisioningState : Succeeded
@@ -644,12 +608,8 @@ Good: Subnet found, and is already tagged as an endpoint of type 'Microsoft.Sql'
 #>
 ```
 
-
-
-
 <!-- Link references: -->
 
 [sql-db-vnet-service-endpoint-rule-overview-735r]: sql-database-vnet-service-endpoint-rule-overview.md
 
 [http-azure-portal-link-ref-477t]: https://portal.azure.com/
-

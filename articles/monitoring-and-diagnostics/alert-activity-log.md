@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: 526c50fa4d261a30738c3f24d537fe5e0d765f6d
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: a95cdbb48371cf960211f55bf077cea9db783db5
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46951310"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48248335"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-using-azure-monitor"></a>Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor  
 
@@ -25,7 +25,7 @@ ms.locfileid: "46951310"
 > [!IMPORTANT]
 > Оповещения уведомлений о работоспособности службы невозможно создавать через интерфейс для создания оповещений журнала действий. Дополнительные сведения о создании и использовании уведомлений о работоспособности службы см. в статье [Создание оповещений журнала действий для уведомлений службы](monitoring-activity-log-alerts-on-service-notifications.md).
 
-## <a name="manage-alert-rules-for-activity-log-using-azure-portal"></a>Управление правилами генерации оповещений для журнала действий с помощью портала Azure
+## <a name="azure-portal"></a>Портал Azure
 
 > [!NOTE]
 
@@ -36,7 +36,7 @@ ms.locfileid: "46951310"
 - Условие anyOf и вложенные условия отсутствуют в JSON-файле конфигурации оповещений (обычно разрешается только одно условие allOf без allOf и anyOf).
 - Для категории "административная". В оповещении необходимо указать хотя бы одно из описанных выше условий. Вы не можете создать оповещение, которое активируется каждый раз при создании события в журнале действий.
 
-### <a name="create-an-alert-rule-for-an-activity-log-using-azure-portal"></a>Создание правила генерации оповещений журнала действий с помощью портала Azure
+### <a name="create-with-azure-portal"></a>Создание с помощью портала Azure
 
 Выполните перечисленные ниже действия.
 
@@ -102,7 +102,7 @@ ms.locfileid: "46951310"
  ![ Добавление оповещения из журнала действий](./media/monitoring-activity-log-alerts-new-experience/add-activity-log.png)
     
 
-### <a name="view-and-manage-activity-log-alert-rules-in-azure-portal"></a>Просмотр и управление правилами генерации оповещений журнала действий на портале Azure
+### <a name="view-and-manage-in-azure-portal"></a>Просмотр и управление на портале Azure
 
 1. На портале Azure выберите **Монитор** > **Оповещения** и щелкните **Управление правилами** в верхнем левом углу окна.
 
@@ -127,7 +127,7 @@ ms.locfileid: "46951310"
 4.  Вы можете отключить, включить или удалить правило. Выберите соответствующий параметр в верхней части окна после выбора правила, как описано на шаге 2.
 
 
-## <a name="manage-alert-rules-for-activity-log-using-azure-resource-template"></a>Управление правилами генерации оповещений для журнала действий с помощью шаблона ресурсов Azure
+## <a name="azure-resource-template"></a>Шаблон ресурсов Azure
 Чтобы создать оповещение журнала действий с помощью шаблона Resource Manager, создайте ресурс типа `microsoft.insights/activityLogAlerts`. Затем следует заполнить все связанные свойства. Вот шаблон, создающий оповещение журнала действий.
 
 ```json
@@ -200,21 +200,23 @@ ms.locfileid: "46951310"
 > [!NOTE]
 > Перед тем как правило генерации оповещений журнала действий станет активным, может пройти до 5 минут.
 
-## <a name="manage-alert-rules-for-activity-log-using-powershell-cli-or-api"></a>Управление правилами генерации оповещений журнала действий с помощью PowerShell, CLI или API
+## <a name="rest-api"></a>REST API 
 [API оповещений журнала действий Azure Monitor](https://docs.microsoft.com/rest/api/monitor/activitylogalerts) — это интерфейс REST API, который полностью совместим с REST API Azure Resource Manager. Поэтому он может использоваться в PowerShell с помощью командлета Resource Manager, а также в Azure CLI.
 
+## <a name="powershell"></a>PowerShell
 Ниже показано использование командлета PowerShell для Azure Resource Manager в примере шаблона ресурсов, приведенного выше (sampleActivityLogAlert.json) в [разделе шаблонов ресурсов](#manage-alert-rules-for-activity-log-using-azure-resource-template).
 ```powershell
 New-AzureRmResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile sampleActivityLogAlert.json -TemplateParameterFile sampleActivityLogAlert.parameters.json
 ```
 Причем в sampleActivityLogAlert.parameters.json указаны значения для параметров, необходимых для создания правила генерации оповещений.
 
+## <a name="cli"></a>Интерфейс командной строки
 Ниже показано использование команды Azure CLI для Azure Resource Manager в примере шаблона ресурсов, приведенного выше (sampleActivityLogAlert.json) в [разделе шаблонов ресурсов](#manage-alert-rules-for-activity-log-using-azure-resource-template).
 
 ```azurecli
 az group deployment create --resource-group myRG --template-file sampleActivityLogAlert.json --parameters @sampleActivityLogAlert.parameters.json
 ```
-Причем в sampleActivityLogAlert.parameters.json указаны значения для параметров, необходимых для создания правила генерации оповещений.
+В файле *sampleActivityLogAlert.parameters.json* указаны значения для параметров, необходимых для создания правила генерации оповещений.
 
 
 ## <a name="next-steps"></a>Дополнительная информация

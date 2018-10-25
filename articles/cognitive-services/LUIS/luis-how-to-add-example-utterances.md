@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 09/06/2018
 ms.author: diberry
-ms.openlocfilehash: 387668263a6bab6e12a21adf04aebfbbf108a006
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: adb44dcc8c41b1a7846ff346d141dc0c4b028e96
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47036496"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48888294"
 ---
 # <a name="add-example-utterances-and-label-with-entities"></a>Добавление примеров высказываний и меток с сущностями
 
@@ -92,12 +92,12 @@ book me 2 adult business tickets to Paris tomorrow on Air France
 
 В высказывании выберите для слова "вода" синоним, например `aqua`, выберите имя сущности списка в раскрывающемся списке, например **Напитки**, щелкните **Set as synonym** (Установить как синоним), а затем выберите элемент списка, для которого имя является синонимом (например, **вода**).
 
-![Снимок экрана страницы сведений о намерениях с выделенным пунктом создания синонима](./media/luis-how-to-add-example-utterances/set-agua-as-synonym.png)
+![Снимок экрана страницы сведений о намерениях с выделенным пунктом Create a new normalized view (Создать нормализованное представление)](./media/luis-how-to-add-example-utterances/set-agua-as-synonym.png)
 
 ## <a name="create-new-item-for-list-entity"></a>Создание элемента для сущности списка
-Создайте элемент для имеющейся сущности списка, выбрав слово или фразу в высказывании. При наличии списка напитков и необходимости добавить `tea` как новый элемент, следуйте таким указаниям:
+Создайте элемент для имеющейся сущности списка, выбрав слово или фразу в высказывании. При наличии списка сотрудников и необходимости добавить `Bob Smith` как новый элемент выполните следующие действия.
 
-В высказывании выберите слово для нового элемента списка (например `tea`), выберите имя сущности списка в раскрывающемся списке (например, **Напиток**), а затем выберите **Create a new synonym** (Создать синоним). 
+В высказывании выберите слово или фразу для нового элемента списка (например, `Bob Smith`), выберите имя сущности списка в раскрывающемся списке (например, **Сотрудник**), а затем выберите **Create a new normalized view** (Создать нормализированное представление). 
 
 ![Снимок экрана добавления нового элемента списка](./media/luis-how-to-add-example-utterances/list-entity-create-new-item.png)
 

@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: rafats
-ms.openlocfilehash: 3170ee1b48aa332a8730ba835396761ca5ef44c7
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: b6d05c5e9bc59df9df7ef8840b70ab027b6e2f74
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43287331"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48269502"
 ---
 # <a name="working-with-the-change-feed-support-in-azure-cosmos-db"></a>Работа с поддержкой веб-канала изменений в Azure Cosmos DB
 
@@ -351,19 +351,13 @@ ms.locfileid: "43287331"
                     CollectionName = this.leaseCollectionName
                 };
             DocumentFeedObserverFactory docObserverFactory = new DocumentFeedObserverFactory();
-            ChangeFeedOptions feedOptions = new ChangeFeedOptions();
-
-            /* ie customize StartFromBeginning so change feed reads from beginning
-                can customize MaxItemCount, PartitonKeyRangeId, RequestContinuation, SessionToken and StartFromBeginning
-            */
-
-            feedOptions.StartFromBeginning = true;
-        
+       
             ChangeFeedProcessorOptions feedProcessorOptions = new ChangeFeedProcessorOptions();
 
             // ie. customizing lease renewal interval to 15 seconds
             // can customize LeaseRenewInterval, LeaseAcquireInterval, LeaseExpirationInterval, FeedPollDelay 
             feedProcessorOptions.LeaseRenewInterval = TimeSpan.FromSeconds(15);
+            feedProcessorOptions.StartFromBeginning = true;
 
             this.builder
                 .WithHostName(hostName)
@@ -439,7 +433,7 @@ ms.locfileid: "43287331"
 
 ### <a name="my-document-is-updated-every-second-and-i-am-not-getting-all-the-changes-in-azure-functions-listening-to-change-feed"></a>Документ обновляется ежесекундно, но в решении "Функции Azure", которое ожидает передачи данных из канала изменений, отображаются не все изменения.
 
-Так как решение "Функции Azure" опрашивает канал изменений каждые 5 секунд, все изменения, внесенные между этими опросами, не сохраняются. В Azure Cosmos DB каждые 5 секунд сохраняется только одна версия. Поэтому вы получите только пятое изменение документа. Но если вы хотите опрашивать канал изменений каждую секунду, можно настроить интервал опроса feedPollTime, как описано в руководстве по [привязкам Azure Cosmos DB](../azure-functions/functions-bindings-cosmosdb.md#trigger---configuration). Значение интервала по умолчанию задано в миллисекундах и составляет 5000. Вы можете настроить интервал сохранения меньше одной секунды, но это не рекомендуется делать из-за повышенного потребления ресурсов ЦП.
+Так как решение "Функции Azure" опрашивает канал изменений каждые 5 секунд, все изменения, внесенные между этими опросами, не сохраняются. В Azure Cosmos DB каждые 5 секунд сохраняется только одна версия. Поэтому вы получите только пятое изменение документа. Но если вы хотите опрашивать канал изменений каждую секунду, можно настроить интервал опроса feedPollTime, как описано в статье [Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х](../azure-functions/functions-bindings-cosmosdb.md#trigger---configuration). Значение интервала по умолчанию задано в миллисекундах и составляет 5000. Вы можете настроить интервал сохранения меньше одной секунды, но это не рекомендуется делать из-за повышенного потребления ресурсов ЦП.
 
 ### <a name="i-inserted-a-document-in-the-mongo-api-collection-but-when-i-get-the-document-in-change-feed-it-shows-a-different-id-value-what-is-wrong-here"></a>Документ добавлен в коллекцию API Mongo, и при его включении в канал изменений отображается другое значение идентификатора. В чем проблема?
 

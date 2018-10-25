@@ -10,12 +10,12 @@ ms.date: 08/14/2018
 ms.author: patricka
 ms.reviewer: fiseraci
 keywords: ''
-ms.openlocfilehash: 8e59f2e7e2fceda7f30e12571cd9e2a552f76231
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: d46fd8f5ea00ee1fc1ee5f7bf09a15dd6af5ba50
+ms.sourcegitcommit: 4edf9354a00bb63082c3b844b979165b64f46286
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "41946449"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48785585"
 ---
 # <a name="azure-stack-datacenter-integration---syslog-forwarding"></a>Интеграция центра обработки данных Azure Stack. Перенаправление системного журнала
 
@@ -23,8 +23,8 @@ ms.locfileid: "41946449"
 
 Начиная с обновления 1805, Azure Stack имеет встроенный клиент системного журнала, который можно настроить на выдачу сообщений системного журнала с полезными данными в формате CEF (общий формат событий). 
 
-> [!IMPORTANT]
-> Перенаправление системного журнала предоставляется в режиме предварительной версии. Эту функцию пока не стоит использовать в рабочих средах. 
+> [!IMPORTANT] 
+> Перенаправление системного журнала предоставляется в режиме предварительной версии. Эту функцию пока не стоит использовать в рабочих средах.  
 
 На следующей схеме показаны основные компоненты, которые участвуют в интеграции системного журнала.
 
@@ -62,14 +62,14 @@ Set-SyslogClient [-pfxBinary <Byte[]>] [-CertPassword <SecureString>] [-RemoveCe
 
 Параметры для командлета *Set-SyslogServer*.
 
-| Параметр | ОПИСАНИЕ | type |
-|---------|---------| ---------|
-| *ServerName* | Полное доменное имя или IP-адрес сервера системного журнала | Строка |
-|*NoEncryption*| Принудительная отправка сообщений из клиента системного журнала в формате открытого текста | Флаг | 
-|*SkipCertificateCheck*| Отмена проверки сертификата, который предоставляется сервером системного журнала во время первоначального подтверждения TLS | Флаг |
-|*SkipCNCheck*| Отмена проверки общего имени сертификата, который предоставляется сервером системного журнала во время первоначального подтверждения TLS | Флаг |
-|*UseUDP*| Использование UDP в качестве транспортного протокола для системного журнала |Флаг |
-|*Remove*| Удаление конфигурации сервера из клиента и прекращение перенаправления системного журнала| Флаг |
+| Параметр | ОПИСАНИЕ | type | Обязательно |
+|---------|---------|---------|---------|
+|*ServerName* | Полное доменное имя или IP-адрес сервера системного журнала | Строка | Да|
+|*NoEncryption*| Принудительная отправка сообщений из клиента системного журнала в формате открытого текста | Флаг | Нет|
+|*SkipCertificateCheck*| Отмена проверки сертификата, который предоставляется сервером системного журнала во время первоначального подтверждения TLS | Флаг | Нет|
+|*SkipCNCheck*| Отмена проверки общего имени сертификата, который предоставляется сервером системного журнала во время первоначального подтверждения TLS | Флаг | Нет|
+|*UseUDP*| Использование UDP в качестве транспортного протокола для системного журнала |Флаг | Нет|
+|*Remove*| Удаление конфигурации сервера из клиента и прекращение перенаправления системного журнала| Флаг | Нет|
 
 Параметры для командлета *Set-SyslogClient*.
 | Параметр | ОПИСАНИЕ | type |
@@ -86,6 +86,7 @@ Set-SyslogClient [-pfxBinary <Byte[]>] [-CertPassword <SecureString>] [-RemoveCe
 > Корпорация Майкрософт настоятельно рекомендует использовать для рабочей среды только эту конфигурацию. 
 
 Чтобы настроить перенаправление системного журнала по протоколу TCP со взаимной проверкой подлинности и шифрованием TLS 1.2, выполните эти два командлета:
+
 ```powershell
 # Configure the server
 Set-SyslogServer -ServerName <FQDN or ip address of syslog server>
@@ -93,10 +94,11 @@ Set-SyslogServer -ServerName <FQDN or ip address of syslog server>
 # Provide certificate to the client to authenticate against the server
 Set-SyslogClient -pfxBinary <Byte[] of pfx file> -CertPassword <SecureString, password for accessing the pfx file>
 ```
+
 Для сертификата клиента должен быть указан тот же корневой сертификат, который был указан во время развертывания Azure Stack. Также он должен содержать закрытый ключ.
 
 ```powershell
-##Example on how to set your syslog client with the ceritificate for mutual authentication. 
+##Example on how to set your syslog client with the certificate for mutual authentication.
 ##Run these cmdlets from your hardware lifecycle host or privileged access workstation.
 
 $ErcsNodeName = "<yourPEP>"
@@ -138,15 +140,15 @@ Set-SyslogServer -ServerName <FQDN or ip address of syslog server>
 Если вы хотите только протестировать интеграцию клиента Azure Stack с сервером системного журнала, используя самозаверяющий и (или) ненадежный сертификат, с помощью следующих флагов пропустите проверку сервера, которую клиент выполняет при первоначальном подтверждении.
 
 ```powershell
- #Skip validation of the Common Name value in the server certificate. Use this flag if you provide an IP address for your syslog server
- Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -SkipCNCheck
+#Skip validation of the Common Name value in the server certificate. Use this flag if you provide an IP address for your syslog server
+Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -SkipCNCheck 
  
- #Skip entirely the server certificate validation
- Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -SkipCertificateCheck
+#Skip entirely the server certificate validation
+Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -SkipCertificateCheck
 ```
+
 > [!IMPORTANT]
 > Корпорация Майкрософт не рекомендует использовать флаг -SkipCertificateCheck для рабочих сред. 
-
 
 ### <a name="configuring-syslog-forwarding-with-tcp-and-no-encryption"></a>Настройка перенаправления системного журнала по протоколу TCP без шифрования
 
@@ -155,6 +157,7 @@ Set-SyslogServer -ServerName <FQDN or ip address of syslog server>
 ```powershell
 Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -NoEncryption
 ```
+
 > [!IMPORTANT]
 > Корпорация Майкрософт настоятельно рекомендует не использовать эту конфигурацию для рабочей среды. 
 
@@ -166,6 +169,7 @@ Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -NoEncryption
 ```powershell
 Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -UseUDP
 ```
+
 Настройка протокола UDP без шифрования будет самой простой, но этот вариант не обеспечивает защиту от атак "злоумышленник в середине" и (или) от неавторизованного прослушивания сообщений. 
 
 > [!IMPORTANT]
@@ -218,13 +222,14 @@ Get-SyslogClient
 ```CEF
 # Common Event Format schema
 CEF: <Version>|<Device Vendor>|<Device Product>|<Device Version>|<Signature ID>|<Name>|<Severity>|<Extensions>
-* Version: 0.0 
+* Version: 0.0
 * Device Vendor: Microsoft
 * Device Product: Microsoft Azure Stack
 * Device Version: 1.0
 ```
 
 ### <a name="cef-mapping-for-windows-events"></a>Сопоставление полей CEF для событий Windows
+
 ```
 * Signature ID: ProviderName:EventID
 * Name: TaskName
@@ -232,7 +237,7 @@ CEF: <Version>|<Device Vendor>|<Device Product>|<Device Version>|<Signature ID>|
 * Extension: Custom Extension Name (for details, see the Custom Extension table below)
 ```
 
-Таблица уровней серьезности для событий Windows 
+Таблица уровней серьезности для событий Windows
 | Уровень серьезности CEF | Уровень события Windows | Числовое значение |
 |--------------------|---------------------| ----------------|
 |0|Не определено|Значение: 0. Обозначает журналы всех уровней.|
@@ -270,12 +275,14 @@ CEF: <Version>|<Device Vendor>|<Device Product>|<Device Version>|<Signature ID>|
 |MasVersion|0|
 
 ### <a name="cef-mapping-for-alerts-created"></a>Сопоставление полей CEF для созданных оповещений
+
 ```
 * Signature ID: Microsoft Azure Stack Alert Creation : FaultTypeId
 * Name: FaultTypeId : AlertId
 * Severity: Alert Severity (for details, see alerts severity table below)
 * Extension: Custom Extension Name (for details, see the Custom Extension table below)
 ```
+
 Таблица уровней серьезности для оповещений
 | Уровень серьезности | Уровень |
 |----------|-------|
@@ -289,6 +296,7 @@ CEF: <Version>|<Device Vendor>|<Device Product>|<Device Version>|<Signature ID>|
 |MasEventDescription|Описание: создана учетная запись пользователя \<TestUser\> для \<TestDomain\>. Это может означать угрозу безопасности. Метод исправления: обратитесь в службу поддержки. Для устранения этой проблемы потребуется помощь службы поддержки клиентов. Не пытайтесь устранять эту проблему самостоятельно. Прежде чем отправить запрос в службу поддержки, запустите процесс сбора файлов журнала по рекомендациям из статьи https://aka.ms/azurestacklogfiles. |
 
 ### <a name="cef-mapping-for-alerts-closed"></a>Сопоставление полей CEF для закрытых оповещений
+
 ```
 * Signature ID: Microsoft Azure Stack Alert Creation : FaultTypeId
 * Name: FaultTypeId : AlertId
@@ -299,6 +307,7 @@ CEF: <Version>|<Device Vendor>|<Device Product>|<Device Version>|<Signature ID>|
 ```
 2018:05:17:-23:59:28 -07:00 TestHost CEF:0.0|Microsoft|Microsoft Azure Stack|1.0|3|TITLE: User Account Created -- DESCRIPTION: A user account \<TestUser\> was created for \<TestDomain\>. It's a potential security risk. -- REMEDIATION: Please contact Support. Customer Assistance is required to resolve this issue. Do not try to resolve this issue without their assistance. Before you open a support request, start the log file collection process using the guidance from https://aka.ms/azurestacklogfiles|10
 ```
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 [Политика обслуживания](azure-stack-servicing-policy.md)

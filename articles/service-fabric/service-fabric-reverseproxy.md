@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 11/03/2017
 ms.author: bharatn
-ms.openlocfilehash: 521a7b90b971ff3ba867945a4713b1f6dc8dbebc
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: 04f233384ad0d02cb5b7056df1e5fdfc74b9bec8
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39503525"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49344631"
 ---
 # <a name="reverse-proxy-in-azure-service-fabric"></a>Обратный прокси-сервер в Azure Service Fabric
 Обратный прокси-сервер, встроенный в Azure Service Fabric, помогает микрослужбам, работающим в кластере Service Fabric, обнаруживать другие службы с конечными точками HTTP и взаимодействовать с этими службами.
@@ -156,9 +156,12 @@ http://10.0.0.5:10592/3f0d39ad-924b-4233-b4a7-02617c6308a6-130834621071472715/
 ```
 По умолчанию переменная `Fabric_NodeIPOrFQDN` для локального кластера имеет значение localhost. Запустите локальный кластер, указав параметр `-UseMachineName`, чтобы гарантировать, что контейнеры имеют доступ к обратному прокси-серверу, работающему на узле. Дополнительные сведения см. в разделе [Настройка среды разработчика для отладки контейнеров](service-fabric-how-to-debug-windows-containers.md#configure-your-developer-environment-to-debug-containers).
 
+Службам Service Fabric, выполняющимся в контейнерах Docker Compose, требуется особая конфигурация http: или https: в *разделе Ports* файла docker-compose.yml. Дополнительные сведения см. в разделе [Поддержка развертывания Docker Compose в Azure Service Fabric (предварительная версия)](service-fabric-docker-compose.md).
+
 ## <a name="next-steps"></a>Дополнительная информация
 * [Установка и настройка обратного прокси-сервера в кластере](service-fabric-reverseproxy-setup.md)
 * [Подключение к защищенной службе с помощью обратного прокси-сервера](service-fabric-reverseproxy-configure-secure-communication.md)
+* [Мониторинг и диагностика обработки запросов на обратном прокси-сервере](service-fabric-reverse-proxy-diagnostics.md)
 * Пример обмена данными по протоколу HTTP между службами представлен в [примере проекта на сайте GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started).
 * [Удаленное взаимодействие службы с Reliable Services](service-fabric-reliable-services-communication-remoting.md)
 * [Начало работы со службами веб-API Microsoft Azure Service Fabric с саморазмещением OWIN](service-fabric-reliable-services-communication-webapi.md)

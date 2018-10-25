@@ -1,39 +1,76 @@
 ---
-title: Инструкции по связыванию сущностей в анализе текста REST API (Microsoft Cognitive Services в Azure) | Документация Майкрософт
-description: Это пошаговое руководство содержит сведения об обнаружении и распознавании сущностей с помощью анализа текста REST API в Microsoft Cognitive Services в Azure.
+title: Использование распознавания сущностей с помощью API анализа текста
+titleSuffix: Azure Cognitive Services
+description: Узнайте, как извлечь сущности, используя REST API анализа текста.
 services: cognitive-services
 author: ashmaka
 manager: cgronlun
 ms.service: cognitive-services
-ms.technology: text-analytics
+ms.component: text-analytics
 ms.topic: article
-ms.date: 5/02/2018
+ms.date: 10/01/2018
 ms.author: ashmaka
-ms.openlocfilehash: 55bec1a0223b70749a97a30e2da92ef15128038c
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: b2916e5c414562c55c35c9c5e7ab378963e004be
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380900"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48248080"
 ---
-# <a name="how-to-identify-linked-entities-in-text-analytics-preview"></a>Обнаружение связанных сущностей в службе Анализ текста (предварительная версия)
+# <a name="how-to-use-named-entity-recognition-in-text-analytics-preview"></a>Как использовать распознавание именованных сущностей в API анализа текста (предварительная версия)
 
-[API связывание сущности](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/5ac4251d5b4ccd1554da7634) принимает неструктурированный текст и возвращает для каждого документа JSON список однозначно разрешенных сущностей со ссылками на дополнительные сведения в Интернете (Википедия и Bing). 
+[API распознавания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634) принимает неструктурированный текст и для каждого документа JSON возвращает список неоднозначных сущностей со ссылками на дополнительную информацию в Интернете (Википедия и Bing). 
 
-## <a name="entity-linking-vs-named-entity-recognition"></a>Связывание сущностей и Распознавание именованных сущностей
+## <a name="entity-linking-and-named-entity-recognition"></a>Связывание сущностей и распознавание именованных сущностей
 
-В предметной области обработки естественного языка можно легко спутать концепции связывания сущности и распознавания именованных сущностей. В предварительной версии конечной точки `entities` Текстовой аналитики поддерживается только связывание сущностей.
+Конечная точка `entities` API анализа текста поддерживает и распознавание именованных сущностей (NER), и связывание сущностей.
 
+### <a name="entity-linking"></a>Связывание сущностей
 Связывание сущностей позволяет идентифицировать сущности, обнаруженные в тексте и устранить неоднозначности (например, упоминание слова "Марс" может обозначать планету или римского бога войны). Этот процесс требует наличия базы знаний, с которыми будут связываться распознанные сущности. Например, конечная точка `entities` Текстовой аналитики использует в качестве такой базы знаний сайт Википедии.
+
+В API анализа текста [версии 2.1 (предварительная версия)](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634) доступно только связывание сущностей.
+
+### <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
+Распознавание именованных сущностей (NER) позволяет идентифицировать различные сущности в тексте и классифицировать их в предварительно определенные классы. Ниже перечислены поддерживаемые классы сущностей.
+
+В API анализа текста версии 2.1 (предварительная версия) (`https://[region].api.cognitive.microsoft.com/text/analytics/v2.1-preview/entities`) доступны и связывание сущностей, и распознавание именованных сущностей (NER).
 
 ### <a name="language-support"></a>Поддержка языков
 
 Связывание сущностей на разных языках требует наличия базы знаний для каждого из этих языков. В Текстовой аналитике это означает, что конечная точка `entities` для распознанных сущностей на каждом поддерживаемом языке предоставляет ссылку на соответствующий раздел Википедии на этом языке. Поскольку наполнение Википедии существенно различается для разных языков, функциональность связывания сущностей также будет иметь существенные различия.
 
+## <a name="supported-types-for-named-entity-recognition"></a>Поддерживаемые типы распознанных именованных сущностей
+
+| type  | SubType | Пример |
+|:-----------   |:------------- |:---------|
+| Person        | Недоступно\*         | "Джеф", "Билл Гейтс"     |
+| Расположение      | Недоступно\*         | "Редмонд, штат Вашингтон", "Париж"  |
+| План  | Недоступно\*         | "Майкрософт"   |
+| Количество      | Number        | "6", "шесть"     | 
+| Количество      | Процент    | "50 %", "пятьдесят процентов"| 
+| Количество      | Порядковый номер       | "2-й", "второй"     | 
+| Количество      | Диапазон чисел   | "4–8"     | 
+| Количество      | Age           | "90 дней", "30 лет"    | 
+| Количество      | Валюта      | "10,99 долл. США"     | 
+| Количество      | Измерение     | "10 миль", "40 см"     | 
+| Количество      | температура;   | "32 градуса"    |
+| Datetime      | Недоступно\*         | "18:30 4 февраля 2012 г."      | 
+| Datetime      | Дата          | "2 мая 2017 г.", "02.05.2017"   | 
+| Дата и время     | Время          | "8 утра", "8:00"  | 
+| Datetime      | Диапазон дат     | "с 2 по 5 мая"    | 
+| Datetime      | Диапазон времени     | "6:00–17:00"     | 
+| Datetime      | Duration      | "1 минута и 45 секунд"   | 
+| Datetime      | Set           | "каждый вторник"     | 
+| Datetime      | TimeZone      |    | 
+| URL-адрес           | Недоступно\*         | "http://www.bing.com"    |
+| Email         | Недоступно\*         | "support@contoso.com" |
+\* Некоторые сущности могут опускать `SubType` в зависимости от входных и извлеченных сущностей.
+
+
 
 ## <a name="preparation"></a>Подготовка
 
-Необходимо иметь документы JSON в следующем формате: "идентификатор","текст","язык".
+Необходимо иметь документы JSON в следующем формате: "идентификатор","текст","язык"
 
 Поддерживаемые языки перечислены в [этом списке](../text-analytics-supported-languages.md).
 
@@ -42,11 +79,11 @@ ms.locfileid: "35380900"
 ```
 {"documents": [{"id": "1",
                 "language": "en",
-                "text": "I really enjoy the new XBox One S. It has a clean look, it has 4K/HDR resolution and it is affordable."
+                "text": "Jeff bought three dozen eggs because there was a 50% discount."
                 },
                {"id": "2",
                 "language": "en",
-                "text": "The Seattle Seahawks won the Super Bowl in 2014."
+                "text": "The Great Depression began in 1929. By 1933, the GDP in America fell by 25%."
                 }
                ]
 }
@@ -54,26 +91,26 @@ ms.locfileid: "35380900"
     
 ## <a name="step-1-structure-the-request"></a>Шаг 1: Структура запроса
 
-Сведения об определении запроса можно найти в [Способ вызова API анализ текста](text-analytics-how-to-call-api.md). Для удобства повторим следующие моменты.
+Сведения об определении запроса можно найти в статье [How to call the Text Analytics REST API](text-analytics-how-to-call-api.md) (Способ вызова REST API анализа текста). Для удобства повторим следующие моменты.
 
 + Создайте запрос **POST**. Изучите документацию по API для этого запроса: [API связывания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/5ac4251d5b4ccd1554da7634).
 
-+ Создайте конечную точку HTTP для извлечения ключевых фраз. Она должна включать ресурс `/entities`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/entities`
++ Создайте конечную точку HTTP для извлечения ключевых фраз. Она должна включать ресурс `/entities`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1-preview/entities`
 
-+ Задайте заголовок запроса, чтобы включить ключ доступа для операций Текстовой аналитики. Дополнительные сведения см. в статье [о поиске конечных точек и ключей доступа](text-analytics-how-to-access-key.md).
++ Задайте заголовок запроса, чтобы включить ключ доступа для операций Анализа текста. Дополнительные сведения см. в статье [о поиске конечных точек и ключей доступа](text-analytics-how-to-access-key.md).
 
-+ В тексте запроса укажите набор документов JSON, которые подготовлены для этого анализа.
++ В тексте запроса укажите набор документов JSON, которые подготовлены для этого анализа
 
 > [!Tip]
-> Используйте [Postman](text-analytics-how-to-call-api.md) или откройте **консоль тестирования API** в [документации](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/5ac4251d5b4ccd1554da7634) чтобы создать запрос правильной структуры и передать его в службу в запросе POST.
+> Используйте [Postman](text-analytics-how-to-call-api.md) или откройте **консоль тестирования API** в [документации](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634), чтобы структурировать запрос и передать его (используя метод POST) в службу.
 
-## <a name="step-2-post-the-request"></a>Шаг 2: Передача запроса
+## <a name="step-2-post-the-request"></a>Шаг 2. Передача запроса
 
 Анализ выполняется при получении запроса. Служба принимает до 100 запросов в минуту. Каждый запрос не должен превышать 1 МБ.
 
 Не забывайте, что эта служба работает без отслеживания состояния. Данные не хранятся в учетной записи. Результаты возвращаются немедленно в ответе.
 
-## <a name="step-3-view-results"></a>Шаг 3: Просмотр результатов
+## <a name="step-3-view-results"></a>Шаг 3. Просмотр результатов
 
 Все запросы POST вернут ответ в формате JSON с идентификаторами и обнаруженными свойствами.
 
@@ -81,85 +118,179 @@ ms.locfileid: "35380900"
 
 Далее показан пример выходных данных для связывания сущностей:
 
-```
+```json
 {
-    "documents": [
+    "Documents": [
         {
-            "id": "1",
-            "entities": [
+            "Id": "1",
+            "Entities": [
                 {
-                    "name": "Xbox One",
-                    "matches": [
+                    "Name": "Jeff",
+                    "Matches": [
                         {
-                            "text": "XBox One",
-                            "offset": 23,
-                            "length": 8
+                            "Text": "Jeff",
+                            "Offset": 0,
+                            "Length": 4
                         }
                     ],
-                    "wikipediaLanguage": "en",
-                    "wikipediaId": "Xbox One",
-                    "wikipediaUrl": "https://en.wikipedia.org/wiki/Xbox_One",
-                    "bingId": "446bb4df-4999-4243-84c0-74e0f6c60e75"
+                    "Type": "Person"
                 },
                 {
-                    "name": "Ultra-high-definition television",
-                    "matches": [
+                    "Name": "three dozen",
+                    "Matches": [
                         {
-                            "text": "4K",
-                            "offset": 63,
-                            "length": 2
+                            "Text": "three dozen",
+                            "Offset": 12,
+                            "Length": 11
                         }
                     ],
-                    "wikipediaLanguage": "en",
-                    "wikipediaId": "Ultra-high-definition television",
-                    "wikipediaUrl": "https://en.wikipedia.org/wiki/Ultra-high-definition_television",
-                    "bingId": "7ee02026-b6ec-878b-f4de-f0bc7b0ab8c4"
+                    "Type": "Quantity",
+                    "SubType": "Number"
+                },
+                {
+                    "Name": "50",
+                    "Matches": [
+                        {
+                            "Text": "50",
+                            "Offset": 49,
+                            "Length": 2
+                        }
+                    ],
+                    "Type": "Quantity",
+                    "SubType": "Number"
+                },
+                {
+                    "Name": "50%",
+                    "Matches": [
+                        {
+                            "Text": "50%",
+                            "Offset": 49,
+                            "Length": 3
+                        }
+                    ],
+                    "Type": "Quantity",
+                    "SubType": "Percentage"
                 }
             ]
         },
         {
-            "id": "2",
-            "entities": [
+            "Id": "2",
+            "Entities": [
                 {
-                    "name": "2013 Seattle Seahawks season",
-                    "matches": [
+                    "Name": "Great Depression",
+                    "Matches": [
                         {
-                            "text": "Seattle Seahawks",
-                            "offset": 4,
-                            "length": 16
+                            "Text": "The Great Depression",
+                            "Offset": 0,
+                            "Length": 20
                         }
                     ],
-                    "wikipediaLanguage": "en",
-                    "wikipediaId": "2013 Seattle Seahawks season",
-                    "wikipediaUrl": "https://en.wikipedia.org/wiki/2013_Seattle_Seahawks_season",
-                    "bingId": "eb637865-4722-4eca-be9e-0ac0c376d361"
+                    "WikipediaLanguage": "en",
+                    "WikipediaId": "Great Depression",
+                    "WikipediaUrl": "https://en.wikipedia.org/wiki/Great_Depression",
+                    "BingId": "d9364681-98ad-1a66-f869-a3f1c8ae8ef8"
+                },
+                {
+                    "Name": "1929",
+                    "Matches": [
+                        {
+                            "Text": "1929",
+                            "Offset": 30,
+                            "Length": 4
+                        }
+                    ],
+                    "Type": "DateTime",
+                    "SubType": "DateRange"
+                },
+                {
+                    "Name": "By 1933",
+                    "Matches": [
+                        {
+                            "Text": "By 1933",
+                            "Offset": 36,
+                            "Length": 7
+                        }
+                    ],
+                    "Type": "DateTime",
+                    "SubType": "DateRange"
+                },
+                {
+                    "Name": "Gross domestic product",
+                    "Matches": [
+                        {
+                            "Text": "GDP",
+                            "Offset": 49,
+                            "Length": 3
+                        }
+                    ],
+                    "WikipediaLanguage": "en",
+                    "WikipediaId": "Gross domestic product",
+                    "WikipediaUrl": "https://en.wikipedia.org/wiki/Gross_domestic_product",
+                    "BingId": "c859ed84-c0dd-e18f-394a-530cae5468a2"
+                },
+                {
+                    "Name": "United States",
+                    "Matches": [
+                        {
+                            "Text": "America",
+                            "Offset": 56,
+                            "Length": 7
+                        }
+                    ],
+                    "WikipediaLanguage": "en",
+                    "WikipediaId": "United States",
+                    "WikipediaUrl": "https://en.wikipedia.org/wiki/United_States",
+                    "BingId": "5232ed96-85b1-2edb-12c6-63e6c597a1de",
+                    "Type": "Location"
+                },
+                {
+                    "Name": "25",
+                    "Matches": [
+                        {
+                            "Text": "25",
+                            "Offset": 72,
+                            "Length": 2
+                        }
+                    ],
+                    "Type": "Quantity",
+                    "SubType": "Number"
+                },
+                {
+                    "Name": "25%",
+                    "Matches": [
+                        {
+                            "Text": "25%",
+                            "Offset": 72,
+                            "Length": 3
+                        }
+                    ],
+                    "Type": "Quantity",
+                    "SubType": "Percentage"
                 }
             ]
         }
     ],
-    "errors": []
+    "Errors": []
 }
 ```
-
-Всегда, если это возможно, ответ включает идентификатор Википедии, URL-адрес Википедии и идентификатор Bing для каждой обнаруженной сущности. С их помощью вы можете расширить возможности приложения, используя дополнительные сведения о связанных сущностях.
 
 
 ## <a name="summary"></a>Сводка
 
-В этой статье рассматриваются основные понятия и рабочий процесс связывания сущностей в службе Текстовой аналитики Cognitive Services. Краткая сводка.
+В этой статье рассматриваются основные понятия и рабочий процесс связывания сущностей в службе Текстовой аналитики Cognitive Services. В разделе "Сводка" сделайте следующее.
 
-+ [API связывания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/5ac4251d5b4ccd1554da7634) доступен для некоторых языков.
++ [Сущности API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634) доступны для выбранных языков.
 + В тексте запроса передаются документы JSON, которые содержат идентификатор, текст и код языка.
 + Отправьте запрос POST на конечную точку `/entities`, используя правильные значения [ключа доступа и конечной точки](text-analytics-how-to-access-key.md) из вашей подписки.
 + Ответ будет содержать выходные данные, содержащие связанные сущности (включая оценки уверенности, смещения и веб-ссылки для каждого идентификатора документа), которые можно использовать в любом приложении
 
 ## <a name="see-also"></a>См. также 
 
- [Text Analytics overview](../overview.md) (Общие сведения о Текстовой аналитике)  
+ [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)  
  [Часто задаваемые вопросы](../text-analytics-resource-faq.md)</br>
- [Страница продукта для Текстовой аналитики](//go.microsoft.com/fwlink/?LinkID=759712) 
+ [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712) 
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [API анализа текста](//westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6)
+> [API анализа текста](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634)

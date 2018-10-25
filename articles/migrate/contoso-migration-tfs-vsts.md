@@ -5,14 +5,14 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 09/05/2018
+ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: a304cb08ec001587af5e6ea740853bd8435824e7
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 79c95a53ace4fd5ab638587d1b74980812fbc273
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44297933"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49116969"
 ---
 # <a name="contoso-migration--refactor-a-team-foundation-server-deployment-to-azure-devops-services"></a>Миграция Contoso: рефакторинг развертывания Team Foundation Server в Azure DevOps Services
 
@@ -35,6 +35,7 @@ ms.locfileid: "44297933"
 Статья 11. Рефакторинг развертывания TFS в Azure DevOps Services | Перенос приложения разработки TFS в Azure DevOps Services в Azure | Эта статья
 [Статья 12. Повторное проектирование приложения для использования контейнеров Azure и Базы данных SQL Azure](contoso-migration-rearchitect-container-sql.md) | В статье демонстрируется, как Contoso переносит и перепроектирует приложение SmartHotel в Azure. Специалисты компании перепроектируют веб-уровень приложения в контейнер Windows и переносят базу данных приложения в Базу данных SQL Azure. | Доступна
 [Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | В статье демонстрируется, как Contoso повторно создает свое приложение SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Azure Kubernetes, Функции Azure, Cognitive Services и Cosmos DB. | Доступна
+[Статья 14. Масштабирование миграции в Azure](contoso-migration-scale.md) | Ознакомившись с вариантами сочетаний миграции, компания Contoso готовится к полномасштабной миграции в Azure. | Доступна
 
 
 ## <a name="business-drivers"></a>Бизнес-факторы

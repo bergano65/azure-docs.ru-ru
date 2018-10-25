@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/14/2018
+ms.date: 10/15/2018
 ms.author: jeedes
-ms.openlocfilehash: a7d77df4d6be1572d2076684cfa4702cb32b5ed6
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
+ms.openlocfilehash: a9acb9539497c85f408ce7417fa5983072ea80b9
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44391918"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49365668"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-multiple-amazon-web-services-aws-accounts"></a>Руководство по интеграции Azure Active Directory с несколькими учетными записями Amazon Web Services (AWS)
 
@@ -35,6 +35,19 @@ ms.locfileid: "44391918"
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ![Amazon Web Services (AWS) в списке результатов](./media/aws-multi-accounts-tutorial/amazonwebservice.png)
+
+>[!NOTE]
+>Учтите, что подключение одного приложения AWS ко всем учетным записям AWS не рекомендуется. Вместо этого мы рекомендуем использовать [этот](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) подход, чтобы настроить несколько экземпляров учетной записи AWS для нескольких экземпляров приложений AWS в Azure AD.
+
+**Обратите внимание на то, что мы не рекомендуем использовать этот подход по следующим причинам.**
+
+* Вам нужно исправлять все роли для приложения с помощью Graph Explorer. Мы не рекомендуем использовать файлы манифестов.
+
+* Мы видели отчеты клиентов, свидетельствующие о том, что после добавления примерно 1200 ролей для одного приложения AWS любая операция с приложением порождала ошибки, связанные с размером. Установлено жесткое ограничение размера объекта приложения.
+
+* Необходимо вручную обновлять роль по мере добавления ролей в любые учетные записи. К сожалению, это требует замены сведений, а не добавления. Кроме того, если число учетных записей растет, то между учетными записями и ролями устанавливается связь "N к N".
+
+* Все учетные записи AWS будут использовать один и тот же XML-файл метаданных федерации, и во время смены сертификата будет непросто одновременно обновить сертификат для всех учетных записей AWS.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -64,19 +77,19 @@ ms.locfileid: "44391918"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![изображение](./media/aws-multi-accounts-tutorial/selectazuread.png)
 
 2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
+    ![изображение](./media/aws-multi-accounts-tutorial/a_select_app.png)
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![изображение](./media/aws-multi-accounts-tutorial/a_new_app.png)
 
 4. В поле поиска введите **Amazon Web Services (AWS)**, выберите **Amazon Web Services (AWS)** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить приложение.
 
-    ![Amazon Web Services (AWS) в списке результатов](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_addfromgallery.png)
+     ![изображение](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_addfromgallery.png)
 
 5. Добавив приложение, перейдите к странице **Свойства** и скопируйте **идентификатор объекта**.
 
@@ -101,54 +114,53 @@ ms.locfileid: "44391918"
 
 **Чтобы настроить единый вход Azure AD в Amazon Web Services, выполните следующие действия:**
 
-1. На портале Azure на странице интеграции с приложением **Amazon Web Services (AWS)** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Amazon Web Services (AWS)** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![изображение](./media/aws-multi-accounts-tutorial/B1_B2_Select_SSO.png)
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML**, чтобы включить единый вход.
 
-3. В разделе **Домены и URL-адреса приложения Amazon Web Services (AWS)** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
+    ![изображение](./media/aws-multi-accounts-tutorial/b1_b2_saml_sso.png)
 
-    ![Сведения о домене и URL-адресах для единого входа в приложение Amazon Web Services (AWS)](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_url.png)
+3. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML) нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-4. Приложение Amazon Web Services (AWS) ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На следующем снимке экрана приведен пример.
+    ![изображение](./media/aws-multi-accounts-tutorial/b1-domains_and_urlsedit.png)
 
-    ![Настройка атрибута единого входа](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_attribute.png)    
+4. В разделе **Базовая конфигурация SAML** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
 
-5. В разделе **Атрибуты пользователя** диалогового окна **Единый вход** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия:
+    ![изображение](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_url.png)
 
-    | Имя атрибута  | Значение атрибута | Пространство имен |
+5. Приложение Amazon Web Services (AWS) ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **User Attributes & Claims** (Атрибуты пользователя и утверждения) на странице интеграции приложения. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML) нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **User Attributes & Claims** (Атрибуты пользователя и утверждения).
+
+    ![изображение](./media/aws-multi-accounts-tutorial/i4-attribute.png)
+
+6. В разделе **Утверждения пользователя** диалогового окна **User Attributes & Claims** (Атрибуты пользователя и утверждения) настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
+    
+    | ИМЯ  | Исходный атрибут  | Пространство имен |
     | --------------- | --------------- | --------------- |
     | RoleSessionName | user.userprincipalname | https://aws.amazon.com/SAML/Attributes |
     | Роль            | user.assignedroles |  https://aws.amazon.com/SAML/Attributes |
-    | SessionDuration             | Укажите значение продолжительности сеанса в соответствии с потребностями |  https://aws.amazon.com/SAML/Attributes |
+    | SessionDuration             | "Укажите значение от 900 секунд (15 минут) до 43 200 секунд (12 часов)." |  https://aws.amazon.com/SAML/Attributes |
 
-    >[!TIP]
-    >Необходимо настроить подготовку пользователя в Azure AD для получения всех ролей из консоли AWS. Этапы подготовки см. ниже.
+    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    a. Щелкните **Добавить атрибут**, чтобы открыть диалоговое окно **Добавление атрибута**.
+    ![изображение](./media/aws-multi-accounts-tutorial/i2-attribute.png)
 
-    ![Добавление атрибута для настройки единого входа](./media/aws-multi-accounts-tutorial/tutorial_attribute_04.png)
-
-    ![Настройка атрибута единого входа](./media/aws-multi-accounts-tutorial/tutorial_attribute_05.png)
+    ![изображение](./media/aws-multi-accounts-tutorial/i3-attribute.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
-    c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
+    c. Введите значение **Пространство имен**.
 
-    d. В текстовом поле **Пространство имен** введите значение пространства имен, показанное для этой строки.
+    d. В качестве источника выберите **Атрибут**.
 
-    d. Нажмите кнопку **ОК**.
+    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-6. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+    Е. Выберите команду **Сохранить**.
 
-    ![Ссылка для скачивания сертификата](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_certificate.png) 
+7. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML), в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, чтобы скачать **XML-файл метаданных федерации** и сохранить его на компьютере.
 
-7. Нажмите кнопку **Сохранить** .
-
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/aws-multi-accounts-tutorial/tutorial_general_400.png)
+    ![изображение](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_certificate.png) 
 
 8. В другом окне браузера войдите на сайт Amazon Web Services компании в качестве администратора.
 
@@ -156,7 +168,7 @@ ms.locfileid: "44391918"
 
     ![Настройка главной страницы единого входа][11]
 
-10. Щелкните **IAM**. (Управление удостоверениями и доступом).
+10. Щелкните **Identity and Access Management**(Управление удостоверениями и доступом).
 
     ![Настройка удостоверения для единого входа][12]
 
@@ -196,7 +208,7 @@ ms.locfileid: "44391918"
   
     d. Щелкните **Next: Permissions** (Далее: разрешения).
 
-16. В диалоговом окне **Attach Permissions Policies** (Привязка политик разрешений) щелкните **Next: Review** (Далее: проверка).  
+16. В диалоговом окне **Attach Permissions Policies** (Присоединение политик разрешений) не нужно присоединять какую-либо политику. Щелкните **Next: Review** (Далее. Проверка).  
 
     ![Настройка политики единого входа][33]
 
@@ -208,9 +220,9 @@ ms.locfileid: "44391918"
 
     b. В текстовом поле **Role description** (Описание роли) введите описание.
 
-    a. Щелкните **Создать роль**.
+    c. Щелкните **Создать роль**.
 
-    b. Создайте необходимое количество ролей и сопоставьте их с поставщиком удостоверений.
+    d. Создайте необходимое количество ролей и сопоставьте их с поставщиком удостоверений.
 
 18. Выйдите из текущей учетной записи AWS и войдите в систему с другой учетной записью, в которой нужно настроить единый вход с помощью Azure AD.
 
@@ -349,17 +361,6 @@ ms.locfileid: "44391918"
 
 <!--Image references-->
 
-[1]: ./media/aws-multi-accounts-tutorial/tutorial_general_01.png
-[2]: ./media/aws-multi-accounts-tutorial/tutorial_general_02.png
-[3]: ./media/aws-multi-accounts-tutorial/tutorial_general_03.png
-[4]: ./media/aws-multi-accounts-tutorial/tutorial_general_04.png
-
-[100]: ./media/aws-multi-accounts-tutorial/tutorial_general_100.png
-
-[200]: ./media/aws-multi-accounts-tutorial/tutorial_general_200.png
-[201]: ./media/aws-multi-accounts-tutorial/tutorial_general_201.png
-[202]: ./media/aws-multi-accounts-tutorial/tutorial_general_202.png
-[203]: ./media/aws-multi-accounts-tutorial/tutorial_general_203.png
 [11]: ./media/aws-multi-accounts-tutorial/ic795031.png
 [12]: ./media/aws-multi-accounts-tutorial/ic795032.png
 [13]: ./media/aws-multi-accounts-tutorial/ic795033.png
@@ -378,5 +379,4 @@ ms.locfileid: "44391918"
 [38]: ./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices_createnewaccesskey.png
 [39]: ./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices_provisioning_automatic.png
 [40]: ./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices_provisioning_testconnection.png
-[41]: ./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices_provisioning_on.png
-
+[41]: ./media/aws-multi-accounts-tutorial/

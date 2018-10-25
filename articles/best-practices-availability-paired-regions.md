@@ -6,12 +6,12 @@ ms.service: multiple
 ms.topic: article
 ms.date: 07/03/2018
 ms.author: raynew
-ms.openlocfilehash: 6eb28ad918f9d95c26d91c05d8ee9556ef768bd3
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 5678b8408eac303d9036d21612f60fafc325425d
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43125858"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48801919"
 ---
 # <a name="business-continuity-and-disaster-recovery-bcdr-azure-paired-regions"></a>Непрерывность бизнес-процессов и аварийное восстановление в службах BizTalk: пары регионов Azure
 
@@ -34,6 +34,7 @@ Azure работает в различных странах по всему ми
 | Канада |Центральная Канада |Восточная Канада |
 | Китай |Север Китая |Восток Китая|
 | Европа |Северная Европа |Западная Европа |
+| Франция |Центральная Франция|Южная Франция|
 | Германия |Центральная Германия |Северо-восточная Германия |
 | Индия |Центральная Индия |Южная Индия |
 | Индия |Западная Индия (1) |Южная Индия |
@@ -69,11 +70,11 @@ Azure работает в различных странах по всему ми
 ## <a name="cross-region-activities"></a>Межрегиональные действия
 Как показано на рисунке 2.
 
-![PaaS](./media/best-practices-availability-paired-regions/1Green.png) **Служба вычислений Azure (PaaS)**. Вы должны подготовить дополнительные вычислительные ресурсы заранее, чтобы обеспечить доступность ресурсов в другом регионе во время аварии. Дополнительные сведения см. в [техническом руководстве по обеспечению устойчивости в Azure](resiliency/resiliency-technical-guidance.md).
+![IaaS](./media/best-practices-availability-paired-regions/1Green.png) **Служба вычислений Azure (IaaS)**. Вы должны подготовить дополнительные вычислительные ресурсы заранее, чтобы обеспечить доступность ресурсов в другом регионе во время аварии. Дополнительные сведения см. в [техническом руководстве по обеспечению устойчивости в Azure](resiliency/resiliency-technical-guidance.md).
 
 ![Служба хранилища](./media/best-practices-availability-paired-regions/2Green.png) **Служба хранилища Azure**. При создании учетной записи службы хранилища Azure геоизбыточное хранилище (GRS) настраивается по умолчанию. При использовании GRS данные реплицируются трижды в основном регионе и трижды в дополнительном. Дополнительные сведения см. в статье [Репликация службы хранилища Azure](storage/common/storage-redundancy.md).
 
-![SQL Azure](./media/best-practices-availability-paired-regions/3Green.png) **Базы данных SQL Azure**. Используя георепликацию SQL Azure уровня "Стандартный", вы можете настроить асинхронную репликацию транзакций в дополнительный регион. Используя георепликацию уровня "Премиум", вы можете настроить репликацию в любой регион мира, но для наиболее эффективного аварийного восстановления мы рекомендуем развертывать эти ресурсы в дополнительном регионе. Дополнительные сведения см. в статье [Обзор: активная георепликация для базы данных SQL](sql-database/sql-database-geo-replication-overview.md).
+![Azure SQL](./media/best-practices-availability-paired-regions/3Green.png) **База данных SQL Azure**. С помощью георепликации базы данных SQL Azure можно настроить асинхронную репликацию транзакций в любой регион мира. Тем не менее, для наиболее эффективного аварийного восстановления мы рекомендуем развертывать эти ресурсы в связанном регионе. Дополнительные сведения см. в статье [Обзор: активная георепликация для базы данных SQL](sql-database/sql-database-geo-replication-overview.md).
 
 ![Resource Manager](./media/best-practices-availability-paired-regions/4Green.png) **Azure Resource Manager**. По своему существу Resource Manager обеспечивает логическую изоляцию компонентов управления службами во всех регионах. Это означает, что логические сбои в одном регионе едва ли затронут другой регион.
 

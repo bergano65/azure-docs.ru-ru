@@ -8,12 +8,12 @@ ms.date: 09/21/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 5e358992661f7bcf06121a07c1bafca0850316b2
-ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
+ms.openlocfilehash: 259d61125828ee487b74daa525f3635cfa592ce7
+ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47423143"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48017710"
 ---
 # <a name="properties-of-the-edge-agent-and-edge-hub-module-twins"></a>Свойства двойников модулей EdgeAgent и EdgeHub
 
@@ -46,6 +46,7 @@ EdgeAgent и EdgeHub — это два модуля, которые состав
 | systemModules.edgeHub.configuration.id | Идентификатор развертывания, которое развернуло этот модуль. | Это свойство задается в Центре Интернета вещей при применении этого манифеста с помощью развертывания. Не является частью манифеста развертывания. |
 | modules.{ИД_модуля}.version | Определяемая пользователем строка, представляющая версию этого модуля. | Yes |
 | modules.{ИД_модуля}.type | Должно быть "docker". | Yes |
+| modules.{Ид_модуля}.status | {"running" \| "stopped"} | Yes |
 | modules.{ИД_модуля}.restartPolicy | {"never" \| "on-failed" \| "on-unhealthy" \| "always"} | Yes |
 | modules.{ИД_модуля}.settings.image | Универсальный код ресурса (URI) для образа модуля. | Yes |
 | modules.{ИД_модуля}.settings.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера модуля. [Параметры создания Docker][lnk-docker-create-options] | Нет  |

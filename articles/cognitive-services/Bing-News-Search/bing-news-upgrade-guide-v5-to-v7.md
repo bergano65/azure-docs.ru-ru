@@ -1,21 +1,21 @@
 ---
-title: Обновление API Bing для поиска новостей версии 5 до версии 7 | Документация Майкрософт
+title: Обновление API Bing для поиска новостей с версии 5 до версии 7
+titlesuffix: Azure Cognitive Services
 description: Идентифицирует части приложения, которые необходимо обновить для использования версии 7.
 services: cognitive-services
 author: swhite-msft
-manager: ehansen
-ms.assetid: 5334C475-4841-4736-A66E-DC1E07CBCEC9
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-news-search
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: baed6f0091ddad40b4802c0fb52dc2ca1818cd03
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: c6ecb7d4c1e5b648373fcaa3f44c6294329d33c2
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380265"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48801171"
 ---
 # <a name="news-search-api-upgrade-guide"></a>Руководство по обновлению API для поиска новостей
 
@@ -38,11 +38,11 @@ ms.locfileid: "35380265"
 
 - Коды ошибок версии 5 заменены следующими возможными значениями `code` и `subCode`.
 
-|Код|SubCode|ОПИСАНИЕ
+|Код|SubCode (дополнительный код)|ОПИСАНИЕ
 |-|-|-
 |ServerError|UnexpectedError<br/>ResourceError<br/>NotImplemented|Bing возвращает ServerError (ошибку сервера) каждый раз при возникновении любого из условий вложенного кода. Ответ включает в себя ошибки, если код состояния HTTP — 500.
 |InvalidRequest|ParameterMissing<br/>ParameterInvalidValue<br/>HttpNotAllowed<br/>Заблокировано|Bing возвращает ошибку InvalidRequest (недопустимый запрос) всякий раз, когда любая часть запроса недопустима. Например, отсутствует обязательный параметр или значение параметра недопустимо.<br/><br/>В случае ошибки ParameterMissing (отсутствующий параметр) или ParameterInvalidValue (недопустимое значение параметра) кодом состояния HTTP будет 400.<br/><br/>При ошибке HttpNotAllowed (HTTP запрещен) будет наблюдаться код состояния HTTP 410.
-|RateLimitExceeded||Bing возвращает ошибку RateLimitExceeded (превышение лимита частоты) всякий раз при превышении квоты запросов в секунду (QPS) или запросов в месяц (QPM).<br/><br/>Bing возвращает код состояния HTTP 429 при превышении квоты QPS и 403 при превышении QPM.
+|RateLimitExceeded||Bing возвращает ошибку RateLimitExceeded всякий раз при превышении квоты запросов в секунду (QPS) или запросов в месяц (QPM).<br/><br/>Bing возвращает код состояния HTTP 429 при превышении квоты QPS и 403 при превышении QPM.
 |InvalidAuthorization|AuthorizationMissing<br/>AuthorizationRedundancy|Bing возвращает InvalidAuthorization, когда Bing не может проверить подлинность вызывающего объекта. Например, когда заголовок `Ocp-Apim-Subscription-Key` отсутствует или при недопустимом ключе подписки.<br/><br/>Избыточность возникает, если указать более одного способа проверки подлинности.<br/><br/>При ошибке InvalidAuthorization кодом состояния HTTP будет 401.
 |InsufficientAuthorization|AuthorizationDisabled<br/>AuthorizationExpired|Bing возвращает InsufficientAuthorization, когда вызывающая сторона не имеет разрешений на доступ к ресурсу. Это может произойти, если ключ подписки отключен или срок его действия истек. <br/><br/>При ошибке InsufficientAuthorization кодом состояния HTTP будет 403.
 

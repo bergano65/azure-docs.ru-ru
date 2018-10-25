@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: c56cefb3c62787f1bc2561aecec719cdbbc3b1c2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: c4128c4c643b1410faf3753f8178cfcda654b2ae
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "22983449"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48268960"
 ---
 # <a name="user-profile-templates-in-azure-api-management"></a>Шаблоны профилей пользователей в службе управления API Azure
 Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  

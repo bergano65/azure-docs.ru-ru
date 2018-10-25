@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/27/2018
+ms.date: 10/04/2018
 ms.author: sethm
 ms.reviewer: ''
-ms.openlocfilehash: 8e9d40451cd0d9c3a6505ee24ca02852d9d4c527
-ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
+ms.openlocfilehash: ef6b068e7a8b97713c54ddeea1817a6c379703c8
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47423482"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48804605"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack"></a>Элементы Azure Marketplace, доступные для Azure Stack
 
@@ -239,6 +239,7 @@ Microsoft Azure Stack поддерживает указанные ниже ви�
 | ![CloudLink SecureVM](media/azure-stack-marketplace-azure-items/cloudlink.png) | [ CloudLink SecureVM](https://azuremarketplace.microsoft.com/marketplace/apps/cloudlink.cloudlink-securevm)  | Легкость и надежность в отслеживании и шифровании виртуальных машин, а также управлении ими. **Скачайте все элементы CloudLink SecureVM.** | Dell EMC |
 | ![EventTracker SIEM](media/azure-stack-marketplace-azure-items/eventtracker.png) | [EventTracker SIEM](https://azuremarketplace.microsoft.com/marketplace/apps/eventtracker.eventtracker-siem)  | EventTracker SIEM — комплексная платформа защиты, предоставляющая расширенные средства безопасности с возможностями соответствия требованиям аудита. | EventTracker |
 | ![f5](media/azure-stack-marketplace-azure-items/f5.png) | [f5 Big-IP Virtual Edition](https://azuremarketplace.microsoft.com/marketplace/apps/f5-networks.f5-big-ip-best)  | Расширенная балансировка нагрузки, глобальная балансировка нагрузки сервера (GSLB), сетевой брандмауэр, DNS, WAF и доступ к приложениям. | F5 Networks |
+| ![Брандмауэр следующего поколения FortiGate](media/azure-stack-marketplace-azure-items/fortinetsquare.png) | [Брандмауэр следующего поколения FortiGate](https://azuremarketplace.microsoft.com/marketplace/apps/fortinet.fortinet-fortigate-singlevm) | Технология брандмауэра обеспечивает полную защиту контента и сети с помощью универсального пакета эффективных функций безопасности. Сюда входят контроль приложений, антивирус, IPS, веб-фильтрация, VPN, а также такие дополнительные компоненты, как управление уязвимостью, что позволяет выявлять и устранять новейшие комплексные угрозы безопасности. | Fortinet |
 | ![Песочница Hortonworks Data Platform (HDP)](media/azure-stack-marketplace-azure-items/hortonworks.png) | [Песочница Hortonworks Data Platform (HDP)](https://azuremarketplace.microsoft.com/marketplace/apps/hortonworks.hortonworks-sandbox) | Платформа с полностью открытым кодом на базе HDP 2.5 для Hadoop, Spark, Storm, HBase, Kafka, Hive и Ambari. | Hortonworks |
 | ![Подсистема балансировки нагрузки LoadMaster с переключением контента контроллера доставки приложений](media/azure-stack-marketplace-azure-items/kemp.png) | [Подсистема балансировки нагрузки LoadMaster с переключением контента контроллера доставки приложений](https://azuremarketplace.microsoft.com/marketplace/apps/kemptech.vlm-azure) | Подсистема балансировки нагрузки уровня 4–7 контроллера доставки приложений (ADC), переключение контента и диспетчер трафика. | KEMP Technologies Inc. |
 | ![NRI mPLAT Suite — Multi-Cloud Conductor](media/azure-stack-marketplace-azure-items/nri.png) | [mPLAT Suite — Multi-Cloud Conductor](https://azuremarketplace.microsoft.com/marketplace/apps/nri.mplatmc2018-vm) | Единая панель для мониторинга, настройки, подготовки, автоматизации и администрирования любой рабочей нагрузки или облака. | NRI |

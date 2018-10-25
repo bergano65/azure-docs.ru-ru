@@ -1,20 +1,21 @@
 ---
-title: Начало работы с Project Acoustics — Cognitive Services
+title: Начало работы с Project Acoustics
+titlesuffix: Azure Cognitive Services
 description: В этом кратком руководстве содержатся сведения об интеграции подключаемого модуля в проект Unity, создании сцены и применении акустики к источникам звука.
 services: cognitive-services
 author: kegodin
-manager: noelc
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: acoustics
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/17/2018
 ms.author: kegodin
-ms.openlocfilehash: b80543b199d4b766c1a8800d2dff4cf5ed81f8cc
-ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
+ms.openlocfilehash: 62b6b40e6289ccca92c0a92d8bb7d0489dd44246
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "40181397"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48902949"
 ---
 # <a name="getting-started-with-project-acoustics"></a>Начало работы с Project Acoustics
 В этом кратком руководстве содержатся сведения об интеграции подключаемого модуля в проект Unity, создании сцены и применении акустики к источникам звука. Для работы с этим руководством вам нужно сначала создать [учетную запись пакетной службы Azure ](create-azure-account.md). Предполагается, что у вас уже есть некоторый опыт работы с Unity.
@@ -93,9 +94,9 @@ ms.locfileid: "40181397"
 ![Источник звука](media/AudioSource.png)
 
 ## <a name="apply-post-bake-design"></a>Применение разработки после создания
-Вы можете прикрепить скрипт **AcousticsSourceCustomization** к источнику звука в своей сцене, чтобы включить дополнительные параметры разработки источника, щелкнув **Add Component** (Добавить компонент) и выбрав **Scripts > Acoustics Source Customization** (Скрипты > Настройка источника звука):
+Вы можете прикрепить скрипт **AcousticsAdjust** к источнику звука в своей сцене, чтобы включить дополнительные параметры разработки источника, щелкнув **Add Component** (Добавить компонент) и выбрав **Scripts > Acoustics Adjust** (Скрипты > Настройка источника звука):
 
-![Настройка источника](media/SourceCustomization.png)
+![AcousticsAdjust](media/AcousticsAdjust.png)
 
 Для эффекта **Microsoft Acoustics Mixer** также существуют параметры. Дополнительные сведения о разработке после создания см. в статье [Design process overview](design-process.md) (Общие сведения о процессе разработки).
 

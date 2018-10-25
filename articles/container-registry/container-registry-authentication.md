@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 01/23/2018
 ms.author: stevelas
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: be8adf9779c2d168c0ac7a0ed7dbc3e85935df68
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: c0c2323d1864be24edbf6005d634ae1d08bba8ea
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44293734"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49116612"
 ---
 # <a name="authenticate-with-a-private-docker-container-registry"></a>Аутентификация с помощью частного реестра контейнеров Docker
 
@@ -48,7 +48,7 @@ az acr login --name <acrName>
 
   * *Читатель*: развертывание контейнеров из реестра в системы оркестрации, в том числе Kubernetes, DC/OS и Docker Swarm. Данные из реестров контейнеров можно также отправлять в связанные службы Azure, например в [AKS](../aks/index.yml), [службу приложений](../app-service/index.yml), [пакетную службу](../batch/index.yml), [Service Fabric](/azure/service-fabric/) и другие.
 
-  * *Участник*: решения непрерывной интеграции и развертывания (например, Azure DevOps или Jenkins), создающие образы контейнеров и отправляющие их в реестр.
+  * *Участник*: решения непрерывной интеграции и развертывания (например, Azure Pipelines или Jenkins), создающие образы контейнеров и отправляющие их в реестр.
 
 > [!TIP]
 > Можно создать пароль субъекта-службы повторно, выполнив команду [az ad sp reset-credentials](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-reset-credentials).

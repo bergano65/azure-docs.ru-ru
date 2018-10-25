@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/18/2018
+ms.date: 09/20/2018
 ms.author: magoedte
-ms.openlocfilehash: 446268f28e7c87196023636889f03be2da92ecfd
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 4a5f3178ad4d4152bb29e6c313b3fd332124c154
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46967648"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48269400"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-vms"></a>Как запрашивать журналы из Azure Monitor для виртуальных машин
 Azure Monitor для виртуальных машин собирает метрики производительности и подключений, данные инвентаризации компьютеров и процессов, а также сведения о работоспособности и перенаправляет их в хранилище данных Log Analytics в службе Azure Monitor.  Вы можете выполнять [поиск](../log-analytics/log-analytics-log-searches.md) этих данных в службе Log Analytics. Эти данные используются в различных сценариях, таких как планирование миграции, анализ емкости, обнаружение и устранение проблем с производительностью по требованию.
@@ -43,8 +43,8 @@ Azure Monitor для виртуальных машин собирает метр
 
 | Свойство | ОПИСАНИЕ |
 |:--|:--|
-|Direction |Направление подключения. Возможные значения: *inbound* (Входящее) или *outbound* (Исходящее). |
-|Machine |Полное доменное имя компьютера. |
+|Направление |Направление подключения. Возможные значения: *inbound* (Входящее) или *outbound* (Исходящее). |
+|Машина |Полное доменное имя компьютера |
 |Process |Удостоверение процесса или группы процессов, создающей или принимающей подключение. |
 |SourceIp |IP-адрес источника. |
 |DestinationIp |IP-адрес назначения. |
@@ -69,9 +69,9 @@ Azure Monitor для виртуальных машин собирает метр
 |BytesSent |Общее количество байтов, отправленных в течение отчетного периода. |
 |BytesReceived |Общее количество байтов, принятых в течение отчетного периода. |
 |Ответы |Количество откликов, наблюдаемых в течение отчетного периода. 
-|ResponseTimeMax |Наибольшее время отклика (в миллисекундах), наблюдаемое во время отчетного периода.  Если значение не указано, свойство будет пустым.|
-|ResponseTimeMin |Наименьшее время отклика (в миллисекундах), наблюдаемое во время отчетного периода.  Если значение не указано, свойство будет пустым.|
-|ResponseTimeSum |Сумма всех значений времени отклика (в миллисекундах), наблюдаемых во время отчетного периода.  Если значение не указано, свойство будет пустым.|
+|ResponseTimeMax |Наибольшее время отклика (в миллисекундах), наблюдаемое во время отчетного периода. Если значение не указано, свойство будет пустым.|
+|ResponseTimeMin |Наименьшее время отклика (в миллисекундах), наблюдаемое во время отчетного периода. Если значение не указано, свойство будет пустым.|
+|ResponseTimeSum |Сумма всех значений времени отклика (в миллисекундах), наблюдаемых во время отчетного периода. Если значение не указано, свойство будет пустым.|
 
 Третий тип собираемых данных — время отклика. Это время, в течение которого вызывающая сторона ожидает обработки запроса, отправленного через подключение, и отклика на него от удаленной конечной точки. Полученное время отклика — это оценочное значение истинного времени отклика базового протокола приложений. Для его вычисления используется эвристика на основе наблюдения за потоком данных между источником и точкой назначения физического сетевого подключения. По сути, это разница между временем, когда последний байт запроса покидает отправителя, и временем, когда последний байт отклика возвращается к нему. Эти две метки времени используются для регистрации событий запроса и отклика для заданного физического подключения. Разность этих значений представляет собой время отклика для одного запроса. 
 
@@ -93,8 +93,8 @@ Azure Monitor для виртуальных машин собирает метр
 | Свойство | ОПИСАНИЕ |
 |:--|:--|
 |RemoteCountry |Название страны, в которой размещена сторона с IP-адресом, указанным в свойстве RemoteIp.  Пример: *United States* (США). |
-|RemoteLatitude |Широта географического положения.  Пример: *47,68*. |
-|RemoteLongitude |Долгота географического положения.  Пример: *–122,12*. |
+|RemoteLatitude |Широта географического положения. Пример: *47,68*. |
+|RemoteLongitude |Долгота географического положения. Пример: *–122,12*. |
 
 #### <a name="malicious-ip"></a>Вредоносный IP-адрес
 Система проверяет, не внесен ли адрес, указанный в свойстве RemoteIp в таблице *VMConnection*, в список IP-адресов, связанных с вредоносными действиями. Если система обнаружит, что адрес, указанный в свойстве RemoteIp, вредоносный, будут заполнены указанные ниже свойства записи (если IP-адрес не считается вредоносным, эти свойства пусты).
@@ -102,16 +102,16 @@ Azure Monitor для виртуальных машин собирает метр
 | Свойство | ОПИСАНИЕ |
 |:--|:--|
 |MaliciousIp |Адрес, указанный в свойстве RemoteIp. |
-|IndicatorThreadType | |
-|ОПИСАНИЕ | |
-|TLPLevel | |
-|Достоверность | |
-|Уровень серьезности | |
-|FirstReportedDateTime | |
-|LastReportedDateTime | |
-|IsActive | |
-|ReportReferenceLink | |
-|AdditionalInformation | |
+|IndicatorThreadType |Обнаруженный индикатор угроз является одним из следующих значений: *Ботнет*, *C2*, *CryptoMining*, *Darknet*, *DDos*, *MaliciousUrl*, *Вредоносные программы*, *Фишинг*, *Прокси-сервер*, *PUA*(потенциально нежелательные приложения), *Список видео к просмотру*.   |
+|ОПИСАНИЕ |Описания наблюдаемой угрозы. |
+|TLPLevel |Уровень протокола светофора (TLP) является одним из определенных значений: *белый*, *зеленый*, *желтый*, *красный*. |
+|Достоверность |Значения: *0 – 100*. |
+|Уровень серьезности |Значения: *0 – 5*, где *5* является самым серьезным, а *0* не является серьезным вообще. Значение по умолчанию — *3*.  |
+|FirstReportedDateTime |Впервые поставщик сообщил об этом индикаторе. |
+|LastReportedDateTime |В последний раз индикатор был просмотрен Interflow. |
+|IsActive |Указывает, что индикаторы деактивированы со значением *True* или *False*. |
+|ReportReferenceLink |Ссылки на отчеты, связанные с данным наблюдаемым. |
+|AdditionalInformation |Предоставляет дополнительную информацию, если применимо, о наблюдаемой угрозе. |
 
 ### <a name="servicemapcomputercl-records"></a>Записи ServiceMapComputer_CL
 В записях типа *ServiceMapComputer_CL* содержатся данные инвентаризации для серверов с программой Dependency Agent. У этих записей есть свойства, приведенные в таблице ниже.
@@ -166,34 +166,34 @@ Azure Monitor для виртуальных машин собирает метр
 ## <a name="sample-log-searches"></a>Пример поисков журналов
 
 ### <a name="list-all-known-machines"></a>Список всех известных компьютеров
-ServiceMapComputer_CL | summarize arg_max(TimeGenerated, *) by ResourceId
+`ServiceMapComputer_CL | summarize arg_max(TimeGenerated, *) by ResourceId`
 
 ### <a name="list-the-physical-memory-capacity-of-all-managed-computers"></a>Вывод сведений об объеме физической памяти для всех управляемых компьютеров
-ServiceMapComputer_CL | summarize arg_max(TimeGenerated, *) by ResourceId | project PhysicalMemory_d, ComputerName_s
+`ServiceMapComputer_CL | summarize arg_max(TimeGenerated, *) by ResourceId | project PhysicalMemory_d, ComputerName_s`
 
 ### <a name="list-computer-name-dns-ip-and-os"></a>Список сведений об имени компьютера, DNS-имени, IP-адресе и ОС
-ServiceMapComputer_CL | summarize arg_max(TimeGenerated, *) by ResourceId | project ComputerName_s, OperatingSystemFullName_s, DnsNames_s, Ipv4Addresses_s
+`ServiceMapComputer_CL | summarize arg_max(TimeGenerated, *) by ResourceId | project ComputerName_s, OperatingSystemFullName_s, DnsNames_s, Ipv4Addresses_s`
 
 ### <a name="find-all-processes-with-sql-in-the-command-line"></a>Поиск всех процессов с "sql" в командной строке
-ServiceMapProcess_CL | where CommandLine_s contains_cs "sql" | summarize arg_max(TimeGenerated, *) by ResourceId
+`ServiceMapProcess_CL | where CommandLine_s contains_cs "sql" | summarize arg_max(TimeGenerated, *) by ResourceId`
 
 ### <a name="find-a-machine-most-recent-record-by-resource-name"></a>Поиск компьютера (самой последней записи) по имени ресурса
-search in (ServiceMapComputer_CL) "m-4b9c93f9-bc37-46df-b43c-899ba829e07b" | summarize arg_max(TimeGenerated, *) by ResourceId
+`search in (ServiceMapComputer_CL) "m-4b9c93f9-bc37-46df-b43c-899ba829e07b" | summarize arg_max(TimeGenerated, *) by ResourceId`
 
 ### <a name="find-a-machine-most-recent-record-by-ip-address"></a>Поиск компьютера (самой последней записи) по IP-адресу
-search in (ServiceMapComputer_CL) "10.229.243.232" | summarize arg_max(TimeGenerated, *) by ResourceId
+`search in (ServiceMapComputer_CL) "10.229.243.232" | summarize arg_max(TimeGenerated, *) by ResourceId`
 
 ### <a name="list-all-known-processes-on-a-specified-machine"></a>Вывод списка всех известных процессов на определенном компьютере
-ServiceMapProcess_CL | where MachineResourceName_s == "m-559dbcd8-3130-454d-8d1d-f624e57961bc" | summarize arg_max(TimeGenerated, *) by ResourceId
+`ServiceMapProcess_CL | where MachineResourceName_s == "m-559dbcd8-3130-454d-8d1d-f624e57961bc" | summarize arg_max(TimeGenerated, *) by ResourceId`
 
 ### <a name="list-all-computers-running-sql"></a>Вывод списка всех компьютеров, на которых выполняется SQL
-ServiceMapComputer_CL | where ResourceName_s in ((search in (ServiceMapProcess_CL) "\*sql\*" | distinct MachineResourceName_s)) | distinct ComputerName_s
+`ServiceMapComputer_CL | where ResourceName_s in ((search in (ServiceMapProcess_CL) "\*sql\*" | distinct MachineResourceName_s)) | distinct ComputerName_s`
 
 ### <a name="list-all-unique-product-versions-of-curl-in-my-datacenter"></a>Вывод списка всех уникальных версий продукта cURL в центре обработки данных
-ServiceMapProcess_CL | where ExecutableName_s == "curl" | distinct ProductVersion_s
+`ServiceMapProcess_CL | where ExecutableName_s == "curl" | distinct ProductVersion_s`
 
 ### <a name="create-a-computer-group-of-all-computers-running-centos"></a>Создание группы, объединяющей все компьютеры, на которых выполняется CentOS
-ServiceMapComputer_CL | where OperatingSystemFullName_s contains_cs "CentOS" | distinct ComputerName_s
+`ServiceMapComputer_CL | where OperatingSystemFullName_s contains_cs "CentOS" | distinct ComputerName_s`
 
 ### <a name="summarize-the-outbound-connections-from-a-group-of-machines"></a>Создание сводки исходящих подключений для группы компьютеров
 ```

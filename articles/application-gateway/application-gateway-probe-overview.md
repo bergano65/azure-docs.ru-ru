@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 8/6/2018
 ms.author: victorh
-ms.openlocfilehash: b34e5317a35d694e8521e73b0846da973661d9df
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: f9bd0288d4009af536bdc8f45cbaed4b3f1eee18
+ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39530433"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48018720"
 ---
 # <a name="application-gateway-health-monitoring-overview"></a>Обзор мониторинга работоспособности шлюза приложений
 
@@ -96,7 +96,7 @@ $match = New-AzureRmApplicationGatewayProbeHealthResponseMatch -Body "Healthy"
 
 Если в подсети Шлюза приложений есть группа безопасности сети (NSG), то в этой подсети необходимо открыть диапазон портов 65503–65534 для входящего трафика. Эти порты требуются для работы API работоспособности серверной части.
 
-Кроме того, не должно блокироваться исходящее подключение к Интернету, а также необходимо разрешить трафик из тега AzureLoadBalancer.
+Кроме того, не должно блокироваться исходящее подключение к Интернету, а также необходимо разрешить входящий трафик из тега AzureLoadBalancer.
 
 ## <a name="next-steps"></a>Дополнительная информация
 Ознакомившись со сведениями о мониторинге работоспособности шлюза приложений, можно настроить [пользовательскую проверку работоспособности](application-gateway-create-probe-portal.md) на портале Azure либо [пользовательскую проверку работоспособности](application-gateway-create-probe-ps.md) с использованием модели развертывания PowerShell или Azure Resource Manager.

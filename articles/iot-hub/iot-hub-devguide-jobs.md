@@ -6,18 +6,18 @@ manager: timlt
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 01/29/2018
+ms.date: 10/09/2018
 ms.author: dobett
-ms.openlocfilehash: e2beec1308b9664d35ccd9d355403b7076567f2f
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: b9ad7a0e1947c9ca95b343a443688e976c306f95
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42745850"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48884230"
 ---
 # <a name="schedule-jobs-on-multiple-devices"></a>Планирование заданий на нескольких устройствах
 
-Центр Интернета вещей Azure включает ряд стандартных блоков ([свойства и теги двойников устройств][lnk-twin-devguide] и [прямые методы][lnk-dev-methods]). Как правило, внутренние приложения позволяют администраторам и операторам устройств массово и в запланированное время обновлять устройства Интернета вещей и взаимодействовать с ними.  На запланированное время задания выполняют обновления для двойников устройств и прямых методов для ряда устройств.  Например, оператор использует внутреннее приложение, которое инициирует задание перезапуска ряда устройств на третьем этаже в здании №43 в определенное время и отслеживает ход его выполнения. При этом задание не будет нарушать выполнение других операций в здании.
+Центр Интернета вещей Azure включает ряд стандартных блоков ([свойства и теги двойников устройств](iot-hub-devguide-device-twins.md) и [прямые методы](iot-hub-devguide-direct-methods.md)). Как правило, внутренние приложения позволяют администраторам и операторам устройств массово и в запланированное время обновлять устройства Интернета вещей и взаимодействовать с ними. На запланированное время задания выполняют обновления для двойников устройств и прямых методов для ряда устройств. Например, оператор использует внутреннее приложение, которое инициирует задание перезапуска ряда устройств на третьем этаже в здании №43 в определенное время и отслеживает ход его выполнения. При этом задание не будет нарушать выполнение других операций в здании.
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 
@@ -28,76 +28,89 @@ ms.locfileid: "42745850"
 * Вызов прямых методов
 
 ## <a name="job-lifecycle"></a>Жизненный цикл задания
-Задания инициируются в серверной части решения, а осуществляются с помощью Центра Интернета вещей.  Вы можете инициировать задание, используя обращенный к службе универсальный код ресурса (URI) `{iot hub}/jobs/v2/{device id}/methods/<jobID>?api-version=2016-11-14` и запросить данные о выполнении задания, используя аналогичный URI `{iot hub}/jobs/v2/<jobId>?api-version=2016-11-14`. Чтобы обновить состояние выполняемых заданий после запуска задания, выполните запрос задания.
+
+Задания инициируются в серверной части решения, а осуществляются с помощью Центра Интернета вещей. Вы можете инициировать задание, используя обращенный к службе универсальный код ресурса (URI) `PUT https://<iot hub>/jobs/v2/<jobID>?api-version=2018-06-30` и запросить данные о выполнении задания, используя аналогичный URI `GET https://<iot hub>/jobs/v2/<jobID?api-version=2018-06-30`. Чтобы обновить состояние выполняемых заданий после запуска задания, выполните запрос задания.
 
 > [!NOTE]
 > При запуске задания в именах и значениях свойств должны содержаться только печатаемые буквенно-цифровые символы US-ASCII, кроме следующих: `$ ( ) < > @ , ; : \ " / [ ] ? = { } SP HT`.
 
 ## <a name="jobs-to-execute-direct-methods"></a>Задания для выполнения прямого метода
-Приведенный ниже фрагмент запроса HTTPS 1.1 предназначен для выполнения [прямого метода][lnk-dev-methods] с использованием задания на ряде устройств:
 
-    PUT /jobs/v2/<jobId>?api-version=2016-11-14
+В приведенном ниже фрагменте показаны сведения о запросе HTTPS 1.1 для выполнения [прямого метода](iot-hub-devguide-direct-methods.md) с использованием задания на ряде устройств.
 
-    Authorization: <config.sharedAccessSignature>
-    Content-Type: application/json; charset=utf-8
-    Request-Id: <guid>
-    User-Agent: <sdk-name>/<sdk-version>
+```
+PUT /jobs/v2/<jobId>?api-version=2018-06-30
 
-    {
-        jobId: '<jobId>',
-        type: 'scheduleDirectRequest', 
-        cloudToDeviceMethod: {
-            methodName: '<methodName>',
-            payload: <payload>,                 
-            responseTimeoutInSeconds: methodTimeoutInSeconds 
-        },
-        queryCondition: '<queryOrDevices>', // query condition
-        startTime: <jobStartTime>,          // as an ISO-8601 date string
-        maxExecutionTimeInSeconds: <maxExecutionTimeInSeconds>        
-    }
+Authorization: <config.sharedAccessSignature>
+Content-Type: application/json; charset=utf-8
+Request-Id: <guid>
+User-Agent: <sdk-name>/<sdk-version>
+
+{
+    "jobId": "<jobId>",
+    "type": "scheduleDirectMethod",
+    "cloudToDeviceMethod": {
+        "methodName": "<methodName>",
+        "payload": <payload>,
+        "responseTimeoutInSeconds": methodTimeoutInSeconds
+    },
+    "queryCondition": "<queryOrDevices>", // query condition
+    "startTime": <jobStartTime>,          // as an ISO-8601 date string
+    "maxExecutionTimeInSeconds": <maxExecutionTimeInSeconds>
+}
+```
 
 Условие запроса также может находиться в одном идентификаторе устройства или в списке идентификаторов устройств, как показано ниже.
 
 ```
-queryCondition = "deviceId = 'MyDevice1'"
-queryCondition = "deviceId IN ['MyDevice1','MyDevice2']"
-queryCondition = "deviceId IN ['MyDevice1']
+"queryCondition" = "deviceId = 'MyDevice1'"
+"queryCondition" = "deviceId IN ['MyDevice1','MyDevice2']"
+"queryCondition" = "deviceId IN ['MyDevice1']"
 ```
-В статье [Справочник по языку запросов Центра Интернета вещей для двойников устройств и заданий][lnk-query] подробно рассматривается язык запросов Центра Интернета вещей.
+
+В статье [Язык запросов Центра Интернета вещей для двойников устройств и двойников модулей, заданий и маршрутизации сообщений](iot-hub-devguide-query-language.md) подробно рассматривается язык запросов Центра Интернета вещей.
 
 ## <a name="jobs-to-update-device-twin-properties"></a>Задания для обновления свойств устройств-двойников
+
 В следующем фрагменте показаны сведения по обновлению свойств устройства-двойника с использованием задания в запросе HTTPS 1.1.
 
-    PUT /jobs/v2/<jobId>?api-version=2016-11-14
-    Authorization: <config.sharedAccessSignature>
-    Content-Type: application/json; charset=utf-8
-    Request-Id: <guid>
-    User-Agent: <sdk-name>/<sdk-version>
+```
+PUT /jobs/v2/<jobId>?api-version=2018-06-30
 
-    {
-        jobId: '<jobId>',
-        type: 'scheduleTwinUpdate', 
-        updateTwin: <patch>                 // Valid JSON object
-        queryCondition: '<queryOrDevices>', // query condition
-        startTime: <jobStartTime>,          // as an ISO-8601 date string
-        maxExecutionTimeInSeconds: <maxExecutionTimeInSeconds>        // format TBD
-    }
+Authorization: <config.sharedAccessSignature>
+Content-Type: application/json; charset=utf-8
+Request-Id: <guid>
+User-Agent: <sdk-name>/<sdk-version>
+
+{
+    "jobId": "<jobId>",
+    "type": "scheduleTwinUpdate",
+    "updateTwin": <patch>                 // Valid JSON object
+    "queryCondition": "<queryOrDevices>", // query condition
+    "startTime": <jobStartTime>,          // as an ISO-8601 date string
+    "maxExecutionTimeInSeconds": <maxExecutionTimeInSeconds>
+}
+```
 
 ## <a name="querying-for-progress-on-jobs"></a>Запрос на отслеживание выполнения заданий
+
 Следующий фрагмент кода HTTPS 1.1 используется для получения сведений о выполнении заданий с помощью запросов:
 
-    GET /jobs/v2/query?api-version=2016-11-14[&jobType=<jobType>][&jobStatus=<jobStatus>][&pageSize=<pageSize>][&continuationToken=<continuationToken>]
+```
+GET /jobs/v2/query?api-version=2018-06-30[&jobType=<jobType>][&jobStatus=<jobStatus>][&pageSize=<pageSize>][&continuationToken=<continuationToken>]
 
-    Authorization: <config.sharedAccessSignature>
-    Content-Type: application/json; charset=utf-8
-    Request-Id: <guid>
-    User-Agent: <sdk-name>/<sdk-version>
+Authorization: <config.sharedAccessSignature>
+Content-Type: application/json; charset=utf-8
+Request-Id: <guid>
+User-Agent: <sdk-name>/<sdk-version>
+```
 
-Объект continuationToken получен в рамках ответа.  
+Объект continuationToken получен в рамках ответа.
 
-Вы можете выполнять запросы для получения состояния выполнения заданий на каждом устройстве, используя [язык запросов Центра Интернета вещей для двойников устройств, заданий и маршрутизации сообщений][lnk-query].
+Вы можете выполнять запросы для получения состояния выполнения заданий на каждом устройстве, используя [Язык запросов Центра Интернета вещей для двойников устройств и двойников модулей, заданий и маршрутизации сообщений](iot-hub-devguide-query-language.md).
 
 ## <a name="jobs-properties"></a>Свойства заданий
+
 В таблице ниже содержится список свойств, которые можно использовать при выполнении запросов на задания и их результаты, а также описание этих свойств.
 
 | Свойство | ОПИСАНИЕ |
@@ -124,28 +137,21 @@ queryCondition = "deviceId IN ['MyDevice1']
 | | **deviceJobStatistics.pendingCount**: количество устройств, на которых сейчас ожидается выполнение задания. |
 
 ### <a name="additional-reference-material"></a>Дополнительные справочные материалы
+
 Другие справочные статьи в руководстве разработчика для Центра Интернета вещей:
 
-* Статья [IoT Hub endpoints][lnk-endpoints] (Конечные точки Центра Интернета вещей) содержит сведения о конечных точках, которые каждый центр Интернета вещей предоставляет для операций управления и среды выполнения.
-* Статья [Throttling and quotas][lnk-quotas] (Регулирование и квоты) содержит сведения о квотах, применимых к службе Центра Интернета вещей, и ожидаемом поведении регулирования при использовании службы.
-* В статье [Пакеты SDK для устройств и служб Azure IoT][lnk-sdks] указаны различные языковые пакеты SDK, которые можно использовать при разработке приложений для устройств и служб, взаимодействующих с Центром Интернета вещей.
-* [Язык запросов Центра Интернета вещей для двойников устройств, заданий и маршрутизации сообщений][lnk-query] описывает языковые запросы Центра Интернета вещей. Используйте этот язык запросов для получения сведений о двойниках устройств и заданиях из Центра Интернета вещей.
-* Статья [Поддержка MQTT в Центре Интернета вещей][lnk-devguide-mqtt] содержит дополнительные сведения о поддержке протокола MQTT в Центре Интернета вещей.
+* В [справочнике по конечным точкам Центра Интернета вещей](iot-hub-devguide-endpoints.md) содержатся сведения о конечных точках, которые каждый центр Интернета вещей предоставляет для операций управления и среды выполнения.
+
+* Статья [Руководство. Квоты и регулирование в Центре Интернета вещей](iot-hub-devguide-quotas-throttling.md) содержит сведения о квотах, применимых к службе Центра Интернета вещей, и ожидаемом поведении регулирования при использовании службы.
+
+* В статье о [пакетах SDK для устройств и служб Azure IoT](iot-hub-devguide-sdks.md) указаны различные языковые пакеты SDK, которые можно использовать при разработке приложений для устройств и служб, взаимодействующих с Центром Интернета вещей.
+
+* Статья [Язык запросов Центра Интернета вещей для двойников устройств и двойников модулей, заданий и маршрутизации сообщений](iot-hub-devguide-query-language.md) содержит сведения о языковых запросах Центра Интернета вещей. Используйте этот язык запросов для получения сведений о двойниках устройств и заданиях из Центра Интернета вещей.
+
+* Статья [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md) содержит дополнительные сведения о поддержке протокола MQTT в Центре Интернета вещей.
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 Чтобы применить некоторые основные понятия, описанные в этой статье, просмотрите следующие руководства по Центру Интернета вещей:
 
-* [Планирование и трансляция заданий][lnk-jobs-tutorial]
-
-<!-- links and images -->
-
-[lnk-endpoints]: iot-hub-devguide-endpoints.md
-[lnk-quotas]: iot-hub-devguide-quotas-throttling.md
-[lnk-sdks]: iot-hub-devguide-sdks.md
-[lnk-query]: iot-hub-devguide-query-language.md
-[lnk-devguide-mqtt]: iot-hub-mqtt-support.md
-[lnk-jobs-tutorial]: iot-hub-node-node-schedule-jobs.md
-[lnk-c2d-methods]: quickstart-control-device-node.md
-[lnk-dev-methods]: iot-hub-devguide-direct-methods.md
-[lnk-get-started-twin]: iot-hub-node-node-twin-getstarted.md
-[lnk-twin-devguide]: iot-hub-devguide-device-twins.md
+* [Планирование и трансляция заданий](iot-hub-node-node-schedule-jobs.md)

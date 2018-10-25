@@ -1,22 +1,26 @@
 ---
-title: Добавление тегов к частям речи в API лингвистического анализа | Документация Майкрософт
-description: Узнайте, как добавление тегов к частям речи в Microsoft Cognitive Services определяет категорию или часть речи каждого слова из текста.
+title: Добавление тегов к частям речи в API лингвистического анализа
+description: Узнайте, как добавление тегов к частям речи в API лингвистического анализа определяет категорию или часть речи каждого слова из текста.
 services: cognitive-services
 author: RichardSunMS
-manager: wkwok
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: linguistic-analysis
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/27/2016
 ms.author: lesun
-ms.openlocfilehash: 90fd5b05c2dabdac88c6c8da288ab629177be38d
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ROBOTS: NOINDEX
+ms.openlocfilehash: a01fcea4ae6c8950d578bacefc2f064586d7306b
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37082644"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48238530"
 ---
 # <a name="part-of-speech-tagging"></a>Добавление тегов к частям речи
+
+> [!IMPORTANT]
+> Поддержка предварительной версии Лингвистического анализа прекращена 9 августа 2018 г. Мы рекомендуем использовать [модули текстовой аналитики Машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/studio-module-reference/text-analytics) для анализа и обработки текста.
 
 ## <a name="background-and-motivation"></a>Предыстория и мотивация
 
@@ -45,7 +49,7 @@ ms.locfileid: "37082644"
 | IN | предлог или подчинительный союз| в, внутри, если, после, будь то |
 | JJ | прилагательное или цифра, порядковый номер | девять, симпатичный, отвратительный, мультимодальный |
 | JJR | сравнительная степень прилагательного | лучше, быстрее, дешевле |
-| JJS | превосходная степень прилагательного | самый лучший, самый быстрый, самый дешевый | 
+| JJS | превосходная степень прилагательного | самый лучший, самый быстрый, самый дешевый |
 | LS | метка элемента списка | (a) (b), 1 2, A B, A. B. |
 | MD | вспомогательные модальные глаголы | умею, могу, смогу, смогут, умел, мог, должен, возможно должен |
 | NN | существительное, общее, единственное или массовое | картошка, деньги, обувь |

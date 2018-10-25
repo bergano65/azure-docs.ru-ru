@@ -9,24 +9,27 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 04/26/2018
 ms.author: dobett
-ms.openlocfilehash: 3de08d9e4a45b842fc921436f855831afb6b9ce0
-ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
+ms.openlocfilehash: 2c7857cd787e9298e94def5341d61238c5bb3a78
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42142699"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49321180"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-the-portal-and-net-device"></a>Начало работы с удостоверением модуля Центра Интернета вещей и двойником модуля с использованием портала и устройства .NET
 
 > [!NOTE]
 > [Удостоверение и двойник модуля](iot-hub-devguide-module-twins.md) аналогичны удостоверению и двойнику устройства Центра Интернета вещей Azure, однако они предоставляют более высокую степень детализации. В то время как удостоверение и двойник устройства Центра Интернета вещей Azure позволяют серверному приложению настраивать устройство и отображать состояние устройства, удостоверение и двойник модуля предоставляют эти возможности для отдельных компонентов устройства. Благодаря этому можно изолировать конфигурацию и условия для каждого компонента на совместимых устройствах с несколькими компонентами, например устройствах на основе операционной системы или устройствах со встроенным ПО.
+>
 
-Из этого руководства вы узнаете: 
+Из этого руководства вы узнаете:
+
 1. как создать удостоверение модуля на портале; 
-2. как использовать SDK для устройства .NET, чтобы обновить двойник модуля из устройства.
+1. как использовать SDK для устройства .NET, чтобы обновить двойник модуля из устройства.
 
 > [!NOTE]
 > Статья о [пакетах SDK для Центра Интернета вещей Azure][lnk-hub-sdks] содержит сведения о различных пакетах SDK, которые можно использовать для создания приложений, которые будут работать на устройствах и в серверной части решения.
+>
 
 Для работы с этим учебником требуется:
 
@@ -39,115 +42,123 @@ ms.locfileid: "42142699"
 
 Теперь у вас есть Центр Интернета вещей. Откройте [портал](https://portal.azure.com) и перейдите к своему Центру Интернета вещей. Щелкните "Устройства IoT", а затем нажмите кнопку "Добавить", чтобы создать удостоверение устройства. Назовите его **MyFirstDevice**. 
 
-![создание удостоверения устройства;][8]
+  ![создание удостоверения устройства;][8]
 
 После сохранения вы увидите успешное созданное удостоверение MyFirstDevice в списке удостоверений устройств.
 
-![Идентификатор устройства создан][11]
+  ![Идентификатор устройства создан][11]
 
 Теперь щелкните строку. Вы увидите сведения об устройстве.
 
-![Сведения об устройстве][10]
+  ![Сведения об устройстве][10]
 
 ## <a name="create-a-module-identity-in-the-portal"></a>Создание удостоверения модуля на портале
 
 В рамках одного удостоверения устройства можно создать до 20 удостоверений модуля. Нажмите кнопку **Add Module Identity** (Добавить удостоверение модуля) сверху, чтобы создать свое первое удостоверение модуля под названием **myFirstModule**. 
 
-![Сведения об устройстве][9]
+  ![Сведения об устройстве][9]
 
 Нажмите кнопку "Сохранить" и щелкните только что созданное удостоверение модуля. Отобразятся сведения об удостоверении модуля. Сохраните значение параметра "Строка подключения — первичный ключ". Оно будет использоваться в следующем разделе при настройке модуля на устройстве.
 
-![Сведения об устройстве][12]
+  ![Сведения об устройстве][12]
 
 ## <a name="update-the-module-twin-using-net-device-sdk"></a>Обновление двойника модуля с помощью пакета SDK для устройства .NET
 
 Вы успешно создали удостоверение модуля в своем Центре Интернета вещей. Давайте попробуем обменяться данными с облаком со своего имитированного устройства. После создания удостоверения модуля двойник модуля будет неявно создан в Центре Интернета вещей. В этом разделе вы создадите консольное приложение .NET на имитированном устройстве, которое обновляет сообщаемые свойства двойника модуля.
 
-1. **Создайте проект Visual Studio**. В Visual Studio добавьте в имеющееся решение проект классического приложения Windows на языке Visual C#, используя шаблон проекта **Консольное приложение (.NET Framework)**. Убедитесь, что указана версия платформы .NET 4.6.1 или более поздняя. В качестве имени проекта укажите **UpdateModuleTwinReportedProperties**.
+## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
-    ![Создание проекта Visual Studio][13]
+В Visual Studio добавьте в имеющееся решение проект классического приложения Windows на языке Visual C# с помощью шаблона проекта **консольного приложения (.NET Framework)**. Убедитесь, что указана версия платформы .NET 4.6.1 или более поздняя. В качестве имени проекта укажите **UpdateModuleTwinReportedProperties**.
 
-2. **Установите последний пакет SDK для .NET для Центра Интернета вещей Azure**. Удостоверение и двойник модуля предоставляются в общедоступной предварительной версии. Они доступны только через пакеты SDK предварительного выпуска для Центра Интернета вещей. В Visual Studio выберите для решения элементы "Сервис > Диспетчер пакетов NuGet > Управление пакетами NuGet". Найдите Microsoft.Azure.Devices.Client. Обязательно установите флажок "Включить предварительные выпуски". Выберите последнюю версию и установите ее. Теперь у вас есть доступ ко всем возможностям этого модуля. 
+  ![Создание проекта Visual Studio][13]
 
-    ![Установка пакета SDK V1.16.0-preview-005 .NET для Центра Интернета вещей Azure][14]
+## <a name="install-the-latest-azure-iot-hub-net-device-sdk"></a>Установка последнего пакета SDK для устройств Центра Интернета вещей Azure для .NET
 
-3. **Получите строку подключения модуля**. Войдите на [портал Azure][lnk-portal]. Перейдите к Центру Интернета вещей и щелкните "Устройства IoT". Найдите устройство myFirstDevice, откройте его, и вы увидите, что модуль myFirstModule успешно создан. Скопируйте строку подключения модуля. Она понадобится на следующем шаге.
+Удостоверения модулей и двойники модулей предоставляются в общедоступной предварительной версии. Они доступны только через пакеты SDK предварительного выпуска для Центра Интернета вещей. В Visual Studio выберите для решения элементы "Сервис > Диспетчер пакетов NuGet > Управление пакетами NuGet". Найдите Microsoft.Azure.Devices.Client. Обязательно установите флажок "Включить предварительные выпуски". Выберите последнюю версию и установите ее. Теперь у вас есть доступ ко всем возможностям этого модуля. 
 
-    ![Сведения о модуле на портале Azure][15]
+  ![Установка пакета SDK V1.16.0-preview-005 .NET для Центра Интернета вещей Azure][14]
 
-4. **Создайте консольное приложение UpdateModuleTwinReportedProperties**. В верхнюю часть файла **Program.cs** добавьте следующие инструкции `using`:
+## <a name="get-your-module-connection-string"></a>Получение строки подключения модуля
 
-    ```csharp
-    using Microsoft.Azure.Devices.Client;
-    using Microsoft.Azure.Devices.Shared;
-    ```
+Войдите на [портал Azure][lnk-portal]. Перейдите к Центру Интернета вещей и щелкните "Устройства IoT". Найдите устройство myFirstDevice, откройте его, и вы увидите, что модуль myFirstModule успешно создан. Скопируйте строку подключения модуля. Она понадобится на следующем шаге.
 
-    Добавьте следующие поля в класс **Program** . Замените значение заполнителя строкой подключения модуля.
+  ![Сведения о модуле на портале Azure][15]
 
-    ```csharp
-    private const string ModuleConnectionString = "<Your module connection string>";
-    private static ModuleClient Client = null;
-    ```
+## <a name="create-updatemoduletwinreportedproperties-console-app"></a>Создание консольного приложения UpdateModuleTwinReportedProperties
 
-    Добавьте метод **OnDesiredPropertyChanged** в класс **Program**:
+Добавьте следующие инструкции `using` в начало файла **Program.cs** :
 
-    ```csharp
-    private static async Task OnDesiredPropertyChanged(TwinCollection desiredProperties, object userContext)
-        {
-            Console.WriteLine("desired property change:");
-            Console.WriteLine(JsonConvert.SerializeObject(desiredProperties));
-            Console.WriteLine("Sending current time as reported property");
-            TwinCollection reportedProperties = new TwinCollection
-            {
-                ["DateTimeLastDesiredPropertyChangeReceived"] = DateTime.Now
-            };
+```csharp
+using Microsoft.Azure.Devices.Client;
+using Microsoft.Azure.Devices.Shared;
+```
 
-            await Client.UpdateReportedPropertiesAsync(reportedProperties).ConfigureAwait(false);
-        }
-    ```
+Добавьте следующие поля в класс **Program** . Замените значение заполнителя строкой подключения модуля.
 
-    Наконец, добавьте следующие строки в метод **Main** :
+```csharp
+private const string ModuleConnectionString = "<Your module connection string>";
+private static ModuleClient Client = null;
+```
 
-    ```csharp
-    static void Main(string[] args)
+Добавьте метод **OnDesiredPropertyChanged** в класс **Program**:
+
+```csharp
+private static async Task OnDesiredPropertyChanged(TwinCollection desiredProperties, object userContext)
     {
-        Microsoft.Azure.Devices.Client.TransportType transport = Microsoft.Azure.Devices.Client.TransportType.Amqp;
-
-        try
+        Console.WriteLine("desired property change:");
+        Console.WriteLine(JsonConvert.SerializeObject(desiredProperties));
+        Console.WriteLine("Sending current time as reported property");
+        TwinCollection reportedProperties = new TwinCollection
         {
-            Client = ModuleClient.CreateFromConnectionString(ModuleConnectionString, transport);
-            Client.SetConnectionStatusChangesHandler(ConnectionStatusChangeHandler);
-            Client.SetDesiredPropertyUpdateCallbackAsync(OnDesiredPropertyChanged, null).Wait();
+            ["DateTimeLastDesiredPropertyChangeReceived"] = DateTime.Now
+        };
 
-            Console.WriteLine("Retrieving twin");
-            var twinTask = Client.GetTwinAsync();
-            twinTask.Wait();
-            var twin = twinTask.Result;
-            Console.WriteLine(JsonConvert.SerializeObject(twin));
-
-            Console.WriteLine("Sending app start time as reported property");
-            TwinCollection reportedProperties = new TwinCollection();
-            reportedProperties["DateTimeLastAppLaunch"] = DateTime.Now;
-
-            Client.UpdateReportedPropertiesAsync(reportedProperties);
-        }
-        catch (AggregateException ex)
-        {
-            Console.WriteLine("Error in sample: {0}", ex);
-        }
-
-        Console.WriteLine("Waiting for Events.  Press enter to exit...");
-        Console.ReadKey();
-        Client.CloseAsync().Wait();
+        await Client.UpdateReportedPropertiesAsync(reportedProperties).ConfigureAwait(false);
     }
-    
-    private static void ConnectionStatusChangeHandler(ConnectionStatus status, ConnectionStatusChangeReason reason)
+```
+
+Наконец, добавьте следующие строки в метод **Main** :
+
+```csharp
+static void Main(string[] args)
+{
+    Microsoft.Azure.Devices.Client.TransportType transport = Microsoft.Azure.Devices.Client.TransportType.Amqp;
+
+    try
     {
-        Console.WriteLine($"Status {status} changed: {reason}");
-    }
-    ```
+        Client = ModuleClient.CreateFromConnectionString(ModuleConnectionString, transport);
+        Client.SetConnectionStatusChangesHandler(ConnectionStatusChangeHandler);
+        Client.SetDesiredPropertyUpdateCallbackAsync(OnDesiredPropertyChanged, null).Wait();
 
-    В этом примере кода показано, как извлечь двойник модуля и обновить сообщаемые свойства с помощью протокола AMQP. В общедоступной предварительной версии для операций двойника модуля поддерживается только протокол AMQP.
+        Console.WriteLine("Retrieving twin");
+        var twinTask = Client.GetTwinAsync();
+        twinTask.Wait();
+        var twin = twinTask.Result;
+        Console.WriteLine(JsonConvert.SerializeObject(twin));
+
+        Console.WriteLine("Sending app start time as reported property");
+        TwinCollection reportedProperties = new TwinCollection();
+        reportedProperties["DateTimeLastAppLaunch"] = DateTime.Now;
+
+        Client.UpdateReportedPropertiesAsync(reportedProperties);
+    }
+    catch (AggregateException ex)
+    {
+        Console.WriteLine("Error in sample: {0}", ex);
+    }
+
+    Console.WriteLine("Waiting for Events.  Press enter to exit...");
+    Console.ReadKey();
+    Client.CloseAsync().Wait();
+}
+
+private static void ConnectionStatusChangeHandler(ConnectionStatus status, ConnectionStatusChangeReason reason)
+{
+    Console.WriteLine($"Status {status} changed: {reason}");
+}
+```
+
+В этом примере кода показано, как извлечь двойник модуля и обновить сообщаемые свойства с помощью протокола AMQP. В общедоступной предварительной версии для операций двойника модуля поддерживается только протокол AMQP.
 
 ## <a name="run-the-apps"></a>Запуск приложений
 

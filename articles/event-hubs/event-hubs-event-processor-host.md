@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/16/2018
 ms.author: shvija
-ms.openlocfilehash: 672e31109b71a8a4238a05851a58a7c83e275b19
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 63cc8a698c9e383c4b5908286d28b51d89842bdc
+ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45576324"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47585702"
 ---
 # <a name="azure-event-hubs-event-processor-host-overview"></a>Общие сведения об узле обработчика событий Центров событий Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "45576324"
 
 ## <a name="ieventprocessor-interface"></a>Интерфейс IEventProcessor
 
-Сначала приложения-потребители реализуют интерфейс [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor) с четырьмя методами: [OpenAsync, CloseAsync, ProcessErrorAsync и ProcessEventsAsnyc](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor?view=azure-dotnet#methods). Этот интерфейс содержит фактический код для получения событий, отправляемых в Центры событий. Ниже приведен пример простой реализации:
+Сначала приложения-потребители реализуют интерфейс [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor) с четырьмя методами: [OpenAsync, CloseAsync, ProcessErrorAsync и ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor?view=azure-dotnet#methods). Этот интерфейс содержит фактический код для получения событий, отправляемых в Центры событий. Ниже приведен пример простой реализации:
 
 ```csharp
 public class SimpleEventProcessor : IEventProcessor
@@ -88,7 +88,8 @@ public class SimpleEventProcessor : IEventProcessor
 - **eventHubConnectionString.** Строка подключения к концентратору событий, которую можно получить на портале Azure. Эта строка подключения должна иметь разрешение **Прослушивание** в концентраторе событий.
 - **storageConnectionString.** Учетная запись хранения, которая используется для управления внутренними ресурсами.
 
-Наконец, потребители регистрируют экземпляр [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost) в службе Центров событий. Регистрация указывает службе Центров событий ожидать потребления событий из секций в приложение-потребителе, а также вызова кода реализации [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor) всякий раз, когда события передаются для потребления.
+Наконец, потребители регистрируют экземпляр [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost) в службе Центров событий. Регистрация класса обработчика событий с экземпляром EventProcessorHost запускает обработку событий. Регистрация указывает службе Центров событий ожидать потребления событий из секций в приложение-потребителе, а также вызова кода реализации [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor) всякий раз, когда события передаются для потребления. 
+
 
 ### <a name="example"></a>Пример
 
@@ -123,7 +124,7 @@ public class SimpleEventProcessor : IEventProcessor
 
 Каждый вызов [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync) обеспечивает сбор событий. Пользователь управляет событиями самостоятельно. Рекомендуется выполнять это относительно быстро, то есть делать как можно меньше обработки. Вместо этого используйте группы потребителей. Если необходимо выполнить запись в хранилище и некоторую маршрутизацию, обычно лучше использовать две группы потребителей и иметь две реализации [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor), работающие отдельно.
 
-В какой-то момент во время обработки вам может потребоваться список того, что вы прочитали и завершили. Отслеживание важно в том случае, если необходимо перезапустить чтение, чтобы не вернуться в начало потока. [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost) упрощает отслеживание с помощью *контрольных точек*. Контрольная точка — это расположение или смещение (для данной секции в рамках определенной группы потребителей), которое поможет вам убедиться, что сообщение обработано. Пометка контрольной точки в **EventProcessorHost** достигается за счет вызова метода [CheckpointAsync](/dotnet/api/microsoft.azure.eventhubs.processor.partitioncontext.checkpointasync) объекта [PartitionContext](/dotnet/api/microsoft.azure.eventhubs.processor.partitioncontext). Эта операция обычно выполняется в рамках метода [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync), но также может осуществляться в [CloseAsync](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.closeasync).
+В какой-то момент во время обработки вам может потребоваться список того, что вы прочитали и завершили. Отслеживание важно в том случае, если необходимо перезапустить чтение, чтобы не вернуться в начало потока. [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost) упрощает отслеживание с помощью *контрольных точек*. Контрольная точка — это расположение или смещение (для данной секции в рамках определенной группы потребителей), которое поможет вам убедиться, что сообщение обработано. Пометка контрольной точки в **EventProcessorHost** достигается за счет вызова метода [CheckpointAsync](/dotnet/api/microsoft.azure.eventhubs.processor.partitioncontext.checkpointasync) объекта [PartitionContext](/dotnet/api/microsoft.azure.eventhubs.processor.partitioncontext). Эта операция выполняется в рамках метода [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync), но также может осуществляться в [CloseAsync](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.closeasync).
 
 ## <a name="checkpointing"></a>Контрольные точки
 
@@ -140,6 +141,7 @@ public class SimpleEventProcessor : IEventProcessor
 Наконец, [EventProcessorHost.UnregisterEventProcessorAsync](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost.unregistereventprocessorasync) обеспечивает безошибочное завершение работы всех читателей секции и должен вызываться при завершении работы экземпляра [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost). Невыполнение этого требования может привести к задержкам при запуске других экземпляров **EventProcessorHost** через истечения срока действия аренды и конфликты эпохи. Управление эпохой подробно рассматривается в этой [записи блога](https://blogs.msdn.microsoft.com/gyan/2014/09/02/event-hubs-receiver-epoch/)
 
 ## <a name="lease-management"></a>Управление арендой
+Регистрация класса обработчика событий с экземпляром EventProcessorHost запускает обработку событий. Экземпляр узла получает аренды в некоторых секциях концентратора событий, при возможности захватывая некоторые из других экземпляров узлов таким образом, в результате которого равномерное распределение секций сходится во всех экземплярах узла. Для каждой выделенной секции экземпляр узла создает экземпляр предоставленного класса обработчика событий, а затем получает события из этого раздела и передает их в экземпляр обработчика событий. По мере добавления экземпляров и получения аренд EventProcessorHost со временем распределяет нагрузку среди всех потребителей.
 
 Как упоминалось ранее, таблица отслеживания значительно упрощает автоматическое масштабирование [EventProcessorHost.UnregisterEventProcessorAsync](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost.unregistereventprocessorasync). Когда экземпляр **EventProcessorHost** запускается, он получает максимальное количество аренды и приступает к чтению событий. Когда срок аренды подходит к концу, **EventProcessorHost** пытается обновить его, разместив резервирование. Если продление аренды доступно, процессор продолжает чтение, но если это не так, читатель закрывается и вызывается [CloseAsync](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.closeasync). При вызове **CloseAsync** самое время для выполнения окончательной очистки этой секции.
 

@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: glenga
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 68352db238b92d39119b420ed0d573e88a95bc78
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: cb72b3f6b0a665f1a4d39d1e8533be51faa4c107
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47394460"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49167143"
 ---
 # <a name="azure-queue-storage-bindings-for-azure-functions"></a>Привязки хранилища очередей Azure для службы "Функции Azure"
 
@@ -146,11 +146,16 @@ public static void Run(CloudQueueMessage myQueueItem,
 
 В разделе [Конфигурация](#trigger---configuration) описываются эти свойства.
 
+> [!NOTE]
+> Параметр name отображается как `context.bindings.<name>` в коде JavaScript, который содержит полезные данные элемента очереди. Эти полезные данные также передаются в качестве второго параметра в функцию.
+
 Ниже показан код JavaScript.
 
 ```javascript
-module.exports = function (context) {
-    context.log('Node.js queue trigger function processed work item', context.bindings.myQueueItem);
+module.exports = async function (context, message) {
+    context.log('Node.js queue trigger function processed work item', message);
+    // OR access using context.bindings.<name>
+    // context.log('Node.js queue trigger function processed work item', context.bindings.myQueueItem);
     context.log('queueTrigger =', context.bindingData.queueTrigger);
     context.log('expirationTime =', context.bindingData.expirationTime);
     context.log('insertionTime =', context.bindingData.insertionTime);
@@ -244,7 +249,7 @@ module.exports = function (context) {
 |---------|---------|----------------------|
 |**type** | Недоступно| Нужно задать значение `queueTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
 |**direction**| Недоступно | Только в файле *function.json*. Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. |
-|**name** | Недоступно |Имя переменной, представляющей очередь в коде функции.  | 
+|**name** | Недоступно |Имя переменной, содержащей полезные данные элемента очереди в коде функции.  | 
 |**queueName** | **QueueName**| Имя очереди для опроса. | 
 |**подключение** | **Connection** |Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
 

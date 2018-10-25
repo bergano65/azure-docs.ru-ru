@@ -3,7 +3,7 @@ title: Последовательная консоль Azure для вызово
 description: Использование последовательной консоли для вызовов SysRq и NMI на виртуальных машинах Azure.
 services: virtual-machines-linux
 documentationcenter: ''
-author: alsin
+author: asinn826
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: 6f46a1d6964af867b7b0671d020002d1c1de19ae
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 9dcec525adf7676b23c6dec14dff07c6d419c085
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47412081"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48884648"
 ---
 # <a name="use-serial-console-for-sysrq-and-nmi-calls"></a>Использование последовательной консоли для вызовов SysRq и NMI
 
@@ -30,11 +30,11 @@ SysRq — это последовательность клавиш, понятн
 
 Последовательную консоль Azure можно использовать для отправки SysRq на виртуальную машину Azure с использованием значка клавиатуры в показанной ниже командной строке.
 
-![](/media/virtual-machines-serial-console/virtual-machine-serial-console-command-menu.jpg)
+![](../media/virtual-machines-serial-console/virtual-machine-serial-console-command-menu.jpg)
 
 При выборе команды Send SysRq Command (Отправить команду SysRq) откроется диалоговое окно, которое предоставит общие параметры SysRq или примет последовательность команд SysRq, введенных в диалоговое окно.  Это позволяет сериям SysRq выполнять высокоуровневую операцию, такую ​​как безопасная перезагрузка с использованием: `REISUB`.
 
-![](/media/virtual-machines-serial-console/virtual-machine-serial-console-sysreq_UI.png)
+![](../media/virtual-machines-serial-console/virtual-machine-serial-console-sysreq_UI.png)
 
 Команда SysRq не может использоваться на остановленных виртуальных машинах или на таких, ядро которых ​​находится в неотвечающем состоянии (например, критическое состояние ядра).
 
@@ -103,8 +103,9 @@ echo "1" >/proc/sys/kernel/sysrq
 
 Последовательную консоль можно использовать для отправки немаскируемого прерывания на виртуальную машину Azure с помощью значка клавиатуры, показанного ниже в командной строке. Как только немаскируемое прерывание будет запущено, конфигурация виртуальной машины будет контролировать реакцию системы.  Операционные системы Linux можно настроить для аварийного завершения и создания дампа памяти, когда операционная система получает немаскируемое прерывание.
 
-![](/media/virtual-machines-serial-console/virtual-machine-serial-console-command-menu.jpg) <br>
+![](../media/virtual-machines-serial-console/virtual-machine-serial-console-command-menu.jpg) <br>
 
+### <a name="enable-nmi"></a>Включение немаскируемого прерывания
 Для систем Linux, которые поддерживают sysctl для настройки параметров ядра, можно включить аварийный сигнал при получении этого немаскируемого прерывания, выполнив следующее:
 1. Добавьте эту строку в */etc/sysctl.conf*. <br>
     `kernel.panic_on_unrecovered_nmi=1`

@@ -1,28 +1,29 @@
 ---
-title: Метод Transliterate в API перевода текстов Microsoft Translator | Документация Майкрософт
-description: Использование метода Transliterate в API перевода текстов Microsoft Translator.
+title: Метод транслитерации в API перевода текстов
+titlesuffix: Azure Cognitive Services
+description: Использование метода транслитерации в API перевода текстов
 services: cognitive-services
 author: Jann-Skotdal
-manager: chriswendt1
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: microsoft translator
-ms.topic: article
+ms.component: translator-text
+ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-jansko
-ms.openlocfilehash: fdd6fa9236f0c02685198b6de3228c444993dad6
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 613cdd14ad196058458b090024cc6b9a4b8a80b6
+ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382404"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48018627"
 ---
-# <a name="text-api-30-transliterate"></a>API перевода текстов 3.0: Transliterate
+# <a name="translator-text-api-30-transliterate"></a>API перевода текстов 3.0: транслитерация
 
 Преобразует текст на одном языке из одного набора символов в другой.
 
 ## <a name="request-url"></a>Request URL (URL-адрес запроса)
 
-Отправьте запрос `POST` по адресу:
+Отправьте запрос `POST` на следующий адрес.
 
 ```HTTP
 https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
@@ -30,18 +31,18 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
 
 ## <a name="request-parameters"></a>Параметры запроса
 
-В этой строке запроса передаются следующие параметры запроса:
+В таблице ниже приведены параметры, которые передаются в строке запроса.
 
 <table width="100%">
   <th width="20%">Параметр запроса</th>
   <th>ОПИСАНИЕ</th>
   <tr>
     <td>api-version</td>
-    <td>*Обязательный параметр*.<br/>Версия API, запрошенная клиентом. Этот параметр должен содержать значение `3.0`.</td>
+    <td>*Обязательный параметр.*<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`.</td>
   </tr>
   <tr>
     <td>Язык</td>
-    <td>*Обязательный параметр*.<br/>Указывает язык текста, преобразуемого из одного набора символов в другой. Возможные языки перечисляются в области `transliteration`, получаемой путем отправки запроса к службе на предмет [поддерживаемых языков](.\v3-0-languages.md).</td>
+    <td>*Обязательный параметр.*<br/>Указывает язык текста, преобразуемого из одного набора символов в другой. Возможные языки перечисляются в области `transliteration`, получаемой путем отправки запроса к службе на предмет [поддерживаемых языков](.\v3-0-languages.md).</td>
   </tr>
   <tr>
     <td>fromScript</td>
@@ -60,7 +61,7 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
   <th>ОПИСАНИЕ</th>
   <tr>
     <td>_Один заголовок_<br/>_авторизации_</td>
-    <td>*Обязательный заголовок запроса*.<br/>См. [описание доступных способов проверки подлинности](./v3-0-reference.md#authentication).</td>
+    <td>*Обязательный заголовок запроса*.<br/>См. [описание доступных способов аутентификации](./v3-0-reference.md#authentication).</td>
   </tr>
   <tr>
     <td>Content-Type</td>
@@ -76,7 +77,7 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
   </tr>
 </table> 
 
-## <a name="request-body"></a>Текст запроса
+## <a name="request-body"></a>Тело запроса
 
 Текст запроса является массивом в формате JSON. Каждый элемент этого массива представляет собой объект JSON со строковым свойством `Text`, который соответствует преобразуемой строке.
 
@@ -91,7 +92,7 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
 
 * Массив может содержать не более 10 элементов.
 * Длина текстового значения в одном элементе массива не должна превышать 1000 символов, включая пробелы.
-* Общий объем текста запроса не должен превышать 5000 символов, включая пробелы.
+* Общий объем текста запроса не должен превышать 5000 символов, в том числе пробелы.
 
 ## <a name="response-body"></a>Тело ответа
 
@@ -138,7 +139,7 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
   </tr>
   <tr>
     <td>401</td>
-    <td>Не удалось выполнить проверку подлинности запроса. Убедитесь, что указаны допустимые учетные данные.</td>
+    <td>Не удалось выполнить аутентификацию запроса. Убедитесь, что указаны допустимые учетные данные.</td>
   </tr>
   <tr>
     <td>403</td>
@@ -150,11 +151,11 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
   </tr>
   <tr>
     <td>500</td>
-    <td>Произошла непредвиденная ошибка. Если ошибка повторяется, сообщите о ней, указав следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
+    <td>Произошла непредвиденная ошибка. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
   </tr>
   <tr>
     <td>503</td>
-    <td>Сервер временно недоступен. Повторите запрос. Если ошибка повторяется, сообщите о ней, указав следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
+    <td>Сервер временно недоступен. Повторите запрос. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
   </tr>
 </table> 
 

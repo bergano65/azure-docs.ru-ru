@@ -1,6 +1,6 @@
 ---
-title: Маршрутизация событий Служб мультимедиа Azure в пользовательскую конечную веб-точку | Документация Майкрософт
-description: Подпишитесь на событие изменения состояния Служб мультимедиа с помощью службы "Сетка событий Azure".
+title: Мониторинг событий Служб мультимедиа Azure с помощью Сетки событий и интерфейса командной строки | Документация Майкрософт
+description: В этой статье показано, как подписаться на Сетку событий для отслеживания событий Служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -9,22 +9,18 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 09/20/2018
+ms.date: 10/15/2018
 ms.author: juliako
-ms.openlocfilehash: e7268a066acf41c454de0c66aa21603199d85a60
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 8145b4eb3c39511eb9cd0ed052c36b8338191d4f
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47034847"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49389502"
 ---
-# <a name="route-azure-media-services-events-to-a-custom-web-endpoint-using-cli"></a>Маршрутизация событий Служб мультимедиа Azure в пользовательскую конечную веб-точку с помощью CLI
+# <a name="create-and-monitor-media-services-events-with-event-grid-using-the-azure-cli"></a>Создание и мониторинг событий Служб мультимедиа Azure с помощью Сетки событий и Azure CLI
 
-"Сетка событий Azure" — это служба обработки событий для облака. В этой статье с помощью интерфейса командной строки Azure вы создадите подписку на события изменения состояния задания Служб мультимедиа Azure и активируете событие, чтобы просмотреть результат. 
-
-Как правило, события можно отправлять в конечную точку, реагирующую на событие, такую как веб-перехватчик или функция Azure. В этом руководстве описывается процесс создания и настройки веб-перехватчика.
-
-Выполнив действия, описанные в этой статье, вы увидите, что данные событий отправлены в конечную точку.
+"Сетка событий Azure" — это служба обработки событий для облака. В этой статье выполняется подписка на события для учетной записи Служб мультимедиа Azure с помощью Azure CLI. Затем можно активировать события, чтобы увидеть результат. Как правило, события отправляются на конечную точку, которая обрабатывает данные событий и выполняет соответствующие действия. В этой статье события отправляются в веб-приложение, которое собирает и отображает сообщения.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -33,149 +29,90 @@ ms.locfileid: "47034847"
 
     Запишите значения, которые вы использовали в качестве имени группы ресурсов и имени учетной записи Служб мультимедиа.
 
-- Установка [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Для этой статьи требуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Можно также использовать [Azure Cloud Shell](https://shell.azure.com/bash).
+- Установка [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). В этой статье требуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Можно также использовать [Azure Cloud Shell](https://shell.azure.com/bash).
 
-## <a name="enable-event-grid-resource-provider"></a>Включение поставщика ресурсов службы "Сетка событий"
+## <a name="create-a-message-endpoint"></a>Создание конечной точки сообщения
 
-Первое, что нужно сделать — убедиться, что поставщик ресурсов службы "Сетка событий" включен в вашей подписке. 
+Перед созданием подписки на события учетной записи Служб мультимедиа необходимо создать конечную точку для сообщения о событии. Обычно конечная точка выполняет действия на основе данных событий. В этой статье разверните [готовое веб-приложение](https://github.com/Azure-Samples/azure-event-grid-viewer), которое отображает сообщения о событиях. Развернутое решение содержит план службы приложений, веб-приложение службы приложений и исходный код из GitHub.
 
-На портале **Azure** сделайте следующее:
+1. Выберите **Развернуть в Azure**, чтобы развернуть решение в своей подписке. На портале Azure укажите значения остальных параметров.
 
-1. Перейдите к подпискам.
-2. Выберите свою подписку.
-3. В разделе параметров выберите "Поставщики ресурсов".
-4. Найдите EventGrid.
-5. Убедитесь, что Сетка событий зарегистрирована. Если это не так, нажмите кнопку **Зарегистрировать**.  
+   <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fazure-event-grid-viewer%2Fmaster%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
 
-## <a name="create-a-generic-azure-function-webhook"></a>Создание универсального веб-перехватчика функции Azure 
+1. Завершение развертывания может занять несколько минут. Когда развертывание успешно завершится, откройте веб-приложение и убедитесь, что оно работает. Откройте браузер и перейдите по адресу `https://<your-site-name>.azurewebsites.net`.
 
-### <a name="create-a-message-endpoint"></a>Создание конечной точки сообщения
+При переходе на сайт "Средство просмотра Сетки событий Azure" вы увидите, что в нем пока нет событий.
+   
+[!INCLUDE [event-grid-register-provider-portal.md](../../../includes/event-grid-register-provider-portal.md)]
 
-Прежде чем оформлять подписку на статью Сетки событий, создайте конечную точку, которая собирает сообщения, чтобы можно было их просматривать.
+## <a name="log-in-to-azure"></a>Вход в Azure
 
-Создайте функцию, которая активируется с помощью универсального веб-перехватчика, как описано в [этой статье](https://docs.microsoft.com/azure/azure-functions/functions-create-generic-webhook-triggered-function). В рамках этого руководства используется код **C#**.
+Войдите на [портал Azure](http://portal.azure.com) и запустите **CloudShell**, чтобы выполнить команды CLI, приведенные на следующих шагах.
 
-После создания веб-перехватчика скопируйте URL-адрес, щелкнув ссылку *Получить URL-адрес функции* в верхней части окна на портале **Azure**. Последняя часть URL-адреса не понадобится (*&clientID=default*).
+[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
 
-![Создание веб-перехватчика](./media/job-state-events-cli-how-to/generic_webhook_files.png)
+Если вы решили установить и использовать CLI локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
 
-### <a name="validate-the-webhook"></a>Проверка веб-перехватчика
+## <a name="set-the-azure-subscription"></a>Настройка подписки Azure
 
-Когда вы регистрируете собственную конечную точку веб-перехватчика с помощью службы "Сетка событий", отправляется запрос POST с кодом простой проверки, чтобы подтвердить владение конечной точкой. В ответ приложение должно вернуть код проверки. Служба "Сетка событий" не доставляет события в конечные точки веб-перехватчика, которые не прошли проверку. Дополнительные сведения см. в разделе [Сетка событий: безопасность и проверка подлинности](https://docs.microsoft.com/azure/event-grid/security-authentication). Этот раздел определяет две части, которые необходимо определить для успешного выполнения проверки.
+В приведенной ниже команде укажите идентификатор подписки Azure, который необходимо использовать в учетной записи Служб мультимедиа. Чтобы просмотреть список доступных подписок, перейдите на страницу [Подписки](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade).
 
-#### <a name="update-the-source-code"></a>Обновление исходного кода
-
-После создания веб-перехватчика в браузере откроется файл **run.csx**. Замените код по умолчанию приведенным ниже. 
-
-```csharp
-#r "Newtonsoft.Json"
-
-using System;
-using System.Net;
-using Newtonsoft.Json;
-
-public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
-{
-    log.Info($"Webhook was triggered!");
-
-    string jsonContent = await req.Content.ReadAsStringAsync();
-    string eventGridValidation = 
-        req.Headers.FirstOrDefault( x => x.Key == "Aeg-Event-Type" ).Value?.FirstOrDefault();
-
-    dynamic eventData = JsonConvert.DeserializeObject(jsonContent);
-
-    log.Info($"event: {eventData}");
-
-    if (eventGridValidation != String.Empty)
-    {
-        if (eventData[0].data.validationCode !=String.Empty && eventData[0].eventType == "Microsoft.EventGrid.SubscriptionValidationEvent")
-        {
-            return req.CreateResponse(HttpStatusCode.OK, new 
-            {
-                validationResponse = eventData[0].data.validationCode
-            });
-        }
-    }
-    
-    log.Info(jsonContent);
-
-    return req.CreateResponse(HttpStatusCode.OK);
-}
+```azurecli-interactive
+az account set --subscription mySubscriptionId
 ```
+ 
+[!INCLUDE [media-services-cli-create-v3-account-include](../../../includes/media-services-cli-create-v3-account-include.md)]
 
-#### <a name="update-test-request-body"></a>Обновите текст запроса для проверки
+## <a name="subscribe-to-media-services-events"></a>Подписка на события Служб мультимедиа Azure
 
-В правой части окна на портале **Azure** отображаются две вкладки: **Просмотреть файлы** и **Test** (Проверка). Откройте вкладку **Тест**. В поле **Текст запроса** вставьте следующий код JSON. Вы можете вставить его как есть без изменения значений.
+Подпишитесь на статью, чтобы определить в службе "Сетка событий", какие события вам необходимо отслеживать. В следующем примере создается подписка на созданную учетную запись Служб мультимедиа и передается URL-адрес с веб-сайта в качестве конечной точки для уведомления о событии. 
 
-```json
-[{
-  "id": "2d1781af-3a4c-4d7c-bd0c-e34b19da4e66",
-  "topic": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-  "subject": "",
-  "data": {
-    "validationCode": "512d38b6-c7b8-40c8-89fe-f46f9e9622b6"
-  },
-  "eventType": "Microsoft.EventGrid.SubscriptionValidationEvent",
-  "eventTime": "2017-08-06T22:09:30.740323Z"
-}
-]
-```
+Замените `<event_subscription_name>` уникальным именем подписки на события. Для `<resource_group_name>` и `<ams_account_name>` используйте значения, которые указали при создании учетной записи Служб мультимедиа. Для `<endpoint_URL>` укажите URL-адрес веб-приложения и добавьте `api/updates` к URL-адресу домашней страницы. Указав конечную точку при подписке, служба "Сетка событий Azure" обрабатывает маршрутизацию событий для этой конечной точки. 
 
-Щелкните **Сохранить и запустить** в верхней части окна.
+1. Получение идентификатора ресурса
 
-![Тело запроса](./media/job-state-events-cli-how-to/generic_webhook_test.png)
+    ```azurecli-interactive
+    amsResourceId=$(az ams account show --name <ams_account_name> --resource-group <resource_group_name> --query id --output tsv)
+    ```
 
-## <a name="register-for-the-event-grid-subscription"></a>Регистрация на подписку службы "Сетка событий" 
+    Например: 
 
-Подпишитесь на статью, чтобы определить в службе "Сетка событий", какие события вам необходимо отслеживать. В следующем примере создается подписка на созданную учетную запись Служб мультимедиа и передается URL-адрес из веб-перехватчика функций Azure в качестве конечной точки для уведомления о событии. 
+    ```
+    amsResourceId=$(az ams account show --name amsaccount --resource-group amsResourceGroup --query id --output tsv)
+    ```
 
-Замените `<event_subscription_name>` уникальным именем подписки на события. Для `<resource_group_name>` и `<ams_account_name>` используйте значения, которые указали при создании учетной записи Служб мультимедиа. Для `<endpoint_URL>` вставьте URL-адрес конечной точки. Удалите из URL-адреса *&clientID=default*. Указав конечную точку при подписке, служба "Сетка событий Azure" обрабатывает маршрутизацию событий для этой конечной точки. 
+2. Оформление подписки на события
 
-```cli
-amsResourceId=$(az ams account show --name <ams_account_name> --resource-group <resource_group_name> --query id --output tsv)
+    ```azurecli-interactive
+    az eventgrid event-subscription create \
+    --resource-id $amsResourceId \
+    --name <event_subscription_name> \
+    --endpoint <endpoint_URL>
+    ```
 
-az eventgrid event-subscription create \
-  --resource-id $amsResourceId \
-  --name <event_subscription_name> \
-  --endpoint <endpoint_URL>
-```
+    Например: 
 
-Значение идентификатора ресурса учетной записи Служб мультимедиа выглядит примерно так:
+    ```
+    az eventgrid event-subscription create --resource-id $amsResourceId --name amsTestEventSubscription --endpoint https://amstesteventgrid.azurewebsites.net/api/updates/
+    ```    
 
-```
-/subscriptions/81212121-2f4f-4b5d-a3dc-ba0015515f7b/resourceGroups/amsResourceGroup/providers/Microsoft.Media/mediaservices/amstestaccount
-```
+    > [!TIP]
+    > Вы можете получить предупреждение о подтверждении приема. Подождите несколько минут и проверьте подтверждение приема.
 
-## <a name="test-the-events"></a>Проверка событий
+Теперь необходимо активировать события, чтобы увидеть, как Сетка событий Azure распределяет сообщение к вашей конечной точке.
 
-Выполните задание кодирования. Например, как описано в кратком руководстве по [потоковой передаче видеофайлов](stream-files-dotnet-quickstart.md).
+## <a name="send-an-event-to-your-endpoint"></a>Отправка события в конечную точку
 
-Кроме того, вы активировали событие, а служба "Сетка событий" отправила сообщение в конечную точку, настроенную вами при подписке. Перейдите к веб-перехватчику, созданному ранее. Щелкните **Мониторинг** и **Refresh** (Обновить). Отобразятся события изменения состояния задания: "В очереди", "Запланировано", "Идет обработка", "Завершено", "Ошибка", Canceled (Отменено), "Отмена".  Дополнительные сведения см. в статье [Схемы службы "Сетка событий Azure" для событий Служб мультимедиа](media-services-event-schemas.md).
+Вы можете активировать события для учетной записи Служб мультимедиа, запустив задание кодирования. Чтобы закодировать файл и начать отправку событий, следуйте инструкциям [в этом кратком руководстве](stream-files-dotnet-quickstart.md). 
 
-В примере ниже показана схема события JobStateChange.
+Теперь снова откройте веб-приложение и убедитесь, что оно успешно получило отправленное событие подтверждения подписки. Сетка событий отправляет событие подтверждения, чтобы конечная точка могла подтвердить, что она готова получать данные события. Конечная точка должна задать для `validationResponse` значение `validationCode`. Дополнительные сведения см. в разделе [Сетка событий: безопасность и проверка подлинности](../../event-grid/security-authentication.md). Вы можете просмотреть код веб-приложения, чтобы увидеть, как он проверяет подписку.
 
-```json
-[{
-  "topic": "/subscriptions/<subscription id>/resourceGroups/amsResourceGroup/providers/Microsoft.Media/mediaservices/amsaccount",
-  "subject": "transforms/VideoAnalyzerTransform/jobs/<job id>",
-  "eventType": "Microsoft.Media.JobStateChange",
-  "eventTime": "2018-04-20T21:17:26.2534881",
-  "id": "<id>",
-  "data": {
-    "previousState": "Scheduled",
-    "state": "Processing"
-  },
-  "dataVersion": "1.0",
-  "metadataVersion": "1"
-}]
-```
+> [!TIP]
+> Щелкните значок с изображением глаза, чтобы развернуть данные события. Не обновляйте страницу, если вы хотите просмотреть все события.
 
-![Проверка событий](./media/job-state-events-cli-how-to/test_events.png)
+![Просмотр события подписки](./media/monitor-events-portal/view-subscription-event.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Реагирование на события Служб мультимедиа Azure](reacting-to-media-services-events.md)
+[Отправка, кодирование и потоковая передача](stream-files-tutorial-with-api.md)
 
-## <a name="see-also"></a>См. также
-
-[интерфейс командной строки Azure](https://docs.microsoft.com/en-us/cli/azure/ams?view=azure-cli-latest)

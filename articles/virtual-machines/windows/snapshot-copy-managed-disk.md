@@ -12,38 +12,38 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: article
-ms.date: 04/10/2018
+ms.date: 10/08/2018
 ms.author: cynthn
-ms.openlocfilehash: 7d45fd749fea4036d944d740541d8b8607553835
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 87d78178c32aea3ae601983ec14e9df0732b59e2
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34658161"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49091306"
 ---
 # <a name="create-a-snapshot"></a>Создание моментального снимка
 
-Создание моментального снимка операционной системы или виртуального жесткого диска данных для резервного копирования или устранения неполадок с виртуальной машиной. Моментальный снимок — это полная копия виртуального жесткого диска, доступная только для чтения. 
+Моментальный снимок — это полная копия виртуального жесткого диска, доступная только для чтения. Создайте моментальный снимок диска операционной системы или виртуального жесткого диска данных для использования в качестве резервных ресурсов или устранения неполадок виртуальной машины. 
 
-## <a name="use-azure-portal-to-take-a-snapshot"></a>Использование портала Azure для создания моментальных снимков 
+## <a name="use-the-azure-portal"></a>Использование портала Azure 
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. В левом верхнем углу щелкните **Создать ресурс** и найдите **моментальный снимок**.
-3. В колонке "Моментальный снимок" щелкните **Создать**.
+2. В меню слева выберите **Создать ресурс**, а затем найдите и выберите **моментальный снимок**.
+3. В окне **Моментальный снимок** нажмите кнопку **Создать**. Откроется окно **Создание моментального снимка**.
 4. Заполните поле **Имя** для моментального снимка.
-5. Выберите существующую [группу ресурсов](../../azure-resource-manager/resource-group-overview.md#resource-groups) или укажите имя, чтобы создать новую. 
-6. Выберите расположение центра обработки данных Azure.  
+5. Введите имя новой [группы ресурсов](../../azure-resource-manager/resource-group-overview.md#resource-groups) или выберите имеющуюся. 
+6. Выберите **расположение** центра обработки данных Azure.  
 7. В поле **Исходный диск** выберите управляемый диск, моментальный снимок которого необходимо создать.
-8. Выберите **тип учетной записи**, которая будет использоваться для хранения моментального снимка. Мы рекомендуем тип **Standard_LRS**, если вам не требуется хранить моментальный снимок на высокопроизводительном диске.
+8. Выберите **тип учетной записи**, которая будет использоваться для хранения моментального снимка. Выберите **Standard_HDD**, если вам не нужно хранить моментальный снимок на высокопроизводительном диске.
 9. Нажмите кнопку **Создать**.
 
-## <a name="use-powershell-to-take-a-snapshot"></a>Использование PowerShell для создания моментальных снимков
+## <a name="use-powershell"></a>Использование PowerShell
 
-Ниже показано, как скопировать диск VHD, создать конфигурации моментального снимка и собственно моментальный снимок диска с помощью командлета [New-AzureRmSnapshot](/powershell/module/azurerm.compute/new-azurermsnapshot). 
+Ниже показано, как скопировать диск VHD, создать конфигурацию моментального снимка и собственно моментальный снимок диска с помощью командлета [New-AzureRmSnapshot](/powershell/module/azurerm.compute/new-azurermsnapshot). 
 
-Прежде чем начать, убедитесь, что у вас установлена последняя версия модуля PowerShell AzureRM.Compute. Для работы с этой статьей требуется модуль AzureRM 5.7.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
+Прежде чем начать, убедитесь, что у вас установлена последняя версия модуля PowerShell AzureRM.Compute (5.7.0 или более поздняя). Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Если модуль PowerShell выполняется локально, выполните командлет [Connect-AzureRmAccount](https://docs.microsoft.com/powershell/module/azurerm.profile/connect-azurermaccount), чтобы подключиться к Azure.
 
-Задайте некоторые параметры. 
+1. Задайте некоторые параметры: 
 
  ```azurepowershell-interactive
 $resourceGroupName = 'myResourceGroup' 
@@ -52,39 +52,36 @@ $vmName = 'myVM'
 $snapshotName = 'mySnapshot'  
 ```
 
-Получите виртуальную машину.
+2. Получите виртуальную машину.
 
  ```azurepowershell-interactive
 $vm = get-azurermvm `
-   -ResourceGroupName $resourceGroupName `
+   -ResourceGroupName $resourceGroupName 
    -Name $vmName
 ```
 
-Создайте конфигурацию моментального снимка. В этом примере мы собираемся создать моментальный снимок диск ОС.
+3. Создайте конфигурацию моментального снимка. В этом примере моментальный снимок — это снимок диска операционной системы:
 
  ```azurepowershell-interactive
-$snapshot =  New-AzureRmSnapshotConfig `
-   -SourceUri $vm.StorageProfile.OsDisk.ManagedDisk.Id `
-   -Location $location `
+$snapshot =  New-AzureRmSnapshotConfig 
+   -SourceUri $vm.StorageProfile.OsDisk.ManagedDisk.Id 
+   -Location $location 
    -CreateOption copy
 ```
    
-> [!NOTE]
-> Перед сохранением моментального снимка в хранилище, избыточном в пределах зоны, его необходимо создать в регионе, который поддерживает [зоны доступности](../../availability-zones/az-overview.md) и в котором включен параметр `-SkuName Standard_ZRS`.   
-
+   > [!NOTE]
+   > Перед сохранением моментального снимка в хранилище, отказоустойчивое в пределах зоны, его необходимо создать в регионе, который поддерживает [зоны доступности](../../availability-zones/az-overview.md) и в котором включен параметр `-SkuName Standard_ZRS`.   
    
-Создайте моментальный снимок.
+4. Создайте моментальный снимок.
 
-```azurepowershell-interactive
-New-AzureRmSnapshot `
-   -Snapshot $snapshot `
-   -SnapshotName $snapshotName `
+ ```azurepowershell-interactive
+New-AzureRmSnapshot 
+   -Snapshot $snapshot 
+   -SnapshotName $snapshotName 
    -ResourceGroupName $resourceGroupName 
 ```
 
 
-
-
 ## <a name="next-steps"></a>Дополнительная информация
 
-Создайте виртуальную машину из моментального снимка, преобразовав его в управляемый диск, а затем подключив этот диск как диск ОС. Чтобы получить дополнительные сведения, см. пример [создания виртуальной машины из моментального снимка](./../scripts/virtual-machines-windows-powershell-sample-create-vm-from-snapshot.md?toc=%2fpowershell%2fmodule%2ftoc.json).
+Создайте виртуальную машину из моментального снимка, преобразовав его в управляемый диск, а затем подключив этот диск как диск ОС. Дополнительные сведения см. в статье [Создание виртуальной машины из моментального снимка с помощью PowerShell](./../scripts/virtual-machines-windows-powershell-sample-create-vm-from-snapshot.md?toc=%2fpowershell%2fmodule%2ftoc.json).

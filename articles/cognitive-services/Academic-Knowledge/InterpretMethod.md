@@ -1,20 +1,21 @@
 ---
-title: Метод интерпретации в Academic Knowledge API | Документация Майкрософт
+title: Метод интерпретации (Academic Knowledge API)
+titlesuffix: Azure Cognitive Services
 description: Используйте метод интерпретации для возврата форматированных интерпретаций строк запроса пользователя на основе данных Academic Graph и Academic Grammar в Microsoft Cognitive Services.
 services: cognitive-services
 author: alch-msft
-manager: kuansanw
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: academic-knowledge
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
-ms.openlocfilehash: a46c792f14fabf6562666d1067ef880bd505741f
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: e16a772caa5fba632f8544094e2d8b57ed4ca765
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380057"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48902575"
 ---
 # <a name="interpret-method"></a>Метод интерпретации
 
@@ -30,7 +31,7 @@ ms.locfileid: "35380057"
 
 ИМЯ     | Значение | Обязательный?  | ОПИСАНИЕ
 ---------|---------|---------|---------
-**query**    | Текстовая строка | Yes | Запрос, введенный пользователем.  Если для параметра complete установлено значение 1, запрос будет интерпретироваться как префикс для создания запросов автозаполнения предложений.        
+**query**    | Текстовая строка | Yes | Запрос, введенный пользователем.  Если для параметра complete установлено значение 1, запрос будет интерпретироваться как префикс для создания автозавершения запросов.        
 **model**    | Текстовая строка | Нет   | Имя модели, которую необходимо запросить.  В настоящее время значение по умолчанию соответствует *latest*.        
 **complete** | 0 или 1 | Нет <br>по умолчанию:0  | значение 1 означает, что автозавершения предложения создаются на основе данных грамматики и графа.         
 **count**    | Number | Нет <br>по умолчанию:10 | Максимальное количество интерпретаций для возврата.         

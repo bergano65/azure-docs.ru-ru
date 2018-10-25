@@ -9,12 +9,12 @@ ms.date: 09/15/2018
 ms.service: application-insights
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 6262c7029a76deec2dc1169783e9cbf6311fc3f1
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 853fd1e9939631b6c459caf89994299e7a8406b0
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46958277"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49165540"
 ---
 # <a name="collect-distributed-traces-from-go-preview"></a>Сбор данных о распределенных трассировках из Go (предварительная версия)
 
@@ -182,47 +182,47 @@ Application Insights теперь поддерживает распределе�
             log.Fatal(http.ListenAndServe(":50030", &ochttp.Handler{Propagation: &tracecontext.HTTPFormat{}}))
         
         }
-        ```
+     ```
 
-3. Once the simple go app is running navigate to `http://localhost:50030`. Each refresh of the browser will generate the text "hello world" accompanied by corresponding span data that is picked up by the local forwarder.
+3. После запуска простого приложения на Go перейдите к `http://localhost:50030`. Каждое обновление браузера будет создавать текст Hello World, а также соответствующие данные span, которые получает локальный сервер пересылки.
 
-4. To confirm that the **local forwarder** is picking up the traces check the `LocalForwarder.config` file. If you followed the steps in the [prerequisite](https://docs.microsoft.com/azure/application-insights/local-forwarder#windows-service), it will be located in `C:\LF-WindowsServiceHost`.
+4. Чтобы подтвердить, что **локальный сервер пересылки** собирает трассировки, проверьте файл `LocalForwarder.config`. Если вы выполнили шаги из [предварительных требований](https://docs.microsoft.com/azure/application-insights/local-forwarder#windows-service), он будет находиться в каталоге `C:\LF-WindowsServiceHost`.
 
-    In the image below of the log file, you can see that prior to running the second script where we added an exporter `OpenCensus input BatchesReceived` was 0. Once we started running the updated script `BatchesReceived` incremented equal to the number of values we entered:
+    На приведенном ниже изображении файла журнала можно увидеть, что перед запуском второго скрипта, где был добавлен экспортер, `OpenCensus input BatchesReceived` было равно 0. Когда мы начали выполнять обновленный скрипт, `BatchesReceived` увеличилось в соответствии с введенным числом значений:
     
-    ![New App Insights resource form](./media/opencensus-go/0004-batches-received.png)
+    ![Форма создания ресурса App Insights](./media/opencensus-go/0004-batches-received.png)
 
-## Start monitoring in the Azure portal
+## <a name="start-monitoring-in-the-azure-portal"></a>Запуск мониторинга на портале Azure
 
-1. You can now reopen the Application Insights **Overview** page in the Azure portal, to view details about your currently running application. Select **Live Metric Stream**.
+1. Теперь можно повторно открыть страницу **Обзор** Application Insights на портале Azure для просмотра сведений о выполняющемся в данный момент приложении. Выберите **Live Metrics Stream**.
 
-   ![Screenshot of overview pane with live metric stream selected in red box](./media/opencensus-go/0005-overview-live-metrics-stream.png)
+   ![Снимок экрана области "Обзор" с пунктом Live Metrics Stream в красном прямоугольнике](./media/opencensus-go/0005-overview-live-metrics-stream.png)
 
-2. If you run the second Go app again and start refreshing the browser for `http://localhost:50030`, you will see live trace data as it arrives in Application Insights from the local forwarder service.
+2. Если выполнить второе приложение Go снова и начать обновлять браузер для `http://localhost:50030`, отобразятся динамические данные трассировки, так как они поступают в Application Insights из службы локального сервера пересылки.
 
-   ![Screenshot of live metric stream with performance data displayed](./media/opencensus-go/0006-stream.png)
+   ![Снимок экрана с разделом Live Metrics Stream и данными производительности](./media/opencensus-go/0006-stream.png)
 
-3. Navigate back to the **Overview** page and select **Application Map** for a visual layout of the dependency relationships and call timing between your application components.
+3. Вернитесь на страницу **Обзор** и выберите **Схема приложений**, чтобы получить визуальный макет отношений зависимости и длительность вызовов между компонентами приложения.
 
-    ![Screenshot of basic application map](./media/opencensus-go/0007-application-map.png)
+    ![Снимок экрана с основной схемой приложений](./media/opencensus-go/0007-application-map.png)
 
-    Since we were only tracing one method call, our application map isn't as interesting. But application map can scale to visualize far more distributed applications:
+    Так как мы выполняли трассировку только одного вызова метода, наша схема приложений не так интересна. Но схему приложений можно масштабировать для визуализации гораздо большего количества распределенных приложений:
 
-   ![Application Map](./media/app-insights-nodejs-quick-start/application-map.png)
+   ![Схема сопоставления приложений](./media/app-insights-nodejs-quick-start/application-map.png)
 
-4. Select **Investigate Performance** to perform detailed performance analysis and determine the root cause of slow performance.
+4. Выберите **Анализ работы**, чтобы выполнить подробный анализ работы и определить первопричину низкой производительности.
 
-    ![Screenshot of performance pane](./media/opencensus-go/0008-performance.png)
+    ![Снимок экрана с панелью производительности](./media/opencensus-go/0008-performance.png)
 
-5. Selecting **Samples** and then clicking on any of the samples that appear in the right-hand pane will launch the end-to-end transaction details experience. While our sample app will just show us a single event, a more complex application would allow you to explore the end-to-end transaction down to level of an individual event's call stack.
+5. Если выбрать **Примеры**, а затем щелкнуть один из примеров, которые отображаются на панели справа, запустится интерфейс сведений о сквозной транзакции. В то время как в нашем примере приложения показано одно событие, в более сложном приложении можно изучить сквозную транзакцию до уровня стека вызовов отдельного события.
 
-     ![Screenshot of end-to-end transaction interface](./media/opencensus-go/0009-end-to-end-transaction.png)
+     ![Снимок экрана с интерфейсом сквозных транзакций](./media/opencensus-go/0009-end-to-end-transaction.png)
 
-## OpenCensus trace for Go
+## <a name="opencensus-trace-for-go"></a>Трассировка OpenCensus для Go
 
-We only covered the basics of integrating OpenCensus for Go with the local forwarder and Application Insights. The [official OpenCensus Go usage guidance](https://godoc.org/go.opencensus.io) covers more advanced topics.
+Мы рассмотрели только основы интеграции OpenCensus для Go с помощью локального сервера пересылки и Application Insights. В [официальном руководстве по использованию OpenCensus Go](https://godoc.org/go.opencensus.io) рассматриваются более сложные темы.
 
-## Next steps
+## <a name="next-steps"></a>Дополнительная информация
 
-* [Application map](./app-insights-app-map.md)
-* [End-to-end performance monitoring](./app-insights-tutorial-performance.md)
+* [Сопоставление приложений](./app-insights-app-map.md)
+* [Поиск и диагностика проблем производительности с помощью Azure Application Insights](./app-insights-tutorial-performance.md)

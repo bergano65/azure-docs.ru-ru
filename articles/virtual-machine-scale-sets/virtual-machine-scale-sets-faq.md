@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 12/12/2017
 ms.author: negat
 ms.custom: na
-ms.openlocfilehash: 9ec049ebbfaa8e6ee5dbf585488d5c2e8ff25802
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: db1ac46521a6ca8688ed1257b8b812321fee2ea3
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46949712"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49345328"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -387,7 +387,7 @@ Update-AzureRmVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssN
 
 Дополнительные сведения см. в [центре управления безопасностью Майкрософт](https://www.microsoft.com/TrustCenter/Compliance/PCI).
 
-### <a name="does-azure-managed-service-identityhttpsdocsmicrosoftcomazureactive-directorymsi-overview-work-with-virtual-machine-scale-sets"></a>Работает ли [управляемое удостоверение службы Azure](https://docs.microsoft.com/azure/active-directory/msi-overview) с масштабируемыми наборами виртуальных машин?
+### <a name="does-managed-identities-for-azure-resourceshttpsdocsmicrosoftcomazureactive-directorymsi-overview-work-with-virtual-machine-scale-sets"></a>Работают ли [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/msi-overview) с масштабируемыми наборами виртуальных машин?
 
 Да. Некоторые примеры шаблонов MSI доступны в шаблонах быстрого запуска Azure. Для Linux — [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-msi-linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-msi-linux). Для Windows — [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-msi-windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-msi-windows).
 

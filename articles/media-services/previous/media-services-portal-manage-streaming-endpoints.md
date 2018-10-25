@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/10/2017
 ms.author: juliako
-ms.openlocfilehash: 542780766cfa90026d5ff492fcf7b579cb2d7029
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: a023cb2ea1cf74c8029cc207c9b899631facb929
+ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33785833"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48018270"
 ---
 # <a name="manage-streaming-endpoints-with-the-azure-portal"></a>Управление конечными точками потоковой передачи с помощью портала Azure
 

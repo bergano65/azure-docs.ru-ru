@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 10/10/2017
 ms.author: harijayms
-ms.openlocfilehash: 229f3dd11a90c4f6d65c9cae2a5dd3447eedf83e
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 9cd388bf231bce547f4d9aca474e93bf6753d134
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47225265"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49386711"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
@@ -299,8 +299,8 @@ subscriptionId | Подписка Azure для виртуальной машин
 tags | [Теги](../../azure-resource-manager/resource-group-using-tags.md) для виртуальной машины  | 2017-08-01
 имя_группы_ресурсов | [Группа ресурсов](../../azure-resource-manager/resource-group-overview.md) для виртуальной машины | 2017-08-01
 placementGroupId | [Группа размещения](../../virtual-machine-scale-sets/virtual-machine-scale-sets-placement-groups.md) масштабируемого набора виртуальных машин | 2017-08-01
-План | [План] (https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines/createorupdate#plan) образ Azure Marketplace для виртуальной машины содержит имя, продукт и издатель | 2017-04-02
-publicKeys | Коллекция открытых ключей [https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines/createorupdate#sshpublickey], назначенная виртуальной машине и путям | 2017-04-02
+План | [План] (https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#plan) образ Azure Marketplace для виртуальной машины содержит имя, продукт и издатель | 2017-04-02
+publicKeys | Коллекция открытых ключей [https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#sshpublickey], назначенная виртуальной машине и путям | 2017-04-02
 vmScaleSetName | [Имя масштабируемого набора виртуальных машин] (../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) | 2017-12-01
 зона | [Зона доступности](../../availability-zones/az-overview.md) виртуальной машины | 2017-12-01 
 ipv4/privateIpAddress | Локальный IPv4-адрес виртуальной машины | 2017-04-02
@@ -310,7 +310,7 @@ subnet/prefix | Префикс подсети, пример 24 | 2017-04-02
 ipv6/ipAddress | Локальный IPv6-адрес виртуальной машины | 2017-04-02 
 macAddress | Mac-адрес виртуальной машины | 2017-04-02 
 scheduledevents | Ознакомьтесь со статьей [Служба метаданных Azure. Запланированные события (предварительная версия) для виртуальных машин Windows](scheduled-events.md) | 2017-08-01
-identity | Управляемое удостоверение службы (предварительная версия). Ознакомьтесь с [получением маркера доступа](../../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md). | 2018-02-01 
+identity | Управляемые удостоверения для ресурсов Azure (предварительная версия). Ознакомьтесь с [получением маркера доступа](../../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md). | 2018-02-01 
 
 ## <a name="example-scenarios-for-usage"></a>Примеры сценариев использования  
 

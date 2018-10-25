@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 ms.author: haining
 author: haining
 ms.date: 09/24/2018
-ms.openlocfilehash: 0c5cfcee65b176147125dd2edbff2497b1eee70b
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 9778d348cf49d4066f034931dc350a1f4a608ad2
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47158570"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48236590"
 ---
 # <a name="migrate-to-the-latest-version-of-azure-machine-learning-service"></a>Переход на последнюю версию службы "Машинное обучение Azure" 
 
@@ -52,7 +52,7 @@ ms.locfileid: "47158570"
 
 Ресурсы, такие как ваши учетные записи для экспериментирования, учетные записи для управления моделями и вычислительные среды машинного обучения, нельзя перенести в последнюю версию службы "Машинное обучение Azure". См. на [временной шкале](overview-what-happened-to-workbench.md#timeline), как долго продолжат работать ресурсы.
 
-Начните работу с последней версией, создав рабочую область машинного обучения Azure на [портале Azure](quickstart-get-started.md). Панель мониторинга для рабочей области портала поддерживается только в браузерах Edge, Chrome и Firefox.
+Начните работу с последней версией, создав рабочую область Службы машинного обучения Azure на [портале Azure](quickstart-get-started.md). Панель мониторинга для рабочей области портала поддерживается только в браузерах Edge, Chrome и Firefox.
 
 Эта новая рабочая область представляет собой ресурс службы верхнего уровня и позволяет использовать все новые возможности службы "Машинное обучение Azure". Дополнительные сведения об этой рабочей области и архитектуре см. [здесь](concept-azure-machine-learning-architecture.md).
 

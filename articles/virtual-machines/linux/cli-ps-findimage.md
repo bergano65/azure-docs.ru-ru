@@ -13,15 +13,15 @@ ms.devlang: azurecli
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 02/28/2018
+ms.date: 09/28/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 33ffb9d1685f3d76e884ae0d90545f659b5ec87c
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: b9fed56746f5b26269f6a70aeedd06ba9b19548f
+ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46953356"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48018831"
 ---
 # <a name="how-to-find-linux-vm-images-in-the-azure-marketplace-with-the-azure-cli"></a>Поиск образов виртуальных машин Linux в Azure Marketplace с помощью Azure CLI
 В этой статье описывается, как с помощью Azure CLI находить образы виртуальных машин в Azure Marketplace. При создании виртуальной машины программными средствами с помощью CLI, шаблонов диспетчера ресурсов или других средств, эти сведения можно использовать для указания образа Marketplace.
@@ -49,7 +49,7 @@ Offer          Publisher               Sku                 Urn                  
 CentOS         OpenLogic               7.3                 OpenLogic:CentOS:7.3:latest                                     CentOS               latest
 CoreOS         CoreOS                  Stable              CoreOS:CoreOS:Stable:latest                                     CoreOS               latest
 Debian         credativ                8                   credativ:Debian:8:latest                                        Debian               latest
-openSUSE-Leap  SUSE                    42.2                SUSE:openSUSE-Leap:42.2:latest                                  openSUSE-Leap        latest
+openSUSE-Leap  SUSE                    42.3                SUSE:openSUSE-Leap:42.3:latest                                  openSUSE-Leap        latest
 RHEL           RedHat                  7.3                 RedHat:RHEL:7.3:latest                                          RHEL                 latest
 SLES           SUSE                    12-SP2              SUSE:SLES:12-SP2:latest                                         SLES                 latest
 UbuntuServer   Canonical               16.04-LTS           Canonical:UbuntuServer:16.04-LTS:latest                         UbuntuLTS            latest
@@ -71,6 +71,7 @@ az vm image list --offer Debian --all --output table
 ```
 Offer    Publisher    Sku                Urn                                              Version
 -------  -----------  -----------------  -----------------------------------------------  --------------
+...
 Debian   credativ     7                  credativ:Debian:7:7.0.201602010                  7.0.201602010
 Debian   credativ     7                  credativ:Debian:7:7.0.201603020                  7.0.201603020
 Debian   credativ     7                  credativ:Debian:7:7.0.201604050                  7.0.201604050
@@ -95,7 +96,7 @@ Debian   credativ     8                  credativ:Debian:8:8.0.201708040        
 ...
 ```
 
-Примените аналогичные фильтры, используя параметры `--location`, `--publisher` и `--sku`. Можно даже искать частичные совпадения по фильтру. Так, с помощью параметра `--offer Deb` можно найти все образы Debian.
+Примените аналогичные фильтры, используя параметры `--location`, `--publisher` и `--sku`. Можно искать частичные совпадения по фильтру. Так, с помощью параметра `--offer Deb` можно найти все образы Debian.
 
 Если с помощью параметра `--location` не указать определенное расположение, то для региона возвращаются значения по умолчанию. (Задайте другое расположение по умолчанию с помощью команды `az configure --defaults location=<location>`.)
 
@@ -146,21 +147,31 @@ az vm image list-publishers --location westus --output table
 ```
 Location    Name
 ----------  ----------------------------------------------------
+westus      128technology
 westus      1e
 westus      4psa
+westus      5nine-software-inc
 westus      7isolutions
 westus      a10networks
 westus      abiquo
 westus      accellion
+westus      accessdata-group
+westus      accops
 westus      Acronis
 westus      Acronis.Backup
+westus      actian-corp
 westus      actian_matrix
 westus      actifio
 westus      activeeon
-westus      adatao
+westus      advantech-webaccess
+westus      aerospike
+westus      affinio
+westus      aiscaler-cache-control-ddos-and-url-rewriting-
+westus      akamai-technologies
+westus      akumina
 ...
 ```
-Используйте эти сведения, чтобы найти предложения от определенного издателя. Например, если компания *Canonical* — издатель образов из западной части США, то найти ее предложения можно, выполнив команду `azure vm image list-offers`. Укажите расположение и издателя, как показано в следующем примере:
+Используйте эти сведения, чтобы найти предложения от определенного издателя. Например, чтобы найти издателя *Canonical* в западной части США найдите предложения, запустив `azure vm image list-offers`. Укажите расположение и издателя, как показано в следующем примере:
 
 ```azurecli
 az vm image list-offers --location westus --publisher Canonical --output table
@@ -176,8 +187,6 @@ westus      Ubuntu15.04SnappyDocker
 westus      UbunturollingSnappy
 westus      UbuntuServer
 westus      Ubuntu_Core
-westus      Ubuntu_Snappy_Core
-westus      Ubuntu_Snappy_Core_Docker
 ```
 Вы видите, что издатель Canonical из западной части США предлагает *UbuntuServer* для Azure. Однако нам также нужны номера SKU. Чтобы получить их значения, выполните команду `azure vm image list-skus` и укажите расположение, издателя и обнаруженное предложение:
 
@@ -192,9 +201,7 @@ Location    Name
 ----------  -----------------
 westus      12.04.3-LTS
 westus      12.04.4-LTS
-westus      12.04.5-DAILY-LTS
 westus      12.04.5-LTS
-westus      12.10
 westus      14.04.0-LTS
 westus      14.04.1-LTS
 westus      14.04.2-LTS
@@ -202,15 +209,14 @@ westus      14.04.3-LTS
 westus      14.04.4-LTS
 westus      14.04.5-DAILY-LTS
 westus      14.04.5-LTS
-westus      16.04-beta
 westus      16.04-DAILY-LTS
 westus      16.04-LTS
 westus      16.04.0-LTS
-westus      16.10
-westus      16.10-DAILY
-westus      17.04
-westus      17.04-DAILY
+westus      17.10
 westus      17.10-DAILY
+westus      18.04-DAILY-LTS
+westus      18.04-LTS
+westus      18.10-DAILY
 ```
 
 Наконец, выполните команду `az vm image list`, чтобы найти определенную версию номера SKU, например *16.04-LTS*:
@@ -219,7 +225,7 @@ westus      17.10-DAILY
 az vm image list --location westus --publisher Canonical --offer UbuntuServer --sku 16.04-LTS --all --output table
 ```
 
-Выходные данные:
+Частичные выходные данные приведены ниже.
 
 ```
 Offer         Publisher    Sku        Urn                                               Version
@@ -238,17 +244,7 @@ UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201
 UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201703030  16.04.201703030
 UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201703070  16.04.201703070
 UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201703270  16.04.201703270
-UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201703280  16.04.201703280
-UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201703300  16.04.201703300
-UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201705080  16.04.201705080
-UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201705160  16.04.201705160
-UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201706100  16.04.201706100
-UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201706191  16.04.201706191
-UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201707210  16.04.201707210
-UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201707270  16.04.201707270
-UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201708030  16.04.201708030
-UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201708110  16.04.201708110
-UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201708151  16.04.201708151
+...
 ```
 
 Теперь по значению URN мы можем выбрать именно тот образ, который нам нужен. Передайте это значение с параметром `--image` при создании виртуальной машины с помощью команды [az vm create](/cli/azure/vm#az_vm_create). Помните, что при необходимости можно заменить номер версии в URN словом latest. В этом случае всегда будет выбираться последняя версия образа. 
@@ -258,12 +254,13 @@ UbuntuServer  Canonical    16.04-LTS  Canonical:UbuntuServer:16.04-LTS:16.04.201
 [!INCLUDE [virtual-machines-common-marketplace-plan](../../../includes/virtual-machines-common-marketplace-plan.md)]
 
 ### <a name="view-plan-properties"></a>Просмотр свойств плана
+
 Чтобы просмотреть сведения о плане покупки образа, выполните команду [az vm image show](/cli/azure/image#az_image_show). Если в выходных данных значением свойства `plan` не является `null`, в образе появятся условия использования, которые необходимо принять перед программным развертыванием.
 
 Например, образ Canonical Ubuntu Server 16.04 LTS не содержит дополнительных условий, так как в свойстве `plan` присутствует значение `null`.
 
 ```azurecli
-az vm image show --location westus --publisher Canonical --offer UbuntuServer --sku 16.04-LTS --version 16.04.201801260
+az vm image show --location westus --urn Canonical:UbuntuServer:16.04-LTS:latest
 ```
 
 Выходные данные:
@@ -273,7 +270,7 @@ az vm image show --location westus --publisher Canonical --offer UbuntuServer --
   "dataDiskImages": [],
   "id": "/Subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Providers/Microsoft.Compute/Locations/westus/Publishers/Canonical/ArtifactTypes/VMImage/Offers/UbuntuServer/Skus/16.04-LTS/Versions/16.04.201801260",
   "location": "westus",
-  "name": "16.04.201801260",
+  "name": "16.04.201809120",
   "osDiskImage": {
     "operatingSystem": "Linux"
   },
@@ -285,7 +282,7 @@ az vm image show --location westus --publisher Canonical --offer UbuntuServer --
 После запуска аналогичных команд для образа RabbitMQ, сертифицированного Bitnami, отображаются следующие свойства `plan`: `name`, `product` и `publisher`. (Некоторые образы также имеют свойство `promotion code`). Ознакомьтесь со следующими разделами для развертывания этого образа, чтобы принять условия соглашения и включить программное развертывание.
 
 ```azurecli
-az vm image show --location westus --publisher bitnami --offer rabbitmq --sku rabbitmq --version 3.7.1807171506
+az vm image show --location westus --urn bitnami:rabbitmq:rabbitmq:latest
 ```
 Выходные данные:
 
@@ -294,7 +291,7 @@ az vm image show --location westus --publisher bitnami --offer rabbitmq --sku ra
   "dataDiskImages": [],
   "id": "/Subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Providers/Microsoft.Compute/Locations/westus/Publishers/bitnami/ArtifactTypes/VMImage/Offers/rabbitmq/Skus/rabbitmq/Versions/3.7.1807171506",
   "location": "westus",
-  "name": "3.7.1807171506",
+  "name": "3.7.1809211005",
   "osDiskImage": {
     "operatingSystem": "Linux"
   },
@@ -308,6 +305,7 @@ az vm image show --location westus --publisher bitnami --offer rabbitmq --sku ra
 ```
 
 ### <a name="accept-the-terms"></a>Принятие условий
+
 Чтобы просмотреть и принять условия лицензии, используйте команду [az vm image accept-terms](/cli/azure/vm/image?#az_vm_image_accept_terms). При принятии условий в вашей подписке будет включено программное развертывание. Необходимо принять условия соглашения для каждой подписки в образе. Например: 
 
 ```azurecli
@@ -328,12 +326,13 @@ az vm image accept-terms --urn bitnami:rabbitmq:rabbitmq:latest
   "product": "rabbitmq",
   "publisher": "bitnami",
   "retrieveDatetime": "2018-02-22T04:06:28.7641907Z",
-  "signature": "WVIEA3LAZIK7ZL2YRV5JYQXONPV76NQJW3FKMKDZYCRGXZYVDGX6BVY45JO3BXVMNA2COBOEYG2NO76ONORU7ITTRHGZDYNJNKLNLWI",
+  "signature": "XXXXXXLAZIK7ZL2YRV5JYQXONPV76NQJW3FKMKDZYCRGXZYVDGX6BVY45JO3BXVMNA2COBOEYG2NO76ONORU7ITTRHGZDYNJNXXXXXX",
   "type": "Microsoft.MarketplaceOrdering/offertypes"
 }
 ```
 
 ### <a name="deploy-using-purchase-plan-parameters"></a>Развертывание с помощью параметров плана приобретения
+
 После принятия условий для образа виртуальную машину можно развернуть в подписке. Чтобы развернуть образ с помощью команды `az vm create`, укажите параметры для плана покупки и URN образа. Например, чтобы развернуть виртуальную машину из образа RabbitMQ, сертифицированного Bitnami, выполните следующие команды:
 
 ```azurecli
@@ -342,8 +341,6 @@ az group create --name myResourceGroupVM --location westus
 az vm create --resource-group myResourceGroupVM --name myVM --image bitnami:rabbitmq:rabbitmq:latest --plan-name rabbitmq --plan-product rabbitmq --plan-publisher bitnami
 
 ```
-
-
 
 ## <a name="next-steps"></a>Дополнительная информация
 Инструкции по быстрому созданию виртуальной машины на основе данных образа см. в статье [Создание виртуальных машин Linux и управление ими с помощью Azure CLI](tutorial-manage-vm.md).

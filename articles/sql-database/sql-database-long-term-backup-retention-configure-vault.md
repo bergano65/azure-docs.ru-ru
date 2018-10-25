@@ -11,21 +11,20 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 05/08/2018
-ms.openlocfilehash: a9a3d696f1c503969b89795f8c6d86a77bd353e8
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.date: 10/05/2018
+ms.openlocfilehash: 499689e4d36f368746e5e0ea9e6bc3f3bf0ec0d9
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47160730"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48868239"
 ---
-# <a name="configure-and-restore-from-azure-sql-database-long-term-backup-retention-using-azure-recovery-services-vault"></a>Настройка долгосрочного хранения резервных копий для базы данных SQL Azure и восстановление из резервной копии с помощью хранилища служб восстановления Azure
+# <a name="configure-long-term-backup-retention-using-azure-recovery-services-vault"></a>Настройка долгосрочного хранения резервных копий с помощью хранилища Службы восстановления Azure
 
 Вы можете настроить хранилище служб восстановления Azure для хранения резервных копий баз данных SQL Azure, а затем восстановить базы данных из сохраненных резервных копий, используя портал Azure или PowerShell.
 
 > [!NOTE]
-> Как составная часть начальной версии пробного выпуска функции долгосрочного хранения резервных копий, вышедшей в октябре 2016 г., резервные копии хранились в хранилище службы восстановления служб Azure. Данное обновление устраняет такую зависимость, но для обеспечения обратной совместимости поддержка исходного API сохраняется до 31 мая 2018 г. Сведения о взаимодействии с резервными копиями в хранилище службы восстановления служб Azure см. в статье [Configure and restore from Azure SQL Database long-term backup retention using Azure Recovery Services Vault](sql-database-long-term-backup-retention-configure-vault.md) (Настройка и восстановление с использованием долгосрочного хранения резервных копий базы данных SQL Azure с помощью хранилища служб восстановления Azure). 
-
+> Как составная часть начальной версии пробного выпуска функции долгосрочного хранения резервных копий, вышедшей в октябре 2016 г., резервные копии хранились в хранилище службы восстановления служб Azure. Данное обновление устраняет такую зависимость, но для обеспечения обратной совместимости поддержка исходного API сохраняется до 31 мая 2018 г. Сведения о взаимодействии с резервными копиями в хранилище службы восстановления служб Azure см. в статье [Configure and restore from Azure SQL Database long-term backup retention using Azure Recovery Services Vault](sql-database-long-term-backup-retention-configure-vault.md) (Настройка и восстановление с использованием долгосрочного хранения резервных копий базы данных SQL Azure с помощью хранилища служб восстановления Azure).
 
 ## <a name="azure-portal"></a>Портал Azure
 
@@ -33,7 +32,7 @@ ms.locfileid: "47160730"
 
 ### <a name="configure-the-vault-register-the-server-and-select-databases"></a>Настройка хранилища, регистрация сервера и выбор баз данных
 
-Вы настроите более длительный срок [хранения создаваемых автоматически резервных копий](sql-database-long-term-retention.md) в хранилище служб восстановления Azure, чем для вашего уровня служб. 
+Вы настроите более длительный срок [хранения создаваемых автоматически резервных копий](sql-database-long-term-retention.md) в хранилище служб восстановления Azure, чем для вашего уровня служб.
 
 1. Откройте страницу **SQL Server** для своего сервера.
 
@@ -62,7 +61,7 @@ ms.locfileid: "47160730"
 7. На странице **Хранилища служб восстановления** щелкните **Добавить**.
 
    ![ссылка на добавление хранилища](./media/sql-database-get-started-backup-recovery/add-new-vault-link.png)
-   
+
 8. На странице **Хранилище служб восстановления** введите допустимое имя для хранилища служб восстановления.
 
    ![Имя нового хранилища](./media/sql-database-get-started-backup-recovery/new-vault-name.png)
@@ -73,7 +72,6 @@ ms.locfileid: "47160730"
 
    > [!IMPORTANT]
    > Хранилище должно находиться в том же регионе, что и логический сервер Azure SQL Server, и использовать ту же группу ресурсов.
-   >
 
 10. После создания хранилища вернитесь на страницу **Хранилище служб восстановления**.
 
@@ -84,9 +82,9 @@ ms.locfileid: "47160730"
 12. На странице **Настройка** введите допустимое имя для новой политики хранения, измените ее должным образом и нажмите кнопку **ОК**.
 
    ![Определение политики хранения](./media/sql-database-get-started-backup-recovery/define-retention-policy.png)
-   
-   >[!NOTE]
-   >В именах политик хранения запрещено использовать некоторые знаки, включая пробелы.
+
+   > [!NOTE]
+   > В именах политик хранения запрещено использовать некоторые знаки, включая пробелы.
 
 13. На странице **Долгосрочное хранение архивных копий** для вашей базы данных щелкните **Сохранить**, а затем нажмите кнопку **ОК**, чтобы применить политику долгосрочного хранения резервных копий ко всем выбранным базам данных.
 
@@ -98,11 +96,10 @@ ms.locfileid: "47160730"
 
 > [!IMPORTANT]
 > После настройки резервные копии появятся в хранилище в течение следующих семи дней. Не выполняйте следующие этапы до появления резервных копий в хранилище.
->
 
 ### <a name="view-backups-in-long-term-retention-using-azure-portal"></a>Просмотр резервных копий долгосрочного хранения с помощью портала Azure
 
-Просмотрите сведения о резервных копиях базы данных в хранилище с включенной функцией [долгосрочного хранения резервных копий](sql-database-long-term-retention.md). 
+Просмотрите сведения о резервных копиях базы данных в хранилище с включенной функцией [долгосрочного хранения резервных копий](sql-database-long-term-retention.md).
 
 1. На портале Azure откройте хранилище служб восстановления Azure, где хранятся резервные копии вашей базы данных (щелкните **Все ресурсы** и выберите его из списка ресурсов вашей подписки), чтобы просмотреть сведения об объеме хранилища, используемого для хранения резервных копий базы данных.
 
@@ -167,7 +164,7 @@ ms.locfileid: "47160730"
 $serverLocation = (Get-AzureRmSqlServer -ServerName $serverName -ResourceGroupName $resourceGroupName).Location
 $recoveryServiceVaultName = "{new-vault-name}"
 
-$vault = New-AzureRmRecoveryServicesVault -Name $recoveryServiceVaultName -ResourceGroupName $ResourceGroupName -Location $serverLocation 
+$vault = New-AzureRmRecoveryServicesVault -Name $recoveryServiceVaultName -ResourceGroupName $ResourceGroupName -Location $serverLocation
 Set-AzureRmRecoveryServicesBackupProperties -BackupStorageRedundancy LocallyRedundant -Vault $vault
 ```
 
@@ -176,18 +173,17 @@ Set-AzureRmRecoveryServicesBackupProperties -BackupStorageRedundancy LocallyRedu
 Воспользуйтесь командлетом [Set-AzureRmSqlServerBackupLongTermRetentionVault](/powershell/module/azurerm.sql/set-azurermsqlserverbackuplongtermretentionvault), чтобы связать созданное ранее хранилище служб восстановления с определенным сервером SQL Azure.
 
 ```PowerShell
-# Set your server to use the vault to for long-term backup retention 
+# Set your server to use the vault to for long-term backup retention
 
 Set-AzureRmSqlServerBackupLongTermRetentionVault -ResourceGroupName $resourceGroupName -ServerName $serverName -ResourceId $vault.Id
 ```
 
 ### <a name="create-a-retention-policy"></a>Создание политики хранения
 
-Политика хранения определяет срок хранения резервной копии базы данных. Воспользуйтесь командлетом [Get-AzureRmRecoveryServicesBackupRetentionPolicyObject](https://docs.microsoft.com/powershell/module/azurerm.recoveryservices.backup/get-azurermrecoveryservicesbackupretentionpolicyobject), чтобы получить политику хранения по умолчанию. Она будет использоваться как шаблон при создании других политик. В этом шаблоне для срока хранения задано значение 2 года. Затем выполните командлет [New-AzureRmRecoveryServicesBackupProtectionPolicy](/powershell/module/azurerm.recoveryservices.backup/new-azurermrecoveryservicesbackupprotectionpolicy), чтобы создать политику. 
+Политика хранения определяет срок хранения резервной копии базы данных. Воспользуйтесь командлетом [Get-AzureRmRecoveryServicesBackupRetentionPolicyObject](https://docs.microsoft.com/powershell/module/azurerm.recoveryservices.backup/get-azurermrecoveryservicesbackupretentionpolicyobject), чтобы получить политику хранения по умолчанию. Она будет использоваться как шаблон при создании других политик. В этом шаблоне для срока хранения задано значение 2 года. Затем выполните командлет [New-AzureRmRecoveryServicesBackupProtectionPolicy](/powershell/module/azurerm.recoveryservices.backup/new-azurermrecoveryservicesbackupprotectionpolicy), чтобы создать политику.
 
 > [!NOTE]
-> Для некоторых командлетов необходимо настроить контекст хранилища перед выполнением ([Set-AzureRmRecoveryServicesVaultContext](/powershell/module/azurerm.recoveryservices/set-azurermrecoveryservicesvaultcontext)). Поэтому вы увидите этот командлет в нескольких связанных фрагментах кода. Контекст необходимо настроить, так как политика является частью хранилища. Вы можете создать несколько политик хранения для каждого хранилища, а затем применять требуемую политику для указанных баз данных. 
-
+> Для некоторых командлетов необходимо настроить контекст хранилища перед выполнением ([Set-AzureRmRecoveryServicesVaultContext](/powershell/module/azurerm.recoveryservices/set-azurermrecoveryservicesvaultcontext)). Поэтому вы увидите этот командлет в нескольких связанных фрагментах кода. Контекст необходимо настроить, так как политика является частью хранилища. Вы можете создать несколько политик хранения для каждого хранилища, а затем применять требуемую политику для указанных баз данных.
 
 ```PowerShell
 # Retrieve the default retention policy for the AzureSQLDatabase workload type
@@ -218,7 +214,7 @@ Set-AzureRmSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName $resource
 
 ### <a name="view-backup-info-and-backups-in-long-term-retention"></a>Просмотр сведений о резервных копиях с включенной функцией долгосрочного хранения
 
-Просмотрите сведения о резервных копиях базы данных в хранилище с включенной функцией [долгосрочного хранения резервных копий](sql-database-long-term-retention.md). 
+Просмотрите сведения о резервных копиях базы данных в хранилище с включенной функцией [долгосрочного хранения резервных копий](sql-database-long-term-retention.md).
 
 Воспользуйтесь следующими командлетами для просмотра сведений о резервных копиях:
 
@@ -264,18 +260,17 @@ $restoredDb = Restore-AzureRmSqlDatabase -FromLongTermRetentionBackup -ResourceI
 $restoredDb
 ```
 
-
 > [!NOTE]
 > Здесь вы можете подключиться к восстановленной базе данных с помощью SQL Server Management Studio и выполнить необходимые задания, например извлечь часть данных из восстановленной базы данных, чтобы скопировать их в имеющуюся базу данных или удалить имеющуюся базу данных и присвоить ее имя восстановленной базе данных. Ознакомьтесь с [восстановлением до точки во времени](sql-database-recovery-using-backups.md#point-in-time-restore).
 
 ## <a name="how-to-cleanup-backups-in-recovery-services-vault"></a>Как очищать резервные копии в хранилище служб восстановления
 
-Начиная с 1 июля 2018 г. API LTR V1 является нерекомендуемым. Все существующие резервные копии в хранилищах служб восстановления перенесены в контейнеры хранилища LTR, управляемые Базой данных SQL. Чтобы с вас больше не взималась плата за исходные резервные копии, они удалены из хранилищ после миграции. Но если вы установили блокировку для своего хранилища, резервных копии останутся в нем. Чтобы избежать ненужных расходов, вы можете вручную удалить старые резервные копии из хранилища служб восстановления с помощью приведенного ниже скрипта. 
+Начиная с 1 июля 2018 г. API LTR V1 является нерекомендуемым. Все существующие резервные копии в хранилищах служб восстановления перенесены в контейнеры хранилища LTR, управляемые Базой данных SQL. Чтобы с вас больше не взималась плата за исходные резервные копии, они удалены из хранилищ после миграции. Но если вы установили блокировку для своего хранилища, резервных копии останутся в нем. Чтобы избежать ненужных расходов, вы можете вручную удалить старые резервные копии из хранилища служб восстановления с помощью приведенного ниже скрипта.
 
 ```PowerShell
 <#
 .EXAMPLE
-    .\Drop-LtrV1Backup.ps1 -SubscriptionId “{vault_sub_id}” -ResourceGroup “{vault_resource_group}” -VaultName “{vault_name}” 
+    .\Drop-LtrV1Backup.ps1 -SubscriptionId “{vault_sub_id}” -ResourceGroup “{vault_resource_group}” -VaultName “{vault_name}”
 #>
 [CmdletBinding()]
 Param (
@@ -302,14 +297,14 @@ $containers = Get-AzureRmRecoveryServicesBackupContainer -ContainerType AzureSQL
 
 ForEach ($container in $containers)
 {
-   $canDeleteContainer = $true  
+   $canDeleteContainer = $true
    $ItemCount = 0
    Write-Host "Working on container" $container.Name
    $items = Get-AzureRmRecoveryServicesBackupItem -container $container -WorkloadType AzureSQLDatabase
    ForEach ($item in $items)
    {
-          write-host "Deleting item" $item.name
-          Disable-AzureRmRecoveryServicesBackupProtection -RemoveRecoveryPoints -item $item -Force
+    write-host "Deleting item" $item.name
+    Disable-AzureRmRecoveryServicesBackupProtection -RemoveRecoveryPoints -item $item -Force
    }
 
    Write-Host "Deleting container" $container.Name

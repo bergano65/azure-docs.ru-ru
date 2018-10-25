@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: fa5eeaad6ec98bb7ce725e1bf4c977cb2d5398a6
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 52dd9d0ab5a22b702ad7d55d91b860d57e81f607
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37448617"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48267772"
 ---
 # <a name="manage-analysis-services"></a>Управление службами Analysis Services
 После создания сервера служб Analysis Services в Azure некоторые задачи управления и администрирования необходимо выполнять сразу же, а некоторые — в дальнейшей работе. Например, запускать обработку для обновления данных, управлять доступом к моделям на сервере или отслеживать работоспособность сервера. Некоторые задачи управления можно выполнять только на портале Azure, другие — только в SQL Server Management Studio (SSMS), а некоторые — и там, и там.
@@ -46,7 +46,7 @@ ms.locfileid: "37448617"
     > Рекомендуем использовать тип аутентификации Active Directory — универсальная с поддержкой MFA.
 
     > [!NOTE]
-    > Если вы входите в систему с учетной записью Майкрософт, Live ID, Yanoo, Gmail, и т. д., оставьте поле пароля пустым. Пароль запрашивается после нажатия кнопки "Подключиться".
+    > Если вы входите в систему с учетной записью Майкрософт, Live ID, Yahoo, Gmail и т. д., оставьте поле пароля пустым. Пароль запрашивается после нажатия кнопки "Подключиться".
 
     **Проверка подлинности Windows** — для входа используются учетные данные Windows (домен\имя_пользователя и пароль).
 

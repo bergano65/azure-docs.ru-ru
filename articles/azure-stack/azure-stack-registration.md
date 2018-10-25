@@ -12,15 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/28/2018
+ms.date: 10/09/2018
 ms.author: jeffgilb
 ms.reviewer: brbartle
-ms.openlocfilehash: 09f5dbdb173e1613ed942391da7baaeb045654e4
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: c9106557c7c113281b04d37f1bc3d8b29e2087cc
+ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452536"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49310459"
 ---
 # <a name="register-azure-stack-with-azure"></a>Регистрация Azure Stack в Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "47452536"
 
 Для регистрации Azure Stack в Azure необходимо следующее:
 
-- Идентификатор подписки Azure. При регистрации поддерживаются только подписки на такие общие службы, как EA, CSP или CSPSS. Поставщикам служб шифрования необходимо решить [какую подписку использовать: CSP или CSPSS](azure-stack-add-manage-billing-as-a-csp.md#create-a-csp-or-cspss-subscription).<br><br>Чтобы получить идентификатор, войдите в Azure и щелкните **Все службы**. Затем в категории **Общие** выберите **Подписки**, щелкните нужную подписку и найдите идентификатор подписки в разделе **Основные компоненты**.
+- Идентификатор подписки Azure. При регистрации поддерживаются только подписки на такие общие службы, как EA, CSP или CSPSS. Поставщикам служб шифрования необходимо решить, какую подписку использовать:[CSP или APSS](azure-stack-add-manage-billing-as-a-csp.md#create-a-csp-or-apss-subscription).<br><br>Чтобы получить идентификатор, войдите в Azure и щелкните **Все службы**. Затем в категории **Общие** выберите **Подписки**, щелкните нужную подписку и найдите идентификатор подписки в разделе **Основные компоненты**.
 
   > [!Note]  
   > Облачные подписки для Германии в настоящее время не поддерживаются.
@@ -99,7 +99,7 @@ $ExecutionContext.SessionState.LanguageMode
 При регистрации Azure Stack в Azure необходимо указать уникальное регистрационное имя. Подписку Azure Stack можно легко связать с регистрацией Azure с помощью **ИД облака** Azure Stack. 
 
 > [!NOTE]
-> Если для регистрации Azure Stack используется модель выставления счетов на основе емкости, при повторной регистрации по истечении срока действия годовой подписки потребуется изменить уникальное имя.
+> Если для регистрации Azure Stack используется модель выставления счетов на основе емкости, при повторной регистрации по истечении срока действия годовой подписки потребуется изменить уникальное имя, если только вы не [удалите истекшую регистрацию](azure-stack-registration.md#change-the-subscription-you-use) и повторно зарегистрируетесь с помощью Azure.
 
 Чтобы определить идентификатор облака при развертывании Azure Stack, откройте сеанс PowerShell от имени администратора на компьютере, с которого можно получить доступ к привилегированной конечной точке, выполните следующие команды и запишите значение **CloudID**. 
 
@@ -210,11 +210,11 @@ Run: get-azurestackstampinformation
       -PrivilegedEndpointCredential $CloudAdminCred `
       -PrivilegedEndpoint <PrivilegedEndPoint computer name> `
       -AgreementNumber <EA agreement number> `
-      -BillingModel Capacity
+      -BillingModel Capacity `
       -RegistrationName $RegistrationName
   ```
    > [!Note]  
-   > Отчеты о потреблении можно отключить с помощью параметра UsageReportingEnabled командлета **Set-AzsRegistration**. Задайте параметру значение false. Например, "UsageReportingEnabled".
+   > Отчеты о потреблении можно отключить, задав для параметра UsageReportingEnabled командлета **Set-AzsRegistration** значение false. 
    
   Дополнительные сведения о командлете Set-AzsRegistration см. в разделе [Справка по регистрации](#registration-reference).
 
@@ -318,12 +318,12 @@ Run: get-azurestackstampinformation
 
 #### <a name="change-the-subscription-you-use"></a>Изменение подписки
 
-Если вы хотите изменить используемую подписку, сначала выполните командлет **Remove-AzsRegistration**. Убедитесь, что вы вошли в правильном контексте выполнения Azure PowerShell, и выполните командлет **Set-AzsRegistration** с измененными параметрами:
+Если вы хотите изменить используемую подписку, сначала выполните командлет **Remove-AzsRegistration**. Убедитесь, что вы вошли в правильном контексте выполнения Azure PowerShell, и выполните командлет **Set-AzsRegistration** с измененными параметрами, включая \<модель оплаты\>:
 
   ```PowerShell  
   Remove-AzsRegistration -PrivilegedEndpointCredential $YourCloudAdminCredential -PrivilegedEndpoint $YourPrivilegedEndpoint
   Set-AzureRmContext -SubscriptionId $NewSubscriptionId
-  Set-AzsRegistration -PrivilegedEndpointCredential $YourCloudAdminCredential -PrivilegedEndpoint $YourPrivilegedEndpoint -BillingModel PayAsYouUse -RegistrationName $RegistrationName
+  Set-AzsRegistration -PrivilegedEndpointCredential $YourCloudAdminCredential -PrivilegedEndpoint $YourPrivilegedEndpoint -BillingModel <billing model> -RegistrationName $RegistrationName
   ```
 
 #### <a name="change-the-billing-model-or-how-to-offer-features"></a>Изменение компонентов модели выставления счетов или способов предложения функций
@@ -331,7 +331,7 @@ Run: get-azurestackstampinformation
 Если вам нужно изменить компоненты модели выставления счетов или способов предложения функций для установки, чтобы задать новые значения, можно применить функцию регистрации. Для этого не требуется удалять текущую регистрацию:
 
   ```PowerShell  
-  Set-AzsRegistration -PrivilegedEndpointCredential $YourCloudAdminCredential -PrivilegedEndpoint $YourPrivilegedEndpoint -BillingModel PayAsYouUse -RegistrationName $RegistrationName
+  Set-AzsRegistration -PrivilegedEndpointCredential $YourCloudAdminCredential -PrivilegedEndpoint $YourPrivilegedEndpoint -BillingModel <billing model> -RegistrationName $RegistrationName
   ```
 
 ### <a name="renew-or-change-registration-in-disconnected-environments"></a>Обновление или изменение регистрации в отключенных средах

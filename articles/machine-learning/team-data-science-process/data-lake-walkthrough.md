@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: deguhath
-ms.openlocfilehash: 62ca89ffe7507c2dc0a0f1a86750fb2bb996a5bd
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: be6bda4f5c420d1e631690fc648f982d4910e198
+ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34836976"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47585991"
 ---
 # <a name="scalable-data-science-with-azure-data-lake-an-end-to-end-walkthrough"></a>Полное пошаговое руководство по масштабируемому анализу данных с помощью Azure Data Lake
 В этом пошаговом руководстве на примере набора данных о поездках и тарифах такси в Нью-Йорке показано, как использовать Azure Data Lake для выполнения задач по исследованию и двоичной классификации данных, чтобы спрогнозировать вероятность получения чаевых за поездку. Здесь подробно описаны шаги [процесса обработки и анализа данных группы](http://aka.ms/datascienceprocess)— от получения данных для обучения модели и до развертывания веб-службы, которая публикует модель.
@@ -44,7 +44,7 @@ ms.locfileid: "34836976"
 ### <a name="scripts"></a>Сценарии
 В этом пошаговом руководстве описаны только основные шаги. Вы можете скачать полный **скрипт U-SQL**, а также **записную книжку Jupyter** из [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/AzureDataLakeWalkthrough).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем начать работу по этим разделам, необходимо обеспечить наличие следующего:
 
 * Подписка Azure. Если у вас ее нет, см. статью [о получении бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).

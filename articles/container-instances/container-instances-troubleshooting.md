@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.author: seanmck
 ms.custom: mvc
-ms.openlocfilehash: 6f57bc41cddc997a69f92ba4e8ca66faaeb29738
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: d2e4491f2ee21deedd674a5a8a64e4dd99149924
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39424608"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49079364"
 ---
 # <a name="troubleshoot-common-issues-in-azure-container-instances"></a>Устранение распространенных неполадок с помощью службы "Экземпляры контейнеров Azure"
 
@@ -89,11 +89,24 @@ ms.locfileid: "39424608"
 ],
 ```
 
-## <a name="container-continually-exits-and-restarts"></a>Контейнер постоянно завершает работу и перезагружается
+## <a name="container-continually-exits-and-restarts-no-long-running-process"></a>Контейнер постоянно завершает работу и перезагружается (не очень долгий процесс)
 
-Если контейнер завершает работу и автоматически перезагружается, возможно, вам нужно настроить [политику перезагрузки](container-instances-restart-policy.md) **OnFailure** или **Never**. Если вы настроили **OnFailure**, но контейнер по-прежнему перезагружается, возможно, существует проблема в выполняемом в контейнере приложении или скрипте.
+Контейнерные группы по умолчанию выполняют [политику перезапуска](container-instances-restart-policy.md) **Always**, поэтому контейнеры в группе контейнеров всегда перезапускаются после завершения. Может потребоваться изменить ее на **OnFailure** или **Never**, если планируется запуск контейнеров на основе задач. Если вы настроили **OnFailure**, но контейнер по-прежнему перезагружается, возможно, существует проблема в выполняемом в контейнере приложении или скрипте.
 
-В API службы экземпляров контейнеров есть свойство `restartCount`. Чтобы узнать количество перезагрузок контейнера, выполните в Azure CLI команду [az container show][az-container-show]. Ниже приведен пример выходных данных (сокращены для удобства), в конце которого можно увидеть свойство `restartCount`.
+При запуске групп контейнеров без длительных процессов можно видеть повторные выходы и перезапуски образов, такие как Ubuntu или Alpine. Подключение через [EXEC](container-instances-exec.md) не будет работать, так как контейнер не имеет процесса, поддерживающего его. Чтобы устранить это, включите следующее команды запуска с развертыванием контейнера группы, чтобы продолжить запуск контейнера.
+
+```azurecli-interactive
+## Deploying a Linux container
+az container create -g MyResourceGroup --name myapp --image ubuntu --command-line "tail -f /dev/null"
+```
+
+```azurecli-interactive 
+## Deploying a Windows container
+az container create -g myResourceGroup --name mywindowsapp --os-type Windows --image windowsservercore:ltsc2016
+ --command-line "ping -t localhost"
+```
+
+API Экземпляров контейнеров и портала Azure включают свойство `restartCount`. Чтобы узнать количество перезагрузок контейнера, выполните в Azure CLI команду [az container show][az-container-show]. Ниже приведен пример выходных данных (сокращены для удобства), в конце которого можно увидеть свойство `restartCount`.
 
 ```json
 ...
