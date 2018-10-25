@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 08/26/2018
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: f0bcb2e7f99689d31be610f1523d2c57e332deb7
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: f3fa6c75fdaf30d13231bc3072bd671614c9a668
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43049783"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49650758"
 ---
 1. Щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите пункт **Опубликовать**.
 
 2. Выберите **Приложение-функция Azure**, **Создать** и **Опубликовать**.
 
-    ![Выбор целевого объекта публикации](./media/functions-vstools-publish/functions-vstools-create-new-function-app.png)
+    ![Выбор целевого объекта публикации](./media/functions-vstools-publish/functions-visual-studio-publish-profile.png)
 
     При включении параметра **Запуск из ZIP-файла** приложение-функция в Azure будет запущено непосредственно из пакета развертывания. Дополнительные сведения см. в руководстве по [запуску Функций Azure из файла пакета](../articles/azure-functions/run-functions-from-deployment-package.md).
 
@@ -27,7 +27,7 @@ ms.locfileid: "43049783"
 
 4. В диалоговом окне **Создание службы приложений** укажите параметры **размещения**, которые приведены в таблице ниже:
 
-    ![Диалоговое окно "Создание службы приложений"](./media/functions-vstools-publish/functions-vstools-publish.png)
+    ![Диалоговое окно "Создание службы приложений"](./media/functions-vstools-publish/functions-visual-studio-publish.png)
 
     | Параметр      | Рекомендуемое значение  | ОПИСАНИЕ                                |
     | ------------ |  ------- | -------------------------------------------------- |
@@ -41,4 +41,4 @@ ms.locfileid: "43049783"
 
 6. По окончании развертывания запомните или запишите **URL-адрес сайта**, который является адресом приложения-функции в Azure.
 
-    ![Сообщение об успешной публикации](./media/functions-vstools-publish/functions-vstools-publish-profile.png)
+    ![Сообщение об успешной публикации](./media/functions-vstools-publish/functions-visual-studio-publish-complete.png)

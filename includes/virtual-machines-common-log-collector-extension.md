@@ -24,7 +24,7 @@
 * **SearchPattern**: шаблон имен файлов, которые будут собраны. Значение по умолчанию — \*.
 * **Recursive.** Применяется, если собираемые файлы рекурсивно размещаются в указанном расположении.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * учетная запись, в которой расширение будет сохранять созданные ZIP-файлы;
 * использование командлетов Azure PowerShell 0.8.0 или более поздней версии. Дополнительные сведения см. на странице [загрузок Azure](https://azure.microsoft.com/downloads/).
 
@@ -437,7 +437,7 @@ if ($AdditionDataLocationList -ne $null )
 #
 $publicConfigJSON = $publicConfig | ConvertTo-Json
 
-Write-Output "PublicConfigurtion is: \r\n$publicConfigJSON"
+Write-Output "PublicConfiguration is: \r\n$publicConfigJSON"
 
 #
 #we just provide a empty privateConfig object

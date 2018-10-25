@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
 ms.author: rangv
-ms.openlocfilehash: e59577e99114f1b2061a2f9075976da3f0b1811f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: adda4e948c11f84517b1e8dd01e6cfe42155e1ca
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34634460"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49409447"
 ---
 # <a name="iot-remote-monitoring-and-notifications-with-azure-logic-apps-connecting-your-iot-hub-and-mailbox"></a>Удаленный мониторинг и отправка уведомлений в Центре Интернета вещей с помощью службы Azure Logic Apps, обеспечивающей подключение между Центром Интернета вещей и почтовым ящиком
 
@@ -151,7 +151,7 @@ Azure Logic Apps позволяет автоматизировать проце�
 
       ![Ввод сведений о подключении к службе SMTP в приложении логики на портале Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/10_enter-smtp-connection-info-logic-app-azure-portal.png)
 
-      Получение сведений об SMTP для [Hotmail/Outlook.com](https://support.office.com/en-us/article/Add-your-Outlook-com-account-to-another-mail-app-73f3b178-0009-41ae-aab1-87b80fa94970), [Gmail](https://support.google.com/a/answer/176600?hl=en) и [Yahoo Mail](https://help.yahoo.com/kb/SLN4075.html).
+      Получение сведений об SMTP для [Hotmail/Outlook.com](https://support.office.com/article/Add-your-Outlook-com-account-to-another-mail-app-73f3b178-0009-41ae-aab1-87b80fa94970), [Gmail](https://support.google.com/a/answer/176600?hl=en) и [Yahoo Mail](https://help.yahoo.com/kb/SLN4075.html).
    1. Введите адрес электронной почты в полях **От** и **Кому** и укажите `High temperature detected` в **теме** и **тексте сообщения**.
    1. Выберите команду **Сохранить**.
 

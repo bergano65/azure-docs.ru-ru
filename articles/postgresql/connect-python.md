@@ -11,17 +11,17 @@ ms.custom: mvc, devcenter
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 02/28/2018
-ms.openlocfilehash: 926b35f49169c5a87e82996ba714aad40ba5244c
-ms.sourcegitcommit: c765cbd9c379ed00f1e2394374efa8e1915321b9
+ms.openlocfilehash: 557d4217819449cd0513d4a21e331e660e37037b
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2018
-ms.locfileid: "29687325"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49987687"
 ---
 # <a name="azure-database-for-postgresql-use-python-to-connect-and-query-data"></a>База данных Azure для PostgreSQL: подключение и запрос данных с помощью Python
 Это краткое руководство демонстрирует, как использовать [Python](https://python.org) для подключения к базе данных Azure для PostgreSQL. Здесь также используются инструкции по использованию инструкций SQL для вставки, обновления и удаления данных в базе данных с платформ Windows, Mac OS и Ubuntu Linux. В этой статье предполагается, что у вас уже есть опыт разработки на Python и вы только начали работу с базой данных Azure для PostgreSQL.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 В качестве отправной точки в этом кратком руководстве используются ресурсы, созданные в соответствии со следующими материалами:
 - [Создание базы данных с помощью портала](quickstart-create-server-database-portal.md)
 - [Создание базы данных SQL Azure и отправка к ней запросов с помощью Azure CLI](quickstart-create-server-database-azure-cli.md)
@@ -31,7 +31,7 @@ ms.locfileid: "29687325"
 - Установить пакет [pip](https://pip.pypa.io/en/stable/installing/) (он уже установлен, если вы используете двоичные файлы Python 2 >=2.7.9 или Python 3 >= 3.4, скачанные с сайта [python.org](https://python.org)).
 
 ## <a name="install-the-python-connection-libraries-for-postgresql"></a>Установка библиотек подключений Python для PostgreSQL
-Установите пакет [psycopg2](http://initd.org/psycopg/docs/install.html), позволяющий подключаться к базе данных и запрашивать данные из нее. Пакет psycopg2 [доступен на странице PyPI](https://pypi.python.org/pypi/psycopg2/) в виде пакетов [wheel](http://pythonwheels.com/) для наиболее распространенных платформ (Linux, OS X, Windows). Вы можете использовать команду установки pip, чтобы получить двоичную версию модуля, включая все зависимости.
+Установите пакет [psycopg2](http://initd.org/psycopg/docs/install.html), позволяющий подключаться к базе данных и запрашивать данные из нее. Пакет psycopg2 [доступен на странице PyPI](https://pypi.python.org/pypi/psycopg2/) в виде пакетов [wheel](https://pythonwheels.com/) для наиболее распространенных платформ (Linux, OS X, Windows). Вы можете использовать команду установки pip, чтобы получить двоичную версию модуля, включая все зависимости.
 
 1. На своем компьютере запустите интерфейс командной строки:
     - На платформе Linux запустите оболочку Bash.

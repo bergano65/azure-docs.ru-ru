@@ -9,12 +9,12 @@ ms.topic: get-started-article
 ms.date: 02/26/2018
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: e3e3a981daf1273b8b2387cb1c665317f860b1d2
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: c370d25ed5d70887c8beecae8fea3528a259a0ea
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46974873"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49954578"
 ---
 # <a name="set-up-an-azure-ad-service-principal-for-a-kubernetes-cluster-in-container-service"></a>Настройка субъекта-службы Azure AD для кластера Kubernetes в Службе контейнеров
 
@@ -37,14 +37,14 @@ ms.locfileid: "46974873"
 * **Секрет клиента** — должен быть паролем. Сейчас субъект-службу нельзя использовать для проверки подлинности сертификата.
 
 > [!IMPORTANT]
-> Чтобы создать субъект-службу, вы должны иметь права на регистрацию приложения в клиенте Azure AD и назначение приложению роли в подписке Azure. Наличие этих разрешений можно [проверить на портале](../../azure-resource-manager/resource-group-create-service-principal-portal.md#required-permissions).
+> Чтобы создать субъект-службу, вы должны иметь права на регистрацию приложения в клиенте Azure AD и назначение приложению роли в подписке Azure. Наличие этих разрешений можно [проверить на портале](../../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
 >
 
 ## <a name="option-1-create-a-service-principal-in-azure-ad"></a>Вариант 1. Создание субъекта-службы в Azure AD
 
 Создать субъект-службу в Azure AD перед развертыванием кластера Kubernetes можно разными способами.
 
-Следующие примеры команд показывают, как это сделать с помощью [Azure CLI](../../azure-resource-manager/resource-group-authenticate-service-principal-cli.md). Кроме того, субъект-службу можно создать с помощью [Azure PowerShell](../../azure-resource-manager/resource-group-authenticate-service-principal.md), [портала](../../azure-resource-manager/resource-group-create-service-principal-portal.md) или других методов.
+Следующие примеры команд показывают, как это сделать с помощью [Azure CLI](../../azure-resource-manager/resource-group-authenticate-service-principal-cli.md). Кроме того, субъект-службу можно создать с помощью [Azure PowerShell](../../active-directory/develop/howto-authenticate-service-principal-powershell.md), [портала](../../active-directory/develop/howto-create-service-principal-portal.md) или других методов.
 
 ```azurecli
 az login

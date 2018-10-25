@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d7b183a5b87d5777609deac02e4424d9451e9643
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: e3b9de282b95b27a04ac6d182b1045e18e65c5f6
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452502"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50025911"
 ---
 # <a name="virtual-machine-extensions-and-features-for-windows"></a>Обзор расширений и компонентов виртуальной машины под управлением Windows
 
@@ -57,7 +57,8 @@ ms.locfileid: "47452502"
 
 #### <a name="supported-oses"></a>Поддерживаемые операционные системы
 
-Гостевой агент Windows работает на многих операционных системах, но платформа расширений налагает некоторые ограничения на совместимость расширений с операционными системами. Дополнительные сведения см. в [этой статье] (https://support.microsoft.com/en-us/help/4078134/azure-extension-supported-operating-systems).
+Гостевой агент Windows работает на многих операционных системах, но платформа расширений налагает некоторые ограничения на совместимость расширений с операционными системами. Дополнительные сведения см. в [этой статье](https://support.microsoft.com/en-us/help/4078134/azure-extension-supported-operating-systems
+).
 
 Некоторые расширения поддерживаются не на всех операционных системах и вы можете столкнуться с *ошибкой 51 "Неподдерживаемая ОС"*. Сведения о совместимости приводятся в документации по отдельным расширениям.
 

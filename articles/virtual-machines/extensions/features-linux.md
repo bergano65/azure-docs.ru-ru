@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
-ms.openlocfilehash: 255fe84f0d155902b2a3ac477a1e677efef42bb4
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 720b8584c201826e55099ad31667478b6aa57b27
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49386666"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50024524"
 ---
 # <a name="virtual-machine-extensions-and-features-for-linux"></a>Обзор расширений и компонентов виртуальных машин под управлением Linux
 
@@ -54,7 +54,8 @@ ms.locfileid: "49386666"
 
 #### <a name="supported-oses"></a>Поддерживаемые операционные системы
 
-Гостевой агент Linux работает на многих операционных системах, но платформа расширений налагает некоторые ограничения на совместимость расширений с операционными системами. Дополнительные сведения см. в [этой статье] (https://support.microsoft.com/en-us/help/4078134/azure-extension-supported-operating-systems).
+Гостевой агент Linux работает на многих операционных системах, но платформа расширений налагает некоторые ограничения на совместимость расширений с операционными системами. Дополнительные сведения см. в [этой статье](https://support.microsoft.com/en-us/help/4078134/azure-extension-supported-operating-systems
+).
 
 Некоторые расширения поддерживаются не на всех операционных системах и вы можете столкнуться с *ошибкой 51 "Неподдерживаемая ОС"*. Сведения о совместимости приводятся в документации по отдельным расширениям.
 

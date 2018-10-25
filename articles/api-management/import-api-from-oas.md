@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 11/22/2017
 ms.author: apimpm
-ms.openlocfilehash: f5132215b1fda93c62c1fbea46c3266fcc44ec46
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: edef88694cc335a63ce279e96a204ed4b8fe7376
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38307285"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49469509"
 ---
 # <a name="import-an-openapi-specification"></a>Импорт спецификации OpenAPI
 
@@ -34,7 +34,7 @@ ms.locfileid: "38307285"
 > * Проверка API на портале Azure
 > * проверка API на портале разработчика.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните задачи из краткого руководства по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md)
 
@@ -65,11 +65,11 @@ ms.locfileid: "38307285"
 
 Операции можно вызывать непосредственно на портале Azure. Это удобный способ просмотра и проверки операций API.
 
+![Проверка API](./media/api-management-get-started/01-import-first-api-01.png)
+
 1. Выберите API, созданный на предыдущем шаге.
 2. Откройте вкладку **Тест**.
-
-    ![Проверка API](./media/api-management-get-started/test-api.png)
-1. Щелкните **GetSpeakers**.
+3. Щелкните **GetSpeakers**.
 
     Эта страница отображает поля для параметров запроса, но в нашем примере параметры не используются. Также на этой странице отображаются поля для заголовков. Один из заголовков, Ocp-Apim-Subscription-Key, содержит ключ подписки для продукта, связанного с этим API. Как создатель экземпляра службы управления API, вы автоматически являетесь администратором, поэтому сведения о ключе будут заполнены автоматически.
 4. Нажмите кнопку **Отправить**.

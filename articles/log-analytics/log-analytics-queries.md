@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: d7c006ca0be5e8db4b7ab02974ff029d3fe738e3
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 0340a4d527023c050e2c776d31c02b59161a1316
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48042348"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49429482"
 ---
 # <a name="analyze-log-analytics-data-in-azure-monitor"></a>Анализ данных Log Analytics в Azure Monitor
 
@@ -57,34 +57,42 @@ ms.locfileid: "48042348"
 
 Например, предположим, необходимо найти первые десять компьютеров с наибольшим количеством событий ошибок за последний день.
 
-    Event
-    | where (EventLevelName == "Error")
-    | where (TimeGenerated > ago(1days))
-    | summarize ErrorCount = count() by Computer
-    | top 10 by ErrorCount desc
+```Kusto
+Event
+| where (EventLevelName == "Error")
+| where (TimeGenerated > ago(1days))
+| summarize ErrorCount = count() by Computer
+| top 10 by ErrorCount desc
+```
 
 Или нужно найти компьютеры, которые не были активными в течение последнего дня.
 
-    Heartbeat
-    | where TimeGenerated > ago(7d)
-    | summarize max(TimeGenerated) by Computer
-    | where max_TimeGenerated < ago(1d)  
+```Kusto
+Heartbeat
+| where TimeGenerated > ago(7d)
+| summarize max(TimeGenerated) by Computer
+| where max_TimeGenerated < ago(1d)  
+```
 
 Как насчет графика, отражающего использование процессора на каждом компьютере за прошлую неделю?
 
-    Perf
-    | where ObjectName == "Processor" and CounterName == "% Processor Time"
-    | where TimeGenerated  between (startofweek(ago(7d)) .. endofweek(ago(7d)) )
-    | summarize avg(CounterValue) by Computer, bin(TimeGenerated, 5min)
-    | render timechart    
+```Kusto
+Perf
+| where ObjectName == "Processor" and CounterName == "% Processor Time"
+| where TimeGenerated  between (startofweek(ago(7d)) .. endofweek(ago(7d)) )
+| summarize avg(CounterValue) by Computer, bin(TimeGenerated, 5min)
+| render timechart    
+```
 
 Из этих примеров можно увидеть, что независимо от типа данных, с которыми вы работаете, структура запроса является аналогичной.  Ее можно разбить на отдельные действия, где полученные данные из одной команды отправляются через конвейер в следующую команду.
 
 Кроме того, вы можете запрашивать данные из рабочих областей Log Analytics в рамках своей подписки.
 
-    union Update, workspace("contoso-workspace").Update
-    | where TimeGenerated >= ago(1h)
-    | summarize dcount(Computer) by Classification 
+```Kusto
+union Update, workspace("contoso-workspace").Update
+| where TimeGenerated >= ago(1h)
+| summarize dcount(Computer) by Classification 
+```
 
 ## <a name="how-log-analytics-data-is-organized"></a>Упорядочивание данных в Log Analytics
 При создании запроса сначала нужно определить, какие таблицы содержат нужные данные. Различные типы данных разделяются на выделенные таблицы в каждой [рабочей области Log Analytics](log-analytics-quick-create-workspace.md).  Документация для каждого источника данных включает имя создаваемого типа данных и описание каждого из его свойств.  Многие запросы потребуют только данные из одной таблицы, но другие могут использовать множество параметров для включения данных из нескольких таблиц.

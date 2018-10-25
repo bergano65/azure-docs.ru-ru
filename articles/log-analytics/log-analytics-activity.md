@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: dab2dd2b1d020a7619b18f330640b7f555a1f8c1
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: dd404bf8766082148a2c5a1ae55189f5f82f9021
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48044388"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49404075"
 ---
 # <a name="collect-and-analyze-azure-activity-logs-in-log-analytics"></a>Сбор и анализ журналов действий Azure в Log Analytics
 
@@ -75,8 +75,7 @@ ms.locfileid: "48044388"
     3. В колонке *SubscriptionName* щелкните **Подключить**.  
         ![Подключение подписки](./media/log-analytics-activity/subscription-connect.png)
 
-При добавлении решения с помощью портала OMS отображается следующая плитка. Войдите на портал Azure, чтобы подключить подписку Azure к рабочей области.  
-![Выполнение оценки](./media/log-analytics-activity/tile-performing-assessment.png)
+Войдите на портал Azure, чтобы подключить подписку Azure к рабочей области.  
 
 ## <a name="using-the-solution"></a>Использование решения
 

@@ -2,18 +2,19 @@
 title: включение файла
 description: включение файла
 services: backup
-author: markgalioto
+author: rayne-wiselman
+manager: carmonm
 ms.service: backup
 ms.topic: include
-ms.date: 5/14/2018
-ms.author: markgal
+ms.date: 10/18/2018
+ms.author: raynew
 ms.custom: include file
-ms.openlocfilehash: 0ff9bf829e2dbe1bca078360ccded94bad63d9a6
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: 74fe531c07aa871b06b5d0773f7e8fb0ade80be4
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39249467"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49946221"
 ---
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 Хранилище Служб восстановления — это объект, который хранит резервные копии и точки восстановления, созданные с течением времени. В нем также содержатся политики архивации, связанные с защищенными виртуальными машинами.
@@ -24,11 +25,11 @@ ms.locfileid: "39249467"
 
 2. В меню слева выберите **Все службы**.
 
-    ![Выбор всех служб](./media/backup-create-rs-vault/click-all-services.png)
+    ![Выбор "Все службы"](./media/backup-create-rs-vault/click-all-services.png)
 
 3. В диалоговом окне **Все службы** введите **Службы восстановления**. Список ресурсов отфильтруется на основе введенных данных. В списке ресурсов выберите **Хранилища служб восстановления**.
 
-    ![Введите и выберите "Хранилища служб восстановления"](./media/backup-create-rs-vault/all-services.png)
+    ![Ввод и выбор "Хранилища служб восстановления"](./media/backup-create-rs-vault/all-services.png)
 
     После этого отобразится список хранилищ служб восстановления в подписке.
     

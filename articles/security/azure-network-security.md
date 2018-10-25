@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: b1485ff933df7991e1c112981ae10d93bf5613da
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 1d94ac5f799fc4bad13ab6a5e97a225a7499380d
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37061547"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49405979"
 ---
 # <a name="azure-network-security"></a>Сетевая безопасность Azure
 
@@ -460,8 +460,6 @@ WAF шлюза приложений можно запускать в режим�
 
 Под операционной безопасностью Azure понимаются службы, элементы управления и функции, которые пользователи могут использовать для защиты своих данных, приложений и других ресурсов в Microsoft Azure. Операционная безопасность Azure основывается на знаниях, полученных в процессе эксплуатации ряда уникальных систем корпорации Майкрософт, включая жизненный цикл разработки защищенных приложений (Майкрософт) (SDL) и программу Microsoft Security Response Center, а также на глубокой осведомленности в области угроз кибербезопасности.
 
--   [Azure Operations Management Suite](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview)
-
 -   [Центр безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
 
 -   [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview)
@@ -654,7 +652,7 @@ Log Analytics предлагает следующие решения для мо
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о безопасности можно узнать, ознакомившись с указанными далее подробными статьями.
 
--   [Аналитика журналов для групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-nsg-manage-log)
+-   [Log Analytics для групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-nsg-manage-log)
 
 -   [Инновационные возможности работы в сети, исключающие сбои облачных служб](https://azure.microsoft.com/blog/networking-innovations-that-drive-the-cloud-disruption/)
 

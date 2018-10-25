@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 02/06/2017
 ms.author: anroth
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2687145a89c11efb4a3bcb1494a39806e9aae551
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: 6c96ab18161230ffabd0703bdb6d0230bdc8d3ba
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48238613"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50026268"
 ---
 # <a name="example-call-emotion-api-for-video"></a>Пример. Вызов API распознавания эмоций для видео
 
@@ -46,7 +46,7 @@ ocp-apim-subscription-key: <Your subscription key>
 ```
 var emotionServiceClient = new emotionServiceClient("Your subscription key");
 ```
-Чтобы получить ключ подписки, см. раздел [Подписки] (https://azure.microsoft.com/try/cognitive-services/).
+Чтобы получить ключ подписки, см. раздел [Подписки](https://azure.microsoft.com/try/cognitive-services/).
 
 ### <a name="Step2">Шаг 2. Отправка видео в службу и проверка состояния</a>
 Самый простой способ выполнить любой из вызовов API распознавания эмоций для видео — это напрямую отправить видео. Для этого нужно отправить запрос "POST" с типом содержимого application/octet-stream вместе с данными, считываемыми из видеофайла. Максимальный размер видео —100 МБ.

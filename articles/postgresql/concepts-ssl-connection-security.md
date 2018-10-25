@@ -10,12 +10,12 @@ ms.service: postgresql
 ms.custom: ''
 ms.topic: article
 ms.date: 02/28/2018
-ms.openlocfilehash: f3efb99ddb47f167a0d9cbef064890e817a18841
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: cc8bd25b58cf898169a4d84154f7f3f81966bb92
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32186823"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49985800"
 ---
 # <a name="configure-ssl-connectivity-in-azure-database-for-postgresql"></a>Настройка SSL-соединения в базе данных Azure для PostgreSQL
 База данных Azure для PostgreSQL предпочитает подключать клиентские приложения к службе PostgreSQL с помощью SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
@@ -58,7 +58,7 @@ az postgres server update --resource-group myresourcegroup --name mydemoserver -
 Чтобы декодировать файл сертификата, необходимый для безопасного подключения приложения к серверу базы данных, установите на своем локальном компьютере OpenSSL.
 
 #### <a name="for-linux-os-x-or-unix"></a>Для Linux, OS X или Unix
-Библиотеки OpenSSL предоставляются в виде исходного кода непосредственно от [OpenSSL Software Foundation](http://www.openssl.org). Приведенные ниже инструкции помогут вам установить OpenSSL на компьютер под управлением Linux. В этой статье используются команды, которые гарантированно поддерживают работу с Ubuntu 12.04 и более поздних версий.
+Библиотеки OpenSSL предоставляются в виде исходного кода непосредственно от [OpenSSL Software Foundation](https://www.openssl.org). Приведенные ниже инструкции помогут вам установить OpenSSL на компьютер под управлением Linux. В этой статье используются команды, которые гарантированно поддерживают работу с Ubuntu 12.04 и более поздних версий.
 
 Откройте сеанс терминала и скачайте OpenSSL.
 ```bash

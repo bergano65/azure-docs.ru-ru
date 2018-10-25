@@ -9,12 +9,12 @@ ms.date: 11/06/2017
 ms.topic: conceptual
 ms.service: azure-monitor
 ms.component: ''
-ms.openlocfilehash: de2c57949cb2087e41b79a225963225d340f12af
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: b4fbd1248f91e0766cca66d1c51033a8b338c324
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35263088"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49957384"
 ---
 # <a name="monitor-your-azure-services-in-grafana"></a>Мониторинг служб Azure в Grafana
 Теперь также можно отслеживать службы Azure и приложения из [Grafana](https://grafana.com/) с помощью [подключаемого модуля источника данных Azure Monitor](https://grafana.com/plugins/grafana-azure-monitor-datasource). Подключаемый модуль собирает данные производительности приложения, которые собраны пакетом SDK Application Insights, а также данные инфраструктуры, предоставленные Azure Monitor. Затем эти данные можно отобразить на панели мониторинга Grafana.
@@ -62,7 +62,7 @@ ms.locfileid: "35263088"
 
 Grafana использует субъект-службу Azure Active Directory для подключения к API Azure Monitor и сбора данных метрик. Необходимо создать субъект-службу для управления доступом к ресурсам Azure.
 
-1. Инструкции по созданию субъекта-службы см. в [этой статье](../azure-resource-manager/resource-group-create-service-principal-portal.md). Скопируйте и сохраните идентификатор арендатора, идентификатор клиента и секрет клиента.
+1. Инструкции по созданию субъекта-службы см. в [этой статье](../active-directory/develop/howto-create-service-principal-portal.md). Скопируйте и сохраните идентификатор арендатора, идентификатор клиента и секрет клиента.
 
 2. Дополнительные сведения о назначении роли читателя приложению Azure Active Directory см. в [этой статье](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#assign-application-to-role).     
 

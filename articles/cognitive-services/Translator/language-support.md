@@ -10,12 +10,12 @@ ms.component: translator-text
 ms.topic: article
 ms.date: 09/25/2018
 ms.author: v-jansko
-ms.openlocfilehash: 775e098eb2a067e3e0446bccc223c1c54e082347
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 222e37e38772b82e9d9849e3a955b865d43d3c63
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47435377"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49957406"
 ---
 # <a name="language-and-region-support-for-the-translator-text-api"></a>Поддержка языков и регионов в API перевода текстов
 
@@ -108,7 +108,7 @@ API перевода текстов поддерживает следующие 
 | Хинди | hi | Девангари | <--> | Латиница |
 | Японский | ja | Японский | <--> | Латиница |
 | Каннада | kn | Каннада | --> | Латиница |
-| Малайзийский | ml | Малаялам | --> | Латиница |
+| Малаялам | ml | Малаялам | --> | Латиница |
 | Маратхи | mr | Девангари | --> | Латиница |
 | Ория | или | Ория | <--> | Латиница |
 | Панджаби | pa | Гурмукхи | <--> | Латиница  |

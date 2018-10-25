@@ -9,12 +9,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/09/2018
 ms.author: sujayt
-ms.openlocfilehash: 86d6c77dab817cf755c34bdd699ee1158e852f37
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.openlocfilehash: 040ace1eab4062c011ed82a59e7f5bfb789c256b
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42146800"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945745"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-issues"></a>Устранение неполадок репликации виртуальных машин из Azure в Azure
 
@@ -158,8 +158,8 @@ ms.locfileid: "42146800"
 
 - **Способы устранения:**
    - Если используется прокси-сервер брандмауэра для управления исходящими сетевыми подключениями на виртуальной машине, убедитесь, что необходимые URL-адреса или диапазоны IP-адресов центров обработки данных добавлены в список разрешений. Дополнительные сведения см. в разделе [Исходящие подключения для URL-адресов Azure Site Recovery](https://aka.ms/a2a-firewall-proxy-guidance).
-   - Если используются правила группы безопасности сети для управления исходящими сетевыми подключениями на виртуальной машине, убедитесь, что необходимые диапазоны IP-адресов центров обработки данных добавлены в список разрешений. Дополнительные сведения см. в статье [Networking guidance for replicating Azure virtual machines](https://aka.ms/a2a-nsg-guidance) (Руководство по настройке сети для репликации виртуальных машин в Azure).
-   - Чтобы внести [необходимые URL-адреса](azure-to-azure-about-networking.md#outbound-connectivity-for-urls) или [диапазоны IP-адресов](azure-to-azure-about-networking.md#outbound-connectivity-for-ip-address-ranges) в список разрешений, следуйте указаниям в [документации по настройке сети](site-recovery-azure-to-azure-networking-guidance.md).
+   - Если используются правила группы безопасности сети для управления исходящими сетевыми подключениями на виртуальной машине, убедитесь, что необходимые диапазоны IP-адресов центров обработки данных добавлены в список разрешений. Дополнительные сведения см. в статье [Networking guidance for replicating Azure virtual machines](azure-to-azure-about-networking.md) (Руководство по настройке сети для репликации виртуальных машин в Azure).
+   - Чтобы внести [необходимые URL-адреса](azure-to-azure-about-networking.md#outbound-connectivity-for-urls) или [диапазоны IP-адресов](azure-to-azure-about-networking.md#outbound-connectivity-for-ip-address-ranges) в список разрешений, следуйте указаниям в [документации по настройке сети](azure-to-azure-about-networking.md).
 
 ### <a name="issue-2-site-recovery-configuration-failed-151072"></a>Проблема 2. Сбой при выполнении настройки Site Recovery (151072)
 - **Возможная причина** </br>

@@ -1,20 +1,21 @@
 ---
 title: Создание пользовательских слов для активации
-description: Узнайте, как создать пользовательские слова для активации пакета SDK для речевых устройств.
 titleSuffix: Azure Cognitive Services
+description: Узнайте, как создать пользовательские слова для активации пакета SDK для речевых устройств.
 services: cognitive-services
 author: erhopf
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: speech
-ms.topic: article
+ms.component: speech-service
+ms.topic: conceptual
 ms.date: 04/28/2018
 ms.author: erhopf
-ms.openlocfilehash: ab2bc9a83feadd9ece8876559e730e7bc955908a
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: 5f138aee9dfa91e285591e5d50c14465ad32b77d
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49165476"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49469084"
 ---
 # <a name="create-a-custom-wake-word-by-using-the-speech-service"></a>Создание пользовательских слов для активации с помощью службы "Речь"
 
@@ -52,10 +53,6 @@ ms.locfileid: "49165476"
 1. Создайте учетную запись с адресом электронной почты, на который вы получили приглашение для регистрации в Azure Active Directory. 
 
     ![Создание учетной записи](media/speech-devices-sdk/wake-word-1.png)
- 
-1.  После входа в систему заполните форму и выберите **(Начать роботу)**.
-
-    ![Вход выполнен](media/speech-devices-sdk/wake-word-3.png)
  
 1. Страница **пользовательских слов для активации** недоступна обычным посетителям, и вы не можете попасть на нее по прямым ссылкам на портале. Функция "Распознавание речи" требует подписки Azure, но функция "Пользовательское слово для активации" не требует. Если появится страница ошибки **Подписки не найдены.**, просто замените **"Subscriptions?errorMessage=No%20Subscriptions%20found"** на "**customkws**" в URL-адресе и нажмите клавишу ВВОД. URL-адрес должен быть одним из следующих: https://westus.cris.ai/customkws, https://eastasia.cris.ai/customkws или https://northeurope.cris.ai/customkws, в зависимости от того, где находится ваш регион.
 

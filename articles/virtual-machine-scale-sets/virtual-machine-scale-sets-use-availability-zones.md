@@ -3,7 +3,7 @@ title: Создание масштабируемого набора Azure, ко�
 description: Узнайте, как создавать масштабируемые наборы виртуальных машин Azure, которые используют зоны доступности для повышения избыточности и минимизации простоев
 services: virtual-machine-scale-sets
 documentationcenter: ''
-author: cynthn
+author: zr-msft
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: vm
 ms.devlang: na
 ms.topic: article
 ms.date: 08/08/2018
-ms.author: cynthn
-ms.openlocfilehash: 18d9a2dade271e61fa3db423da610a7f982aa47b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.author: zarhoads
+ms.openlocfilehash: 062725ab5e486ff795ffa0f4a72dd3fdb0e6b948
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46949678"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49468880"
 ---
 # <a name="create-a-virtual-machine-scale-set-that-uses-availability-zones"></a>Создание масштабируемого набора Azure, который использует зоны доступности
 
@@ -64,8 +64,8 @@ ms.locfileid: "46949678"
 
 Чтобы использовать зоны доступности, масштабируемый набор должен быть создан в [поддерживаемом регионе Azure](../availability-zones/az-overview.md#regions-that-support-availability-zones). Вы можете создать масштабируемый набор, использующий зоны доступности, с помощью одного из следующих методов:
 
-- [портала Azure](#use-the-azure-portal)
-- [интерфейс командной строки Azure](#use-the-azure-cli-20)
+- [портал Azure](#use-the-azure-portal)
+- [Интерфейс командной строки Azure](#use-the-azure-cli-20)
 - [Azure PowerShell](#use-azure-powershell)
 - [Шаблоны диспетчера ресурсов Azure](#use-azure-resource-manager-templates)
 

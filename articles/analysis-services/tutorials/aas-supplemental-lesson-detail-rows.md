@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/03/2018
+ms.date: 10/18/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 626258488afec4b3c3f025ae85bd3b5866aa0cf3
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 7ed4ba27332123d41a9e031f221eedb57fa228b9
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37443983"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49425977"
 ---
 # <a name="supplemental-lesson---detail-rows"></a>Дополнительное занятие. Строки детализации
 
@@ -21,7 +21,7 @@ ms.locfileid: "37443983"
   
 Предполагаемое время выполнения этого занятия: **10 минут**  
   
-## <a name="prerequisites"></a>предварительным требованиям  
+## <a name="prerequisites"></a>Предварительные требования  
 Это дополнительное занятие входит в руководство по табличному моделированию. Прежде чем выполнять задачи из этого дополнительного занятия, следует завершить все предыдущие занятия или располагать готовым учебным проектом модели интернет-продаж Adventure Works.  
   
 ## <a name="whats-the-issue"></a>В чем заключается проблема?

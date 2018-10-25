@@ -9,12 +9,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/25/2018
-ms.openlocfilehash: 2a6172a4e163d937f5a0a2140831b730bca23c3f
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: fd912885335b41e3d7ca8ee717b6bb1b9c88e729
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43696529"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49984151"
 ---
 # <a name="using-reference-data-for-lookups-in-stream-analytics"></a>Использование эталонных данных для уточняющих запросов в Stream Analytics
 Эталонные данные (которые также называются таблицами подстановки) — это ограниченный набор данных, являющийся по своей сути статическим или медленно изменяющимся. Такие данные используются для выполнения уточняющего запроса или соотнесения с вашим потоком данных. Azure Stream Analytics загружает эталонные данные в память, чтобы сократить задержки при обработке потока. Для использования ссылочных данных в задании Azure Stream Analytics обычно используется [соединение ссылочных данных](https://msdn.microsoft.com/library/azure/dn949258.aspx) в запросе. Служба Stream Analytics использует хранилище BLOB-объектов Azure как уровень хранилища для ссылочных данных. С помощью фабрики данных Azure ссылочные данные можно преобразовать и (или) скопировать в хранилище BLOB-объектов Azure из [любого числа облачных и локальных хранилищ данных](../data-factory/copy-activity-overview.md) для использования в качестве ссылочных данных. Ссылочные данные моделируются как последовательность больших двоичных объектов (с учетом конфигурации входных данных) в порядке возрастания даты и времени, указанных в имени большого двоичного объекта. Они добавляются **только** в конец последовательности, для чего используется **более поздние** дата и время, чем в последнем большом двоичном объекте в последовательности.
@@ -85,5 +85,5 @@ Azure Stream Analytics каждую минуту автоматически пр
 [stream.analytics.scale.jobs]: stream-analytics-scale-jobs.md
 [stream.analytics.introduction]: stream-analytics-real-time-fraud-detection.md
 [stream.analytics.get.started]: stream-analytics-get-started.md
-[stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
-[stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
+[stream.analytics.query.language.reference]: https://go.microsoft.com/fwlink/?LinkID=513299
+[stream.analytics.rest.api.reference]: https://go.microsoft.com/fwlink/?LinkId=517301

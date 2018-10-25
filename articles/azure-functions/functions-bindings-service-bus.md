@@ -12,12 +12,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 04/01/2017
 ms.author: glenga
-ms.openlocfilehash: baf08f18fae7f82fff57616e2d86d3426e32a237
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 8728533171ec8c8754aabf1a3e32c5ab7630db77
+ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49387741"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "49637996"
 ---
 # <a name="azure-service-bus-bindings-for-azure-functions"></a>Привязки служебной шины Azure для службы "Функции Azure"
 
@@ -326,7 +326,7 @@ module.exports = function(context, myQueueItem) {
 |`To`|`string`|Адрес для отправки.|
 |`Label`|`string`|Метка конкретного приложения.|
 |`CorrelationId`|`string`|Идентификатор корреляции.|
-|`Properties`|`IDictionary<String,Object>`|Свойства сообщения конкретного приложения.|
+|`UserProperties`|`IDictionary<String,Object>`|Свойства сообщения конкретного приложения.|
 
 См. [примеры кода](#trigger---example), в которых используются эти свойства, в предыдущих разделах этой статьи.
 

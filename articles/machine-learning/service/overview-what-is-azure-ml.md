@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 author: garyericson
 ms.author: garye
 ms.date: 09/24/2018
-ms.openlocfilehash: 660e5515b765e133d5bc9309be5439209b957353
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: 4a867692d3ce509443e5aa94536075fdcd4bab84
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48238527"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945966"
 ---
 # <a name="what-is-azure-machine-learning-service-preview"></a>Что такое служба машинного обучения Azure (предварительная версия)?
 
@@ -54,7 +54,7 @@ ms.locfileid: "48238527"
 - <a href="http://scikit-learn.org/stable/" target="_blank">Scikit-learn</a>
 - <a href="https://www.tensorflow.org" target="_blank">Tensorflow</a>
 - <a href="https://pytorch.org" target="_blank">PyTorch</a>
-- <a href="https://www.microsoft.com/cognitive-toolkit/" target="_blank">CNTK</a>
+- <a href="https://www.microsoft.com/en-us/cognitive-toolkit/" target="_blank">CNTK</a>
 - <a href="http://mxnet.io" target="_blank">MXNet</a>
 
 Когда у вас будет модель, вы сможете с ее помощью создать контейнер (такой как Docker) и развернуть его на локальном компьютере для тестирования, а затем как производственную веб-службу либо в [экземплярах контейнера Azure](how-to-deploy-to-aci.md), либо в [службе Azure Kubernetes](how-to-deploy-to-aks.md).

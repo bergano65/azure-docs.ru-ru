@@ -9,12 +9,12 @@ editor: jasonwhowell
 ms.service: mysql
 ms.topic: article
 ms.date: 06/02/2018
-ms.openlocfilehash: c801426ad354a165ac749333ddd4671c13536edb
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: f3e38bb3e7e4f2c58f1ae955878747ebc7d386f1
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35265849"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49984492"
 ---
 # <a name="migrate-your-mysql-database-to-azure-database-for-mysql-using-dump-and-restore"></a>Перенос базы данных MySQL в базу данных Azure для MySQL с помощью дампа и восстановления
 В этой статье описываются два распространенных способа архивации и восстановления баз данных в базе данных Azure для MySQL:
@@ -127,4 +127,4 @@ $ mysql -h mydemoserver.mysql.database.azure.com -u myadmin@mydemoserver -p test
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Подключите приложения к базе данных Azure для MySQL](./howto-connection-string.md).
-- Дополнительные сведения о переносе баз данных в службу "База данных Azure для MySQL" см. в [этой статье](http://aka.ms/datamigration).
+- Дополнительные сведения о переносе баз данных в службу "База данных Azure для MySQL" см. в [этой статье](https://aka.ms/datamigration).

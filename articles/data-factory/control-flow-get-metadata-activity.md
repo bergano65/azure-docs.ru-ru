@@ -12,14 +12,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/03/2018
+ms.date: 10/19/2018
 ms.author: shlo
-ms.openlocfilehash: c24bec7366ea62b3dd8f7a301c9d2d62c6dd6c7d
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: f61399a3a6cb5c67343e28e4364d8d796ffbc066
+ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37859284"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49457080"
 ---
 # <a name="get-metadata-activity-in-azure-data-factory"></a>Действие получения метаданных в фабрике данных Azure
 Действие GetMetadata можно использовать для получения **метаданных** для любых данных в фабрике данных Azure. Его можно использовать в следующих сценариях:
@@ -61,6 +61,7 @@ ms.locfileid: "37859284"
 | Соединитель и метаданные | structure | columnCount | exists (существует) |
 |:--- |:--- |:--- |:--- |
 | Базы данных SQL Azure | √ | √ | √ |
+| Управляемый экземпляр Базы данных SQL Azure | √ | √ | √ |
 | Хранилище данных SQL Azure | √ | √ | √ |
 | SQL Server; | √ | √ | √ |
 

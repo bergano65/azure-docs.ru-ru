@@ -2,18 +2,18 @@
 title: Резервное копирование Exchange Server в службу архивации Azure с помощью System Center 2012 R2 DPM
 description: Узнайте, как выполнить резервное копирование Exchange Server в службу архивации Azure с помощью System Center 2012 R2 DPM
 services: backup
-author: MaanasSaran
+author: adigan
 manager: NKolli1
 ms.service: backup
-ms.topic: troubleshooting
-ms.date: 09/08/2017
+ms.topic: conceptual
+ms.date: 10/19/2018
 ms.author: adigan
-ms.openlocfilehash: 4edec499d12261add398e5a9297f039ecfb252e9
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 8fbe3e716971f4d82e6d24fb866334ffd626bf32
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34605106"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945983"
 ---
 # <a name="back-up-an-exchange-server-to-azure-backup-with-system-center-2012-r2-dpm"></a>Резервное копирование Exchange Server в службу архивации Azure с помощью System Center 2012 R2 DPM
 В этой статье описывается настройка сервера Data Protection Manager (DPM) в System Center 2012 R2 для резервного копирования Microsoft Exchange Server в службу архивации Azure.  
@@ -26,8 +26,8 @@ ms.locfileid: "34605106"
 >
 >
 
-## <a name="prerequisites"></a>предварительным требованиям
-Прежде чем продолжить, выполните все [предварительные требования](backup-azure-dpm-introduction.md#prerequisites) по использованию Microsoft Azure Backup для защиты рабочих нагрузок. Список предварительных требований:
+## <a name="prerequisites"></a>Предварительные требования
+Прежде чем продолжить, выполните все [предварительные требования](backup-azure-dpm-introduction.md#prerequisites-and-limitations) по использованию Microsoft Azure Backup для защиты рабочих нагрузок. Список предварительных требований:
 
 * На сайте Azure должно быть создано хранилище службы архивации.
 * Учетные данные агента и хранилища должны быть загружены на сервер DPM.
@@ -61,7 +61,7 @@ ms.locfileid: "34605106"
 
    * «Мне нужна краткосрочная защита с использованием диска»;
    * «Мне нужна оперативная защита».
-6. Нажмите кнопку **Далее**.
+6. Щелкните **Далее**.
 7. Выберите параметр **Запустить программу Eseutil для проверки целостности данных** , чтобы проверить целостность баз данных Exchange Server.
 
     После этого проверка согласованности резервного копирования будет выполняться на сервере DPM, что позволит исключить операции ввода-вывода при выполнении команды **eseutil** на сервере Exchange.
@@ -71,7 +71,7 @@ ms.locfileid: "34605106"
    > ![ошибка Eseutil](./media/backup-azure-backup-exchange-server/eseutil-error.png)
    >
    >
-8. Нажмите кнопку **Далее**.
+8. Щелкните **Далее**.
 9. Выберите базу данных для **копирующей архивации**, а затем нажмите кнопку **Далее**.
 
    > [!NOTE]

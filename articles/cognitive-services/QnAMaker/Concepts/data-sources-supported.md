@@ -10,12 +10,12 @@ ms.component: qna-maker
 ms.topic: article
 ms.date: 09/25/2018
 ms.author: tulasim
-ms.openlocfilehash: 982bcbb9060a3f29000de2a0487b61dc58e24f6e
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: 36d74c7fba472956d57344977de79a4cbfd2cf02
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48855465"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49648519"
 ---
 # <a name="data-sources-for-qna-maker-content"></a>Источники данных для содержимого QnA Maker
 
@@ -90,7 +90,7 @@ QnA Maker идентифицирует разделы, подразделы и �
 
 Формат структурированных "вопросов — ответов" в DOC-файлах представлен в чередующемся формате — по одному вопросу в строке, за которым следует ответ в следующей строке, как показано ниже. 
 
-```
+```text
 Question1
 
 Answer1

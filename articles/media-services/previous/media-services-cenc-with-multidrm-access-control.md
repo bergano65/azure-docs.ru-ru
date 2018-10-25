@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/15/2018
 ms.author: willzhan;kilroyh;yanmf;juliako
-ms.openlocfilehash: ffd8a82fb03c23a661223e16e75d2964249d2b96
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 69802c6c4246b91f62a0e49ec0c34bdd3a1bec8b
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46965829"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49958428"
 ---
 # <a name="design-of-a-content-protection-system-with-access-control-using-azure-media-services"></a>Проектирование системы защиты содержимого с управлением доступом с помощью служб мультимедиа Azure
 
@@ -225,7 +225,7 @@ ms.locfileid: "46965829"
 
 Сведения об Azure AD:
 
-* Сведения для разработчиков см. в [руководстве разработчика по Azure Active Directory](../../active-directory/develop/azure-ad-developers-guide.md).
+* Сведения для разработчиков см. в [руководстве разработчика по Azure Active Directory](../../active-directory/develop/v1-overview.md).
 * Сведения для администраторов см. в статье [Управление каталогом Azure AD](../../active-directory/fundamentals/active-directory-administer.md).
 
 ### <a name="some-issues-in-implementation"></a>Некоторые проблемы в реализации

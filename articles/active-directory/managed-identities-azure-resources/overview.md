@@ -12,14 +12,14 @@ ms.component: msi
 ms.devlang: ''
 ms.topic: overview
 ms.custom: mvc
-ms.date: 03/28/2018
+ms.date: 10/23/2018
 ms.author: daveba
-ms.openlocfilehash: 43bfe3abcbe6a66f124565cde8ddb839ba76d045
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: e025d9041358fbb9dee9b64519e012c4c1988024
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47107256"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49987266"
 ---
 # <a name="what-is-managed-identities-for-azure-resources"></a>Что такое управляемые удостоверения для ресурсов Azure?
 
@@ -32,7 +32,7 @@ ms.locfileid: "47107256"
 Использование функции управляемых удостоверений для ресурсов Azure предоставляется AAD бесплатно для подписок Azure. Дополнительные затраты отсутствуют.
 
 > [!NOTE]
-> Управляемые удостоверения для ресурсов Azure — это новое имя службы "Управляемое удостоверение службы" (MSI).
+> Управляемые удостоверения для ресурсов Azure — это новое название службы "Управляемое удостоверение службы" (MSI).
 
 ## Принципы работы функции<a name="how-does-it-work"></a>
 
@@ -116,9 +116,11 @@ ms.locfileid: "47107256"
 
 * [службе приложений Azure](/azure/app-service/app-service-managed-service-identity)
 * [Функции Azure](/azure/app-service/app-service-managed-service-identity)
+* [Azure Logic Apps](/azure/logic-apps/create-managed-service-identity)
 * [служебной шине Azure](../../service-bus-messaging/service-bus-managed-service-identity.md)
 * [Центры событий Azure](../../event-hubs/event-hubs-managed-service-identity.md)
 * [Управление API Azure](../../api-management/api-management-howto-use-managed-service-identity.md)
+* [Экземпляры контейнеров Azure](../../container-instances/container-instances-managed-identity.md);
 
 ## Службы Azure, в которых поддерживается данная функция.<a name="which-azure-services-support-managed-identity"></a>
 

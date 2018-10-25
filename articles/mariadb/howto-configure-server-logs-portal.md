@@ -8,12 +8,12 @@ services: mariadb
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 0784dffc48aeddc854aa540cba24f1834cd41827
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 566d5b047078b6e65b0c320027cc8c63c81a282b
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46952840"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49986605"
 ---
 # <a name="configure-and-access-server-logs-in-the-azure-portal"></a>Настройка журналов сервера и получение к ним доступа с помощью портала Azure
 
@@ -26,9 +26,9 @@ ms.locfileid: "46952840"
 ## <a name="configure-logging"></a>Настройка журнала
 Настройте доступ к журналу медленных запросов. 
 
-1. Войдите на [портале Azure](http://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
-2. Выберите сервер базы данных Azure для MariaDB.
+2. Выберите сервер Базы данных Azure для MariaDB.
 
 3. В разделе боковой панели **Мониторинг** выберите **Журналы сервера**. 
    ![Выбор "Журналы сервера" и щелчок "Настройка"](./media/howto-configure-server-logs-portal/1-select-server-logs-configure.png)
@@ -48,7 +48,7 @@ ms.locfileid: "46952840"
 
 1. Перейдите на портал Azure.
 
-2. Выберите сервер базы данных Azure для MariaDB.
+2. Выберите сервер Базы данных Azure для MariaDB.
 
 3. В разделе боковой панели **Мониторинг** выберите **Журналы сервера**. На странице отображается список файлов журналов, как показано ниже.
 

@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 09/06/2018
 ms.author: diberry
-ms.openlocfilehash: b936b42671c15a77a901f321ed3c51f1ba3639cd
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 57742d72c8be0dcd999bc8b73f6d598263429c12
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47036598"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49646581"
 ---
 # <a name="api-v2-migration-guide"></a>Руководство по переходу на API версии 2
 API [конечных точек](https://aka.ms/v1-endpoint-api-docs) и [разработки](https://aka.ms/v1-authoring-api-docs) версии 1 скоро будут объявлены устаревшими. Используйте это руководство, чтобы перейти на API [конечных точек](https://aka.ms/luis-endpoint-apis) и [разработки](https://aka.ms/luis-authoring-apis) версии 2. 
@@ -155,7 +155,7 @@ LUIS предлагает высказывания из существующих
 В экспортированном коде JSON приложения версии 1.x есть некоторые фрагменты, которые необходимо изменить перед импортом в [LUIS][LUIS] 2.0. 
 
 ### <a name="prebuilt-entities"></a>Предварительно созданные сущности 
-[Предварительно созданные сущности](luis-prebuilt-entities.md) были изменены. Убедитесь, что вы используете предварительно созданные сущности версии 2. К ним относится [datetimeV2](luis-prebuilt-entities.md#use-a-prebuilt-datetimev2-entity) вместо datetime. 
+[Предварительно созданные сущности](luis-prebuilt-entities.md) были изменены. Убедитесь, что вы используете предварительно созданные сущности версии 2. К ним относится [datetimeV2](luis-reference-prebuilt-datetimev2.md) вместо datetime. 
 
 ### <a name="actions"></a>Действия
 Свойство actions больше не используется. Оно должно быть пустым. 

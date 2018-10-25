@@ -11,13 +11,13 @@ author: oslake
 ms.author: moslake
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 10/15/2018
-ms.openlocfilehash: 6c43e5bf311d94ff2e5b5c31217c5071ea26746c
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.date: 10/19/2018
+ms.openlocfilehash: 0c939956a8f3336b5071748a8c2bdf8840b749ad
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49351868"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49466075"
 ---
 # <a name="create-and-manage-elastic-pools-in-azure-sql-database"></a>Создание эластичных пулов в базе данных SQL Azure и управление ими
 
@@ -106,11 +106,11 @@ ms.locfileid: "49351868"
 |[Обновление эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/elasticpools_listbyserver)|Обновляет имеющийся эластичный пул.|
 |[Действия эластичного пула](https://docs.microsoft.com/rest/api/sql/elasticpoolactivities)|Возвращает действия эластичного пула.|
 |[Действия базы данных в эластичном пуле](https://docs.microsoft.com/rest/api/sql/elasticpooldatabaseactivities)|Возвращает действия баз данных в эластичном пуле.|
-|[Создание или обновление баз данных](https://docs.microsoft.com/rest/api/sql/databases/databases_createorupdate)|Создает новую базу данных или обновляет имеющуюся.|
-|[Базы данных: получение](https://docs.microsoft.com/rest/api/sql/databases/databases_get)|Получает базу данных.|
-|[Базы данных: вывод списка по эластичному пулу](https://docs.microsoft.com/rest/api/sql/databases/databases_listbyelasticpool)|Возвращает список баз данных в пуле эластичных баз данных.|
-|[Базы данных: вывод списка по серверу](https://docs.microsoft.com/rest/api/sql/databases/databases_listbyserver)|Возвращает список баз данных на сервере.|
-|[Базы данных: обновление](https://docs.microsoft.com/rest/api/sql/databases/databases_update)|Обновляет имеющуюся базу данных.|
+|[Создание или обновление баз данных](https://docs.microsoft.com/rest/api/sql/databases/createorupdate)|Создает новую базу данных или обновляет имеющуюся.|
+|[Базы данных: получение](https://docs.microsoft.com/rest/api/sql/databases/get)|Получает базу данных.|
+|[Базы данных: вывод списка по эластичному пулу](https://docs.microsoft.com/rest/api/sql/databases/listbyelasticpool)|Возвращает список баз данных в пуле эластичных баз данных.|
+|[Базы данных: вывод списка по серверу](https://docs.microsoft.com/rest/api/sql/databases/listbyserver)|Возвращает список баз данных на сервере.|
+|[Базы данных: обновление](https://docs.microsoft.com/rest/api/sql/databases/update)|Обновляет имеющуюся базу данных.|
 
 ## <a name="next-steps"></a>Дополнительная информация
 

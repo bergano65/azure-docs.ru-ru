@@ -6,16 +6,16 @@ services: cognitive-services
 author: mikedodaro
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: project-answer-search
+ms.component: answer-search
 ms.topic: overview
 ms.date: 04/13/2018
 ms.author: rosh
-ms.openlocfilehash: 5658054b3cc77db20edd64f6c560ee5d4a58eb46
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: b211ede7ef90fb1aef3a6d6e9a82e0d52397afd3
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48883726"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49465922"
 ---
 # <a name="what-is-project-answer-search"></a>Общие сведения о службе поиска ответов в проекте
 API службы поиска ответов в проекте возвращает ответы на вопросительные запросы с помощью конечной точки Bing версии 7. Вопросительный запрос, например "Какова окружность Земли?", возвращает ответ с фактическими данными.  Запрос сведений о человеке, месте или предмете возвращает информацию об определенной сущности. Этот сценарий можно использовать в приложениях, например в чат-ботах, приложениях обмена сообщениями, устройствах чтения и т. д.  

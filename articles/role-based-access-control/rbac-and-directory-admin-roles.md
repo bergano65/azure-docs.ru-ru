@@ -15,12 +15,12 @@ ms.date: 08/07/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: 401c9a3df4cb132769e05cb0487a763f4080dd23
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 5e32968ae83ef826fbc8e81f1b04eca687642343
+ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44304087"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "49637674"
 ---
 # <a name="classic-subscription-administrator-roles-azure-rbac-roles-and-azure-ad-administrator-roles"></a>Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD
 
@@ -61,6 +61,7 @@ ms.locfileid: "44304087"
 Подписки Azure служат для организованного доступа к ресурсам Azure. Они также позволяют управлять составлением отчетов об использовании ресурса, выставлением счетов за использование и их оплатой. Каждая подписка может иметь различные настройки для выставления счетов и их оплаты, поэтому у вас могут быть разные подписки и тарифные планы для разных офисов, отделов, проектов и т. д. Каждая служба привязана к подписке, идентификатор которой может требоваться для выполнения программных операций.
 
 Управление учетными записями и подписками осуществляется в [центре управления учетной записью Azure](https://account.azure.com/Subscriptions).
+
 ## <a name="azure-rbac-roles"></a>Роли RBAC Azure
 
 RBAC Azure — это система авторизации на основе [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md), которая обеспечивает точное управление доступом к ресурсам в Azure, например к вычислительным ресурсам и хранилищу. Система RBAC Azure включает более 70 встроенных ролей. В системе RBAC предусмотрены четыре основные роли. Первые три роли охватывают все типы ресурсов:

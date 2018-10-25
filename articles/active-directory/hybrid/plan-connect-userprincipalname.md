@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: identity
 ms.service: active-Directory
 manager: mtillman
-ms.openlocfilehash: 4ce7b3a6b455384180184aa3b9be34fb88da266b
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 35f1ed2fbeeea7ff3beffeae91f775c829deedec
+ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46308873"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "49637720"
 ---
 # <a name="azure-ad-userprincipalname-population"></a>Указание атрибута UserPrincipalName в Azure AD
 
@@ -166,7 +166,7 @@ UserPrincipalName — это атрибут, который является и�
 - mailNickName      : us4
 - proxyAddresses        : {SMTP:us6@contoso.com}
 - mail          : us7@contoso.com
-- serPrincipalName  : us5@verified.contoso.com
+- userPrincipalName : us5@verified.contoso.com
 
 Синхронизация обновления атрибута userPrincipalName в локальной среде и клиента Azure AD
 - Обновите атрибут userPrincipalName в локальной среде, что вызовет повторное вычисление атрибута UserPrincipalName Azure AD.

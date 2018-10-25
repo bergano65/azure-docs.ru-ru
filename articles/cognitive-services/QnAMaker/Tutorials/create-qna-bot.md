@@ -1,6 +1,7 @@
 ---
 title: Создание бота QnA с помощью службы Azure Bot — QnA Maker
 titleSuffix: Azure Cognitive Services
+description: В этом руководстве приводятся пошаговые инструкции по созданию бота QnA с помощью службы Azure Bot версии 3 на портале Azure.
 services: cognitive-services
 author: tulasim88
 manager: cgronlun
@@ -9,12 +10,12 @@ ms.component: qna-maker
 ms.topic: article
 ms.date: 09/12/2018
 ms.author: tulasim
-ms.openlocfilehash: 74c7bc5c601cd36a8dd2454506745406bc00dac0
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 30400b04ec08d936242b022f10cf1485e009e6d2
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47031294"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49647329"
 ---
 # <a name="create-a-qna-bot-with-azure-bot-service-v3"></a>Создание бота QnA с помощью службы Azure Bot версии 3
 В этом руководстве приводятся пошаговые инструкции по созданию бота QnA с помощью службы Azure Bot версии 3 на портале Azure.

@@ -2,20 +2,20 @@
 title: Контрольные точки и воспроизведение в устойчивых функциях — Azure
 description: Сведения о работе контрольных точек и воспроизведении в расширении устойчивых функций для Функций Azure.
 services: functions
-author: cgillum
+author: kashimiz
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 09/29/2017
+ms.date: 10/23/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 0e8ce37e39e536383b77a7dc98d88a18e58182c6
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: 5336c0a510f0be7d548d1d549b5b763c12e700b2
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48239438"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49987721"
 ---
 # <a name="checkpoints-and-replay-in-durable-functions-azure-functions"></a>Контрольные точки и воспроизведение в устойчивых функциях (Функции Azure)
 
@@ -52,9 +52,9 @@ const df = require("durable-functions");
 
 module.exports = df.orchestrator(function*(context) {
     const output = [];
-    output.push(yield context.df.callActivityAsync("E1_SayHello", "Tokyo"));
-    output.push(yield context.df.callActivityAsync("E1_SayHello", "Seattle"));
-    output.push(yield context.df.callActivityAsync("E1_SayHello", "London"));
+    output.push(yield context.df.callActivity("E1_SayHello", "Tokyo"));
+    output.push(yield context.df.callActivity("E1_SayHello", "Seattle"));
+    output.push(yield context.df.callActivity("E1_SayHello", "London"));
 
     return output;
 });
@@ -151,7 +151,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Управление этими *устойчивыми задачами* выполняется внутренне с помощью списка объектов `TaskCompletionSource`. Во время воспроизведения эти задачи создаются как часть выполнения кода оркестратора и завершаются, когда диспетчер перечисляет соответствующие события журнала. Это все выполняется синхронно с помощью одного потока до тех пор, пока весь журнал не будет воспроизведен. Для всех устойчивых задач, не завершенных до конца воспроизведения журнала, выполняются соответствующие действия. Например, сообщение может быть поставлено в очередь для вызова функции действия.
 
-Описанное здесь поведение выполнения должно помочь вам понять, почему код функции оркестратора никогда не должен `await` ожидать неустойчивые задачи. Поток диспетчера не может ожидать их завершения, а любой обратный вызов этой задачи может повредить состояние отслеживания функции оркестратора. Чтобы этого избежать, выполняются некоторые проверки среды выполнения.
+Описанное здесь поведение выполнения должно помочь вам понять, почему код функции оркестратора никогда не должен ожидать`await` неустойчивые задачи. Поток диспетчера не может ожидать их завершения, а любой обратный вызов этой задачи может повредить состояние отслеживания функции оркестратора. Чтобы этого избежать, выполняются некоторые проверки среды выполнения.
 
 Чтобы получить дополнительные сведения о том, как платформа устойчивых задач выполняет функции оркестратора, ознакомьтесь с [исходным кодом устойчивых задач на сайте GitHub](https://github.com/Azure/durabletask). В частности, просмотрите сведения о [TaskOrchestrationExecutor.cs](https://github.com/Azure/durabletask/blob/master/src/DurableTask.Core/TaskOrchestrationExecutor.cs) и [TaskOrchestrationContext.cs](https://github.com/Azure/durabletask/blob/master/src/DurableTask.Core/TaskOrchestrationContext.cs)
 

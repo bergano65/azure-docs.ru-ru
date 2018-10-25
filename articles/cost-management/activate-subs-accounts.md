@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.service: cost-management
 manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: 304a52f5571790ea49587a5aeda433f003f0e0bd
-ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
+ms.openlocfilehash: a53ff5fdb256a46f42e7461bb46b6847d17ed230
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47423074"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49958753"
 ---
 # <a name="activate-azure-subscriptions-and-accounts-with-cloudyn"></a>Активация подписок и учетных записей Azure с помощью Cloudyn
 
@@ -64,7 +64,7 @@ ms.locfileid: "47423074"
     2. На портале Azure выберите **Azure Active Directory**.
     3. Чтобы получить идентификатор клиента, щелкните **Свойства** для клиента Azure AD.
     4. Скопируйте идентификатор каталога (GUID). Это и есть ваш идентификатор клиента.
-    Дополнительные сведения см. в разделе [Получение идентификатора клиента](../azure-resource-manager/resource-group-create-service-principal-portal.md#get-tenant-id).
+    Дополнительные сведения см. в разделе [Получение идентификатора клиента](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-id).
 3. При необходимости выберите идентификатор тарифа. Если вы не знаете свой идентификатор тарифа, выполните следующие действия, чтобы найти его.
     1. В верхнем правом углу на портале Azure щелкните информацию о пользователе, а затем выберите **Показать мой счет**.
     2. В разделе **Учетная запись выставления счетов** щелкните **Подписки**.

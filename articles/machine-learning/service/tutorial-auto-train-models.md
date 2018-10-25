@@ -9,12 +9,12 @@ author: nacharya1
 ms.author: nilesha
 ms.reviewer: sgilley
 ms.date: 09/24/2018
-ms.openlocfilehash: df1c19c0e16b9862b09dcc652ef2831e0c5bf3a5
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 29d673f48671ec917e45b7ff76feeebf0b868c4b
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48802361"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49426895"
 ---
 # <a name="tutorial-train-a-classification-model-with-automated-machine-learning-in-azure-machine-learning-service"></a>Руководство. Автоматическое машинное обучение модели классификации в службе "Машинное обучение Azure"
 
@@ -38,7 +38,7 @@ ms.locfileid: "48802361"
 
 ## <a name="get-the-notebook"></a>Получение записной книжки
 
-Для удобства это руководство доступно в виде [записной книжки Jupyter](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/03.auto-train-models.ipynb). Запустите записную книжку `03.auto-train-models.ipynb` в службе "Записные книжки Azure" или на своем сервере Jupyter Notebook.
+Для удобства это руководство доступно в формате [Jupyter Notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/03.auto-train-models.ipynb). Запустите записную книжку `03.auto-train-models.ipynb` в Записных книжках Azure или на своем сервере Jupyter Notebook.
 
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-in-azure-notebook.md)]
@@ -533,7 +533,7 @@ plt.show()
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве по службе "Машинное обучение Azure" вы использовали Python для выполнения следующих задач.
+В этом руководстве по службе машинного обучения Azure вы использовали Python для выполнения следующих задач.
 
 > [!div class="checklist"]
 > * Настройка среды разработки
@@ -543,5 +543,5 @@ plt.show()
 > * Проверка результатов обучения.
 > * Регистрация наилучшей модели.
 
-Узнайте больше о [настройке параметров автоматического обучения]() или [способах использования автоматического обучения в удаленном ресурсе](how-to-auto-train-remote.md).  
+Узнайте больше о [настройке параметров автоматического обучения](how-to-configure-auto-train.md) или [способах использования автоматического обучения в удаленном ресурсе](how-to-auto-train-remote.md).  
 

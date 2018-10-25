@@ -1,20 +1,21 @@
 ---
 title: Рекомендации по транскрибированию для обучения службы распознавания речи
+titleSuffix: Azure Cognitive Services
 description: Дополнительные сведения о подготовке текста для настройки акустических и языковых моделей и голосов для службы распознавания речи.
-titleSuffix: Microsoft Cognitive Services
 services: cognitive-services
 author: PanosPeriorellis
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/01/2018
 ms.author: panosper
-ms.openlocfilehash: f9cb205b5111e981ee70adca715139402c9e31a4
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: 07b90942c8d231418888491fd47a9be3caff77ea
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44721826"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49467741"
 ---
 # <a name="transcription-guidelines-for-using-the-speech-service"></a>Рекомендации по транскрибированию для обучения службы распознавания речи
 
@@ -169,5 +170,5 @@ ms.locfileid: "44721826"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Пробная версия службы распознавания речи Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
+- [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 - [Краткое руководство. Распознавание речи с помощью пакета SDK службы распознавания речи Cognitive Services C#](quickstart-csharp-dotnet-windows.md)
