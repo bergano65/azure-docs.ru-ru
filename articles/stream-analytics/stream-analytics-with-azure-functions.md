@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.date: 04/09/2018
 ms.author: jasonh
 ms.reviewer: jasonh
-ms.openlocfilehash: 0408ea6ead1ddf482ce0a07c21859af80ab6ca43
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 50ea4dafe7edfdeb851ad6d9cc42a7bca262e970
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43697821"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49985817"
 ---
 # <a name="run-azure-functions-from-azure-stream-analytics-jobs"></a>Запуск решения "Функции Azure" из заданий Azure Stream Analytics 
 
@@ -40,11 +40,11 @@ Stream Analytics вызывает службу "Функции" с помощь�
 ![Схема, на которой показаны связи между службами Azure](./media/stream-analytics-with-azure-functions/image1.png)
 
 Для этого необходимо выполнить следующие задачи:
-* [создать задание Stream Analytics с Центрами событий в качестве входных данных](#create-stream-analytics-job-with-event-hub-as-input);  
-* [создать экземпляр кэша Redis для Azure](#create-an-azure-redis-cache);  
-* [создать функцию в службе "Функции Azure", которая может записывать данные в кэш Redis для Azure](#create-an-azure-function-that-can-write-data-to-the-redis-cache);    
-* [обновить задание Stream Analytics с использованием функции в качестве выходных данных](#update-the-stream-analytic-job-with-azure-function-as-output);  
-* [проверить кэш Redis для Azure на наличие результатов](#check-redis-cache-for-results).  
+* [создать задание Stream Analytics с Центрами событий в качестве входных данных](#create-a-stream-analytics-job-with-event-hubs-as-input);  
+* [создать экземпляр кэша Redis для Azure](#create-an-azure-redis-cache-instance);  
+* [создать функцию в службе "Функции Azure", которая может записывать данные в кэш Redis для Azure](#create-a-function-in-azure-functions-that-can-write-data-to-azure-redis-cache);    
+* [обновить задание Stream Analytics с использованием функции в качестве выходных данных](#update-the-stream-analytics-job-with-the-function-as-output);  
+* [проверить кэш Redis для Azure на наличие результатов](#check-azure-redis-cache-for-results).  
 
 ## <a name="create-a-stream-analytics-job-with-event-hubs-as-input"></a>Создание задания Stream Analytics с Центрами событий в качестве входных данных
 

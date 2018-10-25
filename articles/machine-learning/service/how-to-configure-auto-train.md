@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.component: core
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 33126c094a55bc57edd49a54fbc4f5acd7401998
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 1aeb1315cfafbcdf3507a6e49d71e1f1e69b537c
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49079010"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49430193"
 ---
 # <a name="configure-your-automated-machine-learning-experiment"></a>Настройка эксперимента автоматического машинного обучения
 
@@ -147,7 +147,7 @@ cv_splits_indices   | массив целых чисел ||  _Необязате
 2.  Удаленный компьютер в облаке — [Виртуальная машина для обработки и анализа данных Azure](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/) под управлением Linux. Если у вас большой набор данных и требуется выполнить масштабирование до большого компьютера, который доступен в облаке Azure. 
 3.  Кластер Azure Batch AI — управляемый кластер, с помощью которого можно развернуть и параллельно выполнять итерации автоматического машинного обучения. 
 
-
+<a name='configure-experiment'/>
 ## <a name="configure-your-experiment-settings"></a>Настройка параметров эксперимента
 
 Есть несколько средств, с помощью которых можно настроить эксперименты автоматического машинного обучения. Эти параметры задаются путем создания экземпляра объекта `AutoMLConfig`.

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/17/2018
 ms.author: renash
 ms.component: files
-ms.openlocfilehash: 03280f87b4b49b3e42091c6b1572a7f050afb336
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.openlocfilehash: 7f03af0fc338299da9b989d46e7bbfb83f3babeb
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45983171"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945711"
 ---
 # <a name="overview-of-share-snapshots-for-azure-files"></a>Общие сведения о моментальных снимках общих ресурсов для службы файлов Azure 
 Служба "Файлы Azure" предоставляет возможность создать моментальные снимки общих ресурсов для файловых ресурсов. В моментальные снимки общих ресурсов записывается состояние общего ресурса на определенный момент времени. В этой статье описаны возможности, предоставляемые моментальными снимками общих ресурсов, а также то, как можно воспользоваться их преимуществами в своих вариантах.
@@ -85,8 +85,7 @@ http://storagesample.file.core.windows.net/myshare?snapshot=2011-03-09T01:42:34.
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Работа с моментальными снимками общих ресурсов с помощью:
-    - [Портал](storage-how-to-use-files-portal.md#create-and-modify-share-snapshots)
-    - [PowerShell](storage-how-to-use-files-powershell.md#create-and-modify-share-snapshots)
-    - [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](storage-how-to-use-files-cli.md#create-and-modify-share-snapshots)
+    - [PowerShell](storage-how-to-use-files-powershell.md)
+    - [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](storage-how-to-use-files-cli.md)
     - [Windows](storage-how-to-use-files-windows.md#accessing-share-snapshots-from-windows)
 - [Часто задаваемые вопросы о службе "Файлы Azure"](storage-files-faq.md#share-snapshots)

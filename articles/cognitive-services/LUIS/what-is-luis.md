@@ -9,12 +9,12 @@ ms.component: language-understanding
 ms.topic: overview
 ms.date: 10/06/2018
 ms.author: diberry
-ms.openlocfilehash: 0520c00ab20ca7210b3bb13567f9998e7231be43
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: 28580a29c2ffaadfa3b3ea26cb28f103d883d576
+ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48867680"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "49637278"
 ---
 # <a name="what-is-language-understanding-luis"></a>Что такое служба "Распознавание речи" (LUIS)?
 
@@ -192,16 +192,7 @@ LUIS предоставляет инструменты, функцию упра�
 * [Служба "Речь"](../Speech-Service/overview.md) преобразует запросы на разговорном языке в текст. 
 * [Средство для обучения ведению диалога](https://docs.microsoft.com/azure/cognitive-services/labs/conversation-learner/overview). Позволяет создавать диалоги с чат-ботом быстрее с помощью LUIS.
 * [Индивидуальный чат в проекте](https://docs.microsoft.com/azure/cognitive-services/project-personality-chat/overview), позволяющий чат-боту обрабатывать непринужденные разговоры на общие темы.
-<!--
-## Other ways of implementing LUIS
 
-A client application for LUIS is:
-* [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/) - learn more with this [Mixed reality course](https://docs.microsoft.com/windows/mixed-reality/mr-azure-303) with LUIS. 
-
-
-Labs: 
-
--->
 ## <a name="next-steps"></a>Дополнительная информация
 
 Создайте приложение LUIS с [предварительно созданным](luis-get-started-create-app.md) или [пользовательским](luis-quickstart-intents-only.md) доменом. [Отправьте запрос к конечной точке прогнозирования](luis-get-started-cs-get-intent.md) общедоступного приложения Интернета вещей.

@@ -16,12 +16,12 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 5e18a27579c577f914709e25cab1549387a965f3
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 7b96ee362f6169d386a58ee48878e40a42fc9ede
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46966407"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49987602"
 ---
 # <a name="about-microsoft-identity-platform"></a>Общие сведения о платформе удостоверений Майкрософт
 
@@ -37,7 +37,7 @@ ms.locfileid: "46966407"
 
 На следующей схеме показана общая процедура идентификации Майкрософт, включая процесс регистрации приложений, пакеты SDK, конечные точки и поддерживаемые удостоверения.
 
-![Платформа удостоверений Майкрософт сегодня](./media/about-microsoft-identity-platform/microsoft-identity-platform-today.png)
+![Платформа удостоверений Майкрософт сегодня](./media/about-microsoft-identity-platform/microsoft-identity-platform-preview.png)
 
 На платформе удостоверений Майкрософт есть две конечные точки (версии 1.0 и 2.0) и два набора клиентских библиотек для обработки этих конечных точек. При разработке нового приложения рассмотрите преимущества и текущее состояние конечных точек и библиотек проверки подлинности. Рассмотрим также следующее:
 
@@ -61,5 +61,5 @@ ms.locfileid: "46966407"
 
 Узнайте больше о версиях 1.0 и 2.0.
 
-* [Сведения о версии 1.0](azure-ad-developers-guide.md)
-* [Сведения о версии 2.0](azure-ad-developers-guide.md)
+* [Сведения о версии 1.0](v1-overview.md)
+* [Сведения о версии 2.0](v2-overview.md)

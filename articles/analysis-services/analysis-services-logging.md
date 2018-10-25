@@ -5,21 +5,21 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/03/2018
+ms.date: 10/18/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: d19e45710aca3e1e18be6c4529da6474a97bc59f
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: a8d6080b573cbad1004166f28a3e6596560241be
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37449335"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49426521"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
-Важной частью любого решения Analysis Services является мониторинг работы серверов. С помощью [журналов диагностики ресурсов Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) вы можете отслеживать и отправлять журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортировать их в службу [Log Analytics](https://azure.microsoft.com/services/log-analytics/) как службу [Azure](https://www.microsoft.com/cloud-platform/operations-management-suite). 
+Важной частью любого решения Analysis Services является мониторинг работы серверов. С помощью [журналов диагностики ресурсов Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) вы можете отслеживать и отправлять журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортировать их в службу [Log Analytics](https://azure.microsoft.com/services/log-analytics/) как службу [Azure](https://www.microsoft.com/cloud-platform/operations-management-suite). 
 
-![Процесс ведения журнала диагностики в хранилище, концентраторе событий и Log Analytics](./media/analysis-services-logging/aas-logging-overview.png)
+![Процесс ведения журнала диагностики в хранилище, Центрах событий и Log Analytics](./media/analysis-services-logging/aas-logging-overview.png)
 
 
 ## <a name="whats-logged"></a>Какие данные регистрируются?
@@ -81,7 +81,7 @@ ms.locfileid: "37449335"
     * **Имя**. Введите имя для создаваемых журналов.
 
     * **Archive to a storage account** (Архивировать в учетной записи хранения). Чтобы использовать этот параметр, необходима учетная запись хранения для подключения. Ознакомьтесь со статьей [Создание учетной записи хранения](../storage/common/storage-create-storage-account.md). Следуйте указаниям для создания диспетчера ресурсов и учетной записи общего назначения, а затем выберите учетную запись хранения, вернувшись к этой странице портала. Возможно, потребуется подождать несколько минут, пока созданная учетная запись хранения отобразится в раскрывающемся меню.
-    * **Stream to an event hub** (Потоковая передача в концентратор событий). Чтобы использовать этот параметр, вам понадобится пространство имен концентратора событий и концентратор событий для подключения. Дополнительные сведения см. в статье [Создание пространства имен концентраторов событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md). Затем на портале вернитесь на эту страницу, чтобы выбрать пространство имен концентратора событий и имя политики.
+    * **Stream to an event hub** (Потоковая передача в концентратор событий). Чтобы использовать этот параметр, вам понадобится пространство имен концентратора событий и концентратор событий для подключения. Дополнительные сведения см. в статье [Создание пространства имен Центров событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md). Затем на портале вернитесь на эту страницу, чтобы выбрать пространство имен концентратора событий и имя политики.
     * **Send to Log Analytics** (Отправить в Log Analytics). Чтобы использовать этот параметр, воспользуйтесь одной из имеющихся рабочих областей или создайте рабочую область Log Analytics, следуя инструкциям по [созданию рабочей области](../log-analytics/log-analytics-quick-collect-azurevm.md#create-a-workspace) на портале. Дополнительные сведения о просмотре журналов в Log Analytics см. в статье [Журнал ведения диагностики Azure Cosmos DB](#view-in-loganalytics).
 
     * **Подсистема**. Выберите этот параметр для ведения журнала xEvents. Если выполняется архивация в учетную запись хранения, можно выбрать период хранения журналов диагностики. По окончании периода хранения журналы удаляются автоматически.
@@ -98,7 +98,7 @@ ms.locfileid: "37449335"
 
 Ниже приведены основные команды для ознакомления. Если вам требуются пошаговые указания по настройке ведения журнала в учетной записи хранения с помощью PowerShell, ознакомьтесь с руководством далее в этой статье.
 
-Чтобы включить метрики и журналы диагностики с помощью PowerShell, используйте следующие команды:
+Чтобы включить ведение журналов метрик и диагностики с помощью PowerShell, используйте следующие команды:
 
 - Выполните приведенную ниже команду, чтобы включить отправку журналов диагностики в учетную запись хранения:
 
@@ -134,7 +134,7 @@ ms.locfileid: "37449335"
 
 Можно объединять эти параметры, чтобы получить несколько вариантов вывода.
 
-### <a name="rest-api"></a>ИНТЕРФЕЙС REST API
+### <a name="rest-api"></a>REST API
 
 Узнайте, как [изменить параметры диагностики с помощью REST API Azure Monitor](https://msdn.microsoft.com/library/azure/dn931931.aspx). 
 
@@ -193,7 +193,7 @@ ms.locfileid: "37449335"
 ## <a name="tutorial---turn-on-logging-by-using-powershell"></a>Руководство по включению ведения журнала с помощью PowerShell
 В этом кратком руководстве вы создаете учетную запись хранения в тех же подписке и группе ресурсов, что и сервер Analysis Services. Затем с помощью Set-AzureRmDiagnosticSetting вы включаете журнал ведения диагностики, отправляя выходные данные в новую учетную запись хранения.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 Для работы с этим руководством вам потребуются следующие ресурсы:
 
 * Существующий сервер Azure Analysis Services. Инструкции по созданию ресурса сервера см. в разделе [Создание сервера Azure Analysis Services на портале Azure](analysis-services-create-server.md) или [Создание сервера Azure Analysis Services с помощью PowerShell](analysis-services-create-powershell.md).

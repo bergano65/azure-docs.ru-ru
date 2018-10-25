@@ -3,7 +3,7 @@ title: Пример скрипта Azure CLI. Создание виртуаль�
 description: Пример скрипта Azure CLI. Создание виртуальной машины Linux с помощью NGINX
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: cynthn
+author: zr-msft
 manager: jeconnoc
 editor: tysonn
 tags: azure-resource-manager
@@ -14,14 +14,14 @@ ms.topic: sample
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 02/27/2017
-ms.author: cynthn
+ms.author: zarhoads
 ms.custom: mvc
-ms.openlocfilehash: 642dd46ee44fd1c69f2c66549dbb5806bb4ee5d7
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: 50a6bc40dbc79242e7c64bbc2082baeac224ba2e
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37927576"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49467928"
 ---
 # <a name="create-a-vm-with-nginx"></a>Создание виртуальной машины с помощью NGINX
 
@@ -61,7 +61,7 @@ az group delete --name myResourceGroup
 
 Для создания группы ресурсов, виртуальной машины и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Заметки |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az_group_create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az vm create](https://docs.microsoft.com/cli/azure/vm#az_vm_create) | Создает виртуальную машину. Эта команда также указывает образ виртуальной машины, который будет использоваться, и учетные данные администратора.  |

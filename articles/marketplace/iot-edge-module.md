@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 09/22/2018
 ms.author: qianw211
-ms.openlocfilehash: ecc892a38d5e86a089085cd67a78ce7d00c86fd8
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.openlocfilehash: 46740e925a5d4e94c314105aba4920caf01532e7
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47181122"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49985614"
 ---
 # <a name="iot-edge-modules"></a>Модули Edge Интернета вещей
 
@@ -84,7 +84,7 @@ Marketplace в настоящее время поддерживает **бесп
 
 Если вы вошли на [Портал Cloud Partner](https://cloudpartner.azure.com/), вам будут доступны следующие статьи:
 
-- [Создание предложения модуля IoT Edge](https://cloudpartner.azure.com/#documentation/create-iot-edge-module-offer) — шаги для публикации нового модуля IoT Edge с помощью Портала Cloud Partner.
+- [Создание предложения модуля IoT Edge](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/iot-edge-module/cpp-create-offer) — шаги для публикации нового модуля IoT Edge с помощью Портала Cloud Partner.
 - [Процесс сертификации модуля IoT Edge](https://cloudpartner.azure.com/#documentation/iot-edge-module-certification-process) — сводка шагов и требования для сертификации модуля IoT Edge.
 - [Часто задаваемые вопросы об IoT Edge](https://cloudpartner.azure.com/#documentation/iot-edge-module-faq) — список часто задаваемых вопросов, связанных с модулями IoT Edge.
 
