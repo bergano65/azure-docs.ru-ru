@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/08/2018
 ms.author: barbkess
-ms.openlocfilehash: f24be44b00f9c4e789e8d4797f6a0516dcfe940f
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
+ms.openlocfilehash: f9cd761080bc5098d0500841e7327ac8ce9f9a2d
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39494063"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49957944"
 ---
 # <a name="configure-azure-active-directory-sign-in-behavior-for-an-application-by-using-a-home-realm-discovery-policy"></a>Настройка поведения при входе в Azure Active Directory для приложения с помощью политики обнаружения домашней области
 
@@ -263,4 +263,4 @@ Get-AzureADPolicyAppliedObject -ObjectId <ObjectId of the Policy>
 ## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения о принципах работы аутентификации в Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory](../develop/authentication-scenarios.md).
 - Дополнительные сведения о едином входе пользователей см. в статье [Управление параметрами единого входа для корпоративных приложений](configure-single-sign-on-portal.md).
-- Сведения для разработчиков см. в [руководстве разработчика по Active Directory](../develop/azure-ad-developers-guide.md).
+- Сведения для разработчиков см. в [руководстве разработчика по Active Directory](../develop/v1-overview.md).

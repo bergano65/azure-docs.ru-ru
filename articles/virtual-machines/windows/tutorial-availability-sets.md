@@ -3,7 +3,7 @@ title: Руководство. Виртуальные машины Windows вы�
 description: Из этого руководства вы узнаете, как развертывать виртуальные машины высокого уровня доступности в группах доступности с помощью Azure PowerShell
 documentationcenter: ''
 services: virtual-machines-windows
-author: cynthn
+author: zr-msft
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/09/2018
-ms.author: cynthn
+ms.author: zarhoads
 ms.custom: mvc
-ms.openlocfilehash: fb10390731310db7b87e9ad101531c4404acf21b
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: bf6f74e05a788c6a6ffb88b71a2dfc27a6695a62
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43783285"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49464834"
 ---
 # <a name="tutorial-create-and-deploy-highly-available-virtual-machines-with-azure-powershell"></a>Руководство. Создание и развертывание высокодоступных виртуальных машин с помощью Azure PowerShell
 

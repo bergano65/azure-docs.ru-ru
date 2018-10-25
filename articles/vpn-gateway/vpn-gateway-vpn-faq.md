@@ -2,17 +2,17 @@
 title: 'VPN-шлюз: вопросы и ответы | Документация Майкрософт'
 description: 'VPN-шлюз: вопросы и ответы Распределенные подключения в виртуальной сети Microsoft Azure, подключения гибридных конфигураций и VPN-шлюзы: вопросы и ответы.'
 services: vpn-gateway
-author: cherylmc
+author: yushwang
 ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 07/27/2018
-ms.author: cherylmc
-ms.openlocfilehash: 245e5e1048f27fc76141312cf6f9021dc0060ae6
-ms.sourcegitcommit: baed5a8884cb998138787a6ecfff46de07b8473d
+ms.author: yushwang
+ms.openlocfilehash: 94183b639c02f6a7d74e87e8f8335da67db113d6
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "39359071"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49468183"
 ---
 # <a name="vpn-gateway-faq"></a>VPN-шлюз: вопросы и ответы
 
@@ -68,7 +68,7 @@ VPN-шлюз — это тип шлюза виртуальной сети. Он
 Нет. Тип шлюза виртуальной сети Azure нельзя изменить со шлюза на основе политик или наоборот. Шлюз необходимо удалить и создать заново, процесс занимает около 60 минут. IP-адрес шлюза и общий ключ не сохранится.
 1. Удалите все подключения, связанные с удаляемым шлюзом.
 2. Удалите шлюз:
-* [портала Azure](vpn-gateway-delete-vnet-gateway-portal.md)
+* [портал Azure](vpn-gateway-delete-vnet-gateway-portal.md)
 * [Azure PowerShell](vpn-gateway-delete-vnet-gateway-powershell.md)
 * [Удаление шлюза виртуальной сети с помощью PowerShell (классическая модель)](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
 3. [Создание VPN-шлюза](vpn-gateway-howto-site-to-site-resource-manager-portal.md#VNetGateway)

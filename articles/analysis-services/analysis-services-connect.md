@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/03/2018
+ms.date: 10/18/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 19f5fb7b779f538f46b1813f30795e01a75f065c
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: cc9ed103f8c6d1436fed1048446ad1eb0f78bcd8
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37443262"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49426011"
 ---
 # <a name="connecting-to-servers"></a>Подключение к серверам
 
@@ -24,7 +24,7 @@ ms.locfileid: "37443262"
 
 Все подключения к серверу независимо от типа требуют обновленных клиентских библиотек AMO, ADOMD.NET и OLEDB для взаимодействия с сервером Analysis Services. Для SSMS, SSDT, Excel 2016 и Power BI последние версии клиентских библиотек устанавливаются вместе с ежемесячными выпусками. Однако в некоторых случаях последние версии могут отсутствовать в приложении. Например, такое возможно, если обновление откладывается политикой либо если обновление Office 365 производится по отложенному каналу.
 
-## <a name="server-name"></a>имя сервера;
+## <a name="server-name"></a>Имя сервера
 
 При создании сервера служб Analysis Services в Azure вам нужно указать уникальное имя сервера и регион, в котором он будет создан. При указании имени сервера в подключении используется следующая схема именования:
 

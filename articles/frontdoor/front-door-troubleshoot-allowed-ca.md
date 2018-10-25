@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/23/2018
 ms.author: sharadag
-ms.openlocfilehash: de709133099674a0aa0386113b6459f8bc05e378
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 5cf94079dcd68887d9725ffbe9124f9b6c897dd0
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47046663"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49984772"
 ---
 # <a name="allowed-certificate-authorities-for-enabling-custom-https-on-azure-front-door-service"></a>Разрешенные центры сертификации для включения настраиваемого протокола HTTPS в Azure Front Door Service
 
@@ -26,6 +26,10 @@ ms.locfileid: "47046663"
 При создании собственного сертификата разрешены следующие ЦС:
 
 - AddTrust External CA Root
+- Корневой ЦС AlphaSSL
+- ЦС 01 AME Infra
+- ЦС 02 AME Infra
+- Ameroot
 - AP Root CA
 - AP Root Certificate Authority 2013
 - AP Root Certificate Authority 2014
@@ -40,37 +44,26 @@ ms.locfileid: "47046663"
 - DigiCert Global Root CA
 - DigiCert High Assurance CA-3
 - DigiCert High Assurance EV Root CA
+- ЦС расширенной проверки сервера DigiCert SHA2
 - DigiCert SHA2 High Assurance Server CA
 - DigiCert SHA2 Secure Server CA
+- Корневой ЦС X3 DST
+- Корневой ЦС 2 класса 3 D-trust 2009
+- ЦС Encryption Everywhere DV TLS
+- Корневой ЦС Entrust
+- Корневой ЦС Entrust — G2
+- ЦС Entrust.net (2048)
 - Глобальный ЦС GeoTrust
 - Основной ЦС GeoTrust
 - Основной ЦС GeoTrust — G2
+- ЦС Geotrust RSA 2018
 - GlobalSign;
 - GlobalSign Extended Validation CA - SHA256 - G2
 - GlobalSign Organization Validation CA - G2
 - GlobalSign Root CA
 - Корневой ЦС Go Daddy — G2
-- Microsoft Authenticode(tm) Root Authority
-- Microsoft Exchange Services CA 2015
-- Microsoft Internal Corporate Root
-- Microsoft IT ITO SSL CA 1
-- Microsoft IT SSL SHA1
-- Microsoft IT SSL SHA2
-- Microsoft IT TLS CA 1
-- Microsoft IT TLS CA 2
-- Microsoft IT TLS CA 4
-- Microsoft IT TLS CA 5
-- Microsoft Root Authority
-- Microsoft Root Certificate Authority
-- Microsoft Root Certificate Authority 2010
-- Microsoft Root Certificate Authority 2011
-- Microsoft Secure Server CA 2011
-- Microsoft Services Partner Root
-- Microsoft Time Stamping Service Root
-- Microsoft Windows Hardware Compatibility
-- MSIT CA Z2
-- MSIT Enterprise CA 1
-- MSIT Enterprise CA 3
+- Защищенный ЦС Go Daddy — G2
+- ЦС RSA RapidSSL 2018
 - Root Agency
 - Symantec Class 3 EV SSL CA - G3
 - Symantec Class 3 Secure Server CA - G4
@@ -78,12 +71,12 @@ ms.locfileid: "47046663"
 - Основной корневой ЦС Thawte
 - Основной корневой ЦС Thawte — G2
 - Основной корневой ЦС Thawte — G3
+- ЦС Thawte RSA 2018
 - Thawte Timestamping CA
-- UTN-USERFirst-Object
+- ЦС TrustAsia TLS RSA
 - VeriSign Class 3 Extended Validation SSL CA
 - VeriSign Class 3 Extended Validation SSL SGC CA
 - VeriSign Class 3 Public Primary Certification Authority - G5
 - VeriSign International Server CA - Class 3
 - VeriSign Time Stamping Service Root
 - VeriSign Universal Root Certification Authority
-- WMSvc-SHA2-DALEDGE1008

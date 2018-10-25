@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/04/2018
-ms.openlocfilehash: 1955fc033e0351be9da89bbee11dc41d6281a63a
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: c29131720de8d6016d134fe7c0118fc3db9e22be
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47433996"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49985647"
 ---
 # <a name="create-a-stream-analytics-job-to-analyze-phone-call-data-and-visualize-results-in-a-power-bi-dashboard"></a>Создание задания Stream Analytics для анализа данных телефонных звонков и визуализации результатов на панели мониторинга Power BI
  
@@ -37,7 +37,7 @@ ms.locfileid: "47433996"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/).  
 * Войдите на [портал Azure](https://portal.azure.com/).  
-* Загрузите приложение генератора событий телефонных вызовов [TelcoGenerator.zip](http://download.microsoft.com/download/8/B/D/8BD50991-8D54-4F59-AB83-3354B69C8A7E/TelcoGenerator.zip) из Центра загрузки Майкрософт или получите исходный код на сайте [GitHub](https://aka.ms/azure-stream-analytics-telcogenerator).  
+* Загрузите приложение генератора событий телефонных вызовов [TelcoGenerator.zip](https://download.microsoft.com/download/8/B/D/8BD50991-8D54-4F59-AB83-3354B69C8A7E/TelcoGenerator.zip) из Центра загрузки Майкрософт или получите исходный код на сайте [GitHub](https://aka.ms/azure-stream-analytics-telcogenerator).  
 
 ## <a name="create-an-azure-event-hub"></a>Создание концентратора событий Azure 
 
@@ -89,7 +89,7 @@ ms.locfileid: "47433996"
 
 Перед запуском приложения TelcoGenerator необходимо настроить его для отправки данных в созданный ранее концентратор событий Azure.
 
-1. Извлеките содержимое файла [TelcoGenerator.zip](http://download.microsoft.com/download/8/B/D/8BD50991-8D54-4F59-AB83-3354B69C8A7E/TelcoGenerator.zip).  
+1. Извлеките содержимое файла [TelcoGenerator.zip](https://download.microsoft.com/download/8/B/D/8BD50991-8D54-4F59-AB83-3354B69C8A7E/TelcoGenerator.zip).  
 2. Откройте файл `TelcoGenerator\TelcoGenerator\telcodatagen.exe.config` в текстовом редакторе по своему выбору (если имеется более одного CONFIG-файла, убедитесь, что вы открываете нужный).  
 
 3. Обновите элемент <appSettings> в файле конфигурации, указав следующие сведения:
@@ -260,7 +260,7 @@ ms.locfileid: "47433996"
 
 ## <a name="embedding-your-powerbi-dashboard-in-a-web-application"></a>Внедрение панели мониторинга Power BI в веб-приложение
 
-В этой части руководства для внедрения панели мониторинга используется пример веб-приложения [ASP.NET](http://asp.net/), созданный командой Power BI. Дополнительные сведения о внедрении панелей мониторинга см. в [этой статье](https://docs.microsoft.com/power-bi/developer/embedding).
+В этой части руководства для внедрения панели мониторинга используется пример веб-приложения [ASP.NET](https://asp.net/), созданный командой Power BI. Дополнительные сведения о внедрении панелей мониторинга см. в [этой статье](https://docs.microsoft.com/power-bi/developer/embedding).
 
 В руководстве мы будем следовать инструкциям для пользователя, владеющего приложением данных. Чтобы настроить приложение, перейдите к репозиторию GitHub [PowerBI-Developer-Samples](https://github.com/Microsoft/PowerBI-Developer-Samples) и следуйте инструкциям в разделе **User Owns Data** (Пользователь владеет данными) (используйте URL-адреса переадресации и домашней страницы в подразделе **subsection-dashboard-web-app**). Так как мы используем пример панели мониторинга, используйте пример кода integrate-dashboard-web-app, который находится в [репозиторий GitHub](https://github.com/Microsoft/PowerBI-Developer-Samples/tree/master/User%20Owns%20Data/integrate-dashboard-web-app).
 Когда приложение будет запущено в браузере, выполните следующие действия, чтобы вставить созданную ранее панель инструментов на веб-страницу:

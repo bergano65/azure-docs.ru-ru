@@ -3,17 +3,17 @@ title: Устранение неполадок резервного копиро
 description: Сведения об устранении неполадок, возникающих при защите файловых ресурсов в Azure.
 services: backup
 ms.service: backup
-author: markgalioto
-ms.author: markgal
-ms.date: 2/21/2018
+author: rayne-wiselman
+ms.author: raynew
+ms.date: 10/23/2018
 ms.topic: tutorial
 manager: carmonm
-ms.openlocfilehash: 334cea710d185a6774e28ea3459b3ca1ad9f846f
-ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
+ms.openlocfilehash: faf229d67a5b4a7a15774d6e01af1c5706d18058
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36959803"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50023157"
 ---
 # <a name="troubleshoot-problems-backing-up-azure-file-shares"></a>Устранение неполадок с резервным копированием файловых ресурсов Azure
 Для устранения неполадок и ошибок, обнаруженных в ходе резервного копирования файловых ресурсов Azure, можно использовать информацию в таблицах ниже.
@@ -30,7 +30,7 @@ ms.locfileid: "36959803"
 
 \*Файловые ресурсы Azure в учетных записях хранения с репликацией [геоизбыточного хранилища с доступом для чтения](../storage/common/storage-redundancy-grs.md) (RA-GRS) функционируют как GRS и оплачиваются по ценам на GRS.
 
-Резервное копирование файловых ресурсов Azure в учетные записи хранения с помощью репликации [хранилища, избыточного в пределах зоны,](../storage/common/storage-redundancy-zrs.md) (ZRS) сейчас доступно только в центральной части США (CUS), восточной части США 2 (EUS2), Юго-Восточной Азии (SEA) и Западной Европе (WE).
+Резервное копирование файловых ресурсов Azure в учетные записи хранения с помощью репликации [хранилища, избыточного в пределах зоны,](../storage/common/storage-redundancy-zrs.md) (ZRS) сейчас доступно только в центральной части США (CUS), восточной части США 2 (EUS2), Северной Европе (NE), Юго-Восточной Азии (SEA) и Западной Европе (WE).
 
 ## <a name="configuring-backup"></a>Настройка резервного копирования
 Следующая таблица содержит сведения о настройке резервного копирования.

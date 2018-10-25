@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/03/2018
+ms.date: 10/18/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 883d03b9ffebf85815da7ae62546f75b3d72442f
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: e797f1faf249a1ad1eebbd46984829de5f087936
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37441460"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49958675"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Асинхронное обновление с помощью REST API
 Вы можете задать асинхронное обновление данных в табличных моделях Azure Analysis Services, используя любой язык программирования, с помощью которого можно вызвать REST. Обновление предусматривает также синхронизацию реплик только для чтения для развертывания запросов. 
@@ -236,7 +236,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 #### <a name="service-principal"></a>Субъект-служба
 
-Дополнительные сведения о том, как настроить субъект-службу и назначить необходимые разрешения в Azure AS, см. в статьях [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../azure-resource-manager/resource-group-create-service-principal-portal.md) и [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md). Выполнив эти шаги, сделайте дополнительно следующее:
+Дополнительные сведения о том, как настроить субъект-службу и назначить необходимые разрешения в Azure AS, см. в статьях [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md) и [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md). Выполнив эти шаги, сделайте дополнительно следующее:
 
 1.  В примере кода найдите фрагмент **string authority = …** и замените **стандартный** идентификатор на код клиента своей организации.
 2.  Закомментируйте или раскомментируйте код, так чтобы класс ClientCredential использовался для создания экземпляра объекта cred. Убедитесь, что доступ к значениям \<App ID> и \<App Key> осуществляется безопасно, или настройте для субъектов-служб проверку подлинности.

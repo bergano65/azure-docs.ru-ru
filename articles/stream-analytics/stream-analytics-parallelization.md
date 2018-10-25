@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/07/2018
-ms.openlocfilehash: 44a7c0721d8a0683162d2219bff0e4a4ecb117e6
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 83fbebc07be3a61d7fd54953f842a320a537a7ac
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33777633"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49985018"
 ---
 # <a name="leverage-query-parallelization-in-azure-stream-analytics"></a>Использование параллелизации запросов в Azure Stream Analytics
 В этой статье показано, как воспользоваться преимуществами параллелизма в Azure Stream Analytics. Узнайте, как масштабировать задания Stream Analytics с помощью настройки входных разделов, настройки аналитики определения запроса.
@@ -50,14 +50,14 @@ ms.locfileid: "33777633"
 
 Дополнительные сведения об этих секциях см. в следующих статьях:
 
-* [Обзор функций концентраторов событий](../event-hubs/event-hubs-features.md#partitions)
+* [Обзор функций Центров событий](../event-hubs/event-hubs-features.md#partitions)
 * [Секционирование данных](https://docs.microsoft.com/azure/architecture/best-practices/data-partitioning#partitioning-azure-blob-storage)
 
 
 ## <a name="embarrassingly-parallel-jobs"></a>Задания с усложненным параллелизмом
 Задание с *усложненным параллелизмом* — это самый масштабируемый сценарий в Azure Stream Analytics. Он соединяет один раздел входных данных с одним экземпляром запроса и одним разделом выходных данных. Такой параллелизм имеет следующие требования:
 
-1. Если в логике запроса применяется ключ, который обрабатывается тем же экземпляром запроса, необходимо только проследить за тем, чтобы события попадали в ту же секцию входных данных. При использовании концентраторов событий или Центра Интернета вещей это означает, что для данных событий должно быть задано значение **PartitionKey**. Кроме того, можно использовать секционированные отправители. Для хранилища BLOB-объектов это означает, что события отправляются в папку той же секции. Если логика запроса не требует обработки ключа тем же экземпляром запроса, это требование можно проигнорировать. В качестве примера такой логики можно привести простой запрос select, project или filter.  
+1. Если в логике запроса применяется ключ, который обрабатывается тем же экземпляром запроса, необходимо только проследить за тем, чтобы события попадали в ту же секцию входных данных. При использовании Центров событий или Центра Интернета вещей это означает, что для данных событий должно быть задано значение **PartitionKey**. Кроме того, можно использовать секционированные отправители. Для хранилища BLOB-объектов это означает, что события отправляются в папку той же секции. Если логика запроса не требует обработки ключа тем же экземпляром запроса, это требование можно проигнорировать. В качестве примера такой логики можно привести простой запрос select, project или filter.  
 
 2. После того как данные будут распределены в источнике данных, необходимо убедиться в том, что запрос разбит на секции. Для этого на каждом этапе используется параметр **PARTITION BY**. Этапов может быть несколько, но на каждом из них должен использоваться один и тот же ключ. Сейчас для выполнения заданий с параллелизмом необходимо использовать значение **PartitionId** в качестве ключа секционирования.  
 
@@ -236,11 +236,11 @@ ms.locfileid: "33777633"
 
 <!--Link references-->
 
-[microsoft.support]: http://support.microsoft.com
-[azure.event.hubs.developer.guide]: http://msdn.microsoft.com/library/azure/dn789972.aspx
+[microsoft.support]: https://support.microsoft.com
+[azure.event.hubs.developer.guide]: https://msdn.microsoft.com/library/azure/dn789972.aspx
 
 [stream.analytics.introduction]: stream-analytics-introduction.md
 [stream.analytics.get.started]: stream-analytics-real-time-fraud-detection.md
-[stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
-[stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
+[stream.analytics.query.language.reference]: https://go.microsoft.com/fwlink/?LinkID=513299
+[stream.analytics.rest.api.reference]: https://go.microsoft.com/fwlink/?LinkId=517301
 

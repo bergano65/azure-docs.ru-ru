@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/03/2018
+ms.date: 10/18/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 5007e18db0af40621ab4b30a16d705d3a5b3915c
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 7e791514cc25c645775de260e7f190ee20812d4b
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37443823"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49428498"
 ---
 # <a name="create-relationships"></a>Создание связей
 
@@ -21,7 +21,7 @@ ms.locfileid: "37443823"
   
 Предполагаемое время выполнения этого занятия: **10 минут**  
   
-## <a name="prerequisites"></a>предварительным требованиям  
+## <a name="prerequisites"></a>Предварительные требования  
 Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом разделе, нужно завершить предыдущее занятие: [Занятие 3. Обозначение таблицы дат](../tutorials/aas-lesson-3-mark-as-date-table.md). 
   
 ## <a name="review-existing-relationships-and-add-new-relationships"></a>Просмотр существующих и добавление новых связей  

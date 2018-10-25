@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/03/2018
+ms.date: 10/18/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 6627cf74154e66a84f34d5d5bc1d78ed3e0c38a2
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 9cbbf8c5ea05915293c785028bdd0a47ba081036
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37443605"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49426028"
 ---
 # <a name="mark-as-date-table"></a>Обозначение таблицы дат
 
@@ -27,7 +27,7 @@ ms.locfileid: "37443605"
   
 Предполагаемое время выполнения этого занятия: **3 минуты**  
   
-## <a name="prerequisites"></a>предварительным требованиям  
+## <a name="prerequisites"></a>Предварительные требования  
 Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом разделе, нужно завершить предыдущее занятие: [Занятие 2. Получение данных](../tutorials/aas-lesson-2-get-data.md). 
 
 ### <a name="to-rename-the-fulldatealternatekey-column"></a>Чтобы переименовать столбец FullDateAlternateKey, сделайте следующее:

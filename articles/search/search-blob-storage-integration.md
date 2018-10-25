@@ -4,16 +4,16 @@ description: Программное создание индекса с помо�
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 05/04/2017
-author: chaosrealm
-manager: jlembicz
-ms.author: eugenesh
-ms.openlocfilehash: 71e43920f0e6a64beb7cdb28d0707dd30502bf05
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.date: 10/17/2018
+author: mgottein
+manager: cgronlun
+ms.author: magottei
+ms.openlocfilehash: 4f8099bbd5af250e58441eb0e202d4674f0671fe
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31790786"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49403232"
 ---
 # <a name="searching-blob-storage-with-azure-search"></a>Поиск в хранилище BLOB-объектов с помощью поиска Azure
 

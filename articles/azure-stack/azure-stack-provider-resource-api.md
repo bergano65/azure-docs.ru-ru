@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/24/2018
+ms.date: 10/22/2018
 ms.author: mabrigg
 ms.reviewer: alfredop
-ms.openlocfilehash: aedaa729ec51d7b60b2c242239935f7b3e41794f
-ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
+ms.openlocfilehash: c6f17fd4cc225b7d4ce60d38bf2abcabf12a40c5
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42918193"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945592"
 ---
 # <a name="provider-resource-usage-api"></a>API использования ресурсов для поставщиков
 Термин *поставщик* обозначает администраторов служб и любых делегированных поставщиков. Операторы Azure Stack и делегированные поставщики с помощью API использования ресурсов для поставщиков могут просматривать данные об использовании ресурсов их непосредственными клиентами. Например, как показано на схеме, с помощью API для поставщиков P0 может получить сведения о прямом использовании ресурсов для P1 и P2, а P1 — для P3 и P4.

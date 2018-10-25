@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/03/2018
+ms.date: 10/18/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 38c69b65d33a915d0b7cf43dc8ef5d43413163eb
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 1a9ecea835e42c90ce7d71617666d210182fe465
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37441249"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49428915"
 ---
 # <a name="create-roles"></a>Создание ролей
 
@@ -34,7 +34,7 @@ ms.locfileid: "37441249"
   
 Предполагаемое время выполнения этого занятия: **15 минут**  
   
-## <a name="prerequisites"></a>предварительным требованиям  
+## <a name="prerequisites"></a>Предварительные требования  
 Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом разделе, необходимо завершить предыдущее занятие: [Занятие 10. Создание разделов](../tutorials/aas-lesson-10-create-partitions.md).  
   
 ## <a name="create-roles"></a>Создание ролей  

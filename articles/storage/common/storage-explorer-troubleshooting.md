@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
 ms.component: common
-ms.openlocfilehash: eb72d92496addacd82e4d30df625b4f9c0c823e5
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: ffb355b4471bd8455f67e657d9557c3f372c3f4e
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39521036"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49470326"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Руководство по устранению неполадок в обозревателе хранилищ Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "39521036"
 7. Попробуйте выполнить вход.
 
 ### <a name="general-sign-in-troubleshooting-steps"></a>Общие действия по устранению неполадок входа
-* Если вы используете macOS и окно входа не появляется поверх диалогового окна "Waiting for authentication…" (Ожидание аутентификации…), то выполните [эти действия](#Mac-Keychain-Errors).
+* Если вы используете macOS и окно входа не появляется поверх диалогового окна "Waiting for authentication…" (Ожидание аутентификации…), то выполните [эти действия](#mac-keychain-errors).
 * Перезапуск Обозревателя службы хранилища
 * Если диалоговое окно проверки подлинности пустое, подождите не менее одной минуты, прежде чем его закрыть.
 * Убедитесь, что параметры прокси-сервера и сертификата правильно настроены как для вашего компьютера, так и для Обозревателя службы хранилища.

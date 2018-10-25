@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 3eb9f765b5ffe1118b3b25aff8ecdde327021a54
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 7a5c0866bc08c5a73888d9baca41980106a62ae2
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37046485"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49954949"
 ---
 # <a name="updating-azure-machine-learning-models-using-update-resource-activity"></a>Обновление моделей машинного обучения Azure с помощью действия "Обновить ресурс"
 
@@ -90,7 +90,7 @@ ms.locfileid: "37046485"
 https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resource-group-name}/providers/Microsoft.MachineLearning/webServices/{web-service-name}?api-version=2016-05-01-preview. 
 ```
 
-Значения для заполнителей в URL-адресе при выполнении запросов к веб-службе можно найти на [портале веб-служб машинного обучения Azure](https://services.azureml.net/). Для нового типа конечной точки обновления ресурса требуется маркер AAD (Azure Active Directory). Укажите **servicePrincipalId** и **servicePrincipalKey** в связанной службе AzureML. Ознакомьтесь со статьей [Создание приложения Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../../azure-resource-manager/resource-group-create-service-principal-portal.md). Ниже приведен пример определения связанной службы AzureML. 
+Значения для заполнителей в URL-адресе при выполнении запросов к веб-службе можно найти на [портале веб-служб машинного обучения Azure](https://services.azureml.net/). Для нового типа конечной точки обновления ресурса требуется маркер AAD (Azure Active Directory). Укажите **servicePrincipalId** и **servicePrincipalKey** в связанной службе AzureML. Ознакомьтесь со статьей [Создание приложения Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md). Ниже приведен пример определения связанной службы AzureML. 
 
 ```json
 {

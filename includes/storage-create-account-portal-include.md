@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/18/2018
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: d59cb64e1499f703bf6913ab422d0f979caca324
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f21710354572c9b54dbf0e08d02809bb68a8e120
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47008738"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49805058"
 ---
 Чтобы создать учетную запись хранения общего назначения версии 2 на портале Azure, сделайте следующее:
 
@@ -33,5 +33,6 @@ ms.locfileid: "47008738"
     - Для поля **Уровень доступа** по умолчанию задается значение **Горячий**.
 
 1. Нажмите **Просмотр и создание**, чтобы просмотреть настройки учетной записи хранения и создать учетную запись.
+1. Нажмите кнопку **Создать**.
 
 Дополнительные сведения о типах учетных записей хранения см. в статье [Общие сведения об учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-overview). Дополнительные сведения о группах ресурсов см. в статье [Общие сведения об Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). 

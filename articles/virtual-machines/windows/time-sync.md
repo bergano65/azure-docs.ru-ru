@@ -3,7 +3,7 @@ title: Синхронизация времени для виртуальных �
 description: Синхронизация времени для виртуальных машин Windows
 services: virtual-machines-windows
 documentationcenter: ''
-author: cynthn
+author: zr-msft
 manager: jeconnoc
 editor: tysonn
 tags: azure-resource-manager
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 09/017/2018
-ms.author: cynthn
-ms.openlocfilehash: 7fadf4a8bcf545229dd604829780e9837ad5a94a
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.author: zarhoads
+ms.openlocfilehash: 1c784721d103ca623f6e9bac5ec1281beeb70074
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45987315"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49468331"
 ---
 # <a name="time-sync-for-windows-vms-in-azure"></a>Синхронизация времени для виртуальных машин Windows в Azure
 

@@ -12,18 +12,18 @@ ms.author: v-daljep
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 10/15/2018
-ms.openlocfilehash: 1177703dc67e81e537d7682dcf9bbeb475748315
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: eaeb0d7f77b6d8ab6a3e12febba33c995a10ec3f
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353940"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49466560"
 ---
 # <a name="email-notifications-for-automatic-tuning"></a>Уведомления по электронной почте об автоматической настройке
 
 Рекомендации по настройке базы данных SQL создает функция [автоматической настройки](sql-database-automatic-tuning.md) службы "База данных SQL Azure". Это решение постоянно отслеживает и анализирует рабочие нагрузки баз данных SQL, предоставляя для каждой отдельной базы данных специализированные рекомендации по настройке, связанные с созданием индексов, удалением индексов и оптимизацией планов выполнения запросов.
 
-Рекомендации по автоматической настройке базы данных SQL можно просмотреть на [портале Azure](sql-database-advisor-portal.md), а также получить с помощью вызовов [REST API](https://docs.microsoft.com/rest/api/sql/databaserecommendedactions/databaserecommendedactions_listbydatabaseadvisor) либо с помощью команд [T-SQL](https://azure.microsoft.com/blog/automatic-tuning-introduces-automatic-plan-correction-and-t-sql-management/) и [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/get-azurermsqldatabaserecommendedaction). Эта статья основана на использовании сценария PowerShell для получения рекомендаций по автоматической настройке.
+Рекомендации по автоматической настройке базы данных SQL можно просмотреть на [портале Azure](sql-database-advisor-portal.md), а также получить с помощью вызовов [REST API](https://docs.microsoft.com/rest/api/sql/databaserecommendedactions/listbydatabaseadvisor) либо с помощью команд [T-SQL](https://azure.microsoft.com/blog/automatic-tuning-introduces-automatic-plan-correction-and-t-sql-management/) и [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/get-azurermsqldatabaserecommendedaction). Эта статья основана на использовании сценария PowerShell для получения рекомендаций по автоматической настройке.
 
 ## <a name="automate-email-notifications-for-automatic-tuning-recommendations"></a>Автоматизация уведомлений по электронной почте о рекомендациях по автоматической настройке
 

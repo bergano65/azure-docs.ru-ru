@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/01/2016
 ms.author: mlearned
-ms.openlocfilehash: f44bb7bd95ef405c65bb259a6d104475c2e283bd
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: a3dfca48b52af39e7a536b3012a3f4cdac4e9a94
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44297848"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49955173"
 ---
 # <a name="continuous-integration-in-azure-devops-services-using-azure-resource-group-deployment-projects"></a>Непрерывная интеграция в Azure DevOps Services с использованием проектов развертывания группы ресурсов Azure
 Чтобы развернуть шаблон Azure, необходимо выполнить задачи на различных этапах: сборка, тестирование, копирование в Azure (также называется "помещением на промежуточное хранение") и развертывание шаблона. Существует два разных способа развертывания шаблонов в Azure DevOps Services. Оба метода обеспечивают одинаковые результаты, поэтому выберите самый оптимальный для своего рабочего процесса.
@@ -92,7 +92,7 @@ ms.locfileid: "44297848"
       Для интерфейса командной строки Azure:
       
       `azure account show`
-   8. Чтобы получить идентификатор субъекта-службы, ключ субъекта-службы и идентификатор клиента, выполните действия, описанные в статье [Создание приложения Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](resource-group-create-service-principal-portal.md) или [Использование Azure PowerShell для создания субъекта-службы и доступа к ресурсам](resource-group-authenticate-service-principal.md).
+   8. Чтобы получить идентификатор субъекта-службы, ключ субъекта-службы и идентификатор клиента, выполните действия, описанные в статье [Создание приложения Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](active-directory/develop/howto-create-service-principal-portal.md) или [Использование Azure PowerShell для создания субъекта-службы и доступа к ресурсам](active-directory/develop/howto-authenticate-service-principal-powershell.md).
    9. В диалоговом окне **Добавление подписки Azure** укажите идентификатор субъекта-службы, ключ субъекта-службы и идентификатор клиента и нажмите кнопку **ОК**.
       
       Теперь у вас есть допустимый субъект-служба для выполнения сценария Azure PowerShell.
