@@ -13,12 +13,12 @@ ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
 ms.date: 10/15/2018
-ms.openlocfilehash: 9f65537da2b32eee0a6870d22f7c444605ee56b1
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 1ae68e8eac3baca53cda603769a89bc6a84fd468
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49364886"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49405934"
 ---
 # <a name="the-azure-sql-database-service"></a>Служба Базы данных SQL Azure
 
@@ -95,7 +95,7 @@ ms.locfileid: "49364886"
 
 - **Служба хранилища Azure**: для архивации больших объемов телеметрии по оптимальной стоимости.
 - **Концентратор событий Azure**: для интеграции телеметрии базы данных SQL с настраиваемым решением для мониторинга или горячими конвейерами.
-- **Azure Log Analytics**: для встроенного решения для мониторинга с возможностями предоставления отчетов, предупреждений и выполнения исправлений. Azure Log Analytics входит в пакет [Operations Management Suite (OMS)](../operations-management-suite/operations-management-suite-overview.md).
+- **Azure Log Analytics**: для встроенного решения для мониторинга с возможностями предоставления отчетов, предупреждений и выполнения исправлений.
 
     ![архитектура](./media/sql-database-metrics-diag-logging/architecture.png)
 

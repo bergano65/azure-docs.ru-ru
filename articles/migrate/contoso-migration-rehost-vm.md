@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 09/05/2018
+ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: 40efd1b556db5cbebff80293a91a228afe17eab5
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 004ce399437ef581b319980c83f00cb1427b934b
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44297423"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49115844"
 ---
 # <a name="contoso-migration-rehost-an-on-premises-app-to-azure-vms"></a>Миграция приложения компании Contoso: повторное размещение локального приложения на виртуальных машинах Azure
 
@@ -38,6 +38,7 @@ ms.locfileid: "44297423"
 [Статья 11. Рефакторинг Team Foundation Server в Azure DevOps Services](contoso-migration-tfs-vsts.md) | Специалисты компании Contoso переносят локальное развертывание Team Foundation Server в Azure DevOps Services в Azure. | Доступна
 [Статья 12. Перепроектирование приложения для использования контейнеров Azure и Базы данных SQL Azure](contoso-migration-rearchitect-container-sql.md) | Специалисты компании Contoso переносят приложение SmartHotel в Azure. Затем уровень веб-приложений преобразуется в контейнер Windows, работающий в Azure Service Fabric, и базу данных в службе "База данных SQL Azure". | Доступна
 [Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | Специалисты компании Contoso выполняют повторную сборку приложения SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Службу Azure Kubernetes (AKS), Функции Azure, Cognitive Services и Azure Cosmos DB. | Доступна
+[Статья 14. Масштабирование миграции в Azure](contoso-migration-scale.md) | Ознакомившись с вариантами сочетаний миграции, компания Contoso готовится к полномасштабной миграции в Azure. | Доступна
 
 
 В этой статье рассказывается, как компания Contoso выполняет миграцию двухуровневого приложения Windows. Приложение .NET SmartHotel360 работает на виртуальных машинах VMware в Azure. Это приложение с открытым кодом, и если вы хотите использовать его, вы можете скачать его с веб-сайта [github](https://github.com/Microsoft/SmartHotel360).

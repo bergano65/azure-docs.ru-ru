@@ -7,12 +7,12 @@ ms.subservice: Azure Disk Encryption
 ms.topic: article
 ms.author: mstewart
 ms.date: 10/12/2018
-ms.openlocfilehash: 8b0f682e481ef73019d3371af2b84f6270e021ee
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 54aef992e95454387ee2fda1d1b34d6dcae3e21e
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49341894"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49959117"
 ---
 # <a name="azure-disk-encryption-prerequisites-previous-release"></a>Предварительные требования для шифрования дисков Azure (предыдущий выпуск)
 
@@ -242,12 +242,12 @@ ms.locfileid: "49341894"
 3.  Возвращаемый идентификатор приложения — это идентификатор клиента Azure AD, используемый в других командах. Это также имя субъекта-службы, которое будет использоваться для команды az keyvault set-policy. Пароль — это секрет клиента, который понадобится позже, чтобы включить шифрование дисков Azure. Секрет клиента Azure AD следует хранить с соблюдением мер предосторожности.
  
 ### <a name="bkmk_ADappRM"></a> Настройка приложения Azure AD и субъекта-службы на портале Azure
-Выполните шаги, описанные в статье [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../azure-resource-manager/resource-group-create-service-principal-portal.md), чтобы создать приложение Azure AD. Каждый шаг, указанный ниже, содержит ссылку непосредственно на раздел статьи. 
+Выполните шаги, описанные в статье [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md), чтобы создать приложение Azure AD. Каждый шаг, указанный ниже, содержит ссылку непосредственно на раздел статьи. 
 
-1. [Проверьте необходимые разрешения](../azure-resource-manager/resource-group-create-service-principal-portal.md#required-permissions).
-2. [Создайте приложение Azure Active Directory](../azure-resource-manager/resource-group-create-service-principal-portal.md#create-an-azure-active-directory-application). 
+1. [Проверьте необходимые разрешения](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
+2. [Создайте приложение Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application). 
      - При создании приложения можно использовать любое имя и URL-адрес входа.
-3. [Получение идентификатора приложения и ключ проверки подлинности](../azure-resource-manager/resource-group-create-service-principal-portal.md#get-application-id-and-authentication-key). 
+3. [Получение идентификатора приложения и ключ проверки подлинности](../active-directory/develop/howto-create-service-principal-portal.md#get-application-id-and-authentication-key). 
      - Ключ проверки подлинности является секретом клиента и используется как AadClientSecret для Set-AzureRmVMDiskEncryptionExtension. 
         - Ключ проверки подлинности используется приложением в качестве учетной записи для входа в Azure AD. На портале Azure эти секреты называются ключами, но они не имеют никакого отношения к хранилищам ключей. Защитите этот секрет должным образом. 
      - Идентификатор приложения будет использоваться позже как AadClientId для Set-AzureRmVMDiskEncryptionExtension и как ServicePrincipalName для Set-AzureRmKeyVaultAccessPolicy. 

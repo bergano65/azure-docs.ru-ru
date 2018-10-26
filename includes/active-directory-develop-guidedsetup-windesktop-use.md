@@ -14,18 +14,18 @@ ms.workload: identity
 ms.date: 09/17/2018
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: 538b0c969d8c039079c09232e06f55e24aabf393
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: 87ac7364a2c409af410fcb5cd09aed4377b28d8e
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48842912"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49988200"
 ---
 ## <a name="use-msal-to-get-a-token-for-the-microsoft-graph-api"></a>Получение маркера для API Microsoft Graph с помощью MSAL
 
 В этом разделе вы получите маркер для API Microsoft Graph с помощью MSAL.
 
-1.  В файле *MainWindow.xaml.cs* добавьте ссылку для MSAL в класс:
+1. В файле *MainWindow.xaml.cs* добавьте ссылку для MSAL в класс:
 
     ```csharp
     using Microsoft.Identity.Client;
@@ -215,4 +215,3 @@ private void DisplayBasicTokenInfo(AuthenticationResult authResult)
 
 После входа пользователя MSAL получает идентификатор маркера в дополнение к маркеру доступа, который используется для вызова Microsoft Graph API. Этот маркер содержит небольшое подмножество сведений, имеющие отношение к пользователям. Метод `DisplayBasicTokenInfo` отображает основные сведения, содержащиеся в маркере. Например, он показывает отображаемое имя и идентификатор пользователя, а также дату истечения срока действия маркера и строку, представляющую сам маркер доступа. Нажав кнопку *вызова API Microsoft Graph* несколько раз, вы увидите, что для последующих запросов повторно используется тот же маркер. Вы также можете увидеть, что библиотека MSAL продлила срок действия.
 <!--end-collapse-->
-

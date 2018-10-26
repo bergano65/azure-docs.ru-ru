@@ -8,12 +8,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 08/29/2017
 ms.author: yizhon
-ms.openlocfilehash: 4c4ff981560fc4025c6bf782df71e648a1356c3f
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.openlocfilehash: dd3b693271326c85688a275a65b67ad6257220e3
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48248148"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50024781"
 ---
 # <a name="azure-iot-device-sdk-for-c--more-about-iothubclient"></a>Пакет SDK для устройств Azure IoT для C — дополнительные сведения о библиотеке IoTHubClient
 
@@ -27,7 +27,7 @@ ms.locfileid: "48248148"
 
 Чтобы раскрыть эти темы на должном уровне, мы будем использовать образцы из пакета SDK для библиотеки **IoTHubClient**. Если вы хотите сразу же проверять все, о чем мы рассказываем, найдите приложения **iothub\_client\_sample\_http** и **iothub\_client\_sample\_amqp**. Они входят в пакет SDK для устройств Azure IoT для C. Все, что описано в следующих разделах, продемонстрировано именно в этих примерах.
 
-[**Пакет SDK для устройств Интернета вещей Azure для C**](https://github.com/Azure/azure-iot-sdk-c) доступен в репозитории на сайте GitHub. Дополнительные сведения об API см. в [справочной документации по API для C](https://azure.github.io/azure-iot-sdk-c/index.html).
+[**Пакет SDK для устройств Интернета вещей Azure для C**](https://github.com/Azure/azure-iot-sdk-c) доступен в репозитории на сайте GitHub. Дополнительные сведения об API см. в [справочной документации по API для C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/).
 
 ## <a name="the-lower-level-apis"></a>Интерфейсы API нижнего уровня
 

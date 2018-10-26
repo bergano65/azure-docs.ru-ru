@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/08/2018
-ms.openlocfilehash: 6455322a1a1cf392c16aba708ce8445f8c80c3df
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 5ee249aee5d95f22f2e1f52d6356f09ea41ccd68
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49363849"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945762"
 ---
 # <a name="extend-azure-hdinsight-using-an-azure-virtual-network"></a>Расширение возможностей HDInsight с помощью виртуальной сети Azure
 
@@ -173,7 +173,7 @@ Azure предоставляет разрешение имен для служб
 
 ## <a name="directly-connect-to-hadoop-services"></a>Подключение напрямую к службам Hadoop
 
-Вы можете подключиться к кластеру по адресу https://CLUSTERNAME.azurehdinsight.net. Этот адрес использует общедоступный IP-адрес, который может быть недоступен, если вы использовали группы безопасности сети или определяемые пользователем маршруты для ограничения входящего трафика из Интернета. Кроме того, при развертывании кластера в виртуальной сети доступ к нему можно получить с помощью частной конечной точки https://CLUSTERNAME-internal.azurehdinsight.net. Эта конечная точка разрешается в частный IP-адрес виртуальной сети для доступа к кластеру.
+Вы можете подключиться к кластеру по адресу https://CLUSTERNAME.azurehdinsight.net. Этот адрес использует общедоступный IP-адрес, который может быть недоступен, если вы использовали группы безопасности сети или определяемые пользователем маршруты для ограничения входящего трафика из Интернета. Кроме того, при развертывании кластера в виртуальной сети доступ к нему можно получить с помощью частной конечной точки https://CLUSTERNAME-int.azurehdinsight.net. Эта конечная точка разрешается в частный IP-адрес виртуальной сети для доступа к кластеру.
 
 Для прямого подключения к Ambari и другим веб-страницам через виртуальную сеть сделайте следующее:
 

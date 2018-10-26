@@ -9,22 +9,18 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 10/08/2018
+ms.date: 10/22/2018
 ms.author: jingwang
-ms.openlocfilehash: e2b441e0266ac397226b783c66df4ca54e0b3f71
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: 72b2c630c514190d2c63e3dd7faa29b0b3abab19
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48870168"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49944567"
 ---
 # <a name="load-data-from-office-365-by-using-azure-data-factory"></a>Загрузка данных из Office 365 с помощью Фабрики данных Azure
 
 В этой статье показано, как использовать Фабрику данных для _загрузки данных из Office 365 в хранилище BLOB-объектов Azure_. Эти шаги применяются и для копирования данных в Azure Data Lake 1-го и 2-го поколения. Общие сведения о копировании данных из Office 365 см. в статье [о соединителе Office 365](connector-office-365.md).
-
-Краткую демонстрацию подключения Фабрики данных к данным Office 365 см. в следующем 9-минутном видео:
-
-> [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Get-cloud-scale-analytics-of-Office-365-data-with-Azure-Data-Factory/player]
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 

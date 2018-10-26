@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 09/12/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d2023d30cdb86a218d27024c8ccf0f397a7a5d09
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: 569efa7fbbd111937f00ba3b1e28219c163e2221
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48816624"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49958165"
 ---
 # <a name="manage-azure-automation-run-as-accounts"></a>Управление учетными записями запуска от имени службы автоматизации Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "48816624"
 |Создание или удаление подключения службы автоматизации|[New-AzureRmAutomationConnection](/powershell/module/AzureRM.Automation/New-AzureRmAutomationConnection)</br>[Remove-AzureRmAutomationConnection](/powershell/module/AzureRM.Automation/Remove-AzureRmAutomationConnection)|Участник группы ресурсов |
 
 * Необходимо добавить учетную запись пользователя AD с разрешениями, аналогичными роли участника для ресурсов Microsoft.Automation, как описано в разделе об [участнике](automation-role-based-access-control.md#contributor).  
-* Пользователи без прав администратора в клиенте Azure AD могут [регистрировать приложения AD](../azure-resource-manager/resource-group-create-service-principal-portal.md#check-azure-subscription-permissions), если в нем для параметра **Пользователи могут регистрировать приложения** на странице **параметров пользователя** установлено значение **Да**. Если для этого параметра задано значение **Нет**, пользователю потребуются права глобального администратора в Azure AD, чтобы выполнить это действие.
+* Пользователи без прав администратора в клиенте Azure AD могут [регистрировать приложения AD](../active-directory/develop/howto-create-service-principal-portal.md#check-azure-subscription-permissions), если в нем для параметра **Пользователи могут регистрировать приложения** на странице **параметров пользователя** установлено значение **Да**. Если для этого параметра задано значение **Нет**, пользователю потребуются права глобального администратора в Azure AD, чтобы выполнить это действие.
 
 Если пользователь, которому назначают роль глобального администратора или соадминистратора подписки, не является участником экземпляра подписки Active Directory, он будет добавлен в качестве гостя. В этом случае вы получите предупреждение `You do not have permissions to create…` на странице **добавления учетной записи службы автоматизации**. Пользователей, которым назначена роль соадминистратора или глобального администратора, можно удалить из экземпляра подписки Active Directory, а затем повторно добавить, чтобы предоставить им права полного доступа к Active Directory. Чтобы проверить это, на портале Azure в области **Azure Active Directory** выберите **Пользователи и группы** и **Все пользователи**. Выбрав нужного пользователя, щелкните **Профиль**. Значение атрибута **Тип пользователя** в профиле пользователя не должно соответствовать значению **Гость**.
 

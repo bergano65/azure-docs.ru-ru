@@ -9,13 +9,13 @@ ms.reviewer: douglasl
 ms.service: database-migration
 ms.workload: data-services
 ms.topic: article
-ms.date: 10/09/2018
-ms.openlocfilehash: 064d7ca2f544dbf1c968310842e322d8c0db2ca1
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.date: 10/19/2018
+ms.openlocfilehash: 71d79ac34c4797cceb8374d65afb6fd7662f1c21
+ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48884448"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49456186"
 ---
 # <a name="what-is-the-azure-database-migration-service"></a>Что такое Azure Database Migration Service?
 Azure Database Migration Service — это полностью управляемая служба, которая выполняет непрерывную миграцию из множества источников баз данных на платформы данных Azure с минимальным временем простоя (подключенные миграции).
@@ -29,7 +29,7 @@ Azure Database Migration Service — это полностью управляе�
 ## <a name="regional-availability"></a>Доступ по регионам
 Azure Database Migration Service сейчас доступна в следующих регионах:
 
-![Региональная доступность Azure Database Migration Service](media\overview\dms-regional-availability.png)
+![Региональная доступность Azure Database Migration Service](media\overview\dms-regional-availability1.png)
 
 Наиболее актуальные сведения о региональной доступности Azure Database Migration Service (на сайте глобальной инфраструктуры Azure) см. на странице [доступности продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/).
 

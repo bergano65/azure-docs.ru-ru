@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: b8c6b82af1a71f5e2df7dd555c7ceb91b8ccd292
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: 33c2bd48084c3d0e73fe2f4a1ce922e7a66b944f
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49394555"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49955443"
 ---
 # <a name="troubleshoot-errors-with-runbooks"></a>Устранение ошибок c помощью модулей Runbook
 
@@ -122,7 +122,7 @@ Add-AzureAccount: AADSTS50079: Strong authentication enrollment (proof-up) is re
 
 #### <a name="resolution"></a>Способы устранения:
 
-Сведения об использовании сертификата с командлетами классической модели развертывания Azure см. в руководстве по [созданию и добавлению сертификатов для управления службами Azure](http://blogs.technet.com/b/orchestrator/archive/2014/04/11/managing-azure-services-with-the-microsoft-azure-automation-preview-service.aspx) Сведения об использовании субъекта-службы с командлетами диспетчера ресурсов Azure см. в статьях о [создании субъекта-службы с помощью портала Azure](../../azure-resource-manager/resource-group-create-service-principal-portal.md) и [аутентификации субъекта-службы в диспетчере ресурсов Azure](../../azure-resource-manager/resource-group-authenticate-service-principal.md).
+Сведения об использовании сертификата с командлетами классической модели развертывания Azure см. в руководстве по [созданию и добавлению сертификатов для управления службами Azure](http://blogs.technet.com/b/orchestrator/archive/2014/04/11/managing-azure-services-with-the-microsoft-azure-automation-preview-service.aspx) Сведения об использовании субъекта-службы с командлетами диспетчера ресурсов Azure см. в статьях о [создании субъекта-службы с помощью портала Azure](../../active-directory/develop/howto-create-service-principal-portal.md) и [аутентификации субъекта-службы в диспетчере ресурсов Azure](../../active-directory/develop/howto-authenticate-service-principal-powershell.md).
 
 ## <a name="common-errors-when-working-with-runbooks"></a>Распространенные ошибки при работе с модулями Runbook
 

@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 09/26/2018
 ms.author: mabrigg
 ms.reviewer: ppacent
-ms.openlocfilehash: f7079d54ccae32d06488d12d45d6035c7f372d63
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: cdd5114b78776a776985b0525789cdabf2e65900
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48236613"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49649273"
 ---
 # <a name="validate-azure-stack-pki-certificates"></a>Проверка сертификатов PKI Azure Stack
 
@@ -94,45 +94,54 @@ ms.locfileid: "48236613"
     ```PowerShell  
     $pfxPassword = Read-Host -Prompt "Enter PFX Password" -AsSecureString 
 
-    Start-AzsReadinessChecker  -extensionshostfeature -CertificatePath c:\certificates -pfxPassword $pfxPassword -RegionName east -FQDN azurestack.contoso.com -IdentitySystem AAD 
+    Invoke-AzsCertificateValidation -CertificatePath c:\certificates -pfxPassword $pfxPassword -RegionName east -FQDN azurestack.contoso.com -IdentitySystem AAD -extensionhostfeature 
     ```
 
 4. Проверьте выходные данные. Все сертификаты должны пройти все проверки. Например: 
 
-    ```PowerShell  
-    AzsReadinessChecker v1.1803.405.3 started
-    Starting Certificate Validation
+````PowerShell
+Invoke-AzsCertificateValidation v1.1809.1005.1 started.
+Testing: ARM Public\ssl.pfx
+Thumbprint: 7F6B27****************************E9C35A
+    PFX Encryption: OK
+    Signature Algorithm: OK
+    DNS Names: OK
+    Key Usage: OK
+    Key Size: OK
+    Parse PFX: OK
+    Private Key: OK
+    Cert Chain: OK
+    Chain Order: OK
+    Other Certificates: OK
+Testing: Admin Extension Host\ssl.pfx
+Thumbprint: A631A5****************************35390A
+    PFX Encryption: OK
+    Signature Algorithm: OK
+    DNS Names: OK
+    Key Usage: OK
+    Key Size: OK
+    Parse PFX: OK
+    Private Key: OK
+    Cert Chain: OK
+    Chain Order: OK
+    Other Certificates: OK
+Testing: Public Extension Host\ssl.pfx
+Thumbprint: 4DBEB2****************************C5E7E6
+    PFX Encryption: OK
+    Signature Algorithm: OK
+    DNS Names: OK
+    Key Usage: OK
+    Key Size: OK
+    Parse PFX: OK
+    Private Key: OK
+    Cert Chain: OK
+    Chain Order: OK
+    Other Certificates: OK
 
-    Starting Azure Stack Certificate Validation 1.1803.405.3
-    Testing: ARM Public\ssl.pfx
-        Read PFX: OK
-        Signature Algorithm: OK
-        Private Key: OK
-        Cert Chain: OK
-        DNS Names: OK
-        Key Usage: OK
-        Key Size: OK
-        Chain Order: OK
-        Other Certificates: OK
-    Testing: ACSBlob\ssl.pfx
-        Read PFX: OK
-        Signature Algorithm: OK
-        Private Key: OK
-        Cert Chain: OK
-        DNS Names: OK
-        Key Usage: OK
-        Key Size: OK
-        Chain Order: OK
-        Other Certificates: OK
-    Detailed log can be found C:\AzsReadinessChecker\CertificateValidation\CertChecker.log
-
-    Finished Certificate Validation
-
-    AzsReadinessChecker Log location: C:\AzsReadinessChecker\AzsReadinessChecker.log
-    AzsReadinessChecker Report location: 
-    C:\AzsReadinessChecker\AzsReadinessReport.json
-    AzsReadinessChecker Completed
-    ```
+Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
+Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json
+Invoke-AzsCertificateValidation Completed
+````
 
 ### <a name="known-issues"></a>Известные проблемы
 
@@ -158,11 +167,9 @@ ms.locfileid: "48236613"
     The Other Certificates check was skipped because Cert Chain and/or DNS Names failed. Follow the guidance to remediate those issues and recheck. 
     Detailed log can be found C:\AzsReadinessChecker\CertificateValidation\CertChecker.log
 
-    Finished Certificate Validation
-
-    AzsReadinessChecker Log location: C:\AzsReadinessChecker\AzsReadinessChecker.log
-    AzsReadinessChecker Report location (for OEM): C:\AzsReadinessChecker\AzsReadinessChecker.log
-    AzsReadinessChecker Completed
+    Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
+    Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json
+    Invoke-AzsCertificateValidation Completed
     ```
 
 **Решение**. Следуйте указаниям в руководстве по инструментам в разделе сведений о каждом наборе проверок сертификата.
@@ -192,18 +199,15 @@ ms.locfileid: "48236613"
 3.  Измените значения **RegionName** и **FQDN** в соответствии со своей средой Azure Stack, чтобы начать проверку. Далее выполните:
 
     ```PowerShell  
-    Start-AzsReadinessChecker -PaaSCertificates $PaaSCertificates -RegionName east -FQDN azurestack.contoso.com 
+    Invoke-AzsCertificateValidation -PaaSCertificates $PaaSCertificates -RegionName east -FQDN azurestack.contoso.com 
     ```
 4.  Проверьте выходные данные. Все сертификаты должны пройти все проверки.
 
     ```PowerShell
-    AzsReadinessChecker v1.1805.425.2 started
-    Starting PaaS Certificate Validation
-    
-    Starting Azure Stack Certificate Validation 1.0 
-    Testing: PaaSCerts\wildcard.appservice.pfx
-        Read PFX: OK
+    Invoke-AzsCertificateValidation v1.0 started.
+    Thumbprint: 95A50B****************************FA6DDA
         Signature Algorithm: OK
+        Parse PFX: OK
         Private Key: OK
         Cert Chain: OK
         DNS Names: OK
@@ -211,9 +215,9 @@ ms.locfileid: "48236613"
         Key Size: OK
         Chain Order: OK
         Other Certificates: OK
-    Testing: PaaSCerts\api.appservice.pfx
-        Read PFX: OK
+    Thumbprint: EBB011****************************59BE9A
         Signature Algorithm: OK
+        Parse PFX: OK
         Private Key: OK
         Cert Chain: OK
         DNS Names: OK
@@ -221,9 +225,9 @@ ms.locfileid: "48236613"
         Key Size: OK
         Chain Order: OK
         Other Certificates: OK
-    Testing: PaaSCerts\wildcard.dbadapter.pfx
-        Read PFX: OK
+    Thumbprint: 76AEBA****************************C1265E
         Signature Algorithm: OK
+        Parse PFX: OK
         Private Key: OK
         Cert Chain: OK
         DNS Names: OK
@@ -231,9 +235,9 @@ ms.locfileid: "48236613"
         Key Size: OK
         Chain Order: OK
         Other Certificates: OK
-    Testing: PaaSCerts\sso.appservice.pfx
-        Read PFX: OK
+    Thumbprint: 8D6CCD****************************DB6AE9
         Signature Algorithm: OK
+        Parse PFX: OK
         Private Key: OK
         Cert Chain: OK
         DNS Names: OK

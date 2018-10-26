@@ -9,12 +9,12 @@ ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 09/24/2018
-ms.openlocfilehash: b3e1fd5331b97fc2120819b17f7fbba57dadf7b1
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 054cd54827dc11e57f249a270542ff81ff670912
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49345056"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49649998"
 ---
 # <a name="track-experiments-and-training-metrics-in-azure-machine-learning"></a>Отслеживание экспериментов и метрик обучения в службе "Машинное обучение Azure"
 
@@ -25,7 +25,7 @@ ms.locfileid: "49345056"
 
 ## <a name="list-of-training-metrics"></a>Список метрик обучения 
 
-Следующие метрики можно добавить к выполнению во время обучения эксперимента. Чтобы просмотреть более подробный список того, что можно отслеживать в выполнении, ознакомьтесь со [справочной документацией по пакету SDK](https://docs.microsoft.com/python/api/overview/azure/azure-ml-sdk-overview?view=azure-ml-py).
+Следующие метрики можно добавить к выполнению во время обучения эксперимента. Чтобы просмотреть более подробный список того, что можно отслеживать в выполнении, ознакомьтесь со [справочной документацией по пакету SDK](https://aka.ms/aml-sdk).
 
 |type| Функция Python | Пример | Примечания|
 |----|:----|:----|:----|
@@ -235,6 +235,7 @@ ms.locfileid: "49345056"
 
 Метрики обученной модели можно просмотреть с помощью ```run.get_metrics()```. Теперь можно получить все метрики, которые были зарегистрированы в примере выше, чтобы определить оптимальную модель.
 
+<a name='view-the-experiment-in-the-web-portal'/>
 ## <a name="view-the-experiment-in-the-azure-portal"></a>Просмотр эксперимента на портале Azure
 
 После завершения эксперимента можно просмотреть записи о выполнении в эксперименте. Это можно сделать двумя способами.

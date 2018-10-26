@@ -14,17 +14,17 @@ ms.workload: identity
 ms.date: 09/13/2018
 ms.author: andret
 ms.custom: include file
-ms.openlocfilehash: 9d512af7fdd68ec3356b427429144ec9195fd95b
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: cf536879393622744da0a6dd5b4e38c8c52de39b
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48843203"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49988382"
 ---
-## <a name="use-msal-to-get-a-token"></a>Использование MSAL для получения маркера 
+## <a name="use-msal-to-get-a-token"></a>Использование MSAL для получения маркера
 
-1.  В разделе **app** > **java** > **{домен}.{имя_приложения}** откройте `MainActivity`. 
-2.  Добавьте приведенные ниже определения import:
+1. В разделе **app** > **java** > **{домен}.{имя_приложения}** откройте `MainActivity`. 
+2. Добавьте приведенные ниже определения import:
 
     ```java
     import android.app.Activity;
@@ -241,10 +241,13 @@ ms.locfileid: "48843203"
 
 <!--start-collapse-->
 ### <a name="more-information"></a>Дополнительные сведения
+
 #### <a name="get-a-user-token-interactively"></a>Интерактивное получение маркера пользователя
+
 Вызов метода `AcquireTokenAsync` открывает окно с запросом на вход или выбор учетной записи пользователя. Приложения обычно требуют от пользователя начального взаимодействия, но далее могут работать автоматически. 
 
 #### <a name="get-a-user-token-silently"></a>Автоматическое получение маркера пользователя
+
 Метод `AcquireTokenSilentAsync` получает маркер без вмешательства пользователя.  Метод `AcquireTokenSilentAsync` можно рассматривать как оптимальный запрос с откатом к `AcquireTokenAsync`, если пользователю нужно снова войти в систему или выполнить некоторую дополнительную авторизацию, например многофакторную проверку подлинности. 
 
 Если `AcquireTokenSilentAsync` завершается ошибкой, создается `MsalUiRequiredException`. Приложение может обработать это исключение двумя способами:
@@ -254,7 +257,8 @@ ms.locfileid: "48843203"
 * Повторно вызовите `AcquireTokenSilentAsync` позже. Этот шаблон часто применяется, когда пользователи могут использовать другие функциональные возможности приложения без прерывания работы (например, если в приложении доступно автономное содержимое). Приложение может попытаться повторно выполнить `AcquireTokenSilentAsync` при восстановлении сети после временной недоступности. 
 <!--end-collapse-->
 
-## <a name="call-the-microsoft-graph-api"></a>Вызов API Microsoft Graph 
+## <a name="call-the-microsoft-graph-api"></a>Вызов API Microsoft Graph
+
 Добавьте следующие методы в класс `MainActivity`:
 
 ```java
@@ -311,6 +315,7 @@ private void updateGraphUI(JSONObject graphResponse) {
     graphText.setText(graphResponse.toString());
 }
 ```
+
 <!--start-collapse-->
 ### <a name="more-information-about-making-a-rest-call-against-a-protected-api"></a>Дополнительные сведения о вызове REST через защищенный API
 
@@ -376,5 +381,6 @@ private void updateSignedOutUI() {
 Метод `onSignOutClicked()` удаляет пользователей из кэша MSAL. MSAL больше не будет содержать состояние для пользователя, выполнившего вход, и завершит его сеанс в приложении. 
 
 ### <a name="more-information-on-multi-account-scenarios"></a>Дополнительные сведения о сценариях для нескольких учетных записей
+
 MSAL поддерживает сценарии для одновременного входа в несколько учетных записей. Например, многие приложения электронной почты позволяют войти в систему через несколько учетных записей в одно и то же время. 
 <!--end-collapse-->

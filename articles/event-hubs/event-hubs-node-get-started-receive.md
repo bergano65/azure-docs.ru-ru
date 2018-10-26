@@ -9,12 +9,12 @@ ms.workload: core
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: shvija
-ms.openlocfilehash: 27052759ccc4664ea95ea19cb52bebeec6fec5ae
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 6d5b52c8a5dd0306a349cac5e67eecc809005c6f
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48803364"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49429190"
 ---
 # <a name="receive-events-from-azure-event-hubs-using-nodejs"></a>Получение событий от Центров событий Azure с помощью Node.js
 
@@ -57,7 +57,7 @@ npm install @azure/event-processor-host
 
 1. Откройте проект в Visual Studio Code. 
 2. Создайте файл с именем **.env** в папке **processor**. Скопируйте и вставьте в него пример переменных среды из **sample.env** в корневой папке.
-3. Настройте строку подключения, имя концентратора событий и конечную точку хранилища. Вы можете скопировать строку подключения для концентратора событий из поля **Строка подключения — первичный ключ** в разделе **RootManageSharedAccessKey** на странице Центра событий на портале Azure. Подробные сведения см. в [этом разделе](event-hubs-quickstart-portal.md#create-an-event-hubs-namespace).
+3. Настройте строку подключения, имя концентратора событий и конечную точку хранилища. Вы можете скопировать строку подключения для концентратора событий из поля **Строка подключения — первичный ключ** в разделе **RootManageSharedAccessKey** на странице Центра событий на портале Azure. Подробные сведения см. в [этом разделе](event-hubs-create.md#create-an-event-hubs-namespace).
 4. В интерфейсе командной строки Azure перейдите к папке **processor**. Установите пакеты узла и создайте проект, выполнив следующие команды:
 
     ```nodejs

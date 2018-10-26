@@ -14,17 +14,19 @@ ms.workload: identity
 ms.date: 09/17/2018
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: fb521fc9d4927a953cdd66948101969dfc102de4
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: b26b88d0e089217fa9915bdbdcb8f913731bcc67
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48843208"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49988214"
 ---
 ## <a name="register-your-application"></a>Регистрация приложения
+
 Приложение можно зарегистрировать одним из двух способов.
 
 ### <a name="option-1-express-mode"></a>Вариант 1. Экспресс-режим
+
 Чтобы быстро зарегистрировать приложение, сделайте следующее:
 1. Перейдите на [портал регистрации приложений Майкрософт](https://apps.dev.microsoft.com/portal/register-app?appType=mobileAndDesktopApp&appTech=windowsDesktop&step=configure).
 
@@ -37,12 +39,13 @@ ms.locfileid: "48843208"
 5. Следуйте инструкциям, чтобы получить идентификатор приложения. Затем вставьте его в свой код.
 
 ### <a name="option-2-advanced-mode"></a>Вариант 2. Расширенный режим
+
 Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение, сделайте следующее:
 1. Если вы еще не зарегистрировали приложение, перейдите на [портал регистрации приложений Майкрософт](https://apps.dev.microsoft.com/portal/register-app).
 
 2. Выбор **Добавить приложение**.
 
-3. В поле **Имя приложения** введите имя приложения. 
+3. В поле **Имя приложения** введите имя приложения.
 
 4. Обязательно снимите флажок **Guided Setup** (Интерактивная настройка) и нажмите кнопку **Создать**.
 

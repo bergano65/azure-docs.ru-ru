@@ -12,12 +12,12 @@ ms.author: ronitr
 ms.reviewer: vanto
 manager: craigg
 ms.date: 10/15/2018
-ms.openlocfilehash: 36269392db785e7d2d203f032a84cccc8a6c62e0
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 32b60a53581a0f372a7d994cfa260ebd7bcb27b2
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49352974"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49467047"
 ---
 # <a name="azure-sql-database-data-discovery-and-classification"></a>Обнаружение и классификация данных в службе "База данных SQL Azure"
 
@@ -140,10 +140,10 @@ ms.locfileid: "49352974"
 
 Также интерфейсы REST API можно использовать для программного управления классификациями. Опубликованные интерфейсы REST API поддерживают следующие операции:
 
-- [Create или Update](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/sensitivitylabels_createorupdate). Создание или обновление метки конфиденциальности данного столбца.
-- [Delete](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/sensitivitylabels_delete). Удаление метки конфиденциальности данного столбца.
-- [Get](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/sensitivitylabels_get). Получение метки конфиденциальности данного столбца.
-- [List By Database](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/sensitivitylabels_listbydatabase). Получение списка меток конфиденциальности для конкретной базы данных.
+- [Create или Update](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/createorupdate). Создание или обновление метки конфиденциальности данного столбца.
+- [Delete](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/delete). Удаление метки конфиденциальности данного столбца.
+- [Get](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/get). Получение метки конфиденциальности данного столбца.
+- [List By Database](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listbydatabase). Получение списка меток конфиденциальности для конкретной базы данных.
 
 ## <a id="subheading-5"></a>Дальнейшие действия
 

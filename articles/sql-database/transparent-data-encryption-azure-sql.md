@@ -12,12 +12,12 @@ ms.author: aliceku
 ms.reviewer: vanto
 manager: craigg
 ms.date: 10/15/2018
-ms.openlocfilehash: 94a3a502d5756d57cfebdf6698a4435dc1e19948
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 0d5b7e484024294eb5c95b632dbef85c377b717e
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353036"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49469033"
 ---
 # <a name="transparent-data-encryption-for-sql-database-and-data-warehouse"></a>Прозрачное шифрование данных для хранилища данных и Базы данных SQL
 
@@ -113,17 +113,17 @@ Transact-SQL не позволяет переключиться с предох�
 
 | Get-Help | ОПИСАНИЕ |
 | --- | --- |
-|[Создание или обновление сервера](https://docs.microsoft.com/rest/api/sql/servers/servers_createorupdate)|Добавление удостоверения Azure Active Directory для экземпляра SQL Server (используется для предоставления доступа к Key Vault)|
-|[Создание или обновление ключа сервера](https://docs.microsoft.com/rest/api/sql/serverkeys/serverkeys_createorupdate)|Добавление ключа Key Vault в экземпляр SQL Server|
-|[Удаление ключа сервера](https://docs.microsoft.com/rest/api/sql/serverkeys/serverkeys_delete)|Удаление ключа Key Vault из экземпляра SQL Server|
-|[Получение ключей сервера](https://docs.microsoft.com/rest/api/sql/serverkeys/serverkeys_get)|Получение определенного ключа Key Vault из экземпляра SQL Server|
-|[Список ключей серверов, упорядоченный по серверам](https://docs.microsoft.com/rest/api/sql/serverkeys/serverkeys_listbyserver)|Получение ключей Key Vault для экземпляра SQL Server |
-|[Создание или обновление предохранителя шифрования](https://docs.microsoft.com/rest/api/sql/encryptionprotectors/encryptionprotectors_createorupdate)|Настройка предохранителя TDE для экземпляра SQL Server|
-|[Получение предохранителя шифрования](https://docs.microsoft.com/rest/api/sql/encryptionprotectors/encryptionprotectors_get)|Получение предохранителя TDE для экземпляра SQL Server|
-|[Список предохранителей шифрования, упорядоченный по серверам](https://docs.microsoft.com/rest/api/sql/encryptionprotectors/encryptionprotectors_listbyserver)|Получение всех предохранителей TDE для экземпляра SQL Server |
-|[Создание или обновление конфигурации TDE](https://docs.microsoft.com/rest/api/sql/transparentdataencryptions/transparentdataencryptions_createorupdate)|Включение или отключение TDE для базы данных|
-|[Получение конфигурации TDE](https://docs.microsoft.com/rest/api/sql/transparentdataencryptions/transparentdataencryptions_get)|Получение конфигурации TDE для базы данных|
-|[Список результатов TDE, упорядоченный по конфигурации](https://docs.microsoft.com/rest/api/sql/transparentdataencryptionactivities/transparentdataencryptionactivities_listbyconfiguration)|Получение результата шифрования для базы данных|
+|[Создание или обновление сервера](https://docs.microsoft.com/rest/api/sql/servers/createorupdate)|Добавление удостоверения Azure Active Directory для экземпляра SQL Server (используется для предоставления доступа к Key Vault)|
+|[Создание или обновление ключа сервера](https://docs.microsoft.com/rest/api/sql/serverkeys/createorupdate)|Добавление ключа Key Vault в экземпляр SQL Server|
+|[Удаление ключа сервера](https://docs.microsoft.com/rest/api/sql/serverkeys/delete)|Удаление ключа Key Vault из экземпляра SQL Server|
+|[Получение ключей сервера](https://docs.microsoft.com/rest/api/sql/serverkeys/get)|Получение определенного ключа Key Vault из экземпляра SQL Server|
+|[Список ключей серверов, упорядоченный по серверам](https://docs.microsoft.com/rest/api/sql/serverkeys/listbyserver)|Получение ключей Key Vault для экземпляра SQL Server |
+|[Создание или обновление предохранителя шифрования](https://docs.microsoft.com/rest/api/sql/encryptionprotectors/createorupdate)|Настройка предохранителя TDE для экземпляра SQL Server|
+|[Получение предохранителя шифрования](https://docs.microsoft.com/rest/api/sql/encryptionprotectors/get)|Получение предохранителя TDE для экземпляра SQL Server|
+|[Список предохранителей шифрования, упорядоченный по серверам](https://docs.microsoft.com/rest/api/sql/encryptionprotectors/listbyserver)|Получение всех предохранителей TDE для экземпляра SQL Server |
+|[Создание или обновление конфигурации TDE](https://docs.microsoft.com/rest/api/sql/transparentdataencryptions/createorupdate)|Включение или отключение TDE для базы данных|
+|[Получение конфигурации TDE](https://docs.microsoft.com/rest/api/sql/transparentdataencryptions/get)|Получение конфигурации TDE для базы данных|
+|[Список результатов TDE, упорядоченный по конфигурации](https://docs.microsoft.com/rest/api/sql/transparentdataencryptionactivities/listbyconfiguration)|Получение результата шифрования для базы данных|
 
 ## <a name="next-steps"></a>Дополнительная информация
 

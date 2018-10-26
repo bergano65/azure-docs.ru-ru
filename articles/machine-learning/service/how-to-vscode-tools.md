@@ -9,12 +9,12 @@ ms.author: jmartens
 author: j-martens
 ms.reviewer: jmartens
 ms.date: 10/1/2018
-ms.openlocfilehash: f573dba2e7580d58c295d204fc75e2403c0d033c
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: a2f37cffb37ce7008c3e372763784240e0d4250b
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48241851"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945558"
 ---
 # <a name="vs-code-tools-for-ai-get-started-with-azure-machine-learning-from-visual-studio-code"></a>VS Code Tools for AI. Начало работы со службой "Машинное обучение Azure" в Visual Studio Code
 
@@ -34,7 +34,7 @@ ms.locfileid: "48241851"
 
 При установке расширения **Tools for AI** автоматически устанавливаются два других расширения (при наличии доступа к Интернету). Это расширения [Azure Account](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) и [Microsoft Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
 
-Для работы со службой "Машинное обучение Azure" нам нужно преобразовать VS Code в интегрированную среду разработки на языке Python. Для работы с [Python в Visual Studio Code](https://code.visualstudio.com/docs/languages/python) требуется расширение Microsoft Python, которое автоматически устанавливается вместе с Tools for AI. Это расширение превращает VS Code в мощную интегрированную среду разработки, которая работает в любой операционной системе с различными интерпретаторами Python. Оно использует все возможности VS Code, предоставляя функции автозаполнения и IntelliSense, анализа кода, отладки и модульного тестирования, а также возможность легко переключаться между окружениями Python, включая виртуальные окружения и окружения conda. Пошаговые инструкции по редактированию, запуску и отладке кода Python см. в [руководстве по началу работы с Python](https://code.visualstudio.com/docs/languages/python/docs/python/python-tutorial).
+Для работы со службой "Машинное обучение Azure" нам нужно преобразовать VS Code в интегрированную среду разработки на языке Python. Для работы с [Python в Visual Studio Code](https://code.visualstudio.com/docs/languages/python) требуется расширение Microsoft Python, которое автоматически устанавливается вместе с Tools for AI. Это расширение превращает VS Code в мощную интегрированную среду разработки, которая работает в любой операционной системе с различными интерпретаторами Python. Оно использует все возможности VS Code, предоставляя функции автозаполнения и IntelliSense, анализа кода, отладки и модульного тестирования, а также возможность легко переключаться между окружениями Python, включая виртуальные окружения и окружения conda. Пошаговые инструкции по редактированию, запуску и отладке кода Python см. в [руководстве по началу работы с Python](https://code.visualstudio.com/docs/python/python-tutorial).
 
 **Для установки расширения Tools for AI выполните следующие действия:**
 

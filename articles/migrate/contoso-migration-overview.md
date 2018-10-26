@@ -2,16 +2,17 @@
 title: Общие сведения о миграции Contoso в Azure | Документация Майкрософт
 description: Статья содержит общие сведения о стратегии и сценариях миграции, применяемых организацией Contoso для переноса своего локального центра обработки данных в Azure.
 author: rayne-wiselman
+manager: carmonm
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 09/05/2018
+ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: 1a86f12fddf9b18700f2c4a2aff840512dfe4a6f
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 30be44b91dbfba0c292c55670e920052d2c8ae3d
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44303648"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49092870"
 ---
 # <a name="contoso-migration-overview"></a>Миграция Contoso: общие сведения
 
@@ -61,7 +62,7 @@ Azure предоставляет доступ к комплексному наб
 [Статья 11. Рефакторинг развертывания Team Foundation Server в Azure DevOps Services](contoso-migration-tfs-vsts.md) | Специалисты компании Contoso переносят локальное развертывание Team Foundation Server в Azure DevOps Services в Azure. | Доступна
 [Статья 12. Перепроектирование приложения в контейнерах Azure и Базе данных SQL Azure](contoso-migration-rearchitect-container-sql.md) | Специалисты компании Contoso переносят приложение SmartHotel в Azure. Затем уровень веб-приложений преобразуется в контейнер Windows, работающий в Azure Service Fabric, и базу данных в службе "База данных SQL Azure". | Доступна    
 [Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | Специалисты компании Contoso выполняют повторную сборку приложения SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Службу Azure Kubernetes (AKS), Функции Azure, Cognitive Services и Azure Cosmos DB. | Доступна 
-
+[Статья 14. Масштабирование миграции в Azure](contoso-migration-scale.md) | Ознакомившись с вариантами сочетаний миграции, компания Contoso готовится к полномасштабной миграции в Azure. | Доступна
 
 В этой статье рассказывается о том, как специалисты компании Contoso настраивают все элементы инфраструктуры, необходимые для выполнения сценария миграции. 
 

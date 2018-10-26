@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 ms.author: sanpil
 author: sanpil
 ms.date: 09/24/2018
-ms.openlocfilehash: b450d2ca2af0c0f7598d74e2f07c0acc81b811f3
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: 45aa954d2f85267b2c7c9aa2a7ba04e436765433
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49116459"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50023935"
 ---
 # <a name="pipelines-and-azure-machine-learning"></a>Конвейеры и служба "Машинное обучение Azure"
 
@@ -63,7 +63,7 @@ ms.locfileid: "49116459"
 
 Конвейеры можно сохранять как шаблоны и развертывать в конечную точку REST, чтобы получить возможность планировать задания по пакетной оценке или повторному обучению.
 
-Ознакомьтесь со [справочной документацией по пакету SDK для Python для конвейеров](http://aka.ms/aml-sdk) и записной книжкой в следующем разделе, чтобы узнать, как создать собственную записную книжку.
+Ознакомьтесь со [справочной документацией по пакету SDK для Python для конвейеров](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py) и записной книжкой в следующем разделе, чтобы узнать, как создать собственную записную книжку.
 
 ## <a name="example-notebooks"></a>Примеры записных книжек
  

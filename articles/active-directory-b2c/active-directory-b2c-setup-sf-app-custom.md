@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/21/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: ebce7a661ab305e5dcfda191ddbad54a4e9d33a1
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: afed471694dd66adfc285965433a1efd92d1653b
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48887263"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945101"
 ---
 # <a name="set-up-sign-in-with-a-salesforce-saml-provider-by-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа с помощью поставщика SAML Salesforce, используя пользовательские политики Azure в Active Directory B2C
 
@@ -118,7 +118,6 @@ Export-PfxCertificate -Cert $Cert -FilePath .\B2CSigningCert.pfx -Password $pwd
           <Description>Login with your Salesforce account</Description>
           <Protocol Name="SAML2"/>
           <Metadata>
-            <Item Key="RequestsSigned">false</Item>
             <Item Key="WantsEncryptedAssertions">false</Item>
             <Item Key="WantsSignedAssertions">false</Item>
             <Item Key="PartnerEntity">https://contoso-dev-ed.my.salesforce.com/.well-known/samlidp.xml</Item>
@@ -155,7 +154,7 @@ Export-PfxCertificate -Cert $Cert -FilePath .\B2CSigningCert.pfx -Password $pwd
 
 К этому моменту политика настроена, так что Azure AD B2C знает, как взаимодействовать с учетной записью Salesforce. Попробуйте отправить файл расширения политики, чтобы убедиться, что все в порядке.
 
-1. На странице **Настраиваемые политики** в клиенте Azure AD B2C выберите **Отправить политику**.
+1. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
 2. Включите функцию **Перезаписать политику, если она существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
 3. Щелкните **Отправить**.
 
@@ -166,8 +165,8 @@ Export-PfxCertificate -Cert $Cert -FilePath .\B2CSigningCert.pfx -Password $pwd
 1. Откройте файл *TrustFrameworkBase.xml* из начального пакета.
 2. Найдите и скопируйте все содержимое элемента **UserJourney**, в котором присутствует запись `Id="SignUpOrSignIn"`.
 3. Откройте файл *TrustFrameworkExtensions.xml* и найдите элемент **UserJourneys**. Если элемент не существует, добавьте его.
-4. Вставьте все содержимое элемента **UserJourney**, скопированное в качестве дочернего элемента объекта **UserJourneys**.
-5. Переименуйте идентификатор пути взаимодействия пользователя. Например, `SignUpSignInSalesforce`.
+4. Вставьте все скопированное содержимое элемента **UserJourney** в качестве дочернего элемента в элемент **UserJourneys**.
+5. Измените имя идентификатора пути взаимодействия пользователя. Например, `SignUpSignInSalesforce`.
 
 ### <a name="display-the-button"></a>Отображение кнопки
 
@@ -197,13 +196,13 @@ Export-PfxCertificate -Cert $Cert -FilePath .\B2CSigningCert.pfx -Password $pwd
 
 ## <a name="create-an-azure-ad-b2c-application"></a>Создание приложения Azure AD B2C
 
-Связь с Azure AD B2C осуществляется с помощью приложения, созданного в вашем клиенте. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
+Связь с Azure AD B2C осуществляется с помощью приложения, созданного в вашем клиенте. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если оно еще не было создано.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Щелкните **Приложения**, а затем выберите **Добавить**.
-5. Введите имя для приложения, например *testapp1*.
+5. Задайте имя для приложения, например *testapp1*.
 6. В пункте **Веб-приложение или веб-интерфейс API** выберите `Yes`, а затем в поле **URL-адрес ответа** введите `https://jwt.ms`.
 7. Нажмите кнопку **Создать**.
 
@@ -216,4 +215,4 @@ Export-PfxCertificate -Cert $Cert -FilePath .\B2CSigningCert.pfx -Password $pwd
 3. Обновите значение **PublicPolicyUri**, указав URI для политики. Например, `http://contoso.com/B2C_1A_signup_signin_salesforce`.
 4. Обновите значение атрибута **ReferenceId** для элемента **DefaultUserJourney**, чтобы он соответствовал идентификатору созданного вами нового пути взаимодействия пользователя (SignUpSignInSalesforce).
 5. Сохраните изменения, отправьте файл, а затем выберите в списке новую политику.
-6. Убедитесь, что созданное приложение Azure AD B2C выбрано в поле **Выберите приложение**, а затем протестируйте его, щелкнув **Запустить сейчас**.
+6. Убедитесь, что созданное приложение Azure AD B2C было выбрано в поле **Выберите приложение**, а затем протестируйте его, щелкнув **Запустить сейчас**.

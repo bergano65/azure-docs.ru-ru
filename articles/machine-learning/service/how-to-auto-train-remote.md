@@ -10,12 +10,12 @@ ms.component: core
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 1297881373943143578695490531d147d7f5523d
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: 798960f30ae13f42c0198cf4bf63412192edc63e
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49115328"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49429836"
 ---
 # <a name="train-models-with-automated-machine-learning-in-the-cloud"></a>Обучение моделей с помощью автоматического машинного обучения в облаке
 
@@ -110,7 +110,7 @@ def get_data():
 
 ## <a name="configure-experiment"></a>Настройка эксперимента
 
-Задайте значения для `AutoMLConfig`.  (См. [полный список параметров]() и их возможные значения.)
+Задайте значения для `AutoMLConfig`.  (См. [полный список параметров](how-to-configure-auto-train.md#configure-experiment) и их возможные значения.)
 
 В параметрах `run_configuration` присваивается объекту `run_config`, содержащему параметры и конфигурацию машины DSVM.  
 
@@ -141,7 +141,7 @@ automl_config = AutoMLConfig(task='classification',
 
 ## <a name="submit-training-experiment"></a>Отправка обучающего эксперимента
 
-Теперь отправьте конфигурацию для автоматического выбора алгоритма, гиперпараметров и обучения модели. (Узнайте [дополнительные сведения о параметрах]() для метода `submit`.)
+Теперь отправьте конфигурацию для автоматического выбора алгоритма, гиперпараметров и обучения модели.
 
 ```python
 from azureml.core.experiment import Experiment

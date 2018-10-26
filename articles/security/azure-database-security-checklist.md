@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: tomsh
-ms.openlocfilehash: 7682a733c5630c16d9684ec3cb9e7757b03a8b1b
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: f6e8ed1725b7ba2a0cba8523ae03c0306337aba0
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48855941"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49402513"
 ---
 # <a name="azure-database-security-checklist"></a>Контрольный список для обеспечения безопасности баз данных
 
@@ -46,7 +46,7 @@ ms.locfileid: "48855941"
 |Категория контрольного списка| ОПИСАНИЕ|
 | ------------ | -------- |
 |**Защита данных**||
-| <br> Шифрование данных при передаче| <ul><li>[Безопасность на транспортном уровне](https://docs.microsoft.com/windows-server/security/tls/transport-layer-security-protocol). Используется для шифрования данных при перемещении в сетях.</li><li>Для базы данных требуется безопасное подключение клиентов по протоколу [TDS (поток табличных данных)](https://msdn.microsoft.com/en-in/library/dd357628.aspx) на основе TLS (безопасность на транспортном уровне).</li></ul> |
+| <br> Шифрование данных при передаче| <ul><li>[Безопасность на транспортном уровне](https://docs.microsoft.com/windows-server/security/tls/transport-layer-security-protocol). Используется для шифрования данных при перемещении в сетях.</li><li>Для базы данных требуется безопасное подключение клиентов по протоколу [TDS (поток табличных данных)](https://msdn.microsoft.com/library/dd357628.aspx) на основе TLS (безопасность на транспортном уровне).</li></ul> |
 |<br>Шифрование при хранении| <ul><li>[Прозрачное шифрование данных](http://go.microsoft.com/fwlink/?LinkId=526242). Используется при физическом хранении неактивных данных в любом цифровом виде.</li></ul>|
 |**Контроль доступа**||  
 |<br> Доступ к базе данных | <ul><li>[Аутентификация](https://docs.microsoft.com/azure/sql-database/sql-database-control-access) (Аутентификация Azure Active Directory). Используются удостоверения, управляемые Azure Active Directory.</li><li>[Авторизация](https://docs.microsoft.com/azure/sql-database/sql-database-control-access) позволяет предоставлять пользователям минимальные необходимые привилегии.</li></ul> |

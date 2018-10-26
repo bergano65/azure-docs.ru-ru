@@ -17,14 +17,16 @@ ms.date: 10/02/2018
 ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: e05bf723507ba12b577605d44ddb3aaef3b19efe
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 83c1deb7c767c29046e6c1af4452270e90b391df
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49079629"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49987738"
 ---
 # <a name="azure-active-directory-v20-and-the-oauth-20-device-code-flow"></a>Azure Active Directory версии 2.0 и поток кода устройства OAuth 2.0
+
+[!INCLUDE [active-directory-develop-applies-v2](../../../includes/active-directory-develop-applies-v2.md)]
 
 Azure AD поддерживает [предоставление кода устройства](https://tools.ietf.org/html/draft-ietf-oauth-device-flow-12), которое позволяет пользователям входить на устройства с ограничениями ввода, например устройство типа Smart TV, устройство Интернета вещей или принтер.  Чтобы включить этот поток на устройстве, пользователь должен выполнить вход, посетив веб-страницу в браузере на другом устройстве.  Когда пользователь выполнит вход, устройство сможет получить необходимые маркеры доступа и маркеры обновления.  
 

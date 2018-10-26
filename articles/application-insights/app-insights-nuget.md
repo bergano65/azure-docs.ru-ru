@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 10/16/2018
 ms.author: mbullwin
-ms.openlocfilehash: 96c9628807d2aae257e27432ea8d27a7d9325de0
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: b6188bbf89d9aee842d7f8e232a820b59c4d9e31
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49380719"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50023259"
 ---
 # <a name="application-insights-nuget-packages"></a>Пакеты NuGet для Application Insights
 
@@ -30,7 +30,7 @@ ms.locfileid: "49380719"
 |Microsoft.ApplicationInsights.Agent.Intercept | 2.4.0 | Обеспечивает перехват вызовов методов | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Agent.Intercept/) |
 | Microsoft.ApplicationInsights.DependencyCollector | 2.8.0 | Сборщик зависимостей Application Insights для приложений .NET. Это зависимый пакет для пакетов платформы Application Insights, который обеспечивает автоматическую сборку телеметрии зависимости. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DependencyCollector/) |
 | Microsoft.ApplicationInsights.PerfCounterCollector | 2.8.0 | Сборщик счетчиков производительности Application Insights позволяет отправлять данные, собранные счетчиками производительности, в Application Insights. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector/) |
-| Microsoft.ApplicationInsights.Web | 2.8.0 | Application Insights для веб-приложений .NET | [Загрузить пакет] (https://www.nuget.org/packages/Microsoft.ApplicationInsights.Web/) |
+| Microsoft.ApplicationInsights.Web | 2.8.0 | Application Insights для веб-приложений .NET | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Web/) |
 | Microsoft.ApplicationInsights.WindowsServer; | 2.8.0 | Пакет NuGet Application Insights для Windows Server предоставляет автоматический сбор телеметрии Application Insights для приложений .NET. Этот пакет может использоваться как зависимый для пакетов платформы Application Insights или как изолированный для приложений .NET, которые не охватываются пакетами, соответствующими платформе (например, для рабочих ролей .NET). | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/)  
 | Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel | 2.8.0 | Предоставляет канал телеметрии для пакета SDK Application Insights для Windows Server, который сохранит телеметрию в автономных сценариях. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel/) |
 

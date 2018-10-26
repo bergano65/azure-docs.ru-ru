@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/12/2018
 ms.author: jingwang
-ms.openlocfilehash: e50d1696fdc22916f5ac4699bd17ddc21a82a148
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: a4de054926339985b77f110bd00f77c5c8f7d705
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48815874"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49957995"
 ---
 # <a name="copy-data-to-or-from-azure-sql-database-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure SQL и из нее с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you use:"]
@@ -96,7 +96,7 @@ ms.locfileid: "48815874"
 
 Чтобы использовать проверку подлинности по маркеру приложения Azure AD на основе субъекта-службы, выполните следующие действия:
 
-1. **[Создайте приложение Azure Active Directory на портале Azure](../azure-resource-manager/resource-group-create-service-principal-portal.md#create-an-azure-active-directory-application)**. Запишите имя приложения и следующие значения, которые используются для определения связанной службы:
+1. **[Создайте приложение Azure Active Directory на портале Azure](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application)**. Запишите имя приложения и следующие значения, которые используются для определения связанной службы:
 
     - Идентификатор приложения
     - Ключ приложения
@@ -146,7 +146,7 @@ ms.locfileid: "48815874"
 }
 ```
 
-### <a name="managed-identity"></a> Аутентификация управляемых удостоверений для ресурсов Azure
+### <a name="managed-identity"></a> Проверка подлинности на основе управляемого удостоверения службы
 
 Фабрика данных может быть связана с [управляемым удостоверением ресурсов Azure](data-factory-service-identity.md), которое представляет отдельную фабрику данных. Вы можете использовать это удостоверение службы для проверки подлинности базы данных SQL Azure. Назначенная фабрика может получить доступ и скопировать данные из вашей базы данных или в нее, используя этот идентификатор.
 
