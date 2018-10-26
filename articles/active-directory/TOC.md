@@ -266,7 +266,6 @@
 
 #### Разрешения
 ##### [Выбор разрешений для API](develop/perms-for-given-api.md)
-##### [Предоставление разрешений приложению](develop/registration-config-grant-permissions-how-to.md)
 ##### [Делегированные разрешения и разрешения, предоставляемые приложениям](develop/delegated-and-app-perms.md)
 ##### [Согласие для приложения](develop/consent-framework.md)
 
@@ -313,14 +312,6 @@
 ### Имена пользовательских доменов
 #### [Краткое руководство](fundamentals/add-custom-domain.md)
 ### [Администрирование каталога](fundamentals/active-directory-administer.md)
-### [Enterprise State Roaming.](active-directory-windows-enterprise-state-roaming-overview.md)
-#### [Включение](active-directory-windows-enterprise-state-roaming-enable.md)
-#### [Параметры групповой политики](active-directory-windows-enterprise-state-roaming-group-policy-settings.md)
-#### [Параметры Windows 10](active-directory-windows-enterprise-state-roaming-windows-settings-reference.md)
-#### [Часто задаваемые вопросы](active-directory-windows-enterprise-state-roaming-faqs.md)
-#### [Устранение неполадок](active-directory-windows-enterprise-state-roaming-troubleshooting.md)
-
-
 ### [Интеграция локальных удостоверений с помощью Azure AD Connect](hybrid/whatis-hybrid-identity.md)
 
 ### [Настройка времени существования маркеров](develop/active-directory-configurable-token-lifetimes.md)
