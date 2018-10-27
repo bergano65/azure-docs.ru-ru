@@ -12,19 +12,24 @@ items:
   - name: Создание модуля runbook
     href: automation-quickstart-create-runbook.md
   - name: Создание конфигурации DSC
+    displayName: DSC, state configuration, config, node configuration, node
     href: automation-quickstart-dsc-configuration.md
   expanded: true
 - name: Учебники
   items:
   - name: Отслеживание обновленных файлов с помощью задач наблюдателя
+    displayName: hybrid runbook worker, hybrid worker, trigger
     href: automation-watchers-tutorial.md
   - name: Управление обновлениями для виртуальной машины
+    displayName: alert, patch
     href: automation-tutorial-update-management.md
   - name: Подключение решений по обновлению и отслеживанию изменений с использованием runbook
     href: automation-onboard-solutions.md
   - name: Определение программного обеспечения в вашей среде
+    displayName: inventory
     href: automation-tutorial-installed-software.md
   - name: Устранение неполадок с изменениями на виртуальной машине
+    displayName: inventory
     href: automation-tutorial-troubleshoot-changes.md
 - name: Практические руководства
   items:
@@ -39,6 +44,7 @@ items:
   - name: управление обновлениями;
     items:
     - name: Общие сведения о службе "Управление обновлениями"
+      displayName: dynamic groups, pre scripts, post scripts, reboot control, first party, pre download, inclusion
       href: automation-update-management.md
     - name: Управление обновлениями для нескольких виртуальных машин
       href: manage-update-multi.md
@@ -47,12 +53,15 @@ items:
     - name: Перенос развертываний обновлений OMS в Azure
       href: migrate-oms-update-deployments.md
     - name: Интеграция SCCM со службой "Управление обновлениями"
+      displayName: Configuration Manager
       href: oms-solution-updatemgmt-sccmintegration.md
   - name: Отслеживание изменений
     items:
     - name: Общие сведения о службе "Отслеживание изменений"
+      displayName: wildcard, recursion, environment variables, registry
       href: automation-change-tracking.md
     - name: Просмотр содержимого отслеживаемых файлов
+      displayName: change tracking, hash
       href: change-tracking-file-contents.md
   - name: Список
     items:
@@ -63,14 +72,17 @@ items:
     - name: Создание автономной учетной записи службы автоматизации
       href: automation-create-standalone-account.md
     - name: Управление учетной записью запуска от имени в службе автоматизации
+      displayName: certificate renewal
       href: manage-runas-account.md
     - name: Настройка проверки подлинности с помощью AWS
       href: automation-config-aws-account.md
     - name: Управление доступом на основе ролей
+      displayName: RBAC
       href: automation-role-based-access-control.md
   - name: Создание модулей Runbook
     items:
     - name: Типы Runbook
+      displayName: graphical, python, powershell, powershell workflow
       href: automation-runbook-types.md
     - name: Создание и импорт модулей runbook
       href: automation-creating-importing-runbook.md
@@ -83,6 +95,7 @@ items:
     - name: Создание модуля runbook в Python
       href: automation-first-runbook-textual-python2.md
     - name: Изменение текстовых модулей runbook
+      displayName: powershell
       href: automation-edit-textual-runbook.md
     - name: Изменение графических модулей runbook
       href: automation-graphical-authoring-intro.md
@@ -93,11 +106,14 @@ items:
     - name: Дочерние модули runbook
       href: automation-child-runbooks.md
     - name: Выходные данные Runbook
+      displayName: message streams, progress records, preference
       href: automation-runbook-output-and-messages.md
     - name: Интеграция системы управления версиями
+      displayName: github, vsts, azure devops, personal access token
       href: source-control-integration.md
     - name: Интеграция системы управления версиями (устаревшая версия)
       href: automation-source-control-integration-legacy.md
+      displayname: github
     - name: Создание модулей runbook с помощью пакета SDK для графических модулей runbook
       href: graphical-runbook-sdk.md
   - name: Автоматизация
@@ -111,8 +127,10 @@ items:
     - name: Обработка ошибок в графических модулях runbook
       href: automation-runbook-graphical-error-handling.md
     - name: Отслеживание задания Runbook
+      displayName: fair share, activity log
       href: automation-runbook-execution.md
     - name: Управление данными службы автоматизации Azure
+      displayName: backup
       href: automation-managing-data.md
     - name: Передача объекта JSON в модуль runbook службы автоматизации Azure
       href: automation-pass-json-string.md
@@ -127,26 +145,36 @@ items:
     - name: Развертывание гибридной рабочей роли Runbook для Windows
       href: automation-windows-hrw-install.md
     - name: Развертывание гибридной рабочей роли Runbook для Linux
+      displayName: signature validation
       href: automation-linux-hrw-install.md
     - name: Запуск модулей Runbook в гибридной рабочей роли Runbook
+      displayName: signed runbooks
       href: automation-hrw-run-runbooks.md
   - name: Настройка состояния
+    displayName: DSC
     items:
     - name: Общие сведения о настройке состояния
+      displayName: DSC
       href: automation-dsc-overview.md
     - name: Приступая к работе
+      displayName: DSC
       href: automation-dsc-getting-started.md
     - name: Настройка требуемого состояния серверов и управление смещением
+      displayName: DSC, compliance
       href: tutorial-configure-servers-desired-state.md
     - name: Подключение виртуальных машин для управления
+      displayName: DSC, state configuration
       href: automation-dsc-onboarding.md
     - name: Компиляция конфигураций DSC
+      displayName: state configuration, composite resources, configurationData
       href: automation-dsc-compile.md
     - name: Создание конфигураций DSC с помощью составных ресурсов
       href: compose-configurationwithcompositeresources.md
     - name: Непрерывное развертывание с помощью Chocolatey
+      displayName: dsc, state configuration
       href: automation-dsc-cd-chocolatey.md
     - name: Пересылка данных отчетов о настройке состояния в Log Analytics
+      displayName: DSC
       href: automation-dsc-diagnostics.md
   - name: Управление общими ресурсами
     items:
@@ -171,12 +199,15 @@ items:
     - name: Мониторинг модулей runbook с помощью оповещений метрик
       href: automation-alert-metric.md
     - name: Запуск модуля runbook с помощью оповещений Azure
+      displayName: Monitor, Azure Monitor
       href: automation-create-alert-triggered-runbook.md
     - name: Создание виртуальной машины Amazon Web Service
       href: automation-scenario-aws-deployment.md
     - name: Интеграция системы управления версиями с помощью GitHub Enterprise
+      displayName: CI, runbooks
       href: automation-scenario-source-control-integration-with-github-ent.md
     - name: Интеграция системы управления версиями с помощью Azure DevOps
+      displayName: VSTS, CI, runbooks
       href: automation-scenario-source-control-integration-with-VSTS.md
     - name: Развертывание шаблона Azure Resource Manager в runbook PowerShell службы автоматизации Azure
       href: automation-deploy-template-runbook.md
@@ -189,22 +220,30 @@ items:
   - name: Миграция
     items:
     - name: Перенос из Orchestrator
+      displayName: SCORCH, runbooks
       href: automation-orchestrator-migration.md
 - name: Устранение неполадок
   items:
   - name: Переход
+    displayName: troubleshoot
     href: troubleshoot/onboarding.md
   - name: Модули Runbook
+    displayName: troubleshoot
     href: troubleshoot/runbooks.md
   - name: Настройка состояния (DSC)
+    displayName: Desired State Configuration, troubleshoot
     href: troubleshoot/desired-state-configuration.md
   - name: гибридный компонент Runbook Worker
+    displayName: troubleshoot, HRW, hybrid worker
     href: troubleshoot/hybrid-runbook-worker.md
   - name: Отслеживание изменений и инвентаризация
+    displayName: troubleshoot
     href: troubleshoot/change-tracking.md
   - name: управление обновлениями;
+    displayName: troubleshoot
     href: troubleshoot/update-management.md
   - name: Устранение неполадок с агентом обновления
+    displayName: hybrid runbook worker, hybrid worker, troubleshoot
     href: troubleshoot/update-agent-issues.md
 - name: Справочные материалы
   items:
@@ -238,9 +277,9 @@ items:
     href: http://stackoverflow.com/questions/tagged/azure-automation
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=automation
-ms.openlocfilehash: c0dd1231814d41761c35831b6bfabae1c5480c5c
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: 9ecdfd37ac2de97342447d25c4e09c53730651bf
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50095292"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50155618"

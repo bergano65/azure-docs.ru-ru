@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: e901ba81b92a5d7a7454fbfaca96902e1e8008a8
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: c45b86913f8c76b80da921e2813d405b61d08041
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "41929395"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50139197"
 documentType: LandingData
 title: Документация по акселераторам решений Интернета вещей
 metadata:
@@ -17,7 +17,7 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 07/24/2018
+  ms.date: 10/26/2018
   ms.author: dobett
 abstract:
   description: Узнайте, как использовать акселераторы решений Интернета вещей. В этих статьях показано, как использовать акселераторы решений для реализации распространенных сценариев Интернета вещей, таких как удаленный мониторинг, промышленный Интернет вещей, прогнозное обслуживание и имитация устройств.
@@ -43,4 +43,5 @@ sections:
     - html: <a href="/azure/iot-accelerators/iot-accelerators-remote-monitoring-monitor">Мониторинг устройств Интернета вещей</a>
     - html: <a href="/azure/iot-accelerators/iot-accelerators-remote-monitoring-automate">Определение проблем с устройствами, подключенными к решению для мониторинга</a>
     - html: <a href="/azure/iot-accelerators/iot-accelerators-remote-monitoring-manage">Настройки и администрирование устройств, подключенных к решению для мониторинга</a>
+    - html: <a href="/azure/iot-accelerators/iot-accelerators-remote-monitoring-root-cause-analysis">Анализ первопричин с помощью оповещений</a>
     - html: <a href="/azure/iot-accelerators/iot-accelerators-remote-monitoring-maintain">Использование оповещений и устранение проблем с устройствами</a>

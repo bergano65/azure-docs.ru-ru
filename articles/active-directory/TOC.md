@@ -326,12 +326,6 @@
 
 ## [Устранение неполадок](fundamentals/active-directory-troubleshooting-support-howto.md)
 
-## Развертывание подтверждения концепции Azure AD (PoC)
-### [Сборник тренировочных заданий по PoC: введение](active-directory-playbook-intro.md)
-### [Сборник тренировочных заданий по PoC: ингредиенты](active-directory-playbook-ingredients.md)
-### [Сборник тренировочных заданий по PoC: реализация](active-directory-playbook-implementation.md)
-### [Сборник тренировочных заданий по PoC: стандартные блоки](active-directory-playbook-building-blocks.md)
-
 # Справочные материалы
 ## [Примеры кода](https://azure.microsoft.com/resources/samples/?service=active-directory)
 ## [Командлеты Azure PowerShell](/powershell/azure/overview)
