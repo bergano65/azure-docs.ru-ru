@@ -270,9 +270,23 @@ items:
         - name: Добавление непрерывного мониторинга
           href: ../application-insights/app-insights-vsts-continuous-monitoring.md?toc=/azure/azure-monitor/toc.json
         - name: Профилировщик
-          href: ../application-insights/app-insights-profiler.md?toc=/azure/azure-monitor/toc.json
-        - name: Включение профилировщика
-          href: ../application-insights/enable-profiler-compute.md?toc=/azure/azure-monitor/toc.json
+          items:
+          - name: Обзор
+            href: ../application-insights/app-insights-profiler-overview.md?toc=/azure/azure-monitor/toc.json
+          - name: Включение Profiler для Службы приложений
+            href: ../application-insights/app-insights-profiler.md?toc=/azure/azure-monitor/toc.json
+          - name: Включение Profiler для облачной службы
+            href: ../application-insights/app-insights-profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json
+          - name: Включение Profiler для приложения Service Fabric
+            href: ../application-insights/app-insights-profiler-servicefabric.md?toc=/azure/azure-monitor/toc.json
+          - name: Включение Profiler для виртуальной машины Azure
+            href: ../application-insights/app-insights-profiler-vm.md?toc=/azure/azure-monitor/toc.json
+          - name: Параметры Profiler
+            href: ../application-insights/app-insights-profiler-settings.md?toc=/azure/azure-monitor/toc.json
+          - name: Отслеживание запросов для профилирования
+            href: ../application-insights/app-insights-profiler-trackrequests.md?toc=/azure/azure-monitor/toc.json
+          - name: Устранение неполадок с Profiler
+            href: ../application-insights/app-insights-profiler-troubleshooting.md?toc=/azure/azure-monitor/toc.json
         - name: Диагностика
           href: ../application-insights/app-insights-azure-diagnostics.md?toc=/azure/azure-monitor/toc.json
         - name: Предварительный просмотр
@@ -822,7 +836,7 @@ items:
       - name: Примеры сценариев Azure PowerShell
         href: ../monitoring-and-diagnostics/insights-powershell-samples.md?toc=/azure/azure-monitor/toc.json
       - name: Командлеты PowerShell
-        href: ../log-analytics/log-analytics-powershell-workspace-configuration.md?toc=/azure%monitoring-and-diagnostics/toc.json
+        href: ../log-analytics/log-analytics-powershell-workspace-configuration.md?toc=/azure/monitoring-and-diagnostics/toc.json
       - name: ПРИЛОЖЕНИЯ
         items:
         - name: Создание ресурсов Application Insights
@@ -836,13 +850,13 @@ items:
     - name: Примеры Azure CLI
       href: ../monitoring-and-diagnostics/insights-cli-samples.md?toc=/azure/azure-monitor/toc.json
     - name: Шаблоны диспетчера ресурсов
-      href: ../log-analytics/log-analytics-template-workspace-configuration.md?toc=/azure%monitoring-and-diagnostics/toc.json
+      href: ../log-analytics/log-analytics-template-workspace-configuration.md?toc=/azure/monitoring-and-diagnostics/toc.json
     - name: API
       items:
       - name: Пошаговое руководство по использованию REST API
         href: ../monitoring-and-diagnostics/monitoring-rest-api-walkthrough.md?toc=/azure/azure-monitor/toc.json
       - name: API оповещений
-        href: ../log-analytics/log-analytics-api-alerts.md?toc=/azure%monitoring-and-diagnostics/toc.json
+        href: ../log-analytics/log-analytics-api-alerts.md?toc=/azure/monitoring-and-diagnostics/toc.json
     - name: ПРИЛОЖЕНИЯ
       items:
       - name: Автоматизация с помощью Microsoft Flow
@@ -982,9 +996,9 @@ items:
     href: https://stackoverflow.com/search?q=monitoring
   - name: Примеры кода
     href: https://azure.microsoft.com/resources/samples/?service=monitor
-ms.openlocfilehash: 93a8fe3db1136f94b562165fa986506677bccf57
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: 3d738f4fcca9189a14f9c0e84d0a7f60d5942c1c
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49378981"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50140576"
