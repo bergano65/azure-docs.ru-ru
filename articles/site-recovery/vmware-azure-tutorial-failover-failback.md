@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/11/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: e9ed0ba8d24f30f67dbb315848dc4c260cae4f50
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
+ms.openlocfilehash: 7e586e7e3ec8c16dcd215dbc11251d1b9fe928e1
+ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44391374"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49457079"
 ---
 # <a name="fail-over-and-fail-back-vmware-vms-and-physical-servers-replicated-to-azure"></a>Отработка отказа и восстановление размещения виртуальных машин VMware и физических серверов, реплицированных в Azure
 
@@ -93,13 +93,12 @@ ms.locfileid: "44391374"
 
 ## <a name="preparing-for-reprotection-of-azure-vm"></a>Подготовка к повторному включению защиты виртуальной машины Azure
 
-### <a name="create-a-process-server-in-azure"></a>Создание сервера обработки в Azure
+- Можно использовать локальный сервер обработки (встроенный сервер обработки), который автоматически устанавливается на сервере конфигурации в процессе настройки **при наличии подключения к Azure ExpressRoute**.
 
-Сервер обработки получает данные из виртуальных машин в Azure и отправляет их на локальный сайт. Между сервером обработки и защищенной виртуальной машиной должна быть настроена сеть с низкой задержкой.
+> [!IMPORTANT]
+> При наличии подключения через VPN между локальной средой и Azure необходимо настроить виртуальную машину Azure в качестве сервера обработки для восстановления защиты и размещения. Чтобы настроить сервер обработки в Azure, следуйте инструкциям в [этой статье](vmware-azure-set-up-process-server-azure.md).
 
-- При наличии подключения к Azure ExpressRoute для целей тестирования можно использовать локальный (встроенный) сервер обработки, который автоматически устанавливается на сервере конфигурации.
-- Если у вас есть VPN-подключение или если восстановление размещения выполняется в рабочей среде, необходимо настроить виртуальную машину Azure как сервер обработки на основе Azure.
-- Чтобы настроить сервер обработки в Azure, следуйте инструкциям в [этой статье](vmware-azure-set-up-process-server-azure.md).
+Дополнительные сведения о восстановлении защиты и размещения см. в этом [разделе](vmware-azure-reprotect.md##before-you-begin). 
 
 ### <a name="configure-the-master-target-server"></a>Настройка главного целевого сервера
 
