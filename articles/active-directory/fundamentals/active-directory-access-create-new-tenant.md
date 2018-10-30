@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: lizross
 custom: it-pro
-ms.openlocfilehash: 8ef68c8afcf61a1a11c341a679443071aece9812
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: eacb2e7c52adae9de0b74c3dade59446cc8459ed
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46363010"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50023560"
 ---
 # <a name="quickstart-access-azure-active-directory-to-create-a-new-tenant"></a>Краткое руководство. Получение доступа к Azure Active Directory для создания клиента
 С помощью портала Azure Active Directory (Azure AD) можно выполнять все административные задачи, включая создание клиента для своей организации. 
@@ -24,13 +24,6 @@ ms.locfileid: "46363010"
 В этом кратком руководстве вы узнаете, как получить доступ к порталу Azure и Azure Active Directory. Кроме того, вы узнаете, как создать базовый клиент для своей организации.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
-
-## <a name="prerequisites"></a>Предварительные требования
-Прежде чем приступить к выполнению инструкций, вам потребуется следующее.
-
-- Убедитесь, что у вашей организации есть действительная лицензия Azure AD.
-
-- Убедитесь, что у вас есть права глобального администратора.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 Войдите на [портал Azure](https://portal.azure.com/) своей организации, используя учетную запись глобального администратора.
@@ -76,3 +69,5 @@ ms.locfileid: "46363010"
 - Добавление групп и участников описывается в статье [Создание группы и добавление в нее пользователей в Azure Active Directory](active-directory-groups-create-azure-portal.md).
 
 - Узнайте о [доступе на основе ролей с помощью управления привилегированными пользователями](../../role-based-access-control/pim-azure-resource.md) и [условном доступе](../../role-based-access-control/conditional-access-azure-management.md), чтобы упростить управление доступом к приложениям и ресурсам в своей организации.
+
+- Узнайте об Azure AD, в частности о [лицензировании, терминологии и связанных функциях](active-directory-whatis.md).

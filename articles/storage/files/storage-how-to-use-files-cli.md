@@ -1,38 +1,37 @@
 ---
-title: Управление файловыми ресурсами Azure с помощью Azure CLI
-description: Сведения об управлении файловыми ресурсами Azure с помощью Azure CLI.
+title: Краткое руководство по управлению файловыми ресурсами Azure с помощью Azure CLI
+description: Используйте это краткое руководство, чтобы узнать, как управлять файловыми ресурсами Azure с помощью Azure CLI.
 services: storage
 author: wmgries
 ms.service: storage
-ms.topic: get-started-article
-ms.date: 03/26/2018
+ms.topic: quickstart
+ms.date: 10/18/2018
 ms.author: wgries
 ms.component: files
-ms.openlocfilehash: de48789c42ccd2d7e090af6f430f323b16416e9c
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: aab248ac7c9adf7d996406ec35e0317594ce0b68
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49389791"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945024"
 ---
-# <a name="manage-azure-file-shares-using-azure-cli"></a>Управление файловыми ресурсами Azure с помощью Azure CLI
-[Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Файловые ресурсы Azure можно подключить в Windows, Linux и macOS. В статье рассматриваются основы работы с файловыми ресурсами Azure с помощью Azure CLI. Вы узнаете, как выполнять следующие задачи: 
-
-> [!div class="checklist"]
-> * создать группы ресурсов и учетную запись хранения;
-> * создать файловый ресурс Azure; 
-> * создать каталог;
-> * отправить файл; 
-> * скачать файл;
-> * создать моментальный снимок общего ресурса и использовать его.
+# <a name="quickstart-create-and-manage-azure-file-shares-using-azure-cli"></a>Краткое руководство: создание файловых ресурсов Azure и управление ими с помощью Azure CLI
+В этом руководстве рассматриваются основы работы с [файловыми ресурсами Azure](storage-files-introduction.md) с помощью Azure CLI. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие файловые ресурсы Azure поддерживают отраслевой протокол SMB и позволяют совместно использовать файлы на нескольких компьютерах, а также в нескольких приложениях и экземплярах. 
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы хотите установить и использовать Azure CLI локально, для выполнения всех действий из данной статьи требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать, как версия Azure CLI установлена, выполните команду **az --version**. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
+Если вы хотите установить и использовать Azure CLI локально, для выполнения всех действий из данной статьи требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать, как версия Azure CLI установлена, выполните команду **az --version**. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). 
 
 По умолчанию команды Azure CLI возвращают ответ в формате JSON. Это стандартный способ отправки и получения сообщений из REST API. Для облегчения работы с ответами в формате JSON в некоторых примерах в этой статье с командами Azure CLI используется параметр *запроса*. Этот параметр использует [язык запросов JMESPath](http://jmespath.org/) для синтаксического анализа JSON. Дополнительные сведения о том, как обрабатывать результаты выполнения команд Azure CLI с применением языка запросов JMESPath, см. в [руководстве по JMESPath](http://jmespath.org/tutorial.html).
+
+## <a name="sign-in-to-azure"></a>Вход в Azure
+Если вы используете Azure CLI локально, откройте строку и войдите в Azure, если вы еще этого не сделали.
+
+```bash 
+az login
+```
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Если у вас еще нет группы ресурсов Azure, ее можно создать с помощью команды [az group create](/cli/azure/group#create). 
@@ -77,15 +76,26 @@ az storage share create \
     --name "myshare" 
 ```
 
-> [!IMPORTANT]  
-> Имена общих ресурсов должны содержать только строчные буквы, цифры и отдельные дефисы, и они не могут начинаться с дефиса. Дополнительные сведения о присвоении имен общим папкам и файлам см. в статье [Naming and Referencing Shares, Directories, Files, and Metadata](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Shares--Directories--Files--and-Metadata) (Именование общих ресурсов, каталогов, файлов и метаданных и ссылка на них).
+Имена общих ресурсов должны содержать только строчные буквы, цифры и отдельные дефисы, и они не могут начинаться с дефиса. Дополнительные сведения о присвоении имен общим папкам и файлам см. в статье [Naming and Referencing Shares, Directories, Files, and Metadata](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Shares--Directories--Files--and-Metadata) (Именование общих ресурсов, каталогов, файлов и метаданных и ссылка на них).
 
-## <a name="work-with-the-contents-of-an-azure-file-share"></a>Использование содержимого, расположенного в файловом ресурсе Azure
-Создав файловый ресурс Azure, его можно подключить с помощью SMB к [Windows](storage-how-to-use-files-windows.md), [Linux](storage-how-to-use-files-linux.md) или [macOS](storage-how-to-use-files-mac.md). Кроме того, с файловым ресурсом Azure можно работать с помощью Azure CLI. Преимущество использования Azure CLI вместо подключения файлового ресурса по протоколу SMB заключается в том, что все запросы, созданные с помощью Azure CLI, выполняются через файловый REST API. Файловый REST API можно использовать для создания, изменения и удаления файлов и каталогов в файловом ресурсе из следующих расположений:
+## <a name="use-your-azure-file-share"></a>Использование общего файлового ресурса Azure
+Служба файлов Azure обеспечивает два способа работы с файлами и папками в общем файловом ресурсе Azure: стандартный отраслевой [протокол Server Message Block (SMB)](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx) и [протокол File REST](https://docs.microsoft.com/rest/api/storageservices/file-service-rest-api). 
 
-- Bash Azure Cloud Shell (которая не может подключать файловые ресурсы через SMB);
-- клиентов, которые не могут подключать общие ресурсы SMB, такие как локальные клиенты, в которых не разблокирован порт 445;
-- сценариев без сервера, например из службы [Функции Azure](../../azure-functions/functions-overview.md).
+Чтобы установить общий файловый ресурс с помощью SMB, ознакомьтесь со следующим документом (с учетом вашей ОС):
+- [Linux](storage-how-to-use-files-linux.md)
+- [macOS](storage-how-to-use-files-mac.md)
+- [Windows](storage-how-to-use-files-windows.md)
+
+### <a name="using-an-azure-file-share-with-the-file-rest-protocol"></a>Использование общего файлового ресурса Azure с протоколом File REST 
+С протоколом File REST можно работать напрямую (т. е. вручную обрабатывать вызовы HTTP REST), но наиболее распространенным способом использования протокола File REST является использование Azure CLI, [модуля AzureRM PowerShell](storage-how-to-use-files-powershell.md) или пакета SDK для службы хранилища Azure. Все это обеспечивает хорошую оболочку вокруг протокола File REST на языке сценариев или программирования по вашему выбору.  
+
+Ожидается, что в большинстве случаев служба файлов Azure будет использовать общий файловый ресурс Azure по протоколу SMB, так как это позволяет использовать имеющиеся приложения и инструменты, на использование которых у вас должна быть возможность, но есть несколько причин, по которым выгодно использовать File REST API, а не SMB, например:
+
+- Вы подключаетесь к общему файловому ресурсу из Azure Bash Cloud Shell (которая не может подключать общие файловые ресурсы по SMB).
+- Вам необходимо выполнить сценарий или приложение из клиента, который не может подключать ресурсы SMB, например локальные клиенты, у которых нет разблокированного порта 445.
+- Вы используете бессерверные ресурсы, такие как [Функции Azure](../../azure-functions/functions-overview.md). 
+
+В следующих примерах показано, как использовать модуль AzureRM PowerShell для управления файловым ресурсом Azure с помощью протокола File REST. 
 
 ### <a name="create-a-directory"></a>создать каталог;
 Чтобы создать каталог с именем *myDirectory* в корне файлового ресурса Azure, выполните команду [`az storage directory create`](/cli/azure/storage/directory#az_storage_directory_create).
@@ -176,84 +186,6 @@ az storage file list \
 
 Хотя команда `az storage file copy start` удобна для перемещения файлов между файловыми ресурсами Azure и контейнерами хранилища BLOB-объектов Azure, для массовых перемещений рекомендуется использовать AzCopy. (Массовые с точки зрения количества или размера перемещаемых файлов.) См. дополнительные сведения о [AzCopy для Linux](../common/storage-use-azcopy-linux.md) and [AzCopy для Windows](../common/storage-use-azcopy.md). AzCopy должна быть установлена локально. AzCopy недоступна в Cloud Shell. 
 
-## <a name="create-and-modify-share-snapshots"></a>Создание и изменение моментальных снимков общего ресурса
-Еще одна полезная задача, которую можно выполнить с файловым ресурсом Azure, — создать его моментальные снимки. Моментальный снимок сохраняет состояние общего файлового ресурса Azure на момент определенной точки во времени. Моментальные снимки файловых ресурсов аналогичны тем, которые создаются с помощью уже знакомых вам технологий, например:
-- [диспетчер логических томов (LVM)](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)#Basic_functionality) для систем Linux;
-- [файловая система Apple (APFS)](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/APFS_Guide/Features/Features.html) для macOS;
-- [служба теневого копирования томов (VSS)](https://docs.microsoft.com/windows/desktop/VSS/volume-shadow-copy-service-portal) для файловых систем Windows, таких как NTFS и ReFS.
-
-Вы можете создать моментальный снимок общих ресурсов с помощью команды [`az storage share snapshot`](/cli/azure/storage/share#az_storage_share_snapshot).
-
-```azurecli-interactive
-SNAPSHOT=$(az storage share snapshot \
-    --account-name $STORAGEACCT \
-    --account-key $STORAGEKEY \
-    --name "myshare" \
-    --query "snapshot" | tr -d '"')
-```
-
-### <a name="browse-share-snapshot-contents"></a>Просмотр содержимого моментального снимка общих ресурсов
-Чтобы просмотреть содержимое моментального снимка общего ресурса, передайте его метку времени команде `az storage file list` в атрибуте переменной `$SNAPSHOT`.
-
-```azurecli-interactive
-az storage file list \
-    --account-name $STORAGEACCT \
-    --account-key $STORAGEKEY \
-    --share-name "myshare" \
-    --snapshot $SNAPSHOT \
-    --output table
-```
-
-### <a name="list-share-snapshots"></a>Вывод списка моментальных снимков общих ресурсов
-Список имеющихся моментальных снимков общего ресурса можно получить с помощью следующей команды.
-
-```azurecli-interactive
-az storage share list \
-    --account-name $STORAGEACCT \
-    --account-key $STORAGEKEY \
-    --include-snapshot \
-    --query "[? name=='myshare' && snapshot!=null]" | tr -d '"'
-```
-
-### <a name="restore-from-a-share-snapshot"></a>Восстановление из моментального снимка общего ресурса
-Файл можно восстановить с помощью команды `az storage file copy start`, использовавшейся ранее. Сначала удалите отправленный файл SampleUpload.txt, чтобы его можно было восстановить из моментального снимка.
-
-```azurecli-interactive
-# Delete SampleUpload.txt
-az storage file delete \
-    --account-name $STORAGEACCT \
-    --account-key $STORAGEKEY \
-    --share-name "myshare" \
-    --path "myDirectory/SampleUpload.txt"
-
-# Build the source URI for a snapshot restore
-URI=$(az storage account show \
-    --resource-group "myResourceGroup" \
-    --name $STORAGEACCT \
-    --query "primaryEndpoints.file" | tr -d '"')
-
-URI=$URI"myshare/myDirectory/SampleUpload.txt?sharesnapshot="$SNAPSHOT
-
-# Restore SampleUpload.txt from the share snapshot
-az storage file copy start \
-    --account-name $STORAGEACCT \
-    --account-key $STORAGEKEY \
-    --source-uri $URI \
-    --destination-share "myshare" \
-    --destination-path "myDirectory/SampleUpload.txt"
-```
-
-### <a name="delete-a-share-snapshot"></a>Удаление моментального снимка общего ресурса
-Моментальный снимок общего ресурса можно удалить с помощью команды [`az storage share delete`](/cli/azure/storage/share#az_storage_share_delete). Воспользуйтесь переменной, содержащей ссылку `$SNAPSHOT` на параметр `--snapshot`.
-
-```azurecli-interactive
-az storage share delete \
-    --account-name $STORAGEACCT \
-    --account-key $STORAGEKEY \
-    --name "myshare" \
-    --snapshot $SNAPSHOT
-```
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Закончив работу, удалите группу ресурсов и все связанные с ней ресурсы с помощью команды [`az group delete`](/cli/azure/group#delete). 
 
@@ -288,7 +220,6 @@ az group delete --name "myResourceGroup"
     ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Управление файловыми ресурсами Azure с помощью портала Azure](storage-how-to-use-files-portal.md)
-- [Управление файловыми ресурсами Azure с помощью Azure PowerShell](storage-how-to-use-files-powershell.md)
-- [Управление файловыми ресурсами Azure с помощью Обозревателя службы хранилища Azure](storage-how-to-use-files-storage-explorer.md)
-- [Планирование развертывания службы файлов Azure](storage-files-planning.md)
+
+> [!div class="nextstepaction"]
+> [Что представляет собой служба "Файлы Azure"?](storage-files-introduction.md)

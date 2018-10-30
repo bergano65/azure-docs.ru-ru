@@ -1,25 +1,25 @@
 ---
-title: 'Краткое руководство: Java API — создание базы знаний — QnA Maker'
+title: 'Краткое руководство: создание базы знаний с использованием REST, Java — QnA Maker'
 titlesuffix: Azure Cognitive Services
-description: Из этого краткого руководства вы узнаете, как создать пример базы знаний QnA Maker программными средствами, чтобы отобразить ее на панели мониторинга Azure в вашей учетной записи API Cognitive Services.
+description: Из этого краткого руководства вы узнаете, как создать пример базы знаний QnA Maker программными средствами с использованием REST, чтобы отобразить ее на панели мониторинга Azure в вашей учетной записи API Cognitive Services.
 services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: quickstart
-ms.date: 09/12/2018
+ms.date: 10/19/2018
 ms.author: diberry
-ms.openlocfilehash: 572895e51d579efb3b141322a87e374283af1648
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 72a687d6a67ba8e4ccc49cf622cb368e7c8d0db2
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49384707"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49649675"
 ---
-# <a name="create-a-new-knowledge-base-in-java"></a>Создание базы знаний на Java
+# <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-java"></a>Краткое руководство. Создание базы знаний в QnA Maker с использованием Java
 
-Из этого краткого руководства вы узнаете, как создать пример базы знаний QnA Maker программными средствами, чтобы отобразить ее на панели мониторинга Azure в вашей учетной записи API Cognitive Services.
+В этом кратком руководстве описано, как программным способом создать пример базы знаний QnA Maker. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../Concepts/data-sources-supported.md). Модель базы знаний определяется в коде JSON, отправляемом в теле запроса API. 
 
 [!INCLUDE [Code is available in Azure-Samples Github repo](../../../../includes/cognitive-services-qnamaker-java-repo-note.md)]
 

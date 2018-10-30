@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 10/10/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 46291fe425e5d0fd1c142960a250c5601bd8ad29
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 3a2edb898c8053627684818d7fe257fe3402df5f
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49078009"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49645479"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-resource-manager-template-deployment"></a>Руководство. Интеграция Azure Key Vault в развертывание шаблона Resource Manager
 
@@ -42,7 +42,7 @@ ms.locfileid: "49078009"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* [Visual Studio Code](https://code.visualstudio.com/) с [расширением средств Resource Manager](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites)
+* [Visual Studio Code](https://code.visualstudio.com/) с [расширением средств Resource Manager](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
 
 ## <a name="prepare-the-key-vault"></a>Создание Key Vault
 
@@ -154,7 +154,7 @@ ms.locfileid: "49078009"
 3. Укажите значения для таких свойств:
 
     * **adminUsername**. Имя учетной записи администратора виртуальной машины.
-    * **dnsLabelPrefix**. Имя— dnsLablePrefix.
+    * **dnsLabelPrefix**: назовите dnsLabelPrefix.
 4. Сохраните изменения.
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона

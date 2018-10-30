@@ -11,12 +11,12 @@ ms.custom: mvc, tutorial
 ms.topic: tutorial
 ms.date: 10/15/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: b9b515a2ccaedc40fc531d6a1cc58cbe98212b4a
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: c5f7b8b98f97e020b4f6fb4b125d444df87f8d5a
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46967903"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50025758"
 ---
 # <a name="tutorial-classifying-iris-using-the-command-line-interface"></a>Руководство по классификации цветков ириса с помощью интерфейса командной строки
 
@@ -143,13 +143,13 @@ $ az ml project create --name <project name> --workspace <workspace name> --acco
 ```
 
 ### <a name="create-a-new-project-associated-with-a-cloud-git-repository"></a>Создание проекта, связанного с облачным репозиторием Git
-Вы можете создать проект, связанный с репозиторием Azure DevOps Git. При каждой отправке эксперимента в удаленный репозиторий Git передается моментальный снимок всей папки проекта. Дополнительные сведения см. в статье [Использование репозитория Git в проекте Azure Machine Learning Workbench](using-git-ml-project.md).
+Вы можете создать проект, связанный с репозиторием Git в Azure Repos. При каждой отправке эксперимента в удаленный репозиторий Git передается моментальный снимок всей папки проекта. Дополнительные сведения см. в статье [Использование репозитория Git в проекте Azure Machine Learning Workbench](using-git-ml-project.md).
 
 > [!NOTE]
-> Сейчас служба "Машинное обучение Azure" поддерживает только пустые репозитории Git, созданные в Azure DevOps.
+> Сейчас служба "Машинное обучение Azure" поддерживает только пустые репозитории Git, созданные в Azure Repos.
 
 ```azure-cli
-$ az ml project create --name <project name> --workspace <workspace name> --account <experimentation account name> --resource-group <resource group name> --path <local folder path> --repo <VSTS repo URL>
+$ az ml project create --name <project name> --workspace <workspace name> --account <experimentation account name> --resource-group <resource group name> --path <local folder path> --repo <repo URL>
 ```
 > [!TIP]
 > Если вы увидите сообщение об ошибке, информирующее о том, что URL-адрес репозитория недействителен или у пользователя нет доступа, попробуйте создать в Azure DevOps маркер безопасности с помощью меню _Security_ (Безопасность) > _Add personal access tokens_ (Добавить маркеры доступа) и используйте аргумент `--vststoken` при создании проекта. 

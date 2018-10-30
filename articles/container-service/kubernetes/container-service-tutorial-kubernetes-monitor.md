@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 04/05/2018
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: 6d178fe3caa121c51ef081708ca440113871938e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 249e286b16b78643c33b567f705a4c92991f5553
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46996916"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49404874"
 ---
 # <a name="monitor-a-kubernetes-cluster-with-log-analytics"></a>Мониторинг кластера Kubernetes с помощью Log Analytics
 
@@ -149,7 +149,7 @@ omsagent   3         3         3         0            3           <none>        
 
 На портале Log Analytics найдите плитку сводки **Контейнеры** на панели мониторинга. Щелкните плитку, чтобы просмотреть дополнительные сведения, в том числе события контейнера, ошибки, состояние, список образов, использование ЦП и памяти. Более детализированные сведения можно получить, щелкнув строку на одной из плиток или выполнив [поиск по журналам](../../log-analytics/log-analytics-log-searches.md).
 
-![Панель мониторинга "Контейнеры" на портале OMS](./media/container-service-tutorial-kubernetes-monitor/oms-containers-dashboard.png)
+![Панель мониторинга "Контейнеры" на портале Azure](./media/container-service-tutorial-kubernetes-monitor/oms-containers-dashboard.png)
 
 На портале Azure перейдите к **Log Analytics** и выберите имя рабочей области. Чтобы увидеть плитку сводки **Контейнеры**, щелкните **Решения** > **Контейнеры**. Чтобы просмотреть сведения, щелкните плитку.
 

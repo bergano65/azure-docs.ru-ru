@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: fc4b2f153c89d4253bc3fdd9c5a49973baa38752
-ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
+ms.openlocfilehash: 79a6636043499cffb7eded409cdc27c56de98e33
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49310221"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49430227"
 ---
 # <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Руководство. Сброс пароля Azure AD в окне входа
 
@@ -118,6 +118,8 @@ ms.locfileid: "49310221"
 Журнал аудита Azure AD включают в себя сведения об IP-адресе и типе клиента (ClientType), на котором произошел сброс пароля.
 
 ![Пример сброса пароля на экране входа в журнале аудита Azure AD](media/tutorial-sspr-windows/windows-sspr-azure-ad-audit-log.png)
+
+Если компьютеры с Windows 10 защищены прокси-сервером или брандмауэром, следует разрешить трафик HTTPS (443) на сайты passwordreset.microsoftonline.com и ajax.aspnetcdn.com.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Использование API Индексатора видео
+title: Использование API Индексатора видео
 titlesuffix: Azure Cognitive Services
 description: В этой статье объясняется, как приступить к работе с API Индексатора видео.
 services: cognitive services
@@ -8,16 +8,16 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: video-indexer
 ms.topic: tutorial
-ms.date: 09/09/2018
+ms.date: 10/20/2018
 ms.author: juliako
-ms.openlocfilehash: 7bd7ed1b2d2f437ef57598c42ca12ce8bfb174a1
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.openlocfilehash: 401811ec8803f3ede5a829dc96edc1e7f15e5ee0
+ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45985570"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "49637753"
 ---
-# <a name="tutorial-use-the-video-indexer-api"></a>Руководство. Использование API Индексатора видео
+# <a name="use-the-video-indexer-api"></a>Использование API Индексатора видео
 
 > [!Note]
 > 1 августа 2018 г. API Индексатора видео версии 1 был объявлен нерекомендуемым. Теперь следует использовать API Индексатора видео версии 2. <br/>См. [инструкции по разработке с помощью API Индексатора видео версии 2](https://api-portal.videoindexer.ai/). 
@@ -51,6 +51,9 @@ ms.locfileid: "45985570"
     После оформления подписки вы сможете просмотреть сведения о ней, а также о первичном и вторичном ключах. Ключи должны быть защищены. Их нужно использовать только в серверном коде. Они не должны быть доступны на стороне клиента (в файлах с расширением .js, .html и т. д.).
 
     ![Регистрация](./media/video-indexer-use-apis/video-indexer-api03.png)
+
+> [!TIP]
+> Пользователь Индексатора видео может использовать один ключ подписки для доступа к нескольким учетным записям службы. Затем эти учетные записи Индексатора видео можно связать с различными учетными записями Служб мультимедиа.
 
 ## <a name="obtain-access-token-using-the-authorization-api"></a>Получение маркера доступа с помощью API Authorization
 

@@ -10,12 +10,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 08/01/2018
 ms.author: shvija
-ms.openlocfilehash: 336756e72c6c07f52101ddd0cd99a6ef9744d3c3
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 5493819efb32fa594cf27695b2ab5d1273225756
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49351767"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49429901"
 ---
 # <a name="what-is-azure-event-hubs"></a>Что такое Центры событий Azure?
 
@@ -81,8 +81,13 @@ ms.locfileid: "49351767"
 
 Чтобы начать работу с Центрами событий, обратитесь к следующим статьям:
 
-* [Прием данных в Центры событий](event-hubs-quickstart-portal.md)
-* [Обзор функций Центров событий](event-hubs-features.md)
-* [Часто задаваемые вопросы](event-hubs-faq.md)
+1. **Создание концентратора событий**: [портал Azure](event-hubs-create.md), [Azure CLI](event-hubs-quickstart-cli.md), [Azure PowerShell](event-hubs-quickstart-powershell.md), [шаблон Azure Resource Manager](event-hubs-resource-manager-namespace-event-hub.md)
+2. **Отправка событий в концентратор**: [.NET Standard](event-hubs-dotnet-standard-getstarted-send.md), [.NET Framework](event-hubs-dotnet-framework-getstarted-send.md), [Java](event-hubs-java-get-started-send.md), [Python](event-hubs-python-get-started-send.md), [Node.js](event-hubs-node-get-started-send.md), [Go](event-hubs-go-get-started-send.md), [C](event-hubs-c-getstarted-send.md)
+3. **Получение событий из концентратора**: [.NET Standard](event-hubs-dotnet-standard-getstarted-receive-eph.md), [.NET Framework](event-hubs-dotnet-framework-getstarted-receive-eph.md), [Java](event-hubs-java-get-started-receive-eph.md), [Python](event-hubs-python-get-started-receive.md), [Node.js](event-hubs-node-get-started-receive.md), [Go](event-hubs-go-get-started-receive-eph.md), [Apache Storm](event-hubs-storm-getstarted-receive.md)   
+
+Чтобы узнать больше о Центрах событий, обратитесь к следующим статьям:
+
+- [Обзор функций Центров событий](event-hubs-features.md)
+- [Часто задаваемые вопросы](event-hubs-faq.md).
 
 

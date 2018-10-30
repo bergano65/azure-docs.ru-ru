@@ -1,26 +1,27 @@
 ---
 title: Краткое руководство. Распознавание речи в Java (Windows или Linux)
-titleSuffix: Microsoft Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как распознать речь в Java (Windows или Linux)
 services: cognitive-services
 author: fmegen
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: Speech
+ms.component: speech-service
 ms.topic: quickstart
 ms.date: 10/12/2018
 ms.author: fmegen
-ms.openlocfilehash: 1f0c19524ebd59dcf0377cc173cd780d656ba447
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 80ddef79392acb677555ed795bf429f5ec0266a0
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49339202"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49467265"
 ---
-# <a name="quickstart-recognize-speech-in-java-on-windows-or-linux-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в Java в Windows или Linux с помощью пакета SDK службы "Речь"
+# <a name="quickstart-recognize-speech-in-java-on-windows-or-linux-by-using-the-speech-service-sdk"></a>Краткое руководство. Распознавание речи в Java на Windows или Linux с помощью пакета SDK для службы "Речь"
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
-В этой статье вы создадите консольное приложение Java с помощью [пакета SDK службы "Речь"](speech-sdk.md). Вы преобразуете речь с микрофона вашего ПК в текст в реальном времени. Приложение создается с помощью пакета SDK Maven службы "Речь" и Eclipse Java IDE (4.8) на 64-разрядной версии Windows или Ubuntu Linux 16.04. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
+Из этой статьи вы узнаете, как создать консольное приложение Java, используя [пакет SDK для службы "Речь"](speech-sdk.md). Вы преобразуете речь с микрофона вашего компьютера в текст в реальном времени. Приложение создается с помощью пакета SDK Maven службы "Речь" и Eclipse Java IDE (4.8) на 64-разрядной версии Windows или Ubuntu Linux 16.04. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
 
 > [!NOTE]
 > Ознакомьтесь с пакетом SDK службы "Речь" и устройством Roobo в разделе [Сведения о пакете SDK для речевых устройств](speech-devices-sdk.md).

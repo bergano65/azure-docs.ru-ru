@@ -10,15 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/24/2018
+ms.date: 10/19/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: 6ef8c0486a694ac44c53375b24893812b10343e4
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: 7fcc7d5a1d87fe93d32772dbbb84f1d3c91d5631
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44158489"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49648791"
 ---
 # <a name="validate-software-updates-from-microsoft"></a>Проверка обновлений программного обеспечения от корпорации Майкрософт
 
@@ -26,38 +26,22 @@ ms.locfileid: "44158489"
 
 Корпорация Майкрософт периодически выпускает обновления для программного обеспечения Azure Stack. Эти обновления предоставляются партнерам по совместной разработке Azure Stack до того, как они станут общедоступными, чтобы партнеры могли проверить свои решения на основе обновлений и отправить в корпорацию Майкрософт свои отзывы.
 
-## <a name="test-an-existing-solution"></a>Проверка имеющегося решения
+[!INCLUDE [azure-stack-vaas-workflow-validation-completion](includes/azure-stack-vaas-workflow-validation-completion.md)]
 
-1. Войдите на [портал проверки](https://azurestackvalidation.com).
+## <a name="apply-monthly-update"></a>Применение ежемесячного обновления
 
-2. Выберите имеющееся решение, в котором было развернуто обновление от корпорации Майкрософт, и на плитке **Package Validation** (Проверка пакета) выберите **Start** (Начать).
+[!INCLUDE [azure-stack-vaas-workflow-section_update-azs](includes/azure-stack-vaas-workflow-section_update-azs.md)]
 
-    ![Проверка пакета](media/image3.png)
+## <a name="create-a-workflow"></a>Создание рабочего процесса
 
-3. Введите имя проверки.
+Проверка обновления используют тот же рабочий процесс, что и **проверка пакета**. Следуйте инструкциям в разделе [о создании рабочего процесса проверки пакета](azure-stack-vaas-validate-oem-package.md#create-a-package-validation-workflow).
 
-4. Введите URL-адрес для пакета OEM, установленного в решении во время развертывания. Используйте URL-адрес для пакета, хранящегося в службе BLOB-объектов Azure. Дополнительные сведения см. в разделе [Создание большого двоичного объекта хранилища Azure для хранения журналов](azure-stack-vaas-set-up-account.md#create-an-azure-storage-blob-to-store-logs).
+## <a name="run-tests"></a>Выполнение тестов
 
-5. Выберите **Отправить**, чтобы добавить свой файл конфигурации развертывания. Дополнительные сведения об отправке файла конфигурации развертывания см. в статье [Проверка нового решения Azure Stack](azure-stack-vaas-validate-solution-new.md).
+Проверка обновления используют тот же рабочий процесс, что и **проверка пакета**. Следуйте инструкциям в разделе [о выполнении тестов для проверки пакета](azure-stack-vaas-validate-oem-package.md#run-package-validation-tests).
 
-6. Развертывание файла конфигурации необходимо настроить с помощью правильного файла параметров среды. Дополнительные сведения см. в разделе [Параметры среды](azure-stack-vaas-parameters.md#environment-parameters).
-
-    > [!Note]   
-    > Файл конфигурации развертывания можно в дальнейшем настроить путем добавления общих параметров теста. Дополнительные сведения см. в статье [Workflow common parameters for Azure Stack validation as a service](azure-stack-vaas-parameters.md) (Распространенные параметры рабочего процесса для проверки как услуги Azure Stack).
-
-7. Имя пользователя и пароль для пользователя клиента, администратора службы и администратора облака необходимо ввести вручную.
-
-8. Укажите URL-адрес большого двоичного объекта службы хранилища Azure для хранения журналов диагностики. Дополнительные сведения см. в разделе [Создание большого двоичного объекта хранилища Azure для хранения журналов](azure-stack-vaas-set-up-account.md#create-an-azure-storage-blob-to-store-logs).
-
-    > [!Note]  
-    > Для пометки рабочего процесса можно вводить описательные теги.
-
-10. Выберите **Отправить**, чтобы сохранить рабочий процесс.
-
-Рабочий процесс решения выполняется примерно в течение 24 часов. Добавьте ссылку или инструкции о планировании тестов. Очистите инструмент.
-
-Дополнительные сведения о мониторинге прогресса выполнения проверки см. в статье [Мониторинг теста с помощью проверки как услуги Azure Stack](azure-stack-vaas-monitor-test.md).
+Для проверок обновления не нужно отправлять запрос на подписывание пакета.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения о проверке как услуге Azure Stack см. в [этой статье](https://docs.microsoft.com/azure/azure-stack/partner).
+- [Мониторинг теста с помощью проверки как услуги Azure Stack](azure-stack-vaas-monitor-test.md)

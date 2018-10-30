@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 05/17/2018
 ms.author: spelluru
-ms.openlocfilehash: cd623767c9627810afb64ca9185c991c5c9f3858
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: ab52206230c4dfe2d92c97f1e291ee00a086c570
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34638030"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49470869"
 ---
 # <a name="tutorial-access-a-lab-in-azure-devtest-labs"></a>Руководство. Доступ к лаборатории в Azure DevTest Labs
 В рамках этого руководства применяется лаборатория, которую вы создали при работе с [руководством по созданию лаборатории в Azure DevTest Labs](tutorial-create-custom-lab.md).
@@ -57,6 +57,10 @@ ms.locfileid: "34638030"
 
     ![Подключение к виртуальной машине](./media/tutorial-use-custom-lab/connect-button.png)
 2. Сохраните на жесткий диск скачанный **RDP**-файл и примените его для подключения к виртуальной машине. Введите имя пользователя и пароль, которые вы указали при создании виртуальной машины в предыдущем разделе. 
+
+    > [!NOTE] 
+    > Для подключения к виртуальной машине Linux в ней нужно активировать доступ по протоколу SSH и (или) RDP. Сведения о подключении к виртуальной машине Linux по протоколу RDP см. в статье [Установка и настройка удаленного рабочего стола для подключения к виртуальной машине Linux в Azure](../virtual-machines/linux/use-remote-desktop.md). 
+
 
 ## <a name="unclaim-the-vm"></a>Освобождение виртуальной машины
 Когда вы закончите работу с виртуальной машиной, освободите ее, выполнив следующие действия: 

@@ -10,21 +10,21 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 10/02/2018
+ms.date: 10/18/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 216e474f519e57352b017dc3e6bcdd74d48b03de
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: 552b39c520396942fa81f963c0cfa1c8c7b47db4
+ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48238652"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49456972"
 ---
 # <a name="tutorial-use-condition-in-azure-resource-manager-templates"></a>Руководство. Использование условия в шаблонах Azure Resource Manager
 
 Узнайте, как развернуть ресурсы Azure на основе условий. 
 
-В этом руководстве используется сценарий из статьи [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./resource-manager-tutorial-create-templates-with-dependent-resources.md). В этом руководстве вы создадите учетную запись хранения, виртуальную машину, виртуальную сеть и другие зависимые ресурсы. Вместо создания учетной записи хранения вы можете позволить сотрудникам выбрать: создавать новую или использовать имеющуюся учетную запись хранения. Для достижения этой цели нужно определить дополнительный параметр. Если значение параметра равно "new", будет создана новая учетная запись хранения.
+В этом руководстве используется сценарий из статьи [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./resource-manager-tutorial-create-templates-with-dependent-resources.md). В этом руководстве вы создадите виртуальную машину, виртуальную сеть и другие зависимые ресурсы, включая учетную запись хранения. Чтобы не создавать учетную запись хранения каждый раз, вы можете позволить пользователям выбрать, создавать ли новую учетную запись хранения или использовать существующую. Для достижения этой цели нужно определить дополнительный параметр. Если значение параметра равно "new", будет создана новая учетная запись хранения.
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -59,7 +59,7 @@ ms.locfileid: "48238652"
 
 Внесите два изменения в имеющийся шаблон:
 
-* Добавьте параметр, используемый для предоставления имени учетной записи хранения. Этот параметр дает пользователю возможность указать имя имеющейся учетной записи хранения. Он также может использоваться для нового имени учетной записи хранения.
+* Добавьте параметр имени для учетной записи хранения. Пользователи могут указать имя новой или существующей учетной записи хранения.
 * Добавьте новый параметр с именем **newOrExisting**. Развертывание использует этот параметр, чтобы определить нужное действие: создавать новую учетную запись хранения или использовать имеющуюся.
 
 1. Откройте файл **azuredeploy.json** в Visual Studio Code.
@@ -72,11 +72,15 @@ ms.locfileid: "48238652"
 4. Добавьте следующие два параметра в шаблон:
 
     ```json
-    "newOrExisting": {
-      "type": "string"
-    },
     "storageAccountName": {
       "type": "string"
+    },    
+    "newOrExisting": {
+      "type": "string", 
+      "allowedValues": [
+        "new", 
+        "existing"
+      ]
     },
     ```
     Определение обновленных параметров выглядит так:
@@ -86,7 +90,7 @@ ms.locfileid: "48238652"
 5. Добавьте следующую строку в начало определения учетной записи хранения.
 
     ```json
-    "condition": "[equals(parameters('newOrExisting'),'yes')]",
+    "condition": "[equals(parameters('newOrExisting'),'new')]",
     ```
 
     Условие проверяет значение параметра с именем **newOrExisting**. Если значение параметра равно **new**, то в результате развертывания создается учетная запись хранения.
@@ -94,8 +98,15 @@ ms.locfileid: "48238652"
     Обновленное определение учетной записи хранения выглядит так:
 
     ![Условие использования Resource Manager](./media/resource-manager-tutorial-use-conditions/resource-manager-tutorial-use-condition-template.png)
+6. Присвойте параметру **storageUri** следующее значение:
 
-6. Сохраните изменения.
+    ```json
+    "storageUri": "[concat('https://', parameters('storageAccountName'), '.blob.core.windows.net')]"
+    ```
+
+    Это изменение необходимо при использовании существующей учетной записи хранения с другой группой ресурсов.
+
+7. Сохраните изменения.
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
@@ -103,19 +114,21 @@ ms.locfileid: "48238652"
 
 При развертывании шаблона с помощью Azure PowerShell необходимо указать один дополнительный параметр:
 
-```powershell
-$resourceGroupName = "<Enter the resource group name>"
-$storageAccountName = "Enter the storage account name>"
-$location = "<Enter the Azure location>"
-$vmAdmin = "<Enter the admin username>"
-$vmPassword = "<Enter the password>"
-$dnsLabelPrefix = "<Enter the prefix>"
+```azurepowershell
+$resourceGroupName = Read-Host -Prompt "Enter the resource group name"
+$storageAccountName = Read-Host -Prompt "Enter the storage account name"
+$newOrExisting = Read-Host -Prompt "Create new or use existing (Enter new or existing)"
+$location = Read-Host -Prompt "Enter the Azure location (i.e. centralus)"
+$vmAdmin = Read-Host -Prompt "Enter the admin username"
+$vmPassword = Read-Host -Prompt "Enter the admin password"
+$dnsLabelPrefix = Read-Host -Prompt "Enter the DNS Label prefix"
 
 New-AzureRmResourceGroup -Name $resourceGroupName -Location $location
 $vmPW = ConvertTo-SecureString -String $vmPassword -AsPlainText -Force
-New-AzureRmResourceGroupDeployment -Name mydeployment0710 -ResourceGroupName $resourceGroupName `
-    -TemplateFile azuredeploy.json -adminUsername $vmAdmin -adminPassword $vmPW `
-    -dnsLabelPrefix $dnsLabelPrefix -storageAccountName $storageAccountName -newOrExisting "new"
+New-AzureRmResourceGroupDeployment -Name mydeployment1018 -ResourceGroupName $resourceGroupName `
+    -adminUsername $vmAdmin -adminPassword $vmPW `
+    -dnsLabelPrefix $dnsLabelPrefix -storageAccountName $storageAccountName -newOrExisting $newOrExisting `
+    -TemplateFile azuredeploy.json
 ```
 
 > [!NOTE]

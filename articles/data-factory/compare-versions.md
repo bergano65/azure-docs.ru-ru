@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 04/09/2018
 ms.author: makromer
-ms.openlocfilehash: ca00a414402c1cfdef55cfbde9291688f091bf77
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: aecb193d1d9a10dbb5c936401f9900c4b2be071f
+ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43095925"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "49638248"
 ---
 # <a name="compare-azure-data-factory-with-data-factory-version-1"></a>Сравнение Фабрики данных Azure c Фабрикой данных версии 1
 В этой статье сравниваются возможности Фабрики данных с возможностями Фабрики данных версии 1. Дополнительные сведения о Фабрике данных см. [здесь](introduction.md). Дополнительные сведения о Фабрике данных Azure версии 1 см. в [этой статье](v1/data-factory-introduction.md). 
@@ -62,7 +62,7 @@ ms.locfileid: "43095925"
 Действие [Until](control-flow-until-activity.md) выполняет те же функции, что и циклическая структура do-until в языках программирования. Оно запускает набор действий в цикле, пока условие, связанное с действием, не получит значение `true`. Можно указать значение времени ожидания для действия until в фабрике данных.  
 
 ### <a name="trigger-based-flows"></a>Потоки на основе триггеров:
-Конвейеры можно вызывать по требованию или в определенное время. Дополнительные сведения о триггерах см. в статье [Выполнение конвейера и триггеры в фабрике данных Azure](concepts-pipeline-execution-triggers.md). 
+Конвейеры можно активировать по требованию (на основе событий, то есть blob post) или в определенное время. Дополнительные сведения о триггерах см. в статье [Выполнение конвейера и триггеры в фабрике данных Azure](concepts-pipeline-execution-triggers.md). 
 
 ### <a name="invoking-a-pipeline-from-another-pipeline"></a>Вызов конвейера из другого конвейера
 [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md) позволяет конвейеру фабрики данных вызвать другой конвейер.

@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Получение списка поддерживаемых языков с помощью Перевода текстов и Java
+title: Краткое руководство. Получение списка поддерживаемых языков, Java — API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, результаты поиска по словарю и примеры с помощью API перевода текстов и Java.
 services: cognitive-services
-author: noellelacharite
+author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/21/2018
-ms.author: nolachar
-ms.openlocfilehash: 64954c06d90ff8110b77874846fe57072faf2f76
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.author: erhopf
+ms.openlocfilehash: 2af7ceeeef347d1959b571aebf3f26bd5035e4c4
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46126978"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49646174"
 ---
-# <a name="quickstart-get-supported-languages-with-java"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью Java
+# <a name="quickstart-get-supported-languages-with-the-translator-text-rest-api-java"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью API перевода текстов (Java)
 
 Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, результаты поиска по словарю и примеры с помощью API перевода текстов.
 

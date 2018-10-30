@@ -1,6 +1,6 @@
 ---
 title: Создание и настройка Базы данных Azure для сервера MySQL с помощью Ansible (предварительная версия)
-description: Узнайте, как использовать Ansible для создания и настройки Базы данных Azure для сервера MySQL
+description: Узнайте, как с помощью Ansible создать и настроить Базу данных Azure для сервера MySQL
 ms.service: ansible
 keywords: ansible, azure, devops, bash, playbook, mysql, database
 author: tomarcher
@@ -8,24 +8,24 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 09/23/2018
-ms.openlocfilehash: 508274d11a9693d28a9b3a01bd6ebbd7198e8711
-ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
+ms.openlocfilehash: b549aeaf24bd774245ee1f2ff6924ac1f6dbeee3
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47586706"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49427902"
 ---
-# <a name="create-and-configure-an-azure-database-for-mysql-server-using-ansible-preview"></a>Создание и настройка Базы данных Azure для сервера MySQL с помощью Ansible (предварительная версия)
-[База данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/) — это управляемая служба, которая позволяет запускать, администрировать и масштабировать высокодоступные базы данных MySQL в облаке. В этом кратком руководстве описывается, как за пять минут создать сервер службы "База данных Azure для MySQL" с помощью портала Azure. 
+# <a name="create-and-configure-an-azure-database-for-mysql-server-by-using-ansible-preview"></a>Создание и настройка Базы данных Azure для сервера MySQL с помощью Ansible (предварительная версия)
+[База данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/) — это управляемая служба, которая позволяет запускать, администрировать и масштабировать высокодоступные базы данных MySQL в облаке. Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. 
 
-Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. В этой статье описано, как с помощью Ansible создать Базу данных Azure для сервера MySQL и настроить ее правила брандмауэра за пять минут. 
+В этом кратком руководстве описано, как с помощью Ansible создать Базу данных Azure для сервера MySQL и настроить ее правила брандмауэра. С помощью портала Azure эти задачи можно выполнить за пять минут.
 
 ## <a name="prerequisites"></a>Предварительные требования
 - **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 - [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
 
 > [!Note]
-> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.7. Чтобы установить версию RC Ansible 2.7, выполните команду `sudo pip install ansible[azure]==2.7.0rc2`. Выпуск Ansible 2.7 запланирован на октябрь 2018 г. После этой даты указывать версию не нужно, так как по умолчанию будет использоваться версия 2.7.
+> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.7. Чтобы установить версию RC Ansible 2.7, выполните команду `sudo pip install ansible[azure]==2.7.0rc2`. После выпуска Ansible 2.7 не нужно указывать здесь версию, так как версия по умолчанию будет 2.7.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.  
@@ -44,15 +44,15 @@ Ansible позволяет автоматизировать развертыва
         location: "{{ location }}"
 ```
 
-Сохраните сборник схем выше как *rg.yml*. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+Сохраните упомянутый выше сборник схем, присвоив ему имя **rg.yml**. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
 ```bash
 ansible-playbook rg.yml
 ```
 
-## <a name="create-mysql-server-and-database"></a>Создание сервера и базы данных MySQL
-В следующем примере создается сервер MySQL с именем **mysqlserveransible** и База данных Azure для MySQL с именем **mysqldbansible**. Это сервер 5-го поколения основного назначения с 1 виртуальным ядром. Обратите внимание, что значение **mysqlserver_name** должно быть уникальным. Ознакомьтесь с [документацией по ценовым категориям](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers), чтобы понять допустимые значения для региона и каждого уровня. 
+## <a name="create-a-mysql-server-and-database"></a>Создание сервера и базы данных MySQL
+В следующем примере создается сервер MySQL с именем **mysqlserveransible** и экземпляр Базы данных Azure для MySQL с именем **mysqldbansible**. Это сервер 5-го поколения основного назначения с одним виртуальным ядром. 
 
-Введите свой пароль `<server_admin_password>`:
+Значение **mysqlserver_name** должно быть уникальным. Допустимые значения для каждого региона и каждого уровня указаны в документации по [ценовым категориям](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers). Замените `<server_admin_password>` паролем.
 
 ```yml
 - hosts: localhost
@@ -84,15 +84,16 @@ ansible-playbook rg.yml
         name: "{{ mysqldb_name }}"
 ```
 
-Сохраните сборник схем выше как *mysql_create.yml*. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+Сохраните упомянутый выше сборник схем, присвоив ему имя **mysql_create.yml**. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
 ```bash
 ansible-playbook mysql_create.yml
 ```
 
-## <a name="configure-firewall-rule"></a>Настройка правила брандмауэра
-Правило брандмауэра на уровне сервера позволяет внешним приложениям, таким как программа командной строки **mysql** или MySQL Workbench, подключаться к серверу через брандмауэр службы Azure MySQL. В приведенном ниже примере создается правило брандмауэра с именем **extenalaccess**, которое разрешает подключения с любого внешнего IP-адреса. 
+## <a name="configure-a-firewall-rule"></a>Настройка правила брандмауэра
+Правило брандмауэра на уровне сервера позволяет внешним приложениям подключаться к серверу через брандмауэр службы Azure MySQL. Примером внешнего приложения является программа командной строки **mysql** или MySQL Workbench.
+В приведенном ниже примере создается правило брандмауэра с именем **extenalaccess**, которое разрешает подключения с любого внешнего IP-адреса. 
 
-Подставьте свои значения **startIpAddress** и **endIpAddress** с диапазоном IP-адресов, которые соответствуют расположению, из которого будет устанавливаться подключение. 
+Введите свои значения для **startIpAddress** и **endIpAddress**. Используйте диапазон IP-адресов, которые соответствуют расположению, из которого будет устанавливаться подключение. 
 
 ```yml
 - hosts: localhost
@@ -117,18 +118,18 @@ ansible-playbook mysql_create.yml
 ```
 
 > [!NOTE]
-> Подключитесь к базе данных Azure для MySQL через порт 3306. Если вы пытаетесь подключиться из корпоративной сети, исходящий трафик через порт 3306 может быть запрещен. В таком случае вы не сможете подключиться к серверу. Для этого ваш ИТ-отдел должен открыть порт 3306.
+> Подключитесь к базе данных Azure для MySQL через порт 3306. Если вы пытаетесь подключиться из корпоративной сети, исходящий трафик через порт 3306 может быть запрещен. В таком случае вы не сможете подключиться к серверу. Для этого ваш ИТ-отдел должен открыть порт 3306.
 > 
 
-Здесь для выполнения этой задачи используется модуль **azure_rm_resource**, который позволяет напрямую использовать REST API.
+Здесь модуль **azure_rm_resource** используется для выполнения этой задачи. Он позволяет непосредственно использовать REST API.
 
-Сохраните сборник схем выше как *mysql_firewall.yml*. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+Сохраните упомянутый выше сборник схем, присвоив ему имя **mysql_firewall.yml**. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
 ```bash
 ansible-playbook mysql_firewall.yml
 ```
 
-## <a name="connect-to-the-server-using-command-line-tool"></a>Подключение к серверу с помощью программы командной строки
-MySQL можно скачать [здесь](https://dev.mysql.com/downloads/) и установить на компьютер. Вместо этого можно также нажать кнопку **Попробуйте!** в примерах кода или кнопку `>_` на панели инструментов в правом верхнем углу портала Azure и запустить **Azure Cloud Shell**.
+## <a name="connect-to-the-server-by-using-the-command-line-tool"></a>Подключение к серверу с помощью программы командной строки
+Вы можете [скачать MySQL](https://dev.mysql.com/downloads/) и установить на компьютер. Вместо этого можно выбрать кнопку **Попробовать** в примерах кода или кнопку **>_** на верхней правой панели инструментов на портале Azure и открыть **Azure Cloud Shell**.
 
 Введите следующие команды. 
 
@@ -185,7 +186,7 @@ Threads: 5  Questions: 559  Slow queries: 0  Opens: 96  Flush tables: 3  Open ta
 ```
 
 ## <a name="using-facts-to-query-mysql-servers"></a>Использование фактов для запросов к серверам MySQL
-В следующем примере запрашиваются серверы MySQL в **myResourceGroup**, а затем все базы данных на сервере:
+В следующем примере запрашиваются серверы MySQL в **myResourceGroup**, а затем все базы данных на серверах:
 
 ```yml
 - hosts: localhost
@@ -213,7 +214,7 @@ Threads: 5  Questions: 559  Slow queries: 0  Opens: 96  Flush tables: 3  Open ta
         var: mysqldatabasefacts
 ```
 
-Сохраните сборник схем выше как *mysql_query*.yml. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+Сохраните упомянутый выше сборник схем, присвоив ему имя **mysql_query.yml**. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
 
 ```bash
 ansible-playbook mysql_query.yml
@@ -243,7 +244,7 @@ ansible-playbook mysql_query.yml
 ]
 ```
 
-А также увидите следующий результат для базы данных MySQL:
+Вы увидите также следующие выходные данные для базы данных MySQL:
 ```json
 "databases": [
     {
@@ -279,7 +280,7 @@ ansible-playbook mysql_query.yml
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вам не нужны эти ресурсы, вы можете удалить их, выполнив пример ниже. Будет удалена группа ресурсов с именем **myResourceGroup**. 
+Если вам не нужны эти ресурсы, вы можете удалить их, выполнив следующий пример. Будет удалена группа ресурсов с именем **myResourceGroup**. 
 
 ```yml
 - hosts: localhost
@@ -292,12 +293,12 @@ ansible-playbook mysql_query.yml
         state: absent
 ```
 
-Сохраните сборник схем выше как *rg_delete*.yml. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+Сохраните упомянутый выше сборник схем, присвоив ему имя **rg_delete.yml**. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
 ```bash
 ansible-playbook rg_delete.yml
 ```
 
-Если вы просто хотите удалить один созданный сервер MySQL, выполните команду, как показано в примере ниже:
+Если вы хотите удалить только один недавно созданный сервер MySQL, выполните следующий пример:
 
 ```yml
 - hosts: localhost
@@ -312,7 +313,7 @@ ansible-playbook rg_delete.yml
         state: absent
 ```
 
-Сохраните сборник схем выше как *mysql_delete.yml*. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+Сохраните упомянутый выше сборник схем, присвоив ему имя **mysql_delete.yml**. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
 ```bash
 ansible-playbook mysql_delete.yml
 ```

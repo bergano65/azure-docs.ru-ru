@@ -6,14 +6,14 @@ author: seguler
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
-ms.date: 04/09/2018
+ms.date: 10/23/2018
 ms.author: seguler
-ms.openlocfilehash: 93dc651767fc2be815fb706f71386ce72b382a37
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f0176b526bd2debae911f52d6fd364a87daabc1f
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46981731"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49986457"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-go"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью языка Go
 
@@ -23,9 +23,9 @@ ms.locfileid: "46981731"
 
 Для работы с этим кратким руководством сделайте следующее: 
 * Установите [Go 1.8 или более поздней версии](https://golang.org/dl/).
-* Скачайте и установите [пакет SDK Azure Storage Blob для Go](https://github.com/azure/azure-storage-blob-go/), используя команду `go get -u github.com/Azure/azure-storage-blob-go/2016-05-31/azblob`. 
+* Скачайте и установите [пакет SDK Azure Storage Blob для Go](https://github.com/azure/azure-storage-blob-go/), используя команду `go get -u github.com/Azure/azure-storage-blob-go/azblob`. 
 
-> [!WARNING]
+> [!NOTE]
 > Убедитесь, что в URL-адресе слово "Azure" написано с прописной буквы. В противном случае при работе с пакетом SDK могут возникнуть проблемы импорта, связанные с регистром. "Azure" также нужно указывать с прописной буквы в операторах импорта.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
@@ -94,13 +94,13 @@ Press the enter key to delete the sample files, example container, and exit the 
 Разберем пример кода, чтобы понять, как он работает.
 
 ### <a name="create-containerurl-and-bloburl-objects"></a>Создание объектов ContainerURL и BlobURL
-Сначала необходимо создать ссылки на объекты ContainerURL и BlobURL, необходимые при доступе к хранилищу BLOB-объектов и управлении им. Эти объекты предоставляют низкоуровневые API, такие как Create, PutBlob и GetBlob, для выдачи REST API.
+Сначала необходимо создать ссылки на объекты ContainerURL и BlobURL, необходимые при доступе к хранилищу BLOB-объектов и управлении им. Эти объекты предоставляют низкоуровневые API, такие как Create, Upload и Download, для выдачи REST API.
 
-* Используйте структуру **SharedKeyCredential** для хранения учетных данных. 
+* Используйте структуру [**SharedKeyCredential**](https://godoc.org/github.com/Azure/azure-storage-blob-go/azblob#SharedKeyCredential) для хранения учетных данных. 
 
-* Создайте **конвейер** с помощью учетных данных и параметров. Конвейер задает такие элементы, как политики повтора, ведение журнала, десериализация полезных данных HTTP-ответа и многое другое.  
+* Создайте [**конвейер**](https://godoc.org/github.com/Azure/azure-storage-blob-go/azblob#NewPipeline) с помощью учетных данных и параметров. Конвейер задает такие элементы, как политики повтора, ведение журнала, десериализация полезных данных HTTP-ответа и многое другое.  
 
-* Создайте объект ContainerURL и объект BlobURL, чтобы выполнить операции в контейнере (Create) и больших двоичных объектах (PutBlob и GetBlob).
+* Создайте объект [**ContainerURL**](https://godoc.org/github.com/Azure/azure-storage-blob-go/azblob#ContainerURL) и [**BlobURL**](https://godoc.org/github.com/Azure/azure-storage-blob-go/azblob#BlobURL), чтобы выполнить операции в контейнере (Create) и больших двоичных объектах (Upload и Download).
 
 
 Получив объект ContainerURL, вы можете создать объект **BlobURL**, который указывает на большой двоичный объект и выполняет такие операции, как отправка, скачивание и копирование.
@@ -118,7 +118,10 @@ if len(accountName) == 0 || len(accountKey) == 0 {
 }
 
 // Create a default request pipeline using your storage account name and account key.
-credential := azblob.NewSharedKeyCredential(accountName, accountKey)
+credential, err := azblob.NewSharedKeyCredential(accountName, accountKey)
+if err != nil {
+    log.Fatal("Invalid credentials with error: " + err.Error())
+}
 p := azblob.NewPipeline(credential, azblob.PipelineOptions{})
 
 // Create a random string for the quick start container
@@ -135,33 +138,41 @@ containerURL := azblob.NewContainerURL(*URL, p)
 // Create the container
 fmt.Printf("Creating a container named %s\n", containerName)
 ctx := context.Background() // This example uses a never-expiring context
-_, err := containerURL.Create(ctx, azblob.Metadata{}, azblob.PublicAccessNone)
+_, err = containerURL.Create(ctx, azblob.Metadata{}, azblob.PublicAccessNone)
 handleErrors(err)
 ```
 ### <a name="upload-blobs-to-the-container"></a>Отправка BLOB-объектов в контейнер
 
 Хранилище BLOB-объектов поддерживает блочные, добавочные и страничные BLOB-объекты. Чаще всего используются блочные BLOB-объекты. Именно этот тип представлен в этом кратком руководстве.  
 
-Чтобы отправить файл в большой двоичный объект, откройте файл с помощью **os.Open**. Затем вы можете отправить файл по указанному пути, используя один из REST API: PutBlob, PutBlock/PutBlockList. 
+Чтобы отправить файл в большой двоичный объект, откройте файл с помощью **os.Open**. Затем вы можете отправить файл по указанному пути, используя один из REST API: Upload (PutBlob), StageBlock/CommitBlockList (PutBlock/PutBlockList). 
 
-Кроме того, пакет SDK предоставляет [API высокого уровня](https://github.com/Azure/azure-storage-blob-go/blob/master/2016-05-31/azblob/highlevel.go), которые созданы на основе низкоуровневых интерфейсов REST API. Например, с помощью операций PutBlock функция ***UploadFileToBlockBlob*** одновременно передает файлы в блоках, оптимизируя тем самым пропускную способность. Если размер файла менее 256 МБ, передача осуществляется одной транзакцией с помощью операции PutBlock.
+Кроме того, пакет SDK предоставляет [API высокого уровня](https://github.com/Azure/azure-storage-blob-go/blob/master/azblob/highlevel.go), которые созданы на основе низкоуровневых интерфейсов REST API. Например, с помощью операций StageBlock (PutBlock) функция ***UploadFileToBlockBlob*** одновременно передает файлы блоками, оптимизируя тем самым пропускную способность. Если размер файла менее 256 МБ, передача осуществляется одной транзакцией с помощью операции Upload (PutBlob).
 
 В приведенном ниже примере файл отправляется в контейнер с именем **quickstartblobs-[произвольная_строка]**.
 
 ```go
+// Create a file to test the upload and download.
+fmt.Printf("Creating a dummy file to test the upload and download\n")
+data := []byte("hello world this is a blob\n")
+fileName := randomString()
+err = ioutil.WriteFile(fileName, data, 0700)
+handleErrors(err)
+
 // Here's how to upload a blob.
 blobURL := containerURL.NewBlockBlobURL(fileName)
 file, err := os.Open(fileName)
 handleErrors(err)
 
-// You can use the low-level PutBlob API to upload files. Low-level APIs are simple wrappers for the Azure Storage REST APIs.
-// Note that PutBlob can upload up to 256MB data in one shot. Details: https://docs.microsoft.com/rest/api/storageservices/put-blob
+// You can use the low-level Upload (PutBlob) API to upload files. Low-level APIs are simple wrappers for the Azure Storage REST APIs.
+// Note that Upload can upload up to 256MB data in one shot. Details: https://docs.microsoft.com/en-us/rest/api/storageservices/put-blob
+// To upload more than 256MB, use StageBlock (PutBlock) and CommitBlockList (PutBlockList) functions. 
 // Following is commented out intentionally because we will instead use UploadFileToBlockBlob API to upload the blob
-// _, err = blobURL.PutBlob(ctx, file, azblob.BlobHTTPHeaders{}, azblob.Metadata{}, azblob.BlobAccessConditions{})
+// _, err = blobURL.Upload(ctx, file, azblob.BlobHTTPHeaders{ContentType: "text/plain"}, azblob.Metadata{}, azblob.BlobAccessConditions{})
 // handleErrors(err)
 
 // The high-level API UploadFileToBlockBlob function uploads blocks in parallel for optimal performance, and can handle large files as well.
-// This function calls PutBlock/PutBlockList for files larger 256 MBs, and calls PutBlob for any file smaller
+// This function calls StageBlock/CommitBlockList for files larger 256 MBs, and calls Upload for any file smaller
 fmt.Printf("Uploading the file with blob name: %s\n", fileName)
 _, err = azblob.UploadFileToBlockBlob(ctx, file, blobURL, azblob.UploadToBlockBlobOptions{
     BlockSize:   4 * 1024 * 1024,
@@ -174,10 +185,11 @@ handleErrors(err)
 Список файлов в контейнере можно получить с помощью метода **ListBlobs** в **ContainerURL**. ListBlobs возвращает один сегмент больших двоичных объектов (до 5000), начиная с указанного **маркера**. Используйте пустой маркер, чтобы запустить перечисление с самого начала. Имена больших двоичных объектов возвращаются в лексикографическом порядке. После получения обработайте сегмент, а затем вызовите метод ListBlobs еще раз, передав ранее возвращенный маркер.  
 
 ```go
-// List the blobs in the container
+// List the container that we have created above
+fmt.Println("Listing the blobs in the container:")
 for marker := (azblob.Marker{}); marker.NotDone(); {
     // Get a result segment starting with the blob indicated by the current Marker.
-    listBlob, err := containerURL.ListBlobs(ctx, marker, azblob.ListBlobsOptions{})
+    listBlob, err := containerURL.ListBlobsFlatSegment(ctx, marker, azblob.ListBlobsSegmentOptions{})
     handleErrors(err)
 
     // ListBlobs returns the start of the next segment; you MUST use this to get
@@ -185,22 +197,28 @@ for marker := (azblob.Marker{}); marker.NotDone(); {
     marker = listBlob.NextMarker
 
     // Process the blobs returned in this result segment (if the segment is empty, the loop body won't execute)
-    for _, blobInfo := range listBlob.Blobs.Blob {
-        fmt.Print("Blob name: " + blobInfo.Name + "\n")
+    for _, blobInfo := range listBlob.Segment.BlobItems {
+        fmt.Print(" Blob name: " + blobInfo.Name + "\n")
     }
 }
 ```
 
 ### <a name="download-the-blob"></a>Скачивание большого двоичного объекта
 
-Загрузите большие двоичные объекты с помощью метода низкого уровня **GetBlob** в BlobURL. В качестве альтернативы можно создать поток и считывать с него диапазоны, используя API высокого уровня **NewDownloadStream**, предоставленный в файле [highlevel.go](https://github.com/Azure/azure-storage-blob-go/blob/master/2016-05-31/azblob/highlevel.go). Функция NewDownloadStream выполняется повторно в случае ошибки подключения, а API получения большого двоичного объекта — только при возвращении таких кодов состояния HTTP, как 503 (сервер занят). Следующий код скачивает большой двоичный объект с помощь функции **NewDownloadStream**. Содержимое большого двоичного объекта записывается в буфер и отображается в консоли.
+Загрузите большие двоичные объекты с помощью функции низкого уровня **Download** в BlobURL. Эта команда возвращает структуру **DownloadResponse**. Запустите в структуре функцию **Body**, чтобы получить поток для чтения данных **RetryReader**. Если при чтении подключение завершится ошибкой, будут созданы дополнительные запросы для повторной установки подключения и продолжения чтения. Если указать RetryReaderOption с параметром MaxRetryRequests, для которого установлено значение 0 (по умолчанию), будет возвращен исходный текст ответа и повторные попытки не выполняются. Кроме того, для упрощения кода используйте API-интерфейсы высокого уровня **DownloadBlobToBuffer** или **DownloadBlobToFile**.
+
+Следующий код скачивает большой двоичный объект с помощью функции **Download**. Содержимое большого двоичного объекта записывается в буфер и отображается в консоли.
 
 ```go
-// Here's how to download the blob. NOTE: This method automatically retries if the connection fails
-// during download (the low-level GetBlob function does NOT retry errors when reading from its stream).
-stream := azblob.NewDownloadStream(ctx, blobURL.GetBlob, azblob.DownloadStreamOptions{})
-downloadedData := &bytes.Buffer{}
-_, err = downloadedData.ReadFrom(stream)
+// Here's how to download the blob
+downloadResponse, err := blobURL.Download(ctx, 0, azblob.CountToEnd, azblob.BlobAccessConditions{}, false)
+
+// NOTE: automatically retries are performed if the connection fails
+bodyStream := downloadResponse.Body(azblob.RetryReaderOptions{MaxRetryRequests: 20})
+
+// read the body into a buffer
+downloadedData := bytes.Buffer{}
+_, err = downloadedData.ReadFrom(bodyStream)
 handleErrors(err)
 ```
 
@@ -209,7 +227,7 @@ handleErrors(err)
 
 ```go
 // Cleaning up the quick start by deleting the container and the file created locally
-fmt.Printf("Press the enter key to delete the sample files, example container, and exit the application.\n")
+fmt.Printf("Press enter key to delete the sample files, example container, and exit the application.\n")
 bufio.NewReader(os.Stdin).ReadBytes('\n')
 fmt.Printf("Cleaning up.\n")
 containerURL.Delete(ctx, azblob.ContainerAccessConditions{})
@@ -222,8 +240,8 @@ os.Remove(fileName)
 Ознакомьтесь со следующими дополнительными ресурсами для разработки Go с использованием хранилища BLOB-объектов:
 
 - Просмотрите и установите [исходный код клиентской библиотеки Go](https://github.com/Azure/azure-storage-blob-go) для службы хранилища Azure на сайте GitHub.
-- Изучите [примеры для хранилища BLOB-объектов](https://godoc.org/github.com/Azure/azure-storage-blob-go/2016-05-31/azblob#pkg-examples), написанные с использованием клиентской библиотеки Go.
+- Изучите [примеры для хранилища BLOB-объектов](https://godoc.org/github.com/Azure/azure-storage-blob-go/azblob#pkg-examples), написанные с использованием клиентской библиотеки Go.
 
 ## <a name="next-steps"></a>Дополнительная информация
  
-В этом кратком руководстве вы узнали, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью Go. Дополнительные сведения о пакете SDK для Azure Storage Blob см. в [этом репозитории с исходным кодом](https://github.com/Azure/azure-storage-blob-go/) и[справочнике по API](https://godoc.org/github.com/Azure/azure-storage-blob-go/2016-05-31/azblob).
+В этом кратком руководстве вы узнали, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью Go. Дополнительные сведения о пакете SDK для Azure Storage Blob см. в [этом репозитории с исходным кодом](https://github.com/Azure/azure-storage-blob-go/) и[справочнике по API](https://godoc.org/github.com/Azure/azure-storage-blob-go/azblob).

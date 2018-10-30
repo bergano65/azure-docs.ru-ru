@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: stream-analytics
 ms.custom: mvc
 manager: kfile
-ms.openlocfilehash: 1e466b2945793f866aad4e6f0ace3d7379226830
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 15f465bf2aaf7c8b3a4a49819548c8db0b2ea014
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42022645"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49958862"
 ---
 # <a name="quickstart-create-a-stream-analytics-job-by-using-the-azure-portal"></a>Краткое руководство по созданию задания Stream Analytics с помощью портала Azure
 
@@ -179,7 +179,9 @@ ms.locfileid: "42022645"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы развернули простое задание Stream Analytics. Дополнительные сведения о настройке других источников входных данных и обнаружении в режиме реального времени см. в следующей статье:
+В этом кратком руководстве вы развернули простое задание Stream Analytics, используя портал Azure. Вы также можете развертывать задания Stream Analytics, используя [PowerShell](stream-analytics-quick-create-powershell.md) и [Visual Studio](stream-analytics-quick-create-vs.md).
+
+Дополнительные сведения о настройке других источников входных данных и обнаружении в режиме реального времени см. в следующей статье:
 
 > [!div class="nextstepaction"]
 > [Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени](stream-analytics-real-time-fraud-detection.md)

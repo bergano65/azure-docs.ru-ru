@@ -1,19 +1,21 @@
 ---
-title: Создание акустической модели с помощью службы "Речь" в Azure Cognitive Services
+title: Руководство. Создание акустической модели с помощью службы "Речь"
+titlesuffix: Azure Cognitive Services
 description: В этом документе описывается создание акустической модели с помощью службы "Речь" в Azure Cognitive Services.
 services: cognitive-services
 author: PanosPeriorellis
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: tutorial
 ms.date: 06/25/2018
 ms.author: panosper
-ms.openlocfilehash: 39e591f6154573bb25fccc423ff63a82f282beaf
-ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
+ms.openlocfilehash: 81449889ae9218f2b59ea48f10c676dcee9aa8b1
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48017364"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49466092"
 ---
 # <a name="tutorial-create-a-custom-acoustic-model"></a>Учебник. Создание пользовательской акустической модели
 

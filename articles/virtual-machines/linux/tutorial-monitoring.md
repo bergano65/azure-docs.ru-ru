@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 06/06/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: f3925c26e2b7e4044daf5ac4e94fbb24393a4ddc
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f8310885ddf7e2229054f36b8fda92b92c1ab01e
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46999891"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49406506"
 ---
 # <a name="tutorial-monitor-and-update-a-linux-virtual-machine-in-azure"></a>Руководство по мониторингу и обновлению виртуальных машин Linux в Azure
 
@@ -293,7 +293,7 @@ az vm boot-diagnostics get-boot-log --resource-group myResourceGroupMonitor --na
 
 Вы можете применить более развернутый мониторинг для виртуальной машины с помощью специальных решений, таких как "Управление обновлениями" и Change and Inventory (Изменения и инвентаризация), которые предоставляет [служба автоматизации Azure](../../automation/automation-intro.md).
 
-Если у вас есть доступ к рабочей области Log Analytics, идентификатор и ключ рабочей области вы можете получить, выбрав **Дополнительные параметры** в разделе **Параметры**. Замените \<workspace-key\> и \<workspace-id\> значениями из рабочей области Log Analytics, а затем воспользуйтесь командой **az vm extension set**, чтобы добавить расширение на виртуальную машину:
+Если у вас есть доступ к рабочей области Log Analytics, идентификатор и ключ рабочей области вы можете получить, выбрав **Дополнительные параметры** в разделе **ПАРАМЕТРЫ**. Замените \<workspace-key\> и \<workspace-id\> значениями из рабочей области Log Analytics, а затем воспользуйтесь командой **az vm extension set**, чтобы добавить расширение на виртуальную машину:
 
 ```azurecli-interactive
 az vm extension set \
@@ -308,7 +308,7 @@ az vm extension set \
 
 Через несколько минут вы увидите новую виртуальную машину в рабочей области Log Analytics.
 
-![Колонка OMS](./media/tutorial-monitoring/tutorial-monitor-oms.png)
+![Log Analytics](./media/tutorial-monitoring/tutorial-monitor-oms.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

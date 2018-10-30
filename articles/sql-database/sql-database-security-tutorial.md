@@ -12,12 +12,12 @@ ms.author: daredis
 ms.reviewer: vanto, carlrab
 manager: craigg
 ms.date: 09/07/2018
-ms.openlocfilehash: ceed69503900b38d7f6a29bbe116ab9a4d54e396
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: b81e76201f7f751ee01e903d83f316811abaf483
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48857964"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49955481"
 ---
 # <a name="secure-your-azure-sql-database"></a>Защита базы данных SQL Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "48857964"
 
 Базы данных SQL защищены брандмауэром в Azure. По умолчанию все подключения к серверу и базам данных на сервере отклоняются, за исключением подключений служб Azure. Дополнительные сведения см. в разделе [Правила брандмауэра уровня сервера и уровня базы данных SQL Azure](sql-database-firewall-configure.md).
 
-Чтобы обеспечить наибольшую безопасность, для параметра "Разрешить доступ к службам Azure" следует установить значение "Выключено". Если необходимо подключаться к базе данных из виртуальной машины Azure или облачной службы, необходимо создать [зарезервированный IP-адрес](../virtual-network/virtual-networks-reserved-public-ip.md) и разрешить доступ через брандмауэр только с этого зарезервированного IP-адреса. 
+Чтобы обеспечить наибольшую безопасность, для параметра "Разрешить доступ к службам Azure" следует установить значение "Выключено". Если необходимо подключаться к базе данных из виртуальной машины Azure или облачной службы, необходимо создать [зарезервированный IP-адрес (классическое развертывание)](../virtual-network/virtual-networks-reserved-public-ip.md) и разрешить доступ через брандмауэр только с этого зарезервированного IP-адреса. При использовании модели развертывания с помощью [Resource Manager](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm) ресурсу назначается выделенный общедоступный IP-адрес, и вам нужно разрешить этот IP-адрес в брандмауэре.
 
 Выполните приведенные ниже действия, чтобы создать для сервера [правило брандмауэра уровня сервера базы данных SQL](sql-database-firewall-configure.md), разрешающее подключения с определенного IP-адреса. 
 

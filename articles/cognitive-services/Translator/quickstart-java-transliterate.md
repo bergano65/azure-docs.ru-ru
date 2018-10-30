@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Преобразование набора символов текста с помощью Перевода текстов и Java
+title: 'Краткое руководство: транслитерация текста, Java — API перевода текстов'
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как с помощью API перевода текстов и Java преобразовать текст на одном языке из одного набора символов в другой.
 services: cognitive-services
-author: noellelacharite
+author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/21/2018
-ms.author: nolachar
-ms.openlocfilehash: 47d0462dcf7e54a3c2b2e2ea8b713b02af2baf37
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.author: erhopf
+ms.openlocfilehash: 53482c725b2cb20ec8c53354ee9683bb0c4c61d0
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46297437"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49645223"
 ---
-# <a name="quickstart-transliterate-text-with-java"></a>Краткое руководство по транслитерации текста с помощью Java
+# <a name="quickstart-transliterate-text-with-the-translator-text-rest-api-java"></a>Краткое руководство: транслитерация текста с помощью REST API перевода текстов (Java)
 
 В этом кратком руководстве с помощью API перевода текстов вы преобразуете текст на одном языке из одного набора символов в другой.
 

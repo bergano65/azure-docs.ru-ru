@@ -1,20 +1,21 @@
 ---
-title: Краткое руководство. Распознавание речи в приложении C++ для Linux с помощью пакета SDK службы "Речь" в Cognitive Services
-titleSuffix: Microsoft Cognitive Services
-description: Узнайте, как распознавать речь в приложении C++ для Linux с помощью пакета SDK службы "Речь" в Cognitive Services.
+title: Краткое руководство. Распознавание речи в C++ на Linux с помощью пакета SDK для службы "Речь"
+titleSuffix: Azure Cognitive Services
+description: Узнайте, как распознавать речь в C++ на Linux, используя пакет SDK для службы "Речь"
 services: cognitive-services
 author: wolfma61
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: Speech
+ms.component: speech-service
 ms.topic: quickstart
 ms.date: 10/12/2018
 ms.author: wolfma
-ms.openlocfilehash: f23e25ec117d798bae81945104fa3fb53f320f1c
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: c637659c58ba518b8d1efca11bfa5303f1e1dde0
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49344094"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49469118"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-linux-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C++ для Linux с помощью пакета SDK для службы "Речь"
 

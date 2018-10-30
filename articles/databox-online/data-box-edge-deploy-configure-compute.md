@@ -6,21 +6,21 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 10/08/2018
+ms.date: 10/19/2018
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Data Box Edge so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: 4729e08399132243543c6f4e1cadd537d185e9e3
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: ba77fc4596d9bb245b3cea2538804b1816e9ad14
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49166259"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49466977"
 ---
 # <a name="tutorial-transform-data-with-azure-data-box-edge-preview"></a>Руководство по преобразованию данных с помощью Azure Data Box Edge (предварительная версия)
 
 В этом руководстве описывается, как настроить роль вычислений в Data Box Edge. После того как роль настроена, Data Box Edge может преобразовывать данные перед отправкой в ​​Azure.
 
-Эта процедура может занять около 30-45 минут. 
+Эта процедура может занять около 30-45 минут.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -31,7 +31,7 @@ ms.locfileid: "49166259"
 > * Проверка преобразования и передачи данных.
 
 > [!IMPORTANT]
-> В данный момент решение Data Box Edge находится в состоянии предварительной версии. Изучите [Дополнительные условия использования Предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем заказывать и развертывать это решение. 
+> В данный момент решение Data Box Edge находится в состоянии предварительной версии. Изучите [Дополнительные условия использования Предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем заказывать и развертывать это решение.
  
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -48,7 +48,8 @@ ms.locfileid: "49166259"
 
 ![Создание ресурса Центра Интернета вещей](./media/data-box-edge-deploy-configure-compute/create-iothub-resource-1.png)
 
-Когда роль вычислений Edge не настроена, отметьте следующее: 
+Если роль вычислений Edge не настроена, обратите внимание на следующее:
+
 - В ресурсе центра Интернета вещей отсутствуют устройства Интернета вещей и устройства IoT Edge.
 - Вы не можете создавать локальные общие ресурсы Edge. Когда вы добавляете общий ресурс, возможность создания локального общего ресурса для вычисления Edge не включена.
 
@@ -91,12 +92,12 @@ ms.locfileid: "49166259"
 
     ![Настройка роли вычислений](./media/data-box-edge-deploy-configure-compute/setup-compute-8.png) 
 
-Однако на этом устройстве Edge нет настраиваемых модулей. Теперь можно добавить настраиваемый модуль к этому устройству.
+Однако на этом устройстве Edge нет настраиваемых модулей. Теперь можно добавить настраиваемый модуль к этому устройству. Чтобы узнать, как создать пользовательский модуль, см. статью [Develop a C# IoT Edge module to move files on Data Box Edge (Preview)](data-box-edge-create-iot-edge-module.md) (Разработка модуля IoT Edge на C# для перемещения файлов в Data Box Edge (предварительная версия)).
 
 
 ## <a name="add-a-custom-module"></a>Добавление настраиваемого модуля
 
-В этом разделе вы добавите пользовательский модуль на устройстве IoT Edge. 
+В этом разделе вы добавите пользовательский модуль к устройству IoT Edge, которое было создано с помощью руководства [Develop a C# IoT Edge module to move files on Data Box Edge (Preview)](data-box-edge-create-iot-edge-module.md) (Разработка модуля IoT Edge на C# для перемещения файлов в Data Box Edge (предварительная версия)). 
 
 В этой процедуре используется пример, в котором используемый настраиваемый модуль берет файлы из локального ресурса на устройстве Edge и переносит их в облачный файловый ресурс на устройстве. Затем облачный ресурс переносит файлы в учетную запись Azure, связанную с облачным ресурсом. 
 
@@ -133,11 +134,26 @@ ms.locfileid: "49166259"
 
         ![Добавление настраиваемого модуля](./media/data-box-edge-deploy-configure-compute/add-a-custom-module-6.png) 
  
-    2. Укажите настройки для настраиваемого модуля IoT Edge. Укажите **имя** вашего модуля и **URI образа**. 
+    2. Укажите настройки для настраиваемого модуля IoT Edge. Укажите **имя** модуля и **URI образа** для соответствующего образа контейнера. 
     
         ![Добавление настраиваемого модуля](./media/data-box-edge-deploy-configure-compute/add-a-custom-module-7.png) 
 
-    3. В разделе **Параметры создания контейнера** укажите локальные точки подключения для модулей Edge, скопированных на предыдущих шагах для облака и локального общего ресурса (важно использовать эти пути, а не создавать новые). Эти общие ресурсы сопоставляются с соответствующими точками подключения для контейнера. Здесь также укажите любые переменные среды для вашего модуля.
+    3. В разделе **Параметры создания контейнера** укажите локальные точки подключения для модулей Edge, скопированных на предыдущих шагах для облака и локального общего ресурса (важно использовать эти пути, а не создавать новые). Локальные точки подключения сопоставляются с соответствующими значениями **InputFolderPath** и **OutputFolderPath**, которые вы указали в модуле при его [обновлении с помощью пользовательского кода](data-box-edge-create-iot-edge-module.md#update-the-module-with-custom-code). 
+    
+        Вы можете скопировать и вставить пример, показанный ниже, в свои **параметры создания контейнера**: 
+        
+        ```
+        {
+         "HostConfig": {
+          "Binds": [
+           "/home/hcsshares/mysmblocalshare:/home/LocalShare",
+           "/home/hcsshares/mysmbshare1:/home/CloudShare"
+           ]
+         }
+        }
+        ```
+
+        Здесь также укажите любые переменные среды для вашего модуля.
 
         ![Добавление настраиваемого модуля](./media/data-box-edge-deploy-configure-compute/add-a-custom-module-8.png) 
  
@@ -146,6 +162,8 @@ ms.locfileid: "49166259"
         ![Добавление настраиваемого модуля](./media/data-box-edge-deploy-configure-compute/add-a-custom-module-9.png) 
  
 6.  В разделе **Укажите маршруты** настройте маршруты между модулями. В этом случае укажите имя локального общего ресурса, который будет отправлять данные в облачный общий ресурс. Щелкните **Далее**.
+
+    Маршрут можно заменить следующей строкой маршрута:       "route": "FROM /* WHERE topic = 'mysmblocalshare' INTO BrokeredEndpoint(\"/modules/filemovemodule/inputs/input1\")"
 
     ![Добавление настраиваемого модуля](./media/data-box-edge-deploy-configure-compute/add-a-custom-module-10.png) 
  

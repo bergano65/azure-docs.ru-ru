@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Определение языка текста с помощью Перевода текстов и Python
+title: Краткое руководство. Определение языка текста, Python — API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как определить язык исходного текста, используя API перевода текстов и Python.
 services: cognitive-services
-author: noellelacharite
+author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/21/2018
-ms.author: nolachar
-ms.openlocfilehash: 31fb36421dd2aef21f77b4941771e4d3db813730
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.author: erhopf
+ms.openlocfilehash: 669118ed925c961aeb1d99c9e794f6702b29a83b
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46125006"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49644921"
 ---
-# <a name="quickstart-identify-language-from-text-with-python"></a>Краткое руководство по определению языка текста с помощью Python
+# <a name="quickstart-identify-language-from-text-with-the-translator-text-rest-api-python"></a>Краткое руководство. Определение языка текста с помощью REST API перевода текстов (Python)
 
 Из этого краткого руководства вы узнаете, как определить язык исходного текста, используя API перевода текстов.
 

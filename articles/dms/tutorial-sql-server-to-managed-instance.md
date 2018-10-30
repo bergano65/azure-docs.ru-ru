@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
 ms.date: 10/10/2018
-ms.openlocfilehash: 2e8e9706a9572b85030a636dd75d4809447eabbc
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: 445d4a50cdb0780e7aff5331f0ba9e70aae44e25
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49067897"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945167"
 ---
 # <a name="migrate-sql-server-to-azure-sql-database-managed-instance-offline-using-dms"></a>Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра SQL Server в [Управляемый экземпляр базы данных SQL Azure](../sql-database/sql-database-managed-instance.md). Сведения о дополнительных методах, которые могут потребовать некоторых действий вручную, см. в статье [Перенос экземпляра SQL Server в Управляемый экземпляр базы данных SQL Azure](../sql-database/sql-database-managed-instance-migrate.md).
@@ -30,6 +30,10 @@ Azure Database Migration Service можно использовать для пе
 > * выполнение миграции.
 > * мониторинг миграции.
 > * скачивание отчета о миграции.
+
+[!INCLUDE [online-offline](../../includes/database-migration-service-offline-online.md)]
+
+В этой статье описывается перенос данных из SQL Server в управляемый экземпляр Базы данных SQL Azure в офлайн-режиме. [Перенос данных из SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в онлайн-режиме](tutorial-sql-server-managed-instance-online.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим руководством вам потребуется следующее:

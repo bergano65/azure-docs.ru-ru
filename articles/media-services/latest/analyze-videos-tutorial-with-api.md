@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 10/15/2018
 ms.author: juliako
-ms.openlocfilehash: 96ed5c17501aeb195ee584ce6d41a84fc2118bac
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: 5bb840be119f5eac380c44e2cf45b3f73a9d981e
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49376658"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49985715"
 ---
 # <a name="tutorial-analyze-videos-with-azure-media-services"></a>Руководство. Анализ видео с помощью Служб мультимедиа Azure 
 
@@ -33,9 +33,6 @@ ms.locfileid: "49376658"
 > * Запуск приложения
 > * Изучение выходных данных
 > * Очистка ресурсов
-
-> [!Note]
-> Чтобы настроить 10 зарезервированных единиц мультимедиа S3 для учетной записи служб мультимедиа, используйте портал Azure, как описано в разделе [Масштабирование обработки мультимедиа](../previous/media-services-scale-media-processing-overview.md).
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -71,6 +68,9 @@ ms.locfileid: "49376658"
 4. Подтверждает задание.
 5. Проверяет состояние задания.
 6. Загружает файлы, полученные в результате выполнения задания. 
+
+> [!NOTE]
+> Используя наборы настроек анализаторов, установите 10 зарезервированных единиц кодирования S3 для своей учетной записи на портале Azure. Дополнительные сведения см. в [этой статье](../previous/media-services-scale-media-processing-overview.md).
 
 ### <a name="start-using-media-services-apis-with-net-sdk"></a>Начало использования API Служб мультимедиа с пакетом SDK для .NET
 

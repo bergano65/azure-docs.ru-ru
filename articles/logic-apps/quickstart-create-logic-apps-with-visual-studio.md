@@ -12,12 +12,12 @@ ms.custom: mvc
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.date: 07/31/2018
-ms.openlocfilehash: b8961edebd80d5f36d844734e3c93a4bd3b1f0cf
-ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.openlocfilehash: 6783c59b354e0eebc7fa6d8f67985b8d7b72c22a
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42162139"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49645837"
 ---
 # <a name="quickstart-create-and-automate-tasks-processes-and-workflows-with-azure-logic-apps---visual-studio"></a>Краткое руководство. Создание и автоматизация задач, операций и рабочих процессов с помощью Azure Logic Apps в Visual Studio
 
@@ -148,6 +148,10 @@ ms.locfileid: "42162139"
 
    ![Вывод информации о состоянии развертывания](./media/quickstart-create-logic-apps-with-visual-studio/logic-app-output-window.png)
 
+   Если выбранные соединители требуют ввода данных, может открыться окно PowerShell в фоновом режиме с запросом на ввод необходимых паролей или секретных ключей. После ввода этих сведений развертывание продолжится.
+   
+   ![Окно PowerShell при развертывании](./media/quickstart-create-logic-apps-with-visual-studio/logic-apps-powershell-window.png)
+   
    После развертывания приложение логики будет работать в реальном времени на портале Azure и проверять RSS-канал в зависимости от заданного расписания (каждую минуту). 
    Если в RSS-канале есть новые элементы, приложение логики отправляет сообщение электронной почты для каждого нового элемента. 
    В противном случае приложение логики ожидает до следующего интервала перед повторной проверкой. 

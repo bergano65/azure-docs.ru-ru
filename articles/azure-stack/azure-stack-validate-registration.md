@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 06/08/2018
 ms.author: sethm
 ms.reviewer: ''
-ms.openlocfilehash: d6835f05666d66cc4f6aa937c4b85047ce3c2e93
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 51753a5324bbbcbf4e951628a42dd3bf425354af
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49077075"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49957588"
 ---
 # <a name="validate-azure-registration"></a>Проверка регистрации в Azure 
 Средство проверки готовности Azure Stack (AzsReadinessChecker) позволяет убедиться, что ваша подписка Azure готова к работе с Azure Stack. Проверьте регистрацию перед тем, как развертывать Azure Stack. Средство проверки готовности выполняет следующие проверки:
@@ -62,10 +62,17 @@ ms.locfileid: "49077075"
    - Для параметра AzureEnvironement укажите значение *AzureCloud*, *AzureGermanCloud* или *AzureChinaCloud*.  
    - Предоставьте имя администратора Azure Active Directory и имя клиента Azure Active Directory. 
 
-   > `Start-AzsReadinessChecker -RegistrationAccount $registrationCredential -AzureEnvironment AzureCloud -RegistrationSubscriptionID $subscriptionID`
+   > `Invoke-AzsRegistrationValidation -RegistrationAccount $registrationCredential -AzureEnvironment AzureCloud -RegistrationSubscriptionID $subscriptionID`
 
-5. Когда средство завершит работу, просмотрите выходные данные. Убедитесь, что в них указано состояние "ОК" для требований ко входу в систему и к регистрации. Успешное завершение проверки отображается так, как на следующем рисунке:  
-![Запуск проверки](./media/azure-stack-validate-registration/registration-validation.png)
+5. Когда средство завершит работу, просмотрите выходные данные. Убедитесь, что в них указано состояние "ОК" для требований ко входу в систему и к регистрации. При успешном завершении проверки отобразится следующий результат:  
+````PowerShell
+Invoke-AzsRegistrationValidation v1.1809.1005.1 started.
+Checking Registration Requirements: OK
+
+Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
+Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json
+Invoke-AzsRegistrationValidation Completed
+````
 
 
 ## <a name="report-and-log-file"></a>Файлы отчета и журнала
@@ -83,31 +90,57 @@ ms.locfileid: "49077075"
 Следующие примеры дают некоторые рекомендации по распространенным ошибкам проверки.
 
 ### <a name="user-must-be-an-owner-of-the-subscription"></a>Пользователь должен быть владельцем подписки   
-![Владелец подписки](./media/azure-stack-validate-registration/subscription-owner.png)
-**Причина** — учетная запись не является администратором подписки Azure.   
+````PowerShell
+Invoke-AzsRegistrationValidation v1.1809.1005.1 started.
+Checking Registration Requirements: Fail 
+Error Details for registration account admin@contoso.onmicrosoft.com:
+The user admin@contoso.onmicrosoft.com is role(s) Reader for subscription 3f961d1c-d1fb-40c3-99ba-44524b56df2d. User must be an owner of the subscription to be used for registration.
+Additional help URL https://aka.ms/AzsRemediateRegistration
+
+Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
+Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json
+Invoke-AzsRegistrationValidation Completed
+````
+**Причина** — текущая учетная запись не имеет прав администратора подписки Azure.   
 
 **Разрешение**. Используйте учетную запись администратора подписки Azure, которой будет выставлен счет за использование развертывания Azure Stack.
 
 
 ### <a name="expired-or-temporary-password"></a>Пароль с истекшим сроком действия или временный пароль 
-![истек срок действия пароля](./media/azure-stack-validate-registration/expired-password.png)
-**Причина** — вход с учетной записью невозможен, так как срок действия пароля истек или использовался временный пароль.     
+````PowerShell
+Invoke-AzsRegistrationValidation v1.1809.1005.1 started.
+Checking Registration Requirements: Fail 
+Error Details for registration account admin@contoso.onmicrosoft.com:
+Checking Registration failed with: Retrieving TenantId for subscription 3f961d1c-d1fb-40c3-99ba-44524b56df2d using account admin@contoso.onmicrosoft.com failed with AADSTS50055: Force Change P
+assword.
+Trace ID: 48fe06f5-a5b4-4961-ad45-a86964689900
+Correlation ID: 3dd1c9b2-72fb-46a0-819d-058f7562cb1f
+Timestamp: 2018-10-22 11:16:56Z: The remote server returned an error: (401) Unauthorized.
+
+Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
+Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json
+Invoke-AzsRegistrationValidation Completed
+````
+**Причина** — вход с помощью данной учетной записи невозможен, так как истек срок действия пароля или используется временный пароль.     
 
 **Разрешение** — в PowerShell выполните инструкции на экране и следуйте им, чтобы сбросить пароль. 
   > `Login-AzureRMAccount` 
 
-Также вы можете войти с этой учетной записью в https://portal.azure.com, и тогда пользователь должен будет сменить пароль.
-
-
-### <a name="microsoft-accounts-are-not-supported-for-registration"></a>Учетные записи Майкрософт не поддерживаются для регистрации  
-![неподдерживаемая учетная запись](./media/azure-stack-validate-registration/unsupported-account.png)
-**Причина** — была указана учетная запись Майкрософт (такая как Outlook.com или Hotmail.com).  Эти учетные записи Майкрософт не поддерживаются.
-
-**Разрешение** — используйте учетную запись и подписку из поставщика облачных служб или соглашения Enterprise. 
+Также вы можете войти с этой учетной записью в https://portal.azure.com. В таком случае пользователь должен будет сменить пароль.
 
 
 ### <a name="unknown-user-type"></a>Неизвестный тип пользователя  
-![неизвестный пользователь](./media/azure-stack-validate-registration/unknown-user.png)
+````PowerShell
+Invoke-AzsRegistrationValidation v1.1809.1005.1 started.
+Checking Registration Requirements: Fail 
+Error Details for registration account admin@contoso.onmicrosoft.com:
+Checking Registration failed with: Retrieving TenantId for subscription 3f961d1c-d1fb-40c3-99ba-44524b56df2d using account admin@contoso.onmicrosoft.com failed with unknown_user_type: Unknown Us
+er Type
+
+Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
+Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json
+Invoke-AzsRegistrationValidation Completed
+````
 **Причина** — вход с учетной записью в указанную среду Azure Active Directory невозможен. В нашем примере параметр *AzureChinaCloud* имеет значение *AzureEnvironment*.  
 
 **Разрешение** — убедитесь, что учетная запись существует в указанном окружении Azure. Выполните в PowerShell следующую команду, чтобы проверить допустимость учетной записи для конкретного окружения.     

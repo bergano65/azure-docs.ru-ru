@@ -1,5 +1,5 @@
 ---
-title: Руководство. Обнаружение и выделение лиц на изображении с помощью API распознавания лиц и C#
+title: Руководство. Обнаружение и выделение лиц на изображении с помощью пакета SDK .NET и C#
 titleSuffix: Azure Cognitive Services
 description: С помощью этого руководства вы создадите простое приложение Windows, которое использует API распознавания лиц для обнаружения и выделения лиц на изображении.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: face-api
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: pafarley
-ms.openlocfilehash: ba850c1d4f9d8018f333662eead56f8e91b3fbd7
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: df5e46270275ca08a8499607fbad4c1161382fab
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49340959"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49956500"
 ---
-# <a name="tutorial-create-a-wpf-app-to-detect-and-frame-faces-in-an-image"></a>Руководство. Создание приложения WPF для обнаружения и выделения лиц на изображении
+# <a name="tutorial-create-a-wpf-app-to-detect-and-frame-faces-in-an-image-using-the-net-sdk"></a>Руководство. Создание приложения WPF для обнаружения и выделения лиц на изображении с помощью пакета SDK .NET
 
 В рамках работы с этим руководством вы создадите приложение на основе подсистемы Windows Presentation Framework (WPF), в котором используется служба распознавания лиц через клиентскую библиотеку .NET. Приложение обнаруживает лица на изображении, создает рамку вокруг каждого лица и отображает описание лица в строке состояния. Полный пример кода можно найти на странице GitHub [Detect and frame faces in an image on Windows](https://github.com/Azure-Samples/Cognitive-Face-CSharp-sample) (Обнаружение и выделение лиц на изображении в Windows).
 

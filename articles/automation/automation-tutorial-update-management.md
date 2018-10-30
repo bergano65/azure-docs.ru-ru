@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/18/2018
 ms.author: zachal
 ms.custom: mvc
-ms.openlocfilehash: bc1b52b97897cb1c635fb16e6ef9692de1ca8a44
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: 6046781f59b64dcec4769686a2acd710c7b68965
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49167262"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49987313"
 ---
 # <a name="manage-windows-updates-by-using-azure-automation"></a>Управление обновлениями Windows при помощи службы автоматизации Azure
 
@@ -194,6 +194,9 @@ UpdateRunProgress
 ![Панель параметров расписания обновлений](./media/automation-tutorial-update-management/manageupdates-schedule-win.png)
 
 Вы вернетесь к панели мониторинга состояния. Выберите **Запланированные развертывания обновлений**, чтобы отобразить созданный график развертывания.
+
+> [!NOTE]
+> Управление обновлениями поддерживает развертывание обновлений из Центра обновлений Windows и предварительное скачивание исправлений. Для этого необходимо внести изменения в исправляемые системы. Просмотрите [этот раздел](automation-update-management.md#firstparty-predownload), чтобы узнать, как настроить эти параметры в своих системах.
 
 ## <a name="view-results-of-an-update-deployment"></a>Просмотр результатов развертывания обновлений
 

@@ -1,22 +1,23 @@
 ---
-title: Что собой представляет служба "Речь"
-description: 'Служба "Речь", входящая в набор служб Microsoft Cognitive Services, объединяет несколько служб речи Azure, которые ранее были доступны по отдельности: службу распознавания речи Bing (состоящую из распознавания речи и преобразования текста в речь), службу пользовательского распознавания речи и службу перевода речи.'
+title: Общие сведения о службе "Речь"
 titleSuffix: Azure Cognitive Services
+description: 'Служба "Речь", входящая в набор Azure Cognitive Services, объединяет несколько служб, которые ранее были доступны по отдельности: службу распознавания речи Bing (состоящую из службы распознавания речи и службы преобразования текста в речь), пользовательскую службу распознавания речи и службу перевода речи.'
 services: cognitive-services
 author: erhopf
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: overview
 ms.date: 09/24/2018
 ms.author: erhopf
-ms.openlocfilehash: 7a61d85d96b993d49a536c38c2907a3d6ef55e65
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: ba4204c23f3467ff07940fd6a72464e67604dde1
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49365464"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49470452"
 ---
-# <a name="what-is-the-speech-service"></a>Что собой представляет служба "Речь"
+# <a name="what-is-the-speech-service"></a>Общие сведения о службе "Речь"
 
 
 Аналогично другим службам распознавания речи Azure служба "Речь" основана на технологиях распознавания речи, используемых в таких продуктах, как Кортана и Microsoft Office.

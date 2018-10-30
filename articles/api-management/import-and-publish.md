@@ -3,7 +3,7 @@ title: Импорт и публикация API в службе управлен
 description: Сведения о том, как импортировать и опубликовать ваш первый API с помощью службы управления API.
 services: api-management
 documentationcenter: ''
-author: vladvino
+author: mikebudzynski
 manager: cfowler
 editor: ''
 ms.service: api-management
@@ -14,12 +14,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
-ms.openlocfilehash: 538977b9057a5699d61d6c2cc44209367e3550e2
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: cf913c0aaf7dd9957f21452caf8e43a9e3c8b2db
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47093408"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49467401"
 ---
 # <a name="import-and-publish-your-first-api"></a>Импорт и публикация первого API 
 
@@ -73,9 +73,11 @@ ms.locfileid: "47093408"
 
 ## <a name="test-the-new-apim-api-in-the-azure-portal"></a>Проверка нового API службы управления API на портале Azure
 
+![Карта тестирования API](./media/api-management-get-started/01-import-first-api-01.png)
+
 Операции можно вызывать непосредственно на портале Azure. Это удобный способ просмотра и проверки операций API.  
 1. Выберите API, созданный на предыдущем шаге (на вкладке **Интерфейсы API**).
-2. Откройте вкладку **Тест**.  ![Проверка API](./media/api-management-get-started/test-api.png)
+2. Откройте вкладку **Тест**.
 3. Щелкните **GetSpeakers**.
     Эта страница отображает поля для параметров запроса (в нашем примере параметры не используются) и заголовки. Один из заголовков, Ocp-Apim-Subscription-Key, содержит ключ подписки для продукта, связанного с этим API. Значение ключа будет заполнено автоматически.
 4. Нажмите кнопку **Отправить**.
@@ -87,7 +89,8 @@ ms.locfileid: "47093408"
 Также операции можно вызвать через **портал разработчиков**, чтобы проверить API.
 
 1. Перейдите на **портал разработчика**.
-![Портал разработчиков](./media/api-management-get-started/developer-portal.png)
+
+ ![Developer portal](./media/api-management-get-started/developer-portal.png)
 
 2. Выберите **API**, щелкните **Demo Conference API** и выберите **GetSpeakers**.
     

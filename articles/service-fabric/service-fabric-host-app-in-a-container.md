@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/18/2018
 ms.author: ryanwi
-ms.openlocfilehash: 7573746b91f057d83a299d54801785118cc1c878
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 36b9a2e710a2a7f34ee9374e89f3fb19cc591ac3
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44380137"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49429598"
 ---
 # <a name="tutorial-deploy-a-net-application-in-a-windows-container-to-azure-service-fabric"></a>Руководство по развертыванию приложения .NET в контейнере Windows в Azure Service Fabric
 
@@ -61,7 +61,9 @@ ms.locfileid: "44380137"
 ## <a name="create-an-azure-sql-db"></a>Создание базы данных SQL Azure
 При выполнении приложения Fabrikam Fiber CallCenter в рабочей среде данные должны сохраняться в базе данных. Пока нет способа гарантировать сохранение данных в контейнере, поэтому хранить рабочие данные в SQL Server в контейнере нельзя.
 
-Мы рекомендуем [базу данных SQL Azure](/azure/sql-database/sql-database-get-started-powershell). Для установки и запуска управляемой базы данных SQL Server в Azure выполните следующий скрипт.  При необходимости измените переменные скрипта. *clientIP* — это IP-адрес компьютера разработчика.  При наличии корпоративного брандмауэра IP-адрес компьютера разработчика не может быть IP-адресом, которому отказано в доступе к Интернету.  Вы также можете задать правило брандмауэра сервера для базы данных SQL через [портал Azure](https://portal.azure.com), где указан IP-адрес компьютера.
+Мы рекомендуем [базу данных SQL Azure](/azure/sql-database/sql-database-get-started-powershell). Для установки и запуска управляемой базы данных SQL Server в Azure выполните следующий скрипт.  При необходимости измените переменные скрипта. *clientIP* — это IP-адрес компьютера разработчика.
+
+При наличии корпоративного брандмауэра IP-адрес компьютера разработчика не может быть IP-адресом, которому отказано в доступе к Интернету. Чтобы убедиться, что в правиле брандмауэра указан правильный IP-адрес для базы данных, откройте [портал Azure](https://portal.azure.com) и найдите свою базу данных в разделе "Базы данных SQL". Щелкните имя базы данных и в разделе "Обзор" выберите "Настройка брандмауэра для сервера". "IP-адрес клиента" — это IP-адрес компьютера, используемого для разработки. Убедитесь, что он совпадает с IP-адресом в правиле AllowClient.
 
 ```powershell
 $subscriptionID="<subscription ID>"

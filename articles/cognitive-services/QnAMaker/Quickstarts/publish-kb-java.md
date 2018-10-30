@@ -1,25 +1,28 @@
 ---
-title: Краткое руководство. Публикация базы знаний с использованием Java — QnA Maker
+title: Краткое руководство. Публикация базы знаний — REST, Java — QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Сведения о том, как опубликовать базу знаний на Java для QnA Maker.
+description: В этом кратком руководстве описывается процесс публикации с использованием REST для базы знаний, которая передает последнюю версию протестированной базы знаний в выделенный индекс службы "Поиск Azure", представляющий опубликованную базу знаний. Кроме того, создается конечная точка, которая может быть вызвана в приложении или чат-боте.
 services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: quickstart
-ms.date: 09/12/2018
+ms.date: 10/19/2018
 ms.author: diberry
-ms.openlocfilehash: defd0cb7fc22423db9b2c7d25960b5dc27042506
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: 83390ace8d9747d218fdd5c6b50ba9bdc6d11957
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48885090"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49648825"
 ---
-# <a name="quickstart-publish-a-knowledge-base-in-java"></a>Краткое руководство. Публикация базы знаний с использованием Java
+# <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-java"></a>Краткое руководство. Публикация базы знаний в QnA Maker с помощью Java
 
-Следующий код публикует существующую базу знаний с помощью метода [Publish](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fe) (Публикация).
+В этом кратком руководстве описано, как программным способом опубликовать базу знаний. В процессе публикации последняя версия базы знаний отправляется в индекс выделенной службы "Поиск Azure" и создается конечная точка, которую можно вызывать в приложении или чат-боте.
+
+В этом кратком руководстве вызываются API службы QnA Maker:
+* [Публикация.](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fe) При использовании этого API в тексте запроса не нужно указывать какие-либо сведения.
 
 [!INCLUDE [Code is available in Azure-Samples Github repo](../../../../includes/cognitive-services-qnamaker-java-repo-note.md)]
 

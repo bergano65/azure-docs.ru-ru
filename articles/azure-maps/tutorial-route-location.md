@@ -1,20 +1,20 @@
 ---
 title: Поиск маршрута с помощью службы "Карты Azure" | Документация Майкрософт
 description: Поиск маршрута к точке интереса с помощью службы "Карты Azure"
-author: dsk-2015
-ms.author: dkshir
-ms.date: 10/02/2018
+author: walsehgal
+ms.author: v-musehg
+ms.date: 10/22/2018
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 3bf1aa6d1b9bd65c28ef99ddbac71fb75daf99e7
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: fda234b882cbf4a155881895bbf8401fe3ff3aca
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48816724"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49645094"
 ---
 # <a name="route-to-a-point-of-interest-using-azure-maps"></a>Поиск маршрута к точке интереса с помощью службы "Карты Azure"
 
@@ -80,11 +80,10 @@ ms.locfileid: "48816724"
 
     ```JavaScript
     // Instantiate map to the div with id "map"
-    var MapsAccountKey = "<your account key>";
-    var map = new atlas.Map("map", {
-        "subscription-key": MapsAccountKey
-    });
+    atlas.setSubscriptionKey("<your account key>");
+    var map = new atlas.Map("map");
     ```
+
     **atlas.Map** предоставляет элемент управления для визуальной интерактивной веб-карты и является компонентом API Azure Map Control.
 
 4. Сохраните файл и откройте его в браузере. На этом этапе у вас есть базовая карта, которую можно будет дополнительно доработать.
@@ -126,7 +125,7 @@ ms.locfileid: "48816724"
         padding: 50
     });
 
-    map.addEventListener("load", function () { 
+    map.events.add("load", function () { 
         // Add pins to the map for the start and end point of the route
         map.addPins([startPin, destinationPin], {
             name: "route-pins",
@@ -135,7 +134,7 @@ ms.locfileid: "48816724"
         });
     });
     ```
-    **map.setCameraBounds** корректирует окно карты в соответствии с координатами начальной и конечной точек. **map.addEventListener** гарантирует, что все функции карты добавляются после полной загрузки карты. **map.addPins** API в блоке прослушивателя событий добавляет точки в Map Control в виде визуальных компонентов.
+    **map.setCameraBounds** корректирует окно карты в соответствии с координатами начальной и конечной точек. **map.events.add** гарантирует, что все функции карты добавляются после полной загрузки карты. **map.addPins** API в блоке прослушивателя событий добавляет точки в Map Control в виде визуальных компонентов.
 
 3. Сохраните файл **MapRoute.html** и обновите страницу в браузере. Теперь на карте будет крупным планом показан Сиэтл. Вы можете видеть круглую голубую пометку, обозначающую начальную точку, и голубую пометку, обозначающую конечную точку.
 

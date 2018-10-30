@@ -16,18 +16,18 @@ ms.workload: infrastructure
 ms.date: 05/04/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 0f2388747d60f1911994431d8edbd57e32d5c35a
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: ce90ea447f7dcf4df1451294acf9f7fd093ad6ee
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37932659"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49408648"
 ---
 # <a name="tutorial-monitor-and-update-a-windows-virtual-machine-in-azure"></a>Руководство. Мониторинг и обновление виртуальных машин Windows в Azure
 
 Служба мониторинга Azure использует агенты для сбора данных о производительности и загрузке с виртуальных машин Azure, сохраняет эти данные в хранилище Azure и предоставляет к ним доступ через портал, модуль Azure PowerShell и Azure CLI. Управление обновлениями позволяет управлять обновлениями и исправлениями виртуальных машин Azure под управлением Windows.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Включение диагностики загрузки на виртуальной машине
@@ -278,7 +278,7 @@ Set-AzureRmVMExtension -ResourceGroupName "myResourceGroupMonitor" `
 
 Через несколько минут вы увидите новую виртуальную машину в рабочей области Log Analytics.
 
-![Колонка OMS](./media/tutorial-monitoring/tutorial-monitor-oms.png)
+![Колонка Log Analytics](./media/tutorial-monitoring/tutorial-monitor-oms.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

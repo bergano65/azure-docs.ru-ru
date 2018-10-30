@@ -1,22 +1,23 @@
 ---
-title: Краткое руководство. Распознавание речи в Objective-C на iOS с помощью пакета SDK службы "Речь" в Cognitive Services
-titleSuffix: Microsoft Cognitive Services
-description: Узнайте, как распознавать речь в Objective-C на iOS с помощью пакета SDK службы "Речь" в Cognitive Services
+title: Краткое руководство. Распознавание речи в Objective-C на iOS с помощью пакета SDK для службы "Речь"
+titleSuffix: Azure Cognitive Services
+description: Узнайте, как распознавать речь в Objective-C на iOS с помощью пакета SDK для службы "Речь".
 services: cognitive-services
 author: chlandsi
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: Speech
-ms.topic: article
-ms.date: 09/24/2018
+ms.component: speech-service
+ms.topic: quickstart
+ms.date: 10/12/2018
 ms.author: chlandsi
-ms.openlocfilehash: 3945bf0ae6edc0af0db90efca6811aeb22494592
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: 8d6ecf251bb816eb0f41352af7c9d086c4aad751
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48883438"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49469781"
 ---
-# <a name="quickstart-recognize-speech-in-objective-c-on-ios-using-the-cognitive-services-speech-sdk"></a>Краткое руководство. Распознавание речи в Objective-C на iOS с помощью пакета SDK службы "Речь" в Cognitive Services
+# <a name="quickstart-recognize-speech-in-objective-c-on-ios-using-the-speech-service-sdk"></a>Краткое руководство. Распознавание речи в Objective-C на iOS с помощью пакета SDK для службы "Речь"
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
@@ -24,18 +25,17 @@ ms.locfileid: "48883438"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Ключ подписки для службы распознавания речи. См. статью [Try the Speech service for free](get-started.md) (Пробное использование службы распознавания речи бесплатно).
+* Ключ подписки для службы распознавания речи. Дополнительные сведения см. в статье [Бесплатная пробная подписка на службу "Речь"](get-started.md).
 * Компьютер Mac с Xcode 9.4.1, установленным в качестве среды разработки iOS. Это руководство предназначено для iOS версии 11.4. Если у вас еще нет Xcode, то его можно установить из [App Store](https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12).
 
 ## <a name="get-the-speech-sdk-for-ios"></a>Получение пакета SDK службы "Речь" для iOS
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.0.0`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.0.1`.
 
 В настоящее время пакет SDK службы "Речь" для Cognitive Services для Mac и iOS распределяется под названием Cocoa Framework.
 Его можно скачать по ссылке: https://aka.ms/csspeech/iosbinary. Загрузите файл в домашний каталог.
-
 
 ## <a name="create-an-xcode-project"></a>Создание проекта Xcode 
 
@@ -60,10 +60,9 @@ ms.locfileid: "48883438"
         1. Добавьте каталог `$(SRCROOT)/..` в *Пути поиска платформы* под заголовком **Пути поиска**.
         ![Настройка путей поиска платформы](media/sdk/qs-objectivec-framework-search-paths.png)
 
-
 ## <a name="set-up-the-ui"></a>Настройка пользовательского интерфейса
 
-В примере приложения будет очень простой интерфейс: кнопка для запуска обработки файла и текстовая подпись для отображения результата.
+В примере приложения будет очень простой пользовательский интерфейс: две кнопки для запуска распознавания речи из файла или из данных, поступающих в микрофон, и текстовая подпись для отображения результата.
 Пользовательский интерфейс настраивается в элементе проекта `Main.storyboard`.
 Откройте XML-представление раскадровки, щелкнув правой кнопкой мыши запись `Main.storyboard` в дереве проекта и выбрав **Open As...**(Открыть как...) > **Source Code**(Исходный код).
 Замените автоматически сгенерированный XML на:
@@ -77,23 +76,25 @@ ms.locfileid: "48883438"
 1. Замените содержимое автоматически сгенерированного файла `ViewController.m` на:
 
    [!code-objectivec[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/objectivec-ios/helloworld/helloworld/ViewController.m#code)]
-1. Добавьте запрос на доступ к микрофону. В дереве проекта нажмите правой кнопкой мыши запись info.plist и выберите **Open As...**(Открыть как...) > **Source Code**(Исходный код). Добавьте в раздел `<dict>` следующие строки, а затем сохраните файл.
-    ```xml
-    <key>NSMicrophoneUsageDescription</key>
-
-    <string>Need microphone access for speech recognition from microphone.</string>
-    ```
 1. Замените строку `YourSubscriptionKey` своим ключом подписки.
 1. Замените строку `YourServiceRegion` значением [региона](regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
-
+1. Добавьте запрос на доступ к микрофону. В дереве проекта щелкните правой кнопкой мыши запись `Info.plist` и выберите **Open As...** (Открыть как...)  > **Source Code** (Исходный код). Добавьте в раздел `<dict>` следующие строки, а затем сохраните файл.
+    ```xml
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Need microphone access for speech recognition from microphone.</string>
+    ```
 
 ## <a name="building-and-running-the-sample"></a>Сборка и запуск примера
 
 1. Сделайте вывод отладки видимым: **View**(Представление) > **Debug Area**(Отладка области) > **Activate Console**(Активировать консоль).
-1. Соберите и выполните пример кода в симуляторе iOS, выбрав в меню **Product**(Продукт) -> **Run**(Запустить) или нажав кнопку **Play**(Воспроизвести). Для запуска на устройстве iOS подключите устройство к компьютеру, на котором производилась разработка, и выберите устройство в качестве цели выполнения. В настоящее время пакет SDK для распознавания речи поддерживает только 64-разрядную платформу iOS.
-1. После нажатия на кнопку Recognize! (Распознать!), вы должны увидеть содержимое аудиофайла "What's the weather like?" в нижней части экрана.
+1. Выберите либо симулятор iOS, либо устройство iOS, подключенное к компьютеру для разработки, в качестве места назначения для приложения из списка в меню **Продукт** -> **Место назначения**.
+1. Соберите и выполните пример кода в симуляторе iOS, выбрав в меню **Product**(Продукт) -> **Run**(Запустить) или нажав кнопку **Play**(Воспроизвести).
+В настоящее время пакет SDK для службы "Речь" поддерживает только 64-разрядные платформы iOS.
+1. Нажав кнопку Recognize (File) (Распознать (файл)) в приложении, вы должны увидеть содержимое звукового файла What's the weather like? в нижней части экрана.
 
  ![Сымитированное приложение iOS](media/sdk/qs-objectivec-simulated-app.png)
+
+1. Нажав кнопку Recognize (Microphone) (Распознать (микрофон)) в приложении и сказав несколько слов, вы должны увидеть произнесенный текст в нижней части экрана.
 
 [!INCLUDE [Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 Этот пример можно найти в папке `quickstart/objectivec-ios`.
@@ -102,3 +103,4 @@ ms.locfileid: "48883438"
 
 > [!div class="nextstepaction"]
 > [Получить примеры](speech-sdk.md#get-the-samples)
+

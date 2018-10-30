@@ -1,6 +1,6 @@
 ---
 title: Создание веб-приложений Azure с помощью Ansible (предварительная версия)
-description: Узнайте, как с помощью Ansible создать веб-приложения со средой выполнения контейнера Java 8 и Tomcat в службе приложений на платформе Linux.
+description: Узнайте, как с помощью Ansible создать веб-приложение со средой выполнения контейнера Java 8 и Tomcat в службе приложений на платформе Linux.
 ms.service: ansible
 keywords: ansible, azure, devops, bash, playbook, azure app service, web app, java
 author: tomarcher
@@ -8,29 +8,29 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 09/20/2018
-ms.openlocfilehash: 1899b1fc1e0a38d859fb3a7ce2153585579650f3
-ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
+ms.openlocfilehash: 48b4c201b2b96bd4662e8c90be7298a4f418af53
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47586713"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49426562"
 ---
-# <a name="create-azure-app-service-web-apps-using-ansible-preview"></a>Создание веб-приложений службы приложений Azure с помощью Ansible (предварительная версия)
-[Веб-приложения службы приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-web-overview) (или просто "Веб-приложения") — это служба для размещения веб-приложений, интерфейсов REST API и серверной части мобильных решений. Вы можете выполнять разработку на привычном языке: .NET, .NET Core, Java, Ruby, Node.js, PHP или Python.
+# <a name="create-azure-app-service-web-apps-by-using-ansible-preview"></a>Создание веб-приложений службы приложений Azure с помощью Ansible (предварительная версия)
+[Веб-приложения службы приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-web-overview) (или просто "Веб-приложения") размещают веб-приложения, интерфейсы REST API и серверные части мобильных решений. Вы можете выполнять разработку на привычном языке: &mdash;.NET, .NET Core, Java, Ruby, Node.js, PHP или Python.
 
-Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. В этой статье показано, как с помощью Ansible создать веб-приложения со средой выполнения Java. 
+Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. В этой статье показано, как с помощью Ansible создать веб-приложение со средой выполнения Java. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 - **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 - [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
 
 > [!Note]
-> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.7. Чтобы установить версию RC Ansible 2.7, выполните команду `sudo pip install ansible[azure]==2.7.0rc2`. Выпуск Ansible 2.7 запланирован на октябрь 2018 г. После этой даты указывать версию не нужно, так как по умолчанию будет использоваться версия 2.7. 
+> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.7. Чтобы установить версию RC Ansible 2.7, выполните команду `sudo pip install ansible[azure]==2.7.0rc2`. После выпуска Ansible 2.7 не нужно указывать здесь версию, так как версия по умолчанию будет 2.7. 
 
 ## <a name="create-a-simple-app-service"></a>Создание простой службы приложений
 В этом разделе представлен пример сборника схем Ansible, который определяет следующие ресурсы:
 - группу ресурсов, в которой будет развернут план службы и веб-приложение;
-- веб-приложения со средой выполнения контейнера Java 8 и Tomcat в службе приложений на платформе Linux.
+- веб-приложение со средой выполнения контейнера Java 8 и Tomcat в службе приложений на платформе Linux.
 
 ```
 - hosts: localhost
@@ -62,7 +62,7 @@ Ansible позволяет автоматизировать развертыва
               java_container: tomcat
               java_container_version: 8.5
 ```
-Сохраните упомянутый выше сборник схем, присвоив ему имя firstwebapp.yml.
+Сохраните упомянутый выше сборник схем, присвоив ему имя **firstwebapp.yml**.
 
 Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
 ```bash
@@ -84,18 +84,18 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=2    changed=2    unreachable=0    failed=0   
 ```
 
-## <a name="create-app-service-with-traffic-manager"></a>Создание службы приложений с помощью диспетчера трафика
-С помощью [диспетчера трафика Azure](https://docs.microsoft.com/azure/app-service/web-sites-traffic-manager) можно управлять распределением запросов от веб-клиентов между приложениями в службе приложений Azure. После добавления конечных точек службы приложений в профиль диспетчера трафика Azure этот компонент отслеживает состояние ваших приложений службы приложений (запущены, остановлены или удалены). На основании этой информации диспетчер трафика принимает решение о том, на какие из этих конечных точек нужно перенаправлять трафик.
+## <a name="create-an-app-service-by-using-traffic-manager"></a>Создание службы приложений с помощью диспетчера трафика
+С помощью [диспетчера трафика Azure](https://docs.microsoft.com/azure/app-service/web-sites-traffic-manager) можно управлять распределением запросов от веб-клиентов между приложениями в службе приложений Azure. Диспетчер трафика отслеживает состояние приложений службы при добавлении конечных точек службы приложений в профиль диспетчера трафика Azure. Состояния включают запуск, остановку и удаление. Затем диспетчер трафика может решить, какая из этих конечных точек должна получать трафик.
 
 В службе приложений приложение выполняется в [плане службы приложений](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview
 ). План службы приложений определяет набор вычислительных ресурсов, на которых выполняется веб-приложение. Вы можете управлять планом службы приложений и веб-приложением в разных группах.
 
 В этом разделе представлен пример сборника схем Ansible, который определяет следующие ресурсы:
 - группу ресурсов, в которой будет развернут план службы;
-- План обслуживания приложения
+- План службы приложений
 - дополнительную группу ресурсов, в которой будет развернуто веб-приложение;
-- веб-приложения со средой выполнения контейнера Java 8 и Tomcat в службе приложений на платформе Linux;
-- Профиль диспетчера трафика
+- веб-приложение со средой выполнения контейнера Java 8 и Tomcat в службе приложений на платформе Linux;
+- профиль диспетчера трафика;
 - конечную точку диспетчера трафика с использованием созданного веб-сайта.
 
 ```
@@ -179,7 +179,7 @@ localhost                  : ok=2    changed=2    unreachable=0    failed=0
       target_resource_id: "{{ webapp.webapps[0].id }}"
 
 ```
-Сохраните упомянутый выше сборник схем, присвоив ему имя webapp.yml, или [скачайте этот сборник](https://github.com/Azure-Samples/ansible-playbooks/blob/master/webapp.yml).
+Сохраните упомянутый выше сборник схем, присвоив ему имя **webapp.yml**, или [скачайте этот сборник](https://github.com/Azure-Samples/ansible-playbooks/blob/master/webapp.yml).
 
 Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
 ```bash

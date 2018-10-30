@@ -10,17 +10,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/24/2018
+ms.date: 10/19/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: 1cb4b1a7cfd72ea302676244a53af58e77215aa9
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: aa33db56910871891003866ef62431cfd7095d2a
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "40234473"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49954132"
 ---
-# <a name="automate-azure-stack-validation-with-powershell"></a>Автоматическая проверка Azure Stack с помощью PowerShell 
+# <a name="automate-azure-stack-validation-with-powershell"></a>Автоматическая проверка Azure Stack с помощью PowerShell
 
 Проверка как услуга (VaaS) предоставляет возможность автоматизировать запуск тестов с помощью скрипта **LaunchVaaSTests.ps1**.
 
@@ -28,12 +28,13 @@ PowerShell можно использовать для выполнения сл�
 
 - Прохождение теста.
 
-Этот скрипт охватывает четыре элемента рабочего процесса:
+Из этого руководства вы узнаете, как создать скрипт, который выполняет следующие действия:
 
-- Установка необходимых компонентов.
-- Установка и запуск локального агента.
-- Запуск категорий тестов, таких как интеграция, функциональность, надежность.
-- Предоставление отчетов о результатах прохождения каждого теста для мониторинга и создания файла отчета.
+> [!div class="checklist"]
+> * установка необходимых компонентов;
+> * установка и запуск локального агента;
+> * запуск категорий тестов, таких как интеграция, функциональность, надежность;
+> * вывод результатов теста.
 
 ## <a name="launch-the-test-pass-workflow"></a>Запуск процесса прохождения теста
 
@@ -41,43 +42,53 @@ PowerShell можно использовать для выполнения сл�
 
 2. Запустите следующий скрипт, чтобы скачать скрипт автоматизации.
 
-    ````PowerShell  
+    ```PowerShell
     New-Item -ItemType Directory -Path <VaaSLaunchDirectory>
     Set-Location <VaaSLaunchDirectory>
-    Invoke-WebRequest -Uri https://vaastestpacksprodeastus.blob.core.windows.net/packages/Microsoft.VaaS.Scripts.3.0.0.nupkg -OutFile "LaunchVaaS.zip"
+    Invoke-WebRequest -Uri https://storage.azurestackvalidation.com/packages/Microsoft.VaaS.Scripts.latest.nupkg -OutFile "LaunchVaaS.zip"
     Expand-Archive -Path ".\LaunchVaaS.zip" -DestinationPath .\ -Force
-    ````
+    ```
 
-3. Выполните следующий скрипт, используя собственные значения:
+3. Выполните следующий скрипт, используя соответствующие значения параметров:
 
-    ````PowerShell  
-    $VaaSAccountCreds = New-Object System.Management.Automation.PSCredential "<VaaSUserId>", (ConvertTo-SecureString "<VaaSUserPassword>"  -AsPlainText -Force)
-    $ServiceAdminCreds = New-Object System.Management.Automation.PSCredential "<ServiceAdminUser>", (ConvertTo-SecureString "<ServiceAdminPassword>" -AsPlainText -Force)
-    $TenantAdminCreds = New-Object System.Management.Automation.PSCredential "<TenantAdminUser>", (ConvertTo-SecureString "<TenantAdminPassword>" -AsPlainText -Force)
+    ```PowerShell
+    $VaaSAccountCreds = New-Object System.Management.Automation.PSCredential "<VaaSUserId>", (ConvertTo-SecureString "<VaaSUserPassword>" -AsPlainText -Force)
     .\LaunchVaaSTests.ps1 -VaaSAccountCreds $VaaSAccountCreds `
-        -VaaSAccountTenantId <VaaSAccountTenantId> `
-        -VaaSSolutionName <VaaSSolutionName> `
-        -VaaSTestPassName <VaaSTestPassName> `
-        -VaaSTestCategories Integration,Functional `
-        -MaxScriptWaitTimeInHours 12 `
-        -ServiceAdminCreds $ServiceAdminCreds `
-    ````
+                          -VaaSAccountTenantId <VaaSAccountTenantId> `
+                          -VaaSSolutionName <VaaSSolutionName> `
+                          -VaaSTestPassName <VaaSTestPassName> `
+                          -VaaSTestCategories Integration,Functional `
+                          -MaxScriptWaitTimeInHours 12 `
+                          -ServiceAdminUserName <AzSServiceAdminUser> `
+                          -ServiceAdminUserPassword <AzSServiceAdminPassword> `
+                          -TenantAdminUserName <AzSTenantAdminUser> `
+                          -TenantAdminUserPassword <AzSTenantAdminPassword> `
+                          -CloudAdminUserName <AzSCloudAdminUser> `
+                          -CloudAdminUserPassword <AzSCloudAdminPassword>
+    ```
 
     **Параметры**
 
     | Параметр | ОПИСАНИЕ |
     | --- | --- |
-    | VaaSUserld | Идентификатор пользователя VaaS. | 
+    | VaaSUserld | Идентификатор пользователя VaaS. |
     | VaaSUserPassword | Пароль VaaS. |
-    | ServiceAdminUser | Учетная запись администратора службы Azure Stack.  |
+    | VaaSAccountTenantId | GUID клиента VaaS. |
+    | VaaSSolutionName | Имя решения VaaS, в котором будет выполняться прохождение теста. |
+    | VaaSTestPassName | Имя рабочего процесса прохождения теста VaaS, который необходимо создать. |
+    | VaaSTestCategories | `Integration`, `Functional` или `Reliability`. Если вы используете несколько значений, разделите их запятой.  |
+    | ServiceAdminUserName | Учетная запись администратора службы Azure Stack.  |
     | ServiceAdminPassword | Пароль службы Azure Stack.  |
-    | TenantAdminUser | Администратор основного клиента.  |
+    | TenantAdminUserName | Администратор основного клиента.  |
     | TenantAdminPassword | Пароль основного клиента.  |
-    | FunctionalCategory| "Интеграция", "Функциональность" или "Надежность". Если вы используете несколько значений, разделите их запятой.  |
+    | CloudAdminUserName | Имя пользователя администратора облака.  |
+    | CloudAdminPassword | Пароль администратора облака.  |
 
-4. Просмотрите результаты теста. Дополнительные сведения о чтении результатов теста см. в статье [Мониторинг теста с помощью проверки как услуги Azure Stack](azure-stack-vaas-monitor-test.md).
+4. Просмотрите результаты теста. Другие параметры см. в статье [Мониторинг теста с помощью проверки как услуги Azure Stack](azure-stack-vaas-monitor-test.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
- - Дополнительные сведения см. в статье [Документация партнера по Azure Stack](https://docs.microsoft.com/azure/azure-stack/partner).
- - Дополнительные сведения о PowerShell в Azure Stack см. в справочнике по [модулю Azure Stack](https://docs.microsoft.com/powershell/azure/azure-stack/overview?view=azurestackps-1.3.0).
+Чтобы узнать больше о PowerShell в Azure Stack, ознакомьтесь с последними версиями модулей.
+
+> [!div class="nextstepaction"]
+> [Модуль Azure Stack](https://docs.microsoft.com/powershell/azure/azure-stack/overview?view=azurestackps-1.5.0)

@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: overview
 ms.date: 09/27/2018
 ms.author: alkohli
-ms.openlocfilehash: 5a95675d5e37adec5fb1f1542daad329484a2a4c
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 1d38b563e2a272acdbaa4ea0c2a169a04e798d12
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49092616"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49649403"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Часто задаваемые вопросы об Azure Data Box
 
@@ -217,7 +217,7 @@ A.  To speed up the copy process:
 ## <a name="audit-report"></a>Отчет аудита
 
 ### <a name="how-does-azure-data-box-service-help-support-customers-chain-of-custody-procedure"></a>Как служба Azure Data Box помогает соблюдать клиентские процедуры обеспечения сохранности?
-О.  Служба Azure Data Box предоставляет встроенные отчеты, которые можно использовать в документации по обеспечению сохранности. Журналы аудита и копирования доступны в учетной записи хранения в Azure, а полную историю заказа можно скачать со страницы заказа на портале Azure после выполнения заказа.
+О.  Служба Azure Data Box предоставляет встроенные отчеты, которые можно использовать в документации по обеспечению сохранности. Журналы аудита и копирования доступны в учетной записи хранения в Azure, а после выполнения заказа вы можете скачать [журнал заказов](data-box-portal-admin.md#download-order-history) на портале Azure.
 
 
 ### <a name="what-type-of-reporting-is-available-to-support-chain-of-custody"></a>Какие доступны отчеты для поддержки обеспечения сохранности?
@@ -230,7 +230,7 @@ A.  To speed up the copy process:
 - протокол очистки устройства Data Box (в соответствии со стандартом NIST 800 88R1) после копирования данных в учетную запись хранения Azure.
 
 ### <a name="are-the-carrier-tracking-logs--from-upsdhl-available"></a>Доступны ли журналы отслеживания от перевозчика (UPS или DHL)? 
-О.  Журналы отслеживания перевозчика включаются в журнал аудита Data Box. Этот отчет будет вам доступен после того, как устройство вернется в центр обработки данных Azure и будет выполнена очистка его дисков. Если возникнет срочная потребность в этих данных, вы можете получить сведения об отслеживании на веб-сайте перевозчика, указав номер отслеживания.
+О.  Журналы отслеживания перевозчика включаются в журнал заказов Data Box. Этот отчет будет вам доступен после того, как устройство вернется в центр обработки данных Azure и будет выполнена очистка его дисков. Если возникнет срочная потребность в этих данных, вы можете получить сведения об отслеживании на веб-сайте перевозчика, указав номер отслеживания.
 
 ### <a name="can-i-transport-the-data-box-to-azure-datacenter"></a>Могу ли я сам привезти Data Box в центр обработки данных Azure? 
 О.  Нет. В настоящее время центр обработки данных Azure не принимает доставки Data Box от клиентов или других перевозчиков, кроме UPS или DHL.

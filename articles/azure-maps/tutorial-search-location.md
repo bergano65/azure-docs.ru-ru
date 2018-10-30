@@ -1,20 +1,20 @@
 ---
 title: Поиск с помощью службы "Карты Azure" | Документация Майкрософт
 description: Поиск ближайшей точки интереса с помощью службы "Карты Azure"
-author: dsk-2015
-ms.author: dkshir
-ms.date: 10/02/2018
+author: walsehgal
+ms.author: v-musehg
+ms.date: 10/22/2018
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 761674c5839f0513532355116db07604f9e9d9dc
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: 10fb30b77cc3cd18cbb6b3def9682349474fba71
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48816826"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49645820"
 ---
 # <a name="search-nearby-points-of-interest-using-azure-maps"></a>Поиск ближайшей точки интереса с помощью службы "Карты Azure"
 
@@ -116,11 +116,10 @@ API элементов управления картой — это удобна
 
     ```JavaScript
     // Instantiate map to the div with id "map"
-    var MapsAccountKey = "<your account key>";
-    var map = new atlas.Map("map", {
-        "subscription-key": MapsAccountKey
-    });
+    atlas.setSubscriptionKey("<your account key>");
+    var map = new atlas.Map("map");
     ```
+
     Этот сегмент инициирует API Map Control для ключа учетной записи службы Azure Maps. **Atlas** — это пространство имен, которое содержит API и связанные визуальные компоненты. **atlas.Map** предоставляет элемент управления для визуальной интерактивной веб-карты.
 
 4. Сохраните изменения в файл и откройте HTML-страницу в браузере. Это самая простая карта, которую можно создать, вызвав **atlas.map**, используя ключ учетной записи.
@@ -148,14 +147,14 @@ API элементов управления картой — это удобна
     var client = new atlas.service.Client(MapsAccountKey);
     ```
 
-3. Все функции карты должны добавляться после ее загрузки. Это можно настроить, поместив функции карты в блок eventListener. Чтобы гарантировать добавление функций после полной загрузки карты, добавьте приведенные ниже строки кода. Это позволит добавить блок [eventListener](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#addeventlistener) к карте.
+3. Все функции карты должны добавляться после ее загрузки. Это можно настроить, поместив функции карты в блок eventListener. Чтобы гарантировать добавление функций после полной загрузки карты, добавьте приведенные ниже строки кода. Это позволит добавить блок [eventListener](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) к карте.
     
     ```JavaScript
-         map.addEventListener("load", function() {
+         map.events.add("load", function() {
          });
     ```
 
-4. Добавьте приведенный ниже блок сценария **в блок загрузки карты eventListener**, чтобы создать запрос. В нем используется служба поиска нечетких соответствий, которая является базовым API поиска Службы поиска. Служба поиска нечетких соответствий обрабатывает большинство нечетких входных данных, например любую комбинацию маркеров адресов и точек интереса (POI). Она ищет близлежащие бензозаправочные станции в пределах указанного радиуса. Ответ преобразуется в формат GeoJSON, а затем — в точечные объекты, которые добавляются на карту в виде закреплений. Последняя часть сценария добавляет границы камеры для карты с использованием свойства [setCameraBounds](https://docs.microsoft.com/javascript/api/azure-maps-control/models.cameraboundsoptions?view=azure-iot-typescript-latest).
+4. Добавьте приведенный ниже блок сценария **в события загрузки карты**, чтобы создать запрос. В нем используется служба поиска нечетких соответствий, которая является базовым API поиска Службы поиска. Служба поиска нечетких соответствий обрабатывает большинство нечетких входных данных, например любую комбинацию маркеров адресов и точек интереса (POI). Она ищет близлежащие бензозаправочные станции в пределах указанного радиуса. Ответ преобразуется в формат GeoJSON, а затем — в точечные объекты, которые добавляются на карту в виде закреплений. Последняя часть сценария добавляет границы камеры для карты с использованием свойства [setCameraBounds](https://docs.microsoft.com/javascript/api/azure-maps-control/models.cameraboundsoptions?view=azure-iot-typescript-latest).
 
     ```JavaScript
 
@@ -190,8 +189,8 @@ API элементов управления картой — это удобна
             map.setCameraBounds({
                bounds: geojsonResponse.getGeoJsonResults().bbox,
                padding: 50
-            );
-        });
+            });
+    });
     ```
 5. Сохраните файл **MapSearch.html** и обновите страницу в браузере. Теперь на карте будет крупным планом показан Сиэтл, а синие пометки указывают расположение бензозаправочных станций в области.
 
@@ -254,7 +253,7 @@ API элементов управления картой — это удобна
 > * Создание веб-страницы с помощью API Map Control.
 > * Использование службы поиска для поиска ближайшего объекта.
 
-Пример кода для этого руководства приведен здесь:
+Пример кода, используемый при работе с этим руководством, приведен здесь:
 
 > [Поиск местоположения с помощью Azure Maps](https://github.com/Azure-Samples/azure-maps-samples/blob/master/src/search.html)
 

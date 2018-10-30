@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 05/08/2018
 ms.author: sethm
 ms.reviewer: ''
-ms.openlocfilehash: 5e96c731496d79ca081091e2059a35545f963bd6
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 0ebf69dd3436a6b1010d4184b2063317d14547dd
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49078642"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49957639"
 ---
 # <a name="remediate-common-issues-for-azure-stack-pki-certificates"></a>Устранение распространенных проблем с сертификатами PKI Azure Stack
 Сведения в этой статье помогут вам понять и устранить распространенные проблемы с сертификатами PKI Azure Stack. Вы можете обнаруживать проблемы, [проверяя сертификаты PKI Azure Stack](azure-stack-validate-pki-certs.md) с помощью средства проверки готовности Azure Stack. Средство проверяет, чтобы сертификаты соответствовали требованиям PKI к развертыванию и смене секретов Azure Stack, и записывает результаты в файл [report.json](azure-stack-validation-report.md).  
@@ -69,12 +69,13 @@ ms.locfileid: "49078642"
 **Исправление.** Повторно экспортируйте сертификат, выполнив действия, описанные в статье о [подготовке сертификатов PKI Azure Stack к развертыванию](azure-stack-prepare-pki-certs.md), и выберите параметр **Включить, по возможности, все сертификаты в путь сертификации**. Убедитесь, что для экспорта выбран только конечный сертификат.
 
 ## <a name="fix-common-packaging-issues"></a>Устранение распространенных неполадок с упаковкой
-Средство AzsReadinessChecker может импортировать, а затем экспортировать PFX-файл, чтобы устранить неполадки с упаковкой, включая: 
+AzsReadinessChecker содержит вспомогательный командлет Repair-AzsPfxCertificate, который может импортировать и экспортировать файл PFX для исправления типичных проблем с созданием пакетов, включая следующие: 
  - *Алгоритм шифрования PFX-файлов* не соответствует TripleDES-SHA1.
  - Отсутствие атрибута локального компьютера в *закрытом ключе*.
  - Незавершенная или неправильная *цепочка сертификатов*. (Локальный компьютер должен содержать цепочки сертификатов, если их нет в пакете PFX.) 
  - *Другие сертификаты*.
-Однако, если вам нужно создать новый CSR и повторно выдать сертификат, средство AzsReadinessChecker не поможет. 
+ 
+Repair-AzsPfxCertificate не подходит для случаев, когда нужно создать новый CSR и повторно выпустить сертификат. 
 
 ### <a name="prerequisites"></a>Предварительные требования
 На компьютере, где выполняется средство, должны быть установлены следующие обязательные компоненты: 
@@ -96,9 +97,20 @@ ms.locfileid: "49078642"
    - Для параметра *-PfxPath* укажите путь к PFX-файлу, с которым вы работаете.  В следующем примере используется путь *.\certificates\ssl.pfx*.
    - Для параметра *-ExportPFXPath* укажите расположение и имя PFX-файла для экспорта.  В следующем примере указан путь *.\certificates\ssl_new.pfx*.
 
-   > `Start-AzsReadinessChecker -PfxPassword $password -PfxPath .\certificates\ssl.pfx -ExportPFXPath .\certificates\ssl_new.pfx`  
+   > `Repair-AzsPfxCertificate -PfxPassword $password -PfxPath .\certificates\ssl.pfx -ExportPFXPath .\certificates\ssl_new.pfx`  
 
-4. После завершения работы средства просмотрите выходные данные, чтобы узнать, успешно ли выполнена операция: ![результаты](./media/azure-stack-remediate-certs/remediate-results.png).
+4. После завершения работы средства проверьте выходные данные, чтобы убедиться в успешном выполнении: 
+````PowerShell
+Repair-AzsPfxCertificate v1.1809.1005.1 started.
+Starting Azure Stack Certificate Import/Export
+Importing PFX .\certificates\ssl.pfx into Local Machine Store
+Exporting certificate to .\certificates\ssl_new.pfx
+Export complete. Removing certificate from the local machine store.
+Removal complete.
+
+Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
+Repair-AzsPfxCertificate Completed
+````
 
 ## <a name="next-steps"></a>Дополнительная информация
 [Система безопасности для инфраструктуры Azure Stack](azure-stack-rotate-secrets.md)

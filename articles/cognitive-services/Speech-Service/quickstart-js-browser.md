@@ -1,31 +1,32 @@
 ---
-title: Краткое руководство. Распознавание речи в JavaScript в браузере с помощью пакета SDK для службы "Речь" в Cognitive Services
-titleSuffix: Microsoft Cognitive Services
-description: Узнайте, как распознавать речь в JavaScript в браузере с помощью пакета SDK для службы "Речь" в Cognitive Services.
+title: Краткое руководство. Распознавание речи в JavaScript в браузере с помощью пакета SDK для службы "Речь"
+titleSuffix: Azure Cognitive Services
+description: Узнайте, как распознавать речь в JavaScript в браузере, используя пакет SDK для службы "Речь"
 services: cognitive-services
 author: fmegen
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: Speech
-ms.topic: article
-ms.date: 09/24/2018
+ms.component: speech-service
+ms.topic: quickstart
+ms.date: 10/12/2018
 ms.author: fmegen
-ms.openlocfilehash: 75dcda643741e3aeb1238f82128e4c5b058be840
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: b01746c20dbef7726f129badac045c1fb440f602
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48883664"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49467469"
 ---
-# <a name="quickstart-recognize-speech-in-javascript-in-a-browser-using-the-cognitive-services-speech-sdk"></a>Краткое руководство. Распознавание речи в JavaScript в браузере с помощью пакета SDK для службы "Речь" в Cognitive Services
+# <a name="quickstart-recognize-speech-in-javascript-in-a-browser-using-the-speech-service-sdk"></a>Краткое руководство. Распознавание речи в JavaScript в браузере с помощью пакета SDK для службы "Речь"
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Из этой статьи вы узнаете, как создать веб-сайт, использующий привязку JavaScript из пакета SDK для службы "Речь" в Cognitive Services, который будет преобразовывать речь в текст.
-Приложение основано на пакете SDK для службы "Речь" в Microsoft Cognitive Services ([скачать версию 1.0.0](https://aka.ms/csspeech/jsbrowserpackage)).
+Приложение основано на пакете SDK для службы "Речь" в Microsoft Cognitive Services ([скачать версию 1.0.1](https://aka.ms/csspeech/jsbrowserpackage)).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Ключ подписки для службы распознавания речи. См. статью [Try the Speech service for free](get-started.md) (Пробное использование службы распознавания речи бесплатно).
+* Ключ подписки для службы распознавания речи. Дополнительные сведения см. в статье [Бесплатная пробная подписка на службу "Речь"](get-started.md).
 * Компьютер Windows или Mac с рабочим микрофоном.
 * Текстовый редактор.
 * Текущая версия Chrome или Microsoft Edge.

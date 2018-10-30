@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 09/07/2018
+ms.date: 10/18/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: d48374d7919be3d141ea199e8238a220dbfe0332
-ms.sourcegitcommit: 3150596c9d4a53d3650cc9254c107871ae0aab88
+ms.openlocfilehash: a3fc3e0cc30b379c84ac0ba12f733d2db4e41587
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47419531"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945796"
 ---
 # <a name="tutorial-create-an-azure-resource-manager-template-for-deploying-an-encrypted-storage-account"></a>Руководство. Создание шаблона Azure Resource Manager для развертывания зашифрованной учетной записи хранения
 
@@ -40,8 +40,7 @@ ms.locfileid: "47419531"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* [Visual Studio Code](https://code.visualstudio.com/).
-* Расширение средств Resource Manager. Для установки см. раздел [Создание шаблона Azure Resource Manager c помощью Visual Studio Code](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
+* [Visual Studio Code](https://code.visualstudio.com/) с [расширением Resource Manager Tools](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
@@ -56,7 +55,7 @@ ms.locfileid: "47419531"
 3. Чтобы открыть файл, выберите **Открыть**.
 4. Выберите **Файл**>**Сохранить как**, чтобы сохранить файл в качестве **azuredeploy.json** на локальном компьютере.
 
-## <a name="understand-the-format"></a>Общие сведения о формате
+## <a name="understand-the-schema"></a>Изучение схемы
 
 Из VS Code сверните шаблон до корневого уровня. Имеется простейшая структура со следующими элементами.
 
@@ -69,7 +68,7 @@ ms.locfileid: "47419531"
 * Параметр **resources** указывает типы ресурсов, которые развертываются или обновляются в группе ресурсов.
 * Параметр **outputs** указывает значения, возвращаемые после развертывания.
 
-## <a name="use-parameters-in-template"></a>Использование параметров в шаблоне
+## <a name="use-parameters"></a>Использование параметров
 
 Параметры позволяют настраивать развертывание путем предоставления значений, предназначенных для конкретной среды. Параметры, определенные в шаблоне, используются при задании значений для учетной записи хранения.
 
@@ -90,7 +89,7 @@ ms.locfileid: "47419531"
 "name": "[parameters('storageAccountType')]"
 ```
 
-## <a name="use-variables-in-template"></a>Использование переменных в шаблоне
+## <a name="use-variables"></a>Использование переменных
 
 Переменные позволяют создавать значения, которые могут использоваться в разных частях шаблона. Переменные помогают уменьшить сложность шаблонов.
 
@@ -117,9 +116,7 @@ ms.locfileid: "47419531"
 
     ![Учетная запись хранения ссылки на шаблон Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-resources-reference-storage-accounts.png)
 
-    ресурс, менеджер, шаблон, ресурсы, ссылка, хранилище, учетные записи
-1. Изучите сведения, связанные с шифрованием.  
-1. В элементе свойств для определения ресурсов учетной записи хранения добавьте следующий код json.
+4. Найдите информацию о шифровании в определениях.  
 
     ```json
     "encryption": {
@@ -131,11 +128,9 @@ ms.locfileid: "47419531"
         }
     }
     ```
-    Эта часть включает функцию шифрования службы хранилища больших двоичных объектов.
-
-В Visual Studio Code измените шаблон, чтобы окончательный элемент ресурсов выглядит как:
-
-![Зашифрованные ресурсы учетной записи хранения шаблона Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-encrypted-storage-resources.png)
+5. В Visual Studio Code измените шаблон, чтобы окончательный элемент ресурсов выглядит как:
+    
+    ![Зашифрованные ресурсы учетной записи хранения шаблона Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-encrypted-storage-resources.png)
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 

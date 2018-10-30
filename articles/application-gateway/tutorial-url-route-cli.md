@@ -7,15 +7,15 @@ manager: jpconnock
 ms.service: application-gateway
 ms.topic: tutorial
 ms.workload: infrastructure-services
-ms.date: 7/14/2018
+ms.date: 10/25/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 2402dd2adb27abb784c34a2a3569e8f6e4a60f77
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f683d63683e903d947d0789a16a8efa48196d36a
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46954795"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50026200"
 ---
 # <a name="tutorial-route-web-traffic-based-on-the-url-using-the-azure-cli"></a>Руководство. Маршрутизация веб-трафика на основе URL-адресов с помощью Azure CLI
 
@@ -30,10 +30,9 @@ ms.locfileid: "46954795"
 > * создание прослушивателей, сопоставления URL-путей и правил;
 > * создание масштабируемых серверных пулов.
 
-
 ![Пример маршрутизации для URL-адресов](./media/tutorial-url-route-cli/scenario.png)
 
-При необходимости инструкции из этого руководства можно выполнить с помощью [Azure PowerShell](tutorial-url-route-powershell.md).
+Вы также можете выполнить инструкции из этого руководства, используя [Azure PowerShell](tutorial-url-route-powershell.md) или [портал Azure](create-url-route-portal.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

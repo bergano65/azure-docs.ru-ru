@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: overview
-ms.date: 09/24/2018
+ms.date: 10/19/2018
 ms.author: alkohli
-ms.openlocfilehash: 49c2258100e99742bcb2e22fbce7f05b69c70ef6
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 1b228a66f2d59b3ff252df266783f7bd5d27139e
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49090728"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49645445"
 ---
 # <a name="use-the-azure-portal-to-administer-your-data-box"></a>Использование портала Azure для администрирования Data Box
 
@@ -48,7 +48,7 @@ ms.locfileid: "49090728"
 
     ![Порядок клонирования заказа 1](media/data-box-portal-admin/clone-order1.png)
 
-2.  Все сведения о заказе остаются теми же. Имя заказа — это первоначальное имя с добавлением *-Clone*. Установите флажок, чтобы подтвердить, что вы просмотрели сведения о конфиденциальности. Нажмите кнопку **Создать**.    
+2.  Все сведения о заказе остаются теми же. Имя заказа — это первоначальное имя с добавлением *-Clone*. Установите флажок, чтобы подтвердить, что вы просмотрели сведения о конфиденциальности. Нажмите кнопку **Создать**.
 
 Клон создается в течение нескольких минут, после чего портал обновляется и отображается новый заказ.
 
@@ -72,6 +72,7 @@ ms.locfileid: "49090728"
 Если отображение дисплея E-ink вашего Data Box не работает и не отображается транспортная этикетка для возврата, необходимо ее загрузить. 
 
 Выполните следующие действия, чтобы скачать транспортную этикетку.
+
 1.  Выберите **Обзор > Скачать транспортную этикетку**. Этот параметр доступен только после отправки устройства. 
 
     ![Скачивание транспортной этикетки](media/data-box-portal-admin/download-shipping-label.png)
@@ -109,6 +110,77 @@ ms.locfileid: "49090728"
     ![Изменение сведений об уведомлении 2](media/data-box-portal-admin/edit-notification-details2.png)
 
 
+## <a name="download-order-history"></a>Скачивание журнала заказов
+
+Как только заказ Data Box будет завершен, данные на дисках устройства будут удалены. После очистки устройства вы сможете скачать журнал заказов на портале Azure.
+
+Чтобы скачать журнал заказов, сделайте следующее.
+
+1. В заказе Data Box выберите **Обзор**. Убедитесь, что заказ выполнен. Если заказ и очистка устройства выполнены, выберите **Сведения о заказе**. Доступен параметр **Скачать журнал заказов**.
+
+    ![Скачивание журнала заказов](media/data-box-portal-admin/download-order-history-1.png)
+
+2. Щелкните **Скачать журнал заказов**. В скачанном журнале вы увидите запись журналов отслеживания от перевозчика. Если вы прокрутите страницу этого журнала до конца, то увидите ссылки на такие элементы:
+    
+    - **Журналы копирования** — содержат список файлов с ошибками, возникшими при копировании данных из Data Box в учетную запись хранения Azure.
+    - **Журналы аудита** — содержат сведения о включении устройства Data Box и общем доступе к устройству Data Box за пределами центра обработки данных Azure.
+    - **Файлы спецификации** — содержат список файлов (также известный как манифест файла), который можно скачать во время **подготовки к отправке**, а также имена, размеры и контрольные суммы файла.
+
+        ```
+        -------------------------------
+        Microsoft Data Box Order Report
+        -------------------------------
+        
+        Name                                               : eastusdryrun                                      
+        StartTime(UTC)                                     : 9/6/2018 12:54:47 PM +00:00                       
+        DeviceType                                         : ImolaPod                                          
+        
+        -------------------
+        Data Box Activities
+        -------------------
+        
+        Time(UTC)             | Activity                       | Status          | Description                                                                                                                                           
+        
+        9/6/2018 12:54:51 PM  | OrderCreated         | Completed  |                                                                                                                              
+        9/11/2018 8:57:38 PM  | DevicePrepared       | Completed  |                                                                                                                                                       
+        9/12/2018 7:28:15 PM  | ShippingToCustomer   | InProgress | Pickup Scan. Local Time : 9/12/2018 2:52:31 PM at Chantilly                                                                                           
+        9/13/2018 2:33:04 AM  | ShippingToCustomer   | InProgress | Departure Scan. Local Time : 9/12/2018 9:00:00 PM at Chantilly                                                                                                                                                                                                                                                              
+        9/13/2018 12:40:31 PM | ShippingToCustomer   | InProgress | Arrival Scan. Local Time : 9/13/2018 5:00:00 AM at Oakland                                                                                            
+        9/13/2018 2:42:10 PM  | ShippingToCustomer   | InProgress | Departure Scan. Local Time : 9/13/2018 6:08:00 AM at Oakland                                                                                          
+        9/13/2018 3:42:12 PM  | ShippingToCustomer   | InProgress | Destination Scan. Local Time : 9/13/2018 8:14:08 AM at Sunnyvale                                                                                      
+        9/13/2018 4:43:05 PM  | ShippingToCustomer   | InProgress | Destination Scan. Local Time : 9/13/2018 8:56:54 AM at Sunnyvale                                                                                      
+        9/13/2018 4:43:05 PM  | ShippingToCustomer   | InProgress | Out For Delivery Today. Local Time : 9/13/2018 9:11:21 AM at Sunnyvale                                                                                
+        9/13/2018 5:43:07 PM  | ShippingToCustomer   | Completed  | Delivered. Local Time : 9/13/2018 9:44:17 AM at SUNNYVALE                                                                                             
+        9/14/2018 11:48:35 PM | ShippingToDataCenter | InProgress | Pickup Scan. Local Time : 9/14/2018 3:55:37 PM at Sunnyvale                                                                                                                                                                                 
+        9/15/2018 1:52:35 AM  | ShippingToDataCenter | InProgress | Arrival Scan. Local Time : 9/14/2018 6:31:00 PM at San Jose                                                                                           
+        9/15/2018 2:52:39 AM  | ShippingToDataCenter | InProgress | Departure Scan. Local Time : 9/14/2018 7:17:00 PM at San Jose                                                                                                                                                                             
+        9/17/2018 8:23:31 AM  | ShippingToDataCenter | InProgress | Destination Scan. Local Time : 9/17/2018 4:14:37 AM at Chantilly                                                                                      
+        9/17/2018 12:24:42 PM | ShippingToDataCenter | InProgress | Loaded on Delivery Vehicle. Local Time : 9/17/2018 7:45:36 AM at Chantilly                                                                            
+        9/17/2018 1:25:11 PM  | ShippingToDataCenter | InProgress | Out For Delivery Today. Local Time : 9/17/2018 8:27:11 AM at Chantilly                                                                                
+        9/17/2018 2:25:51 PM  | ShippingToDataCenter | Completed | Delivered. Local Time : 9/17/2018 9:56:32 AM at STERLING                                                                                              
+        9/18/2018 9:55:41 PM  | DeviceBoot           | Completed | Appliance booted up successfully                                                                                                                      
+        9/18/2018 11:00:25 PM | DataCopy             | Started   |                                                                                                                                                       
+        9/18/2018 11:01:33 PM | DataCopy             | Completed | Copy Completed.                                                                                                                                       
+        9/18/2018 11:20:58 PM | SecureErase          | Started   |                                                                                                                                                       
+        9/18/2018 11:28:46 PM | SecureErase          | Completed | Azure Data Box:BY506B4B616700 has been sanitized according to NIST 800 -88 Rev 1.                                                                     
+        
+        ----------------------
+        Data Box Job Log Links
+        ----------------------
+        
+        Account Name         : eastusdryrun                                         
+        Copy Logs Path       : copylog/copylogd695869a2a294396b7b903296c208388.xml                                                                                                                                                     
+        Audit Logs Path      : azuredatabox-chainofcustodylogs\3b4cf163-f1af-475c-a391-f8afea3fa327\by506b4b616700                                                                                                                     
+        BOM Files Path       : azuredatabox-chainofcustodylogs\3b4cf163-f1af-475c-a391-f8afea3fa327\by506b4b616700
+        ```
+Затем вы можете войти в свою учетную запись хранения и просмотреть журналы копирования.
+
+![Вход в учетные записи хранения](media/data-box-portal-admin/logs-in-storage-acct-2.png)
+
+Вы также можете просмотреть журналы обеспечения сохранности, которые включают журналы аудита и файлы спецификации.
+
+![Вход в учетные записи хранения](media/data-box-portal-admin/logs-in-storage-acct-1.png)
+
 ## <a name="view-order-status"></a>Просмотр состояния заказа
 
 При изменении состояния устройства на портале вы получите уведомление по электронной почте.
@@ -125,7 +197,7 @@ ms.locfileid: "49090728"
 |Завершено       |Заказ успешно выполнен.<br> Прежде чем удалять локальные данные с серверов, убедитесь, что данные находятся в Azure.         |
 |Завершено с ошибками| Копирование данных завершено, но во время процесса произошли ошибки. <br> Просмотрите журналы копирования, используя путь, указанный на портале Azure.   |
 |Canceled            |Ваш заказ отменен. <br> Либо вы отменили заказ, либо произошла ошибка и служба отменила заказ. Если заказ не может быть выполнен за 90 дней, он также отменяется, и вы получаете уведомление.     |
-|Очистка | Данные на дисках устройства стираются. Очистка устройства считается завершенной, когда отчет журнала заказов доступен на портале Azure.|
+|Очистка | Данные на дисках устройства стираются. Очистка устройства считается завершенной, когда журнал заказов доступен для скачивания на портале Azure.|
 
 
 

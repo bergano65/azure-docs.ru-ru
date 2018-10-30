@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 10/16/2018
+ms.date: 10/23/2018
 ms.author: jeffgilb
 ms.reviewer: quying
-ms.openlocfilehash: ea3e6c2e616f2618200c1e3904786abd72bbd75d
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: 84aaa5534c629554074544b4bb56ae8da8825397
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49376811"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49986461"
 ---
 # <a name="tutorial-offer-highly-available-mysql-databases"></a>Руководство. Предоставление высокодоступных баз данных MySQL
 
@@ -65,16 +65,15 @@ ms.locfileid: "49376811"
 - общедоступный IP-адрес (для основной виртуальной машины кластера MySQL);
 - три виртуальные машины Linux для размещения кластера MySQL.
 
-1. Войдите на портал администрирования.
-    - Для интегрированного развертывания системы адрес портала может отличаться в зависимости от региона, в котором находится решение, и имени внешнего домена. У него будет формат https://adminportal.&lt.*регион*&gt;.&lt;*полное доменное имя*&gt;.
-    - Если вы используете Пакет средств разработки Azure Stack, то адрес портала — [https://adminportal.local.azurestack.external](https://adminportal.local.azurestack.external).
+1. 
+[!INCLUDE [azs-admin-portal](../../includes/azs-admin-portal.md)]
 
 2. Выберите **\+** **Создать ресурс** > **Вычисление**, а затем **MySQL with Replication** (MySQL с репликацией).
 
-   ![Развертывание настраиваемого шаблона](media/azure-stack-tutorial-mysqlrp/createcluster1.png)
+   ![Развертывание настраиваемого шаблона](media/azure-stack-tutorial-mysqlrp/1.png)
 
 3. Укажите основные сведения о развертывании на странице **Основные**. Просмотрите значения по умолчанию, при необходимости внесите изменения и нажмите кнопку **ОК**.<br><br>Как минимум укажите следующее.
-   - Имя развертывания (по умолчанию — mysql).
+   - Имя развертывания (по умолчанию — mymysql).
    - Пароль корневого каталога приложения. Укажите буквенно-цифровой пароль из 12 знаков **без специальных символов**.
    - Имя базы данных приложения (по умолчанию — bitnami).
    - Число создаваемых виртуальных машин реплик базы данных MySQL (по умолчанию — 2).
@@ -82,22 +81,22 @@ ms.locfileid: "49376811"
    - Выберите группу ресурсов или создайте новую.
    - Выберите расположение (по умолчанию для ASDK оно является локальным).
 
-   ![Основные сведения о развертывании](media/azure-stack-tutorial-mysqlrp/createcluster2.png)
+   [![](media/azure-stack-tutorial-mysqlrp/2-sm.PNG "Основы развертывания")](media/azure-stack-tutorial-mysqlrp/2-lg.PNG#lightbox)
 
 4. На странице **Environment Configuration** (Настройка среды) укажите следующие сведения и нажмите кнопку **ОК**. 
    - Пароль или открытый ключ SSH, который будет использоваться для аутентификации Secure Shell (SSH). Если используется пароль, он должен содержать буквы, цифры и **может** включать специальные символы.
    - Размер виртуальной машины (по умолчанию — Standard D1 v2).
    - Размер диска с данными в ГБ. После этого нажмите кнопку **ОК**.
 
-   ![Настройка среды](media/azure-stack-tutorial-mysqlrp/createcluster3.png)
+   [![](media/azure-stack-tutorial-mysqlrp/3-sm.PNG "Настройка среды")](media/azure-stack-tutorial-mysqlrp/3-lg.PNG#lightbox)
 
 5. Просмотрите **сводные сведения** о развертывании. При необходимости можно скачать настроенный шаблон и параметры, а затем нажать кнопку **ОК**.
 
-   ![Сводка](media/azure-stack-tutorial-mysqlrp/createcluster4.png)
+   [![](media/azure-stack-tutorial-mysqlrp/4-sm.PNG "Сводка")](media/azure-stack-tutorial-mysqlrp/4-lg.PNG#lightbox)
 
 6. Нажмите кнопку **Создать** на странице **Купить**, чтобы начать развертывание.
 
-   ![Купить](media/azure-stack-tutorial-mysqlrp/createcluster4.png)
+   ![Купить](media/azure-stack-tutorial-mysqlrp/5.png)
 
     > [!NOTE]
     > Развертывание займет около часа. Перед продолжением убедитесь, что развертывание завершено и кластер MySQL полностью настроен. 
@@ -110,11 +109,11 @@ ms.locfileid: "49376811"
 
 1. На портале администратора перейдите к группе ресурсов, созданной при развертывании кластера MySQL, и выберите группу безопасности сети (**default-subnet-sg**):
 
-   ![открыт](media/azure-stack-tutorial-mysqlrp/nsg1.png)
+   ![открыт](media/azure-stack-tutorial-mysqlrp/6.png)
 
 2. Выберите **Правила безопасности для входящего трафика**, а затем щелкните **Добавить**.<br><br>Введите значение **3306** в поле **Диапазон портов назначения** и при желании добавьте описание в поля **Имя** и **Описание**. Щелкните "Добавить", чтобы закрыть диалоговое окно с правилом безопасности для входящего трафика.
 
-   ![открыт](media/azure-stack-tutorial-mysqlrp/nsg2.png)
+   ![открыт](media/azure-stack-tutorial-mysqlrp/7.png)
 
 ### <a name="configure-external-access-to-the-mysql-cluster"></a>Настройка внешнего доступа к кластеру MySQL
 Перед добавлением кластера MySQL в качестве узла размещения сервера MySQL Azure Stack необходимо включить внешний доступ.
@@ -167,9 +166,8 @@ ms.locfileid: "49376811"
 > [!NOTE]
 > Выполните эти шаги с пользовательского портала Azure Stack в качестве пользователя клиента с подпиской, обеспечивающей возможности сервера MySQL (службу Microsoft.MySQLAdapter).
 
-1. Войдите на пользовательский портал.
-    - Для интегрированного развертывания системы адрес портала может отличаться в зависимости от региона, в котором находится решение, и имени внешнего домена. У него будет формат https://portal.&lt.*регион*&gt;.&lt;*полное доменное имя*&gt;.
-    - Если вы используете Пакет средств разработки Azure Stack (ASDK), то адрес пользовательского портала — [https://portal.local.azurestack.external](https://portal.local.azurestack.external).
+1. 
+[!INCLUDE [azs-user-portal](../../includes/azs-user-portal.md)]
 
 2. Выберите **\+****Создать ресурс** > **Данные \+ Хранилище**, а затем **База данных MySQL**.<br><br>Предоставьте необходимую информацию о свойствах базы данных, включая имя, параметры сортировки, используемую подписку и местоположение для развертывания. 
 

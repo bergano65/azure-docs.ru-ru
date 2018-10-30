@@ -1,20 +1,20 @@
 ---
 title: Использование нескольких маршрутов с помощью службы "Карты Azure" | Документация Майкрософт
 description: Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
-author: dsk-2015
-ms.author: dkshir
-ms.date: 10/02/2018
+author: walsehgal
+ms.author: v-musehg
+ms.date: 10/22/2018
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 340bf83f07b9e730cc43baccc60a39f5ba1f9942
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: 864f662cd6be3c5929166db92f2dad92b9c6586e
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48815313"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49648213"
 ---
 # <a name="find-routes-for-different-modes-of-travel-using-azure-maps"></a>Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
 
@@ -74,15 +74,16 @@ ms.locfileid: "48815313"
     </html>
     ```
     Заголовок HTML внедряет расположения ресурсов для CSS-файлов и файлов JavaScript из библиотеки службы "Карты Azure". Сегмент *script* в тексте HTML-файла будет содержать встроенный код JavaScript для карты.
+
 3. Добавьте следующий код JavaScript в блок *script* HTML-файла. Замените строку **\<your account key\>** первичным ключом, скопированным из учетной записи службы "Карты Azure". Если вы не укажите на карте конкретный маршрут, отобразится представление целого мира. Этот код по умолчанию задает центральную точку для карты и объявляет уровень масштаба, чтобы вы имели возможность сосредоточиться на конкретной области.
 
     ```JavaScript
     // Instantiate map to the div with id "map"
-    var MapsAccountKey = "<your account key>";
+    var mapCenterPosition = [-73.985708, 40.75773];
+    atlas.setSubscriptionKey("<your account key>");
     var map = new atlas.Map("map", {
-        "subscription-key": MapsAccountKey
-         center: [-118.2437, 34.0522],
-         zoom: 12
+      center: mapCenterPosition,
+      zoom: 11
     });
     ```
     **atlas.Map** предоставляет элемент управления для визуальной интерактивной веб-карты и является компонентом API Azure Map Control.
@@ -93,10 +94,10 @@ ms.locfileid: "48815313"
 
 ## <a name="visualize-traffic-flow"></a>Визуализация потока трафика
 
-1. Добавьте отображение потока трафика на карту.  **map.addEventListener** гарантирует, что все функции карты добавляются после полной загрузки карты.
+1. Добавьте отображение потока трафика на карту.  **map.events.add** гарантирует, что все функции карты добавляются после полной загрузки карты.
 
     ```JavaScript
-    map.addEventListener("load", function() {
+    map.events.add("load", function() {
         // Add Traffic Flow to the Map
         map.setTraffic({
             flow: "relative"
@@ -146,7 +147,7 @@ ms.locfileid: "48815313"
         padding: 100
     });
     
-    map.addEventListener("load", function() { 
+    map.events.add("load", function() { 
         // Add pins to the map for the start and end point of the route
         map.addPins([startPin, destinationPin], {
             name: "route-pins",
@@ -155,7 +156,7 @@ ms.locfileid: "48815313"
         });
     });
     ```
-    Вызов **map.setCameraBounds** корректирует окно карты в соответствии с координатами начальной и конечной точек. **map.addEventListener** гарантирует, что все функции карты добавляются после полной загрузки карты. **map.addPins** API добавляет точки в Map Control в виде визуальных компонентов.
+    Вызов **map.setCameraBounds** корректирует окно карты в соответствии с координатами начальной и конечной точек. **map.events.add** гарантирует, что все функции карты добавляются после полной загрузки карты. **map.addPins** API добавляет точки в Map Control в виде визуальных компонентов.
 
 3. Сохраните файл и обновите браузер, чтобы на карте отобразились пометки. Несмотря на то, что вы определили на карте центральную точку в Лос-Анджелесе, **map.setCameraBounds** передвинуло представление, чтобы отобразить начальную и конечную точку.
 
@@ -165,7 +166,7 @@ ms.locfileid: "48815313"
 
 ## <a name="render-routes-prioritized-by-mode-of-travel"></a>Построение маршрутов учетом приоритета способа перемещения
 
-В этом разделе показано, как использовать API службы построения маршрутов "Карты" для поиска нескольких маршрутов из заданной начальной точки к точке назначения в соответствии со способом перемещения. Служба построения маршрутов предоставляет интерфейсы API для планирования самого *быстрого*, *краткого*, *экономичного* или *захватывающего* маршрута между двумя расположениями с текущими условиями трафика. Она также позволяет пользователям планировать маршруты в будущем с помощью обширной базы данных Azure, содержащей исторический трафик, и прогнозирования длительности маршрутов в любой день и любое время. Дополнительные сведения см. в статье [Route — Get Route Directions](https://docs.microsoft.com/rest/api/maps/route/getroutedirections) (Маршрут. Получение направления маршрута).  Все приведенные ниже блоки кода необходимо добавить в **блок загрузки карты eventListener**. Это позволит гарантировать их загрузку после полной загрузки карты.
+В этом разделе показано, как использовать API службы построения маршрутов "Карты" для поиска нескольких маршрутов из заданной начальной точки к точке назначения в соответствии со способом перемещения. Служба построения маршрутов предоставляет интерфейсы API для планирования самого *быстрого*, *краткого*, *экономичного* или *захватывающего* маршрута между двумя расположениями с текущими условиями трафика. Она также позволяет пользователям планировать маршруты в будущем с помощью обширной базы данных Azure, содержащей исторический трафик, и прогнозирования длительности маршрутов в любой день и любое время. Дополнительные сведения см. в статье [Route — Get Route Directions](https://docs.microsoft.com/rest/api/maps/route/getroutedirections) (Маршрут. Получение направления маршрута). Все приведенные ниже блоки кода необходимо добавить в **блок загрузки карты eventListener**. Это позволит гарантировать их загрузку после полной загрузки карты.
 
 1. Во-первых, добавьте новый слой на карту, чтобы отобразить путь маршрута (или *linestring*). В этом руководстве приведено два разных маршрута **car-route** и **truck-route**, каждый из которых имеет собственный стиль. Добавьте следующий код JavaScript в блок *script*.
 
@@ -233,7 +234,7 @@ ms.locfileid: "48815313"
     // Execute the car route query then add the route to the map once a response is received  
     client.route.getRouteDirections(routeQuery).then(response => {
         // Parse the response into GeoJSON
-        var geoJsonResponse = new tlas.service.geojson
+        var geoJsonResponse = new atlas.service.geojson
             .GeoJsonRouteDiraectionsResponse(response);
 
         // Get the first in the array of routes and add it to the map 
@@ -260,7 +261,7 @@ ms.locfileid: "48815313"
 > * Создание запросов маршрута по видам транспорта.
 > * Отображение нескольких маршрутов на карте.
 
-Пример кода для этого руководства приведен здесь:
+Пример кода, используемый при работе с этим руководством, приведен здесь:
 
 > [Определение нескольких маршрутов с помощью Azure Maps](https://github.com/Azure-Samples/azure-maps-samples/blob/master/src/truckRoute.html)
 

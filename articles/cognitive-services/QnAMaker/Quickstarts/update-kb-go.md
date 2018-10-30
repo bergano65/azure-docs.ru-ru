@@ -1,25 +1,31 @@
 ---
-title: 'Краткое руководство: обновление базы знаний с использованием Go — QnA Maker'
+title: 'Краткое руководство: обновление базы знаний с использованием REST, Go — QnA Maker'
 titleSuffix: Azure Cognitive Services
-description: Обновление базы знаний на Go для QnA Maker.
+description: В этом кратком руководстве описывается обновление примера базы знаний QnA Maker программным способом с использованием REST. Определение JSON, которое используется для обновления базы знаний, позволяет добавлять, изменять или удалять пары вопросов и ответов.
 services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: quickstart
-ms.date: 09/12/2018
+ms.date: 10/19/2018
 ms.author: diberry
-ms.openlocfilehash: b447b77eb1fdd9135f7d15a791414d166194b2dd
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 5275184994dce446a7ca572a049f3860c4782139
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49389315"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49646887"
 ---
-# <a name="update-a-knowledge-base"></a>Обновление базы знаний
+# <a name="quickstart-update-a-knowledge-base-in-qna-maker-using-go"></a>Краткое руководство: обновление базы знаний в QnA Maker с использованием Go
 
-Следующий код обновляет существующую базу знаний с помощью метода [Update](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600) (Обновление).
+В этом кратком руководстве описано, как программным способом обновить имеющуюся базу знаний QnA Maker.  Этот код JSON позволяет обновить базу знаний путем добавления, изменения или удаления источников данных.
+
+Этот API является эквивалентом изменения и нажатия кнопки **Save and train** (Сохранение и обучение) на портале QnA Maker.
+
+В этом кратком руководстве вызываются API службы QnA Maker:
+* [Обновление.](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600) Модель базы знаний определяется в коде JSON, отправляемом в теле запроса API. 
+* [Получение сведений об операции](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/operations_getoperationdetails).
 
 1. Создайте новый проект Go в избранном интерфейсе IDE.
 2. Добавьте указанный ниже код.
@@ -191,7 +197,7 @@ Press any key to continue.
 
 ## <a name="get-request-status"></a>Получение состояния запроса
 
-Чтобы проверить состояние запроса для создания или обновления базы знаний, можно вызвать метод [Operation](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/operations_getoperationdetails) (Операция). Чтобы увидеть, как используется этот метод, см. пример кода для методов [Create](#Create) (Создание) или [Update](#Update) (Обновление).
+Чтобы проверить состояние запроса для создания или обновления базы знаний, можно вызвать метод [Operation](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/operations_getoperationdetails) (Операция). Чтобы увидеть, как используется этот метод, см. пример кода в кратком руководстве для метода [Create](create-new-kb-go.md) (Создание).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -14,12 +14,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 08/10/2018
 ms.author: apimpm
-ms.openlocfilehash: 4f5097f8555d0345add7de8a0f648190bd4e1e00
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: 0346cf456c53b14fd3c5b14b2e40eddd8b89fe4d
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "41920075"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49465956"
 ---
 # <a name="create-and-publish-a-product"></a>создавать и публиковать продукт;  
 
@@ -31,19 +31,19 @@ ms.locfileid: "41920075"
 > * создавать и публиковать продукт;
 > * добавлять API к продукту.
 
-![Добавление продукта](media/api-management-howto-add-products/added-product.png)
+![Добавление руководства по продукту](media/api-management-howto-add-products/added-product.png)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 + Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
 + Также выполните задачи из руководства по [импорту и публикации первого API](import-and-publish.md).
 
-## <a name="create-and-publish-a-product"></a>Создание и публикация продукта
+## <a name="create-and-publish-a-product"></a>создавать и публиковать продукт;
+
+![Добавление продукта](media/api-management-howto-add-products/02-create-publish-product-01.png)
 
 1. Щелкните **Продукты** в меню слева, чтобы отобразить страницу **Продукты**.
 2. Щелкните **+ Добавить**.
-
-    ![Добавленный продукт](media/api-management-howto-add-products/add-product.png)
 
     Добавляя продукт, укажите следующее: 
 
@@ -77,7 +77,7 @@ ms.locfileid: "41920075"
 
 ### <a name="add-an-api-to-an-existing-product"></a>Добавление API к существующему продукту
 
-![Добавление API продукта](media/api-management-howto-add-products/add-product-api.png)
+![Добавление API продукта](media/api-management-howto-add-products/02-create-publish-product-02.png)
 
 1. На вкладке **Продукты** выберите продукт.
 2. Перейдите на вкладку **API**.

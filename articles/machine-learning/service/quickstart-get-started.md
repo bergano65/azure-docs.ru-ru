@@ -9,24 +9,26 @@ ms.reviewer: sgilley
 author: rastala
 ms.author: roastala
 ms.date: 09/24/2018
-ms.openlocfilehash: 14bd85a23e2630a1cf2a8b5621d669c4c6748168
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: b81e40298eae0f0b44f37e7f8f16beaddad999a5
+ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49376624"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49456819"
 ---
 # <a name="quickstart-use-the-azure-portal-to-get-started-with-azure-machine-learning"></a>Краткое руководство. Начало работы со Службой машинного обучения Azure с помощью портала Azure
 
 В этом кратком руководстве вы используете портал Azure для создания рабочей области "Машинное обучение Azure". Эта рабочая область — основной блок в облаке для экспериментов, обучения и развертывания моделей машинного обучения с помощью Машинного обучения Azure. 
 
-Изучив это руководство, вы:
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2F9Ad]
 
-* Создавать рабочую область в своей подписке Azure.
-* Попробуете использовать ее с Python в записной книжке Azure и запишите значения из нескольких итераций.
-* Просмотрите записанные значения в рабочей области.
+В этом кратком руководстве вы:
 
-Следующие ресурсы Azure добавляются автоматически в рабочую область, если они доступны в вашем регионе.
+* создадите рабочую область в своей подписке Azure;
+* попробуете использовать ее с Python в записной книжке Azure и запишите значения из нескольких итераций;
+* просмотрите записанные значения в рабочей области.
+
+Следующие ресурсы Azure добавляются автоматически в рабочую область, если они доступны в вашем регионе:
 
   - [Реестр контейнеров Azure](https://azure.microsoft.com/services/container-registry/)
   - [Хранилище Azure](https://azure.microsoft.com/services/storage/)

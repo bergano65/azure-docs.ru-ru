@@ -1,6 +1,6 @@
 ---
 title: Руководство по анализу тональности данных потоковой передачи с использованием Azure Databricks
-description: Сведения об анализе тональности данных потоковой передачи практически в реальном времени с использованием Azure Databricks с концентраторами событий и API Cognitive Services.
+description: Сведения об анализе тональности данных потоковой передачи практически в реальном времени с использованием Azure Databricks с Центрами событий и API Cognitive Services.
 services: azure-databricks
 author: lenadroid
 manager: cgronlun
@@ -8,24 +8,24 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.workload: Active
-ms.date: 08/06/2018
+ms.date: 10/23/2018
 ms.author: alehall
-ms.openlocfilehash: edd78b9b54e39a25aa3349f6ad27e61991ea91d2
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: ddaee7c534ec8ac1bd4ce958a8ed08922cdd17e9
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39577819"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50026251"
 ---
 # <a name="tutorial-sentiment-analysis-on-streaming-data-using-azure-databricks"></a>Руководство по анализу тональности данных потоковой передачи с использованием Azure Databricks
 
-Из этого руководства вы узнаете, как выполнять анализ тональности при потоковой передаче данных практически в реальном времени с использованием Azure Databricks. Вам следует настроить прием данных с использованием концентраторов событий Azure. Затем вы получите сообщения из концентраторов событий в Databricks Azure с помощью соединителя концентраторов событий Spark. И наконец, вы выполните анализ тональности данных потоковой передачи с использованием API Microsoft Cognitive Service.
+Из этого руководства вы узнаете, как выполнять анализ тональности при потоковой передаче данных практически в реальном времени с использованием Azure Databricks. Вам следует настроить прием данных с использованием Центров событий Azure. Затем вы получите сообщения из Центров событий в Databricks Azure с помощью соединителя Центров событий Spark. И наконец, вы выполните анализ тональности данных потоковой передачи с использованием API Microsoft Cognitive Service.
 
 Заканчивая работу с этим руководством, вы получите потоковые твиты из приложения Twitter с термином Azure и выполните анализ тональности в них.
 
 На следующем рисунке показан поток в приложении.
 
-![Azure Databricks с концентраторами событий и Cognitive Services](./media/databricks-sentiment-analysis-cognitive-services/databricks-cognitive-services-tutorial.png "Azure Databricks with Event Hubs and Cognitive Services")
+![Azure Databricks с Центрами событий и Cognitive Services](./media/databricks-sentiment-analysis-cognitive-services/databricks-cognitive-services-tutorial.png "Azure Databricks with Event Hubs and Cognitive Services")
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -34,10 +34,10 @@ ms.locfileid: "39577819"
 > * Создание кластера Spark в Azure Databricks.
 > * Создание приложения Twitter для доступа к потоковым данных
 > * Создание записных книжек в Azure Databricks.
-> * Подключение библиотек к концентраторам событий и API Twitter.
+> * Подключение библиотек к Центрам событий и API Twitter.
 > * Создание учетной записи Microsoft Cognitive Services и получение ключа доступа.
-> * Отправка твитов в концентраторы событий.
-> * Чтение твитов из концентраторов событий.
+> * Отправка твитов в Центры событий.
+> * Чтение твитов из Центров событий.
 > * Анализ тональности твитов
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
@@ -45,12 +45,12 @@ ms.locfileid: "39577819"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к изучению этого руководства, убедитесь, что выполнены следующие требования.
-- Пространство имен концентраторов событий Azure.
+- Пространство имен Центров событий Azure.
 - В пространстве имен имеется концентратор событий.
-- Имеется строка подключения для получения доступа к пространству имен концентраторов событий. Строка подключения должна иметь формат `Endpoint=sb://<namespace>.servicebus.windows.net/;SharedAccessKeyName=<key name>;SharedAccessKey=<key value>`.
-- Имя политики общего доступа и ключ политики для концентраторов событий.
+- Имеется строка подключения для получения доступа к пространству имен Центров событий. Строка подключения должна иметь формат `Endpoint=sb://<namespace>.servicebus.windows.net/;SharedAccessKeyName=<key name>;SharedAccessKey=<key value>`.
+- Имя политики общего доступа и ключ политики для Центров событий.
 
-Соответствие этим требованиям можно проверить, выполнив шаги из статьи [Создание пространства имен концентраторов событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md).
+Соответствие этим требованиям можно проверить, выполнив шаги из статьи [Создание пространства имен Центров событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md).
 
 ## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.
 
@@ -100,7 +100,7 @@ ms.locfileid: "39577819"
 
     * Введите имя кластера.
     * В рамках этой статьи создайте кластер со средой выполнения **4.0 (бета-версия)**.
-    * Убедитесь, что установлен флажок **Terminate after ___ minutes of activity** (Завершить работу после ___ минут отсутствия активности). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
+    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через ___ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
 
     Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
 
@@ -124,7 +124,7 @@ ms.locfileid: "39577819"
 
 ## <a name="attach-libraries-to-spark-cluster"></a>Подключение библиотек к кластеру Spark
 
-В этом руководстве для отправки твитов в концентраторы событий используются API-интерфейсы Twitter. Для чтения и записи данных в концентраторах событий Azure используется [соединитель концентраторов событий Apache Spark](https://github.com/Azure/azure-event-hubs-spark). Чтобы использовать эти API-интерфейсы в рамках кластера, добавьте их в Azure Databricks в качестве библиотек, а затем свяжите их с кластером Spark. Ниже показано, как добавить библиотеку в папку **Shared** (Общая) в рабочей области.
+В этом руководстве для отправки твитов в Центры событий используются API-интерфейсы Twitter. Для чтения и записи данных в Центрах событий Azure используется [соединитель Центров событий Apache Spark](https://github.com/Azure/azure-event-hubs-spark). Чтобы использовать эти API-интерфейсы в рамках кластера, добавьте их в Azure Databricks в качестве библиотек, а затем свяжите их с кластером Spark. Ниже показано, как добавить библиотеку в папку **Shared** (Общая) в рабочей области.
 
 1.  В рабочей области Azure Databricks выберите **Рабочая область** и щелкните правой кнопкой мыши **Shared** (Общая). В контекстном меню выберите **Создать** > **Библиотека**.
 
@@ -132,7 +132,7 @@ ms.locfileid: "39577819"
 
 2. На странице новой библиотеки для параметра **Источник** выберите **Maven Coordinate** (Координата Maven). В поле **Coordinate** (Координата) введите координату пакета, который требуется добавить. Ниже указаны координаты Maven для библиотек, используемых в рамках этого руководства.
 
-    * Соединитель концентраторов событий Spark — `com.microsoft.azure:azure-eventhubs-spark_2.11:2.3.1`
+    * Соединитель Центров событий Spark — `com.microsoft.azure:azure-eventhubs-spark_2.11:2.3.5`
     * API Twitter — `org.twitter4j:twitter4j-core:4.0.6`
 
     ![Предоставление координат Maven](./media/databricks-sentiment-analysis-cognitive-services/databricks-eventhub-specify-maven-coordinate.png "Provide Maven coordinates")
@@ -189,8 +189,8 @@ ms.locfileid: "39577819"
 
 В этом разделе в рабочей области Databricks создается две записные книжки со следующими именами.
 
-- **SendTweetsToEventHub** — записная книжка производителя, которая используется для получения твитов из приложения Twitter и для их потоковой передачи в концентраторы событий.
-- **AnalyzeTweetsFromEventHub** — клиентская записная книжка объекта-получателя для чтения твитов из концентраторов событий и выполнения анализа тональности.
+- **SendTweetsToEventHub** — записная книжка производителя, которая используется для получения твитов из приложения Twitter и для их потоковой передачи в Центры событий.
+- **AnalyzeTweetsFromEventHub** — клиентская записная книжка объекта-получателя для чтения твитов из Центров событий и выполнения анализа тональности.
 
 1. В левой области выберите **Рабочая область**. В раскрывающемся списке **Рабочая область** выберите **Создать**, а затем **Записная книжка**.
 
@@ -204,81 +204,83 @@ ms.locfileid: "39577819"
 
 3. Повторите эти шаги для создания записной книжки **AnalyzeTweetsFromEventHub**.
 
-## <a name="send-tweets-to-event-hubs"></a>Отправка твитов в концентраторы событий
+## <a name="send-tweets-to-event-hubs"></a>Отправка твитов в Центры событий
 
-В записной книжке **SendTweetsToEventHub** вставьте следующий код и замените заполнители значениями вашего пространства имен концентраторов событий и созданного ранее приложения Twitter. Эта записная книжка выполняет потоковую передачу твитов с ключевым словом Azure в концентраторы событий в режиме реального времени.
+В записной книжке **SendTweetsToEventHub** вставьте следующий код и замените заполнители значениями вашего пространства имен Центров событий и созданного ранее приложения Twitter. Эта записная книжка выполняет потоковую передачу твитов с ключевым словом Azure в Центры событий в режиме реального времени.
 
-    import java.util._
-    import scala.collection.JavaConverters._
-    import com.microsoft.azure.eventhubs._
-    import java.util.concurrent._
+```scala
+import java.util._
+import scala.collection.JavaConverters._
+import com.microsoft.azure.eventhubs._
+import java.util.concurrent._
 
-    val namespaceName = "<EVENT HUBS NAMESPACE>"
-    val eventHubName = "<EVENT HUB NAME>"
-    val sasKeyName = "<POLICY NAME>"
-    val sasKey = "<POLICY KEY>"
-    val connStr = new ConnectionStringBuilder()
-                .setNamespaceName(namespaceName)
-                .setEventHubName(eventHubName)
-                .setSasKeyName(sasKeyName)
-                .setSasKey(sasKey)
+val namespaceName = "<EVENT HUBS NAMESPACE>"
+val eventHubName = "<EVENT HUB NAME>"
+val sasKeyName = "<POLICY NAME>"
+val sasKey = "<POLICY KEY>"
+val connStr = new ConnectionStringBuilder()
+            .setNamespaceName(namespaceName)
+            .setEventHubName(eventHubName)
+            .setSasKeyName(sasKeyName)
+            .setSasKey(sasKey)
 
-    val pool = Executors.newFixedThreadPool(1)
-    val eventHubClient = EventHubClient.create(connStr.toString(), pool)
+val pool = Executors.newFixedThreadPool(1)
+val eventHubClient = EventHubClient.create(connStr.toString(), pool)
 
-    def sendEvent(message: String) = {
-      val messageData = EventData.create(message.getBytes("UTF-8"))
-      eventHubClient.get().send(messageData)
-      System.out.println("Sent event: " + message + "\n")
+def sendEvent(message: String) = {
+  val messageData = EventData.create(message.getBytes("UTF-8"))
+  eventHubClient.get().send(messageData)
+  System.out.println("Sent event: " + message + "\n")
+}
+
+import twitter4j._
+import twitter4j.TwitterFactory
+import twitter4j.Twitter
+import twitter4j.conf.ConfigurationBuilder
+
+// Twitter configuration!
+// Replace values below with yours
+
+val twitterConsumerKey = "<CONSUMER KEY>"
+val twitterConsumerSecret = "<CONSUMER SECRET>"
+val twitterOauthAccessToken = "<ACCESS TOKEN>"
+val twitterOauthTokenSecret = "<TOKEN SECRET>"
+
+val cb = new ConfigurationBuilder()
+  cb.setDebugEnabled(true)
+  .setOAuthConsumerKey(twitterConsumerKey)
+  .setOAuthConsumerSecret(twitterConsumerSecret)
+  .setOAuthAccessToken(twitterOauthAccessToken)
+  .setOAuthAccessTokenSecret(twitterOauthTokenSecret)
+
+val twitterFactory = new TwitterFactory(cb.build())
+val twitter = twitterFactory.getInstance()
+
+// Getting tweets with keyword "Azure" and sending them to the Event Hub in realtime!
+
+val query = new Query(" #Azure ")
+query.setCount(100)
+query.lang("en")
+var finished = false
+while (!finished) {
+  val result = twitter.search(query)
+  val statuses = result.getTweets()
+  var lowestStatusId = Long.MaxValue
+  for (status <- statuses.asScala) {
+    if(!status.isRetweet()){
+      sendEvent(status.getText())
     }
+    lowestStatusId = Math.min(status.getId(), lowestStatusId)
+    Thread.sleep(2000)
+  }
+  query.setMaxId(lowestStatusId - 1)
+}
 
-    import twitter4j._
-    import twitter4j.TwitterFactory
-    import twitter4j.Twitter
-    import twitter4j.conf.ConfigurationBuilder
+// Closing connection to the Event Hub
+ eventHubClient.get().close()
+```
 
-    // Twitter configuration!
-    // Replace values below with yours
-
-    val twitterConsumerKey = "<CONSUMER KEY>"
-    val twitterConsumerSecret = "<CONSUMER SECRET>"
-    val twitterOauthAccessToken = "<ACCESS TOKEN>"
-    val twitterOauthTokenSecret = "<TOKEN SECRET>"
-
-    val cb = new ConfigurationBuilder()
-      cb.setDebugEnabled(true)
-      .setOAuthConsumerKey(twitterConsumerKey)
-      .setOAuthConsumerSecret(twitterConsumerSecret)
-      .setOAuthAccessToken(twitterOauthAccessToken)
-      .setOAuthAccessTokenSecret(twitterOauthTokenSecret)
-
-    val twitterFactory = new TwitterFactory(cb.build())
-    val twitter = twitterFactory.getInstance()
-
-    // Getting tweets with keyword "Azure" and sending them to the Event Hub in realtime!
-
-    val query = new Query(" #Azure ")
-    query.setCount(100)
-    query.lang("en")
-    var finished = false
-    while (!finished) {
-      val result = twitter.search(query)
-      val statuses = result.getTweets()
-      var lowestStatusId = Long.MaxValue
-      for (status <- statuses.asScala) {
-        if(!status.isRetweet()){
-          sendEvent(status.getText())
-        }
-        lowestStatusId = Math.min(status.getId(), lowestStatusId)
-        Thread.sleep(2000)
-      }
-      query.setMaxId(lowestStatusId - 1)
-    }
-
-    // Closing connection to the Event Hub
-    eventHubClient.get().close()
-
-Чтобы запустить записную книжку, нажмите клавиши **SHIFT+ВВОД**. Вывод должен выглядеть также, как показано в следующем фрагменте кода. Каждое событие в выходных данных представляет собой твит, передающийся в концентраторы событий.
+Чтобы запустить записную книжку, нажмите клавиши **SHIFT+ВВОД**. Вывод должен выглядеть также, как показано в следующем фрагменте кода. Каждое событие в выходных данных представляет собой твит, передающийся в Центры событий.
 
     Sent event: @Microsoft and @Esri launch Geospatial AI on Azure https://t.co/VmLUCiPm6q via @geoworldmedia #geoai #azure #gis #ArtificialIntelligence
 
@@ -295,31 +297,32 @@ ms.locfileid: "39577819"
     ...
     ...
 
-## <a name="read-tweets-from-event-hubs"></a>Чтение твитов из концентраторов событий
+## <a name="read-tweets-from-event-hubs"></a>Чтение твитов из Центров событий.
 
-В записной книжке **AnalyzeTweetsFromEventHub** вставьте следующий код и замените заполнители значениями созданных ранее концентраторов событий Azure. Эта записная книжка считывает твиты, переданные ранее в концентраторы событий с помощью записной книжки **SendTweetsToEventHub**.
+В записной книжке **AnalyzeTweetsFromEventHub** вставьте следующий код и замените заполнители значениями созданных ранее Центров событий Azure. Эта записная книжка считывает твиты, переданные ранее в Центры событий с помощью записной книжки **SendTweetsToEventHub**.
 
-    import org.apache.spark.eventhubs._
+```scala
+import org.apache.spark.eventhubs._
 
-    // Build connection string with the above information
-    val connectionString = ConnectionStringBuilder("<EVENT HUBS CONNECTION STRING>")
-      .setEventHubName("<EVENT HUB NAME>")
-      .build
+// Build connection string with the above information
+val connectionString = ConnectionStringBuilder("<EVENT HUBS CONNECTION STRING>")
+  .setEventHubName("<EVENT HUB NAME>")
+  .build
 
-    val customEventhubParameters =
-      EventHubsConf(connectionString)
-      .setMaxEventsPerTrigger(5)
+val customEventhubParameters =
+  EventHubsConf(connectionString)
+  .setMaxEventsPerTrigger(5)
 
-    val incomingStream = spark.readStream.format("eventhubs").options(customEventhubParameters.toMap).load()
+val incomingStream = spark.readStream.format("eventhubs").option(customEventhubParameters.toMap).load()
 
-    incomingStream.printSchema
+incomingStream.printSchema
 
-    // Sending the incoming stream into the console.
-    // Data comes in batches!
-    incomingStream.writeStream.outputMode("append").format("console").option("truncate", false).start().awaitTermination()
+// Sending the incoming stream into the console.
+// Data comes in batches!
+incomingStream.writeStream.outputMode("append").format("console").option("truncate", false).start().awaitTermination()
+```
 
 Вы получите следующие выходные данные:
-
 
     root
      |-- body: binary (nullable = true)
@@ -347,22 +350,24 @@ ms.locfileid: "39577819"
 
 Так как выходные данные отображаются в двоичном режиме, используйте следующий фрагмент кода, чтобы преобразовать их в строку.
 
-    import org.apache.spark.sql.types._
-    import org.apache.spark.sql.functions._
+```scala
+import org.apache.spark.sql.types._
+import org.apache.spark.sql.functions._
 
-    // Event Hub message format is JSON and contains "body" field
-    // Body is binary, so we cast it to string to see the actual content of the message
-    val messages =
-      incomingStream
-      .withColumn("Offset", $"offset".cast(LongType))
-      .withColumn("Time (readable)", $"enqueuedTime".cast(TimestampType))
-      .withColumn("Timestamp", $"enqueuedTime".cast(LongType))
-      .withColumn("Body", $"body".cast(StringType))
-      .select("Offset", "Time (readable)", "Timestamp", "Body")
+// Event Hub message format is JSON and contains "body" field
+// Body is binary, so we cast it to string to see the actual content of the message
+val messages =
+  incomingStream
+  .withColumn("Offset", $"offset".cast(LongType))
+  .withColumn("Time (readable)", $"enqueuedTime".cast(TimestampType))
+  .withColumn("Timestamp", $"enqueuedTime".cast(LongType))
+  .withColumn("Body", $"body".cast(StringType))
+  .select("Offset", "Time (readable)", "Timestamp", "Body")
 
-    messages.printSchema
+messages.printSchema
 
-    messages.writeStream.outputMode("append").format("console").option("truncate", false).start().awaitTermination()
+messages.writeStream.outputMode("append").format("console").option("truncate", false).start().awaitTermination()
+```
 
 Выходные данные будут выглядеть, как следующий фрагмент кода:
 
@@ -391,7 +396,7 @@ ms.locfileid: "39577819"
     ...
     ...
 
-Таким образом мы почти в реальном времени передаем потоком данные из концентраторов событий Azure в Azure Databricks, используя соединитель концентраторов событий для Apache Spark. Дополнительные сведения о том, как использовать соединитель концентраторов событий для Spark, см. в [документации соединителя](https://github.com/Azure/azure-event-hubs-spark/tree/master/docs).
+Таким образом мы почти в реальном времени передаем потоком данные из Центров событий Azure в Azure Databricks, используя соединитель Центров событий для Apache Spark. Дополнительные сведения о том, как использовать соединитель Центров событий для Spark, см. в [документации соединителя](https://github.com/Azure/azure-event-hubs-spark/tree/master/docs).
 
 ## <a name="run-sentiment-analysis-on-tweets"></a>Анализ тональности твитов
 
@@ -399,71 +404,63 @@ ms.locfileid: "39577819"
 
 Начните с добавления новой ячейки кода в записной книжке и вставьте фрагмент кода, приведенный ниже. Этот фрагмент кода определяет типы данных для работы с API языка и тональности.
 
-    import java.io._
-    import java.net._
-    import java.util._
+```scala
+import java.io._
+import java.net._
+import java.util._
 
-    class Document(var id: String, var text: String, var language: String = "", var sentiment: Double = 0.0) extends Serializable
+case class Language(documents: Array[LanguageDocuments], errors: Array[Any]) extends Serializable
+case class LanguageDocuments(id: String, detectedLanguages: Array[DetectedLanguages]) extends Serializable
+case class DetectedLanguages(name: String, iso6391Name: String, score: Double) extends Serializable
 
-    class Documents(var documents: List[Document] = new ArrayList[Document]()) extends Serializable {
+case class Sentiment(documents: Array[SentimentDocuments], errors: Array[Any]) extends Serializable
+case class SentimentDocuments(id: String, score: Double) extends Serializable
 
-        def add(id: String, text: String, language: String = "") {
-            documents.add (new Document(id, text, language))
-        }
-        def add(doc: Document) {
-            documents.add (doc)
-        }
-    }
+case class RequestToTextApi(documents: Array[RequestToTextApiDocument]) extends Serializable
+case class RequestToTextApiDocument(id: String, text: String, var language: String = "") extends Serializable
+```
 
-Добавить новую ячейку кода и вставьте фрагмент кода, приведенный ниже. Этот фрагмент кода требуется для синтаксического анализа строк в формате JSON.
+Добавьте новую ячейку кода и вставьте фрагмент кода, приведенный ниже. В этом фрагменте кода определяется объект, содержащий функции вызова API анализа текста для определение языка и выполнения анализа тональности. Убедитесь, что вы заменили заполнители `<PROVIDE ACCESS KEY HERE>` и `<PROVIDE REGION HERE>` на значения, полученные для вашей учетной записи Cognitive Services.
 
-    class CC[T] extends Serializable { def unapply(a:Any):Option[T] = Some(a.asInstanceOf[T]) }
-    object M extends CC[scala.collection.immutable.Map[String, Any]]
-    object L extends CC[scala.collection.immutable.List[Any]]
-    object S extends CC[String]
-    object D extends CC[Double]
+```scala
+import javax.net.ssl.HttpsURLConnection
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonObject
+import com.google.gson.JsonParser
+import scala.util.parsing.json._
 
-Добавьте новую ячейку кода и вставьте фрагмент кода, приведенный ниже. В этом фрагменте кода определяется объект, содержащий функции вызова API анализа текста для определение языка и выполнения анализа тональности. Убедитесь, что вы заменили заполнители `<PROVIDE ACCESS KEY HERE>` и `<PROVIDE HOST HERE>` на значения, полученные для вашей учетной записи Cognitive Services.
+object SentimentDetector extends Serializable {
 
-    import javax.net.ssl.HttpsURLConnection
-    import com.google.gson.Gson
-    import com.google.gson.GsonBuilder
-    import com.google.gson.JsonObject
-    import com.google.gson.JsonParser
-    import scala.util.parsing.json._
+    // Cognitive Services API connection settings
+    val accessKey = "<PROVIDE ACCESS KEY HERE>"
+    val host = "https://<PROVIDE REGION HERE>.api.cognitive.microsoft.com"
+    val languagesPath = "/text/analytics/v2.0/languages"
+    val sentimentPath = "/text/analytics/v2.0/sentiment"
+    val languagesUrl = new URL(host+languagesPath)
+    val sentimenUrl = new URL(host+sentimentPath)
+    val g = new Gson
 
-    object SentimentDetector extends Serializable {
-
-      // Cognitive Services API connection settings
-      val accessKey = "<PROVIDE ACCESS KEY HERE>"
-      val host = "<PROVIDE HOST HERE>"
-      val languagesPath = "/text/analytics/v2.0/languages"
-      val sentimentPath = "/text/analytics/v2.0/sentiment"
-      val languagesUrl = new URL(host+languagesPath)
-      val sentimenUrl = new URL(host+sentimentPath)
-
-      def getConnection(path: URL): HttpsURLConnection = {
+    def getConnection(path: URL): HttpsURLConnection = {
         val connection = path.openConnection().asInstanceOf[HttpsURLConnection]
         connection.setRequestMethod("POST")
         connection.setRequestProperty("Content-Type", "text/json")
         connection.setRequestProperty("Ocp-Apim-Subscription-Key", accessKey)
         connection.setDoOutput(true)
         return connection
-      }
+    }
 
-      def prettify (json_text: String): String = {
+    def prettify (json_text: String): String = {
         val parser = new JsonParser()
         val json = parser.parse(json_text).getAsJsonObject()
         val gson = new GsonBuilder().setPrettyPrinting().create()
         return gson.toJson(json)
-      }
+    }
 
-      // Handles the call to Cognitive Services API.
-      // Expects Documents as parameters and the address of the API to call.
-      // Returns an instance of Documents in response.
-      def processUsingApi(inputDocs: Documents, path: URL): String = {
-        val docText = new Gson().toJson(inputDocs)
-        val encoded_text = docText.getBytes("UTF-8")
+    // Handles the call to Cognitive Services API.
+    def processUsingApi(request: RequestToTextApi, path: URL): String = {
+        val requestToJson = g.toJson(request)
+        val encoded_text = requestToJson.getBytes("UTF-8")
         val connection = getConnection(path)
         val wr = new DataOutputStream(connection.getOutputStream())
         wr.write(encoded_text, 0, encoded_text.length)
@@ -479,79 +476,83 @@ ms.locfileid: "39577819"
         }
         in.close()
         return response.toString()
-      }
-
-      // Calls the language API for specified documents.
-      // Returns a documents with language field set.
-      def getLanguage (inputDocs: Documents): Documents = {
-        try {
-          val response = processUsingApi(inputDocs, languagesUrl)
-          // In case we need to log the json response somewhere
-          val niceResponse = prettify(response)
-          val docs = new Documents()
-          val result = for {
-                // Deserializing the JSON response from the API into Scala types
-                Some(M(map)) <- scala.collection.immutable.List(JSON.parseFull(niceResponse))
-                L(documents) = map("documents")
-                M(document) <- documents
-                S(id) = document("id")
-                L(detectedLanguages) = document("detectedLanguages")
-                M(detectedLanguage) <- detectedLanguages
-                S(language) = detectedLanguage("iso6391Name")
-          } yield {
-                docs.add(new Document(id = id, text = id, language = language))
-          }
-          return docs
-        } catch {
-              case e: Exception => return new Documents()
-        }
-      }
-
-      // Calls the sentiment API for specified documents. Needs a language field to be set for each of them.
-      // Returns documents with sentiment field set, taking a value in the range from 0 to 1.
-      def getSentiment (inputDocs: Documents): Documents = {
-        try {
-          val response = processUsingApi(inputDocs, sentimenUrl)
-          val niceResponse = prettify(response)
-          val docs = new Documents()
-          val result = for {
-                // Deserializing the JSON response from the API into Scala types
-                Some(M(map)) <- scala.collection.immutable.List(JSON.parseFull(niceResponse))
-                L(documents) = map("documents")
-                M(document) <- documents
-                S(id) = document("id")
-                D(sentiment) = document("score")
-          } yield {
-                docs.add(new Document(id = id, text = id, sentiment = sentiment))
-          }
-          return docs
-        } catch {
-            case e: Exception => return new Documents()
-        }
-      }
     }
 
-    // User Defined Function for processing content of messages to return their sentiment.
-    val toSentiment = udf((textContent: String) => {
-      val inputDocs = new Documents()
-      inputDocs.add (textContent, textContent)
-      val docsWithLanguage = SentimentDetector.getLanguage(inputDocs)
-      val docsWithSentiment = SentimentDetector.getSentiment(docsWithLanguage)
-      if (docsWithLanguage.documents.isEmpty) {
-        // Placeholder value to display when unable to perform sentiment request for text in unknown language
-        (-1).toDouble
-      } else {
-        docsWithSentiment.documents.get(0).sentiment.toDouble
-      }
-    })
+    // Calls the language API for specified documents.
+    def getLanguage (inputDocs: RequestToTextApi): Option[Language] = {
+        try {
+            val response = processUsingApi(inputDocs, languagesUrl)
+            // In case we need to log the json response somewhere
+            val niceResponse = prettify(response)
+            // Deserializing the JSON response from the API into Scala types
+            val language = g.fromJson(niceResponse, classOf[Language])
+            if (language.documents(0).detectedLanguages(0).iso6391Name == "(Unknown)")
+                return None
+            return Some(language)
+        } catch {
+            case e: Exception => return None
+        }
+    }
+
+    // Calls the sentiment API for specified documents. Needs a language field to be set for each of them.
+    def getSentiment (inputDocs: RequestToTextApi): Option[Sentiment] = {
+        try {
+            val response = processUsingApi(inputDocs, sentimenUrl)
+            val niceResponse = prettify(response)
+            // Deserializing the JSON response from the API into Scala types
+            val sentiment = g.fromJson(niceResponse, classOf[Sentiment])
+            return Some(sentiment)
+        } catch {
+            case e: Exception => return None
+        }
+    }
+}
+```
+
+Добавьте еще одну ячейку, чтобы определить пользовательскую функцию Spark, которая определяет тональность.
+
+```scala
+// User Defined Function for processing content of messages to return their sentiment.
+val toSentiment =
+    udf((textContent: String) =>
+        {
+            val inputObject = new RequestToTextApi(Array(new RequestToTextApiDocument(textContent, textContent)))
+            val detectedLanguage = SentimentDetector.getLanguage(inputObject)
+            detectedLanguage match {
+                case Some(language) =>
+                    if(language.documents.size > 0) {
+                        inputObject.documents(0).language = language.documents(0).detectedLanguages(0).iso6391Name
+                        val sentimentDetected = SentimentDetector.getSentiment(inputObject)
+                        sentimentDetected match {
+                            case Some(sentiment) => {
+                                if(sentiment.documents.size > 0) {
+                                    sentiment.documents(0).score.toString()
+                                }
+                                else {
+                                    "Error happened when getting sentiment: " + sentiment.errors(0).toString
+                                }
+                            }
+                            case None => "Couldn't detect sentiment"
+                        }
+                    }
+                    else {
+                        "Error happened when getting language" + language.errors(0).toString
+                    }
+                case None => "Couldn't detect language"
+            }
+        }
+    )
+```
 
 Добавьте последнюю ячейку кода, чтобы подготовить кадр данных с содержимым твита и тональностью, связанной с этим твитом.
 
-    // Prepare a dataframe with Content and Sentiment columns
-    val streamingDataFrame = incomingStream.selectExpr("cast (body as string) AS Content").withColumn("Sentiment", toSentiment($"Content"))
+```scala
+// Prepare a dataframe with Content and Sentiment columns
+val streamingDataFrame = incomingStream.selectExpr("cast (body as string) AS Content").withColumn("Sentiment", toSentiment($"Content"))
 
-    // Display the streaming data with the sentiment
-    streamingDataFrame.writeStream.outputMode("append").format("console").option("truncate", false).start().awaitTermination()
+// Display the streaming data with the sentiment
+streamingDataFrame.writeStream.outputMode("append").format("console").option("truncate", false).start().awaitTermination()
+```
 
 Вы должны увидеть выходные данные, подобные следующему фрагменту кода:
 
@@ -570,7 +571,7 @@ ms.locfileid: "39577819"
 
 Чем ближе значение в колонке**Тональность** к **1**, тем большее удовлетворение от работы в Azure. Чем ближе значение к **0**,тем больше проблем испытывают пользователи при работе с Microsoft Azure.
 
-Вот и все! С помощью Azure Databricks вы успешно выполнили потоковую передачу данных, использовали данные потока в соединителе концентраторов событий Azure и выполнили анализ тональности данных потоковой передачи практически в реальном времени.
+Вот и все! С помощью Azure Databricks вы успешно выполнили потоковую передачу данных, использовали данные потока в соединителе Центров событий Azure и выполнили анализ тональности данных потоковой передачи практически в реальном времени.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -581,16 +582,16 @@ ms.locfileid: "39577819"
 Если не завершить работу кластера вручную, это можно сделать автоматически, выбрав флажок **Terminate after __ minutes of inactivity** (Завершить работу после __ минут бездействия) во время создания кластера. В этом случае работа кластера должна завершиться автоматически, если кластер был неактивным в течение определенного времени.
 
 ## <a name="next-steps"></a>Дополнительная информация
-В этом руководстве вы узнали, как с помощью Azure Databricks выполнить потоковую передачу данных в концентраторы событий Azure с последующим чтением данных потоковой передачи из концентраторов событий в реальном времени. Вы научились выполнять следующие задачи:
+В этом руководстве вы узнали, как с помощью Azure Databricks выполнить потоковую передачу данных в Центры событий Azure с последующим чтением данных потоковой передачи из Центров событий в реальном времени. Вы научились выполнять следующие задачи:
 > [!div class="checklist"]
 > * Создание рабочей области Azure Databricks
 > * Создание кластера Spark в Azure Databricks.
 > * Создание приложения Twitter для доступа к потоковым данных
 > * Создание записных книжек в Azure Databricks.
-> * Добавление и подключение библиотек для концентраторов событий и API Twitter.
+> * Добавление и подключение библиотек для Центров событий и API Twitter.
 > * Создание учетной записи Microsoft Cognitive Services и получение ключа доступа.
-> * Отправка твитов в концентраторы событий.
-> * Чтение твитов из концентраторов событий.
+> * Отправка твитов в Центры событий.
+> * Чтение твитов из Центров событий.
 > * Анализ тональности твитов.
 
 Перейдите к следующему руководству, чтобы ознакомиться с выполнением задач машинного обучения с помощью Azure Databricks.

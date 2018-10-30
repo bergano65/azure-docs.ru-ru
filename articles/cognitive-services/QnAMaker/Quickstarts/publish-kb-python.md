@@ -1,29 +1,32 @@
 ---
-title: Краткое руководство. Публикация базы знаний с использованием Python — QnA Maker
+title: Краткое руководство. Публикация базы знаний — REST, Python — QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Сведения о том, как опубликовать базу знаний на Python для QnA Maker.
+description: В этом кратком руководстве описывается процесс публикации с использованием REST для базы знаний, которая передает последнюю версию протестированной базы знаний в выделенный индекс службы "Поиск Azure", представляющий опубликованную базу знаний. Кроме того, создается конечная точка, которая может быть вызвана в приложении или чат-боте.
 services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: quickstart
-ms.date: 09/12/2018
+ms.date: 10/19/2018
 ms.author: diberry
-ms.openlocfilehash: 92a0f54c8fca6a53cf869ce21c8007ad2a1eba5b
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: e58b344102eb900ffe41bb90e541258eb3b59286
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48887723"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49646820"
 ---
-# <a name="quickstart-publish-a-knowledge-base-in-python"></a>Краткое руководство. Публикация базы знаний с использованием Python
+# <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-python"></a>Краткое руководство. Публикация базы знаний в QnA Maker с помощью Python
 
-Следующий код публикует существующую базу знаний с помощью метода [Publish](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fe) (Публикация).
+В этом кратком руководстве описано, как программным способом опубликовать базу знаний. В процессе публикации последняя версия базы знаний отправляется в индекс выделенной службы "Поиск Azure" и создается конечная точка, которую можно вызывать в приложении или чат-боте.
+
+В этом кратком руководстве вызываются API службы QnA Maker:
+* [Публикация.](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fe) При использовании этого API в тексте запроса не нужно указывать какие-либо сведения.
 
 [!INCLUDE [Code is available in Azure-Samples Github repo](../../../../includes/cognitive-services-qnamaker-python-repo-note.md)]
 
-1. Создайте проект Python в выбранной интегрированной среде разработки.
+1. Создайте проект Python в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
 3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.

@@ -10,16 +10,16 @@ ms.component: bing-spell-check
 ms.topic: quickstart
 ms.date: 09/14/2017
 ms.author: v-jaswel
-ms.openlocfilehash: 3fe8729a9e2524cc2ccda168a857d58664a98b10
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: e75b8e8b23bbb8e49cb8d8ec55e42f6ffb204197
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48801086"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50023504"
 ---
 # <a name="quickstart-for-bing-spell-check-api-with-ruby"></a>Краткое руководство по API Bing для проверки орфографии с использованием Ruby 
 
-В этой статье объясняется, как использовать [API Bing для проверки орфографии](https://azure.microsoft.com/services/cognitive-services/spell-check/) с Ruby. API проверки орфографии возвращает список нераспознанных слов с предлагаемыми вариантами для замены. Обычно сначала текст отправляется в API, а затем выполняются предложенные замены в тексте. Либо список замен отображается для пользователя приложения, который затем решает, нужно ли делать замены. В этой статье показано, как отправить запрос, который содержит текст "Hollo, wrld!". Для замены предлагаются варианты "Hello" и "world".
+В этой статье показано, как использовать [API Bing для проверки орфографии](https://azure.microsoft.com/services/cognitive-services/spell-check/)  с Ruby. API проверки орфографии возвращает список нераспознанных слов вмсте с предлагаемыми вариантами для замены. Обычно сначала текст отправляется в API, а затем выполняются предложенные замены в тексте либо список замен отображается для пользователя приложения, который решает, нужно ли делать замены. В этой статье показано, как отправить запрос, который содержит текст "Hollo, wrld!". Для замены предлагаются варианты "Hello" и "world".
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -31,7 +31,7 @@ ms.locfileid: "48801086"
 
 1. Создайте новый проект Ruby в избранной интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```ruby
@@ -119,9 +119,9 @@ puts result
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по API проверки орфографии Bing](../tutorials/spellcheck.md)
+> [Руководство по API Bing для проверки орфографии](../tutorials/spellcheck.md)
 
 ## <a name="see-also"></a>См. также
 
-- [Общие сведения об API проверки орфографии Bing](../proof-text.md)
+- [Общие сведения об API Bing для проверки орфографии](../proof-text.md)
 - [Справочник по API проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-spell-check-api-v7-reference)

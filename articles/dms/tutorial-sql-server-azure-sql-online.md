@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
 ms.date: 10/10/2018
-ms.openlocfilehash: cbc30d1a70d7a333f56df6f0a796d3a8e6532fe8
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: adf9f40e351ca642ca3e8eabe1e5eb7850f1f00d
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49068734"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945541"
 ---
 # <a name="migrate-sql-server-to-azure-sql-database-online-using-dms"></a>Перенос баз данных SQL Server в базу данных SQL Azure с помощью DMS по сети
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра SQL Server в [Базу данных SQL Azure](https://docs.microsoft.com/azure/sql-database/) с минимальным временем простоя. В этом руководстве выполняется миграция базы данных **Adventureworks2012**, восстановленной в локальном экземпляре SQL Server 2016 (или более поздней версии), в базу данных SQL Azure с помощью Azure Database Migration Service.
@@ -33,6 +33,10 @@ Azure Database Migration Service можно использовать для пе
 
 > [!IMPORTANT]
 > Чтобы оптимизировать процесс миграции, Майкрософт рекомендует создать экземпляр Azure Database Migration Service в том же регионе Azure, в котором размещена целевая база данных. Перемещение данных между регионами и географическими областями может замедлить процесс миграции и привести к ошибкам.
+
+[!INCLUDE [online-offline](../../includes/database-migration-service-offline-online.md)]
+
+В этой статье описывается перенос данных из SQL Server в Базу данных SQL Azure в онлайн-режиме. [Перенос данных из SQL Server в Базу данных SQL Azure с помощью DMS в офлайн-режиме](tutorial-sql-server-to-azure-sql.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим руководством вам потребуется следующее:

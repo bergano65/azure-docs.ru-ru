@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Получение длины предложений с помощью Перевода текстов и Node.js
+title: Краткое руководство. Получение длины предложений, Node.js — API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве объясняется, как определять длину предложений в тексте с помощью API перевода текстов и Node.js.
 services: cognitive-services
-author: noellelacharite
+author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/21/2018
-ms.author: nolachar
-ms.openlocfilehash: 9a55642ae41eb311121c9e334472a8afbc8d9925
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.author: erhopf
+ms.openlocfilehash: 60b7bf8de0f0f296d0efb49a1e08030c2d5999e3
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46127205"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49644919"
 ---
-# <a name="quickstart-get-sentence-lengths-with-nodejs"></a>Краткое руководство. Определение длины предложения с помощью Node.js
+# <a name="quickstart-get-sentence-lengths-with-the-translator-text-rest-api-nodejs"></a>Краткое руководство. Получение длины предложений с помощью REST API перевода текстов (Node.js)
 
 В этом кратком руководстве объясняется, как определять длину предложений в тексте с помощью API перевода текстов.
 

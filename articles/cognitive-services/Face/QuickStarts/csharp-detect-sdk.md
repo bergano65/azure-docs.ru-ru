@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Обнаружение лиц на изображении с помощью пакета SDK и C#
+title: Краткое руководство. Обнаружение лиц на изображении с помощью .NET SDK и C#
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как обнаруживать лица на изображениях, используя клиентскую библиотеку службы распознавания лиц для Windows для C# в Cognitive Services.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: face-api
 ms.topic: quickstart
 ms.date: 09/14/2018
 ms.author: pafarley
-ms.openlocfilehash: b5fd10aaab28303079d3eef9c4c5c25207bb672e
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: a4b0b8b277ed6bc6e2bc3c7549d1e67d5f18c615
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49344988"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49954969"
 ---
-# <a name="quickstart-detect-faces-in-an-image-using-c35---face"></a>Краткое руководство. Обнаружение лиц на изображении с помощью Распознавания лиц и C#
+# <a name="quickstart-detect-faces-in-an-image-using-the-net-sdk-with-c"></a>Краткое руководство. Обнаружение лиц на изображении с помощью .NET SDK и C#
 
 В этом кратком руководстве вы узнаете, как определять лица людей на изображении с помощью клиентской библиотеки распознавания лиц для Windows.
 
