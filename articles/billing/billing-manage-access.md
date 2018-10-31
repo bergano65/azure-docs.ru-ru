@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: cwatson
-ms.openlocfilehash: 623856f05eed44eca3752d56f047f9bb282bdc8e
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 38cfd354f11ef3d888ad70e71549868d398495f5
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47392094"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49429649"
 ---
 # <a name="manage-access-to-billing-information-for-azure-using-role-based-access-control"></a>Управление доступом к сведениям о счетах Azure с помощью управления доступом на основе ролей
 
@@ -67,7 +67,7 @@ ms.locfileid: "47392094"
     ![Снимок экрана, показывающий, что читатель счетов может видеть на портале Azure](./media/billing-manage-access/billing-reader-view.png)
 
 > [!NOTE]
-> Средство чтения счетов находится на стадии предварительной версии и пока не поддерживает корпоративные подписки (EA) и облачные среды, не являющиеся глобальными.
+> Функция чтения счетов находится в предварительной версии и пока не поддерживает неглобальные облака. Пользователи Enterprise Subscription могут просматривать затраты, если администратор предприятия настроил такую возможность.
 
 ## <a name="adding-users-to-other-roles"></a>Добавление других ролей для пользователей
 

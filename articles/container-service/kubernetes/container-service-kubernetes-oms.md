@@ -9,18 +9,18 @@ ms.topic: article
 ms.date: 12/09/2016
 ms.author: bburns
 ms.custom: mvc
-ms.openlocfilehash: 3b014ce4c91d1dc9fae744ef4b528c98f9f787b3
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: a353fe3803b2d93c151559076960df06eb260bfe
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32164325"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49426419"
 ---
 # <a name="monitor-an-azure-container-service-cluster-with-log-analytics"></a>Мониторинг кластера службы контейнеров Azure с помощью Log Analytics
 
 [!INCLUDE [aks-preview-redirect.md](../../../includes/aks-preview-redirect.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 В этом пошаговом руководстве предполагается, что вы [создали кластер Kubernetes с помощью службы контейнеров Azure](container-service-kubernetes-walkthrough.md).
 
 Также предполагается, что у вас установлен интерфейс командной строки Azure `az` и инструменты `kubectl`.
@@ -69,7 +69,7 @@ Log Analytics — это облачное решение Майкрософт д
 
 ### <a name="obtain-your-workspace-id-and-key"></a>Получение идентификатора и ключа рабочей области
 Чтобы агент Log Analytics мог взаимодействовать со службой, для него нужно настроить идентификатор и ключ рабочей области. Чтобы получить идентификатор и ключ рабочей области, необходимо создать учетную запись OMS по адресу <https://mms.microsoft.com>.
-Следуйте инструкциям, чтобы создать учетную запись. После создания учетной записи необходимо получить идентификатор и ключ, щелкнув **Параметры**, **Подключенные источники**, а затем — **Серверы с Linux**, как показано ниже.
+Следуйте инструкциям, чтобы создать учетную запись. Чтобы после создания учетной записи получить идентификатор и ключ, щелкните колонку **Log Analytics**, а затем выберите имя рабочей области. Затем последовательно выберите **Дополнительные параметры**, **Подключенные источники** и **Серверы с Linux**. Отобразится необходимая вам информация, как показано ниже.
 
  ![](media/container-service-monitoring-oms/image5.png)
 

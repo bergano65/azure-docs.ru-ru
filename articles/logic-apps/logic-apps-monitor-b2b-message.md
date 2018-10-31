@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: bb7d9432-b697-44db-aa88-bd16ddfad23f
 ms.date: 07/21/2017
-ms.openlocfilehash: fd48dfaf7b863ab026da1758751509d9911ae01e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 63aa455851633d1e49fd1b26861aaac8a670ef15
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46948015"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49404790"
 ---
 # <a name="monitor-b2b-messages-and-set-up-logging-for-integration-accounts-in-azure-logic-apps"></a>Отслеживание сообщений B2B и настройка ведения журнала для учетной записи интеграции в Azure Logic Apps
 
@@ -58,7 +58,9 @@ ms.locfileid: "46948015"
 
    1. Установите флажок **Отправить в Log Analytics**. 
    2. В разделе **Log Analytics** выберите **Настройка**. 
-   3. В разделе **Рабочие области OMS** выберите рабочую область Log Analytics для ведения журнала.
+   3. В разделе **Рабочие области OMS** выберите рабочую область Log Analytics для ведения журнала. 
+   > [!NOTE]
+   > Рабочие области OMS теперь называются рабочими областями Log Analytics. 
    4. В разделе **Журнал** выберите категорию **IntegrationAccountTrackingEvents**.
    5. Нажмите **Сохранить**.
 
@@ -93,6 +95,8 @@ ms.locfileid: "46948015"
    1. Установите флажок **Отправить в Log Analytics**. 
    2. В разделе **Log Analytics** выберите **Настройка**. 
    3. В разделе **Рабочие области OMS** выберите рабочую область Log Analytics для ведения журнала.
+   > [!NOTE]
+   > Рабочие области OMS теперь называются рабочими областями Log Analytics.
    4. В разделе **Журнал** выберите категорию **IntegrationAccountTrackingEvents**.
    5. Когда все будет готово, нажмите **Сохранить**.
 
@@ -129,6 +133,6 @@ Azure поддерживает приведенные ниже типы схем
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Отслеживание сообщений B2B в Log Analytics](../logic-apps/logic-apps-track-b2b-messages-omsportal.md "Отслеживание сообщений B2B в OMS")
+* [Отслеживание сообщений B2B в Azure Log Analytics](../logic-apps/logic-apps-track-b2b-messages-omsportal.md "Отслеживание сообщений B2B в Azure Log Analytics")
 * [Обзор пакета интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Обзор пакета интеграции Enterprise")
 

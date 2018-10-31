@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 05/11/2018
 ms.author: ningk
-ms.openlocfilehash: 689730edcc98a23c82373ae8d36c3b831b33c076
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: a9f5f22cbd6e7cb39e1abb2ef712ffcfc27f55a4
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39627446"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49406149"
 ---
 # <a name="integrate-cloud-foundry-with-azure"></a>Интеграция Cloud Foundry и Azure
 
@@ -70,9 +70,9 @@ Azure Service Broker обеспечивает унифицированный и�
 
 ## <a name="6-metrics-and-logging"></a>6. Метрики и ведение журнала
 Azure Log Analytics Nozzle — это компонент Cloud Foundry, пересылающий метрики из [Cloud Foundry Loggregator Firehose](https://docs.cloudfoundry.org/loggregator/architecture.html) в [Azure Log Analytics](https://azure.microsoft.com/services/log-analytics/). С помощью Nozzle можно собирать, просматривать и анализировать метрики производительности и работоспособности системы CF в нескольких развертываниях.
-См. дополнительные сведения о [развертывании Azure Log Analytics Nozzle в среде Cloud Foundry с открытым исходным кодом и Pivotal Cloud Foundry с последующим доступом к данным из консоли Azure Log Analytics OMS](https://docs.microsoft.com/azure/cloudfoundry/cloudfoundry-oms-nozzle). 
+См. дополнительные сведения о [развертывании Azure Log Analytics Nozzle в среде Cloud Foundry с открытым исходным кодом и Pivotal Cloud Foundry с последующим доступом к данным из консоли Azure Log Analytics](https://docs.microsoft.com/azure/cloudfoundry/cloudfoundry-oms-nozzle). 
 > [!NOTE]
-> Из PCF 2.0 метрики работоспособности Bosh для виртуальных машин пересылаются по умолчанию в Loggregator Firehose. Они интегрированы в консоль Azure Log Analytics OMS.
+> Из PCF 2.0 метрики работоспособности Bosh для виртуальных машин пересылаются по умолчанию в Loggregator Firehose. Они интегрированы в консоль Azure Log Analytics.
 
 ## <a name="7-cost-saving"></a>7. Сокращение затрат
 ### <a name="cost-saving-for-devtest-environments"></a>Сокращение затрат на среды разработки и тестирования

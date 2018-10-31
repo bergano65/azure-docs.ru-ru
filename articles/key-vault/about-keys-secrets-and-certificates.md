@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/12/2018
 ms.author: bryanla
-ms.openlocfilehash: 1d6f84612dd2bac34c238ad7eaf323dc7fa00ba3
-ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
+ms.openlocfilehash: d93ad4185be3d4875c5747fd10359baab69af95d
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49311360"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49958659"
 ---
 # <a name="about-keys-secrets-and-certificates"></a>Сведения о ключах, секретах и сертификатах
 
@@ -101,7 +101,7 @@ Key Vault поддерживает только ключи RSA и EC.
 -   **RSA** — "программный" ключ RSA.
 -   **RSA-HSM** — "аппаратный" ключ RSA.
 
-Key Vault поддерживает ключи RSA таких размеров: 2048, 3072 и 4096. Кроме того, поддерживаются такие типы ключей EC: P-256, P-384, P-521 и P-256K.
+Key Vault поддерживает ключи RSA таких размеров: 2048, 3072 и 4096. Кроме того, поддерживаются типы ключей EC P-256, P-384, P-521, и P-256K (SECP256K1).
 
 ### <a name="cryptographic-protection"></a>Криптографическая защита
 
@@ -110,12 +110,19 @@ Key Vault поддерживает ключи RSA таких размеров: 2
 ###  <a name="ec-algorithms"></a>Алгоритмы EC
  Ниже приведены идентификаторы алгоритмов, которые поддерживаются ключами EC и EC-HSM в Key Vault. 
 
+#### <a name="curve-types"></a>Типы кривых
+
+-   **P-256** — кривая NIST P-256, определенная в документе [DSS FIPS PUB 186-4](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
+-   **P-256K** — кривая SEC SECP256K1, определенная в документе [SEC 2: Recommended Elliptic Curve Domain Parameters](http://www.secg.org/sec2-v2.pdf) (SEC 2: рекомендованные параметры домена эллиптической кривой).
+-   **P-384** — кривая NIST P-384, определенная в документе [DSS FIPS PUB 186-4](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
+-   **P-521** — кривая NIST P-521, определенная в документе [DSS FIPS PUB 186-4](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
+
 #### <a name="signverify"></a>SIGN/VERIFY
 
--   **ES256** — ECDSA для хэшей SHA-256 и ключей, созданных на основе кривой P-256. Этот алгоритм описан в документации по [RFC7518].
+-   **ES256** — ECDSA для хэшей SHA-256 и ключей, созданных на основе кривой P-256. Этот алгоритм описан в документации по [RFC7518](https://tools.ietf.org/html/rfc7518).
 -   **ES256K** — ECDSA для хэшей SHA-256 и ключей, созданных на основе кривой P-256K. Этот алгоритм находится на этапе ожидания стандартизации.
--   **ES384** — ECDSA для хэшей SHA-384 и ключей, созданных на основе кривой P-384. Этот алгоритм описан в документации по [RFC7518].
--   **ES512** — ECDSA для хэшей SHA-512 и ключей, созданных на основе кривой P-521. Этот алгоритм описан в документации по [RFC7518].
+-   **ES384** — ECDSA для хэшей SHA-384 и ключей, созданных на основе кривой P-384. Этот алгоритм описан в документации по [RFC7518](https://tools.ietf.org/html/rfc7518).
+-   **ES512** — ECDSA для хэшей SHA-512 и ключей, созданных на основе кривой P-521. Этот алгоритм описан в документации по [RFC7518](https://tools.ietf.org/html/rfc7518).
 
 ###  <a name="rsa-algorithms"></a>Алгоритмы RSA  
  Ниже приведены идентификаторы алгоритмов, которые поддерживаются ключами RSA и RSA-HSM в Key Vault.  

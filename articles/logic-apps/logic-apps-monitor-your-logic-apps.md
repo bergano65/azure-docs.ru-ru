@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: 5c1b1e15-3b6c-49dc-98a6-bdbe7cb75339
 ms.date: 07/21/2017
-ms.openlocfilehash: a08cd6289fc85b79ccec731126a33a9549d60546
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: c2e487f421d2dfc875efde82c078f557f7bd03d2
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43123539"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49405741"
 ---
 # <a name="monitor-status-set-up-diagnostics-logging-and-turn-on-alerts-for-azure-logic-apps"></a>Мониторинг состояния, настройка ведения журнала диагностики и включение предупреждений для Azure Logic Apps
 
@@ -90,7 +90,9 @@ ms.locfileid: "43123539"
 
    1. Установите флажок **Отправить в Log Analytics**. 
    2. В разделе **Log Analytics** выберите **Настройка**. 
-   3. В разделе **Рабочие области OMS** выберите рабочую область Log Analytics для ведения журнала.
+   3. В разделе **Рабочие области OMS** выберите рабочую область для ведения журнала.
+   > [!NOTE]
+   > Рабочие области OMS теперь называются рабочими областями Log Analytics.
    4. В разделе **Журнал** выберите категорию **WorkflowRuntime**.
    5. Выберите интервал метрики.
    6. Когда все будет готово, нажмите **Сохранить**.

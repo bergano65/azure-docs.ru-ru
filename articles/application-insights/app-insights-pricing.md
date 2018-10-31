@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.reviewer: Dale.Koetke
 ms.date: 08/11/2018
 ms.author: mbullwin
-ms.openlocfilehash: 221d0d8a78a46cad9f1994e9313b21e2867d9563
-ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
+ms.openlocfilehash: 4407322dd415a7c8b2ef8b7ff470a247b8d68f69
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42143288"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49319461"
 ---
 # <a name="manage-pricing-and-data-volume-in-application-insights"></a>Управление ценами и объемом данных в Application Insights
 
@@ -159,6 +159,10 @@ E. Настройка ежедневного ограничения объема
 ## <a name="limits-summary"></a>Сводная таблица ограничений
 
 [!INCLUDE [application-insights-limits](../../includes/application-insights-limits.md)]
+
+## <a name="disable-daily-cap-e-mails"></a>Отключение ежедневных электронных писем
+
+Чтобы отключить ежедневное ограничение объема электронных писем, в разделе **Настройки** ресурса Application Insights в области **Usage and estimated costs** (Данные об использовании и предполагаемые расходы) выберите **Ежедневное ограничение**. Существуют параметры для отправки писем при достижении ограничения, а также при достижении порога предупреждений. Если вы хотите отключить все ежедневные сообщения, связанные с кешем, снимите флажки с обоих полей.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

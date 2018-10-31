@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 10/11/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 694327cf7f7331a35a7e18cb68c566932c6231fc
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 95c49ccc11a12c2e9174ba2d186a302f500e8bf2
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49363509"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49650151"
 ---
 # <a name="automate-resources-in-your-datacenter-or-cloud-by-using-hybrid-runbook-worker"></a>Автоматизация ресурсов в центре обработки данных или в облаке с помощью использования гибридной рабочей роли Runbook
 
@@ -97,7 +97,7 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 
 Чтобы гибридная рабочая роль Runbook могла подключаться и регистрироваться в службе Log Analytics, ей нужен доступ к номерам портов и URL-адресам, описанным в этом разделе. Этот доступ является дополнением к [списку URL-адресов и портов, необходимых для подключения Microsoft Monitoring Agent](../log-analytics/log-analytics-agent-windows.md) к Log Analytics.
 
-При использовании прокси-сервера для обмена данными между агентом и службой Log Analytics необходимо убедиться, что соответствующие ресурсы доступны. Если доступ к Интернету ограничивается брандмауэром, вам нужно изменить его настройки, чтобы разрешить доступ к OMS. Если в качестве прокси-сервера используется шлюз OMS, он должен быть настроен для гибридных рабочих ролей. Инструкции см. в статье [Настройка шлюза OMS для гибридных рабочих ролей службы автоматизации](https://docs.microsoft.com/azure/log-analytics/log-analytics-oms-gateway#configure-for-automation-hybrid-workers).
+При использовании прокси-сервера для обмена данными между агентом и службой Log Analytics необходимо убедиться, что соответствующие ресурсы доступны. Если доступ к Интернету ограничивается брандмауэром, вам нужно изменить его настройки, чтобы разрешить доступ к OMS. Если в качестве прокси-сервера используется шлюз Log Analytics, он должен быть настроен для гибридных рабочих ролей. Инструкции см. в разделе [Настройка поддержки гибридных рабочих ролей службы автоматизации](https://docs.microsoft.com/azure/log-analytics/log-analytics-oms-gateway#configure-for-automation-hybrid-workers).
 
 Для обмена данными между гибридной рабочей ролью Runbook и службой автоматизации необходимы следующие порт и URL-адрес:
 

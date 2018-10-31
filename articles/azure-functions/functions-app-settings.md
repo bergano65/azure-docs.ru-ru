@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/22/2018
 ms.author: glenga
-ms.openlocfilehash: ec309bc5484c0ac96d1323c56670c147737e7c64
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: 2eb736891b12c07441bc8828ca07dd0b9fa13d98
+ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49377869"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49458128"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Справочник по параметрам приложений для Функций Azure
 
@@ -82,11 +82,11 @@ ms.locfileid: "49377869"
 
 ## <a name="azurewebjobssecretstoragetype"></a>AzureWebJobsSecretStorageType
 
-Указывает репозиторий или поставщик, используемый для хранения ключей. В настоящее время поддерживаемыми репозиториями являются большой двоичный объект ("Blob") и файловая система ("disabled"). Значение по умолчанию — файловая система ("disabled").
+Указывает репозиторий или поставщик, используемый для хранения ключей. Сейчас поддерживаемыми репозиториями являются большой двоичный объект ("Blob") и локальная файловая система ("Files"). По умолчанию в версии 1 используется большой двоичный объект, а в версии 2 — файловая система. Обратите внимание на то, что в версии 1 в файловой системе будут работать только функции, выполняемые в рамках плана службы приложений.
 
 |Ключ|Образец значения|
 |---|------------|
-|AzureWebJobsSecretStorageType|disabled|
+|AzureWebJobsSecretStorageType|Файлы|
 
 ## <a name="azurewebjobsstorage"></a>AzureWebJobsStorage
 

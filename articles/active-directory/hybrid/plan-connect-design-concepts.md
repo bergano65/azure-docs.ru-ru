@@ -16,12 +16,12 @@ ms.workload: Identity
 ms.date: 08/10/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: f85726f7058c783b6e369126532e40ceecc3c846
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: bf5384333504df023e98650934c77192f23f9f71
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46308183"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49946000"
 ---
 # <a name="azure-ad-connect-design-concepts"></a>Azure AD Connect: принципы проектирования
 В этом документе приведено описание факторов, которые должны учитываться при проектировании реализации Azure AD Connect. Здесь подробно рассмотрены некоторые области, и часть из них вкратце рассмотрена в других документах.

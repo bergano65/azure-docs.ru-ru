@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: 68438a317b33bb7e3e784936cdfd1282ba823ad8
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 380bf5cb89a165534d0084758d532613eeff480a
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34600244"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49320498"
 ---
 # <a name="azure-maps-supported-languages"></a>Поддерживаемые языки в службе "Карты Azure"
 Служба "Карты Azure" локализована на разные языки.  В таблице ниже содержатся записи коды языков для каждой службы.  
@@ -54,6 +54,8 @@ ms.locfileid: "34600244"
 | lt-LT      | Литовский             |   ✓   |    ✓   |    ✓    |         ✓         |        ✓       |     ✓     |
 | ms-MY      | Малайский (латиница)          |   ✓   |    ✓   |    ✓    |                   |        ✓       |     ✓     |
 | nb-NO      | Норвежский (букмол)       |   ✓   |    ✓   |    ✓    |         ✓         |        ✓       |     ✓     |
+| NGT        | Neutral Ground Truth — официальные языки для всех регионов в локальных сценариях, если он доступен. |   ✓     |        |         |                   |      ✓          |         |
+| NGT-Latn   | Neutral Ground Truth — экзонимы на латинском языке. Будет использоваться сценарий на латинском алфавите, если он доступен. |   ✓     |        |         |                   |        ✓         |          |
 | pl-PL      | Польский                 |   ✓   |    ✓   |    ✓    |         ✓         |        ✓       |     ✓     |
 | pt-BR      | Португальский (Бразилия)    |   ✓   |    ✓   |    ✓    |                   |        ✓       |     ✓     |
 | pt-PT      | Португальский (Португалия)  |   ✓   |    ✓   |    ✓    |         ✓         |        ✓       |     ✓     |

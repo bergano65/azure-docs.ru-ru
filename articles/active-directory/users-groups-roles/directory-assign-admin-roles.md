@@ -14,12 +14,12 @@ ms.date: 09/25/2018
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
-ms.openlocfilehash: 755b94b71fdaefb261741f4d4e756b90d8148280
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: cae0b6a316839f10636ff3d81b9e18729d03298e
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49116901"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49987874"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -65,7 +65,7 @@ ms.locfileid: "49116901"
 
 * **[Администратор службы Dynamics 365 или администратор служб CRM:](#dynamics-365-service-administrator)** пользователи с этой ролью имеют глобальные разрешения в Microsoft Dynamics 365 Online при наличии этой службы, а также возможность управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Использование роли администратора службы для управления клиентом](https://docs.microsoft.com/dynamics365/customer-engagement/admin/use-service-admin-role-manage-tenant).
 
-* **[Администратор службы Exchange](#exchange-service-administrator)**: у пользователей с этой ролью есть глобальные разрешения в Microsoft Exchange Online при наличии этой службы. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
+* **[Администратор службы Exchange](#exchange-service-administrator)**: у пользователей с этой ролью есть глобальные разрешения в Microsoft Exchange Online при наличии этой службы. У них также есть возможность создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
 * **[Глобальный администратор или администратор организации](#company-administrator)**: пользователи с этой ролью имеют доступ ко всем административным функциям в Azure Active Directory, а также к службам, использующим идентификаторы Azure Active Directory, например Exchange Online, SharePoint Online и Skype для бизнеса Online. Пользователь, зарегистрировавший клиент Azure Active Directory, становится глобальным администратором. Только глобальные администраторы могут назначать другие административные роли. В компании может быть несколько глобальных администраторов. Глобальные администраторы могут сбросить пароль любого пользователя и администратора.
 
@@ -94,6 +94,14 @@ ms.locfileid: "49116901"
   * Администратор службы технической поддержки
   * Читатель Центра сообщений
   * Читатель отчетов
+  
+  <b>Важно</b>. Пользователи с этой ролью могут изменять пароли для пользователей, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в службе Azure Active Directory и за ее пределами. Изменение пароля пользователя подразумевает возможность предполагать идентификатор и разрешения пользователя. Например: 
+  * Владельцы при регистрации приложения и владельцы корпоративных приложений, которые могут управлять учетными данными принадлежащих им приложений. У этих приложений в Azure AD и в других местах могут быть привилегированные разрешения, которые не предоставлены администраторам службы технической поддержки. По этому пути администратор службы технической поддержки сможет предположить идентификатор владельца приложения, а затем идентификатор привилегированного приложения, обновив учетные данные приложения.
+  * Владельцы подписок Azure, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure.
+  * Владельцы групп безопасности и групп Office 365, которые могут управлять принадлежностью к группе. Эти группы могут предоставлять доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure AD и другом месте.
+  * Администраторы в других службах за пределами Azure AD, таких как Exchange Online, Центр безопасности и соответствия требованиям Office и системы управления персоналом.
+  * Пользователи без прав администратора, например руководители, юристы и сотрудники отдела кадров, у которых может быть доступ к конфиденциальным или частным сведениям.
+
   
   > [!NOTE]
   > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы поддержки". На [портале Azure](https://portal.azure.com/) это "Администратор паролей".
@@ -125,7 +133,7 @@ ms.locfileid: "49116901"
 
 * **[Администратор службы поддержки](#service-support-administrator)**: пользователи с этой ролью могут открывать запросы в службу поддержки Майкрософт для служб Azure и Office 365, а также просматривать панели мониторинга службы и сообщения из центра сообщений на портале Azure и портале администрирования Office 365. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
-* **[Администратор службы SharePoint](#sharepoint-service-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft SharePoint Online при наличии этой службы, а также возможность управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
+* **[Администратор службы SharePoint](#sharepoint-service-administrator)**. Пользователи с этой ролью имеют глобальные разрешения в Microsoft SharePoint Online при наличии этой службы, а также возможность создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
 * **[Администратор службы Skype для бизнеса или администратор службы Lync](#lync-service-administrator)**: у пользователей с этой ролью есть глобальные разрешения в Microsoft Skype для бизнеса при наличии этой службы, а также возможность управлять определенными атрибутами пользователя Skype в Azure Active Directory. Кроме того, эта роль позволяет управлять запросами в службу поддержки и отслеживать работоспособность служб, а также предоставляет доступ к центру администрирования Teams и Skype для бизнеса. Учетная запись также должна иметь лицензию Teams, иначе она не сможет запускать командлеты PowerShell Teams. Дополнительные сведения см. в руководствах по [использованию роли администратора Skype для бизнеса](https://support.office.com/article/about-the-skype-for-business-admin-role-aeb35bda-93fc-49b1-ac2c-c74fbeb737b5) и [лицензировании дополнительных компонентов Skype для бизнеса и Microsoft Teams](https://docs.microsoft.com/skypeforbusiness/skype-for-business-and-microsoft-teams-add-on-licensing/skype-for-business-and-microsoft-teams-add-on-licensing).
 
@@ -140,7 +148,7 @@ ms.locfileid: "49116901"
 
 * **[Специалист службы поддержки связи Teams](#teams-communications-support-specialist)**: пользователи с этой ролью могут устранять неполадки со связью в Microsoft Teams и Skype для бизнеса с помощью средств устранения неполадок пользовательских вызовов в центре администрирования Microsoft Teams и Skype для бизнеса. Пользователи с этой ролью могут просматривать сведения об определенном пользователе только при его вызове.
 
-* **[Администратор службы Teams](#teams-service-administrator)**: пользователи с этой ролью могут управлять всеми функциями рабочей нагрузки Microsoft Teams с помощью центра администрирования Microsoft Teams и Skype для бизнеса и соответствующих модулей PowerShell. Сюда входят, помимо прочего, все средства управления, связанные с телефонией, обменом сообщениями, собраниями и самими командами Teams. Также эта роль позволяет управлять группами Office 365.
+* **[Администратор службы Teams](#teams-service-administrator)**: пользователи с этой ролью могут управлять всеми функциями рабочей нагрузки Microsoft Teams с помощью центра администрирования Microsoft Teams и Skype для бизнеса и соответствующих модулей PowerShell. Сюда входят, помимо прочего, все средства управления, связанные с телефонией, обменом сообщениями, собраниями и самими командами Teams. Кроме того, эта роль позволяет создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб.
 
 * **[Администратор учетных записей пользователей](#user-account-administrator)**: пользователи с этой ролью могут создавать пользователей и управлять всеми аспектами пользователей (с некоторыми ограничениями, указанными ниже). Кроме того, пользователи с этой ролью могут создавать группы и управлять ими. Кроме того, эта роль включает в себя возможность создавать представления пользователей и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб.
 
@@ -149,6 +157,13 @@ ms.locfileid: "49116901"
   |Общие разрешения|<p>Создание пользователей и групп</p><p>Создание представлений пользователя и управление ими</p><p>Управление запросами в службу поддержки Office|
   |<p>Для всех пользователей, в том числе всех администраторов</p>|<p>Управление лицензиями</p><p>Управление всеми свойствами пользователя, за исключением имени участника-пользователя</p>
   |Только для пользователей без прав администратора или с правами любой из следующих ограниченных ролей администратора:<ul><li>Читатели каталогов<li>Приглашающий гостей<li>Администратор службы технической поддержки<li>Читатель Центра сообщений<li>Читатель отчетов<li>Администратор учетных записей|<p>Удаление и восстановление</p><p>Отключение и включение</p><p>Отмена маркеров обновления</p><p>Управление всеми свойствами пользователя, включая имя участника-пользователя</p><p>Сброс пароля</p><p>Обновление ключей устройства (FIDO)</p>
+  
+  <b>Важно</b>. Пользователи с этой ролью могут изменять пароли для пользователей, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в службе Azure Active Directory и за ее пределами. Изменение пароля пользователя подразумевает возможность предполагать идентификатор и разрешения пользователя. Например: 
+  * Владельцы при регистрации приложения и владельцы корпоративных приложений, которые могут управлять учетными данными принадлежащих им приложений. У этих приложений в Azure AD и в других местах могут быть привилегированные разрешения, которые не предоставлены администраторам пользователей. По этому пути администратор пользователей сможет предположить идентификатор владельца приложения, а затем идентификатор привилегированного приложения, обновив учетные данные приложения.
+  * Владельцы подписок Azure, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure.
+  * Владельцы групп безопасности и групп Office 365, которые могут управлять принадлежностью к группе. Эти группы могут предоставлять доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure AD и другом месте.
+  * Администраторы в других службах за пределами Azure AD, таких как Exchange Online, Центр безопасности и соответствия требованиям Office и системы управления персоналом.
+  * Пользователи без прав администратора, например руководители, юристы и сотрудники отдела кадров, у которых может быть доступ к конфиденциальным или частным сведениям.
 
 В следующих таблицах описываются разрешения в Azure Active Directory, предоставленные каждой роли. Некоторые роли могут иметь дополнительные разрешения в службах Майкрософт за пределами Azure Active Directory.
 
@@ -232,6 +247,28 @@ ms.locfileid: "49116901"
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.commerce.billing/allEntities/allTasks | Управление всеми аспектами выставления счетов Office 365. |
+| microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
+| microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
+
+### <a name="desktop-analytics-administrator"></a>Администратор аналитики классических приложений
+Может получать доступ к службам и средствам управления компьютерами, включая Intune, и управлять ими.
+
+  > [!NOTE]
+  > Эта роль наследует дополнительные разрешения у роли читателя каталогов.
+  >
+  >
+
+  > [!NOTE]
+  > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
+  >
+  >
+
+| **Действия** | **Описание** |
+| --- | --- |
+| microsoft.azure.accessService/allEntities/allTasks | Управление всеми аспектами службы доступа Azure. |
+| microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.office365.desktopAnalytics/allEntities/allTasks | Управляет всеми аспектами аналитики классических приложений. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 
@@ -349,6 +386,8 @@ ms.locfileid: "49116901"
 | microsoft.office365.complianceManager/allEntities/allTasks | Управление всеми аспектами Office 365 Compliance Manager. |
 | microsoft.office365.exchange/allEntities/allTasks | Управление всеми аспектами Exchange Online. |
 | microsoft.office365.lockbox/allEntities/allTasks | Управление всеми аспектами защищенного хранилища Office 365. |
+| microsoft.office365.messageCenter/messages/read | Чтение сообщений в microsoft.office365.messageCenter. |
+| microsoft.office365.messageCenter/securityMessages/read | Чтение сообщений о безопасности в microsoft.office365.messageCenter. |
 | microsoft.powerApps.powerBI/allEntities/allTasks | Управление всеми аспектами Power BI. |
 | microsoft.office365.protectionCenter/allEntities/allTasks | Управление всеми аспектами Центра защиты Office 365. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
@@ -596,6 +635,11 @@ ms.locfileid: "49116901"
 | microsoft.azure.accessService/allEntities/allTasks | Управление всеми аспектами службы доступа Azure. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.aad.directory/groups/unified/create | Создание групп Office 365. |
+| microsoft.aad.directory/groups/unified/delete | Удаление групп Office 365. |
+| microsoft.aad.directory/groups/unified/basic/update | Обновление основных свойств групп Office 365. |
+| microsoft.aad.directory/groups/unified/members/update | Обновление членства в группах Office 365. |
+| microsoft.aad.directory/groups/unified/owners/update | Обновление владельцев в группах Office 365. |
 | microsoft.office365.exchange/allEntities/allTasks | Управление всеми аспектами Exchange Online. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -755,8 +799,8 @@ ms.locfileid: "49116901"
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.accessmessagecenter/allEntities/allTasks | Создание и удаление всех ресурсов и чтение и изменение стандартных свойств в Центре сообщений. |
 | microsoft.azure.accessService/allEntities/allTasks | Управление всеми аспектами службы доступа Azure. |
+| microsoft.office365.messageCenter/messages/read | Чтение сообщений в microsoft.office365.messageCenter. |
 
 ### <a name="partner-tier1-support"></a>Служба поддержка партнеров уровня 1
 Не используйте (не предназначено для общего применения).
@@ -986,6 +1030,10 @@ ms.locfileid: "49116901"
 | microsoft.azure.accessService/allEntities/allTasks | Управление всеми аспектами службы доступа Azure. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.aad.directory/groups/unified/delete | Удаление групп Office 365. |
+| microsoft.aad.directory/groups/unified/basic/update | Обновление основных свойств групп Office 365. |
+| microsoft.aad.directory/groups/unified/members/update | Обновление членства в группах Office 365. |
+| microsoft.aad.directory/groups/unified/owners/update | Обновление владельцев в группах Office 365. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.sharepoint/allEntities/allTasks | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в microsoft.office365.sharepoint. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -1070,6 +1118,10 @@ ms.locfileid: "49116901"
 | --- | --- |
 | microsoft.aad.directory/groups/hiddenMembers/read | Чтение свойства roups.hiddenMembers в Azure Active Directory. |
 | microsoft.aad.directory/policies/basic/read | Чтение базовых свойств политик в Azure Active Directory. |
+| microsoft.aad.directory/groups/unified/delete | Удаление групп Office 365. |
+| microsoft.aad.directory/groups/unified/basic/update | Обновление основных свойств групп Office 365. |
+| microsoft.aad.directory/groups/unified/members/update | Обновление членства в группах Office 365. |
+| microsoft.aad.directory/groups/unified/owners/update | Обновление владельцев в группах Office 365. |
 | microsoft.azure.accessService/allEntities/allTasks | Управление всеми аспектами службы доступа Azure. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |

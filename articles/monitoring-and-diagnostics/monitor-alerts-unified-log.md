@@ -5,15 +5,15 @@ author: msvijayn
 services: monitoring
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 05/01/2018
+ms.date: 10/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: 2e2db54f4c356a754144e17b11cf25fdf3f12d9f
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: bcede1f985937058196b75a93f539cb34da73992
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46994009"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49365068"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Оповещения журнала в Azure Monitor
 В этой статье рассматриваются оповещения журнала. Это один из типов оповещений, которые поддерживаются в системе [оповещений Azure](monitoring-overview-unified-alerts.md) и позволяют пользователям применять платформу аналитики Azure в качестве основы для оповещений.
@@ -21,7 +21,7 @@ ms.locfileid: "46994009"
 Оповещение журнала состоит из правил поиска по журналам, созданных для [Azure Log Analytics](../log-analytics/log-analytics-tutorial-viewdata.md) или [Application Insights](../application-insights/app-insights-cloudservices.md#view-azure-diagnostic-events). Дополнительные сведения о его использовании см. в сведениях о [создании оповещений журнала в Azure](alert-log.md).
 
 > [!NOTE]
-> Распространенные данные журнала из [Azure Log Analytics](../log-analytics/log-analytics-tutorial-viewdata.md) теперь также доступны на платформе метрик в Azure Monitor. Подробности доступны в сведениях об [оповещениях метрик для журналов](monitoring-metric-alerts-logs.md).
+> Распространенные данные журнала из [Azure Log Analytics](../log-analytics/log-analytics-tutorial-viewdata.md) теперь также доступны на платформе метрик в Azure Monitor. Более подробную информацию см. в статье [Create Metric Alerts for Logs in Azure Monitor](monitoring-metric-alerts-logs.md) (Создание оповещений метрик для журналов в Azure Monitor).
 
 
 ## <a name="log-search-alert-rule---definition-and-types"></a>Правило генерации оповещений для поиска по журналам: определения и типы
@@ -110,7 +110,7 @@ ms.locfileid: "46994009"
 
 
 ## <a name="pricing-and-billing-of-log-alerts"></a>Цены и выставление счетов для оповещений журнала
-Цены, применимые к оповещениям журнала, установлены на странице [цен Azure Monitor](https://azure.microsoft.com/en-us/pricing/details/monitor/). В счетах Azure оповещения журнала представлены типом `microsoft.insights/scheduledqueryrules`. Кроме того:
+Цены, применимые к оповещениям журнала, установлены на странице [цен Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/). В счетах Azure оповещения журнала представлены типом `microsoft.insights/scheduledqueryrules`. Кроме того:
 - Для оповещений журнала Application Insights указываются точное имя оповещения, группа ресурсов и свойства оповещения.
 - Для оповещений журнала Log Analytics указываются имя оповещения в формате `<WorkspaceName>|<savedSearchId>|<scheduleId>|<ActionId>`, группа ресурсов и свойства оповещения.
 

@@ -10,18 +10,18 @@ ms.reviewer: divswa, LADocs
 ms.topic: article
 ms.date: 09/14/2018
 tags: connectors
-ms.openlocfilehash: 13268ec865ec72fce23df550619b199389096360
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.openlocfilehash: dd86fd1aa8b1dab9f329f12924ff37db1256d1eb
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47056513"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49377909"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Подключение к системам SAP из Azure Logic Apps
 
 В этой статье показано, как получить доступ к своим локальным ресурсам SAP из логического приложения с помощью соединителя центрального компонента (ECC) SAP ERP. Соединитель SAP ECC поддерживает интеграцию сообщений или данных в системы на основе SAP Netweaver и из них с использованием промежуточного документа (IDoc), программного интерфейса бизнес-приложений (BAPI) или удаленного вызова функции (RFC).
 
-Соединитель SAP ECC использует <a href="https://help.sap.com/saphelp_nwpi71/helpdata/en/e9/23c80d66d08c4c8c044a3ea11ca90f/frameset.htm">библиотеку соединителя SAP .NET (NCo)</a> и предоставляет такие операции и действия:
+Соединитель SAP ECC использует <a href="https://support.sap.com/en/product/connectors/msnet.html">библиотеку соединителя SAP .NET (NCo)</a> и предоставляет такие операции и действия:
 
 - **Отправка в SAP**. Отправка IDoc или вызов функций BAPI через tRFC в системах SAP.
 - **Получение из SAP**. Получение IDoc или вызовов функций BAPI через tRFC из систем SAP.
@@ -44,7 +44,7 @@ ms.locfileid: "47056513"
 
 * Скачайте и установите последнюю версию [локального шлюза данных](https://www.microsoft.com/download/details.aspx?id=53127) на любом компьютере в локальной среде. Не забудьте настроить шлюз на портале Azure, прежде чем продолжить. Шлюз позволяет безопасно получать доступ к данным и ресурсам в локальной среде. Дополнительные сведения см. в статье [Установка локального шлюза данных для Azure Logic Apps](../logic-apps/logic-apps-gateway-install.md).
 
-* Скачайте и установите последнюю версию клиентской библиотеки SAP, сейчас это — <a href="https://softwaredownloads.sap.com/file/0020000000086282018" target="_blank">SAP Connector (NCo) 3.0.20.0 для Microsoft .NET Framework 4.0 и 64-разрядной версии Windows (x64)</a>, на том же компьютере, где работает локальный шлюз данных. Необходимо установить эту или более позднюю версию по следующим причинам:
+* Скачайте и установите последнюю версию клиентской библиотеки SAP, сейчас это — <a href="https://softwaredownloads.sap.com/file/0020000001865512018" target="_blank">SAP Connector (NCo) 3.0.21.0 для Microsoft .NET Framework 4.0 и 64-разрядной версии Windows (x64)</a>, на том же компьютере, где работает локальный шлюз данных. Необходимо установить эту или более позднюю версию по следующим причинам:
 
   * Предыдущие версии SAP NCo могут оказаться заблокированными при одновременной отправке более одного сообщения IDoc. 
   Это состояние блокирует все последующие сообщения, передаваемые объекту назначения SAP, что вызывает превышение времени ожидания сообщений.

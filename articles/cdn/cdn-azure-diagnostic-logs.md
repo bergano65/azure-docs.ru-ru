@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/06/2018
 ms.author: magattus
-ms.openlocfilehash: 6834222ec2befa305b558abf0976a1c9899a7086
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: d0b804c48f3de4d4ba29ebe0785f6dd991329a53
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49093032"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49409260"
 ---
 # <a name="azure-diagnostic-logs"></a>Журналы диагностики Azure
 
@@ -95,17 +95,23 @@ ms.locfileid: "49093032"
 
 2. Выберите **Настройка**, чтобы настроить ведение журналов Log Analytics. 
 
-   Появится страница **Рабочие области OMS**.
+   Откроется страница **Рабочие области Log Analytics**.
+
+    >[!NOTE] 
+    >Рабочие области OMS теперь называются рабочими областями Log Analytics.
 
     ![Портал — журналы диагностики](./media/cdn-diagnostics-log/06_Choose-workspace.png)
 
 3. Щелкните **Создать рабочую область**.
 
-    Появится страница **Рабочая область OMS**.
+    Откроется страница **Рабочая область Log Analytics**.
+
+    >[!NOTE] 
+    >Рабочие области OMS теперь называются рабочими областями Log Analytics.
 
     ![Портал — журналы диагностики](./media/cdn-diagnostics-log/07_Create-new.png)
 
-4. Введите имя **рабочей области OMS**. Имя рабочей области OMS должно быть уникальным и может содержать только буквы, цифры и дефисы; не допускаются пробелы и знаки подчеркивания. 
+4. Введите имя **рабочей области Log Analytics**. Имя рабочей области Log Analytics должно быть уникальным и может содержать только буквы, цифры и дефисы. Пробелы и знаки подчеркивания не допускаются. 
 
 5. В качестве **подписки** выберите имеющуюся подписку из раскрывающегося списка. 
 

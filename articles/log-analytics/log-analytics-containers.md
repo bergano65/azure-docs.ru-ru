@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 04/26/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: f9876f3e21a7cfccae2fb7f70913269d4ca1fdf4
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: d8f2701ca62eee261beaa49fe2a0719be7423a5b
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49115375"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49408495"
 ---
 # <a name="container-monitoring-solution-in-log-analytics"></a>Решение для мониторинга контейнеров в Log Analytics
 
@@ -67,6 +67,7 @@ ms.locfileid: "49115375"
 
 ### <a name="x64-linux-distributions-supported-as-container-hosts"></a>Дистрибутивы Linux x64, поддерживаемые в качестве узлов контейнера
 
+
 - Ubuntu 14.04 LTS и 16.04 LTS
 - CoreOS (стабильный выпуск);
 - Amazon Linux 2016.09.0;
@@ -78,8 +79,10 @@ ms.locfileid: "49115375"
 - Платформа контейнеров Red Hat OpenShift (OCP) 3.4 и 3.5
 - ACS Mesosphere DC/OS 1.7.3–1.8.8
 - ACS Kubernetes 1.4.5–1.6
-    - События Kubernetes, список Kubernetes и процессы контейнера поддерживаются только в версии 1.4.1-45 и более поздних версиях агента Operations Management Suite для Linux
+    - События Kubernetes, список Kubernetes и процессы контейнера поддерживаются только в 1.4.1-45 и более поздних версиях агента Log Analytics для Linux.
 - ACS Docker Swarm
+
+[!INCLUDE [log-analytics-agent-note.md](../../includes/log-analytics-agent-note.md)] 
 
 ### <a name="supported-windows-operating-system"></a>Поддерживаемая операционная система Windows
 
@@ -96,25 +99,25 @@ ms.locfileid: "49115375"
 
 1. Решение для мониторинга контейнеров необходимо добавить в рабочую область Log Analytics из [Azure Мarketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.ContainersOMS?tab=Overview) или в соответствии с инструкциями по [добавлению решений Log Analytics из коллекции решений](log-analytics-add-solutions.md).
 
-2. Установите и используйте Docker с агентом OMS. В зависимости от операционной системы и оркестратора Docker можно использовать следующие методы настройки агента.
+2. Установите и используйте Docker с агентом Log Analytics. В зависимости от операционной системы и оркестратора Docker можно использовать следующие методы настройки агента.
   - Для автономных узлов:
-    - В поддерживаемых операционных системах Linux установите и запустите Docker, а затем установите и настройте [агент OMS для Linux](log-analytics-agent-linux.md).  
-    - В CoreOS невозможно запустить агент OMS для Linux. Вместо этого можно запустить контейнерную версию агента OMS для Linux. Если вы работаете с контейнерами в облаке "Azure для государственных организаций", то см. раздел [Для всех узлов контейнера Linux, включая CoreOS](#for-all-linux-container-hosts-including-coreos) или [Для всех узлов контейнера Linux Azure для государственных организаций, включая CoreOS](#for-all-azure-government-linux-container-hosts-including-coreos).
+    - В поддерживаемых операционных системах Linux установите и запустите Docker, а затем установите и настройте [агент Log Analytics для Linux](log-analytics-agent-linux.md).  
+    - В CoreOS невозможно запустить агент Log Analytics для Linux. Вместо этого можно запустить контейнерную версию агента Log Analytics для Linux. Если вы работаете с контейнерами в облаке "Azure для государственных организаций", то см. раздел [Для всех узлов контейнера Linux, включая CoreOS](#for-all-linux-container-hosts-including-coreos) или [Для всех узлов контейнера Linux Azure для государственных организаций, включая CoreOS](#for-all-azure-government-linux-container-hosts-including-coreos).
     - В Windows Server 2016 и Windows 10 установите модуль и клиент Docker, после чего подключите агент, чтобы собрать сведения и отправить их в Log Analytics. Если вы используете среду Windows, см. сведения в разделе [Установка и настройка узлов контейнера Windows](#install-and-configure-windows-container-hosts).
   - Для многоузловой оркестрации Docker:
-    - Если вы используете среду Red Hat OpenShift, то см. раздел [Настройка агента OMS для Red Hat OpenShift](#configure-an-oms-agent-for-red-hat-openshift).
+    - Если вы используете среду Red Hat OpenShift, ознакомьтесь с разделом по [настройке агента Log Analytics для Red Hat OpenShift](#configure-an-oms-agent-for-red-hat-openshift).
     - Если вы используете кластер Kubernetes с помощью Службы контейнеров Azure (AKS), см. следующие разделы:
-       - [Настройка агента OMS для Linux для Kubernetes](#configure-an-oms-linux-agent-for-kubernetes);
-       - [Настройка агента OMS для Windows для Kubernetes](#configure-an-oms-windows-agent-for-kubernetes);
-       - [Использование Helm для развертывания агента OMS в Kubernetes для Linux](#use-helm-to-deploy-oms-agent-on-linux-kubernetes).
-    - При наличии кластера DC/OS в службе контейнеров Azure дополнительные сведения см. в статье [Мониторинг кластера DC/OS в службе контейнеров Azure с помощью Operations Management Suite](../container-service/dcos-swarm/container-service-monitoring-oms.md).
-    - При наличии среды режима Docker Swarm ознакомьтесь с разделом [Настройка агента OMS для Docker Swarm](#configure-an-oms-agent-for-docker-swarm).
-    - При наличии кластера Service Fabric см. дополнительные сведения в статье [Мониторинг контейнеров с помощью OMS Log Analytics](../service-fabric/service-fabric-diagnostics-oms-containers.md).
+       - Ознакомьтесь с разделом [Настройка агента Log Analytics в Linux для Kubernetes](#configure-an-oms-linux-agent-for-kubernetes).
+       - Ознакомьтесь с разделом [Настройка агента Log Analytics в Windows для Kubernetes](#configure-an-oms-windows-agent-for-kubernetes).
+       - Ознакомьтесь с разделом [Использование Helm для развертывания агента Log Analytics в Kubernetes для Linux](#use-helm-to-deploy-oms-agent-on-linux-kubernetes).
+    - При наличии кластера DC/OS в службе контейнеров Azure дополнительные сведения см. в статье [Мониторинг кластера DC/OS Службы контейнеров Azure с использованием Log Analytics](../container-service/dcos-swarm/container-service-monitoring-oms.md).
+    - При наличии среды режима Docker Swarm ознакомьтесь с разделом [Настройка агента Log Analytics для Docker Swarm](#configure-an-oms-agent-for-docker-swarm).
+    - При наличии кластера Service Fabric ознакомьтесь со статьей [Мониторинг контейнеров с помощью Log Analytics](../service-fabric/service-fabric-diagnostics-oms-containers.md).
 
 Дополнительные сведения о том, как установить и настроить модули Docker на компьютерах под управлением Windows, см. в [этой статье](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/configure-docker-daemon).
 
 > [!IMPORTANT]
-> Docker необходимо запустить **перед** установкой [агента OMS для Linux](log-analytics-agent-linux.md) на узлах контейнера. Если вы уже установили агент перед установкой Docker, то необходимо переустановить агент OMS для Linux. Дополнительные сведения о Docker см. на [веб-сайте Docker](https://www.docker.com).
+> Docker необходимо запустить **перед** установкой [агента Log Analytics для Linux](log-analytics-agent-linux.md) на узлах контейнера. Если вы уже установили агент перед установкой Docker, то необходимо переустановить агент Log Analytics для Linux. Дополнительные сведения о Docker см. на [веб-сайте Docker](https://www.docker.com).
 
 
 ### <a name="install-and-configure-linux-container-hosts"></a>Установка и настройка узлов контейнера Linux
@@ -123,7 +126,7 @@ ms.locfileid: "49115375"
 
 **Для всех узлов контейнера Linux, за исключением CoreOS:**
 
-- Дополнительные сведения и инструкции по установке агента OMS для Linux см. в статье [Сбор данных с компьютеров в среде с помощью Log Analytics](log-analytics-concept-hybrid.md).
+- Дополнительные сведения и шаги по установке агента Log Analytics для Linux см. в статье [Сбор данных в гибридной среде с помощью агента Azure Log Analytics](log-analytics-concept-hybrid.md).
 
 **Для всех узлов контейнера Linux, включая CoreOS:**
 
@@ -143,11 +146,11 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
 
 **Переход от использования установленного агента Linux к использованию агента в контейнере**
 
-Если ранее вы использовали установленный напрямую агент и теперь вместо него хотите использовать агент, работающий в контейнере, сначала необходимо удалить агент OMS для Linux. Сведения об удалении агента см. в разделе [Удаление агента OMS для Linux](log-analytics-agent-linux.md).  
+Если ранее вы использовали установленный напрямую агент и теперь вместо него хотите использовать агент, работающий в контейнере, сначала необходимо удалить агент Log Analytics для Linux. Сведения об удалении агента Log Analytics для Linux см. в [этой статье](log-analytics-agent-linux.md).  
 
-#### <a name="configure-an-oms-agent-for-docker-swarm"></a>Настройка агента OMS для Docker Swarm
+#### <a name="configure-a-log-analytics-agent-for-docker-swarm"></a>Настройка агента Log Analytics для Docker Swarm
 
-Агент OMS можно запускать в качестве глобальной службы в Docker Swarm. Используйте приведенные ниже сведения для создания службы агента OMS. Необходимо будет предоставить идентификатор и первичный ключ рабочей области Log Analytics.
+Агент Log Analytics можно запускать в качестве глобальной службы в Docker Swarm. Используйте следующие сведения для создания службы агента Log Analytics. Необходимо будет предоставить идентификатор и первичный ключ рабочей области Log Analytics.
 
 - Выполните следующую команду на главном узле.
 
@@ -178,20 +181,20 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
     l9rh3n987g9c45zffuxdxetd9   KEY                 38 minutes ago      38 minutes ago
     ```
 
-3. Запустите следующую команду, чтобы подключить секреты к контейнерному агенту OMS.
+3. Запустите следующую команду, чтобы подключить секреты к контейнерному агенту Log Analytics.
 
     ```
     sudo docker service create  --name omsagent --mode global  --mount type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock --mount type=bind,source=/var/lib/docker/containers,destination=/var/lib/docker/containers --secret source=WSID,target=WSID --secret source=KEY,target=KEY  -p 25225:25225 -p 25224:25224/udp --restart-condition=on-failure microsoft/oms
     ```
 
-#### <a name="configure-an-oms-agent-for-red-hat-openshift"></a>Настройка агента OMS для Red Hat OpenShift
-Существует три способа добавления агента OMS в Red Hat OpenShift, чтобы начать сбор данных мониторинга контейнера:
+#### <a name="configure-a-log-analytics-agent-for-red-hat-openshift"></a>Настройка агента Log Analytics для Red Hat OpenShift
+Существует три способа добавления агента Log Analytics в Red Hat OpenShift, чтобы начать сбор данных мониторинга контейнера:
 
-* [установить агент OMS для Linux](log-analytics-agent-linux.md) непосредственно на каждом узле OpenShift;  
+* [установить агент Log Analytics для Linux](log-analytics-agent-linux.md) непосредственно на каждом узле OpenShift;  
 * [включить расширение виртуальной машины Log Analytics](log-analytics-azure-vm-extension.md) на каждом узле OpenShift, размещенном в Azure;  
-* установить агент OMS как набор daemon-set для OpenShift.  
+* установить агент Log Analytics как набор daemon-set для OpenShift.  
 
-В этом разделе описаны действия, которые необходимо выполнить для установки агента OMS как набора daemon-set для OpenShift.  
+В этом разделе описаны действия, которые необходимо выполнить для установки агента Log Analytics как набора daemon-set для OpenShift.  
 
 1. Войдите на главный узел OpenShift и скопируйте YAML-файл [ocp-omsagent.yaml](https://github.com/Microsoft/OMS-docker/blob/master/OpenShift/ocp-omsagent.yaml) с портала GitHub на свой главный узел. При этом замените значения идентификатора рабочей области Log Analytics и первичного ключа своими значениями.
 2. Выполните следующие команды, чтобы создать проект для Log Analytics и настроить учетную запись пользователя.
@@ -230,7 +233,7 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
     No events.  
     ```
 
-Чтобы применить секреты для защиты идентификатора рабочей области Log Analytics и первичного ключа, когда используется YAML-файл набора daemon-set агента OMS, выполните следующие действия.
+Чтобы применить секреты для защиты идентификатора рабочей области Log Analytics и первичного ключа, когда используется YAML-файл набора daemon-set агента Log Analytics, выполните следующие действия.
 
 1. Войдите на главный узел OpenShift и скопируйте YAML-файл [ocp-ds-omsagent.yaml](https://github.com/Microsoft/OMS-docker/blob/master/OpenShift/ocp-ds-omsagent.yaml) и сценарий создания секретов [ocp secretgen.sh](https://github.com/Microsoft/OMS-docker/blob/master/OpenShift/ocp-secretgen.sh) с портала GitHub.  Этот сценарий создаст YAML-файл секретов для идентификатора рабочей области Log Analytics и первичного ключа, чтобы защитить ваши секретные сведения.  
 2. Выполните следующие команды, чтобы создать проект для Log Analytics и настроить учетную запись пользователя. Сценарий создания секретов запросит ввести идентификатор рабочей области Log Analytics <WSID> и первичный ключ <KEY>, после чего создаст файл ocp-secret.yaml.  
@@ -269,7 +272,7 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
     No events.  
     ```
 
-6. Разверните YAML-файл набора daemon-set агента OMS, выполнив следующую команду:
+6. Разверните YAML-файл набора daemon-set агента Log Analytics, выполнив следующую команду:
 
     `oc create -f ocp-ds-omsagent.yaml`  
 
@@ -294,18 +297,18 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
      WSID:   37 bytes  
     ```
 
-#### <a name="configure-an-oms-linux-agent-for-kubernetes"></a>Настройка агента OMS для Linux для Kubernetes
+#### <a name="configure-a-log-analytics-linux-agent-for-kubernetes"></a>Настройка агента Log Analytics в Linux для Kubernetes
 
-Чтобы установить агент OMS для Linux для Kubernetes используйте сценарий, позволяющий создать YAML-файл секретов для идентификатора рабочей области и первичного ключа. На странице [OMS Docker Kubernetes в GitHub](https://github.com/Microsoft/OMS-docker/tree/master/Kubernetes) есть файлы, которые можно использовать с секретными данными или без них:
+Чтобы установить агент Log Analytics в Linux для Kubernetes, используйте сценарий, позволяющий создать YAML-файл секретов для идентификатора рабочей области и первичного ключа. На странице [Log Analytics Docker Kubernetes в GitHub](https://github.com/Microsoft/OMS-docker/tree/master/Kubernetes) есть файлы, которые можно использовать с секретными данными или без них.
 
-- стандартный файл DaemonSet агента OMS для Linux не поддерживает секретные сведения (omsagent.yaml);
-- YAML-файл DaemonSet агента OMS для Linux использует секретные сведения (omsagent-ds-secrets.yaml) со сценариями формирования секретов, чтобы создать YAML-файл секретов (omsagentsecret.yaml).
+- Стандартный файл DaemonSet агента Log Analytics для Linux не поддерживает секретные сведения (omsagent.yaml).
+- YAML-файл DaemonSet агента Log Analytics для Linux использует секретные сведения (omsagent-ds-secrets.yaml) со сценариями формирования секретов, чтобы создать YAML-файл секретов (omsagentsecret.yaml).
 
 Вы можете создать DaemonSet агента OMS с секретными данными или без них.
 
 **Стандартный файл YAML DaemonSet агента OMS без секретов**
 
-- Для стандартного файла YAML DaemonSet агента OMS замените `<WSID>` и `<KEY>` на ваши WSID и ключ. Скопируйте файл на главный узел и выполните следующую команду:
+- Для стандартного файла YAML DaemonSet агента Log Analytics замените `<WSID>` и `<KEY>` на ваши WSID и ключ. Скопируйте файл на главный узел и выполните следующую команду:
 
     ```
     sudo kubectl create -f omsagent.yaml
@@ -313,7 +316,7 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
 
 **Стандартный файл YAML DaemonSet агента OMS с секретами**
 
-1. Чтобы использовать DaemonSet агента OMS с секретными сведениями, сначала создайте секреты.
+1. Чтобы использовать DaemonSet агента Log Analytics с секретными сведениями, сначала создайте секреты.
     1. Скопируйте сценарий и файл шаблона секретов в один и тот же каталог.
         - Сценарий создания секретов — secret-gen.sh
         - Шаблон секретов — secret-template.yaml
@@ -364,7 +367,7 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
 
     5. Создание свой набор daemon-set omsagent, выполнив команду ``` sudo kubectl create -f omsagent-ds-secrets.yaml ```
 
-2. Убедитесь, что DaemonSet агента OMS запущен, что будет выглядеть примерно так:
+2. Проверьте, работает ли DaemonSet агента Log Analytics, что будет выглядеть примерно так:
 
     ```
     keiko@ubuntu16-13db:~# sudo kubectl get ds omsagent
@@ -376,7 +379,7 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
     ```
 
 
-Для агента OMS для Linux для Kubernetes используйте сценарий, позволяющий создать файл YAML секретов для идентификатора рабочей области и первичного ключа. Используйте сведения из следующего примера с [файлом YAML omsagent](https://github.com/Microsoft/OMS-docker/blob/master/Kubernetes/omsagent.yaml), чтобы защитить свои секретные сведения.
+Для агента Log Analytics в Linux для Kubernetes используйте сценарий, позволяющий создать YAML-файл секретов для идентификатора рабочей области и первичного ключа. Используйте сведения из следующего примера с [файлом YAML omsagent](https://github.com/Microsoft/OMS-docker/blob/master/Kubernetes/omsagent.yaml), чтобы защитить свои секретные сведения.
 
 ```
 keiko@ubuntu16-13db:~# sudo kubectl describe secrets omsagent-secret
@@ -393,15 +396,15 @@ WSID:   36 bytes
 KEY:    88 bytes
 ```
 
-#### <a name="configure-an-oms-windows-agent-for-kubernetes"></a>Настройка агента OMS для Windows для Kubernetes
-Чтобы установить агент OMS для Windows для Kubernetes используйте сценарий, позволяющий создать YAML-файл секретов для идентификатора рабочей области и первичного ключа. На странице [OMS Docker Kubernetes в GitHub](https://github.com/Microsoft/OMS-docker/tree/master/Kubernetes/windows) есть файлы, которые можно использовать с секретными данными.  Необходимо установить агент OMS отдельно для главного узла и узла агента.  
+#### <a name="configure-a-log-analytics-windows-agent-for-kubernetes"></a>Настройка агента Log Analytics в Windows для Kubernetes
+Чтобы установить агент Log Analytics в Windows для Kubernetes, используйте сценарий, позволяющий создать YAML-файл секретов для идентификатора рабочей области и первичного ключа. На странице [Log Analytics Docker Kubernetes в GitHub](https://github.com/Microsoft/OMS-docker/tree/master/Kubernetes/windows) есть файлы, которые можно использовать с секретными сведениями.  Необходимо установить агент Log Analytics отдельно для главного узла и узла агента.  
 
-1. Чтобы использовать DaemonSet агента OMS с секретными сведениями на главном узле, сначала выполните вход и создайте секреты.
+1. Чтобы использовать DaemonSet агента Log Analytics с секретными сведениями на главном узле, сначала выполните вход и создайте секреты.
     1. Скопируйте сценарий и файл шаблона секретов в один и тот же каталог.
         - Сценарий создания секретов — secret-gen.sh
         - Шаблон секретов — secret-template.yaml
 
-    2. Выполните сценарий, как показано в следующем примере. Сценарий запрашивает идентификатор рабочей области OMS и первичный ключ, а после их ввода создает YAML-файл секретов, который можно запустить.   
+    2. Выполните сценарий, как показано в следующем примере. Сценарий запрашивает идентификатор рабочей области Log Analytics и первичный ключ, а после их ввода создает YAML-файл секретов, который можно запустить.   
 
         ```
         #> sudo bash ./secret-gen.sh
@@ -435,7 +438,7 @@ KEY:    88 bytes
 
     5. Создание свой набор daemon-set omsagent, выполнив команду ```kubectl create -f ws-omsagent-de-secrets.yaml```
 
-2. Убедитесь, что DaemonSet агента OMS запущен, что будет выглядеть примерно так:
+2. Проверьте, работает ли DaemonSet агента Log Analytics, что будет выглядеть примерно так:
 
     ```
     root@ubuntu16-13db:~# kubectl get deployment omsagent
@@ -445,8 +448,8 @@ KEY:    88 bytes
 
 3. Чтобы установить агент на рабочем узле под управлением Windows, следуйте указаниям в разделе по [установке и настройке узлов контейнера Windows](#install-and-configure-windows-container-hosts).
 
-#### <a name="use-helm-to-deploy-oms-agent-on-linux-kubernetes"></a>Использование Helm для развертывания агента OMS в Kubernetes для Linux
-Чтобы использовать Helm для развертывания агента OMS в Kubernetes в среде Linux, выполните действия ниже.
+#### <a name="use-helm-to-deploy-log-analytics-agent-on-linux-kubernetes"></a>Использование Helm для развертывания агента Log Analytics в Kubernetes для Linux
+Чтобы использовать Helm для развертывания агента Log Analytics в Kubernetes в среде Linux, сделайте следующее.
 
 1. Создание свой набор daemon-set omsagent, выполнив команду ```helm install --name omsagent --set omsagent.secret.wsid=<WSID>,omsagent.secret.key=<KEY> stable/msoms```
 2. Результаты будут выглядеть следующим образом.
@@ -530,7 +533,7 @@ KEY:    88 bytes
 
 ## <a name="solution-components"></a>Компоненты решения
 
-На портале OMS перейдите к *коллекции решений* и добавьте **решение мониторинга контейнера**. Если вы используете агенты Windows, то при добавлении этого решения на каждом компьютере с агентом устанавливается следующий пакет управления. Для этих пакетов управления не требуются настройка или обслуживание.
+На портале Azure перейдите к *коллекции решений* и добавьте **решение мониторинга контейнера**. Если вы используете агенты Windows, то при добавлении этого решения на каждом компьютере с агентом устанавливается следующий пакет управления. Для этих пакетов управления не требуются настройка или обслуживание.
 
 - *ContainerManagement.xxx* устанавливается в папке, расположенной по адресу C:\Program Files\Microsoft Monitoring Agent\Agent\Health Service State\Management Packs.
 
@@ -539,7 +542,7 @@ KEY:    88 bytes
 
 Данные собираются каждые три минуты следующими типами агентов.
 
-- [Агент OMS для Linux](log-analytics-linux-agents.md)
+- [Агент Log Analytics для Linux](log-analytics-linux-agents.md)
 - [Агент Windows](log-analytics-windows-agent.md)
 - [Расширение виртуальной машины Log Analytics](log-analytics-azure-vm-extension.md)
 

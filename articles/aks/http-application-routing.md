@@ -8,18 +8,21 @@ ms.service: container-service
 ms.topic: article
 ms.date: 04/25/2018
 ms.author: laevenso
-ms.openlocfilehash: 8934852fe3d95d0a96af0283c30bba4b3bdb411b
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: c2f68afb685cb04d456e06cadf378bd1c3ebb1fb
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44345885"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49384993"
 ---
 # <a name="http-application-routing"></a>Маршрутизация приложений HTTP
 
 Решение маршрутизации приложений HTTP упрощает доступ к приложениям, развернутым в кластере Службы Azure Kubernetes (AKS). Если решение включено, то оно настраивает контроллер входящего трафика в кластере службы AKS. Когда приложения развернуты, решение также создает общедоступные DNS-имена для конечных точек приложений.
 
 При включении этой надстройки в подписке создается зона DNS. Дополнительные сведения о стоимости DNS см. [на этой странице][dns-pricing].
+
+> [!CAUTION]
+> Надстройка маршрутизации приложения HTTP предназначена для быстрого создания входного контроллера и доступа к вашим приложениям. Мы не рекомендуем ее использовать для работы. Дополнительные сведения о готовых к развертыванию приложений, включающих несколько реплик и поддержку TLS, см. раздел [Создание входного контроллера HTTPS](https://docs.microsoft.com/azure/aks/ingress-tls).
 
 ## <a name="http-routing-solution-overview"></a>Обзор решения маршрутизации HTTP-трафика
 
@@ -88,6 +91,13 @@ spec:
       containers:
       - image: r.j3ss.co/party-clippy
         name: party-clippy
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
         tty: true
         command: ["party-clippy"]
         ports:

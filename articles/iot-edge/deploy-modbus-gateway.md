@@ -8,12 +8,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 06/07/2018
 ms.author: kgremban
-ms.openlocfilehash: b5316479011a432f3822448f03b8ad6ecddd4fe1
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 031524f4ef00b57f598c1114d594fb70eeedd15b
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39590598"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49394006"
 ---
 # <a name="connect-modbus-tcp-devices-through-an-iot-edge-device-gateway"></a>Подключение устройств Modbus TCP через шлюз устройств IoT Edge
 
@@ -23,7 +23,7 @@ ms.locfileid: "39590598"
 
 В этой статье объясняется, как создать собственный образ контейнера для модуля Modbus (или можно использовать предварительно подготовленный пример), а затем развернуть его на устройство IoT Edge, которое будет выполнять роль шлюза. 
 
-В этой статье предполагается, что вы используете протокол Modbus TCP. Дополнительные сведения о том, как настроить модуль для поддержки Modbus RTU, см. в статье [Развертывание Azure IoT Edge на имитированном устройстве в ОС Windows (предварительная версия)](https://github.com/Azure/iot-edge-modbus) проекта на Github. 
+В этой статье предполагается, что вы используете протокол Modbus TCP. Дополнительные сведения о том, как настроить модуль для поддержки Modbus RTU, см. в проекте [Развертывание Azure IoT Edge на имитированном устройстве в ОС Windows (предварительная версия)](https://github.com/Azure/iot-edge-modbus) на Github. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 * Устройство Azure IoT Edge. Пошаговые инструкции по настройке устройства см. в статье [Развертывание Azure IoT Edge на имитированном устройстве в ОС Windows (предварительная версия)](quickstart.md) или [Развертывание Azure IoT Edge на имитированном устройстве в Linux (предварительная версия)](quickstart-linux.md). 
@@ -38,7 +38,7 @@ ms.locfileid: "39590598"
 mcr.microsoft.com/azureiotedge/modbus:1.0
 ```
 
-Если вы хотите создать собственный модуль и настроить его для своей среды, в проекте Github вы можете найти [модуль Modbus для Azure IoT Edge](https://github.com/Azure/iot-edge-modbus) с открытым кодом. Следуйте инструкциям в этом проекте, чтобы создать образ контейнера. Если вы создаете собственный образ контейнера, см. инструкции по публикации образов контейнеров в реестр и развертывании настраиваемого модуля на устройстве в статье о [разработке и развертывании модуля IoT Edge на C#](tutorial-csharp-module.md). 
+Если вы хотите создать собственный модуль и настроить его для своей среды, в проекте Github можно найти [модуль Modbus для Azure IoT Edge](https://github.com/Azure/iot-edge-modbus) с открытым кодом. Следуйте инструкциям в этом проекте, чтобы создать образ контейнера. Если вы создаете собственный образ контейнера, см. инструкции по публикации образов контейнеров в реестр и развертывании настраиваемого модуля на устройстве в статье о [разработке и развертывании модуля IoT Edge на C#](tutorial-csharp-module.md). 
 
 
 ## <a name="run-the-solution"></a>Запуск решения
@@ -54,13 +54,12 @@ mcr.microsoft.com/azureiotedge/modbus:1.0
 
       ```JSON
       {  
-        "properties.desired":{  
+        "properties.desired":{
           "PublishInterval":"2000",
-          "SlaveConfigs":{  
-            "Slave01":{  
-              "SlaveConnection":"<IPV4 address>",
-              "HwId":"PowerMeter-0a:01:01:01:01:01",
-              "Operations":{  
+          "SlaveConfigs":{
+            "Slave01":{
+              "SlaveConnection":"<IPV4 address>","HwId":"PowerMeter-0a:01:01:01:01:01",
+              "Operations":{
                 "Op01":{  
                   "PollingInterval": "1000",
                   "UnitId":"1",
@@ -100,8 +99,5 @@ docker logs -f modbus
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения о работе устройств IoT Edge в качестве шлюзов см. в статье [Создание устройства IoT Edge, которое работает как прозрачный шлюз][lnk-transparent-gateway-linux].
+- Дополнительные сведения о работе устройств IoT Edge в качестве шлюзов см. в статье [Создание устройства IoT Edge, которое работает как прозрачный шлюз](./how-to-create-transparent-gateway-linux.md).
 - Дополнительные сведения о работе модулей IoT Edge см. в [обзоре модулей Azure IoT Edge](iot-edge-modules.md).
-
-<!-- Links -->
-[lnk-transparent-gateway-linux]: ./how-to-create-transparent-gateway-linux.md

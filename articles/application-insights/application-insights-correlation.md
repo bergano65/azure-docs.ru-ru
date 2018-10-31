@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 04/09/2018
 ms.reviewer: sergkanz
 ms.author: mbullwin
-ms.openlocfilehash: 696843363bc6617bb11c01cdccb9dbbb7b719a82
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: d9b6f5c08eed5efceafc71feaf654ad8f4fcafa0
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46298206"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49341129"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -105,17 +105,19 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="open-tracing-and-application-insights"></a>OpenTracing и Application Insights
 
-Модели данных [OpenTracing](http://opentracing.io/) и Application Insights выглядят следующим образом: 
+[Спецификации модели данных OpenTracing ](http://opentracing.io/) и модели данных Application Insights сопоставлены следующим образом.
 
-- `request` и `pageView` сопоставляются со **Span** с помощью `span.kind = server`;
-- `dependency` сопоставляется со **Span** с помощью `span.kind = client`;
-- `id` элементов `request` и `dependency` сопоставляется со **Span.Id**;
-- `operation_Id` сопоставляется с **TraceId**;
-- `operation_ParentId` сопоставляется с **Reference** типа `ChildOf`.
+| Application Insights                  | OpenTracing                                      |
+|------------------------------------   |-------------------------------------------------  |
+| `Request`, `PageView`                 | `Span` с `span.kind = server`                  |
+| `Dependency`                          | `Span` с `span.kind = client`                  |
+| `Id` из `Request` и `Dependency`    | `SpanId`                                          |
+| `Operation_Id`                        | `TraceId`                                         |
+| `Operation_ParentId`                  | `Reference` типа `ChildOf` (родительский диапазон)   |
 
-В [этой статье](application-insights-data-model.md) представлены типы данных и модель данных для Application Insights.
+Дополнительные сведения см. в статье [Модель данных телеметрии Application Insights](application-insights-data-model.md). 
 
-Определения основных понятий OpenTracing см. в [спецификации](https://github.com/opentracing/specification/blob/master/specification.md) и [соглашениях о семантике](https://github.com/opentracing/specification/blob/master/semantic_conventions.md).
+Определения основных понятий OpenTracing см. в [спецификации](https://github.com/opentracing/specification/blob/master/specification.md) и [semantic_conventions](https://github.com/opentracing/specification/blob/master/semantic_conventions.md).
 
 
 ## <a name="telemetry-correlation-in-net"></a>Корреляция данных телеметрии в .NET

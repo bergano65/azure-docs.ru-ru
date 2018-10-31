@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 1/3/2018
+ms.date: 10/23/2018
 ms.author: osamaz, jaredr80
-ms.openlocfilehash: d4f8f0e6c8fab5dfb4efcc4f1659ba90336c8bf0
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: dc67f4a4e2189a63cfd4adbb5c1b7eace23acad5
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31593888"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49957536"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit-using-powershell"></a>Создание и изменение пиринга для канала ExpressRoute с помощью PowerShell
 
@@ -29,7 +29,7 @@ ms.locfileid: "31593888"
 > [!div class="op_single_selector"]
 > * [портал Azure](expressroute-howto-routing-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-routing-arm.md)
-> * [интерфейс командной строки Azure](howto-routing-cli.md)
+> * [Интерфейс командной строки Azure](howto-routing-cli.md)
 > * [Видео — частный пиринг](http://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-private-peering-for-your-expressroute-circuit)
 > * [Видео — общедоступный пиринг](http://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-public-peering-for-your-expressroute-circuit)
 > * [Видео — пиринг Майкрософт](http://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-microsoft-peering-for-your-expressroute-circuit)
@@ -307,10 +307,10 @@ Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
 ### <a name="deleteprivate"></a>Удаление частного пиринга Azure
 
-Для удаления конфигурации пиринга выполните следующий пример кода:
+Для удаления конфигурации пиринга выполните следующий пример кода.
 
 > [!WARNING]
-> Перед выполнением этого кода отсоедините от канала ExpressRoute все виртуальные сети. 
+> Перед запуском этого примера обязательно убедитесь, что все виртуальные сети и подключения Global Reach к ExpressRoute удалены. 
 > 
 > 
 

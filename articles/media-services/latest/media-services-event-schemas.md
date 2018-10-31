@@ -4,19 +4,19 @@ description: В этой статье приведены свойства соб
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: reference
-ms.date: 08/17/2018
+ms.date: 10/16/2018
 ms.author: juliako
-ms.openlocfilehash: a6a6c459e170627d26aa1445f4f4dd193965fe70
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 44e195055c74babd903cf4fb830167ab92951d4a
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42143065"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49376794"
 ---
 # <a name="azure-event-grid-schemas-for-media-services-events"></a>Схемы службы "Сетка событий Azure" для событий Служб мультимедиа
 
@@ -26,14 +26,56 @@ ms.locfileid: "42143065"
 
 ## <a name="available-event-types"></a>Доступные типы событий
 
-Службы мультимедиа выдают следующие типы событий:
+### <a name="job-related-event-types"></a>Типы событий, связанных с заданием
+
+Служба мультимедиа Microsoft Azure выдает следующие типы событий, связанных с **заданием**. Существует две категории событий, связанных с **заданием**: "Наблюдение за изменениями состояния задания" и "Наблюдение за изменениями состояния выходных данных задания". 
+
+Вы можете зарегистрироваться на все события, подписавшись на событие JobStateChange. Или, вы можете подписаться на отдельные события (к примеру, такие конечные состояния как JobErrored, JobFinished и JobCanceled). 
+
+#### <a name="monitoring-job-state-changes"></a>Наблюдение за изменениями состояния задания
 
 | Тип события | ОПИСАНИЕ |
 | ---------- | ----------- |
-| Microsoft.Media.JobStateChange| Состояние задания изменяется. |
+| Microsoft.Media.JobStateChange| Получить событие о всех изменениях состояние задания. |
+| Microsoft.Media.JobScheduled| Получить событие, когда задание переходит в состояние запланированного. |
+| Microsoft.Media.JobProcessing| Получить событие, когда задание переходит в состояние обработки. |
+| Microsoft.Media.JobCanceling| Получить событие, когда задание переходит в состояние отмены. |
+| Microsoft.Media.JobFinished| Получить событие, когда задание переходит в состояние завершенного. Это конечное состояние, которое включает в себя выходные данные задания.|
+| Microsoft.Media.JobCanceled| Получить событие, когда задание переходит в состояние отмененного. Это конечное состояние, которое включает в себя выходные данные задания.|
+| Microsoft.Media.JobErrored| Получить событие, когда задание переходит в состояние ошибки. Это конечное состояние, которое включает в себя выходные данные задания.|
+
+#### <a name="monitoring-job-output-state-changes"></a>Наблюдение за изменениями состояния выходных данных задания
+
+| Тип события | ОПИСАНИЕ |
+| ---------- | ----------- |
+| Microsoft.Media.JobOutputStateChange| Получить событие о всех изменениях состояния выходных данных задания. |
+| Microsoft.Media.JobOutputScheduled| Получить событие, когда выходные данные задания переходят в состояние запланированных. |
+| Microsoft.Media.JobOutputProcessing| Получить событие, когда выходные данные задания переходят в состояние обработки. |
+| Microsoft.Media.JobOutputCanceling| Получить событие, когда выходные данные задания переходят в состояние отмены.|
+| Microsoft.Media.JobOutputFinished| Получить событие, когда выходные данные задания переходят в состояние завершения.|
+| Microsoft.Media.JobOutputCanceled| Получить событие, когда выходные данные задания переходят в состояние отмененных.|
+| Microsoft.Media.JobOutputErrored| Получить событие, когда выходные данные задания переходят в состояние ошибки.|
+
+### <a name="live-event-types"></a>Типы событий, связанных с прямой трансляцией
+
+Служба мультимедиа также выдает следующие типы событий, связанных с **прямой трансляцией**. Существуют две категории для событий **прямой трансляции**: события уровня потока и события уровня дорожки. 
+
+#### <a name="stream-level-events"></a>События уровня потока
+
+События уровня потока вызываются в потоке или подключении. Каждое событие имеет параметр `StreamId`, который идентифицирует подключение или поток. Каждый поток или подключение имеет одну или несколько дорожек разных типов. Например, одно подключение от кодировщика может иметь одну аудиодорожку и четыре видеодорожки. К типам событий потока относятся следующие:
+
+| Тип события | ОПИСАНИЕ |
+| ---------- | ----------- |
 | Microsoft.Media.LiveEventConnectionRejected | Попытка подключения кодировщика отклоняется. |
 | Microsoft.Media.LiveEventEncoderConnected | Кодировщик устанавливает подключение с событием прямой трансляции. |
 | Microsoft.Media.LiveEventEncoderDisconnected | Отключение кодировщика. |
+
+#### <a name="track-level-events"></a>События уровня дорожки
+
+События уровня дорожки вызываются в каждой дорожке. К типам событий дорожки относятся следующие:
+
+| Тип события | ОПИСАНИЕ |
+| ---------- | ----------- |
 | Microsoft.Media.LiveEventIncomingDataChunkDropped | Сервер мультимедиа удаляет блок данных, потому что он устарел или имеет перекрывающуюся метку времени (метка времени нового блока данных меньше времени окончания предыдущего блока данных). |
 | Microsoft.Media.LiveEventIncomingStreamReceived | Сервер мультимедиа получает первый блок данных для каждой дорожки в потоковой передаче или подключении. |
 | Microsoft.Media.LiveEventIncomingStreamsOutOfSync | Сервер мультимедиа обнаруживает, что аудио- и видеопотоки не синхронизированы. Используется как предупреждение, так как не влияет на взаимодействие с пользователем. |
@@ -41,24 +83,9 @@ ms.locfileid: "42143065"
 | Microsoft.Media.LiveEventIngestHeartbeat | Публикуется каждые 20 секунд для каждой дорожки, когда выполняется событие прямой трансляции. Предоставляет сводку работоспособности приема. |
 | Microsoft.Media.LiveEventTrackDiscontinuityDetected | Сервер мультимедиа обнаруживает разрыв во входящей дорожке. |
 
-Существуют две категории для событий **прямой трансляции**: события уровня потока и события уровня дорожки. 
+## <a name="event-schemas-and-properties"></a>Схемы и свойства событий
 
-События уровня потока вызываются в потоке или подключении. Каждое событие имеет параметр `StreamId`, который идентифицирует подключение или поток. Каждый поток или подключение имеет одну или несколько дорожек разных типов. Например, одно подключение от кодировщика может иметь одну аудиодорожку и четыре видеодорожки. К типам событий потока относятся следующие:
-
-* LiveEventConnectionRejected;
-* LiveEventEncoderConnected;
-* LiveEventEncoderDisconnected.
-
-События уровня дорожки вызываются в каждой дорожке. К типам событий дорожки относятся следующие:
-
-* LiveEventIncomingDataChunkDropped;
-* LiveEventIncomingStreamReceived;
-* LiveEventIncomingStreamsOutOfSync;
-* LiveEventIncomingVideoStreamsOutOfSync;
-* LiveEventIngestHeartbeat;
-* LiveEventTrackDiscontinuityDetected.
-
-## <a name="jobstatechange"></a>JobStateChange
+### <a name="jobstatechange"></a>JobStateChange
 
 В примере ниже показана схема события **JobStateChange**. 
 
@@ -89,7 +116,142 @@ ms.locfileid: "42143065"
 
 Возможные значения состояния задания: *В очереди*, *Запланировано*, *Обработка*, *Завершено*, *Ошибка*, *Отменено*, *Отмена*.
 
-## <a name="liveeventconnectionrejected"></a>LiveEventConnectionRejected
+### <a name="jobscheduled"></a>JobScheduled
+### <a name="jobprocessing"></a>JobProcessing
+### <a name="jobcanceling"></a>JobCanceling
+
+Для каждого неокончательного изменения состояния задания (например, JobScheduled, JobProcessing, JobCanceling) пример схемы выглядит следующим образом:
+
+```json
+[{
+  "topic": "/subscriptions/<subscription-id>/resourceGroups/<rg-name>/providers/Microsoft.Media/mediaservices/<account-name>",
+  "subject": "transforms/VideoAnalyzerTransform/jobs/<job-id>",
+  "eventType": "Microsoft.Media.JobProcessing",
+  "eventTime": "2018-10-12T16:12:18.0839935",
+  "id": "a0a6efc8-f647-4fc2-be73-861fa25ba2db",
+  "data": {
+    "previousState": "Scheduled",
+    "state": "Processing",
+    "correlationData": {
+      "TestKey1": "TestValue1",
+      "testKey2": "testValue2"
+    }
+  },
+  "dataVersion": "1.0",
+  "metadataVersion": "1"
+}]
+```
+
+### <a name="jobfinished"></a>JobFinished
+### <a name="jobcanceled"></a>JobCanceled
+### <a name="joberrored"></a>JobErrored
+
+Для каждого окончательного изменения состояния задания (например, JobScheduled, JobProcessing, JobCanceling) пример схемы выглядит следующим образом:
+
+```json
+[{
+  "topic": "/subscriptions/<subscription-id>/resourceGroups/<rg-name>/providers/Microsoft.Media/mediaservices/<account-name>",
+  "subject": "transforms/VideoAnalyzerTransform/jobs/<job-id>",
+  "eventType": "Microsoft.Media.JobFinished",
+  "eventTime": "2018-10-12T16:25:56.4115495",
+  "id": "9e07e83a-dd6e-466b-a62f-27521b216f2a",
+  "data": {
+    "outputs": [
+      {
+        "@odata.type": "#Microsoft.Media.JobOutputAsset",
+        "assetName": "output-7640689F",
+        "error": null,
+        "label": "VideoAnalyzerPreset_0",
+        "progress": 100,
+        "state": "Finished"
+      }
+    ],
+    "previousState": "Processing",
+    "state": "Finished",
+    "correlationData": {
+      "TestKey1": "TestValue1",
+      "testKey2": "testValue2"
+    }
+  },
+  "dataVersion": "1.0",
+  "metadataVersion": "1"
+}]
+```
+
+Объект данных имеет следующие свойства:
+
+| Свойство | type | ОПИСАНИЕ |
+| -------- | ---- | ----------- |
+| outputs | Массив, | Получить выходные данные задания.|
+
+### <a name="joboutputstatechange"></a>JobOutputStateChange
+
+В примере ниже показана схема события **JobOutputStateChange**:
+
+```json
+[{
+  "topic": "/subscriptions/<subscription-id>/resourceGroups/<rg-name>/providers/Microsoft.Media/mediaservices/<account-name>",
+  "subject": "transforms/VideoAnalyzerTransform/jobs/<job-id>",
+  "eventType": "Microsoft.Media.JobOutputStateChange",
+  "eventTime": "2018-10-12T16:25:56.0242854",
+  "id": "dde85f46-b459-4775-b5c7-befe8e32cf90",
+  "data": {
+    "previousState": "Processing",
+    "output": {
+      "@odata.type": "#Microsoft.Media.JobOutputAsset",
+      "assetName": "output-7640689F",
+      "error": null,
+      "label": "VideoAnalyzerPreset_0",
+      "progress": 100,
+      "state": "Finished"
+    },
+    "jobCorrelationData": {
+      "TestKey1": "TestValue1",
+      "testKey2": "testValue2"
+    }
+  },
+  "dataVersion": "1.0",
+  "metadataVersion": "1"
+}]
+```
+
+### <a name="joboutputscheduled"></a>JobOutputScheduled
+### <a name="joboutputprocessing"></a>JobOutputProcessing
+### <a name="joboutputfinished"></a>JobOutputFinished
+### <a name="joboutputcanceling"></a>JobOutputCanceling
+### <a name="joboutputcanceled"></a>JobOutputCanceled
+### <a name="joboutputerrored"></a>JobOutputErrored
+
+Для каждого изменения состояния JobOutput пример схемы выглядит следующим образом:
+
+```json
+[{
+  "topic": "/subscriptions/<subscription-id>/resourceGroups/<rg-name>/providers/Microsoft.Media/mediaservices/<account-name>",
+  "subject": "transforms/VideoAnalyzerTransform/jobs/<job-id>",
+  "eventType": "Microsoft.Media.JobOutputProcessing",
+  "eventTime": "2018-10-12T16:12:18.0061141",
+  "id": "f1fd5338-1b6c-4e31-83c9-cd7c88d2aedb",
+  "data": {
+    "previousState": "Scheduled",
+    "output": {
+      "@odata.type": "#Microsoft.Media.JobOutputAsset",
+      "assetName": "output-7640689F",
+      "error": null,
+      "label": "VideoAnalyzerPreset_0",
+      "progress": 0,
+      "state": "Processing"
+    },
+    "jobCorrelationData": {
+      "TestKey1": "TestValue1",
+      "testKey2": "testValue2"
+    }
+  },
+  "dataVersion": "1.0",
+  "metadataVersion": "1"
+}]
+```
+
+### <a name="liveeventconnectionrejected"></a>LiveEventConnectionRejected;
 
 Следующий пример демонстрирует схему события **LiveEventConnectionRejected**: 
 
@@ -136,7 +298,7 @@ ms.locfileid: "42143065"
 | MPE_INGEST_BITRATE_AGGREGATED_EXCEEDED | Совокупная скорость превышает максимально допустимый предел. |
 | MPE_RTMP_FLV_TAG_TIMESTAMP_INVALID | Метка времени из кодировщика RTMP для FLVTag видео или аудио недействительна. |
 
-## <a name="liveeventencoderconnected"></a>LiveEventEncoderConnected
+### <a name="liveeventencoderconnected"></a>LiveEventEncoderConnected
 
 Следующий пример демонстрирует схему события **LiveEventEncoderConnected**: 
 
@@ -169,7 +331,7 @@ ms.locfileid: "42143065"
 | EncoderIp | строка | IP-адрес кодировщика. |
 | EncoderPort | строка | Порт кодировщика из источника этого потока. |
 
-## <a name="liveeventencoderdisconnected"></a>LiveEventEncoderDisconnected.
+### <a name="liveeventencoderdisconnected"></a>LiveEventEncoderDisconnected.
 
 Следующий пример демонстрирует схему события **LiveEventEncoderDisconnected**: 
 
@@ -225,7 +387,7 @@ ms.locfileid: "42143065"
 | MPI_REST_API_CHANNEL_STOP | Канал находится в режиме обслуживания. |
 | MPI_STREAM_HIT_EOF | Поток конца файла отправлен кодировщиком. |
 
-## <a name="liveeventincomingdatachunkdropped"></a>LiveEventIncomingDataChunkDropped
+### <a name="liveeventincomingdatachunkdropped"></a>LiveEventIncomingDataChunkDropped
 
 Следующий пример демонстрирует схему события **LiveEventIncomingDataChunkDropped**: 
 
@@ -261,7 +423,7 @@ ms.locfileid: "42143065"
 | Шкала времени | строка | Шкала времени метки времени. |
 | ResultCode | строка | Причина удаления блока данных. **FragmentDrop_OverlapTimestamp** или **FragmentDrop_NonIncreasingTimestamp**. |
 
-## <a name="liveeventincomingstreamreceived"></a>LiveEventIncomingStreamReceived
+### <a name="liveeventincomingstreamreceived"></a>LiveEventIncomingStreamReceived
 
 Следующий пример демонстрирует схему события **LiveEventIncomingStreamReceived**: 
 
@@ -303,7 +465,7 @@ ms.locfileid: "42143065"
 | Timestamp | строка | Получена первая метка времени. |
 | Шкала времени | строка | Шкала времени, в которой представлена метка времени. |
 
-## <a name="liveeventincomingstreamsoutofsync"></a>LiveEventIncomingStreamsOutOfSync
+### <a name="liveeventincomingstreamsoutofsync"></a>LiveEventIncomingStreamsOutOfSync
 
 Следующий пример демонстрирует схему события **LiveEventIncomingStreamsOutOfSync**: 
 
@@ -319,7 +481,9 @@ ms.locfileid: "42143065"
       "minLastTimestamp": "319996",
       "typeOfStreamWithMinLastTimestamp": "Audio",
       "maxLastTimestamp": "366000",
-      "typeOfStreamWithMaxLastTimestamp": "Video"
+      "typeOfStreamWithMaxLastTimestamp": "Video",
+      "timescaleOfMinLastTimestamp": "10000000", 
+      "timescaleOfMaxLastTimestamp": "10000000"       
     },
     "dataVersion": "1.0",
     "metadataVersion": "1"
@@ -335,8 +499,10 @@ ms.locfileid: "42143065"
 | TypeOfTrackWithMinLastTimestamp | строка | Тип дорожки (аудио или видео) с минимальной последней меткой времени. |
 | MaxLastTimestamp | строка | Максимальная из всех меток времени среди всех дорожек (аудио или видео). |
 | TypeOfTrackWithMaxLastTimestamp | строка | Тип дорожки (аудио или видео) с максимальной последней меткой времени. |
+| TimescaleOfMinLastTimestamp| строка | Получить шкалу времени, в которой представлена "MinLastTimestamp".|
+| TimescaleOfMaxLastTimestamp| строка | Получить шкалу времени, в которой представлена "MaxLastTimestamp".|
 
-## <a name="liveeventincomingvideostreamsoutofsync"></a>LiveEventIncomingVideoStreamsOutOfSync
+### <a name="liveeventincomingvideostreamsoutofsync"></a>LiveEventIncomingVideoStreamsOutOfSync;
 
 Следующий пример демонстрирует схему события **LiveEventIncomingVideoStreamsOutOfSync**: 
 
@@ -352,7 +518,8 @@ ms.locfileid: "42143065"
       "FirstTimestamp": "2162058216",
       "FirstDuration": "2000",
       "SecondTimestamp": "2162057216",
-      "SecondDuration": "2000"
+      "SecondDuration": "2000",
+      "timescale": "10000000"      
     },
     "dataVersion": "1.0"
   }
@@ -367,8 +534,9 @@ ms.locfileid: "42143065"
 | FirstDuration | строка | Длительность блока данных с первой меткой времени. |
 | SecondTimestamp | строка  | Метка времени, полученная для другого уровня дорожки или уровня качества типа видео. |
 | SecondDuration | строка | Длительность блока данных со второй меткой времени. |
+| Шкала времени | строка | Шкала времени, состоящая из отметок времени и длительности.|
 
-## <a name="liveeventingestheartbeat"></a>LiveEventIngestHeartbeat
+### <a name="liveeventingestheartbeat"></a>LiveEventIngestHeartbeat;
 
 Следующий пример демонстрирует схему события **LiveEventIngestHeartbeat**: 
 
@@ -417,7 +585,7 @@ ms.locfileid: "42143065"
 | Состояние | строка | Состояние события прямой трансляции. |
 | Healthy | bool | Указывает состояние работоспособности приема на основе счетчиков и ​​флагов. Работоспособно, если OverlapCount = 0 && DiscontinuityCount = 0 && NonIncreasingCount = 0 && UnexpectedBitrate = false. |
 
-## <a name="liveeventtrackdiscontinuitydetected"></a>LiveEventTrackDiscontinuityDetected
+### <a name="liveeventtrackdiscontinuitydetected"></a>LiveEventTrackDiscontinuityDetected
 
 Следующий пример демонстрирует схему события **LiveEventTrackDiscontinuityDetected**: 
 
@@ -456,7 +624,7 @@ ms.locfileid: "42143065"
 | DiscontinuityGap | строка | Разрыв между двумя метками времени выше. |
 | Шкала времени | строка | Шкала времени, в которой представлены метка времени и разрыв. |
 
-## <a name="common-event-properties"></a>Общие свойства событий
+### <a name="common-event-properties"></a>Общие свойства событий
 
 Событие содержит следующие высокоуровневые данные:
 

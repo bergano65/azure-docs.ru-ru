@@ -1,6 +1,6 @@
 ---
 title: Сбор данных для Log Analytics с использованием модуля runbook в службе автоматизации Azure | Документация Майкрософт
-description: Пошаговое руководство по созданию модуля runbook в службе автоматизации Azure для сбора данных в репозитории OMS и анализа с помощью Log Analytics.
+description: Пошаговое руководство по созданию модуля runbook в Службе автоматизации Azure для сбора данных в репозитории и анализа с помощью Log Analytics.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/27/2017
 ms.author: bwren
-ms.openlocfilehash: d3e8e876a6c01123d65c1e8df13328bdd5fad71f
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: f1a106a4f99c09134b8784e98ca547db51ce0eae
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37347894"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49409515"
 ---
 # <a name="collect-data-in-log-analytics-with-an-azure-automation-runbook"></a>Сбор данных в Log Analytics с использованием модуля runbook в службе автоматизации Azure
 В Log Analytics можно собрать значительный объем данных из различных источников, включая [источники данных](../log-analytics/log-analytics-data-sources.md) в агентах и [данные, собранные в Azure](../log-analytics/log-analytics-azure-storage.md).  Но иногда требуется собирать данные, недоступные в этих стандартных источниках.  В таких случаях вы можете использовать [API сборщика данных HTTP](../log-analytics/log-analytics-data-collector-api.md), чтобы записать данные в Log Analytics из любого клиента REST API.  Чаще всего такие данные собираются с помощью модулей runbook в службе автоматизации Azure.   
@@ -27,7 +27,7 @@ ms.locfileid: "37347894"
 В этом руководстве описан пошаговый процесс создания модуля runbook и расписания для него в службе автоматизации Azure, позволяющий записывать данные в Log Analytics.
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для выполнения этого сценария нужно настроить в подписке Azure указанные ниже ресурсы.  Их можно использовать с бесплатной учетной записью.
 
 - [Рабочая область Log Analytics](../log-analytics/log-analytics-get-started.md).
@@ -56,7 +56,7 @@ ms.locfileid: "37347894"
 
 
 ## <a name="2-create-automation-variables"></a>2. Создание переменных службы автоматизации
-[Переменные службы автоматизации](..\automation\automation-variables.md) содержат значения, которые могут использоваться всеми модулями runbook в учетной записи службы автоматизации.  Вы можете изменить эти значения, не изменяя сам модуль runbook, чтобы повысить его гибкость. Для каждого запроса API сборщика данных HTTP требуется идентификатор и ключ рабочей области OMS, а ресурсы переменных отлично подходят для хранения таких данных.  
+[Переменные службы автоматизации](..\automation\automation-variables.md) содержат значения, которые могут использоваться всеми модулями runbook в учетной записи службы автоматизации.  Вы можете изменить эти значения, не изменяя сам модуль runbook, чтобы повысить его гибкость. Для каждого запроса API сборщика данных HTTP требуется идентификатор и ключ рабочей области Log Analytics, а ресурсы переменных отлично подходят для хранения таких данных.  
 
 ![Переменные](media/monitoring-runbook-datacollect/variables.png)
 

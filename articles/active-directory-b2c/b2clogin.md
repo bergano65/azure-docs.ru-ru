@@ -7,15 +7,15 @@ manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/04/2018
+ms.date: 10/22/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 8e06cf1a443d4fd158e29ef4b53206a83800dfe9
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 36025bf8460d690aab3b3617ad3341dfe7005e9e
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48803058"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49649282"
 ---
 # <a name="set-redirect-urls-to-b2clogincom-for-azure-active-directory-b2c"></a>Установка b2clogin.com в качестве URL-адреса перенаправления для Azure Active Directory B2C
 
@@ -26,7 +26,12 @@ ms.locfileid: "48803058"
 - Файлы cookie больше не используются совместно с другими службами Майкрософт.
 - URL-адреса больше не содержат ссылку на корпорацию Майкрософт. Например, `https://your-tenant-name.b2clogin.com/tfp/your-tenant-ID/policyname/v2.0/.well-known/openid-configuration`.
 
-Чтобы использовать b2clogin.com, установите его в качестве URL-адрес перенаправления в приложении поставщика удостоверений. Также настройте приложении Azure AD B2C на использование b2clogin.com для указанных политик и маркеров конечных точек. При использовании MSAL, значение свойства **ValidateAuthority** следует установить на `false`.
+Рассмотрите следующие параметры, которые может понадобиться изменить при использовании b2clogin.com:
+
+- Установите URL-адреса перенаправления в приложениях поставщика удостоверений для использования b2clogin.com. 
+- Настройте приложении Azure AD B2C для использования b2clogin.com в качестве источника политик и конечных точек для получения маркеров. 
+- При использовании MSAL, значение свойства **ValidateAuthority** следует установить на `false`.
+- Не забудьте изменить все **разрешенные источники**, определенные вами в параметрах CORS, для [настройки пользовательского интерфейса](active-directory-b2c-ui-customization-custom-dynamic.md).  
 
 ## <a name="change-redirect-urls"></a>Изменение URL-адреса перенаправления
 

@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: ae2fab560ca9579860aeba91f9322c6521a83de1
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 1465ba23f6fed85f0d4164f8e3fdc8c38be43ad3
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47167840"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49427742"
 ---
 # <a name="how-to-enable-password-reset-from-windows-7-8-and-81"></a>Практическое руководство. Включение сброса пароля в Windows 7, 8 и 8.1
 
@@ -76,6 +76,8 @@ HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\Credential Provide
 
 * Чтобы включить ведение журнала, создайте параметр типа REG_DWORD EnableLogging и присвойте ему значение 1.
 * Чтобы отключить ведение журнала, измените значение параметра типа REG_DWORD EnableLogging на 0.
+
+Если компьютеры с Windows 7, 8 и 8.1 защищены прокси-сервером или брандмауэром, следует разрешить HTTPS-трафик (443) на сайт passwordreset.microsoftonline.com.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

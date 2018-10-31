@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 01/08/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 9fd06a8680a52ac0002f20da88d563ad1cbdb79a
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 845bc46ec56bfd6681c4fb318a57de19f66c0edf
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48041345"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49403879"
 ---
 # <a name="troubleshooting-the-log-analytics-vm-extension"></a>Устранение неполадок с расширением Log Analytics для виртуальной машины
 В этой статье содержатся сведения об устранении ошибок, которые могут возникнуть с расширением "Виртуальная машина Log Analytics" для виртуальных машин Windows и Linux, работающих на платформе Microsoft Azure, и предлагаются возможные решения для их устранения.
@@ -61,16 +61,17 @@ ms.locfileid: "48041345"
 Подробные сведения см. в статье об [устранении неполадок расширений для виртуальных машин Windows](../virtual-machines/windows/extensions-oms.md).
 
 ## <a name="troubleshooting-linux-vm-extension"></a>Устранение неполадок расширения виртуальной машины для Linux
-Если расширение виртуальной машины *Агент OMS для Linux* не устанавливается или не создает отчеты, можно выполнить следующие действия для решения проблемы.
+[!INCLUDE [log-analytics-agent-note](../../includes/log-analytics-agent-note.md)] 
+Если расширение виртуальной машины *Агент Log Analytics для Linux* не устанавливается или не создает отчеты, можно выполнить следующие действия для решения проблемы.
 
 1. Если состояние расширения *неизвестно*, убедитесь, что агент виртуальной машины Azure установлен и работает правильно, просмотрев файл журнала агента ВМ `/var/log/waagent.log`.
    * Если журнал не создан, значит агент виртуальной машины не установлен.
    * [Установите агент виртуальной машины Azure на виртуальной машине Linux](log-analytics-quick-collect-azurevm.md#enable-the-log-analytics-vm-extension).
-2. В случае возникновения других неполадок просмотрите файлы журнала расширения ВМ "Агент OMS для Linux" в папке `/var/log/azure/Microsoft.EnterpriseCloud.Monitoring.OmsAgentForLinux/*/extension.log` и `/var/log/azure/Microsoft.EnterpriseCloud.Monitoring.OmsAgentForLinux/*/CommandExecution.log`.
-3. Если расширение исправно, но данные не отправляются, просмотрите файлы журнала агента OMS для Linux в папке `/var/opt/microsoft/omsagent/log/omsagent.log`.
+2. В случае возникновения других неполадок просмотрите файлы журнала расширения агента Log Analytics для Linux в папке `/var/log/azure/Microsoft.EnterpriseCloud.Monitoring.OmsAgentForLinux/*/extension.log` и `/var/log/azure/Microsoft.EnterpriseCloud.Monitoring.OmsAgentForLinux/*/CommandExecution.log`.
+3. Если расширение работает нормально, но данные не отправляются, просмотрите файлы журнала агента Log Analytics для Linux в папке `/var/opt/microsoft/omsagent/log/omsagent.log`.
 
 Подробные сведения см. в статье [Устранение неполадок расширения виртуальной машины Linux](../virtual-machines/linux/extensions-oms.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные рекомендации по устранению неполадок, связанных с агентом OMS для Linux, размещенном на компьютерах за пределами Azure, см. в статье об [устранении неполадок агента Azure Log Analytics для Linux](log-analytics-agent-linux-support.md).  
+Дополнительные рекомендации по устранению неполадок, связанных с агентом Log Analytics для Linux, размещенном на компьютерах за пределами Azure, см. в статье об [устранении неполадок агента Azure Log Analytics для Linux](log-analytics-agent-linux-support.md).  

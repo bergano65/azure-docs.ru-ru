@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/07/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 61f2dfcada0f7e03d8043d9b8f1b6dadf7027c8b
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 32692cbe7959650d5181c9e9dfcd7dd5ee55a46e
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37441171"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50024599"
 ---
 # <a name="troubleshoot-azure-ad-b2c-custom-policies-and-identity-experience-framework"></a>Устранение неполадок в пользовательских политиках Azure AD B2C и инфраструктуре процедур идентификации
 
@@ -74,4 +74,4 @@ ms.locfileid: "37441171"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Из репозитория GitHub скачайте ZIP-файл [active-directory-b2c-custom-policy-starterpack] (https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/archive/master.zip).
+* Скачайте из репозитория GitHub файл [active-directory-b2c-custom-policy-starterpack.zip](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/archive/master.zip).

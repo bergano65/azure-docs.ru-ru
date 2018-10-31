@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 11/17/2016
 ms.author: keikhara
 ms.custom: mvc
-ms.openlocfilehash: b326e5b686e14cefac4e6376bd3f26787ea1d10d
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 4576d9decc6ba1e01ef39abdb8a3ef89461196e8
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32164597"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49407798"
 ---
 # <a name="monitor-an-azure-container-service-dcos-cluster-with-log-analytics"></a>Мониторинг кластера DC/OS Службы контейнеров Azure с использованием Log Analytics
 
@@ -22,7 +22,7 @@ Log Analytics — это облачное решение Майкрософт д
 
 ![](media/container-service-monitoring-oms/image1.png)
 
-Дополнительные сведения об этом решении см. в статье [Решение "Контейнеры" (предварительная версия) в Log Analytics](../../log-analytics/log-analytics-containers.md).
+Дополнительные сведения об этом решении см. в статье [Решение для мониторинга контейнеров в Log Analytics](../../log-analytics/log-analytics-containers.md).
 
 ## <a name="setting-up-log-analytics-from-the-dcos-universe"></a>Настройка Log Analytics в среде DC/ОS
 
@@ -30,48 +30,39 @@ Log Analytics — это облачное решение Майкрософт д
 В этой статье предполагается, что вы настроили DC/OS и развернули простые приложения веб-контейнера в кластере.
 
 ### <a name="pre-requisite"></a>Предварительные требования
-- [Подписка Microsoft Azure](https://azure.microsoft.com/free/) — ее можно получить бесплатно.  
+- [Подписка Microsoft Azure](https://azure.microsoft.com/free/) — ее можно получить бесплатно.  
 - Настройка рабочей области Log Analytics (см. раздел "Шаг 3" ниже).
 - Установленный [интерфейс командной строки DC/OS](https://dcos.io/docs/1.8/usage/cli/install/).
 
 1. На панели мониторинга DC/OS щелкните "Вселенная" и выполните поиск по запросу "OMS", как показано ниже.
 
-![](media/container-service-monitoring-oms/image2.png)
+   >[!NOTE]
+   >OMS теперь называется Log Analytics.
+
+ ![](media/container-service-monitoring-oms/image2.png)
 
 2. Щелкните **Install**(Установить). Отобразится всплывающее окно со сведениями о версии и кнопкой **Установить пакет** или **Advanced Installation** (Расширенная установка). Нажав кнопку **Advanced Installation** (Расширенная установка), вы перейдете на страницу **OMS specific configuration properties** (Свойства конфигурации OMS).
 
-![](media/container-service-monitoring-oms/image3.png)
+ ![](media/container-service-monitoring-oms/image3.png)
 
-![](media/container-service-monitoring-oms/image4.png)
+ ![](media/container-service-monitoring-oms/image4.png)
 
 3. Здесь вам будет предложено ввести `wsid` (идентификатор рабочей области Log Analytics) и `wskey` (первичный ключ для идентификатора рабочей области). Чтобы получить `wsid` и `wskey`, необходимо создать учетную запись по адресу <https://mms.microsoft.com>.
-Следуйте инструкциям, чтобы создать учетную запись. После создания учетной записи необходимо получить `wsid` и `wskey`, щелкнув **Параметры**, **Подключенные источники**, а затем — **Серверы с Linux**, как показано ниже.
+Чтобы создать учетную запись, следуйте инструкциям. После создания учетной записи необходимо получить `wsid` и `wskey`, щелкнув **Параметры**, **Подключенные источники**, а затем — **Серверы с Linux**, как показано ниже.
 
  ![](media/container-service-monitoring-oms/image5.png)
 
-4. Выберите необходимое количество экземпляров и нажмите кнопку Review and Install (Просмотреть и установить). Как правило, требуется количество экземпляров, равное количеству виртуальных машин в кластере агента. Агент OMS для Linux устанавливается в качестве отдельных контейнеров на каждой виртуальной машине, о которой необходимо собирать сведения для мониторинга и ведения журнала.
+4. Выберите необходимое количество экземпляров и нажмите кнопку Review and Install (Просмотреть и установить). Как правило, требуется количество экземпляров, равное количеству виртуальных машин в кластере агента. Агент Log Analytics для Linux устанавливается в качестве отдельных контейнеров на каждой виртуальной машине, о которой необходимо собирать сведения для мониторинга и ведения журнала.
 
-## <a name="setting-up-a-simple-oms-dashboard"></a>Настройка простой панели мониторинга OMS
+   [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)] 
 
-Сразу после установки агента OMS для Linux на виртуальных машинах необходимо настроить панель мониторинга OMS. Это можно сделать двумя способами: на портале OMS или портале Azure.
+## <a name="setting-up-a-simple-log-analytics-dashboard"></a>Настройка простой панели мониторинга Log Analytics
 
-### <a name="oms-portal"></a>Портал OMS 
-
-Войдите на портал OMS (<https://mms.microsoft.com>) и выберите **Коллекция решений**.
-
-![](media/container-service-monitoring-oms/image6.png)
-
-Войдя в **коллекцию решений**, выберите **Контейнеры**.
-
-![](media/container-service-monitoring-oms/image7.png)
-
-После выбора решения контейнера на странице обзорной панели мониторинга OMS отобразится плитка. Как только принятые данные контейнера будут проиндексированы, вы увидите плитку, заполненную сведениями на плитках представления решения.
-
-![](media/container-service-monitoring-oms/image8.png)
+Сразу после установки агента Log Analytics для Linux на виртуальных машинах необходимо настроить панель мониторинга Log Analytics. Панель мониторинга можно настроить на портале Azure.
 
 ### <a name="azure-portal"></a>Портал Azure 
 
-Войдите на портал Azure по адресу <https://portal.microsoft.com/>. Выберите **Marketplace**, **Мониторинг и управление** и **Показать все**. Затем в поле поиска введите `containers`. В результатах отобразится "контейнеры". Выберите **Контейнеры** и нажмите кнопку **Создать**.
+Войдите на портал Azure <https://portal.microsoft.com/>. Выберите **Marketplace**, **Мониторинг и управление** и **Показать все**. Затем в поле поиска введите `containers`. В результатах отобразится "контейнеры". Выберите **Контейнеры** и нажмите кнопку **Создать**.
 
 ![](media/container-service-monitoring-oms/image9.png)
 
@@ -85,15 +76,15 @@ Log Analytics — это облачное решение Майкрософт д
 
 Дополнительные сведения см. в статье [Решение для мониторинга контейнеров в Log Analytics](../../log-analytics/log-analytics-containers.md).
 
-### <a name="how-to-scale-oms-agent-with-acs-dcos"></a>Масштабирование агента OMS с помощью среды DC/OS службы ACS 
+### <a name="how-to-scale-log-analytics-agent-with-acs-dcos"></a>Масштабирование агента Log Analytics с помощью среды DC/OS службы ACS 
 
-Если установлен агент OMS с недостаточным количеством фактических узлов или требуется выполнить масштабирование VMSS путем добавления дополнительных виртуальных машин, можно масштабировать службу `msoms`.
+Если установлен агент Log Analytics с недостаточным количеством фактических узлов или требуется выполнить масштабирование масштабируемого набора виртуальных машин путем добавления дополнительных виртуальных машин, можно масштабировать службу `msoms`.
 
 Вы можете перейти в Marathon или на вкладку пользовательских служб DC/OS и масштабировать количество узлов.
 
 ![](media/container-service-monitoring-oms/image12.PNG)
 
-Другие узлы, на которых еще не установлен агент OMS, также будут развернуты.
+Другие узлы, на которых еще не установлен агент Log Analytics, также будут развернуты.
 
 ## <a name="uninstall-ms-oms"></a>Удаление MS OMS
 

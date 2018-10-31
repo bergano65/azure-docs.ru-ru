@@ -2,20 +2,20 @@
 title: Привязки для устойчивых функций — Azure
 description: Инструкции по использованию триггеров и привязок в расширении устойчивых функций для Функций Azure.
 services: functions
-author: cgillum
+author: kashimiz
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 09/29/2017
+ms.date: 10/23/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 29cc7982dbe9991e6b0e3363cd636ac88881fc7b
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: f9bf42e5e20a7d9e861d0c3354040e981bf3ef21
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48237287"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49987755"
 ---
 # <a name="bindings-for-durable-functions-azure-functions"></a>Привязки для устойчивых функций (Функции Azure)
 
@@ -112,7 +112,7 @@ const df = require("durable-functions");
 
 module.exports = df.orchestrator(function*(context) {
     const name = context.df.getInput();
-    const result = yield context.df.callActivityAsync("SayHello", name);
+    const result = yield context.df.callActivity("SayHello", name);
     return result;
 });
 ```
@@ -123,7 +123,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Если вы используете Visual Studio, триггер действия настраивается с помощью атрибута .NET [ActvityTriggerAttribute](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.ActivityTriggerAttribute.html). 
 
-Если вы используете портал Azure для разработки приложений, триггер действия определяется следующим объектом JSON в массиве `bindings` файла *function.json*:
+Если вы используете VS Code или портал Azure для разработки приложений, триггер действия определяется следующим объектом JSON в массиве `bindings` файла *function.json*:
 
 ```json
 {
@@ -249,7 +249,7 @@ public static async Task<dynamic> Mapper([ActivityTrigger] DurableActivityContex
 
 Если вы используете Visual Studio, выполнить привязку к клиенту оркестрации можно с помощью атрибута .NET [OrchestrationClientAttribute](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.OrchestrationClientAttribute.html).
 
-Если для разработки вы используете языки скриптов (например, *CSX*-файлы), триггер оркестрации определяется следующим объектом JSON в массиве `bindings` файла *function.json*:
+Если для разработки вы используете языки скриптов (например, *CSX*-файлы или *JS*-файлы), триггер оркестрации определяется следующим объектом JSON в массиве `bindings` файла *function.json*:
 
 ```json
 {

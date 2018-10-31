@@ -11,12 +11,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 12/12/2017
 ms.author: glenga
-ms.openlocfilehash: 9a75e7ed8ce25384d39afb22ef50b5453ef543ba
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: d8f27063b68ed58b9ac34219d806c1cf8165ea8c
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46129681"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50026030"
 ---
 # <a name="azure-functions-c-script-csx-developer-reference"></a>Справочник разработчика скрипта C# (CSX) по решению "Функции Azure"
 
@@ -55,7 +55,7 @@ FunctionsProject
  | - bin
 ```
 
-Существует общий файл [host.json] (functions-host-json.md), который может использоваться для настройки приложения-функции. У каждой функции есть собственный файл кода (.csx) и файлом конфигурации привязки (function.json).
+Существует общий файл [host.json](functions-host-json.md), который можно использовать для настройки приложения-функции. У каждой функции есть собственный файл кода (.csx) и файлом конфигурации привязки (function.json).
 
 Расширения привязки, необходимые в [версии 2.x](functions-versions.md) среды выполнения функций, определены в файле `extensions.csproj` с фактическими файлами библиотеки в папке `bin`. При локальной разработке необходимо [зарегистрировать расширения привязки](functions-triggers-bindings.md#local-development-azure-functions-core-tools). При разработке функций на портале Azure эта регистрация выполняется автоматически.
 

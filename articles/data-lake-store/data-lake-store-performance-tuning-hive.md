@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/19/2016
 ms.author: stewu
-ms.openlocfilehash: e9d0ad0398dfc238d48060247cdb6f29b0f34a60
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 433c6b7d70cea9406b67d65e23cc357939cb5aa0
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46123340"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50024296"
 ---
 # <a name="performance-tuning-guidance-for-hive-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для Hive в HDInsight и Azure Data Lake Storage 1-го поколения
 
@@ -27,8 +27,8 @@ ms.locfileid: "46123340"
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Data Lake Storage 1-го поколения**. Инструкции по созданию учетной записи см. в статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
-* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. См. статью [Создание кластера HDInsight с Data Lake Storage 1-го поколения](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
-* **Запустите Hive в HDInsight**.  Дополнительные сведения о выполнении заданий Hive в HDInsight см. в разделе [Использование Hive в HDInsight]https://docs.microsoft.com/azure/hdinsight/hdinsight-use-hive)
+* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
+* **Запустите Hive в HDInsight**.  Дополнительные сведения о выполнении заданий Hive в HDInsight см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-use-hive).
 * **Рекомендации по настройке производительности для Data Lake Storage 1-го поколения**.  Общие вопросы производительности описаны в [рекомендациях по настройке производительности Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance).
 
 ## <a name="parameters"></a>Параметры

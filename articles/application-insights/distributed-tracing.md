@@ -10,12 +10,12 @@ ms.date: 09/17/2018
 ms.service: application-insights
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 47ea4fadba50fdbbd6d83531bd4eb40fc581d2ad
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 9594ccd0449cf68a63c770cfdee03f255aa2beae
+ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46950205"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "49638381"
 ---
 # <a name="what-is-distributed-tracing"></a>Что такое распределенная трассировка?
 
@@ -45,7 +45,7 @@ Azure Monitor также предлагает представление [схе
 
 При установке и настройке надлежащего пакета SDK Application Insights для популярных фреймворков, библиотек и технологий информация о трассировке автоматически собирается с помощью сборщиков зависимостей SDK. Полный список поддерживаемых технологий доступен в [документации по автоматическому сбору зависимостей](https://docs.microsoft.com/azure/application-insights/auto-collect-dependencies).
 
- Кроме того, любую технологию можно отслеживать вручную с помощью вызова [TrackDependency](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics) на [TeleletryClient](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics).
+ Кроме того, любую технологию можно отслеживать вручную с помощью вызова [TrackDependency](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics) в методе [TeleletryClient](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics).
 
 ## <a name="enable-via-opencensus"></a>Включение с помощью OpenCensus
 
@@ -59,4 +59,4 @@ Azure Monitor также предлагает представление [схе
 
 * [Руководство по использованию OpenCensus для Python](https://opencensus.io/api/python/trace/usage.html)
 * [Сопоставление приложений](./app-insights-app-map.md)
-* [Сквозной мониторинг производительности](./app-insights-tutorial-performance.md)
+* [Поиск и диагностика проблем производительности с помощью Azure Application Insights](./app-insights-tutorial-performance.md)

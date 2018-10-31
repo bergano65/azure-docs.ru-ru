@@ -1,6 +1,6 @@
 ---
-title: Непрерывные интеграция и развертывание в фабрике данных Azure | Документация Майкрософт
-description: Сведения об использовании непрерывных интеграции и развертывания для перемещения конвейеров фабрики данных из одной среды (разработки, тестирования, рабочая) в другую.
+title: Непрерывные интеграция и поставка в Фабрике данных Azure | Документация Майкрософт
+description: Сведения об использовании непрерывных интеграции и поставки для перемещения конвейеров Фабрики данных из одной среды (разработки, тестирования, рабочей) в другую.
 services: data-factory
 documentationcenter: ''
 author: douglaslMS
@@ -10,20 +10,20 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/16/2018
+ms.date: 10/09/2018
 ms.author: douglasl
-ms.openlocfilehash: 8bbc64a34b5ae95e044b95f921770adc9045574c
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 94633ce2f11f9efa99f1ad44820abd5aecdec923
+ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42146591"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49457216"
 ---
-# <a name="continuous-integration-and-deployment-in-azure-data-factory"></a>Непрерывные интеграция и развертывание в фабрике данных Azure
+# <a name="continuous-integration-and-delivery-cicd-in-azure-data-factory"></a>Непрерывные интеграция и поставка в Фабрике данных Azure
 
-Непрерывная интеграция — это способ автоматического тестирования каждого изменения, внесенного в базу кода. Непрерывное развертывание следует за проверкой, которая выполняется во время непрерывной интеграции. Она передает изменения в промежуточную или рабочую систему.
+Непрерывная интеграция — это способ автоматического тестирования каждого изменения, внесенного в базу кода. Непрерывная поставка следует за проверкой, которая выполняется во время непрерывной интеграции. Она передает изменения в промежуточную или рабочую систему.
 
-В фабрике данных Azure под непрерывными интеграцией и развертыванием подразумевается перемещение конвейеров фабрики данных из одной среды (разработки, тестирования, рабочей) в другую. Чтобы выполнить непрерывные интеграцию и развертывание, можно использовать интеграцию через пользовательский интерфейс фабрики данных с шаблонами Azure Resource Manager. Если выбрать вариант **Шаблон ARM**, пользовательский интерфейс фабрики данных создаст шаблон Resource Manager. При выборе варианта **Export ARM template** (Экспорт шаблона ARM) портал создает шаблон Resource Manager для фабрики данных и файл конфигурации, включающий все строки подключения, а также другие параметры. Затем необходимо создать один файл конфигурации для каждой среды (разработки, тестирования, рабочей). Главный файл шаблона Resource Manager одинаков для всех сред.
+В Фабрике данных Azure под непрерывными интеграцией и поставкой подразумевается перемещение конвейеров Фабрики данных из одной среды (разработки, тестирования, рабочей) в другую. Чтобы выполнить непрерывные интеграцию и поставку, можно использовать интеграцию через пользовательский интерфейс Фабрики данных с шаблонами Azure Resource Manager. Если выбрать вариант **Шаблон ARM**, пользовательский интерфейс фабрики данных создаст шаблон Resource Manager. При выборе варианта **Export ARM template** (Экспорт шаблона ARM) портал создает шаблон Resource Manager для фабрики данных и файл конфигурации, включающий все строки подключения, а также другие параметры. Затем необходимо создать один файл конфигурации для каждой среды (разработки, тестирования, рабочей). Главный файл шаблона Resource Manager одинаков для всех сред.
 
 Уделите 9 минут вашего времени, чтобы просмотреть следующее видео с кратким обзором и демонстрацией этой функции:
 
@@ -48,14 +48,14 @@ ms.locfileid: "42146591"
 
 ![](media/continuous-integration-deployment/continuous-integration-image5.png)
 
-**Строки подключения**. Можно найти сведения, необходимые для создания строки подключения, в статьях об отдельных соединителях. Дополнительные сведения о базе данных SQL Azure см. в статье [Копирование данных в базу данных Azure SQL и из нее с помощью фабрики данных Azure](connector-azure-sql-database.md). Чтобы проверить правильную строку (например, для связанной службы), можно также открыть представление кода для ресурса в пользовательском интерфейсе Фабрики данных. Однако в представлении кода пароль или часть ключа учетной записи строки подключения удаляется. Чтобы открыть представление кода, выберите значок, который выделен на следующем снимке экрана.
+**Строки подключения**. Можно найти сведения, необходимые для создания строки подключения, в статьях об отдельных соединителях. Дополнительные сведения о базе данных SQL Azure см. в статье [Копирование данных в базу данных Azure SQL и из нее с помощью фабрики данных Azure](connector-azure-sql-database.md). Чтобы проверить правильную строку (например, для связанной службы), можно также открыть представление кода для ресурса в пользовательском интерфейсе Фабрики данных. Однако в представлении кода пароль или часть ключа учетной записи строки подключения удаляется. Чтобы открыть представление кода, щелкните значок, который выделен на следующем снимке экрана.
 
 ![Откройте представление кода, чтобы просмотреть строку подключения](media/continuous-integration-deployment/continuous-integration-codeview.png)
 
 ## <a name="continuous-integration-lifecycle"></a>Жизненный цикл непрерывной интеграции
-Ниже приведен полный жизненный цикл для непрерывных интеграции и развертывания, который можно использовать после включения интеграции VSTS GIT в пользовательском интерфейсе фабрики данных:
+Ниже приведен полный жизненный цикл для непрерывных интеграции и поставки, который можно использовать после включения интеграции Git Azure Repos в пользовательском интерфейсе Фабрики данных:
 
-1.  Настройте фабрику данных в среде разработки с VSTS, в которой все разработчики могут создавать ресурсы фабрики данных, такие как конвейеры, наборы данных и т. д.
+1.  Настройте фабрику данных в среде разработки с Azure Repos, в которой все разработчики могут создавать ресурсы Фабрики данных, такие как конвейеры, наборы данных и т. д.
 
 1.  Затем разработчики могут изменить ресурсы (например, конвейеры). Во время этого процесса можно выбрать команду **Отладить**, чтобы увидеть, как работает конвейер с последними изменениями.
 
@@ -67,25 +67,25 @@ ms.locfileid: "42146591"
 
 1.  Экспортированный шаблон Resource Manager можно развернуть с файлами различных параметров в фабрики в тестовой и рабочей средах.
 
-## <a name="automate-continuous-integration-with-vsts-releases"></a>Автоматизация непрерывной интеграции с помощью выпусков VSTS
+## <a name="automate-continuous-integration-with-azure-pipelines-releases"></a>Автоматизация непрерывной интеграции с помощью выпусков Azure Pipelines
 
-Ниже приведены шаги настройки выпуска VSTS для автоматизации развертывания фабрики данных в различные среды.
+Ниже приведены шаги настройки выпуска Azure Pipelines для автоматизации развертывания фабрики данных в различные среды.
 
-![Схема непрерывной интеграции с помощью VSTS](media/continuous-integration-deployment/continuous-integration-image12.png)
+![Схема непрерывной интеграции с помощью Azure Pipelines](media/continuous-integration-deployment/continuous-integration-image12.png)
 
 ### <a name="requirements"></a>Требования
 
--   Подписка Azure, связанная с Team Foundation Server или VSTS и использующая [*конечную точку службы Azure Resource Manager*](https://docs.microsoft.com/vsts/build-release/concepts/library/service-endpoints#sep-azure-rm).
+-   Подписка Azure, связанная с Team Foundation Server или Azure Repos и использующая [*конечную точку службы Azure Resource Manager*](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
 
--   Фабрика данных с настроенным VSTS Git.
+-   Фабрика данных с интеграцией Git Azure Repos настроена.
 
 -   Хранилище [Azure Key Vault](https://azure.microsoft.com/services/key-vault/), содержащее секреты.
 
-### <a name="set-up-a-vsts-release"></a>Настройка выпуска VSTS
+### <a name="set-up-an-azure-pipelines-release"></a>Настройка выпуска Azure Pipelines
 
-1.  Перейдите на страницу VSTS в настроенный проект с фабрикой данных.
+1.  Перейдите на страницу Azure Repos в настроенный проект с Фабрикой данных.
 
-1.  В верхнем меню щелкните **Build and Release** (Сборка и выпуск) &gt; **Выпуски** &gt; **Создать определение выпуска**.
+1.  В верхнем меню щелкните **Azure Pipelines** &gt; **Выпуски** &gt; **Создать определение выпуска**.
 
     ![](media/continuous-integration-deployment/continuous-integration-image6.png)
 
@@ -113,15 +113,20 @@ ms.locfileid: "42146591"
 
     ![](media/continuous-integration-deployment/continuous-integration-image9.png)
 
-1.  Сохраните определение выпуска.
+    ж. Выберите **добавочный** режим развертывания.
 
-1.  Создайте выпуск из этого определения выпуска.
+    > [!WARNING]
+    > При выборе **полного** режима развертывания существующие ресурсы могут быть удалены, в том числе ресурсы в целевой группе ресурсов, которые не определены в шаблоне Resource Manager.
+
+1.  Сохраните конвейер выпуска.
+
+1.  Создайте выпуск из этого конвейера выпуска.
 
     ![](media/continuous-integration-deployment/continuous-integration-image10.png)
 
 ### <a name="optional---get-the-secrets-from-azure-key-vault"></a>Получение секретов из Azure Key Vault (необязательно)
 
-Если ван нужно передать секреты в шаблоне Azure Resource Manager, рекомендуем использовать выпуск Azure Key Vault с VSTS.
+Если вам нужно передать секреты в шаблоне Azure Resource Manager, рекомендуем использовать Azure Key Vault с выпуском Azure Pipelines.
 
 Обработать секреты можно двумя способами.
 
@@ -148,7 +153,7 @@ ms.locfileid: "42146591"
 
     -   Файл параметров также должен находиться в ветви публикации.
 
-1.  Перед развертыванием Azure Resource Manager, описанным в предыдущем разделе, добавьте [задачу Azure Key Vault](https://docs.microsoft.com/vsts/build-release/tasks/deploy/azure-key-vault):
+1.  Перед развертыванием Azure Resource Manager, описанным в предыдущем разделе, добавьте [задачу Azure Key Vault](https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-key-vault):
 
     -   Выберите вкладку **Задачи**, создайте новую задачу, найдите и добавьте **Azure Key Vault**.
 
@@ -156,13 +161,13 @@ ms.locfileid: "42146591"
 
     ![](media/continuous-integration-deployment/continuous-integration-image8.png)
 
-### <a name="grant-permissions-to-the-vsts-agent"></a>Предоставление разрешений для агента VSTS
-Сначала задача Azure Key Vault может завершиться ошибкой "В доступе отказано". Загрузите журналы для выпуска и найдите файл `.ps1` с помощью команды для предоставления разрешений агенту VSTS. Вы можете выполнить команду напрямую или же скопировать идентификатор участника из файла и вручную добавить политику доступа на портале Azure. (*Get* и *List* — минимальные требуемые разрешения.)
+### <a name="grant-permissions-to-the-azure-pipelines-agent"></a>Предоставление разрешений для агента Azure Pipelines
+Сначала задача Azure Key Vault может завершиться ошибкой "В доступе отказано". Загрузите журналы для выпуска и найдите файл `.ps1` с помощью команды для предоставления разрешений агенту Azure Pipelines. Вы можете выполнить команду напрямую или же скопировать идентификатор участника из файла и вручную добавить политику доступа на портале Azure. (*Get* и *List* — минимальные требуемые разрешения.)
 
 ### <a name="update-active-triggers"></a>Обновление активных триггеров
 При попытке обновления активных триггеров развертывание может завершиться сбоем. Чтобы обновить активные триггеры, необходимо вручную остановить и запустить их после развертывания. Для этого можно добавить задачу Azure PowerShell, как показано в следующем примере.
 
-1.  На вкладке задач выпуска VSTS найдите и добавьте **Azure PowerShell**.
+1.  На вкладке задач выпуска найдите и добавьте **Azure PowerShell**.
 
 1.  Выберите **Azure Resource Manager** в качестве типа подключения, а затем — свою подписку.
 
@@ -178,9 +183,12 @@ ms.locfileid: "42146591"
 
 Вы можете выполнить те же шаги и использовать аналогичный код (с функцией `Start-AzureRmDataFactoryV2Trigger`), чтобы перезапустить триггеры после развертывания.
 
+> [!IMPORTANT]
+> В сценариях непрерывных интеграции и развертывания тип среды выполнения интеграции в разных средах должен совпадать. Например, если у вас есть *локальная* среда выполнения интеграции в среде разработки, ей необходим тип *Локальная* в других средах, таких как рабочая и тестовая. Аналогично, если вы совместно используете среды выполнения интеграции в нескольких средах, необходимо настроить их в качестве *связанных локальных сред* во всех средах (разработки, тестирования и рабочей).
+
 ## <a name="sample-deployment-template"></a>Пример шаблона развертывания
 
-Ниже приведен пример шаблона развертывания, который можно импортировать в VSTS.
+Ниже приведен пример шаблона развертывания, который можно импортировать в Azure Pipelines.
 
 ```json
 {
@@ -720,7 +728,7 @@ ms.locfileid: "42146591"
 
 ## <a name="sample-script-to-stop-and-restart-triggers-and-clean-up"></a>Пример сценария остановки и перезагрузки триггеров и очистки
 
-Ниже приведен пример скрипта для остановки триггеров перед развертыванием и их последующего перезапуска. Скрипт также содержит код для удаления ресурсов.
+Ниже приведен пример скрипта для остановки триггеров перед развертыванием и их последующего перезапуска. Скрипт также содержит код для удаления ресурсов. Чтобы установить последнюю версию Azure PowerShell, ознакомьтесь со статьей [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-6.9.0).
 
 ```powershell
 param
@@ -732,7 +740,6 @@ param
     [parameter(Mandatory = $false)] [Bool] $predeployment=$true
 
 )
-
 
 $templateJson = Get-Content $armTemplate | ConvertFrom-Json
 $resources = $templateJson.resources
@@ -749,13 +756,12 @@ $triggerstostop = $triggerNames | where { ($triggersADF | Select-Object name).na
 if ($predeployment -eq $true) {
     #Stop all triggers
     Write-Host "Stopping deployed triggers"
-    $triggerstostop | ForEach-Object { Stop-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_ -Force }
+    $triggerstostop | ForEach-Object { 
+        Write-host "Disabling trigger " $_
+        Stop-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_ -Force 
+    }
 }
 else {
-
-    #start Active triggers
-    Write-Host "Starting active triggers"
-    $activeTriggerNames | ForEach-Object { Start-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_ -Force }
 
     #Deleted resources
     #pipelines
@@ -785,23 +791,49 @@ else {
 
     #delte resources
     Write-Host "Deleting triggers"
-    $deletedtriggers | ForEach-Object { Remove-AzureRmDataFactoryV2Trigger -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force }
+    $deletedtriggers | ForEach-Object { 
+        Write-Host "Deleting trigger "  $_.Name
+        $trig = Get-AzureRmDataFactoryV2Trigger -name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName
+        if ($trig.RuntimeState -eq "Started") {
+            Stop-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_.Name -Force 
+        }
+        Remove-AzureRmDataFactoryV2Trigger -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
+    }
     Write-Host "Deleting pipelines"
-    $deletedpipelines | ForEach-Object { Remove-AzureRmDataFactoryV2Pipeline -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force }
+    $deletedpipelines | ForEach-Object { 
+        Write-Host "Deleting pipeline " $_.Name
+        Remove-AzureRmDataFactoryV2Pipeline -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
+    }
     Write-Host "Deleting datasets"
-    $deleteddataset | ForEach-Object { Remove-AzureRmDataFactoryV2Dataset -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force }
+    $deleteddataset | ForEach-Object { 
+        Write-Host "Deleting dataset " $_.Name
+        Remove-AzureRmDataFactoryV2Dataset -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
+    }
     Write-Host "Deleting linked services"
-    $deletedlinkedservices | ForEach-Object { Remove-AzureRmDataFactoryV2LinkedService -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force }
+    $deletedlinkedservices | ForEach-Object { 
+        Write-Host "Deleting Linked Service " $_.Name
+        Remove-AzureRmDataFactoryV2LinkedService -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
+    }
     Write-Host "Deleting integration runtimes"
-    $deletedintegrationruntimes | ForEach-Object { Remove-AzureRmDataFactoryV2IntegrationRuntime -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force }
+    $deletedintegrationruntimes | ForEach-Object { 
+        Write-Host "Deleting integration runtime " $_.Name
+        Remove-AzureRmDataFactoryV2IntegrationRuntime -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
+    }
+
+    #Start Active triggers - After cleanup efforts (moved code on 10/18/2018)
+    Write-Host "Starting active triggers"
+    $activeTriggerNames | ForEach-Object { 
+        Write-host "Enabling trigger " $_
+        Start-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_ -Force 
+    }
 }
 ```
 
 ## <a name="use-custom-parameters-with-the-resource-manager-template"></a>Использование пользовательских параметров с шаблоном Resource Manager
 
-Вы можете определить пользовательские параметры для шаблона Resource Manager. Вам просто нужен файл с именем `arm-template-parameters-definition.json` в корневой папке репозитория. (Имя файла должно в точности соответствовать показанному здесь имени.) Фабрика данных пытается прочитать файл из ветви, в которой вы в данный момент работаете, а не только из ветви совместной работы. Если файл не найден, фабрика данных использует определения по умолчанию.
+Вы можете определить пользовательские параметры для шаблона Resource Manager. Вам просто нужен файл с именем `arm-template-parameters-definition.json` в корневой папке репозитория. (Имя файла должно в точности соответствовать показанному здесь имени.) Фабрика данных пытается прочитать файл из ветви, в которой вы в данный момент работаете, а не только из ветви совместной работы. Если файл не найден, Фабрика данных использует параметры и значения по умолчанию.
 
-В следующем примере показан пример файла параметров. Используйте этот пример как образец, чтобы создать свой пользовательский файл параметров. Если предоставленный файл не имеет правильный формат JSON, фабрика данных выводит сообщение об ошибке в консоли браузера и возвращается к определениям по умолчанию, показанным в пользовательском интерфейсе фабрики данных.
+В следующем примере показан пример файла параметров. Используйте этот пример как образец, чтобы создать свой пользовательский файл параметров. Если предоставленный файл не имеет правильный формат JSON, Фабрика данных выводит сообщение об ошибке в консоли браузера и возвращается к параметрам и значениям по умолчанию, показанным в пользовательском интерфейсе Фабрики данных.
 
 ```json
 {

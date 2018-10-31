@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/08/2018
 ms.author: cwatson
-ms.openlocfilehash: 460cd3a5b05680563661e2f6519eaa3506eee03b
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: e43188459bf495748a054b0f24936c9141bd218c
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47392092"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50025723"
 ---
 # <a name="understand-how-the-azure-reservation-discount-is-applied-to-virtual-machines"></a>Сведения о применении скидки к зарезервированному экземпляру виртуальной машины Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "47392092"
 
 ## <a name="application-of-reservation-discount-to-windows-vms"></a>Применение скидки резервирования для виртуальных машин Windows
 
-Если используются экземпляры виртуальных машин Windows, резервирование покрывает затраты на инфраструктуру. Резервирование применяется к затратам на инфраструктуру виртуальных машин Windows так же, как и для виртуальных машин с другими ОС. За программное обеспечение Windows плата взимается отдельно для каждого виртуального ЦП. См. статью о [затратах на программное обеспечение Windows с резервированием](https://go.microsoft.com/fwlink/?linkid=862756). Вы можете покрыть расходы на лицензирование Windows, используя [Преимущество гибридного использования Azure для Windows Server] (https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing).
+Если используются экземпляры виртуальных машин Windows, резервирование покрывает затраты на инфраструктуру. Резервирование применяется к затратам на инфраструктуру виртуальных машин Windows так же, как и для виртуальных машин с другими ОС. За программное обеспечение Windows плата взимается отдельно для каждого виртуального ЦП. См. статью о [затратах на программное обеспечение Windows с резервированием](https://go.microsoft.com/fwlink/?linkid=862756). Вы можете покрыть расходы на лицензии Windows, используя [Преимущество гибридного использования Azure для Windows Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

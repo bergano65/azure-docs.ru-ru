@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 03/22/2018
 ms.author: rnagpal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7000fc13a792f4f6def592e78dc759c8cf165881
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 8243d1e297fa778d4fa27f8365d9bb0a935d21e5
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47451924"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49388007"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для .NET Core для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -52,6 +52,14 @@ ms.locfileid: "47451924"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 Пакет SDK .NET Core для Azure Cosmos DB функционально полностью эквивалентен последней версии [пакета SDK .NET для Azure Cosmos DB](sql-api-sdk-dotnet.md).
+
+### <a name="a-name213213"></a><a name="2.1.3"/>2.1.3
+
+* Обновленные System.Net.Security до версии 4.3.2.
+
+### <a name="a-name212212"></a><a name="2.1.2"/>2.1.2
+
+* Усовершенствования диагностической трассировки.
 
 ### <a name="a-name211211"></a><a name="2.1.1"/>2.1.1
 
@@ -204,6 +212,8 @@ ms.locfileid: "47451924"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.1.3](#2.1.3) |15 октября 2018 г. |--- |
+| [2.1.2](#2.1.2) |04 октября 2018 г. |--- |
 | [2.1.1](#2.1.1) |27 сентября 2018 г. |--- |
 | [2.1.0](#2.1.0) |21 сентября 2018 г. |--- |
 | [2.0.0](#2.0.0) |07 сентября 2018 г. |--- |

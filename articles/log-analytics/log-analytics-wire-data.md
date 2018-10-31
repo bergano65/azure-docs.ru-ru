@@ -1,6 +1,6 @@
 ---
 title: Решение "Данные передачи" в Log Analytics | Документация Майкрософт
-description: Данные передачи — это объединенные сетевые данные и данные производительности, передаваемые с компьютеров с установленными агентами OMS, включая агенты Operations Manager и агенты, подключенные к Windows. Сетевые данные вместе с данными журнала помогают коррелировать данные.
+description: Wire data — это объединенные сетевые данные и данные производительности, передаваемые с компьютеров с помощью агентов Log Analytics. Сетевые данные вместе с данными журнала помогают коррелировать данные.
 services: log-analytics
 documentationcenter: ''
 author: mgoedtel
@@ -15,20 +15,20 @@ ms.topic: conceptual
 ms.date: 10/03/2018
 ms.author: magoedte
 ms.component: na
-ms.openlocfilehash: 9ee388e8d33d293240e70ccf79ec8d3c445dffd1
-ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
+ms.openlocfilehash: 61ceea60962acc2e1ec032df49683e8a28381dd7
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48269163"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49405367"
 ---
 # <a name="wire-data-20-preview-solution-in-log-analytics"></a>Решение Wire Data 2.0 (предварительная версия) в Log Analytics
 
 ![Символ Wire Data](./media/log-analytics-wire-data/wire-data2-symbol.png)
 
-Данные передачи — это объединенные сетевые данные и данные производительности, собираемые с компьютеров Windows или Linux с установленными агентами OMS, включая данные, отслеживаемые Operations Manager в вашей среде. Сетевые данные вместе с другими данными журнала помогают коррелировать данные.
+Wire data — это объединенные сетевые данные и данные производительности, собираемые с компьютеров Windows или Linux с установленными агентами Log Analytics, включая данные, отслеживаемые Operations Manager в вашей среде. Сетевые данные вместе с другими данными журнала помогают коррелировать данные.
 
-Помимо агента OMS, решение Wire Data использует агенты зависимостей Майкрософт, установленные на компьютерах в вашей ИТ-инфраструктуре. Агенты зависимостей отслеживают сетевые данные, отправляемые на эти компьютеры и с них, для сетевых уровней 2–3 в [модели OSI](https://en.wikipedia.org/wiki/OSI_model), включая различные используемые протоколы и порты. Затем данные отправляются в Log Analytics с помощью агентов.  
+Помимо агента Log Analytics, решение Wire Data использует агенты зависимостей Майкрософт, установленные на компьютерах в вашей ИТ-инфраструктуре. Агенты зависимостей отслеживают сетевые данные, отправляемые на эти компьютеры и с них, для сетевых уровней 2–3 в [модели OSI](https://en.wikipedia.org/wiki/OSI_model), включая различные используемые протоколы и порты. Затем данные отправляются в Log Analytics с помощью агентов.  
 
 >[!NOTE]
 >Если Сопоставление служб уже развернуто или планируется Сопоставление служб или [Azure Monitor для виртуальных машин](../monitoring/monitoring-vminsights-overview.md), существует новое подключение метрики набора данных, которая собирается и хранится в Log Analytics, которая предоставляет Wire Data сведения для сравнения.
@@ -65,20 +65,20 @@ ms.locfileid: "48269163"
 | Группа управления System Center Operations Manager | Yes | Решение "Данные передачи" анализирует и собирает данные из агентов Windows и Linux в подключенной [группе управления System Center Operations Manager](log-analytics-om-agents.md). <br><br> Требуется прямое подключение из агента System Center Operations Manager к Log Analytics. |
 | Учетная запись хранения Azure. | Нет  | Решение "Данные передачи" собирает данные из компьютеров агента, поэтому данные из службы хранилища Azure не собираются. |
 
-В ОС Windows System Center Operations Manager и Log Analytics используют Microsoft Monitoring Agent для сбора и отправки данных. В зависимости от контекста этот агент называется агентом System Center Operations Manager, агентом OMS, агентом Log Analytics, MMA или прямым агентом. System Center Operations Manager и Log Analytics предоставляют немного разные версии MMA. В каждой из этих версий предусмотрена возможность отправлять отчеты в System Center Operations Manager, Log Analytics или в оба решения.
+В ОС Windows System Center Operations Manager и Log Analytics используют Microsoft Monitoring Agent для сбора и отправки данных. В зависимости от контекста этот агент называется агентом System Center Operations Manager, агентом Log Analytics, MMA или Direct Agent. System Center Operations Manager и Log Analytics предоставляют немного разные версии MMA. В каждой из этих версий предусмотрена возможность отправлять отчеты в System Center Operations Manager, Log Analytics или в оба решения.
 
 В ОС Linux агент Log Analytics для Linux собирает и отправляет данные в Log Analytics. "Данные передачи" можно использовать на серверах с агентами, напрямую подключенными к Log Analytics, или на серверах, подключенных к Log Analytics через группы управления System Center Operations Manager.
 
-Агент зависимостей самостоятельно не передает данные и не требует внесения изменений в брандмауэры или порты. Данные в решении"Данные передачи" всегда передаются агентом Log Analytics в Log Analytics напрямую или через шлюз OMS.
+Агент зависимостей самостоятельно не передает данные и не требует внесения изменений в брандмауэры или порты. Данные в Wire Data всегда передаются агентом Log Analytics в Log Analytics напрямую или через шлюз Log Analytics.
 
 ![Схема передачи данных агентами](./media/log-analytics-wire-data/agents.png)
 
 Если вы являетесь пользователем System Center Operations Manager с группой управления, подключенной к Log Analytics:
 
 - Если у ваших агентов System Center Operations Manager есть доступ к Log Analytics через Интернет, никаких дополнительных настроек не требуется.
-- Если у агентов System Center Operations Manager нет доступа к Log Analytics через Интернет, необходимо настроить шлюз OMS для работы с System Center Operations Manager.
+- Если у агентов System Center Operations Manager нет доступа к Log Analytics через Интернет, необходимо настроить шлюз Log Analytics для работы с System Center Operations Manager.
 
-Если компьютеры Windows или Linux не могут подключиться напрямую к службе, необходимо настроить агент Log Analytics таким образом, чтобы он подключался к Log Analytics через шлюз OMS. Шлюз OMS можно скачать в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=52666).
+Если компьютеры Windows или Linux не могут подключиться напрямую к службе, необходимо настроить агент Log Analytics таким образом, чтобы он подключался к Log Analytics через шлюз Log Analytics. Шлюз Log Analytics можно скачать в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=52666).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -211,7 +211,7 @@ ms.locfileid: "48269163"
 
 Выполните приведенные шаги, чтобы установить агент зависимостей на каждом компьютере Windows.
 
-1. Установите агент OMS, выполнив действия, приведенные в статье [Подключение компьютеров Windows к службе Log Analytics в Azure](log-analytics-windows-agent.md).
+1. Установите агент Log Analytics, выполнив действия, приведенные в статье [Подключение компьютеров Windows к службе Log Analytics в Azure](log-analytics-windows-agent.md).
 2. Скачайте агент зависимостей для Windows, используя ссылку в предыдущем разделе, а затем запустите его с помощью команды `InstallDependencyAgent-Windows.exe`.
 3. Следуйте инструкциям мастера для установки агента.
 4. Если агент зависимостей не запускается, просмотрите подробные сведения об ошибке в записях журналов. В агентах Windows каталогом журналов является каталог %Programfiles%\Microsoft Dependency Agent\logs.
@@ -237,7 +237,7 @@ InstallDependencyAgent-Windows.exe /?
 
 Выполните приведение шаги, чтобы установить агент зависимостей на каждом компьютере Linux.
 
-1. Установите агент OMS, выполнив действия, приведенные в статье [Collect data from Linux computers hosted in your environment](log-analytics-quick-collect-linux-computer.md#obtain-workspace-id-and-key) (Сбор данных с компьютеров с ОС Linux, размещенных в вашей среде).
+1. Установите агент Log Analytics, выполнив действия, приведенные в статье [Настройка агента Log Analytics для компьютеров Linux в гибридной среде](log-analytics-quick-collect-linux-computer.md#obtain-workspace-id-and-key).
 2. Скачайте агент зависимостей для Linux, используя ссылку в предыдущем разделе, установите его с правами привилегированного пользователя, а затем запустите с помощью команды InstallDependencyAgent-Linux64.bin.
 3. Если агент зависимостей не запускается, просмотрите подробные сведения об ошибке в записях журналов. В агентах Linux каталог журналов находится в расположении /var/opt/microsoft/dependency-agent/log.
 

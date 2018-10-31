@@ -1,6 +1,6 @@
 ---
-title: Создание приложения-функции Azure с использованием Java и IntelliJ | Документация Майкрософт
-description: Практическое руководство по созданию и публикации простого независимого HTTP-приложения с использованием функций Java и IntelliJ для Azure.
+title: Создание функции Azure с использованием Java и IntelliJ | Документация Майкрософт
+description: Сведения о создание и публикации простого независимого HTTP-приложения в Azure с использованием функций Java и IntelliJ.
 services: functions
 documentationcenter: na
 author: jeffhollan
@@ -12,19 +12,22 @@ ms.topic: conceptual
 ms.date: 07/01/2018
 ms.author: jehollan
 ms.custom: mvc, devcenter
-ms.openlocfilehash: b28e7b158af939defd37734c3ff9fe2309e3ab85
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: eb8499ef6c0f872a0761f7be606e058387947b2b
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44094405"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49319886"
 ---
-# <a name="create-your-first-function-with-java-and-intellij-preview"></a>Создание первой функции с использованием Java и IntelliJ (предварительная версия)
+# <a name="create-your-first-azure-function-with-java-and-intellij-preview"></a>Создание первой функции Azure с использованием Java и IntelliJ (предварительная версия)
 
-> [!NOTE] 
+> [!NOTE]
 > Сейчас доступна предварительная версия Java для Функций Azure.
 
-В этой статье показано, как создать [независимый](https://azure.microsoft.com/overview/serverless-computing/) проект с помощью IntelliJ IDEA и Apache Maven, протестировать и отладить его на своем компьютере из среды IDE и развернуть его в Функциях Azure. 
+Из этой статьи можно получить следующие сведения.
+- Как создать функцию проекта [serverless](https://azure.microsoft.com/overview/serverless-computing/) с помощью IntelliJ IDEA и Apache Maven
+- Шаги, которые необходимо выполнить для проверки и отладки функции в интегрированной среде разработки (IDE) на компьютере
+- Инструкция для развертывания проекта функции в Функциях Azure
 
 <!-- TODO ![Access a Hello World function from the command line with cURL](media/functions-create-java-maven/hello-azure.png) -->
 
@@ -32,81 +35,88 @@ ms.locfileid: "44094405"
 
 ## <a name="set-up-your-development-environment"></a>Настройка среды разработки
 
-Для разработки функций приложения с помощью Java и IntelliJ должны быть установлены следующие компоненты:
+Чтобы разрабатывать функцию с помощью Java и IntelliJ, необходимо установить следующее программное обеспечение.
 
--  [Java Developer Kit (JDK)](https://www.azul.com/downloads/zulu/) версии 8.
--  [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
--  [IntelliJ IDEA](https://www.jetbrains.com/idea/download), версия Community или Ultimate с инструментами Maven.
--  [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure)
+- [Java Developer Kit (JDK) версии 8](https://www.azul.com/downloads/zulu/)
+- [Apache Maven 3.0](https://maven.apache.org) или более поздней версии
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/download), версия Community или Ultimate с Maven
+- [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure)
 
-> [!IMPORTANT] 
-> Переменной среде JAVA_HOME необходимо присвоить расположение установки JDK, чтобы завершить выполнение заданий этого краткого руководства.
+> [!IMPORTANT]
+> Чтобы завершить выполнение шагов из этой статьи, переменной среде JAVA_HOME необходимо присвоить расположение установки JDK.
 
-Рекомендуется установить [Azure Functions Core Tools, версии 2](functions-run-local.md#v2), которые предоставляют возможность записи, выполнения и отладки функций Azure. 
-
+ Рекомендуется установить [Основные инструменты службы "Функции Azure" версии 2](functions-run-local.md#v2). Они предоставляют локальной среде разработки возможность записи, выполнения и отладки Функций Azure.
 
 ## <a name="create-a-functions-project"></a>Создание проекта Функций Azure
 
-1. В IntelliJ IDEA щелкните **Создать новый проект**.  
-1. Выберите создать из **Maven**
-1. Установите флажок **Создать из архетипа** и **Добавить архетип** для [ azure-functions-archetype ](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype).
-    - GroupId: com.microsoft.azure
-    - ArtifactId: azure-functions-archetype
-    - Версия: используйте последнюю версию из [центрального репозитория](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype)
-    ![Создание Maven в IntelliJ](media/functions-create-first-java-intellij/functions-create-intellij.png)  
-1. Нажмите кнопку **Далее** и введите сведения для текущего проекта и в конечном итоге нажмите **Готово**.
+1. В IntelliJ IDEA выберите **Создать новый проект**.  
+1. В левой панели окна **Новый проект** выберите **Maven**.
+1. Установите флажок **Создать из архетипа**, а затем выберите **Добавить архетип** для [azure-functions-archetype](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype).
+1. Заполните следующие поля в окне **Add Archetype** (Добавить архетип).
+    - _GroupId_: com.microsoft.azure
+    - _ArtifactId_: azure-functions-archetype
+    - _Версия_. Используйте последнею версию, которую можно найти в [центральном репозитории](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype)
+    ![Создание проекта Maven из архетипа в IntelliJ IDEA](media/functions-create-first-java-intellij/functions-create-intellij.png)  
+1. Нажмите кнопку **ОК**, а затем щелкните **Создать**.
+1. Введите подробные сведения и выберите **Готово**.
 
-Maven создает файлы проекта в новой папке с именем _artifactId_. Созданный код проекта представляет собой простую функцию[активации HTTP](/azure/azure-functions/functions-bindings-http-webhook), которая возвращает текст HTTP-запроса.
+Maven создает файлы проекта в новой папке с именем, которое соответствует значению _ArtifactId_. Созданный код проекта представляет собой простую функцию[активации HTTP](/azure/azure-functions/functions-bindings-http-webhook), которая возвращает текст HTTP-запроса.
 
 ## <a name="run-functions-locally-in-the-ide"></a>Запуск функций в локальной среде IDE
 
 > [!NOTE]
-> Для локальных запуска и отладки функций, нужно установить [Azure Functions Core Tools версии 2](functions-run-local.md#v2).
+> Для локальных запуска и отладки функций, нужно установить [основные инструменты для Функций Azure версии 2](functions-run-local.md#v2).
 
-1. Выберите "Импортировать изменения" или убедитесь, что включен [автоматический импорт](https://www.jetbrains.com/help/idea/creating-and-optimizing-imports.html).
-1. Откройте панель инструментов **Maven Projects** (Проекты Maven)
-1. В разделе "Жизненный цикл" дважды щелкните **пакет**, чтобы упаковать и собрать решения, а затем создать целевой каталог.
-1. В разделе "Подключаемые модули" -> azure-functions дважды щелкните **azure-functions:run**, чтобы запустить локальную среду выполнения Azure.  
+1. Импортируйте изменения вручную или включите [автоматический импорт](https://www.jetbrains.com/help/idea/creating-and-optimizing-imports.html).
+1. Откройте панель инструментов **Maven Projects** (Проекты Maven).
+1. Разверните **Жизненный цикл**, а затем откройте **Пакет**. Решение будет создано и упаковано в созданном целевом каталоге.
+1. Чтобы запустить локальную среду выполнения Azure, расширьте **Подключаемые модули** > **azure-functions** и откройте **azure-functions:run**.  
   ![Панель инструментов Maven для Функций Azure](media/functions-create-first-java-intellij/functions-intellij-java-maven-toolbar.png)  
 
-После того как вы протестировали функцию, закройте диалоговое окно запуска. Только один узел функции может быть активным и работать локально одновременно.
+1. После того как вы протестировали функцию, закройте диалоговое окно запуска. Только один узел функции может быть активным и работать локально одновременно.
 
-### <a name="debug-the-function-in-intellij"></a>Отладка функции в IntelliJ
-Чтобы запустить узел функции в режиме отладки, добавьте при выполнении функции **-DenableDebug** в качестве аргумента. Указанную ниже командную строку можно выполнить в окне терминала или настроить в [целях Maven](https://www.jetbrains.com/help/idea/maven-support.html#run_goal). Затем узел функции откроет порт отладки с номером 5005. 
+## <a name="debug-the-function-in-intellij"></a>Отладка функции в IntelliJ
 
-```
-mvn azure-functions:run -DenableDebug
-```
+1. Чтобы запустить узел функции в режиме отладки, добавьте при выполнении функции **-DenableDebug** в качестве аргумента. Конфигурацию можно изменить либо в [целях Maven](https://www.jetbrains.com/help/idea/maven-support.html#run_goal),либо запустив в окне терминала следующую команду.  
 
-Для отладки в IntelliJ в меню **Run** (Запуск) выберите **Edit Configurations** (Изменить конфигурации). Щелкните **+**, чтобы добавить пункт **Remote** (Удаленно). Заполните поля **Name** (Имя) и **Settings** (Параметры), а затем нажмите кнопку **OK** (ОК), чтобы сохранить конфигурацию. После завершения установки щелкните **Debug** (Отладка) "имя удаленной конфигурации" или нажмите клавиши **SHIFT+F9**, чтобы запустить отладку.
+   ```
+   mvn azure-functions:run -DenableDebug
+   ```
 
-![Функции отладки в IntelliJ](media/functions-create-first-java-intellij/debug-configuration-intellij.PNG)
+   С помощью данной команды узел функции откроет порт отладки с номером 5005.
 
-По завершении остановите отладчик и запущенный процесс. Только один узел функции может быть активным и работать локально одновременно.
+1. В меню **Run** (Запуск) выберите **Edit Configurations** (Изменить конфигурации).
+1. Выберите **(+)**, чтобы добавить **Уд. доступ**.
+1. Чтобы сохранить конфигурацию, заполните поля _Имя_ и _Параметры_, а затем нажмите кнопку **OK**.
+1. После завершения установки для начала отладки выберите **Отладка < Имя конфигурации >** или нажмите комбинацию клавиш SHIFT+F9.
+
+   ![Функции отладки в IntelliJ](media/functions-create-first-java-intellij/debug-configuration-intellij.PNG)
+
+1. По завершении остановите отладчик и запущенный процесс. Только один узел функции может быть активным и работать локально одновременно.
 
 ## <a name="deploy-the-function-to-azure"></a>Развертывание функции для Azure
 
-В процессе развертывания для Функций Azure используются данные учетной записи из Azure CLI. [Войдите с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest) прежде чем продолжить, используя командную строку компьютера.
+1. Перед развертыванием функции в Azure необходимо [выполнить вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
 
-```azurecli
-az login
-```
+   ``` azurecli
+   az login
+   ```
 
-Разверните свой код в новое приложение-функцию с помощью целевого объекта Maven `azure-functions:deploy` или выберите параметр azure-functions:deploy в окне Maven Projects (Проекты Maven).
+1. Разверните свой код в новой функции, используя целевой объект Maven `azure-functions:deploy`. Также в окне "Проекты Maven" можно выбрать параметр **azure-functions:deploy**.
 
-```
-mvn azure-functions:deploy
-```
+   ```
+   mvn azure-functions:deploy
+   ```
 
-После завершения развертывания появится URL-адрес, который можно использовать для доступа к приложению-функции Azure:
+1. После успешного развертывания функции, в выходных данных Azure CLI необходимо найти ее URL-адрес.
 
-```output
-[INFO] Successfully deployed Function App with package.
-[INFO] Deleting deployment package from Azure Storage...
-[INFO] Successfully deleted deployment package fabrikam-function-20170920120101928.20170920143621915.zip
-[INFO] Successfully deployed Function App at https://fabrikam-function-20170920120101928.azurewebsites.net
-[INFO] ------------------------------------------------------------------------
-```
+   ``` output
+   [INFO] Successfully deployed Function App with package.
+   [INFO] Deleting deployment package from Azure Storage...
+   [INFO] Successfully deleted deployment package fabrikam-function-20170920120101928.20170920143621915.zip
+   [INFO] Successfully deployed Function App at https://fabrikam-function-20170920120101928.azurewebsites.net
+   [INFO] ------------------------------------------------------------------------
+   ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

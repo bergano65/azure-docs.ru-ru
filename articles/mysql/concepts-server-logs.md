@@ -8,13 +8,13 @@ manager: kfile
 editor: jasonwhowell
 ms.service: mysql
 ms.topic: article
-ms.date: 09/17/2018
-ms.openlocfilehash: ac5be20815b552c08e5cd1054bf24d7a10b56498
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.date: 10/03/2018
+ms.openlocfilehash: 73be0e4ecff4bc0d9b69249430bba69a93cc54ae
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46124275"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49093788"
 ---
 # <a name="server-logs-in-azure-database-for-mysql"></a>Журналы сервера в базе данных Azure для MySQL
 В базе данных Azure для MySQL пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок. 
@@ -45,6 +45,39 @@ ms.locfileid: "46124275"
 - **log_throttle_queries_not_using_indexes.** Ограничивает число не использующих индексы запросов, сохраняемых в журнале медленных запросов. Этот параметр применяется, только если log_queries_not_using_indexes имеет значение "ON" (Включено).
 
 Полное описание параметров, применимых для журнала медленных запросов, вы найдете в [соответствующем разделе документации по MySQL](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html).
+
+## <a name="diagnostic-logs"></a>Журналы диагностики
+База данных Azure для MySQL интегрирована с журналами диагностики Azure Monitor. После активации ведения журналов меленных запросов на сервере MySQL вы можете направить их в Log Analytics, Центры событий или службу хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики, см. в статье [Сбор и использование данных журнала из ресурсов Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md).
+
+В приведенной ниже таблице описывается содержимое каждого журнала. Порядок появления выбранных полей зависит от выбранного метода вывода.
+
+| **Свойство** | **Описание** |
+|---|---|---|
+| TenantId | Идентификатор клиента |
+| SourceSystem | `Azure` |
+| TimeGenerated [UTC] | Метка времени, когда журнал был записан в формате UTC |
+| type | Тип журнала Всегда `AzureDiagnostics` |
+| SubscriptionId | Идентификатор GUID для подписки, принадлежащей серверу |
+| ResourceGroup | Имя группы ресурсов, принадлежащей серверу |
+| ResourceProvider | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORMYSQL` |
+| ResourceType | `Servers` |
+| ResourceId | Универсальный код ресурса (URI) |
+| Ресурс | Имя сервера |
+| Категория | `MySqlSlowLogs` |
+| OperationName | `LogEvent` |
+| Logical_server_name_s | Имя сервера |
+| start_time_t [UTC] | Время начала запроса. |
+| query_time_s | Общее время, которое потребовалось для выполнения запроса. |
+| lock_time_s | Общее время блокировки запроса. |
+| user_host_s | Имя пользователя |
+| rows_sent_s | Количество отправленных строк. |
+| rows_examined_s | Число проверенных строк. |
+| last_insert_id_s | [last_insert_id](https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_last-insert-id) |
+| insert_id_s | Идентификатор для вставки. |
+| sql_text_s | Полный запрос. |
+| server_id_s | Идентификатор сервера. |
+| thread_id_s | Идентификатор потока. |
+| \_ResourceId | Универсальный код ресурса (URI) |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Configure and access server logs using Azure CLI](howto-configure-server-logs-in-cli.md) (Настройка и использование журналов сервера с помощью Azure CLI)

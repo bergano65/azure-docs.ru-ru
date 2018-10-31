@@ -1,78 +1,70 @@
 ---
-title: Создание учетной записи API-интерфейсов Cognitive Services на портале Azure | Документация Майкрософт
+title: Создание учетной записи API-интерфейсов Cognitive Services на портале Azure
+titlesuffix: Azure Cognitive Services
 description: Описывается, как создать учетную запись API-интерфейсов Microsoft Cognitive Services на портале Azure.
 services: cognitive-services
-documentationcenter: ''
 author: garyericson
 manager: cgronlun
-editor: ''
-ms.assetid: b6176bb2-3bb6-4ebf-84d1-3598ee6e01c6
 ms.service: cognitive-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/01/2018
 ms.author: garye
-ms.reviewer: gibattag
-ms.openlocfilehash: ed5f19b23375ecb83e19274c7405e9a1208a7985
-ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
+ms.openlocfilehash: 37f53303a3b0c224c1286fb488a796fd5cdee0e5
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39036163"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49386422"
 ---
-# <a name="create-a-cognitive-services-apis-account-in-the-azure-portal"></a>Создание учетной записи API-интерфейсов Cognitive Services на портале Azure
+# <a name="quickstart-create-a-cognitive-services-account-in-the-azure-portal"></a>Краткое руководство. Создание учетной записи Cognitive Services на портале Azure
 
-Чтобы использовать API-интерфейсы Microsoft Cognitive Services, необходимо сначала создать учетную запись на портале Azure.
+Используйте это краткое руководство, чтобы начать работать с Azure Cognitive Services. Эти службы представляются [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal) Azure, которые позволяют подключиться к одному или нескольким доступным API-интерфейсам Cognitive Services.
 
-1. Войдите на [портале Azure](http://portal.azure.com).
+## <a name="prerequisites"></a>Предварительные требования
 
-2. Щелкните **+ Create a resource** (+ Создать ресурс).
+* Действующая подписка Azure. Вы можете создать [учетную запись](https://azure.microsoft.com/free/) бесплатно.
 
-3. В Azure Marketplace выберите **Искусственный интеллект и Cognitive Services** и откройте список доступных API-интерфейсов. Щелкните **Показать все** для просмотра полного списка API-интерфейсов Cognitive Services. Щелкните выбранный API, чтобы продолжить.
+## <a name="create-and-subscribe-to-an-azure-cognitive-services-resource"></a>Создание и подписка на ресурс Azure Cognitive Services
 
-    ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/select-cognitive-services-apis.png)
+1. Войдите на [портал Azure](http://portal.azure.com) и щелкните **+Создать ресурс**.
+    
+    ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/azurePortalScreen.png)
 
-4. На странице **Создание** введите приведенные ниже сведения.
+2. В разделе Azure Marketplace щелкните **Искусственный интеллект + Машинное обучение**. Если вы не видите службу, которая вам нужна, щелкните **Показать все**, чтобы просмотреть весь каталог API-интерфейсов Cognitive Services.
 
-   - **Имя учетной записи**: имя используемой учетной записи. Рекомендуется использовать описательное имя, например *AFaceAPIAccount*.
+    ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/azureMarketplace.png)
 
-   - **Подписка**: выберите одну из доступных подписок Azure, в которых имеются разрешения участника.
+3. На странице **Создание** введите приведенные ниже сведения.
 
-   - **Тип API**: выберите API Cognitive Services, который вы хотите использовать. Дополнительные сведения о различных доступных API-интерфейсах Cognitive Services см. на сайте [Cognitive Services](https://azure.microsoft.com/services/cognitive-services/).
+    |    |    |
+    |--|--|
+    | **Имя** | Описательное имя для ресурса Cognitive Services. Рекомендуется использовать описательное имя, например *MyNameFaceAPIAccount*. |
+    | **Подписка** | Выберите одну из доступных подписок Azure. |
+    | **Местоположение.** | Расположение экземпляра Cognitive Service. Разные расположения могут увеличивать задержку, но не влияют на доступность среды выполнения ресурса. |
+    | **Ценовая категория** | Затраты на учетную запись Cognitive Services зависят от выбранных параметров и использования. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/cognitive-services/) API-интерфейсов.
+    | **Группа ресурсов** | [Группа ресурсов Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/getting-started/azure-resource-access#what-is-an-azure-resource-group), которая будет содержать ресурс Cognitive Services. Вы можете создать группу или добавить ее к созданной ранее группе. |
 
-   - **Ценовая категория**: затраты на учетную запись Cognitive Services зависят от фактического использования и выбранных параметров. Дополнительную информацию о ценах на каждый API см. на [страницах цен](https://azure.microsoft.com/pricing/details/cognitive-services/).
+    ![Снимок экрана создания ресурса](media/cognitive-services-apis-create-account/resource_create_screen.png)
 
-   - **Группа ресурсов**: группа ресурсов — это коллекция ресурсов с одинаковым жизненным циклом, разрешениями и политиками. Дополнительные сведения о группах ресурсов см. в статье [Управление ресурсами Azure через портал](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).
+## <a name="access-your-resource"></a>Получение доступа к ресурсам 
 
-   - **Расположение группы ресурсов**: этот параметр необходимо указать только в том случае, если выбранный API является глобальным (не привязанным к точке). Если API является глобальным и не привязан к расположению, необходимо указать расположение группы ресурсов, в которой размещаются метаданные, связанные с учетной записью API-интерфейсов Cognitive Services. Это расположение никак не влияет на доступность вашей учетной записи. Дополнительные сведения о группе ресурсов см. в статье [Управление ресурсами Azure через портал](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).
+> [!NOTE]
+> Владелец подписки может отключить создание учетной записи Cognitive Services для группы ресурсов или подписки с помощью [политики Azure](https://docs.microsoft.com/azure/governance/policy/overview#policy-definition), присвоив определение политики "Недопустимые типы ресурсов" и указав **Microsoft.CognitiveServices/accounts** в качестве целевого типа ресурсов.
 
-   - **Явное подтверждение условий использования веб-службы.** Чтобы создать учетную запись, владельцам или участникам подписки (определенным с помощью [управления доступом на основе ролей Azure](https://docs.microsoft.com/azure/role-based-access-control/overview)) необходимо явным образом признать условия, применяемые к службам Cognitive Services, в разделе [Условия использования веб-служб (OST)](https://www.microsoft.com/en-us/Licensing/product-licensing/products.aspx). 
+После создания ресурса вы можете получить к нему доступ на панели мониторинга Azure, если она закреплена. В противном случае его можно найти в **Группе ресурсов**.
 
-     Владелец подписки может отключить создание учетной записи Cognitive Services для определенной группы ресурсов или подписки с помощью [политик Azure](../azure-policy/azure-policy-introduction.md) в соответствии со статьей об [использовании портала Azure для назначения политик ресурсов и управления ими](../azure-policy/assign-policy-definition.md), присвоив определение политики "Недопустимые типы ресурсов" и указав **Microsoft.CognitiveServices/accounts** в качестве целевого типа ресурсов.
+В пределах ресурса Cognitive Services можно использовать URL-адрес конечной точки и ключи в разделе **Обзор**, чтобы выполнять вызовы API в своих приложениях.
 
-     Если создание учетной записи было отключено, во время ее создания может отображаться следующая ошибка:
+![Снимок экрана ресурсов](media/cognitive-services-apis-create-account/resourceScreen.png)
 
-     ![Ошибка создания учетной записи](media/cognitive-services-apis-create-account/error-message.png)
+## <a name="next-steps"></a>Дальнейшие действия
 
-5. Чтобы закрепить учетную запись на панели мониторинга на портале Azure, щелкните **Закрепить на панели мониторинга**.
+> [!div class="nextstepaction"]
+> [Руководство. Создание приложения для обработки изображений — C#](https://docs.microsoft.com/azure/cognitive-services/computer-vision/tutorials/csharptutorial)
 
-6. Щелкните **Создать** , чтобы создать учетную запись.
+## <a name="see-also"></a>См. также
 
-После успешного развертывания учетной записи Cognitive Services щелкните ее элемент на панели мониторинга, чтобы просмотреть сведения об этой учетной записи.
-
-**URL-адрес конечной точки** из раздела **Обзор** и ключи из раздела **Ключи** можно использовать, чтобы выполнять вызовы API в своих приложениях.
-
-![Отображение сведений об учетной записи](media/cognitive-services-apis-create-account/display-account.png)
-
-![Отображение ключей учетной записи](media/cognitive-services-apis-create-account/account-keys.png)
-
-### <a name="next-steps"></a>Дальнейшие действия
-
-Дополнительные сведения о всех доступных службах Microsoft Cognitive Services см. в разделе [Cognitive Services](https://azure.microsoft.com/services/cognitive-services/).
-
-Краткие руководства с примерами использования некоторых API-интерфейсов Cognitive Services:
-
- - [Краткие руководства по компьютерному зрению для C#](computer-vision/quickstarts/csharp.md)
- - [Использование API анализа текста с Python](text-analytics/quickstarts/python.md)
- - [Использование API распознавания лиц с JavaScript](face/quickstarts/javascript.md)
+* [Краткое руководство по извлечению рукописного текста с помощью REST API и C#; в API компьютерного зрения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/quickstarts/csharp-hand-text)
+* [Руководство. Создание приложения WPF для обнаружения и выделения лиц на изображении с помощью пакета SDK .NET](https://docs.microsoft.com/azure/cognitive-services/Face/Tutorials/FaceAPIinCSharpTutorial)
+* [Руководство по созданию веб-страницы пользовательского поиска](https://docs.microsoft.com/azure/cognitive-services/bing-custom-search/tutorials/custom-search-web-page)
+* [Бот LUIS в Node.js](https://docs.microsoft.com/azure/cognitive-services/luis/luis-nodejs-tutorial-build-bot-framework-sample)

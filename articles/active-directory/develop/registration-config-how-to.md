@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: celested
-ms.openlocfilehash: f6c2540d8f0bb49491a428b085d20067a36d970a
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: d9db2182c20663cc048a5c9501df2586db25d2f3
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44723925"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49364937"
 ---
-# <a name="how-to-select-permissions-for-a-given-api"></a>Выбор разрешений для заданного API
+# <a name="how-to-configure-endpoints"></a>Как настроить конечные точки
 
 Конечные точки проверки подлинности для приложения можно найти на [портале Azure](https://portal.azure.com).
 

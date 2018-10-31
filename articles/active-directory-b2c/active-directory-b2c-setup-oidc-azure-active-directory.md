@@ -7,15 +7,15 @@ manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/21/2018
+ms.date: 10/22/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 5f51fbff11412324ad167d49202f7215cefb5ac2
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: beb2d618d93f4c599f946194bd483326471065f4
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49076924"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49944810"
 ---
 # <a name="set-up-sign-in-azure-active-directory-accounts-a-built-in-policy-in-azure-active-directory-b2c"></a>Конфигурация входа в учетные записи Azure Active Directory со встроенной политикой в Azure Active Directory B2C
 
@@ -26,21 +26,18 @@ ms.locfileid: "49076924"
 
 ## <a name="create-an-azure-ad-app"></a>Создание приложения Azure AD
 
-Чтобы включить вход для пользователей из определенной организации Azure AD, вам необходимо зарегистрировать приложение в клиенте организации Azure AD.
-
->[!NOTE]
->В следующих инструкциях клиент организации Azure AD будет называться `Contoso.com`, а клиент Azure AD B2C — `fabrikamb2c.onmicrosoft.com`.
+Чтобы включить вход для пользователей из определенной организации Azure AD, вам необходимо зарегистрировать приложение в клиенте организации Azure AD, который отличается от клиента Azure AD B2C.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Убедитесь, что используете каталог, содержащий клиента организации Azure AD (contoso.com), щелкнув "Фильтр каталога и подписки" в верхнем меню и выбрав каталог, который содержит ваш клиент.
+2. Убедитесь, что используете каталог, содержащий клиента организации Azure AD, щелкнув "Фильтр каталога и подписки" в верхнем меню и выбрав каталог, который содержит ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Регистрация приложений**.
 4. Выберите **Регистрация нового приложения**.
 5. Введите имя приложения. Например, `Azure AD B2C App`.
 6. В качестве **типа приложения** выберите `Web app / API`.
-7. Для **URL-адреса входа** введите следующий URL-адрес в нижнем регистре, где `your-tenant` заменяется именем вашего клиента Azure AD B2C (fabrikamb2c.onmicrosoft.com).
+7. В поле **URL-адрес входа** введите следующий URL-адрес в нижнем регистре, где `your-B2C-tenant-name` заменяется именем вашего клиента Azure AD B2C. Например, `https://fabrikam.b2clogin.com/fabrikam.b2clogin.com/oauth2/authresp`:
 
     ```
-    https://your-tenant.b2clogin.com/your-tenant.onmicrosoft.com/oauth2/authresp
+    https://your-tenant-name.b2clogin.com/your-B2C-tenant-name.b2clogin.com/oauth2/authresp
     ```
 
     Всем URL-адресам следует использовать [b2clogin.com](b2clogin.md).
@@ -49,21 +46,22 @@ ms.locfileid: "49076924"
 9. Выберите приложение, а затем щелкните **Параметры**.
 10. Выберите **Ключи**, введите описание ключа, установите срок действия и нажмите кнопку **Сохранить**. Скопируйте значение ключа, который отображается, для использования в будущем.
 
-## <a name="configure-azure-ad-as-an-identity-provider-in-your-tenant"></a>Настройка Azure AD в качестве поставщика удостоверений для клиента
+## <a name="configure-azure-ad-as-an-identity-provider"></a>Настройка Azure AD в качестве поставщика удостоверений для клиента
 
-1. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C (fabrikamb2c.onmicrosoft.com), щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент Azure AD B2C.
+1. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, который содержит ваш клиент.
 2. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 3. Щелкните **Поставщики удостоверений** и выберите **Добавить**.
 4. Введите **Имя**. Например, введите "Contoso Azure AD".
 5. Щелкните **Тип поставщика удостоверений**, выберите **Open ID Connect** и нажмите кнопку **ОК**.
 6. Щелкните **Настроить этот поставщик удостоверений**.
-7. В поле **URL-адрес метаданных** введите следующий URL-адрес, где `your-tenant` заменяется на имя вашего клиента Azure AD.
+7. В поле **URL-адрес метаданных** введите следующий URL-адрес, где `your-AD-tenant-domain` заменяется на имя вашего клиента Azure AD. Например, `https://login.microsoftonline.com/contoso.onmicrosoft.com/.well-known/openid-configuration`:
 
     ```
-    https://login.microsoftonline.com/your-tenant/.well-known/openid-configuration
+    https://login.microsoftonline.com/your-AD-tenant-domain/.well-known/openid-configuration
     ```
+
 8. Для **идентификатора клиента**, введите ранее записан идентификатор приложения, а для **секрета клиента**, введите записанное ранее значение ключа.
-9. При необходимости введите значение **Domain_hint** (например, `ContosoAD`). Это значение используется при ссылке на этого поставщика удостоверений с помощью *domain_hint* в запросе. 
+9. При необходимости введите значение для **Domain_hint**. Например, `ContosoAD`. Это значение используется при ссылке на этого поставщика удостоверений с помощью *domain_hint* в запросе. 
 10. Последовательно выберите **ОК**.
 11. Выберите **Сопоставление утверждений для этого поставщика удостоверений** и задайте следующие утверждения.
     

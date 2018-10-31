@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/25/2018
 ms.reviewer: daviste
 ms.author: mbullwin
-ms.openlocfilehash: 9188776fdd213f01523069b08bd898f48bee57a4
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 85547bd8528c4d5d4a627750bb5334f05ed231b1
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47091487"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50024321"
 ---
 # <a name="impact-analysis-with-application-insights"></a>Анализ влияния с помощью Application Insights
 
@@ -68,7 +68,7 @@ Impact можно рассматривать как абсолютный инс�
 
 ## <a name="how-does-the-impact-tool-calculate-these-conversion-rates"></a>Как инструмент Impact рассчитывает коэффициенты конверсии?
 
-Внутренняя реализация инструмента Impact использует [коэффициент корреляции Пирсона] (https://en.wikipedia.org/wiki/Pearson_correlation_coefficient). Результаты вычисляются от –1 до 1, при этом –1 представляет нулевую корреляцию, а 1 — положительную корреляцию.
+В инструменте Impact используется [коэффициент корреляции Пирсона](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient). Результаты вычисляются от –1 до 1, при этом –1 представляет нулевую корреляцию, а 1 — положительную корреляцию.
 
 Ниже в общих чертах приведен принцип анализа влияния.
 

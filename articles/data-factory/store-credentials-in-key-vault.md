@@ -10,14 +10,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/25/2017
+ms.date: 10/22/2017
 ms.author: jingwang
-ms.openlocfilehash: e1be16ec6a7536cedf3a27ffacb9c4dffe42bbef
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 3428fb5034435d9f3444347329171d803136177c
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37052421"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49944674"
 ---
 # <a name="store-credential-in-azure-key-vault"></a>Хранение учетных данных в Azure Key Vault
 
@@ -25,12 +25,12 @@ ms.locfileid: "37052421"
 
 Сейчас эта функция поддерживается для всех видов действий, кроме пользовательских действий. Дополнительные сведения о настройке соединителя см. в разделе "Свойства связанной службы" [в статьях, посвященных каждому типу соединителей](copy-activity-overview.md#supported-data-stores-and-formats).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Эта функция основывается на удостоверении службы фабрики данных. Узнайте, как работает [удостоверение службы фабрики данных](data-factory-service-identity.md), и убедитесь, что фабрике данных назначено удостоверение.
 
 >[!TIP]
->В Azure Key Vault, когда вы создадите секрет, **поместите все значения свойства, которые запрашивает связанная служба ADF (например, строка подключения, пароль, ключ субъекта-службы и т. д.)**. Например, для связанной службы хранилища Azure поместите `DefaultEndpointsProtocol=http;AccountName=myAccount;AccountKey=myKey;` как секретный код AKV, затем укажите в поле connectionString из ADF. Для службы Dynamics поместите `myPassword` как секрет AKV, а затем укажите в поле paassword из ADF. Дополнительные сведения о поддерживаемых свойствах см. в статьях о каждом соединителе или вычислительном ресурсе.
+>В Azure Key Vault, когда вы создадите секрет, **поместите все значения свойства, которые запрашивает связанная служба ADF (например, строка подключения, пароль, ключ субъекта-службы и т. д.)**. Например, для связанной службы хранилища Azure укажите в качестве секрета AKV `DefaultEndpointsProtocol=http;AccountName=myAccount;AccountKey=myKey;`, а затем задайте ссылку на поле connectionString из ADF. Для связанной службы Dynamics укажите в качестве секрета AKV `myPassword`, а затем задайте ссылку на поле password из ADF. Дополнительные сведения о поддерживаемых свойствах см. в статьях о каждом соединителе или вычислительном ресурсе.
 
 ## <a name="steps"></a>Действия
 

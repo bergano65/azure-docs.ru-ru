@@ -11,12 +11,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: routlaw
-ms.openlocfilehash: 9e07cddb9d446ea24143d3a6dec5e310d3ed6f1c
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 423661b8a459abf0b3028da92d6fd3ec885bb2c9
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48802123"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50025028"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
@@ -52,7 +52,7 @@ FunctionsProject
  | - pom.xml
 ```
 
-Существует общий файл [host.json] (functions-host-json.md), который может использоваться для настройки приложения-функции. У каждой функции есть собственный файл кода (.java) и файл конфигурации привязки (function.json).
+Существует общий файл [host.json](functions-host-json.md), который можно использовать для настройки приложения-функции. У каждой функции есть собственный файл кода (.java) и файл конфигурации привязки (function.json).
 
 Вы можете добавить несколько функций в проект. Не добавляйте функции в отдельные JAR-файлы. Приложение-функция в целевом каталоге является тем, что будет развернуто в вашем приложении-функции в Azure.
 

@@ -9,12 +9,12 @@ ms.author: raymondl
 author: raymondlaghaeian
 ms.reviewer: sgilley
 ms.date: 09/24/2018
-ms.openlocfilehash: e796feaf8ef25eaa91b7db810a11a67da13e9df1
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: 8a736516a598eee051b416834d2b737211e66b96
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48237183"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49429469"
 ---
 # <a name="deploy-web-services-to-azure-container-instances"></a>Развертывание веб-служб в экземплярах контейнеров Azure 
 
@@ -33,7 +33,7 @@ ms.locfileid: "48237183"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Должны быть установлены рабочая область службы машинного обучения Azure и пакет SDK машинного обучения Azure для Python. Узнать, как получить эти компоненты, можно в [кратком руководстве по началу работы с машинным обучением Azure](quickstart-get-started.md).
+- Должны быть установлены рабочая область службы "Машинное обучение Azure" и пакет SDK Машинного обучения Azure для Python. Узнать, как получить эти компоненты, можно в [кратком руководстве по началу работы с машинным обучением Azure](quickstart-get-started.md).
 
 - Объект рабочей области службы машинного обучения Azure
 
@@ -82,10 +82,10 @@ aciconfig = AciWebservice.deploy_configuration(cpu_cores = 1,
 
 > Если [развертывание производится из файла модели](#deploy-from-model-file) (с помощью метода`Webservice.deploy()`), этот шаг можно пропустить.
 
-Зарегистрируйте модель так, чтобы она использовала [`Webservice.deploy_from_model`](#deploy-from-registered-model) или [`Webservice.deploy_from_image`](#deploy-from-image). Если у вас уже есть зарегистрированная модель, извлеките ее.
+Для использования [Webservice.deploy_from_model](#deploy-from-registered-model) или [Webservice.deploy_from_image](#deploy-from-image) зарегистрируйте модель. Если у вас уже есть зарегистрированная модель, извлеките ее.
 
 ### <a name="retrieve-a-registered-model"></a>Извлечение зарегистрированной модели
-Если для обучения модели используется машинное обучение Azure, модель может быть уже зарегистрирована в вашей рабочей области.  Например, модель была зарегистрирована в последнем шаге руководства по [обучению модели](tutorial-train-models-with-aml.md).  В этом случае необходимо извлечь зарегистрированную модель для развертывания.
+Если для обучения модели используется машинное обучение Azure, модель может быть уже зарегистрирована в вашей рабочей области.  Например, модель была зарегистрирована на последнем этапе [руководства по обучению модели](tutorial-train-models-with-aml.md).  В этом случае необходимо извлечь зарегистрированную модель для развертывания.
 
 ```python
 from azureml.core.model import Model
@@ -109,7 +109,7 @@ model = Model.register(model_path = "sklearn_mnist_model.pkl",
                         workspace = ws)
 ```
 
-
+<a name='deploy-from-model-file'/>
 ## <a name="option-1-deploy-from-model-file"></a>Вариант 1. Развертывание из файла модели
 
 При развертывании из файла модели требуется писать меньше всего кода, но и уровень контроля над именованием компонентов наиболее низкий. Такой подход предполагает получение файла модели и его регистрацию в рабочей области.  Однако вы не можете присвоить имя модели или связать с ней теги либо описание.  
@@ -148,6 +148,7 @@ model = Model.register(model_path = "sklearn_mnist_model.pkl",
 
 1. Теперь можно [протестировать веб-службу](#test-web-service).
 
+<a name='deploy-from-registered-model'/>
 ## <a name="option-2-deploy-from-registered-model"></a>Вариант 2. Развертывание из зарегистрированной модели
 
 При развертывании зарегистрированного файла модели требуется немного больше строк кода, но обеспечивается некоторый контроль над именованием выходных компонентов. Это удобный способ для развертывания уже имеющейся зарегистрированной модели.  Однако присвоить имя образу Docker нельзя.  
@@ -173,6 +174,7 @@ model = Model.register(model_path = "sklearn_mnist_model.pkl",
 
 1. Теперь можно [протестировать веб-службу](#test-web-service).
 
+<a name='deploy-from-image'/>
 ## <a name="option-3-deploy-from-image"></a>Вариант 3. Развертывание из образа
 
 Разверните зарегистрированную модель (`model`) с помощью метода `Webservice.deploy_from_image()`. Он позволяет создать образ Docker отдельно, а затем выполнить развертывание из него.
@@ -215,6 +217,7 @@ model = Model.register(model_path = "sklearn_mnist_model.pkl",
 
 Теперь можно протестировать веб-службу.
 
+<a name='test-web-service'/>
 ## <a name="test-the-web-service"></a>Тестирование веб-службы
 
 Веб-служба будет одинаковой, независимо от применяемого способа.  Для получения прогнозов используйте метод `run` службы.  

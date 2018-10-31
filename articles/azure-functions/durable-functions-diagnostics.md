@@ -2,20 +2,20 @@
 title: Диагностика в устойчивых функциях — Azure
 description: Сведения о том, как диагностировать неполадки в расширении устойчивых функций для Функций Azure.
 services: functions
-author: cgillum
+author: kashimiz
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 04/30/2018
+ms.date: 10/23/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 1ebca858632a64b5822658182a3b83c48f310164
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 1c111031af4163dcc915ab6c705edbd613cfcefd
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46953041"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49984831"
 ---
 # <a name="diagnostics-in-durable-functions-azure-functions"></a>Диагностика в устойчивых функциях (Функции Azure)
 
@@ -153,13 +153,13 @@ public static async Task Run(
 ```javascript
 const df = require("durable-functions");
 
-module.exports = df(function*(context){
+module.exports = df.orchestrator(function*(context){
     context.log("Calling F1.");
-    yield context.df.callActivityAsync("F1");
+    yield context.df.callActivity("F1");
     context.log("Calling F2.");
-    yield context.df.callActivityAsync("F2");
+    yield context.df.callActivity("F2");
     context.log("Calling F3.");
-    yield context.df.callActivityAsync("F3");
+    yield context.df.callActivity("F3");
     context.log("Done!");
 });
 ```
@@ -184,6 +184,8 @@ Done!
 
 Если вы хотите протоколировать только выполнение без воспроизведения, можно написать логическое выражение, чтобы вносить запись, только когда `IsReplaying` имеет значение `false`. Рассмотрим указанный выше пример, но на этот раз с проверкой воспроизведения.
 
+#### <a name="c"></a>C#
+
 ```cs
 public static async Task Run(
     DurableOrchestrationContext ctx,
@@ -198,6 +200,23 @@ public static async Task Run(
     log.Info("Done!");
 }
 ```
+
+#### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+
+```javascript
+const df = require("durable-functions");
+
+module.exports = df.orchestrator(function*(context){
+    if (!context.df.isReplaying) context.log("Calling F1.");
+    yield context.df.callActivity("F1");
+    if (!context.df.isReplaying) context.log("Calling F2.");
+    yield context.df.callActivity("F2");
+    if (!context.df.isReplaying) context.log("Calling F3.");
+    yield context.df.callActivity("F3");
+    context.log("Done!");
+});
+```
+
 После этого изменения выходные данные журнала выглядят следующим образом:
 
 ```txt
@@ -206,9 +225,6 @@ Calling F2.
 Calling F3.
 Done!
 ```
-
-> [!NOTE]
-> Свойство `IsReplaying` еще не доступно в JavaScript.
 
 ## <a name="custom-status"></a>Настраиваемое значение состояния
 
@@ -226,6 +242,9 @@ public static async Task SetStatusTest([OrchestrationTrigger] DurableOrchestrati
     // ...do more work...
 }
 ```
+
+> [!NOTE]
+> Пользовательские состояния оркестрации для JavaScript появятся в одном из следующих выпусков.
 
 Когда выполняется оркестрация, внешние клиенты могут получить данные о таком настраиваемом значении состояния:
 
@@ -261,7 +280,7 @@ GET /admin/extensions/DurableTaskExtension/instances/instance123
 > [!TIP]
 > При установке точек останова, если вы хотите прервать только выполнение без воспроизведения, можно задать условную точку останова, которая прерывается, только когда `IsReplaying` имеет значение `false`.
 
-## <a name="storage"></a>служба хранилища.
+## <a name="storage"></a>Хранилище
 
 По умолчанию устойчивые функции хранят состояние в службе хранилища Azure. Это означает, что вы можете проверить состояние вашей оркестрации с помощью средств, таких как [обозреватель службы хранилища Microsoft Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).
 

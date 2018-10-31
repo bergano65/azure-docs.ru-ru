@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/05/2018
+ms.date: 10/21/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 4f2ceae349c921ce0d83fb7401e3b18404722763
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 025202d25d3057f3db7d015faba349a1fe642d4c
+ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49362914"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "49637871"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Сквозная проверка подлинности Azure Active: ответы на часто задаваемые вопросы
 
@@ -83,6 +83,10 @@ ms.locfileid: "49362914"
 ## <a name="can-i-install-two-or-more-pass-through-authentication-agents-on-the-same-server"></a>Можно ли установить два или более агентов сквозной проверки подлинности на одном сервере?
 
 Нет, на одном сервере можно установить только один агент сквозной проверки подлинности. Если вы хотите настроить сквозную аутентификацию для обеспечения высокой доступности, следуйте [этим инструкциям](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability).
+
+## <a name="do-i-have-to-manually-renew-certificates-used-by-pass-through-authentication-agents"></a>Нужно ли вручную продлевать сертификаты, используемые агентами сквозной проверки подлинности?
+
+Обмен данными между каждым агентом сквозной проверки подлинности и Azure AD защищен с помощью проверки подлинности на основе сертификата. Эти [сертификаты автоматически продлеваются каждые несколько месяцев средствами Azure AD](how-to-connect-pta-security-deep-dive.md#operational-security-of -the-authentication-agents). Нет необходимости вручную продлевать их действие. Старые просроченные сертификаты при необходимости можно удалить.
 
 ## <a name="how-do-i-remove-a-pass-through-authentication-agent"></a>Ка удалить агент сквозной аутентификации?
 

@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/07/2018
 ms.author: sngun
-ms.openlocfilehash: 68eb567235897641d5d4027160f62c5aa6e7e4f9
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 26500f3e557a27046edc5c833b8c8d88ae266e68
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46963395"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49409005"
 ---
 # <a name="azure-cosmos-db-diagnostic-logging"></a>Журнал ведения диагностики Azure Cosmos DB
 
@@ -356,11 +356,14 @@ $blobs | Get-AzureStorageBlobContent `
 
 Если вы выбрали параметр **Отправить в Log Analytics** при включении журнала ведения диагностики, данные диагностики из вашего контейнера будут перенаправлены в Log Analytics в течение двух часов. Если взглянуть на Log Analytics сразу после включения ведения журнала, данные отображаться не будут. Подождите два часа и повторите попытку. 
 
-Перед просмотром журналов проверьте, обновлена ли рабочая область Log Analytics для использования нового языка запросов Log Analytics. Для проверки откройте [портал Azure](https://portal.azure.com), выберите **Log Analytics** слева, затем выберите имя рабочей области, как показано на рисунке ниже. Откроется страница **рабочей области OMS**.
+Перед просмотром журналов проверьте, обновлена ли рабочая область Log Analytics для использования нового языка запросов Log Analytics. Для проверки откройте [портал Azure](https://portal.azure.com), выберите **Log Analytics** слева, затем выберите имя рабочей области, как показано на рисунке ниже. Отобразится страница **Рабочая область Log Analytics**.
 
 ![Log Analytics на портале Azure](./media/logging/azure-portal.png)
 
-Если вы видите указанное ниже сообщение на странице **рабочей области OMS**, это значит, что она не была обновлена для использования нового языка. Дополнительные сведения об обновлении для использования нового языка запросов см. в статье [Обновление Azure Log Analytics до нового поиска по журналам](../log-analytics/log-analytics-log-search-upgrade.md). 
+>[!NOTE]
+>Рабочие области OMS теперь называются рабочими областями Log Analytics.  
+
+Если на странице **Рабочая область Log Analytics** отображается указанное ниже сообщение, это значит, что рабочая область не обновлена и не может использовать новый язык. Дополнительные сведения об обновлении для использования нового языка запросов см. в статье [Обновление Azure Log Analytics до нового поиска по журналам](../log-analytics/log-analytics-log-search-upgrade.md). 
 
 ![Сообщение об обновлении Log Analytics](./media/logging/upgrade-notification.png)
 

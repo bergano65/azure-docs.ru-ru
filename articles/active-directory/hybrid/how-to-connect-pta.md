@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/19/2018
+ms.date: 10/21/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 4ae84ff481b25f1e91a29c067dea74ba25f924aa
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 899aeeb994ca5c9bf30dfca876dff61c1ccf3ea7
+ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49320328"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "49637585"
 ---
 # <a name="user-sign-in-with-azure-active-directory-pass-through-authentication"></a>Вход пользователей с помощью сквозной проверки подлинности Azure Active Directory
 
@@ -48,8 +48,9 @@ ms.locfileid: "49320328"
   - Отсутствие накладных расходов на управление. Агент автоматически получает усовершенствования и исправления ошибок.
 - *Безопасность*
   - Локальные пароли ни в каком виде не хранятся в облаке.
-  - Агент устанавливает только исходящие подключения из вашей сети. Таким образом, вам не нужно устанавливать агент в сети периметра.
   - Защита учетных записей пользователей благодаря взаимодействию с [политиками условного доступа Azure AD](../active-directory-conditional-access-azure-portal.md), включая службу Многофакторной идентификацию (MFA), а также [блокированию устаревшей аутентификации](../conditional-access/conditions.md) и [фильтрации атак методом подбора пароля](../authentication/howto-password-smart-lockout.md).
+  - Агент устанавливает только исходящие подключения из вашей сети. Таким образом, вам не нужно устанавливать агент в сети периметра.
+  - Обмен данными между агентом и Azure AD защищен с помощью проверки подлинности на основе сертификата. Эти сертификаты автоматически продлеваются каждые несколько месяцев средствами Azure AD.
 - *Высокая доступность*
   - Дополнительные агенты можно установить на нескольких локальных серверах, чтобы достичь высокого уровня доступности запросов на вход.
 

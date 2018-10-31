@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 10/07/2018
+ms.date: 10/24/2018
 ms.topic: troubleshooting
 ms.service: cost-management
 manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: c4c9f520b4f9e265a26cc8d7264367512062e605
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: fdb8c1c49e1791e3dafa006928bf244e05d00909
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49393360"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50025979"
 ---
 # <a name="create-a-support-request-for-cloudyn"></a>Создание запроса в группу поддержки для Cloudyn
 
@@ -42,6 +42,8 @@ ms.locfileid: "49393360"
 Если вы хотите создать запрос в службу поддержки о выставлении счетов для Управления затратами, из списка **Тип проблемы** выберите **Управление затратами Azure**.
 
 Чтобы проверить состояние зарегистрированного инцидента, воспользуйтесь инструкциями из раздела [Все запросы на поддержку](../azure-supportability/how-to-create-azure-support-request.md#all-support-requests).
+
+Если вы старый пользователь Cloudyn без учетной записи Azure, отправьте запрос в службу поддержки на странице http://support.microsoft.com/oas/default.aspx?prid=16451.
 
 
 ## <a name="next-steps"></a>Дополнительная информация

@@ -3,23 +3,19 @@ title: Управление экземплярами в устойчивых ф�
 description: Сведения о том, как управлять экземплярами в расширении устойчивых функций для Функций Azure.
 services: functions
 author: cgillum
-manager: cfowler
-editor: ''
-tags: ''
+manager: jeconnoc
 keywords: ''
-ms.service: functions
+ms.service: azure-functions
 ms.devlang: multiple
-ms.topic: article
-ms.tgt_pltfrm: multiple
-ms.workload: na
-ms.date: 03/19/2018
+ms.topic: conceptual
+ms.date: 08/31/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 5cb3ccbc949f8250101fab6cb7899b859149fdfd
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: c9b3cd112cef7a34e0d475cdeb85b9e07d77f584
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37341098"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49352599"
 ---
 # <a name="manage-instances-in-durable-functions-azure-functions"></a>Управление экземплярами в устойчивых функциях (Функции Azure)
 
@@ -64,6 +60,19 @@ module.exports = function (context, input) {
 
     context.done(null);
 };
+```
+В приведенном выше коде предусмотрено использование в файле function.json определенной привязки с именем "starter" и типом "orchestrationClient". Если привязка не определена, экземпляр долговременной функции не будет создан.
+
+Чтобы применить долговременную функцию, нужно внести изменения в файл function.json, создающие привязку для клиента оркестрации, как описано ниже
+
+```js
+{
+    "bindings": [{
+        "name":"starter",
+        "type":"orchestrationClient",
+        "direction":"out"
+    }]
+}
 ```
 
 > [!NOTE]
@@ -119,6 +128,32 @@ public static async Task Run(
     };
 }
 ```
+## <a name="querying-instances-with-filters"></a>Запросы к экземплярам с фильтрами
+
+Используйте метод `GetStatusAsync`,чтобы создать список экземпляров оркестрации, который соответствует набору предопределенных фильтров. Среди возможных параметров фильтра — время создания оркестрации и состояние среды выполнения оркестрации.
+
+```csharp
+[FunctionName("QueryStatus")]
+public static async Task Run(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")]HttpRequestMessage req,
+    [OrchestrationClient] DurableOrchestrationClient client,
+    TraceWriter log)
+{
+    IEnumerable<OrchestrationRuntimeStatus> runtimeStatus = new List<OrchestrationRuntimeStatus> {
+        OrchestrationRuntimeStatus.Completed,
+        OrchestrationRuntimeStatus.Running
+    };
+    IList<DurableOrchestrationStatus> instances = await starter.GetStatusAsync(
+        new DateTime(2018, 3, 10, 10, 1, 0),
+        new DateTime(2018, 3, 10, 10, 23, 59),
+        runtimeStatus
+    ); // You can pass CancellationToken as a parameter.
+    foreach (var instance in instances)
+    {
+        log.Info(JsonConvert.SerializeObject(instance));
+    };
+}
+```
 
 ## <a name="terminating-instances"></a>Прерывание выполнения экземпляров
 
@@ -149,8 +184,6 @@ public static Task Run(
 * **EventData** — данные полезной нагрузки в формате JSON, отправляемые в экземпляр.
 
 ```csharp
-#r "Microsoft.Azure.WebJobs.Extensions.DurableTask"
-
 [FunctionName("RaiseEvent")]
 public static Task Run(
     [OrchestrationClient] DurableOrchestrationClient client,
@@ -211,7 +244,8 @@ public static Task Run(
             "id": "d3b72dddefce4e758d92f4d411567177",
             "sendEventPostUri": "http://localhost:7071/admin/extensions/DurableTaskExtension/instances/d3b72dddefce4e758d92f4d411567177/raiseEvent/{eventName}?taskHub={taskHub}&connection={connection}&code={systemKey}",
             "statusQueryGetUri": "http://localhost:7071/admin/extensions/DurableTaskExtension/instances/d3b72dddefce4e758d92f4d411567177?taskHub={taskHub}&connection={connection}&code={systemKey}",
-            "terminatePostUri": "http://localhost:7071/admin/extensions/DurableTaskExtension/instances/d3b72dddefce4e758d92f4d411567177/terminate?reason={text}&taskHub={taskHub}&connection={connection}&code={systemKey}"
+            "terminatePostUri": "http://localhost:7071/admin/extensions/DurableTaskExtension/instances/d3b72dddefce4e758d92f4d411567177/terminate?reason={text}&taskHub={taskHub}&connection={connection}&code={systemKey}",
+            "rewindPostUri": "https://localhost:7071/admin/extensions/DurableTaskExtension/instances/d3b72dddefce4e758d92f4d411567177/rewind?reason={text}&taskHub={taskHub}&connection={connection}&code={systemKey}"
         }
     ```
 
@@ -232,12 +266,12 @@ public static Task Run(
 * **StatusQueryGetUri** — URL-адрес состояния экземпляра оркестрации.
 * **SendEventPostUri** — URL-адрес вызова события экземпляра оркестрации.
 * **TerminatePostUri** — URL-адрес завершения работы экземпляра оркестрации.
+* **RewindPostUri** — URL-адрес возврата состояния экземпляра оркестрации.
 
 Функции действий позволяют отправлять экземпляр класса [HttpManagementPayload](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.Extensions.DurableTask.HttpManagementPayload.html#Microsoft_Azure_WebJobs_Extensions_DurableTask_HttpManagementPayload_) во внешние системы, чтобы отслеживать или вызывать события для оркестрации:
 
 ```csharp
-#r "Microsoft.Azure.WebJobs.Extensions.DurableTask"
-
+[FunctionName("SendInstanceInfo")]
 public static void SendInstanceInfo(
     [ActivityTrigger] DurableActivityContext ctx,
     [OrchestrationClient] DurableOrchestrationClient client,
@@ -250,6 +284,29 @@ public static void SendInstanceInfo(
 
     // send the payload to Cosmos DB
     document = new { Payload = payload, id = ctx.InstanceId };
+}
+```
+
+## <a name="rewinding-instances-preview"></a>Возврат состояния экземпляров (предварительная версия)
+
+Сбойный экземпляр оркестрации можно *вернуть* к предыдущему исправному состоянию, используя [RewindAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_RewindAsync_System_String_System_String_) API. Служба возвращает процесс оркестрации в состояние *Running*, повторно запускает действие и/или ошибки выполнения суборкестрации, которые привели к сбою процесса оркестрации.
+
+> [!NOTE]
+> Этот API не является заменой правильной политики повторов и обработки ошибок. Вместо этого его следует применять исключительно в тех случаях, когда причини сбоя экземпляра оркестрации неизвестные. Дополнительные сведения о политике повторов и обработке ошибок см. в разделе [Обработка ошибок в устойчивых функциях (Функции Azure)](durable-functions-error-handling.md).
+
+Вариант использования *возврата* — рабочий процесс, состоящий из ряда [человеческих утверждений](durable-functions-overview.md#pattern-5-human-interaction). Предположим, существует ряд функций действий, уведомляющих кого-то, что требуется утверждение, и ожидающих ответа в режиме реального времени. После завершения всех действий утверждения получением ответов или прекращением по таймауту происходит сбой другого действия из-за ошибки настройки приложения (например, неверная строка подключения к базе данных). Как результат — сбой оркестрации в рабочем процессе. С помощью `RewindAsync` API администратор приложения может исправить ошибку конфигурации и *возвратить* к исходному состоянию сбойный экземпляр непосредственно перед сбоем. Ни одно из действий взаимодействия человека не нуждается в повторном утверждении, и оркестрацию теперь можно успешно завершить.
+
+> [!NOTE]
+> Функция *возврата* не поддерживает экземпляры возвратной оркестрации, использующие устойчивые таймеры.
+
+```csharp
+[FunctionName("RewindInstance")]
+public static Task Run(
+    [OrchestrationClient] DurableOrchestrationClient client,
+    [ManualTrigger] string instanceId)
+{
+    string reason = "Orchestrator failed and needs to be revived.";
+    return client.RewindAsync(instanceId, reason);
 }
 ```
 

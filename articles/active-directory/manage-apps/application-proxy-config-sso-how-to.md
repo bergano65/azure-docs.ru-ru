@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/21/2018
+ms.date: 10/22/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: 9c353c9b34c3d4a2b21093cc0ae82e638f5ddd01
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 91bbbf6cced8dc3ade4906961d68a99f810d9fd9
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44355393"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49956992"
 ---
 # <a name="how-to-configure-single-sign-on-to-an-application-proxy-application"></a>Как настроить единый вход для приложения прокси приложения
 
@@ -36,7 +36,7 @@ ms.locfileid: "44355393"
 ## <a name="configuring-single-sign-on-modes-for-application-proxy-applications"></a>Настройка режимов единого входа для приложения прокси приложения
 Настройте конкретный тип единого входа. Методы входа подразделяются в зависимости от того, какой тип проверки подлинности используется серверным приложением. Приложения прокси поддерживают три типа входа:
 
--   **Вход на основе пароля**: может использоваться для любого приложения, в котором для входа используются поля с именем пользователя и паролем. Действия по настройке описаны в [документации по настройке единого входа на основе пароля](../active-directory-enterprise-apps-whats-new-azure-portal.md#bring-your-own-password-sso-applications).
+-   **Вход на основе пароля**: может использоваться для любого приложения, в котором для входа используются поля с именем пользователя и паролем. Инструкции по настройке см. в статье [Настройка единого входа по паролю для приложения из коллекции Azure AD](configure-password-single-sign-on-gallery-applications.md).
 
 -   **Встроенная проверка подлинности Windows**: для приложений, использующих встроенную проверку подлинности Windows, единый вход выполняется с использованием ограниченного делегирования Kerberos. Этот метод дает соединителям прокси приложения в Active Directory возможность действовать от имени пользователей (в частности, отправлять и получать маркеры). Дополнительные сведения о настройке ограниченного делегирования Kerberos можно найти в [документации по настройке единого входа на основе ограниченного делегирования Kerberos](application-proxy-configure-single-sign-on-with-kcd.md).
 

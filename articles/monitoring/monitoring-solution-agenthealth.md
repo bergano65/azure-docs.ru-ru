@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2017
 ms.author: magoedte
-ms.openlocfilehash: f0737c6a6ff228b92a030242faf7f4d634bdd9f2
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: e9ac4b7f7a0900f8b49f95c0db9ba5e9c962fa0e
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45733196"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49404041"
 ---
 #  <a name="agent-health-solution-in-azure"></a>Решение для мониторинга работоспособности агентов в Azure
 Решение для мониторинга работоспособности агентов в Azure помогает выявлять среди всех агентов, отправляющих отчеты непосредственно в Log Analytics или подключенную к Log Analytics группу управления System Center Operations Manager, агенты, которые не отвечают на запросы и которые отправляют оперативные данные.  Вы также можете отслеживать число развернутых агентов и их географическое распределение, а также выполнять другие запросы, чтобы знать о распределении агентов, развернутых в Azure, других облачных средах или в локальной среде.    
@@ -85,7 +85,7 @@ ms.locfileid: "45733196"
 | OSMinorVersion | Второстепенная версия операционной системы.|
 | Version (версия) | Версия агента Log Analytics или агента Operations Manager.|
 | SCAgentChannel | Значение — *Прямой* и (или) *SCManagementServer*.|
-| IsGatewayInstalled | Если шлюз Log Analytics установлен, этот параметр имеет значение *true*, в противном случае — значение *false*.|
+| IsGatewayInstalled | Если шлюз Log Analytics установлен, этот параметр имеет значение *true*, в противном случае — значение *false*.|
 | ComputerIP | IP-адрес компьютера.|
 | RemoteIPCountry | Географическое расположение, в котором развернут компьютер.|
 | ManagementGroupName | Имя группы управления Operations Manager.|

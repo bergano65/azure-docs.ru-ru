@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/10/2018
+ms.date: 10/17/2018
 ms.author: tomfitz
-ms.openlocfilehash: 8cac3c8d3a1877ad7c93efc0954c2f07ecaa0a29
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: ea926a64e3df853d6845266ff20255b76d9ff387
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "42146930"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49386728"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Использование связанных и вложенных шаблонов при развертывании ресурсов Azure
 
@@ -28,6 +28,8 @@ ms.locfileid: "42146930"
 Для небольших и средних решений отдельный шаблон проще в понимании и обслуживании. Все ресурсы и значения можно увидеть в отдельном файле. Для более сложных сценариев связанные шаблоны позволяют разбить решение на целевые компоненты и повторно использовать шаблоны.
 
 При использовании связанного шаблона вы создаете основной шаблон, который получает значения параметра во время развертывания. Основной шаблон содержит все связанные шаблоны и при необходимости передает значения в эти шаблоны.
+
+Подробнее см. [Руководство. Создание связанных шаблонов Azure Resource Manager](./resource-manager-tutorial-create-linked-templates.md).
 
 ## <a name="link-or-nest-a-template"></a>Связывание или вложение шаблона
 
@@ -47,7 +49,7 @@ ms.locfileid: "42146930"
 ]
 ```
 
-Свойства, указанные для ресурса развертывания, зависят от того, создаете ли вы связь с внешним шаблоном или вкладываете встроенный шаблон в основной.
+Свойства, указанные для ресурса развертывания зависят от того, создаете ли вы связь с внешним шаблоном или вкладываете встроенный шаблон в основной.
 
 Для обоих связанных и вложенных шаблонов можно использовать только [инкрементный](deployment-modes.md) режим развертывания.
 
@@ -101,7 +103,7 @@ ms.locfileid: "42146930"
      "name": "linkedTemplate",
      "type": "Microsoft.Resources/deployments",
      "properties": {
-       "mode": "incremental",
+       "mode": "Incremental",
        "templateLink": {
           "uri":"https://mystorageaccount.blob.core.windows.net/AzureTemplates/newStorageAccount.json",
           "contentVersion":"1.0.0.0"
@@ -119,7 +121,9 @@ ms.locfileid: "42146930"
 
 ### <a name="external-template-and-inline-parameters"></a>Внешний шаблон и встроенные параметры
 
-Вы также можете указать встроенный параметр. Передать значение из основного шаблона в связанный можно с помощью свойства **parameters**.
+Вы также можете указать встроенный параметр. Нельзя использовать одновременно встроенные параметры и ссылку на их файл. Развертывание завершается сбоем с ошибкой когда указываются `parametersLink` и `parameters`.
+
+Передать значение из основного шаблона в связанный можно с помощью свойства **parameters**.
 
 ```json
 "resources": [
@@ -128,7 +132,7 @@ ms.locfileid: "42146930"
      "name": "linkedTemplate",
      "type": "Microsoft.Resources/deployments",
      "properties": {
-       "mode": "incremental",
+       "mode": "Incremental",
        "templateLink": {
           "uri":"https://mystorageaccount.blob.core.windows.net/AzureTemplates/newStorageAccount.json",
           "contentVersion":"1.0.0.0"
@@ -199,7 +203,7 @@ ms.locfileid: "42146930"
             "name": "linkedTemplate",
             "type": "Microsoft.Resources/deployments",
             "properties": {
-                "mode": "incremental",
+                "mode": "Incremental",
                 "templateLink": {
                     "uri": "[uri(deployment().properties.templateLink.uri, 'helloworld.json')]",
                     "contentVersion": "1.0.0.0"
@@ -397,7 +401,7 @@ Resource Manager обрабатывает каждый шаблон как от�
 
 После развертывания можно извлечь выходные значения, выполнив следующий сценарий PowerShell.
 
-```powershell
+```azurepowershell-interactive
 $loopCount = 3
 for ($i = 0; $i -lt $loopCount; $i++)
 {
@@ -407,9 +411,11 @@ for ($i = 0; $i -lt $loopCount; $i++)
 }
 ```
 
-Кроме того, можно выполнить сценарий Azure CLI.
+Или сценарий Azure CLI в оболочке Bash:
 
-```azurecli
+```azurecli-interactive
+#!/bin/bash
+
 for i in 0 1 2;
 do
     name="linkedTemplate$i";
@@ -440,7 +446,7 @@ done
       "name": "linkedTemplate",
       "type": "Microsoft.Resources/deployments",
       "properties": {
-        "mode": "incremental",
+        "mode": "Incremental",
         "templateLink": {
           "uri": "[concat(uri(deployment().properties.templateLink.uri, 'helloworld.json'), parameters('containerSasToken'))]",
           "contentVersion": "1.0.0.0"
@@ -455,16 +461,18 @@ done
 
 В PowerShell получение маркера для контейнера и развертывание шаблонов выполняется с помощью следующих команд. Обратите внимание на то, что параметр **containerSasToken** определен в шаблоне. Это не параметр команды **New-AzureRmResourceGroupDeployment**.
 
-```powershell
+```azurepowershell-interactive
 Set-AzureRmCurrentStorageAccount -ResourceGroupName ManageGroup -Name storagecontosotemplates
 $token = New-AzureStorageContainerSASToken -Name templates -Permission r -ExpiryTime (Get-Date).AddMinutes(30.0)
 $url = (Get-AzureStorageBlob -Container templates -Blob parent.json).ICloudBlob.uri.AbsoluteUri
 New-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateUri ($url + $token) -containerSasToken $token
 ```
 
-В Azure CLI происходит получение маркера для контейнера и развертывание шаблонов с помощью следующего кода.
+Для Azure CLI в оболочке Bash происходит получение маркера для контейнера и развертывание шаблонов с помощью следующего кода.
 
-```azurecli
+```azurecli-interactive
+#!/bin/bash
+
 expiretime=$(date -u -d '30 minutes' +%Y-%m-%dT%H:%MZ)
 connection=$(az storage account show-connection-string \
     --resource-group ManageGroup \
@@ -497,6 +505,7 @@ az group deployment create --resource-group ExampleGroup --template-uri $url?$to
 
 ## <a name="next-steps"></a>Дополнительная информация
 
+* Подробнее см. [Руководство. Создание связанных шаблонов Azure Resource Manager](./resource-manager-tutorial-create-linked-templates.md).
 * Сведения о том, как определить порядок развертывания ресурсов, см. в статье [Определение порядка развертывания ресурсов в шаблонах Azure Resource Manager](resource-group-define-dependencies.md).
 * Сведения о том, как определить один ресурс и создать несколько экземпляров, см. в статье [Развертывание нескольких экземпляров ресурса или свойства в шаблонах Azure Resource Manager](resource-group-create-multiple.md).
 * Действия по настройке шаблона в учетной записи хранения и созданию маркера SAS описаны в разделах [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](resource-group-template-deploy.md) и [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](resource-group-template-deploy-cli.md).

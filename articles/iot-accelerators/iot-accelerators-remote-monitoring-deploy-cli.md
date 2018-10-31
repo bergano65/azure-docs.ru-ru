@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 09/12/2018
 ms.topic: conceptual
-ms.openlocfilehash: 56f233afed8c403d19c9b668e98ecfec45470b64
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: ddb0b5b1a0847200caa7d8d04ecdc9dab4c41d14
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44721625"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49956703"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-using-the-cli"></a>Развертывание акселератора решений для удаленного мониторинга с помощью CLI
 
@@ -81,14 +81,14 @@ pcs login
 
 
 ### <a name="standard"></a>Стандартная
-Стандартное развертывание — это развертывание для рабочей среды, которое разработчик может настроить или дополнить в соответствии с конкретными требованиями. Чтобы обеспечить надежность и масштабирование, микрослужбы приложения создаются как контейнеры Docker и развертываются с помощью оркестратора (по умолчанию [Kubernetes](https://kubernetes.io/)). Оркестратор выполняет развертывание, масштабирование и управление приложением.
+Стандартное развертывание — это развертывание для рабочей среды, которое разработчик может настроить или дополнить в соответствии с конкретными требованиями. Вариант стандартного развертывания следует применять, когда все будет готово к настройке рабочей архитектуры с соответствующим уровнем масштабируемости и расширяемости. Микрослужбы приложений разработаны как контейнеры Docker и развернуты с помощью Службы Azure Kubernetes (AKS). Оркестратор выполняет развертывание, масштабирование и управление приложением.
+
 
 При создании стандартного решения в используемой подписке Azure будут подготовлены следующие платные службы Azure.
 
 | Count | Ресурс                                     | Размер (номер SKU)      | Область использования |
 |-------|----------------------------------------------|-----------------|----------|
-| 4.     | [Виртуальные машины Linux](https://azure.microsoft.com/services/virtual-machines/)   | Standard D2 V2  | 1 главный узел и 3 агента для избыточного размещения микрослужб |
-| 1     | [Служба контейнеров](https://azure.microsoft.com/services/container-service/) |                 | Оркестратор [Kubernetes](https://kubernetes.io) |
+| 1     | [Служба Azure Kubernetes (AKS)](https://azure.microsoft.com/services/kubernetes-service)| Используйте полностью управляемую службу оркестрации контейнеров Kubernetes; по умолчанию применяется 3 агента|
 | 1     | [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/)                     | S2 — уровень "Стандартный" | Команды и средства для управления устройствами |
 | 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)                 | Стандартная        | Хранение данных конфигурации и данных телеметрии, например правил, предупреждений и сообщений |
 | 5     | [Учетные записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction#types-of-storage-accounts)    | Стандартная        | 4 для хранения виртуальных машин и 1 для контрольных точек потоковой передачи |

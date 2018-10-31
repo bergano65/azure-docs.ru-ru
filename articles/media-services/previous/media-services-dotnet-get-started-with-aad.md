@@ -4,32 +4,32 @@ description: В этом разделе показано, как использ�
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/27/2018
+ms.date: 10/22/2018
 ms.author: juliako
-ms.openlocfilehash: b8f58f4010590dc40d5e8dc7ac1b634f161a807d
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: e36673c7baa03e1bcf36c149851e6455cea798fe
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33784573"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945575"
 ---
 # <a name="use-azure-ad-authentication-to-access-azure-media-services-api-with-net"></a>Использование аутентификации Azure AD для доступа к API служб мультимедиа Azure с помощью .NET
 
 Начиная с windowsazure.mediaservices 4.0.0.4, службы мультимедиа Azure поддерживают аутентификацию на основе Azure Active Directory (Azure AD). В этом разделе показано, как использовать аутентификацию Azure AD для доступа к API служб мультимедиа Azure (AMS) с помощью Microsoft .NET.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure. Дополнительные сведения см. на странице с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/). 
 - Учетная запись служб мультимедиа. Дополнительные сведения см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
 - Последняя версия пакета [NuGet](https://www.nuget.org/packages/windowsazure.mediaservices).
-- Ознакомление с разделом [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md). 
+- Изучение статьи [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md). 
 
 Процесс аутентификации Azure AD в службах мультимедиа Azure можно выполнить двумя способами.
 
@@ -97,14 +97,14 @@ ms.locfileid: "33784573"
 
 В следующем примере показано, как создать маркер Azure AD и контекст.
 
-    namespace AADAuthSample
+    namespace AzureADAuthSample
     {
         class Program
         {
             static void Main(string[] args)
             {
                 // Specify your Azure AD tenant domain, for example "microsoft.onmicrosoft.com".
-                var tokenCredentials = new AzureAdTokenCredentials("{YOUR AAD TENANT DOMAIN HERE}", AzureEnvironments.AzureCloudEnvironment);
+                var tokenCredentials = new AzureAdTokenCredentials("{YOUR Azure AD TENANT DOMAIN HERE}", AzureEnvironments.AzureCloudEnvironment);
     
                 var tokenProvider = new AzureAdTokenProvider(tokenCredentials);
     
@@ -158,7 +158,7 @@ ms.locfileid: "33784573"
     
 В следующем примере показано, как создать маркер Azure AD и контекст.
 
-    namespace AADAuthSample
+    namespace AzureADAuthSample
     {
     
         class Program

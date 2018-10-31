@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/13/2018
 ms.author: apimpm
-ms.openlocfilehash: 10b483c70f7b5a3d767815306d8a690b1b9a5faf
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: fee93d01f0462cbee1a3e1110c56fb57220f8004
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30161852"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49956864"
 ---
 # <a name="managing-azure-api-management-using-azure-automation"></a>Управление управлением API с помощью службы автоматизации Azure
 В этом руководстве описана служба автоматизации Azure. Также вы узнаете, как при ее помощи упростить администрирование службы управления API Azure.
@@ -34,9 +34,9 @@ ms.locfileid: "30161852"
 ## <a name="how-can-azure-automation-help-manage-azure-api-management"></a>Как служба автоматизации Azure помогает управлять управлением API Azure?
 Управлением API можно управлять в службе автоматизации Azure с помощью [командлетов Windows PowerShell для API управления Azure API](https://docs.microsoft.com/powershell/module/azurerm.apimanagement/?view=azurermps-5.5.0#api_management/). В службе автоматизации Azure можно создавать сценарии рабочих процессов PowerShell для выполнения многих задач управления API с помощью командлетов. Вы также можете связать эти командлеты в службе автоматизации Azure с командлетами для других служб Azure, чтобы автоматизировать сложные задачи в службах Azure и системах сторонних производителей.
 
-Ниже приведены некоторые примеры использования управления API с помощью средств службы автоматизации.
+Вот некоторые примеры использования службы "Управление API" в Powershell.
 
-* [Управление API Azure — использование PowerShell для архивации и восстановления](https://blogs.msdn.microsoft.com/katriend/2015/10/02/azure-api-management-using-powershell-for-backup-and-restore/)
+* [Примеры Azure PowerShell для службы "Управление API"](https://docs.microsoft.com/azure/api-management/powershell-samples)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь, после знакомства с основами службы автоматизации Azure и способами ее использования для управления управлением API Azure, вы можете пройти по следующим ссылкам, чтобы узнать больше.

@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 ms.author: prasantp
 author: prasanthpul
 ms.date: 09/24/2018
-ms.openlocfilehash: d4ce2dc67b0d9229ac2605ab317594ea345c19b2
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 190b7fff24c9d6b3dee86471b56ad68c962e51ce
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47434081"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49116884"
 ---
 # <a name="onnx-and-azure-machine-learning-create-and-deploy-interoperable-ai-models"></a>ONNX и машинное обучение Azure: создание и развертывание совместимых моделей AI
 
@@ -28,7 +28,7 @@ ms.locfileid: "47434081"
 ## <a name="why-choose-onnx"></a>Для чего нужен ONNX?
 ONNX дает совместимость, которая позволяет быстрее запускать хорошие идеи в производство. Благодаря ONNX специалисты по обработке и анализу данных могут выбирать для своей работы предпочитаемую платформу. А разработчикам он позволяет тратить меньше времени на подготовку моделей к производству и развертывание в облаке и Edge.  
 
-Модели ONNX можно экспортировать из самых разных платформ, включая PyTorch, Chainer, Microsoft Cognitive Toolkit (CNTK), MXNet и ML.Net. Для таких платформ, как TensorFlow, Keras, SciKit-Learn и многие другие существуют конвертеры.
+Модели ONNX можно создавать из самых разных платформ, включая PyTorch, Chainer, Microsoft Cognitive Toolkit (CNTK), MXNet и ML.Net, TensorFlow, Keras, SciKit-Learn и другие.
 
 Также имеется экосистема средств для визуализации и ускорения моделей ONNX. Для распространенных сценариев доступен также ряд предварительно обученных моделей ONNX.
 
@@ -36,18 +36,17 @@ ONNX дает совместимость, которая позволяет бы
 
 [ ![Схема ONNX, демонстрирующая обучение, конвертеры и развертывание](media/concept-onnx/onnx.png) ] (./media/concept-onnx/onnx.png#lightbox)
 
-## <a name="create-onnx-models-in-azure"></a>Создание моделей ONNX в Azure
+## <a name="get-onnx-models"></a>Получение моделей ONNX
 
-Модели ONNX можно создавать различными способами:
-+ Обучение модели в службе машинного обучения Azure и преобразование или экспорт этой модели в ONNX (см. пример в далее в этой статье).
+Модели ONNX можно получить различными способами:
++ Получение предварительно обученной модели ONNX из [коллекции моделей ONNX](https://github.com/onnx/models) (см. пример в нижней части этой статьи).
++ Создание настраиваемых моделей ONNX в [пользовательской службе визуального распознавания Azure](https://docs.microsoft.com/azure/cognitive-services/Custom-Vision-Service/). 
++ Преобразование существующей модели из другого формата в ONNX (см. пример в нижней части этой статьи). 
++ Обучение новой модели в службе машинного обучения Azure (см. пример в нижней части этой статьи).
 
-+ Получение предварительно обученной модели ONNX из [коллекции моделей ONNX](https://github.com/onnx/models).
+## <a name="saveconvert-your-models-to-onnx"></a>Сохранение/преобразование моделей в ONNX
 
-+ Создание настраиваемых моделей ONNX в [пользовательской службе визуального распознавания Azure](https://docs.microsoft.com/azure/cognitive-services/Custom-Vision-Service/).
-
-## <a name="exportconvert-your-models-to-onnx"></a>Экспорт/преобразование моделей в ONNX
-
-Существующие модели можно преобразовывать в ONNX.
+Можно преобразовать существующие модели ONNX или сохранить их в формате ONNX в конце обучения.
 
 |Платформа модели|Пример или средство преобразования|
 |-----|-------|
@@ -101,7 +100,7 @@ results = session.run([], {"input1": indata1, "input2": indata2})
 
 Приведем пример развертывания модели ONNX:
 
-1. Инициализируйте рабочую область машинного обучения Azure. Если ее пока нет, узнайте, как создать рабочую область, в [этом кратком руководстве](quickstart-get-started.md).
+1. Инициализируйте рабочую область службы машинного обучения Azure. Если ее пока нет, узнайте, как создать рабочую область, в [этом кратком руководстве](quickstart-get-started.md).
 
    ```python
    from azureml.core import Workspace
@@ -172,10 +171,11 @@ results = session.run([], {"input1": indata1, "input2": indata2})
 
    Файл `myenv.yml` описывает необходимые для образа зависимости. Инструкции по созданию файла среды, такого как в следующем примере, см. в [этом руководстве](tutorial-deploy-models-with-aml.md#create-environment-file).
 
-   ```
+   ```python
    from azureml.core.conda_dependencies import CondaDependencies 
 
    myenv = CondaDependencies()
+   myenv.add_pip_package("numpy")
    myenv.add_pip_package("azureml-core")
    myenv.add_pip_package("onnxruntime")
 
@@ -191,12 +191,16 @@ results = session.run([], {"input1": indata1, "input2": indata2})
 
 ## <a name="examples"></a>Примеры
  
-Следующие записные книжки показывают, как разворачивать модели ONNX с помощью машинного обучения Azure: 
-+ `/onnx/onnx-inference-mnist.ipynb`
+Следующие записные книжки показывают, как создавать модели ONNX и развертывать их с помощью машинного обучения Azure: 
++ `/onnx/onnx-modelzoo-aml-deploy-resnet50.ipynb` 
++ `/onnx/onnx-convert-aml-deploy-tinyyolo.ipynb`
++ `/onnx/onnx-train-pytorch-aml-deploy-mnist.ipynb`
+
+Следующие записные книжки показывают, как разворачивать существующие модели ONNX с помощью машинного обучения Azure: 
++ [onnx/onnx-inference-mnist.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/onnx/onnx-inference-mnist.ipynb) 
++ [onnx/onnx-inference-emotion-recognition.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/onnx/onnx-inference-emotion-recognition.ipynb)
  
-+ `/onnx/onnx-inference-emotion-recognition.ipynb`
- 
-Получите эту записную книжку:
+Получите записные книжки:
  
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 

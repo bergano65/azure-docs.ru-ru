@@ -1,6 +1,6 @@
 ---
-title: Сбор оповещений Nagios и Zabbix в OMS Log Analytics | Документы Майкрософт
-description: Nagios и Zabbix — средства мониторинга с открытым исходным кодом. Оповещения от этих средств мониторинга можно собирать в Log Analytics для анализа вместе с оповещениями из других источников.  В этой статье описано, как настроить сбор оповещений из этих средств в агенте OMS для Linux.
+title: Сбор оповещений Nagios и Zabbix в Log Analytics | Документация Майкрософт
+description: Nagios и Zabbix — средства мониторинга с открытым исходным кодом. Оповещения от этих средств мониторинга можно собирать в Log Analytics для анализа вместе с оповещениями из других источников.  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
 services: log-analytics
 documentationcenter: ''
 author: mgoedtel
@@ -15,18 +15,19 @@ ms.workload: infrastructure-services
 ms.date: 04/13/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: e668b2e989571d911c967d08d8012b11adaebd4d
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: eb129ebe6d63396934cbcda509d711cc63a5ee1b
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48041039"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49402946"
 ---
-# <a name="collect-alerts-from-nagios-and-zabbix-in-log-analytics-from-oms-agent-for-linux"></a>Сбор оповещений Nagios и Zabbix из агента OMS для Linux в Log Analytics 
-[Nagios](https://www.nagios.org/) и [Zabbix](http://www.zabbix.com/) — средства мониторинга с открытым исходным кодом. Оповещения от этих средств мониторинга можно собирать в Log Analytics для анализа вместе с [оповещениями из других источников](log-analytics-alerts.md).  В этой статье описано, как настроить сбор оповещений из этих средств в агенте OMS для Linux.
+# <a name="collect-alerts-from-nagios-and-zabbix-in-log-analytics-from-log-analytics-agent-for-linux"></a>Сбор оповещений Nagios и Zabbix с помощью агента Log Analytics для Linux в службу Log Analytics 
+[!INCLUDE [log-analytics-agent-note](../../includes/log-analytics-agent-note.md)]
+[Nagios](https://www.nagios.org/) и [Zabbix](http://www.zabbix.com/) — средства мониторинга с открытым исходным кодом. Оповещения от этих средств мониторинга можно собирать в Log Analytics для анализа вместе с [оповещениями из других источников](log-analytics-alerts.md).  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
  
 ## <a name="prerequisites"></a>Предварительные требования
-Агент OMS для Linux поддерживает сбор оповещений из Nagios до версии 4.2.x и Zabbix до версии 2.x.
+Агент Log Analytics для Linux поддерживает сбор оповещений из Nagios до версии 4.2.x и Zabbix до версии 2.x.
 
 ## <a name="configure-alert-collection"></a>Настройка сбора оповещений
 

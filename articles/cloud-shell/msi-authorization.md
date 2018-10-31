@@ -1,5 +1,5 @@
 ---
-title: Использование управляемых удостоверений службы в Azure Cloud Shell | Документация Майкрософт
+title: Использование управляемых удостоверений для ресурсов Azure в Azure Cloud Shell | Документация Майкрософт
 description: Аутентификация кода с помощью управляемых удостоверений службы в Azure Cloud Shell
 services: azure
 documentationcenter: ''
@@ -14,21 +14,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/14/2018
 ms.author: juluk
-ms.openlocfilehash: 99577faf7328dc773a9da5f7c1227aa63600aa0a
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: fe77deeedc34bf769065e34ac2f81d631b0004d6
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31516288"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49352954"
 ---
-# <a name="use-msi-in-azure-cloud-shell"></a>Использование управляемых удостоверений службы в Azure Cloud Shell
+# <a name="use-managed-identities-for-azure-resources-in-azure-cloud-shell"></a>Использование управляемых удостоверений для ресурсов Azure в Azure Cloud Shell
 
-Azure Cloud Shell поддерживает авторизацию с помощью управляемых удостоверений службы (MSI). Используя этот метод, вы можете получить маркеры доступа, чтобы безопасно подключаться к службам Azure.
+Azure Cloud Shell поддерживает авторизацию с помощью управляемых удостоверений службы для ресурсов Azure. Используя этот метод, вы можете получить маркеры доступа, чтобы безопасно подключаться к службам Azure.
 
-## <a name="about-managed-service-identity-msi"></a>Основные сведения об MSI
+## <a name="about-managed-identities-for-azure-resources"></a>Сведения об управляемых удостоверениях для ресурсов Azure
 Распространенная проблема при создании облачных приложений — безопасное управление учетными данными, которые необходимы в коде для аутентификации в облачных службах. В Cloud Shell может возникнуть необходимость аутентифицировать получение учетных данных из Key Vault, которые могут требоваться в скрипте.
 
-Управляемое удостоверение службы (MSI) упрощает решение этой задачи, предоставляя службам Azure автоматически управляемое удостоверение в Azure Active Directory (Azure AD). Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, включая Key Vault, не храня какие-либо учетные данные в коде.
+Управляемые удостоверения для ресурсов Azure упрощают решение этой задачи, предоставляя службам Azure автоматически управляемое удостоверение в Azure Active Directory (Azure AD). Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, включая Key Vault, не храня какие-либо учетные данные в коде.
 
 ## <a name="acquire-access-token-in-cloud-shell"></a>Получение маркера доступа в Cloud Shell
 

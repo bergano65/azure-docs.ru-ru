@@ -13,23 +13,23 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/11/2017
+ms.date: 10/23/2018
 ms.author: cherylmc
-ms.openlocfilehash: cd7a6c43cb791ed607a763f10e781794ef513500
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 7ffe51077c7152c52b9becd2318fa33eea055c20
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46950409"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49956871"
 ---
 # <a name="create-and-modify-routing-for-an-expressroute-circuit-using-cli"></a>Создание и изменение маршрутизации для канала ExpressRoute с помощью CLI
 
 Эта статья поможет вам создать конфигурацию для канала ExpressRoute и управлять ею в модели развертывания с помощью Azure Resource Manager, используя интерфейс командной строки. Вы также сможете проверить состояние, обновить, удалить и отозвать пиринги для канала ExpressRoute. Если вы хотите использовать для работы с каналом другой метод, выберите подходящую статью из списка ниже.
 
 > [!div class="op_single_selector"]
-> * [портала Azure](expressroute-howto-routing-portal-resource-manager.md)
+> * [портал Azure](expressroute-howto-routing-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-routing-arm.md)
-> * [интерфейс командной строки Azure](howto-routing-cli.md)
+> * [Интерфейс командной строки Azure](howto-routing-cli.md)
 > * [Видео — частный пиринг](http://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-private-peering-for-your-expressroute-circuit)
 > * [Видео — общедоступный пиринг](http://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-public-peering-for-your-expressroute-circuit)
 > * [Видео — пиринг Майкрософт](http://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-microsoft-peering-for-your-expressroute-circuit)
@@ -38,7 +38,7 @@ ms.locfileid: "46950409"
 
 ## <a name="configuration-prerequisites"></a>Предварительные требования для настройки
 
-* Перед началом работы установите последнюю версию команд интерфейса командной строки (версию 2.0 или более позднюю). Сведения об установке команд CLI см. в руководстве по [установке Azure CLI 2.0](/cli/azure/install-azure-cli).
+* Перед началом работы установите последнюю версию команд интерфейса командной строки (версию 2.0 или более позднюю). Сведения об установке команд CLI см. в руководстве по [установке Azure](/cli/azure/install-azure-cli).
 * Не забудьте изучить страницы с описанием [предварительных требований](expressroute-prerequisites.md), [требований к маршрутизации](expressroute-routing.md) и [рабочих процессов](expressroute-workflows.md), прежде чем приступать к настройке.
 * Вам потребуется активный канал ExpressRoute. Приступая к работе, [создайте канал ExpressRoute](howto-circuit-cli.md) ; он должен быть затем включен на стороне поставщика услуг подключения. Для выполнения команд, описанных в статье, должен быть подготовлен и включен канал ExpressRoute.
 
@@ -318,7 +318,7 @@ az network express-route peering update --vlan-id 500 -g ExpressRouteResourceGro
 Для удаления конфигурации пиринга выполните следующий пример кода:
 
 > [!WARNING]
-> Перед выполнением этого кода отсоедините от канала ExpressRoute все виртуальные сети. 
+> Перед запуском этого примера обязательно убедитесь, что все виртуальные сети и подключения Global Reach к ExpressRoute удалены. 
 > 
 > 
 

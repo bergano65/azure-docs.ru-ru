@@ -1,6 +1,6 @@
 ---
-title: Примеры концентраторов событий Azure | Документация Майкрософт
-description: Примеры концентраторов событий Azure
+title: Примеры Центров событий Azure | Документация Майкрософт
+description: Примеры Центров событий Azure
 services: event-hubs
 documentationcenter: na
 author: ShubhaVijayasarathy
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2018
 ms.author: shvija
-ms.openlocfilehash: fbde6e5a5ed053d6c151b3af25535c397a496ef4
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: ed337689360428d66657e5391ee52bb0ae39dc14
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40005340"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49365651"
 ---
-# <a name="event-hubs-samples"></a>Примеры концентраторов событий 
+# <a name="event-hubs-samples"></a>Примеры Центров событий 
 Примеры концентраторов событий можно найти на [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples). В примерах продемонстрированы основные функции [Центров событий Azure](/azure/event-hubs/). В этой статье приведены категории примеров с описаниями и ссылками.
 
 ## <a name="net-samples"></a>Примеры для .NET
@@ -45,10 +45,26 @@ ms.locfileid: "40005340"
 | [AutoScaleOnIngress](https://github.com/Azure/azure-event-hubs/blob/master/samples/Java/Benchmarks/AutoScaleOnIngress) | В этом примере показано, как концентратор событий может автоматически масштабироваться при высоких нагрузках. Пример отправляет события со скоростью, которая превышает установленную скорость концентратора событий, в результате чего концентратор событий будет увеличивать масштаб. | 
 | [IngressBenchmark](https://github.com/Azure/azure-event-hubs/blob/master/samples/Java/Benchmarks/IngressBenchmark) | Этот пример позволяет измерять скорость приема. | 
 
-## <a name="next-steps"></a>Дополнительная информация
-Чтобы узнать больше о концентраторах событий, обратитесь к следующим статьям:
+## <a name="python-samples"></a>Примеры для Python
+Можно просмотреть примеры Python для концентраторов событий Azure в репозитории GitHub [azure-event-hubs-python](https://github.com/Azure/azure-event-hubs-python/tree/master/examples).
 
-- 
-  [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
-- [Особенности концентраторов событий](event-hubs-features.md)
-- [Часто задаваемые вопросы о концентраторах событий](event-hubs-faq.md)
+## <a name="nodejs-samples"></a>Примеры для Node.js
+Можно просмотреть примеры Node.js для концентраторов событий Azure в репозитории GitHub [azure-event-hubs-node](https://github.com/Azure/azure-event-hubs-node).
+
+## <a name="go-samples"></a>Примеры Go
+Можно просмотреть примеры Go для концентраторов событий Azure в репозитории GitHub [azure-event-hubs-go](https://github.com/Azure/azure-event-hubs-go/tree/master/_examples).
+
+## <a name="azure-cli-samples"></a>Примеры Azure CLI
+Можно просмотреть примеры Azure CLI для концентраторов событий Azure в репозитории GitHub [azure-event-hubs](https://github.com/Azure/azure-event-hubs/tree/master/samples/Management/CLI).
+
+## <a name="azure-powershell-samples"></a>Примеры сценариев Azure PowerShell
+Можно просмотреть примеры Azure PowerShell для концентраторов событий Azure в репозитории GitHub [azure-event-hubs](https://github.com/Azure/azure-event-hubs/tree/master/samples/Management/PowerShell).
+ 
+
+
+## <a name="next-steps"></a>Дополнительная информация
+Чтобы узнать больше о Центрах событий, обратитесь к следующим статьям:
+
+- [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
+- [Особенности Центров событий](event-hubs-features.md)
+- [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)

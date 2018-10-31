@@ -9,20 +9,16 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/21/2018
-ms.openlocfilehash: 9b076709ee24c61b2699672d28bd61204c88a744
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 8e32939f3e253bfdd6f8d989f616f30e1b9f27eb
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43048047"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49364869"
 ---
 # <a name="use-zeppelin-notebooks-with-apache-spark-cluster-on-azure-hdinsight"></a>Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight
 
 Кластеры Spark HDInsight включают в себя записные книжки Zeppelin, которые можно использовать для выполнения заданий Spark. Из этой статьи вы узнаете, как использовать записную книжку Zeppelin в кластере HDInsight.
-
-> [!NOTE]
-> Записные книжки Zeppelin доступны только для Spark 1.6.3 в HDInsight 3.5 и для Spark 2.1.0 в HDInsight 3.6.
->
 
 **Предварительные требования:**
 
@@ -50,7 +46,7 @@ ms.locfileid: "43048047"
    
     В пустой абзац, созданный по умолчанию в новой записной книжке, вставьте следующий фрагмент кода.
    
-        %livy.spark
+        %livy2.spark
         //The above magic instructs Zeppelin to use the Livy Scala interpreter
    
         // Create an RDD using the default Spark context, sc
@@ -77,6 +73,11 @@ ms.locfileid: "43048047"
     ![Создание временной таблицы из необработанных данных](./media/apache-spark-zeppelin-notebook/hdinsight-zeppelin-load-data.png "Создание временной таблицы из необработанных данных")
    
     Можно указать заголовок для каждого абзаца. В правом верхнем углу экрана щелкните значок **Параметры**, а затем выберите элемент **Показать заголовок**.
+
+> [!NOTE]
+> Интерпретатор %spark2 не поддерживается в блокнотах Zeppelin во всех версиях HDInsight, а интерпретатор %sh не поддерживается в HDInsight версии 4.0 и выше.
+>
+
 1. Теперь вы можете выполнить инструкции Spark SQL для таблицы **hvac** . Вставьте следующий запрос в новый абзац. Запрос извлекает идентификатор здания и разницу между целевой и фактической температурами для каждого здания в указанный день. Нажмите **SHIFT + ВВОД**.
    
         %sql

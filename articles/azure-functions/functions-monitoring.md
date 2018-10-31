@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/15/2017
 ms.author: glenga
-ms.openlocfilehash: 66d04ca93a79f4d9cdd9f162c6cd3210ae35f4d2
-ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
+ms.openlocfilehash: e317a9c3cea800e05fbf3d2df73c124d2e7ffd23
+ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48902711"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49457669"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -211,6 +211,7 @@ traces
 
 Файл *host.json* определяет, какой объем информации приложение-функция отправляет в журнал Application Insights. В каждой категории вы можете указать минимальный уровень ведения журнала для отправки данных. Ниже приведен пример:
 
+#### <a name="functions-version-1"></a>Служба "Функции" версии 1 
 ```json
 {
   "logger": {
@@ -226,6 +227,22 @@ traces
 }
 ```
 
+#### <a name="functions-version-2"></a>Служба "Функции" версии 2 
+Служба "Функции" версии 2 теперь использует [иерархию фильтров для ведения журналов .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). 
+```json
+{
+  "logging": {
+    "fileLoggingMode": "always",
+    "logLevel": {
+      "default": "Information",
+      "Host.Results": "Error",
+      "Function": "Error",
+      "Host.Aggregator": "Trace"
+    }
+  }
+}
+```
+
 В этом примере настраиваются следующие правила:
 
 1. Для журналов с категорией Host.Results или Function в Application Insights отправляются только данные с уровнем `Error` и выше. Данные журнала с уровнем `Warning` и ниже игнорируются.
@@ -236,6 +253,7 @@ traces
 
 Если *host.json* содержит несколько категорий с одинаковым началом строки, сопоставление начинается с более длинных строк. Предположим, вы хотите регистрировать все данные среды выполнения, кроме данных категории Host.Aggregator, на уровне `Error`, а данные категории Host.Aggregator — на уровне `Information`.
 
+#### <a name="functions-version-1"></a>Служба "Функции" версии 1 
 ```json
 {
   "logger": {
@@ -246,6 +264,21 @@ traces
         "Function": "Error",
         "Host.Aggregator": "Information"
       }
+    }
+  }
+}
+```
+
+#### <a name="functions-version-2"></a>Служба "Функции" версии 2 
+```json
+{
+  "logging": {
+    "fileLoggingMode": "always",
+    "logLevel": {
+      "default": "Information",
+      "Host": "Error",
+      "Function": "Error",
+      "Host.Aggregator": "Information"
     }
   }
 }

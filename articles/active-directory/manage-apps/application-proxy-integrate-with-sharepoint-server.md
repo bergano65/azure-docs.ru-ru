@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/06/2017
+ms.date: 10/19/2018
 ms.author: barbkess
-ms.reviewer: harshja
+ms.reviewer: japere
 ms.custom: it-pro
-ms.openlocfilehash: fcd02e264d5e85b1bef7e75d2a6375d6bf5e18c0
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: ad0ab8790c9d66dbba87d466e9661ef8cf33eef3
+ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39363955"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49456904"
 ---
 # <a name="enable-remote-access-to-sharepoint-with-azure-ad-application-proxy"></a>Настройка удаленного доступа к SharePoint с помощью прокси приложения Azure AD
 
@@ -194,7 +194,7 @@ Klist возвращает набор целевых имен субъектов
 
 3. В раскрывающемся списке рядом с надписью **Alternative Access Mapping Collections** (Коллекции сопоставлений альтернативного доступа) выберите **Change Alternative Access Mapping Collection** (Изменить коллекцию сопоставлений альтернативного доступа).
 4. Выберите сайт, например **SharePoint — 80**.
-5. Вы можете добавить опубликованный URL-адрес как внутренний URL-адрес или общедоступный URL-адрес. В этом примере используется общедоступный URL-адрес в пределах экстрасети.
+5. Вы можете добавить опубликованный URL-адрес как внутренний URL-адрес или общедоступный URL-адрес. В этом примере используется общедоступный URL-адрес в пределах экстрасети. Если вы используете собственный порт, включите его в URL-адрес.
 6. Щелкните **Изменить общедоступные URL-адреса** в пути **экстрасети**, а затем введите внешний URL-адрес, созданный при публикации приложения. Например, введите **https://sharepoint-iddemo.msappproxy.net**.
 
   ![Ввод пути](./media/application-proxy-integrate-with-sharepoint-server/alternate-access3.png)

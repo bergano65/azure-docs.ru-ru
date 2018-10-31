@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/26/2018
+ms.date: 10/23/2018
 ms.author: shlo
-ms.openlocfilehash: 8132f89423883422d70981edd3ddaf86147830e2
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 3db32dfe2d7b65535f7d30f76241b33ecca96c15
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47394432"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49957961"
 ---
 # <a name="visual-authoring-in-azure-data-factory"></a>Визуальная разработка в фабрике данных Azure
 С пользовательским интерфейсом фабрики данных Azure пользователи могут визуально разрабатывать и развертывать ресурсы в своей фабрике, не написав не единой строки кода. Вы можете перетаскивать действия на панель холста конвейера, выполнять тестовые запуски, выполнять последовательную отладку, а также развертывать и выполнять мониторинг запуска конвейера. Пользовательский интерфейс можно использовать для визуальной разработки двумя способами:
@@ -80,6 +80,20 @@ ms.locfileid: "47394432"
 ## <a name="use-a-different-azure-active-directory-tenant"></a>Использование другого клиента Azure Active Directory
 
 Репозиторий Git Azure Repos можно создать в другом клиенте Azure Active Directory. Чтобы указать другой клиент Azure AD, у вас должны быть права администратора для подписки Azure, которую вы используете.
+
+## <a name="use-your-personal-microsoft-account"></a>Использование личной учетной записи Майкрософт
+
+Чтобы использовать личную учетную запись Майкрософт для интеграции с Git, можно связать личный репозиторий Azure с Active Directory вашей организации.
+
+1. Добавление личной учетной записи Майкрософт в Active Directory вашей организации в качестве гостя. Дополнительные сведения см. в статье [Добавление пользователей службы совместной работы B2B на портале Azure](../active-directory/b2b/add-users-administrator.md).
+
+2. Войдите на портал Azure с помощью учетной записи Майкрософт. Перейдите в Active Directory вашей организации.
+
+3. Перейдите к разделу Azure DevOps, где находится личный репозиторий. Выберите репозиторий и подключитесь к Active Directory.
+
+После этих шагов настройки личный репозиторий доступен при настройке интеграции Git в пользовательском интерфейсе Фабрики данных.
+
+Дополнительные сведения о подключении репозитория Azure Active Directory вашей организации см. в статье о [подключении организации Azure DevOps к Azure Active Directory](/azure/devops/organizations/accounts/connect-organization-to-azure-ad).
 
 ## <a name="switch-to-a-different-git-repo"></a>Выберите другой репозиторий Git
 

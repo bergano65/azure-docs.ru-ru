@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 08/11/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 8039a660a0f9fc94471e4b3e28b1b00bfb0d6b9e
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: d3714f7226de2a457f37e6ea4afa2b066ee460d1
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48042451"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49409141"
 ---
 # <a name="analyze-data-usage-in-log-analytics"></a>Анализ использования данных в службе Log Analytics
 
@@ -166,7 +166,7 @@ ms.locfileid: "48042451"
 | Данные решений с компьютеров, которым не требуется решение | Используйте [нацеливание решений](../operations-management-suite/operations-management-suite-solution-targeting.md), чтобы выполнять сбор данных только в нужных группах компьютеров. |
 
 ### <a name="check-if-there-are-more-nodes-than-expected"></a>Проверьте, превышено ли число узлов
-Если у вас ценовая категория с оплатой *за каждый узел (OMS)*, то плата взимается на основании числа используемых узлов и решений. В разделе *offerings* (предложения) панели мониторинга "Использование" можно увидеть, сколько узлов из каждого предложения используется.<br><br> ![Панель мониторинга "Использование"](./media/log-analytics-usage/log-analytics-usage-offerings.png)<br><br>
+Если ваша ценовая категория предполагает оплату *за каждый узел (Log Analytics)*, плата взимается на основании количества используемых узлов и решений. В разделе *offerings* (предложения) панели мониторинга "Использование" можно увидеть, сколько узлов из каждого предложения используется.<br><br> ![Панель мониторинга "Использование"](./media/log-analytics-usage/log-analytics-usage-offerings.png)<br><br>
 
 Щелкните **Просмотреть все**, чтобы просмотреть полный список компьютеров, отправляющих данные для выбранного предложения.
 

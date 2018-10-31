@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/27/2017
 ms.author: daveba
-ms.openlocfilehash: e8d85144b89d81e67d5ac225f0b6467230608ce0
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 3cd0a88747379edb15385014fcc93287d95295e0
+ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47106520"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49114045"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-powershell"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью PowerShell
 
@@ -175,6 +175,9 @@ Update-AzureRmVm -ResourceGroupName myResourceGroup -VM $vm -IdentityType None
    ```
 3. Извлеките свойства виртуальной машины с помощью командлета `Get-AzureRmVM`. Затем, чтобы задать управляемое удостоверение, назначаемое пользователем, для виртуальной машины Azure, используйте параметры `-IdentityType` и `-IdentityID` в командлете [Update-AzureRmVM](/powershell/module/azurerm.compute/update-azurermvm).  Для параметра `-IdentityId` следует использовать значение `Id` из предыдущего шага.  Замените `<VM NAME>`, `<SUBSCRIPTION ID>`, `<RESROURCE GROUP>` и `<USER ASSIGNED IDENTITY NAME>` собственными значениями.
 
+   > [!WARNING]
+   > Чтобы сохранить ранее назначенные пользователем управляемые удостоверения, предназначенные для виртуальной машины, запросите свойство `Identity` объекта VM (например, `$vm.Identity`).  Если какие-либо назначенные пользователем управляемые удостоверения возвращаются, включите их в следующую команду вместе с новым удостоверением, которое необходимо назначить виртуальной машине.
+
    ```powershell
    $vm = Get-AzureRmVM -ResourceGroupName <RESOURCE GROUP> -Name <VM NAME>
    Update-AzureRmVM -ResourceGroupName <RESOURCE GROUP> -VM $vm -IdentityType UserAssigned -IdentityID "/subscriptions/<SUBSCRIPTION ID>/resourcegroups/<RESROURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>"
@@ -189,7 +192,7 @@ Update-AzureRmVm -ResourceGroupName myResourceGroup -VM $vm -IdentityType None
 
 ### <a name="remove-a-user-assigned-managed-identity-from-an-azure-vm"></a>Удаление управляемого удостоверения, назначаемого пользователем, из виртуальной машины Azure
 
-Если у виртуальной машины несколько управляемых удостоверений, назначаемых пользователем, с помощью приведенных ниже команд можно удалить все эти удостоверения, кроме последнего. Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VM NAME>` собственными. `<USER ASSIGNED IDENTITY NAME>` — это имя управляемого удостоверения, назначаемого пользователем, которое следует оставить в виртуальной машине. Эти сведения можно получить в разделе удостоверений виртуальной машины с помощью команды `az vm show`.
+Если у виртуальной машины несколько управляемых удостоверений, назначаемых пользователем, с помощью приведенных ниже команд можно удалить все эти удостоверения, кроме последнего. Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VM NAME>` собственными. `<USER ASSIGNED IDENTITY NAME>` — это имя управляемого удостоверения, назначаемого пользователем, которое следует оставить в виртуальной машине. Эти сведения можно найти, запросив свойство `Identity` объекта виртуальной машины.  Например, `$vm.Identity`:
 
 ```powershell
 $vm = Get-AzureRmVm -ResourceGroupName myResourceGroup -Name myVm

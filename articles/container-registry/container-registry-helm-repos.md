@@ -7,12 +7,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 09/24/2018
 ms.author: iainfou
-ms.openlocfilehash: f04b4015e201d272fa624b1de265792564ac14cd
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 140d663524696f19844fea8906b181f468b7d157
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47047034"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49647017"
 ---
 # <a name="use-azure-container-registry-as-a-helm-repository-for-your-application-charts"></a>Использование Реестра контейнеров Azure в качестве репозитория Helm для диаграмм приложения
 
@@ -30,7 +30,7 @@ ms.locfileid: "47047034"
 Чтобы выполнить действия, описанные в этой статье, необходимо выполнить следующие предварительные требования.
 
 - **Реестр контейнеров Azure.** Создайте реестр контейнеров в своей подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
-- **Клиент Helm** для поиска и установки диаграмм. Вам также потребуется сервер Helm (Tiller), инициализированный в кластере Kubernetes. При необходимости можно [создать кластер Службы Azure Kubernetes][aks-quickstart]. Дополнительные сведения о том, как установить и использовать Helm, см. [в этом разделе][helm-install].
+- **Клиент Helm начиная с версии 2.11.0 (не релиз-кандидат)**. Выполните команду `helm version`, чтобы узнать свою версию. Вам также потребуется сервер Helm (Tiller), инициализированный в кластере Kubernetes. При необходимости можно [создать кластер Службы Azure Kubernetes][aks-quickstart]. Дополнительные сведения о том, как установить и обновить Helm, см. [здесь][helm-install].
 - **Azure CLI версии 2.0.46 или более поздней.** Выполните команду `az --version`, чтобы получить сведения о версии. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ## <a name="add-a-repository-to-helm-client"></a>Добавление репозитория в клиент Helm

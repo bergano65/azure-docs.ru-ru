@@ -9,12 +9,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/10/2018
 ms.author: sujayt
-ms.openlocfilehash: 0e9c5c7ebaaa0a51d723340751e8ea82bfb96b5e
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 49773e076ed8bb06ff76f9f654b914a709051fb5
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47433673"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49378624"
 ---
 # <a name="support-matrix-for-replicating-from-one-azure-region-to-another"></a>Матрицы поддержки для репликации из одного региона Azure в другой
 
@@ -26,7 +26,7 @@ ms.locfileid: "47433673"
 
 **Пользовательский интерфейс** |  **Поддерживается или не поддерживается**
 --- | ---
-**портала Azure** | Поддерживаются
+**портал Azure** | Поддерживаются
 **PowerShell** | [Репликация из Azure в Azure с помощью PowerShell](azure-to-azure-powershell.md)
 **REST API** | Сейчас не поддерживается
 **ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ** | Сейчас не поддерживается
@@ -69,7 +69,7 @@ ms.locfileid: "47433673"
 - SUSE Linux Enterprise Server 12 SP1,SP2,SP3 [ (поддерживаемые версии ядра)](#supported-suse-linux-enterprise-server-12-kernel-versions-for-azure-virtual-machines)
 - SUSE Linux Enterprise Server 11 SP3
 - SUSE Linux Enterprise Server 11 SP4
-- Oracle Enterprise Linux 6.4, 6.5, 6.6, 6.7 с ядром, совместимым с Red Hat, или с ядром Unbreakable Enterprise Kernel Release 3 (UEK3)
+- Oracle Linux 6.4, 6.5, 6.6, 6.7 с ядром, совместимым с Red Hat, или с ядром Unbreakable Enterprise Kernel Release 3 (UEK3)
 
 (Обновление реплицируемых компьютеров с SLES 11 SP3 до SLES 11 SP4 не поддерживается. Если реплицируемый компьютер обновлен с SLES 11 SP3 до SLES 11 SP4, вам потребуется отключить репликацию и включить повторную защиту компьютера после обновления.)
 

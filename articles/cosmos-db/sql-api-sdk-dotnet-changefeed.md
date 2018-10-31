@@ -8,14 +8,14 @@ ms.service: cosmos-db
 ms.component: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: reference
-ms.date: 05/21/2018
+ms.date: 10/24/2018
 ms.author: maquaran
-ms.openlocfilehash: 6c4dafa5b15548b3dbc02a9c093232197b3f1400
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: f09430aeb38e6762729167494a23096c7bc5ca85
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44716559"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50023957"
 ---
 # <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>Пакет SDK для обработчика канала изменений в .NET: скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -42,6 +42,14 @@ ms.locfileid: "44716559"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 ### <a name="v2-builds"></a>Сборки версии 2
+
+### <a name="a-name221221"></a><a name="2.2.1"/>2.2.1
+* Исправлено вычисление оценки для учетных записей с несколькими источниками и нового формата токена сеанса.
+
+### <a name="a-name220220"></a><a name="2.2.0"/>2.2.0
+* Добавлена поддержка для секционированных коллекций аренд. Ключ секции должен быть определен как /id.
+* Небольшое критическое изменение: методы интерфейса IChangeFeedDocumentClient и класса ChangeFeedDocumentClient были изменены для включения параметров RequestOptions и CancellationToken. IChangeFeedDocumentClient представляет собой точку расширяемости с дополнительными возможностями, которая позволяет создавать собственную реализацию клиента документов, которая будет использоваться с обработчиком канала изменений, например декорировать клиент документов и перехватывать все вызовы к нему для дополнительной трассировки, обработки ошибок и т. д. После этого обновления в код, который реализует IChangeFeedDocumentClient, необходимо будет включить новые параметры.
+* Незначительные улучшения системы диагностики.
 
 ### <a name="a-name210210"></a><a name="2.1.0"/>2.1.0
 * Добавлен новый API, Task&lt;IReadOnlyList&lt;RemainingPartitionWork&gt;&gt; IRemainingWorkEstimator.GetEstimatedRemainingWorkPerPartitionAsync(). Его можно использовать для получения оценки работ для каждого раздела.
@@ -134,6 +142,7 @@ ms.locfileid: "44716559"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.2.1](#2.2.1) |24 октября 2018 г. |--- |
 | [1.3.3](#1.3.3) |8 мая 2018 г. |--- |
 | [1.3.2](#1.3.2) |18 апреля 2018 г. |--- |
 | [1.3.1](#1.3.1) |13 марта 2018 г. |--- |

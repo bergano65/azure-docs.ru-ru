@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 1ddcbba4eacad040420efaf087f170e6c06ab2a0
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.openlocfilehash: 5f6ce3564cf4056dc9295e1885be425bbe3d7701
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47182405"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49165306"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-google-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Google через Azure Active Directory B2C
 
@@ -28,7 +28,7 @@ ms.locfileid: "47182405"
 3. Введите значение в поле **Имя проекта**, нажмите кнопку **Создать**, а затем убедитесь, что вы используете новый проект.
 3. Выберите **Учетные данные** в меню слева, а затем выберите **Создать учетные данные** > **Идентификатор клиента Oauth**.
 4. Выберите **Настроить экран согласия**.
-5. Выберите или укажите допустимый **электронный адрес**, заполните поле **Product name shown to users** (Отображаемое для пользователей название продукта) и щелкните **Сохранить**.
+5. Выберите или укажите допустимый **электронный адрес**, укажите **Название продукта**, которое будет отображаться для пользователей, введите `b2clogin.com` в поле **Авторизованные домены** и щелкните **Сохранить**.
 6. Из списка **Application type** (Тип приложения) выберите **Web application** (Веб-приложение).
 7. В поле **Name** (Имя) введите имя приложения, затем введите `https://your-tenant-name.b2clogin.com` в поле **Authorized JavaScript origins** (Авторизованные источники JavaScript) и `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` — в поле **Authorized redirect URIs** (Авторизованные URI перенаправления). Замените `your-tenant-name` именем вашего клиента. При вводе имени вашего клиента необходимо использовать только строчные буквы, даже если в Azure AD B2C имя клиента определено с прописными буквами.
 8. Нажмите кнопку **Создать**.

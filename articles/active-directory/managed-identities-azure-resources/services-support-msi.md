@@ -4,17 +4,17 @@ description: Список служб, которые поддерживают у
 services: active-directory
 author: daveba
 ms.author: daveba
-ms.date: 06/27/2018
+ms.date: 10/23/2018
 ms.topic: conceptual
 ms.service: active-directory
 ms.component: msi
 manager: mtillman
-ms.openlocfilehash: cd65564bcc6ea18be6ba8a67cac070449c5233a2
-ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
+ms.openlocfilehash: 25da856d8bd72f4e74718cf32f62bbb0a3eb5b88
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48902632"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49984695"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -33,8 +33,10 @@ ms.locfileid: "48902632"
 | Масштабируемые наборы виртуальных машин Microsoft Azure | Доступна | Предварительный просмотр | [портал Azure](qs-configure-portal-windows-vmss.md)<br>[PowerShell](qs-configure-powershell-windows-vmss.md)<br>[Интерфейс командной строки Azure](qs-configure-cli-windows-vmss.md)<br>[Шаблоны диспетчера ресурсов Azure](qs-configure-template-windows-vmss.md)<br>[REST](qs-configure-rest-vmss.md) | [REST](how-to-use-vm-token.md#get-a-token-using-http)<br>[.NET](how-to-use-vm-token.md#get-a-token-using-c)<br>[Bash/Curl](how-to-use-vm-token.md#get-a-token-using-curl)<br>[GO](how-to-use-vm-token.md#get-a-token-using-go)<br>[PowerShell](how-to-use-vm-token.md#get-a-token-using-azure-powershell)
 | Служба приложений Azure | Windows (доступно) <br> Linux (ожидается в ближайшее время) | Недоступно | [портал Azure](/azure/app-service/app-service-managed-service-identity#using-the-azure-portal)<br>[Интерфейс командной строки Azure](/azure/app-service/app-service-managed-service-identity#using-the-azure-cli)<br>[Azure PowerShell](/azure/app-service/app-service-managed-service-identity#using-azure-powershell)<br>[Шаблон Azure Resource Manager](/azure/app-service/app-service-managed-service-identity#using-an-azure-resource-manager-template) | [REST](/azure/app-service/app-service-managed-service-identity#using-the-rest-protocol)<br>[.NET](/azure/app-service/app-service-managed-service-identity#asal)<br>[JavaScript](/azure/app-service/app-service-managed-service-identity#token-js)<br>[PowerShell](/azure/app-service/app-service-managed-service-identity#token-powershell)  |
 | Функции Azure | Доступна | Недоступно | [портал Azure](/azure/app-service/app-service-managed-service-identity#using-the-azure-portal)<br>[Интерфейс командной строки Azure](/azure/app-service/app-service-managed-service-identity#using-the-azure-cli)<br>[Azure PowerShell](/azure/app-service/app-service-managed-service-identity#using-azure-powershell)<br>[Шаблон Azure Resource Manager](/azure/app-service/app-service-managed-service-identity#using-an-azure-resource-manager-template) | [REST](/azure/app-service/app-service-managed-service-identity#using-the-rest-protocol)<br>[.NET](/azure/app-service/app-service-managed-service-identity#asal)<br>[JavaScript](/azure/app-service/app-service-managed-service-identity#token-js)<br>[PowerShell](/azure/app-service/app-service-managed-service-identity#token-powershell) |
+| Azure Logic Apps | Доступна | Недоступно | [портал Azure](/azure/logic-apps/create-managed-service-identity#azure-portal)<br>[Шаблон Azure Resource Manager](/azure/app-service/app-service-managed-service-identity#deployment-template) |  |
 | Фабрика данных Azure версии 2 | Доступна | Недоступно | [портал Azure](~/articles/data-factory/data-factory-service-identity.md#generate-service-identity)<br>[PowerShell](~/articles/data-factory/data-factory-service-identity.md#generate-service-identity-using-powershell)<br>[REST](~/articles/data-factory/data-factory-service-identity.md#generate-service-identity-using-rest-api)<br>[Пакет SDK](~/articles/data-factory/data-factory-service-identity.md#generate-service-identity-using-sdk) |
-| Cлужба управления Azure API  | Доступна | Недоступно | [Шаблон Azure Resource Manager](/azure/api-management/api-management-howto-use-managed-service-identity) | 
+| Cлужба управления Azure API  | Доступна | Недоступно | [Шаблон Azure Resource Manager](/azure/api-management/api-management-howto-use-managed-service-identity) |
+| Экземпляры контейнеров Azure | Linux: предварительная версия<br>Windows: недоступно | Linux: предварительная версия<br>Windows: недоступно | [Интерфейс командной строки Azure](~/articles/container-instances/container-instances-managed-identity.md)<br>[Шаблон Azure Resource Manager](~/articles/container-instances/container-instances-managed-identity.md#enable-managed-identity-using-resource-manager-template)<br>[YAML](~/articles/container-instances/container-instances-managed-identity.md#enable-managed-identity-using-yaml-file) |  |
 
 
 ## <a name="azure-services-that-support-azure-ad-authentication"></a>Службы Azure, поддерживающие аутентификацию Azure AD

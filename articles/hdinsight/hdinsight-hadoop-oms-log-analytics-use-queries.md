@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: jasonh
-ms.openlocfilehash: 9550468e8bc9b93216fd4c1ecf144415badfc7dc
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 18ee51e54c1e44ba3affd6ca49bed5360211fa9c
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43103663"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49408180"
 ---
 # <a name="query-azure-log-analytics-to-monitor-hdinsight-clusters"></a>Запрос в Azure Log Analytics для мониторинга кластеров HDInsight
 
@@ -32,7 +32,7 @@ ms.locfileid: "43103663"
 
 Узнайте, как выполнить поиск определенных метрик для кластера HDInsight.
 
-1. Откройте рабочую область OMS, которая связана с вашим кластером HDInsight на портале Azure.
+1. Откройте рабочую область Log Analytics, которая связана с вашим кластером HDInsight на портале Azure.
 2. Выберите плитку **Поиск по журналам**.
 3. В поле поиска всех метрик введите следующий запрос для поиска всех доступных метрик для всех кластеров HDInsight, настроенных для использования Azure Log Analytics, а затем нажмите кнопку **ЗАПУСК**.
 
@@ -65,7 +65,7 @@ ms.locfileid: "43103663"
 
 Узнайте, как искать сообщения об ошибках за определенный интервал времени. Эти шаги являются всего лишь одним примером того, как можно получить сообщение об ошибке, которое вас интересует. Для поиска нужных ошибок можно использовать любое доступное свойство.
 
-1. Откройте рабочую область OMS, которая связана с вашим кластером HDInsight на портале Azure.
+1. Откройте рабочую область Log Analytics, которая связана с вашим кластером HDInsight на портале Azure.
 2. Выберите плитку **Поиск по журналам**.
 3. Введите следующий запрос для поиска всех сообщений об ошибках для всех кластеров HDInsight, настроенных для использования Azure Log Analytics, а затем нажмите клавишу **ЗАПУСК**. 
 
@@ -117,7 +117,7 @@ ms.locfileid: "43103663"
 3. Выберите оповещение, которое требуется изменить или удалить.
 4. Доступны следующие варианты: **Сохранить**, **Отменить**, **Отключить** и **Удалить**.
 
-    ![Удаление и изменение оповещения HDInsight в OMS Log Analytics](media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-edit-alert.png)
+    ![Удаление и изменение оповещения HDInsight в Log Analytics](media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-edit-alert.png)
 
 Дополнительные сведения см. в статье [Работа с правилами генерации оповещений в Log Analytics](../log-analytics/log-analytics-alerts-creating.md).
 

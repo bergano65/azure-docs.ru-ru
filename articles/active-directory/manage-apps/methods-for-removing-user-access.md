@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/11/2017
+ms.date: 10/17/2018
 ms.author: barbkess
-ms.openlocfilehash: 732a305da377670b45f8b2f95bed741d82b4dae0
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 6acc9a8b9cd7b6ef1218b1e8cae2e6a9af92f9d8
+ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44355473"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49393700"
 ---
 # <a name="how-to-remove-a-users-access-to-an-application"></a>Удаление доступа пользователя к приложению
 
@@ -27,9 +27,9 @@ ms.locfileid: "44355473"
 
 ## <a name="i-want-to-remove-a-specific-users-or-groups-assignment-to-an-application"></a>Я хочу отменить доступ к приложению для определенного пользователя или группы
 
-Чтобы удалить назначение пользователя или группы приложению, выполните действия, описанные в статье [Удаление назначения доступа к корпоративному приложению для пользователя или группы в предварительной версии Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-remove-assignment-azure-portal).
+Чтобы удалить доступ к приложению, назначенный пользователю или группе, выполните действия, описанные в статье [Удаление назначения доступа к корпоративному приложению для пользователя или группы в предварительной версии Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-remove-assignment-azure-portal).
 
-Я хочу отключить доступ к приложению для всех пользователей
+## <a name="i-want-to-disable-all-access-to-an-application-for-every-user"></a>Я хочу отключить доступ к приложению для всех пользователей
 
 Чтобы отключить вход в приложение для всех пользователей, выполните действия, описанные в статье [Отключение входа пользователя в корпоративное приложение в предварительной версии Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-disable-app-azure-portal).
 
@@ -55,21 +55,19 @@ ms.locfileid: "44355473"
 
 ## <a name="i-want-to-disable-all-future-user-consent-operations-to-any-application"></a>Я хочу отключить все будущие операции пользователя по предоставлению согласия для всех приложений
 
-Если вы отключите для всего каталога возможность предоставлять согласие, пользователь не сможет согласиться с условиями использования приложения. Администратор сохранит возможность предоставлять согласие от имени пользователя. Дополнительные сведения о согласии в приложениях и возможных мотивах для его отключения или предоставления см. в разделе [Получение согласия пользователя и администратора](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview#understanding-user-and-admin-consent).
+Если вы отключите для всего каталога возможность предоставлять согласие, пользователь не сможет согласиться с условиями использования приложения. Администратор сохранит возможность предоставлять согласие от имени пользователя. Дополнительные сведения о согласии в приложениях и возможных мотивах для его отключения или предоставления см. в разделе [Получение согласия пользователя и администратора](../develop/howto-convert-app-to-be-multi-tenant.md#understand-user-and-admin-consent). См. также [Типы разрешений и согласие](../develop/v2-permissions-and-consent.md).
 
 Чтобы **отключить все будущие операции по предоставлению согласия пользователя во всем каталоге**, выполните следующие инструкции:
 
 1.  Откройте [**портал Azure**](https://portal.azure.com/) и войдите в систему как **глобальный администратор**.
 
-2.  Откройте **расширение Azure Active Directory**, щелкнув **Все службы** в верхней части главного меню навигации слева.
+2.  Откройте **расширение Azure Active Directory**. 
 
-3.  В поле фильтра поиска введите **Azure Active Directory** и выберите элемент **Azure Active Directory**.
-
-4.  В меню навигации выберите пункт **Пользователи и группы**.
+3.  Щелкните **Корпоративные приложения** в меню навигации.
 
 5.  Щелкните **Параметры пользователя**.
 
-6.  Отключите все будущие операции пользователя по предоставлению согласия, установив переключатель **Пользователи могут разрешать приложениям доступ к своим данным** в положение **Нет** и нажав кнопку **Сохранить**.
+6.  Установите переключатель **Пользователи могут разрешать приложениям доступ к своим данным** на **нет** и нажмите кнопку "Сохранить".
 
 
 # <a name="next-steps"></a>Дополнительная информация
