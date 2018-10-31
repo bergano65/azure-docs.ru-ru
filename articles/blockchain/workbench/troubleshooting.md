@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
-ms.openlocfilehash: ba6bfe8240c758806c4ff3e46ab08fdacad83db9
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: e205fce8b718e68200face33447e37cd3317298f
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48241488"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49405490"
 ---
 # <a name="azure-blockchain-workbench-troubleshooting"></a>Устранение неполадок в Azure Blockchain Workbench
 
@@ -24,7 +24,7 @@ ms.locfileid: "48241488"
 * сеть Blockchain, например Ethereum;
 * микрослужбы Blockchain Workbench;
 * Application Insights
-* службы мониторинга Azure (OMS).
+* мониторинг Azure (Log Analytics).
 
 Эти сведения помогут вам определиться с дальнейшими действиями и выяснить основную причину возникших проблем. 
 
@@ -52,9 +52,9 @@ collectBlockchainWorkbenchTroubleshooting.ps1 -SubscriptionID "<subscription_id>
 | ResourceGroupName | Имя группы ресурсов Azure, в которой развернуто приложение Blockchain Workbench. | Yes |
 | OutputDirectory | Путь для создания ZIP-файла с выходными данными. Если это значение не указано, по умолчанию используется текущий каталог. | Нет  |
 | LookbackHours | Интервал времени (в часах), используемый при извлечении данных телеметрии. Значение по умолчанию — 24 часа. Максимальное значение — 90 часов. | Нет  |
-| OmsSubscriptionId | Идентификатор подписки, в которой развернута консоль OMS. Предавайте этот параметр только в том случае, если OMS для сети блокчейн развернута за пределами группы ресурсов Blockchain Workbench.| Нет  |
-| OmsResourceGroup |Группа ресурсов, в которой развернута служба OMS. Предавайте этот параметр только в том случае, если OMS для сети блокчейн развернута за пределами группы ресурсов Blockchain Workbench.| Нет  |
-| OmsWorkspaceName | Имя рабочей области OMS. Предавайте этот параметр только в том случае, если OMS для сети блокчейн развернута за пределами группы ресурсов Blockchain Workbench. | Нет  |
+| OmsSubscriptionId | Идентификатор подписки, в которой развернута служба Log Analytics. Предавайте этот параметр только в том случае, если служба Log Analytics для сети блокчейн развернута за пределами группы ресурсов Blockchain Workbench.| Нет  |
+| OmsResourceGroup |Группа ресурсов, в которой развернута служба Log Analytics. Предавайте этот параметр только в том случае, если служба Log Analytics для сети блокчейн развернута за пределами группы ресурсов Blockchain Workbench.| Нет  |
+| OmsWorkspaceName | Имя рабочей области Log Analytics. Предавайте этот параметр только в том случае, если служба Log Analytics для сети блокчейн развернута за пределами группы ресурсов Blockchain Workbench. | Нет  |
 
 ## <a name="what-is-collected"></a>Какие данные собираются?
 

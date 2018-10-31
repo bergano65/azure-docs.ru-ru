@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: magoedte
-ms.openlocfilehash: 5d9aa8e144109b41144bb8b09447b8701d04f87e
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 8641b6cfb14bceb248cc587095a9d3469ce2c9e0
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49389995"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49402155"
 ---
 # <a name="using-azure-monitor-for-vms-map-to-understand-application-components"></a>Использование функции "Схема" в Azure Monitor для виртуальных машин для анализа структуры приложения
-При просмотре обнаруженных компонентов приложений в виртуальных машинах с ОС Windows и Linux, работающих в Azure, за вашей средой с помощью Azure Monitor для виртуальных машин можно наблюдать двумя способами: непосредственно из виртуальной машины либо в группах виртуальных машин в Azure Monitor. 
+При просмотре обнаруженных компонентов приложений в виртуальных машинах с ОС Windows и Linux, работающих в Azure, за средой можно наблюдать двумя способами с помощью Azure Monitor для виртуальных машин: непосредственно из виртуальной машины либо в группах виртуальных машин в Azure Monitor. 
 
 Благодаря этой статье вы поймете разницу между этими двумя способами и узнаете, как использовать функцию "Схема". Сведения о настройке Azure Monitor для виртуальных машин, см. в [этой статье](monitoring-vminsights-onboard.md).
 

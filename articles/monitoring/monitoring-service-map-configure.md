@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: daseidma;bwren
-ms.openlocfilehash: a68c35ba2f740720e3d7940d6fafa2dcfe183589
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 70cf6fe1e2256ba2ed58d020111669e59d9db56b
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47064380"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49405520"
 ---
 # <a name="configure-service-map-in-azure"></a>Настройка решения "Сопоставление служб" в Azure
 Служба схемы услуги автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. Она позволяет рассматривать серверы как взаимосвязанные системы, предоставляющие важные службы. Схема услуги отображает сведения о подключениях между серверами, процессами и портами в любой подключенной по протоколу TCP архитектуре без дополнительной настройки. Пользователям требуется только установить агент.
@@ -138,22 +138,22 @@ ms.locfileid: "47064380"
 | Группа управления System Center Operations Manager | Yes | Служба схемы услуги анализирует и собирает данные из агентов Windows и Linux в подключенной [группе управления System Center Operations Manager](../log-analytics/log-analytics-om-agents.md). <br><br>Требуется прямое подключение из агента System Center Operations Manager к Log Analytics. |
 | Учетная запись хранения Azure. | Нет  | Служба схемы услуги собирает данные с компьютеров с агентом, поэтому данные из службы хранилища Azure не собираются. |
 
-В ОС Windows System Center Operations Manager и Log Analytics используют Microsoft Monitoring Agent для сбора и отправки данных мониторинга. (В зависимости от контекста этот агент называется агентом System Center Operations Manager, агентом OMS, агентом Log Analytics, MMA или прямым агентом.) System Center Operations Manager и Log Analytics предоставляют разные версии MMA. В каждой из этих версий предусмотрена возможность отправлять отчеты в System Center Operations Manager, Log Analytics или в оба решения.  
+В ОС Windows System Center Operations Manager и Log Analytics используют Microsoft Monitoring Agent для сбора и отправки данных мониторинга. (В зависимости от контекста этот агент может называться агентом System Center Operations Manager, агентом Log Analytics, агентом MMA или прямым агентом.) System Center Operations Manager и Log Analytics предоставляют разные версии MMA. В каждой из этих версий предусмотрена возможность отправлять отчеты в System Center Operations Manager, Log Analytics или в оба решения.  
 
 В ОС Linux агент Log Analytics для Linux собирает и отправляет данные мониторинга в Log Analytics. Решение "Сопоставление служб" можно использовать на серверах с агентами Log Analytics, подключенными непосредственно к службе, или на серверах, которые передают данные группе управления Operations Manager, интегрированной с Log Analytics.  
 
 В этой статье мы будем называть все эти агенты (как в Linux, так и в Windows), подключенные к группе управления System Center Operations Manager или непосредственно к Log Analytics, — *агентами Log Analytics*. 
 
-Агент схемы услуги самостоятельно не передает данные и не требует внесения изменений в брандмауэры или порты. Данные решения "Сопоставление служб" всегда передаются агентом Log Analytics в службу Log Analytics напрямую или через шлюз OMS.
+Агент схемы услуги самостоятельно не передает данные и не требует внесения изменений в брандмауэры или порты. В решении "Сопоставление служб" данные всегда передаются агентом Log Analytics в службу Log Analytics напрямую или через шлюз Log Analytics.
 
 ![Агенты схемы услуги](media/monitoring-service-map/agents.png)
 
 Если вы являетесь клиентом System Center Operations Manager с группой управления, подключенной к Log Analytics:
 
 - Если у ваших агентов System Center Operations Manager есть доступ к Log Analytics через Интернет, никаких дополнительных настроек не требуется.  
-- Если у агентов System Center Operations Manager нет доступа к Log Analytics через Интернет, необходимо настроить шлюз OMS для работы с System Center Operations Manager.
+- Если у агентов System Center Operations Manager нет доступа к Log Analytics через Интернет, нужно настроить шлюз Log Analytics для работы с System Center Operations Manager.
   
-Если компьютеры Windows или Linux не могут подключиться напрямую к службе, необходимо настроить агент Log Analytics таким образом, чтобы он подключался к Log Analytics через шлюз OMS. Дополнительные сведения о развертывании и настройке шлюза OMS см. в разделе [Подключения компьютеров с помощью шлюза OMS без доступа к Интернету](../log-analytics/log-analytics-oms-gateway.md).  
+Если компьютеры Windows или Linux не могут напрямую подключиться к службе, нужно настроить агент Log Analytics таким образом, чтобы он подключался к рабочей области Log Analytics через шлюз. Дополнительные сведения о развертывании и настройке шлюза Log Analytics см. в статье [Подключения компьютеров с помощью шлюза OMS без доступа к Интернету](../log-analytics/log-analytics-oms-gateway.md).  
 
 ### <a name="management-packs"></a>Пакеты управления
 Если решение "Сопоставление служб" активировано в рабочей области Log Analytics, то на все серверы в этой рабочей области перенаправляется пакет управления размером 300 КБ. Если агенты System Center Operations Manager используются в [подключенной группе управления](../log-analytics/log-analytics-om-agents.md), то пакет управления схемы услуги развертывается из System Center Operations Manager. 

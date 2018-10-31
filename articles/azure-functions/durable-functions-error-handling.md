@@ -2,20 +2,20 @@
 title: Обработка ошибок в устойчивых функциях — Azure
 description: Сведения о том, как обрабатывать ошибки в расширении устойчивых функций для Функций Azure.
 services: functions
-author: cgillum
+author: kashimiz
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 09/05/2018
+ms.date: 10/23/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 6bf9eb2cd2ebdf5f6d53e00923146bab49a142bf
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 61496d91c9ec2cd1dcf498df04d2dab6629e009c
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44377911"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49984134"
 ---
 # <a name="handling-errors-in-durable-functions-azure-functions"></a>Обработка ошибок в устойчивых функциях (Функции Azure)
 
@@ -26,6 +26,8 @@ ms.locfileid: "44377911"
 Любое исключение, возникающее в функции действия, маршалируется обратно в функцию оркестратора и выдается как `FunctionFailedException`. Вы можете написать код для обработки и компенсации ошибок, соответствующий вашим потребностям в функции оркестратора.
 
 Например, рассмотрим следующую функцию оркестратора, которая перемещает средства с одного счета на другой:
+
+#### <a name="c"></a>C#
 
 ```csharp
 #r "Microsoft.Azure.WebJobs.Extensions.DurableTask"
@@ -64,11 +66,49 @@ public static async Task Run(DurableOrchestrationContext context)
 }
 ```
 
+#### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+
+```javascript
+const df = require("durable-functions");
+
+module.exports = df.orchestrator(function*(context) {
+    const transferDetails = context.df.getInput();
+
+    yield context.df.callActivity("DebitAccount",
+        {
+            account = transferDetails.sourceAccount,
+            amount = transferDetails.amount,
+        }
+    );
+
+    try {
+        yield context.df.callActivity("CreditAccount",
+            {
+                account = transferDetails.destinationAccount,
+                amount = transferDetails.amount,
+            }
+        );
+    }
+    catch (error) {
+        // Refund the source account.
+        // Another try/catch could be used here based on the needs of the application.
+        yield context.df.callActivity("CreditAccount",
+            {
+                account = transferDetails.sourceAccount,
+                amount = transferDetails.amount,
+            }
+        );
+    }
+});
+```
+
 Если вызов функции **CreditAccount** завершается с ошибкой для целевого счета, функция оркестратора компенсирует это, кредитуя денежные средства обратно на исходный счет.
 
 ## <a name="automatic-retry-on-failure"></a>Автоматическое повторение попыток при сбое
 
 При вызове функций действий или функций суборкестрации можно указать автоматическую политику повтора. В следующем примере предпринимается попытка вызова функции до трех раз с ожиданием в течение 5 секунд между попытками:
+
+#### <a name="c"></a>C#
 
 ```csharp
 public static async Task Run(DurableOrchestrationContext context)
@@ -83,7 +123,21 @@ public static async Task Run(DurableOrchestrationContext context)
 }
 ```
 
-API `CallActivityWithRetryAsync` принимает параметр `RetryOptions`. В вызовах суборкестрации с использованием API `CallSubOrchestratorWithRetryAsync` можно использовать эти же политики повтора.
+#### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+
+```javascript
+const df = require("durable-functions");
+
+module.exports = df.orchestrator(function*(context) {
+    const retryOptions = new df.RetryOptions(5000, 3);
+    
+    yield context.df.callActivityWithRetry("FlakyFunction", retryOptions);
+
+    // ...
+});
+```
+
+API `CallActivityWithRetryAsync` (C#) или `callActivityWithRetry` (JS) принимает параметр `RetryOptions`. В вызовах суборкестрации через API `CallSubOrchestratorWithRetryAsync` (C#) или `callSubOrchestratorWithRetry` (JS) можно использовать эти же политики повтора.
 
 Существует несколько параметров настройки политики автоматического повтора. К ним относятся следующие:
 
@@ -97,6 +151,8 @@ API `CallActivityWithRetryAsync` принимает параметр `RetryOptio
 ## <a name="function-timeouts"></a>Время ожидания функций
 
 Вы можете прекратить вызов функции внутри функции оркестратора, если его завершение занимает слишком много времени. Правильный способ сделать это в настоящее время — создать [устойчивый таймер](durable-functions-timers.md), используя `context.CreateTimer` в сочетании с `Task.WhenAny`, как показано в следующем примере:
+
+#### <a name="c"></a>C#
 
 ```csharp
 public static async Task<bool> Run(DurableOrchestrationContext context)
@@ -123,6 +179,30 @@ public static async Task<bool> Run(DurableOrchestrationContext context)
         }
     }
 }
+```
+
+#### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+
+```javascript
+const df = require("durable-functions");
+const moment = require("moment");
+
+module.exports = df.orchestrator(function*(context) {
+    const deadline = moment.utc(context.df.currentUtcDateTime).add(30, "s");
+
+    const activityTask = context.df.callActivity("FlakyFunction");
+    const timeoutTask = context.df.createTimer(deadline.toDate());
+
+    const winner = yield context.df.Task.any([activityTask, timeoutTask]);
+    if (winner === activityTask) {
+        // success case
+        timeoutTask.cancel();
+        return true;
+    } else {
+        // timeout case
+        return false;
+    }
+});
 ```
 
 > [!NOTE]

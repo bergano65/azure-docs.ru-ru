@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2017
 ms.author: bwren;dairwin
-ms.openlocfilehash: 5aca1400ddfe1522cd9dc8d68d8cba8a222e4d21
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: 6fc6afa9c0ccbddcfa408556dee92618fe63c8fb
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44095204"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49407118"
 ---
 # <a name="service-map-integration-with-system-center-operations-manager"></a>Интеграция схемы услуги с System Center Operations Manager
   > [!NOTE]
@@ -45,6 +45,9 @@ ms.locfileid: "44095204"
 
 ## <a name="configure-the-service-map-integration"></a>Настройка интеграции схемы услуги
 После установки пакета управления схемы услуги в области **Администрирование** в разделе **Operations Management Suite** отобразится новый узел — **Схема услуги**. 
+
+>[!NOTE]
+>[Набор Operations Management Suite представлял собой коллекцию служб](https://github.com/MicrosoftDocs/azure-docs-pr/pull/azure-monitor/azure-monitor-rebrand.md#retirement-of-operations-management-suite-brand), среди которых была и служба Log Analytics. Теперь эта служба входит в состав [Azure Monitor](https://github.com/MicrosoftDocs/azure-docs-pr/pull/azure-monitor/overview.md).
 
 Чтобы настроить интеграцию схемы услуги, выполните следующие действия:
 
@@ -104,7 +107,12 @@ ms.locfileid: "44095204"
     ![Схема распределенного приложения Operations Manager](media/monitoring-service-map/scom-dad.png)
 
 ## <a name="edit-or-delete-the-workspace"></a>Изменение или удаление рабочей области
-Вы можете изменить или удалить настроенную рабочую область с помощью области **Service Map Overview** (Обзор схемы услуги) (область **Администрирование** > **Operations Management Suite** > **Схема услуги**). Пока что можно настроить только одну рабочую область Log Analytics.
+Вы можете изменить или удалить настроенную рабочую область с помощью области **Service Map Overview** (Обзор схемы услуги) (область **Администрирование** > **Operations Management Suite** > **Схема услуги**).
+
+>[!NOTE]
+>[Набор Operations Management Suite представлял собой коллекцию служб](https://github.com/MicrosoftDocs/azure-docs-pr/pull/azure-monitor/azure-monitor-rebrand.md#retirement-of-operations-management-suite-brand), среди которых была и служба Log Analytics. Теперь эта служба входит в состав [Azure Monitor](https://github.com/MicrosoftDocs/azure-docs-pr/pull/azure-monitor/overview.md).
+
+Пока что можно настроить только одну рабочую область Log Analytics.
 
 ![Operations Manager: область изменения рабочей области](media/monitoring-service-map/scom-edit-workspace.png)
 

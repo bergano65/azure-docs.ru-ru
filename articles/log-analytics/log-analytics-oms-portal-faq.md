@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/25/2018
+ms.date: 10/18/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: d1ad629ff5c6909256baa94573d045a8c2c09fb5
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 49aed496d8c125da8c2269186b569693c794d290
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47223837"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49404568"
 ---
 # <a name="common-questions-for-transition-from-oms-portal-to-azure-portal-for-log-analytics-users"></a>Часто задаваемые вопросы о переходе от портала OMS к порталу Azure для пользователей Log Analytics
 В Log Analytics изначально существовал собственный портал для управления конфигурацией и анализа собранных данных, известный как портал OMS.  Теперь все функциональные возможности этого портала перемещены на портал Azure, где и будут совершенствоваться далее.
@@ -113,7 +113,7 @@ ms.locfileid: "47223837"
 Для управления правилами генерации оповещений на основе запросов Log Analytics теперь используется [единый интерфейс оповещений](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md). В статье [Как расширить (копировать) оповещения с портала OMS в Azure](../monitoring-and-diagnostics/monitoring-alerts-extend-tool.md) приводятся подробные сведения о настройке и использовании оповещений на портале Azure.
 
 ## <a name="how-do-i-access-my-dashboards"></a>Где найти мои панели мониторинга?
-[Панели мониторинга](../log-analytics/log-analytics-dashboards.md) в Log Analytics считаются устаревшими.  Теперь для отображения данных в Log Analytics вы можете использовать [Конструктор представлений](../log-analytics/log-analytics-view-designer.md), который поддерживает дополнительную возможность закреплять запросы и представления на панелях мониторинга Azure.
+Функция [Моя панель мониторинга](../log-analytics/log-analytics-dashboards.md) в Log Analytics не рекомендована к использованию. Эта функция позволяла использовать частную коллекцию элементов конструктора представлений и была заменена встроенными функциями панели мониторинга Azure. Вы можете продолжать визуализировать данные в Log Analytics с помощью [конструктора представлений](../log-analytics/log-analytics-view-designer.md) для общих представлений. Также можно закреплять визуализации из этих представлений или [отдельных запросов](../log-analytics/log-analytics-tutorial-dashboards.md) на панелях мониторинга Azure.
 
 ## <a name="how-do-i-check-my-usage"></a>Как получить сведения о потреблении ресурсов?
 Теперь потребление и стоимость Log Analytics можно легко контролировать в разделе **Использование и ожидаемые затраты** в рабочей области.

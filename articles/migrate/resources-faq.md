@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 09/21/2018
 ms.author: snehaa
-ms.openlocfilehash: 2b704edee55f7d15da1b59d8f8b357b9ba7ca8f3
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: e39cf260cc4931fc0dddc4922479522cb521d08e
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48239223"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49407067"
 ---
 # <a name="azure-migrate---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Миграция Azure"
 
@@ -98,7 +98,7 @@ ms.locfileid: "48239223"
 
 Данные, собранные устройством сборщика, хранятся в расположении Azure, указанном при создании проекта миграции. Данные хранятся в подписке Майкрософт с поддержкой надлежащего уровня безопасности и удаляются при удалении пользователем проекта миграции Azure.
 
-Чтобы визуализировать зависимости при установке агентов на виртуальные машины, собранные агентами зависимостей данные сохраняются в США в рабочей области OMS, созданной в подписке пользователя. При удалении рабочей области OMS из подписки эти данные удаляются. [Узнайте больше](https://docs.microsoft.com/azure/migrate/concepts-dependency-visualization).
+Чтобы визуализировать зависимости при установке агентов на виртуальные машины, собранные агентами зависимостей данные сохраняются в США в рабочей области Log Analytics, созданной в подписке пользователя. При удалении рабочей области Log Analytics из подписки эти данные удаляются. [Узнайте больше](https://docs.microsoft.com/azure/migrate/concepts-dependency-visualization).
 
 ### <a name="is-the-data-encrypted-at-rest-and-while-in-transit"></a>Шифруются ли данные при хранении и во время передачи?
 

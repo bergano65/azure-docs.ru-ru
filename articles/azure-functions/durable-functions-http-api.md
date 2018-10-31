@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/06/2018
 ms.author: azfuncdf
-ms.openlocfilehash: c6d7268a8501c602354d21edc5a0feaae9b1a0b2
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 4c5f99ed9d20076e3e25ebca261253e576572786
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45575480"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49354263"
 ---
 # <a name="http-apis-in-durable-functions-azure-functions"></a>API HTTP в устойчивых функциях (Функции Azure)
 
@@ -92,6 +92,9 @@ Location: https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d84
 | systemKey  | Строка запроса    | Ключ авторизации, необходимый для вызова API. |
 | showHistory| Строка запроса    | Необязательный параметр. Если задано значение `true`, журнал выполнения оркестрации будет включен в полезные данные ответа.| 
 | showHistoryOutput| Строка запроса    | Необязательный параметр. Если задано значение `true`, выходные данные действия будут включены в журнал выполнения оркестрации.| 
+| createdTimeFrom  | Строка запроса    | Необязательный параметр. При указании фильтрует список возвращаемых экземпляров, которые были созданы в указанной метке времени ISO8601 или после нее.|
+| createdTimeTo    | Строка запроса    | Необязательный параметр. При указании фильтрует список возвращаемых экземпляров, которые были созданы в указанной метке времени ISO8601 или перед ней.|
+| runtimeStatus    | Строка запроса    | Необязательный параметр. При указании он фильтрует список возвращаемого значения экземпляров на основе их состояния среды выполнения. Чтобы просмотреть список возможных значений состояния среды выполнения, см. раздел [Запросы экземпляров](durable-functions-instance-management.md). |
 
 `systemKey` — это ключ авторизации, автоматически создаваемый узлом Функций Azure. В частности, он предоставляет доступ к API расширения устойчивых задач и им можно управлять так же, как и [другими ключами авторизации](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Key-management-API). Самый простой способ обнаружения значения `systemKey` — с помощью API `CreateCheckStatusResponse`, упомянутого ранее.
 
@@ -194,9 +197,13 @@ GET /runtime/webhooks/durabletask/instances/{instanceId}?taskHub={taskHub}&conne
 
 Ответ **HTTP 202** также включает заголовок ответа **Location**, который ссылается на тот же URL-адрес, что и поле `statusQueryGetUri`, упомянутое ранее.
 
+
 ### <a name="get-all-instances-status"></a>Получение состояния всех экземпляров
 
 Можно также запросить состояние всех экземпляров. Удалите `instanceId` из запроса "Получение состояния экземпляра". Параметры такие же, как и в запросе "Получение состояния экземпляра". 
+
+Следует помнить, что `connection` и `code` являются дополнительными. Если у вас есть анонимная проверка подлинности на функцию, кода не требуется.
+Если нет необходимости использовать другую строку подключения хранилища больших двоичных объектов, отличную от указанной в параметре приложения AzureWebJobsStorage, вы можете смело игнорировать параметр строки запроса соединения.
 
 #### <a name="request"></a>Запрос
 
@@ -210,6 +217,22 @@ GET /admin/extensions/DurableTaskExtension/instances/?taskHub={taskHub}&connecti
 
 ```http
 GET /runtime/webhooks/durabletask/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}
+```
+
+#### <a name="request-with-filters"></a>Запрос с фильтрами
+
+Запрос можно фильтровать.
+
+Формат запроса для Функций 1.0 имеет такой вид:
+
+```http
+GET /admin/extensions/DurableTaskExtension/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}&createdTimeFrom={createdTimeFrom}&createdTimeTo={createdTimeTo}&runtimeStatus={runtimeStatus,runtimeStatus,...}
+```
+
+Формат для Функций 2.0 имеет все те же параметры, но другой префикс URL-адреса: 
+
+```http
+GET /runtime/webhooks/durableTask/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}&createdTimeFrom={createdTimeFrom}&createdTimeTo={createdTimeTo}&runtimeStatus={runtimeStatus,runtimeStatus,...}
 ```
 
 #### <a name="response"></a>Ответ
@@ -268,6 +291,7 @@ GET /runtime/webhooks/durabletask/instances/?taskHub={taskHub}&connection={conne
 > [!NOTE]
 > Эта операция может быть весьма затратной с точки зрения операций ввода-вывода службы хранилища Azure, если в таблице экземпляров много строк. Дополнительные сведения о таблице экземпляров см. в документации по [производительности и масштабируемости в устойчивых функциях (Функциях Azure)](https://docs.microsoft.com/azure/azure-functions/durable-functions-perf-and-scale#instances-table).
 > 
+
 
 ### <a name="raise-event"></a>Вызов события
 

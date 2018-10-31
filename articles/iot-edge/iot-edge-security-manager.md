@@ -2,19 +2,19 @@
 title: Диспетчер безопасности Azure IoT Edge | Документация Майкрософт
 description: Управляет состоянием безопасности устройства IoT Edge и целостностью служб безопасности.
 services: iot-edge
-keywords: security, element, enclave, IoT Edge
+keywords: безопасность, безопасный элемент, анклава, TEE, IoT Edge
 author: eustacea
 manager: timlt
 ms.author: eustacea
 ms.date: 07/30/2018
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 4594685291396b8b80e62abe57be109f0abbd81d
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: f0e548cdd1c59dc894899ddbac127dd76db7db26
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46126349"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49321194"
 ---
 # <a name="azure-iot-edge-security-manager"></a>Диспетчер безопасности Azure IoT Edge
 

@@ -4,19 +4,19 @@ description: В этой статье описывается процесс ко
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/21/2018
+ms.date: 10/15/2018
 ms.author: juliako
-ms.openlocfilehash: 69c5516ee503d774b143bb2d83f09ea863a00b31
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: bee74f0399def142915aa26d15ecfa671925f405
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47091555"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50025588"
 ---
 # <a name="encoding-with-azure-media-services"></a>Кодирование с помощью Служб мультимедиа Azure
 
@@ -26,9 +26,7 @@ ms.locfileid: "47091555"
 
 При кодировании с помощью Служб мультимедиа Azure используются предустановки. На их основе кодировщик обрабатывает входные файлы мультимедиа. Например, можно указать разрешение видео и число аудиоканалов для закодированного содержимого. 
 
-Можно быстро приступить к работе, используя одну из рекомендуемых встроенных предустановок, основанных на передовых отраслевых рекомендациях. Можно также создать пользовательскую предустановку в соответствии с требованиями сценария или устройства. 
-
-Сведения о кодировщике можно найти в [спецификации OpenAPI](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media/preview/2018-03-30-preview). 
+Можно быстро приступить к работе, используя одну из рекомендуемых встроенных предустановок, основанных на передовых отраслевых рекомендациях. Можно также создать пользовательскую предустановку в соответствии с требованиями сценария или устройства. Дополнительные сведения см. в статье [Кодирование с помощью пользовательского преобразования](customize-encoder-presets-how-to.md). 
 
 ## <a name="built-in-presets"></a>Встроенные предустановки
 
@@ -63,13 +61,13 @@ ms.locfileid: "47091555"
 В следующих примерах содержится код, который показывает, как выполнять кодирование с помощью Служб мультимедиа:
 
 * [.NET Core](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials/tree/master/NETCore)
-* [интерфейс командной строки Azure](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/media-services)
+* [Интерфейс командной строки Azure](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/media-services)
 
 ### <a name="sdks"></a>Пакеты SDK
 
 Для кодирования содержимого можно использовать любой из следующих поддерживаемых пакетов SDK Служб мультимедиа версии 3.
 
-* [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)
+* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)
 * [REST](https://docs.microsoft.com/rest/api/media/transforms)
 * [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/mediaservices/management?view=azure-dotnet)
 * [Java](https://docs.microsoft.com/java/api/overview/azure/mediaservices)

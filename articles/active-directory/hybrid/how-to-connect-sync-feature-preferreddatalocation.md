@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/30/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 56adc97f6872bc3e87e6ba3426cd8f24aa8703e1
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 951ac39e1bb6ce050da26fa8ff3f93fd4e27e7d7
+ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46305373"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49318396"
 ---
 # <a name="azure-active-directory-connect-sync-configure-preferred-data-location-for-office-365-resources"></a>Синхронизация Azure Active Directory Connect. Настройка предпочтительного расположения данных для ресурсов Office 365
 В этой статье предоставлены сведения о настройке атрибута для предпочтительного расположения данных в службах синхронизации Azure Active Directory (Azure AD) Connect. Когда кто-то использует поддержку нескольких регионов в Office 365, этот атрибут используется для обозначения географического расположения данных пользователя в Office 365. (Термины *регион* и *геообъект* являются взаимозаменяемыми.)
@@ -31,7 +31,7 @@ ms.locfileid: "46305373"
 Установив атрибут **preferredDataLocation**, можно задать геообъект пользователя. Вы сможете работать с ресурсами пользователя Office 365, например с почтовым ящиком и OneDrive, в том же геообъекте, что и пользователь, а также использовать один клиент для всей организации.
 
 > [!IMPORTANT]
-> Размещение в различных регионах доступно клиентам с не менее 5000 подписками служб Office 365. Обратитесь к представителю корпорации Майкрософт, чтобы получить дополнительные сведения.
+> Размещение в различных регионах доступно клиентам с не менее 2500 подписками служб Office 365. Обратитесь к представителю корпорации Майкрософт, чтобы получить дополнительные сведения.
 >
 >
 

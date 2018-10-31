@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 03/16/2018
 ms.reviewer: mazhar
 ms.author: mbullwin
-ms.openlocfilehash: c9629611544efe248b1b343ac1ba26740b9ce7e0
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 2fa4242de6a953e82e3f81831c491125e9a7c3f3
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47091695"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50026234"
 ---
 # <a name="walkthrough-enabling-telemetry-for-microsoft-dynamics-crm-online-using-application-insights"></a>Пошаговое руководство. Включение телеметрии для Microsoft Dynamics CRM Online с помощью Application Insights
 В этой статье показано, как получить данные телеметрии из службы [Microsoft Dynamics CRM Online](https://www.dynamics.com/) с помощью [Azure Application Insights](https://azure.microsoft.com/services/application-insights/). Мы рассмотрим весь процесс добавления сценария Application Insights в приложение, сбор данных и их визуализацию.
@@ -39,11 +39,7 @@ ms.locfileid: "47091695"
     ![Щелкните значок «+» и последовательно выберите «Службы для разработчиков», Application Insights.](./media/app-insights-sample-mscrm/01.png)
 
     Выберите приложение ASP.NET в качестве типа приложения.
-3. Откройте страницу "Начало работы", а затем откройте "Мониторинг и диагностика приложения на стороне клиента".
-
-    ![Фрагмент кода для вставки на веб-страницу](./media/app-insights-sample-mscrm/03.png)
-
-**Не закрывайте страницу с кодом** , выполняя следующий шаг в другом окне браузера. Код вскоре вам понадобится. 
+3. Следуйте инструкциям для [получения скрипта SDK JavaScript для приложения](app-insights-javascript.md#set-up-application-insights-for-your-web-page), скопируйте фрагмент кода JavaScript и не забудьте заменить ключ инструментирования на правильное значение для вашего ресурса Application Insights.
 
 ### <a name="create-a-javascript-web-resource-in-microsoft-dynamics-crm"></a>Создание веб-ресурса JavaScript в Microsoft Dynamics CRM
 1. Откройте экземпляр CRM Online и войдите с правами администратора.
@@ -60,7 +56,7 @@ ms.locfileid: "47091695"
     Присвойте ему имя, выберите тип **Script (JScript)** и откройте текстовый редактор.
 
     ![Откройте текстовый редактор](./media/app-insights-sample-mscrm/00004.png)
-2. Скопируйте код из Application Insights. При копировании необходимо пропускать теги скриптов. См. ниже снимок экрана.
+2. Скопируйте код из пакета SDK JavaScript для Application Insights, в котором вы перед этим настроили ключ инструментирования. При копировании необходимо пропускать теги скриптов. См. снимок экрана ниже:
 
     ![Задайте ключ инструментирования](./media/app-insights-sample-mscrm/000005.png)
 

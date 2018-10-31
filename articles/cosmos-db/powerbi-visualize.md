@@ -10,16 +10,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/03/2018
 ms.author: sngun
-ms.openlocfilehash: dfd66c1ac2e627b72d24a520fc37c6ebfb361556
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: 90f5caa13bf95fb5298a06bda5a03e9bc17bcb1a
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48870008"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945184"
 ---
 # <a name="visualize-azure-cosmos-db-data-by-using-the-power-bi-connector"></a>Визуализация данных Azure Cosmos DB с помощью соединителя Power BI
 
-[PowerBI](https://powerbi.microsoft.com/) — это веб-служба, в которой можно создавать и совместно использовать панели мониторинга и отчеты. Power BI Desktop — это средство разработки отчетов, позволяющее получать данные из различных источников данных. Azure Cosmos DB является одним из источника данных, который можно использовать с Power BI Desktop. Power BI Desktop можно подключить к учетной записи Azure Cosmos DB с помощью соединителя Azure Cosmos DB для Power BI.  После импорта в Power BI данные Azure Cosmos DB можно преобразовывать, создавать отчеты и публиковать их в Power BI.   
+[Power BI](https://powerbi.microsoft.com/) — это веб-служба, в которой можно создавать и совместно использовать панели мониторинга и отчеты. Power BI Desktop — это средство разработки отчетов, позволяющее получать данные из различных источников данных. Azure Cosmos DB является одним из источника данных, который можно использовать с Power BI Desktop. Power BI Desktop можно подключить к учетной записи Azure Cosmos DB с помощью соединителя Azure Cosmos DB для Power BI.  После импорта в Power BI данные Azure Cosmos DB можно преобразовывать, создавать отчеты и публиковать их в Power BI.   
 
 В этой статье описываются шаги, необходимые для подключения учетной записи Azure Cosmos DB к Power BI Desktop. После подключения перейдите к коллекции, извлеките данные, преобразуйте данные JSON в табличный формат и опубликуйте отчет в Power BI.
 

@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/03/2018
 ms.author: v-daljep
-ms.component: na
-ms.openlocfilehash: b7a7e2787128c74cd7d016c01b751d15628fb4b2
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.component: ''
+ms.openlocfilehash: 3c80007a8188fb239a13aaa0ccc9ef2237a2d8d1
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47181997"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50025675"
 ---
 # <a name="monitor-azure-sql-database-using-azure-sql-analytics-preview"></a>Мониторинг базы данных SQL Azure с помощью решения "Аналитика SQL Azure" (предварительная версия)
 
 ![Символ службы "Аналитика SQL Azure"](./media/log-analytics-azure-sql/azure-sql-symbol.png)
 
-Аналитика SQL Azure — это облачное решение для наблюдения за производительностью баз данных SQL Azure, эластичных пулов и управляемых экземпляров в нужном масштабе и в нескольких подписках. Эта служба собирает и отображает важные метрики производительности Базы данных SQL Azure благодаря встроенным средствам аналитики, которые помогают устранять соответствующие неполадки.
+Служба "Аналитика SQL Azure" — это облачное решение для наблюдения за производительностью баз данных SQL Azure, эластичных пулов и управляемых экземпляров в нужном масштабе и в нескольких подписках на одной панели. Эта служба собирает и отображает важные метрики производительности Базы данных SQL Azure благодаря встроенным средствам аналитики, которые помогают устранять соответствующие неполадки.
 
 На основе этих метрик можно создавать пользовательские правила мониторинга и оповещения. Решение также поможет вам определить проблемы на каждом уровне стека приложений. Оно использует метрики диагностики Azure с представлениями Log Analytics, чтобы представить данные обо всех Базах данных SQL Azure, эластичных пулах и базах данных в Управляемом экземпляре в единой рабочей области Log Analytics. Log Analytics помогает собирать, коррелировать и визуализировать структурированные и неструктурированные данные.
 
@@ -66,23 +66,11 @@ ms.locfileid: "47181997"
 
 ### <a name="configure-azure-sql-databases-elastic-pools-and-managed-instances-to-stream-diagnostics-telemetry"></a>Настройка баз данных SQL Azure, эластичных пулов и управляемых экземпляров для потоковой передачи телеметрии службы диагностики
 
-Когда вы создадите решение "Аналитика SQL Azure" в рабочей области для наблюдения за производительностью баз данных SQL Azure, баз данных управляемых экземпляров и эластичных пулов, необходимо будет **настроить каждый** из этих ресурсов для потоковой передачи его телеметрии системы диагностики в решение.
+Когда вы создадите решение "Аналитика SQL Azure" в рабочей области для наблюдения за производительностью баз данных SQL Azure, баз данных Управляемых экземпляров и эластичных пулов, необходимо будет **настроить каждый** из этих ресурсов для потоковой передачи его диагностических данных телеметрии в решение. Выполните подробные инструкции на этой странице:
 
 - Включите систему диагностики Azure для базы данных Azure SQL, баз данных управляемых экземпляров и эластичных пулов для [потоковой передачи телеметрии системы диагностики в решение "Аналитика SQL Azure"](../sql-database/sql-database-metrics-diag-logging.md).
 
-### <a name="to-configure-multiple-azure-subscriptions"></a>Настройка нескольких подписок Azure
- 
-Чтобы обеспечить поддержку нескольких подписок, используйте сценарий PowerShell. Дополнительные сведения см. в статье [Enable Azure resource metrics logging using PowerShell](https://blogs.technet.microsoft.com/msoms/2017/01/17/enable-azure-resource-metrics-logging-using-powershell/) (Включение ведения журнала метрик ресурсов Azure с помощью PowerShell). Укажите идентификатор ресурса рабочей области в качестве параметра при выполнении скрипта для отправки диагностических данных из ресурсов в одной подписке Azure в рабочую область в другой подписке Azure.
-
-**Пример**
-
-```
-PS C:\> $WSID = "/subscriptions/<subID>/resourcegroups/oms/providers/microsoft.operationalinsights/workspaces/omsws"
-```
-
-```
-PS C:\> .\Enable-AzureRMDiagnostics.ps1 -WSID $WSID
-```
+Приведенная выше страница также содержит инструкции по включению поддержки для наблюдения за несколькими подписками Azure из одной рабочей области службы "Аналитика SQL Azure", выступающей в качестве единой панели.
 
 ## <a name="using-the-solution"></a>Использование решения
 
@@ -128,7 +116,7 @@ PS C:\> .\Enable-AzureRMDiagnostics.ps1 -WSID $WSID
 
 В таблице ниже представлены перспективы, поддерживаемые для двух версий панели мониторинга — одной для базы данных SQL Azure и эластичных пулов, а другой для управляемого экземпляра.
 
-| Перспектива | ОПИСАНИЕ | Поддержка базы данных SQL и эластичных пулов | Поддержка управляемого экземпляра |
+| Перспектива | ОПИСАНИЕ | Поддержка базы данных SQL и эластичных пулов | Поддержка Управляемого экземпляра |
 | --- | ------- | ----- | ----- |
 | Resource by type (Ресурсы по типу) | Перспектива, в которой представлено число всех отслеживаемых ресурсов. | Yes | Yes | 
 | Аналитика | Предоставляет подробные сведения о производительности Intelligent Insights в иерархическом виде. | Yes | Yes |
@@ -159,7 +147,48 @@ PS C:\> .\Enable-AzureRMDiagnostics.ps1 -WSID $WSID
 
 ![Запросы службы "Аналитика SQL Azure"](./media/log-analytics-azure-sql/azure-sql-sol-queries.png)
 
-### <a name="analyze-data-and-create-alerts"></a>Анализ данных и создание оповещений
+## <a name="permissions"></a>Разрешения
+
+Для использования службы "Аналитика SQL Azure" пользователям нужно предоставить как минимум ​​роль читателя в Azure. Однако эта роль не позволит им видеть текст запроса или выполнять какие-либо действия по автоматической настройке. Расширенные роли Azure, которые позволяют использовать решение в полной мере: владелец, участник, участник базы даных SQL или участник SQL Server. Вы также можете создать на портале пользовательскую роль с определенными разрешениями, необходимыми только для использования службы "Аналитика SQL Azure", и без доступа к управлению другими ресурсами.
+
+### <a name="creating-a-custom-role-in-portal"></a>Создание пользовательской роли на портале
+
+Некоторые организации применяют строгие механизмы контроля разрешений в Azure, поэтому мы предоставляет следующий скрипт PowerShell, который позволяет создать на портале Azure пользовательскую роль "Оператор мониторинга Аналитики SQL" с минимальными разрешениями на чтение и запись, необходимыми для использования службы "Аналитика SQL Azure" в полной мере.
+
+Замените {SubscriptionId} в приведенном ниже скрипте идентификатором подписки Azure и выполните скрипт, войдя в систему от имени роли владельца или участника в Azure.
+
+   ```powershell
+    Connect-AzureRmAccount
+    Select-AzureRmSubscription {SubscriptionId}
+    $role = Get-AzureRmRoleDefinition -Name Reader
+    $role.Name = "SQL Analytics Monitoring Operator"
+    $role.Description = "Lets you monitor database performance with Azure SQL Analytics as a reader. Does not allow change of resources."
+    $role.IsCustom = $true
+    $role.Actions.Add("Microsoft.SQL/servers/databases/read");
+    $role.Actions.Add("Microsoft.SQL/servers/databases/topQueries/queryText/*");
+    $role.Actions.Add("Microsoft.Sql/servers/databases/advisors/read");
+    $role.Actions.Add("Microsoft.Sql/servers/databases/advisors/write");
+    $role.Actions.Add("Microsoft.Sql/servers/databases/advisors/recommendedActions/read");
+    $role.Actions.Add("Microsoft.Sql/servers/databases/advisors/recommendedActions/write");
+    $role.Actions.Add("Microsoft.Sql/servers/databases/automaticTuning/read");
+    $role.Actions.Add("Microsoft.Sql/servers/databases/automaticTuning/write");
+    $role.Actions.Add("Microsoft.Sql/servers/databases/*");
+    $role.Actions.Add("Microsoft.Sql/servers/advisors/read");
+    $role.Actions.Add("Microsoft.Sql/servers/advisors/write");
+    $role.Actions.Add("Microsoft.Sql/servers/advisors/recommendedActions/read");
+    $role.Actions.Add("Microsoft.Sql/servers/advisors/recommendedActions/write");
+    $role.Actions.Add("Microsoft.Resources/deployments/write");
+    $role.AssignableScopes = "/subscriptions/{SubscriptionId}"
+    New-AzureRmRoleDefinition $role
+   ```
+
+После создания роли назначьте ее каждому пользователю, которому необходимо предоставить пользовательские разрешения на использование службы "Аналитика SQL Azure".
+
+## <a name="analyze-data-and-create-alerts"></a>Анализ данных и создание оповещений
+
+Анализ данных в службе "Аналитика SQL Azure" основан на [языке Log Analytics](./query-language/get-started-queries.md), который используется для пользовательских запросов и отчетов. Найдите описание доступных данных, полученных из ресурса базы данных, для отправки пользовательских запросов к [доступным метрикам и журналам](../sql-database/sql-database-metrics-diag-logging.md#metrics-and-logs-available).
+
+Для настройки автоматических оповещений в решении нужно написать запрос Log Analytics, который активирует оповещение при выполнении условия. Ниже приведены несколько примеров запросов Log Analytics, по которым можно настроить оповещение в решении.
 
 ### <a name="creating-alerts-for-azure-sql-database"></a>Создание оповещений для базы данных SQL Azure
 
@@ -251,8 +280,12 @@ AzureDiagnostics
 ```
 
 > [!NOTE]
-> - Предварительным требованием для настройки этого оповещение предупреждение является включение потоковой передачи журнала ResourceUsageStats управляемого экземпляра, подлежащего мониторингу, в решении.
+> - Предварительным требованием для настройки этого оповещения является включение потоковой передачи журнала ResourceUsageStats Управляемого экземпляра, подлежащего мониторингу, в решении.
 > - Для этого запроса требуется такая настройка правила генерации оповещений, чтобы оповещение запускалось при наличии результатов (> 0) запроса, обозначающих, что условие существует в управляемом экземпляре. Результатом является уровень загруженности хранилища (в процентах) в управляемом экземпляре.
+
+### <a name="pricing"></a>Цены
+
+Хотя за использование решения плата не взимается, учитывается использование диагностических данных телеметрии свыше бесплатных единиц приема данных, выделяемых каждый месяц. Дополнительные сведения см. [на странице цен на Log Analytics](https://azure.microsoft.com/en-us/pricing/details/monitor). Бесплатные единицы приема данных позволяют осуществлять бесплатный мониторинг нескольких баз данных каждый месяц. Обратите внимание, что более активные базы данных с более интенсивными рабочими нагрузками будут принимать больше данных, чем простаивающие базы данных. Вы можете легко отслеживать использование приема данных в решении, выбрав рабочую область OMS в меню навигации службы "Аналитика SQL Azure", а затем выбрав "Использование и ожидаемые затраты".
 
 ## <a name="next-steps"></a>Дополнительная информация
 

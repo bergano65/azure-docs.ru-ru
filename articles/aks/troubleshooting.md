@@ -7,19 +7,19 @@ ms.service: container-service
 ms.topic: troubleshooting
 ms.date: 08/13/2018
 ms.author: saudas
-ms.openlocfilehash: 9f082c5f198ebd7123058bd250d3fef55494d553
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: 1fd8f7c8499b7f9223939b8d426f274e79fd190e
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43287545"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50025355"
 ---
 # <a name="aks-troubleshooting"></a>Устранение неполадок с AKS
 При создании кластеров AKS или управлении ими иногда вы можете сталкиваться с проблемами. В этой статье описаны некоторые распространенные проблемы и действия по устранению неполадок.
 
 ### <a name="in-general-where-do-i-find-information-about-debugging-kubernetes-issues"></a>Где найти общие сведения об отладке проблем Kubernetes?
 
-[Это] (https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/) официальная ссылка для устранения неполадок с кластерами Kubernetes.
+[Вот официальная ссылка](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/) на сведения об устранении неполадок с кластерами Kubernetes.
 [Это](https://github.com/feiskyer/kubernetes-handbook/blob/master/en/troubleshooting/index.md) ссылка на руководство по устранению неполадок модулей pod, узлов, кластеров и т.д., опубликованное инженером Майкрософт.
 
 ### <a name="i-am-getting-a-quota-exceeded-error-during-create-or-upgrade-what-should-i-do"></a>Я получаю ошибку превышения квоты во время создания или обновления. Что делать? 

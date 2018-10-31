@@ -1,6 +1,6 @@
 ---
-title: Отправка событий в концентраторы событий Azure с помощью платформы .NET Framework | Документация Майкрософт
-description: Начало работы с отправкой событий в концентраторы событий с помощью платформы .NET Framework
+title: Отправка событий в Центры событий Azure с помощью платформы .NET Framework | Документация Майкрософт
+description: Начало работы с отправкой событий в Центры событий с помощью платформы .NET Framework
 services: event-hubs
 documentationcenter: ''
 author: ShubhaVijayasarathy
@@ -12,102 +12,98 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/03/2018
+ms.date: 10/18/2018
 ms.author: shvija
-ms.openlocfilehash: 7b5a4298ee4c67f0300bd4aabb7fc6373d8edba0
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: ae5d89aab4ce1bd599ed9a50dc46336f8a96a2f5
+ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40005296"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49456234"
 ---
-# <a name="send-events-to-azure-event-hubs-using-the-net-framework"></a>Отправка событий в концентраторы событий Azure с помощью платформы .NET Framework
+# <a name="send-events-to-azure-event-hubs-using-the-net-framework"></a>Отправка событий в Центры событий Azure с помощью платформы .NET Framework
+Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
 
-Концентраторы событий — это служба, которая обрабатывает большие объемы данных телеметрии о событиях, поступающих от подключенных устройств и приложений. После сбора дынных в концентраторах событий их можно сохранить с помощью кластера хранилища или преобразовать с помощью поставщика аналитики в реальном времени. Эта возможность сбора и обработки большого объема данных о событиях является ключевым компонентом в современных архитектурах приложений, включая "Интернет вещей".
+В этом руководстве также показано, как отправлять события в концентратор событий с помощью консольного приложения, написанного на языке C# на базе .NET Framework. 
 
-В этом руководстве показано, как использовать [портал Azure](https://portal.azure.com) для создания концентратора событий. Здесь также показано, как отправлять события в концентраторы событий Azure с помощью консольного приложения, написанного на языке C#, на платформе .NET Framework. Дополнительные сведения о получении событий с помощью платформы .NET Framework см. в [этой статье](event-hubs-dotnet-framework-getstarted-receive-eph.md) или выберите соответствующий язык в содержании статьи слева.
-
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с данным руководством вам потребуется:
 
 * [Microsoft Visual Studio 2017 или более поздней версии](http://visualstudio.com).
-* Активная учетная запись Azure. Если ее нет, можно создать бесплатную учетную запись всего за несколько минут. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/free/).
 
-## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен концентраторов событий и концентратора событий
+## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен Центров событий и концентратора событий
+Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-create.md), а затем перейдите к следующим шагам в этом руководстве.
 
-Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа концентраторов событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-create.md), а затем перейдите к следующим действиям в данном руководстве.
+## <a name="create-a-console-application"></a>Создание консольного приложение
 
-## <a name="create-a-sender-console-application"></a>Создание консольного приложения отправителя
-
-В этом разделе создается консольное приложение Windows для отправки событий в концентратор событий.
-
-1. Создайте в Visual Studio новый проект Visual C# для классических приложений с помощью шаблона проекта **Консольное приложение** . Назовите проект **Sender**.
+Создайте в Visual Studio новый проект Visual C# для классических приложений с помощью шаблона проекта **Консольное приложение** . Назовите проект **Sender**.
    
-    ![](./media/event-hubs-dotnet-framework-getstarted-send/create-sender-csharp1.png)
-2. В обозревателе решений щелкните правой кнопкой мыши проект **Sender** и выберите пункт **Управление пакетами NuGet для решения**. 
-3. Щелкните вкладку **Обзор** и выполните поиск `WindowsAzure.ServiceBus`. Щелкните **Установить**и примите условия использования. 
+![](./media/event-hubs-dotnet-framework-getstarted-send/create-sender-csharp1.png)
+
+## <a name="add-the-event-hubs-nuget-package"></a>Добавление пакета NuGet для Центров событий
+
+1. В обозревателе решений щелкните правой кнопкой мыши проект **Sender** и выберите пункт **Управление пакетами NuGet для решения**. 
+2. Щелкните вкладку **Обзор** и выполните поиск `WindowsAzure.ServiceBus`. Щелкните **Установить**и примите условия использования. 
    
     ![](./media/event-hubs-dotnet-framework-getstarted-send/create-sender-csharp2.png)
    
     Visual Studio скачает, установит и добавит ссылку на [пакет NuGet библиотеки служебной шины Azure](https://www.nuget.org/packages/WindowsAzure.ServiceBus).
-4. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
+
+## <a name="write-code-to-send-messages-to-the-event-hub"></a>Написание кода для отправки сообщений в концентратор событий
+
+1. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
    
-  ```csharp
-  using System.Threading;
-  using Microsoft.ServiceBus.Messaging;
-  ```
-5. Добавьте в класс **Program** приведенные ниже поля и укажите в качестве значений имя концентратора событий, созданного в предыдущем разделе, и сохраненную ранее строку подключения уровня пространства имен.
+      ```csharp
+      using System.Threading;
+      using Microsoft.ServiceBus.Messaging;
+      ```
+2. Добавьте в класс **Program** приведенные ниже поля и укажите в качестве значений имя концентратора событий, созданного в предыдущем разделе, и сохраненную ранее строку подключения уровня пространства имен.
    
-  ```csharp
-  static string eventHubName = "Your Event Hub name";
-  static string connectionString = "namespace connection string";
-  ```
-6. Добавьте следующий метод в класс **Program** .
+        ```csharp
+        static string eventHubName = "Your Event Hub name";
+        static string connectionString = "namespace connection string";
+        ```
+3. Добавьте следующий метод в класс **Program** .
    
-  ```csharp
-  static void SendingRandomMessages()
-  {
-      var eventHubClient = EventHubClient.CreateFromConnectionString(connectionString, eventHubName);
-      while (true)
+      ```csharp
+      static void SendingRandomMessages()
       {
-          try
+          var eventHubClient = EventHubClient.CreateFromConnectionString(connectionString, eventHubName);
+          while (true)
           {
-              var message = Guid.NewGuid().ToString();
-              Console.WriteLine("{0} > Sending message: {1}", DateTime.Now, message);
-              eventHubClient.Send(new EventData(Encoding.UTF8.GetBytes(message)));
+              try
+              {
+                  var message = Guid.NewGuid().ToString();
+                  Console.WriteLine("{0} > Sending message: {1}", DateTime.Now, message);
+                  eventHubClient.Send(new EventData(Encoding.UTF8.GetBytes(message)));
+              }
+              catch (Exception exception)
+              {
+                  Console.ForegroundColor = ConsoleColor.Red;
+                  Console.WriteLine("{0} > Exception: {1}", DateTime.Now, exception.Message);
+                  Console.ResetColor();
+              }
+       
+              Thread.Sleep(200);
           }
-          catch (Exception exception)
-          {
-              Console.ForegroundColor = ConsoleColor.Red;
-              Console.WriteLine("{0} > Exception: {1}", DateTime.Now, exception.Message);
-              Console.ResetColor();
-          }
-   
-          Thread.Sleep(200);
       }
-  }
-  ```
+      ```
    
-  Этот метод постоянно отправляет события в концентратор событий с задержкой 200 мс.
-7. Наконец, добавьте следующие строки в метод **Main** :
+      Этот метод постоянно отправляет события в концентратор событий с задержкой 200 мс.
+4. Наконец, добавьте следующие строки в метод **Main** :
    
-  ```csharp
-  Console.WriteLine("Press Ctrl-C to stop the sender process");
-  Console.WriteLine("Press Enter to start now");
-  Console.ReadLine();
-  SendingRandomMessages();
-  ```
-8. Запустите программу и убедитесь в отсутствии ошибок.
+      ```csharp
+      Console.WriteLine("Press Ctrl-C to stop the sender process");
+      Console.WriteLine("Press Enter to start now");
+      Console.ReadLine();
+      SendingRandomMessages();
+      ```
+5. Запустите программу и убедитесь в отсутствии ошибок.
   
 Поздравляем! Теперь вы можете отправлять сообщения в концентратор событий.
 
 ## <a name="next-steps"></a>Дополнительная информация
-
-Теперь, когда вы создали рабочее приложение, которое создает концентратор событий и отправляет данные, можно перейти к следующим сценариям:
-
-* [Создание событий с помощью узла обработчика событий](event-hubs-dotnet-framework-getstarted-receive-eph.md)
-* [Справочник по узлу обработчика событий](/dotnet/api/microsoft.servicebus.messaging.eventprocessorhost)
-* 
-  [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
+В этом кратком руководстве вы научились отправлять сообщения в концентратор событий с помощью .NET Framework. Чтобы узнать, как получать события из концентратора событий с помощью .NET Framework, см. статью [Получение событий от Центров событий Azure с помощью платформы .NET Framework](event-hubs-dotnet-framework-getstarted-receive-eph.md).
 
 <!-- Images. -->
 [19]: ./media/event-hubs-csharp-ephcs-getstarted/create-eh-proj1.png

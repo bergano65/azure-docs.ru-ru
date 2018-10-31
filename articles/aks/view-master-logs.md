@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 07/26/2018
 ms.author: iainfou
-ms.openlocfilehash: 011654dcbad21c3e8cea51d6ab98eeca461e4685
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: 7caa98b65b35d1eb1a000f1e9099fbf8eb3f8861
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49068831"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49406047"
 ---
 # <a name="enable-and-review-kubernetes-master-node-logs-in-azure-kubernetes-service-aks"></a>Включение и просмотр журналов главного узла Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -37,9 +37,12 @@ ms.locfileid: "49068831"
 1. В списке доступных журналов выберите журналы, которые нужно включить, например *kube-apiserver*, *kube-controller-manager* и *kube-scheduler*. Когда служба Log Analytics будет включена, вы сможете вернуть или изменить собранные журналы.
 1. Когда настройка будет завершена, нажмите кнопку **Сохранить**, чтобы включить сбор выбранных журналов.
 
-На следующем снимке экрана портала показано окно *параметров диагностики* и параметр создания рабочей области OMS:
+На следующем снимке экрана портала показано окно *параметров диагностики* и параметр создания рабочей области Log Analytics:
 
-![Включение рабочей области OMS Log Analytics кластера AKS](media/view-master-logs/enable-oms-log-analytics.png)
+![Включение рабочей области Log Analytics для кластера Log Analytics или AKS](media/view-master-logs/enable-oms-log-analytics.png)
+
+>[!NOTE]
+>Рабочие области OMS теперь называются рабочими областями Log Analytics. 
 
 ## <a name="schedule-a-test-pod-on-the-aks-cluster"></a>Планирование запуска тестового модуля pod в кластере AKS
 
@@ -75,7 +78,7 @@ pod/nginx created
 
 ## <a name="view-collected-logs"></a>Просмотр собранных журналов
 
-Включение журналов диагностики и их появление в рабочей области OMS может занять несколько минут. На портале Azure выберите группу ресурсов для рабочей области Log Analytics, например *myResourceGroup*, а затем выберите ресурс Log Analytics, например *myAKSLogs*.
+Включение журналов диагностики и их отображение в рабочей области Log Analytics может занять несколько минут. На портале Azure выберите группу ресурсов для рабочей области Log Analytics, например *myResourceGroup*, а затем выберите ресурс Log Analytics, например *myAKSLogs*.
 
 ![Выбор рабочей области Log Analytics для кластера AKS](media/view-master-logs/select-log-analytics-workspace.png)
 

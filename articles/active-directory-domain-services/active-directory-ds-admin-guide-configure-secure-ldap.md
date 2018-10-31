@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/25/2018
 ms.author: maheshu
-ms.openlocfilehash: 22c97da35416ba1ff593dfa5e41f557ea2ab1cc0
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.openlocfilehash: 42c27df658ae810ac31813ffb94f397a0070933f
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47182252"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49429139"
 ---
 # <a name="configure-secure-ldap-ldaps-for-an-azure-ad-domain-services-managed-domain"></a>Настройка защищенного протокола LDAP (LDAPS) для управляемого домена доменных служб Azure AD
 В этой статье показано, как включить протокол LDAPS для управляемого домена доменных служб Azure AD. Защищенный протокол LDAP также называется "LDAP через SSL или TLS".
@@ -86,7 +86,7 @@ New-SelfSignedCertificate -Subject contoso100.com `
   -Type SSLServerAuthentication -DnsName *.contoso100.com
 ```
 
-В примере выше замените *.contoso100.com на DNS-имя своего управляемого домена. Например, если вы создали управляемый домен contoso100.onmicrosoft.com, то замените* .contoso100.com в приведенном выше сценарии на *.contoso100.onmicrosoft.com.
+В примере выше замените contoso100.com на DNS-имя своего управляемого домена. Например, если вы создали управляемый домен с именем contoso100.onmicrosoft.com, замените значение contoso100.com в атрибуте Subject значением contoso100.onmicrosoft.com, а значение *.contoso100.com в атрибуте DnsName — значение* .contoso100.onmicrosoft.com.
 
 ![Выбор каталога Azure AD](./media/active-directory-domain-services-admin-guide/secure-ldap-powershell-create-self-signed-cert.png)
 

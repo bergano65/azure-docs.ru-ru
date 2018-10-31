@@ -9,17 +9,17 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/09/2018
-ms.openlocfilehash: e7274e4507d901a209ed5832e98ca630feefda4f
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 3cd9b5a2bfed49ee712b89040477389ba9ea7715
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31420101"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49389638"
 ---
 # <a name="anomaly-detection-in-azure-stream-analytics"></a>Обнаружение аномалий в Azure Stream Analytics
 
 > [!IMPORTANT]
-> Эта функция доступна в предварительной версии. Мы не рекомендуем использовать ее с рабочими нагрузками.
+> Эти функции не рекомендуется использовать. Они будут заменены на новые функции. Дополнительные сведения см. в записи блога [Eight new features in Azure Stream Analytics](https://azure.microsoft.com/blog/eight-new-features-in-azure-stream-analytics/) (Восемь новых возможностей Azure Stream Analytics).
 
 Оператор **AnomalyDetection** позволяет обнаруживать разные типы аномалий в потоках событий. Например, медленное сокращение свободной памяти в течение длительного времени может свидетельствовать об утечке памяти. Также может значительно увеличиваться или уменьшаться число запросов к веб-службе, которые обычно демонстрируют стабильность.  
 
@@ -243,7 +243,7 @@ ms.locfileid: "31420101"
 ## <a name="references"></a>Ссылки
 
 * [Anomaly Detection – Using Machine Learning to Detect Abnormalities in Time Series Data](https://blogs.technet.microsoft.com/machinelearning/2014/11/05/anomaly-detection-using-machine-learning-to-detect-abnormalities-in-time-series-data/) (Обнаружение аномалий в данных временных рядов с помощью машинного обучения)
-* [API обнаружения аномалий в машинном обучении](https://docs.microsoft.com/en-gb/azure/machine-learning/machine-learning-apps-anomaly-detection-api)
+* [API обнаружения аномалий в машинном обучении](https://docs.microsoft.com/azure/machine-learning/machine-learning-apps-anomaly-detection-api)
 * [Time Series Anomaly Detection](https://msdn.microsoft.com/library/azure/mt775197.aspx) (Обнаружение аномалий во временных рядах)
 
 ## <a name="next-steps"></a>Дополнительная информация

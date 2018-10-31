@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/28/2017
 ms.author: apimpm
-ms.openlocfilehash: 5943357bc421bbae0caef7f0acd7aa3364813826
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 771ec7713c989025635e585b7bb511986e71cda9
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34597524"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50024779"
 ---
 # <a name="api-management-policy-expressions"></a>Выражения политики в службе управления API
 В этой статье описывается синтаксис выражений политики C# 7. У каждого выражения есть доступ к неявно заданной переменной [контекста](api-management-policy-expressions.md#ContextVariables) и разрешенному [подмножеству](api-management-policy-expressions.md#CLRTypes) типов .NET Framework.  
@@ -52,15 +52,15 @@ ms.locfileid: "34597524"
   
 @(context.Variables.ContainsKey("maxAge") ? int.Parse((string)context.Variables["maxAge"]) : 3600)  
   
-@{   
-  string value;   
-  if (context.Request.Headers.TryGetValue("Authorization", out value))   
-  {   
-    return Encoding.UTF8.GetString(Convert.FromBase64String(value));  
-  }   
-  else   
-  {   
-    return null;  
+@{   
+  string value;   
+  if (context.Request.Headers.TryGetValue("Authorization", out value))   
+  {   
+    return Encoding.UTF8.GetString(Convert.FromBase64String(value));  
+  }   
+  else   
+  {   
+    return null;  
   }  
 }  
 ```  
@@ -74,18 +74,18 @@ ms.locfileid: "34597524"
 ##  <a name="CLRTypes"></a> Типы .NET Framework, допустимые в выражениях политики  
  В следующей таблице перечислены типы .NET Framework и их члены, допустимые в выражениях политики.  
   
-|Тип CLR|Поддерживаемые методы|  
+|Тип CLR|Поддерживаемые члены|  
 |--------------|-----------------------|  
-|Newtonsoft.Json.Linq.Extensions|Поддерживаются все методы|  
-|Newtonsoft.Json.Linq.JArray|Поддерживаются все методы|  
-|Newtonsoft.Json.Linq.JConstructor|Поддерживаются все методы|  
-|Newtonsoft.Json.Linq.JContainer|Поддерживаются все методы|  
-|Newtonsoft.Json.Linq.JObject|Поддерживаются все методы|  
-|Newtonsoft.Json.Linq.JProperty|Поддерживаются все методы|  
-|Newtonsoft.Json.Linq.JRaw|Поддерживаются все методы|  
-|Newtonsoft.Json.Linq.JToken|Поддерживаются все методы|  
-|Newtonsoft.Json.Linq.JTokenType|Поддерживаются все методы|  
-|Newtonsoft.Json.Linq.JValue|Поддерживаются все методы|  
+|Newtonsoft.Json.Linq.Extensions|Все|  
+|Newtonsoft.Json.Linq.JArray|Все|  
+|Newtonsoft.Json.Linq.JConstructor|Все|  
+|Newtonsoft.Json.Linq.JContainer|Все|  
+|Newtonsoft.Json.Linq.JObject|Все|  
+|Newtonsoft.Json.Linq.JProperty|Все|  
+|Newtonsoft.Json.Linq.JRaw|Все|  
+|Newtonsoft.Json.Linq.JToken|Все|  
+|Newtonsoft.Json.Linq.JTokenType|Все|  
+|Newtonsoft.Json.Linq.JValue|Все|  
 |System.Collections.Generic.IReadOnlyCollection<T\>|Все|  
 |System.Collections.Generic.IReadOnlyDictionary<TKey,  TValue>|Все|  
 |System.Collections.Generic.ISet<TKey, TValue>|Все|  
@@ -105,9 +105,10 @@ ms.locfileid: "34597524"
 |System.Int16|Все|  
 |System.Int32|Все|  
 |System.Int64|Все|  
-|System.Linq.Enumerable<T\>|Поддерживаются все методы|  
+|System.Linq.Enumerable<T\>|Все|  
 |System.Math|Все|  
-|System.MidpointRounding|Все|  
+|System.MidpointRounding|Все|
+|System.Net.WebUtility|Все|
 |System.Nullable<T\>|Все|  
 |System.Random|Все|  
 |System.SByte|Все|  
@@ -146,23 +147,23 @@ ms.locfileid: "34597524"
 |System.UInt32|Все|  
 |System.UInt64|Все|  
 |System.Uri|Все|  
-|System.Xml.Linq.Extensions|Поддерживаются все методы|  
-|System.Xml.Linq.XAttribute|Поддерживаются все методы|  
-|System.Xml.Linq.XCData|Поддерживаются все методы|  
-|System.Xml.Linq.XComment|Поддерживаются все методы|  
-|System.Xml.Linq.XContainer|Поддерживаются все методы|  
-|System.Xml.Linq.XDeclaration|Поддерживаются все методы|  
-|System.Xml.Linq.XDocument|Поддерживаются все методы|  
-|System.Xml.Linq.XDocumentType|Поддерживаются все методы|  
-|System.Xml.Linq.XElement|Поддерживаются все методы|  
-|System.Xml.Linq.XName|Поддерживаются все методы|  
-|System.Xml.Linq.XNamespace|Поддерживаются все методы|  
-|System.Xml.Linq.XNode|Поддерживаются все методы|  
-|System.Xml.Linq.XNodeDocumentOrderComparer|Поддерживаются все методы|  
-|System.Xml.Linq.XNodeEqualityComparer|Поддерживаются все методы|  
-|System.Xml.Linq.XObject|Поддерживаются все методы|  
-|System.Xml.Linq.XProcessingInstruction|Поддерживаются все методы|  
-|System.Xml.Linq.XText|Поддерживаются все методы|  
+|System.Xml.Linq.Extensions|Все|  
+|System.Xml.Linq.XAttribute|Все|  
+|System.Xml.Linq.XCData|Все|  
+|System.Xml.Linq.XComment|Все|  
+|System.Xml.Linq.XContainer|Все|  
+|System.Xml.Linq.XDeclaration|Все|  
+|System.Xml.Linq.XDocument|Все|  
+|System.Xml.Linq.XDocumentType|Все|  
+|System.Xml.Linq.XElement|Все|  
+|System.Xml.Linq.XName|Все|  
+|System.Xml.Linq.XNamespace|Все|  
+|System.Xml.Linq.XNode|Все|  
+|System.Xml.Linq.XNodeDocumentOrderComparer|Все|  
+|System.Xml.Linq.XNodeEqualityComparer|Все|  
+|System.Xml.Linq.XObject|Все|  
+|System.Xml.Linq.XProcessingInstruction|Все|  
+|System.Xml.Linq.XText|Все|  
 |System.Xml.XmlNodeType|Все|  
   
 ##  <a name="ContextVariables"></a> Переменная контекста  

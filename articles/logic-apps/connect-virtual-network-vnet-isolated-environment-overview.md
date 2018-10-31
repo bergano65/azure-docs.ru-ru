@@ -1,6 +1,6 @@
 ---
-title: Доступ к виртуальным сетям Azure из Azure Logic Apps
-description: В этой обзорной статье приводятся сведения о подключении изолированных приложений логики к виртуальным сетям Azure из сред службы интеграции (ISE), которые используют частные и выделенные ресурсы.
+title: Доступ к виртуальным сетям Azure из Azure Logic Apps с использованием сред службы интеграции (ISE)
+description: В этом обзоре описано, как среды службы интеграции (ISE) помогают приложениям логики получать доступ к виртуальным сетям Azure
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -9,19 +9,19 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 09/24/2018
-ms.openlocfilehash: 9546b8ca33ef7da2d570b547446858e2a4099234
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: f21af23cf0b7b121441b1433f382db60ef7f13fe
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47393161"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49408665"
 ---
-# <a name="access-to-azure-virtual-network-resources-from-isolated-azure-logic-apps"></a>Доступ к ресурсам виртуальной сети Azure из изолированной службы Azure Logic Apps
+# <a name="access-to-azure-virtual-network-resources-from-azure-logic-apps-by-using-integration-service-environments-ises"></a>Доступ к ресурсам виртуальных сетей Azure из Azure Logic Apps с использованием сред службы интеграции (ISE)
 
 > [!NOTE]
 > Эта возможность находится на этапе *закрытой предварительной версии*. Чтобы запросить доступ, [создайте запрос на присоединение](https://aka.ms/iseprivatepreview).
 
-В некоторых случаях приложениям логики и учетным записям интеграции требуется доступ к защищенным ресурсам, таким как виртуальные машины и другие системы или службы в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md). Для предоставления такого доступа можно [создать *среду службы интеграции* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment.md) в качестве расположения для создания приложений логики и учетных записей интеграции. 
+В некоторых случаях приложениям логики и учетным записям интеграции требуется доступ к защищенным ресурсам, таким как виртуальные машины и другие системы или службы в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md). Для настройки такого доступа можно [создать *среду службы интеграции* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment.md), которая будет использоваться в качестве расположения для приложений логики и учетных записей интеграции. 
 
 ![Выбор среды службы интеграции](./media/connect-virtual-network-vnet-isolated-environment-overview/select-logic-app-integration-service-environment.png)
 

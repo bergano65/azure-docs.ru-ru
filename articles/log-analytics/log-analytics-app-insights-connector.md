@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 06/29/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 4157b812fbb17b524a21814f41e0e4ec43e39e70
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 7c6d91da0634e7f847af01d1c057607ab095cdf6
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48042093"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49408214"
 ---
 # <a name="application-insights-connector-management-solution-preview"></a>Решение по управлению "Соединитель Application Insights" (предварительная версия)
 
@@ -58,8 +58,8 @@ ms.locfileid: "48042093"
 ## <a name="configuration"></a>Параметр Configuration
 
 1. Включите решение "Аналитика веб-приложений Azure" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.ApplicationInsights?tab=Overview) или выполните инструкции по [добавлению решений Log Analytics из коллекции решений](log-analytics-add-solutions.md).
-2. На портале OMS щелкните **Параметры** &gt; **Данные** &gt; **Application Insights**.
-3. В разделе **Выбор подписки** выберите подписку с ресурсами Application Insights, а затем в разделе **Имя приложения** выберите одно или несколько приложений.
+2. Перейдите на [портал Azure](https://portal.azure.com). Выберите **Все службы**, чтобы открыть Application Insights. Затем выполните поиск по запросу "Application Insights". 
+3. В разделе **Подписки** выберите подписку с ресурсами Application Insights, а затем в разделе **Имя** выберите одно или несколько приложений.
 4. Выберите команду **Сохранить**.
 
 Приблизительно через 30 минут данные станут доступными, а на плитке Application Insights появятся данные, как показано на следующем изображении:
@@ -133,7 +133,7 @@ ms.locfileid: "48042093"
 
 ### <a name="pivot-to-an-app-in-the-azure-portal"></a>Сведение в приложение на портале Azure
 
-Колонки соединителя Application Insights предназначены для сведения данных в выбранное приложение Application Insights *при использовании портала OMS*. Решение можно использовать как высокоуровневую платформу мониторинга, которая позволяет устранять неполадки в приложении. При появлении потенциальной проблемы в одном из подключенных приложений вы можете получить о ней дополнительные сведения в поиске Log Analytics или свести их непосредственно в приложении Application Insights.
+Колонки Соединителя Application Insights предназначены для сведения данных в выбранное приложение Application Insights *при использовании портала Azure*. Решение можно использовать как высокоуровневую платформу мониторинга, которая позволяет устранять неполадки в приложении. При появлении потенциальной проблемы в одном из подключенных приложений вы можете получить о ней дополнительные сведения в поиске Log Analytics или свести их непосредственно в приложении Application Insights.
 
 Чтобы свести данные, нажмите символ с многоточием (**…**), который отображается в конце каждой строки, а затем выберите **Open in Application Insights** (Открыть в Application Insights).
 

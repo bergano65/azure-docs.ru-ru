@@ -8,12 +8,12 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 10/02/2018
 ms.author: lyrana
-ms.openlocfilehash: ef7838c41bb479da273123c2eb3def8e12802390
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: dc5570b188bfdc0e1be78aa2bd5c5d92e884f377
+ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49351308"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "49638024"
 ---
 # <a name="connect-and-authenticate-to-apis"></a>Подключение к API и аутентификация
 
@@ -46,6 +46,7 @@ Azure Digital Twins использует Azure Active Directory (Azure AD) дл�
 1. Перейдите по ссылке https://www.getpostman.com/, чтобы загрузить приложение.
 1. Выполните шаги, приведенные в статье [Краткое руководство. Регистрация приложения в конечной точке Azure Active Directory версии 1.0](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad), чтобы создать приложение Azure Active Directory (или же вы можете повторно использовать имеющуюся регистрацию). 
 1. В разделе "Требуемые разрешения" добавьте Azure Digital Twins и выберите "Делегированные разрешения". В завершение щелкните "Предоставить разрешения".
+1. Откройте манифест приложения и установите для oauth2AllowImplicitFlow значение true.
 1. В качестве URL-адреса ответа укажите [https://www.getpostman.com/oauth2/callback](https://www.getpostman.com/oauth2/callback).
 1. Выберите вкладку **Авторизация**, щелкните **OAuth 2.0** и выберите **Get New Access Token** (Получить новый маркер доступа).
 

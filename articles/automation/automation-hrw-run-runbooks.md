@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 07/17/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: a0b5188605874a04f0341cde1a68487c8a50df84
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 48dcc558d4855874df02ad5c631211f16fd8c29e
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47431820"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50024993"
 ---
 # <a name="running-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей runbook в гибридной рабочей роли Runbook
 
@@ -86,10 +86,10 @@ Restart-Computer -ComputerName $Computer -Credential $Cred
 
 Чтобы использовать управляемое удостоверение для ресурсов Azure в гибридной рабочей роли Runbook, выполните следующие действия:
 
-1. Создание виртуальной машины Azure
+1. Создайте виртуальную машину Azure.
 2. [Настройте управляемые удостоверения для ресурсов Azure на вашей виртуальной машине](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#enable-system-assigned-managed-identity-on-an-existing-vm).
 3. [Предоставьте виртуальной машине доступ к группе ресурсов в Resource Manager](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager).
-4. [Получите маркер доступа с помощью управляемого удостоверения виртуальной машины, назначаемого системой] (../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#get-an-access-token-using-the-vms-system-assigned-managed-identity-and-use-it-to-call-azure-resource-manager).
+4. [Получите маркер доступа, используя назначенное системой управляемое удостоверение виртуальной машины](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#get-an-access-token-using-the-vms-system-assigned-managed-identity-and-use-it-to-call-azure-resource-manager).
 5. [Установите гибридную рабочую роль Runbook Windows](automation-windows-hrw-install.md#installing-the-windows-hybrid-runbook-worker) на виртуальную машину.
 
 По завершении предыдущих этапов можно использовать `Connect-AzureRmAccount -Identity` в модуле Runbook для аутентификации ресурсов Azure. Это снижает потребность использовать учетную запись запуска от имени и управлять ее сертификатом.

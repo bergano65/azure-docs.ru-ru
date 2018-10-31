@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: e4140bfa3053798be56f3af9512c11d3ff0e58c0
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 677cd65b011ed69868564617ff79b7a57947c230
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48042161"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49404449"
 ---
 # <a name="connect-windows-computers-to-the-log-analytics-service-in-azure"></a>Подключение компьютеров Windows к службе Log Analytics в Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "48042161"
 2. На странице **приветствия** нажмите кнопку **Далее**.
 3. На странице **Условия лицензии** прочтите лицензию и нажмите кнопку **Принимаю**.
 4. На странице **Папка назначения** измените или оставьте папку установки по умолчанию и нажмите кнопку **Далее**.
-5. На странице **Параметры установки агента** выберите подключение агента к Azure Log Analytics (OMS) и нажмите кнопку **Далее**.   
+5. На странице **Параметры установки агента** выберите подключение агента к Azure Log Analytics и нажмите **Далее**.   
 6. На странице **Azure Log Analytics** выполните следующее.
    1. Вставьте **идентификатор рабочей области** и **ключ рабочей области (первичный ключ)**, скопированные ранее.  Если компьютер должен передавать данные в рабочую область Log Analytics в облаке Azure для государственных организаций, выберите **Azure для государственных организаций США** из раскрывающегося списка **Облако Azure**.  
    2. Если компьютер должен обмениваться данными со службой Log Analytics через прокси-сервер, щелкните **Дополнительно** и укажите URL-адрес и номер порта прокси-сервера.  Если для доступа к прокси-серверу требуется аутентификация, введите имя пользователя и пароль для аутентификации на прокси-сервере, затем нажмите кнопку **Далее**.  
@@ -160,7 +160,7 @@ ms.locfileid: "48042161"
 
 По завершении установки агента вы можете проверить, успешно ли он подключен и отправляет ли он отчеты. Есть два способа.  
 
-На **панели управления** компьютера найдите элемент **Microsoft Monitoring Agent**.  Выберите его, и на вкладке **Azure Log Analytics (OMS)** агент должен отобразить следующее сообщение: **Microsoft Monitoring Agent успешно подключен к службе Microsoft Operations Management Suite.**<br><br> ![Состояние подключения MMA к Log Analytics](media/log-analytics-quick-collect-windows-computer/log-analytics-mma-laworkspace-status.png)
+На **панели управления** компьютера найдите элемент **Microsoft Monitoring Agent**.  Выберите его. На вкладке **Azure Log Analytics** агент должен отобразить следующее сообщение: **Microsoft Monitoring Agent успешно подключен к службе Microsoft Operations Management Suite.**<br><br> ![Состояние подключения MMA к Log Analytics](media/log-analytics-quick-collect-windows-computer/log-analytics-mma-laworkspace-status.png)
 
 Вы также можете выполнить простой поиск по журналам на портале Azure.  
 

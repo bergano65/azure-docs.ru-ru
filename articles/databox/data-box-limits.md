@@ -2,25 +2,18 @@
 title: Ограничения Azure Data Box | Документация Майкрософт
 description: В этой статье описаны ограничения системы и рекомендуемые размеры для компонентов и подключений Microsoft Azure Data Box.
 services: databox
-documentationcenter: NA
 author: alkohli
-manager: twooley
-editor: ''
-ms.assetid: ''
 ms.service: databox
-ms.devlang: NA
+ms.subservice: pod
 ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: TBD
-ms.date: 09/05/2018
+ms.date: 10/10/2018
 ms.author: alkohli
-ms.custom: ''
-ms.openlocfilehash: fe42380288c0f139a2bae80a12f0ebc428a4c286
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: de47cae219aa457343df292bb91b6af06c4b1186
+ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46993089"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49091935"
 ---
 # <a name="azure-data-box-limits"></a>Ограничения Azure Data Box
 
@@ -35,7 +28,7 @@ ms.locfileid: "46993089"
 
 ## <a name="data-box-limits"></a>Ограничения Data Box
 
-- В устройстве Data Box может храниться до 5 миллионов файлов.
+- В устройстве Data Box может храниться до 500 миллионов файлов.
 
 ## <a name="azure-storage-limits"></a>Ограничения службы хранилища Azure
 

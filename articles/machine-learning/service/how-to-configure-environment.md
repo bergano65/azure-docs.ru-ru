@@ -10,49 +10,47 @@ ms.reviewer: larryfr
 manager: cgronlun
 ms.topic: conceptual
 ms.date: 8/6/2018
-ms.openlocfilehash: 9938772618e9a85f7d85678c4ddde3147cbc40dd
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 657a762874f7c2fb40553552ef6c17d9b5b6da0f
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49091864"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49958624"
 ---
-# <a name="configure-a-development-environment-for-the-azure-machine-learning-service"></a>Настройка среды разработки для службы "Машинное обучение Azure"
+# <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 
-Узнайте, как настроить среду разработки для работы со службой машинного обучения Azure. Вы узнаете, как создать файл конфигурации, который связывает вашу среду с рабочей областью службы "Машинное обучение Azure". Кроме того, вы узнаете, как настраивать следующие среды разработки:
+Из этой статьи вы узнаете, как настраивать среду разработки для работы со Службой машинного обучения Azure, в том числе выполнять следующие действия:
 
-* Jupyter Notebook на вашем компьютере
-* Visual Studio Code.
-* Выбранный вами редактор кода
-
-Рекомендуется использовать [виртуальную среду Conda Continuum Anaconda](https://conda.io/docs/user-guide/tasks/manage-environments.html), чтобы изолировать свою рабочую среду и избежать конфликтов зависимости между пакетами. В этой статье приведены этапы настройки среды Conda и использования ее для машинного обучения Azure.
-
+- Создание файла конфигурации, который связывает вашу среду с рабочей областью службы "Машинное обучение Azure".
+- Настройка следующих сред разработки:
+  - Jupyter Notebook на локальном компьютере;
+  - Visual Studio Code.
+  - пользовательский редактор кода.
+- Настройка [виртуальной среды conda](https://conda.io/docs/user-guide/tasks/manage-environments.html) и ее использование для Машинного обучения Azure. Мы рекомендуем применить Continuum Anaconda, чтобы изолировать рабочую среду и избежать конфликтов зависимостей между пакетами.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Рабочая область службы машинного обучения Azure. Чтобы создать ее, выполните действия, приведенные в документе [Начало работы со службой машинного обучения Azure](quickstart-get-started.md).
-
-* Диспетчер пакетов [Continuum Anaconda](https://www.anaconda.com/download/) или [Miniconda](https://conda.io/miniconda.html).
-
- * [Расширение Python](https://code.visualstudio.com/docs/python/python-tutorial) для среды Visual Studio Code.
+- Настройте рабочую область Службы машинного обучения Azure. Выполните инструкции из статьи о [начале работы со Службой машинного обучения Azure](quickstart-get-started.md).
+- Установите диспетчер пакетов [Continuum Anaconda](https://www.anaconda.com/download/) или [Miniconda](https://conda.io/miniconda.html).
+- Если вы используете Visual Studio Code, добавьте к нему [расширение Python](https://code.visualstudio.com/docs/python/python-tutorial).
 
 > [!NOTE]
-> Команды Shell, используемые в этом документе, проверены с помощью bash в Linux и macOS. Команды также проверяются с помощью cmd.exe в Windows.
+> Представленные в этой статье команды оболочки можно протестировать в bash (в Linux и Mac OS) или в командной строке (в Windows).
 
-## <a name="create-workspace-configuration-file"></a>Создание файла конфигурации рабочей области
+## <a name="create-a-workspace-configuration-file"></a>Создание файла конфигурации рабочей области
 
-Файл конфигурации рабочей области используется SDK для связи с рабочей областью службы машинного обучения Azure.  Существует два способа получения этого файла:
+Пакет SDK Машинного обучения Azure использует файл конфигурации рабочей области для связи с рабочей областью Службы машинного обучения Azure.
 
-* Чтобы создать рабочую область и файл конфигурации, выполните действия в [этом руководстве](quickstart-get-started.md). Файл `config.json` создается в записных книжках Azure.  Файл содержит сведения о конфигурации вашей рабочей области.  Скачайте или скопируйте его в тот же каталог, где находятся сценарии или записные книжки, ссылающиеся на него.
+- Чтобы создать файл конфигурации, выполните инструкции в [кратком руководстве по Машинному обучению Azure](quickstart-get-started.md).
+  - Описанный в нем процесс позволяет создать файл `config.json` в Записных книжках Azure. Файл содержит сведения о конфигурации вашей рабочей области.
+  - Скачайте или скопируйте файл `config.json` в тот же каталог, где находятся скрипты и (или) записные книжки, ссылающиеся на него.
 
-
-* Выполните следующие действия для создания файла конфигурации.
+- Вы также можете создать файл вручную, выполнив следующие действия:
 
     1. Откройте рабочую область на [портале Azure](https://portal.azure.com). Копируйте __имя рабочей области__, __группу ресурсов__ и __ИД подписки__. Эти значения используются для создания файла конфигурации.
+        ![портал Azure](./media/how-to-configure-environment/configure.png)
 
-        ![Портал Azure](./media/how-to-configure-environment/configure.png) 
-    
-    1. Создайте файл с этим кодом Python. Выполните код в том же каталоге, где находятся сценарии или записные книжки, ссылающиеся на рабочую область:
+    1. Создайте файл с приведенным ниже кодом Python и запустите его в том же каталоге, где расположены скрипты или записные книжки, которые ссылаются на рабочую область.
 
         ```python
         from azureml.core import Workspace
@@ -60,7 +58,7 @@ ms.locfileid: "49091864"
         subscription_id ='<subscription-id>'
         resource_group ='<resource-group>'
         workspace_name = '<workspace-name>'
-        
+
         try:
            ws = Workspace(subscription_id = subscription_id, resource_group = resource_group, workspace_name = workspace_name)
            ws.write_config()
@@ -68,8 +66,8 @@ ms.locfileid: "49091864"
         except:
            print('Workspace not found')
         ```
-        В файл `aml_config/config.json` записывается следующие данные: 
-    
+        Этот код позволяет создать файл `aml_config/config.json` со следующим содержимым:
+
         ```json
         {
         "subscription_id": "<subscription-id>",
@@ -79,63 +77,66 @@ ms.locfileid: "49091864"
         ```
         Вы можете скопировать каталог `aml_config` либо только файл `config.json` в другой каталог, который ссылается на рабочую область.
 
->[!NOTE] 
->Другие сценарии или записные книжки в том же каталоге загружают рабочую область с помощью команды `ws=Workspace.from_config()`.
+       > [!NOTE]
+       > Другие скрипты и (или) записные книжки, расположенные в том же каталоге или ниже в дереве файловой системы, позволяют загрузить рабочую область с помощью команды `ws=Workspace.from_config()`.
 
-## <a name="azure-notebooks-and-data-science-virtual-machine"></a>Записные книжки Azure и виртуальная машина для обработки и анализа данных Azure
+## <a name="azure-notebooks-and-data-science-virtual-machines"></a>Записные книжки Azure и виртуальные машины для обработки и анализа данных
 
-Записные книжки Azure и виртуальные машины для обработки и анализа данных Azure предварительно настроены для работы со службой машинного обучения Azure. Необходимые компоненты, такие как SDK машинного обучения Azure, устанавливаются автоматически в этих средах.
+Записные книжки Azure и Виртуальные машины для обработки и анализа данных (DSVM) Azure предварительно настроены для работы со Службой машинного обучения Azure. В этих средах уже есть все необходимые компоненты, например пакет SDK для Машинного обучения Azure.
 
-Записные книжки Azure — это служба Jupyter Notebook в облаке Azure. Виртуальная машина обработки и анализа данных — это образ виртуальной машины, который предварительно настроен для обработки и анализа данных. Виртуальная машина включает в себя популярные средства, интегрированные среды разработки и пакеты, такие как записные книжки Jupyter, PyCharm и Tensorflow.
+- Записные книжки Azure — это служба Jupyter Notebook в облаке Azure.
+- Виртуальная машина для обработки и анализа данных — это настраиваемый образ виртуальной машины, специально подготовленный для задач обработки и анализа данных. Сюда входят:
+  - популярные средства;
+  - интегрированные среды разработки;
+  - специализированные пакеты, в том числе Jupyter Notebook, PyCharm и Tensorflow.
+- Для использования этих сред вам по-прежнему требуется файл конфигурации рабочей области.
 
-Для использования этих сред вам по-прежнему потребуется файл конфигурации рабочей области.
+Пример использования Записных книжек Azure со Службой машинного обучения Azure см. в статье о [начале работы со Службой машинного обучения Azure](quickstart-get-started.md).
 
-Дополнительные сведения о виртуальных машинах для анализа и обработки данных см. в документации [Виртуальные машины для анализа и обработки данных](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/).
+Дополнительные сведения о Виртуальных машинах для обработки и анализа данных см. в [этой статье](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/).
 
-Пример использования записных книжек Azure со службой машинного обучения Azure см. в документе [Начало работы со службой машинного обучения Azure](quickstart-get-started.md).
+## <a name="configure-jupyter-notebooks-on-your-computer"></a>Настройка Jupyter Notebook на локальном компьютере
 
-## <a name="configure-jupyter-notebooks-on-your-own-computer"></a>Настройка Jupyter Notebook на своем компьютере
+1. Откройте окно командной строки или оболочку.
 
-1. Откройте командную строку или оболочку.
-
-2. Чтобы создать среду conda, используйте следующие команды:
+1. Создайте среду conda, выполнив следующие команды:
 
     ```shell
-    # create a new conda environment with Python 3.6, numpy and cython
+    # create a new conda environment with Python 3.6, numpy, and cython
     conda create -n myenv Python=3.6 cython numpy
 
     # activate the conda environment
     conda activate myenv
 
-    # If you are running Mac OS you should run
+    # On Mac OS run
     source activate myenv
     ```
 
-    Создание среды может занять несколько минут, так как, возможно, потребуется скачать Python 3.6 и другие компоненты.
+    Создание среды может занять несколько минут, если потребуется скачать Python 3.6 и (или) другие компоненты.
 
-3. Чтобы установить пакет SDK машинного обучения Azure с дополнительными компонентами для работы с записными книжками, выполните следующую команду:
+1. Установите пакет SDK для Машинного обучения Azure и дополнительные компоненты для записных книжек, а также пакет SDK для подготовки данных, выполнив следующую команду:
 
      ```shell
-    pip install --upgrade azureml-sdk[notebooks,automl]
+    pip install --upgrade azureml-sdk[notebooks,automl] azureml-dataprep
     ```
 
     > [!NOTE]
-    > Если появится сообщение об ошибке (Невозможно удалить `PyYAML`), вместо этого используйте следующую команду:
-    > 
-    > `pip install --upgrade azureml-sdk[notebooks,automl] --ignore-installed PyYAML` 
+    > Если появится сообщение о том, что не удается удалить `PyYAML`, попробуйте использовать другую команду:
+    >
+    > `pip install --upgrade azureml-sdk[notebooks,automl] azureml-dataprep --ignore-installed PyYAML`
 
     Установка пакета SDK может занять несколько минут.
 
-4. Чтобы установить пакеты для экспериментов с машинным обучением, воспользуйтесь следующей командой и замените `<new package>` пакетом, который требуется установить.
+1. Установите пакеты для экспериментирования в машинном обучении. Используйте следующую команду, заменив в ней `<new package>` именем пакета, который хотите установить:
 
     ```shell
     conda install <new package>
     ```
 
-5. Чтобы установить conda с поддержкой сервера Jupyter Notebook и включить экспериментальные мини-приложения (для просмотра сведений о выполнении), используйте следующие команды:
+1. Установите сервер Jupyter Notebook с поддержкой conda и включите экспериментальные мини-приложения (для просмотра сведений о выполнении). Используйте следующие команды:
 
     ```shell
-    # install Jupyter 
+    # install Jupyter
     conda install nb_conda
 
     # install experiment widget
@@ -145,13 +146,13 @@ ms.locfileid: "49091864"
     jupyter nbextension enable --py --user azureml.train.widgets
     ```
 
-6. Чтобы запустить Jupyter Notebook, используйте следующую команду:
+1. Откройте Jupyter Notebook, выполнив следующую команду:
 
     ```shell
     jupyter notebook
     ```
 
-7. Откройте записную книжку и выберите myenv в качестве ядра. Проверьте, что SDK машинного обучения Azure установлен, выполнив следующую команду в ячейке блокнота:
+1. Откройте новую записную книжку, выберите ядро myenv и убедитесь, что установлен пакет SDK для Машинного обучения Azure. Выполните приведенную ниже команду в ячейке записной книжки.
 
     ```python
     import azureml.core
@@ -160,9 +161,9 @@ ms.locfileid: "49091864"
 
 ## <a name="configure-visual-studio-code"></a>Откройте Visual Studio Code.
 
-1. Откройте командную строку или оболочку.
+1. Откройте окно командной строки или оболочку.
 
-2. Чтобы создать среду conda, используйте следующие команды:
+1. Создайте среду conda, выполнив следующие команды:
 
     ```shell
     # create a new conda environment with Python 3.6, numpy and cython
@@ -175,36 +176,39 @@ ms.locfileid: "49091864"
     source activate myenv
     ```
 
-2. Чтобы установить пакет SDK машинного обучения Azure, выполните следующую команду:
- 
+1. Установите пакет SDK для Машинного обучения Azure и пакет SDK для подготовки данных, выполнив следующую команду:
+
     ```shell
-    pip install --upgrade azureml-sdk[automl]
+    pip install --upgrade azureml-sdk[automl] azureml-dataprep
     ```
 
-4. Чтобы установить средства Visual Studio Code для искусственного интеллекта, см. запись о Visual Studio на Marketplace: [Инструменты для искусственного интеллекта](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai). 
+1. Установите средства Visual Studio Code для расширения искусственного интеллекта См. дополнительные сведения об [инструментах для искусственного интеллекта](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai).
 
-5. Чтобы установить пакеты для экспериментов с машинным обучением, воспользуйтесь следующей командой и замените `<new package>` пакетом, который требуется установить.
+1. Установите пакеты для экспериментирования в машинном обучении. Используйте следующую команду, заменив в ней `<new package>` именем пакета, который хотите установить:
 
     ```shell
     conda install <new package>
     ```
 
-6. Запустите Visual Studio Code, а затем используйте сочетание клавиш __CTRL+SHIFT+P__ для Windows или __COMMAND+SHIFT+P__ для Mac, чтобы получить __палитру команд__. Введите *Python: выбор интерпретатора*и выберите созданную среду conda.
+1. Запустите Visual Studio Code и нажмите сочетание клавиш **CTRL+SHIFT+P** (в среде Windows) или **COMMAND+SHIFT+P** (в среде Mac), чтобы открыть **палитру команд**. Введите _Python: Select Interpreter_ (Python: выбор интерпретатора) и выберите только что созданную среду conda.
 
-    > [!NOTE]
-    > Visual Studio Code автоматически учитывает среды conda на компьютере. Дополнительные сведения см. в документации по [Visual Studio Code](https://code.visualstudio.com/docs/python/environments#_conda-environments).
+   > [!NOTE]
+   > Visual Studio Code автоматически учитывает среды conda на компьютере. Дополнительные сведения см. в документации по [Visual Studio Code](https://code.visualstudio.com/docs/python/environments#_conda-environments).
 
-7. Чтобы проверить конфигурацию, воспользуйтесь Visual Studio Code для создания нового файла сценария Python со следующим кодом, а затем запустите его:
+1. Проверьте конфигурацию. Для этого создайте с помощью Visual Studio Code новый файл скрипта Python с приведенным ниже кодом и выполните этот скрипт:
 
     ```python
     import azureml.core
     azureml.core.VERSION
     ```
 
-## <a name="configure-code-editor-of-your-choice"></a>Настройка редактора кода по вашему выбору
+## <a name="configure-a-custom-code-editor"></a>Настройка пользовательского редактора кода
 
-Чтобы использовать выбранный редактор кода с SDK машинного обучения Azure, сначала создайте среду conda, как описано выше. Затем выполните инструкции для каждого редактора, чтобы использовать среду conda. Так, инструкции для PyCharm находятся здесь: [https://www.jetbrains.com/help/pycharm/2018.2/conda-support-creating-conda-virtual-environment.html](https://www.jetbrains.com/help/pycharm/2018.2/conda-support-creating-conda-virtual-environment.html).
- 
+С пакетом SDK для Машинного обучения Azure можно использовать любой редактор кода по своему усмотрению.
+
+1. Создайте среду conda, как описано выше в шаге 2 раздела о [настройке Visual Studio Code](#configure-visual-studio-code).
+1. Выполните инструкции для каждого редактора, в котором вам нужно использовать среду conda. Например, здесь есть [инструкции для PyCharm](https://www.jetbrains.com/help/pycharm/2018.2/conda-support-creating-conda-virtual-environment.html).
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Обучение модели в машинном обучении Azure с помощью набора данных MNIST](tutorial-train-models-with-aml.md)
+- [Обучение модели в машинном обучении Azure с помощью набора данных MNIST](tutorial-train-models-with-aml.md)

@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.component: fundamentals
 ms.topic: conceptual
-ms.date: 08/28/2018
+ms.date: 10/19/2018
 ms.author: lizross
 ms.custom: it-pro
 ms.reviewer: krbain
-ms.openlocfilehash: c28fe5ef226fac993fde221b16bfa875ba4845ca
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 09e023d1d562ea53d9927adf609335beac38a2d7
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45579774"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49468036"
 ---
 # <a name="how-to-add-or-remove-a-group-from-another-group-using-azure-active-directory"></a>Практическое руководство. Добавление или удаление группы из другой группы в Azure Active Directory
 В этой статье описано, как добавить или удалить группу из другой группы в Azure Active Directory.
@@ -25,10 +25,13 @@ ms.locfileid: "45579774"
 >[!Note]
 >Если вы пытаетесь удалить родительскую группу, см. раздел [Как обновить или удалить группу и ее участников](active-directory-groups-delete-group.md).
 
-## <a name="add-a-group-as-a-member-to-another-group"></a>Добавление группы в качестве участника другой группы
-Вы можете добавить существующую группу в другую существующую группу, создав группу-участника (подгруппу) в родительской группе. Группа-участник наследует атрибуты и свойства родительской группы, позволяя сэкономить время на настройке.
+## <a name="add-a-group-to-another-group"></a>Добавление группы в другую группу
+Существующую группу безопасности можно добавить в другую существующую группу безопасности (вложение группы). Для этого нужно создать группу-участник (подгруппу) и родительскую группу. Группа-участник наследует атрибуты и свойства родительской группы, позволяя сэкономить время на настройке.
 
-### <a name="to-add-a-group-as-a-member-to-another-group"></a>Добавление группы в качестве участника другой группы
+>[!Important]
+>Сейчас не поддерживается:<ul><li>добавление групп безопасности в группы Office 365;</li><li>добавление групп Office 365 в группы безопасности или другие группы Office 365;</li><li>назначение приложений вложенным группам;</li><li>применение лицензий ко вложенным группам.</li></ul>
+
+### <a name="to-add-a-group-as-a-member-of-another-group"></a>Добавление группы в качестве элемента другой группы
 
 1. Войдите на [портал Azure](https://portal.azure.com) с учетной записью глобального администратора каталога.
 
@@ -55,8 +58,8 @@ ms.locfileid: "45579774"
 
     ![Страница "Членство в группе" со сведениями об участнике и группе](media/active-directory-groups-membership-azure-portal/group-membership-review.png)
 
-## <a name="remove-a-member-group-from-another-group"></a>Удаление группы из другой группы
-Вы можете удалить существующую группу из другой группы. Но при удалении членства также удаляются все наследуемые атрибуты и свойства для пользователей.
+## <a name="remove-a-group-from-another-group"></a>Удаление группы из другой группы
+Существующую группу безопасности можно удалить из другой группы безопасности. При удалении группы также удаляются все унаследованные атрибуты и свойства ее участников.
 
 ### <a name="to-remove-a-member-group-from-another-group"></a>Удаление группы из другой группы
 1. На странице **Группы — Все группы** найдите и выберите группу, которую требуется удалить из участников. В этом упражнении мы снова используем группу **Политика управления мобильными устройствами — Запад**.
@@ -81,4 +84,6 @@ ms.locfileid: "45579774"
 
 - [Изменение параметров группы](active-directory-groups-settings-azure-portal.md)
 
-- [Назначение лицензий пользователям по группам](../users-groups-roles/licensing-groups-assign.md)
+- [Использование группы для управления доступом к приложениям SaaS](../users-groups-roles/groups-saasapps.md)
+
+- [Сценарии, ограничения и известные проблемы при использовании групп для управления лицензированием в Azure Active Directory](../users-groups-roles/licensing-group-advanced.md#limitations-and-known-issues)

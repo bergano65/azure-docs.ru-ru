@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/30/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: e00ccc4d55da805538801a0a8f3ee5502d871fab
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: eaf6aa538a4733528b52b1417c2d53318064e068
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48042314"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49405402"
 ---
 # <a name="managing-and-maintaining-the-log-analytics-agent-for-windows-and-linux"></a>Обслуживание агента Log Analytics для Windows и Linux и управление им
 
@@ -34,7 +34,7 @@ ms.locfileid: "48042314"
 
 1. Войдите в систему компьютера, используя учетную запись с правами администратора.
 2. Откройте **Панель управления**.
-3. Выберите **Microsoft Monitoring Agent** и перейдите на вкладку **Azure Log Analytics (OMS)**.
+3. Выберите **Microsoft Monitoring Agent** и перейдите на вкладку **Azure Log Analytics**.
 4. Чтобы удалить рабочую область, выберите нужную и нажмите кнопку **Удалить**. Повторите этот шаг для всех рабочих областей, которые этот агент больше не должен отслеживать.
 5. Чтобы добавить рабочую область, нажмите кнопку **Добавить**, а затем в диалоговом окне **Add a Log Analytics Workspace** (Добавление рабочей области Log Analytics) введите идентификатор и ключ (первичный) рабочей области. Если компьютер должен передавать данные в рабочую область Log Analytics в облаке Azure для государственных организаций, выберите "Azure для государственных организаций США" из раскрывающегося списка "Облако Azure". 
 6. Нажмите кнопку **ОК** , чтобы сохранить изменения.
@@ -101,7 +101,7 @@ $mma.ReloadConfiguration()
 Службу агента не нужно перезапускать, чтобы изменения вступили в силу.
 
 ## <a name="update-proxy-settings"></a>Обновление параметров прокси-сервера 
-Чтобы настроить взаимодействие агента после развертывания со службой через прокси-сервер или [шлюз OMS](log-analytics-oms-gateway.md), используйте один из приведенных ниже способов.
+Чтобы после развертывания настроить взаимодействие агента со службой через прокси-сервер или [шлюз Log Analytics](log-analytics-oms-gateway.md), используйте один из приведенных ниже способов.
 
 ### <a name="windows-agent"></a>Агент Windows
 
@@ -110,7 +110,7 @@ $mma.ReloadConfiguration()
 1. Войдите в систему компьютера, используя учетную запись с правами администратора.
 2. Откройте **Панель управления**.
 3. Выберите **Microsoft Monitoring Agent** и перейдите на вкладку **Параметры прокси-сервера**.
-4. Щелкните **Использовать прокси-сервер** и укажите URL-адрес и номер порта прокси-сервера или шлюза. Если для доступа к прокси-серверу или шлюзу OMS требуется аутентификация, введите имя пользователя и пароль для аутентификации, а затем нажмите кнопку **ОК**. 
+4. Щелкните **Использовать прокси-сервер** и укажите URL-адрес и номер порта прокси-сервера или шлюза. Если для доступа к прокси-серверу или шлюзу Log Analytics требуется аутентификация, введите имя пользователя и пароль, а затем нажмите кнопку **ОК**. 
 
 #### <a name="update-settings-using-powershell"></a>Обновление параметров с помощью PowerShell 
 
@@ -141,7 +141,7 @@ $healthServiceSettings.SetProxyInfo($ProxyDomainName, $ProxyUserName, $cred.GetN
 ```  
 
 ### <a name="linux-agent"></a>Агент Linux
-Если компьютерам Linux требуется обмениваться данными с Log Analytics через прокси-сервер или шлюз OMS, выполните приведенные ниже действия.  Значение конфигурации прокси-сервера имеет следующий синтаксис: `[protocol://][user:password@]proxyhost[:port]`.  Свойство *proxyhost* принимает полное доменное имя или IP-адрес прокси-сервера.
+Если компьютерам Linux нужно взаимодействовать через прокси-сервер или шлюз Log Analytics, выполните приведенные ниже действия.  Значение конфигурации прокси-сервера имеет следующий синтаксис: `[protocol://][user:password@]proxyhost[:port]`.  Свойство *proxyhost* принимает полное доменное имя или IP-адрес прокси-сервера.
 
 1. Измените файл `/etc/opt/microsoft/omsagent/proxy.conf`, выполнив следующие команды и указав собственные значения параметров.
 
@@ -185,7 +185,9 @@ $healthServiceSettings.SetProxyInfo($ProxyDomainName, $ProxyUserName, $cred.GetN
 ## <a name="configure-agent-to-report-to-an-operations-manager-management-group"></a>Настройка передачи агентом отчетов в группу управления Operations Manager
 
 ### <a name="windows-agent"></a>Агент Windows
-Чтобы настроить передачу отчетов агентом OMS для Windows в группу управления System Center Operations Manager, выполните приведенные ниже действия. 
+Чтобы в агенте Log Analytics для Windows настроить передачу отчетов в группу управления System Center Operations Manager, выполните приведенные ниже действия.
+
+[!INCLUDE [log-analytics-agent-note](../../includes/log-analytics-agent-note.md)] 
 
 1. Войдите в систему компьютера, используя учетную запись с правами администратора.
 2. Откройте **Панель управления**. 
@@ -199,7 +201,9 @@ $healthServiceSettings.SetProxyInfo($ProxyDomainName, $ProxyUserName, $cred.GetN
 10. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Добавление группы управления**, и еще раз нажмите **ОК**, чтобы закрыть диалоговое окно **Свойства Microsoft Monitoring Agent**.
 
 ### <a name="linux-agent"></a>Агент Linux
-Чтобы настроить агент OMS для Linux и передать отчет в группу управления System Center Operations Manager, сделайте следующее. 
+Чтобы в агенте Log Analytics для Linux настроить передачу отчетов в группу управления System Center Operations Manager, выполните приведенные ниже действия. 
+
+[!INCLUDE [log-analytics-agent-note](../../includes/log-analytics-agent-note.md)]
 
 1. Измените файл `/etc/opt/omi/conf/omiserver.conf`
 2. Укажите для строки `httpsport=` номер порта 1270. Например: `httpsport=1270`.

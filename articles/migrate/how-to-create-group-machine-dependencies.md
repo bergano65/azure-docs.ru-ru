@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 09/21/2018
 ms.author: raynew
-ms.openlocfilehash: ac1cf5a30dee29f2737a05133aed774e86f78932
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: de093976a318b2658ff4009f4c5e314851f66b81
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47163432"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49403815"
 ---
 # <a name="group-machines-using-machine-dependency-mapping"></a>Группирование компьютеров с помощью зависимостей
 
@@ -35,7 +35,7 @@ ms.locfileid: "47163432"
 > Изменить рабочую область, связанную с проектом миграции, невозможно.
 
 ### <a name="download-and-install-the-vm-agents"></a>Скачивание и установка агентов виртуальной машины
-Настроив рабочую область, необходимо скачать и установить агенты на каждом локальном компьютере, который нужно оценить. Кроме того, если у вас есть компьютеры без подключения к Интернету, на них необходимо скачать и установить [шлюз OMS](../log-analytics/log-analytics-oms-gateway.md).
+Настроив рабочую область, необходимо скачать и установить агенты на каждом локальном компьютере, который нужно оценить. Кроме того, если у вас есть компьютеры без подключения к Интернету, на них необходимо скачать и установить [шлюз Log Analytics](../log-analytics/log-analytics-oms-gateway.md).
 
 1. На странице **Обзор** выберите **Управление** > **Компьютеры** и выберите необходимый компьютер.
 2. В столбце **Зависимости** щелкните **Установить агенты**.

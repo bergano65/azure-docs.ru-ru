@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: jasonh
-ms.openlocfilehash: 87d1593327ab45f064c6f6b19dfbe3882baaa446
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 1a526bfdd951e4dc2897ec52c03bfbe96ee14d4c
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43109522"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49403684"
 ---
 # <a name="use-azure-log-analytics-to-monitor-hdinsight-clusters"></a>Использование Azure Log Analytics для мониторинга кластеров HDInsight
 
@@ -93,7 +93,7 @@ HDInsight предоставляет решения по управлению д
 
 Инструкции по установке решения управления см. в [этом](../monitoring/monitoring-solutions.md#install-a-management-solution) разделе. Чтобы поэкспериментировать, установите решение мониторинга HDInsight Hadoop. После установки вы увидите элемент **HDInsightHadoop** под разделом **сводки**. Выберите элемент **HDInsightHadoop**. Решение HDInsightHadoop будет выглядеть примерно следующим образом:
 
-![Представление решения мониторинга HDInsight OMS Hadoop](media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-oms-hdinsight-hadoop-monitoring-solution.png)
+![Решение HDInsight для мониторинга](media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-oms-hdinsight-hadoop-monitoring-solution.png)
 
 Так как это новый кластер, в отчете не будут отображаться никакие действия.
 

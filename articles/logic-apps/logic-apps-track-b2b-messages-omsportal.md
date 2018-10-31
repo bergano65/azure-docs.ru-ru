@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: bb7d9432-b697-44db-aa88-bd16ddfad23f
 ms.date: 06/19/2018
-ms.openlocfilehash: 5bf5385824eb9b711a2fee547c29d24d7ef5a01d
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 666c998a781f13ea2a26ccfc0b94aeead0308f5b
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43125774"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49405690"
 ---
 # <a name="track-b2b-communication-with-azure-log-analytics"></a>Отслеживание взаимодействия B2B с помощью Azure Log Analytics
 
@@ -40,9 +40,9 @@ ms.locfileid: "43125774"
 >  
 > См. дополнительные сведения о [создании рабочей области Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md).
 
-## <a name="add-the-logic-apps-b2b-solution-to-log-analytics"></a>Добавление решения Logic Apps B2B в Log Analytics
+## <a name="add-the-logic-apps-b2b-solution-to-azure"></a>Добавление решения Logic Apps B2B в Azure
 
-Чтобы организовать отслеживание сообщений B2B для приложения логики, необходимо добавить решение **Logic Apps B2B** на портал OMS. Узнайте подробнее о [добавлении решений в Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md).
+Чтобы настроить отслеживание сообщений B2B для приложения логики, решение **Logic Apps B2B** необходимо добавить в Log Analytics. Узнайте подробнее о [добавлении решений в Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md).
 
 1. На [портале Azure](https://portal.azure.com) выберите **Все службы**. Введите в поле поиска "log analytics" и выберите **Log Analytics**, как показано ниже.
 
@@ -52,7 +52,7 @@ ms.locfileid: "43125774"
 
    ![Выбор рабочей области Log Analytics](media/logic-apps-track-b2b-messages-omsportal/selectla.png)
 
-3. В разделе **Управление** выберите **Обзор**.
+3. В разделе **Управления** выберите **Сводка рабочей области**.
 
    ![Выбор портала Log Analytics](media/logic-apps-track-b2b-messages-omsportal/omsportalpage.png)
 

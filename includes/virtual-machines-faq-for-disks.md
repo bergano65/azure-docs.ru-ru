@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/03/2018
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 7208eb112b5f4a5b458c0374541dff113906aa0c
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.openlocfilehash: c0045af02b307bff686d47dd8fc4aabb290711a4
+ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47185775"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49400220"
 ---
 # <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-managed-and-unmanaged-premium-disks"></a>Часто задаваемые вопросы о дисках виртуальных машин Azure IaaS, а также об управляемых и неуправляемых дисках уровня "Премиум"
 
@@ -146,7 +146,7 @@ ms.locfileid: "47185775"
 Все регионы Azure поддерживают диски SSD уровня "Стандартный".
 
 **Доступна ли служба Azure Backup при использовании дисков SSD (ценовая категория "Стандартный")?**
-Нет, служба Azure Backup пока недоступна.
+Да, служба Azure Backup теперь доступна.
 
 **Как можно создать диски SSD уровня "Стандартный"?**
 Диски SSD уровня "Стандартный" можно создавать, используя шаблоны Azure Resource Manager, пакет SDK, PowerShell или CLI. Ниже приведены параметры, которые необходимо указать в шаблоне Resource Manager для создания дисков SSD категории "Стандартный".
@@ -171,7 +171,7 @@ ms.locfileid: "47185775"
 Полный пример создания диска SSD категории "Стандартный" с помощью шаблона приведен в разделе [Create a Virtual Machine from a Windows Image with multiple empty Standard SSD Data Disks](https://github.com/azure/azure-quickstart-templates/tree/master/101-vm-with-standardssd-disk/) (Создание виртуальной машины из образа Windows с помощью дисков данных SSD категории "Стандартный").
 
 **Можно ли преобразовать имеющиеся у меня диски в диск SSD ценовой категории "Стандартный"?**
-Да, можно. Общие рекомендации по преобразованию управляемых дисков см. в статье [Преобразование хранилища управляемых дисков Azure с уровня "Стандартный" до уровня "Премиум" и наоборот](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/convert-disk-storage). Для изменения типа диска на SSD категории "Стандартный" используйте следующее значение:
+Да, можно. Общие рекомендации по преобразованию управляемых дисков см. в статье [Преобразование хранилища управляемых дисков Azure с уровня "Стандартный" до уровня "Премиум" и наоборот](https://docs.microsoft.com/azure/virtual-machines/windows/convert-disk-storage). Для изменения типа диска на SSD категории "Стандартный" используйте следующее значение:
 -AccountType StandardSSD_LRS
 
 **Какое преимущество использования дисков SSD уровня "Стандартный" вместо HDD?**

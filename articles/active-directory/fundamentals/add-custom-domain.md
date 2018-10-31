@@ -12,12 +12,12 @@ ms.date: 09/18/2018
 ms.author: lizross
 ms.reviewer: elkuzmen
 ms.custom: it-pro
-ms.openlocfilehash: 30b4a038c2ad9bd86f2ba78d52ed3754acec07f0
-ms.sourcegitcommit: 4edf9354a00bb63082c3b844b979165b64f46286
+ms.openlocfilehash: 59743df45cf2c7810404d9e6c636790c2855cf74
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48785263"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50023123"
 ---
 # <a name="how-to-add-your-custom-domain-name-using-the-azure-active-directory-portal"></a>Практическое руководство. Добавление имени личного домена с помощью портала Azure Active Directory
 Каждый новый клиент Azure AD получает исходное доменное имя в формате *имя_домена*.onmicrosoft.com. Вы не можете изменить или удалить исходное доменное имя, но можете добавить дополнительные имена, принадлежащие вашей организации. Добавив имена личных доменов, вы сможете создать привычные для пользователей имена пользователей, например *alain@contoso.com*.
@@ -28,7 +28,7 @@ ms.locfileid: "48785263"
 ## <a name="create-your-directory-in-azure-ad"></a>Создание каталога в AAD
 Получив имя домена, создайте первый каталог AAD.
 
-1. Войдите на [портал Azure](https://portal.azure.com/) с учетной записью владельца подписки для нужного каталога, а затем выберите **Azure Active Directory**.
+1. Войдите на [портал Azure](https://portal.azure.com/) для нужного каталога с учетной записью **владельца** подписки, а затем выберите **Azure Active Directory**. Дополнительные сведения о ролях в подписке см. в статье [Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#azure-rbac-roles).
 
     ![Экран портала Azure](media/active-directory-access-create-new-tenant/azure-ad-portal.png)
 

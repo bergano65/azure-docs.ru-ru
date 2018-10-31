@@ -1,24 +1,24 @@
 ---
-title: Что такое Пользовательская служба распознавания речи?
-titlesuffix: Azure Cognitive Services
+title: Обзор Пользовательской службы распознавания речи в Azure | Документация Майкрософт
 description: Пользовательская служба распознавания речи представляет собой облачную службу, которая предоставляет пользователям возможность настраивать модели речи для преобразования речи в текст.
 services: cognitive-services
 author: PanosPeriorellis
-manager: cgronlun
+manager: onano
 ms.service: cognitive-services
 ms.component: custom-speech
-ms.topic: overview
+ms.topic: article
 ms.date: 02/07/2017
 ms.author: panosper
-ROBOTS: NOINDEX
-ms.openlocfilehash: f90fc40a42806cfb002da2d9943eaa41736df4d7
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 97eee2b6440dbbf740ad5fa856bd518facabbfef
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47222749"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49342302"
 ---
 # <a name="what-is-custom-speech-service"></a>Что такое Пользовательская служба распознавания речи?
+
+[!INCLUDE [Deprecation note](../../../includes/cognitive-services-custom-speech-deprecation-note.md)]
 
 Пользовательская служба распознавания речи представляет собой облачную службу, с помощью которой пользователи могут настраивать модели речи для преобразования речи в текст.
 Работа с Пользовательской службой распознавания речи описана в документации по [порталу Пользовательской службы распознавания речи](https://cris.ai).
@@ -44,7 +44,7 @@ ms.locfileid: "47222749"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о том, как использовать Пользовательскую службу распознавания речи, см. в описании [портала Пользовательской службы распознавания речи] (https://cris.ai).
+Дополнительные сведения о том, как использовать Пользовательскую службу распознавания речи, см. в описании [портала Пользовательской службы распознавания речи](https://cris.ai).
 
 * [Приступая к работе](cognitive-services-custom-speech-get-started.md)
 * [Часто задаваемые вопросы](cognitive-services-custom-speech-faq.md)

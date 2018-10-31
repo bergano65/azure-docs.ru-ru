@@ -3,22 +3,22 @@ title: Использование аутентификации Azure AD для �
 description: Узнайте, как обращаться к API служб мультимедиа Azure с помощью аутентификации Azure Active Directory, используя REST.
 services: media-services
 documentationcenter: ''
-author: willzhan
-manager: cfowler
+author: juliako
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/26/2017
+ms.date: 10/22/2018
 ms.author: willzhan;juliako;johndeu
-ms.openlocfilehash: b44c5b29f41f08ac5c1d5e6aa3c37f8c15ae7c54
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.openlocfilehash: d9d1fa7d8cf25057339e560c371deb939997b578
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45984663"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945083"
 ---
 # <a name="use-azure-ad-authentication-to-access-the-azure-media-services-api-with-rest"></a>Использование аутентификации Azure AD для доступа к API служб мультимедиа Azure с помощью REST
 
@@ -47,7 +47,7 @@ ms.locfileid: "45984663"
 
 - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 - [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
-- Ознакомьтесь со статьей [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md).
+- Изучите статьею [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md).
 - Установите клиент REST [Postman](https://www.getpostman.com/) для выполнения REST API, как показано в этой статье. 
 
     В этом руководстве мы используем **Postman**, но подойдет любое средство REST. Другие варианты включают **Visual Studio Code** с подключаемым модулем REST или **Telerik Fiddler**. 
@@ -60,7 +60,7 @@ ms.locfileid: "45984663"
 
 |Параметр|Пример|ОПИСАНИЕ|
 |---|-------|-----|
-|Домен клиента Azure Active Directory|microsoft.onmicrosoft.com|Azure AD в качестве конечной точки службы токенов безопасности (STS) создается в следующем формате: https://login.microsoftonline.com/{your-aad-tenant-name.onmicrosoft.com}/oauth2/token. Azure AD выдает маркер JWT для доступа к ресурсам (маркер доступа).|
+|Домен клиента Azure Active Directory|microsoft.onmicrosoft.com|Azure AD в качестве конечной точки службы токенов безопасности (STS) создается в следующем формате: https://login.microsoftonline.com/{your-ad-tenant-name.onmicrosoft.com}/oauth2/token. Azure AD выдает маркер JWT для доступа к ресурсам (маркер доступа).|
 |Конечная точка REST API|https://amshelloworld.restv2.westus.media.azure.net/api/|Это конечная точка, к которой отправляются все вызовы REST API служб мультимедиа в вашем приложении.|
 |Идентификатор клиента (идентификатор приложения)|f7fbbb29-a02d-4d91-bbc6-59a2579259d2|Идентификатор приложения (клиента) Azure AD. Идентификатор клиента необходим для получения токена доступа. |
 |Секрет клиента|+mUERiNzVMoJGggD6aV1etzFGa1n6KeSlLjIq+Dbim0=|Ключи приложений Azure AD (секрет клиента). Секрет клиента необходим для получения токена доступа.|
@@ -144,8 +144,8 @@ ms.locfileid: "45984663"
     Кроме того, можно нажать **Bulk Edit** (Массовое изменение) в окне Postman справа и вставить следующий текст (замените значения идентификатора и секрета клиента):
 
         grant_type:client_credentials
-        client_id:{Your Client ID that you got from your AAD Application}
-        client_secret:{Your client secret that you got from your AAD Application's Keys}
+        client_id:{Your Client ID that you got from your Azure AD Application}
+        client_secret:{Your client secret that you got from your Azure AD Application's Keys}
         resource:https://rest.media.azure.net
 
 8. Нажмите кнопку **Отправить**.

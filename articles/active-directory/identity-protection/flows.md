@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/15/2018
+ms.date: 10/24/2018
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: 3c1c681e2c7ccd6b5fd3eaa3639853d99cb1e0b7
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 397aa000da7ea70c12883622b60c0e3e6dded811
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40005217"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50025317"
 ---
 # <a name="sign-in-experiences-with-azure-ad-identity-protection"></a>Процедуры входа с защитой идентификации Azure AD
 С помощью защиты идентификации Azure Active Directory можно:
@@ -57,13 +57,18 @@ ms.locfileid: "40005217"
 
 1. На первом шаге пользователь получает уведомление о необходимости настроить учетную запись для использования многофакторной проверки подлинности. 
    
-    ![Исправление](./media/flows/140.png "Исправление")
+    ![Исправление](./media/flows/301.png "Исправление")
+
 2. Для этого необходимо указать системе, как ей следует связываться с вами.
    
-    ![Исправление](./media/flows/141.png "Исправление")
-3. Система отправляет запрос, на который вы должны ответить.
-   
-    ![Исправление](./media/flows/142.png "Исправление")
+    ![Исправление](./media/flows/302.png "Исправление")
+
+3. Укажите свой номер телефона и предпочтительный способ связи с вами.
+
+    ![Исправление](./media/flows/303.png "Исправление")
+
+Чтобы завершить регистрацию, нужно ответить на телефонный звонок или ввести код. 
+
 
 ## <a name="risky-sign-in-recovery"></a>Восстановление входа, представлявшего риск
 Если администратор настроил политику для риска при входе, пользователи, на которых она распространяется, будут уведомлены об этом при попытке входа. 

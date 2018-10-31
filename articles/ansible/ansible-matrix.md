@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.date: 09/22/2018
 ms.topic: article
-ms.openlocfilehash: f574203f31a21f945115296693f04cff649614c6
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: a71f28413028efe3547df7c464ec852fe2161f63
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47165642"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49649947"
 ---
 # <a name="ansible-module-and-version-matrix"></a>Таблица версий и модулей Ansible
 
@@ -128,7 +128,7 @@ Ansible поставляется с большим количеством мод
 | azure_rm_autoscale_facts            | -            | -                         | -          | Yes          | Yes                                 | 
 
 ## <a name="introduction-to-playbook-role-for-azure"></a>Общие сведения о роли playbook для Azure
-[Роль azure_preview_module](https://galaxy.ansible.com/Azure/azure_preview_modules/) — наиболее полная роль playbook, которая включает в себя все последние модули Azure. Обновления и исправления выполняются более оперативно, чем для официального выпуска Ansible. Если вы используете Ansible для подготовки ресурсов Azure, рекомендуем установить роль azure_preview_module.
+[Роль azure_preview_module](https://galaxy.ansible.com/Azure/azure_preview_modules/) — наиболее полная роль playbook, которая включает в себя все последние модули Azure. Обновления и исправления выполняются более оперативно, чем для официального выпуска Ansible. Если вы используете Ansible для подготовки ресурсов Azure, рекомендуем установить роль playbook azure_preview_module.
 
 Роль playbook azure_preview_module выпускается каждые три недели.
 

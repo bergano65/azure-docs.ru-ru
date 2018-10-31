@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 04/05/2018
 ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: 98bd088d4995bd1444b059531dc5b19d0283f551
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0c045d82e47d2554c2767e6f52491c780618abc2
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46965540"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49409532"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Метрики, оповещения и журналы пакетной службы для диагностики и мониторинга
 
@@ -85,7 +85,7 @@ ms.locfileid: "46965540"
 
 * Потоковая передача событий журнала диагностики пакетной службы в [концентратор событий Azure](../event-hubs/event-hubs-what-is-event-hubs.md). Центры событий способны принимать миллионы событий в секунду, позволяя преобразовать и сохранять их с помощью любого поставщика аналитики в реальном времени. 
 
-* Отправка журналов диагностики в [Azure Log Analytics](../log-analytics/log-analytics-overview.md), где вы сможете анализировать их с помощью портала Operations Management Suite (OMS) или экспортировать для анализа в Power BI или Excel.
+* Отправьте журналы диагностики в [Log Analytics](../log-analytics/log-analytics-overview.md), где вы сможете проанализировать их или экспортировать для анализа в Power BI или Excel.
 
 > [!NOTE]
 > Хранение и (или) обработка данных журнала диагностики в службах Azure может повлечь дополнительные расходы. 

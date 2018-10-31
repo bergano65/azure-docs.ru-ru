@@ -12,12 +12,12 @@ ms.devlang: nodejs
 ms.topic: reference
 ms.date: 03/04/2018
 ms.author: glenga
-ms.openlocfilehash: 24f7faa0fb111e4e537a7db3f5e1eea709d1ca59
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: eb9387cec98621e27aff7dcb40b8897e326c6706
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46957741"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49353498"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 Это руководство содержит сведения о сложностях написания Функций Azure на языке JavaScript.
@@ -66,6 +66,8 @@ module.exports = function(context, myTrigger, myInput, myOtherInput) {
     // function logic goes here :)
     context.done();
 };
+```
+```javascript
 // You can also use 'arguments' to dynamically handle inputs
 module.exports = async function(context) {
     context.log('Number of inputs: ' + arguments.length);
@@ -79,6 +81,37 @@ module.exports = async function(context) {
 Привязки входных данных и триггера (привязки `direction === "in"`) могут передаваться в функцию в качестве параметров. Они передаются в функцию в том же порядке, в каком они определены в файле *function.json*. Вы также можете динамически обрабатывать входные данные с помощью объекта JavaScript [`arguments`](https://msdn.microsoft.com/library/87dw3w1k.aspx). Например, если у вас есть функция `function(context, a, b)` и вы изменяете ее на `function(context, a)`, то значение `b` все равно можно получить в коде функции с помощью `arguments[2]`.
 
 Все привязки, независимо от направления, также передаются в объекте `context` с помощью свойства `context.bindings`.
+
+### <a name="exporting-an-async-function"></a>Экспорт асинхронной функции
+При использовании объявления JavaScript [`async function`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) или [обещаний](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) обычной среди JavaScript (недоступны для функций версии 1.x) вам явно не нужно вызывать [`context.done` ](#contextdone-method), чтобы сообщить, что функция завершена. Ваша функция будет завершена при завершении экспортированной асинхронной функции или обещания.
+
+Например, это простая функция, которая записывает в журнал, что она была запущена, и немедленно завершает выполнение.
+``` javascript
+module.exports = async function (context) {
+    context.log('JavaScript trigger function processed a request.');
+};
+```
+
+При экспорте асинхронной функции вы также можете настроить выходные привязки, чтобы принять значение `return`. Это альтернативный подход к назначению выходных данных с помощью свойства [`context.bindings`](#contextbindings-property).
+
+Чтобы назначить выходные данные с помощью `return`, измените свойство `name` на `$return` в `function.json`.
+```json
+{
+  "type": "http",
+  "direction": "out",
+  "name": "$return"
+}
+```
+Код функции JavaScript может выглядеть следующим образом.
+```javascript
+module.exports = async function (context, req) {
+    context.log('JavaScript HTTP trigger function processed a request.');
+    // You can call and await an async method here
+    return {
+        body: "Hello, world!"
+    };
+}
+```
 
 ## <a name="context-object"></a>Объект context
 Среда выполнения использует объект `context` для передачи данных в функцию и из нее, а также для взаимодействия со средой выполнения.
@@ -342,7 +375,10 @@ module.exports = function(context) {
         .where(context.bindings.myInput.names, {first: 'Carla'});
 ```
 
-Обратите внимание, что следует определить файл `package.json` в корне вашего приложения-функции. После этого все функции в приложении будут совместно использовать одни и те же кэшированные пакеты, что обеспечивает наилучшую производительность. При возникновении конфликтов версий их можно разрешить, добавив файл `package.json` в папку определенной функции.  
+> [!NOTE]
+> Следует определить файл `package.json` в корне вашего приложения-функции. После этого все функции в приложении будут совместно использовать одни и те же кэшированные пакеты, что обеспечивает наилучшую производительность. При возникновении конфликтов версий их можно разрешить, добавив файл `package.json` в папку определенной функции.  
+
+При развертывании приложения-функции из системы управления версиями любой файл `package.json`, присутствующий в вашем репозитории, вызовет `npm install` в своей папке во время развертывания. Но при развертывании с помощью портала или интерфейса командной строки вам придется вручную устанавливать пакеты.
 
 Существует два способа установки пакетов в приложение-функцию. 
 

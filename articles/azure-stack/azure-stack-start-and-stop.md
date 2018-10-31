@@ -12,15 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/09/2018
+ms.date: 10/15/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: dd1e64d5ad6982c85a8205e3036d30a2ede92f7c
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: 6da81ab90a87285f9e1874e3f10eff4570124192
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37930296"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49344019"
 ---
 # <a name="start-and-stop-azure-stack"></a>Запуск и остановка Azure Stack
 Следуйте инструкциям по корректному завершению работы и перезапуску служб Azure Stack, приведенным в этой статье. Операция завершения работы физически отключает питание всей среды Azure Stack. Запуск включает все роли инфраструктуры и возвращает ресурсы клиента в состояние, в котором они находились до завершения работы.
@@ -90,4 +90,4 @@ ms.locfileid: "37930296"
 
 ## <a name="next-steps"></a>Дополнительная информация 
 
-Дополнительные сведения о средстве диагностики Azure Stack и регистрации проблем см. в статье [Средства диагностики Azure Stack](azure-stack-diagnostics.md).
+Дополнительные сведения о [средствах диагностики Azure Stack](azure-stack-diagnostics.md)

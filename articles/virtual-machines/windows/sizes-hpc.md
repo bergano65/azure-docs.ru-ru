@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 07/06/2018
+ms.date: 10/12/2018
 ms.author: jonbeck
-ms.openlocfilehash: 31e81741d2a627888e478b3871bdbab4e6b6d6f5
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: e00a4c5f5ee307a2d574702844e481894d28cb93
+ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37902645"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49340313"
 ---
 # <a name="high-performance-compute-vm-sizes"></a>Размеры виртуальных машин, оптимизированных для высокопроизводительных вычислений
 
@@ -50,12 +50,19 @@ ms.locfileid: "37902645"
   
   Дополнительные сведения см. в статье [Обзор расширений и компонентов виртуальной машины под управлением Windows](extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Вы также можете работать с расширениями для виртуальных машин, развернутых в рамках [классической модели развертывания](classic/manage-extensions.md).
 
+### <a name="cluster-configuration-options"></a>Параметры конфигурации кластера
 
-## <a name="using-hpc-pack"></a>Использование пакета HPC
+Azure предоставляет несколько вариантов для создания кластеров виртуальных машин для Windows HPC, которые могут взаимодействовать с помощью сети RDMA. 
 
-[Пакет Microsoft HPC](https://technet.microsoft.com/library/jj899572.aspx). Бесплатный кластер высокопроизводительных вычислений Майкрософт и решение для управления заданиями — это один из вариантов создания вычислительного кластера в Azure для выполнения приложений MPI под управлением Windows и других рабочих нагрузок HPC. Пакет HPC 2012 R2 и более поздних версий включает среду выполнения для MS-MPI, которая использует сеть Azure RDMA при развертывании на виртуальных машинах с поддержкой RDMA.
+* **Виртуальные машины**. Разверните виртуальные машины HPC с поддержкой RDMA в одну группу доступности (используя модель развертывания Azure Resource Manager). Если вы используете классическую модель развертывания, разверните виртуальные машины в одну облачную службу. 
 
+* **Масштабируемый набор виртуальных машин**. В масштабируемом наборе виртуальных машин ограничьте развертывание одной группой размещения. Например, в шаблоне Resource Manager задайте значение `true` для свойства `singlePlacementGroup`. 
 
+* **Azure CycleCloud**. Создайте кластер HPC в [Azure CycleCloud](/azure/cyclecloud/), чтобы запустить задания MPI на узлах Windows.
+
+* **Пакетная служба Azure**. Создайте пул [пакетной службы Azure](/azure/batch/) для выполнения рабочих нагрузок MPI на вычислительных узлах Windows Server. Дополнительные сведения см. в статье [Использование экземпляров с поддержкой RDMA или графического процессора (GPU) в пулах пакетной службы](../../batch/batch-pool-compute-intensive-sizes.md). Чтобы запустить рабочие нагрузки на основе контейнера в пакетной службе, ознакомьтесь с проектом [Batch Shipyard](https://github.com/Azure/batch-shipyard).
+
+* **Пакет Microsoft HPC** - [Пакет HPC](https://docs.microsoft.com/powershell/high-performance-computing/overview) включает среду выполнения для MS-MPI, которая использует сеть Azure RDMA при развертывании на виртуальных машинах Windows с поддержкой RDMA. Примеры развертываний см. в статье [Настройка кластера RDMA в Windows с помощью пакета HPC для запуска приложений MPI](classic/hpcpack-rdma-cluster.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
 
 ## <a name="other-sizes"></a>Остальные размеры
 - [Универсальные](sizes-general.md)

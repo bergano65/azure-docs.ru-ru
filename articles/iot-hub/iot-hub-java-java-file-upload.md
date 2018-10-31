@@ -2,19 +2,18 @@
 title: Отправка файлов с устройств в Центр Интернета вещей Azure с помощью Java | Документация Майкрософт
 description: Сведения об отправке файлов с устройства в облако с помощью пакета SDK для устройств Центра Интернета вещей Azure для Java. Отправленные файлы хранятся в контейнере больших двоичных объектов службы хранилища Azure.
 author: dominicbetts
-manager: timlt
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 06/28/2017
 ms.author: dobett
-ms.openlocfilehash: 57faff3a95e5b4ccdbc44cb7adb77d34694042c9
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 74761448b88daa93e11fe45256c4d2fc75833b0f
+ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47220384"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49376453"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub"></a>Передача файлов с устройства в облако с помощью Центра Интернета вещей
 
@@ -22,10 +21,11 @@ ms.locfileid: "47220384"
 
 В этом руководстве используется код статьи [Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (Java)](iot-hub-java-java-c2d.md), чтобы показать, как использовать [возможности передачи файлов Центра Интернета вещей](iot-hub-devguide-file-upload.md) для передачи файлов в [хранилище BLOB-объектов Azure](../storage/index.yml). В этом руководстве описаны следующие процедуры.
 
-- как безопасно предоставить устройству универсальный код ресурса (URI) большого двоичного объекта Azure для передачи файла;
-- как использовать уведомления о передаче файлов Центра Интернета вещей для активации обработки файла в серверной части приложения.
+* как безопасно предоставить устройству универсальный код ресурса (URI) большого двоичного объекта Azure для передачи файла;
 
-В руководствах [Подключение устройства к Центру Интернета вещей с помощью .NET](quickstart-send-telemetry-java.md) и [Отправка сообщений из облака в виртуальное устройство с помощью Центра Интернета вещей (.NET)](iot-hub-java-java-c2d.md) описаны базовые функции Центра Интернета вещей для обмена сообщениями между устройством и облаком. В статье [Руководство. Как обрабатывать сообщения, отправляемые с устройства Центра Интернета вещей в облако, с помощью .NET](tutorial-routing.md) описан способ надежного хранения сообщений, отправляемых с устройства в облако, в хранилище больших двоичных объектов. Тем не менее в некоторых случаях не просто сопоставить данные, отправляемые устройством, с относительно небольшими сообщениями, отправляемыми из устройства в облако, которые принимает Центр Интернета вещей. Например: 
+* как использовать уведомления о передаче файлов Центра Интернета вещей для активации обработки файла в серверной части приложения.
+
+В статьях [Краткое руководство. Отправка данных телеметрии с устройства в Центр Интернета вещей и чтение данных телеметрии из центра с помощью внутреннего приложения (Java)](quickstart-send-telemetry-java.md) и [Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (Java)](iot-hub-java-java-c2d.md) описаны базовые функции Центра Интернета вещей для обмена сообщениями между устройством и облаком. В статье [Руководство. Настройка маршрутизации сообщений с Центром Интернета вещей](tutorial-routing.md) описан способ надежного хранения сообщений, отправляемых с устройства в облако, в хранилище BLOB-объектов Azure. Тем не менее в некоторых случаях не просто сопоставить данные, отправляемые устройством, с относительно небольшими сообщениями, отправляемыми из устройства в облако, которые принимает Центр Интернета вещей. Например: 
 
 * Большие файлы, содержащие изображения.
 * Видеоролики
@@ -37,15 +37,18 @@ ms.locfileid: "47220384"
 В конце этого руководства запускаются два консольных приложения для Java:
 
 * **simulated-device** — измененная версия приложения, созданного в руководстве "Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (Java)". Это приложение передает файл в хранилище с помощью универсального кода ресурса (URI) SAS, предоставленного вашим Центром Интернета вещей.
+
 * **read-file-upload-notification** — приложение, которое получает уведомления о передаче файлов от Центра Интернета вещей.
 
 > [!NOTE]
-> Существуют пакеты SDK для устройств Центра Интернета вещей Azure, обеспечивающие поддержку многих платформ устройств и языков (включая C, .NET и JavaScript) в Центре Интернета вещей. Пошаговые инструкции по подключению устройства к Центру Интернета вещей Azure см. в [Центре разработчика для Центра Интернета вещей Azure].
+> Существуют пакеты SDK для устройств Центра Интернета вещей Azure, обеспечивающие поддержку многих платформ устройств и языков (включая C, .NET и JavaScript) в Центре Интернета вещей. Пошаговые инструкции по подключению устройства к Центру Интернета вещей Azure см. в [Центре разработчика для Центра Интернета вещей Azure](http://azure.microsoft.com/develop/iot).
 
 Для работы с этим учебником требуется:
 
 * Последняя версия [пакета SDK для Java SE 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+
 * [Maven 3](https://maven.apache.org/install.html)
+
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](http://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 [!INCLUDE [iot-hub-associate-storage](../../includes/iot-hub-associate-storage.md)]
@@ -56,15 +59,15 @@ ms.locfileid: "47220384"
 
 1. Скопируйте файл образа в папку `simulated-device` и переименуйте его на `myimage.png`.
 
-1. Откройте в текстовом редакторе файл `simulated-device\src\main\java\com\mycompany\app\App.java`.
+2. Откройте в текстовом редакторе файл `simulated-device\src\main\java\com\mycompany\app\App.java`.
 
-1. Добавьте объявление переменной в класс **App**:
+3. Добавьте объявление переменной в класс **App**:
 
     ```java
     private static String fileName = "myimage.png";
     ```
 
-1. Для обработки сообщений обратного вызова состояния передачи файлов добавьте приведенный ниже вложенный класс в класс **App**:
+4. Для обработки сообщений обратного вызова состояния передачи файлов добавьте приведенный ниже вложенный класс в класс **App**:
 
     ```java
     // Define a callback method to print status codes from IoT Hub.
@@ -76,7 +79,7 @@ ms.locfileid: "47220384"
     }
     ```
 
-1. Для отправки образов в Центр Интернета вещей добавьте следующий метод в класс **App**:
+5. Для отправки образов в Центр Интернета вещей добавьте следующий метод в класс **App**:
 
     ```java
     // Use IoT Hub to upload a file asynchronously to Azure blob storage.
@@ -90,7 +93,7 @@ ms.locfileid: "47220384"
     }
     ```
 
-1. Измените метод **main** для вызова метода **uploadFile**, как показано в следующем фрагменте кода:
+6. Измените метод **main** для вызова метода **uploadFile**, как показано в следующем фрагменте кода:
 
     ```java
     client.open();
@@ -110,7 +113,7 @@ ms.locfileid: "47220384"
     MessageSender sender = new MessageSender();
     ```
 
-1. Используйте следующую команду, чтобы создать приложение **simulated-device**, и проверьте наличие ошибок:
+7. Используйте следующую команду, чтобы создать приложение **simulated-device**, и проверьте наличие ошибок:
 
     ```cmd/sh
     mvn clean package -DskipTests
@@ -128,9 +131,9 @@ ms.locfileid: "47220384"
     mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=read-file-upload-notification -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     ```
 
-1. В командной строке перейдите к новой папке `read-file-upload-notification`.
+2. В командной строке перейдите к новой папке `read-file-upload-notification`.
 
-1. Откройте в текстовом редакторе файл `pom.xml` из папки `read-file-upload-notification` и добавьте зависимости, приведенные ниже, в узел **dependencies**. Добавление зависимости позволяет использовать в приложении пакет **iothub-java-service-client** для обмена данными со службой Центра Интернета вещей.
+3. Откройте в текстовом редакторе файл `pom.xml` из папки `read-file-upload-notification` и добавьте зависимости, приведенные ниже, в узел **dependencies**. Добавление зависимости позволяет использовать в приложении пакет **iothub-java-service-client** для обмена данными со службой Центра Интернета вещей.
 
     ```xml
     <dependency>
@@ -143,11 +146,11 @@ ms.locfileid: "47220384"
     > [!NOTE]
     > Наличие последней версии пакета **iot-service-client** можно проверить с помощью [поиска Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-service-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22).
 
-1. Сохраните и закройте файл `pom.xml`.
+4. Сохраните и закройте файл `pom.xml`.
 
-1. Откройте в текстовом редакторе файл `read-file-upload-notification\src\main\java\com\mycompany\app\App.java`.
+5. Откройте в текстовом редакторе файл `read-file-upload-notification\src\main\java\com\mycompany\app\App.java`.
 
-1. Добавьте в файл следующие инструкции **import** .
+6. Добавьте в файл следующие инструкции **import** .
 
     ```java
     import com.microsoft.azure.sdk.iot.service.*;
@@ -157,7 +160,7 @@ ms.locfileid: "47220384"
     import java.util.concurrent.Executors;
     ```
 
-1. Добавьте следующие переменные уровня класса в класс **App** .
+7. Добавьте следующие переменные уровня класса в класс **App** .
 
     ```java
     private static final String connectionString = "{Your IoT Hub connection string}";
@@ -165,7 +168,7 @@ ms.locfileid: "47220384"
     private static FileUploadNotificationReceiver fileUploadNotificationReceiver = null;
     ```
 
-1. Для вывода сведений о передаче файла в консоль добавьте следующий вложенный класс в класс **App**:
+8. Для вывода сведений о передаче файла в консоль добавьте следующий вложенный класс в класс **App**:
 
     ```java
     // Create a thread to receive file upload notifications.
@@ -192,7 +195,7 @@ ms.locfileid: "47220384"
     }
     ```
 
-1. Чтобы запустить поток, который ожидает уведомления о передаче файлов, добавьте следующий код в метод **main**:
+9. Чтобы запустить поток, который ожидает уведомления о передаче файлов, добавьте следующий код в метод **main**:
 
     ```java
     public static void main(String[] args) throws IOException, URISyntaxException, Exception {
@@ -220,9 +223,9 @@ ms.locfileid: "47220384"
     }
     ```
 
-1. Сохраните и закройте файл `read-file-upload-notification\src\main\java\com\mycompany\app\App.java`.
+10. Сохраните и закройте файл `read-file-upload-notification\src\main\java\com\mycompany\app\App.java`.
 
-1. Используйте следующую команду, чтобы создать приложение **read-file-upload-notification**, и проверьте наличие ошибок:
+11. Используйте следующую команду, чтобы создать приложение **read-file-upload-notification**, и проверьте наличие ошибок:
 
     ```cmd/sh
     mvn clean package -DskipTests
@@ -260,36 +263,10 @@ mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
 
 В этом руководство показано, как использовать возможности передачи файлов Центра Интернета вещей, чтобы упростить передачу файлов из устройств. Изучение функций и сценариев Центра Интернета вещей можно продолжить в следующих руководствах:
 
-* [Создание Центра Интернета вещей с помощью PowerShell][lnk-create-hub]
-* [Знакомство с пакетом SDK для устройств Центра Интернета вещей Azure для C][lnk-c-sdk]
-* [IoT Hub SDKs][lnk-sdks] (Пакеты SDK для Центра Интернета вещей)
+* [Создание Центра Интернета вещей с помощью шаблона Azure Resource Manager (PowerShell)](iot-hub-rm-template-powershell.md)
+* [Пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md)
+* [Пакеты SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
-* [Simulating a device with IoT Edge][lnk-iotedge] (Моделирование устройства с помощью Edge Интернета вещей)
-
-<!-- Images. -->
-
-[50]: ./media/iot-hub-csharp-csharp-file-upload/run-apps1.png
-[1]: ./media/iot-hub-csharp-csharp-file-upload/image-properties.png
-[2]: ./media/iot-hub-csharp-csharp-file-upload/file-upload-project-csharp1.png
-[3]: ./media/iot-hub-csharp-csharp-file-upload/enable-file-notifications.png
-
-<!-- Links -->
-
-
-
-[Центре разработчика для Центра Интернета вещей Azure]: http://azure.microsoft.com/develop/iot
-
-[Azure Storage]:../storage/common/storage-quickstart-create-account.md
-[lnk-configure-upload]: iot-hub-configure-file-upload.md
-[Azure IoT service SDK NuGet package]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
-[lnk-free-trial]: http://azure.microsoft.com/pricing/free-trial/
-
-[lnk-create-hub]: iot-hub-rm-template-powershell.md
-[lnk-c-sdk]: iot-hub-device-sdk-c-intro.md
-[lnk-sdks]: iot-hub-devguide-sdks.md
-
-[lnk-iotedge]: ../iot-edge/tutorial-simulate-device-linux.md
-
-
+* [Моделирование устройства с помощью Edge Интернета вещей](../iot-edge/tutorial-simulate-device-linux.md).

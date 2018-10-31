@@ -1,31 +1,31 @@
 ---
-title: Настройка пользовательского интерфейса с помощью настраиваемых политик в Azure Active Directory B2C| Документация Майкрософт
-description: Сведения о настройке пользовательского интерфейса с помощью настраиваемых политик в Azure AD B2C.
+title: Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C | Документация Майкрософт
+description: Дополнительные сведения о настройке пользовательского интерфейса с помощью настраиваемой политики в Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 04/04/2017
+ms.date: 10/23/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 9908a7cf96c56e414e0a8d7faea0352b60214ea4
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: f36d08a397836f17ec25a61e77cb1db5ce10b9d4
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37446169"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945066"
 ---
-# <a name="azure-active-directory-b2c-configure-ui-customization-in-a-custom-policy"></a>Azure Active Directory B2C. Настройка пользовательского интерфейса с помощью настраиваемой политики
+# <a name="customize-the-user-interface-of-your-application-using-a-custom-policy-in-azure-active-directory-b2c"></a>Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
 Выполнив инструкции из этой статьи, вы получите настраиваемую политику регистрации и входа с фирменной символикой и оформлением. Благодаря Azure Active Directory B2C (Azure AD B2C) вы получаете практически полный контроль над содержимым HTML и CSS, которое представляется пользователям. При использовании настраиваемой политики вы настраиваете пользовательский интерфейс в XML-файле, а не с помощью элементов управления на портале Azure. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем продолжить, ознакомьтесь со статьей [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](active-directory-b2c-get-started-custom.md). Для регистрации и входа с использованием локальных учетных записей необходимо иметь рабочую настраиваемую политику.
+Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md). Для регистрации и входа с использованием локальных учетных записей необходимо иметь рабочую настраиваемую политику.
 
 ## <a name="page-ui-customization"></a>Настройка пользовательского интерфейса страницы
 
@@ -119,27 +119,44 @@ ms.locfileid: "37446169"
 2. Щелкните **Send Request** (Отправить запрос).  
     Если произошла ошибка, проверьте правильность [параметров CORS](#configure-cors). Кроме того, вам может потребоваться очистить кэш браузера или открыть закрытый сеанс, нажав CTRL+SHIFT+P.
 
-## <a name="modify-your-sign-up-or-sign-in-custom-policy"></a>Изменение настраиваемой политики регистрации или входа
+## <a name="modify-the-extensions-file"></a>Изменение файла расширений
 
-Под тегом *\<TrustFrameworkPolicy\>* верхнего уровня найдите теги *\<BuildingBlocks\>*. Между тегами *\<BuildingBlocks\>* добавьте тег *\<ContentDefinitions\>*, скопировав пример ниже. Замените свойство *your_storage_account* именем своей учетной записи хранения.
+Чтобы настроить пользовательский интерфейс, скопируйте **ContentDefinition** вместе с дочерним элементом из базового файла в файл расширений.
 
-  ```xml
-  <BuildingBlocks>
-    <ContentDefinitions>
-      <ContentDefinition Id="api.idpselections">
-        <LoadUri>https://{your_storage_account}.blob.core.windows.net/customize-ui.html</LoadUri>
-        <DataUri>urn:com:microsoft:aad:b2c:elements:idpselection:1.0.0</DataUri>
-      </ContentDefinition>
-    </ContentDefinitions>
-  </BuildingBlocks>
-  ```
+1. Откройте базовый файл политики. Например, *TrustFrameworkBase.xml*.
+2. Найдите и скопируйте содержимое элемента **ContentDefinitions**.
+3. Откройте файл расширения, Например, *TrustFrameworkExtensions.xml*. Найдите элемент **BuildingBlocks**. Если такой элемент не существует, добавьте его.
+4. Вставьте содержимое скопированного элемента **ContentDefinitions** в качестве дочернего элемента **BuildingBlocks**. 
+5. Найдите элемент **ContentDefinition**, содержащий `Id="api.signuporsignin"` в скопированном файле XML.
+6. Измените значение **LoadUri** на URL-адрес файла HTML, который был передан в хранилище. Например, на https://mystore1.azurewebsites.net/b2c/customize-ui.html.
+    
+    Пользовательская политика должна выглядеть следующим образом:
+
+    ```xml
+    <BuildingBlocks>
+      <ContentDefinitions>
+        <ContentDefinition Id="api.signuporsignin">
+          <LoadUri>https://your-storage-account.blob.core.windows.net/your-container/customize-ui.html</LoadUri>
+          <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+          <DataUri>urn:com:microsoft:aad:b2c:elements:unifiedssp:1.0.0</DataUri>
+          <Metadata>
+            <Item Key="DisplayName">Signin and Signup</Item>
+          </Metadata>
+        </ContentDefinition>
+      </ContentDefinitions>
+    </BuildingBlocks>
+    ```
+
+7. Сохраните файл расширений.
 
 ## <a name="upload-your-updated-custom-policy"></a>Отправка обновленной настраиваемой политики
 
-1. На [портале Azure](https://portal.azure.com) [переключитесь в контекст клиента Azure AD B2C](active-directory-b2c-navigate-to-b2c-context.md) и откройте колонку **Azure AD B2C**.
+1. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
+4. Выберите **Инфраструктура процедур идентификации**.
 2. Щелкните **Все политики**.
 3. Выберите **Отправить политику**.
-4. Отправьте `SignUpOrSignin.xml` с добавленным ранее тегом *\<ContentDefinitions\>*.
+4. Выполните отправку ранее измененного файла расширений.
 
 ## <a name="test-the-custom-policy-by-using-run-now"></a>Тестирование настраиваемой политики с помощью параметра **Запустить сейчас**
 

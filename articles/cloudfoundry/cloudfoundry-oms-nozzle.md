@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/22/2017
 ms.author: ningk
-ms.openlocfilehash: c58c2b255d269aef7e8b3fea62d003ad0c16ef0a
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 0039536caf917a051f0ddabd6be7cf2b1be90ba2
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38971254"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49404908"
 ---
 # <a name="deploy-azure-log-analytics-nozzle-for-cloud-foundry-system-monitoring"></a>Развертывание компонента Azure Log Analytics Nozzle для мониторинга системы Cloud Foundry
 
@@ -30,7 +30,7 @@ Log Analytics Nozzle (Nozzle) — это компонент Cloud Foundry (CF),
 
 В этом документе объясняется, как развернуть компонент Nozzle в среде CF, а затем получить доступ к данным из консоли Log Analytics.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для развертывания Nozzle необходимо выполнить следующие шаги.
 
@@ -56,14 +56,14 @@ Nozzle запускается как приложение в среде CF. Дл
 
 ### <a name="3-create-a-log-analytics-workspace-in-azure"></a>3. Создание рабочей области Log Analytics в Azure
 
-Рабочую область Log Analytics можно создать вручную или с помощью шаблона. Этот шаблон выполнит развертывание установки предварительно настроенных представлений ключевых показателей эффективности OMS и оповещений для консоли OMS. 
+Рабочую область Log Analytics можно создать вручную или с помощью шаблона. Этот шаблон выполнит развертывание установки предварительно настроенных представлений ключевых показателей эффективности и оповещений для консоли Log Analytics. 
 
 #### <a name="to-create-the-workspace-manually"></a>Чтобы создать рабочую область OMS вручную, сделайте следующее:
 
 1. На портале Azure найдите в списке служб в Azure Marketplace службу Log Analytics и выберите ее.
 2. Выберите **Создать** и задайте следующие параметры:
 
-   * **Рабочая область OMS**: введите имя рабочей области.
+   * **Рабочая область Log Analytics**. Введите имя рабочей области.
    * **Подписка**: если у вас несколько подписок, выберите ту же подписку, в которой содержится развертывание CF.
    * **Группа ресурсов**: можно создать группу ресурсов или использовать группу ресурсов с развертыванием CF.
    * **Расположение**: введите расположение.
@@ -71,19 +71,19 @@ Nozzle запускается как приложение в среде CF. Дл
 
 Дополнительные сведения см. в статье [Начало работы с Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-get-started).
 
-#### <a name="to-create-the-oms-workspace-through-the-oms-monitoring-template-from-azure-market-place"></a>Чтобы создать рабочую область OMS с использованием шаблона мониторинга OMS из Azure Marketplace, сделайте следующее:
+#### <a name="to-create-the-log-analytics-workspace-through-the-monitoring-template-from-azure-market-place"></a>Чтобы создать рабочую область Log Analytics с использованием шаблона мониторинга из Azure Marketplace, сделайте следующее:
 
 1. Откройте портал Azure.
 2. Щелкните знак "+" или "Создать ресурс" в левом верхнем углу.
-3. Введите Cloud Foundry в окне поиска и выберите "Решение для мониторинга OMS Cloud Foundry".
-4. Загрузится начальная страница шаблона решения для мониторинга OMS Cloud Foundry. Щелкните "Создать", чтобы открыть колонку шаблона.
+3. Введите Cloud Foundry в окне поиска и выберите "Решение для мониторинга Cloud Foundry".
+4. Загрузится начальная страница шаблона решения для мониторинга Cloud Foundry. Щелкните "Создать", чтобы открыть колонку шаблона.
 5. Введите обязательные параметры.
-    * **Подписка.** Выберите подписку Azure для рабочей области OMS (обычно это та же подписка, что и в развертывании Cloud Foundry).
-    * **Группа ресурсов.** Выберите имеющуюся группу ресурсов или создайте ее для рабочей области OMS.
+    * **Подписка.** Выберите подписку Azure для рабочей области Log Analytics (обычно это та же подписка, что и в развертывании Cloud Foundry).
+    * **Группа ресурсов.** Выберите имеющуюся группу ресурсов или создайте ее для рабочей области Log Analytics.
     * **Расположение группы ресурсов.** Выберите расположение группы ресурсов.
     * **Имя рабочей области OMS**. Введите название рабочей области (если рабочей области нет, шаблон создаст ее).
     * **Регион рабочей области OMS**. Выберите расположение рабочей области.
-    * **Ценовая категория рабочей области OMS**. Выберите номер SKU рабочей области OMS. Дополнительные сведения см. в разделе, посвященном [ценовым рекомендациям](https://azure.microsoft.com/pricing/details/log-analytics/).
+    * **Ценовая категория рабочей области OMS.** Выберите номер SKU рабочей области Log Analytics. Дополнительные сведения см. в разделе, посвященном [ценовым рекомендациям](https://azure.microsoft.com/pricing/details/log-analytics/).
     * **Условия использования.** Выберите "Условия использования" и щелкните "Создать", чтобы принять условия.
 - Указав все параметры, щелкните "Создать", чтобы развернуть шаблон. После завершения развертывания на вкладке уведомлений появится состояние.
 
@@ -137,8 +137,8 @@ cd oms-log-analytics-firehose-nozzle
 Теперь в текущем каталоге можно задать переменные среды в файле manifest.yml. Ниже показан манифест приложения для Nozzle. Замените значения своими данными рабочей области Log Analytics.
 
 ```
-OMS_WORKSPACE             : Log Analytics workspace ID: open OMS portal from your Log Analytics workspace, select Settings, and select connected sources.
-OMS_KEY                   : OMS key: open OMS portal from your Log Analytics workspace, select Settings, and select connected sources.
+OMS_WORKSPACE             : Log Analytics workspace ID: Open your Log Analytics workspace in the Azure portal, select **Advanced settings**, select **Connected Sources**, and select **Windows Servers**.
+OMS_KEY                   : OMS key: Open your Log Analytics workspace in the Azure portal, select **Advanced settings**, select **Connected Sources**, and select **Windows Servers**.
 OMS_POST_TIMEOUT          : HTTP post timeout for sending events to Log Analytics. The default is 10 seconds.
 OMS_BATCH_TIME            : Interval for posting a batch to Log Analytics. The default is 10 seconds.
 OMS_MAX_MSG_NUM_PER_BATCH : The maximum number of messages in a batch to Log Analytics. The default is 1000.
@@ -177,11 +177,11 @@ cf apps
 ```
 Убедитесь, что приложение Nozzle OMS выполняется.
 
-## <a name="view-the-data-in-the-oms-portal"></a>Просмотр данных на портале OMS
+## <a name="view-the-data-in-the-azure-portal"></a>Просмотр данных на портале Azure
 
-Если вы развернули решение для мониторинга OMS с помощью шаблона Marketplace, перейдите на портал Azure и найдите решение OMS. Решение можно найти в группе ресурсов, указанной в шаблоне. Щелкните решение, перейдите к разделу OMS Console (Консоль OMS), где содержатся все предварительно настроенные представления, а также главные ключевые показатели эффективности для системы Cloud Foundry, данные приложений, оповещения и данные метрик работоспособности виртуальной машины. 
+Если вы развернули решение для мониторинга с помощью шаблона Marketplace, перейдите на портал Azure и найдите решение. Решение можно найти в группе ресурсов, указанной в шаблоне. Щелкните решение, перейдите к разделу Log Analytics Console (Консоль Log Analytics), где содержатся все предварительно настроенные представления, а также главные ключевые показатели эффективности для системы Cloud Foundry, данные приложений, оповещения и данные метрик работоспособности виртуальной машины. 
 
-Если вы создали рабочую область OMS вручную, выполните следующие действия, чтобы создать представления и оповещения.
+Если вы создали рабочую область Log Analytics вручную, выполните следующие действия, чтобы создать представления и оповещения.
 
 ### <a name="1-import-the-oms-view"></a>1. Импорт представления OMS
 
@@ -246,6 +246,6 @@ Azure Log Analytics Nozzle является компонентом с откры
 
 ## <a name="next-step"></a>Дальнейшие действия
 
-В PCF 2.0 сервер пересылки системных метрик передает данные метрик производительности виртуальной машины в Azure Log Analytics Nozzle. Затем эти данные интегрируются в рабочую область OMS. Вам больше не нужно использовать агент OMS для получения метрик производительности виртуальной машины. Однако агент OMS по-прежнему можно применять для сбора данных системного журнала. Он устанавливается на виртуальные машины CF в виде надстройки Bosh. 
+В PCF 2.0 сервер пересылки системных метрик передает данные метрик производительности виртуальной машины в Azure Log Analytics Nozzle. Затем эти данные интегрируются в рабочую область Log Analytics. Вам больше не нужно использовать агент Log Analytics для получения метрик производительности виртуальной машины. Однако агент Log Analytics по-прежнему можно применять для сбора данных системного журнала. Он устанавливается на виртуальные машины CF в виде надстройки Bosh. 
 
-Дополнительные сведения см. в разделе [Deploy OMS agent to your Cloud Foundry deployment](https://github.com/Azure/oms-agent-for-linux-boshrelease) (Развертывание агента OMS в развертывании Cloud Foundry).
+Дополнительные сведения см. в разделе [Deploy Log Analytics agent to your Cloud Foundry deployment](https://github.com/Azure/oms-agent-for-linux-boshrelease) (Развертывание агента Log Analytics в развертывании Cloud Foundry).

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/26/2018
 ms.author: bwren
-ms.openlocfilehash: 3154a2f8b283f68ec3e10ba621ccba3ee6d77de2
-ms.sourcegitcommit: 465ae78cc22eeafb5dfafe4da4b8b2138daf5082
+ms.openlocfilehash: 82cfa9e62dcc6b3a72dcb1ccf97f1f52a88a75c4
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44324756"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49404109"
 ---
 # <a name="data-collection-details-for-management-solutions-in-azure"></a>Информация о сборе данных для решений по управлению в Azure
 Эта статья содержит список [решений по управлению](monitoring-solutions.md), предлагаемых корпорацией Майкрософт, со ссылками на подробную документацию по ним.  Также вы здесь найдете сведения о методах и частоте сбора данных в Log Analytics.  Сведения в этой статье помогут вам оценить доступные решения и изучить потоки данных и требования к подключению для разных решений по управлению. 
@@ -34,7 +34,7 @@ ms.locfileid: "44324756"
 - **Operations Manager** — это точно такой же агент, как Microsoft Monitoring Agent. Но в этой конфигурации он [подключается к группе управления Operations Manager](../log-analytics/log-analytics-om-agents.md), которая в свою очередь подключена к Log Analytics. 
 -  **Хранилище Azure** означает, что решение собирает данные через учетную запись хранения Azure. 
 - **Нужен ли Operations Manager?** Подключение к группе управления Operations Manager является обязательным условием для сбора данных с помощью этого решения по управлению. 
-- **Данные агента Operations Manager отправляются через группу управления**. Если агент [подключен к группе управления SCOM](../log-analytics/log-analytics-om-agents.md), то он отправляет данные в Log Analytics с сервера управления. В этой конфигурации агенту не требуется прямое подключение к службе Log Analytics. Если в этом поле нет отметки, все данные отправляются от агента напрямую в Log Analytics даже в том случае, если агент подключен к группе управления SCOM. Это означает, что ему требуется возможность взаимодействовать с Log Analytics через [шлюз OMS](../log-analytics/log-analytics-oms-gateway.md).
+- **Данные агента Operations Manager отправляются через группу управления**. Если агент [подключен к группе управления SCOM](../log-analytics/log-analytics-om-agents.md), то он отправляет данные в Log Analytics с сервера управления. В этой конфигурации агенту не требуется прямое подключение к службе Log Analytics. Если в этом поле нет отметки, все данные отправляются от агента напрямую в Log Analytics даже в том случае, если агент подключен к группе управления SCOM. Это означает, что ему требуется возможность взаимодействовать с Log Analytics через [шлюз Log Analytics](../log-analytics/log-analytics-oms-gateway.md).
 - **Частота сбора** обозначает частоту сбора данных в этом решении по управлению. 
 
 

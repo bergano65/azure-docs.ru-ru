@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: 7971a5aeadd2b2edaa43da8bacae9743937ce30e
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 59f2860168782d96bf82d0a27f9bb9eeed0f1020
+ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46127352"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49167500"
 ---
 # <a name="customize-the-remote-monitoring-solution-accelerator"></a>Настройка акселератора решений для удаленного мониторинга
 
@@ -460,9 +460,15 @@ See the [Connect an external visualization tool](https://github.com/Azure/azure-
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке пользовательского веб-интерфейса в акселераторе решений для удаленного мониторинга.
+Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке пользовательского веб-интерфейса в акселераторе решений для удаленного мониторинга. Чтобы узнать больше о настройке пользовательского интерфейса, обратитесь к следующим статьям:
+
+* [Добавление пользовательской страницы в веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-page.md)
+* [Добавление пользовательской службы в веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-service.md)
+* [Добавление пользовательской сетки в веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-grid.md)
+* [Добавление пользовательского всплывающего элемента в веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-flyout.md)
+* [Добавление пользовательской панели на панель мониторинга в веб-интерфейсе акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-panel.md)
 
 Более подробные сведения об акселераторе решений для удаленного мониторинга см. в статье [Архитектура предварительно настроенного решения удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md).
 
-Дополнительные сведения о настройке решения для удаленного мониторинга см. в статье [Настройка и повторное развертывание микрослужбы](iot-accelerators-microservices-example.md)
-<!-- Next tutorials in the sequence -->.
+Дополнительные сведения о настройке решения для удаленного мониторинга микрослужб см. в статье [Настройка и повторное развертывание микрослужбы](iot-accelerators-microservices-example.md).
+<!-- Next tutorials in the sequence -->

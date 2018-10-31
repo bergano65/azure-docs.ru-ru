@@ -10,12 +10,12 @@ ms.author: jehunte
 ms.date: 03/30/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 30569c3a89de320769d433b5b3a4af9cf4e08e66
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 761bb1a6974afd5e7b851efb0c60101ab7d8958b
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47091412"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49403616"
 ---
 # <a name="manage-an-azure-virtual-machine-with-inventory-collection"></a>Управление виртуальной машиной Azure с помощью сбора данных инвентаризации
 
@@ -114,6 +114,10 @@ ms.locfileid: "47091412"
 1. В левой области на портале Azure выберите **Log Analytics**, а затем выберите рабочую область, используемую при подключении виртуальной машины.
 2. В окне **Log Analytics** в меню **Ресурс** в категории **Workspace Data Sources** (Источники данных рабочей области) выберите **Виртуальные машины**.
 3. Из списка выберите виртуальную машину, которую необходимо отключить. Рядом с ней будет зеленый флажок с текстом **This workspace** (Эта рабочая область) в столбце **OMS Connection** (Подключение OMS).
+
+   >[!NOTE]
+   >OMS теперь называется Log Analytics.
+   
 4. В верхней части следующей страницы выберите **Отключить**.
 5. В диалоговом окне подтверждения выберите **Да**.
     Это действие отключает компьютер от управления.

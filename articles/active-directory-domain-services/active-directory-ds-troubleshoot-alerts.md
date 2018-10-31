@@ -12,15 +12,15 @@ ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
-ms.date: 02/28/2018
+ms.topic: article
+ms.date: 10/17/2018
 ms.author: ergreenl
-ms.openlocfilehash: 6be67a92c95ccf1161ffeeb636ee4f998c65fa05
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: 0eb028e419f05843da308c824d79a8f4e1883fb2
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39503695"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49429751"
 ---
 # <a name="azure-ad-domain-services---troubleshoot-alerts"></a>Доменные службы Azure Active Directory. Устранение неполадок: предупреждения
 В этой статье содержатся руководства по устранению любых неполадок, возникающих в управляемом домене.
@@ -39,7 +39,7 @@ ms.locfileid: "39503695"
 | AADDS105 | *Субъект-служба с идентификатором приложения d87dcbc6-a371-462e-88e3-28ad15ec4e64 был удален и создан снова. Повторное создание позволяет избавиться от несогласованных разрешений для ресурсов доменных служб Azure AD, необходимых для обслуживания управляемого домена. Это может повлиять на синхронизацию паролей для управляемого домена.* | [Приложение синхронизации паролей устарело](active-directory-ds-troubleshoot-service-principals.md#alert-aadds105-password-synchronization-application-is-out-of-date) |
 | AADDS500 | *Управляемый домен последний раз синхронизировался с Azure AD [дата]. Возможно, пользователям не удастся выполнить вход на управляемый домен или членства в группах могут быть не синхронизированы с Azure AD.* | [Синхронизация не выполнена спустя некоторое время](#aadds500-synchronization-has-not-completed-in-a-while) |
 | AADDS501 | *Последняя резервная копия управляемого домена создана [дата].* | [Резервная копия не создана спустя некоторое время](#aadds501-a-backup-has-not-been-taken-in-a-while) |
-| AADDS502 | *Срок действия защищенного сертификата LDAP для управляемого домена истекает [дата]].* | [Истечение срока действия безопасного сертификата LDAP](active-directory-ds-troubleshoot-ldaps.md#aadds502-secure-ldap-certificate-expiring) |
+| AADDS502 | *Срок действия защищенного сертификата LDAP для управляемого домена истекает [дата].* | [Истечение срока действия безопасного сертификата LDAP](active-directory-ds-troubleshoot-ldaps.md#aadds502-secure-ldap-certificate-expiring) |
 | AADDS503 | *Управляемый домен блокируется, так как подписка Azure, связанная с доменом, неактивна.* | [Блокировка из-за неактивной подписки](#aadds503-suspension-due-to-disabled-subscription) |
 | AADDS504 | *Управляемый домен блокируется из-за неправильной конфигурации. Служба не могла исправлять и обновлять контроллеры управляемого домена, а также управлять ими в течение долгого времени.* | [Блокировка из-за неправильной конфигурации](#aadds504-suspension-due-to-an-invalid-configuration) |
 

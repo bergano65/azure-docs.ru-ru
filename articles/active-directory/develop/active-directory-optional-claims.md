@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/05/2018
 ms.author: celested
-ms.reviewer: hirsin
+ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
-ms.openlocfilehash: c42e8978a94730669f3c3f879d1d26c4426bd9da
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 784213531c061912dded8e7776e79bea5adb217b
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49079145"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49466058"
 ---
 # <a name="how-to-provide-optional-claims-to-your-azure-ad-app-public-preview"></a>Практическое руководство о том, как предоставлять дополнительные утверждения для приложения Azure AD (общедоступная предварительная версия)
 
@@ -215,7 +215,7 @@ ms.locfileid: "49079145"
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 1. Пройдя аутентификацию, выберите клиент Azure AD, щелкнув его в правом верхнем углу страницы.
-1. Выберите расширение **Azure AD** на левой навигационной панели и щелкните **Регистрация приложений**.
+1. Выберите в левой части **Регистрация приложений**.
 1. Найдите в списке приложение, для которого нужно настроить необязательные утверждения, и щелкните его.
 1. Щелкните **Манифест** на странице приложения, чтобы открыть встроенный редактор манифеста. 
 1. Можно напрямую изменить манифест с помощью этого редактора. Манифест соответствует схеме для [сущности приложения](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#application-entity) и автоматически форматирует манифест после сохранения. В свойство `OptionalClaims` будут добавлены новые элементы.

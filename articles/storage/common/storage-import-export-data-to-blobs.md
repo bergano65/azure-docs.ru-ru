@@ -5,15 +5,15 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: article
-ms.date: 07/17/2018
+ms.date: 10/15/2018
 ms.author: alkohli
 ms.component: common
-ms.openlocfilehash: 39287e4d90e4f6f42dd1f79d5457853e253bd736
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 3a647d9f821007dc0f2b48864b937aee84924d8f
+ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45737062"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49353177"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в хранилище BLOB-объектов Azure
 
@@ -96,7 +96,7 @@ ms.locfileid: "45737062"
 
     - Выберите **Импорт в Azure**.
     - Введите описательное имя для задания импорта. Вы будете использовать его для отслеживания хода выполнения заданий.
-        - Имя может содержать только буквы в нижнем регистре, цифры, дефисы и знаки подчеркивания.
+        - Имя может содержать только строчные буквы, цифры и дефисы.
         - Имя должно начинаться с буквы и не может содержать пробелы.
     - Выберите подписку.
     - Укажите или выберите группу ресурсов.  

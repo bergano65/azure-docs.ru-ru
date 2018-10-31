@@ -2,14 +2,14 @@
 author: wolfma61
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 07/16/2018
+ms.date: 10/16/2018
 ms.author: wolfma
-ms.openlocfilehash: 7f0606dd143da426b4f34eeb819e7c0da5142f6c
-ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
+ms.openlocfilehash: e832470884d07ae1c9637559c51e14dd770aa24f
+ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43143065"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49366025"
 ---
 > [!NOTE]
-> Сначала получите ключ подписки. Дополнительные сведения см. в статье [Бесплатная пробная подписка на службу "Речь"](~/articles/cognitive-services/speech-service/get-started.md).
+> Дополнительные сведения о способах настройки проекта разработки для платформы и предпочитаемой среды разработки можно найти в статьях [Краткие руководства](~/articles/cognitive-services/speech-service/quickstart-csharp-dotnet-windows.md) в этой документации. В любом случае вам потребуется ключ подписки. Ознакомьтесь со статьей [Бесплатная пробная подписка на службу "Речь"](~/articles/cognitive-services/speech-service/get-started.md).
