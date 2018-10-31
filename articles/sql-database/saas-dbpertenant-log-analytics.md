@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: billgib
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 60139915e8d8dca382f4ef62b5129f1a84e7e80d
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.openlocfilehash: b207af3bed40f6287f60b25638f3091fa187aa6f
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47056715"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49405078"
 ---
 # <a name="set-up-and-use-log-analytics-with-a-multitenant-sql-database-saas-app"></a>Настройка и использование Log Analytics с мультитенантным приложением SaaS для Базы данных SQL
 
@@ -42,7 +42,7 @@ ms.locfileid: "47056715"
 
 В сценариях с большим количеством операций для мониторинга и оповещения можно использовать Log Analytics. Log Analytics представляет собой отдельную службу Azure, которая предоставляет аналитические сведения на основе журналов диагностики и данных телеметрии, собранных в рабочей области. Log Analytics предоставляет встроенный язык запросов и инструменты визуализации данных, позволяющие выполнять анализ рабочих данных. Решение "Аналитика SQL Azure" предоставляет несколько предопределенных представлений и запросов мониторинга и оповещений эластичных пулов и баз данных. Log Analytics также предоставляет конструктор пользовательского представления.
 
-Решения на основе аналитики и рабочих областей Log Analytics можно запустить на порталах Azure и Operations Management Suite. Портал Azure является более новой точкой доступа, однако может уступать порталу Operations Management Suite в некоторых областях.
+Рабочие области OMS теперь называются рабочими областями Log Analytics. Решения на основе аналитики и рабочих областей Log Analytics можно запустить на портале Azure. Портал Azure является более новой точкой доступа, однако может уступать порталу Operations Management Suite в некоторых областях.
 
 ### <a name="create-performance-diagnostic-data-by-simulating-a-workload-on-your-tenants"></a>Создание диагностических данных о производительности путем имитации рабочей нагрузки в клиентах 
 
@@ -70,12 +70,12 @@ Log Analytics — это отдельная служба, которую нео
 1. В интегрированной среде сценариев PowerShell откройте файл *..\\WingtipTicketsSaaS-MultiTenantDb-master\\Learning Modules\\Performance Monitoring and Management\\Log Analytics\\Demo-LogAnalytics.ps1*.
 1. Нажмите клавишу F5 для запуска сценария.
 
-Теперь можно открыть Log Analytics на портале Azure или на портале Operations Management Suite. Для сбора данных телеметрии и их отображения в рабочей области Log Analytics требуется несколько минут. Чем дольше выполняется сбор системных данных диагностики, тем содержательнее результат. 
+Теперь можно открыть Log Analytics на портале Azure. Для сбора данных телеметрии и их отображения в рабочей области Log Analytics требуется несколько минут. Чем дольше выполняется сбор системных данных диагностики, тем содержательнее результат. 
 
 ## <a name="use-log-analytics-and-the-sql-analytics-solution-to-monitor-pools-and-databases"></a>Использование Log Analytics и решений Аналитики SQL для мониторинга пулов и баз данных
 
 
-В этом упражнении откройте Log Analytics и портал Operations Management Suite для просмотра данных телеметрии, собираемых для баз данных и пулов.
+В этом упражнении откройте Log Analytics и портал Azure для просмотра данных телеметрии, собранных для баз данных и пулов.
 
 1. Перейдите на [портал Azure](https://portal.azure.com). Выберите **Все службы**, чтобы открыть Log Analytics. Найдите Log Analytics.
 
@@ -127,9 +127,9 @@ Log Analytics — это отдельная служба, которую нео
 
 1. В рабочей области Log Analytics выберите **Портал OMS**, чтобы открыть на нем рабочую область.
 
-    ![Элемент портала Operations Management Suite](media/saas-dbpertenant-log-analytics/log-analytics-workspace-oms-portal.png)
+    ![Рабочая область Log Analytics](media/saas-dbpertenant-log-analytics/log-analytics-workspace-oms-portal.png)
 
-На портале Operations Management Suite можно подробнее исследовать данные журнала и метрик в рабочей области. 
+В рабочей области Log Analytics можно подробнее исследовать данные журнала и метрик. 
 
 В отличие от создания оповещений для каждого ресурса на портале Azure, мониторинг и оповещения в Log Analytics основаны на запросах к данным в рабочей области. Создавая оповещения на основе запросов, вместо того чтобы определять одно оповещение для каждой базы данных, можно определить одно общее оповещение для всех баз данных. Запросы ограничиваются только данными, доступными в рабочей области.
 

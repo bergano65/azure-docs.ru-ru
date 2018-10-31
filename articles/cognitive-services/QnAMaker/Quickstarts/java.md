@@ -1,23 +1,23 @@
 ---
-title: 'Краткое руководство: Java для API службы QnA Maker (версия 4)'
+title: REST API (версия 4) — C# — Java Maker
 titleSuffix: Azure Cognitive Services
-description: Сведения и примеры кода для быстрого начала работы с API перевода текстов Microsoft в Microsoft Cognitive Services в Azure.
+description: Сведения и примеры кода для REST для быстрого начала работы с API перевода текстов (Майкрософт) в Microsoft Cognitive Services в Azure.
 services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: qna-maker
-ms.topic: quickstart
-ms.date: 09/12/2018
+ms.topic: article
+ms.date: 10/19/2018
 ms.author: diberry
-ms.openlocfilehash: 464860b94d0524cded48934e7684f5c78e595a7c
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: c92addcbb6a4071022474c5c157c498364ebf0f6
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49389349"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49647941"
 ---
-# <a name="quickstart-for-microsoft-qna-maker-api-with-java"></a>Краткое руководство по Java для API службы QnA Maker от Майкрософт 
+# <a name="qna-maker-rest-api-with-java"></a>REST API службы QnA Maker с Java 
 <a name="HOLTop"></a>
 
 В этой статье показано, как использовать [API службы QnA Maker от Майкрософт](../Overview/overview.md) с помощью Java, чтобы выполнять следующие задачи:

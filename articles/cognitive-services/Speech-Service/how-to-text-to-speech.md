@@ -1,22 +1,23 @@
 ---
-title: Использование API преобразования текста в речь в службе "Речь"
+title: Использование преобразования текста в речь в службе "Речь"
+titleSuffix: Azure Cognitive Services
 description: Ознакомьтесь с тем, как использовать преобразование текста в речь службе "Речь".
-titleSuffix: Microsoft Cognitive Services
 services: cognitive-services
 author: erhopf
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/08/2018
 ms.author: erhopf
-ms.openlocfilehash: 774425d19101e4d326f0d6435d56aff1b37a31f7
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: 162b690d4b371cfe76738cd83ce484a3062d139f
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49165051"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49469923"
 ---
-# <a name="use-text-to-speech-in-speech-service"></a>Использование функции преобразования текста в речь в голосовых службах
+# <a name="use-text-to-speech-in-speech-service"></a>Использование преобразования текста в речь в службе "Речь"
 
 Голосовая служба предоставляет функцию "Преобразование текста в речь" с помощью простого HTTP-запроса. Текст запроса `POST` будет передан в соответствующую конечную точку, откуда будет возвращен службой в виде звукового файла (`.wav`), в котором будет содержаться синтезированная речь. Затем ваше приложение может использовать этот звук как угодно.
 

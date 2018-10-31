@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/16/2018
 ms.author: srrengar
-ms.openlocfilehash: 9e740dd3acce842f888e5994fe8f46222477adc1
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 1e6ea5d6ae321a0443631ec928912611a68346c6
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34208239"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49408019"
 ---
 # <a name="performance-metrics"></a>Метрики производительности
 
@@ -84,4 +84,4 @@ Service Fabric создает достаточное число настраив
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Узнайте больше о [создании событий на уровне платформы](service-fabric-diagnostics-event-generation-infra.md) в Service Fabric.
-* Собирайте метрики производительности с помощью [агента OMS](service-fabric-diagnostics-oms-agent.md).
+* Сбор метрик производительности с помощью [агента Log Analytics](service-fabric-diagnostics-oms-agent.md)

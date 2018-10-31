@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 10/10/2018
+ms.date: 10/15/2018
 ms.author: raynew
-ms.openlocfilehash: 35cce4e9e0b722e8ee1b2ea42a79f18a987033f0
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: bb756a89babef96b16419104737e87405b3527ab
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49078653"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49407407"
 ---
 # <a name="manage-the-configuration-server-for-vmware-vms"></a>Управление сервером конфигурации для виртуальных машин VMware
 
@@ -138,6 +138,9 @@ ms.locfileid: "49078653"
 - Если вы используете версию 9.6 или ниже и хотите обновить ее до версии 9.11, сначала выполните обновление до версии 9.7, а затем — до версии 9.11.
 
 Ссылки на накопительные пакеты обновления для всех версий сервера конфигурации доступны на [вики-странице обновлений](https://social.technet.microsoft.com/wiki/contents/articles/38544.azure-site-recovery-service-updates.aspx).
+
+> [!IMPORTANT]
+> С каждой новой выпускаемой версией "N" компонента Azure Site Recovery поддержка всех версий ниже "N-4" считается прекращенной. Рекомендуется всегда обновляться до последней доступной версии.
 
 Инструкции по обновлению сервера:
 

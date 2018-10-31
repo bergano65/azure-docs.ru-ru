@@ -1,20 +1,20 @@
 ---
 title: Подключение базы данных SQL Azure к службе поиска Azure с помощью индексаторов | Документация Майкрософт
 description: Узнайте, как извлекать данные из Базы данных SQL Azure в индекс Поиска Azure с помощью индексаторов.
-author: chaosrealm
-manager: jlembicz
+ms.date: 10/17/2018
+author: mgottein
+manager: cgronlun
+ms.author: magottei
 services: search
 ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
-ms.date: 04/20/2018
-ms.author: eugenesh
-ms.openlocfilehash: 5897740a1b5a183738c08b4dfde571be652aff3e
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 1c498bb857b717682f943af96b222d9712b5d389
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47092255"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49409226"
 ---
 # <a name="connecting-azure-sql-database-to-azure-search-using-indexers"></a>Подключение базы данных SQL Azure к Поиску Azure с помощью индексаторов
 
@@ -277,7 +277,7 @@ ms.locfileid: "47092255"
         }
     }
 
-Параметр **softDeleteMarkerValue** должен быть строкой. Используйте строковое представление действительного значения. Например, если имеется столбец целочисленных значений, в котором удаленные строки помечаются значением 1, то следует использовать `"1"`. Если имеется битовый столбец, в котором удаленные строки помечаются логическим значением true, то следует использовать `"True"`.
+Параметр **softDeleteMarkerValue** должен быть строкой. Используйте строковое представление действительного значения. Например, если имеется столбец целочисленных значений, в котором удаленные строки помечаются значением 1, то следует использовать `"1"`. Если имеется битовый столбец, в котором удаленные строки помечаются логическим значением true, то используйте строковый литерал `True` или `true`, при этом регистр значения не имеет.
 
 <a name="TypeMapping"></a>
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 09/19/2017
 ms.author: renashahmsft
 ms.component: files
-ms.openlocfilehash: 4543784c1de85cf86f3dfa912a33641541e0373a
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 698b2ca177535709d13c531d3ca2a82a8a970131
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39530456"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50024591"
 ---
 # <a name="develop-for-azure-files-with-c"></a>Разработка приложений службы файлов Azure с помощью C++
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -350,6 +350,6 @@ if (share.exists())
 Для получения дополнительных сведений о службе хранилища Azure изучите следующие ресурсы:
 
 * [Клиентская библиотека хранилища для C++](https://github.com/Azure/azure-storage-cpp)
-* [Примеры для службы хранилища файлов Azure на языке C++] (https://github.com/Azure-Samples/storage-file-cpp-getting-started)
+* [Примеры для службы хранилища файлов Azure на языке C++](https://github.com/Azure-Samples/storage-file-cpp-getting-started)
 * [Azure Storage Explorer;](http://go.microsoft.com/fwlink/?LinkID=822673&clcid=0x409)
 * [Документация по хранилищу Azure](https://azure.microsoft.com/documentation/services/storage/)

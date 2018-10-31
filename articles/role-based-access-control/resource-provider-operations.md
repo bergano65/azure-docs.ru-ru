@@ -10,15 +10,15 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/27/2018
+ms.date: 10/19/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: d9cf46a1fd28985d9ca98d173bbef17380b7de21
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 7d044559d72b07dc86a5ee1c2269452a9059de61
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49354399"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49471515"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -42,6 +42,7 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.AAD/locations/operationresults/read |  |
 > | Действие | Microsoft.AAD/Operations/read |  |
 > | Действие | Microsoft.AAD/register/action | Регистрация службы домена |
+> | Действие | Microsoft.AAD/unregister/action | Отмена регистрации службы домена |
 
 ## <a name="microsoftaadiam"></a>microsoft.aadiam
 
@@ -665,6 +666,26 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.BingMaps/mapApis/regenerateKey/action | Повторно создает ключ. |
 > | Действие | Microsoft.BingMaps/mapApis/Write | Операции записи. |
 > | Действие | Microsoft.BingMaps/Operations/read | Описание операции. |
+
+## <a name="microsoftblueprint"></a>Microsoft.Blueprint
+
+> [!div class="mx-tdCol2BreakAll"]
+> | Тип действия | Операция | ОПИСАНИЕ |
+> | --- | --- | --- |
+> | Действие | Microsoft.Blueprint/blueprintAssignments/delete | Удаление любых артефактов схемы |
+> | Действие | Microsoft.Blueprint/blueprintAssignments/read | Чтение любых артефактов схемы |
+> | Действие | Microsoft.Blueprint/blueprintAssignments/write | Создание или изменение любых артефактов схемы |
+> | Действие | Microsoft.Blueprint/blueprints/artifacts/delete | Удаление любых артефактов схемы |
+> | Действие | Microsoft.Blueprint/blueprints/artifacts/read | Чтение любых артефактов схемы |
+> | Действие | Microsoft.Blueprint/blueprints/artifacts/write | Создание или изменение любых артефактов схемы |
+> | Действие | Microsoft.Blueprint/blueprints/delete | Удаление любых схем |
+> | Действие | Microsoft.Blueprint/blueprints/read | Чтение любых схем |
+> | Действие | Microsoft.Blueprint/blueprints/versions/artifacts/read | Чтение любых артефактов схемы |
+> | Действие | Microsoft.Blueprint/blueprints/versions/delete | Удаление любых схем |
+> | Действие | Microsoft.Blueprint/blueprints/versions/read | Чтение любых схем |
+> | Действие | Microsoft.Blueprint/blueprints/versions/write | Создание или обновление любых схем |
+> | Действие | Microsoft.Blueprint/blueprints/write | Создание или обновление любых схем |
+> | Действие | Microsoft.Blueprint/register/action | Регистрация поставщика ресурсов схемы |
 
 ## <a name="microsoftbotservice"></a>Microsoft.BotService
 
@@ -1610,9 +1631,12 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.DataFactory/factories/integrationruntimes/monitoringdata/read | Возвращает данные мониторинга для среды выполнения интеграции. |
 > | Действие | Microsoft.DataFactory/factories/integrationruntimes/nodes/delete | Удаляет узел для указанной среды выполнения интеграции. |
 > | Действие | Microsoft.DataFactory/factories/integrationruntimes/nodes/ipAddress/action | Возвращает IP-адрес для указанного узла среды выполнения интеграции. |
+> | Действие | Microsoft.DataFactory/factories/integrationruntimes/nodes/read | Считывает узел для указанной среды Integration Runtime. |
 > | Действие | Microsoft.DataFactory/factories/integrationruntimes/nodes/write | Обновляет узел локальной среды выполнения интеграции. |
+> | Действие | Microsoft.DataFactory/factories/integrationruntimes/queryactivityruns/action | Запрашивает события выполнения действий для указанной среды Integration Runtime. |
 > | Действие | Microsoft.DataFactory/factories/integrationruntimes/read | Считывает среду выполнения интеграции. |
 > | Действие | Microsoft.DataFactory/factories/integrationruntimes/regenerateauthkey/action | Повторно создает ключи проверки подлинности для указанной среды выполнения интеграции. |
+> | Действие | Microsoft.DataFactory/factories/integrationruntimes/removelinks/action | Удаляет связанные ссылки Integration Runtime из указанной среды Integration Runtime. |
 > | Действие | Microsoft.DataFactory/factories/integrationruntimes/start/action | Запускает среду выполнения интеграции. |
 > | Действие | Microsoft.DataFactory/factories/integrationruntimes/stop/action | Останавливает среду выполнения интеграции. |
 > | Действие | Microsoft.DataFactory/factories/integrationruntimes/synccredentials/action | Синхронизирует учетные данные для указанной среды выполнения интеграции. |
@@ -1983,7 +2007,7 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.DevTestLab/labs/users/secrets/read | Считывает секреты. |
 > | Действие | Microsoft.DevTestLab/labs/users/secrets/write | Добавляет или изменяет секреты. |
 > | Действие | Microsoft.DevTestLab/labs/users/serviceFabrics/delete | Удаление платформ Service Fabric. |
-> | Действие | Microsoft.DevTestLab/labs/users/serviceFabrics/ListApplicableSchedules/action | Выводит список всех применимых расписаний. |
+> | Действие | Microsoft.DevTestLab/labs/users/serviceFabrics/ListApplicableSchedules/action | Выводит список применимых расписаний запуска и остановки, если они есть. |
 > | Действие | Microsoft.DevTestLab/labs/users/serviceFabrics/read | Чтение платформ Service Fabric. |
 > | Действие | Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/delete | Удаляет расписания. |
 > | Действие | Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/Execute/action | Выполняет расписание. |
@@ -1999,7 +2023,7 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.DevTestLab/labs/virtualMachines/delete | Удаляет виртуальные машины. |
 > | Действие | Microsoft.DevTestLab/labs/virtualMachines/DetachDataDisk/action | Отключает указанный диск от виртуальной машины. |
 > | Действие | Microsoft.DevTestLab/labs/virtualMachines/GetRdpFileContents/action | Получает строку, которая представляет содержание RDP-файла для виртуальной машины. |
-> | Действие | Microsoft.DevTestLab/labs/virtualMachines/ListApplicableSchedules/action | Выводит список всех применимых расписаний. |
+> | Действие | Microsoft.DevTestLab/labs/virtualMachines/ListApplicableSchedules/action | Выводит список применимых расписаний запуска и остановки, если они есть. |
 > | Действие | Microsoft.DevTestLab/labs/virtualMachines/read | Считывает виртуальные машины. |
 > | Действие | Microsoft.DevTestLab/labs/virtualMachines/Redeploy/action | Повторное развертывание виртуальной машины. |
 > | Действие | Microsoft.DevTestLab/labs/virtualMachines/Resize/action | Изменение размера виртуальной машины. |
@@ -2010,7 +2034,7 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.DevTestLab/labs/virtualMachines/schedules/write | Добавляет или изменяет расписания. |
 > | Действие | Microsoft.DevTestLab/labs/virtualMachines/Start/action | Запускает виртуальную машину. |
 > | Действие | Microsoft.DevTestLab/labs/virtualMachines/Stop/action | Остановка виртуальной машины |
-> | Действие | Microsoft.DevTestLab/labs/virtualMachines/TransferDisks/action | Передача прав владения дисками данных виртуальной машины себе. |
+> | Действие | Microsoft.DevTestLab/labs/virtualMachines/TransferDisks/action | Переносит все диски с данными, подключенные к виртуальной машине, к текущему пользователю. |
 > | Действие | Microsoft.DevTestLab/labs/virtualMachines/UnClaim/action | Отказ от владения существующей виртуальной машиной. |
 > | Действие | Microsoft.DevTestLab/labs/virtualMachines/write | Добавляет или изменяет виртуальные машины. |
 > | Действие | Microsoft.DevTestLab/labs/virtualNetworks/delete | Удаляет виртуальные сети. |
@@ -2122,6 +2146,13 @@ ms.locfileid: "49354399"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
+> | Действие | Microsoft.EventGrid/domains/delete | Удаление домена |
+> | Действие | Microsoft.EventGrid/domains/listKeys/action | Получение списка ключей для домена |
+> | Действие | Microsoft.EventGrid/domains/providers/Microsoft.Insights/metricDefinitions/read | Получает доступные метрики для доменов |
+> | Действие | Microsoft.EventGrid/domains/read | Чтение домена |
+> | Действие | Microsoft.EventGrid/domains/regenerateKey/action | Повторное создание ключа для домена |
+> | Действие | Microsoft.EventGrid/domains/topics/read | Чтение раздела домена |
+> | Действие | Microsoft.EventGrid/domains/write | Создание или обновление домена |
 > | Действие | Microsoft.EventGrid/eventSubscriptions/delete | Удаление подписки на события. |
 > | Действие | Microsoft.EventGrid/eventSubscriptions/getFullUrl/action | Получение полного URL-адреса подписки на события. |
 > | Действие | Microsoft.EventGrid/eventSubscriptions/providers/Microsoft.Insights/diagnosticSettings/read | Получение параметра диагностики для подписок на события. |
@@ -2132,15 +2163,21 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.EventGrid/extensionTopics/providers/Microsoft.Insights/diagnosticSettings/read | Получение параметра диагностики для разделов. |
 > | Действие | Microsoft.EventGrid/extensionTopics/providers/Microsoft.Insights/diagnosticSettings/write | Создание или обновление параметра диагностики для разделов. |
 > | Действие | Microsoft.EventGrid/extensionTopics/providers/Microsoft.Insights/metricDefinitions/read | Получение доступных метрик для разделов. |
-> | Действие | Microsoft.EventGrid/register/action | Регистрация подписки на события для поставщика ресурсов сетки событий и разрешение создавать подписки сетки событий. |
+> | Действие | Microsoft.EventGrid/locations/operationResults/read | Чтение результата региональной операции |
+> | Действие | Microsoft.EventGrid/locations/operationsStatus/read | Чтение состояния региональной операции |
+> | Действие | Microsoft.EventGrid/operationResults/read | Чтение результата операции |
+> | Действие | Microsoft.EventGrid/operationsStatus/read | Чтение состояния операции |
+> | Действие | Microsoft.EventGrid/register/action | Регистрирует подписку для поставщика ресурсов EventGrid. |
 > | Действие | Microsoft.EventGrid/topics/delete | Удаление раздела |
-> | Действие | Microsoft.EventGrid/topics/listKeys/action | Вывод списка ключей для раздела. |
+> | Действие | Microsoft.EventGrid/topics/listKeys/action | Получение списка ключей для раздела |
 > | Действие | Microsoft.EventGrid/topics/providers/Microsoft.Insights/diagnosticSettings/read | Получение параметра диагностики для разделов. |
 > | Действие | Microsoft.EventGrid/topics/providers/Microsoft.Insights/diagnosticSettings/write | Создание или обновление параметра диагностики для разделов. |
 > | Действие | Microsoft.EventGrid/topics/providers/Microsoft.Insights/metricDefinitions/read | Получение доступных метрик для разделов. |
 > | Действие | Microsoft.EventGrid/topics/read | Чтение раздела. |
-> | Действие | Microsoft.EventGrid/topics/regenerateKey/action | Повторное создание ключа для раздела. |
+> | Действие | Microsoft.EventGrid/topics/regenerateKey/action | Повторное создание ключа для раздела |
 > | Действие | Microsoft.EventGrid/topics/write | Создание или обновление раздела. |
+> | Действие | Microsoft.EventGrid/topictypes/eventtypes/read | Чтение типов eventtype, поддерживаемых topictype |
+> | Действие | Microsoft.EventGrid/topictypes/read | Чтение типа раздела (topictype) |
 
 ## <a name="microsofteventhub"></a>Microsoft.EventHub
 
@@ -2711,8 +2748,10 @@ ms.locfileid: "49354399"
 > | DataAction | Microsoft.LogAnalytics/logs/Heartbeat/read | Чтение данных из таблицы Heartbeat. |
 > | DataAction | Microsoft.LogAnalytics/logs/IISAssessmentRecommendation/read | Чтение данных из таблицы IISAssessmentRecommendation. |
 > | DataAction | Microsoft.LogAnalytics/logs/InboundConnection/read | Чтение данных из таблицы InboundConnection. |
+> | DataAction | Microsoft.LogAnalytics/logs/KubeEvents/read | Чтение данных из таблицы KubeEvents |
 > | DataAction | Microsoft.LogAnalytics/logs/KubeNodeInventory/read | Чтение данных из таблицы KubeNodeInventory. |
 > | DataAction | Microsoft.LogAnalytics/logs/KubePodInventory/read | Чтение данных из таблицы KubePodInventory. |
+> | DataAction | Microsoft.LogAnalytics/logs/KubeServices/read | Чтение данных из таблицы KubeServices |
 > | DataAction | Microsoft.LogAnalytics/logs/LinuxAuditLog/read | Чтение данных из таблицы LinuxAuditLog. |
 > | DataAction | Microsoft.LogAnalytics/logs/MAApplication/read | Чтение данных из таблицы MAApplication. |
 > | DataAction | Microsoft.LogAnalytics/logs/MAApplicationHealth/read | Чтение данных из таблицы MAApplicationHealth. |
@@ -3033,6 +3072,9 @@ ms.locfileid: "49354399"
 > | --- | --- | --- |
 > | DataAction | Microsoft.Maps/accounts/data/read | Предоставляет доступ на чтение данных учетных записей карт. |
 > | Действие | Microsoft.Maps/accounts/delete | Удаление учетной записи Maps. |
+> | Действие | Microsoft.Maps/accounts/eventGridFilters/delete | Удаление фильтра сетки событий |
+> | Действие | Microsoft.Maps/accounts/eventGridFilters/read | Получение фильтра сетки событий |
+> | Действие | Microsoft.Maps/accounts/eventGridFilters/write | Создание или изменение фильтра сетки событий |
 > | Действие | Microsoft.Maps/accounts/listKeys/action | Вывод списка ключей учетной записи Maps. |
 > | Действие | Microsoft.Maps/accounts/providers/Microsoft.Insights/diagnosticSettings/read | Возвращает параметр диагностики для ресурса. |
 > | Действие | Microsoft.Maps/accounts/providers/Microsoft.Insights/diagnosticSettings/write | Создает или обновляет параметр диагностики для ресурса. |
@@ -3739,6 +3781,7 @@ ms.locfileid: "49354399"
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.OperationalInsights/linkTargets/read | Выводит список существующих учетных записей, которые не связаны с подпиской Azure. Чтобы связать эту подписку Azure с рабочей областью, укажите идентификатор клиента, возвращаемый этой операцией, в свойстве идентификатора клиента в операции создания рабочей области. |
+> | Действие | microsoft.operationalinsights/operations/read | Отображение списка всех доступных операций REST API OperationalInsights. |
 > | Действие | Microsoft.OperationalInsights/register/action | Регистрирует подписку для поставщика ресурсов. |
 > | Действие | Microsoft.OperationalInsights/workspaces/analytics/query/action | Поиск с помощью нового механизма. |
 > | Действие | Microsoft.OperationalInsights/workspaces/analytics/query/schema/read | Получение схемы поиска версии 2. |
@@ -3751,6 +3794,7 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.OperationalInsights/workspaces/datasources/read | Возвращает источники данных в рабочей области. |
 > | Действие | Microsoft.OperationalInsights/workspaces/datasources/write | Создает или обновляет источники данных в рабочей области. |
 > | Действие | Microsoft.OperationalInsights/workspaces/delete | Удаляет рабочую область. Если при создании рабочая область была связана с существующей рабочей областью, то эта связанная рабочая область не удаляется. |
+> | Действие | Microsoft.OperationalInsights/workspaces/gateways/delete | Удаляет шлюз, настроенный для рабочей области. |
 > | Действие | Microsoft.OperationalInsights/workspaces/generateregistrationcertificate/action | Создает сертификат регистрации для рабочей области. Этот сертификат используется для подключения Microsoft System Center Operations Manager к рабочей области. |
 > | Действие | Microsoft.OperationalInsights/workspaces/intelligencepacks/disable/action | Отключает пакет аналитики для заданной рабочей области. |
 > | Действие | Microsoft.OperationalInsights/workspaces/intelligencepacks/enable/action | Включает пакет аналитики для заданной рабочей области. |
@@ -3813,8 +3857,10 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.OperationalInsights/workspaces/query/Heartbeat/read | Чтение данных из таблицы Heartbeat. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/IISAssessmentRecommendation/read | Чтение данных из таблицы IISAssessmentRecommendation. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/InboundConnection/read | Чтение данных из таблицы InboundConnection. |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/KubeEvents/read | Чтение данных из таблицы KubeEvents |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/KubeNodeInventory/read | Чтение данных из таблицы KubeNodeInventory. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/KubePodInventory/read | Чтение данных из таблицы KubePodInventory. |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/KubeServices/read | Чтение данных из таблицы KubeServices |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/LinuxAuditLog/read | Чтение данных из таблицы LinuxAuditLog. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MAApplication/read | Чтение данных из таблицы MAApplication. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MAApplicationHealth/read | Чтение данных из таблицы MAApplicationHealth. |
@@ -3920,16 +3966,20 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.OperationalInsights/workspaces/query/WUDOAggregatedStatus/read | Чтение данных из таблицы WUDOAggregatedStatus. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/WUDOStatus/read | Чтение данных из таблицы WUDOStatus. |
 > | Действие | Microsoft.OperationalInsights/workspaces/read | Возвращает существующую рабочую область. |
+> | Действие | Microsoft.OperationalInsights/workspaces/regeneratesharedkey/action | Повторно создает общий ключ указанной рабочей области |
 > | Действие | Microsoft.OperationalInsights/workspaces/savedSearches/delete | Удаляет сохраненный поисковый запрос. |
 > | Действие | Microsoft.OperationalInsights/workspaces/savedSearches/read | Возвращает сохраненный поисковый запрос. |
+> | Действие | microsoft.operationalinsights/workspaces/savedsearches/results/read | Получение сохраненных результатов поиска. Не рекомендуется |
 > | Действие | Microsoft.OperationalInsights/workspaces/savedSearches/write | Создает сохраненный поисковый запрос. |
 > | Действие | Microsoft.OperationalInsights/workspaces/schema/read | Возвращает схему поиска для рабочей области.  Схема поиска содержит предоставленные поля и их типы. |
 > | Действие | Microsoft.OperationalInsights/workspaces/search/action | Выполняет поисковый запрос. |
+> | Действие | microsoft.operationalinsights/workspaces/search/read | Получение результатов поиска. Не рекомендуется. |
 > | Действие | Microsoft.OperationalInsights/workspaces/sharedKeys/action | Извлекает открытые ключи для рабочей области. Эти ключи используются для подключения агентов Microsoft Operational Insights к рабочей области. |
 > | Действие | Microsoft.OperationalInsights/workspaces/sharedKeys/read | Извлекает открытые ключи для рабочей области. Эти ключи используются для подключения агентов Microsoft Operational Insights к рабочей области. |
 > | Действие | Microsoft.OperationalInsights/workspaces/storageinsightconfigs/delete | Удаляет конфигурацию хранилища. Это остановит чтение данных из учетной записи хранения, выполняемое Microsoft Operational Insights. |
 > | Действие | Microsoft.OperationalInsights/workspaces/storageinsightconfigs/read | Возвращает конфигурацию хранилища. |
 > | Действие | Microsoft.OperationalInsights/workspaces/storageinsightconfigs/write | Создает конфигурацию учетной записи хранения. Эти конфигурации используются для извлечения данных из расположения в существующей учетной записи хранения. |
+> | Действие | Microsoft.OperationalInsights/workspaces/upgradetranslationfailures/read | Получение журнала ошибок преобразования обновления поиска для рабочей области |
 > | Действие | Microsoft.OperationalInsights/workspaces/usages/read | Возвращает данные об использовании для рабочей области, включая объем данных, считываемых рабочей областью. |
 > | Действие | Microsoft.OperationalInsights/workspaces/write | Создает новую рабочую область или устанавливает связь с существующей рабочей областью с помощью указанного идентификатора клиента, полученного из нее. |
 
@@ -4234,7 +4284,9 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.Resourcehealth/healthevent/Resolved/action | Обозначение изменения состояния работоспособности для указанного ресурса. |
 > | Действие | Microsoft.Resourcehealth/healthevent/Updated/action | Обозначение изменения состояния работоспособности для указанного ресурса. |
 > | Действие | Microsoft.ResourceHealth/impactedResources/read | Получение затронутых ресурсов для данной подписки. |
+> | Действие | Microsoft.ResourceHealth/Operations/read | Получение операций, доступных для ResourceHealth (Майкрософт) |
 > | Действие | Microsoft.ResourceHealth/register/action | Регистрация подписки на службу "Работоспособность ресурсов Microsoft". |
+> | Действие | Microsoft.ResourceHealth/unregister/action | Отмена регистрации подписки для ResourceHealth (Майкрософт) |
 
 ## <a name="microsoftresources"></a>Microsoft.Resources
 
@@ -4358,6 +4410,7 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.Security/securityStatuses/read | Возвращает состояния работоспособности ресурсов Azure. |
 > | Действие | Microsoft.Security/securityStatusesSummaries/read | Получение сводок состояния безопасности для области. |
 > | Действие | Microsoft.Security/tasks/read | Возвращает все доступные рекомендации по безопасности. |
+> | Действие | Microsoft.Security/unregister/action | Отменяет регистрацию подписки в центре безопасности Azure |
 > | Действие | Microsoft.Security/webApplicationFirewalls/delete | Удаляет брандмауэр веб-приложения. |
 > | Действие | Microsoft.Security/webApplicationFirewalls/read | Возвращает брандмауэры веб-приложения. |
 > | Действие | Microsoft.Security/webApplicationFirewalls/write | Создает новый брандмауэр веб-приложения или обновляет существующий. |
@@ -4534,6 +4587,8 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.Sql/locations/instanceFailoverGroups/write | Создание группы отработки отказа экземпляра с указанными параметрами либо обновление свойств или тегов указанной группы экземпляра. |
 > | Действие | Microsoft.Sql/locations/interfaceEndpointProfileAzureAsyncOperation/read | Возвращение сведений об асинхронной операции Azure для определенной конечной точки интерфейса |
 > | Действие | Microsoft.Sql/locations/interfaceEndpointProfileOperationResults/read | Возвращение сведений об операции с профилем для определенной конечной точки интерфейса |
+> | Действие | Microsoft.Sql/locations/jobAgentAzureAsyncOperation/read | Получает состояние операции агента задания. |
+> | Действие | Microsoft.Sql/locations/jobAgentOperationResults/read | Получает результат операции агента задания. |
 > | Действие | Microsoft.Sql/locations/longTermRetentionBackups/read | Вывод списка резервных копий на долгосрочном хранении для каждой базы данных на каждом сервере в определенном расположении. |
 > | Действие | Microsoft.Sql/locations/longTermRetentionServers/longTermRetentionBackups/read | Вывод списка резервных копий на долгосрочном хранении для каждой базы данных на сервере. |
 > | Действие | Microsoft.Sql/locations/longTermRetentionServers/longTermRetentionDatabases/longTermRetentionBackups/delete | Удаление резервной копии на долгосрочном хранении. |
@@ -4552,6 +4607,8 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.Sql/managedInstances/administrators/delete | Удаление существующего администратора управляемого экземпляра. |
 > | Действие | Microsoft.Sql/managedInstances/administrators/read | Получение списка администраторов управляемого экземпляра. |
 > | Действие | Microsoft.Sql/managedInstances/administrators/write | Создание или обновление администратора управляемого экземпляра с указанными параметрами. |
+> | Действие | Microsoft.Sql/managedInstances/databases/backupShortTermRetentionPolicies/read | Получает политику краткосрочного хранения для управляемой базы данных |
+> | Действие | Microsoft.Sql/managedInstances/databases/backupShortTermRetentionPolicies/write | Обновляет политику краткосрочного хранения для управляемой базы данных |
 > | Действие | Microsoft.Sql/managedInstances/databases/delete | Удаление существующей управляемой базы данных. |
 > | Действие | Microsoft.Sql/managedInstances/databases/providers/Microsoft.Insights/diagnosticSettings/read | Возвращает параметр диагностики для ресурса. |
 > | Действие | Microsoft.Sql/managedInstances/databases/providers/Microsoft.Insights/diagnosticSettings/write | Создает или обновляет параметр диагностики для ресурса. |
@@ -4585,6 +4642,8 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.Sql/managedInstances/providers/Microsoft.Insights/logDefinitions/read | Получение доступных журналов для управляемых экземпляров |
 > | Действие | Microsoft.Sql/managedInstances/providers/Microsoft.Insights/metricDefinitions/read | Возвращение типов метрик, доступных для управляемых экземпляров |
 > | Действие | Microsoft.Sql/managedInstances/read | Возвращение списка управляемых экземпляров или получение свойств указанного управляемого экземпляра. |
+> | Действие | Microsoft.Sql/managedInstances/restorableDroppedDatabases/backupShortTermRetentionPolicies/read | Получает политику краткосрочного хранения для удаленной управляемой базы данных |
+> | Действие | Microsoft.Sql/managedInstances/restorableDroppedDatabases/backupShortTermRetentionPolicies/write | Обновляет политику краткосрочного хранения для удаленной управляемой базы данных |
 > | Действие | Microsoft.Sql/managedInstances/restorableDroppedDatabases/read | Возвращает список доступных для восстановления удаленных управляемых баз данных. |
 > | Действие | Microsoft.Sql/managedInstances/securityAlertPolicies/read | Извлечение сведений о политике обнаружения угроз, настроенной на данном управляемом сервере. |
 > | Действие | Microsoft.Sql/managedInstances/securityAlertPolicies/write | Изменение политики обнаружения угроз на данном управляемом сервере. |
@@ -4773,6 +4832,9 @@ ms.locfileid: "49354399"
 > | Действие | Microsoft.Sql/servers/interfaceEndpointProfiles/delete | Удаляет профиль определенной конечной точки интерфейса |
 > | Действие | Microsoft.Sql/servers/interfaceEndpointProfiles/read | Возвращает свойства для профиля указанной конечной точки интерфейса |
 > | Действие | Microsoft.Sql/servers/interfaceEndpointProfiles/write | Создает профиль конечной точки интерфейса с указанными параметрами либо обновляет свойства или теги указанной конечной точки интерфейса |
+> | Действие | Microsoft.Sql/servers/jobAgents/delete | Удаляет агент задания базы данных SQL Azure |
+> | Действие | Microsoft.Sql/servers/jobAgents/read | Получает агент задания базы данных SQL Azure |
+> | Действие | Microsoft.Sql/servers/jobAgents/write | Создает или изменяет агент задания базы данных SQL Azure |
 > | Действие | Microsoft.Sql/servers/keys/delete | Удаление существующего ключа сервера. |
 > | Действие | Microsoft.Sql/servers/keys/read | Возвращение списка ключей сервера или возвращение свойств указанного ключа сервера. |
 > | Действие | Microsoft.Sql/servers/keys/write | Создание ключа с указанными параметрами либо обновление свойств или тегов указанного ключа сервера. |

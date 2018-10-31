@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/29/2017
 ms.author: muralikk
 ms.component: common
-ms.openlocfilehash: 7fc3e68e9d714ca95a28a28b470b1e1fdbff2c47
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: 0be0d6c9613b4160a6c4c5cc3b63336fcf67d5c2
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48870899"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50025630"
 ---
 # <a name="preparing-hard-drives-for-an-import-job"></a>Подготовка жестких дисков к заданию импорта
 
@@ -309,7 +309,7 @@ WAImportExport — это инструмент подготовки и испр
 
 #### <a name="where-can-i-find-previous-version-of-waimportexport-tool"></a>Где можно найти предыдущую версию средства WAImportExport?
 
-Средство WAImportExport поддерживает все те же функции, что и его первая версия. Оно позволяет пользователям указывать несколько источников и записывать данные на несколько дисков. Кроме того, это средство позволяет легко управлять несколькими расположениями источников данных, из которых данные копируются в один CSV-файл. Но если нужно добавить поддержку SAS или копировать на диск отдельный источник данных, вы можете [скачать средство WAImportExport версии 1] (http://go.microsoft.com/fwlink/?LinkID=301900&amp;clcid=0x409), а также ознакомиться со [справочными материалами по работе с ним](storage-import-export-tool-how-to-v1.md).
+Средство WAImportExport поддерживает все те же функции, что и его первая версия. Оно позволяет пользователям указывать несколько источников и записывать данные на несколько дисков. Кроме того, это средство позволяет легко управлять несколькими расположениями источников данных, из которых данные копируются в один CSV-файл. Тем не менее, если нужно добавить поддержку SAS или копировать на диск отдельный источник данных, вы можете [скачать средство WAImportExport версии 1](http://go.microsoft.com/fwlink/?LinkID=301900&amp;clcid=0x409), а также ознакомиться со [справочными материалами по работе с ним](storage-import-export-tool-how-to-v1.md).
 
 #### <a name="what-is-a-session-id"></a>Что такое идентификатор сеанса?
 
@@ -407,7 +407,7 @@ WAImportExport — это инструмент подготовки и испр
 * [Настройка средства импорта и экспорта Azure](storage-import-export-tool-setup.md)
 * [Настройка свойств и метаданных во время импорта](storage-import-export-tool-setting-properties-metadata-import.md)
 * [Пример рабочего процесса по подготовке жестких дисков для задания импорта](storage-import-export-tool-sample-preparing-hard-drives-import-job-workflow.md)
-* [Краткий справочник по часто используемым командам](storage-import-export-tool-quick-reference.md) 
+* [Краткий справочник по часто используемым командам](storage-import-export-tool-quick-reference.md) 
 * [Просмотр состояния задания с помощью файлов журнала копирования](storage-import-export-tool-reviewing-job-status-v1.md)
 * [Подготовка задания импорта](storage-import-export-tool-repairing-an-import-job-v1.md)
 * [Подготовка задания экспорта](storage-import-export-tool-repairing-an-export-job-v1.md)

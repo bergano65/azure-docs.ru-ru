@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/14/2017
 ms.author: roiyz
-ms.openlocfilehash: 02fa19cad56f1a31ad60c597df1b004710cb5b50
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 12f7c52f916f385ddf95cf16aa89c4848ab7c118
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452094"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49406608"
 ---
 # <a name="log-analytics-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Log Analytics для Windows
 
@@ -30,7 +30,7 @@ Log Analytics предоставляет возможности монитори
 
 ### <a name="operating-system"></a>Операционная система
 
-Расширение агента Log Analytics для Windows может выполняться на выпусках Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 и Windows Server 2016.
+Расширение агента Log Analytics для Windows может выполняться на выпусках Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 и Windows Server 2016.
 
 ### <a name="azure-security-center"></a>Центр безопасности Azure
 

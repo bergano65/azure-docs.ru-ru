@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 09/05/2017
 ms.author: fryu
 ms.component: common
-ms.openlocfilehash: 8fe4fdfa88a5aea4b8df49d9c00fa7f6b1768209
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: b9b6c67930e251302f397e199c65f949997a25cf
+ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49363441"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "49637981"
 ---
 # <a name="azure-storage-metrics-in-azure-monitor"></a>Метрики службы хранилища Azure в Azure Monitor
 
@@ -23,13 +23,13 @@ Azure Monitor предоставляет унифицированный поль
 
 ## <a name="access-metrics"></a>Доступ к метрикам
 
-Azure Monitor предоставляет несколько способов доступа к метрикам. Для такого доступа вы можете использовать [портал Azure](https://portal.azure.com), API-интерфейсы Azure Monitor (REST и .NET), а также решения для анализа, например Operation Management Suite и Центры событий. Дополнительные сведения см. в статье [Обзор метрик в Microsoft Azure](../../monitoring-and-diagnostics/monitoring-overview-metrics.md).
+Azure Monitor предоставляет несколько способов доступа к метрикам. Для такого доступа вы можете использовать [портал Azure](https://portal.azure.com), API-интерфейсы Azure Monitor (REST и .NET), а также решения для анализа, например концентратор событий. Дополнительные сведения см. в статье [Обзор метрик в Microsoft Azure](../../monitoring-and-diagnostics/monitoring-overview-metrics.md).
 
 Метрики включены по умолчанию, и вы можете получить доступ к данным за последние 93 дня. Если необходимо хранить данные метрик в течение длительного периода времени, вы можете архивировать их в учетную запись хранения Azure. Для настройки используйте [параметры диагностики](../../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) в Azure Monitor.
 
 ### <a name="access-metrics-in-the-azure-portal"></a>Доступ к метрикам на портале Azure
 
-На портале Azure можно отслеживать метрики в течение продолжительного периода времени. В примере ниже рассматривается, как просмотреть **используемую емкость** на уровне учетной записи.
+На портале Azure можно отслеживать метрики в течение продолжительного периода времени. В примере ниже показано, как просмотреть **транзакции** на уровне учетной записи.
 
 ![снимок экрана доступа к метрикам на портале Azure](./media/storage-metrics-in-azure-monitor/access-metrics-in-portal.png)
 

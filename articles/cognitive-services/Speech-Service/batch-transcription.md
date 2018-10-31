@@ -1,27 +1,35 @@
 ---
 title: API пакетного транскрибирования в Azure
-description: Примеры
+titlesuffix: Azure Cognitive Services
+description: Примеры для транскрибирования больших объемов аудиосодержимого.
 services: cognitive-services
 author: PanosPeriorellis
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: Speech
-ms.topic: article
+ms.component: speech-service
+ms.topic: conceptual
 ms.date: 04/26/2018
 ms.author: panosper
-ms.openlocfilehash: 8f9a033ebf9cdfdb96ae8511b14202e49ec0a85e
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: e7523bf97d6252422ebb853b818453c935640f50
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48884465"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49648808"
 ---
 # <a name="batch-transcription"></a>Пакетное транскрибирование
 
-Пакетное транскрибирование идеально подходит для использования с большим объемом аудиофайлов. Оно позволяет указывать на звуковые файлы с помощью универсального кода ресурса (URI) и получать транскрибирование в асинхронном режиме.
+Пакетное транскрибирование идеально подходит для использования с большим объемом аудиосодержимого в хранилище. Используя Rest API, вы можете указывать на звуковые файлы с помощью универсального кода ресурса (URI) SAS и получать транскрибирование в асинхронном режиме.
 
 ## <a name="batch-transcription-api"></a>API пакетного транскрибирования
 
-API пакетного транскрибирования предоставляет асинхронное транскрибирование речи в текст и другие дополнительные возможности.
+API пакетного транскрибирования предоставляет асинхронное транскрибирование речи в текст и другие дополнительные возможности. Это REST API, предоставляющий методы для следующих задач:
+
+1. Создание запросов пакетной обработки
+
+2. Состояние запросов 
+
+3. Скачивание транскрибирования
 
 > [!NOTE]
 > API пакетного транскрибирования идеально подходит для колл-центров, где обычно накапливаются тысячи часов разговоров. Философия API Fire & Forget (нажать и забыть) упрощает транскрибирование большого объема звукозаписей.
@@ -95,78 +103,77 @@ WAV |  Stereo  |
         }
 ```
 
-После получения этого токена следует указать универсальный код ресурса (URI) SAS, указывающий на звуковой файл, который нужно транскрибировать. Остальная часть кода итеративно получает состояние и отображает результаты.
+После получения этого токена следует указать универсальный код ресурса (URI) SAS, указывающий на звуковой файл, который нужно транскрибировать. Остальная часть кода итеративно получает состояние и отображает результаты. Изначально требуется настроить ключ, регион, используемые модели и сопоставление безопасности, как показано во фрагменте кода ниже. Затем создается экземпляр клиента и выполнение запроса POST. 
 
 ```cs
-   static async Task TranscribeAsync()
-        { 
             private const string SubscriptionKey = "<your Speech subscription key>";
             private const string HostName = "westus.cris.ai";
             private const int Port = 443;
     
+            // SAS URI 
+            private const string RecordingsBlobUri = "some SAS URI";
+
+            // adapted model Ids
+            private static Guid AdaptedAcousticId = new Guid("some guid");
+            private static Guid AdaptedLanguageId = new Guid("some guid");
+
             // Creating a Batch transcription API Client
             var client = CrisClient.CreateApiV2Client(SubscriptionKey, HostName, Port);
             
-            var transcriptions = await client.GetTranscriptionAsync().ConfigureAwait(false);
-
             var transcriptionLocation = await client.PostTranscriptionAsync(Name, Description, Locale, new Uri(RecordingsBlobUri), new[] { AdaptedAcousticId, AdaptedLanguageId }).ConfigureAwait(false);
+```
 
-            // get the transcription Id from the location URI
-            var createdTranscriptions = new List<Guid>();
-            createdTranscriptions.Add(new Guid(transcriptionLocation.ToString().Split('/').LastOrDefault()))
+Теперь, когда запрос выполнен, пользователь может запросить и скачать результаты транскрибирования, как показано во фрагменте кода.
 
-            while (true)
+```cs
+  
+            // get all transcriptions for the user
+            transcriptions = await client.GetTranscriptionAsync().ConfigureAwait(false);
+
+            // for each transcription in the list we check the status
+            foreach (var transcription in transcriptions)
             {
-                // get all transcriptions for the user
-                transcriptions = await client.GetTranscriptionAsync().ConfigureAwait(false);
-                completed = 0; running = 0; notStarted = 0;
-
-                // for each transcription in the list we check the status
-                foreach (var transcription in transcriptions)
+                switch(transcription.Status)
                 {
-                    switch(transcription.Status)
-                    {
-                        case "Failed":
-                        case "Succeeded":
+                    case "Failed":
+                    case "Succeeded":
 
                             // we check to see if it was one of the transcriptions we created from this client.
-                            if (!createdTranscriptions.Contains(transcription.Id))
-                            {
-                                // not creted form here, continue
-                                continue;
-                            }
+                        if (!createdTranscriptions.Contains(transcription.Id))
+                        {
+                            // not creted form here, continue
+                            continue;
+                        }
                             
-                            completed++;
+                        completed++;
                             
-                            // if the transcription was successfull, check the results
-                            if (transcription.Status == "Succeeded")
-                            {
-                                var resultsUri = transcription.ResultsUrls["channel_0"];
-                                WebClient webClient = new WebClient();
-                                var filename = Path.GetTempFileName();
-                                webClient.DownloadFile(resultsUri, filename);
-                                var results = File.ReadAllText(filename);
-                                Console.WriteLine("Transcription succedded. Results: ");
-                                Console.WriteLine(results);
-                            }
-                            break;
-                        case "Running":
-                            running++;
-                            break;
-                        case "NotStarted":
-                            notStarted++;
-                            break;
+                        // if the transcription was successfull, check the results
+                        if (transcription.Status == "Succeeded")
+                        {
+                            var resultsUri = transcription.ResultsUrls["channel_0"];
+                            WebClient webClient = new WebClient();
+                            var filename = Path.GetTempFileName();
+                            webClient.DownloadFile(resultsUri, filename);
+                            var results = File.ReadAllText(filename);
+                            Console.WriteLine("Transcription succedded. Results: ");
+                            Console.WriteLine(results);
+                        }
+                    
+                    break;
+                    case "Running":
+                    running++;
+                     break;
+                    case "NotStarted":
+                    notStarted++;
+                    break;
+                    
                     }
                 }
-
-                Console.WriteLine(string.Format("Transcriptions status: {0} completed, {1} running, {2} not started yet", completed, running, notStarted));
-
-                await Task.Delay(TimeSpan.FromSeconds(5)).ConfigureAwait(false);
             }
-
-            Console.WriteLine("Press any key...");
         }
 ```
+
+Наш [документ Swagger](https://westus.cris.ai/swagger/ui/index) содержит подробные сведения об указанных выше вызовах. Полная версия показанного здесь примера находится на [GitHub](https://github.com/PanosPeriorellis/Speech_Service-BatchTranscriptionAPI).
 
 > [!NOTE]
 > Ключ подписки, указанный в предыдущем фрагменте кода, — это ключ из ресурса службы "Речь", который создается на портале Azure. Ключи, полученные из ресурса "Пользовательская служба распознавания речи", не будут работать.

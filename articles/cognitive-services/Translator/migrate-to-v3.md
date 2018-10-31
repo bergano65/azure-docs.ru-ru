@@ -10,12 +10,12 @@ ms.component: translator-text
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.author: v-jansko
-ms.openlocfilehash: eaf65bef28110d73378c213ae4781a409b86e1bd
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: e0654d6a4696e6f02939cad51a715412fdcfb61a
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46128185"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49645240"
 ---
 # <a name="translator-text-api-v2-to-v3-migration"></a>Переход с API перевода текстов версии 2 на версию 3
 
@@ -32,29 +32,29 @@ ms.locfileid: "46128185"
 * В этот API-интерфейс добавлен метод Transliterate. Этот метод преобразует слова и предложения в одном скрипте (например, арабском) в другой скрипт (например, латинский).
 * Языки. Новый метод Languages предоставляет сведения о языке в формате JSON. Его можно использовать с методами Translate, Dictionary и Transliterate.
 * Новые возможности метода Translate. В метод Translate добавлены новые возможности, которые обеспечивают поддержку некоторых функций, которые использовались в API версии 2 как отдельные методы. В качестве примера можно привести метод TranslateArray.
-* Метод Speak. API Microsoft Translator больше не поддерживает функцию преобразования текста в речь. Эта функция доступна в API распознавания речи Bing в Azure Cognitive Services.
+* Метод Speak. API Microsoft Translator больше не поддерживает функцию преобразования текста в речь. Функция преобразования текста в речь доступна в [службе распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech).
 
 Ниже приведен список методов версий 2 и 3, в котором указаны методы версии 3 и API-интерфейсы, предоставляющие возможности версии 2.
 
 | Метод API версии 2   | Совместимость API версии 3 |
 |:----------- |:-------------|
-| Translate     | Translate          |
-| TranslateArray      | Translate          |
-| GetLanguageNames      | Языки          |
-| GetLanguagesForTranslate     | Языки        |
-| GetLanguagesForSpeak      | API-интерфейсы речи Cognitive Services         |
-| Speak     | API-интерфейсы речи Cognitive Services          |
-| Обнаружение     | Обнаружение         |
-| DetectArray     | Обнаружение         |
-| AddTranslation     | API Microsoft Translator Hub         |
-| AddTranslationArray    | API Microsoft Translator Hub          |
-| BreakSentences      | BreakSentence         |
+| Translate     | [Translate](reference/v3-0-translate.md)          |
+| TranslateArray      | [Translate](reference/v3-0-translate.md)        |
+| GetLanguageNames      | [Языки](reference/v3-0-languages.md)         |
+| GetLanguagesForTranslate     | [Языки](reference/v3-0-languages.md)       |
+| GetLanguagesForSpeak      | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech)         |
+| Speak     | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech)          |
+| Обнаружение     | [Detect](reference/v3-0-detect.md)         |
+| DetectArray     | [Detect](reference/v3-0-detect.md)         |
+| AddTranslation     | [API Microsoft Translator Hub](https://hub.microsofttranslator.com/Help/Download/Microsoft%20Translator%20Hub%20API%20Guide.pdf)         |
+| AddTranslationArray    | [API Microsoft Translator Hub](https://hub.microsofttranslator.com/Help/Download/Microsoft%20Translator%20Hub%20API%20Guide.pdf)          |
+| BreakSentences      | [BreakSentence](reference/v3-0-break-sentence.md)       |
 | GetTranslations      | Компонент больше не поддерживается.         |
 | GetTranslationsArray      | Компонент больше не поддерживается.         |
 
 ## <a name="move-to-json-format"></a>Переход на формат JSON
 
-Интерфейс API перевода текстов Microsoft Translator версии 2 принимал и возвращал данные в формате XML. В версии 3 все отправленные и полученные через API данные имеют формат JSON. Данные в формате XML больше не принимаются и не возвращаются в версии 3. 
+Интерфейс API перевода текстов Microsoft Translator версии 2 принимал и возвращал данные в формате XML. В версии 3 все отправленные и полученные через API данные имеют формат JSON. Данные в формате XML больше не принимаются и не возвращаются в версии 3.
 
 Это изменение может повлиять на некоторые аспекты приложения, написанного для API перевода текстов версии 2. Например, интерфейс API языков возвращает сведения о языке перевода текста, транслитерацию и два метода Dictionary. Вы можете запросить все сведения о языке для всех методов в одном вызове или по отдельности.
 

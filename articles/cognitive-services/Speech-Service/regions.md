@@ -1,21 +1,23 @@
 ---
 title: Регионы службы "Речь"
-description: Справочник по регионам и конечным точкам службы "Речь".
+titlesuffix: Azure Cognitive Services
+description: Справочник по регионам службы "Речь".
 services: cognitive-services
 author: mahilleb-msft
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: speech
-ms.topic: article
+ms.component: speech-service
+ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: mahilleb
-ms.openlocfilehash: 01c76d80d6b2fd64165b126df01c391d7e18292f
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: a5fce6f9547a96da3ce482ce388e5ba2093f2af4
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48887553"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49468132"
 ---
-# <a name="regions-of-the-speech-service"></a>Регионы и конечные точки службы "Речь"
+# <a name="regions-of-the-speech-service"></a>Регионы службы "Речь"
 
 Служба "Речь" доступна в нескольких регионах.
 При создании подписки можно выбрать доступный регион в соответствии с потребностями.
@@ -29,7 +31,7 @@ ms.locfileid: "48887553"
 
 ## <a name="speech-sdk"></a>Пакет SDK для распознавания речи
 
-В [пакете SDK для службы "Речь"](speech-sdk.md) регионы указанны в виде строки (например, в качестве параметра `SpeechConfig.FromSubscription` в пакете SDK службы "Речь" для C#).
+В [пакете SDK для службы "Речь"](speech-sdk.md) регионы указаны в виде строки (например, в качестве параметра `SpeechConfig.FromSubscription` в пакете SDK службы "Речь" для C#).
 
 ### <a name="regions-for-speech-recognition-and-translation"></a>Регионы для распознавания и перевода речи
 

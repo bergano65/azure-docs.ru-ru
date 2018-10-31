@@ -5,21 +5,23 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 09/07/2018
+ms.date: 10/15/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: c26eee05a59a10036138f81086b3f6a9e0de6d5d
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 5da34e8e79c0df88cfad0b398aa8e1c22f158489
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45737300"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49428884"
 ---
-# <a name="manage-access-rights-to-azure-storage-data-with-rbac-preview"></a>Управление правами доступа к данным службы хранилища Azure с помощью ролей RBAC (предварительная версия)
+# <a name="manage-access-rights-to-azure-blob-and-queue-data-with-rbac-preview"></a>Управление правами доступа к данным BLOB-объектов и очередей Azure с помощью RBAC (предварительная версия)
 
 Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью [управления доступом на основе ролей (RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview). Служба хранилища Azure определяет набор встроенных ролей RBAC, которые охватывают общие наборы разрешений, используемые для доступа к контейнерам или очередям. Когда роль RBAC назначается удостоверению Azure AD, этому удостоверению предоставляется доступ к соответствующим ресурсам в соответствии с указанной областью. Доступ может ограничиваться уровнем подписки, группой ресурсов, учетной записью хранения или отдельным контейнером или очередью. Эти права доступа можно назначать ресурсам службы хранилища Azure с помощью портала Azure, программ командной строки Azure и интерфейсов API управления Azure. 
 
 Можно использовать удостоверение Azure AD пользователя, группы или субъекта-службы приложения, а также управляемое удостоверение службы для ресурсов Azure. Пользователь, группа или субъект-служба приложения могут использоваться в качестве субъекта безопасности. [Управляемое удостоверение для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md) — это автоматически управляемое удостоверение, используемое для аутентификации из приложений, запущенных на виртуальных машинах Azure, функциональных приложений, масштабируемых наборов виртуальных машин и т д. Сведения об удостоверении в Azure AD см. в статье, посвященной [обзору решений удостоверения Azure](https://docs.microsoft.com/azure/active-directory/understand-azure-identity-solutions).
+
+[!INCLUDE [storage-auth-aad-note-include](../../../includes/storage-auth-aad-note-include.md)]
 
 ## <a name="rbac-roles-for-blobs-and-queues"></a>Роли RBAC для больших двоичных объектов и очередей
 

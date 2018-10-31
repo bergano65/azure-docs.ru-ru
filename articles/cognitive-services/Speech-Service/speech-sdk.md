@@ -1,24 +1,25 @@
 ---
-title: Пакет SDK службы "Речь" в Cognitive Services
+title: Сведения о пакете SDK службы "Речь"
+titleSuffix: Azure Cognitive Services
 description: Обзор пакетов SDK, доступных для службы "Речь".
-titleSuffix: Microsoft Cognitive Services
 services: cognitive-services
-author: v-jerkin
+author: erhopf
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
-ms.topic: article
-ms.date: 09/24/2018
-ms.author: v-jerkin
-ms.openlocfilehash: 169d421ddccf33ac239b69ab78ca7dca0f0b8261
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.topic: conceptual
+ms.date: 10/16/2018
+ms.author: wolfma
+ms.openlocfilehash: f071c15ea586f7b146b82a6201adf16dadc65add
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46958421"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49464817"
 ---
-# <a name="about-the-cognitive-services-speech-sdk"></a>Пакет SDK службы "Речь" в Cognitive Services
+# <a name="about-the-speech-service-sdk"></a>Сведения о пакете SDK службы "Речь"
 
-Пакет средств разработки программного обеспечения (SDK) для службы "Речь" в Cognitive Services предоставляет приложениям прямой доступ к функциям службы "Речь", что облегчает разработку программного обеспечения. Сейчас пакет SDK предоставляет доступ к **преобразованию речи в текст**, **переводу речи** и **распознаванию намерений**.
+Пакет средств разработки программного обеспечения (SDK) для службы "Речь" предоставляет приложениям встроенный доступ к функциям службы "Речь", что облегчает разработку программного обеспечения. Сейчас пакет SDK предоставляет доступ к **преобразованию речи в текст**, **переводу речи** и **распознаванию намерений**.
 
 [!INCLUDE [Speech SDK Platforms](../../../includes/cognitive-services-speech-service-speech-sdk-platforms.md)]
 
@@ -30,17 +31,14 @@ ms.locfileid: "46958421"
 
 Для Windows поддерживаются следующие языки:
 
-* C# (UWP и .NET), C++: можно ссылаться и использовать последнюю версию пакета средств разработки NuGet для распознавания речи.
-  Пакет содержит 32-разрядные и 64-разрядные клиентские библиотеки, а также управляемые библиотеки (.NET).
-  Пакет SDK можно установить в Visual Studio с помощью NuGet: просто выполните поиск `Microsoft.CognitiveServices.Speech`.
+* C# (UWP и .NET), C++: можно ссылаться и использовать последнюю версию пакета средств разработки NuGet для распознавания речи. Пакет содержит 32-разрядные и 64-разрядные клиентские библиотеки и управляемые библиотеки (.NET). Пакет SDK можно установить в Visual Studio с помощью NuGet. Выполните поиск по **Microsoft.CognitiveServices.Speech**.
 
-* Java: можно ссылаться и использовать последнюю версию пакета Speech SDK Maven, который поддерживает только Windows x64.
-  В проект Maven добавьте `https://csspeechstorage.blob.core.windows.net/maven/` в качестве дополнительного репозитория и ссылку на `com.microsoft.cognitiveservices.speech:client-sdk:1.0.0` в качестве зависимости. 
+* Java: можно ссылаться и использовать последнюю версию пакета Speech SDK Maven, который поддерживает только 64-разрядные версии Windows. В проект Maven добавьте `https://csspeechstorage.blob.core.windows.net/maven/` в качестве дополнительного репозитория и ссылку на `com.microsoft.cognitiveservices.speech:client-sdk:1.0.1` в качестве зависимости. 
 
 ### <a name="linux"></a>Linux
 
 > [!NOTE]
-> В настоящее время поддерживается только Ubuntu 16.04 на ПК (x86 или x64 для разработки приложений C++, x64 для .NET Core и Java).
+> В настоящее время поддерживается только Ubuntu 16.04 на ПК (x86 или x64 для разработки приложений C++ и x64 для .NET Core и Java).
 
 Убедитесь, что у вас установлены необходимые компиляторы и библиотеки, выполнив следующие команды оболочки:
 
@@ -49,17 +47,15 @@ sudo apt-get update
 sudo apt-get install build-essential libssl1.0.0 libcurl3 libasound2
 ```
 
-* C#: можно ссылаться и использовать последнюю версию пакета средств разработки NuGet для распознавания речи.
-  Чтобы ссылаться на пакет SDK, добавьте следующую ссылку на пакет в проект:
+* C#: можно ссылаться и использовать последнюю версию пакета средств разработки NuGet для распознавания речи. Чтобы ссылаться на пакет SDK, добавьте следующую ссылку на пакет в проект:
 
   ```xml
-  <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.0.0" />
+  <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.0.1" />
   ```
 
-* Java: можно ссылаться и использовать последнюю версию пакета SDK Maven для распознавания речи.
-  В проект Maven добавьте `https://csspeechstorage.blob.core.windows.net/maven/` в качестве дополнительного репозитория и ссылку на `com.microsoft.cognitiveservices.speech:client-sdk:1.0.0` в качестве зависимости. 
+* Java: можно ссылаться и использовать последнюю версию пакета SDK Maven для распознавания речи. В проект Maven добавьте `https://csspeechstorage.blob.core.windows.net/maven/` в качестве дополнительного репозитория и ссылку на `com.microsoft.cognitiveservices.speech:client-sdk:1.0.1` в качестве зависимости. 
 
-* C++: скачайте пакет SDK в виде [пакета TAR](https://aka.ms/csspeech/linuxbinary) и распакуйте файлы в папку по своему усмотрению. В таблице ниже показана структура папок пакета SDK.
+* C++: скачайте пакет SDK в виде [пакета TAR](https://aka.ms/csspeech/linuxbinary) и распакуйте файлы в папку по своему усмотрению. В таблице ниже показана структура папок пакета SDK:
 
   |Путь|ОПИСАНИЕ|
   |-|-|
@@ -69,24 +65,24 @@ sudo apt-get install build-essential libssl1.0.0 libcurl3 libasound2
   |`lib/x64`|Собственная библиотека x64 для связывания с приложением|
   |`lib/x86`|Собственная библиотека x86 для связывания с приложением|
 
-  Чтобы создать приложение, скопируйте или переместите необходимые двоичные файлы (и библиотеки) в среду разработки, а также включите их как обязательные в процесс сборки.
+  Чтобы создать приложение, скопируйте или переместите необходимые двоичные файлы (и библиотеки) в среду разработки. Включите их как обязательные в процесс сборки.
 
 ### <a name="android"></a>Android
 
-Пакет SDK Java для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит библиотеки и разрешения Android, необходимые для его использования.
-Она размещена в репозитории Maven в `https://csspeechstorage.blob.core.windows.net/maven/` в виде пакета `com.microsoft.cognitiveservices.speech:client-sdk:1.0.0`.
+Пакет SDK Java для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит библиотеки и разрешения Android, необходимые для его использования. Она размещена в репозитории Maven в `https://csspeechstorage.blob.core.windows.net/maven/` в виде пакета `com.microsoft.cognitiveservices.speech:client-sdk:1.0.1`.
+
 Чтобы использовать этот пакет из проекта Android Studio, внесите следующие изменения:
 
-* В файл `build.gradle` уровня проекта добавьте следующий текст в раздел `repository`:
+* В файл build.gradle уровня проекта добавьте следующий текст в раздел `repository`:
 
   ```text
   maven { url 'https://csspeechstorage.blob.core.windows.net/maven/' }
   ```
 
-* В файл `build.gradle` уровня модуля добавьте следующий текст в раздел `dependencies`:
+* В файл build.gradle уровня модуля добавьте следующий текст в раздел `dependencies`:
 
   ```text
-  implementation 'com.microsoft.cognitiveservices.speech:client-sdk:1.0.0'
+  implementation 'com.microsoft.cognitiveservices.speech:client-sdk:1.0.1'
   ```
 
 Пакет SDK для Java также входит в [пакет SDK для устройств распознавания речи](speech-devices-sdk.md).

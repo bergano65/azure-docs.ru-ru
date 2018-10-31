@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 81eb23a0955bbc6a5f9dcd95c6874f0c5a8c286c
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: ce2b4304ea53be7e9a7be42b8a7fb30f713d85f8
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47434044"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49405214"
 ---
 # <a name="introduction-to-azure-security"></a>Введение в систему безопасности Azure
 ## <a name="overview"></a>Обзор
@@ -74,10 +74,10 @@ Azure — общедоступная облачная платформа, кот
 ## <a name="operations"></a>Операции
 Этот раздел содержит дополнительные сведения о ключевых функциях операций безопасности, а также сводные сведения об этих функциях.
 
-### <a name="operations-management-suite-security-and-audit-dashboard"></a>Панель мониторинга "Безопасность и аудит" в Operations Management Suite
-[Решение "Безопасность и аудит" OMS](https://docs.microsoft.com/azure/operations-management-suite/oms-security-getting-started) позволяет всесторонне изучать данные об информационной безопасности в вашей организации. Для этого применяются [встроенные поисковые запросы](https://blogs.technet.microsoft.com/msoms/2016/01/21/easy-microsoft-operations-management-suite-search-queries/), которые позволяют определять важные моменты, требующие вашего внимания. Панель мониторинга [Безопасность и аудит](https://technet.microsoft.com/library/mt484091.aspx) — это начальный экран для доступа ко всем функциям, связанным с безопасностью в OMS. Она содержит общее представление состояния безопасности компьютеров организации. Кроме того, она включает возможность просмотра всех событий за последние 24 часа, 7 дней или другие настраиваемые промежутки времени.
+### <a name="security-and-audit-dashboard"></a>Панель мониторинга "Безопасность и аудит"
+[Решение "Безопасность и аудит"](https://docs.microsoft.com/azure/operations-management-suite/oms-security-getting-started) позволяет всесторонне изучать данные об информационной безопасности в вашей организации. Для этого применяются [встроенные поисковые запросы](https://blogs.technet.microsoft.com/msoms/2016/01/21/easy-microsoft-operations-management-suite-search-queries/), которые позволяют определять важные моменты, требующие вашего внимания. Панель мониторинга [Безопасность и аудит](https://technet.microsoft.com/library/mt484091.aspx) — это начальный экран для доступа ко всем функциям, связанным с безопасностью в Log Analytics. Она содержит общее представление состояния безопасности компьютеров организации. Кроме того, она включает возможность просмотра всех событий за последние 24 часа, 7 дней или другие настраиваемые промежутки времени.
 
-Кроме того, можно настроить решение безопасности и соответствия требованиям OMS для [автоматического выполнения определенных действий](https://blogs.technet.microsoft.com/robdavies/2016/04/20/simple-look-at-oms-alert-remediation-with-runbooks-part-1/) при обнаружении определенного события.
+Кроме того, можно настроить решение безопасности и соответствия требованиям для [автоматического выполнения определенных действий](https://blogs.technet.microsoft.com/robdavies/2016/04/20/simple-look-at-oms-alert-remediation-with-runbooks-part-1/) при обнаружении определенного события.
 
 ### <a name="azure-resource-manager"></a>Azure Resource Manager
 [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-model) дает вам возможность работать с ресурсами своего решения как с группой. Вы можете развертывать, обновлять или удалять все ресурсы решения в рамках одной скоординированной операции. Развертывание осуществляется на основе [шаблона Azure Resource Manager](https://blogs.technet.microsoft.com/canitpro/2015/06/29/devops-basics-infrastructure-as-code-arm-templates/), используемого для разных сред, в том числе для тестовой, промежуточной и рабочей. Диспетчер ресурсов предоставляет функции безопасности, аудита и добавления тегов, помогающие управлять ресурсами после развертывания.
@@ -95,7 +95,7 @@ Application Insights создает диаграммы и таблицы, кот
 [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/) предлагает возможности визуализации, создания запросов, маршрутизации, оповещения, автомасштабирования и автоматизации на основе данных инфраструктуры Azure ([журнал действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs)) и каждого отдельного ресурса Azure ([журналы диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs)). Azure Monitor можно использовать для оповещения о событиях безопасности, регистрируемых в журналах Azure.
 
 ### <a name="log-analytics"></a>Log Analytics
-[Log Analytics](https://azure.microsoft.com/documentation/services/log-analytics/) (входит в состав пакета [Operations Management Suite](https://www.microsoft.com/cloud-platform/operations-management-suite)) обеспечивает решение для управления ИТ-инфраструктурой (как локальной, так и сторонней облачной, например AWS), а также для ресурсов Azure. Данные из Azure Monitor могут направляться непосредственно в журнал аналитики, в результате чего метрики и журналы для всей среды будут отображаться в одном месте.
+[Log Analytics](https://azure.microsoft.com/documentation/services/log-analytics/) обеспечивает решение для управления ИТ-инфраструктурой (как локальной, так и сторонней облачной, например AWS), а также для ресурсов Azure. Данные из Azure Monitor могут направляться непосредственно в журнал аналитики, в результате чего метрики и журналы для всей среды будут отображаться в одном месте.
 
 Log Analytics может быть полезным инструментом для выполнения экспертизы и прочего анализа безопасности, так как позволяет быстро находить информацию в больших объемах записей, относящихся к безопасности, с помощью гибких запросов. Кроме того, локальные [журналы брандмауэра и прокси-сервера можно экспортировать в Azure для анализа с помощью Log Analytics.](https://docs.microsoft.com/azure/log-analytics/log-analytics-proxy-firewall)
 

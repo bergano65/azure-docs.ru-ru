@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 5/22/2018
 ms.author: nachandr
-ms.openlocfilehash: f43715b9c419aab1f5b95e140eac72642ef74198
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: a8b2070b6f5b10cb60c6658aefc8cc90331ecfd9
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42746903"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49409362"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Установка исправлений операционной системы Windows в кластере Service Fabric
 
@@ -29,7 +29,9 @@ ms.locfileid: "42746903"
 >
 >
 
-Приложение для управления исправлениями — это приложение Azure Service Fabric, которое позволяет автоматизировать установку исправлений операционной системы в кластере Service Fabric и избежать простоев.
+[Автоматические обновления образа ОС масштабируемого набора виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) — это лучший метод установки исправлений операционной системы в Azure, а приложение для управления исправлениями (POA) — это оболочка вокруг службы систем RepairManager в Service Fabric, которая обеспечивает планирование установки исправлений ОС на основе конфигурации для кластеров, размещенных не в Azure. POA не является обязательным для кластеров, размещенных не в Azure, но планирование установки исправлений доменами обновления обязательно для установки исправлений узлов кластеров Service Fabric без простоев.
+
+POA — это приложение Azure Service Fabric, которое позволяет автоматизировать установку исправлений операционной системы в кластере Service Fabric и избежать простоев.
 
 Приложение для оркестрации исправлений предоставляет следующие возможности:
 

@@ -14,23 +14,25 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/1/2017
 ms.author: dekapur
-ms.openlocfilehash: 79d30a47b017379107b63b0006a35534f68c43b9
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: aabdae370c28f8fa633372be4505c00c25254408
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34210782"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49403256"
 ---
 # <a name="monitor-containers-with-log-analytics"></a>Мониторинг контейнеров с помощью Log Analytics
  
-В этой статье описано, как настроить решение мониторинга контейнера OMS Log Analytics для просмотра событий контейнера. См. дополнительные сведения о [настройке кластера для сбора событий контейнера](service-fabric-tutorial-monitoring-wincontainers.md).
+В этой статье описано, как настроить решение мониторинга контейнера Azure Log Analytics для просмотра событий контейнера. См. дополнительные сведения о [настройке кластера для сбора событий контейнера](service-fabric-tutorial-monitoring-wincontainers.md). 
+
+[!INCLUDE [log-analytics-agent-note.md](../../includes/log-analytics-agent-note.md)]
 
 ## <a name="set-up-the-container-monitoring-solution"></a>Настройка решения мониторинга контейнера
 
 > [!NOTE]
-> Вам нужно настроить Log Analytics для кластера и развернуть на узлах агент OMS. Если эти решения не установлены, сначала выполните действия, описанные в руководстве по [настройке Log Analytics для кластера](service-fabric-diagnostics-oms-setup.md) и [добавлению агента OMS в кластер](service-fabric-diagnostics-oms-agent.md).
+> Вам нужно настроить Log Analytics для кластера и развернуть на узлах агент Log Analytics. Если эти решения не установлены, сначала выполните действия, описанные в руководстве по [настройке Log Analytics](service-fabric-diagnostics-oms-setup.md) и [добавлению агента Log Analytics в кластер](service-fabric-diagnostics-oms-agent.md).
 
-1. После настройки кластера с помощью Log Analytics и агента OMS разверните контейнеры. Прежде чем перейти к следующему шагу, подождите, пока ваши контейнеры развернутся.
+1. После настройки кластера с помощью Log Analytics и агента Log Analytics разверните контейнеры. Прежде чем перейти к следующему шагу, подождите, пока ваши контейнеры развернутся.
 
 2. Найдите *Решение мониторинга контейнеров* в Azure Marketplace и щелкните ресурс **Решения мониторинга контейнеров** в категории "Мониторинг и управление".
 
@@ -38,9 +40,9 @@ ms.locfileid: "34210782"
 
 3. Создайте решение внутри рабочей области, созданной для кластера. При таком изменении агент автоматически активируется для запуска сбора данных Docker в контейнеры. Приблизительно через 15 минут в решении появятся входящие журналы и статистика, как показано на рисунке ниже.
 
-    ![Основная панель мониторинга OMS](./media/service-fabric-diagnostics-event-analysis-oms/oms-containers-dashboard.png)
+    ![Базовая панель мониторинга Log Analytics](./media/service-fabric-diagnostics-event-analysis-oms/oms-containers-dashboard.png)
 
-Агент обеспечивает сбор нескольких журналов, относящихся к контейнерам, которые могут запрашиваться в OMS или использоваться для визуализации показателей эффективности. Собираются следующие типы журналов.
+Агент обеспечивает сбор нескольких журналов, относящихся к контейнерам, которые могут запрашиваться в Log Analytics или использоваться для визуализации показателей эффективности. Собираются следующие типы журналов.
 
 * ContainerInventory — отображает информацию о местонахождении контейнера, имени и образах.
 * ContainerImageInventory — информация о развернутых образах, в том числе их идентификаторы или размеры.
@@ -51,7 +53,7 @@ ms.locfileid: "34210782"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* См. дополнительные сведения о [решении OMS "Контейнеры"](../log-analytics/log-analytics-containers.md).
+* См. дополнительные сведения о [решении контейнеров Log Analytics](../log-analytics/log-analytics-containers.md).
 * Дополнительные сведения об оркестрации контейнера в Service Fabric см. в статье [Service Fabric и контейнеры](service-fabric-containers-overview.md)
 * Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../log-analytics/log-analytics-log-searches.md), которые являются частью решения Log Analytics.
 * Настройте в Log Analytics [правила автоматической генерации оповещений](../log-analytics/log-analytics-alerts.md), которые помогают выполнять обнаружение и диагностику.

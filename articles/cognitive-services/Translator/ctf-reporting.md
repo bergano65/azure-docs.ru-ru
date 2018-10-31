@@ -10,19 +10,19 @@ ms.component: translator-text
 ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: v-jansko
-ms.openlocfilehash: 9b3ac6e6d10fb0e70549cadfd7bf65220deb8f33
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: aa59ce89bf8c2c4b31d85c572dcdfb3645f06884
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46126927"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49646019"
 ---
 # <a name="how-to-use-collaborative-translation-framework-ctf-reporting"></a>Как использовать отчеты на платформе для совместного перевода CTF
 
 > [!NOTE]
 > Этот метод устарел и более не поддерживается. Он не доступен в версии 3.0-API перевода текстов.
 
-> Платформа для совместного перевода (CTF), ранее доступная для версии 2.0 API перевода текстов, устарела с 1 февраля 2018 года. Функции AddTranslation и AddTranslationArray позволяют пользователям вводить исправления на платформе для совместного перевода. После 31 января 2018 года эти две функции не принимали новые предложения и пользователи получали сообщение об ошибке. Эти функции были выведены из эксплуатации и не будут заменены. 
+> Платформа для совместного перевода (CTF), ранее доступная для версии 2.0 API перевода текстов, устарела с 1 февраля 2018 года. Функции AddTranslation и AddTranslationArray позволяют пользователям вводить исправления на платформе для совместного перевода. После 31 января 2018 года эти две функции не принимали новые предложения и пользователи получали сообщение об ошибке. Эти функции были выведены из эксплуатации и не будут заменены.
 
 >Подобная функциональность доступна в API Translator Hub, позволяя вам создать собственную систему перевода с вашей терминологией и стилем. Ее можно вызвать помощью идентификатора категории в API перевода текстов. Translator Hub: [https://hub.microsofttranslator.com](https://hub.microsofttranslator.com). API Translator Hub: [https://hub.microsofttranslator.com/swagger](https://hub.microsofttranslator.com/swagger).
 
@@ -33,7 +33,7 @@ API отчетов платформы для совместного перево
 
 ## <a name="endpoint"></a>Конечная точка
 Конечная точка API отчета CTF http://api.microsofttranslator.com/v2/beta/ctfreporting.svc
-                        
+
 
 ## <a name="methods"></a>Методы
 | ИМЯ |    ОПИСАНИЕ|
@@ -64,7 +64,7 @@ UserTranslationCount[]GetUserTranslationCounts(
            string to,
            int? minRating,
            int? maxRating,
-           string user, 
+           string user,
            string category
            DateTime? minDateUtc,
            DateTime? maxDateUtc,
@@ -135,12 +135,12 @@ UserTranslation[] GetUserTranslations (
             string to,
             int? minRating,
             int? maxRating,
-            string user, 
+            string user,
             string category
             DateTime? minDateUtc,
             DateTime? maxDateUtc,
             int? skip,
-            int? take); 
+            int? take);
 ```
 
 **Параметры**
@@ -154,8 +154,8 @@ UserTranslation[] GetUserTranslations (
 | minRating| **Необязательный**. Целочисленное значение, представляющее минимальную оценку качества для переведенного текста. Допустимое значение — от -10 до 10. Значение по умолчанию — 1.|
 | maxRating| **Необязательный**. Целочисленное значение, представляющее максимальную оценку качества для переведенного текста. Допустимое значение — от -10 до 10. Значение по умолчанию — 1.|
 | user| **Необязательный. Строка, которая используется для фильтрации результата на основе инициатора отправки**|
-| category| **Необязательный**. Строка, содержащая категорию (домен) перевода. Этот параметр поддерживает только общий параметр по умолчанию.| 
-| minDateUtc| **Необязательный**. Дата, с которой вы хотите получить переводы. Дата должна быть в формате UTC.| 
+| category| **Необязательный**. Строка, содержащая категорию (домен) перевода. Этот параметр поддерживает только общий параметр по умолчанию.|
+| minDateUtc| **Необязательный**. Дата, с которой вы хотите получить переводы. Дата должна быть в формате UTC.|
 | maxDateUtc| **Необязательный**. Дата, до которой вы хотите получить переводы. Дата должна быть в формате UTC.|
 | skip| **Необязательный**. Количество результатов, которые вы хотите пропустить на странице. Например, если вы хотите пропустить первые 20 строк результатов и начать просмотр с 21-й записи результатов, укажите 20 для этого параметра. Значение параметра по умолчанию — 0.|
 | take| **Необязательный**. Количество результатов, которые вы хотите извлечь. Максимальное количество каждого запроса — 100. Число по умолчанию — 50.|
@@ -192,21 +192,3 @@ UserTranslation[] GetUserTranslations (
 **Примеры кода в GitHub**
 * [C#](https://github.com/MicrosoftTranslator/Documentation-Code-TextAPI/blob/master/ctf/ctf-getusertranslations-example-csharp.md)
 * [PHP](https://github.com/MicrosoftTranslator/Documentation-Code-TextAPI/blob/master/ctf/ctf-getusertranslations-example-php.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

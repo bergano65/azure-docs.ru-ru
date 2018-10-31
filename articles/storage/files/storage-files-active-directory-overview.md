@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: article
 ms.date: 09/19/2018
 ms.author: tamram
-ms.openlocfilehash: d599b54fe828b88edd3d04d6cd66a4baf36c2c1a
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.openlocfilehash: 1962a3237fb54409d17fefa314605bafa91c3e9c
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48831557"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49427643"
 ---
 # <a name="overview-of-azure-active-directory-authentication-over-smb-for-azure-files-preview"></a>Обзор проверки подлинности Azure Active Directory по протоколу SMB для файлов Azure (предварительная версия)
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -58,7 +58,7 @@ Azure AD по протоколу SMB для файлов Azure обладает 
 ![Снимок экрана: схема проверки подлинности Azure AD по протоколу SMB](media/storage-files-active-directory-overview/azure-active-directory-over-smb-for-files-overview.png)
 
 ### <a name="enable-azure-ad-authentication-over-smb"></a>Включение аутентификации Azure AD через SMB
-Вы можете включить проверку подлинности Azure AD по протоколу SMB для файлов Azure в новых или существующих учетных записях хранения, созданных после 29 августа 2018 г. 
+Вы можете включить проверку подлинности Azure AD по протоколу SMB для файлов Azure в новых или существующих учетных записях хранения, созданных после 24 сентября 2018 г. 
 
 Прежде чем включать проверку подлинности Azure AD по протоколу SMB, убедитесь, что доменные службы Azure AD развернуты для основного клиента Azure AD, с которым связана ваша учетная запись хранения. Если вы еще не настроили доменные службы Azure AD, следуйте пошаговым инструкциям, предоставленным в статье [Включение доменных служб Azure Active Directory на портале Azure](../../active-directory-domain-services/active-directory-ds-getting-started.md).
 

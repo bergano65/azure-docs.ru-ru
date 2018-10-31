@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/31/2018
 ms.author: jomolesk
-ms.openlocfilehash: e65369546715a679de19fb1aa44dd221fb4de04e
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 78c92f8d738dd675ac20c31bd8171bd4370a56f6
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47408442"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49406251"
 ---
 # <a name="azure-security-and-compliance-blueprint---iaas-web-application-for-nist-sp-800-171"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение IaaS для NIST SP 800-171
 
@@ -167,7 +167,7 @@ Azure по умолчанию шифрует весь обмен данными 
 - **Журналы действий.** [Журналы действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) содержат информацию об операциях, которые выполнялись с ресурсами в подписке. Журналы действий помогают определить инициатора операции, время события и состояние.
 - **Журналы диагностики.** [Журналы диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs) включают в себя все журналы, создаваемые каждым ресурсом. К этим журналам относятся системные журналы событий Windows, журналы службы, журналы аудита Key Vault, а также журналы брандмауэра и доступа к Шлюзу приложений. Все журналы диагностики обеспечивают запись данных в централизованную и зашифрованную учетную запись Azure для архивирования. Пользователи могут настроить срок хранения до 730 дней в соответствии с конкретными требованиями.
 
-**Log Analytics**. Эти журналы объединяются в [Log Analytics](https://azure.microsoft.com/services/log-analytics/) для обработки и хранения данных, а также создания отчетов на панелях мониторинга. Собранные данные объединяются в отдельные таблицы для каждого типа данных в рабочих областях Operations Management Suite. Таким образом, все данные могут анализироваться вместе независимо от исходного источника. Центр безопасности интегрируется с Log Analytics. Клиенты могут использовать запросы Log Analytics для доступа к своим данным событий безопасности и объединять их с данными из других служб.
+**Log Analytics**. Эти журналы объединяются в [Log Analytics](https://azure.microsoft.com/services/log-analytics/) для обработки и хранения данных, а также создания отчетов на панелях мониторинга. Собранные данные объединяются в отдельные таблицы для каждого типа данных в рабочих областях Log Analytics. Таким образом, все данные могут анализироваться вместе независимо от исходного источника. Центр безопасности интегрируется с Log Analytics. Клиенты могут использовать запросы Log Analytics для доступа к своим данным событий безопасности и объединять их с данными из других служб.
 
 В состав данной архитектуры включены следующие [решения по управлению](https://docs.microsoft.com/azure/log-analytics/log-analytics-add-solutions) Log Analytics:
 -   [Оценка Active Directory](https://docs.microsoft.com/azure/log-analytics/log-analytics-ad-assessment). Решение проверки работоспособности Active Directory периодически оценивает риск и состояние серверной среды. Это решение предоставляет приоритетный список рекомендаций, относящихся к развернутой серверной инфраструктуре.

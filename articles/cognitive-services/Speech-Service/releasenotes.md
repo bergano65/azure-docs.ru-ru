@@ -1,22 +1,37 @@
 ---
-title: Документация по пакету SDK для службы "Речь" в Cognitive Services | Документы Майкрософт
+title: Документация по пакету SDK для службы "Речь"
+titlesuffix: Azure Cognitive Services
 description: Заметки о выпуске — что изменилось в последних версиях
-titleSuffix: Microsoft Cognitive Services
 services: cognitive-services
 author: wolfma61
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
-ms.topic: article
-ms.date: 09/24/2018
+ms.topic: conceptual
+ms.date: 10/12/2018
 ms.author: wolfma
-ms.openlocfilehash: cfc8f973ac9bced9396a081f7fb2ab6a4a1b2f7f
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: b5e4d239121b2449a45dfce826c99765f1c3f4be
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46963089"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49471144"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
+
+## <a name="speech-service-sdk-101"></a>Пакет SDK для службы "Речь" версии 1.0.1
+
+Повышение надежности и устранение ошибок:
+
+* Исправлена потенциальная неустранимая ошибка из-за состояния гонки в удаленном распознавателе
+* Исправлена потенциальная неустранимая ошибка в случае незаданных свойств.
+* Добавлены дополнительные ошибки и проверки параметров.
+* Objective-C: исправлена потенциальная неустранимая ошибка, возникающая из-за переопределения имени в NSString.
+* Objective-C: скорректирована видимость API
+* JavaScript: исправления относительно событий и их полезных данных.
+* Улучшена документация.
+
+В нашем [репозитории примеров](https://aka.ms/csspeech/samples) добавлен новый пример для JavaScript.
 
 ## <a name="cognitive-services-speech-sdk-100-2018-september-release"></a>Пакет SDK для службы "Речь" 1.0.0 в Cognitive Services: выпуск за сентябрь 2018 г.
 

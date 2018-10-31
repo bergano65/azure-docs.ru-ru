@@ -15,16 +15,16 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/04/2018
 ms.author: mikeray
-ms.openlocfilehash: d46c55f809d24529ea5deeb4d84de44dae876a4b
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: e0a47da168ae9371979290b3febc9d767e8755d7
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38968992"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49428017"
 ---
 # <a name="backup-and-restore-for-sql-server-in-azure-virtual-machines"></a>Резервное копирование и восстановление SQL Server в виртуальных машинах Azure
 
-В этой статье описаны функции резервного копирования и восстановления, доступные для SQL Server на виртуальных машинах Windows Azure. В службе хранилища Azure хранятся три копии каждого диска виртуальной машины Azure для защиты от потери или физического повреждения данных. В отличие от локальной среды здесь вы можете не беспокоиться об аппаратных сбоях. Но для баз данных SQL Server все равно следует создавать резервные копии, чтобы защитить их от ошибок приложений и (или) пользователей, например случайной вставки или удаления данных. В таких случаях важно иметь возможность выполнить восстановление до определенной точки во времени.
+В этой статье описаны функции резервного копирования и восстановления, доступные для SQL Server на виртуальных машинах Windows в Azure. В службе хранилища Azure хранятся три копии каждого диска виртуальной машины Azure для защиты от потери или физического повреждения данных. В отличие от локальной среды здесь вы можете не беспокоиться об аппаратных сбоях. Но для баз данных SQL Server все равно следует создавать резервные копии, чтобы защитить их от ошибок приложений и (или) пользователей, например случайной вставки или удаления данных. В таких случаях важно иметь возможность выполнить восстановление до определенной точки во времени.
 
 В первой части этой статьи описаны доступные функции резервного копирования и восстановления. За ней следуют разделы с более подробной информацией о каждой стратегии.
 
@@ -42,7 +42,7 @@ ms.locfileid: "38968992"
 
 ## <a id="autoamted"></a> Автоматическое резервное копирование
 
-Автоматическое резервное копирование реализует службу автоматического резервного копирования для экземпляров SQL Server Standard и Enterprise, работающих на виртуальной машине Windows Azure. Эта служба работает на базе [расширения агента SQL Server IaaS](virtual-machines-windows-sql-server-agent-extension.md), которое автоматически устанавливается на все образы виртуальных машин Windows для SQL Server, представленные на портале Azure.
+Автоматическое резервное копирование реализует службу автоматического резервного копирования для экземпляров SQL Server Standard и Enterprise, работающих на виртуальной машине Windows в Azure. Эта служба работает на базе [расширения агента SQL Server IaaS](virtual-machines-windows-sql-server-agent-extension.md), которое автоматически устанавливается на все образы виртуальных машин Windows для SQL Server, представленные на портале Azure.
 
 Резервные копии всех баз данных помещаются в настраиваемую учетную запись хранения Azure. Резервные копии можно шифровать и сохранять до 30 дней.
 
@@ -134,8 +134,8 @@ ms.locfileid: "38968992"
 | Настройка политики резервного копирования на портале Azure | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   |
 | Восстановление баз данных на портале Azure |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   |
 | Управление несколькими серверами на одной панели мониторинга |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   |
-| Восстановление до точки во времени | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |
-| Целевая точка восстановления (RPO) 15 минут | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |
+| Восстановление до точки во времени | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Да](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |
+| Целевая точка восстановления (RPO) 15 минут | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Да](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |
 | Краткосрочная политика хранения резервных копий (в днях) | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   |
 | Долгосрочная политика хранения резервных копий (месяцы, годы) |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   |
 | Встроенная поддержка SQL Server Always On |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   |
@@ -144,8 +144,8 @@ ms.locfileid: "38968992"
 | Резервное копирование на подключенные диски виртуальной машины |   |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |
 | Централизованные настраиваемые отчеты о резервном копировании |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   |
 | Объединенные оповещения об ошибках по электронной почте |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   |
-| Настройка мониторинга на основе OMS |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   |
-| Мониторинг заданий резервного копирования с помощью скриптов SSMS или Transact-SQL | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |
+| Настройка мониторинга на основе Log Analytics |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   |
+| Мониторинг заданий резервного копирования с помощью скриптов SSMS или Transact-SQL | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Да](./media/virtual-machines-windows-sql-backup-recovery/yes.png) | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |
 | Восстановление баз данных с помощью скриптов SSMS или Transact-SQL | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |   | ![Yes](./media/virtual-machines-windows-sql-backup-recovery/yes.png) |
 
 ## <a name="next-steps"></a>Дополнительная информация

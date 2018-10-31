@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/30/2018
 ms.author: yzheng
 ms.component: common
-ms.openlocfilehash: 25e6fba6ac8aa34c0c30fd61f5fe297b94720439
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 05e7a7e3c2824a9b47ff723e91103611871d7ed2
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46983673"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49429564"
 ---
 # <a name="managing-the-azure-blob-storage-lifecycle-preview"></a>Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)
 
@@ -37,7 +37,7 @@ ms.locfileid: "46983673"
 Функция управления жизненным циклом предоставляется в режиме предварительного просмотра бесплатно. Клиенты оплачивают только обычную стоимость вызовов API [Отображение BLOB-объектов](https://docs.microsoft.com/rest/api/storageservices/list-blobs) и [Установка уровня BLOB-объектов](https://docs.microsoft.com/rest/api/storageservices/set-blob-tier). Дополнительные сведения о ценах см. на [странице цен на блочные BLOB-объекты](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ## <a name="register-for-preview"></a>Регистрация для использования предварительной версии 
-Чтобы зарегистрироваться для участия в общедоступной предварительной версии, следует отправить запрос на регистрацию этой функции в вашей подписке. Когда запрос будет утвержден (это занимает несколько дней), функция будет включена для всех существующих и новых учетных записей хранения GPv2 или больших двоичных объектов в регионах "западная часть США 2", "центрально-западная часть США" и "Западная Европа". В режиме предварительного просмотра поддерживаются только блочные BLOB-объекты. Как и другие функции в режиме предварительного просмотра, не следует использовать эту возможность для производственных рабочих нагрузок, пока не будет готова общедоступная версия.
+Чтобы зарегистрироваться для участия в общедоступной предварительной версии, следует отправить запрос на регистрацию этой функции в вашей подписке. Когда запрос будет утвержден (это занимает несколько дней), функция будет включена для всех существующих и новых учетных записей хранения GPv2 или больших двоичных объектов в регионах "западная часть США 2", "центрально-западная часть США", "восточная часть США 2" и "Западная Европа". В режиме предварительного просмотра поддерживаются только блочные BLOB-объекты. Как и другие функции в режиме предварительного просмотра, не следует использовать эту возможность для производственных рабочих нагрузок, пока не будет готова общедоступная версия.
 
 Чтобы отправить запрос, выполните следующие команды в PowerShell или интерфейсе командной строки.
 
@@ -69,7 +69,7 @@ az feature show --namespace Microsoft.Storage --name DLM
 
 ## <a name="add-or-remove-policies"></a>Добавление или удаление политик 
 
-Вы можете добавлять, изменять и (или) удалять политики с помощью портала Azure, [PowerShell](https://www.powershellgallery.com/packages/AzureRM.Storage/5.0.3-preview), [REST API](https://docs.microsoft.com/rest/api/storagerp/storageaccounts/createorupdatemanagementpolicies) или клиентских средств на следующих языках: [.NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/8.0.0-preview), [Python](https://pypi.org/project/azure-mgmt-storage/2.0.0rc3/), [Node.js]( https://www.npmjs.com/package/azure-arm-storage/v/5.0.0), [Ruby](   https://rubygems.org/gems/azure_mgmt_storage/versions/0.16.2). 
+Вы можете добавлять, изменять и (или) удалять политики с помощью портала Azure, [PowerShell](https://www.powershellgallery.com/packages/AzureRM.Storage/5.0.3-preview), [REST API](https://docs.microsoft.com/rest/api/storagerp/managementpolicies/managementpolicies_createorupdate) или клиентских средств на следующих языках: [.NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/8.0.0-preview), [Python](https://pypi.org/project/azure-mgmt-storage/2.0.0rc3/), [Node.js]( https://www.npmjs.com/package/azure-arm-storage/v/5.0.0), [Ruby](   https://rubygems.org/gems/azure_mgmt_storage/versions/0.16.2). 
 
 ### <a name="azure-portal"></a>Портал Azure
 
@@ -316,6 +316,10 @@ Get-AzureRmStorageAccountManagementPolicy -ResourceGroupName [resourceGroupName]
   ]
 }
 ```
+## <a name="faq"></a>Часто задаваемые вопросы
+### <a name="i-created-a-new-policy-why-are-the-actions-specified-not-executed-immediately"></a>Мною создана политика, почему указаны действия не выполняются немедленно? 
+
+Политика жизненного цикла выполняется на платформе один раз в день. После задания новой политики на инициирование и выполнение таких действий, как распределение по уровням или удаление, может потребоваться до 24 часов.  
 
 ## <a name="next-steps"></a>Дополнительная информация
 

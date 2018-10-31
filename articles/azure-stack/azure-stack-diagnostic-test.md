@@ -2,7 +2,7 @@
 title: Запуск проверочного теста в Azure Stack | Документация Майкрософт
 description: Сведения о том, как собирать файлы журналов для диагностики в Azure Stack.
 services: azure-stack
-author: mattbriggs
+author: jeffgilb
 manager: femila
 cloud: azure-stack
 ms.service: azure-stack
@@ -10,15 +10,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 10/15/2018
-ms.author: mabrigg
-ms.reviewer: hectorl
-ms.openlocfilehash: 3f4dc6e4136d8d2e3eb1ca5e822306aae2217e3b
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.date: 10/24/2018
+ms.author: jeffgilb
+ms.reviewer: adshar
+ms.openlocfilehash: 4f95fb5f2199e8c276b78a83391f3814303a9470
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49340857"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50024625"
 ---
 # <a name="run-a-validation-test-for-azure-stack"></a>Запуск проверочного теста в Azure Stack
 
@@ -39,7 +39,7 @@ ms.locfileid: "49340857"
     3. Откройте PowerShell от имени администратора.
     4. Выполните команду `Enter-PSSession -ComputerName <ERCS-VM-name> -ConfigurationName PrivilegedEndpoint`
     5. Выполните команду `Test-AzureStack`
-4. Если все тесты сообщают об ошибках, выполните этот командлет: `Get-AzureStackLog -FilterByRole SeedRing -OutputPath <Log output path>` Он собирает журналы выполнения Test-AzureStack. Дополнительные сведения о журналах диагностики см. в статье [Средства диагностики Azure Stack](azure-stack-diagnostics.md).
+4. Если все тесты сообщают об ошибках, выполните этот командлет: `Get-AzureStackLog -FilterByRole SeedRing -OutputPath <Log output path>` Он собирает журналы выполнения Test-AzureStack. Дополнительные сведения о журналах диагностики см. в статье [Средства диагностики Azure Stack](azure-stack-diagnostics.md). Не следует собирать журналы или обращаться в службу поддержки пользователей Майкрософт (CSS), если тесты выдают предупреждение (WARN).
 5. Отправьте журналы **SeedRing** в службу поддержки пользователей Майкрософт. Служба поддержки Майкрософт совместно с вами постарается устранить проблему.
 
 ## <a name="reference-for-test-azurestack"></a>Справочник по Test-AzureStack

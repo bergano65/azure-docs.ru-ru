@@ -14,30 +14,34 @@ ms.workload: identity
 ms.date: 09/19/2018
 ms.author: brandwe
 ms.custom: include file
-ms.openlocfilehash: 331d16df55e26df5d49555c636b307499dd052af
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: 1604b7c9ee9888375e65aa679803c6e996e13b14
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48842924"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49988288"
 ---
 ## <a name="register-your-application"></a>Регистрация приложения
+
 Приложение можно зарегистрировать одним из двух способов, которые описаны в следующих двух разделах.
 
 ### <a name="option-1-express-mode"></a>Вариант 1. Экспресс-режим
+
 Теперь вам необходимо зарегистрировать приложение на *портале регистрации приложений Майкрософт*:
+
 1. Зарегистрируйте свое приложение на [портале регистрации приложений Майкрософт](https://apps.dev.microsoft.com/portal/register-app?appType=mobileAndDesktopApp&appTech=ios&step=configure).
-2.  Введите имя для приложения и адрес электронной почты.
-3.  Выберите параметр Guided Setup (Пошаговая настройка).
-4.  Следуйте инструкциям, чтобы получить идентификатор приложения. Затем вставьте его в свой код.
+2. Введите название приложения и адрес электронной почты.
+3. Выберите параметр Guided Setup (Пошаговая настройка).
+4. Следуйте инструкциям, чтобы получить идентификатор приложения. Затем вставьте его в свой код.
 
 ### <a name="option-2-advanced-mode"></a>Вариант 2. Расширенный режим
 
-1.  Перейдите на [портал регистрации приложений](https://apps.dev.microsoft.com/portal/register-app)
-2.  Введите имя приложения.
-3.  Убедитесь, что параметр Guided Setup (Пошаговая настройка) не выбран.
-4.  Щелкните `Add Platform`, затем выберите `Native Application` и щелкните `Save`.
-5.  Вернитесь в Xcode. В `ViewController.swift` замените строку, начинающуюся с '`let kClientID`', на зарегистрированный идентификатор приложения:
+1. Перейдите на [портал регистрации приложений Майкрософт](https://apps.dev.microsoft.com/portal/register-app).
+2. Введите имя приложения.
+3. Убедитесь, что параметр Guided Setup (Пошаговая настройка) не выбран.
+4. Выберите `Add Platform`, а затем `Native Application`.
+5. Выберите `Save`.
+6. Вернитесь в Xcode. В `ViewController.swift` замените строку, начинающуюся с '`let kClientID`', на зарегистрированный идентификатор приложения:
 
 ```swift
 let kClientID = "Your_Application_Id_Here"

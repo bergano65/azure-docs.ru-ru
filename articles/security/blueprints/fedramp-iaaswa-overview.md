@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/08/2018
 ms.author: jomolesk
-ms.openlocfilehash: 6a2a72f46c4d5faacb7d5871f4c917a5cd578e96
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: f5ba6a001f8933283e0867367ef7bd8d3918c3fd
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34809171"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49405384"
 ---
 # <a name="azure-security-and-compliance-blueprint-iaas-web-application-for-fedramp"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение IaaS для Федеральной программы аккредитации облачных служб
 
@@ -72,7 +72,7 @@ ms.locfileid: "34809171"
 - Хранилище ключей Azure
 - Azure Active Directory (Azure AD)
 - Azure Resource Manager
-- Operations Management Suite (OMS)
+- Log Analytics
 - Azure Monitor
 
 ## <a name="deployment-architecture"></a>Архитектура развертывания
@@ -148,13 +148,13 @@ ms.locfileid: "34809171"
 
 ### <a name="logging-and-auditing"></a>Ведение журналов и аудит
 
-OMS обеспечивает детальную запись системных и пользовательских действий, а также сведений о работоспособности системы. Решение OMS [Log Analytics](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) собирает и анализирует данные, создаваемые ресурсами в локальных средах Azure.
+Служба Log Analytics обеспечивает детальную запись системных и пользовательских действий, а также сведений о работоспособности системы. Решение [Log Analytics](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) собирает и анализирует данные, создаваемые ресурсами в Azure и локальных средах.
 
 - **Журналы действий.** [Журналы действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) содержат информацию об операциях, которые выполнялись с ресурсами в подписке. Журналы действий помогают определить инициатора операции, время события и состояние.
 - **Журналы диагностики.** [Журналы диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs) — это все журналы, создаваемые ресурсом. К этим журналам относятся системные журналы событий Windows, журналы службы хранилища Azure, журналы аудита Key Vault, а также журналы брандмауэра и доступа шлюза приложений.
 - **Архивация журналов.** Все журналы диагностики обеспечивают запись данных в централизованную и зашифрованную учетную запись Azure для архивирования. В соответствии с требованиями конкретной организации пользователь может настроить срок хранения до 730 дней. Эти журналы подключаются к Azure Log Analytics для обработки и хранения данных, а также создания отчетов на панелях мониторинга.
 
-Кроме того, в составе этой архитектуры устанавливаются указанные ниже решения OMS. Обратите внимание, что клиент отвечает за настройку этих решений в соответствии с мерами безопасности FedRAMP:
+Кроме того, в составе этой архитектуры устанавливаются указанные ниже решения мониторинга. Обратите внимание, что клиент отвечает за настройку этих решений в соответствии с мерами безопасности FedRAMP:
 -   [Оценка AD.](https://docs.microsoft.com/azure/log-analytics/log-analytics-ad-assessment) Решение проверки работоспособности Active Directory оценивает риски и работоспособность серверных сред с регулярным интервалом и предоставляет список рекомендаций, относящихся к развернутой серверной инфраструктуре и перечисленных в порядке приоритета.
 -   [Оценка защиты от вредоносных программ.](https://docs.microsoft.com/azure/log-analytics/log-analytics-malware) Решение для защиты от вредоносных программ уведомляет о вредоносных программах, угрозах и состоянии защиты.
 -   [Служба автоматизации Azure.](https://docs.microsoft.com/azure/automation/automation-hybrid-runbook-worker) В решении автоматизации Azure хранятся, выполняются и администрируются модули Runbook.

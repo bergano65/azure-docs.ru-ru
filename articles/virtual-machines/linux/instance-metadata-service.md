@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 10/10/2017
 ms.author: harijayms
-ms.openlocfilehash: 9cd388bf231bce547f4d9aca474e93bf6753d134
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 77b19b708b32003edc4555745a233a01d6f60b71
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49386711"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50026285"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
@@ -299,9 +299,9 @@ subscriptionId | Подписка Azure для виртуальной машин
 tags | [Теги](../../azure-resource-manager/resource-group-using-tags.md) для виртуальной машины  | 2017-08-01
 имя_группы_ресурсов | [Группа ресурсов](../../azure-resource-manager/resource-group-overview.md) для виртуальной машины | 2017-08-01
 placementGroupId | [Группа размещения](../../virtual-machine-scale-sets/virtual-machine-scale-sets-placement-groups.md) масштабируемого набора виртуальных машин | 2017-08-01
-План | [План] (https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#plan) образ Azure Marketplace для виртуальной машины содержит имя, продукт и издатель | 2017-04-02
+План | [План](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#plan) для виртуальной машины в образе Azure Marketplace содержит имя, продукт и издателя | 2017-04-02
 publicKeys | Коллекция открытых ключей [https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#sshpublickey], назначенная виртуальной машине и путям | 2017-04-02
-vmScaleSetName | [Имя масштабируемого набора виртуальных машин] (../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) | 2017-12-01
+vmScaleSetName | [Имя масштабируемого набора виртуальной машины](../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) | 2017-12-01
 зона | [Зона доступности](../../availability-zones/az-overview.md) виртуальной машины | 2017-12-01 
 ipv4/privateIpAddress | Локальный IPv4-адрес виртуальной машины | 2017-04-02
 ipv4/publicIpAddress | Общедоступный IPv4-адрес виртуальной машины | 2017-04-02

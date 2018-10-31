@@ -11,20 +11,23 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 10/15/2018
-ms.openlocfilehash: 4f6c98533a2ab1289ca5f1da25c44fe1a77a983c
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.date: 10/19/2018
+ms.openlocfilehash: 6de91e28ebced1d41e128cec1180839e4b353020
+ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353671"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49945473"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-firewall-rules"></a>Правила брандмауэра службы "База данных SQL Azure" и "Хранилище данных SQL"
 
 [База данных SQL Microsoft Azure](sql-database-technical-overview.md) и [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) предоставляют службу реляционной базы данных для приложений Azure и других веб-приложений. Чтобы защитить ваши данные, брандмауэр запрещает любой доступ к серверу базы данных, пока вы не укажете компьютеры, у которых есть разрешение на доступ. Брандмауэр предоставляет доступ к базам данным на основе исходного IP-адреса каждого запроса.
 
 > [!NOTE]
-> Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
+> Эта статья относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL. 
+
+> [!IMPORTANT]
+> Эта статья *не* относится к **Управляемому экземпляру базы данных SQL Azure**. Дополнительные сведения о необходимой конфигурации сети см. в следующей статье, посвященной [подключению к Управляемому экземпляру](sql-database-managed-instance-connect-app.md).
 
 ## <a name="virtual-network-rules-as-alternatives-to-ip-rules"></a>Правила виртуальной сети как альтернатива правилам фильтрации IP-адресов
 
@@ -80,7 +83,7 @@ ms.locfileid: "49353671"
 
 ## <a name="creating-and-managing-firewall-rules"></a>Создание правил брандмауэра и управление ими
 
-Первый параметр брандмауэра уровня сервера можно создать на [портале Azure](https://portal.azure.com/) или программным путем с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql), [Azure CLI](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-create) или [REST API](https://docs.microsoft.com/rest/api/sql/firewallrules/firewallrules_createorupdate). Последующие правила брандмауэра уровня сервера можно создавать и контролировать с помощью этих методов и Transact-SQL.
+Первый параметр брандмауэра уровня сервера можно создать на [портале Azure](https://portal.azure.com/) или программным путем с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql), [Azure CLI](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-create) или [REST API](https://docs.microsoft.com/rest/api/sql/firewallrules/createorupdate). Последующие правила брандмауэра уровня сервера можно создавать и контролировать с помощью этих методов и Transact-SQL.
 
 > [!IMPORTANT]
 > Правила брандмауэра уровня базы данных можно создавать только с помощью Transact-SQL. То же самое касается и управления ими.
@@ -189,10 +192,10 @@ az sql server firewall-rule create --resource-group myResourceGroup --server $se
 
 | API | Уровень | ОПИСАНИЕ |
 | --- | --- | --- |
-| [Вывод списка правил брандмауэра](https://docs.microsoft.com/rest/api/sql/firewallrules/firewallrules_listbyserver) |сервер; |Отображает текущие правила брандмауэра уровня сервера |
-| [Создание и изменение правила брандмауэра](https://docs.microsoft.com/rest/api/sql/firewallrules/firewallrules_createorupdate) |сервер; |Создает или обновляет правила брандмауэра уровня сервера |
-| [Удаление правила брандмауэра](https://docs.microsoft.com/rest/api/sql/firewallrules/firewallrules_delete) |сервер; |Удаляет правила брандмауэра уровня сервера |
-| [Получение правил брандмауэра](https://docs.microsoft.com/rest/api/sql/firewallrules/firewallrules_get) | сервер; | Получает правила брандмауэра уровня сервера |
+| [Вывод списка правил брандмауэра](https://docs.microsoft.com/rest/api/sql/firewallrules/listbyserver) |сервер; |Отображает текущие правила брандмауэра уровня сервера |
+| [Создание и изменение правила брандмауэра](https://docs.microsoft.com/rest/api/sql/firewallrules/createorupdate) |сервер; |Создает или обновляет правила брандмауэра уровня сервера |
+| [Удаление правила брандмауэра](https://docs.microsoft.com/rest/api/sql/firewallrules/delete) |сервер; |Удаляет правила брандмауэра уровня сервера |
+| [Получение правил брандмауэра](https://docs.microsoft.com/rest/api/sql/firewallrules/get) | сервер; | Получает правила брандмауэра уровня сервера |
 
 ## <a name="server-level-firewall-rule-versus-a-database-level-firewall-rule"></a>Сравнение правила брандмауэра уровня сервера и правила брандмауэра уровня базы данных
 

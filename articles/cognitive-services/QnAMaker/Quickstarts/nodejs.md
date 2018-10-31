@@ -1,23 +1,23 @@
 ---
-title: 'Краткое руководство: Node.js для API службы QnA Maker (версия 4)'
+title: REST API (версия 4) — Node.js — QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Сведения и примеры кода для быстрого начала работы с API перевода текстов Microsoft в Microsoft Cognitive Services в Azure.
+description: Сведения и примеры кода для REST для быстрого начала работы с API перевода текстов (Майкрософт) в Microsoft Cognitive Services в Azure.
 services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: qna-maker
-ms.topic: quickstart
-ms.date: 09/12/2018
+ms.topic: article
+ms.date: 10/19/2018
 ms.author: diberry
-ms.openlocfilehash: bbcd031f80010f10ab36440b703ac6dd55a8ced2
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 68ec8fe90c19106c989f072dc041ee81af536389
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49387418"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49647924"
 ---
-# <a name="quickstart-for-microsoft-qna-maker-api-with-nodejs"></a>Краткое руководство. Использование API службы QnA Maker Microsoft с помощью Node.js 
+# <a name="qna-maker-rest-api-with-nodejs"></a>REST API службы QnA Maker с Node.js 
 <a name="HOLTop"></a>
 
 В этой статье показано, как использовать [API службы QnA Maker Майкрософт](../Overview/overview.md) с помощью Node.js для выполнения следующих задач:

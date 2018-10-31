@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/30/2018
 ms.author: fryu
 ms.component: common
-ms.openlocfilehash: fc11e29b03df617c4b5bb6f4fbb43cd478001d42
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 3f2ebb82f5affa3c41f237edcc039eb6214c7a4c
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39521427"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49649301"
 ---
 # <a name="azure-storage-metrics-migration"></a>Перенос метрик службы хранилища Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "39521427"
 
 Служба хранилища Azure собирает метрики прежних версий, выполняет статистические вычисления и сохраняет их в таблицах $Metric в одной учетной записи хранения. Портал Azure можно использовать для настройки диаграммы мониторинга. Кроме того, можно использовать пакеты SDK службы хранилища Azure для чтения данных из таблиц $Metric, основанных на схеме. Дополнительные сведения см. в [этой статье](./storage-analytics.md).
 
-Метрики прежних версий предоставляют метрики производительности только для хранилища BLOB-объектов Azure. Метрики прежних версий предоставляют метрики транзакций для хранилища BLOB-объектов, хранилища таблиц, службы "Файлы Azure" и хранилища очередей. 
+Метрики прежних версий предоставляют метрики производительности только для хранилища BLOB-объектов Azure. Метрики прежних версий предоставляют метрики транзакций для хранилища BLOB-объектов, хранилища таблиц, службы "Файлы Azure" и хранилища очередей.
 
 Метрики прежних версий разработаны на основе неструктурированной схемы. Поэтому при отсутствии шаблонов трафика для активации метрики ее данные отсутствовали. Например, **ServerTimeoutError** имеет значение 0 в таблицах $Metric даже в том случае, если вы не получаете какие-либо ошибки времени ожидания сервера из реального трафика для учетной записи хранения.
 
@@ -65,14 +65,14 @@ ms.locfileid: "39521427"
 
 | Метрика прежних версий | Новая метрика |
 | ------------------- | ----------------- |
-| **AnonymousAuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**. |
-| **AnonymousClientOtherError** | Transactions с измерением **ResponseType**, равным **ClientOtherError**. |
-| **AnonymousClientTimeoutError** | Transactions с измерением **ResponseType**, равным **ClientTimeoutError**. |
-| **AnonymousNetworkError** | Transactions с измерением **ResponseType**, равным **NetworkError**. |
-| **AnonymousServerOtherError** | Transactions с измерением **ResponseType**, равным **ServerOtherError**. |
-| **AnonymousServerTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**. |
-| **AnonymousSuccess** | Transactions с измерением **ResponseType**, равным **Success**. |
-| **AnonymousThrottlingError** | Transactions с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**. |
+| **AnonymousAuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**, и измерением **Authentication**, равным **Anonymous** |
+| **AnonymousClientOtherError** | Transactions с измерением **ResponseType**, равным **ClientOtherError**, и измерением **Authentication**, равным **Anonymous** |
+| **AnonymousClientTimeoutError** | Transactions с измерением **ResponseType**, равным **ClientTimeoutError**, и измерением **Authentication**, равным **Anonymous** |
+| **AnonymousNetworkError** | Transactions с измерением **ResponseType**, равным **NetworkError**, и измерением **Authentication**, равным **Anonymous** |
+| **AnonymousServerOtherError** | Transactions с измерением **ResponseType**, равным **ServerOtherError**, и измерением **Authentication**, равным **Anonymous** |
+| **AnonymousServerTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**, и измерением **Authentication**, равным **Anonymous** |
+| **AnonymousSuccess** | Transactions с измерением **ResponseType**, равным **Success**, и измерением **Authentication**, равным **Anonymous** |
+| **AnonymousThrottlingError** | Transactions с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**, и измерением **Authentication**, равным **Anonymous** |
 | **AuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**. |
 | **Доступность** | **Доступность** |
 | **AverageE2ELatency** | **SuccessE2ELatency** |
@@ -87,14 +87,14 @@ ms.locfileid: "39521427"
 | **PercentSuccess** | Transactions с измерением **ResponseType**, равным **Success**. |
 | **PercentThrottlingError** | Transactions с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**. |
 | **PercentTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**, или с измерением **ResponseType**, равным **ClientTimeoutError**. |
-| **SASAuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**. |
-| **SASClientOtherError** | Transactions с измерением **ResponseType**, равным **ClientOtherError**. |
-| **SASClientTimeoutError** | Transactions с измерением **ResponseType**, равным **ClientTimeoutError**. |
-| **SASNetworkError** | Transactions с измерением **ResponseType**, равным **NetworkError**. |
-| **SASServerOtherError** | Transactions с измерением **ResponseType**, равным **ServerOtherError**. |
-| **SASServerTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**. |
-| **SASSuccess** | Transactions с измерением **ResponseType**, равным **Success**. |
-| **SASThrottlingError** | Transactions с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**. |
+| **SASAuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**, и измерением **Authentication**, равным **SAS** |
+| **SASClientOtherError** | Transactions с измерением **ResponseType**, равным **ClientOtherError**, и измерением **Authentication**, равным **SAS** |
+| **SASClientTimeoutError** | Transactions с измерением **ResponseType**, равным **ClientTimeoutError**, и измерением **Authentication**, равным **SAS** |
+| **SASNetworkError** | Transactions с измерением **ResponseType**, равным **NetworkError**, и измерением **Authentication**, равным **SAS** |
+| **SASServerOtherError** | Transactions с измерением **ResponseType**, равным **ServerOtherError**, и измерением **Authentication**, равным **SAS** |
+| **SASServerTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**, и измерением **Authentication**, равным **SAS** |
+| **SASSuccess** | Transactions с измерением **ResponseType**, равным **Success**, и измерением **Authentication**, равным **SAS** |
+| **SASThrottlingError** | Transactions с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**, и измерением **Authentication**, равным **SAS** |
 | **ServerOtherError** | Transactions с измерением **ResponseType**, равным **ServerOtherError**. |
 | **ServerTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**. |
 | **Success** | Transactions с измерением **ResponseType**, равным **Success**. |

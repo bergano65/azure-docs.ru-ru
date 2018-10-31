@@ -6,14 +6,14 @@ author: rajani-janaki-ram
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 07/06/2018
+ms.date: 10/19/2018
 ms.author: rajanaki
-ms.openlocfilehash: 9f0a299fb8221554a3b0c9a19a616d5ba7613a67
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 06a7e23eb16cf6296a8997273ea8d554851600c3
+ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45574409"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49456496"
 ---
 # <a name="automatic-update-of-the-mobility-service-in-azure-to-azure-replication"></a>Автоматическое обновление службы мобильности в Azure при репликации Azure
 
@@ -61,6 +61,19 @@ ms.locfileid: "45574409"
 
 > [!Note] 
 > В обоих случаях вы получите уведомление об учетной записи службы автоматизации, используемой для управления обновлениями. При включении этой функции в первый раз в хранилище создается учетная запись службы автоматизации. При последующих включениях репликации в том же хранилище будет использоваться уже созданная учетная запись.
+
+### <a name="manage-manually"></a>Управление вручную
+
+1. Если доступны новые обновления для мобильной службы, установленной на виртуальных машинах Azure, вы увидите уведомление: "Доступно новое обновление агента репликации сайта восстановления. Щелкните, чтобы установить его."
+
+     ![Окно "Реплицированные элементы"](.\media\vmware-azure-install-mobility-service\replicated-item-notif.png)
+3. Выберите уведомление, чтобы открыть страницу выбора виртуальной машины.
+4. Выберите виртуальные машины, на которых нужно обновить службу Mobility Service, и нажмите кнопку **ОК**.
+
+     ![Список виртуальных машин "Реплицированные элементы"](.\media\vmware-azure-install-mobility-service\update-okpng.png)
+
+Для каждой выбранной виртуальной машины будет запущено задание обновления службы Mobility Service.
+
 
 ## <a name="common-issues--troubleshooting"></a>Распространенные проблемы и устранение неполадок
 

@@ -1,21 +1,21 @@
 ---
 title: Проверка подлинности с помощью Azure Active Directory для доступа к данным больших двоичных объектов и очередей из приложений (предварительная версия) | Документация Майкрософт
-description: Использование Azure Active Directory для проверки подлинности из приложения и последующей авторизации запросов к ресурсам службы хранилища Azure (предварительная версия).
+description: Использование Azure Active Directory для проверки подлинности из приложения и последующей авторизации запросов к BLOB-объектам и очередям (предварительная версия).
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 09/07/2018
+ms.date: 10/15/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: 6a0b7139fd8d216397090154a4324c8e4305a939
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: d249753dd954ba610a757a88060c6c0f7c58ad95
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48816384"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49427099"
 ---
-# <a name="authenticate-with-azure-active-directory-from-an-azure-storage-application-preview"></a>Проверка подлинности с помощью Azure Active Directory из приложения службы хранилища (предварительная версия)
+# <a name="authenticate-with-azure-active-directory-from-an-application-for-access-to-blobs-and-queues-preview"></a>Проверка подлинности с помощью Azure Active Directory из приложения для доступа к BLOB-объектам и очередям
 
 Ключевым преимуществом использования Azure Active Directory (Azure AD) со службой хранилища Azure является то, что учетные данные больше не нужно хранить в коде. Вместо этого можно запросить маркер доступа OAuth 2.0 из Azure AD. Azure AD осуществляет аутентификацию субъекта безопасности (пользователя, группы или субъекта-службы), запустившего приложение. Если аутентификация пройдена успешно, Azure AD возвращает маркер доступа приложению, и затем приложение может использовать его для авторизации запросов к службе хранилища Azure.
 
@@ -26,6 +26,10 @@ ms.locfileid: "48816384"
 Общие сведения о процессе предоставления кода OAuth 2.0 представлены в разделе [Авторизация доступа к веб-приложениям Azure Active Directory с помощью потока предоставления кода OAuth 2.0](../../active-directory/develop/v1-protocols-oauth-code.md).
 
 [!INCLUDE [storage-auth-aad-note-include](../../../includes/storage-auth-aad-note-include.md)]
+
+## <a name="assign-an-rbac-role-to-an-azure-ad-security-principal"></a>Назначение роли RBAC для субъекта безопасности Azure AD
+
+Чтобы обеспечить проверку подлинности субъекта безопасности из приложения службы хранилища Azure, нужно сначала настроить параметры управления доступом на основе ролей (RBAC) для этого субъекта безопасности. Служба хранилища Azure определяет роли RBAC, которые включают в себя разрешения для контейнеров и очередей. При назначении роли RBAC субъекту безопасности ему предоставляется доступ к соответствующему ресурсу. Дополнительные сведения см. в разделе [Управление правами доступа к данным в BLOB-объектах и очередях Azure с помощью RBAC (предварительная версия)](storage-auth-aad-rbac.md).
 
 ## <a name="register-your-application-with-an-azure-ad-tenant"></a>Регистрация приложения в клиенте Azure AD
 

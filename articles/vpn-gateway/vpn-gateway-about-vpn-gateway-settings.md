@@ -2,25 +2,17 @@
 title: Параметры VPN-шлюза для распределенных подключений Azure | Документация Майкрософт
 description: Узнайте о параметрах VPN-шлюза для шлюзов виртуальной сети Azure.
 services: vpn-gateway
-documentationcenter: na
 author: cherylmc
-manager: jpconnock
-editor: ''
-tags: azure-resource-manager,azure-service-management
-ms.assetid: ae665bc5-0089-45d0-a0d5-bc0ab4e79899
 ms.service: vpn-gateway
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 03/20/2018
+ms.topic: conceptual
+ms.date: 10/22/2018
 ms.author: cherylmc
-ms.openlocfilehash: 60cdc7bbe08df7816560e9720f96edc51769c342
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 30edc7308ad2d01d5245f8cd1073a7def674b74d
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38618227"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49649845"
 ---
 # <a name="about-vpn-gateway-configuration-settings"></a>Сведения о параметрах конфигурации VPN-шлюза
 
@@ -29,10 +21,11 @@ VPN-шлюз — это разновидность шлюза виртуаль�
 Подключение VPN-шлюза зависит от конфигурации нескольких ресурсов, каждый из которых содержит настраиваемые параметры. В разделах этой статьи рассматриваются ресурсы и параметры, относящиеся к VPN-шлюзу для виртуальной сети, созданной на основе модели развертывания с помощью Resource Manager. Описания и схемы топологий для каждого варианта подключения можно найти в статье [Основные сведения о VPN-шлюзах Azure](vpn-gateway-about-vpngateways.md).
 
 >[!NOTE]
-> Значения в этой статье применяются к шлюзам виртуальной сети, использующим -GatewayType Vpn. Поэтому эти конкретные шлюзы виртуальной сети называются VPN-шлюзами. Значения, применяемые для шлюзов ExpressRoute и VPN-шлюзов, различны.
+> Значения в этой статье применяются к шлюзам VPN (шлюзам виртуальной сети, использующим -GatewayType Vpn). В этой статье рассматриваются не все типы шлюзов и избыточных в пределах зоны шлюзов.
 >
->Значения, которые применяются к -GatewayType ExpressRoute, см. в статье [Сведения о шлюзах виртуальных сетей ExpressRoute](../expressroute/expressroute-about-virtual-network-gateways.md).
->
+>* Значения, которые применяются к -GatewayType ExpressRoute, см. в статье [Сведения о шлюзах виртуальных сетей ExpressRoute](../expressroute/expressroute-about-virtual-network-gateways.md).
+>* Сведения об избыточных в пределах зоны шлюзах см. в разделе [Избыточные в пределах зоны шлюзы](about-zone-redundant-vnet-gateways.md).
+>* Сведения о виртуальной глобальной сети см. в разделе [Виртуальная глобальная сеть](../virtual-wan/virtual-wan-about.md). 
 >
 
 ## <a name="gwtype"></a>Типы шлюзов
@@ -175,8 +168,8 @@ New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 | **Классический** | **Resource Manager** |
 | --- | --- |
 | [PowerShell](/powershell/module/azure#networking) |[PowerShell](/powershell/module/azurerm.network#vpn) |
-| [REST API](https://msdn.microsoft.com/library/jj154113) |[REST API](/rest/api/network/virtualnetworkgateways) |
-| Не поддерживается | [интерфейс командной строки Azure](/cli/azure/network/vnet-gateway)|
+| [ИНТЕРФЕЙС REST API](https://msdn.microsoft.com/library/jj154113) |[REST API](/rest/api/network/virtualnetworkgateways) |
+| Не поддерживается | [Интерфейс командной строки Azure](/cli/azure/network/vnet-gateway)|
 
 ## <a name="next-steps"></a>Дополнительная информация
 

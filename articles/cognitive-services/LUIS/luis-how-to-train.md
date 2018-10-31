@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 09/24/2018
+ms.date: 10/18/2018
 ms.author: diberry
-ms.openlocfilehash: f27716cc416b162a5b2df5542d709058f3b3e903
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.openlocfilehash: 362c5e2e7216d584a9858ace5fb607dc0ee126d5
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47182045"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49426110"
 ---
 # <a name="train-your-luis-app-version"></a>Обучение версии приложения LUIS
 
@@ -26,8 +26,11 @@ When you train a LUIS app by example, LUIS generalizes from the examples you hav
 
 Обучение и [тестирование](luis-concept-test.md) приложения — это итеративный процесс. Обученное приложение LUIS следует протестировать с использованием примеров фраз, чтобы проверить правильность распознавания намерений и сущностей. Если распознавание выполняется неправильно, внесите изменения в приложение, а затем обучите его и протестируйте еще раз. 
 
-## <a name="how-to-train"></a>Обучение
-Чтобы начать итеративный процесс, необходимо сначала хотя бы один раз обучить приложение LUIS. Перед обучением убедитесь, что для каждого намерения имеется минимум одно высказывание.
+Обучение применяется к активной версии на портале LUIS. 
+
+## <a name="how-to-train-interactively"></a>Обучение в интерактивном режиме
+
+Чтобы начать итеративный процесс на [портале LUIS](https://www.luis.ai), необходимо сначала хотя бы один раз обучить приложение LUIS. Перед обучением убедитесь, что для каждого намерения имеется минимум одно высказывание.
 
 1. Откройте приложение, выбрав его имя на странице **Мои приложения**. 
 
@@ -41,7 +44,18 @@ When you train a LUIS app by example, LUIS generalizes from the examples you hav
 >Если в приложении есть одно или несколько намерений, которые не содержат примеров фраз, такое приложение обучить нельзя. Добавьте фразы для всех намерений. Дополнительные сведения см. в статье о [добавлении примеров фраз](luis-how-to-add-example-utterances.md).
 
 ## <a name="train-with-all-data"></a>Обучение на основе всех данных
+
 При обучении используется небольшой процент отрицательных выборок. Если нужно использовать все данные вместо небольшой отрицательной выборки, используйте [API настройки версий](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) с заданным для `UseAllTrainingData` значением true, чтобы отключить эту функцию. 
+
+## <a name="unnecessary-training"></a>Необязательное обучение
+
+Нет необходимости проводить обучение после каждого отдельного изменения. Обучение должно выполняться после группы изменений, применяемых к модели, а также когда следующим этапом будет тестирование или публикация. Если тестирование или публикация не требуются, проводить обучение необязательно. 
+
+## <a name="training-with-the-rest-apis"></a>Обучение с помощью REST API
+
+Обучение на портале LUIS выполняется в одно действие — нажатием кнопки **Обучить**. Обучение с помощью REST API — это процесс из двух этапов. Первый этап — [запрос обучения](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c45) с помощью HTTP POST. Второй этап — запрос [состояния обучения](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c46) с помощью HTTP GET. 
+
+Чтобы узнать о завершении обучения, необходимо выполнять опрос состояния до тех пор, пока все модели не будут успешно обучены. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -7,15 +7,15 @@ author: diberry
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
-ms.topic: article
-ms.date: 09/10/2018
+ms.topic: conceptual
+ms.date: 10/19/2018
 ms.author: diberry
-ms.openlocfilehash: 3ed10ac428b7ce2e528ccf46e34c1d394523bdec
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 92b4864f8991380740e6edb498328ce2eea98250
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47042454"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49650117"
 ---
 # <a name="entities-in-luis"></a>Сущности в LUIS
 
@@ -61,6 +61,10 @@ ms.locfileid: "47042454"
 ## <a name="assign-entities-in-none-intent"></a>Назначение сущностей в намерении None
 Все намерения, включая намерение **None**, должны иметь помеченные сущности. В этом случае LUIS хорошо известно о месте расположения сущностей в высказываниях и какие слова находятся вокруг сущностей. 
 
+## <a name="entity-status-for-predictions"></a>Состояние сущности для прогнозирования
+
+Дополнительные сведения см. в разделе [Прогнозирование статуса сущности](luis-how-to-add-example-utterances.md#entity-status-predictions). 
+
 ## <a name="types-of-entities"></a>Типы сущностей
 LUIS предлагает множество типов сущностей — предварительно созданные сущности, настраиваемые обученные сущности и сущности списка.
 
@@ -93,7 +97,7 @@ LUIS предлагает множество типов сущностей — 
 Ознакомьтесь с [ограничениями](luis-boundaries.md#model-boundaries), чтобы понять, сколько сущностей каждого типа можно добавить в модель.
 
 ## <a name="entity-roles"></a>Роли сущности
-[Роли](luis-concept-roles.md) сущности используются только в шаблонах. 
+[Роли](luis-concept-roles.md) сущности применяются к пользовательским и встроенным сущностям и используются только в шаблонах. 
 
 ## <a name="composite-vs-hierarchical-entities"></a>Сравнение составных и иерархических сущностей
 Составные и иерархические сущности имеют связь "родитель-потомок" и прошли машинное обучение. Благодаря машинному обучению LUIS может понимать сущности на основе различных контекстов (расположения слов). Составные сущности более гибкие, так как в качестве дочерних они поддерживают различные типы сущностей. Дочерними элементами иерархической сущности являются только простые сущности. 

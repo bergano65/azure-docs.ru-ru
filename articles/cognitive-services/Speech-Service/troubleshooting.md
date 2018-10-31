@@ -1,24 +1,25 @@
 ---
-title: Устранение неполадок в пакете SDK для службы "Речь" в Cognitive Services
-description: Устранение неполадок в пакете SDK для службы "Речь" в Cognitive Services.
+title: Устранение неполадок с пакетом SDK службы "Речь"
 titleSuffix: Azure Cognitive Services
+description: Устранение неполадок с пакетом SDK службы "Речь".
 services: cognitive-services
 author: wolfma61
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/07/2018
 ms.author: wolfma
-ms.openlocfilehash: 02564021257c97f6c865fcbebf30c73babee859a
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: 9f0cea263262d83d9a95012f6cd09fa9acdc0141
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48816224"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49464577"
 ---
-# <a name="troubleshoot-the-speech-sdk"></a>Устранение неполадок с пакетом SDK службы "Речь"
+# <a name="troubleshoot-the-speech-service-sdk"></a>Устранение неполадок с пакетом SDK службы "Речь"
 
-В этой статье содержится информация, которая поможет решить неполадки, которые могут возникнуть при использовании пакета SDK для распознавания речи.
+Эта статья содержит информацию об устранении неполадок, которые могут возникнуть при использовании пакета SDK службы "Речь".
 
 ## <a name="error-websocket-upgrade-failed-with-an-authentication-error-403"></a>Ошибка: Обновление WebSocket завершилось ошибкой проверки подлинности (403)
 

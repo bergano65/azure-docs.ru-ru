@@ -8,14 +8,14 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 10/10/2018
+ms.date: 10/19/2018
 ms.author: diberry
-ms.openlocfilehash: b5433ea0a92635b5bf9c2a4887451f1e64ec62e6
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: db8fc0b6926930521f11285dc56c886c10c42fc2
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49067774"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49649318"
 ---
 # <a name="language-understanding-faq"></a>Вопросы и ответы о службе "Распознавание речи"
 
@@ -157,11 +157,9 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 * Вы можете удалить высказывания из списка высказываний пользователя, предлагаемых LUIS на странице **Review endpoint utterances** (Проверка высказываний конечной точки). Высказывания, удаленные из этого списка, больше не будут выводиться как предлагаемые, но останутся в журналах.
 * При удалении учетной записи удаляются все приложения вместе с их примерами высказываний и журналами. Данные хранятся на серверах 60 дней, а затем удаляются без возможности восстановления.
 
-### <a name="does-microsoft-access-my-luis-app-data-for-its-own-purposes-for-example-to-enhance-luis-or-microsoft-in-general"></a>Получает ли корпорация Майкрософт доступ к моим данным приложения LUIS для своих целей, например для улучшения LUIS или других продуктов Майкрософт?
+### <a name="how-does-microsoft-manage-data-i-send-to-luis"></a>Как корпорация Майкрософт управляет данными, отправляемыми мною в LUIS?
 
-Нет. Модели данных приложения LUIS не используется LUIS для улучшения LUIS как платформы или корпорацией Майкрософт каким-либо способом. Данные каждого приложения являются отдельными, а их владельцем являются только пользователи, включая тех, которым предоставлен совместный доступ.
-
-См. дополнительные сведения о [конфиденциальности пользователей](luis-user-privacy.md), [обеспечении дополнительных требований к безопасности](luis-concept-security.md#security-compliance) и [хранении данных](luis-concept-data-storage.md).
+В [центре управления безопасностью](https://www.microsoft.com/trustcenter) описаны наши обязательства, а также и доступные вам варианты управления данными и доступа в службы Azure.
 
 ## <a name="language-and-translation-support"></a>Поддержка языка и преобразования
 

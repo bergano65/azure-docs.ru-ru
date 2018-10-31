@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: sashan, moslake
 manager: craigg
-ms.date: 10/17/2018
-ms.openlocfilehash: ddb9e36775a815c07d40cecd61360c3e5b9c2611
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.date: 10/22/2018
+ms.openlocfilehash: c74d71f0ca8faec587cb36a789ed0328f9b24711
+ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49378777"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49954703"
 ---
 # <a name="vcore-service-tiers-azure-hybrid-benefit-and-migration"></a>Уровни служб на основе виртуальных ядер, Преимущество гибридного использования Azure и миграция
 
@@ -48,6 +48,9 @@ ms.locfileid: "49378777"
 |Резервные копии|[RA-GRS](../storage/common/storage-designing-ha-apps-with-ragrs.md), 7–35 дней (7 дней по умолчанию)|[RA-GRS](../storage/common/storage-designing-ha-apps-with-ragrs.md), 7–35 дней (7 дней по умолчанию)|Резервное копирование на основе моментальных снимков в удаленном хранилище Azure и быстрое восстановление на основе этих моментальных снимков. Резервное копирование выполняется практически мгновенно и не влияет на производительность операций ввода-вывода службы вычислений. Восстановление выполняются очень быстро и поэтому не зависит от масштаба операцией с данными (занимает минуты, а не часы или дни).|
 |В памяти|Не поддерживается|Поддерживаются|Не поддерживается|
 |||
+
+> [!NOTE]
+> Вы можете получить бесплатную базу данных SQL Azure с уровнем служб "Базовый" в сочетании с бесплатной учетной записью Azure для работы с Azure. Сведения см. в разделе [Создание управляемой облачной базы данных с помощью бесплатной учетной записи Azure](https://azure.microsoft.com/free/services/sql-database/).
 
 - Дополнительные сведения см. в статье [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md) и в разделе [Модель покупки на основе числа виртуальных ядер](sql-database-managed-instance.md#vcore-based-purchasing-model).
 - Дополнительные сведения об уровнях служб см. в статье [Уровни служб общего назначения и "Критически важный для бизнеса"](sql-database-service-tiers-general-purpose-business-critical.md).

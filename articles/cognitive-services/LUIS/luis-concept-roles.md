@@ -7,15 +7,15 @@ author: diberry
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 033e5e5e054b0a29961ad60e72b1466b51d1df0c
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 9bbbb797cd7e7d1cea52f1d5b1b491998b595db7
+ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47035204"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "49638092"
 ---
 # <a name="entity-roles-in-patterns-are-contextual-subtypes"></a>Роли сущностей в шаблонах — это контекстно-зависимые подтипы
 Роли — это именованные, контекстно-зависимые подтипы сущности, которые используется только в [шаблонах](luis-concept-patterns.md).
@@ -28,6 +28,8 @@ ms.locfileid: "47035204"
 |--|--|--|
 |Расположение|origin|откуда вылетает самолет|
 |Расположение|ресурс destination|куда прилетает самолет|
+|Предварительно созданная сущность datetimeV2|значение|дата окончания|
+|Предварительно созданная сущность datetimeV2|from|дата начала|
 
 ## <a name="how-are-roles-used-in-patterns"></a>Использование ролей в шаблонах
 Во фрагменте речи шаблона роли используются внутри фрагмента речи: 
@@ -47,6 +49,14 @@ ms.locfileid: "47035204"
 |--|--|
 |иерархических сущностях,|намерениях,|
 |roles|шаблонах.|
+
+## <a name="roles-with-prebuilt-entities"></a>Роли с предварительно созданными сущностями
+
+Используйте роли с предварительно созданными сущностями, чтобы придать смысл различным экземплярам предварительно созданной сущности во фразе. 
+
+### <a name="roles-with-datetimev2"></a>Роли с datetimeV2
+
+Предварительно созданная сущность datetimeV2 хорошо понимает различные упоминания даты и времени во фразах. Возможно, вам необходимо указать даты и диапазоны дат не так, как они записаны в параметрах по умолчанию предварительно созданной сущности. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

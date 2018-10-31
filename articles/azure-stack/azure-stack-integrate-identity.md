@@ -6,16 +6,16 @@ author: jeffgilb
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 10/02/2018
+ms.date: 10/22/2018
 ms.author: jeffgilb
 ms.reviewer: wfayed
 keywords: ''
-ms.openlocfilehash: 4ba890f4763fc77981917d9311cf2bf6c97ec80f
-ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
+ms.openlocfilehash: 8a33d4edb4107b936c36a744bb082c02b7830868
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48902449"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50024449"
 ---
 # <a name="azure-stack-datacenter-integration---identity"></a>Интеграция центра обработки данных Azure Stack: идентификация
 Azure Stack можно развернуть с помощью Azure Active Directory (Azure AD) или служб федерации Active Directory (AD FS) в качестве поставщика удостоверений. Сделать выбор следует перед развертыванием Azure Stack. Развертывание с помощью AD FS также называется развертыванием Azure Stack в отключенном режиме.
@@ -53,7 +53,6 @@ Azure Stack можно развернуть с помощью Azure Active Direc
 
 Требования:
 
-
 |Компонент|Требование|
 |---------|---------|
 |График|Microsoft Active Directory 2012, Microsoft Active Directory 2012 R2 или Microsoft Active Directory 2016|
@@ -65,11 +64,21 @@ Graph поддерживает только интеграцию с отдель
 
 Необходимо указать следующие сведения в качестве входных данных для параметров службы автоматизации.
 
-
 |Параметр|ОПИСАНИЕ|Пример|
 |---------|---------|---------|
 |CustomADGlobalCatalog|Полное доменное имя целевого леса Active Directory<br>для интеграции.|Contoso.com|
 |CustomADAdminCredentials|Пользователь с разрешением на чтение LDAP.|ВАШ_ДОМЕН\graphservice|
+
+### <a name="configure-active-directory-sites"></a>Настройка сайтов Active Directory
+
+Для развертываний Active Directory с несколькими сайтами настройте ближайший сайт Active Directory к вашему развертыванию Azure Stack. Такая конфигурация позволяет избежать необходимости в разрешении запросов службой Graph Azure Stack с использованием сервера глобального каталога с удаленного сайта.
+
+Добавьте подсеть [Public VIP network](azure-stack-network.md#public-vip-network) (Общедоступная сеть VIP) Azure Stack на сайт Azure AD, ближайший к Azure Stack. Например, если Active Directory содержит два сайта — для Сиэтла и Редмонда, развернув Azure Stack на сайте для Сиэтла, вы можете добавить подсеть "Public VIP network" (Общедоступная сеть VIP) Azure Stack на сайт Azure AD для Сиэтла.
+
+Дополнительные сведения о сайтах Active Directory см. в разделе [Проектирование топологии сайтов](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/designing-the-site-topology).
+
+> [!Note]  
+> Этот шаг можно пропустить, если Active Directory состоит из одного сайта. Если у вас настроена универсальная подсеть, убедитесь, что подсеть "Public VIP network" (Общедоступная сеть VIP) Azure Stack не является ее частью.
 
 ### <a name="create-user-account-in-the-existing-active-directory-optional"></a>Создание учетной записи пользователя в существующей службе Active Directory (необязательно)
 
@@ -85,14 +94,14 @@ Graph поддерживает только интеграцию с отдель
 
 Для выполнения этой процедуры используйте компьютер в сети центра обработки данных, который может взаимодействовать с привилегированной конечной точкой в Azure Stack.
 
-2. Откройте сеанс Windows PowerShell с повышенными правами (запуск от имени администратора) и подключитесь к IP-адресу привилегированной конечной точки. Используйте учетные данные **CloudAdmin** для аутентификации.
+1. Откройте сеанс Windows PowerShell с повышенными правами (запуск от имени администратора) и подключитесь к IP-адресу привилегированной конечной точки. Используйте учетные данные **CloudAdmin** для аутентификации.
 
    ```PowerShell  
    $creds = Get-Credential
    Enter-PSSession -ComputerName <IP Address of ERCS> -ConfigurationName PrivilegedEndpoint -Credential $creds
    ```
 
-3. После подключения к привилегированной конечной точке выполните следующие команды. 
+2. После подключения к привилегированной конечной точке выполните следующие команды. 
 
    ```PowerShell  
    Register-DirectoryService -CustomADGlobalCatalog contoso.com
@@ -199,6 +208,9 @@ Graph поддерживает только интеграцию с отдель
    Set-ServiceAdminOwner -ServiceAdminOwnerUpn "administrator@contoso.com"
    ```
 
+   > [!Note]  
+   > При смене сертификата в существующих службах AD FS (учетная запись службы токенов безопасности) нужно снова настроить интеграцию с AD FS. Эту интеграцию нужно настроить даже в том случае, если конечная точка метаданных доступна или была настроена посредством предоставления файла метаданных.
+
 ## <a name="configure-relying-party-on-existing-ad-fs-deployment-account-sts"></a>Настройка проверяющей стороны в существующем развертывании AD FS (службе токенов безопасности для учетной записи)
 
 Корпорация Майкрософт предоставляет сценарий, который настраивает отношения доверия с проверяющей стороной, включая правила преобразования утверждений. Использовать этот сценарий необязательно, можно вручную выполнить необходимые команды.
@@ -263,7 +275,7 @@ Graph поддерживает только интеграцию с отдель
    Add-ADFSRelyingPartyTrust -Name AzureStack -MetadataUrl "https://YourAzureStackADFSEndpoint/FederationMetadata/2007-06/FederationMetadata.xml" -IssuanceTransformRulesFile "C:\ClaimIssuanceRules.txt" -AutoUpdateEnabled:$true -MonitoringEnabled:$true -enabled:$true -TokenLifeTime 1440
    ```
 
-   > [!IMPORTANT]
+   > [!IMPORTANT]  
    > Чтобы настроить правила авторизации выдачи при использовании AD FS на основе Windows Server 2012 или Windows Server 2012 R2, необходимо использовать оснастку MMC AD FS.
 
 4. При использовании браузера Internet Explorer или Edge для доступа к Azure Stack необходимо игнорировать привязки токенов. В противном случае попытка входа завершится сбоем. На экземпляре AD FS или элементе фермы выполните следующую команду.

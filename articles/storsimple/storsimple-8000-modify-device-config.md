@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 09/28/2017
 ms.author: alkohli
-ms.openlocfilehash: 13ff24c24a881297775fa5f65821e53ceb83c351
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 727cf523f2a505729377f36738657fc5489134a7
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23108762"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50025996"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-modify-your-storsimple-device-configuration"></a>Использование службы диспетчера устройств StorSimple для изменения конфигурации устройства StorSimple
 
@@ -65,7 +65,7 @@ ms.locfileid: "23108762"
 
  В раскрывающемся списке выберите нужный часовой пояс. Можно указать не более двух серверов NTP:
 
- - **Основной сервер NTP** обязательный. Его нужно указать при использовании Windows PowerShell для StorSimple, чтобы настроить устройство. Вы можете сделать сервер Windows Server по умолчанию, **time.windows.com** , в качестве NTP-сервера. Конфигурацию основного NTP-сервера можно просмотреть на портале Azure, но чтобы изменить ее, необходимо использовать интерфейс Windows PowerShell. Используйте командлет `Set-HcsNTPClientServerAddress`, чтобы изменить основной NTP-сервер на устройстве. Подробнее можно узнать в статье о синтаксисе командлета [Set-HcsNTPClientServerAddress] (https://technet.microsoft.com/library/dn688138.aspx).
+ - **Основной сервер NTP** обязательный. Его нужно указать при использовании Windows PowerShell для StorSimple, чтобы настроить устройство. Вы можете сделать сервер Windows Server по умолчанию, **time.windows.com** , в качестве NTP-сервера. Конфигурацию основного NTP-сервера можно просмотреть на портале Azure, но чтобы изменить ее, необходимо использовать интерфейс Windows PowerShell. Используйте командлет `Set-HcsNTPClientServerAddress`, чтобы изменить основной NTP-сервер на устройстве. Дополнительные сведения см. по ссылке для командлета [Set-HcsNTPClientServerAddress](https://technet.microsoft.com/library/dn688138.aspx).
 
 - **Дополнительный NTP-сервер** указывать необязательно. Дополнительный NTP-сервер можно настроить с помощью портала.
 

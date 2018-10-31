@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 11/15/2017
 ms.author: rogarana
 ms.component: disks
-ms.openlocfilehash: 8f5c33a63fd932bedd7f1de3d3ae47306b3ea3e4
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: de5322709b5d7f7bcfe6c512bab94b025d9a56a7
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46954489"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50023563"
 ---
 # <a name="about-disks-storage-for-azure-windows-vms"></a>Основные сведения о дисковых хранилищах для виртуальных машин Windows в Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "46954489"
 
 ### <a name="temporary-disk"></a>Временный диск
 
-У каждой виртуальной машины есть временный диск. Он выступает в качестве временного хранилища для приложений и процессов и предназначен только для хранения данных, таких как страничные файлы или файлы подкачки. Данные на временном диске могут быть потеряны во время [обслуживания](manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#understand-vm-reboots---maintenance-vs-downtime) или при [повторном развертывании виртуальной машины](redeploy-to-new-node.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Во время стандартной корректной перезагрузки виртуальной машины данные на временном диске сохраняются. 
+У каждой виртуальной машины есть временный диск. Он выступает в качестве временного хранилища для приложений и процессов и предназначен только для хранения данных, таких как страничные файлы или файлы подкачки. Данные на временном диске могут быть потеряны во время [обслуживания](manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#understand-vm-reboots---maintenance-vs-downtime) или при [повторном развертывании виртуальной машины](redeploy-to-new-node.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Во время стандартной корректной перезагрузки виртуальной машины данные на временном диске сохраняются. Тем не менее бывают случаи, когда данные могут не сохраняться, например при перемещении на новый узел. Соответственно, данные на временном диске не должны включать данные, необходимые для системы.
 
 Временный диск обозначается буквой D: по умолчанию и используется для хранения файла подкачки pagefile.sys. Сведения о переназначении буквы этого диска см. в статье [Изменение буквы диска для временного диска Windows](change-drive-letter.md). Размер временного диска зависит от размера виртуальной машины. Чтобы узнать больше, ознакомьтесь с [размерами виртуальных машин Windows](sizes.md).
 

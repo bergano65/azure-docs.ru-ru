@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.component: files
-ms.openlocfilehash: 87190a7f46a209ae66ca47d9346ed4b5929ac8fd
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: 2ae116649de02c5602aa50d706f6a88ac5872960
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49394207"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50025860"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
 
@@ -180,7 +180,7 @@ ln -s linked -n t
 ln: failed to create symbolic link 't': Operation not supported
 ```
 ### <a name="solution"></a>Решение
-Клиент CIFS в Linux не поддерживает создание символьных ссылок в стиле Windows по протоколу SMB2/3. Сейчас клиент Linux поддерживает символьные ссылки другого стиля, называемые [символьными ссылками Миншелла — Френча] (https://wiki.samba.org/index.php/UNIX_Extensions#Minshall.2BFrench_symlinks) для операций создания и отслеживания. Если клиенту требуются символьные ссылки, он может использовать параметр подключения mfsymlinks. Параметр mfsymlinks является рекомендуемым, потому что такой формат используется и на компьютерах Mac.
+Клиент CIFS в Linux не поддерживает создание символьных ссылок в стиле Windows по протоколу SMB2/3. Сейчас клиент Linux поддерживает символьные ссылки другого стиля, называемые [символьными ссылками Миншелла-Френча](https://wiki.samba.org/index.php/UNIX_Extensions#Minshall.2BFrench_symlinks) для операций создания и отслеживания. Если клиенту требуются символьные ссылки, он может использовать параметр подключения mfsymlinks. Параметр mfsymlinks является рекомендуемым, потому что такой формат используется и на компьютерах Mac.
 
 Чтобы использовать символьные ссылки, добавьте следующий текст в конец команды подключения CIFS:
 

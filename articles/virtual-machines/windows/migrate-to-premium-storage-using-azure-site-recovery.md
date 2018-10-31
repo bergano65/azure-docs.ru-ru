@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 08/15/2017
 ms.author: luywang
 ms.component: disks
-ms.openlocfilehash: 5d3c2f09a6e4c45aa477cd85911147eab6de7a2c
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: 7378331e5f7540d807c76511226fcd2ed99883fa
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39714712"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49404143"
 ---
 # <a name="migrate-to-premium-storage-by-using-azure-site-recovery"></a>Перемещение в хранилище класса Premium с помощью Azure Site Recovery
 
@@ -77,8 +77,10 @@ Site Recovery можно использовать для переноса вир
 ### <a name="step-1-create-a-recovery-services-vault"></a>Шаг 1. Создание хранилища служб восстановления
 
 1. Откройте [портал Azure](https://portal.azure.com).
-2. Последовательно выберите **Создать ресурс** > **Management** (Управление) > **Backup and Site Recovery (OMS)**. Вы также можете выбрать **Обзор** > **Хранилище служб восстановления** > **Добавить**. 
-3. Укажите регион для репликации виртуальных машин. Для переноса данных в пределах того же региона выберите регион, где находятся исходные виртуальные и машины и исходные учетные записи. 
+2. Последовательно выберите **Создать ресурс** > **Management** (Управление) > **Backup and Site Recovery (OMS)**. Вы также можете выбрать **Обзор** > **Хранилище служб восстановления** > **Добавить**.
+   >[!NOTE]
+   >Резервное копирование и восстановление сайта раньше входило в ![пакет OMS](https://github.com/MicrosoftDocs/azure-docs-pr/pull/azure-monitor/azure-monitor-rebrand.md#retirement-of-operations-management-suite-brand).
+1. Укажите регион для репликации виртуальных машин. Для переноса данных в пределах того же региона выберите регион, где находятся исходные виртуальные и машины и исходные учетные записи. 
 
 ### <a name="step-2-choose-your-protection-goals"></a>Шаг 2. Выбор целевых объектов для защиты 
 

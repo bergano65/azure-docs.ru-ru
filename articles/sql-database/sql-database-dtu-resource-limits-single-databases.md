@@ -11,13 +11,13 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 10/15/2018
-ms.openlocfilehash: 15518d8122f66c2e6f4ab398e0c69563fe0c79e0
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.date: 10/23/2018
+ms.openlocfilehash: 0a514cced50a2a05008c03dfb438cceefb332d17
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49354065"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49987330"
 ---
 # <a name="resource-limits-for-single-databases-using-the-dtu-based-purchasing-model"></a>Ограничения ресурсов для одиночных баз данных в модели приобретения на основе DTU
 
@@ -81,17 +81,17 @@ ms.locfileid: "49354065"
 |||||||
 
 > [!IMPORTANT]
-> Хранилище ценовой категории "Премиум" объемом свыше 1 ТБ сейчас доступно во всех регионах, кроме следующих: центрально-западная часть США, Восточный Китай, центральный регион US DoD, Центральная Германия, восточный регион US DoD, юго-западный регион USGov, Северо-Восточная Германия, USGov — Айова, Северный Китай. В других регионах максимальный объем хранилища уровня "Премиум" равен 1 ТБ. См. [текущие ограничения для баз данных P11–P15](#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
+> Хранилище категории "Премиум" объемом свыше 1 ТБ сейчас доступно во всех регионах, кроме следующих: Восточный Китай, Северный Китай, Центральная Германия, Северо-Восточная Германия, северная часть Соединенного Королевства, южная часть Соединенного Королевства, центральный регион US DoD, восточный регион US DoD, центральный регион US Gov и центрально-западная часть США.  В этих регионах максимальный объем хранилища категории "Премиум" ограничен 1 ТБ. См. [текущие ограничения для баз данных P11–P15](#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
 
 ## <a name="single-database-change-storage-size"></a>Отдельная база данных: изменение размера хранилища
 
 - Цена DTU для отдельной базы данных включает в себя определенный объем хранилища, не требующий дополнительной платы. Дополнительный объем хранилища, сверх включенного, можно подготовить за дополнительную плату в пределах максимального допустимого размера с шагом в 250 ГБ при объеме хранилища до 1 ТБ и с шагом в 256 ГБ — при объеме более 1 ТБ. Сведения о включенном объеме хранилища и ограничениях максимального размера см. в разделе [Отдельная база данных: размеры хранилища и уровни производительности](#single-database-storage-sizes-and-compute-sizes).
-- Дополнительное хранилище для отдельной базы данных можно подготовить, увеличив ее максимальный размер с помощью [портала Azure](sql-database-single-databases-manage.md#azure-portal-manage-logical-servers-and-databases), [Transact-SQL](/sql/t-sql/statements/alter-database-azure-sql-database#examples), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update) или [REST API](https://docs.microsoft.com/rest/api/sql/databases/databases_update).
+- Дополнительное хранилище для отдельной базы данных можно подготовить, увеличив ее максимальный размер с помощью [портала Azure](sql-database-single-databases-manage.md#azure-portal-manage-logical-servers-and-databases), [Transact-SQL](/sql/t-sql/statements/alter-database-azure-sql-database#examples), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update) или [REST API](https://docs.microsoft.com/rest/api/sql/databases/update).
 - Стоимость дополнительного хранилища для отдельной базы данных равна его объему, умноженному на цену единицы хранения этого хранилища для уровня служб. Сведения о цене на дополнительное хранилище см. на [странице цен на Базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).
 
 ## <a name="single-database-change-dtus"></a>Отдельная база данных: изменение числа DTU
 
-После выбора первоначального уровня служб, объема вычислительных ресурсов и объема хранилища можно масштабировать отдельную базу данных динамически, исходя из ее фактического использования, с помощью [портала Azure](sql-database-single-databases-manage.md#azure-portal-manage-logical-servers-and-databases), [Transact-SQL](/sql/t-sql/statements/alter-database-azure-sql-database#examples), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update) или [REST API](https://docs.microsoft.com/rest/api/sql/databases/databases_update).
+После выбора первоначального уровня служб, объема вычислительных ресурсов и объема хранилища можно масштабировать отдельную базу данных динамически, исходя из ее фактического использования, с помощью [портала Azure](sql-database-single-databases-manage.md#azure-portal-manage-logical-servers-and-databases), [Transact-SQL](/sql/t-sql/statements/alter-database-azure-sql-database#examples), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update) или [REST API](https://docs.microsoft.com/rest/api/sql/databases/update).
 
 В следующем видео показано динамическое изменение уровня служб и объема вычислительных ресурсов для увеличения количества доступных единиц DTU отдельной базы данных.
 
@@ -103,7 +103,7 @@ ms.locfileid: "49354065"
 Длительность всего процесса вертикального масштабирования зависит от размера и уровня службы базы данных до и после изменения. Например, если база данных размером 250 ГБ переводится с уровня службы "Стандартный", на этот уровень или в его пределах, процесс должен завершиться в течение шести часов. Если объем вычислительных ресурсов базы данных того же размера меняется в пределах уровня служб "Премиум", то увеличение масштаба должно завершиться в течение трех часов.
 
 > [!TIP]
-> Чтобы отслеживать выполняемые операции см. статью [Database Operations - List By Database](https://docs.microsoft.com/rest/api/sql/databaseoperations/databaseoperations_listbydatabase
+> Чтобы отслеживать выполняемые операции см. статью [Database Operations - List By Database](https://docs.microsoft.com/rest/api/sql/databaseoperations/listbydatabase
 ) (Операции базы данных. Список по базам данных), [az sql db op](/cli/azure/sql/db/op), [sys.dm_operation_status (Azure SQL Database)](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) (sys.dm_operation_status (База данных SQL Azure)) и эти две команды PowerShell: [Get-AzureRmSqlDatabaseActivity](/powershell/module/azurerm.sql/get-azurermsqldatabaseactivity) и [Stop-AzureRmSqlDatabaseActivity](/powershell/module/azurerm.sql/stop-azurermsqldatabaseactivity).
 
 - При переходе к более высокому уровню служб или объему вычислительных ресурсов максимальный размер базы данных не увеличивается, если явно не указать для него большее значение (maxsize).
@@ -116,7 +116,7 @@ ms.locfileid: "49354065"
 
 ## <a name="single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb"></a>Отдельная база данных: ограничения P11 и P15 при максимальном размере, превышающем 1 ТБ
 
-Максимальный размер больше 1 ТБ, для базы данных P11 и P15 поддерживается в следующих регионах: US Gov (Вирджиния), Восточная Австралия, Восточная Канада, восточная часть США 2, Восточная Япония, Западная Европа, западная часть Соединенного Королевства, западная часть США, Западная Япония, Республика Корея (центральный регион), Северная Европа, центрально-северная часть США, Центральная Германия, Центральная Канада, Центральная Франция, центральная часть США, Юго-Восточная Австралия, Юго-Восточная Азия, центрально-южная часть США, Южная Бразилия и южная часть Соединенного Королевства. Ниже приведены рекомендации и ограничения для баз данных P11 и P15 с максимальным размером, превышающим 1 ТБ.
+Ниже приведены рекомендации и ограничения для баз данных P11 и P15 с максимальным размером, превышающим 1 ТБ.
 
 - Если при создании базы данных выбрать максимальный размер больше 1 ТБ (указав значение 4 ТБ или 4096 ГБ), то выполнение команды create завершится ошибкой, если база данных подготавливается в неподдерживаемом регионе.
 - Для существующих баз данных P11 или P15, расположенных в одном из поддерживаемых регионов, можно увеличить максимальный размер хранилища до 4 ТБ с шагом в 256 ГБ. Чтобы узнать, поддерживается ли в вашем регионе больший размер, используйте функцию [DATABASEPROPERTYEX](/sql/t-sql/functions/databasepropertyex-transact-sql) или проверьте размер базы данных на портале Azure. Обновление существующей базы данных P11 или P15 может выполнить только учетная запись субъекта уровня сервера или участники роли базы данных dbmanager.

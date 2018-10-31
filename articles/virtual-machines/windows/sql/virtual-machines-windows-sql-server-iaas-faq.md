@@ -1,5 +1,5 @@
 ---
-title: Часто задаваемые вопросы об SQL Server на виртуальных машинах Azure (Windows) | Документация Майкрософт
+title: Часто задаваемые вопросы об SQL Server на виртуальных машинах Windows в Azure | Документация Майкрософт
 description: В этой статье содержатся ответы на часто задаваемые вопросы о запуске SQL Server в виртуальных машинах Azure.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -15,20 +15,20 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 07/12/2018
 ms.author: v-shysun
-ms.openlocfilehash: 48df858095cb867954460ec858567e41ed330063
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 906cec35c30c277ac1e8bc641d12fe37c29413dd
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39012072"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49427184"
 ---
-# <a name="frequently-asked-questions-for-sql-server-running-on-windows-azure-virtual-machines"></a>Часто задаваемые вопросы по SQL Server на виртуальных машинах Azure (Windows)
+# <a name="frequently-asked-questions-for-sql-server-running-on-windows-virtual-machines-in-azure"></a>Часто задаваемые вопросы об SQL Server на виртуальных машинах Windows в Azure
 
 > [!div class="op_single_selector"]
 > * [Windows](virtual-machines-windows-sql-server-iaas-faq.md)
 > * [Linux](../../linux/sql/sql-server-linux-faq.md)
 
-В этой статье содержатся ответы на некоторые распространенные вопросы о запуске [SQL Server на виртуальных машинах Azure в Windows](https://azure.microsoft.com/services/virtual-machines/sql-server/).
+В этой статье содержатся ответы на некоторые распространенные вопросы о запуске [SQL Server на виртуальных машинах Windows в Azure](https://azure.microsoft.com/services/virtual-machines/sql-server/).
 
 > [!NOTE]
 > Эта статья посвящена проблемам с SQL Server на виртуальных машинах Windows. Если вы используете SQL Server на виртуальных машинах Linux, см. [вопросы и ответы о виртуальных машинах Linux](../../linux/sql/sql-server-linux-faq.md).

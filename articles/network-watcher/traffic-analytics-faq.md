@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: jdial
-ms.openlocfilehash: debefb329304235818b7b441122b90ae9a2834a9
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 69d2d80e40400cc7fa40aeb5a163dce5036905ab
+ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45578316"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49402766"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Вопросы и ответы об Аналитике трафика Azure
 
@@ -77,9 +77,9 @@ ms.locfileid: "45578316"
 
 Да. При выборе такой рабочей области убедитесь, что она переведена на использование нового языка запросов. Если вы не хотите обновлять имеющуюся рабочую область, необходимо создать другую. Дополнительные сведения о новом языке запросов см. в статье [Обновление Azure Log Analytics до нового поиска по журналам](../log-analytics/log-analytics-log-search-upgrade.md).
 
-## <a name="can-my-azure-storage-account-be-in-one-subscription-and-my-operations-management-suite-workspace-be-in-a-different-subscription"></a>Возможен ли сценарий, когда учетная запись службы хранилища Azure и рабочая область Operations Management Suite работают в разных подписках?
+## <a name="can-my-azure-storage-account-be-in-one-subscription-and-my-log-analytics-workspace-be-in-a-different-subscription"></a>Возможен ли сценарий, когда учетная запись службы хранилища Azure и рабочая область Log Analytics работают на разных подписках?
 
-Да, учетная запись хранилища Azure может располагаться в одной подписке, а рабочая область OMS — в другой.
+Да. Ваши учетная запись службы хранилища Azure и рабочая область Log Analytics могут работать на разных подписках.
 
 ## <a name="can-i-store-raw-logs-in-a-different-subscription"></a>Можно ли хранить необработанные журналы в другой подписке?
 
@@ -115,7 +115,7 @@ ms.locfileid: "45578316"
 
 Это сообщение может появиться, потому что:
 - Если решение "Аналитика трафика" включено недавно, статистических вычислений может быть недостаточно, чтобы получить важные аналитические сведения.
-- Вы используете бесплатную версию рабочей области Operations Management Suite и превысили квоту. Возможно, вам придется использовать рабочую область с большей емкостью.
+- Вы используете бесплатную версию рабочей области Log Analytics и превысили квоту. Возможно, вам придется использовать рабочую область с большей емкостью.
     
 Если проблемы возникнут снова, обратитесь за помощью на [пользовательском форуме](https://feedback.azure.com/forums/217313-networking?category_id=195844).
     

@@ -1,23 +1,23 @@
 ---
-title: 'Краткое руководство: C# для API службы QnA Maker (версия 4)'
+title: REST API (версия 4) — C# — QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Сведения и примеры кода для быстрого начала работы с API перевода текстов Microsoft в Microsoft Cognitive Services в Azure.
+description: Сведения и примеры кода для REST для быстрого начала работы с API перевода текстов (Майкрософт) в Microsoft Cognitive Services в Azure.
 services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: qna-maker
-ms.topic: quickstart
-ms.date: 09/12/2018
+ms.topic: article
+ms.date: 10/19/2018
 ms.author: diberry
-ms.openlocfilehash: 8c030971a2725612a836ef86806e39efafea65f7
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 0b468556892bf85dac1fbdd09e7299a793e1e700
+ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49387606"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49646356"
 ---
-# <a name="quickstart-for-microsoft-qna-maker-api-with-c"></a>Краткое руководство для API службы QnA Maker Microsoft с помощью C# 
+# <a name="qna-maker-rest-api-with-c"></a>REST API службы QnA Maker с C# 
 <a name="HOLTop"></a>
 
 В этой статье показано, как использовать [API службы QnA Maker Microsoft](../Overview/overview.md) с помощью C#, чтобы иметь возможность делать следующее.

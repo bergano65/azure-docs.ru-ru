@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/21/2017
 ms.author: steveesp
-ms.openlocfilehash: d65b86cc63a4fd39824a6421afd5ce9abb7fd270
-ms.sourcegitcommit: ded74961ef7d1df2ef8ffbcd13eeea0f4aaa3219
+ms.openlocfilehash: 45efaebb9539c4c0e2542966df6ab890b64d12ee
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2018
-ms.locfileid: "28200985"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50023834"
 ---
 # <a name="bandwidththroughput-testing-ntttcp"></a>Проверка пропускной способности (NTTTCP)
 
@@ -29,11 +29,10 @@ ms.locfileid: "28200985"
 
 #### <a name="deploying-vms-for-testing"></a>Развертывание виртуальных машин для тестирования
 В целях данного теста две виртуальные машины должны находиться в одной облачной службе или одной группе доступности, чтобы мы могли использовать их внутренние IP-адреса и исключить из теста подсистемы балансировки нагрузки. Существует возможность тестирования с помощью виртуального IP-адреса, но это выходит за рамки данного документа.
- 
+ 
 Запишите IP-адрес получателя. Назовем этот IP-адрес a.b.c.r.
 
-Запишите число ядер на виртуальной машине. Назовем это значение \#num\_cores.
- 
+Запишите число ядер на виртуальной машине. Назовем это значение \#num\_cores  .
 Запустите тест NTTTCP продолжительностью 300 секунд (5 минут) на виртуальной машине-отправителе и виртуальной машине-получателе.
 
 Совет. При настройке этого теста для первого запуска можно попробовать более короткий период тестирования, чтобы быстрее получить результат. Если инструмент будет работать ожидаемым образом, продлите период тестирования до 300 секунд, чтобы получить наиболее точные результаты.
@@ -54,20 +53,20 @@ ms.locfileid: "28200985"
 
 #### <a name="get-ntttcp-onto-the-vms"></a>Скопируйте NTTTCP на виртуальные машины.
 
-Скачайте последнюю версию NTTTCP: <https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769>
+Скачайте последнюю версию: <https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769>
 
-Или найдите ее, если ссылка уже не работает: <https://www.bing.com/search?q=ntttcp+download>\<. Первый результат поиска должен указывать на последнюю версию.
+Или попытайтесь найти ее, если она перемещена: <https://www.bing.com/search?q=ntttcp+download>\< (должна появиться в первых строках результатов).
 
 Рекомендуется поместить NTTTCP в отдельную папку, например c:\\tools.
 
 #### <a name="allow-ntttcp-through-the-windows-firewall"></a>Разрешение трафика NTTTCP в брандмауэре Windows
-На в брандмауэре Windows виртуальной машине-получателе создайте правило, разрешающее прием трафика NTTTCP. Проще разрешить саму программу NTTTCP по имени, чем входящий трафик через определенные TCP-порты.
+На в брандмауэре Windows виртуальной машине-получателе создайте правило, разрешающее прием трафика NTTTCP. Проще разрешить саму программу NTTTCP по имени, чем входящий трафик через определенные TCP-порты.
 
 Разрешите трафик NTTTCP в брандмауэре Windows следующей командой.
 
 netsh advfirewall firewall add rule program=\<путь\>\\ntttcp.exe name="ntttcp" protocol=any dir=in action=allow enable=yes profile=ANY
 
-Например, если вы скопировали ntttcp.exe в папку c:\\tools, то это будет следующая команда. 
+Например, если вы скопировали ntttcp.exe в папку c:\\tools, то это будет следующая команда: 
 
 netsh advfirewall firewall add rule program=c:\\tools\\ntttcp.exe name="ntttcp" protocol=any dir=in action=allow enable=yes profile=ANY
 
@@ -84,32 +83,32 @@ ntttcp -r –m 8,\*,10.0.0.4 -t 300
 
 Запустите NTTTCP на виртуальной машине-отправителе (**в командной строке**, а не в PowerShell).
 
-ntttcp -s –m 8,\*,10.0.0.4 -t 300 
+ntttcp -s –m 8,\*,10.0.0.4 -t 300 
 
 Дождитесь результатов.
 
 
 ## <a name="testing-vms-running-linux"></a>Тестирование виртуальных машин под управлением Linux
 
-Используйте nttcp-for-linux. Этот инструмент доступен по адресу <https://github.com/Microsoft/ntttcp-for-linux>.
+Используйте nttcp-for-linux. Она доступна с версии <https://github.com/Microsoft/ntttcp-for-linux>.
 
 Выполните приведенные ниже команды на виртуальных машинах Linux (отправителе и получателе), чтобы подготовить на них ntttcp-for-linux.
 
 CentOS: установка Git.
 ``` bash
-  yum install gcc -y  
-  yum install git -y
+  yum install gcc -y  
+  yum install git -y
 ```
 Ubuntu: установка Git.
 ``` bash
- apt-get -y install build-essential  
- apt-get -y install git
+ apt-get -y install build-essential  
+ apt-get -y install git
 ```
-Создание и установка в обеих ОС.
+Создание и установка в обеих ОС:
 ``` bash
- git clone https://github.com/Microsoft/ntttcp-for-linux
- cd ntttcp-for-linux/src
- make && make install
+ git clone https://github.com/Microsoft/ntttcp-for-linux
+ cd ntttcp-for-linux/src
+ make && make install
 ```
 
 Как и в примере для Windows, предполагается, что IP-адрес виртуальной машины-получателя Linux — 10.0.0.4.
@@ -125,7 +124,7 @@ ntttcp -r -t 300
 ``` bash
 ntttcp -s10.0.0.4 -t 300
 ```
- 
+ 
 Если для теста не указан параметр времени, по умолчанию он длится 60 секунд.
 
 ## <a name="testing-between-vms-running-windows-and-linux"></a>Тестирование подключения между виртуальными машинами под управлением Windows и Linux
@@ -169,5 +168,5 @@ ntttcp -s -m <2 x nr cores>,*,<Linux  server IP> -ns -t 300
 
 ## <a name="next-steps"></a>Дополнительная информация
 * В зависимости от полученных результатов в вашем сценарии вполне может быть возможность [оптимизировать пропускную способность сети виртуальных машин](virtual-network-optimize-network-bandwidth.md).
-* Узнайте, как [выделяется пропускная способность для виртуальных машин] (virtual-machine-network-throughput.md).
+* Узнайте, как [выделяется пропускная способность для виртуальных машин](virtual-machine-network-throughput.md)
 * Дополнительные сведения см. в статье [Виртуальная сеть Azure: часто задаваемые вопросы](virtual-networks-faq.md).

@@ -5,19 +5,19 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 09/05/2018
+ms.date: 10/15/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: c06dc83f8b460e6215448fbc9e4ac42c749b5922
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: d8382cac86abb112018195695340ed12663a2333
+ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49354008"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49427422"
 ---
 # <a name="authenticate-access-to-blobs-and-queues-with-managed-identities-for-azure-resources-preview"></a>Аутентификация доступа к большим двоичным объектам и очередям с помощью управляемых удостоверений для ресурсов Azure (предварительная версия)
 
-Хранилище BLOB-объектов и очередей поддерживают проверку подлинности Azure Active Directory (Azure AD) с использованием [управляемых удостоверений для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md). Вы можете использовать управляемые удостоверения для ресурсов Azure, чтобы проверить подлинность доступа к BLOB-объектам и очередям из приложений, запущенных на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и т д. Используя управляемые экземпляры для ресурсов Azure и мощные возможности проверки подлинности Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке.  
+Хранилище BLOB-объектов и очередей поддерживают проверку подлинности Azure Active Directory (Azure AD) с использованием [управляемых удостоверений для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md). Управляемые удостоверения для ресурсов Azure позволяют проверить подлинность доступа к BLOB-объектам и очередям с использованием учетных данных Azure AD из приложений, запущенных на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и т. д. Используя управляемые экземпляры для ресурсов Azure и мощные возможности проверки подлинности Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке.  
 
 Чтобы предоставить разрешения управляемому удостоверению на доступ к контейнеру больших двоичных объектов или очереди, управляемому удостоверению, которое включает в себя разрешения для этого ресурса в соответствующей области, необходимо назначить контроль доступа на основе ролей. Дополнительные сведения о ролях RBAC в службе хранилища см. в разделе [Manage access rights to Azure Storage data with RBAC (Preview)](storage-auth-aad-rbac.md) (Управление правами доступа к данным в службе хранилища Azure с помощью RBAC (предварительная версия)). 
 
@@ -34,6 +34,10 @@ ms.locfileid: "49354008"
 - [Интерфейс командной строки Azure](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md)
 - [Шаблон Azure Resource Manager](../../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md)
 - [Пакеты SDK для Azure](../../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md)
+
+## <a name="assign-an-rbac-role-to-an-azure-ad-managed-identity"></a>Назначение роли RBAC для управляемого удостоверения Azure AD
+
+Чтобы обеспечить проверку подлинности управляемого удостоверения из приложения службы хранилища Azure, нужно сначала настроить параметры управления доступом на основе ролей (RBAC) для этого управляемого удостоверения. Служба хранилища Azure определяет роли RBAC, которые включают в себя разрешения для контейнеров и очередей. При назначении роли RBAC управляемому удостоверению ему предоставляется доступ к соответствующему ресурсу. Дополнительные сведения см. в разделе [Управление правами доступа к данным в BLOB-объектах и очередях Azure с помощью RBAC (предварительная версия)](storage-auth-aad-rbac.md).
 
 ## <a name="get-a-managed-identity-access-token"></a>Получение маркера доступа управляемого удостоверения
 
