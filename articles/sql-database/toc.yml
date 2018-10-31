@@ -329,32 +329,30 @@ items:
       href: sql-database-monitor-tune-overview.md
     - name: Интеллектуальные средства повышения производительности
       items:
-      - name: Выполнение запроса
+      - name: Настройка помощников
         items:
-        - name: Интеллектуальная обработка запросов
-          href: https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing?toc=/azure/sql-database/toc.json
-        - name: Адаптивная обработка запросов
-          href: https://docs.microsoft.com/sql/relational-databases/performance/adaptive-query-processing?toc=/azure/sql-database/toc.json
-      - name: Мониторинг и настройка
-        items:
-        - name: Рекомендации по производительности Помощника по базам данных
-          href: sql-database-advisor.md
         - name: Действия и рекомендации по настройке
           href: sql-database-performance.md
-        - name: Применение рекомендаций по повышению производительности
-          href: sql-database-advisor-portal.md
-      - name: Intelligent Insights
-        items:
-        - name: Общие сведения об Intelligent Insights
-          href: sql-database-intelligent-insights.md
-        - name: Ведения журнала диагностики
-          href: sql-database-metrics-diag-logging.md
-        - name: Использование журнала диагностики
-          href: sql-database-intelligent-insights-use-diagnostics-log.md
         - name: анализ производительности запросов
           href: sql-database-query-performance.md
-        - name: Устранение проблем с производительностью
+        - name: Рекомендации по производительности Помощника по базам данных
+          href: sql-database-advisor.md
+        - name: Применение рекомендаций по повышению производительности
+          href: sql-database-advisor-portal.md
+      - name: Расширенный мониторинг
+        items:
+        - name: Мониторинг с помощью Аналитики SQL Azure
+          href: https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-azure-sql
+        - name: Ведение журналов диагностических данных телеметрии
+          href: sql-database-metrics-diag-logging.md
+      - name: Автоматическое устранение неполадок
+        items:
+        - name: Интеллектуальные сведения о производительности
+          href: sql-database-intelligent-insights.md
+        - name: Устранение проблем с производительностью с помощью Intelligent Insights
           href: sql-database-intelligent-insights-troubleshoot-performance.md
+        - name: Использование журнала диагностики Intelligent Insights
+          href: sql-database-intelligent-insights-use-diagnostics-log.md
       - name: Автоматическая настройка
         items:
         - name: Общие сведения об автоматической настройке
@@ -363,6 +361,12 @@ items:
           href: sql-database-automatic-tuning-enable.md
         - name: Включение уведомлений по электронной почте
           href: sql-database-automatic-tuning-email-notifications.md
+      - name: Интеллектуальная обработка запросов
+        items:
+        - name: Интеллектуальная обработка запросов
+          href: https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing?toc=/azure/sql-database/toc.json
+        - name: Адаптивная обработка запросов
+          href: https://docs.microsoft.com/sql/relational-databases/performance/adaptive-query-processing?toc=/azure/sql-database/toc.json
     - name: Настройка вручную
       items:
       - name: Настройка вручную
@@ -634,9 +638,9 @@ items:
     href: /azure/architecture/
   - name: Истории клиентов
     href: http://customers.microsoft.com/en-us/search?sq=%22Azure%20SQL%20Database%22&ff=&p=0&so=story_publish_date%20desc
-ms.openlocfilehash: 416f74c395f331de6af749f3de1d3a3e966b8b35
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: c5e7a5265a7667acf462085f81c4b53c8d86236b
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49650066"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50221484"

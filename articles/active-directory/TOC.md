@@ -4,7 +4,6 @@
 ## [Что такое Microsoft Azure Active Directory](fundamentals/active-directory-whatis.md)
 ## [Об управлении удостоверениями Azure](fundamentals/identity-fundamentals.md)
 ## [Основные сведения о решениях для идентификации в Azure](fundamentals/understand-azure-identity-solutions.md)
-## [Выбор решения для гибридной идентификации](choose-hybrid-identity-solution.md)
 ## [Сопоставление подписок Azure](fundamentals/active-directory-how-subscriptions-associated-directory.md)
 ## [Рекомендации по хранению данных и работе с данными](fundamentals/active-directory-data-storage-eu.md)
 ## [Часто задаваемые вопросы](fundamentals/active-directory-faq.md)
@@ -47,7 +46,6 @@
 ### [Добавление новых пользователей в Azure AD](fundamentals/add-users-azure-active-directory.md)
 ### [Управление профилями пользователей](fundamentals/active-directory-users-profile-azure-portal.md)
 ### [Сброс паролей пользователей](fundamentals/active-directory-users-reset-password-azure-portal.md)
-### [Совместное использование учетных записей](active-directory-sharing-accounts.md)
 ### [Назначение пользователям ролей администратора](fundamentals/active-directory-users-assign-role-azure-portal.md)
 ### [Добавление гостевых пользователей из другого каталога (B2B)](b2b/what-is-b2b.md)
 #### [Добавление пользователей B2B администраторами](b2b/add-users-administrator.md)
@@ -320,11 +318,15 @@
 
 ### [управление привилегированными пользователями;](privileged-identity-management/pim-configure.md?toc=%2fazure%2factive-directory%2ftoc.json)
 
-## [Развертывание AD FS в Azure](hybrid/how-to-connect-fed-azure-adfs.md)
-### [Высокая доступность](active-directory-adfs-in-azure-with-azure-traffic-manager.md)
-### [Изменение хэш-алгоритма подписи](active-directory-federation-sha256-guidance.md)
+
 
 ## [Устранение неполадок](fundamentals/active-directory-troubleshooting-support-howto.md)
+
+## Развертывание подтверждения концепции Azure AD (PoC)
+### [Сборник тренировочных заданий по PoC: введение](active-directory-playbook-intro.md)
+### [Сборник тренировочных заданий по PoC: ингредиенты](active-directory-playbook-ingredients.md)
+### [Сборник тренировочных заданий по PoC: реализация](active-directory-playbook-implementation.md)
+### [Сборник тренировочных заданий по PoC: стандартные блоки](active-directory-playbook-building-blocks.md)
 
 # Справочные материалы
 ## [Примеры кода](https://azure.microsoft.com/resources/samples/?service=active-directory)
