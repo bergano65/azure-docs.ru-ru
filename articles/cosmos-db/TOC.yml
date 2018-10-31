@@ -74,21 +74,27 @@ items:
     href: sql-api-resources.md
   - name: Глобальное распределение
     items:
-    - name: Введение
+    - name: Обзор
       href: distribute-data-globally.md
-    - name: Основные преимущества
-      href: distribute-data-globally-benefits.md
-    - name: Включение глобального распределения
-      href: distribute-data-globally-turnkey.md
-    - name: Включение поддержки нескольких источников
-      href: enable-multi-master.md
-    - name: Использование нескольких источников с базами данных NoSQL с открытым кодом
-      href: multi-master-oss-nosql.md
-    - name: Разрешение конфликтов
-      href: multi-master-conflict-resolution.md
+    - name: Уровни согласованности
+      href: consistency-levels.md
+    - name: Выбор правильного уровня согласованности
+      href: consistency-levels-choosing.md
+    - name: Уровни согласованности и API Cosmos DB
+      href: consistency-levels-across-apis.md
+    - name: Компромиссы согласованности, доступности и производительности
+      href: consistency-levels-tradeoffs.md
+    - name: высокую доступность;
+      href: high-availability.md
+    - name: Глобальное масштабирование пропускной способности
+      href: scaling-throughput.md
+    - name: Политик разрешения конфликтов
+      href: conflict-resolution-policies.md
+    - name: Глобальное распределение (взгляд изнутри)
+      href: global-dist-under-the-hood.md
   - name: Пропускная способность
     items:
-    - name: Введение
+    - name: Обзор
       href: request-units.md
     - name: Получение и настройка пропускной способности
       href: set-throughput.md
@@ -96,8 +102,6 @@ items:
     href: partition-data.md
   - name: Индексация
     href: indexing-policies.md
-  - name: Модели согласованности
-    href: consistency-levels.md
   - name: Веб-канал изменений
     href: change-feed.md
   - name: Срок жизни
@@ -106,7 +110,7 @@ items:
     href: unique-keys.md
   - name: Безопасность
     items:
-    - name: Введение
+    - name: Обзор
       href: database-security.md
     - name: Шифрование данных
       href: database-encryption-at-rest.md
@@ -122,8 +126,6 @@ items:
     href: cosmos-db-reserved-capacity.md
   - name: Архивация и восстановление
     href: online-backup-and-restore.md
-  - name: высокую доступность;
-    href: regional-failover.md
 - name: Многомодельные API-интерфейсы
   items:
   - name: Документация по API SQL
@@ -190,6 +192,8 @@ items:
         href: programming.md
       - name: Секционирование данных SQL
         href: sql-api-partition-data.md
+      - name: Устранение неполадок с пакетом SDK для Java Async
+        href: troubleshoot-java-async-sdk.md
       - name: Типы данных
         items:
         - name: Datetime
@@ -417,6 +421,14 @@ items:
       href: https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb
   - name: Настройка конвейера VSTS CI/CD
     href: tutorial-setup-ci-cd.md
+  - name: Глобальное распределение
+    items:
+    - name: Управление учетной записью базы данных
+      href: how-to-manage-database-account.md
+    - name: Управление согласованностью
+      href: how-to-manage-consistency.md
+    - name: Управление конфликтами
+      href: how-to-manage-conflicts.md
   - name: Рекомендации
     items:
     - name: Советы по улучшению производительности
@@ -501,9 +513,9 @@ items:
       href: use-cases.md
     - name: Приложения социальных сетей
       href: social-media-apps.md
-ms.openlocfilehash: dfa5b34127abf569a359814b6064ec981f57796d
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 55a0bb09e56667078d463846d90cd086cb05dd4e
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49985834"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50240432"

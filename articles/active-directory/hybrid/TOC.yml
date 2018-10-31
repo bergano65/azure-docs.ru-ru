@@ -83,6 +83,8 @@ items:
       href: plan-connect-performance-factors.md
     - name: Как пользователи будут входить в систему
       href: plan-connect-user-signin.md
+    - name: Указание атрибута UserPrincipalName в Azure AD
+      href: plan-connect-userprincipalname.md
     - name: Специальные рекомендации для экземпляров
       href: reference-connect-instances.md
     - name: Рекомендации по разработке архитектуры гибридной идентификации
@@ -153,6 +155,8 @@ items:
       href: how-to-connect-fed-ssl-update.md
     - name: Управление отношением доверия между AD FS и Azure AD
       href: how-to-connect-azure-ad-trust.md
+    - name: Изменение хэш-алгоритма для проверяющей стороны Office 365
+      href: how-to-connect-fed-sha256-guidance.md
     - name: Список совместимости с федерацией Azure AD
       href: how-to-connect-fed-compatibility.md
     - name: Использование сервера SAML 2.0 в качестве поставщика удостоверений
@@ -287,9 +291,9 @@ items:
     href: reference-connect-sync-functions-reference.md
   - name: Список совместимости с федерацией Azure AD
     href: how-to-connect-fed-compatibility.md
-ms.openlocfilehash: eda2a26a9bd3d5a484865a8458246506f24bb518
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: e5d89e467b9dd6b41e246c889f41ad9abe21182b
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49351938"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50249681"

@@ -24,44 +24,45 @@
 ## [Включение доменных служб Azure AD с помощью PowerShell](active-directory-ds-enable-using-powershell.md)
 ## [Настройка синхронизации определенных учетных записей Azure AD с управляемым доменом](active-directory-ds-scoped-synchronization.md)
 ## [Защита управляемого домена](active-directory-ds-secure-your-domain.md)
-## Присоединение к управляемому домену
-### [Присоединение виртуальной машины Windows Server к управляемому домену с помощью портала](active-directory-ds-admin-guide-join-windows-vm-portal.md)
-### [Виртуальная машина Windows Server на основе шаблона](active-directory-ds-join-windows-vm-template.md)
-### [CentOS](active-directory-ds-join-centos-linux-vm.md)
-### [CoreOS](active-directory-ds-join-coreos-linux-vm.md)
-### [Подготовка виртуальной машины на основе Red Hat для Azure](active-directory-ds-join-rhel-linux-vm.md)
-### [Сервер Ubuntu](active-directory-ds-join-ubuntu-linux-vm.md)
-## Администрирование управляемого домена
-### [Администрирование управляемого домена](active-directory-ds-admin-guide-administer-domain.md)
-### [Администрирование DNS на управляемом домене](active-directory-ds-admin-guide-administer-dns.md)
-### [Обновление уведомлений, отправляемых по электронной почте](active-directory-ds-notifications.md)
-### Настройка защищенного протокола LDAP для управляемого домена
-#### [Задача 1. Получение сертификата для защищенного протокола LDAP](active-directory-ds-admin-guide-configure-secure-ldap.md)
-#### [Задача 2. Экспорт сертификата защищенного протокола LDAP](active-directory-ds-admin-guide-configure-secure-ldap-export-pfx.md)
-#### [Задача 3. Включение защищенного протокола LDAP для управляемого домена с помощью портала Azure](active-directory-ds-admin-guide-configure-secure-ldap-enable-ldaps.md)
-#### [Задача 4. Настройка DNS для доступа к управляемому домену через Интернет](active-directory-ds-ldaps-configure-dns.md)
-#### [Задача 5. Привязка к управляемому домену и блокировка доступа по защищенному протоколу LDAP](active-directory-ds-ldaps-bind-lockdown.md)
-#### [Устранение неполадок с защищенным протоколом LDAP](active-directory-ds-ldaps-troubleshoot.md)
-
-### [Создание подразделения на управляемом домене](active-directory-ds-admin-guide-create-ou.md)
-### [Создание групповой управляемой учетной записи службы на управляемом домене](active-directory-ds-create-gmsa.md)
-### [Администрирование групповой политики в управляемом домене](active-directory-ds-admin-guide-administer-group-policy.md)
-### [Настройка политик паролей в управляемом домене](active-directory-ds-password-policy.md)
+## [Создание подразделения на управляемом домене](active-directory-ds-admin-guide-create-ou.md)
+## [Создание групповой управляемой учетной записи службы на управляемом домене](active-directory-ds-create-gmsa.md)
+## [Администрирование групповой политики в управляемом домене](active-directory-ds-admin-guide-administer-group-policy.md)
+## [Настройка политик паролей в управляемом домене](active-directory-ds-password-policy.md)
 ## [Выбор виртуальной сети](active-directory-ds-networking.md)
 ## Развертывание приложений
 ### [Настройка поддержки синхронизации профилей для сервера SharePoint](active-directory-ds-enable-sharepoint-profile-sync.md)
 ### [Настройка ограниченного делегирования Kerberos](active-directory-ds-enable-kcd.md)
 ### [Развертывание прокси-службы приложения Azure AD](active-directory-ds-deploy-azure-app-proxy.md)
 ## [Удаление управляемого домена](active-directory-ds-disable-aadds.md)
-## Устранение неполадок
-### [Часто задаваемые вопросы](active-directory-ds-faqs.md)
-### [Руководство по устранению неполадок](active-directory-ds-troubleshooting.md)
-### [Устранение неполадок: предупреждения](active-directory-ds-troubleshoot-alerts.md)
-#### [Исправление неработающей конфигурации NSG](active-directory-ds-troubleshoot-nsg.md)
-#### [Восстановление отсутствующих субъектов-служб](active-directory-ds-troubleshoot-service-principals.md)
-#### [Ошибки защищенного протокола LDAP](active-directory-ds-troubleshoot-ldaps.md)
-### [Устранение ошибок несоответствия клиента](active-directory-ds-mismatched-tenant-error.md)
-### [Приостановленные домены](active-directory-ds-suspension.md)
+
+# Присоединение к управляемому домену
+## [Присоединение виртуальной машины Windows Server к управляемому домену с помощью портала](active-directory-ds-admin-guide-join-windows-vm-portal.md)
+## [Виртуальная машина Windows Server на основе шаблона](active-directory-ds-join-windows-vm-template.md)
+## [CentOS](active-directory-ds-join-centos-linux-vm.md)
+## [CoreOS](active-directory-ds-join-coreos-linux-vm.md)
+## [Подготовка виртуальной машины на основе Red Hat для Azure](active-directory-ds-join-rhel-linux-vm.md)
+## [Сервер Ubuntu](active-directory-ds-join-ubuntu-linux-vm.md)
+# Администрирование управляемого домена
+## [Администрирование управляемого домена](active-directory-ds-admin-guide-administer-domain.md)
+## [Администрирование DNS на управляемом домене](active-directory-ds-admin-guide-administer-dns.md)
+## [Обновление уведомлений, отправляемых по электронной почте](active-directory-ds-notifications.md)
+# Настройка защищенного протокола LDAP для управляемого домена
+## [Задача 1. Получение сертификата для защищенного протокола LDAP](active-directory-ds-admin-guide-configure-secure-ldap.md)
+## [Задача 2. Экспорт сертификата защищенного протокола LDAP](active-directory-ds-admin-guide-configure-secure-ldap-export-pfx.md)
+## [Задача 3. Включение защищенного протокола LDAP для управляемого домена с помощью портала Azure](active-directory-ds-admin-guide-configure-secure-ldap-enable-ldaps.md)
+## [Задача 4. Настройка DNS для доступа к управляемому домену через Интернет](active-directory-ds-ldaps-configure-dns.md)
+## [Задача 5. Привязка к управляемому домену и блокировка доступа по защищенному протоколу LDAP](active-directory-ds-ldaps-bind-lockdown.md)
+## [Устранение неполадок с защищенным протоколом LDAP](active-directory-ds-ldaps-troubleshoot.md)
+
+# Устранение неполадок
+## [Часто задаваемые вопросы](active-directory-ds-faqs.md)
+## [Руководство по устранению неполадок](active-directory-ds-troubleshooting.md)
+## [Устранение неполадок: предупреждения](active-directory-ds-troubleshoot-alerts.md)
+### [Исправление неработающей конфигурации NSG](active-directory-ds-troubleshoot-nsg.md)
+### [Восстановление отсутствующих субъектов-служб](active-directory-ds-troubleshoot-service-principals.md)
+### [Ошибки защищенного протокола LDAP](active-directory-ds-troubleshoot-ldaps.md)
+## [Устранение ошибок несоответствия клиента](active-directory-ds-mismatched-tenant-error.md)
+## [Приостановленные домены](active-directory-ds-suspension.md)
 
 
 # Справочные материалы
