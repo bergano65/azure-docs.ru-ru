@@ -10,12 +10,12 @@ ms.component: bing-video-search
 ms.topic: conceptual
 ms.date: 1/25/2018
 ms.author: rosh
-ms.openlocfilehash: 3d8656748a9632ac20b6a658e4bcbdd647c0573e
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 951ab55d737a4344c5523aad2991c42fa143316e
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47224687"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50214500"
 ---
 # <a name="bing-search-sdk"></a>Пакет SDK для Поиска Bing
 Примеры использования API Bing для поиска видео включают в себя следующие сценарии:
@@ -31,7 +31,7 @@ ms.locfileid: "47224687"
 * Начало работы с [примерами для Node.js](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples). 
     * Ознакомьтесь также с определениями и зависимостями в [библиотеках Node.js](https://github.com/Azure/azure-sdk-for-node/tree/master/lib/services/videoSearch).
 * Начало работы с [примерами для Java](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples). 
-    * Ознакомьтесь также с определениями и зависимостями в [библиотеках Java](h https://github.com/Azure-Samples/cognitive-services-java-sdk-samples/tree/master/Search/BingNewsSearch).
+    * Ознакомьтесь также с определениями и зависимостями в [библиотеках Java](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples/tree/master/Search/BingNewsSearch).
 * Начало работы с [примерами для Python](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples). 
     * Ознакомьтесь также с определениями и зависимостями в [библиотеках Python](https://github.com/Azure/azure-sdk-for-python/tree/master/azure-cognitiveservices-search-videosearch).
 

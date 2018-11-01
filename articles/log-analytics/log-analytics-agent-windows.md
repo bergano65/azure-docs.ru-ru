@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 677cd65b011ed69868564617ff79b7a57947c230
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 2b9e7615fc0c2262c33ab5d7be39bdb99bc752bd
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49404449"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50412964"
 ---
 # <a name="connect-windows-computers-to-the-log-analytics-service-in-azure"></a>Подключение компьютеров Windows к службе Log Analytics в Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "49404449"
 
 1. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.
 2. В списке рабочих областей Log Analytics выберите ту, в которую агент должен отправлять отчеты.
-3. Выберите **Дополнительные параметры**.<br><br> ![Дополнительные параметры Log Analytics](media/log-analytics-quick-collect-azurevm/log-analytics-advanced-settings-01.png)<br><br>  
+3. Выберите **Дополнительные параметры**.<br><br> ![Дополнительные параметры Log Analytics](media/log-analytics-agent-windows/log-analytics-advanced-settings-01.png)<br><br>  
 4. Выберите **Подключенные источники**, а затем выберите **Серверы с Windows**.   
 5. Скопируйте **идентификатор рабочей области** и **первичный ключ** и вставьте их в удобный для вас редактор.    
    
@@ -58,7 +58,7 @@ ms.locfileid: "49404449"
 6. На странице **Azure Log Analytics** выполните следующее.
    1. Вставьте **идентификатор рабочей области** и **ключ рабочей области (первичный ключ)**, скопированные ранее.  Если компьютер должен передавать данные в рабочую область Log Analytics в облаке Azure для государственных организаций, выберите **Azure для государственных организаций США** из раскрывающегося списка **Облако Azure**.  
    2. Если компьютер должен обмениваться данными со службой Log Analytics через прокси-сервер, щелкните **Дополнительно** и укажите URL-адрес и номер порта прокси-сервера.  Если для доступа к прокси-серверу требуется аутентификация, введите имя пользователя и пароль для аутентификации на прокси-сервере, затем нажмите кнопку **Далее**.  
-7. Нажмите кнопку **Далее** после завершения ввода необходимых параметров конфигурации.<br><br> ![Вставка идентификатора рабочей области и первичного ключа](media/log-analytics-quick-collect-windows-computer/log-analytics-mma-setup-laworkspace.png)<br><br>
+7. Нажмите кнопку **Далее** после завершения ввода необходимых параметров конфигурации.<br><br> ![Вставка идентификатора рабочей области и первичного ключа](media/log-analytics-agent-windows/log-analytics-mma-setup-laworkspace.png)<br><br>
 8. На странице **Готовность к установке** просмотрите выбранные параметры и нажмите кнопку **Установить**.
 9. На странице **Настройка успешно завершена** нажмите кнопку **Готово**.
 
@@ -160,7 +160,7 @@ ms.locfileid: "49404449"
 
 По завершении установки агента вы можете проверить, успешно ли он подключен и отправляет ли он отчеты. Есть два способа.  
 
-На **панели управления** компьютера найдите элемент **Microsoft Monitoring Agent**.  Выберите его. На вкладке **Azure Log Analytics** агент должен отобразить следующее сообщение: **Microsoft Monitoring Agent успешно подключен к службе Microsoft Operations Management Suite.**<br><br> ![Состояние подключения MMA к Log Analytics](media/log-analytics-quick-collect-windows-computer/log-analytics-mma-laworkspace-status.png)
+На **панели управления** компьютера найдите элемент **Microsoft Monitoring Agent**.  Выберите его. На вкладке **Azure Log Analytics** агент должен отобразить следующее сообщение: **Microsoft Monitoring Agent успешно подключен к службе Microsoft Operations Management Suite.**<br><br> ![Состояние подключения MMA к Log Analytics](media/log-analytics-agent-windows/log-analytics-mma-laworkspace-status.png)
 
 Вы также можете выполнить простой поиск по журналам на портале Azure.  
 

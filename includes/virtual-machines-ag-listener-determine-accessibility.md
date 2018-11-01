@@ -1,3 +1,16 @@
+---
+author: cynthn
+ms.service: virtual-machines
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: cynthn
+ms.openlocfilehash: 8861396db6f6b680ddb55ce020e5579dc25b118e
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50227067"
+---
 Важно понимать, что есть два способа настройки прослушивателя группы доступности в Azure. Они отличаются типом подсистемы балансировки нагрузки Azure, используемой при создании прослушивателя. Различия описаны в следующей таблице:
 
 | Тип подсистемы балансировки нагрузки | Реализация | Используйте в следующих ситуациях: |

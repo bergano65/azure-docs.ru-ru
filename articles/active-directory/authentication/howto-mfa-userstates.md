@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: michmcla
-ms.openlocfilehash: 302cf047ee1ffea685a939bddee84551de7042ec
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: 4726383d96b0bd17f346f7391ed968c5f96bef1e
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49166769"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50239259"
 ---
 # <a name="how-to-require-two-step-verification-for-a-user"></a>Включение двухфакторной проверки подлинности пользователя
 Двухфакторную проверку подлинности можно требовать, используя один из двух подходов. Оба эти подхода требуют использования учетной записи глобального администратора. Первый способ — включить многофакторную идентификацию Azure (MFA) для каждого отдельного пользователя. В этом случае пользователи выполняют двухфакторную проверку подлинности при каждом входе (за некоторыми исключениями, к примеру, если они входят из доверенных IP-адресов или включена функция _запоминания устройств_). Второй способ — настроить политику условного доступа, которая требует прохождения двухфакторной проверки подлинности при определенных условиях.
@@ -99,7 +99,7 @@ PowerShell — удобный инструмент для массового в�
         Import-Module MSOnline
         $st = New-Object -TypeName Microsoft.Online.Administration.StrongAuthenticationRequirement
         $st.RelyingParty = "*"
-        $st.State = “Enabled”
+        $st.State = "Enabled"
         $sta = @($st)
         Set-MsolUser -UserPrincipalName bsimon@contoso.com -StrongAuthenticationRequirements $sta
 
@@ -110,7 +110,7 @@ PowerShell — удобный инструмент для массового в�
     {
         $st = New-Object -TypeName Microsoft.Online.Administration.StrongAuthenticationRequirement
         $st.RelyingParty = "*"
-        $st.State = “Enabled”
+        $st.State = "Enabled"
         $sta = @($st)
         Set-MsolUser -UserPrincipalName $user -StrongAuthenticationRequirements $sta
     }

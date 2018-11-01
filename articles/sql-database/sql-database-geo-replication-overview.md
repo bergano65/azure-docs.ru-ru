@@ -11,13 +11,13 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 10/19/2018
-ms.openlocfilehash: 9332bcb5849deacde13d67e4a18ea19af8af2977
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.date: 10/29/2018
+ms.openlocfilehash: 3495a923683d78446e61ff0545c7d86023c14bc0
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49471481"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50233860"
 ---
 # <a name="overview-active-geo-replication-and-auto-failover-groups"></a>Обзор. Активная георепликация и группы автоматической отработки отказа
 
@@ -281,18 +281,18 @@ ms.locfileid: "49471481"
 | --- | --- |
 | [Создание или обновление базы данных (createMode=Restore)](https://docs.microsoft.com/rest/api/sql/databases/createorupdate) |Создает, обновляет или восстанавливает базу данных-источник или базу данных-получатель. |
 | [Получение, создание или обновление состояния базы данных](https://docs.microsoft.com/rest/api/sql/databases/createorupdate) |Возвращает состояние во время операции создания. |
-| [Задание базы данных-получателя в качестве базы данных-источника (плановая отработка отказа)](https://docs.microsoft.com/rest/api/sql/replicationlinks/replicationlinks_failover) |Задает базу данных-источник реплики. Для этого выполняется отработка отказа из текущей базы данных-источника реплики. |
-| [Задание базы данных-получателя в качестве базы данных-источника (внеплановая отработка отказа)](https://docs.microsoft.com/rest/api/sql/replicationlinks/replicationlinks_failoverallowdataloss) |Задает базу данных-источник реплики. Для этого выполняется отработка отказа из текущей базы данных-источника реплики. Эта операция может привести к потере данных. |
-| [Получение связи репликации](https://docs.microsoft.com/rest/api/sql/replicationlinks/replicationlinks_get) |Получает определенную связь репликации для заданной базы данных SQL, участвующей в партнерстве георепликации. Извлекает сведения, отображаемые в представлении каталога sys.geo_replication_links. |
-| [Replication Links - List By Database](https://docs.microsoft.com/rest/api/sql/replicationlinks/replicationlinks_listbydatabase) (Ссылки для репликации: вывод списка по базе данных) | Получает все связи репликации для заданной базы данных SQL, участвующей в партнерстве георепликации. Извлекает сведения, отображаемые в представлении каталога sys.geo_replication_links. |
-| [Удаление связей репликации](https://docs.microsoft.com/rest/api/sql/replicationlinks/replicationlinks_delete) | Удаляет связь репликации базы данных. Невозможно выполнить во время отработки отказа. |
-| [Создание или обновление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/failovergroups_createorupdate) | Создает или обновляет группу отработки отказа. |
-| [Удаление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/failovergroups_delete) | Удаляет группу отработки отказа с сервера. |
-| [Плановая отработка отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/failovergroups_failover) | Выполняет отработку отказа из текущего основного сервера на этот сервер. |
-| [Принудительная отработка отказа (возможна потеря данных)](https://docs.microsoft.com/rest/api/sql/failovergroups/failovergroups_forcefailoverallowdataloss) |Выполняет отработку отказа из текущего основного сервера на этот сервер. Эта операция может привести к потере данных. |
-| [Получение группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/failovergroups_get) | Получает группу отработки отказа. |
-| [Вывод списка групп отработки отказа с фильтрацией по серверу](https://docs.microsoft.com/rest/api/sql/failovergroups/failovergroups_listbyserver) | Перечисляет группы отработки отказа на сервере. |
-| [Обновление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/failovergroups_update) | Обновляет группу отработки отказа. |
+| [Задание базы данных-получателя в качестве базы данных-источника (плановая отработка отказа)](https://docs.microsoft.com/rest/api/sql/replicationlinks/failover) |Задает базу данных-источник реплики. Для этого выполняется отработка отказа из текущей базы данных-источника реплики. |
+| [Задание базы данных-получателя в качестве базы данных-источника (внеплановая отработка отказа)](https://docs.microsoft.com/rest/api/sql/replicationlinks/failoverallowdataloss) |Задает базу данных-источник реплики. Для этого выполняется отработка отказа из текущей базы данных-источника реплики. Эта операция может привести к потере данных. |
+| [Получение связи репликации](https://docs.microsoft.com/rest/api/sql/replicationlinks/get) |Получает определенную связь репликации для заданной базы данных SQL, участвующей в партнерстве георепликации. Извлекает сведения, отображаемые в представлении каталога sys.geo_replication_links. |
+| [Replication Links - List By Database](https://docs.microsoft.com/rest/api/sql/replicationlinks/listbydatabase) (Ссылки для репликации: вывод списка по базе данных) | Получает все связи репликации для заданной базы данных SQL, участвующей в партнерстве георепликации. Извлекает сведения, отображаемые в представлении каталога sys.geo_replication_links. |
+| [Удаление связей репликации](https://docs.microsoft.com/rest/api/sql/replicationlinks/delete) | Удаляет связь репликации базы данных. Невозможно выполнить во время отработки отказа. |
+| [Создание или обновление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/createorupdate) | Создает или обновляет группу отработки отказа. |
+| [Удаление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/delete) | Удаляет группу отработки отказа с сервера. |
+| [Плановая отработка отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/failover) | Выполняет отработку отказа из текущего основного сервера на этот сервер. |
+| [Принудительная отработка отказа (возможна потеря данных)](https://docs.microsoft.com/rest/api/sql/failovergroups/forcefailoverallowdataloss) |Выполняет отработку отказа из текущего основного сервера на этот сервер. Эта операция может привести к потере данных. |
+| [Получение группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/get) | Получает группу отработки отказа. |
+| [Вывод списка групп отработки отказа с фильтрацией по серверу](https://docs.microsoft.com/rest/api/sql/failovergroups/listbyserver) | Перечисляет группы отработки отказа на сервере. |
+| [Обновление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/update) | Обновляет группу отработки отказа. |
 |  | |
 
 ## <a name="next-steps"></a>Дополнительная информация

@@ -3,7 +3,7 @@ title: Создание эластичных пулов и управление 
 description: Создание эластичных пулов в базе данных SQL Azure и управление ими.
 services: sql-database
 ms.service: sql-database
-subservice: elastic-pool
+ms.subservice: elastic-pool
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
@@ -11,13 +11,13 @@ author: oslake
 ms.author: moslake
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 10/19/2018
-ms.openlocfilehash: 0c939956a8f3336b5071748a8c2bdf8840b749ad
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.date: 10/29/2018
+ms.openlocfilehash: acf17533ee73313937c2edb9badaef9007309373
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49466075"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50243101"
 ---
 # <a name="create-and-manage-elastic-pools-in-azure-sql-database"></a>Создание эластичных пулов в базе данных SQL Azure и управление ими
 
@@ -99,11 +99,11 @@ ms.locfileid: "49466075"
 
 | Get-Help | ОПИСАНИЕ |
 | --- | --- |
-|[Создание или обновление эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/elasticpools_createorupdate)|Создает эластичный пул или обновляет имеющийся.|
-|[Удаление эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/elasticpools_delete)|Удаляет эластичный пул.|
-|[Получение эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/elasticpools_get)|Получает эластичный пул.|
-|[Список эластичных пулов на сервере](https://docs.microsoft.com/rest/api/sql/elasticpools/elasticpools_listbyserver)|Возвращает список эластичных пулов на сервере.|
-|[Обновление эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/elasticpools_listbyserver)|Обновляет имеющийся эластичный пул.|
+|[Создание или обновление эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/createorupdate)|Создает эластичный пул или обновляет имеющийся.|
+|[Удаление эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/delete)|Удаляет эластичный пул.|
+|[Получение эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/get)|Получает эластичный пул.|
+|[Список эластичных пулов на сервере](https://docs.microsoft.com/rest/api/sql/elasticpools/listbyserver)|Возвращает список эластичных пулов на сервере.|
+|[Обновление эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/listbyserver)|Обновляет имеющийся эластичный пул.|
 |[Действия эластичного пула](https://docs.microsoft.com/rest/api/sql/elasticpoolactivities)|Возвращает действия эластичного пула.|
 |[Действия базы данных в эластичном пуле](https://docs.microsoft.com/rest/api/sql/elasticpooldatabaseactivities)|Возвращает действия баз данных в эластичном пуле.|
 |[Создание или обновление баз данных](https://docs.microsoft.com/rest/api/sql/databases/createorupdate)|Создает новую базу данных или обновляет имеющуюся.|

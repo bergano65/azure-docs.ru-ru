@@ -15,12 +15,12 @@ ms.date: 06/26/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: H1Hack27Feb2017; it-pro
-ms.openlocfilehash: aa7962e3659618b8c5a4f161d667c5e90477acc9
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 8be0e909ea391ed1b66fc78349cc2283d009e8cb
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44347653"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50240381"
 ---
 # <a name="troubleshoot-application-proxy-problems-and-error-messages"></a>Устранение неполадок и сообщения об ошибках прокси приложения
 Если во время доступа к опубликованному приложению или публикации приложений возникают ошибки, проверьте следующие параметры, чтобы выяснить, правильно ли работает прокси-сервер приложений Microsoft Azure AD.
@@ -43,7 +43,7 @@ ms.locfileid: "44347653"
 
 Если при установке мастера создания соединителя произойдет сбой регистрации, его причину можно проверить двумя способами. Вы можете просмотреть записи в журнале событий в разделе **Applications and Services Logs\Microsoft\AadApplicationProxy\Connector\Admin** или выполнить следующую команду Windows PowerShell:
 
-    Get-EventLog application –source “Microsoft AAD Application Proxy Connector” –EntryType “Error” –Newest 1
+    Get-EventLog application –source "Microsoft AAD Application Proxy Connector" –EntryType "Error" –Newest 1
 
 При обнаружении ошибки соединителя в журнале событий воспользуйтесь приведенной таблицей распространенных ошибок, чтобы устранить проблему.
 
