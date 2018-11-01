@@ -15,12 +15,12 @@ ms.topic: conceptal
 ms.date: 10/02/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 19334bd7a6c2d451e51237cc16462bae2cfffb0a
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: e3201562bd532084e528dddbee667bbafc39ede6
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48041328"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50416547"
 ---
 # <a name="create-a-log-analytics-workspace-with-azure-cli-20"></a>Создание рабочей области Log Analytics с помощью Azure CLI 2.0
 
@@ -123,7 +123,7 @@ Azure CLI 2.0 используется для создания ресурсов 
 
 Развертывание может занять несколько минут. По завершении выполнения появится сообщение с результатами наподобие приведенного ниже.
 
-![Пример результатов по завершении развертывания](./media/log-analytics-template-workspace-configuration/template-output-01.png)
+![Пример результатов по завершении развертывания](media/log-analytics-quick-create-workspace-cli/template-output-01.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 Теперь, когда рабочая область доступна, вы можете настроить сбор данных телеметрии для мониторинга, выполнять поиск по журналам для анализа этих данных, а также добавить решение по управлению для предоставления дополнительных данных и аналитических сведений.  

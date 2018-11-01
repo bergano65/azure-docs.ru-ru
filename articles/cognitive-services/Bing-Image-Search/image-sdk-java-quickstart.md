@@ -10,12 +10,12 @@ ms.component: bing-image-search
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: aahi
-ms.openlocfilehash: 36f59e1c405ef9e5cf69a19e49d69a3adfdc4636
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 42fc3dfb48c041ba187e2034eed81183dba02cb4
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46298189"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50413883"
 ---
 # <a name="quickstart-search-for-images-with-the-bing-image-search-sdk-and-java"></a>Быстрое начало. Поиск изображений с помощью пакета SDK Bing для поиска изображений и Java
 
@@ -25,7 +25,7 @@ ms.locfileid: "46298189"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Последняя версия [пакета средств разработки Java (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+Последняя версия [пакета средств разработки Java (JDK)](https://aka.ms/azure-jdks).
 
 Установите зависимости пакета SDK Bing для поиска изображений с помощью Maven, Gradle или другой системы управления зависимостями. Для файла POM Maven требуется следующее объявление:
 

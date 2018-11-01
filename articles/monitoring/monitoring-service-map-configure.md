@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: daseidma;bwren
-ms.openlocfilehash: 70cf6fe1e2256ba2ed58d020111669e59d9db56b
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 4461b98c56bcf99fc11aa9d89e6c6dc5961c86ac
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49405520"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50419526"
 ---
 # <a name="configure-service-map-in-azure"></a>Настройка решения "Сопоставление служб" в Azure
 Служба схемы услуги автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. Она позволяет рассматривать серверы как взаимосвязанные системы, предоставляющие важные службы. Схема услуги отображает сведения о подключениях между серверами, процессами и портами в любой подключенной по протоколу TCP архитектуре без дополнительной настройки. Пользователям требуется только установить агент.
@@ -146,7 +146,7 @@ ms.locfileid: "49405520"
 
 Агент схемы услуги самостоятельно не передает данные и не требует внесения изменений в брандмауэры или порты. В решении "Сопоставление служб" данные всегда передаются агентом Log Analytics в службу Log Analytics напрямую или через шлюз Log Analytics.
 
-![Агенты схемы услуги](media/monitoring-service-map/agents.png)
+![Агенты схемы услуги](media/monitoring-service-map-configure/agents.png)
 
 Если вы являетесь клиентом System Center Operations Manager с группой управления, подключенной к Log Analytics:
 
@@ -172,7 +172,7 @@ Dependency Agent обычно потребляет 0,1 % системной па
 
 ## <a name="installation"></a>Установка
 
-## <a name="azure-vm-extension"></a>Расширение виртуальной машины Azure
+### <a name="azure-vm-extension"></a>Расширение виртуальной машины Azure
 Для Windows (DependencyAgentWindows) и Linux (DependencyAgentLinux) доступно расширение, а Dependency Agent можно легко развернуть на виртуальных машинах Azure с использованием [расширения виртуальной машины Azure](https://docs.microsoft.com/azure/virtual-machines/windows/extensions-features).  Расширение виртуальной машины Azure позволяет развернуть Dependency Agent на виртуальных машинах Windows и Linux с помощью скрипта PowerShell или напрямую в виртуальной машине с использованием шаблона виртуальной машины Azure Resource Manager.  При развертывании агента с помощью расширения виртуальной машины Azure агенты автоматически обновляются до последних версий.
 
 Чтобы развернуть расширение виртуальной машины Azure с помощью PowerShell, можно использовать приведенный ниже пример.

@@ -3,7 +3,7 @@ title: Воронки Azure Application Insights
 description: Узнайте, как использовать воронки, чтобы узнать как клиенты взаимодействуют с вашим приложением.
 services: application-insights
 documentationcenter: ''
-author: mrbullwinkle
+author: NumberByColors
 manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
@@ -11,13 +11,15 @@ ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/17/2017
-ms.author: mbullwin
-ms.openlocfilehash: 8478106fd68f6fcc65dff832b5cb27ca8db5f5bd
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.pm_owner: daviste;NumberByColors
+ms.reviewer: mbullwin
+ms.author: daviste
+ms.openlocfilehash: 3d4d6ba7e185b1cc5fdcee1633a11e579d8194e8
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47093727"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50413970"
 ---
 # <a name="discover-how-customers-are-using-your-application-with-application-insights-funnels"></a>Узнайте, как клиенты используют ваше приложение, с помощью воронок Application Insights.
 
@@ -38,7 +40,7 @@ ms.locfileid: "47093727"
 На следующем снимке экрана показан пример данных, генерируемых инструментом "Воронки". Владельцы Fabrikam могут увидеть, что в течение последних 90 дней 54,3 % клиентов, посетивших домашнюю страницу, создали запрос. Также они могут, увидеть что 2700 клиентов перешли к индексу с домашней страницы. Это может указывать на проблему обновления.
 
 
-![Снимок экрана инструмента "Воронки" с данными](./media/app-insights-understand-usage-patterns/funnel1.png)
+![Снимок экрана инструмента "Воронки" с данными](media/usage-funnels/funnel1.png)
 
 ### <a name="funnels-features"></a>Функции инструмента "Воронки"
 На предыдущем снимке экрана выделены пять областей. Это возможности инструмента "Воронки". В списке ниже приведены дополнительные сведения о каждой области на снимке экрана.

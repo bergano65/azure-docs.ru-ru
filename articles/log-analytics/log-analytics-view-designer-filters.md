@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: 3851bfef71aab6553e109bb8108edd7bec182f0e
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 87cfcefd91652194adc0a5ca4580a8d00ba4d234
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48041958"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50412760"
 ---
 # <a name="filters-in-log-analytics-views"></a>Фильтры в представлениях Log Analytics
 **Фильтр** в [представлении Log Analytics](log-analytics-view-designer.md) позволяет пользователям фильтровать данные по значению конкретного свойства, не изменяя само представление.  Например, можно разрешить пользователям представления фильтровать это представление, чтобы просматривать данные только с определенного компьютера или набора компьютеров.  Можно создать несколько фильтров в одном представлении, чтобы разрешить пользователям выполнять фильтрацию по нескольким свойствам.  В этой статье описывается, как использовать фильтр и добавить его в настраиваемое представление.
@@ -28,12 +28,12 @@ ms.locfileid: "48041958"
 ## <a name="using-a-filter"></a>Использование фильтра
 Щелкните диапазон времени данных в верхней части представления, чтобы открыть раскрывающийся список, где можно изменить диапазон времени данных для представления.
 
-![Пример фильтра](media/log-analytics-view-designer/filters-example-time.png)
+![Пример фильтра](media/log-analytics-view-designer-filters/filters-example-time.png)
 
 Щелкните **+**, чтобы добавить фильтр с помощью настраиваемых фильтров, определенных для представления. Выберите значение для фильтра в раскрывающемся списке или введите его самостоятельно. Продолжайте добавлять фильтры, щелкая **+**. 
 
 
-![Пример фильтра](media/log-analytics-view-designer/filters-example-custom.png)
+![Пример фильтра](media/log-analytics-view-designer-filters/filters-example-custom.png)
 
 Если удалить все значения для фильтра, то он больше не будет применяться.
 
@@ -42,7 +42,7 @@ ms.locfileid: "48041958"
 
 Создайте фильтр на вкладке **Фильтры** при [редактировании представления](log-analytics-view-designer.md).  Фильтр является глобальным для представления и применяется ко всем его частям.  
 
-![Параметры фильтра](media/log-analytics-view-designer/filters-settings.png)
+![Параметры фильтра](media/log-analytics-view-designer-filters/filters-settings.png)
 
 В следующей таблице описаны параметры фильтра.
 

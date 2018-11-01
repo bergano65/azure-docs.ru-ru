@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: mbullwin
-ms.openlocfilehash: 88626c3a4bfd4a1ff3a2e9cbc8c3f2b1c5553295
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 83852333d8e66c76f2d2710b1813a4400622e624
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44303631"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50417316"
 ---
 # <a name="separating-telemetry-from-development-test-and-production"></a>Отделение телеметрии стадий разработки, тестирования и эксплуатации
 
@@ -156,7 +156,7 @@ ms.locfileid: "44303631"
 ### <a name="release-annotations"></a>Примечания к выпуску
 Если используется Azure DevOps, можно настроить [добавление маркера заметки](app-insights-annotations.md) к диаграммам при выпуске новой версии. На следующем рисунке показано, как появляется этот маркер.
 
-![Снимок экрана, где показана диаграмма с примером заметки о новом выпуске](./media/app-insights-asp-net/release-annotation.png)
+![Снимок экрана, где показана диаграмма с примером заметки о новом выпуске](media/app-insights-separate-resources/release-annotation.png)
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Monitor multi-component applications with Application Insights (preview)](app-insights-monitor-multi-role-apps.md) (Мониторинг приложений с несколькими компонентами с помощью Application Insights (предварительная версия))

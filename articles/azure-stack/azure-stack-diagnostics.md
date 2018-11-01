@@ -7,15 +7,15 @@ manager: femila
 cloud: azure-stack
 ms.service: azure-stack
 ms.topic: article
-ms.date: 09/27/2018
+ms.date: 10/31/2018
 ms.author: jeffgilb
 ms.reviewer: adshar
-ms.openlocfilehash: 5a9621ef9a8d6c545617e5bf3ef6f4197b70be88
-ms.sourcegitcommit: 3150596c9d4a53d3650cc9254c107871ae0aab88
+ms.openlocfilehash: 3dd3e3391cc2536f56a5e42610c09c85b4068234
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47419615"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50740559"
 ---
 # <a name="azure-stack-diagnostics-tools"></a>Средства диагностики Azure Stack
 
@@ -86,32 +86,38 @@ if($s)
   Соберите все журналы для всех ролей:
 
   ```powershell
-  Get-AzureStackLog -OutputPath C:\AzureStackLogs
+  Get-AzureStackLog -OutputSharePath “<path>” -OutputShareCredential $cred
   ```
 
   Соберите журналы из ролей VirtualMachines и BareMetal:
 
   ```powershell
-  Get-AzureStackLog -OutputPath C:\AzureStackLogs -FilterByRole VirtualMachines,BareMetal
+  Get-AzureStackLog -OutputSharePath “<path>” -OutputShareCredential $cred -FilterByRole VirtualMachines,BareMetal
   ```
 
   Соберите журналы из ролей VirtualMachines и BareMetal с фильтром по дате для файлов журнала за последние 8 часов:
     
   ```powershell
-  Get-AzureStackLog -OutputPath C:\AzureStackLogs -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8)
+  Get-AzureStackLog -OutputSharePath “<path>” -OutputShareCredential $cred -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8)
   ```
 
   Соберите журналы из ролей VirtualMachines и BareMetal с фильтром по дате для файлов журнала за период времени между последними 8 и 2 часами:
 
   ```powershell
-  Get-AzureStackLog -OutputPath C:\AzureStackLogs -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8) -ToDate (Get-Date).AddHours(-2)
+  Get-AzureStackLog -OutputSharePath “<path>” -OutputShareCredential $cred -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8) -ToDate (Get-Date).AddHours(-2)
   ```
 
 ### <a name="parameter-considerations-for-both-asdk-and-integrated-systems"></a>Рекомендации по настройке параметров для ASDK и интегрированных систем
 
 - Если параметры **FromDate** и **ToDate** не указаны, по умолчанию журналы собираются за последние четыре часа.
-- Чтобы фильтровать журналы по имени компьютера, используйте параметр **FilterByNode**. Например: ```Get-AzureStackLog -OutputPath <path> -FilterByNode azs-xrp01```
-- Чтобы фильтровать журналы по типу, используйте параметр **FilterByLogType**. Доступна фильтрация по файлу, общему ресурсу или по событию Windows. Например: ```Get-AzureStackLog -OutputPath <path> -FilterByLogType File```
+- Чтобы фильтровать журналы по имени компьютера, используйте параметр **FilterByNode**. Например: 
+```powershell
+Get-AzureStackLog -OutputSharePath “<path>” -OutputShareCredential $cred ` -FilterByNode azs-xrp01
+```
+- Чтобы фильтровать журналы по типу, используйте параметр **FilterByLogType**. Доступна фильтрация по файлу, общему ресурсу или по событию Windows. Например: 
+```powershell
+Get-AzureStackLog -OutputSharePath “<path>” -OutputShareCredential $cred ` -FilterByLogType File
+```
 - Задать время ожидания для сбора журналов можно с помощью параметра **TimeOutInMinutes**. По умолчанию для него задано значение 150 (2,5 часа).
 - В версии 1805 и более поздней сбор журналов файлов дампа отключен по умолчанию. Чтобы включить его, используйте параметр-переключатель **IncludeDumpFile**. 
 - Сейчас можно использовать параметр **FilterByRole**, чтобы отфильтровать сбор журналов по следующим ролям.

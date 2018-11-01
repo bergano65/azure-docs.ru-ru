@@ -302,8 +302,6 @@
 ##### [Проблемы со специально разработанным приложением](manage-apps/application-sign-in-problem-custom-dev.md)
 ##### [Проблема с локальным приложением — Application Proxy](manage-apps/application-sign-in-problem-on-premises-application-proxy.md)
 
-### [Разработка приложений](active-directory-applications-guiding-developers-for-lob-applications.md)
-
 
 ## Управление каталогом
 ### [Azure AD Connect](hybrid/whatis-hybrid-identity.md)

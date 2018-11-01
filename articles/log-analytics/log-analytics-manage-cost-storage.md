@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 08/27/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: dfb95a57da62037df8f7fbe7e5d8edd970e264ac
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 2c52baf47e0b1495a5abfa727ab8bc8d997a4283
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48044371"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50418897"
 ---
 # <a name="manage-cost-by-controlling-data-volume-and-retention-in-log-analytics"></a>Управление затратами на хранение путем регулирования объема и срока хранения данных в Log Analytics
 
@@ -55,7 +55,7 @@ ms.locfileid: "48044371"
 В Log Analytics легко разобраться с расчетной стоимостью на основе последних шаблонов использования.  Для этого сделайте следующее.  
 
 1. Войдите на [портал Azure](http://portal.azure.com). 
-2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.<br><br> ![портал Azure](media/log-analytics-quick-collect-azurevm/azure-portal-01.png)<br><br>  
+2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.<br><br> ![портал Azure](media/log-analytics-manage-cost-storage/azure-portal-01.png)<br><br>  
 3. В области подписки Log Analytics выберите рабочую область и на панели слева щелкните **Usage and estimated costs** (Использование и ожидаемые затраты).<br><br> ![Страница "Usage and estimated costs" (Использование и ожидаемые затраты)](media/log-analytics-manage-cost-storage/usage-estimated-cost-dashboard-01.png)<br>
 
 Здесь можно просмотреть сведения об объеме данных на месяц. Сюда входят все данные, полученные и сохраненные в рабочей области Log Analytics.  Щелкните **Сведения об использовании** в верхней части страницы, чтобы просмотреть панель управления со сведениями о тенденциях объема данных по источникам, компьютерам и предложениям. Чтобы просмотреть и установить ежедневное ограничение или изменить срок хранения, щелкните **Управление объемом данных**.

@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: 49aed496d8c125da8c2269186b569693c794d290
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: fc9ed37ef24e776336124bf097def2f6a00ee83e
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49404568"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50419798"
 ---
 # <a name="common-questions-for-transition-from-oms-portal-to-azure-portal-for-log-analytics-users"></a>Часто задаваемые вопросы о переходе от портала OMS к порталу Azure для пользователей Log Analytics
 В Log Analytics изначально существовал собственный портал для управления конфигурацией и анализа собранных данных, известный как портал OMS.  Теперь все функциональные возможности этого портала перемещены на портал Azure, где и будут совершенствоваться далее.
@@ -32,7 +32,7 @@ ms.locfileid: "49404568"
 ## <a name="where-do-i-find-log-analytics-in-azure"></a>Где найти Log Analytics в Azure?
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).  Щелкните **Все службы** и в списке ресурсов введите **Log Analytics**. Выберите **Log Analytics**, а затем нужную рабочую область. Отобразится страница сводной информации об этой рабочей области.
 
-![Рабочая область Log Analytics](media/log-analytics-new-portal/log-analytics.png)
+![Рабочая область Log Analytics](media/log-analytics-oms-portal-faq/log-analytics.png)
 
 ## <a name="how-do-i-manage-permissions"></a>Как теперь управлять разрешениями?
 Если на портале Azure у вас нет доступа к рабочей области Log Analytics, значит нужно сначала настроить разрешения в системе [управления доступом на основе ролей Azure](../active-directory/role-based-access-control-configure.md). Дополнительные сведения об управлении разрешениями для рабочей области см. в разделе [Управление учетными записями и пользователями](../log-analytics/log-analytics-manage-access.md#manage-accounts-and-users). Сведения об управлении разрешениями на генерацию оповещений см. в статье [Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor](../monitoring-and-diagnostics/monitoring-roles-permissions-security.md).
@@ -40,12 +40,12 @@ ms.locfileid: "49404568"
 ## <a name="how-do-i-create-a-new-workspace"></a>Как создать рабочую область? 
 В списке рабочих областей на портале Azure щелкните **Добавить**.  Подробно этот процесс описан в статье [Создание рабочей области Log Analytics на портале Azure](../log-analytics/log-analytics-quick-create-workspace.md).
 
-![Страница "Обзор"](media/log-analytics-new-portal/new-workspace.png)
+![Страница "Обзор"](media/log-analytics-oms-portal-faq/new-workspace.png)
 
 ## <a name="where-is-my-overview-page"></a>Куда делась страница обзора?
 На главном экране портала OMS отображаются плитки для всех решений по управлению, установленных в рабочей области, и для всех настраиваемых представлений, которые вы в ней создали. То же представление доступно на портале Azure. В рабочей области выберите **Общие сведения о рабочей области**.
 
-![Страница "Обзор"](media/log-analytics-new-portal/overview.png)
+![Страница "Обзор"](media/log-analytics-oms-portal-faq/overview.png)
 
 ## <a name="how-do-i-open-log-search-and-view-designer"></a>Как открыть поиск по журналам и конструктор представлений?
 Средства **Поиск по журналам** и **Конструктор представлений** можно вызвать на портале Azure с главной страницы и с помощью меню, расположенного слева в рабочей области, рядом с кнопкой **Обзор**.
@@ -53,7 +53,7 @@ ms.locfileid: "49404568"
 ## <a name="where-do-i-find-settings"></a>Где и как найти параметры?
 Многие параметры, которые раньше отображались в разделе **Параметры** на портале OMS, теперь доступны в меню **Дополнительные параметры** для рабочей области на портале Azure.
 
-![Дополнительные параметры](media/log-analytics-new-portal/advanced-settings.png)
+![Дополнительные параметры](media/log-analytics-oms-portal-faq/advanced-settings.png)
 
 В следующих разделах содержится полный список способов доступа к параметрам, существовавшим в разделе **Параметры** на портале OMS.
 
@@ -118,7 +118,7 @@ ms.locfileid: "49404568"
 ## <a name="how-do-i-check-my-usage"></a>Как получить сведения о потреблении ресурсов?
 Теперь потребление и стоимость Log Analytics можно легко контролировать в разделе **Использование и ожидаемые затраты** в рабочей области.
 
-![Использование и ожидаемые затраты](media/log-analytics-new-portal/usage.png)
+![Использование и ожидаемые затраты](media/log-analytics-oms-portal-faq/usage.png)
 
 
 ## <a name="can-i-still-use-the-classic-portal"></a>Можно ли по-прежнему пользоваться классическим порталом?

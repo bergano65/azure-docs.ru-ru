@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: 7f51ac0e1137bf09c220c892e2c21b154f2f2433
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 3c7a1dd9ba688c5cc9776dbfba0841c9a06065dc
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39522651"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50419696"
 ---
 # <a name="create-and-provision-a-simulated-x509-device-using-java-device-and-service-sdk-and-group-enrollments-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства X.509 с помощью Java устройства, SDK службы и групп регистрации для службы подготовки устройств Центра Интернета вещей
 
@@ -26,7 +26,7 @@ ms.locfileid: "39522651"
 
 ## <a name="prepare-the-environment"></a>Подготовка среды 
 
-1. Убедитесь, что на вашем компьютере установлен [пакет SDK 8 для Java SE](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+1. Убедитесь, что на вашем компьютере установлен [пакет SDK 8 для Java SE](https://aka.ms/azure-jdks).
 
 1. Скачайте и установите [Maven](https://maven.apache.org/install.html).
 

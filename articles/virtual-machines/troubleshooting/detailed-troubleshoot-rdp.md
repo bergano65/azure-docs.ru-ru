@@ -14,14 +14,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 05/11/2018
+ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 848417eae0019b983e4e0e22be3eebcf80b4a825
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 3b6b505be4a0084059d8c37a21099a784cacbed1
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47412056"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50414137"
 ---
 # <a name="detailed-troubleshooting-steps-for-remote-desktop-connection-issues-to-windows-vms-in-azure"></a>Подробное руководство по устранению неполадок с подключением к удаленному рабочему столу на виртуальной машине Windows в Azure
 В этой статье приводятся подробные инструкции по диагностике и устранению сложных ошибок удаленного рабочего стола для виртуальных машин Azure на базе Windows.
@@ -132,7 +132,7 @@ ms.locfileid: "47412056"
 
 Для виртуальных машин, созданных по классической модели развертывания, можно использовать удаленный сеанс Azure PowerShell на виртуальной машине Azure. Сначала нужно установить сертификат для доступа к облачной службе, в которой размещена виртуальная машина. Откройте страницу [Configure Secure Remote PowerShell Access to Windows Azure Virtual Machines](http://gallery.technet.microsoft.com/scriptcenter/Configures-Secure-Remote-b137f2fe) (Настройка защищенного удаленного доступа PowerShell к виртуальным машинам Azure) и скачайте файл сценария **InstallWinRMCertAzureVM.ps1** на локальный компьютер.
 
-Затем установите Azure PowerShell, если еще не сделали этого. Ознакомьтесь со статьей [Установка и настройка Azure PowerShell](/powershell/azure/overview).
+Затем установите Azure PowerShell, если еще не сделали этого. См. статью [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 
 Затем откройте командную строку Azure PowerShell и перейдите из текущей папки в папку с файлом сценария **InstallWinRMCertAzureVM.ps1**. Для запуска сценария Azure PowerShell необходимо задать правильную политику выполнения. Выполните команду **Get-ExecutionPolicy**, чтобы определить текущий уровень политики. Инструкции по выбору подходящего уровня см. в описании команды [Set-ExecutionPolicy](https://technet.microsoft.com/library/hh849812.aspx).
 
@@ -195,7 +195,7 @@ Exit-PSSession
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 [Сброс пароля или службы удаленных рабочих столов для виртуальных машин Windows](../windows/reset-rdp.md)
 
-[Как установить и настроить Azure PowerShell](/powershell/azure/overview)
+[Установка и настройка Azure PowerShell](/powershell/azure/overview)
 
 [Устранение неполадок с подключением Secure Shell (SSH) к виртуальной машине Azure под управлением Linux](../linux/troubleshoot-ssh-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 

@@ -4,10 +4,6 @@ description: Сведения о создании общедоступного �
 services: load-balancer
 documentationcenter: na
 author: KumudD
-manager: jeconnoc
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -15,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2018
 ms.author: kumud
-ms.openlocfilehash: 23c9d1b56c9a7c49b2cabe434693797fc2d23dfa
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 169c440c8fb64923da537f391d2b5f64746162ce
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46967682"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50739130"
 ---
 #  <a name="create-a-public-load-balancer-standard-with-zone-redundant-frontend-using-azure-cli"></a>Создание общедоступного балансировщика нагрузки уровня "Стандартный" с избыточным в пределах зоны интерфейсным сервером с помощью Azure CLI
 

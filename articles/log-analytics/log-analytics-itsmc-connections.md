@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: v-jysur
 ms.component: ''
-ms.openlocfilehash: 190e173e035716431c92533e42ded97e147f21a7
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 4faea38817a546dbab02064d22a0813362f77b3d
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49409209"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50416466"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](log-analytics-itsmc-overview.md).
@@ -57,7 +57,7 @@ ms.locfileid: "49409209"
 
 2.  В области **Источники данных рабочей области** щелкните **Подключения ITSM**.
 
-    ![Новое подключение](./media/log-analytics-itsmc/add-new-itsm-connection.png)
+    ![Новое подключение](media/log-analytics-itsmc-connections/add-new-itsm-connection.png)
 
 3. Вверху справа щелкните **Добавить**.
 
@@ -78,7 +78,7 @@ ms.locfileid: "49409209"
 | **Синхронизация данных** | Введите число прошедших дней, которые будут учитываться при синхронизации. **Максимальное ограничение**: 120 дней. |
 | **Создание нового элемента конфигурации в решении ITSM** | Выберите этот параметр, если вы хотите создать элементы конфигурации в продукте ITSM. После выбора этого параметра Log Analytics создаст зависимые элементы как элементы конфигурации (в случае, если эти элементы еще не созданы) в поддерживаемой системе ITSM. **Параметр по умолчанию**: отключено. |
 
-![Подключение к Service Manager](./media/log-analytics-itsmc/service-manager-connection.png)
+![Подключение к Service Manager](media/log-analytics-itsmc-connections/service-manager-connection.png)
 
 **После успешного подключения и синхронизации:**
 
@@ -128,14 +128,14 @@ ms.locfileid: "49409209"
 2. Щелкните **Параметры** > **Сети**.
 3. В разделе **гибридных подключений** щелкните **Настройте конечные точки гибридного подключения**.
 
-    ![Сети гибридного подключения](./media/log-analytics-itsmc/itsmc-hybrid-connection-networking-and-end-points.png)
+    ![Сети гибридного подключения](media/log-analytics-itsmc-connections/itsmc-hybrid-connection-networking-and-end-points.png)
 4. В колонке **Гибридные подключения** щелкните **Добавить гибридное подключение**.
 
-    ![Добавление гибридного подключения](./media/log-analytics-itsmc/itsmc-new-hybrid-connection-add.png)
+    ![Добавление гибридного подключения](media/log-analytics-itsmc-connections/itsmc-new-hybrid-connection-add.png)
 
 5. В колонке **добавления гибридных подключений** щелкните вкладку **Создать гибридное подключение**.
 
-    ![Новое гибридное подключение](./media/log-analytics-itsmc/itsmc-create-new-hybrid-connection.png)
+    ![Новое гибридное подключение](media/log-analytics-itsmc-connections/itsmc-create-new-hybrid-connection.png)
 
 6. Введите следующие значения:
 
@@ -146,14 +146,14 @@ ms.locfileid: "49409209"
     - **Расположение**: выберите расположение.
     -  **Имя**: если вы создаете служебную шину, укажите имя для нее.
 
-    ![Значения для гибридного подключения](./media/log-analytics-itsmc/itsmc-new-hybrid-connection-values.png)
+    ![Значения для гибридного подключения](media/log-analytics-itsmc-connections/itsmc-new-hybrid-connection-values.png)
 6. Нажмите кнопку **ОК**, чтобы закрыть колонку **создания гибридного подключения** и приступить непосредственно к процессу создания.
 
     Созданное гибридное подключение отобразится в колонке.
 
 7. После этого выберите подключение и щелкните **Добавление выбранного гибридного подключения**.
 
-    ![Новое гибридное подключение](./media/log-analytics-itsmc/itsmc-new-hybrid-connection-added.png)
+    ![Новое гибридное подключение](media/log-analytics-itsmc-connections/itsmc-new-hybrid-connection-added.png)
 
 #### <a name="configure-the-listener-setup"></a>Настройка установки прослушивателя
 
@@ -171,14 +171,14 @@ ms.locfileid: "49409209"
 
 Гибридное подключение успешно установлено.
 
-![Успешное гибридное подключение](./media/log-analytics-itsmc/itsmc-hybrid-connection-listener-set-up-successful.png)
+![Успешное гибридное подключение](media/log-analytics-itsmc-connections/itsmc-hybrid-connection-listener-set-up-successful.png)
 > [!NOTE]
 
 > После создания гибридного подключения проверьте его. Для этого перейдите в развернутое веб-приложение Service Manager. Убедитесь, что подключение установлено, прежде чем подключиться к ITSMC в Azure.
 
 На рисунке ниже показаны сведения об успешном подключении.
 
-![Проверка гибридного подключения](./media/log-analytics-itsmc/itsmc-hybrid-connection-test.png)
+![Проверка гибридного подключения](media/log-analytics-itsmc-connections/itsmc-hybrid-connection-test.png)
 
 ## <a name="connect-servicenow-to-it-service-management-connector-in-azure"></a>Подключение ServiceNow к Соединителю управления ИТ-услугами в Azure
 
@@ -209,7 +209,7 @@ ms.locfileid: "49409209"
 1. На портале Azure перейдите к разделу **Все ресурсы** и найдите элемент **ServiceDesk(имя_вашей_рабочей_области)**
 
 2.  В области **Источники данных рабочей области** щелкните **Подключения ITSM**.
-    ![Новое подключение](./media/log-analytics-itsmc/add-new-itsm-connection.png)
+    ![Новое подключение](media/log-analytics-itsmc-connections/add-new-itsm-connection.png)
 
 3. Вверху справа щелкните **Добавить**.
 
@@ -232,7 +232,7 @@ ms.locfileid: "49409209"
 | **Синхронизация данных** | Введите число прошедших дней, которые будут учитываться при синхронизации. **Максимальное ограничение**: 120 дней. |
 | **Создание нового элемента конфигурации в решении ITSM** | Выберите этот параметр, если вы хотите создать элементы конфигурации в продукте ITSM. После выбора этого параметра ITSM создаст необходимые элементы (если они еще не созданы) как элементы конфигурации в поддерживаемой системе ITSM. **Параметр по умолчанию**: отключено. |
 
-![Подключение к ServiceNow](./media/log-analytics-itsmc/itsm-connection-servicenow-connection-latest.png)
+![Подключение к ServiceNow](media/log-analytics-itsmc-connections/itsm-connection-servicenow-connection-latest.png)
 
 **После успешного подключения и синхронизации:**
 
@@ -304,7 +304,7 @@ ms.locfileid: "49409209"
 1. На портале Azure перейдите к разделу **Все ресурсы** и найдите элемент **ServiceDesk(имя_вашей_рабочей_области)**
 
 2.  В области **Источники данных рабочей области** щелкните **Подключения ITSM**.
-    ![Новое подключение](./media/log-analytics-itsmc/add-new-itsm-connection.png)
+    ![Новое подключение](media/log-analytics-itsmc-connections/add-new-itsm-connection.png)
 
 3. Вверху справа щелкните **Добавить**.
 
@@ -326,7 +326,7 @@ ms.locfileid: "49409209"
 | **Синхронизация данных** | Введите число прошедших дней, которые будут учитываться при синхронизации. **Максимальное ограничение**: 120 дней. |
 | **Создание нового элемента конфигурации в решении ITSM** | Выберите этот параметр, если вы хотите создать элементы конфигурации в продукте ITSM. После выбора этого параметра ITSM создаст необходимые элементы (если они еще не созданы) как элементы конфигурации в поддерживаемой системе ITSM. **Параметр по умолчанию**: отключено.|
 
-![Подключение Provance](./media/log-analytics-itsmc/itsm-connections-provance-latest.png)
+![Подключение Provance](media/log-analytics-itsmc-connections/itsm-connections-provance-latest.png)
 
 **После успешного подключения и синхронизации:**
 
@@ -355,7 +355,7 @@ ms.locfileid: "49409209"
 1. На портале Azure перейдите к разделу **Все ресурсы** и найдите элемент **ServiceDesk(имя_вашей_рабочей_области)**
 
 2.  В области **Источники данных рабочей области** щелкните **Подключения ITSM**.
-    ![Новое подключение](./media/log-analytics-itsmc/add-new-itsm-connection.png)
+    ![Новое подключение](media/log-analytics-itsmc-connections/add-new-itsm-connection.png)
 
 3. Вверху справа щелкните **Добавить**.
 
@@ -378,7 +378,7 @@ ms.locfileid: "49409209"
 | **Создание нового элемента конфигурации в решении ITSM** | Выберите этот параметр, если вы хотите создать элементы конфигурации в продукте ITSM. После выбора этого параметра ITSM создаст необходимые элементы (если они еще не созданы) как элементы конфигурации в поддерживаемой системе ITSM. **Параметр по умолчанию**: отключено. |
 
 
-![Подключение Provance](./media/log-analytics-itsmc/itsm-connections-cherwell-latest.png)
+![Подключение Provance](media/log-analytics-itsmc-connections/itsm-connections-cherwell-latest.png)
 
 **После успешного подключения и синхронизации:**
 
@@ -396,7 +396,7 @@ ms.locfileid: "49409209"
 2. Щелкните **Security** (Безопасность) > **Edit REST API client settings** (Изменение параметров клиента для интерфейса REST API).
 3. Выберите **Create new client** (Создание нового клиента) > **client secret** (Секрет клиента).
 
-    ![Идентификатор пользователя Cherwell](./media/log-analytics-itsmc/itsmc-cherwell-client-id.png)
+    ![Идентификатор пользователя Cherwell](media/log-analytics-itsmc-connections/itsmc-cherwell-client-id.png)
 
 
 ## <a name="next-steps"></a>Дополнительная информация

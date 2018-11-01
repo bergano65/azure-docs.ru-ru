@@ -13,14 +13,14 @@ ms.workload: web
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: article
-ms.date: 05/11/2018
+ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: d65a33dc13d0b91a9ace04dab0be6c37bcd2188f
-ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.openlocfilehash: b34597c604160cc5c0880561a6c3afb70816f9b3
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42617640"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50417333"
 ---
 # <a name="open-source-technologies-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о технологиях с открытым кодом в веб-приложениях Azure
 
@@ -43,9 +43,9 @@ ms.locfileid: "42617640"
 9. Щелкните **Сохранить**.
 10. Щелкните значок карандаша рядом с файлом **wp-config.php**.
 11. Вместо текста в файле добавьте следующий код:
-   ```
+   ```php
    //Enable WP_DEBUG modedefine('WP_DEBUG', true);//Enable debug logging to /wp-content/debug.logdefine('WP_DEBUG_LOG', true);
-   //Supress errors and warnings to screendefine('WP_DEBUG_DISPLAY', false);//Supress PHP errors to screenini_set('display_errors', 0);
+   //Suppress errors and warnings to screendefine('WP_DEBUG_DISPLAY', false);//Supress PHP errors to screenini_set('display_errors', 0);
    ```
 12. На портале Azure в меню веб-приложения перезапустите свое веб-приложение.
 
@@ -70,7 +70,7 @@ ms.locfileid: "42617640"
 *   Измените файл iisnode.yml. Если изменить версию Node.js в файле iisnode.yml, вы зададите только среду выполнения, используемую IISNode. Командная строка Kudu и остальные компоненты по-прежнему будут использовать версию Node.js, заданную в разделе **Параметры приложения** на портале Azure.
 
     Чтобы вручную задать файл iisnode.yml, создайте файл iisnode.yml в корневой папке приложения. Добавьте в этот файл следующую строку:
-   ```
+   ```yml
    nodeProcessCommandLine: "D:\Program Files (x86)\nodejs\5.9.1\node.exe"
    ```
    
@@ -80,7 +80,7 @@ ms.locfileid: "42617640"
     2. Создание скрипта развертывания по умолчанию, если его нет (файл deploy.cmd) в корневой папке веб-приложения.
     3. Выполнение скрипта развертывания, который создает файл iisnode.yml, если вы указали версию Node.js в файле package.json в строке `"engines": {"node": "5.9.1","npm": "3.7.3"}`.
     4. Файл iisnode.yml содержит следующую строку кода:
-        ```
+        ```yml
         nodeProcessCommandLine: "D:\Program Files (x86)\nodejs\5.9.1\node.exe"
         ```
 
@@ -146,7 +146,7 @@ The web application[ROOT] registered the JDBC driver [com.mysql.jdbc.Driver] but
 2. При использовании пользовательского веб-сервера Tomcat или веб-сервера Tomcat из Microsoft Azure Marketplace скопируйте этот JAR-файл в папку lib.
 3. При включении Java на портале Azure (выберите **Java 1.8** > **Tomcat server** (Сервер Tomcat)) скопируйте файл sqljdbc.* jar в папку, связанную с приложением. Затем добавьте в файл web.config следующий параметр classpath:
 
-    ```
+    ```xml
     <httpPlatform>
     <environmentVariables>
     <environmentVariablename ="JAVA_OPTS" value=" -Djava.net.preferIPv4Stack=true

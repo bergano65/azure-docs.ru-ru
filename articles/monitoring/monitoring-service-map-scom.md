@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2017
 ms.author: bwren;dairwin
-ms.openlocfilehash: 6fc6afa9c0ccbddcfa408556dee92618fe63c8fb
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: b9146bfc284a469f12eb626c2434f4afe52335dc
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49407118"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50250468"
 ---
 # <a name="service-map-integration-with-system-center-operations-manager"></a>Интеграция схемы услуги с System Center Operations Manager
   > [!NOTE]
@@ -53,19 +53,19 @@ ms.locfileid: "49407118"
 
 1. Чтобы открыть мастер настройки, щелкните **Добавить рабочую область** в области **Service Map Overview** (Обзор схемы услуги).  
 
-    ![Область "Service Map Overview" (Обзор схемы услуги)](media/monitoring-service-map/scom-configuration.png)
+    ![Область "Service Map Overview" (Обзор схемы услуги)](media/monitoring-service-map-scom/scom-configuration.png)
 
 2. В окне **Настройка подключения** введите имя или идентификатор клиента, идентификатор приложения (имя пользователя или clientID) и пароль субъекта-службы, а затем нажмите кнопку **Далее**. Дополнительные сведения см. в руководстве по [созданию субъекта-службы](#creating-a-service-principal).
 
-    ![Окно "Настройка подключения"](media/monitoring-service-map/scom-config-spn.png)
+    ![Окно "Настройка подключения"](media/monitoring-service-map-scom/scom-config-spn.png)
 
 3. В окне **Subscription Selection** (Выбор подписки) выберите подписку Azure, группу ресурсов Azure (которая содержит рабочую область Log Analytics) и саму рабочую область Log Analytics, а затем нажмите кнопку **Далее**.
 
-    ![Настройка Operations Manager: рабочая область](media/monitoring-service-map/scom-config-workspace.png)
+    ![Настройка Operations Manager: рабочая область](media/monitoring-service-map-scom/scom-config-workspace.png)
 
 4. В окне **Machine Group Selection** (Выбор группы компьютеров) выберите группы компьютеров решения "Сопоставление служб", которые необходимо синхронизировать с Operations Manager. Нажмите кнопку **Add/Remove Machine Groups** (Добавить или удалить группы компьютеров), выберите группы из списка **доступных групп компьютеров**и нажмите кнопку **Добавить**.  Выбрав группы, нажмите кнопку **ОК** для завершения.
     
-    ![Настройка групп компьютеров в Operations Manager](media/monitoring-service-map/scom-config-machine-groups.png)
+    ![Настройка групп компьютеров в Operations Manager](media/monitoring-service-map-scom/scom-config-machine-groups.png)
     
 5. В окне **Выбор сервера** настройте группу серверов схемы услуги для синхронизации между Operations Manager и схемой услуги. Нажмите кнопку **Добавление и удаление серверов**.   
     
@@ -75,36 +75,36 @@ ms.locfileid: "49407118"
     * находиться под управлением решения "Сопоставление служб";
     * входить в группу серверов решения "Сопоставление служб".
 
-    ![Настройка Operations Manager: группа](media/monitoring-service-map/scom-config-group.png)
+    ![Настройка Operations Manager: группа](media/monitoring-service-map-scom/scom-config-group.png)
 
 6. Необязательно. Выберите пул ресурсов сервера управления для взаимодействия с Log Analytics и щелкните **Add Workspace** (Добавить рабочую область).
 
-    ![Настройка Operations Manager: пул ресурсов](media/monitoring-service-map/scom-config-pool.png)
+    ![Настройка Operations Manager: пул ресурсов](media/monitoring-service-map-scom/scom-config-pool.png)
 
     Для настройки и регистрации рабочей области Log Analytics может потребоваться около минуты. После ее настройки Operations Manager инициирует первую синхронизацию сопоставления служб.
 
-    ![Настройка Operations Manager: пул ресурсов](media/monitoring-service-map/scom-config-success.png)
+    ![Настройка Operations Manager: пул ресурсов](media/monitoring-service-map-scom/scom-config-success.png)
 
 
 ## <a name="monitor-service-map"></a>Мониторинг схемы услуги
 После подключения рабочей области Log Analytics в области **Мониторинг** консоли Operations Manager отобразится новая папка — "Сопоставление служб".
 
-![Operations Manager: область "Мониторинг"](media/monitoring-service-map/scom-monitoring.png)
+![Operations Manager: область "Мониторинг"](media/monitoring-service-map-scom/scom-monitoring.png)
 
 Папка "Сопоставление служб" имеет четыре узла:
 * **Активные оповещения:** список всех активных оповещений об обмене данными между Operations Manager и решением "Сопоставление служб".  Обратите внимание, что оповещения Log Analytics не отображаются в Operations Manager. 
 
 * **Серверы**: список отслеживаемых серверов, настроенных для синхронизации из схемы услуги.
 
-    ![Operations Manager: область "Серверы"](media/monitoring-service-map/scom-monitoring-servers.png)
+    ![Operations Manager: область "Серверы"](media/monitoring-service-map-scom/scom-monitoring-servers.png)
 
 * **Machine Group Dependency Views** (Представления зависимостей групп компьютеров): здесь указаны группы компьютеров, синхронизируемых с решением "Сопоставление служб". Вы можете щелкнуть любую группу, чтобы просмотреть распределенные диаграммы приложения.
 
-    ![Схема распределенного приложения Operations Manager](media/monitoring-service-map/scom-group-dad.png)
+    ![Схема распределенного приложения Operations Manager](media/monitoring-service-map-scom/scom-group-dad.png)
 
 * **Server Dependency Views** (Представления зависимости серверов): список всех серверов, синхронизируемых из схемы услуги. Вы можете щелкнуть любой сервер, чтобы просмотреть его схему распределенного приложения.
 
-    ![Схема распределенного приложения Operations Manager](media/monitoring-service-map/scom-dad.png)
+    ![Схема распределенного приложения Operations Manager](media/monitoring-service-map-scom/scom-dad.png)
 
 ## <a name="edit-or-delete-the-workspace"></a>Изменение или удаление рабочей области
 Вы можете изменить или удалить настроенную рабочую область с помощью области **Service Map Overview** (Обзор схемы услуги) (область **Администрирование** > **Operations Management Suite** > **Схема услуги**).
@@ -114,12 +114,12 @@ ms.locfileid: "49407118"
 
 Пока что можно настроить только одну рабочую область Log Analytics.
 
-![Operations Manager: область изменения рабочей области](media/monitoring-service-map/scom-edit-workspace.png)
+![Operations Manager: область изменения рабочей области](media/monitoring-service-map-scom/scom-edit-workspace.png)
 
 ## <a name="configure-rules-and-overrides"></a>Настройка правил и переопределений
 Правило _Microsoft.SystemCenter.ServiceMapImport.Rule_ создается для периодического извлечения сведений из схемы услуги. Чтобы изменить время синхронизации, можно настроить переопределения правила (область **Разработка** > **Правила** > **Microsoft.SystemCenter.ServiceMapImport.Rule**).
 
-![Operations Manager: окно свойств переопределений](media/monitoring-service-map/scom-overrides.png)
+![Operations Manager: окно свойств переопределений](media/monitoring-service-map-scom/scom-overrides.png)
 
 * **Enabled**: позволяет включить или отключить автоматическое обновление. 
 * **IntervalMinutes**: позволяет сбросить настройки времени между обновлениями. Значение по умолчанию — один час. Если необходимо чаще синхронизировать карты серверов, можно изменить это значение.

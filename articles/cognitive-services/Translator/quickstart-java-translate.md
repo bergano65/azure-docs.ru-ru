@@ -10,12 +10,12 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/21/2018
 ms.author: erhopf
-ms.openlocfilehash: 5a2b478d39f14b993a389fc48e037e1980d83e52
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: f9f9b6758a74ac846e7b44ab9024620e6176218d
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49646150"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50414630"
 ---
 # <a name="quickstart-translate-text-with-the-translator-text-rest-api-java"></a>Краткое руководство. Перевод текста с помощью REST API перевода текстов (Java)
 
@@ -23,7 +23,7 @@ ms.locfileid: "49646150"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для компиляции и запуска этого кода вам потребуется [пакет JDK 7 или 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). При желании можно воспользоваться интегрированной средой разработки Java, но обычный текстовый редактор также подойдет.
+Для компиляции и запуска этого кода вам потребуется [пакет JDK 7 или 8](https://aka.ms/azure-jdks). При желании можно воспользоваться интегрированной средой разработки Java, но обычный текстовый редактор также подойдет.
 
 Чтобы использовать API перевода текстов, вам также потребуется ключ подписки. Сведения об этом см. в статье [Регистрация для использования API перевода текстов](translator-text-how-to-signup.md).
 

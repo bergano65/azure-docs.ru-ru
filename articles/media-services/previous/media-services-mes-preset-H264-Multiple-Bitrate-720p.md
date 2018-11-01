@@ -2,7 +2,7 @@
 title: 'Предустановка Media Encoder Standard в Azure: H264 Multiple Bitrate 720p | Документация Майкрософт'
 description: Этот раздел содержит общие сведения о предустановке задачи **H264 Multiple Bitrate 720p**.
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 services: media-services
 documentationcenter: ''
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/20/2017
+ms.date: 10/30/2018
 ms.author: juliako
-ms.openlocfilehash: 564e430ad1c9dcf1ee126d136b37009c74400401
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: d19f75def9da82cabce8c2d553a898ae401b54eb
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33782763"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50250535"
 ---
 # <a name="h264-multiple-bitrate-720p"></a>H264 Multiple Bitrate 720p
 `Media Encoder Standard` определяет набор предустановок кодирования, которые можно использовать при создании заданий кодирования. Можно также использовать `preset name`, чтобы указать, в какой формат нужно закодировать файл мультимедиа. Или можно создать собственные предустановки в формате JSON или XML (с использованием кодировки UTF-8 или UTF-16). Затем следует передавать пользовательскую предустановку в кодировщик. Список предустановок, поддерживаемых данным кодировщиком `Media Encoder Standard`, приведен в разделе [Предустановки задач для Media Encoder Standard](media-services-mes-presets-overview.md).  

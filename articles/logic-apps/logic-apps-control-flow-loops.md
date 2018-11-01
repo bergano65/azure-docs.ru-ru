@@ -10,12 +10,12 @@ ms.date: 03/05/2018
 ms.topic: article
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: 87595eeb0330a2d8210258c097c29b205b628cf4
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 5ba5e5abef4ebdc58c44cbe7f5ba584efe8abfc7
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35298191"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50233112"
 ---
 # <a name="create-loops-that-repeat-workflow-actions-or-process-arrays-in-azure-logic-apps"></a>Создание циклов, которые повторяют действия рабочих процессов или обрабатывают массивы в Azure Logic Apps
 
@@ -26,7 +26,7 @@ ms.locfileid: "35298191"
   
 Чтобы повторять действия до выполнения условия или изменения определенного состояния, используйте цикл [until](#until-loop). Сначала приложение логики выполняет все действия в цикле, а затем проверяет условие. Если условие выполнено, цикл прекращается. В противном случае он повторяется. Максимальное число циклов until, которое можно выполнить за один запуск приложения логики, см. в статье [Ограничения и настройка Logic Apps](../logic-apps/logic-apps-limits-and-config.md). 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
@@ -311,7 +311,7 @@ ms.locfileid: "35298191"
 ## <a name="get-support"></a>Получение поддержки
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Оставить предложения по функциям или проголосовать за них вы можете на [сайте отзывов пользователей Azure Logic Apps](http://aka.ms/logicapps-wish).
+* Оставить предложения по функциям или проголосовать за них вы можете на [сайте отзывов пользователей Azure Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

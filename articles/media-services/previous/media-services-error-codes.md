@@ -2,7 +2,7 @@
 title: Коды ошибок служб мультимедиа Azure | Документация Майкрософт
 description: Здесь приводится обзор кодов ошибок служб мультимедиа Azure.
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 services: media-services
 documentationcenter: ''
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/31/2017
+ms.date: 10/29/2018
 ms.author: juliako
-ms.openlocfilehash: 8a374393a6a5b3d563a441654b7b5df8a510f304
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 43e2b2b7f398e8adce0760678c6f0a5208c24c34
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33783573"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50240534"
 ---
 # <a name="azure-media-services-error-codes"></a>Коды ошибок служб мультимедиа Azure
 При использовании служб мультимедиа Microsoft Azure могут отображаться коды ошибок HTTP из службы в зависимости от возникших проблем, например истек срок действия маркеров проверки подлинности или действия не поддерживаются в службах мультимедиа. Ниже приведен список **кодов ошибок HTTP**, которые могут возвращать службы мультимедиа, и возможные причины возникновения.  

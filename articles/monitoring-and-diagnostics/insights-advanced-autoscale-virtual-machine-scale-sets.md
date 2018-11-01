@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/22/2016
 ms.author: ancav
 ms.component: autoscale
-ms.openlocfilehash: 78e3bec0d00336ce7cedc1434bf6ad7c65435969
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 995e93290e7c305e217c1f44609d383f69d83a9a
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46978188"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50420563"
 ---
 # <a name="advanced-autoscale-configuration-using-resource-manager-templates-for-vm-scale-sets"></a>Расширенная настройка автомасштабирования с помощью шаблонов Resource Manager для набора масштабирования виртуальных машин
 Масштабируемые наборы виртуальных машин можно свертывать и развертывать на основе пороговых значений метрик производительности по расписанию или на определенную дату. Можно также настроить уведомления с помощью электронной почты и webhook для действий масштабирования. В этом пошаговом руководстве показан пример настройки всех этих объектов для масштабируемого набора виртуальных машин с помощью шаблона Resource Manager.
@@ -29,7 +29,7 @@ ms.locfileid: "46978188"
 1. Разверните новый набор масштабирования с базовой конфигурацией автомасштабирования. В этой статье используется конфигурация из коллекции быстрого запуска Azure, в которой есть набор масштабирования Windows с базовым шаблоном автомасштабирования. Наборы масштабирования Linux работают точно так же.
 2. После создания набора масштабирования перейдите к его ресурсу из Azure Resource Explorer. Под узлом Microsoft.Insights вы увидите следующую структуру.
 
-    ![Azure Explorer](./media/insights-advanced-autoscale-vmss/azure_explorer_navigate.png)
+    ![Azure Explorer](media/insights-advanced-autoscale-virtual-machine-scale-sets/azure_explorer_navigate.png)
 
     С помощью шаблона была создана конфигурация автомасштабирования по умолчанию **autoscalewad**. Справа можно просмотреть полное определение этой конфигурации автомасштабирования. В данном случае в конфигурации автомасштабирования по умолчанию используется правило масштабирования на основе загрузки ЦП в процентах.  
 
@@ -58,11 +58,11 @@ ms.locfileid: "46978188"
 
 5. Убедитесь, что в Resource Explorer включен режим **Read/Write** (Чтение и запись).
 
-    ![Autoscalewad, конфигурация автомасштабирования по умолчанию](./media/insights-advanced-autoscale-vmss/autoscalewad.png)
+    ![Autoscalewad, конфигурация автомасштабирования по умолчанию](media/insights-advanced-autoscale-virtual-machine-scale-sets/autoscalewad.png)
 
 6. Нажмите кнопку «Изменить». **Замените** элемент profiles в конфигурации автомасштабирования следующим текстом:
 
-    ![профили](./media/insights-advanced-autoscale-vmss/profiles.png)
+    ![профили](media/insights-advanced-autoscale-virtual-machine-scale-sets/profiles.png)
 
     ```
     {

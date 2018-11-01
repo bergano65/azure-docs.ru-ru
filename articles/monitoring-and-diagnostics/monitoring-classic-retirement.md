@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/04/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: ebbb231e7d9eefa8eb681b0e14c711e2c4f1fad7
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: f7efafe5e3080de15781496032b688bc5fa71df2
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49386525"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50418433"
 ---
 # <a name="unified-alerting--monitoring-in-azure-monitor-replaces-classic-alerting--monitoring"></a>Унифицированные оповещения и мониторинг в Azure Monitor заменяют классические оповещения и мониторинг
 
@@ -21,7 +21,7 @@ ms.locfileid: "49386525"
 
 С выпуском новой платформы мониторинга и оповещений Azure в июне 2019 года мы прекратим поддержку "классической" платформы, размещенной в разделе *просмотра классических оповещений* в Azure.
 
- ![Классическое оповещение на портале Azure](./media/monitoring-overview-alerts-classic/monitor-alert-screen2.png) 
+ ![Классическое оповещение на портале Azure](media/monitoring-classic-retirement/monitor-alert-screen2.png) 
 
 Мы рекомендуем вам начать работу и воссоздать оповещения на новой платформе. Для клиентов с большим количеством оповещений мы разрабатываем автоматизированный способ перемещения имеющихся классических оповещений в новую систему оповещений без сбоев или дополнительных затрат.
 

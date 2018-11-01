@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 01/17/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: 1c9c93c198b4d88da55ecd241e096e73e4a40d5d
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: aa9e91614152aed6a04fa748521991920a0ed569
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48042192"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50413066"
 ---
 # <a name="reference-guide-to-view-designer-tiles-in-log-analytics"></a>Справочное руководство по плиткам конструктора представлений в Log Analytics
 С помощью конструктора представлений в Azure Log Analytics можно создавать пользовательские представления на портале Azure, содержащие различные визуализации данных в рабочей области Log Analytics. В этой статье содержится справочное руководство по параметрам плиток, доступных в пользовательских представлениях.
@@ -47,7 +47,7 @@ ms.locfileid: "48042192"
 ## <a name="number-tile"></a>Плитка "Число"
 На плитке **Число** отображается число, обозначающее количество записей из запроса журнала, и подпись.
 
-![Плитка "Число"](media/log-analytics-view-designer/tile-number.png)
+![Плитка "Число"](media/log-analytics-view-designer-tiles/tile-number.png)
 
 | Параметр | ОПИСАНИЕ |
 |:--- |:--- |
@@ -65,7 +65,7 @@ ms.locfileid: "48042192"
 ## <a name="two-numbers-tile"></a>Плитка "Два числа"
 На этой плитке отображаются числа, означающие количество записей из двух разных запросов журнала, с подписью под каждым из них.
 
-![Плитка "Два числа"](media/log-analytics-view-designer/tile-two-numbers.png)
+![Плитка "Два числа"](media/log-analytics-view-designer-tiles/tile-two-numbers.png)
 
 | Параметр | ОПИСАНИЕ |
 |:--- |:--- |
@@ -86,7 +86,7 @@ ms.locfileid: "48042192"
 ## <a name="donut-tile"></a>Плитка "Кольцо"
 На плитке **Кольцо** отображается одно число, полученное путем сложения чисел из столбца значений в запросе журнала. На кольцевой диаграмме отображаются результаты трех первых записей.
 
-![Плитка "Кольцо"](media/log-analytics-view-designer/tile-donut.png)
+![Плитка "Кольцо"](media/log-analytics-view-designer-tiles/tile-donut.png)
 
 | Параметр | ОПИСАНИЕ |
 |:--- |:--- |
@@ -110,7 +110,7 @@ ms.locfileid: "48042192"
 ## <a name="line-chart-tile"></a>Плитка "График"
 Эта плитка представляет собой график с несколькими рядами данных из запроса к журналу за некоторый промежуток времени. 
 
-![Плитка "График с выноской"](media/log-analytics-view-designer/tile-line-chart.png)
+![Плитка "График с выноской"](media/log-analytics-view-designer-tiles/tile-line-chart.png)
 
 | Параметр | ОПИСАНИЕ |
 |:--- |:--- |
@@ -131,7 +131,7 @@ ms.locfileid: "48042192"
 ## <a name="line-chart-and-callout-tile"></a>Плитка "График с выноской"
 В этой плитке имеется график с несколькими рядами данных из запросов к журналу за некоторый промежуток времени и выноска с итоговым значением. 
 
-![Плитка "График с выноской"](media/log-analytics-view-designer/tile-line-chart-callout.png)
+![Плитка "График с выноской"](media/log-analytics-view-designer-tiles/tile-line-chart-callout.png)
 
 | Параметр | ОПИСАНИЕ |
 |:--- |:--- |
@@ -156,7 +156,7 @@ ms.locfileid: "48042192"
 ## <a name="two-timelines-tile"></a>Плитка "Две временные шкалы"
 На плитке **Две временные шкалы** отображаются результаты двух запросов журнала за определенный отрезок времени, представленные в виде гистограмм. Для каждого ряда отображается отдельная выноска. 
 
-![Плитка "Две временные шкалы"](media/log-analytics-view-designer/tile-two-timelines.png)
+![Плитка "Две временные шкалы"](media/log-analytics-view-designer-tiles/tile-two-timelines.png)
 
 | Параметр | ОПИСАНИЕ |
 |:--- |:--- |

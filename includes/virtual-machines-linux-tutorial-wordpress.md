@@ -1,3 +1,16 @@
+---
+author: cynthn
+ms.service: virtual-machines-linux
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: cynthn
+ms.openlocfilehash: 5df1f7ff44a1603dd03d1d803ae9960dc124781e
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50226422"
+---
 ## <a name="install-wordpress"></a>Установка WordPress
 
 Чтобы проверить работу стека, установите пример приложения. Например, выполните приведенные ниже шаги, чтобы установить платформу [WordPress](https://wordpress.org/) с открытым кодом для создания веб-сайтов и блогов. Для других рабочих нагрузок потребуется установка платформ [Drupal](http://www.drupal.org) и [Moodle](https://moodle.org/). 

@@ -1,3 +1,16 @@
+---
+author: cynthn
+ms.service: virtual-machines
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: cynthn
+ms.openlocfilehash: 0e46caf855bca184ff8a714d2c93d573b910fea8
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50227205"
+---
 Вы можете легко [автоматически масштабировать](../articles/monitoring-and-diagnostics/insights-autoscale-best-practices.md) свои [виртуальные машины](../articles/virtual-machines/windows/overview.md) при использовании [масштабируемых наборов виртуальных машин](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) и [функции автоматического масштабирования Azure Monitor](../articles/monitoring-and-diagnostics/monitoring-overview-autoscale.md). Для автоматического масштабирования виртуальные машины должны входить в масштабируемый набор. Эта статья поможет вам лучше понять, как выполнять горизонтальное и вертикальное масштабирование виртуальных машин автоматически и вручную.
 
 ## <a name="horizontal-or-vertical-scaling"></a>Горизонтальное или вертикальное масштабирование

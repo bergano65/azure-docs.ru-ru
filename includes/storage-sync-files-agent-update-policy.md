@@ -1,3 +1,16 @@
+---
+author: tamram
+ms.service: storage
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: tamram
+ms.openlocfilehash: 80bb07d850628f07ebc37a39da1294399804d8f5
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50164189"
+---
 Агент службы синхронизации файлов Azure обновляется на регулярной основе. Это позволяет добавлять новые возможности и устранять ошибки. Мы рекомендуем настроить Центр обновления Майкрософт, чтобы получать обновления службы синхронизации файлов Azure по мере их выпуска.
 
 #### <a name="major-vs-minor-agent-versions"></a>Сравнение основной и дополнительных версий агента

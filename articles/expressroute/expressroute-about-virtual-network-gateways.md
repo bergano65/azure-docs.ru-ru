@@ -5,14 +5,14 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 09/10/2018
+ms.date: 10/29/2018
 ms.author: cherylmc
-ms.openlocfilehash: 34d84a27406f0ebabd7bca576ee443da1d0c9bcd
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: bc48101decce9a92a01b8e6958bed08850a94b7e
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44348810"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50241401"
 ---
 # <a name="about-virtual-network-gateways-for-expressroute"></a>Сведения о шлюзах виртуальных сетей ExpressRoute
 Шлюз виртуальной сети используется для обмена сетевым трафиком между виртуальными и локальными сетями Azure. Вы можете использовать шлюз виртуальных сетей для трафика ExpressRoute или VPN. Эта статья посвящена шлюзам виртуальных сетей ExpressRoute.
@@ -62,7 +62,7 @@ ms.locfileid: "44348810"
 
 | **Классический** | **Resource Manager** |
 | --- | --- |
-| [PowerShell](https://msdn.microsoft.com/library/mt270335.aspx) |[PowerShell](https://docs.microsoft.com/powershell/module/azurerm.network#networking) |
+| [PowerShell](https://docs.microsoft.com/powershell/module/servicemanagement/azure/?view=azuresmps-4.0.0#azure) |[PowerShell](https://docs.microsoft.com/powershell/module/azurerm.network#networking) |
 | [ИНТЕРФЕЙС REST API](https://msdn.microsoft.com/library/jj154113.aspx) |[ИНТЕРФЕЙС REST API](https://msdn.microsoft.com/library/mt163859.aspx) |
 
 ## <a name="next-steps"></a>Дополнительная информация

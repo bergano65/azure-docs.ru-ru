@@ -8,16 +8,16 @@ ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
 author: AyoOlubeko
-ms.author: AyoOlubeko
+ms.author: ayolubek
 ms.reviewer: sstein
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 5b1ceeac5d3887d5c199e642a0e26aa4ffab4452
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.openlocfilehash: a5c829ee77f1ba61bf8b1a19488c51dabe2262a0
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47055444"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50241980"
 ---
 # <a name="run-ad-hoc-analytics-queries-across-multiple-azure-sql-databases"></a>Выполнение запросов автоматизированной системы отчетности к нескольким базам данных SQL Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "47055444"
 
 Этот пример развертывает базу данных *adhocreporting*. Это головная база данных, которая будет содержать схему, используемую для выполнения запросов по всем базам данных клиента. Эта база данных развертывается на имеющемся сервере каталога, используемом для всех баз данных для управления в данном примере приложения.
 
-1. В \\интегрированной среде сценариев PowerShell\\ откройте скрипт …\\Learning Modules\\Operational Analytics*Adhoc Reporting**Demo-AdhocReporting.ps1* и задайте в нем следующие значения.
+1. В \\интегрированной среде сценариев PowerShell\\ откройте скрипт …\\Learning Modules\\Operational Analytics*Adhoc Reporting* *Demo-AdhocReporting.ps1* и задайте в нем следующие значения.
    * **$DemoScenario** = 2, **Развертывание базы данных автоматизированной системы отчетности**.
 
 2. Нажмите клавишу **F5**, чтобы выполнить скрипт и создать базу данных *adhocreporting*.

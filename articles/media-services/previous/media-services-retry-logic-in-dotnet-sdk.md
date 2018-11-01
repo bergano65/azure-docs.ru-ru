@@ -2,7 +2,7 @@
 title: Логика повторного выполнения операций в пакете SDK служб мультимедиа для .NET | Документация Майкрософт
 description: В этом разделе содержится обзор логики повторных попыток в пакете SDK служб мультимедиа для .NET.
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 services: media-services
 documentationcenter: ''
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/21/2017
+ms.date: 10/24/2018
 ms.author: juliako
-ms.openlocfilehash: 34125712c59938b3a74e7cdc150f3f16b694b92f
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 0a4c9db8da046e901241bc383098013b2acc6bb2
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33785943"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50242268"
 ---
 # <a name="retry-logic-in-the-media-services-sdk-for-net"></a>Логика повторного выполнения операций в пакете SDK служб мультимедиа для .NET
 При работе со службами Microsoft Azure могут возникать временные сбои. В большинстве случаев после нескольких повторных попыток операция завершается успешно. Пакет SDK служб мультимедиа для .NET реализует логику повторного выполнения операций для обработки временных сбоев, связанных с исключениями и ошибками. Причиной этих ошибок и исключений могут быть веб-запросы, выполнение запросов, сохранение изменений и операции с хранилищем.  По умолчанию пакет SDK служб мультимедиа для .NET пытается выполнить операцию четыре раза, а затем возвращает исключение в приложение. Затем это исключение должно быть правильно обработано кодом приложения.  
@@ -38,13 +38,13 @@ ms.locfileid: "33785943"
 
 | Исключение | Веб-запрос | Операции с хранилищем | Выполнение запросов | Сохранение изменений |
 | --- | --- | --- | --- | --- |
-| WebException<br/>Дополнительные сведения см. в разделе [Коды состояний WebException](media-services-retry-logic-in-dotnet-sdk.md#WebExceptionStatus). |Yes |Yes |Yes |Yes |
-| DataServiceClientException<br/> Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Нет  |Yes |Yes |Yes |
-| DataServiceQueryException<br/> Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Нет  |Yes |Yes |Yes |
-| DataServiceRequestException<br/> Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Нет  |Yes |Yes |Yes |
+| WebException<br/>Дополнительные сведения см. в разделе [Коды состояний WebException](media-services-retry-logic-in-dotnet-sdk.md#WebExceptionStatus). |Yes |Да |Да |Yes |
+| DataServiceClientException<br/> Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Нет  |Yes |Да |Yes |
+| DataServiceQueryException<br/> Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Нет  |Yes |Да |Yes |
+| DataServiceRequestException<br/> Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Нет  |Yes |Да |Yes |
 | DataServiceTransportException |Нет  |Нет  |Yes |Yes |
-| TimeoutException |Yes |Yes |Yes |Нет  |
-| SocketException |Yes |Yes |Yes |Yes |
+| TimeoutException |Yes |Да |Да |Нет  |
+| SocketException |Yes |Да |Да |Yes |
 | StorageException |Нет  |Yes |Нет  |Нет  |
 | IOException |Нет  |Yes |Нет  |Нет  |
 
@@ -53,18 +53,18 @@ ms.locfileid: "33785943"
 
 | Status | Веб-запрос | Операции с хранилищем | Выполнение запросов | Сохранение изменений |
 | --- | --- | --- | --- | --- |
-| ConnectFailure |Yes |Yes |Yes |Yes |
-| NameResolutionFailure |Yes |Yes |Yes |Yes |
-| ProxyNameResolutionFailure |Yes |Yes |Yes |Yes |
-| SendFailure |Yes |Yes |Yes |Yes |
-| PipelineFailure |Yes |Yes |Yes |Нет  |
-| ConnectionClosed |Yes |Yes |Yes |Нет  |
-| KeepAliveFailure |Yes |Yes |Yes |Нет  |
-| UnknownError |Yes |Yes |Yes |Нет  |
-| ReceiveFailure |Yes |Yes |Yes |Нет  |
-| RequestCanceled |Yes |Yes |Yes |Нет  |
-| Время ожидания |Yes |Yes |Yes |Нет  |
-| ProtocolError <br/>Повторное выполнение операции при состоянии ProtocolError определяется обработкой кодов состояния HTTP. Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Yes |Yes |Yes |Yes |
+| ConnectFailure |Yes |Да |Да |Yes |
+| NameResolutionFailure |Yes |Да |Да |Yes |
+| ProxyNameResolutionFailure |Yes |Да |Да |Yes |
+| SendFailure |Yes |Да |Да |Yes |
+| PipelineFailure |Yes |Да |Да |Нет  |
+| ConnectionClosed |Yes |Да |Да |Нет  |
+| KeepAliveFailure |Yes |Да |Да |Нет  |
+| UnknownError |Yes |Да |Да |Нет  |
+| ReceiveFailure |Yes |Да |Да |Нет  |
+| RequestCanceled |Yes |Да |Да |Нет  |
+| Время ожидания |Yes |Да |Да |Нет  |
+| ProtocolError <br/>Повторное выполнение операции при состоянии ProtocolError определяется обработкой кодов состояния HTTP. Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Yes |Да |Да |Yes |
 
 ### <a name="HTTPStatusCode"></a> Коды состояний ошибок HTTP
 Когда операции выполнения запросов и сохранения изменений выдают исключение DataServiceClientException, DataServiceQueryException или DataServiceQueryException, код состояния ошибки HTTP возвращается в свойстве StatusCode.  В таблице ниже показано, для каких кодов ошибок реализована логика повторного выполнения операций.  
@@ -73,12 +73,12 @@ ms.locfileid: "33785943"
 | --- | --- | --- | --- | --- |
 | 401 |Нет  |Yes |Нет  |Нет  |
 | 403 |Нет  |Yes<br/>Обработка повторных попыток с увеличением времени ожидания. |Нет  |Нет  |
-| 408 |Yes |Yes |Yes |Yes |
-| 429 |Yes |Yes |Yes |Yes |
-| 500 |Yes |Yes |Yes |Нет  |
-| 502 |Yes |Yes |Yes |Нет  |
-| 503 |Yes |Yes |Yes |Yes |
-| 504 |Yes |Yes |Yes |Нет  |
+| 408 |Yes |Да |Да |Yes |
+| 429 |Yes |Да |Да |Yes |
+| 500 |Yes |Да |Да |Нет  |
+| 502 |Yes |Да |Да |Нет  |
+| 503 |Yes |Да |Да |Yes |
+| 504 |Yes |Да |Да |Нет  |
 
 Фактическую реализацию логики повторного выполнения операций в пакете SDK служб мультимедиа для .NET см. [здесь](https://github.com/Azure/azure-sdk-for-media-services/tree/dev/src/net/Client/TransientFaultHandling).
 

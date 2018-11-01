@@ -14,12 +14,12 @@ ms.date: 04/06/2017
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
-ms.openlocfilehash: 210526e105793820a2e8a80a11b356b1d7d764da
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: 857d58d31565e413a207162202f1a680d7da7c65
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42142613"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50250739"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Смена неуправляемого каталога от имени администратора в Azure Active Directory
 В этой статье описывается два способа смены доменного имени DNS в неуправляемом каталоге в Azure Active Directory (Azure AD). Когда пользователь самостоятельно регистрируется в облачной службе, использующей Azure AD, он добавляется в неуправляемый каталог Azure AD на основе домена электронной почты. Дополнительные сведения о самостоятельной (или "вирусной") регистрации в службе см. в разделе [What is self-service signup for Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-signup) (Что такое самостоятельная регистрация для Azure Active Directory?).
@@ -128,7 +128,7 @@ ms.locfileid: "42142613"
 
 1. Подключитесь к Azure AD, используя учетные данные, использованные в ответ на предложение самообслуживания:
   ````
-    import-module MSOnline
+    Install-Module -Name MSOnline
     $msolcred = get-credential
     
     connect-msolservice -credential $msolcred

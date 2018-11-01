@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/17/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: e78e7b5b4dba0bfea4f3398ca20b381a291fe44f
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 410559ab03f0e0be71f2eba27ed71c9f7cf05862
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46307823"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50238545"
 ---
 # <a name="azure-ad-connect-how-to-recover-from-localdb-10-gb-limit"></a>Azure AD Connect: восстановление из LocalDB с ограничением в 10 ГБ
 Azure AD Connect требуется база данных SQL Server для хранения учетных данных. Можно использовать выпуск SQL Server 2012 Express LocalDB по умолчанию, установленный с помощью Azure AD Connect, или полную версию SQL Server. SQL Server Express налагает ограничение в размере 10 ГБ. Если при использовании LocalDB достигнут этот предел, служба синхронизации Azure AD Connect больше не сможет запускаться или выполнять синхронизацию должным образом. Эта статья содержит рекомендации по восстановлению.
@@ -71,7 +71,7 @@ Azure AD Connect требуется база данных SQL Server для хр
 
 3. Перейдите в папку `%ProgramFiles%\Microsoft SQL Server\110\Tools\Binn`.
 
-4. Запустите служебную программу **sqlcmd** с помощью команды `./SQLCMD.EXE -S “(localdb)\.\ADSync” -U <Username> -P <Password>`, используя учетные данные системного администратора или владельца базы данных.
+4. Запустите служебную программу **sqlcmd** с помощью команды `./SQLCMD.EXE -S "(localdb)\.\ADSync" -U <Username> -P <Password>`, используя учетные данные системного администратора или владельца базы данных.
 
 5. Чтобы сжать базу данных, в командной строке sqlcmd (1>) введите `DBCC Shrinkdatabase(ADSync,1);`, а затем `GO` в следующей строке.
 

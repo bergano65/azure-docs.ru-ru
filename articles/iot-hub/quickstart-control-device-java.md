@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/22/2018
 ms.author: dobett
-ms.openlocfilehash: 6b7de80d18250550c9bd7e52537a7a950e6ffea7
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 3e936b3e08884c1728809aea9054278ffdb99045
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49364773"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50416993"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-java"></a>Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Java)
 
@@ -36,7 +36,7 @@ ms.locfileid: "49364773"
 
 Примеры приложений, запускаемые в рамках этого краткого руководства, написаны на языке Java. Вам потребуется установить Java SE 8 или более позднюю версию на компьютере для разработки.
 
-Java, предназначенный для нескольких платформ, можно скачать в [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+Java, предназначенный для нескольких платформ, можно скачать в [Oracle](https://aka.ms/azure-jdks).
 
 Текущую версию Java на компьютере, на котором ведется разработка, можно проверить, используя следующую команду:
 

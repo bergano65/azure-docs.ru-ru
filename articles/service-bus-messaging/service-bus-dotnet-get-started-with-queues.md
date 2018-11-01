@@ -14,12 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 09/07/2018
 ms.author: spelluru
-ms.openlocfilehash: 30ff970a1f6243bbba6aa42046cf6e08c808f4e5
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: 0d3cbc83c5d2558d7eba3de897477814df81893c
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49068866"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50242438"
 ---
 # <a name="get-started-with-service-bus-queues"></a>Начало работы с очередями служебной шины
 
@@ -40,7 +40,7 @@ ms.locfileid: "49068866"
 
 [!INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
-## <a name="1-create-a-namespace-using-the-azure-portal"></a>1. Создание пространства имен с помощью портала Azure
+## <a name="create-a-namespace-using-the-azure-portal"></a>Создание пространства имен с помощью портала Azure
 
 > [!NOTE] 
 > Вы также можете создать пространство имен служебной шины и сущности обмена сообщениями [с помощью PowerShell](/powershell/azure/get-started-azureps). Дополнительные сведения см. в статье [Управление ресурсами служебной шины с помощью модуля PowerShell](service-bus-manage-with-ps.md).
@@ -49,13 +49,13 @@ ms.locfileid: "49068866"
 
 [!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
-## <a name="2-create-a-queue-using-the-azure-portal"></a>2. Создание очереди с помощью портала Azure
+## <a name="create-a-queue-using-the-azure-portal"></a>Создание очереди с помощью портала Azure
 
 Если очередь служебной шины уже создана, перейдите к разделу [Отправка сообщений в очередь](#3-send-messages-to-the-queue).
 
 [!INCLUDE [service-bus-create-queue-portal](../../includes/service-bus-create-queue-portal.md)]
 
-## <a name="3-send-messages-to-the-queue"></a>3. Отправка сообщений в очередь
+## <a name="send-messages-to-the-queue"></a>Отправка сообщений в очередь
 
 Для отправки сообщений в очередь создайте консольное приложение C# с помощью Visual Studio.
 
@@ -214,7 +214,7 @@ ms.locfileid: "49068866"
    
       ![Размер сообщения][queue-message]
 
-## <a name="4-receive-messages-from-the-queue"></a>4. Получение сообщений из очереди
+## <a name="receive-messages-from-the-queue"></a>Получение сообщений из очереди
 
 Чтобы получить только что отправленные сообщения, создайте другое консольное приложение .NET Core и установите пакет NuGet **Microsoft.Azure.ServiceBus**, как для предыдущего приложения отправителя.
 
