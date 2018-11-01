@@ -9,12 +9,12 @@ ms.author: mattfarm
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 06/15/2018
-ms.openlocfilehash: 8fbc84b4016659b6d0d6ce9ec47c05a0b241c3d9
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: 5b58f4b71d8d9f3ca91d8cefc6215073fd836765
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48855380"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50093672"
 ---
 # <a name="enterprise-integration-architecture-with-queues-and-events"></a>Архитектура корпоративной интеграции с использованием очередей и событий
 
@@ -26,7 +26,7 @@ ms.locfileid: "48855380"
 
 ## <a name="architecture-components"></a>Компоненты архитектуры
 
-Эта архитектура основывается на архитектуре, описанной в статье [Эталонная архитектура: простая корпоративная интеграция](../logic-apps/logic-apps-architectures-simple-enterprise-integration.md). [Рекомендации](../logic-apps/logic-apps-architectures-simple-enterprise-integration.md#recommendations) этой архитектуры также применимы здесь, но для краткости они опущены из раздела [рекомендаций](#recommendations) в этой статье. Эта архитектура корпоративной интеграции включает в себя следующие компоненты:
+Эта архитектура основывается на архитектуре, описанной в статье [Эталонная архитектура: простая корпоративная интеграция](/azure/architecture/reference-architectures/enterprise-integration/simple-enterprise-integration). [Рекомендации](/azure/architecture/reference-architectures/enterprise-integration/simple-enterprise-integration#recommendations) этой архитектуры также применимы здесь, но для краткости они опущены из раздела [рекомендаций](#recommendations) в этой статье. Эта архитектура корпоративной интеграции включает в себя следующие компоненты:
 
 - **Группа ресурсов** — [это](../azure-resource-manager/resource-group-overview.md) логический контейнер для ресурсов Azure.
 
@@ -143,4 +143,4 @@ ms.locfileid: "48855380"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Узнайте больше о [простой корпоративной интеграции](logic-apps-architectures-simple-enterprise-integration.md).
+* Узнайте больше о [простой корпоративной интеграции](/azure/architecture/reference-architectures/enterprise-integration/simple-enterprise-integration).

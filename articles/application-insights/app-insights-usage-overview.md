@@ -3,7 +3,7 @@ title: Анализ использования с помощью Azure Applicati
 description: Получение сведений о пользователях и их действиях с веб-приложением.
 services: application-insights
 documentationcenter: ''
-author: mrbullwinkle
+author: NumberByColors
 manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
@@ -11,13 +11,15 @@ ms.tgt_pltfrm: ibiza
 ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 10/10/2017
-ms.author: mbullwin
-ms.openlocfilehash: d5b580df531e2f0c61ac1d43cfd5ae353f314fce
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.pm_owner: daviste;NumberByColors
+ms.reviewer: mbullwin
+ms.author: daviste
+ms.openlocfilehash: eeaf46a9ce523ecd11689d0aa430fcc522732f70
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47091907"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50139862"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Анализ использования с помощью Application Insights
 
@@ -82,7 +84,7 @@ ms.locfileid: "47091907"
 
 ## <a name="retention---how-many-users-come-back"></a>Период удержания — сколько пользователей вернулось?
 
-Период удержания помогает понять, как часто пользователи возвращаются к использованию своего приложения. Для этого используются когорты пользователей, которые выполнили какое-либо коммерческое действие во время определенного горизонта планирования. 
+Период удержания помогает понять, как часто пользователи возвращаются к использованию своего приложения. Для этого используются когорты пользователей, которые выполнили какое-либо коммерческое действие во время определенного горизонта планирования. 
 
 - Поймите, какие именно функции заставляют пользователей возвращаться чаще, чем другие. 
 - Сформируйте гипотезу на основе данных реальных пользователей. 

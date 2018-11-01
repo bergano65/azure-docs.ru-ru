@@ -4,10 +4,7 @@ description: В этом кратком руководстве показано,
 services: traffic-manager
 documentationcenter: ''
 author: kumudd
-manager: jeconnoc
-editor: ''
 Customer intent: As an IT admin, I want to direct user traffic to ensure high availability of web applications.
-ms.assetid: ''
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: quickstart
@@ -15,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/18/2018
 ms.author: kumud
-ms.openlocfilehash: c969dbc347f0463f6f675a11f69776948d45a9e2
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: bf9e296d7edf5ea8f668299830c64aaf3c5f74e9
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "42023070"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50140491"
 ---
 # <a name="quickstart-create-a-traffic-manager-profile-for-a-highly-available-web-application"></a>Краткое руководство. Создание профиля диспетчера трафика для обеспечения высокодоступного веб-приложения
 

@@ -1,3 +1,16 @@
+---
+author: conceptdev
+ms.service: app-service-mobile
+ms.topic: include
+ms.date: 08/23/2018
+ms.author: crdun
+ms.openlocfilehash: 30b5ae499d29b8b78b5852074362841ac1ceb49f
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50133593"
+---
 1. Войдите на [портал Azure].
 2. Выберите **+Создать** > **Интернет и мобильные устройства** > **Мобильное приложение**, а затем введите имя серверной части мобильного приложения.
 3. В поле **Группа ресурсов** выберите существующую группу ресурсов или создайте новую (с тем же именем, что и у приложения). 

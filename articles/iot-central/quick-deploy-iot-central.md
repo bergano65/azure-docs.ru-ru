@@ -3,18 +3,18 @@ title: Создание приложения Azure IoT Central | Докумен�
 description: Создание нового приложения Azure IoT Central для управления охлаждаемыми торговыми автоматами. Просмотр данных телеметрии, созданных в имитированном устройстве.
 author: tbhagwat3
 ms.author: tanmayb
-ms.date: 04/15/2018
+ms.date: 10/12/2018
 ms.topic: quickstart
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: 0199efbc1456206c67efb846b4381cae333e3749
-ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
+ms.openlocfilehash: c6ed1f0feaa9b8b20d291be7929228707281cf9b
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49309048"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50158097"
 ---
 # <a name="create-an-azure-iot-central-application"></a>Создание приложения Azure IoT Central
 

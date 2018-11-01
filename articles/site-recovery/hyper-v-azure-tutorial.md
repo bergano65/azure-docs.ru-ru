@@ -1,20 +1,19 @@
 ---
 title: Настройка аварийного восстановления для локальных виртуальных машин Hyper-V (без VMM) в Azure с помощью Azure Site Recovery | Документация Майкрософт
 description: Узнайте, как настроить аварийное восстановление локальных виртуальных машин Hyper-V (без VMM) в Azure с помощью службы Azure Site Recovery.
-services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 10/10/2018
+ms.date: 10/28/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 978b79fbd35178191ff5c95b8897045d00c7a272
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: af3a11db44c3799a83e1767f919cb02f14855949
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49078042"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50211916"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Настройка аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 

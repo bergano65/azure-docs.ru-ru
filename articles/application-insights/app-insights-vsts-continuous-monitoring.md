@@ -9,12 +9,12 @@ ms.date: 11/13/2017
 ms.service: application-insights
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: ecda8621640223f1c27f32834f2e4a098da4aba6
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 75401614b6892402083af5192b691f00d82c8d05
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44301636"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50413627"
 ---
 # <a name="add-continuous-monitoring-to-your-release-pipeline"></a>Добавление постоянного мониторинга к конвейеру выпуска
 
@@ -28,13 +28,13 @@ ms.locfileid: "44301636"
 
 2. Наведите указатель мыши на элемент **Сборка и выпуск**, затем выберите **Выпуски** и щелкните **+** > **Создать определение выпуска**. Найдите здесь элементы **Мониторинг** > **Azure App Service Deployment with Continuous Monitoring** (Развертывания службы приложений Azure с постоянным мониторингом).
 
-   ![Новый конвейер выпуска Azure DevOps Services](.\media\app-insights-continuous-monitoring\001.png)
+   ![Новый конвейер выпуска Azure DevOps Services](media/app-insights-vsts-continuous-monitoring/001.png)
 
 3. Нажмите кнопку **Применить**.
 
 4. Щелкните синий текст рядом с красным восклицательным знаком, чтобы открыть **Просмотр задач окружения**.
 
-   ![Просмотр задач окружения](.\media\app-insights-continuous-monitoring\002.png)
+   ![Просмотр задач окружения](media/app-insights-vsts-continuous-monitoring/002.png)
 
    Откроется окно настроек, в котором нужно заполнить все поля в соответствии с таблицей ниже.
 
@@ -60,7 +60,7 @@ ms.locfileid: "44301636"
 
 3. Измените **пороговое значение** доступности в соответствии с нужным уровнем обслуживания.
 
-   ![Изменение оповещений](.\media\app-insights-continuous-monitoring\003.png)
+   ![Изменение оповещений](media/app-insights-vsts-continuous-monitoring/003.png)
 
 4. Выберите **ОК** > **Сохранить**, введите текстовое описание и нажмите кнопку **ОК**.
 
@@ -68,13 +68,13 @@ ms.locfileid: "44301636"
 
 1. Щелкните **Конвейер**, выберите символ **Условия перед развертыванием** или **Условия после развертывания** в зависимости от того, на каком этапе вы хотите организовать непрерывный мониторинг.
 
-   ![Условия перед развертыванием](.\media\app-insights-continuous-monitoring\004.png)
+   ![Условия перед развертыванием](media/app-insights-vsts-continuous-monitoring/004.png)
 
 2. В области **Шлюзы** выберите **Включено** > **Approval gates** (Шлюзы утверждения) и щелкните **Добавить**.
 
 3. Выберите **Azure Monitor** (этот вариант позволяет использовать предупреждения от Azure Monitor и от Application Insights).
 
-    ![Azure Monitor](.\media\app-insights-continuous-monitoring\005.png)
+    ![Azure Monitor](media/app-insights-vsts-continuous-monitoring/005.png)
 
 4. Введите значение **Gates timeout** (Время ожидания для шлюза).
 
@@ -86,7 +86,7 @@ ms.locfileid: "44301636"
 
 Чтобы пронаблюдать этот процесс, выберите **Выпуски**, щелкните имя выпуска правой кнопкой мыши **и выберите действие** > **Журналы.**
 
-![Журналы](.\media\app-insights-continuous-monitoring\006.png)
+![Журналы](media/app-insights-vsts-continuous-monitoring/006.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

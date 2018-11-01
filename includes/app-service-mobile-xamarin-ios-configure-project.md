@@ -1,3 +1,16 @@
+---
+author: conceptdev
+ms.service: app-service-mobile
+ms.topic: include
+ms.date: 08/23/2018
+ms.author: crdun
+ms.openlocfilehash: a69df0cc9ea14a2c9fa172c77663afb1d6861f9b
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50133103"
+---
 #### <a name="configure-the-ios-project-in-xamarin-studio"></a>Настройка проекта iOS в Xamarin Studio
 1. В Xamarin.Studio откройте **Info.plist** и обновите поле **Bundle Identifier** (Идентификатор пакета), указав идентификатор пакета, созданный ранее с помощью идентификатора нового приложения.
 

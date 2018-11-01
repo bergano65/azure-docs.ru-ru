@@ -2,18 +2,18 @@
 title: Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью Node.js — служба хранилища Azure
 description: Создайте учетную запись хранения и контейнер в хранилище объектов (больших двоичных объектов). Затем используете клиентскую библиотеку службы хранилища для Node.js, чтобы отправить большой двоичный объект в службу хранилища Azure, скачать его и составить список больших двоичных объектов в контейнере.
 services: storage
-author: craigshoemaker
+author: tamram
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
 ms.date: 09/20/2018
-ms.author: cshoe
-ms.openlocfilehash: 1c62dbd6856ec7bf2663f0b70a47357b52528899
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.author: tamram
+ms.openlocfilehash: 267218b4b958251e6748fbae17ca1ac267cf3287
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47040818"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50140593"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-nodejs"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью Node.js
 
@@ -48,7 +48,7 @@ npm install
 ```
 
 ## <a name="run-the-sample"></a>Запуск примера
-После установки требуемых компонентов вы можете запустить пример, выполнив следующую команду:
+После установки зависимостей вы можете запустить пример, выполнив следующую команду.
 
 ```bash
 npm start
@@ -146,7 +146,7 @@ const createContainer = async (containerName) => {
 
 Применение команды **createContainerIfNotExists** позволяет приложению выполнить команду *createContainer* несколько раз, не возвращая ошибки, если контейнер уже существует. В рабочей среде команда **createContainerIfNotExists** часто вызывается только один раз, так как в приложении используется один и тот же контейнер. В таких случаях контейнер можно создать заранее на портале или с помощью Azure CLI.
 
-### <a name="upload-text"></a>Отправка текста
+### <a name="upload-text"></a>Передача текста
 
 Функция *uploadString* вызывает [createBlockBlobFromText](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest#createblockblobfromtext), чтобы записать (или перезаписать) произвольную строку в контейнер больших двоичных объектов.
 
@@ -336,7 +336,7 @@ console.log(`Container "${containerName}" is deleted`);
 ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Все данные, записанные на учетную запись хранения, автоматически удаляются в конце примера кода. 
+Все данные, записанные в учетную запись хранения, автоматически удаляются в конце примера кода. 
 
 ## <a name="resources-for-developing-nodejs-applications-with-blobs"></a>Ресурсы для разработки приложений Node.js с большими двоичными объектами
 

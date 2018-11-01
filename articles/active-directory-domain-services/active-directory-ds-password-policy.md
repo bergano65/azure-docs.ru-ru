@@ -3,7 +3,7 @@ title: 'Доменные службы Azure Active Directory: политика �
 description: Общие сведения о политиках паролей в управляемых доменах
 services: active-directory-ds
 documentationcenter: ''
-author: mahesh-unnikrishnan
+author: eringreenlee
 manager: mtillman
 editor: curtand
 ms.assetid: 1a14637e-b3d0-4fd9-ba7a-576b8df62ff2
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/17/2018
-ms.author: maheshu
-ms.openlocfilehash: 66db13ea2b40d32b03d57e7d039863315312d734
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.author: ergreenl
+ms.openlocfilehash: b5574b529dc3d4646375638d6759d85a41c66946
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48043113"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50155619"
 ---
 # <a name="password-and-account-lockout-policies-on-managed-domains"></a>Политики паролей и блокировки учетных записей в управляемых доменах
 В этой статье описываются политики паролей по умолчанию в управляемом домене. В ней также описывается, как вы можете настроить эти политики.

@@ -1,4 +1,16 @@
-
+---
+author: alkohli
+ms.service: storsimple
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: alkohli
+ms.openlocfilehash: b397d77b525bdb63f2531634e397ec210d4a6202
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50166078"
+---
 #### <a name="to-configure-remote-management-on-cloud-appliance"></a>Настройка удаленного управления на облачном устройстве
 
 1. В службе диспетчера устройств StorSimple щелкните **Устройства**. Выберите облачное устройство в списке устройств, подключенных к службе.

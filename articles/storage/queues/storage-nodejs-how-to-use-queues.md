@@ -2,20 +2,20 @@
 title: Как использовать хранилище очередей из Node.js | Документация Майкрософт
 description: Вы узнаете, как использовать службы очередей Azure для создания и удаления очередей, вставки, получения и удаления сообщений. Примеры кода написаны на Node.js.
 services: storage
-author: craigshoemaker
+author: tamram
 ms.service: storage
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 12/08/2016
-ms.author: cshoe
+ms.author: tamram
 ms.component: queues
-ms.openlocfilehash: 3fef5a848bff0eab5a9cc6c1c9a2f70055358e15
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 38da370e8e3cd81e209d0fd592d6b2afa8c82e44
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39528230"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50138520"
 ---
 # <a name="how-to-use-queue-storage-from-nodejs"></a>Использование хранилища очередей из Node.js
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]

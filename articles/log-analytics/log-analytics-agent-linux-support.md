@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 10/15/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 01b3fe57cd52149c5c1191345b42bd8544202652
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 3f23464776036a8c91b180d46341782fddb9d5e8
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49404585"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50140965"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
 
@@ -161,17 +161,9 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 * При подключении указан недопустимый прокси-сервер.
 * Конечные точки Log Analytics и службы автоматизации Azure не включены в список разрешенных в вашем центре обработки данных. 
 
-<<<<<<< HEAD
-### <a name="resolutions"></a>Способы устранения
-1. Повторно подключитесь к службе Log Analytics через агент Log Analytics для Linux, используя следующую команду с включенным параметром `-v`. Этот параметр включает подробные выходные данные агента при подключении к Log Analytics через прокси-сервер. 
-`/opt/microsoft/omsagent/bin/omsadmin.sh -w <Log Analytics Workspace ID> -s <Log Analytics Workspace Key> -p <Proxy Conf> -v`
-
-  [!INCLUDE [log-analytics-agent-note](../../includes/log-analytics-agent-note.md)]
-=======
 ### <a name="resolution"></a>Способы устранения:
 1. Повторно подключитесь к службе Log Analytics через агент Log Analytics для Linux, используя приведенную далее команду с включенным параметром `-v`. Этот параметр включает подробные выходные данные агента при подключении к службе Log Analytics через прокси-сервер. 
 `/opt/microsoft/omsagent/bin/omsadmin.sh -w <Workspace ID> -s <Workspace Key> -p <Proxy Conf> -v`
->>>>>>> fa48342aa69f6626ec310992464ba935729675b3
 
 2. Просмотрите раздел [Обновление параметров прокси-сервера](log-analytics-agent-manage.md#update-proxy-settings), чтобы убедиться в правильности настройки агента для обмена данными через прокси-сервер.    
 * Убедитесь, что в список разрешенных включены следующие конечные точки службы Log Analytics:
@@ -193,11 +185,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 
 1. Проверьте время на своем сервере Linux с помощью команды. Если время отличается от текущего на 15 минут, подключение завершится сбоем. Чтобы исправить это, обновите дату и (или) часовой пояс на сервере Linux. 
 2. Убедитесь, что установлена последняя версия агента Log Analytics для Linux.  В последней версии вы получаете уведомления, если разница во времени приводит к сбою подключения.
-<<<<<<< HEAD
 3. Выполните повторное подключение, используя правильный идентификатор и ключ рабочей области и следуя инструкциям по установке, приведенным ранее в этой статье.
-=======
-3. Выполните повторное подключение, используя правильный идентификатор и ключ рабочей области и следуя инструкциям по установке, приведенным ранее в этой статье.
->>>>>>> fa48342aa69f6626ec310992464ba935729675b3
 
 ## <a name="issue-you-see-a-500-and-404-error-in-the-log-file-right-after-onboarding"></a>Проблема. Сразу после подключения в файле журнала появляется ошибка 500 и 404.
 Это известная проблема, которая возникает при первой передаче данных Linux в рабочую область Log Analytics. Это не влияет на отправляемые данные и не мешает работе службы.
@@ -206,17 +194,6 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 
 ### <a name="probable-causes"></a>Возможные причины
 
-<<<<<<< HEAD
-- Подключение к Log Analytics завершилось ошибкой
-- Подключение к Log Analytics заблокировано
-- Выполняется резервное копирование данных агента Log Analytics для Linux
-
-### <a name="resolutions"></a>Способы устранения
-1. Проверьте состояние подключения для службы Log Analytics, убедившись в наличии следующего файла: `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsadmin.conf`.
-2. Повторно подключитесь, используя инструкции командной строки `omsadmin.sh`
-3. Если используется прокси-сервер, см. описанные выше шаги по разрешению прокси-сервера.
-4. Иногда сбой подключения между агентом Log Analytics для Linux и службой связан с тем, что в буфере достигнут максимальный размер запросов к данным агента (50 МБ). Перезапустите агент Log Analytics для Linux с помощью следующей команды: `/opt/microsoft/omsagent/bin/service_control restart [<workspace id>]`. 
-=======
 - Сбой при подключении к службе Log Analytics.
 - Подключение к службе Log Analytics заблокировано.
 - Выполняется резервное копирование данных агента Log Analytics для Linux
@@ -226,10 +203,9 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 2. Повторно подключитесь, используя инструкции командной строки `omsadmin.sh`
 3. Если используется прокси-сервер, см. описанные выше шаги по разрешению прокси-сервера.
 4. Иногда сбой подключения между агентом Log Analytics для Linux и службой связан с тем, что в буфере достигнут максимальный размер запросов к данным агента (50 МБ). Перезапустите агент с помощью следующей команды: `/opt/microsoft/omsagent/bin/service_control restart [<workspace id>]`. 
->>>>>>> fa48342aa69f6626ec310992464ba935729675b3
 
     >[!NOTE]
-    >This issue is fixed in agent version 1.1.0-28 and later.
+    >Эта проблема исправлена в агенте версии 1.1.0-28 и выше.
 
 
 ## <a name="issue-you-are-not-seeing-forwarded-syslog-messages"></a>Проблема: не отображаются перенаправленные сообщения системного журнала 

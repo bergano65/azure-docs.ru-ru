@@ -15,16 +15,16 @@ ms.topic: conceptual
 ms.date: 02/09/2017
 ms.author: richrund
 ms.component: ''
-ms.openlocfilehash: 1c72421be6cfb266293c98d9ad06bd6adb35019b
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: be0a12bbb84db1e4016bd7126a38e750e6c0c3ad
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48043627"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50412828"
 ---
 # <a name="azure-key-vault-analytics-solution-in-log-analytics"></a>Решение Azure Key Vault Analytics в Log Analytics
 
-![Символ Key Vault](./media/log-analytics-azure-keyvault/key-vault-analytics-symbol.png)
+![Символ Key Vault](media/log-analytics-azure-key-vault/key-vault-analytics-symbol.png)
 
 Решение хранилища ключей Azure в Log Analytics позволяет просматривать журналы AuditEvent хранилища ключей Azure.
 
@@ -46,10 +46,10 @@ ms.locfileid: "48043627"
 1. На портале Azure перейдите к ресурсу Key Vault, который необходимо отслеживать.
 2. Выберите *Журналы диагностики*, чтобы открыть следующую страницу:
 
-   ![изображение плитки "Хранилище ключей Azure"](./media/log-analytics-azure-keyvault/log-analytics-keyvault-enable-diagnostics01.png)
+   ![изображение плитки "Хранилище ключей Azure"](media/log-analytics-azure-key-vault/log-analytics-keyvault-enable-diagnostics01.png)
 3. Щелкните *Включить диагностику*, чтобы открыть следующую страницу:
 
-   ![изображение плитки "Хранилище ключей Azure"](./media/log-analytics-azure-keyvault/log-analytics-keyvault-enable-diagnostics02.png)
+   ![изображение плитки "Хранилище ключей Azure"](media/log-analytics-azure-key-vault/log-analytics-keyvault-enable-diagnostics02.png)
 4. Чтобы включить диагностику, нажмите кнопку *Вкл.* в разделе *Состояние*.
 5. Установите флажок *Send to Log Analytics* (Отправить в Log Analytics).
 6. Выберите существующую рабочую область Log Analytics или создайте новую.
@@ -81,7 +81,7 @@ Set-AzureRmDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspace
 ## <a name="use-azure-key-vault"></a>Использование хранилища ключей Azure
 [Установив решение](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.KeyVaultAnalyticsOMS?tab=Overview) просмотрите данные Key Vault, щелкнув плитку **Azure Key Vault** на странице **Обзор** в службе Log Analytics.
 
-![изображение плитки "Хранилище ключей Azure"](./media/log-analytics-azure-keyvault/log-analytics-keyvault-tile.png)
+![изображение плитки "Хранилище ключей Azure"](media/log-analytics-azure-key-vault/log-analytics-keyvault-tile.png)
 
 Выбрав плитку **Обзор**, можно просмотреть сводные данные журналов и подробные сведения по следующим категориям:
 
@@ -90,9 +90,9 @@ Set-AzureRmDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspace
 * среднее время задержки для каждой операции;
 * качество обслуживания для операций с количеством операций, выполнявшихся более 1000 мс, и списком этих операций.
 
-![изображение панели мониторинга хранилища ключей Azure](./media/log-analytics-azure-keyvault/log-analytics-keyvault01.png)
+![изображение панели мониторинга хранилища ключей Azure](media/log-analytics-azure-key-vault/log-analytics-keyvault01.png)
 
-![изображение панели мониторинга хранилища ключей Azure](./media/log-analytics-azure-keyvault/log-analytics-keyvault02.png)
+![изображение панели мониторинга хранилища ключей Azure](media/log-analytics-azure-key-vault/log-analytics-keyvault02.png)
 
 ### <a name="to-view-details-for-any-operation"></a>Просмотр сведений об операциях
 1. На странице **Обзор** щелкните плитку **Хранилище ключей Azure**.

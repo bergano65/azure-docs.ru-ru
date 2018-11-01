@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 10/22/2018
 ms.author: juliako
-ms.openlocfilehash: 56e9a0b4eec347d2367c38ab00c6c9d9dca60752
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: cb34855fc9451679c885eebb0ef5a2fab0be8c57
+ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49986904"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50086851"
 ---
 # <a name="streaming-locators"></a>Указатели потоковой передачи
 
@@ -26,20 +26,20 @@ ms.locfileid: "49986904"
 
 В следующей таблице представлены свойства StreamingLocator и их определения.
 
-|ИМЯ|type|ОПИСАНИЕ|
-|---|---|---|
-|id |строка|Полный идентификатор ресурса.|
-|name   |строка|Имя ресурса.|
-|properties.alternativeMediaId  |строка|Идентификатор мультимедиа этого указателя потоковой передачи.|
-|properties.assetName   |строка|Имя ресурса|
-|properties.contentKeys |StreamingLocatorContentKey[]|Указатель потоковой передачи использует ContentKeys.|
-|properties.created |строка|Время создания указателя потоковой передачи.|
-|properties.defaultContentKeyPolicyName |строка|Указатель потоковой передачи использует имя по умолчанию ContentKeyPolicy.|
-|properties.endTime |строка|Время окончания работы указателя потоковой передачи.|
-|properties.startTime   |строка|Время начала работы указателя потоковой передачи.|
-|properties.streamingLocatorId  |строка|StreamingLocatorId указателя потоковой передачи.|
-|properties.streamingPolicyName |строка|Указатель потоковой передачи использует имя политики потоковой передачи. Можно указать имя созданной вами политики потоковой передачи или использовать одну из предопределенных политик. В настоящее время доступны следующие предопределенные политики потоковой передачи: Predefined_DownloadOnly, Predefined_ClearStreamingOnly, Predefined_DownloadAndClearStreaming, Predefined_ClearKey, Predefined_MultiDrmCencStreaming и Predefined_MultiDrmStreaming.|
-|Тип   |строка|Тип ресурса.|
+|ИМЯ|ОПИСАНИЕ|
+|---|---|
+|id |Полный идентификатор ресурса.|
+|name   |Имя ресурса.|
+|properties.alternativeMediaId|Идентификатор мультимедиа этого указателя потоковой передачи.|
+|properties.assetName   |Имя ресурса|
+|properties.contentKeys |Указатель потоковой передачи использует ContentKeys.|
+|properties.created |Время создания указателя потоковой передачи.|
+|properties.defaultContentKeyPolicyName|Указатель потоковой передачи использует имя по умолчанию ContentKeyPolicy.|
+|properties.endTime |Время окончания работы указателя потоковой передачи.|
+|properties.startTime|Время начала работы указателя потоковой передачи.|
+|properties.streamingLocatorId|StreamingLocatorId указателя потоковой передачи.|
+|properties.streamingPolicyName |Указатель потоковой передачи использует имя политики потоковой передачи. Можно указать имя созданной вами политики потоковой передачи или использовать одну из предопределенных политик. В настоящее время доступны следующие предопределенные политики потоковой передачи: Predefined_DownloadOnly, Predefined_ClearStreamingOnly, Predefined_DownloadAndClearStreaming, Predefined_ClearKey, Predefined_MultiDrmCencStreaming и Predefined_MultiDrmStreaming.|
+|Тип|Тип ресурса.|
 
 Полное определение см. на странице [указателей потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators).
 

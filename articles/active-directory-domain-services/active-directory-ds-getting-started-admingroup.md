@@ -3,7 +3,7 @@ title: 'Доменные службы Azure Active Directory: начало ра�
 description: Включение доменных служб Azure Active Directory с помощью портала Azure.
 services: active-directory-ds
 documentationcenter: ''
-author: mahesh-unnikrishnan
+author: eringreenlee
 manager: mtillman
 editor: curtand
 ms.assetid: ace1ed4a-bf7f-43c1-a64a-6b51a2202473
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/23/2018
-ms.author: maheshu
-ms.openlocfilehash: 2290273c1b998a2d75046fcbcf613762ddd588ee
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.author: ergreenl
+ms.openlocfilehash: 0dc4019d2b3f33bfc92d73aeadadc0c64ecaab3b
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39503212"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50158522"
 ---
 # <a name="enable-azure-active-directory-domain-services-using-the-azure-portal"></a>Включение доменных служб Azure Active Directory с помощью портала Azure.
 

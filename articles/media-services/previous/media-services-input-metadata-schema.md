@@ -2,7 +2,7 @@
 title: Схема входных метаданных служб мультимедиа Azure | Документация Майкрософт
 description: Эта статья содержит обзор схемы входных метаданных служб мультимедиа Azure.
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 services: media-services
 documentationcenter: ''
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/19/2017
+ms.date: 10/30/2018
 ms.author: juliako
-ms.openlocfilehash: 9edfdee82a289d3b966510281305dc45a451c35f
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 1f37dcd14c1b3e85c3fae3bbf7aa67c16b8a898d
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33783823"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50249022"
 ---
 # <a name="input-metadata"></a>Входные метаданные
 Задание кодирования связано с входным ресурсом-контейнером (или ресурсами-контейнерами), в котором нужно выполнить эти задачи.  После выполнения задачи создается выходной ресурс-контейнер.  Выходной ресурс-контейнер содержит видео- и аудиофайлы, эскизы, манифест и т. д. Выходной актив также содержит файл с метаданными входного актива. Имя XML-файла метаданных имеет следующий формат: &lt;ИД_ресурса-контейнера&gt;_metadata.xml (например, 41114ad3-eb5e-4c57-8d92-5354e2b7d4a4_metadata.xml), где &lt;ИД_ресурса-контейнера&gt; — это значение AssetId для входного ресурса-контейнера.  

@@ -3,18 +3,18 @@ title: Добавление реального устройства в прил�
 description: Как оператор вы можете добавить реальное устройство в приложение Azure IoT Central.
 author: sandeeppujar
 ms.author: sandeepu
-ms.date: 04/16/2018
+ms.date: 10/12/2018
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: 984457968de5ef5e43b15201dac213cd96b4b0e2
-ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
+ms.openlocfilehash: c3b8f4f8188a6a28cca8b77f169a00657b11dfc5
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49309762"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50154817"
 ---
 # <a name="tutorial-add-a-real-device-to-your-azure-iot-central-application"></a>Руководство. Добавление реального устройства в приложение Azure IoT Central
 

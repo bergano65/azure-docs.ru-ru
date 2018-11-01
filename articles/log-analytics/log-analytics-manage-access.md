@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/30/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 633bf2cf68449849c019ba940644d78d1478efc3
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 75faceb641382df29a93c44803af48dcfed142d4
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48042332"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50421175"
 ---
 # <a name="manage-workspaces"></a>Управление рабочими областями
 
@@ -64,7 +64,7 @@ ms.locfileid: "48042332"
 
 2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.  
 
-    ![Портал Azure](./media/log-analytics-quick-collect-azurevm/azure-portal-01.png)  
+    ![Портал Azure](media/log-analytics-manage-access/azure-portal-01.png)  
 
 3. В области подписок Log Analytics выберите рабочую область.
 

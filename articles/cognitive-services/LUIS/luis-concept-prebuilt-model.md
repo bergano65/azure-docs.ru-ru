@@ -1,7 +1,7 @@
 ---
 title: Предварительно созданные модели (сущность, намерение, предметная область) — LUIS
 titleSuffix: Azure Cognitive Services
-description: ''
+description: Предварительно созданные модели предусмотрены для предметных областей, намерений, фраз и сущностей. Вы можете запустить приложение с предварительно созданной предметной областью или добавить соответствующую предметную область в приложение позднее.
 services: cognitive-services
 author: diberry
 manager: cgronlun
@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: diberry
-ms.openlocfilehash: 2a978665eff2f8aa3eab3c7d70b39bdb61ecfda4
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: 6237dc66e6e085a2501642abd679844c38e98ed1
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49651833"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210539"
 ---
 # <a name="prebuilt-domain-intent-and-entity-models"></a>Предварительно созданные модели предметной области, намерения и сущности
 

@@ -1,4 +1,16 @@
-
+---
+author: conceptdev
+ms.service: app-service-mobile
+ms.topic: include
+ms.date: 08/23/2018
+ms.author: crdun
+ms.openlocfilehash: 3217383b105c022aef42d8000f3a41cefea542fe
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50133443"
+---
 1. Войдите на [портал Azure].
 2. Щелкните **Службы приложений** и выберите созданную серверную часть приложения.
 3. В параметрах мобильного приложения щелкните **Быстрый старт** > **Cordova**.

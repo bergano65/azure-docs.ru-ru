@@ -1,3 +1,16 @@
+---
+author: ggailey777
+ms.service: azure-functions
+ms.topic: include
+ms.date: 09/04/2018
+ms.author: glenga
+ms.openlocfilehash: cf8c6f07eb38487dd29624b15be3637536be92fc
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50133240"
+---
 ## <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
 В службе "Функции" используется учетная запись хранения Azure общего назначения для сохранения состояния и других сведений о функциях. Создайте учетную запись хранения общего назначения в созданной вами группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account#create).

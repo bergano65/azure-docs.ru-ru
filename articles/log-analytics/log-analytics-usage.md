@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 08/11/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: d3714f7226de2a457f37e6ea4afa2b066ee460d1
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: c14013121517267445e89f43e228b03ba184f013
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49409141"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50415268"
 ---
 # <a name="analyze-data-usage-in-log-analytics"></a>Анализ использования данных в службе Log Analytics
 
@@ -49,12 +49,12 @@ ms.locfileid: "49409141"
     - время, затраченное на сбор и индексирование данных;  
 - список запросов.
 
-![Панель мониторинга использования и затрат](./media/log-analytics-manage-cost-storage/usage-estimated-cost-dashboard-01.png)<br>
+![Панель мониторинга использования и затрат](media/log-analytics-usage/usage-estimated-cost-dashboard-01.png)<br>
 )
 
 ### <a name="to-work-with-usage-data"></a>Работа с данными об использовании
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.<br><br> ![портал Azure](./media/log-analytics-quick-collect-azurevm/azure-portal-01.png)<br><br>  
+2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.<br><br> ![портал Azure](media/log-analytics-usage/azure-portal-01.png)<br><br>  
 3. В списке рабочих областей Log Analytics выберите рабочую область.
 4. В списке на панели слева выберите пункт **Использование и ожидаемые затраты**.
 5. На панели мониторинга **Использование и ожидаемые затраты** можно изменить диапазон времени. Для этого выберите **Time: Last 24 hours** (Время: последние 24 часа) и измените интервал времени.<br><br> ![период времени](./media/log-analytics-usage/usage-time-filter-01.png)<br><br>

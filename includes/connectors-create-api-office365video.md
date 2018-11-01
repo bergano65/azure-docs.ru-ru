@@ -1,4 +1,17 @@
-### <a name="prerequisites"></a>предварительным требованиям
+---
+author: ecfan
+ms.service: logic-apps
+ms.topic: include
+ms.date: 11/03/2016
+ms.author: estfan
+ms.openlocfilehash: 20729d1e73dd0ff9010201a1c6597b616b364a09
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50134202"
+---
+### <a name="prerequisites"></a>Предварительные требования
 * Учетная запись [Office 365 Видео](https://support.office.com/article/Meet-Office-365-Video-ca1cc1a9-a615-46e1-b6a3-40dbd99939a6)  
 
 Перед использованием учетной записи Office 365 Видео в приложении логики необходимо авторизовать приложение логики для подключения к учетной записи Office 365 Видео. Это легко сделать в приложении логики на портале Azure.  

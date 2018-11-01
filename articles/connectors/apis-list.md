@@ -9,12 +9,12 @@ ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.topic: article
 ms.date: 08/23/2018
-ms.openlocfilehash: 6b31882ec3916e60ac7dc7b8117328176abef1b4
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: 3230692208d27ebac073e257266c885b5e03095c
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42818540"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50233639"
 ---
 # <a name="connectors-for-azure-logic-apps"></a>Соединители для Azure Logic Apps
 
@@ -158,7 +158,7 @@ ms.locfileid: "42818540"
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 
-* Проголосовать за идеи улучшения Azure Logic Apps и соединителей или отправить собственные можно на [сайте обратной связи Logic Apps](http://aka.ms/logicapps-wish).
+* Проголосовать за идеи улучшения Azure Logic Apps и соединителей или отправить собственные можно на [сайте обратной связи Logic Apps](https://aka.ms/logicapps-wish).
 
 * Отсутствуют ли в этом документе какие-нибудь важные сведения? Если это так, вы можете помочь, добавив их в имеющиеся статьи или написав собственную. Эта документация включает открытый код и размещается на сайте GitHub. Приступите к работе с документацией по Azure в [репозитории GitHub](https://github.com/Microsoft/azure-docs). 
 

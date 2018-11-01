@@ -1,4 +1,16 @@
-
+---
+author: cynthn
+ms.service: virtual-machines
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: cynthn
+ms.openlocfilehash: ae29451e3f7ec263f296e69656a5c66045334687
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50226881"
+---
 1. Войдите в подписку Azure, выполнив действия, перечисленные в статье [Connect to an Azure subscription from the Azure Command-Line Interface (Azure CLI)](/cli/azure/authenticate-azure-cli) (Подключение к подписке Azure с помощью интерфейса командной строки Azure (Azure CLI)).
 
 2. Убедитесь, что вы находитесь в режиме классического развертывания, следующим образом:

@@ -3,7 +3,7 @@ title: Анализ пользователей, сеансов и событий
 description: Демографический анализ пользователей веб-приложения.
 services: application-insights
 documentationcenter: ''
-author: mrbullwinkle
+author: NumberByColors
 manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
@@ -11,14 +11,15 @@ ms.tgt_pltfrm: ibiza
 ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 01/24/2018
-ms.reviewer: daviste
-ms.author: mbullwin
-ms.openlocfilehash: 2bc10a292855832b7ddb9b8e3a59fbe0f17d8dc6
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.reviewer: mbullwin
+ms.pm_owner: daviste;NumberByColors
+ms.author: daviste
+ms.openlocfilehash: 6fd8adab93f5741afe6d3eab0c50ca50a327fbff
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47093814"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50140338"
 ---
 # <a name="users-sessions-and-events-analysis-in-application-insights"></a>Анализ пользователей, сеансов и событий в Application Insights
 
@@ -48,10 +49,10 @@ ms.locfileid: "47093814"
 * "Которые использовали": выберите пользовательские события и просмотры страниц.
 * "Во время": выберите диапазон времени.
 * "По": выберите способ сегментирования данных — за период времени или по другому свойству, например браузеру или городу.
-* "Разделение по": выберите свойство для разделения или сегментирования данных. 
-* "Добавить фильтры": уточните запрос, ограничив его определенными пользователями, сеансами или событиями на основе их свойств, таких как браузер или город. 
- 
-## <a name="saving-and-sharing-reports"></a>Сохранение и предоставление отчетов 
+* "Разделение по": выберите свойство для разделения или сегментирования данных. 
+* "Добавить фильтры": уточните запрос, ограничив его определенными пользователями, сеансами или событиями на основе их свойств, таких как браузер или город. 
+ 
+## <a name="saving-and-sharing-reports"></a>Сохранение и предоставление отчетов 
 Отчеты "Пользователи" можно сохранить как частные, предназначенные только для вас, в разделе "Мои отчеты", или предоставить их всем остальным пользователям, обладающим доступом к ресурсу Application Insights, сохранив в разделе "Shared Reports" (Общие отчеты).
 
 Чтобы предоставить общий доступ к отчету о пользователях, сеансах или событиях, нажмите кнопку **Общий доступ** на панели инструментов, а затем скопируйте ссылку.

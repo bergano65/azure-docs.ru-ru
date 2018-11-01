@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/11/2018
 ms.author: fboylu
-ms.openlocfilehash: 2a5d8540dba491dec8b2da227b0e84c10ff09c77
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: 8f42ee996dae476de3744239d4cc5f053722d52b
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49395012"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50093217"
 ---
 # <a name="azure-ai-guide-for-predictive-maintenance-solutions"></a>Руководство по искусственному интеллекту Azure для решений прогнозного обслуживания
 
@@ -414,7 +414,6 @@ ms.locfileid: "49395012"
 
 | # | Название | ОПИСАНИЕ |
 |--:|:------|-------------|
-| 1 | [Пример прогнозного обслуживания Azure для машинного обучения](https://github.com/Azure/MachineLearningSamples-PredictiveMaintenance) |Пример PdM для прогнозирования сбоев в течение следующих N единиц времени. Этот пример написан как проект Azure ML Workbench и идеально подходит для начинающих в PdM. [Дополнительная документация](https://docs.microsoft.com/azure/machine-learning/desktop-workbench/scenario-predictive-maintenance), относящаяся к этому примеру.|
 | 2 | [Шаблон решения для прогнозного обслуживания Azure](https://github.com/Azure/AI-PredictiveMaintenance) | Шаблон решения с открытым исходным кодом, который демонстрирует моделирование машинного обучения и полную инфраструктуру Azure, поддерживающую сценарии прогнозного обслуживания в контексте удаленного мониторинга IoT. |
 | 3 | [Глубокое обучение по прогнозному обслуживанию](https://github.com/Azure/MachineLearningSamples-DeepLearningforPredictiveMaintenance) | Azure Notebook с демонстрационным решением по использованию сетей LSTM (класс рекуррентных нейронных сетей) для прогнозного обслуживания с [записью блога об этом образце](https://azure.microsoft.com/blog/deep-learning-for-predictive-maintenance).|
 | 4. | [Руководство по моделированию прогнозного обслуживания на R](https://gallery.azure.ai/Notebook/Predictive-Maintenance-Modelling-Guide-R-Notebook-1) | Руководство по моделированию прогнозного обслуживания с помощью сценариев на R.|

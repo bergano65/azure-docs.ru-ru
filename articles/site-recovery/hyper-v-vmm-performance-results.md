@@ -1,21 +1,21 @@
 ---
 title: Результаты теста репликации виртуальных машин Hyper-V в облаках VMM на дополнительный сайт с помощью службы Azure Site Recovery | Документация Майкрософт
 description: В этой статье содержатся сведения о тестировании производительности для репликации виртуальных машин Hyper-V на дополнительный сайт с помощью Azure Site Recovery.
-services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 10/10/2018
+ms.date: 10/28/2018
 ms.author: raynew
-ms.openlocfilehash: c97247a14915ea3b8396f7179b4f8ca13bf92c8f
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: c5f0a972c3ab8b7016265d98fcb1b0890e03370f
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49079401"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210964"
 ---
 # <a name="test-results-for-hyper-v-replication-to-a-secondary-site"></a>Результаты теста репликации виртуальных машин Hyper-V в облаках VMM на дополнительный сайт
+
 
 В этой статье содержатся результаты тестирования производительности при репликации виртуальных машин Hyper-V в облаках System Center Virtual Machine Manager (VMM) в дополнительный центр обработки данных.
 

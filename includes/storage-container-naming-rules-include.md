@@ -1,3 +1,16 @@
+---
+author: tamram
+ms.service: storage
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: tamram
+ms.openlocfilehash: aeca3550b5fc58694779e7e54ce6ca547ba30e17
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50165126"
+---
 Каждый BLOB-объект в Azure должен располагаться в контейнере. Контейнер составляет часть имени BLOB-объекта. Например, `mycontainer` — имя контейнера в таких взятых в качестве образца URI BLOB-объектов:
 
     https://storagesample.blob.core.windows.net/mycontainer/blob1.txt

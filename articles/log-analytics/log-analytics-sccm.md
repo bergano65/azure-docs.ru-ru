@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/22/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 28ddfea0f4127f402b82388a10ee150b30a65736
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: dfa0a4b637153d6fa3cce5c9b402587950686341
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49954238"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50418081"
 ---
 # <a name="connect-configuration-manager-to-log-analytics"></a>Подключение Configuration Manager к Log Analytics
 Среду System Center Configuration Manager можно подключить к Azure Log Analytics для синхронизации данных коллекций устройств и указания этих коллекций в Log Analytics и службе автоматизации Azure.  
@@ -49,7 +49,7 @@ ms.locfileid: "49954238"
 > Необходимо указать для Configuration Manager разрешения на доступ к Log Analytics. В противном случае при использовании мастера конфигурации в Configuration Manager вы получите сообщение об ошибке.
 >
 
-1. На портале Azure щелкните **Все службы** в нижнем левом углу. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.<br><br> ![портал Azure](media/log-analytics-quick-collect-azurevm/azure-portal-01.png)<br><br>  
+1. На портале Azure щелкните **Все службы** в нижнем левом углу. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.<br><br> ![портал Azure](media/log-analytics-sccm/azure-portal-01.png)<br><br>  
 2. В списке рабочих областей Log Analytics выберите рабочую область, которую требуется изменить.
 3. В левой области выберите **Управление доступом (IAM)**.
 4. На странице "Управление доступом" щелкните **Добавить**. Откроется область **Добавление разрешений**.
@@ -101,7 +101,7 @@ ms.locfileid: "49954238"
 
 1. На портале Azure щелкните **Все службы** в нижнем левом углу. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.
 2. Из списка рабочих областей Log Analytics выберите ту, в которой зарегистрировано приложение Configuration Manager.  
-3. Выберите **Дополнительные параметры**.<br><br> ![Дополнительные параметры Log Analytics](media/log-analytics-quick-collect-azurevm/log-analytics-advanced-settings-01.png)<br><br>  
+3. Выберите **Дополнительные параметры**.<br><br> ![Дополнительные параметры Log Analytics](media/log-analytics-sccm/log-analytics-advanced-settings-01.png)<br><br>  
 4. Выберите **Группы компьютеров**, а затем щелкните **SCCM**.  
 5. Выберите **Импортировать членства в коллекциях Configuration Manager** и нажмите кнопку **Сохранить**.  
    ![Вкладка "SCCM" на вкладке "Группы компьютеров"](./media/log-analytics-sccm/sccm-computer-groups01.png)

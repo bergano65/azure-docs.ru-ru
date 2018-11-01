@@ -10,12 +10,12 @@ ms.reviewer: estfan, LADocs
 ms.assetid: 9fab1050-cfbc-4a8b-b1b3-5531bee92856
 ms.topic: article
 ms.date: 11/22/2016
-ms.openlocfilehash: 1307b6df22c51af9710d44abb23178d65e3507aa
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 0fe35b67a424caedcea2c71885d1757943ace9d1
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44377400"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50232602"
 ---
 # <a name="secure-access-in-azure-logic-apps"></a>Безопасный доступ к Azure Logic Apps
 
@@ -168,7 +168,7 @@ POST
 
 ### <a name="using-parameters-and-secure-parameters"></a>Использование параметров и параметров безопасности
 
-[Язык определения рабочего процесса](http://aka.ms/logicappsdocs) предоставляет операцию `@parameters()` для доступа к значению параметра ресурса во время выполнения. Вы можете также [указать параметры в шаблоне развертывания ресурсов](../azure-resource-manager/resource-group-authoring-templates.md#parameters). Если указать тип параметра `securestring`, он не будет возвращен с остальной частью определения ресурсов и не будет доступен при просмотре ресурса после развертывания.
+[Язык определения рабочего процесса](https://aka.ms/logicappsdocs) предоставляет операцию `@parameters()` для доступа к значению параметра ресурса во время выполнения. Вы можете также [указать параметры в шаблоне развертывания ресурсов](../azure-resource-manager/resource-group-authoring-templates.md#parameters). Если указать тип параметра `securestring`, он не будет возвращен с остальной частью определения ресурсов и не будет доступен при просмотре ресурса после развертывания.
 
 > [!NOTE]
 > Если параметр используется в заголовках или тексте запроса, он может отображаться при доступе к журналу выполнения или исходящему HTTP-запросу. Настройте политики доступа к содержимому соответствующим образом.

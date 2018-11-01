@@ -1,30 +1,26 @@
 ---
-title: Подключение к Azure Databricks из Excel, Python или R | Документация Майкрософт
+title: 'Подключение к Azure Databricks из Excel, Python или R '
 description: Сведения об использовании драйвера Simba для подключения Azure Databricks к Excel, Python или R.
 services: azure-databricks
-documentationcenter: ''
-author: nitinme
-manager: cgronlun
-editor: cgronlun
+author: mamccrea
+ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.workload: big-data
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/27/2018
-ms.author: nitinme
-ms.openlocfilehash: 333ff3ac3de053eae604ffeab600df7d35874f69
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.author: mamccrea
+ms.openlocfilehash: 6c8d0c9f5471395d1552b896b4d411dcad0a280f
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37085238"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50421141"
 ---
 # <a name="connect-to-azure-databricks-from-excel-python-or-r"></a>Подключение к Azure Databricks из Excel, Python или R
 
 В этой статье представлены сведения об использовании драйвера ODBC Databricks для подключения Azure Databricks к Microsoft Excel, средам разработки для языков R и Python. После установки подключения вы можете получить доступ к данным в Azure Databricks из клиентов Excel, Python или R, которые также можно использовать для дальнейшего анализа данных. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Необходима рабочая область Azure Databricks, кластер Spark и образцы данных, связанные с кластером. Если у вас еще нет этих компонентов, выполните инструкции, приведенные в кратком руководстве [Запуск задания Spark в Azure Databricks с помощью портала Azure](quickstart-create-databricks-workspace-portal.md).
 

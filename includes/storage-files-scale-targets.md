@@ -1,3 +1,16 @@
+---
+author: tamram
+ms.service: storage
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: tamram
+ms.openlocfilehash: 038c273806188d04223f1e455c158249a3e17718
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50165415"
+---
 | Ресурс | Общие файлы уровня "Стандарт" | Общие файлы уровня "Премиум" |
 |----------|---------------|------------------------------------------|
 | Минимальный размер общего файла | (минимальный размер отсутствует, оплата по мере использования) | 100 ГиБ |

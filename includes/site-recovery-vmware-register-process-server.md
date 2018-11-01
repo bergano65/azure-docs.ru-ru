@@ -1,3 +1,16 @@
+---
+author: rayne-wiselman
+ms.service: site-recovery
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: raynew
+ms.openlocfilehash: e18d0a6a01a86f844edc213fc95003cf4f4b46c9
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50164810"
+---
 * Подключитесь к виртуальной машине сервера обработки с помощью подключения к удаленному рабочему столу.
 * Можно запустить файл cspsconfigtool.exe, щелкнув доступный на рабочем столе ярлык. (Инструмент запустится автоматически, если вы входите на сервер обработки в первый раз).
   - полное доменное имя или IP-адрес сервера конфигурации;

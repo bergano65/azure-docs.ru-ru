@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: abshamsft
 ms.component: ''
-ms.openlocfilehash: 73978609d018eb43ab8031dc6e8261861e1ee3bf
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: d0368584dfa461427fe1bad4273c993f0ece894a
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49402547"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50413814"
 ---
 # <a name="expressroute-monitor"></a>Мониторинг ExpressRoute
 
@@ -30,7 +30,7 @@ ms.locfileid: "49402547"
 - отслеживание использования пропускной способности, потери и задержки в канале, пиринга и уровня виртуальной сети Azure для ExpressRoute;
 - обнаружение топологии сети каналов ExpressRoute.
 
-![Мониторинг ExpressRoute](media/log-analytics-network-performance-monitor/expressroute-intro.png)
+![Мониторинг ExpressRoute](media/log-analytics-network-performance-monitor-expressroute/expressroute-intro.png)
 
 ## <a name="configuration"></a>Параметр Configuration 
 Чтобы открыть конфигурацию Монитора производительности сети, откройте решение [Монитор производительности сети](log-analytics-network-performance-monitor.md) и нажмите кнопку **Настройка**.
@@ -55,7 +55,7 @@ ms.locfileid: "49402547"
     >[!NOTE]
     > Обнаруживаются только те частные пиринги, которые подключены к виртуальным сетям, связанным с подпиской, используемой для этой рабочей области Log Analytics. Если канал ExpressRoute подключен к виртуальным сетям вне подписки, связанной с этой рабочей областью, создайте рабочую область Log Analytics в такой подписке. Затем используйте Монитор производительности сети для мониторинга этих пирингов. 
 
-    ![Настройка монитора ExpressRoute](media/log-analytics-network-performance-monitor/expressroute-configure.png)
+    ![Настройка монитора ExpressRoute](media/log-analytics-network-performance-monitor-expressroute/expressroute-configure.png)
  
  После завершения обнаружения найденные частные пиринговые подключения появятся в таблице. Мониторинг этих пирингов изначально отключен. 
 
@@ -68,7 +68,7 @@ ms.locfileid: "49402547"
 5. Щелкните **Добавить агенты**, чтобы выбрать агенты мониторинга, которые будут использоваться для мониторинга этого пирингового подключения. Обязательно добавьте агенты на обоих концах подключения. Необходимо добавить по крайней мере один агент в виртуальную сеть, подключенную к этому пирингу. Кроме того, необходим по крайней мере один локальный агент, подключенный к этому пирингу. 
 6. Чтобы сохранить конфигурацию, нажмите кнопку **Сохранить**. 
 
-   ![Настройка мониторинга ExpressRoute](media/log-analytics-network-performance-monitor/expressroute-configure-discovery.png)
+   ![Настройка мониторинга ExpressRoute](media/log-analytics-network-performance-monitor-expressroute/expressroute-configure-discovery.png)
 
 
 После включения правил, выбора значений и агентов подождите 30–60 минут для заполнения значений, после чего отобразятся элементы **мониторинга ExpressRoute**. Как только отобразятся элементы мониторинга, это значит, что Монитор производительности сети начал отслеживать каналы ExpressRoute и ресурсы подключения. 
@@ -80,37 +80,37 @@ ms.locfileid: "49402547"
 
 На панели мониторинга Монитора производительности сети приведен обзор работоспособности каналов ExpressRoute и пиринговых подключений. 
 
-![Панель мониторинга монитора производительности сети](media/log-analytics-network-performance-monitor/npm-dashboard-expressroute.png) 
+![Панель мониторинга монитора производительности сети](media/log-analytics-network-performance-monitor-expressroute/npm-dashboard-expressroute.png) 
 
 ### <a name="circuits-list"></a>Список каналов 
 
 Чтобы просмотреть список всех отслеживаемых каналов ExpressRoute, щелкните элемент "Каналы ExpressRoute". Вы можете выбрать канал и просмотреть его состояние работоспособности, диаграммы тенденций потери пакетов, данные об использовании пропускной способности и задержке. Диаграммы интерактивны. Вы можете выбрать настраиваемое временное окно для построения диаграмм. Перетащите указатель мыши по области диаграммы, чтобы увеличить масштаб и увидеть мелкие фрагменты данных. 
 
-![Список каналов ExpressRoute](media/log-analytics-network-performance-monitor/expressroute-circuits.png) 
+![Список каналов ExpressRoute](media/log-analytics-network-performance-monitor-expressroute/expressroute-circuits.png) 
 
 ### <a name="trends-of-loss-latency-and-throughput"></a>Тенденции потерь, задержка и пропускная способность 
 
 Диаграммы потерь, задержки и использования пропускной способности интерактивны. С помощью мыши вы можете увеличить любой фрагмент этих диаграмм. Также отображаются пропускная способность, задержки и потери данных для других интервалов. В верхнем левом углу под кнопкой **Действия** щелкните  **Дата и время**. 
 
-![Задержка ExpressRoute](media/log-analytics-network-performance-monitor/expressroute-latency.png) 
+![Задержка ExpressRoute](media/log-analytics-network-performance-monitor-expressroute/expressroute-latency.png) 
 
 ### <a name="peerings-list"></a>Список пирингов 
 
 Чтобы отобразить список всех подключений к виртуальным сетям через частный пиринг, щелкните элемент **Частные пиринги** на панели мониторинга. Здесь вы можете выбрать подключение виртуальной сети и просмотреть его состояние работоспособности, диаграммы тенденций потери пакетов, данные об использовании пропускной способности и задержке. 
 
-![Пиринги ExpressRoute](media/log-analytics-network-performance-monitor/expressroute-peerings.png) 
+![Пиринги ExpressRoute](media/log-analytics-network-performance-monitor-expressroute/expressroute-peerings.png) 
 
 ### <a name="circuit-topology"></a>Топология канала 
 
 Чтобы просмотреть топологию канала, щелкните элемент **Топология**. Откроется представление топологии выбранного канала или пиринга. На схеме топологии будет отображаться задержка для каждого сегмента сети, а для каждого прыжка каждого уровня 3 представлен узел. Чтобы увидеть дополнительные сведения о прыжке, необходимо его щелкнуть. Вы можете увеличить уровень видимости, чтобы включить локальные прыжки. Для этого необходимо переместить ползунок под параметром **Фильтры**. Перемещая ползунок влево или вправо, вы соответственно увеличиваете или уменьшаете количество прыжков на схеме топологии. Видна задержка для каждого сегмента, что позволяет быстро изолировать соответствующие сегменты. 
 
-![Топология ExpressRoute](media/log-analytics-network-performance-monitor/expressroute-topology.png)
+![Топология ExpressRoute](media/log-analytics-network-performance-monitor-expressroute/expressroute-topology.png)
 
 ### <a name="detailed-topology-view-of-a-circuit"></a>Подробное представление топологии канала 
 
 В этом представлении показаны подключения виртуальных сетей. 
 
-![Подключения виртуальных сетей ExpressRoute](media/log-analytics-network-performance-monitor/expressroute-vnet.png)
+![Подключения виртуальных сетей ExpressRoute](media/log-analytics-network-performance-monitor-expressroute/expressroute-vnet.png)
  
 
 ### <a name="diagnostics"></a>Диагностика 
@@ -119,7 +119,7 @@ ms.locfileid: "49402547"
 
 **Канал не работает.** Монитор производительности сети уведомляет вас, как только теряется связь между вашими локальными ресурсами и виртуальной сетью Azure. Это помогает принять упреждающие меры до эскалации проблемы и сократить время простоя.
 
-![Неработоспособный канал ExpressRoute](media/log-analytics-network-performance-monitor/expressroute-circuit-down.png)
+![Неработоспособный канал ExpressRoute](media/log-analytics-network-performance-monitor-expressroute/expressroute-circuit-down.png)
  
 
 **Не проходящий по намеченному каналу трафик.** Монитор производительности сети уведомляет пользователя каждый раз, когда трафик не передается через предназначенный для него канал ExpressRoute. Это может произойти, если канал не работает и трафик проходит через резервный маршрут. Такая проблема также может возникнуть при нарушении маршрутизации. Эти сведения помогают эффективно управлять любыми неполадками конфигурации в ваших политиках маршрутизации и обеспечивают использование наиболее оптимального и безопасного маршрута. 
@@ -129,12 +129,12 @@ ms.locfileid: "49402547"
 **Не проходящий по основному каналу трафик.** Монитор производительности сети уведомляет вас, если трафик проходит через дополнительный канал ExpressRoute. Несмотря на отсутствие проблем с подключением в этом случае, упреждающее устранение проблем, связанных с основным каналом, обеспечит большую подготовленность. 
 
  
-![Поток трафика ExpressRoute](media/log-analytics-network-performance-monitor/expressroute-traffic-flow.png)
+![Поток трафика ExpressRoute](media/log-analytics-network-performance-monitor-expressroute/expressroute-traffic-flow.png)
 
 
 **Снижение производительности из-за пикового использования.** Вы можете сопоставить использование пропускной способности с трендом задержки, чтобы определить, связано ли снижение производительности рабочей нагрузки Azure с пиковым использованием пропускной способности. Затем можно принять соответствующие меры.
 
-![Использование пропускной способности ExpressRoute](media/log-analytics-network-performance-monitor/expressroute-peak-utilization.png)
+![Использование пропускной способности ExpressRoute](media/log-analytics-network-performance-monitor-expressroute/expressroute-peak-utilization.png)
 
  
 

@@ -9,12 +9,12 @@ ms.date: 11/06/2017
 ms.topic: conceptual
 ms.service: azure-monitor
 ms.component: ''
-ms.openlocfilehash: b4fbd1248f91e0766cca66d1c51033a8b338c324
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 75b1edf80f1dad5f0db48c11329effe080760820
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49957384"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50413151"
 ---
 # <a name="monitor-your-azure-services-in-grafana"></a>Мониторинг служб Azure в Grafana
 Теперь также можно отслеживать службы Azure и приложения из [Grafana](https://grafana.com/) с помощью [подключаемого модуля источника данных Azure Monitor](https://grafana.com/plugins/grafana-azure-monitor-datasource). Подключаемый модуль собирает данные производительности приложения, которые собраны пакетом SDK Application Insights, а также данные инфраструктуры, предоставленные Azure Monitor. Затем эти данные можно отобразить на панели мониторинга Grafana.
@@ -37,13 +37,13 @@ ms.locfileid: "49957384"
 ## <a name="log-in-to-grafana"></a>Вход в Grafana
 1. После завершения развертывания выберите **Перейти к группе ресурсов**. Появится список только что созданных ресурсов.
 
-    ![Объекты группы ресурсов Grafana](.\media\monitor-how-to-grafana\grafana1.png)
+    ![Объекты группы ресурсов Grafana](media/monitor-send-to-grafana/grafana1.png)
 
     При выборе группы безопасности сети (в этом случае *grafana-nsg*) можно увидеть, что порт 3000 используется для получения доступа к серверу Grafana.
 
 2. Вернитесь в список ресурсов и выберите **Общедоступный IP-адрес**. На основе значений, найденных на этом экране, введите в браузере *http://<IP address>:3000* или *<DNSName>:3000*. Должна появиться страница входа на сервер Grafana, которая была только что создана.
 
-    ![Экран входа в Grafana](.\media\monitor-how-to-grafana\grafana2.png)
+    ![Экран входа в Grafana](media/monitor-send-to-grafana/grafana2.png)
 
 3. Войдите с помощью имени пользователя *администратора* и пароля администратора сервера Grafana, созданных ранее.
 
@@ -51,7 +51,7 @@ ms.locfileid: "49957384"
 
 После успешного входа вы увидите, что подключаемый модуль источника данных монитора Azure уже включен.
 
-![Отображение подключаемого модуля Azure Monitor в Grafana](.\media\monitor-how-to-grafana\grafana3.png)
+![Отображение подключаемого модуля Azure Monitor в Grafana](media/monitor-send-to-grafana/grafana3.png)
 
 1. Выберите **Add data source** (Добавить источник данных), чтобы настроить Azure Monitor и Application Insights.
 
@@ -70,7 +70,7 @@ Grafana использует субъект-службу Azure Active Directory 
 
 4. После ввода этой информации выберите **Save** (Сохранить), чтобы Grafana проверил API. Должно появиться примерно такое сообщение:  
 
-    ![Отображение подключаемого модуля Azure Monitor в Grafana](.\media\monitor-how-to-grafana\grafana4-1.png)
+    ![Отображение подключаемого модуля Azure Monitor в Grafana](media/monitor-send-to-grafana/grafana4-1.png)
 
 > [!NOTE]
 > При настройке подключаемого модуля можно указать, для каких облаков Azure (общедоступное облако, Azure для государственных организаций США,Azure для Германии или Azure для Китая) нужно настроить этот подключаемый модуль.
@@ -83,7 +83,7 @@ Grafana использует субъект-службу Azure Active Directory 
 
 2. На новой панели мониторинга выберите **Graph**. Можно использовать другие варианты построения графиков, однако в этой статье в качестве примера используется *Graph*.
 
-    ![Новая панель мониторинга Grafana](.\media\monitor-how-to-grafana\grafana5.png)
+    ![Новая панель мониторинга Grafana](media/monitor-send-to-grafana/grafana5.png)
 
 3. На панели мониторинга появится пустой график.
 
@@ -93,14 +93,14 @@ Grafana использует субъект-службу Azure Active Directory 
 
 Ниже приведена простая панель мониторинга с двумя диаграммами. Левая показывает процент использования ЦП на двух виртуальных машинах. Диаграмма справа показывает транзакции в учетной записи хранения Azure с разбивкой по типам API транзакций.
 
-![Пример двух диаграмм Grafana](.\media\monitor-how-to-grafana\grafana6.png)
+![Пример двух диаграмм Grafana](media/monitor-send-to-grafana/grafana6.png)
 
 
 ## <a name="optional-create-dashboard-playlists"></a>Создание списков воспроизведения панелей мониторинга (необязательно)
 
 Одна из многих полезных возможностей Grafana — это список воспроизведения панелей мониторинга. Можно создать несколько панелей мониторинга и добавить их в список воспроизведения, настроив интервал показа каждой панели мониторинга. Выберите **Play** (Воспроизведение), чтобы просматривать панели мониторинга циклично. Их можно отобразить на большом мониторе, чтобы представить "доску состояния" группы.
 
-![Пример списка воспроизведения Grafana](.\media\monitor-how-to-grafana\grafana7.png)
+![Пример списка воспроизведения Grafana](media/monitor-send-to-grafana/grafana7.png)
 
 
 ## <a name="optional-monitor-your-custom-metrics-in-the-same-grafana-server"></a>Мониторинг настраиваемых метрик на том же сервере Grafana (необязательно)
@@ -117,7 +117,7 @@ Grafana использует субъект-службу Azure Active Directory 
  - [A monitoring solution for Docker hosts, containers and containerized services](https://stefanprodan.com/2016/a-monitoring-solution-for-docker-hosts-containers-and-containerized-services/) (Решение мониторинга для служб контейнеров, контейнеров и узлов Docker)
 
 Вот изображение полной панели мониторинга Grafana, на которой есть метрики из Azure Monitor и Application Insights.
-![Пример метрик Grafana](.\media\monitor-how-to-grafana\grafana8.png)
+![Пример метрик Grafana](media/monitor-send-to-grafana/grafana8.png)
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

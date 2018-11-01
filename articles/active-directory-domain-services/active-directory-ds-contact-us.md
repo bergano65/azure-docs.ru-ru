@@ -3,7 +3,7 @@ title: Доменные службы Azure Active Directory — связь с н
 description: Свяжитесь с к командой по доменным службам Azure AD.
 services: active-directory-ds
 documentationcenter: ''
-author: mahesh-unnikrishnan
+author: eringreenlee
 manager: mtillman
 editor: curtand
 ms.assetid: 662362c3-1a5e-4e94-ae09-8e4254443697
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/23/2017
-ms.author: maheshu
-ms.openlocfilehash: eda5d76e46ddb9cfcee9ee7554f31ee432938358
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.author: ergreenl
+ms.openlocfilehash: cedf09cd9dae23b3ea00d08b4a19ceb496e4958d
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39502773"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50155972"
 ---
 # <a name="azure-ad-domain-services---contact-us"></a>Доменные службы Azure AD — связь с нами
 ## <a name="contact-the-product-team"></a>Связь с группой разработка продукта

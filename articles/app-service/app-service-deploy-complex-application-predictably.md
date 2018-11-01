@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/06/2016
 ms.author: cephalin
-ms.openlocfilehash: 049f5211e800dace4b8968cd9e3db9ad968f8813
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: c4071da60ed1311d8dd75d6a369c48cf711778cb
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43050752"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50243220"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Предсказуемые подготовка и развертывание микрослужб в Azure
 В этом руководстве описано, как предсказуемо с помощью шаблонов групп ресурсов JSON и скриптов PowerShell подготовить и развернуть приложение, состоящее из [микрослужб](https://en.wikipedia.org/wiki/Microservices), в [службу приложений Azure](https://azure.microsoft.com/services/app-service/) как единое целое. 
@@ -148,7 +148,7 @@ ms.locfileid: "43050752"
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-6-webappsettings.png)
 
-В элементе `properties` для `config/appsettings` имеется два параметра приложений в формате `“<name>” : “<value>”`.
+В элементе `properties` для `config/appsettings` имеется два параметра приложений в формате `"<name>" : "<value>"`.
 
 * `PROJECT` — это [параметр KUDU](https://github.com/projectkudu/kudu/wiki/Customizing-deployments) , который сообщает развертыванию Azure, какой проект требуется использовать в решении Visual Studio с несколькими проектами. Позже я расскажу, как настроить систему управления версиями, но, поскольку код ToDoApp входит в многопроектное решение Visual Studio, этот параметр необходим.
 * `clientUrl` — это просто параметр приложения, используемый кодом приложения.
@@ -158,7 +158,7 @@ ms.locfileid: "43050752"
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-7-webappconnstr.png)
 
-В элементе `properties` для `config/connectionstrings` каждая строка подключения также определяется как пара "имя:значение" с определенным форматом `“<name>” : {“value”: “…”, “type”: “…”}`. Возможные значения для элемента `type`: `MySql`, `SQLServer`, `SQLAzure` и `Custom`.
+В элементе `properties` для `config/connectionstrings` каждая строка подключения также определяется как пара "имя:значение" с определенным форматом `"<name>" : {"value": "…", "type": "…"}`. Возможные значения для элемента `type`: `MySql`, `SQLServer`, `SQLAzure` и `Custom`.
 
 > [!TIP]
 > Чтобы открыть полный список типов строк подключения, выполните следующую команду в Azure PowerShell: \[Enum]::GetNames("Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.DatabaseType").

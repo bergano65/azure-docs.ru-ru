@@ -1,3 +1,16 @@
+---
+author: ggailey777
+ms.service: azure-functions
+ms.topic: include
+ms.date: 09/04/2018
+ms.author: glenga
+ms.openlocfilehash: 9fb462b83eccde3d2b486d491517973fe6bac4f1
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50132854"
+---
 [Триггеры и привязки](..\articles\azure-functions\functions-triggers-bindings.md) Функций Azure взаимодействуют с различными службами Azure. При интеграции с этими службами могут возникать ошибки, поступающие из API-интерфейсов базовых служб Azure. Ошибки также могут возникать при попытке взаимодействия с другими службами из вашего кода функции с использованием REST или клиентских библиотек. Чтобы избежать потери данных и обеспечить нормальное выполнение функций, очень важно обрабатывать ошибки из любого источника.
 
 Следующие триггеры поддерживают встроенный механизм повторных попыток:

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: a95cdbb48371cf960211f55bf077cea9db783db5
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.openlocfilehash: 3c8202f762c65d72417020b0524e415e55076eb0
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48248335"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50415276"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-using-azure-monitor"></a>Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor  
 
@@ -43,11 +43,11 @@ ms.locfileid: "48248335"
 1. На портале Azure выберите **Монитор** > **Оповещения**.
 2. Выберите **Новое правило генерации оповещений** в верхней части окна **Оповещения**.
 
-     ![Новое правило генерации оповещений](./media/monitor-alerts-unified/AlertsPreviewOption.png)
+     ![Новое правило генерации оповещений](media/alert-activity-log/AlertsPreviewOption.png)
 
      Откроется окно **создания правила**.
 
-      ![Параметры нового правила генерации оповещений](./media/monitoring-activity-log-alerts-new-experience/create-new-alert-rule-options.png)
+      ![Параметры нового правила генерации оповещений](media/alert-activity-log/create-new-alert-rule-options.png)
 
 3. В разделе **Define Alert condition** (Определите условия оповещения) введите указанные ниже сведения и выберите **Готово**.
 
@@ -57,7 +57,7 @@ ms.locfileid: "48248335"
 
     > Вы можете выбрать ресурс, группу ресурсов или целую подписку в качестве сигнала журнала действий.
 
-    **Пример представления целевого объекта оповещения** ![Выбор целевого объекта](./media/monitoring-activity-log-alerts-new-experience/select-target.png)
+    **Пример представления целевого объекта оповещения** ![Выбор целевого объекта](media/alert-activity-log/select-target.png)
 
     - В разделе **Целевые условия** щелкните **Добавить условия**. Отобразятся все доступные сигналы целевого объекта, в том числе из разных категорий **журнала действий**, с именем категории, добавленным в имя **Мониторинга службы**.
 
@@ -67,7 +67,7 @@ ms.locfileid: "48248335"
 
     **Снимок экрана: (Add criteria) (Добавить критерии)**
 
-    ![Добавить критерии](./media/monitoring-activity-log-alerts-new-experience/add-criteria.png)
+    ![Добавить критерии](media/alert-activity-log/add-criteria.png)
 
     **Время журнала**. События, доступные для выбранной операции, могут быть отображены в графике за последние 6/12/24 часа или за последнюю неделю.
 
@@ -79,7 +79,7 @@ ms.locfileid: "48248335"
 
         Пример диаграммы сигнала с применением логики предупреждений:
 
-        ![ выбранные критерии](./media/monitoring-activity-log-alerts-new-experience/criteria-selected.png)
+        ![ выбранные критерии](media/alert-activity-log/criteria-selected.png)
 
 4. В разделе **define alert rules details** (Определение сведений о правилах генерации оповещений) укажите следующие сведения.
 
@@ -99,20 +99,20 @@ ms.locfileid: "48248335"
 
 Кроме того, в качестве простой аналогии для понимания условий, на которых могут создаваться правила генерации оповещений для журнала действий, можно просмотреть или отфильтровать события с помощью [журнала действий на портале Azure](monitoring-overview-activity-logs.md#query-the-activity-log-in-the-azure-portal). В Azure Monitor журнал действий можно отфильтровать или найти необходимые события и затем создать оповещение с помощью кнопки **Добавить оповещение журнала действий**, а затем приступить к руководству, описанному выше, начиная с 4-го шага.
     
- ![ Добавление оповещения из журнала действий](./media/monitoring-activity-log-alerts-new-experience/add-activity-log.png)
+ ![ Добавление оповещения из журнала действий](media/alert-activity-log/add-activity-log.png)
     
 
 ### <a name="view-and-manage-in-azure-portal"></a>Просмотр и управление на портале Azure
 
 1. На портале Azure выберите **Монитор** > **Оповещения** и щелкните **Управление правилами** в верхнем левом углу окна.
 
-    ![ управление правилами генерации оповещений](./media/monitoring-activity-log-alerts-new-experience/manage-alert-rules.png)
+    ![ управление правилами генерации оповещений](media/alert-activity-log/manage-alert-rules.png)
 
     Откроется список доступных правил.
 
 2. Выполните поиск правила журнала действий, которое необходимо изменить.
 
-    ![ Поиск правил генерации оповещений журнала действий](./media/monitoring-activity-log-alerts-new-experience/searth-activity-log-rule-to-edit.png)
+    ![ Поиск правил генерации оповещений журнала действий](media/alert-activity-log/searth-activity-log-rule-to-edit.png)
 
     Вы можете использовать доступные фильтры: _Подписка_, _Группа ресурсов_, _Ресурс_, _Тип сигнала_ или _Состояние_, чтобы найти действующее правило, которое необходимо изменить.
 
@@ -122,7 +122,7 @@ ms.locfileid: "48248335"
 
 3.  Выберите правило и дважды щелкните его, чтобы изменить параметры. Внесите необходимые изменения и нажмите кнопку **Сохранить**.
 
-    ![ управление правилами генерации оповещений](./media/monitoring-activity-log-alerts-new-experience/activity-log-rule-edit-page.png)
+    ![ управление правилами генерации оповещений](media/alert-activity-log/activity-log-rule-edit-page.png)
 
 4.  Вы можете отключить, включить или удалить правило. Выберите соответствующий параметр в верхней части окна после выбора правила, как описано на шаге 2.
 

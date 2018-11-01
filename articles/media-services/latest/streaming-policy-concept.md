@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 10/16/2018
+ms.date: 10/22/2018
 ms.author: juliako
-ms.openlocfilehash: 4d02ddf50660cd700b2f1c5999ceadfb472b6906
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: c5f441fef95989e5c82586d96fc6c10e00a9627c
+ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49380759"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50085501"
 ---
 # <a name="streaming-policies"></a>Политики потоковой передачи
 
@@ -29,17 +29,17 @@ ms.locfileid: "49380759"
 
 В следующей таблице представлены свойства StreamingPolicy и их определения.
 
-|ИМЯ|type|ОПИСАНИЕ|
-|---|---|---|
-|id|строка|Полный идентификатор ресурса.|
-|name|строка|Имя ресурса.|
-|properties.commonEncryptionCbcs|CommonEncryptionCbcs|Конфигурация CommonEncryptionCbcs|
-|properties.commonEncryptionCenc|CommonEncryptionCenc|Конфигурация CommonEncryptionCenc|
-|properties.created |строка|Время создания политики потоковой передачи|
-|properties.defaultContentKeyPolicyName |строка|ContentKey, который по умолчанию используется текущей потоковой политикой|
-|properties.envelopeEncryption  |EnvelopeEncryption|Конфигурация EnvelopeEncryption|
-|properties.noEncryption|NoEncryption|Конфигурации NoEncryption|
-|Тип|строка|Тип ресурса.|
+|ИМЯ|ОПИСАНИЕ|
+|---|---|
+|id|Полный идентификатор ресурса.|
+|name|Имя ресурса.|
+|properties.commonEncryptionCbcs|Конфигурация CommonEncryptionCbcs|
+|properties.commonEncryptionCenc|Конфигурация CommonEncryptionCenc|
+|properties.created |Время создания политики потоковой передачи|
+|properties.defaultContentKeyPolicyName |ContentKey, который по умолчанию используется текущей потоковой политикой|
+|properties.envelopeEncryption  |Конфигурация EnvelopeEncryption|
+|properties.noEncryption|Конфигурации NoEncryption|
+|Тип|Тип ресурса.|
 
 Полное определение см. на странице [политик потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies).
 
@@ -54,12 +54,12 @@ ms.locfileid: "49380759"
 
 Описание оператора:
 
-* Eq = равно
-* Ne = не равно
-* Ge = больше или равно
-* Le = меньше или равно
-* Gt = больше чем
-* Lt = меньше чем
+* Eq = равно.
+* Ne = не равно.
+* Ge = больше или равно.
+* Le = меньше или равно.
+* Gt = больше чем.
+* Lt = меньше чем.
 
 ### <a name="filteringordering"></a>Фильтрация и упорядочение
 
@@ -82,7 +82,7 @@ ms.locfileid: "49380759"
 Для каждого из четырех порядков сортировки поддерживается разбиение на страницы. В настоящее время размер страницы составляет 10.
 
 > [!TIP]
-> Вы всегда должны использовать следующую ссылку для перечисления коллекции, не зависящую от конкретного размера страницы.
+> Для перечисления коллекции всегда нужно использовать следующую ссылку, которая не зависит от конкретного размера страницы.
 
 Если ответ на запрос содержит большое количество элементов, служба возвращает свойство \@odata.nextLink, чтобы получить следующую страницу результатов. Это можно использовать для просмотра всего результирующего набора. Вы не можете настроить размер страницы. 
 
@@ -100,7 +100,7 @@ while (currentPage.NextPageLink != null)
 }
 ```
 
-Примеры использования REST см. в статье о [перечислении политик потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies/streamingpolicies_list).
+Примеры использования REST см. в статье о [перечислении политик потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies/list).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

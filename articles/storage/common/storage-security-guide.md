@@ -2,18 +2,18 @@
 title: Руководство по безопасности службы хранилища Azure | Документация Майкрософт
 description: Подробно описываются различные способы защиты службы хранилища Azure, включая, помимо прочего, управление доступом на основе ролей, шифрование службы хранения, шифрование на стороне клиента, протокол SMB 3.0 и шифрование дисков Azure.
 services: storage
-author: craigshoemaker
+author: tamram
 ms.service: storage
 ms.topic: article
 ms.date: 05/31/2018
-ms.author: cshoe
+ms.author: tamram
 ms.component: common
-ms.openlocfilehash: 584db1400ddd2b4f447b7ca397f2c98b701c7848
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: cd7b475dc2bd4dade822a82f285c2e96c8d532d2
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49341877"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50138196"
 ---
 # <a name="azure-storage-security-guide"></a>Руководство по безопасности службы хранилища Azure
 

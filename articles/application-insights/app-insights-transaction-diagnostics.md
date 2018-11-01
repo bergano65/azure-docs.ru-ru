@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/19/2018
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: df88e9025da305701dc7168f663cad2e8f5ac738
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: 5b52fd41fc3e37078bbddc721c0c54af2c430b43
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42819656"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50419237"
 ---
 # <a name="unified-cross-component-transaction-diagnostics"></a>Единый интерфейс диагностики транзакций между компонентами
 
@@ -38,7 +38,7 @@ ms.locfileid: "42819656"
 ## <a name="transaction-diagnostics-experience"></a>Интерфейс диагностики транзакций
 Это представление состоит из четырех основных частей: список результатов, диаграмма транзакций между компонентами, последовательный список данных телеметрии, связанных с этой операцией, и область сведений, в которой слева отображается любой выбранный элемент телеметрии.
 
-![Основные части](media/app-insights-e2eTxn-diagnostics/4partsCrossComponent.png)
+![Основные части](media/app-insights-transaction-diagnostics/4partsCrossComponent.png)
 
 ## <a name="cross-component-transaction-chart"></a>Диаграмма транзакций между компонентами
 
@@ -57,19 +57,19 @@ ms.locfileid: "42819656"
 
 В этом разделе показано представление неструктурированного списка во временной последовательности всех данных телеметрии, связанных с этой транзакцией. Здесь также показаны пользовательские события и трассировки, которые не отображаются на диаграмме транзакций. Вы можете отфильтровать этот список, чтобы отображались данные телеметрии, созданные с помощью определенного компонента или вызова. Выберите любой элемент телеметрии, чтобы просмотреть соответствующие [сведения в области справа](#details-of-the-selected-telemetry).
 
-![Временная последовательность всех данных телеметрии](media/app-insights-e2eTxn-diagnostics/allTelemetryDrawerOpened.png)
+![Временная последовательность всех данных телеметрии](media/app-insights-transaction-diagnostics/allTelemetryDrawerOpened.png)
 
 ## <a name="details-of-the-selected-telemetry"></a>Подробные сведения о выбранном элементе телеметрии
 
 В этой свертываемой области отображаются сведения о любом выбранном элементе в виде диаграммы транзакций или списка. Если щелкнуть "Показать все", отобразятся все собранные стандартные атрибуты. Все настраиваемые атрибуты отдельно перечислены под стандартным набором. Щелкните "..." ниже в окне трассировки стека, чтобы получить возможность скопировать трассировку. Щелкните Open profiler traces (Открыть трассировки профилировщика) или Open debug snapshot (Открыть моментальный снимок отладки), чтобы просмотреть данные диагностики на уровне кода в соответствующих областях.
 
-![Сведения об исключении](media/app-insights-e2eTxn-diagnostics/exceptiondetail.png)
+![Сведения об исключении](media/app-insights-transaction-diagnostics/exceptiondetail.png)
 
 ## <a name="search-results"></a>Результаты поиска
 
 В этой свертываемой области отображаются другие результаты, которые соответствуют условиям фильтра. Щелкните любой результат, чтобы обновить соответствующие сведения в 3 разделах, перечисленных выше. Мы пытаемся найти образцы, в которых вероятнее всего содержатся сведения, доступные из всех компонентов даже в том случае, если выборка действует в одном из них. Они отображаются в виде "предложенных" примеров.
 
-![Результаты поиска](media/app-insights-e2eTxn-diagnostics/searchResults.png)
+![Результаты поиска](media/app-insights-transaction-diagnostics/searchResults.png)
 
 ## <a name="profiler-and-snapshot-debugger"></a>Profiler и Snapshot Debugger
 
@@ -79,7 +79,7 @@ ms.locfileid: "42819656"
 
 Если не удалось запустить Snapshot Debugger, напишите сообщение на адрес **snapshothelp@microsoft.com**
 
-![Интеграция профилировщика](media/app-insights-e2eTxn-diagnostics/profilerTraces.png)
+![Интеграция профилировщика](media/app-insights-transaction-diagnostics/profilerTraces.png)
 
 ## <a name="faq"></a>Часто задаваемые вопросы
 

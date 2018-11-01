@@ -1,12 +1,21 @@
-
-
-
-
+---
+author: cynthn
+ms.service: virtual-machines
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: cynthn
+ms.openlocfilehash: 2df08968ad66bd330611b975c045c9e9c9b240aa
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50227441"
+---
 В зависимости от вашей среды и предпочтений скрипт может создать всю инфраструктуру кластера, в том числе виртуальную сеть Azure, учетные записи хранения, облачные службы, контроллер домена, удаленные и локальные базы данных SQL, головной узел и дополнительные узлы кластера. Или скрипт может с помощью уже существующей инфраструктуры Azure ограничиться созданием узлов кластера HPC.
 
 Общие сведения о планировании кластера пакета HPC см. в статьях [Product Evaluation and Planning](https://technet.microsoft.com/library/jj899596.aspx) (Оценка и планирование продукта) и [Getting Started](https://technet.microsoft.com/library/jj899590.aspx) (Приступая к работе), посвященных пакету HPC 2012 R2, в библиотеке TechNet.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * **Подписка Azure**. Вы можете использовать подписку на глобальную службу Azure или Azure для Китая. Ограничения подписки влияют на количество и тип узлов кластера, которые вы можете развернуть. Дополнительные сведения см. в статье [Подписка Azure, границы, квоты и ограничения службы](../articles/azure-subscription-service-limits.md).
 * **Клиентские компьютеры под управлением Windows с установленной и настроенной средой Azure PowerShell 0.8.10 или более поздней версии**. Пошаговые инструкции по установке и подключению к подписке Azure см. в статье [Get started with Azure PowerShell cmdlets](/powershell/azureps-cmdlets-docs) (Начало работы с командлетами Azure PowerShell).
 * **Скрипт развертывания IaaS из пакета HPC**. Скачайте и распакуйте последнюю версию скрипта из [Центра загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=44949). Проверьте версию сценария, запустив `New-HPCIaaSCluster.ps1 –Version`. В этой статье предполагается использование скрипта версии 4.5.2.

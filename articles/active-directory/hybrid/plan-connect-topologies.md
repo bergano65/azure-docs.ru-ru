@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/09/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: ef72829d507d6a471ec9a8972ead262da7f7b582
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: 4362a6b936c52319f6f6fc625370733f3c84e361
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49068707"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50158862"
 ---
 # <a name="topologies-for-azure-ad-connect"></a>Топологии Azure AD Connect.
 В этой статье описываются различные локальные топологии и топологии Active Directory Azure (Azure AD), в которых служба синхронизации Azure AD Connect используется в качестве основного решения интеграции. Здесь описываются и поддерживаемые, и неподдерживаемые конфигурации.
@@ -87,7 +87,7 @@ ms.locfileid: "49068707"
 ### <a name="multiple-forests-separate-topologies"></a>Несколько лесов, отдельные топологии
 ![Параметр для представления пользователей во всех каталогах только один раз](./media/plan-connect-topologies/MultiForestUsersOnce.png)
 
-![Изображение нескольких лесов и отдельных топологий](./media/plan-connect-topologies/MultiForestSeperateTopologies.png)
+![Изображение нескольких лесов и отдельных топологий](./media/plan-connect-topologies/MultiForestSeparateTopologies.png)
 
 В этой среде все локальные леса рассматриваются как отдельные сущности. В любых других лесах пользователи отсутствуют. У каждого леса есть своя организация Exchange. Синхронизация GALSync между лесами отсутствует. Такая топология может возникать в результате слияний и поглощений, а также в организации, в которой все подразделения функционируют независимо. В Azure AD эти леса будут находиться в одной организации и отображаться в едином глобальном списке адресов. На предыдущем рисунке каждый объект в каждом лесу представлен в метавселенной в единственном экземпляре с объединением в целевом клиенте Azure AD.
 

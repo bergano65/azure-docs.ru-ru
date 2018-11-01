@@ -1,3 +1,16 @@
+---
+author: rayne-wiselman
+ms.service: site-recovery
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: raynew
+ms.openlocfilehash: b6e3abb56ebd02131fac78c2a8f03ddcbf50958a
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50165567"
+---
 1. Запуск файла единой установки Azure Site Recovery (UnifiedSetup.exe)
 2. На странице **Перед началом работы** выберите **Add additional process servers to scale out deployment** (Добавить дополнительные серверы обработки для масштабирования развертывания).
 

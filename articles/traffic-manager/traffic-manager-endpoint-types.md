@@ -4,9 +4,6 @@ description: В этой статье описываются разные тип
 services: traffic-manager
 documentationcenter: ''
 author: kumudd
-manager: timlt
-editor: ''
-ms.assetid: 4e506986-f78d-41d1-becf-56c8516e4d21
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
@@ -14,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/29/2017
 ms.author: kumud
-ms.openlocfilehash: 06965c43408e943922048804099f8f28d69c8540
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.openlocfilehash: acdae15af1e81bf194bb9e599b97152af98ef5d4
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48248291"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50139794"
 ---
 # <a name="traffic-manager-endpoints"></a>Конечные точки диспетчера трафика
 С помощью диспетчера трафика Microsoft Azure можно управлять распределением сетевого трафика среди приложений, развернутых в различных центрах обработки данных. В диспетчере трафика каждое развертывание приложения необходимо настроить в качестве конечной точки. Когда диспетчер трафика получает запрос DNS, затем выбирает доступную конечную точку и возвращает ее в ответе DNS. Выбор конечной точки зависит от ее текущего состояния и метода маршрутизации трафика. Дополнительные сведения см. в статье [Как работает диспетчер трафика](traffic-manager-how-it-works.md).

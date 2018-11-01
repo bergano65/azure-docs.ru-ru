@@ -1,4 +1,17 @@
-### <a name="prerequisites"></a>предварительным требованиям
+---
+author: ecfan
+ms.service: logic-apps
+ms.topic: include
+ms.date: 11/03/2016
+ms.author: estfan
+ms.openlocfilehash: 3f4430631a664f81f53f9df1f46ebc27c635de36
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50134358"
+---
+### <a name="prerequisites"></a>Предварительные требования
 * Учетная запись [Dropbox](https://www.Dropbox.com/). 
 
 Чтобы использовать учетную запись Dropbox в приложении логики, вы должны авторизовать приложение логики для подключения к вашей учетной записи Dropbox. К счастью, это можно легко сделать из приложения логики на портале Azure. 
