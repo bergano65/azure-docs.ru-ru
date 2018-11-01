@@ -15,12 +15,12 @@ ms.date: 09/08/2017
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: 10bcb3c0c4842202f95cdc1fff30d12b7a8fbbc2
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: e6f4e67d09eacadbbf9d74f417357a87ece0a951
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39366029"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50238511"
 ---
 # <a name="set-a-custom-home-page-for-published-apps-by-using-azure-ad-application-proxy"></a>Настройка пользовательской домашней страницы для опубликованных приложений с помощью прокси приложения Azure AD
 
@@ -62,7 +62,7 @@ ms.locfileid: "39366029"
 
 ### <a name="install-the-azure-ad-powershell-module"></a>Установка модуля Azure AD PowerShell
 
-Прежде чем настраивать URL-адрес пользовательской домашней страницы с помощью PowerShell, установите модуль Azure AD PowerShell. Этот пакет можно скачать из [коллекции PowerShell](https://www.powershellgallery.com/packages/AzureAD/2.0.0.131), в которой используется конечная точка API Graph. 
+Прежде чем настраивать URL-адрес пользовательской домашней страницы с помощью PowerShell, установите модуль Azure AD PowerShell. Этот пакет можно скачать из [коллекции PowerShell](https://www.powershellgallery.com/packages/AzureAD/2.0.0.131), в которой используется конечная точка API Graph. 
 
 Для установки пакета выполните следующие действия.
 
@@ -72,7 +72,7 @@ ms.locfileid: "39366029"
      Install-Module -Name AzureAD
     ```
     Если вы запускаете команду не от имени администратора, используйте параметр `-scope currentuser`.
-2. Во время установки выберите ответ **Y** (Да) на предложение установить два пакета с сайта Nuget.org. Требуются оба пакета. 
+2. Во время установки выберите ответ **Y** (Да) на предложение установить два пакета с сайта Nuget.org. Требуются оба пакета. 
 
 ### <a name="find-the-objectid-of-the-app"></a>Поиск идентификатора ObjectID для приложения
 
@@ -92,14 +92,14 @@ ms.locfileid: "39366029"
 3. Найдите приложение по URL-адресу домашней страницы. Этот URL-адрес можно найти на портале, выбрав **Azure Active Directory** > **Корпоративные приложения** > **Все приложения**. В этом примере используется *sharepoint-iddemo*.
 
     ```
-    Get-AzureADApplication | where { $_.Homepage -like “sharepoint-iddemo” } | fl DisplayName, Homepage, ObjectID
+    Get-AzureADApplication | where { $_.Homepage -like "sharepoint-iddemo" } | fl DisplayName, Homepage, ObjectID
     ```
 4. Вы должны получить результат, похожий на приведенный ниже. Скопируйте GUID ObjectID для использования в следующем разделе.
 
     ```
     DisplayName : SharePoint
-    Homepage    : https://sharepoint-iddemo.msappproxy.net/
-    ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
+    Homepage    : https://sharepoint-iddemo.msappproxy.net/
+    ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
     ```
 
 ### <a name="update-the-home-page-url"></a>Изменение URL-адреса домашней страницы
@@ -117,13 +117,13 @@ ms.locfileid: "39366029"
 2. Создайте пустой объект приложения, в котором будут храниться ваши изменения. Эта переменная содержит значения, которые необходимо обновить. На этом шаге ничто не создается.
 
     ```
-    $appnew = New-Object “Microsoft.Open.AzureAD.Model.Application”
+    $appnew = New-Object "Microsoft.Open.AzureAD.Model.Application"
     ```
 
-3. Задайте нужное значение для URL-адреса домашней страницы. Это значение должно быть путем к поддомену опубликованного приложения. Например, если изменить URL-адрес домашней страницы с *https://sharepoint-iddemo.msappproxy.net/* на *https://sharepoint-iddemo.msappproxy.net/hybrid/*, то пользователи приложения перейдут непосредственно на пользовательскую домашнюю страницу.
+3. Задайте нужное значение для URL-адреса домашней страницы. Это значение должно быть путем к поддомену опубликованного приложения. Например, если изменить URL-адрес домашней страницы с *https://sharepoint-iddemo.msappproxy.net/* на *https://sharepoint-iddemo.msappproxy.net/hybrid/*, то пользователи приложения перейдут непосредственно на пользовательскую домашнюю страницу.
 
     ```
-    $homepage = “https://sharepoint-iddemo.msappproxy.net/hybrid/”
+    $homepage = "https://sharepoint-iddemo.msappproxy.net/hybrid/"
     ```
 4. Внесите изменения с помощью GUID (ObjectID), который был скопирован на шаге 1 "Поиск идентификатора ObjectID для приложения".
 

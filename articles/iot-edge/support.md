@@ -4,16 +4,16 @@ description: Платформы, поддерживаемые в Azure IoT Edge
 author: kgremban
 manager: timlt
 ms.author: kgremban
-ms.date: 6/21/2018
+ms.date: 09/21/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 2163179d3353626e12495381fc64792db56ec78e
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: b8b4664540d07b76d0cebe5df99ba2cc67dd47e6
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43286368"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50248569"
 ---
 # <a name="azure-iot-edge-support"></a>Поддержка Azure IoT Edge
 Есть много способов реализовать поддержку продуктов Azure IoT Edge.
@@ -65,6 +65,3 @@ Azure IoT Edge работает на большинстве операционн
 ## <a name="container-engines"></a>Подсистемы контейнеров
 Azure IoT Edge требует наличия контейнера для запуска модулей в любой из поддерживаемых операционных систем. Корпорация Майкрософт предоставляет для этого подсистему контейнеров moby-engine. Она основана на проекте Moby с открытым кодом. Также часто используются подсистемы контейнеров Docker CE и Docker EE. Они также основаны на проекте Moby с открытым кодом и полностью совместимы с Azure IoT Edge. Корпорация Майкрософт поддерживает системы, использующие эти подсистемы контейнеров, по принципу "насколько возможно", но не гарантирует исправление всех возможных проблем, связанных с их использованием. По этой причине мы рекомендуем использовать для рабочей среды только подсистему moby-engine.
 
-
-<!-- Links -->
-[lnk-edge-blog]: https://azure.microsoft.com/blog/securing-the-intelligent-edge/ 

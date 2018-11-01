@@ -4,7 +4,7 @@ description: Узнайте, как выполнять мониторинг ув
 services: media-services
 documentationcenter: ''
 author: juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.assetid: a61fe157-81b1-45c1-89f2-224b7ef55869
 ms.service: media-services
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 12/09/2017
+ms.date: 10/29/2018
 ms.author: juliako
-ms.openlocfilehash: 564fc25699c3ae627804d49bfdc40ae9dd559269
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: b3ce3731f19565bfe950d03a2bbc980dda55a7f4
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33784493"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50238664"
 ---
 # <a name="use-azure-webhooks-to-monitor-media-services-job-notifications-with-net"></a>Использование веб-перехватчиков Azure для наблюдения за уведомлениями о заданиях служб мультимедиа с использованием .NET
 При выполнении заданий часто требуется способ отслеживания хода выполнения задачи. Уведомления о заданиях служб мультимедиа можно отслеживать с помощью объектов webhook Azure или [хранилища очередей Azure](media-services-dotnet-check-job-progress-with-queues.md). В этой статье приведены сведения о работе с веб-перехватчиками.
@@ -38,7 +38,7 @@ ms.locfileid: "33784493"
 
 Определения разных Функций Azure для служб мультимедиа .NET (включая приведенные в этой статье) см. [здесь](https://github.com/Azure-Samples/media-services-dotnet-functions-integration).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 

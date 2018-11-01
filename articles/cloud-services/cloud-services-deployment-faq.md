@@ -13,14 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/11/2018
+ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 05217129d4993514acaf8c717847040584984cb3
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: d44cfc0164892c34bcbe16ca07e9ec67190ada24
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34068910"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50415310"
 ---
 # <a name="deployment-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы развертывания для облачных служб Azure. Вопросы и ответы (FAQ)
 
@@ -64,17 +64,16 @@ ms.locfileid: "34068910"
 
 Дополнительные сведения см. в разделе [Как обновить облачную службу](cloud-services-update-azure-service.md).
 
-## <a name="why-am-i-not-able-to-deploy-cloud-services-through-service-management-apis-or-powershell-when-using-azure-resource-manager-storage-account"></a>Почему я не могу развернуть облачные службы с помощью API управления службами или PowerShell, когда я использую учетную запись хранения Azure Resource Manager? 
+## <a name="why-am-i-not-able-to-deploy-cloud-services-through-service-management-apis-or-powershell-when-using-azure-resource-manager-storage-account"></a>Почему я не могу развернуть облачные службы с помощью API управления службами или PowerShell, когда я использую учетную запись хранения Azure Resource Manager? 
 
-Облачная служба является классическим ресурсом, который напрямую несовместим с моделью Azure Resource Manager. Поэтому ее нельзя связать с учетной записью хранения Azure Resource Manager. Возможные сценарии: 
- 
+Облачная служба является классическим ресурсом, который напрямую несовместим с моделью Azure Resource Manager. Поэтому ее нельзя связать с учетной записью хранения Azure Resource Manager. Возможные сценарии: 
+ 
 - Развертывание с помощью REST API.
 
-    Чтобы обойти это ограничение при развертывании с помощью API REST управления службами, укажите URL-адрес SAS хранилища больших двоичных объектов, которое будет работать с классической учетной записью хранения и учетной записью хранения Azure Resource Manager. Дополнительные сведения о свойстве PackageUrl см. [здесь](https://msdn.microsoft.com/library/azure/ee460813.aspx).
-  
+    Чтобы обойти это ограничение при развертывании с помощью API REST управления службами, укажите URL-адрес SAS хранилища больших двоичных объектов, которое будет работать с классической учетной записью хранения и учетной записью хранения Azure Resource Manager. Дополнительные сведения о свойстве PackageUrl см. [здесь](https://msdn.microsoft.com/library/azure/ee460813.aspx).  
 - Развертывание с помощью [портала Azure](https://portal.azure.com).
 
-    Развертывание удастся выполнить с [портала Azure](https://portal.azure.com), так как вызов идет через прокси-сервер или оболочку совместимости, которые обеспечивают взаимодействие между классическими ресурсами и ресурсами Azure Resource Manager. 
+    Развертывание удастся выполнить с [портала Azure](https://portal.azure.com), так как вызов идет через прокси-сервер или оболочку совместимости, которые обеспечивают взаимодействие между классическими ресурсами и ресурсами Azure Resource Manager. 
  
 ## <a name="why-does-azure-portal-require-me-to-provide-a-storage-account-for-deployment"></a>Почему на портале Azure требуется предоставить учетную запись хранения для развертывания? 
 

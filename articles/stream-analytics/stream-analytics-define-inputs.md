@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/27/2018
-ms.openlocfilehash: 556b71d8312c7661b58a3ccf56fd76f6753ef9cf
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 2bd2a90c6bac280b6f68bde378b7f7d32b7fcd38
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49987585"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50248752"
 ---
 # <a name="stream-data-as-input-into-stream-analytics"></a>Потоковые данные в качестве входных данных Stream Analytics
 
@@ -115,7 +115,6 @@ FROM Input
 | **IoTHub.ConnectionDeviceId** | Идентификатор проверки подлинности, используемый для отправки этого сообщения. Это значение помещается в сообщения, связанные со службой, Центром Интернета вещей. |
 | **IoTHub.ConnectionDeviceGenerationId** | Идентификатор создания устройства, прошедшего проверку подлинности, используемый для отправки этого сообщения. Это значение помещается в сообщения, связанные со службой, Центром Интернета вещей. |
 | **IoTHub.EnqueuedTime** | Время, когда Центр Интернета вещей получил сообщение. |
-| **IoTHub.StreamId** | Настраиваемое свойство события, добавленное устройством отправителя. |
 
 
 ## <a name="stream-data-from-blob-storage"></a>Потоковая передача данных из хранилища BLOB-объектов

@@ -10,12 +10,12 @@ ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: pafarley
-ms.openlocfilehash: a29fd161e788a0c10e5fcb5cd5cd735e1f2cf1b4
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: d90844cabeed787f0084dde09ede0fc389819c08
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49343583"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50420368"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-java-in-computer-vision"></a>Краткое руководство по созданию эскизов с помощью REST API и Java API компьютерного зрения
 
@@ -25,8 +25,8 @@ ms.locfileid: "49343583"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- У вас должна быть установлена платформа [Java&trade;, комплект разработчика Java, выпуск "Стандартный" версии 7 или 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (JDK 7 или 8).
-- У вас должен быть ключ подписки для API компьютерного зрения. Получение ключа подписки описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- У вас должна быть установлена платформа [Java&trade;, комплект разработчика Java, выпуск "Стандартный" версии 7 или 8](https://aka.ms/azure-jdks) (JDK 7 или 8).
+- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
 ## <a name="create-and-run-the-sample-application"></a>Создание и запуск примера приложения
 
@@ -57,7 +57,7 @@ ms.locfileid: "49343583"
    import org.json.JSONObject;
    ```
 
-1. Замените общий класс `Main` следующим кодом, а затем внесите в него следующие изменения (там, где это необходимо):
+1. Замените общий класс `Main` следующим кодом, а затем внесите в него следующие изменения (там, где это необходимо).
    1. замените значение `subscriptionKey` своим ключом подписки;
    1. замените значение `uriBase` URL-адресом конечной точки для метода [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) из региона Azure, где вы получили ключи подписки, если это необходимо;
    1. при необходимости замените значение `imageToAnalyze` URL-адресом другого изображения, для которого вы хотите создать эскиз.
@@ -162,13 +162,13 @@ public class Main {
 }
 ```
 
-## <a name="examine-the-response"></a>Изучите ответ
+## <a name="examine-the-response"></a>Изучите ответ.
 
 Успешный ответ возвращается в виде двоичных данных, которые представляют данные изображения для эскиза. Если запрос завершается успешно, эскиз создается из двоичных данных в ответе и отображается в отдельном окне, созданном примером приложения. Если запрос завершается сбоем, ответ отображается в окне консоли. Ответ на невыполненный запрос содержит код ошибки и сообщение с описанием проблемы.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если проект Java больше не нужен — удалите его вместе со скомпилированным классом и импортированными библиотеками.
+Если проект Java больше не нужен, удалите его вместе со скомпилированным классом и импортированными библиотеками.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

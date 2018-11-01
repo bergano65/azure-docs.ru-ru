@@ -5,19 +5,19 @@ services: app-service
 author: cephalin
 ms.service: app-service
 ms.topic: include
-ms.date: 02/02/2018
+ms.date: 10/30/2018
 ms.author: cephalin
 ms.custom: include file
-ms.openlocfilehash: 917f8cc4a22199351614d101f1300b80052ee9a9
-ms.sourcegitcommit: eeb5daebf10564ec110a4e83874db0fb9f9f8061
+ms.openlocfilehash: 60d6ff8dea81102cfac0fea76f6fd11ff8465a23
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28986085"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50254716"
 ---
 ## <a name="deploy-zip-file"></a>Развертывание ZIP-файла
 
-Откройте браузер и перейдите по адресу `https://<app_name>.scm.azurewebsites.net/ZipDeploy`.
+Откройте браузер и перейдите по адресу `https://<app_name>.scm.azurewebsites.net/ZipDeployUI`.
 
 Загрузите ZIP-файл, созданный при выполнении действий из раздела [Создание ZIP-файла проекта](#create-a-project-zip-file), перетащив его в область проводника файлов на веб-странице.
 

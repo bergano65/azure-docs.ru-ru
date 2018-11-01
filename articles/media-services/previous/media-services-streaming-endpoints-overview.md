@@ -5,7 +5,7 @@ services: media-services
 documentationcenter: ''
 author: Juliako
 writer: juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.assetid: 097ab5e5-24e1-4e8e-b112-be74172c2701
 ms.service: media-services
@@ -13,14 +13,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/29/2017
+ms.date: 10/24/2018
 ms.author: juliako
-ms.openlocfilehash: 7b4077747d4c9ec581496786063fc8fbe0c6b247
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 06f219b9cf7d17e80699aebc1082b14e2de45c8b
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33785953"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50240228"
 ---
 # <a name="streaming-endpoints-overview"></a>Общие сведения о конечных точках потоковой передачи 
 
@@ -78,7 +78,7 @@ type|ОПИСАНИЕ
 Функция|Стандартная|Премиум
 ---|---|---
 Бесплатно первые 15 дней| Yes |Нет 
-Throughput |До 600 Мбит/с, когда Azure CDN не используется. Масштабирование с использованием CDN.|200 Мбит/с на единицу потоковой передачи. Масштабирование с использованием CDN.
+Пропускная способность |До 600 Мбит/с, когда Azure CDN не используется. Масштабирование с использованием CDN.|200 Мбит/с на единицу потоковой передачи. Масштабирование с использованием CDN.
 Соглашение об уровне обслуживания | 99,9|99,9 (200 Мбит/с на единицу потоковой передачи).
 CDN|Azure CDN, CDN сторонних поставщиков или без CDN.|Azure CDN, CDN сторонних поставщиков или без CDN.
 Пропорциональное выставление счетов| Ежедневно|Ежедневно

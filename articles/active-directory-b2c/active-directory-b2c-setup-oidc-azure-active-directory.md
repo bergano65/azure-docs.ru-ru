@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/22/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: beb2d618d93f4c599f946194bd483326471065f4
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.openlocfilehash: 9b9754c9087f2d0064cc1aa75e76520731dfb3a9
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49944810"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50242864"
 ---
 # <a name="set-up-sign-in-azure-active-directory-accounts-a-built-in-policy-in-azure-active-directory-b2c"></a>Конфигурация входа в учетные записи Azure Active Directory со встроенной политикой в Azure Active Directory B2C
 
@@ -34,10 +34,10 @@ ms.locfileid: "49944810"
 4. Выберите **Регистрация нового приложения**.
 5. Введите имя приложения. Например, `Azure AD B2C App`.
 6. В качестве **типа приложения** выберите `Web app / API`.
-7. В поле **URL-адрес входа** введите следующий URL-адрес в нижнем регистре, где `your-B2C-tenant-name` заменяется именем вашего клиента Azure AD B2C. Например, `https://fabrikam.b2clogin.com/fabrikam.b2clogin.com/oauth2/authresp`:
+7. В поле **URL-адрес входа** введите следующий URL-адрес в нижнем регистре, где `your-B2C-tenant-name` заменяется именем вашего клиента Azure AD B2C. Например, `https://fabrikam.b2clogin.com/fabrikam.onmicrosoft.com/oauth2/authresp`:
 
     ```
-    https://your-tenant-name.b2clogin.com/your-B2C-tenant-name.b2clogin.com/oauth2/authresp
+    https://your-tenant-name.b2clogin.com/your-B2C-tenant-name.onmicrosoft.com/oauth2/authresp
     ```
 
     Всем URL-адресам следует использовать [b2clogin.com](b2clogin.md).

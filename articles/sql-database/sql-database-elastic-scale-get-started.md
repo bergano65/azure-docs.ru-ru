@@ -2,19 +2,22 @@
 title: Начало работы с инструментами эластичных баз данных | Документация Майкрософт
 description: Объяснение основных принципов инструментов эластичных баз данных SQL Azure, в том числе пример простого для запуска приложения.
 services: sql-database
-manager: craigg
-author: anumjs
 ms.service: sql-database
-ms.custom: scale out apps
+ms.subservice: elastic-scale
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 08/27/2018
+author: anumjs
 ms.author: anjangsh
-ms.openlocfilehash: 778d08f6154b999215f27b765560b7394c2cd59b
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.reviewer: ''
+manager: craigg
+ms.date: 08/27/2018
+ms.openlocfilehash: 74bbaeeee390952bf42407a53684bc33a7cfc543
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43123389"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50242779"
 ---
 # <a name="get-started-with-elastic-database-tools"></a>Начало работы с инструментами эластичных баз данных
 В этом документе описано, как разработать [клиентскую библиотеку эластичной базы данных](sql-database-elastic-database-client-library.md), которая поможет запустить пример приложения. Используя пример приложения, мы создадим простое сегментированное приложение и изучим основные возможности инструментов эластичных баз данных SQL Azure. В этом документе описано, как [управлять сопоставлениями сегментов](sql-database-elastic-scale-shard-map-management.md), [настроить маршрутизацию, зависящую от данных](sql-database-elastic-scale-data-dependent-routing.md), и [создавать многосегментные запросы](sql-database-elastic-scale-multishard-querying.md). Клиентская библиотека доступна для .NET и Java. 

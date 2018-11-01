@@ -10,12 +10,12 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 tags: connectors
 ms.date: 09/24/2018
-ms.openlocfilehash: cfee4f06479d2504b88f4a5d5a0a2417154e3b03
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 2250c6952aeac7b10dcb1a1a35419941e5cad507
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47064515"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50233214"
 ---
 # <a name="monitor-create-and-manage-sftp-files-by-using-azure-logic-apps-and-sftp-ssh-connector"></a>Мониторинг и создание SFTP-файлов, а также управление ими с помощью Azure Logic Apps и соединителя SFTP-SSH
 
@@ -126,7 +126,7 @@ ms.locfileid: "47064515"
 ## <a name="get-support"></a>Получение поддержки
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](http://aka.ms/logicapps-wish).
+* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

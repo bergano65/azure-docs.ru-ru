@@ -1,5 +1,16 @@
-
-
+---
+author: cynthn
+ms.service: virtual-machines
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: cynthn
+ms.openlocfilehash: 2e72d669abcc784fe8159fd4c54bd074dc60299c
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50227136"
+---
 ![Виртуальные машины в автономной облачной службе](./media/virtual-machines-common-classic-connect-vms/CloudServiceExample.png)
 
 Если разместить виртуальные машины в виртуальной сети, можно варьировать количество облачных служб, используемых для балансировки нагрузки и групп доступности. Кроме того, можно упорядочить виртуальные машины в подсетях таким же образом, как в локальной сети и подключить виртуальную сеть к локальной сети. Ниже приведен пример:
