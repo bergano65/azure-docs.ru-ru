@@ -13,14 +13,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-multiple
 ms.devlang: multiple
 ms.topic: article
-ms.date: 04/14/2018
+ms.date: 10/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: fbdb52b1b2dee682021fd822d584551f41f723ff
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: cec57f2dafaddfa2ebc492f0cb92755b1f65607f
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33778517"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50251028"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Часто задаваемые вопросы об отправке push-уведомлений с помощью Центров уведомлений Azure
 ## <a name="general"></a>Общие сведения
@@ -73,7 +73,7 @@ ms.locfileid: "33778517"
 Push-уведомления поддерживаются на платформах [iOS](notification-hubs-ios-apple-push-notification-apns-get-started.md), [Android](notification-hubs-android-push-notification-google-gcm-get-started.md), [Windows Universal](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md), [Windows Phone](notification-hubs-windows-mobile-push-notifications-mpns.md), [Kindle](notification-hubs-kindle-amazon-adm-push-notification.md), [Android China (через Baidu)](notification-hubs-baidu-china-android-notifications-get-started.md), Xamarin ([iOS](xamarin-notification-hubs-ios-push-notification-apns-get-started.md) и [Android](xamarin-notification-hubs-push-notifications-android-gcm.md)), [приложения Chrome](notification-hubs-chrome-push-notifications-get-started.md) и [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari). Дополнительные сведения см. на странице [Отправка push-уведомлений с помощью центров уведомлений Azure в iOS].
 
 ### <a name="do-you-support-text-message-email-or-web-notifications"></a>Поддерживаются ли уведомления по SMS и электронной почте, а также веб-уведомления?
-Центры уведомлений в первую очередь созданы для отправки уведомлений в мобильные приложения и не поддерживают отправку электронных писем или текстовых сообщений. Но с помощью [Мобильные приложения] вы можете интегрировать сторонние платформы, которые предоставляют такие возможности, с Центрами уведомлений, отправляющими системные push-уведомления.
+Центы уведомлений в первую очередь созданы для отправки уведомлений в мобильные приложения и не поддерживают отправку электронных писем или текстовых сообщений. Но с помощью [Мобильные приложения] вы можете интегрировать сторонние платформы, которые предоставляют такие возможности, с Центрами уведомлений, отправляющими системные push-уведомления.
 
 Кроме того, Центры уведомлений также не предоставляют возможность отправки push-уведомлений в браузере по умолчанию. Клиенты могут внедрить эту функцию с помощью SignalR на базе поддерживаемых серверных платформ. Если вы хотите отправлять уведомления в приложения браузера в "песочнице" Chrome, ознакомьтесь со статьей [учебником по приложениям Chrome].
 
@@ -213,7 +213,7 @@ Push-уведомления поддерживаются на платформа
 [Безопасность]: https://msdn.microsoft.com/library/azure/dn495373.aspx
 [Безопасные push-уведомления посредством центров уведомлений Azure]: http://azure.microsoft.com/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/
 [Центры уведомлений Azure — рекомендации по диагностике]: http://azure.microsoft.com/documentation/articles/notification-hubs-diagnosing/
-[Метрики]: https://msdn.microsoft.com/library/dn458822.aspx
+[Метрики]: ../monitoring-and-diagnostics/monitoring-supported-metrics.md#microsoftnotificationhubsnamespacesnotificationhubs
 [Fetch Notification Hubs Telemetry Programmatically]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel (Получение данных телеметрии Центров уведомлений программным путем)
 [Экспорт и импорт регистраций]: https://msdn.microsoft.com/library/dn790624.aspx
 [портал Azure]: https://portal.azure.com

@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 09/07/2018
 ms.author: glenga
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 513a30e9e8f562d8d83ac7e18560c565d617a258
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: ce4adface65237ec6f4ed0ef8f8ba9bbdf72355c
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49116666"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50421056"
 ---
 # <a name="create-your-first-function-using-visual-studio-code"></a>Создание функции в Azure с помощью Visual Studio Code
 
@@ -42,7 +42,7 @@ ms.locfileid: "49116666"
     | Язык | Добавочный номер |
     | -------- | --------- |
     | **C#** | [C# для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp);<br/>[Средства .NET Core CLI](https://docs.microsoft.com/dotnet/core/tools/?tabs=netcore2x)*   |
-    | **Java** | [Отладчик для Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug)<br/>[JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)<br/>[Maven 3+](https://maven.apache.org/) |
+    | **Java** | [Отладчик для Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug)<br/>[Java 8](https://aka.ms/azure-jdks);<br/>[Maven 3+](https://maven.apache.org/) |
     | **JavaScript** | [Node 8.0+](https://nodejs.org/)  |
 
     \* Также требуется для основных инструментов.

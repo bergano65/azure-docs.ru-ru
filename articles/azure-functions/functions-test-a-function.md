@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 02/02/2017
 ms.author: glenga
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1aa1c3a3c0dd4985662b5ceb4acd7250cf2d0186
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: 8b2605bb30d7a1442c471c8cf1483b106ca27581
+ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44093232"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50086766"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Методика тестирования кода с помощью Функций Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "44093232"
 Все эти методы тестирования используют функцию триггера HTTP, которая принимает входные данные через параметр строки запроса или текст запроса. Эта функция создается на портале Azure в первом разделе.
 
 ## <a name="create-a-simple-function-for-testing-using-the-azure-portal"></a>Создание простой функции для тестирования с помощью портала Azure
-В большей части этого руководства мы будем использовать немного измененную версию шаблона функции JavaScript HttpTrigger, который доступен при создании функции. Если вам нужна помощь при создании функции, просмотрите этот [учебник](functions-create-first-azure-function.md). Выберите шаблон **HttpTrigger- JavaScript** при создании тестовой функции на [портала Azure].
+В большей части этого руководства мы будем использовать немного измененную версию шаблона функции JavaScript HttpTrigger, который доступен при создании функции. Если вам нужна помощь при создании функции, просмотрите этот [учебник](functions-create-first-azure-function.md). Выберите шаблон **HttpTrigger- JavaScript** при создании тестовой функции на [портал Azure].
 
 Используемый по умолчанию шаблон функции по сути представляет собой функцию hello world, выводящую на экран имя из текста запроса или параметра строки запроса `name=<your name>`.  Мы обновим код, позволив указать имя и адрес в качестве содержимого JSON в тексте запроса. Затем функция выведет эти значения обратно на клиент при его наличии.   
 
@@ -182,7 +182,7 @@ function ProcessNewUserInformation(context, name, address) {
 ### <a name="test-a-blob-trigger-by-using-storage-explorer"></a>Тестирование триггера больших двоичных объектов с помощью Storage Explorer
 Функцию триггера больших двоичных объектов можно протестировать с помощью [Azure Storage Explorer](http://storageexplorer.com/).
 
-1. На [портала Azure] для приложения-функции создайте функцию триггера больших двоичных объектов на языке C#, F# или JavaScript. Задайте путь для отслеживания имени контейнера больших двоичных объектов. Например: 
+1. На [портал Azure] для приложения-функции создайте функцию триггера больших двоичных объектов на языке C#, F# или JavaScript. Задайте путь для отслеживания имени контейнера больших двоичных объектов. Например: 
 
         files
 2. Нажмите кнопку **+** , чтобы выбрать или создать учетную запись хранения, которую следует использовать. Затем щелкните **Создать**.
@@ -244,7 +244,7 @@ function ProcessNewUserInformation(context, name, address) {
 >
 >
 
-1. На [портала Azure] для приложения-функции щелкните **Новая функция** > **QueueTrigger — C#**.
+1. На [портал Azure] для приложения-функции щелкните **Новая функция** > **QueueTrigger — C#**.
 2. Введите имя очереди, которое будет отслеживаться функцией очереди:
 
         queue-newusers
@@ -252,7 +252,7 @@ function ProcessNewUserInformation(context, name, address) {
 4. Оставьте это окно браузера с порталом открытым, чтобы можно было отслеживать записи журнала на наличие стандартного кода шаблона функции очереди.
 
 #### <a name="create-a-timer-trigger-to-drop-a-message-in-the-queue"></a>Создание триггера таймера для помещения сообщения в очередь
-1. Откройте [портала Azure] в новом окне браузера и перейдите к приложению-функции.
+1. Откройте [портал Azure] в новом окне браузера и перейдите к приложению-функции.
 2. Щелкните **Новая функция** > **TimerTrigger — C#**. Введите выражение CRON, чтобы задать частоту выполнения кода таймера при тестировании функции очереди. Затем щелкните **Создать**. Если тестирование нужно выполнять каждые 30 секунд, можно использовать следующее [выражение CRON](https://wikipedia.org/wiki/Cron#CRON_expression):
 
         */30 * * * * *
@@ -270,8 +270,9 @@ function ProcessNewUserInformation(context, name, address) {
 
     ```cs
     using System;
+    using Microsoft.Extensions.Logging;
 
-    public static void Run(TimerInfo myTimer, out String myQueue, TraceWriter log)
+    public static void Run(TimerInfo myTimer, out String myQueue, ILogger log)
     {
         String newUser =
         "{\"name\":\"User testing from C# timer function\",\"address\":\"XYZ\"}";
@@ -439,4 +440,4 @@ static void Main(string[] args)
 
 <!-- URLs. -->
 
-[портала Azure]: https://portal.azure.com
+[портал Azure]: https://portal.azure.com
