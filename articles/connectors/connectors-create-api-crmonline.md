@@ -10,12 +10,12 @@ ms.suite: integration
 ms.topic: article
 ms.date: 08/18/2018
 tags: connectors
-ms.openlocfilehash: b1ff93f1e03e047ad5ac00259c1aa53afda0c76d
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: 1247f603b759364edcee2bff12f75bb0a217ecd6
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42818946"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50231260"
 ---
 # <a name="manage-dynamics-365-records-with-azure-logic-apps"></a>Управление записями Dynamics 365 с помощью Azure Logic Apps
 
@@ -192,7 +192,7 @@ ms.locfileid: "42818946"
 ## <a name="get-support"></a>Получение поддержки
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](http://aka.ms/logicapps-wish).
+* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

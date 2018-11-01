@@ -4,10 +4,6 @@ description: Сведения о создании общедоступной п�
 services: load-balancer
 documentationcenter: na
 author: KumudD
-manager: jeconnoc
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -15,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2018
 ms.author: kumud
-ms.openlocfilehash: 9a51638ea6d85178e6631ac278c116e4c7e05d61
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 70514433d11bbe7606d75a3e2c1f6dffc251621f
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34200264"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50740949"
 ---
 #  <a name="create-a-public-load-balancer-standard-with-zone-redundant-public-ip-address-frontend-using-azure-portal"></a>Создание общедоступной подсистемы балансировки нагрузки уровня "Стандартный" с избыточным в пределах зоны интерфейсным общедоступным IP-адресом с помощью портала Azure
 

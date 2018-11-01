@@ -10,12 +10,12 @@ ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: pafarley
-ms.openlocfilehash: 83675a146d6d43ce5bc25b24809924d7be1331dd
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: e7bcb1ef902bfa525a917adead0dd2fe8c44fa83
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49339973"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50413831"
 ---
 # <a name="quickstart-extract-printed-text-ocr-using-the-rest-api-and-java-in-computer-vision"></a>Краткое руководство по извлечению печатного текста (OCR) с помощью REST API и Java в службе "Компьютерное зрение"
 
@@ -25,7 +25,7 @@ ms.locfileid: "49339973"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- У вас должна быть установлена платформа [Java&trade;, комплект разработчика Java, выпуск "Стандартный" версии 7 или 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (JDK 7 или 8).
+- У вас должна быть установлена платформа [Java&trade;, комплект разработчика Java, выпуск "Стандартный" версии 7 или 8](https://aka.ms/azure-jdks) (JDK 7 или 8).
 - У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
 ## <a name="create-and-run-the-sample-application"></a>Создание и запуск примера приложения

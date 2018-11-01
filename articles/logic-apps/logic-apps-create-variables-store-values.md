@@ -10,12 +10,12 @@ ms.date: 05/30/2018
 ms.service: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: 0efce9fbbbd241f335f08bb258b6ba343982fdb9
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: c0f2802bae366637fd93d47e33619746b7142f53
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299194"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50231633"
 ---
 # <a name="create-variables-for-saving-and-managing-values-in-azure-logic-apps"></a>Создание переменных для сохранения значений и управления ими в Azure Logic Apps
 
@@ -32,7 +32,7 @@ ms.locfileid: "35299194"
 
 Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">получите бесплатную учетную запись Azure</a>. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, вам потребуются перечисленные ниже компоненты.
 
@@ -456,7 +456,7 @@ ms.locfileid: "35299194"
 ## <a name="get-support"></a>Получение поддержки
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](http://aka.ms/logicapps-wish).
+* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

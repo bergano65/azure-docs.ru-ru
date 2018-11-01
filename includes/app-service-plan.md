@@ -1,3 +1,16 @@
+---
+author: cephalin
+ms.service: app-service
+ms.topic: include
+ms.date: 11/03/2016
+ms.author: cephalin
+ms.openlocfilehash: 9ef82310fa17e9b255986eb156a86ea8bdba5ea5
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50132830"
+---
 [План службы приложений](../articles/app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) указывает расположение, размер и функции фермы веб-серверов, в которой размещается приложение. Вы можете сэкономить средства при размещении нескольких приложений, настроив совместное использование одного плана службы приложений в веб-приложениях.
 
 Планы службы приложений определяют такие компоненты:

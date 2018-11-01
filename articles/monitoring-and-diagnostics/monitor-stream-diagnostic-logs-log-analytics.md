@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/04/2018
 ms.author: johnkem
 ms.component: logs
-ms.openlocfilehash: c419a3c44a38f72d56f2b7b362c62e683fc20c7f
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 057ce4b93be27c27e27d49e61a89a7c2b9e46dc8
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46993023"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50421073"
 ---
 # <a name="stream-azure-diagnostic-logs-to-log-analytics"></a>Потоковая передача журналов диагностики Azure в Log Analytics
 
@@ -44,21 +44,21 @@ Azure Log Analytics — это гибкий инструмент поиска п
 ## <a name="stream-diagnostic-logs-using-the-portal"></a>Потоковая передача журналов диагностики с помощью портала
 1. На портале перейдите к Azure Monitor и щелкните **Параметры диагностики**.
 
-    ![Раздел мониторинга Azure Monitor](media/monitoring-stream-diagnostic-logs-to-log-analytics/diagnostic-settings-blade.png)
+    ![Раздел мониторинга Azure Monitor](media/monitor-stream-diagnostic-logs-log-analytics/diagnostic-settings-blade.png)
 
 2. При необходимости отфильтруйте список по группе или типу ресурса, а затем щелкните ресурс, для которого необходимо задать параметр диагностики.
 
 3. Если параметров для выбранного ресурса не существует, вам будет предложено создать параметр. Щелкните Turn on diagnostics (Включить диагностику).
 
-   ![Добавление параметра диагностики — имеющиеся параметры отсутствуют](media/monitoring-stream-diagnostic-logs-to-log-analytics/diagnostic-settings-none.png)
+   ![Добавление параметра диагностики — имеющиеся параметры отсутствуют](media/monitor-stream-diagnostic-logs-log-analytics/diagnostic-settings-none.png)
 
    Если в ресурсе имеются параметры, для него отобразится список настроенных параметров. Нажмите Add diagnostic setting (Добавить параметр диагностики).
 
-   ![Добавление параметра диагностики — имеющиеся параметры](media/monitoring-stream-diagnostic-logs-to-log-analytics/diagnostic-settings-multiple.png)
+   ![Добавление параметра диагностики — имеющиеся параметры](media/monitor-stream-diagnostic-logs-log-analytics/diagnostic-settings-multiple.png)
 
 3. Введите имя параметра и установите флажок для **Отправить в Log Analytics**, затем выберите рабочую область Log Analytics.
 
-   ![Добавление параметра диагностики — имеющиеся параметры](media/monitoring-stream-diagnostic-logs-to-log-analytics/diagnostic-settings-configure.png)
+   ![Добавление параметра диагностики — имеющиеся параметры](media/monitor-stream-diagnostic-logs-log-analytics/diagnostic-settings-configure.png)
 
 4. Выберите команду **Сохранить**.
 

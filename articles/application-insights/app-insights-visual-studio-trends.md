@@ -3,7 +3,7 @@ title: Анализ трендов в Visual Studio | Документация �
 description: Сведения об анализе, визуализации и изучении трендов в данных телеметрии Application Insights в Visual Studio.
 services: application-insights
 documentationcenter: .net
-author: mrbullwinkle
+author: NumberByColors
 manager: carmonm
 ms.assetid: 3150c6fc-2691-44f6-a290-fc5cd68e692a
 ms.service: application-insights
@@ -13,14 +13,15 @@ ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/17/2017
-ms.reviewer: daviste
-ms.author: mbullwin
-ms.openlocfilehash: 17303186b176c6d14b1c895d17d21c0f29cdcdcf
-ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.reviewer: mbullwin
+ms.pm_owner: daviste;NumberByColors
+ms.author: daviste
+ms.openlocfilehash: 7de545870b87d4b221bba8eba32652a00c9ad2b2
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42441795"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50139920"
 ---
 # <a name="analyzing-trends-in-visual-studio"></a>Анализ трендов в Visual Studio
 Средство "Тренды Application Insights" визуализирует изменение важных событий телеметрии приложения с течением времени, помогая быстро выявлять проблемы и аномалии. В этом средстве можно перейти к более подробным диагностическим сведениям, что позволяет повысить производительность приложения, а также отслеживать причины исключений и анализировать данные пользовательских событий.

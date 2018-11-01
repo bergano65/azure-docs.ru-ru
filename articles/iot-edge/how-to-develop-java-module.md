@@ -9,12 +9,12 @@ ms.author: xshi
 ms.date: 09/21/2018
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: a5e86b7c93344a6c61fecaa41b98bc1daa20f36f
-ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
+ms.openlocfilehash: af37822429098f904e08404462deb134d4370898
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47423227"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50421209"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-java-modules-for-azure-iot-edge"></a>Разработка и отладка модулей Java для Azure IoT Edge с помощью Visual Studio Code
 
@@ -33,7 +33,7 @@ ms.locfileid: "47423227"
 * [расширение Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker).
 
 Чтобы создать модуль, требуется Java и Maven для создания и запуска кода модуля, Docker для создания образа модуля и реестр контейнеров для хранения образа модуля:
-* [Пакет SDK для Java SE 10](http://www.oracle.com/technetwork/java/javase/downloads/index.html) и [переменная среды `JAVA_HOME`,](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/) которая указывает на эту установку JDK.
+* [Пакет SDK для Java SE 10](https://aka.ms/azure-jdks) и [переменная среды `JAVA_HOME`,](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/) которая указывает на эту установку JDK.
 * [Maven](https://maven.apache.org/)
 * [Docker](https://docs.docker.com/engine/installation/)
 * [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) или [Docker Hub](https://docs.docker.com/docker-hub/repos/#viewing-repository-tags).

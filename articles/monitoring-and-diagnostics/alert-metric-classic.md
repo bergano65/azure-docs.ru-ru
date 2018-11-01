@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/18/2018
 ms.author: snmuvva
 ms.component: alerts
-ms.openlocfilehash: ffac9511ab93367cba3f006249bd92658a520e09
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 76a87b79ccc776e0facd57a1cff50fbbcb4f0b9e
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49386946"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50414885"
 ---
 # <a name="create-view-and-manage-classic-metric-alerts-using-azure-monitor"></a>Создание и просмотр классических оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -24,11 +24,11 @@ ms.locfileid: "49386946"
 
 2. В разделе **Мониторинг** выберите **Оповещения (классические)**. Текст и значок для разных ресурсов могут незначительно отличаться. Если пункт **Оповещения (классические)** не отображается здесь, его можно найти в разделе **Оповещения** или **Правила генерации оповещений**
 
-    ![Мониторинг](./media/alerts-metric-classic/AlertRulesButton.png)
+    ![Мониторинг](media/alert-metric-classic/AlertRulesButton.png)
 
 3. Выберите команду **Добавить оповещение метрики (классическое)**, а затем заполните поля.
 
-    ![Добавить оповещение](./media/alerts-metric-classic/AddAlertOnlyParamsPage.png)
+    ![Добавить оповещение](media/alert-metric-classic/AddAlertOnlyParamsPage.png)
 
 4. Присвойте **имя** правилу генерации оповещений. Затем введите **описание**, которое также будет отображаться в уведомлениях по электронной почте.
 

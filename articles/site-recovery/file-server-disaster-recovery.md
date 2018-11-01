@@ -1,23 +1,19 @@
 ---
 title: Защита файлового сервера с помощью Azure Site Recovery
 description: В этой статье описывается защита файлового сервера с помощью Azure Site Recovery.
-services: site-recovery
 author: rajani-janaki-ram
 manager: gauravd
 ms.service: site-recovery
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.date: 07/06/2018
 ms.author: rajanaki
 ms.custom: mvc
-ms.openlocfilehash: 0b6d5dccbce30c55e259e4bb3f8ae4194a02b646
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 0eed8179396c80e4ea26ff90b53324b9a2891df0
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37916889"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50214908"
 ---
 # <a name="protect-a-file-server-by-using-azure-site-recovery"></a>Защита файлового сервера с помощью Azure Site Recovery 
 

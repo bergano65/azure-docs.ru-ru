@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/26/2018
 ms.author: zhiweiw
-ms.openlocfilehash: e470a44732b881311eacecfdf2bd2211598d880a
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: ca9f23703315424fcf08350ae3111a20dd94c160
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49984866"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50233231"
 ---
 # <a name="health-service-data-is-not-up-to-date-alert"></a>Оповещение "Данные службы работоспособности неактуальны"
 
@@ -35,19 +35,27 @@ ms.locfileid: "49984866"
 * Используйте [средство тестирования подключения](how-to-connect-health-agent-install.md#test-connectivity-to-azure-ad-connect-health-service) для обнаружения возможных проблем с подключением.
 * Если у вас есть прокси-сервер HTTP, настройте его, как описано [здесь](how-to-connect-health-agent-install.md#configure-azure-ad-connect-health-agents-to-use-http-proxy). 
 
+### <a name="connect-health-for-sync"></a>Connect Health для синхронизации
+
+| Элементы данных | Действия по устранению неполадок |
+| --- | --- | 
+| PerfCounter | - [Исходящие подключения к конечным точкам службы Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections). <br />- [Проверка SSL для исходящего трафика отфильтрована или отключена](https://technet.microsoft.com/library/ee796230.aspx). <br /> - [Порты брандмауэра на сервере с агентом](https://technet.microsoft.com/library/ms345310(v=sql.100).aspx). <br /> - [Разрешение назначенных веб-сайтов при включенной политике усиленной безопасности IE](https://technet.microsoft.com/en-us/windows/ms537180(v=vs.60)). |
+| AadSyncService-SynchronizationRules, <br /> AadSyncService-Connectors, <br /> AadSyncService-GlobalConfigurations, <br /> AadSyncService-RunProfileResults, <br /> AadSyncService-ServiceConfigurations, <br /> AadSyncService-ServiceStatus | - Исходящие подключения на основе IP-адресов. Cм. [диапазоны IP-адресов Azure](https://www.microsoft.com/download/details.aspx?id=41653). <br /> - [Исходящие подключения к конечным точкам службы Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections). <br /> -  [Порты брандмауэра на сервере с агентом](https://technet.microsoft.com/library/ms345310(v=sql.100).aspx). | 
+
 ### <a name="connect-health-for-adfs"></a>Connect Health для ADFS
+
 Проведите дополнительные проверки AD FS и выполните инструкции из [справки по AD FS](https://adfshelp.microsoft.com/TroubleshootingGuides/Workflow/3ef51c1f-499e-4e07-b3c4-60271640e282).
 
-### <a name="data-collection-map-required-steps"></a>Устранение неполадок со сбором данных
-| Имя службы | Элементы данных | Действия по устранению неполадок |
-| --- | --- | --- | 
-| Connect Health для AD FS | PerfCounter, TestResult | - [Исходящие подключения к конечным точкам службы Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections). <br />- [Проверка SSL для исходящего трафика отфильтрована или отключена](https://technet.microsoft.com/library/ee796230.aspx). <br />-  [Порты брандмауэра на сервере с агентом](https://technet.microsoft.com/library/ms345310(v=sql.100).aspx). <br /> - [Разрешение назначенных веб-сайтов при включенной политике усиленной безопасности IE](https://support.microsoft.com/help/815141/internet-explorer-enhanced-security-configuration-changes-the-browsing). |
-|  | Adfs-UsageMetrics | Исходящие подключения на основе IP-адресов. Cм. [диапазоны IP-адресов Azure](https://www.microsoft.com/download/details.aspx?id=41653). | 
-| Connect Health для синхронизации | PerfCounter | - [Исходящие подключения к конечным точкам службы Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections). <br />- [Проверка SSL для исходящего трафика отфильтрована или отключена](https://technet.microsoft.com/library/ee796230.aspx). <br /> - [Порты брандмауэра на сервере с агентом](https://technet.microsoft.com/library/ms345310(v=sql.100).aspx). <br /> - [Разрешение назначенных веб-сайтов при включенной политике усиленной безопасности IE](https://support.microsoft.com/help/815141/internet-explorer-enhanced-security-configuration-changes-the-browsing). |
-|  | AadSyncService-SynchronizationRules, <br /> AadSyncService-Connectors, <br /> AadSyncService-GlobalConfigurations, <br /> AadSyncService-RunProfileResults, <br /> AadSyncService-ServiceConfigurations, <br /> AadSyncService-ServiceStatus | - Исходящие подключения на основе IP-адресов. Cм. [диапазоны IP-адресов Azure](https://www.microsoft.com/download/details.aspx?id=41653). <br /> - [Исходящие подключения к конечным точкам службы Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections). <br /> -  [Порты брандмауэра на сервере с агентом](https://technet.microsoft.com/library/ms345310(v=sql.100).aspx). | 
-| Connect Health для доменных служб Active Directory  | PerfCounter, Adds-TopologyInfo-Json, Common-TestData-Json | - [Исходящие подключения к конечным точкам службы Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections). <br /> - [Проверка SSL для исходящего трафика отфильтрована или отключена](https://technet.microsoft.com/library/ee796230.aspx). <br />-  [Порты брандмауэра на сервере с агентом](https://technet.microsoft.com/library/ms345310(v=sql.100).aspx). <br /> - [Разрешение назначенных веб-сайтов при включенной политике усиленной безопасности IE](https://support.microsoft.com/help/815141/internet-explorer-enhanced-security-configuration-changes-the-browsing). <br />  - Исходящие подключения на основе IP-адресов. Cм. [диапазоны IP-адресов Azure](https://www.microsoft.com/download/details.aspx?id=41653).  |
+| Элементы данных | Действия по устранению неполадок |
+| --- | --- | 
+| PerfCounter, TestResult | - [Исходящие подключения к конечным точкам службы Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections). <br />- [Проверка SSL для исходящего трафика отфильтрована или отключена](https://technet.microsoft.com/library/ee796230.aspx). <br />-  [Порты брандмауэра на сервере с агентом](https://technet.microsoft.com/library/ms345310(v=sql.100).aspx). <br /> - [Разрешение назначенных веб-сайтов при включенной политике усиленной безопасности IE](https://technet.microsoft.com/en-us/windows/ms537180(v=vs.60)). |
+|  Adfs-UsageMetrics | Исходящие подключения на основе IP-адресов. Cм. [диапазоны IP-адресов Azure](https://www.microsoft.com/download/details.aspx?id=41653). | 
 
+### <a name="connect-health-for-adds"></a>Connect Health для доменных служб Active Directory
 
+| Элементы данных | Действия по устранению неполадок |
+| --- | --- | 
+| PerfCounter, Adds-TopologyInfo-Json, Common-TestData-Json | - [Исходящие подключения к конечным точкам службы Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections). <br /> - [Проверка SSL для исходящего трафика отфильтрована или отключена](https://technet.microsoft.com/library/ee796230.aspx). <br />-  [Порты брандмауэра на сервере с агентом](https://technet.microsoft.com/library/ms345310(v=sql.100).aspx). <br /> - [Разрешение назначенных веб-сайтов при включенной политике усиленной безопасности IE](https://technet.microsoft.com/en-us/windows/ms537180(v=vs.60)). <br />  - Исходящие подключения на основе IP-адресов. Cм. [диапазоны IP-адресов Azure](https://www.microsoft.com/download/details.aspx?id=41653).  |
 
 
 ## <a name="next-steps"></a>Дополнительная информация

@@ -1,25 +1,18 @@
 ---
 title: Настройка VPN типа "сеть — сеть" через пиринг Майкрософт для Azure ExpressRoute | Документация Майкрософт
 description: Настройка подключения IPsec/IKE к Azure через пиринговый канал Майкрософт ExpressRoute с использованием VPN-шлюза типа "сеть — сеть".
-documentationcenter: na
 services: expressroute
 author: cherylmc
-manager: timlt
-editor: ''
-ms.assetid: ''
 ms.service: expressroute
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 12/06/2017
+ms.topic: conceptual
+ms.date: 10/29/2018
 ms.author: cherylmc
-ms.openlocfilehash: 86e101ee78cfa709c6957c7658f103ce787a6351
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 5fb4a4034a744b8b2b769a1cfd2d9df12ea90dde
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37110860"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50240918"
 ---
 # <a name="configure-a-site-to-site-vpn-over-expressroute-microsoft-peering"></a>Настройка VPN типа "сеть — сеть" через пиринговый канал Майкрософт ExpressRoute
 
@@ -29,12 +22,13 @@ ms.locfileid: "37110860"
 
 Вы можете использовать пиринг Майкрософт для создания VPN-туннеля типа "сеть — сеть" IPsec/IKE между выбранными локальными сетями и виртуальными сетями Azure.
 
-  ![Общие сведения о подключениях](./media/site-to-site-vpn-over-microsoft-peering/IPsecER_Overview.png)
-
->[!NOTE]
+  >[!NOTE]
 >При настройке VPN типа "сеть — сеть" через пиринговый канал Майкрософт вы платите за VPN-шлюз и исходящий трафик VPN. Дополнительные сведения см. на странице [цен на VPN-шлюз](https://azure.microsoft.com/pricing/details/vpn-gateway).
 >
 >
+
+  ![Общие сведения о подключениях](./media/site-to-site-vpn-over-microsoft-peering/IPsecER_Overview.png)
+
 
 Чтобы обеспечить высокую доступность и избыточность, вы можете настроить несколько туннелей через две пары MSEE-PE каналов ExpressRoute и включить балансировку нагрузки между туннелями.
 
@@ -112,7 +106,7 @@ sh ip bgp vpnv4 vrf 10 neighbors X.243.229.34 received-routes
 
 Чтобы подтвердить получение правильного набора префиксов, вы можете использовать перекрестную проверку. В следующих выходных данных команды Azure PowerShell показаны префиксы, объявляемые с помощью пиринга Майкрософт для каждой службы и региона Azure:
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmBgpServiceCommunity
 ```
 
@@ -487,13 +481,13 @@ ip route 10.2.0.229 255.255.255.255 Tunnel1
 
 Статус туннелей IPsec можно проверить в VPN-шлюзе Azure с помощью команд PowerShell:
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVirtualNetworkGatewayConnection -Name vpn2local1 -ResourceGroupName myRG | Select-Object  ConnectionStatus,EgressBytesTransferred,IngressBytesTransferred | fl
 ```
 
 Выходные данные примера:
 
-```powershell
+```azurepowershell
 ConnectionStatus        : Connected
 EgressBytesTransferred  : 17734660
 IngressBytesTransferred : 10538211
@@ -501,13 +495,13 @@ IngressBytesTransferred : 10538211
 
 Чтобы проверить состояние туннелей в экземплярах VPN-шлюза Azure независимо друг от друга, используйте следующий пример:
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVirtualNetworkGatewayConnection -Name vpn2local1 -ResourceGroupName myRG | Select-Object -ExpandProperty TunnelConnectionStatus
 ```
 
 Выходные данные примера:
 
-```powershell
+```azurepowershell
 Tunnel                           : vpn2local1_52.175.250.191
 ConnectionStatus                 : Connected
 IngressBytesTransferred          : 4877438
@@ -623,13 +617,13 @@ Success rate is 100 percent (5/5), round-trip min/avg/max = 4/5/6 ms
 
 Проверьте состояние узла BGP в VPN-шлюзе Azure:
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVirtualNetworkGatewayBGPPeerStatus -VirtualNetworkGatewayName vpnGtw -ResourceGroupName SEA-C1-VPN-ER | ft
 ```
 
 Выходные данные примера:
 
-```powershell
+```azurepowershell
   Asn ConnectedDuration LocalAddress MessagesReceived MessagesSent Neighbor    RoutesReceived State    
   --- ----------------- ------------ ---------------- ------------ --------    -------------- -----    
 65010 00:57:19.9003584  10.2.0.228               68           72   172.16.0.10              2 Connected
@@ -639,13 +633,13 @@ Get-AzureRmVirtualNetworkGatewayBGPPeerStatus -VirtualNetworkGatewayName vpnGtw 
 
 Чтобы проверить список префиксов сети, полученных через локальный VPN-концентратор eBGP, выполните фильтрацию по атрибуту "Origin":
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVirtualNetworkGatewayLearnedRoute -VirtualNetworkGatewayName vpnGtw -ResourceGroupName myRG  | Where-Object Origin -eq "EBgp" |ft
 ```
 
 В выходных данных примера ASN 65010 — это номер автономной системы BGP в локальной сети VPN.
 
-```powershell
+```azurepowershell
 AsPath LocalAddress Network      NextHop     Origin SourcePeer  Weight
 ------ ------------ -------      -------     ------ ----------  ------
 65010  10.2.0.228   10.1.10.0/25 172.16.0.10 EBgp   172.16.0.10  32768
@@ -654,13 +648,13 @@ AsPath LocalAddress Network      NextHop     Origin SourcePeer  Weight
 
 Чтобы просмотреть список объявленных маршрутов:
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVirtualNetworkGatewayAdvertisedRoute -VirtualNetworkGatewayName vpnGtw -ResourceGroupName myRG -Peer 10.2.0.228 | ft
 ```
 
 Выходные данные примера:
 
-```powershell
+```azurepowershell
 AsPath LocalAddress Network        NextHop    Origin SourcePeer Weight
 ------ ------------ -------        -------    ------ ---------- ------
        10.2.0.229   10.2.0.0/24    10.2.0.229 Igp                  0
@@ -694,7 +688,7 @@ Total number of prefixes 4
 
 Список сетей, объявленных из локального Cisco CSR1000 для VPN-шлюза Azure, можно указать с помощью следующей команды:
 
-```powershell
+```
 csr1#show ip bgp neighbors 10.2.0.228 advertised-routes
 BGP table version is 7, local router ID is 172.16.0.10
 Status codes: s suppressed, d damped, h history, * valid, > best, i - internal,

@@ -1,3 +1,16 @@
+---
+author: tamram
+ms.service: storage
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: tamram
+ms.openlocfilehash: 8c577db3e9f2bff9e86c3a7c37274630f90dd680
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50164965"
+---
 Эмулятор хранения поддерживает одну предопределенную учетную запись и известный ключ аутентификации для аутентификации с помощью общего ключа. Эти учетная запись и ключ — единственные разрешенные учетные данные общего ключа для использования с эмулятором хранения. К ним относятся:
 
 ```

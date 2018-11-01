@@ -10,12 +10,12 @@ ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 08/22/2018
 ms.author: erhopf
-ms.openlocfilehash: 8db2f6a67f64216276ccdb0b16bbeb48565f6bc6
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 854cf1646d716f7cd721a7286b79a0f733243268
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46127607"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50416237"
 ---
 # <a name="quickstart-use-the-bing-web-search-sdk-for-java"></a>Краткое руководство. Использование пакета SDK Bing для поиска в Интернете для Java
 
@@ -29,7 +29,7 @@ ms.locfileid: "46127607"
 
 Для работы с этим кратким руководством вам потребуется следующее:
 
-* [пакет JDK 7 или 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html);
+* [пакет JDK 7 или 8](https://aka.ms/azure-jdks);
 * [Apache Maven](https://maven.apache.org/download.cgi) или другой инструмент автоматизации сборки;
 * ключ подписки;
 

@@ -4,8 +4,6 @@ description: Использование PowerShell для диспетчера �
 services: traffic-manager
 documentationcenter: na
 author: kumudd
-manager: timlt
-ms.assetid: bc247448-1d2e-4104-ac03-42b59ebde065
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
@@ -13,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: kumud
-ms.openlocfilehash: 951e845e23a1ed0cbdc83fc24a97a545f00c52ad
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: 8dcd89415bdd48b2d8d5c8e1e699159e9d1129e5
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31526647"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50139481"
 ---
 # <a name="using-powershell-to-manage-traffic-manager"></a>Использование PowerShell для управления диспетчером трафика
 

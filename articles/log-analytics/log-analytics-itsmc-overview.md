@@ -15,16 +15,16 @@ ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: v-jysur
 ms.component: ''
-ms.openlocfilehash: b99c14e6022fa34d41caaa02bfc9feecb3c840ce
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 4f8261983feb8e655333f548b0b90f822eda30a6
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49407509"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50421192"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
-![Символ соединителя управления ИТ-службами](./media/log-analytics-itsmc/itsmc-symbol.png)
+![Символ соединителя управления ИТ-службами](media/log-analytics-itsmc-overview/itsmc-symbol.png)
 
 Соединитель управления ИТ-услугами (ITSMC) позволяет подключить Azure к поддерживаемым продуктам или службам управления ИТ-услугами.
 
@@ -56,18 +56,18 @@ ms.locfileid: "49407509"
 
 1.  На портале Azure щелкните значок **+ Создать**.
 
-    ![Новый ресурс Azure](./media/log-analytics-itsmc/azure-add-new-resource.png)
+    ![Новый ресурс Azure](media/log-analytics-itsmc-overview/azure-add-new-resource.png)
 
 2.  Выполните поиск по запросу **Соединитель управления ИТ-службами** в Marketplace и нажмите кнопку **Создать**.
 
-    ![Добавление решения "Соединитель управления ИТ-услугами"](./media/log-analytics-itsmc/add-itsmc-solution.png)
+    ![Добавление решения "Соединитель управления ИТ-услугами"](media/log-analytics-itsmc-overview/add-itsmc-solution.png)
 
 3.  В разделе **Рабочая область OMS** выберите рабочую область Azure Log Analytics, где нужно установить решение.
    >[!NOTE]
    >В рамках текущего перехода от Microsoft Operations Management Suite (OMS) к Azure Monitor рабочие области OMS теперь называются рабочими областями Log Analytics.
 4.  В разделе **Параметры рабочей области OMS** выберите группу ресурсов, в которой вы хотите создать решение.
 
-    ![Рабочая область соединителя управления ИТ-услугами](./media/log-analytics-itsmc/itsmc-solution-workspace.png)
+    ![Рабочая область соединителя управления ИТ-услугами](media/log-analytics-itsmc-overview/itsmc-solution-workspace.png)
     >[!NOTE]
     >В рамках текущего перехода от Microsoft Operations Management Suite (OMS) к Azure Monitor рабочие области OMS теперь называются рабочими областями Log Analytics.
 
@@ -93,12 +93,12 @@ ms.locfileid: "49407509"
 
 1.  Перейдите к разделу **Все ресурсы** и найдите элемент **ServiceDesk(имя_вашей_рабочей_области)**.
 2.  В области слева в разделе **Источники данных рабочей области** щелкните **Подключения ITSM**.
-    ![Подключения ITSM](./media/log-analytics-itsmc/itsm-connections.png)
+    ![Подключения ITSM](media/log-analytics-itsmc-overview/itsm-connections.png)
 
     На этой странице отобразится список подключений.
 3.  Щелкните **Добавить подключение**.
 
-    ![Добавление подключения ITSM](./media/log-analytics-itsmc/add-new-itsm-connection.png)
+    ![Добавление подключения ITSM](media/log-analytics-itsmc-overview/add-new-itsm-connection.png)
 
 4.  Укажите параметры подключения, как описано в статье [Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-услугами (предварительная версия)](log-analytics-itsmc-connections.md).
 
@@ -106,7 +106,7 @@ ms.locfileid: "49407509"
 
     > По умолчанию ITSMC обновляет данные конфигурации подключения каждые 24 часа. Чтобы обновить данные подключения после любого изменения или обновления шаблона, нажмите кнопку **Синхронизация** на колонке с подключением.
 
-    ![Обновление подключения](./media/log-analytics-itsmc/itsmc-connections-refresh.png)
+    ![Обновление подключения](media/log-analytics-itsmc-overview/itsmc-connections-refresh.png)
 
 
 ## <a name="using-the-solution"></a>Использование решения
@@ -123,16 +123,16 @@ ms.locfileid: "49407509"
 1. На портале Azure выберите **Монитор**.
 2. В левой области щелкните **Группы действий**. Откроется окно **Добавить группу действий**.
 
-    ![Группы действий](media/log-analytics-itsmc/action-groups.png)
+    ![Группы действий](media/log-analytics-itsmc-overview/action-groups.png)
 
 3. Предоставьте **Имя** и **ShortName** (Короткое имя) для группы действия. Выберите **группу ресурсов** и **подписку**, в которых необходимо создать группу действий.
 
-    ![Сведения о группах действий](media/log-analytics-itsmc/action-groups-details.png)
+    ![Сведения о группах действий](media/log-analytics-itsmc-overview/action-groups-details.png)
 
 4. В списке действий выберите **ITSM** из раскрывающегося меню **Тип действия**. Укажите **имя** действия и щелкните **Изменить сведения**.
 5. Выберите **подписку**, в которой расположена рабочая область Log Analytics. Выберите имя **подключения** (имя соединителя ITSM), за которым следует имя рабочей области. Например, MyITSMMConnector(MyWorkspace).
 
-    ![Сведения о действиях ITSM](./media/log-analytics-itsmc/itsm-action-details.png)
+    ![Сведения о действиях ITSM](media/log-analytics-itsmc-overview/itsm-action-details.png)
 
 6. Выберите тип **рабочего элемента** из раскрывающегося меню.
    Выберите имеющийся шаблон или заполните поля, требуемые для продукта ITSM.
@@ -151,7 +151,7 @@ ms.locfileid: "49407509"
 
 Данные инцидентов и запросов на изменение можно визуализировать с помощью информационной панели соединителя ITSM в решении.
 
-![Снимок экрана с Log Analytics](./media/log-analytics-itsmc/itsmc-overview-sample-log-analytics.png)
+![Снимок экрана с Log Analytics](media/log-analytics-itsmc-overview/itsmc-overview-sample-log-analytics.png)
 
 На информационной панели также представлена информация о состоянии соединителя, которую можно использовать в качестве отправной точки анализа любых проблем с подключениями.
 
@@ -161,7 +161,7 @@ ms.locfileid: "49407509"
 
 При использовании решения "Сопоставление служб" вы можете просматривать элементы службы поддержки, созданные в решениях ITSM, как показано ниже:
 
-![Снимок экрана с Log Analytics](./media/log-analytics-itsmc/itsmc-overview-integrated-solutions.png)
+![Снимок экрана с Log Analytics](media/log-analytics-itsmc-overview/itsmc-overview-integrated-solutions.png)
 
 Дополнительные сведения см. в статье [Использование решения схемы услуги в Operations Management Suite](../operations-management-suite/operations-management-suite-service-map.md).
 

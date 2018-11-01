@@ -10,12 +10,12 @@ ms.reviewer: klam, jehollan, LADocs
 ms.topic: article
 ms.assetid: bd229179-7199-4aab-bae0-1baf072c7659
 ms.date: 05/26/2017
-ms.openlocfilehash: a761e384a356a0cbf5531eee7340ddbbd1526909
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: a3f837b41ba6ec7ecadb3e34917a8088e4d1e2d9
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43122252"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50233520"
 ---
 # <a name="create-custom-apis-you-can-call-from-azure-logic-apps"></a>Создание пользовательских API, которые можно вызывать из Azure Logic Apps
 
@@ -41,7 +41,7 @@ API-интерфейсы можно разместить в [службе при
 > * [Python](../app-service/containers/quickstart-python.md)
 > * [Ruby](../app-service/containers/quickstart-ruby.md)
 >
-> Примеры приложений API для приложений логики см. в [репозитории GitHub для Azure Logic Apps](http://github.com/logicappsio) или [блоге](http://aka.ms/logicappsblog).
+> Примеры приложений API для приложений логики см. в [репозитории GitHub для Azure Logic Apps](http://github.com/logicappsio) или [блоге](https://aka.ms/logicappsblog).
 
 ## <a name="how-do-custom-apis-differ-from-custom-connectors"></a>Чем отличаются пользовательские API от пользовательских соединителей?
 
@@ -230,7 +230,7 @@ API-интерфейсы можно разместить в [службе при
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 
-* Чтобы улучшить Logic Apps, голосуйте за идеи или предлагайте собственные на [сайте обратной связи Logic Apps](http://aka.ms/logicapps-wish). 
+* Чтобы улучшить Logic Apps, голосуйте за идеи или предлагайте собственные на [сайте обратной связи Logic Apps](https://aka.ms/logicapps-wish). 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

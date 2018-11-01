@@ -4,21 +4,21 @@ description: Узнайте, как использовать PowerShell, что�
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/17/2017
+ms.date: 10/29/2018
 ms.author: juliako
-ms.openlocfilehash: 2aa777cf0c2068a5ee2382a9e75fc65db8a27207
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: bd7938fb600a1a0cd65b89fde6ca25135306b76d
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49957307"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50232648"
 ---
 # <a name="use-powershell-to-create-an-azure-ad-app-to-use-with-the-azure-media-services-api"></a>Создание приложения Azure AD для работы с API служб мультимедиа Azure с помощью PowerShell
 

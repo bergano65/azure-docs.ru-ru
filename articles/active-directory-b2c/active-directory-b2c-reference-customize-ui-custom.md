@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/25/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: c6882dd56ee96e1fcab5926b77f11ce928bf950b
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: c363056fc013cc8b8fd67fb9d656d3550d3bf5a2
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37442361"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50139515"
 ---
 # <a name="customize-the-ui-of-a-user-journey-with-custom-policies"></a>Настройка пользовательского интерфейса с помощью настраиваемых политик
 
@@ -41,7 +41,7 @@ Azure AD B2C позволяет настраивать внешний вид и 
 Вы можете предоставить любое количество страниц содержимого, составляя файлы HTML5 и CSS соответствующим образом.
 
 > [!NOTE]
-> По соображениям безопасности использование JavaScript для настройки сейчас заблокировано. Чтобы разблокировать JavaScript, необходимо использовать пользовательское имя домена для клиента Azure AD B2C.
+> По соображениям безопасности использование JavaScript для настройки сейчас заблокировано. 
 
 В каждом шаблоне HTML5 и CSS предоставляется элемент *привязки*, который соответствует необходимому элементу `<div id=”api”>` в HTML или на странице содержимого, как показано далее. Для Azure AD B2C необходимо, чтобы все страницы содержимого имели этот div.
 
@@ -107,7 +107,7 @@ Azure AD B2C позволяет настраивать внешний вид и 
 1.  С помощью проводника Windows перейдите в папку *B2C-AzureBlobStorage-Client-master*, расположенную в папке *UI-Customization-Pack*, созданной при работе с предыдущим разделом.
 2.  Запустите файл *B2CAzureStorageClient.exe*. Эта программа загружает все файлы в каталог, указанный в вашей учетной записи хранения, и обеспечивает доступ к этим файлам с помощью CORS.
 3.  При появлении запроса укажите:  Имя учетной записи хранения *storageAccountName*, например *contoso369b2c*.
-    Б.  Первичный ключ доступа хранилища BLOB-объектов Azure *key1*, например *contoso369b2c*.
+    b.  Первичный ключ доступа хранилища BLOB-объектов Azure *key1*, например *contoso369b2c*.
     c.  Имя контейнера хранилища BLOB-объектов *containerName*, например *b2c*.
     d.  Путь к примерам файлов *Starter-Pack*, например *..\B2CTemplates\wingtiptoys*.
 

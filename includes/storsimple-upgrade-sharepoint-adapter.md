@@ -1,3 +1,16 @@
+---
+author: alkohli
+ms.service: storsimple
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: alkohli
+ms.openlocfilehash: 630ecb5f6efff9f08bbf5d2f1dec1c35af30b673
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50165460"
+---
 <!--author=SharS last changed: 9/17/15-->
 
 ### <a name="upgrade-sharepoint-2010-to-sharepoint-2013-and-then-install-the-storsomple-adapter-for-sharepoint"></a>Обновление SharePoint 2010 до SharePoint 2013 с последующей установкой адаптера StorSimple для SharePoint

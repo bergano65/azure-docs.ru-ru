@@ -10,12 +10,12 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 05/21/2018
 tags: connectors
-ms.openlocfilehash: d8658740772ed4a11fdfd70a0c925ac1b597dd69
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 7d6845624c838ac0cf49e5963cae1ca0ea15ec15
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452026"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50230613"
 ---
 # <a name="create-and-manage-blobs-in-azure-blob-storage-with-azure-logic-apps"></a>Создание и администрирование больших двоичных объектов в хранилище BLOB-объектов Azure с помощью Azure Logic Apps
 
@@ -28,7 +28,7 @@ ms.locfileid: "47452026"
 >
 > * Создайте [среду службы интеграции](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), которая может подключаться к ресурсам в виртуальной сети Azure. 
 > 
-> * Если вы уже используете службу управления API, ее можно применить в этом сценарии. Дополнительные сведения см. в статье [Простая архитектура корпоративной интеграции](http://aka.ms/aisarch).
+> * Если вы уже используете службу управления API, ее можно применить в этом сценарии. Дополнительные сведения см. в статье [Простая архитектура корпоративной интеграции](https://aka.ms/aisarch).
 
 Если вы не работали с приложениями логики, см. руководства по [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [созданию первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 См. технические сведения о <a href="https://docs.microsoft.com/connectors/azureblobconnector/" target="blank">соединителях хранилища BLOB-объектов Azure</a>.
@@ -124,7 +124,7 @@ ms.locfileid: "47452026"
 ## <a name="get-support"></a>Получение поддержки
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](http://aka.ms/logicapps-wish).
+* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -1,3 +1,16 @@
+---
+author: alkohli
+ms.service: storsimple
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: alkohli
+ms.openlocfilehash: 560c9c177bfa693580979101e5b9343fcff7fe40
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50165405"
+---
 ### <a name="install-maintenance-mode-updates-via-windows-powershell-for-storsimple"></a>Установка обновлений режима обслуживания через Windows PowerShell для StorSimple
 
 При установке обновлений режима обслуживания на устройстве StorSimple все запросы ввода-вывода приостанавливаются. Останавливаются также некоторые другие службы, например энергонезависимое ОЗУ (NVRAM) или служба кластеров. Оба контроллера перезагружаются при входе или выходе из этого режима. При выходе из этого режима все службы будут возобновлены и исправны. Это может занять несколько минут.

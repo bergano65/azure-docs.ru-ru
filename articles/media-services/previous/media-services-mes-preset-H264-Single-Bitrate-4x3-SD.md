@@ -2,7 +2,7 @@
 title: 'Предустановка Media Encoder Standard в Azure: H264 Single Bitrate 4x3 SD | Документация Майкрософт'
 description: Этот раздел содержит общие сведения о предустановке задачи **H264 Single Bitrate 4x3 SD**.
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 services: media-services
 documentationcenter: ''
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/20/2017
+ms.date: 10/30/2018
 ms.author: juliako
-ms.openlocfilehash: 61fac597c6e9ee425cedd1df2d819acebb148280
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: e9d400de159048a5eb72d8f674cbbf9c42d50e17
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33782823"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50247159"
 ---
 # <a name="h264-single-bitrate-4x3-sd"></a>H264 Single Bitrate 4x3 SD
 `Media Encoder Standard` определяет набор предустановок кодирования, которые можно использовать при создании заданий кодирования. Можно также использовать `preset name`, чтобы указать, в какой формат нужно закодировать файл мультимедиа. Или можно создать собственные предустановки в формате JSON или XML (с использованием кодировки UTF-8 или UTF-16). Затем следует передавать пользовательскую предустановку в кодировщик. Список предустановок, поддерживаемых данным кодировщиком `Media Encoder Standard`, приведен в разделе [Предустановки задач для Media Encoder Standard](media-services-mes-presets-overview.md).  

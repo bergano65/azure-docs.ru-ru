@@ -3,17 +3,17 @@ title: Настройка Azure ExpressRoute Global Reach | Документац
 description: В этой статье содержатся сведения о том, как связать каналы ExpressRoute, чтобы настроить частную сеть между локальными сетями и включить Global Reach.
 documentationcenter: na
 services: expressroute
-author: cherylmc
+author: mialdrid
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 10/09/2018
-ms.author: cherylmc
-ms.openlocfilehash: 4006626f9768289e75ccd61a1ef0bad5389f0a7a
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.author: mialdrid
+ms.openlocfilehash: 67fbf9dc430d615efe3ef894add1a26bbce792bc
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49071106"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50237984"
 ---
 # <a name="configure-expressroute-global-reach-preview"></a>Настройка ExpressRoute Global Reach (предварительная версия)
 Эта статья поможет вам настроить ExpressRoute Global Reach с помощью PowerShell. Дополнительные сведения см. в разделе [Связывание каналов ExpressRoute для включения ExpressRoute Global Reach (предварительная версия)](expressroute-global-reach.md).

@@ -3,7 +3,7 @@ title: Часто задаваемые вопросы о масштабируе�
 description: Ответы на часто задаваемые вопросы о масштабируемых наборах виртуальных машин.
 services: virtual-machine-scale-sets
 documentationcenter: ''
-author: gatneil
+author: mayanknayar
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/12/2017
-ms.author: negat
+ms.author: manayar
 ms.custom: na
-ms.openlocfilehash: 8ce8d0cda6f81aca0e5ea89dd813b371f61e8404
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 7b8faca82a23875b403d0b51b2e8719549d845fb
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49407373"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50740701"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 

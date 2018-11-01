@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/21/2017
 ms.author: sngun
-ms.openlocfilehash: 82ab30ebab1b69d5ae636702b3b56d3792c09010
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: b115058353d14a3bd7c774197e06de088030ffff
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47394579"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50741357"
 ---
 # <a name="create-an-azure-cosmos-db-account-using-powershell"></a>Создание учетной записи Azure Cosmos DB с помощью PowerShell
 
-В этом руководстве содержатся команды Azure PowerShell, используемые для автоматизации управления учетными записями баз данных Azure Cosmos DB. Здесь также приведены команды для управления ключами учетных записей и изменения порядка при отработке отказа в [межрегиональных учетных записях баз данных][distribute-data-globally.md]. Вы можете изменить политики согласованности, а также добавить или удалить регионы в учетной записи базы данных. Чтобы управлять своей учетной записью базы данных Azure Cosmos DB между несколькими регионами, можно использовать [Azure CLI](cli-samples.md), [REST API поставщика ресурсов][rp-rest-api] или [портал Azure](create-sql-api-dotnet.md#create-account).
+В этом руководстве содержатся команды Azure PowerShell, используемые для автоматизации управления учетными записями баз данных Azure Cosmos DB. Здесь также приведены команды для управления ключами учетных записей и изменения порядка при отработке отказа в [межрегиональных учетных записях баз данных][distribute-data-globally]. Вы можете изменить политики согласованности, а также добавить или удалить регионы в учетной записи базы данных. Чтобы управлять своей учетной записью базы данных Azure Cosmos DB между несколькими регионами, можно использовать [Azure CLI](cli-samples.md), [REST API поставщика ресурсов][rp-rest-api] или [портал Azure](create-sql-api-dotnet.md#create-account).
 
 ## <a name="getting-started"></a>Приступая к работе
 
@@ -33,7 +33,7 @@ ms.locfileid: "47394579"
 
 ## <a id="create-documentdb-account-powershell"></a>Создание учетной записи Azure Cosmos DB
 
-Эта команда позволяет создать учетную запись базы данных Azure Cosmos DB. Настройте новую учетную запись для использования в одном регионе или [нескольких][distribute-data-globally.md] и добавьте какую-либо [политику согласованности](consistency-levels.md).
+Эта команда позволяет создать учетную запись базы данных Azure Cosmos DB. Настройте новую учетную запись для использования в одном или [нескольких регионах][distribute-data-globally] и добавьте определенную [политику согласованности](consistency-levels.md).
 
     $locations = @(@{"locationName"="<write-region-location>"; "failoverPriority"=0}, @{"locationName"="<read-region-location>"; "failoverPriority"=1})
     $iprangefilter = "<ip-range-filter>"
@@ -60,7 +60,7 @@ ms.locfileid: "47394579"
     New-AzureRmResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" -ApiVersion "2015-04-08" -ResourceGroupName "rg-test" -Location "West US" -Name "docdb-test" -Properties $CosmosDBProperties
 
 ### <a name="notes"></a>Примечания
-* В предыдущем примере создается учетная запись базы данных с двумя регионами. Кроме того, можно также создать учетную запись базы данных с одним регионом (регион для записи со значением приоритета отработки отказа 0) или с несколькими регионами (более двух). Дополнительные сведения см. в разделе [многорегиональные учетные записи баз данных][distribute-data-globally.md].
+* В предыдущем примере создается учетная запись базы данных с двумя регионами. Кроме того, можно также создать учетную запись базы данных с одним регионом (регион для записи со значением приоритета отработки отказа 0) или с несколькими регионами (более двух). Дополнительные сведения см. в разделе [Масштабирование по всей планете][distribute-data-globally].
 * В качестве расположений используйте регионы, в которых база данных Azure Cosmos DB общедоступна. Текущий список регионов см. на [странице регионов Azure](https://azure.microsoft.com/regions/#services).
 
 ## <a id="update-documentdb-account-powershell"></a> Обновление учетной записи базы данных Azure Cosmos DB
@@ -195,6 +195,7 @@ ms.locfileid: "47394579"
 * Дополнительные сведения см. в статье о [подключении и создании запросов с помощью Node.js и приложения MongoDB](create-mongodb-nodejs.md).
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
+
 [powershell-install-configure]: https://docs.microsoft.com/azure/powershell-install-configure
 [scaling-globally]: distribute-data-globally.md#EnableGlobalDistribution
 [distribute-data-globally]: distribute-data-globally.md

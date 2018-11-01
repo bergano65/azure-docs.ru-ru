@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/07/2018
+ms.date: 10/29/2018
 ms.author: piotrci
-ms.openlocfilehash: bed720cf47355887f3bf981f281d82738039270f
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: 643339545dac6ec35ab44f2a05fbe417dea2bb71
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37866582"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50211797"
 ---
 # <a name="how-to-safely-migrate-users-between-product-licenses-by-using-group-based-licensing"></a>Как безопасно перевести пользователей с отдельных лицензий продуктов с использованием группового лицензирования
 
@@ -822,6 +822,8 @@ ExecuteVerificationLoop ${function:VerifySourceLicenseRemovedAndTargetLicenseAss
 
 Дополнительные сведения о сценариях управления лицензиями с помощью групп см. в следующих статьях:
 
-* [Определение и устранение проблем назначения лицензий для группы в Azure Active Directory](licensing-groups-resolve-problems.md)
-* [Примеры PowerShell для группового лицензирования в Azure AD](licensing-ps-examples.md)
-* [Дополнительные сценарии лицензирования на основе группы в Azure Active Directory](licensing-group-advanced.md)
+* [Назначение лицензий группе в Azure Active Directory](../users-groups-roles/licensing-groups-assign.md)
+* [Поиск и устранение проблем лицензирования группы в Azure Active Directory](../users-groups-roles/licensing-groups-resolve-problems.md)
+* [Как перевести отдельных лицензированных пользователей на групповое лицензирование в Azure Active Directory](../users-groups-roles/licensing-groups-migrate-users.md)
+* [Дополнительные сценарии лицензирования на основе группы в Azure Active Directory](../users-groups-roles/licensing-group-advanced.md)
+* [Примеры PowerShell для группового лицензирования в Azure AD](../users-groups-roles/licensing-ps-examples.md)

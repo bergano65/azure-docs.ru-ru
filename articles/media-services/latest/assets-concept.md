@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 10/15/2018
+ms.date: 10/24/2018
 ms.author: juliako
-ms.openlocfilehash: 62cc4634a0f76b0562d5b3c1355a7442fc5cf989
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: e7abdb568b11870fb467ee6d3759881ca337d3cc
+ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49985239"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50085823"
 ---
 # <a name="assets"></a>Активы
 
@@ -34,19 +34,19 @@ ms.locfileid: "49985239"
 
 В следующей таблице представлены свойства ресурса и их определения.
 
-|ИМЯ|type|ОПИСАНИЕ|
-|---|---|---|
-|id|строка|Полный идентификатор ресурса.|
-|name|строка|Имя ресурса.|
-|properties.alternateId |строка|Альтернативный идентификатор ресурса.|
-|properties.assetId |строка|Идентификатор ресурса.|
-|properties.container |строка|Имя контейнера больших двоичных объектов ресурса.|
-|properties.created |строка|Дата создания ресурса.|
-|properties.description |строка|Описание ресурса.|
-|properties.lastModified |строка|Дата последнего изменения ресурса.|
-|properties.storageAccountName |строка|Имя учетной записи хранения.|
-|properties.storageEncryptionFormat |AssetStorageEncryptionFormat |Формат шифрования ресурса. Не указан или MediaStorageEncryption.|
-|Тип|строка|Тип ресурса.|
+|ИМЯ|ОПИСАНИЕ|
+|---|---|
+|id|Полный идентификатор ресурса.|
+|name|Имя ресурса.|
+|properties.alternateId |Альтернативный идентификатор ресурса.|
+|properties.assetId |Идентификатор ресурса.|
+|properties.container |Имя контейнера больших двоичных объектов ресурса.|
+|properties.created |Дата создания ресурса.|
+|properties.description|Описание ресурса.|
+|properties.lastModified |Дата последнего изменения ресурса.|
+|properties.storageAccountName |Имя учетной записи хранения.|
+|properties.storageEncryptionFormat |Формат шифрования ресурса. Не указан или MediaStorageEncryption.|
+|Тип|Тип ресурса.|
 
 Полное определение см. в статье о [ресурсах](https://docs.microsoft.com/rest/api/media/assets).
 

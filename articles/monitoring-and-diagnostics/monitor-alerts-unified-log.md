@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: bcede1f985937058196b75a93f539cb34da73992
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 49607809d6bb8697cc6b7a4063a45d893b9e1eac
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49365068"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50421090"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Оповещения журнала в Azure Monitor
 В этой статье рассматриваются оповещения журнала. Это один из типов оповещений, которые поддерживаются в системе [оповещений Azure](monitoring-overview-unified-alerts.md) и позволяют пользователям применять платформу аналитики Azure в качестве основы для оповещений.
@@ -93,7 +93,7 @@ ms.locfileid: "49365068"
 
 Запрос вернет среднее значение для каждого компьютера с интервалом в 5 минут.  Этот запрос выполняется каждые 5 минут для данных, собранных в течение предыдущих 30 минут.  Ниже приведен пример данных для трех компьютеров.
 
-![Результаты выполнения примера запроса](./media/monitor-alerts-unified/metrics-measurement-sample-graph.png)
+![Результаты выполнения примера запроса](media/monitor-alerts-unified-log/metrics-measurement-sample-graph.png)
 
 В этом примере отдельные оповещения создаются для компьютеров srv02 и srv03, так как за указанный период они 3 раза превысили пороговое значение в 90 %.  Если значение параметра **Активировать оповещение на основе:** изменить на **Consecutive** (Последовательные нарушения), оповещение будет создано только для компьютера srv03, так как для него 3 раза подряд зафиксировано превышение порога.
 

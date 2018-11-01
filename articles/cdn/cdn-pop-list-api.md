@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 06/22/2018
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: 34bd958260056d7a0297c4d3545d97543a363480
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: f703a934b0eaf4bff5be3811adeed8f0287bc658
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49344798"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50237831"
 ---
 # <a name="retrieve-the-current-verizon-pop-list-for-azure-cdn"></a>Получение текущего списка точек POP Verizon для Azure CDN
 
 С помощью REST API можно получить набор IP-адресов для серверов точек подключения (POP) Verizon. Эти серверы POP отправляют запросы к серверам-источникам, которые связаны с конечными точками сети доставки содержимого (CDN) Azure в профиле Verizon (**Azure CDN уровня "Стандартный" от Verizon**  или **Azure CDN уровня "Премиум" от Verizon**). Обратите внимание, что этот набор IP-адресов отличается от IP-адресов, которые будет видеть клиент при выполнении запросов к точкам POP. 
 
-Синтаксис операции REST API для получения списка точек POP см. в статье [Edge Nodes - List](https://docs.microsoft.com/rest/api/cdn/edgenodes/edgenodes_list) (Пограничные узлы — список).
+Синтаксис операции REST API для получения списка точек POP см. в статье [Edge Nodes - List](https://docs.microsoft.com/rest/api/cdn/edgenodes/list) (Пограничные узлы — список).
 
 ## <a name="typical-use-case"></a>Типичный случай использования
 

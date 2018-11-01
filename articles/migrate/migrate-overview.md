@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 10/23/2018
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 30cca10a83be09b8c9736df546958c3a1fe66f37
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: 1aeaff486ed9f7cb99ea0b95451fc765344847a1
+ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "50025645"
+ms.locfileid: "50086681"
 ---
 # <a name="about-azure-migrate"></a>Сведения о службе "Миграция Azure"
 
@@ -37,7 +37,7 @@ ms.locfileid: "50025645"
 -  Проект службы "Миграция Azure" можно создать только в регионе США. Но миграцию можно запланировать в любое целевое расположение Azure.
     - В регионе, где создается проект миграции, сохраняются только метаданные, собранные в локальной среде.
     - Метаданные сохраняются только в одном из следующих регионов: центрально-западная часть США или восточная часть США.
-    - Если используется визуализация зависимостей с помощью рабочей области Log Analytics, она создается в одном регионе с проектом. 
+    - Если используется визуализация зависимостей с помощью рабочей области Log Analytics, она создается в одном регионе с проектом.
 
 
 ## <a name="what-do-i-need-to-pay-for"></a>За что будет взиматься плата?

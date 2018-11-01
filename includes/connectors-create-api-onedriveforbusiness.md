@@ -1,4 +1,17 @@
-### <a name="prerequisites"></a>предварительным требованиям
+---
+author: ecfan
+ms.service: logic-apps
+ms.topic: include
+ms.date: 11/03/2016
+ms.author: estfan
+ms.openlocfilehash: 48cd41d432c5969fc4128b055ca61fc86a57bdd2
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50133842"
+---
+### <a name="prerequisites"></a>Предварительные требования
 * Учетная запись [OneDrive](http://OneDrive.com). 
 
 Чтобы использовать учетную запись OneDrive для бизнеса в приложении логики, вы должны авторизовать приложение логики для подключения к вашей учетной записи OneDrive для бизнеса. К счастью, это можно легко сделать из приложения логики на портале Azure. 

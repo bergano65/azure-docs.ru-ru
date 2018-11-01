@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/18/2018
 ms.author: shvija
-ms.openlocfilehash: ae5d89aab4ce1bd599ed9a50dc46336f8a96a2f5
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: 9d7792c8eb33e6ceca5ba794f56c5a4c99d59554
+ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49456234"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50084413"
 ---
 # <a name="send-events-to-azure-event-hubs-using-the-net-framework"></a>Отправка событий в Центры событий Azure с помощью платформы .NET Framework
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
@@ -53,16 +53,16 @@ ms.locfileid: "49456234"
 
 1. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
    
-      ```csharp
-      using System.Threading;
-      using Microsoft.ServiceBus.Messaging;
-      ```
+    ```csharp
+    using System.Threading;
+    using Microsoft.ServiceBus.Messaging;
+    ```
 2. Добавьте в класс **Program** приведенные ниже поля и укажите в качестве значений имя концентратора событий, созданного в предыдущем разделе, и сохраненную ранее строку подключения уровня пространства имен.
    
-        ```csharp
-        static string eventHubName = "Your Event Hub name";
-        static string connectionString = "namespace connection string";
-        ```
+    ```csharp
+    static string eventHubName = "Your Event Hub name";
+    static string connectionString = "namespace connection string";
+    ```
 3. Добавьте следующий метод в класс **Program** .
    
       ```csharp

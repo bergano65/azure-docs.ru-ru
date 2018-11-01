@@ -1,3 +1,16 @@
+---
+author: tamram
+ms.service: storage
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: tamram
+ms.openlocfilehash: 8a596293a5c1572b30ea6101dad16328c8db2634
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50164513"
+---
 ## <a name="what-is-queue-storage"></a>Что такое хранилище очередей?
 Хранилище очередей Azure — это служба для хранения большого количества сообщений, к которым можно получить доступ практически из любой точки мира с помощью вызовов с проверкой подлинности по протоколам HTTP или HTTPS. Одно сообщение очереди может быть размером до 64 КБ, а очередь может содержать миллионы сообщений до общего ограничения емкости учетной записи хранения.
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 1bb0bc0aa7ad6bbbad502832ba8e0a96f36de428
-ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
+ms.openlocfilehash: 25b4777be4257933b84d58d0f10cf12571de9590
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48268313"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50155326"
 ---
 # <a name="administer-your-iot-central-application"></a>Администрирование приложения Azure IoT Central
 
@@ -33,7 +33,7 @@ ms.locfileid: "48268313"
 
 В разделе **Администрирование** есть дополнительное меню навигации со ссылками на различные задачи администрирования.
 
-Чтобы получить доступ к разделу **Администрирование**, вам должна быть назначена роль **Администратор** приложения Azure IoT Central. Если вы создаете приложение Azure IoT Central, вам автоматически назначается роль **Администратор** для этого приложения. В разделе *Управление пользователями* в этой статье объясняется, как назначить роль **Администратор** другим пользователям.
+Чтобы получить доступ к разделу **Администрирование**, вам должна быть назначена роль **Администратор** приложения Azure IoT Central. Если вы создаете приложение Azure IoT Central, вам автоматически назначается роль **Администратор** для этого приложения. В разделе [Управление пользователями](#manage-users) в этой статье объясняется, как назначить роль **Администратор** другим пользователям.
 
 ## <a name="change-application-name"></a>Изменение имени приложения
 

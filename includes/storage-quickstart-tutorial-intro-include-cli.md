@@ -1,3 +1,16 @@
+---
+author: tamram
+ms.service: storage
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: tamram
+ms.openlocfilehash: c5cb1c5a005265950f8dcd02c8e7675918751dab
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50166031"
+---
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Создайте группу ресурсов Azure с помощью команды [az group create](/cli/azure/group#az_group_create). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.
@@ -8,7 +21,7 @@ az group create \
     --location eastus
 ```
 
-## <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 Создайте учетную запись хранения общего назначения с помощью команды [az storage account create](/cli/azure/storage/account#create). Эта учетная запись хранения может использоваться для всех четырех служб: больших двоичных объектов, файлов, таблиц и очередей. 
 

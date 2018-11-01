@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.component: content-moderator
 ms.topic: article
 ms.author: sajagtap
-ms.openlocfilehash: 1c08b30c0e59aac21d24f75d88530ba51b67d6b4
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
+ms.openlocfilehash: 2e1a912f2d2aa8a6f9b165524351f2a16232537c
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44023939"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212205"
 ---
 # <a name="human-in-the-loop"></a>Участие человека
 
@@ -31,3 +31,5 @@ ms.locfileid: "44023939"
 5. Добавление пользовательской проверки в любой API или бизнес-процесс просто посредством создания соединителя.
 6. Использование соединителей по умолчанию для просмотра результатов из Microsoft PhotoDNA, API анализа текста и API распознавания лиц.
 7. Получение ключевых метрик производительности для процессов модерации контента.
+
+![Средство проверки видео Content Moderator](../images/video-review-default-view.png)

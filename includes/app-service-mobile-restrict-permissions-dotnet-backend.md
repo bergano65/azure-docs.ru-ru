@@ -1,4 +1,16 @@
-
+---
+author: conceptdev
+ms.service: app-service-mobile
+ms.topic: include
+ms.date: 08/23/2018
+ms.author: crdun
+ms.openlocfilehash: b609a708a987194398c53bdf83f0d6e1f281808d
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50132964"
+---
 По умолчанию API-интерфейсы в серверной части мобильных приложений могут вызываться анонимно. Далее необходимо ограничить доступ всем клиентам, не прошедшим проверку подлинности.  
 
 * **Серверная часть Node.js (через портал Azure):**  
