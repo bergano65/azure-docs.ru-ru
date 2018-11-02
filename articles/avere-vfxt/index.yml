@@ -1,0 +1,30 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 3052d856d83a7bf7cbb41a90f92b598c8c24cd5e
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50669155"
+documentType: LandingData
+title: Документация по Avere vFXT для Azure
+metadata:
+  title: Документация по Avere vFXT для Azure
+  description: Avere vFXT используется как слой кэширования для задач с высокопроизводительными вычислениями (HPC) и большим количеством операций чтения
+  services: avere-vfxt
+  author: ekpgh
+  ms.service: avere-vfxt
+  ms.topic: landing-page
+  ms.date: 10/31/2018
+  ms.author: v-erkell
+abstract:
+  description: Avere vFXT для Azure обеспечивает облачный слой кэширования для задач с интенсивным использованием данных и высокопроизводительными вычислениями (HPC). Avere vFXT позволяет кэшировать файлы как можно ближе к вычислительным узлам. Это увеличивает скорость чтения и обеспечивает бесперебойную работу даже во время пиковой нагрузки. Avere vFXT лучше всего работает с системами, которые располагают от 1000 до 40 000 клиентских ядер. <p>Avere vFXT может работать с существующим локальным хранилищем данных, чтобы предоставлять локальный доступ вычислительных ресурсов на основе Azure к активным файлам, которые долгосрочно хранятся в центре обработки данных.
+sections:
+- title: Начало работы с Avere vFXT для Azure
+  items:
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="avere-vfxt-deploy-plan">Планирование системы Avere vFXT для Azure</a>
+    - html: <a href="avere-vfxt-deploy-overview">Сведения о развертывании Avere vFXT</a>
+    - html: <a href="avere-vfxt-prereqs">Выполнение предварительных требований</a>
+    - html: <a href="avere-vfxt-deploy">Развертывание кластера Avere vFXT</a>

@@ -64,6 +64,7 @@
 
 ## Непрерывные интеграция и развертывание
 ### [Обзор](data-lake-analytics-cicd-overview.md)
+### [Регистрация сборки](data-lake-analytics-cicd-manage-assemblies.md)
 ### [Настройка тестов](data-lake-analytics-cicd-test.md)
 ### [Пакет SDK для U-SQL](data-lake-analytics-u-sql-sdk.md)
 
