@@ -1,16 +1,16 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: bff078b73834308742bbdaa9ba98e62ca067a7ff
-ms.sourcegitcommit: 6678e16c4b273acd3eaf45af310de77090137fa1
+ms.openlocfilehash: 23a160b708200025236bfabac98f845473b4ca1c
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50748809"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50961626"
 documentType: LandingData
 title: Документация по API Bing Local Business Search
 titleSuffix: Azure Cognitive Services
 metadata:
   title: Документация по API Bing Local Business Search
-  description: API Bing Local Business Search — это служба RESTful, которая позволяет приложениям находить сведения о местных заведениях и компаниях на основе поисковых запросов.
+  description: API Bing Local Business Search — это служба RESTful, с помощью которой приложения могут находить сведения о местных предприятиях на основе поисковых запросов.
   services: cognitive-services
   author: mikedodaro
   manager: rosh
@@ -21,7 +21,7 @@ metadata:
   ms.date: 08/02/2018
   ms.author: rosh, v-gedod
 abstract:
-  description: API Bing Local Business Search позволяет приложениям находить контактную информацию и расположение местных заведений и компаний на основе поисковых запросов.
+  description: С помощью API Bing Local Business Search для приложений можно находить контактную информацию о местных компаниях, а также сведения об их расположении, на основе поисковых запросов.
 sections:
 - title: Быстрое начало работы
   items:

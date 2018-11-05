@@ -86,7 +86,18 @@
 ### [Продажа SaaS с помощью Azure](./cloud-partner-portal-orig/cloud-partner-portal-saas-offer-subscriptions.md)
 ### [API SaaS](./cloud-partner-portal-orig/cloud-partner-portal-saas-subscription-apis.md)
 
-## [Контейнеры](./cloud-partner-portal-orig/cloud-partner-portal-containers-guide.md)
+<!-- Legacy ## [Containers](./cloud-partner-portal-orig/cloud-partner-portal-containers-guide.md) -->
+
+## [Предложение "Контейнеры"](./cloud-partner-portal/containers/cpp-containers-offer.md)
+### [Предварительные требования](./cloud-partner-portal/containers/cpp-prerequisites.md)
+### [Создание предложения контейнера](./cloud-partner-portal/containers/cpp-create-offer.md)
+#### [Вкладка с параметрами предложения](./cloud-partner-portal/containers/cpp-offer-settings-tab.md)
+#### [Вкладка "Номера SKU"](./cloud-partner-portal/containers/cpp-skus-tab.md)
+#### [Вкладка Marketplace](./cloud-partner-portal/containers/cpp-marketplace-tab.md)
+#### [Вкладка "Поддержка"](./cloud-partner-portal/containers/cpp-support-tab.md)
+### [Создание технических ресурсов для контейнера](./cloud-partner-portal/containers/cpp-create-technical-assets.md)
+### [Публикации предложения контейнера](./cloud-partner-portal/containers/cpp-publish-offer.md)
+### [Обновление имеющегося предложения](./cloud-partner-portal/containers/cpp-update-existing-offer.md)
 
 ## [Предложение модуля IoT Edge](./cloud-partner-portal/iot-edge-module/cpp-offer-process-parts.md)
 ### [Предварительные требования](./cloud-partner-portal/iot-edge-module/cpp-prerequisites.md)
