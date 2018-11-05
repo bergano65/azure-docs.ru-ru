@@ -120,7 +120,7 @@ ms.locfileid: "50238511"
     $appnew = New-Object "Microsoft.Open.AzureAD.Model.Application"
     ```
 
-3. Задайте нужное значение для URL-адреса домашней страницы. Это значение должно быть путем к поддомену опубликованного приложения. Например, если изменить URL-адрес домашней страницы с *https://sharepoint-iddemo.msappproxy.net/* на *https://sharepoint-iddemo.msappproxy.net/hybrid/*, то пользователи приложения перейдут непосредственно на пользовательскую домашнюю страницу.
+3. Задайте нужное значение для URL-адреса домашней страницы. Это значение должно быть путем к поддомену опубликованного приложения. Например, если изменить URL-адрес домашней страницы с *https://sharepoint-iddemo.msappproxy.net/* на *https://sharepoint-iddemo.msappproxy.net/hybrid/* , то пользователи приложения перейдут непосредственно на пользовательскую домашнюю страницу.
 
     ```
     $homepage = "https://sharepoint-iddemo.msappproxy.net/hybrid/"
