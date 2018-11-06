@@ -2,6 +2,7 @@
 
 # Обзор
 ## [Что такое доменные службы Azure AD?](active-directory-ds-overview.md)
+## [Часто задаваемые вопросы](active-directory-ds-faqs.md)
 ## Вам это подходит?
 ### [Сравнение с Windows Server AD](active-directory-ds-comparison.md)
 ### [Сравнение с присоединением Azure AD](active-directory-ds-compare-with-azure-ad-join.md)
@@ -55,7 +56,6 @@
 ## [Устранение неполадок с защищенным протоколом LDAP](active-directory-ds-ldaps-troubleshoot.md)
 
 # Устранение неполадок
-## [Часто задаваемые вопросы](active-directory-ds-faqs.md)
 ## [Руководство по устранению неполадок](active-directory-ds-troubleshooting.md)
 ## [Устранение неполадок: предупреждения](active-directory-ds-troubleshoot-alerts.md)
 ### [Исправление неработающей конфигурации NSG](active-directory-ds-troubleshoot-nsg.md)
