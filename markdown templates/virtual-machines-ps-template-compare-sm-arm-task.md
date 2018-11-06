@@ -11,7 +11,7 @@ Pay attention to spacing and indents. They affect formatting.
 <!--replace this with Properties and Tags sections. These are required sections. See "article-metadata.md" in under the "contributor-guide" folder in your repo. Attributes in each section can be placed on separate lines to make them easier to read and check-->
 
 # <a name="use-azure-powershell-to-task"></a>[задача] с помощью Azure PowerShell
-В этой статье показано, как [задача] с помощью команд в модулях Azure и Azure Resource Manager. Это поможет вам изучить новые команды, а также перенести имеющиеся сценарии в новые команды.
+В этой статье показано, как с помощью команд в модулях Azure и Azure Resource Manager сделать следующее: [задача]. Это поможет вам изучить новые команды, а также перенести имеющиеся сценарии в новые команды.
 
 ## <a name="prerequisite-install-a-recent-version-of-azure-powershell"></a>Предварительные требования: установка последней версии Azure PowerShell
 Установите на локальном компьютере Azure PowerShell версии [номер версии], если вы еще не сделали этого. В более ранних версиях отсутствуют необходимые нам командлеты Azure Resource Manager. Дополнительные сведения см. в статье:
