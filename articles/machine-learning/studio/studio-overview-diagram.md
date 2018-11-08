@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
 ms.date: 04/04/2017
-ms.openlocfilehash: 240be0e7dc199a84130739244743d245b780b608
-ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
+ms.openlocfilehash: 2f3d96908cbcb68ff01a6e43696a119bf21d02ce
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48902082"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51226571"
 ---
 # <a name="overview-diagram-of-azure-machine-learning-studio-capabilities"></a>Обзорная схема возможностей Студии машинного обучения Azure 
 Схема **Обзор возможностей Студии машинного обучения Microsoft Azure** предоставляет высокоуровневый обзор вариантов использования Студии машинного обучения для разработки модели прогнозной аналитики и введения ее в эксплуатацию в облаке Azure.
@@ -39,7 +39,7 @@ ms.locfileid: "48902082"
 ## <a name="download-the-machine-learning-studio-overview-diagram"></a>Скачивание обзорной схемы Студии машинного обучения
 Скачайте схему **Обзор возможностей Студии машинного обучения Microsoft Azure** и получите высокоуровневое представление о возможностях Студии машинного обучения. Чтобы держать схему под рукой, распечатайте ее в формате 11 x 17 дюймов (27,94 x 43,18 см).
 
-**Скачайте схему здесь: [Обзор возможностей Студии машинного обучения Microsoft Azure](http://download.microsoft.com/download/C/4/6/C4606116-522F-428A-BE04-B6D3213E9E52/ml_studio_overview_v1.1.pdf)**
+**Скачайте схему здесь: [Обзор возможностей Студии машинного обучения Microsoft Azure](https://download.microsoft.com/download/C/4/6/C4606116-522F-428A-BE04-B6D3213E9E52/ml_studio_overview_v1.1.pdf)**
 
 ![Обзор возможностей Студии машинного обучения Microsoft Azure][studio-overview]
 
