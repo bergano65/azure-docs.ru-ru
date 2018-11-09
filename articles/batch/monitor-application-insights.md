@@ -11,12 +11,12 @@ ms.topic: article
 ms.workload: na
 ms.date: 04/05/2018
 ms.author: danlep
-ms.openlocfilehash: 5e0358ebf525c39c09df4268971fa71c02457821
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: fb0760f24b8f384818db8154ffe871d7fd4ce429
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47094199"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50138350"
 ---
 # <a name="monitor-and-debug-an-azure-batch-net-application-with-application-insights"></a>Мониторинг и отладка приложения .NET пакетной службы Azure с помощью Application Insights
 
@@ -25,6 +25,10 @@ ms.locfileid: "47094199"
 В этой статье показано, как добавить и настроить библиотеку Application Insights в вашем решении .NET пакетной службы Azure и инструментировать код приложения. Здесь также описаны способы мониторинга приложения на портале Azure и создания настраиваемых панелей мониторинга. Для поддержки Application Insights на других языках ознакомьтесь с [документацией по языкам, платформам и интеграции](../application-insights/app-insights-platforms.md).
 
 Пример решения C# с кодом, который служит дополнением к этой статье, доступен в [GitHub](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/ApplicationInsights). В этом примере код инструментирования Application Insights добавляется в пример [TopNWords](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/TopNWords). Если вы не знакомы с этим примером, сначала создайте и запустите TopNWords. Это поможет вам получить представление о базовом рабочем процессе обработки набора входных больших двоичных объектов в параллельном режиме на нескольких вычислительных узлах в пакетной службе. 
+
+> [!TIP]
+> Также можно настроить в решении пакетной службы отображение данных из Application Insights, таких как счетчики производительности виртуальных машин в Batch Explorer. [Batch Explorer](https://github.com/Azure/BatchExplorer) — это бесплатный автономный клиентский инструмент с множеством функций для создания, отладки и мониторинга приложений пакетной службы Azure. Скачайте [пакет установки](https://azure.github.io/BatchExplorer/) для Mac, Linux или Windows. См. [репозиторий batch-insights](https://github.com/Azure/batch-insights) с описанием быстрых действий, позволяющих включить данные Application Insights в Batch Explorer. 
+>
 
 ## <a name="prerequisites"></a>Предварительные требования
 * [Visual Studio 2017](https://www.visualstudio.com/vs)

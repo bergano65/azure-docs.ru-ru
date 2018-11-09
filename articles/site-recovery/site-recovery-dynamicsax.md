@@ -1,29 +1,22 @@
 ---
-title: Репликация многоуровневого развертывания Dynamics AX с помощью Azure Site Recovery | Документация Майкрософт
-description: В этой статье описывается репликация и защита Dynamics AX с помощью Azure Site Recovery
-services: site-recovery
-documentationcenter: ''
+title: Настройка аварийного восстановления для многоуровневого развертывания Dynamics AX с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье описано, как настроить аварийное восстановление для Dynamics AX с помощью Azure Site Recovery
 author: asgang
 manager: rochakm
-editor: ''
-ms.assetid: 9126f5e8-e9ed-4c31-b6b4-bf969c12c184
 ms.service: site-recovery
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/06/2018
 ms.author: asgang
-ms.openlocfilehash: eb6f7d9b34e00ce1efd8c871439c2504e5f550d5
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: e2cba8cb53e73bd1fc25f1fe43fa0365247e2bd2
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43669448"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210828"
 ---
-# <a name="replicate-a-multitier-dynamics-ax-application-by-using-azure-site-recovery"></a>Репликация многоуровневого приложения Dynamics AX с помощью Azure Site Recovery
+# <a name="set-up-disaster-recovery-for-a-multitier-dynamics-ax-application"></a>Настройка аварийного восстановления для многоуровневого приложения Dynamics AX 
 
-## <a name="overview"></a>Обзор
+
 
 
  Dynamics AX является одним из наиболее популярных решений ERP, используемых предприятиями для стандартизации процессов в расположениях, управления ресурсами и упрощения соответствия требованиям. Так как приложение является критически важным для организации, в случае аварии оно должно быть приведено в рабочее состояние в кратчайшие сроки.

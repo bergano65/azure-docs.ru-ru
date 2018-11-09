@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/12/2018
+ms.date: 10/25/2018
 ms.author: jeedes
-ms.openlocfilehash: 0ef8fc2ea8b006d49dd54d638183a58bf78a5797
-ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
+ms.openlocfilehash: b148967af0882993d8ab113bdf0fd3ad3835296f
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49312201"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50092616"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-three"></a>Руководство по интеграции Azure Active Directory с Zscaler Three
 
@@ -53,7 +53,7 @@ ms.locfileid: "49312201"
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде.
 Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Zscaler Three из коллекции.
+1. Добавление Zscaler Three из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-zscaler-three-from-the-gallery"></a>Добавление Zscaler Three из коллекции
@@ -111,7 +111,7 @@ ms.locfileid: "49312201"
 
     ![Настройка единого входа](./media/zscaler-three-tutorial/tutorial_general_300.png)
 
-4. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML) щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+4. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
     ![Настройка единого входа](./media/zscaler-three-tutorial/tutorial_general_302.png)
 
@@ -119,10 +119,7 @@ ms.locfileid: "49312201"
 
     ![Настройка единого входа](./media/zscaler-three-tutorial/tutorial_zscalerthree_url.png)
 
-    В текстовом поле "URL-адрес ответа" введите URL-адрес: `https://login.zscalerthree.net/sfc_sso`.
-
-    > [!NOTE]
-    > Вместо него нужно указать фактический URL-адрес для входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Zscaler Three](https://www.zscaler.com/company/contact).
+    В текстовом поле "URL-адрес для входа" введите URL-адрес: `https://login.zscalerthree.net/sfc_sso`.
 
 6. В разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать **сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
@@ -206,7 +203,7 @@ ms.locfileid: "49312201"
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем выберите **All users** (Все пользователи).
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![Создание пользователя Azure AD][100]
 

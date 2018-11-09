@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/18/2018
 ms.author: dukek
 ms.component: alerts
-ms.openlocfilehash: 3c1bff98debf426fc02dbd4518c0bb798d7ba96d
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 74607f61482d4a96931e307e77b4a6d4c45e4c30
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45576029"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50420937"
 ---
 # <a name="how-to-trigger-complex-actions-with-azure-monitor-alerts"></a>Как активировать сложные действия с помощью оповещений Azure Monitor
 
@@ -38,25 +38,25 @@ ms.locfileid: "45576029"
 
 1.  В верхнем левом углу портала Azure выберите **Создать ресурс**.
 
-2.  Найдите и выберите элемент **Приложение логики** и **Создать**.
+2.  Найдите и выберите  **Приложение логики**, а затем щелкните  **Создать**.
 
 3.  Присвойте **Имя** приложению логики, выберите значение **Группа ресурсов** и т. д.
 
-    ![Создание приложения логики](media/monitoring-action-groups/create-logic-app-dialog.png "Создание приложения логики")
+    ![Создание приложения логики](media/monitoring-action-groups-logic-app/create-logic-app-dialog.png "Создание приложения логики")
 
 4.  Выберите **Создать**, чтобы создать приложение логики. Отображается всплывающее сообщение, указывающее на создание приложения логики. Выберите **Launch Resource** (Запустить ресурс), чтобы открыть **Конструктор Logic Apps**.
 
 5.  Выберите триггер **При получении HTTP-запроса**.
 
-    ![Триггеры приложения логики](media/monitoring-action-groups/logic-app-triggers.png "Триггеры приложения логики")
+    ![Триггеры приложения логики](media/monitoring-action-groups-logic-app/logic-app-triggers.png "Триггеры приложения логики")
 
 6.  Выберите **Изменить**, чтобы изменить триггер HTTP-запроса.
 
-    ![Триггеры HTTP-запроса](media/monitoring-action-groups/http-request-trigger-shape.png "Триггеры HTTP-запроса")
+    ![Триггеры HTTP-запроса](media/monitoring-action-groups-logic-app/http-request-trigger-shape.png "Триггеры HTTP-запроса")
 
 7.  Выберите **Использовать пример полезной нагрузки, чтобы создать схему**.
 
-    ![Использование примера полезных данных](media/monitoring-action-groups/use-sample-payload-button.png "Использование примера полезных данных")
+    ![Использование примера полезных данных](media/monitoring-action-groups-logic-app/use-sample-payload-button.png "Использование примера полезных данных")
 
 8.  Скопируйте следующий пример схемы и вставьте его в диалоговое окно:
 
@@ -99,15 +99,15 @@ ms.locfileid: "45576029"
 
 9. Отображается всплывающее окно **Конструктор приложений логики** с напоминанием о том, что запрос, отправляемый в приложение логики, должен задавать в заголовке **Content-Type** значение **application/json**. Закройте всплывающее окно. Оповещение Azure Monitor задает заголовок.
 
-    ![Задание заголовка Content-Type](media/monitoring-action-groups/content-type-header.png "Задание заголовка Content-Type")
+    ![Задание заголовка Content-Type](media/monitoring-action-groups-logic-app/content-type-header.png "Задание заголовка Content-Type")
 
 10. Выберите **+** **Новый шаг**, а затем щелкните **Добавить действие**.
 
-    ![Добавление действия](media/monitoring-action-groups/add-action.png "Добавление действия")
+    ![Добавление действия](media/monitoring-action-groups-logic-app/add-action.png "Добавление действия")
 
 11. Найдите и выберите соединитель Microsoft Teams. Выберите действие **Microsoft Teams – Post message** (Microsoft Teams — публикация сообщения).
 
-    ![Действия Microsoft Teams](media/monitoring-action-groups/microsoft-teams-actions.png "Microsoft Teams actions")
+    ![Действия Microsoft Teams](media/monitoring-action-groups-logic-app/microsoft-teams-actions.png "Microsoft Teams actions")
 
 12. Настройте действие Microsoft Teams. **Конструктор Logic Apps** предлагает пройти проверку подлинности для учетной записи Office 365. Выберите значения параметров **Идентификатор команды** и **Идентификатор канала** для отправки сообщения.
 
@@ -125,13 +125,13 @@ ms.locfileid: "45576029"
     > [!NOTE]
     > Имеются два динамических поля с именем **status**. Добавьте оба эти поля в сообщение. Используйте поле в контейнере свойств **activityLog** и удалите другое. Наведите указатель мыши на поле **status**, чтобы отобразить подсказку с полным именем поля, как показано на следующем снимке экрана:
 
-    ![Действие Microsoft Teams: публикация сообщения](media/monitoring-action-groups/teams-action-post-message.png "Действие Microsoft Teams: публикация сообщения")
+    ![Действие Microsoft Teams: публикация сообщения](media/monitoring-action-groups-logic-app/teams-action-post-message.png "Действие Microsoft Teams: публикация сообщения")
 
 14. В верхней части окна **Конструктор Logic Apps** выберите **Сохранить**, чтобы сохранить приложение логики.
 
 15. Откройте существующую группу действий и добавьте в нее действие, которое ссылается на приложение логики. При отсутствии группы действия создайте ее, как описано в статье [Создание групп действий и управление ими на портале Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups). Обязательно сохраните изменения.
 
-    ![Обновление группы действий](media/monitoring-action-groups/update-action-group.png "Обновление группы действий")
+    ![Обновление группы действий](media/monitoring-action-groups-logic-app/update-action-group.png "Обновление группы действий")
 
 При следующем вызове группы действий оповещением будет вызвано ваше приложение логики.
 
@@ -192,7 +192,7 @@ ms.locfileid: "45576029"
        - `eventSource == ServiceHealth`
        - `version == "0.1.1"`
 
-      !["Условие полезных данных о работоспособности служб"](media/monitoring-action-groups/service-health-payload-condition.png "Условие полезных данных о работоспособности служб")
+      !["Условие полезных данных о работоспособности служб"](media/monitoring-action-groups-logic-app/service-health-payload-condition.png "Условие полезных данных о работоспособности служб")
 
    1. В условии **Если истинно** выполните инструкции для шагов с 11 по 13 из раздела [Создание оповещения журнала действий](#create-an-activity-log-alert-administrative), чтобы добавить действие Microsoft Teams.
 
@@ -209,7 +209,7 @@ ms.locfileid: "45576029"
        <p>[communication]</p>
        ```
 
-       !["Действие публикации для условия true оповещения о работоспособности служб"](media/monitoring-action-groups/service-health-true-condition-post-action.png "Действие публикации для условия true оповещения о работоспособности служб")
+       !["Действие публикации для условия true оповещения о работоспособности служб"](media/monitoring-action-groups-logic-app/service-health-true-condition-post-action.png "Действие публикации для условия true оповещения о работоспособности служб")
 
    1. Для условия **Если ложно** введите имеющее смысл сообщение:
 
@@ -219,7 +219,7 @@ ms.locfileid: "45576029"
        <p><a href="https://ms.portal.azure.com/#blade/Microsoft_Azure_Health/AzureHealthBrowseBlade/serviceIssues">For details, log in to the Azure Service Health dashboard.\</a></p>
        ```
 
-       !["Действие публикации для условия false оповещения о работоспособности служб"](media/monitoring-action-groups/service-health-false-condition-post-action.png "Service Health false condition post action")
+       !["Действие публикации для условия false оповещения о работоспособности служб"](media/monitoring-action-groups-logic-app/service-health-false-condition-post-action.png "Service Health false condition post action")
 
 - Шаг 15 остается без изменений. Следуйте инструкциям, чтобы сохранить приложение логики и обновить группу действий.
 
@@ -279,15 +279,15 @@ ms.locfileid: "45576029"
        - `schemaId == AzureMonitorMetricAlert`
        - `version == "2.0"`
        
-       !["Условие для полезных данных оповещения метрики"](media/monitoring-action-groups/metric-alert-payload-condition.png "Metric alert payload condition")
+       !["Условие для полезных данных оповещения метрики"](media/monitoring-action-groups-logic-app/metric-alert-payload-condition.png "Metric alert payload condition")
 
    1. В условии **Если истинно** добавьте цикл **For each** и действие Microsoft Teams. Определите сообщение, используя сочетание кода HTML и динамического содержимого.
 
-       !["Действие публикации для условия true оповещения метрики"](media/monitoring-action-groups/metric-alert-true-condition-post-action.png "Metric alert true condition post action")
+       !["Действие публикации для условия true оповещения метрики"](media/monitoring-action-groups-logic-app/metric-alert-true-condition-post-action.png "Metric alert true condition post action")
 
    1. В условии **Если ложно** определите действие Microsoft Teams, которое сообщает, что оповещение метрики не соответствует ожиданиям приложения логики. Включите полезные данные JSON. Обратите внимание на то, как указываются ссылки на динамическое содержимое `triggerBody` в выражении `json()`.
 
-       !["Действие публикации для условия false оповещения метрики"](media/monitoring-action-groups/metric-alert-false-condition-post-action.png "Metric alert false condition post action")
+       !["Действие публикации для условия false оповещения метрики"](media/monitoring-action-groups-logic-app/metric-alert-false-condition-post-action.png "Metric alert false condition post action")
 
 - Шаг 15 остается без изменений. Следуйте инструкциям, чтобы сохранить приложение логики и обновить группу действий.
 

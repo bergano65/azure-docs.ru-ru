@@ -1,5 +1,5 @@
 ---
-title: Отслеживание сообщений B2B с помощью Azure Log Analytics в Azure Logic Apps | Документация Майкрософт
+title: Отслеживание сообщений B2B с помощью Log Analytics в Azure Logic Apps | Документация Майкрософт
 description: Отслеживание взаимодействия B2B для учетных записей интеграции и Azure Logic Apps с помощью Azure Log Analytics
 services: logic-apps
 ms.service: logic-apps
@@ -8,18 +8,17 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
-ms.assetid: bb7d9432-b697-44db-aa88-bd16ddfad23f
-ms.date: 06/19/2018
-ms.openlocfilehash: 666c998a781f13ea2a26ccfc0b94aeead0308f5b
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.date: 10/19/2018
+ms.openlocfilehash: 0bfb652d9e64b9dbf61ad4032f1449fd484cc80a
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49405690"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50233568"
 ---
-# <a name="track-b2b-communication-with-azure-log-analytics"></a>Отслеживание взаимодействия B2B с помощью Azure Log Analytics
+# <a name="track-b2b-messages-with-azure-log-analytics"></a>Отслеживание сообщений B2B с помощью Azure Log Analytics
 
-После настройки взаимодействия B2B между двумя выполняющимися бизнес-процессами или приложениями с помощью учетной записи интеграции эти сущности могут обмениваться сообщениями друг с другом. Для проверки корректности обработки сообщений можно организовать отслеживание сообщений AS2, X12 и EDIFACT с помощью [Azure Log Analytics](../log-analytics/log-analytics-overview.md). Например, для отслеживания сообщений можно использовать следующие функции:
+Когда вы настроите взаимодействие B2B между торговыми партнерами в учетной записи интеграции, эти партнеры смогут обмениваться сообщениями по протоколам AS2, X12, EDIFACT и т. п. Чтобы проверить корректность обработки сообщений, вы можете организовать их отслеживание с помощью [Azure Log Analytics](../log-analytics/log-analytics-overview.md). Например, для отслеживания сообщений можно использовать следующие функции:
 
 * число и состояние сообщений;
 * состояние подтверждений;
@@ -27,7 +26,10 @@ ms.locfileid: "49405690"
 * подробное описание ошибок при сбоях;
 * возможности поиска.
 
-## <a name="requirements"></a>Требования
+> [!NOTE]
+> На этой странице ранее описывались шаги по выполнению таких задач с помощью консоли Microsoft Operations Management Suite (OMS), которая [выводится из эксплуатации в январе 2019 г.](../log-analytics/log-analytics-oms-portal-transition.md) Теперь эти шаги выполняются с помощью Azure Log Analytics. 
+
+## <a name="prerequisites"></a>Предварительные требования
 
 * Приложение логики, настроенное на ведение журнала диагностики. Узнайте подробнее о [создании приложения логики](quickstart-create-first-logic-app-workflow.md) и [настройке ведения журнала для такого приложения логики](../logic-apps/logic-apps-monitor-your-logic-apps.md#azure-diagnostics).
 
@@ -35,51 +37,57 @@ ms.locfileid: "49405690"
 
 * Если это еще не сделано, [опубликуйте диагностические данные в службе Log Analytics](../logic-apps/logic-apps-track-b2b-messages-omsportal.md).
 
-> [!NOTE]
-> Кроме этого, у вас должна быть рабочая область в Log Analytics. Для отслеживания взаимодействия B2B используйте ту же рабочую область Log Analytics. 
->  
-> См. дополнительные сведения о [создании рабочей области Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md).
+* Помимо описанных выше требований, вам нужна рабочая область Log Analytics для отслеживания взаимодействия B2B через Log Analytics. См. дополнительные сведения о [создании рабочей области Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md).
 
-## <a name="add-the-logic-apps-b2b-solution-to-azure"></a>Добавление решения Logic Apps B2B в Azure
+## <a name="install-logic-apps-b2b-solution"></a>Установка решения Logic Apps B2B
 
-Чтобы настроить отслеживание сообщений B2B для приложения логики, решение **Logic Apps B2B** необходимо добавить в Log Analytics. Узнайте подробнее о [добавлении решений в Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md).
+Прежде чем настраивать в Log Analytics отслеживание сообщений B2B для приложения логики, необходимо добавить решение **Logic Apps B2B** в Log Analytics. Узнайте подробнее о [добавлении решений в Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md).
 
-1. На [портале Azure](https://portal.azure.com) выберите **Все службы**. Введите в поле поиска "log analytics" и выберите **Log Analytics**, как показано ниже.
+1. На [портале Azure](https://portal.azure.com) выберите **Все службы**. В поле поиска введите "log analytics" и выберите **Log Analytics**.
 
-   ![Поиск Log Analytics](media/logic-apps-track-b2b-messages-omsportal/browseloganalytics.png)
+   ![Выбор Log Analytics](media/logic-apps-track-b2b-messages-omsportal/find-log-analytics.png)
 
-2. В разделе **Log Analytics** найдите и выберите рабочую область Log Analytics. 
+1. В разделе **Log Analytics** найдите и выберите рабочую область Log Analytics. 
 
-   ![Выбор рабочей области Log Analytics](media/logic-apps-track-b2b-messages-omsportal/selectla.png)
+   ![Выбор рабочей области Log Analytics](media/logic-apps-track-b2b-messages-omsportal/select-log-analytics-workspace.png)
 
-3. В разделе **Управления** выберите **Сводка рабочей области**.
+1. В разделе **Начало работы с Log Analytics** > **Настройка решений мониторинга** выберите **Просмотреть решения**.
 
-   ![Выбор портала Log Analytics](media/logic-apps-track-b2b-messages-omsportal/omsportalpage.png)
+   ![Выбор "Просмотреть решения"](media/logic-apps-track-b2b-messages-omsportal/log-analytics-workspace.png)
 
-4. Когда откроется домашняя страница, выберите **Добавить**, чтобы установить решение Logic Apps B2B.    
-   ![Выбор коллекции решений](media/logic-apps-track-b2b-messages-omsportal/add-b2b-solution.png)
+1. На странице обзора выберите **Добавить**, чтобы открыть список **Решений по управлению**. Из этого списка выберите **Logic Apps B2B**. 
 
-5. В разделе **Решения по управлению** найдите и создайте решение **Logic Apps B2B**.     
-   ![Выбор Logic Apps B2B](media/logic-apps-track-b2b-messages-omsportal/create-b2b-solution.png)
+   ![Выбор решения Logic Apps B2B](media/logic-apps-track-b2b-messages-omsportal/add-b2b-solution.png)
 
-   На домашней странице появится плитка **Сообщения B2B приложений логики**. 
-   На ней отображается количество обработанных сообщений B2B.
+   Если не удается найти решение, в нижней части списка выберите **Загрузить еще**, пока не появится решение.
+
+1. Выберите **Создать**, затем подтвердите, в какой рабочей области Log Analytics вы хотите установить решение и еще раз щелкните **Создать**.   
+
+   ![Выбор действия "Создать" для Logic Apps B2B](media/logic-apps-track-b2b-messages-omsportal/create-b2b-solution.png)
+
+   Если вы не хотите использовать существующую рабочую область, можно прямо сейчас создать новую рабочую область.
+
+1. Когда все будет готово, вернитесь на страницу **Обзор** для рабочей области. 
+
+   Решение Logic Apps B2B теперь отображается на странице "Обзор". 
+   По мере обработки сообщений B2B здесь обновляется счетчик сообщений.
 
 <a name="message-status-details"></a>
 
-## <a name="track-message-status-and-details-in-log-analytics"></a>Отслеживание состояния и подробностей сообщения в Log Analytics
+## <a name="view-b2b-message-information"></a>Просмотр сведений о сообщении B2B
 
-1. После обработки сообщений B2B отображаются сведения об их состоянии и подробные данные о них. На странице обзора выберите плитку **сообщений Logic Apps B2B**.
+После обработки сообщений B2B вы можете просмотреть их состояние и подробные сведения на плитке **Logic Apps B2B**.
+
+1. Перейдите к рабочей области Log Analytics и откройте страницу "Обзор". Выберите **Logic Apps B2B**.
 
    ![Обновленное количество сообщений](media/logic-apps-track-b2b-messages-omsportal/b2b-overview-tile.png)
 
    > [!NOTE]
-   > По умолчанию на плитке **Logic Apps B2B Messages** (Сообщения B2B для Logic Apps) отображаются данные за один день. Чтобы указать другой интервал выборки данных, выберите элемент управления размером выборки данных в верхней части страницы.
+   > По умолчанию на плитке **Logic Apps B2B** отображаются данные за один день. Чтобы указать другой интервал выборки данных, выберите элемент управления размером выборки данных в верхней части страницы.
    > 
-   > ![Изменение области данных](media/logic-apps-track-b2b-messages-omsportal/server-filter.png)
-   >
+   > ![Изменение интервала](media/logic-apps-track-b2b-messages-omsportal/change-interval.png)
 
-2. После появления панели мониторинга состояния сообщений можно просмотреть дополнительные сведения о сообщениях определенного типа, данные о которых отображаются за один день. Выберите плитку **AS2**, **X12** или **EDIFACT**.
+1. После появления панели мониторинга состояния сообщений можно просмотреть дополнительные сведения о сообщениях определенного типа, данные о которых отображаются за один день. Выберите плитку **AS2**, **X12** или **EDIFACT**.
 
    ![Просмотр состояния сообщения](media/logic-apps-track-b2b-messages-omsportal/omshomepage5.png)
 

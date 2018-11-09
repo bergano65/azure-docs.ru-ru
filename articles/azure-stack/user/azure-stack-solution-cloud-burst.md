@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: mabrigg
 ms.reviewer: Anjay.Ajodha
-ms.openlocfilehash: 1f3dcc7da3e91d3805cae805422778978d0187c5
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 68021d25e3deab1c6551d29b0febd9f07e144b57
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46971337"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50095344"
 ---
 # <a name="tutorial-create-cross-cloud-scaling-solutions-with-azure"></a>Руководство по созданию решений для масштабирования в нескольких облаках в Azure
 
@@ -40,9 +40,9 @@ ms.locfileid: "46971337"
 
 > [!Tip]  
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
-> Microsoft Azure Stack — это расширение Azure.re. Azure Stack обеспечивает гибкость и высокую скорость внедрения инноваций облачной среды в локальной среде. Только это гибридное облако позволяет создавать и развертывать гибридные приложения в любой точке мира.  
+> Microsoft Azure Stack — это расширение Azure.re. Azure Stack обеспечивает гибкость и высокую скорость внедрения инноваций облачных вычислений в локальной среде. Только это гибридное облако позволяет создавать и развертывать гибридные приложения в любой точке мира.  
 > 
-> В техническом документе [Design Considerations for Hybrid Applications](https://aka.ms/hybrid-cloud-applications-pillars) (Рекомендации по проектированию гибридных приложений) рассматриваются основные аспекты качества программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность) для разработки, развертывания и эксплуатации гибридных приложений. Рекомендации помогут оптимизировать разработку гибридных приложений и сократить проблемы в рабочих средах.
+> В техническом документе [Design Considerations for Hybrid Applications](https://aka.ms/hybrid-cloud-applications-pillars) (Рекомендации по проектированию гибридных приложений) рассматриваются основные аспекты качества программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность) для разработки, развертывания и эксплуатации гибридных приложений. Рекомендации помогут оптимизировать разработку гибридных приложений и свести к минимуму проблемы в рабочих средах.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -101,7 +101,7 @@ ms.locfileid: "46971337"
 
 ### <a name="add-code-to-visual-studio-team-services-project"></a>Добавление кода в проект Visual Studio Team Services
 
-1. Войдите в Visual Studio Team Services (VSTS), используя учетную запись, которая обладает правами на создание проекта в VSTS~~.~~
+1. Войдите в Visual Studio Team Services (VSTS), используя учетную запись, которая обладает правами на создание проекта в VSTS.
 
     Гибридные процессы непрерывной интеграции и непрерывной поставки применимы и к коду приложения, и к коду инфраструктуры. Используйте [шаблоны Azure Resource Manager](https://azure.microsoft.com/resources/templates/) для частной и облачной разработки.
 

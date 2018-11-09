@@ -1,21 +1,20 @@
 ---
-title: Планирование ресурсов и масштабирования для репликации из VMware в Azure с помощью Azure Site Recovery | Документы Майкрософт
-description: Используйте эту статью, чтобы запланировать ресурсы и масштабирование при репликации виртуальных машин VMware в Azure с помощью Azure Site Recovery.
-services: site-recovery
+title: Планирование ресурсов и масштабирования для аварийного восстановления из VMware в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: Эта статья поможет запланировать ресурсы и масштабирование при аварийном восстановлении виртуальных машин VMware в Azure с помощью Azure Site Recovery.
 author: nsoneji
 manager: garavd
 ms.service: site-recovery
-ms.date: 10/10/2018
+ms.date: 10/28/2018
 ms.topic: conceptual
 ms.author: rayne
-ms.openlocfilehash: 833000cb09d315a996ebc9e2d66210c805160f2a
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: 9bc0d5976cf01eb61c2a09a35ccd3a834313ca00
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49067559"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210505"
 ---
-# <a name="plan-capacity-and-scaling-for-vmware-replication-with-azure-site-recovery"></a>Планирование загрузки и масштабирования для репликации из VMware с помощью Azure Site Recovery
+# <a name="plan-capacity-and-scaling-for-vmware-disaster-recovery-to-auzre"></a>Планирование ресурсов и масштабирования для аварийного восстановления из VMware в Azure
 
 Используйте эту статью, чтобы выяснить, как планировать ресурсы и масштабирование при репликации локальных физических серверов и виртуальных машин VMware в Azure с помощью [Azure Site Recovery](site-recovery-overview.md).
 

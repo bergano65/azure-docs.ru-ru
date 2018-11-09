@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 09/17/2018
 ms.author: nacanuma
 ms.custom: include file
-ms.openlocfilehash: c2b86e79f0364ee84e01fee5e9837db5a6b618a2
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: 66021fa8140da2faae4ecab07c98b0df4ea5297a
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48842965"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50142883"
 ---
 ## <a name="add-the-applications-registration-information-to-your-app"></a>Добавление в приложение сведений о его регистрации
 
@@ -29,12 +29,11 @@ ms.locfileid: "48842965"
 
 Настройте поле `Redirect URL`, используя URL-адрес страницы index.html на основе веб-сервера, а затем нажмите кнопку *Обновить*.
 
-
 > #### <a name="visual-studio-instructions-for-obtaining-the-redirect-url"></a>Инструкции для Visual Studio по получению URL-адреса перенаправления
 > Чтобы получить URL-адрес перенаправления, выполните следующие действия:
-> 1.    Выберите проект в **обозревателе решений** и просмотрите сведения в окне **Свойства**. Если окно **Свойства** не отображается, нажмите клавишу **F4**.
-> 2.    Скопируйте значение **URL-адреса** в буфер обмена:<br/> ![Свойства проекта](media/active-directory-develop-guidedsetup-javascriptspa-configure/vs-project-properties-screenshot.png)<br />
-> 3.    Также вставьте это значение в качестве **URL-адреса перенаправления** в верхней части этой страницы, а затем нажмите кнопку **Обновить**.
+> 1. Выберите проект в **обозревателе решений** и просмотрите сведения в окне **Свойства**. Если окно **Свойства** не отображается, нажмите клавишу **F4**.
+> 2. Скопируйте значение **URL-адреса** в буфер обмена:<br/> ![Свойства проекта](media/active-directory-develop-guidedsetup-javascriptspa-configure/vs-project-properties-screenshot.png)<br />
+> 3. Вставьте значение в поле **URL-адрес перенаправления** вверху страницы и щелкните **Обновить**.
 
 <p/>
 
@@ -44,7 +43,7 @@ ms.locfileid: "48842965"
 
 ### <a name="configure-your-javascript-spa-application"></a>Настройка одностраничного приложения JavaScript
 
-1.  Внесите сведения о регистрации приложения в файл `index.html`, созданный во время настройки проекта. В начале вашего файла `index.html` между тегами `<script></script>` вставьте следующий код:
+1. Внесите сведения о регистрации приложения в файл `index.html`, созданный во время настройки проекта. В начале вашего файла `index.html` между тегами `<script></script>` вставьте следующий код:
 
 ```javascript
 var applicationConfig = {

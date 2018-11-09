@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 09/22/2018
 ms.author: qianw211
-ms.openlocfilehash: 46740e925a5d4e94c314105aba4920caf01532e7
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 0468c41f0813277b6ba6d3be8ad89c3178dd1420
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49985614"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50094682"
 ---
 # <a name="iot-edge-modules"></a>Модули Edge Интернета вещей
 
@@ -78,15 +78,11 @@ Marketplace в настоящее время поддерживает **бесп
 
 **Технические требования**
 
-Основные технические требования к модулю IoT Edge для получения сертификата и публикации в Azure Marketplace подробно описаны в [документации по сертификации модуля IoT Edge](https://cloudpartner.azure.com/#documentation/iot-edge-module-certification-process) на [Портале Cloud Partner](https://cloudpartner.azure.com/).  
+Основные технические требования к модулю IoT Edge для получения сертификата и публикации в Azure Marketplace подробно описаны в статье [Подготовка технических ресурсов для модуля IoT Edge](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/iot-edge-module/cpp-create-technical-assets).  
 
 ## <a name="documentation-and-resources"></a>Документация и ресурсы
 
-Если вы вошли на [Портал Cloud Partner](https://cloudpartner.azure.com/), вам будут доступны следующие статьи:
-
-- [Создание предложения модуля IoT Edge](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/iot-edge-module/cpp-create-offer) — шаги для публикации нового модуля IoT Edge с помощью Портала Cloud Partner.
-- [Процесс сертификации модуля IoT Edge](https://cloudpartner.azure.com/#documentation/iot-edge-module-certification-process) — сводка шагов и требования для сертификации модуля IoT Edge.
-- [Часто задаваемые вопросы об IoT Edge](https://cloudpartner.azure.com/#documentation/iot-edge-module-faq) — список часто задаваемых вопросов, связанных с модулями IoT Edge.
+[Создание предложения модуля IoT Edge](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/iot-edge-module/cpp-create-offer) — шаги для публикации нового модуля IoT Edge с помощью Портала Cloud Partner.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

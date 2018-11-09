@@ -12,29 +12,29 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/21/2018
 ms.author: douglasl
-ms.openlocfilehash: 234fb5af55565602d283539c63076adebad1ed25
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.openlocfilehash: 3c829819748309ecbca248afe35cd59f54b202a6
+ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48248981"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50085416"
 ---
 # <a name="enable-azure-active-directory-authentication-for-the-azure-ssis-integration-runtime"></a>Включение аутентификации Azure Active Directory в среде выполнения интеграции Azure-SSIS
 
-В этой статье показано, как создать среду выполнения интеграции с удостоверением службы "Фабрика данных Azure". Чтобы создать среду выполнения интеграции Azure-SSIS с использованием управляемого удостоверения службы "Фабрика данных", а не аутентификации SQL, в ней необходимо настроить аутентификацию Azure Active Directory (Azure AD) и управляемое удостоверение ADF для ресурсов Azure.
+В этой статье показано, как создать среду выполнения интеграции с удостоверением службы "Фабрика данных Azure". Для создания среды выполнения интеграции Azure-SSIS можно использовать аутентификацию Azure Active Directory (Azure AD) с помощью управляемого удостоверения службы "Фабрика данных Azure" вместо аутентификации SQL.
 
-Дополнительные сведения об управляемом удостоверении службы "Фабрика данных" см. в [этой статье](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity).
+Дополнительные сведения об управляемом удостоверении службы "Фабрика данных Azure" см. в [этой статье](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity).
 
 > [!NOTE]
 > Сейчас, если в созданной среде выполнения интеграции Azure-SSIS используется аутентификация SQL, вы можете перенастроить ее на аутентификацию Azure AD с помощью PowerShell.
 
-## <a name="create-a-group-in-azure-ad-and-make-the-data-factory-msi-a-member-of-the-group"></a>Создание группы в Azure AD и добавление в нее управляемого удостоверения службы "Фабрика данных"
+## <a name="create-a-group-in-azure-ad-and-make-the-managed-identity-for-your-adf-a-member-of-the-group"></a>Создание группы в Azure AD и включение в нее управляемого удостоверения службы "Фабрика данных Azure"
 
 Можно использовать существующую группу Azure AD или создать новую с помощью Azure AD PowerShell.
 
 1.  Установите модуль [Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2).
 
-2.  Войдите с помощью командлета `Connect-AzureAD` и выполните следующую команду, чтобы создать группу и сохранить ее в переменной:
+2.  Войдите с помощью командлета  `Connect-AzureAD` и выполните следующую команду, чтобы создать группу и сохранить ее в переменной:
 
     ```powershell
     $Group = New-AzureADGroup -DisplayName "SSISIrGroup" `
@@ -53,7 +53,7 @@ ms.locfileid: "48248981"
     6de75f3c-8b2f-4bf4-b9f8-78cc60a18050 SSISIrGroup
     ```
 
-3.  Добавление в группу управляемого удостоверения службы "Фабрика данных". Чтобы получить идентификатор удостоверения службы субъекта (например, 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc), выполните инструкции, приведенные в статье [Удостоверение службы фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity). Не используйте идентификатор приложения удостоверения службы.
+3.  Добавьте в группу управляемое удостоверение службы "Фабрика данных Azure". Чтобы получить идентификатор удостоверения службы субъекта (например, 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc), выполните инструкции, приведенные в статье [Удостоверение службы фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity). Не используйте идентификатор приложения удостоверения службы.
 
     ```powershell
     Add-AzureAdGroupMember -ObjectId $Group.ObjectId -RefObjectId 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc
@@ -71,39 +71,39 @@ ms.locfileid: "48248981"
 
 ### <a name="enable-azure-ad-authentication-for-the-azure-sql-database"></a>Включение аутентификации Azure AD в службе "База данных SQL Azure"
 
-Чтобы [настроить аутентификацию Azure AD в службе "База данных SQL Azure"](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure), сделайте следующее:
+Чтобы  [настроить аутентификацию Azure AD в службе "База данных SQL Azure"](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure), сделайте следующее.
 
-1.  На портале Azure выберите **Все службы** -> **Серверы SQL Server** на левой панели навигации.
+1.  На портале Azure выберите  **Все службы** -> **Серверы SQL Server**  на панели навигации слева.
 
 2.  Выберите службу "База данных SQL Azure", в которой нужно включить аутентификацию Azure AD.
 
-3.  В разделе колонки **Параметры** выберите **Администратор Active Directory**.
+3.  В разделе  **Параметры**  этой колонки выберите  **Администратор Active Directory**.
 
-4.  На панели команд щелкните **Задать администратора**.
+4.  На панели команд щелкните  **Задать администратора**.
 
-5.  Выберите учетную запись пользователя Azure AD, которую необходимо сделать администратором сервера, а затем нажмите кнопку **Выбрать**.
+5.  Выберите учетную запись пользователя AAD, которой необходимо предоставить права администратора сервера, и щелкните  **Выбрать**.
 
-6.  На панели команд нажмите кнопку **Сохранить**.
+6.  На панели команд щелкните  **Сохранить**.
 
 ### <a name="create-a-contained-user-in-the-database-that-represents-the-azure-ad-group"></a>Создание в базе данных автономного пользователя, представляющего группу Azure AD
 
-На следующем шаге потребуется [Microsoft SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
+На следующем шаге вам потребуется  [Microsoft SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)  (SSMS).
 
 1.  Запустите среду SQL Server Management Studio.
 
-2.  В диалоговом окне **Подключение к серверу** в поле **Имя сервера** введите имя сервера SQL.
+2.  В диалоговом окне  **Подключение к серверу**  введите имя сервера SQL в поле  **Имя сервера** .
 
-3.  В поле **Authentication** (Аутентификация) выберите **Active Directory — универсальная с поддержкой MFA**. (Ви также можете использовать два других типа аутентификации Active Directory. Дополнительные сведения см. в статье [Настройка аутентификации Azure Active Directory и управление ею с использованием базы данных SQL, управляемого экземпляра или хранилища данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure).)
+3.  В поле  **Аутентификация**  выберите  **Active Directory — универсальная с поддержкой MFA**. (Ви также можете использовать два других типа аутентификации Active Directory. Дополнительные сведения см. в статье [Настройка аутентификации Azure Active Directory и управление ею с использованием базы данных SQL, управляемого экземпляра или хранилища данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure).)
 
-4.  В поле **Имя пользователя** введите имя учетной записи Azure AD, установленной в качестве администратора сервера, например testuser@xxxonline.com.
+4.  В поле  **Имя пользователя** введите имя учетной записи Azure AD, установленной в качестве администратора сервера, например testuser@xxxonline.com.
 
-5.  Нажмите кнопку **Подключиться**. Завершите процесс входа в систему.
+5.  Выберите  **Подключение**. Завершите процесс входа в систему.
 
-6.  В **обозревателе объектов** разверните папку **Базы данных** -> "Системные базы данных".
+6.  В  **обозревателе объектов** разверните папку  **Базы данных** -> "Системные базы данных".
 
-7.  Щелкните правой кнопкой мыши базу данных **master** и выберите **Создать запрос**.
+7.  Щелкните правой кнопкой мыши базу данных **master** и выберите  **Создать запрос**.
 
-8.  В окне запроса введите следующую строку и на панели инструментов нажмите кнопку **Выполнить**:
+8.  В окне запроса введите следующую строку и щелкните  **Выполнить**  на панели инструментов:
 
     ```sql
     CREATE USER [SSISIrGroup] FROM EXTERNAL PROVIDER
@@ -123,23 +123,23 @@ ms.locfileid: "48248981"
 
 Служба "Управляемый экземпляр Базы данных SQL Azure" поддерживает создание базы данных только с использованием учетной записи администратора AD. В результате группу Azure AD необходимо задать в качестве администратора Active Directory. Автономного пользователя создавать не требуется.
 
-Чтобы [настроить аутентификацию Azure AD в службе "Управляемый экземпляр Базы данных SQL Azure"](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure), сделайте следующее:
+Чтобы  [настроить аутентификацию Azure AD в службе "Управляемый экземпляр Базы данных SQL Azure"](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure), сделайте следующее:
 
-7.  На портале Azure выберите **Все службы** -> **Серверы SQL Server** на левой панели навигации.
+7.  На портале Azure выберите  **Все службы** -> **Серверы SQL Server**  на панели навигации слева.
 
 8.  Выберите сервер SQL Server, на котором нужно включить аутентификацию Azure AD.
 
-9.  В разделе колонки **Параметры** выберите **Администратор Active Directory**.
+9.  В разделе  **Параметры**  этой колонки выберите  **Администратор Active Directory**.
 
-10. На панели команд щелкните **Задать администратора**.
+10. На панели команд щелкните  **Задать администратора**.
 
-11. Найдите и выберите группу Azure AD (например, SSISIrGroup) и нажмите кнопку **Выбрать**.
+11. Найдите и выберите группу Azure AD (например, SSISIrGroup) и щелкните  **Выбрать**.
 
-12. На панели команд нажмите кнопку **Сохранить**.
+12. На панели команд щелкните  **Сохранить**.
 
 ## <a name="provision-the-azure-ssis-ir-in-the-portal"></a>Подготовка к работе среды выполнения интеграции Azure-SSIS на портале
 
-При подготовке к работе среды выполнения интеграции Azure-SSIS на портале на странице **Параметры SQL** установите флажок Use AAD authentication with your ADF MSI (Использовать аутентификацию AAD с MSI ADF). (На приведенном ниже снимке экрана показаны параметры среды выполнения интеграции со службой "База данных SQL Azure". Если в этой среде используется управляемый экземпляр, свойство Catalog Database Service Tier (Уровень службы базы данных каталога. Все остальные параметры такие же.)
+При подготовке к работе среды выполнения интеграции Azure-SSIS на портале Azure на странице **Параметры SQL** установите флажок "Use AAD authentication with the managed identity for your ADF" (Использовать аутентификацию AAD с управляемым удостоверением Фабрики данных Azure). (На приведенном ниже снимке экрана показаны параметры среды выполнения интеграции со службой "База данных SQL Azure". Если в этой среде используется управляемый экземпляр, свойство Catalog Database Service Tier (Уровень службы базы данных каталога. Все остальные параметры такие же.)
 
 Дополнительные сведения о создании среды выполнения интеграции Azure-SSIS в службе "Фабрика данных Azure" см. в [этой статье](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime).
 
@@ -149,7 +149,7 @@ ms.locfileid: "48248981"
 
 Чтобы подготовить к работе среду выполнения интеграции Azure-SSIS с помощью PowerShell, сделайте следующее:
 
-1.  установить модуль [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/tag/v5.5.0-March2018) .
+1.  Установите модуль [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/tag/v5.5.0-March2018) .
 
 2.  В скрипте не устанавливайте *CatalogAdminCredential* . Например: 
 
@@ -157,16 +157,15 @@ ms.locfileid: "48248981"
     Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                                -DataFactoryName $DataFactoryName `
                                                -Name $AzureSSISName `
-                                               -Type Managed `
-                                               -CatalogServerEndpoint $SSISDBServerEndpoint `
-                                               -CatalogPricingTier $SSISDBPricingTier `
                                                -Description $AzureSSISDescription `
-                                               -Edition $AzureSSISEdition `
+                                               -Type Managed `
                                                -Location $AzureSSISLocation `
                                                -NodeSize $AzureSSISNodeSize `
                                                -NodeCount $AzureSSISNodeNumber `
+                                               -Edition $AzureSSISEdition `
                                                -MaxParallelExecutionsPerNode $AzureSSISMaxParallelExecutionsPerNode `
-                                               -SetupScriptContainerSasUri $SetupScriptContainerSasUri
+                                               -CatalogServerEndpoint $SSISDBServerEndpoint `
+                                               -CatalogPricingTier $SSISDBPricingTier
 
     Start-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                                  -DataFactoryName $DataFactoryName `

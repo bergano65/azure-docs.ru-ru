@@ -1,5 +1,5 @@
 ---
-title: Просмотр зависимостей приложений с помощью службы Azure Monitor для виртуальных машин | Microsoft Docs
+title: Просмотр зависимостей приложения с помощью Azure Monitor для виртуальных машин (предварительная версия) | Документация Майкрософт
 description: "\"Схема\" — это функция службы Azure Monitor для виртуальных машин, которая автоматически обнаруживает компоненты приложений в системах Windows и Linux и отображает связи между службами. В этой статье рассказывается о том, как использовать эту функцию в различных сценариях."
 services: azure-monitor
 documentationcenter: ''
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/17/2018
+ms.date: 10/25/2018
 ms.author: magoedte
-ms.openlocfilehash: 8641b6cfb14bceb248cc587095a9d3469ce2c9e0
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: af3d2b997a4d58f2d32705c55151c4cf13bdcc7c
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49402155"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50095484"
 ---
-# <a name="using-azure-monitor-for-vms-map-to-understand-application-components"></a>Использование функции "Схема" в Azure Monitor для виртуальных машин для анализа структуры приложения
+# <a name="using-azure-monitor-for-vms-preview-map-to-understand-application-components"></a>Использование сопоставления Azure Monitor для виртуальных машин (предварительная версия), чтобы получать сведения о компонентах приложения
 При просмотре обнаруженных компонентов приложений в виртуальных машинах с ОС Windows и Linux, работающих в Azure, за средой можно наблюдать двумя способами с помощью Azure Monitor для виртуальных машин: непосредственно из виртуальной машины либо в группах виртуальных машин в Azure Monitor. 
 
 Благодаря этой статье вы поймете разницу между этими двумя способами и узнаете, как использовать функцию "Схема". Сведения о настройке Azure Monitor для виртуальных машин, см. в [этой статье](monitoring-vminsights-onboard.md).

@@ -11,12 +11,12 @@ services: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
 tags: connectors
-ms.openlocfilehash: 8ac67f9df0e5baccc668c2aeb70f65d96e574df5
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: 9997f27f360f84ff3cd185d7c12c45519513d82b
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37021291"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50233095"
 ---
 # <a name="find-news-with-bing-search-and-azure-logic-apps"></a>Поиск новостей с помощью поиска Bing и Azure Logic Apps 
 
@@ -27,7 +27,7 @@ ms.locfileid: "37021291"
 Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. Если вы не работали с приложениями логики, см. руководства по [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [созданию первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 См. технические сведения о <a href="https://docs.microsoft.com/connectors/bingsearch/" target="blank">соединителях поиска Bing</a>.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Учетная запись Cognitive Services](../cognitive-services/cognitive-services-apis-create-account.md)
 
@@ -43,7 +43,7 @@ ms.locfileid: "37021291"
 
 1. На портале Azure или в Visual Studio создайте пустое приложение логики. Откроется конструктор приложений логики. В этом примере используется портал Azure.
 
-2. В поле поиска в качестве фильтра введите слово "Bing search". В списке триггеров выберите нужный триггер. 
+2. В поле поиска в качестве фильтра введите запрос "поиск Bing". В списке триггеров выберите нужный триггер. 
 
    В этом примере используется триггер **Поиск Bing — включить новые статьи новостей**
 
@@ -80,7 +80,7 @@ ms.locfileid: "37021291"
 
 1. На портале Azure или в Visual Studio откройте приложение логики в конструкторе приложений логики. В этом примере используется портал Azure.
 
-2. В разделе "Триггер" или "Действия" выберите **Новый шаг** > **Add an action** (Добавить действие).
+2. В разделе "Триггер" или "Действия" выберите **Новый шаг** > **Добавить действие**.
 
    В этом примере используется триггер **Поиск Bing — включить новые статьи новостей**
 
@@ -89,8 +89,8 @@ ms.locfileid: "37021291"
    Чтобы добавить действие между существующими шагами, наведите указатель мыши на соединяющую стрелку. 
    Щелкните появившийся знак "плюс" (**+**), а затем выберите **Добавить действие**.
 
-3. В поле поиска в качестве фильтра введите слово "Bing search".
-В списке действий выберите любое необходимое действие.
+3. В поле поиска в качестве фильтра введите запрос "поиск Bing".
+В списке действий выберите необходимое действие.
 
    В этом примере выбрано действие **Поиск Bing — список новостей по запросу**
 
@@ -167,7 +167,7 @@ ms.locfileid: "37021291"
 ## <a name="get-support"></a>Получение поддержки
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](http://aka.ms/logicapps-wish).
+* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

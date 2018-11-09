@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/09/2018
 ms.author: vashan, cynthn, rajsqr
 ms.custom: include file
-ms.openlocfilehash: 603e7c3a0c30eb42cb75d6a6ff87a96d847b7c9f
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: e1dc637d2f629b5002c2e8796fbd29a95478c392
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40100644"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50035209"
 ---
 Виртуальные машины Azure проходят различные состояния, которые могут быть отнесены к состояниям *подготовки* и состояниям *включения*. Цель этой статьи — описать эти состояния и показать, когда клиентам будет выставлен счет, например, за использование экземпляра. 
 
@@ -287,7 +287,7 @@ ms.locfileid: "40100644"
 
 API представления экземпляра предоставляет информацию о состоянии выполнения виртуальной машины. Дополнительные сведения см. в разделе [Virtual Machines — Instance View](https://docs.microsoft.com/rest/api/compute/virtualmachines/instanceview) (Просмотр экземпляров виртуальных машин в документации по API).
 
-Обозреватель ресурсов Azure предоставляет простой пользовательский интерфейс для просмотра состояния выполнения виртуальной машины: [Resource Explorer] (https://resources.azure.com/).
+Обозреватель ресурсов Azure предоставляет простой пользовательский интерфейс для просмотра состояния выполнения виртуальной машины — [Обозреватель ресурсов](https://resources.azure.com/).
 
 Состояния подготовки отображаются в свойствах виртуальной машины и в представлении экземпляра. Состояния включения доступно в представлении экземпляра виртуальной машины. 
 

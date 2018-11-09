@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 10/15/2018
 ms.author: yijenj
-ms.openlocfilehash: a0b3c220a1cd857bc8bea0eb5ab41625845fcc5d
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 604eb528ef33a95993aa5b6d3ff6eebb77936aa2
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49365631"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50157944"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -44,7 +44,7 @@ ms.locfileid: "49365631"
 
 Чтобы добавить глобальный уникальный идентификатор (GUID), в основной файл шаблона нужно внести всего одно изменение.
 
-1. [Создайте GUID](#create-guids) (например, eb7927c8-dd66-43e1-b0cf-c346a422063) и [зарегистрируйте его](#register-guids-and-offers).
+1. [Создайте GUID](#create-guids) с помощью предлагаемого метода и [зарегистрируйте GUID](#register-guids-and-offers).
 
 1. Откройте шаблон Resource Manager.
 
@@ -58,9 +58,26 @@ ms.locfileid: "49365631"
 
 1. [Проверка GUID в развертывании шаблона](#verify-the-guid-deployment).
 
-### <a name="sample-template-code"></a>Пример кода шаблона
+### <a name="sample-resource-manager-template-code"></a>Пример кода шаблона Resource Manager
+Обязательно измените данные в примере кода ниже своими входными данными, когда будете добавлять его в основной файл шаблона.
+Этот ресурс должен быть добавлен только в файл **mainTemplate.json** или **azuredeploy.json**, но не во вложенные или связанные шаблоны.
+```
+// Make sure to modify this sample code with your own inputs where applicable
 
-![Пример кода шаблона](media/marketplace-publishers-guide/tracking-sample-code-for-lu-1.PNG)
+{ // add this resource to the mainTemplate.json (do not add the entire file)
+    "apiVersion": "2018-02-01",
+    "name": "pid-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" // use your generated GUID here
+    "type": "Microsoft.Resources/deployments",
+    "properties": {
+        "mode": "Incremental",
+        "template": {
+            "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+            "contentVersion": "1.0.0.0",
+            "resources": []
+        }
+    }
+} // remove all comments from the file when complete
+```
 
 ## <a name="use-the-resource-manager-apis"></a>Использование интерфейсов API Resource Manager
 
@@ -77,7 +94,7 @@ ms.locfileid: "49365631"
 > [!Note]
 > Важно соблюдать формат строки. Без префикса **pid-** вы не сможете получить нужные данные. Разные пакеты SDK выполняют отслеживание по-разному. Чтобы реализовать этот метод, изучите сведения о поддержке и процессах отслеживания для выбранного пакета SDK Azure. 
 
-### <a name="example-the-python-sdk"></a>Пример для пакета SDK для Python
+#### <a name="example-the-python-sdk"></a>Пример для пакета SDK для Python
 
 В Python используется атрибут **config**. Этот атрибут можно добавить только в UserAgent. Ниже приведен пример:
 
@@ -104,7 +121,7 @@ export AZURE_HTTP_USER_AGENT='pid-eb7927c8-dd66-43e1-b0cf-c346a422063'
 
 ## <a name="create-guids"></a>Создание глобальных уникальных идентификаторов
 
-Идентификатор GUID является уникальным числом из 32 шестнадцатеричных цифр и используется для создания ссылок. Чтобы создать идентификаторы GUID для отслеживания, следует использовать генератор GUID. Рекомендуется использовать [форму генератор GUID хранилища Azure](https://aka.ms/StoragePartners). Однако если вы не хотите использовать генератор GUID хранилища Azure, в Интернете можно найти множество [генераторов GUID](https://www.bing.com/search?q=guid%20generator).
+Идентификатор GUID является уникальным числом из 32 шестнадцатеричных цифр и используется для создания ссылок. Чтобы создать идентификаторы GUID для отслеживания, следует использовать генератор GUID. Команда разработчиков службы хранилища Azure создала [форму генератора GUID](https://aka.ms/StoragePartners), которая позволяет получить GUID в правильном формате на электронную почту и которую можно использовать в различных системах отслеживания. 
 
 > [!Note]
 > Настоятельно рекомендуется использовать [формы генератора GUID хранилища Azure](https://aka.ms/StoragePartners) для создания уникального идентификатора. Дополнительные сведения см. в разделе [Часто задаваемые вопросы](#faq).

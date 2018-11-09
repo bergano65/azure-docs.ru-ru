@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 09/19/2018
 ms.author: sethm
 ms.reviewer: jeffgo
-ms.openlocfilehash: 21fd3a33181542d86eccc4292ae68f7ce25e0a05
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 16cf679f91dae185a857813ec27441b9a4440e37
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46366732"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51244055"
 ---
 # <a name="azure-resource-manager-template-considerations"></a>Рекомендации по использованию шаблона Azure Resource Manager
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-При разработке приложения очень важно обеспечить мобильность шаблона в контексте взаимодействия Azure и Azure Stack. Эта статья содержит рекомендации по разработке [шаблонов](http://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf) Azure Resource Manager. С ее помощью вы сможете создать прототип приложения и протестировать развертывание в Azure без доступа к среде Azure Stack.
+При разработке приложения очень важно обеспечить мобильность шаблона в контексте взаимодействия Azure и Azure Stack. Эта статья содержит рекомендации по разработке [шаблонов](https://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf) Azure Resource Manager. С ее помощью вы сможете создать прототип приложения и протестировать развертывание в Azure без доступа к среде Azure Stack.
 
 ## <a name="resource-provider-availability"></a>Доступность поставщика ресурсов
 
@@ -50,7 +50,7 @@ ms.locfileid: "46366732"
 | --- | --- |
 | Службы вычислений |`'2015-06-15'` |
 | Сеть |`'2015-06-15'`, `'2015-05-01-preview'` |
-| служба хранилища. |`'2016-01-01'`, `'2015-06-15'`, `'2015-05-01-preview'` |
+| Хранилище |`'2016-01-01'`, `'2015-06-15'`, `'2015-05-01-preview'` |
 | Хранилище ключей | `'2015-06-01'` |
 | Служба приложений |`'2015-08-01'` |
 

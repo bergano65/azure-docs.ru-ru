@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/20/2018
 ms.author: victorh
 ms.custom: include file
-ms.openlocfilehash: e4d698b8b9c3f9e304780ee49bd4243a76e69138
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: e33871f35613fbd5cdc5bf3162855b942056807f
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49471536"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50254629"
 ---
 ### <a name="what-is-azure-firewall"></a>Что такое брандмауэр Azure?
 
@@ -111,10 +111,7 @@ Set-AzureRmFirewall -AzureFirewall $azfw
 
 ### <a name="what-are-the-known-service-limits"></a>Каковы известные ограничения службы?
 
-* Служба "Брандмауэр Azure" имеет мягкое ограничение в 1000 ТБ на брандмауэр в месяц.
-* Экземпляр службы "Брандмауэр Azure", который выполняется в центральной виртуальной сети, имеет ограничения на пиринговую связь: максимум 50 периферийных виртуальных сетей.  
-* Служба "Брандмауэр Azure" не поддерживает глобальный пиринг, поэтому вам нужно развернуть как минимум один брандмауэр в регионе.
-* Брандмауэр Azure поддерживает 10 тысяч правил приложений и 10 тысяч правил сети.
+Сведения об ограничениях службы "Брандмауэр Azure" см. в статье [Подписка Azure, границы, квоты и ограничения службы](../articles/azure-subscription-service-limits.md#azure-firewall-limits).
 
 ### <a name="can-azure-firewall-in-a-hub-virtual-network-forward-and-filter-network-traffic-between-two-spoke-virtual-networks"></a>Может ли Брандмауэр Azure, подключенный к концентратору виртуальной сети, передавать и фильтровать трафик, проходящий между двумя периферийными зонами виртуальной сети?
 

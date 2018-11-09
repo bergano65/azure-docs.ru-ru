@@ -1,6 +1,6 @@
 ---
-title: Использование модуля Azure Database Migration Service в Microsoft Azure PowerShell для переноса данных из локального экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure | Документация Майкрософт
-description: Сведения о переносе из локального экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью Azure PowerShell.
+title: Переход с SQL Server на Управляемый экземпляр Базы данных SQL Azure с помощью Database Migration Service и PowerShell | Документация Майкрософт
+description: Сведения о переходе с локального сервера SQL Server на Управляемый экземпляр Базы данных SQL Azure с помощью Azure PowerShell.
 services: database-migration
 author: pochiraju
 ms.author: rajpo
@@ -11,15 +11,15 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
 ms.date: 10/09/2018
-ms.openlocfilehash: 9a0c427b8beec3984a9fdd5d41ba3705fd21fd4c
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 64d77a17241c44c9d450b9e7602222cdb89482b7
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49365003"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50247171"
 ---
-# <a name="migrate-sql-server-on-premises-to-azure-sql-db-using-azure-powershell"></a>Перенос данных из локального экземпляра SQL Server в базу данных SQL Azure с помощью Azure PowerShell
-В этой статье выполняется перенос базы данных **Adventureworks2012**, восстановленной на локальном экземпляре SQL Server 2005 (или более поздней версии), в базу данных SQL Azure с помощью Microsoft Azure PowerShell. Вы можете выполнить перенос баз данных из локального экземпляра SQL Server в базу данных SQL Azure с помощью модуля `AzureRM.DataMigration` в Microsoft Azure PowerShell.
+# <a name="migrate-sql-server-on-premises-to-azure-sql-database-managed-instance-using-azure-powershell"></a>Переход с локального сервера SQL Server на Управляемый экземпляр Базы данных SQL Azure с помощью Azure PowerShell
+В этой статье мы перенесем базу данных **Adventureworks2012**, восстановленную на локальный экземпляр SQL Server 2005 (или более поздней версии), в Управляемый экземпляр Базы данных SQL Azure с помощью Microsoft Azure PowerShell. Базы данных из локального экземпляра SQL Server можно перенести в Управляемый экземпляр Базы данных SQL Azure с помощью модуля `AzureRM.DataMigration` в Microsoft Azure PowerShell.
 
 В этой статье раскрываются следующие темы:
 > [!div class="checklist"]

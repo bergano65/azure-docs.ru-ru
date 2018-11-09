@@ -1,21 +1,21 @@
 ---
-title: Создание ресурсов для использования с Azure Site Recovery | Документация Майкрософт
-description: Узнайте, как подготовить Azure для репликации локальных компьютеров с помощью службы Azure Site Recovery.
+title: Подготовка Azure для аварийного восстановления локальных компьютеров с помощью Azure Site Recovery | Документация Майкрософт
+description: Узнайте, как подготовить Azure для аварийного восстановления локальных компьютеров с помощью Azure Site Recovery.
 services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 10/19/2018
+ms.date: 10/29/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 1d9f84a176d4c2483c83e8961bf426e70933aaa2
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: c00dd8cd412d79093e4ae1fd7ea30a3071c9b54f
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49457159"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210250"
 ---
-# <a name="prepare-azure-resources-for-replication-of-on-premises-machines"></a>Подготовка ресурсов Azure для репликации локальных компьютеров
+# <a name="prepare-azure-resources-for-disaster-recovery-of-on-premises-machines"></a>Подготовка ресурсов Azure для аварийного восстановления локальных компьютеров
 
  Служба [Azure Site Recovery](site-recovery-overview.md) помогает реализовать стратегию непрерывности бизнес-процессов и аварийного восстановления (BCDR), обеспечивая работоспособность бизнес-приложений во время запланированных и незапланированных простоев. Site Recovery управляет аварийным восстановлением локальных компьютеров и виртуальных машин Azure, включая операции репликации, отработки отказа и восстановления.
 

@@ -5,15 +5,15 @@ services: billing
 author: rothja
 ms.service: billing
 ms.topic: include
-ms.date: 08/22/2018
+ms.date: 10/19/2018
 ms.author: jroth
 ms.custom: include file
-ms.openlocfilehash: 2d0fa179e7d1ae87372536d315175f1406baf21a
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: ef670c2dc701f888be3c7bb9a546c8a8a46f993a
+ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45979629"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49458892"
 ---
 | Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
@@ -24,8 +24,6 @@ ms.locfileid: "45979629"
 | [Учетные записи хранения](../articles/storage/common/storage-quickstart-create-account.md) на подписку в каждом регионе |200 |200<sup>2</sup> |
 | [Групп ресурсов](../articles/azure-resource-manager/resource-group-overview.md) на подписку |980 |980 |
 | [наборов доступности](../articles/virtual-machines/windows/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) на подписку |2000 для каждого региона |2000 для каждого региона |
-| Операций чтения API диспетчера ресурсов |15 000 в час |15 000 в час |
-| Операций записи API диспетчера ресурсов |1200 в час |1200 в час |
 | Размер запроса API диспетчера ресурсов |4 194 304 байт |4 194 304 байт |
 | Число тегов для каждой подписки<sup>3</sup> |без ограничений |без ограничений |
 | Уникальный тег вычисления для каждой подписки<sup>3</sup> | 10 000 | 10 000 |

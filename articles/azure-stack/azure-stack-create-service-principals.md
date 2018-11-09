@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/06/2018
+ms.date: 10/26/2018
 ms.author: sethm
-ms.openlocfilehash: 96137b95f46f24bca6a4ee6a39d93a490a03c431
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: a6d8ef698c005429c1184b5565b1a9387d05e062
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49958454"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50230120"
 ---
 # <a name="provide-applications-access-to-azure-stack"></a>Предоставление приложениям доступа к Azure Stack
 
@@ -77,6 +77,13 @@ ms.locfileid: "49958454"
 Требования:
 - Требуется сертификат.
 
+Требования к сертификатам:
+ - Поставщик служб шифрования (CSP) должен быть поставщиком ключей.
+ - Сертификат должен быть PFX-файлом, так как и открытый, и закрытый ключи являются обязательными. Серверы Windows используют PFX-файлы, содержащие файлы открытого ключа (файл SSL-сертификата) и связанные файлы закрытого ключа.
+ - Сертификаты должны быть выданы внутренним или общедоступным центром сертификации. Используя общедоступный центр сертификации, необходимо включить центр в базовый образ операционной системы как часть программы "Доверенный корневой центр сертификации Майкрософт". Вы можете ознакомиться с полным списком здесь: [Microsoft Trusted Root Certificate Program: Participants](https://gallery.technet.microsoft.com/Trusted-Root-Certificate-123665ca) (Список участников программы доверенных корневых центров сертификации Майкрософт).
+ - У инфраструктуры Azure Stack должен быть сетевой доступ к расположению списка отзыва сертификатов (CRL) центра сертификации, опубликованного в сертификате. Этот список отзыва сертификатов должен быть конечной точкой HTTP.
+
+
 #### <a name="parameters"></a>Параметры
 
 Необходимо указать следующие сведения в качестве входных для параметров службы автоматизации:
@@ -93,7 +100,7 @@ ms.locfileid: "49958454"
 1. Откройте сеанс Windows PowerShell с повышенными правами и выполните следующие команды.
 
    > [!NOTE]
-   > Этот пример создает самозаверяющий сертификат. При выполнении этих команд в рабочей среде используйте команду [Get-Certificate](/powershell/module/pkiclient/get-certificate), чтобы получить объект сертификата для сертификата, который вы хотите использовать.
+   > Этот пример создает самозаверяющий сертификат. При выполнении этих команд в рабочей среде используйте команду [Get-Item](/powershell/module/Microsoft.PowerShell.Management/Get-Item), чтобы получить объект сертификата для сертификата, который вы хотите использовать.
 
    ```PowerShell  
     # Credential for accessing the ERCS PrivilegedEndpoint, typically domain\cloudadmin
@@ -102,7 +109,7 @@ ms.locfileid: "49958454"
     # Creating a PSSession to the ERCS PrivilegedEndpoint
     $session = New-PSSession -ComputerName <ERCS IP> -ConfigurationName PrivilegedEndpoint -Credential $creds
 
-    # This produces a self signed cert for testing purposes. It is prefered to use a managed certificate for this.
+    # This produces a self signed cert for testing purposes. It is preferred to use a managed certificate for this.
     $cert = New-SelfSignedCertificate -CertStoreLocation "cert:\CurrentUser\My" -Subject "CN=<yourappname>" -KeySpec KeyExchange
 
     $ServicePrincipal = Invoke-Command -Session $session -ScriptBlock { New-GraphApplication -Name '<yourappname>' -ClientCertificates $using:cert}

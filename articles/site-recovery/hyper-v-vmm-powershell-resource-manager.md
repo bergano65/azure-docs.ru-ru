@@ -1,6 +1,6 @@
 ---
-title: Репликация виртуальных машин Hyper-V из облаков Virtual Machine Manager на вторичный сайт с помощью PowerShell (Azure Resource Manager) | Документация Майкрософт
-description: Здесь описывается репликация виртуальных машин Hyper-V из облаков Virtual Machine Manager на вторичный сайт Virtual Machine Manager с помощью PowerShell (Resource Manager)
+title: Настройка аварийного восстановления виртуальных машин Hyper-V в облаках VMM на дополнительный сайт с помощью Azure Site Recovery и PowerShell | Документация Майкрософт
+description: В этой статье описана настройка аварийного восстановления виртуальных машин Hyper-V в облаках VMM на дополнительный сайт VMM с помощью Azure Site Recovery и PowerShell.
 services: site-recovery
 author: sujayt
 manager: rochakm
@@ -8,14 +8,14 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 07/06/2018
 ms.author: sutalasi
-ms.openlocfilehash: 896b3cb3c40673dfbc7269cab1d37790f78912b0
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 6ade1d584fad05e33a72a0ff5099378a9cf7f29f
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48041362"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50214585"
 ---
-# <a name="replicate-hyper-v-vms-to-a-secondary-site-by-using-powershell-resource-manager"></a>Репликация виртуальных машин Hyper-V на вторичный сайт с помощью PowerShell (Resource Manager)
+# <a name="set-up-disaster-recovery-of-hyper-v-vms-to-a-secondary-site-by-using-powershell-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт с помощью PowerShell (Resource Manager)
 
 В этой статье показано, как автоматизировать шаги для репликации виртуальных машин Hyper-V из облаков System Center Virtual Machine Manager в облако Virtual Machine Manager на вторичном локальном сайте с помощью [Azure Site Recovery](site-recovery-overview.md).
 

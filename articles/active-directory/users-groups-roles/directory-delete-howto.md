@@ -13,12 +13,12 @@ ms.date: 06/13/2018
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
-ms.openlocfilehash: b1d3439412e324c71687c43aa9e47c520cb72262
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: ab752799c9e64e47abe0200a26215f9e01c489f6
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42143433"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50139692"
 ---
 # <a name="delete-an-azure-active-directory-tenant"></a>Удаление клиента Azure Active Directory
 При удалении клиента удаляются и все содержащиеся в нем ресурсы. Вы должны подготовить клиента к удалению и свести к минимуму связанные с ним ресурсы. Только глобальный администратор Azure Active Directory (Azure AD) может удалить клиента Azure AD с портала.
@@ -73,7 +73,7 @@ ms.locfileid: "42143433"
   
   ![условия](./media/directory-delete-howto/delete-terms.png)
 
-4. Теперь состояние подписки изменилось, подписка помечена для удаления. Подписка входит в состояние **Отозвано** в течение 72 часов.
+4. Теперь состояние подписки изменилось, подписка помечена для удаления. Подписка входит в состояние **Отозвано** через 72 часа.
 
 5. После удаления подписки в клиенте и по истечении 72 часов вы можете снова войти в центр администрирования Azure AD. Теперь от вас не требуется никаких действий и никакие подписки не должны мешать удалению клиента. Вы можете успешно удалить клиент Azure AD.
   

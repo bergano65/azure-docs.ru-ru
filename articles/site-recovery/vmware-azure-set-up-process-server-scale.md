@@ -1,21 +1,20 @@
 ---
-title: Настройка сервера обработки в Azure для виртуальной машины VMware и восстановление размещения физического сервера с помощью Azure Site Recovery | Документация Майкрософт
-description: Из этой статьи вы узнаете, как настроить сервер обработки в Azure для восстановления размещения виртуальных машин Azure в VMware.
-services: site-recovery
+title: Настройка сервера обработки в Azure для восстановления размещения во время аварийного восстановления виртуальных машин VMware и физических серверов с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье описывается, как настроить сервер обработки в Azure для восстановления размещения в локальной среде во время аварийного восстановления виртуальных машин VMware и физических серверов.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 10/10/2018
+ms.date: 10/28/2018
 ms.author: raynew
-ms.openlocfilehash: 641f671f23dde0bcc32ad1ef8343a5a84227c67f
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 330f0197b8a7735043e93f00dc4baa5578f50228
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49955391"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212239"
 ---
-# <a name="set-up-additional-process-servers-for-scalability"></a>Настройка дополнительных серверов обработки для обеспечения масштабируемости
+# <a name="scale-for-failback-with-additional-process-servers"></a>Масштабирование для восстановления размещения с помощью дополнительных серверов обработки
 
 По умолчанию при репликации виртуальных машин VMware или физических серверов в Azure с помощью [Site Recovery](site-recovery-overview.md) сервер обработки устанавливается на сервере конфигурации и используется для координации передачи данных между Site Recovery и локальной инфраструктурой. Чтобы увеличить емкость и масштабировать среду репликации, можно добавить дополнительные изолированные серверы обработки. Из этой статьи вы узнаете, как это сделать.
 

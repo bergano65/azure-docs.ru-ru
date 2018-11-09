@@ -8,17 +8,17 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/23/2018
+ms.date: 10/28/2018
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: e8fbc579d28f0aa3d5a19af66ecbe435156de6b1
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 5284b31ddf2ace3c1b9ed587e8f09301c17a54a7
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49387662"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50211772"
 ---
 # <a name="create-the-azure-ssis-integration-runtime-in-azure-data-factory"></a>Создание среды выполнения интеграции Azure SSIS в службе "Фабрика данных Azure"
 В этой статье представлены шаги по подготовке среды выполнения интеграции Azure SSIS в фабрике данных Azure. Затем можно использовать SQL Server Data Tools (SSDT) ​​или SQL Server Management Studio (SSMS) для запуска и развертывания пакетов служб SQL Server Integration Services (SSIS) в этой среде выполнения в Azure. 
@@ -27,7 +27,7 @@ ms.locfileid: "49387662"
 
 - Необязательное использование базы данных SQL Azure с конечными точками службы виртуальной сети или с управляемым экземпляром для размещения каталога (базы данных) SSISDB. Инструкции по выбору типа сервера базы данных для размещения SSISDB см. в разделе [Сравнение логического сервера базы данных SQL и управляемого экземпляра базы данных SQL](create-azure-ssis-integration-runtime.md#compare-sql-database-logical-server-and-sql-database-managed-instance). Предварительно необходимо подключить среду выполнения интеграции Azure-SSIS к виртуальной сети и, при необходимости, настроить ее разрешения и параметры. См. статью [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network). 
 
-- Кроме того, можно использовать аутентификацию Azure Active Directory (AAD) с помощью управляемых удостоверений Фабрики данных Azure для ресурсов Azure, чтобы устанавливать подключения Azure-SSIS к серверу базы данных. Для последнего варианта необходимо добавить в группу AAD Управляемое удостоверение службы "Фабрика данных Azure" с разрешениями на доступ к серверу базы данных. Эта процедура описана в статье [Включение аутентификации Azure Active Directory в среде выполнения интеграции Azure-SSIS](https://docs.microsoft.com/azure/data-factory/enable-aad-authentication-azure-ssis-ir). 
+- Необязательное использование аутентификации Azure Active Directory (AAD) с помощью Управляемого удостоверения Фабрики данных Azure для подключения к серверу базы данных. Для последнего варианта необходимо добавить Управляемое удостоверение службы "Фабрика данных Azure" в группу AAD с разрешениями на доступ к серверу базы данных. Эта процедура описана в статье [Включение аутентификации Azure Active Directory в среде выполнения интеграции Azure-SSIS](https://docs.microsoft.com/en-us/azure/data-factory/enable-aad-authentication-azure-ssis-ir). 
 
 ## <a name="overview"></a>Обзор
 В этой статье показаны различные способы подготовки среды выполнения интеграции Azure SSIS IR: 
@@ -36,7 +36,7 @@ ms.locfileid: "49387662"
 - [Azure PowerShell](#azure-powershell) 
 - [Шаблон Azure Resource Manager](#azure-resource-manager-template) 
 
-При создании среды выполнения интеграции Azure SSIS фабрика данных подключается к базе данных SQL Azure для подготовки базы данных каталога SSIS (SSISDB). Сценарий также настраивает разрешения и параметры виртуальной сети, если это указано, и подключает к ней новый экземпляр среды выполнения интеграции Azure–SSIS. 
+При создании среды выполнения интеграции Azure SSIS служба "Фабрика данных" подключается к Базе данных SQL Azure для подготовки базы данных каталога SSIS (SSISDB). Также она настраивает разрешения и параметры виртуальной сети, если они указаны, и подключает к ней новый экземпляр Azure-SSIS Integration Runtime. 
 
 При подготовке экземпляра среды выполнения интеграции Azure Integration Services также устанавливается пакет функций Azure для служб SSIS и распространяемый компонент Access. Эти компоненты обеспечивают подключение к файлам Excel и Access и другим источникам данных Azure, кроме тех, которые поддерживаются встроенными компонентами. Кроме того, вы можете установить дополнительные компоненты. Дополнительные сведения см. в статье о [пользовательской установке для среды выполнения интеграции Azure SSIS](how-to-configure-azure-ssis-ir-custom-setup.md). 
 
@@ -54,9 +54,7 @@ ms.locfileid: "49387662"
 - **Azure PowerShell**. Если вы используете PowerShell, чтобы запустить скрипт для подготовки среды выполнения Azure-SSIS, которая запускает пакеты SSIS в облаке, см. статью [Install Azure PowerShell with PowerShellGet](/powershell/azure/install-azurerm-ps) (Установка Azure PowerShell с помощью PowerShellGet). 
 
 ### <a name="region-support"></a>Поддержка регионов
-Чтобы получить список регионов Azure, в которых в настоящее время доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/).
-
-Чтобы получить список регионов Azure, в которых сейчас доступна среда выполнения интеграции Azure-SSIS, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Среда выполнения интеграции SSIS**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/).### Сравнение базы данных SQL и управляемого экземпляра
+Список регионов Azure, в которых сейчас доступны Фабрика данных и Azure-SSIS Integration Runtime, см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=data-factory&regions=all). 
 
 ### <a name="compare-sql-database-logical-server-and-sql-database-managed-instance"></a>Сравнение логического сервера базы данных SQL и управляемого экземпляра базы данных SQL
 
@@ -64,11 +62,11 @@ ms.locfileid: "49387662"
 
 | Функция | Логический сервер базы данных SQL| Управляемый экземпляр базы данных SQL |
 |---------|--------------|------------------|
-| **Планирование** | Агент SQL Server недоступен.<br/><br/>См. раздел [Schedule a package as part of an Azure Data Factory pipeline](/sql/integration-services/lift-shift/ssis-azure-schedule-packages#activity) (Планирование пакета в рамках конвейера фабрики данных Azure).| Агент SQL Server доступен. |
+| **Планирование** | Агент SQL Server недоступен.<br/><br/>См. раздел [Schedule a package as part of an Azure Data Factory pipeline](https://docs.microsoft.com/en-us/sql/integration-services/lift-shift/ssis-azure-schedule-packages?view=sql-server-2017#activity) (Планирование пакета в рамках конвейера фабрики данных Azure).| Доступен агент управляемого экземпляра. |
 | **Аутентификация** | Вы можете создать базу данных, где будет находиться учетная запись пользователя базы данных, которая представляет любого пользователя Azure Active Directory в роли **dbmanager**.<br/><br/>См. раздел [Enable Azure AD on Azure SQL Database](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database) (Включение Azure AD в базе данных SQL Azure). | Создать базу данных с установленной учетной записью пользователя базы данных, которая представляет любого пользователя Azure Active Directory, отличного от администратора Azure AD невозможно. <br/><br/>См. раздел [Enable Azure AD on Azure SQL Database Managed Instance](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database-managed-instance) (Включение Azure AD в управляемом экземпляре базы данных SQL Azure). |
 | **Уровень служб** | При создании среды выполнения интеграции Azure SSIS или базы данных SQL для SSISDB можно выбрать уровень служб. Существует несколько уровней служб. | Создавая среду выполнения интеграции Azure SSIS в управляемом экземпляре, уровень служб для SSISDB выбрать невозможно. Все базы данных одного управляемого экземпляра базы данных SQL используют один и тот же ресурс, который ему выделен. |
-| **Виртуальная сеть** | Поддерживаются как Azure Resource Manager, так и классические виртуальные сети. | Поддерживается только виртуальная сеть Azure Resource Manager. Требуется виртуальная сеть.<br/><br/>Если среда выполнения интеграции Azure SSIS присоединяется к виртуальной сети управляемого экземпляра, используйте для них разные подсети. Чтобы присоединить среду выполнения интеграции Azure SSIS к другой виртуальной сети, отличной от сети управляемого экземпляра, используйте пиринг между виртуальными сетями (в том же регионе) или подключение типа "виртуальная сеть — виртуальная сеть". См. статью [Подключение приложения к управляемому экземпляру базы данных SQL](../sql-database/sql-database-managed-instance-connect-app.md). |
-| **Распределенные транзакции** | Транзакции координатора распределенных транзакций (MSDTC) не поддерживаются. Если для того, чтобы координировать распределенные транзакции, пакеты используют координатор распределенных транзакций, то временно можно использовать эластичные транзакции для базы данных SQL. Сейчас в SSIS нет встроенной поддержки эластичных транзакций. Чтобы использовать эластичные транзакции в пакете SSIS, необходимо в задаче "скрипт" написать пользовательский код ADO.NET. Эта задача "скрипт" должна включать начало и конец транзакции и все действия, которые должны выполняться в ходе транзакции.<br/><br/>Дополнительные сведения о кодировке эластичных транзакций см. в разделе [Эластичные транзакции с помощью базы данных SQL Azure](https://azure.microsoft.com/blog/elastic-database-transactions-with-azure-sql-database/). Дополнительные сведения об эластичных транзакциях в целом см. в разделе [Распределенные транзакции по облачным базам данных](../sql-database/sql-database-elastic-transactions-overview.md). | Не поддерживается. |
+| **Виртуальная сеть** | Если вы используете Базу данных SQL Azure с конечными точками службы виртуальной сети или вам нужен доступ к локальным данным, для присоединения Azure-SSIS поддерживаются виртуальные сети Azure Resource Manager и классические виртуальные сети. | Для присоединения Azure-SSIS поддерживаются только виртуальные сети Azure Resource Manager. Требуется виртуальная сеть.<br/><br/>Если среда выполнения интеграции Azure SSIS присоединяется к виртуальной сети управляемого экземпляра, используйте для них разные подсети. Чтобы присоединить среду выполнения интеграции Azure SSIS к другой виртуальной сети, отличной от сети управляемого экземпляра, используйте пиринг между виртуальными сетями (в том же регионе) или подключение типа "виртуальная сеть — виртуальная сеть". См. статью [Подключение приложения к управляемому экземпляру базы данных SQL](../sql-database/sql-database-managed-instance-connect-app.md). |
+| **Распределенные транзакции** | Поддержка с помощью эластичных транзакций. Транзакции координатора распределенных транзакций (MSDTC) не поддерживаются. Если ваши пакеты SSIS используют MSDTC для координации распределенных транзакций, рекомендуем перейти на эластичные транзакции для Базы данных SQL. Дополнительные сведения см. в статье [Распределенные транзакции по облачным базам данных](../sql-database/sql-database-elastic-transactions-overview.md). | Не поддерживается. |
 | | | |
 
 ## <a name="azure-portal"></a>Портал Azure
@@ -146,7 +144,7 @@ ms.locfileid: "49387662"
 
     c. В раскрывающемся списке **Catalog Database Server Endpoint** (Конечная точка сервера базы данных каталога) выберите конечную точку сервера базы данных узла SSISDB. В зависимости от выбранного сервера базы данных SSISDB может быть создана от вашего имени как отдельная база данных, а также как часть эластичного пула или Управляемого экземпляра. Доступ к ней можно получить через общедоступную сеть или после присоединения к виртуальной сети. 
 
-    d. Установите флажок **Use AAD authentication...** (Использовать аутентификацию AAD) и выберите метод проверки подлинности базы данных узла SSISDB: SQL или Azure Active Directory (AAD) с помощью управляемого удостоверения Фабрики данных Azure для ресурсов Azure. Если вы установите его, вам потребуется добавить в группу AAD Управляемое удостоверение службы "Фабрика данных Azure" с разрешениями на доступ к серверу базы данных. Эта процедура описана в статье [Включение аутентификации Azure Active Directory в среде выполнения интеграции Azure-SSIS](https://docs.microsoft.com/azure/data-factory/enable-aad-authentication-azure-ssis-ir). 
+    d. Установите флажок **Use AAD authentication...** (Использовать аутентификацию AAD) и выберите метод проверки подлинности базы данных узла SSISDB: SQL или Azure Active Directory (AAD) с управляемым удостоверением для Фабрики данных Azure. Если вы установите этот флажок, необходимо добавить управляемое удостоверение службы "Фабрика данных Azure" в группу AAD с разрешениями на доступ к серверу базы данных. Эта процедура описана в статье о [включении аутентификации Azure Active Directory в Azure-SSIS IR](https://docs.microsoft.com/en-us/azure/data-factory/enable-aad-authentication-azure-ssis-ir). 
 
     д. В поле **Имя администратора** введите имя входа SQL для проверки подлинности базы данных сервера узла SSISDB. 
 
@@ -182,7 +180,7 @@ ms.locfileid: "49387662"
 
     > [!IMPORTANT]
     > - Эта процедура занимает около 20–30 минут
-    > - Служба фабрики данных подключается к базе данных SQL Azure для подготовки базы данных каталога SSIS. Сценарий также настраивает разрешения и параметры виртуальной сети, если это указано, и подключает к ней новый экземпляр среды выполнения интеграции Azure–SSIS. 
+    > - Служба фабрики данных подключается к базе данных SQL Azure для подготовки базы данных каталога SSIS. Также она настраивает разрешения и параметры виртуальной сети, если они указаны, и подключает к ней новый экземпляр Azure-SSIS Integration Runtime. 
 
 1. В окне **Connections** (Подключения) перейдите на **среду выполнения интеграции**. Чтобы обновить состояние, щелкните **Refresh** (Обновить). 
 
@@ -216,31 +214,33 @@ ms.locfileid: "49387662"
 
 ```powershell
 ### Azure Data Factory information 
-# If your input contains a PSH special character, e.g. "$", precede it with the escape character "`" like "`$".
+# If your input contains a PSH special character, e.g. "$", precede it with the escape character "`" like "`$"
 $SubscriptionName = "[your Azure subscription name]"
 $ResourceGroupName = "[your Azure resource group name]"
 $DataFactoryName = "[your data factory name]"
+# For supported regions, see https://azure.microsoft.com/global-infrastructure/services/?products=data-factory&regions=all
 $DataFactoryLocation = "EastUS" 
 
-### Azure-SSIS integration runtime information - This is the Data Factory compute resource for running SSIS packages
+### Azure-SSIS integration runtime information - This is a Data Factory compute resource for running SSIS packages
 $AzureSSISName = "[specify a name for your Azure-SSIS IR]"
 $AzureSSISDescription = "[specify a description for your Azure-SSIS IR]"
+# For supported regions, see https://azure.microsoft.com/global-infrastructure/services/?products=data-factory&regions=all
 $AzureSSISLocation = "EastUS" 
-# Only Standard_A4_v2|Standard_A8_v2|Standard_D1_v2|Standard_D2_v2|Standard_D3_v2|Standard_D4_v2 are supported.
-$AzureSSISNodeSize = "Standard_D4_v2"
-# Only 1-10 nodes are supported.
+# For supported node sizes, see https://azure.microsoft.com/pricing/details/data-factory/ssis/
+$AzureSSISNodeSize = "Standard_D8_v3"
+# 1-10 nodes are currently supported
 $AzureSSISNodeNumber = 2 
 # Azure-SSIS IR edition/license info: Standard or Enterprise 
-$AzureSSISEdition = "" # Standard by default, while Enterprise lets you use advanced/premium features on your Azure-SSIS IR
+$AzureSSISEdition = "Standard" # Standard by default, while Enterprise lets you use advanced/premium features on your Azure-SSIS IR
 # Azure-SSIS IR hybrid usage info: LicenseIncluded or BasePrice
-$AzureSSISLicenseType = "" # LicenseIncluded by default, while BasePrice lets you bring your own on-premises SQL Server license with Software Assurance to earn cost savings from Azure Hybrid Benefit (AHB) option
-# For a Standard_D1_v2 node, 1-4 parallel executions per node are supported. For other nodes, it's 1-8.
+$AzureSSISLicenseType = "LicenseIncluded" # LicenseIncluded by default, while BasePrice lets you bring your own on-premises SQL Server license with Software Assurance to earn cost savings from Azure Hybrid Benefit (AHB) option
+# For a Standard_D1_v2 node, up to 4 parallel executions per node are supported, but for other nodes, up to (2 x number of cores) are currently supported
 $AzureSSISMaxParallelExecutionsPerNode = 8 
 # Custom setup info
 $SetupScriptContainerSasUri = "" # OPTIONAL to provide SAS URI of blob container where your custom setup script and its associated files are stored
 # Virtual network info: Classic or Azure Resource Manager
 $VnetId = "[your virtual network resource ID or leave it empty]" # REQUIRED if you use Azure SQL Database with virtual network service endpoints/Managed Instance/on-premises data, Azure Resource Manager virtual network is recommended, Classic virtual network will be deprecated soon    
-$SubnetName = "[your subnet name or leave it empty]" # WARNING: Please use a different subnet than the one used for your Managed Instance
+$SubnetName = "[your subnet name or leave it empty]" # WARNING: Please use the same subnet as the one used with your Azure SQL Database with virtual network service endpoints or a different subnet than the one used for your Managed Instance
 
 ### SSISDB info
 $SSISDBServerEndpoint = "[your Azure SQL Database server name or Managed Instance name.DNS prefix].database.windows.net" # WARNING: Please ensure that there is no existing SSISDB, so we can prepare and manage one on your behalf
@@ -291,7 +291,7 @@ if([string]::IsNullOrEmpty($VnetId) -and [string]::IsNullOrEmpty($SubnetName))
 Добавьте следующий скрипт, чтобы автоматически настроить разрешения или параметры виртуальной сети вашей среды интеграции Azure SSIS.
 
 ```powershell
-# Make sure to run this script against the subscription to which the virtual network belongs.
+# Make sure to run this script against the subscription to which the virtual network belongs
 if(![string]::IsNullOrEmpty($VnetId) -and ![string]::IsNullOrEmpty($SubnetName))
 {
     # Register to the Azure Batch resource provider
@@ -333,26 +333,35 @@ Set-AzureRmDataFactoryV2 -ResourceGroupName $ResourceGroupName `
 
 При использовании управляемого экземпляра для размещения SSISDB можно опустить параметр CatalogPricingTier или передать для него пустое значение. В противном случае его нельзя опускать и нужно передать действительное значение из списка поддерживаемых ценовых категорий для службы "База данных SQL Azure". Дополнительные сведения см. в статье [Overview Azure SQL Database resource limits](../sql-database/sql-database-resource-limits.md) (Общие сведения об ограничении ресурсов службы "База данных SQL Azure"). 
 
-Если вы используете аутентификацию Azure Active Directory (AAD) со своим управляемым удостоверением Фабрики данных Azure для подключения к серверу базы данных, вы можете опустить параметр CatalogAdminCredential, но следует добавить управляемое удостоверение фабрики данных в группу AAD с разрешениями на доступ к серверу базы данных. Дополнительные сведения см. в статье [Включение аутентификации Azure Active Directory в среде выполнения интеграции Azure-SSIS](https://docs.microsoft.com/azure/data-factory/enable-aad-authentication-azure-ssis-ir). В противном случае этот параметр опустить невозможно и для проверки подлинности SQL возникает необходимость передать действительный объект, который сформирован из имени пользователя и пароля администратора сервера.
+Если вы используете аутентификацию Azure Active Directory (AAD) с управляемым удостоверением для подключения Фабрики данных Azure к серверу базы данных, вы можете опустить параметр CatalogAdminCredential. Но нужно обязательно добавить управляемое удостоверение Фабрики данных Azure в группу AAD с разрешениями на доступ к серверу базы данных. Дополнительные сведения см. в статье о [включении аутентификации Azure Active Directory в Azure-SSIS IR](https://docs.microsoft.com/en-us/azure/data-factory/enable-aad-authentication-azure-ssis-ir). В противном случае этот параметр опустить невозможно и для проверки подлинности SQL возникает необходимость передать действительный объект, который сформирован из имени пользователя и пароля администратора сервера.
 
 ```powershell               
 Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                            -DataFactoryName $DataFactoryName `
-                                           -Type Managed `
                                            -Name $AzureSSISName `
                                            -Description $AzureSSISDescription `
+                                           -Type Managed `
                                            -Location $AzureSSISLocation `
                                            -NodeSize $AzureSSISNodeSize `
                                            -NodeCount $AzureSSISNodeNumber `
                                            -Edition $AzureSSISEdition `
                                            -LicenseType $AzureSSISLicenseType `
                                            -MaxParallelExecutionsPerNode $AzureSSISMaxParallelExecutionsPerNode `
-                                           -SetupScriptContainerSasUri $SetupScriptContainerSasUri `
                                            -VnetId $VnetId `
                                            -Subnet $SubnetName `
                                            -CatalogServerEndpoint $SSISDBServerEndpoint `
                                            -CatalogPricingTier $SSISDBPricingTier
 
+# Add SetupScriptContainerSasUri parameter when you use custom setup
+if(![string]::IsNullOrEmpty($SetupScriptContainerSasUri))
+{
+    Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+                                               -DataFactoryName $DataFactoryName `
+                                               -Name $AzureSSISName `
+                                               -SetupScriptContainerSasUri $SetupScriptContainerSasUri
+}
+
+# Add CatalogAdminCredential parameter when you do not use AAD authentication
 if(![string]::IsNullOrEmpty($SSISDBServerAdminUserName) –and ![string]::IsNullOrEmpty($SSISDBServerAdminPassword))
 {
     $secpasswd = ConvertTo-SecureString $SSISDBServerAdminPassword -AsPlainText -Force
@@ -386,31 +395,33 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
 
 ```powershell
 ### Azure Data Factory information 
-# If your input contains a PSH special character, e.g. "$", precede it with the escape character "`" like "`$".
+# If your input contains a PSH special character, e.g. "$", precede it with the escape character "`" like "`$"
 $SubscriptionName = "[your Azure subscription name]"
 $ResourceGroupName = "[your Azure resource group name]"
 $DataFactoryName = "[your data factory name]"
+# For supported regions, see https://azure.microsoft.com/global-infrastructure/services/?products=data-factory&regions=all
 $DataFactoryLocation = "EastUS" 
 
-### Azure-SSIS integration runtime information - This is the Data Factory compute resource for running SSIS packages
+### Azure-SSIS integration runtime information - This is a Data Factory compute resource for running SSIS packages
 $AzureSSISName = "[specify a name for your Azure-SSIS IR]"
 $AzureSSISDescription = "[specify a description for your Azure-SSIS IR]"
+# For supported regions, see https://azure.microsoft.com/global-infrastructure/services/?products=data-factory&regions=all
 $AzureSSISLocation = "EastUS" 
-# Only Standard_A4_v2|Standard_A8_v2|Standard_D1_v2|Standard_D2_v2|Standard_D3_v2|Standard_D4_v2 are supported.
-$AzureSSISNodeSize = "Standard_D4_v2"
-# Only 1-10 nodes are supported.
+# For supported node sizes, see https://azure.microsoft.com/pricing/details/data-factory/ssis/
+$AzureSSISNodeSize = "Standard_D8_v3"
+# 1-10 nodes are currently supported
 $AzureSSISNodeNumber = 2 
 # Azure-SSIS IR edition/license info: Standard or Enterprise 
-$AzureSSISEdition = "" # Standard by default, while Enterprise lets you use advanced/premium features on your Azure-SSIS IR
+$AzureSSISEdition = "Standard" # Standard by default, while Enterprise lets you use advanced/premium features on your Azure-SSIS IR
 # Azure-SSIS IR hybrid usage info: LicenseIncluded or BasePrice
-$AzureSSISLicenseType = "" # LicenseIncluded by default, while BasePrice lets you bring your own on-premises SQL Server license with Software Assurance to earn cost savings from Azure Hybrid Benefit (AHB) option
-# For a Standard_D1_v2 node, 1-4 parallel executions per node are supported. For other nodes, it's 1-8.
+$AzureSSISLicenseType = "LicenseIncluded" # LicenseIncluded by default, while BasePrice lets you bring your own on-premises SQL Server license with Software Assurance to earn cost savings from Azure Hybrid Benefit (AHB) option
+# For a Standard_D1_v2 node, up to 4 parallel executions per node are supported, but for other nodes, up to (2 x number of cores) are currently supported
 $AzureSSISMaxParallelExecutionsPerNode = 8 
 # Custom setup info
 $SetupScriptContainerSasUri = "" # OPTIONAL to provide SAS URI of blob container where your custom setup script and its associated files are stored
 # Virtual network info: Classic or Azure Resource Manager
 $VnetId = "[your virtual network resource ID or leave it empty]" # REQUIRED if you use Azure SQL Database with virtual network service endpoints/Managed Instance/on-premises data, Azure Resource Manager virtual network is recommended, Classic virtual network will be deprecated soon    
-$SubnetName = "[your subnet name or leave it empty]" # WARNING: Please use a different subnet than the one used for your Managed Instance
+$SubnetName = "[your subnet name or leave it empty]" # WARNING: Please use the same subnet as the one used with your Azure SQL Database with virtual network service endpoints or a different subnet than the one used for your Managed Instance
 
 ### SSISDB info
 $SSISDBServerEndpoint = "[your Azure SQL Database server name or Managed Instance name.DNS prefix].database.windows.net" # WARNING: Please ensure that there is no existing SSISDB, so we can prepare and manage one on your behalf
@@ -449,7 +460,7 @@ if([string]::IsNullOrEmpty($VnetId) -and [string]::IsNullOrEmpty($SubnetName))
 }
 
 ### Configure virtual network
-# Make sure to run this script against the subscription to which the virtual network belongs.
+# Make sure to run this script against the subscription to which the virtual network belongs
 if(![string]::IsNullOrEmpty($VnetId) -and ![string]::IsNullOrEmpty($SubnetName))
 {
     # Register to the Azure Batch resource provider
@@ -475,21 +486,30 @@ Set-AzureRmDataFactoryV2 -ResourceGroupName $ResourceGroupName `
 ### Create an integration runtime
 Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                            -DataFactoryName $DataFactoryName `
-                                           -Type Managed `
                                            -Name $AzureSSISName `
                                            -Description $AzureSSISDescription `
+                                           -Type Managed `
                                            -Location $AzureSSISLocation `
                                            -NodeSize $AzureSSISNodeSize `
                                            -NodeCount $AzureSSISNodeNumber `
                                            -Edition $AzureSSISEdition `
                                            -LicenseType $AzureSSISLicenseType `
                                            -MaxParallelExecutionsPerNode $AzureSSISMaxParallelExecutionsPerNode `
-                                           -SetupScriptContainerSasUri $SetupScriptContainerSasUri `
                                            -VnetId $VnetId `
                                            -Subnet $SubnetName `
                                            -CatalogServerEndpoint $SSISDBServerEndpoint `
                                            -CatalogPricingTier $SSISDBPricingTier
 
+# Add SetupScriptContainerSasUri parameter when you use custom setup
+if(![string]::IsNullOrEmpty($SetupScriptContainerSasUri))
+{
+    Set-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+                                               -DataFactoryName $DataFactoryName `
+                                               -Name $AzureSSISName `
+                                               -SetupScriptContainerSasUri $SetupScriptContainerSasUri
+}
+
+# Add CatalogAdminCredential parameter when you do not use AAD authentication
 if(![string]::IsNullOrEmpty($SSISDBServerAdminUserName) –and ![string]::IsNullOrEmpty($SSISDBServerAdminPassword))
 {
     $secpasswd = ConvertTo-SecureString $SSISDBServerAdminPassword -AsPlainText -Force
@@ -539,7 +559,7 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
                     "typeProperties": {
                         "computeProperties": {
                             "location": "East US",
-                            "nodeSize": "Standard_D4_v2",
+                            "nodeSize": "Standard_D8_v3",
                             "numberOfNodes": 1,
                             "maxParallelExecutionsPerNode": 8
                         },

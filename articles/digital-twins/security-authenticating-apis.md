@@ -8,12 +8,12 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 10/02/2018
 ms.author: lyrana
-ms.openlocfilehash: dc5570b188bfdc0e1be78aa2bd5c5d92e884f377
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
+ms.openlocfilehash: 414a52141aac05aac51bbb4fedf6ab67d98f2637
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49638024"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50092276"
 ---
 # <a name="connect-and-authenticate-to-apis"></a>Подключение к API и аутентификация
 
@@ -54,7 +54,7 @@ Azure Digital Twins использует Azure Active Directory (Azure AD) дл�
     |---------|---------|
     | Тип предоставления разрешения | Неявный |
     | URL-адрес обратного вызова | [https://www.getpostman.com/oauth2/callback](https://www.getpostman.com/oauth2/callback) |
-    | URL-адрес аутентификации | [https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?resource=0b07f429-9f4b-4714-9392-cc5e8e80c8b0](https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?resource=0b07f429-9f4b-4714-9392-cc5e8e80c8b0)
+    | URL-адрес аутентификации | https://login.microsoftonline.com/<Your Azure AD Tenant e.g. Contoso>.onmicrosoft.com/oauth2/authorize?resource=0b07f429-9f4b-4714-9392-cc5e8e80c8b0 |
     | Идентификатор клиента | Используйте идентификатор приложения для приложения Azure AD, созданного или перепрофилированного на шаге 1. |
     | Область | Не указывайте. |
     | Состояние | Не указывайте. |

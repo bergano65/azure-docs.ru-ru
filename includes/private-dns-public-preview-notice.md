@@ -8,16 +8,16 @@ ms.topic: include file for Azure DNS Private Zone public preview notice
 ms.date: 03/21/2018
 ms.author: subsarma
 ms.custom: include file for Azure DNS Private Zone public preview notice
-ms.openlocfilehash: d00b0e26591e2c0def95e0c3b69c89b567dceddd
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 0d8f484b32136d9057442d930ae96fa154a96849
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34702539"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50096269"
 ---
 > [!IMPORTANT]
 > Функция частных зон Azure DNS сейчас реализована в общедоступной предварительной версии. 
 >
-> Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 

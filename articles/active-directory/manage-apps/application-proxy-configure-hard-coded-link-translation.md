@@ -15,12 +15,12 @@ ms.date: 05/04/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: 0d139437a069406db2ae0f189480072f8063a327
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.openlocfilehash: 73854cba151dfbebe53862a39fbe980502192c2d
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45982278"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50230069"
 ---
 # <a name="redirect-hardcoded-links-for-apps-published-with-azure-ad-application-proxy"></a>Перенаправление встроенных ссылок для приложений, опубликованных с помощью прокси приложения Azure AD
 
@@ -97,6 +97,7 @@ Intune Managed Browser можно использовать для обеспеч
 
 - Ссылки вне тегов кода. 
 - Ссылки в формате, отличном от HTML или CSS. 
+- Ссылки в кодировке URL-адресов.
 - Внутренние ссылки, открываемые из других программ. Ссылки, отправленные по электронной почте или через мгновенные сообщения либо включенные в другие документы. Пользователи должны знать, как переходить по внешним URL-адресам.
 
 Если вам необходима поддержка одного из этих двух сценариев, то вместо преобразования ссылок используйте одинаковые внутренние и внешние URL-адреса.  

@@ -14,12 +14,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 08/10/2018
 ms.author: apimpm
-ms.openlocfilehash: 0346cf456c53b14fd3c5b14b2e40eddd8b89fe4d
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 0f2b45685d2976c567c16666e2ca89d334914b63
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49465956"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50417299"
 ---
 # <a name="create-and-publish-a-product"></a>создавать и публиковать продукт;  
 
@@ -35,6 +35,7 @@ ms.locfileid: "49465956"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
++ Ознакомьтесь с [терминологией службы управления API в Azure](api-management-terminology.md).
 + Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
 + Также выполните задачи из руководства по [импорту и публикации первого API](import-and-publish.md).
 
@@ -83,6 +84,9 @@ ms.locfileid: "49465956"
 2. Перейдите на вкладку **API**.
 3. Щелкните **+ Добавить**.
 4. Выберите API и нажмите кнопку **Выбрать**.
+
+> [!TIP]
+> Подписку пользователя на *продукт* с индивидуальными ключами подписки можно создать или обновить [с помощью REST API](https://docs.microsoft.com/rest/api/apimanagement/subscription/createorupdate) или команды PowerShell.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

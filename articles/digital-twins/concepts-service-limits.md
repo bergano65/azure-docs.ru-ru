@@ -6,27 +6,27 @@ manager: deshner
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 10/10/2018
+ms.date: 10/26/2018
 ms.author: dwalthermsft
-ms.openlocfilehash: aa5f6053bf1c98d2b84c02617da30f5d856ed3fc
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: f9a3d934de47630ac3fd2356001014d006c2a4eb
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49323918"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212273"
 ---
 # <a name="public-preview-service-limits"></a>Ограничения в общедоступной предварительной версии службы
 
-На этапе общедоступной предварительной версии в Azure Digital Twins будут действовать временные ограничения на подписки, экземпляры и скорость, описанные ниже.
+На этапе **общедоступной предварительной версии** в Azure Digital Twins будут действовать временные ограничения на подписки, экземпляры и скорость, описанные ниже.
 
 Эти ограничения нужны, чтобы упростить изучение новой службы и ее многочисленных функций.
 
 > [!NOTE]
-> Эти ограничения будут расширены или устранены в общедоступной версии.
+> Эти ограничения будут расширены и/или устранены в **общедоступной версии** (**GA**).
 
 ## <a name="per-subscription-limits"></a>Ограничения для подписок
 
-На этапе общедоступной предварительной версии в каждой подписке Azure можно одновременно создавать или выполнять только один экземпляр Azure Digital Twins.
+На этапе **общедоступной предварительной версии** в каждой подписке Azure можно одновременно создавать или выполнять только один экземпляр Azure Digital Twins.
 
 > [!TIP]
 > Удаление экземпляра позволит создать новый.
@@ -35,9 +35,9 @@ ms.locfileid: "49323918"
 
 В свою очередь, на каждый экземпляр Azure Digital Twins выделяется следующее:
 
-- Один ресурс `IoTHub`.
-- Одна конечная точка `EventHub` для типа событий DeviceMessage.
-- До трех конечных точек `EventHub`, `ServiceBus` или `EventGrid` типов событий `SensorChange`, `SpaceChange`, `TopologyOperation` или `UdfCustom`.
+- один ресурс **IoTHub**;
+- одна конечная точка **EventHub** для типа событий **DeviceMessage**;
+- до трех конечных точек **EventHub**, **ServiceBus** или **EventGrid** с типом событий **SensorChange**, **SpaceChange**, **TopologyOperation** или **UdfCustom**
 
 ## <a name="management-api-limits"></a>Ограничения API управления
 
@@ -54,7 +54,7 @@ ms.locfileid: "49323918"
 В следующих ограничениях задано общее число всех вызовов определяемых пользователем функций, выполненных в экземпляре Azure Digital Twins:
 
 - 400 вызовов клиентских библиотек в секунду.
-- 100 вызовов SendNotification в секунду.
+- 100 вызовов **SendNotification** в секунду.
 
 > [!NOTE]
 > Следующие действия могут привести к временному применению дополнительных ограничений частоты:

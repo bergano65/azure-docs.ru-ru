@@ -12,17 +12,21 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/01/2016
+ms.date: 10/30/2018
 ms.author: cephalin
-ms.openlocfilehash: 00b5f9c78000fbb9bf86e8c1d8b06e3645795a12
-ms.sourcegitcommit: 3c3488fb16a3c3287c3e1cd11435174711e92126
+ms.openlocfilehash: 9b4c87bd0889718fcb8938a9e3bb9207b8fe727a
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34850160"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50420462"
 ---
 # <a name="operating-system-functionality-on-azure-app-service"></a>Функциональные возможности операционной системы для службы приложений Azure
-В этой статье описываются общие базовые функции операционной системы, доступные для всех приложений под управлением [службы приложений Azure](http://go.microsoft.com/fwlink/?LinkId=529714). Данные функциональные возможности включают в себя доступ к файлам, сети и реестру, а также диагностику и журналы событий. 
+В этой статье описываются базовые функциональные возможности операционной системы, доступные для всех приложений в [Службе приложений Azure](http://go.microsoft.com/fwlink/?LinkId=529714). Данные функциональные возможности включают в себя доступ к файлам, сети и реестру, а также диагностику и журналы событий. 
+
+> [!NOTE] 
+> [Приложения Linux](containers/app-service-linux-intro.md) в Службе приложений работают в собственных контейнерах. Доступ к операционной системе хоста запрещен, но у вас есть права root на доступ к контейнеру. В случае с [приложениями, работающими в контейнерах Windows](app-service-web-get-started-windows-container.md), у вас есть административный доступ к контейнеру, но нет доступа к операционной системе хоста. 
+>
 
 <a id="tiers"></a>
 

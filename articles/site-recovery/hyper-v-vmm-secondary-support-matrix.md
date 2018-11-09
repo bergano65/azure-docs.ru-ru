@@ -1,21 +1,21 @@
 ---
-title: Таблица поддержки для репликации виртуальных машин Hyper-V в облаках VMM на дополнительный сайт с помощью службы Azure Site Recovery | Документация Майкрософт
+title: Матрица поддержки аварийного восстановления виртуальных машин Hyper-V в облаках VMM на дополнительный сайт с помощью службы Azure Site Recovery | Документация Майкрософт
 description: Общие сведения о поддержке репликации виртуальных машин Hyper-V в облаках VMM на дополнительный сайт с помощью Azure Site Recovery.
 services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 10/10/2018
+ms.date: 10/28/2018
 ms.author: raynew
-ms.openlocfilehash: e1a0ee2a9ad958a5938569927a489785edd8ee1f
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 3203ae48163ba325c8dad2f29c9f566e330928b5
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49078845"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50214296"
 ---
-# <a name="support-matrix-for-replication-of-hyper-v-vms-to-a-secondary-site"></a>Таблица поддержки для репликации виртуальных машин Hyper-V на дополнительный сайт
+# <a name="support-matrix-for-disaster-recovery-of-hyper-v-vms-to-a-secondary-site"></a>Матрица поддержки аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт
 
 В этой статье перечислены поддерживаемые компоненты при использовании службы [Azure Site Recovery](site-recovery-overview.md) для репликации виртуальных машин Hyper-V, управляемых в облаках System Center Virtual Machine Manager (VMM), на дополнительный сайт. Если нужно реплицировать виртуальные машины Hyper-V в Azure, ознакомьтесь с [этой таблицей поддержки](hyper-v-azure-support-matrix.md).
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/19/2017
 ms.author: mareat
-ms.openlocfilehash: db3b08ae8092661e6ffa0f2dd7e460f341a8d013
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: 3030fdcec95d91b75974465ad30f707837263367
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43666065"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50414783"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-in-azure-using-network-watcher-and-graylog"></a>Анализ журналов потоков для групп безопасности сети и управление ими в Azure с помощью Наблюдателя за сетями и Graylog
 
@@ -38,7 +38,7 @@ ms.locfileid: "43666065"
 
 ### <a name="enable-network-security-group-flow-logging"></a>Включение журналов потоков для групп безопасности сети
 
-В рамках этого сценария вам нужно включить ведение журнала потоков по меньшей мере для одной группы безопасности сети в учетной записи. Инструкции по включению журналов потоков для групп безопасности сети см. в статье [Introduction to flow logging for Network Security Groups](network-watcher-nsg-flow-logging-overview.md) (Общие сведения о журналах потоков для групп безопасности сети).
+В рамках этого сценария вам нужно включить ведение журнала потоков по меньшей мере для одной группы безопасности сети в учетной записи. Инструкции по включению журналов потоков для групп безопасности сети см. в статье [Общие сведения о ведении журнала потоков для групп безопасности сети](network-watcher-nsg-flow-logging-overview.md).
 
 ### <a name="setting-up-graylog"></a>Установка Graylog
 
@@ -51,7 +51,7 @@ ms.locfileid: "43666065"
 
 Есть несколько способов установки Graylog. Их можно выбирать в соответствии с используемой платформой и предпочтениями. Полный список возможных методов см. в официальной [документации](http://docs.graylog.org/en/2.2/pages/installation.html) Graylog. Серверное приложение Graylog выполняется на дистрибутивах ОС Linux. Для его работы требуются следующие компоненты:
 
--  Oracle Java SE 8 или более поздней версии (см. [документацию по установке Oracle](http://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html));
+-  Java SE 8 или более поздней версии — [документация по JDK Azul для Azure](https://aka.ms/azure-jdks).
 -  Elastic Search 2.x (2.1.0 или более поздней версии) (см. [документацию по установке Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html));
 -  MongoDB 2.4 или более поздней версии (см. [документацию по установке MongoDB](https://docs.mongodb.com/manual/administration/install-on-linux/)).
 
@@ -156,7 +156,7 @@ Logstash позволяет преобразовать формат журнал
    > [!NOTE]
    > В предыдущем файле конфигурации предполагается, что сервер Graylog настроен с петлевым IP-адресом 127.0.0.1 локального узла. В противном случае измените параметр узла в разделе выходных данных, указав правильный IP-адрес.
 
-Дополнительные инструкции по установке Logstash см. в [документации](https://www.elastic.co/guide/en/beats/libbeat/5.2/logstash-installation.html) Logstash.
+Дополнительные инструкции по установке Logstash см. в [документации по Logstash](https://www.elastic.co/guide/en/beats/libbeat/5.2/logstash-installation.html).
 
 ### <a name="install-the-logstash-input-plug-in-for-azure-blob-storage"></a>Установка подключаемого модуля входа Logstash для хранилища BLOB-объектов Azure
 
@@ -244,4 +244,4 @@ sudo ./logstash-plugin install logstash-input-azureblob
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения см. в статье [Визуализация журналов потоков для групп безопасности сети с помощью Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md).
+Дополнительные сведения см. в статье  [Визуализация журналов потоков для групп безопасности сети с помощью Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md).

@@ -1,5 +1,5 @@
 ---
-title: Интеграция Azure ExpressRoute и аварийного восстановления виртуальных машин Azure с помощью Azure Site Recovery | Документация Майкрософт
+title: Интеграция Azure ExpressRoute с функцией аварийного восстановления виртуальных машин Azure с использованием службы Azure Site Recovery | Документация Майкрософт
 description: Описывается, как настроить аварийное восстановление виртуальных машин Azure с помощью Azure Site Recovery и Azure ExpressRoute.
 services: site-recovery
 author: mayurigupta13
@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: mayg
-ms.openlocfilehash: 03fac23ea17a6baa1b43e748a4390cf142661a19
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: e7c63fba892f70ca0e18c1bffcda0782316b7ada
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353549"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50211559"
 ---
 # <a name="integrate-azure-expressroute-with-disaster-recovery-for-azure-vms"></a>Интеграция Azure ExpressRoute и аварийного восстановления виртуальных машин Azure
 

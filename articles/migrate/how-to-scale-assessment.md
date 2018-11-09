@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 10/23/2018
 ms.author: raynew
-ms.openlocfilehash: 32bed3a60c40b93471b75b9d54dccd822ccc3be8
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: b5685640a55e2ce52a202c341cb293fe9315ab14
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50025883"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50240194"
 ---
 # <a name="discover-and-assess-a-large-vmware-environment"></a>Обнаружение и оценка крупной среды VMware
 
@@ -148,17 +148,15 @@ ms.locfileid: "50025883"
 
 #### <a name="one-time-discovery"></a>Однократное обнаружение
 
-<<<<<<< HEAD Для OVA-файла версии 1.0.9.15 (выпущена 23 октября 2018 г.)
-
- <a name="algorithm--hash-value"></a>**Алгоритм** | **Значение хэша**
-=======
-Для OVA-файла версии 1.0.9.15
+Для версии OVA 1.0.9.15 (выпущена 23.10.2018)
 
 **Алгоритм** | **Значение хэша**
->>>>>>> 20dc93529e7c0a4d17f2f4524752b5e2bead4e37 --- | --- MD5 | e9ef16b0c837638c506b5fc0ef75ebfa SHA1 | 37b4b1e92b3c6ac2782ff5258450df6686c89864 SHA256 | 8a86fc17f69b69968eb20a5c4c288c194cdcffb4ee6568d85ae5ba96835559ba
+--- | ---
+MD5 | e9ef16b0c837638c506b5fc0ef75ebfa
+SHA1 | 37b4b1e92b3c6ac2782ff5258450df6686c89864
+SHA256 | 8a86fc17f69b69968eb20a5c4c288c194cdcffb4ee6568d85ae5ba96835559ba
 
-<<<<<<< HEAD Для OVA-файла версии 1.0.9.14 (выпущена 24 августа 2018 г.) ======= For OVA version 1.0.9.14
->>>>>>> 20dc93529e7c0a4d17f2f4524752b5e2bead4e37
+Для версии OVA 1.0.9.14 (выпущена 24.08.2018)
 
 **Алгоритм** | **Значение хэша**
 --- | ---

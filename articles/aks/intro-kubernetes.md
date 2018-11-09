@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 09/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: ac18b8099b14f29579b35eb8dd2124d2d63f80d7
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 196c3cb58eb60922f4898b6919c8393853c6126a
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49390080"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50094292"
 ---
 # <a name="azure-kubernetes-service-aks"></a>Служба Azure Kubernetes (AKS)
 
@@ -101,7 +101,7 @@ Kubernetes обладает обширной экосистемой средст
 
 ## <a name="regulatory-compliance"></a>Соблюдение нормативных требований
 
-Служба Azure Kubernetes (AKS) соответствует всем требованиям стандартов SOC, ISO и PCI DSS.
+Azure Kubernetes Service (AKS) соответствуют требованиям нормативных документов SOC, ISO, PCI DSS, и HIPAA.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

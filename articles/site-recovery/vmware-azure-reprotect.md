@@ -1,21 +1,20 @@
 ---
-title: Повторная защита виртуальных машин, восстанавливаемых из Azure на локальном сайте | Документация Майкрософт
-description: После отработки отказа виртуальных машин в Azure можно инициировать восстановление размещения, чтобы вернуть их в локальную среду. Сведения о включении повторной защиты перед восстановлением размещения.
-services: site-recovery
+title: Повторное включение защиты виртуальных машин из Azure на локальный сайт во время аварийного восстановления виртуальных машин VMware и физических серверов | Документация Майкрософт
+description: После отработки отказа в Azure во время аварийного восстановления виртуальных машин VMware и физических серверов узнайте от том, как восстановить размещение из Azure на локальный сайт.
 author: rajani-janaki-ram
 manager: gauravd
 ms.service: site-recovery
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/06/2018
 ms.author: rajanaki
-ms.openlocfilehash: 1b410b2832d856f80d640aab2096fef270156c81
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: 3f661ab5ff2a127ba7507a64bb4520cbad740473
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39346685"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50213293"
 ---
-# <a name="reprotect-machines-from-azure-to-an-on-premises-site"></a>Повторная защита виртуальных машин, восстанавливаемых из Azure на локальный сайт
+# <a name="reprotect-and-fail-back-machines-to-an-on-premises-site-after-failover-to-azure"></a>Повторное включение защиты и восстановление размещения машин на локальном сайте после отработки отказа в Azure
 
 После [отработки отказа](site-recovery-failover.md) локальных виртуальных машин VMware или физических серверов в Azure, чтобы восстановить размещение на локальном сайте, сначала нужно повторно защитить виртуальные машины Azure, созданные во время отработки отказа. Из этой статьи вы узнаете, как это сделать. 
 

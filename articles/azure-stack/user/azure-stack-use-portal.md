@@ -10,15 +10,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/12/2018
+ms.date: 10/23/2018
 ms.author: mabrigg
 ms.reviewer: efemmano
-ms.openlocfilehash: 7ccf746cfd9645b63c2810bff83cfb0c4fa55d65
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: 4ec9affa78d1f244208a24bcf8a6603e867d4c08
+ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44713749"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50086511"
 ---
 # <a name="use-the-azure-stack-portal"></a>Использование портала Azure Stack
 
@@ -32,12 +32,13 @@ ms.locfileid: "44713749"
 
 - В интегрированной системе URL-адрес зависит от региона оператора и внешнего доменного имени. Он будет иметь формат https://portal.&lt;*регион*&gt;.&lt;*полное_доменное_имя*&gt;.
 - Если вы используете Пакет средств разработки Azure Stack, то адрес портала — https://portal.local.azurestack.external.
-
-![Снимок экрана пользовательского портала Azure Stack](media/azure-stack-use-portal/UserPortal.png)
+- Для всех развертываний Azure Stack по умолчанию устанавливается часовой пояс UTC. Вы можете выбрать часовой пояс при установке Azure Stack, но во время установки он автоматически вернется к часовому поясу UTC по умолчанию.
 
 ## <a name="customize-the-dashboard"></a>Настройка панели мониторинга
 
 Панель мониторинга содержит набор плиток по умолчанию. Вы можете выбрать команду **Изменить панель мониторинга**, чтобы изменить панель мониторинга по умолчанию, или выбрать **Новая панель мониторинга**, чтобы создать пользовательскую панель мониторинга. Панель мониторинга можно легко настроить, добавив или удалив плитки. Например, чтобы добавить плитку "Вычисления", выберите команду **+ Создать ресурсы**. Правой кнопкой мыши щелкните **Вычисления** и в контекстном меню выберите элемент **Закрепить на панели мониторинга**.
+
+![Снимок экрана пользовательского портала Azure Stack](media/azure-stack-use-portal/userportal.png)
 
 ## <a name="create-subscription-and-browse-available-resources"></a>Создание подписки и просмотр доступных ресурсов
 

@@ -8,17 +8,17 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/21/2018
+ms.date: 10/31/2018
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: ad3ec09f039b38290929289c7bca77664b0fb554
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 2edaea1cfb02b250b27c47d58b6c1d1ef6501480
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39441791"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50420274"
 ---
 # <a name="customize-setup-for-the-azure-ssis-integration-runtime"></a>Пользовательская установка для среды выполнения интеграции Azure–SSIS
 
@@ -98,7 +98,11 @@ ms.locfileid: "39441791"
 
        ![Копирование и сохранение подписанного URL-адреса](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image8.png)
 
-    1.  При подготовке или перенастройке Azure SSIS IR с помощью PowerShell, прежде чем запустить Azure SSIS IR, выполните командлет `Set-AzureRmDataFactoryV2IntegrationRuntime` с URI SAS контейнера в качестве значения нового параметра `SetupScriptContainerSasUri`. Например: 
+    1.  При подготовке или перенастройке Azure-SSIS IR с помощью пользовательского интерфейса фабрики данных, перед запуском Azure-SSIS IR введите значение URI подписанного URL-адреса контейнера в соответствующее поле на панели **Дополнительные параметры**.
+
+       ![Ввод подписанного URL-адреса.](media/tutorial-create-azure-ssis-runtime-portal/advanced-settings.png)
+
+       При подготовке или перенастройке Azure SSIS IR с помощью PowerShell, прежде чем запустить Azure SSIS IR, выполните командлет `Set-AzureRmDataFactoryV2IntegrationRuntime` с URI SAS контейнера в качестве значения нового параметра `SetupScriptContainerSasUri`. Например: 
 
        ```powershell
        Set-AzureRmDataFactoryV2IntegrationRuntime -DataFactoryName $MyDataFactoryName `
@@ -137,13 +141,15 @@ ms.locfileid: "39441791"
 
        1. Папка `.NET FRAMEWORK 3.5`, в которой содержится конфигурация пользовательской установки для установки более ранней версии .NET Framework, которая может потребоваться для пользовательских компонентов на каждом узле вашей Azure SSIS IR.
 
+       1. Папка `AAS`, которая содержит файл пользовательских настроек для установки клиентских библиотек на каждом узле Azure-SSIS IR, которые позволят задачам Analysis Services подключаться к экземпляру Azure Analysis Services (AAS) с помощью проверки подлинности субъекта-службы. Прежде всего скачайте последнюю версию клиентских библиотек и средств установки Windows для **MSOLAP (amd64)** и **AMO** (например, `x64_15.0.900.108_SQL_AS_OLEDB.msi` и `x64_15.0.900.108_SQL_AS_AMO.msi` можно получить [здесь](https://docs.microsoft.com/en-us/azure/analysis-services/analysis-services-data-providers)), затем загрузите их в контейнер вместе с `main.cmd`.  
+
        1. Папка `BCP`, которая содержит файл пользовательской установки для установки служебных программ командной строки SQL Server (`MsSqlCmdLnUtils.msi`), включая программу массового копирования (`bcp`), на каждом узле Azure SSIS IR.
 
        1. Папка `EXCEL`, где содержится файл пользовательской установки для установки сборок с открытым исходным кодом (`DocumentFormat.OpenXml.dll`, `ExcelDataReader.DataSet.dll` и `ExcelDataReader.dll`) на каждом узле Azure SSIS IR.
 
        1. Папка `MSDTC`, содержащая выборочную установку для изменения конфигураций сети и безопасности для службы координатора распределенных транзакций (Майкрософт) (MSDTC) на каждом узле вашей Azure-SSIS IR. Чтобы убедиться в запуске MSDTC, добавьте задачу "Выполнение процесса" в начало потока управления в пакетах для выполнения следующей команды: `%SystemRoot%\system32\cmd.exe /c powershell -Command "Start-Service MSDTC"` 
 
-       1. Папка `ORACLE ENTERPRISE`, которая содержит пользовательский скрипт установки (`main.cmd`) и файл конфигурации автоматической установки (`client.rsp`), позволяющие установить драйвер Oracle OCI на каждом узле среды выполнения интеграции Azure SSIS IR Enterprise Edition. Эта установка предоставляет возможность использовать диспетчер подключений, источник и назначение Oracle. Сначала загрузите последнюю версию клиента Oracle (например, `winx64_12102_client.zip`) из [Oracle](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/database12c-win64-download-2297732.html) и затем передайте его вместе с `main.cmd` и `client.rsp` в свой контейнер. Если TNS используется для подключения к Oracle, необходимо загрузить файл `tnsnames.ora`, изменить его и отправить в контейнер, чтобы его можно было скопировать в папку установки Oracle во время установки.
+       1. Папка `ORACLE ENTERPRISE`, которая содержит пользовательский скрипт установки (`main.cmd`) и файл конфигурации автоматической установки (`client.rsp`), позволяющие установить соединители Oracle и драйвер OCI на каждом узле Azure-SSIS IR Enterprise Edition. Эта установка предоставляет возможность использовать диспетчер подключений, источник и назначение Oracle. Прежде всего скачайте соединители Microsoft версии 5.0 для Oracle (`AttunitySSISOraAdaptersSetup.msi` и `AttunitySSISOraAdaptersSetup64.msi`) из [центра загрузки Майкрософт](https://www.microsoft.com/en-us/download/details.aspx?id=55179) и последнюю версию клиента Oracle — например, версию `winx64_12102_client.zip` с сайта [Oracle](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/database12c-win64-download-2297732.html), и отправьте их в контейнер вместе с `main.cmd` и `client.rsp`. Если TNS используется для подключения к Oracle, необходимо загрузить файл `tnsnames.ora`, изменить его и отправить в контейнер, чтобы его можно было скопировать в папку установки Oracle во время установки.
 
        1. Папка `ORACLE STANDARD`, где содержится скрипт пользовательской установки (`main.cmd`) для установки драйвера Oracle ODP.NET на каждом узле Azure SSIS IR. Эта установка дает возможность использовать диспетчер подключений, источник и назначение ADO.NET. Сначала загрузите последнюю версию драйвера Oracle ODP.NET (например, `ODP.NET_Managed_ODAC122cR1.zip`) из [Oracle](http://www.oracle.com/technetwork/database/windows/downloads/index-090165.html) и затем передайте его вместе с `main.cmd` в свой контейнер.
 
@@ -151,7 +157,7 @@ ms.locfileid: "39441791"
 
        1. Папка `STORAGE`, где содержится файл пользовательской установки для установки Azure PowerShell на каждом узле Azure SSIS IR. Эта установка позволяет развертывать и запускать пакеты SSIS, которые запускают [скрипты PowerShell для работы с учетной записью хранения Azure](https://docs.microsoft.com/azure/storage/blobs/storage-how-to-use-blobs-powershell). Скопируйте `main.cmd`, пример `AzurePowerShell.msi` (или установите последнюю версию) и `storage.ps1` в контейнер. Используйте PowerShell.dtsx в качестве шаблона для пакетов. Шаблон пакета объединяет [задачу загрузки большого двоичного объекта Azure](https://docs.microsoft.com/sql/integration-services/control-flow/azure-blob-download-task), которая загружает `storage.ps1` в качестве изменяемого скрипта PowerShell, и [задачу обработки выполнения](https://blogs.msdn.microsoft.com/ssis/2017/01/26/run-powershell-scripts-in-ssis/), которая выполняет скрипт на каждом узле.
 
-       1. Папка `TERADATA`, которая содержит скрипт пользовательской установки (`main.cmd)`), связанный файл (`install.cmd`) и пакеты установки (`.msi`). Эти файлы устанавливают соединители Teradata, API TPT и драйвер ODBC на каждый узел среды выполнения интеграции Azure SSIS IR Enterprise Edition. Эта установка предоставляет возможность использовать диспетчер подключений, источник и назначение Teradata. Сначала загрузите ZIP-файл со средствами и служебными программами Teradata 15.х (например, `TeradataToolsAndUtilitiesBase__windows_indep.15.10.22.00.zip`) из [Teradata](http://partnerintelligence.teradata.com), а затем отправьте их вместе с файлами `.cmd` и `.msi` в свой контейнер.
+       1. Папка `TERADATA`, которая содержит скрипт пользовательской установки (`main.cmd`), связанный файл (`install.cmd`) и пакеты установщика (`.msi`). Эти файлы устанавливают соединители Teradata, API TPT и драйвер ODBC на каждый узел среды выполнения интеграции Azure SSIS IR Enterprise Edition. Эта установка предоставляет возможность использовать диспетчер подключений, источник и назначение Teradata. Сначала загрузите ZIP-файл со средствами и служебными программами Teradata 15.х (например, `TeradataToolsAndUtilitiesBase__windows_indep.15.10.22.00.zip`) из [Teradata](http://partnerintelligence.teradata.com), а затем отправьте их вместе с файлами `.cmd` и `.msi` в свой контейнер.
 
     ![Папки в папке сценариев пользователя](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image12.png)
 

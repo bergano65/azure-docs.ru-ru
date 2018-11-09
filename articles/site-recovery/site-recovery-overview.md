@@ -1,19 +1,19 @@
 ---
 title: Сведения об Azure Site Recovery | Документация Майкрософт
-description: Обзор службы Azure Site Recovery, а также сведения о ее развертывании.
+description: Обзор службы Azure Site Recovery и сводная информация о сценариях аварийного восстановления и развертывания при миграции.
 services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: overview
-ms.date: 10/10/2018
+ms.date: 10/28/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 334b7aa3a3a174055c3741f20a4817063efd21f6
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: b03681e6205b7db24960c99a87a3c84c213884d2
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49456649"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50240296"
 ---
 # <a name="about-site-recovery"></a>Сведения о службе Site Recovery
 
@@ -58,7 +58,7 @@ Site Recovery управляет репликацией для:
 --- | ---
 **Сценарии репликации** | Реплицируйте виртуальные машины Azure из одного региона Azure в другой.<br/><br/>  Реплицируйте локальные виртуальные машины VMware, виртуальные машины Hyper-V, физические серверы (Windows и Linux) и виртуальные машины Azure Stack в Azure.<br/><br/> Реплицируйте физические серверы, локальные виртуальные машины VMware, а также виртуальные машины Hyper-V под управлением System Center VMM на дополнительный сайт.
 **Регионы** | Ознакомьтесь с [поддерживаемыми регионами](https://azure.microsoft.com/regions/services/) для Site Recovery. |
-**Реплицируемые компьютеры** | Ознакомьтесь с требованиями для репликации [виртуальных машин Azure](azure-to-azure-support-matrix.md#support-for-replicated-machine-os-versions), [локальных виртуальных машин VMware и физических серверов](vmware-physical-azure-support-matrix.md#replicated-machines), а также [локальных виртуальных машин Hyper-V](hyper-v-azure-support-matrix.md#replicated-vms).
+**Реплицируемые компьютеры** | Ознакомьтесь с требованиями для репликации [виртуальных машин Azure](azure-to-azure-support-matrix.md#replicated-machine-operating-systems), [локальных виртуальных машин VMware и физических серверов](vmware-physical-azure-support-matrix.md#replicated-machines), а также [локальных виртуальных машин Hyper-V](hyper-v-azure-support-matrix.md#replicated-vms).
 **Рабочие нагрузки** | Вы можете реплицировать любую рабочую нагрузку, выполняемую на поддерживающем репликацию компьютере. Кроме того, команда Site Recovery выполнила специальную проверку [ряда приложений](site-recovery-workload.md#workload-summary).
 
 

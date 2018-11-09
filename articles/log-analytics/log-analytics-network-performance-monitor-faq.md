@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/12/2018
 ms.author: vinynigam
-ms.openlocfilehash: 2821f3fa07d8d9ada02da212084639c93e469d0b
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 91cfa35cd10772da0042566bdd9030f780329f93
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49408886"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50415191"
 ---
 # <a name="network-performance-monitor-solution-faq"></a>Вопросы и ответы по решению "Монитор производительности сети"
 
-![Символ монитора производительности сети](media/log-analytics-network-performance-monitor/npm-symbol.png)
+![Символ монитора производительности сети](media/log-analytics-network-performance-monitor-faq/npm-symbol.png)
 
 В этой статье собраны часто задаваемые вопросы о решении "Монитор производительности сети" в Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "49408886"
 ### <a name="which-protocol-among-tcp-and-icmp-should-be-chosen-for-monitoring"></a>Какой протокол лучше выбрать для мониторинга — TCP или ICMP?
 Если для мониторинга сети вы используете узлы под управлением Windows Server, мы рекомендуем выбрать протокол мониторинга TCP, так как он обеспечивает более высокую точность. 
 
-Для узлов под управлением операционной системы Windows для настольных компьютеров мы рекомендуем использовать ICMP, так как эта платформа не поддерживает отправку данных TCP через незащищенные сокеты, что требуется для определения топологии сети в решении "Монитор производительности сети".
+ICMP рекомендуется для настольных компьютеров под управлением Windows и узлов на базе клиентской операционной системы. Эта платформа не позволяет отправлять данные TCP через сокеты прямого доступа, используемые NPM для обнаружения топологии сети.
 
 Дополнительные сведения о сравнительных преимуществах протоколов вы можете получить [здесь](log-analytics-network-performance-monitor-performance-monitor.md#choose-the-protocol).
 

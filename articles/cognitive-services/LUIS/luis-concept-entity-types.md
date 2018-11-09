@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: conceptual
 ms.date: 10/19/2018
 ms.author: diberry
-ms.openlocfilehash: 92b4864f8991380740e6edb498328ce2eea98250
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: fdf81943a7bdbae80f4474915a72bb61f1123a30
+ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49650117"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50085870"
 ---
 # <a name="entities-in-luis"></a>Сущности в LUIS
 
@@ -96,8 +96,9 @@ LUIS предлагает множество типов сущностей — 
 ## <a name="entity-limits"></a>Ограничения сущностей
 Ознакомьтесь с [ограничениями](luis-boundaries.md#model-boundaries), чтобы понять, сколько сущностей каждого типа можно добавить в модель.
 
-## <a name="entity-roles"></a>Роли сущности
-[Роли](luis-concept-roles.md) сущности применяются к пользовательским и встроенным сущностям и используются только в шаблонах. 
+## <a name="roles-versus-hierarchical-entities"></a>Сравнение ролей и иерархических сущностей
+
+Дополнительные сведения см. в разделе [Сравнение ролей и иерархических сущностей](luis-concept-roles.md#roles-versus-hierarchical-entities).
 
 ## <a name="composite-vs-hierarchical-entities"></a>Сравнение составных и иерархических сущностей
 Составные и иерархические сущности имеют связь "родитель-потомок" и прошли машинное обучение. Благодаря машинному обучению LUIS может понимать сущности на основе различных контекстов (расположения слов). Составные сущности более гибкие, так как в качестве дочерних они поддерживают различные типы сущностей. Дочерними элементами иерархической сущности являются только простые сущности. 

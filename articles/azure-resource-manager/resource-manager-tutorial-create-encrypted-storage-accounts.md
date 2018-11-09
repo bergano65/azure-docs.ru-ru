@@ -10,27 +10,28 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 10/18/2018
+ms.date: 10/30/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: a3fc3e0cc30b379c84ac0ba12f733d2db4e41587
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.openlocfilehash: 79572a364c2346ffd567cab7d3633ae398715210
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49945796"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50239959"
 ---
-# <a name="tutorial-create-an-azure-resource-manager-template-for-deploying-an-encrypted-storage-account"></a>Руководство. Создание шаблона Azure Resource Manager для развертывания зашифрованной учетной записи хранения
+# <a name="tutorial-deploy-an-encrypted-azure-storage-account-with-resource-manager-template"></a>Руководство. Развертывание зашифрованной учетной записи службы хранилища Azure с помощью шаблона Resource Manager
 
-Узнайте, как найти сведения для заполнения шаблона Azure Resource Manager.
+Узнайте, как найти информацию о схеме шаблона и использовать ее для создания шаблонов Azure Resource Manager.
 
-В этом руководстве для создания учетной записи хранения Azure используется базовый шаблон из шаблонов быстрого запуска Azure.  С помощью шаблонов справочной документации можно настроить базовый шаблон, чтобы создать зашифрованную учетную запись хранения.
+В этом руководстве вы используете базовый шаблон из шаблонов быстрого запуска Azure. С помощью шаблонов справочной документации можно настроить шаблон, чтобы создать зашифрованную учетную запись хранения.
 
 В рамках этого руководства рассматриваются следующие задачи:
 
 > [!div class="checklist"]
 > * Открытие шаблона быстрого запуска
 > * Общие сведения о шаблоне
+> * Поиск ссылки на шаблон.
 > * Изменение шаблона
 > * Развертывание шаблона
 
@@ -44,7 +45,7 @@ ms.locfileid: "49945796"
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
-Шаблон, используемый в этом кратком руководстве, называется [Create a standard storage account](https://azure.microsoft.com/resources/templates/101-storage-account-create/) (Создание стандартной учетной записи хранения). Шаблон определяет ресурс учетной записи службы хранилища Azure.
+[Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/) — это репозиторий для шаблонов Resource Manager. Вместо создания шаблона с нуля можно найти пример шаблона и настроить его. Шаблон, используемый в этом кратком руководстве, называется [Create a standard storage account](https://azure.microsoft.com/resources/templates/101-storage-account-create/) (Создание стандартной учетной записи хранения). Шаблон определяет ресурс учетной записи службы хранилища Azure.
 
 1. В Visual Studio Code выберите **Файл**>**Открыть файл**.
 2. Скопируйте приведенный ниже URL-адрес и вставьте его в поле **Имя файла**.
@@ -57,58 +58,22 @@ ms.locfileid: "49945796"
 
 ## <a name="understand-the-schema"></a>Изучение схемы
 
-Из VS Code сверните шаблон до корневого уровня. Имеется простейшая структура со следующими элементами.
+1. Из VS Code сверните шаблон до корневого уровня. Имеется простейшая структура со следующими элементами.
 
-![Простейшая структура шаблона Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-simplest-structure.png)
+    ![Простейшая структура шаблона Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-simplest-structure.png)
 
-* Параметр **$schema** указывает расположение файла схемы JSON, который описывает версию языка шаблона.
-* Параметр **contentVersion** задает этому элементу любое значение, чтобы документировать важные изменения в шаблоне.
-* Параметр **parameters** указывает значения, которые предоставляются при выполнении развертывания для настройки развертывания ресурсов.
-* Параметр **variables** указывает значения, используемые в виде фрагментов JSON в шаблоне для упрощения выражений на языке шаблона.
-* Параметр **resources** указывает типы ресурсов, которые развертываются или обновляются в группе ресурсов.
-* Параметр **outputs** указывает значения, возвращаемые после развертывания.
+    * Параметр **$schema** указывает расположение файла схемы JSON, который описывает версию языка шаблона.
+    * Параметр **contentVersion** задает этому элементу любое значение, чтобы документировать важные изменения в шаблоне.
+    * Параметр **parameters** указывает значения, которые предоставляются при выполнении развертывания для настройки развертывания ресурсов.
+    * Параметр **variables** указывает значения, используемые в виде фрагментов JSON в шаблоне для упрощения выражений на языке шаблона.
+    * Параметр **resources** указывает типы ресурсов, которые развертываются или обновляются в группе ресурсов.
+    * Параметр **outputs** указывает значения, возвращаемые после развертывания.
 
-## <a name="use-parameters"></a>Использование параметров
+2. Разверните раздел **resources**. Вы увидите определенный ресурс `Microsoft.Storage/storageAccounts`. Этот шаблон создает незашифрованную учетную запись хранения.
 
-Параметры позволяют настраивать развертывание путем предоставления значений, предназначенных для конкретной среды. Параметры, определенные в шаблоне, используются при задании значений для учетной записи хранения.
+    ![Определение учетной записи хранения в шаблоне Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-encrypted-storage-resource.png)
 
-![Параметры шаблона Azure Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-parameters.png)
-
-В этом шаблоне определены два параметра. Обратите внимание, что в location.defaultValue используется функция шаблона.
-
-```json
-"defaultValue": "[resourceGroup().location]",
-```
-
-Функция resourceGroup() возвращает объект, представляющий текущую группу ресурсов. Полный список функций шаблонов см. в статье [Функции шаблонов диспетчера ресурсов Azure](./resource-group-template-functions.md).
-
-Использование параметров, определенных в шаблоне.
-
-```json
-"location": "[parameters('location')]",
-"name": "[parameters('storageAccountType')]"
-```
-
-## <a name="use-variables"></a>Использование переменных
-
-Переменные позволяют создавать значения, которые могут использоваться в разных частях шаблона. Переменные помогают уменьшить сложность шаблонов.
-
-![Переменные шаблона Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-variables.png)
-
-Этот шаблон определяет одну переменную *storageAccountName*. В определении используются две функции шаблона.
-
-- Функция **concat()** объединяет строки. Дополнительные сведения в разделе [concat](./resource-group-template-functions-string.md#concat).
-- Функция **uniqueString()** создает детерминированную хэш-строку на основании значений, указанных как параметры. Каждая учетная запись хранения должна иметь уникальное имя в Azure. Эта функция предоставляет уникальную строку. Больше строковых функций в статье [Строковые функции для шаблонов Azure Resource Manager](./resource-group-template-functions-string.md).
-
-Использование переменной, заданной в шаблоне.
-
-```json
-"name": "[variables('storageAccountName')]"
-```
-
-## <a name="edit-the-template"></a>Изменение шаблона
-
-В этом руководстве описано, как определить шаблон для создания зашифрованной учетной записи хранения.  Этот шаблон создает только базовую незашифрованную учетную запись хранения. Связанную с шифрованием конфигурацию см. в справочнике по шаблонам учетной записи хранения Azure.
+## <a name="find-the-template-reference"></a>Поиск ссылки на шаблон
 
 1. Перейдите к [шаблонам Azure](https://docs.microsoft.com/azure/templates/).
 2. В **фильтр по названию** введите **учетные записи хранения**.
@@ -120,17 +85,52 @@ ms.locfileid: "49945796"
 
     ```json
     "encryption": {
-        "keySource": "Microsoft.Storage",
+      "services": {
+        "blob": {
+          "enabled": boolean
+        },
+        "file": {
+          "enabled": boolean
+        }
+      },
+      "keySource": "string",
+      "keyvaultproperties": {
+        "keyname": "string",
+        "keyversion": "string",
+        "keyvaulturi": "string"
+      }
+    },
+    ```
+
+    На той же веб-странице следующее описание подтверждает, что объект `encryption` используется для создания зашифрованной учетной записи хранения.
+
+    ![Ссылка на шаблон Resource Manager: шифрование учетной записи хранения](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-resources-reference-storage-accounts-encryption.png)
+
+    Ключом шифрования можно управлять двумя способами. Вы можете использовать ключи шифрования с шифрованием службы хранилища, управляемые корпорацией Майкрософт, или собственные ключи шифрования. Для простоты этого руководства мы используем параметр `Microsoft.Storage`, так что вам не нужно создавать Azure Key Vault.
+
+    ![Ссылка на шаблон Resource Manager: объект шифрования учетной записи хранения](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-resources-reference-storage-accounts-encryption-object.png)
+
+    Объект шифрования должен выглядеть следующим образом:
+
+    ```json
+    "encryption": {
         "services": {
             "blob": {
                 "enabled": true
+            },
+            "file": {
+              "enabled": true
             }
-        }
+        },
+        "keySource": "Microsoft.Storage"
     }
     ```
-5. В Visual Studio Code измените шаблон, чтобы окончательный элемент ресурсов выглядит как:
-    
-    ![Зашифрованные ресурсы учетной записи хранения шаблона Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-encrypted-storage-resources.png)
+
+## <a name="edit-the-template"></a>Изменение шаблона
+
+В Visual Studio Code измените шаблон, чтобы элемент ресурсов выглядел так:
+
+![Зашифрованные ресурсы учетной записи хранения шаблона Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-encrypted-storage-resources.png)
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 

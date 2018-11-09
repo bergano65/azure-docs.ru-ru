@@ -1,19 +1,19 @@
 ---
-title: Установка службы Mobility Service (из виртуальных машин VMware или физических серверов в Azure) | Документация Майкрософт
-description: Узнайте, как установить агент службы Mobility Service для защиты виртуальных машин VMware и физических серверов с помощью Azure Site Recovery.
+title: Установка службы Mobility Service для аварийного восстановления виртуальных машин VMware и физических серверов в Azure | Документация Майкрософт
+description: Узнайте, как установить агент службы Mobility Service для аварийного восстановления виртуальных машин VMware и физических серверов в Azure с помощью службы Azure Site Recovery.
 author: Rajeswari-Mamilla
 ms.service: site-recovery
 ms.topic: article
-ms.date: 07/06/2018
+ms.date: 10/29/2018
 ms.author: ramamill
-ms.openlocfilehash: 094c1776c0760c04d85aff6ad3d812a2ad7afa56
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 145affbcff128e0ec599ad1f97c79260b0dcae5a
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39527003"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212698"
 ---
-# <a name="install-the-mobility-service"></a>Установка службы Mobility 
+# <a name="install-the-mobility-service-for-disaster-recovery-of-vmware-vms-and-physical-servers"></a>Установка службы Mobility Service для аварийного восстановления виртуальных машин VMware и физических серверов
 
 Служба Azure Site Recovery Mobility Service установлена на всех виртуальных машинах VMware и физических серверах, которые требуется реплицировать в Azure. Служба фиксирует операции записи данных, выполняемые на компьютере, и передает их на сервер обработки. Разверните службу Mobility Service на каждом компьютере (виртуальная машина или физический сервер VMware), который требуется реплицировать в Azure. Службу Mobility Service можно развернуть на виртуальных машинах VMware, которые необходимо защитить, следующими способами:
 

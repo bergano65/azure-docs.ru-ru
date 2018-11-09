@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 10/17/2018
 ms.author: alkohli
-ms.openlocfilehash: f70cd5de29cc3050142dfff905acae2008dab115
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: 6978360769ba350d85a06116bfee6db9f80b0607
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49379128"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50157366"
 ---
 # <a name="azure-data-box-gateway-system-requirements-preview"></a>Системные требования для шлюза Azure Data Box (предварительная версия)
 
@@ -56,7 +56,7 @@ ms.locfileid: "49379128"
 
 ## <a name="supported-storage-accounts"></a>Учетные записи хранилища BLOB-объектов
 
-Ниже приведен список поддерживаемых типов хранилищ для шлюза Data Box.
+Ниже приведен список поддерживаемых учетных записей хранения для шлюза Data Box
 
 | **Учетная запись хранения** | **Примечания** |
 | --- | --- |

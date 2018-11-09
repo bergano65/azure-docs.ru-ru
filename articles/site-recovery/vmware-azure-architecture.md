@@ -1,25 +1,26 @@
 ---
-title: Архитектура репликации из VMware в Azure в Azure Site Recovery | Документация Майкрософт
-description: В этой статье представлен обзор компонентов и архитектуры, используемых при репликации виртуальных машин VMware из локальной среды в Azure с помощью Azure Site Recovery.
+title: Архитектура аварийного восстановления из VMware в Azure в службе Azure Site Recovery | Документация Майкрософт
+description: В этой статье представлен обзор компонентов и архитектуры, используемых при настройке аварийного восстановления виртуальных машин VMware из локальной среды в Azure с помощью Azure Site Recovery.
 author: rayne-wiselman
 ms.service: site-recovery
+ms.topic: conceptual
 ms.date: 09/12/2018
 ms.author: raynew
-ms.openlocfilehash: 498c41324bfc85f6f91acc8000df4c34856cf428
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: 58129ece0fb1b7f446e5f8d738b5d1135aa0256e
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44715760"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212392"
 ---
-# <a name="vmware-to-azure-replication-architecture"></a>Архитектура репликации из VMware в Azure
+# <a name="vmware-to-azure-disaster-recovery-architecture"></a>Архитектура аварийного восстановления из VMware в Azure
 
-В этой статье описаны архитектура и процессы, используемые при репликации, отработке отказа и восстановлении виртуальных машин VMware между локальным сайтом VMware и Azure с помощью [Azure Site Recovery](site-recovery-overview.md).
+В этой статье описаны архитектура и процессы, используемые при развертывании репликации для аварийного восстановления, отработки отказов и восстановления виртуальных машин VMware между локальным сайтом VMware и Azure с помощью службы [Azure Site Recovery](site-recovery-overview.md).
 
 
 ## <a name="architectural-components"></a>Компоненты архитектуры
 
-Таблица и рисунок ниже позволяют получить общее представление о компонентах, используемых для репликации VMware в Azure.
+Приведенные ниже таблица и рисунки позволяют получить общее представление о компонентах, используемых для аварийного восстановления VMware в Azure.
 
 **Компонент** | **Требование** | **Дополнительные сведения**
 --- | --- | ---

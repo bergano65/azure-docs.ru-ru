@@ -4,16 +4,16 @@ description: Сведения об изучении ресурсов и связ
 services: resource-graph
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 09/18/2018
+ms.date: 10/22/2018
 ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: f488dfad8a38bbfab3b5b74e5b504463af09c089
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: bcd25b95d1369ef98662384945123126ebbbd70f
+ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49645938"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50086902"
 ---
 # <a name="explore-your-azure-resources-with-resource-graph"></a>Изучение ресурсов Azure с помощью графика ресурсов
 
@@ -21,7 +21,7 @@ ms.locfileid: "49645938"
 
 ## <a name="explore-virtual-machines"></a>Изучение виртуальных машин
 
-Стандартным ресурсом в Azure являются виртуальные машины. Они имеют множество свойств, которые можно запрашивать. Каждое свойство поддерживает фильтрацию и поиск нужных ресурсов.
+Стандартным ресурсом в Azure являются виртуальные машины. Они имеют много свойств, которые можно запрашивать. Каждое свойство поддерживает фильтрацию и поиск нужных ресурсов.
 
 ### <a name="virtual-machine-discovery"></a>Обнаружение виртуальных машин
 
@@ -214,9 +214,9 @@ az graph query -q "where type =~ 'Microsoft.Compute/virtualMachines' and propert
 Search-AzureRmGraph -Query "where type =~ 'Microsoft.Compute/virtualMachines' and properties.hardwareProfile.vmSize == 'Standard_B2s' | project name, resourceGroup"
 ```
 
-### <a name="virtual-machines-connected-to-premium-managed-disks"></a>Виртуальные машины, подключенные к управляемым дискам категории "Премиум"
+### <a name="virtual-machines-connected-to-premium-managed-disks"></a>Виртуальные машины, подключенные к управляемым дискам (цен. категория "Премиум")
 
-Если нам нужно получить сведения об управляемых дисках категории "Премиум", подключенных к виртуальным машинам размера **Standard_B2s**, мы можем расширить запрос, чтобы получить идентификаторы ресурсов этих дисков.
+Если нам нужно получить сведения об управляемых дисках (цен. категория "Премиум"), подключенных к виртуальным машинам размера **Standard_B2s**, мы можем расширить запрос, чтобы получить идентификаторы ресурсов этих дисков.
 
 ```Query
 where type =~ 'Microsoft.Compute/virtualmachines' and properties.hardwareProfile.vmSize == 'Standard_B2s'
@@ -240,7 +240,7 @@ Search-AzureRmGraph -Query "where type =~ 'Microsoft.Compute/virtualmachines' an
 
 ### <a name="managed-disk-discovery"></a>Обнаружение управляемых дисков
 
-Взяв первую запись из предыдущего запроса, мы изучим свойства управляемого диска, подключенного к первой виртуальной машине. Обновленный запрос использует идентификатор диска и изменяет тип.
+С помощью первой записи из предыдущего запроса мы изучим свойства управляемого диска, подключенного к первой виртуальной машине. Обновленный запрос использует идентификатор диска и изменяет тип.
 
 Пример выходных данных предыдущего запроса:
 
@@ -314,7 +314,7 @@ Search-AzureRmGraph -Query "where type =~ 'Microsoft.Compute/disks' and id == '/
 
 ## <a name="explore-virtual-machines-to-find-public-ip-addresses"></a>Определение общедоступных IP-адресов виртуальных машин
 
-Этот набор запросов Azure CLI сначала находит и сохраняет все ресурсы сетевых интерфейсов, подключенных к виртуальным машинам, затем использует список сетевых интерфейсов для поиска ресурсов IP-адресов, являющихся общедоступными, сохраняет эти значения и, наконец, предоставляет список фактических общедоступных IP-адресов.
+Сначала этот набор запросов Azure CLI используется для поиска и хранения всех ресурсов сетевых интерфейсов (NIC), подключенных к виртуальным машинам. Затем, чтобы найти каждый ресурс общедоступного IP-адреса и сохранить эти значения, в нем используется список NIC. Теперь он предоставляет список общедоступных IP-адресов.
 
 ```azurecli-interactive
 # Use Resource Graph to get all NICs and store in the 'nic' variable
@@ -324,7 +324,7 @@ az graph query -q "where type =~ 'Microsoft.Compute/virtualMachines' | project n
 cat nics.txt
 ```
 
-Получив файл `nics.txt`, мы используем его в следующем запросе для получения сведений о связанных ресурсах сетевых интерфейсов, с которыми связаны общедоступные IP-адреса.
+Используйте файл `nics.txt` в следующем запросе для получения сведений о связанных ресурсах сетевых интерфейсов, с которыми связаны общедоступные IP-адреса.
 
 ```azurecli-interactive
 # Use Resource Graph with the 'nics.txt' file to get all related public IP addresses and store in 'publicIp.txt' file

@@ -1,25 +1,14 @@
 ---
-title: Включение репликации виртуальных машин VMware в Azure с помощью Azure Site Recovery | Документация Майкрософт
-description: В этой статье описано, как настроить репликацию виртуальных машин VMware в Azure с помощью Azure Site Recovery
-services: site-recovery
-author: asgang
-ms.service: site-recovery
-ms.date: 07/06/2018
-ms.topic: conceptual
-ms.author: asgang
-ms.openlocfilehash: 9a868b196a287b7a5121803136d3c0119f64d9fe
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37917029"
----
+title: Включение репликации виртуальных машин VMware для аварийного восстановления VMware в Azure с помощью Azure Site Recovery| Документация Майкрософт' description: В этой статье описано, как включить репликацию виртуальных машин VMware для аварийного восстановления Azure с использованием Azure Site Recovery.
+author: asgang ms.service: site-recovery ms.date: 07/06/2018 ms.topic: conceptual ms.author: asgang
+
+
 # <a name="enable-replication-to-azure-for-vmware-vms"></a>Включение репликации в Azure для виртуальных машин VMware
 
 
 В этой статье описано, как включить репликацию локальных виртуальных машин VMware в Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы:
 

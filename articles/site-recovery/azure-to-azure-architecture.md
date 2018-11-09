@@ -1,24 +1,24 @@
 ---
 title: Архитектура репликации из Azure в Azure с помощью Azure Site Recovery | Документация Майкрософт
-description: В этой статье представлен обзор архитектуры и компонентов, используемых для репликации виртуальных машин Azure между регионами Azure с использованием службы Azure Site Recovery.
+description: В этой статье представлен обзор архитектуры и компонентов, используемых при настройке аварийного восстановления между регионами Azure для виртуальных машин Azure с использованием службы Azure Site Recovery.
 services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 10/10/2018
+ms.date: 10/28/2018
 ms.author: raynew
-ms.openlocfilehash: 20387c325497934ccb2e02188b24a0125f937e00
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 0069ece5d02ad52b6fea9add7817e63fa3c412b6
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49078263"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212738"
 ---
-# <a name="azure-to-azure-replication-architecture"></a>Архитектура репликации из Azure в Azure
+# <a name="azure-to-azure-disaster-recovery-architecture"></a>Архитектура аварийного восстановления из Azure в Azure
 
 
-В этой статье описана архитектура, используемая при репликации, отработке отказа и восстановлении виртуальных машин (VM) Azure между регионами Azure с помощью службы [Azure Site Recovery](site-recovery-overview.md).
+В этой статье описана архитектура, используемая при развертывании аварийного восстановления с репликацией, отработкой отказа и восстановлением виртуальных машин (VM) Azure между регионами Azure с помощью службы [Azure Site Recovery](site-recovery-overview.md).
 
 
 

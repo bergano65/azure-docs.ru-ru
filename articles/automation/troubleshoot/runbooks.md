@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 33c2bd48084c3d0e73fe2f4a1ce922e7a66b944f
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 532d3d73c939a44678091734f2bbff22267ab6b7
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49955443"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50094870"
 ---
 # <a name="troubleshoot-errors-with-runbooks"></a>Устранение ошибок c помощью модулей Runbook
 
@@ -93,8 +93,9 @@ The subscription named <subscription name> cannot be found.
 
 Чтобы определить, что аутентификация в Azure пройдена и доступ к требуемой подписке получен, сделайте следующее.  
 
-1. Обязательно выполните командлет **Add-AzureAccount** перед командлетом **Select-AzureSubscription**.  
-2. Если это сообщение об ошибке не исчезло, измените код, добавив параметр **-AzureRmContext** после командлета **Add-AzureAccount**, а затем выполните код.
+1. Проверьте скрипт вне службы автоматизации Azure, чтобы убедиться, что он может работать автономно.
+2. Обязательно выполните командлет **Add-AzureAccount** перед командлетом **Select-AzureSubscription**.  
+3. Если это сообщение об ошибке не исчезло, измените код, добавив параметр **-AzureRmContext** после командлета **Add-AzureAccount**, а затем выполните код.
 
    ```powershell
    $Conn = Get-AutomationConnection -Name AzureRunAsConnection
@@ -104,7 +105,7 @@ The subscription named <subscription name> cannot be found.
    $context = Get-AzureRmContext
 
    Get-AzureRmVM -ResourceGroupName myResourceGroup -AzureRmContext $context
-   ```
+    ```
 
 ### <a name="auth-failed-mfa"></a>Сценарий: не удается выполнить проверку подлинности в Azure из-за включенной многофакторной проверки подлинности
 
@@ -305,7 +306,7 @@ The quota for the monthly total job run time has been reached for this subscript
 * Проверьте правильность ввода имени командлета.  
 * Убедитесь, что командлет существует в учетной записи службы автоматизации, а конфликты отсутствуют. Чтобы проверить наличие командлета, откройте модуль Runbook в режиме редактирования и найдите требуемый командлет в библиотеке или выполните команду `Get-Command <CommandName>`. Убедившись в наличии командлета в учетной записи и отсутствии конфликта имен с другими командлетами или модулями runbook, добавьте его на холст. При этом в runbook должен использоваться допустимый набор параметров.  
 * Если обнаружен конфликт имен, а сам командлет доступен в двух разных модулях, проблему можно решить использованием полного имени командлета. Например, можно использовать следующий формат: **имя_модуля\имя_командлета**.  
-* Если runbook выполняется локально в группе гибридных рабочих ролей, на компьютере, на котором размещена гибридная рабочая роль, должен быть установлен соответствующий модуль или командлет.
+* Если runbook выполняется локально в группе гибридных рабочих ролей, убедитесь, что на компьютере, на котором размещена гибридная рабочая роль, установлен соответствующий модуль или командлет.
 
 ### <a name="long-running-runbook"></a>Сценарий. Длительный модуль Runbook не выполняется
 

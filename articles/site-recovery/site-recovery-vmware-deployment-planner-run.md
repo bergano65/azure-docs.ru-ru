@@ -1,21 +1,20 @@
 ---
-title: Планировщик ресурсов Azure Site Recovery для сценариев развертывания виртуальных машин VMware в Azure | Документация Майкрософт
-description: В этой статье описан режим запуска для планировщика развертывания Azure Site Recovery при развертывании виртуальных машин VMware в Azure.
-services: site-recovery
+title: Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления VMware в Azure | Документация Майкрософт
+description: В этой статье описано, как запустить Планировщик развертывания Azure Site Recovery для аварийного развертывания VMware в Azure.
 author: nsoneji
 manager: garavd
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: nisoneji
-ms.openlocfilehash: f83ab78cae17859dc28349cf7c435d7101c5fa3b
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: b890dce5d94c2177c8fc8cdb5477b92df15c8095
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49093167"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50211032"
 ---
-# <a name="run-azure-site-recovery-deployment-planner-for-vmware-to-azure"></a>Запуск планировщика развертывания Azure Site Recovery для сценариев развертывания виртуальных машин VMware в Azure
+# <a name="run-the-azure-site-recovery-deployment-planner-for-vmware-disaster-recovery-to-azure"></a>Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления VMware в Azure
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
 
 

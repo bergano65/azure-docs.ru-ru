@@ -1,21 +1,21 @@
 ---
-title: Планировщик ресурсов Azure Site Recovery для сценариев развертывания виртуальных машин VMware в Azure | Документация Майкрософт
-description: В этой статье объясняется, как анализировать созданный отчет планировщика развертывания Azure Site Recovery для сценария развертывания VMware в Azure.
-services: site-recovery
+title: Анализ отчета Планировщика развертывания Azure Site Recovery для аварийного восстановления VMware в Azure | Документация Майкрософт
+description: В этой статье описано, как проанализировать отчет, сформированный Планировщиком развертывания Azure Site Recovery для аварийного развертывания VMware в Azure.
 author: nsoneji
 manager: garavd
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: nisoneji
-ms.openlocfilehash: e6aa3a8c788fe06a528a9c363a28faffa0a9ca88
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: d709b13aaf6b6ee9a913484ed503da1e76982d17
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49094094"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50213922"
 ---
-# <a name="azure-site-recovery-deployment-planner-report"></a>Отчет планировщика развертывания Azure Site Recovery
+# <a name="analyze-the-azure-site-recovery-deployment-planner-report-for-vmware-disaster-recovery-to-azure"></a>Анализ отчета Планировщика развертывания Azure Site Recovery для аварийного восстановления VMware в Azure
+
 Созданный отчет Microsoft Excel содержит описанные ниже листы.
 ## <a name="on-premises-summary"></a>Сводка по локальной инфраструктуре
 На листе On-premises summary (Сводка по локальной инфраструктуре) содержатся общие сведения о профилированной среде VMware.

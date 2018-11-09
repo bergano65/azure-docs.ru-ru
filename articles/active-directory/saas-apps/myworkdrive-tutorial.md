@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/19/2018
+ms.date: 10/25/2018
 ms.author: jeedes
-ms.openlocfilehash: 2103c5c8c08a6aebfc1168c8fbdb4181dbe3a997
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 7310d300c68399c31d9580f070602aa3adbc75e3
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47046623"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50094062"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-myworkdrive"></a>Руководство по интеграции Azure Active Directory с MyWorkDrive
 
@@ -61,19 +61,19 @@ ms.locfileid: "47046623"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![изображение](./media/myworkdrive-tutorial/selectazuread.png)
 
 2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
+    ![изображение](./media/myworkdrive-tutorial/a_select_app.png)
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![изображение](./media/myworkdrive-tutorial/a_new_app.png)
 
 4. В поле поиска введите **MyWorkDrive**, выберите **MyWorkDrive** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![MyWorkDrive в списке результатов](./media/myworkdrive-tutorial/tutorial_myworkdrive_addfromgallery.png)
+     ![изображение](./media/myworkdrive-tutorial/tutorial_myworkdrive_addfromgallery.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -95,134 +95,119 @@ ms.locfileid: "47046623"
 
 **Чтобы настроить единый вход Azure AD в MyWorkDrive, выполните следующие действия:**
 
-1. На портале Azure на странице интеграции с приложением **MyWorkDrive** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **MyWorkDrive** щелкните **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![изображение](./media/myworkdrive-tutorial/B1_B2_Select_SSO.png)
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/myworkdrive-tutorial/tutorial_myworkdrive_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML**, чтобы включить единый вход.
 
-3. Если вы хотите настроить приложение в режиме, инициированном **поставщиком удостоверений**, в разделе **Домены и URL-адреса приложения MyWorkDrive** выполните следующие действия:
+    ![изображение](./media/myworkdrive-tutorial/b1_b2_saml_sso.png)
 
-    ![Сведения о домене и URL-адресах единого входа приложения MyWorkDrive](./media/myworkdrive-tutorial/tutorial_myworkdrive_url.png)
+3. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+
+    ![изображение](./media/myworkdrive-tutorial/b1-domains_and_urlsedit.png)
+
+4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
+
+    ![изображение](./media/myworkdrive-tutorial/tutorial_myworkdrive_url.png)
 
     В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SERVER.DOMAIN.COM>/SAML/AssertionConsumerService.aspx`.
 
-4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
+5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующее.
 
-    ![Сведения о домене и URL-адресах единого входа приложения MyWorkDrive](./media/myworkdrive-tutorial/tutorial_myworkdrive_url1.png)
+    ![изображение](./media/myworkdrive-tutorial/tutorial_myworkdrive_url1.png)
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SERVER.DOMAIN.COM>/Account/Login-saml`
-     
-    > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить их, обратитесь в [службу поддержки клиентов MyWorkDrive](mailto:support@myworkdrive.com). 
+    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SERVER.DOMAIN.COM>/Account/Login-saml` 
 
-5. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
+    > [!NOTE]
+    > Эти значения приведены в качестве примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа.  Введите имя узла корпоративного сервера MyWorkDrive, например так:
+    > 
+    > URL-адрес ответа: `https://yourserver.yourdomain.com/SAML/AssertionConsumerService.aspx`.
+    > 
+    > URL-адрес для входа: `https://yourserver.yourdomain.com/Account/Login-saml`.
+    > 
+    > Если вы не знаете, как указать в этих параметрах имя узла и SSL-сертификат, обратитесь к группе поддержки клиентов MyWorkDrive.
 
-    ![Ссылка для скачивания сертификата](./media/myworkdrive-tutorial/tutorial_myworkdrive_certificate.png) 
+6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **значок** копирования, чтобы копировать **URL-адрес метаданных федерации приложений**, а затем щелкните **Скачать**, чтобы получить **Сертификат в формате Base64** и сохранить его на локальном компьютере.
 
-6. Нажмите кнопку **Сохранить** .
+    ![изображение](./media/myworkdrive-tutorial/tutorial_myworkdrive_certficate.png) 
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/myworkdrive-tutorial/tutorial_general_400.png)
+7. Требуемый URL-адрес можно скопировать из раздела **Set up MyWorkDrive** (Настройка MyWorkDrive).
+
+    Обратите внимание, что URL-адрес может выглядеть следующим образом:
+
+    a. URL-адрес входа.
+
+    b. Идентификатор Azure AD.
+
+    c. URL-адрес выхода
+
+    ![изображение](./media/myworkdrive-tutorial/d1_samlsonfigure.png) 
+
+8. Чтобы настроить единый вход на стороне MyWorkDrive, получите **сертификат в формате Base64, URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** и настройте эти параметры вручную на сервере MyWorkDrive или скопируйте в Azure **URL-адрес метаданных федерации приложения** и вставьте его в панель администрирования сервера MyWorkDrive на экране настройки SAML AAD. Дополнительные сведения можно получить в [службе поддержки MyWorkDrive](mailto:support@myworkdrive.com).
+
     
-7. В разделе **MyWorkDrive Configuration** (Конфигурация MyWorkDrive) щелкните **Configure MyWorkDrive** (Настроить MyWorkDrive), чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
-
-    ![Конфигурация MyWorkDrive](./media/myworkdrive-tutorial/tutorial_myworkdrive_configure.png) 
-
-8. Чтобы настроить единый вход на стороне **MyWorkDrive**, нужно отправить скачанный **сертификат (Base64)**, **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [службу поддержки MyWorkDrive](mailto:support@myworkdrive.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
-
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-   ![Создание тестового пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![изображение](./media/myworkdrive-tutorial/d_users_and_groups.png)
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка "Azure Active Directory"](./media/myworkdrive-tutorial/create_aaduser_01.png)
+    ![изображение](./media/myworkdrive-tutorial/d_adduser.png)
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+3. В разделе свойств пользователя сделайте следующее.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/myworkdrive-tutorial/create_aaduser_02.png)
-
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
-
-    ![Кнопка "Добавить"](./media/myworkdrive-tutorial/create_aaduser_03.png)
-
-4. В диалоговом окне **Пользователь** сделайте следующее.
-
-    ![Диалоговое окно "Пользователь"](./media/myworkdrive-tutorial/create_aaduser_04.png)
+    ![изображение](./media/myworkdrive-tutorial/d_userproperties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например, BrittaSimon@contoso.com
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+    c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-myworkdrive-test-user"></a>Создание тестового пользователя MyWorkDrive
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении MyWorkDrive. Обратитесь в [службу поддержки MyWorkDrive](mailto:support@myworkdrive.com), чтобы добавить пользователей на платформу MyWorkDrive. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении MyWorkDrive. Обратитесь в  [службу поддержки MyWorkDrive](mailto:support@myworkdrive.com), чтобы добавить пользователей на платформу MyWorkDrive. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к MyWorkDrive.
 
-![Назначение роли пользователя][200] 
+1. На портале Azure перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-**Чтобы назначить пользователя Britta Simon в MyWorkDrive, сделайте следующее:**
-
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-
-    ![Назначение пользователя][201] 
+    ![изображение](./media/myworkdrive-tutorial/d_all_applications.png)
 
 2. В списке приложений выберите **MyWorkDrive**.
 
-    ![Ссылка на MyWorkDrive в списке приложений](./media/myworkdrive-tutorial/tutorial_myworkdrive_app.png)  
+    ![изображение](./media/myworkdrive-tutorial/tutorial_myworkdrive_app.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![изображение](./media/myworkdrive-tutorial/d_leftpaneusers.png)
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Область "Добавление назначения"][203]
+    ![изображение](./media/myworkdrive-tutorial/d_assign_user.png)
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+4. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
-
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+5. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент MyWorkDrive на панели доступа, вы автоматически войдете в приложение MyWorkDrive.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
-
-
-
-<!--Image references-->
-
-[1]: ./media/myworkdrive-tutorial/tutorial_general_01.png
-[2]: ./media/myworkdrive-tutorial/tutorial_general_02.png
-[3]: ./media/myworkdrive-tutorial/tutorial_general_03.png
-[4]: ./media/myworkdrive-tutorial/tutorial_general_04.png
-
-[100]: ./media/myworkdrive-tutorial/tutorial_general_100.png
-
-[200]: ./media/myworkdrive-tutorial/tutorial_general_200.png
-[201]: ./media/myworkdrive-tutorial/tutorial_general_201.png
-[202]: ./media/myworkdrive-tutorial/tutorial_general_202.png
-[203]: ./media/myworkdrive-tutorial/tutorial_general_203.png
-

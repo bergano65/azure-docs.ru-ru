@@ -8,18 +8,19 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: dd8e4178-9a63-492a-bd48-782e94e404af
 ms.service: active-directory
+ms.component: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/05/2018
+ms.date: 10/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 16252f690bfd34e596b2b8db26ab3a2ede0dfdee
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.openlocfilehash: a8ed2f04bf3004907cdd6e33bfb30260233fb101
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48833559"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50157162"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-borrowbox"></a>Руководство по интеграции Azure Active Directory с BorrowBox
 
@@ -54,22 +55,22 @@ ms.locfileid: "48833559"
 1. Добавление BorrowBox из коллекции.
 2. настройка и проверка единого входа в Azure AD.
 
-## <a name="adding-borrowbox-from-the-gallery"></a>Добавление BorrowBox из коллекции
+## <a name="adding-borrowbox-from-the-gallery"></a>Добавление BorrowBox из коллекции.
 Чтобы настроить интеграцию BorrowBox с Azure AD, необходимо добавить BorrowBox из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить BorrowBox из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
-    ![изображение](./media/borrowbox-tutorial/selectazuread.png)
+    ![изображение](./common/selectazuread.png)
 
 2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![изображение](./media/borrowbox-tutorial/a_select_app.png)
+    ![изображение](./common/a_select_app.png)
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![изображение](./media/borrowbox-tutorial/a_new_app.png)
+    ![изображение](./common/a_new_app.png)
 
 4. В поле поиска введите **BorrowBox**, выберите **BorrowBox** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
@@ -97,21 +98,17 @@ ms.locfileid: "48833559"
 
 1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **BorrowBox** выберите **Единый вход**.
 
-    ![изображение](./media/borrowbox-tutorial/B1_B2_Select_SSO.png)
+    ![изображение](./common/B1_B2_Select_SSO.png)
 
-2. В верхней части экрана щелкните **Изменить режим единого входа**, чтобы выбрать режим **SAML**.
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML**, чтобы включить единый вход.
 
-      ![изображение](./media/borrowbox-tutorial/b1_b2_saml_ssso.png)
+    ![изображение](./common/b1_b2_saml_sso.png)
 
-3. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML**, чтобы включить единый вход.
+3. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![изображение](./media/borrowbox-tutorial/b1_b2_saml_sso.png)
+    ![изображение](./common/b1-domains_and_urlsedit.png)
 
-4. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
-
-    ![изображение](./media/borrowbox-tutorial/b1-domains_and_urlsedit.png)
-
-5. В разделе **Базовая конфигурация SAML** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
+4. В разделе **Базовая конфигурация SAML** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
 
     ![изображение](./media/borrowbox-tutorial/tutorial_borrowbox_url.png)
 
@@ -122,13 +119,29 @@ ms.locfileid: "48833559"
     ![изображение](./media/borrowbox-tutorial/tutorial_borrowbox_url1.png)
 
     > [!NOTE]
-    > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь к [группе поддержки BorrowBox](mailto:borrowbox@bolinda.com). 
+    > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь к [группе поддержки BorrowBox](mailto:borrowbox@bolinda.com).
 
-6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить нужный вам сертификат, и сохраните его на компьютере.
+5. Приложение BorrowBox ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **User Attributes & Claims** (Атрибуты пользователя и утверждения) на странице интеграции приложения. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML) нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **User Attributes & Claims** (Атрибуты пользователя и утверждения).
+
+    ![изображение](./media/borrowbox-tutorial/i4-attribute.png)
+
+6. В разделе **Утверждения пользователя** диалогового окна **User Attributes & Claims** (Атрибуты пользователя и утверждения) настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
+    
+    a. Щелкните **значок редактировния**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+
+    ![изображение](./media/borrowbox-tutorial/i2-attribute.png)
+
+    ![изображение](./media/borrowbox-tutorial/i3-attribute.png)
+
+    b. Из списка **Атрибут источника** выберите **user.mail**.
+
+    c. Выберите команду **Сохранить**. 
+
+7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить нужный вам сертификат, и сохраните его на компьютере.
 
     ![изображение](./media/borrowbox-tutorial/tutorial_borrowbox_certificate.png) 
 
-7. Чтобы настроить единый вход на стороне **BorrowBox**, необходимо отправить сертификат или метаданные, которые вы скачали с портала Azure, в [группу поддержки BorrowBox](mailto:borrowbox@bolinda.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+8. Чтобы настроить единый вход на стороне **BorrowBox**, необходимо отправить сертификат или метаданные, которые вы скачали с портала Azure, в [группу поддержки BorrowBox](mailto:borrowbox@bolinda.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -136,15 +149,15 @@ ms.locfileid: "48833559"
 
 1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-    ![изображение](./media/borrowbox-tutorial/d_users_and_groups.png)
+    ![изображение](./common/d_users_and_groups.png)
 
 2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![изображение](./media/borrowbox-tutorial/d_adduser.png)
+    ![изображение](./common/d_adduser.png)
 
 3. В разделе свойств пользователя сделайте следующее.
 
-    ![изображение](./media/borrowbox-tutorial/d_userproperties.png)
+    ![изображение](./common/d_userproperties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
   
@@ -159,7 +172,7 @@ ms.locfileid: "48833559"
 
 Цель этого раздела — создать пользователя с именем Britta Simon в BorrowBox. Приложение BorrowBox поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к приложению BorrowBox (если он еще не создан).
 >[!Note]
->Чтобы создать пользователя вручную, обратитесь к [группе поддержки BorrowBox](mailto:borrowbox@bolinda.com).
+>Чтобы создать пользователя вручную, обратитесь к  [группе поддержки BorrowBox](mailto:borrowbox@bolinda.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -167,7 +180,7 @@ ms.locfileid: "48833559"
 
 1. На портале Azure перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![изображение](./media/borrowbox-tutorial/d_all_applications.png)
+    ![изображение](./common/d_all_applications.png)
 
 2. В списке приложений выберите **BorrowBox**.
 
@@ -175,11 +188,11 @@ ms.locfileid: "48833559"
 
 3. В меню слева выберите **Пользователи и группы**.
 
-    ![изображение](./media/borrowbox-tutorial/d_leftpaneusers.png)
+    ![изображение](./common/d_leftpaneusers.png)
 
 4. Нажмите кнопку **Добавить**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![изображение](./media/borrowbox-tutorial/d_assign_user.png)
+    ![изображение](./common/d_assign_user.png)
 
 4. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
@@ -190,7 +203,7 @@ ms.locfileid: "48833559"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент BorrowBox на панели доступа, вы автоматически войдете в приложение BorrowBox.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

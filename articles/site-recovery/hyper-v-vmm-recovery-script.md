@@ -1,25 +1,18 @@
 ---
-title: Добавление скрипта в план восстановления в Azure Site Recovery | Документация Майкрософт
-description: Сведения о компонентах, необходимых для добавления нового скрипта System Center Virtual Machine Manager (VMM) в план восстановления в Azure.
-services: site-recovery
-documentationcenter: ''
+title: Добавление сценария в план восстановления для аварийного восстановления с помощью Azure Site Recovery | Документация Майкрософт
+description: Узнайте, как добавить сценарий VMM в план восстановления для аварийного восстановления виртуальных машин Hyper-V в облаках VMM.
 author: rajani-janaki-ram
 manager: rochakm
-editor: ''
-ms.assetid: 72408c62-fcb6-4ee2-8ff5-cab1218773f2
 ms.service: site-recovery
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: storage-backup-recovery
+ms.topic: conceptual
 ms.date: 07/06/2018
 ms.author: rajanaki
-ms.openlocfilehash: 0b2bb17c85f76498e11ea3f007d55d7488f249cf
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 239ccacaed9420fb15e9e116f46ad93596ddaaa2
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39426893"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50214891"
 ---
 # <a name="add-a-vmm-script-to-a-recovery-plan"></a>Добавление скрипта VMM в план восстановления
 

@@ -1,34 +1,31 @@
 ---
-title: Распространенные вопросы и рекомендации по Azure Databricks | Документация Майкрософт
+title: Распространенные вопросы и рекомендации по Azure Databricks
 description: Ответы на часто задаваемые вопросы и сведения об устранении неполадок для Azure Databricks.
 services: azure-databricks
-documentationcenter: ''
-author: nitinme
-manager: cgronlun
-editor: cgronlun
+author: mamccrea
+ms.author: mamccrea
+ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.workload: big-data
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: c3ba235c60480c38a21ee3264c54b4a4dcdea340
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.topic: conceptual
+ms.date: 10/25/2018
+ms.openlocfilehash: 3bcc511ec6ad8a246c2b1b3a33eb59043a45830e
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39434607"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50138367"
 ---
 # <a name="frequently-asked-questions-about-azure-databricks"></a>Часто задаваемые вопросы об Azure Databricks
 
 В этой статье перечислены самые популярные вопросы, которые могут возникнуть в связи с Azure Databricks. Также здесь указаны некоторые распространенные проблемы, которые могут возникать при использовании Databricks. Дополнительные сведения см. в статье [Что такое Azure Databricks?](what-is-azure-databricks.md) 
 
-## <a name="can-i-use-my-own-keys-for-local-encryption"></a>Можно ли использовать собственные ключи для локального шифрования? 
-В текущем выпуске не поддерживается использование собственных ключей из Azure Key Vault. 
+## <a name="can-i-use-azure-key-vault-to-store-keyssecrets-to-be-used-in-azure-databricks"></a>Можно ли использовать Azure Key Vault для хранения ключей (секретов), используемых в Azure Databricks?
+Да. Azure Key Vault можно использовать для хранения ключей (секретов), используемых в Azure Databricks. Дополнительные сведения см. в документации по [Create an Azure Key Vault-backed secret scope](https://docs.azuredatabricks.net/user-guide/secrets/secret-scopes.html#akv-ss) (Создании секретной области в Azure Key Vault).
 
-## <a name="can-i-use-azure-virtual-networks-with-databricks"></a>Можно ли использовать для Databricks виртуальные сети Azure?
-При подготовке Databricks создается новая виртуальная сеть. В текущем выпуске вы не можете использовать собственную виртуальную сеть Azure.
+
+## <a name="can-i-use-azure-virtual-networks-with-databricks"></a>Можно ли использовать виртуальные сети Azure в Azure Databricks?
+Да. Виртуальные сети Azure можно использовать в Azure Databricks. Дополнительные сведения см. в статье [Deploying Azure Databricks in your Azure Virtual Network (Preview)](https://docs.azuredatabricks.net/administration-guide/cloud-configurations/azure/vnet-inject.html) (Развертывание Azure Databricks в виртуальной сети Azure (предварительная версия)).
 
 ## <a name="how-do-i-access-azure-data-lake-store-from-a-notebook"></a>Как открыть Azure Data Lake Store из записной книжки? 
 
@@ -116,7 +113,7 @@ ms.locfileid: "39434607"
 
 #### <a name="background"></a>Фоновый
 
-Azure Databricks интегрируется с Azure AD. Это позволяет задать разрешения в Azure Databricks (например, для записных книжек или кластеров), указав пользователей из Azure AD. Чтобы в Azure Databricks можно было вывести список имен пользователей из Azure AD, требуется разрешение на чтение этих данных. Для этого необходимо согласие. Если оно недоступно, возникнет ошибка.
+Azure Databricks интегрируется с Azure Active Directory. Можно задать разрешения в Azure Databricks (например, для записных книжек или кластеров), указав пользователей из Azure AD. Чтобы в Azure Databricks можно было вывести список имен пользователей из Azure AD, требуется разрешение на чтение этих данных и согласие на их предоставление. Если оно недоступно, возникнет ошибка.
 
 #### <a name="solution"></a>Решение
 

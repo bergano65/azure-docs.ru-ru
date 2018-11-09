@@ -1,19 +1,19 @@
 ---
-title: Отработка отказа и восстановление размещения виртуальных машин Hyper-V, реплицированных в дополнительный центр обработки данных, с помощью Site Recovery | Документация Майкрософт
-description: Узнайте, как выполнять отработку отказа виртуальных машин Hyper-V в дополнительный центр обработки данных и восстанавливать размещение на основном сайте с помощью Azure Site Recovery
+title: Отработка отказа и восстановление размещения виртуальных машин Hyper-V, реплицированных в дополнительный центр обработки данных, во время аварийного восстановления с помощью Azure Site Recovery | Документация Майкрософт
+description: Узнайте, как выполнять отработку отказа виртуальных машин Hyper-V на дополнительный локальный сайт и восстанавливать размещение на основном сайте во время аварийного восстановления с помощью Azure Site Recovery.
 services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 10/10/2018
+ms.date: 10/28/2018
 ms.author: raynew
-ms.openlocfilehash: 782ddc3ebb7b3c533d0eb5c4b7735a13cbaf268c
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 80a26f7f2c97fdbc5342d8845277facd79f22a62
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49077686"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210012"
 ---
 # <a name="fail-over-and-fail-back-hyper-v-vms-replicated-to-your-secondary-on-premises-site"></a>Отработка отказа и восстановление размещения виртуальных машин Hyper-V, реплицированных на дополнительный локальный сайт
 

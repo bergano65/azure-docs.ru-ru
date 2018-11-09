@@ -1,6 +1,6 @@
 ---
-title: Создание запросов сообщений B2B в Log Analytics — Azure Logic Apps | Документация Майкрософт
-description: Сведения о создании запросов, которые отслеживают сообщения AS2, X12 и EDIFACT с помощью Log Analytics для Azure Logic Apps.
+title: Создание запросов для отслеживания сообщений B2B в Log Analytics — Azure Logic Apps | Документация Майкрософт
+description: Сведения о создании запросов, которые отслеживают сообщения AS2, X12 и EDIFACT в Azure Log Analytics для Azure Logic Apps
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -8,109 +8,127 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
-ms.date: 06/19/2018
-ms.openlocfilehash: baccd255fc2812eae0de3a98dfcef3dcbc7e1b46
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.date: 10/19/2018
+ms.openlocfilehash: af1d00e49819f1d69e08c0fa99891690e07b489f
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43124276"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50233758"
 ---
-# <a name="create-queries-for-tracking-as2-x12-and-edifact-messages-in-log-analytics-for-azure-logic-apps"></a>Сведения о создании запросов, которые отслеживают сообщения AS2, X12 и EDIFACT в Log Analytics для Azure Logic Apps
+# <a name="create-tracking-queries-for-b2b-messages-in-azure-log-analytics-for-azure-logic-apps"></a>Создание запросов для отслеживания сообщений B2B в Azure Log Analytics для Azure Logic Apps
 
-Чтобы найти сообщения AS2, X12 или EDIFACT, которые отслеживаются с помощью [Azure Log Analytics](../log-analytics/log-analytics-overview.md), можно создавать запросы, применяющие фильтры по требуемым критериям. Например, можно найти сообщения с определенным контрольным номером обмена.
+Чтобы найти сообщения AS2, X12 или EDIFACT, которые отслеживаются с помощью [Azure Log Analytics](../log-analytics/log-analytics-overview.md), можно создавать запросы, фильтрующие действия по определенным критериям. Например, можно найти сообщения с определенным контрольным номером обмена.
 
-## <a name="requirements"></a>Требования
+> [!NOTE]
+> На этой странице ранее описывались шаги по выполнению этих задач с помощью консоли Microsoft Operations Management Suite (OMS), которая [выводится из эксплуатации в январе 2019 г.](../log-analytics/log-analytics-oms-portal-transition.md) Теперь эти шаги выполняются с помощью Azure Log Analytics. 
 
-* Приложение логики, настроенное на ведение журнала диагностики. Узнайте подробнее о [создании приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) и [настройке ведения журнала для такого приложения логики](../logic-apps/logic-apps-monitor-your-logic-apps.md#azure-diagnostics).
+## <a name="prerequisites"></a>Предварительные требования
+
+* Приложение логики, настроенное на ведение журнала диагностики. Узнайте подробнее о [создании приложения логики](quickstart-create-first-logic-app-workflow.md) и [настройке ведения журнала для такого приложения логики](../logic-apps/logic-apps-monitor-your-logic-apps.md#azure-diagnostics).
 
 * Учетная запись интеграции, настроенная для мониторинга и ведения журнала. Узнайте подробнее о [создании учетной записи интеграции](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) и [настройке мониторинга и ведения журнала для этой учетной записи](../logic-apps/logic-apps-monitor-b2b-message.md).
 
 * Если это еще не сделано, [опубликуйте данные диагностики в службе Log Analytics](../logic-apps/logic-apps-track-b2b-messages-omsportal.md) и [настройте отслеживание сообщений в Log Analytics](../logic-apps/logic-apps-track-b2b-messages-omsportal.md).
 
-> [!NOTE]
-> Кроме этого, у вас должна быть рабочая область в Log Analytics. Для отслеживания взаимодействия B2B используйте ту же рабочую область Log Analytics. 
->  
-> См. дополнительные сведения о [создании рабочей области Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md).
+## <a name="create-queries-with-filters"></a>Создание запросов с фильтрами
 
-## <a name="create-message-queries-with-filters-in-log-analytics"></a>Создание запросов сообщений с фильтрами в службе Log Analytics
+Чтобы найти сообщения на основе определенных свойств или значений, можно создать запросы, в которых используются фильтры. 
 
-В этом примере показано, как найти сообщение по контрольному номеру обмена.
+1. На [портале Azure](https://portal.azure.com) выберите **Все службы**. В поле поиска введите "log analytics" и выберите **Log Analytics**.
 
-> [!TIP] 
-> Если известно название рабочей области в Log Analytics, перейдите на домашнюю страницу этой рабочей области (`https://{your-workspace-name}.portal.mms.microsoft.com`) и начинайте с шага 4. В противном случае начните с шага 1.
+   ![Выбор Log Analytics](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/find-log-analytics.png)
 
-1. На [портале Azure](https://portal.azure.com) выберите **Все службы**. Введите в поле поиска "log analytics" и выберите **Log Analytics**, как показано ниже.
+1. В разделе **Log Analytics** найдите и выберите рабочую область Log Analytics. 
 
-   ![Поиск Log Analytics](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/browseloganalytics.png)
+   ![Выбор рабочей области Log Analytics](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/select-log-analytics-workspace.png)
 
-2. В разделе **Log Analytics** найдите и выберите рабочую область Log Analytics.
+1. В меню рабочей области в разделе **Общие** выберите **Журналы (классические)** или **Журналы**. 
 
-   ![Выбор рабочей области Log Analytics](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/selectla.png)
+   В этом примере показано, как использовать классическое представление журналов. 
+   Если в разделе **Максимально эффективная работа с Log Analytics** выбрать **Просмотр журналов**, в меню **Поиск и анализ журналов** вы найдете пункт **Logs (classic view)** (Журналы, классическое представление). 
 
-3. В разделе **Управление** выберите **Поиск по журналу**.
+   ![Классическое представление журналов](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/view-classic-logs.png)
 
-   ![Выбор кнопки "Поиск по журналу"](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/azure-portal-page.png)
+1. В поле редактирования запроса введите первые буквы имени поля, которое вы хотите найти. При вводе текста редактор запросов отображает возможные совпадения и доступные операции. После создания запроса щелкните **Выполнить** или нажмите клавишу ВВОД.
 
-4. В поле поиска введите поле, которое требуется найти, и нажмите клавишу **ВВОД**. При вводе Log Analytics предлагает возможные совпадения и операции, которые можно использовать. Узнайте подробнее о [способах поиска данных в Log Analytics](../log-analytics/log-analytics-log-searches.md).
+   В этом примере выполняется поиск строки **LogicAppB2B**. 
+   Узнайте подробнее о [способах поиска данных в Log Analytics](../log-analytics/log-analytics-log-searches.md).
 
-   В этом примере выполняется поиск событий с параметром **Type=AzureDiagnostics**.
+   ![Начните вводить строку запроса](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/create-query.png)
 
-   ![Начните вводить строку запроса](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/oms-start-query.png)
+1. Чтобы изменить диапазон времени, который вы хотите просмотреть, на левой панели выберите нужный диапазон в списке или перетащите ползунок. 
 
-5. На панели слева выберите период времени, данные за который вы хотите просмотреть. Чтобы добавить фильтр к запросу, нажмите **+Добавить**.
+   ![Изменение диапазона времени](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/change-timeframe.png)
 
-   ![Добавление фильтра к запросу](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/query1.png)
+1. Чтобы добавить фильтр к запросу, щелкните **Добавить**. 
 
-6. В разделе **Добавить фильтры** введите имя фильтра, чтобы найти нужный фильтр. Выберите фильтр и нажмите **+Добавить**.
+   ![Добавление фильтра к запросу](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/add-filter.png)
 
-   Чтобы найти контрольный номер обмена, в этом примере выполняется поиск по слову "interchange", а в качестве фильтра выбирается параметр **event_record_messageProperties_interchangeControlNumber_s**.
+1. В разделе **Добавить фильтры** введите имя фильтра, который нужно найти. Если фильтр найден, выберите его. На левой панели снова щелкните **Добавить**.
 
-   ![Выбор фильтра](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/oms-query-add-filter.png)
+   К примеру, здесь показан другой запрос, который выполняет поиск событий по условию **Type=="AzureDiagnostics"** и находит результаты на основе контрольного номера обмена путем выбора фильтра **event_record_messageProperties_interchangeControlNumber_s**.
 
-7. На панели слева выберите значение фильтра, которое требуется использовать, а затем нажмите **Применить**.
+   ![Выбор значения фильтра](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/filter-example.png)
 
-   В этом примере выбирается контрольный номер обмена для требуемых сообщений.
+   Когда вы щелкнете **Добавить**, запрос будет обновлен на основе выбранного события и значения фильтрации. 
+   Предыдущие результаты теперь также отфильтрованы. 
 
-   ![Выбор значения фильтра](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/oms-query-select-filter-value.png)
+   К примеру, этот запрос выполняет поиск по условию **Type=="AzureDiagnostics"** и находит результаты на основе контрольного номера обмена с помощью фильтра **event_record_messageProperties_interchangeControlNumber_s**.
 
-8. Теперь вернитесь к запросу, который вы создаете. Запрос был обновлен с учетом выбранных фильтра событий и значения. Предыдущие результаты теперь также отфильтрованы.
-
-    ![Возврат к запросу с отфильтрованными результатами](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/oms-query-filtered-results.png)
+   ![Отфильтрованные результаты](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/filtered-results.png)
 
 <a name="save-oms-query"></a>
 
-## <a name="save-your-query-for-future-use"></a>Сохранение запроса для использования в будущем
+## <a name="save-query"></a>Сохранение запроса
 
-1. В запросе на странице **Поиск по журналам** нажмите **Сохранить**. Присвойте запросу имя, выберите категорию и нажмите **Сохранить**.
+Чтобы сохранить запрос в представлении **Журналы (классические)**, выполните следующие шаги:
 
-   ![Присвойте запросу имя и категорию](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/oms-query-save.png)
+1. Для запроса на странице **Журналы (классические)** выберите **Аналитика**. 
 
-2. Чтобы просмотреть запрос, выберите **Избранное**.
+   ![Выбор раздела "Аналитика"](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/choose-analytics.png)
 
-   ![Выберите "Избранное"](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/oms-query-favorites.png)
+1. На панели инструментов запроса щелкните **Сохранить**.
 
-3. В разделе **Сохраненные условия поиска** выберите запрос, чтобы просмотреть его результаты. Чтобы обновить запрос и найти другие результаты, измените запрос.
+   ![Нажмите кнопку Save (Сохранить)](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/save-query.png)
 
-   ![Выбор запроса](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/oms-log-search-find-favorites.png)
+1. Укажите сведения о запросе, например присвойте ему имя, выберите **Запрос** и укажите имя категории. Когда все будет готово, нажмите **Сохранить**.
 
-## <a name="find-and-run-saved-queries-in-log-analytics"></a>Поиск и запуск сохраненных запросов в Log Analytics
+   ![Нажмите кнопку Save (Сохранить)](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/query-details.png)
 
-1. Откройте домашнюю страницу рабочей области Log Analytics (`https://{your-workspace-name}.portal.mms.microsoft.com`) и выберите **Поиск по журналам**.
+1. Чтобы просмотреть сохраненные запросы, вернитесь на страницу запросов. На панели инструментов запроса щелкните **Сохраненные условия поиска**.
 
-   ![На домашней странице Log Analytics выберите "Поиск по журналам"](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/logsearch.png)
+   ![Выбор раздела "Сохраненные условия поиска"](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/choose-saved-searches.png)
 
-   -или-
+1. В разделе **Сохраненные условия поиска** выберите запрос, чтобы просмотреть его результаты. 
 
-   ![В меню выберите "Поиск по журналам".](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/logsearch-2.png)
+   ![Выбор запроса](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/saved-query-results.png)
 
-2. На домашней странице **Поиск по журналам** выберите **Избранное**.
+   Чтобы обновить запрос и найти другие результаты, измените запрос.
 
-   ![Выберите "Избранное"](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/oms-log-search-favorites.png)
+## <a name="find-and-run-saved-queries"></a>Поиск и выполнение сохраненных запросов
 
-3. В разделе **Сохраненные условия поиска** выберите запрос, чтобы просмотреть его результаты. Чтобы обновить запрос и найти другие результаты, измените запрос.
+1. На [портале Azure](https://portal.azure.com) выберите **Все службы**. В поле поиска введите "log analytics" и выберите **Log Analytics**.
 
-   ![Выбор запроса](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/oms-log-search-find-favorites.png)
+   ![Выбор Log Analytics](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/find-log-analytics.png)
+
+1. В разделе **Log Analytics** найдите и выберите рабочую область Log Analytics. 
+
+   ![Выбор рабочей области Log Analytics](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/select-log-analytics-workspace.png)
+
+1. В меню рабочей области в разделе **Общие** выберите **Журналы (классические)** или **Журналы**. 
+
+   В этом примере показано, как использовать классическое представление журналов. 
+
+1. Когда откроется страница запроса, на панели инструментов запроса щелкните **Сохраненные условия поиска**.
+
+   ![Выбор раздела "Сохраненные условия поиска"](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/choose-saved-searches.png)
+
+1. В разделе **Сохраненные условия поиска** выберите запрос, чтобы просмотреть его результаты. 
+
+   ![Выбор запроса](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/saved-query-results.png) 
+
+   Запрос будет выполнен автоматически. Если по какой-либо причине этого не произошло, в редакторе запросов щелкните **Выполнить**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

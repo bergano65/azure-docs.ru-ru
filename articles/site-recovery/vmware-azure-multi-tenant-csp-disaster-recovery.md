@@ -1,21 +1,20 @@
 ---
-title: Настройка репликации VMware в Azure в мультитенантном окружении с использованием Site Recovery и программы поставщика облачных решений (CSP) | Документация Майкрософт
-description: Из этой статьи вы узнаете, как создавать подписки клиентов и управлять ими через CSP, а также как развернуть Azure Site Recovery в мультитенантной конфигурации
-services: site-recovery
+title: Настройка аварийного восстановления VMware в Azure в мультитенантном окружении с использованием Site Recovery и программы поставщика облачных решений (CSP) | Документация Майкрософт
+description: В этой статье описана настройка аварийного восстановления VMware в мультитенантной среде с помощью Azure Site Recovery.
 author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: mayg
-ms.openlocfilehash: bd356a7e4285f8663b91da1f200cc2ae3c266bf3
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: c26421f848cf25e391589fa791f801e30fd14797
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49354127"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50208907"
 ---
-# <a name="set-up-vmware-replication-in-a-multi-tenancy-environment-with-the-cloud-solution-provider-csp-program"></a>Настройка репликации VMware в мультитенантном окружении с использованием программы поставщика облачных решений (CSP)
+# <a name="set-up-vmware-disaster-recovery-in-a-multi-tenancy-environment-with-the-cloud-solution-provider-csp-program"></a>Настройка аварийного восстановления VMware в мультитенантном окружении с использованием программы поставщика облачных решений (CSP)
 
 [Программа CSP](https://partner.microsoft.com/en-US/cloud-solution-provider) улучшает взаимодействие для предоставления облачных служб Майкрософт, в том числе Office 365, EMS и Microsoft Azure. С ее помощью партнеры могут управлять отношениями с клиентами, став основным контактным лицом. Также партнеры могут развертывать подписки Azure для клиентов и объединять их с собственными настраиваемыми предложениями.
 

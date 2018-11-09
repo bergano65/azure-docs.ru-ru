@@ -6,14 +6,14 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 10/08/2018
+ms.date: 10/25/2018
 ms.author: adgera
-ms.openlocfilehash: dbadc90a206937d4c9f1d7b75a872d93b1a8a587
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 3bc365c204ab75a2f136c3e26c4b598b25f66114
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49323993"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50093495"
 ---
 # <a name="how-to-use-azure-digital-twins-swagger"></a>Использование Swagger с Digital Twins
 
@@ -45,8 +45,8 @@ https://yourInstanceName.yourLocation.azuresmartspaces.net/management/swagger
 
 | Имя настраиваемого атрибута | Заменить на |
 | --- | --- |
-| `yourInstanceName` | Имя вашего экземпляра Azure Digital Twins |
-| `yourLocation` | Регион сервера, в котором размещен ваш экземпляр |
+| *yourInstanceName* | Имя вашего экземпляра Azure Digital Twins |
+| *yourLocation* | Регион сервера, в котором размещен ваш экземпляр |
 
 ## <a name="reference-material"></a>Справочные материалы
 
@@ -113,10 +113,10 @@ Swagger также предоставляет полный обзор всех �
 Сведения об аутентификации с помощью API управления см. в статье [Подключение к API и аутентификация](./security-authenticating-apis.md).
 
 <!-- Images -->
-[1]: media/how-to-use-swagger/swagger_management_top.png
-[2]: media/how-to-use-swagger/swagger_management_models.png
-[3]: media/how-to-use-swagger/swagger_management_model.png
-[4]: media/how-to-use-swagger/swagger_management_endpoints.png
-[5]: media/how-to-use-swagger/swagger_management_try.png
-[6]: media/how-to-use-swagger/swagger_management_tried.png
-[7]: media/how-to-use-swagger/swagger_management_response.png
+[1]: media/how-to-use-swagger/swagger_management_top.PNG
+[2]: media/how-to-use-swagger/swagger_management_models.PNG
+[3]: media/how-to-use-swagger/swagger_management_model.PNG
+[4]: media/how-to-use-swagger/swagger_management_endpoints.PNG
+[5]: media/how-to-use-swagger/swagger_management_try.PNG
+[6]: media/how-to-use-swagger/swagger_management_tried.PNG
+[7]: media/how-to-use-swagger/swagger_management_response.PNG

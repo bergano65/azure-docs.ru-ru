@@ -8,18 +8,18 @@ ms.date: 09/21/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 259d61125828ee487b74daa525f3635cfa592ce7
-ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
+ms.openlocfilehash: ecc48adfeef30a777ae4d96c9b996c8bcdfea12d
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48017710"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50247816"
 ---
 # <a name="properties-of-the-edge-agent-and-edge-hub-module-twins"></a>Свойства двойников модулей EdgeAgent и EdgeHub
 
 EdgeAgent и EdgeHub — это два модуля, которые составляют среду выполнения IoT Edge. Дополнительные сведения о функциях каждого модуля см. в статье [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре (предварительная версия)](iot-edge-runtime.md). 
 
-В этой статье представлены требуемые и отображаемые в отчете свойства двойников модулей для среды выполнения. Дополнительные сведения о развертывании модулей на устройствах IoT Edge см. в разделе [Развертывание и мониторинг][lnk-deploy].
+В этой статье представлены требуемые и отображаемые в отчете свойства двойников модулей для среды выполнения. Дополнительные сведения о развертывании модулей на устройствах IoT Edge см. в разделе [Развертывание и мониторинг](module-deployment-monitoring.md).
 
 ## <a name="edgeagent-desired-properties"></a>Требуемые свойства EdgeAgent
 
@@ -30,26 +30,26 @@ EdgeAgent и EdgeHub — это два модуля, которые состав
 | schemaVersion | Должно быть "1.0". | Yes |
 | runtime.type | Должно быть "docker". | Yes |
 | runtime.settings.minDockerVersion | Задайте минимальную версию Docker, которая требуется для этого манифеста развертывания. | Yes |
-| runtime.settings.loggingOptions | Переведенные в строку JSON, содержащую параметры ведения журнала для контейнера агента Edge. [Параметры ведения журнала Docker][lnk-docker-logging-options] | Нет  |
+| runtime.settings.loggingOptions | Переведенные в строку JSON, содержащую параметры ведения журнала для контейнера агента Edge. [Параметры ведения журнала Docker](https://docs.docker.com/engine/admin/logging/overview/) | Нет  |
 | runtime.settings.registryCredentials<br>.{registryId}.username | Имя пользователя для реестра контейнеров. Для Реестра контейнеров Azure именем пользователя обычно является имя реестра.<br><br> Учетные данные реестра необходимы для любых образов модулей, не являющихся общедоступными. | Нет  |
 | runtime.settings.registryCredentials<br>.{registryId}.password | Пароль для реестра контейнеров. | Нет  |
 | runtime.settings.registryCredentials<br>.{registryId}.address | Адрес для реестра контейнеров. Для Реестра контейнеров Azure адрес обычно имеет вид *{registryname}.azurecr.io*. | Нет  |  
 | systemModules.edgeAgent.type | Должно быть "docker". | Yes |
 | systemModules.edgeAgent.settings.image | Универсальный код ресурса (URI) образа агента Edge. В настоящее время агент Edge не может обновить себя сам. | Yes |
-| systemModules.edgeAgent.settings<br>.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера агента Edge. [Параметры создания Docker][lnk-docker-create-options] | Нет  |
+| systemModules.edgeAgent.settings<br>.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера агента Edge. [Параметры создания Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | Нет  |
 | systemModules.edgeAgent.configuration.id | Идентификатор развертывания, которое развернуло этот модуль. | Это свойство задается в Центре Интернета вещей при применении этого манифеста с помощью развертывания. Не является частью манифеста развертывания. |
 | systemModules.edgeHub.type | Должно быть "docker". | Yes |
 | systemModules.edgeHub.status | Должно быть "running". | Yes |
 | systemModules.edgeHub.restartPolicy | Должно быть "always". | Yes |
 | systemModules.edgeHub.settings.image | Универсальный код ресурса (URI) образа концентратора Edge. | Yes |
-| systemModules.edgeHub.settings<br>.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера концентратора Edge. [Параметры создания Docker][lnk-docker-create-options] | Нет  |
+| systemModules.edgeHub.settings<br>.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера концентратора Edge. [Параметры создания Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | Нет  |
 | systemModules.edgeHub.configuration.id | Идентификатор развертывания, которое развернуло этот модуль. | Это свойство задается в Центре Интернета вещей при применении этого манифеста с помощью развертывания. Не является частью манифеста развертывания. |
 | modules.{ИД_модуля}.version | Определяемая пользователем строка, представляющая версию этого модуля. | Yes |
 | modules.{ИД_модуля}.type | Должно быть "docker". | Yes |
 | modules.{Ид_модуля}.status | {"running" \| "stopped"} | Yes |
 | modules.{ИД_модуля}.restartPolicy | {"never" \| "on-failed" \| "on-unhealthy" \| "always"} | Yes |
 | modules.{ИД_модуля}.settings.image | Универсальный код ресурса (URI) для образа модуля. | Yes |
-| modules.{ИД_модуля}.settings.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера модуля. [Параметры создания Docker][lnk-docker-create-options] | Нет  |
+| modules.{ИД_модуля}.settings.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера модуля. [Параметры создания Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | Нет  |
 | modules.{ИД_модуля}.configuration.id | Идентификатор развертывания, которое развернуло этот модуль. | Это свойство задается в Центре Интернета вещей при применении этого манифеста с помощью развертывания. Не является частью манифеста развертывания. |
 
 ## <a name="edgeagent-reported-properties"></a>Отображаемые в отчете свойства EdgeAgent
@@ -63,7 +63,7 @@ EdgeAgent и EdgeHub — это два модуля, которые состав
 Последний элемент данных полезен в случае, если требуемые свойства не были успешно применены в среде выполнения и устройство по прежнему работает под управлением предыдущего манифеста развертывания.
 
 > [!NOTE]
-> Сообщаемые свойства агента Edge полезны, так как к ним можно выполнять запросы с помощью [языка запросов Центра Интернета вещей][lnk-iothub-query], чтобы узнать состояние развертывания в масштабе. Дополнительные сведения об использовании свойств агента Edge для состояния см. в статье [Общие сведения о развертываниях IoT Edge для отдельных устройств или в требуемом масштабе][lnk-deploy].
+> Сообщаемые свойства агента IoT Edge полезны, так как к ним можно выполнять запросы с помощью [языка запросов Центра Интернета вещей](../iot-hub/iot-hub-devguide-query-language.md), чтобы узнать состояние развертывания в масштабе. Дополнительные сведения об использовании свойств агента IoT Edge, чтобы узнать состояние развертывания, см. в статье [Общие сведения о развертываниях IoT Edge для отдельных устройств или в требуемом масштабе](module-deployment-monitoring.md).
 
 Следующая таблица не включает сведения, которые копируются из требуемых свойств.
 
@@ -117,9 +117,3 @@ EdgeAgent и EdgeHub — это два модуля, которые состав
 ## <a name="next-steps"></a>Дополнительная информация
 
 Сведения о том, как использовать эти свойства для создания манифестов развертывания, см. в статье [Сведения об использовании, настройке и повторном использовании модулей Azure IoT Edge (предварительная версия)](module-composition.md).
-
-<!--links -->
-[lnk-deploy]: module-deployment-monitoring.md
-[lnk-docker-create-options]: https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate
-[lnk-docker-logging-options]: https://docs.docker.com/engine/admin/logging/overview/
-[lnk-iothub-query]: ../iot-hub/iot-hub-devguide-query-language.md

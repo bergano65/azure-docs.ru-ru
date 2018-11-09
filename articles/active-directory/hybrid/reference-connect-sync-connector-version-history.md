@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 03/22/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 95f2ffb1a51184f1194f87a4a5e9a54e682edf80
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: cbafe7fcdf2ccd515dfec5554c93bec9c7f3537a
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46305963"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50243169"
 ---
 # <a name="connector-version-release-history"></a>История выпусков версий соединителей
 Соединители для Forefront Identity Manager (FIM) и Microsoft Identity Manager (MIM) часто обновляются.
@@ -98,7 +98,7 @@ ms.locfileid: "46305963"
 * Универсальный соединитель веб-служб:
   * Средство Wsconfig не правильно преобразовало массив JSON из примера запроса для метода службы REST. По этой причине возникали проблемы с сериализацией данного массива JSON для запроса REST.
   * Инструмент настройки соединителя веб-служб не поддерживает использование символов пробела в именах атрибутов JSON. 
-    * Можно вручную добавить шаблон замены в файл WSConfigTool.exe.config, например ```<appSettings> <add key=”JSONSpaceNamePattern” value="__" /> </appSettings>```.
+    * Можно вручную добавить шаблон замены в файл WSConfigTool.exe.config, например ```<appSettings> <add key="JSONSpaceNamePattern" value="__" /> </appSettings>```.
 > [!NOTE]
 > Требуется ключ JSONSpaceNamePattern, так как при экспорте будет получена ошибка (Сообщение: пустое имя не является допустимым). 
 
@@ -143,7 +143,7 @@ Lotus:
 ### <a name="enhancements"></a>Улучшения
 
 * Универсальный соединитель SQL:</br>
-  **Сценарий.** Для соединителя SQL ссылка разрешается только на один тип объекта, а также требуется перекрестная ссылка для участников. Это хорошо известное ограничение. </br>
+  **Сценарий.**  При использовании соединителя SQL ссылка разрешается только на один тип объекта, а также требуется перекрестная ссылка для членов. Это хорошо известное ограничение. </br>
   **Описание решения.** На этапе обработки ссылок с выбранным параметром "*" все сочетания типов объектов будут возвращены в модуль синхронизации.
 
 >[!Important]

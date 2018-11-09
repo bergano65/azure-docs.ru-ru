@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 04/13/2018
 ms.author: chliang
 ms.custom: include file
-ms.openlocfilehash: a1cda1cea2089363331ae437cb7ad802429779f4
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: 506270b1828e98f14e3fe7a84b7f780e209e2669
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48888702"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50166463"
 ---
 Возвращенные данные с ожидаемым значением и верхней и нижней границами по умолчанию. На практике можно определить параметр [sensitivity], а затем использовать (ExpectedValue + sensitivity * UpperMargin) в качестве верхней границы, а (ExpectedValue - sensitivity * LowerMargin) — в качестве нижней границы для самостоятельной настройки точек аномалий. Значение [sensitivity] должно быть больше 1. Ниже приведены несколько диаграмм для настройки.
 

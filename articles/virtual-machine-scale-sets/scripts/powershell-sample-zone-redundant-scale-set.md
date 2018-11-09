@@ -1,5 +1,5 @@
 ---
-title: Примеры Azure PowerShell — масштабируемый набор, избыточный в пределах зоны | Документация Майкрософт
+title: Примеры Azure PowerShell — масштабируемый набор, избыточный между зонами | Документация Майкрософт
 description: Примеры сценариев Azure PowerShell.
 services: virtual-machine-scale-sets
 documentationcenter: ''
@@ -23,7 +23,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 10/19/2018
 ms.locfileid: "49470762"
 ---
-# <a name="create-a-zone-redundant-virtual-machine-scale-set-with-powershell"></a>Создание масштабируемого набора виртуальных машин, избыточного в пределах зоны, с помощью PowerShell
+# <a name="create-a-zone-redundant-virtual-machine-scale-set-with-powershell"></a>Создание масштабируемого набора виртуальных машин, избыточного между зонами, с помощью PowerShell
 При помощи этого скрипта создается масштабируемый набор виртуальных машин под управлением Windows Server 2016 в нескольких зонах доступности. После выполнения сценария можно получить доступ к виртуальной машине по протоколу RDP.
 
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]

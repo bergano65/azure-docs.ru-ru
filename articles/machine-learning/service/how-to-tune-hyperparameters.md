@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.component: core
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 13820dd511d31217b79385e893edbb55a3a57693
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: e66dcac1d83c71174ad5d7c3fdcd2310143f8e01
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49430027"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50140812"
 ---
 # <a name="tune-hyperparameters-for-your-model"></a>Настройка гиперпараметров модели
 
@@ -238,16 +238,18 @@ early_termination_policy = TruncationSelectionPolicy(evaluation_interval=1, trun
 
 ### <a name="no-termination-policy"></a>Политика без завершения
 
-Если вы хотите, чтобы все обучающие прогоны выполнялись полностью, используйте политику без завершения. Политика досрочного завершения выполняться не будет.
+Если вы хотите, чтобы все обучающие прогоны выполнялись полностью, установите для политики значение "Нет". Политика досрочного завершения выполняться не будет.
 
 ```Python
-from azureml.train.hyperdrive import NoTerminationPolicy
-early_termination_policy = NoTerminationPolicy()
+policy=None
 ```
 
 ### <a name="default-policy"></a>Политика по умолчанию
 
-Если политика не указана, служба настройки гиперпараметров будет использовать политику медианной остановки с `evaluation_interval` 1 и `delay_evaluation` 5 по умолчанию. Это консервативные настройки, которые могут обеспечить экономию приблизительно 25–35 % без потерь по основной метрике (на основе наших оценочных данных).
+Если политика не указана, служба настройки гиперпараметров позволит выполнить все обучающие прогоны до завершения.
+
+>[!NOTE] 
+>Если требуется консервативная политика, которая обеспечит экономию без прерывания запланированных заданий, можно воспользоваться политикой медианной остановки (Median Stopping Policy) со значениями `evaluation_interval` 1 и `delay_evaluation` 5. Это консервативные настройки, которые могут обеспечить экономию приблизительно 25–35 % без потерь по основной метрике (на основе наших оценочных данных).
 
 ## <a name="allocate-resources"></a>Выделение ресурсов
 

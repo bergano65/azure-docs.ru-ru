@@ -14,17 +14,17 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 05/15/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 819a2f81ca5403a3656bf713cf0ee3ae58050a4b
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 04c68308739f641e892a335832725ba87e36f7af
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39003119"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51242132"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
 ## <a name="overview"></a>Обзор
-Это руководство описывает, как создавать многоуровневое приложение .NET с внешним ASP.NET MVC и как развернуть его в [облачной службе Azure](cloud-services-choose-me.md). Приложение использует [базу данных Azure SQL](http://msdn.microsoft.com/library/azure/ee336279), [службу BLOB-объектов Azure](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) и [службу очередей Azure](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern). Можно [загрузить проект Visual Studio](http://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4) из галереи кода MSDN.
+Это руководство описывает, как создавать многоуровневое приложение .NET с внешним ASP.NET MVC и как развернуть его в [облачной службе Azure](cloud-services-choose-me.md). Приложение использует [базу данных Azure SQL](https://msdn.microsoft.com/library/azure/ee336279), [службу BLOB-объектов Azure](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) и [службу очередей Azure](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern). Можно [загрузить проект Visual Studio](https://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4) из галереи кода MSDN.
 
 В руководстве показано, как строить и запускать приложение локально, как разворачивать его в Azure и запускать в облаке и как создавать его с нуля. Можно начать с построения с нуля и затем выполнить шаги по тестированию и развертыванию по желанию.
 
@@ -36,7 +36,7 @@ ms.locfileid: "39003119"
 Приложение использует [рабочий шаблон на основе очередей](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) для разгрузки процессора от задач создания эскизов в фоновом режиме.
 
 ## <a name="alternative-architecture-web-apps-and-webjobs"></a>Альтернативная архитектура: функции "Веб-приложения" и "Веб-задания"
-Это руководство описывает, как запускать фоновые и интерфейсные компоненты в облачной службе Azure. Альтернативой является запуск интерфейсной части с помощью функции [Веб-приложения Azure](/azure/app-service/) и использование функции [Веб-задания](http://go.microsoft.com/fwlink/?LinkId=390226) для серверной части. Руководство по веб-заданиям см. в статье [Создание веб-задания .NET в службе приложений Azure](https://github.com/Azure/azure-webjobs-sdk/wiki). Сведения о том, как выбрать службы, см. в статье о [сравнении веб-сайтов, облачных служб и виртуальных машин Azure](../app-service/choose-web-site-cloud-service-vm.md).
+Это руководство описывает, как запускать фоновые и интерфейсные компоненты в облачной службе Azure. Альтернативой является запуск интерфейсной части с помощью функции [Веб-приложения Azure](/azure/app-service/) и использование функции [Веб-задания](https://go.microsoft.com/fwlink/?LinkId=390226) для серверной части. Руководство по веб-заданиям см. в статье [Создание веб-задания .NET в службе приложений Azure](https://github.com/Azure/azure-webjobs-sdk/wiki). Сведения о том, как выбрать службы, см. в статье о [сравнении веб-сайтов, облачных служб и виртуальных машин Azure](../app-service/choose-web-site-cloud-service-vm.md).
 
 ## <a name="what-youll-learn"></a>Что вы узнаете
 * Как подготовить компьютер к разработке для Azure путем установки пакета Azure SDK.
@@ -71,7 +71,7 @@ ms.locfileid: "39003119"
 [!INCLUDE [install-sdk](../../includes/install-sdk-2017-2015-2013.md)]
 
 ## <a name="download-and-run-the-completed-solution"></a>Загрузка и запуск готового решения
-1. Загрузите и распакуйте [готовое решение](http://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4).
+1. Загрузите и распакуйте [готовое решение](https://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4).
 2. Запустите Visual Studio.
 3. В меню **Файл** выберите **Открыть проект**, перейдите к папке, куда вы скачали решение, а затем откройте файл решения.
 4. Чтобы построить решение, нажмите CTRL+SHIFT+B.
@@ -81,7 +81,7 @@ ms.locfileid: "39003119"
 6. Если вы используете Visual Studio 2015 или более поздней версии, измените строку подключения SQL Server в файле приложения *Web.config* в проекте ContosoAdsWeb и в файле *ServiceConfiguration.Local.cscfg* проекта ContosoAdsCloudService. В каждом файле измените (localdb)\v11.0 на (localdb)\MSSQLLocalDB.
 7. Для запуска приложения нажмите сочетание клавиш CTRL+F5.
 
-    Когда запускаете локально проект облачной службы, Visual Studio автоматически вызывает *эмулятор вычислений* Azure и *эмулятор хранилища* Azure. Эмулятор хранилища использует ресурсы компьютера для эмуляции сред рабочей и веб-ролей. Эмулятор хранилища использует базу данных [SQL Server Express LocalDB](http://msdn.microsoft.com/library/hh510202.aspx) для эмуляции работы хранилища Azure в облаке.
+    Когда запускаете локально проект облачной службы, Visual Studio автоматически вызывает *эмулятор вычислений* Azure и *эмулятор хранилища* Azure. Эмулятор хранилища использует ресурсы компьютера для эмуляции сред рабочей и веб-ролей. Эмулятор хранилища использует базу данных [SQL Server Express LocalDB](https://msdn.microsoft.com/library/hh510202.aspx) для эмуляции работы хранилища Azure в облаке.
 
     При первом запуске проекта облачной службы, запуск эмулятора займет порядка одной минуты. После завершения работы эмулятора стандартный браузер открывается с домашней страницей приложения.
 
@@ -232,7 +232,7 @@ ms.locfileid: "39003119"
 1. В **обозревателе решений** щелкните правой кнопкой мыши пункт **ContosoAdsWeb** в области **Роли** проекта **ContosoAdsCloudService**, а затем выберите **Свойства**.
 
     ![Свойства роли](./media/cloud-services-dotnet-get-started/roleproperties.png)
-2. Перейдите на вкладку **Параметры** . В раскрывающемся списке **Конфигурация службы** выберите значение **Облако**.
+2. Перейдите на вкладку **Параметры** . В раскрывающемся списке Конфигурация службы выберите значение **Облако**.
 
     ![Конфигурация облака](./media/cloud-services-dotnet-get-started/sccloud.png)
 3. Выберите запись **StorageConnectionString**, и вы увидите кнопку с многоточием (**...**) в правом конце строки. Нажмите эту кнопку с многоточием, чтобы открыть диалоговое окно **Создание строки подключения учетной записи хранения** .
@@ -311,7 +311,7 @@ ms.locfileid: "39003119"
 >
 
 ## <a name="create-the-application-from-scratch"></a>Создание приложения с нуля
-Если [завершенное приложение](http://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4)еще не загружено, сделайте это сейчас. Скопируйте файлы из загруженного проекта в новый проект.
+Если [завершенное приложение](https://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4)еще не загружено, сделайте это сейчас. Скопируйте файлы из загруженного проекта в новый проект.
 
 Создание приложения Contoso Ads состоит из следующих шагов:
 
@@ -549,7 +549,7 @@ queueClient.DefaultRequestOptions.RetryPolicy = new LinearRetry(TimeSpan.FromSec
 imagesQueue = queueClient.GetQueueReference("images");
 ```
 
-Большая часть кода контроллера обычна для работы с моделью данных Entity Framework с использованием класса DbContext. Исключением является метод `Create` HttpPost, который отправляет файл и сохраняет его в хранилище больших двоичных объектов. Связыватель модели предоставляет объект [HttpPostedFileBase](http://msdn.microsoft.com/library/system.web.httppostedfilebase.aspx) для метода.
+Большая часть кода контроллера обычна для работы с моделью данных Entity Framework с использованием класса DbContext. Исключением является метод `Create` HttpPost, который отправляет файл и сохраняет его в хранилище больших двоичных объектов. Связыватель модели предоставляет объект [HttpPostedFileBase](https://msdn.microsoft.com/library/system.web.httppostedfilebase.aspx) для метода.
 
 ```csharp
 [HttpPost]
@@ -766,8 +766,8 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 
 Есть несколько примеров приложений облачной службы, которые демонстрируют более жизненные примеры кодирования — от менее сложных к более сложным:
 
-* [PhluffyFotos](http://code.msdn.microsoft.com/PhluffyFotos-Sample-7ecffd31). Похоже на Contoso Ads, но реализует больше функций и больше примеров реального кода.
-* [Многоуровневое облачное приложение Azure с таблицами, квотами, и большими двоичными объектами](http://code.msdn.microsoft.com/windowsazure/Windows-Azure-Multi-Tier-eadceb36). Представляет таблицы, а также большие двоичные объекты и очереди службы хранилища Azure. Этот пример основан на более старой версии пакета SDK для Azure для .NET, поэтому для работы с текущей версией потребуются некоторые изменения.
+* [PhluffyFotos](https://code.msdn.microsoft.com/PhluffyFotos-Sample-7ecffd31). Похоже на Contoso Ads, но реализует больше функций и больше примеров реального кода.
+* [Многоуровневое облачное приложение Azure с таблицами, квотами, и большими двоичными объектами](https://code.msdn.microsoft.com/windowsazure/Windows-Azure-Multi-Tier-eadceb36). Представляет таблицы, а также большие двоичные объекты и очереди службы хранилища Azure. Этот пример основан на более старой версии пакета SDK для Azure для .NET, поэтому для работы с текущей версией потребуются некоторые изменения.
 
 Общую информацию об облачной разработке см. в статье о [создании реальных облачных приложений в Azure](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction).
 

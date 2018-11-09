@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 04/20/2017
 ms.author: danlep
-ms.openlocfilehash: bf7dfc2600c3d94faeb8d03561f6f2b30a0ee2d2
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.openlocfilehash: f8c0adf96d027f58a35dbe570f1b19c311cd84b9
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30316993"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51246520"
 ---
 # <a name="pool-create-event"></a>Событие создания пула
 
@@ -47,11 +47,11 @@ ms.locfileid: "30316993"
 }
 ```
 
-|Элемент|Тип|Заметки|
+|Элемент|Тип|Примечания|
 |-------------|----------|-----------|
 |id|Строка|Идентификатор пула.|
 |displayName|string|Отображаемое имя пула.|
-|vmSize|Строка|Размер виртуальных машин в пуле. Все виртуальные машины в пуле имеют одинаковый размер. <br/><br/> Сведения о доступных размерах виртуальных машин для пулов облачных служб (пулы, созданные с помощью cloudServiceConfiguration), см. в статье [Размеры для облачных служб](http://azure.microsoft.com/documentation/articles/cloud-services-sizes-specs/). Пакетная служба поддерживает все размеры виртуальных машин для облачных служб, кроме `ExtraSmall`.<br/><br/> Сведения о доступных размерах виртуальных машин для пулов при использовании образов из магазина виртуальных машин (пулы, созданные с помощью virtualMachineConfiguration) см. в статье [Размеры виртуальных машин](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-sizes/) (Linux) или [Размеры виртуальных машин](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-sizes/) (Windows). Пакетная служба поддерживает все размеры виртуальных машин Azure, кроме `STANDARD_A0`. Для хранилища класса Premium также не поддерживаются размеры таких серий: `STANDARD_GS`, `STANDARD_DS` и `STANDARD_DSV2`.|
+|vmSize|Строка|Размер виртуальных машин в пуле. Все виртуальные машины в пуле имеют одинаковый размер. <br/><br/> Сведения о доступных размерах виртуальных машин для пулов облачных служб (пулы, созданные с помощью cloudServiceConfiguration), см. в статье [Размеры для облачных служб](https://azure.microsoft.com/documentation/articles/cloud-services-sizes-specs/). Пакетная служба поддерживает все размеры виртуальных машин для облачных служб, кроме `ExtraSmall`.<br/><br/> Сведения о доступных размерах виртуальных машин для пулов при использовании образов из магазина виртуальных машин (пулы, созданные с помощью virtualMachineConfiguration) см. в статье [Размеры виртуальных машин](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-sizes/) (Linux) или [Размеры виртуальных машин](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-sizes/) (Windows). Пакетная служба поддерживает все размеры виртуальных машин Azure, кроме `STANDARD_A0`. Для хранилища класса Premium также не поддерживаются размеры таких серий: `STANDARD_GS`, `STANDARD_DS` и `STANDARD_DSV2`.|
 |[cloudServiceConfiguration](#bk_csconf)|Сложный тип|Конфигурация облачной службы для пула.|
 |[virtualMachineConfiguration](#bk_vmconf)|Сложный тип|Конфигурация виртуальной машины для пула.|
 |[networkConfiguration](#bk_netconf)|Сложный тип|Конфигурация сети для пула.|
@@ -65,14 +65,14 @@ ms.locfileid: "30316993"
 
 ###  <a name="bk_csconf"></a> cloudServiceConfiguration
 
-|Имя элемента|type|Заметки|
+|Имя элемента|type|Примечания|
 |------------------|----------|-----------|
 |osFamily|Строка|Семейство гостевой ОС Azure для установки на виртуальных машинах в пуле.<br /><br /> Возможные значения:<br /><br /> **2** — семейство ОС 2, эквивалентное Windows Server 2008 R2 с пакетом обновления 1 (SP1).<br /><br /> **3** — семейство ОС 3, эквивалентное Windows Server 2012.<br /><br /> **4** — семейство ОС 4, эквивалентное Windows Server 2012 R2.<br /><br /> Дополнительные сведения см. в статье [Выпуски гостевой ОС Azure](https://azure.microsoft.com/documentation/articles/cloud-services-guestos-update-matrix/#releases).|
 |targetOSVersion|Строка|Версия гостевой ОС Azure для установки на виртуальных машинах в пуле.<br /><br /> Значение по умолчанию — **\***, что означает последнюю версию операционной системы для заданного семейства.<br /><br /> Другие допустимые значения см. в статье [Выпуски гостевой ОС Azure](https://azure.microsoft.com/documentation/articles/cloud-services-guestos-update-matrix/#releases).|
 
 ###  <a name="bk_vmconf"></a> virtualMachineConfiguration
 
-|Имя элемента|type|Заметки|
+|Имя элемента|type|Примечания|
 |------------------|----------|-----------|
 |[imageReference](#bk_imgref)|Сложный тип|Указывает информацию об используемой платформе или образе Marketplace.|
 |nodeAgentSKUId|Строка|Номер SKU для агента узла пакетной службы, подготовленного на вычислительном узле.|
@@ -80,7 +80,7 @@ ms.locfileid: "30316993"
 
 ###  <a name="bk_imgref"></a> imageReference
 
-|Имя элемента|type|Заметки|
+|Имя элемента|type|Примечания|
 |------------------|----------|-----------|
 |publisher|Строка|Издатель образа.|
 |offer|Строка|Предложение образа.|
@@ -89,12 +89,12 @@ ms.locfileid: "30316993"
 
 ###  <a name="bk_winconf"></a> windowsConfiguration
 
-|Имя элемента|type|Заметки|
+|Имя элемента|type|Примечания|
 |------------------|----------|-----------|
 |enableAutomaticUpdates|Логическое|Указывает, включено ли для виртуальной машины автоматическое обновление. Если это свойство не задано, используется значение по умолчанию true.|
 
 ###  <a name="bk_netconf"></a> networkConfiguration
 
-|Имя элемента|type|Заметки|
+|Имя элемента|type|Примечания|
 |------------------|--------------|----------|
 |subnetId|Строка|Указывает идентификатор ресурса для подсети, в которой создаются вычислительные узлы пула.|

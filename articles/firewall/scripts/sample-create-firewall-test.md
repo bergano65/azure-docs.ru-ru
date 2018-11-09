@@ -1,6 +1,6 @@
 ---
 title: Пример сценария Azure PowerShell по созданию тестовой среды брандмауэра Azure
-description: Пример сценария Azure PowerShell по созданию тестовой среды брандмауэра Azure.
+description: Пример скрипта Azure PowerShell для создания тестовой среды брандмауэра Azure.
 services: virtual-network
 author: vhorne
 ms.service: firewall
@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 8/13/2018
 ms.author: victorh
-ms.openlocfilehash: 7f1986a9a59087d084577e980233ff87360a17e0
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 5100c5723cf3442520d969e3db6aa65439855551
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49390114"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50230885"
 ---
 # <a name="create-an-azure-firewall-test-environment"></a>Создание тестовой среды брандмауэра Azure
 

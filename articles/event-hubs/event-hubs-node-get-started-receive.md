@@ -9,12 +9,12 @@ ms.workload: core
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: shvija
-ms.openlocfilehash: 6d5b52c8a5dd0306a349cac5e67eecc809005c6f
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 2f59b7f47acc8ce8e566b7f0e2bcfed379ea60d2
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49429190"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50239090"
 ---
 # <a name="receive-events-from-azure-event-hubs-using-nodejs"></a>Получение событий от Центров событий Azure с помощью Node.js
 
@@ -141,12 +141,7 @@ export EVENTHUB_NAME="<your-event-hub-name>"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Чтобы узнать больше о Центрах событий, посетите следующие страницы:
-
-* [Отправка событий в Центры событий с помощью Go](event-hubs-go-get-started-send.md)
-* [Примеры Центров событий](https://github.com/Azure/azure-event-hubs-node/tree/master/processor/examples/)
-* [Функция "Сбор" в Центрах событий Azure](event-hubs-capture-overview.md)
-* [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
+В этом кратком руководстве вы создали приложение Node.js для получения сообщений из концентратора событий. Сведения о том, как отправлять события в концентратор событий с помощью Node.js, см в статье [Отправка событий в Центры событий Azure с помощью Node.js](event-hubs-node-get-started-send.md).
 
 <!-- Links -->
 [создайте бесплатную учетную запись Azure]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio

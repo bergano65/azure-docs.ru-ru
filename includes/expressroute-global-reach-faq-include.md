@@ -5,15 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: include
-ms.date: 09/24/2018
+ms.date: 10/23/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: b9c4cf6c90ef5507b318b4f13afb982aab151c79
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: 4a3581b3d61c5ad17352c2865fc059704c1eece1
+ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48874110"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "50035097"
 ---
 ### <a name="what-is-expressroute-global-reach"></a>Что такое ExpressRoute Global Reach?
 
@@ -21,7 +21,7 @@ ExpressRoute Global Reach — это служба Azure, которая соед
 
 ### <a name="how-do-i-enable-or-disable-expressroute-global-reach"></a>Как включить или отключить ExpressRoute Global Reach?
 
-ExpressRoute Global Reach включается путем соединения каналов ExpressRoute между собой. Чтобы отключить эту функцию, следует разъединить каналы. См. конфигурацию.
+ExpressRoute Global Reach включается путем соединения каналов ExpressRoute между собой. Чтобы отключить эту функцию, следует разъединить каналы. См. [Настройка ExpressRoute Global Reach (предварительная версия)](../articles/expressroute/expressroute-howto-set-global-reach.md).
 
 ### <a name="do-i-need-expressroute-premium-for-expressroute-global-reach"></a>Требуется ли ExpressRoute (цен. категория "Премиум") для ExpressRoute Global Reach?
 
@@ -36,6 +36,7 @@ ExpressRoute обеспечивает возможность подключен�
 ExpressRoute Global Reach поддерживается в следующих странах. Каналы ExpressRoute необходимо создавать в расположениях пиринга в этих странах.
 
 * Австралия
+* Франция
 * Гонконг, САР
 * Ирландия
 * Япония
@@ -58,3 +59,11 @@ ExpressRoute Global Reach поддерживается в следующих с�
 ### <a name="what-is-the-network-throughput-i-can-expect-between-my-on-premises-networks-after-i-enable-expressroute-global-reach"></a>Какую пропускную способность сети можно ожидать между моими локальными сетями после включения ExpressRoute Global Reach?
 
 Пропускная способность сети между локальными сетями, для которых включена служба ExpressRoute Global Reach, ограничивается меньшим из двух каналов ExpressRoute.
+
+### <a name="with-expressroute-global-reach-what-are-the-limits-on-the-number-of-routes-i-can-advertise-and-the-number-of-routes-i-will-receive"></a>Со службой ExpressRoute Global Reach каковы ограничения на количество маршрутов, которые можно объявлять и получать?
+
+Количество маршрутов, которые можно объявлять корпорации Майкрософт на частный пиринг Azure, составляет 4000 на стандартный канал или 10000 для канала уровня "Премиум". Количество маршрутов, которое вы будете получать от корпорации Майкрософт на частный пиринг Azure, будет суммой маршрутов виртуальных сетей Azure и маршрутов из локальных сетей, подключенных через ExpressRoute Global Reach. Убедитесь, что установлено соответствующее ограничение на префикс на локальном маршрутизаторе. 
+
+### <a name="what-is-the-sla-for-expressroute-global-reach"></a>Что такое Соглашение об уровне обслуживания для ExpressRoute Global Reach?
+
+ExpressRoute Global Reach будет предоставлять то же [Соглашение об уровне обслуживания доступности](https://azure.microsoft.com/support/legal/sla/expressroute/v1_3/), как и обычная служба ExpressRoute.

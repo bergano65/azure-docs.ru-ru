@@ -12,14 +12,14 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/12/2018
+ms.date: 10/23/2018
 ms.author: mabrigg
-ms.openlocfilehash: 058e1f9abbf094fb49a21191f60195df53615451
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.openlocfilehash: 4453516626c39f73deea8fce0d744fcecbd5c3fc
+ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45985300"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50085840"
 ---
 # <a name="using-the-administrator-portal-in-azure-stack"></a>Использование портала администрирования в Azure Stack
 
@@ -40,6 +40,8 @@ ms.locfileid: "45985300"
 | | |
 
  ![Портал администрирования](media/azure-stack-manage-portals/admin-portal.png)
+
+Обратите внимание, что часовой пояс по умолчанию для всех развертываний Azure Stack задается в формате UTC. Вы можете выбрать часовой пояс при установке Azure Stack, но во время установки он автоматически вернется к часовому поясу UTC по умолчанию.
 
 На портале администрирования доступны следующие операции:
 

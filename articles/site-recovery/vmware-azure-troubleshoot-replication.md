@@ -1,19 +1,18 @@
 ---
-title: Устранение неполадок с репликацией виртуальной машины VMware и физического сервера в Azure с помощью Azure Site Recovery | Документация Майкрософт
-description: В этой статье описано, как устранять распространенные неполадки с репликацией физических серверов и виртуальных машин VMware в Azure с помощью Azure Site Recovery.
-services: site-recovery
+title: Устранение неполадок репликации при аварийном восстановлении виртуальных машин VMware и физических серверов в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье описано, как устранять распространенные неполадки репликации при аварийном восстановлении физических серверов и виртуальных машин VMware в Azure с помощью Azure Site Recovery.
 author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 07/06/2018
+ms.date: 10/29/2018
 ms.author: ramamill
-ms.openlocfilehash: c2100ee2388ae09bd309167b1be77f7bdbe32f69
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: 915f7d7d2d6be02dfef0cd6bb9a2fa156ed565bc
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39126023"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50214738"
 ---
 # <a name="troubleshoot-replication-issues-for-vmware-vms-and-physical-servers"></a>Устранение неполадок с репликацией виртуальных машин VMware и физических серверов
 

@@ -13,12 +13,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: b2e0b65f210774f760ce2d0898c601115ab3a94d
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: cda439973c584a57cadc30de7fb931732682de00
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46960164"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50092463"
 ---
 # <a name="run-an-ssis-package-with-the-execute-ssis-package-activity-in-azure-data-factory"></a>Запуск пакета Integration Services с помощью действия "Выполнить пакет SSIS" в фабрике данных Azure
 В этой статье описывается, как запустить пакет MSSQL Integration Services в конвейере фабрики данных Azure, используя действие "Выполнить пакет SSIS". 
@@ -91,9 +91,11 @@ ms.locfileid: "46960164"
 
 ### <a name="optionally-parameterize-the-activity"></a>При необходимости параметризируйте действие
 
-При необходимости назначьте значения, выражения или функции, которые могут ссылаться на системные переменные фабрики данных, для параметров своего проекта или пакета в формате JSON с помощью кнопки **Смотреть исходный код** в нижней части блока действия "Выполнить пакет SSI" или кнопки **Код** в правом верхнем углу области конвейера. Например, можно назначить параметры конвейера фабрики данных для проекта SSIS или параметры пакета, как показано на снимке экрана ниже:
+При необходимости назначьте значения, выражения или функции, которые могут ссылаться на системные переменные фабрики данных, для параметров своего проекта или пакета в формате JSON с помощью кнопки View Source Code (Просмотреть исходный код) в нижней части блока действия "Выполнить пакет SSIS" или кнопки "Код" в правом верхнем углу области конвейера. Например, можно назначить параметры конвейера фабрики данных для проекта SSIS или параметры пакета, как показано на снимке экрана ниже:
 
 ![Изменение скрипта JSON для действия "Выполнить пакет SSIS"](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-parameters.png)
+
+![Добавление параметров к действию "Выполнить пакет SSIS"](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-parameters2.png)
 
 ![Добавление параметров к действию "Выполнить пакет SSIS"](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-parameters2.png)
 
@@ -204,9 +206,9 @@ ms.locfileid: "46960164"
                     "runtime": "x64",
                     "loggingLevel": "Basic",
                     "packageLocation": {
-                        "packagePath": "FolderName/ProjectName/PackageName.dtsx"            
+                        "packagePath": "FolderName/ProjectName/PackageName.dtsx"            
                     },
-                    "environmentPath":   "FolderName/EnvironmentName",
+                    "environmentPath":   "FolderName/EnvironmentName",
                     "projectParameters": {
                         "project_param_1": {
                             "value": "123"
@@ -244,7 +246,7 @@ ms.locfileid: "46960164"
                         }
                     },
                     "propertyOverrides": {
-                        "\\PackageName.dtsx\\MaxConcurrentExecutables ": {
+                        "\\PackageName.dtsx\\MaxConcurrentExecutables ": {
                             "value": 8,
                             "isSensitive": false
                         }

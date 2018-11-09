@@ -1,6 +1,6 @@
 ---
-title: Мониторинг состояния выполнения приложения логики с помощью Log Analytics в Azure Logic Apps | Документация Майкрософт
-description: Получите аналитические сведения и данные об отладке при выполнении приложения логики с помощью Log Analytics для устранения неполадок и диагностики
+title: Мониторинг состояния приложений логики с помощью Log Analytics в Azure Logic Apps | Документация Майкрософт
+description: Получите аналитические сведения и данные об отладке при выполнении приложения логики с помощью Azure Log Analytics для устранения неполадок и диагностики
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -8,24 +8,24 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
-ms.date: 10/11/2018
-ms.openlocfilehash: 177c361734a88acab5fc10d6b460645be82bf437
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.date: 10/19/2018
+ms.openlocfilehash: c65cc24f9b0083e9c873465008490bf00ea83852
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49457148"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50232382"
 ---
-# <a name="monitor-and-get-insights-about-logic-app-runs-with-log-analytics"></a>Мониторинг и анализ запусков приложений логики с помощью Log Analytics
+# <a name="monitor-logic-apps-with-azure-log-analytics"></a>Мониторинг приложений логики с помощью Azure Log Analytics
 
-Для мониторинга и получения более подробных данных отладки при создании приложения логики можно включить Log Analytics. Служба Log Analytics поддерживает ведение журнала диагностики и мониторинг запусков приложений логики через портал Azure. Добавив решение по управлению Logic Apps, вы получите обобщенные сведения о выполнении приложений логики, а также некоторые подробные данные, такие как состояние приложения, время выполнения, состояние повторной отправки и идентификаторы корреляции.
+Чтобы отслеживать и получать подробные данные об отладке для приложений логики, включите [Azure Log Analytics](../log-analytics/log-analytics-overview.md) в подписке, где создается приложение логики. Log Analytics предоставляет ведение журнала диагностики и мониторинг для приложений логики в случае установки решения Logic Apps Management на портале Azure. Это решение также предоставляет статистические данные для выполнений приложений логики с конкретными сведениями, такими как состояние, время выполнения, состояние повторной отправки и идентификаторы корреляции. В этой статье объясняется, как включить службу Log Analytics, чтобы просматривать события и данные среды выполнения, относящиеся к выполнению приложений логики.
 
-В этой статье объясняется, как включить службу Log Analytics, чтобы просматривать события и данные среды выполнения, относящиеся к выполнению приложений логики.
+Чтобы включить Azure Log Analytics для существующих приложений логики, [включите ведение журнала диагностики и отправку данных о приложениях логики из среды выполнения в Log Analytics](../logic-apps/logic-apps-monitor-your-logic-apps.md#azure-diagnostics).
 
- > [!TIP]
- > Чтобы отслеживать существующие приложения логики, [включите ведение журнала диагностики и отправку данных о приложениях логики из среды выполнения в Log Analytics](../logic-apps/logic-apps-monitor-your-logic-apps.md#azure-diagnostics).
+> [!NOTE]
+> На этой странице ранее описывались шаги по выполнению этих задач с помощью консоли Microsoft Operations Management Suite (OMS), которая [выводится из эксплуатации в январе 2019 г.](../log-analytics/log-analytics-oms-portal-transition.md) Теперь эти шаги выполняются с помощью Azure Log Analytics. 
 
-## <a name="requirements"></a>Требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы начать работу, вам потребуется рабочая область Log Analytics. Узнайте, [как создать рабочую область Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md). 
 
@@ -54,11 +54,11 @@ ms.locfileid: "49457148"
 
 1. Чтобы просмотреть сведения о запусках приложений логики, [выполните описанные здесь действия](#view-logic-app-runs-oms).
 
-## <a name="install-the-logic-apps-management-solution"></a>Установка решения по управлению Logic Apps
+## <a name="install-logic-apps-management-solution"></a>Установка решения Logic Apps Management
 
 Если вы уже включили Log Analytics при создании приложения логики, то пропустите этот шаг. Решение по управлению Logic Apps уже установлено.
 
-1. На [портале Azure](https://portal.azure.com) выберите **Все службы**. В поле поиска введите "log analytics" для фильтрации и выберите **Log Analytics**.
+1. На [портале Azure](https://portal.azure.com) выберите **Все службы**. В поле для поиска введите log analytics и выберите **Log Analytics**.
 
    ![Выбор "Log Analytics"](./media/logic-apps-monitor-your-logic-apps-oms/find-log-analytics.png)
 
@@ -66,7 +66,7 @@ ms.locfileid: "49457148"
 
    ![Выбор рабочей области Log Analytics](./media/logic-apps-monitor-your-logic-apps-oms/select-log-analytics-workspace.png)
 
-1. В разделе **Настройка решения мониторинга** выберите **Просмотреть решения**.
+1. В разделе **Начало работы с Log Analytics** > **Настройка решений мониторинга** выберите **Просмотреть решения**.
 
    ![Выбор "Просмотреть решения"](media/logic-apps-monitor-your-logic-apps-oms/log-analytics-workspace.png)
 
@@ -76,19 +76,23 @@ ms.locfileid: "49457148"
 
    Если не удается найти решение, в нижней части списка выберите **Загрузить еще**, пока не появится решение.
 
-1. Выберите **Создать**, чтобы установить решение.
+1. Нажмите кнопку **Создать**, подтвердите, в какой рабочей области Log Analytics нужно установить решение, и еще раз нажмите кнопку **Создать**.   
 
-   ![Кнопка "Добавить" для Logic Apps Management](./media/logic-apps-monitor-your-logic-apps-oms/create-logic-apps-management-solution.png)
+   ![Кнопка "Создать" для решения Logic Apps Management](./media/logic-apps-monitor-your-logic-apps-oms/create-logic-apps-management-solution.png)
+
+   Если вы не хотите использовать существующую рабочую область, можно прямо сейчас создать новую.
+
+   Когда все будет готово, решение Logic Apps Management появится на странице "Обзор". 
 
 <a name="view-logic-app-runs-oms"></a>
 
-## <a name="view-logic-app-runs-in-log-analytics-workspace"></a>Просмотр сведений о выполнении приложений логики в рабочей области Log Analytics
+## <a name="view-logic-app-run-information"></a>Просмотр сведений о выполнении приложения логики
 
-1. Чтобы просмотреть число и состояние запусков приложения логики, перейдите на страницу обзора рабочей области Log Analytics. 
+Когда приложение логики завершит работу, состояние и количество выполнений можно просмотреть на плитке **Logic Apps Management**. 
 
-   Подробные сведения о выполнении приложений логики появятся в элементе **Logic Apps Management**. Чтобы просмотреть сводку с более подробными сведениями о выполнении приложений логики, выберите элемент **Logic Apps Management**. 
+1. Перейдите к рабочей области Log Analytics и откройте страницу "Обзор". Выберите **Logic Apps Management**. 
 
-   ![Элемент обзора, показывающий количество и состояние выполнений приложений логики](media/logic-apps-monitor-your-logic-apps-oms/overview.png)
+   ![Состояние выполнения приложения логики и счетчик](media/logic-apps-monitor-your-logic-apps-oms/overview.png)
 
    Здесь сведения о выполнении приложений логики группируются по имени или по состоянию выполнения. 
    Кроме того, можно просмотреть сведения о сбоях в действиях или триггерах для выполнений приложения логики.

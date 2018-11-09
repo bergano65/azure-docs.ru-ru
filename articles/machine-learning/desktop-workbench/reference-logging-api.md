@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: article
 ms.date: 09/25/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7084251102984445e7c2341b78b44f85811ebea7
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f7dac645ef0b732b7f3087a06c74385871d5b1c9
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46958226"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50238342"
 ---
 # <a name="logging-api-reference"></a>Справочник по API ведения журнала
 
@@ -89,5 +89,5 @@ $ az ml history info -r <runid> -a <artifact/path>
 $ az ml history promote -r <runid> -ap <artifact/prefix> -n <name of asset to create>
 ```
 ## <a name="next-steps"></a>Дополнительная информация
-- Чтобы увидеть API ведения журнала в действии, ознакомьтесь со статьей [Часть 2. Классификация цветков ириса: создание модели](tutorial-classifying-iris-part-2.md).
+- Чтобы увидеть API ведения журнала в работе, ознакомьтесь с руководством [Classifying iris tutorial, part 2](tutorial-classifying-iris-part-2.md) (Часть 2. Классификация цветков ириса: создание модели).
 - Подробные сведения об использовании API ведения журнала в журнале выполнения см. в статье [Как использовать компоненты "Журнал выполнения" и "Метрики модели" в Azure Machine Learning Workbench](how-to-use-run-history-model-metrics.md).

@@ -1,5 +1,5 @@
 ---
-title: Подключение Azure Monitor для контейнеров | Документация Майкрософт
+title: Как подключить Azure Monitor для контейнеров (предварительная версия) | Документация Майкрософт
 description: В этой статье объясняется, как подключить и настроить Azure Monitor для контейнеров, чтобы получать сведения о работе контейнера и выявленных проблемах с его производительностью.
 services: azure-monitor
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/04/2018
 ms.author: magoedte
-ms.openlocfilehash: 9fa0df0bbf363a7c751de460fd98740b4314f996
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.openlocfilehash: 505abe8f3dc19458b3f0e18f349974199ae4ba58
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48831200"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212120"
 ---
-# <a name="how-to-onboard-azure-monitor-for-containers"></a>Подключение Azure Monitor для контейнеров
+# <a name="how-to-onboard-azure-monitor-for-containers-preview"></a>Как подключить Azure Monitor для контейнеров (предварительная версия) 
 В этой статье объясняется, как настроить Azure Monitor для контейнеров, чтобы отслеживать производительность рабочих нагрузок, развернутых в средах Kubernetes и размещенных в [Службе Azure Kubernetes](https://docs.microsoft.com/azure/aks/).
 
 ## <a name="prerequisites"></a>Предварительные требования 
@@ -137,7 +137,7 @@ provisioningState       : Succeeded
 * рабочую область Log Analytics и регион для создания рабочей области. 
 
 >[!NOTE]
->Развертывание шаблона должно проходить в той же группе ресурсов, что и кластер.
+>Развертывание шаблона должно проходить в той же группе ресурсов, что и у кластера.
 >
 
 Рабочую область Log Analytics нужно создавать вручную. Для создания рабочей области можно использовать [Azure Resource Manager](../log-analytics/log-analytics-template-workspace-configuration.md), [PowerShell](https://docs.microsoft.com/azure/log-analytics/scripts/log-analytics-powershell-sample-create-workspace?toc=%2fpowershell%2fmodule%2ftoc.json) или [портал Azure](../log-analytics/log-analytics-quick-create-workspace.md).

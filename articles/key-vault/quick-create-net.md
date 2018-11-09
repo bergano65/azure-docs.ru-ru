@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 09/12/2018
 ms.author: barclayn
 ms.custom: mvc
-ms.openlocfilehash: 7f71e92513aedb1eb9c394c1e8f547173cfb4dbe
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: 4f7955c013ce7f45ebe6db8bb23eeec92303876e
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45604184"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50230937"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-by-using-a-net-web-app"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения .NET
 
@@ -25,7 +25,7 @@ ms.locfileid: "45604184"
 > * сохранение секрета в хранилище ключей;
 > * получение секрета из хранилища ключей;
 > * создание веб-приложения Azure;
-> * включение [управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) для веб-приложения;
+> * активация [управляемого удостоверения службы](../active-directory/managed-identities-azure-resources/overview.md) для веб-приложения;
 > * предоставление разрешений, необходимых веб-приложению для чтения данных из хранилища ключей.
 
 Прежде чем мы продолжим, ознакомьтесь с [основными понятиями](key-vault-whatis.md#basic-concepts).
@@ -33,7 +33,7 @@ ms.locfileid: "45604184"
 >[!NOTE]
 >Key Vault — это центральный репозиторий для хранения секретов программным способом. Но чтобы воспользоваться возможностями хранилища ключей, приложения и пользователи должны сначала пройти в нем аутентификацию, т. е. предоставить секрет. В соответствии с рекомендациями по безопасности первый секрет должен периодически меняться. 
 >
->Благодаря [управляемым удостоверениям для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) приложения, работающие в Azure, получают удостоверение, которое автоматически управляется Azure. Это помогает устранить *проблему введения секрета*, чтобы пользователи и приложения могли следовать рекомендациям и не беспокоиться об изменении первого секрета.
+>Благодаря [управляемым удостоверениям служб для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) приложения, работающие в Azure, получают удостоверение, которым автоматически управляет Azure. Это помогает устранить *проблему введения секрета*, чтобы пользователи и приложения могли следовать рекомендациям и не беспокоиться об изменении первого секрета.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

@@ -10,23 +10,23 @@ ms.service: machine-learning
 ms.component: core
 ms.topic: article
 ms.date: 09/24/2018
-ms.openlocfilehash: 30a1f2be1917ba6ea404a2862daaf5f51f35ac3f
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: 2c4255b70ae9eb3b31b6fdfce33853f0d517aa1f
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49394890"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50215486"
 ---
 # <a name="select-and-use-a-compute-target-to-train-your-model"></a>Выбор и использование целевого объекта вычислений для обучения вашей модели
 
-В службе машинного обучения Azure вы можете обучать свою модель в нескольких разных средах. Эти среды называются __целевыми объектами вычислений__ и могут быть локальными или облачными. Из этого документа вы узнаете о поддерживаемых целевых объектах вычислений и способах их использования.
+С помощью службы машинного обучения Azure можно обучать свою модель в нескольких разных средах. Эти среды называются __целевыми объектами вычислений__ и могут быть локальными или облачными. Из этого документа вы узнаете о поддерживаемых целевых объектах вычислений и способах их использования.
 
-Целевой объект вычислений — это ресурс, который запускает ваш сценарий обучения или размещает вашу модель, если она развертывается как веб-служба. Создавать такие объекты и управлять ими можно с помощью пакета SDK для машинного обучения Azure или интерфейса командной строки. Если у вас есть целевые объекты вычислений, созданные другим процессом (например, порталом Azure или Azure CLI), вы можете привязать их к рабочей области службы машинного обучения Azure.
+Целевой объект вычислений — это ресурс, который запускает ваш сценарий обучения или размещает вашу модель, если она развертывается как веб-служба. Создавать такие объекты и управлять ими можно с помощью пакета SDK для машинного обучения Azure или интерфейса командной строки. Если у вас есть целевые объекты вычислений, созданные другим процессом (например, порталом Azure или Azure CLI), вы можете привязать их к рабочей области службы машинного обучения Azure.
 
 Вы можете начать с работы на локальном компьютере, а затем увеличить масштаб и перейти в другие среды, такие как удаленные виртуальные машины обработки и анализа данных с поддержкой GPU или Azure Batch AI. 
 
 >[!NOTE]
-> Код в этой статье был протестирован с помощью пакета SDK Машинного обучения Azure версии 0.168. 
+> Код в этой статье был протестирован с пакетом SDK для службы "Машинное обучение Azure" версии 0.168. 
 
 ## <a name="supported-compute-targets"></a>Поддерживаемые целевые объекты вычислений
 
@@ -36,8 +36,13 @@ ms.locfileid: "49394890"
 |----|:----:|:----:|:----:|:----:|
 |[Локальный компьютер](#local)| Возможно | &nbsp; | ✓ | &nbsp; |
 |[Виртуальная машина для обработки и анализа данных](#dsvm) | ✓ | ✓ | ✓ | ✓ |
-|[Azure Batch AI](#batch)| ✓ | ✓ | ✓ | ✓ | ✓ |
+|[Azure Batch AI](#batch)| ✓ | ✓ | ✓ | ✓ |
+|[Azure Databricks](#databricks)| &nbsp; | &nbsp; | &nbsp; | ✓[*](#pipeline-only) |
+|[Аналитика озера данных Azure](#adla)| &nbsp; | &nbsp; | &nbsp; | ✓[*](#pipeline-only) |
 |[Azure HDInsight](#hdinsight)| &nbsp; | &nbsp; | &nbsp; | ✓ |
+
+> [!IMPORTANT]
+> <a id="pipeline-only"></a>* Azure Databricks и Azure Data Lake Analytics можно использовать __только__ в конвейере. Дополнительные сведения о конвейерах см. в статье [Конвейеры и служба "Машинное обучение Azure"](concept-ml-pipelines.md).
 
 __[Экземпляры контейнеров Azure (ACI)](#aci)__  можно также использовать для обучения моделей. Это бессерверное облачное решение, которое стоит недорого и при этом легко создается и удобно в работе. ACI не поддерживает ускорение GPU, автоматическую настройку гиперпараметров или автоматический выбор модели. Кроме того, его нельзя использовать в конвейере.
 
@@ -52,7 +57,7 @@ __[Экземпляры контейнеров Azure (ACI)](#aci)__  можно 
 > [!IMPORTANT]
 > Существующий экземпляр контейнеров Azure подключить к рабочей области нельзя. Вместо этого необходимо создать новый экземпляр.
 >
-> Создать кластер Azure HDInsight в рабочей области нельзя. Вместо этого необходимо присоединить существующий кластер.
+> В рабочей области не удается создать Azure HDInsight, Azure Databricks и Azure Data Lake Store. Вместо этого необходимо создать ресурс и вложить его в рабочую область.
 
 ## <a name="workflow"></a>Рабочий процесс
 
@@ -178,6 +183,7 @@ run_config_system_managed.environment.python.conda_dependencies = CondaDependenc
     run_config.environment.docker.enabled = True
 
     # Use CPU base image
+    # If you want to use GPU in DSVM, you must also use GPU base Docker image azureml.core.runconfig.DEFAULT_GPU_IMAGE
     run_config.environment.docker.base_image = azureml.core.runconfig.DEFAULT_CPU_IMAGE
     print('Base Docker image is:', run_config.environment.docker.base_image)
 
@@ -295,7 +301,6 @@ run_config.environment.docker.enabled = True
 
 # set Docker base image to the default CPU-based image
 run_config.environment.docker.base_image = azureml.core.runconfig.DEFAULT_CPU_IMAGE
-#run_config.environment.docker.base_image = 'microsoft/mmlspark:plus-0.9.9'
 
 # use conda_dependencies.yml to create a conda environment in the Docker image
 run_config.environment.python.user_managed_dependencies = False
@@ -310,6 +315,106 @@ run_config.environment.python.conda_dependencies = CondaDependencies.create(cond
 Создание целевого объекта вычислений ACI может занять от нескольких секунд до нескольких минут.
 
 Записную книжку Jupyter с примером обучения в экземпляре контейнера Azure см. здесь: [https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/03.train-on-aci/03.train-on-aci.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/03.train-on-aci/03.train-on-aci.ipynb).
+
+## <a id="databricks"></a>Azure Databricks
+
+Azure Databricks — это среда, которая лежит в основе Apache Spark в облаке Azure. Ее можно использовать как целевой объект вычислений при обучении моделей с помощью конвейера машинного обучения Azure.
+
+> [!IMPORTANT]
+> Целевой объект вычислений Azure Databricks можно использовать только в конвейере машинного обучения.
+>
+> Перед тем как его использовать для обучения модели, необходимо создать рабочую область Azure Databricks. Чтобы создать эти ресурсы, см. [Руководство. Автоматическое машинное обучение модели классификации в службе "Машинное обучение Azure"](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal).
+
+Чтобы вложить Azure Databricks в качестве целевого объекта вычислений, используйте пакет SDK машинного обучения Azure и укажите следующие сведения.
+
+* __Имя вычисления__. Имя, которое вы хотите назначить как вычислительный ресурс.
+* __Идентификатор ресурса__. Идентификатор ресурса рабочей области Azure Databricks. Ниже приведен пример формата такого файла.
+
+    ```text
+    /subscriptions/<your_subscription>/resourceGroups/<resource-group-name>/providers/Microsoft.Databricks/workspaces/<databricks-workspace-name>
+    ```
+
+    > [!TIP]
+    > Чтобы получить идентификатор ресурса, выполните следующую команду Azure CLI. Замените `<databricks-ws>` именем рабочей области Databricks.
+    > ```azurecli-interactive
+    > az resource list --name <databricks-ws> --query [].id
+    > ```
+
+* __Маркер доступа__. Маркер доступа, который используется для проверки подлинности в Azure Databricks. Чтобы создать маркер доступа, см. документ [Проверка подлинности](https://docs.azuredatabricks.net/api/latest/authentication.html).
+
+Следующий код демонстрирует, как вложить Azure Databricks в качестве целевого объекта вычислений.
+
+```python
+databricks_compute_name = os.environ.get("AML_DATABRICKS_COMPUTE_NAME", "<databricks_compute_name>")
+databricks_resource_id = os.environ.get("AML_DATABRICKS_RESOURCE_ID", "<databricks_resource_id>")
+databricks_access_token = os.environ.get("AML_DATABRICKS_ACCESS_TOKEN", "<databricks_access_token>")
+
+try:
+    databricks_compute = ComputeTarget(workspace=ws, name=databricks_compute_name)
+    print('Compute target already exists')
+except ComputeTargetException:
+    print('compute not found')
+    print('databricks_compute_name {}'.format(databricks_compute_name))
+    print('databricks_resource_id {}'.format(databricks_resource_id))
+    print('databricks_access_token {}'.format(databricks_access_token))
+    databricks_compute = DatabricksCompute.attach(
+             workspace=ws,
+             name=databricks_compute_name,
+             resource_id=databricks_resource_id,
+             access_token=databricks_access_token
+         )
+    
+    databricks_compute.wait_for_completion(True)
+```
+
+## <a id="adla"></a>Azure Data Lake Analytics
+
+Azure Data Lake Analytics — это платформа аналитики больших данных в облаке Azure. Ее можно использовать как целевой объект вычислений при обучении моделей с помощью конвейера машинного обучения Azure.
+
+> [!IMPORTANT]
+> Целевой объект вычислений Azure Data Lake Analytics можно использовать только в конвейере машинного обучения.
+>
+> Перед использованием его для обучения модели необходимо создать учетную запись Azure Data Lake Analytics. Чтобы создать этот ресурс, см. статью [Начало работы с Azure Data Lake Analytics с помощью портала Azure](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-get-started-portal).
+
+Чтобы вложить Azure Data Lake Analytics в качестве целевого объекта вычислений, используйте пакет SDK машинного обучения Azure и укажите следующие сведения.
+
+* __Имя вычисления__. Имя, которое вы хотите назначить как вычислительный ресурс.
+* __Идентификатор ресурса__. Идентификатор ресурса учетной записи Azure Data Lake Analytics. Ниже приведен пример формата такого файла.
+
+    ```text
+    /subscriptions/<your_subscription>/resourceGroups/<resource-group-name>/providers/Microsoft.DataLakeAnalytics/accounts/<datalakeanalytics-name>
+    ```
+
+    > [!TIP]
+    > Чтобы получить идентификатор ресурса, выполните следующую команду Azure CLI. Замените `<datalakeanalytics>` именем вашей учетной записи Data Lake Analytics.
+    > ```azurecli-interactive
+    > az resource list --name <datalakeanalytics> --query [].id
+    > ```
+
+Следующий код демонстрирует, как вложить Data Lake Analytics в качестве целевого объекта вычислений.
+
+```python
+adla_compute_name = os.environ.get("AML_ADLA_COMPUTE_NAME", "<adla_compute_name>")
+adla_resource_id = os.environ.get("AML_ADLA_RESOURCE_ID", "<adla_resource_id>")
+
+try:
+    adla_compute = ComputeTarget(workspace=ws, name=adla_compute_name)
+    print('Compute target already exists')
+except ComputeTargetException:
+    print('compute not found')
+    print('adla_compute_name {}'.format(adla_compute_name))
+    print('adla_resource_id {}'.format(adla_resource_id))
+    adla_compute = AdlaCompute.attach(
+             workspace=ws,
+             name=adla_compute_name,
+             resource_id=adla_resource_id
+         )
+    
+    adla_compute.wait_for_completion(True)
+```
+
+> [!TIP]
+> Конвейеры машинного обучения Azure работают только с хранимыми данными в хранилище данных учетной записи Data Lake Analytics по умолчанию. Если данные, с которыми нужно работать, находятся в хранилище не по умолчанию, то для копирования данных перед обучением можно использовать [`DataTransferStep`](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.data_transfer_step.datatransferstep?view=azure-ml-py).
 
 ## <a id="hdinsight"></a>Присоединение кластера HDInsight 
 
@@ -351,8 +456,19 @@ run_config.auto_prepare_environment = True
 ```
 
 ## <a name="submit-training-run"></a>Выполнение обучающего прогона
-    
-Код для выполнения обучающего прогона будет одинаковым, независимо от целевого объекта вычислений:
+
+Существует два способа отправки запуска на выполнения обучения:
+
+* отправка объекта `ScriptRunConfig`;
+* отправка объекта `Pipeline`.
+
+> [!IMPORTANT]
+> Целевые объекты вычислений Azure Databricks, Azure Datalake Analytics и Azure HDInsight могут использоваться только в конвейере.
+> Локальный целевой объект вычислений не может использоваться в конвейере.
+
+### <a name="submit-using-scriptrunconfig"></a>Отправка с помощью `ScriptRunConfig`
+
+Шаблон кода для отправки запуска на выполнение обучения с помощью `ScriptRunConfig` будет одинаковым, независимо от целевого объекта вычислений.
 
 * Создайте объект `ScriptRunConfig`, используя конфигурацию запуска для целевого объекта вычислений.
 * Выполните прогон.
@@ -360,13 +476,46 @@ run_config.auto_prepare_environment = True
 
 В следующем примере используется конфигурация для локального целевого объекта вычислений, управляемого системой, который вы создали ранее в этом документе:
 
-```pyghon
+```python
 src = ScriptRunConfig(source_directory = script_folder, script = 'train.py', run_config = run_config_system_managed)
 run = exp.submit(src)
 run.wait_for_completion(show_output = True)
 ```
 
 Записную книжку Jupyter с примером обучения с помощью Spark в HDInsight см. здесь: [https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/05.train-in-spark/05.train-in-spark.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/05.train-in-spark/05.train-in-spark.ipynb).
+
+### <a name="submit-using-a-pipeline"></a>Отправка с помощью конвейера
+
+Шаблон кода для отправки запуска на выполнение обучения с помощью конвейера будет одинаковым, независимо от целевого объекта вычислений.
+
+* Для ресурсов вычисления добавьте шаг в конвейере.
+* С помощью конвейера отправьте запуск на выполнение.
+* Дождитесь завершения прогона.
+
+В следующем примере используется созданный ранее целевой объект вычислений Azure Databricks.
+
+```python
+dbStep = DatabricksStep(
+    name="databricksmodule",
+    inputs=[step_1_input],
+    outputs=[step_1_output],
+    num_workers=1,
+    notebook_path=notebook_path,
+    notebook_params={'myparam': 'testparam'},
+    run_name='demo run name',
+    databricks_compute=databricks_compute,
+    allow_reuse=False
+)
+# list of steps to run
+steps = [dbStep]
+pipeline = Pipeline(workspace=ws, steps=steps)
+pipeline_run = Experiment(ws, 'Demo_experiment').submit(pipeline)
+pipeline_run.wait_for_completion()
+```
+
+Дополнительные сведения о конвейерах машинного обучения см. в статье [Конвейеры и служба "Машинное обучение Azure"](concept-ml-pipelines.md).
+
+Например, Jupyter Notebook, которые демонстрируют обучение с помощью конвейера, см. [https://github.com/Azure/MachineLearningNotebooks/tree/master/pipeline](https://github.com/Azure/MachineLearningNotebooks/tree/master/pipeline).
 
 ## <a name="view-and-set-up-compute-using-the-azure-portal"></a>Просмотр и настройка вычислений с помощью портала Azure
 
@@ -387,11 +536,18 @@ run.wait_for_completion(show_output = True)
 
 1. Введите имя для целевого объекта вычислений.
 1. Выберите тип вычислений для присоединения к __обучению__. 
+
+    > [!IMPORTANT]
+    > С помощью портала Azure не можно создать все типы вычислений. Ниже приведен список типов, которые можно создать для обучения в настоящее время.
+    > 
+    > * Виртуальная машина
+    > * Искусственный интеллект пакетной службы
+
 1. Выберите __Создать__ и заполните необходимую форму. 
 1. Нажмите кнопку __Создать__
 1. Чтобы увидеть состояние операции создания, выберите целевой объект вычислений в списке.
 
-    ![Просмотр списка вычислений:](./media/how-to-set-up-training-targets/View_list.png) вы увидите сведения о выбранном вычислении.
+    ![Просмотр списка вычислений.](./media/how-to-set-up-training-targets/View_list.png) Ниже приведены сведения о выбранном целевом объекте вычислений.
     ![Подробнее](./media/how-to-set-up-training-targets/vm_view.PNG)
 1. Теперь вы можете выполнить прогон для этих целевых объектов, как описано выше.
 
@@ -401,8 +557,16 @@ run.wait_for_completion(show_output = True)
 
 1. Щелкните значок **+**, чтобы добавить целевой объект вычислений.
 2. Введите имя для целевого объекта вычислений.
-3. Выберите тип вычислений для присоединения к обучению. На портале для обучения сейчас поддерживаются Batch AI и виртуальные машины.
-4. Выберите вариант "Использовать существующий".
+3. Выберите тип вычислений для присоединения к обучению.
+
+    > [!IMPORTANT]
+    > С помощью портала не можно вложить все типы вычислений.
+    > Ниже приведен список типов, которые можно вложить для обучения.
+    > 
+    > * Виртуальная машина
+    > * Искусственный интеллект пакетной службы
+
+1. Выберите вариант "Использовать существующий".
     - При присоединении кластеров Batch AI выберите целевой объект вычислений из раскрывающегося списка, выберите рабочую область Batch AI и кластер Batch AI, а затем нажмите кнопку **Создать**.
     - При присоединении виртуальной машины введите IP-адрес, имя пользователя и пароль, закрытый и открытого ключи и порт и нажмите кнопку "Создать".
 

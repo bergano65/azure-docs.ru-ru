@@ -14,12 +14,12 @@ ms.date: 03/09/2018
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: 29a53101bff8c384d01f952c4498e09d9d970ee3
-ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
+ms.openlocfilehash: 9e73a979950e856a7fc2bfa2193ea4ca0d59bac2
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43841740"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50242234"
 ---
 # <a name="configure-the-expiration-policy-for-office-365-groups"></a>Настройка политики срока действия для групп Office 365
 
@@ -55,9 +55,9 @@ ms.locfileid: "43841740"
 
 4. В колонке **Срок действия** можно сделать следующее.
 
-  * Задать время существования группы в днях. Можно выбрать одно из предустановленных значений или задать пользовательское значение (должно быть не менее 31 дня). 
-  * Указать адрес электронной почты, на который должны отправляться уведомления об обновлении и истечении срока действия, если у группы нет владельца. 
-  * Выбрать, срок действия каких групп Office 365 может истечь. Можно включить срок действия для **всех** групп Office 365, включить его только для **выбранных** групп Office 365 или выбрать параметр **Нет**, чтобы отключить срок действия для всех групп.
+  * Задать время существования группы в днях. Можно выбрать одно из предустановленных значений или задать пользовательское значение (должно быть не менее 31 дня). 
+  * Указать адрес электронной почты, на который должны отправляться уведомления об обновлении и истечении срока действия, если у группы нет владельца. 
+  * Выбрать, срок действия каких групп Office 365 может истечь. Параметр истечения срока действия для групп Office 365 может иметь одно из следующих значений:  **Все**  (срок действия установлен для всех групп), **Выбранные** (срок действия установлен для выбранных групп) или  **Нет**  (срок действия отключен для всех групп).
   * По завершении сохраните параметры, нажав кнопку **Сохранить**.
 
 
@@ -116,19 +116,19 @@ ms.locfileid: "43841740"
 4. Обновите существующую политику с помощью Set-AzureADMSGroupLifecyclePolicy. Этот командлет используется для обновления существующей политики. В следующем примере время существования группы в существующей политике изменяется с 365 дней на 180 дней. 
   
   ````
-  Set-AzureADMSGroupLifecyclePolicy -Id “26fcc232-d1c3-4375-b68d-15c296f1f077”   -GroupLifetimeInDays 180 -AlternateNotificationEmails "emailaddress@contoso.com"
+  Set-AzureADMSGroupLifecyclePolicy -Id "26fcc232-d1c3-4375-b68d-15c296f1f077" -GroupLifetimeInDays 180 -AlternateNotificationEmails "emailaddress@contoso.com"
   ````
   
 5. Добавьте определенные группы в политику с помощью Add-AzureADMSLifecyclePolicyGroup. Этот командлет добавляет группу политика жизненного цикла. Например: 
   
   ````
-  Add-AzureADMSLifecyclePolicyGroup -Id “26fcc232-d1c3-4375-b68d-15c296f1f077” -groupId "cffd97bd-6b91-4c4e-b553-6918a320211c"
+  Add-AzureADMSLifecyclePolicyGroup -Id "26fcc232-d1c3-4375-b68d-15c296f1f077" -groupId "cffd97bd-6b91-4c4e-b553-6918a320211c"
   ````
   
 6. Удалите существующую политику с помощью Remove-AzureADMSGroupLifecyclePolicy. Этот командлет удаляет параметры срока действия группы Office 365, но требует указать идентификатор политики. При этом будет отключен срок действия групп Office 365. 
   
   ````
-  Remove-AzureADMSGroupLifecyclePolicy -Id “26fcc232-d1c3-4375-b68d-15c296f1f077”
+  Remove-AzureADMSGroupLifecyclePolicy -Id "26fcc232-d1c3-4375-b68d-15c296f1f077"
   ````
   
 Приведенные ниже командлеты можно использовать для более точной настройки политики. Дополнительные сведения см. в [документации по PowerShell](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&branch=master#groups).

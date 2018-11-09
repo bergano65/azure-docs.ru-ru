@@ -17,12 +17,12 @@ ms.workload: identity
 ms.date: 08/08/2018
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: 6ee89aa901c9553d22470a0481909e9cd62d60cf
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 585a4968672c8bcab0efb988d556e447983dfc5a
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49345136"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50158709"
 ---
 # <a name="what-is-baseline-protection-preview"></a>Что такое базовая защита (предварительная версия)?  
 
@@ -51,7 +51,7 @@ ms.locfileid: "49345136"
 
 ![Azure Active Directory](./media/baseline-protection/01.png)
 
-Базовая политика позволяет исключать пользователей и группы. Вы можете исключить одну *[административную учетную запись аварийного доступа](../users-groups-roles/directory-emergency-access.md)*, чтобы не заблокировать клиент для себя.
+Базовая защита предоставляет возможность исключать пользователей. Вы можете исключить одну *[административную учетную запись аварийного доступа](../users-groups-roles/directory-emergency-access.md)*, чтобы не заблокировать клиент для себя.
 
 
 ## <a name="enable-a-baseline-policy"></a>Включение базовой политики 
@@ -86,7 +86,7 @@ ms.locfileid: "49345136"
 
 Роли каталога, которые включены в базовую политику, являются наиболее привилегированными ролями Azure AD. 
 
-Если в ваших сценариях используются привилегированные учетные записи, вместо них следует использовать [управляемые удостоверения для ресурсов Azure](../managed-identities-azure-resources/overview.md) или [субъекты-службы с сертификатами](../../azure-resource-manager/resource-group-authenticate-service-principal.md). Для временного решения проблемы можно исключить отдельные учетные записи пользователей из базовой политики. 
+Если в ваших сценариях используются привилегированные учетные записи, вместо них следует использовать [управляемые удостоверения для ресурсов Azure](../managed-identities-azure-resources/overview.md) или [субъекты-службы с сертификатами](../develop/howto-authenticate-service-principal-powershell.md). Для временного решения проблемы можно исключить отдельные учетные записи пользователей из базовой политики. 
 
 Базовые политики применяются к устаревшим механизмам проверки подлинности, таким как POP, IMAP и старый настольный клиент Office. 
 

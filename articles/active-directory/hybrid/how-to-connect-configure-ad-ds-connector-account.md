@@ -10,16 +10,16 @@ ms.topic: article
 ms.date: 10/12/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: a12549a52171afc1c95588f9a2b259829e170fcc
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: f57a5a2413103ddcf7484f3b1fc5b4170b7bdc98
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49389961"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50412865"
 ---
 # <a name="azure-ad-connectconfigure-ad-ds-connector-account-permissions"></a>Azure AD Connect. Настройка разрешений учетной записи соединителя AD DS 
 
-Новый модуль PowerShell с именем ADSyncConfig.psm1 был представлен в сборке 1.1.880.0 (выпущенной в августе 2018 года). Эта сборка включает в себя коллекцию командлетов, которые помогут вам настроить правильные разрешения Active Directory для развертывания вашего соединителя Azure AD. 
+Новый модуль PowerShell с именем [ADSyncConfig.psm1](reference-connect-adsyncconfig.md) был представлен в сборке 1.1.880.0 (выпущенной в августе 2018 года). Эта сборка включает в себя коллекцию командлетов, которые помогут вам настроить правильные разрешения Active Directory для развертывания соединителя Azure AD. 
 
 ## <a name="overview"></a>Обзор 
 Чтобы настроить разрешения Active Directory для учетной записи соединителя AD DS, можно использовать следующие командлеты PowerShell. Их можно использовать для каждой функции, какую вы будто бы включаете в Azure AD Connect. Чтобы избежать проблем, следует заранее подготовлять разрешения Active Directory каждый раз, когда вы хотите установить Azure AD Connect, используя личный домен для подключения к вашему лесу. Модуль ADSyncConfig также можно использовать для настройки разрешений после развертывания Azure AD Connect.
@@ -49,7 +49,8 @@ Install-WindowsFeature RSAT-AD-Tools
 ```
 ![Настройка](media/how-to-connect-configure-ad-ds-connector-account/configure2.png)
 
->![ПРИМЕЧАНИЕ] Вы также можете скопировать файл **C:\Program Files\Microsoft Azure Active Directory Connect\AdSyncConfig\ADSyncConfig.psm1** в контроллер домена, в котором уже есть средства удаленного администрирования сервера для AD DS и использовать модуль PowerShell оттуда.
+>[!NOTE]
+>Вы также можете скопировать файл **C:\Program Files\Microsoft Azure Active Directory Connect\AdSyncConfig\ADSyncConfig.psm1** в контроллер домена, в котором уже есть средства удаленного администрирования сервера для AD DS, и использовать модуль PowerShell оттуда.
 
 Чтобы приступить к использованию ADSyncConfig, необходимо загрузить модуль в окно Windows PowerShell: 
 
@@ -269,10 +270,10 @@ Set-ADSyncExchangeMailPublicFolderPermissions -ADConnectorAccountDN <String> [-A
 - Отключение наследования для указанного объекта. 
 - Удаление всех элементов управления доступом в конкретном объекте, за исключением элементов управления доступом, характерных для самого объекта, поскольку при работе с самим объектом нам нужно сохранить разрешения по умолчанию без изменений. 
  
- Параметр ObjectDN — это учетная запись AD, для которой нужно сузить разрешения. Обычно это учетная запись домена с именем MSOL_nnnnnnnnnnnn, настроенная в соединителе AD DS (см. в разделе "Определите свою учетную запись соединителя AD DS"). В параметре учетных данных необходимо указать учетную запись администратора, которая имеет необходимые правами доступа для ограничения разрешений Active Directory в целевом объекте AD. Обычно это администратор предприятия или домена.  
+ Параметр -ADConnectorAccountDN — это учетная запись AD, для которой нужно ограничить разрешения. Обычно это учетная запись домена с именем MSOL_nnnnnnnnnnnn, настроенная в соединителе AD DS (см. в разделе "Определите свою учетную запись соединителя AD DS"). В параметре учетных данных необходимо указать учетную запись администратора, которая имеет необходимые правами доступа для ограничения разрешений Active Directory в целевом объекте AD. Обычно это администратор предприятия или домена.  
 
 ``` powershell
-Set-ADSyncRestrictedPermissions [-ObjectDN] <String> [-Credential] <PSCredential> [-DisableCredentialValidation] [-WhatIf] [-Confirm] [<CommonParameters>] 
+Set-ADSyncRestrictedPermissions [-ADConnectorAccountDN] <String> [-Credential] <PSCredential> [-DisableCredentialValidation] [-WhatIf] [-Confirm] [<CommonParameters>] 
 ```
  
 Например: 
@@ -301,3 +302,5 @@ Set-ADSyncRestrictedPermissions -ObjectDN 'CN=ADConnectorAccount,CN=Users,DC=Con
 - [Azure AD Connect: учетные записи и разрешения](reference-connect-accounts-permissions.md)
 - [Приступая к работе с Azure AD Connect с использованием стандартных параметров](how-to-connect-install-express.md)
 - [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md)
+- [Справочник по ADSyncConfig](reference-connect-adsyncconfig.md)
+

@@ -1,7 +1,7 @@
 ---
 title: REST API (версия 4) — Go — QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Сведения и примеры кода для REST для быстрого начала работы с API перевода текстов (Майкрософт) в Microsoft Cognitive Services в Azure.
+description: Сведения и примеры кода на языке Go для REST, призванные помочь быстро начать работу с API перевода текстов (Майкрософт) в Microsoft Cognitive Services в Azure.
 services: cognitive-services
 author: diberry
 manager: cgronlun
@@ -10,17 +10,17 @@ ms.component: qna-maker
 ms.topic: article
 ms.date: 10/19/2018
 ms.author: diberry
-ms.openlocfilehash: 1b4f4c50c8c3fbdc2cc556705bdd446cb360ef2c
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: b9451d51bf0c0c684cebf89ad448b66fee59d9ea
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49650236"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210709"
 ---
 # <a name="qna-maker-rest-api-with-go"></a>REST API службы QnA Maker с Go 
 <a name="HOLTop"></a>
 
-В этой статье показано, как использовать [API службы QnA Maker Майкрософт](../Overview/overview.md) с помощью Go, чтобы делать следующее.
+В этой статье показано, как использовать [API службы QnA Maker от Майкрософт](../Overview/overview.md)  с помощью Go, чтобы выполнять следующие задачи.
 
 - [Создавать базу знаний.](#Create)
 - [Обновлять существующую базу знаний.](#Update)

@@ -1,24 +1,24 @@
 ---
-title: Отработка отказа и восстановление размещения виртуальных машин Hyper-V, реплицированных в Azure, с помощью Site Recovery | Документация Майкрософт
-description: Сведения об отработке отказа виртуальных машин Hyper-V в Azure и восстановлении размещения на локальном сайте с помощью Azure Site Recovery
+title: Отработка отказа и восстановление размещения виртуальных машин Hyper-V при их аварийном восстановлении в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: Узнайте, как выполнить отработку отказа и восстановление размещения виртуальных машин Hyper-V при их аварийном восстановлении в Azure с помощью службы Azure Site Recovery.
 services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 10/10/2018
+ms.date: 10/28/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 31de654e6746cecf5aedabbfe481ab99b2aa3510
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 6dde345e360dc304578b626ee2678dd51fe56dc6
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49076989"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210522"
 ---
-# <a name="failover-and-failback-hyper-v-vms-replicated-to-azure"></a>Отработка отказа и восстановление размещения виртуальных машин Hyper-V, реплицированных в Azure
+# <a name="fail-over-and-fail-back-hyper-v-vms-replicated-to-azure"></a>Отработка отказа и восстановление размещения виртуальных машин Hyper-V, реплицированных в Azure
 
-В этом руководстве описывается, как выполнять отработку отказа виртуальных машин Hyper-V в Azure. При отработке отказа размещение восстанавливается в локальном расположении, когда это возможно. Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве содержатся сведения об отработке отказа виртуальных машин Hyper-V в Azure. Восстановление размещения на локальном сайте после отработки отказа происходит в тех ситуациях, когда это возможно. Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Проверка соответствия свойств виртуальной машины Hyper-V требованиям Azure

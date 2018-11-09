@@ -1,5 +1,5 @@
 ---
-title: Общие сведения об Azure Monitor для контейнеров | Документация Майкрософт
+title: Общие сведения об Azure Monitor для контейнеров (предварительная версия) | Документация Майкрософт
 description: В этой статье описывается служба "Azure Monitor для контейнеров", которая контролирует решение аналитики для контейнеров AKS и значение, которое она поставляет, путем мониторинга работоспособности ваших кластеров и экземпляров контейнеров AKS в Azure.
 services: azure-monitor
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/14/2018
 ms.author: magoedte
-ms.openlocfilehash: 6819cf96eb968e8faad5441cf3f3dd672653f1cd
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 13fde8a4ec4ecf43b9997d5d4d181a232505626f
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46971439"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50213004"
 ---
-# <a name="azure-monitor-for-containers-overview"></a>Обзор службы "Azure Monitor для контейнеров"
+# <a name="azure-monitor-for-containers-preview-overview"></a>Общие сведения об Azure Monitor для контейнеров (предварительная версия)
 
 Azure Monitor для контейнеров — это компонент для контроля производительности рабочих нагрузок контейнеров, развертываемых на управляемых кластерах Kubernetes в службе Azure Kubernetes (AKS). Мониторинг контейнеров крайне важен, особенно если вы управляете рабочим кластером в нужном масштабе с несколькими приложениями.
 

@@ -10,21 +10,21 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 10/10/2018
+ms.date: 10/30/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 3a2edb898c8053627684818d7fe257fe3402df5f
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: 601d022917adc71ff3a3c728c7b674ae47a632c4
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49645479"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50238484"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-resource-manager-template-deployment"></a>Руководство. Интеграция Azure Key Vault в развертывание шаблона Resource Manager
 
 Узнайте, как получить значения секрета из Azure Key Vault и передавать эти значения в качестве параметров во время развертывания Resource Manager. Это значение никогда не будет раскрыто, так как указывается только его идентификатор в Key Vault. Дополнительные сведения см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](./resource-manager-keyvault-parameter.md).
 
-В этом руководстве вы создадите виртуальную машину и некоторые зависимые ресурсы с помощью того же шаблона, который использовался в статье [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./resource-manager-tutorial-create-templates-with-dependent-resources.md). Пароль администратора виртуальной машины извлекается из Azure Key Vault.
+В руководстве по [настройке порядка развертывания ресурсов](./resource-manager-tutorial-create-templates-with-dependent-resources.md) описано, как создать виртуальную машину, виртуальную сеть и некоторые другие зависимые ресурсы. Вы также настроите шаблон, чтобы получить пароль администратора виртуальной машины из Azure Key Vault.
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -42,13 +42,19 @@ ms.locfileid: "49645479"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* [Visual Studio Code](https://code.visualstudio.com/) с [расширением средств Resource Manager](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
+* [Visual Studio Code](https://code.visualstudio.com/) с [расширением Resource Manager Tools](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
+* Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
+
+    ```azurecli-interactive
+    openssl rand -base64 32
+    ```
+    Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Руководство. Интеграция Azure Key Vault в развертывание шаблона Resource Manager](./resource-manager-tutorial-use-key-vault.md). Мы также рекомендуем обновлять пароль каждые три месяца.
 
 ## <a name="prepare-the-key-vault"></a>Создание Key Vault
 
 В этом разделе описано, как использовать шаблон Resource Manager, чтобы создать Key Vault и секрет. Этот шаблон делает следующее.
 
-* Создает Key Vault с включенным свойством **enabledForTemplateDeployment**. Это свойство должно получить значение true до того, как процесс развертывания шаблона сможет получить доступ к секретам, определенным в этом Key Vault.
+* Создание Key Vault с помощью включенного свойства `enabledForTemplateDeployment`. Это свойство должно получить значение true до того, как процесс развертывания шаблона сможет получить доступ к секретам, определенным в этом Key Vault.
 * Добавление секрета в Key Vault.  Секрет хранит пароль администратора виртуальной машины.
 
 Если вы (в качестве пользователя для развертывания шаблона виртуальной машины) не являетесь владельцем или участником Key Vault, владелец или участник Key Vault должен предоставить вам доступ к разрешению Microsoft.KeyVault/vaults/deploy/action для Key Vault. Дополнительные сведения см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](./resource-manager-keyvault-parameter.md).
@@ -58,7 +64,9 @@ ms.locfileid: "49645479"
 1. Выполните следующую команду в интерфейсе командной строки Azure или Azure PowerShell.  
 
     ```azurecli-interactive
-    az ad user show --upn-or-object-id "<Your User Principle Name>" --query "objectId"
+    echo "Enter your email address that is associated with your Azure subscription):" &&
+    read upn &&
+    az ad user show --upn-or-object-id $upn --query "objectId" &&
     openssl rand -base64 32
     ```
     ```azurepowershell-interactive
@@ -95,21 +103,21 @@ ms.locfileid: "49645479"
     ```json
     "enabledForTemplateDeployment": true,
     ```
-    `enabledForTemplateDeployment` — это свойство Key Vault. Это свойство должно получить значение true, чтобы вы могли получить секреты из этого Key Vault во время развертывания. 
+    `enabledForTemplateDeployment` — это свойство Key Vault. Это свойство должно получить значение true, чтобы вы могли получить секреты из этого Key Vault во время развертывания.
 6. Перейдите к строке 89. Это определение секрета Key Vault.
 7. В нижней части страницы щелкните **Отклонить**. Не изменяйте ничего.
 8. Проверьте, указали ли вы все значения, как показано на предыдущем снимке экрана, а затем в нижней части страницы щелкните **Купить**.
 9. Выберите значок колокольчика (уведомление) в верхней части страницы, чтобы открыть область **Уведомления**. Подождите, пока ресурс не будет успешно развернут.
-8. Выберите **Перейти к группе ресурсов** в области **Уведомления**. 
-9. Выберите имя Key Vault, чтобы открыть его.
-10. В левой области выберите **Политики доступа**. Имя (Active Directory) должно быть указано, в противном случае у вас нет разрешения на доступ к хранилищу ключей.
-11. Выберите **Щелкните, чтобы показать политики расширенного доступа**. Обратите внимание, что выбрано значение **Включить доступ к Azure Resource Manager для развертывания шаблонов**. Это еще одно условие, чтобы интеграция Key Vault работала.
+10. Выберите **Перейти к группе ресурсов** в области **Уведомления**. 
+11. Выберите имя Key Vault, чтобы открыть его.
+12. В левой области выберите **Политики доступа**. Имя (Active Directory) должно быть указано, в противном случае у вас нет разрешения на доступ к хранилищу ключей.
+13. Выберите **Щелкните, чтобы показать политики расширенного доступа**. Обратите внимание, что выбрано значение **Включить доступ к Azure Resource Manager для развертывания шаблонов**. Это еще одно условие, чтобы интеграция Key Vault работала.
 
-    ![Шаблон Resource Manager: политики доступа Key Vault для интеграции](./media/resource-manager-tutorial-use-key-vault/resource-manager-tutorial-key-vault-access-policies.png)    
-12. Выберите **Свойства** в левой области.
-13. Создайте копию **идентификатора ресурса**. Вам понадобиться этот идентификатор при развертывании виртуальной машины.  Формат идентификатора ресурса выглядит следующим образом:
+    ![Шаблон Resource Manager: политики доступа Key Vault для интеграции](./media/resource-manager-tutorial-use-key-vault/resource-manager-tutorial-key-vault-access-policies.png)
+14. Выберите **Свойства** в левой области.
+15. Создайте копию **идентификатора ресурса**. Вам понадобиться этот идентификатор при развертывании виртуальной машины.  Формат идентификатора ресурса выглядит следующим образом:
 
-    ```
+    ```json
     /subscriptions/<SubscriptionID>/resourceGroups/mykeyvaultdeploymentrg/providers/Microsoft.KeyVault/vaults/<KeyVaultName>
     ```
 
@@ -124,8 +132,17 @@ ms.locfileid: "49645479"
     https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json
     ```
 3. Чтобы открыть файл, выберите **Открыть**. Это тот же сценарий, который использовался в статье [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./resource-manager-tutorial-create-templates-with-dependent-resources.md).
-4. Выберите **Файл**>**Сохранить как**, чтобы сохранить файл на локальный компьютер с именем **azuredeploy.json**.
-5. Повторите шаги 1–4, чтобы открыть следующий URL-адрес, а затем сохраните файл как **azuredeploy.parameters.json**.
+4. Шаблоном определено пять ресурсов:
+
+    * `Microsoft.Storage/storageAccounts`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/Microsoft.Storage/storageAccounts).
+    * `Microsoft.Network/publicIPAddresses`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.network/publicipaddresses).
+    * `Microsoft.Network/virtualNetworks`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.network/virtualnetworks).
+    * `Microsoft.Network/networkInterfaces`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.network/networkinterfaces).
+    * `Microsoft.Compute/virtualMachines`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.compute/virtualmachines).
+
+    Прежде чем настраивать шаблон, рекомендуется получить основные сведения о нем.
+5. Выберите **Файл**>**Сохранить как**, чтобы сохранить файл на локальный компьютер с именем **azuredeploy.json**.
+6. Повторите шаги 1–4, чтобы открыть следующий URL-адрес, а затем сохраните файл как **azuredeploy.parameters.json**.
 
     ```url
     https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.parameters.json
@@ -190,7 +207,7 @@ New-AzureRmResourceGroupDeployment -Name $deploymentName -ResourceGroupName $res
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-С помощью этого руководства вы получили секрет из Azure Key Vault и использовали его в развертывании шаблона.  Чтобы узнать, как создавать связанные шаблоны, обратитесь к статье:
+С помощью этого руководства вы получили секрет из Azure Key Vault и применили его в развертывании шаблона.  Чтобы узнать, как создавать связанные шаблоны, обратитесь к статье:
 
 > [!div class="nextstepaction"]
 > [Tutorial: Create linked Azure Resource Manager templates](./resource-manager-tutorial-create-linked-templates.md) (Руководство по созданию связанных шаблонов Azure Resource Manager)

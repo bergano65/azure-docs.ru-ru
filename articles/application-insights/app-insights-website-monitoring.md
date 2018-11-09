@@ -5,23 +5,23 @@ services: application-insights
 keywords: ''
 author: mrbullwinkle
 ms.author: mbullwin
-ms.date: 10/15/2018
+ms.date: 10/29/2018
 ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: f4de10c29364ab96f54e5d07e9c416a2beb038f6
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: 8e764bfc4481343a1e1fb710df7d09f7a38f4f78
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49380214"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50420376"
 ---
 # <a name="start-monitoring-your-website"></a>Запуск мониторинга веб-сайта
 
 С помощью Azure Monitor Application Insights вы можете легко наблюдать за доступностью, производительностью и использованием вашего веб-сайта. Вы также можете быстро идентифицировать и диагностировать ошибки в приложении, не дожидаясь, пока пользователь сообщит о них. Application Insights обеспечивает мониторинг на стороне сервера, а также на стороне клиента или браузера.
 
-В этом кратком руководстве вы добавите [пакет SDK JavaScript с открытым исходным кодом для Application Insights](https://github.com/Microsoft/ApplicationInsights-JS), который поможет вам понять, как работает ваш веб-сайт на стороне клиента или браузера.
+Это краткое руководство содержит пошаговые инструкции по добавлению [пакета SDK JavaScript с открытым исходным кодом для Application Insights](https://github.com/Microsoft/ApplicationInsights-JS), которые помогут вам понять, как работает ваш веб-сайт на стороне клиента (браузера).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -74,7 +74,7 @@ Application Insights может собирать данные телеметри
 
 1. Выберите **Обзор** > **Основные компоненты** и скопируйте **ключ инструментирования** приложения.
 
-   ![Форма создания ресурса App Insights](./media/app-insights-nodejs-quick-start/instrumentation-key-001.png)
+   ![Форма создания ресурса App Insights](media/app-insights-website-monitoring/instrumentation-key-001.png)
 
 2. Добавьте следующий скрипт в ``hello_world.html`` перед закрывающим тегом ``</head>``:
 
@@ -98,7 +98,7 @@ Application Insights может собирать данные телеметри
 
 1. Теперь можно повторно открыть страницу **Обзор** Application Insights на портале Azure, где вы извлекли ключ иснтрументирования, для просмотра сведений о выполняющемся в данный момент приложении. Четыре диаграммы по умолчанию на обзорной странице привязаны к серверным данным приложения. Так как мы рассматриваем взаимодействие на стороне клиента или браузера с использованием пакета SDK для JavaScript, это конкретное представление не применяется, если у нас также не установлен пакет SDK на стороне сервера.
 
-2. Щелкните значок ![Схема приложений](./media/app-insights-nodejs-quick-start/006.png) **Analytics**.  Откроется окно **Analytics**, которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. Для просмотра данных, связанных с запросами браузера на стороне клиента, выполните следующий запрос:
+2. Щелкните значок ![Схема приложений](media/app-insights-website-monitoring/006.png) **Analytics**.  Откроется окно **Analytics**, которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. Для просмотра данных, связанных с запросами браузера на стороне клиента, выполните следующий запрос:
 
     ```kusto
     // average pageView duration by name

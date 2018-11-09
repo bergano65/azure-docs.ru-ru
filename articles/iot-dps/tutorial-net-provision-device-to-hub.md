@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 84072c7e5f7aa37e89fc1b93c1585167dd6d9f4b
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 8602f020481249282756a952a46b32bd9e768372
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41918521"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50241333"
 ---
 # <a name="enroll-the-device-to-an-iot-hub-using-the-azure-iot-hub-provisioning-service-client-net"></a>Регистрация устройства в Центре Интернета вещей с помощью клиента службы подготовки для Центра Интернета вещей Azure (.NET)
 
@@ -230,7 +230,7 @@ ms.locfileid: "41918521"
 
 ## <a name="verify-the-device-is-registered"></a>Проверка регистрации устройства
 
-После загрузки устройства необходимо выполнить следующие действия. Дополнительные сведения о примере приложения имитации доверенного платформенного модуля (TPM) см. на странице [dps_client_sample](https://github.com/Azure/azure-iot-device-auth/blob/master/dps_client/samples/dps_client_sample/dps_client_sample.c). 
+После загрузки устройства необходимо выполнить следующие действия. Дополнительные сведения см. в репозитории с [примером клиента для подготовки устройств](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device). 
 
 1. Устройство отправляет запрос на регистрацию в службу подготовки устройств.
 2. Устройствам с доверенным платформенным модулем служба подготовки устройств отправляет обратный запрос регистрации, на который отвечает устройство. 

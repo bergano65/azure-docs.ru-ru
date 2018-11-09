@@ -2,24 +2,22 @@
 title: Визуализация данных, поступающих c датчиков в реальном времени, из Центра Интернета вещей с помощью веб-приложений | Документация Майкрософт
 description: Сведения о визуализации данных о температуре и влажности, собранных с датчиков и переданных в Центр Интернета вещей, с помощью веб-приложений в службе приложений Microsoft Azure.
 author: rangv
-manager: ''
-keywords: визуализация данных, полученных в реальном времени, визуализация интерактивных данных, визуализация данных датчиков
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
 ms.author: rangv
-ms.openlocfilehash: d40bcc8e6fd47a00618b98972f92c1e6fa019612
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: c43431cd6ddbbbf8f6cb709b8c1783179d6cf760
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49318526"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50158726"
 ---
 # <a name="visualize-real-time-sensor-data-from-your-azure-iot-hub-by-using-the-web-apps-feature-of-azure-app-service"></a>Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью веб-приложений службы приложений Azure
 
-![Комплексная схема](media/iot-hub-get-started-e2e-diagram/5.png)
+![Комплексная схема](./media/iot-hub-live-data-visualization-in-web-apps/1_iot-hub-end-to-end-diagram.png)
 
 [!INCLUDE [iot-hub-get-started-note](../../includes/iot-hub-get-started-note.md)]
 
@@ -29,34 +27,38 @@ ms.locfileid: "49318526"
 
 ## <a name="what-you-do"></a>Что нужно сделать
 
-- создадим веб-приложение на портале Azure;
-- добавим группу потребителей, чтобы обеспечить доступ к данным в Центре Интернета вещей;
-- настроим веб-приложение для чтения данных датчиков из Центра Интернета вещей;
-- отправим созданное веб-приложение для размещения в Azure;
-- откроем веб-приложение, чтобы просмотреть данные о температуре и влажности, полученные в реальном времени, из Центра Интернета вещей.
+* создадим веб-приложение на портале Azure;
+* добавим группу потребителей, чтобы обеспечить доступ к данным в Центре Интернета вещей;
+* настроим веб-приложение для чтения данных датчиков из Центра Интернета вещей;
+* отправим созданное веб-приложение для размещения в Azure;
+* откроем веб-приложение, чтобы просмотреть данные о температуре и влажности, полученные в реальном времени, из Центра Интернета вещей.
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
-- [Настройте свое устройство](iot-hub-raspberry-pi-kit-node-get-started.md). У вас должны быть следующие компоненты:
-  - активная подписка Azure;
-  - Центр Интернета вещей в подписке;
-  - клиентское приложение, которое отправляет сообщения в Центр Интернета вещей.
-- [Скачайте Git](https://www.git-scm.com/downloads).
+* [Настройте свое устройство](iot-hub-raspberry-pi-kit-node-get-started.md). У вас должны быть следующие компоненты:
+
+  * активная подписка Azure;
+  * Центр Интернета вещей в подписке;
+  * клиентское приложение, которое отправляет сообщения в Центр Интернета вещей.
+
+* [Скачайте Git](https://www.git-scm.com/downloads).
 
 ## <a name="create-a-web-app"></a>Создание веб-приложения
 
 1. На [портале Azure](https://portal.azure.com/) последовательно выберите **Создать ресурс** > **Интернет+мобильные устройства** > **Веб-приложение**.
+
 2. Введите уникальное имя задания, проверьте подписку, укажите группу ресурсов и расположение, а затем выберите **Закрепить на панели мониторинга** и нажмите кнопку **Создать**.
 
-   Мы рекомендуем выбрать то расположение, в котором находится группа ресурсов. Это позволит оптимизировать скорость обработки и снизить затраты на передачу данных.
-
-   ![Создание веб-приложения](media/iot-hub-live-data-visualization-in-web-apps/2_create-web-app-azure.png)
+   Мы рекомендуем выбрать от же расположение, что и для группы ресурсов. 
+   
+   ![Создание веб-приложения](./media/iot-hub-live-data-visualization-in-web-apps/2_create-web-app-azure.png)
 
 [!INCLUDE [iot-hub-get-started-create-consumer-group](../../includes/iot-hub-get-started-create-consumer-group.md)]
 
 ## <a name="configure-the-web-app-to-read-data-from-your-iot-hub"></a>Настройка веб-приложения для чтения данных датчиков из Центра Интернета вещей
 
 1. Откройте только что подготовленное веб-приложение.
+
 2. Щелкните **Параметры приложения**, а затем в разделе **Параметры приложения** добавьте следующие пары "ключ — значение":
 
    | Ключ                                   | Значение                                                        |
@@ -65,11 +67,11 @@ ms.locfileid: "49318526"
    | Azure.IoT.IoTHub.ConsumerGroup        | Имя группы потребителей, добавленной в Центр Интернета вещей.  |
    | WEBSITE_NODE_DEFAULT_VERSION          | 8.9.4                                                        |
 
-   ![Добавление параметров для веб-приложения с помощью пар "ключ — значение"](media/iot-hub-live-data-visualization-in-web-apps/4_web-app-settings-key-value-azure.png)
+   ![Добавление параметров для веб-приложения с помощью пар "ключ — значение"](./media/iot-hub-live-data-visualization-in-web-apps/3_web-app-settings-key-value-azure.png)
 
 3. В разделе **Общие параметры** выберите **Параметры приложения**, включите параметр **Веб-сокеты** и щелкните **Сохранить**.
 
-   ![Включение параметра "Веб-сокеты"](media/iot-hub-live-data-visualization-in-web-apps/10_toggle_web_sockets.png)
+   ![Включение параметра "Веб-сокеты"](./media/iot-hub-live-data-visualization-in-web-apps/4_toggle_web_sockets.png)
 
 ## <a name="upload-a-web-application-to-be-hosted-by-the-web-app"></a>Отправка созданного веб-приложения для размещения в Azure
 
@@ -77,13 +79,13 @@ ms.locfileid: "49318526"
 
 1. В веб-приложении щелкните **Варианты развертывания** > **Выбор источника** > **Локальный репозиторий Git** и нажмите кнопку **ОК**.
 
-   ![Настройка развертывания веб-приложения для использования локального репозитория Git](media/iot-hub-live-data-visualization-in-web-apps/5_configure-web-app-deployment-local-git-repository-azure.png)
+   ![Настройка развертывания веб-приложения для использования локального репозитория Git](./media/iot-hub-live-data-visualization-in-web-apps/5_configure-web-app-deployment-local-git-repository-azure.png)
 
 2. Щелкните **Учетные данные развертывания**, укажите имя пользователя и пароль, которые будут использоваться для подключения к репозиторию Git в Azure, а затем нажмите кнопку **Сохранить**.
 
 3. Щелкните **Обзор** и запишите значение **URL-адреса клона Git**.
 
-   ![Получение URL-адреса клона Git веб-приложения](media/iot-hub-live-data-visualization-in-web-apps/7_web-app-git-clone-url-azure.png)
+   ![Получение URL-адреса клона Git веб-приложения](./media/iot-hub-live-data-visualization-in-web-apps/6_web-app-git-clone-url-azure.png)
 
 4. Откройте окно терминала или командной строки на локальном компьютере.
 
@@ -103,16 +105,17 @@ ms.locfileid: "49318526"
 
 На странице **Обзор** щелкните URL-адрес, чтобы открыть веб-приложение.
 
-![Получение URL-адреса веб-приложения](media/iot-hub-live-data-visualization-in-web-apps/8_web-app-url-azure.png)
+![Получение URL-адреса веб-приложения](./media/iot-hub-live-data-visualization-in-web-apps/7_web-app-url-azure.png)
 
 Данные о температуре и влажности, полученные в реальном времени, должны отображаться в Центре Интернета вещей.
 
-![Страница веб-приложения с данными о температуре и влажности, полученными в реальном времени](media/iot-hub-live-data-visualization-in-web-apps/9_web-app-page-show-real-time-temperature-humidity-azure.png)
+![Страница веб-приложения с данными о температуре и влажности, полученными в реальном времени](./media/iot-hub-live-data-visualization-in-web-apps/8_web-app-page-show-real-time-temperature-humidity-azure.png)
 
 > [!NOTE]
 > Убедитесь, что пример приложения запущен на устройстве. Если это не так, отобразится пустая диаграмма. Вы можете обратиться к руководствам в статье [Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)](iot-hub-raspberry-pi-kit-node-get-started.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 Вы успешно использовали веб-приложение для визуализации данных датчика, полученных в реальном времени, из Центра Интернета вещей.
 
 Дополнительные способы визуализации данных из Центра Интернета вещей Azure см. в статье [Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью Power BI](iot-hub-live-data-visualization-in-power-bi.md).

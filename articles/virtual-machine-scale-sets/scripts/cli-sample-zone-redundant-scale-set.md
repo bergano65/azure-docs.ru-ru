@@ -1,5 +1,5 @@
 ---
-title: Примеры для Azure CLI. Избыточный в пределах зоны масштабируемый набор виртуальных машин | Документация Майкрософт
+title: Примеры для Azure CLI. Избыточный между зонами масштабируемый набор виртуальных машин | Документация Майкрософт
 description: Примеры Azure CLI
 services: virtual-machine-scale-sets
 documentationcenter: ''
@@ -23,7 +23,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 10/19/2018
 ms.locfileid: "49465123"
 ---
-# <a name="create-a-zone-redundant-virtual-machine-scale-set-with-powershell"></a>Создание масштабируемого набора виртуальных машин, избыточного в пределах зоны, с помощью PowerShell
+# <a name="create-a-zone-redundant-virtual-machine-scale-set-with-powershell"></a>Создание масштабируемого набора виртуальных машин, избыточного между зонами, с помощью PowerShell
 При помощи этого скрипта создается масштабируемый набор виртуальных машин под управлением Ubuntu в нескольких зонах доступности. После выполнения сценария можно получить доступ к виртуальной машине по протоколу RDP.
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]

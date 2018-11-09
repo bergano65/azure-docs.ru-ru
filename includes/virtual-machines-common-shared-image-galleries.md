@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/20/2018
 ms.author: akjosh; cynthn
 ms.custom: include file
-ms.openlocfilehash: 56f48f6676b3c878effe788316024e642c17ff5a
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 6ad38d2dc1c5c41dc10685d680f70c59e7983cd2
+ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49400105"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50035254"
 ---
 Коллекция общих образов — это служба, которая позволяет создавать структуру и организацию на основе пользовательских образов виртуальных машин. Коллекция общих образов предоставляет три основных предложения:
 - Простое управление.
@@ -146,7 +146,7 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Compute
 
 **Вопрос.** Можно ли создать версию образа из специализированного диска?
 
- О. Нет, в настоящее время мы не поддерживаем специализированные диски в качестве образов. Если у вас есть специализированный диск, необходимо [создать виртуальную машину из виртуального жесткого диска](https://docs.microsoft.com/azure/virtual-machines/windows/create-vm-specialized-portal#create-a-vm-from-a-disk) путем присоединения специализированного диска к новой виртуальной машине. Запустив виртуальную машину, необходимо следовать инструкциям, чтобы создать управляемый образ из [виртуальной машины Windows] https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-custom-images) или [виртуальной машины Linux](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-custom-images). При наличии универсального управляемого образа можно начать процесс создания описания общего образа и версии образа.
+ О. Нет, в настоящее время мы не поддерживаем специализированные диски в качестве образов. Если у вас есть специализированный диск, необходимо [создать виртуальную машину из виртуального жесткого диска](https://docs.microsoft.com/azure/virtual-machines/windows/create-vm-specialized-portal#create-a-vm-from-a-disk) путем присоединения специализированного диска к новой виртуальной машине. Запустив виртуальную машину, необходимо следовать инструкциям, чтобы создать управляемый образ из [виртуальной машины Windows](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-custom-images) или [виртуальной машины Linux](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-custom-images). При наличии универсального управляемого образа можно начать процесс создания описания общего образа и версии образа.
 
 
 **Вопрос.** Можно ли создать коллекцию общих образов, определение образа и версию образа с помощью портала Azure?

@@ -8,27 +8,33 @@ ms.topic: include
 ms.date: 05/17/2018
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 1c7f006c066a4f1505a642af04a1ef027fde0a44
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 0039c4eff3571a96cba1ab36136e0a588d78eb75
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34666948"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50159134"
 ---
 ### <a name="enable-logging-with-diagnostics-settings"></a>Включение ведения журнала с параметрами диагностики
 
-1. Войдите на [портал Azure][lnk-portal] и перейдите к своему Центру Интернета вещей.
-1. Выберите **Параметры диагностики**.
-1. Выберите **Включить диагностику**.
+1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к своему Центру Интернета вещей.
 
-   ![Включение диагностики][1]
+2. Выберите **Параметры диагностики**.
 
-1. Присвойте имя параметрам диагностики.
-1. Выберите назначение для отправки журналов. Можно выбрать любое сочетание трех параметров:
+3. Выберите **Включить диагностику**.
+
+   ![Включение диагностики](./media/iot-hub-diagnostics-settings/turnondiagnostics.png)
+
+4. Присвойте имя параметрам диагностики.
+
+5. Выберите назначение для отправки журналов. Можно выбрать любое сочетание трех параметров:
+
    * "Архивировать в учетной записи хранения";
    * "Передать в концентратор событий";
    * "Отправить в Log Analytics".
-1. Выберите операции, которые требуется отслеживать, и включите журналы для этих них. Ниже перечислены операции, для которых доступны параметры диагностики:
+
+6. Выберите операции, которые требуется отслеживать, и включите журналы для этих них. Ниже перечислены операции, для которых доступны параметры диагностики:
+
    * Подключения
    * Телеметрия устройства
    * Получение сообщений из облака на устройство
@@ -40,7 +46,8 @@ ms.locfileid: "34666948"
    * операции двойников;
    * операции заданий;
    * Прямые методы  
-1. Сохраните новые настройки. 
+
+6. Сохраните новые настройки. 
 
 Если вы хотите включить параметры диагностики с помощью PowerShell, используйте следующий код.
 
@@ -50,11 +57,4 @@ Select-AzureRmSubscription -SubscriptionName <subscription that includes your Io
 Set-AzureRmDiagnosticSetting -ResourceId <your resource Id> -ServiceBusRuleId <your service bus rule Id> -Enabled $true
 ```
 
-Новые параметры вступят в силу в течение 10 минут. После этого журналы появятся в настроенной цели для архивирования в колонке **Журналы диагностики**. Дополнительные сведения о настройке диагностики см. в статье [Сбор и использование данных журнала из ресурсов Azure][lnk-diagnostics-settings].
-
-<!-- Images -->
-[1]: ./media/iot-hub-diagnostics-settings/turnondiagnostics.png
-
-<!-- Links -->
-[lnk-portal]: https://portal.azure.com
-[lnk-diagnostics-settings]: ../articles/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md
+Новые параметры вступят в силу в течение 10 минут. После этого журналы появятся в настроенной цели для архивирования в колонке **Журналы диагностики**. Дополнительные сведения о настройке диагностики см. в статье [Сбор и использование данных журнала из ресурсов Azure](../articles/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md).

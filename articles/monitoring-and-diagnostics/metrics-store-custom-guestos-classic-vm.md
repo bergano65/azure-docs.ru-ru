@@ -1,6 +1,6 @@
 ---
-title: Отправляйте метрики операционной системы на виртуальной машине в хранилище данных Azure Monitor для виртуальной машины Windows (классическая)
-description: Отправляйте метрики операционной системы на виртуальной машине в хранилище данных Azure Monitor для виртуальной машины Windows (классическая)
+title: Отправка метрик ОС для виртуальной машины Windows (классическая) в хранилище данных Azure Monitor
+description: Отправка метрик ОС для виртуальной машины Windows (классическая) в хранилище данных Azure Monitor
 author: anirudhcavale
 services: azure-monitor
 ms.service: azure-monitor
@@ -8,51 +8,55 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.component: ''
-ms.openlocfilehash: 235eda231dfb0f936bf55c7c8d93a8f709fdf9bc
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 06b3d97f4b2b7867f09a8c4e5fe974615e9b0c70
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49954861"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50093426"
 ---
-# <a name="send-guest-os-metrics-to-the-azure-monitor-data-store-for-a-windows-virtual-machine-classic"></a>Отправляйте метрики операционной системы на виртуальной машине в хранилище данных Azure Monitor для виртуальной машины Windows (классическая)
+# <a name="send-guest-os-metrics-to-the-azure-monitor-data-store-for-a-windows-virtual-machine-classic"></a>Отправка метрик ОС для виртуальной машины Windows (классическая) в хранилище данных Azure Monitor
 
-[Расширение Windows Azure Diagnostics](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) (WAD) Azure Monitor дает возможность собирать метрики и журналы из операционной системы на виртуальной машине (гостевая ОС), работающей как часть виртуальной машины, облачной службы или кластера Service Fabric. Расширение может отправлять телеметрию во множество различных расположений, перечисленных в предыдущей статье.
+[Расширение диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) Azure Monitor (также известное как WAD или "Диагностика") позволяет собирать метрики и журналы из гостевой операционной системы (гостевой ОС), работающей на виртуальной машине, в облачной службе или в кластере Service Fabric. Это расширение может отправлять данные телеметрии во [множество различных расположений](https://docs.microsoft.com/azure/monitoring/monitoring-data-collection?toc=/azure/azure-monitor/toc.json).
 
-В этой статье описывается процесс отправки метрик производительности операционной системы на виртуальной машине под управлением Windows (классическая) к хранилищу метрик Azure Monitor. Начиная с WAD версии 1.11, метрики можно записывать напрямую в хранилище метрик Azure Monitor, где уже собраны стандартные платформы метрик. Хранение их в этом расположении позволяет получить доступ к тем же действиям, которые доступны для метрик платформы.  К этим действиям относятся оповещения практически в реальном времени, построение диаграмм, маршрутизация, доступ из REST API и многое другое.  В прошлом расширение WAD выполняло запись в службу хранилища Azure, но не в хранилище данных Azure Monitor. 
+В этой статье описывается отправка метрик производительности из гостевой ОС на виртуальной машине под управлением Windows (классическая) в хранилище метрик Azure Monitor. Начиная с версии 1.11 расширение диагностики позволяет записывать метрики напрямую в хранилище метрик Azure Monitor, где уже собраны стандартные метрики платформы. 
 
-Процесс, описанный в этой статье, работает только для классических виртуальных машин под управлением операционной системы Windows.
+Хранение их в этом расположении позволяет получить доступ к тем же действиям, которые доступны для метрик платформы. К этим действиям относятся оповещения практически в реальном времени, построение диаграмм, маршрутизация, доступ из REST API и многое другое. Ранее расширение диагностики записывало данные в службу хранилища Azure, а не в хранилище данных Azure Monitor. 
 
-## <a name="pre-requisites"></a>Предварительные требования
+Процесс, описанный в этой статье, применим только к классическим виртуальным машинам под управлением ОС Windows.
 
-- Вам необходима подписка [администратора службы или соадминистратора](https://docs.microsoft.com/azure/billing/billing-add-change-azure-subscription-administrator.md) Azure. 
+## <a name="prerequisites"></a>Предварительные требования
 
-- Подписки необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-6.8.1). 
+- Вам необходимы права [администратора службы или соадминистратора](https://docs.microsoft.com/azure/billing/billing-add-change-azure-subscription-administrator.md) в подписке Azure. 
 
-- Необходимо установить [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-6.8.1) или использовать [Azure CloudShell](https://docs.microsoft.com/azure/cloud-shell/overview.md). 
+- Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services#portal). 
+
+- Необходимо установить [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-6.8.1) или [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
 ## <a name="create-a-classic-virtual-machine-and-storage-account"></a>Создание классической виртуальной машины и учетной записи хранения
 
-1. Создайте классическую виртуальную машину с помощью портала Azure ![Создание классической виртуальной машины](./media/metrics-store-custom-guestos-classic-vm/create-classic-vm.png).
+1. Создайте классическую виртуальную машину на портале Azure.
+   ![Создание классической виртуальной машины](./media/metrics-store-custom-guestos-classic-vm/create-classic-vm.png)
 
-1. При создании этой виртуальной машины выберите создание новой классической учетной записи хранения. Мы воспользуемся этой учетной записью хранения на следующих шагах.
+1. При создании виртуальной машины выберите вариант создания новой классической учетной записи хранения. Мы воспользуемся этой учетной записью хранения на следующих шагах.
 
-1. На портале Azure перейдите к колонке ресурсов учетной записи хранения, выберите **ключи** и запишите имя и ключ учетной записи хранения. Эти ключи вам понадобятся на последующих шагах в разделе ![Ключи доступа к хранилищу](./media/metrics-store-custom-guestos-classic-vm/storage-access-keys.png)
+1. На портале Azure перейдите в колонку ресурсов **Учетные записи хранения**. Выберите **Ключи** и запишите имя учетной записи хранения и ключ к ней. Они понадобятся для выполнения последующих действий.
+   ![Ключи доступа к хранилищу](./media/metrics-store-custom-guestos-classic-vm/storage-access-keys.png)
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
-Создайте субъект-службу в клиенте Azure Active Directory, используя инструкции из раздела [Создание субъекта-службы](../active-directory/develop/howto-create-service-principal-portal.md). Выполняя это действие, обратите внимание на следующее. 
-- Создание нового секрета клиента для этого приложения  
-- Сохраните ключ и идентификатор клиента для использования в последующих шагах.
+Создайте субъект-службу в клиенте Azure Active Directory, используя инструкции из раздела [Создание субъекта-службы](../azure-resource-manager/resource-group-create-service-principal-portal.md). Выполняя это действие, обратите внимание на следующее. 
+- Создайте новый секрет клиента для этого приложения.
+- Сохраните ключ и идентификатор клиента, чтобы использовать их в дальнейшем.
 
-Предоставьте этому приложению "Издатель метрик мониторинга" доступ к ресурсу, из которого вы хотите издавать метрики. Вы можете использовать группу ресурсов или целую подписку.  
+Предоставьте этому приложению права "Издатель метрик мониторинга" для доступа к ресурсу, из которого вы хотите передавать метрики. Вы можете использовать группу ресурсов или целую подписку.  
 
 > [!NOTE]
-> Расширение системы диагностики будет использовать субъект-службу для проверки подлинности в Azure Monitor и издавать метрики для вашей классической виртуальной машины.
+> Расширение диагностики будет использовать субъект-службу для проверки подлинности в Azure Monitor и передавать метрики для классической виртуальной машины.
 
-## <a name="author-diagnostics-extension-configuration"></a>Конфигурация расширения диагностики автора
+## <a name="author-diagnostics-extension-configuration"></a>Создание конфигурации для расширения диагностики
 
-1. Подготовьте файл конфигурации расширения диагностики WAD. Этот файл определяет, какие журналы и счетчики производительности расширения системы диагностики следует собирать для классической виртуальной машины. Пример приведен ниже.
+1. Подготовьте файл конфигурации для расширения диагностики. Этот файл определяет, какие журналы и счетчики производительности для классической виртуальной машины должно собирать расширение диагностики. Ниже приведен пример:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -98,20 +102,20 @@ ms.locfileid: "49954861"
     <IsEnabled>true</IsEnabled>
     </DiagnosticsConfiguration>
     ```
-1. В разделе "SinksConfig" вашего файла диагностики укажите новый приемник Azure Monitor.
+1. В разделе SinksConfig файла диагностики укажите новый приемник Azure Monitor, как показано ниже:
 
     ```xml
     <SinksConfig>
         <Sink name="AzMonSink">
             <AzureMonitor>
-                <ResourceId>Provide your Classic VM’s Resource ID </ResourceId>
-                <Region>Region your VM is deployed in</Region>
+                <ResourceId>Provide the resource ID of your classic VM </ResourceId>
+                <Region>The region your VM is deployed in</Region>
             </AzureMonitor>
         </Sink>
     </SinksConfig>
     ```
 
-1. В разделе файла конфигурации, в котором указан список счетчиков производительности, метрики из которых необходимо собрать, перейдите по счетчикам производительности в приемник Azure Monitor "AzMonSink".
+1. В разделе файла конфигурации, где указан список счетчиков производительности, с которых собираются данные, направьте данные счетчиков производительности в приемник Azure Monitor AzMonSink.
 
     ```xml
     <PerformanceCounters scheduledTransferPeriod="PT1M" sinks="AzMonSink">
@@ -120,7 +124,7 @@ ms.locfileid: "49954861"
     </PerformanceCounters>
     ```
 
-1. В закрытой конфигурации определите учетную запись Azure Monitor и добавьте информацию о субъекте-службе, используемой для издания метрик.
+1. В закрытой конфигурации укажите учетную запись Azure Monitor. Затем добавьте сведения о субъекте-службе, который используется для генерации метрик.
 
     ```xml
     <PrivateConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
@@ -136,7 +140,7 @@ ms.locfileid: "49954861"
 
 1. Сохраните файл локально.
 
-## <a name="deploy-diagnostics-extension-to-your-cloud-service"></a>Развертывание расширения системы диагностики в облачной службе
+## <a name="deploy-the-diagnostics-extension-to-your-cloud-service"></a>Развертывание расширения диагностики в облачной службе
 
 1. Запустите PowerShell и войдите в систему.
 
@@ -144,7 +148,7 @@ ms.locfileid: "49954861"
     Login-AzureRmAccount
     ```
 
-1. Начните с установки контекста для классической виртуальной машины.
+1. Начните с настройки контекста для классической виртуальной машины.
 
     ```powershell
     $VM = Get-AzureVM -ServiceName <VM’s Service_Name> -Name <VM Name>
@@ -156,42 +160,43 @@ ms.locfileid: "49954861"
     $StorageContext = New-AzureStorageContext -StorageAccountName <name of your storage account from earlier steps> -storageaccountkey "<storage account key from earlier steps>"
     ```
 
-1.  Задайте путь к файлу диагностики в переменной с помощью следующей команды.
+1.  Укажите путь к файлу диагностики в переменной с помощью следующей команды:
 
     ```powershell
     $diagconfig = “<path of the diagnostics configuration file with the Azure Monitor sink configured>”
     ```
 
-1.  Подготовка обновления классической виртуальной машины в файле диагностики с настроенным приемником Azure Monitor
+1.  Подготовьте обновление для классической виртуальной машины, содержащее файл диагностики с настроенным приемником Azure Monitor.
 
     ```powershell
     $VM_Update = Set-AzureVMDiagnosticsExtension -DiagnosticsConfigurationPath $diagconfig -VM $VM -StorageContext $Storage_Context
     ```
 
-1.  Разверните обновление виртуальной машины, выполнив следующую команду.
+1.  Разверните это обновление на виртуальной машине, выполнив следующую команду:
 
     ```powershell
     Update-AzureVM -ServiceName "ClassicVMWAD7216" -Name "ClassicVMWAD" -VM $VM_Update.VM
     ```
 
 > [!NOTE]
-> В рамках установки расширения диагностики по-прежнему необходимо предоставить учетную запись хранения. Все журналы и счетчики производительности, указанные в файле конфигурации диагностики, должны записываться в указанной учетной записи хранения.
+> В процессе установки расширения диагностики по-прежнему необходимо указывать учетную запись хранения. Все журналы и счетчики производительности, указанные в файле конфигурации диагностики, будут записываться в указанную учетную запись хранения.
 
 ## <a name="plot-the-metrics-in-the-azure-portal"></a>График метрик на портале Azure
 
-1.  Перейдите на портал Azure.
+1.  Перейдите на портал Azure. 
 
-1.  В меню слева щелкните "Монитор".
+1.  В меню слева выберите **Монитор**.
 
-1.  В колонке "Монитор" щелкните **Метрики**
-   ![Переместить метрики](./media/metrics-store-custom-guestos-classic-vm/navigate-metrics.png).
+1.  В колонке **Монитор** выберите **Метрики**.
 
-1. В раскрывающемся списке ресурсов выберите классическую виртуальную машину.
+    ![Переход к метрикам](./media/metrics-store-custom-guestos-classic-vm/navigate-metrics.png)
 
-1. В раскрывающемся списке выберите **azure.vm.windows.guest**.
+1. В раскрывающемся меню ресурсов выберите требуемую классическую виртуальную машину.
 
-1. В раскрывающемся списке метрик выберите **Память / Использование выделенной памяти (в байтах)**
-   ![Графические метрики](./media/metrics-store-custom-guestos-classic-vm/plot-metrics.png).
+1. В раскрывающемся меню пространств имен выберите **azure.vm.windows.guest**.
+
+1. В раскрывающемся списке метрик выберите **Использование выделенной памяти (в байтах)**.
+   ![График метрик](./media/metrics-store-custom-guestos-classic-vm/plot-metrics.png)
 
 
 ## <a name="next-steps"></a>Дополнительная информация

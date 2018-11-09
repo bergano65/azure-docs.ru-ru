@@ -13,14 +13,14 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
-ms.openlocfilehash: 39b793e2722766f3f28829b4dc48534054abd97e
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: a9967aec61aaab5bc6b4517407f36e2a6c7342c8
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49989020"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50238868"
 ---
-# <a name="remote-desktop-services-is-not-starting-on-an-azure-vm"></a>Службы удаленных рабочих столов не запускаются на виртуальной машине Azure
+# <a name="remote-desktop-services-isnt-starting-on-an-azure-vm"></a>Службы удаленных рабочих столов не запускаются на виртуальной машине Azure
 
 В этой статье описывается устранение неполадок подключения к виртуальной машине Azure, когда службы удаленных рабочих столов (TermService) не запускаются или их запуск завершается ошибкой.
 
@@ -32,28 +32,44 @@ ms.locfileid: "49989020"
 При попытке подключиться к виртуальной машине возникают следующие сценарии:
 
 - Снимок экрана виртуальной машины: операционная система полностью загружена и ожидает учетные данные.
-- Все приложения на виртуальной машине работают правильно и доступны.
-- Виртуальная машина отвечает на подключения TCP через RDP-порт (по умолчанию 3389).
-- Вы не получаете запрос учетных данных при попытке подключения по протоколу удаленного рабочего стола.
+
+    ![Снимок экрана с состоянием виртуальной машины](./media/troubleshoot-remote-desktop-services-issues/login-page.png)
+
+- При удаленном просмотре журналов событий на виртуальной машине с помощью средства "Просмотр событий" видно, что службы удаленных рабочих столов (TermServ) не запускаются или их запуск завершается ошибкой. Ниже приведен пример журнала:
+
+    **Имя журнала**: Система </br>
+    **Источник**: Service Control Manager </br>
+    **Дата**: 16.12.2017 11:19:36</br>
+    **Код события**: 7022</br>
+    **Категория задачи	**: Отсутствует</br>
+    **Уровень**: Ошибка</br>
+    **Ключевые слова**: Классический</br>
+    **Пользователь**: Н/Д</br>
+    **Компьютер**: vm.contoso.com</br>
+    **Описание**: Служба "Службы удаленных рабочих столов" зависла при запуске. 
+
+    Также доступ к этим ошибкам можно получить через консоль последовательного доступа, используя следующий запрос: 
+
+        wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Service Control Manager'] and EventID=7022 and TimeCreated[timediff(@SystemTime) <= 86400000]]]" | more 
 
 ## <a name="cause"></a>Причина:
+ 
+Эта проблема возникает, потому что службы удаленных рабочих столов не запущены на виртуальной машине. Причина может быть в следующем: 
 
-Эта проблема возникает, поскольку службы удаленных рабочих столов не выполняются на виртуальной машине. Причина может быть в следующем:
-
-- служба TermService **отключена**;
-- произошло аварийное завершение или зависание службы TermService.
+- Служба TermService **отключена**. 
+- произошло аварийное завершение или зависание службы TermService. 
 
 ## <a name="solution"></a>Решение
 
-Чтобы устранить эту проблему, используйте одно из следующих решений или попробуйте применить их одно за другим.
+Чтобы устранить эту проблему, воспользуйтесь последовательной консолью или [восстановите виртуальную машину в автономном режиме](#repair-the-vm-offline), присоединив диск ОС виртуальной машины к виртуальной машине для восстановления.
 
-### <a name="solution-1-using-the-serial-console"></a>Решение 1. Использование последовательной консоли
+### <a name="use-serial-console"></a>Использование последовательной консоли
 
-1. Откройте [последовательную консоль](serial-console-windows.md), выбрав **Поддержка и устранение неисправностей** > **Последовательная консоль (предварительная версия)**. Если эта функция включена на виртуальной машине, вы сможете успешно подключиться к виртуальной машине.
+1. Откройте [последовательную консоль](serial-console-windows.md), выбрав **Поддержка и устранение неполадок** > **Последовательная консоль**. Если эта функция включена на виртуальной машине, вы сможете успешно подключиться к виртуальной машине.
 
 2. Создайте канал для экземпляра командной строки. Введите **CMD**, чтобы запустить канал и получить имя канала.
 
-3. Переключитесь на канал, в котором выполняется экземпляр командной строки, в этом случае следует использовать канал 1.
+3. Переключитесь на канал, на котором запущен экземпляр CMD. В нашем случае это должен быть канал 1.
 
    ```
    ch -si 1
@@ -69,58 +85,87 @@ ms.locfileid: "49989020"
 
 6. Если отображается состояние службы **остановлена**, попытайтесь запустить службу.
 
-   ```
-   sc start TermService
-   ```
+    ```
+    sc start TermService
+     ``` 
 
 7. Запросите службу еще раз, чтобы убедиться, что она успешно запущена.
 
    ```
    sc query TermService
    ```
+    Если служба не запускается, выполните поиск решения на основе полученного сообщения об ошибке:
 
-### <a name="solution-2-using-a-recovery-vm-to-enable-the-service"></a>Решение 2. Использование виртуальной машины восстановления для включения службы
+    |  Ошибка |  Предложение |
+    |---|---|
+    |5 — ACCESS DENIED |См. раздел [Служба TermService остановлена из-за ошибки отказа в доступе](#termService-service-is-stopped-because-of-access-denied-error). |
+    |1058 — ERROR_SERVICE_DISABLED  |См. раздел [Служба TermService отключена](#termService-service-is-disabled).  |
+    |1059 — ERROR_CIRCULAR_DEPENDENCY |[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.|
+    |1068 — ERROR_SERVICE_DEPENDENCY_FAIL|[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.|
+    |1069 — ERROR_SERVICE_LOGON_FAILED  |[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.    |
+    |1070 — ERROR_SERVICE_START_HANG   | [Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.  |
+    |1077 — ERROR_SERVICE_NEVER_STARTED   | См. раздел [Служба TermService отключена](#termService-service-is-disabled).  |
+    |1079 — ERROR_DIFERENCE_SERVICE_ACCOUNT   |[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему. |
+    |1753   |[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.   |
 
-[Выполните резервное копирование диска операционной системы](../windows/snapshot-copy-managed-disk.md) и [подключите диск ОС к виртуальной машине восстановления](../windows/troubleshoot-recovery-disks-portal.md). Откройте экземпляр командной строки с повышенными привилегиями и выполните следующие сценарии на виртуальной машине восстановления:
+#### <a name="termservice-service-is-stopped-because-of-access-denied-error"></a>Служба TermService остановлена из-за ошибки отказа в доступе
 
->[!NOTE]
->Мы предполагаем, что подключенному диску ОС присвоена буква F. Замените ее соответствующим значением на своей виртуальной машине. После этого отключите диск от виртуальной машины восстановления и [воссоздайте свою виртуальную машину](../windows/create-vm-specialized.md). Для дальнейшего устранения неполадок можно использовать **Решение 1**, так как теперь последовательная консоль включена.
+1. Подключитесь к [последовательной консоли](serial-console-windows.md#) и откройте экземпляр PowerShell.
+2. Скачайте средство Process Monitor, выполнив следующий скрипт:
 
-```
-reg load HKLM\BROKENSYSTEM f:\windows\system32\config\SYSTEM
+        remove-module psreadline  
+        $source = "https://download.sysinternals.com/files/ProcessMonitor.zip" 
+        $destination = "c:\temp\ProcessMonitor.zip" 
+        $wc = New-Object System.Net.WebClient 
+        $wc.DownloadFile($source,$destination) 
+3. Далее запустите трассировку procmon:
 
-REM Enable Serial Console
-bcdedit /store <Volume Letter Where The BCD Folder Is>:\boot\bcd /set {bootmgr} displaybootmenu yes
-bcdedit /store <Volume Letter Where The BCD Folder Is>:\boot\bcd /set {bootmgr} timeout 10
-bcdedit /store <Volume Letter Where The BCD Folder Is>:\boot\bcd /set {bootmgr} bootems yes
-bcdedit /store <Volume Letter Where The BCD Folder Is>:\boot\bcd /ems {<Boot Loader Identifier>} ON
-bcdedit /store <Volume Letter Where The BCD Folder Is>:\boot\bcd /emssettings EMSPORT:1 EMSBAUDRATE:115200
+        procmon /Quiet /Minimized /BackingFile c:\temp\ProcMonTrace.PML 
+4. Воспроизведите проблему, запустив службу, которая выдает ошибку отказа в доступе: 
 
-REM Get the current ControlSet from where the OS is booting
-for /f "tokens=3" %x in ('REG QUERY HKLM\BROKENSYSTEM\Select /v Current') do set ControlSet=%x
-set ControlSet=%ControlSet:~2,1%
+        sc start TermService 
+        
+    Когда запуск завершится ошибкой, остановите трассировку Process Monitor:
 
-REM Suggested configuration to enable OS Dump
-set key=HKLM\BROKENSYSTEM\ControlSet00%ControlSet%\Control\CrashControl
-REG ADD %key% /v CrashDumpEnabled /t REG_DWORD /d 2 /f
-REG ADD %key% /v DumpFile /t REG_EXPAND_SZ /d "%SystemRoot%\MEMORY.DMP" /f
-REG ADD %key% /v NMICrashDump /t REG_DWORD /d 1 /f
+        procmon /Terminate 
+5. Найдите файл  **c:\temp\ProcMonTrace.PML**, откройте его с помощью procmon и отфильтруйте с помощью запроса  **Result is ACCESS DENIED**, как показано на снимке экрана ниже:
 
-REM Set default values back on the broken service
-reg add "HKLM\BROKENSYSTEM\ControlSet001\services\<Process Name>" /v start /t REG_DWORD /d <Startup Type> /f
-reg add "HKLM\BROKENSYSTEM\ControlSet001\services\<Process Name>" /v ImagePath /t REG_EXPAND_SZ /d "<Image Path>" /f
-reg add "HKLM\BROKENSYSTEM\ControlSet001\services\<Process Name>" /v ObjectName /t REG_SZ /d "<Startup Account>" /f
-reg add "HKLM\BROKENSYSTEM\ControlSet001\services\<Process Name>" /v type /t REG_DWORD /d 16 /f
-reg add "HKLM\BROKENSYSTEM\ControlSet002\services\<Process Name>" /v start /t REG_DWORD /d <Startup Type> /f
-reg add "HKLM\BROKENSYSTEM\ControlSet002\services\<Process Name>" /v ImagePath /t REG_EXPAND_SZ /d "<Startup Account>" /f
-reg add "HKLM\BROKENSYSTEM\ControlSet002\services\<Process Name>" /v ObjectName /t REG_SZ /d "<Startup Account>" /f
-reg add "HKLM\BROKENSYSTEM\ControlSet002\services\<Process Name>" /v type /t REG_DWORD /d 16 /f
+    ![Фильтрация по результатам в Process Monitor](./media/troubleshoot-remote-desktop-services-issues/process-monitor-access-denined.png)
 
-REM Enable default dependencies from the broken service
-reg add "HKLM\BROKENSYSTEM\ControlSet001\services\<Driver/Service Name>" /v start /t REG_DWORD /d <Startup Type> /f
-reg add "HKLM\BROKENSYSTEM\ControlSet002\services\<Driver/Service Name>" /v start /t REG_DWORD /d <Startup Type> /f
-reg unload HKLM\BROKENSYSTEM
-```
+ 
+6. Исправьте разделы реестра, папки или файлы, которые включены в выходные данные. Обычна эта проблема возникает из-за того, что у учетной записи, использованной для входа в систему, нет разрешения в списке управления доступом на доступ к этим объектам. Чтобы узнать правильное разрешение в списке управления доступом для учетной записи, используемой для входа в систему, просмотрите данные на исправной виртуальной машине. 
+
+#### <a name="termservice-service-is-disabled"></a>Служба TermService отключена
+
+1.  Восстановите параметр запуска службы по умолчанию:
+
+        sc config TermService start= demand 
+        
+2.  Запустите службу:
+
+        sc start TermService 
+3.  Выполните запрос состояния еще раз, чтобы убедиться, что служба запущена: sc query TermService 
+4.  Попробуйте подключиться к виртуальной машине с помощью удаленного рабочего стола.
+
+
+### <a name="repair-the-vm-offline"></a>Автономное восстановление виртуальной машины
+
+#### <a name="attach-the-os-disk-to-a-recovery-vm"></a>Подключите диск ОС к виртуальной машине восстановления.
+
+1. [Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью портала Azure](../windows/troubleshoot-recovery-disks-portal.md).
+2. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления. Убедитесь, что в консоли "Управление дисками" для подключенного диска отображается состояние **Подключен**. Запишите или запомните букву диска, которая присвоена подключенному диску ОС.
+3.  Отройте командную строку с повышенными привилегиями (**Запуск от имени администратора**) и выполните приведенный ниже скрипт. Мы предполагаем, что подключенному диску ОС присвоена буква F. Замените ее соответствующим значением на своей виртуальной машине. 
+
+        reg load HKLM\BROKENSYSTEM F:\windows\system32\config\SYSTEM.hiv
+        
+        REM Set default values back on the broken service 
+        reg add "HKLM\BROKENSYSTEM\ControlSet001\services\TermService" /v start /t REG_DWORD /d 3 /f
+        reg add "HKLM\BROKENSYSTEM\ControlSet001\services\TermService" /v ObjectName /t REG_SZ /d "NT Authority\NetworkService“ /f
+        reg add "HKLM\BROKENSYSTEM\ControlSet001\services\TermService" /v type /t REG_DWORD /d 16 /f
+        reg add "HKLM\BROKENSYSTEM\ControlSet002\services\TermService" /v start /t REG_DWORD /d 3 /f
+        reg add "HKLM\BROKENSYSTEM\ControlSet002\services\TermService" /v ObjectName /t REG_SZ /d "NT Authority\NetworkService" /f
+        reg add "HKLM\BROKENSYSTEM\ControlSet002\services\TermService" /v type /t REG_DWORD /d 16 /f
+4. [Отключите диск ОС и повторно создайте виртуальную машину](../windows/troubleshoot-recovery-disks-portal.md), а затем проверьте, устранена ли проблема.
 
 ## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 

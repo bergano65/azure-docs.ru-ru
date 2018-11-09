@@ -1,22 +1,20 @@
 ---
-title: 'Устранение сбоя агента Azure Site Recovery: состояние гостевого агента "Недоступно" | Документы Майкрософт'
-description: Симптомы, причины и способы устранения проблем в работе Azure Site Recovery, связанных с агентом или расширением.
-services: site-recovery
+title: Устранение неполадок с агентами Azure Site Recovery | Документация Майкрософт
+description: В статье содержатся сведения о симптомах, причинах и способах устранения сбоев в работе агентов Azure Site Recovery.
 author: asgang
 manager: rochakm
 ms.service: site-recovery
-ms.devlang: na
-ms.topic: article
-ms.date: 07/06/2018
+ms.topic: troubleshooting
+ms.date: 10/29/2018
 ms.author: asgang
-ms.openlocfilehash: c0429e87f6c58ef2b9c7a268bee596d769e95910
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 3090dd9e0d9681dbf77f052e9d324f2add0a1910
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37919810"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50215044"
 ---
-# <a name="troubleshoot-azure-site-recovery-extension-failures-issues-with-the-agent-or-extension"></a>Устранение неполадок в работе расширения Azure Site Recovery. Проблемы с агентом или расширением
+# <a name="troubleshoot-issues-with-the-azure-site-recovery-agent"></a>Устранение неполадок с агентом Azure Site Recovery
 
 В этой статье описано, как устранять ошибки Azure Site Recovery, связанные с расширением и агентом виртуальной машины.
 

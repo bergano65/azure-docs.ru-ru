@@ -1,21 +1,20 @@
 ---
-title: Планировщик ресурсов Azure Site Recovery для сценариев развертывания виртуальных машин VMware в Azure | Документация Майкрософт
-description: Руководство по использованию планировщика ресурсов Azure Site Recovery.
-services: site-recovery
+title: Просмотр отчета об оценке затрат в Планировщике развертывания Azure Site Recovery | Документация Майкрософт
+description: В этой статье описано, как просмотреть отчет об оценке затрат в Планировщике ресурсов Azure Site Recovery для VMware при аварийном восстановлении в Azure.
 author: nsoneji
 manager: garavd
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: nisoneji
-ms.openlocfilehash: 7470dab537a8ab248228b9c445e1124e7ec9c444
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 7244aa2c0b665b47d597662b98ec291d6bfeeddd
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49387809"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50215027"
 ---
-# <a name="cost-estimation-report-of-azure-site-recovery-deployment-planner"></a>Отчет об оценке затрат, созданный в планировщике развертывания Azure Site Recovery  
+# <a name="review-the-cost-estimation-report-in-the-site-recovery-deployment-planner-for-vmware-disaster-recovery-to-azure"></a>Просмотр отчета об оценке затрат в планировщике развертывания Azure Site Recovery для аварийного восстановления VMware в Azure
 
 На страницах отчета [Рекомендации](site-recovery-vmware-deployment-planner-analyze-report.md#recommendations) содержится сводка оценки затрат, а на странице оценки затрат — данные их подробного анализа. для каждой виртуальной машины. 
 

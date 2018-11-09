@@ -1,22 +1,19 @@
 ---
-title: Управление Azure Site Recovery с помощью управления доступом на основе ролей | Документация Майкрософт
-description: В этой статье объясняется, как применять управление доступом на основе ролей (RBAC) для управления развертываниями Azure Site Recovery
+title: Управление доступом к Azure Site Recovery с помощью управления доступом на основе ролей (RBAC) | Документация Майкрософт
+description: В этой статье объясняется, как применять управление доступом на основе ролей (RBAC) для управления доступом к Azure Site Recovery.
 ms.service: site-recovery
-ms.workload: backup-recovery
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.date: 10/16/2018
 author: mayurigupta13
 ms.topic: conceptual
 ms.author: mayg
-ms.openlocfilehash: 9ec9acab4ad83af22504058c21b102df94b8692d
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 19d41d8c9b1a54cefc09190531b064d640048385
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353243"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212052"
 ---
-# <a name="use-role-based-access-control-to-manage-site-recovery-access"></a>Использование управления доступом на основе ролей для управления доступом к Azure Site Recovery
+# <a name="manage-site-recovery-access-with-role-based-access-control-rbac"></a>Управление доступом к Site Recovery с помощью управления доступом на основе ролей (RBAC)
 
 Контроль доступа на основе ролей (RBAC) Azure обеспечивает точное управление доступом для Azure. Используя RBAC, можно разделить обязанности в команде и предоставлять пользователям только разрешения для выполнения определенных заданий.
 

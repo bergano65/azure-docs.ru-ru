@@ -1,6 +1,6 @@
 ---
-title: Новые возможности в Машинном обучении Azure | Документация Майкрософт
-description: Новые возможности в Машинном обучении Azure.
+title: Новые возможности в Студии машинного обучения Azure | Документация Майкрософт
+description: Новые возможности в студии машинного обучения Azure.
 services: machine-learning
 documentationcenter: ''
 author: YasinMSFT
@@ -14,19 +14,22 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/28/2017
-ms.openlocfilehash: 61bea7fde96b239a50ec25a702a73ecfb62ce717
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.date: 10/28/2018
+ms.openlocfilehash: 2f990ce30b66392e8a649e4e88b21457d9fe223b
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34836078"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212664"
 ---
-# <a name="whats-new-in-azure-machine-learning"></a>Новые возможности Машинного обучения Azure
+# <a name="whats-new-in-azure-machine-learning-studio"></a>Новые возможности студии машинного обучения Azure
 
-### <a name="the-march-2017-release-of-microsoft-azure-machine-learning-updates-provides-the-following-feature"></a>Обновления для Машинного обучения Microsoft Azure за март 2017 года обеспечивают следующее.
+## <a name="october-2018"></a>Октябрь 2018 г.
 
+К обработчику R языка в модуле [Execute R Script](https://docs.microsoft.com/azure/machine-learning/studio-module-reference/execute-r-script) добавлена новая версия среды выполнения — Microsoft R Open (MRO) 3.4.4. Эта версия основана на CRAN R 3.4.4 с открытым исходным кодом и поэтому совместима с пакетами, работающими с этой версией R. Дополнительные сведения о поддерживаемых пакетах R см. в статье "[R Packages supported by Azure Machine Learning Studio](https://docs.microsoft.com/azure/machine-learning/studio-module-reference/r-packages-supported-by-azure-machine-learning#bkmk_List)" ("Пакеты R поддерживаемые Студией машинного обучения Azure").
 
+## <a name="march-2017"></a>Март 2017 г. 
+Этот выпуск службы "Машинное обучение Microsoft Azure" предоставляет следующие возможности.
 
 * Выделенная емкость для заданий службы выполнения пакетов (BES) машинного обучения Azure
 
@@ -35,14 +38,16 @@ ms.locfileid: "34836078"
     Дополнительные сведения см. в разделе [Пакетные службы Azure для обработки заданий машинного обучения](dedicated-capacity-for-bes-jobs.md).
 
 
-### <a name="the-august-2016-release-of-microsoft-azure-machine-learning-updates-provide-the-following-features"></a>Обновления для машинного обучения Microsoft Azure за август 2016 года обеспечивают приведенные ниже возможности.
+## <a name="august-2016"></a>Август 2016 г. 
+Этот выпуск службы "Машинное обучение" Microsoft Azure предоставляет следующие возможности.
 * Классическими веб-службами теперь можно управлять на новом портале [веб-служб машинного обучения Microsoft Azure](https://services.azureml.net/), который предоставляет возможность централизованно управлять всеми аспектами веб-службы.    
   * На нем предоставляется [статистика использования](manage-new-webservice.md) веб-службы.
   * Упрощается тестирование вызовов удаленных запросов машинного обучения Azure с использованием примеров данных.
   * Предоставляется новая страница тестирования службы пакетного выполнения, на которой можно использовать примеры данных и журнал отправки заданий.
   * Обеспечивается более простое управление конечными точками.
 
-### <a name="the-july-2016-release-of-microsoft-azure-machine-learning-updates-provide-the-following-features"></a>Обновления для машинного обучения Microsoft Azure за июль 2016 года обеспечивают приведенные ниже возможности.
+## <a name="july-2016"></a>Июль 2016 г. 
+Этот выпуск службы "Машинное обучение" Microsoft Azure предоставляет следующие возможности.
 * Веб-службы теперь управляются как ресурсы Azure, с помощью интерфейсов [Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md) , что обеспечивает следующие усовершенствования:
   * Добавлены новые [интерфейсы REST API](https://msdn.microsoft.com/library/azure/Dn950030.aspx) для развертывания веб-служб с помощью Resource Manager и управления ими.
   * Доступен новый портал [веб-служб машинного обучения Microsoft Azure](https://services.azureml.net/), который позволяет централизованно управлять всеми аспектами веб-службы.

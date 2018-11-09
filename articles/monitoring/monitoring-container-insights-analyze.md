@@ -1,5 +1,5 @@
 ---
-title: Мониторинг производительности кластера AKS с Azure Monitor для контейнеров | Документация Майкрософт
+title: Мониторинг производительности кластера AKS с помощью Azure Monitor для контейнеров (предварительная версия) | Документация Майкрософт
 description: В этой статье описывается, как можно просматривать и анализировать производительность и данные журналов с помощью Azure Monitor для контейнеров.
 services: azure-monitor
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/19/2018
 ms.author: magoedte
-ms.openlocfilehash: 430145119721ac947162d3b661377290a0ae2c11
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
+ms.openlocfilehash: daec3d6e6cd8e4df3fdfe45fbb8ee98966c8a38e
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49638006"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50214160"
 ---
-# <a name="understand-aks-cluster-performance-with-azure-monitor-for-containers"></a>Общие сведения о производительности кластера AKS с Azure Monitor для контейнеров
+# <a name="understand-aks-cluster-performance-with-azure-monitor-for-containers-preview"></a>Общие сведения о мониторинге производительности кластера AKS с помощью Azure Monitor для контейнеров (предварительная версия)
 Просмотр производительности кластеров Службы контейнеров Azure (AKS) можно наблюдать с двух перспектив с помощью Azure Monitor для контейнеров, напрямую из кластера AKS или представления всех AKS кластеров в подписке из Azure Monitor. 
 
 Эта статья поможет вам понять, как взаимодействуют две перспективы и как быстро оценить, изучить и устранить обнаруженные проблемы работоспособности.

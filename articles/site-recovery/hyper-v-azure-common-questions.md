@@ -1,21 +1,21 @@
 ---
-title: Часто задаваемые вопросы. Репликация Hyper-V в Azure с помощью Azure Site Recovery | Документация Майкрософт
-description: В этой статье перечислены часто задаваемые вопросы о репликации локальных виртуальных машин Hyper-V в Azure с помощью Azure Site Recovery.
+title: Часто задаваемые вопросы. Аварийное восстановление Hyper-V в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье перечислены часто задаваемые вопросы о настройке аварийного восстановления локальных виртуальных машин Hyper-V в Azure с помощью сайта Azure Site Recovery.
 services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
-ms.date: 10/10/2018
+ms.date: 10/28/2018
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: 7c5316aea2bfdb9a96b9aeb2dd5387b2643a92b2
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 6345cf47d19f7990e776e0fe4ec2bafd005c9cf2
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49319733"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212494"
 ---
-# <a name="common-questions---hyper-v-to-azure-replication"></a>Часто задаваемые вопросы по репликации Hyper-V в Azure
+# <a name="common-questions---hyper-v-to-azure-disaster-recovery"></a>Часто задаваемые вопросы. Аварийное восстановление Hyper-V в Azure
 
 В этой статье приведены ответы на часто задаваемые вопросы, которые возникают при репликации локальных виртуальных машин Hyper-V в Azure. 
 

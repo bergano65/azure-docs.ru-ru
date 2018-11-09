@@ -8,32 +8,40 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: article
-ms.date: 09/12/2018
+ms.date: 10/25/2018
 ms.author: tulasim
-ms.openlocfilehash: efefd595c43d7f46ff1ead91577d070cf8fb90e4
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 9597b878eb3d92727b352ba42a9e5557bb1cc799
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47164622"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50211440"
 ---
 # <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
 ## <a name="why-is-my-urlsfiles-is-not-extracting-question-answer-pairs"></a>Почему для указанных мной URL-адресов или файлов не извлекаются пары "вопрос — ответ"?
 
-В некоторых случаях QnA Maker не может автоматически извлечь содержимое в формате "вопрос — ответ" по допустимым URL-адресам. В таких случаях поместите нужное содержимое в TXT-файл и проверьте, сможет ли средство извлечь содержимое в таком формате. Кроме того, вы можете использовать интерфейс редактора для добавления содержимого в базу знаний.
+В некоторых случаях QnA Maker не может автоматически извлечь содержимое в формате "вопрос — ответ" по допустимым URL-адресам. В таких случаях поместите нужное содержимое в TXT-файл и проверьте, сможет ли средство извлечь содержимое в таком формате. Кроме того, вы можете использовать интерфейс редактора для добавления содержимого в базу знаний на [портале QnA Maker](https://qnamaker.ai).
 
 ## <a name="how-large-a-knowledge-base-can-i-create"></a>Базу данных какого размера можно создать?
 
 Допустимый размер базы знаний зависит от номера SKU, который вы выбрали для Поиска Azure при создании службы QnA Maker. Дополнительные сведения см. [здесь](./Tutorials/choosing-capacity-qnamaker-deployment.md).
 
-## <a name="why-do-i-not-see-anything-in-the-drop-down-for-when-i-try-to-create-a-new-knowledge-base"></a>Почему ничего не отображается в раскрывающемся списке, когда я пытаюсь создать базу знаний?
+## <a name="why-cant-i-see-anything-in-the-drop-down-when-i-try-to-create-a-new-knowledge-base"></a>Почему ничего не отображается в раскрывающемся списке, когда я пытаюсь создать базу знаний?
 
-Скорее всего, вы еще не создали службу QnA Maker в Azure. [Здесь](./How-To/set-up-qnamaker-service-azure.md) вы можете узнать, как это сделать.
+Скорее всего, вы еще не создали службу QnA Maker в Azure. Щелкните [здесь](./How-To/set-up-qnamaker-service-azure.md), чтобы узнать, как это сделать.
 
-## <a name="how-do-i-share-a-knowledge-base-with-other"></a>Как поделиться базой знаний с другими пользователями?
+## <a name="how-do-i-share-a-knowledge-base-with-others"></a>Как поделиться базой знаний с другими пользователями?
 
-Совместное использование работает на уровне службы QnA Maker, т. е. все базы знаний в службах предоставляются в общий доступ. [Здесь](./How-To/collaborate-knowledge-base.md) подробно описана совместная работа над базой знаний.
+Совместное использование работает на уровне службы QnA Maker, т. е. все базы знаний в службах предоставляются для общего доступа. [Здесь](./How-To/collaborate-knowledge-base.md) подробно описана совместная работа над базой знаний.
+
+## <a name="can-you-share-a-kb-with-a-contributor-that-is-not-in-the-same-aad-tenant-to-modify-a-kb"></a>Можно ли предоставить базу знаний для редактирования участнику, который находится в другом клиенте AAD? 
+
+При совместном использовании используется механизм управления доступом на основе ролей (RBAC) Azure. Если вы можете предоставить общий доступ к _любому_ ресурсу в Azure другому пользователю, вы можете сделать то же самое с QnA Maker.
+
+## <a name="if-you-have-an-app-service-plan-with-5-qnamaker-kbs-can-you-assign-readwrite-rights-to-5-different-users-so-each-of-them-can-access-only-1-qnamaker-kb"></a>Предположим, у вас есть план службы приложений с пятью базами знаний QnA Maker. Можно ли предоставить пяти разным пользователям права на чтение и запись так, чтобы каждый из них мог использовать только одну базу знаний QnA Maker?
+
+Общий доступ предоставляется к службе QnA Maker в целом, а не к отдельным базам знаний.
 
 ## <a name="how-can-i-change-the-default-message-when-no-good-match-is-found"></a>Как изменить сообщение, которое отображается по умолчанию при отсутствии подходящего совпадения?
 
@@ -56,7 +64,7 @@ ms.locfileid: "47164622"
 
 ## <a name="the-updates-that-i-made-to-my-knowledge-base-are-not-reflected-on-publish-why-not"></a>Обновления, выполненные в базе знаний, не отразились в публикации. Почему так происходит?
 
-Любую операцию изменения (обновление таблиц, тесты или настройки) нужно сохранить, чтобы она была опубликована. Не забывайте нажать кнопку "Save and train" (Сохранить и обучить) после любого изменения данных.
+Любую операцию изменения (обновление таблиц, тесты или настройки) нужно сохранить, чтобы она была опубликована. Не забывайте нажимать кнопку  **Save and train**  (Сохранить и обучить) после любого изменения данных.
 
 ## <a name="when-should-i-refresh-my-endpoint-keys"></a>Когда мне нужно обновить ключи конечной точки?
 
@@ -74,13 +82,17 @@ ms.locfileid: "47164622"
 
 Если у вас есть содержимое на нескольких языках, обязательно создайте отдельную службу для каждого языка.
 
+## <a name="can-i-use-the-same-azure-search-resource-for-kbs-using-multiple-languages"></a>Можно ли использовать один и тот же ресурс службы поиска Azure для статей базы знаний на разных языках?
+
+Чтобы использовать несколько языков и несколько баз знаний, пользователю придется создать ресурс QnA Maker для каждого языка. При этом для каждого языка будет создана отдельная служба поиска Azure. Сочетание баз знаний на нескольких языках в одной службе поиска Azure приведет к снижению релевантности результатов.
+
 ## <a name="do-i-need-to-use-bot-framework-in-order-to-use-qna-maker"></a>Нужна ли платформа Bot Framework для использования QnA Maker?
 
 Нет, вам не нужно использовать Bot Framework с QnA Maker. Но QnA Maker предоставляется в числе шаблонов службы Azure Bot. Служба Azure Bot позволяет быстро разрабатывать интеллектуальные боты на платформе Microsoft Bot Framework, которые выполняются в бессерверной среде.
 
 ## <a name="how-can-i-create-a-bot-with-qna-maker"></a>Как создать бота с помощью QnA Maker?
 
-Следуйте инструкциям в [этом](./Tutorials/create-qna-bot.md) документе, чтобы создать бота в Azure Bot.
+Для создания бота в службе Azure Bot следуйте инструкциям из [этого](./Tutorials/create-qna-bot.md) документа.
 
 ## <a name="how-do-i-embed-the-qna-maker-service-in-my-website"></a>Как внедрить службу QnA Maker в веб-сайт?
 

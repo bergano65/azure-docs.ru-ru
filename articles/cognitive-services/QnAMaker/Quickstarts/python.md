@@ -1,7 +1,7 @@
 ---
 title: REST API (версия 4) — Python — QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Сведения и примеры кода для быстрого начала работы с API перевода текстов Microsoft в Microsoft Cognitive Services в Azure.
+description: Сведения и примеры кода Python для быстрого начала работы с API перевода текстов Microsoft в Microsoft Cognitive Services в Azure.
 services: cognitive-services
 author: diberry
 manager: cgronlun
@@ -10,19 +10,19 @@ ms.component: qna-maker
 ms.topic: article
 ms.date: 10/19/2018
 ms.author: diberry
-ms.openlocfilehash: 595eee6a10192d877aa77f4849bac494dff05808
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: 1eff6ab146bb3a7ee053b8ac7fe3137d7c58c93a
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49650015"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212477"
 ---
 # <a name="qna-maker-rest-api-with-python"></a>REST API службы QnA Maker с Python
 <a name="HOLTop"></a>
 
-В этой статье показано, как использовать [API службы QnA Maker Майкрософт](../Overview/overview.md) с помощью Python, чтобы делать следующее.
+В этой статье показано, как с помощью [API службы QnA Maker Майкрософт](../Overview/overview.md)  и Python выполнять следующие действия.
 
-- [Создание базы знаний.](#Create)
+- [Создавать базу знаний.](#Create)
 - [Обновлять существующую базу знаний.](#Update)
 - [Получать состояние запроса для создания или обновления базы знаний.](#Status)
 - [Публиковать существующую базу знаний.](#Publish)

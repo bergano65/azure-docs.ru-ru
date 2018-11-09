@@ -1,23 +1,22 @@
 ---
-title: Таблица поддержки для репликации виртуальных машин VMware или физических серверов в дополнительное расположение VMware с помощью Azure Site Recovery | Документация Майкрософт
-description: Общие сведения о поддержке репликации VMware или физических серверов в дополнительное расположение с помощью Azure Site Recovery
-services: site-recovery
+title: Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов на дополнительный сайт VMware с помощью Azure Site Recovery | Документация Майкрософт
+description: Сводная информация о поддержке аварийного восстановления виртуальных машин VMware и физических серверов на дополнительный сайт с помощью Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 07/06/2018
+ms.date: 10/29/2018
 ms.author: raynew
-ms.openlocfilehash: 4df929e8a185a04aef5cb13f30c19b0db707e765
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
+ms.openlocfilehash: 8406cf2b31b87cdb4f6c9b6ba3d06559cf1d4d41
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44021999"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50209808"
 ---
-# <a name="support-matrix-for-replication-of-vmware-vms-and-physical-servers-to-a-secondary-site"></a>Таблица поддержки для репликации виртуальных машин VMware или физических серверов в дополнительное расположение
+# <a name="support-matrix-for-disaster-recovery-of-vmware-vms-and-physical-servers-to-a-secondary-site"></a>Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов на дополнительный сайт
 
-В этой статье перечислены поддерживаемые конфигурации и компоненты при использовании службы [Azure Site Recovery](site-recovery-overview.md) для репликации виртуальных машин VMware или физических серверов Windows либо Linux в дополнительное локальное расположение.
+В этой статье перечислены конфигурации и компоненты, которые поддерживаются при аварийном восстановлении виртуальных машин VMware и физических серверов Windows и Linux на дополнительный сайт VMware с помощью службы [Azure Site Recovery](site-recovery-overview.md).
 
 - Если нужно реплицировать виртуальные машины VMware или физические серверы в Azure, ознакомьтесь с [этой таблицей поддержки](vmware-physical-azure-support-matrix.md).
 - А если нужно реплицировать виртуальные машины Hyper-V в дополнительное расположение, ознакомьтесь с [этой таблицей поддержки](hyper-v-azure-support-matrix.md).
@@ -68,7 +67,7 @@ Linux | Red Hat Enterprise Linux 6.7, 6.8, 6.9, 7.1 или 7.2. <br/><br/> CentO
 Гостевая виртуальная машина — несколько сетевых адаптеров | Yes
 
 
-## <a name="storage"></a>служба хранилища.
+## <a name="storage"></a>Хранилище
 
 ### <a name="host-storage"></a>Хранилище узла
 

@@ -1,6 +1,6 @@
 ---
-title: 'Azure Monitor для виртуальных машин: вопросы и ответы | Microsoft Docs'
-description: Azure Monitor для виртуальных машин — это решение в Azure, которое отслеживает работоспособность и производительность ОС виртуальных машин Azure, автоматически обнаруживает компоненты приложений и их зависимости от других ресурсов, а также строит схему каналов связи между ними. В этой статье приведены ответы на распространенные вопросы.
+title: 'Azure Monitor для виртуальных машин (предварительная версия): вопросы и ответы | Документация Майкрософт'
+description: Azure Monitor для виртуальных машин (предварительная версия) — это решение в Azure, которое отслеживает работоспособность и производительность ОС виртуальных машин Azure, автоматически обнаруживает компоненты приложений и их зависимости от других ресурсов, а также строит схему каналов связи между ними. В этой статье приведены ответы на распространенные вопросы.
 services: azure-monitor
 documentationcenter: ''
 author: mgoedtel
@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/19/2018
+ms.date: 10/25/2018
 ms.author: magoedte
-ms.openlocfilehash: 282620342d2348868ceab5257de7415a9cb2147c
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: ff870f948acaae14ba772e14d48b27683f0bf07e
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49388365"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091697"
 ---
-# <a name="azure-monitor-for-vms-frequently-asked-questions"></a>Azure Monitor для виртуальных машин: вопросы и ответы
-В этом списке вопросов и ответов от Майкрософт приведены часто задаваемые вопросы об Azure Monitor для виртуальных машин в Microsoft Azure. Если у вас есть другие вопросы об этом решении, вы можете задать их на [форуме для обсуждений](https://feedback.azure.com/forums/34192--general-feedback). Если вопрос задается часто, мы добавим его в эту статью, чтобы его можно было найти быстро и легко.
+# <a name="azure-monitor-for-vms-preview-frequently-asked-questions"></a>Azure Monitor для виртуальных машин (предварительная версия): вопросы и ответы
+В этом списке вопросов и ответов от Майкрософт приведены часто задаваемые вопросы об Azure Monitor для виртуальных машин. Если у вас есть другие вопросы об этом решении, вы можете задать их на [форуме для обсуждений](https://feedback.azure.com/forums/34192--general-feedback). Если вопрос задается часто, мы добавим его в эту статью, чтобы его можно было найти быстро и легко.
 
 ## <a name="can-i-onboard-to-an-existing-workspace"></a>Можно ли подключиться к существующей рабочей области?
 Если ваши виртуальные машины уже подключены к рабочей области Log Analytics, вы можете продолжить использовать эту рабочую область при подключении к Azure Monitor для виртуальных машин при условии, что эта рабочая область находится в одном из перечисленных [здесь](monitoring-vminsights-onboard.md#prerequisites) поддерживаемых регионов.

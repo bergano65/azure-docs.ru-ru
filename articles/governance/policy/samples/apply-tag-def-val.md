@@ -6,69 +6,223 @@ author: DCtheGeek
 manager: carmonm
 ms.service: azure-policy
 ms.topic: sample
-ms.date: 09/18/2018
+ms.date: 10/29/2018
 ms.author: dacoulte
 ms.custom: mvc
-ms.openlocfilehash: 52316277a3e784e2d88f3d073f59b94124c08e5e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 3f900d39b0260836013f3e42e147654e1d7a2226
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46947669"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50214483"
 ---
 # <a name="apply-tag-and-its-default-value"></a>Применение тега и его значения по умолчанию
 
 Эта политика добавляет имя и значение указанного тега (если этот тег не предоставлен). Вы можете указать имя и значение применяемого тега.
 
+Развернуть этот образец политики можно с помощью следующих средств.
+
+- [портал Azure](#azure-portal).
+- [Azure PowerShell](#azure-powershell)
+- [Интерфейс командной строки Azure](#azure-cli)
+- [REST API](#rest-api)
+
 [!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="sample-template"></a>Пример шаблона
+## <a name="sample-policy"></a>Пример политики
+
+### <a name="policy-definition"></a>Определение политики
+
+Полное описание политики JSON, использующееся API REST, кнопками «Развернуть в Azure» и вручную на портале.
 
 [!code-json[main](../../../../policy-templates/samples/built-in-policy/apply-default-tag-value/azurepolicy.json "Apply tag and its default value")]
 
-Можно развернуть шаблон с помощью [портала Azure](#deploy-with-the-portal), [PowerShell](#deploy-with-powershell) или [интерфейса командной строки Azure](#deploy-with-azure-cli).
+> [!NOTE]
+> Если создавать политику на портале вручную, используйте вышеизложенные части **properties.parameters** и **properties.policyRule**. Создайте программу-оболочку двух разделов вместе с фигурными скобками `{}` для внесения допустимых данных JSON.
 
-## <a name="deploy-with-the-portal"></a>Развертывание с помощью портала
+### <a name="policy-rules"></a>Правила политики
 
-[![Развертывание в Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/?feature.customportal=false&microsoft_azure_policy=true&microsoft_azure_policy_policyinsights=true&feature.microsoft_azure_security_policy=true&microsoft_azure_marketplace_policy=true#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-policy%2Fmaster%2Fsamples%2Fbuilt-in-policy%2Fapply-default-tag-value%2Fazurepolicy.json)
+JSON определяет правила политики, используемые Azure CLI и Azure PowerShell.
 
-## <a name="deploy-with-powershell"></a>Развертывание с помощью PowerShell
+[!code-json[rule](../../../../policy-templates/samples/built-in-policy/apply-default-tag-value/azurepolicy.rules.json "Policy rules (JSON)")]
+
+### <a name="policy-parameters"></a>Параметры политики
+
+JSON определяет параметры политики, используемые Azure CLI и Azure PowerShell.
+
+[!code-json[parameters](../../../../policy-templates/samples/built-in-policy/apply-default-tag-value/azurepolicy.parameters.json "Policy parameters (JSON)")]
+
+|ИМЯ |type |Поле |ОПИСАНИЕ |
+|---|---|---|---|
+|tagName |Строка |tags |Имя тега, например costCenter|
+|tagValue |Строка |tags |Значение тега, например headquarter|
+
+При создании задания через PowerShell или Azure CLI значения параметров могут передаваться как JSON или в строке, или через файл с использованием `-PolicyParameter` (PowerShell) или `--params` (Azure CLI).
+PowerShell также поддерживает `-PolicyParameterObject`, требующий передать командлету хэш-таблицу имен и значений, где **Имя** является именем параметра, а **значение** — отдельным значением или массивом значений, передаваемых во время назначения.
+
+В этом примере параметр _tagName_ имеет значение **costCenter** и параметр _tagValue_ имеет значение **headquarter**.
+
+```json
+{
+    "tagName": {
+        "value": "costCenter"
+    },
+    "tagValue": {
+        "value": "headquarter"
+    }
+}
+```
+
+## <a name="azure-portal"></a>Портал Azure
+
+[![Развертывание в Azure](../media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-policy%2Fmaster%2Fsamples%2Fbuilt-in-policy%2Fapply-default-tag-value%2Fazurepolicy.json)
+[![Развертывание в Azure для государственных организаций](../media/deploy/deployGovbutton.png)](https://portal.azure.us/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-policy%2Fmaster%2Fsamples%2Fbuilt-in-policy%2Fapply-default-tag-value%2Fazurepolicy.json)
+
+## <a name="azure-powershell"></a>Azure PowerShell
 
 [!INCLUDE [sample-powershell-install](../../../../includes/sample-powershell-install-no-ssh.md)]
 
-```azurepowershell-interactive
-$definition = New-AzureRmPolicyDefinition -Name "apply-default-tag-value" -DisplayName "Apply tag and its default value" -description "Applies a required tag and its default value if it is not specified by the user." -Policy 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/built-in-policy/apply-default-tag-value/azurepolicy.rules.json' -Parameter 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/built-in-policy/apply-default-tag-value/azurepolicy.parameters.json' -Mode All
-$definition
-$assignment = New-AzureRMPolicyAssignment -Name <assignmentname> -Scope <scope>  -tagName <tagName> -tagValue <tagValue> -PolicyDefinition $definition
-$assignment
-```
-
-### <a name="clean-up-powershell-deployment"></a>Очистка развертывания, выполненного с помощью PowerShell
-
-Выполните следующую команду, чтобы удалить группу ресурсов, виртуальную машину и все связанные с ней ресурсы.
+### <a name="deploy-with-azure-powershell"></a>Развертывание с помощью Azure PowerShell
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name myResourceGroup
+# Create the Policy Definition (Subscription scope)
+$definition = New-AzureRmPolicyDefinition -Name 'allowed-custom-images' -DisplayName 'Approved VM images' -description 'This policy governs the approved VM images' -Policy 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/built-in-policy/apply-default-tag-value/azurepolicy.rules.json' -Parameter 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/built-in-policy/apply-default-tag-value/azurepolicy.parameters.json' -Mode All
+
+# Set the scope to a resource group; may also be a subscription or management group
+$scope = Get-AzureRmResourceGroup -Name 'YourResourceGroup'
+
+# Set the Policy Parameter (JSON format)
+$policyparam = '{ "tagName": { "value": "costCenter" }, "tagValue": { "value": "headquarter" } }'
+
+# Create the Policy Assignment
+$assignment = New-AzureRmPolicyAssignment -Name 'apply-default-tag-value' -DisplayName 'Apply tag and its default value Assignment' -Scope $scope.ResourceId -PolicyDefinition $definition -PolicyParameter $policyparam
 ```
 
-## <a name="deploy-with-azure-cli"></a>Развертывание с помощью интерфейса командной строки Azure
+### <a name="remove-with-azure-powershell"></a>Удаление с помощью Azure PowerShell
+
+Чтобы удалить предыдущее назначение и определение, выполните следующую команду.
+
+```azurepowershell-interactive
+# Remove the Policy Assignment
+Remove-AzureRmPolicyAssignment -Id $assignment.ResourceId
+
+# Remove the Policy Definition
+Remove-AzureRmPolicyDefinition -Id $definition.ResourceId
+```
+
+### <a name="azure-powershell-explanation"></a>Пояснение Azure PowerShell
+
+Чтобы развернуть и удалить скрипты используйте следующие команды. Для каждой команды в следующей таблице приведены ссылки на соответствующую документацию:
+
+| Get-Help | Примечания |
+|---|---|
+| [New-AzureRmPolicyDefinition](/powershell/module/azurerm.resources/new-azurermpolicydefinition) | Создается новое определение политики Azure. |
+| [Get-AzureRmResourceGroup](/powershell/module/azurerm.resources/get-azurermresourcegroup) | Получение одной группы ресурсов. |
+| [New-AzureRmPolicyAssignment](/powershell/module/azurerm.resources/new-azurermpolicyassignment) | Создается новое назначение политики Azure. В этом примере политики предоставляется определение, но она также может взять на себя инициативу. |
+| [Remove-AzureRmPolicyAssignment](/powershell/module/azurerm.resources/remove-azurermpolicyassignment) | Удаление существующего назначения политики Azure. |
+| [Remove-AzureRmPolicyDefinition](/powershell/module/azurerm.resources/remove-azurermpolicydefinition) | Удаление существующего определения политики Azure. |
+
+## <a name="azure-cli"></a>Инфраструктура CLI Azure
 
 [!INCLUDE [sample-cli-install](../../../../includes/sample-cli-install.md)]
 
-```azurecli-interactive
-az policy definition create --name 'apply-default-tag-value' --display-name 'Apply tag and its default value' --description 'Applies a required tag and its default value if it is not specified by the user.' --rules 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/built-in-policy/apply-default-tag-value/azurepolicy.rules.json' --params 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/built-in-policy/apply-default-tag-value/azurepolicy.parameters.json' --mode All
-
-az policy assignment create --name <assignmentname> --scope <scope> --policy "apply-default-tag-value"
-```
-
-### <a name="clean-up-azure-cli-deployment"></a>Очистка развертывания, выполненного с помощью интерфейса командной строки Azure
-
-Выполните следующую команду, чтобы удалить группу ресурсов, виртуальную машину и все связанные с ней ресурсы.
+### <a name="deploy-with-azure-cli"></a>Развертывание с помощью интерфейса командной строки Azure
 
 ```azurecli-interactive
-az group delete --name myResourceGroup --yes
+# Create the Policy Definition (Subscription scope)
+definition=$(az policy definition create --name 'apply-default-tag-value' --display-name 'Apply tag and its default value' --description 'Applies a required tag and its default value if it is not specified by the user' --rules 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/built-in-policy/apply-default-tag-value/azurepolicy.rules.json' --params 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/built-in-policy/apply-default-tag-value/azurepolicy.parameters.json' --mode All)
+
+# Set the scope to a resource group; may also be a subscription or management group
+scope=$(az group show --name 'YourResourceGroup')
+
+# Set the Policy Parameter (JSON format)
+policyparam='{ "tagName": { "value": "costCenter" }, "tagValue": { "value": "headquarter" } }'
+
+# Create the Policy Assignment
+assignment=$(az policy assignment create --name 'apply-default-tag-value' --display-name 'Apply tag and its default value Assignment' --scope `echo $scope | jq '.id' -r` --policy `echo $definition | jq '.name' -r` --params "$policyparam")
 ```
+
+### <a name="remove-with-azure-cli"></a>Удаление с помощью интерфейса командной строки Azure
+
+Чтобы удалить предыдущее назначение и определение, выполните следующую команду.
+
+```azurecli-interactive
+# Remove the Policy Assignment
+az policy assignment delete --name `echo $assignment | jq '.name' -r`
+
+# Remove the Policy Definition
+az policy definition delete --name `echo $definition | jq '.name' -r`
+```
+
+### <a name="azure-cli-explanation"></a>Пояснение Azure CLI
+
+| Get-Help | Примечания |
+|---|---|
+| [az policy definition create](/cli/azure/policy/definition?view=azure-cli-latest#az-policy-definition-create) | Создается новое определение политики Azure. |
+| [az group show](/cli/azure/group?view=azure-cli-latest#az-group-show) | Получение одной группы ресурсов. |
+| [az policy assignment create](/cli/azure/policy/assignment?view=azure-cli-latest#az-policy-assignment-create) | Создается новое назначение политики Azure. В этом примере политики предоставляется определение, но она также может взять на себя инициативу. |
+| [az policy assignment delete](/cli/azure/policy/assignment?view=azure-cli-latest#az-policy-assignment-delete) | Удаление существующего назначения политики Azure. |
+| [az policy definition delete](/cli/azure/policy/definition?view=azure-cli-latest#az-policy-definition-delete) | Удаление существующего определения политики Azure. |
+
+Существует несколько средств, которые могут использоваться для взаимодействия с диспетчером ресурсов REST API, такие как [ARMClient](https://github.com/projectkudu/ARMClient) или PowerShell. Пример вызова интерфейса API REST PowerShell можно найти в разделе **Псевдонимы** статьи [Структура определения службы "Политика Azure"](../concepts/definition-structure.md#aliases).
+
+### <a name="deploy-with-rest-api"></a>Развертывание с помощью REST API
+
+- Создайте определения политики (область подписки). Используйте [определения политики](#policy-definition) JSON для текста запроса.
+
+  ```http
+  PUT https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions/apply-default-tag-value?api-version=2016-12-01
+  ```
+
+- Создайте назначения политики (область группы ресурсов).
+
+  ```http
+  PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/YourResourceGroup/providers/Microsoft.Authorization/policyAssignments/apply-default-tag-value-assignment?api-version=2017-06-01-preview
+  ```
+
+  Используйте следующий пример JSON для текста запроса.
+
+  ```json
+  {
+      "properties": {
+          "displayName": "Apply tag and its default value Assignment",
+          "policyDefinitionId": "/subscriptions/<subscriptionId>/providers/Microsoft.Authorization/policyDefinitions/apply-default-tag-value",
+          "parameters": {
+              "tagName": {
+                  "value": "costCenter"
+              },
+              "tagValue": {
+                  "value": "headquarter"
+              }
+          }
+      }
+  }
+  ```
+
+### <a name="remove-with-rest-api"></a>Удаление с помощью REST API
+
+- Удаление назначения политики
+
+  ```http
+  DELETE https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyAssignments/apply-default-tag-value-assignment?api-version=2017-06-01-preview
+  ```
+
+- Удаление определения политики
+
+  ```http
+  DELETE https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions/apply-default-tag-value?api-version=2016-12-01
+  ```
+
+### <a name="rest-api-explanation"></a>Описание REST API
+
+| Service | Группа | Операция | Примечания |
+|---|---|---|---|
+| Управление ресурсами | Определения политик | [Создание](/rest/api/resources/policydefinitions/createorupdate) | Создается новое определение политики Azure в подписке. Альтернативный вариант: [Создание в группе управления](/rest/api/resources/policydefinitions/createorupdateatmanagementgroup) |
+| Управление ресурсами | Назначения политик | [Создание](/rest/api/resources/policyassignments/create) | Создается новое назначение политики Azure. В этом примере политики предоставляется определение, но она также может взять на себя инициативу. |
+| Управление ресурсами | Назначения политик | [Удалить](/rest/api/resources/policyassignments/delete) | Удаление существующего назначения политики Azure. |
+| Управление ресурсами | Определения политик | [Удалить](/rest/api/resources/policydefinitions/delete) | Удаление существующего определения политики Azure. Альтернатива: [Удаление в группе управления](/rest/api/resources/policydefinitions/deleteatmanagementgroup) |
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Другие примеры см. в разделе [Примеры для политики Azure](index.md)
+- Просмотр дополнительных [примеров для Политики Azure](index.md)
+- Просмотр [Структура определения службы "Политика Azure"](../concepts/definition-structure.md)

@@ -1,20 +1,21 @@
 ---
-title: Репликация приложений с помощью SQL Server и Azure Site Recovery | Документы Майкрософт
-description: В этой статье рассматривается репликация SQL Server с помощью возможностей аварийного восстановления SQL Server и Azure Site Recovery.
+title: Настройка аварийного восстановления для SQL Server с помощью SQL Server и Azure Site Recovery | Документация Майкрософт
+description: В этой статье описано, как настроить аварийное восстановление для SQL Server с использованием SQL Server и Azure Site Recovery.
 services: site-recovery
-author: rayne-wiselman
+author: sujayt
+manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 07/22/2018
-ms.author: raynew
-ms.openlocfilehash: a734999f0fa473b5f1ee8ed55c4b73950566490d
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.author: sutalasi
+ms.openlocfilehash: 46f5f73293875cd89036eb615e7bd81188bc4c67
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43188779"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210267"
 ---
-# <a name="protect-sql-server-using-sql-server-disaster-recovery-and-azure-site-recovery"></a>Защита SQL Server с помощью аварийного восстановления SQL Server и Azure Site Recovery
+# <a name="set-up-disaster-recovery-for-sql-server"></a>Настройка аварийного восстановления для SQL Server 
 
 В этой статье описывается способ организации защиты серверной части SQL Server приложения с помощью сочетания технологий непрерывности бизнес-процессов и аварийного восстановления (BCDR) SQL Server и [Azure Site Recovery](site-recovery-overview.md).
 

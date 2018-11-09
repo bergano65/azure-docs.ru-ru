@@ -6,27 +6,25 @@ author: PatAltimore
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 08/14/2018
+ms.date: 10/23/2018
 ms.author: patricka
 ms.reviewer: fiseraci
 keywords: ''
-ms.openlocfilehash: d46fd8f5ea00ee1fc1ee5f7bf09a15dd6af5ba50
-ms.sourcegitcommit: 4edf9354a00bb63082c3b844b979165b64f46286
+ms.openlocfilehash: d81478e6bdaf4a1844d01278b961350c81b2edd6
+ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48785585"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50087735"
 ---
 # <a name="azure-stack-datacenter-integration---syslog-forwarding"></a>Интеграция центра обработки данных Azure Stack. Перенаправление системного журнала
 
 В этой статье показано, как с помощью системного журнала настроить интеграцию инфраструктуры Azure Stack с внешними решениями безопасности, развернутыми в вашем центре обработки данных. Например, с системой управления информационной безопасностью и событиями безопасности (SIEM). Канал системного журнала передает журналы аудита, оповещений и безопасности от всех компонентов инфраструктуры Azure Stack. Перенаправление системного журнала позволяет наладить интеграцию с решениями для мониторинга безопасности и (или) извлечь все журналы аудита, оповещений и безопасности для длительного хранения. 
 
-Начиная с обновления 1805, Azure Stack имеет встроенный клиент системного журнала, который можно настроить на выдачу сообщений системного журнала с полезными данными в формате CEF (общий формат событий). 
+Начиная с обновления 1809 Azure Stack использует встроенный клиент системного журнала, который можно настроить на выдачу сообщений системного журнала с полезными данными в формате CEF (общий формат событий).
 
-> [!IMPORTANT] 
-> Перенаправление системного журнала предоставляется в режиме предварительной версии. Эту функцию пока не стоит использовать в рабочих средах.  
-
-На следующей схеме показаны основные компоненты, которые участвуют в интеграции системного журнала.
+На приведенной ниже схема показана интеграция Azure Stack с внешней системой SIEM. Есть два шаблона интеграции, которые следует учитывать. Синим цветом выделена инфраструктура Azure Stack, которая содержит виртуальные машины инфраструктуры и узлы Hyper-V. Все записи об аудите, журналы безопасности и оповещения от этих компонентов централизованно собираются и отображаются в системном журнале с полезными данными в формате CEF. Такой шаблон интеграции описан на этой странице документации.
+Второй шаблон интеграции, который выделен оранжевым цветом, охватывает контроллеры управления основной платой (BMC), узел жизненного цикла оборудования (HLH), виртуальные машины и (или) виртуальные устройства, на которых выполняется программное обеспечение поставщика оборудования для мониторинга и управления, а также стоечные коммутаторы (TOR). Эти компоненты будут разными у разных поставщиков оборудования. Поэтому документацию по их интеграции с внешней системой SIEM следует получить у партнера, который предоставляет вам это оборудование.
 
 ![Схема перенаправления системного журнала](media/azure-stack-integrate-security/syslog-forwarding.png)
 
@@ -52,7 +50,7 @@ ms.locfileid: "48785585"
 ```powershell
 ### cmdlet to pass the syslog server information to the client and to configure the transport protocol, the encryption and the authentication between the client and the server
 
-Set-SyslogServer [-ServerName <String>] [-NoEncryption] [-SkipCertificateCheck] [-SkipCNCheck] [-UseUDP] [-Remove]
+Set-SyslogServer [-ServerName <String>] [-ServerPort <String>] [-NoEncryption] [-SkipCertificateCheck] [-SkipCNCheck] [-UseUDP] [-Remove]
 
 ### cmdlet to configure the certificate for the syslog client to authenticate with the server
 
@@ -65,6 +63,7 @@ Set-SyslogClient [-pfxBinary <Byte[]>] [-CertPassword <SecureString>] [-RemoveCe
 | Параметр | ОПИСАНИЕ | type | Обязательно |
 |---------|---------|---------|---------|
 |*ServerName* | Полное доменное имя или IP-адрес сервера системного журнала | Строка | Да|
+|*ServerPort* | Номер порта, через который сервер системного журнала ожидает передачи данных | Строка | Да|
 |*NoEncryption*| Принудительная отправка сообщений из клиента системного журнала в формате открытого текста | Флаг | Нет|
 |*SkipCertificateCheck*| Отмена проверки сертификата, который предоставляется сервером системного журнала во время первоначального подтверждения TLS | Флаг | Нет|
 |*SkipCNCheck*| Отмена проверки общего имени сертификата, который предоставляется сервером системного журнала во время первоначального подтверждения TLS | Флаг | Нет|
@@ -85,11 +84,11 @@ Set-SyslogClient [-pfxBinary <Byte[]>] [-CertPassword <SecureString>] [-RemoveCe
 > [!IMPORTANT]
 > Корпорация Майкрософт настоятельно рекомендует использовать для рабочей среды только эту конфигурацию. 
 
-Чтобы настроить перенаправление системного журнала по протоколу TCP со взаимной проверкой подлинности и шифрованием TLS 1.2, выполните эти два командлета:
+Чтобы настроить перенаправление системного журнала по протоколу TCP со взаимной проверкой подлинности и шифрованием TLS 1.2, выполните эти два командлета в сеансе связи с привилегированной конечной точкой:
 
 ```powershell
 # Configure the server
-Set-SyslogServer -ServerName <FQDN or ip address of syslog server>
+Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -ServerPort <Port number on which the syslog server is listening on>
 
 # Provide certificate to the client to authenticate against the server
 Set-SyslogClient -pfxBinary <Byte[] of pfx file> -CertPassword <SecureString, password for accessing the pfx file>
@@ -99,7 +98,7 @@ Set-SyslogClient -pfxBinary <Byte[] of pfx file> -CertPassword <SecureString, pa
 
 ```powershell
 ##Example on how to set your syslog client with the certificate for mutual authentication.
-##Run these cmdlets from your hardware lifecycle host or privileged access workstation.
+##This example script must be run from your hardware lifecycle host or privileged access workstation.
 
 $ErcsNodeName = "<yourPEP>"
 $password = ConvertTo-SecureString -String "<your cloudAdmin account password" -AsPlainText -Force
@@ -125,7 +124,7 @@ $params = @{
 Write-Verbose "Invoking cmdlet to set syslog client certificate..." -Verbose 
 Invoke-Command @params -ScriptBlock { 
     param($CertContent, $CertPassword) 
-    Set-SyslogClient -PfxBinary $CertContent -CertPassword $CertPassword 
+    Set-SyslogClient -PfxBinary $CertContent -CertPassword $CertPassword }
 ```
 
 ### <a name="configuring-syslog-forwarding-with-tcp-server-authentication-and-tls-12-encryption"></a>Настройка перенаправления системного журнала по протоколу TCP с проверкой подлинности сервера и шифрованием TLS 1.2
@@ -134,17 +133,19 @@ Invoke-Command @params -ScriptBlock {
 Протокол TCP с проверкой подлинности и шифрованием используется как конфигурация по умолчанию, так как корпорация Майкрософт считает такой уровень безопасности минимально допустимым для рабочих сред. 
 
 ```powershell
-Set-SyslogServer -ServerName <FQDN or ip address of syslog server>
+Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -ServerPort <Port number on which the syslog server is listening on>
 ```
 
 Если вы хотите только протестировать интеграцию клиента Azure Stack с сервером системного журнала, используя самозаверяющий и (или) ненадежный сертификат, с помощью следующих флагов пропустите проверку сервера, которую клиент выполняет при первоначальном подтверждении.
 
 ```powershell
-#Skip validation of the Common Name value in the server certificate. Use this flag if you provide an IP address for your syslog server
-Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -SkipCNCheck 
- 
-#Skip entirely the server certificate validation
-Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -SkipCertificateCheck
+ #Skip validation of the Common Name value in the server certificate. Use this flag if you provide an IP address for your syslog server
+ Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -ServerPort <Port number on which the syslog server is listening on>
+ -SkipCNCheck
+
+ #Skip entirely the server certificate validation
+ Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -ServerPort <Port number on which the syslog server is listening on>
+ -SkipCertificateCheck
 ```
 
 > [!IMPORTANT]
@@ -155,7 +156,7 @@ Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -SkipCertific
 В этой конфигурации клиент системного журнала в Azure Stack передает сообщения на сервер системного журнала по протоколу TCP без шифрования. Клиент не будет проверять подлинность сервера и не будет предоставлять серверу сведения для собственной идентификации. 
 
 ```powershell
-Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -NoEncryption
+Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -ServerPort <Port number on which the syslog server is listening on> -NoEncryption
 ```
 
 > [!IMPORTANT]
@@ -167,7 +168,7 @@ Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -NoEncryption
 В этой конфигурации клиент системного журнала в Azure Stack передает сообщения на сервер системного журнала по протоколу UDP без шифрования. Клиент не будет проверять подлинность сервера и не будет предоставлять серверу сведения для собственной идентификации. 
 
 ```powershell
-Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -UseUDP
+Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -ServerPort <Port number on which the syslog server is listening on> -UseUDP
 ```
 
 Настройка протокола UDP без шифрования будет самой простой, но этот вариант не обеспечивает защиту от атак "злоумышленник в середине" и (или) от неавторизованного прослушивания сообщений. 
@@ -227,6 +228,72 @@ CEF: <Version>|<Device Vendor>|<Device Product>|<Device Version>|<Signature ID>|
 * Device Product: Microsoft Azure Stack
 * Device Version: 1.0
 ```
+
+### <a name="cef-mapping-for-privileged-endpoint-events"></a>Сопоставление CEF для событий привилегированной конечной точки
+
+```
+Prefix fields
+* Signature ID: Microsoft-AzureStack-PrivilegedEndpoint: <PEP Event ID>
+* Name: <PEP Task Name>
+* Severity: mapped from PEP Level (details see the PEP Severity table below)
+```
+
+Таблица событий для привилегированной конечной точки.
+
+| Событие | Идентификатор события привилегированной конечной точки. | Имя задачи привилегированной конечной точки | Уровень серьезности |
+|-------|--------------| --------------|----------|
+|PrivilegedEndpointAccessed|1000|PrivilegedEndpointAccessedEvent|5|
+|SupportSessionTokenRequested |1001|SupportSessionTokenRequestedEvent|5|
+|SupportSessionDevelopmentTokenRequested |1002|SupportSessionDevelopmentTokenRequestedEvent|5|
+|SupportSessionUnlocked |1003|SupportSessionUnlockedEvent|10|
+|SupportSessionFailedToUnlock |1004|SupportSessionFailedToUnlockEvent|10|
+|PrivilegedEndpointClosed |1005|PrivilegedEndpointClosedEvent|5|
+|NewCloudAdminUser |1006|NewCloudAdminUserEvent|10|
+|RemoveCloudAdminUser |1007|RemoveCloudAdminUserEvent|10|
+|SetCloudAdminUserPassword |1008|SetCloudAdminUserPasswordEvent|5|
+|GetCloudAdminPasswordRecoveryToken |1009|GetCloudAdminPasswordRecoveryTokenEvent|10|
+|ResetCloudAdminPassword |1010|ResetCloudAdminPasswordEvent|10|
+
+Таблица уровней серьезности для привилегированной конечной точки.
+
+| Уровень серьезности | Уровень | Числовое значение |
+|----------|-------| ----------------|
+|0|Не определено|Значение: 0. Обозначает журналы всех уровней.|
+|10|критические ошибки.|Значение: 1. Обозначает журналы критических оповещений.|
+|8|Ошибка| Значение: 2. Обозначает журналы ошибок.|
+|5|Предупреждение|Значение: 3. Обозначает журналы предупреждений.|
+|2|Информация|Значение: 4. Обозначает журналы для информационных сообщений.|
+|0|Подробная информация|Значение: 5. Обозначает журналы всех уровней.|
+
+### <a name="cef-mapping-for-recovery-endpoint-events"></a>Сопоставление CEF для событий конечной точки восстановления
+
+```
+Prefix fields
+* Signature ID: Microsoft-AzureStack-PrivilegedEndpoint: <REP Event ID>
+* Name: <REP Task Name>
+* Severity: mapped from REP Level (details see the REP Severity table below)
+```
+
+Таблица событий для конечной точки восстановления.
+
+| Событие | Идентификатор события конечной точки восстановления | Имя задачи конечной точки восстановления | Уровень серьезности |
+|-------|--------------| --------------|----------|
+|RecoveryEndpointAccessed |1011|RecoveryEndpointAccessedEvent|5|
+|RecoverySessionTokenRequested |1012|RecoverySessionTokenRequestedEvent |5|
+|RecoverySessionDevelopmentTokenRequested |1013|RecoverySessionDevelopmentTokenRequestedEvent|5|
+|RecoverySessionUnlocked |1014|RecoverySessionUnlockedEvent |10|
+|RecoverySessionFailedToUnlock |1015|RecoverySessionFailedToUnlockEvent|10|
+|RecoveryEndpointClosed |1016|RecoveryEndpointClosedEvent|5|
+
+Уровень серьезности для конечной точки восстановления
+| Уровень серьезности | Уровень | Числовое значение |
+|----------|-------| ----------------|
+|0|Не определено|Значение: 0. Обозначает журналы всех уровней.|
+|10|критические ошибки.|Значение: 1. Обозначает журналы критических оповещений.|
+|8|Ошибка| Значение: 2. Обозначает журналы ошибок.|
+|5|Предупреждение|Значение: 3. Обозначает журналы предупреждений.|
+|2|Информация|Значение: 4. Обозначает журналы для информационных сообщений.|
+|0|Подробная информация|Значение: 5. Обозначает журналы всех уровней.|
 
 ### <a name="cef-mapping-for-windows-events"></a>Сопоставление полей CEF для событий Windows
 

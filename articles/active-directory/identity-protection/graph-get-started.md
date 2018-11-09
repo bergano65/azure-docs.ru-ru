@@ -13,16 +13,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/08/2017
+ms.date: 10/26/2018
 ms.author: markvi
 ms.reviewer: nigu
 ms.custom: seohack1
-ms.openlocfilehash: 3bdf44e0a1cf0ccda6d015fa3683964f3530d4af
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 3cbded3224e7622d13e7af362cb3532a1813787e
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40003489"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50242166"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph
 Microsoft Graph — это конечная точка Unified API (Майкрософт) и источник интерфейсов API [защиты идентификации Azure Active Directory](../active-directory-identityprotection.md). Первый API, **identityRiskEvents**, позволяет запрашивать у Microsoft Graph список [событий риска](../reports-monitoring/concept-risk-events.md) и связанные с ними сведения. В статье описывается, как выполнять запросы к этому API. Дополнительные сведения, полную документацию и доступ к Graph Explorer можно получить на [сайте Microsoft Graph](https://graph.microsoft.io/).
@@ -37,8 +37,11 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
 Перед началом работы вам потребуются:
 
-* права администратора для создания приложения в Azure AD;
-* имя домена клиента (например, contoso.onmicrosoft.com).
+- клиент Azure AD P2;
+
+- права администратора для создания приложения в Azure AD;
+
+- имя домена клиента (например, contoso.onmicrosoft.com).
 
 
 ## <a name="retrieve-your-domain-name"></a>Получение имени домена 
@@ -49,12 +52,14 @@ Microsoft Graph — это конечная точка Unified API (Майкро
    
     ![Создание приложения](./media/graph-get-started/41.png)
 
+3. Щелкните **Имена пользовательских доменов**.
 
-3. В разделе **Управление** щелкните **Свойства**.
+    ![Имена пользовательских доменов](./media/graph-get-started/71.png)
 
-    ![Создание приложения](./media/graph-get-started/42.png)
+4. В списке доменных имен скопируйте имя домена, который помечен как основной.
 
-4. Скопируйте имя домена.
+    ![Имена пользовательских доменов](./media/graph-get-started/72.png)
+
 
 
 ## <a name="create-a-new-app-registration"></a>Создание регистрации приложения
@@ -74,7 +79,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
     a. В текстовое поле **Имя** введите имя приложения (например, приложение API рискового события AADIP).
    
-    b. В качестве **типа** выберите **Веб-приложение и/или веб-API**.
+    b. В поле **Тип приложения** выберите **Веб-приложение и/или веб-API**.
    
     c. В текстовом поле **URL-адрес входа** введите `http://localhost`.
 
@@ -156,9 +161,9 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
 Чтобы выполнить проверку подлинности, отправьте запрос POST по адресу `https://login.microsoft.com` со следующими параметрами в тексте:
 
-- grant_type: “**client_credentials**”
+- grant_type: "**client_credentials**"
 
--  resource: “**https://graph.microsoft.com**”
+-  resource: "**https://graph.microsoft.com**"
 
 - client_id: \<ваш идентификатор клиента\>;
 
@@ -168,7 +173,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 В случае успешного выполнения этот метод возвращает маркер проверки подлинности.  
 Для вызова API создайте заголовок со следующим параметром:
 
-    `Authorization`=”<token_type> <access_token>"
+    `Authorization`="<token_type> <access_token>"
 
 
 При проверке подлинности тип маркера и маркер доступа можно найти в возвращаемом маркере.

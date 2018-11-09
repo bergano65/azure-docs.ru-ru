@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок с Azure Monitor для контейнеров | Документация Майкрософт
+title: Устранение проблем со службой Azure Monitor для контейнеров (предварительная версия) | Документация Майкрософт
 description: В этой статье описывается, как устранить неполадки и проблемы с Azure Monitor для контейнеров.
 services: azure-monitor
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/19/2018
 ms.author: magoedte
-ms.openlocfilehash: 19d015947e5d2331c50cd64956e8a7650f96616d
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
+ms.openlocfilehash: 69e5a61d5e66e5904df31456e9311a39058787b2
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49638330"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212358"
 ---
-# <a name="troubleshooting-azure-monitor-for-containers"></a>Устранение неполадок с Azure Monitor для контейнеров
+# <a name="troubleshooting-azure-monitor-for-containers-preview"></a>Устранение проблем со службой Azure Monitor для контейнеров (предварительная версия)
 
 Когда вы настраиваете мониторинг кластера Azure Kubernetes Service (AKS) с помощью Azure Monitor для контейнеров, могут возникнуть проблемы, которые препятствуют сбору данных и отправке отчетов о состоянии. В этой статье описаны некоторые распространенные проблемы и действия по устранению неполадок.
 

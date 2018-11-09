@@ -1,20 +1,20 @@
 ---
-title: Архитектура репликации из Hyper-V в Azure в Azure Site Recovery | Документация Майкрософт
-description: В этой статье представлен обзор компонентов и архитектуры, используемых при репликации виртуальных машин Hyper-V (без VMM) из локальной среды в Azure с помощью службы Azure Site Recovery.
+title: Архитектура аварийного восстановления из Hyper-V в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье представлен обзор компонентов и архитектуры, используемых при развертывании виртуальных машин Hyper-V (без VMM) из локальной среды в Azure в рамках аварийного восстановления с помощью службы Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 10/10/2018
+ms.date: 10/28/2018
 ms.author: raynew
-ms.openlocfilehash: 49059415c5f96eeb4dd871e7d2c8ae4ab9b2c12e
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 23b12f5b0423f717e96ec1f59480f0175648c75f
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49078364"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210658"
 ---
-# <a name="hyper-v-to-azure-replication-architecture"></a>Архитектура репликации из Hyper-V в Azure
+# <a name="hyper-v-to-azure-disaster-recovery-architecture"></a>Архитектура аварийного восстановления из Hyper-V в Azure
 
 
 Эта статья описывает архитектуру и процессы, используемые при репликации, отработке отказа и восстановлении виртуальных машин (ВМ) Hyper-V между локальными узлами Hyper-V и Azure с помощью службы [Azure Site Recovery](site-recovery-overview.md).

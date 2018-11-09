@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: anavin
-ms.openlocfilehash: 71dee9f36a3e8e11cc23f966c9157f6409a3b5e0
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 32ad02583f84a84c494dc8300834cd9ff2f0d771
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47405739"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50094979"
 ---
 # <a name="create-change-or-delete-a-public-ip-address-prefix"></a>Создание, изменение и удаление префикса общедоступного IP-адреса
 
@@ -62,8 +62,8 @@ ms.locfileid: "47405739"
 
 |Средство|Get-Help|
 |---|---|
-|Интерфейс командной строки|[az network public-ip prefix create](/cli/azure/network/public-ip/prefix/az-network-public-ip-prefix-create)|
-|PowerShell|[New-AzureRmPublicIpAddressPrefix](/powershell/module/azurerm.network/new-azurermpublicipaddressprefix)|
+|Интерфейс командной строки|[az network public-ip prefix create](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-create)|
+|PowerShell|[New-AzureRmPublicIpPrefix](/powershell/module/azurerm.network/new-azurermpublicipprefix)|
 
 ## <a name="create-a-static-public-ip-address-from-a-prefix"></a>Создание статического общедоступного IP-адреса из префикса
 После создания префикса необходимо создать статический IP-адрес из префикса. Для этого сделайте следующее.
@@ -71,7 +71,7 @@ ms.locfileid: "47405739"
 1. В верхней части портала Azure в поле с текстом *Поиск ресурсов* введите *префикс общедоступного IP-адреса*. Когда в результатах поиска появится **Префикс общедоступного IP-адреса**, щелкните его.
 2. Выберите префикс, из которого вы будете создавать общедоступные IP-адреса.
 3. Когда он появится в результатах поиска, выберите его и щелкните **+Добавить IP-адрес** в разделе "Обзор". Если вы его не видите, убедитесь, что используете правильную ссылку для предварительной версии: https://aka.ms/publicipprefixportal
-4. Введите или выберите значения для перечисленных ниже параметров в разделе **Создать общедоступный IP-адрес**. Так как префикс предназначен для номера SKU "Стандартный", IPv4, и является статическим, необходимо предоставить следующие сведения:
+4. Введите или выберите значения для перечисленных ниже параметров в разделе **Создать общедоступный IP-адрес**. Так как префикс предназначен для номера SKU ценовой категории "Стандартный" и статического адреса IPv4, необходимо предоставить следующие сведения:
 
    |Параметр|Обязательный?|Сведения|
     |---|---|---|
@@ -91,8 +91,8 @@ ms.locfileid: "47405739"
 
 |Средство|Get-Help|
 |---|---|
-|Интерфейс командной строки|Команда [az network public-ip prefix list](/cli/azure/network/public-ip/prefix/az-network-public-ip-prefix-list) выводит список общедоступных IP-адресов, [az network public-ip prefix show](/cli/azure/network/public-ip/prefix/az-network-public-ip-prefix-show) — отображает параметры, [az network public-ip prefix update](/cli/azure/network/public-ip-prefix#az-network-public-ip-prefix-update) — обновляет, а [az network public-ip prefix delete](/cli/azure/network/public-ip/prefix/az-network-public-ip-prefix-delete) — удаляет|
-|PowerShell|Командлет [Get-AzureRmPublicIpAddressPrefix](/powershell/module/azurerm.network/get-azurermpublicipaddressprefix) позволяет извлечь объект общедоступного IP-адреса и просмотреть его параметры, [Set-AzureRmPublicIpAddressPrefix](/powershell/module/azurerm.network/set-azurermpublicipaddressprefix) позволяет обновить параметры, а [Remove-AzureRmPublicIpAddressPrefix](/powershell/module/azurerm.network/remove-azurermpublicipaddressprefix) — удалить префикс|
+|Интерфейс командной строки|Команда [az network public-ip prefix list](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-list) выводит список общедоступных IP-адресов, [az network public-ip prefix show](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-show) — отображает параметры, [az network public-ip prefix update](/cli/azure/network/public-ip-prefix#az-network-public-ip-prefix-update) — обновляет, а [az network public-ip prefix delete](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-delete) — удаляет|
+|PowerShell|Командлет [Get-AzureRmPublicIpPrefix](/powershell/module/azurerm.network/get-azurermpublicipprefix) позволяет получить объект общедоступного IP-адреса и просмотреть его параметры, командлет [Set-AzureRmPublicIpPrefix](/powershell/module/azurerm.network/set-azurermpublicipprefix) позволяет обновить параметры, а командлет [Remove-AzureRmPublicIpPrefix](/powershell/module/azurerm.network/remove-azurermpublicipprefix) удаляет объект.|
 
 ## <a name="permissions"></a>Разрешения
 

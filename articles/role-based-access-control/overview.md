@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 09/24/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 37498394bc163852d397337cf5728b4941ae45a7
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: d264160fb3f1c14db3379a314e60efdadb6905b5
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46956512"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210420"
 ---
 # <a name="what-is-role-based-access-control-rbac"></a>Что такое управление доступом на основе ролей (RBAC)?
 
@@ -54,7 +54,7 @@ RBAC — это система авторизации на основе [Azure 
 
 ![Субъект безопасности для назначения роли](./media/overview/rbac-security-principal.png)
 
-- Пользователь — человек, имеющий профиль в Azure Active Directory. Роли можно также назначать пользователям в других клиентах. Сведения о пользователях в других организациях см. в статье [Что такое служба совместной работы Azure AD B2B](/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b).
+- Пользователь — человек, имеющий профиль в Azure Active Directory. Роли можно также назначать пользователям в других клиентах. Сведения о пользователях в других организациях см. в статье [Что такое служба совместной работы Azure AD B2B](../active-directory/b2b/what-is-b2b.md).
 - Группа — набор пользователей, созданный в Azure Active Directory. При назначении роли группе ее получают все пользователи в этой группе. 
 - Субъект-служба — это идентификатор безопасности, который используется приложениями или службами для доступа к определенным ресурсам Azure. Это что-то вроде *удостоверения пользователя* (имя пользователя и пароль или сертификат) для приложения.
 
@@ -130,3 +130,4 @@ RBAC — это система авторизации на основе [Azure 
 - [Quickstart: Grant access for a user using RBAC and the Azure portal](quickstart-assign-role-user-portal.md) (Краткое руководство по предоставлению доступа пользователю с помощью RBAC и портала Azure)
 - [Управление доступом с помощью RBAC и портала Azure](role-assignments-portal.md)
 - [Сведения о различных ролях в Azure](rbac-and-directory-admin-roles.md)
+- [Внедрение облачных решений в организации. Управление доступом к ресурсам в Azure](/azure/architecture/cloud-adoption/getting-started/azure-resource-access)

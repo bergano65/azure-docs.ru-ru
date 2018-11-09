@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 10/18/2018
 ms.author: diberry
-ms.openlocfilehash: 2f7c724b14efd569a5993f9a9319c9004874bc43
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: 0fe9dbed302fd2d61305167a3bda25b1b403b761
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49647601"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50139980"
 ---
 # <a name="prebuilt-entities-to-recognize-common-data-types"></a>Предварительно созданные сущности для распознавания распространенных типов данных
 
@@ -25,7 +25,7 @@ ms.locfileid: "49647601"
 
 1. Откройте приложение, щелкнув его имя на странице **Мои приложения**, а затем щелкните **Сущности** в левом углу. 
 
-1. На странице **Сущности** щелкните **Управление предварительно созданными сущностями**.
+1. На странице **Сущности** щелкните **Add prebuilt entity** (Добавить предварительно созданную сущность).
 
 1. В диалоговом окне **Добавление предварительно созданных сущностей** выберите предварительно созданную сущность datetimeV2. 
 

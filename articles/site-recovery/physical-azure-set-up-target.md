@@ -1,25 +1,24 @@
 ---
-title: Подготовка цели (репликация физических серверов в Azure) | Документация Майкрософт
-description: В этой статье описывается, как подготовить среду Azure к запуску репликации физических серверов Windows или Linux в Azure.
-services: site-recovery
+title: Настройка целевой среды для аварийного восстановления локальных физических серверов в Azure | Документация Майкрософт
+description: В этой статье описано, как настроить целевую среду Azure для аварийного восстановления физических серверов с помощью Azure Site Recovery.
 author: bsiva
 manager: abhemraj
 ms.service: site-recovery
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/06/2018
 ms.author: bsiva
-ms.openlocfilehash: 370d245e39b848acade18d0e73f60a3246737629
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: b89d04a6e2fd11a61de8b56690664f6204c208ad
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37915526"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50209298"
 ---
 # <a name="prepare-target-vmware-to-azure"></a>Подготовка цели (репликация виртуальных машин VMware в Azure)
 
 В этой статье описывается, как подготовить среду Azure к запуску репликации 64-разрядных физических серверов Windows или Linux в Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается:
 - Вы создали хранилище служб восстановления для защиты физических серверов. Хранилище служб восстановления можно создать на [портале Azure](http://portal.azure.com "Портал Azure").

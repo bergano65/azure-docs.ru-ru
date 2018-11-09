@@ -1,21 +1,22 @@
 ---
-title: Архитектура репликации виртуальной машины VMware или физического сервера в Azure Site Recovery | Документация Майкрософт
-description: В этой статье описаны компоненты и архитектура, используемые при репликации виртуальных машин VMware и физических серверов Windows или Linux на дополнительный сайт VMware с помощью службы Azure Site Recovery.
+title: Архитектура аварийного восстановления VMware и физических серверов в Azure Site Recovery | Документация Майкрософт
+description: В этой статье представлен обзор компонентов и архитектуры, используемых при аварийном восстановлении локальных виртуальных машин VMware или физических серверов Windows и Linux на дополнительный сайт VMware с помощью службы Azure Site Recovery.
 author: rayne-wiselman
+manager: carmonm
 ms.service: site-recovery
-ms.topic: article
-ms.date: 07/06/2018
+ms.topic: conceptual
+ms.date: 10/29/2018
 ms.author: raynew
-ms.openlocfilehash: 04591c57f90e3c540963d77c2213498bf0ad2577
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 16e8a9719280b55e86d1d4622a32470b37287dd4
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37922702"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50215129"
 ---
-# <a name="vmware-vmphysical-server-to-vmware-replication-architecture"></a>Архитектура репликации виртуальных машин VMware или физических серверов на дополнительный сайт VMware
+# <a name="vmware-vmphysical-server-to-vmware-disaster-recovery-architecture"></a>Архитектура аварийного восстановления виртуальных машин VMware и физических серверов на дополнительный сайт VMware
 
-В этой статье описаны архитектура и процессы, используемые при репликации, отработке отказа и восстановлении локальных виртуальных машин VMware и физических серверов Windows или Linux на дополнительный сайт VMware с помощью [Azure Site Recovery](site-recovery-overview.md).
+В этой статье описаны архитектура и процессы, используемые при настройке репликации для аварийного восстановления, отработки отказов и восстановления локальных виртуальных машин VMware и физических серверов Windows и Linux на дополнительный сайт VMware с помощью службы [Azure Site Recovery](site-recovery-overview.md).
 
 
 ## <a name="architectural-components"></a>Компоненты архитектуры

@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: conceptual
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 9bbbb797cd7e7d1cea52f1d5b1b491998b595db7
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
+ms.openlocfilehash: fea70e2b1912bde94e23dbd98fa933784d2a69ac
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49638092"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50140321"
 ---
 # <a name="entity-roles-in-patterns-are-contextual-subtypes"></a>Роли сущностей в шаблонах — это контекстно-зависимые подтипы
 Роли — это именованные, контекстно-зависимые подтипы сущности, которые используется только в [шаблонах](luis-concept-patterns.md).
@@ -42,13 +42,8 @@ ms.locfileid: "49638092"
 ## <a name="role-syntax-in-patterns"></a>Синтаксис роли в шаблонах
 Сущность и роль заключаются в круглые скобки, `{}`. Сущность и роль разделяются точкой с запятой. 
 
-## <a name="roles-versus-hierarchical-entities"></a>Сравнение ролей и иерархических сущностей
-Иерархические сущности предоставляют те же контекстно-зависимые сведения, что и роли, но для фрагментов речи в **намерениях**. Аналогичным образом, роли предоставляют те же контекстно-зависимые сведения, что и иерархические сущности, но только в **шаблонах**.
 
-|Контекстно-зависимое обучение|Используется в|
-|--|--|
-|иерархических сущностях,|намерениях,|
-|roles|шаблонах.|
+[!include[H2 Roles versus hierarchical entities](../../../includes/cognitive-services-luis-hier-roles.md)] 
 
 ## <a name="roles-with-prebuilt-entities"></a>Роли с предварительно созданными сущностями
 
@@ -60,4 +55,4 @@ ms.locfileid: "49638092"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Сведения о добавлении [ролей](luis-how-to-add-entities.md#add-role-to-pattern-based-entity)
+* Сведения о добавлении [ролей](luis-how-to-add-entities.md#add-a-role-to-pattern-based-entity)

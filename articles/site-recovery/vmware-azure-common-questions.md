@@ -1,23 +1,22 @@
 ---
-title: Часто задаваемые вопросы. Репликация VMware в Azure с помощью Azure Site Recovery | Документация Майкрософт
-description: В этой статье перечислены часто задаваемые вопросы о репликации локальных виртуальных машин VMware в Azure с помощью Azure Site Recovery.
-services: site-recovery
+title: Часто задаваемые вопросы. Аварийное восстановление VMware в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье перечислены часто задаваемые вопросы о настройке аварийного восстановления локальных виртуальных машин VMware в Azure с помощью Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
-ms.date: 07/19/2018
+ms.date: 10/29/2018
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: 487e0c763ca4b247f1818b2beaf3282734fc4e27
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 086acdd74932836627c600b5545bc4353052ad6f
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49388448"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50215452"
 ---
 # <a name="common-questions---vmware-to-azure-replication"></a>Часто задаваемые вопросы о репликации из VMware в Azure
 
-В этой статье приведены ответы на часто задаваемые вопросы, которые возникают при репликации локальных виртуальных машин VMware в Azure. Если после прочтения статьи у вас возникли какие-либо вопросы, вы можете задать их на [форуме, посвященном службам восстановления Azure](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr).
+В этой статье приведены ответы на часто задаваемые вопросы, которые возникают при развертывании аварийного восстаовления локальных виртуальных машин VMware в Azure. Если после прочтения статьи у вас возникли какие-либо вопросы, вы можете задать их на [форуме, посвященном службам восстановления Azure](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr).
 
 
 ## <a name="general"></a>Общие сведения

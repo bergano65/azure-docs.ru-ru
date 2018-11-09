@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 07/26/2018
+ms.date: 10/25/2018
 ms.author: iainfou
-ms.openlocfilehash: 7caa98b65b35d1eb1a000f1e9099fbf8eb3f8861
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: c3256b2b1e8be0e883d0f7b47e66ab1fee95b042
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49406047"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50138175"
 ---
 # <a name="enable-and-review-kubernetes-master-node-logs-in-azure-kubernetes-service-aks"></a>Включение и просмотр журналов главного узла Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -42,7 +42,7 @@ ms.locfileid: "49406047"
 ![Включение рабочей области Log Analytics для кластера Log Analytics или AKS](media/view-master-logs/enable-oms-log-analytics.png)
 
 >[!NOTE]
->Рабочие области OMS теперь называются рабочими областями Log Analytics. 
+>Рабочие области OMS теперь называются рабочими областями Log Analytics.
 
 ## <a name="schedule-a-test-pod-on-the-aks-cluster"></a>Планирование запуска тестового модуля pod в кластере AKS
 
@@ -82,7 +82,7 @@ pod/nginx created
 
 ![Выбор рабочей области Log Analytics для кластера AKS](media/view-master-logs/select-log-analytics-workspace.png)
 
-В области слева выберите **Поиск по журналу**. Чтобы просмотреть *kube-apiserver*, введите следующий запрос в текстовом поле:
+В области слева выберите **Журналы**. Чтобы просмотреть *kube-apiserver*, введите следующий запрос в текстовом поле:
 
 ```
 AzureDiagnostics

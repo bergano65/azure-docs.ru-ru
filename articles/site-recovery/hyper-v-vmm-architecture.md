@@ -1,20 +1,20 @@
 ---
-title: 'Архитектура: репликация Hyper-V на дополнительный сайт в Azure Site Recovery | Документация Майкрософт'
-description: В этой статье представлен обзор архитектуры для репликации локальных виртуальных машин Hyper-V на дополнительный сайт System Center VMM с помощью Azure Site Recovery.
+title: Архитектура аварийного восстановления Hyper-V на вторичный локальный сайт с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье представлен обзор архитектуры для аварийного восстановления локальных виртуальных машин Hyper-V на дополнительный сайт System Center VMM с помощью Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 10/10/2018
+ms.date: 10/28/2018
 ms.author: raynew
-ms.openlocfilehash: 8f8b498164cc4a77cace470f7483aa572fefbaed
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 98eb654468eb27b8100a0cc9b73994e5a7add167
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49078925"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50214602"
 ---
-# <a name="hyper-v-replication-to-a-secondary-site"></a>Репликация Hyper-V на дополнительный сайт
+# <a name="architecture---hyper-v-replication-to-a-secondary-site"></a>Архитектура: репликация Hyper-V на дополнительный сайт
 
 В этой статье описываются компоненты и процессы, задействованные при репликации локальных виртуальных машин Hyper-V в облаках System Center Virtual Machine Manager (VMM) на дополнительный сайт VMM с помощью службы [Azure Site Recovery](site-recovery-overview.md) на портале Azure.
 

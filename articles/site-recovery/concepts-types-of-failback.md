@@ -1,6 +1,6 @@
 ---
-title: Восстановление размещения в Azure Site Recovery | Документация Майкрософт
-description: В этой статье представлен обзор различных типов восстановления размещения и предупреждений, которые необходимо учитывать при восстановлении размещения на локальный сайт с помощью службы Azure Site Recovery.
+title: Восстановление размещения при аварийном восстановлении с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье представлен обзор различных типов восстановления размещения и предупреждений, которые необходимо учитывать при восстановлении размещения на локальный сайт во время аварийного восстановления с помощью службы Azure Site Recovery.
 services: site-recovery
 author: rajani-janaki-ram
 manager: guaravd
@@ -8,16 +8,16 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 07/06/2018
 ms.author: rajanki
-ms.openlocfilehash: 2a9ee380fc16c4088d98875dd465509c4023d037
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: e97d736e7e117e0ccce6dc021a9de2ea15ac5484
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37920395"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210148"
 ---
 # <a name="overview-of-failback"></a>Общие сведения о восстановлении размещения
 
-После отработки отказа в Azure вы можете восстановить размещение на локальном сайте. В Azure Site Recovery возможны два типа восстановления размещения. 
+После отработки отказа в Azure в процессе аварийного восстановления вы можете восстановить размещение на локальном сайте. В Azure Site Recovery возможны два типа восстановления размещения. 
 
 - Восстановление размещения в исходное расположение. 
 - Восстановление размещения в альтернативное расположение.

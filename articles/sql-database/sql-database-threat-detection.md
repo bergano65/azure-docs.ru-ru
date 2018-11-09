@@ -11,19 +11,24 @@ author: rmatchoro
 ms.author: ronmat
 ms.reviewer: vanto, carlrab
 manager: craigg
-ms.date: 09/19/2018
-ms.openlocfilehash: ed7a117d4422b3b3feddd7d2fafa5eabea43f9e5
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.date: 10/25/2018
+ms.openlocfilehash: 2882bd782359697cf714214e68166c9f997f52e4
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47164943"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50093553"
 ---
 # <a name="azure-sql-database-threat-detection"></a>Обнаружение угроз базы данных SQL Azure
 
-Система обнаружения угроз службы "База данных SQL Azure" выявляет аномальные операции, указывающие на нестандартные и потенциально вредоносные попытки получить доступ к базам данных или воспользоваться их уязвимостями.
+Система обнаружения угроз SQL Azure для [базы данных SQL](sql-database-technical-overview.md) и [хранилища данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md)выявляет аномальные действия, указывающие на нестандартные и потенциально вредоносные попытки получить доступ к базам данных или воспользоваться их уязвимостями.
 
 Система обнаружения угроз входит в состав предложения [Расширенная защита от угроз SQL ](sql-advanced-threat-protection.md), которое представляет собой унифицированный пакет расширенных возможностей безопасности SQL. Доступ к системе обнаружения угроз можно получить через центральный портал SQL ATP. Там же ею можно управлять.
+
+
+> [!NOTE] 
+> Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
+
 
 ## <a name="what-is-threat-detection"></a>Общие сведения о системе обнаружения угроз
 
@@ -65,7 +70,7 @@ ms.locfileid: "47164943"
 
 Оповещения об обнаружении угроз базы данных SQL интегрируются с [центром безопасности Azure](https://azure.microsoft.com/services/security-center/). Динамический элемент обнаружения угроз SQL в колонках базы данных и SQL ATP на портале Azure отображает состояние активных угроз.
 
-Щелкните **Threat detection alert** (Оповещение об обнаружении угроз), чтобы запустить страницу оповещений центра безопасности Azure и получить обзор активных угроз SQL, обнаруженных в базе данных.
+Щелкните **Threat detection alert** (Оповещение об обнаружении угроз), чтобы запустить страницу оповещений центра безопасности Azure и получить обзор активных угроз SQL, обнаруженных в базе данных или хранилище данных.
 
    ![Оповещение об обнаружении угроз](./media/sql-database-threat-detection/threat_detection_alert.png)
    

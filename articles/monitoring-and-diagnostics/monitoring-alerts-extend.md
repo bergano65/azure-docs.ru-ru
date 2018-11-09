@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: eb3489c24bd5aa328620c5a6c14ee71882a6a6f2
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.openlocfilehash: 60ecc2bc1d700c223d4a52b05e3b9362241f3f82
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48249576"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50414623"
 ---
 # <a name="extend-log-analytics-alerts-to-azure-alerts"></a>Расширение оповещений Log Analytics в оповещения Azure
 До недавнего времени в Azure Log Analytics были функции, которые позволяли заблаговременно уведомлять о некоторых условиях на основе данных Log Analytics. Ранее правила генерации оповещений задавались на портале Microsoft Operations Management Suite. Новые возможности оповещений теперь интегрированы в различные службы Microsoft Azure. Они доступны в разделе **Оповещения** в Azure Monitor на портале Azure и позволяют реализовать оповещения на основе журнала действий, метрик и журналов Log Analytics и Application Insights. 
@@ -30,12 +30,12 @@ ms.locfileid: "48249576"
 Процесс перемещения оповещений из Log Analytics в оповещения Azure не затрагивает определение, запрос или конфигурацию оповещений каким-либо образом. В Azure требуется только одно изменение — выполнять все действия с помощью группы действий. Если группы действий связываются с оповещением, они включаются при расширении в Azure.
 
 > [!NOTE]
-> Начиная с 14 мая 2018 г., корпорация Майкрософт будет автоматически серийно расширять оповещения, созданные в экземпляре общедоступного облака Log Analytics, до оповещений Azure. Если у вас возникли проблемы с созданием [групп действий](monitoring-action-groups.md), используйте [эти шаги по устранению неполадок](monitoring-alerts-extend-tool.md#troubleshooting), чтобы автоматически создать группы действий. Эти шаги можно предпринять до 5 июля 2018 г. *Неприменимо для пользователей облака для государственных организаций и национального облака Azure Log Analytics*. 
+> Начиная с 14 мая 2018 г., корпорация Майкрософт будет автоматически серийно расширять оповещения, созданные в экземпляре общедоступного облака Log Analytics, до оповещений Azure. Если у вас возникли проблемы с созданием [групп действий](monitoring-action-groups.md), используйте [эти шаги по устранению неполадок](monitoring-alerts-extend-tool.md#troubleshooting), чтобы автоматически создать группы действий. Эти шаги можно предпринять до 5 июля 2018 г. *Не применимо для пользователей Log Analytics в Azure для государственных организаций и национальных облаках*. 
 > 
 
 После расширения оповещений из рабочей области Log Analytics в Azure они продолжат работу и никак не нарушат вашу конфигурацию. Во время планирования оповещения могут быть временно недоступны для изменения, однако в это время можно создать новые оповещения Azure. При создании или редактировании оповещений на портале Operations Management Suite у вас есть возможность продолжить это действие в рабочем пространстве Log Analytics. Можно также создать их в оповещениях Azure на том же портале.
 
- ![Снимок экрана с возможностью создания оповещений в Log Analytics или в разделе "Оповещения Azure".](./media/monitor-alerts-extend/ScheduledDirection.png)
+ ![Снимок экрана с возможностью создания оповещений в Log Analytics или в разделе "Оповещения Azure".](media/monitoring-alerts-extend/ScheduledDirection.png)
 
 > [!NOTE]
 > Плата за расширение оповещений из Log Analytics в Azure в учетной записи не взимается. Плата за использование оповещений Azure для запросов на основе журнала Log Analytics не взимается, если это осуществляется в рамках и по условиям, указанным в статье [Цены на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).  
@@ -47,7 +47,7 @@ ms.locfileid: "48249576"
 ## <a name="experience-after-extending-your-alerts"></a>Возможности, доступные после расширения оповещений
 После расширения оповещений в оповещения Azure они остаются доступными на портале Operations Management Suite без изменений в управлении.
 
-![Снимок экрана Operations Management Suite со списком оповещений](./media/monitor-alerts-extend/PostExtendList.png)
+![Снимок экрана Operations Management Suite со списком оповещений](media/monitoring-alerts-extend/PostExtendList.png)
 
 При попытке создать новое оповещение или изменить существующее на портале Operations Management Suite вы будете автоматически перенаправлены в раздел "Оповещения Azure".  
 

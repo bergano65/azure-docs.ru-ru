@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2017
 ms.author: apimpm
-ms.openlocfilehash: a6e7aad6c3d20a67ecba66c49be4efcdebdf718a
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: fbba1d9b4bdf1536ed596e9a78e53116fe824027
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32153427"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50232925"
 ---
 > [!WARNING]
 > Интеграция Azure Active Directory B2C доступна в только на уровнях [Developer, Standard и Premium](https://azure.microsoft.com/pricing/details/api-management/).
@@ -32,22 +32,22 @@ Azure Active Directory B2C — это облачное решение, позв
 
 ## <a name="authorize-developer-accounts-by-using-azure-active-directory-b2c"></a>Авторизация учетных записей разработчиков с помощью Azure Active Directory B2C
 
-1. Чтобы начать работу, щелкните **Портал издателя** на портале Azure для службы управления API. Будет открыт портал издателя службы управления API.
-
-   ![Портал издателя][api-management-management-console]
+1. Чтобы приступить к работе, перейдите на [портал Azure](https://portal.azure.com) и найдите свой экземпляр управления API.
 
    > [!NOTE]
    > Если вы еще не создали экземпляр службы управления API, см. сведения в разделе [Создание экземпляра управления API][Create an API Management service instance] руководства [Начало работы со службой управления Azure API][Get started with Azure API Management].
 
-2. В меню **Управление API** выберите **Безопасность**. На вкладке **Удостоверения** выберите **Azure Active Directory B2C**.
+2. В разделе **Безопасность** выберите **Удостоверения**. В верхней части меню щелкните **+Добавить**.
 
-  ![Внешние удостоверения 1][api-management-howto-aad-b2c-security-tab]
+   Справа отобразится область **Добавление поставщика удостоверений**. Выберите **Azure Active Directory B2C**.
+    
+   ![Добавление AAD B2C в качестве поставщика удостоверений][api-management-howto-add-b2c-identity-provider]
 
-3. Запишите **URL-адрес перенаправления** и переключитесь на Azure Active Directory B2C на портале Azure.
+3. Скопируйте значение **URL-адрес перенаправления**.
 
-  ![Внешние удостоверения 2][api-management-howto-aad-b2c-security-tab-reply-url]
+  ![URL-адрес перенаправления поставщика удостоверений AAD B2C][api-management-howto-copy-b2c-identity-provider-redirect-url]
 
-4. Нажмите кнопку **Приложения**.
+4. В новой вкладке получите доступ к клиенту Azure Active Directory B2C на портале Azure и откройте колонку **Приложение**.
 
   ![Регистрация нового приложения 1][api-management-howto-aad-b2c-portal-menu]
 
@@ -55,7 +55,7 @@ Azure Active Directory B2C — это облачное решение, позв
 
   ![Регистрация нового приложения 2][api-management-howto-aad-b2c-add-button]
 
-6. В колонке **Новое приложение** введите имя для приложения. Выберите **Да** под параметром **Веб-приложения и веб-API** и **Да** под параметром **Разрешить неявный поток**. Скопируйте **URL-адрес перенаправления** в разделе **Azure Active Directory B2C** на вкладке **Удостоверения** портала издателя и вставьте его в текстовое поле **URL-адрес ответа**.
+6. В колонке **Новое приложение** введите имя для приложения. Выберите **Да** под параметром **Веб-приложения и веб-API** и **Да** под параметром **Разрешить неявный поток**. Вставьте **URL-адрес перенаправления**, скопированный в шаге 3, в текстовое поле **URL-адреса ответа**.
 
   ![Регистрация нового приложения 3][api-management-howto-aad-b2c-app-details]
 
@@ -67,15 +67,15 @@ Azure Active Directory B2C — это облачное решение, позв
 
   ![Идентификатор приложения 1][api-management-howto-aad-b2c-app-id]
 
-9. Вернитесь на портал издателя и вставьте скопированный идентификатор в текстовое поле **Идентификатор клиента**.
+9. Вернитесь на панель **Добавление поставщика удостоверений** управления API и вставьте идентификатор в текстовое поле **идентификатора клиента**.
 
   ![Идентификатор приложения 2][api-management-howto-aad-b2c-client-id]
 
-10. Вернитесь на портал Azure, щелкните раздел **Ключи**, а затем нажмите кнопку **Создать ключ**. Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию и отобразить **Ключ приложения**. Скопируйте этот ключ в буфер обмена.
+10. Вернитесь к регистрации приложения B2C, щелкните раздел **Ключи**, а затем нажмите кнопку **Создать ключ**. Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию и отобразить **Ключ приложения**. Скопируйте этот ключ в буфер обмена.
 
   ![Ключ приложения 1][api-management-howto-aad-b2c-app-key]
 
-11. Вернитесь на портал издателя и вставьте скопированный ключ в текстовое поле **Секрет клиента** .
+11. Вернитесь на панель **Добавление поставщика удостоверений** управления API и вставьте ключ в текстовое поле **секрет клиента**.
 
   ![Ключ приложения 2][api-management-howto-aad-b2c-client-secret]
 
@@ -83,7 +83,7 @@ Azure Active Directory B2C — это облачное решение, позв
 
   ![Разрешенный клиент][api-management-howto-aad-b2c-allowed-tenant]
 
-13. Укажите **политику регистрации** и **политику входа**. Дополнительно можно также указать **политику редактирования профиля** и **политику сброса пароля**.
+13. Из политик клиента B2C укажите **политику регистрации** и **политику входа**. Дополнительно можно также указать **политику редактирования профиля** и **политику сброса пароля**.
 
   ![Политики][api-management-howto-aad-b2c-policies]
 
@@ -126,9 +126,8 @@ Azure Active Directory B2C — это облачное решение, позв
 
 
 
-
-[api-management-howto-aad-b2c-security-tab]: ./media/api-management-howto-aad-b2c/api-management-b2c-security-tab.PNG
-[api-management-howto-aad-b2c-security-tab-reply-url]: ./media/api-management-howto-aad-b2c/api-management-b2c-security-tab-reply-url.PNG
+[api-management-howto-add-b2c-identity-provider]: ./media/api-management-howto-aad-b2c/api-management-add-b2c-identity-provider.PNG
+[api-management-howto-copy-b2c-identity-provider-redirect-url]: ./media/api-management-howto-aad-b2c/api-management-b2c-identity-provider-redirect-url.PNG
 [api-management-howto-aad-b2c-portal-menu]: ./media/api-management-howto-aad-b2c/api-management-b2c-portal-menu.PNG
 [api-management-howto-aad-b2c-add-button]: ./media/api-management-howto-aad-b2c/api-management-b2c-add-button.PNG
 [api-management-howto-aad-b2c-app-details]: ./media/api-management-howto-aad-b2c/api-management-b2c-app-details.PNG

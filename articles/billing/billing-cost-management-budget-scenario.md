@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: billing
 ms.date: 7/25/2018
 ms.author: erikre
-ms.openlocfilehash: 19d8fbf82410136fd6a50a2088dd9b774dd6cb27
-ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
+ms.openlocfilehash: 08cdce23fe298bdac932d1ca8abb8166f4d7bbbd
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39259217"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50094819"
 ---
 # <a name="manage-costs-with-azure-budgets"></a>Управление затратами с помощью API управления бюджетом Azure
 
@@ -139,7 +139,7 @@ Logic Apps помогает создавать, планировать и авт
 4.  Выполните поиск по запросу "анализ JSON" в поле поиска **конструктора Logic Apps**, чтобы найти и выбрать [действие](https://docs.microsoft.com/azure/logic-apps/logic-apps-overview#logic-app-concepts) **Data Operations - Parse JSON** (Операции с данными — анализ JSON). 
     
     ![Добавление действия анализа JSON в приложении логики на портале Azure](./media/billing-cost-management-budget-scenario/billing-cost-management-budget-scenario-06.png) 
-5.  Введите "полезные данные" в поле **Содержимое** для полезных данных анализа JSON.
+5.  Введите Payload в качестве имени **содержимого** для полезных данных Parse JSON или используйте тег Body из динамического содержимого.
 6.  Выберите **Использовать пример полезной нагрузки, чтобы создать схему** в диалоговом поле **Анализ JSON**.
     
     ![Использование примера полезных данных JSON для создания схемы в приложении логики на портале Azure](./media/billing-cost-management-budget-scenario/billing-cost-management-budget-scenario-07.png) 

@@ -1,22 +1,19 @@
 ---
-title: Сохранение IP-адресов при отработке отказа виртуальных машин Azure в другой регион Azure | Документация Майкрософт
-description: В этой статье описывается, как сохранить IP-адреса в сценарии отработки отказа из Azure в Azure с помощью Azure Site Recovery.
+title: Сохранение IP-адресов при отработке отказа виртуальных машин Azure | Документация Майкрософт
+description: В этой статье описано, как сохранять IP-адреса при отработке отказа виртуальных машин Azure для аварийного восстановления в дополнительный регион с помощью Azure Site Recovery
 ms.service: site-recovery
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.date: 10/16/2018
 author: mayurigupta13
 ms.topic: conceptual
 ms.author: mayg
-ms.openlocfilehash: 4260a4487480c42b518374965d8deda1e7803e62
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 86adaa21a069c168b512231ba231940bfa2ef9e8
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353328"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50213038"
 ---
-# <a name="ip-address-retention-for-azure-virtual-machine-failover"></a>Сохранение IP-адресов при отработке отказа виртуальных машин Azure
+# <a name="ip-address-retention-for-azure-vm-failover"></a>Сохранение IP-адресов при отработке отказа виртуальных машин Azure
 
 Azure Site Recovery позволяет выполнять аварийное восстановление виртуальных машин Azure. При отработке отказа из одного региона Azure в другой клиентам часто требуется сохранение конфигураций IP. По умолчанию Site Recovery имитирует исходную виртуальную сеть и структуру подсети при создании этих ресурсов в целевом регионе. При отработке отказа виртуальных машин Azure со статическими частными IP-адресами Site Recovery старается предоставить аналогичные частные IP-адреса на целевых виртуальных машинах, если этот IP-адрес еще не заблокирован ресурсом Azure или реплицированной виртуальной машиной.
 

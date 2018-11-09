@@ -1,22 +1,20 @@
 ---
-title: Управление сетевыми интерфейсами при репликации из локальной среды в Azure с помощью Azure Site Recovery | Документация Майкрософт
-description: В статье описано, как управлять сетевыми интерфейсами при репликации из локальной среды в Azure с помощью Azure Site Recovery.
-services: site-recovery
+title: Управление сетевыми интерфейсами при аварийном восстановлении из локальной среды в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: В статье описано, как управлять сетевыми интерфейсами при аварийном восстановлении из локальной среды в Azure с помощью Azure Site Recovery
 author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: mayg
-ms.openlocfilehash: 0ca2d32910e57042d2cbc9d3b772d226d835b545
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: afa8dfc39177e3f15db0092691d910b6b2cd3764
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49352416"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212460"
 ---
-# <a name="manage-virtual-machine-network-interfaces-for-on-premises-to-azure-replication"></a>Управление сетевыми интерфейсами виртуальных машин при репликации из локальной среды в Azure
-
+# <a name="manage-virtual-machine-network-interfaces-for-on-premises-disaster-recovery-to-azure"></a>Управление сетевыми интерфейсами виртуальных машин при аварийном восстановлении из локальной среды в Azure
 К виртуальной машине в Azure должен быть подключен по крайней мере один сетевой интерфейс. К виртуальной машине можно подключить столько сетевых интерфейсов, сколько поддерживает ее размер.
 
 По умолчанию первый сетевой интерфейс, подключенный к виртуальной машине, определяется в качестве ее основного сетевого интерфейса. Все остальные сетевые интерфейсы в виртуальной машине считаются дополнительными. Кроме того, по умолчанию весь исходящий трафик виртуальной машины отправляется с IP-адреса, назначенного основной IP-конфигурации основного сетевого интерфейса.

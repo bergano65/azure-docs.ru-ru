@@ -1,22 +1,21 @@
 ---
-title: Настройка назначения IP-адресов для подключения после отработки отказа в Azure с помощью Azure Site Recovery | Документация Майкрософт
-description: В этой статье объясняется, как настроить назначения IP-адресов для подключения к виртуальным машинам Azure после отработки отказа из локальной среды с помощью Azure Site Recovery
+title: Настройка назначения IP-адресов для подключения после аварийного восстановления и отработки отказа в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье объясняется, как настроить назначение IP-адресов для подключения к виртуальным машинам Azure после аварийного восстановления и отработки отказа из локальной среды с помощью Azure Site Recovery
 services: site-recovery
-documentationcenter: ''
 author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: mayg
-ms.openlocfilehash: 9b7797ba58a44e64460f4dbc58d562b4c470c043
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: ce7e5fde60503a969b88892be890173861fb15be
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353093"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50215231"
 ---
-# <a name="set-up-ip-addressing-to-connect-after-failover-to-azure"></a>Настройка назначения IP-адресов для подключения после отработки отказа в Azure
+# <a name="set-up-ip-addressing-to-connect-to-azure-vms-after-failover"></a>Настройка назначения IP-адресов для подключения к виртуальным машинам Azure после отработки отказа
 
 Эта статья описывает требования к сети для подключения к виртуальным машинам Azure после использования службы [Azure Site Recovery](site-recovery-overview.md) для репликации и отработки отказа в Azure.
 

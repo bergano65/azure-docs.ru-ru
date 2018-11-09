@@ -1,5 +1,5 @@
 ---
-title: Как запрашивать журналы из Azure Monitor для виртуальных машин | Microsoft Docs
+title: Как выполнять запросы к журналам из Azure Monitor для виртуальных машин (предварительная версия) | Документация Майкрософт
 description: Решение Azure Monitor для виртуальных машин перенаправляет метрики и данные журналов в службу Log Analytics. В этой статье описаны эти записи и приведены примеры запросов.
 services: azure-monitor
 documentationcenter: ''
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/20/2018
+ms.date: 10/25/2018
 ms.author: magoedte
-ms.openlocfilehash: 4a5f3178ad4d4152bb29e6c313b3fd332124c154
-ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
+ms.openlocfilehash: 90816061766a423f7dbc7d277433a95c5bcf6115
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48269400"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50095428"
 ---
-# <a name="how-to-query-logs-from-azure-monitor-for-vms"></a>Как запрашивать журналы из Azure Monitor для виртуальных машин
+# <a name="how-to-query-logs-from-azure-monitor-for-vms-preview"></a>Как выполнять запросы к журналам из Azure Monitor для виртуальных машин (предварительная версия)
 Azure Monitor для виртуальных машин собирает метрики производительности и подключений, данные инвентаризации компьютеров и процессов, а также сведения о работоспособности и перенаправляет их в хранилище данных Log Analytics в службе Azure Monitor.  Вы можете выполнять [поиск](../log-analytics/log-analytics-log-searches.md) этих данных в службе Log Analytics. Эти данные используются в различных сценариях, таких как планирование миграции, анализ емкости, обнаружение и устранение проблем с производительностью по требованию.
 
 ## <a name="map-records"></a>Сопоставление записей
@@ -102,11 +102,11 @@ Azure Monitor для виртуальных машин собирает метр
 | Свойство | ОПИСАНИЕ |
 |:--|:--|
 |MaliciousIp |Адрес, указанный в свойстве RemoteIp. |
-|IndicatorThreadType |Обнаруженный индикатор угроз является одним из следующих значений: *Ботнет*, *C2*, *CryptoMining*, *Darknet*, *DDos*, *MaliciousUrl*, *Вредоносные программы*, *Фишинг*, *Прокси-сервер*, *PUA*(потенциально нежелательные приложения), *Список видео к просмотру*.   |
+|IndicatorThreadType |Обнаруженный индикатор угроз является одним из следующих значений: *Botnet*, *C2*, *CryptoMining*, *Darknet*, *DDos*, *MaliciousUrl*, *Malware*, *Phishing*, *Proxy*, *PUA*, *Watchlist*.   |
 |ОПИСАНИЕ |Описания наблюдаемой угрозы. |
-|TLPLevel |Уровень протокола светофора (TLP) является одним из определенных значений: *белый*, *зеленый*, *желтый*, *красный*. |
-|Достоверность |Значения: *0 – 100*. |
-|Уровень серьезности |Значения: *0 – 5*, где *5* является самым серьезным, а *0* не является серьезным вообще. Значение по умолчанию — *3*.  |
+|TLPLevel |Уровень протокола Traffic Light (TLP) является одним из определенных значений: *White*, *Green*, *Amber*, *Red*. |
+|Достоверность |Значения: *0–100*. |
+|Уровень серьезности |Значения: *0–5*, где *5* является самым серьезным, а *0* не является серьезным вообще. Значение по умолчанию — *3*.  |
 |FirstReportedDateTime |Впервые поставщик сообщил об этом индикаторе. |
 |LastReportedDateTime |В последний раз индикатор был просмотрен Interflow. |
 |IsActive |Указывает, что индикаторы деактивированы со значением *True* или *False*. |

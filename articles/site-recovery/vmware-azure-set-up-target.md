@@ -1,21 +1,21 @@
 ---
-title: Подготовка целевой среды (из VMware или физического сервера в Azure) | Документация Майкрософт
-description: В этой статье описано, как подготовить целевую среду Azure к репликации виртуальных машин VMware и физических серверов в Azure.
+title: Подготовка целевого окружения для репликации из VMware в Azure | Документация Майкрософт
+description: В этой статье описано, как подготовить целевое окружение Azure к репликации виртуальных машин VMware в Azure.
 services: site-recovery
-author: bsiva
-manager: abhemraj
+author: Rajeswari-Mamilla
+manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 09/28/2018
-ms.author: bsiva
-ms.openlocfilehash: 948812f05697362978ad041566d22977efec92a1
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.date: 10/29/2018
+ms.author: ramamill
+ms.openlocfilehash: a6f983b08415659b9a989ebed824cddd210396e1
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47434642"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50233435"
 ---
-# <a name="prepare-the-target-environment-vmwarephysical-to-azure"></a>Подготовка целевой среды (из VMware или физического сервера в Azure)
+# <a name="prepare-the-target-environment-for-disaster-recovery-of-vmware-vms-or-physical-servers-to-azure"></a>Подготовка целевой среды к аварийному восстановлению виртуальных машин VMware или физических серверов в Azure
 
 В этой статье описано, как подготовить целевую среду Azure для запуска репликации виртуальных машин VMware или физических серверов в Azure.
 

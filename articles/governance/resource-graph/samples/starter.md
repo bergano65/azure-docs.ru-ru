@@ -4,21 +4,21 @@ description: Используйте Azure Resource Graph для выполнен
 services: resource-graph
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 09/18/2018
+ms.date: 10/22/2018
 ms.topic: quickstart
 ms.service: resource-graph
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: ba3df8f0f7fa0443e64972647b6f146f756e62d6
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: d5b2bb719bcd5c2145740a02bc408385953ff739
+ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49646634"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50084536"
 ---
 # <a name="starter-resource-graph-queries"></a>Запросы к Resource Graph для начинающих
 
-Первым шагом на пути к пониманию запросов к Azure Resource Graph является общее понимание [языка запросов](../concepts/query-language.md). Если вы еще не знакомы с языком запросов [Azure Data Explorer](../../../data-explorer/data-explorer-overview.md), рекомендуется просмотреть основные сведения, чтобы понять, как составлять запросы к ресурсам, которые вы ищете.
+Первым шагом на пути к пониманию запросов к Azure Resource Graph является общее понимание [языка запросов](../concepts/query-language.md). Если вы еще не знакомы с [обозревателем данных Azure](../../../data-explorer/data-explorer-overview.md), рекомендуется просмотреть основные сведения, чтобы понять, как составлять запросы к ресурсам, которые вы ищете.
 
 Мы рассмотрим следующие запросы для начинающих:
 
@@ -58,7 +58,7 @@ Search-AzureRmGraph -Query "summarize count()"
 
 ## <a name="list-resources"></a>Вывод списка ресурсов, отсортированных по имени
 
-Если не указан определенный тип ресурса или сопоставляемое свойство, этот запрос возвращает только **имя**, **тип** и **расположение** ресурсов Azure, но использует `order by`, чтобы отсортировать их по свойству **name** в порядке возрастания (`asc`).
+Этот запрос возвращает любой тип ресурса, но только свойства **name**, **type** и **location**. Он использует выражение `order by`, чтобы сортировать свойства по свойству **name** в порядке возрастания (`asc`).
 
 ```Query
 project name, type, location
@@ -75,8 +75,7 @@ Search-AzureRmGraph -Query "project name, type, location | order by name asc"
 
 ## <a name="show-vms"></a>Отображение всех виртуальных машин, упорядоченных по имени в порядке убывания
 
-Если вместо всех ресурсов Azure требуется получить только список виртуальных машин (относящихся к типу `Microsoft.Compute/virtualMachines`), то мы можем использовать свойство **type** в результатах.
-Аналогично предыдущему запросу, `desc` изменяет `order by` для сортировки по убыванию. `=~` в сопоставлении типа указывает Resource Graph не учитывать регистр.
+Чтобы вывести только список виртуальных машин (относящихся к типу `Microsoft.Compute/virtualMachines`), в результатах можно применить сопоставление по свойству **type**. Аналогично предыдущему запросу, `desc` изменяет `order by` для сортировки по убыванию. `=~` в сопоставлении типа указывает Resource Graph не учитывать регистр.
 
 ```Query
 project name, location, type
@@ -165,7 +164,8 @@ Search-AzureRmGraph -Query "where type contains 'storage' | distinct type"
 
 ## <a name="list-publicip"></a>Вывод списка общедоступных IP-адресов
 
-Аналогично предыдущему примеру, этот запрос ищет все ресурсы, тип которых содержит слово **publicIPAddresses**. Этот запрос расширяет данный шаблон, чтобы скрыть ресурсы, у которых **properties.ipAddress** имеет значение NULL, и возвращать только ресурсы с действительным значением **properties.ipAddress**. Кроме того, число результатов ограничено (`limit`) первыми 100. В зависимости от выбранной оболочки может потребоваться экранировать кавычки.
+Аналогично предыдущему примеру этот запрос ищет все ресурсы, тип которых содержит слово **publicIPAddresses**.
+Этот запрос расширяет данный шаблон, чтобы скрыть ресурсы, у которых **properties.ipAddress** имеет значение NULL, и возвращать только ресурсы с действительным значением **properties.ipAddress**. Кроме того, число результатов ограничено (`limit`) первыми 100. В зависимости от выбранной оболочки может потребоваться экранировать кавычки.
 
 ```Query
 where type contains 'publicIPAddresses' and properties.ipAddress != ''
@@ -215,7 +215,7 @@ az graph query -q "where tags.environment=~'internal' | project name"
 Search-AzureRmGraph -Query "where tags.environment=~'internal' | project name"
 ```
 
-Если необходимо также получить другие теги такого ресурса и их значения, пример можно расширить, добавив свойство **tags** в `project` ключевое слово.
+Чтобы указать теги ресурсов и их значения, добавьте свойство **tags** для ключевого слова `project`.
 
 ```Query
 where tags.environment=~'internal'
@@ -232,7 +232,7 @@ Search-AzureRmGraph -Query "where tags.environment=~'internal' | project name, t
 
 ## <a name="list-specific-tag"></a>Вывод списка всех учетных записей хранения с определенным значением тега
 
-Совмещая фильтрацию из предыдущего примера с фильтрацией по типу ресурса Azure с помощью свойства **type**, мы можем уточнить поиск, чтобы искать определенные типы ресурсов Azure с определенным тегом и его значением.
+Объедините функции фильтра в предыдущем примере и фильтрацию по типу ресурса Azure с помощью свойства **type**. Этот запрос также ограничивает поиск определенных типов ресурсов Azure за счет использования конкретного имени и значения тега.
 
 ```Query
 where type =~ 'Microsoft.Storage/storageAccounts'

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/09/2017
 ms.author: deguhath
-ms.openlocfilehash: f87bc1d8140bea9ebb09e45d42b27e201b474026
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: dfb36cfba312d54d469b371f02820fd01da6dc7f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39214348"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51243426"
 ---
 # <a name="parallel-bulk-data-import-using-sql-partition-tables"></a>Параллельный массовый импорт данных с использованием таблиц секционирования SQL
 В этом документе описывается создание секционированных таблиц для быстрого параллельного массового импорта данных в Базу данных SQL Server. При загрузке и передаче больших данных в базу данных SQL с помощью *секционированных таблиц и представлений* можно оптимизировать импорт информации в эту базу, а также выполнение последующих запросов. 
@@ -102,7 +102,7 @@ ms.locfileid: "39214348"
 * [Измените базу данных](https://msdn.microsoft.com/library/bb522682.aspx), изменив схему ведения журнала транзакций на BULK_LOGGED, чтобы минимизовать нагрузку при ведении журнала, например:
   
         ALTER DATABASE <database_name> SET RECOVERY BULK_LOGGED
-* Чтобы ускорить загрузку данных, запустите параллельные операции массового импорта. Советы по ускорению импорта больших данных в базы SQL Server см. в статье [Загрузка данных емкостью 1 ТБ менее чем за час](http://blogs.msdn.com/b/sqlcat/archive/2006/05/19/602142.aspx).
+* Чтобы ускорить загрузку данных, запустите параллельные операции массового импорта. Советы по ускорению импорта больших данных в базы SQL Server см. в статье [Загрузка данных емкостью 1 ТБ менее чем за час](https://blogs.msdn.com/b/sqlcat/archive/2006/05/19/602142.aspx).
 
 В следующем сценарии PowerShell приведен пример параллельной загрузки данных с использованием BCP.
 

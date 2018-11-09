@@ -14,18 +14,20 @@ ms.topic: tutorial
 ms.date: 10/22/2018
 ms.author: mabrigg
 ms.reviewer: shnatara
-ms.openlocfilehash: 0b5f7442604dd31f730b0105d19231407e2b6f1a
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.openlocfilehash: abb77f59e49a98c1195dcd2e7b622b2b8e3fd7b8
+ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49946119"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50087290"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack"></a>Развертывание кластера Service Fabric в Azure Stack
 
 Используйте элемент **Кластер Service Fabric** из Azure Marketplace для развертывания защищенного кластера Service Fabric в Azure Stack. 
 
 Дополнительные сведения о работе с Service Fabric см. в статьях [Общие сведения о Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) и [Сценарии защиты кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) в документации Azure.
+
+Кластер Service Fabric в Azure Stack не использует поставщик ресурсов Microsoft.ServiceFabric. В Azure Stack кластер Service Fabric представляет собой масштабируемый набор виртуальных машин с предустановленным с помощью Desired State Configuration (DSC) набором программного обеспечения.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

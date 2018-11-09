@@ -10,14 +10,14 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/17/2018
+ms.date: 10/25/2018
 ms.author: tomfitz
-ms.openlocfilehash: c32c4f97a963485e87e36afc44e9cea2ebcebd90
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: e99d5d36fa46e9972e706d580e4dfb1d5f9e8bbc
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49394420"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50093837"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -28,8 +28,10 @@ ms.locfileid: "49394420"
 Расположение ресурса изменить невозможно. При перемещении ресурс всего лишь перемещается в новую группу ресурсов. Даже если новая группа ресурсов находится в другом расположении, расположение ресурса не меняется.
 
 > [!NOTE]
-> В этой статье описывается, как перемещать ресурсы в рамках существующего предложения для учетной записи Azure. Если вы действительно хотите изменить предложение для своей учетной записи Azure (например, перейти с оплаты по мере использования на предоплату), продолжая работать с существующими ресурсами, см. статью [Переключение подписки Azure на другое предложение](../billing/billing-how-to-switch-azure-offer.md).
->
+> В этой статье описывается, как перемещать ресурсы в рамках существующего предложения для учетной записи Azure. Если вы действительно хотите изменить предложение для учетной записи Azure, (например, повысить уровень с бесплатного до уровня с оплатой по мере использования), необходимо перейти на другую подписку. 
+> * Сведения о том, как перейти с бесплатной пробной версии или подписки Azure Microsoft Imagine на подписку с оплатой по мере использования, см. [здесь](..//billing/billing-upgrade-azure-subscription.md).
+> * Сведения о том, как перейти с подписки с оплатой по мере использования на другое предложение, см. [здесь](../billing/billing-how-to-switch-azure-offer.md).
+> * Если вам не удается перейти на другую подписку, [создайте запрос на поддержку Azure](../azure-supportability/how-to-create-azure-support-request.md). Выберите тип проблемы **Управление подпиской**.
 >
 
 ## <a name="checklist-before-moving-resources"></a>Рекомендации перед перемещением ресурсов
@@ -269,7 +271,7 @@ Authorization: Bearer <access-token>
 
 Перемещение управляемых дисков поддерживается по состоянию на 24 сентября 2018 г. 
 
-1. Необходимо зарегистрироваться, чтобы включить эту функцию.
+1. Зарегистрируйте эту функцию в исходной подписке.
 
   ```azurepowershell-interactive
   Register-AzureRmProviderFeature -FeatureName ManagedResourcesMove -ProviderNamespace Microsoft.Compute

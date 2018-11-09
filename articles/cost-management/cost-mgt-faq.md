@@ -5,21 +5,21 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 09/18/2018
+ms.date: 10/26/2018
 ms.topic: troubleshooting
 ms.service: cost-management
 manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: 4984332e1a149ae838bc76a24abec90364f5699e
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: ba6d8250d70320b33822d73c9213e9005128633f
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47221984"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50157213"
 ---
 # <a name="frequently-asked-questions-for-cloudyn"></a>Часто задаваемые вопросы об Cloudyn
 
-В этой статье рассматриваются некоторые распространенные вопросы о службе Cloudyn. Если у вас есть вопросы о Cloudyn, их можно задать на сайте [Часто задаваемые вопросы о Cloudyn](https://social.msdn.microsoft.com/Forums/231bf072-2c71-4121-8339-ac9d868137b9/faqs-for-azure-cost-management-by-cloudyn?forum=Cloudyn).
+В этой статье рассматриваются некоторые распространенные вопросы о службе Cloudyn. Если у вас есть вопросы о Cloudyn, их можно задать на сайте [Часто задаваемые вопросы о Cloudyn](https://social.msdn.microsoft.com/Forums/home?forum=faqs-for-azure-cost-management-by-cloudyn).
 
 ## <a name="how-can-i-resolve-common-indirect-enterprise-setup-problems"></a>Как можно устранить ошибки, связанные с корпоративной настройкой через посредника?
 
@@ -35,7 +35,7 @@ ms.locfileid: "47221984"
 
 1. Торговый посредник должен включить _исправления_ для вашей учетной записи. Инструкции см. в [руководстве по непрямому переносу клиентов в облачную среду](https://ea.azure.com/api/v3Help/v2IndirectCustomerOnboardingGuide).
 
-2. Создайте ключ соглашения Azure Enterprise для использования с Cloudyn. Инструкции см. в статье [Adding Your AZURE EA](https://support.cloudyn.com/hc/articles/210429585-Adding-Your-AZURE-EA) (Добавление соглашения Enterprise Azure) или в видео [How to Find Your EA Enrollment ID and API Key for use in Azure Cost Management Powered by Cloudyn](https://youtu.be/u_phLs_udig) (Как найти свой идентификатор регистрации EA и ключ API для использования в службе "Управление затратами Azure" от Cloudyn).
+2. Создайте ключ соглашения Azure Enterprise для использования с Cloudyn. Инструкции см. в статье [Adding Your AZURE EA](quick-register-ea.md#register-with-cloudyn) (Добавление соглашения Enterprise Azure) или в видео [How to Find Your EA Enrollment ID and API Key for use in Azure Cost Management Powered by Cloudyn](https://youtu.be/u_phLs_udig) (Как найти свой идентификатор регистрации EA и ключ API для использования в службе "Управление затратами Azure" от Cloudyn).
 
 Только администратор служб Azure может включить службу Cloudyn. Разрешений соадминистратора недостаточно.
 
@@ -100,7 +100,7 @@ ms.locfileid: "47221984"
 
 ## <a name="how-do-i-activate-unactivated-accounts-with-azure-credentials"></a>Как активировать неактивные учетные записи с помощью учетных данных Azure?
 
-Как только учетные записи Azure будут обнаружены Cloudyn, данные о затратах будут немедленно предоставлены в отчетах на основе затрат. Тем не менее, чтобы Cloudyn предоставлял данные об использовании и производительности, необходимо зарегистрировать учетные данные Azure для учетных записей. Инструкции см. в статье [Adding Azure Resource Manager](https://support.cloudyn.com/hc/articles/212784085-Adding-Azure-Resource-Manager) (Добавление Azure Resource Manager).
+Как только учетные записи Azure будут обнаружены Cloudyn, данные о затратах будут немедленно предоставлены в отчетах на основе затрат. Тем не менее, чтобы Cloudyn предоставлял данные об использовании и производительности, необходимо зарегистрировать учетные данные Azure для учетных записей. Инструкции см. в статье [о добавлении учетной записи и обновлении подписки](activate-subs-accounts.md#add-an-account-or-update-a-subscription).
 
 Чтобы добавить учетные данные Azure для учетной записи, на портале Cloudyn нажмите значок редактирования справа от имени учетной записи (не подписки).
 
@@ -108,10 +108,7 @@ ms.locfileid: "47221984"
 
 ## <a name="how-do-i-add-multiple-accounts-and-entities-to-an-existing-subscription"></a>Как добавить несколько учетных записей и сущностей в имеющуюся подписку?
 
-Дополнительные сущности используются для добавления дополнительных Соглашений Enterprise в подписку Cloudyn. В статьях по следующим ссылкам описывается добавление дополнительных сущностей:
-
-- статья о [добавлении сущности](https://support.cloudyn.com/hc/articles/212016145-Adding-an-Entity);
-- видео об [определении иерархии с помощью сущностей затрат](https://support.cloudyn.com/hc/articles/115005142529-Video-Defining-your-hierarchy-with-Cost-Entities).
+Дополнительные сущности используются для добавления дополнительных Соглашений Enterprise в подписку Cloudyn. Дополнительные сведения см. в статье [о создании сущностей и управлении ими](tutorial-user-access.md#create-and-manage-entities).
 
 Для поставщиков облачных служб:
 

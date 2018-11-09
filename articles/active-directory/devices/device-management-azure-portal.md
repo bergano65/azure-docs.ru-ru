@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/25/2018
+ms.date: 10/26/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 7aa7cd2e5b1cf1346a5a7b1f82ec9c7933dd1112
-ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
+ms.openlocfilehash: bda1a9df8a58833a544dc065dee0110bccf3ec59
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45542486"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50138866"
 ---
 # <a name="how-to-manage-devices-using-the-azure-portal"></a>Как управлять устройствами с помощью портала Azure
 
@@ -118,7 +118,14 @@ ms.locfileid: "45542486"
 
 ## <a name="device-management-tasks"></a>Задачи управления устройствами
 
-Администратор может управлять зарегистрированными или присоединенными к домену устройствами. В этом разделе приводятся сведения об общих задачах управления.
+Глобальный администратор может управлять зарегистрированными или присоединенными к домену устройствами. Администраторы службы Intune могут:
+ 
+- обновлять устройства — например, при ежедневных операциях, таких как включение и отключение устройств;
+
+- удалять устройства — когда устройство списывается и должно быть удалено из Azure AD.
+
+В этом разделе приводятся сведения об общих задачах управления.
+
 
 
 ### <a name="manage-an-intune-device"></a>Управление устройством Intune

@@ -1,55 +1,56 @@
 ---
 title: Сброс пиринга для Azure ExpressRoute | Документация Майкрософт
-description: Практическое руководство по отключению и включению пиринга для цепи ExpressRoute.
+description: Практическое руководство по отключению и включению пиринга для канала ExpressRoute.
 services: expressroute
 author: charwen
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 08/15/2018
 ms.author: charwen
-ms.openlocfilehash: b8c9bc1944e9ed0281616062a84958c953d08694
-ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
+ms.openlocfilehash: 1bb2bb61ccd06d5774b811203e86d609a01250a4
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "40180666"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50415820"
 ---
 # <a name="reset-expressroute-peerings"></a>Сброс пиринга для ExpressRoute
 
-В этой статье рассматривается отключение и включение пиринга для цепи ExpressRoute с помощью PowerShell. После отключения пиринга сеанс BGP как основного, так и дополнительного подключения цепи ExpressRoute будет отключен. Будет разорван обмен данными с корпорацией Майкрософт через этот пиринг. После включении пиринга сеанс BGP как основного, так и дополнительного подключения цепи ExpressRoute будет восстановлен. Будет возобновлен обмен данными с корпорацией Майкрософт через этот пиринг. В цепи ExpressRoute можно индивидуально отключать и включать как пиринг Майкрософт, так и частный пиринг Azure. При первой настройке пиринг в цепи ExpressRoute будет включен по умолчанию. 
+В этой статье рассматривается отключение и включение пиринга для цепи ExpressRoute с помощью PowerShell. После отключения пиринга сеанс BGP как основного, так и дополнительного подключения цепи ExpressRoute будет отключен. Будет разорван обмен данными с корпорацией Майкрософт через этот пиринг. После включении пиринга сеанс BGP как основного, так и дополнительного подключения цепи ExpressRoute будет восстановлен. Будет возобновлен обмен данными с корпорацией Майкрософт через этот пиринг. В цепи ExpressRoute можно индивидуально отключать и включать как пиринг Майкрософт, так и частный пиринг Azure. При первой настройке пиринг в цепи ExpressRoute будет включен по умолчанию.
 
 Существует несколько сценариев, в которых сброс пиринга для ExpressRoute может оказаться полезным.
 * Протестируйте проектирование и реализацию аварийного восстановления. Например, существует две цепи ExpressRoute. Пиринг в первой цепи можно отключить и принудительно перевести весь сетевой трафик на вторую цепь.
 * Включите обнаружение двунаправленной передачи (BFD) для частного пиринга Azure в цепи ExpressRoute. Если цепь ExpressRoute создается после 1 августа 2018 г., BFD будет включено по умолчанию. Если цепь была создана ранее приведенной даты, BFD включено не было. BFD можно включить путем отключения и повторного включения пиринга. Также необходимо обратить внимание на то, что BFD поддерживается только для частного пиринга Azure.
 
+### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
+
+[!INCLUDE [expressroute-cloudshell](../../includes/expressroute-cloudshell-powershell-about.md)]
 
 ## <a name="reset-a-peering"></a>Сброс пиринга
 
-1. Установите последнюю версию командлетов PowerShell для Azure Resource Manager. Дополнительные сведения см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/install-azurerm-ps).
+1. Если модуль PowerShell запущен локально, откройте консоль PowerShell с повышенными привилегиями и подключитесь к своей учетной записи. Для подключения используйте следующий пример кода:
 
-2. Откройте консоль PowerShell с повышенными привилегиями и подключитесь к своей учетной записи. Для подключения используйте следующий пример кода:
-
-  ```powershell
+  ```azurepowershell
   Connect-AzureRmAccount
   ```
-3. Если у вас есть несколько подписок Azure, проверьте подписки для этой учетной записи.
+2. Если у вас есть несколько подписок Azure, проверьте подписки для этой учетной записи.
 
-  ```powershell
+  ```azurepowershell-interactive
   Get-AzureRmSubscription
   ```
-4. Укажите подписку, которую нужно использовать.
+3. Укажите подписку, которую нужно использовать.
 
-  ```powershell
+  ```azurepowershell-interactive
   Select-AzureRmSubscription -SubscriptionName "Replace_with_your_subscription_name"
   ```
-5. Для извлечения цепи ExpressRoute необходимо выполнить следующие команды.
+4. Для извлечения цепи ExpressRoute необходимо выполнить следующие команды.
 
-  ```powershell
+  ```azurepowershell-interactive
   $ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
   ```
-6. Определите пиринг, который требуется включить или отключить. *Пиринг* является массивом. В следующем примере Peerings[0] — это частный пиринг Azure, а Peerings[1] — это пиринг корпорации Майкрософт.
+5. Определите пиринг, который требуется включить или отключить. *Пиринг* является массивом. В следующем примере Peerings[0] — это частный пиринг Azure, а Peerings[1] — это пиринг корпорации Майкрософт.
 
-  ```powershell
+  ```azurepowershell-interactive
 Name                             : ExpressRouteARMCircuit
 ResourceGroupName                : ExpressRouteResourceGroup
 Location                         : westus
@@ -130,9 +131,9 @@ Authorizations                   : []
 AllowClassicOperations           : False
 GatewayManagerEtag               :
   ```
-7. Чтобы изменить состояние пиринга, выполните следующие команды.
+6. Чтобы изменить состояние пиринга, выполните следующие команды.
 
-  ```powershell
+  ```azurepowershell-interactive
   $ckt.Peerings[0].State = "Disabled"
   Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
   ```

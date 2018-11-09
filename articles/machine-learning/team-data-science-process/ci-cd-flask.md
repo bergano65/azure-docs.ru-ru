@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/22/2018
 ms.author: jainr
-ms.openlocfilehash: b0368e742c990feed626a1c4982bfedc35785b49
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: fb162c45b8bd53fd4d994e0eb83a38438873d627
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44304294"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50094400"
 ---
 # <a name="devops-for-artificial-intelligence-ai-applications-creating-continuous-integration-pipeline-on-azure-using-docker-and-kubernetes"></a>DevOps в приложениях с искусственным интеллектом (AI). Создание конвейера непрерывной интеграции в Azure с помощью Docker и Kubernetes
 Для приложения AI существуют часто используемые два рабочих потока, создаваемые модели машинного обучения с помощью обработки и анализа данных и разработчики приложений, которые создают приложение и предоставляют его для потребления конечным пользователям. В этой статье будет продемонстрирована реализация конвейера непрерывной интеграции (CI) или непрерывной доставки (CD) для приложения AI. AI-приложение является сочетанием кода приложения, который внедрен в модель предварительного машинного обучения (ML). Из этой статьи вы узнаете, как извлекать предварительно обработанную модель из частной учетной записи хранения BLOB-объектов (вместо нее можно использовать учетную запись AWS S3). В этой статье будут использованы простые примеры веб-приложения Flask Python.
@@ -36,14 +36,14 @@ ms.locfileid: "44304294"
 ## <a name="pre-requisites"></a>Предварительные требования
 Ниже приведены условия, необходимые для выполнения описанного конвейера CI/CD:
 * [организация Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/accounts/create-organization-msa-or-work-student);
-* [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 * [развернутый кластер Kubernetes в службе контейнеров Azure](https://docs.microsoft.com/azure/container-service/kubernetes/container-service-tutorial-kubernetes-deploy-cluster);
-* [учетная запись реестра контейнеров на портале Azure](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-portal);
+* [Учетная запись Реестра контейнеров Azure (ACR)](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-portal)
 * [установленный Kubectl для запуска команд в кластере Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl/). Он понадобится, чтобы получить конфигурацию кластера ACS. 
 * Репозиторий, скопированный в учетную запись GitHub.
 
 ## <a name="description-of-the-cicd-pipeline"></a>Описание конвейера CI/CD
-Для каждого нового события конвейер запускается, проводит набор тестов, и если они окажутся успешными, он принимает последнюю сборку, а затем упаковывает ее в контейнер Docker. Затем с помощью службы контейнеров Azure (ACS) выполняется развертывание контейнера, а изображения безопасно хранятся в реестре контейнеров Azure (ACR). По умолчанию ACS, которая управляет кластером контейнера, работает в Kubernetes, но его можно заменить на Docker, Swarm или Mesos.
+Для каждого нового события конвейер запускается, проводит набор тестов, и если они окажутся успешными, он принимает последнюю сборку, а затем упаковывает ее в контейнер Docker. Затем с помощью службы контейнеров Azure (ACS) выполняется развертывание контейнера, а образы безопасно хранятся в реестре контейнеров Azure (ACR). По умолчанию ACS, которая управляет кластером контейнера, работает в Kubernetes, но его можно заменить на Docker, Swarm или Mesos.
 
 Приложение безопасно извлекает последнюю версию модели из учетной записи службы хранилища Azure и упаковывает ее в качестве части приложения. Развернутое приложение содержит код приложения и модель машинного обучения, которая упакована как единый контейнер. Это отделяет разработчиков приложений и специалистов по обработке и анализу данных и позволяет убедиться, что их рабочее приложение всегда использует последний код вместе с последней моделью машинного обучения.
 
@@ -70,5 +70,5 @@ ms.locfileid: "44304294"
 ## <a name="references"></a>Ссылки
 * [Командный процесс обработки и анализа данных (TDSP)](https://aka.ms/tdsp).
 * [Документация по службам машинного обучения Azure (предварительная версия)](https://docs.microsoft.com/azure/machine-learning/service/)
-* [Visual Studio Team Services](https://www.visualstudio.com/vso/)
+* [Azure DevOps](https://www.visualstudio.com/vso/)
 * [Общие сведения о предварительной версии службы Azure Kubernetes (AKS)](https://docs.microsoft.com/azure/aks/intro-kubernetes)

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 05/22/2017
 ms.author: bbenz
 ms.custom: mvc
-ms.openlocfilehash: db1005bbce25b0fa3fec76e6f9428a4cdd6fa4aa
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: ec942d97e7671c0477d8d723afacb06b73565c1c
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50024381"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50414563"
 ---
 # <a name="tutorial-build-a-java-and-mysql-web-app-in-azure"></a>Руководство. Создание веб-приложения Java в Azure с подключением к базе данных MySQL
 
@@ -47,7 +47,7 @@ ms.locfileid: "50024381"
 ## <a name="prerequisites"></a>Предварительные требования
 
 1. [Скачайте и установите Git](https://git-scm.com/)
-1. [Скачайте и установите Java 7 JDK или более поздней версии](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+1. [Скачайте и установите Java JDK](https://aka.ms/azure-jdks)
 1. [MySQL](https://dev.mysql.com/doc/refman/5.7/en/installing.html) (этот компонент потребуется запустить) 
 
 ## <a name="prepare-local-mysql"></a>Подготовка локальной базы данных MySQL 
@@ -272,7 +272,7 @@ az webapp create --name <app_name> --resource-group myResourceGroup --plan myApp
 
 В Cloud Shell настройте конфигурацию среды выполнения Java, необходимую для работы приложения, с помощью команды [`az webapp config set`](/cli/azure/webapp/config#az-webapp-config-set).
 
-Следующая команда настраивает веб-приложение для запуска в Java 8 JDK и [Apache Tomcat](http://tomcat.apache.org/) 8.0.
+Следующая команда настраивает веб-приложение для запуска в последней версии [JDK Java 8](https://aka.ms/azure-jdks) и [Apache Tomcat](http://tomcat.apache.org/) 8.0.
 
 ```azurecli-interactive
 az webapp config set --name <app_name> --resource-group myResourceGroup --java-version 1.8 --java-container Tomcat --java-container-version 8.0

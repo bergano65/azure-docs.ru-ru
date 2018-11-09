@@ -1,27 +1,23 @@
 ---
-title: Защита многоуровневого развертывания приложения SAP NetWeaver с помощью Azure Site Recovery | Документация Майкрософт
-description: В этой статье описывается, как защитить развернутые приложения SAP NetWeaver с помощью Azure Site Recovery.
-services: site-recovery
-documentationcenter: ''
+title: Настройка аварийного восстановления для многоуровневого развертывания приложения SAP NetWeaver с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье описывается, как настроить аварийное восстановление для развернутых приложений SAP NetWeaver с помощью Azure Site Recovery.
 author: asgang
 manager: rochakm
-editor: ''
-ms.assetid: ''
 ms.service: site-recovery
 ms.workload: backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 07/06/2018
+ms.topic: conceptual
+ms.date: 10/29/2018
 ms.author: asgang
-ms.openlocfilehash: a498ac9f973bbcf87bec104f18b542cc7e8b5800
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: c83cf9fb319c21881f0db8bd94dc9a94a3b811bc
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49318696"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50211729"
 ---
-# <a name="protect-a-multi-tier-sap-netweaver-application-deployment-by-using-site-recovery"></a>Защита многоуровневого развертывания приложения SAP NetWeaver с помощью Site Recovery
+# <a name="set-up-disaster-recovery-for-a-multi-tier-sap-netweaver-app-deployment"></a>Настройка аварийного восстановления для многоуровневого развертывания приложения SAP NetWeaver
 
 Для большинства развертываний большого и среднего размера SAP используется какая-либо разновидность решения аварийного восстановления. По мере переноса все большего числа ключевых бизнес-процессов в такие приложения, как SAP, повысилась важность надежных и тестируемых решений аварийного восстановления. Azure Site Recovery был протестирован и интегрирован с приложениями SAP. Служба Site Recovery превышает возможности большинства локальных решений аварийного восстановления. При этом ее совокупная стоимость владения (TCO) меньше, чем у конкурирующих решений.
 
@@ -62,7 +58,7 @@ ms.locfileid: "49318696"
 
 Эта эталонная архитектура демонстрирует запуск SAP NetWeaver в высокодоступной среде Windows в Azure.  Эта архитектура развертывается с конкретными размерами виртуальных машин, которые можно изменить в соответствии с потребностями вашей организации.
 
-![Схема обычного шаблона развертывания SAP](./media/site-recovery-sap/reference_sap.png)
+![Схема обычного шаблона развертывания SAP](./media/site-recovery-sap/sap-netweaver_latest.png)
 
 ## <a name="disaster-recovery-considerations"></a>Рекомендации по аварийному восстановлению
 

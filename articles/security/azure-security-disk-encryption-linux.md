@@ -7,12 +7,12 @@ ms.subservice: Azure Disk Encryption
 ms.topic: article
 ms.author: mstewart
 ms.date: 09/19/2018
-ms.openlocfilehash: 1cebb3dae8fbfd4188487a6ff7fca42ac0505cf0
-ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
+ms.openlocfilehash: 3561c2959283cd1c589414b96724cf0341af5e0a
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46498493"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50215384"
 ---
 # <a name="enable-azure-disk-encryption-for-linux-iaas-vms"></a>Включение шифрования дисков Azure для виртуальных машин IaaS под управлением Linux 
 
@@ -252,7 +252,11 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Compute
 - это не корневой или загрузочный раздел, а также не раздел операционной системы;
 - этот раздел еще не зашифрован;
 - это не том BEK;
+- это не том RAID;
+- это не том LVM;
 - он подключен.
+
+Выполняйте шифрование дисков, которые составляют том RAID или LVM, а не самого тома RAID или LVM.
 
 ### <a name="bkmk_EFAPSH"> </a> Использование параметра EncryptFormatAll с Azure CLI
 Используйте команду [az vm encryption enable](/cli/azure/vm/encryption#az-vm-encryption-enable), чтобы включить шифрование на работающей виртуальной машине IaaS в Azure.

@@ -10,12 +10,12 @@ ms.component: speech-service
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: mahilleb
-ms.openlocfilehash: a5fce6f9547a96da3ce482ce388e5ba2093f2af4
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 088e581da7511797a0f39959d867c6298262462a
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49468132"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50242336"
 ---
 # <a name="regions-of-the-speech-service"></a>Регионы службы "Речь"
 
@@ -37,7 +37,7 @@ ms.locfileid: "49468132"
 
 В следующей таблице перечислены доступные регионы для служб **распознавания речи** и **перевода**.
 
-  Регион | Параметр пакета SDK для службы "Речь" | Microsoft Azure
+  Регион | Параметр пакета SDK для службы "Речь" | Портал настройки распознавания речи
  ------|-------|--------
  Запад США | `westus` | https://westus.cris.ai
  Западная часть США 2 | `westus2` | https://westus2.cris.ai 

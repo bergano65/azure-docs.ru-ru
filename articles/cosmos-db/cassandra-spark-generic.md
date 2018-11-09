@@ -10,12 +10,12 @@ ms.devlang: spark-scala
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ankhanol
-ms.openlocfilehash: 38a972d39b845dca39bcc4dcf921c603301af582
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: 165919fa3d456786e926f754dba378be38c12588
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48869658"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50094250"
 ---
 # <a name="connect-to-azure-cosmos-db-cassandra-api-from-spark"></a>Подключитесь к API Cassandra для Azure Cosmos DB из оболочки Spark
 
@@ -29,7 +29,7 @@ ms.locfileid: "48869658"
 ## <a name="dependencies-for-connectivity"></a>Зависимости для подключения
 * **Соединитель Spark для Cassandra.** Соединитель Spark используется для подключения к API Cassandra для Azure Cosmos DB.  Определите и используйте версию соединителя, расположенного в [Maven central]( https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector), которая совместима с версиями Spark и Scala вашей среды Spark.
 
-* **Воспомогательная библиотека Azure Cosmos DB для API Cassandra.** В придачу к соединителю Spark вам потребуется другая библиотека Azure Cosmos DB, которая называется [azure-cosmos-cassandra-spark-helper]( https://search.maven.org/artifact/com.microsoft.azure.cosmosdb/azure-cosmos-cassandra-spark-helper/1.0.0/jar). Эта библиотека содержит производство подключений и классы пользовательской политики повтора.
+* **Воспомогательная библиотека Azure Cosmos DB для API Cassandra.** В придачу к соединителю Spark вам потребуется другая библиотека Azure Cosmos DB, которая называется [azure-cosmos-cassandra-spark-helper]( https://search.maven.org/artifact/com.microsoft.azure.cosmosdb/azure-cosmos-cassandra-spark-helper/1.0.0/jar). Эта библиотека содержит классы настраиваемой фабрики подключений и политик повтора.
 
   Политика повтора в Azure Cosmos DB настроена для обработки исключений кода состояния HTTP 429 ("Высокая частота запросов"). API Cassandra Azure Cosmos DB преобразует эти исключения в перегруженные ошибки в собственном протоколе Cassandra, и вы можете повторить попытку в пассивном режиме. Так как Azure Cosmos DB использует модель подготовленной пропускной способности, то исключения ограничения частоты запроса возникают тогда, когда увеличивается скорость входа/выхода. Политика повтора обеспечивает защиту заданий Spark от скачка данных, который кратковременно превышает пропускную способность, выделенную для вашей коллекции.
 

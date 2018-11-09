@@ -1,22 +1,21 @@
 ---
 title: Какие рабочие нагрузки можно защитить с помощью службы Azure Site Recovery? | Документация Майкрософт
 description: Описание рабочих нагрузок, которые можно защитить с помощью аварийного восстановления в службе Azure Site Recovery.
-services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 07/22/2018
+ms.date: 10/29/2018
 ms.author: raynew
-ms.openlocfilehash: 5295002e823dc864f0f0dcc67594f49b5431bce7
-ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
+ms.openlocfilehash: 70f19213da9c311e306e09890f54185f6d2834dc
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39205958"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50213248"
 ---
 # <a name="what-workloads-can-you-protect-with-azure-site-recovery"></a>Какие рабочие нагрузки можно защитить с помощью службы Azure Site Recovery?
 
-В этой статье описано, какие рабочие нагрузки и приложения можно реплицировать с помощью службы [Azure Site Recovery](site-recovery-overview.md).
+В этой статье описаны рабочие нагрузки и приложения, которые можно защитить путем аварийного восстановления с помощью службы [Azure Site Recovery](site-recovery-overview.md).
 
 
 

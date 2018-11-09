@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: f98d640f032fed5f91df8e9d4fb55d3f20550339
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: c2581abc782558ca114cc3a5d4f6224d132bce5d
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48883930"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50139101"
 ---
 # <a name="integrate-speech-service"></a>Интеграция службы распознавания речи
 [Служба распознавания речи](https://docs.microsoft.com/azure/cognitive-services/Speech-Service/) позволяет использовать один запрос для получения аудио и возврата объектов JSON с предсказаниями LUIS. В этой статье описано, как загрузить и использовать проект C# в Visual Studio, чтобы произнести фразу в микрофон и получить информацию о предсказании LUIS. В этом проекте используется уже включенный в качестве ссылки пакет [NuGet](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/) для распознавания речи. 
@@ -39,7 +39,7 @@ ms.locfileid: "48883930"
 
 
 ## <a name="add-keyphrase-prebuilt-entity"></a>Добавление предварительно созданной сущности KeyPhrase
-После импорта приложения выберите **Entities** (Сущности), а затем **Manage prebuilt entities** (Управление предварительно созданными сущностями). Добавьте сущность **KeyPhrase**. Сущность KeyPhrase извлекает запрашиваемое содержимое из фразы.
+После импорта приложения нажмите **Сущности**, а затем **Add prebuilt entity** (Добавить предварительно созданную сущность). Добавьте сущность **KeyPhrase**. Сущность KeyPhrase извлекает запрашиваемое содержимое из фразы.
 
 ## <a name="train-and-publish-the-app"></a>Обучение и публикация приложения
 1. На правой верхней панели навигации нажмите кнопку **Train** (Обучить) для обучения приложения LUIS.

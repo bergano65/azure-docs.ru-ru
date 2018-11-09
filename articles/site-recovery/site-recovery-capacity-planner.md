@@ -1,27 +1,20 @@
 ---
-title: Оценка нагрузки репликации в Azure | Документация Майкрософт
-description: Используйте данную статью, чтобы оценить производительность во время репликации с помощью Azure Site Recovery.
-services: site-recovery
-documentationcenter: ''
+title: Планирование ресурсов для аварийного восстановления Hyper-V помощью Azure Site Recovery | Документация Майкрософт
+description: Эта статья поможет оценить ресурсы при настройке аварийного восстановления с помощью службы Azure Site Recovery.
 author: rayne-wiselman
-manager: jwhit
-editor: ''
-ms.assetid: 0a1cd8eb-a8f7-4228-ab84-9449e0b2887b
+manager: carmonm
 ms.service: site-recovery
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: storage-backup-recovery
-ms.date: 10/11/2018
-ms.author: nisoneji
-ms.openlocfilehash: 3df7bd5ed44bdf514d48e451468329bd11fdf596
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.date: 10/28/2018
+ms.author: raynew
+ms.openlocfilehash: f600471e8a3602628a5040051f382e6e020f29d5
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49094043"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50211423"
 ---
-# <a name="plan-capacity-for-protecting-hyper-v-vms-with-site-recovery"></a>Планирование загрузки для защиты виртуальных машин Hyper-V с помощью Site Recovery
+# <a name="plan-capacity-for-hyper-v-vm-disaster-recovery"></a>Планирование ресурсов для аварийного восстановления виртуальной машины Hyper-V 
 
 Теперь доступна новая улучшенная версия программы [Планировщик развертывания Azure Site Recovery (развертывание виртуальных машин Hyper-V в Azure)](site-recovery-hyper-v-deployment-planner.md). Она используется вместо старого средства. Используйте для планирования развертывания новое средство.
 Это средство предоставляет указанные ниже рекомендации.

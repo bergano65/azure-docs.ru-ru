@@ -7,12 +7,12 @@ ms.subservice: Azure Disk Encryption
 ms.topic: article
 ms.author: mstewart
 ms.date: 09/19/2018
-ms.openlocfilehash: 81a9f84a925fc424fc6371fcbe02a141d4ee8ec1
-ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
+ms.openlocfilehash: b0b67121e172bb29d1f95e56d3b31f509552bf2e
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46498357"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50211236"
 ---
 # <a name="enable-azure-disk-encryption-for-linux-iaas-vms-previous-release"></a>Включение шифрования дисков Azure для виртуальных машин IaaS под управлением Linux (предыдущий выпуск)
 
@@ -192,8 +192,11 @@ ms.locfileid: "46498357"
 - это не корневой или загрузочный раздел, а также не раздел операционной системы;
 - этот раздел еще не зашифрован;
 - это не том BEK;
+- это не том RAID;
+- это не том LVM;
 - он подключен.
 
+Выполняйте шифрование дисков, которые составляют том RAID или LVM, а не самого тома RAID или LVM.
 
 ### <a name="bkmk_EFATemplate"> </a> Использование параметра EncryptFormatAll с шаблоном
 Чтобы использовать параметр EncryptFormatAll, в любом готовом шаблоне Azure Resource Manager, который шифрует виртуальную машину Linux, измените поле **EncryptionOperation** для ресурса AzureDiskEncryption.

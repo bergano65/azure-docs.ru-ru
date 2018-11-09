@@ -1,22 +1,20 @@
 ---
-title: Устранение неполадок при восстановлении размещения виртуальных машин Azure в локальную инфраструктуру VMware с помощью Azure Site Recovery | Документация Майкрософт
-description: В этой статье описывается, как устранить распространенные ошибки восстановления размещения и повторного включения защиты при восстановлении размещения в VMware из Azure с помощью Azure Site Recovery.
-services: site-recovery
-documentationcenter: ''
+title: Устранение неполадок при восстановлении размещения в локальную инфраструктуру во время аварийного восстановления виртуальных машин VMware в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье описываются способы устранения неполадок восстановления размещения и повторного включения защиты в процессе аварийного восстановления виртуальных машин VMware в Azure с помощью Azure Site Recovery.
 author: rajani-janaki-ram
 manager: gauravd
 ms.service: site-recovery
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/06/2018
 ms.author: rajanaki
-ms.openlocfilehash: c5ba0f1d98f3e4023e767bf3eea7a0b497d47686
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 89484e14d69493c74ed1ff983cf88ec146e0313d
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37920977"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210369"
 ---
-# <a name="troubleshoot-failback-from-azure-to-vmware"></a>Устранение неполадок при восстановлении размещения из Azure в VMware
+# <a name="troubleshoot-failback-to-on-premises-from-azure"></a>Устранение неполадок восстановления размещения в локальную среду из Azure
 
 В этой статье описываются способы решения проблем, которые могут возникнуть при восстановлении размещения виртуальных машин Azure в локальную инфраструктуру VMware после отработки отказа в Azure с помощью [Azure Site Recovery](site-recovery-overview.md).
 

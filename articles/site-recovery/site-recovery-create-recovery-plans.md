@@ -1,20 +1,17 @@
 ---
-title: Создание и настройка планов восстановления для отработки отказа и восстановления в Azure Site Recovery | Документация Майкрософт
-description: Подробнее о создании и настройке планов восстановления в Azure Site Recovery. В этой статье описывается отработка отказа и восстановление виртуальных машин и физических серверов.
-services: site-recovery
-documentationcenter: ''
-author: rayne-wiselman
+title: Создание и настройка планов восстановления для аварийного восстановления с помощью Azure Site Recovery | Документация Майкрософт
+description: Узнайте, как создать и настроить планы восстановления для аварийного восстановления с помощью службы Azure Site Recovery.
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 07/06/2018
+ms.date: 10/28/2018
 ms.author: raynew
-ms.openlocfilehash: 145b23aa7b8e48a0301676595c8d59a64bebdd0b
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 5253b5743216fdb7cea9e3d387f64fdba8f56d8a
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39226674"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212341"
 ---
 # <a name="create-and-customize-recovery-plans"></a>Создание и настройка планов восстановления
 

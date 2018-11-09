@@ -1,5 +1,5 @@
 ---
-title: Известные проблемы с решением "Azure Monitor для виртуальных машин" | Документация Майкрософт
+title: Известные проблемы в Azure Monitor для виртуальных машин (предварительная версия) | Документация Майкрософт
 description: Azure Monitor для виртуальных машин — это решение в Azure, которое отслеживает работоспособность и производительность ОС виртуальных машин Azure, автоматически обнаруживает компоненты приложений и их зависимости от других ресурсов, а также строит схему каналов связи между ними. В этой статье рассматриваются известные проблемы с этим решением.
 services: azure-monitor
 documentationcenter: ''
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/15/2018
+ms.date: 10/25/2018
 ms.author: magoedte
-ms.openlocfilehash: 6d1f1d1ae07ec32262f655fd6ed7205a70e252f4
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: eba9e26f12fd9e1862727adec4f8c8f594e8f659
+ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49385097"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091680"
 ---
-# <a name="known-issues-with-azure-monitor-for-vms"></a>Известные проблемы с решением "Azure Monitor для виртуальных машин"
+# <a name="known-issues-with-azure-monitor-for-vms-preview"></a>Известные проблемы в Azure Monitor для виртуальных машин (предварительная версия)
 
 Ниже перечислены известные проблемы с функцией проверки работоспособности решения "Azure Monitor для виртуальных машин":
 
