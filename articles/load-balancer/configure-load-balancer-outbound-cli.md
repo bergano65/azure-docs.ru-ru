@@ -4,8 +4,6 @@ description: В этой статье показано, как настраив�
 services: load-balancer
 documentationcenter: na
 author: KumudD
-manager: jpconnock
-tags: azure-resource-manager
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -13,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: kumud
-ms.openlocfilehash: a6d442452fe5ffc61648b3c004c03f1756f8f57e
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 0759b6a8e3deb9bc1d04e41598e4eef9304ecd83
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47160661"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50416415"
 ---
 # <a name="configure-load-balancing-and-outbound-rules-in-standard-load-balancer-using-azure-cli"></a>Настройка правил балансировки нагрузки и правил для исходящего трафика в Load Balancer (цен. категория "Стандартный") с использованием Azure CLI
 
@@ -63,7 +61,7 @@ ms.locfileid: "47160661"
 
 ## <a name="create-outbound-public-ip-address"></a>Создание исходящего общедоступного IP-адреса 
 
-Создайте IP-адрес ценовой категории "Стандартный" для исходящей интерфейсной конфигурации Load Balancer [az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip#create) с именем *mypublicipoutbound* в группе ресурсов *myresourcegroupoutbound*.
+Создайте IP-адрес категории "Стандартный" для внешней исходящей конфигурации Load Balancer с помощью [az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip#create).
 
 ```azurecli-interactive
   az network public-ip create --resource-group myresourcegroupoutbound --name mypublicipoutbound --sku standard
@@ -81,7 +79,7 @@ ms.locfileid: "47160661"
 
 ### <a name="create-load-balancer"></a>Создание балансировщика нагрузки
 
-С помощью команды [az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest#create) создайте Load Balancer с именем *lb* с входящим IP-адресом, входящей интерфейсной конфигурацией IP-адресов *myfrontendinbound* и внутренним пулом *bepool*, связанным с общедоступным IP-адресом *mypublicipinbound*, созданным на предыдущем шаге.
+С помощью команды [az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest#create) создайте Load Balancer с именем *lb* с входящим IP address, входящей интерфейсной конфигурацией IP-адресов и внутренним пулом, который связан с общедоступным IP-адресом *mypublicipinbound*, созданным на предыдущем шаге.
 
 ```azurecli-interactive
   az network lb create \

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: cshoe
-ms.openlocfilehash: d99c9732bb1bf494b87d2073ba002264c7a51634
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 3066da9a492fc12dd8b333a089b8aabbbb647414
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47221253"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50421362"
 ---
 # <a name="run-a-cassandra-cluster-on-linux-in-azure-with-nodejs"></a>Запуск кластера Cassandra под управлением Linux в Azure из приложения Node.js
 
@@ -118,13 +118,13 @@ Cassandra поддерживает два типа моделей целостн
 
 <table>
 <tr><th>Программное обеспечение</th><th>Источник</th><th>Version (версия)</th></tr>
-<tr><td>JRE    </td><td>[JRE 8](http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) </td><td>8U5</td></tr>
+<tr><td>JRE    </td><td>[JRE 8](https://aka.ms/azure-jdks) </td><td>8U5</td></tr>
 <tr><td>JNA    </td><td>[JNA](https://github.com/twall/jna) </td><td> 3.2.7</td></tr>
 <tr><td>Cassandra</td><td>[Apache Cassandra 2.0.8](http://www.apache.org/dist/cassandra/)</td><td> 2.0.8</td></tr>
 <tr><td>Ubuntu    </td><td>[Microsoft Azure](https://azure.microsoft.com/) </td><td>14.04 LTS</td></tr>
 </table>
 
-При загрузке среды выполнения Java (JRE) требуется вручную принять условия лицензионного соглашения Oracle. Поэтому для упрощения развертывания загрузите все необходимое программное обеспечение на рабочий стол. Затем передайте его в образ шаблона Ubuntu, который будет создан в качестве основы для развертывания кластера.
+Поэтому для упрощения развертывания загрузите все необходимое программное обеспечение в настольный компьютер. Затем передайте его в образ шаблона Ubuntu, который будет создан в качестве основы для развертывания кластера.
 
 Загрузите приведенное выше программное обеспечение в известный каталог загрузок (например, %TEMP%/downloads в ОС Windows или ~/downloads в Linux или Mac) на локальном компьютере.
 

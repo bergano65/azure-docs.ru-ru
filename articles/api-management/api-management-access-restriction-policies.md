@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/28/2017
 ms.author: apimpm
-ms.openlocfilehash: 4f00268fcf3797697812f3aa8b221817a2794691
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 4dd54a4a4985a33bc14022d7f722bdf83224c4aa
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49092547"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51240857"
 ---
 # <a name="api-management-access-restriction-policies"></a>Политики ограничения доступа в службе управления API
-В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](http://go.microsoft.com/fwlink/?LinkID=398186).  
+В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](https://go.microsoft.com/fwlink/?LinkID=398186).  
   
 ##  <a name="AccessRestrictionPolicies"></a> Политики ограничения доступа  
   
@@ -71,7 +71,7 @@ ms.locfileid: "49092547"
 |ignore-case|Можно задать значение true или false. Если задано значение true и значение заголовка сравнивается с набором допустимых значений, регистр игнорируется.|Yes|Недоступно|  
   
 ### <a name="usage"></a>Использование  
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
   
 -   **Разделы политики:** inbound, outbound.  
   
@@ -126,7 +126,7 @@ ms.locfileid: "49092547"
 |renewal-period|Период времени (в секундах), по окончании которого сбрасывается квота.|Yes|Недоступно|  
   
 ### <a name="usage"></a>Использование  
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
   
 -   **Разделы политики:** inbound.  
   
@@ -181,7 +181,7 @@ ms.locfileid: "49092547"
 |renewal-period|Период времени (в секундах), по окончании которого сбрасывается квота.|Yes|Недоступно|  
   
 ### <a name="usage"></a>Использование  
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
   
 -   **Разделы политики:** inbound.  
   
@@ -224,7 +224,7 @@ ms.locfileid: "49092547"
 |ip-filter action="allow &#124; forbid"|Указывает, должны ли быть разрешены или запрещены вызовы для указанных IP-адресов и диапазонов.|Yes|Недоступно|  
   
 ### <a name="usage"></a>Использование  
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
   
 -   **Разделы политики:** inbound.  
 -   **Области политики:** global, product, API, operation.  
@@ -279,7 +279,7 @@ ms.locfileid: "49092547"
 |renewal-period|Период времени (в секундах), по окончании которого сбрасывается квота.|Yes|Недоступно|  
   
 ### <a name="usage"></a>Использование  
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
   
 -   **Разделы политики:** inbound.  
 -   **Области политики:** product.  
@@ -336,7 +336,7 @@ ms.locfileid: "49092547"
 |renewal-period|Период времени (в секундах), по окончании которого сбрасывается квота.|Yes|Недоступно|  
   
 ### <a name="usage"></a>Использование  
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
   
 -   **Разделы политики:** inbound.  
 -   **Области политики:** global, product, API, operation.  
@@ -506,7 +506,7 @@ ms.locfileid: "49092547"
 |URL-адрес|URL-адрес конечной точки конфигурации Open ID, по которому можно получить метаданные конфигурации Open ID. Ответ должен соответствовать спецификациям, как определено в URL-адресе :`https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata`.  Для Azure Active Directory используйте URL-адрес `https://login.microsoftonline.com/{tenant-name}/.well-known/openid-configuration`, подставив необходимое имя клиента каталога, например `contoso.onmicrosoft.com`.|Yes|Недоступно|  
   
 ### <a name="usage"></a>Использование  
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
   
 -   **Разделы политики:** inbound.  
 -   **Области политики:** global, product, API, operation.  

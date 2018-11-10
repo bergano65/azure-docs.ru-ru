@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 10/19/2018
+ms.date: 10/30/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 5e198310dd18cc8574b5510b9318ff4badaffca3
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: 2b8cc34e5ace5e252acae94a16858a69edc63a1c
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49646316"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50240245"
 ---
 # <a name="tutorial-create-azure-resource-manager-templates-with-dependent-resources"></a>Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами
 
@@ -29,10 +29,8 @@ ms.locfileid: "49646316"
 В рамках этого руководства рассматриваются следующие задачи:
 
 > [!div class="checklist"]
-> * Настройка безопасной среды
 > * Открытие шаблона быстрого запуска
 > * Обзор шаблона
-> * Изменение файла параметров
 > * Развертывание шаблона
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
@@ -41,8 +39,8 @@ ms.locfileid: "49646316"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* [Visual Studio Code](https://code.visualstudio.com/) с расширением средств Resource Manager.  Как установить расширение см. в разделе [Quickstart: create Azure Resource Manager templates by using Visual Studio Code](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code)
-* Для предотвращения атак путем распыления пароля создайте пароль для учетной записи администратора виртуальной машины. Ниже приведен пример:
+* [Visual Studio Code](https://code.visualstudio.com/) с расширением средств Resource Manager.  См. в разделе [Краткое руководство. Создание шаблона Azure Resource Manager c помощью Visual Studio Code](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
+* Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
     ```azurecli-interactive
     openssl rand -base64 32
@@ -66,37 +64,45 @@ ms.locfileid: "49646316"
 
 Рассматривая шаблон в этом разделе, постарайтесь ответить на следующие вопросы:
 
-- Сколько ресурсов Azure определено в этом шаблоне?
-- Одним из ресурсов является учетная запись хранения Azure.  Похоже ли это определение на использованное в предыдущем руководстве?
-- Можете ли вы найти справочники по шаблонам для ресурсов, определенных в этом шаблоне?
-- Можете ли вы найти зависимости ресурсов?
+* Сколько ресурсов Azure определено в этом шаблоне?
+* Одним из ресурсов является учетная запись хранения Azure.  Похоже ли это определение на использованное в предыдущем руководстве?
+* Можете ли вы найти справочники по шаблонам для ресурсов, определенных в этом шаблоне?
+* Можете ли вы найти зависимости ресурсов?
 
 1. В Visual Studio Code сверните элементы, пока не появятся элементы только первого уровня и элементы второго уровня внутри **ресурсов**.
 
     ![Шаблоны Azure Resource Manager в Visual Studio Code](./media/resource-manager-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code.png)
 
-    Шаблоном определено пять ресурсов.
-2. Разверните первый ресурс. Это учетная запись хранения. Определение должно соответствовать определению, используемому в начале предыдущего руководства.
+    Шаблоном определено пять ресурсов:
+
+    * `Microsoft.Storage/storageAccounts`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/Microsoft.Storage/storageAccounts).
+    * `Microsoft.Network/publicIPAddresses`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.network/publicipaddresses).
+    * `Microsoft.Network/virtualNetworks`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.network/virtualnetworks).
+    * `Microsoft.Network/networkInterfaces`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.network/networkinterfaces).
+    * `Microsoft.Compute/virtualMachines`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.compute/virtualmachines).
+
+    Прежде чем настраивать шаблон, рекомендуется получить основные сведения о нем.
+
+2. Разверните первый ресурс. Это учетная запись хранения. Сравните определение ресурса с определением в [справочнике по шаблону](https://docs.microsoft.com/azure/templates/Microsoft.Storage/storageAccounts).
 
     ![Определение учетной записи хранения для шаблонов Azure Resource Manager в Visual Studio Code](./media/resource-manager-tutorial-create-templates-with-dependent-resources/resource-manager-template-storage-account-definition.png)
 
-3. Разверните второй ресурс. Тип ресурса — **Microsoft.Network/publicIPAddresses**. Чтобы найти справочник по шаблону, перейдите по [этой ссылке](https://docs.microsoft.com/azure/templates/) и в поле **Фильтровать по названию** введите **общедоступный IP-адрес** или **общедоступные IP-адреса**. Сравните определение ресурса с определением в справочнике по шаблону.
+3. Разверните второй ресурс. В качестве типа ресурса используйте `Microsoft.Network/publicIPAddresses`. Сравните определение ресурса с определением в [справочнике по шаблону](https://docs.microsoft.com/azure/templates/microsoft.network/publicipaddresses).
 
     ![Определение общедоступного IP-адреса для шаблонов Azure Resource Manager в Visual Studio Code](./media/resource-manager-tutorial-create-templates-with-dependent-resources/resource-manager-template-public-ip-address-definition.png)
-4. Повторите последний шаг, чтобы найти справочники по шаблонам для других ресурсов, определенных в этом шаблоне.  Сравните определения ресурсов со справочными экземплярами.
-5. Разверните четвертый ресурс:
+4. Разверните четвертый ресурс: В качестве типа ресурса используйте `Microsoft.Network/networkInterfaces`.  
 
     ![Шаблоны Azure Resource Manager в Visual Studio Code для элемента dependsOn](./media/resource-manager-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code-dependson.png)
 
-    Элемент dependsOn позволяет определить один ресурс как зависимый от одного или нескольких ресурсов. В этом примере ресурс является networkInterface.  Он зависит от двух других ресурсов:
+    Элемент dependsOn позволяет определить один ресурс как зависимый от одного или нескольких ресурсов. Этот ресурс зависит от двух других ресурсов:
 
-    * publicIpAddress;
-    * virtualNetwork.
+    * `Microsoft.Network/publicIPAddresses`
+    * `Microsoft.Network/virtualNetworks`
 
-6. Разверните пятый ресурс. Этот ресурс — это виртуальная машина. Он зависит от двух других ресурсов:
+5. Разверните пятый ресурс. Этот ресурс — это виртуальная машина. Он зависит от двух других ресурсов:
 
-    * storageAccount
-    * networkInterface.
+    * `Microsoft.Storage/storageAccounts`
+    * `Microsoft.Network/networkInterfaces`
 
 На следующей схеме приведены ресурсы и информация о зависимости для этого шаблона.
 
@@ -134,17 +140,18 @@ ms.locfileid: "49646316"
     ```azurepowershell
     $deploymentName = Read-Host -Prompt "Enter the name for this deployment"
     $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
+    $location = Read-Host -Prompt "Enter the location (i.e. centralus)"
     $adminUsername = Read-Host -Prompt "Enter the virtual machine admin username"
-    $adminPassword = Read-Host -Prompt "Enter the admin password"
-    $dnsLablePrefix = Read-Host -Prompt "Enter the DNS label prefix"
+    $adminPassword = Read-Host -Prompt "Enter the admin password" -AsSecureString
+    $dnsLabelPrefix = Read-Host -Prompt "Enter the DNS label prefix"
 
     New-AzureRmResourceGroup -Name $resourceGroupName -Location $location
     New-AzureRmResourceGroupDeployment -Name $deploymentName `
         -ResourceGroupName $resourceGroupName `
-        -adminUsername = $adminUsername `
-        -adminPassword = $adminPassword `
-        -dnsLabelPrefix = $dnsLabelPrefix `
-        -TemplateFile azuredeploy.json 
+        -adminUsername $adminUsername `
+        -adminPassword $adminPassword `
+        -dnsLabelPrefix $dnsLabelPrefix `
+        -TemplateFile azuredeploy.json
     ```
 8. Для отображения вновь созданной виртуальной машины выполните следующую команду PowerShell.
 
@@ -155,7 +162,7 @@ ms.locfileid: "49646316"
 
     Имя виртуальной машины внутри шаблона жестко закодировано как **SimpleWinVM**.
 
-9. Войдите в виртуальную машину для проверки учетных данных администратора. 
+9. RDP-подключение к виртуальной машине для ее проверки успешно установлено.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -168,9 +175,7 @@ ms.locfileid: "49646316"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве был разработан и развернут шаблон для создания виртуальной машины, виртуальной сети и зависимых ресурсов. Сведения о том, как развернуть ресурсы Azure на основе условий, см. по ссылке ниже.
-
+В этом руководстве описано, как разработать и развернуть шаблон для создания виртуальной машины, виртуальной сети и зависимых ресурсов. Сведения о том, как развернуть ресурсы Azure на основе условий, см. по ссылке ниже.
 
 > [!div class="nextstepaction"]
 > [Использование условий](./resource-manager-tutorial-use-conditions.md)
-

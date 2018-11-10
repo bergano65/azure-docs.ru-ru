@@ -14,12 +14,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
-ms.openlocfilehash: c1c884e05d357db7e23574dbd31f206d6c3fe23c
-ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
+ms.openlocfilehash: 757c710ddca72ec6a1383b51a8b536d196e6cb8c
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2018
-ms.locfileid: "41918636"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50414490"
 ---
 # <a name="use-revisions-to-make-non-breaking-changes-safely"></a>Безопасное внесение некритических изменений с помощью редакций
 Когда готовый к работе API начинают использовать разработчики, следует осторожно вносить изменения в этот API, чтобы не нарушить работу вызывающих его сторон. Полезно также сообщать разработчикам о внесенных изменениях. Для этого можно использовать **редакции** в службе управления API Azure. Дополнительные сведения см. в статьях [Versions & revisions](https://blogs.msdn.microsoft.com/apimanagement/2017/09/14/versions-revisions/) (Версии и редакции) и [API Versioning with Azure API Management](https://blogs.msdn.microsoft.com/apimanagement/2017/09/13/api-versioning-with-azure-api-management/) (Управление версиями API с помощью службы управления API Azure).
@@ -36,10 +36,13 @@ ms.locfileid: "41918636"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
++ Ознакомьтесь с [терминологией службы управления API в Azure](api-management-terminology.md).
 + Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
 + Также выполните задачи из руководства по [импорту и публикации первого API](import-and-publish.md).
 
 ## <a name="add-a-new-revision"></a>Добавление новой редакции
+
+![Добавление версии API](media/api-management-getstarted-revise-api/07-AddRevisions-01-AddNewRevision.png)
 
 1. Выберите страницу **Интерфейсы API**.
 2. Выберите **Demo Conference API** в списке API (или другой API, в который нужно внести исправления).
@@ -48,8 +51,6 @@ ms.locfileid: "41918636"
 
     > [!TIP]
     > Также можно выбрать команду **Добавить редакцию** в контекстном меню (**…**) API.
-    
-    ![Меню "Исправления" в верхней части экрана](media/api-management-getstarted-revise-api/TopMenu.PNG)
 
 5. Введите описание вашей новой редакции, чтобы напомнить, для чего она будет использоваться.
 6. Нажмите кнопку **Создать**
@@ -59,6 +60,8 @@ ms.locfileid: "41918636"
     > Исходный API остается в редакции **Revision 1**. Именно эту редакцию по-прежнему будут вызывать пользователи, пока вы не выберете текущей другую редакцию.
 
 ## <a name="make-non-breaking-changes-to-your-revision"></a>Внесение некритических изменений в редакцию
+
+![Изменение версии](media/api-management-getstarted-revise-api/07-AddRevisions-02-MakeChanges.png)
 
 1. В списке API выберите **Demo Conference API**.
 2. Выберите вкладку **Конструктор** в верхней части экрана.
@@ -78,6 +81,7 @@ ms.locfileid: "41918636"
 1. Выберите вкладку **Исправления** в меню в верхней части страницы.
 
     ![Меню "Исправления" на экране редакции](media/api-management-getstarted-revise-api/RevisionsMenu.PNG)
+
 2. Откройте контекстное меню (**…**) для редакции **Revision 2**.
 3. Выберите **Сделать текущим**.
 4. Установите флажок **Post to Public Change log for this API** (Записать в общедоступный журнал изменений для этого API), если нужно опубликовать примечания об этом изменении. Введите описание внесенного изменения, которое будет отображаться для разработчиков, например **Тестирование исправлений. Добавлена новая операция test.**

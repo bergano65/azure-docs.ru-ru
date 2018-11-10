@@ -1,22 +1,21 @@
 ---
-title: Общедоступный IP-адрес и Site Recovery | Документация Майкрософт
-description: В этой статье описывается, как настраивать общедоступный IP-адрес с помощью диспетчера трафика Azure и Azure Site Recovery для аварийного восстановления и миграции.
+title: Использование общедоступных IP-адресов после отработки отказа с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье описывается, как настраивать общедоступные IP-адреса с помощью диспетчера трафика Azure и Azure Site Recovery для аварийного восстановления и миграции.
 services: site-recovery
-documentationcenter: ''
 author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
 ms.date: 09/28/2018
 ms.author: mayg
-ms.openlocfilehash: fd17c786515a6db1f8aa5c1aff7c0dcd42ed7dc6
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 80c38ecc766d60fba578e877998aeb216ea66012
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47435843"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50215282"
 ---
-# <a name="public-ip-address-with-site-recovery"></a>Общедоступный IP-адрес и Site Recovery
+# <a name="set-up-public-ip-addresses-after-failover"></a>Настройка общедоступных IP-адресов после отработки отказа
 
 Общедоступные IP-адреса позволяют устанавливать входящее подключение от интернет-ресурсов к ресурсам Azure. Также они позволяют устанавливать исходящее подключение от ресурсов Azure к Интернету и общедоступным службам Azure с использованием IP-адреса, назначенного ресурсу.
 - Входящий трафик из Интернета к ресурсам, таким как виртуальные машины Azure, шлюзы приложений Azure, подсистемы балансировки нагрузки Azure, VPN-шлюзы Azure и другие. Можно по-прежнему взаимодействовать с некоторыми ресурсами из Интернета, такими как виртуальные машины, если виртуальная машина не имеет назначенного ей общего IP-адреса. Пока виртуальная машина является частью пула внутренней подсистемы балансировки нагрузки, то взаимодействовать невозможно, потому что подсистема балансировки нагрузки имеет назначенный общедоступный IP-адрес.

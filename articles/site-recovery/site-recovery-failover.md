@@ -1,21 +1,22 @@
 ---
-title: Отработка отказа в Site Recovery | Документация Майкрософт
-description: Azure Site Recovery координирует репликацию, отработку отказа и восстановление виртуальных машин и физических серверов. Узнайте о функции отработки отказа с выполнением переноса в Azure или в дополнительный центр обработки данных.
+title: Отработка отказа при аварийном восстановлении с помощью Azure Site Recovery | Документация Майкрософт
+description: Сведения об отработке отказа виртуальных машин и физических серверов во время аварийного восстановления с помощью службы Azure Site Recovery.
 services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 09/11/2018
-ms.author: ponatara
-ms.openlocfilehash: c9a2f258ca952ca36000e1ca0630fbde31ba7ba0
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
+ms.date: 10/28/2018
+ms.author: raynew
+ms.openlocfilehash: 6e16529740377b9a082fda4f3e4409b57441715e
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44391323"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50215163"
 ---
-# <a name="failover-in-site-recovery"></a>Отработка отказа в Site Recovery
+# <a name="fail-over-vms-and-physical-servers"></a>Отработка отказа виртуальных машин и физических серверов 
+
 В этой статье описывается отработка отказа для виртуальных машин и физических серверов, защищаемых службой Site Recovery.
 
 ## <a name="prerequisites"></a>Предварительные требования

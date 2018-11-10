@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 09/19/2017
 ms.author: renash
 ms.component: files
-ms.openlocfilehash: aa63a31f7f84502a29aad6b38f454ea1080127e0
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 8a5a71fada190939abf638cd1b681adff7e80970
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39530039"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51244548"
 ---
 # <a name="develop-for-azure-files-with-java"></a>Разработка для файлов Azure с использованием языка Java
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -231,6 +231,6 @@ if ( file.deleteIfExists() ) {
 * [Microsoft Azure Storage SDK for Android](https://github.com/azure/azure-storage-android)
 * [Справочник по пакету SDK для клиента хранилища Azure](http://dl.windowsazure.com/storage/javadoc/)
 * [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355.aspx)
-* [Блог рабочей группы службы хранилища Azure](http://blogs.msdn.com/b/windowsazurestorage/)
+* [Блог рабочей группы службы хранилища Azure](https://blogs.msdn.com/b/windowsazurestorage/)
 * [Приступая к работе со служебной программой командной строки AzCopy](../common/storage-use-azcopy.md)
 * [Устранение неполадок с файлами Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md)

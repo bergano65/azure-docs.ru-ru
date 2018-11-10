@@ -15,18 +15,18 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/30/2018
 ms.author: wesmc
-ms.openlocfilehash: b0f1ba7f0799fb9f8f58370a39758416eab43dc7
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: c2dffc178a017d8b16ea7a36407d8bbf62c6d642
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32195810"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50242149"
 ---
 # <a name="tutorial-create-a-cache-aside-leaderboard-on-aspnet"></a>Руководство по созданию списка лидеров с использованием кэша на стороне в ASP.NET
 
 В этом руководстве мы обновим веб-приложение ASP.NET *ContosoTeamStats*, созданное в [руководстве ASP.NET для кэша Redis для Azure](cache-web-app-howto.md), чтобы включить список лидеров, который использует [шаблон "Кэш на стороне"](https://docs.microsoft.com/azure/architecture/patterns/cache-aside) с кэшем Redis для Azure. В примере приложения отображается список статистических данных команды из базы данных и различные способы использования кэша Redis для Azure для хранения и извлечения данных из кэша с целью улучшения производительности. Завершив работу с руководством, вы получите рабочее веб-приложение, которое выполняет чтение и запись в базе данных, оптимизированное для работы с кэшем Redis для Azure и размещенное в Azure.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * улучшение пропускной способности данных и снижение нагрузки на базу данных за счет хранения и извлечения данных с помощью кэша Redis для Azure;
@@ -36,14 +36,14 @@ ms.locfileid: "32195810"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством необходимо следующее:
 
 * Это руководство является продолжением статьи [Примеры использования ASP.NET для кэша Redis для Azure](cache-web-app-howto.md). Если вы еще этого не сделали, сначала ознакомьтесь с этим кратким руководством.
 * Установите [Visual Studio 2017](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
     * ASP.NET и веб-разработка.
-    * разработка Azure;
+    * разработка Azure.
     * разработка настольных приложений .NET с SQL Server Express LocalDB или [выпуском SQL Server 2017 Express](https://www.microsoft.com/sql-server/sql-server-editions-express).
 
 ## <a name="add-a-leaderboard-to-the-project"></a>Добавление списка лидеров в проект
@@ -150,7 +150,7 @@ ms.locfileid: "32195810"
     }
     ```
 
-1. В **обозревателе решений** дважды щелкните файл **web.config**, чтобы открыть его.
+1. В **обозревателе решений** дважды щелкните файл **Web.config**, чтобы открыть его.
 
     ![Web.config](./media/cache-web-app-cache-aside-leaderboard/cache-web-config.png)
 

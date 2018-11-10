@@ -33,7 +33,7 @@ items:
     href: point-to-site-about.md
   - name: Сведения о маршрутизации VPN-подключений типа "точка — сеть"
     href: vpn-gateway-about-point-to-site-routing.md
-  - name: Сведения об избыточных в пределах зоны шлюзах для Зон доступности
+  - name: Сведения об избыточных между зонами шлюзах для Зон доступности
     href: about-zone-redundant-vnet-gateways.md
   - name: Взаимодействие компонентов при подключении к серверной части
     items:
@@ -129,7 +129,7 @@ items:
     items:
     - name: Azure PowerShell
       href: vpn-gateway-activeactive-rm-powershell.md
-  - name: Создание избыточного в пределах зоны шлюза виртуальной сети в Зонах доступности Azure
+  - name: Создание избыточного между зонами шлюза виртуальной сети в Зонах доступности Azure
     href: create-zone-redundant-vnet-gateway.md
   - name: Маршрутизация, BGP и пиринг виртуальных сетей
     items:

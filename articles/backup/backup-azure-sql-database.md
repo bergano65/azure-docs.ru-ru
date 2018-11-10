@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 08/02/2018
 ms.author: markgal;anuragm
 ms.custom: ''
-ms.openlocfilehash: aab0ac2dfba47741eaf5a75ef46d9ca5f8873d50
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 72d48bd1716e1b62ae92f8317f3f9611ac463453
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47434251"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50211508"
 ---
 # <a name="back-up-sql-server-databases-to-azure"></a>Резервное копирование баз данных SQL Server в Azure
 
@@ -658,23 +658,23 @@ Azure Backup отображает все запущенные вручную, и
 В примере ниже показан запрос для получения всех заданий резервного копирования для базы данных с именем **DB1**. Настройте запрос для расширенного мониторинга.
 
 ```
-select CAST (
+select CAST (
 Case type
-                when 'D' 
-                                 then 'Full'
-                when  'I'
-                               then 'Differential' 
-                ELSE 'Log'
-                END         
-                AS varchar ) AS 'BackupType',
-database_name, 
+                when 'D' 
+                                 then 'Full'
+                when  'I'
+                               then 'Differential' 
+                ELSE 'Log'
+                END         
+                AS varchar ) AS 'BackupType',
+database_name, 
 server_name,
 machine_name,
 backup_start_date,
 backup_finish_date,
-DATEDIFF(SECOND, backup_start_date, backup_finish_date) AS TimeTakenByBackupInSeconds,
-backup_size AS BackupSizeInBytes
-  from msdb.dbo.backupset where user_name = 'NT SERVICE\AzureWLBackupPluginSvc' AND database_name =  <DB1>  
+DATEDIFF(SECOND, backup_start_date, backup_finish_date) AS TimeTakenByBackupInSeconds,
+backup_size AS BackupSizeInBytes
+  from msdb.dbo.backupset where user_name = 'NT SERVICE\AzureWLBackupPluginSvc' AND database_name =  <DB1>  
  
 ```
 
@@ -703,7 +703,7 @@ backup_size AS BackupSizeInBytes
 * можно остановить все будущие задания резервного копирования и удалить все точки восстановления;
 * можно остановить все будущие задания резервного копирования, но сохранить точки восстановления.
 
-За хранение точек восстановления взимается плата. Точки восстановления для SQL оплачиваются как защищенный экземпляр SQL, а также используют ресурсы хранилища. Для получения дополнительных сведений о ценообразовании Azure Backup для SQL см. раздел [Страница расценок Azure Backup](https://azure.microsoft.com/pricing/details/backup/). 
+Если выбрать Stop backup with retain data (Прекращение архивации с сохранением данных), точки восстановления будут очищены согласно политике архивации. При этом будет взиматься оплата за защищенный экземпляр SQL, а также за ресурсы хранилища, потребленные до очистки всех точек восстановления. Для получения дополнительных сведений о ценообразовании Azure Backup для SQL см. раздел [Страница расценок Azure Backup](https://azure.microsoft.com/pricing/details/backup/). 
 
 Чтобы остановить защиту базы данных, выполните следующие действия.
 

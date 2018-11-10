@@ -1,6 +1,6 @@
 ---
-title: Защита Active Directory и DNS с помощью Azure Site Recovery | Документация Майкрософт
-description: В этой статье описывается, как реализовать решение аварийного восстановления для Active Directory с помощью Azure Site Recovery.
+title: Настройка аварийного восстановления для Active Directory и DNS с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье описывается, как реализовать решение аварийного восстановления для Active Directory и DNS с помощью Azure Site Recovery.
 services: site-recovery
 documentationcenter: ''
 author: mayurigupta13
@@ -9,14 +9,14 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: mayg
-ms.openlocfilehash: 1072c903e9bd9ccb3d63cae426283a677d10077e
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 51d435d9edea5e341127cac89bc96a71c7bc8bb4
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49354297"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50211899"
 ---
-# <a name="use-azure-site-recovery-to-protect-active-directory-and-dns"></a>Защита Active Directory и DNS с помощью Azure Site Recovery
+# <a name="set-up-disaster-recovery-for-active-directory-and-dns"></a>Настройка аварийного восстановления для Active Directory и DNS
 
 Правильная работа корпоративных приложений, таких как SharePoint, Dynamics AX и SAP, зависит от Active Directory и инфраструктуры DNS. Когда вы настраиваете аварийное восстановление для приложений, часто требуется восстановить Active Directory и DNS, прежде чем восстанавливать другие компоненты приложения, чтобы обеспечить надлежащую работу приложения.
 

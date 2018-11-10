@@ -1,20 +1,19 @@
 ---
-title: Отработка отказа и восстановление размещения виртуальных машин VMware и физических серверов, реплицированных в Azure, с помощью Site Recovery | Документы Майкрософт
-description: Сведения об отработке отказа виртуальных машин VMware и физических серверов в Azure и восстановление размещения на локальном сайте с помощью Azure Site Recovery
-services: site-recovery
+title: Отработка отказа и обратное переключение виртуальных машин VMware и физических серверов во время аварийного восстановления в Azure с помощью Site Recovery | Документация Майкрософт
+description: Сведения об отработке отказа виртуальных машин VMware и физических серверов в Azure и обратное переключение на локальную среду во время аварийного восстановления в Azure с помощью Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 09/11/2018
+ms.date: 10/29/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 7e586e7e3ec8c16dcd215dbc11251d1b9fe928e1
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: a574c28cae449526ddc8fe0fbb9323fb14b7b6f1
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49457079"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50215350"
 ---
 # <a name="fail-over-and-fail-back-vmware-vms-and-physical-servers-replicated-to-azure"></a>Отработка отказа и восстановление размещения виртуальных машин VMware и физических серверов, реплицированных в Azure
 

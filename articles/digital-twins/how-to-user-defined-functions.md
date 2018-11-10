@@ -6,14 +6,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 10/08/2018
+ms.date: 10/26/2018
 ms.author: alinast
-ms.openlocfilehash: 7fbaff5ed1b60a4434ba2eb0c78c6aa1f3fd6645
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 8094965da5fb0a5fad0313fd96e2878f86d78aa7
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49323977"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50215503"
 ---
 # <a name="how-to-use-user-defined-functions-in-azure-digital-twins"></a>Использование определяемых пользователем функций в Azure Digital Twins
 
@@ -27,8 +27,8 @@ https://yourInstanceName.yourLocation.azuresmartspaces.net/management
 
 | Имя настраиваемого атрибута | Заменить на |
 | --- | --- |
-| `yourInstanceName` | Имя вашего экземпляра Azure Digital Twins. |
-| `yourLocation` | Регион сервера, в котором размещен ваш экземпляр. |
+| *yourInstanceName* | Имя вашего экземпляра Azure Digital Twins |
+| *yourLocation* | Регион сервера, в котором размещен ваш экземпляр |
 
 ## <a name="client-library-reference"></a>Справочник по клиентской библиотеке
 
@@ -50,9 +50,9 @@ https://yourInstanceName.yourLocation.azuresmartspaces.net/management
 - `SensorDevice`
 - `SensorSpace`
 
-В приведенном ниже примере в рамках оценки сопоставитель вычислит значение true по любому событию телеметрии датчика с `Temperature`, указанным в качестве значения типа данных. Вы можете создать несколько сопоставителей в определяемой пользователем функции.
+В приведенном ниже примере в рамках оценки сопоставитель вычислит значение true по любому событию телеметрии датчика с `"Temperature"`, указанным в качестве значения типа данных. Вы можете создать несколько сопоставителей в определяемой пользователем функции.
 
-```text
+```plaintext
 POST https://yourManagementApiUrl/api/v1.0/matchers
 {
   "Name": "Temperature Matcher",
@@ -70,8 +70,8 @@ POST https://yourManagementApiUrl/api/v1.0/matchers
 
 | Имя настраиваемого атрибута | Заменить на |
 | --- | --- |
-| `yourManagementApiUrl` | Полный URL-путь для вашего API управления  |
-| `yourSpaceIdentifier` | Регион сервера, в котором размещен ваш экземпляр |
+| *yourManagementApiUrl* | Полный URL-путь к нужному API управления  |
+| *yourSpaceIdentifier* | Регион сервера, в котором размещен ваш экземпляр |
 
 ## <a name="create-a-user-defined-function-udf"></a>Создание определяемой пользователем функции
 
@@ -90,7 +90,7 @@ POST https://yourManagementApiUrl/api/v1.0/userdefinedfunctions with Content-Typ
 
 | Имя настраиваемого атрибута | Заменить на |
 | --- | --- |
-| `yourManagementApiUrl` | Полный URL-путь для вашего API управления  |
+| *yourManagementApiUrl* | Полный URL-путь к нужному API управления  |
 
 Текст:
 
@@ -118,14 +118,14 @@ function process(telemetry, executionContext) {
 
 | Имя настраиваемого атрибута | Заменить на |
 | --- | --- |
-| `yourSpaceIdentifier` | Идентификатор пространства  |
-| `yourMatcherIdentifier` | Идентификатор необходимого сопоставителя |
+| *yourSpaceIdentifier* | Идентификатор пространства  |
+| *yourMatcherIdentifier* | Идентификатор необходимого сопоставителя |
 
 ### <a name="example-functions"></a>Примеры функций
 
-Установите чтение данных телеметрии датчика непосредственно для датчика с типом данных `Temperature` (датчик sensor.DataType):
+Установите чтение данных телеметрии датчика непосредственно для датчика с типом данных **Temperature**, который является `sensor.DataType`.
 
-```javascript
+```JavaScript
 function process(telemetry, executionContext) {
 
   // Get sensor metadata
@@ -139,9 +139,21 @@ function process(telemetry, executionContext) {
 }
 ```
 
-Запишите сообщение, если чтение данных телеметрии датчика превышает предварительно заданный порог. Если параметры диагностики включены в экземпляре Digital Twins, журналы из определяемых пользователем функций будут переадресованы:
+Параметр *telemetry* предоставляет атрибуты **SensorId** и **Message** (соответствующие отправленному датчиком сообщению). Параметр *ExecutionContext* предоставляет следующие атрибуты.
 
-```javascript
+```csharp
+var executionContext = new UdfExecutionContext
+{
+    EnqueuedTime = request.HubEnqueuedTime,
+    ProcessorReceivedTime = request.ProcessorReceivedTime,
+    UserDefinedFunctionId = request.UserDefinedFunctionId,
+    CorrelationId = correlationId.ToString(),
+};
+```
+
+В следующем примере будет записано сообщение, если чтение данных телеметрии датчика превысит предварительно заданный порог. Если параметры диагностики включены в экземпляре Digital Twins, журналы из определяемых пользователем функций будут переадресованы.
+
+```JavaScript
 function process(telemetry, executionContext) {
 
   // Retrieve the sensor value
@@ -156,7 +168,7 @@ function process(telemetry, executionContext) {
 
 Следующий код активирует уведомление, если уровень температуры превысит предопределенную константу.
 
-```javascript
+```JavaScript
 function process(telemetry, executionContext) {
 
   // Retrieve the sensor value
@@ -184,7 +196,7 @@ function process(telemetry, executionContext) {
 
 Нам нужно создать назначение ролей для выполнения определяемой пользователем функции. В противном случае у нее не будет надлежащих прав для взаимодействия с API управления и выполнения действий с объектами графа. Действия, которые выполняет определяемая пользователем функция, не освобождаются от управления доступом на основе ролей в API управления Digital Twins. Их можно ограничить по областям, указав определенные роли или пути управления доступом. Дополнительные сведения см. в статье [Управление доступом на основе ролей](./security-role-based-access-control.md).
 
-- Запросите роли и получите идентификатор роли, которую вы хотите назначить UDF; передайте их приведенному ниже идентификатору роли.
+1. Запросите роли и получите идентификатор роли, которую вы хотите назначить UDF; передайте их приведенному ниже **RoleId**.
 
 ```plaintext
 GET https://yourManagementApiUrl/api/v1.0/system/roles
@@ -192,10 +204,11 @@ GET https://yourManagementApiUrl/api/v1.0/system/roles
 
 | Имя настраиваемого атрибута | Заменить на |
 | --- | --- |
-| `yourManagementApiUrl` | Полный URL-путь для вашего API управления  |
+| *yourManagementApiUrl* | Полный URL-путь к нужному API управления  |
 
-- Идентификатор объекта (ObjectId) будет созданным ранее идентификатором UDF.
-- Найдите `Path`, запросив пространства с полным путем и скопировав значение `spacePaths`. Вставьте его в приведенный ниже раздел пути при создании назначения ролей UDF.
+2. **ObjectId** будет созданным ранее идентификатором UDF.
+3. Найдите значение **пути**, запрашивая пространства с помощью `fullpath`.
+4. Скопируйте возвращенное значение `spacePaths`. Оно понадобится вам далее.
 
 ```plaintext
 GET https://yourManagementApiUrl/api/v1.0/spaces?name=yourSpaceName&includes=fullpath
@@ -203,8 +216,10 @@ GET https://yourManagementApiUrl/api/v1.0/spaces?name=yourSpaceName&includes=ful
 
 | Имя настраиваемого атрибута | Заменить на |
 | --- | --- |
-| `yourManagementApiUrl` | Полный URL-путь для вашего API управления  |
-| `yourSpaceName` | Имя необходимого пространства |
+| *yourManagementApiUrl* | Полный URL-путь к нужному API управления  |
+| *yourSpaceName* | Имя необходимого пространства |
+
+4. Теперь вставьте возвращенное значение `spacePaths` в **путь**, чтобы создать назначение ролей определяемой пользователем функции.
 
 ```plaintext
 POST https://yourManagementApiUrl/api/v1.0/roleassignments
@@ -218,10 +233,10 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Имя настраиваемого атрибута | Заменить на |
 | --- | --- |
-| `yourManagementApiUrl` | Полный URL-путь для вашего API управления  |
-| `yourDesiredRoleIdentifier` | Идентификатор необходимой роли |
-| `yourUserDefinedFunctionId` | Идентификатор необходимой UDF |
-| `yourAccessControlPath` | Путь для управления доступом |
+| *yourManagementApiUrl* | Полный URL-путь к нужному API управления  |
+| *yourDesiredRoleIdentifier* | Идентификатор необходимой роли |
+| *yourUserDefinedFunctionId* | Идентификатор необходимой UDF |
+| *yourAccessControlPath* | Путь для управления доступом |
 
 ## <a name="send-telemetry-to-be-processed"></a>Отправка данных телеметрии для обработки
 
@@ -241,7 +256,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| id  | `guid` | идентификатор пространства |
+| *id*  | `guid` | идентификатор пространства |
 
 ### <a name="getsensormetadataid--sensor"></a>getSensorMetadata(id) ⇒ `sensor`
 
@@ -251,7 +266,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| id  | `guid` | идентификатор датчика |
+| *id*  | `guid` | идентификатор датчика |
 
 ### <a name="getdevicemetadataid--device"></a>getDeviceMetadata(id) ⇒ `device`
 
@@ -261,7 +276,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| id  | `guid` | идентификатор устройства |
+| *id* | `guid` | идентификатор устройства |
 
 ### <a name="getsensorvaluesensorid-datatype--value"></a>getSensorValue(sensorId, dataType) ⇒ `value`
 
@@ -271,8 +286,8 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| sensorId  | `guid` | идентификатор датчика |
-| dataType  | `string` | тип данных датчика |
+| *sensorId*  | `guid` | идентификатор датчика |
+| *dataType*  | `string` | тип данных датчика |
 
 ### <a name="getspacevaluespaceid-valuename--value"></a>getSpaceValue(spaceId, valueName) ⇒ `value`
 
@@ -282,8 +297,8 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| spaceId  | `guid` | идентификатор пространства |
-| valueName  | `string` | имя свойства пространства |
+| *spaceId*  | `guid` | идентификатор пространства |
+| *valueName* | `string` | имя свойства пространства |
 
 ### <a name="getsensorhistoryvaluessensorid-datatype--value"></a>getSensorHistoryValues(sensorId, dataType) ⇒ `value[]`
 
@@ -293,8 +308,8 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| sensorId  | `guid` | идентификатор датчика |
-| dataType  | `string` | тип данных датчика |
+| *sensorId* | `guid` | идентификатор датчика |
+| *dataType* | `string` | тип данных датчика |
 
 ### <a name="getspacehistoryvaluesspaceid-datatype--value"></a>getSpaceHistoryValues(spaceId, dataType) ⇒ `value[]`
 
@@ -304,8 +319,8 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| spaceId  | `guid` | идентификатор пространства |
-| valueName  | `string` | имя свойства пространства |
+| *spaceId* | `guid` | идентификатор пространства |
+| *valueName* | `string` | имя свойства пространства |
 
 ### <a name="getspacechildspacesspaceid--space"></a>getSpaceChildSpaces(spaceId) ⇒ `space[]`
 
@@ -315,7 +330,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| spaceId  | `guid` | идентификатор пространства |
+| *spaceId* | `guid` | идентификатор пространства |
 
 ### <a name="getspacechildsensorsspaceid--sensor"></a>getSpaceChildSensors(spaceId) ⇒ `sensor[]`
 
@@ -325,7 +340,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| spaceId  | `guid` | идентификатор пространства |
+| *spaceId* | `guid` | идентификатор пространства |
 
 ### <a name="getspacechilddevicesspaceid--device"></a>getSpaceChildDevices(spaceId) ⇒ `device[]`
 
@@ -335,7 +350,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| spaceId  | `guid` | идентификатор пространства |
+| *spaceId* | `guid` | идентификатор пространства |
 
 ### <a name="getdevicechildsensorsdeviceid--sensor"></a>getDeviceChildSensors(deviceId) ⇒ `sensor[]`
 
@@ -345,7 +360,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| deviceId  | `guid` | идентификатор устройства |
+| *deviceId* | `guid` | идентификатор устройства |
 
 ### <a name="getspaceparentspacechildspaceid--space"></a>getSpaceParentSpace(childSpaceId) ⇒ `space`
 
@@ -355,7 +370,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| childSpaceId  | `guid` | идентификатор пространства |
+| *childSpaceId* | `guid` | идентификатор пространства |
 
 ### <a name="getsensorparentspacechildsensorid--space"></a>getSensorParentSpace(childSensorId) ⇒ `space`
 
@@ -365,7 +380,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| childSensorId  | `guid` | идентификатор датчика |
+| *childSensorId* | `guid` | идентификатор датчика |
 
 ### <a name="getdeviceparentspacechilddeviceid--space"></a>getDeviceParentSpace(childDeviceId) ⇒ `space`
 
@@ -375,7 +390,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| childDeviceId  | `guid` | идентификатор устройства |
+| *childDeviceId* | `guid` | идентификатор устройства |
 
 ### <a name="getsensorparentdevicechildsensorid--space"></a>getSensorParentDevice(childSensorId) ⇒ `space`
 
@@ -385,7 +400,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| childSensorId  | `guid` | идентификатор датчика |
+| *childSensorId* | `guid` | идентификатор датчика |
 
 ### <a name="getspaceextendedpropertyspaceid-propertyname--extendedproperty"></a>getSpaceExtendedProperty(spaceId, propertyName) ⇒ `extendedProperty`
 
@@ -395,8 +410,8 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| spaceId  | `guid` | идентификатор пространства |
-| propertyName  | `string` | имя свойства пространства |
+| *spaceId* | `guid` | идентификатор пространства |
+| *propertyName* | `string` | имя свойства пространства |
 
 ### <a name="getsensorextendedpropertysensorid-propertyname--extendedproperty"></a>getSensorExtendedProperty(sensorId, propertyName) ⇒ `extendedProperty`
 
@@ -406,8 +421,8 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| sensorId  | `guid` | идентификатор датчика |
-| propertyName  | `string` | имя свойства датчика |
+| *sensorId* | `guid` | идентификатор датчика |
+| *propertyName* | `string` | имя свойства датчика |
 
 ### <a name="getdeviceextendedpropertydeviceid-propertyname--extendedproperty"></a>getDeviceExtendedProperty(deviceId, propertyName) ⇒ `extendedProperty`
 
@@ -417,8 +432,8 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| deviceId  | `guid` | идентификатор устройства |
-| propertyName  | `string` | имя свойства устройства |
+| *deviceId* | `guid` | идентификатор устройства |
+| *propertyName* | `string` | имя свойства устройства |
 
 ### <a name="setsensorvaluesensorid-datatype-value"></a>setSensorValue(sensorId, dataType, value)
 
@@ -428,9 +443,9 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| sensorId  | `guid` | идентификатор датчика |
-| dataType  | `string` | тип данных датчика |
-| value  | `string` | value |
+| *sensorId* | `guid` | идентификатор датчика |
+| *dataType*  | `string` | тип данных датчика |
+| *значение*  | `string` | value |
 
 ### <a name="setspacevaluespaceid-datatype-value"></a>setSpaceValue(spaceId, dataType, value)
 
@@ -440,9 +455,9 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| spaceId  | `guid` | идентификатор пространства |
-| dataType  | `string` | тип данных |
-| value  | `string` | value |
+| *spaceId* | `guid` | идентификатор пространства |
+| *dataType* | `string` | тип данных |
+| *значение* | `string` | value |
 
 ### <a name="logmessage"></a>log(Message)
 
@@ -452,7 +467,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| Message  | `string` | сообщение для записи |
+| *message* | `string` | сообщение для записи |
 
 ### <a name="sendnotificationtopologyobjectid-topologyobjecttype-payload"></a>sendNotification(topologyObjectId, topologyObjectType, payload)
 
@@ -462,9 +477,9 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| topologyObjectId  | `Guid` | идентификатор объекта графа (например, пространство, датчик, идентификатор устройства)|
-| topologyObjectType  | `string` | (Например, пространство, датчик, устройство)|
-| payload  | `string` | полезные данные JSON, отправляемые с уведомлением |
+| *topologyObjectId*  | `guid` | идентификатор объекта графа (например, пространство, датчик, идентификатор устройства)|
+| *topologyObjectType*  | `string` | (Например, пространство, датчик, устройство)|
+| *payload*  | `string` | полезные данные JSON, отправляемые с уведомлением |
 
 ## <a name="return-types"></a>Типы возвращаемого значения
 
@@ -503,7 +518,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| propertyName | `string` | имя расширенного свойства |
+| *propertyName* | `string` | имя расширенного свойства |
 
 #### <a name="valuevaluename--value"></a>Value(valueName) ⇒ `value`
 
@@ -511,7 +526,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| valueName | `string` | имя значения |
+| *valueName* | `string` | имя значения |
 
 #### <a name="historyvaluename--value"></a>History(valueName) ⇒ `value[]`
 
@@ -519,7 +534,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| valueName | `string` | имя значения |
+| *valueName* | `string` | имя значения |
 
 #### <a name="notifypayload"></a>Notify(payload)
 
@@ -527,7 +542,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| payload | `string` | полезные данные JSON, которые будут включены в уведомление |
+| *payload* | `string` | полезные данные JSON, которые будут включены в уведомление |
 
 ### <a name="device"></a>Устройство
 
@@ -563,7 +578,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| propertyName | `string` | имя расширенного свойства |
+| *propertyName* | `string` | имя расширенного свойства |
 
 #### <a name="notifypayload"></a>Notify(payload)
 
@@ -571,7 +586,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| payload | `string` | полезные данные JSON, которые будут включены в уведомление |
+| *payload* | `string` | полезные данные JSON, которые будут включены в уведомление |
 
 ### <a name="sensor"></a>Датчик
 
@@ -611,7 +626,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| propertyName | `string` | имя расширенного свойства |
+| *propertyName* | `string` | имя расширенного свойства |
 
 #### <a name="value--value"></a>Value() ⇒ `value`
 
@@ -627,7 +642,7 @@ POST https://yourManagementApiUrl/api/v1.0/roleassignments
 
 | Параметр  | type                | ОПИСАНИЕ  |
 | ------ | ------------------- | ------------ |
-| payload | `string` | полезные данные JSON, которые будут включены в уведомление |
+| *payload* | `string` | полезные данные JSON, которые будут включены в уведомление |
 
 ### <a name="value"></a>Значение
 

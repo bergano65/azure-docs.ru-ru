@@ -1,6 +1,6 @@
 
 # Устойчивость в Azure
-## [Страница компонента "Устойчивость в Azure"](http://azure.microsoft.com/features/resiliency)
+## [Страница компонента "Устойчивость в Azure"](https://azure.microsoft.com/features/resiliency)
 ## [Проектирование устойчивых приложений для Azure](https://docs.microsoft.com/azure/architecture/resiliency/)
 
 # Высокая доступность
@@ -50,10 +50,10 @@
 #### [Географическое аварийное восстановление в служебной шине](../service-bus-messaging/service-bus-geo-dr.md#availability-zones-preview)
 
 ### VPN-шлюз
-#### [Создание шлюза виртуальной сети, избыточного в пределах зоны](../vpn-gateway/create-zone-redundant-vnet-gateway.md)
+#### [Создание избыточного между зонами шлюза виртуальной сети](../vpn-gateway/create-zone-redundant-vnet-gateway.md)
 
 ### ExpressRoute
-#### [Создание шлюза виртуальной сети, избыточного в пределах зоны](../vpn-gateway/create-zone-redundant-vnet-gateway.md)
+#### [Создание избыточного между зонами шлюза виртуальной сети](../vpn-gateway/create-zone-redundant-vnet-gateway.md)
 
 # Аварийное восстановление
 ## [Использование Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/)

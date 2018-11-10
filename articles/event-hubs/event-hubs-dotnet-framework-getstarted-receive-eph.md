@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/02/2018
 ms.author: shvija
-ms.openlocfilehash: 9e94357216690438446a738400c979d12f387df6
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: cb1d26082fe4fbbd14b2b77f54d1bc7697b3538d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49471090"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51227966"
 ---
 # <a name="receive-events-from-azure-event-hubs-using-the-net-framework"></a>Получение событий от Центров событий Azure с помощью платформы .NET Framework
 
@@ -33,7 +33,7 @@ ms.locfileid: "49471090"
 
 Для работы с данным руководством вам потребуется:
 
-* [Microsoft Visual Studio 2017 или более поздней версии](http://visualstudio.com).
+* [Microsoft Visual Studio 2017 или более поздней версии](https://visualstudio.com).
 
 ## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен Центров событий и концентратора событий
 Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-create.md), а затем перейдите к следующим шагам в этом руководстве.

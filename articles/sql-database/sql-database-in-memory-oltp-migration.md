@@ -12,12 +12,12 @@ ms.author: jodebrui
 ms.reviewer: MightyPen
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 8c683e86cd78f4c4ebe7a537c469c875b8ca07fe
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 4455e0c0f31c9026526820b50214efb83720da0d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47159845"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228051"
 ---
 # <a name="use-in-memory-oltp-to-improve-your-application-performance-in-sql-database"></a>Повышение производительности приложений в базе данных SQL с помощью выполняющейся в памяти OLTP
 [Выполняющуюся в памяти OLTP](sql-database-in-memory.md) можно использовать для повышения производительности обработки транзакций, приема данных и сценариев, связанных с временными данными, в базах данных уровней ["Премиум" и "Критически важный для бизнеса"](sql-database-service-tiers-vcore.md), не повышая ценовую категорию. 
@@ -47,7 +47,7 @@ SELECT DatabasePropertyEx(Db_Name(), 'IsXTPSupported');
 * В **обозревателе объектов**щелкните узел своей базы данных правой кнопкой мыши.
 * Щелкните **Отчеты** > **Стандартные отчеты** > **Обзор анализа производительности транзакций**.
 
-Дополнительные сведения см. в статье [Определение, должна ли таблица или хранимая процедура быть перенесена в выполняющуюся в памяти OLTP](http://msdn.microsoft.com/library/dn205133.aspx).
+Дополнительные сведения см. в статье [Определение, должна ли таблица или хранимая процедура быть перенесена в выполняющуюся в памяти OLTP](https://msdn.microsoft.com/library/dn205133.aspx).
 
 ## <a name="step-3-create-a-comparable-test-database"></a>Шаг 3. Создание сопоставимой тестовой базы данных
 Предположим, что согласно отчету ваша база данных содержит таблицу, которую лучше преобразовать в оптимизированную для памяти таблицу. Мы рекомендуем сначала проверить это утверждение.
@@ -80,9 +80,9 @@ SELECT DatabasePropertyEx(Db_Name(), 'IsXTPSupported');
    * Отобразится мастер **Помощник по оптимизации памяти таблицы** .
 3. В окне мастера щелкните **Проверка переноса** (или нажмите кнопку **Далее**). Так вы узнаете, содержит ли таблица функции, которые не поддерживаются в оптимизированных для памяти таблицах. Дополнительные сведения можно найти в разделе 
    
-   * *Контрольный список оптимизации памяти* в [помощнике по оптимизации памяти](http://msdn.microsoft.com/library/dn284308.aspx).
-   * [Конструкции языка Transact-SQL не поддерживаются компонентом In-Memory OLTP](http://msdn.microsoft.com/library/dn246937.aspx).
-   * [Миграция в компонент In-Memory OLTP](http://msdn.microsoft.com/library/dn247639.aspx).
+   * *Контрольный список оптимизации памяти* в [помощнике по оптимизации памяти](https://msdn.microsoft.com/library/dn284308.aspx).
+   * [Конструкции языка Transact-SQL не поддерживаются компонентом In-Memory OLTP](https://msdn.microsoft.com/library/dn246937.aspx).
+   * [Миграция в компонент In-Memory OLTP](https://msdn.microsoft.com/library/dn247639.aspx).
 4. Если в таблице нет неподдерживаемых функций, помощник выполнит фактический перенос схемы и данных автоматически.
 
 #### <a name="manual-t-sql"></a>Создание таблицы вручную с помощью инструкций T-SQL
@@ -114,7 +114,7 @@ INSERT INTO <new_memory_optimized_table>
 * NATIVE_COMPILATION;
 * SCHEMABINDING — в таблицах хранимых процедур определения столбцов нельзя изменять, если это может повлиять на хранимую процедуру (исключением является удаление хранимой процедуры).
 
-Собственный модуль должен использовать один большой [блок ATOMIC](http://msdn.microsoft.com/library/dn452281.aspx) для управления транзакциями. Роли для явной транзакции BEGIN TRANSACTION или ROLLBACK TRANSACTION не существует. Если код обнаруживает нарушение бизнес-правила, он может завершить атомарный блок с помощью инструкции [THROW](http://msdn.microsoft.com/library/ee677615.aspx) .
+Собственный модуль должен использовать один большой [блок ATOMIC](https://msdn.microsoft.com/library/dn452281.aspx) для управления транзакциями. Роли для явной транзакции BEGIN TRANSACTION или ROLLBACK TRANSACTION не существует. Если код обнаруживает нарушение бизнес-правила, он может завершить атомарный блок с помощью инструкции [THROW](https://msdn.microsoft.com/library/ee677615.aspx) .
 
 ### <a name="typical-create-procedure-for-natively-compiled"></a>Стандартная инструкция CREATE PROCEDURE для создания скомпилированных в собственном коде процедур
 Как правило, инструкция T-SQL для создания скомпилированной хранимой процедуры имеет следующий вид:
@@ -145,7 +145,7 @@ CREATE PROCEDURE schemaname.procedurename
 2. Перезапишите ее заголовок в соответствии с предыдущим шаблоном.
 3. Убедитесь, используются ли в коде T-SQL хранимой процедуры функции, которые не поддерживаются для скомпилированных хранимых процедур. При необходимости устраните эту проблему.
    
-   * Дополнительные сведения см. в статье [Проблемы миграции, связанные с хранимыми процедурами, скомпилированными в собственном коде](http://msdn.microsoft.com/library/dn296678.aspx).
+   * Дополнительные сведения см. в статье [Проблемы миграции, связанные с хранимыми процедурами, скомпилированными в собственном коде](https://msdn.microsoft.com/library/dn296678.aspx).
 4. С помощью SP_RENAME переименуйте старую хранимую процедуру. Или просто удалите ее с помощью DROP.
 5. Запустите измененный сценарий T-SQL CREATE PROCEDURE.
 
@@ -168,7 +168,7 @@ CREATE PROCEDURE schemaname.procedurename
 * [Мониторинг базы данных SQL Azure с помощью динамических представлений управления](sql-database-monitoring-with-dmvs.md)
 
 ## <a name="related-links"></a>Связанные ссылки
-* [In-Memory OLTP (оптимизация в памяти)](http://msdn.microsoft.com/library/dn133186.aspx)
-* [Общие сведения о скомпилированных в собственном коде хранимых процедурах](http://msdn.microsoft.com/library/dn133184.aspx)
-* [Помощник по оптимизации памяти](http://msdn.microsoft.com/library/dn284308.aspx)
+* [In-Memory OLTP (оптимизация в памяти)](https://msdn.microsoft.com/library/dn133186.aspx)
+* [Общие сведения о скомпилированных в собственном коде хранимых процедурах](https://msdn.microsoft.com/library/dn133184.aspx)
+* [Помощник по оптимизации памяти](https://msdn.microsoft.com/library/dn284308.aspx)
 

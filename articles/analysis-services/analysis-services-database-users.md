@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 863e465d888774730b9d9269024665a097a1207b
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: ab238e31ba022427dc55fec842f3e89e72fa530a
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49429307"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50238885"
 ---
 # <a name="manage-database-roles-and-users"></a>Управление ролями и пользователями базы данных
 
@@ -135,8 +135,8 @@ ms.locfileid: "49429307"
   
 |Таблица|Выражение DAX|  
 |-----------|--------------------|  
-|Регион|=Region[Country]=”USA”|  
-|Категория продукта|=ProductCategory[Name]=”Bicycles”|  
+|Регион|=Region[Country]="USA"|  
+|Категория продукта|=ProductCategory[Name]="Bicycles"|  
 |Транзакции|=Transactions[Year]=2016|  
   
  В конечном результате участники могут запрашивать следующие строки данных: для региона — США, для категории продукта — велосипед, для года — 2016. Пользователи не могут запрашивать транзакции за пределами США, транзакции, не связанные с велосипедами, а также транзакции, произошедшие не в 2016 году, пока они не станут участниками другой роли, предоставляющей эти разрешения.

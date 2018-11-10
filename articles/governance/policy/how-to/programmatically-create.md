@@ -4,16 +4,16 @@ description: В этой статье описано программное со
 services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 09/18/2018
+ms.date: 10/30/2018
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: dd7ec4f1d0c018a3c7eed19bea523f7c09bfea3e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: d72c9c1747bb697f66fa53489636b1726053060c
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46985322"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50242642"
 ---
 # <a name="programmatically-create-policies-and-view-compliance-data"></a>Программное создание политик и просмотр данных о соответствии
 
@@ -74,7 +74,13 @@ ms.locfileid: "46985322"
    New-AzureRmPolicyDefinition -Name 'AuditStorageAccounts' -DisplayName 'Audit Storage Accounts Open to Public Networks' -Policy 'AuditStorageAccounts.json'
    ```
 
-   Эта команда создает определение политики с именем _Audit Storage Accounts Open to Public Networks_ (Аудит учетных записей хранения, открытых для общедоступных сетей). Дополнительные сведения о других параметрах, которые можно использовать, см. в статье о командлете [New-AzureRmPolicyDefinition](/powershell/module/azurerm.resources/new-azurermpolicydefinition).
+   Эта команда создает определение политики с именем _Audit Storage Accounts Open to Public Networks_ (Аудит учетных записей хранения, открытых для общедоступных сетей).
+   Дополнительные сведения о других параметрах, которые можно использовать, см. в статье о командлете [New-AzureRmPolicyDefinition](/powershell/module/azurerm.resources/new-azurermpolicydefinition).
+
+   При вызове без параметров расположения `New-AzureRmPolicyDefinition` по умолчанию сохраняет определение политики в выбранной подписке контекста сеансов. Чтобы сохранить определение в другом месте, используйте следующие параметры:
+
+   - **SubscriptionId** — сохранение в другой подписке. Требуется значение _GUID_.
+   - **ManagementGroupName** — сохранение в группе управления. Требуется значение _строки_.
 
 1. После создания определения политики вы можете создать назначение политики, выполнив следующие команды:
 
@@ -85,6 +91,13 @@ ms.locfileid: "46985322"
    ```
 
    Замените _ContosoRG_ именем вашей целевой группы ресурсов.
+
+   Параметр **Scope** в `New-AzureRmPolicyAssignment` также работает с подписками и группами управления. Параметр использует полный путь к ресурсу, возвращаемый свойством **ResourceId** в `Get-AzureRmResourceGroup`. Формат параметра **Scope** для каждого контейнера приведен ниже.
+   Замените `{rgName}`, `{subId}` и `{mgName}` именем вашей группы ресурсов, идентификатором подписки и именем группы управления соответственно.
+
+   - Группа ресурсов — `/subscriptions/{subId}/resourceGroups/{rgName}`
+   - Подписка — `/subscriptions/{subId}/`
+   - Группа управления — `/providers/Microsoft.Management/managementGroups/{mgName}`
 
 Дополнительные сведения об управлении политиками ресурсов с помощью модуля PowerShell Azure Resource Manager см. в разделе [Политики](/powershell/module/azurerm.resources/#policies).
 

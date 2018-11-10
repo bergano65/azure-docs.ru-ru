@@ -1,24 +1,24 @@
 ---
-title: " Управление сервером конфигурации для аварийного восстановления физических серверов с помощью Azure Site Recovery | Документация Майкрософт"
-description: Из этой статьи вы узнаете, как управлять сервером конфигурации для аварийного восстановления физических серверов в Azure с помощью службы Azure Site Recovery.
+title: Управление сервером конфигурации для аварийного восстановления локальных физических серверов в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: Из этой статьи вы узнаете, как управлять сервером конфигурации Azure Site Recovery для аварийного восстановления физического сервера в Azure.
 services: site-recovery
-author: AnoopVasudavan
+author: Rajeswari-Mamilla
 ms.service: site-recovery
 ms.topic: article
-ms.date: 07/06/2018
-ms.author: anoopkv
-ms.openlocfilehash: 068d2774791995fab1c07c73e6d733a6e09379f1
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.date: 10/29/2018
+ms.author: ramamill
+ms.openlocfilehash: 4bf9277598c3e56c0429dddcb2204cb1338a33be
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37951182"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50213259"
 ---
 # <a name="manage-the-configuration-server-for-physical-server-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления физических серверов
 
 При использовании службы [Azure Site Recovery](site-recovery-overview.md) для аварийного восстановления физических серверов в Azure настраивается локальный сервер конфигурации. Сервер конфигурации координирует обмен данными между локальными компьютерами и Azure, а также управляет репликацией данных. В этой статье перечислены распространенные задачи управления сервером конфигурации после его развертывания.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В приведенной ниже таблице перечислены предварительные требования для развертывания серверного компьютера в локальной конфигурации.
 
@@ -69,7 +69,7 @@ ms.locfileid: "37951182"
      ![Брандмауэр](./media/physical-manage-configuration-server/combined-wiz4.png)
 6. В окне **Проверка необходимых компонентов** программа установки проверяет возможность установки. Если появится предупреждение о **проверке глобальной синхронизации времени**, убедитесь, что время системных часов (параметры **даты и времени**) соответствует часовому поясу.
 
-    ![предварительным требованиям](./media/physical-manage-configuration-server/combined-wiz5.png)
+    ![Предварительные требования](./media/physical-manage-configuration-server/combined-wiz5.png)
 7. На странице **Конфигурация MySQL** создайте учетные данные для входа в экземпляр сервера MySQL, который будет установлен.
 
     ![MySQL](./media/physical-manage-configuration-server/combined-wiz6.png)
