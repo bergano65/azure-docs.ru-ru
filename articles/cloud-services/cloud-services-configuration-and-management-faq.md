@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/23/2018
 ms.author: genli
-ms.openlocfilehash: 30a23010f326189ffd5886407d70e357abb9c53e
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 81e41ce6818a6f56ba5e6e888480f8b25979fb81
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038498"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50979205"
 ---
 # <a name="configuration-and-management-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы конфигурации и управления для облачных служб Azure. Вопросы и ответы (FAQ)
 
@@ -142,7 +142,7 @@ Export-PfxCertificate -Cert $cert -FilePath ".\my-cert-file.pfx" -Password $pass
 
 ### <a name="how-do-i-enable-wad-logging-for-cloud-services"></a>Как включить ведение журнала WAD для облачных служб?
 Вы можете включить ведение журнала Windows Azure Diagnostics (WAD) такими способами:
-1. [С помощью Visual Studio](https://docs.microsoft.com/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines#turn-on-diagnostics-in-cloud-service-projects-before-you-deploy-them).
+1. [С помощью Visual Studio](https://docs.microsoft.com/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines#turn-on-diagnostics-in-cloud-service-projects-before-you-deploy-them).
 2. [С помощью кода .NET](https://docs.microsoft.com/azure/cloud-services/cloud-services-dotnet-diagnostics).
 3. [С помощью PowerShell](https://docs.microsoft.com/azure/cloud-services/cloud-services-diagnostics-powershell).
 
@@ -248,7 +248,7 @@ Windows 10 и Windows Server 2016 в стандартной конфигурац
 
 Дополнительные сведения о том, как включить Application Insights для облачных служб, см. в статье [Application Insights для облачных служб Azure](https://docs.microsoft.com/azure/application-insights/app-insights-cloudservices).
 
-Дополнительные сведения о том, как включить ведение журнала диагностики Azure для облачных служб, см. в разделе [Включение диагностики в проектах облачных служб перед их развертыванием](../vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines.md#turn-on-diagnostics-in-cloud-service-projects-before-you-deploy-them).
+Дополнительные сведения о том, как включить ведение журнала диагностики Azure для облачных служб, см. в разделе [Включение диагностики в проектах облачных служб перед их развертыванием](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines#turn-on-diagnostics-in-cloud-service-projects-before-you-deploy-them).
 
 ## <a name="generic"></a>Универсальный
 

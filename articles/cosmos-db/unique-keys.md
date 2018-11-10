@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/08/2018
 ms.author: rafats
-ms.openlocfilehash: 5811cb1e08ed5d02038da2a4460ae4b63580833b
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: ff432de59e5a5fdfeaad4c3a5361554ee32e21b0
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43696145"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50740014"
 ---
 # <a name="unique-keys-in-azure-cosmos-db"></a>Уникальные ключи в Azure Cosmos DB
 
@@ -130,7 +130,7 @@ private static async Task CreateCollectionIfNotExistsAsync(string dataBase, stri
 В следующем примере команды показано, как создать уникальный индекс для полей firstName, lastName и электронной почты коллекции пользователей для MongoDB API. Это гарантирует уникальность комбинации во всех трех полях во всех документах в коллекции. Для коллекций API MongoDB уникальный индекс создается после создания коллекции, но перед ее заполнением.
 
 > [!NOTE]
-> Уникальный формат ключа для учетных записей API MongoDB отличается от формата ключа для учетных записей API SQL, где отсутствует возможность указать символ обратной косой черты (/) перед именем поля. 
+> Уникальный формат ключа для учетных записей API MongoDB отличается от формата ключа для учетных записей API SQL, где отсутствует возможность указать знак косой черты (/) перед именем поля. 
 
 ```
 db.users.createIndex( { firstName: 1, lastName: 1, email: 1 }, { unique: true } )

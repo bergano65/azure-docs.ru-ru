@@ -10,12 +10,12 @@ ms.component: manage
 ms.date: 08/29/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 6eba50fbe7c2a7a40b08e37a96adac66583b8251
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: 112b9bac5d99556201b2038cf150293c9f2ed86d
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43781866"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51005807"
 ---
 # <a name="restoring-azure-sql-data-warehouse"></a>Восстановление Хранилища данных SQL Azure 
 В этой статье вы узнаете, как выполнить следующие задачи с помощью портала Azure и PowerShell:
@@ -25,10 +25,6 @@ ms.locfileid: "43781866"
 - восстановление из удаленной базы данных;
 - восстановление из геоизбыточной резервной копии;
 - создание копии хранилища данных из точки восстановления, определенной пользователем.
-
-> [!NOTE]
-> Начиная с 27 августа межсерверное восстановление было отключено из-за известной регрессии. Мы активно работаем над исправлением, которое является нашей приоритетной задачей. Приносим извинения за неудобства. Пока что вы можете использовать [геоизбыточное резервное копирование](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-restore#restore-from-an-azure-geographical-region) для восстановления на серверах.  
->
 
 ## <a name="before-you-begin"></a>Перед началом работы
 **Проверьте ресурсы DTU.** Каждое хранилище данных SQL размещается на сервере SQL Server (например, myserver.database.windows.net), которому выделена квота DTU по умолчанию.  Перед восстановлением хранилища данных SQL убедитесь, что у сервера SQL Server осталась достаточная квота DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки][Request a DTU quota change].

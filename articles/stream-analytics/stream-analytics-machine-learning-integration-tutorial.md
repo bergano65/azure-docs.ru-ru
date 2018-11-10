@@ -3,18 +3,18 @@ title: Интеграция Azure Stream Analytics со службой "Маши
 description: В этой статье описывается, как быстро настроить простое задание Azure Stream Analytics, интегрированное со службой "Машинное обучение Azure" с помощью определяемой пользователем функции.
 services: stream-analytics
 author: jasonwhowell
-ms.author: jasonh
+ms.author: mamccrea
 manager: kfile
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/16/2018
-ms.openlocfilehash: 63648dfe02a0b5ed00d0a7206a6aabbe200f94c4
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: 5468117fe117623b2e03fdf8ec451a9a0151e3dd
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31527918"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50979171"
 ---
 # <a name="performing-sentiment-analysis-by-using-azure-stream-analytics-and-azure-machine-learning"></a>Выполнение анализа тональности с помощью Azure Stream Analytics и Машинного обучения Azure
 В этой статье описывается, как быстро настроить простое задание Azure Stream Analytics, интегрированное с Машинным обучением Azure. Вы используете модель машинного обучения для анализа тональности из коллекции Cortana Intelligence для анализа потока текстовых данных, а также определения оценки тональности в реальном времени. С помощью Cortana Intelligence Suite вы сможете выполнить эту задачу, не вникая в особенности создания модели анализа тональности.
@@ -32,11 +32,11 @@ ms.locfileid: "31527918"
 
 Задание Streaming Analytics, которое вы создаете, применяет модель анализа тональности как определяемую пользователем функцию к образцу текстовых данных из хранилища BLOB-объектов. Выходные данные (результат анализа тональности) записываются в то же хранилище BLOB-объектов в другом CSV-файле. 
 
-На следующем рисунке показана эта конфигурация. Как указано, для повышения реалистичности сценария элемент ввода для хранилища BLOB-объектов можно заменить потоковыми данными Twitter из элемента ввода концентраторов событий Azure. Кроме того, можно создать визуализацию совокупной тональности [Microsoft Power BI](https://powerbi.microsoft.com/) в реальном времени.    
+На следующем рисунке показана эта конфигурация. Как указано, для повышения реалистичности сценария элемент ввода для хранилища BLOB-объектов можно заменить потоковыми данными Twitter из элемента ввода Центров событий Azure. Кроме того, можно создать визуализацию совокупной тональности [Microsoft Power BI](https://powerbi.microsoft.com/) в реальном времени.    
 
 ![Обзор интеграции машинного обучения в Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-figure-1.png)  
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы начать, у вас должны быть следующие компоненты:
 
 * Активная подписка Azure.
