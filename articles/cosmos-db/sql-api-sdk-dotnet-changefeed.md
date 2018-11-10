@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 10/24/2018
 ms.author: maquaran
-ms.openlocfilehash: f09430aeb38e6762729167494a23096c7bc5ca85
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: eb50673b4f618caadfa1abfb654d7e3f15e51713
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50023957"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50740966"
 ---
 # <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>Пакет SDK для обработчика канала изменений в .NET: скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -42,6 +42,9 @@ ms.locfileid: "50023957"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 ### <a name="v2-builds"></a>Сборки версии 2
+
+### <a name="a-name222222"></a><a name="2.2.2"/>2.2.2
+* Исправлена проблема, которая возникает во время разделения обработки при секционировании коллекции аренд. Эта проблема может привести к тому, что аренды удаленных разделов не удаляются из коллекции аренд. В этом выпуске эта проблема исправлена.
 
 ### <a name="a-name221221"></a><a name="2.2.1"/>2.2.1
 * Исправлено вычисление оценки для учетных записей с несколькими источниками и нового формата токена сеанса.

@@ -3,18 +3,18 @@ title: Потоки данных IoT в режиме реального врем
 description: 'Теги и потоки данных датчиков IoT: обработка данных с использованием Stream Analytics в режиме реального времени'
 services: stream-analytics
 author: jasonwhowell
-ms.author: jasonh
+ms.author: mamccrea
 manager: kfile
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/28/2017
-ms.openlocfilehash: ea4d33b569ae0932d6091869c4825cf2b5e69664
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 8a4e5b180438203e345ef6c5323ab010f4757c0e
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43697719"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50978082"
 ---
 # <a name="get-started-with-azure-stream-analytics-to-process-data-from-iot-devices"></a>Начало работы с Azure Stream Analytics для обработки данных с устройств IoT
 В этом руководстве вы узнаете, как создать логическую схему обработки потоков для сбора данных с устройств Интернета вещей. Мы рассмотрим сценарии использования Интернета вещей из реальной жизни, чтобы продемонстрировать, как быстро создать решение без лишних затрат.

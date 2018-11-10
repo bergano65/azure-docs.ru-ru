@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: integration
 ms.date: 02/24/2017
 ms.author: juliako
-ms.openlocfilehash: 01b8ccc9fe6b5469408131bce68a903f15382998
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 04ee2daaf7b06f8e7bdd8de144a039474551ea11
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39222534"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51227048"
 ---
 # <a name="azure-sdk-for-net-29-release-notes"></a>Заметки о выпуске пакета Azure SDK для .NET 2.9
 
@@ -80,7 +80,7 @@ ms.locfileid: "39222534"
 
 * **Средства озера данных Azure** для Visual Studio теперь объединены в пакет SDK для Azure для версии .NET. Этот инструмент автоматически устанавливается при установке пакета SDK для Azure. 
   
-    Этот инструмент постоянно обновляется. Получить обновления можно [здесь](http://aka.ms/datalaketool).
+    Этот инструмент постоянно обновляется. Получить обновления можно [здесь](https://aka.ms/datalaketool).
 * **Обозреватель сервера** теперь позволяет просматривать все сущности метаданных U-SQL и обновлять некоторые из них. Дополнительную информацию см. в [этом](https://azure.microsoft.com/documentation/services/data-lake-analytics/) блоге.
 
 ## <a name="hdinsight-tools"></a>Средства HDInsight

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: deguhath
-ms.openlocfilehash: 7754fccdfe8a2c4fad24f61fc22c722d2640ffa6
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 949bd8337ced7aa12d4354a46f6ee887a1922a7c
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37064622"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51227745"
 ---
 # <a name="how-to-identify-scenarios-and-plan-for-advanced-analytics-data-processing"></a>Как определить сценарии и план для расширенной аналитической обработки данных
 Какие ресурсы следует учесть при настройке среды для проведения расширенной аналитической обработки набора данных? В этой статье приведен ряд вопросов, ответы на которые помогут определить задачи и ресурсы, соответствующие вашему сценарию. Пошаговые инструкции для проведения прогнозной аналитики описаны в статье [Что такое процесс обработки и анализа данных группы (TDSP)?](overview.md) На каждом из этих шагов требуются определенные ресурсы для выполнения задач, соответствующих конкретному сценарию. Основные вопросы, позволяющие определить сценарий, касаются логистики данных, их характеристик, качества наборов данных, а также средств и языков, используемых для проведения анализа.
@@ -99,10 +99,10 @@ ms.locfileid: "37064622"
    * [Студия машинного обучения Azure](../studio/what-is-ml-studio.md)
    * [Revolution Analytics](https://www.microsoft.com/sql-server/machinelearningserver)
    * [RStudio](http://www.rstudio.com)
-   * [Инструменты Python для Visual Studio](http://aka.ms/ptvsdocs)
+   * [Средства Python для Visual Studio](https://aka.ms/ptvsdocs)
    * [Anaconda](https://www.continuum.io/why-anaconda)
    * [Записные книжки Jupyter](http://jupyter.org/)
-   * [Microsoft Power BI](http://powerbi.microsoft.com)
+   * [Microsoft Power BI](https://powerbi.microsoft.com)
 
 ## <a name="identify-your-advanced-analytics-scenario"></a>Определение сценария расширенной аналитики
 Ответив на вопросы в предыдущем разделе, вы сможете определить сценарий, наиболее соответствующий вашей ситуации. Примеры сценариев приведены в статье [Сценарии для расширенной аналитики в Машинном обучении Azure](plan-sample-scenarios.md).

@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 08/27/2018
 ms.author: kgremban
-ms.openlocfilehash: 2eebc96b14ee0f06b3bd88ea565dfe9372aba1ff
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: d85355b50bad9f05acc7da92d763d011e6f807b6
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47037820"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50741085"
 ---
 # <a name="install-azure-iot-edge-runtime-on-windows-to-use-with-windows-containers"></a>Установка среды выполнения Azure IoT Edge в Windows для использования с контейнерами Windows
 
@@ -36,11 +36,11 @@ Azure IoT Edge с контейнерами Windows можно использов
 ## <a name="install-the-container-runtime"></a>Установка среды выполнения контейнера 
 
 >[!NOTE]
->Чтобы установить платформу контейнеров в ОС "Windows IoT Базовая", следуйте инструкциям из [статьи о подготовке устройства под управлением ОС "Windows 10 IoT Базовая"][lnk-iot-core], а затем выполните инструкции, представленные ниже.
+>Чтобы установить платформу контейнеров в ОС Windows IoT Core, следуйте инструкциям из статьи [Установка среды выполнения Azure IoT Edge в ОС Windows IoT Базовая (предварительная версия)](how-to-install-iot-core.md), а затем выполните инструкции, представленные ниже.
 
-Служба Azure IoT Edge основана на среде выполнения контейнера, [совместимого с OCI][lnk-oci] (например, Docker). Для разработки и тестирования можно использовать [Docker для Windows][lnk-docker-for-windows]. 
+Служба Azure IoT Edge основана на среде выполнения контейнера, [совместимого с OCI](https://www.opencontainers.org/) (например, Docker). Для разработки и тестирования можно использовать [Docker для Windows](https://www.docker.com/docker-windows). 
 
-Настройте клиент Docker для Windows [на использование контейнеров Windows][lnk-docker-config].
+Настройте клиент Docker для Windows [на использование контейнеров Windows](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).
 
 ## <a name="install-the-azure-iot-edge-security-daemon"></a>Установка управляющей программы безопасности Azure IoT Edge
 
@@ -51,7 +51,7 @@ Azure IoT Edge с контейнерами Windows можно использов
 
 ### <a name="install-and-manually-provision"></a>Установка и подготовка вручную
 
-1. Выполните действия, описанные в статье [Регистрация нового устройства Azure IoT Edge на портале Azure][lnk-dcs], чтобы зарегистрировать устройство и получить для него строку подключения. 
+1. Выполните действия, описанные в статье [Регистрация нового устройства Azure IoT Edge на портале Azure](how-to-register-device-portal.md), чтобы зарегистрировать устройство и получить для него строку подключения. 
 
 2. На устройстве IoT Edge запустите PowerShell от имени администратора. 
 
@@ -66,7 +66,7 @@ Azure IoT Edge с контейнерами Windows можно использов
 
 ### <a name="install-and-automatically-provision"></a>Установка и автоматическая подготовка
 
-1. Выполните действия, описанные в статье [Создание и подготовка имитированного устройства IoT Edge TPM в Windows][lnk-dps], чтобы установить службу подготовки устройств и получить для нее **идентификатор области**. После этого сымитируйте устройство доверенного платформенного модуля (TPM) и получите для него **идентификатор регистрации**, а затем создайте отдельную регистрацию. Зарегистрировав устройство в Центре Интернета вещей, продолжите установку.  
+1. Выполните действия, описанные в статье [Создание и подготовка имитированного устройства IoT Edge TPM в Windows](how-to-auto-provision-simulated-device-windows.md), чтобы установить Службу подготовки устройств и получить для нее **идентификатор области**. После этого сымитируйте устройство доверенного платформенного модуля (TPM) и получите для него **идентификатор регистрации**, а затем создайте отдельную регистрацию. Зарегистрировав устройство в Центре Интернета вещей, продолжите установку.  
 
    >[!TIP]
    >Не закрывайте окно с запущенным симулятором TPM во время установки и тестирования. 
@@ -116,21 +116,6 @@ iotedge list
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge][lnk-modules].
+Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 
-Если вам не удается установить среду выполнения Edge, см. страницу со сведениями об [устранении неполадок][lnk-trouble].
-
-
-<!-- Images -->
-[img-nat]: ./media/how-to-install-iot-edge-windows-with-windows/nat.png
-
-<!-- Links -->
-[lnk-docker-config]: https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers
-[lnk-dcs]: how-to-register-device-portal.md
-[lnk-dps]: how-to-auto-provision-simulated-device-windows.md
-[lnk-oci]: https://www.opencontainers.org/
-[lnk-moby]: https://mobyproject.org/
-[lnk-trouble]: troubleshoot.md
-[lnk-docker-for-windows]: https://www.docker.com/docker-windows
-[lnk-iot-core]: how-to-install-iot-core.md
-[lnk-modules]: how-to-deploy-modules-portal.md
+Если вам не удается установить среду выполнения Edge, перейдите на страницу со сведениями об [устранении неполадок](troubleshoot.md).

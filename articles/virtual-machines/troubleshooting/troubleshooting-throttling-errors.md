@@ -13,12 +13,12 @@ ms.topic: troubleshooting
 ms.workload: infrastructure-services
 ms.date: 09/18/2018
 ms.author: vashan, rajraj, changov
-ms.openlocfilehash: b951d0b8d91729340cf382e70f72511fb009053e
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 15a4ff73476ce54f0617a88e040ac64d7288e9a8
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49386558"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50741119"
 ---
 # <a name="troubleshooting-api-throttling-errors"></a>Устранение ошибок регулирования API 
 
@@ -76,6 +76,18 @@ Content-Type: application/json; charset=utf-8
 Политика с количеством оставшихся вызовов 0 является причиной возвращения ошибки регулирования. В этом случае это `HighCostGet30Min`. Общий формат текста ответа — это общий формат ошибки API Azure Resource Manager (совместимый с OData). Основной код ошибки (`OperationNotAllowed`) — это код, используемый поставщиком вычислительных ресурсов для сообщения об ошибках регулирования (среди других типов ошибок клиента). Свойство внутренних ошибок `message` содержит сериализованную структуру файла JSON со сведениями о нарушении регулирования.
 
 Как показано выше, каждая ошибка регулирования содержит заголовок `Retry-After`, который предоставляет минимальное число секунд для ожидания клиентом перед повторным выполнением запроса. 
+
+## <a name="api-call-rate-and-throttling-error-analyzer"></a>Анализатор частоты вызова API и ошибок регулирования
+Доступна предварительная версия средства устранения неполадок для API поставщика вычислительных ресурсов. Эти командлеты PowerShell предоставляют статистику о частоте запросов API за интервал времени на операцию и о нарушении регулирования на группу операций (политику):
+-   [Export-AzureRmLogAnalyticRequestRateByInterval](https://docs.microsoft.com/powershell/module/azurerm.compute/export-azurermloganalyticrequestratebyinterval)
+-   [Export-AzureRmLogAnalyticThrottledRequests](https://docs.microsoft.com/powershell/module/azurerm.compute/export-azurermloganalyticthrottledrequests)
+
+Статистика вызовов API позволяет подробно изучить поведение клиентов подписки и легко определить шаблоны вызова, которые приводят к регулированию.
+
+Ограничением анализатора на данный момент является то, что он не учитывает запросы для ресурсов дисков и моментальных снимков (для поддержки управляемых дисков). Так как он собирает информацию из данных телеметрии CRP, анализатор также не сможет помочь в выявлении ошибок регулирования из ARM. Но их можно легко определить по различным заголовкам ответа ARM, как обсуждалось выше.
+
+Командлеты PowerShell используют API службы REST, который можно легко вызывать непосредственно из клиентов (хотя официально это еще не поддерживается). Чтобы просмотреть формат HTTP-запроса, выполните командлеты с параметром -Debug или отследите их выполнение с помощью Fiddler.
+
 
 ## <a name="best-practices"></a>Рекомендации 
 

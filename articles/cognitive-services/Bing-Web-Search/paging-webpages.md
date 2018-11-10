@@ -11,12 +11,12 @@ ms.component: bing-web-search
 ms.topic: conceptual
 ms.date: 08/20/2018
 ms.author: erhopf
-ms.openlocfilehash: 4aa3509fcdfc6fd1bccb4db95a8c916a42ce23d2
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: e98407dface348dfdbc99a1146d50c46f3bb03a7
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46125278"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50739249"
 ---
 # <a name="how-to-page-through-results-from-the-bing-web-search-api"></a>Как просматривать результаты постранично в API Bing для поиска в Интернете
 
@@ -61,4 +61,7 @@ Host: api.cognitive.microsoft.com
 
 API для поиска в Интернете возвращает результаты, которые включают в себя веб-страницы и могут также включать изображения, видео и новости. При разбиении на страницы результатов поиска используется ответ [WebAnswer](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#webanswer), но не другие ответы (изображения или новости). Например, если задать для параметра `count` значение 50, будут возвращены 50 найденных веб-страниц, однако ответ может содержать и результаты других типов. Например, ответ может включать в себя 15 изображений и 4 статьи. Возможно также, что на первой странице результатов будут отображены новости, но их не будет на второй странице, или наоборот.   
 
-Если вы указали параметр запроса `responseFilter` и не добавили Webpages в список фильтров, не используйте параметры `count` и `offset`.  
+Если вы указали параметр запроса `responseFilter` и не добавили Webpages в список фильтров, не используйте параметры `count` и `offset`. 
+
+> [!NOTE]
+> Поле `TotalEstimatedAnswers` содержит приблизительное общее число результатов поиска, которые вы можете получить для текущего запроса.  При задании параметров `count` и `offset` число `TotalEstimatedAnswers` может измениться. 

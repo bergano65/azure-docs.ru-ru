@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/15/2016
 ms.author: deonhe
-ms.openlocfilehash: 9edd7261ca62f505ffb4854e3132fae916768f67
-ms.sourcegitcommit: e266df9f97d04acfc4a843770fadfd8edf4fa2b7
+ms.openlocfilehash: e762141e089b11dd0fb129f3bf758874d4ad4da8
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
-ms.locfileid: "26736671"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51227643"
 ---
 # <a name="administration-and-development-task-list-in-biztalk-services"></a>Список задач администрирования и разработки в службах BizTalk
 
@@ -39,7 +39,7 @@ ms.locfileid: "26736671"
 | 5. |Developer |Установка пакета SDK и создание проекта службы BizTalk в Visual Studio. |[Установка пакета SDK для служб Azure BizTalk](https://msdn.microsoft.com/library/azure/hh689760.aspx) и [Создание конечных точек расширенного обмена сообщениями в Azure](https://msdn.microsoft.com/library/azure/hh689766.aspx) |
 | 6. |Developer |Развертывание проекта службы BizTalk в службе BizTalk, размещенной в Azure. |[Развертывание и обновление проекта служб BizTalk](https://msdn.microsoft.com/library/azure/hh689881.aspx) |
 | 7. |Администратор |Применяется, если вы используете EDI.  Можно добавлять партнеров и создавать соглашения на портале служб BizTalk Microsoft Azure. При создании соглашения в список его параметров можно добавить мост и (или) преобразования, созданные разработчиком. |[Настройка EDI, AS2 и EDIFACT на портале служб BizTalk](https://msdn.microsoft.com/library/azure/hh689853.aspx) |
-| 8. |Администратор |Использование [REST](https://msdn.microsoft.com/library/azure/dn232347.aspx), наблюдение за работоспособностью службы BizTalk, включая мониторинг показателей производительности. |[Службы BizTalk: вкладки «Панель мониторинга», «Монитор» и «Масштаб»](http://go.microsoft.com/fwlink/p/?LinkID=302281) |
+| 8. |Администратор |Использование [REST](https://msdn.microsoft.com/library/azure/dn232347.aspx), наблюдение за работоспособностью службы BizTalk, включая мониторинг показателей производительности. |[Службы BizTalk: вкладки «Панель мониторинга», «Монитор» и «Масштаб»](https://go.microsoft.com/fwlink/p/?LinkID=302281) |
 | 9. |Администратор |Использование портала служб BizTalk Microsoft Azure, управление артефактами, используемыми службами BizTalk, и отслеживание сообщений по мере их обработки файлами моста. |[Использование портала служб BizTalk](https://msdn.microsoft.com/library/azure/dn874043.aspx) |
 | 10. |Администратор |Создание плана архивации для резервного копирования службы BizTalk. |[Непрерывность бизнес-процессов и аварийное восстановление в службах BizTalk](https://msdn.microsoft.com/library/azure/dn509557.aspx) |
 
@@ -58,5 +58,5 @@ ms.locfileid: "26736671"
 [Добавление конечных точек источника, назначения и моста](https://msdn.microsoft.com/library/azure/hh689877.aspx)  
 [Обучение и создание сопоставлений и преобразований сообщений](https://msdn.microsoft.com/library/azure/hh689905.aspx)  
 [Использование службы адаптера BizTalk](https://msdn.microsoft.com/library/azure/hh689889.aspx)  
-[Службы BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=303664)
+[Службы BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=303664)
 

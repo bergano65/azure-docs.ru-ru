@@ -13,16 +13,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/02/2018
 ms.author: spelluru
-ms.openlocfilehash: d2e95e7ed35ef002c116b0edd41fb2ddd4ba2522
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: 523394010058ace7f61da2196a110fd3e6db610c
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48854513"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50739865"
 ---
 # <a name="message-sessions-first-in-first-out-fifo"></a>Сеансы сообщений и обработка в порядке очереди (FIFO) 
 
 Сеансы службы "Служебная шина Microsoft Azure" обеспечивают согласованную и упорядоченную обработку несвязанных последовательностей связанных сообщений. Чтобы реализовать надежный механизм FIFO в служебной шине, необходимо использовать сеансы. В служебной шине не регламентируется характер связи между сообщениями и не указывается конкретная модель, определяющая, где начинается или заканчивается последовательность сообщений.
+
+> [!NOTE]
+> Ценовая категория "Базовый" Служебной шины не поддерживает сеансы, а категории "Стандартный" и "Премиум" — поддерживают. Дополнительные сведения см. на странице [цен на служебную шину](/pricing/details/service-bus/).
 
 Любой отправитель может создать сеанс при отправке сообщений в очередь или раздел, задав свойству [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid#Microsoft_Azure_ServiceBus_Message_SessionId) какой-либо определяемый приложением идентификатор, уникальный в рамках сеанса. На уровне протокола AMQP 1.0 это значение соответствует свойству *group-id*.
 

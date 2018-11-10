@@ -12,14 +12,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: article
-ms.date: 04/06/2018
+ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 36c42830738f160b24f65e86576ba93aac1ea737
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: c84d015da907c8792f09d1d60e6bc8eddb7e2957
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47413140"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51005604"
 ---
 # <a name="troubleshoot-a-problem-azure-vm-by-using-nested-virtualization-in-azure"></a>Устранение проблем на виртуальной машине Azure с помощью вложенной виртуализации в Azure
 
@@ -101,7 +101,7 @@ ms.locfileid: "47413140"
 
 11. Выберите **Подключить виртуальный жесткий диск позднее**.
 
-    ![рисунок выбора параметра "Подключить виртуальный жесткий диск позднее"](/media/troubleshoot-vm-by-use-nested-virtualization/attach-disk-later.png)
+    ![рисунок выбора параметра "Подключить виртуальный жесткий диск позднее"](media/troubleshoot-vm-by-use-nested-virtualization/attach-disk-later.png)
 
 12. После создания виртуальной машины нажмите кнопку **Готово**.
 
@@ -109,11 +109,11 @@ ms.locfileid: "47413140"
 
 14. Выберите **Контроллер 0 IDE**, **Жесткий диск**, а затем нажмите кнопку **Добавить**.
 
-    ![рисунок добавления нового жесткого диска](/media/troubleshoot-vm-by-use-nested-virtualization/create-new-drive.png)    
+    ![рисунок добавления нового жесткого диска](media/troubleshoot-vm-by-use-nested-virtualization/create-new-drive.png)    
 
 15. В разделе **Физический жесткий диск** выберите диск проблемной виртуальной машины, подключенный к виртуальной машине Azure. Если диски в списке отсутствуют, с помощью параметра "Управление дисками" проверьте заданное состояние для диска ("Отключен").
 
-    ![рисунок с параметрами подключения диска](/media/troubleshoot-vm-by-use-nested-virtualization/mount-disk.png)  
+    ![рисунок с параметрами подключения диска](media/troubleshoot-vm-by-use-nested-virtualization/mount-disk.png)  
 
 
 17. Нажмите кнопку **Apply** (Применить), а затем нажмите кнопку **ОК**.
@@ -130,11 +130,11 @@ ms.locfileid: "47413140"
 
 3.  Выберите **Все ресурсы**, выполните запрос по имени диска, а затем выберите его.
 
-     ![изображение поиска диска](/media/troubleshoot-vm-by-use-nested-virtualization/search-disk.png)     
+     ![изображение поиска диска](media/troubleshoot-vm-by-use-nested-virtualization/search-disk.png)     
 
 4. Нажмите кнопку **Создать виртуальную машину**.
 
-     ![изображение создания виртуальной машины с диска](./media/troubleshoot-vm-by-use-nested-virtualization/create-vm-from-vhd.png) 
+     ![изображение создания виртуальной машины с диска](media/troubleshoot-vm-by-use-nested-virtualization/create-vm-from-vhd.png) 
 
 Чтобы создать виртуальную машину с диска, вы можете также использовать Azure PowerShell. Дополнительные сведения см. в разделе [Создание виртуальной машины](../windows/create-vm-specialized.md#create-the-new-vm). 
 

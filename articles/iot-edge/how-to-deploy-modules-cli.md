@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: e872b7eaeb7743221b8cdf41dd0a24ea0c4287d0
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: c882321af38b21f4820345b8ce5448227cb121c6
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46967495"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50977640"
 ---
 # <a name="deploy-azure-iot-edge-modules-with-azure-cli"></a>Развертывание модулей IoT Edge Azure с помощью интерфейса командной строки Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "46967495"
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-using-cli.md) в подписке Azure. 
 * [Устройство IoT Edge](how-to-register-device-cli.md) с установленной средой выполнения IoT Edge.
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. Вам понадобится как минимум Azure CLI версии 2.0.24 или более поздней. Для проверки используйте `az –-version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack. 
-* [Расширение Интернета вещей для интерфейса командной строки Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
+* [Расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
 
 ## <a name="configure-a-deployment-manifest"></a>Настройка манифеста развертывания
 
@@ -112,7 +112,7 @@ ms.locfileid: "46967495"
 Следующая команда применяет конфигурацию к устройству IoT Edge:
 
    ```cli
-   az iot hub apply-configuration --device-id [device id] --hub-name [hub name] --content [file path]
+   az iot edge set-modules --device-id [device id] --hub-name [hub name] --content [file path]
    ```
 
 В параметре идентификатора устройства учитывается регистр символов. Параметр content указывает на сохраненный ранее файл манифеста развертывания. 

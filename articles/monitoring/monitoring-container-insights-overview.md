@@ -14,18 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/14/2018
 ms.author: magoedte
-ms.openlocfilehash: 13fde8a4ec4ecf43b9997d5d4d181a232505626f
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: b90aa9e3c627708b2640086b2b812b8c7079e5bf
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50213004"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50912536"
 ---
 # <a name="azure-monitor-for-containers-preview-overview"></a>Общие сведения об Azure Monitor для контейнеров (предварительная версия)
 
 Azure Monitor для контейнеров — это компонент для контроля производительности рабочих нагрузок контейнеров, развертываемых на управляемых кластерах Kubernetes в службе Azure Kubernetes (AKS). Мониторинг контейнеров крайне важен, особенно если вы управляете рабочим кластером в нужном масштабе с несколькими приложениями.
 
-С помощью Azure Monitor для контейнеров можно отслеживать производительность, собирая данные метрик памяти и процессора из контроллеров, узлов и контейнеров, доступных в Kubernetes, используя API метрик. Также собираются журналы контейнеров.  После включения мониторинга из кластеров Kubernetes эти метрики и журналы автоматически собираются через контейнерную версию агента Log Analytics для Linux и хранятся в вашем рабочем пространстве [Log Analytics](../log-analytics/log-analytics-overview.md). 
+С помощью Azure Monitor для контейнеров можно отслеживать производительность, собирая данные метрик памяти и процессора из контроллеров, узлов и контейнеров, доступных в Kubernetes, используя API метрик. Также собираются журналы контейнеров.  После включения мониторинга из кластеров Kubernetes эти метрики и журналы автоматически собираются через контейнерную версию агента Log Analytics для Linux и хранятся в вашем рабочем пространстве [Log Analytics](../log-analytics/log-analytics-queries.md). 
  
 ## <a name="what-does-azure-monitor-for-containers-provide"></a>В чем заключается польза Azure Monitor для контейнеров?
 

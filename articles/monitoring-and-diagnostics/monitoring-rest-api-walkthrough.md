@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: mcollier
 ms.component: ''
-ms.openlocfilehash: 59e7ac5e2da733724c047f6842561ce87fb495bb
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 1d04c4335fcb2d7264d91e0b147c43828b3cff2e
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49955310"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50958752"
 ---
 # <a name="azure-monitoring-rest-api-walkthrough"></a>Пошаговое руководство по REST API Azure Monitor
 В этой статье показано, как выполнять аутентификацию таким образом, чтобы в коде можно было использовать [справочник по REST API Microsoft Azure Monitor](https://msdn.microsoft.com/library/azure/dn931943.aspx).         
@@ -54,7 +54,7 @@ New-AzureRmRoleAssignment -RoleDefinitionName Reader `
 
 ```
 
-Чтобы отправить запрос к API Azure Monitor, клиентское приложение должно использовать ранее созданный субъект-службу для прохождения аутентификации. В приведенном ниже примере сценария PowerShell показан один подход, в котором для получения токена аутентификации JWT используется [библиотека аутентификации Active Directory](../active-directory/active-directory-authentication-libraries.md) (ADAL). Этот маркер JWT передается как часть параметра проверки подлинности HTTP в запросах к API Azure Monitor.
+Чтобы отправить запрос к API Azure Monitor, клиентское приложение должно использовать ранее созданный субъект-службу для прохождения аутентификации. В приведенном ниже примере сценария PowerShell показан один подход, в котором для получения токена аутентификации JWT используется [библиотека аутентификации Active Directory](../active-directory/develop/active-directory-authentication-libraries.md) (ADAL). Этот маркер JWT передается как часть параметра проверки подлинности HTTP в запросах к API Azure Monitor.
 
 ```PowerShell
 $azureAdApplication = Get-AzureRmADApplication -IdentifierUri "https://localhost/azure-monitor"
@@ -694,7 +694,7 @@ Invoke-RestMethod -Uri $request `
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Прочитайте [общие сведения о мониторинге](monitoring-overview.md).
+* Прочитайте [общие сведения о мониторинге](../azure-monitor/overview.md).
 * Ознакомьтесь с разделом [Метрики, поддерживаемые Azure Monitor](monitoring-supported-metrics.md).
 * Ознакомьтесь со [справочником по REST API Microsoft Azure Monitor](https://msdn.microsoft.com/library/azure/dn931943.aspx).
 * Ознакомьтесь с [библиотекой управления Azure](https://msdn.microsoft.com/library/azure/mt417623.aspx).

@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/30/2018
+ms.date: 10/31/2018
 ms.author: jeedes
-ms.openlocfilehash: cc87985404ef8c9ee625f32b359e6ac1a29e73ae
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: 7d25b072ffc41608bca9e0b23116b2eb453dd160
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42143311"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50740354"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jira-saml-sso-by-microsoft"></a>Руководство по интеграции Azure Active Directory с JIRA SAML SSO by Microsoft
 
@@ -61,11 +61,12 @@ ms.locfileid: "42143311"
 
 ## <a name="supported-versions-of-jira"></a>Поддерживаемые версии JIRA
 
-*   Jira Core и Jira Software: 6.0–7.8;
-*   JIRA Service Desk: 3.0–3.2.
-*   JIRA поддерживает также 5.2. Дополнительные сведения см. в статье об [использовании единого входа Microsoft Azure Active Directory для JIRA 5.2](jira52microsoft-tutorial.md).
+* Jira Core и Jira Software: версии 6.0–7.12;
+* Jira Service Desk: версии 3.0.0–3.5.0;
+* JIRA поддерживает также 5.2. Дополнительные сведения см. в статье об [использовании единого входа Microsoft Azure Active Directory для JIRA 5.2](jira52microsoft-tutorial.md).
 
 ## <a name="scenario-description"></a>Описание сценария
+
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде.
 Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
@@ -73,6 +74,7 @@ ms.locfileid: "42143311"
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-jira-saml-sso-by-microsoft-from-the-gallery"></a>Добавление JIRA SAML SSO by Microsoft из коллекции
+
 Чтобы настроить интеграцию JIRA SAML SSO by Microsoft с Azure AD, необходимо добавить JIRA SAML SSO by Microsoft из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить JIRA SAML SSO by Microsoft из коллекции, выполните следующие действия.**
@@ -101,13 +103,13 @@ ms.locfileid: "42143311"
 
 Чтобы настроить и проверить единый вход Microsoft Azure AD в JIRA SAML SSO by Microsoft, вам потребуется выполнить действия в следующих стандартных блоках.
 
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя JIRA SAML SSO by Microsoft](#create-a-jira-saml-sso-by-microsoft-test-user)** требуется для того, чтобы в JIRA SAML SSO by Microsoft существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
+3. **[Создание тестового пользователя JIRA SAML SSO by Microsoft](#creating-jira-saml-sso-by-microsoft-test-user)** требуется для того, чтобы в JIRA SAML SSO by Microsoft существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
+5. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
+### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
 
 В данном разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении JIRA SAML SSO by Microsoft.
 
@@ -117,11 +119,15 @@ ms.locfileid: "42143311"
 
     ![Ссылка "Настройка единого входа"][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+2. В диалоговом окне **Выбрать метод единого входа** щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
 
-    ![Диалоговое окно "Единый вход"](./media/jiramicrosoft-tutorial/tutorial_singlesign-onforjira_samlbase.png)
+    ![Настройка единого входа](common/tutorial_general_301.png)
 
-3. В разделе **Домены и URL-адреса приложения JIRA SAML SSO by Microsoft** выполните следующие действия.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+
+    ![Настройка единого входа](common/editconfigure.png)
+
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения JIRA SAML SSO by Microsoft](./media/jiramicrosoft-tutorial/tutorial_singlesign-onforjira_url.png)
 
@@ -134,13 +140,9 @@ ms.locfileid: "42143311"
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Если это именованный URL-адрес, то порт указывать необязательно. Эти значения предоставляются во время настройки подключаемого модуля JIRA, которая описывается далее в этом руководстве.
 
-4. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
+5. На странице **Сертификат подписи SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
 
-    ![Настройка единого входа](./media/jiramicrosoft-tutorial/tutorial_metadataurl.png)
-
-5. Нажмите кнопку **Сохранить** .
-
-    ![Настройка единого входа](./media/jiramicrosoft-tutorial/tutorial_general_400.png)
+    ![Ссылка для скачивания сертификата](./media/jiramicrosoft-tutorial/tutorial_metadataurl.png) 
 
 6. В другом окне веб-браузера войдите в свой экземпляр JIRA в качестве администратора.
 
@@ -187,39 +189,32 @@ ms.locfileid: "42143311"
     > [!NOTE]
     > Дополнительные сведения об установке и устранении неполадок см. в [руководстве администратора соединителя единого входа MS JIRA](../ms-confluence-jira-plugin-adminguide.md) и в [часто задаваемых вопросах](../ms-confluence-jira-plugin-faq.md).
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-   ![Создание тестового пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Создание пользователя Azure AD][100]
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка "Azure Active Directory"](./media/jiramicrosoft-tutorial/create_aaduser_01.png)
+    ![Создание тестового пользователя Azure AD](common/create_aaduser_01.png) 
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+3. В разделе свойств пользователя сделайте следующее.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/jiramicrosoft-tutorial/create_aaduser_02.png)
-
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
-
-    ![Кнопка "Добавить"](./media/jiramicrosoft-tutorial/create_aaduser_03.png)
-
-4. В диалоговом окне **Пользователь** сделайте следующее.
-
-    ![Диалоговое окно "Пользователь"](./media/jiramicrosoft-tutorial/create_aaduser_04.png)
+    ![Создание тестового пользователя Azure AD](common/create_aaduser_02.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например, BrittaSimon@contoso.com
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+    c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
 
-### <a name="create-a-jira-saml-sso-by-microsoft-test-user"></a>Создание тестового пользователя JIRA SAML SSO by Microsoft
+### <a name="creating-jira-saml-sso-by-microsoft-test-user"></a>Создание тестового пользователя JIRA SAML SSO by Microsoft
 
 Чтобы пользователи Azure AD могли выполнять вход на локальный сервер JIRA, их необходимо подготовить в JIRA SAML SSO by Microsoft. Для JIRA SAML SSO by Microsoft подготовка выполняется вручную.
 
@@ -253,37 +248,31 @@ ms.locfileid: "42143311"
 
     д. Щелкните **Create user** (Создать пользователя).
 
-### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к JIRA SAML SSO by Microsoft.
 
-![Назначение роли пользователя][200] 
-
-**Чтобы назначить пользователя Britta Simon в JIRA SAML SSO by Microsoft, сделайте следующее.**
-
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+1. На портале Azure перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
     ![Назначение пользователя][201]
 
 2. Из списка приложений выберите **JIRA SAML SSO by Microsoft**.
 
-    ![Ссылка на JIRA SAML SSO by Microsoft в списке "Приложения"](./media/jiramicrosoft-tutorial/tutorial_singlesign-onforjira_app.png)
+    ![Настройка единого входа](./media/jiramicrosoft-tutorial/tutorial_singlesign-onforjira_app.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Назначение пользователя][202]
 
 4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Область "Добавление назначения"][203]
+    ![Назначение пользователя][203]
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+6. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="testing-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
@@ -297,14 +286,13 @@ ms.locfileid: "42143311"
 
 <!--Image references-->
 
-[1]: ./media/msaadssojira-tutorial/tutorial_general_01.png
-[2]: ./media/msaadssojira-tutorial/tutorial_general_02.png
-[3]: ./media/msaadssojira-tutorial/tutorial_general_03.png
-[4]: ./media/msaadssojira-tutorial/tutorial_general_04.png
+[1]: common/tutorial_general_01.png
+[2]: common/tutorial_general_02.png
+[3]: common/tutorial_general_03.png
+[4]: common/tutorial_general_04.png
 
-[100]: ./media/msaadssojira-tutorial/tutorial_general_100.png
+[100]: common/tutorial_general_100.png
 
-[200]: ./media/msaadssojira-tutorial\tutorial_general_200.png
-[201]: ./media/msaadssojira-tutorial\tutorial_general_201.png
-[202]: ./media/msaadssojira-tutorial\tutorial_general_202.png
-[203]: ./media/msaadssojira-tutorial\tutorial_general_203.png
+[201]: common/tutorial_general_201.png
+[202]: common/tutorial_general_202.png
+[203]: common/tutorial_general_203.png

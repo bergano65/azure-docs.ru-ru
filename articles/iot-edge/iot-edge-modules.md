@@ -8,12 +8,12 @@ ms.date: 09/21/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 5d80b6438569e74ee254d27e0061443a87efc6ce
-ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
+ms.openlocfilehash: 80679d6efd44598fbe403707ad2e757010eb8d91
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47423397"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50741680"
 ---
 # <a name="understand-azure-iot-edge-modules"></a>Общие сведения о модулях IoT Edge Azure
 
@@ -31,7 +31,7 @@ Azure IoT Edge позволяет развертывать *модули* биз
 
 Каждый раз, когда среда выполнения IoT Edge запускает развернутый на устройстве образ модуля, она создает новый экземпляр этого модуля. Один и тот же образ модуля может выполняться одновременно на разных устройствах в разных частях мира, но для каждого из этих устройств при запуске модуля создается собственный экземпляр модуля. 
 
-![Образы модулей в облаке — экземпляры модулей на устройствах][1]
+![Образы модулей в облаке — экземпляры модулей на устройствах](./media/iot-edge-modules/image_instance.png)
 
 На практике образы модулей существуют как образы контейнеров в хранилище данных, а экземпляры модулей реализованы как контейнеры на устройствах. 
 
@@ -46,23 +46,23 @@ As use cases for Azure IoT Edge grow, new types of module images and instances w
 
 Иногда нужно развернуть один образ модуля несколько раз на одном устройстве. В таком случае для экземпляров будут использоваться разные имена.
 
-![Идентификаторы модулей должны быть уникальными][2]
+![Идентификаторы модулей должны быть уникальными](./media/iot-edge-modules/identity.png)
 
 ## <a name="module-twins"></a>Двойники модулей
 
 С каждым экземпляром модуля сопоставлен определенный двойник модуля, который применяется для настройки экземпляра. Экземпляр и двойник связаны друг с другом через идентификатор модуля. 
 
-Двойник модуля представляет собой документ JSON, в котором собраны сведения о модуле и параметры его конфигурации. Эта концепция работает так же, как и [двойник устройства][lnk-device-twin] в Центре Интернета вещей. Структура двойника модуля полностью идентична структуре двойника устройства. Для взаимодействия с двойниками обоих типов используются одни и те же API-интерфейсы. Единственное различие между ними — идентификатор, который применяется для создания экземпляра клиентского пакета SDK. 
+Двойник модуля представляет собой документ JSON, в котором собраны сведения о модуле и параметры его конфигурации. Эта концепция работает так же, как и [двойник устройства](../iot-hub/iot-hub-devguide-device-twins.md) в Центре Интернета вещей. Структура двойника модуля полностью идентична структуре двойника устройства. Для взаимодействия с двойниками обоих типов используются одни и те же API-интерфейсы. Единственное различие между ними — идентификатор, который применяется для создания экземпляра клиентского пакета SDK. 
 
 ```csharp
-// Create a ModuleClient object. This ModuleClient will act on behalf of a 
-// module since it is created with a module’s connection string instead 
-// of a device connection string. 
-ModuleClient client = new ModuleClient.CreateFromEnvironmentAsync(settings); 
-await client.OpenAsync(); 
- 
-// Get the module twin 
-Twin twin = await client.GetTwinAsync(); 
+// Create a ModuleClient object. This ModuleClient will act on behalf of a 
+// module since it is created with a module’s connection string instead 
+// of a device connection string. 
+ModuleClient client = new ModuleClient.CreateFromEnvironmentAsync(settings); 
+await client.OpenAsync(); 
+ 
+// Get the module twin 
+Twin twin = await client.GetTwinAsync(); 
 ```
 
 ## <a name="offline-capabilities"></a>Возможности автономной работы
@@ -79,15 +79,8 @@ Azure IoT Edge поддерживает автономные операции с
 Дополнительные возможности автономной работы сейчас представлены в общедоступной предварительной версии. Дополнительные сведения см. в разделе [Сведения о расширенных возможностях автономной работы устройств, модулей и дочерних устройств IoT Edge](offline-capabilities.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
- - [Сведения о требованиях и средствах разработки модулей IoT Edge][lnk-mod-dev]
- - [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре][lnk-runtime]
+ - [Сведения о требованиях и средствах разработки модулей IoT Edge](module-development.md)
+ - [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md)
 
 <!-- Images -->
-[1]: ./media/iot-edge-modules/image_instance.png
 [2]: ./media/iot-edge-modules/identity.png
-
-<!-- Links -->
-[lnk-device-identity]: ../iot-hub/iot-hub-devguide-identity-registry.md
-[lnk-device-twin]: ../iot-hub/iot-hub-devguide-device-twins.md
-[lnk-runtime]: iot-edge-runtime.md
-[lnk-mod-dev]: module-development.md

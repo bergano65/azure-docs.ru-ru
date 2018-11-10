@@ -2,19 +2,19 @@
 title: Разработка действий скриптов с помощью HDInsight на основе Linux в Azure
 description: Узнайте, как настраивать кластеры HDInsight под управлением Linux с помощью bash-сценариев. Действия сценариев в HDInsight позволяют выполнять сценарии во время или после создания кластера. С помощью сценария можно изменить параметры конфигурации кластера или установить дополнительное программное обеспечение.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/10/2018
-ms.author: jasonh
-ms.openlocfilehash: 9a10620e3a388fa47076afd54e1789607e5ca47e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.author: hrasheed
+ms.openlocfilehash: 90bba26bf1fd941085568cacd4d005f10eaed1b8
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46986257"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51005399"
 ---
 # <a name="script-action-development-with-hdinsight"></a>Разработка действий сценариев с помощью HDInsight
 

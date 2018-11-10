@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/31/2016
 ms.author: mbullwin
-ms.openlocfilehash: fe1fe5d270dd8eb871301a8ec81375f35b2568da
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 0083c157eab489943f94ed1453c66a5c8d2f291a
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47096588"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50960316"
 ---
 # <a name="smart-detection-in-application-insights"></a>Интеллектуальное обнаружение в Application Insights
  Функция интеллектуального обнаружения автоматически предупреждает о потенциальных проблемах с производительностью в веб-приложении. Она выполняет упреждающий анализ данных телеметрии, которые приложение отправляет в [Application Insights](app-insights-overview.md). В случае внезапного увеличения частоты сбоев или числа аномальных тенденций в производительности клиента или сервера вы получите оповещение. Эта функция не требует настройки. Она работает, если приложение отправляет достаточный объем данных телеметрии.
@@ -57,7 +57,7 @@ ms.locfileid: "47096588"
 
 * [Обозреватель метрик](app-insights-metrics-explorer.md)
 * [Обозреватель поиска](app-insights-diagnostic-search.md)
-* [Аналитика, мощный язык запросов](app-insights-analytics-tour.md)
+* [Аналитика, мощный язык запросов](../log-analytics/query-language/get-started-analytics-portal.md)
 
 Интеллектуальное обнаружение — это полностью автоматическая функция. но, возможно, вам потребуется настроить некоторые дополнительные оповещения.
 

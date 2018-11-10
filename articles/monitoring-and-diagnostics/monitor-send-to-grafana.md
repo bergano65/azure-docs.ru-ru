@@ -9,12 +9,12 @@ ms.date: 11/06/2017
 ms.topic: conceptual
 ms.service: azure-monitor
 ms.component: ''
-ms.openlocfilehash: 75b1edf80f1dad5f0db48c11329effe080760820
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 533fbfc42939299f99699a13513cd3b55c89cabc
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50413151"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50957290"
 ---
 # <a name="monitor-your-azure-services-in-grafana"></a>Мониторинг служб Azure в Grafana
 Теперь также можно отслеживать службы Azure и приложения из [Grafana](https://grafana.com/) с помощью [подключаемого модуля источника данных Azure Monitor](https://grafana.com/plugins/grafana-azure-monitor-datasource). Подключаемый модуль собирает данные производительности приложения, которые собраны пакетом SDK Application Insights, а также данные инфраструктуры, предоставленные Azure Monitor. Затем эти данные можно отобразить на панели мониторинга Grafana.
@@ -128,4 +128,4 @@ Grafana использует субъект-службу Azure Active Directory 
 2. На странице группы ресурсов щелкните **Удалить**, в текстовом поле введите **Grafana** и выберите **Удалить**.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Обзор метрик в Microsoft Azure](monitoring-overview-metrics.md)
+* [Обзор метрик в Microsoft Azure](../monitoring/monitoring-data-collection.md)

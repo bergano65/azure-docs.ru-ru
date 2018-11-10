@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 01/08/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 845bc46ec56bfd6681c4fb318a57de19f66c0edf
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: f1ca7abc867df25d37093cb777f35216b5ee5a30
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49403879"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50957987"
 ---
 # <a name="troubleshooting-the-log-analytics-vm-extension"></a>Устранение неполадок с расширением Log Analytics для виртуальной машины
 В этой статье содержатся сведения об устранении ошибок, которые могут возникнуть с расширением "Виртуальная машина Log Analytics" для виртуальных машин Windows и Linux, работающих на платформе Microsoft Azure, и предлагаются возможные решения для их устранения.
@@ -58,7 +58,7 @@ ms.locfileid: "49403879"
 6. Просмотрите состояние агента Microsoft Monitoring Agent. Для этого на виртуальной машине в окне PowerShell с повышенными правами введите следующий код `  (New-Object -ComObject 'AgentConfigManager.MgmtSvcCfg').GetCloudWorkspaces() | Format-List`.
 7. Просмотрите файлы журнала установки агента Microsoft Monitoring Agent в папке `C:\Windows\System32\config\systemprofile\AppData\Local\SCOM\Logs`.
 
-Подробные сведения см. в статье об [устранении неполадок расширений для виртуальных машин Windows](../virtual-machines/windows/extensions-oms.md).
+Подробные сведения см. в статье об [устранении неполадок расширений для виртуальных машин Windows](../virtual-machines/extensions/oms-windows.md).
 
 ## <a name="troubleshooting-linux-vm-extension"></a>Устранение неполадок расширения виртуальной машины для Linux
 [!INCLUDE [log-analytics-agent-note](../../includes/log-analytics-agent-note.md)] 
@@ -70,7 +70,7 @@ ms.locfileid: "49403879"
 2. В случае возникновения других неполадок просмотрите файлы журнала расширения агента Log Analytics для Linux в папке `/var/log/azure/Microsoft.EnterpriseCloud.Monitoring.OmsAgentForLinux/*/extension.log` и `/var/log/azure/Microsoft.EnterpriseCloud.Monitoring.OmsAgentForLinux/*/CommandExecution.log`.
 3. Если расширение работает нормально, но данные не отправляются, просмотрите файлы журнала агента Log Analytics для Linux в папке `/var/opt/microsoft/omsagent/log/omsagent.log`.
 
-Подробные сведения см. в статье [Устранение неполадок расширения виртуальной машины Linux](../virtual-machines/linux/extensions-oms.md).
+Подробные сведения см. в статье [Устранение неполадок расширения виртуальной машины Linux](../virtual-machines/extensions/oms-linux.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

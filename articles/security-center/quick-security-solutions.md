@@ -3,7 +3,7 @@ title: Краткое руководство по работе с центром
 description: Краткое руководство по работе с центром безопасности Azure. Подключение решений безопасности
 services: security-center
 documentationcenter: na
-author: terrylan
+author: rkarlin
 manager: mbaldwin
 editor: ''
 ms.assetid: 3263bb3d-befc-428c-9f80-53de65761697
@@ -14,13 +14,13 @@ ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/22/2018
-ms.author: yurid
-ms.openlocfilehash: afc72f5b18460578b0cfcd085fe601184a2f898b
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.author: rkarlin
+ms.openlocfilehash: d02c71865f900c2b75da60bd2e989e04a6823d11
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38561303"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51005246"
 ---
 # <a name="quickstart-connect-security-solutions-to-security-center"></a>Краткое руководство. Подключение решений безопасности
 
@@ -30,7 +30,7 @@ ms.locfileid: "38561303"
 - подключить решение безопасности к центру безопасности с помощью журналов CEF;
 - проверить подключение с помощью решения для системы безопасности.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для начала работы с Центром безопасности необходима подписка Microsoft Azure. Если у вас нет подписки, вы можете зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/).
 
 Для работы с этим руководством требуется центр безопасности с ценовой категорией "Стандартный". Вы можете использовать центр безопасности категории "Стандартный" бесплатно в течение первых 60 дней. Следуйте инструкциям [краткого руководства по центру безопасности Azure](security-center-get-started.md), чтобы обновить ценовую категорию до уровня "Стандартный".

@@ -5,23 +5,23 @@ services: active-directory
 ms.service: active-directory
 ms.component: authentication
 ms.topic: conceptual
-ms.date: 07/11/2018
+ms.date: 10/30/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: jsimmons
-ms.openlocfilehash: 1eea6380d4276644db0c7681f23a4b0c5e79ff09
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: 6832f6f9d09cbbfea6ccaa69160ad93209c7ac8c
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39187355"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50741187"
 ---
 # <a name="preview-azure-ad-password-protection-monitoring-reporting-and-troubleshooting"></a>Предварительная версия. Мониторинг, отчетность и устранение неполадок защиты паролем Azure AD
 
 |     |
 | --- |
-| Защита паролем Azure AD и пользовательский список заблокированных паролей — это функции Azure Active Directory, которые предоставляются в режиме общедоступной предварительной версии. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
+| Защита паролем Azure AD — это общедоступная предварительная версия функции Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
 |     |
 
 После развертывания защиты паролем Azure AD мониторинг и отчетность являются важными задачами. В этой статье мы подробно рассмотрим, где каждая служба регистрирует сведения и создает отчеты об использовании защиты паролем Azure AD.
@@ -88,7 +88,7 @@ ms.locfileid: "39187355"
 
 Пароль для указанного пользователя был принят, так как политика паролей Azure пока недоступна
 
-UserName: <user> FullName: <user>
+UserName: какой-либо пользователь FullName: какой-либо пользователь
 
 Это условие может быть вызвано одной или несколькими из следующих причин:%n
 
@@ -195,8 +195,8 @@ Heartbeat             : 2/16/2018 8:35:01 AM
 2. Удалите программное обеспечение агента контроллера домена со всех контроллеров. Для этого шага **требуется** перезагрузка компьютера.
 3. Вручную удалите все точки подключения службы прокси в каждом контексте именования домена. Местоположение этих объектов можно обнаружить с помощью следующей команды Active Directory Powershell:
    ```
-   $scp = “serviceConnectionPoint”
-   $keywords = “{EBEFB703-6113-413D-9167-9F8DD4D24468}*”
+   $scp = "serviceConnectionPoint"
+   $keywords = "{EBEFB703-6113-413D-9167-9F8DD4D24468}*"
    Get-ADObject -SearchScope Subtree -Filter { objectClass -eq $scp -and keywords -like $keywords }
    ```
 
@@ -207,8 +207,8 @@ Heartbeat             : 2/16/2018 8:35:01 AM
 4. Вручную удалите все точки подключения агента контроллера домена в каждом контексте именования домена. В лесу может быть по одному такому объекту на контроллер домена, в зависимости от того, насколько широко развернута предварительная версия программного обеспечения. Местоположение этого объекта можно обнаружить с помощью следующей команды Active Directory Powershell:
 
    ```
-   $scp = “serviceConnectionPoint”
-   $keywords = “{B11BB10A-3E7D-4D37-A4C3-51DE9D0F77C9}*”
+   $scp = "serviceConnectionPoint"
+   $keywords = "{B11BB10A-3E7D-4D37-A4C3-51DE9D0F77C9}*"
    Get-ADObject -SearchScope Subtree -Filter { objectClass -eq $scp -and keywords -like $keywords }
    ```
 

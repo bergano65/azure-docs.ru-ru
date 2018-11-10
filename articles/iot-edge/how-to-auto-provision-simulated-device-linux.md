@@ -4,16 +4,16 @@ description: Использование имитированного довер�
 author: kgremban
 manager: timlt
 ms.author: kgremban
-ms.date: 06/27/2018
+ms.date: 10/31/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 9609aab6c70bc0c2755de142023bd26e7417987a
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: 6d0d2adfb4a727ec93db6d44e6a3e8f923760b91
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37347860"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50739674"
 ---
 # <a name="create-and-provision-an-edge-device-with-a-virtual-tpm-on-a-linux-virtual-machine"></a>Создание и подготовка устройства IoT Edge с помощью виртуального доверенного платформенного модуля на виртуальной машине Linux
 
@@ -28,7 +28,7 @@ ms.locfileid: "37347860"
 
 Действия, описанные в этой статье, предназначены для целей тестирования.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Компьютер для разработки с ОС Windows с [включенным Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v). В этой статье используется виртуальная машина Ubuntu Server, запущенная в Windows 10. 
 * Действующий Центр Интернета вещей. 
@@ -180,7 +180,7 @@ ms.locfileid: "37347860"
    В случае успешного применения правила данные вывода выглядят следующим образом.
 
    ```output
-   crw------- 1 root root 10, 224 Jun 28 22:34 /dev/tpm0
+   crw------- 1 root iotedge 10, 224 Jul 20 16:27 /dev/tpm0
    ```
 
 8. Откройте файл переопределений среды выполнения IoT Edge. 

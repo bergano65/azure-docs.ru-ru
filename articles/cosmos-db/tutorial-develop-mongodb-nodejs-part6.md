@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 06/17/2018
 ms.author: jopapa
 ms.custom: mvc
-ms.openlocfilehash: a1705913e1656901d0a87a3cebb2eb69a6c7ad63
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 667c1fbce398e06f9f2a6edca21935ae1062a737
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43698593"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50740576"
 ---
 # <a name="create-a-mongodb-app-with-angular-and-azure-cosmos-db---part-6-add-post-put-and-delete-functions-to-the-app"></a>Создание приложения MongoDB с помощью Angular и Azure Cosmos DB — часть 6. Добавление функций Post, Put и Delete в приложение
 
@@ -88,13 +88,13 @@ ms.locfileid: "43698593"
     });
     ```
 
-5. Запустите приложение, чтобы убедиться в его работоспособности. В Visual Studio Code сохраните все изменения, нажмите кнопку **Отладка** слева ![Значок "Отладка" в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part6/debug-button.png), затем нажмите кнопку **Начать отладку** ![Значок "Начать отладку" в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part6/start-debugging-button.png).
+5. Запустите приложение, чтобы убедиться в его работоспособности. В Visual Studio Code сохраните все изменения, нажмите кнопку **Отладка** слева ![Значок "Отладка" в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part6/debug-button.png) и нажмите кнопку **Начать отладку** ![Значок "Начать отладку" в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part6/start-debugging-button.png).
 
 6. Теперь вернитесь в браузер и откройте вкладку с параметрами сети в инструментах разработчика. На большинстве компьютеров эта вкладка открывается нажатием клавиши F12. Перейдите по адресу [http://localhost:3000](http://localhost:3000) для просмотра вызовов по сети.
 
     ![Вкладка с параметрами сети в браузере Chrome с отображением действий в сети](./media/tutorial-develop-mongodb-nodejs-part6/add-new-hero.png)
 
-7. Добавьте новый элемент hero, нажав кнопку **Add New Hero** (Добавить героя). Введите идентификатор 999, имя Fred и фразу "Hello". Затем нажмите кнопку **Save** (Сохранить). На вкладке с параметрами сети вы увидите, отправленный запрос POST для нового элемента hero. 
+7. Добавьте новый элемент hero, нажав кнопку **Add New Hero** (Добавить героя). Введите идентификатор 999, имя Fred и фразу Hello. Затем нажмите кнопку **Save** (Сохранить). На вкладке с параметрами сети вы увидите, отправленный запрос POST для нового элемента hero. 
 
     ![Вкладка с сетевыми параметрами в браузере Chrome с отображением функций Get и Post в сети](./media/tutorial-develop-mongodb-nodejs-part6/post-new-hero.png)
 
@@ -177,7 +177,7 @@ ms.locfileid: "43698593"
 
 5. Обновите страницу в браузере и нажмите кнопку **Add New Hero** (Добавить героя). Добавьте новый элемент hero с идентификатором 9, именем Starlord и фразой "Hi". Нажмите кнопку **Save** (Сохранить), чтобы сохранить элемент hero.
 
-6. Теперь выберите героя **Starlord** и измените его фразу с "Hi" на "Bye". Нажмите кнопку **Save** (Сохранить). 
+6. Теперь выберите героя **Starlord** и измените его фразу с Hi на Bye. Нажмите кнопку **Save** (Сохранить). 
 
     Теперь выберите идентификатор на вкладке с параметрами сети, чтобы отобразить полезные данные. Вы увидите в полезных данных, что фраза героя поменялась на "Bye".
 

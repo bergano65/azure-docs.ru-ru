@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
-ms.openlocfilehash: 7f0e65b1de1df48603cab29148c7f4c6fb909714
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 348321592fc32f7dd77447c7217c7142f7ad9bd4
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47095003"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51226946"
 ---
 # <a name="troubleshoot-cloud-service-deployment-problems"></a>Устранение неполадок, которые могут возникнуть при развертывании облачной службы
 При развертывании пакета приложения облачной службы в Azure сведения о развертывании можно получить на панели **Свойства** портала Azure. Сведения, отображающиеся на этой панели, можно использовать для устранения неполадок в работе облачной службы. Кроме того, вы можете передать эту информацию в службу поддержки Azure при открытии нового запроса на поддержку.
@@ -50,7 +50,7 @@ URL-адрес веб-сайта, отображаемый на портале, 
 2. На панели **Свойства** портала Azure ознакомьтесь со сведениями и определите, восстанавливалась ли служба во время перезапуска ролей.
 
 Кроме того, роли перезапускаются примерно раз в месяц, когда обновляются ОС узла и гостевая ОС.  
-Дополнительные сведения см. в записи блога [Role Instance Restarts Due to OS Upgrades](http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx) (Перезапуск экземпляра роли из-за обновлений ОС).
+Дополнительные сведения см. в записи блога [Role Instance Restarts Due to OS Upgrades](https://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx) (Перезапуск экземпляра роли из-за обновлений ОС).
 
 ## <a name="problem-i-cannot-do-a-vip-swap-and-receive-an-error"></a>Проблема: когда я пробую переключить виртуальный IP-адрес, отображается сообщение об ошибке
 Переключение виртуального IP-адреса не допускается, если развертывание обновляется. Развертывание обновляется автоматически в таких случаях:
@@ -68,14 +68,14 @@ URL-адрес веб-сайта, отображаемый на портале, 
 ## <a name="problem-a-role-instance-is-looping-between-started-initializing-busy-and-stopped"></a>Проблема: экземпляр роли циклически переключается между состояниями «Запущено», «Инициализация», «Занято» и «Остановлено»
 Это может указывать на проблему с кодом, пакетом или файлом конфигурации приложения. В этом случае состояние будет изменяться каждые несколько минут, а на портале Azure могут отображаться примерно такие состояния: **Перезапуск**, **Занято** или **Инициализация**. Это означает, что что-то не так с приложением и что эта проблема не дает работать экземпляру роли.
 
-Дополнительные сведения об устранении этой проблемы см. в записях блога [Azure PaaS Compute Diagnostics Data](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx) (Данные диагностики для вычислительных сред Azure PaaS) и [Common issues that cause roles to recycle](cloud-services-troubleshoot-common-issues-which-cause-roles-recycle.md) (Распространенные проблемы, которые вызывают повторное использование ролей).
+Дополнительные сведения об устранении этой проблемы см. в записях блога [Azure PaaS Compute Diagnostics Data](https://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx) (Данные диагностики для вычислительных сред Azure PaaS) и [Common issues that cause roles to recycle](cloud-services-troubleshoot-common-issues-which-cause-roles-recycle.md) (Распространенные проблемы, которые вызывают повторное использование ролей).
 
 ## <a name="problem-my-application-stopped-working"></a>Проблема: мое приложение перестало работать
 1. На портале Azure щелкните экземпляр роли.
 2. На панели **Свойства** портала Azure ознакомьтесь со следующими условиями, связанными с устранением проблемы:
    * Если работа экземпляра роли недавно остановилась (вы можете проверить значение **счетчика прерываний**), развертывание, возможно, обновляется. Подождите: работа экземпляра роли может возобновиться автоматически.
    * Если состояние экземпляра роли — **Занято**, проверьте код приложения: возможно, обрабатывается событие [StatusCheck](https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleenvironment.statuscheck) . Может потребоваться добавить или исправить код, который обрабатывает это событие.
-   * Просмотрите данные диагностики и сценарии устранения неполадок в записи блога [Данные компьютерной диагностики PaaS Azure](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx).
+   * Просмотрите данные диагностики и сценарии устранения неполадок в записи блога [Данные компьютерной диагностики PaaS Azure](https://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx).
 
 > [!WARNING]
 > Если перезапустить облачную службу, будут сброшены свойства развертывания, при этом сведения о первоначальной проблеме будут удалены.
@@ -85,4 +85,4 @@ URL-адрес веб-сайта, отображаемый на портале, 
 ## <a name="next-steps"></a>Дополнительная информация
 Просмотрите дополнительные [статьи об устранении неполадок](https://docs.microsoft.com/azure/cloud-services/cloud-services-allocation-failures) в облачных службах.
 
-Чтобы узнать, как устранять неполадки ролей облачной службы с помощью диагностических данных компьютеров Azure PaaS, см. [серию статей в блоге Кевина Уильямсона](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx).
+Чтобы узнать, как устранять неполадки ролей облачной службы с помощью диагностических данных компьютеров Azure PaaS, см. [серию статей в блоге Кевина Уильямсона](https://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx).

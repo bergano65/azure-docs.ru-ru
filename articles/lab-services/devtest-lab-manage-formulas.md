@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: b7a68f545f60829e5da83f0734c57a4d210cb843
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 47699925f057aab25fe6f7c1c7d0b0620e7e4dbe
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39001487"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228000"
 ---
 # <a name="manage-azure-devtest-labs-formulas"></a>Управление формулами Azure DevTest Labs
 
@@ -38,7 +38,7 @@ ms.locfileid: "39001487"
 ### <a name="create-a-formula-from-a-base"></a>Создание формулы из базового образа
 Ниже приведены пошаговые инструкции по созданию формулы на основе пользовательского образа, образа Marketplace или другой формулы.
 
-1. Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
 2. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 
@@ -86,7 +86,7 @@ ms.locfileid: "39001487"
 > 
 > 
 
-1. Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 2. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 3. Из списка лабораторий выберите нужную лабораторию.  
 4. В колонке **Обзор** выберите виртуальную машину, на основе которой будет создана формула.
@@ -103,7 +103,7 @@ ms.locfileid: "39001487"
 ## <a name="modify-a-formula"></a>Изменение формулы
 Чтобы изменить формулу, выполните указанные ниже действия.
 
-1. Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 2. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 3. Из списка лабораторий выберите нужную лабораторию.  
 4. В колонке лаборатории выберите **Formulas (reusable bases)**(Формулы (базовые образы, используемые повторно)).
@@ -115,7 +115,7 @@ ms.locfileid: "39001487"
 ## <a name="delete-a-formula"></a>Удаление формулы
 Чтобы удалить формулу, выполните указанные ниже действия.
 
-1. Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 2. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 3. Из списка лабораторий выберите нужную лабораторию.  
 4. В колонке **Параметры** лаборатории выберите **Формулы**.

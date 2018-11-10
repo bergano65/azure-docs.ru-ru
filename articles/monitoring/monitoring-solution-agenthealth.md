@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2017
 ms.author: magoedte
-ms.openlocfilehash: e9ac4b7f7a0900f8b49f95c0db9ba5e9c962fa0e
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: c76b922d311a0e0bc5af2b4c8a95c2ef2ec09ba1
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49404041"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50914164"
 ---
 #  <a name="agent-health-solution-in-azure"></a>Решение для мониторинга работоспособности агентов в Azure
 Решение для мониторинга работоспособности агентов в Azure помогает выявлять среди всех агентов, отправляющих отчеты непосредственно в Log Analytics или подключенную к Log Analytics группу управления System Center Operations Manager, агенты, которые не отвечают на запросы и которые отправляют оперативные данные.  Вы также можете отслеживать число развернутых агентов и их географическое распределение, а также выполнять другие запросы, чтобы знать о распределении агентов, развернутых в Azure, других облачных средах или в локальной среде.    
@@ -39,7 +39,7 @@ ms.locfileid: "49404041"
 Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../log-analytics/log-analytics-om-agents.md).
 
 ## <a name="configuration"></a>Параметр Configuration
-Добавьте решение для мониторинга работоспособности агентов в рабочую область Log Analytics, как описано в статье [Добавление решений](../log-analytics/log-analytics-add-solutions.md). Дополнительная настройка не требуется.
+Добавьте решение для мониторинга работоспособности агентов в рабочую область Log Analytics, как описано в статье [Добавление решений](monitoring-solutions.md). Дополнительная настройка не требуется.
 
 
 ## <a name="data-collection"></a>Сбор данных
@@ -118,4 +118,4 @@ ms.locfileid: "49404041"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Дополнительные сведения о генерации оповещений из Log Analytics см. в статье [Оповещения в Log Analytics](../log-analytics/log-analytics-alerts.md).
+* Дополнительные сведения о генерации оповещений из Log Analytics см. в статье [Оповещения в Log Analytics](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md).

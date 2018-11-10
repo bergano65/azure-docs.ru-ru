@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 10/23/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 44e71c8e9256bdfd3a55cdd21a6658bccfd5daad
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 4fec410db81077fd454f29d3359dc3728aad4bff
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49987545"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50739623"
 ---
 # <a name="fan-outfan-in-scenario-in-durable-functions---cloud-backup-example"></a>Сценарии развертывания и объединения в устойчивых функциях. Пример резервного копирования в облако
 
@@ -131,7 +131,7 @@ Content-Length: 20
 ```
 
 > [!NOTE]
-> Вызываемая функция `HttpStart` работает только с содержимым в формате JSON. По этой причине требуется заголовок `Content-Type: application/json` и путь к каталогу кодируется в виде строки JSON.
+> Вызываемая функция `HttpStart` работает только с содержимым в формате JSON. По этой причине требуется заголовок `Content-Type: application/json` и путь к каталогу кодируется в виде строки JSON. Кроме того, в предыдущем фрагменте HTTP предполагается, что в файле `host.json` существует запись, которая позволяет удалить префикс `api/` по умолчанию из всех URL-адресов функций для триггеров HTTP. Разметку для этой конфигурации можно найти в файле `host.json` в примерах.
 
 Этот запрос HTTP активирует оркестратор `E2_BackupSiteContent` и передает строку `D:\home\LogFiles` в качестве параметра. В ответе содержится ссылка на получение информации о состоянии операции резервного копирования:
 

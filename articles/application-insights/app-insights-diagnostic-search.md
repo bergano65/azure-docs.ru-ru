@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: mbullwin
-ms.openlocfilehash: 1bf716d4e5a37739de2e820725449be2576054ea
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: bf722756ed04349a06cbcb7b9686e6340e8d4b6c
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47038781"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50958412"
 ---
 # <a name="using-search-in-application-insights"></a>Поиск в Application Insights
 Поиск — это функция [Application Insights](app-insights-overview.md), которая позволяет искать и изучать отдельные элементы телеметрии, например просмотры страниц, исключения и веб-запросы. Также можно просматривать журнал трассировки и события, которые были закодированы.
 
-(Для более сложных запросов к данным используйте [Analytics](app-insights-analytics-tour.md).)
+(Для более сложных запросов к данным используйте [Analytics](../log-analytics/query-language/get-started-analytics-portal.md).)
 
 ## <a name="where-do-you-see-search"></a>Как найти функцию поиска?
 
@@ -102,7 +102,7 @@ ms.locfileid: "47038781"
 ## <a name="search-the-data"></a>Поиск данных
 
 > [!NOTE]
-> Чтобы написать более сложный запрос, щелкните [**Аналитика**](app-insights-analytics-tour.md) в верхней части колонки "Поиск".
+> Чтобы написать более сложный запрос, щелкните [**Аналитика**](../log-analytics/query-language/get-started-analytics-portal.md) в верхней части колонки "Поиск".
 > 
 
 В любом из значений свойств можно искать слова. Это особенно полезно, если вы написали [пользовательские события](app-insights-api-custom-events-metrics.md) со значениями свойств. 
@@ -164,7 +164,7 @@ ms.locfileid: "47038781"
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/112/player]
 
 ## <a name="add"></a>Дальнейшие действия
-* [Создание сложных запросов в Analytics](app-insights-analytics-tour.md)
+* [Создание сложных запросов в Analytics](../log-analytics/query-language/get-started-analytics-portal.md)
 * [Журналы, исключения и пользовательские средства диагностики для ASP.NET в Application Insights](app-insights-asp-net-trace-logs.md)
 * [Наблюдение за доступностью и скоростью реагирования веб-сайта](app-insights-monitor-web-app-availability.md)
 * [Устранение неполадок](app-insights-troubleshoot-faq.md)

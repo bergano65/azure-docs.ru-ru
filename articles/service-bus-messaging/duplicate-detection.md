@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/25/2018
 ms.author: spelluru
-ms.openlocfilehash: fb42f9920ce173b25cbc16725cf1f9dfd96fcc9e
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: 5241020b1db3797891ae13da54cc9225bbd4619b
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48853459"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50741273"
 ---
 # <a name="duplicate-detection"></a>Обнаружение дубликатов
 
@@ -41,6 +41,9 @@ ms.locfileid: "48853459"
 На портале эта функция включается во время создания сущности с помощью флажка **Включить обнаружение повторений**, который снят по умолчанию. Аналогичный параметр доступен при создании разделов.
 
 ![][1]
+
+> [!IMPORTANT]
+> Вы не можете включить и отключить обнаружение дубликатов после создания очереди. Вы можете сделать это только во время создания очереди. 
 
 Можно программно установить флаг с помощью свойства [QueueDescription.requiresDuplicateDetection](/dotnet/api/microsoft.servicebus.messaging.queuedescription.requiresduplicatedetection#Microsoft_ServiceBus_Messaging_QueueDescription_RequiresDuplicateDetection), воспользовавшись API полнофункциональной платформы .NET Framework. При использовании API Azure Resource Manager это значение задается с помощью свойства [queueProperties.requiresDuplicateDetection](/azure/templates/microsoft.servicebus/namespaces/queues#property-values).
 

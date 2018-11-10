@@ -14,23 +14,23 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 04/19/2018
 ms.author: mahender
-ms.openlocfilehash: f89ff3a030f1da75bca538eefaf2496e9be8e97b
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 6af0dfb00ff791b8a73ebf1ad14b35d99f67a483
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35233825"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51227422"
 ---
 # <a name="how-to-configure-your-app-service-application-to-use-google-login"></a>Как настроить приложение службы приложений для использования имени для входа Google
 [!INCLUDE [app-service-mobile-selector-authentication](../../includes/app-service-mobile-selector-authentication.md)]
 
 В этом разделе показано, как настроить службу приложений Azure для использования Google в качестве поставщика проверки подлинности.
 
-Чтобы выполнить процедуру, описанную в этом разделе, необходимо иметь учетную запись Google с проверенным адресом электронной почты. Чтобы создать новую учетную запись Google, перейдите по ссылке [accounts.google.com](http://go.microsoft.com/fwlink/p/?LinkId=268302).
+Чтобы выполнить процедуру, описанную в этом разделе, необходимо иметь учетную запись Google с проверенным адресом электронной почты. Чтобы создать новую учетную запись Google, перейдите по ссылке [accounts.google.com](https://go.microsoft.com/fwlink/p/?LinkId=268302).
 
 ## <a name="register"> </a>Регистрация приложения с помощью Google
-1. Войдите на [портал Azure] и перейдите к своему приложению. Скопируйте **URL-адрес**, который вы будете использовать позже для настройки приложения Google.
-2. Перейдите на веб-сайт [Google apis](http://go.microsoft.com/fwlink/p/?LinkId=268303), войдите с помощью учетных данных Google, выберите команду **Создать проект**, укажите имя проекта в поле **Название проекта**, а затем нажмите кнопку **Создать**.
+1. Войдите на [портал Azure]и перейдите к своему приложению. Скопируйте **URL-адрес**, который вы будете использовать позже для настройки приложения Google.
+2. Перейдите на веб-сайт [Google apis](https://go.microsoft.com/fwlink/p/?LinkId=268303), войдите с помощью учетных данных Google, выберите команду **Создать проект**, укажите имя проекта в поле **Название проекта**, а затем нажмите кнопку **Создать**.
 3. После создания проекта выберите его. На панели мониторинга проекта выберите **Go to APIs overview** (Перейти к обзору API-интерфейсов).
 4. Выберите **Enable APIs and services** (Включить API-интерфейсы и службы). Выполните поиск **API Google+** и выберите его. Затем щелкните **Включить**.
 5. В области навигации слева выберите **Учетные данные** > **OAuth consent screen** (Экран согласия OAuth), выберите свой **адрес электронной почты**, введите **имя продукта** и щелкните **Сохранить**.

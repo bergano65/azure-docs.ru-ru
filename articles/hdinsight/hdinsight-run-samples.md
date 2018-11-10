@@ -2,19 +2,19 @@
 title: Выполнение примеров Hadoop в HDInsight в Azure
 description: Вы начнете использовать службу Azure HDInsight с помощью представленных примеров. Использование сценариев PowerShell, которые запускают программы MapReduce в кластерах данных.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/25/2017
-ms.author: jasonh
+ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 59e6fd0a05374329efb20201c8d904cbbdc72b1a
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: d1da4d10b6346d774c657b0263c9da6278116b61
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43111005"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51006419"
 ---
 # <a name="run-hadoop-mapreduce-samples-in-windows-based-hdinsight"></a>Выполнение примеров Hadoop MapReduce в HDInsight на базе Windows
 [!INCLUDE [samples-selector](../../includes/hdinsight-run-samples-selector.md)]
@@ -211,7 +211,6 @@ Hadoop предоставляет API-интерфейс для MapReduce, по�
 * [Использование Pig с Hadoop в HDInsight][hdinsight-use-pig]
 * [Использование Hive с Hadoop в HDInsight][hdinsight-use-hive]
 * [Отправка заданий Hadoop в HDInsight][hdinsight-submit-jobs]
-* [Документация по пакету SDK для Azure HDInsight][hdinsight-sdk-documentation]
 
 ## <a name="appendix-a---the-word-count-source-code"></a>Приложение А — исходный код для подсчета количества слов
 
@@ -977,8 +976,6 @@ public class TeraSort extends Configured implements Tool {
     }
 }
 ```
-
-[hdinsight-sdk-documentation]: https://msdn.microsoft.com/library/azure/dn479185.aspx
 
 [hdinsight-submit-jobs]: hadoop/submit-apache-hadoop-jobs-programmatically.md
 [hdinsight-introduction]:hadoop/apache-hadoop-introduction.md

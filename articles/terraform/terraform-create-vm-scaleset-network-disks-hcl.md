@@ -9,12 +9,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 10/26/2018
-ms.openlocfilehash: 5fe85d74b247e890790ec577d813d42f15290cde
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 5bf3e6d8839c3ec08bae03772d9a7ab011c67857
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50140914"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228408"
 ---
 # <a name="use-terraform-to-create-an-azure-virtual-machine-scale-set"></a>Создание масштабируемого набора виртуальных машин Azure с помощью Terraform
 
@@ -569,6 +569,6 @@ terraform destroy
 Изучив эту статью, вы научились создавать масштабируемые наборы виртуальных машин Azure с помощью Terraform. Ниже приведены ресурсы, содержащие дополнительные сведения о Terraform в Azure. 
 
  [Terraform в документации по Azure](https://docs.microsoft.com/azure/terraform/)  
- [Документация по поставщику для Terraform Azure](http://aka.ms/terraform)  
- [Документация по разработке поставщика Terraform Azure](http://aka.ms/tfgit)  
- [Модули Terraform Azure](http://aka.ms/tfmodules)
+ [Документация по поставщику для Terraform Azure](https://aka.ms/terraform)  
+ [Документация по разработке поставщика Terraform Azure](https://aka.ms/tfgit)  
+ [Модули Terraform Azure](https://aka.ms/tfmodules)

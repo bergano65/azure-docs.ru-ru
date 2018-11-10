@@ -10,15 +10,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 10/24/2018
+ms.date: 10/31/2018
 ms.author: jeffgilb
 ms.reviewer: adshar
-ms.openlocfilehash: 4f95fb5f2199e8c276b78a83391f3814303a9470
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: 0720edeab7577f41ddbaa67e4643f1dfe57ebac0
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50024625"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50740320"
 ---
 # <a name="run-a-validation-test-for-azure-stack"></a>Запуск проверочного теста в Azure Stack
 
@@ -39,7 +39,7 @@ ms.locfileid: "50024625"
     3. Откройте PowerShell от имени администратора.
     4. Выполните команду `Enter-PSSession -ComputerName <ERCS-VM-name> -ConfigurationName PrivilegedEndpoint`
     5. Выполните команду `Test-AzureStack`
-4. Если все тесты сообщают об ошибках, выполните этот командлет: `Get-AzureStackLog -FilterByRole SeedRing -OutputPath <Log output path>` Он собирает журналы выполнения Test-AzureStack. Дополнительные сведения о журналах диагностики см. в статье [Средства диагностики Azure Stack](azure-stack-diagnostics.md). Не следует собирать журналы или обращаться в службу поддержки пользователей Майкрософт (CSS), если тесты выдают предупреждение (WARN).
+4. Если все тесты сообщают об ошибках (**FAIL**), выполните этот командлет: `Get-AzureStackLog -FilterByRole SeedRing -OutputSharePath “<path>” -OutputShareCredential $cred`. Он собирает журналы выполнения Test-AzureStack. Дополнительные сведения о журналах диагностики см. в статье [Средства диагностики Azure Stack](azure-stack-diagnostics.md). Не следует собирать журналы или обращаться в службу поддержки пользователей Майкрософт (CSS), если тесты выдают предупреждение (**WARN**).
 5. Отправьте журналы **SeedRing** в службу поддержки пользователей Майкрософт. Служба поддержки Майкрософт совместно с вами постарается устранить проблему.
 
 ## <a name="reference-for-test-azurestack"></a>Справочник по Test-AzureStack

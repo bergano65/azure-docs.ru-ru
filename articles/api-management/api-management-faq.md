@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 7082edf43e53766d32bd967d0b894f6439eaa492
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: 760feae2c9b58e162dae487e240dda72099ed91b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "42139930"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51227983"
 ---
 # <a name="azure-api-management-faqs"></a>Часто задаваемые вопросы о службе управления API Azure
 Ознакомьтесь с ответами на часто задаваемые вопросы, шаблонами и рекомендациями относительно службы управления API Azure.
@@ -77,7 +77,7 @@ ms.locfileid: "42139930"
 Да, вы можете управлять службой управления API с помощью программных средств:
 
 * [REST API службы управления API](https://msdn.microsoft.com/library/azure/dn776326.aspx);
-* [SDK для библиотеки управления службой ApiManagement Microsoft Azure](http://aka.ms/apimsdk);
+* [SDK для библиотеки управления службой ApiManagement Microsoft Azure](https://aka.ms/apimsdk);
 * командлетов PowerShell для [развертывания служб](https://docs.microsoft.com/powershell/module/wds) и [управления ими](https://docs.microsoft.com/powershell/azure/servicemanagement/overview).
 
 ### <a name="how-do-i-add-a-user-to-the-administrators-group"></a>Как добавить пользователя в группу администраторов?
@@ -104,7 +104,7 @@ ms.locfileid: "42139930"
 * разместить один и тот же API в разных клиентах.
 
 ### <a name="can-i-use-soap-with-api-management"></a>Можно ли использовать SOAP в управлении API?
-Сейчас поддерживается [сквозная передача SOAP](http://blogs.msdn.microsoft.com/apimanagement/2016/10/13/soap-pass-through/). Администраторы могут импортировать WSDL-файл своей службы SOAP, и служба управления API Azure создаст внешний интерфейс SOAP. Для служб SOAP доступны документация портала для разработчиков, консоль тестирования, политики и средства анализа.
+Сейчас поддерживается [сквозная передача SOAP](https://blogs.msdn.microsoft.com/apimanagement/2016/10/13/soap-pass-through/). Администраторы могут импортировать WSDL-файл своей службы SOAP, и служба управления API Azure создаст внешний интерфейс SOAP. Для служб SOAP доступны документация портала для разработчиков, консоль тестирования, политики и средства анализа.
 
 ### <a name="is-the-api-management-gateway-ip-address-constant-can-i-use-it-in-firewall-rules"></a>Является ли IP-адрес шлюза управления API постоянным? Можно ли использовать его в правилах брандмауэра?
 На всех уровнях службы управления API общедоступный (виртуальный) IP-адрес клиента службы является статическим в течение всего времени существования клиента (кроме исключений ниже). IP-адрес изменяется в таких случаях:
@@ -126,7 +126,7 @@ IP-адрес (или адреса в случае развертывания в
 При развертывании в нескольких географических расположениях служба управления API применяет [маршрутизацию трафика для повышения производительности](../traffic-manager/traffic-manager-routing-methods.md#performance). Входящий трафик направляется на ближайший шлюз API. Если регион становится недоступен, входящий трафик автоматически маршрутизируется на следующий ближайший шлюз. Дополнительные сведения о методах маршрутизации см. в статье [Методы маршрутизации трафика диспетчером трафика](../traffic-manager/traffic-manager-routing-methods.md).
 
 ### <a name="can-i-use-an-azure-resource-manager-template-to-create-an-api-management-service-instance"></a>Можно ли использовать шаблон Azure Resource Manager, чтобы создать экземпляр службы управления API?
-Да. Чтобы получить шаблоны быстрого запуска, посетите страницу [службы управления API Azure](http://aka.ms/apimtemplate).
+Да. Чтобы получить шаблоны быстрого запуска, посетите страницу [службы управления API Azure](https://aka.ms/apimtemplate).
 
 ### <a name="can-i-use-a-self-signed-ssl-certificate-for-a-back-end"></a>Можно ли использовать самозаверяющий сертификат SSL для сервера?
 Да. Это можно сделать с помощью PowerShell или отправить сертификат непосредственно в API. После этого будет отключена проверка цепочки сертификатов, и вы сможете использовать самозаверяющий или подписанный в частном порядке сертификат при обмене данными между управлением API и службами серверной части.

@@ -3,18 +3,18 @@ title: Основные сведения об Apache Kafka в HDInsight — Azur
 description: 'Данные об Apache Kafka в HDInsight: предназначение, выполняемые функции, а также сведения о том, где найти примеры и информацию по началу работы.'
 services: hdinsight
 ms.service: hdinsight
-author: jasonwhowell
-ms.author: jasonh
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: overview
 ms.date: 04/11/2018
-ms.openlocfilehash: 4aa6fd4e469ec2185df82cdb994862f4f7b5d896
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: c08c9a292350adf588296c13a5ce007564899053
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43049409"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51005774"
 ---
 # <a name="what-is-apache-kafka-on-hdinsight"></a>Что такое Apache Kafka в HDInsight?
 

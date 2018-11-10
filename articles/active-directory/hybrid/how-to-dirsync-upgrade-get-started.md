@@ -15,17 +15,17 @@ ms.topic: get-started-article
 ms.date: 07/13/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 7d11d238b921c63d1d2317371da07d8e49e8ac9d
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 41bbc2fd57617bb4bafb121f9c766b1f673dd075
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46301978"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228629"
 ---
 # <a name="azure-ad-connect-upgrade-from-dirsync"></a>Azure AD Connect: обновление DirSync
 Azure AD Connect является преемником Microsoft Azure Active Directory Sync Tool (DirSync). В этой статье описано, как можно обновить DirSync. Следующие действия не подходят для обновления другого выпуска Azure AD Connect или Azure AD Sync.
 
-Перед установкой Azure AD Connect, [скачайте Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) и выполните предварительные шаги, перечисленные в статье [Необходимые условия для Azure AD Connect](how-to-connect-install-prerequisites.md). В частности, ознакомьтесь со сведениями об указанных ниже областях, отличных от DirSync:
+Перед установкой Azure AD Connect, [скачайте Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771) и выполните предварительные шаги, перечисленные в статье [Необходимые условия для Azure AD Connect](how-to-connect-install-prerequisites.md). В частности, ознакомьтесь со сведениями об указанных ниже областях, отличных от DirSync:
 
 * Требуемая версия .NET и PowerShell. На сервере должны быть установлены более новые версии, чем требуется для DirSync.
 * Конфигурация прокси-сервера. Если для доступа в Интернет используется прокси-сервер, перед обновлением этот параметр необходимо настроить. В DirSync всегда используется прокси-сервер, настроенный для пользователя, выполняющего установку, но в Azure AD Connect вместо этого используются параметры компьютера.

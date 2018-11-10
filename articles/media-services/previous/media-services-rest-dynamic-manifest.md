@@ -14,12 +14,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 12/07/2017
 ms.author: juliako;cenkdin
-ms.openlocfilehash: 396abe0801d76af3820d302d40d2fc076754741b
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 50becbe517e98802c9a3af91b86f845df05378a7
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33785733"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51227524"
 ---
 # <a name="creating-filters-with-azure-media-services-rest-api"></a>Создание фильтров с помощью с помощью API REST служб мультимедиа
 > [!div class="op_single_selector"]
@@ -195,7 +195,7 @@ ms.locfileid: "33785733"
 
 
 ## <a name="update-filters"></a>Обновление фильтров
-Для обновления фильтра новыми значениями свойства используйте операции PATCH, PUT или MERGE.  Дополнительные сведения об этих операциях см. [здесь](http://msdn.microsoft.com/library/dd541276.aspx).
+Для обновления фильтра новыми значениями свойства используйте операции PATCH, PUT или MERGE.  Дополнительные сведения об этих операциях см. [здесь](https://msdn.microsoft.com/library/dd541276.aspx).
 
 При обновлении фильтра может понадобиться до 2 минут на обновление правил конечной точкой потоковой передачи. Если содержимое было обработано с помощью данного фильтра (и кэшировано на прокси-серверах и в кэшах CDN), обновление этого фильтра может привести к сбоям проигрывателя. Очистите кэш после обновления фильтра. Если такой вариант невозможен, рассмотрите возможность использования другого фильтра.  
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/02/2018
 ms.author: ergreenl
-ms.openlocfilehash: 332ad288230654eb70e7b6ead862ed57a1cf52f7
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 9c37eb064fb12ff548763a9c70a2e79219113b67
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50155139"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51227371"
 ---
 # <a name="enable-password-hash-synchronization-to-azure-active-directory-domain-services"></a>Включение синхронизации хэшей паролей с доменными службами Azure AD
 Выполняя предыдущие задачи, вы включили доменные службы Azure Active Directory для клиента Azure Active Directory (Azure AD). Следующая задача — включить синхронизацию необходимых хэшей паролей, чтобы проверить подлинность NTLM и Kerberos в доменных службах Azure AD. Когда синхронизация хэшей паролей настроена, пользователи могут входить в управляемый домен с помощью учетных данных организации.
@@ -53,7 +53,7 @@ ms.locfileid: "50155139"
 ### <a name="enable-ntlm-and-kerberos-password-hash-generation-for-a-cloud-only-user-account"></a>Включение создания хэшей паролей NTLM и Kerberos для облачных учетных записей пользователей
 Инструкции по изменению паролей, которые необходимо отправить пользователям, приведены ниже.
 
-1. Перейдите на корпоративную страницу с [панелью доступа Azure AD](http://myapps.microsoft.com).
+1. Перейдите на корпоративную страницу с [панелью доступа Azure AD](https://myapps.microsoft.com).
 
     ![Запуск панели доступа Azure AD](./media/active-directory-domain-services-getting-started/access-panel.png)
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/24/2018
 ms.author: juliako
-ms.openlocfilehash: 0a4c9db8da046e901241bc383098013b2acc6bb2
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: a5171484bb4377e0f9cd84dc0a517f4ea84123e7
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50242268"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228323"
 ---
 # <a name="retry-logic-in-the-media-services-sdk-for-net"></a>Логика повторного выполнения операций в пакете SDK служб мультимедиа для .NET
 При работе со службами Microsoft Azure могут возникать временные сбои. В большинстве случаев после нескольких повторных попыток операция завершается успешно. Пакет SDK служб мультимедиа для .NET реализует логику повторного выполнения операций для обработки временных сбоев, связанных с исключениями и ошибками. Причиной этих ошибок и исключений могут быть веб-запросы, выполнение запросов, сохранение изменений и операции с хранилищем.  По умолчанию пакет SDK служб мультимедиа для .NET пытается выполнить операцию четыре раза, а затем возвращает исключение в приложение. Затем это исключение должно быть правильно обработано кодом приложения.  
@@ -49,7 +49,7 @@ ms.locfileid: "50242268"
 | IOException |Нет  |Yes |Нет  |Нет  |
 
 ### <a name="WebExceptionStatus"></a> Коды состояний WebException
-В таблице ниже показано, для каких кодов ошибок WebException реализована логика повторного выполнения операций. Перечисление [WebExceptionStatus](http://msdn.microsoft.com/library/system.net.webexceptionstatus.aspx) определяет коды состояний.  
+В таблице ниже показано, для каких кодов ошибок WebException реализована логика повторного выполнения операций. Перечисление [WebExceptionStatus](https://msdn.microsoft.com/library/system.net.webexceptionstatus.aspx) определяет коды состояний.  
 
 | Status | Веб-запрос | Операции с хранилищем | Выполнение запросов | Сохранение изменений |
 | --- | --- | --- | --- | --- |

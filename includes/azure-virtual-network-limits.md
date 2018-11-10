@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/16/2018
 ms.author: jdial
 ms.custom: include file
-ms.openlocfilehash: 673faff51c3d06e50941a6982a9f654c28598d86
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: d1c5c9a8709467c9f9ca87c841cffcf77a5b5f0b
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47006536"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51219907"
 ---
 <a name="virtual-networking-limits-classic"></a>Следующие ограничения применяются только к сетевым ресурсам, управление которыми осуществляется с помощью классической модели развертывания на подписку. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
 
@@ -21,7 +21,7 @@ ms.locfileid: "47006536"
 | --- | --- | --- |
 | виртуальные сети; |50 |100 |
 | Сайты локальной сети |20 |обратиться в службу поддержки |
-| DNS-серверов на виртуальную сеть |20 |100 |
+| DNS-серверов на виртуальную сеть |20 |20 |
 | Частные IP-адреса на виртуальную сеть |4096 |4096 |
 | Параллельные потоки TCP или UDP для каждого сетевого адаптера виртуальной машины или экземпляра роли |500K |500K |
 | Группы безопасности сети |100 |200 |

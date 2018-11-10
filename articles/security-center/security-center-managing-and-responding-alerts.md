@@ -3,7 +3,7 @@ title: Управление оповещениями системы безопа
 description: Этот документ помогает использовать возможности Центра безопасности Azure для управления и реагирования на оповещения безопасности.
 services: security-center
 documentationcenter: na
-author: terrylan
+author: rkarlin
 manager: mbaldwin
 editor: ''
 ms.assetid: b88a8df7-6979-479b-8039-04da1b8737a7
@@ -13,13 +13,13 @@ ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/3/2018
-ms.author: yurid
-ms.openlocfilehash: f139f2f967edc03419f41f8c903c71b9ab9e6fcb
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.author: rkarlin
+ms.openlocfilehash: f865a0a609422ae4938a9cccf15d9cd176a9400a
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48044439"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51227796"
 ---
 # <a name="managing-and-responding-to-security-alerts-in-azure-security-center"></a>Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них
 Этот документ помогает использовать возможности центра безопасности Azure для управления оповещениями безопасности и реагирования на них.
@@ -95,4 +95,4 @@ ms.locfileid: "48044439"
 * [Возможности обнаружения центра безопасности Azure](security-center-detection-capabilities.md)
 * [Руководство по планированию использования центра безопасности Azure и работе в нем](security-center-planning-and-operations-guide.md)
 * [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md) — часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](http://blogs.msdn.com/b/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.
+* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 04/12/2017
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 297b3f4c9ef110f8adc9dcb5cd9eac9e30729a5d
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.openlocfilehash: f9cc3033c476afe389cb52d3468facb9168fb920
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47180131"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51006538"
 ---
 # <a name="collect-azure-service-logs-and-metrics-for-use-in-log-analytics"></a>Сбор журналов и метрик для служб Azure для использования в Log Analytics
 
@@ -51,7 +51,7 @@ ms.locfileid: "47180131"
 | Хранилища восстановления         | Microsoft.RecoveryServices/vaults       |             |             | [Служба анализа служб восстановления Azure (предварительная версия)](https://github.com/krnese/AzureDeploy/blob/master/OMS/MSOMS/Solutions/recoveryservices/)|
 | Службы поиска         | Microsoft.Search/searchServices         | Диагностика | Диагностика | |
 | Пространство имен служебной шины   | Microsoft.ServiceBus/namespaces         | Диагностика | Диагностика | [Служба анализа служебной шины (предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-servicebus-solution)|
-| Service Fabric          |                                         | Хранилище     |             | [Анализ Service Fabric (предварительная версия)](log-analytics-service-fabric.md) |
+| Service Fabric          |                                         | Хранилище     |             | [Анализ Service Fabric (предварительная версия)](../service-fabric/service-fabric-diagnostics-oms-setup.md) |
 | SQL (версия 12)               | Microsoft.Sql/servers/databases <br> Microsoft.Sql/servers/elasticPools |             | Диагностика | [Службы анализа SQL Azure (предварительная версия)](log-analytics-azure-sql.md) |
 | Хранилище                 |                                         |             | Скрипт      | [Служба анализа службы хранилища Azure (предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-azure-storage-analytics-solution) |
 | Виртуальные машины        | Microsoft.Compute/virtualMachines       | Добавочный номер   | Добавочный номер <br> Диагностика  | |
@@ -61,14 +61,14 @@ ms.locfileid: "47180131"
 
 
 > [!NOTE]
-> Для мониторинга виртуальных машин Azure (Linux и Windows) рекомендуется установить [расширение виртуальной машины Analytics журнала](log-analytics-azure-vm-extension.md). Агент предоставляет сведения, собранные в виртуальных машинах. Вы можете также использовать расширение для масштабируемых наборов виртуальных машин.
+> Для мониторинга виртуальных машин Azure (Linux и Windows) рекомендуется установить [расширение виртуальной машины Analytics журнала](log-analytics-quick-collect-azurevm.md). Агент предоставляет сведения, собранные в виртуальных машинах. Вы можете также использовать расширение для масштабируемых наборов виртуальных машин.
 >
 >
 
 ## <a name="azure-diagnostics-direct-to-log-analytics"></a>Направление диагностики Azure в Log Analytics
 Множество ресурсов Azure могут записывать журналы диагностики и метрики напрямую в Log Analytics. Это предпочтительный способ сбора данных для анализа. При использовании диагностики Azure данные сразу записываются в Log Analytics, поэтому их не нужно сначала записывать в хранилище.
 
-Ресурсы Azure с поддержкой [Azure Monitor](../monitoring-and-diagnostics/monitoring-overview.md) могут отправлять свои журналы и метрики напрямую в Log Analytics.
+Ресурсы Azure с поддержкой [Azure Monitor](../azure-monitor/overview.md) могут отправлять свои журналы и метрики напрямую в Log Analytics.
 
 > [!NOTE]
 > Отправка многомерных метрик в Log Analytics с помощью параметров диагностики сейчас не поддерживается. Метрики с измерениями экспортируются как преобразованные в плоскую структуру одномерные метрики, агрегированные по значениям измерений.
@@ -158,5 +158,5 @@ Set-AzureRmDiagnosticSetting -ResourceId $ResourceId  -WorkspaceId $workspaceId 
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Используйте хранилище BLOB-объектов для IIS и хранилище таблиц для событий](log-analytics-azure-storage-iis-table.md), чтобы считывать журналы служб Azure, которые записывают диагностические данные в табличное хранилище, или журналы IIS, записанные в хранилище BLOB-объектов.
-* [Включите решения](log-analytics-add-solutions.md) , чтобы обеспечить глубокое понимание данных.
-* [Воспользуйтесь запросами поиска](log-analytics-log-searches.md) для анализа данных.
+* [Включите решения](../monitoring/monitoring-solutions.md) , чтобы обеспечить глубокое понимание данных.
+* [Воспользуйтесь запросами поиска](log-analytics-queries.md) для анализа данных.

@@ -9,14 +9,14 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.workload: data-services
 ms.date: 04/09/2018
-ms.author: jasonh
+ms.author: mamccrea
 ms.reviewer: jasonh
-ms.openlocfilehash: 50ea4dafe7edfdeb851ad6d9cc42a7bca262e970
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 0a187bbc476738294e2f7f31de4e11ea92e604f9
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49985817"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50978006"
 ---
 # <a name="run-azure-functions-from-azure-stream-analytics-jobs"></a>Запуск решения "Функции Azure" из заданий Azure Stream Analytics 
 
@@ -196,6 +196,13 @@ Stream Analytics вызывает службу "Функции" с помощь�
    Эта команда должна вывести значение для указанного ключа:
 
    ![Снимок экрана выходных данных кэша Redis для Azure](./media/stream-analytics-with-azure-functions/image5.png)
+   
+## <a name="error-handling-and-retries"></a>Обработка ошибок и повторные попытки
+Если происходит сбой при отправке событий в Функции Azure, служба Stream Analytics предпринимает повторные попытки успешно завершить операцию. Однако повторные попытки не предпринимаются в случае сбоев таких типов:
+
+ 1. HttpRequestExceptions.
+ 2. Размер запрашиваемой сущности слишком большой (код ошибки HTTP — 413).
+ 3. ApplicationExceptions.
 
 ## <a name="known-issues"></a>Известные проблемы
 

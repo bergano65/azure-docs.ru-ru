@@ -6,14 +6,14 @@ author: banisadr
 manager: timlt
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 10/09/2018
+ms.date: 10/31/2018
 ms.author: babanisa
-ms.openlocfilehash: 2fd8712cbe5d34baed158a56e6f06b6235f5d4b2
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: a9bffe148339bfac89796405b771e9c2816eb0de
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49068201"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50741527"
 ---
 # <a name="event-grid-security-and-authentication"></a>Сетка событий: безопасность и проверка подлинности 
 
@@ -37,7 +37,7 @@ ms.locfileid: "49068201"
 
 1. **Подтверждение кода проверки**. Во время создания подписки на события Сетка событий передает событие проверки подписки в конечную точку. Схема этого события похожа на любое другое событие EventGridEvent, а часть данных этого события включает свойство `validationCode`. После того как приложение проверит, что запрос проверки предназначен для ожидаемой подписки на события, код приложения должен ответить, вернув код проверки в Сетку событий. Этот механизм подтверждения поддерживается во всех версиях Сетки событий.
 
-2. **Подтверждение URL-адреса проверки (подтверждение вручную)**. В некоторых случаях вы не можете управлять исходным кодом конечной точки, чтобы реализовать подтверждение на основе кода проверки. Например, если вы используете стороннюю службу (например, [Zapier](https://zapier.com) или [IFTTT](https://ifttt.com/)), возможно, вы не сможете ответить программным способом с использованием кода проверки. Начиная с версии 2018-05-01-preview, Сетка событий теперь поддерживает подтверждение проверки вручную. Если вы создаете подписку на события с помощью пакета SDK или инструментов, которые используют эту новую версию API (2018-05-01-preview), Сетка событий отправит свойство `validationUrl` как часть данных события проверки подписки. Чтобы выполнить подтверждение, просто выполните запрос GET к этому URL-адресу через клиент REST или с помощью своего веб-браузера. Предоставленный URL-адрес проверки действителен только около 10 минут. В течение этого времени состояние подготовки подписки на событие находится в `AwaitingManualAction`. Если вы не завершили проверку вручную в течение 10 минут, состояние обеспечения установится на `Failed`. Прежде чем выполнить проверку вручную, потребуется создать подписку на событие еще раз.
+2. **Подтверждение URL-адреса проверки (подтверждение вручную)**. В некоторых случаях вы не можете управлять исходным кодом конечной точки, чтобы реализовать подтверждение на основе кода проверки. Например, если вы используете стороннюю службу (например, [Zapier](https://zapier.com) или [IFTTT](https://ifttt.com/)), вы не можете ответить программным способом с использованием кода проверки. Начиная с версии 2018-05-01-preview, Сетка событий теперь поддерживает подтверждение проверки вручную. Если вы создаете подписку на события с помощью пакета SDK или инструмента, который использует версию API 2018-05-01-preview или более позднюю, Сетка событий отправит свойство `validationUrl` как часть данных события проверки подписки. Чтобы выполнить подтверждение, просто выполните запрос GET к этому URL-адресу через клиент REST или с помощью своего веб-браузера. Предоставленный URL-адрес проверки действителен только около 10 минут. В течение этого времени состояние подготовки подписки на событие находится в `AwaitingManualAction`. Если вы не завершили проверку вручную в течение 10 минут, состояние обеспечения установится на `Failed`. Прежде чем выполнить проверку вручную, потребуется создать подписку на событие еще раз.
 
 Этот механизм проверки вручную доступен в предварительной версии. Для ее использования необходимо установить [расширение службы "Сетка событий"](/cli/azure/azure-cli-extensions-list) для [Azure CLI](/cli/azure/install-azure-cli). Расширение можно установить с помощью `az extension add --name eventgrid`. В случае использования REST API убедитесь, что его версия соответствует `api-version=2018-05-01-preview`.
 
@@ -93,7 +93,7 @@ ms.locfileid: "49068201"
 
 ### <a name="event-delivery-security"></a>Защита доставки событий
 
-Защитить конечную точку веб-перехватчика можно путем добавления параметров запроса для URL-адреса веб-перехватчика при создании подписки на события. Задайте один из этих параметров запроса в качестве секрета (например, [маркер доступа](https://en.wikipedia.org/wiki/Access_token)), с помощью которого веб-перехватчик сможет распознавать событие, поступающее из Сетки событий с допустимыми разрешениями. Сетка событий будет включать эти параметры в каждую доставку событий для веб-перехватчика.
+Защитить конечную точку веб-перехватчика можно путем добавления параметров запроса для URL-адреса веб-перехватчика при создании подписки на события. Задайте один из этих параметров запроса в качестве секрета, например [маркер доступа](https://en.wikipedia.org/wiki/Access_token). С его помощью веб-перехватчик сможет распознавать событие, поступающее из Сетки событий с допустимыми разрешениями. Сетка событий будет включать эти параметры в каждую доставку событий для веб-перехватчика.
 
 При изменении подписки на событие, если в [интерфейсе командной строки](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) Azure не используется параметр [--include-full-endpoint-url](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-show), параметры запроса не отображаются и не возвращаются.
 
@@ -174,11 +174,11 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
 
 ## <a name="management-access-control"></a>Контроль доступа к управлению
 
-Сетка событий Azure позволяет контролировать уровень доступа, предоставленного разным пользователям для выполнения различных операций управления, таких как создание списка подписок на события, создание новых подписок и генерирование ключей. В службе "Сетка событий" используется проверка доступа на основе ролей Azure (RBAC).
+Сетка событий Azure позволяет контролировать уровень доступа, предоставленного разным пользователям для выполнения различных операций управления, таких как создание списка подписок на события, создание новых подписок и генерирование ключей. В службе "Сетка событий" используется управление доступом на основе ролей Azure (RBAC).
 
 ### <a name="operation-types"></a>Типы операций
 
-Сетка событий Azure поддерживает следующие действия:
+Сетка событий поддерживает следующие действия:
 
 * Microsoft.EventGrid/*/read
 * Microsoft.EventGrid/*/write
@@ -187,13 +187,17 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
 * Microsoft.EventGrid/topics/listKeys/action
 * Microsoft.EventGrid/topics/regenerateKey/action
 
-Последние три операции возвращают потенциально секретную информацию, которая отфильтровывается из обычных операций чтения. Доступ к этим операциям рекомендуется ограничить. Настраиваемые роли можно создавать с помощью [Azure PowerShell](../role-based-access-control/role-assignments-powershell.md), [интерфейса командной строки (CLI) Azure](../role-based-access-control/role-assignments-cli.md) и интерфейса [REST API](../role-based-access-control/role-assignments-rest.md).
+Последние три операции возвращают потенциально секретную информацию, которая отфильтровывается из обычных операций чтения. Доступ к этим операциям рекомендуется ограничить. 
 
-### <a name="enforcing-role-based-access-check-rbac"></a>Применение проверки доступа на основе ролей (RBAC)
+### <a name="built-in-roles"></a>Встроенные роли
 
-Чтобы принудительно применить RBAC для разных пользователей, выполните следующие действия:
+"Сетка событий" предоставляет две встроенные роли для управления подписками на события. Это роли `EventSubscription Contributor (Preview)` и `EventSubscription Reader (Preview)`. Они важны при реализации доменов событий. Дополнительные сведения о предоставленных действиях см. в статье [об управлении доступом к доменам событий](event-domains.md#access-management).
 
-#### <a name="create-a-custom-role-definition-file-json"></a>Создание файла определения пользовательской роли (.json)
+Вы можете [назначить эти роли для пользователя или группы](../role-based-access-control/quickstart-assign-role-user-portal.md).
+
+### <a name="custom-roles"></a>Пользовательские роли
+
+Если вам нужно указать разрешения, которые отличаются от встроенных ролей, можно создать пользовательские роли.
 
 Далее приведены примеры определений ролей Сетки событий, позволяющих пользователям выполнять различные действия.
 
@@ -201,18 +205,18 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
 
 ```json
 {
-  "Name": "Event grid read only role",
-  "Id": "7C0B6B59-A278-4B62-BA19-411B70753856",
-  "IsCustom": true,
-  "Description": "Event grid read only role",
-  "Actions": [
-    "Microsoft.EventGrid/*/read"
-  ],
-  "NotActions": [
-  ],
-  "AssignableScopes": [
-    "/subscriptions/<Subscription Id>"
-  ]
+  "Name": "Event grid read only role",
+  "Id": "7C0B6B59-A278-4B62-BA19-411B70753856",
+  "IsCustom": true,
+  "Description": "Event grid read only role",
+  "Actions": [
+    "Microsoft.EventGrid/*/read"
+  ],
+  "NotActions": [
+  ],
+  "AssignableScopes": [
+    "/subscriptions/<Subscription Id>"
+  ]
 }
 ```
 
@@ -220,22 +224,22 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
 
 ```json
 {
-  "Name": "Event grid No Delete Listkeys role",
-  "Id": "B9170838-5F9D-4103-A1DE-60496F7C9174",
-  "IsCustom": true,
-  "Description": "Event grid No Delete Listkeys role",
-  "Actions": [
-    "Microsoft.EventGrid/*/write",
-    "Microsoft.EventGrid/eventSubscriptions/getFullUrl/action"
-    "Microsoft.EventGrid/topics/listkeys/action",
-    "Microsoft.EventGrid/topics/regenerateKey/action"
-  ],
-  "NotActions": [
-    "Microsoft.EventGrid/*/delete"
-  ],
-  "AssignableScopes": [
-    "/subscriptions/<Subscription id>"
-  ]
+  "Name": "Event grid No Delete Listkeys role",
+  "Id": "B9170838-5F9D-4103-A1DE-60496F7C9174",
+  "IsCustom": true,
+  "Description": "Event grid No Delete Listkeys role",
+  "Actions": [
+    "Microsoft.EventGrid/*/write",
+    "Microsoft.EventGrid/eventSubscriptions/getFullUrl/action"
+    "Microsoft.EventGrid/topics/listkeys/action",
+    "Microsoft.EventGrid/topics/regenerateKey/action"
+  ],
+  "NotActions": [
+    "Microsoft.EventGrid/*/delete"
+  ],
+  "AssignableScopes": [
+    "/subscriptions/<Subscription id>"
+  ]
 }
 ```
 
@@ -243,37 +247,25 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
 
 ```json
 {
-  "Name": "Event grid contributor role",
-  "Id": "4BA6FB33-2955-491B-A74F-53C9126C9514",
-  "IsCustom": true,
-  "Description": "Event grid contributor role",
-  "Actions": [
-    "Microsoft.EventGrid/*/write",
-    "Microsoft.EventGrid/*/delete",
-    "Microsoft.EventGrid/topics/listkeys/action",
-    "Microsoft.EventGrid/topics/regenerateKey/action",
-    "Microsoft.EventGrid/eventSubscriptions/getFullUrl/action"
-  ],
-  "NotActions": [],
-  "AssignableScopes": [
-    "/subscriptions/<Subscription id>"
-  ]
+  "Name": "Event grid contributor role",
+  "Id": "4BA6FB33-2955-491B-A74F-53C9126C9514",
+  "IsCustom": true,
+  "Description": "Event grid contributor role",
+  "Actions": [
+    "Microsoft.EventGrid/*/write",
+    "Microsoft.EventGrid/*/delete",
+    "Microsoft.EventGrid/topics/listkeys/action",
+    "Microsoft.EventGrid/topics/regenerateKey/action",
+    "Microsoft.EventGrid/eventSubscriptions/getFullUrl/action"
+  ],
+  "NotActions": [],
+  "AssignableScopes": [
+    "/subscriptions/<Subscription id>"
+  ]
 }
 ```
 
-#### <a name="create-and-assign-custom-role-with-azure-cli"></a>Создание и назначение пользовательской роли с помощью Azure CLI
-
-Чтобы создать настраиваемую роль, используйте следующую команду:
-
-```azurecli
-az role definition create --role-definition @<file path>
-```
-
-Чтобы назначить роль пользователю, используйте следующую команду:
-
-```azurecli
-az role assignment create --assignee <user name> --role "<name of role>"
-```
+Пользовательские роли можно создавать с помощью [PowerShell](../role-based-access-control/custom-roles-powershell.md), [Azure CLI](../role-based-access-control/custom-roles-cli.md) и [REST](../role-based-access-control/custom-roles-rest.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

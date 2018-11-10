@@ -5,15 +5,15 @@ services: event-grid
 author: tfitzmac
 ms.service: event-grid
 ms.topic: include
-ms.date: 06/26/2018
+ms.date: 10/30/2018
 ms.author: tomfitz
 ms.custom: include file
-ms.openlocfilehash: e66c2943ede88d308e994e0249c490b600767ded
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 6ddc0d0e25b5fbc4ea4c0ef0e974ef74e3cd6806
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38725228"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50737254"
 ---
 > [!IMPORTANT]
-> Эта функция предоставляется в предварительной версии. Для ее использования необходимо установить [расширение службы "Сетка событий"](/cli/azure/azure-cli-extensions-list) для [Azure CLI](/cli/azure/install-azure-cli). Расширение можно установить с помощью `az extension add --name eventgrid`. Если вы используйте REST API, убедитесь, что установлена версия `api-version=2018-05-01-preview`.
+> Эта функция предоставляется в предварительной версии. Для ее использования необходимо установить [расширение службы "Сетка событий"](/cli/azure/azure-cli-extensions-list) для [Azure CLI](/cli/azure/install-azure-cli). Расширение можно установить с помощью `az extension add --name eventgrid`. Если вы установили расширение ранее, обновите его командой `az extension update -n eventgrid`. Если вы используйте REST API, убедитесь, что установлена версия `api-version=2018-09-15-preview`.

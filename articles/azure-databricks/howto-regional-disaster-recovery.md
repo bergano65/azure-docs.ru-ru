@@ -2,18 +2,18 @@
 title: Региональное аварийное восстановление для Azure Databricks
 description: В этой статье описывается подход к аварийному восстановлению в Azure Databricks.
 services: azure-databricks
-author: jasonwhowell
-ms.author: jasonh
+author: mamccrea
+ms.author: mamccrea
 ms.service: azure-databricks
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 08/27/2018
-ms.openlocfilehash: 671e18346651a40d7f286e984117ce0c9ae62364
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: fa32aafa4f042351db7693ee684deafe9ed13fb0
+ms.sourcegitcommit: 6678e16c4b273acd3eaf45af310de77090137fa1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43125975"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50748329"
 ---
 # <a name="regional-disaster-recovery-for-azure-databricks-clusters"></a>Региональное аварийное восстановление кластеров Azure Databricks
 

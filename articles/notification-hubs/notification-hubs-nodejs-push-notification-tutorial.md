@@ -15,12 +15,12 @@ ms.devlang: javascript
 ms.topic: article
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: 49ee6b7fabe78c2328a2a772347c612ad38cfe7a
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: 8e4c97a710cc9e6d3af4ebdd7dc97bda9f8d02ed
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44091736"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228442"
 ---
 # <a name="sending-push-notifications-with-azure-notification-hubs-and-nodejs"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure и Node.js
 [!INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "44091736"
 Дополнительные сведения о Центрах уведомлений см. в разделе [Дальнейшие действия](#next).
 
 ## <a name="what-are-notification-hubs"></a>Что такое концентраторы уведомлений
-Центры уведомлений Azure — это простая в использовании масштабируемая многоплатформенная инфраструктура для отправки push-уведомлений на мобильные устройства. Подробные сведения об инфраструктуре служб приведены на странице [Центры уведомлений Azure](http://msdn.microsoft.com/library/windowsazure/jj927170.aspx) .
+Центры уведомлений Azure — это простая в использовании масштабируемая многоплатформенная инфраструктура для отправки push-уведомлений на мобильные устройства. Подробные сведения об инфраструктуре служб приведены на странице [Центры уведомлений Azure](https://msdn.microsoft.com/library/windowsazure/jj927170.aspx) .
 
 ## <a name="create-a-nodejs-application"></a>Создание приложения Node.js
 Первый шаг этого руководства представляет собой создание пустого приложения Node.js. Указания по созданию приложения Node.js см. в статьях [Создание и развертывание простого веб-приложения Node.js][nodejswebsite], [Построение и развертывание приложения Node.js в облачной службе Azure][Node.js Cloud Service] (с использованием Windows PowerShell) или [Создание и развертывание веб-приложения Node.js в Azure с использованием WebMatrix][webmatrix].
@@ -141,11 +141,11 @@ ms.locfileid: "44091736"
 * **Tags** — идентификатор тега. Если тег отсутствует, уведомление отправляется всем клиентам.
 * **Payload** — полезные данные XML сообщения.
 * **TargetName** - `toast` — уведомлений во всплывающем окне. `token` для уведомлений на плитке.
-* **NotificationClass** — приоритет уведомления. Допустимые значения см. в разделе **HTTP Header Elements** (Элементы заголовка HTTP) документа [Pushing Notifications from a Server (Windows Phone)](http://msdn.microsoft.com/library/hh221551.aspx) (Push-уведомления от сервера (Windows Phone)).
+* **NotificationClass** — приоритет уведомления. Допустимые значения см. в разделе **HTTP Header Elements** (Элементы заголовка HTTP) документа [Pushing Notifications from a Server (Windows Phone)](https://msdn.microsoft.com/library/hh221551.aspx) (Push-уведомления от сервера (Windows Phone)).
 * **Options** — необязательные заголовки запроса.
 * **Callback** — функция обратного вызова.
 
-Перечень допустимых значений **TargetName**, **NotificationClass** и параметров заголовка см. на странице [Push notifications from a server (Windows Phone)](http://msdn.microsoft.com/library/hh221551.aspx) (Push-уведомления от сервера (Windows Phone)).
+Перечень допустимых значений **TargetName**, **NotificationClass** и параметров заголовка см. на странице [Push notifications from a server (Windows Phone)](https://msdn.microsoft.com/library/hh221551.aspx) (Push-уведомления от сервера (Windows Phone)).
 
 В следующем примере кода для отправки всплывающего push-уведомления используется экземпляр **MpnsService**, предоставляемый **NotificationHubService**.
 
@@ -165,7 +165,7 @@ ms.locfileid: "44091736"
 * **Options** — необязательные заголовки запроса.
 * **Callback** — функция обратного вызова.
 
-Список допустимых типов и заголовков запроса см. в разделе [Заголовки запроса и ответа службы push-уведомлений (приложения среды выполнения Windows)](http://msdn.microsoft.com/library/windows/apps/hh465435.aspx).
+Список допустимых типов и заголовков запроса см. в разделе [Заголовки запроса и ответа службы push-уведомлений (приложения среды выполнения Windows)](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx).
 
 В следующем примере кода для отправки всплывающего push-уведомления приложению UWP используется экземпляр **WnsService**, предоставляемый **NotificationHubService**.
 

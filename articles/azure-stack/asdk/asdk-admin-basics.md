@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/15/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: 555bf95367ab0d3e6c4afe09edb6777899400dd8
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 66a2871e0c4b36959ccd8f08df5b6b7edd09f624
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49344674"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51227830"
 ---
 # <a name="asdk-administration-basics"></a>Основы администрирования ASDK 
 Если вы еще не знакомы с администрированием Пакета средств разработки Azure Stack (ASDK), вам необходимо знать несколько моментов. В этом руководстве описаны обязанности оператора Azure Stack в среде оценки и методы, позволяющие быстро обеспечить высокую производительность тестовых пользователей.
@@ -43,7 +43,7 @@ ms.locfileid: "49344674"
 ## <a name="what-tools-do-i-use-to-manage"></a>Какие средства необходимо использовать для управления
 Для управления Azure Stack можно использовать [портал администрирования Azure Stack](https://adminportal.local.azurestack.external) или PowerShell. Ознакомиться с основными принципами проще всего с помощью портала. Если вы хотите использовать PowerShell, необходимо установить [PowerShell для Azure Stack](asdk-post-deploy.md#install-azure-stack-powershell) и [скачать средства Azure Stack из репозитория GitHub](asdk-post-deploy.md#download-the-azure-stack-tools).
 
-Azure Stack использует Azure Resource Manager в качестве основного механизма развертывания, организации и управления. Чтобы успешно управлять Azure Stack и помогать пользователям в работе с ним, вам нужно познакомиться с Azure Resource Manager. В этом вам поможет технический документ [Начало работы с Azure Resource Manager](http://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf).
+Azure Stack использует Azure Resource Manager в качестве основного механизма развертывания, организации и управления. Чтобы успешно управлять Azure Stack и помогать пользователям в работе с ним, вам нужно познакомиться с Azure Resource Manager. В этом вам поможет технический документ [Начало работы с Azure Resource Manager](https://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf).
 
 ## <a name="your-typical-responsibilities"></a>Ваши основные обязанности
 Ваши пользователи хотят использовать службы. Они считают, что предоставить им эти службы — ваша главная обязанность. Используя ASDK, вы сможете выбрать нужные службы и методы их предоставления через [планы, предложения и квоты](asdk-offer-services.md). Кроме того, потребуется добавить элементы в marketplace, например образы виртуальных машин. Для этого проще всего [скачать элементы из Azure Marketplace в Azure Stack](asdk-marketplace-item.md).

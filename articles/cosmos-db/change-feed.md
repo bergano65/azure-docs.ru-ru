@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: rafats
-ms.openlocfilehash: b6d05c5e9bc59df9df7ef8840b70ab027b6e2f74
-ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
+ms.openlocfilehash: 09f827e8784fe2a97c587524d70baf76ae4458ba
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48269502"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50741867"
 ---
 # <a name="working-with-the-change-feed-support-in-azure-cosmos-db"></a>Работа с поддержкой веб-канала изменений в Azure Cosmos DB
 
@@ -77,7 +77,7 @@ ms.locfileid: "48269502"
 Кроме того, в [бессерверных](http://azure.com/serverless) веб-приложениях и мобильных приложениях вы можете отслеживать события, такие как изменения в профиле, настройке или местоположении для активирования определенных действий, например отправки push-уведомлений на свои устройства, с помощью [Функций Azure](#azure-functions). При использовании Azure Cosmos DB для создания игр веб-канал изменений можно использовать, например, для создания списков лидеров в режиме реального времени на основе очков в завершенных играх.
 
 <a id="azure-functions"></a>
-## <a name="using-azure-functions"></a>Использование Функций Azure 
+## <a name="using-azure-functions"></a>Использование Функций Azure 
 
 Если вы используете службу "Функции Azure", самый простой способ подключиться к каналу изменений Azure Cosmos DB — это добавить триггер Azure Cosmos DB в приложение-функцию Azure. При создании триггера Azure Cosmos DB в приложении-функции Azure необходимо выбрать коллекцию Azure Cosmos DB для подключения, и функция будет запускаться каждый раз, когда будут внесены изменения в коллекцию. 
 
@@ -114,9 +114,9 @@ ms.locfileid: "48269502"
     ```csharp
     FeedResponse pkRangesResponse = await client.ReadPartitionKeyRangeFeedAsync(
         collectionUri,
-        new FeedOptions
-            {RequestContinuation = pkRangesResponseContinuation });
-     
+        new FeedOptions
+            {RequestContinuation = pkRangesResponseContinuation });
+     
     partitionKeyRanges.AddRange(pkRangesResponse);
     pkRangesResponseContinuation = pkRangesResponse.ResponseContinuation;
     ```
@@ -125,29 +125,29 @@ ms.locfileid: "48269502"
 
     ```csharp
     foreach (PartitionKeyRange pkRange in partitionKeyRanges){
-        string continuation = null;
-        checkpoints.TryGetValue(pkRange.Id, out continuation);
-        IDocumentQuery<Document> query = client.CreateDocumentChangeFeedQuery(
-            collectionUri,
-            new ChangeFeedOptions
-            {
-                PartitionKeyRangeId = pkRange.Id,
-                StartFromBeginning = true,
-                RequestContinuation = continuation,
-                MaxItemCount = -1,
-                // Set reading time: only show change feed results modified since StartTime
-                StartTime = DateTime.Now - TimeSpan.FromSeconds(30)
-            });
-        while (query.HasMoreResults)
-            {
-                FeedResponse<dynamic> readChangesResponse = query.ExecuteNextAsync<dynamic>().Result;
+        string continuation = null;
+        checkpoints.TryGetValue(pkRange.Id, out continuation);
+        IDocumentQuery<Document> query = client.CreateDocumentChangeFeedQuery(
+            collectionUri,
+            new ChangeFeedOptions
+            {
+                PartitionKeyRangeId = pkRange.Id,
+                StartFromBeginning = true,
+                RequestContinuation = continuation,
+                MaxItemCount = -1,
+                // Set reading time: only show change feed results modified since StartTime
+                StartTime = DateTime.Now - TimeSpan.FromSeconds(30)
+            });
+        while (query.HasMoreResults)
+            {
+                FeedResponse<dynamic> readChangesResponse = query.ExecuteNextAsync<dynamic>().Result;
     
-                foreach (dynamic changedDocument in readChangesResponse)
-                    {
-                         Console.WriteLine("document: {0}", changedDocument);
-                    }
-                checkpoints[pkRange.Id] = readChangesResponse.ResponseContinuation;
-            }
+                foreach (dynamic changedDocument in readChangesResponse)
+                    {
+                         Console.WriteLine("document: {0}", changedDocument);
+                    }
+                checkpoints[pkRange.Id] = readChangesResponse.ResponseContinuation;
+            }
     }
     ```
 
@@ -165,13 +165,13 @@ ms.locfileid: "48269502"
 Таким образом массив контрольной точки будет просто хранить номер LSN для каждой секции. Если вы не хотите работать с секциями, контрольными точками, номерами LSN, временем начала и т. д., проще всего использовать библиотеку обработчика для канала изменений.
 
 <a id="change-feed-processor"></a>
-## <a name="using-the-change-feed-processor-library"></a>Использование библиотеки обработчика для канала изменений 
+## <a name="using-the-change-feed-processor-library"></a>Использование библиотеки обработчика для канала изменений 
 
 [Библиотека обработчика для канала изменений Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-sdk-dotnet-changefeed) позволяет без усилий распределить обработку событий между несколькими объектами-получателями. Эта библиотека упрощает считывание изменений в секциях и нескольких потоках, работающих параллельно.
 
 Основным преимуществом библиотеки обработчика для канала изменений является то, что вам не нужно управлять каждой секцией и маркером продолжения. Вам также не нужно опрашивать каждую коллекцию вручную.
 
-Эта библиотека упрощает считывание изменений в секциях и нескольких потоках в параллельном режиме.  Она автоматически управляет считыванием изменений между секциями с помощью механизма аренды. Как видно на следующей схеме, если запустить два клиента, которые используют библиотеку обработчика для канала изменений, работа будет разделена между ними. По мере увеличения клиентов они будут точно так же разделять работу между собой.
+Эта библиотека упрощает считывание изменений в секциях и нескольких потоках в параллельном режиме.  Она автоматически управляет считыванием изменений между секциями с помощью механизма аренды. Как видно на следующей схеме, если запустить два клиента, которые используют библиотеку обработчика для канала изменений, работа будет разделена между ними. По мере увеличения клиентов они будут точно так же разделять работу между собой.
 
 ![Распределенная обработка веб-канала изменений Azure Cosmos DB](./media/change-feed/change-feed-output.png)
 
@@ -433,7 +433,7 @@ ms.locfileid: "48269502"
 
 ### <a name="my-document-is-updated-every-second-and-i-am-not-getting-all-the-changes-in-azure-functions-listening-to-change-feed"></a>Документ обновляется ежесекундно, но в решении "Функции Azure", которое ожидает передачи данных из канала изменений, отображаются не все изменения.
 
-Так как решение "Функции Azure" опрашивает канал изменений каждые 5 секунд, все изменения, внесенные между этими опросами, не сохраняются. В Azure Cosmos DB каждые 5 секунд сохраняется только одна версия. Поэтому вы получите только пятое изменение документа. Но если вы хотите опрашивать канал изменений каждую секунду, можно настроить интервал опроса feedPollTime, как описано в статье [Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х](../azure-functions/functions-bindings-cosmosdb.md#trigger---configuration). Значение интервала по умолчанию задано в миллисекундах и составляет 5000. Вы можете настроить интервал сохранения меньше одной секунды, но это не рекомендуется делать из-за повышенного потребления ресурсов ЦП.
+Так как решение "Функции Azure" опрашивает канал изменений каждые 5 секунд, все изменения, внесенные между этими опросами, не сохраняются. В Azure Cosmos DB каждые 5 секунд сохраняется только одна версия. Поэтому вы получите только пятое изменение документа. Но если вы хотите опрашивать канал изменений каждую секунду, можно настроить интервал опроса feedPollDelay, как описано в статье [Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х](../azure-functions/functions-bindings-cosmosdb.md#trigger---configuration). Значение интервала по умолчанию задано в миллисекундах и составляет 5000. Вы можете настроить интервал сохранения меньше одной секунды, но это не рекомендуется делать из-за повышенного потребления ресурсов ЦП.
 
 ### <a name="i-inserted-a-document-in-the-mongo-api-collection-but-when-i-get-the-document-in-change-feed-it-shows-a-different-id-value-what-is-wrong-here"></a>Документ добавлен в коллекцию API Mongo, и при его включении в канал изменений отображается другое значение идентификатора. В чем проблема?
 

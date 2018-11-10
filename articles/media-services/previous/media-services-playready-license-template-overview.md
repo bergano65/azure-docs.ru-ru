@@ -2,7 +2,7 @@
 title: Обзор шаблонов лицензий PlayReady служб мультимедиа
 description: В этом разделе содержится обзор шаблонов лицензий PlayReady, которые используются для настройки лицензий PlayReady.
 author: juliako
-manager: cfowler
+manager: femila
 editor: ''
 services: media-services
 documentationcenter: ''
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/29/2017
+ms.date: 11/05/2018
 ms.author: juliako
-ms.openlocfilehash: 74a2eb579f38cfc885234fac7fd3ad4be1747ad7
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 780fa37351ec590beff6fd2d9e80ec8f22afa84d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33783663"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228510"
 ---
 # <a name="media-services-playready-license-template-overview"></a>Обзор шаблонов лицензий PlayReady служб мультимедиа
 Службы мультимедиа Azure теперь обеспечивают доставку лицензий PlayReady. Когда проигрыватель (например, Silverlight) пытается воспроизвести содержимое, защищенное с помощью PlayReady, в службу доставки лицензий отправляется запрос на получение лицензии. Если служба лицензий утверждает запрос, она выдает лицензию, которая отправляется клиенту и используется для расшифровки и воспроизведения указанного содержимого.
@@ -81,7 +81,7 @@ XML-код соответствует XML-схеме шаблона лиценз
 > 
 > 
 
-Пример уровней защиты, которые поддерживает Silverlight, см. [здесь](http://go.microsoft.com/fwlink/?LinkId=617318).
+Пример уровней защиты, которые поддерживает Silverlight, см. [здесь](https://go.microsoft.com/fwlink/?LinkId=617318).
 
 ## <a id="schema"></a>XML-схема шаблона лицензий PlayReady
     <?xml version="1.0" encoding="utf-8"?>
