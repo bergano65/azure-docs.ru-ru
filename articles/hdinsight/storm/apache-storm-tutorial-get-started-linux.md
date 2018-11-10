@@ -3,19 +3,19 @@ title: Примеры storm-starter для работы с Apache Storm в HDIns
 description: Узнайте, как выполнять аналитику больших данных и обрабатывать информацию в режиме реального времени, используя Apache Storm и примеры storm-starter в HDInsight.
 keywords: storm-starter, пример apache storm
 services: hdinsight
-author: jasonwhowell
-ms.author: jasonh
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: a800b3b44d060627bc8f75d8566507a9ad116f86
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: d2181fb22079112c84e3e7c65575b12aa0c867ac
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43048216"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51006555"
 ---
 # <a name="get-started-with-apache-storm-on-hdinsight-using-the-storm-starter-examples"></a>Начало работы с Apache Storm в HDInsight с использованием примеров storm-starter
 

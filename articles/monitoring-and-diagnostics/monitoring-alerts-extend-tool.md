@@ -1,5 +1,5 @@
 ---
-title: Расширение оповещений из Log Analytcs в Azure
+title: Расширение оповещений из Log Analytics в Azure
 description: В этой статье описываются средства и API, с помощью которых можно расширить оповещения из Log Analytics в оповещения Azure.
 author: msvijayn
 services: azure-monitor
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/04/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: d70eecb6a5d6bafbfa6507dbe8b1bcb1cad67191
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: a470299df86f6b8f7fd61279af0334d01ef94f8d
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46990252"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50957427"
 ---
 # <a name="extend-alerts-from-log-analytics-into-azure-alerts"></a>Расширение оповещений из Log Analytics в оповещения Azure
 В службе анализа журналов Azure функция оповещения заменяется на оповещения Azure. В рамках этого процесса оповещения, которые были изначально настроены в Log Analytics, будут расширены в Azure. Если вы не хотите ждать, когда они будут перенесены в Azure автоматически, то процесс инициализации можно запустить:
@@ -22,31 +22,31 @@ ms.locfileid: "46990252"
 - Программным образом, с помощью API AlertsVersion.  
 
 > [!NOTE]
-> Начиная с 14 мая 2018 г., корпорация Майкрософт будет автоматически серийно расширять оповещения, созданные в экземпляре общедоступного облака Log Analytics, до оповещений Azure. Если у вас возникли проблемы с созданием [групп действий](monitoring-action-groups.md), используйте [эти шаги по устранению неполадок](monitoring-alerts-extend-tool.md#troubleshooting), чтобы автоматически создать группы действий. Эти шаги можно предпринять до 5 июля 2018 г. *Неприменимо для пользователей облака для государственных организаций и национального облака Azure Log Analytics*. 
+> Начиная с 14 мая 2018 г., корпорация Майкрософт будет автоматически серийно расширять оповещения, созданные в экземпляре общедоступного облака Log Analytics, до оповещений Azure. Если у вас возникли проблемы с созданием [групп действий](monitoring-action-groups.md), используйте [эти шаги по устранению неполадок](monitoring-alerts-extend-tool.md#troubleshooting), чтобы автоматически создать группы действий. Эти шаги можно предпринять до 5 июля 2018 г. *Не применимо для пользователей Log Analytics в Azure для государственных организаций и национальных облаках*. 
 
 ## <a name="option-1-initiate-from-the-operations-management-suite-portal"></a>Вариант 1. Запуск с портала Operations Management Suite
 Ниже описано, как отображать оповещения для рабочей области на портале Operations Management Suite.  
 
 1. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.
 2. В области подписок Log Analytics выберите рабочую область, а затем выберите плитку **Портал OMS**.
-![Снимок экрана с выделенной плиткой портала OMS области подписки Log Analytics](./media/monitor-alerts-extend/azure-portal-01.png) 
+![Снимок экрана с выделенной плиткой портала OMS области подписки Log Analytics](media/monitoring-alerts-extend-tool/azure-portal-01.png) 
 3. После того как вас перенаправили на портал Operations Management Suite, необходимо выбрать значок **Параметры**.
-![Снимок экрана с выделенным значком "Параметры" на портале Operations Management Suite](./media/monitor-alerts-extend/oms-portal-settings-option.png) 
+![Снимок экрана с выделенным значком "Параметры" на портале Operations Management Suite](media/monitoring-alerts-extend-tool/oms-portal-settings-option.png) 
 4. На странице **Параметры** выберите **Оповещения**.  
 5. Выберите **Extend into Azure** (Расширить в Azure).
-![Снимок экрана страницы параметров оповещений портала Operations Management Suite с выделенным расширением в Azure](./media/monitor-alerts-extend/ExtendInto.png)
+![Снимок экрана страницы параметров оповещений портала Operations Management Suite с выделенным расширением в Azure](media/monitoring-alerts-extend-tool/ExtendInto.png)
 6. В области **Оповещения** появится мастер, который состоит из 3 шагов. Ознакомьтесь с общими сведениями и нажмите кнопку **Далее**.
-![Снимок экрана первого шага мастера](./media/monitor-alerts-extend/ExtendStep1.png)  
+![Снимок экрана первого шага мастера](media/monitoring-alerts-extend-tool/ExtendStep1.png)  
 7. На втором шаге можно просмотреть сводку предлагаемых изменений, перечислив соответствующие [Группы действий](monitoring-action-groups.md) для оповещений. Если подобные действия будут выполняться для нескольких оповещений, мастер предложит связать одну группу действий со всеми остальными.  Соглашение об именовании соответствует следующему формату: *WorkspaceName_AG_#Number*. Чтобы продолжить, нажмите кнопку **Далее**.
-![Снимок экрана второго шага мастера](./media/monitor-alerts-extend/ExtendStep2.png)  
+![Снимок экрана второго шага мастера](media/monitoring-alerts-extend-tool/ExtendStep2.png)  
 8. На последнем шаге мастера нажмите кнопку **Готово** и при появлении запроса подтвердите его. (Необязательно.) Чтобы получать уведомления о завершении процесса и об успешном перемещении всех оповещений в оповещения Azure, необходимо предоставить адрес электронной почты.
-![Снимок экрана третьего шага мастера](./media/monitor-alerts-extend/ExtendStep3.png)
+![Снимок экрана третьего шага мастера](media/monitoring-alerts-extend-tool/ExtendStep3.png)
 
 После завершения работы мастера параметр расширения оповещений в Azure будет удален со страницы **Параметры оповещений**. Оповещения перемещаются в Azure в фоновом режиме, на что может потребоваться некоторое время. Во время проведения этой операции делать изменения оповещений на портале Operations Management Suite запрещено. Текущее состояние операции можно увидеть на баннере в верхней части портала. Если ранее вы предоставили адрес электронной почты, то при завершении процесса вы получите уведомление.  
 
 
 Даже после того, как оповещения были успешно перемещены в Azure, они все еще будут отображаться на портале Operations Management Suite.
-![Снимок экрана страницы "Параметры оповещений" портала Operations Management Suite](./media/monitor-alerts-extend/PostExtendList.png)
+![Снимок экрана страницы "Параметры оповещений" портала Operations Management Suite](media/monitoring-alerts-extend-tool/PostExtendList.png)
 
 
 ## <a name="option-2-use-the-alertsversion-api"></a>Вариант 2. Использование API AlertsVersion
@@ -460,7 +460,7 @@ $response = armclient post "/subscriptions/$subscriptionId/resourceGroups/$resou
 > Если до 5 июля 2018 г. пользователи Log Analytics на базе общедоступного облака Azure не предпримут следующие действия по исправлению, оповещения продолжат выполняться в Azure, но любое их действие или уведомление работать не будет. Для получения уведомлений об оповещениях необходимо изменить и добавить [группы действий](monitoring-action-groups.md) вручную или использовать предыдущий [пользовательский сценарий PowerShell](#option-3---using-custom-powershell-script).
 
 Здесь перечислены действия по исправлению для каждой возможной ошибки.
-- **Ошибка. Блокировка области присутствует на уровне подписки или группы ресурсов для операций записи**. ![Снимок страницы параметров оповещения портала Operations Management Suite с выделенным сообщением о блокировке области](./media/monitor-alerts-extend/ErrorScopeLock.png)
+- **Ошибка. Блокировка области присутствует на уровне подписки или группы ресурсов для операций записи**. ![Снимок страницы параметров оповещения портала Operations Management Suite с выделенным сообщением о блокировке области](media/monitoring-alerts-extend-tool/ErrorScopeLock.png)
 
     Когда функция "Блокировка области" включена, она ограничивает любое изменение в подписке или группе ресурсов, которое содержится в рабочей области Log Analytics (Operations Management Suite). Системе не удалось расширить оповещения в Azure или создать необходимые группы.
     
@@ -468,9 +468,9 @@ $response = armclient post "/subscriptions/$subscriptionId/resourceGroups/$resou
     
     После устранения проблемы с помощью действий, приведенных в статье, Operations Management Suite расширяет оповещения в Azure на следующий день в рамках запланированного запуска. Выполнять дальнейшие действия или инициировать что-либо не требуется.
 
-- **Ошибка. Политика присутствует на уровне подписки или группы ресурсов**. ![Снимок страницы параметров оповещения портала Operations Management Suite с выделенным сообщением об ошибке политики](./media/monitor-alerts-extend/ErrorPolicy.png)
+- **Ошибка. Политика присутствует на уровне подписки или группы ресурсов**. ![Снимок страницы параметров оповещения портала Operations Management Suite с выделенным сообщением об ошибке политики](media/monitoring-alerts-extend-tool/ErrorPolicy.png)
 
-    Когда применяется [политика Azure](../azure-policy/azure-policy-introduction.md), она ограничивает любые ресурсы, созданные в подписке или группе ресурсов, которые содержатся в рабочей области Log Analytics (Operations Management Suite). Системе не удалось расширить оповещения в Azure или создать необходимые группы.
+    Когда применяется [политика Azure](../governance/policy/overview.md), она ограничивает любые ресурсы, созданные в подписке или группе ресурсов, которые содержатся в рабочей области Log Analytics (Operations Management Suite). Системе не удалось расширить оповещения в Azure или создать необходимые группы.
     
     Для устранения отредактируйте политику, которая вызвала ошибку *[RequestDisallowedByPolicy](../azure-resource-manager/resource-manager-policy-requestdisallowedbypolicy-error.md)*, препятствующую созданию новых ресурсов в вашей подписке или группе ресурсов, в которых содержится рабочая область. Это можно сделать с помощью портала Azure, PowerShell, Azure CLI или API. Чтобы найти соответствующую политику, из-за которой происходит ошибка, можно использовать аудит действий. Дополнительные сведения см. в статье [Просмотр журналов действий для аудита действий с ресурсами](../azure-resource-manager/resource-group-audit.md). 
     

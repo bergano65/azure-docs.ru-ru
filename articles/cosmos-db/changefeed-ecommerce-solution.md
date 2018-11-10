@@ -9,12 +9,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/12/2018
 ms.author: sngun
-ms.openlocfilehash: d2c4c890e1a1599e68fba1a0728061ec244f382f
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 241cd2fddf31373ed9ca208efb0612dd4332131c
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42144558"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50740983"
 ---
 # <a name="use-azure-cosmos-db-change-feed-to-visualize-real-time-data-analytics"></a>Использование канала изменений Azure Cosmos DB для визуализации аналитики данных в реальном времени
 
@@ -207,7 +207,7 @@ Azure Stream Analytics — это полностью управляемая об
    * В поле **Формат сериализации событий** выберите **JSON**.  
    * В поле **Encoding field** (Поле кодирования) выберите **UTF-8**.  
    * В поле **Тип сжатия событий** выберите **Отсутствует**.  
-   * Нажмите кнопку **Сохранить** .
+   * Нажмите кнопку **Сохранить**.
 
 5. Перейдите на страницу задания Stream Analytics и выберите **Выходные данные**.  
 
@@ -220,9 +220,9 @@ Azure Stream Analytics — это полностью управляемая об
    * В поле **Имя набора данных** введите **averagePrice**.  
    * В поле **Имя таблицы** введите **averagePrice**.  
    * Нажмите кнопку **Авторизовать**, а затем следуйте инструкциям для авторизации подключения к Power BI.  
-   * Нажмите кнопку **Сохранить** .  
+   * Нажмите кнопку **Сохранить**.  
 
-8. Затем вернитесь к **streamjob1** и щелкните **Изменить запрос**.
+8. Затем вернитесь к **streamjob1** и выберите **Изменить запрос**.
 
    ![Изменение запроса](./media/changefeed-ecommerce-solution/edit-query.png)
  
@@ -261,7 +261,7 @@ Power BI — набор средств бизнес-аналитики для а
    b. **Выходной псевдоним** — top5Output, имя набора данных — top5, имя таблицы — top5.  
    c. **Выходной псевдоним** — uniqueVisitorCountOutput, имя набора данных — uniqueVisitorCount, имя таблицы — uniqueVisitorCount.
 
-   Затем щелкните **Изменить запрос** и вставьте следующие запросы **над** уже написанными.
+   Затем выберите **Изменить запрос** и вставьте следующие запросы **над** уже написанными.
 
    ```sql
     /*TOP 5*/
@@ -329,7 +329,7 @@ Power BI — набор средств бизнес-аналитики для а
 
    Добавьте еще одну коллекцию в **changefeedlabdatabase** с именем **topItems** и емкостью хранилища **Unlimited**. Напишите **/Item** в качестве ключа раздела.
 
-2. Щелкните коллекцию **topItems** и в разделе **Scale and Settings** (Масштаб и параметры) задайте значение **Time to Live** (Срок жизни) **30 секунд** для обновления topItems каждые 30 секунд.
+2. Выберите коллекцию **topItems** и в разделе **Scale and Settings** (Масштаб и параметры) задайте значение **30 секунд** для **Time to Live** (Срок жизни), чтобы topItems обновлялся каждые 30 секунд.
 
    ![Срок жизни](./media/changefeed-ecommerce-solution/time-to-live.png)
 

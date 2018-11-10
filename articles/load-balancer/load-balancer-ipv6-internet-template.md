@@ -4,11 +4,7 @@ description: Узнайте, как реализовать поддержку IP
 services: load-balancer
 documentationcenter: na
 author: KumudD
-manager: timlt
-editor: ''
-tags: azure-resource-manager
 keywords: IPv6, Azure Load Balancer, двойной стек, общедоступный IP-адрес, встроенная поддержка Ipv6, мобильное устройство, Интернет вещей
-ms.assetid: 2998e943-13fc-4ea9-a68c-875e53a08db3
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -16,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: kumud
-ms.openlocfilehash: 431b43979ac364d943c58c40b4199b7f30f9acf6
-ms.sourcegitcommit: c3d53d8901622f93efcd13a31863161019325216
+ms.openlocfilehash: 14a28fb341692c309ff4f965628b38a767c56633
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2018
-ms.locfileid: "30263084"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50740754"
 ---
 # <a name="deploy-an-internet-facing-load-balancer-solution-with-ipv6-using-a-template"></a>Развертывание решения балансировки нагрузки для Интернета с поддержкой IPv6 с помощью шаблона
 
@@ -111,7 +107,7 @@ Azure Load Balancer является балансировщиком нагруз
 
 Пример шаблона, используемый в этой статье, включает следующие переменные и параметры:
 
-| Параметр / переменная | Заметки |
+| Параметр / переменная | Примечания |
 | --- | --- |
 | adminUsername |Укажите имя учетной записи администратора, которое используется для входа в виртуальные машины. |
 | adminPassword |Укажите пароль учетной записи администратора, который используется для входа в виртуальные машины. |
