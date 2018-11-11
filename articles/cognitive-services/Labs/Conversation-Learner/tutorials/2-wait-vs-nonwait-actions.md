@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: f349dab23b9156d3a5656e8275533ebe6a82cdf9
-ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
+ms.openlocfilehash: b09279e61ad60abcbda8b5bf576f5145ea8b9602
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45540928"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51239259"
 ---
 # <a name="wait-and-non-wait-actions"></a>Действия с ожиданием и без ожидания
 
@@ -23,7 +23,7 @@ ms.locfileid: "45540928"
 
 ## <a name="video"></a>Видео
 
-[![Предварительная версия руководства 2](http://aka.ms/cl-tutorial-02-preview)](http://aka.ms/blis-tutorial-02)
+[![Предварительная версия руководства 2](https://aka.ms/cl-tutorial-02-preview)](https://aka.ms/blis-tutorial-02)
 
 ## <a name="requirements"></a>Требования
 Для работы с этим руководством требуется запущенный бот обучения общего назначения.

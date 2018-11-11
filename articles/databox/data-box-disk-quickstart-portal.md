@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 09/07/2018
 ms.author: alkohli
 Customer intent: As an IT admin, I need to quickly deploy Data Box Disk so as to import data into Azure.
-ms.openlocfilehash: ca0fb177c8b6a16cf624fd4533c9c9040e6d9dee
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: f84eda2269df0bbe7186a2f1a9abb9c594b75455
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49365240"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51245075"
 ---
 # <a name="quickstart-deploy-azure-data-box-disk-using-the-azure-portal-preview"></a>Краткое руководство. Развертывание диска Azure Data Box с помощью портала Azure (предварительная версия)
 
@@ -31,11 +31,11 @@ ms.locfileid: "49365240"
 
 Перед началом работы
 
-- Убедитесь, что для службы Azure Data Box включена ваша подписка. Чтобы включить подписку для этой службы, [зарегистрируйтесь в службе](http://aka.ms/azuredataboxfromdiskdocs).
+- Убедитесь, что для службы Azure Data Box включена ваша подписка. Чтобы включить подписку для этой службы, [зарегистрируйтесь в службе](https://aka.ms/azuredataboxfromdiskdocs).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите на портал Azure по адресу [http://aka.ms/azuredataboxfromdiskdocs](http://aka.ms/azuredataboxfromdiskdocs).
+Войдите на портал Azure по адресу [http://aka.ms/azuredataboxfromdiskdocs](https://aka.ms/azuredataboxfromdiskdocs).
 
 ## <a name="order"></a>Порядок
 
@@ -70,11 +70,11 @@ ms.locfileid: "49365240"
     3. Запустите средство разблокировки Диска и укажите ключ доступа. При повторном подключении диска снова запустите средство unlock и укажите ключ доступа. **Не используйте диалоговое окно или ключ BitLocker для разблокировки диска.** См. дополнительные сведения о разблокировке дисков на клиентах [Windows]() и [Linux]().
     4. Инструмент отобразит букву, присвоенную диску. Запишите букву диска. Она будет использоваться в последующих действиях.
 
-## <a name="copy-data-and-verify"></a>Копирование данных и проверка
+## <a name="copy-data-and-validate"></a>Копирование и проверка данных
 
 Время завершения этой операции, зависит от размера ваших данных. 
 
-1. Диск содержит папки *PageBlob*, *BlockBlob*, *AzureImportExport*. Для копирования перетащите данные, которые нужно импортировать в качестве блочных BLOB-объектов в папку *BlockBlob*. Аналогичным образом перетащите виртуальный жесткий диск VHD/VHDX в папку *PageBlob*.
+1. Диск содержит папки *PageBlob*, *BlockBlob* и *DataBoxDiskImport*. Для копирования перетащите данные, которые нужно импортировать в качестве блочных BLOB-объектов в папку *BlockBlob*. Аналогичным образом перетащите виртуальный жесткий диск VHD/VHDX в папку *PageBlob*.
 
     Хранилище создается в учетной записи хранения Azure для каждой подпапки в папках *BlockBlob* и *PageBlob*. Все файлы в папках *BlockBlob* и *PageBlob* копируются по умолчанию в контейнер `$root` в учетную запись хранения Azure.
 
@@ -82,7 +82,7 @@ ms.locfileid: "49365240"
     > - Все контейнеры и большие двоичные объекты должны соответствовать [соглашениям об именовании Azure](data-box-disk-limits.md#azure-block-blob-and-page-blob-naming-conventions). Если не следовать этим правилам, произойдет сбой передачи данных в Azure.
     > - Убедитесь, что файлы не превышают ~4,75 Тиб для блочных BLOB-объектов и ~8 Тиб для страничных BLOB-объектов.
 
-2. (По необходимости) Чтобы создать контрольные суммы для проверки после завершения копирования рекомендуется запустить `DataBoxDiskValidation.cmd` в папке *AzureImportExport*. В зависимости от размера данных, это действие может занять некоторое время. 
+2. (Дополнительно) После завершения копирования рекомендуется запустить `DataBoxDiskValidation.cmd` в папке *AzureImportExport*, чтобы создать контрольные суммы для проверки. В зависимости от размера данных, это действие может занять некоторое время. 
 3. Отсоедините диск. 
 
 

@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 08/16/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 2a869e8d504e4f3557caa7925b89e8c184718af9
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 161a5710766db626e4c4ec6bb6fdfafcc20650d5
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46306083"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51248050"
 ---
 # <a name="tutorial-federate-a-single-ad-forest-environment-to-the-cloud"></a>Учебник. Федерация среды одного леса AD с облаком
 
@@ -280,7 +280,7 @@ New-SelfSignedCertificate -DnsName $DNSname -CertStoreLocation $Location
 
 ## <a name="test-signing-in-with-one-of-our-users"></a>Проверка входа с помощью одной из учетных записей
 
-1.  Перейдите на сайт [http://myapps.microsoft.com](http://myapps.microsoft.com).
+1.  Перейдите на сайт [http://myapps.microsoft.com](https://myapps.microsoft.com).
 2. Выполните вход с помощью учетной записи пользователя, которая была создана в новом клиенте.  Для этого следует использовать следующий формат: (user@domain.onmicrosoft.com). Используйте тот же пароль, что и для входа в локальную среду.
 ![Проверка](media/tutorial-password-hash-sync/verify1.png)
 

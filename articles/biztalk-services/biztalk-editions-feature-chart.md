@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: 718b57a801a9ba62a0154ae42da2ac0c0741f203
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 8e25f98f1189f71943ece4a7877a86e29698689a
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "22706654"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51240517"
 ---
 # <a name="biztalk-services-editions-chart"></a>Службы BizTalk: диаграмма выпусков
 
@@ -63,7 +63,7 @@ ms.locfileid: "22706654"
 
 <tr>
 <td><strong>Начальная цена</strong></td>
-<td colspan="5"><a HREF="http://go.microsoft.com/fwlink/p/?LinkID=304011">Цены — службы BizTalk Azure</a> <br/><br/> <a HREF="http://azure.microsoft.com/pricing/calculator/?scenario=full">Калькулятор цен Azure</a></td>
+<td colspan="5"><a HREF="https://go.microsoft.com/fwlink/p/?LinkID=304011">Цены — службы BizTalk Azure</a> <br/><br/> <a HREF="https://azure.microsoft.com/pricing/calculator/?scenario=full">Калькулятор цен Azure</a></td>
 </tr>
 <tr>
 <td><strong>Минимальная конфигурация по умолчанию</strong></td>
@@ -153,7 +153,7 @@ ms.locfileid: "22706654"
 <tr>
 <td><strong>Высокая доступность</strong>
 <br/><br/>
-Для соглашения об уровне обслуживания (SLA) см. <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=304011">сведения о ценах на службы BizTalk Azure</a>.
+Для соглашения об уровне обслуживания (SLA) см. <a HREF="https://go.microsoft.com/fwlink/p/?LinkID=304011">сведения о ценах на службы BizTalk Azure</a>.
 </td>
 <td>Не включено</td>
 <td>Не включено</td>
@@ -242,10 +242,10 @@ BizTalk Server на виртуальных машинах Azure предоста
 В остальных выпусках используйте резервное копирование и восстановление, чтобы перенести артефакты с одного уровня на другой. Например, создайте резервную копию артефактов на уровне «Стандартный», а затем восстановите их на уровне «Премиум». [Службы BizTalk: резервное копирование и восстановление](biztalk-backup-restore.md) описывает поддерживаемые пути миграции и содержит список артефактов, доступных для резервного копирования. Обратите внимание, что для гибридных подключений нельзя создать резервные копии. После резервного копирования и восстановления на новом уровне можно будет воссоздать гибридные подключения.  
 
 #### <a name="is-the-biztalk-adapter-service-included-in-the-service-how-do-i-receive-the-software"></a>Включена ли сюда служба адаптера BizTalk? Как получить это программное обеспечение?
-Да, служба адаптера BizTalk вместе с пакетом BizTalk Adapter Pack включена в пакет SDK для служб BizTalk Azure [загрузить](http://www.microsoft.com/download/details.aspx?id=39087).
+Да, служба адаптера BizTalk вместе с пакетом BizTalk Adapter Pack включена в пакет SDK для служб BizTalk Azure [загрузить](https://www.microsoft.com/download/details.aspx?id=39087).
 
 ## <a name="next-steps"></a>Дополнительная информация
-Чтобы создать службы BizTalk Azure на портале Azure, перейдите по ссылке [Службы BizTalk: подготовка с использованием портала Azure](biztalk-provision-services.md). Чтобы приступить к созданию приложений, перейдите по ссылке [Службы BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=235197).
+Чтобы создать службы BizTalk Azure на портале Azure, перейдите по ссылке [Службы BizTalk: подготовка с использованием портала Azure](biztalk-provision-services.md). Чтобы приступить к созданию приложений, перейдите по ссылке [Службы BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=235197).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 * [Службы BizTalk: подготовка с использованием портала Azure](biztalk-provision-services.md)<br/>
@@ -254,5 +254,5 @@ BizTalk Server на виртуальных машинах Azure предоста
 * [BizTalk Services: Backup and restore](biztalk-backup-restore.md)<br/>
 * [Службы BizTalk: регулирование](biztalk-throttling-thresholds.md)<br/>
 * [Службы BizTalk: имя и ключ издателя](biztalk-issuer-name-issuer-key.md)<br/>
-* [Как приступить к работе с пакетом SDK для служб BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
+* [Как приступить к работе с пакетом SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
 

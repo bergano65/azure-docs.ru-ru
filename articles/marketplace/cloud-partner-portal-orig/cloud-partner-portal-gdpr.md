@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 7470416ab5e5d71cc569db19e47d34c5a29bc063
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 1cd9e99d9f530abb34ff072a740d89bc511c64ed
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807714"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51241520"
 ---
 <a name="cloud-partner-portal-gdpr-compliance"></a>Соответствия GDPR и портала Cloud Partner
 ====================================
@@ -48,6 +48,6 @@ ms.locfileid: "48807714"
 
 -   [Как и где корпорация Майкрософт отправляет клиентам данные, включая географические местоположений \'](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located)
 -   [Субподрядчики, имеющих доступ к данным клиентов \'](https://aka.ms/Online_Serv_Subcontractor_List)
--   [Сведения о мерах безопасности Azure под управлением Майкрософт](http://download.microsoft.com/download/1/6/0/160216AA-8445-480B-B60F-5C8EC8067FCA/WindowsAzure-SecurityPrivacyCompliance.pdf)
+-   [Сведения о мерах безопасности Azure под управлением Майкрософт](https://download.microsoft.com/download/1/6/0/160216AA-8445-480B-B60F-5C8EC8067FCA/WindowsAzure-SecurityPrivacyCompliance.pdf)
 -   [Сведения о рассмотрении политики конфиденциальности Майкрософт, для всех продуктов, включая все службы Azure\'](https://www.microsoft.com/trustcenter/privacy/we-set-and-adhere-to-stringent-standards)
 -   [Какие данные пользовательских систем и конечных пользователей собираются и обрабатываются корпорацией Майкрософт ](https://www.microsoft.com/trustcenter/privacy/you-own-your-data)

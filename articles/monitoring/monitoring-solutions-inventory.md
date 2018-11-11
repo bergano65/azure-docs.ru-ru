@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/26/2018
 ms.author: bwren
-ms.openlocfilehash: 82cfa9e62dcc6b3a72dcb1ccf97f1f52a88a75c4
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 9adc285ecdc7a88d03aef9abf0132c51f60b445a
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49404109"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51247438"
 ---
 # <a name="data-collection-details-for-management-solutions-in-azure"></a>Информация о сборе данных для решений по управлению в Azure
 Эта статья содержит список [решений по управлению](monitoring-solutions.md), предлагаемых корпорацией Майкрософт, со ссылками на подробную документацию по ним.  Также вы здесь найдете сведения о методах и частоте сбора данных в Log Analytics.  Сведения в этой статье помогут вам оценить доступные решения и изучить потоки данных и требования к подключению для разных решений по управлению. 
@@ -44,7 +44,7 @@ ms.locfileid: "49404109"
 | [Анализ журнала действий](../log-analytics/log-analytics-activity.md) | Таблицы Azure | | | | | | при уведомлении |
 | [Оценка AD](../log-analytics/log-analytics-ad-assessment.md) |Windows |&#8226; |&#8226; | | |&#8226; |7 дней |
 | [Состояние репликации AD](../log-analytics/log-analytics-ad-replication-status.md) |Windows |&#8226; |&#8226; | | |&#8226; |5 дней |
-| [Работоспособность агентов](../operations-management-suite/oms-solution-agenthealth.md) | Windows и Linux | &#8226; | &#8226; | | | &#8226; | 1 минута |
+| [Работоспособность агентов](monitoring-solution-agenthealth.md) | Windows и Linux | &#8226; | &#8226; | | | &#8226; | 1 минута |
 | [Управление оповещениями](../log-analytics/log-analytics-solution-alert-management.md) (Nagios) |Linux |&#8226; | | | | |При получении |
 | [Управление оповещениями](../log-analytics/log-analytics-solution-alert-management.md) (Zabbix) |Linux |&#8226; | | | | |1 минута |
 | [Управление оповещениями](../log-analytics/log-analytics-solution-alert-management.md) (Operations Manager) |Windows | |&#8226; | |&#8226; |&#8226; |3 минуты |
@@ -57,20 +57,20 @@ ms.locfileid: "49404109"
 | [Службы анализа SQL Azure (предварительная версия)](../log-analytics/log-analytics-azure-sql.md) | Windows | | | | | | 1 минута |
 | [Архивация](https://azure.microsoft.com/resources/templates/101-backup-oms-monitoring/) | Таблицы Azure |  |  |  |  |  | при уведомлении |
 | [Емкость и производительность (предварительная версия)](../log-analytics/log-analytics-capacity.md) |Windows |&#8226; |&#8226; | | |&#8226; |При получении |
-| [Отслеживание изменений](../log-analytics/log-analytics-change-tracking.md) |Windows |&#8226; |&#8226; | | |&#8226; |Ежечасно |
-| [Отслеживание изменений](../log-analytics/log-analytics-change-tracking.md) |Linux |&#8226; | | | | |Ежечасно |
+| [Отслеживание изменений](../automation/automation-change-tracking.md) |Windows |&#8226; |&#8226; | | |&#8226; |Ежечасно |
+| [Отслеживание изменений](../automation/automation-change-tracking.md) |Linux |&#8226; | | | | |Ежечасно |
 | [Контейнеры](../log-analytics/log-analytics-containers.md) | Windows и Linux | &#8226; | &#8226; |  |  |  | 3 минуты |
 | [Анализ хранилища ключей](../log-analytics/log-analytics-azure-key-vault.md) |Windows | | | | | |при уведомлении |
-| [Оценка вредоносных программ](../log-analytics/log-analytics-malware.md) |Windows |&#8226; |&#8226; | | |&#8226; |Ежечасно |
+| [Оценка вредоносных программ](../security-center/security-center-install-endpoint-protection.md) |Windows |&#8226; |&#8226; | | |&#8226; |Ежечасно |
 | [Монитор производительности сети](../log-analytics/log-analytics-network-performance-monitor.md) | Windows | &#8226; | &#8226; |  |  |  | Подтверждения TCP выполняются каждые 5 секунд, данные отправляются каждые 3 минуты |
-| [Аналитика Office 365 (предварительная версия)](../operations-management-suite/oms-solution-office-365.md) |Windows | | | | | |при уведомлении |
+| [Аналитика Office 365 (предварительная версия)](monitoring-solution-office-365.md) |Windows | | | | | |при уведомлении |
 | **Решение по управлению** | **Платформа** | **Microsoft Monitoring Agent** | **Агент Operations Manager** | **Служба хранилища Azure** | **Нужен ли Operations Manager?** | **Данные агента Operations Manager отправляются через группу управления** | **Частота сбора** |
 | [Анализ Service Fabric](../service-fabric/service-fabric-diagnostics-oms-setup.md) |Windows | | |&#8226; | | |5 мин |
-| [Схема услуги](../operations-management-suite/operations-management-suite-service-map.md) | Windows и Linux | &#8226; | &#8226; |  |  |  | 15 секунд |
+| [Схема услуги](monitoring-service-map.md) | Windows и Linux | &#8226; | &#8226; |  |  |  | 15 секунд |
 | [Оценка SQL](../log-analytics/log-analytics-sql-assessment.md) |Windows |&#8226; |&#8226; | | |&#8226; |7 дней |
 | [SurfaceHub](../log-analytics/log-analytics-surface-hubs.md) |Windows |&#8226; | | | | |При получении |
 | [Оценка System Center Operations Manager (предварительная версия)](../log-analytics/log-analytics-scom-assessment.md) | Windows | &#8226; | &#8226; |  |  | &#8226; | 7 дней |
-| [Управление обновлениями](../operations-management-suite/oms-solution-update-management.md) | Windows |&#8226; |&#8226; | | |&#8226; |не меньше 2 раз в день и через 15 минут после установки обновления |
+| [Управление обновлениями](../automation/automation-update-management.md) | Windows |&#8226; |&#8226; | | |&#8226; |не меньше 2 раз в день и через 15 минут после установки обновления |
 | [Готовность к обновлению](https://docs.microsoft.com/windows/deployment/upgrade/upgrade-readiness-get-started) | Windows | &#8226; |  |  |  |  | 2 дня |
 | [Мониторинг VMware (не рекомендуется)](../log-analytics/log-analytics-vmware.md) | Linux | &#8226; |  |  |  |  | 3 минуты |
 | [Wire Data 2.0 (предварительная версия)](../log-analytics/log-analytics-wire-data.md) |Windows (2012 R2/8.1 или более поздней версии) |&#8226; |&#8226; | | | | 1 минута |
@@ -79,4 +79,4 @@ ms.locfileid: "49404109"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Узнайте, как [создавать запросы](../log-analytics/log-analytics-log-searches.md) для анализа данных, собранных решением по управлению.
+* Узнайте, как [создавать запросы](../log-analytics/log-analytics-queries.md) для анализа данных, собранных решением по управлению.

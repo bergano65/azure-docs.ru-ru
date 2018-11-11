@@ -9,12 +9,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 09/08/2018
-ms.openlocfilehash: f261c59193349d55d407e6079002b75884273e84
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: fb4eabb247e6a4fe5550b2b23d34862c789bfaa1
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46960249"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51232330"
 ---
 # <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-and-terraform"></a>Создание кластера Kubernetes с помощью службы Azure Kubernetes и Terraform
 [Служба Azure Kubernetes (AKS)](/azure/aks/) управляет размещенной средой Kubernetes, позволяя быстро и легко развертывать контейнерные приложения и управлять ими, даже если вы никогда не оркестрировали контейнеры. Также вам не нужно выполнять текущие операции и обслуживание, так как эта служба подготавливает, обновляет и масштабирует ресурсы по требованию, не отключая приложения от сети.
@@ -372,6 +372,6 @@ Terraform отслеживает состояние локально через 
 Из этой статьи вы узнали, как использовать Terraform и AKS для создания кластера Kubernetes. Ниже приведены ресурсы, содержащие дополнительные сведения о Terraform в Azure. 
 
  [Terraform в документации по Azure](https://docs.microsoft.com/azure/terraform/)  
- [Документация по поставщику для Terraform Azure](http://aka.ms/terraform)  
- [Документация по разработке поставщика Terraform Azure](http://aka.ms/tfgit)  
- [Модули Terraform Azure](http://aka.ms/tfmodules)
+ [Документация по поставщику для Terraform Azure](https://aka.ms/terraform)  
+ [Документация по разработке поставщика Terraform Azure](https://aka.ms/tfgit)  
+ [Модули Terraform Azure](https://aka.ms/tfmodules)

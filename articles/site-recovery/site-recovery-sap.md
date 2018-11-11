@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: asgang
-ms.openlocfilehash: c83cf9fb319c21881f0db8bd94dc9a94a3b811bc
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 1f38cd62a1394d45716e7224cc03a059fcaf9e13
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50211729"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51247761"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sap-netweaver-app-deployment"></a>Настройка аварийного восстановления для многоуровневого развертывания приложения SAP NetWeaver
 
@@ -167,5 +167,5 @@ Azure Site Recovery можно использовать, чтобы выполн
 Дополнительные сведения см. в статье [Отработка отказа в Site Recovery](site-recovery-failover.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Дополнительные сведения о создании решения аварийного восстановления для развертываний SAP NetWeaver с помощью Site Recovery см. в скачиваемом техническом документе [SAP NetWeaver: Building a Disaster Recovery Solution with Azure Site Recovery](http://aka.ms/asr-sap) (SAP NetWeaver. Создание решения аварийного восстановления с помощью Azure Site Recovery). В этом техническом документе рассматриваются рекомендации для разных архитектур SAP, приводятся поддерживаемые приложения и типы виртуальных машин для SAP в Azure, а также описываются планы тестирования для решения аварийного восстановления.
+* Дополнительные сведения о создании решения аварийного восстановления для развертываний SAP NetWeaver с помощью Site Recovery см. в скачиваемом техническом документе [SAP NetWeaver: Building a Disaster Recovery Solution with Azure Site Recovery](https://aka.ms/asr-sap) (SAP NetWeaver. Создание решения аварийного восстановления с помощью Azure Site Recovery). В этом техническом документе рассматриваются рекомендации для разных архитектур SAP, приводятся поддерживаемые приложения и типы виртуальных машин для SAP в Azure, а также описываются планы тестирования для решения аварийного восстановления.
 * Узнайте больше о [репликации других рабочих нагрузок](site-recovery-workload.md) с помощью Site Recovery.

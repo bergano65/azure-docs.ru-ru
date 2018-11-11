@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/23/2017
-ms.openlocfilehash: 9d2cfeb780687e1bf0e61173b3550e26f4019115
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: a107907dd01b15015c644f835239f6f90b948296
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47394155"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51245840"
 ---
 # <a name="walkthrough-develop-a-predictive-analytics-solution-for-credit-risk-assessment-in-azure-machine-learning"></a>Пошаговое руководство по разработке решения для прогнозной аналитики в службе машинного обучения Azure для оценки кредитных рисков
 
@@ -57,4 +57,4 @@ ms.locfileid: "47394155"
 > [!TIP] 
 > Рабочую копию эксперимента, разработанного в этом руководстве, можно найти в [коллекции решений Azure AI](https://gallery.cortanaintelligence.com). Перейдите по ссылке **[Walkthrough - Credit risk prediction](https://gallery.cortanaintelligence.com/Experiment/Walkthrough-Credit-risk-prediction-1)** (Руководство. Прогнозирование кредитных рисков) и нажмите кнопку **Open in Studio** (Открыть в Студии), чтобы скачать в рабочее пространство Студии машинного обучения копию этого эксперимента.
 > 
-> В этом пошаговом руководстве используется упрощенная версия примера эксперимента [Binary Classfication: Credit risk prediction](http://go.microsoft.com/fwlink/?LinkID=525270) (Двоичная классификация: прогнозирование кредитных рисков), который также доступен в [коллекции](http://gallery.cortanaintelligence.com/).
+> В этом пошаговом руководстве используется упрощенная версия примера эксперимента [Binary Classfication: Credit risk prediction](https://go.microsoft.com/fwlink/?LinkID=525270) (Двоичная классификация: прогнозирование кредитных рисков), который также доступен в [коллекции](http://gallery.cortanaintelligence.com/).

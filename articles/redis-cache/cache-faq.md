@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
 ms.author: wesmc
-ms.openlocfilehash: c5a18a2e8d58553e49797da418f76fc3f251e003
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: 21b5050996428328bfda314b2f2242ed2a766e74
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50026047"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51239769"
 ---
 # <a name="azure-redis-cache-faq"></a>Кэш Redis для Azure. Вопросы и ответы
 Ответы на часто задаваемые вопросы, шаблоны и рекомендации для кэша Redis для Azure.
@@ -250,7 +250,7 @@ StackExchange.Redis имеет много параметров. В этом ра
 * `redis-cli -h <redis cache name>.redis.cache.windows.net -a <key>`
 
 > [!NOTE]
-> Программы командной строки Redis не работают с портом SSL, но можно использовать служебную программу, такую как `stunnel`, для безопасного подключения этих программ к порту SSL в соответствии с указаниями в записи блога [Announcing ASP.NET Session State Provider for Redis Preview Release](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx) (Объявление о поставщике состояний сеансов ASP.NET для предварительной версии Redis).
+> Программы командной строки Redis не работают с портом SSL, но можно использовать служебную программу, такую как `stunnel`, для безопасного подключения этих программ к порту SSL в соответствии с указаниями в записи блога [Announcing ASP.NET Session State Provider for Redis Preview Release](https://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx) (Объявление о поставщике состояний сеансов ASP.NET для предварительной версии Redis).
 >
 >
 
@@ -295,7 +295,7 @@ StackExchange.Redis имеет много параметров. В этом ра
 >
 >
 
-Инструменты Redis, такие как `redis-cli`, не работают с портом SSL, но вы можете использовать служебную программу, например `stunnel`, для безопасного подключения инструментов к порту SSL в соответствии с указаниями в записи блога [Анонс поставщика состояний сеансов ASP.NET для предварительной версии Redis](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx).
+Инструменты Redis, такие как `redis-cli`, не работают с портом SSL, но вы можете использовать служебную программу, например `stunnel`, для безопасного подключения инструментов к порту SSL в соответствии с указаниями в записи блога [Анонс поставщика состояний сеансов ASP.NET для предварительной версии Redis](https://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx).
 
 Инструкции по скачиванию инструментов Redis см. в разделе [Как выполнять команды Redis?](#cache-commands).
 

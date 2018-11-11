@@ -16,12 +16,12 @@ ms.date: 05/30/2018
 ms.component: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: 8a40acda189507c1589373a48166ed1668e30650
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: a92d3237300fcd29fecf49d78b2866f8bd7e6a6b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46308333"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51247710"
 ---
 # <a name="determine-access-control-requirements-for-your-hybrid-identity-solution"></a>Определение требований к контролю доступа для решения гибридной идентификации
 При проектировании решения для гибридной идентификации организация может пересмотреть требования доступа к ресурсам, которые планируется сделать доступными для пользователей. Доступ к данным объединяет все четыре ключевых компонента идентификации, к которым относятся:
@@ -34,7 +34,7 @@ ms.locfileid: "46308333"
 В следующих разделах будут подробно рассмотрены аутентификация и авторизация. Администрирование и аудит являются частью жизненного цикла гибридной идентификации. Подробнее об этих возможностях можно узнать в статье [Определение задач управления гибридной идентификацией](plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md).
 
 > [!NOTE]
-> Подробнее о каждом из компонентов идентификации можно узнать в статье [Четыре ключевых компонента идентификации ― управление идентификацией в эпоху гибридных информационных технологий](http://social.technet.microsoft.com/wiki/contents/articles/15530.the-four-pillars-of-identity-identity-management-in-the-age-of-hybrid-it.aspx) .
+> Подробнее о каждом из компонентов идентификации можно узнать в статье [Четыре ключевых компонента идентификации ― управление идентификацией в эпоху гибридных информационных технологий](https://social.technet.microsoft.com/wiki/contents/articles/15530.the-four-pillars-of-identity-identity-management-in-the-age-of-hybrid-it.aspx) .
 > 
 > 
 

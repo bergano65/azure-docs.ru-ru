@@ -14,18 +14,18 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: f2e0c7b335b09a0d2b8b8399e807a354ec8e4282
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 41f3fd55be02364b4028642db9db1d3f47043afa
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807531"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51245092"
 ---
 # <a name="how-to-create-dynamics-365-for-operations-offer-via-cloud-partner-portal"></a>Создание предложения Dynamics 365 for Operations с помощью портала Cloud Partner
 
 Доступ к порталу публикации предоставляется на основе ролей, что позволяет нескольким пользователям совместно работать над публикацией предложения. Дополнительные сведения см. в статье [Cloud Portal Manage Users](./cloud-partner-portal-manage-users.md) (Управление пользователями на портале Cloud Partner).
 
-Прежде чем опубликовать предложение от имени учетной записи издателя, одному из пользователей с ролью \"владельца\" необходимо принять [условия использования](https://azure.microsoft.com/support/legal/website-terms-of-use/), [заявление о конфиденциальности Майкрософт](http://www.microsoft.com/privacystatement/default.aspx) и [соглашение по программе сертификации Microsoft Azure](https://azure.microsoft.com/support/legal/marketplace/certified-program-agreement/).
+Прежде чем опубликовать предложение от имени учетной записи издателя, одному из пользователей с ролью \"владельца\" необходимо принять [условия использования](https://azure.microsoft.com/support/legal/website-terms-of-use/), [заявление о конфиденциальности Майкрософт](https://www.microsoft.com/privacystatement/default.aspx) и [соглашение по программе сертификации Microsoft Azure](https://azure.microsoft.com/support/legal/marketplace/certified-program-agreement/).
 
 ## <a name="how-to-create-a-new-dynamics-365-for-operations-offer"></a>Создание предложения Dynamics 365 for Operations
 

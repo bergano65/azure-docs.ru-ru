@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 07/30/2018
 ms.author: lizross
 ms.reviewer: librown
-ms.openlocfilehash: a88a0d9105942502b634f3be7c3279167ea590c6
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: d5ea6f18fb288711bae67b6840ddb5b8bb9942c2
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49393258"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51245449"
 ---
 # <a name="get-started-with-the-microsoft-authenticator-app"></a>Начало работы с приложением Microsoft Authenticator
 
@@ -39,7 +39,7 @@ ms.locfileid: "49393258"
 
 ## <a name="install-the-app"></a>Установка приложения
 
-Приложение Microsoft Authenticator доступно для [Android](https://go.microsoft.com/fwlink/?linkid=866594), [iOS](https://go.microsoft.com/fwlink/?linkid=866594) и [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071). Для получения наилучших результатов следует разрешить приложению получать уведомления при появлении запроса. 
+Приложение Microsoft Authenticator доступно для [Android](https://go.microsoft.com/fwlink/?linkid=866594), [iOS](https://go.microsoft.com/fwlink/?linkid=866594) и [Windows Phone](https://go.microsoft.com/fwlink/?Linkid=825071). Для получения наилучших результатов следует разрешить приложению получать уведомления при появлении запроса. 
 
 ## <a name="add-accounts-to-the-app"></a>Добавление учетной записи в приложение
 
@@ -51,7 +51,7 @@ ms.locfileid: "49393258"
 
 ### <a name="add-a-work-or-school-account"></a>Добавление рабочей или учебной учетной записи
 
-1. Если это возможно, перейдите на экран [Дополнительная проверка безопасности](http://aka.ms/mfasetup) на другом компьютере или устройстве. См. инструкции о том, как это сделать, в разделе [Где найти страницу параметров](multi-factor-authentication-end-user-manage-settings.md#where-to-find-the-settings-page) или свяжитесь со своим администратором.
+1. Если это возможно, перейдите на экран [Дополнительная проверка безопасности](https://aka.ms/mfasetup) на другом компьютере или устройстве. См. инструкции о том, как это сделать, в разделе [Где найти страницу параметров](multi-factor-authentication-end-user-manage-settings.md#where-to-find-the-settings-page) или свяжитесь со своим администратором.
 
     >[!Note]
     >Если администратор включил предварительную версию функции сведений для защиты, вы можете следовать инструкциям, описанным в статье [Настройка сведений для защиты для использования приложения проверки подлинности](security-info-setup-auth-app.md).

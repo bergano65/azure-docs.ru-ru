@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: article
 ms.date: 2/1/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9b2f4dbf1e87aa5aa035bfd9071fed7be74a9c07
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 023674f05dda6c2da8edddb843277dd07a513162
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46979004"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51244633"
 ---
 # <a name="use-the-ai-toolkit-for-azure-iot-edge"></a>Использование набора средств для работы с искусственным интеллектом для службы Azure IoT Edge
 
@@ -27,4 +27,4 @@ ms.locfileid: "46979004"
 
 Набор средств для работы с ИИ для службы Azure IoT Edge — это коллекция скриптов, кода и развертываемых контейнеров. К примерам относятся прогнозное обслуживание, классификация изображений, обработка речи и развертывание пользовательских моделей с помощью служб "Машинное обучение Azure" и "Центр Интернета вещей Azure". Модели из набора можно использовать без доработок, тогда как весь исходный код и данные разработчики могут адаптировать под свои нужды.
 
-Общедоступный репозиторий GitHub с набором средств для работы с ИИ для службы Azure IoT Edge находится по адресу [aka.ms/AI-toolkit](http://aka.ms/AI-toolkit).
+Общедоступный репозиторий GitHub с набором средств для работы с ИИ для службы Azure IoT Edge находится по адресу [aka.ms/AI-toolkit](https://aka.ms/AI-toolkit).

@@ -9,12 +9,12 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/24/2017
 ms.author: elioda
-ms.openlocfilehash: 2dca04cadd4c5b904c752ac8a01af8bcb7c6ae33
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: c519a3b71068570ff864ccc0eb0292cebd51173a
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47220114"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51243732"
 ---
 # <a name="send-messages-from-the-cloud-to-your-device-with-iot-hub-net"></a>Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (.NET)
 
@@ -50,7 +50,7 @@ ms.locfileid: "47220114"
 
 * Visual Studio 2017
 
-* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](http://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
+* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 ## <a name="receive-messages-in-the-device-app"></a>Получение сообщений в приложении для устройства
 
@@ -146,7 +146,7 @@ ms.locfileid: "47220114"
    Console.ReadLine();
    ```
 
-8. В Visual Studio щелкните правой кнопкой мыши свое решение и выберите пункт **Назначить запускаемые проекты**. Щелкните **Несколько запускаемых проектов**, а затем выберите действие **Запуск** для **ReadDeviceToCloudMessages**, **SimulatedDevice** и **SendCloudToDevice**.
+8. В Visual Studio щелкните правой кнопкой мыши свое решение и выберите пункт **Назначить запускаемые проекты**. Щелкните Несколько запускаемых проектов, а затем выберите действие **Запуск** для **ReadDeviceToCloudMessages**, **SimulatedDevice** и **SendCloudToDevice**.
 
 9. Нажмите клавишу **F5**. Должны запуститься все три приложения. Выберите окна **SendCloudToDevice** и нажмите клавишу **ВВОД**. Приложение для устройства должно получить сообщение.
    

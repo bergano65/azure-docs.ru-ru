@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2017
-ms.openlocfilehash: 262c9af4e0f3ee34dc89986affacb6c0d8a0d801
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 1d53e13798f24fa6225b0a587dde71b4f34f48fc
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34835728"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51243391"
 ---
 # <a name="troubleshooting-guide-create-and-connect-to-an-machine-learning-workspace"></a>Руководство по устранению неполадок: создание рабочей области машинного обучения и подключение к ней
 В этом руководстве приведены решения некоторых проблем, часто возникающих при настройке рабочих областей для Машинного обучения Azure.
@@ -64,7 +64,7 @@ ms.locfileid: "34835728"
 
 ## <a name="comments"></a>Комментарии
 
-Наша цель — сделать работу с машинным обучением как можно более удобной. Публикуйте свои комментарии и описывайте проблемы на [форуме по  Машинному обучению Azure](http://social.msdn.microsoft.com/Forums/windowsazure/home?forum=MachineLearning) , чтобы мы смогли эффективнее помочь вам.
+Наша цель — сделать работу с машинным обучением как можно более удобной. Публикуйте свои комментарии и описывайте проблемы на [форуме по  Машинному обучению Azure](https://social.msdn.microsoft.com/Forums/windowsazure/home?forum=MachineLearning) , чтобы мы смогли эффективнее помочь вам.
 
 [screen1]:media/troubleshooting-creating-ml-workspace/screen1.png
 [screen2]:media/troubleshooting-creating-ml-workspace/screen2.png

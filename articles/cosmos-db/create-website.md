@@ -10,15 +10,15 @@ ms.topic: conceptual
 ms.date: 02/23/2018
 ms.author: sngun
 ms.custom: mvc
-ms.openlocfilehash: dca9d7900ce229b1cddbef8d0dee44bc0061dc42
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 29a2335a3a4077866b71e4303c240ad8352371ba
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34611312"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51243783"
 ---
 # <a name="deploy-azure-cosmos-db-and-azure-app-service-web-apps-using-an-azure-resource-manager-template"></a>Развертывание Azure Cosmos DB и веб-приложений службы приложений Azure с помощью шаблона Azure Resource Manager
-В этом руководстве показано, как использовать шаблон Azure Resource Manager для развертывания и интеграции [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/), веб-приложения [службы приложений Azure](http://go.microsoft.com/fwlink/?LinkId=529714), а также примера веб-приложения.
+В этом руководстве показано, как использовать шаблон Azure Resource Manager для развертывания и интеграции [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/), веб-приложения [службы приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714), а также примера веб-приложения.
 
 С помощью шаблонов Azure Resource Manager можно легко автоматизировать развертывание и настройку ресурсов Azure.  В этом руководстве показано, как развернуть веб-приложение и автоматически задать сведения о подключении учетной записи Azure Cosmos DB.
 
@@ -29,7 +29,7 @@ ms.locfileid: "34611312"
 
 <a id="Prerequisites"></a>
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 > [!TIP]
 > Хотя это руководство не требует наличия опыта работы с шаблонами Azure Resource Manager или JSON, если возникнет необходимость изменить ссылки шаблонов или варианты развертывания, потребуются знания в каждой из этих областей.
 > 
@@ -114,7 +114,7 @@ ms.locfileid: "34611312"
 9. Обратите внимание на параметры приложения для конечной точки и всех главных ключей Azure Cosmos DB.
 
     ![Снимок экрана с параметрами приложения](./media/create-website/TemplateDeployment10.png)  
-10. Вы можете продолжить знакомство с порталом Azure либо воспользоваться одним из [примеров](http://go.microsoft.com/fwlink/?LinkID=402386) Azure Cosmos DB для создания собственного приложения Azure Cosmos DB.
+10. Вы можете продолжить знакомство с порталом Azure либо воспользоваться одним из [примеров](https://go.microsoft.com/fwlink/?LinkID=402386) Azure Cosmos DB для создания собственного приложения Azure Cosmos DB.
 
 <a name="NextSteps"></a>
 
@@ -122,14 +122,14 @@ ms.locfileid: "34611312"
 Поздравляем! Мы выполнили развертывание Azure Cosmos DB, веб-приложения службы приложений и примера веб-приложения с использованием шаблонов Azure Resource Manager.
 
 * Дополнительные сведения о базе данных Azure Cosmos DB см. [здесь](http://azure.com/docdb).
-* Дополнительные сведения о веб-приложениях службы приложений Azure см. [здесь](http://go.microsoft.com/fwlink/?LinkId=325362).
+* Дополнительные сведения о веб-приложениях службы приложений Azure см. [здесь](https://go.microsoft.com/fwlink/?LinkId=325362).
 * Дополнительные сведения о шаблонах Azure Resource Manager см. [здесь](https://msdn.microsoft.com/library/azure/dn790549.aspx).
 
 ## <a name="whats-changed"></a>Изменения
-* Руководство по переходу от веб-сайтов к службе приложений см. в статье [Служба приложений Azure и существующие службы Azure](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Руководство по переходу от веб-сайтов к службе приложений см. в статье [Служба приложений Azure и существующие службы Azure](https://go.microsoft.com/fwlink/?LinkId=529714).
 
 > [!NOTE]
-> Чтобы приступить к работе со службой приложений Azure до создания учетной записи Azure, перейдите к разделу [Пробное использование службы приложений](http://go.microsoft.com/fwlink/?LinkId=523751), где вы можете быстро создать кратковременное веб-приложение начального уровня в службе приложений. Никаких кредитных карт и обязательств.
+> Чтобы приступить к работе со службой приложений Azure до создания учетной записи Azure, перейдите к разделу [Пробное использование службы приложений](https://go.microsoft.com/fwlink/?LinkId=523751), где вы можете быстро создать кратковременное веб-приложение начального уровня в службе приложений. Никаких кредитных карт и обязательств.
 > 
 > 
 

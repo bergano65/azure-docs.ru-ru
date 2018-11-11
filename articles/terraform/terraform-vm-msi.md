@@ -9,12 +9,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 3/12/2018
-ms.openlocfilehash: 1ec6228993c516ce2974c64bfa5b6dcdf63e7f91
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: a162d0c19bef28e6e4566d39c2dc3b82a87a4aa9
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49343832"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51242098"
 ---
 # <a name="use-an-azure-marketplace-image-to-create-a-terraform-linux-virtual-machine-with-managed-identities-for-azure-resources"></a>Использование образа Azure Marketplace для создания виртуальной машины Terraform Linux с управляемым удостоверением для ресурсов Azure
 
@@ -97,9 +97,9 @@ ms.locfileid: "49343832"
 В этой статье вы узнали, как настроить виртуальную машину Terraform Linux в Azure. Ниже приведены ресурсы, содержащие дополнительные сведения о Terraform в Azure. 
 
  [Terraform в документации по Azure](https://docs.microsoft.com/azure/terraform/)  
- [Документация по поставщику для Terraform Azure](http://aka.ms/terraform)  
- [Документация по разработке поставщика Terraform Azure](http://aka.ms/tfgit)  
- [Модули Terraform Azure](http://aka.ms/tfmodules)
+ [Документация по поставщику для Terraform Azure](https://aka.ms/terraform)  
+ [Документация по разработке поставщика Terraform Azure](https://aka.ms/tfgit)  
+ [Модули Terraform Azure](https://aka.ms/tfmodules)
  
 
 

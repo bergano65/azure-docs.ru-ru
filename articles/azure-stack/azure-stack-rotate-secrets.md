@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 09/06/2018
 ms.author: mabrigg
 ms.reviewer: ppacent
-ms.openlocfilehash: 418b23f0783341ff7e5aaf7e2bbb2e869eb7dc45
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 5d2f4fc77d5849dc2be80ada9610098c9a381f92
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49466160"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51244106"
 ---
 # <a name="rotate-secrets-in-azure-stack"></a>Смена секретов в Azure Stack
 
@@ -92,7 +92,7 @@ Azure Stack поддерживает смену секретов с помощь
 5.  Сохраните резервную копию в сертификаты, используемые для смены, в защищенном расположении. Если смена выполняется, а затем завершается со сбоем, замените сертификаты в общей папке резервными копиями перед повторным запуском смены. Обратите внимание, что резервные копии необходимо сохранить в безопасном расположении.
 6.  Создайте общую папку, к которой можно получить доступ из виртуальных машин ERCS. Общая папка должна быть доступна для чтения и записи для удостоверения **CloudAdmin**.
 7.  Откройте консоль интегрированной среды сценариев PowerShell на компьютере с доступом к общей папке. Перейдите к общей папке. 
-8.  Запустите файл **[CertDirectoryMaker.ps1](http://www.aka.ms/azssecretrotationhelper)**, чтобы создать требуемые каталоги для внешних сертификатов.
+8.  Запустите файл **[CertDirectoryMaker.ps1](https://www.aka.ms/azssecretrotationhelper)**, чтобы создать требуемые каталоги для внешних сертификатов.
 
 ## <a name="rotating-external-and-internal-secrets"></a>Смена внешних и внутренних секретов
 

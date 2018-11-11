@@ -12,12 +12,12 @@ ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
 ms.date: 10/17/2018
-ms.openlocfilehash: 31f61a1d6dee19ada60a1024a235f6329d7d5ca0
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: 661fd36b4451238f488bff1db60a901a8dabd5aa
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49377820"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51242166"
 ---
 # <a name="faq-about-azure-sql-hyperscale-databases"></a>Часто задаваемые вопросы о базах данных SQL Azure уровня "Гипермасштабирование"
 
@@ -253,7 +253,7 @@ SQL Server 2005. Дополнительные сведения см. в разд
 
 ### <a name="what-slas-are-provided-for-a-hyperscale-database"></a>Какие Соглашения об уровне обслуживания поддерживаются в базах данных уровня "Гипермасштабирование"
 
-В целом Соглашения об уровне обслуживания не предоставляется в общедоступной предварительной версии. Тем не менее уровень "Гипермасштабирование" обеспечивает тот же уровень высокой доступности для текущих предложений баз данных SQL. Просмотрите страницу [Соглашений об уровне обслуживания](http://azure.microsoft.com/support/legal/sla/).
+В целом Соглашения об уровне обслуживания не предоставляется в общедоступной предварительной версии. Тем не менее уровень "Гипермасштабирование" обеспечивает тот же уровень высокой доступности для текущих предложений баз данных SQL. Просмотрите страницу [Соглашений об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/).
 
 ### <a name="are-the-database-backups-managed-for-me-by-the-azure-sql-database-service"></a>Управляет ли резервными копиями базы данных служба Базы данных SQL Azure
 

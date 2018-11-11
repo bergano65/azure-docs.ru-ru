@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/08/2017
 ms.author: kumud
-ms.openlocfilehash: 35c3027f2b592f6b24075005829ae9376a7fca82
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 28ea626adf87ad9f115b5acc5452dfc91ad833c5
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49987041"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51245015"
 ---
 # <a name="add-disable-enable-or-delete-endpoints"></a>Добавление, отключение, включение и удаление конечных точек
 
@@ -80,5 +80,5 @@ ms.locfileid: "49987041"
 * [Настройка методов маршрутизации](traffic-manager-configure-routing-method.md)
 * [Устранение неполадок, связанных со сбоем диспетчера трафика](traffic-manager-troubleshooting-degraded.md)
 * [Рекомендации по безопасности для диспетчера трафика](traffic-manager-performance-considerations.md)
-* [Операции с диспетчером трафика (справочник по REST API)](http://go.microsoft.com/fwlink/p/?LinkID=313584)
+* [Операции с диспетчером трафика (справочник по REST API)](https://go.microsoft.com/fwlink/p/?LinkID=313584)
 

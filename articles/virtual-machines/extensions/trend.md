@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/20/2018
 ms.author: roiyz
-ms.openlocfilehash: 134105ee2446f3c7bf0f19e2f9611597ee9bedfe
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: ddb999c252f0802ef57942de694340ae29f2d8ba
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47451958"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51240364"
 ---
 # <a name="how-to-install-and-configure-trend-micro-deep-security-as-a-service-on-a-windows-vm"></a>Установка и настройка Trend Micro Deep Security как услуги на ВМ Windows
 [!INCLUDE [virtual-machines-extensions-deprecation-statement](../../../includes/virtual-machines-extensions-deprecation-statement.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "47451958"
 
 На виртуальной машине, созданной с помощью портала Azure, Azure CLI или PowerShell, может не быть агента виртуальной машины. На существующей виртуальной машине без агента виртуальной машины необходимо сначала скачать и установить этот агент. В данной статье рассматриваются обе ситуации.
 
-При наличии действующей подписки от Trend Micro для локального решения можно использовать ее для защиты виртуальных машин Azure. Если у вас еще нет подписки, можно зарегистрироваться для получения пробной подписки. Дополнительные сведения об этом решении см. в [записи блога Trend Micro, посвященной расширению агента виртуальных машин Microsoft Azure для Deep Security](http://go.microsoft.com/fwlink/p/?LinkId=403945).
+При наличии действующей подписки от Trend Micro для локального решения можно использовать ее для защиты виртуальных машин Azure. Если у вас еще нет подписки, можно зарегистрироваться для получения пробной подписки. Дополнительные сведения об этом решении см. в [записи блога Trend Micro, посвященной расширению агента виртуальных машин Microsoft Azure для Deep Security](https://go.microsoft.com/fwlink/p/?LinkId=403945).
 
 ## <a name="install-the-deep-security-agent-on-a-new-vm"></a>Установка агента Deep Security Agent на новой виртуальной машине
 
@@ -67,7 +67,7 @@ ms.locfileid: "47451958"
 
 Если вы не знаете имя облачной службы и виртуальной машины, запустите командлет **Get-AzureVM** , чтобы отобразить эти сведения для всех виртуальных машин в вашей текущей подписке.
 
-Если команда **write-host** возвращает значение **True**, агент виртуальных машин установлен. Если она возвращает значение **False**, см. инструкции и ссылку для скачивания [во второй части записи блога Azure, посвященной агенту и расширениям виртуальных машин](http://go.microsoft.com/fwlink/p/?LinkId=403947).
+Если команда **write-host** возвращает значение **True**, агент виртуальных машин установлен. Если она возвращает значение **False**, см. инструкции и ссылку для скачивания [во второй части записи блога Azure, посвященной агенту и расширениям виртуальных машин](https://go.microsoft.com/fwlink/p/?LinkId=403947).
 
 Если агент ВМ установлен, выполните следующие команды.
 
@@ -78,9 +78,9 @@ ms.locfileid: "47451958"
 ## <a name="next-steps"></a>Дополнительная информация
 После установки агента потребуется несколько минут для его запуска. Затем необходимо активировать Deep Security на виртуальной машине, чтобы можно было осуществлять управление с помощью Deep Security Manager. Дополнительные указания см. в следующих статьях:
 
-* статья Trend об этом решении, [Мгновенное включение облачной защиты для Microsoft Azure](http://go.microsoft.com/fwlink/?LinkId=404101)
-* [пример сценария Windows PowerShell](http://go.microsoft.com/fwlink/?LinkId=404100) для настройки виртуальной машины;
-* [инструкции](http://go.microsoft.com/fwlink/?LinkId=404099) для данного образца скрипта.
+* статья Trend об этом решении, [Мгновенное включение облачной защиты для Microsoft Azure](https://go.microsoft.com/fwlink/?LinkId=404101)
+* [пример сценария Windows PowerShell](https://go.microsoft.com/fwlink/?LinkId=404100) для настройки виртуальной машины;
+* [инструкции](https://go.microsoft.com/fwlink/?LinkId=404099) для данного образца скрипта.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 [Как войти в виртуальную машину под управлением Windows Server]

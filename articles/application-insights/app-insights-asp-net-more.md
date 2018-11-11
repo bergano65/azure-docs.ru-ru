@@ -13,20 +13,20 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/03/2017
 ms.author: mbullwin
-ms.openlocfilehash: 2f03083367de4e818bdc953ab76c28ff687f0a48
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: a1244076efe1c920a23f29de9d25ab6845747fe4
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35294342"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51245857"
 ---
 # <a name="more-telemetry-from-application-insights"></a>Дополнительные данные телеметрии из Application Insights
 После [добавления Application Insights в код ASP.NET](app-insights-asp-net.md)можно сделать еще кое-что, чтобы получать дополнительные данные телеметрии. 
 
 | Действие | Что вы получаете|
 |---|---|
-|(Серверы IIS) [Установите монитор состояния](http://go.microsoft.com/fwlink/?LinkId=506648) на каждом компьютере-сервере.<br/>(Веб-приложения Azure) На панели управления Azure веб-приложения откройте колонку Application Insights.| [**Счетчики производительности**](app-insights-performance-counters.md).<br/>[**Исключения**](app-insights-asp-net-exceptions.md) — подробные трассировки стека.<br/>[**Зависимости**](app-insights-asp-net-dependencies.md).|
-|[Добавьте фрагмент JavaScript в свои веб-страницы](app-insights-javascript.md)|[Производительность страниц](app-insights-web-track-usage.md), исключения браузера, производительность вызовов AJAX. Пользовательская телеметрия на стороне клиента.|
+|(Серверы IIS) [Установите монитор состояния](https://go.microsoft.com/fwlink/?LinkId=506648) на каждом компьютере-сервере.<br/>(Веб-приложения Azure) На панели управления Azure веб-приложения откройте колонку Application Insights.| [**Счетчики производительности**](app-insights-performance-counters.md).<br/>[**Исключения**](app-insights-asp-net-exceptions.md) — подробные трассировки стека.<br/>[**Зависимости**](app-insights-asp-net-dependencies.md).|
+|[Добавьте фрагмент JavaScript в свои веб-страницы](app-insights-javascript.md)|[Производительность страниц](app-insights-usage-overview.md), исключения браузера, производительность вызовов AJAX. Пользовательская телеметрия на стороне клиента.|
 |[Создайте веб-тесты на доступность](app-insights-monitor-web-app-availability.md)|Получение оповещений, когда сайт становится недоступным|
 |Убедитесь, что MSBuild создает [файл BuildInfo.config](https://msdn.microsoft.com/library/dn449058.aspx)|[Создание заметок к диаграммам метрик](https://blogs.msdn.microsoft.com/visualstudioalm/2013/11/14/implementing-deployment-markers-in-application-insights/)
 |[Напишите собственные события и систему телеметрии](app-insights-api-custom-events-metrics.md)|Учет бизнес-событий и метрик, отслеживание подробных сведений об использовании и многое другое|

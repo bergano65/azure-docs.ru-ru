@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/28/2017
 ms.author: juliako
-ms.openlocfilehash: 1d1506e26beec3cc48a904ddeb9bbb4e7656a08e
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: ae0ff36c7e83120a9571e0f87788c25193027616
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33783753"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51240143"
 ---
 # <a name="deliver-content-to-customers"></a>Доставка содержимого клиентам
 При доставке содержимого клиентам в виде потоковой трансляции или видео по запросу ваша задача — доставлять видео высокого качества для различных устройств в разных сетевых условиях.
@@ -70,9 +70,9 @@ ms.locfileid: "33783753"
 > 
 > 
 
-Чтобы обновить срок действия указателя, используйте [REST API](https://docs.microsoft.com/rest/api/media/operations/locator#update_a_locator) или [.NET API](http://go.microsoft.com/fwlink/?LinkID=533259). Обратите внимание, что при обновлении срока действия указателя SAS изменяется URL-адрес.
+Чтобы обновить срок действия указателя, используйте [REST API](https://docs.microsoft.com/rest/api/media/operations/locator#update_a_locator) или [.NET API](https://go.microsoft.com/fwlink/?LinkID=533259). Обратите внимание, что при обновлении срока действия указателя SAS изменяется URL-адрес.
 
-Указатели не предназначены для управления доступом на уровне пользователей. Вы можете предоставлять различные права доступа отдельным пользователям, используя решения для управления цифровыми правами. Дополнительные сведения см. в разделе [Службы мультимедиа — потоковая передача по запросу](http://msdn.microsoft.com/library/azure/dn282272.aspx).
+Указатели не предназначены для управления доступом на уровне пользователей. Вы можете предоставлять различные права доступа отдельным пользователям, используя решения для управления цифровыми правами. Дополнительные сведения см. в разделе [Службы мультимедиа — потоковая передача по запросу](https://msdn.microsoft.com/library/azure/dn282272.aspx).
 
 При создании указателя может возникать 30-секундная задержка из-за необходимых процессов сохранения и распространения в службе хранилища Azure.
 
@@ -126,7 +126,7 @@ http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f
     http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=fmp4-v20)
 
 ## <a name="progressive-download"></a>Прогрессивное скачивание
-Поэтапная загрузка позволяет начать воспроизведение мультимедиа до окончания скачивания всего файла. ISM\* (ISMV-, ISMA-, ISMT- и ISMC)-файлы не могут быть загружены поэтапно.
+Поэтапная загрузка позволяет начать воспроизведение мультимедиа до окончания скачивания всего файла. ISMV-, ISMA-, ISMT- и ISMC-файлы не могут быть загружены поэтапно.
 
 Для последовательной загрузки содержимого используйте тип указателя OnDemandOrigin. В следующем примере показан URL-адрес, основанный на типе указателя OnDemandOrigin.
 

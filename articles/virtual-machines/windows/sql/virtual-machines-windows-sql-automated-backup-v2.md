@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/03/2018
 ms.author: jroth
-ms.openlocfilehash: 4619c26e34c90f58702ad286f76a999f83f49cc4
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 664a0036b8aa753de9636688d22afff0163f031f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33894515"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51246826"
 ---
 # <a name="automated-backup-v2-for-azure-virtual-machines-resource-manager"></a>Автоматическая архивация версии 2 для виртуальных машин Azure (Resource Manager)
 
@@ -31,7 +31,7 @@ ms.locfileid: "33894515"
 
 [!INCLUDE [learn-about-deployment-models](../../../../includes/learn-about-deployment-models-rm-include.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для использования автоматической архивации версии 2 необходимо выполнить следующие предварительные требования.
 
 **Операционная система**
@@ -151,7 +151,7 @@ ms.locfileid: "33894515"
 
 Для настройки автоматической архивации версии 2 можно также использовать PowerShell. Предварительно необходимо выполнить следующее.
 
-- [Скачайте и установите последнюю версию Azure PowerShell](http://aka.ms/webpi-azps).
+- [Скачайте и установите последнюю версию Azure PowerShell](https://aka.ms/webpi-azps).
 - Откройте сеанс Windows PowerShell и свяжите его с учетной записью, выполнив команду **Connect-AzureRmAccount**.
 
 ### <a name="install-the-sql-iaas-extension"></a>Установка расширения IaaS для SQL Server

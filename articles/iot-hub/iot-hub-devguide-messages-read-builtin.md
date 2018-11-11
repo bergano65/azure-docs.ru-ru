@@ -8,16 +8,16 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/18/2018
 ms.author: dobett
-ms.openlocfilehash: e43d00fde0f76efa4398865757c44d94592b8291
-ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
+ms.openlocfilehash: 02ea4b94f8d1442360bebb36fdbba13d973f8555
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47585517"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51242421"
 ---
 # <a name="read-device-to-cloud-messages-from-the-built-in-endpoint"></a>Чтение сообщений, пересылаемых с устройства в облако, из встроенной конечной точки
 
-По умолчанию сообщения направляются во встроенную конечную точку, доступную для службы (**/messages/events**), которая совместима с [Центрами событий](http://azure.microsoft.com/documentation/services/event-hubs/
+По умолчанию сообщения направляются во встроенную конечную точку, доступную для службы (**/messages/events**), которая совместима с [Центрами событий](https://azure.microsoft.com/documentation/services/event-hubs/
 ). Сейчас эта конечная точка предоставляется только по протоколу [AMQP](https://www.amqp.org/) на порте 5671. Центр Интернета вещей позволяет управлять встроенной конечной точкой обмена сообщениями **messages/events**, совместимой с концентраторами событий, с помощью приведенных ниже свойств.
 
 | Свойство            | ОПИСАНИЕ |
@@ -65,7 +65,7 @@ ms.locfileid: "47585517"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Дополнительные сведения см. в руководстве [Конечные точки Центра Интернета вещей](iot-hub-devguide-endpoints.md).
+* Дополнительные сведения о конечных точках Центра Интернета вещей см. в статье [Руководство. Конечные точки Центра Интернета вещей](iot-hub-devguide-endpoints.md).
 
 * В [кратких руководствах](quickstart-send-telemetry-node.md) рассказывается, как отправлять сообщения с имитированных устройств в облако и читать их из встроенной конечной точки. 
 

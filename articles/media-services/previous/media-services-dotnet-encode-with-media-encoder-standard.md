@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: juliako;anilmur
-ms.openlocfilehash: 7b0de5e149b8b64252f90a01f66642c15fb25ddc
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: 426ebb90a0d7716b14664f874db259a0cca2aa7e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50247798"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51241095"
 ---
 # <a name="encode-an-asset-with-media-encoder-standard-using-net"></a>Кодирование ресурса-контейнера с помощью Media Encoder Standard и .NET 
 Задания кодирования — одни из самых распространенных операций обработки в службах мультимедиа. Они создаются для преобразования файлов мультимедиа из одного формата кодирования в другой. При кодировании можно использовать встроенный кодировщик служб мультимедиа. Также можно использовать кодировщик, предоставленный партнером служб мультимедиа. Кодировщики сторонних производителей доступны в Azure Marketplace. 
 
-В этой статье показано, как использовать .NET для кодирования ресурсов с помощью Media Encoder Standard (MES). Media Encoder Standard настраивается с помощью одной из предустановок кодировщика, описанных [здесь](http://go.microsoft.com/fwlink/?linkid=618336&clcid=0x409).
+В этой статье показано, как использовать .NET для кодирования ресурсов с помощью Media Encoder Standard (MES). Media Encoder Standard настраивается с помощью одной из предустановок кодировщика, описанных [здесь](https://go.microsoft.com/fwlink/?linkid=618336&clcid=0x409).
 
 Мы советуем всегда кодировать исходные файлы в набор MP4-файлов с переменной скоростью, а затем преобразовывать его в нужный формат, используя [динамическую упаковку](media-services-dynamic-packaging-overview.md). 
 
@@ -39,7 +39,7 @@ ms.locfileid: "50247798"
 [Форматы и кодеки](media-services-media-encoder-standard-formats.md)
 
 ### <a name="mes-presets"></a>Предустановки стандартного кодировщика мультимедиа
-Media Encoder Standard настраивается с помощью одной из предустановок кодировщика, описанных [здесь](http://go.microsoft.com/fwlink/?linkid=618336&clcid=0x409).
+Media Encoder Standard настраивается с помощью одной из предустановок кодировщика, описанных [здесь](https://go.microsoft.com/fwlink/?linkid=618336&clcid=0x409).
 
 ### <a name="input-and-output-metadata"></a>Входные и выходные метаданные
 Кодируя входной актив (или активы) с использованием MES, вы получаете выходной актив после успешного выполнения задачи кодирования. Выходной актив содержит видео- и аудиофайлы, эскизы, манифест и т. д., в зависимости от используемой предустановки кодирования.

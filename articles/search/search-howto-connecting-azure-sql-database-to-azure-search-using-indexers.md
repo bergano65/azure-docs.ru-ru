@@ -9,12 +9,12 @@ services: search
 ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
-ms.openlocfilehash: 1c498bb857b717682f943af96b222d9712b5d389
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: ba2ce12fcfad14b0910144b1a95efd44be54811f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49409226"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51245653"
 ---
 # <a name="connecting-azure-sql-database-to-azure-search-using-indexers"></a>Подключение базы данных SQL Azure к Поиску Azure с помощью индексаторов
 
@@ -140,7 +140,7 @@ ms.locfileid: "49409226"
     }
 
 Журнал выполнения включает до 50 записей о недавно завершенных запусках, которые сортируются в обратном хронологическом порядке (то есть в ответе первым отображается последний запуск).
-Дополнительные сведения об ответе см. [здесь](http://go.microsoft.com/fwlink/p/?LinkId=528198).
+Дополнительные сведения об ответе см. [здесь](https://go.microsoft.com/fwlink/p/?LinkId=528198).
 
 ## <a name="run-indexers-on-a-schedule"></a>Запуск индексаторов по расписанию
 Вы также можете организовать запуск индикатора по расписанию. Для этого добавьте свойство **schedule** при создании или обновлении индексатора. В примере ниже показан PUT- запрос для обновления индексатора:

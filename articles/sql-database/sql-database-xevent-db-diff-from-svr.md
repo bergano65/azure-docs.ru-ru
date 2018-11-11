@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: ''
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 8852fc75658298a2c6887d8fef154d5a0b59affd
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 482faaea7089e095da13a2bae5f5937e20d50616
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47159914"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51246758"
 ---
 # <a name="extended-events-in-sql-database"></a>Расширенные события в Базе данных SQL
 [!INCLUDE [sql-database-xevents-selectors-1-include](../../includes/sql-database-xevents-selectors-1-include.md)]
@@ -32,15 +32,15 @@ ms.locfileid: "47159914"
 
 Дополнительные сведения о расширенных событиях для базы данных SQL Azure и Microsoft SQL Server доступны в следующих разделах.
 
-- [Quick Start: Extended events in SQL Server](http://msdn.microsoft.com/library/mt733217.aspx)
-- [Расширенные события](http://msdn.microsoft.com/library/bb630282.aspx)
+- [Quick Start: Extended events in SQL Server](https://msdn.microsoft.com/library/mt733217.aspx)
+- [Расширенные события](https://msdn.microsoft.com/library/bb630282.aspx)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 В данной статье предполагается, чтобы вы уже ознакомились со следующими компонентами:
 
 - [Служба Базы данных SQL Azure](https://azure.microsoft.com/services/sql-database/);
-- [Расширенные события](http://msdn.microsoft.com/library/bb630282.aspx) в Microsoft SQL Server.
+- [Расширенные события](https://msdn.microsoft.com/library/bb630282.aspx) в Microsoft SQL Server.
 
 - Большинство документации о расширенных событиях относится и к SQL Server, и к Базе данных SQL.
 
@@ -69,10 +69,10 @@ ms.locfileid: "47159914"
 ## <a name="transact-sql-differences"></a>Отличия Transact-SQL
 
 
-- При выполнении команды [CREATE EVENT SESSION](http://msdn.microsoft.com/library/bb677289.aspx) на сервере SQL Server используется предложение **ON SERVER** . В Базе данных SQL вместо него используется предложение **ON DATABASE** .
+- При выполнении команды [CREATE EVENT SESSION](https://msdn.microsoft.com/library/bb677289.aspx) на сервере SQL Server используется предложение **ON SERVER** . В Базе данных SQL вместо него используется предложение **ON DATABASE** .
 
 
-- Предложение **ON DATABASE** применяется также в командах Transact-SQL [ALTER EVENT SESSION](http://msdn.microsoft.com/library/bb630368.aspx) и [DROP EVENT SESSION](http://msdn.microsoft.com/library/bb630257.aspx).
+- Предложение **ON DATABASE** применяется также в командах Transact-SQL [ALTER EVENT SESSION](https://msdn.microsoft.com/library/bb630368.aspx) и [DROP EVENT SESSION](https://msdn.microsoft.com/library/bb630257.aspx).
 
 
 - Мы рекомендуем включать параметр сеанса событий **STARTUP_STATE = ON** в операторы **CREATE EVENT SESSION** и **ALTER EVENT SESSION**.
@@ -80,7 +80,7 @@ ms.locfileid: "47159914"
 
 ## <a name="new-catalog-views"></a>Новые представления каталога
 
-Функцию расширенных событий поддерживают несколько [представлений каталога](http://msdn.microsoft.com/library/ms174365.aspx). Представления каталога сообщают *метаданные или определения* сеансов событий, созданных пользователями в текущей базе данных. Представления не возвращают сведения об экземплярах активных сеансов событий.
+Функцию расширенных событий поддерживают несколько [представлений каталога](https://msdn.microsoft.com/library/ms174365.aspx). Представления каталога сообщают *метаданные или определения* сеансов событий, созданных пользователями в текущей базе данных. Представления не возвращают сведения об экземплярах активных сеансов событий.
 
 | Имя<br/>представления каталога | ОПИСАНИЕ |
 |:--- |:--- |
@@ -92,9 +92,9 @@ ms.locfileid: "47159914"
 
 В Microsoft SQL Server аналогичные представления каталогов имеют имена, содержащие *.server\_* вместо *.database\_*. Шаблон имени выглядит как **sys.server_event_%**.
 
-## <a name="new-dynamic-management-views-dmvshttpmsdnmicrosoftcomlibraryms188754aspx"></a>Новые динамические административные представления [(DMV)](http://msdn.microsoft.com/library/ms188754.aspx)
+## <a name="new-dynamic-management-views-dmvshttpsmsdnmicrosoftcomlibraryms188754aspx"></a>Новые динамические административные представления [(DMV)](https://msdn.microsoft.com/library/ms188754.aspx)
 
-База данных SQL Azure включает [динамические административные представления (DMV)](http://msdn.microsoft.com/library/bb677293.aspx) , которые поддерживают расширенные события. DMV сообщают об *активных* сеансах событий.
+База данных SQL Azure включает [динамические административные представления (DMV)](https://msdn.microsoft.com/library/bb677293.aspx) , которые поддерживают расширенные события. DMV сообщают об *активных* сеансах событий.
 
 | Имя DMV | ОПИСАНИЕ |
 |:--- |:--- |
@@ -149,11 +149,11 @@ SELECT
 
 Результаты сеансов событий в Базе данных SQL можно фиксировать в следующих целевых объектах:
 
-- [Целевой объект "Кольцевой буфер"](http://msdn.microsoft.com/library/ff878182.aspx) — сохраняет данные события в памяти на недолгое время.
-- [Целевой объект "Счетчик событий"](http://msdn.microsoft.com/library/ff878025.aspx) — подсчитывает все события, произошедшие за время сеанса расширенных событий.
-- [Целевой объект "Файл событий"](http://msdn.microsoft.com/library/ff878115.aspx) — записывает все буферы в контейнер хранилища Azure.
+- [Целевой объект "Кольцевой буфер"](https://msdn.microsoft.com/library/ff878182.aspx) — сохраняет данные события в памяти на недолгое время.
+- [Целевой объект "Счетчик событий"](https://msdn.microsoft.com/library/ff878025.aspx) — подсчитывает все события, произошедшие за время сеанса расширенных событий.
+- [Целевой объект "Файл событий"](https://msdn.microsoft.com/library/ff878115.aspx) — записывает все буферы в контейнер хранилища Azure.
 
-API [трассировки событий для Windows (ETW)](http://msdn.microsoft.com/library/ms751538.aspx) недоступен для расширенных событий в Базе данных SQL.
+API [трассировки событий для Windows (ETW)](https://msdn.microsoft.com/library/ms751538.aspx) недоступен для расширенных событий в Базе данных SQL.
 
 ## <a name="restrictions"></a>Ограничения
 
@@ -195,8 +195,8 @@ API [трассировки событий для Windows (ETW)](http://msdn.mic
 - [Командлеты службы хранилища Azure](https://docs.microsoft.com/powershell/module/Azure.Storage)
 - [Использование Azure PowerShell с хранилищем Azure](../storage/common/storage-powershell-guide-full.md) — статья содержит полную информацию о PowerShell и службе хранилища Azure.
 - [Использование хранилища BLOB-объектов из .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md)
-- [CREATE CREDENTIAL (Transact-SQL)](http://msdn.microsoft.com/library/ms189522.aspx)
-- [CREATE EVENT SESSION (Transact-SQL)](http://msdn.microsoft.com/library/bb677289.aspx)
+- [CREATE CREDENTIAL (Transact-SQL)](https://msdn.microsoft.com/library/ms189522.aspx)
+- [CREATE EVENT SESSION (Transact-SQL)](https://msdn.microsoft.com/library/bb677289.aspx)
 - [Публикации в блоге Джонтана Кехайаса (Jonathan Kehayias) о расширенных событий в Microsoft SQL Server](http://www.sqlskills.com/blogs/jonathan/category/extended-events/)
 
 
@@ -209,6 +209,6 @@ API [трассировки событий для Windows (ETW)](http://msdn.mic
 <!--
 ('lock_acquired' event.)
 
-- Code sample for SQL Server: [Determine Which Queries Are Holding Locks](http://msdn.microsoft.com/library/bb677357.aspx)
-- Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/library/bb630355.aspx)
+- Code sample for SQL Server: [Determine Which Queries Are Holding Locks](https://msdn.microsoft.com/library/bb677357.aspx)
+- Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](https://msdn.microsoft.com/library/bb630355.aspx)
 -->

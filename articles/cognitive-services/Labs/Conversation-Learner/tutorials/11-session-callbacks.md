@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 0f51b232470e4e4da3f25d40d025dd3b09dd1204
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 73fb2a3f10476550bbe6bd20c387a1cc2a7727d8
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39171921"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51246486"
 ---
 # <a name="how-to-use-session-callbacks-with-a-conversation-learner-model"></a>Использование обратных вызовов сеансов в приложении Conversation Learner
 
@@ -23,7 +23,7 @@ ms.locfileid: "39171921"
 
 ## <a name="video"></a>Видео
 
-[![Предварительная версия руководства 11](http://aka.ms/cl-tutorial-11-preview)](http://aka.ms/blis-tutorial-11)
+[![Предварительная версия руководства 11](https://aka.ms/cl-tutorial-11-preview)](https://aka.ms/blis-tutorial-11)
 
 ## <a name="requirements"></a>Требования
 Для работы с этим руководством требуется запущенный бот `tutorialSessionCallbacks`.

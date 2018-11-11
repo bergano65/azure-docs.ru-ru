@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/30/2017
 ms.author: maghan
-ms.openlocfilehash: a41dcd5f2c93e5c1279e1c7511e10e6d72574b3b
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: 2b2f5a441209b76f4c90c1a4682215d388b2d53a
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37098752"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51242897"
 ---
 # <a name="sql-server-business-intelligence-in-azure-virtual-machines"></a>Бизнес-аналитика SQL Server на виртуальных машинах Azure
 > [!IMPORTANT] 
@@ -76,7 +76,7 @@ ms.locfileid: "37098752"
 * SQL Server 2012 SP3 Enterprise
 * SQL Server 2012 SP3 Standard
 
-| Компонент бизнес-аналитики SQL Server | Установлен в образе коллекции | Заметки |
+| Компонент бизнес-аналитики SQL Server | Установлен в образе коллекции | Примечания |
 | --- | --- | --- |
 | **Собственный режим служб Reporting Services** |Yes |Установлен, но требует настройки, включая URL-адрес диспетчера отчетов. См. раздел [Настройка служб Reporting Services](#configure-reporting-services). |
 | **Режим SharePoint служб Reporting Services** |Нет  |Образ коллекции виртуальных машин Microsoft Azure не включает в себя SharePoint или файлы установки SharePoint. <sup>1</sup> |
@@ -336,7 +336,7 @@ ms.locfileid: "37098752"
 ![порты, которые необходимо открыть для приложений бизнес-аналитики в виртуальных машинах Azure](./media/virtual-machines-windows-classic-ps-sql-bi/IC654385.gif)
 
 ## <a name="resources"></a>Ресурсы
-* Просмотрите политику поддержки серверного программного обеспечения Майкрософт, применяемую в среде виртуальных машин Azure. Ниже приведены сведения о поддержке таких компонентов, как BitLocker, отказоустойчивая кластеризация и балансировка сетевой нагрузки. [Поддержка серверного программного обеспечения Майкрософт для виртуальных машин Azure](http://support.microsoft.com/kb/2721672).
+* Просмотрите политику поддержки серверного программного обеспечения Майкрософт, применяемую в среде виртуальных машин Azure. Ниже приведены сведения о поддержке таких компонентов, как BitLocker, отказоустойчивая кластеризация и балансировка сетевой нагрузки. [Поддержка серверного программного обеспечения Майкрософт для виртуальных машин Azure](https://support.microsoft.com/kb/2721672).
 * [Обзор. SQL Server на виртуальных машинах Azure](../sql/virtual-machines-windows-sql-server-iaas-overview.md)
 * [Виртуальные машины](https://azure.microsoft.com/documentation/services/virtual-machines/)
 * [Подготовка виртуальной машины SQL Server в Azure](../sql/virtual-machines-windows-portal-sql-server-provision.md)

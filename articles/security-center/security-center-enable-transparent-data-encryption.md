@@ -3,7 +3,7 @@ title: Включение прозрачного шифрования данны
 description: В этом документе объясняется, как выполнить рекомендацию центра безопасности Azure по **включению прозрачного шифрования данных**.
 services: security-center
 documentationcenter: na
-author: TerryLanfear
+author: rkarlin
 manager: MBaldwin
 editor: ''
 ms.assetid: e4be8a0e-2118-4ee9-a266-69e52d9f7f8e
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/02/2017
-ms.author: terrylan
-ms.openlocfilehash: 13e47de8ff25451f7d4185927477d524d519ce2a
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.date: 10/28/2018
+ms.author: rkarlin
+ms.openlocfilehash: 1f49930449c5ca342159f2a4eca3d7167dfed925
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44299565"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51244650"
 ---
 # <a name="enable-transparent-data-encryption-in-azure-security-center"></a>Включение прозрачного шифрования данных в центре безопасности Azure
 Центр безопасности Azure порекомендует включить прозрачное шифрование данных (TDE) для баз данных SQL, если оно еще не включено. Прозрачное шифрование данных обеспечивает защиту данных и помогает соблюдать нормативные требования за счет шифрования базы данных, связанных с ней резервных копий и файлов журнала транзакций в местах хранения без необходимости вносить изменения в приложение. Чтобы узнать больше, ознакомьтесь с разделом [Прозрачное шифрование данных в Базе данных SQL Azure](https://msdn.microsoft.com/library/dn948096).
@@ -57,7 +57,7 @@ ms.locfileid: "44299565"
 * [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md) — узнайте, как управлять оповещениями системы безопасности и реагировать на них.
 * [Мониторинг решений партнеров с помощью центра безопасности Azure](security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
 * [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md) — часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](http://blogs.msdn.com/b/azuresecurity/) — последние новости и информация об обеспечении безопасности в Azure.
+* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — последние новости и информация об обеспечении безопасности в Azure.
 
 <!--Image references-->
 [1]: ./media/security-center-enable-tde-on-sql-databases/enable-tde.png

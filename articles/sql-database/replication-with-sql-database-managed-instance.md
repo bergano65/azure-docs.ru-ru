@@ -12,12 +12,12 @@ ms.author: xiwu
 ms.reviewer: mathoma
 manager: craigg
 ms.date: 09/25/2018
-ms.openlocfilehash: 25d13ba53eb5a8b411a557b5eaf05d278faa3733
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: 3b979a9a7e93992ba593697fa9465fdadc1e58b9
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48869318"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51240398"
 ---
 # <a name="replication-with-sql-database-managed-instance"></a>Репликация с использованием Управляемого экземпляра Базы данных SQL
 
@@ -77,7 +77,7 @@ ms.locfileid: "48869318"
 ## <a name="configure-publishing-and-distribution-example"></a>Настройка примера публикации и распространения
 
 1. На портале [создайте Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-create-tutorial-portal.md).
-2. [Создайте учетную запись хранения Azure](http://docs.microsoft.com/azure/storage/common/storage-create-storage-account#create-a-storage-account) для рабочей папки.
+2. [Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account#create-a-storage-account) для рабочей папки.
 
    Обязательно скопируйте ключи к хранилищу данных. Дополнительные сведения см. в статье [Создание учетной записи хранения](../storage/common/storage-account-manage.md#access-keys
 ).
@@ -85,11 +85,11 @@ ms.locfileid: "48869318"
 
    В следующих сценариях замените `<Publishing_DB>` именем этой базы данных.
 
-4. Создайте пользователя базы данных с использованием аутентификации SQL для распространителя. Дополнительные сведения см. в разделе [Создание пользователей базы данных](http://docs.microsoft.com/azure/sql-database/sql-database-security-tutorial#creating-database-users). Установите надежный пароль.
+4. Создайте пользователя базы данных с использованием аутентификации SQL для распространителя. Дополнительные сведения см. в разделе [Создание пользователей базы данных](https://docs.microsoft.com/azure/sql-database/sql-database-security-tutorial#creating-database-users). Установите надежный пароль.
 
    В примерах сценариев ниже используйте `<SQL_USER>` и `<PASSWORD>` в качестве имени пользователя и пароля для этой учетной записи базы данных SQL Server.
 
-5. [Установите подключение к Управляемому экземпляру Базы данных SQL](http://docs.microsoft.com/azure/sql-database/sql-database-connect-query-ssms).
+5. [Установите подключение к Управляемому экземпляру Базы данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-connect-query-ssms).
 
 6. Выполните следующий запрос, чтобы добавить распространителя и базу данных распространителя.
 
@@ -197,4 +197,4 @@ ms.locfileid: "48869318"
 
 ## <a name="see-also"></a>См. также
 
-- [Общие сведения об Управляемом экземпляре](http://docs.microsoft.com/azure/sql-database/sql-database-managed-instance)
+- [Общие сведения об Управляемом экземпляре](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance)

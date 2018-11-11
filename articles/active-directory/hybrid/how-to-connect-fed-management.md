@@ -17,12 +17,12 @@ ms.date: 07/18/2017
 ms.component: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: 5a36c239e296d6f393c49932f1a369d8aae80b83
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: a9a7848069300d5f52d16585a55313643e02bc72
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46304683"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51244463"
 ---
 # <a name="manage-and-customize-active-directory-federation-services-by-using-azure-ad-connect"></a>Управление службами федерации Active Directory и их настройка с помощью Azure AD Connect
 В этой статье описывается управление службами федерации Active Directory (AD FS) и их настройка с помощью Azure Active Directory (Azure AD) Connect, а также рассматриваются другие стандартные задачи AD FS, которые может потребоваться выполнить для полной настройки фермы AD FS.
@@ -81,7 +81,7 @@ Azure AD Connect может проверить текущую работоспо
 
     ![Предупреждение об отсутствии обновления в версии 2012 R2](./media/how-to-connect-fed-management/kbwarning.png)
 
-    При обнаружении такой проблемы необходимо исправить конфигурацию, установив обязательное обновление [KB2919355](http://go.microsoft.com/fwlink/?LinkID=396590) и восстановив доверие с помощью действия [Восстановление доверия AAD и ADFS](#repairthetrust).
+    При обнаружении такой проблемы необходимо исправить конфигурацию, установив обязательное обновление [KB2919355](https://go.microsoft.com/fwlink/?LinkID=396590) и восстановив доверие с помощью действия [Восстановление доверия AAD и ADFS](#repairthetrust).
 
 > [!NOTE]
 > Дополнительные сведения об альтернативном имени пользователя и о его настройке вручную см. в статье [Configuring Alternate Login ID](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/operations/configuring-alternate-login-id) (Настройка альтернативного имени пользователя).

@@ -14,12 +14,12 @@ ms.topic: get-started-article
 ms.date: 09/28/2018
 ms.author: mabrigg
 ms.reviewer: xiaofmao
-ms.openlocfilehash: 35c15613192ac12a7d4c64cbe28f62200724d311
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: af7500d6bf12ef34e6919aa255185a87525310b3
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452281"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51240721"
 ---
 # <a name="manage-storage-accounts-in-azure-stack"></a>Управление учетными записями хранения в Azure Stack
 В этой статье приведены сведения об управлении учетными записями хранения, включая их поиск, восстановление и освобождение емкости хранилища в соответствии с бизнес-потребностями.
@@ -136,8 +136,8 @@ ms.locfileid: "47452281"
 **Чтобы освободить емкость с помощью PowerShell, сделайте следующее:**   
 
 1. Проверьте, установлена и настроена ли среда Azure PowerShell. Если нет, сделайте следующее: 
-   * Чтобы установить последнюю версию Azure PowerShell и связать ее с подпиской Azure, см. сведения в статье [Общие сведения об Azure PowerShell](http://azure.microsoft.com/documentation/articles/powershell-install-configure/).
-   Дополнительные сведения о командлетах Azure Resource Manager см. в статье [Управление ресурсами с помощью Azure PowerShell и Resource Manager](http://go.microsoft.com/fwlink/?LinkId=394767).
+   * Чтобы установить последнюю версию Azure PowerShell и связать ее с подпиской Azure, см. сведения в статье [Общие сведения об Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/).
+   Дополнительные сведения о командлетах Azure Resource Manager см. в статье [Управление ресурсами с помощью Azure PowerShell и Resource Manager](https://go.microsoft.com/fwlink/?LinkId=394767).
 2. Выполните следующие командлеты.
 
 > [!NOTE]  

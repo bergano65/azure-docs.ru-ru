@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 10/23/2018
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 1aeaff486ed9f7cb99ea0b95451fc765344847a1
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: 85873dc023e63b7cc9f5ba3ff87214c49ac16e34
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50086681"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51246741"
 ---
 # <a name="about-azure-migrate"></a>Сведения о службе "Миграция Azure"
 
@@ -30,7 +30,7 @@ ms.locfileid: "50086681"
 ## <a name="current-limitations"></a>Текущие ограничения
 
 - Переход на виртуальные машины Azure можно оценить только для локальных виртуальных машин VMware. Виртуальные машины VMware должны работать под управлением vCenter Server (версии 5.5, 6.0 или 6.5).
-- Если вы хотите оценить виртуальные машины Hyper-V и физические серверы, используйте [Планировщик развертывания Azure Site Recovery](http://aka.ms/asr-dp-hyperv-doc) для Hyper-V и наши [партнерские средства](https://azure.microsoft.com/migration/partners/) для физических компьютеров.
+- Если вы хотите оценить виртуальные машины Hyper-V и физические серверы, используйте [Планировщик развертывания Azure Site Recovery](https://aka.ms/asr-dp-hyperv-doc) для Hyper-V и наши [партнерские средства](https://azure.microsoft.com/migration/partners/) для физических компьютеров.
 - Вы можете обработать до 1500 виртуальных машин при помощи одной операции обнаружения и до 1500 виртуальных машин в одном проекте. Кроме того, можно обработать до 1500 виртуальных машин при помощи одной операции оценки.
 - Если нужно обнаружить среду большего размера, можно разделить операцию обнаружения и создать несколько проектов. [Узнайте больше](how-to-scale-assessment.md). Служба "Миграция Azure" поддерживает до 20 проектов на подписку.
 - Служба "Миграция Azure" поддерживает только управляемые диски для оценки миграции.

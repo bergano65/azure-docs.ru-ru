@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: adigan
-ms.openlocfilehash: a458a46f3775a593f369d5acb967fc90d61efde8
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 4f1e0c14d3a835b9f6d739511186bdcc19917a7a
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39628347"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51231000"
 ---
 # <a name="install-azure-backup-server-v2"></a>Установка Azure Backup Server версии 2
 
@@ -103,7 +103,7 @@ Backup Server версии 2 можно установить на сервере
 
   Если необходимо добавить диск, он должен входить в группу защиты с хранилищем прежней версии. Такие диски можно использовать только для этих групп защиты. Если в Backup Server нет источников с защитой прежней версии, диск не будет отображаться в списке.
 
-  Дополнительные сведения о добавлении дисков см. в разделе [Добавление дисков для увеличения хранилища прежней версии](http://docs.microsoft.com/system-center/dpm/upgrade-to-dpm-2016#adding-disks-to-increase-legacy-storage). Диску нельзя присвоить понятное имя.
+  Дополнительные сведения о добавлении дисков см. в разделе [Добавление дисков для увеличения хранилища прежней версии](https://docs.microsoft.com/system-center/dpm/upgrade-to-dpm-2016#adding-disks-to-increase-legacy-storage). Диску нельзя присвоить понятное имя.
 
 
 ### <a name="assign-workloads-to-volumes"></a>Назначение рабочих нагрузок для томов
@@ -175,13 +175,13 @@ Update-DPMDiskStorage [-Volume] <Volume> [[-FriendlyName] <String> ] [[-Datasour
 
 1. В консоли администрирования DPM в System Center 2016 выберите функцию **Защита**. В списке **Член группы защиты** щелкните элемент правой кнопкой мыши и выберите пункт **Остановить защиту элемента**.
 
-  ![Остановка защиты элемента](http://docs.microsoft.com/system-center/dpm/media/upgrade-to-dpm-2016/dpm-2016-stop-protection1.png)
+  ![Остановка защиты элемента](https://docs.microsoft.com/system-center/dpm/media/upgrade-to-dpm-2016/dpm-2016-stop-protection1.png)
 
 2. В диалоговом окне **Удалить из группы** проверьте используемый объем дискового пространства и объем доступного свободного пространства для пула носителей. По умолчанию точки восстановления остаются на диске, а их срок хранения истекает согласно связанной политике хранения. Нажмите кнопку **ОК**.
 
   Если необходимо сразу освободить используемое дисковое пространство для пула носителей, установите флажок **Удалить реплику на диске**, чтобы удалить данные резервных копий (и точки восстановления), связанные с этим элементом.
 
-  ![Диалоговое окно "Удалить из группы"](http://docs.microsoft.com/system-center/dpm/media/upgrade-to-dpm-2016/dpm-2016-retain-data.png)
+  ![Диалоговое окно "Удалить из группы"](https://docs.microsoft.com/system-center/dpm/media/upgrade-to-dpm-2016/dpm-2016-retain-data.png)
 
 3. Создайте группу защиты, которая использует Modern Backup Storage. Добавьте незащищенные источники данных.
 
@@ -194,7 +194,7 @@ Update-DPMDiskStorage [-Volume] <Volume> [[-FriendlyName] <String> ] [[-Datasour
 
 1. В консоли администрирования DPM в System Center 2016 последовательно выберите **Управление** > **Дисковый накопитель** > **Добавить**.
 
-  ![Диалоговое окно "Добавить дисковый накопитель"](http://docs.microsoft.com/system-center/dpm/media/upgrade-to-dpm-2016/dpm-2016-add-disk-storage.png)
+  ![Диалоговое окно "Добавить дисковый накопитель"](https://docs.microsoft.com/system-center/dpm/media/upgrade-to-dpm-2016/dpm-2016-add-disk-storage.png)
 
 2. В диалоговом окне **Добавить дисковый накопитель** щелкните **Добавить диски**.
 

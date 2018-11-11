@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/31/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: cd7b475dc2bd4dade822a82f285c2e96c8d532d2
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 3d9da96e5bf6c88f76089dea930b02248cfa1d24
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50138196"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51243800"
 ---
 # <a name="azure-storage-security-guide"></a>Руководство по безопасности службы хранилища Azure
 
@@ -479,7 +479,7 @@ SSE управляется службой хранилища Azure. Шифров
 * [Поддержка общего доступа к ресурсам независимо от источника (CORS) для служб хранилища Azure (в MSDN)](https://msdn.microsoft.com/library/azure/dn535601.aspx)
 
   Это справочная документация по поддержке CORS для служб хранилища Azure. Она содержит ссылки на статьи, относящиеся к каждой службе, а также пример и описание каждого элемента в файле CORS.
-* [Служба хранилища Microsoft Azure: знакомство с CORS](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/02/03/windows-azure-storage-introducing-cors.aspx)
+* [Служба хранилища Microsoft Azure: знакомство с CORS](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/02/03/windows-azure-storage-introducing-cors.aspx)
 
   Это ссылка на запись блога, в которой объявлялось о выходе CORS и демонстрировалось его использование.
 
@@ -490,7 +490,7 @@ SSE управляется службой хранилища Azure. Шифров
 
    Если можно использовать протокол HTTPS, который обеспечивает безопасность на транспортном уровне, то применение проверки MD5 является избыточным и ненужным.
 
-   Дополнительные сведения см. в статье [Общие сведения о проверке MD5 BLOB-объектов Azure](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/02/18/windows-azure-blob-md5-overview.aspx).
+   Дополнительные сведения см. в статье [Общие сведения о проверке MD5 BLOB-объектов Azure](https://blogs.msdn.com/b/windowsazurestorage/archive/2011/02/18/windows-azure-blob-md5-overview.aspx).
 2. **Как обстоят дела с обеспечением соответствия FIPS в государственных учреждениях США?**
 
    Федеральный стандарт обработки информации (FIPS) определяет алгоритмы шифрования, одобренные к использованию в компьютерных системах федерального правительства США для защиты конфиденциальных данных. При включении режима FIPS на сервере или настольном компьютере с Windows операционной системе разрешается использовать только проверенные FIPS алгоритмы шифрования. Если приложение использует несовместимые алгоритмы, его работа будет прервана. При применении .NET Framework версии 4.5.2 или более поздней приложение автоматически переходит на использование алгоритмов шифрования, совместимых с FIPS, если компьютер находится в режиме FIPS.

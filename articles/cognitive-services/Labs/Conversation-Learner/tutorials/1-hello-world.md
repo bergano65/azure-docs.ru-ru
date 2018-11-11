@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 70b8f25bd699cbdb069892d65bf766ef3953f59d
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 271141f24ff729fc99210af67ad769a5ef83a65c
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39170877"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51242727"
 ---
 # <a name="how-to-create-a-hello-world-model-with-conversation-learner"></a>Создание модели Hello World с помощью Conversation Learner
 
@@ -23,7 +23,7 @@ ms.locfileid: "39170877"
 
 ## <a name="video"></a>Видео
 
-[![Предварительная версия руководства 1](http://aka.ms/cl-tutorial-01-preview)](http://aka.ms/blis-tutorial-01)
+[![Предварительная версия руководства 1](https://aka.ms/cl-tutorial-01-preview)](https://aka.ms/blis-tutorial-01)
 
 
 ## <a name="requirements"></a>Требования
@@ -40,7 +40,7 @@ ms.locfileid: "39170877"
 ### <a name="create-the-model"></a>Создание модели
 1. Щелкните "Новая модель"
 2. В поле имени введите Hello World.
-3. Нажмите кнопку "Создать"
+3. Щелкните Создать. 
 
 ### <a name="create-an-action"></a>Создание действия
 
@@ -49,7 +49,7 @@ ms.locfileid: "39170877"
     - Действиями могут быть текстовые сообщения, которые Conversation Learner возвращает пользователю, вызовы API и карты.
 3. В поле "Response" (Ответ) введите "Hello World".
     - Именно эту строку будет возвращать бот.
-4. Нажмите кнопку "Создать"
+4. Щелкните Создать. 
 
 Итак, вы создали первое действие бота, в котором он возвращает текста ответа.
 

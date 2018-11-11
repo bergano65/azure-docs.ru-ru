@@ -12,14 +12,14 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/18/2018
-ms.author: bwren, vinagara
+ms.author: bwren
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8ec5f1cef3f9ca82953093d2086b615087db1a7f
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: 427ac67b812da449333e4868e54ca36d2c6f54af
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50024783"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51282342"
 ---
 # <a name="adding-log-analytics-saved-searches-and-alerts-to-management-solution-preview"></a>Добавление сохраненных поисковых запросов и оповещений Log Analytics в решение по управлению (предварительная версия)
 
@@ -27,13 +27,13 @@ ms.locfileid: "50024783"
 > Это предварительная версия документации по созданию решений по управлению, доступных в режиме предварительной версии. Любые схемы, приведенные ниже, могут измениться.   
 
 
-[Решения по управлению](monitoring-solutions.md) обычно включают в себя возможность [сохранения поисковых запросов](../log-analytics/log-analytics-log-searches.md) в Log Analytics для анализа данных, собранных этим решением.  Они могут также определять [оповещения](../log-analytics/log-analytics-alerts.md) для уведомления пользователя или автоматического выполнения действия в ответ на критическую ошибку.  В этой статье описывается, как определить сохраненные поиски и оповещения Log Analytics в [шаблоне Resource Manager](../resource-manager-template-walkthrough.md), чтобы их можно было добавлять в [решения для управления](monitoring-solutions-creating.md).
+[Решения по управлению](monitoring-solutions.md) обычно включают в себя возможность [сохранения поисковых запросов](../log-analytics/log-analytics-queries.md) в Log Analytics для анализа данных, собранных этим решением.  Они могут также определять [оповещения](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md) для уведомления пользователя или автоматического выполнения действия в ответ на критическую ошибку.  В этой статье описывается, как определить сохраненные поиски и оповещения Log Analytics в [шаблоне Resource Manager](../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md), чтобы их можно было добавлять в [решения для управления](monitoring-solutions-creating.md).
 
 > [!NOTE]
 > В примерах этой статьи используются обязательные или общие параметры и переменные для решений по управлению, описанные в статье [Проектирование и сборка решения по управлению в Azure (предварительная версия)](monitoring-solutions-creating.md).  
 
 ## <a name="prerequisites"></a>Предварительные требования
-В этой статье предполагается, что вы уже знаете, как [создать решение по управлению](monitoring-solutions-creating.md), а также знакомы со структурой [шаблона ARM](../resource-group-authoring-templates.md) и файла решения.
+В этой статье предполагается, что вы уже знаете, как [создать решение по управлению](monitoring-solutions-creating.md), а также знакомы со структурой [шаблона ARM](../azure-resource-manager/resource-group-authoring-templates.md) и файла решения.
 
 
 ## <a name="log-analytics-workspace"></a>Рабочая область Log Analytics
@@ -54,9 +54,9 @@ ms.locfileid: "50024783"
 
 
 ## <a name="saved-searches"></a>Сохраненные поиски
-Добавьте в решение функцию [сохраненных поисков](../log-analytics/log-analytics-log-searches.md), чтобы пользователи могли запрашивать данные, собранные решением.  Сохраненные поисковые запросы отображаются в разделе **Сохраненные условия поиска** на портале Azure.  Сохраненный поиск также является обязательным для каждого оповещения.   
+Добавьте в решение функцию [сохраненных поисков](../log-analytics/log-analytics-queries.md), чтобы пользователи могли запрашивать данные, собранные решением.  Сохраненные поисковые запросы отображаются в разделе **Сохраненные условия поиска** на портале Azure.  Сохраненный поиск также является обязательным для каждого оповещения.   
 
-Ресурсы [сохраненных поисков Log Analytics](../log-analytics/log-analytics-log-searches.md) имеют тип `Microsoft.OperationalInsights/workspaces/savedSearches`. Их структура приведена ниже.  Далее представлены общие переменные и параметры, чтобы этот фрагмент кода можно было скопировать и вставить в файл решения и изменить имена параметров. 
+Ресурсы [сохраненных поисков Log Analytics](../log-analytics/log-analytics-queries.md) имеют тип `Microsoft.OperationalInsights/workspaces/savedSearches`. Их структура приведена ниже.  Далее представлены общие переменные и параметры, чтобы этот фрагмент кода можно было скопировать и вставить в файл решения и изменить имена параметров. 
 
     {
         "name": "[concat(parameters('workspaceName'), '/', variables('SavedSearch').Name)]",

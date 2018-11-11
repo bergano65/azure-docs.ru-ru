@@ -11,12 +11,12 @@ ms.date: 08/01/2018
 ms.author: markgal
 ms.custom: H1Hack27Feb2017
 keywords: backups; vm backup
-ms.openlocfilehash: a30b4081bf01a76c6d89e7557fbb1b40baa86fbc
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: daa2355d028af9b61b0b14a453452c1a96487403
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49985897"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51233547"
 ---
 # <a name="back-up-azure-virtual-machines-to-recovery-services-vault"></a>Резервное копирование виртуальных машин Azure в хранилище служб восстановления
 
@@ -324,8 +324,8 @@ ms.locfileid: "49985897"
 
 | **Операция** | **Windows** | **Linux** |
 | --- | --- | --- |
-| Установка агента VM |<li>Скачайте и установите [MSI-файл агента](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Чтобы выполнить установку, необходимо иметь права администратора. <li>[Обновите свойство виртуальной машины](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx) , чтобы указать, что агент установлен. |<li> Установите последнюю версию [агента Linux](https://github.com/Azure/WALinuxAgent) с сайта GitHub. Чтобы выполнить установку, необходимо иметь права администратора. <li> [Обновите свойство виртуальной машины](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx) , чтобы указать, что агент установлен. |
-| Обновление агента виртуальной машины |Обновление агента виртуальной машины — это простая процедура, схожая с переустановкой [двоичных файлов агента виртуальной машины](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). <br>Необходимо убедиться, что во время обновления агента виртуальной машины не выполняются операции архивации. |Следуйте указаниям по [обновлению агента виртуальной машины Linux ](../virtual-machines/linux/update-agent.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). <br>Необходимо убедиться, что во время обновления агента виртуальной машины не выполняются операции резервного копирования. |
+| Установка агента VM |<li>Скачайте и установите [MSI-файл агента](https://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Чтобы выполнить установку, необходимо иметь права администратора. <li>[Обновите свойство виртуальной машины](https://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx) , чтобы указать, что агент установлен. |<li> Установите последнюю версию [агента Linux](https://github.com/Azure/WALinuxAgent) с сайта GitHub. Чтобы выполнить установку, необходимо иметь права администратора. <li> [Обновите свойство виртуальной машины](https://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx) , чтобы указать, что агент установлен. |
+| Обновление агента виртуальной машины |Обновление агента виртуальной машины — это простая процедура, схожая с переустановкой [двоичных файлов агента виртуальной машины](https://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). <br>Необходимо убедиться, что во время обновления агента виртуальной машины не выполняются операции архивации. |Следуйте указаниям по [обновлению агента виртуальной машины Linux ](../virtual-machines/linux/update-agent.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). <br>Необходимо убедиться, что во время обновления агента виртуальной машины не выполняются операции резервного копирования. |
 | Проверка установки агента VM |<li>На виртуальной машине Azure перейдите в папку *C:\WindowsAzure\Packages*. <li>В ней должен находиться файл WaAppAgent.exe.<li> Щелкните правой кнопкой мыши этот файл, выберите пункт **Свойства** и перейдите на вкладку **Подробно**. В поле "Версия продукта" должно отображаться значение 2.6.1198.718 или выше. |Недоступно |
 
 ### <a name="backup-extension"></a>Расширение резервного копирования
@@ -340,4 +340,4 @@ ms.locfileid: "49985897"
 Затраты на архивацию виртуальных машин Azure зависят от количества защищенных экземпляров. Определение защищенного экземпляра см. в разделе [Что такое защищенный экземпляр](backup-introduction-to-azure-backup.md#what-is-a-protected-instance). Пример расчета стоимости архивации виртуальной машины см. в разделе [Как вычисляются защищенные экземпляры](backup-azure-vms-introduction.md#calculating-the-cost-of-protected-instances). Цены на службу архивации Azure см. на [этой странице](https://azure.microsoft.com/pricing/details/backup/).
 
 ## <a name="questions"></a>Вопросы?
-Если вы хотите задать вопрос или предложить добавить какие-либо функции, [отправьте нам свой отзыв](http://aka.ms/azurebackup_feedback).
+Если вы хотите задать вопрос или предложить добавить какие-либо функции, [отправьте нам свой отзыв](https://aka.ms/azurebackup_feedback).

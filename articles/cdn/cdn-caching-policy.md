@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/04/2017
 ms.author: juliako
-ms.openlocfilehash: dce8d588a78b028223776e3ade737d4abd26094b
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: ac94370b1c6a8f48ad55f0e277d93cd2f8388cb1
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33765291"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51242610"
 ---
 # <a name="manage-azure-cdn-caching-policy-in-azure-media-services"></a>Управление политикой кэширования Azure CDN в службах мультимедиа Azure
 Службы мультимедиа Azure предоставляют адаптивную потоковую передачу и прогрессивное скачивание на основе протокола HTTP. Потоковая передача на основе протокола HTTP — это технология с высоким уровнем масштабируемости, обладающая преимуществами кэширования на стороне прокси-сервера и на стороне клиента, а также преимуществами слоев CDN. Функция конечных точек потоковой передачи предоставляет общие возможности потоковой передачи, а также конфигурацию для заголовков кэша HTTP. Она также задает заголовки HTTP Cache-Control: max-age и Expires. Узнать больше о заголовках кэша HTTP можно на веб-сайте [W3.org](http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html).
@@ -40,7 +40,7 @@ ms.locfileid: "33765291"
 
 1. Чтобы настроить заголовки кэша с помощью портала Azure, выполните инструкции в разделе "Настройка конечной точки потоковой передачи" статьи [Управление конечными точками потоковой передачи с помощью портала Azure](../media-services/previous/media-services-portal-manage-streaming-endpoints.md).
 2. Интерфейс REST API служб мультимедиа Azure, [StreamingEndpoint](https://msdn.microsoft.com/library/azure/dn783468.aspx#StreamingEndpointCacheControl).
-3. Пакет SDK для служб мультимедиа Azure для .NET, [свойства StreamingEndpointCacheControl](http://go.microsoft.com/fwlink/?LinkId=615302).
+3. Пакет SDK для служб мультимедиа Azure для .NET, [свойства StreamingEndpointCacheControl](https://go.microsoft.com/fwlink/?LinkId=615302).
 
 ## <a name="cache-configuration-precedence-order"></a>Порядок приоритета конфигурации кэша
 1. Настроенные значения кэша служб мультимедиа Azure переопределяют значение по умолчанию.

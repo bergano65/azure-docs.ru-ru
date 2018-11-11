@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/24/2016
 ms.author: genli
-ms.openlocfilehash: 009206f1e0ba848538ed2c666032a63051d062e4
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 0ac488a67d8b9debf6539d199395997cf44cf1e4
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31790752"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51247183"
 ---
 # <a name="specifying-dns-settings-in-a-service-configuration-file"></a>Настройка параметров DNS в файле конфигурации службы
 ## <a name="dns-elements"></a>Элементы DNS
@@ -41,9 +41,9 @@ ms.locfileid: "31790752"
 ## <a name="see-also"></a>См. также
 [Схема конфигурации службы Azure (CSCFG-файл)](https://msdn.microsoft.com/library/windowsazure/ee758710)
 
-[Схема настройки виртуальной сети Azure](http://go.microsoft.com/fwlink/?LinkId=248093)
+[Схема настройки виртуальной сети Azure](https://go.microsoft.com/fwlink/?LinkId=248093)
 
-[Настройка виртуальной сети с помощью файлов конфигурации сети](http://go.microsoft.com/fwlink/?LinkId=248094)
+[Настройка виртуальной сети с помощью файлов конфигурации сети](https://go.microsoft.com/fwlink/?LinkId=248094)
 
-[Параметры виртуальной сети на портале управления](http://go.microsoft.com/fwlink/?LinkId=248092)
+[Параметры виртуальной сети на портале управления](https://go.microsoft.com/fwlink/?LinkId=248092)
 

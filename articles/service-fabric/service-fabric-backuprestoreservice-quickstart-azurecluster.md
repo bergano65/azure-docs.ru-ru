@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Периодическое резервное копирование и восстановление в Azure Service Fabric (предварительная версия) | Документация Майкрософт
+title: Периодическое резервное копирование и восстановление в Azure Service Fabric (предварительная версия) | Документация Майкрософт
 description: Использование функции периодического резервного копирования и восстановления Service Fabric для включения периодического резервного копирования данных приложения.
 services: service-fabric
 documentationcenter: .net
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/04/2018
 ms.author: hrushib
-ms.openlocfilehash: 50ee0d91b27805e4db785e5df211660900333e7f
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: ef92212b84496802dc2464498a0b6789f79a729b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38990305"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51246707"
 ---
-# <a name="quickstart-periodic-backup-and-restore-in-azure-service-fabric-preview"></a>Краткое руководство. Периодическое резервное копирование и восстановление в Azure Service Fabric (предварительная версия)
+# <a name="periodic-backup-and-restore-in-azure-service-fabric-preview"></a>Периодическое резервное копирование и восстановление в Azure Service Fabric (предварительная версия)
 > [!div class="op_single_selector"]
 > * [Кластеры в Azure](service-fabric-backuprestoreservice-quickstart-azurecluster.md) 
 > * [Изолированные кластеры](service-fabric-backuprestoreservice-quickstart-standalonecluster.md)
@@ -226,7 +226,7 @@ FailureError            :
 ## <a name="preview-limitation-caveats"></a>Ограничения и предупреждения, связанные с предварительной версией
 - Отсутствие встроенных командлетов PowerShell для платформы Service Fabric.
 - Отсутствие поддержки интерфейса командной строки Service Fabric.
-- Отсутствие поддержки автоматического удаления ранее созданных резервных копий. [Скрипт хранения резервной копии](https://github.com/Microsoft/service-fabric-scripts-and-templates/tree/master/scripts/BackupRetentionScript) можно использовать как внешнее средство автоматизации очистки резервной копии.
+- Отсутствие поддержки автоматического удаления ранее созданных резервных копий. [Скрипт хранения резервной копии](https://github.com/Microsoft/service-fabric-scripts-and-templates/tree/master/scripts/BackupRetentionScript) можно использовать как внешнее средство автоматизации для настройки очистки резервных копий.
 - Отсутствие поддержки кластеров Service Fabric в Linux.
 
 ## <a name="next-steps"></a>Дополнительная информация

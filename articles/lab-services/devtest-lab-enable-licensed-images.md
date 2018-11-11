@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: 0e5de93f8a10d27c28b3f07567f9b6fa7e41d482
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 42f3378196b4e3e1dfe1234e801e87875f9c61fc
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33781843"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51247659"
 ---
 # <a name="enable-a-licensed-image-in-your-lab-in-azure-devtest-labs"></a>Активация лицензированных образов в лаборатории в Azure DevTest Labs
 
@@ -28,7 +28,7 @@ ms.locfileid: "33781843"
 ## <a name="determining-whether-a-licensed-image-is-available-to-users"></a>Определение доступности лицензированного образа для пользователей
 Чтобы создавать виртуальные машины на основе лицензированных образов, сначала необходимо убедиться, что были приняты условия их использования. Ниже показано, как можно просмотреть состояние предложения лицензированных образов и, если необходимо, принять условия их использования.
 
-1. Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
 1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 
@@ -54,7 +54,7 @@ ms.locfileid: "33781843"
 
 Выполните следующие действия, чтобы включить программное развертывание для лицензированных образов:
 
-1. На [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040) перейдите к списку **образов Marketplace**.
+1. На [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040) перейдите к списку **образов Marketplace**.
 
 1. Определите лицензированный образ, к которому пользователи должны иметь доступ, но условия которого не приняты. Например, вы можете видеть виртуальную машину для обработки и анализа данных, для которой отображается состояние **Terms accepted** (Условия приняты) или **Terms review needed** (Требуется проверка условий).
 

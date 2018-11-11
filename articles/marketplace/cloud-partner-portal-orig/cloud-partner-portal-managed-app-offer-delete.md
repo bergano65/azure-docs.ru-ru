@@ -14,18 +14,18 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 02b4ad8aea3904ba0e99a5ea4d4d035f970e171a
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 5ad106d45c8bae2d41e0bde74b27f80f4d8ab79b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48808381"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51241282"
 ---
 <a name="delete-an-offersku-from-azure-marketplace"></a>Удаление предложения или номера SKU из Azure Marketplace 
 ==========================================
 
 По различным причинам вам может понадобиться удалить предложение из Marketplace. Новые клиенты больше не смогут приобрести или развернуть ваше предложение (однако это никак не повлияет на существующих клиентов).
-Завершение предложения — это процесс прекращения действия соглашения об обслуживании и/или лицензировании между вами и существующими клиентами. Рекомендации и политики относительно удаления или прекращения действия решения регулируются [соглашением с издателем для Microsoft Marketplace](http://go.microsoft.com/fwlink/?LinkID=699560) (см. раздел
+Завершение предложения — это процесс прекращения действия соглашения об обслуживании и/или лицензировании между вами и существующими клиентами. Рекомендации и политики относительно удаления или прекращения действия решения регулируются [соглашением с издателем для Microsoft Marketplace](https://go.microsoft.com/fwlink/?LinkID=699560) (см. раздел
 7) и [Политиками участия](https://azure.microsoft.com/support/legal/marketplace/participation-policies/) (см. раздел 6.2). Здесь рассматриваются разные поддерживаемые сценарии удаления и шаги, необходимые для их выполнения.
 
 <a name="delete-a-live-sku-from-azure-marketplace"></a>Удаление действующего номера SKU из Azure Marketplace 

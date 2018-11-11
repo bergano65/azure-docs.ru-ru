@@ -17,12 +17,12 @@ ms.workload: identity
 ms.date: 08/15/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: 77bccaeec1ad3f0d2df4ab567d294c77fc2358cb
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 2673a0ec1e9ed66c9a1bb6e369ad5300a570ba0a
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49954731"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51240449"
 ---
 # <a name="what-is-conditional-access-in-azure-active-directory"></a>Что представляет собой условный доступ в Azure Active Directory?
 
@@ -110,4 +110,4 @@ ms.locfileid: "49954731"
 
 - Если вы готовы к настройке политик условного доступа для своей среды, см. статью [Рекомендации по работе с условным доступом в Azure Active Directory](best-practices.md). 
 
-- Поэтапный план развертывания с использованием рекомендуемых политик условного доступа можжно найти [здесь](http://aka.ms/conditionalaccessdeploymentplan)
+- Поэтапный план развертывания с использованием рекомендуемых политик условного доступа можжно найти [здесь](https://aka.ms/conditionalaccessdeploymentplan)

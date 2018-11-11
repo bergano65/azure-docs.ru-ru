@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: c3bb170800508d5a546573850f445b2a8991ea8c
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 37d9f433f39b60609870913a13f23e5a6e419476
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38597750"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51246503"
 ---
 # <a name="tutorial-send-notifications-to-universal-windows-platform-apps-by-using-azure-notification-hubs"></a>Руководство. Отправка уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "38597750"
 > * Отправка проверочных уведомлений
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 - **Подписка Azure**. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 - [Microsoft Visual Studio Community 2015](https://www.visualstudio.com/products/visual-studio-community-vs) или более поздняя версия.
 - [Установленные средства разработки приложений универсальной платформы Windows](https://msdn.microsoft.com/windows/uwp/get-started/get-set-up)
@@ -57,7 +57,7 @@ ms.locfileid: "38597750"
 1. Введите имя приложения и выберите **Зарезервировать имя продукта**. Будет создана регистрация в Магазине Windows для вашего приложения.
 
     ![Имя приложения в магазине](./media/notification-hubs-windows-store-dotnet-get-started/store-app-name.png)
-1. Разверните **Управление приложениями**, выберите **WNS/MPNS**, а затем — **WNS/MPNS** и **сайт служб Live**. Войдите в систему с помощью учетной записи Майкрософт. **Портал регистрации приложений** откроется в новой вкладке. Вы также можете напрямую перейти к [порталу регистрации приложений](http://apps.dev.microsoft.com) и выбрать имя приложения, чтобы открылась эта страница.
+1. Разверните **Управление приложениями**, выберите **WNS/MPNS**, а затем — **WNS/MPNS** и **сайт служб Live**. Войдите в систему с помощью учетной записи Майкрософт. **Портал регистрации приложений** откроется в новой вкладке. Вы также можете напрямую перейти к [порталу регистрации приложений](https://apps.dev.microsoft.com) и выбрать имя приложения, чтобы открылась эта страница.
 
     ![Страница WNS MPNS](./media/notification-hubs-windows-store-dotnet-get-started/wns-mpns-page.png)
 1.   Запишите значение пароля в разделе **секрета приложения** и значение **идентификатора безопасности пакета (SID)**.

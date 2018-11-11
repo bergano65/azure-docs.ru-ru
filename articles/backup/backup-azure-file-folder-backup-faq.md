@@ -9,19 +9,19 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 8/6/2018
 ms.author: saurse;trinadhk
-ms.openlocfilehash: 177e44bce7d8f159892d78c7003945ba55ef4b84
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: cf27848b6ca63f06c7d452ac67908cb85dbafd47
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39577887"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51239851"
 ---
 # <a name="questions-about-the-azure-backup-agent"></a>Вопросы об агенте службы Azure Backup
 В этой статье содержатся ответы на часто задаваемые вопросы, которые помогут вам быстро ознакомиться с компонентами агента службы Azure Backup. В некоторых ответах приведены ссылки на статьи, содержащие более подробные сведения. Кроме того, их также можно задать на [форуме для обсуждений](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
 
 ## <a name="configure-backup"></a>Настройка резервного копирования
 ### <a name="where-can-i-download-the-latest-azure-backup-agent-br"></a>Откуда можно скачать последнюю версию агента службы архивации Azure? <br/>
-Последнюю версию агента для резервного копирования Windows Server, System Center DPM и клиента Windows можно скачать [отсюда](http://aka.ms/azurebackup_agent). Если вы хотите сделать резервную копию виртуальной машины, используйте агент виртуальной машины (он автоматически устанавливает нужное расширение). Как правило, агент виртуальной машины уже есть на виртуальных машинах, созданных с использованием коллекции Azure.
+Последнюю версию агента для резервного копирования Windows Server, System Center DPM и клиента Windows можно скачать [отсюда](https://aka.ms/azurebackup_agent). Если вы хотите сделать резервную копию виртуальной машины, используйте агент виртуальной машины (он автоматически устанавливает нужное расширение). Как правило, агент виртуальной машины уже есть на виртуальных машинах, созданных с использованием коллекции Azure.
 
 ### <a name="when-configuring-the-azure-backup-agent-i-am-prompted-to-enter-the-vault-credentials-do-vault-credentials-expire"></a>При настройке агента службы архивации Azure появляется запрос на ввод учетных данных хранилища. Ограничен ли срок действия этих учетных данных?
 Да, учетные данные хранилища действительны в течение 48 часов. Если срок действия файла истек, войдите на портал Azure и скачайте новый файл учетных данных из хранилища.

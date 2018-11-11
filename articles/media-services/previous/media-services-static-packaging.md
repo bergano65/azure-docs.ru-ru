@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/24/2018
 ms.author: juliako
-ms.openlocfilehash: a5300f3b998e22cca56001bd52f761bb0a366cbe
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 9af5ebe9f37127656c7f61357240d4e69a28812b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50231463"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51243135"
 ---
 # <a name="using-azure-media-packager-to-accomplish-static-packaging-tasks"></a>Использование Azure Media Packager для выполнения задач статической упаковки
 > [!NOTE]
@@ -48,7 +48,7 @@ ms.locfileid: "50231463"
 * Использование статического шифрования для защиты HLSv3 с использованием PlayReady
 
 ## <a name="validating-adaptive-bitrate-mp4s-encoded-with-external-encoders"></a>Проверка MP4-файлов с переменной скоростью, закодированных с помощью внешних кодировщиков
-Если вы хотите использовать набор MP4-файлов с адаптивной скоростью (с несколькими скоростями), которые не были закодированы с помощью кодировщиков служб мультимедиа, эти файлы следует проверить перед дальнейшей обработкой. Media Services Packager может проверить ресурс, содержащий набор MP4-файлов, и определить, можно ли упаковать ресурс в формат Smooth Streaming или HLS. Если проверка завершается неудачно, задача обработки также завершится с ошибкой. Файл XML, определяющий предустановку для задачи проверки, можно найти в статье [Task Preset for Azure Media Packager](http://msdn.microsoft.com/library/azure/hh973635.aspx) (Предустановка задачи для Azure Media Packager).
+Если вы хотите использовать набор MP4-файлов с адаптивной скоростью (с несколькими скоростями), которые не были закодированы с помощью кодировщиков служб мультимедиа, эти файлы следует проверить перед дальнейшей обработкой. Media Services Packager может проверить ресурс, содержащий набор MP4-файлов, и определить, можно ли упаковать ресурс в формат Smooth Streaming или HLS. Если проверка завершается неудачно, задача обработки также завершится с ошибкой. Файл XML, определяющий предустановку для задачи проверки, можно найти в статье [Task Preset for Azure Media Packager](https://msdn.microsoft.com/library/azure/hh973635.aspx) (Предустановка задачи для Azure Media Packager).
 
 > [!NOTE]
 > Во избежание проблем во время выполнения используйте стандартный кодировщик мультимедиа для создания содержимого, а упаковщик служб мультимедиа — для проверки содержимого. Если сервер потокового воспроизведения по запросу не может выполнить синтаксический анализ исходных файлов во время выполнения, вы получите ошибку HTTP 1.1 "415 — тип содержимого не поддерживается". Несколько неудачных попыток анализа исходных файлов влияют на производительность сервера потокового воспроизведения по запросу и могут снизить пропускную способность, доступную для обработки других запросов. Службы мультимедиа Azure предлагают Соглашение об уровне обслуживания (SLA) для служб потокового воспроизведения по запросу; тем не менее, если сервер используется неправильно описанным выше образом, это соглашение не учитывается.
@@ -82,7 +82,7 @@ ms.locfileid: "50231463"
 
 После того как у вас появится набор файлов MP4 с переменной скоростью, вы сможете воспользоваться преимуществами динамической упаковки. Динамическая упаковка позволяет доставлять потоковое содержимое с помощью указанного протокола без дальнейшей упаковки. Дополнительные сведения см. в статье [Динамическая упаковка](media-services-dynamic-packaging-overview.md).
 
-В следующем примере кода используются расширения пакета SDK служб мультимедиа Azure для .NET.  Обязательно измените код, указав каталог, в котором расположены исходные MP4-файлы и ISM-файл. Также укажите расположение файла MediaPackager_ValidateTask.xml. Этот XML-файл определяется в статье [Task Preset for Azure Media Packager](http://msdn.microsoft.com/library/azure/hh973635.aspx) (Предустановка задачи для Azure Media Packager).
+В следующем примере кода используются расширения пакета SDK служб мультимедиа Azure для .NET.  Обязательно измените код, указав каталог, в котором расположены исходные MP4-файлы и ISM-файл. Также укажите расположение файла MediaPackager_ValidateTask.xml. Этот XML-файл определяется в статье [Task Preset for Azure Media Packager](https://msdn.microsoft.com/library/azure/hh973635.aspx) (Предустановка задачи для Azure Media Packager).
 
 ```csharp
     using Microsoft.WindowsAzure.MediaServices.Client;
@@ -258,13 +258,13 @@ ms.locfileid: "50231463"
 Службы мультимедиа теперь обеспечивают доставку лицензий Microsoft PlayReady. Пример в этой статье показывает, как настроить службу доставки лицензий PlayReady служб мультимедиа (см. метод ConfigureLicenseDeliveryService, определенный в приведенном ниже коде). Дополнительные сведения о службе доставки лицензий PlayReady служб мультимедиа см. в статье [Использование общего динамического шифрования PlayReady и (или) Widevine DRM](media-services-protect-with-playready-widevine.md).
 
 > [!NOTE]
-> Для доставки содержимого MPEG DASH, зашифрованного с помощью PlayReady, необходимо использовать параметры CENC, присвоив свойствам useSencBox и adjustSubSamples (описаны в статье [Task Preset for Azure Media Encryptor](http://msdn.microsoft.com/library/azure/hh973610.aspx) (Предустановка задачи для Azure Media Encryptor)) значение true.  
+> Для доставки содержимого MPEG DASH, зашифрованного с помощью PlayReady, необходимо использовать параметры CENC, присвоив свойствам useSencBox и adjustSubSamples (описаны в статье [Task Preset for Azure Media Encryptor](https://msdn.microsoft.com/library/azure/hh973610.aspx) (Предустановка задачи для Azure Media Encryptor)) значение true.  
 > 
 > 
 
 Обязательно измените следующий код, указав каталог, в котором расположен исходный файл MP4.
 
-Также укажите расположение файлов MediaPackager_MP4ToSmooth.xml и MediaEncryptor_PlayReadyProtection.xml. Файл MediaPackager_MP4ToSmooth.xml описан [здесь](http://msdn.microsoft.com/library/azure/hh973635.aspx), а MediaEncryptor_PlayReadyProtection.xml — [здесь](http://msdn.microsoft.com/library/azure/hh973610.aspx). 
+Также укажите расположение файлов MediaPackager_MP4ToSmooth.xml и MediaEncryptor_PlayReadyProtection.xml. Файл MediaPackager_MP4ToSmooth.xml описан [здесь](https://msdn.microsoft.com/library/azure/hh973635.aspx), а MediaEncryptor_PlayReadyProtection.xml — [здесь](https://msdn.microsoft.com/library/azure/hh973610.aspx). 
 
 В примере определяется метод UpdatePlayReadyConfigurationXMLFile, который можно использовать для динамического обновления файла MediaEncryptor_PlayReadyProtection.xml. Если начальное значение ключа доступно, можно использовать метод CommonEncryption.GeneratePlayReadyContentKey для создания ключа содержимого на основе значений keySeedValue и KeyId.
 
@@ -712,7 +712,7 @@ ms.locfileid: "50231463"
 > 
 > 
 
-Пример в этом разделе кодирует мезонинный файл (в данном случае MP4) в файлы MP4 с несколькими скоростями, а затем упаковывает файлы MP4 в формат Smooth Streaming. После этого он упаковывает содержимое в формате Smooth Streaming в формат HTTP Live Streaming (HLS), зашифрованный с помощью 128-разрядного шифрования потока AES. Обязательно измените следующий код, указав каталог, в котором расположен исходный файл MP4. Также укажите расположение файлов MediaPackager_MP4ToSmooth.xml и MediaPackager_SmoothToHLS.xml. Определение этих файлов можно найти в статье [Task Preset for Azure Media Packager](http://msdn.microsoft.com/library/azure/hh973635.aspx) (Предустановка задачи для Azure Media Packager).
+Пример в этом разделе кодирует мезонинный файл (в данном случае MP4) в файлы MP4 с несколькими скоростями, а затем упаковывает файлы MP4 в формат Smooth Streaming. После этого он упаковывает содержимое в формате Smooth Streaming в формат HTTP Live Streaming (HLS), зашифрованный с помощью 128-разрядного шифрования потока AES. Обязательно измените следующий код, указав каталог, в котором расположен исходный файл MP4. Также укажите расположение файлов MediaPackager_MP4ToSmooth.xml и MediaPackager_SmoothToHLS.xml. Определение этих файлов можно найти в статье [Task Preset for Azure Media Packager](https://msdn.microsoft.com/library/azure/hh973635.aspx) (Предустановка задачи для Azure Media Packager).
 
 ```csharp
     using System;
@@ -997,7 +997,7 @@ ms.locfileid: "50231463"
 
 Службы мультимедиа теперь обеспечивают доставку лицензий Microsoft PlayReady. В примере из этой статьи показывается, как настроить службу доставки лицензий PlayReady служб мультимедиа (см. метод **ConfigureLicenseDeliveryService**, определенный в коде ниже). 
 
-Обязательно измените следующий код, указав каталог, в котором расположен исходный файл MP4. Также укажите расположение файлов MediaPackager_MP4ToSmooth.xml, MediaPackager_SmoothToHLS.xml и MediaEncryptor_PlayReadyProtection.xml. Файлы MediaPackager_MP4ToSmooth.xml и MediaPackager_SmoothToHLS.xml описаны [здесь](http://msdn.microsoft.com/library/azure/hh973635.aspx), а MediaEncryptor_PlayReadyProtection.xml — [здесь](http://msdn.microsoft.com/library/azure/hh973610.aspx).
+Обязательно измените следующий код, указав каталог, в котором расположен исходный файл MP4. Также укажите расположение файлов MediaPackager_MP4ToSmooth.xml, MediaPackager_SmoothToHLS.xml и MediaEncryptor_PlayReadyProtection.xml. Файлы MediaPackager_MP4ToSmooth.xml и MediaPackager_SmoothToHLS.xml описаны [здесь](https://msdn.microsoft.com/library/azure/hh973635.aspx), а MediaEncryptor_PlayReadyProtection.xml — [здесь](https://msdn.microsoft.com/library/azure/hh973610.aspx).
 
 ```csharp
     using System;

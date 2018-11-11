@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 10/17/2016
 ms.author: roiyz
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 73e5e54e40223f7cd972e2bd2752add9ca82ff2b
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 0c19d32f6c6f491a91ba6c2219be9fd016b5ec34
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452349"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51243885"
 ---
 # <a name="understanding-and-using-the-azure-linux-agent"></a>Что такое агент Linux для Azure и как его использовать
 
@@ -73,7 +73,7 @@ ms.locfileid: "47452349"
 Следующие системы протестированы и гарантированно поддерживают работу с агентом Linux для Azure:
 
 > [!NOTE]
-> Этот список может отличаться от официального списка систем, поддерживаемых платформой Microsoft Azure, который доступен на странице: [http://support.microsoft.com/kb/2805216](http://support.microsoft.com/kb/2805216).
+> Этот список может отличаться от официального списка систем, поддерживаемых платформой Microsoft Azure, который доступен на странице: [http://support.microsoft.com/kb/2805216](https://support.microsoft.com/kb/2805216).
 > 
 > 
 
@@ -344,6 +344,6 @@ Default: y
 
 * Если вам нужно настроить точку подключения диска ресурсов и пространство подкачки в образах облаков Ubuntu во время подготовки, см. следующие ресурсы.
   
-  * [Вики-сайт по Ubuntu: настройка разделов подкачки](http://go.microsoft.com/fwlink/?LinkID=532955&clcid=0x409)
+  * [Вики-сайт по Ubuntu: настройка разделов подкачки](https://go.microsoft.com/fwlink/?LinkID=532955&clcid=0x409)
   * [Включение пользовательских данных в виртуальную машину Azure](../windows/classic/inject-custom-data.md)
 

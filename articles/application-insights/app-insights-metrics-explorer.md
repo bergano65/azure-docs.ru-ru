@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/08/2017
 ms.author: mbullwin
-ms.openlocfilehash: 4c35f4366b2290164036316be8de730e20aa99bf
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: cc9b3bd1d038bd8aa9c01e806e5448824011bc93
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47092668"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51240755"
 ---
 # <a name="exploring-metrics-in-application-insights"></a>Исследование метрик в Application Insights
 Метрики в [Application Insights][start] — это измеренные значения и счетчики событий, которые передаются как данные телеметрии из приложения. Они помогают обнаруживать проблемы производительности и отслеживать тенденции в использовании приложения. Существует широкий спектр стандартных метрик, и можно также создавать собственные пользовательские метрики и события.
@@ -180,7 +180,7 @@ ms.locfileid: "47092668"
 Если необходимо постоянно экспортировать данные для внешней обработки, используйте [непрерывный экспорт](app-insights-export-telemetry.md).
 
 ### <a name="power-bi"></a>Power BI
-Если вам нужны представления данных с еще большими возможностями, данные можно [экспортировать в Power BI](http://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx).
+Если вам нужны представления данных с еще большими возможностями, данные можно [экспортировать в Power BI](https://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx).
 
 ## <a name="analytics"></a>Analytics
 [Аналитика](app-insights-analytics.md) является более гибким способом анализа телеметрии с помощью мощного языка запросов. Используйте ее, если требуется объединить или вычислить результаты метрик либо тщательно изучить последние данные производительности приложения. 
@@ -194,14 +194,14 @@ ms.locfileid: "47092668"
 
     Если вы хотите задать разные фильтры для различных диаграмм, создайте их на разных колонках и по отдельности сохраните в избранное. Если необходимо, вы можете закрепить их на панели мониторинга, чтобы их можно было видеть вместе.
 * Если сгруппировать диаграмму по свойству, которое не определено в метрике, то на диаграмме ничего не отобразится. Попробуйте убрать группировку или выберите другое свойство для группировки.
-* Данные о производительности (ЦП, скорость ввода-вывода и т. д.) доступны для веб-служб Java, классических приложений Windows, [веб-приложений и служб IIS, если установлен монитор состояния](app-insights-monitor-performance-live-website-now.md), а также [облачных служб Azure](app-insights-azure.md). Такие данные для веб-сайтов Azure недоступны.
+* Данные о производительности (ЦП, скорость ввода-вывода и т. д.) доступны для веб-служб Java, классических приложений Windows, [веб-приложений и служб IIS, если установлен монитор состояния](app-insights-monitor-performance-live-website-now.md), а также [облачных служб Azure](app-insights-overview.md). Такие данные для веб-сайтов Azure недоступны.
 
 ## <a name="video"></a>Видео
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/112/player]
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Отслеживание использования Application Insights.](app-insights-web-track-usage.md)
+* [Отслеживание использования Application Insights.](app-insights-usage-overview.md)
 * [Использование диагностического поиска](app-insights-diagnostic-search.md)
 
 <!--Link references-->

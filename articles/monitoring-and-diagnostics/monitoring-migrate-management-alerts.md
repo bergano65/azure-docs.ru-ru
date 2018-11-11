@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/14/2017
 ms.author: johnkem
 ms.component: alerts
-ms.openlocfilehash: 9e4302b780d0c08afbc791a0aec6bfd806aba161
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: fe854c6a33a950f9f937118b6048d547f1a2fe37
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35263710"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51245772"
 ---
 # <a name="migrate-azure-alerts-on-management-events-to-activity-log-alerts"></a>Перенос оповещений Azure о событиях управления в оповещения журнала действий
 
@@ -28,7 +28,7 @@ ms.locfileid: "35263710"
 В Azure Monitor (прежнее название — Azure Insights) предоставлялась возможность создать оповещение, которое активировалось событиями управления и отправляло уведомления на URL-адрес веб-перехватчика или адреса электронной почты. Эти оповещения можно было создать одним из следующих способов:
 * На портале Azure для определенных типов ресурсов, выбрав "Мониторинг" > "Оповещения" > "Добавить оповещение" и задав для параметра "Оповещения включены" значение "События".
 * Выполнив командлет PowerShell Add-AzureRmLogAlertRule.
-* Непосредственно, используя [REST API оповещений](http://docs.microsoft.com/rest/api/monitor/alertrules) с odata.type = "ManagementEventRuleCondition" и dataSource.odata.type = "RuleManagementEventDataSource".
+* Непосредственно, используя [REST API оповещений](https://docs.microsoft.com/rest/api/monitor/alertrules) с odata.type = "ManagementEventRuleCondition" и dataSource.odata.type = "RuleManagementEventDataSource".
  
 Следующий сценарий PowerShell возвращает список всех оповещений о событиях управления, имеющихся в подписке, а также условий, заданных для каждого оповещения.
 
@@ -95,7 +95,7 @@ ResourceUri          : /subscriptions/<subscription-id>/resourceGroups/<resource
 Эта функциональная возможность перенесена в [оповещения журнала действий Azure Monitor](monitoring-activity-log-alerts.md). Эти новые оповещения позволяют задать условие для событий журнала действий и получать уведомление, когда новое событие соответствует этому условию. Они также предоставляют ряд усовершенствований по сравнению с оповещениями о событиях управления.
 * Вы можете использовать группу получателей уведомлений ("действий") для нескольких оповещений с помощью [групп действий](monitoring-action-groups.md). Это упрощает изменение получателей оповещения.
 * Вы можете получать уведомления непосредственно на телефон в виде SMS с помощью группы действий.
-* Вы можете [создавать оповещения журнала действий с помощью шаблонов Resource Manager](monitoring-create-activity-log-alerts-with-resource-manager-template.md).
+* Вы можете [создавать оповещения журнала действий с помощью шаблонов Resource Manager](alert-activity-log.md).
 * Вы можете создавать более гибкие и сложные условия в соответствии с конкретными потребностями.
 * Уведомления доставляются быстрее.
  
@@ -103,7 +103,7 @@ ResourceUri          : /subscriptions/<subscription-id>/resourceGroups/<resource
  
 Чтобы создать новое оповещение журнала действий, вы можете сделать следующее.
 * Следуйте [нашим указаниям по созданию оповещения на портале Azure](monitoring-activity-log-alerts.md).
-* Узнайте, как [создать оповещение с помощью шаблона Resource Manager](monitoring-create-activity-log-alerts-with-resource-manager-template.md).
+* Узнайте, как [создать оповещение с помощью шаблона Resource Manager](alert-activity-log.md).
  
 Оповещения о событиях управления, которые были созданы ранее, не будут автоматически перенесены в оповещения журнала действий. Необходимо использовать приведенный выше сценарий PowerShell, чтобы получить список оповещений о событиях управления, настроенных на текущий момент, и вручную воссоздать их в виде оповещений журнала действий. Это необходимо сделать до 1 октября, после чего оповещения о событиях управления больше не будут отображаться в вашей подписке Azure. Другие типы оповещений Azure, включая оповещения о метриках Azure Monitor, оповещения Application Insights и оповещения Log Analytics, это изменение не затрагивает. Если у вас возникли вопросы, добавьте их в комментариях ниже.
 
@@ -112,7 +112,7 @@ ResourceUri          : /subscriptions/<subscription-id>/resourceGroups/<resource
 
 * Узнайте больше о [журнале действий](monitoring-overview-activity-logs.md).
 * Настройте [оповещения журнала действий на портале Azure](monitoring-activity-log-alerts.md).
-* Настройте [оповещения журнала действий с помощью Resource Manager](monitoring-create-activity-log-alerts-with-resource-manager-template.md).
+* Настройте [оповещения журнала действий с помощью Resource Manager](alert-activity-log.md).
 * Просмотрите [схему webhook оповещений журнала действий](monitoring-activity-log-alerts-webhook.md).
 * Узнайте больше об [уведомлениях службы](monitoring-service-notifications.md).
 * Узнайте больше о [группах действий](monitoring-action-groups.md).

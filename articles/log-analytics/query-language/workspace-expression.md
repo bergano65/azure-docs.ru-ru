@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 09/10/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: 70ee244599f926f4d6c4a36f6065a1f743de2466
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 8b83650acfee638ae2a667cd0925fd91d44b80b2
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46971830"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51282702"
 ---
 # <a name="workspace-expression-in-log-analytics-query"></a>Выражение workspace() в запросах Log Analytics
 
@@ -74,4 +74,4 @@ union
 ## <a name="next-steps"></a>Дополнительная информация
 
 - См. описание [выражения app](workspace-expression.md) для обращения к на приложениям Application Insights.
-- См. дополнительные сведения о [хранении данных Log Analytics](../../log-analytics/log-analytics-log-search.md).
+- См. дополнительные сведения о [хранении данных Log Analytics](../../log-analytics/log-analytics-queries.md).

@@ -10,16 +10,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/28/2018
 ms.author: lbosq
-ms.openlocfilehash: bf91ec77f8d7248c6fa2047636f295c187f626c8
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 7e9de68866b5e5849d0e48ad5073fc7b89fbb1ca
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49078228"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51239310"
 ---
 # <a name="using-a-partitioned-graph-in-azure-cosmos-db"></a>Использование секционированного графа в Azure Cosmos DB
 
-Одной из основных функций API Gremlin в Azure Cosmos DB является обработка крупномасштабных графов с помощью горизонтального масштабирования. Это возможно благодаря [функциям секционирования в Azure Cosmos DB](partition-data.md#how-does-partitioning-work). При этом используются контейнеры, которые можно независимо масштабировать в плане ресурсов хранения и пропускной способности. Azure Cosmos DB поддерживает такие типы контейнеров во всех API:
+Одной из основных функций API Gremlin в Azure Cosmos DB является обработка крупномасштабных графов с помощью горизонтального масштабирования. Это возможно благодаря [функциям секционирования в Azure Cosmos DB](partition-data.md). При этом используются контейнеры, которые можно независимо масштабировать в плане ресурсов хранения и пропускной способности. Azure Cosmos DB поддерживает такие типы контейнеров во всех API:
 
 - **Фиксированный контейнер**: эти контейнеры могут хранить базы данных графов размером до 10 ГБ с числом выделенных единиц запросов в секунду не более 10 000. Для создания фиксированного контейнера в данных не требуется указывать свойство ключа секции.
 

@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mikeray
-ms.openlocfilehash: 84fa2e051c46e178e3e72709886babc8c3db7b9d
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.openlocfilehash: 43f3628878654a32be8aeafe1ba0d2e42e03d82f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
-ms.locfileid: "29852835"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51240415"
 ---
 # <a name="configure-an-always-on-availability-group-on-azure-virtual-machines-in-different-regions"></a>Настройка группы доступности AlwaysOn на виртуальных машинах Azure в разных регионах
 
@@ -56,7 +56,7 @@ ms.locfileid: "29852835"
    ![Группа доступности](./media/virtual-machines-windows-portal-sql-availability-group-dr/01-vpngateway-example.png)
 
 >[!IMPORTANT]
->Эта архитектура влечет за собой оплату исходящего трафика для данных, реплицируемых между регионами Azure. Ознакомьтесь с разделом [Сведения о стоимости пропускной способности](http://azure.microsoft.com/pricing/details/bandwidth/).  
+>Эта архитектура влечет за собой оплату исходящего трафика для данных, реплицируемых между регионами Azure. Ознакомьтесь с разделом [Сведения о стоимости пропускной способности](https://azure.microsoft.com/pricing/details/bandwidth/).  
 
 ## <a name="create-remote-replica"></a>Создание удаленной реплики
 
@@ -104,13 +104,13 @@ ms.locfileid: "29852835"
    - Используйте сеть удаленного центра обработки данных.
    - Назначьте IP-адрес из новой подсистемы Azure Load Balancer. 
 
-1. [Включите группы доступности AlwaysOn](http://msdn.microsoft.com/library/ff878259.aspx) на новом сервере SQL Server с помощью диспетчера конфигурации SQL Server.
+1. [Включите группы доступности AlwaysOn](https://msdn.microsoft.com/library/ff878259.aspx) на новом сервере SQL Server с помощью диспетчера конфигурации SQL Server.
 
 1. [Откройте порты брандмауэра на новом сервере SQL Server](virtual-machines-windows-portal-sql-availability-group-prereq.md#endpoint-firewall).
 
    Номера портов, которые необходимо открыть, зависят от вашей среды. Откройте порты для конечной точки зеркального отображения и пробы работоспособности Azure Load Balancer.
 
-1. [Добавьте реплику в группу доступности на новом сервере SQL Server](http://msdn.microsoft.com/library/hh213239.aspx).
+1. [Добавьте реплику в группу доступности на новом сервере SQL Server](https://msdn.microsoft.com/library/hh213239.aspx).
 
    Для реплики в удаленном регионе Azure настройте асинхронную репликацию с ручной отработкой отказа.  
 
@@ -142,9 +142,9 @@ ms.locfileid: "29852835"
 
 Реплика в удаленном центре обработки данных входит в группу доступности, но находится в другой подсети. Если это реплика станет первичной, то возможно превышение времени ожидания подключения к приложению. Точно так же работает локальная группа доступности в развертывании с несколькими подсетями. Чтобы разрешить подключения из клиентских приложений, либо измените подключение клиента, либо настройте кэширование разрешения имен для ресурса сетевого имени кластера.
 
-Желательно изменить строки подключения клиента, чтобы задать `MultiSubnetFailover=Yes`. Ознакомьтесь с разделом [Соединение с помощью MultiSubnetFailover](http://msdn.microsoft.com/library/gg471494#Anchor_0).
+Желательно изменить строки подключения клиента, чтобы задать `MultiSubnetFailover=Yes`. Ознакомьтесь с разделом [Соединение с помощью MultiSubnetFailover](https://msdn.microsoft.com/library/gg471494#Anchor_0).
 
-Если вам не удается изменить строки подключения, можно настроить кэширование разрешения имен. Ознакомьтесь с разделом [Connection Timeouts in Multi-subnet Availability Group](http://blogs.msdn.microsoft.com/alwaysonpro/2014/06/03/connection-timeouts-in-multi-subnet-availability-group/) (Время ожидания подключения в группе доступности с несколькими подсетями).
+Если вам не удается изменить строки подключения, можно настроить кэширование разрешения имен. Ознакомьтесь с разделом [Connection Timeouts in Multi-subnet Availability Group](https://blogs.msdn.microsoft.com/alwaysonpro/2014/06/03/connection-timeouts-in-multi-subnet-availability-group/) (Время ожидания подключения в группе доступности с несколькими подсетями).
 
 ## <a name="fail-over-to-remote-region"></a>Отработка отказа в удаленный регион
 
@@ -175,12 +175,12 @@ ms.locfileid: "29852835"
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Выполнение запланированного перехода на другой ресурс вручную для группы доступности (SQL Server)](http://msdn.microsoft.com/library/hh231018.aspx)
-- [Выполнение принудительного перехода на другой ресурс вручную для группы доступности (SQL Server)](http://msdn.microsoft.com/library/ff877957.aspx)
+- [Выполнение запланированного перехода на другой ресурс вручную для группы доступности (SQL Server)](https://msdn.microsoft.com/library/hh231018.aspx)
+- [Выполнение принудительного перехода на другой ресурс вручную для группы доступности (SQL Server)](https://msdn.microsoft.com/library/ff877957.aspx)
 
 ## <a name="additional-links"></a>Ссылки на дополнительные материалы
 
-* [Группы доступности Always On](http://msdn.microsoft.com/library/hh510230.aspx)
-* [Виртуальные машины Azure](http://docs.microsoft.com/azure/virtual-machines/windows/)
+* [Группы доступности Always On](https://msdn.microsoft.com/library/hh510230.aspx)
+* [Виртуальные машины Azure](https://docs.microsoft.com/azure/virtual-machines/windows/)
 * [Подсистемы Azure Load Balancer](virtual-machines-windows-portal-sql-availability-group-tutorial.md#configure-internal-load-balancer)
 * [Группы доступности Azure](../manage-availability.md)

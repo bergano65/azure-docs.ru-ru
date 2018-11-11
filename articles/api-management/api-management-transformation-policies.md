@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/27/2017
 ms.author: apimpm
-ms.openlocfilehash: 29e918733cc72010aa6aa5c0f42d613331eec2a2
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 6796ecd272c7a1ed1d29c89fbe06c87dc2d4601b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48044728"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51242812"
 ---
 # <a name="api-management-transformation-policies"></a>Политики преобразования службы управления API
-В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](http://go.microsoft.com/fwlink/?LinkID=398186).
+В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](https://go.microsoft.com/fwlink/?LinkID=398186).
 
 ##  <a name="TransformationPolicies"></a> Политики преобразования
 
@@ -83,7 +83,7 @@ ms.locfileid: "48044728"
 |parse-date|Если задано значение `false`, значения даты просто копируются при преобразовании.|Нет |Да|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound, on-error.
 
@@ -127,7 +127,7 @@ ms.locfileid: "48044728"
 |consider-accept-header|Для атрибута нужно задать одно из следующих значений:<br /><br /> true — применять преобразование, только если XML запрашивается в заголовке запроса Accept;<br />false — всегда применять преобразование.|Нет |Да|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound, on-error.
 
@@ -162,7 +162,7 @@ ms.locfileid: "48044728"
 |значение|Строка замены. Укажите строку замены с нулевой длиной для удаления строки поиска.|Yes|Недоступно|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound, backend, on-error.
 
@@ -193,7 +193,7 @@ ms.locfileid: "48044728"
 |redirect-content-urls|Корневой элемент.|Yes|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound.
 
@@ -269,7 +269,7 @@ ms.locfileid: "48044728"
 |sf-listener-name|Применяется, только когда серверной частью является служба Service Fabric, а также при определении с помощью атрибута backend-id. Reliable Services Service Fabric позволяют создавать несколько прослушивателей в одной службе. Этот атрибут используется для выбора конкретного прослушивателя, когда у серверной службы Reliable Service есть больше одного прослушивателя. Если этот атрибут не указан, управление API попытается использовать прослушиватель без имени. Прослушиватель без имени часто используются службами Reliable Services, у которых есть только один прослушиватель. |Нет |Недоступно|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, backend.
 
@@ -308,12 +308,12 @@ ms.locfileid: "48044728"
 
 ```xml
 <set-body>
-@{ 
-    string inBody = context.Request.Body.As<string>(preserveContent: true); 
-    if (inBody[0] =='c') { 
-        inBody[0] = 'm'; 
-    } 
-    return inBody; 
+@{ 
+    string inBody = context.Request.Body.As<string>(preserveContent: true); 
+    if (inBody[0] =='c') { 
+        inBody[0] = 'm'; 
+    } 
+    return inBody; 
 }
 </set-body>
 ```
@@ -321,14 +321,14 @@ ms.locfileid: "48044728"
 #### <a name="example-accessing-the-body-as-a-jobject-note-that-since-we-are-not-reserving-the-original-request-body-accesing-it-later-in-the-pipeline-will-result-in-an-exception"></a>Пример доступа к тексту как к объекту JObject Обратите внимание, что мы не резервировали исходный текст запроса, поэтому попытка получить к нему доступ позже в конвейере приведет к возникновению исключения.
 
 ```xml
-<set-body> 
-@{ 
-    JObject inBody = context.Request.Body.As<JObject>(); 
-    if (inBody.attribute == <tag>) { 
-        inBody[0] = 'm'; 
-    } 
-    return inBody.ToString(); 
-} 
+<set-body> 
+@{ 
+    JObject inBody = context.Request.Body.As<JObject>(); 
+    if (inBody.attribute == <tag>) { 
+        inBody[0] = 'm'; 
+    } 
+    return inBody.ToString(); 
+} 
 </set-body>
 
 ```
@@ -439,7 +439,7 @@ OriginalUrl.
 
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound, backend.
 
@@ -510,7 +510,7 @@ OriginalUrl.
 |name|Указывает имя заголовка, которое должно быть установлено.|Yes|Недоступно|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound, backend, on-error.
 
@@ -570,7 +570,7 @@ OriginalUrl.
 |name|Указывает имя параметра запроса, которое должно быть установлено.|Yes|Недоступно|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, backend.
 
@@ -648,7 +648,7 @@ OriginalUrl.
 |copy-unmatched-params|Указывает, добавляются ли в определяемый шаблоном перезаписи URL-адрес параметры запроса во входящем запросе, отсутствующие в исходном шаблоне URL-адреса.|Нет |Да|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound.
 
@@ -712,7 +712,7 @@ OriginalUrl.
 |xsl:stylesheet|Корневой элемент таблицы стилей. Все определенные элементы и атрибуты соответствуют стандарту [спецификации XSLT](http://www.w3.org/TR/xslt).|Yes|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound.
 

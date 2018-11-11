@@ -10,21 +10,59 @@ ms.service: storsimple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: landing-page
-ms.date: 01/23/2017
+ms.date: 11/01/2018
 ms.author: carolz
-ms.openlocfilehash: 0115c1794878296df826e7d04724a561464125d6
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: b98106d1a440a30345a2f63bf5fa60384c41627e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30181570"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51245262"
 ---
 # <a name="storsimple-documentation"></a>Документация по StorSimple
 
-Узнайте, как использовать Azure StorSimple — решение интегрированного хранилища, которое управляет задачами хранилища на локальных устройствах и в облачном хранилище Azure. В руководствах и другой документации объясняется, как настроить управление хранилищем, не зависящее от расположения резервное копирование и аварийное восстановление.
+Узнайте, как использовать Azure StorSimple — решение интегрированного хранилища, которое управляет задачами хранилища на локальных устройствах и в облачном хранилище Azure. В руководствах и другой документации объясняется, как настроить управление хранилищем, резервное копирование независимо от расположения, а также аварийное восстановление.
 
 <ul class="panelContent cardsFTitle">
-     <li>
+    <li>
+        <a href="/azure/storsimple/storsimple-8000-choose-storage-solution">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="media/index/get-started.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Сравнение StorSimple со службами "Синхронизация файлов" и Data Box Edge в Azure</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+   </ul>
+<ul class="panelContent cardsFTitle">
+    <li>
+        <a href="/azure/storsimple/storsimple-overview">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="media/index/storsimple.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Сведения о StorSimple серии 8000</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
         <a href="/azure/storsimple/storsimple-ova-overview">
         <div class="cardSize">
             <div class="cardPadding">
@@ -42,36 +80,20 @@ ms.locfileid: "30181570"
         </div>
         </a>
     </li>
-     <li>
-        <a href="/azure/storsimple/storsimple-overview">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="media/index/storsimple.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Сведения о StorSimple серии 8000</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
+ </ul>
+<ul class="panelContent cardsFTitle">
     <li>
-        <a href="https://azure.microsoft.com/documentation/videos/index/?services=storsimple">
+        <a href="/azure/storsimple/storsimple-system-requirements">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="media/index/video-library.svg" alt="" />
+                            <img src="media/index/get-started.svg" alt="" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Видеотека StorSimple</h3>
+                        <h3>Начало работы со StorSimple серии 8000</h3>
                     </div>
                 </div>
             </div>
@@ -96,8 +118,10 @@ ms.locfileid: "30181570"
         </div>
         </a>
     </li>
+ </ul>
+<ul class="panelContent cardsFTitle">
     <li>
-        <a href="/azure/storsimple/storsimple-system-requirements">
+        <a href="/azure/storsimple/storsimple-update5-release-notes">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -107,7 +131,25 @@ ms.locfileid: "30181570"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Начало работы со StorSimple серии 8000</h3>
+                        <h3>Заметки о выпуске StorSimple серии 8000</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/azure/storsimple/storsimple-virtual-array-update-11-release-notes">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="media/index/get-started.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Заметки о выпуске виртуального массива StorSimple</h3>
                     </div>
                 </div>
             </div>
@@ -117,36 +159,3 @@ ms.locfileid: "30181570"
    </ul>
 
 ---
-
-## <a name="other-storsimple-solutions"></a>Другие решения StorSimple
-
-<ul class="panelContent cardsW">
-    <li>
-        
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Другие решения StorSimple</h3>
-                        <p><a href="http://onlinehelp.storsimple.com/">Хранилище StorSimple серии 5000–7000</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Заметки о выпуске</h3>
-                        <p><a href="/azure/storsimple/storsimple-update3-release-notes">Заметки о выпуске</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
-
-

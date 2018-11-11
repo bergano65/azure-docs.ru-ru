@@ -12,12 +12,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
-ms.openlocfilehash: a10d354cf819ebaa7e2199d9de0566b3e6bfd1bf
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: c708c396911badb7c7ce5df2497aaba47cb7defe
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42145938"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51243766"
 ---
 # <a name="getting-started-with-azure-storage-azure-webjob-projects"></a>Начало работы со службой хранилища Azure (проекты веб-заданий Azure)
 [!INCLUDE [storage-try-azure-tools-tables](../../includes/storage-try-azure-tools-tables.md)]
@@ -145,5 +145,5 @@ ms.locfileid: "42145938"
 Дополнительную информацию об управлении обработкой таблиц, которая инициируется сообщением очереди, а также несвязанные с обработкой таблиц сценарии применения пакета SDK для веб-заданий см. в статье [Приступая к работе с подключенными службами хранилища очередей Azure и Visual Studio (проекты веб-заданий)](../storage/vs-storage-webjobs-getting-started-queues.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
-В этой статье предоставлены примеры кода обработки обычных сценариев для работы с таблицами Azure. Дополнительная информация об использовании веб-заданий Azure и пакета SDK для веб-заданий доступна в [ресурсах с документацией по веб-заданиям Azure](http://go.microsoft.com/fwlink/?linkid=390226).
+В этой статье предоставлены примеры кода обработки обычных сценариев для работы с таблицами Azure. Дополнительная информация об использовании веб-заданий Azure и пакета SDK для веб-заданий доступна в [ресурсах с документацией по веб-заданиям Azure](https://go.microsoft.com/fwlink/?linkid=390226).
 

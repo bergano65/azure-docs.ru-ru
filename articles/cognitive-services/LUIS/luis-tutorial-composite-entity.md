@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: 99e0b22b663f6edab9646111b390186a6f89a90f
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 1521bba188fcd7d8bade88196fe687929f414f93
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47035187"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51283518"
 ---
 # <a name="tutorial-6-group-and-extract-related-data"></a>Руководство 6. Группирование и извлечение связанных данных
 В этом руководстве описывается добавление составной сущности для объединения извлеченных данных различных типов в содержащую сущность. Клиентское приложение может легко извлекать связанные данные разных типов путем их объединения.
@@ -36,20 +36,20 @@ ms.locfileid: "47035187"
 > * Добавление составной сущности 
 > * Train
 > * Опубликовать
-> * Получать намерения и сущности из конечной точки
+> * Получать намерения и сущности из конечной точки.
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
-## <a name="use-existing-app"></a>Использовать существующее приложение
-Продолжите работу с приложением (**HumanResources**), созданным в соответствии с инструкциями из предыдущего руководства. 
+## <a name="use-existing-app"></a>Использование существующего приложения
+Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
 
-Если у вас нет приложения HumanResources из предыдущего руководства, сделайте следующее:
+Если у вас нет приложения HumanResources из предыдущего руководства, выполните приведенные ниже шаги.
 
 1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-hier-HumanResources.json).
 
 2. Импортируйте JSON-файл в новое приложение.
 
-3. В разделе **Управление** перейдите на вкладку **Версии**, клонируйте версию и назовите ее `composite`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в составе URL-адреса, оно не должно содержать символы, недопустимые для URL-адресов.
+3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `composite`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе.
 
 
 ## <a name="composite-entity"></a>Составная сущность
@@ -97,7 +97,7 @@ ms.locfileid: "47035187"
 ]
 ```
 
-1. [!include[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
+1. [!INCLUDE[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
 2. На странице **Намерения** выберите намерение **MoveEmployee**. 
 
