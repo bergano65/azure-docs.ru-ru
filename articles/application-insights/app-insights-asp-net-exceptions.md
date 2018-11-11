@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/19/2017
 ms.author: mbullwin
-ms.openlocfilehash: a3dcf4211df5d40c4b174fd9a818d3268ffaa3a0
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 87de134f6f0484208e8b6cec52b5eefaac4621c6
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35295716"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51251940"
 ---
 # <a name="diagnose-exceptions-in-your-web-apps-with-application-insights"></a>Диагностика исключений в веб-приложениях с помощью Application Insights
 Об исключениях активного веб-приложения сообщает [Application Insights](app-insights-overview.md). Вы можете сопоставлять неудачно завершенные запросы с исключениями и другими событиями на клиенте и сервере, чтобы быстро выявлять причины неполадок.
@@ -205,7 +205,7 @@ ms.locfileid: "35295716"
 ### <a name="prior-versions-support"></a>Поддержка предыдущих версий
 Примеры отслеживания исключений для MVC 4 (и более ранних версий) веб-пакета SDK 2.5 (и более ранних версий) для Application Insights приведены ниже.
 
-Если для конфигурации [CustomErrors](https://msdn.microsoft.com/library/h0hfz6fc.aspx) установлено значение `Off`, исключения будут доступны для сбора в [HTTP-модуле](https://msdn.microsoft.com/library/ms178468.aspx). Тем не менее, если это значение `RemoteOnly` (по умолчанию) или `On`, то исключение будет удалено и недоступно для автоматического сбора в Application Insights. Эту ситуацию можно исправить, переопределив [класс System.Web.Mvc.HandleErrorAttribute](http://msdn.microsoft.com/library/system.web.mvc.handleerrorattribute.aspx) и применив переопределенный класс, как показано для разных версий MVC ([источник на GitHub](https://github.com/AppInsightsSamples/Mvc2UnhandledExceptions/blob/master/MVC2App/Controllers/AiHandleErrorAttribute.cs)):
+Если для конфигурации [CustomErrors](https://msdn.microsoft.com/library/h0hfz6fc.aspx) установлено значение `Off`, исключения будут доступны для сбора в [HTTP-модуле](https://msdn.microsoft.com/library/ms178468.aspx). Тем не менее, если это значение `RemoteOnly` (по умолчанию) или `On`, то исключение будет удалено и недоступно для автоматического сбора в Application Insights. Эту ситуацию можно исправить, переопределив [класс System.Web.Mvc.HandleErrorAttribute](https://msdn.microsoft.com/library/system.web.mvc.handleerrorattribute.aspx) и применив переопределенный класс, как показано для разных версий MVC ([источник на GitHub](https://github.com/AppInsightsSamples/Mvc2UnhandledExceptions/blob/master/MVC2App/Controllers/AiHandleErrorAttribute.cs)):
 
 ```csharp
     using System;

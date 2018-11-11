@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 06/29/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 7c6d91da0634e7f847af01d1c057607ab095cdf6
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 2e59286822d49abeea522b5346ba531408559a7b
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49408214"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51014828"
 ---
 # <a name="application-insights-connector-management-solution-preview"></a>Решение по управлению "Соединитель Application Insights" (предварительная версия)
 
@@ -44,8 +44,8 @@ ms.locfileid: "49408214"
 
 | Подключенный источник | Поддерживаются | ОПИСАНИЕ |
 | --- | --- | --- |
-| [Агенты Windows](log-analytics-windows-agent.md) | Нет  | Решение не собирает сведения из агентов Windows. |
-| [Агенты Linux](log-analytics-linux-agents.md) | Нет  | Решение не собирает сведения из агентов Linux. |
+| [Агенты Windows](log-analytics-agent-windows.md) | Нет  | Решение не собирает сведения из агентов Windows. |
+| [Агенты Linux](log-analytics-quick-collect-linux-computer.md) | Нет  | Решение не собирает сведения из агентов Linux. |
 | [Группы управления SCOM](log-analytics-om-agents.md) | Нет  | Решение не собирает сведения из агентов в подключенной группе управления SCOM. |
 | [Учетная запись хранения Azure](log-analytics-azure-storage.md) | Нет  | Решение не собирает сведения из службы хранилища Azure. |
 
@@ -57,7 +57,7 @@ ms.locfileid: "49408214"
 
 ## <a name="configuration"></a>Параметр Configuration
 
-1. Включите решение "Аналитика веб-приложений Azure" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.ApplicationInsights?tab=Overview) или выполните инструкции по [добавлению решений Log Analytics из коллекции решений](log-analytics-add-solutions.md).
+1. Включите решение "Аналитика веб-приложений Azure" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.ApplicationInsights?tab=Overview) или выполните инструкции по [добавлению решений Log Analytics из коллекции решений](../monitoring/monitoring-solutions.md).
 2. Перейдите на [портал Azure](https://portal.azure.com). Выберите **Все службы**, чтобы открыть Application Insights. Затем выполните поиск по запросу "Application Insights". 
 3. В разделе **Подписки** выберите подписку с ресурсами Application Insights, а затем в разделе **Имя** выберите одно или несколько приложений.
 4. Выберите команду **Сохранить**.
@@ -267,4 +267,4 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Используйте [поиск по журналам](log-analytics-log-searches.md), чтобы просматривать подробные сведения о приложениях Application Insights.
+- Используйте [поиск по журналам](log-analytics-queries.md), чтобы просматривать подробные сведения о приложениях Application Insights.

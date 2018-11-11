@@ -1,22 +1,20 @@
 ---
-title: Общие сведения о поддержке мультитенантности для репликации виртуальных машин VMware в Azure (CSP) с помощью Azure Site Recovery | Документация Майкрософт
-description: Общие сведения о поддержке Azure Site Recovery для клиентских подписок в мультитенантной среде, реализуемой с помощью программы CSP.
-services: site-recovery
+title: Общие сведения о поддержке мультитенантности для аварийного восстановления виртуальных машин VMware в Azure (CSP) с помощью Azure Site Recovery | Документация Майкрософт
+description: Общие сведения о поддержке Azure Site Recovery для аварийного восстановления VMware в Azure в мультитенантной среде, реализуемой с помощью программы CSP.
 author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: mayg
-ms.openlocfilehash: 4cd0c3baf385a864e2173de9bbce897bb5066dae
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 89e731d6c255092b087f0615bad49185c7181f1f
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49352877"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210765"
 ---
-# <a name="overview-of-multi-tenant-support-for-vmware-replication-to-azure-with-csp"></a>Общие сведения о поддержке мультитенантности для репликации VMware в Azure с помощью CSP
+# <a name="overview-of-multi-tenant-support-for-vmware-fisaster-recovery-to-azure-with-csp"></a>Общие сведения о поддержке мультитенантности для аварийного восстановления VMware в Azure с помощью CSP
 
 В службе [Azure Site Recovery](site-recovery-overview.md) реализована поддержка мультитенантных окружений для клиентских подписок. Такие среды также поддерживаются для подписок клиентов, созданных и управляемых с помощью программы поставщика облачных решений Майкрософт (CSP).
 

@@ -7,15 +7,15 @@ manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 10/30/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: cb004745cfbc6af185a06c4787fb34326eccc69a
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 25352d12e578c289ccb4ab8aab60dc55a444762e
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44382833"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50413508"
 ---
 # <a name="define-a-technical-profile-for-a-jwt-token-issuer-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля для издателя токенов JWT в пользовательской политике Azure Active Directory B2C
 
@@ -25,7 +25,7 @@ ms.locfileid: "44382833"
 
 ## <a name="protocol"></a>Протокол
 
-Атрибуту **Name** элемента **Protocol** необходимо задать значение `None`. Для элемента **OutputTokenFormat** задайте значение `JWT`.
+Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `None`. Для элемента **OutputTokenFormat** задайте значение `JWT`.
 
 В следующем примере показан технический профиль для `JwtIssuer`:
 
@@ -52,7 +52,7 @@ ms.locfileid: "44382833"
 | id_token_lifetime_secs | Нет  | Время существования токена идентификатора. Значение по умолчанию составляет 3600 секунд (1 час). Минимальное значение (включительно) — 300 секунд (5 минут). Максимальное значение (включительно) — 86 400 секунд (24 часа). | 
 | refresh_token_lifetime_secs | Нет  | Время существования токена обновления. Максимальный период времени, до наступления которого маркер обновления может использоваться для получения нового маркера доступа, если приложению была предоставлена область offline_access. По умолчанию это 1 209 600 секунд (14 дней). Минимальное значение (включительно) — 86 400 секунд (24 часа). Максимальное значение (включительно) — 7 776 000 секунд (90 дней). | 
 | rolling_refresh_token_lifetime_secs | Нет  | Время жизни скользящего окна токена обновления. По истечении этого периода пользователю будет необходимо пройти проверку подлинности повторно вне зависимости от срока действия последнего токена обновления, полученного приложением. Если вы не хотите применять время существования скользящего окна, задайте для параметра allow_infinite_rolling_refresh_token значение `true`. По умолчанию это 7 776 000 секунд (90 дней). Минимальное значение (включительно) — 86 400 секунд (24 часа). Максимальное значение (включительно) — 31 536 000 секунд (365 дней). | 
-| rolling_refresh_token_lifetime_secs | Нет  | Если задать значение `true`, время существования скользящего окна токена обновления будет неограниченно. |
+| allow_infinite_rolling_refresh_token | Нет  | Если задать значение `true`, время существования скользящего окна токена обновления будет неограниченно. |
 | IssuanceClaimPattern | Yes | Управляет утверждением издателя (iss). Одно из значений:<ul><li>AuthorityAndTenantGuid — утверждение iss включает ваше доменное имя, например `login.microsoftonline` или `tenant-name.b2clogin.com`, а также идентификатор клиента https://login.microsoftonline.com/00000000-0000-0000-0000-000000000000/v2.0/;</li><li>AuthorityWithTfp — утверждение iss включает ваше доменное имя, например `login.microsoftonline` или `tenant-name.b2clogin.com`, ваш идентификатор клиента и имя политики проверяющей стороны. https://login.microsoftonline.com/tfp/00000000-0000-0000-0000-000000000000/b2c_1a_tp_sign-up-or-sign-in/v2.0/</li></ul> | 
 | AuthenticationContextReferenceClaimPattern | Нет  | Управляет значением утверждения `acr`.<ul><li>None — Azure AD B2C не выдает утверждение acr.</li><li>PolicyId — утверждение `acr` содержит имя политики.</li></ul>Параметры, использующиеся для настройки этого значения, — TFP (политика инфраструктуры доверия) и ACR (ссылка на контекст проверки подлинности). Мы рекомендуем для этого параметра задать значение TFP. Для задания значения должен существовать параметр `<Item>` с `Key="AuthenticationContextReferenceClaimPattern"` со значением `None`. В политику проверяющей стороны добавьте элемент <OutputClaims> и `<OutputClaim ClaimTypeReferenceId="trustFrameworkPolicy" Required="true" DefaultValue="{policy}" />`. Кроме того, ваша политика должна содержать утверждение типа `<ClaimType Id="trustFrameworkPolicy"> <DisplayName>trustFrameworkPolicy</DisplayName>     <DataType>string</DataType> </ClaimType>`. | 
 

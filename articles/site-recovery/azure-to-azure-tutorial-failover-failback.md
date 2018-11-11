@@ -1,20 +1,20 @@
 ---
-title: Отработка отказа и восстановление размещения виртуальных машин Azure, реплицированных в дополнительный регион Azure, с помощью Azure Site Recovery
-description: Сведения об отработке отказа и восстановлении размещения при репликации виртуальных машин Azure в дополнительный регион Azure с помощью Azure Site Recovery
+title: Отработка отказа и восстановление размещения виртуальных машин IaaS Azure, реплицированных в дополнительный регион Azure, в случае аварийного восстановления с помощью службы Azure Site Recovery.
+description: Сведения об отработке отказа и восстановлении размещения виртуальных машин Azure, реплицированных в дополнительный регион Azure, в случае аварийного восстановления с помощью службы Azure Site Recovery.
 services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 10/10/2018
+ms.date: 10/28/2018
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: f7d6594910f3c703c2381515c3b93eb56ff4f675
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: 9917656a3bc8fd8cfe7d71786dc39d296a2449c1
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49456513"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50239293"
 ---
 # <a name="fail-over-and-fail-back-azure-vms-between-azure-regions"></a>Отработка отказа и восстановление размещения виртуальных машин Azure между регионами Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "49456513"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Обязательно выполните [отработку аварийного восстановления](azure-to-azure-tutorial-dr-drill.md), чтобы убедиться в надлежащей работе всех компонентов.
-- Перед запуском тестовой отработки отказа проверьте свойства виртуальной машины. Виртуальная машина должна соответствовать [требованиям Azure](azure-to-azure-support-matrix.md#support-for-replicated-machine-os-versions).
+- Перед запуском тестовой отработки отказа проверьте свойства виртуальной машины. Виртуальная машина должна соответствовать [требованиям Azure](azure-to-azure-support-matrix.md#replicated-machine-operating-systems).
 
 ## <a name="run-a-failover-to-the-secondary-region"></a>Запуск отработки отказа в дополнительный регион
 

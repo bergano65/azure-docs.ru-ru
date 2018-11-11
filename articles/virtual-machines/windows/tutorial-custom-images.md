@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание пользовательских образов виртуальных машин с помощью Azure PowerShell | Документы Майкрософт
+title: Руководство. Создание пользовательских образов виртуальных машин с помощью Azure PowerShell | Документация Майкрософт
 description: В этом руководстве описано, как с помощью Azure PowerShell создать пользовательский образ виртуальной машины Linux в Azure.
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 03/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 930f5dc0369c998039b9cc0c089f60de17993be0
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: 1481c32512266f494c03f9ffdc1ce67ef503b4a8
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37435168"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51255206"
 ---
 # <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-azure-powershell"></a>Руководство. Создание пользовательского образа виртуальной машины Azure с помощью Azure PowerShell
 
@@ -50,7 +50,7 @@ ms.locfileid: "37435168"
 
 ### <a name="generalize-the-windows-vm-using-sysprep"></a>Подготовка виртуальной машины Windows к использованию с помощью Sysprep
 
-Помимо прочих действий Sysprep удаляет все сведения о вашей учетной записи и подготавливает машину к использованию в качестве образа. в статье [Использование программы Sysprep: введение](http://technet.microsoft.com/library/bb457073.aspx).
+Помимо прочих действий Sysprep удаляет все сведения о вашей учетной записи и подготавливает машину к использованию в качестве образа. в статье [Использование программы Sysprep: введение](https://technet.microsoft.com/library/bb457073.aspx).
 
 
 1. Подключитесь к виртуальной машине.
@@ -138,7 +138,7 @@ Remove-AzureRmImage `
     -ResourceGroupName myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В рамках этого руководства вы создали пользовательский образ виртуальной машины. Вы научились выполнять следующие задачи:
 

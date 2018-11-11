@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 09/18/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 6154164aadd8ed508bfae8de8b6f3c8255111a73
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: fed1078b9a4e0ca4d0674db522f73705fa3efd0a
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46308073"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51254493"
 ---
 # <a name="tutorial--integrate-a-single-ad-forest-using-pass-through-authentication-pta"></a>Учебник. Интеграция одного леса AD с помощью сквозной проверки подлинности (PTA)
 
@@ -249,7 +249,7 @@ Set-ADUser -Identity $Identity -PasswordNeverExpires $true -ChangePasswordAtLogo
 
 ## <a name="test-signing-in-with-one-of-our-users"></a>Проверка входа с помощью одной из учетных записей
 
-1.  Перейдите на сайт [http://myapps.microsoft.com](http://myapps.microsoft.com).
+1.  Перейдите на сайт [http://myapps.microsoft.com](https://myapps.microsoft.com).
 2. Выполните вход с помощью учетной записи пользователя, которая была создана в новом клиенте.  Для этого следует использовать следующий формат: (user@domain.onmicrosoft.com). Используйте тот же пароль, что и для входа в локальную среду.
 ![Проверка](media/tutorial-password-hash-sync/verify1.png)
 

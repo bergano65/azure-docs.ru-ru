@@ -1,17 +1,17 @@
 ---
-title: Управление сервером обработки в Azure Site Recovery | Документация Майкрософт
-description: Из этой статьи вы узнаете, как управлять сервером обработки, настроенным для репликации виртуальных машин VMware и физических серверов, в Azure Site Recovery.
+title: Управление сервером обработки для аварийного восстановления виртуальных машин VMware и физических серверов в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье описано управление сервером обработки, настроенным для аварийного восстановления виртуальных машин VMware и физических серверов в Azure с помощью Azure Site Recovery.
 author: Rajeswari-Mamilla
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 07/21/2018
+ms.date: 10/29/2018
 ms.author: ramamill
-ms.openlocfilehash: b3c6f1d130a6f5427fe8377bd70de743f0700052
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 8a9342a2354cd4c92fa0230965b4eef6284ee826
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47434846"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50209128"
 ---
 # <a name="manage-process-servers"></a>Управление серверами обработки
 

@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: bwren
 ms.comopnent: ''
-ms.openlocfilehash: 7b44c0712c4d88ec0bbb7a94f574c2a12faf3550
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 52d81e4f4070d8d8e13497ad39d5adf1b99470de
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48040682"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51007745"
 ---
 # <a name="iis-logs-in-log-analytics"></a>Журналы IIS в службе Log Analytics
 Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Log Analytics.  
@@ -80,5 +80,5 @@ ms.locfileid: "48040682"
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Настройте службу Log Analytics для сбора других [источников данных](log-analytics-data-sources.md) для анализа.
-* Узнайте больше об [операциях поиска по журналу](log-analytics-log-searches.md) , которые можно применять для анализа данных, собираемых из источников данных и решений.
+* Узнайте больше об [операциях поиска по журналу](log-analytics-queries.md) , которые можно применять для анализа данных, собираемых из источников данных и решений.
 * Настройте оповещения в службе Log Analytics для получения заблаговременных уведомлений о важных условиях, обнаруженных в журналах IIS.

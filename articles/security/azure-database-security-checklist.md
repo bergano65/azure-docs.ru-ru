@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: tomsh
-ms.openlocfilehash: f6e8ed1725b7ba2a0cba8523ae03c0306337aba0
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: db976fb61c5659fbdcb7ba30aa4f619d52d441c4
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49402513"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51252400"
 ---
 # <a name="azure-database-security-checklist"></a>Контрольный список для обеспечения безопасности баз данных
 
@@ -47,7 +47,7 @@ ms.locfileid: "49402513"
 | ------------ | -------- |
 |**Защита данных**||
 | <br> Шифрование данных при передаче| <ul><li>[Безопасность на транспортном уровне](https://docs.microsoft.com/windows-server/security/tls/transport-layer-security-protocol). Используется для шифрования данных при перемещении в сетях.</li><li>Для базы данных требуется безопасное подключение клиентов по протоколу [TDS (поток табличных данных)](https://msdn.microsoft.com/library/dd357628.aspx) на основе TLS (безопасность на транспортном уровне).</li></ul> |
-|<br>Шифрование при хранении| <ul><li>[Прозрачное шифрование данных](http://go.microsoft.com/fwlink/?LinkId=526242). Используется при физическом хранении неактивных данных в любом цифровом виде.</li></ul>|
+|<br>Шифрование при хранении| <ul><li>[Прозрачное шифрование данных](https://go.microsoft.com/fwlink/?LinkId=526242). Используется при физическом хранении неактивных данных в любом цифровом виде.</li></ul>|
 |**Контроль доступа**||  
 |<br> Доступ к базе данных | <ul><li>[Аутентификация](https://docs.microsoft.com/azure/sql-database/sql-database-control-access) (Аутентификация Azure Active Directory). Используются удостоверения, управляемые Azure Active Directory.</li><li>[Авторизация](https://docs.microsoft.com/azure/sql-database/sql-database-control-access) позволяет предоставлять пользователям минимальные необходимые привилегии.</li></ul> |
 |<br>Доступ к приложениям| <ul><li>[Безопасность на уровне строк](https://msdn.microsoft.com/library/dn765131). Используется политика безопасности и ограничение доступа на уровне строк на основе удостоверения пользователя, роли или контекста выполнения.</li><li>[Динамическое маскирование данных](https://docs.microsoft.com/azure/sql-database/sql-database-dynamic-data-masking-get-started). С помощью разрешений и политик ограничивается возможность раскрытия конфиденциальных данных, которые маскируются для обычных пользователей без соответствующих привилегий.</li></ul>|

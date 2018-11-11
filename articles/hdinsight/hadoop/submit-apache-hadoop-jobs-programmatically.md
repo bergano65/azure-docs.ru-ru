@@ -3,18 +3,18 @@ title: Отправка заданий Hadoop в HDInsight
 description: Сведения об отправке заданий Hadoop в Azure HDInsight.
 ms.reviewer: jasonh
 services: hdinsight
-ms.author: jasonh
-author: jasonwhowell
+ms.author: hrasheed
+author: hrasheed-msft
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
-ms.openlocfilehash: 19f81e3ba5ecf928020e1527374b5c46299fbd21
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 9a764814028c1858139e2439c674c176d4e754ba
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43051765"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51009146"
 ---
 # <a name="submit-hadoop-jobs-in-hdinsight"></a>Отправка заданий Hadoop в HDInsight
 

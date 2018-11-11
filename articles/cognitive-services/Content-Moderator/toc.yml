@@ -10,12 +10,10 @@ items:
     href: quick-start.md
   - name: С помощью пакета SDK для .NET
     items:
-    - name: Проверка содержимого изображения
+    - name: Анализ изображений для выявления нежелательного содержимого
       href: image-moderation-quickstart-dotnet.md
-    - name: Проверка содержимого текста
+    - name: Анализ текста для выявления нежелательного содержимого
       href: text-moderation-quickstart-dotnet.md
-    - name: Проверка содержимого видео
-      href: video-moderation-api.md
 - name: Основные понятия
   items:
   - name: Модерация изображений
@@ -36,6 +34,8 @@ items:
       items:
       - name: С помощью пакета SDK для .NET
         items:
+        - name: Проверка содержимого видео
+          href: video-moderation-api.md
         - name: Проверка изображений с использованием настраиваемых списков
           href: image-lists-quickstart-dotnet.md
         - name: Проверка текста с использованием настраиваемого списка терминов
@@ -142,9 +142,9 @@ items:
     href: https://azure.microsoft.com/roadmap/?category=ai-machine-learning
   - name: Вебинар по запросу
     href: https://info.microsoft.com/cognitive-services-content-moderator-ondemand.html
-ms.openlocfilehash: d162bcaefdde1aceb171d2ad83b5386e54cea890
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.openlocfilehash: 03363242d1a3764415e9bdc5b985b7fa76076901
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49944164"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51012825"

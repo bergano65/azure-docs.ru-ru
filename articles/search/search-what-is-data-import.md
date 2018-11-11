@@ -8,12 +8,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 01/05/2018
 ms.author: heidist
-ms.openlocfilehash: b518d86d5cb08f85beecd4afe30efc9e4f70e1f7
-ms.sourcegitcommit: e45b2aa85063d33853560ec4bc867f230c1c18ce
+ms.openlocfilehash: ab26adb330e69f71d94aa296ede558b44e47a187
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43371474"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51249784"
 ---
 # <a name="indexing-in-azure-search"></a>Индексация в службе поиска Azure
 > [!div class="op_single_selector"]
@@ -47,7 +47,7 @@ ms.locfileid: "43371474"
 
 + [Хранилище BLOB-объектов](search-howto-indexing-azure-blob-storage.md)
 + [Хранилище таблиц](search-howto-indexing-azure-tables.md)
-+ [Azure Cosmos DB](http://aka.ms/documentdb-search-indexer)
++ [Azure Cosmos DB](https://aka.ms/documentdb-search-indexer)
 + [База данных SQL Azure и SQL Server на виртуальных машинах Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md).
 
 Индексаторы подключают индекс к источнику данных (как правило, это таблица, представление или эквивалентная структура) и сопоставляют поля источника с эквивалентными полями в индексе. Во время выполнения набор строк автоматически преобразуется в формат JSON и загружается в указанный индекс. Все индексаторы поддерживают планирование, так что вы можете указать частоту обновления данных. Большинство индексаторов позволяют отслеживать изменения, если источник данных поддерживает такую возможность. Отслеживая процессы изменения и удаления существующих документов, помимо распознания новых документов, индексаторы исключают необходимость в активном управлении данными в индексе. 

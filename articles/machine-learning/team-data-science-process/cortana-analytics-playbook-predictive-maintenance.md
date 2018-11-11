@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/11/2018
 ms.author: fboylu
-ms.openlocfilehash: 8f42ee996dae476de3744239d4cc5f053722d52b
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: 611896dc9428092a76a891168b48f6962d760e60
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50093217"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51254576"
 ---
 # <a name="azure-ai-guide-for-predictive-maintenance-solutions"></a>Руководство по искусственному интеллекту Azure для решений прогнозного обслуживания
 
@@ -431,13 +431,13 @@ ms.locfileid: "50093217"
 |:-------------------|--------------|
 | [Схема обучения PdM с помощью деревьев и случайного леса](https://aischool.microsoft.com/learning-paths/1H5vH5wAYcAy88CoQWQcA8) | Общедоступные | 
 | [Схема обучения PdM с помощью глубинного обучения](https://aischool.microsoft.com/learning-paths/FSIXxYkOGcauo0eUO8qAS) | Общедоступные |
-| [Разработка искусственного интеллекта в Azure](http://azure.microsoft.com/training/learning-paths/azure-ai-developer) | Общедоступные |
-| [Курсы по изучению искусственного интеллекта Майкрософт](http://aischool.microsoft.com/learning-paths) | Общедоступные |
+| [Разработка искусственного интеллекта в Azure](https://azure.microsoft.com/training/learning-paths/azure-ai-developer) | Общедоступные |
+| [Курсы по изучению искусственного интеллекта Майкрософт](https://aischool.microsoft.com/learning-paths) | Общедоступные |
 | [Обучение работе с ИИ Azure на GitHub](https://github.com/Azure/connectthedots/blob/master/readme.md) | Общедоступные |
 | [LinkedIn Learning](http://www.linkedin.com/learning) | Общедоступные |
 | [Вебинары по ИИ Майкрософт на YouТube](https://www.youtube.com/watch?v=NvrH7_KKzoM&t=4s) | Общедоступные |
 | [Канал об искусственном интеллекте Майкрософт](http://channel9.msdn.com/Shows/AI-Show) | Общедоступные |
-| [LearnAI@MS](http://learnanalytics.microsoft.com) | Партнеры |
-| [Microsoft Partner Network](http://learningportal.microsoft.com) | Партнеры |
+| [LearnAI@MS](https://learnanalytics.microsoft.com) | Партнеры |
+| [Microsoft Partner Network](https://learningportal.microsoft.com) | Партнеры |
 
 Кроме того, доступны бесплатные учебные интернет-программы MOOCS (общедоступные онлайн-курсы) по изучению ИИ, которые проводятся научными учреждениями, такими как Стэнфорд и Массачусетский технологический институт, а также другими образовательными компаниями.

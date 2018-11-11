@@ -12,12 +12,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/23/2016
 ms.author: ghogen
-ms.openlocfilehash: a114833b40fe834aa0108d1a2f3821f0b7cbddbc
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 5234f5c82e98fcb402cadf9a8a469a15bbb7ac6d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49321858"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51250821"
 ---
 # <a name="get-started-with-azure-queue-storage-and-visual-studio-connected-services-aspnet"></a>Приступая к работе с хранилищем очередей Azure и подключенными службами Visual Studio (ASP.NET)
 
@@ -141,7 +141,7 @@ ms.locfileid: "49321858"
   
     ![Создание очереди](./media/vs-storage-aspnet-getting-started-queues/create-queue-results.png)
 
-    Как упоминалось ранее, метод **CloudQueue.CreateIfNotExists** возвращает значение **true**, только если создается не существовавшая ранее очередь. Если вы запустите приложение, когда очередь уже существует, метод вернет значение **false**. Чтобы запустить приложение несколько раз, вам нужно удалять очередь перед каждым повторным запуском приложения. Чтобы удалить очередь, используйте метод **CloudQueue.Delete**. Ее также можно удалить с помощью [портала Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040) или в [обозревателе хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md).  
+    Как упоминалось ранее, метод **CloudQueue.CreateIfNotExists** возвращает значение **true**, только если создается не существовавшая ранее очередь. Если вы запустите приложение, когда очередь уже существует, метод вернет значение **false**. Чтобы запустить приложение несколько раз, вам нужно удалять очередь перед каждым повторным запуском приложения. Чтобы удалить очередь, используйте метод **CloudQueue.Delete**. Ее также можно удалить с помощью [портала Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040) или в [обозревателе хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md).  
 
 ## <a name="add-a-message-to-a-queue"></a>Добавление сообщения в очередь
 

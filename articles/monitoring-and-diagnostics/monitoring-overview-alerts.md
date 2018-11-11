@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: robb
 ms.component: alerts
-ms.openlocfilehash: 7565c536b5d24c859b164a960f74bd1e2ce97b63
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f044cf7e0b614d338ec9b294dfbf02c26c4351b1
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46960640"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50413866"
 ---
 # <a name="overview-of-alerts-in-microsoft-azure"></a>Обзор оповещений в Microsoft Azure 
 
@@ -23,7 +23,7 @@ ms.locfileid: "46960640"
 ## <a name="what-are-alerts-in-microsoft-azure"></a>Что такое оповещения в Microsoft Azure?
 С помощью оповещений можно заранее получать уведомления о важных условиях, обнаруженных в ваших данных мониторинга. Они позволяют выявить и устранить проблемы, прежде чем пользователи системы обнаружат их. 
 
-В этой статье рассматривается унифицированный интерфейс оповещений в Azure Monitor, который теперь включает в себя Log Analytics и Application Insights. [Предыдущий интерфейс оповещений](monitoring-overview-alerts.md) и типы оповещений называются **классическими оповещениями**. Старый интерфейс и типы оповещений можно просмотреть, щелкнув **Просмотреть классические оповещения** в верхней части страницы оповещений. 
+В этой статье рассматривается унифицированный интерфейс оповещений в Azure Monitor, который теперь включает в себя Log Analytics и Application Insights. [Предыдущий интерфейс оповещений](monitoring-overview-alerts.md) и типы оповещений называются **классическими оповещениями**. Старый интерфейс и типы оповещений можно просмотреть, щелкнув **Просмотреть классические оповещения** в верхней части страницы оповещений.
 
 
 ## <a name="overview"></a>Обзор

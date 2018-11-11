@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/18/2017
 ms.author: terrylan
-ms.openlocfilehash: d5689e6b9b4d808c24bc4952f65904654b5e99f8
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 978ef8087665edb3f0bfaa0bd0a55f4d8ab9a12d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44297372"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51251514"
 ---
 # <a name="use-azure-security-center-recommendations-to-enhance-security"></a>Использование рекомендаций центра безопасности Azure для повышения уровня безопасности
 У вас есть возможность снизить вероятность серьезных нарушений безопасности, настроив политику безопасности и применяя рекомендации, предоставляемые центром безопасности Azure. Эта статья покажет, как следует использовать политики безопасности и рекомендации центра безопасности для уменьшения рисков нарушения безопасности.
@@ -117,7 +117,7 @@ ms.locfileid: "44297372"
 * [Мониторинг и обработка событий безопасности в центре безопасности Azure](security-center-events-dashboard.md). Узнайте, как отслеживать и обрабатывать события безопасности, собранные за определенный период времени.
 * [Мониторинг решений партнеров](security-center-partner-solutions.md) — сведения об отслеживании работоспособности решений партнеров.
 * [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md) — часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](http://blogs.msdn.com/b/azuresecurity/) — последние новости и сведения об обеспечении безопасности в Azure.
+* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — последние новости и сведения об обеспечении безопасности в Azure.
 
 <!--Image references-->
 [1]: ./media/security-center-using-recommendations/security-center-policy-inheritance.png

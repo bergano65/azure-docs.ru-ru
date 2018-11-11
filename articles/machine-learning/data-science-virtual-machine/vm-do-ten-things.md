@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: gokuma
-ms.openlocfilehash: faabdb4c2d2e434863a6bed0b2cd85a05c94eab1
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: df9edfee9d8a6a0736a040924bac736cfcb3633c
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47395735"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51250923"
 ---
 # <a name="ten-things-you-can-do-on-the-windows-data-science-virtual-machine"></a>10 задач, которые можно выполнить на виртуальной машине Windows для обработки и анализа данных
 
@@ -64,9 +64,9 @@ ms.locfileid: "47395735"
 
 ![Установка PTVS](./media/vm-do-ten-things/PTVSSetup.png)
 
-Дополнительные сведения о создании сред Python см. в [документации по PTVS](http://aka.ms/ptvsdocs).
+Дополнительные сведения о создании сред Python см. в [документации по PTVS](https://aka.ms/ptvsdocs).
 
-Теперь вы можете создать новый проект Python. Щелкните **Файл** -> **Создать** -> **Проект** -> **Python** и выберите тип создаваемого приложения Python. Вы можете указать нужную версию среды Python для текущего проекта (Python 2.7 или 3.6). Для этого щелкните правой кнопкой мыши параметр **Окружения Python**, выберите **Добавить или удалить окружения Python**, а затем выберите требуемую среду. Дополнительные сведения о работе с PTVS можно найти в [документации](http://aka.ms/ptvsdocs) по продукту.
+Теперь вы можете создать новый проект Python. Щелкните **Файл** -> **Создать** -> **Проект** -> **Python** и выберите тип создаваемого приложения Python. Вы можете указать нужную версию среды Python для текущего проекта (Python 2.7 или 3.6). Для этого щелкните правой кнопкой мыши параметр **Окружения Python**, выберите **Добавить или удалить окружения Python**, а затем выберите требуемую среду. Дополнительные сведения о работе с PTVS можно найти в [документации](https://aka.ms/ptvsdocs) по продукту.
 
 ## <a name="2-using-a-jupyter-notebook-to-explore-and-model-your-data-with-python-or-r"></a>2. Использование записной книжки Jupyter для изучения и моделирования данных с помощью Python или R
 Записная книжка Jupyter представляет собой мощную среду IDE с поддержкой браузера для изучения и моделирования данных. В записной книжке Jupyter можно использовать Python 2, Python 3 или R (с открытым исходным кодом и Microsoft R Server).
@@ -806,7 +806,7 @@ Azure Cosmos DB — это база данных NoSQL в облаке. Она 
 
 1. Пакет SDK Python для Azure Cosmos DB уже установлен на DSVM (для обновления выполните команду ```pip install pydocumentdb --upgrade``` из командной строки)
 2. Создайте учетную запись и базу данных Azure Cosmos DB на [портале Azure](https://portal.azure.com).
-3. Скачайте средство миграции Azure Cosmos DB [отсюда](http://www.microsoft.com/downloads/details.aspx?FamilyID=cda7703a-2774-4c07-adcc-ad02ddc1a44d) и извлеките нужный вам каталог.
+3. Скачайте средство миграции Azure Cosmos DB [отсюда](https://www.microsoft.com/downloads/details.aspx?FamilyID=cda7703a-2774-4c07-adcc-ad02ddc1a44d) и извлеките нужный вам каталог.
 4. Импортируйте данные JSON (данные о вулканах), хранящиеся в [общедоступном большом двоичном объекте](https://cahandson.blob.core.windows.net/samples/volcano.json), в Cosmos DB с помощью следующих параметров команды средства миграции (файл dtui.exe из каталога, в который вы установили средство миграции Cosmos DB). Введите исходное и целевое расположение со следующими параметрами:
    
     `/s:JsonFile /s.Files:https://cahandson.blob.core.windows.net/samples/volcano.json /t:DocumentDBBulk /t.ConnectionString:AccountEndpoint=https://[DocDBAccountName].documents.azure.com:443/;AccountKey=[[KEY];Database=volcano /t.Collection:volcano1`

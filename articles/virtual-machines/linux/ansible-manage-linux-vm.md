@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: quickstart
 ms.date: 09/27/2018
-ms.openlocfilehash: d9ff0387a1d02eb5f4684048aeed8ad0079b28ef
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 06a0f2416ecff9e2f9a21877e26487b56452d0a0
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47434421"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51251327"
 ---
 # <a name="use-ansible-to-manage-a-linux-virtual-machine-in-azure"></a>Управление виртуальной машиной Linux в Azure с помощью Ansible
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Ansible можно использовать для управления виртуальными машинами Azure так же, как любым другим ресурсом. В этой статье описано, как запустить и остановить виртуальные машины Linux с помощью сборника схем Ansible. 
@@ -27,7 +27,7 @@ Ansible позволяет автоматизировать развертыва
 ## <a name="use-ansible-to-deallocate-stop-an-azure-virtual-machine"></a>Завершение общения (остановка) виртуальной машины Azure с помощью Ansible
 В этом разделе описано, как завершить общение виртуальной машины Azure с помощью Ansible.
 
-1.  Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+1.  Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
 1.  Откройте [Cloud Shell](/azure/cloud-shell/overview).
 
@@ -85,7 +85,7 @@ Ansible позволяет автоматизировать развертыва
 ## <a name="use-ansible-to-start-a-deallocated-stopped-azure-virtual-machine"></a>Запуск виртуальной машины Azure, для которой было остановлено общение, с помощью Ansible
 В этом разделе описано, как с помощью Ansible запустить виртуальную машину Azure, для которой было остановлено общение.
 
-1.  Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+1.  Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
 1.  Откройте [Cloud Shell](/azure/cloud-shell/overview).
 

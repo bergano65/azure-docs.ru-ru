@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 04/03/2017
 ms.author: snmuvva
 ms.component: alerts
-ms.openlocfilehash: 08ba5e7cbdc041a41f1d006d69980bf6efc00101
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: f2f96faf6bd8132422aeb3484547e4b6a1195a7f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44380297"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51255546"
 ---
 # <a name="have-a-classic-metric-alert-notify-a-non-azure-system-using-a-webhook"></a>Уведомление с помощью веб-перехватчика и классического оповещения метрики для системы за пределами Azure
 С помощью веб-перехватчика можно направлять уведомления об оповещениях Azure в другие системы для постобработки или выполнения настраиваемых действий. Веб-перехватчик можно использовать, чтобы направить оповещение к службам, которые отправляют SMS-сообщения, ведут журналы об ошибках, уведомляют членов команды в чате или службах обмена сообщениями либо выполняют другие действия. 
 
-В этой статье описываются способы настройки веб-перехватчика для оповещения метрики Azure. В ней также показывается, как выглядят полезные данные HTTP POST для веб-перехватчика. Дополнительные сведения о настройке и схеме для оповещений журнала действий Azure см. в статье [Вызов веб-перехватчика для оповещений журнала действий Azure](insights-auditlog-to-webhook-email.md).
+В этой статье описываются способы настройки веб-перехватчика для оповещения метрики Azure. В ней также показывается, как выглядят полезные данные HTTP POST для веб-перехватчика. Дополнительные сведения о настройке и схеме для оповещений журнала действий Azure см. в статье [Вызов веб-перехватчика для оповещений журнала действий Azure](monitor-alerts-unified-log-webhook.md).
 
 Оповещения Azure с помощью запроса HTTP POST помещают содержимое оповещения в формате JSON в универсальный код ресурса (URI) веб-перехватчика, указанный при создании оповещения. Схема определена далее в этой статье. Этот URI должен быть допустимой конечной точкой HTTP или HTTPS. При активации оповещений Azure размещает одну запись для каждого запроса.
 
@@ -101,8 +101,8 @@ ms.locfileid: "44380297"
 >
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Дополнительные сведения об оповещениях Azure и веб-перехватчиках см. в видео, посвященном [интеграции оповещений Azure с PagerDuty](http://go.microsoft.com/fwlink/?LinkId=627080).
-* Узнайте больше о [выполнении скриптов службы автоматизации Azure для оповещений Azure](http://go.microsoft.com/fwlink/?LinkId=627081).
+* Дополнительные сведения об оповещениях Azure и веб-перехватчиках см. в видео, посвященном [интеграции оповещений Azure с PagerDuty](https://go.microsoft.com/fwlink/?LinkId=627080).
+* Узнайте больше о [выполнении скриптов службы автоматизации Azure для оповещений Azure](https://go.microsoft.com/fwlink/?LinkId=627081).
 * Узнайте, как [использовать приложение логики для отправки сообщения SMS с помощью Twilio из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app).
 * Узнайте, как [использовать приложение логики для отправки сообщения Slack из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app).
 * Узнайте, как [использовать приложение логики для отправки сообщения в очередь Azure из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app).

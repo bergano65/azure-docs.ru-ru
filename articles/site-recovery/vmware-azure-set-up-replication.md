@@ -1,21 +1,20 @@
 ---
-title: Настройка и администрирование политик репликации для репликации VMware с помощью Azure Site Recovery | Документация Майкрософт
-description: В этой статье объясняется, как настроить параметры для репликации VMware в Azure, с помощью Azure Site Recovery.
-services: site-recovery
+title: Настройка и администрирование политик репликации для аварийного восстановления VMware в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье объясняется, как настроить параметры репликации для аварийного восстановления VMware в Azure с помощью Azure Site Recovery.
 author: sujayt
 manager: rochakm
 ms.service: site-recovery
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/06/2018
 ms.author: sutalasi
-ms.openlocfilehash: 03197d1f42a17d6fc99b85d3fbc3635468b1e6ae
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: fd987097c2ca7b1e7509a1a0e63905c36ec8fec8
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39423612"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212902"
 ---
-# <a name="configure-and-manage-replication-policies-for-vmware-replication"></a>Настройка и администрирование политик репликации для репликации VMware
+# <a name="configure-and-manage-replication-policies-for-vmware-disaster-recovery-to-azure"></a>Настройка и администрирование политик репликации для аварийного восстановления VMware в Azure
 Из этой статьи вы узнаете, как настроить политику репликации при репликации виртуальных машин VMware в Azure с помощью [Azure Site Recovery](site-recovery-overview.md).
 
 

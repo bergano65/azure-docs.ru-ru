@@ -13,15 +13,15 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 8/10/2017
 ms.author: maburlik
-ms.openlocfilehash: dccdd6518dd97299150892a5629809ea7f708838
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: afb6c8345cd71e7d39b7f3a0b2307c99cf31b449
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34209361"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51253345"
 ---
 # <a name="contents-of-service-fabric-standalone-package-for-windows-server"></a>Содержимое изолированного пакета Service Fabric для Windows Server
-В [скачанном](http://go.microsoft.com/fwlink/?LinkId=730690) изолированном пакете Service Fabric для Windows Server вы найдете приведенные ниже файлы.
+В [скачанном](https://go.microsoft.com/fwlink/?LinkId=730690) изолированном пакете Service Fabric для Windows Server вы найдете приведенные ниже файлы.
 
 | **Имя файла** | **Краткое описание** |
 | --- | --- |
@@ -33,7 +33,7 @@ ms.locfileid: "34209361"
 | TestConfiguration.ps1 |Сценарий PowerShell для анализа инфраструктуры в соответствии с указаниями в cluster.JSON. |
 | DownloadServiceFabricRuntimePackage.ps1 |Сценарий PowerShell, используемый для скачивания последней версии внешнего пакета среды выполнения при развертывании на компьютер без подключения к Интернету. |
 | DeploymentComponentsAutoextractor.exe |Самораспаковывающийся архив, содержащий компоненты развертывания для сценариев использования изолированного пакета. |
-| EULA_ENU.txt |Условия лицензии на использование изолированного пакета Windows Server Microsoft Azure Service Fabric. Вы можете [загрузить копию лицензионного соглашения](http://go.microsoft.com/fwlink/?LinkID=733084). |
+| EULA_ENU.txt |Условия лицензии на использование изолированного пакета Windows Server Microsoft Azure Service Fabric. Вы можете [загрузить копию лицензионного соглашения](https://go.microsoft.com/fwlink/?LinkID=733084). |
 | Readme.txt |Ссылка на заметки о выпуске и основные инструкции по установке. В этом документе находится сокращенный набор инструкций. |
 | ThirdPartyNotice.rtf |Примечание о включенном в пакет программном обеспечении сторонних производителей. |
 | Tools\Microsoft.Azure.ServiceFabric.WindowsServer.SupportPackage.zip |StandaloneLogCollector.exe — запускается по требованию для сбора и отправки журналов трассировки в корпорацию Майкрософт для поддержки. |

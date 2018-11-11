@@ -2,19 +2,19 @@
 title: Обработка событий из Центров событий с помощью Storm в Azure HDInsight
 description: Узнайте, как обрабатывать данные службы Центров событий Azure с использованием топологии C# Storm, созданной в Visual Studio с помощью средств HDInsight для Visual Studio.
 services: hdinsight,notification hubs
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/27/2017
-ms.author: jasonh
+ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: cda21c5b0d06335b13ba1aff0e9113544ca11c80
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 0eb283eda04d4123e0c05d2c48663a5aca88ebc4
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50414205"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51249563"
 ---
 # <a name="process-events-from-azure-event-hubs-with-storm-on-hdinsight-c"></a>Обработка событий из службы Центров событий Azure с помощью Storm в HDInsight (C#)
 
@@ -115,7 +115,7 @@ topologyBuilder.SetJavaBolt(
 
 * [Концентратор событий Azure](../../event-hubs/event-hubs-create.md).
 
-* [Пакет Azure SDK для .NET](http://azure.microsoft.com/downloads/).
+* [Пакет Azure SDK для .NET](https://azure.microsoft.com/downloads/).
 
 * [Средства HDInsight для Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md).
 

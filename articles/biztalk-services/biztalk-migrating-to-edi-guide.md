@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 07/31/2018
 ms.reviewer: jonfan, LADocs
 ms.suite: integration
-ms.openlocfilehash: 681cafc60661e16d70deb862da71f6baf80509fd
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: 38fe0e4901977637be22670d09dccffdfa274304
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48856536"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51253828"
 ---
 # <a name="migrate-biztalk-server-edi-solutions-to-biztalk-services-technical-guide"></a>Техническое руководство. Перенос решений EDI для BizTalk Server в службы BizTalk
 
@@ -77,10 +77,10 @@ ms.locfileid: "48856536"
 ## <a name="agreements"></a>Соглашения
 Если вы знакомы с соглашениями между торговыми партнерами в BizTalk Server 2010, используемыми для обработки сообщений EDI, то соглашения между торговыми партнерами в службах BizTalk покажутся очень знакомыми. Большинство параметров соглашения одинаковы и используют ту же терминологию. В некоторых случаях параметры соглашения в службах гораздо проще по сравнению с аналогичными параметрами в BizTalk Server. Службы BizTalk Microsoft Azure поддерживают транспортные протоколы X12, EDIFACT и AS2.
 
-Службы BizTalk Microsoft Azure также предоставляют средство **переноса данных TPM** для переноса торговых партнеров и соглашений из модуля торговых партнеров BizTalk Server на портал служб BizTalk. Средство переноса данных TPM доступно как часть пакета инструментов, который можно загрузить из [MABS SDK](http://go.microsoft.com/fwlink/p/?LinkId=235057). Пакет также содержит файл сведений с инструкциями по использованию средства и базовой информацией об устранении неполадок.
+Службы BizTalk Microsoft Azure также предоставляют средство **переноса данных TPM** для переноса торговых партнеров и соглашений из модуля торговых партнеров BizTalk Server на портал служб BizTalk. Средство переноса данных TPM доступно как часть пакета инструментов, который можно загрузить из [MABS SDK](https://go.microsoft.com/fwlink/p/?LinkId=235057). Пакет также содержит файл сведений с инструкциями по использованию средства и базовой информацией об устранении неполадок.
 
 ## <a name="schemas"></a>Схемы
-Службы BizTalk предоставляют схемы EDI, которые можно использовать в решениях служб BizTalk.  Кроме того со службами BizTalk также могут использоваться схемы EDI для BizTalk Server, поскольку корневой узел схемы одинаков в EDI для BizTalk Server и для служб BizTalk. Таким образом, схемы EDI для BizTalk Server можно напрямую использовать в решениях EDI, разработанных с помощью служб BizTalk. Схемы также можно загрузить из [MABS SDK](http://go.microsoft.com/fwlink/p/?LinkId=235057).
+Службы BizTalk предоставляют схемы EDI, которые можно использовать в решениях служб BizTalk.  Кроме того со службами BizTalk также могут использоваться схемы EDI для BizTalk Server, поскольку корневой узел схемы одинаков в EDI для BizTalk Server и для служб BizTalk. Таким образом, схемы EDI для BizTalk Server можно напрямую использовать в решениях EDI, разработанных с помощью служб BizTalk. Схемы также можно загрузить из [MABS SDK](https://go.microsoft.com/fwlink/p/?LinkId=235057).
 
 ## <a name="maps-transforms"></a>Сопоставления (преобразования)
 Сопоставления в BizTalk Server называются преобразованиями в службах BizTalk. Миграция сопоставлений из BizTalk Server в службы BizTalk может быть весьма сложной задачей (в зависимости от сложности сопоставления). Средство сопоставления для служб BizTalk отличается от модуля сопоставления для BizTalk Server. Несмотря на то что модуль сопоставления очень похож на средство сопоставления, сам формат сопоставления отличается. Доступные пользователям функтоиды (называемые **операциями сопоставления** в службах BizTalk) также отличаются.  По сути, напрямую сопоставление BizTalk в службах BizTalk использовать нельзя. Кроме того, не все функтоиды в BizTalk Server доступны как операции сопоставления в службах BizTalk.
@@ -93,23 +93,23 @@ ms.locfileid: "48856536"
 Еще один пример — оператор **If-Then-Else** для сопоставления.  В модуле сопоставления BizTalk эта операция была невозможной и приходилось использовать несколько функтоидов для решения этой внешне простой задачи.
 
 ### <a name="migrating-biztalk-server-maps"></a>Миграция сопоставлений BizTalk Server
-Службы BizTalk Microsoft Azure предоставляют средства для переноса сопоставлений BizTalk Server в преобразования служб BizTalk. Инструмент **BTMMigrationTool** входит в пакет **Инструменты**, предоставляемый при [скачивании пакета SDK для служб BizTalk](http://go.microsoft.com/fwlink/p/?LinkId=235057). Дополнительные сведения об этом средстве приведены в статье [Преобразование сопоставления BizTalk в преобразование служб BizTalk](https://msdn.microsoft.com/library/windowsazure/hh949812.aspx).
+Службы BizTalk Microsoft Azure предоставляют средства для переноса сопоставлений BizTalk Server в преобразования служб BizTalk. Инструмент **BTMMigrationTool** входит в пакет **Инструменты**, предоставляемый при [скачивании пакета SDK для служб BizTalk](https://go.microsoft.com/fwlink/p/?LinkId=235057). Дополнительные сведения об этом средстве приведены в статье [Преобразование сопоставления BizTalk в преобразование служб BizTalk](https://msdn.microsoft.com/library/windowsazure/hh949812.aspx).
 
-Кроме того, вы можете посмотреть на пример Сандро Перейры (Sandro Pereira), наиболее ценного специалиста Майкрософт, о [переносе сопоставлений BizTalk Server в службы BizTalk](http://social.technet.microsoft.com/wiki/contents/articles/23220.migrating-biztalk-server-maps-to-windows-azure-biztalk-services-wabs-maps.aspx).
+Кроме того, вы можете посмотреть на пример Сандро Перейры (Sandro Pereira), наиболее ценного специалиста Майкрософт, о [переносе сопоставлений BizTalk Server в службы BizTalk](https://social.technet.microsoft.com/wiki/contents/articles/23220.migrating-biztalk-server-maps-to-windows-azure-biztalk-services-wabs-maps.aspx).
 
 ## <a name="orchestrations"></a>Взаимодействия
 Если нужно перенести обработку взаимодействий BizTalk Server в Microsoft Azure, то взаимодействия потребуется переписать, так как Microsoft Azure не поддерживает выполнение взаимодействий BizTalk Server.  Функциональность взаимодействий можно переписать в службе Windows Workflow Foundation 4.0 (WF4).  Возможно, ее придется переписать полностью, так как на данный момент не существует возможности переноса взаимодействий из BizTalk Server в WF4. Ниже приведены некоторые ресурсы для Windows Workflow.
 
 * [*Интеграция службы WCF Workflow с очередями и разделами служебной шины*](https://blogs.msdn.microsoft.com/paolos/2013/04/09/how-to-integrate-a-wcf-workflow-service-with-service-bus-queues-and-topics/) Паоло Сальватори (Paolo Salvatori). 
-* [*Создание приложений с Windows Workflow Foundation и Azure*](http://go.microsoft.com/fwlink/p/?LinkId=237314) (выступление на конференции Build 2011).
-* [*Центр разработчиков Windows Workflow Foundation*](http://go.microsoft.com/fwlink/p/?LinkId=237315) в MSDN.
+* [*Создание приложений с Windows Workflow Foundation и Azure*](https://go.microsoft.com/fwlink/p/?LinkId=237314) (выступление на конференции Build 2011).
+* [*Центр разработчиков Windows Workflow Foundation*](https://go.microsoft.com/fwlink/p/?LinkId=237315) в MSDN.
 * [*Документация по Windows Workflow Foundation 4 (WF4)*](https://msdn.microsoft.com/library/dd489441.aspx) в MSDN.
 
 ## <a name="other-considerations"></a>Дополнительные рекомендации
 Ниже приведены некоторые рекомендации, которые необходимо учитывать при использовании служб BizTalk.
 
 ### <a name="fallback-agreements"></a>Резервные соглашения
-При обработке EDI в BizTalk Server используется концепция «Резервных соглашений».  В службах BizTalk понятия резервных соглашений пока **нет**.  Сведения об использовании резервных соглашений в BizTalk Server см. в следующих разделах документации BizTalk: [Роль соглашений в обработке EDI](http://go.microsoft.com/fwlink/p/?LinkId=237317) и [Настройка свойств глобальных и резервных соглашений](https://msdn.microsoft.com/library/bb245981.aspx).
+При обработке EDI в BizTalk Server используется концепция «Резервных соглашений».  В службах BizTalk понятия резервных соглашений пока **нет**.  Сведения об использовании резервных соглашений в BizTalk Server см. в следующих разделах документации BizTalk: [Роль соглашений в обработке EDI](https://go.microsoft.com/fwlink/p/?LinkId=237317) и [Настройка свойств глобальных и резервных соглашений](https://msdn.microsoft.com/library/bb245981.aspx).
 
 ### <a name="routing-to-multiple-destinations"></a>Маршрутизация нескольким получателям
 Мосты служб BizTalk на данный момент не поддерживают маршрутизацию сообщений нескольким получателям с использованием модели публикации-подписки. Вместо этого сообщения от моста служб BizTalk можно направить в раздел служебной шины, который может иметь несколько подписок для получения сообщения на нескольких конечных точках.

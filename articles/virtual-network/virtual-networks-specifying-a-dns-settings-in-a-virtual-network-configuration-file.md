@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/23/2016
 ms.author: genli
-ms.openlocfilehash: ed7f02d3e389db3bc772c4fcb00a7b3877d60173
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 36f7ed9b02b66718327c1a05a6cf29eedf39e7a5
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31794530"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51248391"
 ---
 # <a name="specifying-dns-settings-in-a-virtual-network-configuration-file"></a>Задание параметров DNS в файле конфигурации виртуальной сети
 Файл конфигурации сети содержит два элемента, позволяющих задавать параметры службы доменных имен (DNS): **DnsServers** и **DnsServerRef**. Список DNS-серверов можно добавить, задав их IP-адреса и ссылочные имена в элементе **DnsServers** . После этого в элементе **DnsServerRef** можно указать записи DNS-серверов из элемента DnsServers, которые будут применяться для различных сетевых сайтов в виртуальной сети.
@@ -36,7 +36,7 @@ ms.locfileid: "31794530"
 > 
 > 
 
-[Элемент DNS](http://go.microsoft.com/fwlink/?LinkId=248093)
+[Элемент DNS](https://go.microsoft.com/fwlink/?LinkId=248093)
 
     <Dns>
       <DnsServers>
@@ -51,7 +51,7 @@ ms.locfileid: "31794530"
 > 
 > 
 
-[Элемент Virtual Network Sites](http://go.microsoft.com/fwlink/?LinkId=248093)
+[Элемент Virtual Network Sites](https://go.microsoft.com/fwlink/?LinkId=248093)
 
     <DnsServersRef>
       <DnsServerRef name="ID1" />
@@ -65,7 +65,7 @@ ms.locfileid: "31794530"
 > 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Ознакомьтесь со [схемой конфигурации виртуальной сети Azure](http://go.microsoft.com/fwlink/?LinkId=248093).
+* Ознакомьтесь со [схемой конфигурации виртуальной сети Azure](https://go.microsoft.com/fwlink/?LinkId=248093).
 * Ознакомьтесь со [схемой конфигурации службы Azure](https://msdn.microsoft.com/library/windowsazure/ee758710).
 * [Настройка виртуальной сети с помощью файлов конфигурации сети](virtual-networks-using-network-configuration-file.md).
 

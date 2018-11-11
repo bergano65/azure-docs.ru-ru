@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/25/2018
 ms.author: magoedte
-ms.openlocfilehash: 90816061766a423f7dbc7d277433a95c5bcf6115
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: 6558a888ded1c8657bef6aba886a6f7d14cb554a
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50095428"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51254542"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-vms-preview"></a>Как выполнять запросы к журналам из Azure Monitor для виртуальных машин (предварительная версия)
-Azure Monitor для виртуальных машин собирает метрики производительности и подключений, данные инвентаризации компьютеров и процессов, а также сведения о работоспособности и перенаправляет их в хранилище данных Log Analytics в службе Azure Monitor.  Вы можете выполнять [поиск](../log-analytics/log-analytics-log-searches.md) этих данных в службе Log Analytics. Эти данные используются в различных сценариях, таких как планирование миграции, анализ емкости, обнаружение и устранение проблем с производительностью по требованию.
+Azure Monitor для виртуальных машин собирает метрики производительности и подключений, данные инвентаризации компьютеров и процессов, а также сведения о работоспособности и перенаправляет их в хранилище данных Log Analytics в службе Azure Monitor.  Вы можете выполнять [поиск](../log-analytics/log-analytics-queries.md) этих данных в службе Log Analytics. Эти данные используются в различных сценариях, таких как планирование миграции, анализ емкости, обнаружение и устранение проблем с производительностью по требованию.
 
 ## <a name="map-records"></a>Сопоставление записей
 Для каждого уникального компьютера и процесса создается одна запись в час. Кроме того, записи создаются во время запуска компьютера или процесса, а также при подключении к функции "Схема" в Azure Monitor для виртуальных машин. В таблице ниже приведены свойства этих записей. Поля и значения в событиях ServiceMapComputer_CL сопоставляются с полями ресурса Machine (Компьютер) в API ServiceMap Azure Resource Manager. Поля и значения в событиях ServiceMapProcess_CL сопоставляются с полями ресурса Process (Процесс) в API ServiceMap Azure Resource Manager. Поле ResourceName_s совпадает с полем имени в соответствующем ресурсе Resource Manager. 

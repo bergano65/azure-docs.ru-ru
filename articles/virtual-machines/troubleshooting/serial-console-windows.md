@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/22/2018
 ms.author: harijay
-ms.openlocfilehash: facd9be037894932e516e8294e36b6b0e55374c8
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: 2cde7d2af4dee9e2bd241f0856b8f2d29ccad6ad
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50024428"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50210743"
 ---
 # <a name="virtual-machine-serial-console"></a>Последовательная консоль виртуальной машины
 
@@ -29,7 +29,7 @@ ms.locfileid: "50024428"
 Чтобы просмотреть документацию по последовательной консоли для виртуальных машин Linux, [щелкните здесь](serial-console-linux.md).
 
 > [!NOTE] 
-> Последовательная консоль для виртуальных машин является общедоступной в глобальных регионах Azure. На этом этапе в последовательной консоли еще недоступно облако Azure для государственных организаций или облако Azure для Китая.
+> Последовательная консоль для виртуальных машин является общедоступной в глобальных регионах Azure. На этом этапе последовательная консоль еще недоступна в облаке Azure для государственных организаций или облаке Azure для Китая.
 
  
 
@@ -54,20 +54,26 @@ ms.locfileid: "50024428"
   4. Прокрутите вниз до раздела Support + Troubleshooting (Поддержка + Устранение неполадок) и щелкните параметр "Серийная консоль". Откроется новая область с последовательной консолью, и запустится подключение.
 
 ## <a name="enable-serial-console-in-custom-or-older-images"></a>Включение последовательной консоли в пользовательских или старых образах
-Новые образы Windows Server в Azure по умолчанию будут оснащены [специальной административной консолью](https://technet.microsoft.com/library/cc787940(v=ws.10).aspx) (SAC). SAC поддерживается в серверных версиях Windows, но не поставляется в клиентских версиях (например, в Windows 10, Windows 8 или Windows 7). Чтобы включить последовательную консоль для виртуальных машин Windows, созданных до февраля 2018 года, выполните следующие действия. 
+Новые образы Windows Server в Azure по умолчанию будут оснащены [специальной административной консолью](https://technet.microsoft.com/library/cc787940(v=ws.10).aspx) (SAC). SAC поддерживается в серверных версиях Windows, но не поставляется в клиентских версиях (например, в Windows 10, Windows 8 или Windows 7). 
+
+Для более старых образов Windows Server (созданных до февраля 2018 г.) можно автоматически включить последовательную консоли с помощью функции "Выполнить команду" на портале Azure. Найдите команду с именем EnableEMS на портале Azure.
+
+![](./media/virtual-machines-serial-console/virtual-machine-windows-serial-console-runcommand.png)
+
+Также можно выполнить следующие действия, чтобы вручную включить последовательную консоль для виртуальных машин Windows, созданных до февраля 2018 г. 
 
 1. Подключитесь к виртуальной машине через удаленный рабочий стол Windows.
-2. Запустите следующие команды из командной строки с правами администратора. 
-* `bcdedit /ems {current} on`
-* `bcdedit /emssettings EMSPORT:1 EMSBAUDRATE:115200`
-3. Для получения доступа к консоли SAC перезагрузите систему.
+1. Запустите следующие команды из командной строки с правами администратора. 
+    * `bcdedit /ems {current} on`
+    * `bcdedit /emssettings EMSPORT:1 EMSBAUDRATE:115200`
+1. Для получения доступа к консоли SAC перезагрузите систему.
 
-![](/media/virtual-machines-serial-console/virtual-machine-windows-serial-console-connect.gif)
+![](./media/virtual-machines-serial-console/virtual-machine-windows-serial-console-connect.gif)
 
 В случае необходимости SAC можно также включить в автономном режиме.
 
 1. Подключите диск Windows, который необходимо настроить с помощью консоли SAC в качестве диска данных, к имеющейся виртуальной машине. 
-2. Запустите следующие команды из командной строки с правами администратора. 
+1. Запустите следующие команды из командной строки с правами администратора. 
 * `bcdedit /store <mountedvolume>\boot\bcd /ems {default} on`
 * `bcdedit /store <mountedvolume>\boot\bcd /emssettings EMSPORT:1 EMSBAUDRATE:115200`
 

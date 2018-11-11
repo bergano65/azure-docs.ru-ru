@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/15/2016
 ms.author: deonhe
-ms.openlocfilehash: db79ee85c19e5f3cdced9b894aca48de4d7d1c42
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: f990aa086997d51e59df4285aabeccd31dcce822
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45576476"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51253437"
 ---
 # <a name="release-notes-for-azure-biztalk-services"></a>Заметки о выпуске служб Azure BizTalk
 
@@ -188,7 +188,7 @@ ms.locfileid: "45576476"
 
 ### <a name="bridges-continue-to-process-messages-even-when-the-sql-database-is-offline"></a>Мосты продолжают обрабатывать сообщения, даже если база данных SQL находится в автономном режиме
 Мосты служб BizTalk продолжают обрабатывать сообщения в течение некоторого времени, даже если база данных SQL Microsoft Azure (которая хранит такую информацию для выполнения, как развернутые артефакты и конвейеры) находится в автономном режиме. Это связано с тем, что службы BizTalk используют кэшированные артефакты и конфигурацию моста.
-Если вы не хотите, чтобы мосты продолжали обрабатывать сообщения, когда база данных SQL находится в автономном режиме, вы можете использовать командлеты PowerShell для служб BizTalk для остановки или приостановки службы BizTalk. Информация о командлетах Windows PowerShell для управления операциями приведена в статье [Пример управления службой Azure BizTalk](http://go.microsoft.com/fwlink/p/?LinkID=329019) .  
+Если вы не хотите, чтобы мосты продолжали обрабатывать сообщения, когда база данных SQL находится в автономном режиме, вы можете использовать командлеты PowerShell для служб BizTalk для остановки или приостановки службы BizTalk. Информация о командлетах Windows PowerShell для управления операциями приведена в статье [Пример управления службой Azure BizTalk](https://go.microsoft.com/fwlink/p/?LinkID=329019) .  
 
 ### <a name="reading-the-xml-message-within-a-bridges-custom-code-component-includes-an-extra-bom-character"></a>Результат чтения сообщения XML из компонента моста с пользовательским кодом содержит дополнительный символ спецификации
 Рассмотрим ситуацию, когда вы хотите прочитать сообщение XML через пользовательский код моста. Если вы используете метод .NET System.Text.Encoding.UTF8.GetString(bytes), в выходные данные в начале сообщения будет добавлен дополнительный символ спецификации. Если вы не хотите добавлять символ спецификации, вам потребуется использовать ```System.IO.StreamReader().ReadToEnd()```.

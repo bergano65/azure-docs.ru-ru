@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: 54a506b509ca1b6129a549589da3f2d18068a82f
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: 18041c95405614768845399f92efac229db53b20
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49115443"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51250736"
 ---
 # <a name="contoso-migration-rehost-an-on-premises-app-on-azure-vms-and-sql-server-alwayson-availability-group"></a>Миграция Contoso — повторное размещение локального приложения на виртуальных машинах Azure и в группе доступности SQL Server AlwaysOn
 
@@ -416,7 +416,7 @@ Site Recovery требуется доступ к серверам VMware, что
 Кроме того, при запуске отработки отказа им необходимо проверить указанные ниже аспекты.
 
 - При запуске отработки отказа на виртуальной машине не должно быть обновлений Windows, ожидающих установки. Если такие обновления имеются, пользователи не смогут входить в систему на виртуальной машине до завершения обновления.
-- После отработки отказа специалисты компании могут просмотреть снимок экрана виртуальной машины в разделе **Диагностика загрузки**. Если не удается сделать это, необходимо проверить, работает ли виртуальная машина, и изучить [советы по устранению неполадок](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx).
+- После отработки отказа специалисты компании могут просмотреть снимок экрана виртуальной машины в разделе **Диагностика загрузки**. Если не удается сделать это, необходимо проверить, работает ли виртуальная машина, и изучить [советы по устранению неполадок](https://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx).
 
 
 **Нужна дополнительная помощь?**

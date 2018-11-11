@@ -14,12 +14,12 @@ ms.tgt_pltfrm: Azure
 ms.workload: na
 ms.date: 04/29/2016
 ms.author: hascipio; v-divte
-ms.openlocfilehash: af3e2ad623d8d7bfafe676411f9ae3fbee78aab8
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: 79fb9869b37e82df3f41a50e4425e7c0cd08c841
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39714338"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51255274"
 ---
 # <a name="technical-prerequisites-for-creating-a-virtual-machine-image-for-the-azure-marketplace"></a>Технические компоненты, необходимые для создания образа виртуальной машины для Azure Marketplace
 Прежде чем начать работу, внимательно прочтите описание и разберитесь, где и зачем выполняется каждый шаг. Постарайтесь подготовить максимально подробные сведения о своей компании и другие данные, загрузить необходимые средства и/или создать технические компоненты до того, как начнете создавать предложение. Все эти компоненты описаны в данной статье.  
@@ -30,7 +30,7 @@ ms.locfileid: "39714338"
 * в зависимости от целевой операционной системы установите [командлеты Azure PowerShell](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/WindowsAzurePowershellGet.3f.3f.3fnew.appids) или [программу командной строки Linux](https://go.microsoft.com/fwlink/?LinkId=253472&clcid=0x409) со страницы [Загрузки](https://azure.microsoft.com/downloads/);
 * установите Azure Storage Explorer из CodePlex;
 * скачайте и установите средство проверки сертификации для Azure Certified:
-  * [http://go.microsoft.com/fwlink/?LinkID=526913](http://go.microsoft.com/fwlink/?LinkID=526913). Для запуска инструмента сертификации потребуется компьютер под управлением Windows. Если у вас нет такого компьютера, запустите средство сертификации на виртуальной машине Windows в Azure.
+  * [http://go.microsoft.com/fwlink/?LinkID=526913](https://go.microsoft.com/fwlink/?LinkID=526913). Для запуска инструмента сертификации потребуется компьютер под управлением Windows. Если у вас нет такого компьютера, запустите средство сертификации на виртуальной машине Windows в Azure.
 
 ## <a name="platforms-supported"></a>Поддерживаемые платформы
 Виртуальные машины Azure можно разрабатывать на базе Windows или Linux. На некоторых этапах публикации, например при создании виртуального жесткого диска (VHD), совместимого с Azure, используемые инструменты и выполняемые действия зависят от операционной системы.  

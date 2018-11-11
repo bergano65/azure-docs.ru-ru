@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 06/18/2018
 ms.author: martincoetzer
-ms.openlocfilehash: 94d96cab28f738984b3d05d5eee0754e8c5e75b6
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: d52431b50e37101b0272e3ce4bbf91011a477775
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49341585"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51252093"
 ---
 # <a name="five-steps-to-securing-your-identity-infrastructure"></a>Пять шагов по защите инфраструктуры удостоверений
 
@@ -182,4 +182,4 @@ Azure AD предоставляет возможность управлять д
 Мы ценим то, насколько серьезно вы относитесь к вопросам безопасности удостоверений, и надеемся, что этот документ будет полезен при разработке стратегии для защиты вашей организации.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Если вам нужна помощь по планированию и развертыванию рекомендаций, см. [планы развертывания проектов Azure AD](http://aka.ms/deploymentplans).
+Если вам нужна помощь по планированию и развертыванию рекомендаций, см. [планы развертывания проектов Azure AD](https://aka.ms/deploymentplans).

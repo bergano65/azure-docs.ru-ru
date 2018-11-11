@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/03/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: f0a982e8a0cb358e29375e05c1752a33b15ec255
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 497b5b9d33ab2dea37e1017fa2d5bf2d0db66a5f
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49319716"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51007677"
 ---
 # <a name="send-data-to-log-analytics-with-the-http-data-collector-api-public-preview"></a>Отправка данных в Log Analytics c помощью API сборщика данных HTTP (общедоступная предварительная версия)
 В этой статье показано, как с помощью API сборщика данных HTTP отправить данные в Log Analytics из клиента REST API.  Здесь также описано, как отформатировать данные, собранные сценарием или приложением, добавить их в запрос и авторизовать этот запрос в Log Analytics.  В этой статье приведены примеры для PowerShell, C# и Python.
@@ -201,7 +201,7 @@ Signature=Base64(HMAC-SHA256(UTF8(StringToSign)))
 Для запроса данных, отправленных посредством API сборщика данных HTTP в Log Analytics, найдите записи с **типом**, равным указанному вами значению **LogType**, к которому добавлен суффикс **_CL**. Например, если вы использовали значение **MyCustomLog**, будут возвращены все записи, содержащие текст **Type=MyCustomLog_CL**.
 
 >[!NOTE]
-> Если ваша рабочая область переведена на [язык запросов Log Analytics](log-analytics-log-search-upgrade.md), приведенный выше запрос будет изменен следующим образом.
+> Если ваша рабочая область переведена на [язык запросов Log Analytics](log-analytics-queries.md), приведенный выше запрос будет изменен следующим образом.
 
 > `MyCustomLog_CL`
 
@@ -470,6 +470,6 @@ post_data(customer_id, shared_key, body, log_type)
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-- Чтобы получить данные из репозитория Log Analytics, используйте [API поиска по журналам](log-analytics-log-search-api.md).
+- Чтобы получить данные из репозитория Log Analytics, используйте [API поиска по журналам](log-analytics-queries.md).
 
 - Дополнительные сведения о [создании конвейера данных с помощью API сборщика данных](log-analytics-create-pipeline-datacollector-api.md), используя рабочий процесс Logic Apps в Log Analytics.

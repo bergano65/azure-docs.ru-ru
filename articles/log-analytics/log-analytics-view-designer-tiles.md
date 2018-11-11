@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 01/17/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: aa9e91614152aed6a04fa748521991920a0ed569
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 2a64b9fc7e2f13c3b9974e95d914a3d3b675d883
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50413066"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51006811"
 ---
 # <a name="reference-guide-to-view-designer-tiles-in-log-analytics"></a>Справочное руководство по плиткам конструктора представлений в Log Analytics
 С помощью конструктора представлений в Azure Log Analytics можно создавать пользовательские представления на портале Azure, содержащие различные визуализации данных в рабочей области Log Analytics. В этой статье содержится справочное руководство по параметрам плиток, доступных в пользовательских представлениях.
@@ -179,5 +179,5 @@ ms.locfileid: "50413066"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Узнайте больше о [поиске по журналу](log-analytics-log-searches.md) для поддержки запросов на плитках.
+* Узнайте больше о [поиске по журналу](log-analytics-queries.md) для поддержки запросов на плитках.
 * Добавьте [элементы визуализации](log-analytics-view-designer-parts.md) к пользовательскому представлению.

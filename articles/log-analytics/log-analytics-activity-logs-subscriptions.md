@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: c078320ce31e0c51c7aef0bc0a2aa14e68ac2fc3
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 41e627d895f0276d372ee42df3e0a43fdadc4051
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48042867"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51016069"
 ---
 # <a name="collect-azure-activity-logs-into-log-analytics-across-subscriptions"></a>Получение журналов действий Azure в службе Log Analytics в разных подписках
 
@@ -29,7 +29,7 @@ ms.locfileid: "48042867"
 
 ## <a name="overview"></a>Обзор
 
-Стратегия, используемая в этом сценарии, заключается в том, чтобы журнал действий Azure отправлял события в [концентратор событий](../event-hubs/event-hubs-what-is-event-hubs.md), в котором [приложение логики](../logic-apps/logic-apps-overview.md) отправляет их в рабочее пространство Log Analytics. 
+Стратегия, используемая в этом сценарии, заключается в том, чтобы журнал действий Azure отправлял события в [концентратор событий](../event-hubs/event-hubs-about.md), в котором [приложение логики](../logic-apps/logic-apps-overview.md) отправляет их в рабочее пространство Log Analytics. 
 
 ![изображение потока данных из журнала действий в Log Analytics](media/log-analytics-activity-logs-subscriptions/data-flow-overview.png)
 

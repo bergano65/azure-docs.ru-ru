@@ -1,20 +1,20 @@
 ---
-title: Миграция виртуальных машин из AWS в Azure с помощью Azure Site Recovery | Документация Майкрософт
-description: В этой статье описано, как с помощью Azure Site Recovery перенести в Azure виртуальные машины Windows, запущенные в Amazon Web Services (AWS).
+title: Перенос виртуальных машин AWS в Azure с помощью службы Azure Site Recovery | Документация Майкрософт
+description: В этой статье описано, как перенести виртуальные машины Windows, запущенные в Amazon Web Services (AWS), в Azure с помощью Azure Site Recovery.
 services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 10/10/2018
+ms.date: 10/28/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 04e7506562d29e37abb65b7a760fbc9bd707e2c6
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: cd33b7cb45bb165a120a7efe20eba962ec75e273
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49078942"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51252145"
 ---
 # <a name="migrate-amazon-web-services-aws-vms-to-azure"></a>Перенос виртуальных машин Amazon Web Services (AWS) в Azure
 
@@ -119,7 +119,7 @@ ms.locfileid: "49078942"
 
 1. Выберите экземпляр EC2 под управлением Windows Server 2012 R2 для создания сервера конфигурации и зарегистрируйте его в хранилище восстановления.
 2. Настройте прокси-сервер на виртуальной машине экземпляра EC2, используемой в качестве сервера конфигурации, чтобы она смогла получать доступ к [URL-адресам службы](site-recovery-support-matrix-to-azure.md).
-3. Скачайте программу [единой установки Microsoft Azure Site Recovery](http://aka.ms/unifiedinstaller_wus). Ее можно скачать на локальный компьютер и скопировать на виртуальную машину, используемую в качестве сервера конфигурации.
+3. Скачайте программу [единой установки Microsoft Azure Site Recovery](https://aka.ms/unifiedinstaller_wus). Ее можно скачать на локальный компьютер и скопировать на виртуальную машину, используемую в качестве сервера конфигурации.
 4. Выберите **Скачать**, чтобы получить ключ регистрации хранилища. Скопируйте скачанный файл на виртуальную машину, которую вы используете как сервер конфигурации.
 5. На виртуальной машине щелкните правой кнопкой мыши установщик, скачанный для программы единой установки Microsoft Azure Site Recovery, и выберите **Запуск от имени администратора**.
 

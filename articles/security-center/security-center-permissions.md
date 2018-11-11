@@ -4,7 +4,7 @@ description: В этой статье объясняется, как центр 
 services: security-center
 cloud: na
 documentationcenter: na
-author: TerryLanfear
+author: rkarlin
 manager: MBaldwin
 ms.assetid: ''
 ms.service: security-center
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/13/2017
-ms.author: terrylan
-ms.openlocfilehash: b93b57d50ccf5d5dfb092bdb71820da77f345878
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.date: 10/28/2018
+ms.author: rkarlin
+ms.openlocfilehash: 42220a94eb0d0259b8b410e7343ffbfe09e8bfa5
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44295468"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51007864"
 ---
 # <a name="permissions-in-azure-security-center"></a>Разрешения в центре безопасности Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "44295468"
 | Роль | Изменение политики безопасности | Применение рекомендаций по безопасности к ресурсу | Отклонение оповещений и рекомендаций | Просмотр оповещений и рекомендаций |
 |:--- |:---:|:---:|:---:|:---:|
 | Владелец подписки | X | X | X | X |
-| Участник подписки | X | X | X | X |
+| Участник подписки | -- | X | X | X |
 | Владелец группы ресурсов | -- | X | -- | X |
 | Участник группы ресурсов | -- | X | -- | X |
 | читатель. | -- | -- | -- | X |

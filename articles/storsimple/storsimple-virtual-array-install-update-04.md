@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/07/2017
 ms.author: alkohli
-ms.openlocfilehash: 3fb246b1515e7a637e6cff6499bf324c3f80dd45
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: cd3fdec0e50d64af28306034e6e1086e67526b7d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38232195"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51251059"
 ---
 # <a name="install-update-04-on-your-storsimple-virtual-array"></a>Установка обновления 0.4 на виртуальный массив StorSimple
 
@@ -48,7 +48,7 @@ ms.locfileid: "38232195"
 
 #### <a name="to-download-the-update-or-the-hotfix"></a>Загрузка обновления или исправления
 
-1. Запустите Internet Explorer и перейдите по адресу [http://catalog.update.microsoft.com](http://catalog.update.microsoft.com).
+1. Запустите Internet Explorer и перейдите по адресу [http://catalog.update.microsoft.com](https://catalog.update.microsoft.com).
 
 2. Если вы впервые используете каталог Центра обновления Майкрософт на этом компьютере, нажмите кнопку **Установить** , когда будет предложено установить надстройку каталога Центра обновления Майкрософт.
 

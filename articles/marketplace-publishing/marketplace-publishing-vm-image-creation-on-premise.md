@@ -14,12 +14,12 @@ ms.tgt_pltfrm: Azure
 ms.workload: na
 ms.date: 04/29/2016
 ms.author: hascipio; v-divte
-ms.openlocfilehash: f68dadab96e27cc7b90f44681d87ffa7cce8126b
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: e5571a0933284a52d5567db0505ecaced6c6c336
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49390063"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51253505"
 ---
 # <a name="develop-an-on-premises-virtual-machine-image-for-the-azure-marketplace"></a>Локальная разработка образа виртуальной машины для Azure Marketplace
 Настоятельно рекомендуется разрабатывать виртуальные жесткие диски (VHD) Azure прямо в облаке, используя для этого протокол удаленного рабочего стола. Однако при необходимости вы можете загрузить VHD и выполнить разработку в локальной инфраструктуре.  
@@ -71,7 +71,7 @@ ms.locfileid: "49390063"
    ![рисунок](media/marketplace-publishing-vm-image-creation-on-premise/img07.png)
 
 ### <a name="download-a-vhd-by-using-powershell"></a>Загрузка VHD с помощью PowerShell
-Наряду с порталом управления Azure для загрузки VHD ОС можно использовать командлет [Save-AzureVhd](http://msdn.microsoft.com/library/dn495297.aspx) .
+Наряду с порталом управления Azure для загрузки VHD ОС можно использовать командлет [Save-AzureVhd](https://msdn.microsoft.com/library/dn495297.aspx) .
 
         Save-AzureVhd –Source <storageURIOfVhd> `
         -LocalFilePath <diskLocationOnWorkstation> `
@@ -139,7 +139,7 @@ ms.locfileid: "49390063"
 Создав учетную запись хранения и контейнер, отправьте подготовленные VHD. Для этого можно использовать PowerShell, программу командной строки Linux или другие средства управления хранилищем Azure.
 
 ### <a name="upload-a-vhd-via-powershell"></a>Отправка VHD с помощью PowerShell
-Воспользуйтесь командлетом [Add-AzureVhd](http://msdn.microsoft.com/library/dn495173.aspx) .
+Воспользуйтесь командлетом [Add-AzureVhd](https://msdn.microsoft.com/library/dn495173.aspx) .
 
         Add-AzureVhd –Destination “http://mystorageaccount.blob.core.windows.net/containername/vmsku.vhd” -LocalFilePath “C:\Users\Administrator\Desktop\vmsku.vhd”
 

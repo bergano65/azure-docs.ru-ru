@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 12/19/2017
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 5822d32906419e8b0615dd8686ec47de28deb38f
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.openlocfilehash: 15991faa61dc5f543b1b9db491bc1669daf219cc
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47182229"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51014216"
 ---
 # <a name="windows-and-linux-performance-data-sources-in-log-analytics"></a>Источники данных о производительности Windows и Linux в Log Analytics
 Счетчики производительности в Windows и Linux позволяют получить представление о производительности компонентов оборудования, операционных систем и приложений.  Log Analytics может собирать счетчики производительности с высокой частотой для анализа данных практически в режиме реального времени, а также данные о производительности для более долгосрочного анализа и формирования отчетов.
@@ -227,5 +227,5 @@ ms.locfileid: "47182229"
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Сбор данных счетчиков производительности из приложений Linux](log-analytics-data-sources-linux-applications.md), включая MySQL и сервер HTTP Apache.
-* Узнайте больше об [операциях поиска по журналу](log-analytics-log-searches.md) , которые можно применять для анализа данных, собираемых из источников данных и решений.  
+* Узнайте больше об [операциях поиска по журналу](log-analytics-queries.md) , которые можно применять для анализа данных, собираемых из источников данных и решений.  
 * Экспортируйте собранные данные в [Power BI](log-analytics-powerbi.md) для дополнительной визуализации и анализа.
