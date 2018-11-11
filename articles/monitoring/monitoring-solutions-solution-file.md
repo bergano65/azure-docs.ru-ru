@@ -15,18 +15,18 @@ ms.workload: infrastructure-services
 ms.date: 01/09/2018
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 46e6ea791752045b0f1afbf1e83e43f498415e54
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 21e280740d5d7f467ee70952febf858e0dc0b89d
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33887464"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51278214"
 ---
 # <a name="creating-a-management-solution-file-in-azure-preview"></a>Создание файла решения по управлению в Azure (предварительная версия)
 > [!NOTE]
 > Это предварительная документация по созданию решений по управлению в Azure, которая доступна в данный момент в режиме предварительной версии. Любые схемы, приведенные ниже, могут измениться.  
 
-Решения по управлению в Azure реализуются как [шаблоны управления ресурсами](../azure-resource-manager/resource-manager-template-walkthrough.md).  Поэтому создание решения для управления — это, по сути, [создание шаблона](../azure-resource-manager/resource-group-authoring-templates.md).  В этой статье подробно описываются шаблоны, используемые для решений, а также способы настойки ресурсов для типичного решения.
+Решения по управлению в Azure реализуются как [шаблоны управления ресурсами](../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md).  Поэтому создание решения для управления — это, по сути, [создание шаблона](../azure-resource-manager/resource-group-authoring-templates.md).  В этой статье подробно описываются шаблоны, используемые для решений, а также способы настойки ресурсов для типичного решения.
 
 
 ## <a name="tools"></a>Средства
@@ -34,7 +34,7 @@ ms.locfileid: "33887464"
 Для работы с файлами решения можно использовать любой текстовый редактор, но мы рекомендуем использовать компоненты, предоставляемые в Visual Studio или Visual Studio Code, как описано в следующих статьях.
 
 - [Создание и развертывание групп ресурсов Azure с помощью Visual Studio](../azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy.md)
-- [Работа с шаблонами Azure Resource Manager в Visual Studio Code](../azure-resource-manager/resource-manager-vs-code.md)
+- [Работа с шаблонами Azure Resource Manager в Visual Studio Code](../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md)
 
 
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/27/2018
 ms.author: bwren
-ms.openlocfilehash: a810de5c3c70322560bb45bcc2aee5cf0798cea9
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: 8aa79d66801ff30fedc725913696d5cfa3c9626f
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50248716"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51282839"
 ---
 # <a name="monitoring-data-collected-by-azure-monitor"></a>Данные мониторинга, собираемые службой Azure Monitor
 [Azure Monitor](../azure-monitor/overview.md) — это служба, которая позволяет отслеживать приложения и ресурсы, используемые этими приложениями. Основное назначение этой функции — хранение данных телеметрии и других данных, получаемых из отслеживаемых ресурсов. В этой статье подробно описано, как служба Azure Monitor хранит и использует эти данные.
@@ -98,7 +98,7 @@ ms.locfileid: "50248716"
 Ниже перечислены задачи, которые можно выполнить с помощью метрик.
 
 - С помощью [обозревателя метрик](../monitoring-and-diagnostics/monitoring-metric-charts.md) можно анализировать собранные метрики и отображать их на диаграмме. Отслеживать производительность ресурса (например, виртуальной машины, веб-сайта или логического приложения), закрепляя диаграммы на [панели мониторинга Azure](../azure-portal/azure-portal-dashboards.md).
-- Настроить [правило оповещения метрики](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md), которое отправляет уведомление или выполняет [автоматическое действие](../monitoring-and-diagnostics/monitoring-action-groups.md), когда метрика переходит пороговое значение.
+- Настроить [правило оповещения метрики](../monitoring-and-diagnostics/alert-metric.md), которое отправляет уведомление или выполняет [автоматическое действие](../monitoring-and-diagnostics/monitoring-action-groups.md), когда метрика переходит пороговое значение.
 - С помощью [автомасштабирования](../monitoring-and-diagnostics/monitoring-overview-autoscale.md) можно увеличивать или уменьшать ресурсы, когда метрика переходит пороговое значение.
 - Маршрутизировать метрики в службу Log Analytics для анализа данных метрик совместно с данными журнала и для хранения значений метрик более 93 дней. 
 - Выполнять потоковую передачу метрик в [концентратор событий](../monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs.md), чтобы маршрутизировать их в службу [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) или во внешние системы.
@@ -138,7 +138,7 @@ ms.locfileid: "50248716"
 Служба Log Analytics может собирать данные из различных источников, размещенных как в Azure, так и в локальных ресурсах. Ниже перечислены некоторые источники данных, записываемых в службу Log Analytics.
 
 - [Журналы действий](../log-analytics/log-analytics-activity.md) из ресурсов Azure, которые включают информацию о конфигурации и работоспособности ресурсов, и [журналы диагностики](../monitoring-and-diagnostics/monitor-stream-diagnostic-logs-log-analytics.md), предоставляющие аналитические данные о работе ресурсов.
-- Агенты в виртуальных машинах с ОС [Windows](../log-analytics/log-analytics-windows-agent.md) и [Linux](../log-analytics/log-analytics-linux-agents.md), которые отправляют данные телеметрии из операционных систем на виртуальных машинах и приложений в службу Log Analytics согласно настроенным [источникам данных](../log-analytics/log-analytics-data-sources.md).
+- Агенты в виртуальных машинах с ОС [Windows](../log-analytics/log-analytics-windows-agent.md) и [Linux](../log-analytics/log-analytics-quick-collect-linux-computer.md), которые отправляют данные телеметрии из операционных систем на виртуальных машинах и приложений в службу Log Analytics согласно настроенным [источникам данных](../log-analytics/log-analytics-data-sources.md).
 - Данные приложений, собранные службой [Application Insights](https://docs.microsoft.com/azure/application-insights/).
 - Данные аналитики для определенных приложений или служб, полученные из [решений для мониторинга](../monitoring/monitoring-solutions.md) или функций, например Container Insights, VM Insights или Resource Group Insights.
 - Данные о безопасности, собираемые [центром безопасности Azure](https://docs.microsoft.com/azure/security-center/).

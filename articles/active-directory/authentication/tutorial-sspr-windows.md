@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 79a6636043499cffb7eded409cdc27c56de98e33
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: bec94e2017660e9804bbc232e0a3163afdaafcb6
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49430227"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51277772"
 ---
 # <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Руководство. Сброс пароля Azure AD в окне входа
 
@@ -113,7 +113,7 @@ ms.locfileid: "49430227"
 
 Если экран блокировки Windows отключен с использованием раздела реестра или групповой политики, функция **Сброс пароля** будет недоступна.
 
-Если согласно политике нужно нажать CTRL+ALT+DEL или уведомления на экране блокировки отключены, **сброс пароля** не будет работать. Это требование будет реализовано в Windows 10 19H1.
+Если согласно политике нужно нажать CTRL+ALT+DEL или уведомления на экране блокировки отключены, **сброс пароля** не будет работать.
 
 Журнал аудита Azure AD включают в себя сведения об IP-адресе и типе клиента (ClientType), на котором произошел сброс пароля.
 

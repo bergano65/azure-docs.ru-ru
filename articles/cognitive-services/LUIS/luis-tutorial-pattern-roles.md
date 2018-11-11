@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: c7e7b100242d6ceb35172b872f2fb6ff7f4b402b
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: dd73ca876385cf81059228088f7b027f533315eb
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48886166"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51277842"
 ---
 # <a name="tutorial-4-extract-contextually-related-patterns"></a>Руководство 4. Извлечение контекстно-зависимых шаблонов
 
@@ -49,7 +49,7 @@ ms.locfileid: "48886166"
 > * Создавать список городов
 > * Получать намерения и сущности из конечной точки
 
-[!include[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
+[!INCLUDE[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="use-existing-app"></a>Использование существующего приложения
 Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
@@ -64,7 +64,7 @@ ms.locfileid: "48886166"
 
 ## <a name="create-new-entities"></a>Добавление новых сущностей
 
-1. [!include[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
+1. [!INCLUDE[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
 2. Выберите **Сущности** в меню навигации слева. 
 
@@ -254,7 +254,7 @@ ms.locfileid: "48886166"
 
 ## <a name="get-intent-and-entities-from-endpoint"></a>Получение намерения и сущностей из конечной точки
 
-1. [!include[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
+1. [!INCLUDE[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
 2. Перейдите в конец URL-адреса и введите `Move wayne berry from miami to mount vernon`. Последний параметр строки запроса — `q`. Это **запрос** фразы. 
 
@@ -380,6 +380,8 @@ ms.locfileid: "48886166"
 |--|--|--|
 |[Иерархическое (нет ролей)](luis-quickstart-intent-and-hier-entity.md)|mv Джил Джонс из **a-2349** в **b-1298**|a-2349, b-1298|
 |Руководство (с ролями)|Переместить Билли Патерсона из **Юмы** в **Денвер**.|Юма, Денвер|
+
+Дополнительные сведения см. в разделе [Сравнение ролей и иерархических сущностей](luis-concept-roles.md#roles-versus-hierarchical-entities).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

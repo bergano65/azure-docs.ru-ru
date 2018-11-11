@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/24/2018
+ms.date: 11/07/2018
 ms.author: mabrigg
 ms.reviewer: Anjay.Ajodha
-ms.openlocfilehash: febdb2e3ae4432c36ca839f81ba7a1d333df1a2f
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 77f9e52da8ada9cdf56d4a710bba65492cc17f75
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46952007"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51280747"
 ---
 # <a name="tutorial-deploy-apps-to-azure-and-azure-stack"></a>Руководство по развертыванию приложений в Azure и Azure Stack
 
@@ -50,9 +50,9 @@ ms.locfileid: "46952007"
 
 > [!Tip]  
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
-> Microsoft Azure Stack — это расширение Azure.re. Azure Stack обеспечивает гибкость и инновации облачных вычислений в локальной среде и предоставляет единое гибридное облако, которое позволяет создавать и развертывать гибридные приложения в любой точке мира.  
+> Microsoft Azure Stack — это расширение Azure.re. Azure Stack позволяет использовать гибкие и инновационные функции облачных вычислений в локальной среде, а также предоставляет единое гибридное облако для создания и развертывания гибридных приложений в любом расположении.  
 > 
-> В техническом документе [Design Considerations for Hybrid Applications](https://aka.ms/hybrid-cloud-applications-pillars) (Рекомендации по проектированию гибридных приложений) рассматриваются основные аспекты качества программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность) для разработки, развертывания и работы гибридных приложений. Рекомендации относительно разработки помогут оптимизировать разработку гибридных приложений и сократить количество запросов в рабочих средах.
+> В [рекомендациях по проектированию гибридных приложений](https://aka.ms/hybrid-cloud-applications-pillars) описаны характеристики качественного программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность), которых следует придерживаться при разработке, развертывании и использовании гибридных приложений. Рекомендации помогут оптимизировать разработку гибридных приложений и свести к минимуму проблемы в рабочих средах.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -273,21 +273,57 @@ Azure DevOps Services выполняет аутентификацию в Azure R
 10. Щелкните **Save changes** (Сохранить изменения).
 
 Теперь, когда сведения о конечной точке существуют, подключение Azure DevOps Services к Azure Stack готово к использованию. Агент сборки в Azure Stack получает инструкции от Azure DevOps Services, а затем передает сведения о конечной точке для взаимодействия с Azure Stack.
+
 ## <a name="create-an-azure-stack-endpoint"></a>Создание конечной точки Azure Stack
+
+### <a name="create-an-endpoint-for-azure-ad-deployments"></a>Создание конечной точки для развертываний Azure Active Directory
 
 Вы можете следовать инструкциям из раздела [Create an Azure Resource Manager service connection with an existing service principal](https://docs.microsoft.com/vsts/pipelines/library/connect-to-azure?view=vsts#create-an-azure-resource-manager-service-connection-with-an-existing-service-principal) (Создание подключения службы Azure Resource Manager с существующим субъектом-службой), чтобы создать подключение службы с существующим субъектом-службой и использовать следующее сопоставление:
 
-- Среда: AzureStack.
-- URL-адрес среды: что-то вроде `https://management.local.azurestack.external`.
-- Идентификатор подписки: идентификатор подписки пользователя Azure Stack.
-- Имя подписки: имя подписки пользователя Azure Stack.
-- Идентификатор клиента субъекта-службы: идентификатор субъекта-службы из [этого](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-solution-pipeline#create-a-service-principal) раздела статьи.
-- Ключ субъекта-службы: ключ из этой же статьи (или пароль, если вы использовали скрипт).
-- Идентификатор клиента: идентификатор клиента, полученный по инструкции из статьи [Получение идентификатора клиента](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-solution-pipeline#get-the-tenant-id).
+Вы можете создать подключение к службе, используя следующие значения параметров:
 
-Теперь, когда конечная точка создана, подключение VSTS к Azure Stack готово к использованию. Агент сборки в Azure Stack получает инструкции от VSTS, а затем передает сведения о конечной точке для взаимодействия с Azure Stack.
+| ИМЯ | Пример | ОПИСАНИЕ |
+| --- | --- | --- |
+| Имя подключения | Azure Stack в Azure Active Directory | Имя подключения. |
+| Среда | AzureStack | Имя вашей среды. |
+| Environment URL (URL-адрес среды) | `https://management.local.azurestack.external` | Конечная точка управления. |
+| Уровень области | Подписка | Область подключения. |
+| Идентификатор подписки | 65710926-XXXX-4F2A-8FB2-64C63CD2FAE9 | Идентификатор подписки пользователя Azure Stack. |
+| Имя подписки | name@contoso.com | Имя подписки пользователя Azure Stack. |
+| Идентификатор клиента для субъекта-службы | FF74AACF-XXXX-4776-93FC-C63E6E021D59 | Идентификатор субъекта-службы из [этого](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-solution-pipeline#create-a-service-principal) раздела статьи. |
+| Ключ субъекта-службы | THESCRETGOESHERE= | Ключ из этой же статьи (или пароль, если вы использовали скрипт). |
+| Tenant ID | D073C21E-XXXX-4AD0-B77E-8364FCA78A94 | Идентификатор клиента, полученный по инструкции из раздела [Получение идентификатора клиента](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-solution-pipeline#get-the-tenant-id).  |
+| Подключение: | Не проверено | Проверьте параметры подключения к субъекту-службе. |
 
-![Агент сборки](media\azure-stack-solution-hybrid-pipeline\016_save_changes.png)
+После создания конечной точки можно использовать подключение DevOps к Azure Stack. Агент сборки в Azure Stack получает инструкции от DevOps, а затем передает сведения о конечной точке для взаимодействия с Azure Stack.
+
+![Azure Active Directory агента сборки](media\azure-stack-solution-hybrid-pipeline\016_save_changes.png)
+
+### <a name="create-an-endpoint-for-ad-fs"></a>Создание конечной точки для служб федерации Active Directory (AD FS)
+
+Последнее обновление Azure DevOps позволяет создавать подключения к службе с помощью субъекта-службы, используя сертификат для проверки подлинности. Это необходимо, если в качестве поставщика удостоверений при развертывании Azure Stack используются службы AD FS. 
+
+![AD FS агента сборки](media\azure-stack-solution-hybrid-pipeline\image06.png)
+
+Вы можете создать подключение к службе, используя следующие значения параметров:
+
+| ИМЯ | Пример | ОПИСАНИЕ |
+| --- | --- | --- |
+| Имя подключения | ADFS Azure Stack | Имя подключения. |
+| Среда | AzureStack | Имя вашей среды. |
+| Environment URL (URL-адрес среды) | `https://management.local.azurestack.external` | Конечная точка управления. |
+| Уровень области | Подписка | Область подключения. |
+| Идентификатор подписки | 65710926-XXXX-4F2A-8FB2-64C63CD2FAE9 | Идентификатор подписки пользователя Azure Stack. |
+| Имя подписки | name@contoso.com | Имя подписки пользователя Azure Stack. |
+| Идентификатор клиента для субъекта-службы | FF74AACF-XXXX-4776-93FC-C63E6E021D59 | Идентификатор клиента из субъекта-службы, созданного для служб AD FS. |
+| Сертификат | `<certificate>` |  Преобразование файла сертификата PFX в формат PEM. Вставьте содержимое файла сертификата PEM в это поле. <br> Преобразование PFX в формат PEM:<br>`openssl pkcs12 -in file.pfx -out file.pem -nodes -password pass:<password_here>` |
+| Tenant ID | D073C21E-XXXX-4AD0-B77E-8364FCA78A94 | Идентификатор клиента, полученный по инструкции из раздела [Получение идентификатора клиента](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-solution-pipeline#get-the-tenant-id). |
+| Подключение: | Не проверено | Проверьте параметры подключения к субъекту-службе. |
+
+После создания конечной точки можно использовать подключение Azure DevOps к Azure Stack. Агент сборки в Azure Stack получает инструкции от Azure DevOps, а затем передает сведения о конечной точке для взаимодействия с Azure Stack.
+
+> [!Note]
+> Если конечная точка пользователя ARM Azure Stack недоступна через Интернет, проверка подключения завершится сбоем. Это ожидаемое поведение. Вы можете проверить подключение, создав конвейер выпуска с простой задачей. 
 
 ## <a name="develop-your-application-build"></a>Разработка сборки приложения
 

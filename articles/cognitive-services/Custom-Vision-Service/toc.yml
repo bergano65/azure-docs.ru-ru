@@ -4,44 +4,44 @@ items:
   items:
   - name: Что собой представляет Пользовательское визуальное распознавание
     href: home.md
-- name: Практические руководства
+- name: Быстрое начало работы
   items:
-  - name: Начало работы с Пользовательской службой визуального распознавания
-    items:
-    - name: Построение классификатора
-      href: getting-started-build-a-classifier.md
-    - name: Тестирование модели
-      href: test-your-model.md
-    - name: Усовершенствование классификатора
-      href: getting-started-improving-your-classifier.md
-    - name: Использование API-интерфейса прогнозирования
-      href: use-prediction-api.md
-    - name: Экспорт модели на мобильное устройство
-      href: export-your-model.md
-    - name: Использование модели ONNX с Windows ML
-      href: custom-vision-onnx-windows-ml.md
-    - name: Запуск модели TensorFlow в среде Python
-      href: export-model-python.md
-    - name: Создание модели с помощью REST API
-      href: rest-api-tutorial.md
-  - name: Создание приложений
+  - name: С помощью пакета SDK для .NET
     items:
     - name: Классификация изображений
-      items:
-      - name: Руководство по C#
-        href: csharp-tutorial.md
-      - name: Руководство по Python
-        href: python-tutorial.md
-      - name: Руководство по Java
-        href: java-tutorial.md
+      href: csharp-tutorial.md
     - name: Обнаружение объектов
-      items:
-      - name: Руководство по C#
-        href: csharp-tutorial-od.md
-      - name: Руководство по Python
-        href: python-tutorial-od.md
-      - name: Руководство по Java
-        href: java-tutorial-od.md
+      href: csharp-tutorial-od.md
+  - name: Использование пакета SDK для Python
+    items:
+    - name: Классификация изображений
+      href: python-tutorial.md
+    - name: Обнаружение объектов
+      href: python-tutorial-od.md
+  - name: Использование пакета SDK для Java
+    items:
+    - name: Классификация изображений
+      href: java-tutorial.md
+    - name: Обнаружение объектов
+      href: java-tutorial-od.md
+- name: Практические руководства
+  items:
+  - name: Построение классификатора
+    href: getting-started-build-a-classifier.md
+  - name: Тестирование модели
+    href: test-your-model.md
+  - name: Усовершенствование классификатора
+    href: getting-started-improving-your-classifier.md
+  - name: Использование API-интерфейса прогнозирования
+    href: use-prediction-api.md
+  - name: Экспорт модели на мобильное устройство
+    href: export-your-model.md
+  - name: Использование модели ONNX с Windows ML
+    href: custom-vision-onnx-windows-ml.md
+  - name: Запуск модели TensorFlow в среде Python
+    href: export-model-python.md
+  - name: Создание модели с помощью REST API
+    href: rest-api-tutorial.md
 - name: Справочные материалы
   items:
   - name: Пользовательский API визуального обучения
@@ -76,9 +76,9 @@ items:
     href: https://azure.microsoft.com/roadmap/?category=ai-machine-learning
   - name: Доступ по регионам
     href: https://azure.microsoft.com/global-infrastructure/services/
-ms.openlocfilehash: 1a29fbc0e28feced9a3a47daa7a861ddcb8a6e95
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 1394f71bceef7a0646411a155b63825771e839d3
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50739776"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51281038"

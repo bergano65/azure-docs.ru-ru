@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: ff5a47f977f34535c5ad1fde7e6cac5995e7f7dd
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 95d1c4ffe76cf4c652f347014a838f1250c0ca15
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47031464"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51277483"
 ---
 # <a name="tutorial-9--extract-sentiment-of-overall-utterance"></a>Руководство 9. Извлечение тональности из всего высказывания
 В этом руководстве создается приложение, демонстрирующее, как извлечь позитивные, негативные и нейтральные тональности из фраз. Тональность определяется на основе всего высказывания.
@@ -41,7 +41,7 @@ ms.locfileid: "47031464"
 > * Добавление анализа тональности как параметра публикации.
 > * Train
 > * Опубликовать
-> * Получение данных о тональности высказывания из конечной точки.
+> * Получение данных о тональности высказывания из конечной точки
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
@@ -49,18 +49,18 @@ ms.locfileid: "47031464"
 
 Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
 
-Если у вас нет приложения HumanResources из предыдущего руководства, сделайте следующее:
+Если у вас нет приложения HumanResources из предыдущего руководства, выполните приведенные ниже шаги.
 
-1.  Скачайте и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-keyphrase-HumanResources.json).
+1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-keyphrase-HumanResources.json).
 
 2. Импортируйте JSON-файл в новое приложение.
 
-3. В разделе **Управление** на вкладке **Версии** клонируйте версию и присвойте ей имя `sentiment`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе.
+3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `sentiment`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе.
 
 ## <a name="employeefeedback-intent"></a>Намерение EmployeeFeedback 
 Добавьте новое намерение, чтобы получить отзывы о сотрудниках от других работников компании. 
 
-1. [!include[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
+1. [!INCLUDE[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
 2. Выберите **Create new intent**. (Создать намерение).
 

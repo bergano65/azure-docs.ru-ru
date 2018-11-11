@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: fd183b5776f30b12d577a94be147eabef05d258f
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: f7122c6147af2ed1af1f3b5e08458fd73f9aef6d
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50419373"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51279114"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor  
 
@@ -57,7 +57,7 @@ ms.locfileid: "50419373"
 
    > [!NOTE]
 
-   > Списки интерфейса оповещений могут импортировать запрос аналитических данных как тип сигнала — **Log (Saved Query)** (Журнал (сохраненный запрос)), как показано на приведенном выше изображении. Таким образом, пользователи могут усовершенствовать ваш запрос в Analytics, а затем сохранить его для дальнейшего использования в оповещениях. Дополнительные сведения о сохранении запросов см. в статьях об [использовании поиска по журналам в Log Analytics](../log-analytics/log-analytics-log-searches.md) или [совместном использовании запроса аналитических данных Application Insights](../log-analytics/log-analytics-overview.md). 
+   > Списки интерфейса оповещений могут импортировать запрос аналитических данных как тип сигнала — **Log (Saved Query)** (Журнал (сохраненный запрос)), как показано на приведенном выше изображении. Таким образом, пользователи могут усовершенствовать ваш запрос в Analytics, а затем сохранить его для дальнейшего использования в оповещениях. Дополнительные сведения о сохранении запросов см. в статьях об [использовании поиска по журналам в Log Analytics](../log-analytics/log-analytics-queries.md) или [совместном использовании запроса аналитических данных Application Insights](../log-analytics/log-analytics-queries.md). 
 
 1.  *Оповещения журналов*. После выбора запрос для оповещения можно указать в поле **Search Query** (Поисковой запрос). Если синтаксис запроса неверен, в поле отображается ошибка, выделенная красным цветом. Если синтаксис запроса верен, появятся исторические данные указанного запроса для справки в виде графика с возможностью настройки временного интервала от последних шести часов до последней недели.
 
@@ -132,7 +132,7 @@ ms.locfileid: "50419373"
 ### <a name="azure-resource-template-for-log-analytics"></a>Шаблон ресурсов Azure для Log Analytics
 Оповещения журнала для Log Analytics создаются правилами генерации оповещений, которые выполняют сохраненный поиск через равные промежутки времени. Если результаты запроса соответствуют указанным условиям, то создается запись оповещения и выполняются одно или несколько действий. 
 
-Шаблон ресурсов для сохраненного поиска Log Analytics и оповещений Log Analytics доступен в разделе документации по Log Analytics. Дополнительные сведения см. в статье [Добавление сохраненных поисковых запросов и оповещений Log Analytics в решение по управлению (предварительная версия)](../operations-management-suite/operations-management-suite-solutions-resources-searches-alerts.md), которая содержит демонстрационные примеры и сведения о схеме.
+Шаблон ресурсов для сохраненного поиска Log Analytics и оповещений Log Analytics доступен в разделе документации по Log Analytics. Дополнительные сведения см. в статье [Добавление сохраненных поисковых запросов и оповещений Log Analytics в решение по управлению (предварительная версия)](../monitoring/monitoring-solutions-resources-searches-alerts.md), которая содержит демонстрационные примеры и сведения о схеме.
 
 ### <a name="azure-resource-template-for-application-insights"></a>Шаблон ресурсов Azure для Application Insights
 Оповещение журнала для ресурсов Application Insights имеет тип `Microsoft.Insights/scheduledQueryRules/`. Дополнительные сведения о данном типе ресурса приведены в разделе [Scheduled Query Rules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) (Правила запланированных запросов).
@@ -246,5 +246,5 @@ az group deployment create --resource-group myRG --template-file sampleScheduled
 * Дополнительные сведения см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](monitor-alerts-unified-log.md).
 * Общие сведения о [действиях веб-перехватчиков для оповещений журнала](monitor-alerts-unified-log-webhook.md)
 * Дополнительные сведения об [Application Insights](../application-insights/app-insights-analytics.md)
-* Дополнительные сведения о [Log Analytics](../log-analytics/log-analytics-overview.md). 
+* Дополнительные сведения о [Log Analytics](../log-analytics/log-analytics-queries.md). 
 

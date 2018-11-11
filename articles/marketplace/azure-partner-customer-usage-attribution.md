@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 10/15/2018
 ms.author: yijenj
-ms.openlocfilehash: 604eb528ef33a95993aa5b6d3ff6eebb77936aa2
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 7937f3d0db414d7a9cc2adaefd4324d49d734fcb
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50157944"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51280679"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -66,7 +66,7 @@ ms.locfileid: "50157944"
 
 { // add this resource to the mainTemplate.json (do not add the entire file)
     "apiVersion": "2018-02-01",
-    "name": "pid-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" // use your generated GUID here
+    "name": "pid-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", // use your generated GUID here
     "type": "Microsoft.Resources/deployments",
     "properties": {
         "mode": "Incremental",
@@ -145,7 +145,7 @@ export AZURE_HTTP_USER_AGENT='pid-eb7927c8-dd66-43e1-b0cf-c346a422063'
 
 После того как вы добавите GUID в шаблон или агент пользователя и зарегистрируете GUID на Портале Cloud Partner, все развертывания с ним будут отслеживаться. 
 
-1. Зарегистрируйтесь в [Azure Marketplace](http://aka.ms/listonazuremarketplace) и получите доступ к Порталу Cloud Partner.
+1. Зарегистрируйтесь в [Azure Marketplace](https://aka.ms/listonazuremarketplace) и получите доступ к Порталу Cloud Partner.
 
    * У каждого партнера должен быть [свой профиль на Портале Cloud Partner](https://docs.microsoft.com/azure/marketplace/become-publisher). Мы рекомендуем вам опубликовать свое предложение в Azure Marketplace или AppSource.
    * Любой партнер может зарегистрировать несколько идентификаторов GUID.

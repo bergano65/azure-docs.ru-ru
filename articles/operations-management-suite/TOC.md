@@ -3,7 +3,7 @@
 
 # Начало работы
 ## [Служба Log Analytics](../log-analytics/log-analytics-get-started.md)
-## [Автоматизация](../automation/automation-offering-get-started.md)
+## [Автоматизация](/azure/automation/)
 ## [Архивация](../backup/backup-introduction-to-azure-backup.md)
 ## [Site Recovery](../site-recovery/site-recovery-overview.md)
 
@@ -11,7 +11,7 @@
 # Практическое руководство
 
 ## Анализ
-### [Служба Log Analytics](../log-analytics/log-analytics-overview.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
+### [Служба Log Analytics](../log-analytics/log-analytics-queries.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 ## Автоматизация
 ### [Обзор службы автоматизации Azure](../automation/automation-intro.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 

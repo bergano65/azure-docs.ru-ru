@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/18/2018
 ms.author: johnkem
 ms.component: logs
-ms.openlocfilehash: caa8f1a10652c16e181c47fbbe4f9f0c815cfd67
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 6efcb7bccfdfab18a57e709d9fdfa8492b159b34
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46983690"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51278095"
 ---
 # <a name="archive-azure-diagnostic-logs"></a>Архивация журналов диагностики Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "46983690"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы необходимо [создать учетную запись хранения](../storage/storage-create-storage-account.md) для архивации журналов диагностики. Настоятельно рекомендуется не использовать имеющуюся учетную запись хранения, в которой содержатся другие данные (не данные мониторинга), чтобы лучше контролировать доступ к данным мониторинга. Но если в учетную запись хранения вы архивируете журнал действий и метрики диагностики, целесообразно использовать эту учетную запись и для хранения журналов диагностики. Так все данные мониторинга будут храниться в одном расположении.
+Перед началом работы необходимо [создать учетную запись хранения](../storage/common/storage-quickstart-create-account.md) для архивации журналов диагностики. Настоятельно рекомендуется не использовать имеющуюся учетную запись хранения, в которой содержатся другие данные (не данные мониторинга), чтобы лучше контролировать доступ к данным мониторинга. Но если в учетную запись хранения вы архивируете журнал действий и метрики диагностики, целесообразно использовать эту учетную запись и для хранения журналов диагностики. Так все данные мониторинга будут храниться в одном расположении.
 
 > [!NOTE]
 >  Сейчас невозможно архивировать данные в учетную запись хранения, которая находится в защищенной виртуальной сети.
@@ -161,7 +161,7 @@ insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/s1id1234
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Скачивание больших двоичных объектов для анализа](../storage/storage-dotnet-how-to-use-blobs.md)
+* [Скачивание больших двоичных объектов для анализа](../storage/blobs/storage-quickstart-blobs-dotnet.md)
 * [Потоковая передача журналов диагностики Azure в пространство имен Центров событий](monitoring-stream-diagnostic-logs-to-event-hubs.md)
 * [Руководство. Архивация журналов Azure Active Directory в учетной записи хранения Azure (предварительная версия)](../active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account.md)
 * [Сбор и использование данных журнала из ресурсов Azure](monitoring-overview-of-diagnostic-logs.md)

@@ -3,7 +3,7 @@ title: Использование Azure AD Connect Health с AD FS | Докум�
 description: В этой статье описывается, как Azure AD Connect Health отслеживает локальную инфраструктуру AD FS.
 services: active-directory
 documentationcenter: ''
-author: zhiweiw
+author: zhiweiwangmsft
 manager: mtillman
 editor: curtand
 ms.assetid: dc0e53d8-403e-462a-9543-164eaa7dd8b3
@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 04/26/2018
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 66dd3edefb44a0394216eeff58c6cccb5828c98b
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 7d93207e6a5f0acabcf348981e799e801c39f48b
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46302063"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51278843"
 ---
 # <a name="monitor-ad-fs-using-azure-ad-connect-health"></a>Мониторинг AD FS с помощью Azure AD Connect Health
 Приведенная ниже информация относится к мониторингу инфраструктуры AD FS с помощью Azure AD Connect Health. Сведения о мониторинге синхронизации Azure AD Connect с помощью Azure AD Connect Health см. в статье [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md). Кроме того, сведения о мониторинге доменных служб Active Directory с помощью Azure AD Connect Health см. в статье [Использование Azure AD Connect Health с AD DS](how-to-connect-health-adds.md).
@@ -128,7 +128,7 @@ Azure AD Connect Health для AD FS предоставляет отчет о 50
 
 > [!NOTE]
 > Чтобы применять этот отчет, необходимо убедиться, что включен аудит AD FS. Дополнительные сведения см. в разделе [Включение аудита для AD FS](how-to-connect-health-agent-install.md#enable-auditing-for-ad-fs). <br />
-> Для доступа к предварительной версии требуются разрешения глобального администратора или [читателя безопасности](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#security-reader).  
+> Для доступа к предварительной версии требуются разрешения глобального администратора или [читателя безопасности](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#security-reader).  
 > 
 
 ### <a name="what-is-in-the-report"></a>Что есть в этом отчете
