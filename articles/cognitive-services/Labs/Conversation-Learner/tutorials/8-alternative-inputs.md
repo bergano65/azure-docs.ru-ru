@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 8d3b3f419ceacbb9a6fe2b19cf68ea6873de536f
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 3b38cc265b4adfb301dc1165e02b17a8aa7c9589
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39171023"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51252553"
 ---
 # <a name="how-to-use-alternative-inputs"></a>Как использовать альтернативные входные данные
 
@@ -23,7 +23,7 @@ ms.locfileid: "39171023"
 
 ## <a name="video"></a>Видео
 
-[![Предварительная версия руководства 8](http://aka.ms/cl-tutorial-08-preview)](http://aka.ms/blis-tutorial-08)
+[![Предварительная версия руководства 8](https://aka.ms/cl-tutorial-08-preview)](https://aka.ms/blis-tutorial-08)
 
 ## <a name="requirements"></a>Требования
 Для работы с этим руководством требуется запущенный бот обучения общего назначения.
@@ -51,7 +51,7 @@ ms.locfileid: "39171023"
 1. Щелкните "Actions" (Действия) и "New Action" (Создать действие).
 2. В поле "Response" (Ответ) введите "Which city do you want?" (Какой город вам нужен?).
 3. В поле "Disqualifying Entities" (Блокирующие сущности) введите $city.
-3. Нажмите кнопку "Создать"
+3. Щелкните Создать. 
 
 Теперь создайте второе действие.
 
@@ -66,7 +66,7 @@ ms.locfileid: "39171023"
 3. В поле Response (Ответ) введите "Try asking for the weather" (Попробуй спросить о погоде).
     - Это будет ответом на такие вопросы пользователя, как "What can the system do? (Что умеет эта система?).
 4. В поле "Disqualifying Entities" (Блокирующие сущности) введите $city.
-4. Нажмите кнопку "Создать"
+4. Щелкните Создать. 
 
 Теперь у вас есть три действия.
 

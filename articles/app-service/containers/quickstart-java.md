@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 03/07/2018
 ms.author: msangapu
 ms.custom: mvc
-ms.openlocfilehash: 92dde19e42c1adb6d83e1708106f844f228e8989
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: e286942f092d2e8c22824a18f5a6503d04a1be0c
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48239357"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50247561"
 ---
 # <a name="quickstart-create-a-java-web-app-in-app-service-on-linux"></a>Краткое руководство по созданию веб-приложения Java в службе приложений Azure в Linux
 
@@ -77,26 +77,7 @@ code pom.xml
 
 
 > [!NOTE] 
-> В этой статье мы работаем только с приложениями Java, которые упакованы в WAR-файлы. Подключаемый модуль также поддерживает веб-приложения JAR. Используйте такое альтернативное определение подключаемого модуля для этих приложений. Эта конфигурация развернет JAR, построенное Maven, в `${project.build.directory}/${project.build.finalName}.jar` на вашей локальной файловой системе.
->
->```xml
-><plugin>
->            <groupId>com.microsoft.azure</groupId>
->            <artifactId>azure-webapp-maven-plugin</artifactId>
->            <version>1.4.0</version>
->            <configuration>
->                <deploymentType>jar</deploymentType>
->
->           <!-- Web App information -->
->            <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
->            <appName>${WEBAPP_NAME}</appName>
->            <region>${REGION}</region>  
->
->                <!-- Java Runtime Stack for Web App on Linux-->
->                <linuxRuntime>jre8</linuxRuntime>
->            </configuration>
->         </plugin>
->```    
+> В этой статье мы работаем только с приложениями Java, которые упакованы в WAR-файлы. Подключаемый модуль также поддерживает веб-приложения JAR. См. руководство по [развертыванию файла JAR Java SE в Службе приложений в Linux](https://docs.microsoft.com/java/azure/spring-framework/deploy-spring-boot-java-app-with-maven-plugin?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
 
 
 Укажите нужные значения вместо следующих заполнителей в конфигурации подключаемого модуля:
@@ -127,8 +108,8 @@ mvn package azure-webapp:deploy
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы использовали Maven для создания веб-приложения Java, настроили [подключаемый модуль Maven для веб-приложений Azure (предварительная версия)](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin), затем развернули веб-архив упакованного веб-приложения Java в службу приложений на платформе Linux. Чтобы узнать больше об использовании Java с Azure, перейдите по ссылке ниже.
+В этом кратком руководстве описано, как использовать Maven для создания веб-приложения Java, настроить [подключаемый модуль Maven для веб-приложений Azure](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin) и развернуть веб-архив упакованного приложения Java в службе приложений в Linux. Чтобы узнать, как подключать базы данных, настраивать ведение журналов и мониторинг, настраивать защиту и параметры среды выполнения, см. руководство по использованию службы приложений в Linux для разработчиков Java.
 
 > [!div class="nextstepaction"]
-> [Azure для разработчиков Java](https://docs.microsoft.com/java/azure/)
+> [Руководство по использованию службы приложений в Linux для разработчиков Java](app-service-linux-java.md)
 

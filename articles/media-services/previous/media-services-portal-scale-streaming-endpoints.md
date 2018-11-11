@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/10/2017
 ms.author: juliako
-ms.openlocfilehash: f2a14f2622d78a4222a8518172eb1ce8ed9e6637
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: fc281f8ca04941da88c0ff1b98ff0a044a3184f5
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33785643"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51250838"
 ---
 # <a name="scale-streaming-endpoints-with-the-azure-portal"></a>Масштабирование конечных точек потоковой передачи с помощью портала Azure
 ## <a name="overview"></a>Обзор
@@ -33,7 +33,7 @@ ms.locfileid: "33785643"
  
 В этом разделе показано, как масштабировать конечную точку потоковой передачи.
 
-Дополнительные сведения о ценах на службы мультимедиа см. [здесь](http://go.microsoft.com/fwlink/?LinkId=275107).
+Дополнительные сведения о ценах на службы мультимедиа см. [здесь](https://go.microsoft.com/fwlink/?LinkId=275107).
 
 ## <a name="scale-streaming-endpoints"></a>Масштабирование конечных точек потоковой передачи
 

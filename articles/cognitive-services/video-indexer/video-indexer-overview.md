@@ -10,12 +10,12 @@ ms.component: video-indexer
 ms.topic: overview
 ms.date: 10/10/2018
 ms.author: nolachar
-ms.openlocfilehash: cf761342bb434100920c3888f2f441b9f8c8de08
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 9936cd301cc8dad88ce1a2431f9253a15ab2da7f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49077922"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51251259"
 ---
 # <a name="what-is-video-indexer"></a>Что такое Индексатор видео?
 
@@ -65,7 +65,7 @@ ms.locfileid: "49077922"
 
 - Вовлеченность пользователей. С помощью аналитических сведений, полученных из видео, можно повысить уровень вовлеченности пользователей, размещая для них релевантные фрагменты видео. Предположим, у нас есть учебное видео, в котором на протяжении 30 минут рассматриваются сферы, а на протяжении следующих 30 минут — пирамиды. Учащемуся, который знакомится с пирамидами, будет удобнее, если после 30-й минуты установить метку, чтобы видео начало воспроизводиться с этого момента.
 
-См. [дополнительные сведения](http://aka.ms/videoindexerblog).
+См. [дополнительные сведения](https://aka.ms/videoindexerblog).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

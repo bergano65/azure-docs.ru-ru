@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: troubleshooting
 ms.date: 10/29/2018
 ms.author: asgang
-ms.openlocfilehash: ddbfdc9928122373b82d043fac0777576c5fe99e
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 3090dd9e0d9681dbf77f052e9d324f2add0a1910
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51227490"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50215044"
 ---
 # <a name="troubleshoot-issues-with-the-azure-site-recovery-agent"></a>Устранение неполадок с агентом Azure Site Recovery
 
@@ -64,7 +64,7 @@ ms.locfileid: "51227490"
 1. Определите, запущена ли служба гостевого агента Microsoft Azure в службах виртуальной машины (services.msc). Попробуйте перезапустить службу гостевого агента Microsoft Azure.    
 2. Если она не отображается в списке служб, на панели управления выберите **Программы и компоненты**, чтобы определить, установлена ли служба гостевого агента Microsoft Azure.
 4. Если гостевой агент Microsoft Azure отображается в разделе **Программы и компоненты**, удалите его.
-5. Скачайте и установите [последнюю версию файла MSI агента](https://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Чтобы выполнить установку, необходимо иметь права администратора.
+5. Скачайте и установите [последнюю версию файла MSI агента](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Чтобы выполнить установку, необходимо иметь права администратора.
 6. Убедитесь, что службы гостевого агента Microsoft Azure отображаются в списке служб.
 7. Перезапустите задание защиты.
 

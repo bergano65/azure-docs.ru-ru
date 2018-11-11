@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: overview
 ms.date: 07/30/2018
 ms.author: lizross
-ms.openlocfilehash: 6de1f6dfac028255a1cb49931e959c79b5fc4f40
-ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
+ms.openlocfilehash: e0fe2ade2e50ff549cb18f84a3c15830255ca0fb
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42022640"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51249597"
 ---
 # <a name="microsoft-authenticator-app"></a>Приложение Microsoft Authenticator
 
@@ -27,6 +27,6 @@ ms.locfileid: "42022640"
 
 |Статья |ОПИСАНИЕ |
 |------|------------|
-|[Начало работы с приложением Microsoft Authenticator](microsoft-authenticator-app-how-to.md)|Здесь описывается, где и как получить и установить приложение Microsoft Authenticator, доступное для [Android](https://go.microsoft.com/fwlink/?linkid=866594), [iOS](https://go.microsoft.com/fwlink/?linkid=866594) и [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071).|
+|[Начало работы с приложением Microsoft Authenticator](microsoft-authenticator-app-how-to.md)|Здесь описывается, где и как получить и установить приложение Microsoft Authenticator, доступное для [Android](https://go.microsoft.com/fwlink/?linkid=866594), [iOS](https://go.microsoft.com/fwlink/?linkid=866594) и [Windows Phone](https://go.microsoft.com/fwlink/?Linkid=825071).|
 |[Резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator](microsoft-authenticator-app-backup-and-recovery.md)| Содержит сведения о том, как выполнять резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator.|
 |[Часто задаваемые вопросы о приложении Microsoft Authenticator](microsoft-authenticator-app-faq.md)|Содержатся ответы на часто задаваемые вопросы о приложении.|

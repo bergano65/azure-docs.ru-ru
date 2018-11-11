@@ -5,17 +5,17 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 5/21/2018
+ms.date: 10/29/2018
 ms.topic: article
 ms.service: azure-blockchain
-ms.reviewer: zeyadr
+ms.reviewer: coborn
 manager: femila
-ms.openlocfilehash: 823bea9bac8ff270d5b5c02e3b76a2f7236c9c99
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: fa58ecf4607efc1d212e40b98d199756d4b987f8
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48241691"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50231803"
 ---
 # <a name="ethereum-proof-of-work-consortium-solution-template"></a>Шаблон решения консорциума Proof-of-Work для Ethereum
 
@@ -119,7 +119,7 @@ Authentication type (Тип проверки подлинности)|Метод 
 
 ### <a name="network-size-and-performance"></a>Размер и производительность сети
 
-Затем в разделе **Размер и производительность сети** укажите входные данные для размера сети консорциума, такие как количество и размер узлов майнинга и узлов транзакций.
+Затем в разделе **Network size and performance** (Размер и производительность сети) укажите размер сети консорциума. Например, количество и размер узлов майнинга и узлов транзакций.
 
 ![Размер и производительность сети](./media/ethereum-deployment/network-size-performance.png)
 
@@ -261,10 +261,10 @@ mn-ethwvu-reg1_2 |mn-ethwvu-reg1000002
 
 И наконец, выполните функцию, передав ей соответствующие входные данные:
 
-- **MyGatewayResourceId** — путь к ресурсу шлюза. Это выходной параметр развертывания шаблона с именем **CONSORTIUM_MEMBER_GATEWAY_ID**.
-- **OtherGatewayResourceId** — путь к ресурсу шлюза подключаемого участника. Он предоставляется присоединяемым участником и содержится в выходном параметре развертывания шаблона с именем **CONSORTIUM_MEMBER_GATEWAY_ID**.
-- **ConnectionName** — имя для идентификации подключения к этому шлюзу.
-- **Shared Key** — предварительно заданный секретный ключ между двумя подключающимися участниками сети консорциума.
+- **MyGatewayResourceId**. Путь к ресурсу шлюза. Это выходной параметр развертывания шаблона с именем **CONSORTIUM_MEMBER_GATEWAY_ID**.
+- **OtherGatewayResourceId**. Путь к ресурсу шлюза присоединяемого участника. Он предоставляется присоединяемым участником и содержится в выходном параметре развертывания шаблона с именем **CONSORTIUM_MEMBER_GATEWAY_ID**.
+- **ConnectionName**. Имя для идентификации подключения к этому шлюзу.
+- **Shared Key**. Предварительно заданный секрет между двумя подключающимися участниками сети консорциума.
 
 **CreateConnection** - MyGatewayResourceId <resource path of your Gateway> -OtherGatewayResourceId <путь к ресурсу шлюза присоединяемого участника> -ConnectionName Имя_подключения -SharedKey "МоЙОткрытЫйКлючАБВ123"
 
@@ -274,11 +274,11 @@ mn-ethwvu-reg1_2 |mn-ethwvu-reg1000002
 
 Запустите сценарий с соответствующими входными данными:
 
-- **MyGatewayResourceId** — путь к ресурсу шлюза. Это выходной параметр развертывания шаблона с именем **CONSORTIUM_MEMBER_GATEWAY_ID**.
-- **OtherGatewayResourceId** — путь к ресурсу шлюза подключаемого участника. Он предоставляется присоединяемым участником и содержится в параметре развертывания шаблона с именем **CONSORTIUM_MEMBER_GATEWAY_ID**.
-- **ConnectionName** — имя для идентификации подключения к этому шлюзу.
-- **Shared Key** — предварительно заданный секретный ключ между двумя подключающимися участниками сети консорциума.
-- **Location** — регион Azure, где развернут ресурс шлюза.
+- **MyGatewayResourceId**. Путь к ресурсу шлюза. Это выходной параметр развертывания шаблона с именем **CONSORTIUM_MEMBER_GATEWAY_ID**.
+- **OtherGatewayResourceId**. Путь к ресурсу шлюза присоединяемого участника. Он предоставляется присоединяемым участником и содержится в параметре развертывания шаблона с именем **CONSORTIUM_MEMBER_GATEWAY_ID**.
+- **ConnectionName**. Имя для идентификации подключения к этому шлюзу.
+- **Shared Key**. Предварительно заданный секрет между двумя подключающимися участниками сети консорциума.
+- **Location**. Регион Azure, в котором развернут ресурс шлюза.
 
 ``` powershell
 az network vpn-connection create --name $ConnectionName --resource-group
@@ -316,7 +316,7 @@ gateway2 $OtherGatewayResourceId --enable-bgp
 
 ![Расширение MetaMask](./media/ethereum-deployment/metamask-extension.png)
 
-После установки откройте MetaMask и создайте новое хранилище. По умолчанию хранилище будет подключено к сети Morden Test Network. Необходимо будет изменить этот параметр, чтобы подключиться к развернутой закрытой сети консорциума, в частности к подсистеме балансировки нагрузки перед узлами транзакций. В выходных данных шаблона найдите опубликованную конечную точку Ethereum RPC на порту 8545 с именем `ETHEREUM-RPC-ENDPOINT` и введите ее имя в поле Custom RPC, как показано ниже.
+После установки откройте MetaMask и создайте новое хранилище. По умолчанию хранилище будет подключено к сети Morden Test Network. Измените этот параметр, чтобы подключиться к развернутой закрытой сети консорциума, в частности к подсистеме балансировки нагрузки перед узлами транзакций. В выходных данных шаблона найдите опубликованную конечную точку Ethereum RPC на порту 8545 с именем `ETHEREUM-RPC-ENDPOINT` и введите ее имя в поле Custom RPC, как показано ниже.
 
 ![Параметры MetaMask](./media/ethereum-deployment/metamask-settings.png)
 

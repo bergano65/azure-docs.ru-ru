@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/17/2018
 ms.author: johndeu;
-ms.openlocfilehash: 2e736872dc3e471af7c5b3f758516910a02067fe
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 827153300b9cab4ea805689b1e103bea1b334ec9
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33786083"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51249580"
 ---
 # <a name="signaling-timed-metadata-in-live-streaming"></a>Сигнализация метаданных времени в потоковой трансляции
 
@@ -404,7 +404,7 @@ aligned(8) class DASHEventMessageBox extends FullBox(‘emsg’, version = 0, fl
 
 **[HLS]** [HTTP Live Streaming, draft-pantos-http-live-streaming-14, 14 октября 2014 г.](http://tools.ietf.org/html/draft-pantos-http-live-streaming-14)
 
-**[MS-SSTR]** [Протокол Microsoft Smooth Streaming, 15 мая 2014 г.](http://download.microsoft.com/download/9/5/E/95EF66AF-9026-4BB0-A41D-A4F81802D92C/%5bMS-SSTR%5d.pdf)
+**[MS-SSTR]** [Протокол Microsoft Smooth Streaming, 15 мая 2014 г.](https://download.microsoft.com/download/9/5/E/95EF66AF-9026-4BB0-A41D-A4F81802D92C/%5bMS-SSTR%5d.pdf)
 
 **[AMF0]** [Формат инициирующего сообщения AMF0](http://download.macromedia.com/pub/labs/amf/amf0_spec_121207.pdf).
 

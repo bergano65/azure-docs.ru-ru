@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry, michmcla
-ms.openlocfilehash: 67f99e68bc4091d076e27aee06c2851bc77e6fc7
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: d8d7850e7d5253cfec4431fed3e09f4007995494
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49378930"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51249699"
 ---
 # <a name="what-are-authentication-methods"></a>Какие методы проверки подлинности доступны?
 
@@ -122,7 +122,7 @@ ms.locfileid: "49378930"
 
 Приложение Microsoft Authenticator обеспечивает дополнительный уровень безопасности для рабочей или учебной учетной записи Azure AD либо для учетной записи Майкрософт.
 
-Приложение Microsoft Authenticator доступно для [Android](https://go.microsoft.com/fwlink/?linkid=866594), [iOS](https://go.microsoft.com/fwlink/?linkid=866594) и [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071).
+Приложение Microsoft Authenticator доступно для [Android](https://go.microsoft.com/fwlink/?linkid=866594), [iOS](https://go.microsoft.com/fwlink/?linkid=866594) и [Windows Phone](https://go.microsoft.com/fwlink/?Linkid=825071).
 
 > [!NOTE]
 > У пользователей не будет возможности зарегистрировать свое мобильное приложение при регистрации для самостоятельного сброса пароля. Вместо этого они смогут зарегистрировать мобильное приложение в службе по адресу [https://aka.ms/mfasetup](https://aka.ms/mfasetup) или в предварительной версии службы регистрации сведений о безопасности по адресу [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo).

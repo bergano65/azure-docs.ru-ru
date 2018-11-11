@@ -9,16 +9,16 @@ ms.assetid: dc9b21d8-c5f4-4f77-bcbc-eff458f48de2
 ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 11/27/2017
-ms.openlocfilehash: e4eea3cb4b16460c7e17bb6575c4e6cf8dda5a0a
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 7a4aae87cd704cf94c89c308c0c056ae5b9a8b4d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43047260"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51251008"
 ---
 # <a name="export-a-u-sql-database"></a>Экспорт базы данных U-SQL
 
-В этой статье вы узнаете, как использовать [Средства Azure Data Lake для Visual Studio](http://aka.ms/adltoolsvs), чтобы экспортировать базу данных U-SQL в виде одного скрипта U-SQL и скачанных ресурсов. Вы можете импортировать экспортированную базу данных в локальную учетную запись в том же процессе.
+В этой статье вы узнаете, как использовать [Средства Azure Data Lake для Visual Studio](https://aka.ms/adltoolsvs), чтобы экспортировать базу данных U-SQL в виде одного скрипта U-SQL и скачанных ресурсов. Вы можете импортировать экспортированную базу данных в локальную учетную запись в том же процессе.
 
 Пользователи обычно поддерживают несколько сред для разработки, тестирования и работы. Эти среды размещаются как в локальной учетной записи, так и на локальном компьютере разработчика, а также в учетной записи Azure Data Lake Analytics в Azure. 
 
@@ -35,7 +35,7 @@ ms.locfileid: "43047260"
    
     ![Обозреватель сервера — экспорта базы данных](./media/data-lake-analytics-data-lake-tools-export-database/export-database.png)
 
-     Если параметр меню **Экспорт** недоступен, необходимо [обновить средство до последней версии](http://aka.ms/adltoolsvs).
+     Если параметр меню **Экспорт** недоступен, необходимо [обновить средство до последней версии](https://aka.ms/adltoolsvs).
 
 ### <a name="step-2-configure-the-objects-that-you-want-to-export"></a>Шаг 2. Настройка объектов, которые необходимо экспортировать
 
