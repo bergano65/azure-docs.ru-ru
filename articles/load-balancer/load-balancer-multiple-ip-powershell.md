@@ -4,9 +4,6 @@ description: Балансировка нагрузки между основно
 services: load-balancer
 documentationcenter: na
 author: anavinahar
-manager: narayan
-editor: na
-ms.assetid: 244907cd-b275-4494-aaf7-dcfc4d93edfe
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -14,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: annahar
-ms.openlocfilehash: 12a978fc85d9502ce484859b436575b67364c9c4
-ms.sourcegitcommit: c3d53d8901622f93efcd13a31863161019325216
+ms.openlocfilehash: 8abbab59bc2df739774001f53419968337090c90
+ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2018
-ms.locfileid: "30261727"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51218701"
 ---
 # <a name="load-balancing-on-multiple-ip-configurations-using-powershell"></a>Балансировка нагрузки в конфигурациях с несколькими IP-адресами с помощью PowerShell
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/23/2018
 ms.author: mbullwin
-ms.openlocfilehash: 1a46564c324edb1999a2e1b1d482817685df2893
-ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
+ms.openlocfilehash: 47cf32a57fc4a2d0e20a9f2c242db1f3dec96fe5
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39205992"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228544"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-net"></a>Устранение неполадок, связанных с тем, что в Application Insights для .NET не отображаются данные
 ## <a name="some-of-my-telemetry-is-missing"></a>Некоторая телеметрия отсутствует
@@ -141,7 +141,7 @@ ms.locfileid: "39205992"
     
     ![](./media/app-insights-asp-net-troubleshoot-no-data/ikey-check.png)
 * На [панели мониторинга на домашней странице Microsoft Azure](https://portal.azure.com)посмотрите на карту работоспособности службы. Если есть какие-либо предупреждения, дождитесь возвращения всех модулей в состояние ОК, затем закройте и заново откройте модуль приложения Application Insights.
-* Кроме того, просмотрите [наш блог о состояниях](http://blogs.msdn.com/b/applicationinsights-status/).
+* Кроме того, просмотрите [наш блог о состояниях](https://blogs.msdn.com/b/applicationinsights-status/).
 * Возможно, вы написали код для [серверного пакета SDK](app-insights-api-custom-events-metrics.md), который мог изменить ключ инструментирования в экземплярах `TelemetryClient` или в `TelemetryContext`. Или вы создали [конфигурацию фильтра или выборки](app-insights-api-filtering-sampling.md) , которая отфильтровывает слишком много данных.
 * Если вы вносили изменения в файл ApplicationInsights.config, внимательно проверьте конфигурацию [TelemetryInitializer и TelemetryProcessor](app-insights-api-filtering-sampling.md). Тип или параметр с неправильным именем может стать причиной неотправки данных пакетом SDK.
 
@@ -158,7 +158,7 @@ ms.locfileid: "39205992"
 См. статьи, посвященные [телеметрии зависимостей](app-insights-asp-net-dependencies.md) и [телеметрии исключений](app-insights-asp-net-exceptions.md).
 
 ## <a name="no-performance-data"></a>Нет данных о производительности
-Данные о производительности (ЦП, скорость ввода-вывода и т. д.) доступны для [веб-служб Java](app-insights-java-collectd.md), [классических приложений Windows](app-insights-windows-desktop.md), [веб-приложений и служб IIS, если установлен монитор состояния](app-insights-monitor-performance-live-website-now.md), а также [облачных служб Azure](app-insights-azure.md). Их можно найти, открыв раздел "Параметры" и выбрав "Серверы".
+Данные о производительности (ЦП, скорость ввода-вывода и т. д.) доступны для [веб-служб Java](app-insights-java-collectd.md), [классических приложений Windows](app-insights-windows-desktop.md), [веб-приложений и служб IIS, если установлен монитор состояния](app-insights-monitor-performance-live-website-now.md), а также [облачных служб Azure](app-insights-overview.md). Их можно найти, открыв раздел "Параметры" и выбрав "Серверы".
 
 ## <a name="no-server-data-since-i-published-the-app-to-my-server"></a>После публикации приложения на сервере данные на нем отсутствуют
 * Проверьте, что вы фактически скопировали все библиотеки DLL Microsoft. ApplicationInsights на сервер вместе с Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.dll
@@ -167,7 +167,7 @@ ms.locfileid: "39205992"
 * Для Windows Server 2008. Убедитесь в том, что установлены следующие обновления: [KB2468871](https://support.microsoft.com/kb/2468871), [KB2533523](https://support.microsoft.com/kb/2533523), [KB2600217](https://support.microsoft.com/kb/2600217).
 
 ## <a name="i-used-to-see-data-but-it-has-stopped"></a>Ранее видимые данные перестали отображаться
-* Проверьте [блог состояний](http://blogs.msdn.com/b/applicationinsights-status/).
+* Проверьте [блог состояний](https://blogs.msdn.com/b/applicationinsights-status/).
 * Вы достигли месячной квоты точек данных? Чтобы выяснить это, последовательно выберите «Параметры», «Квота и расценки». Если вы достигли квоты, вы можете изменить свой тарифный план или заплатить за дополнительную емкость. См. [таблицу цен](https://azure.microsoft.com/pricing/details/application-insights/).
 
 ## <a name="i-dont-see-all-the-data-im-expecting"></a>Не отображаются все данные, которые ожидалось увидеть

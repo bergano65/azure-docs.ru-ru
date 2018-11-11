@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 06/11/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: a715c300cc5490eef9dbe7971dabe1733fd47f49
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 833bb6838733395d83468be3d2960c7c237aa3fc
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49402224"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50957681"
 ---
 # <a name="manage-log-analytics-using-azure-resource-manager-templates"></a>Управление Log Analytics с помощью шаблонов Azure Resource Manager
 [Шаблоны Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md) можно использовать, чтобы создавать и настраивать рабочие области Log Analytics. Примеры задач, которые можно выполнять с помощью шаблонов.
@@ -521,6 +521,6 @@ azure group deployment create <my-resource-group> <my-deployment-name> --Templat
 * [Добавление существующей учетной записи хранения в Log Analytics](https://azure.microsoft.com/resources/templates/oms-existing-storage-account/)
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Развертывание агента Windows на виртуальных машинах Azure с помощью шаблона Resource Manager](../virtual-machines/windows/extensions-oms.md)
-* [Развертывание агента Linux на виртуальных машинах Azure с помощью шаблона Resource Manager](../virtual-machines/linux/extensions-oms.md)
+* [Развертывание агента Windows на виртуальных машинах Azure с помощью шаблона Resource Manager](../virtual-machines/extensions/oms-windows.md)
+* [Развертывание агента Linux на виртуальных машинах Azure с помощью шаблона Resource Manager](../virtual-machines/extensions/oms-linux.md)
 

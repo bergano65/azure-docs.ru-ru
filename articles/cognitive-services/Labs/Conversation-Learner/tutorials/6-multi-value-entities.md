@@ -10,19 +10,19 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: a80577bb226cbec080edf5e06dbd0f31c80a5890
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 9ef86ea728e197540180d486dc1cb171f78a2590
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49321433"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51229464"
 ---
 # <a name="how-to-use-multi-value-entities-with-a-conversation-learner-model"></a>Использование многозначных сущностей в модели Conversation Learner
 В этом руководстве показано, как использовать многозначные свойства для сущностей.
 
 ## <a name="video"></a>Видео
 
-[![Предварительная версия руководства 6](http://aka.ms/cl-tutorial-06-preview)](http://aka.ms/blis-tutorial-06)
+[![Предварительная версия руководства 6](https://aka.ms/cl-tutorial-06-preview)](https://aka.ms/blis-tutorial-06)
 
 ## <a name="requirements"></a>Требования
 Для работы с этим руководством требуется запущенный бот обучения общего назначения.

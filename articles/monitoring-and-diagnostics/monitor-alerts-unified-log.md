@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: 49607809d6bb8697cc6b7a4063a45d893b9e1eac
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: f6f94f12fc0a639743f310638af0f0b6ac0d2932
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50421090"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50958159"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Оповещения журнала в Azure Monitor
 В этой статье рассматриваются оповещения журнала. Это один из типов оповещений, которые поддерживаются в системе [оповещений Azure](monitoring-overview-unified-alerts.md) и позволяют пользователям применять платформу аналитики Azure в качестве основы для оповещений.
@@ -122,4 +122,4 @@ ms.locfileid: "50421090"
 * Информация о [веб-перехватчиках в оповещениях журналов в Azure](monitor-alerts-unified-log-webhook.md).
 * Сведения об [оповещениях Azure](monitoring-overview-unified-alerts.md).
 * Дополнительные сведения об [Application Insights](../application-insights/app-insights-analytics.md).
-* Дополнительные сведения о [Log Analytics](../log-analytics/log-analytics-overview.md).    
+* Дополнительные сведения о [Log Analytics](../log-analytics/log-analytics-queries.md).    

@@ -9,12 +9,12 @@ ms.date: 09/25/2017
 ms.author: johnkem
 ms.custom: mvc
 ms.component: metrics
-ms.openlocfilehash: be6f3efd74d013e9ddb02c44031dd6a402f00871
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: ac8be998a70b31af9829eeeab24902c62fd2fe37
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47409496"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50961521"
 ---
 # <a name="archive-azure-metric-and-log-data-using-azure-storage"></a>Архивация метрик и данных журналов Azure с помощью Службы хранилища Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "47409496"
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-Сначала необходимо настроить учетную запись хранения, в которую будут архивироваться данные. Для этого [сделайте следующее](../storage/common/storage-create-storage-account.md).
+Сначала необходимо настроить учетную запись хранения, в которую будут архивироваться данные. Для этого [сделайте следующее](../storage/common/storage-quickstart-create-account.md).
 
 ## <a name="route-subscription-logs-to-the-storage-account"></a>Маршрутизация журналов подписки в учетную запись хранения
 
@@ -198,4 +198,4 @@ ms.locfileid: "47409496"
 Чтобы более эффективно использовать свои данные и получать дополнительную информацию, также отправляйте эти данные в Log Analytics.
 
 > [!div class="nextstepaction"]
-> [Начало работы с рабочей областью Log Analytics](../log-analytics/log-analytics-get-started.md)
+> [Начало работы с рабочей областью Log Analytics](../log-analytics/log-analytics-queries.md)

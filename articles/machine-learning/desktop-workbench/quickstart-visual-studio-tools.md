@@ -11,18 +11,18 @@ ms.custom: mvc, vs-azure
 ms.topic: quickstart
 ms.date: 11/15/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: a32739623f9b4809db6623f0d4d1b9737b0fff51
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 37663e5053de8066458364bbfdf824caa154dfb1
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46984099"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51227031"
 ---
 # <a name="visual-studio-tools-for-ai"></a>Инструменты Visual Studio для ИИ
 
 [!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
 
-Инструменты Visual Studio для ИИ — это расширение для разработки, тестирования и развертывания решений с использованием глубокого обучения и ИИ. Они обеспечивают простую интеграцию со службой "Машинного обучения Azure", в частности, просмотр журнала выполнения, в котором подробно описываются результаты предыдущего обучения и пользовательские метрики. Они предоставляют обозреватель примеров, позволяющий просматривать и загружать новые проекты с помощью [Microsoft Cognitive Toolkit (ранее — CNTK)](http://www.microsoft.com/cognitive-toolkit), [Google TensorFlow](https://www.tensorflow.org) и других платформ глубокого обучения. И, наконец они предоставляют обозреватель для целевых объектов вычислений, что дает возможность отправлять задания для обучения моделей в удаленных средах, например, на виртуальных машин Azure или серверах Linux с графическими процессорами. Кроме того, они предоставляют простой доступ к службе [Azure Batch AI (предварительная версия)](https://docs.microsoft.com/azure/batch-ai/).
+Инструменты Visual Studio для ИИ — это расширение для разработки, тестирования и развертывания решений с использованием глубокого обучения и ИИ. Они обеспечивают простую интеграцию со службой "Машинного обучения Azure", в частности, просмотр журнала выполнения, в котором подробно описываются результаты предыдущего обучения и пользовательские метрики. Они предоставляют обозреватель примеров, позволяющий просматривать и загружать новые проекты с помощью [Microsoft Cognitive Toolkit (ранее — CNTK)](https://www.microsoft.com/cognitive-toolkit), [Google TensorFlow](https://www.tensorflow.org) и других платформ глубокого обучения. И, наконец они предоставляют обозреватель для целевых объектов вычислений, что дает возможность отправлять задания для обучения моделей в удаленных средах, например, на виртуальных машин Azure или серверах Linux с графическими процессорами. Кроме того, они предоставляют простой доступ к службе [Azure Batch AI (предварительная версия)](https://docs.microsoft.com/azure/batch-ai/).
  
 ## <a name="getting-started"></a>Приступая к работе 
 Чтобы начать работу, скачайте и установите [Visual Studio](https://www.visualstudio.com/downloads/). Открыв Visual Studio, сделайте следующее:
@@ -32,7 +32,7 @@ ms.locfileid: "46984099"
 3. Нажмите кнопку **Загрузить** . 
 4. После установки перезапустите Visual Studio. 
 
-Когда Visual Studio перезагрузится, расширение будет активно. Дополнительные сведения о поиске расширений см. в [этой статье](h https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions).
+Когда Visual Studio перезагрузится, расширение будет активно. Дополнительные сведения о поиске расширений см. в [этой статье](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
 > [!NOTE]
 > Для инструментов Visual Studio для ИИ требуется Visual Studio 2015 или 2017 (выпуск Professional или Enterprise). Инструменты не поддерживаются в версии Apple OSX. 

@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/17/2015
 ms.author: mbullwin
-ms.openlocfilehash: 0a95da39b73201ea15bd6d3be64de9a12571028d
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: e2ec165d0183510487744bc98e31688eb5de0f8c
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47095191"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50959262"
 ---
 # <a name="using-powershell-to-set-up-application-insights-for-an-azure-web-app"></a>Настройка Application Insights для веб-приложения Azure с помощью PowerShell
-[Microsoft Azure](https://azure.com) можно [настроить для отправки данных системы диагностики Azure](app-insights-azure-diagnostics.md) в [Azure Application Insights](app-insights-overview.md). Данные диагностики связаны с облачными службами Azure и виртуальными машинами Azure. Они дополняют данные телеметрии, отправляемые из приложения с помощью пакета SDK Application Insights. В рамках автоматизации создания новых ресурсов в Azure вы можете настроить диагностику с помощью PowerShell.
+[Microsoft Azure](https://azure.com) можно [настроить для отправки данных системы диагностики Azure](../monitoring-and-diagnostics/azure-diagnostics-configure-application-insights.md) в [Azure Application Insights](app-insights-overview.md). Данные диагностики связаны с облачными службами Azure и виртуальными машинами Azure. Они дополняют данные телеметрии, отправляемые из приложения с помощью пакета SDK Application Insights. В рамках автоматизации создания новых ресурсов в Azure вы можете настроить диагностику с помощью PowerShell.
 
 ## <a name="azure-template"></a>Шаблон Azure
 Если веб-приложение работает в Azure и вы создаете ресурсы с помощью шаблона Azure Resource Manager, можно настроить Application Insights, добавив следующий код в узел ресурсов:
@@ -136,6 +136,6 @@ ms.locfileid: "47095191"
 
 ## <a name="see-also"></a>См. также
 * [Мониторинг приложений облачных служб Azure с помощью Application Insights](app-insights-cloudservices.md)
-* [Отправка данных системы диагностики Azure в Application Insights](app-insights-azure-diagnostics.md)
+* [Отправка данных системы диагностики Azure в Application Insights](../monitoring-and-diagnostics/azure-diagnostics-configure-application-insights.md)
 * [Use PowerShell to set alerts in Application Insights](app-insights-powershell-alerts.md)
 

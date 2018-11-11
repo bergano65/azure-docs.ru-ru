@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/27/2017
 ms.author: bwren
-ms.openlocfilehash: 65585e6c09def23101d9735c8b9c719d213938ac
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 1aaa753c91a324621dc66fab23e5fed3a9d11d01
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33887404"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50912771"
 ---
 # <a name="targeting-management-solutions-in-azure-preview"></a>Определение целевого решения по управлению в Azure (предварительная версия)
 Когда вы добавляете решение по управлению в подписку, оно по умолчанию автоматически развертывается на всех агентах Windows и Linux, подключенных к рабочей области Log Analytics.  Вам может потребоваться выполнить управление затратами и ограничить объем данных, собираемых для решения, ограничив его конкретным набором агентов.  В этой статье описывается, как использовать **нацеливание решений**. Это функция, которая позволяет применить к решениям область действия.
@@ -74,5 +74,5 @@ ms.locfileid: "33887404"
 - Оценка работоспособности агента
 
 ## <a name="next-steps"></a>Дополнительная информация
-- Дополнительные сведения о решениях по управлению, включая решения, которые доступны для установки в вашей среде, см. в статье [Добавление решений для управления Azure Log Analytics в рабочую область](../log-analytics/log-analytics-add-solutions.md).
+- Дополнительные сведения о решениях по управлению, включая решения, которые доступны для установки в вашей среде, см. в статье [Добавление решений для управления Azure Log Analytics в рабочую область](monitoring-solutions.md).
 - Дополнительные сведения о создании групп компьютеров см. в статье [Использование групп компьютеров при поиске по журналам Log Analytics](../log-analytics/log-analytics-computer-groups.md).

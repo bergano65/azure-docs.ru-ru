@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: mbullwin
-ms.openlocfilehash: 86c0343a3492bf91eedda9303e3c6ac9cf86c4c3
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 498633d9f73c4a9b669ddd3469b62c01d2a19397
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46947325"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50958718"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -150,7 +150,7 @@ ms.locfileid: "46947325"
 
 * **[Работа с Application Insights в Visual Studio](app-insights-visual-studio.md)**<br/>Содержит сведения об отладке с помощью телеметрии, о поиске по журналу диагностики и детализации кода.
 * **[Работа с порталом Application Insights](app-insights-dashboards.md)**<br/> Содержит сведения о панелях мониторинга, эффективных средствах диагностики и анализа, оповещениях, картах динамических зависимостей приложения, а также сведения об экспорте данных телеметрии.
-* **[Аналитика](app-insights-analytics-tour.md)**  — эффективный язык запросов.
+* **[Аналитика](../log-analytics/query-language/get-started-analytics-portal.md)**  — эффективный язык запросов.
 
 ### <a name="alerts"></a>Оповещения
 

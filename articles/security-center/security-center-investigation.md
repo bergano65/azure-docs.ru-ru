@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/29/2018
 ms.author: terrylan
-ms.openlocfilehash: 8c236b995d71cd067546cea5eeaaebe6d5dc4fab
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: de8a61b315ad433bef638368a30130b677e0a005
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44300653"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51229020"
 ---
 # <a name="investigate-incidents-and-alerts-in-azure-security-center-preview"></a>Изучение инцидентов и оповещений в центре безопасности Azure (предварительная версия)
 Этот документ поможет вам использовать функцию изучения в центре безопасности Azure для изучения инцидентов и оповещений системы безопасности.
@@ -118,4 +118,4 @@ ms.locfileid: "44300653"
 * [Основные сведения об оповещениях системы безопасности в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-type). Дополнительные сведения о различных типах оповещений безопасности.
 * [Руководство по устранению неполадок в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-troubleshooting-guide). Узнайте, как устранять типичные неполадки в центре безопасности.
 * [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md). Часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](http://blogs.msdn.com/b/azuresecurity/). Записи блога, посвященные безопасности и соответствию требованиям в Azure.
+* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/). Записи блога, посвященные безопасности и соответствию требованиям в Azure.

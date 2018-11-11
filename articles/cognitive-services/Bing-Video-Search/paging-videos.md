@@ -10,12 +10,12 @@ ms.component: bing-video-search
 ms.topic: conceptual
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: 9b030312c562d1c0a6cbacfc7f424289dee2e8de
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: cd5d6ef6a75088d02bc34558f66ed520c230e06b
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47225571"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50741901"
 ---
 # <a name="paging-videos"></a>Разбиение списка видео по страницам
 
@@ -65,3 +65,6 @@ Host: api.cognitive.microsoft.com
 
 > [!NOTE]
 > Разбиение на страницы доступно только для поиска видео (/videos/search) и не применимо к аналитическим сведениям о видео (/videos/details) или видео, набирающим популярность (/videos/trending).
+
+> [!NOTE]
+> Поле `TotalEstimatedAnswers` содержит приблизительное общее число результатов поиска, которые вы можете получить для текущего запроса.  При задании параметров `count` и `offset` число `TotalEstimatedAnswers` может измениться. 

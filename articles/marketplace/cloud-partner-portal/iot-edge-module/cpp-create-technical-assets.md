@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: pbutlerm
-ms.openlocfilehash: d7f9dfee447cddc771e0e88ca5be04018b51dba2
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: a4117b41700446770e10ef799967ae4a43db342d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49433556"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51227762"
 ---
 # <a name="prepare-your-iot-edge-module-technical-assets"></a>Подготовка технических ресурсов для модуля IoT Edge
 
@@ -45,7 +45,7 @@ ms.locfileid: "49433556"
 Поддержка всех платформ уровня 1, поддерживаемых в IoT Edge (см. [список для Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/support)). Мы рекомендуем использовать именно этот вариант, так как он обеспечивает максимальное удобство для клиентов. Для клиентов отображаются модули, соответствующие этому критерию. Модуль с поддержкой этих платформ должен соответствовать следующим требованиям:
 
 - Содержать тег `latest` и тег версии (например, `1.0.1`), которые представляют собой манифест тегов, созданных с помощью [manifect-tool](https://github.com/estesp/manifest-tool) с сайта GitHub.
-- Использовать вкладку [Marketplace](./cpp-marketplace-tab.md) для добавления ссылки на [совместимые сертифицированные устройства IoT Edge](http://aka.ms/iot-edge-certified). Эта ссылка разрешается в `http://aka.ms/iot-edge-certified` и указывает на веб-сайт, на котором клиенты могут или искать просматривать сертифицированные устройства. Этот веб-сайт также содержит каталог устройств, [сертифицированных для Azure IoT Edge](https://catalog.azureiotsolutions.com/).
+- Использовать вкладку [Marketplace](./cpp-marketplace-tab.md) для добавления ссылки на [совместимые сертифицированные устройства IoT Edge](https://aka.ms/iot-edge-certified). Эта ссылка разрешается в `http://aka.ms/iot-edge-certified` и указывает на веб-сайт, на котором клиенты могут или искать просматривать сертифицированные устройства. Этот веб-сайт также содержит каталог устройств, [сертифицированных для Azure IoT Edge](https://catalog.azureiotsolutions.com/).
 
 #### <a name="a-subset-of-tier-1-platforms-supported-by-iot-edge"></a>Группа платформ уровня 1, поддерживаемых IoT Edge
   
@@ -65,7 +65,7 @@ ms.locfileid: "49433556"
     <p><u>Minimum hardware requirements:</u> Linux x64 and arm32  OS, 1GB of RAM, 500 Mb of storage</p>
  ```
 
-### <a name="configuration"></a>Конфигурация
+### <a name="configuration"></a>Параметр Configuration
 
 Также предоставляются стандартные параметры конфигурации, чтобы развертывание на устройстве IoT Edge выполнялось максимально просто. Кроме того, контейнер может включать пакет SDK для модуля IoT Edge, чтобы поддерживать взаимодействие с Центром Edge и Центром Интернета вещей.
 

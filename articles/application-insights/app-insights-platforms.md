@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 09/01/2016
 ms.reviewer: olegan
 ms.author: mbullwin
-ms.openlocfilehash: 4f474ad234c80a0dcb5a9f704a263a97e7df0cc1
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 9d23c680d1ec43a671eba29b4e0168af18af4e1e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39174235"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51229430"
 ---
 # <a name="developer-analytics-languages-platforms-and-integrations"></a>Аналитические средства для разработчиков: языки программирования, платформы, интеграция
 Ниже перечислены известные нам реализации [Application Insights](app-insights-overview.md) , в том числе реализации от сторонних производителей.
@@ -67,7 +67,7 @@ ms.locfileid: "39174235"
 * [Log4Net, NLog или System.Diagnostics.Trace](app-insights-asp-net-trace-logs.md)
 * [Java, Log4J или Logback](app-insights-java-trace-logs.md)
 * [Semantic Logging (SLAB)](https://github.com/fidmor89/SLAB_AppInsights) — интеграция с [Semantic Logging Application Block](https://msdn.microsoft.com/library/dn440729.aspx)
-* [Облачное нагрузочное тестирование](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/30/getting-application-insights-counters-with-cloud-based-load-testing.aspx)
+* [Облачное нагрузочное тестирование](https://blogs.msdn.com/b/visualstudioalm/archive/2015/07/30/getting-application-insights-counters-with-cloud-based-load-testing.aspx)
 * [Подключаемый модуль LogStash](https://github.com/Azure/azure-diagnostics-tools/tree/master/Logstash/logstash-output-applicationinsights)
 * [Служба Log Analytics](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/)
 * [Logary](https://www.nuget.org/packages/Logary.Targets.AppInsights/)
@@ -83,7 +83,7 @@ ms.locfileid: "39174235"
 
 ## <a name="export-and-data-analysis"></a>Экспорт и анализ данных
 * [Alooma](https://www.alooma.com/blog/application-insights-amazon-redshift)
-* [Power BI](http://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx)
+* [Power BI](https://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx)
 * [Анализ потока](app-insights-export-power-bi.md)
 
 ## <a name="projects"></a> Создание собственного пакета SDK

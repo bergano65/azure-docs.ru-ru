@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: v-jysur
 ms.component: ''
-ms.openlocfilehash: 4f8261983feb8e655333f548b0b90f822eda30a6
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 526ba73858322ee41f649a338f22226da6af33e7
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50421192"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50964088"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -157,13 +157,13 @@ ms.locfileid: "50421192"
 
 Вы также можете визуализировать инциденты, синхронизированные с задействованными компьютерами, в рамках решения "Сопоставление служб".
 
-Служба схемы услуги автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. Это решение позволяет рассматривать серверы как взаимосвязанные системы, предоставляющие важные службы. Схема услуги отображает сведения о подключениях между серверами, процессами и портами в любой подключенной по протоколу TCP архитектуре без дополнительной настройки. Пользователям требуется только установить агент. [Узнайте больше](../operations-management-suite/operations-management-suite-service-map.md).
+Служба схемы услуги автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. Это решение позволяет рассматривать серверы как взаимосвязанные системы, предоставляющие важные службы. Схема услуги отображает сведения о подключениях между серверами, процессами и портами в любой подключенной по протоколу TCP архитектуре без дополнительной настройки. Пользователям требуется только установить агент. [Узнайте больше](../monitoring/monitoring-service-map.md).
 
 При использовании решения "Сопоставление служб" вы можете просматривать элементы службы поддержки, созданные в решениях ITSM, как показано ниже:
 
 ![Снимок экрана с Log Analytics](media/log-analytics-itsmc-overview/itsmc-overview-integrated-solutions.png)
 
-Дополнительные сведения см. в статье [Использование решения схемы услуги в Operations Management Suite](../operations-management-suite/operations-management-suite-service-map.md).
+Дополнительные сведения см. в статье [Использование решения схемы услуги в Operations Management Suite](../monitoring/monitoring-service-map.md).
 
 
 ## <a name="additional-information"></a>Дополнительная информация

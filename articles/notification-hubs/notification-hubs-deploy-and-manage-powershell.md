@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: 8312841b5f8e4b9979de8abf32ce1009b4243f06
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 7107c4ebd3f7df5966dd4c66aa8f453bd4f3d1d6
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49388176"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228357"
 ---
 # <a name="deploy-and-manage-notification-hubs-using-powershell"></a>Развертывание и управление центров уведомлений с помощью PowerShell
 ## <a name="overview"></a>Обзор
@@ -147,8 +147,8 @@ else
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 * [Управление служебной шиной с помощью PowerShell](../service-bus-messaging/service-bus-powershell-how-to-provision.md)
-* [Как создать запросы, разделы и подписки Service Bus с помощью сценария PowerShell](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
-* [Как создать пространство имен и концентратор событий служебной шины с помощью сценария PowerShell](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
+* [Как создать запросы, разделы и подписки Service Bus с помощью сценария PowerShell](https://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
+* [Как создать пространство имен и концентратор событий служебной шины с помощью сценария PowerShell](https://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
 
 Некоторые готовые сценарии доступны для скачивания:
 

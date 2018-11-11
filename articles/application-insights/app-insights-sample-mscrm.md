@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 03/16/2018
 ms.reviewer: mazhar
 ms.author: mbullwin
-ms.openlocfilehash: 2fa4242de6a953e82e3f81831c491125e9a7c3f3
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: 5d61c3a3232645fc5f1c18696cf3232bf9b37aa2
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50026234"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50957753"
 ---
 # <a name="walkthrough-enabling-telemetry-for-microsoft-dynamics-crm-online-using-application-insights"></a>Пошаговое руководство. Включение телеметрии для Microsoft Dynamics CRM Online с помощью Application Insights
 В этой статье показано, как получить данные телеметрии из службы [Microsoft Dynamics CRM Online](https://www.dynamics.com/) с помощью [Azure Application Insights](https://azure.microsoft.com/services/application-insights/). Мы рассмотрим весь процесс добавления сценария Application Insights в приложение, сбор данных и их визуализацию.
@@ -136,4 +136,4 @@ ms.locfileid: "50026234"
 ## <a name="learn-more"></a>Подробнее
 * [Что такое Azure Application Insights?](app-insights-overview.md)
 * [Application Insights для веб-страниц](app-insights-javascript.md)
-* [Дополнительные примеры и пошаговые руководства](app-insights-code-samples.md)
+* [Дополнительные примеры и пошаговые руководства](app-insights-overview.md)

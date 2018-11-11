@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 08/24/2018
 ms.author: andret
 ms.custom: aaddev
-ms.openlocfilehash: cabc4f2212e18d774066efad70d9654bb70020d5
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.openlocfilehash: 4035e93b8eed0a7bc1dd0cddbc42f41e9c26f333
+ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48831506"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51218871"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-web-app"></a>Краткое руководство: добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт
 
@@ -31,17 +31,29 @@ ms.locfileid: "48831506"
 ![Как работает пример приложения, созданный в этом кратком руководстве](media/quickstart-v2-aspnet-webapp/aspnetwebapp-intro.png)
 
 > [!div renderon="docs"]
-> ## <a name="register-your-application-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в кратком руководстве
+> ## <a name="register-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
+> У вас есть два варианта запуска приложения, используемого в этом кратком руководстве:
+> * [Экспресс.] [Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода](#option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample).
+> * [Вручную.] [Вариант 2. Регистрация и настройка приложения и примера кода вручную](#option-2-register-and-manually-configure-your-application-and-code-sample).
 >
-> ### <a name="register-and-configure-your-application-and-code-sample"></a>Регистрация и настройка приложения и примера кода
+> ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
+>
+> 1. Откройте [Регистрация приложений (предварительная версия)](https://portal.azure.com/?Microsoft_AAD_RegisteredApps=true#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs) на портале Azure.
+> 1. Введите имя своего приложения и щелкните **Зарегистрировать**.
+> 1. Следуйте инструкциям для загрузки и автоматической настройки нового приложения одним щелчком мыши.
+>
+> ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Вариант 2. Регистрация и настройка приложения и примера кода вручную
+>
 > #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
-> 
-> 1. Перейдите на [портал регистрации приложений Майкрософт](https://apps.dev.microsoft.com/portal/register-app).
-> 1. Введите имя своего приложения, снимите флажок **Пошаговая установка** и нажмите кнопку **Создать**.
-> 1. Щелкните `Add Platform`, а затем выберите `Web`.
-> 1. *Установите флажок* **Разрешить неявный поток**.
-> 1. В поле **URL-адреса перенаправления** введите значение `https://localhost:44368/`.
-> 1. Перейдите вниз страницы и нажмите кнопку **Сохранить**.
+> Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение вручную, сделайте следующее:
+>
+> 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+> 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
+> 1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **Регистрация приложений (предварительная версия)** > **Новая регистрация**.
+> 1. После появления страницы **Регистрация приложения** введите сведения о регистрации приложения:
+>      - В разделе **Имя** введите понятное имя приложения, которое будет отображаться пользователям приложения, например `ASPNET-Quickstart`.
+>      - В поле **URL-адрес ответа** добавьте `https://localhost:44368/` и щелкните **Зарегистрировать**.
+Выберите меню **Проверка подлинности**, установите значение **Токен идентификатора** в разделе **Неявное предоставление**, а затем нажмите кнопку **Сохранить**.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure
@@ -60,15 +72,23 @@ ms.locfileid: "48831506"
 
 1. Извлеките ZIP-файл в локальную папку, расположенную как можно ближе к корневой папке (например, **C:\Azure-Samples**).
 1. Откройте решение в Visual Studio (AppModelv2-WebApp-OpenIDConnect-DotNet.sln).
-1. Измените файл **Web.config** и замените `Enter_the_Application_Id_here` на идентификатор зарегистрированного приложения:
+1. В файле **Web.config** замените параметры `ClientId` и `Tenant` на:
 
     ```xml
     <add key="ClientId" value="Enter_the_Application_Id_here" />
+    <add key="Tenant" value="Enter_the_Tenant_Info_Here" />
     ```
-    
-> [!div class="sxs-lookup" renderon="portal"]
-> [!IMPORTANT]
-> Если ваше приложение *однотенантное* (предназначено для учетных записей только в этом каталоге), в файле **Web.config** найдите значение `Tenant` и замените `common` **идентификатором** или **именем клиента** (например, contoso.microsoft.com). Имя клиента можно получить на **странице "Обзор"**.
+
+> [!div renderon="docs"]
+> Описание
+> - `Enter_the_Application_Id_here` — идентификатор регистрируемого приложения.
+> - `Enter_the_Tenant_Info_Here` — один из следующих вариантов:
+>   - Если ваше приложение поддерживает вариант **Только моя организация**, замените это значение на **идентификатор клиента** или **имя клиента** (например, contoso.microsoft.com).
+>   - Если ваше приложение поддерживает вариант **Учетные записи в любом каталоге организации**, замените это значение на `organizations`.
+>   - Если приложение поддерживает вариант **Все пользователи с учетными записями Майкрософт**, замените это значение на `common`.
+>
+> > [!TIP]
+> > Чтобы найти значения параметров *Идентификатор приложения*, *Идентификатор каталога (клиента)* и *Поддерживаемые типы учетных записей*, перейдите на страницу **Обзор**.
 
 ## <a name="more-information"></a>Дополнительные сведения
 

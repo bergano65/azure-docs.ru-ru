@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2017
 ms.author: gokuma
-ms.openlocfilehash: b8b0b8934b51080c3583281673183c1498c26417
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 2f642a91bd656cb74cdce2a98c44372a64f23cb9
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31408315"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50237883"
 ---
 # <a name="development-tools-on-the-data-science-virtual-machine"></a>Средства разработки виртуальных машин для обработки и анализа данных
 
@@ -77,7 +77,7 @@ ms.locfileid: "31408315"
 | ------------- | ------------- |
 | Что это такое?   | Интегрированная среда разработки клиента для языка Python    |
 | Поддерживаемые версии виртуальных машин для обработки и анализа данных      | Linux      |
-| Распространенные способы применения      |  Разработка на языке R     |
+| Распространенные способы применения      |  Разработка на Python     |
 | Запуск и использование      | С помощью ярлыка на рабочем столе (`/usr/bin/pycharm`) в Linux      |
 | Дополнительные средства на виртуальной машине для обработки и анализа данных      |   Visual Studio 2017, Visual Studio Code, RStudio      |
 

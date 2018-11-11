@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/05/2017
 ms.author: hascipio
-ms.openlocfilehash: 82580fbab68eab28a2027cd277213f1fb2a76e07
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: 3556384d71649391d094172a136b863ed26fd2ad
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39716007"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51227405"
 ---
 > [!NOTE]
 > Этот документ больше не актуален и не содержит надежные сведения. С инструкциями по публикации предложений в Microsoft Azure Marketplace можно ознакомиться в [руководстве по Microsoft Azure Marketplace для продавца](https://docs.microsoft.com/azure/marketplace/seller-guide/cloud-partner-portal-seller-guide).
@@ -28,7 +28,7 @@ ms.locfileid: "39716007"
 Эта статья поможет разработчикам создать и развернуть решения, а также управлять ими в Azure Marketplace, чтобы их могли приобрести и использовать другие клиенты и партнеры Azure.
 
 ## <a name="marketplace-publishing"></a>Публикация в Marketplace
-Издатель Azure может распространять и продавать свои инновационные решения или службы другим разработчикам, независимым поставщикам программного обеспечения и ИТ-специалистам в Marketplace. Через Marketplace вы можете взаимодействовать с клиентами, которые хотят быстро разрабатывать облачные приложения и мобильные решения. Если решение предназначено для бизнес-пользователей, воспользуйтесь магазином [AppSource](http://appsource.microsoft.com).
+Издатель Azure может распространять и продавать свои инновационные решения или службы другим разработчикам, независимым поставщикам программного обеспечения и ИТ-специалистам в Marketplace. Через Marketplace вы можете взаимодействовать с клиентами, которые хотят быстро разрабатывать облачные приложения и мобильные решения. Если решение предназначено для бизнес-пользователей, воспользуйтесь магазином [AppSource](https://appsource.microsoft.com).
 
 
 ## <a name="supported-types-of-solutions"></a>Поддерживаемые типы решений
@@ -51,7 +51,7 @@ ms.locfileid: "39716007"
 >[!NOTE]
 > Если вы работаете с менеджером PAM или менеджером партнеров DX, попросите, чтобы они представили ваше решение к участию в программе сертификации Azure. Вы также можете перейти на веб-страницу [Microsoft Azure Certified](http://createopportunity.azurewebsites.net) и заполнить форму заявки. В поле **Microsoft Sponsor Contact** (Контактное лицо) введите электронную почту вашего менеджера PAM или менеджера партнеров DX.
 
-Если вы соответствуете основным требованиям [политик участия в Azure Marketplace](http://go.microsoft.com/fwlink/?LinkID=526833) и ваше приложение утверждено, мы начнем с вами совместную работу по адаптации решения в Marketplace.
+Если вы соответствуете основным требованиям [политик участия в Azure Marketplace](https://go.microsoft.com/fwlink/?LinkID=526833) и ваше приложение утверждено, мы начнем с вами совместную работу по адаптации решения в Marketplace.
 
 ### <a name="register-your-account-as-a-microsoft-seller"></a>Зарегистрируйте свою учетную запись в качестве продавец Майкрософт
 [Зарегистрируйте свою учетную запись Майкрософт в качестве учетной записи разработчика Майкрософт](marketplace-publishing-accounts-creation-registration.md).

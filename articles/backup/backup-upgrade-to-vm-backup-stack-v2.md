@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 10/3/2018
 ms.author: trinadhk
-ms.openlocfilehash: 9152733e189aec25a5c024de7f9a3582c29218a3
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 20c1606d4d6a1ddd43426731e5498d1bee47f2e3
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49406540"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50962543"
 ---
 # <a name="upgrade-to-azure-vm-backup-stack-v2"></a>Обновление до стека резервного копирования виртуальных машин Azure версии 2
 
@@ -26,10 +26,10 @@ ms.locfileid: "49406540"
 
 * Поддержка дисков размером до 4 ТБ.
 
-* Возможность использовать оригинальные учетные записи хранения при восстановлении неуправляемой виртуальной машины. Эта возможность есть, даже когда виртуальная машина имеет диски, распределенные между учетными записями хранения. Таким образом ускоряется восстановление для самых разных конфигураций виртуальных машин.
+* Возможность использования оригинальных учетных записей хранения при восстановлении неуправляемой виртуальной машины. Эта возможность есть, даже когда виртуальная машина имеет диски, распределенные между учетными записями хранения. Таким образом ускоряется восстановление для самых разных конфигураций виртуальных машин.
     > [!NOTE]
-    > Эта возможность не является аналогом замены дисков виртуальной машины с данными из точки восстановления. 
-    
+    > Эта возможность не является аналогом замены дисков виртуальной машины с данными из точки восстановления.
+
 
 ## <a name="whats-changing-in-the-new-stack"></a>Что изменилось в новом стеке?
 В настоящее время задание резервного копирования состоит из двух этапов:
@@ -55,7 +55,7 @@ ms.locfileid: "49406540"
 * В случае учетных записей хранения уровня "Премиум" моментальные снимки, создаваемые для мгновенного восстановления, будут занимать 10 ТБ выделенного пространства.
 
 > [!NOTE]
-> Обновите стек Azure VM Backup V2, чтобы получить поддержку Azure Backup для [Управляемых дисков SSD категории "Стандартный"](https://azure.microsoft.com/blog/announcing-general-availability-of-standard-ssd-disks-for-azure-virtual-machine-workloads/) и виртуальных машин с 32 дисками данных.
+> Обновите стек Azure VM Backup V2, чтобы получить поддержку Azure Backup для [Управляемых дисков SSD категории "Стандартный"](https://azure.microsoft.com/blog/announcing-general-availability-of-standard-ssd-disks-for-azure-virtual-machine-workloads/).
 
 ## <a name="upgrade"></a>Обновление
 ### <a name="the-azure-portal"></a>Портал Azure
@@ -119,4 +119,4 @@ Get-AzureRmProviderFeature -FeatureName "InstantBackupandRecovery" –ProviderNa
 Для неуправляемых дисков используются инкрементные моментальные снимки. Для управляемых дисков коллекция точек восстановления, созданная службой Azure Backup, использует моментальные снимки большого двоичного объекта, которые, следовательно, являются добавочными.
 
 ### <a name="how-to-get-standard-ssd-managed-disk-support-for-a-virtual-machine"></a>Как получить поддержку Управляемых дисков SSD категории "Стандартный" для виртуальной машины?
-Обновите стек Azure VM Backup V2, чтобы получить поддержку Azure Backup для [Управляемых дисков SSD категории "Стандартный"](https://azure.microsoft.com/blog/announcing-general-availability-of-standard-ssd-disks-for-azure-virtual-machine-workloads/). После обновления можно также выполнить резервное копирование виртуальных машин с 32 дисками данных.
+Обновите стек Azure VM Backup V2, чтобы получить поддержку Azure Backup для [Управляемых дисков SSD категории "Стандартный"](https://azure.microsoft.com/blog/announcing-general-availability-of-standard-ssd-disks-for-azure-virtual-machine-workloads/).

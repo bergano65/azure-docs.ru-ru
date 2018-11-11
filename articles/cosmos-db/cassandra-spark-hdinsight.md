@@ -9,12 +9,12 @@ ms.devlang: spark-scala
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ankhanol
-ms.openlocfilehash: 34293ffc70ebbc2a8639913aefe3b62ed8e618d4
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: a86b7375122d38d36707a419b265dcd3c1b57087
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47222783"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50741697"
 ---
 # <a name="access-azure-cosmos-db-cassandra-api-from-spark-on-yarn-with-hdinsight"></a>Доступ к API Cassandra для Azure Cosmos DB из Spark в YARN с HDInsight
 
@@ -34,7 +34,7 @@ ms.locfileid: "47222783"
 
 * **Настройка API Cassandra в Spark2**. Для инициализации соединителя Spark для Cassandra как части контекста Spark необходимы сведения о подключении Cassandra. При запуске Jupyter Notebook сеанс и контекст Spark уже инициализированы. Не рекомендуется останавливать запуск и повторно инициализировать контекст Spark, если только он не выполнен с использованием наборов конфигурации, заданных для запуска Jupyter Notebook по умолчанию для HDInsight. Одним из способов обхода является добавление сведений об экземпляре Cassandra непосредственно в конфигурацию службы Ambari, Spark2. Это требуется выполнить один раз для каждого кластера, на котором нужно перезапустить службу Spark2.
  
-  1. Перейдите к службе Ambari, Spark2 и щелкните конфигурации.
+  1. Перейдите к службе Ambari, Spark2 и выберите конфигурации.
 
   2. Затем перейдите к пользовательской конфигурации spark2-defaults и добавьте новое свойство с приведенным ниже значением, после чего перезапустите службу Spark2.
 

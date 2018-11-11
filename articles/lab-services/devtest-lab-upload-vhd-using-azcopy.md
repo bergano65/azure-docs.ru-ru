@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: e35686e7ba7c2e88d62930082d39856673a661b6
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 482bfe41ebfec7353466f7e243e9e767caee7828
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33782453"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228289"
 ---
 # <a name="upload-vhd-file-to-labs-storage-account-using-azcopy"></a>Отправка VHD-файла в учетную запись хранения лаборатории с помощью AzCopy
 
@@ -33,11 +33,11 @@ ms.locfileid: "33782453"
 
 ## <a name="step-by-step-instructions"></a>Пошаговые инструкции
 
-Ниже приведены пошаговые инструкции по отправке VHD-файла в Azure DevTest Labs с помощью [AzCopy](http://aka.ms/downloadazcopy). 
+Ниже приведены пошаговые инструкции по отправке VHD-файла в Azure DevTest Labs с помощью [AzCopy](https://aka.ms/downloadazcopy). 
 
 1. Узнайте имя учетной записи хранения лаборатории с помощью портала Azure.
 
-1. Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
 1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 
@@ -65,7 +65,7 @@ ms.locfileid: "33782453"
 
 1. Отправьте VHD-файл с помощью AzCopy.
  
-1. [Скачайте и установите последнюю версию AzCopy](http://aka.ms/downloadazcopy).
+1. [Скачайте и установите последнюю версию AzCopy](https://aka.ms/downloadazcopy).
 
 1. Откройте окно командной строки и перейдите к каталогу установки AzCopy. При необходимости можно добавить место установки AzCopy к системному пути. По умолчанию AzCopy устанавливается в следующий каталог:
 

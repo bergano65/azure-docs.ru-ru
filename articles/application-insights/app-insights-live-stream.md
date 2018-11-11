@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 05/24/2018
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: a7953781776fa4d7c9ae47901bb5f0c28a87ff2b
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 9105b7f44a9677b2b843305c30fec30c74dd8be5
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47091197"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50958497"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: мониторинг и диагностика с задержкой в 1 секунду
 
@@ -203,7 +203,7 @@ services.ConfigureTelemetryModule<QuickPulseTelemetryModule>( module => module.A
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Отслеживание использования Application Insights.](app-insights-web-track-usage.md)
+* [Отслеживание использования Application Insights.](app-insights-usage-overview.md)
 * [Использование диагностического поиска](app-insights-diagnostic-search.md)
 * [Профилировщик](app-insights-profiler.md)
 * [Отладчик моментальных снимков](app-insights-snapshot-debugger.md)

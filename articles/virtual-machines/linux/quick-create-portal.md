@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 10/12/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 78b20b977685989c10ba61a48afee7808c46f227
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 693f9144d1cb454b0a9dd98b5ae63938abd7d26d
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49320634"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50420410"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины под управлением Linux на портале Azure
 
@@ -61,7 +61,7 @@ cat ~/.ssh/id_rsa.pub
 
 1. В поле поиска над списком ресурсов Azure Marketplace найдите и выберите **Ubuntu Server 16.04 LTS** от Canonical, затем выберите **Создать**.
 
-1. На вкладке **Основные сведения** в разделе **Сведения о проекте** убедитесь, что выбрана правильная подписка и при необходимости щелкните **Создать** под полем **Группы ресурсов**. Во всплывающем элементе введите имя *myResourceGroup* для группы ресурсов и нажмите кнопку **ОК*. 
+1. На вкладке **Основные сведения** в разделе **Сведения о проекте** убедитесь, что выбрана правильная подписка и при необходимости щелкните **Создать** под полем **Группы ресурсов**. Во всплывающем элементе введите *myResourceGroup* в качестве имени группы ресурсов и нажмите кнопку **ОК**. 
 
     ![Создание группы ресурсов для виртуальной машины](./media/quick-create-portal/project-details.png)
 
