@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/12/2017
 ms.author: mbullwin
-ms.openlocfilehash: 4f063299a0bb454c8eaf3d38a0cb0a5fb20abcc8
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 60195f135b8b0e102a36c3573a341432f2e0c784
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47094089"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50959313"
 ---
 # <a name="application-insights-frequently-asked-questions"></a>Application Insights: вопросы и ответы
 
@@ -27,7 +27,7 @@ ms.locfileid: "47094089"
 
 * [Troubleshooting no data - Application Insights for .NET](app-insights-asp-net-troubleshoot-no-data.md)
 * [раздел "Устранение неполадок"](app-insights-monitor-performance-live-website-now.md#troubleshooting-runtime-configuration-of-application-insights)
-* [Настройка системы диагностики Azure для входа в Application Insights](app-insights-azure-diagnostics.md)
+* [Настройка системы диагностики Azure для входа в Application Insights](../monitoring-and-diagnostics/azure-diagnostics-configure-application-insights.md)
 * [Веб-приложение Java](app-insights-java-troubleshoot.md)
 
 *Я не получаю данные с моего сервера*
@@ -111,7 +111,7 @@ ms.locfileid: "47094089"
 
 С [клиентских веб-страниц](app-insights-javascript.md):
 
-* [число просмотров страниц](app-insights-web-track-usage.md);
+* [число просмотров страниц](app-insights-usage-overview.md);
 * [вызовы AJAX](app-insights-asp-net-dependencies.md) — запросы, выполняемые из запущенного скрипта;
 * загрузка данных при просмотре страниц;
 * количество пользователей и сеансов;
@@ -119,7 +119,7 @@ ms.locfileid: "47094089"
 
 Из других источников, если они настроены:
 
-* [Настройка системы диагностики Azure для входа в Application Insights](app-insights-azure-diagnostics.md)
+* [Настройка системы диагностики Azure для входа в Application Insights](../monitoring-and-diagnostics/azure-diagnostics-configure-application-insights.md)
 * [контейнеры Docker](app-insights-docker.md);
 * [импорт таблиц в Analytics](app-insights-analytics-import.md);
 * [Служба Log Analytics](https://azure.microsoft.com/blog/omssolutionforappinsightspublicpreview/)

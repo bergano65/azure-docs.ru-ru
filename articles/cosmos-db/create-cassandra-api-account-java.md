@@ -9,14 +9,14 @@ ms.service: cosmos-db
 ms.component: cosmosdb-cassandra
 ms.topic: tutorial
 ms.date: 09/24/2018
-ms.openlocfilehash: b5e3d87e026b65a602b7bdf2e52365d13b21f62f
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: 1220bcc8445f13a4573f1a6d3181c172799638fb
+ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49166837"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50741795"
 ---
-# <a name="create-an-azure-cosmos-db-cassandra-api-account-database-and-a-table-by-using-a-java-application"></a>Создание учетной записи API Cassandra для Azure Cosmos DB, базы данных и таблицы с помощью приложения Java
+# <a name="tutorial-create-an-azure-cosmos-db-cassandra-api-account-database-and-a-table-by-using-a-java-application"></a>Краткое руководство. Создание учетной записи API Cassandra для Azure Cosmos DB, базы данных и таблицы с помощью приложения Java
 
 В этом руководстве описывается, как использовать приложение Java для создания учетной записи API Cassandra в Azure Cosmos DB, добавить базу данных (также называемую пространством ключей) и добавить таблицу. Приложение Java использует [драйвер Java](https://github.com/datastax/java-driver), чтобы создать базу данных пользователя, которая содержит такие сведения, как идентификатор пользователя, имя пользователя, город пользователя.  
 
@@ -33,7 +33,7 @@ ms.locfileid: "49166837"
 
 * Если у вас еще нет подписки Azure,  [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу. Кроме того, можно воспользоваться  [бесплатной пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/)  без подписки Azure, оплаты и каких-либо обязательств. 
 
-* Получите последнюю версию [пакета средств разработки Java (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 
+* Получите последнюю версию [пакета средств разработки Java (JDK)](https://aka.ms/azure-jdks) 
 
 * [Скачайте](http://maven.apache.org/download.cgi) и [установите](http://maven.apache.org/install.html) двоичный архив [Maven](http://maven.apache.org/) 
   - В Ubuntu выполните команду  `apt-get install maven` , чтобы установить Maven. 
@@ -60,7 +60,7 @@ ms.locfileid: "49166837"
 
 ## <a name="get-the-connection-details-of-your-account"></a>Получение сведений о подключении учетной записи  
 
-Получите сведения о строке подключения с портала Azure и скопируйте их в файл конфигурации Java. Так вы обеспечите обмен данными между приложением и размещенной базой данных. 
+Получите сведения о строке подключения с портала Azure и скопируйте их в файл конфигурации Java. Строка подключения обеспечивает обмен данными между вашим приложением и размещенной базой данных. 
 
 1. На  [портале Azure](http://portal.azure.com/) перейдите к учетной записи Cosmos DB. 
 

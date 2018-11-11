@@ -14,12 +14,12 @@ ms.custom: mvc
 ms.topic: overview
 ms.date: 09/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: 799593758bf24924d91d38bd6a626b945247183b
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: 41c8fd0092af035153b3161c4a6c3eb5c5ef3f1d
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44050244"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50958905"
 ---
 # <a name="overview-of-application-insights-for-devops"></a>Общие сведения о Application Insights для DevOps
 
@@ -231,6 +231,6 @@ TrackException используется для сообщения об искл�
 * [веб-приложение ASP.NET](app-insights-asp-net.md);
 * [веб-приложение Java](app-insights-java-get-started.md);
 * [веб-приложение Node.js](app-insights-nodejs.md);
-* уже развернутые приложения, размещенные в среде [IIS](app-insights-monitor-web-app-availability.md), [J2EE](app-insights-java-live.md) или [Azure](app-insights-azure.md);
+* уже развернутые приложения, размещенные в среде [IIS](app-insights-monitor-web-app-availability.md), [J2EE](app-insights-java-live.md) или [Azure](app-insights-overview.md);
 * [веб-страницы](app-insights-javascript.md) (одностраничное приложение или обычная веб-страница) — можно использовать самостоятельное или в дополнение к любому варианту сервера;
 * [тесты доступности](app-insights-monitor-web-app-availability.md) для тестирования приложений из общедоступного Интернета.

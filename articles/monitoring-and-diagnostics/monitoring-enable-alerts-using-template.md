@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 4/27/2018
 ms.author: johnkem
 ms.component: metric
-ms.openlocfilehash: 67dac4f8d9b66f4b5f2654ffb16d9829387fc060
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 3cdf2371ccdaca5573c088c33527985f98ef2f90
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35263302"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50957126"
 ---
 # <a name="create-a-classic-metric-alert-with-a-resource-manager-template"></a>Создание классического оповещения метрики с помощью шаблона Resource Manager
 В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md) для настройки оповещений метрик Azure. Это позволяет автоматически настраивать оповещения для ресурсов при их создании, чтобы обеспечить правильный мониторинг всех ресурсов.
@@ -402,6 +402,6 @@ ms.locfileid: "35263302"
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Узнайте больше об оповещениях](insights-receive-alert-notifications.md)
+* [Узнайте больше об оповещениях](monitoring-overview-alerts.md)
 * [Добавьте параметры диагностики](monitoring-enable-diagnostic-logs-using-template.md) в шаблон Resource Manager.
 

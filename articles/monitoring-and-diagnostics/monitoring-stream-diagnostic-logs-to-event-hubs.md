@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/25/2018
 ms.author: johnkem
 ms.component: ''
-ms.openlocfilehash: 19f066bea9de580cf1245aec74fbe563bf8ba449
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: d178041a420c49480c6043869f139eb3a09c91fd
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46996559"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50959279"
 ---
 # <a name="stream-azure-diagnostic-logs-to-an-event-hub"></a>Потоковая передача журналов диагностики Azure в концентратор событий
 **[Журналы диагностики Azure](monitoring-overview-of-diagnostic-logs.md)** можно передавать в близком к реальному времени в любое приложение. Для этого достаточно использовать стандартный параметр "Экспорт в Центры событий" на портале или включить идентификатор правила авторизации концентратора событий в параметрах диагностики с помощью командлетов Azure PowerShell или интерфейса командной строки Azure.
@@ -44,7 +44,7 @@ ms.locfileid: "46996559"
 Потоковую передачу журналов диагностики можно включить программно, через портал или с помощью [REST API Azure Monitor](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings). В любом случае создается параметр диагностики, в котором необходимо указать пространство имен Центров событий, а также категории журнала и метрики, которые требуется отправить в пространство имен. Концентратор событий создается в пространстве имен для каждой включенной категории журнала. Категория **журналов диагностики** — это тип журналов, которые может собирать ресурс.
 
 > [!WARNING]
-> Для включения и потоковой передачи журналов диагностики из вычислительных ресурсов (например, виртуальных машин или Service Fabric) [используется другая последовательность действий](../event-hubs/event-hubs-streaming-azure-diags-data.md).
+> Для включения и потоковой передачи журналов диагностики из вычислительных ресурсов (например, виртуальных машин или Service Fabric) [используется другая последовательность действий](azure-diagnostics-streaming-event-hubs.md).
 
 Пространство имен Центров событий не должно находиться в той же подписке, что и ресурс, генерирующий журналы, если пользователь, который настраивает этот параметр, имеет соответствующий доступ RBAC к обеим подпискам и обе подписки являются частью одного и того же клиента AAD.
 
@@ -191,10 +191,10 @@ az monitor diagnostic-settings create --name <diagnostic name> \
 
 ## <a name="stream-data-from-compute-resources"></a>Потоковая передача данных от вычислительных ресурсов
 
-Можно также передавать поток данных журналов диагностики от вычислительных ресурсов с помощью агента системы диагностики Azure. [В этой статье](../event-hubs/event-hubs-streaming-azure-diags-data.md) описано, как это настроить.
+Можно также передавать поток данных журналов диагностики от вычислительных ресурсов с помощью агента системы диагностики Azure. [В этой статье](azure-diagnostics-streaming-event-hubs.md) описано, как это настроить.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Руководство по потоковой передаче журналов Azure Active Directory с использованием Azure Monitor](../active-directory/reports-monitoring/quickstart-azure-monitor-stream-logs-to-event-hub.md)
+* [Руководство по потоковой передаче журналов Azure Active Directory с использованием Azure Monitor](../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md)
 * [Дополнительные сведения о журналах диагностики Azure](monitoring-overview-of-diagnostic-logs.md)
-* [Начало работы с Центрами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
+* [Начало работы с Центрами событий](../event-hubs/event-hubs-dotnet-standard-getstarted-send.md)
