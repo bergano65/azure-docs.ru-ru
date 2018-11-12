@@ -1,122 +1,151 @@
 ---
-title: Краткое руководство. Транслитерация текста, Node.js — API перевода текстов
+title: Краткое руководство. Транслитерация текста с помощью Node.js и API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве вы узнаете, как с помощью API перевода текстов и Java преобразовать текст на одном языке из одного набора символов в Node.js.
+description: Из этого краткого руководства вы узнаете, как транслитерировать (преобразовывать) текст из одного письма в другое с помощью Node.js и REST API перевода текстов. В этом примере японский текст транслитерируется в текст на латинице.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
-ms.date: 06/21/2018
+ms.date: 10/29/2018
 ms.author: erhopf
-ms.openlocfilehash: 1980adb78a4ba457fd05f532cdd6e30bba7d9132
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: 9a9de1375e024bf4e74eafa3442e2cb818ad9c61
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49646202"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51035821"
 ---
-# <a name="quickstart-transliterate-text-with-the-translator-text-rest-api-nodejs"></a>Краткое руководство. Транслитерация текста с помощью REST API перевода текстов (Node.js)
+# <a name="quickstart-use-the-translator-text-api-to-transliterate-text-with-nodejs"></a>Краткое руководство. Транслитерация текста с помощью Node.js и API перевода текстов
 
-Из этого краткого руководства вы узнаете, как с помощью API перевода текстов преобразовать текст на одном языке из одного набора символов в другой.
+Из этого краткого руководства вы узнаете, как транслитерировать (преобразовывать) текст из одного письма в другое с помощью Node.js и REST API перевода текстов. В приведенном примере японский текст транслитерируется в текст на латинице.
+
+Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом API перевода текстов. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого кода вам потребуется [Node.js 6](https://nodejs.org/en/download/).
+Для работы с этим кратким руководством вам понадобится:
 
-Чтобы использовать API перевода текстов, вам также потребуется ключ подписки. Сведения об этом см. в статье [Регистрация для использования API перевода текстов](translator-text-how-to-signup.md).
+* [Node 8.12.x или более поздней версии](https://nodejs.org/en/);
+* ключ подписки Azure для API перевода текстов.
 
-## <a name="transliterate-request"></a>Запрос на транслитерацию
+## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
-Приведенный ниже код преобразует текст на одном языке из одного набора символов в другой с помощью метода [Transliterate](./reference/v3-0-transliterate.md).
-
-1. Создайте проект Node.js в любом редакторе кода.
-2. Добавьте указанный ниже код.
-3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
-4. Запустите программу.
+Создайте проект, используя любую IDE или любой текстовый редактор. Затем скопируйте в файл проекта с именем `transliterate-text.js` этот фрагмент кода.
 
 ```javascript
-'use strict';
-
-let fs = require ('fs');
-let https = require ('https');
-
-// **********************************************
-// *** Update or verify the following values. ***
-// **********************************************
-
-// Replace the subscriptionKey string value with your valid subscription key.
-let subscriptionKey = 'ENTER KEY HERE';
-
-let host = 'api.cognitive.microsofttranslator.com';
-let path = '/transliterate?api-version=3.0';
-
-// Transliterate text in Japanese from Japanese script (i.e. Hiragana/Katakana/Kanji) to Latin script.
-let params = '&language=ja&fromScript=jpan&toScript=latn';
-
-// Transliterate "good afternoon".
-let text = 'こんにちは';
-
-let response_handler = function (response) {
-    let body = '';
-    response.on ('data', function (d) {
-        body += d;
-    });
-    response.on ('end', function () {
-        let json = JSON.stringify(JSON.parse(body), null, 4);
-        console.log(json);
-    });
-    response.on ('error', function (e) {
-        console.log ('Error: ' + e.message);
-    });
-};
-
-let get_guid = function () {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-    return v.toString(16);
-  });
-}
-
-let Transliterate = function (content) {
-    let request_params = {
-        method : 'POST',
-        hostname : host,
-        path : path + params,
-        headers : {
-            'Content-Type' : 'application/json',
-            'Ocp-Apim-Subscription-Key' : subscriptionKey,
-            'X-ClientTraceId' : get_guid (),
-        }
-    };
-
-    let req = https.request (request_params, response_handler);
-    req.write (content);
-    req.end ();
-}
-
-let content = JSON.stringify ([{'Text' : text}]);
-
-Transliterate (content);
+const request = require('request');
+const uuidv4 = require('uuid/v4');
 ```
 
-## <a name="transliterate-response"></a>Результат транслитерации
+> [!NOTE]
+> Если вы ранее не использовали эти модули, вам потребуется установить их перед запуском программы. Чтобы установить эти пакеты, выполните команду: `npm install request uuidv4`.
 
-В случае успешного выполнения ответ возвращается в формате JSON, как показано в примере ниже:
+Эти модули необходимы для построения HTTP-запроса и создания уникального идентификатора для заголовка `'X-ClientTraceId'`.
+
+## <a name="set-the-subscription-key"></a>Настройка ключа подписки
+
+В этом фрагменте кода будет предпринята попытка считать ключ подписки API перевода текстов из переменной среды `TRANSLATOR_TEXT_KEY`. Если вы не знакомы с переменными среды, можно задать `subscriptionKey` в виде строки и закомментировать условный оператор.
+
+Скопируйте в проект следующий код:
+
+```javascript
+/* Checks to see if the subscription key is available
+as an environment variable. If you are setting your subscription key as a
+string, then comment these lines out.
+
+If you want to set your subscription key as a string, replace the value for
+the Ocp-Apim-Subscription-Key header as a string. */
+const subscriptionKey = process.env.TRANSLATOR_TEXT_KEY;
+if (!subscriptionKey) {
+  throw new Error('Environment variable for your subscription key is not set.')
+};
+```
+
+## <a name="configure-the-request"></a>Настройка запроса
+
+Метод `request()`, доступный через модуль запросов, позволяет передавать метод HTTP, URL-адрес, параметры запроса, заголовки и текст JSON как объект `options`. В этом фрагменте кода мы настроим запрос:
+
+>[!NOTE]
+> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: Transliterate](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-transliterate).
+
+```javascript
+let options = {
+    method: 'POST',
+    baseUrl: 'https://api.cognitive.microsofttranslator.com/',
+    url: 'transliterate',
+    qs: {
+      'api-version': '3.0',
+      'language': 'ja',
+      'fromScript': 'jpan',
+      'toScript': 'latn'
+    },
+    headers: {
+      'Ocp-Apim-Subscription-Key': subscriptionKey,
+      'Content-type': 'application/json',
+      'X-ClientTraceId': uuidv4().toString()
+    },
+    body: [{
+          'text': 'こんにちは'
+    }],
+    json: true,
+};
+```
+
+### <a name="authentication"></a>Authentication
+
+Самый простой способ выполнить проверку подлинности запроса — это передать ключ подписки как заголовок `Ocp-Apim-Subscription-Key`, который мы используем в этом примере. В качестве альтернативы вы можете обменять свой ключ подписки на маркер доступа и передать маркер доступа в виде заголовка `Authorization` для проверки своего запроса. Дополнительные сведения см. в разделе [Authenticate to the Speech API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication) (Аутентификация в API речи).
+
+## <a name="make-the-request-and-print-the-response"></a>Выполнение запроса и вывод ответа
+
+Теперь мы создадим запрос с помощью метода `request()`. Он принимает объект `options`, который мы создали в предыдущем разделе, в качестве первого аргумента, а затем выводит понятный ответ JSON.
+
+```javascript
+request(options, function(err, res, body){
+    console.log(JSON.stringify(body, null, 4));
+});
+```
+
+>[!NOTE]
+> В этом примере мы определяем HTTP-запрос в объекте `options`. Однако модуль запроса также поддерживает удобные методы, такие как `.post` и `.get`. См. дополнительные сведения [об удобных методах](https://github.com/request/request#convenience-methods).
+
+## <a name="put-it-all-together"></a>Сборка
+
+Вот и все. Вы собрали простую программу, которая вызовет API перевода текстов и вернет ответ JSON. Теперь пришло время запустить ее.
+
+```console
+node transliterate-text.js
+```
+
+Если вы хотите сравнить свой код с нашей версией, см. [пример кода на сайте GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-NodeJS).
+
+## <a name="sample-response"></a>Пример ответа
 
 ```json
 [
-  {
-    "text": "konnnichiha",
-    "script": "latn"
-  }
+    {
+        "script": "latn",
+        "text": "konnnichiha"
+    }
 ]
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если вы закодировали свой ключ подписки в программе, обязательно удалите его после завершения работы с этим кратким руководством.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с примерами кода из этого и других кратких руководств, которые демонстрируют перевод и определение языка, а также с другими примерами проектов для API перевода текстов на сайте GitHub.
-
 > [!div class="nextstepaction"]
-> [Примеры для Node.js на сайте GitHub](https://aka.ms/TranslatorGitHub?type=&language=javascript)
+> [Примеры для Node.js на сайте GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-NodeJS)
+
+## <a name="see-also"></a>См. также
+
+Помимо определения языка, API перевода текстов можно использовать для выполнения и других задач, в частности:
+
+* [перевод текста](quickstart-nodejs-translate.md);
+* [определение языка по входным данным](quickstart-nodejs-detect.md);
+* [получение вариантов перевода](quickstart-nodejs-dictionary.md);
+* [получение списка поддерживаемых языков](quickstart-nodejs-languages.md);
+* [определение длины предложения на основе входных данных](quickstart-nodejs-sentences.md).

@@ -8,18 +8,18 @@ ms.service: data-explorer
 services: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: b0fb2cd79c0ee685ad2000c5444a84d53e462f24
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: 287b95b59b0ec2b308d3e455c4f6ffce4baf4ff7
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48868281"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50212885"
 ---
 # <a name="manage-azure-data-explorer-database-permissions"></a>Управление разрешениями баз данных обозревателя данных Azure
 
 Обозреватель данных Azure позволяет управлять доступом к базам данных и таблицам с помощью модели *управление доступом на основе ролей*. По этой модели *субъекты* (пользователи, группы и приложения) сопоставляются с *ролями*. Субъекты могут получить доступ к ресурсам в соответствии со своими назначенными ролями.
 
-В этой статье описываются доступные роли и способы назначения их субъектам.
+В этой статье описаны доступные роли и то, как назначить субъекты этим ролям с помощью портала Azure и команд управления обозревателя данных Azure.
 
 ## <a name="roles-and-permissions"></a>Роли и разрешения
 

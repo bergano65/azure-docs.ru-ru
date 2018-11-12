@@ -1,5 +1,5 @@
 ---
-title: Расширение оповещений из Log Analytcs в Azure
+title: Расширение оповещений из Log Analytics в Azure
 description: В этой статье описываются средства и API, с помощью которых можно расширить оповещения из Log Analytics в оповещения Azure.
 author: msvijayn
 services: azure-monitor
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/04/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: ed6b2fafbb3329e20985b75f55d29b52dcc5da57
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: a470299df86f6b8f7fd61279af0334d01ef94f8d
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50415708"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50957427"
 ---
 # <a name="extend-alerts-from-log-analytics-into-azure-alerts"></a>Расширение оповещений из Log Analytics в оповещения Azure
 В службе анализа журналов Azure функция оповещения заменяется на оповещения Azure. В рамках этого процесса оповещения, которые были изначально настроены в Log Analytics, будут расширены в Azure. Если вы не хотите ждать, когда они будут перенесены в Azure автоматически, то процесс инициализации можно запустить:
@@ -470,7 +470,7 @@ $response = armclient post "/subscriptions/$subscriptionId/resourceGroups/$resou
 
 - **Ошибка. Политика присутствует на уровне подписки или группы ресурсов**. ![Снимок страницы параметров оповещения портала Operations Management Suite с выделенным сообщением об ошибке политики](media/monitoring-alerts-extend-tool/ErrorPolicy.png)
 
-    Когда применяется [политика Azure](../azure-policy/azure-policy-introduction.md), она ограничивает любые ресурсы, созданные в подписке или группе ресурсов, которые содержатся в рабочей области Log Analytics (Operations Management Suite). Системе не удалось расширить оповещения в Azure или создать необходимые группы.
+    Когда применяется [политика Azure](../governance/policy/overview.md), она ограничивает любые ресурсы, созданные в подписке или группе ресурсов, которые содержатся в рабочей области Log Analytics (Operations Management Suite). Системе не удалось расширить оповещения в Azure или создать необходимые группы.
     
     Для устранения отредактируйте политику, которая вызвала ошибку *[RequestDisallowedByPolicy](../azure-resource-manager/resource-manager-policy-requestdisallowedbypolicy-error.md)*, препятствующую созданию новых ресурсов в вашей подписке или группе ресурсов, в которых содержится рабочая область. Это можно сделать с помощью портала Azure, PowerShell, Azure CLI или API. Чтобы найти соответствующую политику, из-за которой происходит ошибка, можно использовать аудит действий. Дополнительные сведения см. в статье [Просмотр журналов действий для аудита действий с ресурсами](../azure-resource-manager/resource-group-audit.md). 
     

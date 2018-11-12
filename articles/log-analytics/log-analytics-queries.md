@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: 6e587f79f0f77446ea5a61cbb989f3f1c3655e0a
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 2ab7e0c5d4a62b9c4fa0492b9bc9a19dfab36c74
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50741765"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51005059"
 ---
 # <a name="analyze-log-analytics-data-in-azure-monitor"></a>Анализ данных Log Analytics в Azure Monitor
 
@@ -32,7 +32,7 @@ ms.locfileid: "50741765"
 
 ## <a name="log-queries"></a>Запросы журнала
 
-Чтобы получить данные из Log Analytics, требуется запрос к журналам.  Чтобы указать нужные данные, вы будете использовать запрос независимо от того, что вы делаете: [анализируете данные на портале](log-analytics-log-search-portals.md), [настраиваете правило генерации оповещений](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md) для уведомления о конкретном состоянии или получаете данные с помощью [API Log Analytics](https://dev.loganalytics.io/).  В этой статье описываются запросы к журналам в Log Analytics и предоставляются основные сведения, которые необходимо знать перед их созданием.
+Чтобы получить данные из Log Analytics, требуется запрос к журналам.  Чтобы указать нужные данные, вы будете использовать запрос независимо от того, что вы делаете: [анализируете данные на портале](log-analytics-log-search-portals.md), [настраиваете правило генерации оповещений](../monitoring-and-diagnostics/alert-metric.md) для уведомления о конкретном состоянии или получаете данные с помощью [API Log Analytics](https://dev.loganalytics.io/).  В этой статье описываются запросы к журналам в Log Analytics и предоставляются основные сведения, которые необходимо знать перед их созданием.
 
 
 
@@ -41,12 +41,12 @@ ms.locfileid: "50741765"
 Ниже приведены различные способы использования запросов к журналам в Log Analytics.
 
 - **Порталы.** На [портале Azure](log-analytics-log-search-portals.md) можно выполнять интерактивный анализ данных журнала.  Так вы можете изменить запрос и анализировать результаты в различных форматах и визуализациях.  
-- **Правила генерации оповещений.** [Правила генерации оповещений](log-analytics-alerts.md) заранее выявляют проблемы с данными в рабочей области.  Каждое правило генерации оповещений основано на поиске по журналам, который автоматически выполняется через определенные интервалы.  Результаты проверяются, чтобы определить, следует ли создавать оповещение.
+- **Правила генерации оповещений.** [Правила генерации оповещений](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md) заранее выявляют проблемы с данными в рабочей области.  Каждое правило генерации оповещений основано на поиске по журналам, который автоматически выполняется через определенные интервалы.  Результаты проверяются, чтобы определить, следует ли создавать оповещение.
 - **Панели мониторинга.** Результаты любого запроса можно закрепить на [панели мониторинга Azure](), что даст вам возможность визуализировать данные журналов и метрик вместе и при необходимости использовать совместно с другими пользователями Azure. 
 - **Представления.**  Вы можете создавать визуализации данных, которые добавлены на панели мониторинга пользователя, с помощью [конструктора представлений](log-analytics-view-designer.md).  Запросы к журналам предоставляют данные, используемые [плитками](log-analytics-view-designer-tiles.md) и [элементами визуализации](log-analytics-view-designer-parts.md) в каждом просмотре.  
 - **Экспорт.**  Когда вы экспортируете данные из рабочей области Log Analytics в Excel или [Power BI](log-analytics-powerbi.md), вы создаете запрос к журналам для определения экспортируемых данных.
 - **PowerShell.** Вы можете запустить скрипт PowerShell из командной строки или модуль Runbook службы автоматизации Azure, использующий командлет [Get-AzureRmOperationalInsightsSearchResults](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/get-azurermoperationalinsightssearchresults?view=azurermps-4.0.0), для получения данных из Log Analytics.  Для этого командлета требуется запрос, чтобы определить извлекаемые данные.
-- **API Log Analytics.**  [API поиска по журналам службы Log Analytics](log-analytics-log-search-api.md) позволяет любому клиенту REST API извлекать данные из рабочей области.  Запрос API включает запрос, который выполняется в Log Analytics, чтобы определить извлекаемые данные.
+- **API Log Analytics.**  [API поиска по журналам службы Log Analytics](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md) позволяет любому клиенту REST API извлекать данные из рабочей области.  Запрос API включает запрос, который выполняется в Log Analytics, чтобы определить извлекаемые данные.
 
 ![Поиск по журналам](media/log-analytics-queries/queries-overview.png)
 

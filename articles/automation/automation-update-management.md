@@ -6,15 +6,15 @@ ms.service: automation
 ms.component: update-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 10/25/2018
+ms.date: 11/05/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 90a5be07b6939df1850bb1574c71254bb896f004
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: 6d981d9dc7433d957819d0beb6aa6265882f1890
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50093839"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51037402"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "50093839"
 
 ![Поток процесса управления обновлениями](media/automation-update-management/update-mgmt-updateworkflow.png)
 
-Управление обновлениями можно использовать для внутренних подключенных компьютеров в нескольких подписках одного и того же клиента. Чтобы управлять компьютерами другого клиента, их следует подключить как [сторонние](automation-onboard-solutions-from-automation-account.md#onboard-a-non-azure-machine).
+Управление обновлениями можно использовать для внутренних подключенных компьютеров в нескольких подписках одного и того же клиента.
 
 Исправление для оценки компьютеров под управлением Linux появиться через 2–3 часа после выпуска CVE.  Исправление для оценки компьютеров под управлением Windows появиться через 12–15 часов после выпуска.
 
