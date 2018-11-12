@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 07/13/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: a197b3c7aa423323f984a793851a458733391e33
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 08d9566c3ce8f486465f0ed7fb5aab4419e592d8
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50243118"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228595"
 ---
 #  <a name="use-a-saml-20-identity-provider-idp-for-single-sign-on"></a>Использование поставщика удостоверений (IdP) SAML 2.0 для единого входа
 
@@ -167,7 +167,7 @@ ms.locfileid: "50243118"
 ## <a name="install-windows-powershell-for-sign-on-with-saml-20-identity-provider"></a>Установка Windows PowerShell для единого входа с помощью поставщика удостоверений SAML 2.0
 После настройки поставщика удостоверений SAML 2.0 для единого входа с помощью Azure AD далее необходимо загрузить и установить модуль Azure Active Directory для Windows PowerShell. После установки эти командлеты будут использоваться для настройки доменов Azure AD в качестве федеративных доменов.
 
-Модуль Azure Active Directory для Windows PowerShell — это загружаемый компонент для управления данными организации в Azure AD. Он устанавливает набор командлетов в Windows PowerShell, которые служат для настройки единого входа в Azure AD и далее во все облачные службы, на которые вы подписаны. Инструкции по скачиванию и установке командлетов см. в разделе [http://technet.microsoft.com/library/jj151815.aspx](http://technet.microsoft.com/library/jj151815.aspx).
+Модуль Azure Active Directory для Windows PowerShell — это загружаемый компонент для управления данными организации в Azure AD. Он устанавливает набор командлетов в Windows PowerShell, которые служат для настройки единого входа в Azure AD и далее во все облачные службы, на которые вы подписаны. Инструкции по скачиванию и установке командлетов см. в разделе [http://technet.microsoft.com/library/jj151815.aspx](https://technet.microsoft.com/library/jj151815.aspx).
 
 ## <a name="set-up-a-trust-between-your-saml-identity-provider-and-azure-ad"></a>Настройка отношения доверия между поставщиком удостоверений SAML и Azure AD
 Перед настройкой федерации в домене Azure AD в нем должен быть настроен личный домен. Установить федерацию с доменом по умолчанию, предоставленным корпорацией Майкрософт, нельзя. Домен по умолчанию от корпорации Майкрософт заканчивается на onmicrosoft.com.
@@ -190,12 +190,12 @@ ms.locfileid: "50243118"
 
     `<IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"> <KeyDescriptor use="signing"> <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#"> <X509Data> <X509Certificate>MIIC5jCCAc6gAwIBAgIQLnaxUPzay6ZJsC8HVv/QfTANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwHhcNMTMxMTA0MTgxMzMyWhcNMTQxMTA0MTgxMzMyWjAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwMdVLTr5YTSRp+ccbSpuuFeXMfABD9mVCi2wtkRwC30TIyPdORz642MkurdxdPCWjwgJ0HW6TvXwcO9afH3OC5V//wEGDoNcI8PV4enCzTYFe/h//w51uqyv48Fbb3lEXs+aVl8155OAj2sO9IX64OJWKey82GQWK3g7LfhWWpp17j5bKpSd9DBH5pvrV+Q1ESU3mx71TEOvikHGCZYitEPywNeVMLRKrevdWI3FAhFjcCSO6nWDiMqCqiTDYOURXIcHVYTSof1YotkJ4tG6mP5Kpjzd4VQvnR7Pjb47nhIYG6iZ3mR1F85Ns9+hBWukQWNN2hcD/uGdPXhpdMVpBAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAK7h7jF7wPzhZ1dPl4e+XMAr8I7TNbhgEU3+oxKyW/IioQbvZVw1mYVCbGq9Rsw4KE06eSMybqHln3w5EeBbLS0MEkApqHY+p68iRpguqa+W7UHKXXQVgPMCpqxMFKonX6VlSQOR64FgpBme2uG+LJ8reTgypEKspQIN0WvtPWmiq4zAwBp08hAacgv868c0MM4WbOYU0rzMIR6Q+ceGVRImlCwZ5b7XKp4mJZ9hlaRjeuyVrDuzBkzROSurX1OXoci08yJvhbtiBJLf3uPOJHrhjKRwIt2TnzS9ElgFZlJiDIA26Athe73n43CT0af2IG6yC7e6sK4L3NEXJrwwUZk=</X509Certificate> </X509Data> </KeyInfo> </KeyDescriptor>` 
 
-Дополнительные сведения о командлете Set-MsolDomainAuthentication см. в разделе [http://technet.microsoft.com/library/dn194112.aspx](http://technet.microsoft.com/library/dn194112.aspx).
+Дополнительные сведения о командлете Set-MsolDomainAuthentication см. в разделе [http://technet.microsoft.com/library/dn194112.aspx](https://technet.microsoft.com/library/dn194112.aspx).
 
 >[!NOTE]
 >Использовать атрибут "$ecpUrl = "https://WS2012R2-0.contoso.com/PAOS"" следует только в том случае, если для поставщика удостоверений настраивается расширение ECP. Клиенты Exchange Online, исключая Outlook Web Application (OWA), используют активную конечную точку на основе метода POST. Если служба токенов безопасности SAML 2.0 реализует активную конечную точку, аналогичную реализации активной конечной точки с помощью расширения ECP для Shibboleth, эти полнофункциональные клиенты могут взаимодействовать со службой Exchange Online.
 
-После настройки федерации можно вернуться к управляемой реализации (без поддержки федерации), однако на применение этого изменения требуется до двух часов, а каждому пользователю необходимо назначить новый случайный пароль для входа в облачные службы. Переключение к управляемой реализации может потребоваться в некоторых сценариях для сброса ошибочных параметров. Дополнительные сведения о преобразовании доменов см. в разделе [http://msdn.microsoft.com/library/windowsazure/dn194122.aspx](http://msdn.microsoft.com/library/windowsazure/dn194122.aspx).
+После настройки федерации можно вернуться к управляемой реализации (без поддержки федерации), однако на применение этого изменения требуется до двух часов, а каждому пользователю необходимо назначить новый случайный пароль для входа в облачные службы. Переключение к управляемой реализации может потребоваться в некоторых сценариях для сброса ошибочных параметров. Дополнительные сведения о преобразовании доменов см. в разделе [http://msdn.microsoft.com/library/windowsazure/dn194122.aspx](https://msdn.microsoft.com/library/windowsazure/dn194122.aspx).
 
 ## <a name="provision-user-principals-to-azure-ad--office-365"></a>Подготовка субъектов-пользователей для Azure AD и Office 365
 Чтобы пользователи могли проходить аутентификацию в Office 365, сначала нужно подготовить в Azure AD субъектов-пользователей, соответствующих утверждению в SAML 2.0. Если эти субъекты-пользователи заранее не известны службе Azure AD, их нельзя использовать для федеративного входа. Подготовить субъектов-пользователей можно с помощью Azure AD Connect или Windows PowerShell.
@@ -218,7 +218,7 @@ ms.locfileid: "50243118"
         -LicenseAssignment "samlp2test:ENTERPRISEPACK" 
         -UsageLocation "US" ` 
 
-Дополнительные сведения об извлечении с помощью New-MsolUser см. в разделе [http://technet.microsoft.com/library/dn194096.aspx](http://technet.microsoft.com/library/dn194096.aspx).
+Дополнительные сведения об извлечении с помощью New-MsolUser см. в разделе [http://technet.microsoft.com/library/dn194096.aspx](https://technet.microsoft.com/library/dn194096.aspx).
 
 >[!NOTE]
 >Значение UserPrinciplName должно совпадать со значением, которое будет отправляться для атрибута IDPEmail в утверждении SAML 2.0, а значение ImmutableID должно совпадать со значением, отправляемым в утверждении NameID.
