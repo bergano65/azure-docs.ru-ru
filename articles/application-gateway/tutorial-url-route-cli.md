@@ -1,36 +1,35 @@
 ---
 title: Руководство. Маршрутизация веб-трафика на основе URL-адресов с помощью Azure CLI
-description: Узнайте, как маршрутизировать веб-трафик на основе URL-адреса в определенные масштабируемые пулы серверов с помощью Azure CLI.
+description: В этом руководстве вы узнаете, как маршрутизировать веб-трафик на основе URL-адреса в определенные масштабируемые пулы серверов с помощью Azure CLI.
 services: application-gateway
 author: vhorne
-manager: jpconnock
 ms.service: application-gateway
 ms.topic: tutorial
-ms.workload: infrastructure-services
 ms.date: 10/25/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: f683d63683e903d947d0789a16a8efa48196d36a
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: 68532ec4ae7e6d6b496ece8d08755555f756a60e
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50026200"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50413457"
 ---
 # <a name="tutorial-route-web-traffic-based-on-the-url-using-the-azure-cli"></a>Руководство. Маршрутизация веб-трафика на основе URL-адресов с помощью Azure CLI
 
-С помощью Azure CLI можно настраивать маршрутизацию веб-трафика в определенные серверные пулы на основе URL-адреса, который используется для доступа к приложению. В рамках этого руководства вы создадите [шлюз приложений Azure](application-gateway-introduction.md) с тремя серверными пулами, в которых используется служба [Масштабируемые наборы виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) У каждого серверного пула свое назначение. Например, они могут использоваться для данных, изображений и видео.  Если направлять трафик в отдельные пулы, пользователи будут получать нужную информацию в нужное время.
+Как ИТ-администратор, управляющий веб-трафиком, вы хотите предоставить своим клиентам или пользователям возможность получения необходимой информации как можно быстрее. Одним из способов оптимизации их условий работы является маршрутизация различных видов веб-трафика к другим ресурсам сервера. В этом руководстве показано, как использовать Azure CLI для установки и настройки маршрутизации в Шлюзе приложений для различных типов трафика приложения. После этого трафик будет направляться в другие пулы серверов в зависимости от URL-адреса.
 
-Чтобы включить маршрутизацию трафика, создайте [правила маршрутизации](application-gateway-url-route-overview.md), назначенные прослушивателям, которые ожидают передачи данных через определенные порты. После этого веб-трафик будет поступать на надлежащие серверы в пуле.
+![Пример маршрутизации для URL-адресов](./media/tutorial-url-route-cli/scenario.png)
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Настройка сети
-> * создание прослушивателей, сопоставления URL-путей и правил;
-> * создание масштабируемых серверных пулов.
-
-![Пример маршрутизации для URL-адресов](./media/tutorial-url-route-cli/scenario.png)
+> * Создание группы ресурсов для необходимых сетевых ресурсов.
+> * Создание сетевых ресурсов.
+> * Создание шлюза приложений для трафика, поступающего из приложения.
+> * Указание пулов серверов и правил маршрутизации для различных типов трафика.
+> * Создание масштабируемого набора для каждого пула, чтобы пул мог автоматически масштабироваться.
+> * Выполнение теста, чтобы проверить, что разные типы трафика направляются в необходимый пул.
 
 Вы также можете выполнить инструкции из этого руководства, используя [Azure PowerShell](tutorial-url-route-powershell.md) или [портал Azure](create-url-route-portal.md).
 
@@ -42,17 +41,17 @@ ms.locfileid: "50026200"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов — это логический контейнер, в котором выполняется развертывание ресурсов Azure и управление ими. Создайте группу ресурсов, используя команду [az group create](/cli/azure/group#create).
+Группа ресурсов — это логический контейнер, в котором выполняется развертывание ресурсов Azure и управление ими. Создайте группу ресурсов с помощью команды `az group create`.
 
 В следующем примере создается группа ресурсов с именем *myResourceGroupAG* в расположении *eastus*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az group create --name myResourceGroupAG --location eastus
 ```
 
-## <a name="create-network-resources"></a>Создание сетевых ресурсов 
+## <a name="create-network-resources"></a>Создание сетевых ресурсов
 
-Создайте виртуальную сеть с именем *myVNet* и подсеть *myAGSubnet* с помощью команды [az network vnet create](/cli/azure/network/vnet#az-net). Затем добавьте подсеть с именем *myBackendSubnet*, необходимую для внутренних серверов, используя команду [az network vnet subnet create](/cli/azure/network/vnet/subnet#az-network_vnet_subnet_create). Создайте общедоступный IP-адрес с именем *myAGPublicIPAddress*, используя команду [az network public-ip create](/cli/azure/network/public-ip#az-network_public_ip_create).
+Создайте виртуальную сеть с именем *myVNet* и подсеть *myAGSubnet* с помощью команды `az network vnet create`. Затем добавьте подсеть с именем *myBackendSubnet*, необходимую для внутренних серверов, используя команду `az network vnet subnet create`. Создайте общедоступный IP-адрес *myAGPublicIPAddress*, используя команду `az network public-ip create`.
 
 ```azurecli-interactive
 az network vnet create \
@@ -74,9 +73,9 @@ az network public-ip create \
   --name myAGPublicIPAddress
 ```
 
-## <a name="create-the-application-gateway-with-url-map"></a>Создание шлюза приложений с сопоставлением URL-адресов
+## <a name="create-the-app-gateway-with-a-url-map"></a>Создание шлюза приложений путем сопоставления URL-адресов
 
-Выполните команду [az network application-gateway create](/cli/azure/network/application-gateway#create), чтобы создать шлюз приложений myAppGateway. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myAGPublicIPAddress*, созданным ранее. 
+Используйте команду `az network application-gateway create` для создания шлюза приложений с именем *myAppGateway*. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myAGPublicIPAddress*, созданным ранее.
 
 ```azurecli-interactive
 az network application-gateway create \
@@ -96,16 +95,18 @@ az network application-gateway create \
 
  Создание шлюза приложений может занять несколько минут. Когда шлюз приложений будет создан, вы увидите такие новые функции:
 
-- *appGatewayBackendPool* — шлюз приложений должен иметь по крайней мере один внутренний пул адресов.
-- *appGatewayBackendHttpSettings* — указывает, что для обмена данными используются порт 80 и протокол HTTP.
-- *appGatewayHttpListener* — прослушиватель по умолчанию, связанный с *appGatewayBackendPool*.
-- *appGatewayFrontendIP* — назначает адрес *myAGPublicIPAddress* для прослушивателя *appGatewayHttpListener*.
-- *rule1* — правило маршрутизации по умолчанию, связанное с прослушивателем *appGatewayHttpListener*.
 
+|Функция  |ОПИСАНИЕ  |
+|---------|---------|
+|appGatewayBackendPool     |Для шлюза приложений необходимо наличие по крайней мере одного внутреннего пула адресов.|
+|appGatewayBackendHttpSettings     |Указывает, что для обмена данными используются порт 80 и протокол HTTP.|
+|appGatewayHttpListener     |Прослушиватель по умолчанию, связанный с appGatewayBackendPool.|
+|appGatewayFrontendIP     |Назначает адрес myAGPublicIPAddress для прослушивателя appGatewayHttpListener.|
+|rule1     |Правило маршрутизации по умолчанию, связанное с прослушивателем appGatewayHttpListener.|
 
-### <a name="add-image-and-video-backend-pools-and-port"></a>Добавление внутреннего порта и внутренних пулов для изображений и видео
+### <a name="add-image-and-video-backend-pools-and-a-port"></a>Добавление внутреннего порта и внутренних пулов для изображений и видео
 
-Добавьте внутренние пулы с именами *imagesBackendPool* и *videoBackendPool* в шлюз приложений с помощью [az network application-gateway address-pool create](/cli/azure/network/application-gateway#az-network_application_gateway_address-pool_create). Интерфейсный порт для пулов можно добавить при помощи [az network application-gateway frontend-port create](/cli/azure/network/application-gateway#az-network_application_gateway_frontend_port_create). 
+Добавьте внутренние пулы с именами *imagesBackendPool* и *videoBackendPool* в шлюз приложений с помощью команды `az network application-gateway address-pool create`. Добавьте серверный порт для пулов, используя команду `az network application-gateway frontend-port create`.
 
 ```azurecli-interactive
 az network application-gateway address-pool create \
@@ -125,9 +126,9 @@ az network application-gateway frontend-port create \
   --name port8080
 ```
 
-### <a name="add-backend-listener"></a>Добавление серверного прослушивателя
+### <a name="add-a-backend-listener"></a>Добавление серверного прослушивателя
 
-Добавьте серверный прослушиватель с именем *backendListener*, необходимый для маршрутизации трафика, при помощи [az network application-gateway http-listener create](/cli/azure/network/application-gateway#az-network_application_gateway_http_listener_create).
+Добавьте серверный прослушиватель с именем *backendListener*, необходимый для маршрутизации трафика, используя команду `az network application-gateway http-listener create`.
 
 
 ```azurecli-interactive
@@ -139,9 +140,9 @@ az network application-gateway http-listener create \
   --gateway-name myAppGateway
 ```
 
-### <a name="add-url-path-map"></a>Добавление сопоставления URL-путей
+### <a name="add-a-url-path-map"></a>Добавление сопоставления URL-путей
 
-Сопоставления URL-путей гарантируют, что трафик с определенных URL-адресов маршрутизируется в определенные внутренние пулы. Создайте сопоставления URL-путей с именами *imagePathRule* и *videoPathRule* с помощью команд [az network application-gateway url-path-map create](/cli/azure/network/application-gateway#az-network_application_gateway_url_path_map_create) и [az network application-gateway url-path-map rule create](/cli/azure/network/application-gateway#az-network_application_gateway_url_path_map_rule_create).
+Сопоставления URL-путей гарантируют, что трафик с определенных URL-адресов маршрутизируется в определенные внутренние пулы. Создайте сопоставление URL-путей с именем *imagePathRule* и *videoPathRule*, используя команды `az network application-gateway url-path-map create` и `az network application-gateway url-path-map rule create`.
 
 ```azurecli-interactive
 az network application-gateway url-path-map create \
@@ -164,9 +165,9 @@ az network application-gateway url-path-map rule create \
   --address-pool videoBackendPool
 ```
 
-### <a name="add-routing-rule"></a>Добавление правила маршрутизации
+### <a name="add-a-routing-rule"></a>Добавление правила маршрутизации
 
-Правило маршрутизации связывает сопоставления URL-адресов с созданным прослушивателем. Добавьте правило с именем *rule2* с помощью команды [az network application-gateway rule create](/cli/azure/network/application-gateway#az-network_application_gateway_rule_create).
+Правило маршрутизации связывает сопоставления URL-адресов с созданным прослушивателем. Добавьте правило с именем *rule2*, используя команду `az network application-gateway rule create`.
 
 ```azurecli-interactive
 az network application-gateway rule create \
@@ -179,7 +180,7 @@ az network application-gateway rule create \
   --address-pool appGatewayBackendPool
 ```
 
-## <a name="create-virtual-machine-scale-sets"></a>Создание масштабируемых наборов виртуальных машин
+## <a name="create-vm-scale-sets"></a>Создание масштабируемых наборов виртуальных машин
 
 В рамках этого руководства вы создадите три масштабируемых набора виртуальных машин, которые поддерживают три созданных внутренних пула. Вы создадите масштабируемые наборы с именами *myvmss1*, *myvmss2* и *myvmss3*. Каждый масштабируемый набор содержит два экземпляра виртуальной машины, на которых устанавливаются службы NGINX.
 
@@ -233,7 +234,7 @@ done
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду [az network public-ip show](/cli/azure/network/public-ip#az-network_public_ip_show). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например *http://40.121.222.19*, *http://40.121.222.19:8080/images/test.htm* или *http://40.121.222.19:8080/video/test.htm*.
+Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду az network public-ip show. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например *http://40.121.222.19*, *http://40.121.222.19:8080/images/test.htm* или *http://40.121.222.19:8080/video/test.htm*.
 
 ```azurecli-interactive
 az network public-ip show \
@@ -262,13 +263,6 @@ az group delete --name myResourceGroupAG --location eastus
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-
-Из этого руководства вы узнали, как выполнить следующие задачи:
-
-> [!div class="checklist"]
-> * Настройка сети
-> * создание прослушивателей, сопоставления URL-путей и правил;
-> * создание масштабируемых серверных пулов.
 
 > [!div class="nextstepaction"]
 > [Создание шлюза приложений с перенаправлением на основе URL-пути](./tutorial-url-redirect-cli.md)

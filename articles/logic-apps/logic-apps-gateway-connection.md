@@ -3,19 +3,18 @@ title: Доступ к локальным источникам данных в A
 description: Создание и настройка локального шлюза данных для доступа к локальным источникам данных из приложений логики
 services: logic-apps
 ms.service: logic-apps
+ms.suite: integration
 author: ecfan
 ms.author: estfan
-manager: jeconnoc
+ms.reviewer: arthii, LADocs
 ms.topic: article
-ms.date: 07/20/2018
-ms.reviewer: yshoukry, LADocs
-ms.suite: integration
-ms.openlocfilehash: 65c7e03b349314ad61fa5f1ea8322f4d1352b8e6
-ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
+ms.date: 10/01/2018
+ms.openlocfilehash: e8e8d85d2c95c1dda7271de72491594562b7d3c1
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39145695"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50413712"
 ---
 # <a name="connect-to-data-sources-on-premises-from-azure-logic-apps-with-on-premises-data-gateway"></a>Подключение к локальным источникам данных из Azure Logic Apps с помощью локального шлюза данных
 
@@ -34,17 +33,16 @@ ms.locfileid: "39145695"
 
 * Установка шлюза еще не связана с ресурсом шлюза в Azure. Установку шлюза можно связать только с одним ресурсом шлюза, что происходит при создании ресурса шлюза и выборе установки шлюза. Эта привязка делает установку шлюза недоступной для других ресурсов.
 
-* При входе на портал Azure и создании ресурса шлюза необходимо использовать ту же учетную запись входа в систему, которая была ранее использована для [установки локального шлюза данных](../logic-apps/logic-apps-gateway-install.md#requirements).
-Также необходимо использовать ту же [подписку Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption-guide/adoption-intro/subscription-explainer), которая использовалась для установки шлюза. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">получите бесплатную учетную запись Azure</a>.
+* При входе на портал Azure и создании ресурса шлюза необходимо использовать ту же учетную запись входа в систему, которая была использовалась для [установки локального шлюза данных](../logic-apps/logic-apps-gateway-install.md#requirements), и ту же [подписку Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption-guide/adoption-intro/subscription-explainer), которая использовалась для установки этого шлюза. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">получите бесплатную учетную запись Azure</a>.
 
-* Для создания и обслуживания ресурса шлюза на портале Azure [учетная запись службы Windows](../logic-apps/logic-apps-gateway-install.md#windows-service-account) должна иметь по крайней мере разрешения **участника**. Локальный шлюз данных работает как служба Windows и настроен для использования `NT SERVICE\PBIEgwService` в качестве учетных данных входа службы Windows. 
+* Для создания и обслуживания ресурса шлюза на портале Azure [учетной записи службы Windows](../logic-apps/logic-apps-gateway-install.md#windows-service-account) требуются по крайней мере разрешения **участника**. Локальный шлюз данных работает как служба Windows и настроен для использования `NT SERVICE\PBIEgwService` в качестве учетных данных входа службы Windows. 
 
   > [!NOTE]
   > Учетная запись службы Windows отличается от учетной записи, которая использовалась для подключения к локальным источникам данных, и от рабочей или учебной учетной записи Azure, которая использовалась для входа в облачные службы.
 
 ## <a name="download-and-install-gateway"></a>Скачивание и установка шлюза
 
-Перед продолжением действий, описанных в этой статье, необходимо иметь уже установленный шлюз на локальном компьютере.
+Прежде чем выполнить действия, описанные в этой статье, убедитесь, что шлюз установлен на локальном компьютере.
 Если это еще не сделано, выполните следующие действия, чтобы [скачать и установить локальный шлюз данных](../logic-apps/logic-apps-gateway-install.md). 
 
 <a name="create-gateway-resource"></a>
@@ -155,7 +153,7 @@ ms.locfileid: "39145695"
 ## <a name="get-support"></a>Получение поддержки
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](http://aka.ms/logicapps-wish).
+* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
