@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/18/2018
 ms.author: pbutlerm
-ms.openlocfilehash: f12a15a0d739ae6e98be3871fa8bb4104f49565c
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 74cde720af012b3355b813cf6da2b2bdf10b9b8e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48808550"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51257213"
 ---
 # <a name="publish-a-cortana-intelligence-offer-using-the-cloud-partner-portal"></a>Публикация предложения Cortana Intelligence с помощью портала Cloud Partner
 
@@ -29,7 +29,7 @@ ms.locfileid: "48808550"
 
 К порталу Cloud Partner поддерживается доступ на основе ролей, что позволяет участникам совместно работать над публикацией предложения. Дополнительные сведения см. в статье [Managing users on cloud partner portal](./cloud-partner-portal-manage-users.md) (Управление пользователями на портале Cloud Partner).
 
-Прежде чем опубликовать предложение от имени учетной записи издателя, одному из пользователей с ролью \"владельца\" необходимо согласиться с [условиями использования](https://azure.microsoft.com/support/legal/website-terms-of-use/), [заявлением о конфиденциальности Майкрософт](http://www.microsoft.com/privacystatement/default.aspx) и [соглашением по программе сертификации Microsoft Azure](https://azure.microsoft.com/support/legal/marketplace/certified-program-agreement/).
+Прежде чем опубликовать предложение от имени учетной записи издателя, одному из пользователей с ролью \"владельца\" необходимо согласиться с [условиями использования](https://azure.microsoft.com/support/legal/website-terms-of-use/), [заявлением о конфиденциальности Майкрософт](https://www.microsoft.com/privacystatement/default.aspx) и [соглашением по программе сертификации Microsoft Azure](https://azure.microsoft.com/support/legal/marketplace/certified-program-agreement/).
 
 ## <a name="to-start-creating-a-cortana-inteligence-offer"></a>Начало создания предложения Cortana Inteligence
 
@@ -216,7 +216,7 @@ ms.locfileid: "48808550"
 
         - [Neal Analytics Inventory Optimization](https://appsource.microsoft.com/product/web-apps/neal_analytics.8066ad01-1e61-40cd-bd33-9b86c65fa73a?tab=Overview&tag=CISHome)
 
-- Для варианта **Request for trial** (Запрос пробной версии), известный также как **пробное использование под руководством партнера (Partner Led Trials / PLT)**, клиенты должны заполнить форму контактных сведений для последующего взаимодействия с партнером. Партнер отвечает и предоставляет демонстрационную или пробную версию приложения. Дополнительные сведения см. в видео [AppSource trial experience walkthrough](http://aka.ms/trialexperienceforwebapps) (Обзор возможностей пробного использования AppSource) с общим обзором.
+- Для варианта **Request for trial** (Запрос пробной версии), известный также как **пробное использование под руководством партнера (Partner Led Trials / PLT)**, клиенты должны заполнить форму контактных сведений для последующего взаимодействия с партнером. Партнер отвечает и предоставляет демонстрационную или пробную версию приложения. Дополнительные сведения см. в видео [AppSource trial experience walkthrough](https://aka.ms/trialexperienceforwebapps) (Обзор возможностей пробного использования AppSource) с общим обзором.
 
 >[!Note]
 >Согласно результатам, **пробное использование под руководством клиента** имеет более высокий потенциал привлечения потенциальных клиентов, чем **пробное использование под руководством партнера**.
@@ -296,7 +296,7 @@ ms.locfileid: "48808550"
 
 Чтобы получить дополнительные сведения о системе CRM, которую планируется использовать, выберите одну из следующих ссылок на поддерживаемые системы.
 
--   [Azure Table](./cloud-partner-portal-lead-management-instructions-azure-table.md) (Таблица Azure)
+-   [Таблица Azure](./cloud-partner-portal-lead-management-instructions-azure-table.md)
 -   [Marketo](./cloud-partner-portal-lead-management-instructions-marketo.md)
 -   [Microsoft Dynamics CRM](./cloud-partner-portal-lead-management-instructions-dynamics.md)
 -   [Salesforce](./cloud-partner-portal-lead-management-instructions-salesforce.md)

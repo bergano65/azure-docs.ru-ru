@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 10/19/2018
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Data Box Edge so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: ba77fc4596d9bb245b3cea2538804b1816e9ad14
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: e970f7cc0d4c4620f2da69286be36d0c22e0d747
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49466977"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51260369"
 ---
 # <a name="tutorial-transform-data-with-azure-data-box-edge-preview"></a>Руководство по преобразованию данных с помощью Azure Data Box Edge (предварительная версия)
 
@@ -223,6 +223,6 @@ ms.locfileid: "49466977"
 Перейдите к следующему руководству, чтобы узнать, как администрировать службу Data Box Edge.
 
 > [!div class="nextstepaction"]
-> [Use local web UI to administer a Data Box Edge](http://aka.ms/dbg-docs) (Использование локального веб-интерфейса для администрирования Data Box Edge)
+> [Use local web UI to administer a Data Box Edge](https://aka.ms/dbg-docs) (Использование локального веб-интерфейса для администрирования Data Box Edge)
 
 

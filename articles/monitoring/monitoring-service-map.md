@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/28/2018
 ms.author: magoedte
-ms.openlocfilehash: 32cd373499a1ac6dd8cc02e666b0f6ff70688157
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 0f3bc7302bc28a9bef288e5e5e0b9b891a08b8dd
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50215265"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51252927"
 ---
 # <a name="using-service-map-solution-in-azure"></a>Использование решения "Сопоставление служб" в Azure
 Служба схемы услуги автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. Схема услуги позволяет рассматривать серверы как взаимосвязанные системы, предоставляющие важные услуги. Сопоставление служб отображает сведения о подключениях между серверами, процессами, задержками во входящих и выходящих подключениях и портами в любой подключенной по протоколу TCP архитектуре без дополнительной настройки. Пользователям требуется только установить агент.
@@ -277,7 +277,7 @@ Linux:
 ![Область отслеживания изменений на компьютере](media/monitoring-service-map/machine-updates.png)
 
 ## <a name="log-analytics-records"></a>Записи Log Analytics
-Данные инвентаризации компьютеров и процессов из схемы услуги можно получить, выполнив [поиск](../log-analytics/log-analytics-log-searches.md) в Log Analytics. Эти данные используются в различных сценариях, таких как планирование миграции, анализ емкости, обнаружение и устранение проблем с производительностью по требованию.
+Данные инвентаризации компьютеров и процессов из схемы услуги можно получить, выполнив [поиск](../log-analytics/log-analytics-queries.md) в Log Analytics. Эти данные используются в различных сценариях, таких как планирование миграции, анализ емкости, обнаружение и устранение проблем с производительностью по требованию.
 
 Для каждого уникального компьютера и процесса создается одна запись в час. Кроме того, записи создаются во время запуска компьютера или процесса, а также при подключении их к схеме услуги. В таблице ниже приведены свойства этих записей. Поля и значения в событиях ServiceMapComputer_CL сопоставляются с полями ресурса Machine (Компьютер) в API ServiceMap Azure Resource Manager. Поля и значения в событиях ServiceMapProcess_CL сопоставляются с полями ресурса Process (Процесс) в API ServiceMap Azure Resource Manager. Поле ResourceName_s совпадает с полем имени в соответствующем ресурсе Resource Manager. 
 
@@ -504,7 +504,7 @@ let remoteMachines = remote | summarize by RemoteMachine;
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-Узнайте больше о [поиске по журналам](../log-analytics/log-analytics-log-searches.md) в Log Analytics для получения данных, собранных с помощью схемы услуги.
+Узнайте больше о [поиске по журналам](../log-analytics/log-analytics-queries.md) в Log Analytics для получения данных, собранных с помощью схемы услуги.
 
 
 ## <a name="troubleshooting"></a>Устранение неполадок

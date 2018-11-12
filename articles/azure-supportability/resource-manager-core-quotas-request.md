@@ -7,18 +7,18 @@ ms.date: 6/13/2018
 ms.topic: article
 ms.service: microsoft-docs
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
-ms.openlocfilehash: 7456785815dbefb2436713814965d90ba0e789ee
-ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
+ms.openlocfilehash: 1be05ac7216a65922927b94d1cc4ba2a893433b2
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39037238"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51250991"
 ---
 # <a name="resource-manager-vcpu-quota-increase-requests"></a>Запросы на увеличение квоты виртуальных ЦП Resource Manager
 
 Квоты виртуальных ЦП Resource Manager применяются на уровне региона и семейства SKU.
-Дополнительные сведения о применении квот доступны на странице [Подписка Azure, границы, квоты и ограничения службы](http://aka.ms/quotalimits).
-Чтобы узнать больше о семействах SKU, вы можете сравнить затраты и производительность на странице [Цены на виртуальные машины Windows](http://aka.ms/pricingcompute).
+Дополнительные сведения о применении квот доступны на странице [Подписка Azure, границы, квоты и ограничения службы](https://aka.ms/quotalimits).
+Чтобы узнать больше о семействах SKU, вы можете сравнить затраты и производительность на странице [Цены на виртуальные машины Windows](https://aka.ms/pricingcompute).
 
 Чтобы запросить увеличение квоты, следуйте инструкциям ниже, используя для создания запроса на обслуживание колонку Azure "Использование + квота", доступную на портале Azure. 
 

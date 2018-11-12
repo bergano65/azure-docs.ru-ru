@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 10/29/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 536c173cd2bc3c32d9a205a5b4dff22cc987aaa4
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: f6b93f41a85ae3e87965d4e09e8ef7479f72617b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50214619"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51247591"
 ---
 # <a name="prepare-on-premises-vmware-servers-for-disaster-recovery-to-azure"></a>Подготовка локальных серверов VMware для аварийного восстановления в Azure
 
@@ -94,7 +94,7 @@ Site Recovery требуется доступ к серверам VMware, что
     - Протокол удаленного рабочего стола должен быть разрешен в разделе **Брандмауэр Windows** -> **Allowed apps and features** (Разрешенные приложения и компоненты) для сетей **домена и частных сетей**.
     - Убедитесь, что для политики сети SAN операционной системы задано значение **OnlineAll**. [Узнайте больше](https://support.microsoft.com/kb/3031135).
 - Убедитесь, что на виртуальной машине нет ожидающих установки обновлений Windows, прежде чем активировать отработку отказа. Если они есть, вы не сможете войти в виртуальную машину до завершения обновления.
-- После отработки отказа на виртуальной машине Windows Azure проверьте **диагностику загрузки**, чтобы просмотреть снимок экрана виртуальной машины. Если вы не можете подключиться к виртуальной машине, убедитесь, что она запущена, и ознакомьтесь с [рекомендациями по устранению неполадок](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx).
+- После отработки отказа на виртуальной машине Windows Azure проверьте **диагностику загрузки**, чтобы просмотреть снимок экрана виртуальной машины. Если вы не можете подключиться к виртуальной машине, убедитесь, что она запущена, и ознакомьтесь с [рекомендациями по устранению неполадок](https://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx).
 
 Чтобы подключиться к виртуальной машине Linux с помощью SSH после отработки отказа, сделайте следующее:
 

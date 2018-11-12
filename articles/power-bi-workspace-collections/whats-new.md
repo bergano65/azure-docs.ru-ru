@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.author: maghan
-ms.openlocfilehash: 0fe3116934ac4ab9b1e3fd3b5efcd6627df0ed3d
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 072fa8978bd4f08494191708d9a71c6c112a0629
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43046935"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51252059"
 ---
 # <a name="whats-new-in-power-bi-workspace-collections"></a>Новые возможности в коллекциях рабочих областей Power BI
 
@@ -72,5 +72,5 @@ ms.locfileid: "43046935"
 * Обновлен пример приложения для всех вызовов API версии **1.0** .
 * Поддержка в службе коллекций рабочих областей Power BI пакета SDK для Azure, PowerShell и интерфейса командной строки.
 * Пользователи могут экспортировать данные визуализации в **CSV**-файл.
-* Служба коллекций рабочих областей Power BI теперь поддерживает все языки и языковые стандарты, которые поддерживает платформа Microsoft Azure. Дополнительные сведения см. на странице [Microsoft Azure — Extent of Localization](http://social.technet.microsoft.com/wiki/contents/articles/4234.windows-azure-extent-of-localization.aspx) (Microsoft Azure — масштаб локализации).
+* Служба коллекций рабочих областей Power BI теперь поддерживает все языки и языковые стандарты, которые поддерживает платформа Microsoft Azure. Дополнительные сведения см. на странице [Microsoft Azure — Extent of Localization](https://social.technet.microsoft.com/wiki/contents/articles/4234.windows-azure-extent-of-localization.aspx) (Microsoft Azure — масштаб локализации).
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/11/2017
 ms.author: maghan
-ms.openlocfilehash: af8a4a9c25005925bed3ddb78ced618e669f7f09
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 514e85fc61240834d8db152ece65a4f9cce9023e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31424624"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51250413"
 ---
 # <a name="use-reportviewer-in-a-web-site-hosted-in-azure"></a>Использование ReportViewer для веб-сайта, размещенного в Azure
 > [!IMPORTANT] 
@@ -37,7 +37,7 @@ ms.locfileid: "31424624"
 * **Настроить** проверку подлинности и авторизацию
 * **Опубликовать** веб-приложение ASP.NET в Azure
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Просмотрите раздел "Общие советы и рекомендации" статьи [Бизнес-аналитика SQL Server на виртуальных машинах Azure](../classic/ps-sql-bi.md).
 
 > [!NOTE]
@@ -62,7 +62,7 @@ ms.locfileid: "31424624"
 3. Повторите шаги 1 и 2 для сборки Microsoft.ReportViewer.WebForms.
 
 ### <a name="to-get-reportviewer-language-pack"></a>Получение языкового пакета ReportViewer
-1. Установите соответствующий распространяемый пакет Microsoft Report Viewer 2012 Runtime из [Центра загрузки Майкрософт](http://go.microsoft.com/fwlink/?LinkId=317386).
+1. Установите соответствующий распространяемый пакет Microsoft Report Viewer 2012 Runtime из [Центра загрузки Майкрософт](https://go.microsoft.com/fwlink/?LinkId=317386).
 2. Выберите язык из раскрывающегося списка. После этого произойдет переход на соответствующую страницу центра загрузки.
 3. Нажмите **Скачать** , чтобы начать загрузку файла ReportViewerLP.exe.
 4. После загрузки файла ReportViewerLP.exe нажмите кнопку **Запустить**, чтобы немедленно установить пакет, или кнопку **Сохранить**, чтобы сохранить его на компьютере. При выборе кнопки **Сохранить**запомните название каталога, в который сохраняете файл.
@@ -72,7 +72,7 @@ ms.locfileid: "31424624"
 ### <a name="to-configure-for-localized-reportviewer-control"></a>Настройка локализованного элемента управления ReportViewer
 1. Загрузите и установите распространяемый пакет Microsoft Report Viewer 2012 Runtime, следуя приведенным выше инструкциям.
 2. Создайте каталог <language> в проекте и скопируйте в него файлы сборок соответствующих ресурсов. Необходимо скопировать следующие файлы сборок ресурсов: **Microsoft.ReportViewer.Webforms.Resources.dll** и **Microsoft.ReportViewer.Common.Resources.dll**. Выберите файлы сборок ресурсов и в области "Свойства" задайте для параметра **Копировать в выходной каталог** значение **Всегда копировать**.
-3. Настройте Culture и UI Culture для веб-проекта. Дополнительные сведения о настройке Culture и UI Culture для веб-страницы ASP.NET см. в статье [Практическое руководство. Установка значений Culture и UICulture для глобализации веб-страниц ASP.NET](http://go.microsoft.com/fwlink/?LinkId=237461).
+3. Настройте Culture и UI Culture для веб-проекта. Дополнительные сведения о настройке Culture и UI Culture для веб-страницы ASP.NET см. в статье [Практическое руководство. Установка значений Culture и UICulture для глобализации веб-страниц ASP.NET](https://go.microsoft.com/fwlink/?LinkId=237461).
 
 ## <a name="configuring-authentication-and-authorization"></a>Настройка проверки подлинности и авторизации
 В ReportViewer должны использоваться правильные учетные данные для проверки подлинности на сервере отчетов. Для доступа к желаемым отчетам учетные данные должны быть авторизованы сервером отчетов. Сведения о проверке подлинности приведены в техническом документе [Элемент управления средства просмотра отчетов Reporting Services и серверы отчетов на основе виртуальной машины Microsoft Azure](https://msdn.microsoft.com/library/azure/dn753698.aspx).
@@ -88,7 +88,7 @@ ms.locfileid: "31424624"
 > 
 
 ## <a name="resources"></a>Ресурсы
-[Отчеты Майкрософт](http://go.microsoft.com/fwlink/?LinkId=205399)
+[Отчеты Майкрософт](https://go.microsoft.com/fwlink/?LinkId=205399)
 
 [SQL Server Business Intelligence на виртуальных машинах Azure](../classic/ps-sql-bi.md)
 
