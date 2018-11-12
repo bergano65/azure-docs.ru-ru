@@ -15,12 +15,12 @@ ms.topic: conceptal
 ms.date: 10/02/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: e3201562bd532084e528dddbee667bbafc39ede6
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 2d3d48db5a1eb329d854d1c062d23dfaf63ad9fa
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50416547"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50963138"
 ---
 # <a name="create-a-log-analytics-workspace-with-azure-cli-20"></a>Создание рабочей области Log Analytics с помощью Azure CLI 2.0
 
@@ -131,4 +131,4 @@ Azure CLI 2.0 используется для создания ресурсов 
 * Сведения о том, как включить сбор данных из ресурсов Azure с помощью системы диагностики Azure или службы хранилища Azure, см. в статье [Сбор журналов и метрик для служб Azure для использования в Log Analytics](log-analytics-azure-storage.md).  
 * Добавьте [System Center Operations Manager в качестве источника данных](log-analytics-om-agents.md), чтобы собирать данные с агентов, которые предоставляют отчеты группе управления Operations Manager, и хранить эти данные в рабочей области Log Analytics.  
 * Подключите [Configuration Manager](log-analytics-sccm.md) для импорта данных с компьютеров, которые являются элементами коллекций в иерархии.  
-* Просмотрите список доступных [решений по управлению](log-analytics-add-solutions.md) и узнайте, как добавить решение в рабочую область или удалить его из нее.
+* Просмотрите список доступных [решений по управлению](../monitoring/monitoring-solutions.md) и узнайте, как добавить решение в рабочую область или удалить его из нее.

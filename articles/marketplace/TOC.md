@@ -1,5 +1,5 @@
-# [Документация по Azure Marketplace и AppSource](index.md)  
-
+# [Документация по Azure Marketplace и AppSource](index.md)
+## [Политики оценки и проверки](./rating-review-policies.md)   
 ## [Общие сведения об Azure Marketplace и AppSource и их преимуществах](./marketplace-publishers-guide.md)  
 
 ### [Как стать издателем в Marketplace](./become-publisher.md)  
@@ -34,6 +34,14 @@
 <!-- Following section is for Cloud Partner Portal (CPP). -->
 
 # [Облачный портал для партнеров](./cloud-partner-portal-orig/cloud-partner-portal-getting-started-with-the-cloud-partner-portal.md) 
+
+## Управление на портале
+### [Регистрация учетной записи центра разработчиков](./cloud-partner-portal-orig/cloud-partner-portal-dev-center-accounts-registration.md)
+### [Частные номера SKU](./cloud-partner-portal-orig/cloud-partner-portal-azure-private-skus.md)
+### [Руководство по SEO](./cloud-partner-portal-orig/cloud-partner-portal-seo-guidance.md)
+### [Управление профилем издателя](./cloud-partner-portal-orig/cloud-partner-portal-manage-publisher-profile.md)
+### [Управление пользователями](./cloud-partner-portal-orig/cloud-partner-portal-manage-users.md)
+### [Соответствие требованиям GDPR](./cloud-partner-portal-orig/cloud-partner-portal-gdpr.md)
 
 ## [Предложение "Виртуальная машина"](./cloud-partner-portal/virtual-machine/cpp-virtual-machine-offer.md)
 ### [Предварительные требования](./cloud-partner-portal/virtual-machine/cpp-prerequisites.md)
@@ -70,8 +78,7 @@
 ### [Automate offer publishing](./cloud-partner-portal-orig/cloud-partner-portal-automate-offer-publishing.md)
 -->
 
-## Приложения Azure
-### [Регистрация учетной записи центра разработчиков](./cloud-partner-portal-orig/cloud-partner-portal-dev-center-accounts-registration.md)
+## [Предложение приложения Azure](./cloud-partner-portal-orig/cpp-azure-app-offer.md)
 ### [Создание управляемого приложения](./cloud-partner-portal-orig/cloud-partner-portal-managed-app-publish.md)
 ### [Создание шаблона решения](./cloud-partner-portal-orig/cloud-partner-portal-solution-template-offer-publish.md)
 ### [Публикация решения по управлению](./cloud-partner-portal-orig/cloud-partner-portal-management-solution-publish.md)
@@ -79,14 +86,12 @@
 ### [Запуск предложения](./cloud-partner-portal-orig/cloud-partner-portal-managed-app-offer-go-live.md)
 ### [Обновление имеющегося предложения](./cloud-partner-portal-orig/cloud-partner-portal-managed-app-offer-update.md)
 ### [Удаление предложения](./cloud-partner-portal-orig/cloud-partner-portal-managed-app-offer-delete.md)
-### [Перенос предложений](./cloud-partner-portal-orig/cloud-partner-portal-how-to-migrate-to-the-new-cloud-partner-portal.md)
+<!-- Obsolete ### [Migrate offers](./cloud-partner-portal-orig/cloud-partner-portal-how-to-migrate-to-the-new-cloud-partner-portal.md)  -->
 
-## Приложения SaaS
+## [Предложение приложения SaaS](./cloud-partner-portal-orig/cpp-saas-app-offer.md)
 ### [Техническое руководство по публикации приложений SaaS](./cloud-partner-portal-orig/cloud-partner-portal-saas-offers-tech-publishing-guide.md)
 ### [Продажа SaaS с помощью Azure](./cloud-partner-portal-orig/cloud-partner-portal-saas-offer-subscriptions.md)
 ### [API SaaS](./cloud-partner-portal-orig/cloud-partner-portal-saas-subscription-apis.md)
-
-<!-- Legacy ## [Containers](./cloud-partner-portal-orig/cloud-partner-portal-containers-guide.md) -->
 
 ## [Предложение "Контейнеры"](./cloud-partner-portal/containers/cpp-containers-offer.md)
 ### [Предварительные требования](./cloud-partner-portal/containers/cpp-prerequisites.md)
@@ -98,6 +103,7 @@
 ### [Создание технических ресурсов для контейнера](./cloud-partner-portal/containers/cpp-create-technical-assets.md)
 ### [Публикации предложения контейнера](./cloud-partner-portal/containers/cpp-publish-offer.md)
 ### [Обновление имеющегося предложения](./cloud-partner-portal/containers/cpp-update-existing-offer.md)
+<!-- Legacy ## [Containers](./cloud-partner-portal-orig/cloud-partner-portal-containers-guide.md) -->
 
 ## [Предложение модуля IoT Edge](./cloud-partner-portal/iot-edge-module/cpp-offer-process-parts.md)
 ### [Предварительные требования](./cloud-partner-portal/iot-edge-module/cpp-prerequisites.md)
@@ -118,24 +124,16 @@
 ### [IoT Edge module FAQ](./cloud-partner-portal-orig/cloud-partner-portal-iot-edge-module-faq.md)
 -->
 
-## Управление потенциальными клиентами
-### [Настройка получения сведений о потенциальных клиентах](./cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads.md)
-### [Таблица Azure](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-azure-table.md)
-### [Dynamics](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics.md)
-### [Конечная точка HTTPS](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-https.md)
-### [Marketo](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-marketo.md)
-### [Salesforce](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-salesforce.md)
-
 <!-- ## [Cortana Intelligence](./cloud-partner-portal-orig/cloud-partner-portal-publish-cortana-intelligence-app.md)  -->
 
-## Dynamics 365 for Customer Engagement
+## [Предложение Dynamics 365 for Customer Engagement](./cloud-partner-portal-orig/cpp-customer-engagement-offer.md)
 ### [Создание решения](./cloud-partner-portal-orig/dynamics-365-solution-preparation.md)
 ### [Создание пакета](./cloud-partner-portal-orig/appSource-package-preparation.md)
 ### [Создание ключа SAS](./cloud-partner-portal-orig/store-your-appSource-package-to-azure-storage-and-generate-sas-key.md)
 ### [Создание предложения](./cloud-partner-portal-orig/setup-your-application-in-the-publishing-portal.md)
 ### [Публикация предложения](./cloud-partner-portal-orig/request-to-publish-the-app.md)
 
-## Dynamics 365 для Business Central
+## [Предложение Dynamics 365 for Business Central](./cloud-partner-portal-orig/cpp-business-central-offer.md)
 ### [Общие сведения о публикации](./cloud-partner-portal-orig/d365-finance-overview-publish-your-app.md)
 ### [Создание предложения](./cloud-partner-portal-orig/d365-finance-create-new-offer.md)
 ### [Параметры предложения](./cloud-partner-portal-orig/d365-finance-create-offer-settings.md)
@@ -143,7 +141,7 @@
 ### [Сведения об онлайн-магазине](./cloud-partner-portal-orig/d365-finance-create-storefront-details.md)
 ### [Процесс публикации](./cloud-partner-portal-orig/d365-finance-app-publishing-process.md)
 
-## Dynamics 365 for Operations
+## [Предложение Dynamics 365 for Operations](./cloud-partner-portal-orig/cpp-dynamics-365-operations-offer.md)
 ### [Предварительные требования](./cloud-partner-portal-orig/pre-requisites.md)
 ### [Как опубликовать предложение](./cloud-partner-portal-orig/manage-dynamics-365-for-operations.md)
 ### [Подписка LCS](./cloud-partner-portal-orig/lcs-subscription.md)
@@ -151,6 +149,11 @@
 ### [Сущности данных](./cloud-partner-portal-orig/data-entities.md)
 ### [Средство моделирования бизнес-процессов и методологии](./cloud-partner-portal-orig/bpm-and-methodologies.md)
 ### [Вики-сайт справки](./cloud-partner-portal-orig/help-wiki.md)
+
+## [Консультационные услуги](./cloud-partner-portal-orig/cloud-partner-portal-consulting-services-publishing-offer.md)
+## [Управление профилем издателя](./cloud-partner-portal-orig/cloud-partner-portal-manage-publisher-profile.md)
+## [Управление пользователями](./cloud-partner-portal-orig/cloud-partner-portal-manage-users.md)
+## [Соответствие требованиям GDPR](./cloud-partner-portal-orig/cloud-partner-portal-gdpr.md)
 
 ## Тестовый выпуск
 ### [Что такое тестовый выпуск](./cloud-partner-portal-orig/what-is-test-drive.md)
@@ -160,12 +163,15 @@
 ### [Примеры преобразования для тестового выпуска](./cloud-partner-portal-orig/transforming-examples-for-test-drive.md)
 ### [Рекомендации по маркетингу](./cloud-partner-portal-orig/marketing-and-best-practices.md)
 
-## [Консультационные услуги](./cloud-partner-portal-orig/cloud-partner-portal-consulting-services-publishing-offer.md)
-## [Управление профилем издателя](./cloud-partner-portal-orig/cloud-partner-portal-manage-publisher-profile.md)
-## [Управление пользователями](./cloud-partner-portal-orig/cloud-partner-portal-manage-users.md)
-## [Соответствие требованиям GDPR](./cloud-partner-portal-orig/cloud-partner-portal-gdpr.md)
+## Управление потенциальными клиентами
+### [Настройка получения сведений о потенциальных клиентах](./cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads.md)
+### [Таблица Azure](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-azure-table.md)
+### [Dynamics](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics.md)
+### [Конечная точка HTTPS](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-https.md)
+### [Marketo](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-marketo.md)
+### [Salesforce](./cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-salesforce.md)
 
-## Аналитика
+## Seller Insights
 ### [Приступая к работе](./cloud-partner-portal-orig/si-getting-started.md)
 ### [Новые возможности](./cloud-partner-portal-orig/si-changes.md)
 ### [Веб-аналитика](./cloud-partner-portal-orig/web-analytics.md)

@@ -1,5 +1,5 @@
 ---
-title: Проверка интеграции Azure Graph для Azure Stack
+title: Проверка интеграции Azure Graph с Azure Stack
 description: Применение средства проверки готовности Azure Stack для проверки интеграции Azure Graph для Azure Stack.
 services: azure-stack
 documentationcenter: ''
@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 10/22/2018
 ms.author: patricka
 ms.reviewer: jerskine
-ms.openlocfilehash: e1c1ba0a065a20874bf51d7464cbcfdfa13a571d
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.openlocfilehash: 43f30989fa09e711fc71941e7722dcd195212472
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49946885"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50416245"
 ---
 # <a name="validate-graph-integration-for-azure-stack"></a>Проверка интеграции Azure Graph для Azure Stack
 
-Средство проверки готовности Azure Stack (AzsReadinessChecker) позволяет убедиться, что ваша среда готова к интеграции Azure Graph с Azure Stack. Обязательно проверяйте интеграцию Azure Graph перед началом интеграции центра обработки данных или до развертывания Azure Stack.
+Средство проверки готовности Azure Stack (AzsReadinessChecker) позволяет убедиться, что ваша среда готова к интеграции Azure Graph с Azure Stack. Проверьте интеграцию Graph перед началом интеграции центра обработки данных или до развертывания Azure Stack.
 
 Средство проверки готовности позволяет определить:
 
@@ -37,7 +37,7 @@ ms.locfileid: "49946885"
 
 ## <a name="get-the-readiness-checker-tool"></a>Получение средства проверки готовности
 
-Скачайте последнюю версию средства проверки готовности Azure Stack (AzsReadinessChecker) из коллекции [PSGallery](https://aka.ms/AzsReadinessChecker).
+Скачайте последнюю версию средства проверки готовности Azure Stack (AzsReadinessChecker) из [коллекции PowerShell](https://aka.ms/AzsReadinessChecker).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -46,19 +46,19 @@ ms.locfileid: "49946885"
 **На компьютере, где запускается это средство:**
 
 * Необходимо установить Windows 10 или Windows Server 2016 и обеспечить подключение к домену.
-* Необходимо установить PowerShell 5.1 или более поздней версии. Чтобы проверить используемую версию, запустите следующий командлет PowerShell и проверьте значения *Major* (основной номер версии) и *Minor* (дополнительный номер версии):  
+* Необходимо установить PowerShell 5.1 или более поздней версии. Чтобы проверить используемую версию, выполните приведенную команду PowerShell и проверьте значения *Major* (основной номер версии) и *Minor* (дополнительный номер версии).  
    > `$PSVersionTable.PSVersion`
 * Необходимо установить модуль PowerShell для Active Directory.
-* Необходимо установить последнюю версию средства [проверки готовности Microsoft Azure Stack](https://aka.ms/AzsReadinessChecker).
+* Необходимо установить последнюю версию [средства проверки готовности Microsoft Azure Stack](https://aka.ms/AzsReadinessChecker).
 
 **В среде Active Directory:**
 
-* Определите имя пользователя и пароль для учетной записи для службы Graph в существующей службе Active Directory.
+* Определите имя пользователя и пароль для учетной записи для службы Graph в существующем экземпляре Active Directory.
 * Определите полное доменное имя корня леса Active Directory.
 
-## <a name="validate-graph"></a>Проверка службы Graph
+## <a name="validate-the-graph-service"></a>Проверка службы Graph
 
-1. На компьютере, который соответствует всем предварительным условиям, откройте командную строку PowerShell с правами администратора и выполните следующую команду, чтобы установить AzsReadinessChecker.
+1. На компьютере, который соответствует всем предварительным требованиям, откройте командную строку PowerShell с правами администратора и выполните следующую команду, чтобы установить AzsReadinessChecker:
 
      `Install-Module Microsoft.AzureStack.ReadinessChecker -Force`
 
@@ -66,11 +66,11 @@ ms.locfileid: "49946885"
 
     `$graphCredential = Get-Credential contoso\graphservice -Message "Enter Credentials for the Graph Service Account"`
 
-1. В командной строке PowerShell выполните приведенную ниже команду, чтобы начать проверку Graph. Укажите значение параметра **- ForestFQDN** как полное доменное имя корня леса:
+1. В командной строке PowerShell выполните приведенную ниже команду, чтобы начать проверку службы Graph. В качестве значения параметра **-ForestFQDN** укажите полное доменное имя корня леса.
 
      `Invoke-AzsGraphValidation -ForestFQDN contoso.com -Credential $graphCredential`
 
-1. Когда средство завершит работу, просмотрите выходные данные. Убедитесь, что состояние соответствия требованиям к интеграции Graph — ОК. При успешном завершении проверки отобразится примерно следующий результат:
+1. Когда средство завершит работу, просмотрите выходные данные. Убедитесь, что требованиям к интеграции Graph выполнены. При успешном завершении проверки отобразится примерно следующий результат.
 
     ```
     Testing Graph Integration (v1.0)
@@ -100,20 +100,20 @@ ms.locfileid: "49946885"
 
 При каждом запуске проверки все результаты сохраняются в файлах **AzsReadinessChecker.log** и **AzsReadinessCheckerReport.json**. Расположение этих файлов указывается в PowerShell вместе с результатами проверки.
 
-Файлы проверки помогут передать сведения о состоянии другим заинтересованным лицам перед развертыванием Azure Stack или для исследования проблем, обнаруженных при проверке. В обоих файлах сохраняются результаты каждой очередной проверки. В отчете содержатся подтверждения команды развертывания по конфигурации удостоверений. Файл журнала поможет командам развертывания или поддержки диагностировать проблемы с проверкой.
+Файлы проверки помогут передать сведения о состоянии другим заинтересованным лицам перед развертыванием Azure Stack или для исследования проблем, обнаруженных при проверке. В обоих файлах сохраняются результаты каждой очередной проверки. В отчете содержатся подтверждения команды развертывания для конфигурации удостоверений. Файл журнала поможет командам развертывания или поддержки диагностировать проблемы с проверкой.
 
 По умолчанию оба файла записываются в `C:\Users\<username>\AppData\Local\Temp\AzsReadinessChecker\`.
 
 Используйте следующую команду:
 
-* **-OutputPath** *путь* в конце командной строки, чтобы задать другое расположение отчетов.
-* **-CleanReport** в конце команды, чтобы удалить из файла *AzsReadinessCheckerReport.json* сведения о предыдущем отчете. Дополнительные сведения об отчетах проверки Azure Stack можно найти [здесь](azure-stack-validation-report.md).
+* **-OutputPath**: параметр *path* в конце командной строки позволяет задать другое расположение отчетов.
+* **-CleanReport**: этот параметр в конце команды позволяет удалить из файла *AzsReadinessCheckerReport.json* сведения о предыдущем отчете. Дополнительные сведения об отчетах проверки Azure Stack можно найти [здесь](azure-stack-validation-report.md).
 
 ## <a name="validation-failures"></a>Ошибки при проверке
 
 Если проверка завершается ошибкой, сведения о сбое отображаются в окне PowerShell. Кроме того, сведения записываются в файл *AzsGraphIntegration.log*.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Просмотр отчета о готовности](azure-stack-validation-report.md)  
 [Общие рекомендации по интеграции Azure Stack](azure-stack-datacenter-integration.md)  

@@ -3,18 +3,18 @@ title: Использование службы Azure Kubernetes с Kafka HDInsig
 description: Дополнительные сведения об использовании Kafka HDInsight из образов контейнера, размещенных в службе Azure Kubernetes (AKS).
 services: hdinsight
 ms.service: hdinsight
-author: jasonwhowell
-ms.author: jasonh
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/07/2018
-ms.openlocfilehash: 9170a771b50af4a031d747df547152beda52d01f
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: aad23f1b50a3156d01ce127270e29368f82d18b3
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46998310"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51014046"
 ---
 # <a name="use-azure-kubernetes-service-with-kafka-on-hdinsight"></a>Использование службы Azure Kubernetes с Kafka HDInsight
 
@@ -27,7 +27,7 @@ ms.locfileid: "46998310"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 * Подписка Azure
 
 В этой статье предполагается, что вы знаете, как создавать и использовать следующие службы Azure:

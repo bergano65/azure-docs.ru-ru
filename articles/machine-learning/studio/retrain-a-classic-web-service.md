@@ -15,17 +15,17 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2017
-ms.openlocfilehash: 6fc03865185b97fb1f34028239f647f97d5bd315
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 3de17375670d7697a298023dc79ffc2418cb7e42
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34836880"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50963778"
 ---
 # <a name="retrain-a-classic-web-service"></a>Переобучение классической веб-службы
 Развернутая прогнозная веб-служба является конечной точкой оценки по умолчанию. Конечные точки по умолчанию синхронизируются с исходными экспериментами по обучению и оценке, поэтому обученную модель конечной точки по умолчанию нельзя заменить. Чтобы переобучить веб-службу, необходимо добавить в нее новую конечную точку. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Вы уже настроили обучающий и прогнозный эксперименты, как показано в статье [Программное переобучение моделей машинного обучения](retrain-models-programmatically.md). 
 
 > [!IMPORTANT]
@@ -51,7 +51,7 @@ ms.locfileid: "34836880"
 2. С помощью портала веб-служб Microsoft Azure
 
 ### <a name="programmatically-add-an-endpoint"></a>Добавление конечной точки программно
-Конечные точки оценки можно добавить с помощью примера кода, приведенного в этом [репозитории GitHub](https://github.com/raymondlaghaeian/AML_EndpointMgmt/blob/master/Program.cs).
+Конечные точки оценки можно добавить с помощью примера кода, приведенного в этом [репозитории GitHub](https://github.com/hning86/azuremlps#add-amlwebserviceendpoint).
 
 ### <a name="use-the-microsoft-azure-web-services-portal-to-add-an-endpoint"></a>Добавление конечной точки с помощью портала веб-служб Microsoft Azure
 1. В Студии машинного обучения в левой области навигации щелкните "Web Services" (Веб-службы).

@@ -3,18 +3,18 @@ title: Советы по использованию Hadoop в HDInsight под �
 description: Советы по использованию кластеров HDInsight (Hadoop) на базе Linux в привычной среде Linux, выполняемой в облаке Azure.
 services: hdinsight
 ms.service: hdinsight
-author: jasonwhowell
-ms.author: jasonh
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/09/2018
-ms.openlocfilehash: d725bbe31de0f93d1b741ffd008bf39086904b61
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 89f2178af3f1a1a6ede9b97d79568798a25985b1
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46997511"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51015695"
 ---
 # <a name="information-about-using-hdinsight-on-linux"></a>Сведения об использовании HDInsight в Linux
 
@@ -192,7 +192,7 @@ ms.locfileid: "46997511"
 
 * [веб-браузер](../data-lake-store/data-lake-store-get-started-portal.md);
 * [PowerShell](../data-lake-store/data-lake-store-get-started-powershell.md)
-* [интерфейс командной строки Azure](../data-lake-store/data-lake-store-get-started-cli-2.0.md)
+* [Интерфейс командной строки Azure](../data-lake-store/data-lake-store-get-started-cli-2.0.md)
 * [REST API WebHDFS](../data-lake-store/data-lake-store-get-started-rest-api.md);
 * [средства Data Lake для Visual Studio](https://www.microsoft.com/download/details.aspx?id=49504);
 * [.NET](../data-lake-store/data-lake-store-get-started-net-sdk.md)

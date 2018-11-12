@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/15/2015
 ms.author: ningk
-ms.openlocfilehash: 161a56a019f8c2c8ce5e3890e73ad5c5710e7b82
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: 8c04c9fffbb85bb4db7a369b0dbbad6279f5d6f6
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "30841621"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50420087"
 ---
 # <a name="set-up-tomcat7-on-a-linux-virtual-machine-with-azure"></a>Настройка Tomcat7 на виртуальной машине Linux с использованием Azure
 Apache Tomcat (или просто Tomcat, ранее также именуемый Jakarta Tomcat) — это веб-сервер с открытым исходным кодом и контейнер сервлетов, разработанный Apache Software Foundation (ASF). Tomcat реализует спецификации технологий Java Servlet и JavaServer Pages (JSP) от Sun Microsystems, а также обеспечивает чистую среду HTTP-веб-серверов Java для выполнения Java-кода. При самой простой конфигурации Tomcat запускается с помощью одного процесса в операционной системе. Этот процесс запускает виртуальную машину Java. Каждый HTTP-запрос браузера к серверу Tomcat обрабатывается как отдельный поток в рамках процесса Tomcat.  
@@ -130,52 +130,19 @@ TCP-порт 8080 — номер порта по умолчанию, котор
 На этом этапе необходимо установить среду выполнения Java, пакет Tomcat7 и другие компоненты Tomcat7.  
 
 ### <a name="java-runtime-environment"></a>Среда выполнения Java
-Программное обеспечение Tomcat написано на языке Java. Есть два вида комплектов Java Development Kit (JDK) — OpenJDK и Oracle JDK. Вы можете выбрать наиболее подходящий из них.  
-
-> [!NOTE]
-> В обоих видах JDK для классов в Java API используются почти одинаковые коды, но код для виртуальной машины отличается. В OpenJDK, как правило, используются открытые библиотеки, а в Oracle JDK — закрытые библиотеки. В Oracle JDK доступно больше классов и в нем исправлены некоторые ошибки. К тому же Oracle JDK работает стабильнее, чем OpenJDK.
-
-#### <a name="install-openjdk"></a>Установка OpenJDK  
-
-Чтобы скачать OpenJDK, выполните следующую команду:   
-
-    sudo apt-get update  
-    sudo apt-get install openjdk-7-jre  
+Программное обеспечение Tomcat написано на языке Java. Ознакомьтесь с [пакетами JDK, поддерживаемыми Azure](https://aka.ms/azure-jdks), чтобы узнать, как получить полностью поддерживаемые среды выполнения Java. Вы также можете использовать свои собственные среды, но в оставшейся части этой статьи будут использоваться выпуски, поддерживаемые Azure.
 
 
-* Чтобы создать каталог, в котором будут содержаться файлы JDK:  
+#### <a name="install-azure-supported-jdk"></a>Установка пакета JDK, поддерживаемого Azure
 
-        sudo mkdir /usr/lib/jvm  
-* Чтобы извлечь файлы JDK в каталог /usr/lib/jvm/:  
-
-        sudo tar -zxf jdk-8u5-linux-x64.tar.gz  -C /usr/lib/jvm/
-
-#### <a name="install-oracle-jdk"></a>Установка Oracle JDK
-
-
-Чтобы скачать Oracle JDK на веб-сайте Oracle, выполните следующую команду:  
-
-     wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u5-b13/jdk-8u5-linux-x64.tar.gz  
-* Чтобы создать каталог, в котором будут содержаться файлы JDK:  
-
-        sudo mkdir /usr/lib/jvm  
-* Чтобы извлечь файлы JDK в каталог /usr/lib/jvm/:  
-
-        sudo tar -zxf jdk-8u5-linux-x64.tar.gz  -C /usr/lib/jvm/  
-* Чтобы задать Oracle JDK в качестве виртуальной машины Java по умолчанию, выполните следующую команду:  
-
-        sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_05/bin/java 100  
-
-        sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_05/bin/javac 100  
+Выполните инструкции по установке `apt-get`, приведенные на веб-сайте [Azul Zulu Enterprise for Azure](https://www.azul.com/downloads/azure-only/zulu/#apt-repo).
 
 #### <a name="confirm-that-java-installation-is-successful"></a>Убедитесь, что установка Java выполнена успешно.
 Вы можете использовать подобную команду, чтобы проверить, правильно ли установлена среда выполнения Java:  
-
     java -version  
 
-Если вы установили OpenJDK, вы увидите примерно следующее сообщение: ![Сообщение об успешной установке OpenJDK][14]
+Должно отобразиться примерно следующее сообщение: ![Сообщение об успешной установке OpenJDK][14].
 
-Если вы установили Oracle JDK, вы увидите примерно следующее сообщение: ![Сообщение об успешной установке Oracle JDK][15]
 
 ### <a name="install-tomcat7"></a>Установка Tomcat7
 Чтобы установить Tomcat7, выполните следующую команду:  

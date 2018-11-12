@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/22/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: dfa0a4b637153d6fa3cce5c9b402587950686341
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: a5deccbe87bc8de6f6438259c2a43cc4618c24ab
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50418081"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51016715"
 ---
 # <a name="connect-configuration-manager-to-log-analytics"></a>Подключение Configuration Manager к Log Analytics
 Среду System Center Configuration Manager можно подключить к Azure Log Analytics для синхронизации данных коллекций устройств и указания этих коллекций в Log Analytics и службе автоматизации Azure.  
@@ -69,7 +69,7 @@ ms.locfileid: "50418081"
    
 2. На экране **Общие** убедитесь, что вы выполнили следующие действия и указали сведения по каждому пункту, а затем щелкните **Далее**.
 
-   1. На портале Azure вы зарегистрировали Configuration Manager как веб-приложение и (или) приложение веб-API, и у вас есть [идентификатор клиента, полученный при регистрации](../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md).
+   1. На портале Azure вы зарегистрировали Configuration Manager как веб-приложение и (или) приложение веб-API, и у вас есть [идентификатор клиента, полученный при регистрации](../active-directory/develop/quickstart-v1-add-azure-ad-app.md).
    2. На портале Azure вы создали секретный ключ приложения для зарегистрированного приложения в Azure Active Directory.  
    3. На портале Azure вы указали зарегистрированное веб-приложение с разрешением на доступ к Log Analytics.  
       ![Страница "Общие" мастера подключений к Log Analytics](./media/log-analytics-sccm/sccm-console-general01.png)
@@ -113,7 +113,7 @@ ms.locfileid: "50418081"
 
 ![Вкладка "SCCM" на вкладке "Группы компьютеров"](./media/log-analytics-sccm/sccm-computer-groups02.png)
 
-Если щелкнуть одну из них, откроется окно поиска, в котором отображаются либо все импортированные группы, либо все компьютеры, принадлежащие к каждой группе. С помощью [поиска по журналам](log-analytics-log-searches.md) можно выполнить подробный анализ данных Configuration Manager.
+Если щелкнуть одну из них, откроется окно поиска, в котором отображаются либо все импортированные группы, либо все компьютеры, принадлежащие к каждой группе. С помощью [поиска по журналам](log-analytics-queries.md) можно выполнить подробный анализ данных Configuration Manager.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Воспользуйтесь [поиском по журналам](log-analytics-log-searches.md) для просмотра подробных сведений о данных Configuration Manager.
+* Воспользуйтесь [поиском по журналам](log-analytics-queries.md) для просмотра подробных сведений о данных Configuration Manager.

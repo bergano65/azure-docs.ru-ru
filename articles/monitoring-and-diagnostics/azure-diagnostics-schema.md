@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 09/20/2018
 ms.author: robb
 ms.component: diagnostic-extension
-ms.openlocfilehash: 2c3b2ecc1467a09ae490d23c45e7a000f4afe49a
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 603ed12bf74f2d75543fd7e60834e695138c991d
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46976913"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50963807"
 ---
 # <a name="azure-diagnostics-extension-configuration-schema-versions-and-history"></a>Журнал и версии схемы конфигурации расширения системы диагностики Azure
 На этой странице приведен указатель версий схемы расширения системы диагностики Azure, которые поставляются в составе пакета Microsoft Azure SDK.  
@@ -29,7 +29,7 @@ ms.locfileid: "46976913"
 >
 > Данная страница применяется только в том случае, если вы используете одну из этих служб.
 
-Расширение системы диагностики Azure используется с другими продуктами диагностики корпорации Майкрософт, такими как Azure Monitor, Application Insights и Log Analytics. Дополнительные сведения см. в статье [Обзор мониторинга в Microsoft Azure](monitoring-overview.md).
+Расширение системы диагностики Azure используется с другими продуктами диагностики корпорации Майкрософт, такими как Azure Monitor, Application Insights и Log Analytics. Дополнительные сведения см. в статье [Обзор мониторинга в Microsoft Azure](../azure-monitor/overview.md).
 
 ## <a name="azure-sdk-and-diagnostics-versions-shipping-chart"></a>Диаграмма версий пакета SDK для Azure и системы диагностики  
 

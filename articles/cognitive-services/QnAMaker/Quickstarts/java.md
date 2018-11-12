@@ -1,7 +1,7 @@
 ---
 title: REST API (версия 4) — C# — Java Maker
 titleSuffix: Azure Cognitive Services
-description: Сведения и примеры кода для REST для быстрого начала работы с API перевода текстов (Майкрософт) в Microsoft Cognitive Services в Azure.
+description: Сведения и примеры кода REST для Java для быстрого начала работы с API перевода текстов (Майкрософт) в Microsoft Cognitive Services в Azure.
 services: cognitive-services
 author: diberry
 manager: cgronlun
@@ -10,19 +10,19 @@ ms.component: qna-maker
 ms.topic: article
 ms.date: 10/19/2018
 ms.author: diberry
-ms.openlocfilehash: c92addcbb6a4071022474c5c157c498364ebf0f6
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: 70fa8c5af4f00500c39ce3832e182a5532721799
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49647941"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50419714"
 ---
 # <a name="qna-maker-rest-api-with-java"></a>REST API службы QnA Maker с Java 
 <a name="HOLTop"></a>
 
-В этой статье показано, как использовать [API службы QnA Maker от Майкрософт](../Overview/overview.md) с помощью Java, чтобы выполнять следующие задачи:
+В этой статье показано, как использовать [API службы QnA Maker от Майкрософт](../Overview/overview.md)  с помощью Java, чтобы выполнять следующие задачи:
 
-- [создание базы знаний](#Create);
+- [Создавать базу знаний.](#Create)
 - [Обновлять существующую базу знаний.](#Update)
 - [Получать состояние запроса для создания или обновления базы знаний.](#Status)
 - [Публиковать существующую базу знаний.](#Publish)
@@ -41,7 +41,7 @@ ms.locfileid: "49647941"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для компиляции и запуска этого кода вам потребуется [пакет JDK 7 или 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). При желании можно воспользоваться интегрированной средой разработки Java, но и обычного текстового редактора будет достаточно.
+Для компиляции и запуска этого кода вам потребуется [пакет JDK 7 или 8](https://aka.ms/azure-jdks). При желании можно воспользоваться интегрированной средой разработки Java, но и обычного текстового редактора будет достаточно.
 
 Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API службы QnA Maker от Майкрософт**. Вам понадобится платный ключ подписки, доступный из [панели мониторинга Azure](https://portal.azure.com/#create/Microsoft.CognitiveServices).
 

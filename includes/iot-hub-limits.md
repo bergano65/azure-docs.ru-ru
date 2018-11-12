@@ -1,3 +1,16 @@
+---
+author: dominicbetts
+ms.service: iot-hub
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: dobett
+ms.openlocfilehash: 1807dc67d09b521e66314fb98535fb2c1225d34f
+ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50964630"
+---
 В следующей таблице перечислены ограничения, связанные с разными уровнями служб (S1, S2, S3, F1). Сведения о стоимости каждой *единицы* на каждом уровне см. на странице [Цены на Центр Интернета вещей](https://azure.microsoft.com/pricing/details/iot-hub/).
 
 | Ресурс | Стандартный S1 | Стандартный S2 | Стандартный S3 | Бесплатный F1 |

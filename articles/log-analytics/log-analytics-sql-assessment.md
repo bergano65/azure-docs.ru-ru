@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 4f9882ce94827e490b676fdf421095eae40420d5
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 96163188fad464bc4b94457f7061a78b3f4997a9
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49407730"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51014505"
 ---
 # <a name="optimize-your-sql-environment-with-the-sql-server-health-check-solution-in-log-analytics"></a>Оптимизация среды SQL Server с помощью решения проверки работоспособности SQL Server в Log Analytics
 
@@ -53,7 +53,7 @@ ms.locfileid: "49407730"
 
 Чтобы проверить работоспособность серверов SQL Server, требуется агент и подключение к Log Analytics с помощью одного из указанных ниже способов.
 
-1. Установка [агента Microsoft Monitoring Agent (MMA)](log-analytics-windows-agent.md), если сервер уже не отслеживается с помощью решения System Center 2016 Operations Manager или Operations Manager 2012 R2.
+1. Установка [агента Microsoft Monitoring Agent (MMA)](log-analytics-agent-windows.md), если сервер уже не отслеживается с помощью решения System Center 2016 Operations Manager или Operations Manager 2012 R2.
 2. Если сервер отслеживается решением System Center 2016 Operations Manager или Operations Manager 2012 R2 и группа управления не интегрирована со службой Log Analytics, сервер может использоваться как многосетевой. С помощью Log Analytics данные будут собираться и пересылаться в службу, а сервер по-прежнему будет отслеживаться решением Operations Manager.  
 3. Если группа управления Operations Manager интегрирована со службой, после включения решения в рабочей области добавьте контроллеры домена для сбора данных службой. Для этого выполните инструкции по [добавлению компьютеров под управлением агентов](log-analytics-om-agents.md#connecting-operations-manager-to-log-analytics).  
 
@@ -184,7 +184,7 @@ Log Analytics использует агент Operations Manager и группу
     ```
 
     >[!NOTE]
-    > Если ваша рабочая область переведена на [язык запросов Log Analytics](log-analytics-log-search-upgrade.md), приведенный выше запрос будет изменен следующим образом.
+    > Если ваша рабочая область переведена на [язык запросов Log Analytics](log-analytics-queries.md), приведенный выше запрос будет изменен следующим образом.
     >
     > `SQLAssessmentRecommendation | where RecommendationResult == "Failed" | sort by Computer asc | project Computer, RecommendationId, Recommendation`
 
@@ -209,7 +209,7 @@ Log Analytics использует агент Operations Manager и группу
     ```
 
     >[!NOTE]
-    > Если ваша рабочая область переведена на [язык запросов Log Analytics](log-analytics-log-search-upgrade.md), приведенный выше запрос будет изменен следующим образом.
+    > Если ваша рабочая область переведена на [язык запросов Log Analytics](log-analytics-queries.md), приведенный выше запрос будет изменен следующим образом.
     >
     > `SQLAssessmentRecommendation | where RecommendationResult == "Ignored" | sort by Computer asc | project Computer, RecommendationId, Recommendation`
 
@@ -265,4 +265,4 @@ Log Analytics использует агент Operations Manager и группу
 * Да. См. раздел [Игнорирование рекомендаций](#ignore-recommendations) выше в этой статье.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Воспользуйтесь функцией [поиска по журналам](log-analytics-log-searches.md), чтобы научиться анализировать подробные данные и рекомендации для проверки работоспособности SQL.
+* Воспользуйтесь функцией [поиска по журналам](log-analytics-queries.md), чтобы научиться анализировать подробные данные и рекомендации для проверки работоспособности SQL.

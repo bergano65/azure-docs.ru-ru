@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/15/2018
+ms.date: 10/31/2018
 ms.author: jingwang
-ms.openlocfilehash: efbc020f482a46621eb5c3e3cd6137d1114da6de
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 02d21db5c5fadb65ec63e41cbd9e2db8869ed2e7
+ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46129613"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50415837"
 ---
 # <a name="copy-data-from-marketo-using-azure-data-factory-preview"></a>Копирование данных из Marketo с помощью фабрики данных Azure (предварительная версия)
 
@@ -32,6 +32,9 @@ ms.locfileid: "46129613"
 Данные из Marketo можно скопировать в любое поддерживаемое хранилище данных, используемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
 Фабрика данных Azure имеет встроенный драйвер для настройки подключения. Поэтому с использованием этого соединителя вам не нужно устанавливать драйверы вручную.
+
+>[!NOTE]
+>Соединитель Marketo создан на основе REST API Marketo. Имейте в виду, что на стороне службы у Marketo есть [ограничение на число одновременных запросов](http://developers.marketo.com/rest-api/). Если вы столкнетесь с ошибками наподобие "Ошибка при попытке использовать REST API: максимальный предел скорости — 100 превышен в течение 20 секунд (606)" или "Ошибка при попытке использовать REST API: достигнуто ограничение на параллельный доступ — 10 (615)", попробуйте сократить количество одновременных операций копирования, чтобы уменьшить количество запросов к службе.
 
 ## <a name="getting-started"></a>Приступая к работе
 

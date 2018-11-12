@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 08/02/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 0c274b1ed3cbd0e00e96072adb2fca41541af686
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: fcdc14534e833ee394645e19cf8bc4bd9d6a7aaa
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49402666"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50961149"
 ---
 # <a name="connect-operations-manager-to-log-analytics"></a>Подключение Operations Manager к Log Analytics
 Чтобы не увеличивать затраты на System Center Operations Manager и использовать расширенные возможности в Log Analytics, Operations Manager можно интегрировать с рабочей областью Log Analytics. Таким образом вы сможете использовать функции Log Analytics, располагая следующими возможностями благодаря интеграции с Operations Manager:
@@ -331,6 +331,6 @@ ms.locfileid: "49402666"
 * От последнего накопительного пакета обновления, примененного к вашей группе управления. Для Operations Manager 2012 исходная папка — ` %ProgramFiles%\Microsoft System Center 2012\Operations Manager\Server\Management Packs for Update Rollups`, а для 2012 R2 — `System Center 2012 R2\Operations Manager\Server\Management Packs for Update Rollups`.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Чтобы добавить функциональность и собрать данные, [добавьте решения Log Analytics из коллекции решений](log-analytics-add-solutions.md).
+Чтобы добавить функциональность и собрать данные, [добавьте решения Log Analytics из коллекции решений](../monitoring/monitoring-solutions.md).
 
 

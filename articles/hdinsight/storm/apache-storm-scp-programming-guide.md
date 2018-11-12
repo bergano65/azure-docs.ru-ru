@@ -3,18 +3,18 @@ title: Руководство по программированию с испо�
 description: Узнайте, как использовать SCP.NET для создания топологий Storm на основе .NET для использования со Storm под управлением Azure HDInsight.
 services: hdinsight
 ms.service: hdinsight
-author: jasonwhowell
-ms.author: jasonwhowell
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2016
-ms.openlocfilehash: daf9efb2f9044ed1395b0f2aa3663c2471406e2f
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: e6025ba2645c284cca87483b48b2d79a9558d574
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43045470"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51012536"
 ---
 # <a name="scp-programming-guide"></a>Руководство по программированию для SCP
 SPC — это платформа для создания надежного, согласованного и высокопроизводительного приложения для обработки данных в реальном времени. Она основана на [Apache Storm](http://storm.incubator.apache.org/) — системе обработки потоковых данных, созданной сообществами разработчиков OSS. Создателем Storm является Натан Марц (Nathan Marz), программа имеет открытый код и распространяется компанией Twitter. В платформе используется [Apache ZooKeeper](http://zookeeper.apache.org/)— еще один проект Apache для обеспечения высоконадежной распределенной координации и управления состоянием. 
