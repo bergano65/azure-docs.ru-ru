@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 03/21/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: afcda23faf4e9f0999442fa91d3c016e446c04db
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 718a8fb82c3d85baf94e2e9c316f40b964749912
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39524548"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51231369"
 ---
 # <a name="designing-highly-available-applications-using-ra-grs"></a>Проектирование высокодоступных приложений с использованием RA-GRS
 
@@ -29,7 +29,7 @@ ms.locfileid: "39524548"
 Эта статья содержит фрагменты кода и ссылку на полный пример в конце, который можно скачать и запустить.
 
 > [!NOTE]
-> Служба хранилища Azure теперь поддерживает хранилище, избыточное в пределах зоны (ZRS), для создания высокодоступных приложений. ZRS предлагает простое решение для потребностей в избыточности многих приложений. ZRS предоставляет защиту от сбоев оборудования или от катастрофических сбоев в одном центре обработки данных. Дополнительные сведения см. в статье [Хранилище, избыточное в пределах зоны (ZRS). Высокодоступные приложения для службы хранилища Azure](storage-redundancy-zrs.md).
+> Служба хранилища Azure теперь поддерживает хранилище, избыточное между зонами (ZRS), для создания высокодоступных приложений. ZRS предлагает простое решение для потребностей в избыточности многих приложений. ZRS предоставляет защиту от сбоев оборудования или от катастрофических сбоев в одном центре обработки данных. Дополнительные сведения см. в статье [Хранилище, избыточное между зонами (ZRS). Высокодоступные приложения для службы хранилища Azure](storage-redundancy-zrs.md).
 
 ## <a name="key-features-of-ra-grs"></a>Ключевые возможности RA-GRS
 
@@ -149,7 +149,7 @@ ms.locfileid: "39524548"
 
 Существует три основных способа мониторинга частоты повторов в основном регионе, позволяющих определить, когда нужно переключиться на дополнительный регион и запустить приложение в режиме только для чтения.
 
-*   Добавьте обработчик события [**Retrying**](http://msdn.microsoft.com/library/microsoft.windowsazure.storage.operationcontext.retrying.aspx) для объекта [**OperationContext**](http://msdn.microsoft.com/library/microsoft.windowsazure.storage.operationcontext.aspx), передаваемого в запросы к хранилищу. Этот метод показан в этой статье и используется в соответствующем примере. Данные события активируются, когда клиент повторяет запрос, что позволяет отслеживать, как часто клиент сталкивается с ошибками, допускающими повторение, на основной конечной точке.
+*   Добавьте обработчик события [**Retrying**](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.operationcontext.retrying.aspx) для объекта [**OperationContext**](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.operationcontext.aspx), передаваемого в запросы к хранилищу. Этот метод показан в этой статье и используется в соответствующем примере. Данные события активируются, когда клиент повторяет запрос, что позволяет отслеживать, как часто клиент сталкивается с ошибками, допускающими повторение, на основной конечной точке.
 
     ```csharp 
     operationContext.Retrying += (sender, arguments) =>
@@ -160,7 +160,7 @@ ms.locfileid: "39524548"
     };
     ```
 
-*   В методе [**Evaluate**](http://msdn.microsoft.com/library/microsoft.windowsazure.storage.retrypolicies.iextendedretrypolicy.evaluate.aspx) в пользовательской политике повтора можно выполнять пользовательский код всякий раз, когда происходит повторная попытка. Помимо записи повторных попыток это также дает возможность изменить их режим.
+*   В методе [**Evaluate**](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.retrypolicies.iextendedretrypolicy.evaluate.aspx) в пользовательской политике повтора можно выполнять пользовательский код всякий раз, когда происходит повторная попытка. Помимо записи повторных попыток это также дает возможность изменить их режим.
 
     ```csharp 
     public RetryInfo Evaluate(RetryContext retryContext,

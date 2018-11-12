@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 3b6b505be4a0084059d8c37a21099a784cacbed1
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: af36f033dbca6c9f594b3568bfe7567a959e2d2f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50414137"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51237158"
 ---
 # <a name="detailed-troubleshooting-steps-for-remote-desktop-connection-issues-to-windows-vms-in-azure"></a>Подробное руководство по устранению неполадок с подключением к удаленному рабочему столу на виртуальной машине Windows в Azure
 В этой статье приводятся подробные инструкции по диагностике и устранению сложных ошибок удаленного рабочего стола для виртуальных машин Azure на базе Windows.
@@ -130,7 +130,7 @@ ms.locfileid: "50414137"
 * В брандмауэре Windows или другом локальном брандмауэре есть правило для исходящего трафика, блокирующее трафик удаленных рабочих столов.
 * Программное обеспечение для обнаружения атак и мониторинга сети на виртуальной машине Azure блокирует подключения к удаленным рабочим столам.
 
-Для виртуальных машин, созданных по классической модели развертывания, можно использовать удаленный сеанс Azure PowerShell на виртуальной машине Azure. Сначала нужно установить сертификат для доступа к облачной службе, в которой размещена виртуальная машина. Откройте страницу [Configure Secure Remote PowerShell Access to Windows Azure Virtual Machines](http://gallery.technet.microsoft.com/scriptcenter/Configures-Secure-Remote-b137f2fe) (Настройка защищенного удаленного доступа PowerShell к виртуальным машинам Azure) и скачайте файл сценария **InstallWinRMCertAzureVM.ps1** на локальный компьютер.
+Для виртуальных машин, созданных по классической модели развертывания, можно использовать удаленный сеанс Azure PowerShell на виртуальной машине Azure. Сначала нужно установить сертификат для доступа к облачной службе, в которой размещена виртуальная машина. Откройте страницу [Configure Secure Remote PowerShell Access to Windows Azure Virtual Machines](https://gallery.technet.microsoft.com/scriptcenter/Configures-Secure-Remote-b137f2fe) (Настройка защищенного удаленного доступа PowerShell к виртуальным машинам Azure) и скачайте файл сценария **InstallWinRMCertAzureVM.ps1** на локальный компьютер.
 
 Затем установите Azure PowerShell, если еще не сделали этого. См. статью [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 

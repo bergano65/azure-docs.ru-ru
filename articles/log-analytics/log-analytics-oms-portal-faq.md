@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: fc9ed37ef24e776336124bf097def2f6a00ee83e
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 442371ffc63e32906d9faafc3b803bb5e6386905
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50419798"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51283450"
 ---
 # <a name="common-questions-for-transition-from-oms-portal-to-azure-portal-for-log-analytics-users"></a>Часто задаваемые вопросы о переходе от портала OMS к порталу Azure для пользователей Log Analytics
 В Log Analytics изначально существовал собственный портал для управления конфигурацией и анализа собранных данных, известный как портал OMS.  Теперь все функциональные возможности этого портала перемещены на портал Azure, где и будут совершенствоваться далее.
@@ -35,7 +35,7 @@ ms.locfileid: "50419798"
 ![Рабочая область Log Analytics](media/log-analytics-oms-portal-faq/log-analytics.png)
 
 ## <a name="how-do-i-manage-permissions"></a>Как теперь управлять разрешениями?
-Если на портале Azure у вас нет доступа к рабочей области Log Analytics, значит нужно сначала настроить разрешения в системе [управления доступом на основе ролей Azure](../active-directory/role-based-access-control-configure.md). Дополнительные сведения об управлении разрешениями для рабочей области см. в разделе [Управление учетными записями и пользователями](../log-analytics/log-analytics-manage-access.md#manage-accounts-and-users). Сведения об управлении разрешениями на генерацию оповещений см. в статье [Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor](../monitoring-and-diagnostics/monitoring-roles-permissions-security.md).
+Если на портале Azure у вас нет доступа к рабочей области Log Analytics, значит нужно сначала настроить разрешения в системе [управления доступом на основе ролей Azure](../role-based-access-control/role-assignments-portal.md). Дополнительные сведения об управлении разрешениями для рабочей области см. в разделе [Управление учетными записями и пользователями](../log-analytics/log-analytics-manage-access.md#manage-accounts-and-users). Сведения об управлении разрешениями на генерацию оповещений см. в статье [Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor](../monitoring-and-diagnostics/monitoring-roles-permissions-security.md).
 
 ## <a name="how-do-i-create-a-new-workspace"></a>Как создать рабочую область? 
 В списке рабочих областей на портале Azure щелкните **Добавить**.  Подробно этот процесс описан в статье [Создание рабочей области Log Analytics на портале Azure](../log-analytics/log-analytics-quick-create-workspace.md).
@@ -82,7 +82,7 @@ ms.locfileid: "50419798"
 | Серверы Linux   | Меню **Дополнительные параметры** для рабочей области. |
 | Хранилище Azure     | Меню **Дополнительные параметры** для рабочей области. |
 | System Center     | Меню **Дополнительные параметры** для рабочей области. |
-| Office 365        | Сведения о настройке собраны в [документации решения по управлению Office 365](../operations-management-suite/oms-solution-office-365.md). |
+| Office 365        | Сведения о настройке собраны в [документации решения по управлению Office 365](../monitoring/monitoring-solution-office-365.md). |
 | Телеметрия Windows | Меню параметров решения. Сведения о настройке см. в статье [Windows Analytics на портале Azure](/windows/deployment/update/windows-analytics-azure-portal). |
 | Соединитель управления ИТ-услугами    | В статье [Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами](../log-analytics/log-analytics-itsmc-connections.md) приводятся инструкции по подключению службы ITSM к Log Analytics. |
 
@@ -110,7 +110,7 @@ ms.locfileid: "50419798"
 На портале OMS решения для управлению устанавливаются из коллекции решений, а удаляются в разделе **Параметры**. На портале Azure [решения по управлению можно установить](../monitoring/monitoring-solutions.md#install-a-management-solution) из Azure Marketplace. [Удаление решений](../monitoring/monitoring-solutions.md#remove-a-management-solution) выполняется через список установленных решений.
 
 ## <a name="how-do-i-create-and-manage-alerts"></a>Как создавать оповещения и управлять ими?
-Для управления правилами генерации оповещений на основе запросов Log Analytics теперь используется [единый интерфейс оповещений](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md). В статье [Как расширить (копировать) оповещения с портала OMS в Azure](../monitoring-and-diagnostics/monitoring-alerts-extend-tool.md) приводятся подробные сведения о настройке и использовании оповещений на портале Azure.
+Для управления правилами генерации оповещений на основе запросов Log Analytics теперь используется [единый интерфейс оповещений](../monitoring-and-diagnostics/alert-metric.md). В статье [Как расширить (копировать) оповещения с портала OMS в Azure](../monitoring-and-diagnostics/monitoring-alerts-extend-tool.md) приводятся подробные сведения о настройке и использовании оповещений на портале Azure.
 
 ## <a name="how-do-i-access-my-dashboards"></a>Где найти мои панели мониторинга?
 Функция [Моя панель мониторинга](../log-analytics/log-analytics-dashboards.md) в Log Analytics не рекомендована к использованию. Эта функция позволяла использовать частную коллекцию элементов конструктора представлений и была заменена встроенными функциями панели мониторинга Azure. Вы можете продолжать визуализировать данные в Log Analytics с помощью [конструктора представлений](../log-analytics/log-analytics-view-designer.md) для общих представлений. Также можно закреплять визуализации из этих представлений или [отдельных запросов](../log-analytics/log-analytics-tutorial-dashboards.md) на панелях мониторинга Azure.

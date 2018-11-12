@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: mbullwin
-ms.openlocfilehash: 54a335cf1386ab29c0e0214bccf1f53a076da02b
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: 275eb5f32def94fa974f0cb180b9de9dcedf1a00
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43783542"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51230926"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights"></a>Инструментирование веб-приложений во время выполнения с помощью Application Insights
 
@@ -57,7 +57,7 @@ ms.locfileid: "43783542"
 
     ![Щелкните Application Insights](./media/app-insights-monitor-performance-live-website-now/azure-web-view-more.png)
 
-[Мониторинг облачных приложений и приложений виртуальной машины](app-insights-azure.md).
+[Мониторинг облачных приложений и приложений виртуальной машины](app-insights-overview.md).
 
 ### <a name="enable-client-side-monitoring-in-azure"></a>Включение мониторинга на стороне клиента в Azure
 
@@ -78,7 +78,7 @@ ms.locfileid: "43783542"
 Если приложение размещено на сервере IIS, включите Application Insights с помощью монитора состояний.
 
 1. Войдите на веб-сервер IIS с учетными данными администратора.
-2. Если монитор состояния Application Insights еще не установлен, скачайте и запустите [установщик монитора состояний](http://go.microsoft.com/fwlink/?LinkId=506648) (или запустите [установщик веб-платформы](https://www.microsoft.com/web/downloads/platform.aspx) и найдите в нем монитор состояний Application Insights).
+2. Если монитор состояния Application Insights еще не установлен, скачайте и запустите [установщик монитора состояний](https://go.microsoft.com/fwlink/?LinkId=506648) (или запустите [установщик веб-платформы](https://www.microsoft.com/web/downloads/platform.aspx) и найдите в нем монитор состояний Application Insights).
 3. В мониторе состояний выберите установленное веб-приложение или веб-сайт, который требуется отслеживать. Выполните вход с использованием учетных данных Azure.
 
     Настройте ресурс, в котором должны отображаться результаты на портале Application Insights. (Как правило, проще всего создать ресурс. Выберите имеющийся ресурс, если у вас уже есть [веб-тесты][availability] или [наблюдение за клиентами][client] для этого приложения.) 

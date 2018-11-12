@@ -3,18 +3,18 @@ title: Разработка топологий Apache Storm с помощью Vi
 description: Сведения о создании топологий Storm в C#. Создайте простую топологию статистики в Visual Studio с помощью средств Hadoop для Visual Studio.
 services: hdinsight
 ms.service: hdinsight
-author: jasonwhowell
-ms.author: jasonh
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 11/27/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2765021d80701826644f095d22c650160001e907
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 5dcc9dcada981a6a4174ce34748356d49582f598
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50414902"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51237576"
 ---
 # <a name="develop-c-topologies-for-apache-storm-by-using-the-data-lake-tools-for-visual-studio"></a>Разработка топологий для Apache Storm на C# с помощью средств Data Lake для Visual Studio
 
@@ -43,7 +43,7 @@ ms.locfileid: "50414902"
 
 * Visual Studio 2012 с обновлением 4;
 
-* Visual Studio 2013 с обновлением 4 или [Visual Studio 2013 Community](http://go.microsoft.com/fwlink/?LinkId=517284);
+* Visual Studio 2013 с обновлением 4 или [Visual Studio 2013 Community](https://go.microsoft.com/fwlink/?LinkId=517284);
 
 * Visual Studio 2015 или [Visual Studio 2015 Community](https://go.microsoft.com/fwlink/?LinkId=532606)
 

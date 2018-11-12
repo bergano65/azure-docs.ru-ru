@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: ergreenl
-ms.openlocfilehash: 031c609ee5dcd04fc461af74b7f49973fbd290c3
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: dab1547ca17acaeda3cb168d78b342661ebe4615
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50157625"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51230484"
 ---
 # <a name="administer-an-azure-active-directory-domain-services-managed-domain"></a>Администрирование управляемого домена доменных служб Azure Active Directory
 В этой статье показано, как администрировать управляемый домен доменных служб Azure Active Directory (AD).
@@ -63,7 +63,7 @@ ms.locfileid: "50157625"
 ### <a name="remotely-administer-the-managed-domain-from-a-client-computer-for-example-windows-10"></a>Удаленное администрирование управляемого домена с клиентского компьютера (например, Windows 10)
 Инструкции в этой статье подразумевают использование виртуальной машины Windows Server для администрирования управляемого домена AAD DS. Однако для этого также можно выбрать клиентскую виртуальную машину Windows (например, Windows 10).
 
-Вы можете [установить средства удаленного администрирования сервера (RSAT)](http://social.technet.microsoft.com/wiki/contents/articles/2202.remote-server-administration-tools-rsat-for-windows-client-and-windows-server-dsforum2wiki.aspx) на клиентскую виртуальную машину Windows, следуя инструкциям на сайте TechNet.
+Вы можете [установить средства удаленного администрирования сервера (RSAT)](https://social.technet.microsoft.com/wiki/contents/articles/2202.remote-server-administration-tools-rsat-for-windows-client-and-windows-server-dsforum2wiki.aspx) на клиентскую виртуальную машину Windows, следуя инструкциям на сайте TechNet.
 
 ## <a name="task-2---install-active-directory-administration-tools-on-the-virtual-machine"></a>Задача 2. Установка средств администрирования Active Directory на виртуальную машину
 Чтобы установить средства администрирования Active Directory на присоединенную к домену виртуальную машину, выполните следующие действия. Для получения дополнительных сведений об [установке и использовании средств удаленного администрирования сервера](https://technet.microsoft.com/library/hh831501.aspx) перейдите на сайт TechNet.

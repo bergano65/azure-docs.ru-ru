@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 43a3458ba0f08d73931b5ecddf6a2c7b1ae259f4
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: e339d50a379015d7aebe19b25127e9804d8efc52
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39044821"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51237253"
 ---
 # <a name="configuring-a-custom-domain-name-for-an-azure-cloud-service"></a>Настройка пользовательского доменного имени для облачной службы Azure
 При создании облачной службы Azure ей назначается поддомен **cloudapp.net**. Например, если имя облачной службы — contoso, пользователи будут иметь доступ к приложению по такому URL-адресу: http://contoso.cloudapp.net. Azure также назначает виртуальный IP-адрес.
@@ -36,7 +36,7 @@ ms.locfileid: "39044821"
 <p/>
 
 > [!TIP]
-> Приступите к работе быстрее — воспользуйтесь НОВЫМ [пошаговым руководством](http://support.microsoft.com/kb/2990804)Azure!  С его помощью вы без труда сможете связать пользовательское доменное имя И защитить обмен данными (SSL) с облачными службами Azure или веб-сайтами Azure.
+> Приступите к работе быстрее — воспользуйтесь НОВЫМ [пошаговым руководством](https://support.microsoft.com/kb/2990804)Azure!  С его помощью вы без труда сможете связать пользовательское доменное имя И защитить обмен данными (SSL) с облачными службами Azure или веб-сайтами Azure.
 > 
 > 
 

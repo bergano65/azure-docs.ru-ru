@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: ca93d97c3e0ddab0377ef437a04e7e3e31197b97
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 6967805044bb11e9aed3fe66d580df059f7a461a
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47166384"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51231403"
 ---
 # <a name="split-merge-security-configuration"></a>Настройка параметров безопасности для службы разделения и объединения
 Для использования службы разделения и объединения необходимо правильно настроить параметры безопасности. Эта служба является частью компонента эластичного масштабирования базы данных Microsoft Azure SQL. Дополнительные сведения см. в [руководстве по эластичному масштабированию службы разбиения и объединения](sql-database-elastic-scale-configure-deploy-split-and-merge.md).
@@ -29,21 +29,21 @@ ms.locfileid: "47166384"
 2. [Настройка сертификатов клиентов](#to-configure-client-certificates) 
 
 ## <a name="to-obtain-certificates"></a>Получение сертификатов
-Сертификаты можно получать от общих центров сертификации (ЦС) или в [службе сертификации Windows](http://msdn.microsoft.com/library/windows/desktop/aa376539.aspx). Это наиболее предпочтительные способы получения сертификатов.
+Сертификаты можно получать от общих центров сертификации (ЦС) или в [службе сертификации Windows](https://msdn.microsoft.com/library/windows/desktop/aa376539.aspx). Это наиболее предпочтительные способы получения сертификатов.
 
 Если эти варианты недоступны, можно создавать **самозаверяющие сертификаты**.
 
 ## <a name="tools-to-generate-certificates"></a>Инструменты для создания сертификатов
-* [makecert.exe](http://msdn.microsoft.com/library/bfsktky3.aspx)
-* [pvk2pfx.exe](http://msdn.microsoft.com/library/windows/hardware/ff550672.aspx)
+* [makecert.exe](https://msdn.microsoft.com/library/bfsktky3.aspx)
+* [pvk2pfx.exe](https://msdn.microsoft.com/library/windows/hardware/ff550672.aspx)
 
 ### <a name="to-run-the-tools"></a>Запуск инструментов
-* Сведения о запуске инструментов из командной строки разработчика для Visual Studio см. в статье [Командная строка разработчика для Visual Studio](http://msdn.microsoft.com/library/ms229859.aspx). 
+* Сведения о запуске инструментов из командной строки разработчика для Visual Studio см. в статье [Командная строка разработчика для Visual Studio](https://msdn.microsoft.com/library/ms229859.aspx). 
   
     Если ПО установлено, перейдите к:
   
         %ProgramFiles(x86)%\Windows Kits\x.y\bin\x86 
-* Пакет WDK можно загрузить в разделе [Windows 8.1: загрузка пакетов и средств](http://msdn.microsoft.com/windows/hardware/gg454513#drivers)
+* Пакет WDK можно загрузить в разделе [Windows 8.1: загрузка пакетов и средств](https://msdn.microsoft.com/windows/hardware/gg454513#drivers)
 
 ## <a name="to-configure-the-ssl-certificate"></a>Настройка SSL-сертификата
 SSL-сертификат требуется для шифрования при обмене данными и для проверки подлинности сервера. Выберите наиболее подходящий из этих трех сценариев и выполните все шаги.
