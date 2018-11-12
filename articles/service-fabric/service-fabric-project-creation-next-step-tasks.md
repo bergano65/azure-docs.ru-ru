@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/07/2017
 ms.author: rwike77
-ms.openlocfilehash: a87dd6f4afa152aebafdde24defcabe841ae2e9c
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 4d5e74b9ecffbf8f1161cf6c5ef948cd154d993f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34206471"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51233173"
 ---
 # <a name="your-service-fabric-application-and-next-steps"></a>Ваше приложение Service Fabric и дальнейшие действия
 Ваше приложение Azure Service Fabric создано. В этой статье описываются некоторые руководства, с которыми вам необходимо ознакомиться, состав проекта, а также приведены некоторые дополнительные сведения, которые будут вам интересны, и возможные дальнейшие действия.
@@ -35,7 +35,7 @@ ms.locfileid: "34206471"
 - [гостевую исполняемую службу в Windows](quickstart-guest-app.md); 
 - [Приложение-контейнер Windows](service-fabric-get-started-containers.md) 
 
-Возможно, вас также заинтересуют [примеры приложений](http://aka.ms/servicefabricsamples).
+Возможно, вас также заинтересуют [примеры приложений](https://aka.ms/servicefabricsamples).
 
 ## <a name="have-questions-or-feedback--need-to-report-an-issue"></a>Есть вопросы или предложения?  Необходимо сообщить о проблеме?
 Ознакомьтесь с [часто задаваемыми вопросами](service-fabric-common-questions.md), найдите ответы о возможностях Service Fabric и узнайте об использовании этой платформы.

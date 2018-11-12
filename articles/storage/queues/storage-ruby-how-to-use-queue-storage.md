@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 12/08/2016
 ms.author: tamram
 ms.component: queues
-ms.openlocfilehash: 907175ac341632d2ba0048ab486392b949f83626
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: 67a5dc0eddb6deb51ec69c68c48d5edf308cf43e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "42146543"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51231572"
 ---
 # <a name="how-to-use-queue-storage-from-ruby"></a>Использование хранилища очередей из Ruby
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -153,7 +153,7 @@ azure_queue_service.delete_queue("test-queue")
 ## <a name="next-steps"></a>Дальнейшие действия
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
-* Посетите [блог команды разработчиков хранилища Azure](http://blogs.msdn.com/b/windowsazurestorage/)
+* Посетите [блог команды разработчиков хранилища Azure](https://blogs.msdn.com/b/windowsazurestorage/)
 * Посетите репозиторий [Azure SDK для Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) на веб-сайте GitHub
 
 Сравнение службы очередей Azure, описанной в этой статье, и очередей служебной шины Azure, описанных в статье [Как использовать очереди служебной шины](https://azure.microsoft.com/develop/ruby/how-to-guides/service-bus-queues/), см. в статье [Очереди Azure и очереди служебной шины: сходства и различия](../../service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted.md).

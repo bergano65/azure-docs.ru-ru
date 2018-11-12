@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/03/2018
 ms.author: v-daljep
 ms.component: ''
-ms.openlocfilehash: 3c80007a8188fb239a13aaa0ccc9ef2237a2d8d1
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: b20a142007b3422d071de47410f4c9cdd1ff62a7
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50025675"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51006742"
 ---
 # <a name="monitor-azure-sql-database-using-azure-sql-analytics-preview"></a>Мониторинг базы данных SQL Azure с помощью решения "Аналитика SQL Azure" (предварительная версия)
 
@@ -46,8 +46,8 @@ ms.locfileid: "50025675"
 | --- | --- | --- |
 | **[Система диагностики Azure](log-analytics-azure-storage.md)** | **Да** | Данные метрик и журнала Azure отправляются в Log Analytics непосредственно из Azure. |
 | [Учетная запись хранения Azure](log-analytics-azure-storage.md) | Нет  | Log Analytics не считывает данные из учетной записи хранения. |
-| [Агенты Windows](log-analytics-windows-agent.md) | Нет  | Решение не использует прямые агенты Windows. |
-| [Агенты Linux](log-analytics-linux-agents.md) | Нет  | Решение не использует прямые агенты Linux. |
+| [Агенты Windows](log-analytics-agent-windows.md) | Нет  | Решение не использует прямые агенты Windows. |
+| [Агенты Linux](log-analytics-quick-collect-linux-computer.md) | Нет  | Решение не использует прямые агенты Linux. |
 | [Группы управления SCOM](log-analytics-om-agents.md) | Нет  | Решение не использует прямое подключение агента SCOM к Log Analytics. |
 
 ## <a name="configuration"></a>Параметр Configuration
@@ -192,7 +192,7 @@ ms.locfileid: "50025675"
 
 ### <a name="creating-alerts-for-azure-sql-database"></a>Создание оповещений для базы данных SQL Azure
 
-[Оповещения можно легко создать](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md) с помощью данных, поступающих из ресурсов службы "База данных SQL Azure". Вот несколько полезных запросов [поиска по журналам](log-analytics-log-searches.md), которые можно использовать с оповещениями журналов:
+[Оповещения можно легко создать](../monitoring-and-diagnostics/alert-metric.md) с помощью данных, поступающих из ресурсов службы "База данных SQL Azure". Вот несколько полезных запросов [поиска по журналам](log-analytics-queries.md), которые можно использовать с оповещениями журналов:
 
 *Высокий уровень ЦП в Базе данных SQL Azure*
 
@@ -289,6 +289,6 @@ AzureDiagnostics
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Используйте [поиск по журналам](log-analytics-log-searches.md) в Log Analytics для просмотра подробных данных SQL Azure.
+- Используйте [поиск по журналам](log-analytics-queries.md) в Log Analytics для просмотра подробных данных SQL Azure.
 - [Создавайте пользовательские панели мониторинга](log-analytics-dashboards.md), отображающие данные SQL Azure.
-- [Создавайте оповещения](log-analytics-alerts.md), предупреждающие о возникновении определенных событий SQL Azure.
+- [Создавайте оповещения](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md), предупреждающие о возникновении определенных событий SQL Azure.

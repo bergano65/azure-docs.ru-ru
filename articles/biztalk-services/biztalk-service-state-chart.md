@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/08/2016
 ms.author: mandia
-ms.openlocfilehash: 05470e75fc7b46603c8fce3a98c66ac6a24758a8
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: bbe1288a42db307001ac778394ac410206f1df21
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "24102748"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228204"
 ---
 # <a name="what-you-can-and-cant-do-using-the-biztalk-service-state"></a>Что можно и что нельзя сделать с помощью состояния службы BizTalk
 
@@ -35,7 +35,7 @@ ms.locfileid: "24102748"
 
 В следующих таблицах перечислены операции или действия, которые могут быть выполнены, когда служба BizTalk находится в том или ином состоянии. Установленный флажок ✔ означает, что в этом состоянии операция разрешена. Пустая запись означает, что операция не может быть выполнена в этом состоянии.
 
-| Состояние службы | Начало | Остановить | Перезагрузить | Приостановить | Продолжить | Delete | Масштаб | Блокировка изменений <br/> Параметр Configuration | Архивация |
+| Состояние службы | Начало | Остановить | Перезагрузить | Приостановить | Продолжить | Delete | Масштаб | Блокировка изменений <br/> Параметр Configuration | Azure Backup |
 | --- | --- | --- | --- | --- | --- | --- |--- | --- | --- |
 | Активна |  | ✔ | ✔ | ✔ |  | ✔ |✔ |✔ |✔ |
 | Отключено |  |  |  |  |  | ✔ | |  |  | 
@@ -53,10 +53,10 @@ ms.locfileid: "24102748"
 
 
 ## <a name="see-also"></a>См. также
-* [Просмотр вкладок "Панель мониторинга", "Монитор", "Масштаб", "Настройка" и "Гибридное подключение"](http://go.microsoft.com/fwlink/p/?LinkID=302281)<br/>
-* [Службы BizTalk: диаграмма выпусков](http://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
-* [Службы BizTalk: резервное копирование и восстановление](http://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>
-* [Службы BizTalk: регулирование](http://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
-* [Службы BizTalk: имя и ключ издателя](http://go.microsoft.com/fwlink/p/?LinkID=303941)<br/>
-* [Как приступить к работе с пакетом SDK для служб BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=302335)
+* [Просмотр вкладок "Панель мониторинга", "Монитор", "Масштаб", "Настройка" и "Гибридное подключение"](https://go.microsoft.com/fwlink/p/?LinkID=302281)<br/>
+* [Службы BizTalk: диаграмма выпусков](https://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
+* [Службы BizTalk: резервное копирование и восстановление](https://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>
+* [Службы BizTalk: регулирование](https://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
+* [Службы BizTalk: имя и ключ издателя](https://go.microsoft.com/fwlink/p/?LinkID=303941)<br/>
+* [Как приступить к работе с пакетом SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=302335)
 

@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: tutorial
 manager: carmonm
-ms.openlocfilehash: f45cb6a47756fae7b75d8c3df80a0bc754742063
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 48e338a08330e0674cc4410adf135ec546a5e1c3
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44299010"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51230603"
 ---
 # <a name="find-and-diagnose-run-time-exceptions-with-azure-application-insights"></a>Поиск и диагностика исключений во время выполнения с помощью Azure Application Insights
 
@@ -37,7 +37,7 @@ Azure Application Insights собирает данные телеметрии и
 - Установите [Visual Studio 2017](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
     - ASP.NET и веб-разработка.
     - разработка Azure;
-- Загрузите и установите [отладчик моментальных снимков Visual Studio](http://aka.ms/snapshotdebugger).
+- Загрузите и установите [отладчик моментальных снимков Visual Studio](https://aka.ms/snapshotdebugger).
 - Включите [отладчик моментальных снимков Visual Studio](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger).
 - Разверните приложение .NET в Azure и [включите пакет SDK для Application Insights](app-insights-asp-net.md). 
 - Это руководство содержит сведения об отслеживании идентификатора исключения в вашем приложении, поэтому измените свой код в среде разработки или тестирования, чтобы создать исключение. 

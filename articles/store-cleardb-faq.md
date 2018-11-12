@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 10/27/2016
 ms.author: sumuth
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: f145e879dab4484d647cf8ea21582958df0f0cd4
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: cce6555c71829110781a6dd13757078b105dbb41
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43665728"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51230637"
 ---
 # <a name="faq-for-cleardb-mysql-databases-with-azure-app-service"></a>Часто задаваемые вопросы о базах данных ClearDB MySql в службе приложений Azure
 Ответы на часто задаваемые вопросы об использовании и покупке баз данных ClearDB MySql для службы веб-приложений Azure.
@@ -106,7 +106,7 @@ Azure Marketplace недоступен для клиентов из Азерба
 Доступом к Azure Marketplace для покупки служб сторонних производителей могут управлять администраторы регистрации EA Azure. Они могут включать и отключать доступ к покупкам служб сторонних производителей в магазине в областях "Управление учетными записями" и "Подписка" раздела "Учетные записи" на портале Enterprise.
 
 ## <a name="who-do-i-contact-for-questions-about-my-bill-for-cleardb-services-in-my-ea-subscription"></a>К кому обращаться с вопросами по счету за службы ClearDB по подписке EA?
-По вопросам оплаты подписки EA обращайтесь в [службу поддержки клиентов Enterprise](http://aka.ms/AzureEntSupport) . Сотрудники службы поддержки на портале EA ответят на ваши вопросы и помогут решить проблемы.
+По вопросам оплаты подписки EA обращайтесь в [службу поддержки клиентов Enterprise](https://aka.ms/AzureEntSupport) . Сотрудники службы поддержки на портале EA ответят на ваши вопросы и помогут решить проблемы.
 
 ## <a name="more-information"></a>Дополнительные сведения
 [Часто задаваемые вопросы об Azure Marketplace](https://azure.microsoft.com/marketplace/faq/)

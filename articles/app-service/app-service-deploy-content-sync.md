@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: cephalin;dariagrigoriu
-ms.openlocfilehash: 3781010c74daa51c92813db85ee03eaa4c02a4cf
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 3796f5c8956b633a4789baaf31a439746dc96b96
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35233593"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51233768"
 ---
 # <a name="sync-content-from-a-cloud-folder-to-azure-app-service"></a>Синхронизация содержимого из папки в облаке со службами приложений Azure
-В этой статье показано, как синхронизировать содержимое [службы приложений Azure](http://go.microsoft.com/fwlink/?LinkId=529714) из Dropbox и OneDrive. 
+В этой статье показано, как синхронизировать содержимое [службы приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714) из Dropbox и OneDrive. 
 
 Развертывание синхронизации содержимого по запросу основано на службе приложений [механизма развертывания Kudu](https://github.com/projectkudu/kudu/wiki). Можно работать с кодом приложения и содержимым указанной папки облака, а затем синхронизировать с App Service одним нажатием кнопки. Синхронизация содержимого использует сервер сборки Kudu. 
 

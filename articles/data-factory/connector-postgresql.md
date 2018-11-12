@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/23/2018
 ms.author: jingwang
-ms.openlocfilehash: 6279e088b8abd574bbd8ef6488d986d42c91123c
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 1c321d96efc7af387fb30b6ed608eb871cb7de5f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37046060"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51230501"
 ---
 # <a name="copy-data-from-postgresql-by-using-azure-data-factory"></a>Копирование данных из PostgreSQL с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -33,11 +33,11 @@ ms.locfileid: "37046060"
 
 В частности, этот соединитель PostgreSQL поддерживает PostgreSQL **версии 7.4 и более поздних**.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Если база данных PostgreSQL не является общедоступной, необходимо настроить локальную среду выполнения интеграции. Дополнительные сведения о локальной среде IR см. в статье [How to create and configure Self-hosted Integration Runtime](create-self-hosted-integration-runtime.md) (Создание и настройка локальной среды IR). Начиная с версии 3.7 служба Integration Runtime предоставляет встроенный драйвер PostgreSQL, поэтому вам не потребуется устанавливать драйвер вручную.
 
-Для Integration Runtime (Self-hosted) версии ниже, чем 3.7, установите на компьютере среды выполнения интеграции [поставщик данных Ngpsql для PostgreSQL](http://go.microsoft.com/fwlink/?linkid=282716) версии от 2.0.12 до 3.1.9.
+Для Integration Runtime (Self-hosted) версии ниже, чем 3.7, установите на компьютере среды выполнения интеграции [поставщик данных Ngpsql для PostgreSQL](https://go.microsoft.com/fwlink/?linkid=282716) версии от 2.0.12 до 3.1.9.
 
 ## <a name="getting-started"></a>Приступая к работе
 

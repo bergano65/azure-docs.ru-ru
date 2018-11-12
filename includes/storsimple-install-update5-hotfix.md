@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 1bf6803ee3dc40e2e9f8c371f75933cbf2f77715
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 14aac6103f1a560a50bc9dd80e18d5e2fbaae3c4
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50165743"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51264237"
 ---
 <!--author=alkohli last changed: 08/21/17-->
 
@@ -17,7 +17,7 @@ ms.locfileid: "50165743"
 
 Для загрузки обновления программного обеспечения из каталога обновления Майкрософт выполните следующие действия.
 
-1. Запустите Internet Explorer и перейдите по адресу [http://catalog.update.microsoft.com](http://catalog.update.microsoft.com).
+1. Запустите Internet Explorer и перейдите по адресу [http://catalog.update.microsoft.com](https://catalog.update.microsoft.com).
 2. Если вы впервые используете каталог Центра обновления Майкрософт на этом компьютере, нажмите кнопку **Установить** , когда будет предложено установить надстройку каталога Центра обновления Майкрософт.
 
     ![Установка каталога](./media/storsimple-install-update2-hotfix/HCS_InstallCatalog-include.png)

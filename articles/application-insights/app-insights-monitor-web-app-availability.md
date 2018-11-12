@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 10/30/2018
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: 3869b47c4e435443bb569ae7b90df7fba9687ba7
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: e8d07922334855a8133cd6271ee98bcfac2243d5
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50421260"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51282617"
 ---
 # <a name="monitor-availability-and-responsiveness-of-any-web-site"></a>Наблюдение за доступностью и скоростью реагирования веб-сайта
 Развернув веб-приложение или веб-сайт на любом сервере, вы можете настроить тесты для наблюдения за его доступностью и скоростью реагирования. [Azure Application Insights](app-insights-overview.md) отправляет веб-запросы через одинаковые промежутки времени из разных точек по всему миру. Эта надстройка предупреждает вас, если приложение реагирует медленно или не реагирует вообще.
@@ -76,7 +76,7 @@ ms.locfileid: "50421260"
 Вы можете отслеживать сценарий, который содержит последовательность URL-адресов. Например, в случае наблюдения за интернет-магазином вы можете проверить, что добавление товаров в корзину работает исправно.
 
 > [!NOTE]
-> За многошаговые веб-тесты взимается плата. См. [таблицу расценок](http://azure.microsoft.com/pricing/details/application-insights/).
+> За многошаговые веб-тесты взимается плата. См. [таблицу расценок](https://azure.microsoft.com/pricing/details/application-insights/).
 > 
 
 Для создания многошагового теста вам сначала нужно записать сценарий с помощью Visual Studio Enterprise, а затем отправить запись в Application Insights. Application Insights периодически воспроизводит сценарий и проверяет ответы.
@@ -214,6 +214,7 @@ ms.locfileid: "50421260"
 > [!NOTE]
 > * Настройте группы действий, чтобы получать уведомления при активации оповещения, выполнив описанные выше действия. Без этого шага вы будете получать при активации правила только уведомления на портале.
 >
+
 ### <a name="alert-on-availability-metrics"></a>Оповещения на основе метрик доступности
 С помощью [новых унифицированных оповещений](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-unified-alerts) можно создавать оповещения о доступности сегментированных агрегированных метрик доступности и длительности теста:
 

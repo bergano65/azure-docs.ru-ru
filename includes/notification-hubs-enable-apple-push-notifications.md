@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/28/2018
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: bf73f64cc1e1789b770d7fae5f62e0ec27425263
-ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
+ms.openlocfilehash: 8c8f3cd67186450fdcf65c177ea0353d297a3b01
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42915164"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51264306"
 ---
 ## <a name="generate-the-certificate-signing-request-file"></a>Создание файла запроса на подпись сертификата
 
@@ -41,7 +41,7 @@ ms.locfileid: "42915164"
 
 Чтобы иметь возможность отправлять push-уведомления в приложение iOS, необходимо зарегистрировать ваше приложение в системе Apple, а также зарегистрировать его для получения push-уведомлений.  
 
-1. Если ваше приложение еще не зарегистрировано, перейдите на [портал подготовки iOS](http://go.microsoft.com/fwlink/p/?LinkId=272456) в центре разработчиков Apple, выполните вход с использованием вашего идентификатора Apple, щелкните **Identifiers** (Идентификаторы) и **App IDs** (Идентификаторы приложений), а затем нажмите кнопку **+**, чтобы зарегистрировать новое приложение.
+1. Если ваше приложение еще не зарегистрировано, перейдите на [портал подготовки iOS](https://go.microsoft.com/fwlink/p/?LinkId=272456) в центре разработчиков Apple, выполните вход с использованием вашего идентификатора Apple, щелкните **Identifiers** (Идентификаторы) и **App IDs** (Идентификаторы приложений), а затем нажмите кнопку **+**, чтобы зарегистрировать новое приложение.
 
     ![Страница с идентификаторами приложения на портале подготовки iOS](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-ios-appids.png)
 
@@ -111,7 +111,7 @@ ms.locfileid: "42915164"
 
 ## <a name="create-a-provisioning-profile-for-the-app"></a>Создание профиля подготовки для приложения
 
-1. На [портале подготовки iOS](http://go.microsoft.com/fwlink/p/?LinkId=272456) выберите **Provisioning Profiles** (Профили подготовки), щелкните **All** (Все) и нажмите кнопку **+** (+), чтобы создать профиль. Отобразится мастер **Add iOS Provisiong Profile** (Добавление профиля подготовки для iOS):
+1. На [портале подготовки iOS](https://go.microsoft.com/fwlink/p/?LinkId=272456) выберите **Provisioning Profiles** (Профили подготовки), щелкните **All** (Все) и нажмите кнопку **+** (+), чтобы создать профиль. Отобразится мастер **Add iOS Provisiong Profile** (Добавление профиля подготовки для iOS):
 
     ![Список с профилем подготовки](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-new-provisioning-profile.png)
 

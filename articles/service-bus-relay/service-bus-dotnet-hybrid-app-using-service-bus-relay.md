@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 11/02/2017
 ms.author: spelluru
-ms.openlocfilehash: fa8c4b07f79564a1e9aa4e78b2323789283d4e73
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: 668ccc581e457e2ed3ad72c08bf5e65dd86c4b52
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44054627"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228612"
 ---
 # <a name="net-on-premisescloud-hybrid-application-using-azure-wcf-relay"></a>Создание локального или облачного гибридного приложения .NET с использованием ретранслятора WCF Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "44054627"
 Прежде чем начать разработку приложения для Azure, скачайте нужные инструменты и настройте среду разработки.
 
 1. Установите пакет SDK Azure для .NET, скачав его с [этой страницы](https://azure.microsoft.com/downloads/).
-2. В столбце **.NET** щелкните ссылку, соответствующую используемой версии [Visual Studio](http://www.visualstudio.com). На описанных в этом руководстве шагах используется Visual Studio 2017.
+2. В столбце **.NET** щелкните ссылку, соответствующую используемой версии [Visual Studio](https://www.visualstudio.com). На описанных в этом руководстве шагах используется Visual Studio 2017.
 3. При появлении запроса на выполнение или сохранение файла установки щелкните **Выполнить**.
 4. В **установщике веб-платформы** щелкните **Установить**, чтобы продолжить.
 5. После завершения установки у вас будут все компоненты, необходимые для начала разработки приложения. В состав пакета SDK входят инструменты для эффективной разработки приложений Azure в Visual Studio.
@@ -75,7 +75,7 @@ ms.locfileid: "44054627"
 
    ![][11]
 4. Нажмите кнопку **ОК**, чтобы создать проект **ProductsServer**.
-5. Если диспетчер пакетов NuGet для Visual Studio уже установлен, пропустите следующий шаг. В противном случае посетите сайт [NuGet][NuGet] и щелкните [Install NuGet](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c) (Установить NuGet). Следуйте инструкциям на экране для установки диспетчера пакетов NuGet, а затем перезапустите Visual Studio.
+5. Если диспетчер пакетов NuGet для Visual Studio уже установлен, пропустите следующий шаг. В противном случае посетите сайт [NuGet][NuGet] и щелкните [Install NuGet](https://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c) (Установить NuGet). Следуйте инструкциям на экране для установки диспетчера пакетов NuGet, а затем перезапустите Visual Studio.
 6. В обозревателе решений щелкните правой кнопкой мыши проект **ProductsServer** и выберите пункт **Управление пакетами NuGet**.
 7. Щелкните вкладку **Обзор**, а затем найдите **WindowsAzure.ServiceBus**. Выберите пакет **WindowsAzure.ServiceBus**.
 8. Щелкните **Установить**и примите условия использования.

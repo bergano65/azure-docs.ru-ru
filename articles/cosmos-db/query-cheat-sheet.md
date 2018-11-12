@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: sngun
-ms.openlocfilehash: 432f61adaf736180a720aa23a7275e96fed4c733
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 22f8384105ed31ac2b11e0c6094b01549a270144
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43696937"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51230875"
 ---
 # <a name="azure-cosmos-db-query-cheat-sheets"></a>Памятка по запросам Azure Cosmos DB
 
@@ -25,7 +25,7 @@ ms.locfileid: "43696937"
 
 ## <a name="letter-sized-cheat-sheets"></a>Памятка размера Letter
 
-Скачайте [памятку по запросам Azure Cosmos DB размера Letter](http://go.microsoft.com/fwlink/?LinkId=623215), если вы планируете ее распечатать на бумаге размера Letter (21,25 x 27,5 см).
+Скачайте [памятку по запросам Azure Cosmos DB размера Letter](https://go.microsoft.com/fwlink/?LinkId=623215), если вы планируете ее распечатать на бумаге размера Letter (21,25 x 27,5 см).
 
 ![Памятка по запросам Azure Cosmos DB размера Letter, с описанием запросов и функций API-интерфейсов SQL, JavaScript, API MongoDB, API Gremlin и API таблиц.](./media/query-cheat-sheet/azure-cosmos-db-cheat-sheet-letter.png)
 

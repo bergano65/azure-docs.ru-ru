@@ -4,7 +4,7 @@ items:
 - name: Обзор
   items:
   - name: Что такое служба машинного обучения Azure
-    displayName: AML, services
+    displayName: AML, services, overview
     href: overview-what-is-azure-ml.md
   - name: Как работает служба
     displayName: architecture
@@ -17,6 +17,7 @@ items:
   - name: Приступая к работе с помощью портала
     href: quickstart-get-started.md
   - name: Начало работы с использованием Python
+    displayName: create workspace
     href: quickstart-create-workspace-with-python.md
 - name: Учебники
   items:
@@ -25,6 +26,7 @@ items:
   - name: Развертывание моделей. Часть 2
     href: tutorial-deploy-models-with-aml.md
   - name: Обучение автоматизированных моделей Машинного обучения
+    displayName: automl
     href: tutorial-auto-train-models.md
 - name: Примеры
   items:
@@ -34,6 +36,7 @@ items:
 - name: Основные понятия
   items:
   - name: Управление моделями
+    displayName: deploy, deployment
     href: concept-model-management-and-deployment.md
   - name: Ускорение с использованием FPGA
     href: concept-accelerate-with-fpgas.md
@@ -51,13 +54,14 @@ items:
     - name: Настройка среды
       href: how-to-configure-environment.md
     - name: Инструменты VS Code для решений ИИ
+      displayName: Visual Studio Code, vscode
       items:
       - name: Начало работы
         href: how-to-vscode-tools.md
       - name: Обучение и развертывание
         href: how-to-vscode-train-deploy.md
   - name: Подготовка данных
-    displayName: data prep, etl, elt
+    displayName: data prep, etl, elt, data preparation
     href: how-to-data-prep.md
     items:
     - name: Загрузка данных
@@ -69,6 +73,7 @@ items:
   - name: Обучение моделей
     items:
     - name: Настройка сред обучения
+      displayName: compute target, train
       href: how-to-set-up-training-targets.md
     - name: Доступ к данным во время обучения
       href: how-to-access-data.md
@@ -79,13 +84,12 @@ items:
         href: how-to-train-pytorch.md
       - name: TensorFlow
         href: how-to-train-tensorflow.md
-  - name: Настройка моделей
-    items:
     - name: Настройка гиперпараметров
       href: how-to-tune-hyperparameters.md
     - name: Отслеживание экспериментов и метрик
       href: how-to-track-experiments.md
   - name: Автоматизация машинного обучения
+    displayName: automl
     href: how-to-automated-ml.md
     items:
     - name: Настройка автоматического обучения
@@ -101,8 +105,10 @@ items:
     - name: Где следует развертывать модели
       href: how-to-deploy-and-where.md
     - name: Развертывание в ACI
+      displayName: Azure Container Instances
       href: how-to-deploy-to-aci.md
     - name: Развертывание в AKS
+      displayName: Azure Kubernetes
       href: how-to-deploy-to-aks.md
     - name: Развертывание в FPGA
       href: how-to-deploy-fpga-web-service.md
@@ -112,6 +118,9 @@ items:
       href: how-to-troubleshoot-deployment.md
     - name: Защита с помощью SSL
       href: how-to-secure-web-service.md
+    - name: Использование развернутой модели
+      displayName: create client, client, consume
+      href: how-to-consume-web-service.md
   - name: Мониторинг моделей
     items:
     - name: Сбор данных в рабочей среде
@@ -126,6 +135,8 @@ items:
     href: http://aka.ms/aml-sdk
   - name: Пакет SDK для подготовки данных
     href: http://aka.ms/data-prep-sdk
+  - name: Пакет SDK для мониторинга
+    href: https://aka.ms/aml-monitoring-sdk
   - name: Интерфейс командной строки для Машинного обучения
     href: reference-azure-machine-learning-cli.md
 - name: Ресурсы
@@ -347,9 +358,9 @@ items:
       href: ../desktop-workbench/frequently-asked-questions.md
     - name: Старые проблемы
       href: ../desktop-workbench/known-issues-and-troubleshooting-guide.md
-ms.openlocfilehash: 23e715064db714765a11771182248978f9493bd2
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: 8519a04730105537d5bd8639da54afafdf76590b
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50095081"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51345020"

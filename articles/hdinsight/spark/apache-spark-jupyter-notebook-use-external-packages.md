@@ -2,19 +2,19 @@
 title: Применение пользовательских пакетов Maven с записной книжкой Jupyter в кластерах Spark в Azure HDInsight
 description: Пошаговые инструкции по настройке записных книжек Jupyter, доступных с кластерами HDInsight Spark для использования пользовательских пакетов Maven.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/09/2018
-ms.author: jasonh
-ms.openlocfilehash: c6ef336e694bffec00ff239733fd7f07ba5fb09e
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.author: hrasheed
+ms.openlocfilehash: 3d01f058101da9bbe790ef06ad7d78c556755bd6
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43040375"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51011601"
 ---
 # <a name="use-external-packages-with-jupyter-notebooks-in-apache-spark-clusters-on-hdinsight"></a>Использование внешних пакетов с записными книжками Jupyter в кластерах Apache Spark в HDInsight
 > [!div class="op_single_selector"]

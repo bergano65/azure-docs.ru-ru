@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 3ad1f0638284ad1d9b65a5bb6f2d2b03e9c51e04
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 1983e7560c986df241e9c592aaaa6b646a99840f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50226934"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51264208"
 ---
 ## <a name="planning-and-implementation"></a>Планирование и реализация
 Заголовок: «SAP NetWeaver на виртуальных машинах Azure — руководство по планированию и реализации»
@@ -18,7 +18,7 @@ ms.locfileid: "50226934"
 
 Последнее обновление: август 2015 г.
 
-[Загрузить руководство](http://go.microsoft.com/fwlink/?LinkId=397963)
+[Загрузить руководство](https://go.microsoft.com/fwlink/?LinkId=397963)
 
 ## <a name="deployment"></a>Развертывание
 Заголовок: «SAP NetWeaver на виртуальных машинах Azure — руководство по развертыванию»
@@ -27,7 +27,7 @@ ms.locfileid: "50226934"
 
 Последнее обновление: сентябрь 2015 г.
 
-[Загрузить руководство](http://go.microsoft.com/fwlink/?LinkId=397964)
+[Загрузить руководство](https://go.microsoft.com/fwlink/?LinkId=397964)
 
 ## <a name="sap-dbms-on-azure"></a>СУБД SAP в Azure
 Заголовок: «Руководство по развертыванию СУБД SAP в Azure»
@@ -36,7 +36,7 @@ ms.locfileid: "50226934"
 
 Последнее обновление: декабрь 2015 г.
 
-[Загрузить руководство](http://go.microsoft.com/fwlink/?LinkId=397965)
+[Загрузить руководство](https://go.microsoft.com/fwlink/?LinkId=397965)
 
 ## <a name="sap-netweaver-on-azure"></a>SAP NetWeaver в Azure
 Заголовок: «SAP NetWeaver и решение для аварийного восстановления на основе Azure»
@@ -45,5 +45,5 @@ ms.locfileid: "50226934"
 
 Последнее обновление: сентябрь 2015 г.
 
-[Загрузить руководство](http://go.microsoft.com/fwlink/?LinkID=521971)
+[Загрузить руководство](https://go.microsoft.com/fwlink/?LinkID=521971)
 

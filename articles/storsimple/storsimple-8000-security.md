@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 05/18/2018
 ms.author: alkohli
-ms.openlocfilehash: 578fb3f8bfe68ccd9bbade0ad04f3a811a249c08
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: fb8c3fe9dd5ca207e4ae37faf9a5a1c4edfffc63
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37906390"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51233819"
 ---
 # <a name="storsimple-security-and-data-protection"></a>Защита устройства StorSimple и данных
 
@@ -121,7 +121,7 @@ CHAP — это схема проверки подлинности, исполь
 Следующие рекомендации помогут обеспечить надежность и хорошую защиту паролей StorSimple.
 
 * Меняйте пароли каждые три месяца. Изменение паролей применяется ежегодно.
-* Используйте надежные пароли. Дополнительные сведения см. в публикации блога [Create stronger passwords and protect them](http://blogs.microsoft.com/cybertrust/2014/08/25/create-stronger-passwords-and-protect-them/) (Создание более надежных паролей и их защита).
+* Используйте надежные пароли. Дополнительные сведения см. в публикации блога [Create stronger passwords and protect them](https://blogs.microsoft.com/cybertrust/2014/08/25/create-stronger-passwords-and-protect-them/) (Создание более надежных паролей и их защита).
 * Всегда используйте разные пароли для разных механизмов доступа. Каждый заданный пароль должен быть уникальным.
 * Не сообщайте пароли пользователям, не имеющим права доступа к устройству StorSimple.
 * Не произносите пароль вслух рядом с посторонними и не упоминайте формат пароля.

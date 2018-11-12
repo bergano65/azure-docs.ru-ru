@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.workload: tbd
 ms.date: 09/05/2018
 ms.author: mbullwin
-ms.openlocfilehash: 3b06ec3b10edc39d770e5a724125e70afd5e5477
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: 2b43e3487493f8568903ee0799fdd3d86e9a6542
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43783545"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51279676"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Application Insights для облачных служб Azure
 С помощью [Application Insights][start] можно отслеживать [приложения облачной службы Microsoft Azure](https://azure.microsoft.com/services/cloud-services/) на предмет доступности, производительности, сбоев и использования, объединяя данные из пакета SDK Application Insights с данными [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) из облачных служб. Благодаря получаемым данным о производительности и эффективности работы приложения на практике вы можете принимать осознанные решения о направлении разработки в каждом жизненном цикле.
@@ -96,7 +96,7 @@ ms.locfileid: "43783545"
 
 Это приведет к добавлению ключей инструментирования Application Insights в файлы `ServiceConfiguration.*.cscfg`. ([Пример кода](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/AzureEmailService/ServiceConfiguration.Cloud.cscfg)).
 
-Если требуется изменить уровень диагностических сведений, отправляемых в Application Insights, это можно сделать, [напрямую изменив файлы с расширением `.cscfg`](app-insights-azure-diagnostics.md).
+Если требуется изменить уровень диагностических сведений, отправляемых в Application Insights, это можно сделать, [напрямую изменив файлы с расширением `.cscfg`](../monitoring-and-diagnostics/azure-diagnostics-configure-application-insights.md).
 
 ## <a name="sdk"></a>Установка пакета SDK в каждый проект
 Этот параметр позволяет добавить пользовательские данные бизнес-телеметрии в любую роль для более тщательного анализа того, как приложение используется и работает.
@@ -151,7 +151,7 @@ ms.locfileid: "43783545"
 
 ![Диагностические данные Azure](./media/app-insights-cloudservices/23-wad.png)
 
-Используйте [Поиск](app-insights-diagnostic-search.md) или [запрос аналитики](app-insights-analytics-tour.md) для поиска в различных журналах трассировки, отправляемых системой диагностики Azure. Например предположим, что возникло необработанное исключение, которое вызвало сбой и перезапуск роли. Эта информация будет отображена в канале приложения журнала событий Windows. Можно использовать Поиск, чтобы просмотреть ошибку в журнале событий Windows и получить полную трассировку стека для исключения. Это поможет вам найти первопричину проблемы.
+Используйте [Поиск](app-insights-diagnostic-search.md) или [запрос аналитики](../log-analytics/query-language/get-started-analytics-portal.md) для поиска в различных журналах трассировки, отправляемых системой диагностики Azure. Например предположим, что возникло необработанное исключение, которое вызвало сбой и перезапуск роли. Эта информация будет отображена в канале приложения журнала событий Windows. Можно использовать Поиск, чтобы просмотреть ошибку в журнале событий Windows и получить полную трассировку стека для исключения. Это поможет вам найти первопричину проблемы.
 
 ![Поиск диагностических данных Azure](./media/app-insights-cloudservices/25-wad.png)
 
@@ -231,14 +231,14 @@ ms.locfileid: "43783545"
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Настройка системы диагностики Azure для отправки данных в Application Insights](app-insights-azure-diagnostics.md)
+* [Настройка системы диагностики Azure для отправки данных в Application Insights](../monitoring-and-diagnostics/azure-diagnostics-configure-application-insights.md)
 * [Автоматизация создания ресурсов Application Insights](app-insights-powershell.md)
 * [Автоматизация системы диагностики Azure](app-insights-powershell-azure-diagnostics.md)
 * [Функции Azure](https://github.com/christopheranderson/azure-functions-app-insights-sample)
 
 [api]: app-insights-api-custom-events-metrics.md
 [availability]: app-insights-monitor-web-app-availability.md
-[azure]: app-insights-azure.md
+[azure]: app-insights-overview.md
 [client]: app-insights-javascript.md
 [diagnostic]: app-insights-diagnostic-search.md
 [netlogs]: app-insights-asp-net-trace-logs.md

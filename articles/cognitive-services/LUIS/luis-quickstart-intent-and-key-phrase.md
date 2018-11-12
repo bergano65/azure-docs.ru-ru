@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: 8fa183c22b9b6830c57b0a16b7f5d20ca38e3ef3
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: d6feb24b1e59aee70204d8438f1a4c51f71d1835
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47166526"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51281818"
 ---
 # <a name="tutorial-8-extract-key-phrases-of-utterance"></a>Руководство 8. Извлечение ключевых фраз из высказывания
 В рамках этого руководства используйте предварительно созданную сущность keyPhrase, чтобы извлечь содержимое из высказываний. Не нужно помечать высказывания с использованием предварительно созданных сущностей. Сущность определяется автоматически.
@@ -29,11 +29,11 @@ ms.locfileid: "47166526"
 
 Клиентское приложение может использовать эти значения вместе с другими извлеченными сущностями, чтобы определить следующий шаг в диалоге.
 
-**Из этого руководства вы узнаете, как выполнить следующие задачи:**
+**В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
 <!-- green checkmark -->
 > [!div class="checklist"]
-> * Использовать существующее приложения из руководства.
+> * Использовать существующее приложение из руководства
 > * Добавление сущности keyPhrase 
 > * Train
 > * Опубликовать
@@ -41,26 +41,26 @@ ms.locfileid: "47166526"
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
-## <a name="use-existing-app"></a>Использовать существующее приложение.
+## <a name="use-existing-app"></a>Использование существующего приложения
 
-Продолжите работу с приложением (**HumanResources**), созданным в соответствии с инструкциями из предыдущего руководства. 
+Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
 
-Если у вас нет приложения HumanResources из предыдущего руководства, сделайте следующее:
+Если у вас нет приложения HumanResources из предыдущего руководства, выполните приведенные ниже шаги.
 
-1.  Скачайте и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-simple-HumanResources.json).
+1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-simple-HumanResources.json).
 
 2. Импортируйте JSON-файл в новое приложение.
 
-3. В разделе **Управление** на вкладке **Версии** клонируйте версию и присвойте ей имя `keyphrase`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в составе URL-адреса, оно не должно содержать символы, недопустимые для URL-адресов.
+3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `keyphrase`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе.
 
 ## <a name="add-keyphrase-entity"></a>Добавление сущности keyPhrase 
 Добавьте предварительно созданную сущность keyPhrase для извлечения запрашиваемого содержимого из фраз.
 
-1. [!include[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
+1. [!INCLUDE[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
 2. Выберите **Entities** (Сущности) в меню слева.
 
-3. Выберите **Manage prebuilt entities** (Управление предварительно созданными сущностями).
+3. Нажмите **Add prebuilt entity** (Добавить предварительно созданную сущность).
 
 4. Во всплывающем диалоговом окне выберите **keyPhrase**, а затем нажмите кнопку **Done** (Готово). 
 

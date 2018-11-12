@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/18/2016
 ms.author: ccompy
-ms.openlocfilehash: 1751d33b5f6f6a506654daedd15bbd75ae271483
-ms.sourcegitcommit: e266df9f97d04acfc4a843770fadfd8edf4fa2b7
+ms.openlocfilehash: 1c05a50f82f5c235c76ff234efe183172e0863bf
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
-ms.locfileid: "26736962"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51232986"
 ---
 # <a name="create-and-manage-hybrid-connections"></a>Создание гибридных подключений и управление ими
 
@@ -105,7 +105,7 @@ You can also download the Hybrid Connection Manager MSI file and copy the file t
 Рекомендуем воспользоваться [гибридными подключениями к Службе приложений Azure](../app-service/app-service-hybrid-connections.md).
 
 #### <a name="use-group-policy-to-control-the-on-premises-resources-used-by-a-hybrid-connection"></a>Применение групповой политики для контроля локальных ресурсов, используемых гибридным подключением
-1. Скачайте [административные шаблоны диспетчера гибридных подключений](http://www.microsoft.com/download/details.aspx?id=42963).
+1. Скачайте [административные шаблоны диспетчера гибридных подключений](https://www.microsoft.com/download/details.aspx?id=42963).
 2. Извлеките файлы.
 3. На компьютере, где осуществляется изменение групповой политики, выполните следующие действия.  
    
@@ -118,7 +118,7 @@ You can also download the Hybrid Connection Manager MSI file and copy the file t
 [Обзор гибридных подключений](integration-hybrid-connection-overview.md)
 
 ## <a name="see-also"></a>См. также
-[REST API для управления службами BizTalk в Microsoft Azure](http://msdn.microsoft.com/library/azure/dn232347.aspx)  
+[REST API для управления службами BizTalk в Microsoft Azure](https://msdn.microsoft.com/library/azure/dn232347.aspx)  
 [Службы BizTalk: диаграмма выпусков](biztalk-editions-feature-chart.md)  
 [Создание службы BizTalk](biztalk-provision-services.md)  
 [Службы BizTalk: вкладки «Панель мониторинга», «Монитор» и «Масштаб»](biztalk-dashboard-monitor-scale-tabs.md)

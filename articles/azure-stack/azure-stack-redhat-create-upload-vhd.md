@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/15/2018
 ms.author: jeffgo
-ms.openlocfilehash: d24902b894a632e9fe8c57f2fb2b652b44ab128c
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 932b4c80912fa516a08c18cd581f96b5ea91e1dc
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41946510"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51232313"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure-stack"></a>Подготовка виртуальной машины на основе Red Hat для Azure Stack
 
@@ -30,7 +30,7 @@ ms.locfileid: "41946510"
 
 ## <a name="prepare-a-red-hat-based-virtual-machine-from-hyper-v-manager"></a>Подготовка виртуальной машины под управлением Red Hat в диспетчере Hyper-V
 
-В этом разделе предполагается, что вы уже получили ISO-файл с веб-сайта Red Hat и установили образ RHEL на виртуальный жесткий диск. Дополнительные сведения о том, как использовать диспетчер Hyper-V для установки образа операционной системы, см. в статье об [установке Hyper-V и настройке виртуальной машины](http://technet.microsoft.com/library/hh846766.aspx).
+В этом разделе предполагается, что вы уже получили ISO-файл с веб-сайта Red Hat и установили образ RHEL на виртуальный жесткий диск. Дополнительные сведения о том, как использовать диспетчер Hyper-V для установки образа операционной системы, см. в статье об [установке Hyper-V и настройке виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
 
 ### <a name="rhel-installation-notes"></a>Замечания по установке RHEL
 

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 10/27/2017
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: c56a0239209f5c71130c9dd8173eed48f60a3b0a
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: d40759a53842ca3c39e67850eb727897019a25ec
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48042076"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51012060"
 ---
 # <a name="optimize-your-active-directory-environment-with-the-active-directory-health-check-solution-in-log-analytics"></a>Оптимизация среды Active Directory с помощью решения проверки работоспособности Active Directory в Log Analytics
 
@@ -53,7 +53,7 @@ ms.locfileid: "48042076"
 
 Чтобы проверить работоспособность контроллеров, которые являются компонентами оцениваемого домена, требуется агент и подключение к Log Analytics с помощью одного из следующих способов:
 
-1. Установка [агента Microsoft Monitoring Agent (MMA)](log-analytics-windows-agent.md), если контроллер домена уже не отслеживается с помощью решения System Center 2016 Operations Manager или Operations Manager 2012 R2.
+1. Установка [агента Microsoft Monitoring Agent (MMA)](log-analytics-agent-windows.md), если контроллер домена уже не отслеживается с помощью решения System Center 2016 Operations Manager или Operations Manager 2012 R2.
 2. Если сервер отслеживается решением System Center 2016 Operations Manager или Operations Manager 2012 R2, и группа управления не интегрирована со службой Log Analytics, контроллер домена может использоваться как многосетевой. С помощью Log Analytics данные будут собираться и пересылаться в службу, а контроллер домена по-прежнему будет отслеживаться решением Operations Manager.  
 3. Если группа управления Operations Manager интегрирована со службой, после включения решения в рабочей области добавьте контроллеры домена для сбора данных службой. Для этого выполните инструкции по [добавлению компьютеров под управлением агентов](log-analytics-om-agents.md#connecting-operations-manager-to-log-analytics).  
 
@@ -186,4 +186,4 @@ ms.locfileid: "48042076"
 * Да. См. раздел [Игнорирование рекомендаций](#ignore-recommendations) выше в этой статье.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Воспользуйтесь функцией [поиска по журналам в Log Analytics](log-analytics-log-searches.md), чтобы научиться анализировать подробные данные и рекомендации для проверки работоспособности AD.
+* Воспользуйтесь функцией [поиска по журналам в Log Analytics](log-analytics-queries.md), чтобы научиться анализировать подробные данные и рекомендации для проверки работоспособности AD.

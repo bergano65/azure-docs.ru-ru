@@ -3,20 +3,20 @@ title: Привязки Azure Cosmos DB для службы "Функции" в�
 description: Узнайте, как использовать триггеры и привязки Azure Cosmos DB в службе "Функции Azure".
 services: functions
 documentationcenter: na
-author: ggailey777
+author: craigshoemaker
 manager: jeconnoc
 keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
 ms.service: azure-functions; cosmos-db
 ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
-ms.author: glenga
-ms.openlocfilehash: 62d675e4b91e3e22cf01e09d1a1a021f225310a9
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.author: cshoe
+ms.openlocfilehash: 6f3b568fb23de51990f96a86cdc2b1814afe4530
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49321892"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50249928"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-1x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х
 
@@ -33,9 +33,8 @@ ms.locfileid: "49321892"
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="supported-apis"></a>Поддерживаемые API
-
-[!INCLUDE [SQL API support only](../../includes/functions-cosmosdb-sqlapi-note.md)]
+> [!NOTE]
+> Привязки Azure Cosmos DB поддерживаются только для использования с API SQL. Для всех других API Azure Cosmos DB доступ к базе данных из функции должен осуществляться с использованием статического клиента для API, включая [API MongoDB](../cosmos-db/mongodb-introduction.md)](../cosmos-db/mongodb-introduction.md), [API Cassandra](../cosmos-db/cassandra-introduction.md), [API Gremlin](../cosmos-db/graph-introduction.md) и [API таблиц](../cosmos-db/table-introduction.md).
 
 ## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
 
@@ -123,8 +122,8 @@ namespace CosmosDBSamplesV1
 
     public static void Run(IReadOnlyList<Document> documents, TraceWriter log)
     {
-      log.Verbose("Documents modified " + documents.Count);
-      log.Verbose("First document Id " + documents[0].Id);
+      log.Info("Documents modified " + documents.Count);
+      log.Info("First document Id " + documents[0].Id);
     }
 ```
 

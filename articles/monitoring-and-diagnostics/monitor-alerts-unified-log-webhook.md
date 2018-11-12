@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: f5f8ed885791a648f30790434be56d966bbf2e47
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0ee38eb32886c050eb87b2d6ed91252ee7bcfea0
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46989300"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51280713"
 ---
 # <a name="webhook-actions-for-log-alert-rules"></a>Действия веб-перехватчика для правил оповещений журнала
 При [создании оповещения в Azure](alert-log.md) можно [настроить конфигурацию с помощью групп действий](monitoring-action-groups.md) для выполнения одного или нескольких действий.  В этой статье описываются различные доступные действия веб-перехватчика и сведения о том, как настроить пользовательский веб-перехватчик на основе JSON.
@@ -79,7 +79,7 @@ ms.locfileid: "46989300"
 В этом разделе показан пример полезных данных для веб-перехватчика оповещений журнала, включая случаи стандартных и настраиваемых полезных данных.
 
 > [!NOTE]
-> Для обеспечения обратной совместимости стандартные полезные данные веб-перехватчика для оповещений с помощью Azure Log Analytics выполняют ту же роль, что и [управление оповещениями Log Analytics](../log-analytics/log-analytics-alerts-creating.md). Но для оповещений журнала с использованием [Application Insights](../application-insights/app-insights-analytics.md) стандартные полезные данные веб-перехватчика основаны на схеме группы действий.
+> Для обеспечения обратной совместимости стандартные полезные данные веб-перехватчика для оповещений с помощью Azure Log Analytics выполняют ту же роль, что и [управление оповещениями Log Analytics](../monitoring-and-diagnostics/alert-metric.md). Но для оповещений журнала с использованием [Application Insights](../application-insights/app-insights-analytics.md) стандартные полезные данные веб-перехватчика основаны на схеме группы действий.
 
 ### <a name="standard-webhook-for-log-alerts"></a>Стандартный веб-перехватчик для оповещений журнала 
 В обоих этих примерах заданы фиктивные полезные данные, которые содержат только два столбца и две строки.
@@ -201,4 +201,4 @@ ms.locfileid: "46989300"
 - Дополнительные сведения об [управлении оповещениями журналов в Azure](alert-log.md).
 - Создание [групп действий в Azure](monitoring-action-groups.md) и управление ими
 - Дополнительные сведения об [Application Insights](../application-insights/app-insights-analytics.md)
-- Дополнительные сведения о [Log Analytics](../log-analytics/log-analytics-overview.md). 
+- Дополнительные сведения о [Log Analytics](../log-analytics/log-analytics-queries.md). 

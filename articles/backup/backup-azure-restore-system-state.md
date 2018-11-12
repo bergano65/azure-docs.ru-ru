@@ -8,16 +8,16 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 8/18/2017
 ms.author: saurse
-ms.openlocfilehash: f8011fb3e7e1c5267f259a43f06d605690ffd281
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 31784c44d7561c690278aa4764e98992fbca73ae
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34606161"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51230790"
 ---
 # <a name="restore-system-state-to-windows-server"></a>Восстановление состояния системы в Windows Server
 
-В этой статье описано, как восстановить резервные копии состояния системы Windows Server из хранилища служб восстановления Azure. Чтобы восстановить состояние системы, необходимо иметь резервную копию состояния системы (созданную с помощью инструкций в разделе [Резервное копирование состояния системы Windows Server](backup-azure-system-state.md#back-up-windows-server-system-state)) и установленный [агент служб восстановления Microsoft Azure (MARS) последней версии](http://aka.ms/azurebackup_agent). Восстановление данных состояния системы Windows Server из хранилища службы восстановления Azure состоит из двух этапов:
+В этой статье описано, как восстановить резервные копии состояния системы Windows Server из хранилища служб восстановления Azure. Чтобы восстановить состояние системы, необходимо иметь резервную копию состояния системы (созданную с помощью инструкций в разделе [Резервное копирование состояния системы Windows Server](backup-azure-system-state.md#back-up-windows-server-system-state)) и установленный [агент служб восстановления Microsoft Azure (MARS) последней версии](https://aka.ms/azurebackup_agent). Восстановление данных состояния системы Windows Server из хранилища службы восстановления Azure состоит из двух этапов:
 
 1. Восстановление состояния системы в виде файлов из службы Azure Backup. При восстановлении состояния системы в виде файлов из службы Azure Backup вы можете:
   * восстановить состояние системы на тот же сервер, где создавались резервные копии;

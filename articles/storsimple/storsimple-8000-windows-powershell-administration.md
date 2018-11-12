@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 01/09/2018
 ms.author: alkohli@microsoft.com
-ms.openlocfilehash: 9408531a9e24af93359b562ed022b3d8253851e8
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: 449c65d0ed746664b75bf8775dda695f569b3eb0
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43665690"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228391"
 ---
 # <a name="use-windows-powershell-for-storsimple-to-administer-your-device"></a>Администрирование устройства с помощью Windows PowerShell для StorSimple
 
@@ -159,7 +159,7 @@ Windows PowerShell для StorSimple — это интерфейс команд�
 
 В Windows PowerShell для StorSimple доступна справка по командлетам. Существует также актуальная онлайн-справка, которую можно использовать для обновления справки на компьютере.
 
-Получить справку в этом интерфейсе можно точно так же, как в Windows PowerShell; большинство командлетов справки здесь работают. Справку по Windows PowerShell см. в библиотеке TechNet: [Работа со сценариями в Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=108518).
+Получить справку в этом интерфейсе можно точно так же, как в Windows PowerShell; большинство командлетов справки здесь работают. Справку по Windows PowerShell см. в библиотеке TechNet: [Работа со сценариями в Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=108518).
 
 Ниже приводится краткое описание типов справки для данного интерфейса Windows PowerShell с указанием способов обновления.
 

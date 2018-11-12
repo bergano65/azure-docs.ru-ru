@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 9d73040f11549741643d96913c42df49594b8d41
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 7430e57ceaec8a280c17f1276d503919a9703182
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807271"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228901"
 ---
 <a name="saas-application-technical-publishing-guide"></a>Техническое руководство по публикации приложений SaaS
 ===========================================
@@ -34,7 +34,7 @@ ms.locfileid: "48807271"
 
 Портал публикации предоставляет доступ к порталу на основе ролей, обеспечивая совместную работу нескольких пользователей при публикации предложений. Дополнительные сведения см. в статье об [управлении пользователями](./cloud-partner-portal-manage-users.md). 
 
-Прежде чем опубликовать предложение от имени учетной записи издателя, одному из пользователей с ролью *Владелец* необходимо принять [условия использования](https://azure.microsoft.com/support/legal/website-terms-of-use/), [заявление о конфиденциальности Майкрософт](http://www.microsoft.com/privacystatement/default.aspx) и [соглашение по программе сертификации Microsoft Azure](https://azure.microsoft.com/support/legal/marketplace/certified-program-agreement/).
+Прежде чем опубликовать предложение от имени учетной записи издателя, одному из пользователей с ролью *Владелец* необходимо принять [условия использования](https://azure.microsoft.com/support/legal/website-terms-of-use/), [заявление о конфиденциальности Майкрософт](https://www.microsoft.com/privacystatement/default.aspx) и [соглашение по программе сертификации Microsoft Azure](https://azure.microsoft.com/support/legal/marketplace/certified-program-agreement/).
 
 
 <a name="creating-an-offer"></a>Создание предложения
@@ -75,7 +75,7 @@ ms.locfileid: "48807271"
 | ИМЯ             | Это отображаемое имя для предложения. Это имя будет отображаться в Azure Marketplace и на портале Azure. Его длина не должна превышать 50 символов. Рекомендуется указать для вашего продукта легко узнаваемое название марки. Не включайте в него название своей организации, если только это не требуется для продвижения продукта. Если вы продвигаете продукт через свой веб-сайт, убедитесь, что данное имя полностью совпадает с используемым на сайте.             |
 |  |  |
 
-Нажмите кнопку **Сохранить**, чтобы сохранить настройки. В следующем разделе описано добавление планов в предложение.
+Щелкните **Save** (Сохранить), чтобы сохранить настройки. В следующем разделе описано добавление планов в предложение.
 
 
 ### <a name="technical-information"></a>Технические сведения

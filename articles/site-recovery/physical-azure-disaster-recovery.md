@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 10/28/2018
 ms.author: raynew
-ms.openlocfilehash: 13ce074f8ec22bc80ee5c56f2127b3a5b4d788bf
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 4f4a61ad0c1b1fcab4773dcc16c5e22053c4158d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50215401"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51230892"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-on-premises-physical-servers"></a>Настройка аварийного восстановления в Azure для локальных физических серверов
 
@@ -51,7 +51,7 @@ ms.locfileid: "50215401"
 
 ### <a name="set-up-an-azure-account"></a>Настройка учетной записи Azure
 
-Получите [учетную запись Microsoft Azure](http://azure.microsoft.com/).
+Получите [учетную запись Microsoft Azure](https://azure.microsoft.com/).
 
 - Начните с [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/).
 - Ознакомьтесь с расходами [при использования Site Recovery](site-recovery-faq.md#pricing) и [сведениями о ценах](https://azure.microsoft.com/pricing/details/site-recovery/).

@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 1c7c88742c69041594006add76f7e3c642c64dec
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 99c474978d4da1d80669505330b2dc6220d7ca5f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39170578"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51226640"
 ---
 # <a name="how-to-use-cards-part-1-of-2"></a>Использование карт (часть 1 из 2)
 В этом руководстве показано, как добавить в бот карту заполняемой формы. Также здесь описано, как поля форм перемещаются в сущности.
@@ -24,7 +24,7 @@ ms.locfileid: "39170578"
 
 ## <a name="video"></a>Видео
 
-[![Предварительная версия руководства 14](http://aka.ms/cl-tutorial-14-preview)](http://aka.ms/blis-tutorial-14)
+[![Предварительная версия руководства 14](https://aka.ms/cl-tutorial-14-preview)](https://aka.ms/blis-tutorial-14)
 
 ## <a name="requirements"></a>Требования
 Для работы с этим руководством требуется запущенный бот обучения общего назначения.

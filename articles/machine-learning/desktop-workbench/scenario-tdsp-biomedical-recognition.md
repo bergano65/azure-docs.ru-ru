@@ -17,12 +17,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/10/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 775d0701f9eeaf7d26a83b814711bea630efb2a6
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0ca8e1081b514d5569c84a6364d55e8f49bee533
+ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46973768"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50239011"
 ---
 # <a name="biomedical-entity-recognition-using-team-data-science-process-tdsp-template"></a>Распознавание биомедицинских сущностей с помощью шаблона командного процесса обработки и анализа данных (TDSP)
 
@@ -64,7 +64,7 @@ ms.locfileid: "46973768"
 ## <a name="data-description"></a>Описание данных
 
 ### <a name="1-word2vec-model-training-data"></a>1. Данные для обучения модели Word2Vec
-Для начала мы скачали необработанные данные аннотаций MEDLINE со страницы [MEDLINE](https://www.nlm.nih.gov/pubs/factsheets/medline.html). Данные доступны для всех в формате XML-файлов на соответствующих [FTP-серверах](https://ftp.ncbi.nlm.nih.gov/pubmed/baseline). На сервере доступно 892 XML-файла, каждый из которых содержит данные 30 000 статей. Дополнительные сведения об этапе сбора данных см. в разделе о структуре проекта. Каждый файл содержит следующие поля: 
+Для начала мы скачали необработанные данные аннотаций MEDLINE со страницы [MEDLINE](https://www.nlm.nih.gov/pubs/factsheets/medline.html). Данные доступны для всех в виде XML-файлов на соответствующих [FTP-серверах](https://ftp.ncbi.nlm.nih.gov/pubmed/baseline). На сервере доступно 892 XML-файла, каждый из которых содержит данные 30 000 статей. Дополнительные сведения об этапе сбора данных см. в разделе о структуре проекта. Каждый файл содержит следующие поля: 
         
         abstract
         affiliation

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/25/2018
 ms.author: magoedte
-ms.openlocfilehash: f55f81d1e28a7626dfe00f6bea349bf74e3a1d24
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: 8591e723cad1c44e9cc8d00008485e6b304fc4d3
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50092780"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51283378"
 ---
 # <a name="how-to-onboard-the-azure-monitor-for-vms-preview"></a>Подключение Azure Monitor для виртуальных машин (предварительная версия)
 В этой статье объясняется, как настроить Azure Monitor для виртуальных машин, чтобы отслеживать работоспособность операционной системы на виртуальных машинах Azure, обнаруживать и сопоставлять зависимости размещенных на них приложений.  
@@ -337,7 +337,7 @@ Azure Monitor для виртуальных машин настраивает с
     ```
 
 ### <a name="enable-using-azure-policy"></a>Включение при помощи Политики Azure
-Чтобы включить Azure Monitor для виртуальных машин в нужном масштабе для обеспечения согласованной совместимости и автоматического включения при подготовке новых виртуальных машин, мы рекомендуем использовать [Политику Azure](../azure-policy/azure-policy-introduction.md). С помощью политик можно:
+Чтобы включить Azure Monitor для виртуальных машин в нужном масштабе для обеспечения согласованной совместимости и автоматического включения при подготовке новых виртуальных машин, мы рекомендуем использовать [Политику Azure](../governance/policy/overview.md). С помощью политик можно:
 
 * развернуть агент Log Analytics и Dependency Agent; 
 * отчет о результатах проверки на соответствие; 

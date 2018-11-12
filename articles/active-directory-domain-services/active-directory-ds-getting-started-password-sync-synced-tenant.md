@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/15/2017
 ms.author: ergreenl
-ms.openlocfilehash: 751c9df8dc3826b54baab6166cd63a0dd8cff4f5
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 813d1d17f2d9b80c2e96f771fc346e553c59e95b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50155955"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51234210"
 ---
 # <a name="enable-password-synchronization-to-azure-active-directory-domain-services"></a>Включение синхронизации паролей с доменными службами Azure AD
 Выполняя предыдущие задачи, вы включили доменные службы Azure Active Directory для клиента Azure Active Directory (Azure AD). Следующая задача — включить синхронизацию необходимых хэшей учетных данных, чтобы проверить подлинность NTLM и Kerberos в доменных службах Azure AD. Когда синхронизация учетных данных настроена, пользователи могут входить в управляемый домен с помощью учетных данных организации.
@@ -50,7 +50,7 @@ ms.locfileid: "50155955"
 ### <a name="install-or-update-azure-ad-connect"></a>Установка или обновление Azure AD Connect
 Установите последнюю рекомендуемую версию службы Azure AD Connect на компьютере, присоединенном к домену. Если служба Azure AD Connect уже установлена, необходимо обновить установку до последней версии. Используйте последнюю версию Azure AD Connect, чтобы избежать возникновения известных проблем и ошибок, которые уже могли быть исправлены в обновлении.
 
-**[Загрузка Azure AD Connect](http://www.microsoft.com/download/details.aspx?id=47594)**
+**[Загрузка Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594)**
 
 Рекомендуемая версия: **1.1.614.0** (опубликована 5 сентября 2017 г.).
 

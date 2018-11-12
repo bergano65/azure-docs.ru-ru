@@ -11,22 +11,22 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/31/2018
+ms.date: 10/29/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: cb2b4bdee445587b32516c8db869170ab067b8d3
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: c94ecc223c4e2c0533c23e58823bb203064ceef6
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49406863"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50250480"
 ---
 # <a name="troubleshooting-errors-during-synchronization"></a>Устранение ошибок синхронизации
 При синхронизации данных удостоверений Windows Server Active Directory (AD DS) с Azure Active Directory (Azure AD) могут возникать ошибки. В этой статье предоставляются общие сведения о различных типах ошибок синхронизации, некоторые возможные сценарии возникновения этих ошибок, а также возможные способы их устранения. Здесь содержатся сведения о распространенных типах ошибок, возможно, рассматриваются не все возможные ошибки.
 
  В этой статье предполагается, что читатель знаком с базовыми [принципами архитектуры Azure AD и Azure AD Connect](plan-connect-design-concepts.md).
 
-В последней версии Azure AD Connect \(от августа 2016 г. и более новых версиях\) добавлена возможность просмотра отчета об ошибках синхронизации на [портале Azure](https://aka.ms/aadconnecthealth) в качестве части отчета Azure AD Connect Health для синхронизации.
+В последней версии Azure AD Connect \(от августа 2016 г. и более новых версиях\) добавлена возможность просматривать отчет об ошибках синхронизации на [портале Azure](https://aka.ms/aadconnecthealth) в составе отчета Azure AD Connect Health для синхронизации.
 
 С 1 сентября 2016 года функция [устойчивости повторяющихся атрибутов Azure AD](how-to-connect-syncservice-duplicate-attribute-resiliency.md) будет включена по умолчанию для всех *новых* клиентов Azure AD. В ближайшие месяцы эта функция будет автоматически включена для имеющихся клиентов.
 
@@ -219,6 +219,29 @@ a. Убедитесь, что для значения атрибута userPrinc
 
 ### <a name="how-to-fix"></a>Как устранить
 1. Убедитесь, что атрибут, повлекший ошибку, не превысил установленное ограничение.
+
+## <a name="existing-admin-role-conflict"></a>Конфликт с существующей ролью администратора
+
+### <a name="description"></a>ОПИСАНИЕ
+**Конфликт с существующей ролью администратора** происходит в объекте пользователя во время синхронизации, если этот объект пользователя имеет следующие характеристики:
+
+- права администратора;
+- такое же значение UserPrincipalName, как у существующего объекта Azure AD.
+
+Azure AD Connect не допускает мягкое сопоставление объекта пользователя из локальной AD с объектом пользователя в Azure AD, которому назначены права администратора.  Дополнительные сведения см. в статье [Указание атрибута UserPrincipalName в Azure AD](plan-connect-userprincipalname.md).
+
+![Существующий администратор](media/tshoot-connect-sync-errors/existingadmin.png)
+
+
+### <a name="how-to-fix"></a>Как устранить
+Чтобы устранить эту проблему, выполните любое из следующих действий:
+
+
+- измените значение UserPrincipalName на другое, которое не совпадает с именем пользователя Azure AD с правами администратора. В этом случае в Azure AD будет создан новый пользователь с новым UserPrincipalName;
+- отмените роль администратора, назначенную этому пользователю в Azure AD. В этом случае станет возможным мягкое сопоставление между объектом пользователя в локальной AD и существующим объектом пользователя в Azure AD.
+
+>[!NOTE]
+>Вы можете снова назначить роль администратора существующему объекту пользователя, когда завершится мягкое сопоставление между объектом пользователя в локальной AD и объектом пользователя в Azure AD.
 
 ## <a name="related-links"></a>Связанные ссылки
 * [Locate Active Directory Objects in Active Directory Administrative Center](https://technet.microsoft.com/library/dd560661.aspx) (Поиск объектов Active Directory в центре администрирования Active Directory)
