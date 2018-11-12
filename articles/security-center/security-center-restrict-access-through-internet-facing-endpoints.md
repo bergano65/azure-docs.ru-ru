@@ -3,7 +3,7 @@ title: Ограничение доступа через конечные веб-
 description: В этом документе объясняется, как выполнить рекомендацию центра безопасности Azure **Ограничить доступ через конечную веб-точку**.
 services: security-center
 documentationcenter: na
-author: TerryLanfear
+author: rkarlin
 manager: MBaldwin
 editor: ''
 ms.assetid: 727d88c9-163b-4ea0-a4ce-3be43686599f
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/03/2017
-ms.author: terrylan
-ms.openlocfilehash: 0b7de1f63f765705a78535ae04c1b844e06c029c
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.date: 10/28/2018
+ms.author: rkarlin
+ms.openlocfilehash: 8e404651fa315f630ff190c9e70ccdd3eec7f117
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44301163"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51230008"
 ---
 # <a name="restrict-access-through-internet-facing-endpoints-in-azure-security-center"></a>Ограничение доступа через подключенную к Интернету конечную точку в центре безопасности Azure
 Центр безопасности Azure будет рекомендовать ограничить доступ через подключенную к Интернету конечную точку, если в какой-либо группе безопасности сети есть одно или несколько правил входящего трафика, разрешающих доступ с "любого" исходного IP-адреса. Разрешение доступа с "любого" IP-адреса может позволить злоумышленникам получить доступ к вашим ресурсам. Центр безопасности будет рекомендовать изменить эти правила входящего трафика, чтобы разрешить доступ только с тех исходных IP-адресов, которым он действительно необходим.
@@ -66,7 +66,7 @@ ms.locfileid: "44301163"
 * [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md)— узнайте, как управлять оповещениями системы безопасности и реагировать на них.
 * [Мониторинг решений партнеров с помощью центра безопасности Azure](security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
 * [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md)— часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](http://blogs.msdn.com/b/azuresecurity/)— последние новости и информация об обеспечении безопасности в Azure.
+* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/)— последние новости и информация об обеспечении безопасности в Azure.
 
 <!--Image references-->
 [1]: ./media/security-center-restrict-access-thru-internet-facing-endpoint/restrict-access-thru-internet-facing-endpoint.png

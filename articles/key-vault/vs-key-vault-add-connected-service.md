@@ -11,12 +11,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 04/15/2018
 ms.author: ghogen
-ms.openlocfilehash: c90ef26c0170db67b1d422701b6969ca3f9c9e38
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 9f2adfcbf2d6ca5de79cc787029f5139138b0e52
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49958522"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50230443"
 ---
 # <a name="add-key-vault-to-your-web-application-by-using-visual-studio-connected-services"></a>Добавление хранилища ключей в веб-приложение с помощью функции "Подключенные службы" в Visual Studio
 
@@ -57,7 +57,7 @@ ms.locfileid: "49958522"
 
    ![Добавление подключенной службы в проект](media/vs-key-vault-add-connected-service/KeyVaultConnectedService4.PNG)
 
-1. Теперь добавьте секрет в хранилище ключей в Azure. Чтобы перейти на соответствующую страницу на портале, щелкните ссылку "Управлять секретами, хранящимися в этом Key Vault". Если вы закрыли страницу или проект, то можете перейти на эту страницу на [портале Azure](https://portal.azure.com). Для этого выберите **Все службы**, в разделе **Безопасность** выберите **Key Vault**, затем выберите только что созданное хранилище ключей.
+1. Теперь добавьте секрет в хранилище ключей в Azure. Чтобы перейти на соответствующую страницу на портале, щелкните ссылку "Управлять секретами, хранящимися в этом Key Vault". Если вы закрыли страницу или проект, то можете перейти на эту страницу на [портале Azure](https://portal.azure.com). Для этого выберите **Все службы**, в разделе **Безопасность** выберите **Key Vault**, затем выберите созданное хранилище ключей.
 
    ![Переход на портал](media/vs-key-vault-add-connected-service/manage-secrets-link.jpg)
 
@@ -65,7 +65,7 @@ ms.locfileid: "49958522"
 
    ![Создание и импорт секрета](media/vs-key-vault-add-connected-service/generate-secrets.jpg)
 
-1. Введите секрет, например MySecret, и присвойте ему любое строковое значение для проверки, затем нажмите кнопку **Создать**.
+1. Введите секрет, например "MySecret", и присвойте ему любое строковое значение для проверки, затем нажмите кнопку **Создать**.
 
    ![Создание секрета](media/vs-key-vault-add-connected-service/create-a-secret.jpg)
 
@@ -73,94 +73,62 @@ ms.locfileid: "49958522"
  
 Теперь можно обращаться к секретам в коде. Дальнейшие действия отличаются в зависимости от того, используется ASP.NET 4.7.1 или ASP.NET Core.
 
-## <a name="access-your-secrets-in-code-aspnet-core-projects"></a>Обращение к секретам в коде (для проектов ASP.NET Core)
+## <a name="access-your-secrets-in-code"></a>Получите доступ к секретам в коде
 
-Подключение к Key Vault устанавливается при запуске класса, который реализует [Microsoft.AspNetCore.Hosting.IHostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup?view=aspnetcore-2.1), используя способ расширения поведения запуска, описанный в статье [Усовершенствование приложения из внешней сборки в ASP.NET Core с IHostingStartup](/aspnet/core/fundamentals/host/platform-specific-configuration). Класс startup использует две переменные среды, которые содержат сведения о подключении к Key Vault: ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONENABLED со значением true и ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONVAULT с URL-адресом Key Vault. Они добавляются в файл launchsettings.json при запуске процесса **добавления подключенной службы**.
+1. Установите эти два пакета NuGet: [AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) и [KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault).
 
-Чтобы получить доступ к секретам:
+2. Откройте файл Program.cs и замените существующий код следующим: 
+```
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            BuildWebHost(args).Run();
+        }
 
-1. Теперь вы можете указывать созданные секреты в проекте ASP.NET Core в Visual Studio, используя следующие выражения в коде.
- 
-   ```csharp
-      config["MySecret"] // Access a secret without a section
-      config["Secrets:MySecret"] // Access a secret in a section
-      config.GetSection("Secrets")["MySecret"] // Get the configuration section and access a secret in it.
-   ```
+        public static IWebHost BuildWebHost(string[] args) =>
+           WebHost.CreateDefaultBuilder(args)
+               .ConfigureAppConfiguration((ctx, builder) =>
+               {
+                   var keyVaultEndpoint = GetKeyVaultEndpoint();
+                   if (!string.IsNullOrEmpty(keyVaultEndpoint))
+                   {
+                       var azureServiceTokenProvider = new AzureServiceTokenProvider();
+                       var keyVaultClient = new KeyVaultClient(
+                           new KeyVaultClient.AuthenticationCallback(
+                               azureServiceTokenProvider.KeyVaultTokenCallback));
+                       builder.AddAzureKeyVault(
+                           keyVaultEndpoint, keyVaultClient, new DefaultKeyVaultSecretManager());
+                   }
+               }
+            ).UseStartup<Startup>()
+             .Build();
 
-1. На CSHTML-странице, например About.cshtml, добавьте директиву @inject в начало файла, чтобы настроить переменную для доступа к конфигурации хранилища ключей.
+        private static string GetKeyVaultEndpoint() => "https://<YourKeyVaultName>.vault.azure.net";
+    }
+```
+3. Затем откройте файл About.cshtml.cs и напишите следующий код
+    1. Включите ссылку Microsoft.Extensions.Configuration с помощью инструкции    
+        ```
+        using Microsoft.Extensions.Configuration
+        ```
+    2. Добавьте этот конструктор
+        ```
+        public AboutModel(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+        ```
+    3. Обновите метод OnGet. Обновите значение заполнителя, показанного здесь, а также имя секрета, созданное в указанных выше командах
+        ```
+        public void OnGet()
+        {
+            //Message = "Your application description page.";
+            Message = "My key val = " + _configuration["<YourSecretNameThatWasCreatedAbove>"];
+        }
+        ```
 
-   ```cshtml
-      @inject Microsoft.Extensions.Configuration.IConfiguration config
-   ```
-
-1. Для проверки можно убедиться в доступности значения секрета, отобразив его на одной из страниц. Используйте @config для ссылки на переменную конфигурации.
- 
-   ```cshtml
-      <p> @config["MySecret"] </p>
-      <p> @config.GetSection("Secrets")["MySecret"] </p>
-      <p> @config["Secrets:MySecret"] </p>
-   ```
-
-1. Выполните сборку веб-приложения и запустите его. Затем перейдите на страницу About.cshtml и просмотрите значение секрета.
-
-## <a name="access-your-secrets-in-code-aspnet-471-projects"></a>Обращение к секретам в коде (для проектов ASP.NET 4.7.1)
-
-Подключение к Key Vault выполняется с помощью класса ConfigurationBuilder, использующего информацию, которая была добавлена в файл web.config при выполнении процесса **добавления подключенной службы**.
-
-Чтобы получить доступ к секретам:
-
-1. Измените файл web.config следующим образом. Ключи представляют собой заполнители, которые AzureKeyVault ConfigurationBuilder заменит значениями секретов из хранилища ключей.
-
-   ```xml
-     <appSettings configBuilders="AzureKeyVault">
-       <add key="webpages:Version" value="3.0.0.0" />
-       <add key="webpages:Enabled" value="false" />
-       <add key="ClientValidationEnabled" value="true" />
-       <add key="UnobtrusiveJavaScriptEnabled" value="true" />
-       <add key="MySecret" value="dummy1"/>
-       <add key="Secrets--MySecret" value="dummy2"/>
-     </appSettings>
-   ```
-
-1. В HomeController в метод контроллера About добавьте приведенные ниже строки для получения секрета и его сохранения во ViewBag.
- 
-   ```csharp
-            var secret = ConfigurationManager.AppSettings["MySecret"];
-            var secret2 = ConfigurationManager.AppSettings["Secrets--MySecret"];
-            ViewBag.Secret = $"Secret: {secret}";
-            ViewBag.Secret2 = $"Secret2: {secret2}";
-   ```
-
-1. В представлении About.cshtml добавьте следующую команду, чтобы отобразить значение секрета (только для тестирования).
-
-   ```csharp
-      <h3>@ViewBag.Secret</h3>
-      <h3>@ViewBag.Secret2</h3>
-   ```
-
-1. Запустите приложение локально, чтобы убедиться, что вы можете считывать секретное значение, введенное на портале Azure, а не фиктивное значение из файла конфигурации.
-
-Затем опубликуйте приложение в Azure.
-
-## <a name="publish-to-azure-app-service"></a>Опубликовать в Службе приложений Azure
-
-1. Щелкните узел проекта правой кнопкой мыши и выберите **Публиковать**. Появится экран с записью **Выберите целевой объект публикации**. В левой части выберите **Служба приложений**, а затем **Создать**.
-
-   ![Публикация в службе приложений](media/vs-key-vault-add-connected-service/AppServicePublish1.PNG)
-
-1. На экране **Создать Службу приложений** убедитесь, что подписка и группа ресурсов такие же, как те, которые были созданы в хранилище ключей в подписке и группе ресурсов, и выберите **Создать**.
-
-   ![Создание службы приложений](media/vs-key-vault-add-connected-service/AppServicePublish2.PNG)
-
-1. После создания веб-приложения появится экран **Публикация**. Обратите внимание на размещенный в Azure URL-адрес, опубликованный для веб-приложения. Если вы видите **None** рядом с полем **Key Vault**, по-прежнему необходимо сообщить хранилищу ключей о подключении к Службе приложений Azure. Выберите ссылку **Добавить хранилище ключей** и выберите созданное хранилище.
-
-   ![Добавить хранилище ключей](media/vs-key-vault-add-connected-service/AppServicePublish3.PNG)
-
-   Если вы видите **Управление хранилищем ключей**, можно щелкнуть, чтобы просмотреть текущие параметры, разрешения на изменение, или внесите изменения в секреты на портале Azure.
-
-1. Теперь выберите ссылку URL-адреса сайта, чтобы посетить веб-приложения в браузере. Убедитесь, что из хранилища ключей отображается правильное значение.
-
-Поздравляем. Теперь вы убедились, веб-приложение может использовать хранилище ключей для доступа к безопасно хранящимся секретам.
+Запустите приложение локально, перейдя на страницу "О программе". Вы должны получить значение секрета
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

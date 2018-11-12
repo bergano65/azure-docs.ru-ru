@@ -2,19 +2,19 @@
 title: 'Удаленная отладка приложений в HDInsight Spark с помощью Azure Toolkit for IntelliJ '
 description: Узнайте, как использовать средства HDInsight в наборе средств Azure для IntelliJ для удаленной отладки приложений Spark, выполняемых в кластерах HDInsight через VPN.
 services: hdinsight
-author: jasonwhowell
-ms.author: jasonh
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/28/2017
-ms.openlocfilehash: 55f32b498b83203a3823999a2e31024266bf37bc
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: d8b38d4f35df1a85734a4e9c7345eeeafccb70ed
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50413270"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51014556"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-debug-spark-applications-remotely-in-hdinsight-through-vpn"></a>Удаленная отладка приложений Spark в HDInsight через VPN с помощью набора средств Azure для IntelliJ
 

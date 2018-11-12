@@ -1,21 +1,20 @@
 ---
-title: Таблица поддержки Azure Site Recovery для репликации виртуальных машин VMware и физических серверов в Azure | Документация Майкрософт
-description: В этой статье указаны поддерживаемые операционные системы и компоненты для репликации виртуальных машин VMware и физических серверов в Azure с помощью службы Azure Site Recovery.
-services: site-recovery
+title: Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье указаны поддерживаемые операционные системы и компоненты для аварийного восстановления виртуальных машин VMware и физических серверов в Azure с помощью службы Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 09/10/2018
+ms.date: 10/29/2018
 ms.author: raynew
-ms.openlocfilehash: f6f1ceb4f9afaaeb0a436879802144bdebc06280
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: b472ed1c32e64b8f8ac881c09f22590c49f39c75
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49378658"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50215367"
 ---
-# <a name="support-matrix-for-vmware-and-physical-server-replication-to-azure"></a>Таблица поддержки для репликации виртуальных машин VMware и физических серверов в Azure
+# <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов в Azure
 
 В этой статье перечислены поддерживаемые компоненты и параметры для аварийного восстановления виртуальных машин VMware в Azure с помощью службы [Azure Site Recovery](site-recovery-overview.md).
 

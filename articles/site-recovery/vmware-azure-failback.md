@@ -1,19 +1,19 @@
 ---
-title: Восстановление размещения из Azure в VMware с помощью Azure Site Recovery | Документация Майкрософт
-description: После отработки отказа виртуальных машин в Azure можно запустить восстановление размещения, чтобы вернуть их в локальную среду. Узнайте, как выполнить восстановление размещения.
+title: Восстановление размещения из Azure при аварийном восстановлении виртуальных машин VMware в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: Сведения о том, как восстановить размещение на локальный сайт после отработки отказа в Azure в ходе аварийного восстановления виртуальных машин VMware и физических серверов в Azure.
 author: nsoneji
 ms.service: site-recovery
 ms.date: 10/11/2018
 ms.topic: conceptual
 ms.author: nisoneji
-ms.openlocfilehash: 841e036555723051dfeaf946f31eaf9eedaee798
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: becf0b8c9f14d81b0a25fb1727b69452c3ff690c
+ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49093516"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50215180"
 ---
-# <a name="fail-back-from-azure-to-an-on-premises-site"></a>Восстановление размещения из Azure на локальный сайт
+# <a name="fail-back-vmware-vms-and-physical-servers-from-azure-to-an-on-premises-site"></a>Восстановление размещения виртуальных машин VMware и физических серверов из Azure на локальный сайт
 
 В этой статье описывается, как восстановить размещение виртуальных машин из Azure в локальную среду VMware. Следуйте инструкциям, изложенным в этой статье, чтобы восстановить размещение виртуальных машин VMware или физических серверов Windows и Linux, отработка отказа которых выполнена c локального сайта в Azure (см. руководство [Отработка отказа в Site Recovery](site-recovery-failover.md)).
 

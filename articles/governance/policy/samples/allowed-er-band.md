@@ -1,6 +1,6 @@
 ---
-title: 'Пример политики Azure: допустимая пропускная способность ExpressRoute'
-description: Этот пример политики требует, чтобы каналы ExpressRoute использовали определенный набор значений пропускной способности.
+title: Пример политики Azure. Допустимая пропускная способность ExpressRoute
+description: Этот пример политики требует, чтобы служба ExpressRoute использовала указанный набор значений для пропускной способности.
 services: azure-policy
 author: DCtheGeek
 manager: carmonm
@@ -9,22 +9,22 @@ ms.topic: sample
 ms.date: 09/18/2018
 ms.author: dacoulte
 ms.custom: mvc
-ms.openlocfilehash: d1676bb3a7ad16c4ea94cf805b8aeec817d34388
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 27b78b7af905ae6294f83cd1dce643fb18f31ca6
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46996780"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50250367"
 ---
-# <a name="allowed-express-route-bandwidth"></a>Допустимая пропускная способность канала ExpressRoute
+# <a name="allowed-expressroute-bandwidth"></a>Допустимая пропускная способность ExpressRoute
 
-Эта политика требует, чтобы каналы ExpressRoute использовали определенный набор значений пропускной способности. Вы можете указать массив номеров SKU, которые можно задать для ExpressRoute.
+Эта политика требует, чтобы служба ExpressRoute использовала указанный набор значений для пропускной способности. Вы можете указать массив номеров SKU, которые можно задать для ExpressRoute.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="sample-template"></a>Пример шаблона
 
-[!code-json[main](../../../../policy-templates/samples/Network/express-route-bandwidthInMbps/azurepolicy.json "Allowed Express Route bandwidth")]
+[!code-json[main](../../../../policy-templates/samples/Network/express-route-bandwidthInMbps/azurepolicy.json "Allowed ExpressRoute bandwidth")]
 
 Можно развернуть шаблон с помощью [портала Azure](#deploy-with-the-portal), [PowerShell](#deploy-with-powershell) или [интерфейса командной строки Azure](#deploy-with-azure-cli).
 
@@ -37,7 +37,7 @@ ms.locfileid: "46996780"
 [!INCLUDE [sample-powershell-install](../../../../includes/sample-powershell-install-no-ssh.md)]
 
 ```azurepowershell-interactive
-$definition = New-AzureRmPolicyDefinition -Name "express-route-bandwidthInMbps" -DisplayName "Allowed Express Route bandwidth" -description "This policy enables you to specify a set of express route bandwidths that your organization can deploy." -Policy 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/Network/express-route-bandwidthInMbps/azurepolicy.rules.json' -Parameter 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/Network/express-route-bandwidthInMbps/azurepolicy.parameters.json' -Mode All
+$definition = New-AzureRmPolicyDefinition -Name "express-route-bandwidthInMbps" -DisplayName "Allowed ExpressRoute bandwidth" -description "This policy enables you to specify a set of express-route bandwidths that your organization can deploy." -Policy 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/Network/express-route-bandwidthInMbps/azurepolicy.rules.json' -Parameter 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/Network/express-route-bandwidthInMbps/azurepolicy.parameters.json' -Mode All
 $definition
 $assignment = New-AzureRMPolicyAssignment -Name <assignmentname> -Scope <scope>  -listOfBandwidthinMbps <Allowed Bandwidth> -PolicyDefinition $definition
 $assignment
@@ -56,7 +56,7 @@ Remove-AzureRmResourceGroup -Name myResourceGroup
 [!INCLUDE [sample-cli-install](../../../../includes/sample-cli-install.md)]
 
 ```azurecli-interactive
-az policy definition create --name 'express-route-bandwidthInMbps' --display-name 'Allowed Express Route bandwidth' --description 'This policy enables you to specify a set of express route bandwidths that your organization can deploy.' --rules 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/Network/express-route-bandwidthInMbps/azurepolicy.rules.json' --params 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/Network/express-route-bandwidthInMbps/azurepolicy.parameters.json' --mode All
+az policy definition create --name 'express-route-bandwidthInMbps' --display-name 'Allowed ExpressRoute bandwidth' --description 'This policy enables you to specify a set of ExpressRoute bandwidths that your organization can deploy.' --rules 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/Network/express-route-bandwidthInMbps/azurepolicy.rules.json' --params 'https://raw.githubusercontent.com/Azure/azure-policy/master/samples/Network/express-route-bandwidthInMbps/azurepolicy.parameters.json' --mode All
 
 az policy assignment create --name <assignmentname> --scope <scope> --policy "express-route-bandwidthInMbps"
 ```
@@ -71,4 +71,4 @@ az group delete --name myResourceGroup --yes
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Другие примеры см. в разделе [Примеры для политики Azure](index.md)
+- Другие примеры см. в статье [Примеры для Политики Azure](index.md).

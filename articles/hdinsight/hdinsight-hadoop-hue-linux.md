@@ -3,19 +3,19 @@ title: Использование Hue с Hadoop в кластерах HDInsight 
 description: Узнайте, как установить Hue на кластер HDInsight и задействовать туннелирование для направления запросов на Hue. Используйте Hue для просмотра хранилища и выполнения Hive или Pig.
 keywords: hue hadoop
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 12/11/2017
-ms.author: jasonh
-ms.openlocfilehash: db2c4281f23685c00e63058a5cfd8caaf663b0fb
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.author: hrasheed
+ms.openlocfilehash: 6c1acf0e0b93ca6d3a8eae9f291f37d7bb0aa763
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46948746"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51009289"
 ---
 # <a name="install-and-use-hue-on-hdinsight-hadoop-clusters"></a>Установка и использование Hue на кластерах HDInsight Hadoop
 

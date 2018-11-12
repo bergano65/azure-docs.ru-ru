@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: abshamsft
 ms.component: ''
-ms.openlocfilehash: 76c8421286633dc3c81a073423a7d9f9ca1e1d85
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 19b8d4c692d05937a1d7abafb76cf0b9d6cd2f25
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50420852"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51011482"
 ---
 # <a name="service-connectivity-monitor"></a>Монитор подключений службы
 
@@ -131,4 +131,4 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Выполните поиск по журналам](log-analytics-log-searches.md), чтобы просмотреть подробные записи данных о производительности сети.
+[Выполните поиск по журналам](log-analytics-queries.md), чтобы просмотреть подробные записи данных о производительности сети.

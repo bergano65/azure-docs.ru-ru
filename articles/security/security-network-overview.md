@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/29/2018
 ms.author: terrylan
-ms.openlocfilehash: ad711fe998a3c250775c5d4f4d76305ffb7cf860
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 69818fdb8124b9afa176ccd4dfd74cf0f2f4b346
+ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51244599"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50233809"
 ---
 # <a name="azure-network-security-overview"></a>Обзор сетевой безопасности Azure
 
@@ -144,7 +144,7 @@ Azure поддерживает несколько типов контроля д
 
 ## <a name="secure-remote-access-and-cross-premises-connectivity"></a>Безопасный удаленный доступ и межорганизационное взаимодействие
 
-Установка, настройка и управление ресурсов Azure должны выполняться удаленно. Кроме того, вам может потребоваться развернуть [гибридные](https://social.technet.microsoft.com/wiki/contents/articles/18120.hybrid-cloud-infrastructure-design-considerations.aspx) ИТ-решения, компоненты которых находятся как в локальной сети, так и в общедоступном облаке Azure. Подобные сценарии требуют безопасного удаленного доступа.
+Установка, настройка и управление ресурсов Azure должны выполняться удаленно. Кроме того, вам может потребоваться развернуть [гибридные](http://social.technet.microsoft.com/wiki/contents/articles/18120.hybrid-cloud-infrastructure-design-considerations.aspx) ИТ-решения, компоненты которых находятся как в локальной сети, так и в общедоступном облаке Azure. Подобные сценарии требуют безопасного удаленного доступа.
 
 Сети Azure поддерживают следующие сценарии безопасного удаленного доступа.
 

@@ -1,32 +1,24 @@
 ---
 title: Создание и изменение канала ExpressRoute с помощью PowerShell и Azure Resource Manager | Документация Майкрософт
 description: В этой статье описывается создание, подготовка, проверка, обновление, удаление и отзыв канала ExpressRoute.
-documentationcenter: na
 services: expressroute
 author: ganesr
-manager: timlt
-editor: ''
-tags: azure-resource-manager
-ms.assetid: f997182e-9b25-4a7a-b079-b004221dadcc
 ms.service: expressroute
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 10/18/2017
+ms.date: 10/18/2018
 ms.author: ganesr;cherylmc
-ms.openlocfilehash: 0d45e97cc42826375a99df16a73c9a7b0c359224
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: e8af299967b3f7d8010004cc60058733d7c80163
+ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31594047"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50249326"
 ---
 # <a name="create-and-modify-an-expressroute-circuit-using-powershell"></a>Создание и изменение канала ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
 > * [портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
-> * [интерфейс командной строки Azure](howto-circuit-cli.md)
+> * [Интерфейс командной строки Azure](howto-circuit-cli.md)
 > * [Видео — портал Azure](http://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
 >
@@ -34,27 +26,31 @@ ms.locfileid: "31594047"
 В этой статье объясняется, как создать канал Azure ExpressRoute, используя командлеты PowerShell и модель развертывания с помощью Azure Resource Manager. В этой статье описывается, как проверить состояние канала, обновить его или удалить и отозвать.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-* Установите последнюю версию командлетов PowerShell для Azure Resource Manager. Дополнительные сведения см. в [обзоре Azure PowerShell](/powershell/azure/overview).
-* Изучите [предварительные требования](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md), прежде чем приступить к настройке.
 
+Изучите [предварительные требования](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md), прежде чем приступить к настройке.
+
+### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
+[!INCLUDE [expressroute-cloudshell](../../includes/expressroute-cloudshell-powershell-about.md)]
 
 ## <a name="create"></a>Создание и подготовка канала ExpressRoute
 ### <a name="1-sign-in-to-your-azure-account-and-select-your-subscription"></a>1. Войдите в учетную запись Azure и выберите подписку.
 Чтобы начать настройку, войдите в свою учетную запись Azure. Для подключения используйте следующие примеры:
 
-```powershell
+При использовании Azure CloudShell не нужно запускать Connect-AzureRmAccount, так как подключение будет выполнено автоматически.
+
+```azurepowershell
 Connect-AzureRmAccount
 ```
 
 Просмотрите подписки учетной записи.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmSubscription
 ```
 
 Выберите подписку, необходимую для создания канала ExpressRoute для следующих операций.
 
-```powershell
+```azurepowershell-interactive
 Select-AzureRmSubscription -SubscriptionId "<subscription ID>"
 ```
 
@@ -63,7 +59,7 @@ Select-AzureRmSubscription -SubscriptionId "<subscription ID>"
 
 Командлет PowerShell **Get-AzureRmExpressRouteServiceProvider** возвращает эти сведения, которые будут использоваться в последующих действиях.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmExpressRouteServiceProvider
 ```
 
@@ -78,14 +74,14 @@ Get-AzureRmExpressRouteServiceProvider
 ### <a name="3-create-an-expressroute-circuit"></a>3. Создание канала ExpressRoute
 Перед созданием канала ExpressRoute необходимо создать группу ресурсов (если вы этого еще не сделали) с помощью следующей команды:
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmResourceGroup -Name "ExpressRouteResourceGroup" -Location "West US"
 ```
 
 
 В приведенном ниже примере показано, как создать канал ExpressRoute со скоростью 200 Мбит/с каналом через Equinix в Кремниевой долине. Если вы используете другой поставщик и другие параметры, подставьте в запрос соответствующие данные. Для запроса нового ключа службы воспользуйтесь следующим примером:
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup" -Location "West US" -SkuTier Standard -SkuFamily MeteredData -ServiceProviderName "Equinix" -PeeringLocation "Silicon Valley" -BandwidthInMbps 200
 ```
 
@@ -101,7 +97,7 @@ New-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName
 
 Ответ будет содержать ключ службы. Подробное описание всех параметров можно получить, выполнив следующую команду.
 
-```powershell
+```azurepowershell-interactive
 get-help New-AzureRmExpressRouteCircuit -detailed
 ```
 
@@ -109,7 +105,7 @@ get-help New-AzureRmExpressRouteCircuit -detailed
 ### <a name="4-list-all-expressroute-circuits"></a>4. Получение списка всех каналов ExpressRoute
 Чтобы получить список всех созданных вами каналов ExpressRoute, выполните команду **Get-AzureRmExpressRouteCircuit**.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 ```
 
@@ -139,7 +135,7 @@ Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName
 
 Вы можете получить эти сведения в любое время с помощью командлета `Get-AzureRmExpressRouteCircuit` . Если командлет вызывается без параметров, выводится список всех каналов. Ваш ключ службы показан в поле *ServiceKey*:
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmExpressRouteCircuit
 ```
 
@@ -171,7 +167,7 @@ Get-AzureRmExpressRouteCircuit
 
 Подробное описание всех параметров можно получить, выполнив следующую команду.
 
-```powershell
+```azurepowershell-interactive
 get-help Get-AzureRmExpressRouteCircuit -detailed
 ```
 
@@ -198,7 +194,7 @@ get-help Get-AzureRmExpressRouteCircuit -detailed
 ### <a name="6-periodically-check-the-status-and-the-state-of-the-circuit-key"></a>6. Периодическая проверка состояния и статуса ключа канала
 Проверка состояния и состояния ключа канала позволит вам узнать, когда поставщик активирует ваш канал. После настройки канала значение параметра *ServiceProviderProvisioningState* изменится на *Provisioned*, как показано в примере ниже.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 ```
 
@@ -241,7 +237,7 @@ Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName
 ## <a name="getting-the-status-of-an-expressroute-circuit"></a>Получение состояния канала ExpressRoute
 Вы можете в любой момент получить эти сведения с помощью командлета **Get-AzureRmExpressRouteCircuit**. Если командлет вызывается без параметров, выводится список всех каналов.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmExpressRouteCircuit
 ```
 
@@ -273,7 +269,7 @@ Get-AzureRmExpressRouteCircuit
 
 Для получения сведений об определенном канале ExpressRoute передайте имя группы ресурсов и имя канала как параметр вызова.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 ```
 
@@ -305,7 +301,7 @@ Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName
 
 Подробное описание всех параметров можно получить, выполнив следующую команду.
 
-```powershell
+```azurepowershell-interactive
 get-help get-azurededicatedcircuit -detailed
 ```
 
@@ -324,7 +320,7 @@ get-help get-azurededicatedcircuit -detailed
 ### <a name="to-enable-the-expressroute-premium-add-on"></a>Включение надстройки ExpressRoute "Премиум"
 Вы можете включить надстройку ExpressRoute "Премиум" для существующего канала с помощью следующего фрагмента кода PowerShell:
 
-```powershell
+```azurepowershell-interactive
 $ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
 $ckt.Sku.Tier = "Premium"
@@ -349,7 +345,7 @@ Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
 Вы можете отключить надстройку ExpressRoute "Премиум" для существующего канала с помощью следующего командлета PowerShell:
 
-```powershell
+```azurepowershell-interactive
 $ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
 $ckt.Sku.Tier = "Standard"
@@ -369,7 +365,7 @@ Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
 Выберите необходимый размер и используйте следующую команду для изменения размера канала:
 
-```powershell
+```azurepowershell-interactive
 $ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
 $ckt.ServiceProviderProperties.BandwidthInMbps = 1000
@@ -383,7 +379,7 @@ Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 ### <a name="to-move-the-sku-from-metered-to-unlimited"></a>Перевод SKU с измеряемых на неограниченные данные
 Изменить SKU канала ExpressRoute можно, используя следующий фрагмент кода PowerShell:
 
-```powershell
+```azurepowershell-interactive
 $ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
 $ckt.Sku.Family = "UnlimitedData"
@@ -404,7 +400,7 @@ Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
 Для удаления канала ExpressRoute выполните следующую команду:
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmExpressRouteCircuit -ResourceGroupName "ExpressRouteResourceGroup" -Name "ExpressRouteARMCircuit"
 ```
 
