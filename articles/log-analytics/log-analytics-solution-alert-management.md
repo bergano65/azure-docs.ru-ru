@@ -15,28 +15,28 @@ ms.workload: infrastructure-services
 ms.date: 01/19/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: 29cc2cdc13d07d97bb1da872cbf53ea5353a0e16
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: fa76ccf7019097c5f27aa126b0a5a7dc81ffbd41
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48044592"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51008153"
 ---
 # <a name="alert-management-solution-in-azure-log-analytics"></a>Решение "Управление оповещениями" в Azure Log Analytics
 
 ![Значок "Управление оповещениями"](media/log-analytics-solution-alert-management/icon.png)
 
-Решение для управления оповещениями помогает анализировать все оповещения в репозитории Log Analytics.  Эти оповещения могут поступать из различных источников, например [созданных службой Log Analytics](log-analytics-alerts.md) или [импортированных из Nagios или Zabbix](log-analytics-linux-agents.md). Это решение также импортирует оповещения из всех [подключенных групп управления System Center Operations Manager](log-analytics-om-agents.md).
+Решение для управления оповещениями помогает анализировать все оповещения в репозитории Log Analytics.  Эти оповещения могут поступать из различных источников, например [созданных службой Log Analytics](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md) или [импортированных из Nagios или Zabbix](log-analytics-quick-collect-linux-computer.md). Это решение также импортирует оповещения из всех [подключенных групп управления System Center Operations Manager](log-analytics-om-agents.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 Решение работает с любыми записями в репозитории Log Analytics, имеющими тип **Alert** (Оповещение), поэтому необходимо выполнить настройку, которая требуется для сбора этих записей.
 
-- Для оповещений Log Analytics [создайте правила генерации оповещений](log-analytics-alerts.md), чтобы записи оповещений создавались непосредственно в репозитории.
-- Для оповещений Nagios и Zabbix [настройте соответствующие серверы](log-analytics-linux-agents.md) на отправку оповещений в Log Analytics.
+- Для оповещений Log Analytics [создайте правила генерации оповещений](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md), чтобы записи оповещений создавались непосредственно в репозитории.
+- Для оповещений Nagios и Zabbix [настройте соответствующие серверы](log-analytics-quick-collect-linux-computer.md) на отправку оповещений в Log Analytics.
 - Для оповещений System Center Operations Manager [подключите группу управления Operations Manager к рабочей области Log Analytics](log-analytics-om-agents.md).  Все оповещения, созданные в System Center Operations Manager, импортируются в Log Analytics.  
 
 ## <a name="configuration"></a>Параметр Configuration
-Добавьте решение "Управление оповещениями" в рабочую область Log Analytics в соответствии с инструкциями по [добавлению решений](log-analytics-add-solutions.md). Дополнительная настройка не требуется.
+Добавьте решение "Управление оповещениями" в рабочую область Log Analytics в соответствии с инструкциями по [добавлению решений](../monitoring/monitoring-solutions.md). Дополнительная настройка не требуется.
 
 ## <a name="management-packs"></a>Пакеты управления
 Если группа управления System Center Operations Manager подключена к рабочей области Log Analytics, то при добавлении этого решения в System Center Operations Manager будут установлены указанные ниже пакеты.  Для этих пакетов управления не требуются настройка или обслуживание.
@@ -51,8 +51,8 @@ ms.locfileid: "48044592"
 
 | Подключенный источник | Поддержка | ОПИСАНИЕ |
 |:--- |:--- |:--- |
-| [Агенты Windows](log-analytics-windows-agent.md) | Нет  |Прямые агенты Windows не создают оповещения.  Оповещения Log Analytics могут создаваться на основании событий и данных о производительности, собранных из агентов Windows. |
-| [Агенты Linux](log-analytics-linux-agents.md) | Нет  |Прямые агенты Linux не создают оповещения.  Оповещения Log Analytics могут создаваться на основании событий и данных о производительности, собранных из агентов Linux.  Оповещения Nagios и Zabbix собираются с тех серверов, для которых требуется агент Linux. |
+| [Агенты Windows](log-analytics-agent-windows.md) | Нет  |Прямые агенты Windows не создают оповещения.  Оповещения Log Analytics могут создаваться на основании событий и данных о производительности, собранных из агентов Windows. |
+| [Агенты Linux](log-analytics-quick-collect-linux-computer.md) | Нет  |Прямые агенты Linux не создают оповещения.  Оповещения Log Analytics могут создаваться на основании событий и данных о производительности, собранных из агентов Linux.  Оповещения Nagios и Zabbix собираются с тех серверов, для которых требуется агент Linux. |
 | [Группа управления System Center Operations Manager](log-analytics-om-agents.md) |Yes |Оповещения, созданные в агентах System Center Operations Manager, поступают в группу управления и пересылаются в Log Analytics.<br><br>Прямое подключение агентов Operations Manager к Log Analytics не требуется. Данные об оповещениях пересылаются из группы управления в репозиторий Log Analytics. |
 
 
@@ -74,7 +74,7 @@ ms.locfileid: "48044592"
 | Активные оповещения SCOM |Все оповещения, собранные из Operations Manager, с любым состоянием, кроме *Закрыто*, группируются по источнику оповещения. |
 | все активные оповещения. |Все оповещения с любым уровнем серьезности группируются по имени. Включает только оповещения Operations Manager с любым состоянием, кроме *Закрыто*. |
 
-Если прокрутить панель мониторинга вправо, там вы найдете несколько распространенных запросов. Любой запрос можно щелкнуть, чтобы выполнить [поиск по журналам](log-analytics-log-searches.md) и получить информацию об оповещениях.
+Если прокрутить панель мониторинга вправо, там вы найдете несколько распространенных запросов. Любой запрос можно щелкнуть, чтобы выполнить [поиск по журналам](log-analytics-queries.md) и получить информацию об оповещениях.
 
 ![Панель мониторинга "Управление оповещениями"](media/log-analytics-solution-alert-management/dashboard.png)
 
@@ -123,4 +123,4 @@ ms.locfileid: "48044592"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Дополнительные сведения о генерации оповещений из Log Analytics см. в статье [Оповещения в Log Analytics](log-analytics-alerts.md).
+* Дополнительные сведения о генерации оповещений из Log Analytics см. в статье [Оповещения в Log Analytics](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md).

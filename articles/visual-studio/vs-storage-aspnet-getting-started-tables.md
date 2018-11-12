@@ -12,12 +12,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/21/2016
 ms.author: ghogen
-ms.openlocfilehash: c9d9cd9616b263ca002e6fe7ad6c875cce10289b
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: 518e14b991aa110a6ed55f984a66cd386a618f0f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40246774"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228969"
 ---
 # <a name="get-started-with-azure-table-storage-and-visual-studio-connected-services-aspnet"></a>Начало работы с хранилищем таблиц Azure и подключенными службами Visual Studio (ASP.NET)
 [!INCLUDE [storage-try-azure-tools-tables](../../includes/storage-try-azure-tools-tables.md)]
@@ -173,7 +173,7 @@ ms.locfileid: "40246774"
   
     ![Создать таблицу](./media/vs-storage-aspnet-getting-started-tables/create-table-results.png)
 
-    Как упоминалось ранее, метод **CloudTable.CreateIfNotExists** возвращает значение **true**, только если таблица не существует или была создана. Таким образом, если вы запустите приложение, когда таблица существует, метод вернет значение **false**. Чтобы запустить приложение несколько раз, вам нужно удалить таблицу перед повторным запуском приложения. Чтобы удалить таблицу, используйте метод **CloudTable.Delete**. Ее также можно удалить с помощью [портала Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040) или в [обозревателе хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md).  
+    Как упоминалось ранее, метод **CloudTable.CreateIfNotExists** возвращает значение **true**, только если таблица не существует или была создана. Таким образом, если вы запустите приложение, когда таблица существует, метод вернет значение **false**. Чтобы запустить приложение несколько раз, вам нужно удалить таблицу перед повторным запуском приложения. Чтобы удалить таблицу, используйте метод **CloudTable.Delete**. Ее также можно удалить с помощью [портала Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040) или в [обозревателе хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md).  
 
 ## <a name="add-an-entity-to-a-table"></a>Добавление сущности в таблицу
 

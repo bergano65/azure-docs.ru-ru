@@ -12,12 +12,12 @@ ms.author: jodebrui
 ms.reviewer: ''
 manager: craigg
 ms.date: 07/16/2018
-ms.openlocfilehash: 8fd430aa710c7e36133b40c7079b9d727774c68f
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: d850aff8ddb2a8b6cdd68620ae823d582c527581
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47166934"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51229096"
 ---
 # <a name="optimize-performance-by-using-in-memory-technologies-in-sql-database"></a>Оптимизация производительности с помощью технологий обработки в оперативной памяти в базе данных SQL
 
@@ -57,11 +57,11 @@ ms.locfileid: "47166934"
 Ниже приведены ресурсы с более подробными сведениями относительно технологий.
 
 - Статья [Общие сведения и сценарии использования](https://msdn.microsoft.com/library/mt774593.aspx) содержит ссылки на примеры реальных клиентов и сведения, необходимые для начала работы.
-- [In-Memory OLTP (оптимизация в памяти)](http://msdn.microsoft.com/library/dn133186.aspx)
+- [In-Memory OLTP (оптимизация в памяти)](https://msdn.microsoft.com/library/dn133186.aspx)
 - [Описание индексов columnstore](https://msdn.microsoft.com/library/gg492088.aspx)
 - Гибридные сценарии транзакционной и аналитической обработки, которые также называются [операционной аналитикой в реальном времени](https://msdn.microsoft.com/library/dn817827.aspx).
 
-Краткая ознакомительная информация относительно выполняющейся в памяти OLTP: [Краткое руководство 1. Технологии выполнения OLTP в памяти для повышения производительности службы Transact-SQL](http://msdn.microsoft.com/library/mt694156.aspx) (еще одна статья, которая поможет вам приступить к работе).
+Краткая ознакомительная информация относительно выполняющейся в памяти OLTP: [Краткое руководство 1. Технологии выполнения OLTP в памяти для повышения производительности службы Transact-SQL](https://msdn.microsoft.com/library/mt694156.aspx) (еще одна статья, которая поможет вам приступить к работе).
 
 Подробные видеоролики об этих технологиях:
 
@@ -158,7 +158,7 @@ SELECT * FROM sys.sql_modules WHERE uses_native_compilation=1
 
 1. На [портале Azure](https://portal.azure.com/) создайте на сервере базу данных уровня "Премиум" или "Критически важный для бизнеса". Укажите **источник** для примера базы данных AdventureWorksLT. Подробные инструкции см. в статье [Начало работы с серверами баз данных SQL Azure, базами данных и правилами брандмауэра с использованием портала Azure и SQL Server Management Studio](sql-database-get-started-portal.md).
 
-2. Подключитесь к базе данных с помощью SQL Server Management Studio [(SSMS.exe)](http://msdn.microsoft.com/library/mt238290.aspx).
+2. Подключитесь к базе данных с помощью SQL Server Management Studio [(SSMS.exe)](https://msdn.microsoft.com/library/mt238290.aspx).
 
 3. Скопируйте в буфер обмена [скрипт Transact-SQL для In-Memory OLTP](https://raw.githubusercontent.com/Microsoft/sql-server-samples/master/samples/features/in-memory/t-sql-scripts/sql_in-memory_oltp_sample.sql) . Скрипт T-SQL создаст необходимые объекты обработки в оперативной памяти в образце базы данных AdventureWorksLT, созданной на этапе 1.
 
@@ -291,9 +291,9 @@ end
 На виртуальной машине (или в другом размещении) установите служебные программы RML, которые включают в себя ostress.exe.
 
 Дополнительные сведения можно найти в разделе 
-- Обсуждение программы ostress.exe представлено в статье [Пример базы данных для выполняющейся в памяти OLTP](http://msdn.microsoft.com/library/mt465764.aspx).
-- Или ознакомьтесь со статьей [Пример базы данных для выполняющейся в памяти OLTP](http://msdn.microsoft.com/library/mt465764.aspx).
-- Можно также прочитать [блог об установке ostress.exe](http://blogs.msdn.com/b/psssql/archive/2013/10/29/cumulative-update-2-to-the-rml-utilities-for-microsoft-sql-server-released.aspx).
+- Обсуждение программы ostress.exe представлено в статье [Пример базы данных для выполняющейся в памяти OLTP](https://msdn.microsoft.com/library/mt465764.aspx).
+- Или ознакомьтесь со статьей [Пример базы данных для выполняющейся в памяти OLTP](https://msdn.microsoft.com/library/mt465764.aspx).
+- Можно также прочитать [блог об установке ostress.exe](https://blogs.msdn.com/b/psssql/archive/2013/10/29/cumulative-update-2-to-the-rml-utilities-for-microsoft-sql-server-released.aspx).
 
 
 
@@ -379,7 +379,7 @@ EXECUTE Demo.usp_DemoReset;
 В этом разделе вы сравните результаты ввода-вывода и статистические данные при использовании индекса columnstore и традиционного индекса сбалансированного дерева.
 
 
-Для анализа в режиме реального времени с использованием рабочей нагрузки OLTP зачастую лучше использовать некластеризованный индекс columnstore. Дополнительные сведения см. в статье [Руководство по индексам columnstore](http://msdn.microsoft.com/library/gg492088.aspx).
+Для анализа в режиме реального времени с использованием рабочей нагрузки OLTP зачастую лучше использовать некластеризованный индекс columnstore. Дополнительные сведения см. в статье [Руководство по индексам columnstore](https://msdn.microsoft.com/library/gg492088.aspx).
 
 
 
@@ -493,7 +493,7 @@ GO
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Краткое руководство 1. Технологии выполнения OLTP в памяти для повышения производительности службы Transact-SQL](http://msdn.microsoft.com/library/mt694156.aspx)
+- [Краткое руководство 1. Технологии выполнения OLTP в памяти для повышения производительности службы Transact-SQL](https://msdn.microsoft.com/library/mt694156.aspx)
 
 - [Повышение производительности приложений в базе данных SQL с помощью выполняющейся в памяти OLTP](sql-database-in-memory-oltp-migration.md)
 
@@ -508,24 +508,24 @@ GO
 
 - [In-Memory OLTP in Azure SQL Database](https://azure.microsoft.com/blog/in-memory-oltp-in-azure-sql-database/) (Выполняющаяся в памяти OLTP в базе данных SQL Azure)
 
-- [Learn about In-Memory OLTP](http://msdn.microsoft.com/library/dn133186.aspx) (Знакомство с In-Memory OLTP)
+- [Learn about In-Memory OLTP](https://msdn.microsoft.com/library/dn133186.aspx) (Знакомство с In-Memory OLTP)
 
 - [Руководство по индексам columnstore](https://msdn.microsoft.com/library/gg492088.aspx)
 
-- [Начало работы с Columnstore для получения операционной аналитики в реальном времени](http://msdn.microsoft.com/library/dn817827.aspx)
+- [Начало работы с Columnstore для получения операционной аналитики в реальном времени](https://msdn.microsoft.com/library/dn817827.aspx)
 
-- Технический документ с [рекомендациями по распространенным шаблонам рабочих нагрузок и миграции](http://msdn.microsoft.com/library/dn673538.aspx) включает описание шаблонов рабочих нагрузок, для которых выполняющаяся OLTP обычно обеспечивает значительное повышение производительности.
+- Технический документ с [рекомендациями по распространенным шаблонам рабочих нагрузок и миграции](https://msdn.microsoft.com/library/dn673538.aspx) включает описание шаблонов рабочих нагрузок, для которых выполняющаяся OLTP обычно обеспечивает значительное повышение производительности.
 
 #### <a name="application-design"></a>Проектирование приложений
 
-- [In-Memory OLTP (оптимизация в памяти)](http://msdn.microsoft.com/library/dn133186.aspx)
+- [In-Memory OLTP (оптимизация в памяти)](https://msdn.microsoft.com/library/dn133186.aspx)
 
 - [Повышение производительности приложений в базе данных SQL с помощью выполняющейся в памяти OLTP](sql-database-in-memory-oltp-migration.md)
 
 #### <a name="tools"></a>Средства
 
-- [портала Azure](https://portal.azure.com/)
+- [портал Azure](https://portal.azure.com/)
 
 - [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx)
 
-- [SQL Server Data Tools (SSDT)](http://msdn.microsoft.com/library/mt204009.aspx)
+- [SQL Server Data Tools (SSDT)](https://msdn.microsoft.com/library/mt204009.aspx)

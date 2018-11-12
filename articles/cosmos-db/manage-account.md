@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/28/2017
 ms.author: kirillg
-ms.openlocfilehash: 8b28143dc92fa526b631baf6d47e4a9f2367ee0e
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: abcf51c6bd196c2ffb0bb35e2df161531a53972d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34612162"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51229396"
 ---
 # <a name="how-to-manage-an-azure-cosmos-db-account"></a>Как управлять учетной записью Azure Cosmos DB
 Узнайте, как задать глобальную согласованность, как работать с ключами и как удалить учетную запись Azure Cosmos DB на портале Azure.
@@ -96,7 +96,7 @@ ms.locfileid: "34612162"
 ![Как удалить учетную запись Azure Cosmos DB на портале Azure](./media/manage-account/delete-account-confirm.png)
 
 ## <a id="next"></a>Дальнейшие действия
-Узнайте о том, как [приступить к работе с учетной записью Azure Cosmos DB](http://go.microsoft.com/fwlink/p/?LinkId=402364).
+Узнайте о том, как [приступить к работе с учетной записью Azure Cosmos DB](https://go.microsoft.com/fwlink/p/?LinkId=402364).
 
 <!--Image references-->
 [5]: ./media/manage-account/documentdb_change_consistency-1.png

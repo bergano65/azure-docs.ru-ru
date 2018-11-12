@@ -3,19 +3,19 @@ title: Визуализация больших данных с помощью Po
 description: Сведения о визуализации данных Hive, обрабатываемых Azure HDInsight, с помощью Microsoft Power BI.
 keywords: hdinsight,hadoop,hive,интерактивный запрос,interactive hive,LLAP,odbc
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,
 ms.topic: conceptual
 ms.date: 05/16/2018
-ms.author: jasonh
-ms.openlocfilehash: c24818f6b746754111540bae5fbf7f21d22c3a61
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.author: hrasheed
+ms.openlocfilehash: b094df367d4396533d368b9fdbcb4b78ec1673de
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43041910"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51008901"
 ---
 # <a name="visualize-hive-data-with-microsoft-power-bi-using-odbc-in-azure-hdinsight"></a>Визуализация данных Hive с Microsoft Power BI с использованием ODBC в Azure HDInsight
 

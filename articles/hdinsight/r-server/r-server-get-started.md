@@ -3,18 +3,18 @@ title: Начало работы со службами машинного обу
 description: Узнайте, как создать Apache Spark в кластере HDInsight, который содержит службы машинного обучения, и отправить скрипт R в кластер.
 services: hdinsight
 ms.service: hdinsight
-author: jasonwhowell
-ms.author: jasonh
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: 7b3d2d47db733d1290bccca0e44958098451324e
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 0811f0e115545a37b6c570c436900a8548adae61
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43046418"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51006368"
 ---
 # <a name="get-started-with-ml-services-on-azure-hdinsight"></a>Начало работы со службами машинного обучения в Azure HDInsight
 

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: abshamsft
 ms.component: ''
-ms.openlocfilehash: 17a15ca00d7343064bde84860de91b62ff136cfe
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 14ddd92320fdbeab3edf8c155bdb195334c93e16
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50414129"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51006912"
 ---
 # <a name="network-performance-monitor-solution-performance-monitoring"></a>Решение "Монитор производительности сети": мониторинг производительности
 
@@ -137,4 +137,4 @@ ms.locfileid: "50414129"
 ![Карта топологии с выбранными свойствами узла](media/log-analytics-network-performance-monitor-performance-monitor/topology-dashboard-root-cause.png) 
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Выполните поиск по журналам](log-analytics-log-searches.md), чтобы просмотреть подробные записи данных о производительности сети.
+[Выполните поиск по журналам](log-analytics-queries.md), чтобы просмотреть подробные записи данных о производительности сети.

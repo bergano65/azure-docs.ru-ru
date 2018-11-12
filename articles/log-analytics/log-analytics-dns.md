@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 9ac8d876e9c79e5aadfcf834e18e94f6ac8b3a30
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: bd72b93d31a25a6aa848fc08a7db4d9d0fcece9f
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49408478"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51010751"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Сбор сведений об инфраструктуре DNS с помощью решения аналитики DNS (предварительной версии)
 
@@ -44,8 +44,8 @@ ms.locfileid: "49408478"
 
 | **Подключенный источник** | **Поддержка** | **Описание** |
 | --- | --- | --- |
-| [Агенты Windows](log-analytics-windows-agent.md) | Yes | Решение собирает сведения о DNS из агентов Windows. |
-| [Агенты Linux](log-analytics-linux-agents.md) | Нет  | Решение не собирает сведения о DNS из прямых агентов Linux. |
+| [Агенты Windows](log-analytics-agent-windows.md) | Yes | Решение собирает сведения о DNS из агентов Windows. |
+| [Агенты Linux](log-analytics-quick-collect-linux-computer.md) | Нет  | Решение не собирает сведения о DNS из прямых агентов Linux. |
 | [Группа управления System Center Operations Manager](log-analytics-om-agents.md) | Yes | Решение собирает сведения о DNS из агентов в подключенной группе управления Operations Manager. Прямое подключение агента Operations Manager к Log Analytics не требуется. Данные пересылаются из группы управления в рабочую область Log Analytics. |
 | [Учетная запись хранения Azure](log-analytics-azure-storage.md) | Нет  | Решение не использует службу хранилища Azure. |
 
@@ -57,8 +57,8 @@ ms.locfileid: "49408478"
 
 Для настройки решения используйте указанные ниже данные.
 
-- Агент [Windows](log-analytics-windows-agent.md) или [Operations Manager](log-analytics-om-agents.md) должен быть установлен на каждом DNS-сервере, который вы хотите отслеживать.
-- Решение "Аналитика DNS" можно добавить в рабочую область Log Analytics из [Azure Marketplace](https://aka.ms/dnsanalyticsazuremarketplace). Вы также можете использовать процесс, описанный в статье [Добавление решений для управления Azure Log Analytics в рабочую область](log-analytics-add-solutions.md).
+- Агент [Windows](log-analytics-agent-windows.md) или [Operations Manager](log-analytics-om-agents.md) должен быть установлен на каждом DNS-сервере, который вы хотите отслеживать.
+- Решение "Аналитика DNS" можно добавить в рабочую область Log Analytics из [Azure Marketplace](https://aka.ms/dnsanalyticsazuremarketplace). Вы также можете использовать процесс, описанный в статье [Добавление решений для управления Azure Log Analytics в рабочую область](../monitoring/monitoring-solutions.md).
 
 Чтобы решение начало сбор данных, никакие дополнительные настройки не требуются. Однако можно использовать описанные ниже действия, чтобы настроить процесс сбора данных.
 
@@ -190,4 +190,4 @@ ms.locfileid: "49408478"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Выполните поиск по журналам](log-analytics-log-searches.md), чтобы просмотреть подробные записи журналов DNS.
+[Выполните поиск по журналам](log-analytics-queries.md), чтобы просмотреть подробные записи журналов DNS.

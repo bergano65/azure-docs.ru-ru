@@ -10,23 +10,24 @@ ms.topic: conceptual
 ms.date: 12/06/2016
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 4ceef533145bea75247eb26998b998552293ef63
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 04eae00d40470d5f6c992d9a0c8c9b0b49d7495f
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37449332"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51007643"
 ---
 # <a name="azure-active-directory-b2c-file-support-requests"></a>Azure Active Directory B2C: регистрация запросов в службу поддержки
 Вы можете регистрировать запросы в службу поддержки для Azure Active Directory (AD) B2C на портале Azure следующим образом.
 
-1. [Выполните эти действия, чтобы перейти к колонке функций B2C на портале Azure](active-directory-b2c-app-registration.md#navigate-to-b2c-settings).
-2. Переключитесь с вашего клиента B2C на клиент, с которым связана подписка Azure. Это может быть клиент вашего сотрудника или клиент по умолчанию, созданный во время регистрации для получения подписки Azure. Дополнительные сведения см. в разделе [Как подписка Azure связана с Azure AD](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
+1. Переключитесь с вашего клиента B2C на клиент, с которым связана подписка Azure. Это может быть клиент вашего сотрудника или клиент по умолчанию, созданный во время регистрации для получения подписки Azure. Дополнительные сведения см. в разделе [Как подписка Azure связана с Azure AD](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
    
     ![Поддержка. Переключение клиентов](./media/active-directory-b2c-support/support-switch-dir.png)
+
 3. После переключения клиентов щелкните **Справка и поддержка**.
    
     ![Поддержка. Справка и поддержка](./media/active-directory-b2c-support/support-support.png)
+    
 4. Щелкните **Новый запрос в службу поддержки**.
    
     ![Поддержка. Новый запрос](./media/active-directory-b2c-support/support-new.png)

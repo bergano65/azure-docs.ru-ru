@@ -3,19 +3,19 @@ title: Разработка заданий потоковой передачи P
 description: Узнайте, как использовать Python для заданий потоковой передачи MapReduce. Hadoop предоставляет интерфейс API потоковой передачи для MapReduce с целью написания заданий на языках, отличных от Java.
 services: hdinsight
 keyword: mapreduce python,python map reduce,python mapreduce
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/10/2018
-ms.author: jasonh
-ms.openlocfilehash: 8e2d13e0d9e51855bc8945db61c78a2fec736c33
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.author: hrasheed
+ms.openlocfilehash: 5ed61eb05d0aa4360e042097d6b8c632c17ea59c
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43041716"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51008731"
 ---
 # <a name="develop-python-streaming-mapreduce-programs-for-hdinsight"></a>Разработка программ MapReduce с потоковой передачей Python для HDInsight
 

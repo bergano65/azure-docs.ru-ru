@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: f851d43d69999a848dea01c9457a379adb63353b
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 4b1c2d9390890618a9aa61eb425fbd132917f414
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39172387"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51229054"
 ---
 # <a name="introduction-to-entities"></a>Основные сведения о сущностях
 
@@ -23,7 +23,7 @@ ms.locfileid: "39172387"
 
 ## <a name="video"></a>Видео
 
-[![Предварительная версия руководства 3](http://aka.ms/cl-tutorial-03-preview)](http://aka.ms/blis-tutorial-03)
+[![Предварительная версия руководства 3](https://aka.ms/cl-tutorial-03-preview)](https://aka.ms/blis-tutorial-03)
 
 ## <a name="requirements"></a>Требования
 
@@ -50,7 +50,7 @@ ms.locfileid: "39172387"
 
 1. Щелкните "Entities" (Сущности), затем — "New Entity" (Новая сущность).
 2. В поле "Entity Name" (Имя сущности) введите city.
-3. Нажмите кнопку "Создать"
+3. Щелкните Создать. 
 
 > [!NOTE]
 > Для этой сущности указан тип "пользовательская", то есть ее можно обучать.  Существуют также предварительно созданные сущности, поведение которых нельзя изменять — они описаны в другом руководстве.

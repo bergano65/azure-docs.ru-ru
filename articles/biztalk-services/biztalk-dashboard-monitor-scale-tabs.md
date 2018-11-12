@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: 351809cd5f165a863dc02bfadf78fa59cbaabfd7
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: 3f4763b5e15d4b9b84e868262a9e8538b8a407a2
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "24103367"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228833"
 ---
 # <a name="review-the-dashboard-monitor-scale-configure-and-hybrid-connection-tabs"></a>Просмотр вкладок «Панель мониторинга», «Монитор», «Масштаб», «Настройка» и «Гибридное подключение»
 
@@ -39,20 +39,20 @@ ms.locfileid: "24103367"
         <td><strong>Получение инструментов</strong></td>
         <td>Загрузите пакет SDK служб BizTalk для установки шаблонов проектов Visual Studio на локальном компьютере, предназначенном для разработки. Эти шаблоны создают проекты Visual Studio для <strong>служб BizTalk</strong> (мост) и <strong>артефактов служб BizTalk</strong> (преобразование), которые развертываются в службе BizTalk.
         <br/><br/>В разделах 
-        <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=302335"> Использование пакета SDK для служб BizTalk в Azure</a> и <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=241589">Установка пакета SDK служб BizTalk Azure</a> содержатся инструкции по началу работы.
+        <a HREF="https://go.microsoft.com/fwlink/p/?LinkID=302335"> Использование пакета SDK для служб BizTalk в Azure</a> и <a HREF="https://go.microsoft.com/fwlink/p/?LinkID=241589">Установка пакета SDK служб BizTalk Azure</a> содержатся инструкции по началу работы.
         </td>
     </tr>
     <tr>
         <td><strong>Создание партнерских соглашений</strong></td>
         <td>Открывает портал служб BizTalk в Azure (размещенный в Azure), где выполняется добавление партнеров, а также создание соглашений X12, AS2 и EDIFACT EDI.
         <br/><br/>Шаги по началу работы описаны в разделе 
-        <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=303653">Настройка EDI, AS2 и EDIFACT на портале служб BizTalk</a>.
+        <a HREF="https://go.microsoft.com/fwlink/p/?LinkID=303653">Настройка EDI, AS2 и EDIFACT на портале служб BizTalk</a>.
         </td>
     </tr>
 
 <tr>
         <td><strong>Дополнительные сведения о службах BizTalk</strong></td>
-        <td>Дополнительные сведения о службах BizTalk в Azure см. в <a HREF="http://azure.microsoft.com/documentation/services/biztalk-services/">центре обучения</a>.</td>
+        <td>Дополнительные сведения о службах BizTalk в Azure см. в <a HREF="https://azure.microsoft.com/documentation/services/biztalk-services/">центре обучения</a>.</td>
 </tr>
 </table>
 
@@ -67,14 +67,14 @@ ms.locfileid: "24103367"
 <br/><br/>
 Это аналог команды <strong>Создать партнерские соглашения</strong> на вкладке <strong>Быстрый запуск</strong>.
 <br/><br/>Дополнительные сведения о портале служб BizTalk см. в разделе о 
-<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=303653">настройке компонентов для обмена сообщениями EDI на портале служб BizTalk</a>.</td>
+<a HREF="https://go.microsoft.com/fwlink/p/?LinkID=303653">настройке компонентов для обмена сообщениями EDI на портале служб BizTalk</a>.</td>
 </tr>
 
 <tr>
 <td><strong>Сведения о подключении</strong> пространства имен управления доступом</td>
 <td>При выборе команды "Сведения о подключении" отображаются параметры "Пространство имен управления доступом", "Издатель по умолчанию" и "Ключ по умолчанию". Вы можете скопировать эти значения.
 <br/><br/>
-Вы также можете открыть портал контроля доступа. Дополнительную информацию о портале контроля доступа см. в статье <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=285670">Инструкции по созданию пространства имен Access Control</a>.</td>
+Вы также можете открыть портал контроля доступа. Дополнительную информацию о портале контроля доступа см. в статье <a HREF="https://go.microsoft.com/fwlink/p/?LinkID=285670">Инструкции по созданию пространства имен Access Control</a>.</td>
 </tr>
 
 <tr>
@@ -122,7 +122,7 @@ ms.locfileid: "24103367"
 </tr>
 <tr>
 <td><strong>Обновление SSL-сертификата</strong></td>
-<td>Может изменить службу BizTalk так, чтобы в ней использовался другой SSL-сертификат. При <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=302280">создании службы BizTalk</a> автоматически создается самозаверяющий сертификат SSL.</td>
+<td>Может изменить службу BizTalk так, чтобы в ней использовался другой SSL-сертификат. При <a HREF="https://go.microsoft.com/fwlink/p/?LinkID=302280">создании службы BizTalk</a> автоматически создается самозаверяющий сертификат SSL.</td>
 </tr>
 <tr>
 <td><strong>Скачивание сертификата</strong></td>
@@ -130,7 +130,7 @@ ms.locfileid: "24103367"
 </tr>
 <tr>
 <td><strong>Состояние</strong></td>
-<td>Отображение текущего состояния службы BizTalk. См. раздел <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=329870">Службы BizTalk: диаграмма состояния службы</a>. </td>
+<td>Отображение текущего состояния службы BizTalk. См. раздел <a HREF="https://go.microsoft.com/fwlink/p/?LinkID=329870">Службы BizTalk: диаграмма состояния службы</a>. </td>
 </tr>
 <tr>
 <td><strong>URL-адрес службы</strong></td>
@@ -160,13 +160,13 @@ ms.locfileid: "24103367"
 <td><strong>База данных отслеживания</strong></td>
 <td>Имя базы данных SQL Azure, в которой хранятся таблицы отслеживания, используемые в службе BizTalk. 
 <br/><br/>В разделе 
-<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=302280">Пояснение требований</a> представлены сведения о базе данных отслеживания.</td>
+<a HREF="https://go.microsoft.com/fwlink/p/?LinkID=302280">Пояснение требований</a> представлены сведения о базе данных отслеживания.</td>
 </tr>
 <tr>
 <td><strong>Хранилище для мониторинга и архивации</strong></td>
 <td>Имя учетной записи хранения Azure, в которой хранятся выходные данные мониторинга службы BizTalk.
 <br/><br/>В разделе 
-<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=302280">Пояснение требований</a> представлены сведения о об учетной записи хранения.</td>
+<a HREF="https://go.microsoft.com/fwlink/p/?LinkID=302280">Пояснение требований</a> представлены сведения о об учетной записи хранения.</td>
 </tr>
 <tr>
 <td><strong>Имя подписки</strong></td>
@@ -178,7 +178,7 @@ ms.locfileid: "24103367"
 </tr>
 </table>
 
-Шаги по созданию службы BizTalk приведены в статье [Создание служб BizTalk с помощью портала Azure](http://go.microsoft.com/fwlink/p/?LinkID=302280).
+Шаги по созданию службы BizTalk приведены в статье [Создание служб BizTalk с помощью портала Azure](https://go.microsoft.com/fwlink/p/?LinkID=302280).
 
 ##### <a name="manage-connection-information-sync-keys-and-delete-in-the-task-bar"></a>Управление, сведения о подключении, синхронизация ключей и удаление на панели инструментов.
 <table border="1">
@@ -189,7 +189,7 @@ ms.locfileid: "24103367"
 <br/><br/>
 Это аналог команды <strong>Создать партнерские соглашения</strong> на вкладке <strong>Быстрый запуск</strong>.
 <br/><br/>Дополнительные сведения о портале служб BizTalk см. в разделе о 
-<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=303653">настройке компонентов для обмена сообщениями EDI на портале служб BizTalk</a>.</td>
+<a HREF="https://go.microsoft.com/fwlink/p/?LinkID=303653">настройке компонентов для обмена сообщениями EDI на портале служб BizTalk</a>.</td>
 </tr>
 <tr>
 <td><strong>Сведения о подключении</strong> пространства имен управления доступом</td>
@@ -197,7 +197,7 @@ ms.locfileid: "24103367"
 <br/><br/>
 Вы также можете открыть портал контроля доступа. Работа с этим порталом аналогична использованию параметра Active Directory в области навигации слева.
 <br/><br/>Дополнительные сведения о портале контроля доступа см. в статье об 
-<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=285670">управлении пространством имен ACS</a>.</td>
+<a HREF="https://go.microsoft.com/fwlink/p/?LinkID=285670">управлении пространством имен ACS</a>.</td>
 </tr>
 <tr>
 <td><strong>Синхронизация ключей</strong> в учетной записи хранения</td>
@@ -346,7 +346,7 @@ ms.locfileid: "24103367"
 * [Службы BizTalk. Диаграмма выпусков Developer, Basic, Standard и Premium](biztalk-editions-feature-chart.md)  
 * [Создание служб BizTalk с помощью портала Azure](biztalk-provision-services.md)  
 * [Службы BizTalk: диаграмма состояния службы BizTalk](biztalk-service-state-chart.md)  
-* [Как приступить к работе с пакетом SDK для служб BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=302335)
+* [Как приступить к работе с пакетом SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=302335)
 
 [Quickstart]: ./media/biztalk-dashboard-monitor-scale-tabs/QuickStartIcon.png
 [AddMetrics]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_AddMetrics.png
