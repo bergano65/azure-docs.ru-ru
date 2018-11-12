@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/23/2018
 ms.author: saurse
-ms.openlocfilehash: 61ee1ce7d5cc6dc2aa4b7a8b02c2e5ba77539725
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: a28e3fb18f2c0b65557034e388d08918c622b8f4
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34606075"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51255870"
 ---
 # <a name="back-up-windows-system-state-in-resource-manager-deployment"></a>Резервное копирование состояния системы Windows с использованием модели развертывания Resource Manager
 В этой статье описано, как выполнить резервное копирование состояния системы Windows Server в Azure. В этом руководстве приведены общие сведения,
@@ -192,7 +192,7 @@ ms.locfileid: "34606075"
 
 5. Выберите **Состояние системы** и нажмите кнопку **ОК**.
 
-6. Нажмите кнопку **Далее**.
+6. Щелкните **Далее**.
 
 7. Выберите нужную частоту резервного копирования и политику хранения для резервного копирования состояния системы на последующих страницах. 
 
@@ -220,7 +220,7 @@ ms.locfileid: "34606075"
   ![Первоначальное восстановление завершено](./media/backup-try-azure-backup-in-10-mins/ircomplete.png)
 
 ## <a name="questions"></a>Вопросы?
-Если вы хотите задать вопрос или предложить добавить какие-либо функции, [отправьте нам свой отзыв](http://aka.ms/azurebackup_feedback).
+Если вы хотите задать вопрос или предложить добавить какие-либо функции, [отправьте нам свой отзыв](https://aka.ms/azurebackup_feedback).
 
 ## <a name="next-steps"></a>Дополнительная информация
 * См. дополнительные сведения об [архивации компьютеров Windows](backup-configure-vault.md).

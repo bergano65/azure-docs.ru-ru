@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 07/06/2018
 ms.author: ponatara
-ms.openlocfilehash: 3e26e40c26a27fdab1ec565dd4112b40acdd17d2
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: ae212bebf5a34e9a80f49a750735137d7a8814be
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39213373"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51232670"
 ---
 # <a name="set-up-disaster-recovery-for-azure-vms-after-migration-to-azure"></a>Настройка аварийного восстановления виртуальных машин Azure после миграции в Azure 
 
@@ -32,7 +32,7 @@ ms.locfileid: "39213373"
 Чтобы служба Site Recovery могла реплицировать виртуальную машину, на ней должен быть установлен [агент виртуальной машины](../virtual-machines/extensions/agent-windows.md) Azure.
 
 
-1. Чтобы установить этот агент на виртуальной машине под управлением Windows, скачайте и запустите [установщик агента](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Для установки необходимы права администратора виртуальной машины.
+1. Чтобы установить этот агент на виртуальной машине под управлением Windows, скачайте и запустите [установщик агента](https://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Для установки необходимы права администратора виртуальной машины.
 2. Чтобы установить агент виртуальной машины на виртуальной машине под управлением Linux, установите последнюю версию [агента Linux](../virtual-machines/extensions/agent-linux.md). Чтобы выполнить установку, необходимо иметь права администратора. Мы рекомендуем устанавливать агент из репозитория дистрибутива. Не советуем устанавливать агент виртуальной машины Linux непосредственно из Github. 
 
 

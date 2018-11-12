@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: ''
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 302607df2292fe7a67a8b6860dab19eef7f391a9
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 8577b6a1d0f57820cbdd4096b0e8412096ff3af3
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47160372"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51232082"
 ---
 # <a name="event-file-target-code-for-extended-events-in-sql-database"></a>Код целевого файла событий для расширенных событий в Базе данных SQL
 
@@ -25,7 +25,7 @@ ms.locfileid: "47160372"
 
 Вам нужен полный образец надежного кода для регистрации и сообщения сведений о расширенных событиях.
 
-В Microsoft SQL Server [целевой файл событий](http://msdn.microsoft.com/library/ff878115.aspx) используется для сохранения выходных данных событий в файл на локальном жестком диске. Однако такие файлы недоступны для Базы данных SQL Azure. Вместо нее для поддержки целевого файла событий мы используем хранилище Azure.
+В Microsoft SQL Server [целевой файл событий](https://msdn.microsoft.com/library/ff878115.aspx) используется для сохранения выходных данных событий в файл на локальном жестком диске. Однако такие файлы недоступны для Базы данных SQL Azure. Вместо нее для поддержки целевого файла событий мы используем хранилище Azure.
 
 В этом разделе представлен пример двухэтапного кода.
 
@@ -44,9 +44,9 @@ ms.locfileid: "47160372"
 * SQL Server Management Studio (ssms.exe), в идеале — последняя ежемесячная версия обновления. 
   Ресурсы для загрузки последней версии файла ssms.exe:
   
-  * Статья [Скачивание SQL Server Management Studio (SSMS)](http://msdn.microsoft.com/library/mt238290.aspx).
-  * [Прямая ссылка на загрузку.](http://go.microsoft.com/fwlink/?linkid=616025)
-* Установленные [модули Azure PowerShell](http://go.microsoft.com/?linkid=9811175) .
+  * Статья [Скачивание SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx).
+  * [Прямая ссылка на загрузку.](https://go.microsoft.com/fwlink/?linkid=616025)
+* Установленные [модули Azure PowerShell](https://go.microsoft.com/?linkid=9811175) .
   
   * Модули предоставляют такие команды, как **New-AzureStorageAccount**.
 
@@ -506,11 +506,11 @@ SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM gmTabEmployee;
 
 В приведенном выше сценарии Transact-SQL для чтения event_file была использована следующая системная функция.
 
-* [sys.fn_xe_file_target_read_file (Transact-SQL)](http://msdn.microsoft.com/library/cc280743.aspx)
+* [sys.fn_xe_file_target_read_file (Transact-SQL)](https://msdn.microsoft.com/library/cc280743.aspx)
 
 Описание дополнительных параметров для просмотра данных из расширенных событий доступно в следующей статье.
 
-* [Advanced Viewing of Target Data from Extended Events in SQL Server (Дополнительные параметры просмотра целевых данных из расширенных событий в SQL Server)](http://msdn.microsoft.com/library/mt752502.aspx)
+* [Advanced Viewing of Target Data from Extended Events in SQL Server (Дополнительные параметры просмотра целевых данных из расширенных событий в SQL Server)](https://msdn.microsoft.com/library/mt752502.aspx)
 
 
 ## <a name="converting-the-code-sample-to-run-on-sql-server"></a>Преобразование примера кода для выполнения на SQL Server
@@ -528,10 +528,10 @@ SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM gmTabEmployee;
 Дополнительные сведения об учетных записях и контейнерах в службе хранилища Azure см. в следующих статьях:
 
 * [Использование хранилища BLOB-объектов из .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md)
-* [Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них](http://msdn.microsoft.com/library/azure/dd135715.aspx)
-* [Работа с корневым контейнером](http://msdn.microsoft.com/library/azure/ee395424.aspx)
-* [Урок 1. Создание хранимой политики доступа и подписанного URL-адреса для контейнера Azure](http://msdn.microsoft.com/library/dn466430.aspx)
-  * [Урок 2. Создание учетных данных SQL Server с использованием подписанного URL-адреса](http://msdn.microsoft.com/library/dn466435.aspx)
+* [Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них](https://msdn.microsoft.com/library/azure/dd135715.aspx)
+* [Работа с корневым контейнером](https://msdn.microsoft.com/library/azure/ee395424.aspx)
+* [Урок 1. Создание хранимой политики доступа и подписанного URL-адреса для контейнера Azure](https://msdn.microsoft.com/library/dn466430.aspx)
+  * [Урок 2. Создание учетных данных SQL Server с использованием подписанного URL-адреса](https://msdn.microsoft.com/library/dn466435.aspx)
 * [Расширенные события](https://docs.microsoft.com/sql/relational-databases/extended-events/extended-events)
 
 <!--

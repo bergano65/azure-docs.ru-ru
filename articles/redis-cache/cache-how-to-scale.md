@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/11/2017
 ms.author: wesmc
-ms.openlocfilehash: 885258379e71ea945e41c4b43c34b35b16dd4a7a
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 91a2b112000e970b73420abaa26efc7de1caa626
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42144417"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51261461"
 ---
 # <a name="how-to-scale-azure-redis-cache"></a>Масштабирование кэша Redis для Azure
 Кэш Redis для Azure предлагает разные варианты кэша, которые обеспечивают гибкость в выборе размера и функций кэша. После создания кэша можно масштабировать его размер и ценовые категории при изменении требований приложения. В этой статье показано, как масштабировать кэш на портале Azure и с помощью инструментов, таких как Azure PowerShell и Azure CLI.
@@ -81,7 +81,7 @@ ms.locfileid: "42144417"
 Дополнительные сведения о масштабировании с помощью интерфейса командной строки Azure см. в разделе [Изменение параметров существующего кэша Redis](cache-manage-cli.md#scale).
 
 ### <a name="scale-using-maml"></a>Масштабирование с помощью MAML
-Чтобы масштабировать экземпляры кэша Redis для Azure с помощью [библиотек управления Microsoft Azure (MAML)](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/), вызовите метод `IRedisOperations.CreateOrUpdate` и передайте ему новый размер `RedisProperties.SKU.Capacity`.
+Чтобы масштабировать экземпляры кэша Redis для Azure с помощью [библиотек управления Microsoft Azure (MAML)](https://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/), вызовите метод `IRedisOperations.CreateOrUpdate` и передайте ему новый размер `RedisProperties.SKU.Capacity`.
 
     static void Main(string[] args)
     {

@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: a1e52a8ff7a2018c54c7b88b80bab3c2897b1fb4
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 868417a9ca1dbcac9b2f77627944fc620fbe78cd
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38481773"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51253913"
 ---
 # <a name="create-a-lab-in-azure-devtest-labs"></a>Создание лаборатории в лаборатории для разработки и тестирования Azure
 Azure DevTest Labs — это инфраструктура, которая содержит группу ресурсов, таких как виртуальные машины, позволяющую более эффективно управлять этими ресурсами за счет установки ограничений и квот. В этой статье показано, как создать лабораторию с помощью портала Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы создать лабораторию, вам потребуется:
 
 * Подписка Azure. Дополнительные сведения о вариантах приобретения Azure см. на страницах [Как приобрести Azure](https://azure.microsoft.com/pricing/purchase-options/) и [Бесплатный ознакомительный период в один месяц](https://azure.microsoft.com/pricing/free-trial/). Для создания лаборатории необходимо быть владельцем подписки.
@@ -32,7 +32,7 @@ Azure DevTest Labs — это инфраструктура, которая со
 ## <a name="steps-to-create-a-lab-in-azure-devtest-labs"></a>Создание лаборатории в Azure DevTest Labs
 Ниже показано, как с помощью портала Azure создать лабораторию в Azure DevTest Labs. 
 
-1. Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 1. В главном меню слева выберите **Все службы** (в верхней части списка).
 
     ![Пункт меню "Все службы"](./media/devtest-lab-create-lab/more-services-menu-option.png)

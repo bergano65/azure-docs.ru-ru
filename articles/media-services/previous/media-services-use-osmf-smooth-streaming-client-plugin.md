@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/26/2016
 ms.author: juliako
-ms.openlocfilehash: 6a4ae0697e59eb00e216fc29b154408e4d7a99b8
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 1664dc16e93fa825962690ec3ed5681478005d59
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33785923"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51229634"
 ---
 # <a name="how-to-use-the-microsoft-smooth-streaming-plugin-for-the-adobe-open-source-media-framework"></a>Использование подключаемого модуля Smooth Streaming Майкрософт для платформы Adobe Open Source Media Framework
 ## <a name="overview"></a>Обзор
@@ -47,7 +47,7 @@ SS для OSMF включает в себя две версии подключа
 * Эта версия поддерживает только OSMF 2.0.
 
 ## <a name="supported-features-and-known-issues"></a>Поддерживаемые функции и известные проблемы
-Полный список поддерживаемых и неподдерживаемых функций, а также известных проблем см. в [этом документе](http://download.microsoft.com/download/3/1/B/31B63D97-574E-4A8D-BF8D-170744181724/Smooth_Streaming_Plugin_for_OSMF.pdf).
+Полный список поддерживаемых и неподдерживаемых функций, а также известных проблем см. в [этом документе](https://download.microsoft.com/download/3/1/B/31B63D97-574E-4A8D-BF8D-170744181724/Smooth_Streaming_Plugin_for_OSMF.pdf).
 
 ## <a name="loading-the-plugin"></a>Загрузка подключаемого модуля
 Подключаемые модули OSMF можно загружать статически (во время компиляции) или динамически (во время выполнения). Подключаемый модуль Smooth Streaming для OSMF содержит динамическую и статическую версию.

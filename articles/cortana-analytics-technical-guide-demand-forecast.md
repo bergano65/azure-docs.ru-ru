@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/16/2016
 ms.author: garye
-ms.openlocfilehash: 8ff5c52b324c95bb48de0f9bbb1011ede737efb0
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: e18e1fb3e97dd9f846ee71be4f0fbb66aeca3d88
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49387673"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238868"
 ---
 # <a name="technical-guide-to-the-cortana-intelligence-solution-template-for-demand-forecast-in-energy"></a>Техническое руководство по шаблону решения Cortana Intelligence для прогнозирования спроса на энергию
 ## <a name="overview"></a>**Обзор**
@@ -47,7 +47,7 @@ ms.locfileid: "49387673"
 Служба [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) используется для предоставления аналитики практически в режиме реального времени для входного потока службы [Концентратор событий Azure](#azure-event-hub) и публикации результатов на панели мониторинга [Power BI](https://powerbi.microsoft.com), а также для архивирования всех входящих событий [службы хранилища Azure](https://azure.microsoft.com/services/storage/) для последующей обработки службой [Фабрика данных Azure](https://azure.microsoft.com/documentation/services/data-factory/).
 
 ### <a name="hdinsight-custom-aggregation"></a>Пользовательская агрегация HD Insight
-Служба Azure HD Insight используется для запуска сценариев [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) (оркестрация с помощью фабрики данных Azure) и предоставления сводных данных необработанных событий, которые были заархивированы с помощью службы Azure Stream Analytics.
+Служба Azure HD Insight используется для запуска сценариев [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) (оркестрация с помощью фабрики данных Azure) и предоставления сводных данных необработанных событий, которые были заархивированы с помощью службы Azure Stream Analytics.
 
 ### <a name="azure-machine-learning"></a>Машинное обучение Azure
 Служба [Машинное обучение Azure](https://azure.microsoft.com/services/machine-learning/) используется (оркестрация с помощью фабрики данных Azure) для прогнозирования будущего энергопотребления в конкретном регионе с учетом полученных входных данных.
@@ -102,14 +102,14 @@ ms.locfileid: "49387673"
 
 ![](media/cortana-analytics-technical-guide-demand-forecast/ADF2.png)
 
-Пять конвейеров этой фабрики содержат сценарии [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) , которые используются для секционирования и агрегирования данных. Если указано, тогда сценарии находятся в учетной записи [хранения Azure](https://azure.microsoft.com/services/storage/), созданной во время установки. Их расположение: demandforecasting\\\\script\\\\hive\\\\ (или https://[имя вашего решения].blob.core.windows.net/demandforecasting).
+Пять конвейеров этой фабрики содержат сценарии [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) , которые используются для секционирования и агрегирования данных. Если указано, тогда сценарии находятся в учетной записи [хранения Azure](https://azure.microsoft.com/services/storage/), созданной во время установки. Их расположение: demandforecasting\\\\script\\\\hive\\\\ (или https://[имя вашего решения].blob.core.windows.net/demandforecasting).
 
-Аналогично запросам [Azure Stream Analytics](#azure-stream-analytics-1) сценарии [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) имеют неявные сведения о формате входящих данных. Эти запросы нужно будет изменить в зависимости от вашего формата данных и требований [проектирования признаков](machine-learning/team-data-science-process/create-features.md).
+Аналогично запросам [Azure Stream Analytics](#azure-stream-analytics-1) сценарии [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) имеют неявные сведения о формате входящих данных. Эти запросы нужно будет изменить в зависимости от вашего формата данных и требований [проектирования признаков](machine-learning/team-data-science-process/create-features.md).
 
 #### <a name="aggregatedemanddatato1hrpipeline"></a>*AggregateDemandDataTo1HrPipeline*
-Этот [конвейер](data-factory/concepts-pipelines-activities.md) содержит одно действие — [HDInsightHive](data-factory/transform-data-using-hadoop-hive.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет скрипт [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для агрегирования передаваемых в потоковом режиме данных спроса каждые 10 секунд на уровне подстанции на ежечасный уровень региона и помещения их в [службу хранилища Azure](https://azure.microsoft.com/services/storage/) с помощью задания Azure Stream Analytics.
+Этот [конвейер](data-factory/concepts-pipelines-activities.md) содержит одно действие — [HDInsightHive](data-factory/transform-data-using-hadoop-hive.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет скрипт [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для агрегирования передаваемых в потоковом режиме данных спроса каждые 10 секунд на уровне подстанции на ежечасный уровень региона и помещения их в [службу хранилища Azure](https://azure.microsoft.com/services/storage/) с помощью задания Azure Stream Analytics.
 
-Скрипт [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для этой задачи секционирования — ***AggregateDemandRegion1Hr.hql***.
+Скрипт [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для этой задачи секционирования — ***AggregateDemandRegion1Hr.hql***.
 
 #### <a name="loadhistorydemanddatapipeline"></a>*LoadHistoryDemandDataPipeline*
 Этот [конвейер](data-factory/concepts-pipelines-activities.md) содержит два действия:
@@ -117,7 +117,7 @@ ms.locfileid: "49387673"
 * [HDInsightHive](data-factory/transform-data-using-hadoop-hive.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет скрипт Hive, чтобы в ходе выполнения задания Azure Stream Analytics агрегировать ежечасные статистические данные спроса на уровне подстанции на ежечасный уровень региона и помещать их в службу хранилища Azure.
 * [Copy](https://msdn.microsoft.com/library/azure/dn835035.aspx) , которое помещает объединенные данные из большого двоичного объекта службы хранилища Azure в базу данных SQL Azure, подготовленную в ходе установки шаблона решения.
 
-Скрипт [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для этой задачи — ***AggregateDemandHistoryRegion.hql***.
+Скрипт [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для этой задачи — ***AggregateDemandHistoryRegion.hql***.
 
 #### <a name="mlscoringregionxpipeline"></a>*MLScoringRegionXPipeline*
 Эти [конвейеры](data-factory/concepts-pipelines-activities.md) содержат несколько действий, конечным результатом которых является оцененный прогноз из эксперимента машинного обучения Azure, связанного с этим шаблоном решения. Они практически идентичны, за исключением того, что каждый из них обрабатывает разный регион. Для этого в конвейер ADF передается другой RegionID и сценарий hive для каждого региона.  
@@ -231,7 +231,7 @@ ms.locfileid: "49387673"
 Следующие два средства помогут вам оценить общие затраты на выполнение шаблона решения для прогнозирования энергопотребления в вашей подписке:
 
 * [Средство оценки затрат Azure Microsoft (в сети)](https://azure.microsoft.com/pricing/calculator/)
-* [Средство оценки затрат Azure Microsoft (на рабочем столе)](http://www.microsoft.com/download/details.aspx?id=43376)
+* [Средство оценки затрат Azure Microsoft (на рабочем столе)](https://www.microsoft.com/download/details.aspx?id=43376)
 
 ## <a name="acknowledgements"></a>**Благодарности**
 Авторы этой статьи: специалист по обработке данных Ицзин Чен (Yijing Chen) и инженер по программному обеспечению Цю Мин (Qiu Min); оба автора работают в корпорации Майкрософт.

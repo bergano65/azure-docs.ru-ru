@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/05/2016
 ms.author: hascipio
-ms.openlocfilehash: aadc695b1f07d04f1fcc7f2f2e3ff90fb7f54849
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: 300b94aea0c06092a5fb6bdecd49771ef1cd517d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39714013"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51234193"
 ---
 # <a name="get-pre-approved-via-the-microsoft-azure-certified-program"></a>Предварительное утверждение с помощью программы сертификации Microsoft Azure
 В этой статье представлены инструкции о том, как пройти сертификацию Microsoft Azure, чтобы публиковать решение в Azure Marketplace и получать маркетинговые преимущества. Подробный обзор программы сертификации Microsoft Azure и ее преимуществ см. на странице [http://azure.com/certified](http://azure.com/certified).
@@ -34,7 +34,7 @@ ms.locfileid: "39714013"
 3. Если вы работаете с менеджером PAM или менеджером партнеров DX, попросите, чтобы они представили ваше решение к участию в программе сертификации Azure или перейдите на веб-страницу [Сертификация Microsoft Azure](http://createopportunity.azurewebsites.net), заполните форму приложения и в поле "Контактное лицо" введите электронную почту менеджера PAM или менеджера партнера DX.
 
 > [!IMPORTANT]
-> **Допустимые страны продажи.** Для продажи своих услуг в Microsoft Azure Marketplace ваша учетная запись должна быть зарегистрирована для одной из утвержденных стран продажи. Это ограничение связано с выплатами и налогообложением. Мы активно стараемся расширить этот список стран, поэтому следите за новостями. Полный список см. в разделе 1b [политик участия в Azure Marketplace](http://go.microsoft.com/fwlink/?LinkID=526833).
+> **Допустимые страны продажи.** Для продажи своих услуг в Microsoft Azure Marketplace ваша учетная запись должна быть зарегистрирована для одной из утвержденных стран продажи. Это ограничение связано с выплатами и налогообложением. Мы активно стараемся расширить этот список стран, поэтому следите за новостями. Полный список см. в разделе 1b [политик участия в Azure Marketplace](https://go.microsoft.com/fwlink/?LinkID=526833).
 
 
 ## <a name="next-step"></a>Дальнейшие действия

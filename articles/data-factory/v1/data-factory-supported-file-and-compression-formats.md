@@ -13,18 +13,18 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 5afc89e774595952adf860fc6bcdc0e2403c617a
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: be0377e7234e507bdc05aee2502e742dbdaa8e1c
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37047100"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51258380"
 ---
 # <a name="file-and-compression-formats-supported-by-azure-data-factory"></a>Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure
 *Этот раздел относится к соединителям для следующих компонентов: [Amazon S3](data-factory-amazon-simple-storage-service-connector.md), [большой двоичный объект Azure](data-factory-azure-blob-connector.md), [Azure Data Lake Store](data-factory-azure-datalake-connector.md), [файловая система](data-factory-onprem-file-system-connector.md), [FTP](data-factory-ftp-connector.md), [HDFS](data-factory-hdfs-connector.md), [HTTP](data-factory-http-connector.md) и [SFTP](data-factory-sftp-connector.md).*
 
 > [!NOTE]
-> В статье используется служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", см. описание [поддерживаемых форматов файлов и кодеков сжатия в службе "Фабрика данных"](../supported-file-formats-and-compression-codecs.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", см. описание [поддерживаемых форматов файлов и кодеков сжатия в службе "Фабрика данных"](../supported-file-formats-and-compression-codecs.md).
 
 Фабрика данных Azure поддерживает следующие форматы файлов:
 
@@ -427,7 +427,7 @@ ms.locfileid: "37047100"
 ```
 
 > [!IMPORTANT]
-> Если вы не копируете ORC-файлов **как есть** между локальным и облачным хранилищами данных, то на компьютере шлюза необходимо установить 8 JRE (среду выполнения Java). Для 64-разрядного шлюза требуется 64-разрядная версия JRE, а для 32-разрядного шлюза — 32-разрядная версия JRE. Обе эти версии доступны [здесь](http://go.microsoft.com/fwlink/?LinkId=808605). Выберите ту, что вам подходит.
+> Если вы не копируете ORC-файлов **как есть** между локальным и облачным хранилищами данных, то на компьютере шлюза необходимо установить 8 JRE (среду выполнения Java). Для 64-разрядного шлюза требуется 64-разрядная версия JRE, а для 32-разрядного шлюза — 32-разрядная версия JRE. Обе эти версии доступны [здесь](https://go.microsoft.com/fwlink/?LinkId=808605). Выберите ту, что вам подходит.
 >
 >
 
@@ -446,7 +446,7 @@ ms.locfileid: "37047100"
 }
 ```
 > [!IMPORTANT]
-> Если вы не копируете Parquet-файлы **как есть** между локальным и облачным хранилищами данных, то на компьютере шлюза необходимо установить JRE 8 (среду выполнения Java). Для 64-разрядного шлюза требуется 64-разрядная версия JRE, а для 32-разрядного шлюза — 32-разрядная версия JRE. Обе эти версии доступны [здесь](http://go.microsoft.com/fwlink/?LinkId=808605). Выберите ту, что вам подходит.
+> Если вы не копируете Parquet-файлы **как есть** между локальным и облачным хранилищами данных, то на компьютере шлюза необходимо установить JRE 8 (среду выполнения Java). Для 64-разрядного шлюза требуется 64-разрядная версия JRE, а для 32-разрядного шлюза — 32-разрядная версия JRE. Обе эти версии доступны [здесь](https://go.microsoft.com/fwlink/?LinkId=808605). Выберите ту, что вам подходит.
 >
 >
 

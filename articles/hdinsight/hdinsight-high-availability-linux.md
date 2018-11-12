@@ -3,19 +3,19 @@ title: Высокий уровень доступности для Hadoop в Azu
 description: Узнайте, как использование дополнительного головного узла позволяет повысить надежность и доступность кластеров HDInsight. Узнайте, как это влияет на службы Hadoop, такие как Ambari и Hive, и научитесь подключаться к каждому отдельному головному узлу с помощью SSH.
 services: hdinsight
 ms.reviewer: jasonh
-author: jasonwhowell
+author: hrasheed-msft
 keywords: Высокая доступность Hadoop
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 03/22/2018
-ms.author: jasonh
-ms.openlocfilehash: 33458794ad74b367f1278364d7b4ace30f7d13a8
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.author: hrasheed
+ms.openlocfilehash: d3326ef4bba5649f5420c1d92b6117d44edba47b
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46953595"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51281988"
 ---
 # <a name="availability-and-reliability-of-hadoop-clusters-in-hdinsight"></a>Доступность и надежность кластеров Hadoop в HDInsight
 
@@ -23,8 +23,7 @@ ms.locfileid: "46953595"
 
 Платформа Hadoop обеспечивает высокий уровень доступности и надежности, реплицируя службы и данные на нескольких узлах в кластере. Однако стандартные дистрибутивы Hadoop обычно имеют один головной узел. Любой сбой такого узла может вызвать прекращение работы кластера. HDInsight предоставляет два головных узла для повышения доступности и надежности Hadoop.
 
-> [!IMPORTANT]
-> Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
+[!INCLUDE [windows-retirement-notice](../../includes/windows-retirement-notice.md)]
 
 ## <a name="availability-and-reliability-of-nodes"></a>Доступность и надежность узлов
 

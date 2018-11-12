@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/21/2018
 ms.author: yurid
-ms.openlocfilehash: 6261f78b4943afdbf74236bc40bea6db5cc62329
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: 0573442568115fc872cc4cf4cf8c369cd635028e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44159390"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51262120"
 ---
 # <a name="understanding-security-alerts-in-azure-security-center"></a>Основные сведения об оповещениях системы безопасности в центре безопасности Azure
 Из этой статьи вы узнаете о различных типах оповещений системы безопасности и связанных аналитических данных, доступных в центре безопасности Azure. Дополнительные сведения об управлении оповещениями и инцидентами см. в статье [Управление оповещениями безопасности в центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md).
@@ -204,4 +204,4 @@ ms.locfileid: "44159390"
 * [Возможности обнаружения центра безопасности Azure](security-center-detection-capabilities.md)
 * [Руководство по планированию использования центра безопасности Azure и работе в нем](security-center-planning-and-operations-guide.md)
 * [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md). Часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](http://blogs.msdn.com/b/azuresecurity/). Публикации блога, посвященные вопросам безопасности и соответствия требованиям в Azure.
+* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/). Публикации блога, посвященные вопросам безопасности и соответствия требованиям в Azure.

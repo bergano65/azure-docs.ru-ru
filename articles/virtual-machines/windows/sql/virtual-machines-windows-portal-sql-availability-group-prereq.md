@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 03/29/2018
 ms.author: mikeray
-ms.openlocfilehash: d75bb780a17653aaacbc74413fb4240a8052a983
-ms.sourcegitcommit: e45b2aa85063d33853560ec4bc867f230c1c18ce
+ms.openlocfilehash: 2d8a98e6ab38f4156b6e2f5bda81b44e1789a6ed
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43371491"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51253080"
 ---
 # <a name="complete-the-prerequisites-for-creating-always-on-availability-groups-on-azure-virtual-machines"></a>Настройка необходимых компонентов для создания групп доступности AlwaysOn на виртуальных машинах Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "43371491"
 
 ## <a name="review-availability-group-documentation"></a>Обзор документации по группам доступности
 
-В этом руководстве предполагается, что у вас имеется базовое представление о группах доступности AlwaysOn SQL Server. Если же данная технология вам незнакома, изучите статью [Обзор групп доступности AlwaysOn (SQL Server)](http://msdn.microsoft.com/library/ff877884.aspx).
+В этом руководстве предполагается, что у вас имеется базовое представление о группах доступности AlwaysOn SQL Server. Если же данная технология вам незнакома, изучите статью [Обзор групп доступности AlwaysOn (SQL Server)](https://msdn.microsoft.com/library/ff877884.aspx).
 
 
 ## <a name="create-an-azure-account"></a>Создание учетной записи Azure
@@ -349,7 +349,7 @@ Azure создаст виртуальные машины.
 
 ## <a name="create-sql-server-vms"></a>Создание виртуальных машин SQL Server
 
-Создайте три дополнительные виртуальные машины. Для решения требуются две виртуальные машины с экземплярами SQL Server. Третья виртуальная машина будет выполнять роль свидетеля. Windows Server 2016 может использовать [облако-свидетель](http://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness), но для обеспечения согласованности с предыдущими операционными системами в этом документе в качестве свидетеля используется виртуальная машина.  
+Создайте три дополнительные виртуальные машины. Для решения требуются две виртуальные машины с экземплярами SQL Server. Третья виртуальная машина будет выполнять роль свидетеля. Windows Server 2016 может использовать [облако-свидетель](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness), но для обеспечения согласованности с предыдущими операционными системами в этом документе в качестве свидетеля используется виртуальная машина.  
 
 Перед продолжением рассмотрите следующие решения разработки.
 

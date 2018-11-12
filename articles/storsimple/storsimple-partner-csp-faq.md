@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: 4dc5ae7d3feae769a8366f68f412f3b79fa8eb00
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 76b89c15a12810f98e6324ca93cf581f9b852c88
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23109062"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51259944"
 ---
 # <a name="storsimple-for-cloud-solutions-provider-program-frequently-asked-questions"></a>StorSimple для программы поставщиков облачных решений — часто задаваемые вопросы
 
@@ -72,7 +72,7 @@ ms.locfileid: "23109062"
 Вы можете добавить подписки на виртуальный массив StorSimple в учетные записи клиентов в Центре партнеров. Кроме того, для добавления пользователей в подписки можно использовать портал Azure.
 
 ### <a name="is-the-azure-portal-approach-the-same-as-other-services-for-csp"></a>Портал Azure здесь используется так же, как и для других служб в рамках CSP? 
-Да. При работе с виртуальным массивом StorSimple по программе CSP мы рекомендуем партнерам обращаться к порталу Azure через [Центр партнеров](http://partnercenter.microsoft.com/), где они могут управлять клиентами и подписками. Для управления подписками StorSimple партнер или заказчик (в зависимости от предоставленных разрешений) должен войти на портал Azure. 
+Да. При работе с виртуальным массивом StorSimple по программе CSP мы рекомендуем партнерам обращаться к порталу Azure через [Центр партнеров](https://partnercenter.microsoft.com/), где они могут управлять клиентами и подписками. Для управления подписками StorSimple партнер или заказчик (в зависимости от предоставленных разрешений) должен войти на портал Azure. 
 
 ### <a name="is-microsoft-shipping-a-new-portal-for-storsimple-for-csp"></a>Предоставляет ли корпорация Майкрософт новый портал для StorSimple по программе CSP? 
 Нет. Вы можете управлять виртуальным массивом StorSimple по программе CSP через портал Azure.
@@ -94,7 +94,7 @@ ms.locfileid: "23109062"
 Дополнительные сведения о StorSimple по программе CSP вы найдете на следующих страницах.
 
 - [Программа поставщиков облачных решений корпорации Майкрософт](https://partner.microsoft.com/Membership)
-- [Центр партнеров](http://partnercenter.microsoft.com/) 
+- [Центр партнеров](https://partnercenter.microsoft.com/) 
 
 
 ## <a name="next-steps"></a>Дополнительная информация

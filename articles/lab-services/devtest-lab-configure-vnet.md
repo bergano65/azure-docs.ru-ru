@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/05/2018
 ms.author: spelluru
-ms.openlocfilehash: 0141ea8a88c0322e6f56cbea56d3a43c923769af
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 8fb3b4ac748fcae2e3aad5b3bfb2a893340dc61a
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38687794"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51256142"
 ---
 # <a name="configure-a-virtual-network-in-azure-devtest-labs"></a>Настройка виртуальной сети в Azure DevTest Labs
 Как описано в статье [Добавление виртуальной машины с артефактами в лабораторию](devtest-lab-add-vm.md), при создании виртуальной машины в лаборатории можно указать настроенную виртуальную сеть. Например, может потребоваться доступ к ресурсам корпоративной сети с виртуальных машин через виртуальную сеть, которая была настроена с помощью ExpressRoute или через VPN-подключение типа "сеть — сеть".
@@ -29,7 +29,7 @@ ms.locfileid: "38687794"
 ## <a name="configure-a-virtual-network-for-a-lab-using-the-azure-portal"></a>Настройка виртуальной сети для лаборатории с помощью портала Azure
 Ниже пошагово описывается процедура добавления существующей виртуальной сети (и подсети) в лабораторию, чтобы ее можно было использовать при создании виртуальной машины в этой лаборатории. 
 
-1. Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 1. Из списка лабораторий выберите нужную лабораторию. 
 1. В главной области лаборатории выберите **Конфигурация и политики**.

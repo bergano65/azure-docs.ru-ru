@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: bdcd1d0cc9f9979d898410180d364716b344d641
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 8bfd4ca6a9bdac999653fa9448bf7e754e9e6180
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807844"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51254474"
 ---
 <a name="create-a-microsoft-developer-account"></a>Создание учетной записи разработчика Майкрософт
 ====================================
@@ -133,7 +133,7 @@ ms.locfileid: "48807844"
 
    ![Регистрация платежных данных](./media/cloud-partner-portal-create-dev-center-registration/imgRegisterCo_09.png)
 
-10. Проверьте данные учетной записи и убедитесь, что все правильно. Прочитайте и примите условия [соглашения с издателем Microsoft Azure Marketplace](http://go.microsoft.com/fwlink/?LinkID=699560). Установите флажок, который подтверждает, что вы ознакомились с этими условиями и принимаете их.
+10. Проверьте данные учетной записи и убедитесь, что все правильно. Прочитайте и примите условия [соглашения с издателем Microsoft Azure Marketplace](https://go.microsoft.com/fwlink/?LinkID=699560). Установите флажок, который подтверждает, что вы ознакомились с этими условиями и принимаете их.
 
 11. Нажмите кнопку **Готово**, чтобы подтвердить регистрацию. На ваш адрес электронной почты будет отправлено подтверждение.
 

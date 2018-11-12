@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-multiple
 ms.workload: big-compute
 ms.date: 05/14/2018
 ms.author: danlep
-ms.openlocfilehash: f2cf26bc9f980729e74c4a4e0b4e3f4b311fd754
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: ce8e2457c1d575e890174de3b9cf7faf6e16a7cb
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421140"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51258822"
 ---
 # <a name="submit-hpc-jobs-from-an-on-premises-computer-to-an-hpc-pack-cluster-deployed-in-azure"></a>Отправка заданий HPC c локального компьютера в кластер на основе пакета HPC, развернутый в Azure
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "39421140"
 ## <a name="step-1-install-and-configure-the-web-components-on-the-head-node"></a>Шаг 1. Установка и настройка веб-компонентов на головном узле
 Чтобы отправлять задания в кластер через интерфейс REST по протоколу HTTPS, убедитесь, что на головном узле пакета HPC настроены веб-компоненты пакета HPC. Если они не установлены, то сначала установите веб-компоненты, запустив файл установки HpcWebComponents.msi. Затем настройте компоненты, запустив скрипт HPC PowerShell **Set-HPCWebComponents.ps1**.
 
-Подробные инструкции см. в разделе [Установка веб-компонентов пакета Microsoft HPC](http://technet.microsoft.com/library/hh314627.aspx).
+Подробные инструкции см. в разделе [Установка веб-компонентов пакета Microsoft HPC](https://technet.microsoft.com/library/hh314627.aspx).
 
 > [!TIP]
 > Некоторые шаблоны быстрого запуска Azure для кластеров пакета HPC устанавливают и настраивают веб-компоненты автоматически.
@@ -169,7 +169,7 @@ ms.locfileid: "39421140"
 1. Чтобы просмотреть результаты отправленного задания, щелкните идентификатор задания и нажмите кнопку **View Tasks** (Просмотреть задачи), чтобы увидеть результаты выполнения команды (в разделе **Output** (Выходные данные)).
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Вы также можете отправлять задания в кластер Azure с помощью [интерфейса REST API для пакета HPC](http://social.technet.microsoft.com/wiki/contents/articles/7737.creating-and-submitting-jobs-by-using-the-rest-api-in-microsoft-hpc-pack-windows-hpc-server.aspx).
+* Вы также можете отправлять задания в кластер Azure с помощью [интерфейса REST API для пакета HPC](https://social.technet.microsoft.com/wiki/contents/articles/7737.creating-and-submitting-jobs-by-using-the-rest-api-in-microsoft-hpc-pack-windows-hpc-server.aspx).
 * Если нужно отправлять задания в кластер из клиента Linux, изучите пример на языке Python, описанный в статье [HPC Pack 2012 R2 SDK and Sample Code](https://www.microsoft.com/download/details.aspx?id=41633)(Пакет SDK для HPC Pack 2012 R2 и пример кода).
 
 <!--Image references-->

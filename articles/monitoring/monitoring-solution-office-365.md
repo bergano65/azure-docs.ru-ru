@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/15/2018
 ms.author: bwren
-ms.openlocfilehash: d1fdec8e3a959aaeb68d4b63a1c71d6ef1ddd054
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 04211a00bcdce3baf8060e00a9ce81831a39acb9
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49406327"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51257669"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "49406327"
 - Отслеживать действия администратора, чтобы контролировать изменения конфигурации или операции с высоким уровнем привилегий.
 - Выявлять и анализировать нежелательное поведение пользователей, которое можно настраивать, исходя из потребностей организации.
 - Выполнять аудит и проверку соответствия. Например, можно отслеживать операции доступа к файлам для конфиденциальных файлов, что поможет в процессе аудита и проверки соответствия.
-- Оперативно устраняйте неполадки с помощью [поисковых запросов](../log-analytics/log-analytics-log-search.md) на основе данных о действиях Office 365 в вашей организации.
+- Оперативно устраняйте неполадки с помощью [поисковых запросов](../log-analytics/log-analytics-queries.md) на основе данных о действиях Office 365 в вашей организации.
 
 ## <a name="prerequisites"></a>Предварительные требования
 Прежде чем устанавливать и настраивать это решение, необходимо иметь в наличии следующие компоненты.
@@ -709,6 +709,6 @@ At line:12 char:18
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Используйте поиск по журналам в [Log Analytics](../log-analytics/log-analytics-log-searches.md), чтобы просматривать подробные данные об обновлениях.
+* Используйте поиск по журналам в [Log Analytics](../log-analytics/log-analytics-queries.md), чтобы просматривать подробные данные об обновлениях.
 * [Создайте собственные панели мониторинга](../log-analytics/log-analytics-dashboards.md) для отображения избранных поисковых запросов Office 365.
-* [Создайте оповещения](../log-analytics/log-analytics-alerts.md), чтобы заранее получать уведомления о важных действиях в Office 365.  
+* [Создайте оповещения](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md), чтобы заранее получать уведомления о важных действиях в Office 365.  

@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: overview
-ms.date: 09/04/2018
+ms.date: 10/30/2018
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand what Data Box Disk is and how it works so I can use it to import on-premises data into Azure.
-ms.openlocfilehash: 322c398bd6384821697e2b672825cc0805eb43ad
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: f965d455b3ada48caabb80458d44e841329cf787
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49092904"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51229617"
 ---
 # <a name="what-is-azure-data-box-disk-preview"></a>Что такое диск Azure Data Box (предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "49092904"
 
 > [!IMPORTANT]
 > - Диск Data Box находится в режиме предварительной версии. Прежде чем развертывать это решение, просмотрите [условия использования Azure для предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). 
-> - Вам необходимо зарегистрироваться для использования этой службы. Для этого войдите на [портал предварительной версии](http://aka.ms/azuredataboxfromdiskdocs).
+> - Вам необходимо зарегистрироваться для использования этой службы. Для этого войдите на [портал предварительной версии](https://aka.ms/azuredataboxfromdiskdocs).
 > - На этапе предварительной версии диск Data Box можно отправить клиентам в США и Европейском Союзе. Дополнительные сведения см. в разделе [Регионы доступности](#region-availability).
 
 ## <a name="use-cases"></a>Варианты использования
@@ -112,7 +112,7 @@ ms.locfileid: "49092904"
 
 ## <a name="pricing"></a>Цены
 
-На этапе предварительной версии диск Data Box доступен бесплатно. Это изменится, когда диск Data Box станет общедоступным.
+Сведения о ценах см. на странице с [ценами на предварительную версию](https://azure.microsoft.com/pricing/details/storage/databox/disk/).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -15,19 +15,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/17/2017
 ms.author: cherylmc
-ms.openlocfilehash: 2bd0cf8be87937044ad515a2c6f253b1711bb2bf
-ms.sourcegitcommit: b5c6197f997aa6858f420302d375896360dd7ceb
+ms.openlocfilehash: 6198c8723ccbb225a4cc60526e66f4651390b26c
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2017
-ms.locfileid: "23013269"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51255699"
 ---
 # <a name="configure-a-virtual-network-gateway-for-expressroute-using-the-azure-portal"></a>Настройка шлюза виртуальной сети для ExpressRoute с помощью портала Azure
 > [!div class="op_single_selector"]
 > * [Resource Manager — портал Azure](expressroute-howto-add-gateway-portal-resource-manager.md)
 > * [Resource Manager — PowerShell](expressroute-howto-add-gateway-resource-manager.md)
 > * [Классическая модель: PowerShell](expressroute-howto-add-gateway-classic.md)
-> * [Видео — портал Azure](http://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-vpn-gateway-for-your-virtual-network)
+> * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-vpn-gateway-for-your-virtual-network)
 > 
 > 
 
@@ -53,7 +53,7 @@ ms.locfileid: "23013269"
 * Тип шлюза: ExpressRoute. Для конфигурации ExpressRoute требуется этот тип.
 * Общедоступное IP-имя шлюза: MyERGWVIP.
 
-Можно просмотреть [видео](http://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-vpn-gateway-for-your-virtual-network) об этих действиях перед началом настройки.
+Можно просмотреть [видео](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-vpn-gateway-for-your-virtual-network) об этих действиях перед началом настройки.
 
 ## <a name="create-the-gateway-subnet"></a>Создание подсети шлюза
 

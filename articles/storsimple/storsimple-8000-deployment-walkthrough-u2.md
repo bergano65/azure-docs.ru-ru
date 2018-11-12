@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/23/2018
 ms.author: alkohli
-ms.openlocfilehash: 85a493e05fb87292f303bccdcef65d119223bc76
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 34648426086bdd67f19ec227ddf0d931f3837c0d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38698619"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238001"
 ---
 # <a name="deploy-your-on-premises-storsimple-device-update-3-and-later"></a>Развертывание локального устройства StorSimple (с обновлением 3 и более поздней версии)
 
@@ -66,7 +66,7 @@ ms.locfileid: "38698619"
 ## <a name="deployment-configuration-checklist"></a>Контрольный список конфигурации развертывания
 Перед развертыванием устройства StorSimple необходимо будет собрать данные для настройки программного обеспечения на нем. Заблаговременная подготовка некоторых из этих сведений поможет оптимизировать процесс развертывания устройства StorSimple в вашей среде. Скачайте и используйте этот контрольный список для записи сведений о конфигурации при развертывании устройства.
 
-* [Скачать контрольный список настройки развертывания устройства StorSimple](http://www.microsoft.com/download/details.aspx?id=49159)
+* [Скачать контрольный список настройки развертывания устройства StorSimple](https://www.microsoft.com/download/details.aspx?id=49159)
 
 ## <a name="deployment-prerequisites"></a>Предварительные условия для развертывания
 В следующих разделах разъясняются предварительные условия для настройки вашей службы диспетчера устройств StorSimple и вашего устройства StorSimple.

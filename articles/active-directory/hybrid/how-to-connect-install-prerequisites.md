@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 09/28/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 4dd3253b1d7ee159914f2d1fd6a8644bbc69c1f0
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: 5205d7797e7d45266a4f54b842ad56f353abc6d6
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50092797"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51252995"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure AD Connect.
@@ -41,7 +41,7 @@ ms.locfileid: "50092797"
 
 ### <a name="on-premises-active-directory"></a>Локальная служба Active Directory
 * Версия схемы и режим работы леса AD должны предполагать использование ОС Windows Server, начиная с версии 2003. Контроллеры домена могут работать под управлением любой версии, если выполняются требования к схеме и уровню леса.
-* Если вы планируете использовать **компонент обратной записи паролей**, то контроллеры домена должны работать под управлением Windows Server 2008 (с последним пакетом обновления) или более поздней версии. Если контроллеры доменов используют версию Windows Server 2008, предшествующую R2, необходимо также применить [исправление KB2386717](http://support.microsoft.com/kb/2386717).
+* Если вы планируете использовать **компонент обратной записи паролей**, то контроллеры домена должны работать под управлением Windows Server 2008 (с последним пакетом обновления) или более поздней версии. Если контроллеры доменов используют версию Windows Server 2008, предшествующую R2, необходимо также применить [исправление KB2386717](https://support.microsoft.com/kb/2386717).
 * Контроллер домена, используемый Azure AD, должен быть доступен для записи. RODC (контроллер домена только для чтения) **не поддерживается**, и Azure AD Connect не будет поддерживать перенаправления для записи.
 * **Не поддерживаются** локальные леса и домены, использующие NetBIOS-имена с точками.
 * Рекомендуется [включить корзину Active Directory](how-to-connect-sync-recycle-bin.md).
@@ -123,11 +123,11 @@ ms.locfileid: "50092797"
   * Microsoft PowerShell устанавливается по умолчанию. Никаких действий не требуется.
   * Платформа .NET Framework 4.5.1 и более поздних версий распространяется через Центр обновления Windows. Убедитесь, что установлены последние обновления для Windows Server в панели управления.
 * Windows Server 2008R2 и Windows Server 2012
-  * Последняя версия Microsoft PowerShell доступна в составе платформы **Windows Management Framework 4.0**, которую можно скачать из [центра загрузки Майкрософт](http://www.microsoft.com/downloads).
-  * .NET Framework 4.5.1 и более поздние версии платформы доступны в [центре загрузки Майкрософт](http://www.microsoft.com/downloads).
+  * Последняя версия Microsoft PowerShell доступна в составе платформы **Windows Management Framework 4.0**, которую можно скачать из [центра загрузки Майкрософт](https://www.microsoft.com/downloads).
+  * .NET Framework 4.5.1 и более поздние версии платформы доступны в [центре загрузки Майкрософт](https://www.microsoft.com/downloads).
 * Windows Server 2008
-  * Последняя поддерживаемая версия PowerShell доступна в составе платформы **Windows Management Framework 3.0**, которую можно скачать в [Центре загрузки Майкрософт](http://www.microsoft.com/downloads).
-  * .NET Framework 4.5.1 и более поздние версии платформы доступны в [центре загрузки Майкрософт](http://www.microsoft.com/downloads).
+  * Последняя поддерживаемая версия PowerShell доступна в составе платформы **Windows Management Framework 3.0**, которую можно скачать в [Центре загрузки Майкрософт](https://www.microsoft.com/downloads).
+  * .NET Framework 4.5.1 и более поздние версии платформы доступны в [центре загрузки Майкрософт](https://www.microsoft.com/downloads).
 
 ### <a name="enable-tls-12-for-azure-ad-connect"></a>Включение протокола TLS 1.2 для Azure AD Connect
 До версии 1.1.614.0 Azure AD Connect по умолчанию использует TLS 1.0 для шифрования связи между сервером модуля синхронизации и Azure AD. Его можно изменить, настроив приложения .Net таким образом, чтобы на сервере по умолчанию использовался протокол TLS 1.2. Дополнительные сведения о протоколе TLS 1.2 см. в статье [Советы по безопасности (Microsoft) (2960358)](https://technet.microsoft.com/security/advisory/2960358).

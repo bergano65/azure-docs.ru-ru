@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/22/2018
 ms.author: bwren
-ms.openlocfilehash: 3377a0b4e6440d83962d103b3e1770ccf43bd785
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: 53020eeb96927143b2fb7394aee64f9b7ea55df9
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36752927"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51248968"
 ---
 # <a name="management-solutions-in-azure"></a>Решения по управлению в Azure
 Решения по управлению используют службы Azure, чтобы получить дополнительные сведения о работе конкретного приложения или службы. Эта статья содержит краткий обзор решений по управлению в Azure и подробные сведения об их использовании и установке.
@@ -104,5 +104,5 @@ ms.locfileid: "36752927"
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Получите [список решений по управлению от корпорации Майкрософт](monitoring-solutions-inventory.md).
-* Узнайте, как [создавать запросы](../log-analytics/log-analytics-log-searches.md) для анализа данных, собранных решением по управлению.
+* Узнайте, как [создавать запросы](../log-analytics/log-analytics-queries.md) для анализа данных, собранных решением по управлению.
 

@@ -12,12 +12,12 @@ ms.author: daleche
 ms.reviewer: ''
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: a34745c5586fa90d3e167bb3be22e93dfa83b7af
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 99c7e73bb133349ef1c14295a49f278d64a15226
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48041736"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51257965"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-sql-database"></a>Устранение неполадок подключения к базе данных SQL Azure
 При сбоях подключения к базе данных SQL Azure отображаются [сообщения об ошибке](sql-database-develop-error-messages.md). Эта статья представляет собой объединенный раздел, который поможет в устранении неполадок подключения к базе данных SQL Azure. В ней описываются [распространенные причины](#cause) проблем подключения, рекомендуется [инструмент устранения неполадок](#try-the-troubleshooter-for-azure-sql-database-connectivity-issues), который поможет выявить проблему, и приводятся пошаговые инструкции по устранению [временных ошибок](#troubleshoot-transient-errors) и [постоянных или повторяющихся ошибок](#troubleshoot-persistent-errors). 
@@ -79,8 +79,8 @@ Error code 40613: "Database <x> on server <y> is not currently available. Please
 4. Проверьте работоспособность службы на панели мониторинга. Если вы считаете, что имеет место региональный сбой, выполните инструкции по восстановлению в новый регион из раздела [Восстановление после сбоя](sql-database-disaster-recovery.md) .
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Поиск документации по Microsoft Azure](http://azure.microsoft.com/search/documentation/)
-* [Просмотр последних обновлений для службы базы данных SQL Azure](http://azure.microsoft.com/updates/?service=sql-database)
+* [Поиск документации по Microsoft Azure](https://azure.microsoft.com/search/documentation/)
+* [Просмотр последних обновлений для службы базы данных SQL Azure](https://azure.microsoft.com/updates/?service=sql-database)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 * [Общие сведения о разработке базы данных SQL](sql-database-develop-overview.md)

@@ -10,12 +10,12 @@ ms.component: bing-video-search
 ms.topic: overview
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: cf37db9bffa8b2a54a6327c29ec806e0eefc8c91
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: e48a0a056628e0c863330de792f8edfaa48aae34
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47225418"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51261865"
 ---
 # <a name="what-is-bing-video-search"></a>Что такое API Bing для поиска видео?
 
@@ -47,7 +47,7 @@ Host: api.cognitive.microsoft.com
 
 Если вы впервые вызовете любой из интерфейсов API Bing, не включайте заголовок идентификатора клиента. Включите идентификатор клиента, только если вы ранее вызывали API Bing, а Bing возвратил идентификатор клиента для комбинации пользователей и устройств.
 
-Чтобы получить видео с определенного домена, используйте оператор запроса [site:](http://msdn.microsoft.com/library/ff795613.aspx).
+Чтобы получить видео с определенного домена, используйте оператор запроса [site:](https://msdn.microsoft.com/library/ff795613.aspx).
 
 ```http
 GET https://api.cognitive.microsoft.com/bing/v7.0/videos/search?q=sailing+dinghies+site:contososailing.com&mkt=en-us HTTP/1.1
@@ -131,7 +131,7 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/videos/search?q=sailing+dinghi
 - [videoLength ](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#videolength)&mdash; — фильтрация видео по длине (например, видео длиной менее пяти минут);
 - [freshness](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#freshness)&mdash; — фильтрация видео по сроку существования (например, видеоролики, обнаруженные Bing на прошлой неделе).
 
-Чтобы получить видео из определенного домена, добавьте оператор запроса [site:](http://msdn.microsoft.com/library/ff795613.aspx) в строку запроса.
+Чтобы получить видео из определенного домена, добавьте оператор запроса [site:](https://msdn.microsoft.com/library/ff795613.aspx) в строку запроса.
 
 > [!NOTE]
 > Если вы используете оператор запроса `site:`, в зависимости от запроса есть вероятность, что ответ включает материалы для взрослых независимо от параметра [safeSearch](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#safesearch). Вы должны использовать `site:`, только если вам известно о содержимом на сайте, и ваш сценарий поддерживает возможность использования содержимого для взрослых.

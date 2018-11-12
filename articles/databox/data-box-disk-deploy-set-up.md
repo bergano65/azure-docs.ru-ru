@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 10/31/2018
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: b3b686815b86e28c0473668825b89736b9af5bf1
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: f2e18db7bd1766901ffb36cc74172f4c8414135c
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50740491"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51232897"
 ---
 # <a name="tutorial-unpack-connect-and-unlock-azure-data-box-disk"></a>Руководство. Распаковка, подключение и разблокировка диска Azure Data Box
 
@@ -75,7 +75,7 @@ ms.locfileid: "50740491"
     В этой процедуре используется только средство разблокировки дисков. Два других средства будут использованы позднее.
 
     > [!div class="nextstepaction"]
-    > [Скачать набор средств для диска Data Box для Windows](http://aka.ms/databoxdisktoolswin)         
+    > [Скачать набор средств для диска Data Box для Windows](https://aka.ms/databoxdisktoolswin)         
 
 3. Извлеките набор средств на тот же компьютер, который будет использоваться для копирования данных. 
 4. Откройте окно командной строки или запустите Windows PowerShell от имени администратора на том же компьютере.
@@ -131,7 +131,7 @@ ms.locfileid: "50740491"
 2. Скачайте набор средств для диска Data Box, соответствующий клиенту Linux.  
 
     > [!div class="nextstepaction"]
-    > [Скачать набор средств для диска Data Box для Linux](http://aka.ms/databoxdisktoolslinux) 
+    > [Скачать набор средств для диска Data Box для Linux](https://aka.ms/databoxdisktoolslinux) 
 
 3. На клиенте Linux откройте терминал. Перейдите в папку со скачанным программным обеспечением. Измените разрешения для файлов, чтобы можно было их выполнить. Введите следующую команду: 
 

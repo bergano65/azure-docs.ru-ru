@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/16/2018
 ms.author: bwren
-ms.openlocfilehash: b4f54358f4bc1db973d6fe7163411e3a313c3cf4
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: a0d543ebe435b616306690bfb5e3de63ecc1ff6c
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33887434"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51259128"
 ---
 # <a name="views-in-management-solutions-preview"></a>Представления в решениях по управлению (предварительная версия)
 > [!NOTE]
@@ -33,7 +33,7 @@ ms.locfileid: "33887434"
 >
 >
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 В этой статье предполагается, что вы уже знаете, как [создать решение для управления](monitoring-solutions-creating.md) и структуру файла решения.
 
 ## <a name="overview"></a>Обзор
@@ -90,7 +90,7 @@ ms.locfileid: "33887434"
 * Переменные нужно определить в решении и использовать в соответствующих свойствах.
 
 ### <a name="log-analytics-api-version"></a>Версия API Log Analytics
-Все ресурсы Log Analytics, определенные в шаблоне Resource Manager, имеют свойство **apiVersion**. В нем указывается версия API, которую должен использовать этот ресурс.  Для представлений с запросами, использующими [устаревший и обновленный язык запросов](../log-analytics/log-analytics-log-search-upgrade.md), версии будут разными.  
+Все ресурсы Log Analytics, определенные в шаблоне Resource Manager, имеют свойство **apiVersion**. В нем указывается версия API, которую должен использовать этот ресурс.  Для представлений с запросами, использующими [устаревший и обновленный язык запросов](../log-analytics/log-analytics-queries.md), версии будут разными.  
 
  В следующей таблице перечислены версии API Log Analytics для представлений в устаревших и обновленных рабочих областях. 
 

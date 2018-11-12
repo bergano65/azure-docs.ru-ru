@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 06/08/2017
 ms.author: trinadhk
-ms.openlocfilehash: 32eba23202eca1c71c4f3b01dcb364281cb2eb60
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: 62b2744494fcd4d98bf75892dc95d86130dd04bb
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40246694"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51261746"
 ---
 # <a name="security-features-to-help-protect-hybrid-backups-that-use-azure-backup"></a>Функции безопасности для защиты гибридных резервных копий, использующих службу архивации Azure
 Среди пользователей растет обеспокоенность вопросами безопасности, связанными с вредоносными программами, программами-шантажистами и вторжениями в системы. Эти угрозы могут привести к значительным расходам и потере данных. Чтобы защитить вас от таких атак, в службе архивации Azure доступны функции безопасности для защиты гибридных резервных копий. В этой статье описывается, как включить и использовать эти функции с помощью агента служб восстановления Azure и Azure Backup Server. Эти функции включают в себя следующие:
@@ -114,6 +114,6 @@ ms.locfileid: "40246694"
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Приступите к работе с хранилищем служб восстановления Azure](backup-azure-vms-first-look-arm.md), чтобы включить эти функции.
-* [Скачайте последнюю версию агента служб восстановления Azure](http://aka.ms/azurebackup_agent), чтобы обеспечить безопасность компьютеров Windows и защитить данные резервных копий от атак.
+* [Скачайте последнюю версию агента служб восстановления Azure](https://aka.ms/azurebackup_agent), чтобы обеспечить безопасность компьютеров Windows и защитить данные резервных копий от атак.
 * [Скачайте последнюю версию Azure Backup Server](https://aka.ms/latest_azurebackupserver), которая поможет защитить рабочие нагрузки и данные резервных копий.
 * Скачайте [накопительный пакет обновления 12 для System Center 2012 R2 Data Protection Manager](https://support.microsoft.com/help/3209592/update-rollup-12-for-system-center-2012-r2-data-protection-manager) или [накопительный пакет обновления 2 для System Center 2016 Data Protection Manager](https://support.microsoft.com/help/3209593/update-rollup-2-for-system-center-2016-data-protection-manager), которые помогут защитить рабочие нагрузки и данные резервных копий.

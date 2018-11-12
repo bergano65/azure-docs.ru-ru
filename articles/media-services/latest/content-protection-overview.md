@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/15/2018
 ms.author: juliako
-ms.openlocfilehash: f8ef92a335dd6faee076356dbffc873b08afbdc0
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: 1c7454aead07c728d55ff2c309cca83a792aac88
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49394283"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238355"
 ---
 # <a name="content-protection-overview"></a>Обзор системы защиты содержимого
 
@@ -59,7 +59,7 @@ ms.locfileid: "49394283"
 
     Для тестирования зашифрованного содержимого AES или CENC (Widevine и (или) PlayReady) можно использовать [Проигрыватель мультимедиа Azure](https://ampdemo.azureedge.net/azuremediaplayer.html). Обязательно щелкните "Дополнительные параметры" и проверьте параметры шифрования.
 
-    Если необходимо протестировать зашифрованное содержимое FairPlay, используйте [этот тестовый проигрыватель](http://aka.ms/amtest). Проигрыватель поддерживает DRM Widevine, PlayReady и FairPlay, а также шифрование незащищенного ключа AES-128. Для тестирования различных DRM нужно выбрать правильный браузер: Chrome, Opera или Firefox для Widevine, MS Edge или IE11 для PlayReady, Safari в macOS для FairPlay.
+    Если необходимо протестировать зашифрованное содержимое FairPlay, используйте [этот тестовый проигрыватель](https://aka.ms/amtest). Проигрыватель поддерживает DRM Widevine, PlayReady и FairPlay, а также шифрование незащищенного ключа AES-128. Для тестирования различных DRM нужно выбрать правильный браузер: Chrome, Opera или Firefox для Widevine, MS Edge или IE11 для PlayReady, Safari в macOS для FairPlay.
 
 3. Служба токенов безопасности (STS), которая выдает JSON Web Token (JWT) в качестве маркера доступа для доступа к серверному ресурсу. Как серверный ресурс можно использовать службу доставки лицензий AMS. Служба токенов безопасности должна определять следующие данные.
 
@@ -168,8 +168,8 @@ PlayReady, Widevine и FairPlay обеспечивают более высоки
 1. Для рабочей среды необходимо иметь службу токенов безопасности (STS) (веб-службу), которая выдает токен JWT по HTTPS-запросу. Для тестирования можно использовать код, показанный в методе **GetTokenAsync**, который определен в файле [Program.cs](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithDRM/Program.cs).
 2. После выполнения проверки подлинности пользователя проигрывателю необходимо будет выполнить запрос к службе безопасности токенов на получение такого токена и присвоить его как значение токена. Можно использовать [API решения "Проигрыватель мультимедиа Azure"](https://amp.azure.net/libs/amp/latest/docs/).
 
-* Пример запуска службы безопасности токенов с симметричным и асимметричным ключом см. на странице [http://aka.ms/jwt](http://aka.ms/jwt). 
-* Пример проигрывателя на базе Проигрывателя мультимедиа Azure, в котором используется такой токен JWT, см. на странице [http://aka.ms/amtest](http://aka.ms/amtest) (разверните ссылку player_settings, чтобы увидеть входные данные токена).
+* Пример запуска службы безопасности токенов с симметричным и асимметричным ключом см. на странице [http://aka.ms/jwt](https://aka.ms/jwt). 
+* Пример проигрывателя на базе Проигрывателя мультимедиа Azure, в котором используется такой токен JWT, см. на странице [http://aka.ms/amtest](https://aka.ms/amtest) (разверните ссылку player_settings, чтобы увидеть входные данные токена).
 
 ### <a name="question"></a>Вопрос
 

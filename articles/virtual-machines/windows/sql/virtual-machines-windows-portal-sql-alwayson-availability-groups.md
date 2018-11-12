@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 03/17/2017
 ms.author: mikeray
-ms.openlocfilehash: a612ffd5a68e34cb0a367a6a883495ef26aeb4bc
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: bddc83d55c8909412f7f935a4324a6f316a82cd7
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
-ms.locfileid: "29401027"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238171"
 ---
 # <a name="configure-always-on-availability-groups-in-azure-virtual-machines-automatically-resource-manager"></a>Автоматическая настройка групп доступности AlwaysOn на виртуальных машинах Azure с использованием Resource Manager
 
@@ -42,12 +42,12 @@ ms.locfileid: "29401027"
 
 Прежде чем начать работу с руководством, проверьте следующее.
 
-* У вас уже есть учетная запись Azure. Если у вас ее нет, [зарегистрируйтесь, чтобы воспользоваться пробной учетной записью](http://azure.microsoft.com/pricing/free-trial/).
+* У вас уже есть учетная запись Azure. Если у вас ее нет, [зарегистрируйтесь, чтобы воспользоваться пробной учетной записью](https://azure.microsoft.com/pricing/free-trial/).
 * Вы уже умеете подготавливать виртуальную машину SQL Server из коллекции виртуальных машин через графический интерфейс пользователя. Дополнительные сведения см. в разделе [Подготовка виртуальной машины SQL Server на портале Azure](virtual-machines-windows-portal-sql-server-provision.md).
-* Теперь вы хорошо понимаете принцип работы групп доступности. Дополнительные сведения см. в разделе [Группы доступности AlwaysOn (SQL Server)](http://msdn.microsoft.com/library/hh510230.aspx).
+* Теперь вы хорошо понимаете принцип работы групп доступности. Дополнительные сведения см. в разделе [Группы доступности AlwaysOn (SQL Server)](https://msdn.microsoft.com/library/hh510230.aspx).
 
 > [!NOTE]
-> Если вы планируете использовать группы доступности с SharePoint, ознакомьтесь со статьей [Configure SQL Server 2012 Always On availability groups for SharePoint 2013](http://technet.microsoft.com/library/jj715261.aspx)(Настройка групп доступности AlwaysOn SQL Server 2012 для SharePoint 2013).
+> Если вы планируете использовать группы доступности с SharePoint, ознакомьтесь со статьей [Configure SQL Server 2012 Always On availability groups for SharePoint 2013](https://technet.microsoft.com/library/jj715261.aspx)(Настройка групп доступности AlwaysOn SQL Server 2012 для SharePoint 2013).
 >
 >
 
@@ -125,7 +125,7 @@ ms.locfileid: "29401027"
 * **Размер виртуальной машины SQL Server.** Это размер обеих виртуальных машин, на которых выполняется SQL Server. Выберите такой размер, который соответствует вашей рабочей нагрузке. Если вы создаете среду, описанную в этом руководстве, используйте размер **DS2**. Для производственных рабочих нагрузок следует выбрать такой размер виртуальной машины, который сможет поддерживать рабочую нагрузку. Для многих производственных рабочих нагрузок нужна виртуальная машина **DS4** или большего размера. Шаблон создает две виртуальные машины такого размера и устанавливает SQL Server на каждую из них. Дополнительные сведения см. в разделе [Размеры виртуальных машин](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 > [!NOTE]
-> Azure устанавливает выпуск SQL Server Enterprise Edition. Стоимость ПО зависит от выпуска и размера виртуальной машины. Подробные сведения о текущих ценах см. на странице [цен на виртуальные машины](http://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
+> Azure устанавливает выпуск SQL Server Enterprise Edition. Стоимость ПО зависит от выпуска и размера виртуальной машины. Подробные сведения о текущих ценах см. на странице [цен на виртуальные машины](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
 >
 >
 
@@ -161,8 +161,8 @@ ms.locfileid: "29401027"
 
 Дополнительные сведения о дисковом пространстве и пулах носителей:
 
-* [Обзор дисковых пространств](http://technet.microsoft.com/library/hh831739.aspx);
-* [Windows Server Backup and Storage Pools (Резервное копирование данных Windows Server и пулы носителей)](http://technet.microsoft.com/library/dn390929.aspx)
+* [Обзор дисковых пространств](https://technet.microsoft.com/library/hh831739.aspx);
+* [Windows Server Backup and Storage Pools (Резервное копирование данных Windows Server и пулы носителей)](https://technet.microsoft.com/library/dn390929.aspx)
 
 Дополнительные рекомендации по настройке SQL Server см. в статье [Рекомендации по оптимизации производительности SQL Server в виртуальных машинах Azure](virtual-machines-windows-sql-performance.md).
 

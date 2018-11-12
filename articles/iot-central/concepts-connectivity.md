@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: timlt
-ms.openlocfilehash: ad77f1f0a99fbdb355163e1bc83461c8c4eb75fa
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 7b2dd4e97d23f37c8261e51f3f65e78436493ddc
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50157706"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238745"
 ---
 # <a name="device-connectivity-in-azure-iot-central"></a>Подключение устройства в Azure IoT Central
 
@@ -150,7 +150,7 @@ Azure IoT Central использует [Службу подготовки уст
     
     Ниже приведены некоторые средства командной строки, которые можно использовать для создания сертификатов ЦС и сертификатов устройств.
 
-    * Если вы используете MxChip, это [средство командной строки](http://aka.ms/iotcentral-docs-dicetool) подходит для создания сертификатов ЦС — добавьте его в приложение IoT Central и проверяйте сертификаты. 
+    * Если вы используете MxChip, это [средство командной строки](https://aka.ms/iotcentral-docs-dicetool) подходит для создания сертификатов ЦС — добавьте его в приложение IoT Central и проверяйте сертификаты. 
 
     *   Используйте это [средство командной строки](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md ), чтобы
         * Создать цепочку сертификатов (выполните шаг 2 в документации GitHub). 
@@ -165,7 +165,7 @@ Azure IoT Central использует [Службу подготовки уст
     Запрограммируйте устройство с помощью сведений службы подготовки, включив получение сведений о соединении и назначении приложения IoT Central при включении устройства.    
 
     **Подробная информация** 
-    *   Пример реализации для [RaspberryPi.](http://aka.ms/iotcentral-docs-Raspi-releases)  
+    *   Пример реализации для [RaspberryPi.](https://aka.ms/iotcentral-docs-Raspi-releases)  
 
     *   [Пример клиента устройства на языке C.](https://github.com/Azure/azure-iot-sdk-c/blob/dps_symm_key/provisioning_client/devdoc/using_provisioning_client.md)
 

@@ -13,19 +13,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: jejiang
-ms.openlocfilehash: b45328425cff978377d5e05de487d42e786c063b
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: 1e18db960b9e07ae412d0c41c4544ef6bb35977c
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37345113"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51261166"
 ---
 # <a name="manage-azure-cosmos-db-in-azure-storage-explorer"></a>Управление Azure DB Cosmos в Обозревателе службы хранилища Azure
 
 В Обозревателе службы хранилища Azure можно управлять объектами Azure Cosmos DB и работать с данными, хранимыми процедурами и триггерами, а также другими объектами Azure, такими как хранилища BLOB-объектов и очереди. Теперь это средство можно использовать для управления всеми объектами Azure в одном месте. Сейчас Обозреватель службы хранилища Azure поддерживает учетные записи SQL, MongoDB, Graph и службы таблиц.
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Учетная запись Azure Cosmos DB для API SQL<!--or MongoDB API-->. Если у вас нет учетной записи, вы можете создать ее на портале Azure, как описано в разделе [Azure Cosmos DB. Создание веб-приложения API SQL с использованием языка .NET и портала Azure](create-sql-api-dotnet.md).
 
@@ -130,7 +130,7 @@ ms.locfileid: "37345113"
 
 2. Выберите **Без ограничений**, чтобы иметь возможность указать ключ раздела, а затем нажмите кнопку **ОК**.
 
-    Если при создании коллекции использовался ключ секции, то после создания коллекции изменить значение этого ключа невозможно. Сведения о параметрах ключа секции см. в разделе [Схема секционирования](partition-data.md#designing-for-partitioning).
+    Если при создании коллекции использовался ключ секции, то после создания коллекции изменить значение этого ключа невозможно.
 
     ![Ключ секции](./media/storage-explorer/partitionkey.png)
 

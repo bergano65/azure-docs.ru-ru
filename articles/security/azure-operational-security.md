@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 2ae2ea14bc712563867f32b83eddbd9d4129ac1d
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: c7d8ab8beced055d10cebcecf36d957b155c63b7
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49409498"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51256227"
 ---
 # <a name="azure-operational-security"></a>Операционная безопасность Azure
 ## <a name="introduction"></a>Введение
@@ -74,7 +74,7 @@ Microsoft Azure Log Analytics — решение по управлению ИТ
 
 ### <a name="log-analytics"></a>Log Analytics
 
-[Log Analytics](http://azure.microsoft.com/documentation/services/log-analytics) предоставляет службы мониторинга за счет сбора данных из управляемых ресурсов и помещения их в центральный репозиторий. Эти данные могут содержать события, данные о производительности или пользовательские данные, полученные с помощью API. Собранные данные доступны для оповещения, анализа и экспорта.
+[Log Analytics](https://azure.microsoft.com/documentation/services/log-analytics) предоставляет службы мониторинга за счет сбора данных из управляемых ресурсов и помещения их в центральный репозиторий. Эти данные могут содержать события, данные о производительности или пользовательские данные, полученные с помощью API. Собранные данные доступны для оповещения, анализа и экспорта.
 
 
 Этот метод позволяет консолидировать данные из различных источников таким образом, чтобы вы могли объединять данные из служб Azure с существующей локальной средой. Он также явно отделяет сбор данных от действия над этими данными, чтобы все действия были доступны для всех видов данных.
@@ -92,7 +92,7 @@ Microsoft Azure Log Analytics — решение по управлению ИТ
 
 ### <a name="azure-backup"></a>Служба архивации Azure
 
-[Azure Backup](http://azure.microsoft.com/documentation/services/backup) предоставляет функции архивации и восстановления данных и входит в набор продуктов и служб Log Analytics.
+[Azure Backup](https://azure.microsoft.com/documentation/services/backup) предоставляет функции архивации и восстановления данных и входит в набор продуктов и служб Log Analytics.
 Она защищает данные приложений и хранит их в течение нескольких лет без каких-либо капитальных затрат и с минимальными операционными затратами. Она может архивировать данные с физических и виртуальных серверов Windows в дополнение к рабочим нагрузкам приложений, таких как SQL Server и SharePoint. Кроме того, она может использоваться с [System Center Data Protection Manager (DPM)](https://en.wikipedia.org/wiki/System_Center_Data_Protection_Manager) для репликации защищенных данных в Azure для обеспечения избыточности и долговременного хранения.
 
 

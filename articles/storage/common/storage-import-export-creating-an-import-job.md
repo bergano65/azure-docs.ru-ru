@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: muralikk
 ms.component: common
-ms.openlocfilehash: c1effeba7e4b0750d5af3a5a82b755704379af68
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
+ms.openlocfilehash: d7a9da4ac3560e67a6f7bc8b79a7c2dd37995d4d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44021852"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51258016"
 ---
 # <a name="creating-an-import-job-for-the-azure-importexport-service"></a>Создание задания импорта для службы импорта и экспорта Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "44021852"
 
 Действия по подготовке дисков для задания импорта одинаковы независимо от способа создания задания: с помощью портала или REST API.
 
-Ниже вкратце описана процедура подготовки диска. Подробные инструкции см. в [справочном руководстве по средству импорта и экспорта Azure](storage-import-export-tool-how-to-v1.md). Инструмент импорта и экспорта Azure можно скачать [отсюда](http://go.microsoft.com/fwlink/?LinkID=301900).
+Ниже вкратце описана процедура подготовки диска. Подробные инструкции см. в [справочном руководстве по средству импорта и экспорта Azure](storage-import-export-tool-how-to-v1.md). Инструмент импорта и экспорта Azure можно скачать [отсюда](https://go.microsoft.com/fwlink/?LinkID=301900).
 
 Подготовка дисков включает следующие действия:
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: bcd2b2199628a7f717a7ce1d8eba032f5778379b
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: 7f1bb400650a223a9f0b4249c33f7c480a1bc009
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43301467"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51262375"
 ---
 # <a name="security-frame-sensitive-data--mitigations"></a>Механизм безопасности. Конфиденциальные данные | Устранение угроз 
 | Продукт или служба | Статья |
@@ -141,7 +141,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [Сведения об атрибуте autocomplete на сайте MSDN](http://msdn.microsoft.com/library/ms533486(VS.85).aspx), [использование функции автозаполнение в формах HTML](http://msdn.microsoft.com/library/ms533032.aspx), [Бюллетень по безопасности (Майкрософт) MS10-071 — критическое](http://technet.microsoft.com/security/bulletin/MS10-071), [запись блога о функции автозаполнения](http://blog.mindedsecurity.com/2011/10/autocompleteagain.html) |
+| **Справочные материалы**              | [Сведения об атрибуте autocomplete на сайте MSDN](https://msdn.microsoft.com/library/ms533486(VS.85).aspx), [использование функции автозаполнение в формах HTML](https://msdn.microsoft.com/library/ms533032.aspx), [Бюллетень по безопасности (Майкрософт) MS10-071 — критическое](https://technet.microsoft.com/security/bulletin/MS10-071), [запись блога о функции автозаполнения](http://blog.mindedsecurity.com/2011/10/autocompleteagain.html) |
 | **Действия** | Атрибут autocompletee указывает, включено ли автозаполнение формы. Если автозаполнение включено, браузер автоматически использует значения, введенные пользователем. Например, если форма, в которую вы ввели новое имя и пароль, успешно отправлена, браузер спрашивает, нужно ли сохранить пароль. В дальнейшем при отображении формы имя и пароль заполняются автоматически или непосредственно во время введения имени. Злоумышленник, у которого есть локальный доступ, может получить открытый пароль из кэша браузера. По умолчанию автозаполнение включено, поэтому его явным образом следует отключить. |
 
 ### <a name="example"></a>Пример

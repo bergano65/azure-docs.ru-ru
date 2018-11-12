@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/3/2018
 ms.author: rkarlin
-ms.openlocfilehash: ab8a289ea0de263871b76788514052c09a6bf4da
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 3d2687f56b69174fde783060d994e3c01763ec94
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44295743"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51256635"
 ---
 # <a name="security-policy-settings"></a>Параметры политики безопасности
 В этой статье представлен обзор параметров политики безопасности в Центре безопасности.
@@ -56,4 +56,4 @@ ms.locfileid: "44295743"
 * [Мониторинг решений партнеров с помощью центра безопасности Azure](security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
 - [Защита данных в центре безопасности Azure](security-center-data-security.md) — сведения о том, как центр безопасности управляет данными и защищает их.
 * [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md) — получите ответы на часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](http://blogs.msdn.com/b/azuresecurity/) — последние новости и сведения об обеспечении безопасности в Azure.
+* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — последние новости и сведения об обеспечении безопасности в Azure.

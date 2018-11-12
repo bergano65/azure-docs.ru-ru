@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: 0e4576ad4f7eece543ef572073919bcf3ca3a4e9
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: ae719e6daa3c07ffe298cfefcc5a0a2846a49032
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49116148"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51231827"
 ---
 # <a name="contoso-migration-rehost-an-on-premises-app-on-an-azure-vm-and-sql-database-managed-instance"></a>Миграция Contoso. Повторное размещение локального приложения на виртуальную машину Azure и в Управляемом экземпляре Базы данных SQL
 
@@ -366,7 +366,7 @@ Site Recovery требуется доступ к серверам VMware, что
 Администраторам Contoso также необходимо проверить соблюдение указанных ниже условий при отработке отказа.
 
 - Когда отработка отказа запущена, на виртуальной машине не должно быть обновлений Windows, ожидающих установки. Если ожидается установка обновлений Windows, пользователи Contoso не могут войти в систему на виртуальной машине до завершения обновления.
-- После отработки отказа администраторам следует проверить данные **диагностики загрузки**, чтобы увидеть снимок виртуальной машины. Если им не удается просмотреть диагностические сведения о загрузке, они должны проверить, работает ли виртуальная машина, и просмотреть [советы по устранению неполадок](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx).
+- После отработки отказа администраторам следует проверить данные **диагностики загрузки**, чтобы увидеть снимок виртуальной машины. Если им не удается просмотреть диагностические сведения о загрузке, они должны проверить, работает ли виртуальная машина, и просмотреть [советы по устранению неполадок](https://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx).
 
 ## <a name="step-5-replicate-the-on-premises-vms-to-azure"></a>Шаг 5. Репликация локальных виртуальных машин в Azure
 

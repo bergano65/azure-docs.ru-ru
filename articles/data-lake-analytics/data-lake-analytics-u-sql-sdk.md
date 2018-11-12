@@ -8,12 +8,12 @@ ms.author: yanacai
 ms.reviewer: jasonwhowell
 ms.topic: conceptual
 ms.date: 03/01/2017
-ms.openlocfilehash: ae5334dcb93e34569131ab51dca99c310831082d
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 6a73ef058a76152678099eca3f1bd15590b0b03d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43052093"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238800"
 ---
 # <a name="run-and-test-u-sql-with-azure-data-lake-u-sql-sdk"></a>Выполнение и тестирование U-SQL с помощью пакета SDK Azure Data Lake для U-SQL
 
@@ -36,7 +36,7 @@ ms.locfileid: "43052093"
 
     ![Пакет SDK Windows 10 для локального выполнения средств Data Lake для Visual Studio](./media/data-lake-analytics-data-lake-tools-local-run/data-lake-tools-for-visual-studio-local-run-windows-10-sdk.png)
 
-    - Установка [средств Data Lake для Visual Studio](http://aka.ms/adltoolsvs). Предварительно упакованные файлы VC++ и SDK для Windows можно найти в каталоге C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\ADL Tools\X.X.XXXX.X\CppSDK. В этом случае локальный компилятор U-SQL не сможет найти зависимости автоматически. Вам потребуется указать путь к CppSDK. Можно скопировать файлы в другое место или просто использовать стандартный путь.
+    - Установка [средств Data Lake для Visual Studio](https://aka.ms/adltoolsvs). Предварительно упакованные файлы VC++ и SDK для Windows можно найти в каталоге C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\ADL Tools\X.X.XXXX.X\CppSDK. В этом случае локальный компилятор U-SQL не сможет найти зависимости автоматически. Вам потребуется указать путь к CppSDK. Можно скопировать файлы в другое место или просто использовать стандартный путь.
 
 ## <a name="understand-basic-concepts"></a>Основные понятия
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: 370700f8d146dd626e6e13deceb09dcaea34a9f3
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.openlocfilehash: b5ad6321a41c84928cbc6f8c51c4f5fe3567410f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45983956"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51262035"
 ---
 # <a name="azure-devtest-labs-faq"></a>Часто задаваемые вопросы об Azure DevTest Labs
 В этой статье содержатся ответы на некоторые самые распространенные вопросы об Azure DevTest Labs.
@@ -100,7 +100,7 @@ DevTest Labs предусматривает два типа ролей для п
 * [Развертывание новой виртуальной машины из Azure DevOps Services в имеющейся лаборатории Azure DevTest Labs](http://www.visualstudiogeeks.com/blog/DevOps/Deploy-New-VM-To-Existing-AzureDevTestLab-From-VSTS)
 * [Использование управления выпусками Azure DevOps Services для непрерывного развертывания в Azure DevTest Labs](http://www.visualstudiogeeks.com/blog/DevOps/Use-VSTS-ReleaseManagement-to-Deploy-and-Test-in-AzureDevTestLabs)
 
-Для других цепочек инструментов непрерывной интеграции (CI) и непрерывной поставки (CD) можно реализовать такие же сценарии путем развертывания [шаблонов Azure Resource Manager](https://aka.ms/dtlquickstarttemplate) с помощью командлетов [Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md) и [пакетов SDK для .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.DevTestLabs/). Для интеграции DevTest Labs с набором инструментов также можно использовать [REST API для DevTest Labs](http://aka.ms/dtlrestapis).  
+Для других цепочек инструментов непрерывной интеграции (CI) и непрерывной поставки (CD) можно реализовать такие же сценарии путем развертывания [шаблонов Azure Resource Manager](https://aka.ms/dtlquickstarttemplate) с помощью командлетов [Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md) и [пакетов SDK для .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.DevTestLabs/). Для интеграции DevTest Labs с набором инструментов также можно использовать [REST API для DevTest Labs](https://aka.ms/dtlrestapis).  
 
 
 **Виртуальные машины**
@@ -141,7 +141,7 @@ DevTest Labs предусматривает два типа ролей для п
 
 Чтобы найти целевую учетную запись хранения, связанную с лабораторией, сделайте следующее:
 
-1. Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 2. В меню слева выберите **Группы ресурсов**.
 3. Найдите и выберите группу ресурсов, связанную с вашей лабораторией.
 4. В разделе **Обзор** выберите одну из учетных записей хранения.

@@ -12,12 +12,12 @@ ms.service: machine-learning
 ms.component: studio
 ms.topic: article
 ms.date: 12/18/2017
-ms.openlocfilehash: 92db2a86f5f698945cd2252476e951d658dc75ac
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: c3aa1bfe2cc1513d636452031de62da814af6cd7
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46959212"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51262307"
 ---
 # <a name="how-to-choose-algorithms-for-azure-machine-learning-studio"></a>Выбор алгоритмов студии машинного обучения Azure
 
@@ -121,7 +121,7 @@ ms.locfileid: "46959212"
 | [лес решений](https://msdn.microsoft.com/library/azure/dn906008.aspx) |● |○ | |6 | |
 | [джунгли решений](https://msdn.microsoft.com/library/azure/dn905976.aspx) |● |○ | |6 |Низкий объем памяти |
 | [увеличивающееся дерево решений](https://msdn.microsoft.com/library/azure/dn906025.aspx) |● |○ | |6 |Большой объем памяти |
-| [нейронная сеть](https://msdn.microsoft.com/library/azure/dn905947.aspx) |● | | |9 |[Возможна дополнительная настройка](http://go.microsoft.com/fwlink/?LinkId=402867) |
+| [нейронная сеть](https://msdn.microsoft.com/library/azure/dn905947.aspx) |● | | |9 |[Возможна дополнительная настройка](https://go.microsoft.com/fwlink/?LinkId=402867) |
 | [усредненное восприятие](https://msdn.microsoft.com/library/azure/dn906036.aspx) |○ |○ |● |4. | |
 | [метод опорных векторов](https://msdn.microsoft.com/library/azure/dn905835.aspx) | |○ |● |5 |Подходит для больших наборов функций |
 | [локально глубокий метод опорных векторов](https://msdn.microsoft.com/library/azure/dn913070.aspx) |○ | | |8 |Подходит для больших наборов функций |
@@ -130,7 +130,7 @@ ms.locfileid: "46959212"
 | [логистическая регрессия](https://msdn.microsoft.com/library/azure/dn905853.aspx) | |● |● |5 | |
 | [лес решений](https://msdn.microsoft.com/library/azure/dn906015.aspx) |● |○ | |6 | |
 | [джунгли решений ](https://msdn.microsoft.com/library/azure/dn905963.aspx) |● |○ | |6 |Низкий объем памяти |
-| [нейронная сеть](https://msdn.microsoft.com/library/azure/dn906030.aspx) |● | | |9 |[Возможна дополнительная настройка](http://go.microsoft.com/fwlink/?LinkId=402867) |
+| [нейронная сеть](https://msdn.microsoft.com/library/azure/dn906030.aspx) |● | | |9 |[Возможна дополнительная настройка](https://go.microsoft.com/fwlink/?LinkId=402867) |
 | [one-v-all](https://msdn.microsoft.com/library/azure/dn905887.aspx) |- |- |- |- |Просмотрите свойства выбранного двухклассового метода |
 | **Регрессия** | | | | | |
 | [линейная](https://msdn.microsoft.com/library/azure/dn905978.aspx) | |● |● |4. | |
@@ -138,7 +138,7 @@ ms.locfileid: "46959212"
 | [лес решений](https://msdn.microsoft.com/library/azure/dn905862.aspx) |● |○ | |6 | |
 | [увеличивающееся дерево решений](https://msdn.microsoft.com/library/azure/dn905801.aspx) |● |○ | |5 |Большой объем памяти |
 | [квантильная регрессия быстрого леса](https://msdn.microsoft.com/library/azure/dn913093.aspx) |● |○ | |9 |Распределения, а не точечные прогнозы |
-| [нейронная сеть](https://msdn.microsoft.com/library/azure/dn905924.aspx) |● | | |9 |[Возможна дополнительная настройка](http://go.microsoft.com/fwlink/?LinkId=402867) |
+| [нейронная сеть](https://msdn.microsoft.com/library/azure/dn905924.aspx) |● | | |9 |[Возможна дополнительная настройка](https://go.microsoft.com/fwlink/?LinkId=402867) |
 | [регрессия Пуассона](https://msdn.microsoft.com/library/azure/dn905988.aspx) | | |● |5 |С технической точки зрения логлинейная. Для прогнозирования количества |
 | [порядковая](https://msdn.microsoft.com/library/azure/dn906029.aspx) | | | |0 |Для прогнозирования упорядочения за рангом |
 | **Обнаружение аномалий** | | | | | |
@@ -190,7 +190,7 @@ ms.locfileid: "46959212"
 Нейронные сети — это алгоритмы обучения, вдохновленные устройством человеческого мозга, которые охватывают [многоклассовые](https://msdn.microsoft.com/library/azure/dn906030.aspx), [двухклассовые](https://msdn.microsoft.com/library/azure/dn905947.aspx) и [регрессионные](https://msdn.microsoft.com/library/azure/dn905924.aspx) задачи. Разнообразие нейронных сетей очень велико, но в машинном обучении Azure все они имеют форму направленного ациклического графа. Это означает, что входные функции передаются вперед (и только вперед) по последовательности слоев, после чего превращаются в выходные данные. В каждом слое входные функции взвешиваются в различных сочетаниях, суммируются и передаются на следующий уровень. Такое сочетание простых вычислений дает возможность как по волшебству изучать границы сложных классов и тренды данных. Многослойные сети такого типа выполняют "глубокое обучение", которое так широко представлено в технических отчетах и научно-фантастической литературе.
 
 Но такая высокая производительность имеет и обратную сторону. На обучение нейронных сетей может уходить длительное время, особенно для больших наборов данных с большим количеством функций. Они также имеют больше параметров, чем большинство алгоритмов, что означает, что корректировка параметров значительно удлиняет время обучения.
-А для тех, кто хочет превысить собственные достижения и [определить собственную структуру сети](http://go.microsoft.com/fwlink/?LinkId=402867), возможности нейронных сетей неисчерпаемы.
+А для тех, кто хочет превысить собственные достижения и [определить собственную структуру сети](https://go.microsoft.com/fwlink/?LinkId=402867), возможности нейронных сетей неисчерпаемы.
 
 ![Границы, изучаемые нейронными сетями][6]
 ***Границы, изучаемые нейронными сетями, могут быть сложными и нестандартными***

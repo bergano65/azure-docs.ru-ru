@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 10/10/2018
 ms.author: genli
-ms.openlocfilehash: f9b950b1d85f50331d556a54b4237d78ec5c07ac
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 4d30cca0106e52706326bfd91a2d0dfb0a64ca04
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49388177"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51258465"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
 Перед тем как передать виртуальные машины Windows из локальной среды в Microsoft Azure, следует правильно подготовить виртуальный жесткий диск (VHD или VHDX). В Azure поддерживаются **только виртуальные машины первого поколения**, использующие формат файла VHD и фиксированный размер диска. Максимально допустимый размер виртуального жесткого диска составляет 1023 ГБ. Вы можете преобразовать виртуальную машину первого поколения, заменив файловую систему VHDX на VHD, а динамически расширяемый диск на диск фиксированного размера. Но вы не можете изменить поколение виртуальной машины. Дополнительные сведения см. в статье о том, [как выбрать поколение для виртуальной машины в Hyper-V](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).
@@ -48,7 +48,7 @@ ms.locfileid: "49388177"
 >Команды в этой статье нужно выполнить в сеансе PowerShell с повышенными правами.
 
 ### <a name="convert-disk-by-using-powershell"></a>Преобразование диска с помощью PowerShell
-Виртуальный диск можно преобразовать с помощью команды [Convert-VHD](http://technet.microsoft.com/library/hh848454.aspx) в Windows PowerShell. При запуске PowerShell выберите **Запуск от имени администратора**. 
+Виртуальный диск можно преобразовать с помощью команды [Convert-VHD](https://technet.microsoft.com/library/hh848454.aspx) в Windows PowerShell. При запуске PowerShell выберите **Запуск от имени администратора**. 
 
 В следующем примере показано преобразование диска VHDX в VHD и динамически расширяемого диска — в диск фиксированного размера.
 
@@ -58,7 +58,7 @@ Convert-VHD –Path c:\test\MY-VM.vhdx –DestinationPath c:\test\MY-NEW-VM.vhd 
 В этой команде замените значение -Path путем к виртуальному жесткому диску, который нужно преобразовать, а значение -DestinationPath — новыми путем и именем преобразованного диска.
 
 ### <a name="convert-from-vmware-vmdk-disk-format"></a>Преобразование диска VMware в формате VMDK
-Если у вас есть образ виртуальной машины Windows [в формате файла VMDK](https://en.wikipedia.org/wiki/VMDK), преобразуйте его в формат VHD с помощью [Microsoft VM Converter](https://www.microsoft.com/download/details.aspx?id=42497). Дополнительные сведения см. в записи блога [How to Convert a VMware VMDK to Hyper-V VHD](http://blogs.msdn.com/b/timomta/archive/2015/06/11/how-to-convert-a-vmware-vmdk-to-hyper-v-vhd.aspx) (Преобразование диска VMDK VMware в VHD Hyper-V).
+Если у вас есть образ виртуальной машины Windows [в формате файла VMDK](https://en.wikipedia.org/wiki/VMDK), преобразуйте его в формат VHD с помощью [Microsoft VM Converter](https://www.microsoft.com/download/details.aspx?id=42497). Дополнительные сведения см. в записи блога [How to Convert a VMware VMDK to Hyper-V VHD](https://blogs.msdn.com/b/timomta/archive/2015/06/11/how-to-convert-a-vmware-vmdk-to-hyper-v-vhd.aspx) (Преобразование диска VMDK VMware в VHD Hyper-V).
 
 ## <a name="set-windows-configurations-for-azure"></a>Настройка конфигурации Windows для Azure
 
@@ -377,7 +377,7 @@ Sysprep — это процесс, который можно выполнить
 - [Создание виртуальной машины Windows из специализированного диска](create-vm-specialized.md)
 - [Create a VM from a specialized VHD disk](https://docs.microsoft.com/azure/virtual-machines/windows/create-vm-specialized-portal?branch=master) (Создание виртуальной машины из специализированного VHD-диска)
 
-Если вы хотите создать универсальный образ, необходимо запустить Sysprep. Дополнительные сведения об использовании Sysprep см. в статье [How to Use Sysprep: An Introduction](http://technet.microsoft.com/library/bb457073.aspx) (Как использовать Sysprep: введение). 
+Если вы хотите создать универсальный образ, необходимо запустить Sysprep. Дополнительные сведения об использовании Sysprep см. в статье [How to Use Sysprep: An Introduction](https://technet.microsoft.com/library/bb457073.aspx) (Как использовать Sysprep: введение). 
 
 Не все роли или приложения, установленные на компьютере с Windows, поддерживают этот образ. Поэтому перед выполнением этой процедуры ознакомьтесь со статьей ниже, чтобы узнать о поддержке процессом Sysprep определенных ролей компьютера. [Sysprep Support for Server Roles](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles) (Поддержка серверных ролей в Sysprep).
 
@@ -401,7 +401,7 @@ Sysprep — это процесс, который можно выполнить
 ## <a name="complete-recommended-configurations"></a>Рекомендуемые настройки
 Приведенные ниже параметры не влияют на передачу VHD. Тем не менее, мы настоятельно рекомендуем их настроить.
 
-* Установите [агент виртуальных машин Azure](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Затем можно включить расширения виртуальной машины. Расширения виртуальной машины реализуют большую часть важных функций, которые могут вам понадобиться при работе с виртуальными машинами, например сброс паролей, настройка протокола RDP и множество других функций. Дополнительные сведения можно найти в разделе 
+* Установите [агент виртуальных машин Azure](https://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Затем можно включить расширения виртуальной машины. Расширения виртуальной машины реализуют большую часть важных функций, которые могут вам понадобиться при работе с виртуальными машинами, например сброс паролей, настройка протокола RDP и множество других функций. Дополнительные сведения можно найти в разделе 
 
     - [VM Agent and Extensions – Part 1](https://azure.microsoft.com/blog/vm-agent-and-extensions-part-1/) (Расширения и агент виртуальной машины. Часть 1)
     - [VM Agent and Extensions – Part 2](https://azure.microsoft.com/blog/vm-agent-and-extensions-part-2/) (Расширения и агент виртуальной машины. Часть 2)

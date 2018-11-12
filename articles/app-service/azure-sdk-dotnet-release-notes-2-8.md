@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: integration
 ms.date: 02/24/2017
 ms.author: juliako
-ms.openlocfilehash: 0b9f55d69c824e86245738a082f95fc529583f58
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: 6aa2684a900dffecd481d51b8876b0e674c1a6ea
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "22985959"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51235536"
 ---
 # <a name="azure-sdk-for-net-28-281-and-282"></a>Пакеты SDK Azure для .NET 2.8, 2.8.1 и 2.8.2
 ## <a name="overview"></a>Обзор
@@ -28,9 +28,9 @@ ms.locfileid: "22985959"
 
 ## <a name="azure-sdk-for-net-28"></a>Пакет SDK Azure для .NET 2.8
 ### <a name="download-azure-sdk-for-net-28"></a>Загрузить пакет SDK Azure для .NET 2.8
-[Пакет SDK Azure для .NET 2.8 и Visual Studio 2015](http://go.microsoft.com/fwlink/?LinkId=699285) 
+[Пакет SDK Azure для .NET 2.8 и Visual Studio 2015](https://go.microsoft.com/fwlink/?LinkId=699285) 
 
-[Пакет SDK Azure для .NET 2.8 и Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkId=699287)
+[Пакет SDK Azure для .NET 2.8 и Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=699287)
 
 ### <a name="net-452-support"></a>Поддержка .NET 4.5.2
 #### <a name="known-issues"></a>Известные проблемы
@@ -48,7 +48,7 @@ ms.locfileid: "22985959"
 
 Сценарии из проектов, созданных в более ранних версиях пакетов SDK, не будут выполняться в Visual Studio при использовании пакета SDK 2.8.  За пределами Visual Studio все сценарии будут и дальше работать с соответствующей версией командлетов Azure PowerShell.  
 
-Для пакета SDK 2.8 требуются командлеты Azure PowerShell версии 1.0.  Все остальные версии пакета SDK требуют командлетов Azure PowerShell версии 0.9.8.  Дополнительную информацию см. в [этом](http://go.microsoft.com/fwlink/?LinkID=623011) блоге.
+Для пакета SDK 2.8 требуются командлеты Azure PowerShell версии 1.0.  Все остальные версии пакета SDK требуют командлетов Azure PowerShell версии 0.9.8.  Дополнительную информацию см. в [этом](https://go.microsoft.com/fwlink/?LinkID=623011) блоге.
 
 ### <a name="web-tools-extensions"></a>Расширения веб-инструментов
 #### <a name="known-issues"></a>Известные проблемы

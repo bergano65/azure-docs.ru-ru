@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/20/2018
 ms.author: terrylan
-ms.openlocfilehash: 87ae5e4999b586d431882615ec8a603413f168ed
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 56e3b9fef1fde0847ce401c203369bc93760b060
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44296417"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51253760"
 ---
 # <a name="provide-security-contact-details-in-azure-security-center"></a>Предоставление сведений о контактных лицах по вопросам безопасности в центре безопасности Azure
 Центр безопасности Azure порекомендует вам предоставить сведения о контактных лицах по вопросам безопасности для подписки Azure, если это еще не сделано. Корпорация Майкрософт будет использовать эту информацию для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим пользовательским данным был получен незаконный или несанкционированный доступ. Центр Microsoft Security Response Center (MSRC) осуществляет выборочный мониторинг безопасности сети и инфраструктуры Azure, а также получает аналитические данные об угрозах и жалобы о нарушениях от третьих лиц.
@@ -54,7 +54,7 @@ ms.locfileid: "44296417"
 * [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md) — узнайте, как управлять оповещениями системы безопасности и реагировать на них.
 * [Мониторинг решений партнеров с помощью центра безопасности Azure](security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
 * [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md) — часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](http://blogs.msdn.com/b/azuresecurity/) — последние новости и информация об обеспечении безопасности в Azure.
+* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — последние новости и информация об обеспечении безопасности в Azure.
 
 <!--Image references-->
 [1]: ./media/security-center-provide-security-contacts/provide-contacts.png

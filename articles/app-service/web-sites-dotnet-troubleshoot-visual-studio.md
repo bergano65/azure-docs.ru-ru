@@ -14,16 +14,16 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/29/2016
 ms.author: cephalin
-ms.openlocfilehash: ba84d297420ca5a9b75b4cfa432373d3070e0d01
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 2028de68b3c50f24c46bfafd804b00e84301a9d7
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43125250"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51256601"
 ---
 # <a name="troubleshoot-a-web-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок веб-приложения в службе приложений Azure с помощью Visual Studio
 ## <a name="overview"></a>Обзор
-В этом руководстве показано, как использовать инструменты Visual Studio, которые позволяют отлаживать работу веб-приложения в [службе приложений](http://go.microsoft.com/fwlink/?LinkId=529714) путем запуска веб-приложения удаленно в [режиме отладки](https://docs.microsoft.com/visualstudio/debugger/) или путем просмотра журналов приложения и журналов веб-сервера.
+В этом руководстве показано, как использовать инструменты Visual Studio, которые позволяют отлаживать работу веб-приложения в [службе приложений](https://go.microsoft.com/fwlink/?LinkId=529714) путем запуска веб-приложения удаленно в [режиме отладки](https://docs.microsoft.com/visualstudio/debugger/) или путем просмотра журналов приложения и журналов веб-сервера.
 
 [!INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -36,7 +36,7 @@ ms.locfileid: "43125250"
 * Как просматривать журналы веб-сервера, включая подробные сообщения об ошибках и трассировку неудачно завершившихся запросов.
 * Как отправлять диагностические журналы в учетную запись хранения Azure и просматривать их там.
 
-Если у вас установлена Visual Studio Ultimate, вы также можете использовать [IntelliTrace](http://msdn.microsoft.com/library/vstudio/dd264915.aspx) для отладки. Использование IntelliTrace не рассматривается в этом учебнике.
+Если у вас установлена Visual Studio Ultimate, вы также можете использовать [IntelliTrace](https://msdn.microsoft.com/library/vstudio/dd264915.aspx) для отладки. Использование IntelliTrace не рассматривается в этом учебнике.
 
 ## <a name="prerequisites"></a>Предварительные требования
 В этом руководстве речь идет о среде разработки, веб-проекте и веб-приложении Azure, которые вы настроили, следуя инструкциям в руководстве по [использованию Azure и ASP.NET](app-service-web-get-started-dotnet-framework.md). Для разделов, посвященных веб-заданиям, вам понадобится приложение, созданное при изучении руководства [Начало работы с пакетом SDK для Azure для веб-заданий][GetStartedWJ].
@@ -48,7 +48,7 @@ ms.locfileid: "43125250"
 Журналы потоковой передачи работают только для приложений, которые предназначены для .NET Framework 4 и выше.
 
 ## <a name="sitemanagement"></a>Настройка веб-приложения и управление им
-Visual Studio обеспечивает доступ к сокращенному набору функций управления веб-приложением и параметров конфигурации, полный набор которых доступен на [портале Azure](http://go.microsoft.com/fwlink/?LinkId=529715). В этом разделе вы узнаете, какие функции доступны с помощью **обозревателя сервера**. Для просмотра новых функций интеграции Azure также воспользуйтесь **Обозревателем облака** . Оба окна можно открыть в меню **Вид** .
+Visual Studio обеспечивает доступ к сокращенному набору функций управления веб-приложением и параметров конфигурации, полный набор которых доступен на [портале Azure](https://go.microsoft.com/fwlink/?LinkId=529715). В этом разделе вы узнаете, какие функции доступны с помощью **обозревателя сервера**. Для просмотра новых функций интеграции Azure также воспользуйтесь **Обозревателем облака** . Оба окна можно открыть в меню **Вид** .
 
 1. Если вы еще не вошли в Azure в Visual Studio, щелкните правой кнопкой мыши **Azure** и выберите подключение к **подписке Microsoft Azure** в **обозревателе сервера**.
 
@@ -59,7 +59,7 @@ Visual Studio обеспечивает доступ к сокращенному 
    >
    >
 
-    Дополнительные сведения о подключении к ресурсам Azure из Visual Studio см. в разделе [Управление учетными записями, подписками и административными ролями](http://go.microsoft.com/fwlink/?LinkId=324796#BKMK_AccountVCert).
+    Дополнительные сведения о подключении к ресурсам Azure из Visual Studio см. в разделе [Управление учетными записями, подписками и административными ролями](https://go.microsoft.com/fwlink/?LinkId=324796#BKMK_AccountVCert).
 2. В **обозревателе сервера** разверните узел **Azure**, а затем — узел **Служба приложений**.
 3. Разверните группу ресурсов, которая содержит [веб-приложение ASP.NET, созданное в Azure](app-service-web-get-started-dotnet-framework.md), а затем щелкните узел этого веб-приложения правой кнопкой мыши и выберите **Просмотреть параметры**.
 
@@ -253,13 +253,13 @@ public ActionResult About()
 ```
 * Если вы обнаружите, что отладчик не осуществляет пошаговое выполнение кода, который требуется отладить, может потребоваться изменить параметр "Только мой код".  Дополнительные сведения см. в разделе [Укажите, следует ли отладка пользовательского кода, с помощью "только мой код" в Visual Studio](https://docs.microsoft.com/visualstudio/debugger/just-my-code).
 * При активации функции удаленной отладки на сервере запускается таймер, который автоматически отключает эту функцию по истечении 48 часов. Это 48-часовое ограничение установлено в целях повышения безопасности и производительности. Вы можете в любое время снова активировать эту функцию. Если вы не ведете отладку, эту функцию рекомендуется оставить отключенной.
-* Вы можете вручную присоединить отладчик к любому процессу, а не только к процессу веб-приложения (w3wp.exe). Дополнительные сведения о том, как использовать режим отладки в Visual Studio, см. в разделе [Отладка в Visual Studio](http://msdn.microsoft.com/library/vstudio/sc65sadd.aspx).
+* Вы можете вручную присоединить отладчик к любому процессу, а не только к процессу веб-приложения (w3wp.exe). Дополнительные сведения о том, как использовать режим отладки в Visual Studio, см. в разделе [Отладка в Visual Studio](https://msdn.microsoft.com/library/vstudio/sc65sadd.aspx).
 
 ## <a name="logsoverview"></a>Обзор журналов диагностики
 Приложение ASP.NET, которое работает в веб-приложении Azure, может создавать следующие виды журналов:
 
 * **Журналы трассировки приложения**<br/>
-  Приложение создает эти журналы, вызывая методы класса [System.Diagnostics.Trace](http://msdn.microsoft.com/library/system.diagnostics.trace.aspx) .
+  Приложение создает эти журналы, вызывая методы класса [System.Diagnostics.Trace](https://msdn.microsoft.com/library/system.diagnostics.trace.aspx) .
 * **Журналы веб-сервера**<br/>
   Веб-сервер создает запись журнала для каждого HTTP-запроса, адресованного сайту.
 * **Подробные журналы сообщений об ошибках**<br/>
@@ -340,7 +340,7 @@ public ActionResult Contact()
 ```
 
 `WebPageTraceListener` позволяет просматривать результаты трассировки, открыв `/trace.axd`.
-3. Добавьте <a href="http://msdn.microsoft.com/library/vstudio/6915t83k(v=vs.100).aspx">элемент трассировки</a> под `<system.web>` в файле Web.config, например так:
+3. Добавьте <a href="https://msdn.microsoft.com/library/vstudio/6915t83k(v=vs.100).aspx">элемент трассировки</a> под `<system.web>` в файле Web.config, например так:
 
 ``` xml
 <trace enabled="true" writeToDiagnosticsTrace="true" mostRecent="true" pageOutput="false" />
@@ -475,7 +475,7 @@ public ActionResult Contact()
     ![Загруженный файл](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-logfilefolders.png)
 
    * Журналы трассировки приложения хранятся в *TXT*-файлах в папке *LogFiles\Application*.
-   * Журналы веб-сервера хранятся в *LOG*-файлах в папке *LogFiles\http\RawLogs*. Можно использовать средство, аналогичное [Log Parser](http://www.microsoft.com/download/details.aspx?displaylang=en&id=24659) для просмотра и обработки этих файлов.
+   * Журналы веб-сервера хранятся в *LOG*-файлах в папке *LogFiles\http\RawLogs*. Можно использовать средство, аналогичное [Log Parser](https://www.microsoft.com/download/details.aspx?displaylang=en&id=24659) для просмотра и обработки этих файлов.
    * Подробные журналы сообщений об ошибках хранятся в *HTML*-файлах в папке *LogFiles\DetailedErrors*.
 
     (Папка *deployments* предназначена для файлов, созданных при публикации системы управления версиями; она никак не связана с публикациями Visual Studio. Папка *Git* предназначена для трассировок, относящихся к публикациям системы управления версиями и службы потоковой передачи файлов журналов.)  
@@ -554,7 +554,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 
      ![Storage logs in table view](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracelogtableview.png)
 
-     This view shows additional fields you don't see in any other views. This view also enables you to filter logs by using special Query Builder UI for constructing a query. For more information, see Working with Table Resources - Filtering Entities in [Browsing Storage Resources with Server Explorer](http://msdn.microsoft.com/library/ff683677.aspx).
+     This view shows additional fields you don't see in any other views. This view also enables you to filter logs by using special Query Builder UI for constructing a query. For more information, see Working with Table Resources - Filtering Entities in [Browsing Storage Resources with Server Explorer](https://msdn.microsoft.com/library/ff683677.aspx).
 14. To look at the details for a single row, double-click one of the rows.
 
      ![Trace table in Server Explorer](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracetablerow.png)
@@ -624,17 +624,17 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 Дополнительную информацию об устранении неполадок, связанных с веб-приложениями в службе приложений Azure, см. на следующих ресурсах:
 
 * [Мониторинг веб-приложений](web-sites-monitor.md)
-* [Исследование проблемы утечки памяти в веб-приложениях Azure с использованием Visual Studio 2013](http://blogs.msdn.com/b/visualstudioalm/archive/2013/12/20/investigating-memory-leaks-in-azure-web-sites-with-visual-studio-2013.aspx). Запись блога Microsoft ALM о функциях Visual Studio для анализа проблем с управляемой памятью.
+* [Исследование проблемы утечки памяти в веб-приложениях Azure с использованием Visual Studio 2013](https://blogs.msdn.com/b/visualstudioalm/archive/2013/12/20/investigating-memory-leaks-in-azure-web-sites-with-visual-studio-2013.aspx). Запись блога Microsoft ALM о функциях Visual Studio для анализа проблем с управляемой памятью.
 * [Онлайн-инструменты веб-приложений Azure, о которых вам следует знать](https://azure.microsoft.com/blog/2014/03/28/windows-azure-websites-online-tools-you-should-know-about-2/). Запись в блоге Амита Эппла (Amit Apple).
 
 Справочные данные об определенном вопросе, связанном с устранением неполадок, можно получить, начав беседу на одном из следующих форумов:
 
 * [Форум Azure на веб-сайте ASP.NET](http://forums.asp.net/1247.aspx/1?Azure+and+ASP+NET).
-* [Форум Azure на портале MSDN](http://social.msdn.microsoft.com/Forums/windowsazure/).
+* [Форум Azure на портале MSDN](https://social.msdn.microsoft.com/Forums/windowsazure/).
 * [StackOverflow.com](http://www.stackoverflow.com).
 
 ### <a name="debugging-in-visual-studio"></a>Отладка в Visual Studio
-Дополнительные сведения об использовании режима отладки в Visual Studio см. в статьях [Отладка в Visual Studio](http://msdn.microsoft.com/library/vstudio/sc65sadd.aspx) и [Debugging Tips with Visual Studio 2010](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx) (Рекомендации по отладке в Visual Studio 2010).
+Дополнительные сведения об использовании режима отладки в Visual Studio см. в статьях [Отладка в Visual Studio](https://msdn.microsoft.com/library/vstudio/sc65sadd.aspx) и [Debugging Tips with Visual Studio 2010](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx) (Рекомендации по отладке в Visual Studio 2010).
 
 ### <a name="remote-debugging-in-azure"></a>Удаленная отладка в Azure
 Для получения дополнительных сведений об удаленной отладке для веб-приложений Azure и веб-заданий см. следующие ресурсы:
@@ -644,21 +644,21 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 * [Общие сведения об удаленной отладке веб-приложений службы приложений Azure (часть 3) — среда с несколькими экземплярами и GIT](https://azure.microsoft.com/blog/2014/05/08/introduction-to-remote-debugging-on-azure-web-sites-part-3-multi-instance-environment-and-git/)
 * [Отладка веб-заданий (видео)](https://www.youtube.com/watch?v=ncQm9q5ZFZs&list=UU_SjTh-ZltPmTYzAybypB-g&index=1)
 
-Если в вашем веб-приложении используется веб-API Azure или серверная часть мобильных служб, вы можете получить дополнительные сведения об отладке в разделе [Отладка серверной части .NET в Visual Studio](http://blogs.msdn.com/b/azuremobile/archive/2014/03/14/debugging-net-backend-in-visual-studio.aspx).
+Если в вашем веб-приложении используется веб-API Azure или серверная часть мобильных служб, вы можете получить дополнительные сведения об отладке в разделе [Отладка серверной части .NET в Visual Studio](https://blogs.msdn.com/b/azuremobile/archive/2014/03/14/debugging-net-backend-in-visual-studio.aspx).
 
 ### <a name="tracing-in-aspnet-applications"></a>Трассировка в приложениях ASP.NET
 В Интернете отсутствуют обновленные и подробные вводные данные по трассировке ASP.NET. Лучшее, что можно сделать, это начать со старых вводных материалов, написанных для Web Forms, так как тогда MVC еще не существовало. А также дополнить эти сведения новыми постами из блогов, посвященных тем или иным конкретным вопросам. Можно также продуктивно начать изучение со следующих ресурсов:
 
 * [Мониторинг и телеметрия (создание реальных облачных приложений в Azure)](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry).<br>
   Глава электронной книги с рекомендациями по трассировке в облачных приложениях Azure.
-* [Трассировка ASP.NET](http://msdn.microsoft.com/library/ms972204.aspx)<br/>
+* [Трассировка ASP.NET](https://msdn.microsoft.com/library/ms972204.aspx)<br/>
   Старый, но по-прежнему хороший ресурс для введения в тему.
-* [Прослушиватели трассировки](http://msdn.microsoft.com/library/4y5y10s7.aspx)<br/>
-  Сведения о прослушивателях трассировки, но без упоминания [WebPageTraceListener](http://msdn.microsoft.com/library/system.web.webpagetracelistener.aspx).
-* [Пошаговое руководство: интеграция трассировки ASP.NET с трассировкой System.Diagnostics](http://msdn.microsoft.com/library/b0ectfxd.aspx)<br/>
+* [Прослушиватели трассировки](https://msdn.microsoft.com/library/4y5y10s7.aspx)<br/>
+  Сведения о прослушивателях трассировки, но без упоминания [WebPageTraceListener](https://msdn.microsoft.com/library/system.web.webpagetracelistener.aspx).
+* [Пошаговое руководство: интеграция трассировки ASP.NET с трассировкой System.Diagnostics](https://msdn.microsoft.com/library/b0ectfxd.aspx)<br/>
   Это также старая статья, которая, однако, содержит некоторые дополнительные сведения, которые не освещаются во вводной статье.
-* [Трассировка в представлениях ASP.NET MVC Razor](http://blogs.msdn.com/b/webdev/archive/2013/07/16/tracing-in-asp-net-mvc-razor-views.aspx)<br/>
-  Помимо трассировки в представлениях Razor, в этом посте также описывается, как создать фильтр ошибок, чтобы регистрировать все необработанные исключения в приложении MVC. Сведения о записи в журнал всех необработанных исключений в приложении Web Forms представлены в примере Global.asax в разделе [Полный пример для обработчиков ошибок](http://msdn.microsoft.com/library/bb397417.aspx) на сайте MSDN. Если в MVC или Web Forms понадобится зарегистрировать определенные исключения, но позволить платформе их обрабатывать, можно перехватить и повторно создать элементы, как показано на следующем примере:
+* [Трассировка в представлениях ASP.NET MVC Razor](https://blogs.msdn.com/b/webdev/archive/2013/07/16/tracing-in-asp-net-mvc-razor-views.aspx)<br/>
+  Помимо трассировки в представлениях Razor, в этом посте также описывается, как создать фильтр ошибок, чтобы регистрировать все необработанные исключения в приложении MVC. Сведения о записи в журнал всех необработанных исключений в приложении Web Forms представлены в примере Global.asax в разделе [Полный пример для обработчиков ошибок](https://msdn.microsoft.com/library/bb397417.aspx) на сайте MSDN. Если в MVC или Web Forms понадобится зарегистрировать определенные исключения, но позволить платформе их обрабатывать, можно перехватить и повторно создать элементы, как показано на следующем примере:
 
 ``` c#
 try
@@ -684,12 +684,12 @@ catch (Exception ex)
 ### <a name="analyzing-web-server-logs"></a>Анализ журналов веб-сервера
 Дополнительные сведения об анализе журналов веб-сервера см. на следующих ресурсах:
 
-* [LogParser](http://www.microsoft.com/download/details.aspx?id=24659)<br/>
+* [LogParser](https://www.microsoft.com/download/details.aspx?id=24659)<br/>
   Инструмент для просмотра данных в журналах веб-сервера (*LOG* -файлов).
 * [Устранение неполадок, связанных с производительностью IIS, или ошибок приложений с помощью LogParser](http://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser)<br/>
   Введение в средство LogParser, которое можно использовать для анализа журналов веб-сервера.
-* [Записи блога Роберта Мак-Мюррея (Robert McMurray), посвященные использованию LogParser](http://blogs.msdn.com/b/robert_mcmurray/archive/tags/logparser/)<br/>
-* [Код состояния HTTP в IIS 7.0, IIS 7.5 и IIS 8.0](http://support.microsoft.com/kb/943891)
+* [Записи блога Роберта Мак-Мюррея (Robert McMurray), посвященные использованию LogParser](https://blogs.msdn.com/b/robert_mcmurray/archive/tags/logparser/)<br/>
+* [Код состояния HTTP в IIS 7.0, IIS 7.5 и IIS 8.0](https://support.microsoft.com/kb/943891)
 
 ### <a name="analyzing-failed-request-tracing-logs"></a>Анализ журналов трассировки неудачно завершенных запросов
 Веб-сайт Microsoft TechNet содержит раздел [Using Failed Request Tracing](http://www.iis.net/learn/troubleshoot/using-failed-request-tracing) (Использование трассировки неудачно завершенных запросов), который может оказаться полезным для понимания того, как используются эти журналы. Но эта документация посвящена преимущественно настройке трассировки неудачно завершенных запросов в IIS, которую невозможно выполнить в веб-приложениях Azure.

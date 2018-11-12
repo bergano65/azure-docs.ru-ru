@@ -9,19 +9,19 @@ ms.component: content-moderator
 ms.topic: article
 ms.date: 06/25/2017
 ms.author: sajagtap
-ms.openlocfilehash: 911d62fc2baa50cce6d40f8b5bcc455f308d21d7
-ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
+ms.openlocfilehash: 5910961ee54c953ea241baf9bce78b79b0dfeaea
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49309661"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51260097"
 ---
 # <a name="manage-credentials"></a>Управление учетными данными
 
 Учетные данные Content Moderator можно создать с помощью следующих средств:
 
 - [Портал Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesContentModerator)
-- [Инструмент проверки Content Moderator](http://contentmoderator.cognitive.microsoft.com/)
+- [Инструмент проверки Content Moderator](https://contentmoderator.cognitive.microsoft.com/)
 
 В этой статье объясняется, где их можно найти и как они связаны между собой.
 

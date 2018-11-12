@@ -12,12 +12,12 @@ services: machine-learning
 ms.workload: data-services
 ms.date: 12/13/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5ca47c8234239b56a2d829903828dda8220d53cb
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: e71de2d543c8f29b7195e74d574855bcbe739162
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46967614"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51260556"
 ---
 # <a name="aerial-image-classification"></a>Классификация изображений аэрофотосъемки
 
@@ -154,7 +154,7 @@ ms.locfileid: "46967614"
     az storage share create --account-name %STORAGE_ACCOUNT_NAME% --account-key %STORAGE_ACCOUNT_KEY% --name baitshare
     ```
 1. В предпочитаемом текстовом редакторе загрузите файл `settings.cfg` из подкаталога Code проекта Azure Machine Learning Workbench и вставьте имя и ключ учетной записи хранения в соответствии с полученными рекомендациями. Сохраните и закройте файл `settings.cfg`.
-1. Если вы еще этого не сделали, скачайте и установите служебную программу [AzCopy](http://aka.ms/downloadazcopy). Убедитесь, что исполняемый файл AzCopy расположен в вашем системном пути. Для этого введите AzCopy и нажмите клавишу ВВОД, чтобы отобразить документацию о нем.
+1. Если вы еще этого не сделали, скачайте и установите служебную программу [AzCopy](https://aka.ms/downloadazcopy). Убедитесь, что исполняемый файл AzCopy расположен в вашем системном пути. Для этого введите AzCopy и нажмите клавишу ВВОД, чтобы отобразить документацию о нем.
 1. Выполните следующие команды, чтобы скопировать все примеры данных, предварительно обученные модели и скрипты для обучения моделей в соответствующие расположения в учетной записи хранения.
 
     ```

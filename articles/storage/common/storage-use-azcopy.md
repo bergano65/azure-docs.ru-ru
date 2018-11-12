@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/13/2018
 ms.author: seguler
 ms.component: common
-ms.openlocfilehash: a0e2400163433ba5290525d0fe807ede624a31ed
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: c0672ddb3e6791fae3b9b8c04e9ff98827c9e22f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "42143162"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51256737"
 ---
 # <a name="transfer-data-with-the-azcopy-on-windows"></a>Перенос данных с помощью AzCopy для Windows
 AzCopy — это служебная программа командной строки. Она предназначена для копирования данных из хранилища BLOB-объектов, хранилища файлов и хранилища таблиц Microsoft Azure (и обратно) с помощью простых команд, обеспечивающих оптимальную производительность. Вы можете перемещать данные между файловой системой и учетной записью хранения или между разными учетными записями хранения.  
@@ -233,7 +233,7 @@ AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.blob.core.windows.net/myCont
 AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer1 /Dest:https://myaccount.blob.core.windows.net/mycontainer2 /SourceKey:key /DestKey:key /Pattern:abc.txt
 ```
 
-При копировании большого двоичного объекта в пределах учетной записи хранения выполняется [операция копирования на стороне сервера](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-asynchronous-cross-account-copy-blob.aspx) .
+При копировании большого двоичного объекта в пределах учетной записи хранения выполняется [операция копирования на стороне сервера](https://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-asynchronous-cross-account-copy-blob.aspx) .
 
 ### <a name="copy-a-single-blob-from-one-storage-account-to-another"></a>Копирование одного большого двоичного объекта из одной учетной записи хранения в другую
 
@@ -241,7 +241,7 @@ AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer1 /Dest:https:
 AzCopy /Source:https://sourceaccount.blob.core.windows.net/mycontainer1 /Dest:https://destaccount.blob.core.windows.net/mycontainer2 /SourceKey:key1 /DestKey:key2 /Pattern:abc.txt
 ```
 
-При копировании большого двоичного объекта между различными учетными записями хранения выполняется [операция копирования на стороне сервера](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-asynchronous-cross-account-copy-blob.aspx) .
+При копировании большого двоичного объекта между различными учетными записями хранения выполняется [операция копирования на стороне сервера](https://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-asynchronous-cross-account-copy-blob.aspx) .
 
 ### <a name="copy-a-single-blob-from-the-secondary-region-to-the-primary-region"></a>Копирование одного большого двоичного объекта из дополнительного региона в основной
 
@@ -337,21 +337,21 @@ AzCopy /Source:C:\myfolder /Dest:https://myaccount.file.core.windows.net/myfiles
 ```azcopy
 AzCopy /Source:https://myaccount1.file.core.windows.net/myfileshare1/ /Dest:https://myaccount2.file.core.windows.net/myfileshare2/ /SourceKey:key1 /DestKey:key2 /S
 ```
-При копировании файла между файловыми ресурсами выполняется [операция копирования на стороне сервера](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-asynchronous-cross-account-copy-blob.aspx).
+При копировании файла между файловыми ресурсами выполняется [операция копирования на стороне сервера](https://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-asynchronous-cross-account-copy-blob.aspx).
 
 ### <a name="copy-from-an-azure-file-share-to-blob-storage"></a>Копирование из файлового ресурса Azure в хранилище BLOB-объектов
 
 ```azcopy
 AzCopy /Source:https://myaccount1.file.core.windows.net/myfileshare/ /Dest:https://myaccount2.blob.core.windows.net/mycontainer/ /SourceKey:key1 /DestKey:key2 /S
 ```
-При копировании файла из файлового ресурса в большой двоичный объект выполняется [операция копирования на стороне сервера](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-asynchronous-cross-account-copy-blob.aspx).
+При копировании файла из файлового ресурса в большой двоичный объект выполняется [операция копирования на стороне сервера](https://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-asynchronous-cross-account-copy-blob.aspx).
 
 ### <a name="copy-a-blob-from-blob-storage-to-an-azure-file-share"></a>Копирование большого двоичного объекта из хранилища BLOB-объектов в файловый ресурс Azure
 
 ```azcopy
 AzCopy /Source:https://myaccount1.blob.core.windows.net/mycontainer/ /Dest:https://myaccount2.file.core.windows.net/myfileshare/ /SourceKey:key1 /DestKey:key2 /S
 ```
-При копировании файла из большого двоичного объекта в общую папку выполняется операция [копирования на стороне сервера](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-asynchronous-cross-account-copy-blob.aspx).
+При копировании файла из большого двоичного объекта в общую папку выполняется операция [копирования на стороне сервера](https://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-asynchronous-cross-account-copy-blob.aspx).
 
 ### <a name="synchronously-copy-files"></a>Синхронное копирование файлов
 
@@ -432,7 +432,7 @@ AzCopy создает файл данных в формате JSON в конте
 
     <account name>_<table name>_<timestamp>_<volume index>_<CRC>.json
 
-Созданный JSON-файл следует формату полезных метаданных. За более подробной информацией о формате полезных данных обратитесь к разделу [Формат полезных данных для служб работы с таблицами](http://msdn.microsoft.com/library/azure/dn535600.aspx).
+Созданный JSON-файл следует формату полезных метаданных. За более подробной информацией о формате полезных данных обратитесь к разделу [Формат полезных данных для служб работы с таблицами](https://msdn.microsoft.com/library/azure/dn535600.aspx).
 
 Обратите внимание: при экспорте таблиц в большие двоичные объекты программа AzCopy скачивает объекты таблицы в локальные временные файлы данных и отправляет эти объекты в большой двоичный объект. Эти временные файлы данных помещаются в папку с файлами журнала с путем по умолчанию "<code>%LocalAppData%\Microsoft\Azure\AzCopy</code>". Вы можете указать параметр /Z:[journal-file-folder], чтобы изменить расположение папки файлов журнала и таким образом изменить расположение временных файлов данных. Размер временных файлов данных определяется по размеру сущностей таблицы и размеру, указанному в параметре /SplitSize. Хотя временный файл данных на локальном диске будет немедленно удален после передачи в большой двоичный объект, убедитесь, что на диске достаточно места для хранения этих временных файлов данных до удаления.
 
@@ -997,10 +997,10 @@ AzCopy по умолчанию задает тип содержимого для
 
 ### <a name="azure-storage-blog-posts"></a>Записи блога по хранилищу Azure:
 * [Введение в предварительную версию библиотеки движения данных в хранилище Azure](https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/)
-* [AzCopy: введение в синхронное копирование и настраиваемый тип содержимого](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx)
-* [AzCopy: выпуск общедоступной версии AzCopy 3.0 и предварительной версии AzCopy 4.0 с поддержкой таблиц и файлов](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
-* [AzCopy: оптимизированные сценарии для крупномасштабного копирования](http://go.microsoft.com/fwlink/?LinkId=507682)
-* [AzCopy: поддержка геоизбыточного хранилища для доступа с правом чтения](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/04/07/azcopy-support-for-read-access-geo-redundant-account.aspx)
-* [AzCopy – Transfer data with re-startable mode and SAS Token](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/09/07/azcopy-transfer-data-with-re-startable-mode-and-sas-token.aspx) (AzCopy: передача данных с использованием перезапускаемого режима и маркера SAS)
-* [AzCopy: использование копирования больших двоичных объектов между разными учетными записями](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
-* [AzCopy: отправка и скачивание файлов для больших двоичных объектов Microsoft Azure](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
+* [AzCopy: введение в синхронное копирование и настраиваемый тип содержимого](https://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx)
+* [AzCopy: выпуск общедоступной версии AzCopy 3.0 и предварительной версии AzCopy 4.0 с поддержкой таблиц и файлов](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
+* [AzCopy: оптимизированные сценарии для крупномасштабного копирования](https://go.microsoft.com/fwlink/?LinkId=507682)
+* [AzCopy: поддержка геоизбыточного хранилища для доступа с правом чтения](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/04/07/azcopy-support-for-read-access-geo-redundant-account.aspx)
+* [AzCopy – Transfer data with re-startable mode and SAS Token](https://blogs.msdn.com/b/windowsazurestorage/archive/2013/09/07/azcopy-transfer-data-with-re-startable-mode-and-sas-token.aspx) (AzCopy: передача данных с использованием перезапускаемого режима и маркера SAS)
+* [AzCopy: использование копирования больших двоичных объектов между разными учетными записями](https://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
+* [AzCopy: отправка и скачивание файлов для больших двоичных объектов Microsoft Azure](https://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)

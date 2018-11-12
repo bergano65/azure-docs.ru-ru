@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/02/2018
 ms.author: yurid
-ms.openlocfilehash: b180acfb74f503447212044f0b6be5589e2dd452
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: 454cfc97aa203d5de7b00f47e1f87fd0aed0d28a
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44158795"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51255955"
 ---
 # <a name="azure-security-center-planning-and-operations-guide"></a>Руководство по планированию использования центра безопасности Azure и работе в нем
 Это руководство предназначено для ИТ-специалистов, ИТ-архитекторов, аналитиков в сфере информационной безопасности и администраторов облака, организации которых планируют использовать центр безопасности Azure.
@@ -126,7 +126,7 @@ ms.locfileid: "44158795"
 
 Политики центра безопасности содержат следующие компоненты:
 - [Сбор данных](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection): настройки подготовки агента и сбора данных.
-- [Политика безопасности](https://docs.microsoft.com/azure/security-center/security-center-policies): [политика Azure](http://docs.microsoft.com/azure/azure-policy/azure-policy-introduction), которая определяет, какие элементы управления контролируются и рекомендуются центром безопасности, или использует службу "Политика Azure" для создания определений, определения дополнительных политик и назначения политик в группах управления.
+- [Политика безопасности](https://docs.microsoft.com/azure/security-center/security-center-policies): [политика Azure](https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction), которая определяет, какие элементы управления контролируются и рекомендуются центром безопасности, или использует службу "Политика Azure" для создания определений, определения дополнительных политик и назначения политик в группах управления.
 - [Уведомления по электронной почте](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details): контакты безопасности и параметры уведомлений.
 - [Ценовая категория](https://docs.microsoft.com/azure/security-center/security-center-pricing): выбор бесплатной или стандартной ценовой категории, который определяет, какие функции центра безопасности доступны для ресурсов в области (может быть указана для подписки, групп ресурсов и рабочих областей).
 
@@ -262,5 +262,5 @@ Microsoft Monitoring Agent используется в центре безопа
 * [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md) — узнайте, как отслеживать работоспособность ресурсов Azure.
 * [Мониторинг решений партнеров с помощью центра безопасности Azure](security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
 * [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md) — часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](http://blogs.msdn.com/b/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.
+* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.
 

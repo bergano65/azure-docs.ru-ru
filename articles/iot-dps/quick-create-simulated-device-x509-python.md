@@ -1,6 +1,6 @@
 ---
 title: Подготовка имитированного устройства X.509 в Центре Интернета вещей Azure с помощью Python | Документация Майкрософт
-description: Краткое руководство Azure. Создание и подготовка имитированного устройства X.509 с помощью пакета SDK службы устройства Python для службы подготовки устройств Центра Интернета вещей
+description: Краткое руководство по Azure. Создание и подготовка к работе имитированного устройства X.509 с помощью пакета SDK Python для Службы подготовки устройств к добавлению в Центр Интернета вещей. В этом кратком руководстве используется индивидуальная регистрация.
 author: wesmc7777
 ms.author: wesmc
 ms.date: 12/21/2017
@@ -10,19 +10,25 @@ services: iot-dps
 manager: timlt
 ms.devlang: python
 ms.custom: mvc
-ms.openlocfilehash: b2346276def178461a04eed008cc21fb22dc8464
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 04fbbbf0f1ecd280153c5b23fff681808be51998
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47040556"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51259587"
 ---
 # <a name="create-and-provision-a-simulated-x509-device-using-python-device-sdk-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства X.509 с помощью пакета SDK службы устройства Python для службы подготовки устройств Центра Интернета вещей
 [!INCLUDE [iot-dps-selector-quick-create-simulated-device-x509](../../includes/iot-dps-selector-quick-create-simulated-device-x509.md)]
 
 В этом руководстве показано, как имитировать устройство X.509 на компьютере разработки под управлением ОС Windows, а также как с помощью примера кода Python подключить имитированное устройство к службе подготовки устройств и Центру Интернета вещей. 
 
-Если вы не знакомы с процессом автоматической подготовки, обязательно прочтите статью [Принципы автоматической подготовки устройств](concepts-auto-provisioning.md). Кроме того, прежде чем продолжить, выполните инструкции по [настройке службы "Подготовка устройств к добавлению в Центр Интернета вещей" на портале Azure](./quick-setup-auto-provision.md). 
+Если вы не знакомы с процессом автоматической подготовки устройств, обязательно прочтите [эту статью](concepts-auto-provisioning.md). Кроме того, прежде чем продолжить, выполните инструкции по [настройке службы "Подготовка устройств к добавлению в Центр Интернета вещей" на портале Azure](./quick-setup-auto-provision.md). 
+
+Служба подготовки устройств Интернета вещей Azure поддерживает два типа регистрации:
+- [группы регистрации](concepts-service.md#enrollment-group) — используются для регистрации нескольких связанных устройств;
+- [индивидуальная регистрация](concepts-service.md#individual-enrollment) — используется для регистрации одного устройства.
+
+В этой статье описана индивидуальная регистрация.
 
 [!INCLUDE [IoT Device Provisioning Service basic](../../includes/iot-dps-basic.md)]
 
@@ -110,7 +116,7 @@ ms.locfileid: "47040556"
 2. Скачайте и установите [Python 2.x или 3.x](https://www.python.org/downloads/). Обязательно используйте 32-разрядную или 64-разрядную версию установки согласно требованиям программы настройки. При появлении запроса во время установки обязательно добавьте Python в переменную среды соответствующей платформы. Если вы используете Python 2.x, может потребоваться [установка или обновление *pip* — системы управления пакетами Python](https://pip.pypa.io/en/stable/installing/).
     
     > [!NOTE] 
-    > Если вы используете Windows, также установите [Распространяемый компонент Visual C++ для Visual Studio 2015](http://www.microsoft.com/download/confirmation.aspx?id=48145). Для загрузки и выполнения библиотек DLL C пакетам pip требуется распространяемый компонент.
+    > Если вы используете Windows, также установите [Распространяемый компонент Visual C++ для Visual Studio 2015](https://www.microsoft.com/download/confirmation.aspx?id=48145). Для загрузки и выполнения библиотек DLL C пакетам pip требуется распространяемый компонент.
 
 3. Следуйте [этим инструкциям](https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) по созданию пакетов Python.
 

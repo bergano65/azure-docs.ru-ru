@@ -9,12 +9,12 @@ ms.author: dwgeo
 ms.date: 11/10/2017
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: f3822386d0d16b1feaf16853424329558a18f910
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 0fc04fb64e6d34c46f20b4ba5ff8a1ffc8da9c31
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33782653"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51237916"
 ---
 # <a name="create-clips-with-azure-media-clipper"></a>Создание клипов с помощью Azure Media Clipper
 Azure Media Clipper — это бесплатная библиотека JavaScript, которая позволяет веб-разработчикам предоставлять пользователям интерфейс для создания клипов мультимедиа. Это средство можно интегрировать в любую веб-страницу. Оно предоставляет API-интерфейсы для загрузки файлов и отправки заданий создания клипов.
@@ -28,7 +28,7 @@ Azure Media Clipper позволяет делать следующее:
 - создавать фильтры динамических манифестов поверх существующих динамических файлов и ресурсов VOD с точностью до группы изображений (GOP); 
 - создавать задания кодирования для файлов в вашей учетной записи служб мультимедиа.
 
-Для запроса новых функций и обратной связи отправляйте сообщения в [UserVoice для служб мультимедиа Azure](http://aka.ms/amsvoice/). При наличии конкретных проблем, вопросов или найденных программных ошибок сообщите об этом группе разработки служб мультимедиа по адресу amcinfo@microsoft.com.
+Для запроса новых функций и обратной связи отправляйте сообщения в [UserVoice для служб мультимедиа Azure](https://aka.ms/amsvoice/). При наличии конкретных проблем, вопросов или найденных программных ошибок сообщите об этом группе разработки служб мультимедиа по адресу amcinfo@microsoft.com.
 
 На следующем изображении представлен интерфейс Clipper: ![Azure Media Clipper](media/media-services-azure-media-clipper-overview/media-services-azure-media-clipper-interface.PNG)
 

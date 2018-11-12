@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: 2bc085989ff3bbbc50042c46b338f748a10aa87e
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 0ec429407324210fca824ebd0734ddb39bce56ac
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38232802"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51256567"
 ---
 # <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-firebase-cloud-messaging"></a>Руководство по отправке push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Firebase Cloud Messaging
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -42,10 +42,10 @@ ms.locfileid: "38232802"
 > * Подключение приложения к центру уведомлений.
 > * Тестирование приложения. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим учебником необходима активная учетная запись Azure. Если ее нет, можно создать бесплатную пробную учетную запись всего за несколько минут. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/free/).
 
-* Кроме упомянутой выше действующей учетной записи Azure, для работы с этим руководством вам понадобится последняя версия [Android Studio](http://go.microsoft.com/fwlink/?LinkId=389797).
+* Кроме упомянутой выше действующей учетной записи Azure, для работы с этим руководством вам понадобится последняя версия [Android Studio](https://go.microsoft.com/fwlink/?LinkId=389797).
 * Android версии 2.3 или более поздней.
 * Репозиторий Google версии 27 или более поздней.
 * Службы Google Play версии 9.0.2 или более поздней.
@@ -165,8 +165,8 @@ ms.locfileid: "38232802"
     Обязательно обновите эти три заполнителя в следующем коде для класса `NotificationSettings`:
    
    * **SenderId** — идентификатор отправителя, полученный ранее на вкладке **Cloud Messaging** параметров проекта в [консоли Firebase](https://firebase.google.com/console/).
-   * **HubListenConnectionString** — укажите для Центра строку подключения **DefaultListenAccessSignature**. Чтобы скопировать эту строку подключения, щелкните пункт **Политики доступа** в своем центре на [портала Azure].
-   * **HubName**: используйте имя центра уведомлений, которое отображается на [портала Azure] на странице центра.
+   * **HubListenConnectionString** — укажите для Центра строку подключения **DefaultListenAccessSignature**. Чтобы скопировать эту строку подключения, щелкните пункт **Политики доступа** в своем центре на [портал Azure].
+   * **HubName**: используйте имя центра уведомлений, которое отображается на [портал Azure] на странице центра.
      
      `NotificationSettings` :
      
@@ -487,7 +487,7 @@ ms.locfileid: "38232802"
 
 ## <a name="test-the-app"></a>Тестирование приложения
 ### <a name="test-send-notification-from-the-notification-hub"></a>Проверка отправки уведомления из центра уведомлений
-Отправьте push-уведомления с [портала Azure], выполнив следующие действия. 
+Отправьте push-уведомления с [портал Azure], выполнив следующие действия. 
 
 1. В разделе **Устранение неполадок** выберите **Тестовая отправка**.
 2. В качестве **платформы** выберите **Android**. 
@@ -532,4 +532,4 @@ ms.locfileid: "38232802"
 [Notification Hubs Guidance]: notification-hubs-push-notification-overview.md
 [Use Notification Hubs to push notifications to users]: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
 [Use Notification Hubs to send breaking news]: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md
-[портала Azure]: https://portal.azure.com
+[портал Azure]: https://portal.azure.com

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 9/11/2018
 ms.author: dekapur
-ms.openlocfilehash: 7357577ea7aff467288578673110b1a6dda7ccef
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
+ms.openlocfilehash: c505feb20321d785a86cad0422470aa5c9a4311b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44391053"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51259094"
 ---
 <a id="preparemachines"></a>
 
@@ -74,7 +74,7 @@ ms.locfileid: "44391053"
 У администратора кластера, который развертывает и настраивает кластер, должны быть [привилегии администратора](https://social.technet.microsoft.com/wiki/contents/articles/13436.windows-server-2012-how-to-add-an-account-to-a-local-administrator-group.aspx) на всех компьютерах. Пакет Service Fabric нельзя установить на контроллере домена.
 
 ## <a name="download-the-service-fabric-standalone-package-for-windows-server"></a>Скачивание изолированного пакета Service Fabric для Windows Server
-[Скачайте изолированный пакет Service Fabric для Windows Server](http://go.microsoft.com/fwlink/?LinkId=730690) и извлеките его содержимое на компьютер развертывания, который не является частью кластера, или на один из компьютеров, которые будут частью кластера.
+[Скачайте изолированный пакет Service Fabric для Windows Server](https://go.microsoft.com/fwlink/?LinkId=730690) и извлеките его содержимое на компьютер развертывания, который не является частью кластера, или на один из компьютеров, которые будут частью кластера.
 
 ## <a name="modify-cluster-configuration"></a>Изменение конфигурации кластера
 Чтобы создать изолированный кластер, для него необходимо создать файл конфигурации ClusterConfig.json, описывающий характеристики кластера. Можно создать этот файл на основе шаблонов, доступных по ссылке ниже. <br>

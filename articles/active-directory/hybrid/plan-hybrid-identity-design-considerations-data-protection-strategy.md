@@ -16,12 +16,12 @@ ms.date: 11/13/2017
 ms.component: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: a3cbbf887c4b7df57f2df89dfb8649967d6d9b1b
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 9f02c6779b3561f6eea57512ecb27dd2fd451d90
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47434761"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238154"
 ---
 # <a name="define-data-protection-strategy-for-your-hybrid-identity-solution"></a>Определение стратегии защиты данных для гибридного решения идентификации
 В этой статье вы определите стратегию защиты данных для гибридных решений идентификации, которая соответствует требованиям, выработанным с помощью таких статей:
@@ -74,7 +74,7 @@ ms.locfileid: "47434761"
 * добавление и удаление лицензий.
 
 > [!NOTE]
-> Дополнительные сведения о возможности ведения журналов в Azure вы найдете в документе [Управление журналами безопасности и аудита Microsoft Azure](http://download.microsoft.com/download/B/6/C/B6C0A98B-D34A-417C-826E-3EA28CDFC9DD/AzureSecurityandAuditLogManagement_11132014.pdf) .
+> Дополнительные сведения о возможности ведения журналов в Azure вы найдете в документе [Управление журналами безопасности и аудита Microsoft Azure](https://download.microsoft.com/download/B/6/C/B6C0A98B-D34A-417C-826E-3EA28CDFC9DD/AzureSecurityandAuditLogManagement_11132014.pdf) .
 > Теперь на основании ваших ответов на вопросы раздела [Определения требований к управлению содержимым](plan-hybrid-identity-design-considerations-contentmgt-requirements.md)вы можете выбрать подходящий способ управления содержимым в гибридном решении идентификации. Azure AD может интегрироваться с любым вариантом, который представлен в таблице 6, но вам важно выбрать наиболее подходящий для целей вашего бизнеса.
 >
 >

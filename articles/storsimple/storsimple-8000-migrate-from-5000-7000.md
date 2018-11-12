@@ -13,12 +13,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/23/2018
 ms.author: alkohli
-ms.openlocfilehash: 23fde5fab8f223ff1d958a8fac6a31818f1fdd7c
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: a638487fb0a622f899095989ca5341013299e181
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42818922"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51234414"
 ---
 # <a name="migrate-data-from-storsimple-5000-7000-series-to-8000-series-device"></a>Перенос данных с устройства StorSimple серий 5000–7000 на устройство серии 8000
 
@@ -57,7 +57,7 @@ ms.locfileid: "42818922"
 | 3.   | После успешной миграции все данные находятся на устройстве локально. При доступе к данным нет задержек. | Использование ресурсов хранилища Azure будет увеличиваться до тех пор, пока данные не будут удалены с устройства серии 5000/7000.                                                                                                        |
 | 4.   |                                                                                                                           | Если устройство серии 7000/5000 имеет большой объем данных, во время миграции эти данные необходимо скачать из Azure, что приведет к повышению затрат и задержек, связанных с загрузкой данных из Azure. |
 
-В этой статье основное внимание уделяется функции миграции с устройства 5000/7000 на устройство серии 8000. Дополнительные сведения о миграции на стороне узла см. в этом [документе](http://download.microsoft.com/download/9/4/A/94AB8165-CCC4-430B-801B-9FD40C8DA340/Migrating%20Data%20to%20StorSimple%20Volumes_09-02-15.pdf).
+В этой статье основное внимание уделяется функции миграции с устройства 5000/7000 на устройство серии 8000. Дополнительные сведения о миграции на стороне узла см. в этом [документе](https://download.microsoft.com/download/9/4/A/94AB8165-CCC4-430B-801B-9FD40C8DA340/Migrating%20Data%20to%20StorSimple%20Volumes_09-02-15.pdf).
 
 ## <a name="migration-prerequisites"></a>Предварительные требования к миграции
 

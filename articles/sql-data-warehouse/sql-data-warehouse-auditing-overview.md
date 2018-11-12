@@ -10,12 +10,12 @@ ms.component: manage
 ms.date: 04/11/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
-ms.openlocfilehash: 18a6234eb56902625fdcc8f150a41b7551d229cc
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 199095c3cffc8df7f9755f1f2c4bb5a1acba3748
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49318543"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51260386"
 ---
 # <a name="auditing-in-azure-sql-data-warehouse"></a>Аудит в хранилище данных SQL Azure
 
@@ -150,7 +150,7 @@ ms.locfileid: "49318543"
 ### <a name="database-level-policy-audit-logs"></a>Журналы аудита на уровне базы данных
 Журналы аудита на уровне базы данных объединяются в коллекцию таблиц хранилища с префиксом **SQLDBAuditLogs** в учетной записи хранилища Azure, выбранной во время установки. Просматривать файлы журнала можно с помощью таких инструментов, как [обозреватель хранилищ Azure](http://azurestorageexplorer.codeplex.com).
 
-Для скачивания доступен предварительно настроенный шаблон отчета панели мониторинга в виде [таблицы Excel](http://go.microsoft.com/fwlink/?LinkId=403540), что позволит быстро проанализировать данные журнала. Чтобы использовать шаблон с журналами аудита, вам потребуется Excel 2013 или более поздней версии и надстройка Power Query, которую можно скачать по [этой ссылке](http://www.microsoft.com/download/details.aspx?id=39379).
+Для скачивания доступен предварительно настроенный шаблон отчета панели мониторинга в виде [таблицы Excel](https://go.microsoft.com/fwlink/?LinkId=403540), что позволит быстро проанализировать данные журнала. Чтобы использовать шаблон с журналами аудита, вам потребуется Excel 2013 или более поздней версии и надстройка Power Query, которую можно скачать по [этой ссылке](https://www.microsoft.com/download/details.aspx?id=39379).
 
 В шаблоне приведен пример вымышленных данных, вы можете настроить Power Query для импорта журнала аудита непосредственно в учетную запись хранения Azure.
 

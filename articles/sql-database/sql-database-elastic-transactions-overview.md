@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 3147061f527621ba98dee84f4d347a6e883d61c0
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 02cf72bf9fe06993ef859d1789983b7611c8472e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47166475"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51257475"
 ---
 # <a name="distributed-transactions-across-cloud-databases"></a>Распределенные транзакции по облачным базам данных
 Возможности эластичной базы данных позволяют выполнять транзакции, охватывающие несколько баз данных в базе данных SQL Azure. Транзакции эластичной базы данных в базе данных SQL можно выполнять с помощью ADO.NET и приложений .NET. Кроме того, транзакции можно объединить с уже знакомыми приемами программирования, используя классы [System.Transaction](https://msdn.microsoft.com/library/system.transactions.aspx). Инструкции по подключению библиотеки см. в статье [Microsoft .NET Framework 4.6.1 (веб-установщик) для Windows 7 SP1, Windows 8, Windows 8.1, Windows 10, Windows Server 2008 R2 SP1, Windows Server 2012 и Windows Server 2012 R2](https://www.microsoft.com/download/details.aspx?id=49981).
@@ -143,7 +143,7 @@ Azure включает несколько предложений для разм
 * Транзакции между службами WCF не поддерживаются. Например, если у вас есть метод службы WCF, выполняющий транзакцию, включение вызова в область транзакции завершится ошибкой с исключением [System.ServiceModel.ProtocolException](https://msdn.microsoft.com/library/system.servicemodel.protocolexception).
 
 ## <a name="next-steps"></a>Дополнительная информация
-Все возникшие вопросы задавайте на [форуме по базам данных SQL](http://social.msdn.microsoft.com/forums/azure/home?forum=ssdsgetstarted), а запросы новых функций оставляйте на [форуме отзывов и предложений по базам данных SQL](https://feedback.azure.com/forums/217321-sql-database/).
+Все возникшие вопросы задавайте на [форуме по базам данных SQL](https://social.msdn.microsoft.com/forums/azure/home?forum=ssdsgetstarted), а запросы новых функций оставляйте на [форуме отзывов и предложений по базам данных SQL](https://feedback.azure.com/forums/217321-sql-database/).
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-transactions-overview/distributed-transactions.png

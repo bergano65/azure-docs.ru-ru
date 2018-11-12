@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: 0240bbdf2055ac44f8836adfaad3bf6c44893b77
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 93ce9feaf52282b9477d49eaf270d6d89dca7811
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33781823"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51232534"
 ---
 # <a name="create-your-first-vm-in-a-lab-in-azure-devtest-labs"></a>Создание первой виртуальной машины в лаборатории в Azure DevTest Labs
 
@@ -28,7 +28,7 @@ ms.locfileid: "33781823"
 В этом руководстве описано, как добавить первую виртуальную машину в лабораторию в DevTest Labs с помощью портала Azure.
 
 ## <a name="steps-to-add-your-first-vm-to-a-lab-in-azure-devtest-labs"></a>Добавление первой виртуальной машины в лабораторию в Azure DevTest Labs
-1. Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 1. Из списка лабораторий выберите ту, в которой необходимо создать виртуальную машину.  
 1. В колонке лаборатории **Обзор** выберите **+ Добавить**.  

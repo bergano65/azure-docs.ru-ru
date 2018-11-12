@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2018
 ms.author: deguhath
-ms.openlocfilehash: e6601093577eb9e3dfba4ed27e1e0510cad17de7
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: b703cb4d3ddd8b62895c9c40c7fa2fba728e884e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421055"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51262288"
 ---
 # <a name="vehicle-telemetry-analytics-solution-template-power-bi-dashboard-setup-instructions"></a>Инструкции по настройке панели мониторинга Power BI шаблона решения для аналитики телеметрии автомобилей
 Из этого меню можно переходить к другим разделам обзора. 
@@ -30,14 +30,14 @@ ms.locfileid: "39421055"
 
 ## <a name="prerequisites"></a>Предварительные требования
 * Разверните решение [аналитики телеметрии автомобиля](https://gallery.cortanaintelligence.com/Solution/5bdb23f3abb448268b7402ab8907cc90). 
-* [Установите Power BI Desktop](http://www.microsoft.com/download/details.aspx?id=45331).
+* [Установите Power BI Desktop](https://www.microsoft.com/download/details.aspx?id=45331).
 * Получите [подписку Azure](https://azure.microsoft.com/pricing/free-trial/). Если у вас нет подписки Azure, для начала получите бесплатную подписку Azure.
 * Откройте учетную запись Power BI.
 
 ## <a name="cortana-intelligence-suite-components"></a>Компоненты Cortana Intelligence Suite
 В вашей подписке будут развернуты следующие службы Cortana Intelligence из шаблона решения для аналитики телеметрии автомобилей:
 
-* **Концентраторы событий Azure**. Принимают миллионы событий телеметрии автомобиля в Azure.
+* **Центры событий Azure**. Принимают миллионы событий телеметрии автомобиля в Azure.
 * **Azure Stream Analytics**. Предоставляет подробные данные о работоспособности автомобиля в режиме реального времени и сохраняет их в долговременное хранилище для более детальной пакетной аналитики.
 * **Машинное обучение Azure**. Обнаруживает аномалии в реальном времени и использует пакетную обработку для предоставления прогнозной аналитики.
 * **Azure HDInsight**. Преобразует данные в требуемом масштабе.
@@ -62,7 +62,7 @@ ms.locfileid: "39421055"
 
 1. Скачайте файл RealtimeDashboardApp.zip с приложением панели мониторинга в режиме реального времени и распакуйте его.
 
-1.  В распакованной папке откройте файл конфигурации приложения RealtimeDashboardApp.exe.config. Замените appSettings для подключений служб концентраторов событий, хранилища BLOB-объектов Azure и Машинного обучения Azure значениями из инструкций по ручному управлению. Сохраните изменения.
+1.  В распакованной папке откройте файл конфигурации приложения RealtimeDashboardApp.exe.config. Замените appSettings для подключений служб Центров событий, хранилища BLOB-объектов Azure и Машинного обучения Azure значениями из инструкций по ручному управлению. Сохраните изменения.
 
 1. Запустите приложение RealtimeDashboardApp.exe. В окне входа введите допустимые учетные данные Power BI. 
 
@@ -348,7 +348,7 @@ ms.locfileid: "39421055"
 
 ### <a name="configure-power-bi-reports"></a>Настройка отчетов Power BI
 
-1. Откройте файл конструктора **ConnectedCarsPbiReport.pbix** с помощью Power BI Desktop. Если его у вас еще нет, установите Power BI Desktop с веб-сайта [Microsoft Power BI Desktop](http://www.microsoft.com/download/details.aspx?id=45331).
+1. Откройте файл конструктора **ConnectedCarsPbiReport.pbix** с помощью Power BI Desktop. Если его у вас еще нет, установите Power BI Desktop с веб-сайта [Microsoft Power BI Desktop](https://www.microsoft.com/download/details.aspx?id=45331).
 
 1. Выберите **Изменить запросы**.
 

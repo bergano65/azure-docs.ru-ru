@@ -9,12 +9,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.author: jingwang
-ms.openlocfilehash: 844440d22bc0a524e9e61bde457ee9f43fd367b2
-ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.openlocfilehash: 6cab6559cb38b7d6d1dc2105b694acbcac85108c
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42444618"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51262052"
 ---
 # <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure
 
@@ -434,7 +434,7 @@ ms.locfileid: "42444618"
 ```
 
 > [!IMPORTANT]
-> Для копирования посредством Integration Runtime (Self-hosted), то есть между локальным и облачным хранилищами данных, если вы не копируете ORC-файлы **как есть**, на компьютере Integration Runtime необходимо установить JRE 8 (среду выполнения Java). Для 64-разрядной версии Integration Runtime требуется 64-разрядная версия JRE. Обе эти версии доступны [здесь](http://go.microsoft.com/fwlink/?LinkId=808605).
+> Для копирования посредством Integration Runtime (Self-hosted), то есть между локальным и облачным хранилищами данных, если вы не копируете ORC-файлы **как есть**, на компьютере Integration Runtime необходимо установить JRE 8 (среду выполнения Java). Для 64-разрядной версии Integration Runtime требуется 64-разрядная версия JRE. Обе эти версии доступны [здесь](https://go.microsoft.com/fwlink/?LinkId=808605).
 >
 
 Обратите внимание на следующие моменты.
@@ -478,7 +478,7 @@ ms.locfileid: "42444618"
 ```
 
 > [!IMPORTANT]
-> Для копирования посредством Integration Runtime (Self-hosted), то есть между локальным и облачным хранилищами данных, если вы не копируете файлы Parquet **как есть**, на компьютере Integration Runtime необходимо установить JRE 8 (среду выполнения Java). Для 64-разрядной версии Integration Runtime требуется 64-разрядная версия JRE. Обе эти версии доступны [здесь](http://go.microsoft.com/fwlink/?LinkId=808605).
+> Для копирования посредством Integration Runtime (Self-hosted), то есть между локальным и облачным хранилищами данных, если вы не копируете файлы Parquet **как есть**, на компьютере Integration Runtime необходимо установить JRE 8 (среду выполнения Java). Для 64-разрядной версии Integration Runtime требуется 64-разрядная версия JRE. Обе эти версии доступны [здесь](https://go.microsoft.com/fwlink/?LinkId=808605).
 >
 
 Обратите внимание на следующие моменты.

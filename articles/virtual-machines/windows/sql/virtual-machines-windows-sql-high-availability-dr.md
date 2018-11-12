@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/27/2017
 ms.author: mikeray
-ms.openlocfilehash: e9b4ca959b93e097bb52a841cec02cc476ef5f48
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: 463ef5f4a655617074915078fb4ced9e596f8957
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
-ms.locfileid: "29401265"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51257720"
 ---
 # <a name="high-availability-and-disaster-recovery-for-sql-server-in-azure-virtual-machines"></a>Высокий уровень доступности и аварийное восстановление для SQL Server на виртуальных машинах Azure
 
@@ -93,7 +93,7 @@ ms.locfileid: "29401265"
 5. Когда узел NODE2 пытается установить соединение с узлом NODE1, пакеты, направляемые на NODE1, не покидают узел NODE2, так как он разрешает IP-адрес узла NODE1 для самого себя. Узлу NODE2 не удается установить соединение с узлом NODE1, что приводит к потере кворума и завершению работы кластера.
 6. Тем временем узел NODE1 может отправлять пакеты на узел NODE2, который не может отвечать на них. Узел NODE1 теряет кворум и завершает работу кластера.
 
-Этого можно избежать путем назначения сетевому имени кластера неиспользуемого статического IP-адреса, например IP-адреса локальной связи (такого как 169.254.1.1), чтобы позволит подключить сетевое имя кластера к сети. Указания по упрощению этого процесса см. в статье [How to Configure Windows Failover Cluster in Azure for AlwaysOn Availability Groups](http://social.technet.microsoft.com/wiki/contents/articles/14776.configuring-windows-failover-cluster-in-windows-azure-for-alwayson-availability-groups.aspx) (Как настроить отказоустойчивый кластер Windows в Azure для групп доступности Always On).
+Этого можно избежать путем назначения сетевому имени кластера неиспользуемого статического IP-адреса, например IP-адреса локальной связи (такого как 169.254.1.1), чтобы позволит подключить сетевое имя кластера к сети. Указания по упрощению этого процесса см. в статье [How to Configure Windows Failover Cluster in Azure for AlwaysOn Availability Groups](https://social.technet.microsoft.com/wiki/contents/articles/14776.configuring-windows-failover-cluster-in-windows-azure-for-alwayson-availability-groups.aspx) (Как настроить отказоустойчивый кластер Windows в Azure для групп доступности Always On).
 
 Дополнительные сведения см. в статье [Автоматическая настройка групп доступности AlwaysOn на виртуальных машинах Azure с использованием Resource Manager](virtual-machines-windows-portal-sql-alwayson-availability-groups.md).
 
@@ -120,7 +120,7 @@ ms.locfileid: "29401265"
 
 * [Использование ключевых слов строки подключения с собственным клиентом SQL Server](https://msdn.microsoft.com/library/ms130822.aspx)
 * [Подключение клиентов к сеансу зеркального отображения базы данных (SQL Server)](https://technet.microsoft.com/library/ms175484.aspx)
-* [Подключение к прослушивателю группы доступности в гибридной ИТ-среде](http://blogs.msdn.com/b/sqlalwayson/archive/2013/02/14/connecting-to-availability-group-listener-in-hybrid-it.aspx)
+* [Подключение к прослушивателю группы доступности в гибридной ИТ-среде](https://blogs.msdn.com/b/sqlalwayson/archive/2013/02/14/connecting-to-availability-group-listener-in-hybrid-it.aspx)
 * [Прослушиватели групп доступности, возможность подключения клиентов и отработка отказа приложений (SQL Server)](https://technet.microsoft.com/library/hh213417.aspx)
 * [Использование строк подключения к зеркально отображаемой базе данных с группами доступности](https://technet.microsoft.com/library/hh213417.aspx)
 
@@ -139,5 +139,5 @@ ms.locfileid: "29401265"
 
 ### <a name="other-resources"></a>Другие ресурсы:
 * [Установка нового леса Active Directory в виртуальной сети Azure](../../../active-directory/active-directory-new-forest-virtual-machine.md)
-* [Создание отказоустойчивого кластера для групп доступности на виртуальной машине Azure](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a)
+* [Создание отказоустойчивого кластера для групп доступности на виртуальной машине Azure](https://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a)
 

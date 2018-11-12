@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/15/2018
 ms.author: barclayn
-ms.openlocfilehash: b5e235221d34434b908d605c9077ae2fede2fe94
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: a28bf1dc23d678c710d7bd6b13f067427e76ef41
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49365626"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238405"
 ---
 # <a name="get-started-with-azure-key-vault"></a>Приступая к работе с хранилищем ключей Azure
 Это руководство поможет вам приступить к работе с Azure Key Vault с использованием PowerShell. Здесь также объясняется, как выполнить следующие задачи:
@@ -36,7 +36,7 @@ ms.locfileid: "49365626"
 
 - **Подписка Azure**. Если у вас нет подписки, вы можете зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/).
 - **Azure PowerShell** **начиная с версии 1.1.0**. Чтобы установить решение Azure PowerShell и связать его с подпиской Azure, см. статью [Установка и настройка Azure PowerShell](/powershell/azure/overview). Если средство Azure PowerShell у вас установлено, но вы не знаете его версию, в консоли Azure PowerShell введите `(Get-Module azure -ListAvailable).Version`. Если у вас установлено средство Azure PowerShell версий 0.9.1–0.9.8, вы можете использовать это руководство с некоторыми незначительными поправками. Например, вам нужно использовать команду `Switch-AzureMode AzureResourceManager`; также отличаются некоторые команды хранилища ключей Azure. Полный список командлетов хранилища ключей для Azure PowerShell версий 0.9.1–0.9.8 см. в [этой статье](/powershell/module/azurerm.keyvault/#key_vault).
-- **Приложение, которое можно настроить для использования Key Vault**. Пример приложения доступен в [Центре загрузки Майкрософт](http://www.microsoft.com/download/details.aspx?id=45343). Инструкции см. в сопутствующем файле **README**.
+- **Приложение, которое можно настроить для использования Key Vault**. Пример приложения доступен в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=45343). Инструкции см. в сопутствующем файле **README**.
 
 >[!NOTE]
 Для работы с этой статьей необходимо знание основных понятий PowerShell и Azure. Дополнительные сведения о PowerShell см. в статье [Начало работы с Windows PowerShell](https://technet.microsoft.com/library/hh857337.aspx).
@@ -204,7 +204,7 @@ $secret.Id
 Теперь хранилище ключей и ключ или секрет готовы для использования в приложениях. Авторизуйте приложения для их использования.  
 
 ## <a id="register"></a>Регистрация приложения в Azure Active Directory
-Обычно этот шаг выполняет разработчик на отдельном компьютере. Он не относится исключительно к Azure Key Vault. Пошаговые инструкции по регистрации приложения с помощью Azure Active Directory см. в статье [Краткое руководство. Регистрация приложения в конечной точке Azure Active Directory версии 1.0](../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md) или [How to: Use the portal to create an Azure AD application and service principal that can access resources](../azure-resource-manager/resource-group-create-service-principal-portal.md) (Практическое руководство. Создание приложения и субъекта-службы Azure AD, имеющих доступ к ресурсам, с помощью портала).
+Обычно этот шаг выполняет разработчик на отдельном компьютере. Он не относится исключительно к Azure Key Vault. Пошаговые инструкции по регистрации приложения с помощью Azure Active Directory см. в статье [Краткое руководство. Регистрация приложения в конечной точке Azure Active Directory версии 1.0](../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md) или [How to: Use the portal to create an Azure AD application and service principal that can access resources](../active-directory/develop/howto-create-service-principal-portal.md) (Практическое руководство. Создание приложения и субъекта-службы Azure AD, имеющих доступ к ресурсам, с помощью портала).
 
 > [!IMPORTANT]
 > Чтобы завершить прохождение этого учебника, учетная запись, хранилище и приложение, которое вы будете регистрировать на этом шаге, должны находиться в одном каталоге Azure.

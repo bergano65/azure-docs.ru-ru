@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 511a0122b37f5f34097da38a645790d99212ad18
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: b8a9973738ac28a686488a816da0f7da5fe2ac3e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45737419"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238528"
 ---
 # <a name="process-large-scale-datasets-by-using-data-factory-and-batch"></a>Обработка больших наборов данных с помощью фабрики данных и пакетной службы
 > [!NOTE]
@@ -61,9 +61,9 @@ ms.locfileid: "45737419"
 ## <a name="architecture-of-a-sample-solution"></a>Архитектура примера решения
   Архитектура, описанная в этой статье, предназначена для простого решения. Она также подходит для таких сложных сценариев, как моделирование рисков по финансовым услугам, обработка и отрисовка изображений и геномный анализ.
 
-На схеме ниже показано, как фабрика данных управляет перемещением и обработкой данных, а также как пакетная служба параллельно обрабатывает данные. Загрузите и распечатайте схему для удобства (в формате 11 x 17 дюймов или A3). Чтобы распечатать схему, скачайте PDF-файл [HPC and data orchestration using Azure Batch and Data Factory](http://go.microsoft.com/fwlink/?LinkId=717686) (Управление данными и высокопроизводительными вычислениями с помощью пакетной службы и фабрики данных Azure).
+На схеме ниже показано, как фабрика данных управляет перемещением и обработкой данных, а также как пакетная служба параллельно обрабатывает данные. Загрузите и распечатайте схему для удобства (в формате 11 x 17 дюймов или A3). Чтобы распечатать схему, скачайте PDF-файл [HPC and data orchestration using Azure Batch and Data Factory](https://go.microsoft.com/fwlink/?LinkId=717686) (Управление данными и высокопроизводительными вычислениями с помощью пакетной службы и фабрики данных Azure).
 
-[![Схема обработки данных большого объема](./media/data-factory-data-processing-using-batch/image1.png)](http://go.microsoft.com/fwlink/?LinkId=717686)
+[![Схема обработки данных большого объема](./media/data-factory-data-processing-using-batch/image1.png)](https://go.microsoft.com/fwlink/?LinkId=717686)
 
 Ниже приведен список основных этапов процесса. Решение содержит код и указания по созданию комплексного решения.
 

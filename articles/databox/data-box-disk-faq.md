@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: overview
-ms.date: 09/28/2018
+ms.date: 10/30/2018
 ms.author: alkohli
-ms.openlocfilehash: 8acb808e4b60926fbe6b3faa3fa6a7174a190884
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 5e4461a910f13c5047c4a2aadd7326c4e12c533f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49094247"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238137"
 ---
 # <a name="what-is-azure-data-box-disk-preview"></a>Что такое диск Azure Data Box (предварительная версия)
 
@@ -44,10 +44,10 @@ ms.locfileid: "49094247"
 О. Если у вас есть 40 ТБ данных (или меньше), которые требуется перенести в Azure, эффективнее всего будет использовать диски Data Box.
 
 ### <a name="q-what-is-the-price-of-data-box-disks"></a>В. Какова стоимость дисков Data Box?
-О. На этапе предварительной версии диски Data Box доступны бесплатно. Доставка также бесплатна, однако будет взиматься плата за службу хранилища Azure.
+О. Сведения о ценах на диски см. на [странице с ценами на предварительную версию](https://azure.microsoft.com/pricing/details/storage/databox/disk/).
 
 ### <a name="q-how-do-i-get-data-box-disks"></a>В. Как получить диски Data Box? 
-О.  Чтобы получить диски Azure Data Box, сначала зарегистрируйтесь для получения [предварительной версии диска Data Box](http://aka.ms/AzureDataBox). Затем выполните вход на портал Azure и создайте заказ Data Box для дисков. Введите свои контактные данные и сведения об уведомлениях. После размещения заказа диски будут доставлены в течение 10 дней в зависимости от доступности.   
+О.  Чтобы получить диски Azure Data Box, сначала зарегистрируйтесь для получения [предварительной версии диска Data Box](https://aka.ms/AzureDataBox). Затем выполните вход на портал Azure и создайте заказ Data Box для дисков. Введите свои контактные данные и сведения об уведомлениях. После размещения заказа диски будут доставлены в течение 10 дней в зависимости от доступности.   
 
 ### <a name="q-what-is-the-maximum-amount-of-data-i-can-transfer-with-data-box-disks-in-one-instance"></a>В. Каков максимальный объем данных, который можно передать с помощью дисков Data Box в одном экземпляре?
 О. Для 5 дисков размером 8 ТБ (7 ТБ доступной емкости) максимальная доступная емкость составляет 35 ТБ. Таким образом в одном экземпляре можно передать 35 ТБ данных.  Чтобы передавать больше данных, необходимо заказать дополнительные диски.
@@ -72,7 +72,7 @@ ms.locfileid: "49094247"
 Пошаговые инструкции см. в разделе о разблокировке дисков [для клиента Windows](data-box-disk-deploy-set-up.md#unlock-disks-on-windows-client) или [клиента Linux](data-box-disk-deploy-set-up.md#unlock-disks-on-linux-client).
 
 ### <a name="q-can-i-use-a-linux-host-computer-to-connect-and-copy-the-data-on-to-the-data-box-disks"></a>В. Можно ли использовать главный компьютер Linux для подключения и копирования данных на диски Data Box?
-О.  Да. Клиенты Windows и Linux можно использовать для подключения и копирования данных на диски Data Box. Дополнительные сведения см. в списке [поддерживаемых операционных систем](data-box-disk-system-requirements.md) для главного компьютера.
+О.  Да. Клиенты Windows и Linux можно использовать для подключения дисков и копирования на них данных. Дополнительные сведения см. в списке [поддерживаемых операционных систем](data-box-disk-system-requirements.md) для главного компьютера.
 
 ### <a name="q-my-disks-are-dispatched-but-now-i-want-to-cancel-this-order-why-is-the-cancel-button-not-available"></a>В. Мои диски уже отправлены, но теперь я хочу отменить этот заказ. Почему кнопка "Отмена" недоступна?
 О.  Заказ можно отменить только после заказа дисков и перед их отправкой. Как только диски будут отправлены, заказ отменить нельзя. В предварительной версии диски можно возвращать бесплатно, хотя это, скорее всего, изменится, когда решение станет общедоступным. 

@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: b221697b7450ad1c6dac87b7a08c7db8b11810bf
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 1bf915bf702cdf9492cce1f32886c0049fbf9867
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50240473"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51242846"
 ---
 # <a name="move-data-between-on-premises-sources-and-the-cloud-with-data-management-gateway"></a>Перемещение данных между локальными источниками и облаком с помощью шлюза управления данными
 > [!NOTE]
@@ -47,7 +47,7 @@ ms.locfileid: "50240473"
 ## <a name="prerequisites-for-the-tutorial"></a>Предварительные требования для прохождения этого учебника
 Для работы с этим пошаговым руководством необходимо следующее:
 
-* **Подписка Azure**.  Если у вас нет подписки, вы можете создать бесплатную пробную версию учетной записи всего за несколько минут. Дополнительные сведения см. в статье [Бесплатная пробная версия](http://azure.microsoft.com/pricing/free-trial/).
+* **Подписка Azure**.  Если у вас нет подписки, вы можете создать бесплатную пробную версию учетной записи всего за несколько минут. Дополнительные сведения см. в статье [Бесплатная пробная версия](https://azure.microsoft.com/pricing/free-trial/).
 * **исходного**хранилища данных. В этом руководстве в качестве **назначения и приемника** будет использоваться хранилище BLOB-объектов. в статье [Об учетных записях хранения Azure](../../storage/common/storage-quickstart-create-account.md) .
 * **SQL Server.** В этом руководстве используйте локальную базу данных SQL Server в качестве **исходного** хранилища данных. 
 

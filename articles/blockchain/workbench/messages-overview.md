@@ -10,18 +10,18 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: mmercuri
 manager: femila
-ms.openlocfilehash: dcf31bd6b128115962e30dd6653364c4cd65047d
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: b4a816c887d1cca78ff845858dce29049946b09f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48241584"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51235995"
 ---
 # <a name="azure-blockchain-workbench-messaging-integration"></a>Интеграция службы сообщений Azure Blockchain Workbench
 
 Помимо REST API, Azure Blockchain Workbench также предоставляет интеграции на основе обмена сообщениями. Workbench публикует связанные с реестром события через службу "Сетка событий Azure", позволяя нисходящим объектам-получателям получать данные или предпринимать действия на основе этих событий. Для клиентов, которым требуется надежный обмен сообщениями, Azure Blockchain Workbench также доставляет сообщения в конечную точку служебной шины Azure.
 
-Разработчики также заинтересованы в возможности внешних систем инициировать транзакции для создания пользователей, создания контрактов и обновления контрактов в реестре. Хотя эти функции в текущее время не предоставляются в общедоступной предварительной версии, пример, предоставляющий эти возможности, можно найти по адресу [http://aka.ms/blockchain-workbench-integration-sample](http://aka.ms/blockchain-workbench-integration-sample).
+Разработчики также заинтересованы в возможности внешних систем инициировать транзакции для создания пользователей, создания контрактов и обновления контрактов в реестре. Хотя эти функции в текущее время не предоставляются в общедоступной предварительной версии, пример, предоставляющий эти возможности, можно найти по адресу [http://aka.ms/blockchain-workbench-integration-sample](https://aka.ms/blockchain-workbench-integration-sample).
 
 ## <a name="event-notifications"></a>Уведомления о событиях
 

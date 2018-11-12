@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/05/2018
 ms.author: dimazaid
-ms.openlocfilehash: 1e9ed9d3500b112f98492e6a85d02a1f1843c7c3
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: ab47db7629c92b0e6a5b268c9d233135485a37a1
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49365583"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51237725"
 ---
 # <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-cloud-messaging"></a>Руководство по отправке push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "49365583"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - **Подписка Azure**. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. 
-- [Android Studio](http://go.microsoft.com/fwlink/?LinkId=389797).
+- [Android Studio](https://go.microsoft.com/fwlink/?LinkId=389797).
 
 ## <a name="creating-a-project-that-supports-google-cloud-messaging"></a>Создание проекта с поддержкой Google Cloud Messaging
 [!INCLUDE [mobile-services-enable-Google-cloud-messaging](../../includes/mobile-services-enable-google-cloud-messaging.md)]
@@ -524,7 +524,7 @@ ms.locfileid: "49365583"
     private String HubSasKeyName = null;
     private String HubSasKeyValue = null;
     ```
-6. Создайте токен подписи программного доступа (SAS) для аутентификации запроса POST для отправки сообщений в центр уведомлений. Проанализируйте данные ключа из строки подключения и создайте токен SAS, как упоминалось в справочнике по [основным понятиям](http://msdn.microsoft.com/library/azure/dn495627.aspx) REST API. Ниже приведен пример реализации.
+6. Создайте токен подписи программного доступа (SAS) для аутентификации запроса POST для отправки сообщений в центр уведомлений. Проанализируйте данные ключа из строки подключения и создайте токен SAS, как упоминалось в справочнике по [основным понятиям](https://msdn.microsoft.com/library/azure/dn495627.aspx) REST API. Ниже приведен пример реализации.
    
     В файле `MainActivity.java` добавьте в класс `MainActivity` следующий метод, который анализирует строку подключения:
    

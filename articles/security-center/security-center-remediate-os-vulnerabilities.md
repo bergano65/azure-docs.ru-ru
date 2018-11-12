@@ -3,7 +3,7 @@ title: Исправление конфигураций системы безоп
 description: В этом документе объясняется, как выполнить рекомендацию центра безопасности Azure по исправлению конфигураций системы безопасности.
 services: security-center
 documentationcenter: na
-author: TerryLanfear
+author: rkarlin
 manager: MBaldwin
 editor: ''
 ms.assetid: 991d41f5-1d17-468d-a66d-83ec1308ab79
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/10/2018
-ms.author: terrylan
-ms.openlocfilehash: 74bfc3435ad6d247dabd3a7cbf2910ede5f8c8ca
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.date: 10/28/2018
+ms.author: rkarlin
+ms.openlocfilehash: d4523a9e2d5a5466c1617930d14a8a2d25a0e16f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44296250"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238783"
 ---
 # <a name="remediate-security-configurations-in-azure-security-center"></a>Исправление конфигурации системы безопасности в центре безопасности Azure
 Центр безопасности Azure ежедневно анализирует операционную систему виртуальных машин и компьютеров, чтобы определить конфигурацию, повышающую риск атак на них. Центр безопасности рекомендует устранять уязвимости, если конфигурация операционной системы не соответствует правилам рекомендуемой конфигурации безопасности, и изменять конфигурацию, чтобы устранить эти уязвимости.
@@ -107,7 +107,7 @@ ms.locfileid: "44296250"
 * Сведения об управлении оповещениями системы безопасности и реагировании на них см. в статье [Управление оповещениями безопасности в центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md).
 * Сведения об отслеживании состояния работоспособности решений партнеров см. в статье [Управление подключенными партнерскими решениями с помощью центра безопасности Azure](security-center-partner-solutions.md).
 * Ответы на часто задаваемые вопросы об использовании этой службы см. в статье [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md).
-* Публикации блога, посвященные безопасности и соответствию требованиям в Azure, см. в [блоге по безопасности Azure](http://blogs.msdn.com/b/azuresecurity/).
+* Публикации блога, посвященные безопасности и соответствию требованиям в Azure, см. в [блоге по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/).
 
 <!--Image references-->
 [1]: ./media/security-center-remediate-os-vulnerabilities/compute-blade.png

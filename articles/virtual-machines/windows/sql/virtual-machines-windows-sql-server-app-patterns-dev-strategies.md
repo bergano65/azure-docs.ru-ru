@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/31/2017
 ms.author: ninarn
-ms.openlocfilehash: 18de5b3d71922effa72414a6a52b126a34076cf3
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: 9ccf7d85b52759a3f2cd64facc6ee8d7255f0fac
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44722135"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51253182"
 ---
 # <a name="application-patterns-and-development-strategies-for-sql-server-in-azure-virtual-machines"></a>Шаблоны приложений и стратегии разработки для SQL Server на виртуальных машинах Azure
 [!INCLUDE [learn-about-deployment-models](../../../../includes/learn-about-deployment-models-both-include.md)]
@@ -236,7 +236,7 @@ ms.locfileid: "44722135"
 
 В модели n-уровневого гибридного приложения можно реализовать указанный ниже рабочий процесс в указанном порядке.
 
-1. Определите корпоративные приложения базы данных, которые необходимо переместить в облако, с помощью [Microsoft Assessment and Planning (MAP) Toolkit](http://microsoft.com/map). MAP Toolkit собирает данные инвентаризации и производительности с компьютеров, которые планируется виртуализировать, и предоставляет рекомендации по планированию емкости и оценки.
+1. Определите корпоративные приложения базы данных, которые необходимо переместить в облако, с помощью [Microsoft Assessment and Planning (MAP) Toolkit](https://microsoft.com/map). MAP Toolkit собирает данные инвентаризации и производительности с компьютеров, которые планируется виртуализировать, и предоставляет рекомендации по планированию емкости и оценки.
 2. Спланируйте ресурсы и конфигурацию, необходимые в платформе Azure, например учетные записи хранения и виртуальные машины.
 3. Настройте сетевое соединение между корпоративной локальной сетью и [виртуальной сетью Azure](../../../virtual-network/virtual-networks-overview.md). Чтобы настроить соединение между корпоративной локальной сетью и виртуальной машиной в Azure, воспользуйтесь одним из двух указанных ниже методов.
    

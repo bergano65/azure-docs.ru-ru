@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/5/2018
 ms.author: terrylan
-ms.openlocfilehash: 3c198ea44953c0b2e72a544cd0e83b6592d9a81f
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 0b38c6895421b43d6f80e0c34cc23b379a673559
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47032086"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51261950"
 ---
 # <a name="setting-security-policies-in-security-center-or-in-azure-policy"></a>Установка политик безопасности в центре безопасности или службе "Политика Azure"
 
@@ -125,6 +125,6 @@ ms.locfileid: "47032086"
 * [Управление подключенными партнерскими решениями с помощью центра безопасности Azure](security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
 * [Gain tenant-wide visibility for Azure Security Center](security-center-management-groups.md) (Получение видимости в пределах клиента в центре безопасности Azure) — узнайте, как настроить группы управления для использования с центром безопасности Azure. 
 * [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md) — получите ответы на часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](http://blogs.msdn.com/b/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.
+* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.
 
 Дополнительные сведения о Политике Azure см. в статье [Что такое служба "Политика Azure"?](../azure-policy/azure-policy-introduction.md)

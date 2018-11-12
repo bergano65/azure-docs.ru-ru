@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/19/2017
 ms.author: alkohli
-ms.openlocfilehash: 9a5be85b917682afeaecd67a4176edb7040d5b4b
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 5e461f340e1c58f64c6d645a1e47cfd811bc4de5
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50215435"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51261712"
 ---
 # <a name="manage-your-storsimple-device-controllers"></a>Управление контроллерами устройства StorSimple
 
@@ -117,7 +117,7 @@ ms.locfileid: "50215435"
    
     `Reset-HcsFactoryDefault`
    
-    Для сброса одного контроллера выполните командлет [Reset-HcsFactoryDefault](http://technet.microsoft.com/library/dn688132.aspx) с параметром `-scope`.
+    Для сброса одного контроллера выполните командлет [Reset-HcsFactoryDefault](https://technet.microsoft.com/library/dn688132.aspx) с параметром `-scope`.
    
     Система перезагрузится несколько раз. После успешного восстановления заводских настроек вы получите уведомление. В зависимости от модели системы завершение этого процесса может занять 45–60 минут для устройства 8100 и 60–90 минут для устройства 8600.
    

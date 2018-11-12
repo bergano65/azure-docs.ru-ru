@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/15/2018
 ms.author: jeffgilb
-ms.openlocfilehash: 37b8eff2d4ed89c90f1fa6f128673ed5bacaaa90
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 5d3073c3ed499ecdb20243e6db2b217aec3e1448
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49339956"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51254525"
 ---
 # <a name="azure-stack-administration-basics"></a>Основы администрирования Azure Stack
 Если вы не знакомы с администрированием Azure Stack, вам необходимо знать несколько моментов. В этом руководстве представлен обзор роли оператора Azure Stack и сведения, которые необходимо сообщить пользователям, чтобы они сразу же начали продуктивно работать.
@@ -81,7 +81,7 @@ Azure Stack будет расширять поддержку служб Azure. �
  
 Для управления Azure Stack можно использовать [портал администрирования](azure-stack-manage-portals.md) или PowerShell. Ознакомиться с основными принципами проще всего с помощью портала. Если вы хотите использовать PowerShell, необходимо выполнить действия по подготовке. Необходимо [установить](azure-stack-powershell-install.md) PowerShell, [загрузить](azure-stack-powershell-download.md) дополнительные модули и [настроить](azure-stack-powershell-configure-admin.md) PowerShell.
 
-Azure Stack использует Azure Resource Manager в качестве основного механизма развертывания, организации и управления. Если вы собираетесь управлять Azure Stack и поддерживать пользователей, вам следует узнать о Resource Manager. См. технический документ [Начало работы с Azure Resource Manager](http://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf).
+Azure Stack использует Azure Resource Manager в качестве основного механизма развертывания, организации и управления. Если вы собираетесь управлять Azure Stack и поддерживать пользователей, вам следует узнать о Resource Manager. См. технический документ [Начало работы с Azure Resource Manager](https://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf).
 
 ## <a name="your-typical-responsibilities"></a>Ваши основные обязанности
 
