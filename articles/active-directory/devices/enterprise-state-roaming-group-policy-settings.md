@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/25/2018
 ms.author: markvi
-ms.openlocfilehash: b5f5fa74dca664d31c19055fadd9b66f84627b67
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: c6ec20b7467998d221858dfd852461ad33a64494
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50157111"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51035219"
 ---
 # <a name="group-policy-and-mdm-settings"></a>Параметры групповой политики и управления мобильными устройствами
 Используйте эти параметры групповой политики и управления мобильными устройствами (MDM) только на корпоративных устройствах, так как эти политики применяются ко всему устройству пользователя. Применение политики MDM для отключения синхронизации параметров на личном устройстве пользователя может негативно отразиться на использовании этого устройства. Кроме того, политика также влияет на другие учетные записи пользователей на устройстве.

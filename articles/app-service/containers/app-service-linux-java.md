@@ -12,12 +12,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 08/29/2018
 ms.author: routlaw
-ms.openlocfilehash: f07d830e90045c11d870a921d091b45de6d2a89b
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: a6752f9127a176eef9fd03e7ffddfa7450772def
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50418540"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51037693"
 ---
 # <a name="java-developers-guide-for-app-service-on-linux"></a>Руководство разработчика для Java для службы приложений в Linux
 
@@ -147,7 +147,7 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 >[!NOTE]
 > Если приложение использует Spring Framework или Spring Boot, можно задать сведения о подключении к базе данных для JPA Spring Data в качестве переменных среды (в файле свойств приложения). Затем с помощью [параметров приложения](/azure/app-service/web-sites-configure#app-settings) можно задать эти значения для приложения, воспользовавшись порталом Azure или интерфейсом командной строки.
 
-В этом разделе в фрагментах кода конфигурации используется база данных MySQL. Дополнительные сведения см. в документации по конфигурации [MySQL](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-tomcat.html), [SQL Server JDBC](https://docs.microsoft.com/en-us/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server?view=sql-server-2017) и [PostgreSQL](https://jdbc.postgresql.org/documentation/head/index.html).
+В этом разделе в фрагментах кода конфигурации используется база данных MySQL. Дополнительные сведения см. в документации по конфигурации [MySQL](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-tomcat.html), [SQL Server JDBC](https://docs.microsoft.com/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server?view=sql-server-2017) и [PostgreSQL](https://jdbc.postgresql.org/documentation/head/index.html).
 
 Чтобы настроить Tomcat для использования управляемых подключений к базам данных с помощью Java Database Connectivity (JDBC) или Java Persistence API (JPA), сначала настройте считывание переменной среды CATALINA_OPTS в Tomcat при запуску. Задайте эти значения с помощью параметра приложения в подключаемом модуле Maven для службы приложений.
 
@@ -233,7 +233,7 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
 5. Перезапустите приложение службы приложений для Linux. Tomcat сбросит `CATALINA_HOME` до значения `/home/tomcat` и будет использовать обновленную конфигурацию и классы.
 
-## <a name="docker-containers"></a>Контейнеры Docker
+## <a name="docker-containers"></a>контейнеры Docker;
 
 Чтобы использовать в своих контейнерах поддерживаемый в Azure пакет JDK Zulu, обязательно используйте готовые образы, предоставленные на [странице скачивания Azul Zulu Enterprise для Azure](https://www.azul.com/downloads/azure-only/zulu/), или используйте примеры `Dockerfile` из [репозитория Майкрософт для Java на сайте GitHub](https://github.com/Microsoft/java/tree/master/docker).
 

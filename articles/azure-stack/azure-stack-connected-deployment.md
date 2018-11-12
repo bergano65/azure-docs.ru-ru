@@ -12,15 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/01/2018
+ms.date: 11/05/2018
 ms.author: jeffgilb
 ms.reviewer: wfayed
-ms.openlocfilehash: d64b834f1c6794976461c93d4ad1d05f8647e986
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: e0f51306ab17e88db9d28da14faab9de0b445f74
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39414595"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51037912"
 ---
 # <a name="azure-connected-deployment-planning-decisions-for-azure-stack-integrated-systems"></a>Планирование развертываний с подключением к Azure для интегрированных систем Azure Stack
 Когда вы решите, [как интегрировать Azure Stack с гибридной облачной средой](azure-stack-connection-models.md), вы сможете спланировать развертывание Azure Stack.
@@ -64,7 +64,7 @@ ms.locfileid: "39414595"
 ### <a name="capacity-based-billing"></a>Выставление счетов на основе емкости
 Если вы решили использовать модель выставления счетов на основе емкости, вам нужно приобрести номер SKU плана емкости Azure Stack на основе емкости вашей системы. Для этого необходимо знать число физических ядер в вашей инфраструктуре Azure Stack, чтобы приобрести нужный номер. 
 
-Чтобы использовать модель выставления счетов на основе емкости, для регистрации требуется подписка EA (соглашение Enterprise) Azure. Дело в том, что при регистрации настраивается доступность предложений в Marketplace, для чего требуется подписка Azure. Подписка не требуется для использования Azure Stack.
+Чтобы использовать модель выставления счетов на основе емкости, требуется подписка EA (соглашение Enterprise) Azure для регистрации. Дело в том, что при регистрации настраивается доступность предложений в Marketplace, для чего требуется подписка Azure. Подписка не требуется для использования Azure Stack.
 
 ## <a name="learn-more"></a>Подробнее
 - Дополнительные сведения об использовании, покупке, партнерах и поставщиках оборудования OEM см. на странице продукта [Azure Stack](https://azure.microsoft.com/overview/azure-stack/).

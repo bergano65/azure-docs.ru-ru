@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: mbullwin
-ms.openlocfilehash: e88d38e6d95459cc1c41adecee6b7ece659eac99
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 91b050c4e1ca37c0af208d6df1ce4f8272235294
+ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50957256"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50139777"
 ---
 # <a name="monitor-azure-web-app-performance"></a>Мониторинг производительности веб-приложения Azure
 На [портале Azure](https://portal.azure.com) можно настроить мониторинг производительности [веб-приложений Azure](../app-service/app-service-web-overview.md). [Azure Application Insights](app-insights-overview.md) инструментируют ваше приложение для отправки данных телеметрии о действиях в службу Application Insights, где эти данные хранятся и анализируются. В этой службе диаграммы метрик и инструменты поиска могут использоваться для диагностики неисправностей, улучшения производительности и анализа использования приложения.
@@ -100,9 +100,9 @@ ms.locfileid: "50957256"
 ## <a name="next-steps"></a>Дополнительная информация
 * [Запуск профилировщика в живом приложении](app-insights-profiler.md).
 * [Функции Azure.](https://github.com/christopheranderson/azure-functions-app-insights-sample) Отслеживайте функции Azure с помощью Application Insights.
-* [Включите отправку данных диагностики Azure](../monitoring-and-diagnostics/azure-diagnostics-configure-application-insights.md) в Application Insights.
-* [Отслеживайте метрики состояния службы](../monitoring/monitoring-data-collection.md), чтобы убедиться, что служба доступна и отвечает на запросы.
-* [Получайте уведомления](../monitoring-and-diagnostics/monitoring-overview-alerts.md) при возникновении операционных событий или превышении пороговых значений метрик.
+* [Включите отправку данных диагностики Azure](app-insights-azure-diagnostics.md) в Application Insights.
+* [Отслеживайте метрики состояния службы](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md), чтобы убедиться, что служба доступна и отвечает на запросы.
+* [Получайте уведомления](../monitoring-and-diagnostics/insights-receive-alert-notifications.md) при возникновении операционных событий или превышении пороговых значений метрик.
 * Используйте [расширение Application Insights для приложений JavaScript и веб-страниц](app-insights-javascript.md), чтобы получать данные телеметрии клиентов из браузеров, которые используются для открытия веб-страницы.
 * [Настройте веб-тесты доступности](app-insights-monitor-web-app-availability.md), чтобы получать уведомления о сбоях в работе сайта.
 

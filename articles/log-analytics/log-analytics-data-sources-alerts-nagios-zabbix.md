@@ -15,16 +15,16 @@ ms.workload: infrastructure-services
 ms.date: 04/13/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: eb129ebe6d63396934cbcda509d711cc63a5ee1b
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 469d97385fd86952c2d287e2b5d15d7470a9e34e
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49402946"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51008340"
 ---
 # <a name="collect-alerts-from-nagios-and-zabbix-in-log-analytics-from-log-analytics-agent-for-linux"></a>Сбор оповещений Nagios и Zabbix с помощью агента Log Analytics для Linux в службу Log Analytics 
 [!INCLUDE [log-analytics-agent-note](../../includes/log-analytics-agent-note.md)]
-[Nagios](https://www.nagios.org/) и [Zabbix](http://www.zabbix.com/) — средства мониторинга с открытым исходным кодом. Оповещения от этих средств мониторинга можно собирать в Log Analytics для анализа вместе с [оповещениями из других источников](log-analytics-alerts.md).  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
+[Nagios](https://www.nagios.org/) и [Zabbix](http://www.zabbix.com/) — средства мониторинга с открытым исходным кодом. Оповещения от этих средств мониторинга можно собирать в Log Analytics для анализа вместе с [оповещениями из других источников](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md).  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
  
 ## <a name="prerequisites"></a>Предварительные требования
 Агент Log Analytics для Linux поддерживает сбор оповещений из Nagios до версии 4.2.x и Zabbix до версии 2.x.
@@ -80,7 +80,7 @@ ms.locfileid: "49402946"
 
 
 ## <a name="alert-records"></a>Записи оповещений
-Записи оповещений из Nagios и Zabbix можно получить с помощью [поиска по журналам](log-analytics-log-searches.md) в Log Analytics.
+Записи оповещений из Nagios и Zabbix можно получить с помощью [поиска по журналам](log-analytics-queries.md) в Log Analytics.
 
 ### <a name="nagios-alert-records"></a>Записи оповещений Nagios
 
@@ -118,5 +118,5 @@ ms.locfileid: "49402946"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Ознакомьтесь с дополнительными сведениями об [оповещениях](log-analytics-alerts.md) в Log Analytics.
-* Узнайте больше об [операциях поиска по журналу](log-analytics-log-searches.md) , которые можно применять для анализа данных, собираемых из источников данных и решений. 
+* Ознакомьтесь с дополнительными сведениями об [оповещениях](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md) в Log Analytics.
+* Узнайте больше об [операциях поиска по журналу](log-analytics-queries.md) , которые можно применять для анализа данных, собираемых из источников данных и решений. 

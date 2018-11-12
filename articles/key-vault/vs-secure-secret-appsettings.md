@@ -3,7 +3,7 @@ title: Безопасное хранение секретных параметр
 description: Безопасное хранение таких секретных параметров, как учетные данные Azure или сторонние ключи API, с помощью поставщика Key Vault ASP.NET Core, секрета пользователя или построителей конфигурации .NET 4.7.1
 services: visualstudio
 documentationcenter: ''
-author: cawa
+author: cawaMS
 manager: paulyuk
 editor: ''
 ms.assetid: ''
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/09/2017
 ms.author: cawa
-ms.openlocfilehash: 339d96c8b9a6e149e41a8668e51ba38f8b024d47
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: d1e4177dff3f9ae8c78fb2e22b12e40ff2682c58
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50229952"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51037572"
 ---
 # <a name="securely-save-secret-application-settings-for-a-web-application"></a>Безопасное хранение секретных параметров веб-приложения
 

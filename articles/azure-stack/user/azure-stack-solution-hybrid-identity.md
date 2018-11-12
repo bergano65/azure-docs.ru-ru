@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 09/28/2018
 ms.author: mabrigg
 ms.reviewer: Anjay.Ajodha
-ms.openlocfilehash: 7cea11f448f20ace2dd50454834e60ce3a3c3b70
-ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
+ms.openlocfilehash: e1ace09ba293cf80b2dbbe8f746eb7fd5bc8d7cb
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47584274"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51036399"
 ---
 # <a name="tutorial-configure-hybrid-cloud-identity-for-azure-and-azure-stack-applications"></a>Руководство. Настройка идентификатора гибридного облака для приложений Azure и Azure Stack
 
@@ -74,7 +74,7 @@ ms.locfileid: "47584274"
 Чтобы подключиться к Azure Stack из кода, через API конечных точек Azure Resource Manager получите конечную точку аутентификации и конечную точку Microsoft Graph для Azure Stack, а затем выполните аутентификацию с помощью запросов REST. Образец клиентского приложения можно найти на [GitHub](https://github.com/shriramnat/HybridARMApplication).
 
 >[!Note]
->Если пакет Azure SDK для используемого языка не поддерживает профили API Azure, вы не можете использовать его для работы с Azure Stack. Дополнительные сведения о профилях API Azure см. в статье [Управление профилями версий API](https://docs.microsoft.com/da-dk/azure/azure-stack/user/azure-stack-version-profiles).
+>Если пакет Azure SDK для используемого языка не поддерживает профили API Azure, вы не можете использовать его для работы с Azure Stack. Дополнительные сведения о профилях API Azure см. в статье [Управление профилями версий API](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-version-profiles).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

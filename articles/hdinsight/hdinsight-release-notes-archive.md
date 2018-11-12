@@ -3,18 +3,18 @@ title: Архивные заметки о выпуске Azure HDInsight
 description: Архивные заметки о выпуске и версии Azure HDInsight.
 services: hdinsight
 ms.reviewer: jasonh
-author: jasonwhowell
+author: hrasheed-msft
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 03/20/2018
-ms.author: jasonh
-ms.openlocfilehash: 35fd64f75617fdaa3aaded5f1f7bdcb847733f05
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.author: hrasheed
+ms.openlocfilehash: 5e70a92b4a0de633f88012d756276cef07226c82
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50025656"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51037709"
 ---
 # <a name="archived-release-notes-for-azure-hdinsight"></a>Архивные заметки о выпуске Azure HDInsight
 
@@ -43,7 +43,7 @@ ms.locfileid: "50025656"
 | Название | ОПИСАНИЕ | Затронутая область  | Тип кластера  | 
 | --- | --- | --- | --- | --- |
 | Выпуск Microsoft R Server 9.1 в HDInsight |HDInsight теперь поддерживает подготовку кластеров R Server 9.1 в HDInsight. Дополнительные сведения о выпуске Microsoft R Server 9.1 см. в [этом блоге](https://blogs.technet.microsoft.com/dataplatforminsider/2017/04/19/introducing-microsoft-r-server-9-1-release/). |Service |R Server |
-| HDInsight 3.6 теперь включает в себя более новые версии стека Hadoop|<ul><li>Подробный список обновленных версий см. в разделе [Компоненты Hadoop, доступные в разных версиях HDInsight](hdinsight-component-versioning.md#hadoop-components-available-with-different-hdinsight-versions).</li><li>Список ошибок, исправленных в последних версиях стека Hadoop, см. на странице [Apache Patch Information](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.1/bk_release-notes/content/patch_parent.html) (Сведения об исправлениях Apache).</li><li>Список критических изменений, внесенных после выхода версии HDP 2.6.1 (которая теперь доступна в HDInsight 3.6), см. по адресу [https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.1/bk_release-notes/content/behavior_changes.html](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.1/bk_release-notes/content/behavior_changes.html).</li><li>Список известных проблем в HDP 2.6.1 см. на странице [Known issues](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.1/bk_release-notes/content/known_issues.html) (Известные проблемы).</li></ul> |Service |Все |Недоступно |
+| HDInsight 3.6 теперь включает в себя более новые версии стека Hadoop|<ul><li>Подробный список обновленных версий см. в разделе [Компоненты Hadoop, доступные в разных версиях HDInsight](hdinsight-component-versioning.md#apache-hadoop-components-available-with-different-hdinsight-versions).</li><li>Список ошибок, исправленных в последних версиях стека Hadoop, см. на странице [Apache Patch Information](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.1/bk_release-notes/content/patch_parent.html) (Сведения об исправлениях Apache).</li><li>Список критических изменений, внесенных после выхода версии HDP 2.6.1 (которая теперь доступна в HDInsight 3.6), см. по адресу [https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.1/bk_release-notes/content/behavior_changes.html](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.1/bk_release-notes/content/behavior_changes.html).</li><li>Список известных проблем в HDP 2.6.1 см. на странице [Known issues](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.1/bk_release-notes/content/known_issues.html) (Известные проблемы).</li></ul> |Service |Все |Недоступно |
 | Обновления в кластерах Interactive Hive (предварительная версия) |<ul><li><b>Улучшение компонента.</b> Реализация кэшированного хранилища метаданных, которое уменьшает нагрузку на серверную часть SQL за счет кэширования метаданных, и повышает производительность всех операций с метаданными.  Этот компонент теперь по умолчанию присутствует на всех кластерах Interactive Hive. Дополнительные сведения можно найти по адресу [https://issues.apache.org/jira/browse/HIVE-16520](https://issues.apache.org/jira/browse/HIVE-16520).</li><li><b>Улучшение компонента.</b> Оптимизирована динамическая загрузка разделов. Дополнительные сведения можно найти по адресу [https://issues.apache.org/jira/browse/HIVE-14204](https://issues.apache.org/jira/browse/HIVE-14204).</li><li><b>Улучшение компонента.</b> Оптимизация конфигурации для HDInsight на платформе Linux.</li><li><b>Исправление ошибки.</b> `CredentialProviderFactory$getProviders` не является потокобезопасным. Теперь эта проблема решена. Дополнительные сведения можно найти по адресу [https://issues.apache.org/jira/browse/HADOOP-14195](https://issues.apache.org/jira/browse/HADOOP-14195).</li><li><b>Исправление ошибки.</b> Высокий коэффициент загрузки ЦП при использовании API `liststatus` драйвера WASB, что приводило к снижению производительности ATS. Теперь эта проблема решена. Дополнительные сведения можно найти по адресу [https://github.com/Azure/azure-storage-java/pull/154](https://github.com/Azure/azure-storage-java/pull/154).</li></ul> |Service |Interactive Hive (предварительная версия) |
 | Обновления в кластерах Hadoop |Повышена надежность операции задания Templeton. Дополнительные сведения можно найти по адресу [https://issues.apache.org/jira/browse/HIVE-15947](https://issues.apache.org/jira/browse/HIVE-15947). |Service |Hadoop |
 | Обновления YARN | Теперь HDInsight создает базу данных Ambari размером 250 ГБ (без увеличения стоимости), что дает пользователям дополнительные преимущества. Это изменение призвано предотвратить заполнение ATS и повысить производительность. |Service |Все |

@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 09/24/2018
 ms.author: cshoe
-ms.openlocfilehash: 5e529953d06c37f382bdd5e65c23fe16d9928008
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: 9b2539d94c645f71b596e53429e6e0d8cc46b9ad
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50250909"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51016749"
 ---
 # <a name="azure-functions-triggers-and-bindings-concepts"></a>Основные понятия триггеров и привязок в Функциях Azure
 
@@ -183,7 +183,7 @@ function generateRandomId() {
 В **Visual Studio 2017** вы можете установить пакеты, выполнив в консоли диспетчера пакетов команду [Install-Package](https://docs.microsoft.com/nuget/tools/ps-ref-install-package), как показано в следующем примере:
 
 ```powershell
-Install-Package Microsoft.Azure.WebJobs.ServiceBus --Version <target_version>
+Install-Package Microsoft.Azure.WebJobs.Extensions.ServiceBus -Version <target_version>
 ```
 
 Имя пакета, которое нужно указать для конкретной привязки, предоставляется в справочной статье по этой привязке. Например, вы можете ознакомиться с [разделом о пакетах в справочной статье о привязках Служебной шины](functions-bindings-service-bus.md#packages---functions-1x).
@@ -195,7 +195,7 @@ Install-Package Microsoft.Azure.WebJobs.ServiceBus --Version <target_version>
 В **Visual Studio Code** пакеты можно установить из командной строки .NET CLI, используя команду [dotnet add package](https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package), как показано в следующем примере.
 
 ```terminal
-dotnet add package Microsoft.Azure.WebJobs.ServiceBus --version <target_version>
+dotnet add package Microsoft.Azure.WebJobs.Extensions.ServiceBus --version <target_version>
 ```
 
 Интерфейс .NET Core CLI можно использовать только при разработке в среде "Функции Azure" версии 2.х.

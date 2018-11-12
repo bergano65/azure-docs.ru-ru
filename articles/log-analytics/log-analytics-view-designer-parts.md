@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: 31ee14369cc3f1c03d13c59e1239aa567bce3552
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: f3c24dbc0f5bb4d5b595799da4f1212b26f8c02a
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50419781"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51016766"
 ---
 # <a name="reference-guide-to-view-designer-visualization-parts-in-log-analytics"></a>Справочное руководство по элементам визуализации конструктора представлений в Log Analytics
 С помощью конструктора представлений в Azure Log Analytics можно создавать пользовательские представления на портале Azure, содержащие различные визуализации данных из рабочей области Log Analytics. В этой статье содержится справка по параметрам элементов визуализации, доступных в пользовательских представлениях.
@@ -363,4 +363,4 @@ ms.locfileid: "50419781"
 | Цвет |Цвет, определяющий пороговое значение. |
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Узнайте больше о [поиске по журналу](log-analytics-log-searches.md) для поддержки запросов в элементах визуализации.
+* Узнайте больше о [поиске по журналу](log-analytics-queries.md) для поддержки запросов в элементах визуализации.

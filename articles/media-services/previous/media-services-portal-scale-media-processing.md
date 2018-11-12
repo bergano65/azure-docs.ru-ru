@@ -4,7 +4,7 @@ description: В этом руководстве описывается, как �
 services: media-services
 documentationcenter: ''
 author: Juliako
-manager: cfowler
+manager: femila
 editor: ''
 ms.assetid: e500f733-68aa-450c-b212-cf717c0d15da
 ms.service: media-services
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/04/2017
+ms.date: 11/05/2018
 ms.author: juliako
-ms.openlocfilehash: 51973916c97282ac93032ab833402d9d1356647e
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 2aabdc503a694de46796b7c3afeedfcdb2f39ca9
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33785783"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51037878"
 ---
 # <a name="change-the-reserved-unit-type"></a>Изменение типа зарезервированных единиц
 > [!div class="op_single_selector"]
@@ -30,10 +30,6 @@ ms.locfileid: "33785783"
 > * [PHP](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
 > 
 > 
-
-> [!NOTE]
-> Чтобы получить последнюю версию пакета SDK для Java и приступить к разработке с помощью Java, перейдите к статье [Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/media-services-java-how-to-use). <br/>
-> Чтобы загрузить последний пакет SDK для PHP для служб мультимедиа, найдите версию 0.5.7 пакета Microsoft/WindowAzure в [репозитории Packagist](https://packagist.org/packages/microsoft/windowsazure#v0.5.7).  
 
 ## <a name="overview"></a>Обзор
 

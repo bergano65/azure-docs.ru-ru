@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: get-started-article
-ms.date: 09/05/2018
+ms.date: 11/05/2018
 ms.author: mabrigg
 ms.reviewer: kivenkat
-ms.openlocfilehash: 7a5c6875f080655e69f549e45ec474958128754f
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: a0dc3405cc0e1deb25c1f2772a5018dad95b87e9
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45575819"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51036603"
 ---
 # <a name="make-a-virtual-machine-image-available-in-azure-stack"></a>Размещение образа виртуальной машины через Azure Stack
 
@@ -30,7 +30,7 @@ ms.locfileid: "45575819"
 
 ## <a name="add-a-vm-image-through-the-portal"></a>Добавление образа виртуальной машины через портал
 
-> [!NOTE]
+> [!NOTE]  
 > С помощью этого метода необходимо создать элемент Marketplace отдельно.
 
 Нужно предоставить возможность ссылаться на образы через URI хранилища BLOB-объектов. Подготовьте образ операционной системы Windows или Linux в формате VHD (не VHDX), а затем отправьте образ в учетную запись хранения в Azure или Azure Stack. Если образ уже отправлен в хранилище BLOB-объектов в Azure или Azure Stack, шаг 1 можно пропустить.
@@ -39,7 +39,7 @@ ms.locfileid: "45575819"
 
    - Azure Stack поддерживает только виртуальные машины первого поколения на дисках фиксированного размера в формате VHD. Фиксированный формат структурирует логический диск в файле линейно, то есть смещение диска X хранится в смещении BLOB-объекта X. Небольшая сноска в конце BLOB-объекта описывает свойства VHD-файла. Чтобы проверить, фиксированного ли размера ваш диск, используйте команду [Get-VHD](https://docs.microsoft.com/powershell/module/hyper-v/get-vhd?view=win10-ps) в PowerShell.  
 
-    > [!IMPORTANT]
+    > [!IMPORTANT]  
     >  Azure Stack не поддерживает динамические диски VHD. Изменение размера динамического диска, подключенного к виртуальной машине, приведет к неисправному состоянию виртуальной машины. Чтобы устранить эту проблему, удалите виртуальную машину, не удаляя ее диск — большой двоичный объект VHD в учетной записи хранения. Затем преобразуйте VHD из динамического диска в диск с фиксированным размером и повторно создайте виртуальную машину.
 
    * Образ эффективнее отправлять в хранилище BLOB-объектов Azure Stack, чем в хранилище BLOB-объектов Azure, так как для размещения образа в репозитории образов Azure Stack требуется меньше времени.
