@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/04/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 38537f3e2884160a99d333f1414d3f45755cd4f9
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: fe2407f67e2ef7a2eb14105db0fef10917f34ba9
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49404619"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51005229"
 ---
 # <a name="vmware-monitoring-preview-solution-in-log-analytics"></a>Решение для мониторинга VMware (предварительная версия) в Log Analytics | Microsoft Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "49404619"
 vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
 #### <a name="prepare-a-linux-server"></a>Подготовка сервера под управлением Linux
-Создайте ВМ с ОС Linux, чтобы получать все данные системных журналов от узлов ESXi. [Агент Log Analytics для Linux](log-analytics-linux-agents.md) — это точка сбора всех данных системных журналов узлов ESXi. Можно использовать несколько узлов ESXi для пересылки журналов на отдельный сервер под управлением Linux, как показано в следующем примере.
+Создайте ВМ с ОС Linux, чтобы получать все данные системных журналов от узлов ESXi. [Агент Log Analytics для Linux](log-analytics-quick-collect-linux-computer.md) — это точка сбора всех данных системных журналов узлов ESXi. Можно использовать несколько узлов ESXi для пересылки журналов на отдельный сервер под управлением Linux, как показано в следующем примере.
 
 [!INCLUDE [log-analytics-agent-note](../../includes/log-analytics-agent-note.md)]  
 
@@ -131,7 +131,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
 Щелкните любую колонку, чтобы открыть область поиска Log Analytics с соответствующими подробными сведениями.
 
-Здесь можно изменить поисковый запрос в соответствии с определенной задачей. Дополнительные сведения о поиске по журналам см. в разделе [Поиск данных по журналам в Log Analytics](log-analytics-log-searches.md).
+Здесь можно изменить поисковый запрос в соответствии с определенной задачей. Дополнительные сведения о поиске по журналам см. в разделе [Поиск данных по журналам в Log Analytics](log-analytics-queries.md).
 
 #### <a name="find-esxi-host-events"></a>Поиск событий узлов ESXi
 Для одного узла ESXi создается несколько журналов на основе выполняющихся процессов. Решение для мониторинга VMware объединяет их, суммируя счетчики событий. Это централизованное представление помогает понять, на каком узле ESXi происходит больше всего событий и какие именно события происходят в вашей среде чаще всего.
@@ -165,7 +165,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 ![DockerDashboardView](./media/log-analytics-vmware/dockerdashboardview.png)
 
 #### <a name="create-alerts-from-queries"></a>Создание оповещений из запросов
-Созданные запросы можно использовать для оповещения при возникновении определенных событий. Подробные сведения о создании оповещений см. в статье [Оповещения в Log Analytics](log-analytics-alerts.md). Примеры оповещающих и других запросов см. в записи блога [Monitor VMware using OMS Log Analytics](https://blogs.technet.microsoft.com/msoms/2016/06/15/monitor-vmware-using-oms-log-analytics) (Мониторинг VMware с помощью OMS Log Analytics).
+Созданные запросы можно использовать для оповещения при возникновении определенных событий. Подробные сведения о создании оповещений см. в статье [Оповещения в Log Analytics](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md). Примеры оповещающих и других запросов см. в записи блога [Monitor VMware using OMS Log Analytics](https://blogs.technet.microsoft.com/msoms/2016/06/15/monitor-vmware-using-oms-log-analytics) (Мониторинг VMware с помощью OMS Log Analytics).
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 ### <a name="what-do-i-need-to-do-on-the-esxi-host-setting-what-impact-will-it-have-on-my-current-environment"></a>Что нужно настраивать для узла ESXi? Какое влияние это окажет на мою текущую среду?
@@ -206,6 +206,6 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
     d. Если файл не существует или настройки пользователя и группы неправильны, выполните действия по исправлению, приведенные в разделе [Подготовка сервера под управлением Linux](#prepare-a-linux-server).
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Используйте [поиск по журналам в Log Analytics](log-analytics-log-searches.md) для просмотра подробных данных об узле VMware.
+* Используйте [поиск по журналам в Log Analytics](log-analytics-queries.md) для просмотра подробных данных об узле VMware.
 * [Создавайте собственные панели мониторинга](log-analytics-dashboards.md), отображающие данные об узле VMware.
-* [Создавайте оповещения](log-analytics-alerts.md), информирующие о возникновении определенных событий узла VMware.
+* [Создавайте оповещения](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md), информирующие о возникновении определенных событий узла VMware.
