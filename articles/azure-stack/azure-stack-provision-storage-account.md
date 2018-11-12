@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/12/2018
 ms.author: mabrigg
-ms.openlocfilehash: ae6539900e201f0559d998ad2d9be24c39d42e3b
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: 608525a1f06a396c7df7d764f236f33af77dccc6
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44713499"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51235349"
 ---
 # <a name="storage-accounts-in-azure-stack"></a>Учетные записи хранения в Azure Stack
 Учетные записи хранения включают в себя службы BLOB-объектов и таблиц, а также уникальное пространство имен для объектов данных хранилища. По умолчанию данные в учетной записи доступны только владельцу учетной записи хранения.
@@ -34,8 +34,8 @@ ms.locfileid: "44713499"
     ![](media/azure-stack-provision-storage-account/image03.png)
 
 ### <a name="next-steps"></a>Дополнительная информация
-[Использование шаблонов Azure Resource Manager](user/azure-stack-arm-templates.md)
+[Использование шаблонов диспетчера ресурсов Azure](user/azure-stack-arm-templates.md)
 
 [Узнайте об учетных записях хранения Azure](../storage/common/storage-create-storage-account.md)
 
-[Скачайте руководство по проверке согласованного с Azure хранилища Azure Stack](http://aka.ms/azurestacktp1doc)
+[Скачайте руководство по проверке согласованного с Azure хранилища Azure Stack](https://aka.ms/azurestacktp1doc)

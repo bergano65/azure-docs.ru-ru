@@ -14,12 +14,12 @@ ms.tgt_pltfrm: Azure
 ms.workload: na
 ms.date: 08/18/2016
 ms.author: hascipio
-ms.openlocfilehash: 4f86d444a2f2b97fd8605d480db358813bc39fd3
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: ef19380372354b8f34343f9f94ebf6b384996f14
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39714195"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51261563"
 ---
 # <a name="general-prerequisites-for-creating-an-offer-for-the-azure-marketplace"></a>Общие предварительные требования для создания предложения в Azure Marketplace
 Эта статья содержит общие предварительные относящиеся к бизнес-процессу требования, которые необходимы для создания предложения.
@@ -70,7 +70,7 @@ ms.locfileid: "39714195"
 
 ## <a name="sell-from-countries"></a>Допустимые страны продаж
 > [!WARNING]
-> Для продажи своих услуг в Azure Marketplace ваше зарегистрированное юридическое лицо должно быть из одной из утвержденных "стран продаж". Это ограничение связано с выплатами и налогообложением. Мы активно стараемся расширить этот список стран, поэтому следите за новостями. Полный список см. в разделе 1b [политик участия в Azure Marketplace](http://go.microsoft.com/fwlink/?LinkID=526833).
+> Для продажи своих услуг в Azure Marketplace ваше зарегистрированное юридическое лицо должно быть из одной из утвержденных "стран продаж". Это ограничение связано с выплатами и налогообложением. Мы активно стараемся расширить этот список стран, поэтому следите за новостями. Полный список см. в разделе 1b [политик участия в Azure Marketplace](https://go.microsoft.com/fwlink/?LinkID=526833).
 > 
 > 
 

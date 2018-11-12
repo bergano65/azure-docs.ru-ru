@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: cafb3ec2da335165a3b66c18d83930008c6d72e5
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 3f3b20ac21c0a871d3baad50098700b7cf3b3b9c
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33782543"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51235400"
 ---
 # <a name="upload-vhd-file-to-labs-storage-account-using-microsoft-azure-storage-explorer"></a>Загрузка VHD-файла в учетную запись хранения лаборатории с помощью обозревателя хранилищ Microsoft Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "33782543"
 
 1. Получите имя учетной записи хранения лаборатории с помощью портала Azure.
 
-    1. Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+    1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
     
     1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
     

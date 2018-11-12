@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 10/29/2018
 ms.author: ramamill
-ms.openlocfilehash: 4bf9277598c3e56c0429dddcb2204cb1338a33be
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 0e8dbf47c40339c90a0e28c3ef497a8da963e481
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50213259"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51231028"
 ---
 # <a name="manage-the-configuration-server-for-physical-server-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления физических серверов
 
@@ -42,7 +42,7 @@ ms.locfileid: "50213259"
 
 ## <a name="download-the-latest-installation-file"></a>Скачивание последней версии файла установки
 
-Последняя версия файла установки для сервера конфигурации доступна на портале Site Recovery. Также ее можно скачать непосредственно из [Центра загрузки Майкрософт](http://aka.ms/unifiedsetup).
+Последняя версия файла установки для сервера конфигурации доступна на портале Site Recovery. Также ее можно скачать непосредственно из [Центра загрузки Майкрософт](https://aka.ms/unifiedsetup).
 
 1. Войдите на портал Azure и перейдите в хранилище служб восстановления.
 2. Откройте **Инфраструктура Site Recovery** > **Серверы конфигурации** (в разделе VMware и физических компьютеров).

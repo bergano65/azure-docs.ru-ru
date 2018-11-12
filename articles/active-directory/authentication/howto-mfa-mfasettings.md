@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: michmcla
-ms.openlocfilehash: a66a7537632aac2190cd39f13665bcd8d4ed6ce7
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: bae31b245cb83821490564c60f67e88898af06b3
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49114997"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51233292"
 ---
 # <a name="configure-azure-multi-factor-authentication-settings"></a>Настройка параметров Многофакторной идентификации Azure
 
@@ -363,8 +363,8 @@ Azure AD поддерживает федерацию (или единый вхо
 |:--- |:--- |
 | Звонок на телефон |На телефон осуществляется автоматический голосовой вызов. Для проверки подлинности пользователь отвечает на вызов и нажимает кнопку # на клавиатуре телефона. Этот номер телефона не синхронизируется в локальной службе Active Directory. |
 | SMS на телефон |На телефон приходит текстовое сообщение с кодом проверки. Пользователю предлагается ввести код проверки в интерфейсе входа. Этот процесс предусматривает отправку одностороннего текстового сообщения. При использовании двустороннего текстового сообщения пользователь должен отправить ответ с определенным кодом. Двустороннее SMS является устаревшим и не будет поддерживаться после 14 ноября 2018 года. До этого времени пользователи, для которых настроены двусторонние текстовые сообщения, автоматически перейдут на метод проверки подлинности с помощью _телефонного звонка_.|
-| Уведомление в мобильном приложении |Отправляется push-уведомление на телефон или зарегистрированное устройство. Пользователь просматривает уведомление и выбирает **Проверить**, чтобы выполнить проверку. Приложение Microsoft Authenticator доступно для [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071), [Android](http://go.microsoft.com/fwlink/?Linkid=825072) и [iOS](http://go.microsoft.com/fwlink/?Linkid=825073). |
-| Код проверки от мобильного приложения |Приложение Microsoft Authenticator создает код проверки OATH каждые 30 секунд. Пользователь вводит этот код проверки в интерфейсе входа. Приложение Microsoft Authenticator доступно для [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071), [Android](http://go.microsoft.com/fwlink/?Linkid=825072) и [iOS](http://go.microsoft.com/fwlink/?Linkid=825073). |
+| Уведомление в мобильном приложении |Отправляется push-уведомление на телефон или зарегистрированное устройство. Пользователь просматривает уведомление и выбирает **Проверить**, чтобы выполнить проверку. Приложение Microsoft Authenticator доступно для [Windows Phone](https://go.microsoft.com/fwlink/?Linkid=825071), [Android](https://go.microsoft.com/fwlink/?Linkid=825072) и [iOS](https://go.microsoft.com/fwlink/?Linkid=825073). |
+| Код проверки от мобильного приложения |Приложение Microsoft Authenticator создает код проверки OATH каждые 30 секунд. Пользователь вводит этот код проверки в интерфейсе входа. Приложение Microsoft Authenticator доступно для [Windows Phone](https://go.microsoft.com/fwlink/?Linkid=825071), [Android](https://go.microsoft.com/fwlink/?Linkid=825072) и [iOS](https://go.microsoft.com/fwlink/?Linkid=825073). |
 
 ### <a name="enable-and-disable-verification-methods"></a>Включение и отключение способов проверки подлинности
 

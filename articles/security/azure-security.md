@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: ce2b4304ea53be7e9a7be42b8a7fb30f713d85f8
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: f11012c90ab2b82e945fdb67e224783c3f05c6dd
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49405214"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51237559"
 ---
 # <a name="introduction-to-azure-security"></a>Введение в систему безопасности Azure
 ## <a name="overview"></a>Обзор
@@ -62,7 +62,7 @@ Azure — общедоступная облачная платформа, кот
 | [Обязательное обучение безопасности, проверки данных](https://downloads.cloudsecurityalliance.org/star/self-assessment/StandardResponsetoRequestforInformationWindowsAzureSecurityPrivacy.docx) |  [Управление расположением данных](https://www.microsoft.com/en-us/trustcenter/Privacy/Where-your-data-is-located) |  [Common Controls Hub](https://www.microsoft.com/en-us/trustcenter/Common-Controls-Hub) |[Как корпорация Майкрософт управляет расположением данных в службах Azure](http://azuredatacentermap.azurewebsites.net/)|
 | [Выполнение тестов на проникновение](https://downloads.cloudsecurityalliance.org/star/self-assessment/StandardResponsetoRequestforInformationWindowsAzureSecurityPrivacy.docx), [обнаружение вторжений и атак DDoS](https://www.microsoft.com/en-us/trustcenter/Security/ThreatManagement), [аудит и ведение журнала](https://www.microsoft.com/en-us/trustcenter/Security/AuditingAndLogging) | [Предоставление доступа к данным на ваших условиях](https://www.microsoft.com/en-us/trustcenter/Privacy/Who-can-access-your-data-and-on-what-terms) |  [Контрольный список комплексной экспертизы облачных служб](https://www.microsoft.com/en-us/trustcenter/Compliance/Due-Diligence-Checklist) |[Кто в корпорации Майкрософт имеет доступ к вашим данным и на каких условиях](https://www.microsoft.com/en-us/trustcenter/Privacy/Who-can-access-your-data-and-on-what-terms)|
 | [Современный центр обработки данных](https://www.microsoft.com/en-us/cloud-platform/global-datacenters), физическая безопасность, [безопасная сеть](https://docs.microsoft.com/azure/security/security-network-overview) | [Реагирование на запросы правоохранительных органов](https://www.microsoft.com/en-us/trustcenter/Privacy/Responding-to-govt-agency-requests-for-customer-data) |  [Соответствие служб, расположений и отрасли](https://www.microsoft.com/en-us/trustcenter/Compliance/default.aspx) |[Как корпорация Майкрософт защищает данные клиентов в службах Azure](https://www.microsoft.com/en-us/trustcenter/Transparency/default.aspx)|
-|  [Реагирование на инциденты безопасности](http://aka.ms/SecurityResponsepaper), [разделение ответственности](http://aka.ms/sharedresponsibility) |[Строгие стандарты конфиденциальности](https://www.microsoft.com/en-us/TrustCenter/Privacy/We-set-and-adhere-to-stringent-standards) |  | [Проверка сертификации для служб Azure, центр обеспечения прозрачности](https://www.microsoft.com/en-us/trustcenter/Compliance/default.aspx)|
+|  [Реагирование на инциденты безопасности](https://aka.ms/SecurityResponsepaper), [разделение ответственности](https://aka.ms/sharedresponsibility) |[Строгие стандарты конфиденциальности](https://www.microsoft.com/en-us/TrustCenter/Privacy/We-set-and-adhere-to-stringent-standards) |  | [Проверка сертификации для служб Azure, центр обеспечения прозрачности](https://www.microsoft.com/en-us/trustcenter/Compliance/default.aspx)|
 
 
 

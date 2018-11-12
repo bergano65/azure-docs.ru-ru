@@ -12,12 +12,12 @@ ms.date: 09/18/2018
 ms.author: lizross
 ms.reviewer: elkuzmen
 ms.custom: it-pro
-ms.openlocfilehash: 59743df45cf2c7810404d9e6c636790c2855cf74
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: 77c2247281fde4aa2b67388464b386b276fe6437
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50023123"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51233343"
 ---
 # <a name="how-to-add-your-custom-domain-name-using-the-azure-active-directory-portal"></a>Практическое руководство. Добавление имени личного домена с помощью портала Azure Active Directory
 Каждый новый клиент Azure AD получает исходное доменное имя в формате *имя_домена*.onmicrosoft.com. Вы не можете изменить или удалить исходное доменное имя, но можете добавить дополнительные имена, принадлежащие вашей организации. Добавив имена личных доменов, вы сможете создать привычные для пользователей имена пользователей, например *alain@contoso.com*.
@@ -33,7 +33,7 @@ ms.locfileid: "50023123"
     ![Экран портала Azure](media/active-directory-access-create-new-tenant/azure-ad-portal.png)
 
     >[!TIP]
-    > Если вы планируете создать федерацию локальной среды Windows Server AD с Azure AD, при запуске средства Azure AD Connect для синхронизации каталогов необходимо установить флажок **Я планирую настроить этот домен для единого входа с использованием локального каталога Active Directory**. Необходимо также зарегистрировать то же имя домена, выбранное для федерации с локальным каталогом на шаге **Домен Azure AD** мастера. Узнать, как выглядит этот шаг в мастере, можно [здесь](../hybrid/how-to-connect-install-custom.md#verify-the-azure-ad-domain-selected-for-federation). Если у вас нет средства Azure AD Connect, вы можете [скачать его здесь](http://go.microsoft.com/fwlink/?LinkId=615771).
+    > Если вы планируете создать федерацию локальной среды Windows Server AD с Azure AD, при запуске средства Azure AD Connect для синхронизации каталогов необходимо установить флажок **Я планирую настроить этот домен для единого входа с использованием локального каталога Active Directory**. Необходимо также зарегистрировать то же имя домена, выбранное для федерации с локальным каталогом на шаге **Домен Azure AD** мастера. Узнать, как выглядит этот шаг в мастере, можно [здесь](../hybrid/how-to-connect-install-custom.md#verify-the-azure-ad-domain-selected-for-federation). Если у вас нет средства Azure AD Connect, вы можете [скачать его здесь](https://go.microsoft.com/fwlink/?LinkId=615771).
 
 2. Создайте новый каталог, выполнив действия из [этого раздела](active-directory-access-create-new-tenant.md#create-a-new-tenant-for-your-organization).
 

@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 ms.author: haining
 author: haining
 ms.date: 09/24/2018
-ms.openlocfilehash: 9778d348cf49d4066f034931dc350a1f4a608ad2
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: e2b3545c020f41f25f19843eab158cfb1b419164
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48236590"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51253454"
 ---
 # <a name="migrate-to-the-latest-version-of-azure-machine-learning-service"></a>Переход на последнюю версию службы "Машинное обучение Azure" 
 
@@ -38,7 +38,7 @@ ms.locfileid: "48236590"
 |Зарегистрированные изображения|Нет |Повторно создайте в новой рабочей области образ развертывания Docker.|
 |Развернутые веб-службы|Нет |Отсутствует. Они будут продолжать работать в том же виде, в котором они были созданы, <br/>или [разверните их повторно, используя последнюю версию](#services).|
 |Учетные записи для экспериментирования <br/>и управления моделями|Нет |[Создайте рабочую область](#resources) вместо этого.|
-|Интерфейс командной строки и пакет SDK для машинного обучения|Нет |Используйте для последующей работы новые [интерфейс командной строки](reference-azure-machine-learning-cli.md) (CLI) и пакет [SDK](http://aka.ms/aml-sdk).|
+|Интерфейс командной строки и пакет SDK для машинного обучения|Нет |Используйте для последующей работы новые [интерфейс командной строки](reference-azure-machine-learning-cli.md) (CLI) и пакет [SDK](https://aka.ms/aml-sdk).|
 
 
 Дополнительные сведения об [изменениях в этом выпуске](overview-what-happened-to-workbench.md)?
@@ -62,7 +62,7 @@ ms.locfileid: "48236590"
 
 Вместо помещения в рабочую область в облаке проекты в последней версии теперь являются каталогами на локальном компьютере. Ознакомьтесь со [схемой последней архитектуры](concept-azure-machine-learning-architecture.md). 
 
-Чтобы продолжить использовать локальный каталог, содержащий файлы и скрипты, укажите имя каталога в команде Python ["experiment.submit"](http://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py) или с помощью команды интерфейса командной строки "az ml project attach".
+Чтобы продолжить использовать локальный каталог, содержащий файлы и скрипты, укажите имя каталога в команде Python ["experiment.submit"](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py) или с помощью команды интерфейса командной строки "az ml project attach".
 
 Например: 
 ```python

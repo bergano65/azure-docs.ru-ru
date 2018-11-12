@@ -12,12 +12,12 @@ ms.author: anjangsh
 ms.reviewer: ''
 manager: craigg
 ms.date: 08/27/2018
-ms.openlocfilehash: 74bbaeeee390952bf42407a53684bc33a7cfc543
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: ad07b0a9ae2d0c90f63d4f3a842a5d386ac4c59b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50242779"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51249869"
 ---
 # <a name="get-started-with-elastic-database-tools"></a>Начало работы с инструментами эластичных баз данных
 В этом документе описано, как разработать [клиентскую библиотеку эластичной базы данных](sql-database-elastic-database-client-library.md), которая поможет запустить пример приложения. Используя пример приложения, мы создадим простое сегментированное приложение и изучим основные возможности инструментов эластичных баз данных SQL Azure. В этом документе описано, как [управлять сопоставлениями сегментов](sql-database-elastic-scale-shard-map-management.md), [настроить маршрутизацию, зависящую от данных](sql-database-elastic-scale-data-dependent-routing.md), и [создавать многосегментные запросы](sql-database-elastic-scale-multishard-querying.md). Клиентская библиотека доступна для .NET и Java. 
@@ -67,7 +67,7 @@ ms.locfileid: "50242779"
 
 ## <a name="elastic-database-tools-for-net"></a>Инструменты эластичных баз данных для .NET 
 ### <a name="prerequisites"></a>Предварительные требования
-* Visual Studio 2012 или более поздней версии с C#. Загрузите бесплатную версию на странице [Загрузок Visual Studio](http://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
+* Visual Studio 2012 или более поздней версии с C#. Загрузите бесплатную версию на странице [Загрузок Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
 * NuGet 2.7 или более поздней версии. Сведения о получении последней версии см. в разделе [Установка NuGet](http://docs.nuget.org/docs/start-here/installing-nuget).
 
 ### <a name="download-and-run-the-sample-app"></a>Загрузка и запуск примера приложения
@@ -95,13 +95,13 @@ ms.locfileid: "50242779"
 > 
 
 ## <a name="key-pieces-of-the-code-sample"></a>Ключевые фрагменты программного кода демонстрационного приложения
-* **Управление сегментами и сопоставлениями сегментов.** Этот программный код, демонстрирующий, каким образом следует работать с сегментами, диапазонами и сопоставлениями, взят из файла *ShardManagementUtils.cs*. Дополнительные сведения см. в статье [Развертывание баз данных с использованием диспетчера карты сегментов](http://go.microsoft.com/?linkid=9862595).  
+* **Управление сегментами и сопоставлениями сегментов.** Этот программный код, демонстрирующий, каким образом следует работать с сегментами, диапазонами и сопоставлениями, взят из файла *ShardManagementUtils.cs*. Дополнительные сведения см. в статье [Развертывание баз данных с использованием диспетчера карты сегментов](https://go.microsoft.com/?linkid=9862595).  
 
-* **Маршрутизация, зависящая от данных.** Маршрутизация транзакций к необходимому сегменту демонстрируется в файле *DataDependentRoutingSample.cs*. Дополнительные сведения см. в статье [Маршрутизация, зависящая от данных](http://go.microsoft.com/?linkid=9862596). 
+* **Маршрутизация, зависящая от данных.** Маршрутизация транзакций к необходимому сегменту демонстрируется в файле *DataDependentRoutingSample.cs*. Дополнительные сведения см. в статье [Маршрутизация, зависящая от данных](https://go.microsoft.com/?linkid=9862596). 
 
-* **Формирование запросов по нескольким сегментам.** Формирование запросов по сегментам демонстрируется в файле *MultiShardQuerySample.cs*. Дополнительные сведения см. в статье [Многосегментное формирование запросов](http://go.microsoft.com/?linkid=9862597).
+* **Формирование запросов по нескольким сегментам.** Формирование запросов по сегментам демонстрируется в файле *MultiShardQuerySample.cs*. Дополнительные сведения см. в статье [Многосегментное формирование запросов](https://go.microsoft.com/?linkid=9862597).
 
-* **Добавление пустых сегментов.** Итеративное добавление новых пустых сегментов выполняется программным кодом, который приведен в файле *CreateShardSample.cs*. Дополнительные сведения см. в статье [Развертывание баз данных с использованием диспетчера карты сегментов](http://go.microsoft.com/?linkid=9862595).
+* **Добавление пустых сегментов.** Итеративное добавление новых пустых сегментов выполняется программным кодом, который приведен в файле *CreateShardSample.cs*. Дополнительные сведения см. в статье [Развертывание баз данных с использованием диспетчера карты сегментов](https://go.microsoft.com/?linkid=9862595).
 
 ## <a name="other-elastic-scale-operations"></a>Другие операции, относящиеся к эластичному масштабированию
 * **Разбиение имеющегося сегмента.** Возможность разбиения сегментов реализована с помощью инструмента разбиения и объединения. Дополнительные сведения см. в статье [Перемещение данных между масштабируемыми облачными базами данных](sql-database-elastic-scale-overview-split-and-merge.md).
@@ -119,12 +119,12 @@ ms.locfileid: "50242779"
 Дополнительные сведения об инструментах эластичных баз данных см. в приведенных ниже статьях.
 
 * Примеры кода: 
-  * Инструменты эластичных баз данных ([.NET](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-a80d8dc6?SRC=VSIDE), [Java](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-elasticdb-tools%22))
-  * [Elastic DB Tools for Azure SQL - Entity Framework Integration](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-bae904ba?SRC=VSIDE) (Инструменты эластичных баз данных SQL Azure — интеграция с Entity Framework)
+  * Инструменты эластичных баз данных ([.NET](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-a80d8dc6?SRC=VSIDE), [Java](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-elasticdb-tools%22))
+  * [Elastic DB Tools for Azure SQL - Entity Framework Integration](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-bae904ba?SRC=VSIDE) (Инструменты эластичных баз данных SQL Azure — интеграция с Entity Framework)
   * [Эластичность сегментов в Центре сценариев](https://gallery.technet.microsoft.com/scriptcenter/Elastic-Scale-Shard-c9530cbe)
 * Блог: [объявление, касающееся эластичного масштабирования](https://azure.microsoft.com/blog/2014/10/02/introducing-elastic-scale-preview-for-azure-sql-database/)
 * Channel 9: [видеообзор технологии эластичного масштабирования](http://channel9.msdn.com/Shows/Data-Exposed/Azure-SQL-Database-Elastic-Scale)
-* Форум для обсуждений: [форум по базам данных SQL Azure](http://social.msdn.microsoft.com/forums/azure/home?forum=ssdsgetstarted)
+* Форум для обсуждений: [форум по базам данных SQL Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=ssdsgetstarted)
 * Измерение производительности: [Счетчики производительности для диспетчера карты сегментов](sql-database-elastic-database-client-library.md)
 
 <!--Anchors-->

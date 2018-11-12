@@ -14,12 +14,12 @@ ms.topic: get-started-article
 ms.date: 09/28/2018
 ms.author: mabrigg
 ms.reviewer: xiaofmao
-ms.openlocfilehash: d979692ba32c596058d28c88f32e7e5872ab7ef9
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 00fa1a78155e1add547b8b165f52cf3c1fba2dfe
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452332"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51249903"
 ---
 # <a name="manage-storage-capacity-for-azure-stack"></a>Управление емкостью хранилища для Azure Stack 
 
@@ -138,7 +138,7 @@ ms.locfileid: "47452332"
 > Перенос больших двоичных объектов для контейнера является автономной операцией, требующей использования PowerShell. До завершения переноса все большие двоичные объекты для переносимого контейнера остаются в автономном режиме и не могут использоваться. Также не следует обновлять Azure Stack до завершения всех текущих операций миграции.
 
 #### <a name="to-migrate-containers-using-powershell"></a>Перенос контейнеров с помощью PowerShell
-1. Проверьте, [установлена и настроена ли среда Azure PowerShell](http://azure.microsoft.com/documentation/articles/powershell-install-configure/). Дополнительные сведения см. в статье [Использование Azure PowerShell с диспетчером ресурсов Azure](http://go.microsoft.com/fwlink/?LinkId=394767).
+1. Проверьте, [установлена и настроена ли среда Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/). Дополнительные сведения см. в статье [Использование Azure PowerShell с диспетчером ресурсов Azure](https://go.microsoft.com/fwlink/?LinkId=394767).
 2.  Изучите контейнер, чтобы понять, какие данные находятся в общем ресурсе, который планируется перенести. Чтобы определить наиболее подходящие для переноса контейнеры в томе, используйте командлет **Get-AzsStorageContainer**:
 
     ````PowerShell  

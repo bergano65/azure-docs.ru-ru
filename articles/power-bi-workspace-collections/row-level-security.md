@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.author: maghan
-ms.openlocfilehash: ce1e3818edea6e0fdaedd33b6ec0c3214f475340
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 80208c83c96ba78db052017c2baa3bc0db63953f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43048562"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51258856"
 ---
 # <a name="row-level-security-with-power-bi-workspace-collections"></a>Безопасность уровня строк в коллекциях рабочих областей Power BI
 
@@ -35,7 +35,7 @@ ms.locfileid: "43048562"
 
 ### <a name="example"></a>Пример
 
-Далее в этой статье представлен пример настройки безопасности на уровне строк, а затем ее применения во внедренном приложении. В нашем примере используется PBIX-файл с [примером анализа данных о продажах](http://go.microsoft.com/fwlink/?LinkID=780547) .
+Далее в этой статье представлен пример настройки безопасности на уровне строк, а затем ее применения во внедренном приложении. В нашем примере используется PBIX-файл с [примером анализа данных о продажах](https://go.microsoft.com/fwlink/?LinkID=780547) .
 
 ![Пример отчета о продажах](media/row-level-security/scenario-2.png)
 
@@ -87,7 +87,7 @@ ms.locfileid: "43048562"
 1. **Файл** -> **Параметры и настройки** -> **Функции предварительной версии** -> **Включить кроссфильтрацию в обоих направлениях для DirectQuery**;
 2. **Файл** -> **Параметры и настройки** -> **DirectQuery** -> **Разрешить неограниченные меры в режиме DirectQuery**.
 
-Дополнительные сведения о двунаправленной перекрестной фильтрации см. в техническом документе [Bidirectional cross-filtering in SQL Server Analysis Services 2016 and Power BI Desktop](http://download.microsoft.com/download/2/7/8/2782DF95-3E0D-40CD-BFC8-749A2882E109/Bidirectional%20cross-filtering%20in%20Analysis%20Services%202016%20and%20Power%20BI.docx) (Двунаправленная перекрестная фильтрация в службах SQL Server Analysis Services 2016 и Power BI Desktop).
+Дополнительные сведения о двунаправленной перекрестной фильтрации см. в техническом документе [Bidirectional cross-filtering in SQL Server Analysis Services 2016 and Power BI Desktop](https://download.microsoft.com/download/2/7/8/2782DF95-3E0D-40CD-BFC8-749A2882E109/Bidirectional%20cross-filtering%20in%20Analysis%20Services%202016%20and%20Power%20BI.docx) (Двунаправленная перекрестная фильтрация в службах SQL Server Analysis Services 2016 и Power BI Desktop).
 
 Это последнее, что нужно сделать в Power BI Desktop. Но необходимо проделать еще некоторую работу, чтобы правила безопасности на уровне строк, которые мы определили, работали в Power BI Embedded. Пользователи проходят проверку подлинности и авторизацию в приложении, а для предоставления им доступа к определенному отчету Power BI Embedded используются маркеры приложений. В Power BI Embedded нет сведений о том, кем является конкретный пользователь. Для функционирования безопасности на уровне строк потребуется передавать дополнительный контекст в маркере приложения.
 

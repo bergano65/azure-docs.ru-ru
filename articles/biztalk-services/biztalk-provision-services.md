@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: 61776b19ba0ee273b78e3b0a6f610e5701251dd0
-ms.sourcegitcommit: e266df9f97d04acfc4a843770fadfd8edf4fa2b7
+ms.openlocfilehash: fe56b84b881b2afce9da9a7f7dfe4637c3494aa8
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
-ms.locfileid: "26632727"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51261967"
 ---
 # <a name="create-biztalk-services-using-the-azure-portal"></a>Создание служб BizTalk с помощью портала Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "26632727"
 > [!INCLUDE [Use APIs to manage MABS](../../includes/biztalk-services-retirement-azure-classic-portal.md)]
 
 > [!TIP]
-> Для входа на портал Azure требуются учетная запись и подписка Azure. Если учетной записи нет, можно создать бесплатную пробную учетную запись всего за несколько минут. См. страницу [Бесплатная пробная версия Azure](http://go.microsoft.com/fwlink/p/?LinkID=239738).
+> Для входа на портал Azure требуются учетная запись и подписка Azure. Если учетной записи нет, можно создать бесплатную пробную учетную запись всего за несколько минут. См. страницу [Бесплатная пробная версия Azure](https://go.microsoft.com/fwlink/p/?LinkID=239738).
 
 
 ## <a name="CreateService"></a>Создание службы BizTalk
@@ -84,7 +84,7 @@ ms.locfileid: "26632727"
 <br/><br/>
 В учетную запись Azure может входить несколько подписок, и ею могут управлять все пользователи, у которых есть соответствующие права. Например, владелец учетной записи Azure создает подписку с именем <em>BizTalkServiceSubscription</em> и предоставляет администраторам BizTalk в компании (например, ContosoBTSAdmins@live.com) доступ к этой подписке. В этом сценарии администраторы BizTalk входят в Azure с полными правами администратора на все размещенные службы в подписке, в том числе службы BizTalk Azure. Администраторы BizTalk не являются владельцами учетной записи Azure и, следовательно, не имеют доступа к каким-либо данным для выставления счетов.
 <br/><br/>Дополнительные сведения см. в статье 
-<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=267577">Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure</a>.
+<a HREF="https://go.microsoft.com/fwlink/p/?LinkID=267577">Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure</a>.
 </td>
 </tr>
 <tr>
@@ -93,7 +93,7 @@ ms.locfileid: "26632727"
 <br/><br/>
 При создании службы BizTalk можно использовать существующий сервер SQL Server Azure, базу данных SQL Azure или автоматически создать новый сервер или базу данных.
 <br/><br/>
-Масштаб базы данных SQL настраивается автоматически. Обычно для службы BizTalk достаточно масштаба по умолчанию. Изменение масштаба может повлиять на цену. См. статью о <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=234930">стоимости услуг Azure</a>
+Масштаб базы данных SQL настраивается автоматически. Обычно для службы BizTalk достаточно масштаба по умолчанию. Изменение масштаба может повлиять на цену. См. статью о <a HREF="https://go.microsoft.com/fwlink/p/?LinkID=234930">стоимости услуг Azure</a>
 .<br/><br/>
 <strong>Примечания</strong>
 <br/>
@@ -123,7 +123,7 @@ ms.locfileid: "26632727"
 <br/><br/>
 При создании учетной записи хранения автоматически создаются первичный ключ и вторичный ключ. Эти ключи позволяют управлять доступом к учетной записи хранения. Служба BizTalk автоматически использует первичный ключ.
 <br/><br/>
-Дополнительные сведения см. в статье <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=285671">Хранилище</a>.
+Дополнительные сведения см. в статье <a HREF="https://go.microsoft.com/fwlink/p/?LinkID=285671">Хранилище</a>.
 </td>
 </tr>
 
@@ -165,7 +165,7 @@ ms.locfileid: "26632727"
  Дополнительные сведения, в том числе о создании гибридных подключений и управлении ими, см. в статье [Гибридные подключения](integration-hybrid-connection-overview.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
-После создания службы BizTalk ознакомьтесь со статьей [Службы BizTalk: вкладки "Панель мониторинга", "Монитор" и "Масштаб"](biztalk-dashboard-monitor-scale-tabs.md). Служба BizTalk готова для использования в приложениях. Чтобы приступить к созданию приложений, перейдите по ссылке [Службы BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=235197).
+После создания службы BizTalk ознакомьтесь со статьей [Службы BizTalk: вкладки "Панель мониторинга", "Монитор" и "Масштаб"](biztalk-dashboard-monitor-scale-tabs.md). Служба BizTalk готова для использования в приложениях. Чтобы приступить к созданию приложений, перейдите по ссылке [Службы BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=235197).
 
 ## <a name="see-also"></a>См. также
 * [Службы BizTalk: диаграмма выпусков](biztalk-editions-feature-chart.md)<br/>
@@ -173,7 +173,7 @@ ms.locfileid: "26632727"
 * [Службы BizTalk: резервное копирование и восстановление](biztalk-backup-restore.md)<br/>
 * [Службы BizTalk: регулирование](biztalk-throttling-thresholds.md)<br/>
 * [Службы BizTalk: имя и ключ издателя](biztalk-issuer-name-issuer-key.md)<br/>
-* [Как приступить к работе с пакетом SDK для служб BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
+* [Как приступить к работе с пакетом SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
 * [гибридных подключений](integration-hybrid-connection-overview.md)
 
 [NewBizTalkService]: ./media/biztalk-provision-services/WABS_NewBizTalkService.png

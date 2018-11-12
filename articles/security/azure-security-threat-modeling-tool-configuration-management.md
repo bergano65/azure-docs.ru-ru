@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: 07a86345e49081320663d7706310a71a40ace134
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: fe6251f70ae62440bbbefc8c3aa5d92d934d8ba0
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43302113"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51249359"
 ---
 # <a name="security-frame-configuration-management--mitigations"></a>Механизм безопасности. Управление конфигурацией | Устранение угроз 
 | Продукт или служба | Статья |
@@ -210,7 +210,7 @@ HttpContext.Response.AppendHeader("Access-Control-Allow-Origin", "http://example
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [Запись блога по безопасности IE8, часть 5 о комплексной защите](http://blogs.msdn.com/ie/archive/2008/07/02/ie8-security-part-v-comprehensive-protection.aspx), [Список MIME-типов](http://en.wikipedia.org/wiki/Mime_type) |
+| **Справочные материалы**              | [Запись блога по безопасности IE8, часть 5 о комплексной защите](https://blogs.msdn.com/ie/archive/2008/07/02/ie8-security-part-v-comprehensive-protection.aspx), [Список MIME-типов](http://en.wikipedia.org/wiki/Mime_type) |
 | **Действия** | Заголовок X-Content-Type-Options — это HTTP-заголовок, используя который разработчики могут запретить определение типов MIME содержимого. Этот заголовок обеспечивает защиту от атак путем определения типов MIME. Для каждой страницы, на которой может быть содержимое, управляемое пользователем, необходимо использовать HTTP-заголовок X-Content-Type-Options:nosniff. Чтобы включить требуемый заголовок глобально для всех страниц в приложении, выполните одно из следующих действий.|
 
 ### <a name="example"></a>Пример

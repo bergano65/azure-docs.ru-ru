@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: bryanla
-ms.openlocfilehash: 60920aaa62d8472eaca8f929c62ce1c0af08f9a4
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 4b7192b0c406d2c5df42e3bb3e604f26c56c7bd4
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49385640"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51235196"
 ---
 # <a name="get-started-with-key-vault-certificates"></a>Начало работы с сертификатами Key Vault
 Следующие сценарии описывают некоторые основные примеры использования службы управления сертификатами Key Vault, включая дополнительные действия, необходимые для создания первого сертификата в хранилище ключей.
@@ -56,7 +56,7 @@ ms.locfileid: "49385640"
         -   Поставщик  
         -   Учетные данные — учетные данные учетной записи ЦС. Каждый ЦС имеет собственные данные.  
 
-     Дополнительные сведения о создании учетных записей с помощью поставщиков ЦС см. в соответствующей записи [блога Key Vault](http://aka.ms/kvcertsblog).  
+     Дополнительные сведения о создании учетных записей с помощью поставщиков ЦС см. в соответствующей записи [блога Key Vault](https://aka.ms/kvcertsblog).  
 
 **Шаг 3.1** — настройте [контакты сертификатов](/rest/api/keyvault/setcertificatecontacts) для уведомлений. Это контакт для пользователя Key Vault. Key Vault не требует этот шаг.  
 

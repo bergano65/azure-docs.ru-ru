@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: 23e219fa49146158c97f392427eee7c42c347a7a
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: b4b6e91f9b20166f63a4710f42726bf1d4090022
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43307426"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51251565"
 ---
 # <a name="security-frame-authentication--mitigations"></a>Механизм безопасности. Проверка подлинности | Устранение рисков 
 | Продукт или служба | Статья |
@@ -156,7 +156,7 @@ ms.locfileid: "43307426"
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Локальное, SQL Azure |
 | **Атрибуты**              | Версия SQL: MSSQL2012, версия SQL: 12 |
-| **Справочные материалы**              | [Рекомендации по обеспечению безопасности автономных баз данных](http://msdn.microsoft.com/library/ff929055.aspx) |
+| **Справочные материалы**              | [Рекомендации по обеспечению безопасности автономных баз данных](https://msdn.microsoft.com/library/ff929055.aspx) |
 | **Действия** | Отсутствие принудительной политики паролей может увеличить вероятность установки слабых учетных данных в автономной базе данных. Используйте проверку подлинности Windows. |
 
 ## <a id="authn-sas-tokens"></a>Используйте учетные данные проверки подлинности на уровне отдельного устройства с помощью маркеров SaS

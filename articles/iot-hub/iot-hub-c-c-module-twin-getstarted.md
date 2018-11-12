@@ -8,12 +8,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 06/25/2018
 ms.author: menchi
-ms.openlocfilehash: 94c7bd50b9c331370aaac802e0a453c5cdd8b7c1
-ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
+ms.openlocfilehash: 80d96bcb6b6073987f07ed6954f25023ab1133a4
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42145190"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51247523"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-c-backend-and-c-device"></a>Приступая к работе с удостоверением Центра Интернета вещей и двойником модуля с использованием серверной части и устройства C
 
@@ -31,7 +31,7 @@ ms.locfileid: "42145190"
 
 Для работы с этим учебником требуется:
 
-* Активная учетная запись Azure. (Если ее нет, всего за несколько минут можно создать [бесплатную учетную запись](http://azure.microsoft.com/pricing/free-trial/).)
+* Активная учетная запись Azure. (Если ее нет, всего за несколько минут можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).)
 * Центр Интернета вещей.
 * Последняя версия [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c).
 

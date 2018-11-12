@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/15/2018
 ms.author: magattus
-ms.openlocfilehash: d4ae0c4d5924fab8fcdaf1b4da5c8183a3a5fd0f
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 19f928d854618a5e29841dc45d7846faf7fb83b4
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49092479"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51253131"
 ---
 # <a name="manage-expiration-of-web-content-in-azure-cdn"></a>Управление сроком действия веб-содержимого в Azure CDN
 > [!div class="op_single_selector"]
@@ -109,7 +109,7 @@ ms.locfileid: "49092479"
 Чтобы использовать атрибут **cacheControlMaxAge**, присвойте атрибуту **cacheControlMode** значение `UseMaxAge`. Этот параметр добавляет HTTP-заголовок и директиву (`Cache-Control: max-age=<nnn>`) в ответ. У значения интервала времени для атрибута **cacheControlMaxAge** следующий формат: `<days>.<hours>:<min>:<sec>`. Это значение преобразуется в секунды и используется в качестве значения директивы `Cache-Control` `max-age`. Дополнительные сведения об элементе `<clientCache>` см. в описании [клиентского кэша <clientCache>](http://www.iis.net/ConfigReference/system.webServer/staticContent/clientCache).  
 
 ## <a name="setting-cache-control-headers-programmatically"></a>Определение заголовков Cache-Control программным способом
-Для приложений ASP.NET можно настроить режим кэширования CDN программным способом, задав свойство **HttpResponse.Cache** для API .NET. Дополнительные сведения о свойстве **HttpResponse.Cache**, см. в описании [свойства HttpResponse.Cache](http://msdn.microsoft.com/library/system.web.httpresponse.cache.aspx) и [класса HttpCachePolicy](http://msdn.microsoft.com/library/system.web.httpcachepolicy.aspx).  
+Для приложений ASP.NET можно настроить режим кэширования CDN программным способом, задав свойство **HttpResponse.Cache** для API .NET. Дополнительные сведения о свойстве **HttpResponse.Cache**, см. в описании [свойства HttpResponse.Cache](https://msdn.microsoft.com/library/system.web.httpresponse.cache.aspx) и [класса HttpCachePolicy](https://msdn.microsoft.com/library/system.web.httpcachepolicy.aspx).  
 
 Чтобы программным способом кэшировать содержимое приложения в ASP.NET, выполните следующие действия.
    1. Убедитесь, что содержимое отмечено как кэшируемое, установив для параметра `HttpCacheability` значение `Public`. 
@@ -132,6 +132,6 @@ Response.Cache.SetLastModified(DateTime.Now);
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Сведения об элементе **clientCache**](http://www.iis.net/ConfigReference/system.webServer/staticContent/clientCache).
-* [Документация по свойству **HttpResponse.Cache**](http://msdn.microsoft.com/library/system.web.httpresponse.cache.aspx). 
-* [Документация по **классу HttpCachePolicy**](http://msdn.microsoft.com/library/system.web.httpcachepolicy.aspx).  
+* [Документация по свойству **HttpResponse.Cache**](https://msdn.microsoft.com/library/system.web.httpresponse.cache.aspx). 
+* [Документация по **классу HttpCachePolicy**](https://msdn.microsoft.com/library/system.web.httpcachepolicy.aspx).  
 * [Дополнительные сведения о кэшировании](cdn-how-caching-works.md)

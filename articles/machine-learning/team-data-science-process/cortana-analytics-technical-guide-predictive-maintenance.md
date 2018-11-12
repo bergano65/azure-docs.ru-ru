@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/15/2017
 ms.author: fboylu
-ms.openlocfilehash: 04e0a694d3e8d978a21417e728feabf32f85299f
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: 28900c39e658a2a8c66b2ded6f2d70b50bf17e80
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49394601"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51231527"
 ---
 # <a name="technical-guide-to-the-cortana-intelligence-solution-template-for-predictive-maintenance-in-aerospace-and-other-businesses"></a>Техническое руководство по шаблону решения Cortana Intelligence для прогнозируемого обслуживания в аэрокосмических и других компаниях
 
@@ -39,7 +39,7 @@ ms.locfileid: "49394601"
 - Демонстрация изменения шаблона решения.  
 
 > [!TIP]
-> Можно скачать и распечатать [PDF-файл с этой статьей](http://download.microsoft.com/download/F/4/D/F4D7D208-D080-42ED-8813-6030D23329E9/cortana-analytics-technical-guide-predictive-maintenance.pdf).
+> Можно скачать и распечатать [PDF-файл с этой статьей](https://download.microsoft.com/download/F/4/D/F4D7D208-D080-42ED-8813-6030D23329E9/cortana-analytics-technical-guide-predictive-maintenance.pdf).
 > 
 > 
 
@@ -47,7 +47,7 @@ ms.locfileid: "49394601"
 ![Архитектура прогнозируемого обслуживания](./media/cortana-analytics-technical-guide-predictive-maintenance/predictive-maintenance-architecture.png)
 
 При развертывании решения активируются различные службы Azure в Cortana Analytics Suite (в том числе концентратор событий, Stream Analytics, HDInsight, фабрика данных и служба "Машинное обучение"). Схема архитектуры демонстрирует создание шаблона решения для прогнозируемого обслуживания в аэрокосмических компаниях. Вы можете изучить эти службы на портале Azure. Для этого следует щелкнуть их на схеме шаблона решения, созданной с помощью развертывания решения. Исключением является служба HDInsight, которая подготавливается по требованию, когда после выполнения связанные действия конвейера удаляются.
-Скачайте [полноразмерную схему](http://download.microsoft.com/download/1/9/B/19B815F0-D1B0-4F67-AED3-A40544225FD1/ca-topologies-maintenance-prediction.png).
+Скачайте [полноразмерную схему](https://download.microsoft.com/download/1/9/B/19B815F0-D1B0-4F67-AED3-A40544225FD1/ca-topologies-maintenance-prediction.png).
 
 В следующих разделах описаны компоненты решения.
 
@@ -67,7 +67,7 @@ ms.locfileid: "49394601"
 Используйте [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/), чтобы обеспечить аналитику в режиме, близком к реальному времени, для входного потока из службы [концентратора событий Azure](#azure-event-hub). Затем опубликуйте результаты на панели мониторинга [Power BI](https://powerbi.microsoft.com), а также заархивируйте все необработанные входящие события и сохраните их в службе [хранилища Azure](https://azure.microsoft.com/services/storage/) для последующей обработки службой [фабрики данных Azure](https://azure.microsoft.com/documentation/services/data-factory/).
 
 ### <a name="hdinsight-custom-aggregation"></a>Пользовательская агрегация HD Insight
-Запустите сценарии [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) (оркестрация с помощью фабрики данных Azure) с помощью HDInsight, чтобы предоставить сводные данные необработанных событий, которые были заархивированы с помощью службы Azure Stream Analytics.
+Запустите сценарии [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) (оркестрация с помощью фабрики данных Azure) с помощью HDInsight, чтобы предоставить сводные данные необработанных событий, которые были заархивированы с помощью службы Azure Stream Analytics.
 
 ### <a name="azure-machine-learning"></a>Машинное обучение Azure
 С помощью [службы "Машинное обучение Azure"](https://azure.microsoft.com/services/machine-learning/) (оркестрация с помощью фабрики данных Azure) создайте прогнозы на оставшийся период эксплуатации (RUL) конкретного двигателя самолета с учетом полученных входных данных. 
@@ -122,22 +122,22 @@ ms.locfileid: "49394601"
 
 ![Фабрика данных Azure](./media/cortana-analytics-technical-guide-predictive-maintenance/azure-data-factory.png)
 
-Два конвейера этой фабрики содержат сценарии [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx), которые используются для секционирования и агрегирования данных. Если указано, тогда сценарии находятся в учетной записи [хранения Azure](https://azure.microsoft.com/services/storage/), созданной во время установки. Их расположение: maintenancesascript\\\\script\\\\hive\\\\ (или https://[имя вашего решения].blob.core.windows.net/maintenancesascript).
+Два конвейера этой фабрики содержат сценарии [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx), которые используются для секционирования и агрегирования данных. Если указано, тогда сценарии находятся в учетной записи [хранения Azure](https://azure.microsoft.com/services/storage/), созданной во время установки. Их расположение: maintenancesascript\\\\script\\\\hive\\\\ (или https://[имя вашего решения].blob.core.windows.net/maintenancesascript).
 
-Аналогично запросам [Azure Stream Analytics](#azure-stream-analytics-1) скрипты [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) имеют неявные сведения о формате входящих данных. Эти запросы нужно изменить в зависимости от вашего формата данных.
+Аналогично запросам [Azure Stream Analytics](#azure-stream-analytics-1) скрипты [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) имеют неявные сведения о формате входящих данных. Эти запросы нужно изменить в зависимости от вашего формата данных.
 
 #### <a name="aggregateflightinfopipeline"></a>*AggregateFlightInfoPipeline*
-Этот [конвейер](../../data-factory/concepts-pipelines-activities.md) содержит одно действие — действие [HDInsightHive](../../data-factory/transform-data-using-hadoop-hive.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет сценарий [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для секционирования данных в [службе хранилища Azure](https://azure.microsoft.com/services/storage/) во время задания [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/).
+Этот [конвейер](../../data-factory/concepts-pipelines-activities.md) содержит одно действие — действие [HDInsightHive](../../data-factory/transform-data-using-hadoop-hive.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет сценарий [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для секционирования данных в [службе хранилища Azure](https://azure.microsoft.com/services/storage/) во время задания [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/).
 
-Сценарий [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для этой задачи секционирования — ***AggregateFlightInfo.hql***.
+Сценарий [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для этой задачи секционирования — ***AggregateFlightInfo.hql***.
 
 #### <a name="mlscoringpipeline"></a>*MLScoringPipeline*
 Этот [конвейер](../../data-factory/concepts-pipelines-activities.md) содержит несколько действий, и его конечным результатом является оцененный прогноз из эксперимента [Машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/), связанного с этим шаблоном решения.
 
 Эти действия включают в себя:
 
-* Действие [HDInsightHive](../../data-factory/transform-data-using-hadoop-hive.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет сценарий [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для агрегирования и проектирования характеристик, необходимых для эксперимента [Машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/).
-  Сценарий [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для этой задачи секционирования — ***PrepareMLInput.hql***.
+* Действие [HDInsightHive](../../data-factory/transform-data-using-hadoop-hive.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет сценарий [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для агрегирования и проектирования характеристик, необходимых для эксперимента [Машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/).
+  Сценарий [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для этой задачи секционирования — ***PrepareMLInput.hql***.
 * Действие [Copy](https://msdn.microsoft.com/library/azure/dn835035.aspx), которое перемещает результаты действия [HDInsightHive](../../data-factory/transform-data-using-hadoop-hive.md) в один большой двоичный объект [службы хранилища Azure](https://azure.microsoft.com/services/storage/), к которому может получить доступ действие [AzureMLBatchScoring](https://msdn.microsoft.com/library/azure/dn894009.aspx).
 * Действие [AzureMLBatchScoring](https://msdn.microsoft.com/library/azure/dn894009.aspx) вызывает эксперимент [Машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/) с результатами, размещенными в одном большом двоичном объекте службы [хранилища Azure](https://azure.microsoft.com/services/storage/).
 
@@ -241,5 +241,5 @@ PBIX-файл, поставляемый с загрузкой генератор
 Следующие два инструмента помогут вам лучше оценить общие затраты, задействованные в выполнении шаблона решения для прогнозируемого обслуживания в аэрокосмических компаниях в вашей подписке:
 
 * [Средство оценки затрат Azure Microsoft (в сети)](https://azure.microsoft.com/pricing/calculator/)
-* [Средство оценки затрат Azure Microsoft (на рабочем столе)](http://www.microsoft.com/download/details.aspx?id=43376)
+* [Средство оценки затрат Azure Microsoft (на рабочем столе)](https://www.microsoft.com/download/details.aspx?id=43376)
 

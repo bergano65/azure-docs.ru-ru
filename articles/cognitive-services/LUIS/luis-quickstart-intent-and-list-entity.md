@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: b4fdf094653a4b16dead6397fe8e1a9f1a0258b9
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 2ce6e7c796faf0c7377a33dabe1e8c05e81fde2f
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47162089"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51280718"
 ---
 # <a name="tutorial-4-extract-exact-text-matches"></a>Руководство 4. Извлечение точных текстовых совпадений
 В этом руководстве вы узнаете, как получить данные, соответствующие предварительно определенному списку элементов. Каждый элемент в списке может содержать список синонимов. Для приложения для управления персоналом можно выбрать сотрудника с помощью нескольких ключевых факторов (имени, адреса электронной почты, номера телефона и федерального ИНН США). 
@@ -41,23 +41,23 @@ ms.locfileid: "47162089"
 > * Опубликовать
 > * Получать намерения и сущности из конечной точки.
 
-[!include[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
+[!INCLUDE[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="use-existing-app"></a>Использование существующего приложения
-Продолжите работу с приложением (**HumanResources**), созданным в соответствии с инструкциями из предыдущего руководства. 
+Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
 
-Если у вас нет приложения HumanResources из предыдущего руководства, сделайте следующее:
+Если у вас нет приложения HumanResources из предыдущего руководства, выполните приведенные ниже шаги.
 
 1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-regex-HumanResources.json).
 
 2. Импортируйте JSON-файл в новое приложение.
 
-3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `list`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в составе URL-адреса, оно не должно содержать символы, недопустимые для URL-адресов. 
+3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `list`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе. 
 
 
 ## <a name="moveemployee-intent"></a>Намерение MoveEmployee
 
-1. [!include[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
+1. [!INCLUDE[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
 2. Выберите **Create new intent**. (Создать намерение). 
 
@@ -84,7 +84,7 @@ ms.locfileid: "47162089"
 
     Помните, что номер и datetimeV2 были добавлены в предыдущем руководстве и будут назначаться автоматически при их обнаружении в любом примере высказывания.
 
-    [!include[Do not use too few utterances](../../../includes/cognitive-services-luis-too-few-example-utterances.md)]  
+    [!INCLUDE[Do not use too few utterances](../../../includes/cognitive-services-luis-too-few-example-utterances.md)]  
 
 ## <a name="employee-list-entity"></a>Сущность списка сотрудников
 Теперь, когда намерение **MoveEmployee** содержит высказывания, интеллектуальная служба распознавания речи должна распознавать сотрудников. 

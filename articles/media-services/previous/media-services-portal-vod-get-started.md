@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/07/2017
 ms.author: juliako
-ms.openlocfilehash: 11babf8a66c38354499ce85fad424fed04c07c15
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 340c4715f8b8cf0b73fc9db9612887f91d1700fb
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33780608"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51234517"
 ---
 # <a name="get-started-with-delivering-content-on-demand-by-using-the-azure-portal"></a>Доставка содержимого по запросу с помощью портала Azure
 [!INCLUDE [media-services-selector-get-started](../../../includes/media-services-selector-get-started.md)]
 
 В этом руководстве описано, как реализовать простую службу для доставки видео по запросу с помощью приложения служб мультимедиа Azure и портала Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом руководстве:
 
 * Учетная запись Azure. Дополнительные сведения см. на странице с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/). 
@@ -123,7 +123,7 @@ ms.locfileid: "33780608"
 > 
 > 
 
-Чтобы обновить для указателя конечную дату срока действия, вы можете использовать [REST API](https://docs.microsoft.com/rest/api/media/operations/locator#update_a_locator) или [.NET API](http://go.microsoft.com/fwlink/?LinkID=533259). 
+Чтобы обновить для указателя конечную дату срока действия, вы можете использовать [REST API](https://docs.microsoft.com/rest/api/media/operations/locator#update_a_locator) или [.NET API](https://go.microsoft.com/fwlink/?LinkID=533259). 
 
 > [!NOTE]
 > Когда вы обновляете срок действия последовательного указателя, URL-адрес изменяется.

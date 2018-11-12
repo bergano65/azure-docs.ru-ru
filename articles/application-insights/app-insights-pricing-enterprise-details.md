@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/21/2018
 ms.author: mbullwin
-ms.openlocfilehash: 65307eab0bf1b5f502f11c14c369826cd12e0966
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.openlocfilehash: b2a93c7d3b512a34ab5d2e4fd020415739466c2e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36311088"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51235298"
 ---
 # <a name="enterprise-plan-details"></a>Сведения о плане "Корпоративный"
 
@@ -26,7 +26,7 @@ ms.locfileid: "36311088"
 
 В плане "Корпоративный" оплачивается каждый узел, и каждому узлу выделяется ежедневная квота данных. При использовании тарифного плана "Корпоративный" плата взимается за данные, полученные свыше предоставленной квоты. Если вы используете Operations Management Suite, следует выбрать план "Корпоративный". 
 
-Текущие цены в валюте вашей страны для выбранного региона вы можете узнать на [странице цен на Application Insights](http://azure.microsoft.com/pricing/details/application-insights/).
+Текущие цены в валюте вашей страны для выбранного региона вы можете узнать на [странице цен на Application Insights](https://azure.microsoft.com/pricing/details/application-insights/).
 
 > [!NOTE]
 > В апреле 2018 года была [представлена](https://azure.microsoft.com/blog/introducing-a-new-way-to-purchase-azure-monitoring-services/) новая модель ценообразования для служб мониторинга Azure. Эта модель использует простой принцип "с оплатой по мере использования" во всем портфеле служб мониторинга. Узнайте больше о [новой модели ценообразования](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs), о том, как [оценить последствия перехода на новую модель](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs#assessing-the-impact-of-the-new-pricing-model), исходя из ваших шаблонов использования, и как [перейти на эту модель](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs#moving-to-the-new-pricing-model).

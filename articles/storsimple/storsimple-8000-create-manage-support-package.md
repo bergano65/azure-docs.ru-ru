@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/09/2018
 ms.author: alkohli
-ms.openlocfilehash: c83caae58e73d6f2d0fe086938e0bbc5cfdf80c4
-ms.sourcegitcommit: 9292e15fc80cc9df3e62731bafdcb0bb98c256e1
+ms.openlocfilehash: dfc2d8d763a1eb64a37af73e03992f2d948a6856
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
-ms.locfileid: "27743584"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51254372"
 ---
 # <a name="create-and-manage-a-support-package-for-storsimple-8000-series"></a>Создание пакета поддержки StorSimple для устройства StorSimple серии 8000 и управление им
 
@@ -93,7 +93,7 @@ ms.locfileid: "27743584"
 #### <a name="to-edit-a-support-package-in-windows-powershell-for-storsimple"></a>Изменение пакета поддержки в Windows PowerShell для StorSimple
 
 1. Создайте пакет поддержки в соответствии с инструкциями в приведенном выше разделе [Создание пакета поддержки в Windows PowerShell для StorSimple](#to-create-a-support-package-in-windows-powershell-for-storsimple).
-2. [Загрузите скрипт](http://gallery.technet.microsoft.com/scriptcenter/Script-to-decrypt-a-a8d1ed65) в локальную систему на клиентском компьютере.
+2. [Загрузите скрипт](https://gallery.technet.microsoft.com/scriptcenter/Script-to-decrypt-a-a8d1ed65) в локальную систему на клиентском компьютере.
 3. Импортируйте модуль Windows PowerShell. Укажите путь к локальной папке, в которую вы скачали скрипт. Для импорта модуля введите команду:
    
     `Import-module <Path to the folder that contains the Windows PowerShell script>`

@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/18/2017
-ms.openlocfilehash: a7d2d1e46847f6126ad2905e9f2d3ce52957dad5
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 8ef67add44428e08a1851a039e7e8c2c747e930d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34833387"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51253862"
 ---
 # <a name="downloadable-infographic-machine-learning-basics-with-algorithm-examples"></a>Загружаемая инфографика по основам машинного обучения с примерами алгоритмов
 Скачайте понятную инфографику по основам машинного обучения и ознакомьтесь с популярными алгоритмами, которые используются для ответа на распространенные вопросы о машинном обучении. Примеры алгоритмов помогут начинающему пользователю машинного обучения понять, какие алгоритмы используются и с какой целью.
@@ -30,7 +30,7 @@ ms.locfileid: "34833387"
 [Студия машинного обучения Azure](https://studio.azureml.net/) включает большую библиотеку алгоритмов для прогнозной аналитики. В инфографике определено четыре популярных семейства алгоритмов: регрессия, обнаружение аномалий, кластеризация и классификация. Кроме того, в ней содержатся ссылки на рабочие примеры в [коллекции решений ИИ Azure](https://gallery.cortanaintelligence.com/). Коллекция содержит примеры экспериментов и руководства, в которых показано, как можно применять эти алгоритмы во многих реальных решениях.
 
 ## <a name="download-the-infographic-with-algorithm-examples"></a>Скачайте инфографику с примерами алгоритмов
-**[Скачать инфографику по основам машинного обучения со ссылками на примеры алгоритмов (PDF)](http://download.microsoft.com/download/0/5/A/05AE6B94-E688-403E-90A5-6035DBE9EEC5/machine-learning-basics-infographic-with-algorithm-examples.pdf)**
+**[Скачать инфографику по основам машинного обучения со ссылками на примеры алгоритмов (PDF)](https://download.microsoft.com/download/0/5/A/05AE6B94-E688-403E-90A5-6035DBE9EEC5/machine-learning-basics-infographic-with-algorithm-examples.pdf)**
 
 ![Инфографика по основам машинного обучения с примерами алгоритмов Популярные алгоритмы Машинного обучения для начинающих.](./media/basics-infographic-with-algorithm-examples/machine-learning-basics-infographic-with-algorithm-examples.png)
 

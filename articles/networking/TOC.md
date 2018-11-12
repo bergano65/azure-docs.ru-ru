@@ -72,7 +72,7 @@
 ## [Создание шаблонов](/azure/azure-resource-manager/resource-group-authoring-templates?toc=%2fazure%2fnetworking%2ftoc.json)
 ## [Стратегия развития Azure](https://azure.microsoft.com/roadmap/?category=networking)
 ## [Шаблоны, созданные сообществом](https://azure.microsoft.com/resources/templates/)
-## [Блог о сетях](http://azure.microsoft.com/blog/topics/networking)
+## [Блог о сетях](https://azure.microsoft.com/blog/topics/networking)
 ## [Цены](https://azure.microsoft.com/pricing)
 ## [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
 ## [Доступность по регионам](https://azure.microsoft.com/regions/services/)

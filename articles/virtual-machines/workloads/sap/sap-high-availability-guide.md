@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 353caf2bca68513a1153fe7b569c85606f72e753
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.openlocfilehash: 55c8d3ff394fcf2df92bc80886bc86d29441e547
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45631044"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51254695"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver"></a>Руководство по обеспечению высокого уровня доступности SAP NetWeaver на виртуальных машинах Azure
 
@@ -220,7 +220,7 @@ ms.locfileid: "45631044"
 
 В модели Azure Resource Manager в одном кластере можно установить несколько экземпляров SAP ASCS/SCS с системными идентификаторами (идентификаторами безопасности). Это возможно за счет поддержки каждым внутренним балансировщиком нагрузки Azure нескольких IP-адресов.
 
-Если вы хотите использовать классическую модель развертывания Azure, то следуйте процедуре, описанной в документе [SSAP NetWeaver on Azure — Clustering SAP ASCS/SCS Instances using Windows Server Failover Cluster on Azure with SIOS DataKeeper](http://go.microsoft.com/fwlink/?LinkId=613056) (SAP NetWeaver в Azure. Кластеризация экземпляров SAP ASCS/SCS с помощью отказоустойчивого кластера Windows Server в Azure и SIOS DataKeeper).
+Если вы хотите использовать классическую модель развертывания Azure, то следуйте процедуре, описанной в документе [SSAP NetWeaver on Azure — Clustering SAP ASCS/SCS Instances using Windows Server Failover Cluster on Azure with SIOS DataKeeper](https://go.microsoft.com/fwlink/?LinkId=613056) (SAP NetWeaver в Azure. Кластеризация экземпляров SAP ASCS/SCS с помощью отказоустойчивого кластера Windows Server в Azure и SIOS DataKeeper).
 
 > [!IMPORTANT]
 > Для установки приложений SAP настоятельно рекомендуется использовать модель развертывания с помощью Azure Resource Manager. Она предлагает преимущества, недоступные в классической модели развертывания. Дополнительные сведения о моделях развертывания Azure см. [здесь][virtual-machines-azure-resource-manager-architecture-benefits-arm].   

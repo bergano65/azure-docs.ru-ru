@@ -9,12 +9,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: mayg
-ms.openlocfilehash: 51d435d9edea5e341127cac89bc96a71c7bc8bb4
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: f96ed8659fc2f49b89199a813f9fab9d5f4af5a1
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50211899"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51232177"
 ---
 # <a name="set-up-disaster-recovery-for-active-directory-and-dns"></a>Настройка аварийного восстановления для Active Directory и DNS
 
@@ -44,7 +44,7 @@ Site Recovery можно использовать для защиты вирту
 Контроллер домена, реплицированный с помощью Site Recovery, используется для [тестовой отработки отказа](#test-failover-considerations). Убедитесь, что он соответствует следующим требованиям.
 
 1. Контроллер домена должен быть сервером глобального каталога.
-2. Контроллер домена должен быть владельцем роли FSMO для ролей, которые необходимы во время тестовой отработки отказа. В противном случае эти роли должны быть [заняты](http://aka.ms/ad_seize_fsmo) после отработки отказа.
+2. Контроллер домена должен быть владельцем роли FSMO для ролей, которые необходимы во время тестовой отработки отказа. В противном случае эти роли должны быть [заняты](https://aka.ms/ad_seize_fsmo) после отработки отказа.
 
 ### <a name="configure-vm-network-settings"></a>Настройка параметров сети виртуальной машины
 Для виртуальной машины, на которой размещен контроллер домена или DNS, в Site Recovery настройте параметры сети в разделе параметров **Вычисления и сеть** реплицированной виртуальной машины. Это гарантирует, что виртуальная машина будет подключена к правильной сети после отработки отказа.
@@ -93,7 +93,7 @@ Site Recovery можно использовать для защиты вирту
 
 
 ### <a name="remove-references-to-other-domain-controllers"></a>Удаление ссылок на другие контроллеры домена
-При запуске тестовой отработки отказа не нужно переносить все контроллеры домена в тестовую сеть. Чтобы удалить ссылки на другие контроллеры домена, которые существуют в рабочей среде, необходимо [занять роли FSMO Active Directory](http://aka.ms/ad_seize_fsmo) и [очистить метаданные](https://technet.microsoft.com/library/cc816907.aspx) для отсутствующих контроллеров домена.
+При запуске тестовой отработки отказа не нужно переносить все контроллеры домена в тестовую сеть. Чтобы удалить ссылки на другие контроллеры домена, которые существуют в рабочей среде, необходимо [занять роли FSMO Active Directory](https://aka.ms/ad_seize_fsmo) и [очистить метаданные](https://technet.microsoft.com/library/cc816907.aspx) для отсутствующих контроллеров домена.
 
 
 ### <a name="issues-caused-by-virtualization-safeguards"></a>Вопросы, связанные с мерами по обеспечению безопасности виртуализации
@@ -180,7 +180,7 @@ Site Recovery можно использовать для защиты вирту
 
     `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\IgnoreGCFailures`
 
-    Дополнительные сведения см. в статье [Disable the requirement that a global catalog server be available to validate user logons](http://support.microsoft.com/kb/241789) (Отключение требования, чтобы сервер глобального каталога был доступен для проверки входов пользователей).
+    Дополнительные сведения см. в статье [Disable the requirement that a global catalog server be available to validate user logons](https://support.microsoft.com/kb/241789) (Отключение требования, чтобы сервер глобального каталога был доступен для проверки входов пользователей).
 
 ### <a name="dns-and-domain-controller-on-different-machines"></a>Контроллер домена и DNS на разных компьютерах
 

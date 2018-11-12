@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 10/05/2018
-ms.openlocfilehash: 3aca6e29f7701a09fa54e778da180a0ead55deb2
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 253a50f50e94888a5d764e51a4ff49cc0c1424c6
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50240738"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51253539"
 ---
 # <a name="deploy-a-split-merge-service-to-move-data-between-sharded-databases"></a>Развертывание службы разбиения и объединения, чтобы перемещать данные между сегментированными базами данных
 
@@ -63,7 +63,7 @@ ms.locfileid: "50240738"
 В целях тестового развертывания для этого учебника потребуется выполнить минимальный набор шагов настройки для запуска службы. Выполнение следующих действий позволяет взаимодействовать со службой только одной машине или учетной записи.
 
 ### <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
-Создайте новый каталог и из этого каталога выполните следующие команды в окне [командной строки разработчика для Visual Studio](http://msdn.microsoft.com/library/ms229859.aspx) :
+Создайте новый каталог и из этого каталога выполните следующие команды в окне [командной строки разработчика для Visual Studio](https://msdn.microsoft.com/library/ms229859.aspx) :
 
    ```
     makecert ^

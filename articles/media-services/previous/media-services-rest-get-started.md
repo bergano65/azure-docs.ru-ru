@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/29/2018
 ms.author: juliako
-ms.openlocfilehash: fbfb52b758089acf65f89c62f716d46d62b0f289
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 794c2cf6c52ead465d35d3d551cfe76e87c06787
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233826"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51237610"
 ---
 # <a name="get-started-with-delivering-content-on-demand-using-rest"></a>Начало работы с доставкой содержимого по запросу с помощью REST
 [!INCLUDE [media-services-selector-get-started](../../../includes/media-services-selector-get-started.md)]
@@ -460,7 +460,7 @@ ms.locfileid: "50233826"
 ### <a name="create-a-job"></a>создать задание;
 Каждое задание может состоять из одной или нескольких задач в зависимости от типа обработки, которую необходимо выполнить. Задания и связанные с ними задачи можно создавать через REST API двумя способами: задачи можно определять прямо в сущностях Job в свойстве навигации задач или через пакетную обработку по протоколу OData. Пакет SDK для служб мультимедиа использует пакетную обработку. Тем не менее для удобства чтения в этой статье задачи определены прямо в тексте примеров кода. Чтобы узнать больше о пакетной обработке, ознакомьтесь с [пакетной обработкой посредством протокола OData](http://www.odata.org/documentation/odata-version-3-0/batch-processing/).
 
-В следующем примере показано, как создать и опубликовать задание с одной задачей, предназначенной для кодирования видео с определенным разрешением и качеством. Следующий раздел документации содержит список всех [предустановок задач](http://msdn.microsoft.com/library/mt269960) , поддерживаемых обработчиком Media Encoder Standard.  
+В следующем примере показано, как создать и опубликовать задание с одной задачей, предназначенной для кодирования видео с определенным разрешением и качеством. Следующий раздел документации содержит список всех [предустановок задач](https://msdn.microsoft.com/library/mt269960) , поддерживаемых обработчиком Media Encoder Standard.  
 
 **HTTP-запрос**
 

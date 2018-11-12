@@ -8,12 +8,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 11/07/2017
 ms.author: revitalb
-ms.openlocfilehash: e19f1a63c478d17154a24c14f6700e2fb07f2467
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: ea69befb1084b08352eb3cf38db0364c5c82c45b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42139937"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51237066"
 ---
 # <a name="security-filters-for-trimming-azure-search-results-using-active-directory-identities"></a>Фильтры безопасности для усечения результатов в службе "Поиск Azure" с использованием удостоверений Active Directory
 
@@ -28,7 +28,7 @@ ms.locfileid: "42139937"
 - отправка запроса на поиск с помощью фильтра идентификаторов групп.
 
 >[!NOTE]
-> Примеры фрагментов когда в этой статье написаны языке C#. Полный исходный код можно найти на сайте [GitHub](http://aka.ms/search-dotnet-howto). 
+> Примеры фрагментов когда в этой статье написаны языке C#. Полный исходный код можно найти на сайте [GitHub](https://aka.ms/search-dotnet-howto). 
 
 ## <a name="prerequisites"></a>Предварительные требования
 

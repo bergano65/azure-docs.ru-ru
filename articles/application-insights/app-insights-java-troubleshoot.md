@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/02/2018
 ms.author: mbullwin
-ms.openlocfilehash: 26899ea62b8caa872b6c99b94976c87f84ba7176
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: b74f40c093ca4cc62330de321ea2b53315b903db
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47091129"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51247370"
 ---
 # <a name="troubleshooting-and-q-and-a-for-application-insights-for-java"></a>Устранение неполадок, а также вопросы и ответы по Application Insights для Java
 Возникли вопросы или проблемы при использовании [Azure Application Insights в Java][java]? Ниже приведен ряд советов.
@@ -43,7 +43,7 @@ ms.locfileid: "47091129"
 * Убедитесь, что используются одинаковые версии ядра Application Insights и аппендеров web, агента и ведения журнала, чтобы исключить проблемы с конфликтом версий.
 
 #### <a name="i-used-to-see-data-but-it-has-stopped"></a>Ранее видимые данные перестали отображаться
-* Проверьте [блог состояний](http://blogs.msdn.com/b/applicationinsights-status/).
+* Проверьте [блог состояний](https://blogs.msdn.com/b/applicationinsights-status/).
 * Вы достигли месячной квоты точек данных? Чтобы выяснить это, см. разделы «Параметры», «Квота» и «Расценки». Если вы достигли квоты, вы можете изменить свой тарифный план или заплатить за дополнительную емкость. См. [таблицу цен](https://azure.microsoft.com/pricing/details/application-insights/).
 * Возможно, вы недавно обновляли SDK? Убедитесь, что в каталоге проекта присутствуют только уникальные JAR-файлы пакета SDK. Не должно существовать двух разных версий одного пакета SDK.
 * Правильный ли ресурс AI вы изучаете? Проверьте параметр iKey в приложении и в ресурсе, в который вы передаете телеметрию. Эти значения должны совпадать.

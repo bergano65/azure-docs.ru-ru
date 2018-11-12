@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/07/2018
 ms.author: jingwang
-ms.openlocfilehash: a2928b202f56674c69e6431201db6d846a9feb9a
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 37e7281af87a8cfc57aae95411eb2d4cce9eef65
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37045761"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51228068"
 ---
 # <a name="copy-data-from-teradata-using-azure-data-factory"></a>Копирование данных из Teradata с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -36,12 +36,12 @@ ms.locfileid: "37045761"
 - Teradata **версии 12 и выше**;
 - копирование данных с использованием **базовой** проверки подлинности или проверки подлинности **Windows**.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать этот соединитель Teradata, вам нужно:
 
 - Настроить локальную среду выполнения интеграции. Дополнительные сведения см. в статье [Создание и настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md).
-- Установить на машине интегрированной среды выполнения [Поставщик данных .NET для Teradata](http://go.microsoft.com/fwlink/?LinkId=278886) версии 14 или более поздней.
+- Установить на машине интегрированной среды выполнения [Поставщик данных .NET для Teradata](https://go.microsoft.com/fwlink/?LinkId=278886) версии 14 или более поздней.
 
 ## <a name="getting-started"></a>Приступая к работе
 

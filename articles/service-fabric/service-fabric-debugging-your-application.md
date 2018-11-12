@@ -15,12 +15,12 @@ ms.custom: vs-azure
 ms.workload: azure-vs
 ms.date: 11/02/2017
 ms.author: vturecek
-ms.openlocfilehash: 30e432b34cc586e1671c9ffdf7b48c3997e9eb23
-ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.openlocfilehash: f16bf06d03511223b54542ad7a389f78d37f3ea9
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42442392"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51235077"
 ---
 # <a name="debug-your-service-fabric-application-by-using-visual-studio"></a>Отладка приложения Service Fabric с помощью Visual Studio
 > [!div class="op_single_selector"]
@@ -68,7 +68,7 @@ ms.locfileid: "42442392"
 Если приложения Service Fabric выполняются в кластере Service Fabric в Azure, они доступны для удаленной отладки непосредственно из Visual Studio.
 
 > [!NOTE]
-> Компоненту требуется [пакет SDK 2.0 для Service Fabric](http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-VS2015) и [пакет SDK Azure для .NET 2.9](https://azure.microsoft.com/downloads/).    
+> Компоненту требуется [пакет SDK 2.0 для Service Fabric](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-VS2015) и [пакет SDK Azure для .NET 2.9](https://azure.microsoft.com/downloads/).    
 > 
 > 
 
@@ -112,7 +112,7 @@ ms.locfileid: "42442392"
 Трассировки можно также передавать из удаленного узла кластера в Visual Studio напрямую. Эта функция позволяет передавать события трассировки ETW, возникающие на узле кластера Service Fabric.
 
 > [!NOTE]
-> Компоненту требуется [пакет SDK 2.0 для Service Fabric](http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-VS2015) и [пакет SDK Azure для .NET 2.9](https://azure.microsoft.com/downloads/).
+> Компоненту требуется [пакет SDK 2.0 для Service Fabric](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-VS2015) и [пакет SDK Azure для .NET 2.9](https://azure.microsoft.com/downloads/).
 > Эта функция поддерживает только кластеры на платформе Azure.
 > 
 > 

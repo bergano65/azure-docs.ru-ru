@@ -2,19 +2,19 @@
 title: Использование Hive и Hadoop для анализа журнала веб-сайта в Azure HDInsight
 description: Узнайте, как использовать Hive с HDInsight для анализа журналов веб-сайтов. Вы будете использовать файл журнала в качестве входных данных для таблицы HDInsight, а также HiveQL для формирования запроса к данным.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/17/2016
-ms.author: jasonh
+ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 47175ed4bc01a43d1f21cbfc84b8a788f11b7338
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: c0a15bacd3aaf97a3caa54ee8bf70a9c4cf54663
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43048030"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51233604"
 ---
 # <a name="use-hive-with-windows-based-hdinsight-to-analyze-logs-from-websites"></a>Использование Hive c HDInsight под управлением Windows для анализа журналов веб-сайтов
 Узнайте, как использовать HiveQL с HDInsight для анализа журналов веб-сайта. Анализ журнала веб-сайта можно использовать для разделения аудитории на основе аналогичной деятельности, классификации посетителей сайта по демографическим данным, а также выявления просмотренного ими содержимого, посещенных сайтов и так далее.
@@ -34,7 +34,7 @@ ms.locfileid: "43048030"
 ## <a name="prerequisites"></a>Предварительные требования
 * Вы должны были подготовить кластер Hadoop в Azure HDInsight. Инструкции см. в статье [Создание кластеров Hadoop под управлением Windows в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md).
 * У вас должен быть установлен Microsoft Excel 2013 или Microsoft Excel 2010.
-* У вас должен быть [Microsoft Hive ODBC драйвер](http://www.microsoft.com/download/details.aspx?id=40886) для импорта данных из Hive в Excel.
+* У вас должен быть [Microsoft Hive ODBC драйвер](https://www.microsoft.com/download/details.aspx?id=40886) для импорта данных из Hive в Excel.
 
 ## <a name="to-run-the-sample"></a>Запуск образца
 1. На начальной панели (если кластер закреплен на ней) [портала Azure](https://portal.azure.com/) щелкните элемент кластера, в котором требуется запустить данный пример.
