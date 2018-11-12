@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/10/2018
 ms.author: mbullwin
-ms.openlocfilehash: fc651b3bc28e59c5c5a195211d811e206eee3e42
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: 71d5c26c8c41c470e188291dea4a4dab2811a67e
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40246621"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50963121"
 ---
 # <a name="feed-power-bi-from-application-insights"></a>Использование данных Application Insights в Power BI
 [Power BI](http://www.powerbi.com/) — это набор бизнес-инструментов для анализа данных и обмена сведениями. На каждом устройстве доступны панели мониторинга с широкими возможностями. Вы можете объединять данные из различных источников, в том числе аналитические запросы из [ Application Insights](app-insights-overview.md).
@@ -41,7 +41,7 @@ ms.locfileid: "40246621"
 Установите [Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/).
 
 ### <a name="export-an-analytics-query"></a>Экспорт запроса аналитики
-1. [Откройте средство аналитики и напишите запрос](app-insights-analytics-tour.md).
+1. [Откройте средство аналитики и напишите запрос](../log-analytics/query-language/get-started-analytics-portal.md).
 2. Протестируйте запрос и откорректируйте его до необходимой степени. Прежде чем экспортировать запрос, убедитесь, что он выполняется в Analytics надлежащим образом.
 3. В меню **Export** (Экспорт) выберите пункт **Power BI (M)**. Сохраните текстовый файл.
    
@@ -109,7 +109,7 @@ ms.locfileid: "40246621"
    * Вместо **https://management.azure.com/subscriptions/...**
    * укажите  **https://api.applicationinsights.io/beta/apps/...**
 3. Наконец, измените учетные данные на базовые и используйте свой ключ API.
-  
+ �
 
 **Существующий сценарий**
  ```
@@ -155,5 +155,5 @@ ms.locfileid: "40246621"
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Дополнительные сведения о Power BI](http://www.powerbi.com/learning/)
-* [Руководство по аналитике](app-insights-analytics-tour.md)
+* [Руководство по аналитике](../log-analytics/query-language/get-started-analytics-portal.md)
 

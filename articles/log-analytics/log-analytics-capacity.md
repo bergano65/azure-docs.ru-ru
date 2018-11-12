@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 0244673d50e22124e8a0678e202004f06b0bca00
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.openlocfilehash: e1f33551c02562bbd8b7cc6a4187f7135a06c60f
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47182626"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50961948"
 ---
 # <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-preview"></a>Планирование ресурсов виртуальной машины Hyper-V с помощью решения "Емкость и производительность" (предварительная версия)
 
@@ -50,8 +50,8 @@ ms.locfileid: "47182626"
 
 | Подключенный источник | Поддержка | ОПИСАНИЕ |
 |---|---|---|
-| [Агенты Windows](log-analytics-windows-agent.md) | Yes | Решение собирает сведения о емкости и производительности из агентов Windows. |
-| [Агенты Linux](log-analytics-linux-agents.md) | Нет     | Решение не собирает сведения о емкости и производительности из прямых агентов Linux.|
+| [Агенты Windows](log-analytics-agent-windows.md) | Yes | Решение собирает сведения о емкости и производительности из агентов Windows. |
+| [Агенты Linux](log-analytics-quick-collect-linux-computer.md) | Нет     | Решение не собирает сведения о емкости и производительности из прямых агентов Linux.|
 | [Группы управления SCOM](log-analytics-om-agents.md) | Yes |Решение собирает сведения о емкости и производительности из агентов в подключенной группе управления SCOM. Прямое подключение агента SCOM к Log Analytics не требуется.|
 | [Учетная запись хранения Azure](log-analytics-azure-storage.md) | Нет  | Служба хранилища Azure не содержит сведения о емкости и производительности.|
 
@@ -64,7 +64,7 @@ ms.locfileid: "47182626"
 
 Чтобы добавить решение "Емкость и производительность" в рабочую область, сделайте следующее:
 
-- Добавьте решение "Емкость и производительность" в рабочую область Log Analytics, используя указания в статье [Добавление решений для управления Azure Log Analytics в рабочую область](log-analytics-add-solutions.md).
+- Добавьте решение "Емкость и производительность" в рабочую область Log Analytics, используя указания в статье [Добавление решений для управления Azure Log Analytics в рабочую область](../monitoring/monitoring-solutions.md).
 
 ## <a name="management-packs"></a>Пакеты управления
 
@@ -138,4 +138,4 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Используйте [поиск по журналам в Log Analytics](log-analytics-log-search.md), чтобы просмотреть подробные сведения о емкости и производительности.
+* Используйте [поиск по журналам в Log Analytics](log-analytics-queries.md), чтобы просмотреть подробные сведения о емкости и производительности.

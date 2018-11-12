@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/14/2017
 ms.author: mbullwin
-ms.openlocfilehash: 6d826702d8302246a225ebfcdf0a5987cf9d2045
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: 46939e15100468eab0d5575546eb6bd58df4aacd
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49167058"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50961081"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 Узнайте о производительности и использовании своей веб-страницы или приложения. Если добавить [Application Insights](app-insights-overview.md) в скрипт страницы, вы узнаете время загрузки страницы и вызовов AJAX, сведения об исключениях браузера, ошибках AJAX и их количестве, а также количество пользователей и сеансов. Все эти данные можно разбить по страницам, версии клиентской ОС и браузера, географическому расположению и другим показателям. Можно также настроить оповещения для определенного количества сбоев или медленной загрузки страниц. Кроме того, вставив вызовы трассировки в код JavaScript, вы можете отслеживать использование различных функций приложения веб-страницы.
@@ -230,7 +230,7 @@ window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&
 ## <a name="usage-tracking"></a>Отслеживание использования
 Хотите узнать, что пользователи делают в вашем приложении?
 
-* [Сведения о средствах для анализа поведения пользователей](app-insights-web-track-usage.md)
+* [Сведения о средствах для анализа поведения пользователей](app-insights-usage-overview.md)
 * [Дополнительные сведения об API пользовательских событий и метрик](app-insights-api-custom-events-metrics.md).
 
 ## <a name="video"></a> Видео
@@ -241,7 +241,7 @@ window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&
 
 
 ## <a name="next"></a>Дальнейшие действия
-* [Отслеживание использования](app-insights-web-track-usage.md)
+* [Отслеживание использования](app-insights-usage-overview.md)
 * [Пользовательские события и метрики](app-insights-api-custom-events-metrics.md)
-* [Сборка, измерение и обучение](app-insights-web-track-usage.md)
+* [Сборка, измерение и обучение](app-insights-usage-overview.md)
 

@@ -3,7 +3,7 @@ title: Приступая к работе с Обозревателем служ
 description: Управление ресурсами службы хранилища Azure с помощью Обозревателя службы хранилища
 services: storage
 documentationcenter: na
-author: cawa
+author: cawaMS
 manager: paulyuk
 editor: ''
 ms.assetid: 1ed0f096-494d-49c4-ab71-f4164ee19ec8
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2017
 ms.author: cawa
-ms.openlocfilehash: 329653e7494d2f993acb462d7d989db07a18f790
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 20aa1824656ee6eb861f3848d969d678b07e9378
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39600869"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51038439"
 ---
 # <a name="get-started-with-storage-explorer"></a>Начало работы с Обозревателем службы хранилища
 

@@ -13,12 +13,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 2edaea1cfb02b250b27c47d58b6c1d1ef6501480
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: df020fc3a4e2f57730dea7329b08e1e46660e610
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50420274"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51037045"
 ---
 # <a name="customize-setup-for-the-azure-ssis-integration-runtime"></a>Пользовательская установка для среды выполнения интеграции Azure–SSIS
 
@@ -141,7 +141,7 @@ ms.locfileid: "50420274"
 
        1. Папка `.NET FRAMEWORK 3.5`, в которой содержится конфигурация пользовательской установки для установки более ранней версии .NET Framework, которая может потребоваться для пользовательских компонентов на каждом узле вашей Azure SSIS IR.
 
-       1. Папка `AAS`, которая содержит файл пользовательских настроек для установки клиентских библиотек на каждом узле Azure-SSIS IR, которые позволят задачам Analysis Services подключаться к экземпляру Azure Analysis Services (AAS) с помощью проверки подлинности субъекта-службы. Прежде всего скачайте последнюю версию клиентских библиотек и средств установки Windows для **MSOLAP (amd64)** и **AMO** (например, `x64_15.0.900.108_SQL_AS_OLEDB.msi` и `x64_15.0.900.108_SQL_AS_AMO.msi` можно получить [здесь](https://docs.microsoft.com/en-us/azure/analysis-services/analysis-services-data-providers)), затем загрузите их в контейнер вместе с `main.cmd`.  
+       1. Папка `AAS`, которая содержит файл пользовательских настроек для установки клиентских библиотек на каждом узле Azure-SSIS IR, которые позволят задачам Analysis Services подключаться к экземпляру Azure Analysis Services (AAS) с помощью проверки подлинности субъекта-службы. Прежде всего скачайте последнюю версию клиентских библиотек и средств установки Windows для **MSOLAP (amd64)** и **AMO** (например, `x64_15.0.900.108_SQL_AS_OLEDB.msi` и `x64_15.0.900.108_SQL_AS_AMO.msi` можно получить [здесь](https://docs.microsoft.com/azure/analysis-services/analysis-services-data-providers)), затем загрузите их в контейнер вместе с `main.cmd`.  
 
        1. Папка `BCP`, которая содержит файл пользовательской установки для установки служебных программ командной строки SQL Server (`MsSqlCmdLnUtils.msi`), включая программу массового копирования (`bcp`), на каждом узле Azure SSIS IR.
 
