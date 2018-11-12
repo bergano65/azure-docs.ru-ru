@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: 41319ba446994da1669e58e33008a943e74ab417
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: bf5cb2851acdcf1f9353e88fc2f2caa3c356804e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36331396"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51230377"
 ---
 # <a name="get-started-with-notification-hubs-for-kindle-apps"></a>Приступая к работе с Центрами уведомлений для приложений Kindle
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -39,9 +39,9 @@ ms.locfileid: "36331396"
 > * Запуск приложения
 > * отправка проверочного уведомления. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-* Скачайте пакет SDK для Android (предполагается, что вы используете Eclipse) с <a href="http://go.microsoft.com/fwlink/?LinkId=389797">сайта Android</a>.
+* Скачайте пакет SDK для Android (предполагается, что вы используете Eclipse) с <a href="https://go.microsoft.com/fwlink/?LinkId=389797">сайта Android</a>.
 * Следуйте указаниям, приведенным в статье <a href="https://developer.amazon.com/docs/fire-tablets/ft-set-up-your-development-environment.html">Настройка среды разработки</a>, для настройки среды разработки для Kindle.
 
 ## <a name="add-a-new-app-to-the-developer-portal"></a>Добавление нового приложения на портал разработчика

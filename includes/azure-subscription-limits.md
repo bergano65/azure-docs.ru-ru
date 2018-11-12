@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/18/2018
 ms.author: jroth
 ms.custom: include file
-ms.openlocfilehash: fdb05f48478d22eea90c3a2c0264e9c4c8640eb0
-ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
+ms.openlocfilehash: fe457acc2b9787526be448880c57448af1226b08
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47454534"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51263909"
 ---
 | Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
@@ -21,8 +21,7 @@ ms.locfileid: "47454534"
 | [Дополнительные администраторы](../articles/billing-add-change-azure-subscription-administrator.md) на подписку |200 |200 |
 | [Учетные записи хранения](../articles/storage/common/storage-create-storage-account.md) на каждую подписку <sup>2</sup> |100 |100 |
 | [Облачные службы](../articles/cloud-services/cloud-services-choose-me.md) на подписку |20 |200 |
-| [Локальные сети](http://msdn.microsoft.com/library/jj157100.aspx) на подписку |10 |500 |
-| Серверов баз данных SQL на подписку |6 |200 |
+| [Локальные сети](https://msdn.microsoft.com/library/jj157100.aspx) на подписку |10 |500 |
 | Серверы DNS на подписку |9 |100 |
 | Зарезервированные IP на подписку |20 |100 |
 | Сертификаты размещенной службы на подписку |199 |199 |

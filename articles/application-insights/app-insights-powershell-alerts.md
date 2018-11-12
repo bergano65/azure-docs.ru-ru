@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/31/2016
 ms.author: mbullwin
-ms.openlocfilehash: e7e0f6747beea43b55ae1a20da44cde3c070cd89
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 678a31b8c07b21e4bb2c43b8e8bc286d66ee4bab
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47091378"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51233751"
 ---
 # <a name="use-powershell-to-set-alerts-in-application-insights"></a>Настройка оповещений в Application Insights с помощью PowerShell
 Вы можете автоматизировать настройку [оповещений](app-insights-alerts.md) в [Application Insights](app-insights-overview.md).
@@ -35,7 +35,7 @@ ms.locfileid: "47091378"
 
 Установите модуль Azure Powershell на компьютере, где требуется выполнять сценарии.
 
-* Установите [установщик веб-платформы Майкрософт (версии 5 или более поздней)](http://www.microsoft.com/web/downloads/platform.aspx).
+* Установите [установщик веб-платформы Майкрософт (версии 5 или более поздней)](https://www.microsoft.com/web/downloads/platform.aspx).
 * Используйте его для установки Microsoft Azure PowerShell.
 
 ## <a name="connect-to-azure"></a>Подключение к Azure

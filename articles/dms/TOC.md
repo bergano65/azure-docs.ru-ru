@@ -1,3 +1,5 @@
+# [Документация по Database Migration Service](index.yml)
+
 # Обзор
 ## [Сведения о службе миграции баз данных](dms-overview.md)
 

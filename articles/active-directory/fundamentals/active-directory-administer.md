@@ -12,12 +12,12 @@ ms.date: 08/23/2018
 ms.author: lizross
 ms.reviewer: jeffsta
 custom: it-pro
-ms.openlocfilehash: eb9cf7c21613ab91cc0b8e41a4454835d18f2c34
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 75fae7a1de6cd9ec2416b11c79c6e8634b92846f
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46297934"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51230824"
 ---
 # <a name="manage-your-azure-active-directory-tenant"></a>Управление клиентом Azure Active Directory
 
@@ -51,7 +51,7 @@ Azure AD предоставляет основные возможности уп
 Если у вас еще нет подписки на облачную службу Майкрософт, используйте одну из приведенных ниже ссылок для регистрации. При регистрации в первой службе каталог Azure AD создается автоматически.
 
 * [Microsoft Azure](https://account.azure.com/organization)
-* [Office 365](http://products.office.com/business/compare-office-365-for-business-plans/)
+* [Office 365](https://products.office.com/business/compare-office-365-for-business-plans/)
 * [Microsoft Intune](https://portal.office.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0%20)
 
 ### <a name="how-to-change-the-default-directory-for-a-subscription"></a>Как изменить для подписки каталог по умолчанию

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: 97953779f1132d89c7ad07abdb4e08c0f476f4b9
-ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
+ms.openlocfilehash: 182a0232b5317b1a375a20bdd4c6467578dc775b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43841819"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51232748"
 ---
 # <a name="security-frame-session-management"></a>Механизм безопасности. Управление сеансами
 | Продукт или служба | Статья |
@@ -157,7 +157,7 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | EnvironmentType: OnPrem |
-| **Справочные материалы**              | [Элемент httpCookies (схема параметров ASP.NET)](http://msdn.microsoft.com/library/ms228262(v=vs.100).aspx), [Свойство HttpCookie.Secure](http://msdn.microsoft.com/library/system.web.httpcookie.secure.aspx) |
+| **Справочные материалы**              | [Элемент httpCookies (схема параметров ASP.NET)](https://msdn.microsoft.com/library/ms228262(v=vs.100).aspx), [Свойство HttpCookie.Secure](https://msdn.microsoft.com/library/system.web.httpcookie.secure.aspx) |
 | **Действия** | Как правило, файлы cookie доступны только в домене, для которого они были заданы. К сожалению, определение "домен" не включает в себя протокол, и поэтому файлы cookie, созданные по протоколу HTTPS, доступны по протоколу HTTP. Атрибут secure указывает браузеру, что файлы cookie доступны только по протоколу HTTPS. Убедитесь, что во всех этих файлах, заданных по протоколу HTTPS, используется атрибут **secure**. Это требование можно выполнить в файле web.config, задав атрибуту requireSSL значение true. Мы рекомендуем использовать этот подход, так как он позволяет применить атрибут **secure** для всех текущих и будущих файлов cookie, не внося дополнительные изменения в код.|
 
 ### <a name="example"></a>Пример

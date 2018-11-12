@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 10/12/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 66585c495dfb46e51120ae3eef2685d634fd9606
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: a3bce69236586bcd0a250c47f1129ac0d94e8b26
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50024976"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51231488"
 ---
 # <a name="azure-ad-connect-accounts-and-permissions"></a>Azure AD Connect: учетные записи и разрешения
 
@@ -241,7 +241,7 @@ Azure AD Connect использует 3 учетные записи, чтобы 
 
 |Раздел |Ссылка|  
 | --- | --- |
-|Загрузка Azure AD Connect | [Загрузка Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771)|
+|Загрузка Azure AD Connect | [Загрузка Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771)|
 |Установка с помощью стандартных параметров | [Экспресс-установка Azure AD Connect](how-to-connect-install-express.md)|
 |Установка с помощью настроенных параметров | [Выборочная установка Azure AD Connect](./how-to-connect-install-custom.md)|
 |Обновление из DirSync | [Azure AD Connect: обновление DirSync](how-to-dirsync-upgrade-get-started.md)|

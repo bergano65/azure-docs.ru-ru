@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: big-compute
 ms.date: 06/01/2017
 ms.author: danlep
-ms.openlocfilehash: 4a6327fcfe6f6e6f3b8b5c6ecbd14b832b4134c5
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: f5b8d3aa69d6a141394395f012e5cc57873cafaf
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421218"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51235944"
 ---
 # <a name="get-started-running-excel-and-soa-workloads-on-an-hpc-pack-cluster-in-azure"></a>Приступая к работе с рабочими нагрузками Excel и SOA в кластере пакета HPC в Azure
 В этой статье показано, как развернуть кластер пакета Microsoft HPC 2012 R2 на виртуальных машинах Azure с помощью шаблона быстрого запуска Azure или сценария развертывания Azure PowerShell. В кластере используются образы виртуальных машин из Azure Marketplace, разработанные для выполнения рабочих нагрузок Microsoft Excel или сервисноориентированной архитектуры (SOA) с помощью пакета HPC. Кластер можно использовать для запуска служб HPC Excel и SOA на локальном клиентском компьютере. Службы Excel HPC включают функцию разгрузки книг и пользовательские функции Excel (или UDF).
@@ -225,7 +225,7 @@ ms.locfileid: "39421218"
         </startup>
     </configuration>
     ```
-1. Настройте клиент для отправки заданий в кластер пакета HPC. Один из вариантов — скачать полный установщик [пакета HPC 2012 R2 с обновлением 3](http://www.microsoft.com/download/details.aspx?id=49922) и установить клиент пакета HPC. Либо скачайте и установите [клиентские служебные программы пакета HPC 2012 R2 с обновлением 3](https://www.microsoft.com/download/details.aspx?id=49923) и соответствующий распространяемый компонент Visual C++ 2010 для своего компьютера (версию [x64](http://www.microsoft.com/download/details.aspx?id=14632) или [x86](https://www.microsoft.com/download/details.aspx?id=5555)).
+1. Настройте клиент для отправки заданий в кластер пакета HPC. Один из вариантов — скачать полный установщик [пакета HPC 2012 R2 с обновлением 3](https://www.microsoft.com/download/details.aspx?id=49922) и установить клиент пакета HPC. Либо скачайте и установите [клиентские служебные программы пакета HPC 2012 R2 с обновлением 3](https://www.microsoft.com/download/details.aspx?id=49923) и соответствующий распространяемый компонент Visual C++ 2010 для своего компьютера (версию [x64](https://www.microsoft.com/download/details.aspx?id=14632) или [x86](https://www.microsoft.com/download/details.aspx?id=5555)).
 1. В этом примере мы используем пример книги Excel — ConvertiblePricing_Complete.xlsb. Его можно скачать [здесь](https://www.microsoft.com/en-us/download/details.aspx?id=2939).
 1. Скопируйте книгу Excel в рабочую папку, например D:\Excel\Run.
 1. Откройте книгу Excel. На вкладке ленты **Разработка** щелкните **Надстройки COM** и убедитесь, что надстройка COM пакета HPC для Excel успешно загружена.
@@ -262,7 +262,7 @@ ms.locfileid: "39421218"
 > 
 > 
 
-После успешного развертывания кластера выполните следующие действия, чтобы запустить встроенные образцы пользовательских функций Excel. Для собственных пользовательских функций Excel см. эти [ресурсы](http://social.technet.microsoft.com/wiki/contents/articles/1198.windows-hpc-and-microsoft-excel-resources-for-building-cluster-ready-workbooks.aspx), чтобы создать XLL-файлы и развернуть их в кластере IaaS.
+После успешного развертывания кластера выполните следующие действия, чтобы запустить встроенные образцы пользовательских функций Excel. Для собственных пользовательских функций Excel см. эти [ресурсы](https://social.technet.microsoft.com/wiki/contents/articles/1198.windows-hpc-and-microsoft-excel-resources-for-building-cluster-ready-workbooks.aspx), чтобы создать XLL-файлы и развернуть их в кластере IaaS.
 
 1. Откройте новую книгу Excel. На вкладке ленты **Разработка** щелкните **Надстройки**. Затем в диалоговом окне нажмите кнопку **Обзор**, перейдите в папку %CCP_HOME%Bin\XLL32 и выберите пример ClusterUDF32.xll. Если ClusterUDF32.xll не существует на клиентском компьютере, то скопируйте его из папки %CCP_HOME%Bin\XLL32 на головном узле.
    
@@ -280,7 +280,7 @@ ms.locfileid: "39421218"
 Чтобы выполнять универсальные приложения SOA в кластере IaaS пакета HPC, сначала используйте один из методов шага 1, чтобы развернуть этот кластер. В этом случае укажите универсальный образ вычислительного узла, так как наличие Excel на вычислительных узлах не требуется. Затем выполните следующие действия.
 
 1. После получения сертификата кластера импортируйте его на клиентский компьютер в папку Cert:\CurrentUser\Root.
-1. Установите [пакет SDK для пакета HPC 2012 R2 с обновлением 3](http://www.microsoft.com/download/details.aspx?id=49921) и [клиентские служебные программы пакета HPC 2012 R2 с обновлением 3](https://www.microsoft.com/download/details.aspx?id=49923). Эти инструменты позволяют разрабатывать и выполнять клиентские приложения SOA.
+1. Установите [пакет SDK для пакета HPC 2012 R2 с обновлением 3](https://www.microsoft.com/download/details.aspx?id=49921) и [клиентские служебные программы пакета HPC 2012 R2 с обновлением 3](https://www.microsoft.com/download/details.aspx?id=49923). Эти инструменты позволяют разрабатывать и выполнять клиентские приложения SOA.
 1. Скачайте [пример кода](https://www.microsoft.com/download/details.aspx?id=41633)HelloWorldR2. Откройте файл HelloWorldR2.sln в Visual Studio 2010 или 2012. (В настоящее время этот пример несовместим с более поздними версиями Visual Studio.)
 1. Сначала выполните сборку проекта EchoService. Затем разверните службу в кластере IaaS так же, как и в локальном кластере. Подробные указания см. в файле Readme.doc примера HelloWordR2. Измените HelloWorldR2 и другие проекты, после чего выполните их сборку, как описано в следующем разделе, чтобы создать клиентские приложения SOA, выполняемые в кластере IaaS Azure.
 
@@ -343,7 +343,7 @@ ms.locfileid: "39421218"
 Клиентское приложение SOA не требует изменений, за исключением замены имени головного узла на полное имя кластера IaaS.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Дополнительные сведения о запуске рабочих нагрузок Excel с помощью пакета HPC см. в [этих ресурсах](http://social.technet.microsoft.com/wiki/contents/articles/1198.windows-hpc-and-microsoft-excel-resources-for-building-cluster-ready-workbooks.aspx).
+* Дополнительные сведения о запуске рабочих нагрузок Excel с помощью пакета HPC см. в [этих ресурсах](https://social.technet.microsoft.com/wiki/contents/articles/1198.windows-hpc-and-microsoft-excel-resources-for-building-cluster-ready-workbooks.aspx).
 * Дополнительные сведения о развертывании служб SOA и управлении ими с помощью пакета HPC см. в статье [Управление службами SOA в пакете Microsoft HPC](https://technet.microsoft.com/library/ff919412.aspx).
 
 <!--Image references-->

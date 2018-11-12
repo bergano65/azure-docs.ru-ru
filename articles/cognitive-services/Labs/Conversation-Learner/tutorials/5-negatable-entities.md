@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 2fd00d53755e44e3a3d86782c40aa6a53ff4d378
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: df6499410da3ae67715ade29dbc3cc4146fc2265
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39171407"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51231997"
 ---
 # <a name="how-to-use-negatable-entities-with-a-conversation-learner-model"></a>Использование отрицаемых сущностей в модели Conversation Learner
 
@@ -23,7 +23,7 @@ ms.locfileid: "39171407"
 
 ## <a name="video"></a>Видео
 
-[![Предварительная версия руководства 5](http://aka.ms/cl-tutorial-05-preview)](http://aka.ms/blis-tutorial-05)
+[![Предварительная версия руководства 5](https://aka.ms/cl-tutorial-05-preview)](https://aka.ms/blis-tutorial-05)
 
 ## <a name="requirements"></a>Требования
 Для работы с этим руководством требуется запущенный бот обучения общего назначения.
@@ -61,13 +61,13 @@ ms.locfileid: "39171407"
 1. Нажмите "Actions" (Действия), затем "New Action" (Создать действие).
 2. В поле "Response" (Ответ) введите "I don't know your name" (Я не знаю, как тебя зовут).
 3. В поле "Disqualifying Entities" (Блокирующие сущности) введите name (имя).
-3. Нажмите кнопку "Создать"
+3. Щелкните Создать. 
 
 Теперь создайте второе действие.
 
 1. Выберите "Actions" (Действия) и "New Action" (Создать действие), чтобы создать второе действие.
 3. В поле "Response" (Ответ) введите "I know your name. It is $name" (Я знаю, как тебя зовут. Твое имя $name).
-4. Нажмите кнопку "Создать"
+4. Щелкните Создать. 
 
 Теперь у вас есть два действия.
 

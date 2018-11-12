@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: 0cf5ace29dabd3a55524fe38403a07e3916ea7d6
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
+ms.openlocfilehash: 7e218cea543b48371647531cf6d62d8c10a07978
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44390898"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51230756"
 ---
 # <a name="copy-data-from-azure-storage-blobs-to-azure-data-lake-storage-gen1"></a>Копирование данных из больших двоичных объектов службы хранилища Azure в Azure Data Lake Storage 1-го поколения
 > [!div class="op_single_selector"]
@@ -26,7 +26,7 @@ ms.locfileid: "44390898"
 >
 >
 
-В Azure Data Lake Storage 1-го поколения доступна программа командной строки [AdlCopy](http://aka.ms/downloadadlcopy) для копирования данных из следующих источников.
+В Azure Data Lake Storage 1-го поколения доступна программа командной строки [AdlCopy](https://aka.ms/downloadadlcopy) для копирования данных из следующих источников.
 
 * Из больших двоичных объектов службы хранилища Azure в Data Lake Storage 1-го поколения. AdlCopy нельзя использовать для копирования данных из Data Lake Storage 1-го поколения в большие двоичные объекты службы хранилища Azure.
 * Выберите учетную запись Azure Data Lake Storage 1-го поколения.
@@ -43,7 +43,7 @@ ms.locfileid: "44390898"
 * **больших двоичных объектов хранилища Azure** с некоторыми данными.
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
 * **Учетная запись Azure Data Lake Analytics (необязательно).** Инструкции по созданию учетной записи Data Lake Store см. в статье [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md).
-* **Средство AdlCopy**. Установите средство AdlCopy, доступное здесь: [http://aka.ms/downloadadlcopy](http://aka.ms/downloadadlcopy).
+* **Средство AdlCopy**. Установите средство AdlCopy, доступное здесь: [http://aka.ms/downloadadlcopy](https://aka.ms/downloadadlcopy).
 
 ## <a name="syntax-of-the-adlcopy-tool"></a>Синтаксис средства AdlCopy
 Используйте следующий синтаксис для работы со средством AdlCopy

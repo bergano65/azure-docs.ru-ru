@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/11/2017
 ms.author: maghan
-ms.openlocfilehash: 32be46fb0c41909ce8a8014b13843970555d366f
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 32be473ab93231805cdae097e3e984a2e74da973
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42143764"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51233088"
 ---
 # <a name="use-powershell-to-create-an-azure-vm-with-a-native-mode-report-server"></a>Использование PowerShell для создания виртуальной машины Azure с помощью сервера отчетов, работающего в собственном режиме
 > [!IMPORTANT] 
@@ -90,7 +90,7 @@ ms.locfileid: "42143764"
 
 Для использования протокола HTTPS на виртуальной машине необходим доверенный SSL-сертификат. В зависимости от сценария можно использовать один из двух следующих способов:
 
-* Допустимый SSL-сертификат, выданный центром сертификации (ЦС) и являющийся доверенным для корпорации Майкрософт. Сертификаты корневого ЦС должны распространяться по программе корневых сертификатов корпорации Майкрософт. Дополнительные сведения об этой программе см. на страницах [Программа корневых SSL-сертификатов Майкрософт (участвующие ЦС) Windows и Windows Phone 8](http://social.technet.microsoft.com/wiki/contents/articles/14215.windows-and-windows-phone-8-ssl-root-certificate-program-member-cas.aspx) и [Общие сведения о программе корневых сертификатов корпорации Майкрософт](http://social.technet.microsoft.com/wiki/contents/articles/3281.introduction-to-the-microsoft-root-certificate-program.aspx).
+* Допустимый SSL-сертификат, выданный центром сертификации (ЦС) и являющийся доверенным для корпорации Майкрософт. Сертификаты корневого ЦС должны распространяться по программе корневых сертификатов корпорации Майкрософт. Дополнительные сведения об этой программе см. на страницах [Программа корневых SSL-сертификатов Майкрософт (участвующие ЦС) Windows и Windows Phone 8](https://social.technet.microsoft.com/wiki/contents/articles/14215.windows-and-windows-phone-8-ssl-root-certificate-program-member-cas.aspx) и [Общие сведения о программе корневых сертификатов корпорации Майкрософт](https://social.technet.microsoft.com/wiki/contents/articles/3281.introduction-to-the-microsoft-root-certificate-program.aspx).
 * Самозаверяющий сертификат. Самозаверяющие сертификаты не рекомендуется использовать для рабочих сред.
 
 ### <a name="to-use-a-certificate-created-by-a-trusted-certificate-authority-ca"></a>Использование сертификата, созданного доверенным центром сертификации (ЦС)

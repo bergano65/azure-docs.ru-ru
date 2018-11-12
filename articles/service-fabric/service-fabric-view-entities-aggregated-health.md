@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/28/2018
 ms.author: oanapl
-ms.openlocfilehash: 2e5d1045edbbc3c71cb0ccff34d2ba327a98a409
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: b6f6653381b5fcf80b9647c64334dfed1a2230bb
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34211863"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51230858"
 ---
 # <a name="view-service-fabric-health-reports"></a>Просмотр отчетов о работоспособности Service Fabric
 В платформе Azure Service Fabric используется [модель работоспособности](service-fabric-health-introduction.md) с сущностями работоспособности, на основе которых компоненты системы и модули наблюдения создают отчеты о состоянии отслеживаемых локальных условий. [Хранилище данных о работоспособности](service-fabric-health-introduction.md#health-store) содержит все данные о работоспособности, с помощью которых можно определить состояние работоспособности сущностей.
@@ -32,7 +32,7 @@ ms.locfileid: "34211863"
 * запросы работоспособности (с помощью PowerShell, API или REST);
 * общие запросы, возвращающие перечень сущностей, среди свойств которых есть работоспособность (с помощью PowerShell, API или REST).
 
-Для демонстрации этих параметров мы будем использовать локальный кластер с пятью узлами и [приложение fabric:/WordCount](http://aka.ms/servicefabric-wordcountapp). Приложение **fabric:/WordCount** содержит две службы по умолчанию, службу с отслеживанием состояния типа `WordCountServiceType` и службу без отслеживания состояния типа `WordCountWebServiceType`. Мной был изменен файл `ApplicationManifest.xml`, чтобы потребовать семь целевых реплик для службы с отслеживанием состояния и одной секции. Так как в кластере только пять узлов, компоненты системы выдадут предупреждение о секции службы, ведь она не соответствует целевому количеству.
+Для демонстрации этих параметров мы будем использовать локальный кластер с пятью узлами и [приложение fabric:/WordCount](https://aka.ms/servicefabric-wordcountapp). Приложение **fabric:/WordCount** содержит две службы по умолчанию, службу с отслеживанием состояния типа `WordCountServiceType` и службу без отслеживания состояния типа `WordCountWebServiceType`. Мной был изменен файл `ApplicationManifest.xml`, чтобы потребовать семь целевых реплик для службы с отслеживанием состояния и одной секции. Так как в кластере только пять узлов, компоненты системы выдадут предупреждение о секции службы, ведь она не соответствует целевому количеству.
 
 ```xml
 <Service Name="WordCountService">

@@ -4,12 +4,16 @@ items:
 - name: Обзор
   items:
   - name: Студия машинного обучения
+    displayName: overview
     href: what-is-ml-studio.md
   - name: Возможности студии машинного обучения
+    displayName: overview
     href: studio-overview-diagram.md
   - name: Основные сведения о студии машинного обучения (инфографика)
+    displayName: algorithm, algorithms
     href: basics-infographic-with-algorithm-examples.md
   - name: Часто задаваемые вопросы
+    displayName: FAQ
     href: faq.md
   - name: Новые возможности
     href: whats-new.md
@@ -17,6 +21,7 @@ items:
 - name: Начало работы
   items:
   - name: Создание первого эксперимента
+    displayName: quickstart
     href: create-experiment.md
   - name: Пошаговое руководство по примеру
     items:
@@ -31,8 +36,10 @@ items:
     - name: 4. Обучение и анализ
       href: walkthrough-4-train-and-evaluate-models.md
     - name: 5. Развертывание веб-службы
+      displayName: publish
       href: walkthrough-5-publish-web-service.md
     - name: 6. Доступ к веб-службе
+      displayName: consume
       href: walkthrough-6-access-web-service.md
   - name: Обработка и анализ данных для начинающих
     items:
@@ -63,6 +70,7 @@ items:
       - name: Развертывание с помощью ARM
         href: deploy-with-resource-manager-template.md
       - name: Просмотр и удаление данных учетной записи Studio
+        displayName: export
         href: export-delete-personal-data-dsr.md
   - name: Получение и интерпретация данных
     items:
@@ -77,6 +85,7 @@ items:
       - name: Из эксперимента
         href: import-data-from-an-experiment.md
       - name: Использование локальной базы данных SQL
+        displayName: on-premises
         href: use-data-from-an-on-premises-sql-server.md
   - name: Разработка моделей
     items:
@@ -87,6 +96,7 @@ items:
       - name: Управление итерациями эксперимента
         href: manage-experiment-iterations.md
       - name: Создание моделей с помощью PowerShell
+        displayName: endpoint, endpoints
         href: create-models-and-endpoints-with-powershell.md
       - name: Выбор алгоритмов
         items:
@@ -103,6 +113,7 @@ items:
         - name: Оценка производительности
           href: evaluate-model-performance.md
         - name: Оптимизация параметров
+          displayName: optimization
           href: algorithm-parameters-optimize.md
         - name: Интерпретация результатов
           href: interpret-model-results.md
@@ -117,20 +128,25 @@ items:
         - name: Выполнение скриптов Python
           href: execute-python-scripts.md
   - name: Ввод модели в эксплуатацию
+    displayName: deploy
     items:
     - name: Обзор
+      displayName: deploy, consume, web service
       href: deploy-consume-web-service-guide.md
     - name: Развертывание моделей
       items:
       - name: Развертывание веб-службы
+        displayName: publish
         href: publish-a-machine-learning-web-service.md
       - name: Принцип работы
         href: model-progression-experiment-to-web-service.md
       - name: Подготовка к развертыванию
         href: convert-training-experiment-to-scoring-experiment.md
       - name: Использование внешних данных
+        displayName: import, export
         href: web-services-that-use-import-export-modules.md
       - name: Развертывание в нескольких регионах
+        displayName: multiple regions
         href: how-to-deploy-to-multiple-regions.md
       - name: Использование параметров веб-службы
         href: web-service-parameters.md
@@ -141,6 +157,7 @@ items:
       - name: Использование портала веб-служб
         href: manage-new-webservice.md
       - name: Управление с помощью интерфейсов API
+        displayName: endpoint, endpoints
         href: manage-web-service-endpoints-using-api-management.md
       - name: Создание конечных точек
         href: create-endpoint.md
@@ -238,9 +255,9 @@ items:
     href: http://stackoverflow.com/questions/tagged/azure-machine-learning
   - name: Видеоролики
     href: https://azure.microsoft.com/resources/videos/index/?services=machine-learning
-ms.openlocfilehash: b7c5cea35e8b1441bc8a08e8d8582141cd430868
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 77caf4b0144b8c7d7a7a48053d55864bfa9ae286
+ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47431531"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51287597"
