@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 09/06/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: f0a9ac1700d635365ebea0c5966489ed3d2d797b
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 1f74538deab38db536bfcdc6d0f703d455039d51
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50420255"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51235910"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect. История выпусков версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -35,7 +35,7 @@ ms.locfileid: "50420255"
 Действия по переходу с Azure AD Connect | Различные методы [обновления предыдущей версии до последней версии](how-to-upgrade-previous-version.md) Azure AD Connect.
 Необходимые разрешения | Разрешения, необходимые для установки обновления, см. в [этом](reference-connect-accounts-permissions.md#upgrade) разделе.
 
-Скачивание | [Скачать Azure AD Connect ](http://go.microsoft.com/fwlink/?LinkId=615771).
+Скачивание | [Скачать Azure AD Connect ](https://go.microsoft.com/fwlink/?LinkId=615771).
 
 ## <a name="12650"></a>1.2.65.0 
 
@@ -48,7 +48,6 @@ ms.locfileid: "50420255"
 
 
 - Изменены функции обратной записи атрибутов для правильной работы размещенной голосовой почты.  В определенных сценариях служба Azure AD перезаписывала атрибут msExchUcVoicemailSettings во время обратной записи значением NULL.  Теперь служба Azure AD не будет очищать локальное значение этого атрибута, если не задано облачное значение.
-- Улучшена обработка измененных правил по умолчанию. Теперь вы получите уведомление, если внесете изменения в правила по умолчанию, и вам будут предложены параметры для восстановления правил по умолчанию. 
 - В мастер Azure AD Connect добавлена диагностика для исследования и выявления проблем с подключением к Azure AD. Эту диагностику можно также выполнять непосредственно в PowerShell с помощью командлета Test-AdSyncAzureServiceConnectivity. 
 - В мастер Azure AD Connect добавлена диагностика для исследования и выявления проблем с подключением к AD. Эту диагностику можно также выполнять непосредственно в PowerShell с помощью функции Start-ConnectivityValidation в модуле PowerShell ADConnectivityTools.  Дополнительные сведения см. в разделе [Что такое модуль PowerShell ADConnectivityTools?](how-to-connect-adconnectivitytools.md)
 - Добавлена предварительная проверка версии схемы AD для гибридного присоединения к Azure Active Directory и обратной записи устройств. 

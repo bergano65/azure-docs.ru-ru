@@ -16,15 +16,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/03/2016
 ms.author: cephalin
-ms.openlocfilehash: 3ec67488b238118067e771baf3dd5124308a84cf
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: b1ae61b5372fa1061448c02e7b5c589a167888c9
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44296199"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51237219"
 ---
 # <a name="troubleshoot-slow-web-app-performance-issues-in-azure-app-service"></a>Устранение причин низкой производительности веб-приложения в службе приложений Azure
-Эта статья поможет устранить причины снижения производительности веб-приложения, размещенного в [службе приложений Azure](http://go.microsoft.com/fwlink/?LinkId=529714).
+Эта статья поможет устранить причины снижения производительности веб-приложения, размещенного в [службе приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714).
 
 Если вам потребуется дополнительная помощь по любому из вопросов, рассматриваемых в статье, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт службы поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Поддержка**.
 

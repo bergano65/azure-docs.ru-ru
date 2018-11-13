@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: integration
 ms.date: 02/24/2017
 ms.author: juliako
-ms.openlocfilehash: 9a69253129cdedc4f5d7e736d5bd8d6a68f95a1e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 01a02296354ebe3d60f0e1fda6a6da8554a265fd
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "22986579"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51239072"
 ---
 # <a name="azure-sdk-for-net-27-and-net-271-release-notes"></a>Заметки о выпуске пакета SDK для Azure для .NET 2.7 и .NET 2.7.1
 ## <a name="overview"></a>Обзор
@@ -28,7 +28,7 @@ ms.locfileid: "22986579"
 
 Пакет Azure SDK 2.7 поддерживается только в Visual Studio 2015 и Visual Studio 2013. [Пакет SDK для Azure 2.6](https://azure.microsoft.com/downloads/) — это последняя поддерживаемая версия пакета SDK для Visual Studio 2012.
 
-Дополнительную информацию об этом выпуске см. в [объявлении о пакете SDK для Azure 2.7](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/) и [объявлении о пакете SDK для Azure 2.7.1](http://go.microsoft.com/fwlink/?LinkId=623850).
+Дополнительную информацию об этом выпуске см. в [объявлении о пакете SDK для Azure 2.7](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/) и [объявлении о пакете SDK для Azure 2.7.1](https://go.microsoft.com/fwlink/?LinkId=623850).
 
 ## <a name="azure-sdk-for-net-27"></a>Пакет SDK для Azure для .NET 2.7
 ### <a name="sign-in-improvements-for-visual-studio-2015"></a>Улучшения операции входа в Visual Studio 2015
@@ -39,11 +39,11 @@ ms.locfileid: "22986579"
 ### <a name="mobile-sdk"></a>Пакет SDK для мобильных приложений
 Обновленные шаблоны **мобильных приложений** , в которых отображается процесс установки и последняя версия [пакета NuGet](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Server/) .
 
-### <a name="service-bus"></a>Служебная шина
+### <a name="service-bus"></a>Служебная шина Azure
 Общие исправления ошибок и улучшения. Сведения об обновлениях и функциях см. в заметках о выпуске последней версии пакета [NuGet для служебной шины](http://www.nuget.org/packages/WindowsAzure.ServiceBus/).
 
 ### <a name="hdinsight-tools"></a>Средства HDInsight
-В этот выпуск включены следующие обновления. Эти обновления работают режиме предварительной версии. Дополнительную информацию см. в [этом блоге](http://go.microsoft.com/fwlink/?LinkId=619108).
+В этот выпуск включены следующие обновления. Эти обновления работают режиме предварительной версии. Дополнительную информацию см. в [этом блоге](https://go.microsoft.com/fwlink/?LinkId=619108).
 
 * Графы Hive для заданий Hive в Tez
 * Полная поддержка Hive DML IntelliSense
@@ -51,8 +51,8 @@ ms.locfileid: "22986579"
 * Шаблоны Storm для служб Azure
 
 #### <a name="breaking-changes"></a>Критические изменения
-* Старый проект **Storm** необходимо обновить, чтобы использовать его с этой версией инструментов. Дополнительную информацию см. в [этом блоге](http://go.microsoft.com/fwlink/?LinkId=619108).
-* Visual Studio Web Express больше не поддерживается. Дополнительную информацию см. в [этом блоге](http://go.microsoft.com/fwlink/?LinkId=619108).
+* Старый проект **Storm** необходимо обновить, чтобы использовать его с этой версией инструментов. Дополнительную информацию см. в [этом блоге](https://go.microsoft.com/fwlink/?LinkId=619108).
+* Visual Studio Web Express больше не поддерживается. Дополнительную информацию см. в [этом блоге](https://go.microsoft.com/fwlink/?LinkId=619108).
 
 ### <a name="azure-app-service-tools"></a>Средства службы приложений Azure
 В этот выпуск включены обновления Web Tools Extensions. Дополнительную информацию см. в [этом блоге](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/). 
@@ -84,11 +84,11 @@ ms.locfileid: "22986579"
 Если вы используете проект группы ресурсов Azure из предыдущей версии пакета SDK с SDK 2.7, для развертывания вам потребуется новый скрипт развертывания, который использует новую учетную запись хранения вместо классического хранилища.  Вам будет предложено добавить новый скрипт перед внесением изменений в проект.  Старый скрипт будет переименован; внести изменения в новый вам нужно будет вручную.
 
 ### <a name="storage-explorer-tools"></a>Средства обозревателя хранилища
-* Поддержка просмотра добавления больших двоичных объектов. Дополнительную информацию см. в [этой записи блога](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/13/introducing-azure-storage-append-blob.aspx). 
+* Поддержка просмотра добавления больших двоичных объектов. Дополнительную информацию см. в [этой записи блога](https://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/13/introducing-azure-storage-append-blob.aspx). 
 * Поддержка просмотра учетных записей хранения класса Premium с помощью обозревателя серверов. Обозреватель серверов будет отображать только страничные BLOB-объекты для учетной записи хранения класса Premium, поскольку они являются единственным поддерживаемым типом для учетных записей хранения класса Premium.
 
 ### <a name="azure-data-factory-tools-for-visual-studio"></a>Средства фабрики данных Azure для Visual Studio
-Знакомство со **средствами фабрики данных Azure** для Visual Studio. Ниже перечислены доступные возможности. Дополнительную информацию см. в [этом блоге](http://go.microsoft.com/fwlink/?LinkId=617530).
+Знакомство со **средствами фабрики данных Azure** для Visual Studio. Ниже перечислены доступные возможности. Дополнительную информацию см. в [этом блоге](https://go.microsoft.com/fwlink/?LinkId=617530).
 
 * **Создание на основе шаблона разработки**— выбор шаблонов на основе вариантов использования, шаблонов перемещения данных или шаблонов обработки данных для развертывания законченных решений по интеграции данных и начало работы с фабрикой данных. 
 * **Интеграция с обозревателем решений для разработки и развертывания объектов фабрики данных** — создание и развертывание конвейеров и связанных объектов в виде проектов Visual Studio. 
@@ -102,7 +102,7 @@ ms.locfileid: "22986579"
 Следующий раздел содержит обновления, представленные в пакете SDK для Azure для выпуска .NET 2.7.1.
 
 ### <a name="hdinsight-tools"></a>Средства HDInsight
-Дополнительную информацию об обновлениях средств HDInsight см. в [этом блоге](http://go.microsoft.com/fwlink/?LinkId=623831).
+Дополнительную информацию об обновлениях средств HDInsight см. в [этом блоге](https://go.microsoft.com/fwlink/?LinkId=623831).
 
 * Просмотр операторов для заданий Hive (новая функция)
   
@@ -120,7 +120,7 @@ ms.locfileid: "22986579"
   
     Мы улучшили IntelliSense, добавив больше удобных предложений. Например, в IntelliSense теперь могут отображаться предложения псевдонимов таблицы, чтобы облегчить написание запросов. Кроме того, мы улучшили загрузку метаданных Hive, и теперь вывод списка всех баз данных, таблиц и столбцов метахранилища Hive — дело нескольких секунд.
 
-Дополнительную информацию об обновлениях средств HDInsight см. в [этом блоге](http://go.microsoft.com/fwlink/?LinkId=623831).
+Дополнительную информацию об обновлениях средств HDInsight см. в [этом блоге](https://go.microsoft.com/fwlink/?LinkId=623831).
 
 ### <a name="improvements-in-visual-studio-2013"></a>Улучшения в Visual Studio 2013
 * Пакет SDK для Azure 2.7.1 позволяет получить доступ к учетным записям и подпискам Azure в Visual Studio 2013 с помощью управления доступом на основе ролей, поставщиков облачных решений и DreamSpark.
@@ -132,7 +132,7 @@ ms.locfileid: "22986579"
 Проекты LightSwitch не совместимы с этим выпуском. Эта проблема будет устранена в следующем выпуске пакета SDK.
 
 ## <a name="also-see"></a>См. также:
-[Объявление о пакете SDK для Azure 2.7.1](http://go.microsoft.com/fwlink/?LinkId=623850)
+[Объявление о пакете SDK для Azure 2.7.1](https://go.microsoft.com/fwlink/?LinkId=623850)
 
 [Объявление о пакете Azure SDK 2.7](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
 

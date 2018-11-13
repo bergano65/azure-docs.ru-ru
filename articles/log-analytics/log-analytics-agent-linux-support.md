@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 10/15/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 3f23464776036a8c91b180d46341782fddb9d5e8
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 2720ecece86133bf551ab42c415b2e9a87420e93
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50140965"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51237831"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
 
@@ -32,7 +32,7 @@ ms.locfileid: "50140965"
 * Клиенты с соглашением на поддержку Azure могут открыть запрос на поддержку на [портале Azure](https://manage.windowsazure.com/?getsupport=true).
 * Для диагностики проблем с OMI можно применить инструкции в [руководстве по устранению неполадок OMI](https://github.com/Microsoft/omi/blob/master/Unix/doc/diagnose-omi-problems.md).
 * Можно [сообщить о проблеме в GitHub](https://github.com/Microsoft/OMS-Agent-for-Linux/issues).
-* Посетите страницу отзывов в Log Analytics, чтобы просмотреть отправленные предложения и сообщения об ошибках [http://aka.ms/opinsightsfeedback](http://aka.ms/opinsightsfeedback) или оставить новый отзыв.  
+* Посетите страницу отзывов в Log Analytics, чтобы просмотреть отправленные предложения и сообщения об ошибках [http://aka.ms/opinsightsfeedback](https://aka.ms/opinsightsfeedback) или оставить новый отзыв.  
 
 ## <a name="important-log-locations-and-log-collector-tool"></a>Расположение важных журналов и сборщик журналируемых данных
 

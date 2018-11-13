@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/03/2017
 ms.author: ryanwi
-ms.openlocfilehash: 0243f6ca96b5e2c20b40bf6e0fc11e8d760db475
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: 639293a1811c35d87bd705800b8ecf62f667c0e9
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44053369"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51246724"
 ---
 # <a name="get-started-with-deploying-and-upgrading-applications-on-your-local-cluster"></a>Начало развертывания и обновления приложений в локальном кластере
 Пакет SDK Service Fabric включает полную локальную среду разработки, которая позволяет быстро приступить к развертыванию приложений в локальном кластере и управлению ими. Следуя инструкциям в этой статье и используя Windows PowerShell, вы создадите локальный кластер, развернете в нем имеющееся приложение, а затем обновите его до новой версии.
@@ -71,7 +71,7 @@ ms.locfileid: "44053369"
     mkdir c:\ServiceFabric\
     cd c:\ServiceFabric\
     ```
-4. [Загрузите приложение WordCount](http://aka.ms/servicefabric-wordcountapp) в созданную папку.  Примечание. Браузер Microsoft Edge сохранит файл с расширением *ZIP*.  Его необходимо изменить на расширение *SFPKG*.
+4. [Загрузите приложение WordCount](https://aka.ms/servicefabric-wordcountapp) в созданную папку.  Примечание. Браузер Microsoft Edge сохранит файл с расширением *ZIP*.  Его необходимо изменить на расширение *SFPKG*.
 5. Подключитесь к локальному кластеру:
    
     ```powershell
@@ -139,7 +139,7 @@ ms.locfileid: "44053369"
 
 Новая версия приложения теперь будет подсчитывать слова, начинающиеся с гласных. По мере того как развертывается обновление, мы можем увидеть в поведении приложения два изменения. Во-первых, скорость увеличения счетчика должна уменьшиться, так как подсчитывается меньшее количество слов. Во-вторых, так как первый раздел содержит две гласные буквы (A и E), а остальные разделы только по одной, показатели счетчика первого раздела со временем начнут опережать показатели других счетчиков.
 
-1. [Скачайте пакет WordCount версии 2](http://aka.ms/servicefabric-wordcountappv2) в то же расположение, куда был скачан пакет версии 1.
+1. [Скачайте пакет WordCount версии 2](https://aka.ms/servicefabric-wordcountappv2) в то же расположение, куда был скачан пакет версии 1.
 2. Вернитесь в окно PowerShell и запустите команду обновления пакета SDK, чтобы зарегистрировать новую версию в кластере. Начнется обновление приложения fabric:/WordCount.
    
     ```powershell

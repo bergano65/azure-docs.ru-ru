@@ -15,22 +15,22 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: anzaman,cherylmc
-ms.openlocfilehash: 8e896b70d0da143151d57b45e62a5c14d4d4e3b0
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 1db8a85f40182d954fdd711b203a6ee42aecc694
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46969609"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51248917"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-cli"></a>Подключение виртуальной сети к каналу ExpressRoute с помощью CLI
 
 Эта статья поможет вам связать виртуальные сети с каналами Azure ExpressRoute с помощью CLI. С помощью Azure CLI можно связывать только виртуальные сети, созданные по модели развертывания с помощью Resource Manager. Они могут входить в одну и ту же подписку или в разные подписки. Для подключения виртуальной сети к каналу ExpressRoute можно использовать другие методы, информация о которых приводится в статьях из следующего списка:
 
 > [!div class="op_single_selector"]
-> * [портала Azure](expressroute-howto-linkvnet-portal-resource-manager.md)
+> * [портал Azure](expressroute-howto-linkvnet-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-linkvnet-arm.md)
-> * [интерфейс командной строки Azure](howto-linkvnet-cli.md)
-> * [Видео — портал Azure](http://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-connection-between-your-vpn-gateway-and-expressroute-circuit)
+> * [Интерфейс командной строки Azure](howto-linkvnet-cli.md)
+> * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-connection-between-your-vpn-gateway-and-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-linkvnet-classic.md)
 > 
 

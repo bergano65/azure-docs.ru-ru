@@ -14,12 +14,12 @@ ms.date: 09/11/2018
 ms.author: barbkess
 ms.reviewer: asmalser
 ms.custom: it-pro
-ms.openlocfilehash: db008953b9aa596a64aceccacc0e4632ebfff596
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: 72665ed4c25d2719ac5030bce59157a3ccd9dec7
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44720129"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51236012"
 ---
 # <a name="what-is-application-access-and-single-sign-on-with-azure-active-directory"></a>Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?
 Благодаря единому входу пользователи получают доступ ко всем приложениям и ресурсам, необходимым для работы, выполнив только один вход с использованием одной учетной записи. После входа пользователю доступны все необходимые приложения без повторной проверки подлинности (например, ввода пароля).
@@ -102,7 +102,7 @@ Azure AD поддерживает единый вход на основе пар
 Ниже приведены советы для поиска приложений в соответствии с поддерживаемыми функциями.
 
 * Azure AD поддерживает автоматическую подготовку и ее отзыв для всех приложений категории «Основные» в [коллекции приложений Azure Active Directory](https://azure.microsoft.com/marketplace/active-directory/all/).
-* Список федеративных приложений, поддерживающих федеративный единый вход с помощью таких протоколов, как SAML, WS-Federation или OpenID Connect, см. [здесь](http://social.technet.microsoft.com/wiki/contents/articles/20235.azure-active-directory-application-gallery-federated-saas-apps.aspx).
+* Список федеративных приложений, поддерживающих федеративный единый вход с помощью таких протоколов, как SAML, WS-Federation или OpenID Connect, см. [здесь](https://social.technet.microsoft.com/wiki/contents/articles/20235.azure-active-directory-application-gallery-federated-saas-apps.aspx).
 
 Найдите необходимое приложение и следуйте пошаговым инструкциям, указанным в коллекции приложений и на портале Azure, чтобы включить единый вход.
 

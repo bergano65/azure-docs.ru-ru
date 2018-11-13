@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 8/21/2018
 ms.author: markgal
-ms.openlocfilehash: 9fad5876ce177129d6178052916843b94b33ccf1
-ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.openlocfilehash: c9b3b027a52a6847c566c385c304edc195f7fdda
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42445473"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51250702"
 ---
 # <a name="monitor-and-manage-recovery-services-vaults"></a>Управление хранилищами служб восстановления и их мониторинг
 
@@ -296,4 +296,4 @@ ms.locfileid: "42445473"
 ## <a name="next-steps"></a>Дополнительная информация
 * [Восстановление Windows Server или клиента Windows из Azure](backup-azure-restore-windows-server.md)
 * Дополнительную информацию о службе архивации Azure см. в статье [Обзор службы архивации Azure](backup-introduction-to-azure-backup.md).
-* Посетите [форум о службе архивации Azure](http://go.microsoft.com/fwlink/p/?LinkId=290933)
+* Посетите [форум о службе архивации Azure](https://go.microsoft.com/fwlink/p/?LinkId=290933)

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: 14b9a4ed66995a73f00234f4b25f52fccbcbe556
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: e055b51af19ad3958c0c9155490c598ed0f4a80e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38562610"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51235213"
 ---
 # <a name="tutorial-push-notifications-to-windows-phone-apps-by-using-azure-notification-hubs"></a>Руководство по отправке push-уведомлений в конкретные приложения Windows Phone с помощью Центров уведомлений Azure
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -33,14 +33,14 @@ ms.locfileid: "38562610"
 > [!NOTE]
 > Центры уведомлений Windows Phone SDK не поддерживают использование службы push-уведомлений Windows (WNS) с приложениями Windows Phone 8.1 Silverlight. Использование WNS (вместо MPNS) с приложениями Windows Phone 8.1 Silverlight описано в статье [Центр уведомлений: учебник для Windows Phone Silverlight], в котором используются API REST.
 
-Из этого руководства вы узнаете, как выполнять такие задачи: 
+Из этого руководства вы узнаете, как выполнять следующие задачи: 
 
 > [!div class="checklist"]
 > * Создание концентратора уведомлений
 > * создание приложения для Windows Phone;
 > * тестовая отправка уведомления. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 - [Visual Studio 2015 Express с компонентами для разработки мобильных приложений](https://www.visualstudio.com/vs/older-downloads/).
@@ -61,7 +61,7 @@ ms.locfileid: "38562610"
     Концентратор будет создан и настроен для отправки уведомлений без проверки подлинности для Windows Phone.
 
     > [!NOTE]
-    > В этом учебнике используется MPNS в режиме без проверки подлинности. Режим MPNS без проверки подлинности налагает ограничения на использование уведомлений, отправляемых для каждого канала. Центры уведомлений поддерживают [Режим работы MPNS с проверкой подлинности](http://msdn.microsoft.com/library/windowsphone/develop/ff941099.aspx) , позволяя отправить ваш сертификат.
+    > В этом учебнике используется MPNS в режиме без проверки подлинности. Режим MPNS без проверки подлинности налагает ограничения на использование уведомлений, отправляемых для каждого канала. Центры уведомлений поддерживают [Режим работы MPNS с проверкой подлинности](https://msdn.microsoft.com/library/windowsphone/develop/ff941099.aspx) , позволяя отправить ваш сертификат.
 
 ## <a name="create-a-windows-phone-application"></a>создание приложения для Windows Phone;
 В этом разделе объясняется, как создать приложение Windows Phone, которое регистрирует себя в Центре уведомлений. 

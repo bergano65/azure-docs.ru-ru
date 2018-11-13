@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 64f28628b2949d02f771924982269b6b63fc924d
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 3240b3ecfe8de8644d2ac1fd4a880fc0d2dcc76b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49955853"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51237134"
 ---
 # <a name="copy-data-from-azure-blob-to-azure-sql-database-using-azure-data-factory"></a>Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL Azure с помощью фабрики данных Azure
 В этом руководстве вы создадите фабрику данных с конвейером, который перемещает данные из хранилища BLOB-объектов Azure в базу данных SQL Azure. Шаблон конфигурации в этом руководстве применяется к копированию из файлового в реляционное хранилище данных. Список хранилищ данных, которые поддерживаются в качестве источников и приемников, см. в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
@@ -42,7 +42,7 @@ ms.locfileid: "49955853"
 * **Учетная запись хранения Azure.** В этом руководстве в качестве **источника** будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-quickstart-create-account.md).
 * **База данных SQL Azure**. Используйте базу данных как хранилище данных-**приемник**. Если у вас нет базы данных SQL Azure, вы можете создать ее, выполнив шаги из статьи [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md).
 * **Visual Studio** 2015 или 2017. В этом руководстве используется Visual Studio 2017.
-* **Скачайте и установите [пакет Azure SDK для .NET](http://azure.microsoft.com/downloads/)**.
+* **Скачайте и установите [пакет Azure SDK для .NET](https://azure.microsoft.com/downloads/)**.
 * [Используйте следующие инструкции](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application), **чтобы создать приложение в Azure Active Directory**. Запишите следующие значения, которые вы используете в следующих шагах: **идентификатор приложения**, **ключ аутентификации** и **идентификатор клиента**. Назначьте приложению роль **Участник**, следуя указаниям в той же статье.
 
 ### <a name="create-a-blob-and-a-sql-table"></a>Создание большого двоичного объекта и таблицы SQL
