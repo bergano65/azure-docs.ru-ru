@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/08/2018
 ms.author: mbullwin
-ms.openlocfilehash: f1a1c0bd759a88b2e84584f1d52458ac6f56d97f
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: c54d8b870d6d8c187dcf145b56e3cbae257889a5
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46999709"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51259298"
 ---
 # <a name="set-up-application-insights-dependency-tracking"></a>Настройка Application Insights: отслеживание зависимостей
 *Зависимость* – это внешний компонент, который вызывается приложением. Как правило, это служба, вызываемая с использованием HTTP, база данных или файловая система. [Application Insights](app-insights-overview.md) измеряет время, в течение которого приложение ожидает зависимости, и определяет, как часто происходит сбой вызова зависимости. Можно изучить определенные вызовы и установить их взаимосвязь с теми или иными запросами и исключениями.
@@ -44,7 +44,7 @@ ms.locfileid: "46999709"
 
 | платформа | Install |
 | --- | --- |
-| Сервер IIS |[Установите монитор состояний на сервере](app-insights-monitor-performance-live-website-now.md) или [обновите свое приложение до .NET Framework 4.6 или более поздней версии](http://go.microsoft.com/fwlink/?LinkId=528259) и установите в нем [пакет SDK для Application Insights](app-insights-asp-net.md). |
+| Сервер IIS |[Установите монитор состояний на сервере](app-insights-monitor-performance-live-website-now.md) или [обновите свое приложение до .NET Framework 4.6 или более поздней версии](https://go.microsoft.com/fwlink/?LinkId=528259) и установите в нем [пакет SDK для Application Insights](app-insights-asp-net.md). |
 | Веб-приложение Azure |На панели управления веб-приложения [откройте колонку "Application Insights"](app-insights-azure-web-apps.md) и при появлении соответствующего запроса выберите "Установить". |
 | Облачная служба Azure |[Используйте задачу при запуске](app-insights-cloudservices.md) или [установите платформу .NET Framework 4.6 или более поздней версии](../cloud-services/cloud-services-dotnet-install-dotnet.md). |
 
@@ -207,7 +207,7 @@ ms.locfileid: "46999709"
 
 | платформа | Install |
 | --- | --- |
-| Сервер IIS |Либо [установите Монитор состояния на сервер](app-insights-monitor-performance-live-website-now.md), либо [обновите в своем приложении .NET Framework до версии 4.6 (или новее)](http://go.microsoft.com/fwlink/?LinkId=528259) и установите в него [пакет SDK для Application Insights](app-insights-asp-net.md). |
+| Сервер IIS |Либо [установите Монитор состояния на сервер](app-insights-monitor-performance-live-website-now.md), либо [обновите в своем приложении .NET Framework до версии 4.6 (или новее)](https://go.microsoft.com/fwlink/?LinkId=528259) и установите в него [пакет SDK для Application Insights](app-insights-asp-net.md). |
 | Веб-приложение Azure |На панели управления веб-приложения [откройте колонку "Application Insights"](app-insights-azure-web-apps.md) и при появлении соответствующего запроса выберите "Установить". |
 | Облачная служба Azure |[Используйте задачу при запуске](app-insights-cloudservices.md) или [установите платформу .NET Framework 4.6 или более поздней версии](../cloud-services/cloud-services-dotnet-install-dotnet.md). |
 

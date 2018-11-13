@@ -11,18 +11,18 @@ ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 08/24/2018
-ms.openlocfilehash: 24d3cf0c4b1a1283e7a6a7f61f0bb23dae7143d5
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 7322b07740d5dec85b6217e122fb262647527c96
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43113536"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51258414"
 ---
 # <a name="deploy-an-azure-machine-learning-model-to-an-azure-iot-edge-device"></a>Развертывание модели машинного обучения Azure для устройства Azure IoT Edge
 
 Модели Машинного обучения Azure можно поместить в контейнеры как веб-службы Docker. Azure IoT Edge позволяет развертывать контейнеры на устройства удаленно. Используйте эти службы вместе для запуска моделей в граничной системе, чтобы обеспечить более быстрое время отклика и уменьшить объем передачи данных. 
 
-Дополнительные скрипты и инструкции можно найти в [наборе средств для работы с искусственным интеллектом для Azure IoT Edge](http://aka.ms/AI-toolkit).
+Дополнительные скрипты и инструкции можно найти в [наборе средств для работы с искусственным интеллектом для Azure IoT Edge](https://aka.ms/AI-toolkit).
 
 ## <a name="operationalize-the-model"></a>Ввод модели в эксплуатацию
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 09/26/2018
 ms.author: jroth
-ms.openlocfilehash: 0119c6642d68db6a90af07395882e620b1af08c6
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 395994e2ac017bcdadaca4defad4ec0f910cea17
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47394959"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51258135"
 ---
 # <a name="performance-guidelines-for-sql-server-in-azure-virtual-machines"></a>Рекомендации по оптимизации производительности SQL Server на виртуальных машинах Azure
 
@@ -166,7 +166,7 @@ ms.locfileid: "47394959"
     ![Файлы журнала данных SQL и резервных копий](./media/virtual-machines-windows-sql-performance/sql_server_default_data_log_backup_locations.png)
 * Включение блокировки страниц для сокращения числа операций ввода-вывода, а также операций разбиения по страницам. Дополнительные сведения см. в статье [Включение параметра «Блокировка страниц в памяти» (Windows)](https://msdn.microsoft.com/library/ms190730.aspx).
 
-* Если вы используете SQL Server 2012, установите накопительный пакет обновления 10 для пакета обновления 1. Это обновление содержит исправление для низкой производительности ввода-вывода при выполнении оператора выборки во временную таблицу в SQL Server 2012. Дополнительные сведения см. в этой [статье базы знаний](http://support.microsoft.com/kb/2958012).
+* Если вы используете SQL Server 2012, установите накопительный пакет обновления 10 для пакета обновления 1. Это обновление содержит исправление для низкой производительности ввода-вывода при выполнении оператора выборки во временную таблицу в SQL Server 2012. Дополнительные сведения см. в этой [статье базы знаний](https://support.microsoft.com/kb/2958012).
 
 * Рекомендуется сжимать файлы данных при их передаче в среду Azure и из нее.
 

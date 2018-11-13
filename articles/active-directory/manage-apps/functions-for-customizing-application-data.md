@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: barbkess
-ms.openlocfilehash: cf0e94b859b49eddb8e2471d5319b3cc4a2c17ba
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: d8e390fc185c3cb0b63bcea56feb4b133652673d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44720299"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51258839"
 ---
 # <a name="writing-expressions-for-attribute-mappings-in-azure-active-directory"></a>Запись выражений для сопоставления атрибутов в Azure Active Directory
 При настройке подготовки для приложения SaaS одним из типов сопоставления атрибутов, которые можно указать, является сопоставление выражений. Для этого необходимо написать выражение, похожее на скрипт. Оно позволит вам преобразовать данные пользователей в форматы, более подходящие для приложений SaaS.
@@ -63,7 +63,7 @@ ms.locfileid: "44720299"
 | ИМЯ | Обязательно/повторяется | type | Примечания |
 | --- | --- | --- | --- |
 | **источник** |Обязательно |Строка |Как правило, имя атрибута из исходного объекта. |
-| **входной_формат** |Обязательно |Строка |Предполагаемый формат исходного значения. Поддерживаемые форматы см. по адресу [http://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx](http://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx). |
+| **входной_формат** |Обязательно |Строка |Предполагаемый формат исходного значения. Поддерживаемые форматы см. по адресу [http://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx](https://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx). |
 | **выходной_формат** |Обязательно |Строка |Формат вывода даты. |
 
 - - -
