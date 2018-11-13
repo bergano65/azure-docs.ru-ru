@@ -452,38 +452,40 @@ items:
       href: service-fabric-backuprestoreservice-quickstart-standalonecluster.md
     - name: Перенос старого приложения Java для поддержки Maven
       href: service-fabric-migrate-old-javaapp-to-use-maven.md
-  - name: Работа в среде разработки Windows или Visual Studio
+  - name: Работа в IDE
     items:
-    - name: Управление приложениями в Visual Studio
-      href: service-fabric-manage-application-in-visual-studio.md
-    - name: Настройка безопасных соединений в Visual Studio
-      href: service-fabric-visualstudio-configure-secure-connections.md
-    - name: Отладка службы .NET в Visual Studio
-      href: service-fabric-debugging-your-application.md
-    - name: Отладка контейнеров Windows с помощью Service Fabric и VS
-      href: service-fabric-how-to-debug-windows-containers.md
-    - name: Распространенные ошибки и исключения
-      href: service-fabric-errors-and-exceptions.md
-    - name: Локальные мониторинг и диагностика
-      href: service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md
-    - name: Настройка кластера Linux в Windows
-      href: service-fabric-local-linux-cluster-windows.md
-  - name: Работа в среде разработки Linux или Eclipse
-    items:
-    - name: Начало работы с подключаемым модулем Eclipse для разработки приложений Java
-      href: service-fabric-get-started-eclipse.md
-    - name: Отладка службы на Java в Eclipse
-      href: service-fabric-debugging-your-application-java.md
-    - name: Локальные мониторинг и диагностика
-      href: service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally-linux.md
-  - name: Работа в среде VS Code
-    items:
-    - name: Начало работы с VS Code
-      href: service-fabric-get-started-vs-code.md
-    - name: Разработка приложений Service Fabric на C# с помощью VS Code
-      href: service-fabric-develop-csharp-applications-with-vs-code.md
-    - name: Разработка приложений Service Fabric на Java с помощью VS Code
-      href: service-fabric-develop-java-applications-with-vs-code.md
+    - name: Работа в среде разработки Windows или Visual Studio
+      items:
+      - name: Управление приложениями в Visual Studio
+        href: service-fabric-manage-application-in-visual-studio.md
+      - name: Настройка безопасных соединений в Visual Studio
+        href: service-fabric-visualstudio-configure-secure-connections.md
+      - name: Отладка службы .NET в Visual Studio
+        href: service-fabric-debugging-your-application.md
+      - name: Отладка контейнеров Windows с помощью Service Fabric и VS
+        href: service-fabric-how-to-debug-windows-containers.md
+      - name: Распространенные ошибки и исключения
+        href: service-fabric-errors-and-exceptions.md
+      - name: Локальные мониторинг и диагностика
+        href: service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md
+      - name: Настройка кластера Linux в Windows
+        href: service-fabric-local-linux-cluster-windows.md
+    - name: Работа в среде разработки Linux или Eclipse
+      items:
+      - name: Начало работы с подключаемым модулем Eclipse для разработки приложений Java
+        href: service-fabric-get-started-eclipse.md
+      - name: Отладка службы на Java в Eclipse
+        href: service-fabric-debugging-your-application-java.md
+      - name: Локальные мониторинг и диагностика
+        href: service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally-linux.md
+    - name: Работа в среде VS Code
+      items:
+      - name: Начало работы с VS Code
+        href: service-fabric-get-started-vs-code.md
+      - name: Разработка приложений Service Fabric на C# с помощью VS Code
+        href: service-fabric-develop-csharp-applications-with-vs-code.md
+      - name: Разработка приложений Service Fabric на Java с помощью VS Code
+        href: service-fabric-develop-java-applications-with-vs-code.md
   - name: Миграция из облачных служб
     items:
     - name: Сравнение облачных служб и Service Fabric
@@ -761,9 +763,9 @@ items:
     href: https://azure.microsoft.com/updates/?product=service-fabric
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=service-fabric
-ms.openlocfilehash: 33a243d89888bcb34d9c23a100643876f6eb4b53
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: a7549a3544fb40527e0526bfb5c7db424b0d014a
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51241299"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51567814"

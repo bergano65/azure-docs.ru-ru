@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 54de8d6aa1ee06c1d9500490eb93a5ea37ecb6a4
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 5b6fd87720b57b34429489c72ec60bc77b3870bc
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46961201"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51568875"
 documentType: LandingData
 title: Документация по Базе данных Azure для MariaDB
 metadata:
@@ -43,7 +43,7 @@ sections:
   - type: list
     style: ordered
     items:
-    - html: Проектирование базы данных&#58; <a href="/azure/mariadb/tutorial-design-database-using-portal">портал Azure</a>
+    - html: 'Проектирование базы данных: <a href="/azure/mariadb/tutorial-design-database-using-portal">портал Azure</a> | <a href="/azure/mariadb/tutorial-design-database-cli">Azure CLI</a>'
 - title: Справочные материалы
   items:
   - type: list
@@ -51,4 +51,4 @@ sections:
     className: cardsD
     items:
     - title: Командная строка
-      html: <p><a href="/cli/azure/mariadb">интерфейс командной строки Azure</a></p>
+      html: <p><a href="/cli/azure/mariadb">Интерфейс командной строки Azure</a></p>
