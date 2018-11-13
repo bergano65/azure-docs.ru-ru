@@ -1,5 +1,5 @@
 ---
-title: Выполнение сетевых миграций PostgreSQL в Базу данных Azure для MySQL с помощью Azure Database Migration Service | Документация Майкрософт
+title: Руководство. Перенос PostgreSQL в Базу данных Azure для MySQL по сети с помощью службы Azure Database Migration Service | Документация Майкрософт
 description: Узнайте, как выполнить сетевую миграцию из PostgreSQL в локальной среде в Базу данных Azure для PostgreSQL с помощью Azure Database Migration Service.
 services: dms
 author: HJToland3
@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
 ms.date: 09/26/2018
-ms.openlocfilehash: 51103f6661be22e355aafe01783af5afddd51f54
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.openlocfilehash: 004db061e721f0169491e98bd8e7cdd86e08bb01
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47182473"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50963609"
 ---
-# <a name="migrate-postgresql-to-azure-database-for-postgresql-online-using-dms"></a>Миграция PostgreSQL в Базу данных Azure для PostgreSQL через Интернет с помощью Azure Database Migration Service
+# <a name="tutorial-migrate-postgresql-to-azure-database-for-postgresql-online-using-dms"></a>Руководство. Перенос PostgreSQL в Базу данных Azure для PostgreSQL по сети с помощью DMS
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра PostgreSQL в [Базу данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/) с минимальным временем простоя. Другими словами, миграцию можно выполнить с минимальным временем простоя для приложения. В этом руководстве выполняется миграция примера базы данных **Прокат DVD** из локального экземпляра PostgreSQL 9.6 в Базу данных Azure для PostgreSQL с помощью действия сетевой миграции в Azure Database Migration Service.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:

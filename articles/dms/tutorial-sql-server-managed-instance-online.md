@@ -1,5 +1,5 @@
 ---
-title: Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure по сети с помощью службы Azure Database Migration Service | Документация Майкрософт
+title: Руководство. Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure по сети с помощью службы Azure Database Migration Service | Документация Майкрософт
 description: Узнайте, как выполнять перенос баз данных из локального экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure по сети с помощью Azure Database Migration Service.
 services: dms
 author: pochiraju
@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
 ms.date: 10/10/2018
-ms.openlocfilehash: 4d46a438708e2e72d625f5104293b4605f7b096d
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.openlocfilehash: ab869e53810f049593803d58b3df75d0c083bbd2
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49946085"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50962900"
 ---
-# <a name="migrate-sql-server-to-azure-sql-database-managed-instance-online-using-dms"></a>Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме
+# <a name="tutorial-migrate-sql-server-to-azure-sql-database-managed-instance-online-using-dms"></a>Руководство. Перенос баз данных из SQL Server в Управляемый экземпляр Базы данных SQL Azure по сети с помощью службы DMS
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра SQL Server в [Управляемый экземпляр Базы данных SQL Azure](../sql-database/sql-database-managed-instance.md) с минимальным временем простоя в работе приложений. Сведения о дополнительных методах, которые могут потребовать некоторых действий вручную, см. в статье [Перенос экземпляра SQL Server в Управляемый экземпляр базы данных SQL Azure](../sql-database/sql-database-managed-instance-migrate.md).
 
 >[!IMPORTANT]
@@ -145,7 +145,7 @@ Azure Database Migration Service можно использовать для пе
 
 3. Укажите **пользователя SQL** и **пароль**, чтобы подключиться к целевому экземпляру Управляемого экземпляра Базы данных SQL Azure.
 
-       ![Select Target](media\tutorial-sql-server-to-managed-instance-online\dms-target-details3.png)
+    ![Выбор цели](media\tutorial-sql-server-to-managed-instance-online\dms-target-details3.png)
 
 2.  Щелкните **Сохранить**.
 

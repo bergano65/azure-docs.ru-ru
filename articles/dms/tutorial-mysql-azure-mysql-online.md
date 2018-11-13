@@ -1,5 +1,5 @@
 ---
-title: Выполнение интерактивной миграции MySQL в Базу данных Azure для MySQL с помощью Azure Database Migration Service | Документация Майкрософт
+title: Руководство. Перенос MySQL в Базу данных Azure для MySQL по сети с помощью службы Azure Database Migration Service | Документация Майкрософт
 description: Узнайте, как выполнить интерактивную миграцию из MySQL в локальной среде в Базу данных Azure для MySQL с помощью Azure Database Migration Service.
 services: dms
 author: HJToland3
@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
 ms.date: 10/06/2018
-ms.openlocfilehash: 4825985253f5525314a496f2adbc40657231f5d5
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.openlocfilehash: 8b0e15ac6cd59a77e283d9256ab5fa4542dfc9a9
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48829857"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50960520"
 ---
-# <a name="migrate-mysql-to-azure-database-for-mysql-online-using-dms"></a>Интерактивная миграция MySQL в Базу данных Azure для MySQL с помощью DMS
+# <a name="tutorial-migrate-mysql-to-azure-database-for-mysql-online-using-dms"></a>Руководство. Перенос MySQL в Базу данных Azure для MySQL по сети с помощью DMS
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра MySQL в [Базу данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/) с минимальным временем простоя. Другими словами, миграцию можно выполнить с минимальным временем простоя для приложения. В этом руководстве выполняется миграция примера базы данных **сотрудников** из локального экземпляра MySQL 5.7 в Базу данных Azure для MySQL с помощью интерактивного действия миграции в Azure Database Migration Service.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:

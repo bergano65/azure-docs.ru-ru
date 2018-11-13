@@ -11,15 +11,15 @@ author: ajlam
 ms.author: andrela
 ms.reviewer: ''
 manager: craigg
-ms.date: 04/01/2018
-ms.openlocfilehash: 89afeb53c6928f2907e22ff740a5d83fddb7781c
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.date: 11/01/2018
+ms.openlocfilehash: 2e8e47e8f2b61105a720c36d5b91a04df094c5d6
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47062815"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50912362"
 ---
-# <a name="use-java-to-query-an-azure-sql-database"></a>Использование Java для создания запросов к базе данных SQL Azure
+# <a name="quickstart-use-java-to-query-an-azure-sql-database"></a>Краткое руководство. Создание запросов к базе данных SQL Azure с использованием Java
 
 В этом кратком руководстве показано, как использовать [Java](https://docs.microsoft.com/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server) для подключения к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.
 

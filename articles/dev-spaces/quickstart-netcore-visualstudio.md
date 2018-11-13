@@ -1,22 +1,21 @@
 ---
 title: Создание пространства разработки Kubernetes в облаке | Документация Майкрософт
 titleSuffix: Azure Dev Spaces
-author: ghogen
+author: iainfoulds
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
 ms.component: azds-kubernetes
-ms.author: ghogen
+ms.author: iainfou
 ms.date: 07/09/2018
 ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-manager: douge
-ms.openlocfilehash: 0e58fb23aded66a44deb0d520151c98903cffe18
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: de30cc01dedbba9177c2a67fe1147b9ae767280e
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47433333"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50978167"
 ---
 # <a name="quickstart-create-a-kubernetes-dev-space-with-azure-dev-spaces-net-core-and-visual-studio"></a>Краткое руководство по созданию пространства разработки Kubernetes с помощью Azure Dev Spaces (.NET Core и Visual Studio)
 
@@ -31,7 +30,7 @@ ms.locfileid: "47433333"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Кластер Kubernetes, работающий с Kubernetes 1.9.6 или выше, в регионах EastUS, CentralUS, WestUS2, WestEurope, CanadaCentral или CanadaEast, с включенным параметром "Маршрутизация HTTP для приложений".
+- Кластер Kubernetes, работающий на платформе Kubernetes версии 1.9.6 или выше, размещенный в регионе "Восточная часть США", "Восточная часть США 2", "Центральная часть США", "Западная часть США 2", "Западная Европа", "Юго-Восточная Азия", "Центральная Канада" или "Восточная Канада" и с включенным параметром "Маршрутизация HTTP для приложений".
 
   ![Не забудьте включить параметр "Маршрутизация приложений HTTP".](media/common/Kubernetes-Create-Cluster-3.PNG)
 

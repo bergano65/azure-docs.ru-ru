@@ -5,15 +5,15 @@ services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: quickstart
-ms.date: 03/03/2018
+ms.date: 11/06/2018
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: a75d7e599b10b1d56bd41db1d6785dace67d5d06
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: 1e039c465bf37e0ee5ca1db5837798680e27463d
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48857845"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51278673"
 ---
 # <a name="quickstart-create-a-container-registry-using-the-azure-portal"></a>Краткое руководство. Создание реестра контейнеров на портале Azure
 
@@ -27,11 +27,11 @@ ms.locfileid: "48857845"
 
 ## <a name="create-a-container-registry"></a>Создание реестра контейнеров
 
-Последовательно выберите **Создать ресурс** > **Контейнеры** > **Реестр контейнеров Azure**.
+Последовательно выберите **Создать ресурс** > **Контейнеры** > **Реестр контейнеров**.
 
 ![Создание реестра контейнеров на портале Azure][qs-portal-01]
 
-Введите значения параметров **Имя реестра** и **Группа ресурсов**. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. Создайте новую группу ресурсов с именем `myResourceGroup`, а для параметра **SKU** выберите значение "Базовый". Выберите **Создать**, чтобы развернуть экземпляр записи контроля доступа (ACR).
+Введите значения параметров **Имя реестра** и **Группа ресурсов**. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. В целях этого руководства создайте группу ресурсов в регионе `West US` в расположении с именем `myResourceGroup`. Для **SKU** задайте значение "Базовый". Выберите **Создать**, чтобы развернуть экземпляр записи контроля доступа (ACR).
 
 ![Создание реестра контейнеров на портале Azure][qs-portal-03]
 
@@ -71,29 +71,29 @@ docker login --username <username> --password <password> <login server>
 docker pull microsoft/aci-helloworld
 ```
 
-Прежде чем отправить образ в реестр, необходимо снабдить его тегом имени сервера входа в ACR. Присвойте образу тег с помощью команды [docker tag][docker-tag]. Замените значение *login server* (сервер входа) именем сервера входа, записанным ранее.
+Прежде чем отправить образ в реестр, необходимо снабдить его тегом имени сервера входа в ACR. Присвойте образу тег с помощью команды [docker tag][docker-tag]. Замените значение *login server* (сервер входа) именем сервера входа, записанным ранее. Укажите *имя репозитория* (например, **`myrepo`**), в который будет помещен образ.
 
 ```bash
-docker tag microsoft/aci-helloworld <login server>/aci-helloworld:v1
+docker tag microsoft/aci-helloworld <login server>/<repository name>/aci-helloworld:v1
 ```
 
-Наконец, воспользуйтесь командой [docker push][docker-push] для принудительной отправки образа в экземпляр ACR. Замените значение *login server* именем сервера входа для вашего экземпляра ACR.
+Наконец, воспользуйтесь командой [docker push][docker-push] для принудительной отправки образа в экземпляр ACR. Замените значение *login server* именем сервера входа экземпляра ACR, а значение *repository name* — именем репозитория, которое использовалось в предыдущей команде.
 
 ```bash
-docker push <login server>/aci-helloworld:v1
+docker push <login server>/<repository name>/aci-helloworld:v1
 ```
 
 Выходные данные успешно выполненной команды `docker push` выглядят примерно так:
 
 ```
-The push refers to a repository [uniqueregistryname.azurecr.io/aci-helloworld]
-7c701b1aeecd: Pushed
-c4332f071aa2: Pushed
-0607e25cc175: Pushed
+The push refers to repository [specificregistryname.azurecr.io/myrepo/aci-helloworld]
+31ba1ebd9cf5: Pushed
+cd07853fe8be: Pushed
+73f25249687f: Pushed
 d8fbd47558a8: Pushed
 44ab46125c35: Pushed
 5bef08742407: Pushed
-v1: digest: sha256:f2867748615cc327d31c68b1172cc03c0544432717c4d2ba2c1c2d34b18c62ba size: 1577
+v1: digest: sha256:565dba8ce20ca1a311c2d9485089d7ddc935dd50140510050345a1b0ea4ffa6e size: 1576
 ```
 
 ## <a name="list-container-images"></a>Список образов контейнеров
@@ -114,7 +114,7 @@ v1: digest: sha256:f2867748615cc327d31c68b1172cc03c0544432717c4d2ba2c1c2d34b18c6
 
 ![Контекстное меню для запуска экземпляра контейнера Azure][qs-portal-11]
 
-Для запуска экземпляра контейнера Azure заполните поле **Имя контейнера**, выберите правильную подписку и существующую **группу ресурсов** "myResourceGroup", а затем нажмите кнопку **ОК**.
+Заполните поле **Имя контейнера**, укажите правильную подписку и в списке **Группа ресурсов** выберите myResourceGroup. Для параметра "Общедоступный IP-адрес" установите переключатель в положение **Да**, а затем нажмите кнопку **ОК**, чтобы запустить экземпляр контейнера Azure.
 
 ![Варианты развертывания для запуска экземпляр контейнера Azure][qs-portal-12]
 
@@ -136,7 +136,7 @@ v1: digest: sha256:f2867748615cc327d31c68b1172cc03c0544432717c4d2ba2c1c2d34b18c6
 
 Чтобы очистить ресурсы, перейдите к группе ресурсов **myResourceGroup** на портале. После загрузки группы ресурсов щелкните пункт **Удалить группу ресурсов** для удаления группы ресурсов, реестра контейнеров Azure и всех экземпляров контейнеров Azure.
 
-![Создание реестра контейнеров на портале Azure][qs-portal-08]
+![Удаление группы ресурсов на портале Azure][qs-portal-08]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

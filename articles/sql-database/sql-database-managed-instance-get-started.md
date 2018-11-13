@@ -11,15 +11,15 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: Carlrab
 manager: craigg
-ms.date: 09/23/2018
-ms.openlocfilehash: c0c249ffe426e86049024122d9cbf786bb677220
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.date: 11/01/2018
+ms.openlocfilehash: 3eadc2d233fd1716716c323f4c7087ee8363c67c
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47160644"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50912328"
 ---
-# <a name="create-an-azure-sql-database-managed-instance"></a>Создание Управляемого экземпляра Базы данных SQL Azure
+# <a name="quickstart-create-an-azure-sql-database-managed-instance"></a>Краткое руководство. Создание Управляемого экземпляра Базы данных SQL Azure
 
 В этом кратком руководстве описано создание [Управляемого экземпляра](sql-database-managed-instance.md) Базы данных SQL Azure на портале Azure. 
 
@@ -89,3 +89,4 @@ ms.locfileid: "47160644"
   - Краткое руководство по подключению к Управляемому экземпляру с виртуальной машины Azure см. в статье [Configure Azure VM to connect to an Azure SQL Database Managed Instance](sql-database-managed-instance-configure-vm.md) (Настройка виртуальной машине Azure для подключения к Управляемому экземпляру Базы данных SQL Azure).
   - Краткое руководство по подключению к Управляемому экземпляру с локального клиентского компьютера с помощью подключения "точка — сеть" см. в статье [Настройка подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure с локального компьютера](sql-database-managed-instance-configure-p2s.md).
 - Чтобы восстановить имеющуюся базу данных SQL Server из локальной среды в Управляемый экземпляр, можно использовать [Azure Database Migration Service для миграции](../dms/tutorial-sql-server-to-managed-instance.md) или [команду T-SQL RESTORE](sql-database-managed-instance-get-started-restore.md) для восстановления из файла резервной копии базы данных.
+- Сведения о расширенном мониторинге производительности для управляемого экземпляра базы данных с использованием встроенных средств анализа проблем см. в статье [Мониторинг базы данных SQL Azure с помощью решения "Аналитика SQL Azure" (предварительная версия)](../log-analytics/log-analytics-azure-sql.md).

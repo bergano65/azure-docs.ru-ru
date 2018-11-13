@@ -1,31 +1,37 @@
 ---
-title: Краткое руководство. Распознавание речи в C# под .NET Framework на Windows с помощью пакета SDK для службы "Речь"
+title: 'Краткое руководство: распознавание и преобразование речи в .NET Framework (Windows) с помощью службы "Речь"'
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как распознавать речь в C# под .NET Framework на Windows, используя пакет SDK для службы "Речь"
+description: Сведения в этом руководстве помогут создать консольное приложение для преобразования речи в текст с помощью .NET Framework для Windows и пакета SDK службы "Речь". После завершения вы сможете преобразовывать речь в текст в режиме реального времени с использованием микрофона компьютера.
 services: cognitive-services
 author: wolfma61
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: quickstart
-ms.date: 09/24/2018
+ms.date: 11/05/2018
 ms.author: wolfma
-ms.openlocfilehash: 06d4a41a4a67d077f8d79eee68938dff65adf0e8
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 2dd001ebebd5cdf90d7d0b8163a85a5f83c855f6
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49468523"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51281300"
 ---
-# <a name="quickstart-recognize-speech-in-c-under-net-framework-on-windows-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C# для .NET Framework в Windows с помощью пакета SDK для службы "Речь"
+# <a name="quickstart-recognize-and-transcribe-speech-using-the-speech-sdk-and-net-framework-windows"></a>Краткое руководство: распознавание и преобразование речи с помощью пакета SDK службы "Речь" и .NET Framework (Windows).
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
-Из этой статьи вы узнаете, как в Windows с помощью [пакета SDK службы "Речь"](speech-sdk.md) создать консольное приложение C# для .NET Framework. Вы преобразуете речь с микрофона вашего компьютера в текст в реальном времени. Приложение создается с использованием [пакета SDK NuGet для службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017 (любого выпуска).
+Сведения в этом руководстве помогут создать консольное приложение для преобразования речи в текст с помощью .NET Framework для Windows и пакета SDK службы "Речь". После завершения вы сможете преобразовывать речь в текст в режиме реального времени с использованием микрофона компьютера.
+
+Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с включенной службой "Речь" (Майкрософт). Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/get-started), чтобы получить ключ подписки.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством вам потребуется ключ подписки службы "Речь". Его можно получить бесплатно. Дополнительные сведения см. в статье [Бесплатная пробная подписка на службу "Речь"](get-started.md).
+Чтобы выполнить этот проект, вам потребуется:
+
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
+* Ключ подписки для службы "Речь".
+* Доступ к микрофону компьютера.
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
@@ -33,32 +39,32 @@ ms.locfileid: "49468523"
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
-1. Откройте файл `Program.cs` и замените все содержимое приведенным ниже кодом.
+1. Откройте файл `Program.cs` и замените автоматически созданный код этим примером:
 
     [!code-csharp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/csharp-dotnet-windows/helloworld/Program.cs#code)]
 
-1. В этом же файле замените строку `YourSubscriptionKey` на ваш ключ подписки службы "Речь".
+1. Найдите и замените строку `YourSubscriptionKey` с помощью ключа подписки службы "Речь".
 
-1. Замените строку `YourServiceRegion` значением [региона](regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
+1. Найдите и замените строку `YourServiceRegion` на [регион](regions.md), связанный с вашей подпиской. Например, если вы используете бесплатную пробную версию, ваш регион — `westus`.
 
-1. Сохраните внесенные в проект изменения.
+1. Сохраните изменения в проекте.
 
 ## <a name="build-and-run-the-app"></a>Создание и запуск приложения
 
-1. Создайте приложение. В строке меню последовательно выберите **Сборка** > **Собрать решение**. Теперь код должен компилироваться без ошибок.
+1. В строке меню последовательно выберите **Сборка** > **Собрать решение**. Теперь код должен компилироваться без ошибок.
 
     ![Снимок экрана приложения Visual Studio с выделенным параметром "Собрать решение"](media/sdk/qs-csharp-dotnet-windows-08-build.png "Успешная сборка")
 
-1. Запустите приложение. В строке меню последовательно выберите **Отладка** > **Начать отладку** или нажмите клавишу **F5**.
+1. В строке меню выберите **Отладка** > **Начать отладку** или нажмите клавишу **F5**, чтобы запустить приложение.
 
     ![Снимок экрана приложения Visual Studio с выделенным параметром "Начать отладку"](media/sdk/qs-csharp-dotnet-windows-09-start-debugging.png "Start the app into debugging")
 
-1. Появится всплывающее окно консоли с запросом произнести что-либо. Произнесите фразу или предложение на английском языке. Ваша речь передается в службу "Речь" и транскрибируется в текст, который отображается в том же окне.
+1. Появится окно консоли с запросом на произнесение фразы. Теперь произнесите любую фразу на английском языке. Ваша речь передается в службу "Речь" и преобразовывается в текст в режиме реального времени. Результат выводится на консоль.
 
     ![Снимок экрана с выходными данными консоли после успешного распознавания](media/sdk/qs-csharp-dotnet-windows-10-console-output.png "Console output after successful recognition")
 
 [!INCLUDE [Download this sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
-Этот пример можно найти в папке `quickstart/csharp-dotnet-windows`.
+Код доступен в папке `quickstart/csharp-dotnet-windows`.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

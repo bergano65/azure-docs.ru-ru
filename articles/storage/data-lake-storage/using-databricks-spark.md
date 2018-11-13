@@ -8,16 +8,16 @@ ms.service: storage
 ms.topic: tutorial
 ms.date: 6/27/2018
 ms.author: dineshm
-ms.openlocfilehash: fd9dfaa2042cae0923c919f4e76d7b59a170918e
-ms.sourcegitcommit: 06724c499837ba342c81f4d349ec0ce4f2dfd6d6
+ms.openlocfilehash: c46a9f827bdeeaf7a2b9897b262484f64f83b9a8
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46466036"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51283467"
 ---
 # <a name="tutorial-access-azure-data-lake-storage-gen2-preview-data-with-azure-databricks-using-spark"></a>Руководство. Получение доступа к данным предварительной версии Azure Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark
 
-В этом руководстве описано, как выполнять запросы Spark на кластере Azure Databricks, чтобы запрашивать данные в учетной записи с поддержкой предварительной версии Azure Data Lake Storage 2-го поколения.
+В этом руководстве описано, как выполнять запросы Spark на кластере Azure Databricks, чтобы запрашивать данные в учетной записи хранения Azure с поддержкой предварительной версии Azure Data Lake Storage 2-го поколения.
 
 > [!div class="checklist"]
 > * Создание кластера Databricks
@@ -31,9 +31,9 @@ ms.locfileid: "46466036"
 > [!NOTE]
 > Установите флажок **Prezipped file** (Предварительно сжатый файл), чтобы выбрать все поля данных. Размер загрузки будет составлять несколько гигабайт, но такой объем данных необходим для анализа.
 
-## <a name="create-an-azure-data-lake-storage-gen2-account"></a>Создание учетной записи Azure Data Lake Storage Gen2
+## <a name="create-an-azure-storage-account-with-analytic-capabilities"></a>Создание учетной записи хранения Azure с поддержкой возможностей аналитики
 
-Чтобы приступить к работе, создайте [учетную запись Azure Data Lake Storage Gen2](quickstart-create-account.md) и присвойте ей уникальное имя. Перейдите к учетной записи хранения, чтобы получить параметры конфигурации.
+Для начала создайте [учетную запись хранения с поддержкой возможностей аналитики](quickstart-create-account.md) и присвойте этой учетной записи уникальное имя. Перейдите к учетной записи хранения, чтобы получить параметры конфигурации.
 
 1. В разделе **Settings** (Параметры) щелкните **Ключи доступа**.
 2. Нажмите кнопку **Копировать** рядом с **key1**, чтобы скопировать значение ключа.
@@ -137,11 +137,12 @@ dbutils.fs.help()
 dbutils.fs.put(source + "/temp/1.txt", "Hello, World!", True)
 dbutils.fs.ls(source + "/temp/parquet/flights")
 ```
-С помощью этих примеров кода вы изучили иерархическую сущность HDFS, используя данные, хранящиеся в учетной записи с поддержкой Azure Data Lake Storage Gen2.
+
+С помощью этих примеров кода вы изучили иерархическую сущность HDFS, используя данные, хранящиеся в учетной записи хранения с поддержкой Azure Data Lake Storage 2-го поколения.
 
 ## <a name="query-the-data"></a>Запрос данных
 
-Теперь вы можете запрашивать данные, отправленные в хранилище Azure Data Lake. Введите каждый из приведенных ниже блоков кода в **Cmd 1** и одновременно нажмите клавиши **Cmd + Ввод**, чтобы выполнить сценарий Python.
+Теперь вы можете запрашивать данные, отправленные в учетную запись хранения. Введите каждый из приведенных ниже блоков кода в **Cmd 1** и одновременно нажмите клавиши **Cmd + Ввод**, чтобы выполнить сценарий Python.
 
 ### <a name="simple-queries"></a>Простые запросы
 

@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 10/18/2018
+ms.date: 11/01/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: 33fc8a3822def68cc0baad4670233f57044d1985
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: a3c35057af883eb790c44b3547072031eaf4ad2f
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49408413"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50962016"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Руководство по настройке устройств с гибридным присоединением к Azure Active Directory 
 
@@ -504,6 +504,9 @@ Azure AD Connect выполняет следующие функции:
  
 - В локальные зоны интрасети добавьте конечную точку проверки подлинности устройств в Azure AD, чтобы избежать запросов сертификатов при проверке подлинности устройств.
 
+- Управление устройствами Windows нижнего уровня 
+
+
 ### <a name="set-policy-in-azure-ad-to-enable-users-to-register-devices"></a>Настройка политики регистрации устройств в Azure AD
 
 Чтобы поддерживать регистрацию устройств Windows нижнего уровня, необходимо установить параметр, разрешающий пользователям регистрировать устройства в Azure AD. Эти настройки можно найти на портале Azure:
@@ -551,6 +554,12 @@ Azure AD Connect выполняет следующие функции:
 Чтобы избежать запросов сертификатов при проверке подлинности в Azure AD пользователей с зарегистрированных устройств, можно отправить политику на присоединенные к домену устройства, добавив следующий URL-адрес в зону локальной интрасети в Internet Explorer:
 
 `https://device.login.microsoftonline.com`
+
+
+### <a name="control-windows-down-level-devices"></a>Управление устройствами Windows нижнего уровня 
+
+Чтобы регистрировать устройства Windows нижнего уровня, необходимо скачать из Центра загрузки Майкрософт и установить пакет установщика Windows (MSI-файл). Дополнительные сведения см. [здесь](hybrid-azuread-join-control.md#control-windows-down-level-devices). 
+
 
 
 ## <a name="verify-joined-devices"></a>Проверка присоединенных устройств.

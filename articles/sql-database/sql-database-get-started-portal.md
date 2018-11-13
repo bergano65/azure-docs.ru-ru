@@ -11,15 +11,15 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 09/07/2018
-ms.openlocfilehash: 0e7ea33fa775bfba934d68d7cbcdd754880c3e55
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.date: 11/01/2018
+ms.openlocfilehash: 66ee4ac8fe946696d6760891a086a672fa9fc412
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47165013"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50914607"
 ---
-# <a name="create-an-azure-sql-database-in-the-azure-portal"></a>Создание базы данных SQL Azure на портале Azure
+# <a name="quickstart-create-an-azure-sql-database-in-the-azure-portal"></a>Краткое руководство. Создание базы данных SQL Azure на портале Azure
 
 В этом кратком руководстве описано, как создать базу данных SQL на портале Azure с помощью [покупательской модели на основе DTU](sql-database-service-tiers-dtu.md). База данных SQL Azure — это база данных как услуга, которая позволяет запускать и масштабировать высокодоступные базы данных SQL Server в облаке. В этом кратком руководстве описано, как создать базу данных SQL и отправлять запросы к ней с помощью портала Azure.
 

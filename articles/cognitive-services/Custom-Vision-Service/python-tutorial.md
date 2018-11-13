@@ -1,61 +1,53 @@
 ---
-title: Руководство. Создание проекта классификации изображений с помощью пакета SDK для Пользовательского визуального распознавания для Python
+title: Краткое руководство по созданию проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для Python
 titlesuffix: Azure Cognitive Services
-description: Создайте проект, добавьте теги, загрузите изображения, обучите проект и выполните прогнозирование с использованием конечной точки по умолчанию.
+description: Создание проекта, добавление тегов, загрузка изображений, обучение проекта и выполнение прогнозирования с использованием пакета SDK для Python.
 services: cognitive-services
 author: areddish
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: custom-vision
-ms.topic: tutorial
-ms.date: 08/28/2018
+ms.topic: quickstart
+ms.date: 11/2/2018
 ms.author: areddish
-ms.openlocfilehash: 96125ba1c54f742bb9ddf32a1588173217be0766
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 4de1a33006f580bda9d356027e93b4bf2309dd90
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49953118"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51281393"
 ---
-# <a name="tutorial-create-an-image-classification-project-with-the-custom-vision-sdk-for-python"></a>Руководство. Создание проекта классификации изображений с помощью пакета SDK для Пользовательского визуального распознавания для Python
+# <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-python-sdk"></a>Краткое руководство по созданию проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для Python
 
-Сведения о том, как создать проект классификации изображений с помощью Пользовательской службы визуального распознавания и базового скрипта Python. Создав проект, можно добавить теги, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования проекта по умолчанию и с его помощью программными средствами протестировать изображение. Этот пример с открытым кодом можно применить как шаблон для создания собственного приложения с помощью API Пользовательской службы визуального распознавания.
-
-
+Эта статья содержит сведения и примеры кода, применяя которые вы можете создать модель распознавания изображений с помощью пакета SDK Пользовательской службы визуального распознавания совместно с Python. Создав проект, вы можете добавить теги, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования проекта по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Python. Если вы хотите создать модель классификации и использовать ее _без кода_, ознакомьтесь со статьей [Как создать классификатор с помощью Пользовательской службы визуального распознавания](getting-started-build-a-classifier.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Python 2.7+ или Python 3.5+.
-- Средство PIP.
+- [Python 2.7 или 3.5+](https://www.python.org/downloads/).
+- Средство [PIP](https://pip.pypa.io/en/stable/installing/).
 
-## <a name="get-the-training-and-prediction-keys"></a>Получение ключей обучения и прогнозирования
+## <a name="install-the-custom-vision-sdk"></a>Установка пакета SDK Пользовательского визуального распознавания
 
-Чтобы получить ключи, используемые в этом примере, посетите [веб-страницу Пользовательской службы визуального распознавания](https://customvision.ai) и выберите __значок шестеренки__ в правом верхнем углу. В разделе __Accounts__ (Учетные записи) скопируйте значения в полях __Training Key__ (Ключ обучения) и __Prediction Key__ (Ключ прогнозирования).
+Чтобы установить пакет SDK Пользовательского визуального распознавания для Python, выполните следующую команду в PowerShell.
 
-![Изображение пользовательского интерфейса с ключами](./media/python-tutorial/training-prediction-keys.png)
-
-## <a name="install-the-custom-vision-service-sdk"></a>Установка пакета SDK для Пользовательской службы визуального распознавания
-
-Чтобы установить пакет SDK для Пользовательской службы визуального распознавания, выполните следующую команду.
-
-```
+```PowerShell
 pip install azure-cognitiveservices-vision-customvision
 ```
 
-## <a name="get-example-images"></a>Получение примеров изображений
+[!INCLUDE [get-keys](includes/get-keys.md)]
 
-В этом примере используются изображения из каталога `Samples/Images` проекта [https://github.com/Microsoft/Cognitive-CustomVision-Windows](https://github.com/Microsoft/Cognitive-CustomVision-Windows/tree/master/Samples/Images). Клонируйте или скачайте и извлеките проект в свою среду разработки.
+[!INCLUDE [python-get-images](includes/python-get-images.md)]
 
-## <a name="create-a-custom-vision-service-project"></a>Создание проекта Пользовательской службы визуального распознавания
 
-Чтобы создать проект Пользовательской службы визуального распознавания, создайте файл с именем `sample.py`. Используйте следующий код в качестве содержимого файла:
+## <a name="add-the-code"></a>Добавление кода
 
-> [!IMPORTANT]
-> Установите для `training_key` полученное ранее значение ключа обучения.
->
-> Установите для `prediction_key` полученное ранее значение ключа прогнозирования.
+Создайте файл с именем *sample.py* в необходимом каталоге проекта.
 
-```python
+### <a name="create-the-custom-vision-service-project"></a>Создание проекта Пользовательской службы визуального распознавания
+
+Добавьте в скрипт следующий код, чтобы создать проект Пользовательской службы визуального распознавания. Вставьте ключи подписки в соответствующие определения.
+
+```Python
 from azure.cognitiveservices.vision.customvision.training import training_api
 from azure.cognitiveservices.vision.customvision.training.models import ImageUrlCreateEntry
 
@@ -67,29 +59,28 @@ trainer = training_api.TrainingApi(training_key)
 
 # Create a new project
 print ("Creating project...")
-project = trainer.create_project("My Project")
+project = trainer.create_project("My New Project")
 ```
 
-## <a name="add-tags-to-your-project"></a>Добавление тегов в проект
+### <a name="create-tags-in-the-project"></a>Создание тегов в проекте
 
-Чтобы добавить в проект теги, добавьте следующий код в конец файла `sample.py`:
+Чтобы создать теги классификации в проекте, добавьте следующий код в конец *sample.py*.
 
-```python
+```Python
 # Make two tags in the new project
 hemlock_tag = trainer.create_tag(project.id, "Hemlock")
 cherry_tag = trainer.create_tag(project.id, "Japanese Cherry")
 ```
 
-## <a name="upload-images-to-the-project"></a>Загрузка изображений в проект
+### <a name="upload-and-tag-images"></a>Отправка и снабжение тегами изображений
 
-Чтобы добавить примеры изображений в проект, вставьте следующий код после создания тегов. Этот код загружает изображение с соответствующим тегом:
+Чтобы добавить примеры изображений в проект, вставьте следующий код после создания тегов. Этот код загружает каждое изображение с соответствующим тегом. Вам понадобится ввести URL-адрес базового изображения в зависимости от того, куда вы скачали проект с образцами пакета SDK Cognitive Services для Python.
 
-> [!IMPORTANT]
->
-> Измените путь к изображениям в зависимости от того, куда вы ранее скачали проект Cognitive-CustomVision-Windows.
+> [!NOTE]
+> Вам также понадобится изменить путь образов в зависимости от того, куда вы ранее скачали проект с образцами пакета SDK Cognitive Services для Python.
 
-```python
-base_image_url = "https://raw.githubusercontent.com/Microsoft/Cognitive-CustomVision-Windows/master/Samples/"
+```Python
+base_image_url = "<path to project>"
 
 print ("Adding images...")
 for image_num in range(1,10):
@@ -99,28 +90,13 @@ for image_num in range(1,10):
 for image_num in range(1,10):
     image_url = base_image_url + "Images/Japanese Cherry/japanese_cherry_{}.jpg".format(image_num)
     trainer.create_images_from_urls(project.id, [ ImageUrlCreateEntry(url=image_url, tag_ids=[ cherry_tag.id ] ) ])
-
-
-# Alternatively, if the images were on disk in a folder called Images alongside the sample.py, then
-# they can be added by using the following:
-#
-#import os
-#hemlock_dir = "Images\\Hemlock"
-#for image in os.listdir(os.fsencode("Images\\Hemlock")):
-#    with open(hemlock_dir + "\\" + os.fsdecode(image), mode="rb") as img_data: 
-#        trainer.create_images_from_data(project.id, img_data, [ hemlock_tag.id ])
-#
-#cherry_dir = "Images\\Japanese Cherry"
-#for image in os.listdir(os.fsencode("Images\\Japanese Cherry")):
-#    with open(cherry_dir + "\\" + os.fsdecode(image), mode="rb") as img_data: 
-#        trainer.create_images_from_data(project.id, img_data, [ cherry_tag.id ])
 ```
 
-## <a name="train-the-project"></a>Обучение проекта
+### <a name="train-the-classifier"></a>Обучение классификатора
 
-Для обучения классификатора добавьте следующий код в конец файла `sample.py`:
+Этот код создает первую итерацию в проекте и отмечает ее как итерацию по умолчанию. Итерация по умолчанию отражает версию модели, которая будет отвечать на запросы прогнозирования. Итерацию следует обновлять при каждом переобучении модели.
 
-```python
+```Python
 import time
 
 print ("Training...")
@@ -135,9 +111,9 @@ trainer.update_iteration(project.id, iteration.id, is_default=True)
 print ("Done!")
 ```
 
-## <a name="get-and-use-the-default-prediction-endpoint"></a>Получение и использование конечной точки прогнозирования по умолчанию
+### <a name="get-and-use-the-default-prediction-endpoint"></a>Получение и использование конечной точки прогнозирования по умолчанию
 
-Чтобы отправить изображение в конечную точку прогнозирования и выполнить прогнозирование, добавьте следующий код в конец файла `sample.py`:
+Чтобы отправить изображение в конечную точку прогнозирования и извлечь прогнозирование, добавьте в конец файла следующий код:
 
 ```python
 from azure.cognitiveservices.vision.customvision.prediction import prediction_endpoint
@@ -150,27 +126,20 @@ predictor = prediction_endpoint.PredictionEndpoint(prediction_key)
 test_img_url = base_image_url + "Images/Test/test_image.jpg"
 results = predictor.predict_image_url(project.id, iteration.id, url=test_img_url)
 
-# Alternatively, if the images were on disk in a folder called Images alongside the sample.py, then
-# they can be added by using the following.
-#
-# Open the sample image and get back the prediction results.
-# with open("Images\\test\\test_image.jpg", mode="rb") as test_data:
-#     results = predictor.predict_image(project.id, test_data, iteration.id)
-
 # Display the results.
 for prediction in results.predictions:
     print ("\t" + prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100))
 ```
 
-## <a name="run-the-example"></a>Выполнение примера
+## <a name="run-the-application"></a>Выполнение приложения
 
-Запустите решение. В консоли отобразятся результаты прогнозирования.
+Выполните *sample.py*.
 
-```
+```PowerShell
 python sample.py
 ```
 
-Выходные данные приложения будут выглядеть приблизительно так:
+Выходные данные приложения должны выглядеть приблизительно так:
 
 ```
 Creating project...
@@ -182,3 +151,14 @@ Done!
         Hemlock: 93.53%
         Japanese Cherry: 0.01%
 ```
+
+Вы можете убедиться, что тестовое изображение (в **<base_image_url>/Images/Test/**) помечено соответствующим образом. Вы также можете вернуться к [веб-сайту Пользовательской службы визуального распознавания](https://customvision.ai) и просмотреть текущее состояние созданного проекта.
+
+[!INCLUDE [clean-ic-project](includes/clean-ic-project.md)]
+
+## <a name="next-steps"></a>Дополнительная информация
+
+Теперь вы узнали, как выполнять в коде каждый шаг процесса классификации изображений. В этом примере выполняется одна итерация обучения, но часто нужно несколько раз обучать и тестировать модель, чтобы сделать ее более точной.
+
+> [!div class="nextstepaction"]
+> [Тестирование и переобучение модели с помощью Пользовательской службы визуального распознавания](test-your-model.md)

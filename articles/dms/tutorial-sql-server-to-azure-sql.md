@@ -1,5 +1,5 @@
 ---
-title: Использование Azure Database Migration Service для переноса SQL Server в базу данных SQL Azure в автономном режиме | Документация Майкрософт
+title: Руководство. Перенос баз данных из SQL Server в Базу данных SQL Azure в автономном режиме с помощью службы Azure Database Migration Service | Документация Майкрософт
 description: Узнайте, как выполнять миграцию из локального экземпляра SQL Server в Базу данных SQL Azure в автономном режиме с помощью Azure Database Migration Service.
 services: dms
 author: pochiraju
@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
 ms.date: 10/10/2018
-ms.openlocfilehash: 6b8b6994b810db939a5e690d16d3c5d2f1a0825f
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.openlocfilehash: 783785a73b3a6a99126b07f3759be540fe3098d8
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49945405"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50959245"
 ---
-# <a name="migrate-sql-server-to-azure-sql-database-offline-using-dms"></a>Перенос SQL Server в Базу данных SQL Azure в автономном режиме с помощью DMS
+# <a name="tutorial-migrate-sql-server-to-azure-sql-database-offline-using-dms"></a>Руководство. Перенос баз данных из SQL Server в Базу данных SQL Azure в автономном режиме с помощью DMS
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра SQL Server в [базу данных SQL Azure](https://docs.microsoft.com/azure/sql-database/). В этом руководстве выполняется миграция базы данных **Adventureworks2012**, восстановленной в локальном экземпляре SQL Server 2016 (или более поздней версии), в базу данных SQL Azure с помощью Azure Database Migration Service.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:

@@ -11,15 +11,15 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 04/24/2018
-ms.openlocfilehash: 576e0adca21f5cd3313893035ff66bd83a0a0164
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.date: 11/01/2018
+ms.openlocfilehash: 01f1ac19cbab5ec60034b75fb15ccdb45df8541e
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47063529"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50913314"
 ---
-# <a name="azure-sql-database-connect-and-query-quickstarts"></a>Краткие руководства по подключению и созданию запросов к базе данных SQL Azure
+# <a name="quickstarts-azure-sql-database-connect-and-query"></a>Краткие руководства. Подключение и создание запросов к базе данных SQL Azure
 
 В этом документе представлены ссылки на примеры для Azure, в которых показано, как подключаться и создавать запросы к базе данных SQL Azure. В нем также приводятся рекомендации по использованию протокола TLS.
 
@@ -29,7 +29,7 @@ ms.locfileid: "47063529"
 |---|---|
 |[SQL Server Management Studio](sql-database-connect-query-ssms.md)|В этом кратком руководстве показано, как использовать SSMS для подключения к базе данных Azure SQL, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в базе данных.|
 |[Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/quickstart-sql-database?toc=/azure/sql-database/toc.json)|В этом кратком руководстве показано, как использовать Azure Data Studio для подключения к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL (T-SQL) создать базу данных TutorialDB, которая используется в руководствах по Azure Data Studio.|
-|[портала Azure](sql-database-connect-query-portal.md)|В этом кратком руководстве показано, как использовать редактор запросов для подключения к базе данных SQL, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в базе данных.|
+|[портал Azure](sql-database-connect-query-portal.md)|В этом кратком руководстве показано, как использовать редактор запросов для подключения к базе данных SQL, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в базе данных.|
 |[Visual Studio Code](sql-database-connect-query-vscode.md)|В этом кратком руководстве показано, как, используя Visual Studio Code, подключиться к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в базе данных.|
 |[.NET с Visual Studio](sql-database-connect-query-dotnet-visual-studio.md)|В этом кратком руководстве показано, как использовать платформу .NET Framework для создания программы C# с помощью Visual Studio, которая подключается к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
 |[.NET Core](sql-database-connect-query-dotnet-core.md)|В этом кратком руководстве показано, как использовать .NET Core в Windows, Linux и Mac OS для создания программы C#, которая подключается к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|

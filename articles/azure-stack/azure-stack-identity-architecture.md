@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/01/2018
+ms.date: 11/07/2018
 ms.author: patricka
-ms.reviewer: ''
-ms.openlocfilehash: f2d843b343fa830adf41352ae692ea98bed52ecc
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.reviewer: fiseraci
+ms.openlocfilehash: a16a6596d6bc33200f87a1dfd3b2ea5b02628e10
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44713652"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51277823"
 ---
 # <a name="identity-architecture-for-azure-stack"></a>Архитектура удостоверений Azure Stack
 Прежде чем выбрать поставщик удостоверений для использования с Azure Stack, ознакомьтесь с существенными различиями между вариантами Azure Active Directory (Azure AD) и службы федерации Active Directory (AD FS). 

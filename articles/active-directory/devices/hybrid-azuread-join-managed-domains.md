@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/25/2018
+ms.date: 11/01/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: c3c0d9bb6da00272cc7da0ad9f4fae978552c39b
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 48bedff0cd09c3f0dbffdabe6a94847d035a0cf9
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49352616"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50963937"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по настройке гибридного присоединения к Azure Active Directory для управляемых доменов
 
@@ -140,6 +140,9 @@ ms.locfileid: "49352616"
  
 - Настройка параметров локальной интрасети для регистрации устройств.
 
+- Управление устройствами Windows нижнего уровня 
+
+
 ### <a name="update-device-settings"></a>Обновление параметров устройства 
 
 Чтобы обеспечить регистрацию устройств Windows нижнего уровня, необходимо установить параметр устройств, разрешающий пользователям регистрировать устройства в Azure AD. Этот параметр можно найти на портале Azure.
@@ -163,6 +166,12 @@ ms.locfileid: "49352616"
 - `https://autologon.microsoftazuread-sso.com`.
 
 Кроме того, необходимо включить параметр **Allow updates to status bar via script** (Разрешить обновление строки состояния с помощью сценария) в локальной зоне интрасети пользователя.
+
+
+### <a name="control-windows-down-level-devices"></a>Управление устройствами Windows нижнего уровня 
+
+Чтобы регистрировать устройства Windows нижнего уровня, необходимо скачать из Центра загрузки Майкрософт и установить пакет установщика Windows (MSI-файл). Дополнительные сведения см. [здесь](hybrid-azuread-join-control.md#control-windows-down-level-devices). 
+
 
 ## <a name="verify-the-registration"></a>Проверка регистрации
 

@@ -5,15 +5,15 @@ services: functions
 author: ggailey777
 ms.service: functions
 ms.topic: include
-ms.date: 08/26/2018
+ms.date: 11/02/2018
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: f3fa6c75fdaf30d13231bc3072bd671614c9a668
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: b290cada86401d91313939a7673998810cb82551
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49650758"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51028151"
 ---
 1. Щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите пункт **Опубликовать**.
 
@@ -22,6 +22,9 @@ ms.locfileid: "49650758"
     ![Выбор целевого объекта публикации](./media/functions-vstools-publish/functions-visual-studio-publish-profile.png)
 
     При включении параметра **Запуск из ZIP-файла** приложение-функция в Azure будет запущено непосредственно из пакета развертывания. Дополнительные сведения см. в руководстве по [запуску Функций Azure из файла пакета](../articles/azure-functions/run-functions-from-deployment-package.md).
+     
+    >[!CAUTION]
+    >Если выбрать параметр **Выбрать существующее**, все файлы в существующем приложении-функции в Azure будут перезаписаны файлами из локального проекта. Используйте этот параметр только при повторной публикации обновлений для существующего приложения-функции.
 
 3. Если вы еще не подключили Visual Studio к учетной записи Azure, нажмите кнопку **Добавить учетную запись**.
 

@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 10/09/2018
+ms.date: 11/01/2018
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 7bc8b3ba415f8fe701098a9fa7e51d60ffb9df4e
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 807453d6af67fd2dccf06a1b4a2beaca47dc865a
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49092462"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50913827"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-disk-and-verify"></a>Руководство. Копирование данных на диск Microsoft Azure Data Box и проверка
 
@@ -31,14 +31,15 @@ ms.locfileid: "49092462"
 Перед тем как начать, убедитесь в следующем.
 - [Руководство по установке и настройке диска Azure Data Box](data-box-disk-deploy-set-up.md) изучено.
 - Диски разблокированы и подключены к клиентскому компьютеру.
-- На клиентском компьютере, с которого вы будете копировать данные на диски, установлена [поддерживаемая операционная система](data-box-disk-system-requirements.md).
+- На клиентском компьютере, с которого вы будете копировать данные на диски, установлена [поддерживаемая операционная система](data-box-disk-system-requirements.md##supported-operating-systems-for-clients).
+- Убедитесь, что предполагаемый тип хранилища для ваших данных соответствует [поддерживаемым типам хранилища](data-box-disk-system-requirements.md#supported-storage-types).
 
 
 ## <a name="copy-data-to-disks"></a>Копирование данных на диски
 
 Выполните следующие действия для подключения и копирования данных с компьютера на диск Data Box.
 
-1. Просмотрите содержимое разблокированного диска. 
+1. Просмотрите содержимое разблокированного диска.
 
     ![Просмотр содержимого диска](media/data-box-disk-deploy-copy-data/data-box-disk-content.png)
  
@@ -229,7 +230,7 @@ ms.locfileid: "49092462"
 
 Чтобы проверить данные, выполните описанные ниже действия.
 
-1. Запустите `DataBoxDiskValidation.cmd`, чтобы проверить контрольную сумму в папке *AzureImportExport* вашего диска. 
+1. Запустите `DataBoxDiskValidation.cmd` для проверки контрольных сумм в папке *DataBoxDiskImport* на диске. 
     
     ![Выходные данные инструмента проверки диска Data Box](media/data-box-disk-deploy-copy-data/data-box-disk-validation-tool-output.png)
 

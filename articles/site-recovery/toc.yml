@@ -60,7 +60,7 @@ items:
       href: azure-to-azure-tutorial-migrate.md
 - name: Основные понятия
   items:
-  - name: Часто задаваемые вопросы
+  - name: Часто задаваемые вопросы о Site Recovery
     href: site-recovery-faq.md
   - name: Сведения об аварийном восстановлении виртуальной машины Azure в Azure
     items:
@@ -80,6 +80,8 @@ items:
       href: vmware-azure-common-questions.md
     - name: Матрица поддержки
       href: vmware-physical-azure-support-matrix.md
+    - name: Требования к поддержке при развертывании сервера конфигурации
+      href: vmware-azure-configuration-server-requirements.md
     - name: 'Архитектура: репликация из VMware в Azure'
       href: vmware-azure-architecture.md
     - name: Параметры расположения для восстановления размещения из Azure в VMware
@@ -134,9 +136,9 @@ items:
       items:
       - name: Подготовка сетей для аварийного восстановления виртуальных машин Azure
         href: azure-to-azure-about-networking.md
-      - name: Подготовка сопоставления сетей для аварийного восстановления виртуальных машин Azure
+      - name: Настройка сетевого сопоставления и сохранение IP-адресов после отработки отказа
         href: azure-to-azure-network-mapping.md
-      - name: Настройка назначения IP-адресов для отработки отказа
+      - name: Примеры для сохранения IP-адресов после отработки отказа
         href: site-recovery-retain-ip-azure-vm-failover.md
       - name: Интеграция ExpressRoute для аварийного восстановления виртуальных машин Azure
         href: azure-vm-disaster-recovery-with-expressroute.md
@@ -148,14 +150,6 @@ items:
         href: azure-to-azure-how-to-enable-replication-ade-vms.md
       - name: Повторное включение защиты виртуальных машин Azure после отработки отказа
         href: azure-to-azure-how-to-reprotect.md
-    - name: Устранение неполадок
-      items:
-      - name: Устранение неполадок с репликацией Azure — Azure
-        href: azure-to-azure-troubleshoot-errors.md
-      - name: Устранение неполадок с текущей репликацией
-        href: azure-to-azure-troubleshoot-replication.md
-      - name: Устранение неполадок с расширением Azure Site Recovery
-        href: site-recovery-extension-troubleshoot.md
       - name: Настройка аварийного восстановления виртуальных машин Azure после миграции в Azure
         href: azure-to-azure-replicate-after-migration.md
     - name: управление
@@ -188,10 +182,8 @@ items:
         href: vmware-azure-set-up-process-server-scale.md
     - name: Настройка аварийного восстановления
       items:
-      - name: Настройка исходной среды
+      - name: Настройка исходной среды (сервера конфигурации)
         href: vmware-azure-set-up-source.md
-      - name: Развертывание сервера конфигурации для виртуальных машин VMware
-        href: vmware-azure-deploy-configuration-server.md
       - name: Настройка целевой среды
         href: vmware-azure-set-up-target.md
       - name: Настройка параметров репликации
@@ -390,14 +382,18 @@ items:
     href: site-recovery-monitor-and-troubleshoot.md
   - name: Виртуальные машины Azure
     items:
-    - name: Устранение неполадок с репликацией Azure — Azure
+    - name: Устранение ошибок репликации виртуальных машин Azure
       href: azure-to-azure-troubleshoot-errors.md
+    - name: Устранение неполадок с текущей репликацией виртуальных машин Azure
+      href: azure-to-azure-troubleshoot-replication.md
     - name: Устранение неполадок с Mobility Service для виртуальных машин Azure
       href: site-recovery-extension-troubleshoot.md
   - name: VMware или физический сервер
     items:
     - name: Устранение неполадок с репликацией VMware — Azure
       href: vmware-azure-troubleshoot-replication.md
+    - name: Устранение неполадок с сервером конфигурации
+      href: vmware-azure-troubleshoot-configuration-server.md
     - name: Устранение неполадок с принудительной установкой Mobility Service для виртуальных машин VMware или физических серверов
       href: vmware-azure-troubleshoot-push-install.md
     - name: Устранение неполадок с отработкой отказа в Azure
@@ -438,9 +434,9 @@ items:
     href: https://azure.microsoft.com/pricing/calculator/
   - name: Обновления службы
     href: https://azure.microsoft.com/updates/?product=site-recovery
-ms.openlocfilehash: 770aa6a07df6900b10558ebbb7718c248296ee51
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
+ms.openlocfilehash: d0d5ff955caa7cf9206973f0411f4170ba3bbc35
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51288090"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51566359"

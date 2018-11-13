@@ -9,13 +9,13 @@ editor: jasonwhowell
 ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
-ms.date: 09/12/2018
-ms.openlocfilehash: f26cadf28205359b111a8f92b8fadcbd9f26f958
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.date: 11/01/2018
+ms.openlocfilehash: b413636f173a682ed74bf92688126d33d429839e
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47407627"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50959228"
 ---
 # <a name="create-an-azure-database-for-mysql-server-by-using-the-azure-portal"></a>Создание базы данных Azure для сервера MySQL с помощью портала Azure
 
@@ -98,20 +98,9 @@ ms.locfileid: "47407627"
 В этом примере серверу присвоено имя **mydemoserver.mysql.database.azure.com**, а имя для входа администратора сервера имеет значение **myadmin@mydemoserver**.
 
 ## <a name="connect-to-mysql-by-using-the-mysql-command-line-tool"></a>Подключение к MySQL с помощью программы командной строки mysql
-К базе данных Azure для сервера MySQL можно подключиться с помощью нескольких приложений. 
+Подключитесь к серверу с помощью программы командной строки **mysql.exe**. MySQL можно скачать [здесь](https://dev.mysql.com/downloads/) и установить на компьютер. 
 
-Сначала воспользуемся программой командной строки [mysql](https://dev.mysql.com/doc/refman/5.7/en/mysql.html) для подключения к серверу. Веб-браузер и Azure Cloud Shell можно также использовать, как описано здесь, без установки дополнительного программного обеспечения. Если на вашем компьютере установлена служебная программа mysql, вы можете подключиться с него.
-
-1. Запустите Azure Cloud Shell с помощью значка терминала (**>_**) в верхней правой части страницы портала Azure.
-![Символ терминала Azure Cloud Shell](./media/quickstart-create-mysql-server-database-using-azure-portal/7-cloud-console.png)
-
-2.  В браузере откроется служба Azure Cloud Shell, где вы можете вводить команды оболочки Bash.
-
-   ![Командная строка: пример командной строки mysql](./media/quickstart-create-mysql-server-database-using-azure-portal/8-bash.png)
-
-3. Чтобы подключиться к базе данных Azure для сервера MySQL, введите команду mysql в командной строке Cloud Shell.
-
-    Чтобы подключиться к серверу базы данных Azure для MySQL с помощью служебной программы mysql, используйте следующий формат:
+1. Чтобы подключиться к серверу базы данных Azure для MySQL с помощью служебной программы mysql, используйте следующий формат:
 
     ```bash
     mysql --host <fully qualified server name> --user <server admin login name>@<server name> -p
@@ -119,7 +108,7 @@ ms.locfileid: "47407627"
 
     Например, следующая команда позволяет подключиться к нашему серверу, используемому для примера:
 
-    ```azurecli-interactive
+    ```bash
     mysql --host mydemoserver.mysql.database.azure.com --user myadmin@mydemoserver -p
     ```
 
@@ -149,7 +138,7 @@ ms.locfileid: "47407627"
     mysql>
     ```
     > [!TIP]
-    > Если в брандмауэре не настроено разрешение IP-адресов Azure Cloud Shell, возникнет следующая ошибка:
+    > Если в брандмауэре не настроено разрешение IP-адресов клиента, возникает следующая ошибка:
     >
     > ОШИБКА 2003 (28000): для клиента с IP-адресом 123.456.789.0 доступ к серверу не разрешен.
     >
@@ -178,7 +167,7 @@ ms.locfileid: "47407627"
     SHOW DATABASES;
     ```
 
-7.  Введите `\q`, а затем нажмите клавишу **ВВОД**, чтобы завершить работу средства mysql. Завершив работу, вы можете закрыть Azure Cloud Shell.
+7.  Введите `\q`, а затем нажмите клавишу **ВВОД**, чтобы завершить работу средства mysql. 
 
 Итак, вы подключились к базе данных Azure для сервера MySQL и создали пустую пользовательскую базу данных. В следующем разделе мы выполним похожее задание. Вы подключитесь к тому же серверу с помощью другого популярного средства — MySQL Workbench.
 

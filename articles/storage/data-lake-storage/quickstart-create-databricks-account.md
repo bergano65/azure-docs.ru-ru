@@ -8,16 +8,16 @@ ms.component: data-lake-storage-gen2
 ms.service: storage
 ms.topic: quickstart
 ms.date: 06/27/2018
-ms.openlocfilehash: 5ffbc52bf8a4b8dab298b3ed4895596480fbdccc
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 338acd3e26f9b36e5f9afaf90f95f61e7623cebc
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49426725"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51281733"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-portal"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure
 
-Это краткое руководство содержит сведения о запуске задания Apache Spark используя Azure Databricks для выполнения анализа данных, которые хранятся в Azure Data Lake Storage Gen2 (предварительная версия).
+В этом кратком руководстве объясняется, как запускать задания Apache Spark с помощью Azure Databricks для анализа данных, которые хранятся в учетной записи хранения с поддержкой Azure Data Lake Storage 2-го поколения (предварительная версия).
 
 В рамках задания Spark показано как анализировать данные подписки на радиоканал, чтобы получить сведения о бесплатном и оплачиваемом использовании на основе демографических данных.
 
@@ -25,7 +25,7 @@ ms.locfileid: "49426725"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Создайте учетную запись Data Lake Storage Gen2 Azure](quickstart-create-account.md)
+- [Создание учетной записи хранения с поддержкой Data Lake Storage 2-го поколения](quickstart-create-account.md)
 
 ## <a name="set-aside-storage-account-configuration"></a>Отдельная настройка учетной записи хранения
 
@@ -38,7 +38,7 @@ ms.locfileid: "49426725"
 
 В этом разделе вы создадите рабочую область Azure Databricks с помощью портала Azure.
 
-1. На портале Azure выберите **Создать ресурс** > **Analytics** > **Azure Databricks**. 
+1. На портале Azure выберите **Создать ресурс** > **Analytics** > **Azure Databricks**.
 
     ![Databricks на портале Azure](./media/quickstart-create-databricks-workspace-portal/azure-databricks-on-portal.png "Databricks on Azure portal")
 
@@ -47,7 +47,7 @@ ms.locfileid: "49426725"
     ![Создание рабочей области Azure Databricks](./media/quickstart-create-databricks-workspace-portal/create-databricks-workspace.png "Create an Azure Databricks workspace")
 
     Укажите следующие значения.
-     
+
     |Свойство  |ОПИСАНИЕ  |
     |---------|---------|
     |**Имя рабочей области**     | Укажите имя рабочей области Databricks.        |
@@ -191,7 +191,7 @@ ms.locfileid: "49426725"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этой статье был создан кластер Spark в Azure Databricks и запущено задание Spark с использованием данных в Data Lake Storage Gen2 Azure. Вы также можете просмотреть [источники данных Spark](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html), чтобы узнать, как импортировать данные из источников данных в Azure Databricks. Перейдите к следующей статье, чтобы узнать, как выполнять операции ETL (извлечения, преобразование и загрузка данных) с помощью Azure Databricks.
+Из этой статьи вы узнали, как создать кластер Spark в Azure Databricks и запускать задание Spark с использованием данных, хранящихся в учетной записи хранения с поддержкой Data Lake Storage 2-го поколения. Вы также можете просмотреть [источники данных Spark](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html), чтобы узнать, как импортировать данные из источников данных в Azure Databricks. Перейдите к следующей статье, чтобы узнать, как выполнять операции ETL (извлечения, преобразование и загрузка данных) с помощью Azure Databricks.
 
 > [!div class="nextstepaction"]
 >[Извлечение, преобразование и загрузка данных с помощью Azure Databricks](../../azure-databricks/databricks-extract-load-sql-data-warehouse.md)

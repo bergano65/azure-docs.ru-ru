@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 08/29/2018
 ms.author: ryanwi,v-steg
 ms.custom: mvc
-ms.openlocfilehash: 5ec898465b550a136db71ee731be5943c7441dcd
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: db0abf2c70ac79356496c78275dc658d1ee29a23
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44382165"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51035924"
 ---
 # <a name="tutorial-deploy-a-container-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство. Развертывание приложения-контейнера с помощью CI/CD в кластере Service Fabric
 
@@ -76,6 +76,9 @@ ms.locfileid: "44382165"
 Откройте веб-браузер и перейдите к новому командному проекту по адресу: [https://&lt;учетная_запись&gt;.visualstudio.com/Voting/Voting%20Team/_git/Voting](https://myaccount.visualstudio.com/Voting/Voting%20Team/_git/Voting).
 
 Перейдите на вкладку **Сборка и выпуск**, выберите **Сборки** и щелкните **Новый конвейер**.
+
+>[!NOTE]
+>Если шаблон определения сборки не отображается, выключите функцию **Новый интерфейс для создания конвейеров YAML**. Эта функция настраивается в разделе **Функции предварительной версии** учетной записи DevOps.
 
 ![Новый конвейер][new-pipeline]
 

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 10/03/2018
+ms.date: 10/30/2018
 ms.author: alkohli
-ms.openlocfilehash: 7676360d71dab4da58693221645517c69b56dff8
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 42ed9091ff7ab8059ba253f62726b30899d6e697
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49090694"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51036061"
 ---
 # <a name="tutorial-return-azure-data-box-and-verify-data-upload-to-azure"></a>Руководство. Отправка Azure Data Box и проверка передачи данных в Azure
 
@@ -51,11 +51,16 @@ ms.locfileid: "49090694"
 
 После завершения копирования статус заказа обновится до **Завершено**.
 
-Прежде чем удалять их из источника, убедитесь, что данные сохранены в учетной записи хранения. 
+Прежде чем удалять их из источника, убедитесь, что данные сохранены в учетной записи хранения. При копировании через Data Box данные передаются в одно из следующих расположений в учетной записи службы хранилища Azure в зависимости от типа данных.
+
+- Для блочных и страничных BLOB-объектов: `https://<storage_account_name>.blob.core.windows.net/<containername>/files/a.txt`.
+- Для службы файлов Azure: `https://<storage_account_name>.file.core.windows.net/<sharename>/files/a.txt`.
+
+Кроме того, вы можете перейти к этим данным из учетной записи хранения Azure на портале Azure.
 
 ## <a name="erasure-of-data-from-data-box"></a>Стирание данных из Data Box
  
- Когда передача данных в Azure завершится, Data Box удалит данные с дисков согласно рекомендациям [NIST SP 800-88 в редакции 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi). 
+Когда передача данных в Azure завершится, Data Box удалит данные с дисков согласно рекомендациям [NIST SP 800-88 в редакции 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi). 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

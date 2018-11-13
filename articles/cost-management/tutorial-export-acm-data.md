@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.service: cost-management
 manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: 0765e79b90eed49742f5eead33063907eb1db1f4
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 7f93a225db845840545b761d812f5a8a81f76f91
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47030852"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50913569"
 ---
 # <a name="tutorial-create-and-manage-exported-data"></a>Руководство. Создание экспортированных данных и управление ими
 
@@ -46,7 +46,7 @@ ms.locfileid: "47030852"
 
 ## <a name="create-a-daily-export"></a>Создание ежедневного экспорта
 
-Управление затратами + выставление счетов&gt; выберите подписку или группу ресурсов в подписке &gt; Экспорт &gt; **Добавить**.
+Управление затратами + выставление счетов &gt; Управление затратами &gt; выберите подписку или группу ресурсов в подписке &gt; Экспорт &gt; **Добавить**.
 
 Введите имя для экспорта и укажите подписку, учетную запись хранилища Azure, контейнер и каталог хранения файлов или BLOB-контейнер, затем нажмите кнопку **Создать**.
 

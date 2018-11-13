@@ -13,33 +13,50 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/25/2018
-ms.author: andret
+ms.date: 11/01/2018
+ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 28c5f025b59b4adbb33a59edd225a839e11dad97
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 7e7e5e16b6f7de1cee8312fd31801c202c3e16ef
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46965098"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50962917"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-windows-desktop-app"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из классического приложения Windows
 
 [!INCLUDE [active-directory-develop-applies-v2-msal](../../../includes/active-directory-develop-applies-v2-msal.md)]
 
-В этом кратком руководстве вы узнаете, как классическое приложение .NET для Windows (WPF) может входить в личные, рабочие и школьные учетные записи, получать маркер доступа и вызывать API Microsoft Graph.
+В этом кратком руководстве вы узнаете, как записывать классическое приложение .NET для Windows (WPF), которое может входить в личные, рабочие и школьные учетные записи, получать маркер доступа и вызывать API Microsoft Graph.
 
 ![Как работает пример приложения, созданный в этом кратком руководстве](media/quickstart-v2-windows-desktop/windesktop-intro.png)
 
 > [!div renderon="docs"]
-> ## <a name="register-and-download"></a>Регистрация и загрузка
-> ### <a name="register-and-configure-your-application-and-code-sample"></a>Регистрация и настройка примера приложения и кода
+> ## <a name="register-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
+> [!div renderon="docs" class="sxs-lookup"]
+> У вас есть два варианта запуска приложения, используемого в этом кратком руководстве:
+> * [Экспресс.] [Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода](#option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample).
+> * [Вручную.] [Вариант 2. Регистрация и настройка приложения и примера кода вручную](#option-2-register-and-manually-configure-your-application-and-code-sample).
+>
+> ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
+>
+> 1. Откройте [Регистрация приложения](https://portal.azure.com/?Microsoft_AAD_RegisteredApps=true#blade/Microsoft_AAD_RegisteredApps) на портале Azure.
+> 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
+> 1. Следуйте инструкциям, чтобы быстро скачать и автоматически настроить новое приложение.
+>
+> ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Вариант 2. Регистрация и настройка приложения и примера кода вручную
+> [!div renderon="docs"]
 > #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
-> Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение, сделайте следующее:
-> 1. Перейдите на [портал регистрации приложений Майкрософт](https://apps.dev.microsoft.com/portal/register-app) для регистрации приложения.
-> 1. В поле **Имя приложения** введите имя приложения.
-> 1. Обязательно снимите флажок **Guided Setup** (Интерактивная настройка) и нажмите кнопку **Создать**.
-> 1. Выберите **Добавление платформы**, **Собственное приложение**, а затем нажмите кнопку **Сохранить**.
+> 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+> 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
+> 1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **Регистрация приложений (предварительная версия)** > **Новая регистрация**.
+> 1. После появления страницы **Регистрация приложения** введите сведения о регистрации приложения:
+>      - В разделе **Имя** введите понятное имя приложения, которое будет отображаться пользователям приложения, например `Win-App-calling-MsGraph`.
+>      - В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts (for example, Skype, Xbox, Outlook.com)** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт (например, Skype, Xbox, Outlook.com)).
+>      - Выберите **Зарегистрировать**, чтобы создать приложение.
+> 1. В списке страниц приложения выберите **Проверка подлинности**.
+> 1. В разделе **URI перенаправления** найдите **предлагаемые URI перенаправления для общедоступных клиентов (мобильные устройства, компьютеры)** и выберите **"urn:ietf:wg:oauth:2.0:oob**.
+> 1. Щелкните **Сохранить**.
 
 > [!div renderon="portal" class="sxs-lookup"]
 > #### <a name="step-1-configure-your-application"></a>Шаг 1. Настройка приложения
@@ -48,7 +65,7 @@ ms.locfileid: "46965098"
 > > [Внести это изменение для меня]()
 >
 > > [!div id="appconfigured" class="alert alert-info"]
-> > ![Уже настроено](media/quickstart-v2-windows-desktop/green-check.png). Ваше приложение настроено с помощью этих атрибутов
+> > ![Уже настроено](media/quickstart-v2-windows-desktop/green-check.png). Ваше приложение настроено с помощью этих атрибутов.
 
 #### <a name="step-2-download-your-visual-studio-project"></a>Шаг 2. Загрузка проекта Visual Studio
 
@@ -56,19 +73,31 @@ ms.locfileid: "46965098"
 
 #### <a name="step-3-configure-your-visual-studio-project"></a>Шаг 3. Настройка проекта Visual Studio
 
-1. Извлеките ZIP-файл в локальную папку (например, **C:\Azure-Samples**).
+1. Извлеките ZIP-файл в локальную папку, расположенную как можно ближе к корню диска (например, **C:\Azure-Samples**).
 1. Откройте проект в Visual Studio.
-1. Измените файл **App.Xaml.cs** и замените строку, начинающуюся с `private static string ClientId`, на идентификатор только что зарегистрированного приложения:
+1. Измените файл **App.Xaml.cs**, заменив значения полей `ClientId` и `Tenant` следующим кодом:
 
-```csharp
-private static string ClientId = "Enter_the_Application_Id_here";
-```
+    ```csharp
+    private static string ClientId = "Enter_the_Application_Id_here";
+    private static string Tenant = "Enter_the_Tenant_Info_Here";
+    ```
+
+> [!div renderon="docs"]
+> Описание
+> - `Enter_the_Application_Id_here` — это **идентификатор приложения (клиента)**, которое вы зарегистрировали.
+> - `Enter_the_Tenant_Info_Here` может иметь несколько значений.
+>   - Если приложение поддерживает **учетные записи только в этом каталоге организации**, замените это значение **идентификатором клиента** или **именем клиента** (например, contoso.microsoft.com).
+>   - Если приложение поддерживает вариант **учетные записи в любом каталоге организации**, замените это значение на `organizations`.
+>   - Если приложение поддерживает **учетные записи в любом каталоге организации и личные учетные записи Майкрософт**, укажите значение `common`.
+>
+> > [!TIP]
+> > Чтобы найти значения параметров **Идентификатор приложения (клиента)**, **Идентификатор каталога (клиента)** и **Поддерживаемые типы учетных записей**, на портале Azure перейдите на страницу **Обзор**.
 
 ## <a name="more-information"></a>Дополнительные сведения
 
 ### <a name="msalnet"></a>MSAL.NET
 
-MSAL ([Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)) — это библиотека, используемая для регистрации пользователей и запросов маркеров безопасности, которые используются при доступе к API, защищенному Microsoft Azure Active Directory (Azure AD). Ее можно установить, выполнив в **консоли диспетчера пакетов** Visual Studio следующие команды.
+MSAL ([Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)) — это библиотека, используемая для регистрации пользователей и запросов маркеров безопасности, которые используются при доступе к API, защищенному Microsoft Azure Active Directory (Azure AD). MSAL можно установить, выполнив в **консоли диспетчера пакетов** Visual Studio следующую команду.
 
 ```powershell
 Install-Package Microsoft.Identity.Client -Pre
@@ -90,11 +119,11 @@ public static PublicClientApplication PublicClientApp = new PublicClientApplicat
 
 > |Описание ||
 > |---------|---------|
-> | `ClientId` | Идентификатор приложения, зарегистрированного на веб-сайте *portal.microsoft.com* |
+> | `ClientId` | **Идентификатор приложения (клиента)**, зарегистрированного на портале Azure. Это значение можно найти на странице приложения **Обзор** на портале Azure. |
 
 ### <a name="requesting-tokens"></a>Запрос маркеров
 
-MSAL имеет два метода получения маркеров: `AcquireTokenAsync` и `AcquireTokenSilentAsync`.
+В MSAL есть два метода получения маркеров: `AcquireTokenAsync` и `AcquireTokenSilentAsync`.
 
 #### <a name="get-a-user-token-interactively"></a>Интерактивное получение маркера пользователя
 
@@ -111,7 +140,7 @@ authResult = await App.PublicClientApp.AcquireTokenAsync(_scopes);
 
 > |Описание||
 > |---------|---------|
-> | `_scopes` | Содержит запрашиваемые области (то есть `{ "user.read" }` для Microsoft Graph или `{ "api://<Application ID>/access_as_user" }` для пользовательских веб-API) |
+> | `_scopes` | Содержит запрашиваемые области (такие как `{ "user.read" }` для Microsoft Graph или `{ "api://<Application ID>/access_as_user" }` для пользовательских веб-API). |
 
 #### <a name="get-a-user-token-silently"></a>Автоматическое получение маркера пользователя
 
@@ -124,16 +153,15 @@ authResult = await App.PublicClientApp.AcquireTokenSilentAsync(scopes, accounts.
 
 > |Описание ||
 > |---------|---------|
-> |Области | Содержит запрашиваемые области (то есть `{ "user.read" }` для Microsoft Graph или `{ "api://<Application ID>/access_as_user" }` для пользовательских веб-API) |
-> |accounts.FirstOrDefault() | Первый пользователь в кэше (MSAL поддерживает нескольких пользователей в одном приложении) |
+> | `scopes` | Содержит запрашиваемые области (такие как `{ "user.read" }` для Microsoft Graph или `{ "api://<Application ID>/access_as_user" }` для пользовательских веб-API). |
+> | `accounts.FirstOrDefault()` | Указывает первого пользователя в кэше (MSAL поддерживает нескольких пользователей в одном приложении). |
+
+[!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 В руководстве по классическому приложению Windows вы найдете пошаговые инструкции по созданию приложений и компонентов, в том числе полное описание того, о чем говорится в этом кратком руководстве.
 
-### <a name="learn-the-steps-to-create-the-application-used-in-this-quickstart"></a>Изучите этапы создания приложения, используемые в этом кратком руководстве
-
 > [!div class="nextstepaction"]
-> [Вызов API Microsoft Graph из классического приложения для Windows](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-windesktop)
+> [Руководство по вызову API Graph](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-windesktop)
 
-[!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

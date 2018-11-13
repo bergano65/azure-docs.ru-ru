@@ -1,22 +1,22 @@
 ---
-title: 'Руководство. Apache Kafka со Storm в HDInsight — Azure '
+title: 'Руководство. Apache Kafka с Apache Storm в HDInsight — Azure '
 description: Узнайте, как создать конвейер потоковой передачи с помощью Apache Storm и Apache Kafka в HDInsight. В этом руководстве используются компоненты KafkaBolt и KafkaSpout, чтобы выполнять потоковую передачу данных из Kafka.
 services: hdinsight
-author: jasonwhowell
-ms.author: jasonh
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 05/21/2018
-ms.openlocfilehash: 7aa8f0b62459c376113bca5a0c58cc7dd3b5280c
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 1f8537408325aff0ba3ec198ed0e2bb697134845
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43094895"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51036348"
 ---
-# <a name="tutorial-use-apache-storm-with-kafka-on-hdinsight"></a>Руководство. Использование Apache Storm с Kafka в HDInsight
+# <a name="tutorial-use-apache-storm-with-apache-kafka-on-hdinsight"></a>Краткое руководство. Использование Apache Kafka с Apache Kafka в HDInsight
 
 В этом руководстве демонстрируется, как использовать топологию Apache Storm, чтобы cчитывать и записывать данные с использованием Apache Kafka в HDInsight. Здесь также показано, как сохранить данные в совместимое с HDFS хранилище в кластере Storm.
 

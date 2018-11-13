@@ -11,12 +11,12 @@ ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: mmontwil
-ms.openlocfilehash: 7fcdd2d41f5fe76776acd5642cda11ef8a65f82d
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 9e0d90dc4e5e4782802233dd311d10fc1cbe969c
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353764"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50978542"
 ---
 # <a name="quickstart-create-a-kubernetes-dev-space-with-azure-dev-spaces-java-and-vs-code"></a>Краткое руководство. Создание среды разработки Kubernetes с помощью Azure Dev Spaces (Java и VS Code)
 
@@ -34,7 +34,7 @@ ms.locfileid: "49353764"
 - Подписка Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/free).
 - [Visual Studio Code](https://code.visualstudio.com/download).
 - [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) версии 2.0.43 или выше.
-- Кластер Kubernetes, работающий с Kubernetes 1.10.3 или выше, в регионах EastUS, CentralUS, WestUS2, WestEurope, CanadaCentral или CanadaEast, с включенным параметром **Маршрутизация HTTP для приложений**.
+- Кластер Kubernetes, работающий на платформе Kubernetes версии 1.10.3 или выше, размещенный в регионе "Восточная часть США", "Восточная часть США 2", "Центральная часть США", "Западная часть США 2", "Западная Европа", "Юго-Восточная Азия", "Центральная Канада" или "Восточная Канада" и с включенным параметром **Маршрутизация HTTP для приложений**.
 
     ```cmd
     az group create --name MyResourceGroup --location <region>

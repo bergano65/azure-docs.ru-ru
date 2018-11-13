@@ -11,16 +11,16 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: mmontwil
-ms.openlocfilehash: 88d113dad72ec637e65424c4c5f6f48e793c691d
-ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
+ms.openlocfilehash: f07c5a3e28abc3600b13da2320e55860ede2f7c5
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47586042"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50978286"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-java"></a>Начало работы в Azure Dev Spaces с использованием Java
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 - создание в Azure оптимизированной для разработки среды на основе Kubernetes — _пространства разработки_;
 - итеративная разработка кода в контейнерах с помощью VS Code и командной строки;
@@ -62,7 +62,7 @@ az account set --subscription <subscription ID>
 
 ## <a name="create-a-kubernetes-cluster-enabled-for-azure-dev-spaces"></a>Создание и включение кластера Kubernetes для Azure Dev Spaces
 
-В командной строке создайте группу ресурсов. Используйте один из поддерживаемых регионов (EastUS, CentralUS, WestUS2, WestEurope, CanadaCentral или CanadaEast).
+В командной строке создайте группу ресурсов. Используйте один из поддерживаемых регионов: EastUS (восточная часть США), EastUS2 (восточная часть США 2), CentralUS (центральная часть США), WestUS2 (западная часть США 2), WestEurope (Западная Европа), SoutheastAsia (Юго-Восточная Азия), CanadaCentral (Центральная Канада) или CanadaEast (Восточная Канада).
 
 ```cmd
 az group create --name MyResourceGroup --location <region>

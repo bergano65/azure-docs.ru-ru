@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/20/2017
+ms.date: 11/07/2018
 ms.author: daveba
-ms.openlocfilehash: 57f9def09f498c3fc644cbee979d5ae552f2206c
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 61b176f4f1fccbb975ee53de497d5afcc8ede060
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46369499"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238120"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-sql"></a>Руководство. Использование назначаемого системой управляемого удостоверения на виртуальной машине Windows для доступа к SQL Azure
 
@@ -29,9 +29,8 @@ ms.locfileid: "46369499"
 
 > [!div class="checklist"]
 > * Предоставление виртуальной машине доступа к серверу SQL Azure.
-> * Создание группы в Azure AD и включение в нее назначаемого системой управляемого удостоверения виртуальной машины
 > * Включение аутентификации Azure AD для сервера SQL
-> * Создание в базе данных автономного пользователя, представляющего группу Azure AD
+> * Создание в базе данных автономного пользователя, который представляет назначаемое системой удостоверение виртуальной машины
 > * Получение маркера доступа с использованием идентификатора виртуальной машины и отправка запроса на сервер SQL Azure с его помощью.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -48,74 +47,16 @@ ms.locfileid: "46369499"
 
 ## <a name="grant-your-vm-access-to-a-database-in-an-azure-sql-server"></a>Предоставление виртуальной машине доступа к базе данных на сервере SQL Azure
 
-Теперь вы можете предоставлять виртуальной машине доступ к базе данных на сервере SQL Azure.  Для выполнения этого шага можно использовать имеющийся сервер SQL или создать новый.  Чтобы создать сервер и базу данных с помощью портала Azure, следуйте указаниям в статье [Создание базы данных SQL Azure на портале Azure](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal). В [документации по SQL Azure](https://docs.microsoft.com/azure/sql-database/) также есть краткие руководства, описывающие использование Azure CLI и Azure PowerShell.
+Чтобы предоставить виртуальной машине доступ к базе данных на сервере SQL Azure, можно использовать существующий сервер SQL или создать новый.  Чтобы создать сервер и базу данных с помощью портала Azure, следуйте указаниям в статье [Создание базы данных SQL Azure на портале Azure](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal). В [документации по SQL Azure](https://docs.microsoft.com/azure/sql-database/) также есть краткие руководства, описывающие использование Azure CLI и Azure PowerShell.
 
-Для предоставления виртуальной машине доступа к базе данных нужно выполнить три шага:
-1.  Создание группы в Azure AD и включение в нее назначаемого системой управляемого удостоверения виртуальной машины
-2.  Включить аутентификацию Azure AD для сервера SQL.
-3.  Создать в базе данных **автономного пользователя**, представляющего группу Azure AD.
+Предоставление виртуальной машине доступа к базе данных выполняется в два этапа:
 
-> [!NOTE]
-> Обычно создается автономный пользователь, который напрямую сопоставляется с назначаемым системой управляемым удостоверением виртуальной машины.  Сейчас SQL Azure не поддерживает сопоставление субъекта-службы Azure AD, который представляет назначаемое системой управляемое удостоверение виртуальной машины, с автономным пользователем.  В качестве поддерживаемого решения вы можете включить назначаемое системой управляемое удостоверение виртуальной машины в группу Azure AD, а затем создать в базе данных автономного пользователя, представляющего эту группу.
-
-
-## <a name="create-a-group-in-azure-ad-and-make-the-vms-system-assigned-managed-identity-a-member-of-the-group"></a>Создание группы в Azure AD и включение в нее назначаемого системой управляемого удостоверения виртуальной машины
-
-Можно использовать существующую группу Azure AD или создать новую с помощью Azure AD PowerShell.  
-
-Сначала установите модуль [Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2). Затем войдите с помощью `Connect-AzureAD` и выполните следующую команду, чтобы создать группу и сохранить ее в переменной:
-
-```powershell
-$Group = New-AzureADGroup -DisplayName "VM managed identity access to SQL" -MailEnabled $false -SecurityEnabled $true -MailNickName "NotSet"
-```
-
-Выходные данные выглядят следующим образом. В них содержатся подробные сведения о значении переменной.
-
-```powershell
-$Group = New-AzureADGroup -DisplayName "VM managed identity access to SQL" -MailEnabled $false -SecurityEnabled $true -MailNickName "NotSet"
-$Group
-ObjectId                             DisplayName          Description
---------                             -----------          -----------
-6de75f3c-8b2f-4bf4-b9f8-78cc60a18050 VM managed identity access to SQL
-```
-
-Затем добавьте в эту группу назначаемое системой управляемое удостоверение виртуальной машины.  Для этого нужно знать идентификатор **ObjectId** назначаемого системой управляемого удостоверения, который можно получить с помощью Azure PowerShell.  Сначала скачайте [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps). Затем войдите с помощью `Connect-AzureRmAccount` и выполните следующие команды, чтобы:
-- Убедиться, что для контекста сеанса задана нужная подписка Azure (если имеется несколько).
-- Перечислить доступные ресурсы в подписке Azure, чтобы удостовериться в наличии группы ресурсов и виртуальной машины с правильными именами.
-- Получите свойства назначаемого системой управляемого удостоверения виртуальной машины, используя соответствующие значения для `<RESOURCE-GROUP>` и `<VM-NAME>`.
-
-```powershell
-Set-AzureRMContext -subscription "bdc79274-6bb9-48a8-bfd8-00c140fxxxx"
-Get-AzureRmResource
-$VM = Get-AzureRmVm -ResourceGroup <RESOURCE-GROUP> -Name <VM-NAME>
-```
-
-Выходные данные выглядят, как показано ниже. В них содержатся подробные сведения об идентификаторе объекта субъекта-службы для назначаемого системой управляемого удостоверения виртуальной машины.
-```powershell
-$VM = Get-AzureRmVm -ResourceGroup DevTestGroup -Name DevTestWinVM
-$VM.Identity.PrincipalId
-b83305de-f496-49ca-9427-e77512f6cc64
-```
-
-Теперь добавьте в эту группу назначаемое системой управляемое удостоверение виртуальной машины.  Добавить субъект-службу в группу можно только с помощью Azure AD PowerShell.  Выполните следующую команду:
-```powershell
-Add-AzureAdGroupMember -ObjectId $Group.ObjectId -RefObjectId $VM.Identity.PrincipalId
-```
-
-Если вы захотите проверить сведения об участии в группе, выходные данные будут выглядеть следующим образом:
-
-```powershell
-Add-AzureAdGroupMember -ObjectId $Group.ObjectId -RefObjectId $VM.Identity.PrincipalId
-Get-AzureAdGroupMember -ObjectId $Group.ObjectId
-
-ObjectId                             AppId                                DisplayName
---------                             -----                                -----------
-b83305de-f496-49ca-9427-e77512f6cc64 0b67a6d6-6090-4ab4-b423-d6edda8e5d9f DevTestWinVM
-```
+1.  Включение аутентификации Azure AD для сервера SQL.
+2.  Создание в базе данных **автономного пользователя**, который представляет назначаемое системой удостоверение виртуальной машины.
 
 ## <a name="enable-azure-ad-authentication-for-the-sql-server"></a>Включение аутентификации Azure AD для сервера SQL
 
-Теперь, когда группа создана и в нее добавлено назначаемое системой управляемое удостоверение виртуальной машины, можно [настроить аутентификацию Azure AD для SQL Server](/azure/sql-database/sql-database-aad-authentication-configure#provision-an-azure-active-directory-administrator-for-your-azure-sql-server), как описано ниже.
+Чтобы [настроить аутентификацию Azure AD для сервера SQL](/azure/sql-database/sql-database-aad-authentication-configure#provision-an-azure-active-directory-administrator-for-your-azure-sql-server), сделайте следующее:
 
 1.  На портале Azure выберите **SQL servers** (Серверы SQL Server) на левой панели навигации.
 2.  Щелкните сервер SQL, для которого нужно включить аутентификацию Azure AD.
@@ -124,7 +65,7 @@ b83305de-f496-49ca-9427-e77512f6cc64 0b67a6d6-6090-4ab4-b423-d6edda8e5d9f DevTes
 5.  Выберите учетную запись пользователя Azure AD, которую необходимо сделать администратором сервера, а затем нажмите кнопку **Выбрать**.
 6.  На панели команд нажмите кнопку **Сохранить**.
 
-## <a name="create-a-contained-user-in-the-database-that-represents-the-azure-ad-group"></a>Создание в базе данных автономного пользователя, представляющего группу Azure AD
+## <a name="create-a-contained-user-in-the-database-that-represents-the-vms-system-assigned-identity"></a>Создание в базе данных автономного пользователя, который представляет назначаемое системой удостоверение виртуальной машины
 
 В следующем шаге потребуется [Microsoft SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) (SSMS). Прежде чем начать, советуем ознакомиться со следующими статьями, содержащими общие сведения об интеграции Azure AD:
 
@@ -140,17 +81,23 @@ b83305de-f496-49ca-9427-e77512f6cc64 0b67a6d6-6090-4ab4-b423-d6edda8e5d9f DevTes
 7.  Щелкните **Подключить**.  Завершите процесс входа в систему.
 8.  В **обозревателе объектов** разверните папку **Базы данных**.
 9.  Щелкните правой кнопкой мыши пользовательскую базу данных и выберите **Создать запрос**.
-10.  В окне запроса введите следующую строку и на панели инструментов нажмите кнопку **Выполнить**.
+10. В окне запроса введите следующую строку и на панели инструментов нажмите кнопку **Выполнить**.
+
+    > [!NOTE]
+    > В приведенной ниже команде `VMName` — это имя виртуальной машины, для которой вы ранее настроили назначаемое системой удостоверение.
     
      ```
-     CREATE USER [VM managed identity access to SQL] FROM EXTERNAL PROVIDER
+     CREATE USER [VMName] FROM EXTERNAL PROVIDER
      ```
     
-     В результате выполнения команды должен быть создан автономный пользователь для группы.
+     В результате выполнения команды должен быть создан автономный пользователь для назначаемого системой удостоверения виртуальной машины.
 11.  Очистите окно запроса, введите следующую строку и на панели инструментов нажмите кнопку **Выполнить**.
+
+    > [!NOTE]
+    > В приведенной ниже команде `VMName` — это имя виртуальной машины, для которой вы ранее настроили назначаемое системой удостоверение.
      
      ```
-     ALTER ROLE db_datareader ADD MEMBER [VM managed identity access to SQL]
+     ALTER ROLE db_datareader ADD MEMBER [VMName]
      ```
 
      В результате выполнения команды автономному пользователю должна быть предоставлена возможность считывания всей базы данных.

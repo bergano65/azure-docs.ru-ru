@@ -11,15 +11,15 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 07/02/2018
-ms.openlocfilehash: b5b0c1dd6f241d9b76ff766adc221c3fcb36ee1a
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.date: 11/01/2018
+ms.openlocfilehash: 2ab5b7a5b17daef00cb62f69a7d2a798c18456bb
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47062710"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50912957"
 ---
-# <a name="use-python-to-query-an-azure-sql-database"></a>Использование Python для создания запросов к базе данных SQL Azure
+# <a name="quickstart-use-python-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Python для создания запросов к базе данных SQL Azure
 
  В этом кратком руководстве показано, как использовать [Python](https://python.org) для подключения к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных. Дополнительные сведения о пакете SDK см. в [справочной документации](https://docs.microsoft.com/python/api/overview/azure/sql). Также см. [пример ](https://github.com/mkleehammer/pyodbc/wiki/Getting-started) pyodbc и репозиторий [pyodbc](https://github.com/mkleehammer/pyodbc/wiki/) на GitHub.
 

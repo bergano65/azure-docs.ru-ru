@@ -8,34 +8,36 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 09/20/2018
-ms.openlocfilehash: 02b98cb22d897fc9599f6e44ddc57ef4211b0893
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: e3c165c87d6c179141f2ddd44f00f0f62a84b285
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47410869"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50912872"
 ---
-# <a name="manage-web-traffic-with-azure-application-gateway-using-ansible-preview"></a>Управление веб-трафиком с помощью Шлюза приложений Azure в Ansible (предварительная версия)
-[Шлюз приложений Azure](https://docs.microsoft.com/azure/application-gateway/) — это подсистема балансировки нагрузки веб-трафика, предназначенная для управления трафиком веб-приложений. 
+# <a name="manage-web-traffic-with-azure-application-gateway-by-using-ansible-preview"></a>Управление веб-трафиком с помощью Шлюза приложений Azure в Ansible (предварительная версия)
 
-Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. В этой статье показано, как использовать службу Ansible для создания Шлюза приложений Azure и использовать его для управления серверами Azure. 
+[Шлюз приложений Azure](https://docs.microsoft.com/azure/application-gateway/) — это подсистема балансировки нагрузки веб-трафика, предназначенная для управления трафиком веб-приложений.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. В этой статье показано, как использовать службу Ansible для создания Шлюза приложений. В ней также рассказывается, как использовать шлюз для управления трафиком на двух веб-серверах, запускаемых в экземплярах контейнеров Azure.
+
+В этом учебнике описаны следующие процедуры.
 
 > [!div class="checklist"]
 > * Настройка сети
-> * Создание двух экземпляров контейнеров Azure с помощью образа httpd
-> * Создание шлюза приложений с помощью указанных выше экземпляров контейнеров Azure в серверном пуле
-
+> * Создание двух экземпляров контейнеров Azure с помощью образа HTTPD
+> * Создание шлюза приложений, работающего с экземплярами контейнеров Azure в пуле серверов
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 - **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 - [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
 
 > [!Note]
-> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.7. Чтобы установить версию RC Ansible 2.7, выполните команду `sudo pip install ansible[azure]==2.7.0rc2`. Выпуск Ansible 2.7 запланирован на октябрь 2018 г. После этой даты указывать версию не нужно, так как по умолчанию будет использоваться версия 2.7. 
+> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.7. Вы можете установить Ansible 2.7 RC, запустив `sudo pip install ansible[azure]==2.7.0rc2`. После выпуска Ansible 2.7 не нужно указывать здесь версию.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
+
 Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.  
 
 В следующем примере создается группа ресурсов с именем **myResourceGroup** в расположении **eastus**.
@@ -52,15 +54,17 @@ Ansible позволяет автоматизировать развертыва
         location: "{{ location }}"
 ```
 
-Сохраните сборник схем выше как *rg.yml*. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+Сохраните сборник схем как *rg.yml*. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+
 ```bash
 ansible-playbook rg.yml
 ```
 
-## <a name="create-network-resources"></a>Создание сетевых ресурсов 
-Для шлюза приложений нужно создать виртуальную сеть, чтобы он мог обмениваться данными с другими ресурсами. 
+## <a name="create-network-resources"></a>Создание сетевых ресурсов
 
-В следующем примере создается виртуальная сеть с именем **myVNet**, подсеть с именем **myAGSubnet** и общедоступный IP-адрес с именем **myAGPublicIPAddress** с помощью домена с именем **mydomain**. 
+Для шлюза приложений нужно создать виртуальную сеть, чтобы он мог обмениваться данными с другими ресурсами.
+
+В следующем примере создается виртуальная сеть с именем **myVNet**, подсеть с именем **myAGSubnet** и общедоступный IP-адрес с именем **myAGPublicIPAddress** с помощью домена с именем **mydomain**.
 
 ```yml
 - hosts: localhost
@@ -98,13 +102,15 @@ ansible-playbook rg.yml
         domain_name_label: "{{ publicip_domain }}"
 ```
 
-Сохраните сборник схем выше как *vnet_create.yml*. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+Сохраните этот сборник схем как *vnet_create.yml*. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+
 ```bash
 ansible-playbook vnet_create.yml
 ```
 
-## <a name="create-backend-servers"></a>Создание внутренних серверов
-В этом примере вы создадите два экземпляра контейнеров Azure с помощью образа httpd, которые будут использоваться как внутренние серверы для шлюза приложений.  
+## <a name="create-servers"></a>Создание серверов
+
+В этом примере вы создадите два экземпляра контейнеров Azure с помощью образа httpd, которые будут использоваться как веб-серверы для шлюза приложений.  
 
 ```yml
 - hosts: localhost
@@ -147,22 +153,22 @@ ansible-playbook vnet_create.yml
               - 80
 ```
 
-Сохраните сборник схем выше как *aci_create.yml*. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+Сохраните этот сборник схем как *aci_create.yml*. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+
 ```bash
 ansible-playbook aci_create.yml
 ```
 
 ## <a name="create-the-application-gateway"></a>Создание шлюза приложений
 
-Теперь давайте создадим шлюз приложения. В следующем примере создается шлюз приложения с именем **myAppGateway** с помощью настройки серверного внешнего интерфейса и http.  
+В следующем примере создается шлюз приложений с именем **myAppGateway** с помощью настройки серверного внешнего интерфейса и HTTP.  
 
-> [!div class="checklist"]
-> * **appGatewayIP**, определенный в блоке **gateway_ip_configurations**, — ссылка на подсеть требуется для настройки IP-адреса шлюза. 
-> * **appGatewayBackendPool**, определенный в блоке **backend_address_pools**, — шлюз приложений должен иметь по крайней мере один внутренний пул адресов. 
-> * **appGatewayBackendHttpSettings**, определенный в блоке **backend_http_settings_collection**, — указывает, что для обмена данными используются порт 80 и протокол HTTP. 
-> * **appGatewayHttpListener**, определенный в блоке **backend_http_settings_collection**, — является прослушивателем по умолчанию, который связан с appGatewayBackendPool. 
-> * **appGatewayFrontendIP**, определенный в блоке **frontend_ip_configurations**, — назначает myAGPublicIPAddress для appGatewayHttpListener. 
-> * **rule1**, определенное в блоке **request_routing_rules**, — правило маршрутизации по умолчанию, связанное с прослушивателем appGatewayHttpListener. 
+* **appGatewayIP** определяется в блоке **gateway_ip_configurations**. Для IP-конфигурации шлюза требуется ссылка на подсеть.
+* **appGatewayBackendPool** определяется в блоке **backend_address_pools**. Для шлюза приложений необходимо наличие по крайней мере одного внутреннего пула адресов.
+* **appGatewayBackendHttpSettings** определяется в блоке **backend_http_settings_collection**. Указывает, что для обмена данными используются порт 80 и протокол HTTP.
+* **appGatewayHttpListener** определяется в блоке **backend_http_settings_collection**. Это прослушиватель по умолчанию, связанный с appGatewayBackendPool.
+* **appGatewayFrontendIP** определяется в блоке **frontend_ip_configurations**. Он назначает адрес myAGPublicIPAddress для прослушивателя appGatewayHttpListener.
+* **rule1** определяется в блоке **request_routing_rules**. Правило маршрутизации по умолчанию, связанное с прослушивателем appGatewayHttpListener.
 
 ```yml
 - hosts: localhost
@@ -246,22 +252,23 @@ ansible-playbook aci_create.yml
             name: rule1
 ```
 
-Сохраните сборник схем выше как *appgw_create.yml*. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+Сохраните этот сборник схем как *appgw_create.yml*. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+
 ```bash
 ansible-playbook appgw_create.yml
 ```
 
-Создание шлюза приложений может занять несколько минут. 
+Создание шлюза приложений может занять несколько минут.
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-В вышеприведенном образце сборника схем для сетевых ресурсов домен с именем **mydomain** был создан в **eastus**. Теперь можно перейти в браузер и ввести `http://mydomain.eastus.cloudapp.azure.com`. Отобразится следующая страница, подтверждающая, что Шлюз приложений работает должным образом.
+В вышеприведенном образце сборника схем для сетевых ресурсов домен с именем **mydomain** был создан в **eastus**. В вашем браузере перейдите по ссылке `http://mydomain.eastus.cloudapp.azure.com`. Если отображается следующая страница, шлюз приложений работает должным образом.
 
-![Доступ к Шлюзу приложений](media/ansible-create-configure-application-gateway/applicationgateway.PNG)
+![Успешное тестирование работающего шлюза приложений](media/ansible-create-configure-application-gateway/applicationgateway.PNG)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вам не нужны эти ресурсы, вы можете удалить их, выполнив пример ниже. Будет удалена группа ресурсов с именем **myResourceGroup**. 
+Если вам не нужны эти ресурсы, вы можете удалить их, выполнив следующий код. Будет удалена группа ресурсов с именем **myResourceGroup**.
 
 ```yml
 - hosts: localhost
@@ -274,11 +281,13 @@ ansible-playbook appgw_create.yml
         state: absent
 ```
 
-Сохраните сборник схем выше как *rg_delete*.yml. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+Сохраните этот сборник схем как *rg_delete*.yml. Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
+
 ```bash
 ansible-playbook rg_delete.yml
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-> [!div class="nextstepaction"] 
+
+> [!div class="nextstepaction"]
 > [Документация по Ansible в Azure](https://docs.microsoft.com/azure/ansible/)

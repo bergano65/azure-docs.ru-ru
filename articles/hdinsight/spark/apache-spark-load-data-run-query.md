@@ -2,23 +2,23 @@
 title: 'Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight '
 description: Узнайте, как загружать данные и выполнять интерактивные запросы в кластерах Spark в Azure HDInsight.
 services: azure-hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
-ms.author: jasonh
-ms.date: 05/17/2018
-ms.openlocfilehash: d59f04c5dde522f3d193f345ac59147ece9d86f0
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.author: hrasheed
+ms.date: 11/06/2018
+ms.openlocfilehash: 85afc16fe6bcae4e0a7218fa9f66bab3e947ec6b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43047563"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51244084"
 ---
 # <a name="tutorial-load-data-and-run-queries-on-an-apache-spark-cluster-in-azure-hdinsight"></a>Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight
 
-В этом руководстве описывается, как создать кадр данных из CSV-файла и как выполнять интерактивные запросы Spark SQL к кластеру Apache Spark в HDInsight. В Spark кадр данных — это распределенная коллекция данных, упорядоченных в именованных столбцах. Она эквивалентна таблице в реляционной базе данных или фрейме данных в R/Python.
+В этом руководстве описывается, как создать кадр данных из CSV-файла и как отправлять интерактивные запросы Spark SQL к кластеру Apache Spark в Azure HDInsight. В Spark кадр данных — это распределенная коллекция данных, упорядоченных в именованных столбцах. Она эквивалентна таблице в реляционной базе данных или фрейме данных в R/Python.
  
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
@@ -33,7 +33,7 @@ ms.locfileid: "43047563"
 
 ## <a name="create-a-dataframe-from-a-csv-file"></a>Создание кадра данных из CSV-файла
 
-Приложения могут создавать кадры данных из существующего набора данных RDD, а также из таблицы Hive или других источников данных, используя объект SQLContext. На снимке экрана показан моментальный снимок файла hvac.csv, используемого в этом руководстве. CSV-файл содержит все кластеры HDInsight Spark. Эти данные демонстрируют колебания температуры в некоторых зданиях.
+Приложения могут создавать кадры данных прямо из файлов и папок в удаленном хранилище (например, Служба хранилища Azure или Azure Data Lake Storage), из таблиц Hive, а также из других источников данных, поддерживаемых Spark (например, Cosmos DB, База данных SQL Azure, Хранилище данных и т. д.). На снимке экрана показан моментальный снимок файла hvac.csv, используемого в этом руководстве. CSV-файл содержит все кластеры HDInsight Spark. Эти данные демонстрируют колебания температуры в некоторых зданиях.
     
 ![Моментальный снимок данных для интерактивных запросов Spark SQL](./media/apache-spark-load-data-run-query/hdinsight-spark-sample-data-interactive-spark-sql-query.png "Snapshot of data for interactive Spark SQL query")
 
@@ -41,7 +41,7 @@ ms.locfileid: "43047563"
 1. Откройте записную книжку Jupyter, созданную на этапе выполнения предварительных требований.
 2. Вставьте следующий код в пустую ячейку приложения и нажмите **SHIFT+ВВОД** для выполнения кода. Код импортирует типы, необходимые для этого сценария:
 
-    ```PySpark
+    ```python
     from pyspark.sql import *
     from pyspark.sql.types import *
     ```
@@ -52,14 +52,14 @@ ms.locfileid: "43047563"
 
 3. Выполните следующий код, чтобы создать кадр данных и временную таблицу **hvac**. 
 
-    ```PySpark
-    # Create an RDD from sample data
-    csvFile = spark.read.csv('wasb:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv', header=True, inferSchema=True)
+    ```python
+    # Create a dataframe and table from sample data
+    csvFile = spark.read.csv('/HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv', header=True, inferSchema=True)
     csvFile.write.saveAsTable("hvac")
     ```
 
     > [!NOTE]
-    > Если записная книжка создается с использованием ядра PySpark, при выполнении первой ячейки кода контексты SQL будут созданы автоматически. Вам не нужно явно создавать контексты.
+    > Если записная книжка создается с использованием ядра PySpark, сеанс `spark` автоматически создается при выполнении первой ячейки кода. Вам не нужно явно создавать этот сеанс.
 
 
 ## <a name="run-queries-on-the-dataframe"></a>Выполнение запросов к кадру данных
@@ -68,12 +68,10 @@ ms.locfileid: "43047563"
 
 1. В пустой ячейке приложения выполните следующий код:
 
-    ```PySpark
+    ```sql
     %%sql
     SELECT buildingID, (targettemp - actualtemp) AS temp_diff, date FROM hvac WHERE date = \"6/1/13\"
     ```
-
-   Так как для работы записной книжки используется ядро PySpark, вы можете отправить интерактивный SQL-запрос непосредственно к временной таблице **hvac**.
 
    Отобразятся следующие табличные данные.
 
@@ -89,7 +87,7 @@ ms.locfileid: "43047563"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-В случае с HDInsight ваши данные хранятся в службе хранилища Azure или Azure Data Lake Store, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Поскольку стоимость кластера во много раз превышает стоимость хранилища, экономически целесообразно удалять неиспользуемые кластеры. Если вы планируете сразу приступить к следующему руководству, можно оставить кластер.
+HDInsight хранит ваши данные и записные книжки Jupyter Notebook в Службе хранилища Azure или Azure Data Lake Store, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Поскольку стоимость кластера во много раз превышает стоимость хранилища, экономически целесообразно удалять неиспользуемые кластеры. Если вы планируете сразу приступить к следующему руководству, можно оставить кластер.
 
 Откройте кластер на портале Azure и выберите **Удалить**.
 

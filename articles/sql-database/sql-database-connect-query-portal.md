@@ -12,15 +12,15 @@ author: AyoOlubeko
 ms.author: ayolubek
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 01/10/2018
-ms.openlocfilehash: bd956348a26d32687e1ff76f0ffcc58cc9dcf932
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.date: 11/01/2018
+ms.openlocfilehash: d7b5c6b95cd11cd90f9d326e03e787a7196dcfd0
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50241724"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50913161"
 ---
-# <a name="azure-portal-use-the-sql-query-editor-to-connect-and-query-data"></a>Портал Azure. Использование редактора SQL-запросов для подключения к данным и их запроса
+# <a name="quickstart-azure-portal-use-the-sql-query-editor-to-connect-and-query-data"></a>Краткое руководство. Портал Azure: использование редактора SQL-запросов для подключения к данным и создания запросов к данным
 
 Редактор SQL-запросов представляет собой браузерное средство запроса, которое обеспечивает эффективный и простой способ выполнения запросов SQL в базе данных SQL Azure или хранилище данных SQL Azure без необходимости покидать портал Azure. В этом кратком руководстве показано, как использовать редактор запросов для подключения к базе данных SQL, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в базе данных.
 

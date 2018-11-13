@@ -1,24 +1,24 @@
 ---
-title: 'Руководство. Структурированная потоковая передача Apache Spark с Kafka в Azure HDInsight '
+title: 'Руководство. Структурированная потоковая передача Apache Spark с Apache Kafka в Azure HDInsight '
 description: Узнайте об использовании потоковой передачи Apache Spark для двунаправленного обмена данными с Apache Kafka. В этом руководстве показано, как выполнить потоковую передачу данных, используя записную книжку Jupyter из Spark в HDInsight.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
-ms.date: 05/08/2018
-ms.author: jasonh
-ms.openlocfilehash: 11169e45d5fbdc5e51b81c06d814524a7b09c614
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.date: 11/06/2018
+ms.author: hrasheed
+ms.openlocfilehash: 83e277eceea2df746de6f6e9a33130989e2d874d
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43108295"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51278367"
 ---
-# <a name="tutorial-use-spark-structured-streaming-with-kafka-on-hdinsight"></a>Руководство. Использование структурированной потоковой передачи Spark с Kafka в HDInsight
+# <a name="tutorial-use-apache-spark-structured-streaming-with-apache-kafka-on-hdinsight"></a>Руководство. Использование структурированной потоковой передачи Apache Spark с Apache Kafka в HDInsight
 
-В этом руководстве демонстрируется, как использовать структурированную потоковую передачу Spark, чтобы считывать и записывать данные с использованием Apache Kafka в Azure HDInsight.
+В этом руководстве показано, как использовать структурированную потоковую передачу Apache Spark, чтобы считывать и записывать данные с использованием Apache Kafka в Azure HDInsight.
 
 Структурированная потоковая передача Spark — это механизм обработки потока, встроенный в Spark SQL. Он позволяет выражать потоковые вычисления так же, как пакетные вычисления статических данных. 
 

@@ -12,12 +12,12 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: azure-cli
 manager: jeconnoc
-ms.openlocfilehash: 07a079e00963f1f5aff96369649e2e4fb248aae0
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: fdee336298212f2536c2408e49f40e25e2c24161
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49986004"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51227694"
 ---
 # <a name="create-your-first-function-from-the-command-line"></a>Создание первой функции из командной строки
 
@@ -108,17 +108,19 @@ az functionapp create --resource-group myResourceGroup --consumption-plan-locati
 }
 ```
 
-## <a name="configure-the-function-app"></a>Настройка приложения-функции
+### <a name="configure-the-function-app-nodejs"></a>Настройка приложения-функции (Node.js)
 
-Основные инструменты версии 2.x создают проекты с помощью шаблонов для среды выполнения функций Azure 2.x. По этой причине необходимо убедиться, что среда выполнения версии 2.x используется в Azure. Задав значение `~2` для параметра приложения `FUNCTIONS_WORKER_RUNTIME`, можно закрепить приложение-функцию в последней версии 2.x. Задайте параметры приложения с помощью команды [az functionapp config appsettings set](https://docs.microsoft.com/cli/azure/functionapp/config/appsettings#set).
+При создании приложения-функции JavaScript очень важно выбрать правильную версию Node.js. Для версии 2.x среды выполнения Функций требуется Node.js версии 8.x. Параметр приложения `WEBSITE_NODE_DEFAULT_VERSION` позволяет управлять версиями Node.js, которые использует приложение-функция в Azure. Чтобы указать для Node.js версию `8.11.1`, используйте команду [az functionapp config appsettings set](https://docs.microsoft.com/cli/azure/functionapp/config/appsettings#set).
 
 В следующей команде Azure CLI <app_name> — это имя приложения-функции.
 
 ```azurecli-interactive
 az functionapp config appsettings set --name <app_name> \
 --resource-group myResourceGroup \
---settings FUNCTIONS_WORKER_RUNTIME=~2
+--settings WEBSITE_NODE_DEFAULT_VERSION=8.11.1
 ```
+
+Проверьте значение параметра в выходных данных.
 
 [!INCLUDE [functions-publish-project](../../includes/functions-publish-project.md)]
 
@@ -127,3 +129,4 @@ az functionapp config appsettings set --name <app_name> \
 [!INCLUDE [functions-cleanup-resources](../../includes/functions-cleanup-resources.md)]
 
 [!INCLUDE [functions-quickstart-next-steps-cli](../../includes/functions-quickstart-next-steps-cli.md)]
+

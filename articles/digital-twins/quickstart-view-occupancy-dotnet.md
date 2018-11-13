@@ -8,20 +8,24 @@ services: digital-twins
 ms.devlang: csharp
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 10/02/2018
+ms.date: 11/7/2018
 ms.author: alinast
-ms.openlocfilehash: e0b47b1322a520ad8b09fd2fe2967e628b5e4e03
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 6e83ca543937948ad8028969cceca0f8787972c9
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49322961"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51281224"
 ---
 # <a name="quickstart-find-available-rooms-using-azure-digital-twins"></a>Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins
 
 Служба Digital Twins позволяет воссоздать цифровой образ вашей физической среды. В результате вы сможете получать уведомления о событиях в своей среде и настраивать ответы на эти события. 
 
 В этом кратком руководстве используется [пара примеров .NET](https://github.com/Azure-Samples/digital-twins-samples-csharp) для оцифровки смоделированного офисного здания, а также приводятся сведения о том, как найти свободные помещения в таком здании. С помощью Digital Twins можно связать несколько датчиков со своей средой. Кроме обнаружения свободных помещений, с помощью смоделированного датчика углекислого газа можно также выяснить, оптимальный ли в помещении воздух. Один из примеров приложений будет генерировать случайные данные датчиков для визуализации этого сценария.
+
+В следующем видео дана краткая инструкция по настройке.
+
+> [!VIDEO https://www.youtube.com/embed/1izK266tbMI]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -36,7 +40,7 @@ ms.locfileid: "49322961"
 
 Создайте экземпляр службы Digital Twins на [портале](https://portal.azure.com) с помощью шагов, описанных в этом разделе.
 
-[!INCLUDE [create-digital-twins-portal](../../includes/create-digital-twins-portal.md)]
+[!INCLUDE [create-digital-twins-portal](../../includes/digital-twins-create-portal.md)]
 
 ## <a name="set-permissions-for-your-app"></a>Настройка разрешений для приложения
 

@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/25/2018
+ms.date: 11/07/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: c7396d7322958442fab51417eb350f26f7ada78e
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: e40c18edadebae1f92cf811ea054503b9cd6b1ae
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49352666"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51277976"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство по настройке гибридного присоединения к Azure Active Directory для федеративных доменов
 
@@ -156,6 +156,8 @@ ms.locfileid: "49352666"
  
 - Настройка параметров локальной интрасети для регистрации устройств.
 
+- Управление устройствами Windows нижнего уровня 
+
 
 ### <a name="update-device-settings"></a>Обновление параметров устройства 
 
@@ -176,8 +178,6 @@ ms.locfileid: "49352666"
 
 - `https://device.login.microsoftonline.com`
 
-- `https://device.login.microsoftonline.com`
-
 - Служба токенов безопасности вашей организации (STS — федеративные домены).
 
 - `https://autologon.microsoftazuread-sso.com` (для простого единого входа).
@@ -185,6 +185,10 @@ ms.locfileid: "49352666"
 Кроме того, необходимо включить параметр **Allow updates to status bar via script** (Разрешить обновление строки состояния с помощью сценария) в локальной зоне интрасети пользователя.
 
 
+
+### <a name="control-windows-down-level-devices"></a>Управление устройствами Windows нижнего уровня 
+
+Чтобы регистрировать устройства Windows нижнего уровня, необходимо скачать из Центра загрузки Майкрософт и установить пакет установщика Windows (MSI-файл). Дополнительные сведения см. [здесь](hybrid-azuread-join-control.md#control-windows-down-level-devices). 
 
 ## <a name="verify-the-registration"></a>Проверка регистрации
 

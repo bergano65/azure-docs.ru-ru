@@ -3,24 +3,24 @@ title: Определение типа нового устройства в Azur
 description: В этом руководстве показано, как разработчики могут определить тип нового устройства в своем приложении Azure IoT Central. Вы определите телеметрию, состояние, свойства и параметры для вашего типа.
 author: tbhagwat3
 ms.author: tanmayb
-ms.date: 10/12/2018
+ms.date: 10/30/2018
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: 8c69a863d8719a0e4eba30a6d5a619210e7f95b8
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: dd81c10bcda6665de7ffabe94a4c1be991687797
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50156040"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50963608"
 ---
 # <a name="tutorial-define-a-new-device-type-in-your-azure-iot-central-application"></a>Руководство по определению типа нового устройства в приложении Azure IoT Central
 
 В этом руководстве показано, как разработчики могут использовать шаблон устройства для определения типа нового устройства в приложении Microsoft Azure IoT Central. Шаблон устройства определяет телеметрию, состояние, свойства и параметры для типа устройства.
 
-Чтобы вы могли протестировать приложение перед подключением реального устройства, Azure IoT Central создает имитируемое устройство из шаблона устройства при его создании.
+Чтобы вы могли протестировать приложение перед подключением реального устройства, при создании шаблона устройства в IoT Central создается имитируемое устройство на основе этого шаблона.
 
 В этом руководстве вы создаете шаблон устройства **подключенного кондиционера**. Подключенный кондиционер:
 
@@ -59,9 +59,9 @@ ms.locfileid: "50156040"
 
 4. Чтобы создать приложение Azure IoT Central, сделайте следующее:
     
-    * Выберите **Бесплатный**. Бесплатный 7-дневный пробный период не требует создания подписки.
+    * Выберите **Пробная версия**. Для создания приложения в рамках пробной версии вам не потребуется подписка Azure.
     
-       Дополнительные сведения о каталогах и подписках см. в руководстве по [созданию приложения Azure IoT Central](howto-create-application.md).
+       Дополнительные сведения о каталогах и подписках см. в статье [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
     
     * Выберите **Custom Application** (Пользовательское приложение).
     
@@ -69,9 +69,9 @@ ms.locfileid: "50156040"
     
     * Выберите **Создать**.
 
-    ![Страница создания приложения Azure IoT Central](./media/tutorial-define-device-type/iotcentralcreatenew.png)
+    ![Страница создания приложения Azure IoT Central](./media/tutorial-define-device-type/iotcentralcreate.png)
 
-    См. сведения о [создании приложения Azure IoT Central](howto-create-application.md).
+    Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
 
 ## <a name="create-a-new-custom-device-template"></a>Создание шаблона нового пользовательского устройства
 
