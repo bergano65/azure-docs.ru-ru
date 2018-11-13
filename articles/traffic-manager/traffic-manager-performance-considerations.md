@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: kumud
-ms.openlocfilehash: 2fabe1671e9cc2aeed3b0dcd08ad5b5f09da3f11
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 1bf2222e09644520bbfc6c5424c7f29d05b3c799
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50140846"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51257703"
 ---
 # <a name="performance-considerations-for-traffic-manager"></a>Рекомендации по безопасности для диспетчера трафика
 
@@ -80,7 +80,7 @@ ms.locfileid: "50140846"
 
 [Проверка параметров диспетчера трафика](traffic-manager-testing-settings.md)
 
-[Операции с диспетчером трафика (справочник по REST API)](http://go.microsoft.com/fwlink/?LinkId=313584)
+[Операции с диспетчером трафика (справочник по REST API)](https://go.microsoft.com/fwlink/?LinkId=313584)
 
 [Командлеты для диспетчера трафика Azure](https://docs.microsoft.com/powershell/module/azurerm.trafficmanager)
 

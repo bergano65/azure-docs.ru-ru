@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 08/08/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 43f4a37ce0425503337cffa58570f3468fca6b29
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.openlocfilehash: f685b584b701d2772ec5b3915facb97f0d15658a
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45634258"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51259179"
 ---
 # <a name="usage-example-continuous-deployment-to-virtual-machines-using-automation-state-configuration-and-chocolatey"></a>Пример использования. Непрерывное развертывание на виртуальных машинах с помощью службы "Настройка состояния службы автоматизации Azure" и Chocolatey
 
@@ -87,7 +87,7 @@ Chocolatey может обрабатывать пакеты установки �
 Некоторые параметры вам придется настроить самостоятельно. Но эту процедуру нужно выполнить только один раз для каждого ресурса (если вы не планируете обновлять его в будущем). В ней нет ничего сложного. Дополнительные сведения о разработке модулей интеграции PowerShell см. в статье [Authoring Integration Modules for Azure Automation](https://azure.microsoft.com/blog/authoring-integration-modules-for-azure-automation/) (Разработка модулей интеграции для службы автоматизации Azure).
 
 - Установите модуль, необходимый на рабочей станции, следующим образом:
-  - Установите [Windows Management Framework 5](http://aka.ms/wmf5latest) (не требуется для Windows 10).
+  - Установите [Windows Management Framework 5](https://aka.ms/wmf5latest) (не требуется для Windows 10).
   - `Install-Module –Name MODULE-NAME` <— извлекает модуль из коллекции PowerShell.
 - Скопируйте папку модуля из `c:\Program Files\WindowsPowerShell\Modules\MODULE-NAME` во временную папку.
 - Удалите примеры и документацию из основной папки.

@@ -14,15 +14,15 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/01/2017
 ms.author: vturecek
-ms.openlocfilehash: d0de7e7596fb7fabbc4061709816111a7a4ad827
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 363cba145ed4d5bcf138cf3f7130763891c51e8b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34213050"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51258067"
 ---
 # <a name="introduction-to-service-fabric-reliable-actors"></a>Общие сведения о надежных субъектах Service Fabric
-Субъекты Reliable Actors — это платформа приложений Service Fabric, основанная на шаблоне [виртуальных субъектов](http://research.microsoft.com/en-us/projects/orleans/). API субъектов Reliable Actors предоставляет однопоточную модель программирования, основанную на той надежности и масштабируемости, которые гарантирует Service Fabric.
+Субъекты Reliable Actors — это платформа приложений Service Fabric, основанная на шаблоне [виртуальных субъектов](https://research.microsoft.com/en-us/projects/orleans/). API субъектов Reliable Actors предоставляет однопоточную модель программирования, основанную на той надежности и масштабируемости, которые гарантирует Service Fabric.
 
 ## <a name="what-are-actors"></a>Что представляют собой субъекты?
 Субъект — это изолированная, независимая единица вычислений и состояния с однопоточным выполнением. [Шаблон субъектов](https://en.wikipedia.org/wiki/Actor_model) — это модель вычислений для параллельных или распределенных систем, в которой несколько субъектов могут выполняться одновременно и независимо друг от друга. Субъекты могут взаимодействовать друг с другом и создавать новые субъекты.

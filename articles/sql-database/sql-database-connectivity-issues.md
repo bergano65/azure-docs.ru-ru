@@ -13,12 +13,12 @@ ms.author: ninarn
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 08/01/2018
-ms.openlocfilehash: f381eaad61c98228ea9be2665ebed5878b666317
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: ee5542c72991a2aa8de94f5dc2e819eb5d311a27
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47064243"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51246809"
 ---
 # <a name="troubleshoot-diagnose-and-prevent-sql-connection-errors-and-transient-errors-for-sql-database"></a>Устранение, диагностика и предотвращение ошибок подключения SQL и временных ошибок для базы данных SQL
 Эта статья содержит информацию о предотвращении, диагностике и устранении ошибок подключения и временных ошибок, которые происходят в клиентском приложении во время взаимодействия с базой данных SQL Azure. Узнайте, как настроить логику повторных попыток, создать строку подключения и настроить другие параметры подключения.
@@ -63,7 +63,7 @@ ms.locfileid: "47064243"
 ### <a name="interval-increase-between-retries"></a>Увеличение интервала между повторными попытками
 Рекомендуется подождать 5 секунд, прежде чем выполнять первую повторную попытку. Повторная попытка после ожидания менее 5 секунд может привести к перегрузке облачной службы. Для каждой последующей повторной попытки ожидание должно увеличиваться экспоненциально, но не более чем до 60 секунд.
 
-Обсуждение периода блокировки для клиентов, которые используют ADO.NET, см. в статье [Организация пулов соединений SQL Server (ADO.NET)](http://msdn.microsoft.com/library/8xx3tyca.aspx).
+Обсуждение периода блокировки для клиентов, которые используют ADO.NET, см. в статье [Организация пулов соединений SQL Server (ADO.NET)](https://msdn.microsoft.com/library/8xx3tyca.aspx).
 
 Вы также можете задать максимальное количество повторных попыток, которые программа должна выполнить перед автоматическим завершением работы.
 
@@ -115,13 +115,13 @@ ms.locfileid: "47064243"
 <a id="net-sqlconnection-parameters-for-connection-retry" name="net-sqlconnection-parameters-for-connection-retry"></a>
 
 ## <a name="net-sqlconnection-parameters-for-connection-retry"></a>Параметры .NET SqlConnection для повторной попытки подключения
-Если клиентская программа подключается к базе данных SQL с помощью класса .NET Framework **System.Data.SqlClient.SqlConnection**, то вам следует использовать .NET 4.6.1 или более позднюю версию этой платформы (или .NET Core), так как в этих версиях реализована поддержка повторных попыток подключения. Дополнительные сведения об этой функции см. на [этой веб-странице](http://go.microsoft.com/fwlink/?linkid=393996).
+Если клиентская программа подключается к базе данных SQL с помощью класса .NET Framework **System.Data.SqlClient.SqlConnection**, то вам следует использовать .NET 4.6.1 или более позднюю версию этой платформы (или .NET Core), так как в этих версиях реализована поддержка повторных попыток подключения. Дополнительные сведения об этой функции см. на [этой веб-странице](https://go.microsoft.com/fwlink/?linkid=393996).
 
 <!--
 2015-11-30, FwLink 393996 points to dn632678.aspx, which links to a downloadable .docx related to SqlClient and SQL Server 2014.
 -->
 
-При создании [строки подключения](http://msdn.microsoft.com/library/System.Data.SqlClient.SqlConnection.connectionstring.aspx) для объекта **SqlConnection** нужно правильно настроить значения следующих параметров.
+При создании [строки подключения](https://msdn.microsoft.com/library/System.Data.SqlClient.SqlConnection.connectionstring.aspx) для объекта **SqlConnection** нужно правильно настроить значения следующих параметров.
 
 * **ConnectRetryCount**. &nbsp;&nbsp;Значение по умолчанию — 1. Диапазон — от 0 до 255.
 * **ConnectRetryInterval**. &nbsp;&nbsp;Значение по умолчанию — 1 секунда. Диапазон — от 1 до 60.
@@ -211,7 +211,7 @@ Connection Timeout = ConnectRetryCount * ConnectionRetryInterval
 На компьютерах под управлением Windows можно использовать следующие служебные программы:
 
 * SQL Server Management Studio (ssms.exe) подключается с помощью ADO.NET.
-* sqlcmd.exe подключается с помощью [ODBC](http://msdn.microsoft.com/library/jj730308.aspx).
+* sqlcmd.exe подключается с помощью [ODBC](https://msdn.microsoft.com/library/jj730308.aspx).
 
 После подключения программы проверьте, работает ли короткий SQL-запрос SELECT.
 
@@ -226,7 +226,7 @@ Connection Timeout = ConnectRetryCount * ConnectionRetryInterval
 * `nmap -sS -O 127.0.0.1`
   * Вместо указанного в примере IP-адреса укажите свой.
 
-В Windows можно использовать служебную программу [PortQry.exe](http://www.microsoft.com/download/details.aspx?id=17148). Ниже приведен пример выполнения, в рамках которого запрошены сведения о ситуации с портами на сервере базы данных SQL и который запущен на ноутбуке.
+В Windows можно использовать служебную программу [PortQry.exe](https://www.microsoft.com/download/details.aspx?id=17148). Ниже приведен пример выполнения, в рамках которого запрошены сведения о ситуации с портами на сервере базы данных SQL и который запущен на ноутбуке.
 
 ```
 [C:\Users\johndoe\]
@@ -253,7 +253,7 @@ TCP port 1433 (ms-sql-s service): LISTENING
 
 Клиент может помочь в диагностике. Для этого ему следует вносить в журнал все ошибки, с которыми он сталкивается. У вас может получиться коррелировать записи журнала со сведениями об ошибках, которые база данных SQL вносит в журнал для внутренних целей.
 
-Для облегчения ведения журналов можно использовать Enterprise Library 6 (EntLib60), где используются классы .NET. Дополнительные сведения см. в статье [5 - As Easy As Falling Off a Log: Using the Logging Application Block](http://msdn.microsoft.com/library/dn440731.aspx) (5. Простой вариант: использование решения Logging Application Block).
+Для облегчения ведения журналов можно использовать Enterprise Library 6 (EntLib60), где используются классы .NET. Дополнительные сведения см. в статье [5 - As Easy As Falling Off a Log: Using the Logging Application Block](https://msdn.microsoft.com/library/dn440731.aspx) (5. Простой вариант: использование решения Logging Application Block).
 
 <a id="h-diagnostics-examine-logs-errors" name="h-diagnostics-examine-logs-errors"></a>
 
@@ -262,8 +262,8 @@ TCP port 1433 (ms-sql-s service): LISTENING
 
 | Запрос у журнала | ОПИСАНИЕ |
 |:--- |:--- |
-| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` |В представлении [sys.event_log](http://msdn.microsoft.com/library/dn270018.aspx) приводятся сведения об отдельных событиях, включая те, которые могут привести к временным ошибкам или проблемам с подключением.<br/><br/>В идеале значения **start_time** или **end_time** можно сопоставить с временем возникновения ошибок в клиентской программе.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master*. |
-| `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` |Представление [sys.database_connection_stats](http://msdn.microsoft.com/library/dn269986.aspx) отображает суммарное количество событий каждого типа, что также бывает полезно при дополнительной диагностике.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master*. |
+| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` |В представлении [sys.event_log](https://msdn.microsoft.com/library/dn270018.aspx) приводятся сведения об отдельных событиях, включая те, которые могут привести к временным ошибкам или проблемам с подключением.<br/><br/>В идеале значения **start_time** или **end_time** можно сопоставить с временем возникновения ошибок в клиентской программе.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master*. |
+| `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` |Представление [sys.database_connection_stats](https://msdn.microsoft.com/library/dn269986.aspx) отображает суммарное количество событий каждого типа, что также бывает полезно при дополнительной диагностике.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master*. |
 
 <a id="d-search-for-problem-events-in-the-sql-database-log" name="d-search-for-problem-events-in-the-sql-database-log"></a>
 
@@ -309,12 +309,12 @@ database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL   
 <a id="l-enterprise-library-6" name="l-enterprise-library-6"></a>
 
 ## <a name="enterprise-library-6"></a>Enterprise Library 6
-Enterprise Library 6 (EntLib60) — это платформа классов .NET, которая помогает реализовывать надежные клиенты облачных служб, одной из которых является служба базы данных SQL. Дополнительные сведения обо всех полезных возможностях EntLib60 вы найдете в [этой](http://msdn.microsoft.com/library/dn169621%28v=pandp.60%29.aspx) статье.
+Enterprise Library 6 (EntLib60) — это платформа классов .NET, которая помогает реализовывать надежные клиенты облачных служб, одной из которых является служба базы данных SQL. Дополнительные сведения обо всех полезных возможностях EntLib60 вы найдете в [этой](https://msdn.microsoft.com/library/dn169621%28v=pandp.60%29.aspx) статье.
 
-Одна из областей, в которой может помочь EntLib60, — логика повторных попыток для обработки временных ошибок. Дополнительные сведения см. в статье [4 - Perseverance, Secret of All Triumphs: Using the Transient Fault Handling Application Block](http://msdn.microsoft.com/library/dn440719%28v=pandp.60%29.aspx) (4. Настойчивость — секрет всех побед. Использование блока приложения для обработки временных ошибок).
+Одна из областей, в которой может помочь EntLib60, — логика повторных попыток для обработки временных ошибок. Дополнительные сведения см. в статье [4 - Perseverance, Secret of All Triumphs: Using the Transient Fault Handling Application Block](https://msdn.microsoft.com/library/dn440719%28v=pandp.60%29.aspx) (4. Настойчивость — секрет всех побед. Использование блока приложения для обработки временных ошибок).
 
 > [!NOTE]
-> Исходный код для EntLib60 доступен для открытого скачивания в [Центре загрузки](http://go.microsoft.com/fwlink/p/?LinkID=290898). Корпорация Майкрософт не планирует обновлять функции и менять характер обслуживания библиотеки EntLib.
+> Исходный код для EntLib60 доступен для открытого скачивания в [Центре загрузки](https://go.microsoft.com/fwlink/p/?LinkID=290898). Корпорация Майкрософт не планирует обновлять функции и менять характер обслуживания библиотеки EntLib.
 >
 >
 
@@ -341,7 +341,7 @@ Enterprise Library 6 (EntLib60) — это платформа классов .NE
 
 Ниже приведены некоторые ссылки на сведения об EntLib60.
 
-* Бесплатная загрузка 2-го издания книги [Руководство разработчика по Microsoft Enterprise Library](http://www.microsoft.com/download/details.aspx?id=41145).
+* Бесплатная загрузка 2-го издания книги [Руководство разработчика по Microsoft Enterprise Library](https://www.microsoft.com/download/details.aspx?id=41145).
 * Рекомендации: в статье [Общие рекомендации по повторным попыткам](../best-practices-retry-general.md) содержится подробное обсуждение логики повторных попыток.
 * Загрузка на сайте NuGet компонента [Enterprise Library 6.0: Transient Fault Handling application block](http://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/)
 

@@ -13,15 +13,15 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 01/05/2016
 ms.author: dariagrigoriu
-ms.openlocfilehash: a17260770f0b2e0a73585ce4108bd5625ac22229
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 79841887ce8413970cb7dff0ca0099d4e0745a68
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39436154"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51259315"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Настройка учетных данных развертывания службы приложений Azure
-[Служба приложений Azure](http://go.microsoft.com/fwlink/?LinkId=529714) поддерживает два типа учетных данных для [развертывания локальной системы Git](app-service-deploy-local-git.md) и [развертывания FTP(S)](app-service-deploy-ftp.md). Это не то же, что учетные данные Azure Active Directory.
+[Служба приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714) поддерживает два типа учетных данных для [развертывания локальной системы Git](app-service-deploy-local-git.md) и [развертывания FTP(S)](app-service-deploy-ftp.md). Это не то же, что учетные данные Azure Active Directory.
 
 * **Учетные данные на уровне пользователя**. Это единый набор учетных данных для всей учетной записи Azure. С его помощью можно развернуть службу приложений для любого приложения и в любой подписке, на доступ к которой у этой учетной записи Azure есть права. Этот набор учетных данных используется по умолчанию и настраивается в разделе **Службы приложений** > **&lt;имя_приложения>** > **Учетные данные развертывания**. Также именно это значение по умолчанию отображается на портале графического пользовательского интерфейса (например, в разделах **Обзор** и **Свойства** на [странице ресурсов](../azure-resource-manager/resource-group-portal.md#manage-resources) приложения).
 

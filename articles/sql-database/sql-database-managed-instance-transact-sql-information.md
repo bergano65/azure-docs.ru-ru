@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: carlrab, bonova
 manager: craigg
 ms.date: 10/24/2018
-ms.openlocfilehash: 6ffa09343560e4ac55b1fd62325fd4e3bd370848
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: c51df7aeef136fee42b061cd422cc62d67f33e96
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50242183"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51258924"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server
 
@@ -287,7 +287,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ### <a name="replication"></a>Репликация
 
-Репликация доступна в общедоступной предварительной версии Управляемого экземпляра. Дополнительные сведения о репликации см. в статье [Репликация SQL Server](http://docs.microsoft.com/sql/relational-databases/replication/replication-with-sql-database-managed-instance).
+Репликация доступна в общедоступной предварительной версии Управляемого экземпляра. Дополнительные сведения о репликации см. в статье [Репликация SQL Server](https://docs.microsoft.com/sql/relational-databases/replication/replication-with-sql-database-managed-instance).
 
 ### <a name="restore-statement"></a>Инструкция RESTORE
 

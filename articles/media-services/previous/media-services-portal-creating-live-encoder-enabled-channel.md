@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/09/2017
 ms.author: juliako
-ms.openlocfilehash: b9ac1696594ab9f7cb67bb0e340c6a80158e67e2
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: d53e2e76253bdccfeb43f6c718d9fe3ae7f3f21a
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33940988"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51251991"
 ---
 # <a name="how-to-perform-live-streaming-using-azure-media-services-to-create-multi-bitrate-streams-with-the-azure-portal"></a>Потоковая трансляция с использованием служб мультимедиа Azure для создания потоков с несколькими скоростями на портале Azure
 > [!div class="op_single_selector"]
@@ -44,7 +44,7 @@ ms.locfileid: "33940988"
 > 
 > 
 
-1. Подключите видеокамеру к компьютеру. Запустите и настройте локальный динамический кодировщик, который может выводить односкоростной поток по одному из следующих протоколов: RTMP или Smooth Streaming. Дополнительные сведения см. в статье о [поддержке протокола RTMP в службах мультимедиа Azure и о динамических кодировщиках](http://go.microsoft.com/fwlink/?LinkId=532824).
+1. Подключите видеокамеру к компьютеру. Запустите и настройте локальный динамический кодировщик, который может выводить односкоростной поток по одному из следующих протоколов: RTMP или Smooth Streaming. Дополнительные сведения см. в статье о [поддержке протокола RTMP в службах мультимедиа Azure и о динамических кодировщиках](https://go.microsoft.com/fwlink/?LinkId=532824).
    
     Это действие также можно выполнить после создания канала.
 2. Создайте и запустите канал. 
@@ -71,7 +71,7 @@ ms.locfileid: "33940988"
 5. Воспроизведение содержимого.
 6. Очистка.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
 * Для работы с этим учебником требуется учетная запись Azure. Если ее нет, можно создать бесплатную пробную учетную запись всего за несколько минут. 

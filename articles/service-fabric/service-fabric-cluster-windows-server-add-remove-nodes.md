@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/02/2017
 ms.author: dekapur
-ms.openlocfilehash: b1ffe3510cf4f5e73b05572a482f49d529fca60d
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 69680331bdad0faa36cb3df6117baf8b358da132
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34212550"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51251025"
 ---
 # <a name="add-or-remove-nodes-to-a-standalone-service-fabric-cluster-running-on-windows-server"></a>Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него
 После [создания автономного кластера Service Fabric на компьютерах под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md) потребности (бизнес-потребности) компании могут измениться, и вам нужно будет добавить или удалить несколько узлов в кластере. В данной статье содержатся детальные инструкции по выполнению этой задачи. Обратите внимание, что добавление и удаление узлов в кластерах локальной разработки не поддерживается.
@@ -29,7 +29,7 @@ ms.locfileid: "34212550"
 1. Подготовьте виртуальную машину или компьютер, который вы хотите добавить в кластер, выполнив действия, описанные в статье [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md)
 2. Определите, в какой домен сбоя и домен обновления нужно добавить эту виртуальную машину или компьютер.
 3. Подключитесь к виртуальной машине или компьютеру, который нужно добавить в кластер, с помощью удаленного рабочего стола.
-4. Скопируйте или [скачайте изолированный пакет для Service Fabric для Windows Server](http://go.microsoft.com/fwlink/?LinkId=730690) на виртуальную машину или компьютер и извлеките его содержимое.
+4. Скопируйте или [скачайте изолированный пакет для Service Fabric для Windows Server](https://go.microsoft.com/fwlink/?LinkId=730690) на виртуальную машину или компьютер и извлеките его содержимое.
 5. Запустите PowerShell с более высоким уровнем привилегий и перейдите к распакованному пакету.
 6. Запустите скрипт *AddNode.ps1*, указав параметры, описывающие новый узел, который будет добавлен. В этом примере добавляется новый узел с именем VM5, типом NodeType0, IP-адресом 182.17.34.52 и UD1 со значением fd:/dc1/r0. *ExistingClusterConnectionEndPoint* — это конечная точка подключения для узла в имеющемся кластере, который может содержать IP-адрес *любого* узла в этом кластере.
 

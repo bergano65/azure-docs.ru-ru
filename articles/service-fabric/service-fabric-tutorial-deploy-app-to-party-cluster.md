@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 07/12/2018
 ms.author: ryanwi,mikhegn
 ms.custom: mvc
-ms.openlocfilehash: 443d37f5b45db9495c09d68300c9ea4978466eb9
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: fe6df20d294a3b1802d396085c36a6587dc45730
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49388234"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51249087"
 ---
 # <a name="tutorial-deploy-a-service-fabric-application-to-a-cluster-in-azure"></a>Руководство по развертыванию приложения Service Fabric в кластере в Azure
 
@@ -87,7 +87,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 Общедоступные кластеры — это размещенные в Azure бесплатные временные кластеры Service Fabric, которыми управляет команда Service Fabric. Любой пользователь может развертывать приложения и изучать возможности платформы. Кластер использует один самозаверяющий сертификат для обеспечения безопасности при взаимодействии и между узлами, и между клиентом и узлом.
 
-Войдите в систему и [присоедините кластер Windows](http://aka.ms/tryservicefabric). Скачайте сертификат PFX на компьютер, выбрав ссылку **PFX**. Выберите ссылку **How to connect to a secure Party cluster?** (Как подключиться к безопасному кластеру сообщества?) и скопируйте пароль сертификата. Сертификат, пароль сертификата и значение **конечной точки подключения** будут использоваться в дальнейшем.
+Войдите в систему и [присоедините кластер Windows](https://aka.ms/tryservicefabric). Скачайте сертификат PFX на компьютер, выбрав ссылку **PFX**. Выберите ссылку **How to connect to a secure Party cluster?** (Как подключиться к безопасному кластеру сообщества?) и скопируйте пароль сертификата. Сертификат, пароль сертификата и значение **конечной точки подключения** будут использоваться в дальнейшем.
 
 ![Конечная точка подключения и файл PFX](./media/service-fabric-quickstart-dotnet/party-cluster-cert.png)
 

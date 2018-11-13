@@ -3,19 +3,19 @@ title: Пример машинного обучения с использова�
 description: Узнайте, как использовать Spark MLlib для создания приложения машинного обучения, которое анализирует набор данных с помощью классификации посредством логистической регрессии.
 keywords: машинное обучение spark, пример машинного обучения spark
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 05/18/2018
-ms.author: jasonh
-ms.openlocfilehash: 78f9240e6b01bafc68b71d20044c7ec7458cc972
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.date: 11/06/2018
+ms.author: hrasheed
+ms.openlocfilehash: e553833f8b9a5daab5c454cea628acdda0320e76
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43047302"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51257645"
 ---
 # <a name="use-spark-mllib-to-build-a-machine-learning-application-and-analyze-a-dataset"></a>Использование Spark MLlib для создания приложения машинного обучения и анализа набора данных
 
@@ -78,7 +78,7 @@ MLlib — это основная библиотека Spark, содержаща
         sio.close()
         return value
     
-    inspections = sc.textFile('wasb:///HdiSamples/HdiSamples/FoodInspectionData/Food_Inspections1.csv')\
+    inspections = sc.textFile('/HdiSamples/HdiSamples/FoodInspectionData/Food_Inspections1.csv')\
                     .map(csvParse)
     ```
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: 78796b5dc62cb573f149c24d90205d26fb139cf7
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: eb5b4b3741b064a934833b3094c69db85e9ccabb
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39628653"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238715"
 ---
 # <a name="biztalk-services-issuer-name-and-issuer-key"></a>Службы BizTalk: имя и ключ издателя
 
@@ -84,17 +84,17 @@ ms.locfileid: "39628653"
 ## <a name="next"></a>Далее
 Дополнительная информация о службах BizTalk в Azure
 
-* [Установка пакета SDK для служб BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=241589)<br/>
-* [Руководства по службам BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=236944)<br/>
-* [Как приступить к работе с пакетом SDK для служб BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
-* [Службы BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=303664)<br/>
+* [Установка пакета SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=241589)<br/>
+* [Руководства по службам BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=236944)<br/>
+* [Как приступить к работе с пакетом SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
+* [Службы BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=303664)<br/>
 
 ## <a name="see-also"></a>См. также
-* [Инструкция по использованию службы управления ACS для настройки удостоверений службы](http://go.microsoft.com/fwlink/p/?LinkID=303942)<br/>
-* [Службы BizTalk. Диаграмма выпусков Developer, Basic, Standard и Premium](http://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
-* [Создание служб BizTalk с помощью портала Azure](http://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
-* [Службы BizTalk. Диаграмма состояния подготовки](http://go.microsoft.com/fwlink/p/?LinkID=329870)<br/>
-* [Службы BizTalk: вкладки «Панель мониторинга», «Монитор» и «Масштаб»](http://go.microsoft.com/fwlink/p/?LinkID=302281)<br/>
-* [Службы BizTalk: резервное копирование и восстановление](http://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>
-* [Службы BizTalk: регулирование](http://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
+* [Инструкция по использованию службы управления ACS для настройки удостоверений службы](https://go.microsoft.com/fwlink/p/?LinkID=303942)<br/>
+* [Службы BizTalk. Диаграмма выпусков Developer, Basic, Standard и Premium](https://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
+* [Создание служб BizTalk с помощью портала Azure](https://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
+* [Службы BizTalk. Диаграмма состояния подготовки](https://go.microsoft.com/fwlink/p/?LinkID=329870)<br/>
+* [Службы BizTalk: вкладки «Панель мониторинга», «Монитор» и «Масштаб»](https://go.microsoft.com/fwlink/p/?LinkID=302281)<br/>
+* [Службы BizTalk: резервное копирование и восстановление](https://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>
+* [Службы BizTalk: регулирование](https://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
 

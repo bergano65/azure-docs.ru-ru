@@ -9,16 +9,16 @@ ms.assetid: dc9b21d8-c5f4-4f77-bcbc-eff458f48de2
 ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 05/20/2018
-ms.openlocfilehash: 33c3b91e7bf9fa64e3ba3f98a9396045753d0c2a
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 5a2935d559a967151c5bdc01c4b0806fe52179b4
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43045700"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51260046"
 ---
 # <a name="troubleshoot-an-abnormal-recurring-job"></a>Устранение неполадок, связанных с неправильно повторяющимся заданием
 
-В этой статье показано, как использовать [средства Azure Data Lake для Visual Studio](http://aka.ms/adltoolsvs) для устранения неполадок с повторяющимися заданиями. Дополнительные сведения о конвейере и повторяющихся заданиях можно узнать в [блоге об Azure Data Lake и Azure HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/09/19/managing-pipeline-recurring-jobs-in-azure-data-lake-analytics-made-easy/).
+В этой статье показано, как использовать [средства Azure Data Lake для Visual Studio](https://aka.ms/adltoolsvs) для устранения неполадок с повторяющимися заданиями. Дополнительные сведения о конвейере и повторяющихся заданиях можно узнать в [блоге об Azure Data Lake и Azure HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/09/19/managing-pipeline-recurring-jobs-in-azure-data-lake-analytics-made-easy/).
 
 В повторяющихся заданиях обычно используется одинаковая логика запроса и схожие входные данные. Например, представьте, что вы запускаете повторяющееся задание каждый понедельник в 8:00 для анализа активности пользователя за прошлую неделю. Скрипты для этих заданий создаются на основе единого шаблона, который содержит логику запроса. Входные данные для этих заданий представляют собой данные об использовании за прошлую неделю. Использование единой логики запросов и схожие входные данные обычно означают, что производительность этих заданий аналогична и стабильна. Если одно из повторяющихся заданий внезапно выполняется аномально, завершается с ошибкой или существенно замедляется, вы можете:
 
@@ -39,7 +39,7 @@ ms.locfileid: "43045700"
  
 ### <a name="case-2-you-have-the-pipeline-for-the-recurring-job-but-not-the-url"></a>Вариант 2. У вас есть конвейер для повторяющегося задания, но нет его URL-адреса
 
-В Visual Studio можно открыть браузер конвейера, выбрав "Обозреватель серверов" > учетную запись Azure Data Lake Analytics > **Конвейеры**. (Если этот узел не удается найти в обозревателе серверов, [скачайте последнюю версию подключаемого модуля](http://aka.ms/adltoolsvs).) 
+В Visual Studio можно открыть браузер конвейера, выбрав "Обозреватель серверов" > учетную запись Azure Data Lake Analytics > **Конвейеры**. (Если этот узел не удается найти в обозревателе серверов, [скачайте последнюю версию подключаемого модуля](https://aka.ms/adltoolsvs).) 
 
 ![Выбор узла "Конвейеры"](./media/data-lake-analytics-data-lake-tools-debug-recurring-job/pipeline-browser.png)
 

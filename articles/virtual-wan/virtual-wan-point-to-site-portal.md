@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: tutorial
-ms.date: 09/26/2018
+ms.date: 10/29/2018
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect remote users to my VNets using Virtual WAN and I don't want to go through a Virtual WAN partner.
-ms.openlocfilehash: 8a4c0c1426200e6c2d5041131fd0dd9cde4761cf
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: e3d1a79dc7dd775cea71df2f36a5f34d85f3e240
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47409292"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51261814"
 ---
 # <a name="tutorial-create-a-point-to-site-connection-using-azure-virtual-wan-preview"></a>Руководство. Создание подключения типа "точка — сеть" с помощью Виртуальной глобальной сети Azure (предварительная версия)
 
@@ -67,7 +67,7 @@ Get-AzureRmProviderFeature -ProviderNamespace Microsoft.Network -FeatureName All
 Get-AzureRmProviderFeature -ProviderNamespace Microsoft.Network -FeatureName AllowVnetGatewayOpenVpnProtocol
 ```
 
-Когда возможность отобразится как зарегистрированная, зарегистрируйте подписку на пространство имен Microsoft.Network.
+Когда возможность отобразится как зарегистрированная, перерегистрируйте подписку на пространство имен Microsoft.Network.
 
 ```azurepowershell-interactive
 Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
@@ -79,7 +79,7 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
 
 ## <a name="openvwan"></a>2. Создание виртуальной глобальной сети
 
-В браузере откройте [портал Azure (предварительная версия)](http://aka.ms/azurevirtualwanpreviewfeatures) и выполните вход с помощью учетной записи Azure.
+В браузере откройте [портал Azure (предварительная версия)](https://aka.ms/azurevirtualwanpreviewfeatures) и выполните вход с помощью учетной записи Azure.
 
 [!INCLUDE [Create a virtual WAN](../../includes/virtual-wan-tutorial-vwan-include.md)]
 
@@ -111,12 +111,13 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
 
 ## <a name="hub"></a>5. Изменение назначения концентратора
 
-1. На странице Виртуальной глобальной сети щелкните **Конфигурация подключения "точка — сеть"**.
-2. В разделе **Центр** вы увидите список сайтов, которые еще не подключены к концентратору.
-3. Выберите конфигурацию, которую хотите связать, и нажмите кнопку **Изменить назначение концентратора**
-4. В раскрывающемся списке выберите концентратор, к которому необходимо привязать конфигурацию.
-5. Щелкните **Назначить**. 
-6. Выполнение операции может занять до 30 минут.
+1. На странице виртуальной глобальной сети щелкните **Концентраторы**.
+2. Выберите концентратор, которому нужно назначить конфигурацию "точка — сеть".
+3. Щелкните **...** и выберите **Изменение виртуального концентратора**.
+4. Проверьте параметр **Включить шлюз " точка — сеть"** .
+5. Выберите **Единицы масштабирования шлюза**, **Конфигурация "точка — сеть"** и **Пул адресов** для клиентов.
+6. Щелкните **Confirm** (Подтвердить). 
+7. Выполнение операции может занять до 30 минут.
 
 ## <a name="vnet"></a>6. Подключение виртуальной сети к концентратору
 
@@ -135,9 +136,10 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
 
 Используйте профиль VPN для настройки клиентов.
 
-1. На странице Виртуальной глобальной сети щелкните **Конфигурация подключения "точка — сеть"**.
-2. В верхней части страницы щелкните **Загрузить профиль подключения "точка — сеть"**. 
-3. После завершения создания файла вы можете скачать его, щелкнув ссылку.
+1. На странице виртуальной глобальной сети щелкните **Концентраторы**.
+2. Выберите концентратор, для которого нужно скачать профиль.
+3. Щелкните **...** и выберите **Скачать профиль**. 
+4. После завершения создания файла вы можете скачать его, щелкнув ссылку.
 4. Используйте файл профиля для настройки клиентов подключения "точка — сеть".
 
 ## <a name="device"></a>8. Настройка подключения "точка — сеть"

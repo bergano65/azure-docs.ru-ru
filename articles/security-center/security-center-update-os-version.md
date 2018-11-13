@@ -3,7 +3,7 @@ title: Обновление версии ОС в центре безопасно
 description: В этой статье объясняется, как выполнить рекомендацию центра безопасности Azure **Обновление версии ОС**.
 services: security-center
 documentationcenter: na
-author: TerryLanfear
+author: rkarlin
 manager: MBaldwin
 editor: ''
 ms.assetid: aa372492-ecdb-4368-8fdd-d8ed31e216ee
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/01/2016
-ms.author: terrylan
-ms.openlocfilehash: cab773412005093f8acabe9bd6e93e8740b14ece
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.date: 10/28/2018
+ms.author: rkarlin
+ms.openlocfilehash: 1898926e0488722d18a105697bead18e29e6a35d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44298412"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51254899"
 ---
 # <a name="update-os-version-in-azure-security-center"></a>Обновление версии ОС в центре безопасности Azure
 Для виртуальных машин (ВМ) в облачных службах центр безопасности Azure порекомендует обновить версию операционной системы (ОС) на более новую, если она есть.  Мониторинг выполняется только для облачных служб и рабочих ролей, запущенных в слотах рабочей среды.
@@ -49,7 +49,7 @@ ms.locfileid: "44298412"
 * [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md) — узнайте, как управлять оповещениями системы безопасности и реагировать на них.
 * [Мониторинг решений партнеров с помощью центра безопасности Azure](security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
 * [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md) — часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](http://blogs.msdn.com/b/azuresecurity/) — последние новости и информация об обеспечении безопасности в Azure.
+* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — последние новости и информация об обеспечении безопасности в Azure.
 
 <!--Image references-->
 [1]: ./media/security-center-update-os-version/update-os-version.png

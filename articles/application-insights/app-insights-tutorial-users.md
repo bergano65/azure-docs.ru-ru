@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: tutorial
 manager: carmonm
-ms.openlocfilehash: db61c300ad82270e59d315fa3372d9e4390c7a21
-ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
+ms.openlocfilehash: 6d4f96a2c1d288648543a92614cab0f8cf5ee2ea
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2017
-ms.locfileid: "24099027"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51256006"
 ---
 # <a name="use-azure-application-insights-to-understand-how-customers-are-using-your-application"></a>Использование Azure Application Insights для анализа информации о том, как пользователи используют приложение
 
@@ -31,14 +31,14 @@ ms.locfileid: "24099027"
 > * изучать, как пользователи перемещаются внутри приложения.
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
 - Установите [Visual Studio 2017](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
     - ASP.NET и веб-разработка.
     - разработка Azure;
-- Загрузите и установите [отладчик моментальных снимков Visual Studio](http://aka.ms/snapshotdebugger).
+- Загрузите и установите [отладчик моментальных снимков Visual Studio](https://aka.ms/snapshotdebugger).
 - Разверните приложение .NET в Azure и [включите пакет SDK для Application Insights](app-insights-asp-net.md). 
 - Включите [отправку из приложения телеметрии](app-insights-usage-overview.md#send-telemetry-from-your-app) для пользовательских событий и просмотров страниц.
 - Включите [отправку контекста пользователя](https://docs.microsoft.com/azure/application-insights/app-insights-usage-send-user-context) для отслеживания действий с привязкой ко времени, чтобы максимально эффективно применить информацию об использовании.

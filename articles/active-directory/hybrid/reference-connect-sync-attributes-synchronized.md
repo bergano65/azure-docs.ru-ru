@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/05/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 9ea901d51403096166b367a1586cb26d2d914e2d
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 08633b52e6b7cfef28635925ad9fcf34e065e9bf
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46306533"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51251804"
 ---
 # <a name="azure-ad-connect-sync-attributes-synchronized-to-azure-active-directory"></a>Службы синхронизации Azure AD Connect: атрибуты, синхронизируемые с Azure Active Directory
 В этой статье перечислены атрибуты, которые синхронизируются при помощи служб синхронизации Azure AD Connect.  
@@ -376,7 +376,7 @@ ms.locfileid: "46306533"
 Эта группа представляет собой минимальный набор атрибутов, необходимых для универсальной рабочей нагрузки или приложения. Он может использоваться для рабочей нагрузки, не указанной в другом разделе, или приложения стороннего производителя. Явным образом он используется для следующего:
 
 * Yammer (используется только пользователь);
-* [гибридные сценарии межорганизационного взаимодействия бизнес-бизнес, обеспечиваемые такими ресурсами, как SharePoint.](http://go.microsoft.com/fwlink/?LinkId=747036)
+* [гибридные сценарии межорганизационного взаимодействия бизнес-бизнес, обеспечиваемые такими ресурсами, как SharePoint.](https://go.microsoft.com/fwlink/?LinkId=747036)
 
 Ниже приведена группа атрибутов, которые можно использовать, если каталог Azure AD не используется для поддержки Office 365, Dynamics или Intune. Это небольшой набор основных атрибутов.
 

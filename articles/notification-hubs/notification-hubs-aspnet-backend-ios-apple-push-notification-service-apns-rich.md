@@ -14,12 +14,12 @@ ms.devlang: objective-c
 ms.topic: article
 ms.date: 04/25/2018
 ms.author: dimazaid
-ms.openlocfilehash: f2fa2b8b43a4840d8c6956efb7704327cca78d7c
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 8aad769da4d1c831dc0222c39daf86801a4f850b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50232518"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51244293"
 ---
 # <a name="azure-notification-hubs-rich-push"></a>Форматированные push-уведомления на основе концентраторов уведомлений Azure
 ## <a name="overview"></a>Обзор
@@ -94,7 +94,7 @@ ms.locfileid: "50232518"
         }
    
    > [!NOTE]
-   > (Необязательно.) Дополнительные сведения о том, как добавить и получить ресурсы проекта, см. в статье [Как внедрить ресурсы и получить к ним доступ с помощью Visual C#](http://support.microsoft.com/kb/319292).
+   > (Необязательно.) Дополнительные сведения о том, как добавить и получить ресурсы проекта, см. в статье [Как внедрить ресурсы и получить к ним доступ с помощью Visual C#](https://support.microsoft.com/kb/319292).
    > 
    > 
 7. В **NotificationsController.cs** замените определение **NotificationsController** следующими фрагментами. Этот код отправляет начальный идентификатор форматированного уведомления на устройство и разрешает клиенту получить образ:

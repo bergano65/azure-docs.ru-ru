@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 09/29/2017
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: 6f09e523b70e541c724ea53d0bd47215ad44d623
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 77d47b1f4946a8539b58b9335b967321b6bbf2e9
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48041992"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51259876"
 ---
 # <a name="automate-log-analytics-processes-with-the-connector-for-microsoft-flow"></a>Автоматизация процессов Log Analytics с помощью соединителя для Microsoft Flow
 [Microsoft Flow](https://ms.flow.microsoft.com) позволяет создавать автоматизированные рабочие процессы, используя сотни действий для различных служб. Выходные данные одного действия могут использоваться в качестве входных данных другого действия, что позволяет интегрировать различные службы.  Соединитель Azure Log Analytics для Microsoft Flow позволяет создавать рабочие процессы, которые включают данные, полученные при поиске по журналам в Log Analytics.
@@ -29,7 +29,7 @@ ms.locfileid: "48041992"
 
 
 ## <a name="step-1-create-a-flow"></a>Шаг 1. Создание последовательности
-1. Войдите в [Microsoft Flow](http://flow.microsoft.com) и выберите **Мои потоки**.
+1. Войдите в [Microsoft Flow](https://flow.microsoft.com) и выберите **Мои потоки**.
 2. Щелкните **Создать с нуля**.
 
 ## <a name="step-2-create-a-trigger-for-your-flow"></a>Шаг 2. Создание триггера для последовательности
@@ -79,7 +79,7 @@ ms.locfileid: "48041992"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения о [поиске по журналам Log Analytics](log-analytics-log-search-new.md).
+- Дополнительные сведения о [поиске по журналам Log Analytics](log-analytics-queries.md).
 - Дополнительные сведения о [Microsoft Flow](https://ms.flow.microsoft.com).
 
 

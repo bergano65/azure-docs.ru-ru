@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/04/2017
 ms.author: deguhath
-ms.openlocfilehash: 1a0d8106c6a48494a938ee7a9da6f43f467516f6
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: 2fe57480f7d8e22cfffafec6845372718587958e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49394023"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51258431"
 ---
 # <a name="move-data-to-or-from-azure-blob-storage-using-ssis-connectors"></a>Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью соединителей SSIS
 [Пакет дополнительных компонентов SQL Server Integration Services для Azure](https://msdn.microsoft.com/library/mt146770.aspx) содержит компоненты для подключения к Azure, передачи данных между Azure и локальными источниками данных, а также для обработки данных, хранящихся в Azure.
@@ -31,7 +31,7 @@ ms.locfileid: "49394023"
 
 Обычно это является первым шагом для работы с [SQL](sql-walkthrough.md) и [HDInsight](hive-walkthrough.md).
 
-Сведения о канонических сценариях, в рамках которых службы SSIS используются для выполнения бизнес-задач, часто встречающихся в сценариях интеграции гибридных данных, см. в записи блога [Doing more with SQL Server Integration Services Feature Pack for Azure](http://blogs.msdn.com/b/ssis/archive/2015/06/25/doing-more-with-sql-server-integration-services-feature-pack-for-azure.aspx) (Повышенная эффективность при использовании пакета дополнительных компонентов SQL Server Integration Services для Azure).
+Сведения о канонических сценариях, в рамках которых службы SSIS используются для выполнения бизнес-задач, часто встречающихся в сценариях интеграции гибридных данных, см. в записи блога [Doing more with SQL Server Integration Services Feature Pack for Azure](https://blogs.msdn.com/b/ssis/archive/2015/06/25/doing-more-with-sql-server-integration-services-feature-pack-for-azure.aspx) (Повышенная эффективность при использовании пакета дополнительных компонентов SQL Server Integration Services для Azure).
 
 > [!NOTE]
 > Полное описание базовых принципов использования хранилища BLOB-объектов Azure см. в статьях [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../../storage/blobs/storage-dotnet-how-to-use-blobs.md) и [Основные понятия службы BLOB-объектов](https://msdn.microsoft.com/library/azure/dd179376.aspx).
@@ -47,10 +47,10 @@ ms.locfileid: "49394023"
 Чтобы использовать **Соединители SSIS**, необходимо загрузить следующие компоненты:
 
 * **SQL Server 2014 или 2016 Standard (или более поздняя версия)**: установка включает в себя SQL Server Integration Services.
-* **Пакет дополнительных компонентов Microsoft SQL Server 2014 или 2016 Integration Services для Azure:** пакет можно скачать на [этой](http://www.microsoft.com/download/details.aspx?id=47366) или на [этой странице](https://www.microsoft.com/download/details.aspx?id=49492) соответственно.
+* **Пакет дополнительных компонентов Microsoft SQL Server 2014 или 2016 Integration Services для Azure:** пакет можно скачать на [этой](https://www.microsoft.com/download/details.aspx?id=47366) или на [этой странице](https://www.microsoft.com/download/details.aspx?id=49492) соответственно.
 
 > [!NOTE]
-> Службы SSIS устанавливаются вместе с SQL Server, но в версию Express они не включены. Сведения о приложениях, которые включены в различные выпуски SQL Server, см. в статье [SQL Server 2016 SP1 editions](http://www.microsoft.com/en-us/server-cloud/products/sql-server-editions/) (Выпуски SQL Server 2016 с пакетом обновления 1 (SP1)).
+> Службы SSIS устанавливаются вместе с SQL Server, но в версию Express они не включены. Сведения о приложениях, которые включены в различные выпуски SQL Server, см. в статье [SQL Server 2016 SP1 editions](https://www.microsoft.com/en-us/server-cloud/products/sql-server-editions/) (Выпуски SQL Server 2016 с пакетом обновления 1 (SP1)).
 > 
 > 
 

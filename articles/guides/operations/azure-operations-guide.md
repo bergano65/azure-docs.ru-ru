@@ -15,12 +15,12 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 08/24/2018
 ms.author: mibender
-ms.openlocfilehash: c10e071100410f6d5d995d88657bdd85c08a9715
-ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
+ms.openlocfilehash: 07faf5efd1c7eec3e209a5d971185655cc949bb9
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47423499"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51250787"
 ---
 # <a name="get-started-for-azure-it-operators"></a>Начало работы для ИТ-операторов Azure
 
@@ -227,7 +227,7 @@ RBAC предусматривает несколько встроенных ро
 
 ### <a name="forecast-cost-with-the-pricing-calculator"></a>Прогноз затрат с помощью калькулятора цен
 
-Для каждой службы в Azure действуют разные цены. Многие службы Azure имеют категории "Базовый", "Стандартный" и "Премиум". Как правило, каждый уровень имеет несколько уровней цен и производительности. С помощью [калькулятора цен в Интернете](http://azure.microsoft.com/pricing/calculator) можно выполнить расчет цен. Калькулятор позволяет гибко оценивать стоимость одного ресурса или группы ресурсов.
+Для каждой службы в Azure действуют разные цены. Многие службы Azure имеют категории "Базовый", "Стандартный" и "Премиум". Как правило, каждый уровень имеет несколько уровней цен и производительности. С помощью [калькулятора цен в Интернете](https://azure.microsoft.com/pricing/calculator) можно выполнить расчет цен. Калькулятор позволяет гибко оценивать стоимость одного ресурса или группы ресурсов.
 
 ## <a name="azure-resource-manager"></a>Azure Resource Manager
 

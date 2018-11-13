@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: sstein
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 89802722e9e848b5cd5ede952287d5c934c142c3
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 594d181a5452317267157415bdaf68f572f0f0af
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49351325"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51260029"
 ---
 # <a name="ports-beyond-1433-for-adonet-45"></a>Порты для ADO.NET 4.5, отличные от порта 1433
 В этом разделе описывается поведение подключения к Базе данных SQL Azure клиентов, использующих ADO.NET 4.5 или более поздней версии. 
@@ -48,7 +48,7 @@ ms.locfileid: "49351325"
 * В частности, порты в этом диапазоне должны оставаться свободными от других исходящих ошибок.
 * На виртуальной машине Azure параметрами порта управляет **брандмауэр Windows в режиме повышенной безопасности** .
   
-  * С помощью [пользовательского интерфейса брандмауэра](http://msdn.microsoft.com/library/cc646023.aspx) можно добавить правило, для которого указывается протокол **TCP**, а также диапазон портов, используя следующий синтаксис: **11000–11999**.
+  * С помощью [пользовательского интерфейса брандмауэра](https://msdn.microsoft.com/library/cc646023.aspx) можно добавить правило, для которого указывается протокол **TCP**, а также диапазон портов, используя следующий синтаксис: **11000–11999**.
 
 ## <a name="version-clarifications"></a>Уточнение версии
 В этом разделе описываются псевдонимы, относящиеся к версиям продуктов. В нем также перечисляются некоторые пары версий продуктов.
@@ -65,9 +65,9 @@ ms.locfileid: "49351325"
 
 
 ## <a name="related-links"></a>Связанные ссылки
-* 20 июля 2015 г. был выпущен ADO.NET 4.6. Объявление в блоге группы разработчиков для .NET доступно [здесь](http://blogs.msdn.com/b/dotnet/archive/2015/07/20/announcing-net-framework-4-6.aspx).
-* 15 августа 2012 г. был выпущен ADO.NET 4.5. Объявление в блоге группы разработчиков для .NET доступно [здесь](http://blogs.msdn.com/b/dotnet/archive/2012/08/15/announcing-the-release-of-net-framework-4-5-rtm-product-and-source-code.aspx). 
-  * Запись блога об ADO.NET 4.5.1 доступна [здесь](http://blogs.msdn.com/b/dotnet/archive/2013/06/26/announcing-the-net-framework-4-5-1-preview.aspx).
+* 20 июля 2015 г. был выпущен ADO.NET 4.6. Объявление в блоге группы разработчиков для .NET доступно [здесь](https://blogs.msdn.com/b/dotnet/archive/2015/07/20/announcing-net-framework-4-6.aspx).
+* 15 августа 2012 г. был выпущен ADO.NET 4.5. Объявление в блоге группы разработчиков для .NET доступно [здесь](https://blogs.msdn.com/b/dotnet/archive/2012/08/15/announcing-the-release-of-net-framework-4-5-rtm-product-and-source-code.aspx). 
+  * Запись блога об ADO.NET 4.5.1 доступна [здесь](https://blogs.msdn.com/b/dotnet/archive/2013/06/26/announcing-the-net-framework-4-5-1-preview.aspx).
 
 * Microsoft® ODBC Driver 17 for SQL Server® — Windows, Linux и macOS https://www.microsoft.com/download/details.aspx?id=56567
 

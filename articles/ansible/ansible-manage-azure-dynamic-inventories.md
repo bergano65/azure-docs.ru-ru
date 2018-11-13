@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 1b8c1ba80b4c69f36e8304cbe978452a359ac911
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 1f19d5918d81acb76936edf8989a556335a3c0df
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43698084"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51261270"
 ---
 # <a name="use-ansible-to-manage-your-azure-dynamic-inventories"></a>Управление динамическими списками Azure с помощью Ansible
 Ansible можно использовать для извлечения информации из различных источников (включая облачные источники, такие как Azure) в *динамический список*. В этой статье вы настроите динамический список Ansible Azure с помощью [Azure Cloud Shell](./ansible-run-playbook-in-cloudshell.md), создадите в нем две виртуальные машины, назначите одной из них тег и установите на ней Nginx.
@@ -26,7 +26,7 @@ Ansible можно использовать для извлечения инфо
 
 ## <a name="create-the-test-virtual-machines"></a>Создание тестовых виртуальных машин
 
-1. Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
 1. Откройте [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 

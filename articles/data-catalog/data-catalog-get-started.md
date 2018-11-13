@@ -8,12 +8,12 @@ ms.assetid: 03332872-8d84-44a0-8a78-04fd30e14b18
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 01/18/2018
-ms.openlocfilehash: 4386f87b6986e6ab1742a8d3c14a100fea112182
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: dd3cb108844cd009d74de42630511073021d94b1
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47406317"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238494"
 ---
 # <a name="get-started-with-azure-data-catalog"></a>Начало работы с каталогом данных Azure
 Каталог данных Azure — это полностью управляемая облачная служба, выполняющая функции систем регистрации и обнаружения корпоративных ресурсов данных. Подробный обзор см. в статье [Что такое каталог данных Azure?](data-catalog-what-is-data-catalog.md)
@@ -96,7 +96,7 @@ Azure AD предоставляет компаниям простой спосо
 Чтобы установить образец базы данных Adventure Works, выполните следующие действия.
 
 1. Скачайте файл [Adventure Works 2014 Full Database Backup.zip](https://msftdbprodsamples.codeplex.com/downloads/get/880661) на сайте CodePlex.
-2. Чтобы восстановить базу данных на компьютере, следуйте инструкциям, приведенным в статье [Restore a Database Backup by using SQL Server Management Studio](http://msdn.microsoft.com/library/ms177429.aspx)(Восстановление резервной копии базы данных в SQL Server Management Studio), или выполните следующие инструкции.
+2. Чтобы восстановить базу данных на компьютере, следуйте инструкциям, приведенным в статье [Restore a Database Backup by using SQL Server Management Studio](https://msdn.microsoft.com/library/ms177429.aspx)(Восстановление резервной копии базы данных в SQL Server Management Studio), или выполните следующие инструкции.
    1. Откройте SQL Server Management Studio и подключитесь к ядру СУБД SQL Server.
    2. Щелкните правой кнопкой мыши **Базы данных** и выберите **Восстановить базу данных**.
    3. В окне **Восстановление базы данных** выберите вариант **Устройство** в качестве **источника** и щелкните **Обзор**.
