@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 09/25/2018
 ms.author: raynew
-ms.openlocfilehash: 923a2a137bb4510e9490ce4077f744a43619a2c6
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 04ae28ca566e97570ec64e78d3408ea8bd1e3d42
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47165030"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51010326"
 ---
 # <a name="dependency-visualization"></a>Визуализация зависимостей
 
@@ -38,6 +38,12 @@ ms.locfileid: "47165030"
     ![Переход к рабочей области Log Analytics](./media/concepts-dependency-visualization/oms-workspace.png)
 
 Чтобы использовать визуализацию зависимостей, необходимо скачать и установить агенты на каждом локальном компьютере, который нужно проанализировать.  
+
+- Агент [Microsoft Monitoring Agent (MMA)](https://docs.microsoft.com/azure/log-analytics/log-analytics-agent-windows) должен быть установлен на каждом компьютере.
+- Программа [Dependency Agent](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure) должна быть установлена на каждом компьютере.
+- Кроме того, если у вас есть компьютеры без подключения к Интернету, на них необходимо скачать и установить шлюз Log Analytics.
+
+Если вы не используете визуализацию зависимостей, эти агенты не нужны на компьютерах, которые вы хотите оценить.
 
 ## <a name="do-i-need-to-pay-for-it"></a>Будет ли взиматься плата за это?
 

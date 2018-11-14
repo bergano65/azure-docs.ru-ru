@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 10/15/2018
+ms.date: 11/05/2018
 ms.author: juliako
-ms.openlocfilehash: dccbc6e57e970ec7089f81fccb33b741b9c00e74
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: 26661a213b5df5424bf9ab9ad799345ae35620ea
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49376726"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51036773"
 ---
 # <a name="azure-media-services-v3-frequently-asked-questions"></a>Часто задаваемые вопросы о Службах мультимедиа Azure версии 3
 
@@ -28,7 +28,7 @@ ms.locfileid: "49376726"
 
 ## <a name="is-there-an-api-for-configuring-media-reserved-units"></a>Существует ли API для настройки зарезервированных единиц мультимедиа?
 
-Команда разработчиков служб мультимедиа исключает ЕЗ в версии 3. Однако необходимая работа по обслуживанию не завершена. До тех пор клиенты должны использовать портал Azure или API AMS версии 2 для настройки ЕЗ (как описано в статье [Обзор масштабирования обработки мультимедиа](../previous/media-services-scale-media-processing-overview.md). 
+В настоящее время необходимо использовать API AMS версии 2 для настройки зарезервированных единиц мультимедиа (как описано в обзоре [масштабирования обработки мультимедиа](../previous/media-services-scale-media-processing-overview.md)). 
 
 Если используется **VideoAnalyzerPreset** и (или) **AudioAnalyzerPreset**, настройте 10 зарезервированных единиц мультимедиа S3 для учетной записи Служб мультимедиа.
 

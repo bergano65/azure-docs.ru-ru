@@ -13,136 +13,104 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 10/16/2018
+ms.date: 11/05/2018
 ms.author: juliako
-ms.openlocfilehash: a17bad5beb651aaa085c626296c200a00c30647e
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: 2f5c0ef63ba150fdad4aea1a0c65269611d56815
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49376368"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51247693"
 ---
-# <a name="migrate-from-media-services-v2-to-v3"></a>Миграция из версии 2 в версию 3 Служб мультимедиа
+# <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Руководство по миграции из версии 2 в версию 3 Служб мультимедиа
 
-В этой статье описаны изменения, которые впервые появились в версии 3 Служб мультимедиа Azure (AMS), и приведены различия между двумя версиями.
+В этой статье описаны изменения, которые впервые появились в Службе мультимедиа Azure версии 3, приведены различия между двумя версиями и предоставлено руководство по миграции.
 
-## <a name="why-should-you-move-to-v3"></a>Почему следует выполнить переход на версию 3
+Если у вас есть видеослужба, разработанная на основе [устаревших API Служб мультимедиа версии 2](../previous/media-services-overview.md), ознакомьтесь со следующими рекомендациями и советами перед переносом в API версии 3. В версии 3 API существует множество преимуществ и новых функций, которые улучшают возможности разработки и Служб мультимедиа. Однако, как указано в разделе с [известными проблемами](#known-issues) этой статьи, из-за изменений между версиями API существуют определенные ограничения. Эта страница будет сохранена, так как команда Служб мультимедиа продолжает улучшать API версии 3 и устранять "пробелы" между версиями. 
+
+## <a name="benefits-of-media-services-v3"></a>Преимущества Служб мультимедиа версии 3
 
 ### <a name="api-is-more-approachable"></a>Более доступный API
 
 *  Версия 3 создана на основе унифицированной области API, что позволяет использовать функции управления и операции, встроенные в Azure Resource Manager. Шаблоны Azure Resource Manager можно использовать для создания и развертывания преобразований, конечных точек потоковой передачи, событий прямой трансляции и т. д.
-* Документ спецификации Open API (также называемый Swagger).
-* Пакеты SDK для .Net, .Net Core, Node.js, Python, Java, Ruby.
-* Интеграция Azure CLI.
+* Документ [спецификации Open API (также называемый Swagger)](https://aka.ms/ams-v3-rest-sdk).
+    Представляет схему для всех компонентов службы, включая кодирование на основе файла.
+* Пакеты SDK для [.NET](https://aka.ms/ams-v3-dotnet-ref), .NET Core, [Node.js](https://aka.ms/ams-v3-nodejs-ref), [Python](https://aka.ms/ams-v3-python-ref), [Java](https://aka.ms/ams-v3-java-ref), [Go](https://aka.ms/ams-v3-go-ref) и Ruby.
+* Интеграция [Azure CLI](https://aka.ms/ams-v3-cli-ref) для простых скриптов поддержки.
 
 ### <a name="new-features"></a>новые функции;
 
-* Теперь кодирование поддерживает прием HTTPS (ввод на основе URL-адреса).
-* Преобразования появились в версии 3. Преобразование используется для совместного доступа к конфигурациям, создания шаблонов Azure Resource Manager и изолирования параметров кодирования определенного пользователя или клиента. 
-* Ресурс может иметь несколько StreamingLocators с различными параметрами динамической упаковки и динамического шифрования.
-* Защита содержимого поддерживает несколько ключевых возможностей. 
+* Для обработки задания на основе файла можно использовать URL-адрес HTTP в качестве входных данных.
+    Вам не обязательно ни хранить содержимое в Azure, ни создавать ресурсы.
+* Для обработки задания на основе файла введено понятие [преобразования](transforms-jobs-concept.md). Преобразование можно использовать для создания повторно используемых конфигураций, создания шаблонов Azure Resource Manager и изолирования параметров обработки между несколькими пользователями или клиентами.
+* Ресурс может иметь [несколько StreamingLocators](streaming-locators-concept.md) с различными параметрами динамической упаковки и динамического шифрования.
+* [Защита содержимого](content-key-policy-concept.md) поддерживает несколько ключевых возможностей.
+* Вы можете осуществлять потоковую передачу событий в реальном времени до 24 часов.
+* Новая минимальная задержка потоковой передачи в реальном времени в LiveEvents.
 * Предварительная версия LiveEvent поддерживает динамическую упаковку и динамическое шифрование. Это включает защиту содержимого в предварительной версии, а также упаковки DASH и HLS.
-* LiveOuput проще в использовании, чем старая сущность Program. 
-* Была добавлена поддержка RBAC в сущностях.
+* LiveOuput проще в использовании, чем старая сущность Program в версии 2 API. 
+* Вы контролируете доступ к своим сущностям с помощью управления доступом на основе ролей. 
 
 ## <a name="changes-from-v2"></a>Отличия от версии 2
 
-* В Службах мультимедиа версии 3 для обратной совместимости поддерживается шифрование хранилища (шифрование AES-256), только если ресурсы созданы с помощью Служб мультимедиа версии 2. То есть версия 3 работает с существующими зашифрованными ресурсами хранилища, но создание новых ресурсов не поддерживается.
-
-    Если ресурсы созданы с помощью версии 3, Службы мультимедиа поддерживают шифрование хранилища на стороне сервера [службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-service-encryption?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
-    
-* Пакеты SDK для Служб мультимедиа лишаются хранилища SDK, что обеспечивает больший контроль над используемым хранилищем SDK и позволяет избежать проблем с управлением версиями. 
-* В версии 3 вся скорость кодировки указана в битах за секунду. Это отличается от предустановок Media Encoder Standard REST версии 2. Например, скорость в версии 2 указывается как 128, а в версии 3 она имела бы значение 128 000. 
-* Объекты AssetFiles, AccessPolicies, IngestManifests не существуют в версии 3.
-* ContentKeys больше не сущность, свойство StreamingLocator.
+* Если ресурсы созданы с помощью версии 3, Службы мультимедиа поддерживают шифрование хранилища только на стороне сервера [службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-service-encryption).
+    * Вы можете использовать API версии 3 с ресурсами, созданными с помощью API версии 2, в которых есть [шифрование хранилища](../previous/media-services-rest-storage-encryption.md) (AES 256), предоставляемое Службами мультимедиа.
+    * Вы не можете создать ресурсы с устаревшим [шифрованием хранилища](../previous/media-services-rest-storage-encryption.md) AES 256 с помощью API версии 3.
+* Пакеты SDK версии 3 теперь лишаются хранилища SDK, что обеспечивает больший контроль над используемой версией хранилища SDK и позволяет избежать проблем с управлением версиями. 
+* В API версии 3 вся скорость кодировки указана в битах за секунду. Это отличается от предустановок Media Encoder Standard версии 2. Например, скорость в версии 2 указывается как 128 (кбит/с), а в версии 3 она имела бы значение 128 000 (бит/с). 
+* Сущности AssetFiles, AccessPolicies и IngestManifests не существуют в версии 3.
+* ContentKeys больше не сущность, а свойство StreamingLocator.
 * Служба "Сетка событий" заменяет NotificationEndpoints.
-* Некоторые сущности были переименованы.
+* Следующие сущности были переименованы:
+    * JobOutput заменяет задачу и теперь является частью задания.
+    * StreamingLocator заменяет Locator.
+    * LiveEvent заменяет Channel.
+        
+        Выставление счетов LiveEvent основано на метриках динамического канала. Дополнительные сведения см. в разделе [Выставление счетов](live-streaming-overview.md#billing) и на странице [Цены на Службы мультимедиа](https://azure.microsoft.com/pricing/details/media-services/).
+    * LiveOutput заменяет Program.
+* LiveOutputs не обязательно должны запускаться явным образом, они запускаются при создании и останавливаются при удалении. Программы работали иначе в API версии 2, они должны были запускаться после создания.
 
-  * JobOutput заменяет Task, теперь это только часть Job.
-  * LiveEvent заменяет Channel.
-  * LiveOutput заменяет Program.
-  * StreamingLocator заменяет Locator.
+## <a name="feature-gaps-with-respect-to-v2-apis"></a>Недочеты функций по отношению к API версии 2
 
-## <a name="code-changes"></a>Изменения в коде
+API версии 3 содержит следующие недочеты функций относительно API версии 2. Устранение недочетов не завершено.
 
-### <a name="create-an-asset-and-upload-a-file"></a>Создайте ресурс и отправьте файл. 
+* [Кодировщик (цен. категория "Премиум")](../previous/media-services-premium-workflow-encoder-formats.md) и [устаревшие обработчики аналитики мультимедиа](../previous/media-services-analytics-overview.md) (Предварительная версия индексатора Служб мультимедиа Azure версии 2, скрытие лиц и т. д.) недоступны в версии 3.
 
-#### <a name="v2"></a>версия 2
+    Пользователи, желающие выполнить миграцию из предварительной версии индексатора мультимедийных данных версии 1 или 2, могут немедленно использовать предустановку AudioAnalyzer в API версии 3.  Эта новая предустановка содержит больше возможностей, чем старые индексаторы мультимедийных данных версии 1 или 2. 
 
-```csharp
-IAsset asset = context.Assets.Create(assetName, storageAccountName, options);
+* Многие расширенные возможности Media Encoder (цен. категория "Стандартный") в API версии 2 недоступны в настоящее время в версии 3, например:
+    * Обрезка (в сценариях реального времени и по требованию)
+    * Совмещение ресурсов
+    * Наложения
+    * Обрезка
+    * Спрайты эскизов
+* События прямой трансляции с перекодированием в настоящее время не поддерживают вставку баннера в поток, пользовательские предустановки или вставку рекламного маркера через вызов API. 
 
-IAssetFile assetFile = asset.AssetFiles.Create(assetFileName);
+> [!NOTE]
+> Добавьте эту статью в закладки и проверяйте ее на наличие обновлений.
 
-assetFile.Upload(filePath);
-```
+## <a name="code-differences"></a>Отличия в коде
 
-#### <a name="v3"></a>версия 3
+Следующая таблица показывает разницу в коде между версией 2 и 3 в распространенных сценариях.
 
-```csharp
-Asset asset = client.Assets.CreateOrUpdate(resourceGroupName, accountName, assetName, new Asset());
+|Сценарий|API версии 2|API версии 3|
+|---|---|---|
+|Создайте ресурс и отправьте файл. |[Пример .NET версии 2](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-aes/blob/master/DynamicEncryptionWithAES/DynamicEncryptionWithAES/Program.cs#L113)|[Пример .NET версии 3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#L169)|
+|Отправка задания|[Пример .NET версии 2](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-aes/blob/master/DynamicEncryptionWithAES/DynamicEncryptionWithAES/Program.cs#L146)|[Пример .NET версии 3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#L298)<br/><br/>Показано, как сначала создать преобразование, а затем отправить задание.|
+|Опубликуйте ресурс с шифрованием AES. |1. Создайте ContentKeyAuthorizationPolicyOption.<br/>2. Создайте ContentKeyAuthorizationPolicy.<br/>3. Создайте AssetDeliveryPolicy.<br/>4. Создайте ресурс и передайте содержимое или отправьте задание и используйте выходной ресурс.<br/>5. Свяжите AssetDeliveryPolicy с ресурсом.<br/>6. Создайте ContentKey.<br/>7. Присоедините ContentKey к Asset.<br/>8. Создайте AccessPolicy.<br/>9. Создайте Locator.<br/><br/>[Пример .NET версии 2](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-aes/blob/master/DynamicEncryptionWithAES/DynamicEncryptionWithAES/Program.cs#L64)|1. Создайте политику ключа содержимого.<br/>2. Создайте ресурс.<br/>3. Передайте содержимое или используйте ресурс как JobOutput.<br/>4. Создайте StreamingLocator.<br/><br/>[Пример .NET версии 3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES/Program.cs#L105)|
 
-var response = client.Assets.ListContainerSas(resourceGroupName, accountName, assetName, permissions: AssetContainerPermission.ReadWrite, expiryTime: DateTime.Now.AddHours(1));
+## <a name="known-issues"></a>Известные проблемы
 
-var sasUri = new Uri(response.AssetContainerSasUrls.First());
-CloudBlobContainer container = new CloudBlobContainer(sasUri);
-
-var blob = container.GetBlockBlobReference(Path.GetFileName(fileToUpload));
-blob.UploadFromFile(fileToUpload);
-```
-
-### <a name="submit-a-job"></a>Отправка задания
-
-#### <a name="v2"></a>версия 2
-
-```csharp
-IMediaProcessor processor = context.MediaProcessors.GetLatestMediaProcessorByName(mediaProcessorName);
-
-IJob job = jobs.Create($"Job for {inputAsset.Name}");
-
-ITask task = job.Tasks.AddNew($"Task for {inputAsset.Name}", processor, taskConfiguration);
-
-task.InputAssets.Add(inputAsset);
-
-task.OutputAssets.AddNew(outputAssetName, outputAssetStorageAccountName, outputAssetOptions);
-
-job.Submit();
-```
-
-#### <a name="v3"></a>версия 3
-
-```csharp
-client.Assets.CreateOrUpdate(resourceGroupName, accountName, outputAssetName, new Asset());
-
-JobOutput[] jobOutputs = { new JobOutputAsset(outputAssetName)};
-
-JobInput jobInput = JobInputAsset(assetName: assetName);
-
-Job job = client.Jobs.Create(resourceGroupName,
-accountName, transformName, jobName,
-new Job {Input = jobInput, Outputs = jobOutputs});
-```
-
-### <a name="publish-an-asset-with-aes-encryption"></a>Опубликуйте ресурс с шифрованием AES. 
-
-#### <a name="v2"></a>версия 2
-
-1. Создайте ContentKeyAuthorizationPolicyOption.
-2. Создайте ContentKeyAuthorizationPolicy.
-3. Создайте AssetDeliveryPolicy.
-4. Создайте ресурс и передайте содержимое или отправьте задание и используйте выходной ресурс.
-5. Свяжите AssetDeliveryPolicy с ресурсом.
-6. Создайте ContentKey.
-7. Присоедините ContentKey к Asset.
-8. Создайте AccessPolicy.
-9. Создайте Locator.
-
-#### <a name="v3"></a>версия 3
-
-1. Создайте политику ключа содержимого.
-2. Создайте ресурс.
-3. Передайте содержимое или используйте ресурс как JobOutput.
-4. Создайте StreamingLocator.
+* В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-sdk), CLI или один из поддерживаемых пакетов SDK.
+* В настоящее время зарезервированными единицами мультимедиа можно управлять только с помощью API Служб мультимедиа версии 2. Дополнительные сведения см. в статье [Обзор масштабирования обработки мультимедиа](../previous/media-services-scale-media-processing-overview.md).
+* С помощью API версии 2 нельзя управлять сущностями Cлужбы мультимедиа, созданными с помощью API версии 3.  
+* Сущностями, которые были созданы с помощью интерфейсов API версии 2, не рекомендуется управлять с помощью API версии 3. Ниже приведены примеры различий, которые делают несовместимыми сущности в двух версиях:   
+    * Задания и задачи, созданные в версии 2, не отображаются в версии 3, так как они не связаны с преобразованием. Рекомендуется переключиться на преобразования и задания версии 3. Относительно короткий период времени, необходимый для наблюдения за потоком версии 2 во время переключения.
+    * Каналами и программами, созданными с помощью версии 2 (которые сопоставляются с LiveEvents и LiveOutputs в версии 3), не удается управлять с помощью версии 3. Рекомендуется переключиться на LiveEvents и LiveOutputs в версии 3 в удобном канале остановки.
+    
+        В настоящее время постоянно работающие каналы нельзя переносить.  
+> [!NOTE]
+> Добавьте эту статью в закладки и проверяйте ее на наличие обновлений.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

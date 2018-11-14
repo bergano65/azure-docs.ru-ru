@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 robot: noindex
-ms.openlocfilehash: c74563ba98835403f12a4df048d7ff358014b826
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 07768ee1590fa087a1eb1486cb59ab0f57d02b64
+ms.sourcegitcommit: 6678e16c4b273acd3eaf45af310de77090137fa1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49406676"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50747547"
 ---
 # <a name="connecting-cosmos-db-with-azure-search-using-indexers"></a>Подключение Cosmos DB к службе поиска Azure с помощью индексаторов
 
@@ -48,6 +48,8 @@ ms.locfileid: "49406676"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Помимо учетной записи Cosmos DB вам потребуется [служба "Поиск Azure"](search-create-service-portal.md). 
+
+В учетной записи Cosmos DB вы можете указать, должна ли коллекция автоматически индексировать все документы. По умолчанию все документы автоматически индексируются, но вы можете отключить эту функцию. При выключенном индексировании документы могут быть доступны только через собственные ссылки или запросы, использующие идентификатор документа. Для службы "Поиск Azure" требуется включить автоматическое индексирование Cosmos DB в коллекции, которую эта служба будет индексировать. 
 
 <a name="Concepts"></a>
 ## <a name="azure-search-indexer-concepts"></a>Понятия индексатора в службе Поиск Azure

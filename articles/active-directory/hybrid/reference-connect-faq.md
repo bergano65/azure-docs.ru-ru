@@ -11,15 +11,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/05/2018
+ms.date: 11/02/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 3cb44779f376dca1844f42f346ed0fa3bfaa93cf
-ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
+ms.openlocfilehash: 50ec49c22c64780c8f887b12eef1dd0e75c379ed
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48269451"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51010610"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Часто задаваемые вопросы по Azure Active Directory Connect
 
@@ -75,6 +75,9 @@ ms.locfileid: "48269451"
 
 **Вопрос. Поддерживается ли среда исключительно на основе протокола IPv6?**  
 Нет, Azure AD Connect не поддерживает среды исключительно на основе протокола IPv6.
+
+**Вопрос. У меня есть среда с несколькими лесами, и в сети между двумя лесами используется NAT (преобразование сетевых адресов). Поддерживается ли использование Azure AD Connect между этими двумя лесами?**</br>
+ Нет, использование Azure AD Connect не поддерживается через NAT. 
 
 ## <a name="federation"></a>Федерация
 **Вопрос. Что делать, если мне на электронную почту пришло сообщение с требованием обновить срок действия сертификата Office 365?**  

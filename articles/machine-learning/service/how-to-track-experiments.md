@@ -9,19 +9,19 @@ ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 09/24/2018
-ms.openlocfilehash: 054cd54827dc11e57f249a270542ff81ff670912
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: da92f59c4e25ec012cd9ad389c9afac410ba28e1
+ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49649998"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51219313"
 ---
 # <a name="track-experiments-and-training-metrics-in-azure-machine-learning"></a>Отслеживание экспериментов и метрик обучения в службе "Машинное обучение Azure"
 
 В службе "Машинное обучение Azure" можно отслеживать эксперименты и метрики, чтобы улучшить процесс создания модели. В этой статье вы узнаете о различных способах добавления ведения журнала в сценарий обучения, а также о том, как отправлять эксперимент с помощью команды **start_logging** и класса **ScriptRunConfig**, проверить прогресс выполняемого задания и просмотреть результаты выполнения. 
 
 >[!NOTE]
-> Код в этой статье был протестирован с помощью пакета SDK Машинного обучения Azure версии 0.168. 
+> Код в этой статье был протестирован с пакетом SDK для службы "Машинное обучение Azure" версии 0.1.74. 
 
 ## <a name="list-of-training-metrics"></a>Список метрик обучения 
 
@@ -67,7 +67,6 @@ ms.locfileid: "49649998"
 
   # make up an arbitrary name
   experiment_name = 'train-in-notebook'
-  exp = Experiment(workspace_object = ws, name = experiment_name)
   ```
   
 ## <a name="option-1-use-startlogging"></a>Вариант 1. Использование start_logging
@@ -103,7 +102,8 @@ ms.locfileid: "49649998"
 2. Добавьте отслеживание эксперимента с помощью пакета SDK для службы "Машинное обучение Azure" и отправьте сохраненную модель в запись о выполнении для эксперимента. Следующий код добавляет теги, журналы и отправляет файл модели в выполнение эксперимента.
 
   ```python
-  run = Run.start_logging(experiment = exp)
+  experiment = Experiment(workspace = ws, name = experiment_name)
+  run = experiment.start_logging()
   run.tag("Description","My first run!")
   run.log('alpha', 0.03)
   reg = Ridge(alpha = 0.03)
@@ -209,8 +209,8 @@ ms.locfileid: "49649998"
   ```python
   from azureml.core import ScriptRunConfig
 
-  src = ScriptRunConfig(source_directory = script_folder, script = 'train.py', run_config = run_config_user_managed)
-  run = exp.submit(src)
+  src = ScriptRunConfig(source_directory = './', script = 'train.py', run_config = run_config_user_managed)
+  run = experiment.submit(src)
   ```
   
 ## <a name="view-run-details"></a>Просмотр сведений о выполнении
@@ -248,11 +248,22 @@ ms.locfileid: "49649998"
   ![Снимок экрана. Сведения о выполнении на портале Azure](./media/how-to-track-experiments/run-details-page-web.PNG)
 
 Вы также можете просмотреть любые выходные данные или журналы выполнения, а также скачать моментальный снимок отправленного эксперимента для предоставления общего доступа к папке эксперимента.
+### <a name="viewing-charts-in-run-details"></a>Просмотр диаграмм в сведениях о выполнении
+
+Существуют различные методы использования API ведения журналов для регистрации различных типов метрик во время выполнения и просмотра этих метрик в виде графиков на портале Azure. 
+
+|Значение в журнале|Пример кода| Представление на портале|
+|----|----|----|
+|Массив числовых значений| `run.log_list(name='Fibonacci', value=[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89])`|График для одной переменной|
+|Одно повторяющееся числовое значение с тем же именем метрики (например, в цикле for)| `for i in tqdm(range(-10, 10)):    run.log(name='Sigmoid', value=1 / (1 + np.exp(-i))) angle = i / 2.0`| График для одной переменной|
+|Повторяющиеся строки с двумя числовыми столбцами|`run.log_row(name='Cosine Wave', angle=angle, cos=np.cos(angle))   sines['angle'].append(angle)      sines['sine'].append(np.sin(angle))`|Графики для двух переменных|
+|Таблица с двумя числовыми столбцами|`run.log_table(name='Sine Wave', value=sines)`|Графики для двух переменных|
 
 ## <a name="example-notebooks"></a>Примеры записных книжек
 Основные понятия, описанные в этой статье, демонстрируют следующие записные книжки:
 * [01.getting-started/01.train-within-notebook/01.train-within-notebook.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/01.train-within-notebook)
 * [01.getting-started/02.train-on-local/02.train-on-local.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/02.train-on-local)
+* [01.getting-started/06.logging-api/06.logging-api.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/06.logging-api/06.logging-api.ipynb)
 
 Получите записные книжки: [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 

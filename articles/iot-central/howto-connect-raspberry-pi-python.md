@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: timlt
-ms.openlocfilehash: b5632db57e902eef76860f85de6e76f85861090a
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 90837092390cd2550805658471ff7aa884773371
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45728969"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51239599"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-python"></a>Подключение устройства Raspberry Pi к приложению Azure IoT Central (Python)
 
@@ -23,9 +23,9 @@ ms.locfileid: "45728969"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
+Чтобы выполнить действия, описанные в этой статье, вам потребуются следующие компоненты:
 
-* Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](howto-create-application.md).
+* Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
 * Устройство Raspberry Pi с операционной системой Raspbian. Вам понадобится подключить монитор, клавиатуру и мышь к устройству Raspberry Pi, чтобы получить доступ к среде графического пользовательского интерфейса. Устройство Raspberry Pi должно иметь возможность [подключения к Интернету](https://www.raspberrypi.org/learning/software-guide/wifi/).
 * Дополнительная плата [Sense Hat](https://www.raspberrypi.org/products/sense-hat/) для Raspberry Pi (необязательно). Эта плата собирает данные телеметрии с различных датчиков, а затем отправляет эти данные в приложение Azure IoT Central. Если у вас нет платы **Sense Hat**, вместо нее можно использовать эмулятор (доступный в образе Raspberry Pi).
 
@@ -33,10 +33,21 @@ ms.locfileid: "45728969"
 
 Приложение, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits), включает в себя шаблон приложения **Raspberry Pi** со следующими характеристиками: 
 
-- Телеметрия, содержащая данные об измерении **влажности**, **температуры**, **давления**, **манометра** (измеряется по оси X, Y, Z), **акселерометра** (измеряется по оси X, Y, Z) и **гироскопа** (измеряется по оси X, Y, Z) устройства.
-- Параметры отображения **напряжения**, **текущего значения**, **скорости вращения вентилятора** и переключателя **IR**.
-- Свойства, содержащие свойство **серийного номера** устройства и свойство **расположения** облака.
-
+- Данные телеметрии. К ним относятся следующие показатели, которые устройство будет собирать:
+    - влажность.
+    - температура;
+    - Давление
+    - магнитометр (X, Y, Z);
+    - акселерометр (X, Y, Z);
+    - гироскоп (X, Y, Z).
+- Параметры
+    - Напряжение
+    - Текущее значение
+    - Скорость вращения вентилятора
+    - ИК-переключатель.
+- properties
+    - Свойство серийного номера устройства
+    - Свойство расположения облака
 
 Подробные сведения о настройке шаблона устройства Raspberry PI см. в [этом разделе](howto-connect-raspberry-pi-python.md#raspberry-pi-device-template-details).
     
@@ -53,11 +64,11 @@ ms.locfileid: "45728969"
 * отправляет данные телеметрии и значения свойств в Azure IoT Central;
 * реагирует на изменения параметров, внесенные в Azure IoT Central.
 
-Чтобы настроить устройство, [следуйте пошаговым инструкциям на сайте GitHub.](http://aka.ms/iotcentral-docs-Raspi-releases)
+Чтобы настроить устройство, [следуйте пошаговым инструкциям на сайте GitHub.](https://aka.ms/iotcentral-docs-Raspi-releases)
 
 
 > [!NOTE]
-> Дополнительные сведения о примере Python Raspberry Pi см. в файле [Readme](http://aka.ms/iotcentral-docs-Raspi-releases) на сайте GitHub.
+> Дополнительные сведения о примере Python для Raspberry Pi см. в файле [Readme](https://aka.ms/iotcentral-docs-Raspi-releases) на сайте GitHub.
 
 
 1. После настройки устройство сразу же начнет передавать данные в Azure IoT Central.

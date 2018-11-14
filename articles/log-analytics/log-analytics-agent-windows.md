@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/12/2018
+ms.date: 11/06/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 2b9e7615fc0c2262c33ab5d7be39bdb99bc752bd
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: a16230b6f51f0ce93f4a9bf53591abbcd6b4bd3b
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50412964"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51283688"
 ---
 # <a name="connect-windows-computers-to-the-log-analytics-service-in-azure"></a>Подключение компьютеров Windows к службе Log Analytics в Azure
 
@@ -98,7 +98,7 @@ ms.locfileid: "50412964"
 
 ## <a name="install-the-agent-using-dsc-in-azure-automation"></a>Установка агента с помощью DSC в службе автоматизации Azure
 
-Вы можете использовать следующий пример сценария для установки агента с помощью DSC службы автоматизации Azure.   Если у вас нет учетной записи автоматизации, просмотрите статью [Начало работы со службой автоматизации Azure](../automation/automation-offering-get-started.md), чтобы ознакомиться с необходимыми требованиями и шагами для ее создания перед использованием Automation DSC.  Если вы не знакомы с Automation DSC, просмотрите статью [Приступая к работе с DSC службы автоматизации Azure](../automation/automation-dsc-getting-started.md).
+Вы можете использовать следующий пример сценария для установки агента с помощью DSC службы автоматизации Azure.   Если у вас нет учетной записи автоматизации, просмотрите статью [Начало работы со службой автоматизации Azure](/azure/automation/), чтобы ознакомиться с необходимыми требованиями и шагами для ее создания перед использованием Automation DSC.  Если вы не знакомы с Automation DSC, просмотрите статью [Приступая к работе с DSC службы автоматизации Azure](../automation/automation-dsc-getting-started.md).
 
 В указанном ниже примере выполняется установка 64-разрядного агента, идентифицируемого значением `URI`. Вы также можете использовать 32-разрядную версию, заменив значение универсального кода ресурса (URI). URI для обеих версий:
 
@@ -109,13 +109,13 @@ ms.locfileid: "50412964"
 >[!NOTE]
 >Эти примеры процедуры и сценария не поддерживают обновление агента, развернутого на компьютере Windows.
 
-32- и 64-разрядные версии пакета агента имеют разные коды продукта. Новые выпущенные версии также имеют уникальное значение.  Код продукта — это глобальный уникальный идентификатор, который представляет собой основной идентификатор приложения или продукта. Он представляется свойством **ProductCode** установщика Windows.  Значение `ProductId value` в сценарии **MMAgent.ps1** должно соответствовать коду продукта в пакете установщика 32- или 64-разрядного агента.
+32- и 64-разрядные версии пакета агента имеют разные коды продукта. Новые выпущенные версии также имеют уникальное значение.  Код продукта — это глобальный уникальный идентификатор, который представляет собой основной идентификатор приложения или продукта. Он представляется свойством **ProductCode** установщика Windows.  Значение `ProductId` в скрипте **MMAgent.ps1** должно соответствовать коду продукта в пакете установщика 32- или 64-разрядного агента.
 
 Чтобы извлечь код продукта из пакета установщика агента напрямую, вы можете воспользоваться Orca.exe (компонент пакета разработки программного обеспечения для Windows), который можно найти на странице [компонентов Windows SDK для разработчиков установщика Windows](https://msdn.microsoft.com/library/windows/desktop/aa370834%28v=vs.85%29.aspx). Кроме того, вы можете использовать PowerShell с [примером сценария](http://www.scconfigmgr.com/2014/08/22/how-to-get-msi-file-information-with-powershell/), написанного специалистом с рангом Microsoft Valuable Professional (MVP).  В обоих случаях сначала нужно извлечь файл**MOMagent.msi** из пакета установки MMASetup.  Эта процедура рассматривается выше в разделе [Установка агента с помощью командной строки](#install-the-agent-using-the-command-line).  
 
 1. Импортируйте модуль DSC xPSDesiredStateConfiguration со страницы [http://www.powershellgallery.com/packages/xPSDesiredStateConfiguration](http://www.powershellgallery.com/packages/xPSDesiredStateConfiguration) в службу автоматизации Azure.  
 2.  Создайте в службе автоматизации Azure ресурсы-контейнеры для переменных *OPSINSIGHTS_WS_ID* и *OPSINSIGHTS_WS_KEY*. В качестве значения параметра *OPSINSIGHTS_WS_ID* укажите идентификатор рабочей области Log Analytics, а для параметра *OPSINSIGHTS_WS_KEY* — первичный ключ рабочей области.
-3.  Скопируйте сценарий и сохраните его как файл MMAgent.ps1.
+3.  Скопируйте скрипт и сохраните его как файл MMAgent.ps1.
 
     ```PowerShell
     Configuration MMAgent
@@ -153,7 +153,8 @@ ms.locfileid: "50412964"
 
     ```
 
-4. [Переместите сценарий настройки MMAgent.ps1](../automation/automation-dsc-getting-started.md#importing-a-configuration-into-azure-automation) в учетную запись автоматизации. 
+4. Обновите значение `ProductId` в скрипте с кодом продукта, извлеченном из последней версии установленного пакета агента, используя рекомендованные выше методы. 
+5. [Переместите сценарий настройки MMAgent.ps1](../automation/automation-dsc-getting-started.md#importing-a-configuration-into-azure-automation) в учетную запись автоматизации. 
 5. [Назначьте компьютер Windows или узел](../automation/automation-dsc-getting-started.md#onboarding-an-azure-vm-for-management-with-azure-automation-state-configuration) конфигурации. В течение 15 минут узел проверит свою конфигурацию, а агент будет помещен в узел.
 
 ## <a name="verify-agent-connectivity-to-log-analytics"></a>Проверка подключения к Log Analytics

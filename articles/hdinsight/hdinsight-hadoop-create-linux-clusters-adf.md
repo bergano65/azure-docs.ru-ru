@@ -1,25 +1,25 @@
 ---
-title: 'Руководство. Создание кластеров Hadoop в Azure HDInsight по запросу с помощью Фабрики данных '
-description: Узнайте, как создавать кластеры Hadoop в HDInsight по запросу с помощью фабрики данных Azure.
+title: 'Руководство. Создание кластеров Apache Hadoop в Azure HDInsight по запросу с помощью Фабрики данных '
+description: Узнайте, как создавать кластеры Apache Hadoop в HDInsight по запросу с помощью Фабрики данных Azure.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/07/2018
-ms.author: jasonh
-ms.openlocfilehash: 9e21c49e7a472830c19f61388739c35aac17c3ff
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.author: hrasheed
+ms.openlocfilehash: 76651874951255d9b01efdc6e91892f6852d948d
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49955615"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51036382"
 ---
-# <a name="tutorial-create-on-demand-hadoop-clusters-in-hdinsight-using-azure-data-factory"></a>Руководство. Создание кластеров Hadoop в HDInsight по запросу с помощью фабрики данных Azure
+# <a name="tutorial-create-on-demand-apache-hadoop-clusters-in-hdinsight-using-azure-data-factory"></a>Руководство. Создание кластеров Apache Hadoop в HDInsight по запросу с помощью Фабрики данных Azure
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
-В этой статье вы узнаете, как создать кластер Hadoop, по запросу в Azure HDInsight с помощью фабрики данных Azure. Затем как использовать конвейеры данных в фабрике данных Azure для выполнения заданий Hive и удалить кластер. Изучив это руководство вы узнаете, как реализовать запуск задания больших данных, когда создание кластера, выполнение задания и удаление кластера выполняются по расписанию.
+Из этой статьи вы узнаете, как создать кластер Apache Hadoop по запросу в Azure HDInsight с помощью Фабрики данных Azure. Затем как использовать конвейеры данных в фабрике данных Azure для выполнения заданий Hive и удалить кластер. Изучив это руководство вы узнаете, как реализовать запуск задания больших данных, когда создание кластера, выполнение задания и удаление кластера выполняются по расписанию.
 
 В рамках этого руководства рассматриваются следующие задачи: 
 

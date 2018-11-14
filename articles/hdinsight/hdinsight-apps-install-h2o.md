@@ -9,16 +9,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: ashish
-ms.openlocfilehash: e5a9505c41c14016768a5da42f9ac1836240b98f
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 60b80843ce343c667413be55b59d02ac14b349f3
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43095024"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51037521"
 ---
 # <a name="install-published-application---h2o-sparkling-water"></a>Установка опубликованного приложения H2O Sparkling Water
 
-В этой статье описывается, как установить и запустить опубликованное приложение Hadoop [H20 Sparkling Water](http://www.h2o.ai/) в Azure HDInsight. Обзор платформы приложений HDInsight и список доступных опубликованных приложений независимых поставщиков программного обеспечения приведены в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md). Инструкции по установке собственного приложения см. в статье [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md).
+В этой статье описывается, как установить и запустить опубликованное приложение Apache Hadoop [H20 Sparkling Water](http://www.h2o.ai/) в Azure HDInsight. Обзор платформы приложений HDInsight и список доступных опубликованных приложений независимых поставщиков программного обеспечения приведены в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md). Инструкции по установке собственного приложения см. в статье [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md).
 
 ## <a name="about-h2o-sparkling-water"></a>Об H2O Sparkling Water
 

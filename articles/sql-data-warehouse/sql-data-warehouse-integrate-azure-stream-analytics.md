@@ -10,17 +10,17 @@ ms.component: consume
 ms.date: 04/17/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
-ms.openlocfilehash: 6e9a6e9c7407939ea9e76cad569e870d578b37f9
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: 3aca356b9caadc3a4ffee98ca7dc330eb1c520d8
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43307367"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50962951"
 ---
 # <a name="use-azure-stream-analytics-with-sql-data-warehouse"></a>Работа со службой Azure Stream Analytics и хранилищем данных SQL
 Azure Stream Analytics является полностью управляемой службой, которая обеспечивает низкую задержку, высокий уровень доступности и масштабируемую обработку сложных событий посредством потоковой передачи данных в облако. Основные сведения см. в статье [Что такое Stream Analytics?][Introduction to Azure Stream Analytics] Вы также можете узнать о создании комплексного решения с помощью Stream Analytics в руководстве [Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени][Get started using Azure Stream Analytics].
 
-В этой статье вы научитесь выводить данные для заданий Stream Analytics с помощью базы данных хранилища данных SQL Azure.
+В этой статье вы научитесь выводить данные для заданий Stream Analytics с помощью базы данных Хранилища данных SQL Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 Сначала необходимо выполнить приведенные ниже шаги, описанные в руководстве [Приступая к работе с Azure Stream Analytics][Get started using Azure Stream Analytics].  

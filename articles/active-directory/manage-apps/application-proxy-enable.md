@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/26/2018
 ms.author: barbkess
-ms.reviewer: harshja
+ms.reviewer: japere
 ms.custom: it-pro
-ms.openlocfilehash: 5227f756e807a30573733bd408144d869caac9ec
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: 59ca9ca7711904fe7882aac4878bd62c597645d8
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39366481"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51034972"
 ---
 # <a name="get-started-with-application-proxy-and-install-the-connector"></a>Начало работы с прокси приложения и установка соединителя
 В этой статье описывается процедура включения прокси приложения Microsoft Azure AD для облачного каталога в Azure AD.
@@ -33,6 +33,7 @@ ms.locfileid: "39366481"
 * [Подписка на Microsoft Azure AD Basic или Premium](../fundamentals/active-directory-whatis.md) , а также каталог Azure AD, для которого вы являетесь глобальным администратором.
 * Сервер под управлением Windows Server 2012 R2 или 2016, на котором можно установить соединитель прокси приложения. Серверу нужна возможность подключаться к службам прокси приложения в облаке, а также к локальным приложениям, которые вы публикуете.
   * Чтобы использовать единый вход в опубликованные приложения через ограниченное делегирование Kerberos, компьютер необходимо присоединить к тому же домену AD, который используют публикуемые приложения. Дополнительные сведения см. в статье [Реализация единого входа в приложения с помощью прокси приложения](application-proxy-configure-single-sign-on-with-kcd.md).
+* Протокол TLS 1.2, работающий в базовой операционной системе. Чтобы перейти на использование TLS 1.2, нужно выполнить инструкции из раздела [Включение протокола TLS 1.2 для Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-prerequisites#enable-tls-12-for-azure-ad-connect). Хотя содержимое предназначено для Azure AD Connect, эта процедура одинакова для всех клиентов .NET.
 
 Если ваша организация использует прокси-серверы для подключения к Интернету, вам будет полезна статья [Работа с имеющимися локальными прокси-серверами](application-proxy-configure-connectors-with-proxy-servers.md), которая поможет разобраться с настройкой прокси-серверов до начала работы с прокси приложения.
 

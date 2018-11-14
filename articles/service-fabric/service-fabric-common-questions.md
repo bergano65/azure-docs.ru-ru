@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/18/2017
 ms.author: chackdan
-ms.openlocfilehash: 70372f30ffaea1fafda3f76d4754489ae89a0a7c
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: cc86a18b0db67bf968006c42f5791e1ad7a093f0
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49390182"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51016707"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
 
@@ -48,13 +48,9 @@ ms.locfileid: "49390182"
 
 ### <a name="do-service-fabric-nodes-automatically-receive-os-updates"></a>Получают ли узлы Service Fabric обновления операционной системы автоматически?
 
-Пока нет, но это популярный запрос, и мы планируем реализовать эту возможность в Azure.
+Можете уже сегодня использовать общедоступную функцию [автоматического обновления образа ОС масштабируемого набора виртуальных машин](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade).
 
-Тем временем мы [предоставили приложение](service-fabric-patch-orchestration-application.md), которое устанавливает исправления и обновления для операционных систем на узлах Service Fabric.
-
-Проблема с обновлениями ОС заключается в том, что для них обычно требуется перезагрузка компьютера, что приводит к временной потере доступности. Сама по себе это не проблема, так как Service Fabric выполнит автоматическое перенаправление трафика для этих служб на другие узлы. Тем не менее, если обновления ОС не согласованы между собой по всему кластеру, есть вероятность того, что множество узлов будут выключены одновременно. Такие одновременные перезагрузки могут привести к полной потере доступности службы или как минимум определенного раздела (для службы с отслеживанием состояния).
-
-В будущем мы планируем реализовать поддержку полностью автоматизированной политики обновления ОС, скоординированной между доменами обновления, чтобы обеспечить доступность несмотря на перезагрузки и другие непредвиденные сбои.
+Для кластеров, запущенных НЕ в Azure, мы [предоставили приложение](service-fabric-patch-orchestration-application.md), которое устанавливает исправления для операционных систем на узлах Service Fabric.
 
 ### <a name="can-i-use-large-virtual-machine-scale-sets-in-my-sf-cluster"></a>Можно ли использовать большие масштабируемые наборы виртуальных машин в кластере Service Fabric? 
 

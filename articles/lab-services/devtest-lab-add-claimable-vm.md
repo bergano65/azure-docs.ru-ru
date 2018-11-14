@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2018
 ms.author: spelluru
-ms.openlocfilehash: 669dfab75f34a0d1f997dc34f600402d3c10669b
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 3bfb674fa66f0701a099d237f4e760453c7b6a6e
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33781753"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51232133"
 ---
 # <a name="create-and-manage-claimable-vms-in-azure-devtest-labs"></a>Создание запрашиваемой виртуальной машины и управление ею в лаборатории Azure DevTest Labs
 Добавление запрашиваемой виртуальной машины в лабораторию аналогично [добавлению стандартной виртуальной машины](devtest-lab-add-vm.md). Оно выполняется *на базе* [пользовательского образа](devtest-lab-create-template.md), [формулы](devtest-lab-manage-formulas.md) или [образа Marketplace](devtest-lab-configure-marketplace-images.md). В этой статье описывается добавление запрашиваемой виртуальной машины в лабораторию в DevTest Labs с помощью портала Azure, а также действия пользователя для резервирования или освобождения виртуальной машины.
 
 ## <a name="steps-to-add-a-claimable-vm-to-a-lab-in-azure-devtest-labs"></a>Процедура добавления запрашиваемой виртуальной машины в лабораторию в Azure DevTest Labs
-1. Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 1. Из списка лабораторий выберите ту, в которой необходимо создать запрашиваемую виртуальную машину .  
 1. В области **Обзор** выберите **+ Добавить**.  
@@ -52,7 +52,7 @@ ms.locfileid: "33781753"
    Состояние создания виртуальной машины принимает значение **Создается**, а после запуска виртуальной машины — **Выполняется**.
 
 > [!NOTE]
-> Если вы развертываете лабораторные виртуальные машины с помощью [шаблонов Azure Resource Manager](devtest-lab-create-environment-from-arm.md), вы можете создать запрашиваемые виртуальные машины, задав в разделе свойств для свойства **allowClaim** значение true.
+> Если вы развертываете лабораторные виртуальные машины с помощью  [шаблонов Azure Resource Manager](devtest-lab-create-environment-from-arm.md), вы можете создать запрашиваемые виртуальные машины, задав в разделе свойств для свойства **allowClaim** значение true.
 >
 >
 

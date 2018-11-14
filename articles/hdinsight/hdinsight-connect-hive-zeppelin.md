@@ -1,32 +1,32 @@
 ---
-title: Выполнение запросов Hive в Azure HDInsight с помощью Zeppelin
-description: Сведения о выполнении запросов Hive с помощью Zeppelin.
+title: Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin
+description: Сведения о выполнении запросов Apache Hive с помощью Apache Zeppelin.
 keywords: hdinsight hadoop, hive, interactive query, LLAP
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,
 ms.topic: conceptual
-ms.date: 05/14/2018
-ms.author: jasonh
-ms.openlocfilehash: 3064c9cd141458307891f666bd5af9aa738cc021
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.date: 11/05/2018
+ms.author: hrasheed
+ms.openlocfilehash: 75ec0e17e9866d2cd3420ff6ecf648bf22a8ae8e
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43093174"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51277959"
 ---
-# <a name="use-zeppelin-to-run-hive-queries-in-azure-hdinsight"></a>Выполнение запросов Hive в Azure HDInsight с помощью Zeppelin 
+# <a name="use-apache-zeppelin-to-run-apache-hive-queries-in-azure-hdinsight"></a>Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin 
 
-Кластеры Interactive Query HDInsight включают записные книжки Zeppelin, которые можно использовать для выполнения интерактивных запросов Hive. В этой статье вы узнаете, как использовать Zeppelin для выполнения запросов Hive в Azure HDInsight. 
+Кластеры Interactive Query HDInsight включают записные книжки Apache Zeppelin, которые можно использовать для выполнения интерактивных запросов Hive. Из этой статьи вы узнаете, как использовать Apache Zeppelin для выполнения запросов Apache Hive в Azure HDInsight. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 Чтобы выполнить действия, указанные в этой статье, вам потребуется:
 
 * **Кластер Interactive Query HDInsight**. Чтобы создать кластер HDInsight, обратитесь к разделу [Создание кластера](hadoop/apache-hadoop-linux-tutorial-get-started.md#create-cluster).  Выберите тип кластера Interactive Query. 
 
-## <a name="create-a-zeppelin-note"></a>Создание заметки Zeppelin
+## <a name="create-a-apache-zeppelin-note"></a>Создание заметки Apache Zeppelin
 
 1. Перейдите на следующий URL-адрес:
 

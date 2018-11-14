@@ -1,24 +1,24 @@
 ---
-title: Использование представления Ambari Tez в HDInsight в Azure
-description: Узнайте, как использовать представление Ambari Tez для отладки заданий Tez в HDInsight.
+title: Использование представления Apache Ambari Tez в HDInsight в Azure
+description: Узнайте, как использовать представление Apache Ambari Tez для отладки заданий Tez в HDInsight.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
-ms.author: jasonh
-ms.openlocfilehash: 576460f4b68d670e534e0ddeed920f7ac99e1458
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.author: hrasheed
+ms.openlocfilehash: c85ad59acc8e307de05f41365855f3a9669ac2b5
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43108892"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51034682"
 ---
-# <a name="use-ambari-views-to-debug-tez-jobs-on-hdinsight"></a>Отладка заданий Tez в HDInsight с помощью представлений Ambari 
+# <a name="use-apache-ambari-views-to-debug-apache-tez-jobs-on-hdinsight"></a>Отладка заданий Apache Tez в HDInsight с помощью представлений Apache Ambari
 
-Пользовательский веб-интерфейс Ambari для HDInsight содержит представление Tez, которое можно использовать для получения общих сведений о заданиях и отладки заданий, применяющих Tez. Представление Tez позволяет визуализировать задание в виде схемы связанных элементов, выполнять детализацию каждого элемента и получать статистические данные и данные журнала.
+Пользовательский веб-интерфейс Apache Ambari для HDInsight содержит представление Apache Tez, которое можно использовать для получения общих сведений о заданиях и отладки заданий, применяющих Tez. Представление Tez позволяет визуализировать задание в виде схемы связанных элементов, выполнять детализацию каждого элемента и получать статистические данные и данные журнала.
 
 > [!IMPORTANT]
 > Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Что представляют собой различные компоненты и версии Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md#hdinsight-windows-retirement)
@@ -28,9 +28,9 @@ ms.locfileid: "43108892"
 * Кластер HDInsight под управлением Linux. Инструкции по созданию кластера см. в статье [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 * Современный веб-браузер, который поддерживает HTML5.
 
-## <a name="understanding-tez"></a>Общие сведения о Tez
+## <a name="understanding-apache-tez"></a>Основные сведения об Apache Tez
 
-Tez — это расширяемая платформа для обработки данных в Hadoop, которая характеризуется более высокими скоростями по сравнению с традиционной обработкой MapReduce. Она является подсистемой по умолчанию для Hive для кластеров HDInsight под управлением Linux.
+Tez — это расширяемая платформа для обработки данных в Apache Hadoop, которая характеризуется более высокими скоростями по сравнению с традиционной обработкой MapReduce. Она является подсистемой по умолчанию для Hive для кластеров HDInsight под управлением Linux.
 
 Tez создает направленный ациклический граф (DAG), описывающий порядок действий, необходимых для заданий. Отдельные действия называются вершинами и выполняют часть всего задания. Фактическое выполнение работы, описываемое вершиной, называется задачей и может быть распределено среди нескольких узлов кластера.
 

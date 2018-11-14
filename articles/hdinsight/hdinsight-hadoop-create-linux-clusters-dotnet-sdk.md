@@ -1,6 +1,6 @@
 ---
-title: Создание кластеров Hadoop с помощью .NET в Azure HDInsight
-description: Узнайте, как создавать кластеры Hadoop, HBase, Storm или Spark на платформе Linux в HDInsight с помощью пакета SDK для HDInsight .NET.
+title: Создание кластеров Apache Hadoop с помощью .NET в Azure HDInsight
+description: Узнайте, как создавать кластеры Apache Hadoop, Apache HBase, Apache Storm или Apache Spark на платформе Linux в HDInsight с помощью пакета SDK для HDInsight .NET.
 services: hdinsight
 author: mamccrea
 ms.reviewer: jasonh
@@ -9,19 +9,19 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: mamccrea
-ms.openlocfilehash: ea5c0d3b9f444601607ebcda8d139797eb8dd2ec
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 943d5aeccf949c1dd494dc8ec8fda0d782527749
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43093917"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51035687"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-using-the-net-sdk"></a>Создание кластеров под управлением Linux в HDInsight с помощью пакета SDK для .NET
 
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
 
-Узнайте, как создать кластер Hadoop в кластере Azure HDInsight с помощью пакета SDK для .NET.
+Узнайте, как создать кластер Apache Hadoop в кластере Azure HDInsight с помощью пакета SDK для .NET.
 
 > [!IMPORTANT]
 > Действия, описанные в этом документе, позволяют создать кластер с одним узлом рабочей роли. Если вы планируете использовать более 32 рабочих узлов (при создании кластера или в ходе масштабирования после создания кластера), то для головного узла необходимо выбрать как минимум 8 ядер и 14 ГБ ОЗУ.

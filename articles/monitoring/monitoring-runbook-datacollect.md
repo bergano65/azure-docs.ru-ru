@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/27/2017
 ms.author: bwren
-ms.openlocfilehash: f1a106a4f99c09134b8784e98ca547db51ce0eae
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 7ef7f6548cd3dd838889fd51ff0521428bbbc2aa
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49409515"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51282685"
 ---
 # <a name="collect-data-in-log-analytics-with-an-azure-automation-runbook"></a>Сбор данных в Log Analytics с использованием модуля runbook в службе автоматизации Azure
 В Log Analytics можно собрать значительный объем данных из различных источников, включая [источники данных](../log-analytics/log-analytics-data-sources.md) в агентах и [данные, собранные в Azure](../log-analytics/log-analytics-azure-storage.md).  Но иногда требуется собирать данные, недоступные в этих стандартных источниках.  В таких случаях вы можете использовать [API сборщика данных HTTP](../log-analytics/log-analytics-data-collector-api.md), чтобы записать данные в Log Analytics из любого клиента REST API.  Чаще всего такие данные собираются с помощью модулей runbook в службе автоматизации Azure.   
@@ -30,8 +30,8 @@ ms.locfileid: "49409515"
 ## <a name="prerequisites"></a>Предварительные требования
 Для выполнения этого сценария нужно настроить в подписке Azure указанные ниже ресурсы.  Их можно использовать с бесплатной учетной записью.
 
-- [Рабочая область Log Analytics](../log-analytics/log-analytics-get-started.md).
-- [Учетная запись службы автоматизации Azure](../automation/automation-offering-get-started.md).
+- [Рабочая область Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md).
+- [Учетная запись службы автоматизации Azure](..//automation/automation-quickstart-create-account.md).
 
 ## <a name="overview-of-scenario"></a>Обзор сценария
 В этом руководстве вы создадите модуль runbook, который собирает сведения о заданиях службы автоматизации.  Модули runbook в службе автоматизации Azure реализуются с помощью PowerShell, поэтому начнем с написания и тестирования скрипта в редакторе службы автоматизации Azure.  Убедившись, что вы собрали необходимые сведения, запишите эти данные в Log Analytics и проверьте тип пользовательских данных.  В завершение создайте расписание для запуска модуля runbook через регулярные интервалы.
@@ -145,7 +145,7 @@ ms.locfileid: "49409515"
     ![Выходные данные POST](media/monitoring-runbook-datacollect/post-output.png)
 
 ## <a name="5-verify-records-in-log-analytics"></a>5. Проверка записей в Log Analytics
-Когда тестирование runbook будет завершено и вы убедитесь, что выходные данные получены успешно, можно проверить, созданы ли записи, с помощью [поиска по журналам в Log Analytics](../log-analytics/log-analytics-log-searches.md).
+Когда тестирование runbook будет завершено и вы убедитесь, что выходные данные получены успешно, можно проверить, созданы ли записи, с помощью [поиска по журналам в Log Analytics](../log-analytics/log-analytics-queries.md).
 
 ![Выходные данные журналов](media/monitoring-runbook-datacollect/log-output.png)
 
@@ -198,7 +198,7 @@ ms.locfileid: "49409515"
 8. Последовательно выберите **ОК**. 
 
 ## <a name="9-verify-runbook-starts-on-schedule"></a>9. Проверка запуска модуля runbook по расписанию
-При каждом запуске модуля runbook [создается задание](../automation/automation-runbook-execution.md), и все выходные данные записываются в журнал.  Фактически это те же задания, которые собирает модуль runbook.  Вы можете убедиться, что модуль runbook запускается правильно, проверив задания для него после момента запуска по расписанию.
+При каждом запуске модуля Runbook [создается задание](../automation/automation-runbook-execution.md) и все выходные данные записываются в журнал.  Фактически это те же задания, которые собирает модуль runbook.  Вы можете убедиться, что модуль runbook запускается правильно, проверив задания для него после момента запуска по расписанию.
 
 ![Задания](media/monitoring-runbook-datacollect/jobs.png)
 

@@ -2,19 +2,19 @@
 title: Использование Data Lake Store с Hadoop в Azure HDInsight
 description: Узнайте, как запрашивать данные из Azure Data Lake Store и сохранять результаты анализа.
 services: hdinsight,storage
-author: jasonwhowell
-ms.author: jasonh
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 07/23/2018
-ms.openlocfilehash: d205a46c672523e029816b573742d991de79b2ae
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.date: 11/06/2018
+ms.openlocfilehash: 0859e480df0111e26d5b64bf835f94b3852b3414
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49956737"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51277364"
 ---
 # <a name="use-data-lake-store-with-azure-hdinsight-clusters"></a>Использование Data Lake Store с кластерами Azure HDInsight
 
@@ -40,16 +40,17 @@ ms.locfileid: "49956737"
 
 | Тип кластера HDInsight | Data Lake Store как хранилище по умолчанию | Data Lake Store как дополнительное хранилище| Примечания |
 |------------------------|------------------------------------|---------------------------------------|------|
-| HDInsight версии 3.6 | Yes | Yes | |
+| HDInsight версии 3.6 | Yes | Yes | За исключением HBase|
 | HDInsight версии 3.5 | Yes | Yes | За исключением HBase|
 | HDInsight версия 3.4 | Нет  | Yes | |
 | HDInsight версии 3.3 | Нет  | Нет  | |
 | HDInsight версии 3.2 | Нет  | Yes | |
 | Storm | | |Data Lake Store можно использовать для записи данных из топологии Storm. Data Lake Store также может использоваться для хранения эталонных данных, которые затем можно будет считать с помощью топологии Storm.|
 
+[!WARNING]
+> HDInsight HBase не поддерживается в Azure Data Lake Storage 1-го поколения
+
 Использование Data Lake Store в качестве дополнительной учетной записи хранения не влияет на производительность либо возможность выполнять чтение или запись в хранилище Azure из кластера.
-
-
 ## <a name="use-data-lake-store-as-default-storage"></a>Использование Data Lake Store в качестве хранилища по умолчанию
 
 При развертывании HDInsight с Data Lake Store в качестве хранилища по умолчанию относящиеся к кластеру файлы сохраняются в хранилище Data Lake Store в следующем расположении:

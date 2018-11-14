@@ -9,12 +9,12 @@ ms.author: omidm
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 06/26/2018
-ms.openlocfilehash: 052afbe185f9c66af3759775b38b6bf0f2c2e6b2
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: a2b209dc0204c390b16039ed1cf58b47f29629f1
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43783327"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51252111"
 ---
 # <a name="use-oozie-with-hadoop-to-define-and-run-a-workflow-on-linux-based-azure-hdinsight"></a>Использование Oozie с Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux
 
@@ -30,12 +30,12 @@ ms.locfileid: "43783327"
 Вы также можете использовать Oozie для планирования системных заданий, например Java-программ и сценариев оболочки.
 
 > [!NOTE]
-> Еще один способ определения рабочих процессов с помощью HDInsight — использование фабрики данных Azure. Дополнительные сведения о фабрике данных см. в статье [Преобразование данных в фабрике данных Azure][azure-data-factory-pig-hive].
+> Еще один способ определения рабочих процессов с помощью HDInsight — использование фабрики данных Azure. Дополнительные сведения о фабрике данных см. в статье [Преобразование данных в фабрике данных Azure][azure-data-factory-pig-hive]. Сведения об использовании Oozie в кластерах с Корпоративным пакетом безопасности см. в статье [Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности](domain-joined/hdinsight-use-oozie-domain-joined-clusters.md).
 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Кластер HDInsight**: ознакомьтесь с [началом работы с HDInsight в Linux](hadoop/apache-hadoop-linux-tutorial-get-started.md).
+* **Обычный кластер HDInsight**: см. сведения о [начале работы с HDInsight в Linux](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
 > [!IMPORTANT]
 > Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).

@@ -1,24 +1,24 @@
 ---
-title: Использование пустых граничных узлов в кластерах Hadoop в HDInsight в Azure
+title: Использование пустых граничных узлов в кластерах Apache Hadoop в HDInsight в Azure
 description: Сведения о том, как добавить пустой граничный узел в кластер HDInsight, который может использоваться в качестве клиента, а затем тестировать и разместить приложения HDInsight.
 services: hdinsight
 ms.reviewer: jasonh
-author: jasonwhowell
+author: hrasheed-msft
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 04/23/2018
-ms.author: jasonh
-ms.openlocfilehash: 1111f3c21e3c3718a9a010284a42ea469e04473d
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.date: 11/06/2018
+ms.author: hrasheed
+ms.openlocfilehash: 276f11bf889927ee74fa4e9078e147db6df78b9e
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43090394"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51281377"
 ---
-# <a name="use-empty-edge-nodes-on-hadoop-clusters-in-hdinsight"></a>Использование пустых граничных узлов в кластерах Hadoop в HDInsight
+# <a name="use-empty-edge-nodes-on-apache-hadoop-clusters-in-hdinsight"></a>Использование пустых граничных узлов в кластерах Apache Hadoop в HDInsight
 
-Сведения о том, как добавить пустой граничный узел в кластер HDInsight. Пустой граничный узел — это виртуальная машина Linux, где установлены и настроены те же клиентские средства, что и на головных узлах, но без служб Hadoop. Граничный узел можно использовать для доступа к кластеру, а также тестирования и размещения клиентских приложений. 
+Сведения о том, как добавить пустой граничный узел в кластер HDInsight. Пустой граничный узел — это виртуальная машина Linux, где установлены и настроены те же клиентские средства, что и на головных узлах, но без служб Apache Hadoop. Граничный узел можно использовать для доступа к кластеру, а также тестирования и размещения клиентских приложений. 
 
 Пустой граничный узел можно добавить в имеющийся кластер HDInsight или в новый кластер при его создании. Добавление пустого граничного узла осуществляется с помощью шаблона Azure Resource Manager.  В следующем примере показано, как это сделать:
 
@@ -66,7 +66,7 @@ ms.locfileid: "43090394"
 > При использовании технологии Apache можно получить помощь на соответствующих сайтах для проектов Apache, например [Hadoop](http://hadoop.apache.org/) на сайте [http://apache.org](http://apache.org).
 
 > [!NOTE]
-> Граничные узлы, как и кластеры, также поддерживают установку исправлений.  Дополнительные сведения см. в статье [Обновление путем частичной замены ОС для кластеров HDInsight](./hdinsight-os-patching.md).
+> Граничные узлы, как и узлы кластера, также поддерживают установку исправлений.  Дополнительные сведения см. в статье [Обновление путем частичной замены ОС для кластеров HDInsight](./hdinsight-os-patching.md).
 
 ## <a name="add-an-edge-node-to-an-existing-cluster"></a>Добавление граничного узла в имеющийся кластер
 В этом разделе описано, как использовать шаблон Resource Manager, чтобы добавить граничный узел в имеющийся кластер HDInsight.  Шаблон Resource Manager можно найти в [GitHub](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-add-edge-node/). Шаблон диспетчера ресурсов вызывает действие скрипта, расположенное по адресу https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-hdinsight-linux-add-edge-node/scripts/EmptyNodeSetup.sh. Этот скрипт не выполняет никаких действий.  Он необходим для демонстрации вызова действия скрипта с помощью шаблона Resource Manager.

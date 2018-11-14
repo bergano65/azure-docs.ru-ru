@@ -2,19 +2,19 @@
 title: Настройка кластеров HDInsight с помощью действий скриптов в Azure
 description: Добавление настраиваемых компонентов в кластеры HDInsight на основе Linux с помощью действий сценариев. Действия сценариев — это сценарии Bash, которые можно использовать для настройки конфигурации кластера или добавления дополнительных служб и служебных программ, таких как Hue, Solr или R.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 05/01/2018
-ms.author: jasonh
-ms.openlocfilehash: e9662a0a0def91fa2cace1eb47dceffed5ff1ae6
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.date: 11/06/2018
+ms.author: hrasheed
+ms.openlocfilehash: 24fecd73876228b3665cde21ae312963ec979df6
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46978035"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51279742"
 ---
 # <a name="customize-linux-based-hdinsight-clusters-using-script-actions"></a>Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев
 
@@ -67,7 +67,7 @@ ms.locfileid: "46978035"
         Примеры универсальных кодов ресурсов (URI) см. в разделе [Пример действий сценария](#example-script-action-scripts).
 
         > [!WARNING]
-        > HDInsight поддерживает только учетные записи хранения Azure __общего назначения__. Учетные записи __хранилища BLOB-объектов__ сейчас не поддерживаются.
+        > HDInsight поддерживает BLOB-объекты только в учетных записях службы хранилища Azure с уровнем производительности "Стандартный". 
 
 * Действия скрипта могут быть ограничены **запуском только на узлах определенного типа**, например головных или рабочих.
 

@@ -69,42 +69,48 @@ items:
     href: Concepts/data-sources-supported.md
 - name: Практические руководства
   items:
-  - name: Настройка службы QnA Maker
-    href: How-To/set-up-qnamaker-service-azure.md
-  - name: Создание и публикация базы знаний
-    href: Quickstarts/create-publish-knowledge-base.md
-  - name: Создание базы знаний
-    href: How-To/create-knowledge-base.md
-  - name: Добавление беседы в базу знаний
-    href: How-to/chit-chat-knowledge-base.md
-  - name: Использование метаданных с помощью API GenerateAnswer
-    href: How-To/metadata-generateanswer-usage.md
-  - name: Перенос базы знаний с предварительной версии
-    href: Tutorials/migrate-knowledge-base.md
-  - name: Редактирование базы знаний
-    href: How-To/edit-knowledge-base.md
-  - name: Совместная работа над базой знаний
-    href: How-To/collaborate-knowledge-base.md
-  - name: Тестирование базы знаний
-    href: How-To/test-knowledge-base.md
-  - name: Публикация базы знаний
-    href: How-To/publish-knowledge-base.md
-  - name: Получение аналитических данных о базе знаний
-    href: How-To/get-analytics-knowledge-base.md
-  - name: Управление ключами
-    href: How-To/key-management.md
-  - name: Создание базы знаний на разных языках
-    href: How-To/language-knowledge-base.md
-  - name: Интеграция QnA Maker и LUIS
-    href: Tutorials/integrate-qnamaker-luis.md
-  - name: Создание плана по обеспечению непрерывности бизнеса для QnA Maker
-    href: How-To/business-continuity-plan.md
-  - name: Выбор ресурсов для развертывания QnA Maker
-    href: Tutorials/choosing-capacity-qnamaker-deployment.md
-  - name: Обновление службы QnA Maker
-    href: How-To/upgrade-qnamaker-service.md
-  - name: Устранение неполадок и обновление среды выполнения QnA Maker
-    href: How-To/troubleshooting-runtime.md
+  - name: Управление базой знаний
+    items:
+    - name: Создание и публикация базы знаний
+      href: Quickstarts/create-publish-knowledge-base.md
+    - name: Создание базы знаний
+      href: How-To/create-knowledge-base.md
+    - name: Добавление беседы в базу знаний
+      href: How-to/chit-chat-knowledge-base.md
+    - name: Использование метаданных с помощью API GenerateAnswer
+      href: How-To/metadata-generateanswer-usage.md
+    - name: Перенос базы знаний с предварительной версии
+      href: Tutorials/migrate-knowledge-base.md
+    - name: Редактирование базы знаний
+      href: How-To/edit-knowledge-base.md
+    - name: Совместная работа над базой знаний
+      href: How-To/collaborate-knowledge-base.md
+    - name: Создание базы знаний на разных языках
+      href: How-To/language-knowledge-base.md
+    - name: Публикация базы знаний
+      href: How-To/publish-knowledge-base.md
+    - name: Тестирование базы знаний
+      href: How-To/test-knowledge-base.md
+  - name: Интеграция с другими службами
+    items:
+    - name: Интеграция QnA Maker и LUIS
+      href: Tutorials/integrate-qnamaker-luis.md
+  - name: Управление службой
+    items:
+    - name: Настройка службы QnA Maker
+      href: How-To/set-up-qnamaker-service-azure.md
+    - name: Получение аналитических данных о базе знаний
+      href: How-To/get-analytics-knowledge-base.md
+    - name: Управление ключами
+      href: How-To/key-management.md
+    - name: Выбор ресурсов для развертывания QnA Maker
+      href: Tutorials/choosing-capacity-qnamaker-deployment.md
+    - name: Обновление службы QnA Maker
+      href: How-To/upgrade-qnamaker-service.md
+    - name: Создание плана по обеспечению непрерывности бизнеса для QnA Maker
+      href: How-To/business-continuity-plan.md
+    - name: Устранение неполадок и обновление среды выполнения QnA Maker
+      href: How-To/troubleshooting-runtime.md
   - name: Использование REST API
     items:
     - name: C#
@@ -147,9 +153,9 @@ items:
     href: https://docs.microsoft.com/search/index?search=QnAMaker
   - name: Блог
     href: https://blog.botframework.com/category/QnAMaker/
-ms.openlocfilehash: c376fc03f6dd884206373588c9277dfb224186cd
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 7bec0228aa8900f004aa61c2ae5316655628e101
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50740065"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51623535"

@@ -67,21 +67,9 @@ items:
     - name: Ограничения клиента
       href: tenant-restrictions.md
   - name: Единый вход
-    items:
-    - name: Обзор
-      href: what-is-single-sign-on.md
-    - name: Методы единого входа
-      href: application-proxy-single-sign-on.md
-    - name: Выбор метода
-      href: single-sign-on-modes.md
-    - name: Обнаружение домашней области
-      href: configure-authentication-for-federated-users-portal.md
-    - name: Ограниченное делегирование Kerberos
-      href: application-proxy-configure-single-sign-on-with-kcd.md
-    - name: Хранение паролей
-      href: application-proxy-configure-single-sign-on-password-vaulting.md
-    - name: Заголовки
-      href: application-proxy-configure-single-sign-on-with-ping-access.md
+    href: what-is-single-sign-on.md
+  - name: Порталы пользователей
+    href: end-user-experiences.md
 - name: Практические руководства
   items:
   - name: Интеграция облачных приложений
@@ -200,6 +188,8 @@ items:
       href: disable-user-sign-in-portal.md
     - name: Настройка самостоятельного назначения приложения
       href: manage-self-service-access.md
+    - name: Обнаружение домашней области
+      href: configure-authentication-for-federated-users-portal.md
   - name: Единый вход
     items:
     - name: Настройка приложений не из коллекции
@@ -220,6 +210,14 @@ items:
       href: configure-password-single-sign-on-non-gallery-applications.md
     - name: 'Настройка входа по паролю для приложений не из коллекции: распространенные проблемы'
       href: configure-password-single-sign-on-non-gallery-applications-problems.md
+    - name: Прокси приложения
+      items:
+      - name: Ограниченное делегирование Kerberos
+        href: application-proxy-configure-single-sign-on-with-kcd.md
+      - name: Хранение паролей
+        href: application-proxy-configure-single-sign-on-password-vaulting.md
+      - name: Заголовки
+        href: application-proxy-configure-single-sign-on-with-ping-access.md
   - name: Панель доступа
     items:
     - name: Управление расширением браузера
@@ -286,9 +284,9 @@ items:
     href: http://stackoverflow.com/questions/tagged/azure-active-directory
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
-ms.openlocfilehash: 7114e27840d9a21701fe30537dbd6d533abaef7e
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 80153dcbb00c1d0ac9b0c1c3f87004ffd6f59b1f
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50413984"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51622794"

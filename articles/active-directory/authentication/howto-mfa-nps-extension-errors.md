@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: michmcla
-ms.openlocfilehash: 4097fab5610bf4bee6c14c65d3b45e0de818a0cc
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 58bb3ae39ecd5631508ca1d09bf1d9d8f4d75063
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39160915"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51036671"
 ---
 # <a name="resolve-error-messages-from-the-nps-extension-for-azure-multi-factor-authentication"></a>Устранение ошибок, связанных с расширением NPS для Многофакторной идентификации Azure.
 
@@ -30,6 +30,7 @@ ms.locfileid: "39160915"
 | **ESTS_TOKEN_ERROR** | Следуйте инструкциям, описанным в разделе по [устранению неполадок](howto-mfa-nps-extension.md#troubleshooting), чтобы определить проблемы с сертификатом клиента и маркером ADAL. |
 | **HTTPS_COMMUNICATION_ERROR** | NPS-сервер не получает ответы из Azure MFA. Проверьте, открыты ли брандмауэры для входящего и исходящего трафика https://adnotifications.windowsazure.com. |
 | **HTTP_CONNECT_ERROR** | Убедитесь, что у сервера, на котором запущено расширение NPS, есть доступ к https://adnotifications.windowsazure.com и https://login.microsoftonline.com/. Если эти сайты не загружаются, необходимо устранить неполадки подключения на сервере. |
+| **Расширение NPS для Azure MFA** <br> Расширение NPS для Azure MFA выполняет только дополнительную аутентификацию для запросов Radius с состоянием AccessAccept. Запрос, полученный для имени пользователя с состоянием ответа AccessReject, игнорируется. | Эта ошибка обычно означает сбой аутентификации в AD или то, что серверу NPS не удается получить ответы от Azure AD. Убедитесь, что используемые брандмауэры открыты в обоих направлениях для входящего и исходящего трафика с адресов https://adnotifications.windowsazure.com и https://login.microsoftonline.com на портах 80 и 443. Также необходимо убедиться, что на вкладке DIAL-IN (Входящие подключения) раздела Network Access Permissions (Разрешения на доступ к сети) установлено значение параметра control access through NPS Network Policy. |
 | **REGISTRY_CONFIG_ERROR** | В реестре для приложения отсутствует раздел. Такое может случиться, если после установки не был запущен [сценарий PowerShell](howto-mfa-nps-extension.md#install-the-nps-extension). В сообщении об ошибке должен быть указан отсутствующий раздел. Убедитесь, что этот раздел находится в HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureMfa. |
 | **REQUEST_FORMAT_ERROR** <br> Отсутствует обязательный атрибут userName\Identifier для запроса RADIUS. Убедитесь, что NPS-сервер получает запросы RADIUS. | В этом случае проблема связана с установкой. Расширение NPS должно быть установлено на серверах NPS, которые получают запросы RADIUS. NPS-серверы, установленные как зависимости для таких служб, как RDG и RRAS, запросы RADIUS не получают. В случае такой установки расширение NPS не будет работать, а ошибки будут возникать из-за невозможности прочитать сведения из запроса проверки подлинности. |
 | **REQUEST_MISSING_CODE** | Убедитесь, что протокол шифрования паролей между серверами NAS и NPS поддерживает дополнительный метод аутентификации, который вы используете. **PAP** поддерживает все методы аутентификации Azure MFA в облаке: телефонный звонок, одностороннее текстовое сообщение, уведомление мобильного приложения и код проверки мобильного приложения. **CHAPV2** и **EAP** поддерживают телефонный звонок или уведомление мобильного приложения. |

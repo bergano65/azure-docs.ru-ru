@@ -8,13 +8,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 01/26/2018
-ms.openlocfilehash: 926ce58872b06b41a0c7942b7090dcb4d5c8df03
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.date: 11/06/2018
+ms.openlocfilehash: 9533992b939983ceda37a7c98d0bc2426168a0ac
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46956495"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51279366"
 ---
 # <a name="configure-spark-settings"></a>Настройка параметров Spark
 
@@ -30,11 +30,8 @@ ms.locfileid: "46956495"
 
 Используйте наиболее подходящую версию Spark для кластера.  Служба HDInsight включает в себя несколько версий Spark и HDInsight.  Каждая версия Spark содержит набор стандартных параметров кластера.  
 
-Ниже приведены текущие версии Spark. Вы можете выбрать одну из них для создания кластера.
+Ниже приведены разные версии Spark. Вы можете выбрать одну из них для создания кластера. См. полный список [версий и компонентов HDInsight](https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-component-versioning)
 
-![Версии Spark](./media/apache-spark-settings/spark-version.png)
-
-Spark 2.x может работать намного лучше, чем Spark 1.x. Spark 2.x имеет ряд оптимизаций производительности, таких как Tungsten, Catalyst Query Optimization и другие.  
 
 > [!NOTE]
 > Версия по умолчанию Apache Spark в службе HDInsight может измениться без предварительного уведомления. Если используется зависимость версии, корпорация Майкрософт рекомендует указать конкретную версию при создании кластеров с использованием пакета SDK для .NET, Azure PowerShell и классического Azure CLI.

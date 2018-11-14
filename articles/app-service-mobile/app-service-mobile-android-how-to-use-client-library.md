@@ -13,12 +13,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/16/2017
 ms.author: crdun
-ms.openlocfilehash: a39ae42ba2344cb39318809e2f120e01a75344d7
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: b595e62e032743be2655406ac02c8db94cf708f9
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50025792"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51281773"
 ---
 # <a name="how-to-use-the-azure-mobile-apps-sdk-for-android"></a>Как использовать пакет SDK для мобильных приложений Azure в клиенте Android
 
@@ -1047,7 +1047,7 @@ MobileServiceUser user = mClient
 
 * Настройка функции проверки подлинности и авторизации в службе приложений Azure, как и при серверном потоке проверки подлинности.
 * Интеграция пакета SDK поставщика проверки подлинности для создания маркера доступа.
-* Вызов метода `.login()` следующим образом:
+* Вызовите метода `.login()` следующим образом (`result` должен быть `AuthenticationResult`):
 
     ```java
     JSONObject payload = new JSONObject();
@@ -1065,6 +1065,8 @@ MobileServiceUser user = mClient
     });
     ```
 
+См. полный пример кода в следующем разделе.
+
 Замените метод `onSuccess()` на любой код, который следует использовать для успешного входа.  В строке `{provider}` необходимо указать допустимое значение поставщика, например **aad** (Azure Active Directory), **facebook**, **google**, **microsoftaccount** или **twitter**.  При реализации пользовательской проверки подлинности вы также можете использовать тег поставщика проверки подлинности.
 
 ### <a name="adal"></a>Проверка подлинности пользователей с помощью библиотеки проверки подлинности Active Directory (ADAL)
@@ -1074,35 +1076,35 @@ MobileServiceUser user = mClient
 1. Настройте серверную часть мобильного приложения для входа с помощью AAD, следуя указаниям в руководстве [Настройка приложения службы приложений для использования службы входа Azure Active Directory][22]. Обязательно выполните дополнительный этап регистрации собственного клиентского приложения.
 2. Установите ADAL, добавив в файл build.gradle следующие определения.
 
-```
-repositories {
-    mavenCentral()
-    flatDir {
-        dirs 'libs'
+    ```
+    repositories {
+        mavenCentral()
+        flatDir {
+            dirs 'libs'
+        }
+        maven {
+            url "YourLocalMavenRepoPath\\.m2\\repository"
+        }
     }
-    maven {
-        url "YourLocalMavenRepoPath\\.m2\\repository"
+    packagingOptions {
+        exclude 'META-INF/MSFTSIG.RSA'
+        exclude 'META-INF/MSFTSIG.SF'
     }
-}
-packagingOptions {
-    exclude 'META-INF/MSFTSIG.RSA'
-    exclude 'META-INF/MSFTSIG.SF'
-}
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile('com.microsoft.aad:adal:1.1.1') {
-        exclude group: 'com.android.support'
-    } // Recent version is 1.1.1
-    compile 'com.android.support:support-v4:23.0.0'
-}
-```
+    dependencies {
+        compile fileTree(dir: 'libs', include: ['*.jar'])
+        compile('com.microsoft.aad:adal:1.1.1') {
+            exclude group: 'com.android.support'
+        } // Recent version is 1.1.1
+        compile 'com.android.support:support-v4:23.0.0'
+    }
+    ```
 
-1. Добавьте указанный ниже код в приложение, выполнив следующие замены.
+3. Добавьте указанный ниже код в приложение, выполнив следующие замены.
 
-* Замените строку **INSERT-AUTHORITY-HERE** именем клиента, в котором подготовлено приложение. Его необходимо указать в формате https://login.microsoftonline.com/contoso.onmicrosoft.com.
-* Замените текст **INSERT-RESOURCE-ID-HERE** идентификатором клиента для серверной части мобильного приложения. Идентификатор клиента можно скопировать на портале в разделе **Настройки Azure Active Directory** на вкладке **Дополнительно**.
-* Замените текст **INSERT-CLIENT-ID-HERE** идентификатором клиента, скопированным из собственного клиентского приложения.
-* Замените текст **INSERT-REDIRECT-URI-HERE** конечной точкой сайта */.auth/login/done* , используя схему HTTPS. Это значение должно быть аналогично *https://contoso.azurewebsites.net/.auth/login/done*.
+    * Замените строку **INSERT-AUTHORITY-HERE** именем клиента, в котором подготовлено приложение. Его необходимо указать в формате https://login.microsoftonline.com/contoso.onmicrosoft.com.
+    * Замените текст **INSERT-RESOURCE-ID-HERE** идентификатором клиента для серверной части мобильного приложения. Идентификатор клиента можно скопировать на портале в разделе **Настройки Azure Active Directory** на вкладке **Дополнительно**.
+    * Замените текст **INSERT-CLIENT-ID-HERE** идентификатором клиента, скопированным из собственного клиентского приложения.
+    * Замените текст **INSERT-REDIRECT-URI-HERE** конечной точкой сайта */.auth/login/done* , используя схему HTTPS. Это значение должно быть аналогично *https://contoso.azurewebsites.net/.auth/login/done*.
 
 ```java
 private AuthenticationContext mContext;

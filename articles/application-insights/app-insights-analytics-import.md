@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/14/2018
 ms.author: mbullwin
-ms.openlocfilehash: cfcdf13f8aa4dfab9b361ccbb82ea4b2c3e2ca0d
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 5550bbb95b24e12510c69bc3952c346250786994
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42142491"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50960010"
 ---
 # <a name="import-data-into-analytics"></a>Импорт данных в инструмент аналитики
 
@@ -123,7 +123,7 @@ ms.locfileid: "42142491"
 * Расположение: для формата с разделителями это расположение сопоставленного значения. Для формата JSON это путь jpath сопоставленного ключа.
 * Имя: отображаемое имя столбца.
 * Тип: тип данных столбца.
- 
+
 > [!NOTE]
 > Если использовался пример данных и формат файла с разделителями, то определение схемы должно сопоставить все столбцы и добавить в конце новые столбцы.
 > 
@@ -137,7 +137,7 @@ ms.locfileid: "42142491"
 
 Вы можете выполнить описанный ниже процесс вручную или настроить автоматизированную систему, которая будет делать это регулярно. Выполните следующие шаги для каждого блока данных, которые нужно импортировать.
 
-1. Отправьте данные в [хранилище BLOB-объектов Azure](../storage/blobs/storage-dotnet-how-to-use-blobs.md). 
+1. Отправьте данные в [хранилище BLOB-объектов Azure](../storage/blobs/storage-quickstart-blobs-dotnet.md). 
 
  * Размер больших двоичных объектов в несжатом виде не должен превышать 1 ГБ. С точки зрения производительности идеально использовать большие двоичные объекты размером несколько сотен мегабайт.
  * Чтобы сократить время передачи и минимизировать задержку доступности данных для запроса, сожмите данные с помощью Gzip. Используйте расширение файла `.gz`.
@@ -369,5 +369,5 @@ namespace IngestionClient
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Знакомство с аналитикой в Application Insights](app-insights-analytics-tour.md)
+* [Знакомство с аналитикой в Application Insights](../log-analytics/query-language/get-started-analytics-portal.md)
 * Если вы используете Logstash, используйте [подключаемый модуль Logstash для отправки данных в Application Insights](https://github.com/Microsoft/logstash-output-application-insights)

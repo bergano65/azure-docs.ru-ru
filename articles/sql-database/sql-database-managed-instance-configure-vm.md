@@ -11,15 +11,15 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: carlrab, srbozovi, bonova
 manager: craigg
-ms.date: 09/13/2018
-ms.openlocfilehash: 08b8e37493ea7bc549a2352aaa6714ef7c65bfdb
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.date: 11/01/2018
+ms.openlocfilehash: 97362cb91c16f91d637283df7a583f685124a21b
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47159522"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50913676"
 ---
-# <a name="configure-azure-vm-to-connect-to-an-azure-sql-database-managed-instance"></a>Настройка виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure
+# <a name="quickstart-configure-azure-vm-to-connect-to-an-azure-sql-database-managed-instance"></a>Краткое руководство. Настройка виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure
 
 В этом кратком руководстве показано, как настроить виртуальную машину Azure для подключения к Управляемому экземпляру Базы данных SQL Azure с помощью SQL Server Management Studio (SSMS). Краткое руководство по подключению с локального клиентского компьютера с использованием подключения "точка — сеть" см. в [этой статье](sql-database-managed-instance-configure-p2s.md) 
 

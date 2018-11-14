@@ -7,13 +7,13 @@ ms.author: raagyema
 editor: jasonwhowell
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 10/04/2018
-ms.openlocfilehash: 0794c1573c2eaa951b805573cf33f05923da83b4
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.date: 11/05/2018
+ms.openlocfilehash: 8ad7369bc940f682bb7c11c3ed4e3444f1bb056a
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48867788"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51035090"
 ---
 # <a name="monitor-and-tune"></a>Мониторинг и настройка
 Мониторинг данных о серверах помогает устранять неполадки и оптимизировать рабочую нагрузку. База данных Azure для PostgreSQL предоставляет различные параметры мониторинга, дающие возможность получить полезные сведения о поведении сервера.
@@ -39,6 +39,7 @@ ms.locfileid: "48867788"
 |connections_failed|Неудачные подключения|Count|Число неудачных попыток подключения к серверу.|
 |network_bytes_egress|Сеть (исходящий трафик)|Байты|Исходящий сетевой трафик по активным подключениям.|
 |network_bytes_ingress|Сеть (входящий трафик)|Байты|Входящий сетевой трафик по активным подключениям.|
+|backup_storage_used|Используемое хранилище резервных копий|Байты|Объем используемого хранилища резервных копий.|
 
 ## <a name="server-logs"></a>Журналы сервера
 Можно включить ведение журнала на сервере. Эти журналы также доступны в журналах диагностики Azure в [Log Analytics](../log-analytics/log-analytics-queries.md), концентраторах событий и учетной записи хранения. Дополнительные сведения о ведении журналов см. на странице [Журналы сервера в базе данных Azure для PostgreSQL](concepts-server-logs.md).
@@ -55,3 +56,4 @@ ms.locfileid: "48867788"
 ## <a name="next-steps"></a>Дополнительная информация
 - Рекомендации по созданию оповещений для метрики см. в статье [Настройка оповещений на основе метрик для базы данных Azure для PostgreSQL на портале Azure](howto-alert-on-metric.md).
 - Дополнительные сведения о доступе к метрикам и их экспорте с помощью портала Azure, REST API или интерфейса командной строки см. в статье [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md).
+- Читайте наш блог, чтобы ознакомиться с [рекомендациями по мониторингу сервера](https://azure.microsoft.com/blog/best-practices-for-alerting-on-metrics-with-azure-database-for-postgresql-monitoring/).

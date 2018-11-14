@@ -14,18 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/16/2016
 ms.author: alkohli
-ms.openlocfilehash: a178e8880bcbcada9d66eaacf5ccbdb7c55957cb
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 1be635826edbb60d50b06cc7c529e32b6280390b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23109932"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51249393"
 ---
 # <a name="safely-install-and-operate-your-storsimple-device"></a>Безопасная установка и эксплуатация устройства StorSimple
 ![Значок "Внимание!"](./media/storsimple-safety/IC740879.png)
  ![Значок "Рекомендации по безопасности"](./media/storsimple-safety/IC740885.png) **ОЗНАКОМЬТЕСЬ С ИНФОРМАЦИЕЙ О МЕРАХ ПРЕДОСТОРОЖНОСТИ**
 
-Прочтите всю информацию о мерах предосторожности в этой статье, относящуюся к вашему устройству Microsoft Azure StorSimple. Сохраните все печатные руководства, идущие в комплекте с устройством StorSimple, для дальнейшего использования. Несоблюдение инструкций и неправильная настройка, использование и обслуживание этого продукта могут привести к серьезным травмам или смерти, а также повреждению устройства. Также доступна [загружаемая версия этого руководства](http://www.microsoft.com/download/details.aspx?id=44233) .
+Прочтите всю информацию о мерах предосторожности в этой статье, относящуюся к вашему устройству Microsoft Azure StorSimple. Сохраните все печатные руководства, идущие в комплекте с устройством StorSimple, для дальнейшего использования. Несоблюдение инструкций и неправильная настройка, использование и обслуживание этого продукта могут привести к серьезным травмам или смерти, а также повреждению устройства. Также доступна [загружаемая версия этого руководства](https://www.microsoft.com/download/details.aspx?id=44233) .
 
 ## <a name="safety-icon-conventions"></a>Условные обозначения сведений о безопасности
 Ниже приведены условные обозначения, встречающиеся в описаниях мер предосторожности, которые необходимо соблюдать при настройке и эксплуатации устройства Microsoft Azure StorSimple.
@@ -145,7 +145,7 @@ ms.locfileid: "23109932"
 
 ![Значок "Примечание"](./media/storsimple-safety/IC740881.png) **ПРИМЕЧАНИЕ.**
 
-При транспортировке батарей по воздуху соблюдайте требования, указанные в документе ИАТА "Рекомендации по литиевым батареям" на странице [http://www.iata.org/whatwedo/cargo/dgr/Pages/lithium-batteries.aspx](http://www.iata.org/whatwedo/cargo/dgr/Pages/lithium-batteries.aspx)
+При транспортировке батарей по воздуху соблюдайте требования, изложенные в документе ИАТА "Рекомендации по литиевым батареям" на странице [http://www.iata.org/whatwedo/cargo/dgr/Pages/lithium-batteries.aspx](http://www.iata.org/whatwedo/cargo/dgr/Pages/lithium-batteries.aspx).
 
 Ознакомившись с этими рекомендациями по безопасности, распакуйте устройство, установите его в стойку и подключите все необходимые кабели.
 

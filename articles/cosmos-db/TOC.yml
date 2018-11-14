@@ -70,6 +70,38 @@ items:
   expanded: true
 - name: Основные понятия
   items:
+  - name: Работа с учетной записью Azure Cosmos
+    href: account-overview.md
+  - name: Контейнеры и элементы
+    items:
+    - name: Работа с базами данных, контейнерами и элементами
+      href: databases-containers-items.md
+    - name: Индексация
+      items:
+      - name: Обзор
+        href: index-overview.md
+      - name: Политика индексации
+        href: index-policy.md
+      - name: Типы индексов
+        href: index-types.md
+      - name: Пути индекса
+        href: index-paths.md
+    - name: Веб-канал изменений
+      items:
+      - name: Обзор
+        href: change-feed.md
+      - name: Чтение канала изменений
+        href: read-change-feed.md
+      - name: Обработчик канала изменений
+        href: change-feed-processor.md
+      - name: Использование канала изменений с Функциями Azure
+        href: change-feed-functions.md
+    - name: Срок жизни
+      href: time-to-live.md
+    - name: Ограничения уникальных ключей
+      href: unique-keys.md
+    - name: Транзакции и оптимистическая блокировка
+      href: database-transactions-optimistic-concurrency.md
   - name: Модель ресурсов
     href: sql-api-resources.md
   - name: Глобальное распределение
@@ -86,7 +118,7 @@ items:
       href: consistency-levels-tradeoffs.md
     - name: высокую доступность;
       href: high-availability.md
-    - name: Глобальное масштабирование пропускной способности
+    - name: Глобальное масштабирование подготовленной пропускной способности
       href: scaling-throughput.md
     - name: Политик разрешения конфликтов
       href: conflict-resolution-policies.md
@@ -106,14 +138,6 @@ items:
       href: request-units.md
     - name: Обеспечение необходимой пропускной способности для контейнеров и баз данных
       href: set-throughput.md
-  - name: Индексация
-    href: indexing-policies.md
-  - name: Веб-канал изменений
-    href: change-feed.md
-  - name: Срок жизни
-    href: time-to-live.md
-  - name: Уникальные ключи
-    href: unique-keys.md
   - name: Безопасность
     items:
     - name: Обзор
@@ -122,9 +146,9 @@ items:
       href: database-encryption-at-rest.md
     - name: Безопасный доступ к данным
       href: secure-access-to-data.md
-    - name: Поддерживаемые брандмауэры
+    - name: Брандмауэр IP-адресов
       href: firewall-support.md
-    - name: Настройка конечной точки виртуальной сети
+    - name: Доступ из виртуальных сетей
       href: vnet-service-endpoint.md
     - name: Поддержка Key Vault
       href: access-secrets-from-keyvault.md
@@ -393,6 +417,38 @@ items:
   expanded: true
 - name: Практические руководства
   items:
+  - name: Управление учетной записью базы данных
+    href: how-to-manage-database-account.md
+  - name: Настройка срока жизни
+    href: how-to-time-to-live.md
+  - name: Глобальное распределение
+    items:
+    - name: Управление согласованностью
+      href: how-to-manage-consistency.md
+    - name: Управление конфликтами
+      href: how-to-manage-conflicts.md
+  - name: Подготовленная пропускная способность
+    items:
+    - name: Обеспечение необходимой пропускной способности для контейнера
+      href: how-to-provision-container-throughput.md
+    - name: Обеспечение необходимой пропускной способности для базы данных
+      href: how-to-provision-database-throughput.md
+  - name: Работа с контейнерами и элементами
+    items:
+    - name: Создание контейнера
+      href: how-to-create-container.md
+    - name: Запрашивание контейнера
+      href: how-to-query-container.md
+  - name: Индексация
+    items:
+    - name: Настройка индексирования
+      href: how-to-manage-indexing-policy.md
+  - name: Безопасность
+    items:
+    - name: Настройка брандмауэра IP-адресов
+      href: how-to-configure-firewall.md
+    - name: Настройка доступа из виртуальных сетей
+      href: how-to-configure-vnet-service-endpoint.md
   - name: управление
     items:
     - name: Управление с помощью PowerShell
@@ -403,8 +459,6 @@ items:
       href: storage-explorer.md
     - name: Управление с помощью обозревателя данных
       href: data-explorer.md
-    - name: Управление учетной записью
-      href: manage-account.md
   - name: Ведение журналов
     items:
     - name: Ведения журнала диагностики
@@ -427,26 +481,6 @@ items:
       href: https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb
   - name: Настройка конвейера CI/CD Azure DevOps
     href: tutorial-setup-ci-cd.md
-  - name: Глобальное распределение
-    items:
-    - name: Управление учетной записью базы данных
-      href: how-to-manage-database-account.md
-    - name: Управление согласованностью
-      href: how-to-manage-consistency.md
-    - name: Управление конфликтами
-      href: how-to-manage-conflicts.md
-  - name: Подготовленная пропускная способность
-    items:
-    - name: Обеспечение необходимой пропускной способности для контейнера
-      href: how-to-provision-container-throughput.md
-    - name: Обеспечение необходимой пропускной способности для базы данных
-      href: how-to-provision-database-throughput.md
-  - name: Работа с контейнерами и элементами
-    items:
-    - name: Создание контейнера
-      href: how-to-create-container.md
-    - name: Запрашивание контейнера
-      href: how-to-query-container.md
   - name: Рекомендации
     items:
     - name: Советы по улучшению производительности
@@ -535,9 +569,9 @@ items:
       href: use-cases.md
     - name: Приложения социальных сетей
       href: social-media-apps.md
-ms.openlocfilehash: 139bf5c5edfb808e912f2da07ea1bcab57636c55
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 5301ed8dad542a03ddd7be617668db9b25417de6
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51244276"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51622471"

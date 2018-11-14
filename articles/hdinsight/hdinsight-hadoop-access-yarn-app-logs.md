@@ -2,25 +2,25 @@
 title: Доступ к журналам приложений Hadoop YARN с помощью программных средств в Azure
 description: Программный доступ к журналам приложений в кластере Hadoop в HDInsight.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/25/2017
-ms.author: jasonh
+ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: e92f9f7bb49b0b7cc33c73a9c5eb2d0ca7532592
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: b7b93ca9c8638451d23a27edeed823e593a95b23
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43094407"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51035651"
 ---
-# <a name="access-yarn-application-logs-on-windows-based-hdinsight"></a>Доступ к журналам приложений YARN в HDInsight под управлением Windows
-Из этой статьи вы узнаете, как получить доступ к журналам приложений YARN, завершивших работу в кластере Hadoop под управлением Windows в Azure HDInsight.
+# <a name="access-apache-yarn-application-logs-on-windows-based-hdinsight"></a>Доступ к журналам приложений Apache YARN в HDInsight для Windows
+Из этой статьи вы узнаете, как получить доступ к журналам приложений Apache YARN, завершивших работу в кластере Hadoop для Windows в Azure HDInsight.
 
 > [!IMPORTANT]
-> Информация, содержащаяся в данном документе, относится только к кластерам HDInsight под управлением Windows. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement). Сведения о доступе к журналам YARN в кластерах HDInsight под управлением Linux см. в статье [Доступ к журналам приложений YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md).
+> Информация, содержащаяся в данном документе, относится только к кластерам HDInsight под управлением Windows. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement). Сведения о доступе к журналам YARN в кластерах HDInsight под управлением Linux см. в статье [Доступ к журналам приложений Apache YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md).
 >
 
 

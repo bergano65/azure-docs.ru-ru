@@ -5,37 +5,44 @@ items:
   items:
   - name: Что такое ретранслятор?
     href: relay-what-is-it.md
-  - name: Часто задаваемые вопросы
-    href: relay-faq.md
-- name: Быстрое начало работы
+- name: Учебники
   items:
-  - name: Создание гибридного локального и облачного приложения
-    href: service-bus-dotnet-hybrid-app-using-service-bus-relay.md
   - name: через гибридные подключения
     items:
-    - name: Соединения WebSocket в .NET
+    - name: 'Отправка и получение сообщений: соединения WebSocket в .NET'
       href: relay-hybrid-connections-dotnet-get-started.md
-    - name: .NET HTTP
+    - name: 'Отправка и получение сообщений: соединения HTTP в.NET'
       href: relay-hybrid-connections-http-requests-dotnet-get-started.md
-    - name: Соединения WebSocket в Node
+    - name: 'Отправка и получение сообщений: соединения WebSocket в Node'
       href: relay-hybrid-connections-node-get-started.md
-    - name: Node HTTP
+    - name: 'Отправка и получение сообщений: соединения HTTP в Node'
       href: relay-hybrid-connections-http-requests-node-get-started.md
-  - name: Руководство по Ретранслятору WCF
-    href: service-bus-relay-tutorial.md
-  - name: Руководство по REST для Ретранслятора WCF
-    href: service-bus-relay-rest-tutorial.md
+  - name: Windows Communication Foundation (WCF)
+    items:
+    - name: Предоставление локальной службы WCF для веб-приложения в облаке
+      href: service-bus-dotnet-hybrid-app-using-service-bus-relay.md
+    - name: Предоставление локальной службы WCF для клиента WCF за пределами сети
+      href: service-bus-relay-tutorial.md
+    - name: Предоставление локальной службы WCF REST для клиента за пределами сети
+      href: service-bus-relay-rest-tutorial.md
+- name: Примеры
+  items:
+  - name: через гибридные подключения
+    href: https://github.com/Azure/azure-relay/tree/master/samples/hybrid-connections
+  - name: Ретранслятор WCF
+    href: https://github.com/Azure/azure-relay/tree/master/samples/wcf-relay
+- name: Основные понятия
+  items:
+  - name: Аутентификация и авторизация
+    href: relay-authentication-and-authorization.md
+  - name: Протокол гибридных подключений
+    href: relay-hybrid-connections-protocol.md
 - name: Практическое руководство
   items:
   - name: Планирование и проектирование
     items:
-    - name: Проверка подлинности и безопасность
-      href: relay-authentication-and-authorization.md
-      items:
-      - name: Миграция из ACS в SAS
-        href: relay-migrate-acs-sas.md
-    - name: Протокол гибридных подключений
-      href: relay-hybrid-connections-protocol.md
+    - name: Миграция из ACS в SAS
+      href: relay-migrate-acs-sas.md
   - name: Разработка
     items:
     - name: Создание пространства имен
@@ -69,6 +76,8 @@ items:
   items:
   - name: Стратегия развития Azure
     href: https://azure.microsoft.com/roadmap/?category=enterprise-integration
+  - name: Часто задаваемые вопросы
+    href: relay-faq.md
   - name: Блог
     href: https://blogs.msdn.microsoft.com/servicebus/
   - name: Цены
@@ -79,9 +88,9 @@ items:
     href: https://github.com/azure/azure-relay/tree/master/samples
   - name: Переполнение стека
     href: http://stackoverflow.com/questions/tagged/azure-servicebusrelay
-ms.openlocfilehash: 1c15d984e19f0585f386620f1e6e12667c69da5e
-ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
+ms.openlocfilehash: 0e6f9b0a1830a570bc8388cbfb8149adb12bea11
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43144784"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51613706"

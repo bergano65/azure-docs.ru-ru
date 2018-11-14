@@ -11,14 +11,14 @@ ms.workload: identity
 ms.topic: article
 ms.date: 09/06/2018
 ms.author: barbkess
-ms.reviewer: harshja
+ms.reviewer: japere
 ms.custom: it-pro
-ms.openlocfilehash: 5f103e9fe410374a551eb43d456d5993bdd36627
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: 55e262e1855eb6ab50c2d32e7e8cd4bb9175a593
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44056876"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50962560"
 ---
 # <a name="application-proxy-and-qlik-sense"></a>Прокси приложений и Qlik Sense 
 Совместное использование Azure Active Directory Application Proxy и Qlik Sense упрощает использование прокси приложения для предоставления удаленного доступа к развертыванию Qlik Sense.  
@@ -57,7 +57,11 @@ ms.locfileid: "44056876"
 ## <a name="testing"></a>Тестирование 
 Теперь приложение готово к тестированию. Перейдите по внешнему URL-адресу, который использовался для публикации QlikSense в приложении № 1, и войдите в систему как пользователь, назначенный для обоих приложений.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="additional-references"></a>Дополнительные ссылки
+Дополнительные сведения о том, как опубликовать Qlik Sense с помощью прокси приложения, см. в статье сообщества Qlik [Azure AD with Integrated Windows Authentication using a Kerberos Constrained Delegation with Qlik Sense](https://community.qlik.com/docs/DOC-20183) (Использование ограниченного делегирования Kerberos с Qlik Sense и Azure AD со встроенной проверкой подлинности Windows).
+
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Опубликуйте приложения с помощью прокси-сервера приложений.](application-proxy-publish-azure-portal.md)
-- [Работа с соединителями прокси приложения](application-proxy-connector-groups.md).
+- [Работа с соединителями прокси приложения](application-proxy-connector-groups.md)
+

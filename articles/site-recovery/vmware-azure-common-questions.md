@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.date: 10/29/2018
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: 086acdd74932836627c600b5545bc4353052ad6f
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 05f878d244647a79a2b3e9d0c789ba811dad71ee
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50215452"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51012111"
 ---
 # <a name="common-questions---vmware-to-azure-replication"></a>Часто задаваемые вопросы о репликации из VMware в Azure
 
@@ -59,6 +59,8 @@ ms.locfileid: "50215452"
 ### <a name="where-do-on-premises-vms-replicate-to"></a>Куда реплицируются локальные виртуальные машины?
 Данные реплицируются в хранилище Azure. При выполнении отработки Site Recovery автоматически создаст виртуальные машины Azure из учетной записи хранения.
 
+## <a name="replication"></a>Репликация
+
 ### <a name="what-apps-can-i-replicate"></a>Какие приложения можно реплицировать?
 Можно реплицировать любые приложения или рабочие нагрузки, выполняемые в виртуальной машине VMware, которые соответствуют [требованиям к репликации](vmware-physical-azure-support-matrix.md##replicated-machines). Служба Site Recovery также поддерживает репликацию уровня приложения, позволяя выполнять отработку отказа приложений и восстанавливать их размещение до программируемого состояния. Site Recovery интегрируется с приложениями Майкрософт, включая SharePoint, Exchange, Dynamics, SQL Server и Active Directory, а также тесно взаимодействует с решениями ведущих производителей, в том числе Oracle, SAP, IBM и Red Hat. [Подробнее](site-recovery-workload.md) о защите рабочей нагрузки.
 
@@ -74,18 +76,17 @@ Site Recovery реплицирует данные из локальной сре
 При репликации в Azure трафик репликации достигает общедоступных конечных точек учетной записи хранения Azure. Таким образом, репликацию можно выполнять только через общедоступный Интернет с помощью ExpressRoute (общедоступный пиринг), а VPN не будет работать.
 
 
-
-## <a name="what-are-the-replicated-vm-requirements"></a>Каковы требования к реплицируемой виртуальной машине?
+### <a name="what-are-the-replicated-vm-requirements"></a>Каковы требования к реплицируемой виртуальной машине?
 
 Для репликации виртуальная машина VMware должна работать под управлением поддерживаемой операционной системы. Кроме того, она должна соответствовать требованиям к виртуальным машинам Azure. [Дополнительные сведения см. в матрице поддержки.](vmware-physical-azure-support-matrix.md##replicated-machines)
 
-## <a name="how-often-can-i-replicate-to-azure"></a>Как часто можно выполнять репликацию в Azure?
+### <a name="how-often-can-i-replicate-to-azure"></a>Как часто можно выполнять репликацию в Azure?
 Этот процесс является непрерывным при репликации виртуальных машин VMware в Azure.
 
-## <a name="can-i-extend-replication"></a>Можно ли расширить репликацию?
+### <a name="can-i-extend-replication"></a>Можно ли расширить репликацию?
 Расширенная репликация и цепочка репликации не поддерживаются. Запросите эту функцию на [форуме отзывов и предложений](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6097959-support-for-exisiting-extended-replication).
 
-## <a name="can-i-do-an-offline-initial-replication"></a>Можно ли выполнить начальную репликацию в автономном режиме?
+### <a name="can-i-do-an-offline-initial-replication"></a>Можно ли выполнить начальную репликацию в автономном режиме?
 Эта возможность не поддерживается. Запросите эту функцию на [форуме отзывов и предложений](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6227386-support-for-offline-replication-data-transfer-from).
 
 ### <a name="can-i-exclude-disks"></a>Можно ли исключать диски?
@@ -141,7 +142,7 @@ Site Recovery реплицирует данные из локальной сре
 Установщики хранятся в папке **%ProgramData%\ASR\home\svsystems\pushinstallsvc\repository** на сервере конфигурации.
 
 ## <a name="how-do-i-install-the-mobility-service"></a>Как установить службу Mobility Service?
-Установите ее на каждой виртуальной машине, которую требуется реплицировать, используя [принудительную установку](vmware-azure-install-mobility-service.md#install-mobility-service-by-push-installation-from-azure-site-recovery) или установку вручную с помощью [пользовательского интерфейса](vmware-azure-install-mobility-service.md#install-mobility-service-manually-by-using-the-gui) или [PowerShell](vmware-azure-install-mobility-service.md#install-mobility-service-manually-at-a-command-prompt). Кроме того, можно выполнить развертывание с помощью средства развертывания, например [System Center Configuration Manager](vmware-azure-mobility-install-configuration-mgr.md), или с помощью [DSC и службы автоматизации Azure](vmware-azure-mobility-deploy-automation-dsc.md).
+Установите ее на каждой виртуальной машине, которую требуется реплицировать, используя [принудительную установку](vmware-azure-install-mobility-service.md) или установку вручную с помощью [пользовательского интерфейса](vmware-physical-mobility-service-install-manual.md) или PowerShell. Кроме того, можно выполнить развертывание с помощью средства развертывания, например [System Center Configuration Manager](vmware-azure-mobility-install-configuration-mgr.md).
 
 
 

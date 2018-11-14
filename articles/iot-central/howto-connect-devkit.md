@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 94de5566db2395a3daf24c99a43cca6853e12cce
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 1bfa52d07ddc4eaf86bce17c0ad7c63493a8b5fd
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45736977"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51255733"
 ---
 # <a name="connect-an-mxchip-iot-devkit-device-to-your-azure-iot-central-application"></a>Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central
 
@@ -23,7 +23,7 @@ ms.locfileid: "45736977"
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-1. Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](howto-create-application.md).
+1. Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
 1. Устройство DevKit. Чтобы приобрести устройство DevKit, посетите сайт [MXChip IoT DevKit](http://mxchip.com/az3166).
 
 
@@ -69,7 +69,7 @@ ms.locfileid: "45736977"
 #### <a name="to-prepare-the-devkit-device"></a>Чтобы подготовить устройство DevKit, сделайте следующее:
 
 
-1. Скачайте последнюю версию встроенного ПО Azure IoT Central для MXChip на [этой](http://aka.ms/iotcentral-docs-MXChip-releases) странице на сайте GitHub.
+1. Скачайте последнюю версию встроенного ПО Azure IoT Central для MXChip на [этой](https://aka.ms/iotcentral-docs-MXChip-releases) странице на сайте GitHub.
 1. Подключите устройство DevKit к компьютеру, на котором будет выполняться разработка, с помощью USB-кабеля. В Windows в проводнике откроется диск, сопоставленный с хранилищем на устройстве DevKit. Например, этот диск может называться **AZ3166 (D:)**.
 1. Перетащите файл **iotCentral.bin** в окно диска. По завершении копирования устройство перезагрузится с новой версией встроенного ПО.
 

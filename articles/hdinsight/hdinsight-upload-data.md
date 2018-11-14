@@ -1,25 +1,25 @@
 ---
-title: Отправка данных для заданий Hadoop в HDInsight
-description: Сведения об отправке данных и получении доступа к ним для заданий Hadoop в HDInsight с помощью классического Azure CLI, обозревателя службы хранилища Azure, Azure PowerShell, командной строки Hadoop или Sqoop.
+title: Отправка данных для заданий Apache Hadoop в HDInsight
+description: Сведения об отправке данных и получении доступа к ним для заданий Apache Hadoop в HDInsight с помощью классического интерфейса командной строки Azure, Обозревателя службы хранилища Azure, Azure PowerShell, командной строки Hadoop или Sqoop.
 keywords: etl hadoop, вставка данных в hadoop, загрузка данных hadoop
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
-ms.author: jasonh
+ms.author: hrasheed
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 05/14/2018
-ms.openlocfilehash: 44aaccee436011bd7d27bec87515fde0e898732e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.date: 11/06/2018
+ms.openlocfilehash: 50e9162da5fda98d73ccfeea0776dc89ddd25dac
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46985985"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51256924"
 ---
 # <a name="upload-data-for-hadoop-jobs-in-hdinsight"></a>Отправка данных для заданий Hadoop в HDInsight
 
-Служба Azure HDInsight — это полнофункциональная распределенная файловая система Hadoop (HDFS), в основе которой лежит служба хранилища Azure и Azure Data Lake Store. Служба хранилища Azure и Azure Data Lake Store разработаны в качестве дополнения для HDFS. Они обеспечивают клиентам высочайшее удобство работы. Благодаря им все компоненты экосистемы Hadoop работают непосредственно с данными, управляемыми службой. Служба хранилища Azure и Azure Data Lake — это разные файловые системы, оптимизированные для хранения и обработки данных. Сведения о преимуществах использования службы хранилища Azure см. в статьях [Использование службы хранилища Azure с кластерами Azure HDInsight][hdinsight-storage] и [Использование Data Lake Store с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-store.md).
+Служба Azure HDInsight — это полнофункциональная распределенная файловая система Hadoop (HDFS), в основе которой лежит служба хранилища Azure и Azure Data Lake Storage (1-го и 2-го поколения). Служба хранилища Azure и Data Lake Storage 1-го и 2-го поколения, разработанные в качестве расширений HDFS, обеспечивают клиентам высочайшее удобство работы. Благодаря им все компоненты экосистемы Hadoop работают непосредственно с данными, управляемыми службой. Служба хранилища Azure, а также Data Lake Storage 1-го и 2-го поколения — это разные файловые системы, оптимизированные для хранения и обработки данных. Сведения о преимуществах использования службы хранилища Azure см. в статьях [Использование службы хранилища Azure с кластерами Azure HDInsight][hdinsight-storage], [Использование Data Lake Store с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-store.md) и [Использование хранилища Azure Data Lake Storage Gen2 (предварительная версия) с кластерами Azure HDInsight](../storage/data-lake-storage/use-hdi-cluster.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,6 +30,7 @@ ms.locfileid: "46985985"
 
     - [Использование службы хранилища Azure с HDInsight][hdinsight-storage]
     - [Использование Data Lake Store с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-store.md)
+    - [Использование хранилища Azure Data Lake Storage Gen2 (предварительная версия) с кластерами Azure HDInsight](../storage/data-lake-storage/use-hdi-cluster.md)   
 
 ## <a name="upload-data-to-azure-storage"></a>Отправка данных в службу хранилища Azure
 
@@ -213,7 +214,7 @@ hadoop -copyFromLocal <localFilePath> <storageFilePath>
     После завершения передачи файла вы можете использовать его из заданий в кластере HDInsight.
 
 ### <a name="mount-azure-storage-as-local-drive"></a>Подключение службы хранилища Azure в качестве локального диска
-Подробные сведения см. в статье [Mount Azure Blob Storage as Local Drive](http://blogs.msdn.com/b/bigdatasupport/archive/2014/01/09/mount-azure-blob-storage-as-local-drive.aspx) (Подключение хранилища BLOB-объектов Azure в качестве локального диска).
+Подробные сведения см. в статье [Mount Azure Blob Storage as Local Drive](https://blogs.msdn.com/b/bigdatasupport/archive/2014/01/09/mount-azure-blob-storage-as-local-drive.aspx) (Подключение хранилища BLOB-объектов Azure в качестве локального диска).
 
 ### <a name="upload-using-services"></a>Отправка с помощью служб
 #### <a name="azure-data-factory"></a>Фабрика данных Azure
@@ -304,6 +305,8 @@ hadoop -fs -D fs.azure.write.request.size=4194304 -copyFromLocal test_large_file
 [hdinsight-use-sqoop]:hadoop/hdinsight-use-sqoop.md
 
 [hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
+[hdinsight-adls-gen1]: hdinsight-hadoop-use-data-lake-store.md
+[hdinsight-adls-gen2]: ../storage/data-lake-storage/use-hdi-cluster.md
 [hdinsight-submit-jobs]:hadoop/submit-apache-hadoop-jobs-programmatically.md
 [hdinsight-get-started]:hadoop/apache-hadoop-linux-tutorial-get-started.md
 

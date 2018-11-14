@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.component: users-groups-roles
 ms.topic: article
-ms.date: 10/26/2018
+ms.date: 11/07/2018
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: 13d6ed9feab4654d3574a5aced72efa0345365a6
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: c2e50362de48991c818017b59632be3b0e74cb0b
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50215333"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51282073"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -339,7 +339,9 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb__OfficeNumber -eq "123"
 
 ## <a name="rules-for-devices"></a>Правила для устройств
 
-Можно также создать правило, которое выбирает объекты устройств для членства в группе. Членами одной группы не могут являться одновременно пользователи и устройства. Можно использовать следующие атрибуты устройства.
+Можно также создать правило, которое выбирает объекты устройств для членства в группе. Членами одной группы не могут являться одновременно пользователи и устройства. Атрибут **organizationalUnit** больше не доступен в списке, и его не следует использовать. Эту строку Intune задает в определенных случаях, но она не распознается службой Azure AD. Поэтому устройства не будут добавляться в группы на основе этого атрибута.
+
+Можно использовать следующие атрибуты устройства.
 
  Атрибут устройства  | Значения | Пример
  ----- | ----- | ----------------
@@ -355,9 +357,9 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb__OfficeNumber -eq "123"
  enrollmentProfileName | Имя профиля регистрации устройства Apple или профиля Windows Autopilot | (device.enrollmentProfileName -eq "DEP iPhones")
  isRooted | true, false | (device.isRooted -eq true)
  managementType | MDM (для мобильных устройств).<br>PC (для компьютеров, управляемых агентом Intune PC). | (device.managementType -eq "MDM")
- organizationalUnit | Любое строковое значение, соответствующее имени подразделения, заданному в локальном каталоге Active Directory. | (device.organizationalUnit -eq "US PCs")
  deviceId | Допустимый идентификатор устройства Azure AD. | (device.deviceId -eq "d4fe7726-5966-431c-b3b8-cddc8fdb717d")
  objectId | Допустимый идентификатор объекта Azure AD. |  (device.objectId -eq 76ad43c9-32c5-45e8-a272-7b58b58f596d")
+ systemLabels | Любая строка, соответствующая свойству устройства Intune, для добавления тегов устройств в Modern Workplace. | (device.systemLabels -contains "M365Managed")
 
 ## <a name="next-steps"></a>Дополнительная информация
 

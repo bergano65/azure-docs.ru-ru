@@ -12,14 +12,14 @@ ms.workload: ''
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/12/2018
+ms.date: 11/07/2018
 ms.author: danlep
-ms.openlocfilehash: 987cbcc642152a4077cc895ad06e43ac56113497
-ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
+ms.openlocfilehash: 35e5d13ac358fa5edcb778253340de0f9e15c067
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45544070"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51281285"
 ---
 # <a name="choose-a-vm-size-for-compute-nodes-in-an-azure-batch-pool"></a>Выбор размера виртуальной машины для вычислительных узлов в пуле пакетной службы Azure
 
@@ -42,8 +42,14 @@ ms.locfileid: "45544070"
 | Серия A | Standard_A0 |
 | Серия B | Все |
 
-Виртуальные машины серии M поддерживаются только для узлов с низким приоритетом.
+Следующие размеры виртуальных машин поддерживаются только для узлов с низким приоритетом:
 
+| Семейство  | Поддерживаемые размеры  |
+|---------|---------|
+| Серия M | Standard_M64ms |
+| Серия M | Standard_M128s |
+
+Другие размеры виртуальных машин серии M сейчас не поддерживаются.
 
 ### <a name="pools-in-cloud-service-configuration"></a>Пулы в конфигурации облачной службы
 
@@ -55,6 +61,7 @@ ms.locfileid: "45544070"
 | Серия Av2 | Standard_A1_v2, Standard_A2_v2, Standard_A2m_v2 |
 
 ## <a name="restricted-vm-families"></a>Ограниченные семейства виртуальных машин
+
 Следующие семейства виртуальных машин можно выделить в пулах пакетной службы, но сначала необходимо запросить увеличение квоты (дополнительные сведения см. [здесь](batch-quota-limit.md#increase-a-quota)).
 * Серия NCv2
 * Серия NCv3

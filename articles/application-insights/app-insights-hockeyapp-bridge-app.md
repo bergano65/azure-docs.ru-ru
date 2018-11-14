@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.author: mbullwin
-ms.openlocfilehash: ce8946e5a022eea9281898d1518cc3e8bfb50ee5
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 1951f001de1b9d0667e5d4430454b32b5a3c890e
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47092511"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50957494"
 ---
 # <a name="exploring-hockeyapp-data-in-application-insights"></a>Просмотр данных HockeyApp в Application Insights
 
@@ -52,16 +52,16 @@ ms.locfileid: "47092511"
 
 ![Ресурс Application Insights: ожидание данных](./media/app-insights-hockeyapp-bridge-app/04.png)
 
-Это все! Пользовательские данные и данные трассировки, собранные в инструментированном приложении HockeyApp, теперь доступны в компонентах анализа и непрерывного экспорта Application Insights.
+Вот и все! Пользовательские данные и данные трассировки, собранные в инструментированном приложении HockeyApp, теперь доступны в компонентах анализа и непрерывного экспорта Application Insights.
 
-Рассмотрим эти доступные компоненты подробнее.
+Рассмотрим подробнее каждый из этих доступных компонентов.
 
 ## <a name="analytics"></a>Analytics
 Аналитика — это мощное средство для создания нерегламентированных запросов к данным, которое позволяет выполнять диагностику и анализ данных телеметрии, а также быстро находить основные причины и характерные признаки проблем.
 
 ![Analytics](./media/app-insights-hockeyapp-bridge-app/05.png)
 
-* [Знакомство с аналитикой в Application Insights](app-insights-analytics-tour.md)
+* [Знакомство с аналитикой в Application Insights](../log-analytics/query-language/get-started-analytics-portal.md)
 
 ## <a name="continuous-export"></a>непрерывный экспорт.
 Непрерывный экспорт позволяет экспортировать данные в контейнер хранилища BLOB-объектов Azure. Это очень полезно, если вам нужно хранить данные дольше, чем позволяет срок хранения, доступный в службе Application Insights. Вы можете хранить данные в хранилище BLOB-объектов, обрабатывать их в базе данных SQL или использовать другое удобное решение для хранения данных.
@@ -69,5 +69,5 @@ ms.locfileid: "47092511"
 [Экспорт данных телеметрии из Application Insights](app-insights-export-telemetry.md)
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Знакомство с аналитикой в Application Insights](app-insights-analytics-tour.md)
+* [Знакомство с аналитикой в Application Insights](../log-analytics/query-language/get-started-analytics-portal.md)
 

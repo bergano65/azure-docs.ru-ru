@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 88285ea658b194daf69b12116649e2389374c349
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: d166d490c00a9805ec9cecae6509acc531d8d711
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50025537"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50959874"
 ---
 # <a name="connect-a-windows-iot-core-device-to-your-azure-iot-central-application"></a>Подключение устройства Windows IoT Core к приложению Azure IoT Central
 
@@ -23,7 +23,7 @@ ms.locfileid: "50025537"
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-1. Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](howto-create-application.md).
+1. Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
 2. Устройство под управлением операционной системы Windows 10 IoT Core. В данном пошаговом руководстве мы будем использовать Raspberry Pi.
 
 

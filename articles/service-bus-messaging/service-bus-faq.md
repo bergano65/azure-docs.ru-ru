@@ -6,14 +6,14 @@ author: spelluru
 manager: timlt
 ms.service: service-bus-messaging
 ms.topic: article
-ms.date: 09/05/2018
+ms.date: 11/05/2018
 ms.author: spelluru
-ms.openlocfilehash: c851c8a9384acf909dc88d3565d49021e1ee67e9
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: a000c599ecf8287af57aec2f6e9d550bbe61f280
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49362027"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51279887"
 ---
 # <a name="service-bus-faq"></a>Часто задаваемые вопросы о служебной шине
 
@@ -21,7 +21,7 @@ ms.locfileid: "49362027"
 
 ## <a name="general-questions-about-azure-service-bus"></a>Общие вопросы о служебной шине Azure
 ### <a name="what-is-azure-service-bus"></a>Что такое служебная шина Azure?
-[Служебная шина Azure](service-bus-messaging-overview.md) — это облачная платформа асинхронного обмена сообщениями, которая позволяет отправлять данные между несвязанными системами. Майкрософт предоставляет этот механизм в качестве службы. Это значит, что для его использования не потребуется устанавливать собственное оборудование.
+[Служебная шина Azure](service-bus-messaging-overview.md) — это облачная платформа асинхронного обмена сообщениями, которая позволяет отправлять данные между несвязанными системами. Корпорация Майкрософт предлагает эту возможность в виде услуги, а значит вам не нужно развертывать собственное оборудование для ее использования.
 
 ### <a name="what-is-a-service-bus-namespace"></a>Что такое пространство имен служебной шины?
 [Пространство имен](service-bus-create-namespace-portal.md) предоставляет контейнер для адресации ресурсов служебной шины в вашем приложении. Создание пространства имен является первым и обязательным шагом перед началом работы со служебной шиной.
@@ -78,6 +78,9 @@ ms.locfileid: "49362027"
 
 Как и в случае с другими службами в Azure, служебная шина использует набор особых квот для обеспечения справедливого использования ресурсов. Дополнительные сведения об этих квотах см. в статье [Обзор квот на служебную шину][Quotas overview].
 
+### <a name="how-to-handle-messages-of-size--1-mb"></a>Как обрабатывать сообщения, длина которых превышает 1 МБ?
+Службы сообщений служебной шины (очереди, темы и подписки) позволяют приложениям отправлять сообщения размером до 256 КБ (ценовая категория "Стандартный") или до 1 МБ (ценовая категория "Премиум"). Если вы используете сообщения, размер которых превышает 1 МБ, используйте шаблон claim check (проверка требования), описанный в [этой записи блога](https://www.serverless360.com/blog/deal-with-large-service-bus-messages-using-claim-check-pattern).
+
 ## <a name="troubleshooting"></a>Устранение неполадок
 ### <a name="what-are-some-of-the-exceptions-generated-by-azure-service-bus-apis-and-their-suggested-actions"></a>Какие исключения порождаются интерфейсами API служебной шины Azure? Какие действия можно предпринять в отношении этих исключений?
 Список возможных исключений служебной шины приведен в разделе [Общие сведения об исключениях][Exceptions overview].
@@ -112,7 +115,7 @@ Move-AzureRmResource -DestinationResourceGroupName 'targetRG' -DestinationSubscr
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о служебной шине см. в следующих статьях:
 
-* [Introducing Azure Service Bus Premium Messaging](http://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/) (Общие сведения об обмене сообщениями через служебную шину Azure уровня "Премиум") (запись блога)
+* [Introducing Azure Service Bus Premium Messaging](https://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/) (Общие сведения об обмене сообщениями через служебную шину Azure уровня "Премиум") (запись блога)
 * [Introducing Azure Service Bus Premium Messaging](https://channel9.msdn.com/Blogs/Subscribe/Introducing-Azure-Service-Bus-Premium-Messaging) (Общие сведения об обмене сообщениями через служебную шину Azure уровня "Премиум") (Channel9)
 * [Обзор служебной шины](service-bus-messaging-overview.md)
 * [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)

@@ -1,6 +1,6 @@
 ---
 title: Установка опубликованного приложения Dataiku DDS в Azure HDInsight
-description: Установка и использование стороннего приложения Hadoop Dataiku DDS.
+description: Установка и использование стороннего приложения Apache Hadoop Dataiku DDS.
 services: hdinsight
 author: ashishthaps
 ms.reviewer: jasonh
@@ -9,16 +9,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: ashish
-ms.openlocfilehash: 64a6f393498ca90675712747afc8f9befc4b932f
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: feb94f450621e999da01f77f0b5550258377d6c9
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43105175"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51038269"
 ---
 # <a name="install-published-application---dataiku-dds"></a>Установка опубликованного приложения Dataiku DDS
 
-В этой статье описывается, как установить и запустить опубликованное приложение Hadoop [Dataiku DDS](https://www.dataiku.com/) в Azure HDInsight. Обзор платформы приложений HDInsight и список доступных опубликованных приложений независимых поставщиков программного обеспечения приведены в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md). Инструкции по установке собственного приложения см. в статье [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md).
+В этой статье описывается, как установить и запустить опубликованное приложение Apache Hadoop [Dataiku DDS](https://www.dataiku.com/) в Azure HDInsight. Обзор платформы приложений HDInsight и список доступных опубликованных приложений независимых поставщиков программного обеспечения приведены в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md). Инструкции по установке собственного приложения см. в статье [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md).
 
 ## <a name="about-dataiku-dss"></a>Сведения о Dataiku DDS
 

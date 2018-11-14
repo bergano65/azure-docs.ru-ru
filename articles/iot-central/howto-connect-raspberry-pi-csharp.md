@@ -1,19 +1,19 @@
 ---
 title: Подключение Raspberry Pi к приложению Azure IoT Central (C#) | Документация Майкрософт
 description: Вы узнаете, как разработчик устройства может подключать устройство Raspberry Pi к приложению Azure IoT Central, используя язык C#.
-author: dominicbetts
-ms.author: dobett
-ms.date: 01/22/2018
+author: viv-liu
+ms.author: viviali
+ms.date: 10/31/2018
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
-manager: timlt
-ms.openlocfilehash: a9390ac9046ad1e0ec5a1689052ee99bf76ec6f4
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+manager: peterpr
+ms.openlocfilehash: 489a644bd2d17e2be3232ec522b9ed7e37d246ad
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45734241"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50956729"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-c"></a>Подключение Raspberry Pi к приложению Azure IoT Central (C#)
 
@@ -23,10 +23,10 @@ ms.locfileid: "45734241"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
+Чтобы выполнить действия, описанные в этой статье, вам потребуются следующие компоненты:
 
 * [.NET Core 2](https://www.microsoft.com/net) на компьютере, на котором ведется разработка. Также необходимо наличие подходящего редактора кода, например [Visual Studio Code](https://code.visualstudio.com/).
-* Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](howto-create-application.md).
+* Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
 * Устройство Raspberry Pi с операционной системой Raspbian.
 
 
@@ -34,10 +34,21 @@ ms.locfileid: "45734241"
 
 Приложение, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits), включает в себя шаблон приложения **Raspberry Pi** со следующими характеристиками: 
 
-- Телеметрия, содержащая данные об измерении **влажности**, **температуры**, **давления**, **манометра** (измеряется по оси X, Y, Z), **акселерометра** (измеряется по оси X, Y, Z) и **гироскопа** (измеряется по оси X, Y, Z) устройства.
-- Параметры отображения **напряжения**, **текущего значения**, **скорости вращения вентилятора** и переключателя **IR**.
-- Свойства, содержащие свойство **серийного номера** устройства и свойство **расположения** облака.
-
+- Данные телеметрии. К ним относятся следующие показатели, которые устройство будет собирать:
+    - влажность.
+    - температура;
+    - Давление
+    - магнитометр (X, Y, Z);
+    - акселерометр (X, Y, Z);
+    - гироскоп (X, Y, Z).
+- Параметры
+    - Напряжение
+    - Текущее значение
+    - Скорость вращения вентилятора
+    - ИК-переключатель
+- properties
+    - Свойство серийного номера устройства
+    - Свойство расположения облака
 
 Подробные сведения о настройке шаблона устройства Raspberry PI см. в [этом разделе](howto-connect-raspberry-pi-csharp.md#raspberry-pi-device-template-details).
 

@@ -1,23 +1,23 @@
 ---
-title: Потоковая передача Apache Spark c Kafka в Azure HDInsight
-description: Узнайте об использовании Apache Spark для двунаправленного потокового обмена данными с Apache Kafka с помощью DStreams. В этом примере описано, как выполнить потоковую передачу данных, используя записную книжку Jupyter из Spark в HDInsight.
+title: Потоковая передача Apache Spark c Apache Kafka в Azure HDInsight
+description: Узнайте об использовании Apache Spark для двунаправленного потокового обмена данными с Apache Kafka с помощью DStreams. В этом примере показано, как выполнить потоковую передачу данных, используя записную книжку Jupyter из Spark в HDInsight.
 keywords: пример kafka, kafka zookeeper, потоковая передача spark kafka, пример потоковой передачи spark kafka
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 02/23/2018
-ms.author: jasonh
-ms.openlocfilehash: d06e9d26051fbfafc4d717ec180e8760157aefd9
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.date: 11/06/2018
+ms.author: hrasheed
+ms.openlocfilehash: b103300c7d4b72c0605b8355b03fac5201ab6d68
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43094172"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51279166"
 ---
-# <a name="apache-spark-streaming-dstream-example-with-kafka-on-hdinsight"></a>Пример потоковой передачи Apache Spark (DStream) с использованием Kafka в HDInsight
+# <a name="apache-spark-streaming-dstream-example-with-apache-kafka-on-hdinsight"></a>Пример потоковой передачи Apache Spark (DStream) с использованием Apache Kafka в HDInsight
 
 Узнайте об использовании Apache Spark для двунаправленного потокового обмена данными с Apache Kafka в HDInsight с помощью DStreams. В этом примере используется записная книжка Jupyter, которая выполняется на кластере Spark.
 
@@ -59,7 +59,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
     * **Расположение.** Выберите близкое к вам географическое расположение.
 
-    * **Базовое имя кластера**. Это значение будет использоваться в качестве базового имени для кластеров Spark и Kafka. Например, если ввести **hdi**, будет создан кластер Spark с именем __spark-hdi__ и кластер Kafka с именем **kafka-hdi**.
+    * **Базовое имя кластера**. Это значение будет использоваться в качестве базового имени для кластеров Spark и Kafka. Например, если ввести **hdistreaming**, будет создан кластер Spark с именем __spark-hdistreaming__ и кластер Kafka с именем **kafka-hdistreaming**.
 
     * **Cluster Login User Name** (Имя пользователя для входа в кластер). Имя администратора для кластеров Spark и Kafka.
 
@@ -71,7 +71,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 3. Прочтите **условия использования** и установите флажок **Я принимаю указанные выше условия**.
 
-4. Установите флажок **Закрепить на панели мониторинга** и нажмите кнопку **Приобрести**. Процесс создания кластеров занимает около 20 минут.
+4. Наконец, щелкните **Приобрести**. Процесс создания кластеров занимает около 20 минут.
 
 Когда ресурсы будут созданы, отобразится страница со сводными сведениями.
 

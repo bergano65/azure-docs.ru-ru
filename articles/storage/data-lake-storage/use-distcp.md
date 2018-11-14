@@ -8,22 +8,22 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 06/27/2018
 ms.author: seguler
-ms.openlocfilehash: 065c4c4315bda209484cc1b2449980e55d4ac798
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 09703e203370a524b24f552c93161e4cb64d803d
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39522702"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51281682"
 ---
 # <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-data-lake-storage-gen2-preview"></a>Использование DistCp для копирования данных между большими двоичными объектами службы хранилища Azure и хранилищем Data Lake поколения 2 (предварительная версия)
 
-При наличии кластера HDInsight с доступом к Azure Data Lake Storage 2-го поколения (предварительная версия) можно использовать такие средства экосистемы Hadoop, как [DistCp](https://hadoop.apache.org/docs/stable/hadoop-distcp/DistCp.html), для копирования данных **из системы хранения данных кластера HDInsight (WASB) в учетную запись с поддержкой Data Lake Storage 2-го поколения и обратно**. В этой статье содержатся инструкции по использованию средства DistCp.
+При наличии кластера HDInsight, зарегистрированного в Azure Data Lake Storage 2-го поколения (предварительная версия), можно использовать такие средства экосистемы Hadoop, как [DistCp](https://hadoop.apache.org/docs/stable/hadoop-distcp/DistCp.html), для копирования данных **из системы хранения данных кластера HDInsight (WASB) в учетную запись хранения с поддержкой Data Lake Storage 2-го поколения и обратно**. В этой статье содержатся инструкции по использованию средства DistCp.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись службы хранилища Azure с включенной функцией хранилища Azure Data Lake (предварительная версия)**. Сведения по созданию учетной записи хранения Azure Data Lake Storage 2-го поколения (предварительная версия) см. [здесь](quickstart-create-account.md).
-* **Кластер Azure HDInsight** с доступом к учетной записи хранилища Azure Data Lake. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](use-hdi-cluster.md) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
+* **Учетная запись службы хранилища Azure с включенной функцией хранилища Data Lake Storage 2-го поколения (предварительная версия)**. Сведения по созданию учетной записи хранения Azure Data Lake Storage 2-го поколения (предварительная версия) см. [здесь](quickstart-create-account.md).
+* **Кластер Azure HDInsight** с доступом к учетной записи хранения с поддержкой Data Lake Storage 2-го поколения. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](use-hdi-cluster.md) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
 
 ## <a name="use-distcp-from-an-hdinsight-linux-cluster"></a>Использование Distcp из кластера HDInsight на платформе Linux
 
@@ -97,4 +97,4 @@ ms.locfileid: "39522702"
 
 * DistCp ограничивается только одним модулем сопоставления для каждого файла. Поэтому количество модулей сопоставления не должно превышать количество файлов. Так как DistCp может назначать только один модуль сопоставления для одного файла, это ограничивает объем параллелизма, который можно использовать для копирования больших файлов.
 
-* При наличии небольшого количества больших файлов следует разбить их на фрагменты по 256 МБ для повышения степени параллелизма. 
+* При наличии небольшого количества больших файлов следует разбить их на фрагменты по 256 МБ для повышения степени параллелизма.

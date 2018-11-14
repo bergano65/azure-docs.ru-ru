@@ -1,30 +1,28 @@
 ---
-title: Управление кластерами Hadoop для Windows в HDInsight с помощью портала Azure
-description: Сведения об управлении службой HDInsight. Создайте кластер HDInsight, откройте интерактивную консоль JavaScript и командную консоль Hadoop.
+title: Управление кластерами Apache Hadoop для Windows в HDInsight с помощью портала Azure
+description: Сведения об управлении службой HDInsight. Создайте кластер HDInsight, откройте интерактивную консоль JavaScript и командную консоль Apache Hadoop.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/25/2017
-ms.author: jasonh
+ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 130f684b69a9cfa1936c2a9aa5175f3d5a7631ac
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 651a03f69a7664b68ce3fe5c512c59c01762a505
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46970283"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51282481"
 ---
-# <a name="manage-windows-based-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Управление кластерами Hadoop на платформе Windows в HDInsight с помощью портала Azure
+# <a name="manage-windows-based-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Управление кластерами Apache Hadoop для Windows в HDInsight с помощью портала Azure
 
-На [портале Azure][azure-portal] можно создавать кластеры Hadoop под управлением Windows в Azure HDInsight, менять пароль пользователя Hadoop и включать протокол удаленного рабочего стола (RDP) для работы с командной консолью Hadoop в кластере.
+На [портале Azure][azure-portal] можно создавать кластеры Apache Hadoop для Windows в Azure HDInsight, менять пароль пользователя Hadoop и включать протокол удаленного рабочего стола (RDP) для работы с командной консолью Hadoop в кластере.
 
 Эта статья посвящена только кластерам HDInsight под управлением Windows. Сведения об управлении кластерами на платформе Linux см. в статье [Управление кластерами Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md).
 
-> [!IMPORTANT]
-> Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
-
+[!INCLUDE [windows-retirement-notice](../../includes/windows-retirement-notice.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -328,7 +326,7 @@ HDInsight работает со множеством компонентов Hado
     Для поля "Срок действия" значением по умолчанию является неделя.
 
    > [!NOTE]
-   > Можно также включить удаленный рабочий стол в кластере с помощью пакета SDK для HDInsight .NET. Используйте метод **EnableRdp** в клиентском объекте HDInsight следующим образом: **client.EnableRdp(имя_кластера, расположение, "rdpuser", "rdppassword", DateTime.Now.AddDays(6))**. Аналогично, чтобы отключить удаленный рабочий стол в кластере, можно использовать **client.DisableRdp(имя_кластера, расположение)**. Дополнительные сведения об этих методах см. в [справочнике по пакету SDK для HDInsight .NET](http://go.microsoft.com/fwlink/?LinkId=529017). Это применимо только для кластеров HDInsight под управлением Windows.
+   > Можно также включить удаленный рабочий стол в кластере с помощью пакета SDK для HDInsight .NET. Используйте метод **EnableRdp** в клиентском объекте HDInsight следующим образом: **client.EnableRdp(имя_кластера, расположение, "rdpuser", "rdppassword", DateTime.Now.AddDays(6))**. Аналогично, чтобы отключить удаленный рабочий стол в кластере, можно использовать **client.DisableRdp(имя_кластера, расположение)**. Дополнительные сведения об этих методах см. в [справочнике по пакету SDK для HDInsight .NET](https://go.microsoft.com/fwlink/?LinkId=529017). Это применимо только для кластеров HDInsight под управлением Windows.
    >
    >
 

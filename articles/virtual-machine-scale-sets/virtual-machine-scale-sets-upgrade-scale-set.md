@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/14/2018
 ms.author: manayar
-ms.openlocfilehash: c3c01d7013749ca5cbd95224c230932a20a8146b
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 4ef611965382906e933f8d50b5dbdb3969d0b45f
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50740593"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50979052"
 ---
 # <a name="modify-a-virtual-machine-scale-set"></a>Изменение масштабируемого набора виртуальных машин
 На протяжении жизненного цикла приложений может потребоваться изменить или обновить масштабируемый набор виртуальных машин. Это может быть обновление конфигурации масштабируемого набора или изменение конфигурации приложения. В этой статье описывается, как можно изменить существующий масштабируемый набор с помощью интерфейсов REST API, Azure PowerShell или Azure CLI.
@@ -396,6 +396,26 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
 
     ```azurecli
     az vmss update --resource-group myResourceGroup --name myScaleSet --set virtualMachineProfile.storageProfile.imageReference.version=16.04.201801090
+    ```
+
+Также может потребоваться изменить образ, используемый масштабируемым набором. Например, может потребоваться обновить или изменить пользовательский образ, используемый масштабируемым набором. Чтобы изменить образ, используемый масштабируемым набором, измените свойство идентификатора эталонного изображения. Свойство идентификатора эталонного образа не входит в список, поэтому можно непосредственно изменить это свойство с помощью одной из следующих команд.
+
+- Можно использовать командлет [Update-AzureRmVmss](/powershell/module/azurerm.compute/update-azurermvmss) в Azure PowerShell:
+
+    ```powershell
+    Update-AzureRmVmss `
+        -ResourceGroupName "myResourceGroup" `
+        -VMScaleSetName "myScaleSet" `
+        -ImageReferenceId /subscriptions/{subscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myNewImage
+    ```
+
+- Можно использовать команду [az vmss update](/cli/azure/vmss#az_vmss_update_instances) в Azure CLI.
+
+    ```azurecli
+    az vmss update \
+        --resource-group myResourceGroup \
+        --name myScaleSet \
+        --set virtualMachineProfile.storageProfile.imageReference.id=/subscriptions/{subscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myNewImage
     ```
 
 

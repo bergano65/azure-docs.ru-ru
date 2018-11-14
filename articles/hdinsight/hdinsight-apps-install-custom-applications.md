@@ -1,24 +1,24 @@
 ---
-title: Установка пользовательских приложений Hadoop в Azure HDInsight
+title: Установка пользовательских приложений Apache Hadoop в Azure HDInsight
 description: Инструкции по установке приложений HDInsight в кластере HDInsight.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.author: jasonh
-ms.openlocfilehash: 5e3194b856766502e4cc8c68ffa4bb936634adfa
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.author: hrasheed
+ms.openlocfilehash: b5870d53053511cb56f668943678aeb91bf23b3b
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46983146"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51035362"
 ---
-# <a name="install-custom-hadoop-applications-on-azure-hdinsight"></a>Установка пользовательских приложений Hadoop в Azure HDInsight
+# <a name="install-custom-apache-hadoop-applications-on-azure-hdinsight"></a>Установка пользовательских приложений Apache Hadoop в Azure HDInsight
 
-Из этой статьи вы узнаете, как установить в Azure HDInsight приложение Hadoop, которое не было опубликовано на портале Azure. В этой статье описана установка приложения [Hue](http://gethue.com/).
+Из этой статьи вы узнаете, как установить в Azure HDInsight приложение Apache Hadoop, которое не было опубликовано на портале Azure. В этой статье описана установка приложения [Hue](http://gethue.com/).
 
 Пользователи могут устанавливать приложения HDInsight в кластере HDInsight под управлением Linux.  Разработчиками этих приложений могут быть корпорация Майкрософт, независимые поставщики программного обеспечения или вы сами.  
 

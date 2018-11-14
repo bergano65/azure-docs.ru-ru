@@ -2,23 +2,23 @@
 title: Подключение тома службы файлов Azure в службе "Экземпляры контейнеров Azure"
 description: Узнайте, как подключить том файлов Azure для сохранения состояния с помощью Экземпляров контейнеров Azure
 services: container-instances
-author: seanmck
+author: dlepow
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: article
-ms.date: 02/20/2018
-ms.author: seanmck
+ms.date: 11/05/2018
+ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 83c86d8310aff80f148e878261ba33b01846006b
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: f3d4bfa7d8ffda1ab2789927d03a777fab0ed89c
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39441329"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51281587"
 ---
 # <a name="mount-an-azure-file-share-in-azure-container-instances"></a>Подключение общего файлового ресурса Azure с помощью службы "Экземпляры контейнеров Azure"
 
-По умолчанию в Экземплярах контейнеров Azure не отслеживается состояние. Если происходит сбой в контейнере или он завершает работу, все сведения о состоянии будут утеряны. Чтобы сохранить состояние после истечения времени существования контейнера, необходимо подключить том из внешнего хранилища. В этой статье показано, как подключить файловый ресурс Azure для использования с Экземплярами контейнеров Azure.
+По умолчанию в Экземплярах контейнеров Azure не отслеживается состояние. Если происходит сбой в контейнере или он завершает работу, все сведения о состоянии будут утеряны. Чтобы сохранить состояние после истечения времени существования контейнера, необходимо подключить том из внешнего хранилища. В этой статье показано, как подключить файловый ресурс Azure, созданный с помощью [файлов Azure](../storage/files/storage-files-introduction.md), для использования с Экземплярами контейнеров Azure. Служба файлов Azure предоставляет полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого протокола SMB. Использование файлового ресурса Azure с Экземплярами контейнеров Azure предоставляет функции обмена файлами, похожие на использование файлового ресурса Azure совместно с виртуальными машинами Azure.
 
 > [!NOTE]
 > Подключение общего ресурса службы файлов Azure сейчас поддерживается только для контейнеров Linux. Мы работаем над тем, чтобы обеспечить все функции для контейнеров Windows, но для текущей платформы есть отличия в [квотах и доступности регионов для службы "Экземпляры контейнеров Azure"](container-instances-quotas.md).
@@ -41,29 +41,24 @@ az storage account create \
     --location $ACI_PERS_LOCATION \
     --sku Standard_LRS
 
-# Export the connection string as an environment variable. The following 'az storage share create' command
-# references this environment variable when creating the Azure file share.
-export AZURE_STORAGE_CONNECTION_STRING=`az storage account show-connection-string --resource-group $ACI_PERS_RESOURCE_GROUP --name $ACI_PERS_STORAGE_ACCOUNT_NAME --output tsv`
-
 # Create the file share
-az storage share create -n $ACI_PERS_SHARE_NAME
+az storage share create --name $ACI_PERS_SHARE_NAME --account-name $ACI_PERS_STORAGE_ACCOUNT_NAME
 ```
 
 ## <a name="get-storage-credentials"></a>Получение учетных данных хранилища
 
 Для подключения файлового ресурса Azure в качестве тома в Экземплярах контейнеров Azure требуется три значения: имя учетной записи хранения, имя общего ресурса и ключ доступа к хранилищу.
 
-Если вы использовали сценарий выше, имя учетной записи хранения создано со случайным значением в конце. Для выполнения запроса к последней строке (включая часть со случайным значением) используйте следующие команды:
+Если вы использовали сценарий выше, имя учетной записи хранения было сохранено в переменной ACI_PERS_STORAGE_ACCOUNT_NAME. Для отображения имени учетной записи введите:
 
-```azurecli-interactive
-STORAGE_ACCOUNT=$(az storage account list --resource-group $ACI_PERS_RESOURCE_GROUP --query "[?contains(name,'$ACI_PERS_STORAGE_ACCOUNT_NAME')].[name]" --output tsv)
-echo $STORAGE_ACCOUNT
+```console
+echo $ACI_PERS_STORAGE_ACCOUNT_NAME
 ```
 
 Имя общего ресурса уже известно (определено как *acishare* в сценарии выше), так что остается только ключ учетной записи хранения, который можно найти с помощью следующей команды:
 
 ```azurecli-interactive
-STORAGE_KEY=$(az storage account keys list --resource-group $ACI_PERS_RESOURCE_GROUP --account-name $STORAGE_ACCOUNT --query "[0].value" --output tsv)
+STORAGE_KEY=$(az storage account keys list --resource-group $ACI_PERS_RESOURCE_GROUP --account-name $ACI_PERS_STORAGE_ACCOUNT_NAME --query "[0].value" --output tsv)
 echo $STORAGE_KEY
 ```
 
@@ -88,7 +83,7 @@ az container create \
 
 ## <a name="manage-files-in-mounted-volume"></a>Управление файлами в подключенном томе
 
-После запуска контейнера можно использовать простое веб-приложение, развернутое с помощью образа [microsoft/aci-hellofiles][aci-hellofiles], чтобы управлять файлами в файловом ресурсе Azure по указанному вами пути подключения. Получите полное доменное имя (FQDN) веб-приложения с помощью команды [az container show][az-container-show].
+После запуска контейнера можно использовать простое веб-приложение, развернутое с помощью образа [microsoft/aci-hellofiles][aci-hellofiles], чтобы создать мелкие текстовые файлы в файловом ресурсе Azure по указанному вами пути подключения. Получите полное доменное имя (FQDN) веб-приложения с помощью команды [az container show][az-container-show].
 
 ```azurecli-interactive
 az container show --resource-group $ACI_PERS_RESOURCE_GROUP --name hellofiles --query ipAddress.fqdn
@@ -98,11 +93,11 @@ az container show --resource-group $ACI_PERS_RESOURCE_GROUP --name hellofiles --
 
 ## <a name="mount-multiple-volumes"></a>Подключение нескольких томов
 
-Чтобы подключить несколько томов в экземпляре контейнера, необходимо выполнить развертывание с помощью [шаблона Azure Resource Manager](/azure/templates/microsoft.containerinstance/containergroups).
+Чтобы подключить несколько томов в экземпляре контейнера, необходимо выполнить развертывание с помощью [шаблона Azure Resource Manager](/azure/templates/microsoft.containerinstance/containergroups) или yaml-файла.
 
-Сначала укажите сведения о файловом ресурсе и определите тома, заполнив массив `volumes` в разделе `properties` шаблона. Например, если вы создали два файловых ресурса Azure с именами *share1* и *share2* в учетной записи хранения *myStorageAccount*, массив `volumes` будет аналогичен приведенному ниже.
+Используйте шаблон, укажите сведения о файловом ресурсе и определите тома, заполнив массив `volumes` в разделе `properties` шаблона. Например, если вы создали два файловых ресурса Azure с именами *share1* и *share2* в учетной записи хранения *myStorageAccount*, массив `volumes` будет аналогичен приведенному ниже.
 
-```json
+```JSON
 "volumes": [{
   "name": "myvolume1",
   "azureFile": {
@@ -123,7 +118,7 @@ az container show --resource-group $ACI_PERS_RESOURCE_GROUP --name hellofiles --
 
 Затем для каждого контейнера в группе контейнеров, в которой нужно подключить тома, заполните массив `volumeMounts` в разделе `properties` определения контейнера. В результате этого, подключатся, например, тома *myvolume1* и *myvolume2*, определенные ранее.
 
-```json
+```JSON
 "volumeMounts": [{
   "name": "myvolume1",
   "mountPath": "/mnt/share1/"
@@ -134,7 +129,7 @@ az container show --resource-group $ACI_PERS_RESOURCE_GROUP --name hellofiles --
 }]
 ```
 
-Пример развертывания экземпляра контейнера с помощью шаблона Azure Resource Manager см. в статье [Развертывание группы контейнеров](container-instances-multi-container-group.md).
+Пример развертывания экземпляра контейнера с помощью шаблона Azure Resource Manager см. в статье [Развертывание группы контейнеров](container-instances-multi-container-group.md). Пример с использованием YAML-файла см. в разделе [Развертывание нескольких контейнеров с использованием YAML-файла](container-instances-multi-container-yaml.md)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

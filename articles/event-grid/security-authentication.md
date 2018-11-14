@@ -6,14 +6,14 @@ author: banisadr
 manager: timlt
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 10/31/2018
+ms.date: 11/01/2018
 ms.author: babanisa
-ms.openlocfilehash: a9bffe148339bfac89796405b771e9c2816eb0de
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: fe13c424a3da91e92a04cceb807b98fd1ffe4db0
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50741527"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50914045"
 ---
 # <a name="event-grid-security-and-authentication"></a>Сетка событий: безопасность и проверка подлинности 
 
@@ -191,15 +191,83 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
 
 ### <a name="built-in-roles"></a>Встроенные роли
 
-"Сетка событий" предоставляет две встроенные роли для управления подписками на события. Это роли `EventSubscription Contributor (Preview)` и `EventSubscription Reader (Preview)`. Они важны при реализации доменов событий. Дополнительные сведения о предоставленных действиях см. в статье [об управлении доступом к доменам событий](event-domains.md#access-management).
+"Сетка событий" предоставляет две встроенные роли для управления подписками на события. Эти роли необходимы для реализации [доменов событий](event-domains.md), потому что они предоставляют пользователям разрешения, необходимые для подписки на темы в домене событий. Эти роли предназначены для подписки на события и не предоставляют доступа к действиям, например для создания тем.
 
 Вы можете [назначить эти роли для пользователя или группы](../role-based-access-control/quickstart-assign-role-user-portal.md).
+
+**EventGrid EventSubscription Contributor (предварительная версия)**: управляет операциями подписки Сетки событий.
+
+```json
+[
+  {
+    "Description": "Lets you manage EventGrid event subscription operations.",
+    "IsBuiltIn": true,
+    "Id": "428e0ff05e574d9ca2212c70d0e0a443",
+    "Name": "EventGrid EventSubscription Contributor (Preview)",
+    "IsServiceRole": false,
+    "Permissions": [
+      {
+        "Actions": [
+          "Microsoft.Authorization/*/read",
+          "Microsoft.EventGrid/eventSubscriptions/*",
+          "Microsoft.EventGrid/topicTypes/eventSubscriptions/read",
+          "Microsoft.EventGrid/locations/eventSubscriptions/read",
+          "Microsoft.EventGrid/locations/topicTypes/eventSubscriptions/read",
+          "Microsoft.Insights/alertRules/*",
+          "Microsoft.Resources/deployments/*",
+          "Microsoft.Resources/subscriptions/resourceGroups/read",
+          "Microsoft.Support/*"
+        ],
+        "NotActions": [],
+        "DataActions": [],
+        "NotDataActions": [],
+        "Condition": null
+      }
+    ],
+    "Scopes": [
+      "/"
+    ]
+  }
+]
+```
+
+**EventGrid EventSubscription Reader (предварительная версия)**: позволяет читать подписки Сетки событий.
+
+```json
+[
+  {
+    "Description": "Lets you read EventGrid event subscriptions.",
+    "IsBuiltIn": true,
+    "Id": "2414bbcf64974faf8c65045460748405",
+    "Name": "EventGrid EventSubscription Reader (Preview)",
+    "IsServiceRole": false,
+    "Permissions": [
+      {
+        "Actions": [
+          "Microsoft.Authorization/*/read",
+          "Microsoft.EventGrid/eventSubscriptions/read",
+          "Microsoft.EventGrid/topicTypes/eventSubscriptions/read",
+          "Microsoft.EventGrid/locations/eventSubscriptions/read",
+          "Microsoft.EventGrid/locations/topicTypes/eventSubscriptions/read",
+          "Microsoft.Resources/subscriptions/resourceGroups/read"
+        ],
+        "NotActions": [],
+        "DataActions": [],
+        "NotDataActions": []
+       }
+    ],
+    "Scopes": [
+      "/"
+    ]
+  }
+]
+```
 
 ### <a name="custom-roles"></a>Пользовательские роли
 
 Если вам нужно указать разрешения, которые отличаются от встроенных ролей, можно создать пользовательские роли.
 
-Далее приведены примеры определений ролей Сетки событий, позволяющих пользователям выполнять различные действия.
+Далее приведены примеры определений ролей Сетки событий, позволяющих пользователям выполнять различные действия. Эти пользовательские роли отличаются от встроенных, потому что они предоставляют более широкий доступ, чем просто подписка на события.
 
 **EventGridReadOnlyRole.json**: разрешено только для операций чтения.
 

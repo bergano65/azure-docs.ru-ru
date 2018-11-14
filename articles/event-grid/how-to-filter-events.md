@@ -5,14 +5,14 @@ services: event-grid
 author: tfitzmac
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 10/29/2018
+ms.date: 11/07/2018
 ms.author: tomfitz
-ms.openlocfilehash: 8bf7ac9daf928c35a3d6efcac528d3372fa87c8a
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: fd0b2bda91ecb9b717f4cfe366c45bc95b21fd8e
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50252046"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51277568"
 ---
 # <a name="filter-events-for-event-grid"></a>Фильтрация событий для Сетки событий
 
@@ -181,30 +181,17 @@ az eventgrid event-subscription create \
 
 ## <a name="filter-by-operators-and-data"></a>Фильтрация по операторам и данным
 
-Чтобы пользоваться расширенной фильтрацией, нужно установить расширение предварительной версии для Azure CLI. Вы можете использовать [CloudShell](/azure/cloud-shell/quickstart) или установить Azure CLI локально.
+Для большей гибкости при фильтрации используйте операторы и свойства данных для фильтрации событий.
 
-### <a name="install-extension"></a>Установка расширения
-
-В CloudShell:
-
-* Если вы установили расширение ранее, обновите его `az extension update -n eventgrid`.
-* Если расширение еще не установлено, установите его `az extension add -n eventgrid`.
-
-При локальной установке:
-
-1. Удалите Azure CLI локально.
-1. Установите [последнюю версию](/cli/azure/install-azure-cli) Azure CLI.
-1. Запустите командное окно.
-1. Удалите предыдущие версии расширения `az extension remove -n eventgrid`.
-1. Установите расширение `az extension add -n eventgrid`.
-
-Теперь вы можете использовать расширенную фильтрацию.
+[!INCLUDE [event-grid-preview-feature-note.md](../../includes/event-grid-preview-feature-note.md)]
 
 ### <a name="subscribe-with-advanced-filters"></a>Подписка с дополнительными фильтрами
 
 Дополнительные сведения об операторах и ключах для расширенной фильтрации см. в разделе [Advanced filtering](event-filtering.md#advanced-filtering) (Расширенная фильтрация).
 
-В приведенном ниже примере создается настраиваемый раздел. Формируется подписка и выполняется фильтрация по значению в объекте данных. События со свойством, выделенным синим, красным или зеленым цветом, отправляются в подписку.
+В этих примерах создается пользовательский раздел. Затем формируется подписка на этот раздел и выполняется фильтрация по значению в объекте данных. События со свойством, выделенным синим, красным или зеленым цветом, отправляются в подписку.
+
+Для интерфейса командной строки Azure:
 
 ```azurecli-interactive
 topicName=<your-topic-name>
@@ -220,14 +207,38 @@ az eventgrid event-subscription create \
   -n demoAdvancedSub \
   --advanced-filter data.color stringin blue red green \
   --endpoint $endpointURL \
-  --expiration-date "2018-11-30"
+  --expiration-date "<yyyy-mm-dd>"
 ```
 
-Обратите внимание на дату окончания срока действия подписки. После этой даты подписка автоматически перестанет действовать. Задавайте срок действия только для подписок, которые нужны в течение ограниченного времени.
+Обратите внимание, что задана [дата окончания срока действия](concepts.md#event-subscription-expiration) подписки.
+
+Для PowerShell используйте команду:
+
+```azurepowershell-interactive
+$topicName = <your-topic-name>
+$endpointURL = <endpoint-URL>
+
+New-AzureRmResourceGroup -Name gridResourceGroup -Location eastus2
+New-AzureRmEventGridTopic -ResourceGroupName gridResourceGroup -Location eastus2 -Name $topicName
+
+$topicid = (Get-AzureRmEventGridTopic -ResourceGroupName gridResourceGroup -Name $topicName).Id
+
+$expDate = '<mm/dd/yyyy hh:mm:ss>' | Get-Date
+$AdvFilter1=@{operator="StringIn"; key="Data.color"; Values=@('blue', 'red', 'green')}
+
+New-AzureRmEventGridSubscription `
+  -ResourceId $topicid `
+  -EventSubscriptionName <event_subscription_name> `
+  -Endpoint $endpointURL `
+  -ExpirationDate $expDate `
+  -AdvancedFilter @($AdvFilter1)
+```
 
 ### <a name="test-filter"></a>Тестирование фильтрации
 
-Чтобы протестировать фильтрацию, отправьте событие, выделенное зеленым цветом.
+Чтобы протестировать фильтрацию, отправьте событие, выделенное зеленым цветом. Так как зеленым цветом выделено одно из значений в фильтре, событие отправляется в конечную точку.
+
+Для интерфейса командной строки Azure:
 
 ```azurecli-interactive
 topicEndpoint=$(az eventgrid topic show --name $topicName -g gridResourceGroup --query "endpoint" --output tsv)
@@ -238,17 +249,60 @@ event='[ {"id": "'"$RANDOM"'", "eventType": "recordInserted", "subject": "myapp/
 curl -X POST -H "aeg-sas-key: $key" -d "$event" $topicEndpoint
 ```
 
-Оно отправится в конечную точку.
+Для PowerShell используйте команду:
 
-Чтобы протестировать сценарий, когда событие не отправлено, отправьте событие, выделенное желтым цветом.
+```azurepowershell-interactive
+$endpoint = (Get-AzureRmEventGridTopic -ResourceGroupName gridResourceGroup -Name $topicName).Endpoint
+$keys = Get-AzureRmEventGridTopicKey -ResourceGroupName gridResourceGroup -Name $topicName
+
+$eventID = Get-Random 99999
+$eventDate = Get-Date -Format s
+
+$htbody = @{
+    id= $eventID
+    eventType="recordInserted"
+    subject="myapp/vehicles/cars"
+    eventTime= $eventDate
+    data= @{
+        model="SUV"
+        color="green"
+    }
+    dataVersion="1.0"
+}
+
+$body = "["+(ConvertTo-Json $htbody)+"]"
+
+Invoke-WebRequest -Uri $endpoint -Method POST -Body $body -Headers @{"aeg-sas-key" = $keys.Key1}
+```
+
+Чтобы протестировать сценарий, когда событие не отправлено, отправьте событие, выделенное желтым цветом. Среди допустимых значений подписки желтый цвет не указан, поэтому событие не будет отправлено.
+
+Для интерфейса командной строки Azure:
 
 ```azurecli-interactive
 event='[ {"id": "'"$RANDOM"'", "eventType": "recordInserted", "subject": "myapp/vehicles/cars", "eventTime": "'`date +%Y-%m-%dT%H:%M:%S%z`'", "data":{ "model": "SUV", "color": "yellow"},"dataVersion": "1.0"} ]'
 
 curl -X POST -H "aeg-sas-key: $key" -d "$event" $topicEndpoint
 ```
+Для PowerShell используйте команду:
 
-Среди допустимых значений подписки желтый цвет не указан, поэтому событие не будет отправлено.
+```azurepowershell-interactive
+$htbody = @{
+    id= $eventID
+    eventType="recordInserted"
+    subject="myapp/vehicles/cars"
+    eventTime= $eventDate
+    data= @{
+        model="SUV"
+        color="yellow"
+    }
+    dataVersion="1.0"
+}
+
+$body = "["+(ConvertTo-Json $htbody)+"]"
+
+Invoke-WebRequest -Uri $endpoint -Method POST -Body $body -Headers @{"aeg-sas-key" = $keys.Key1}
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

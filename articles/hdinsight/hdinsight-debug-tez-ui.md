@@ -1,22 +1,22 @@
 ---
-title: Работа с пользовательским интерфейсом Tez в HDInsight на платформе Windows — Azure
-description: Узнайте, как отладить задания Tez в HDInsight на платформе Windows с помощью пользовательского интерфейса Tez.
+title: Работа с пользовательским интерфейсом Apache Tez в HDInsight для Windows — Azure
+description: Узнайте, как отладить задания Tez в HDInsight для Windows с помощью пользовательского интерфейса Apache Tez.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 01/17/2017
-ms.author: jasonh
+ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: ff47d0a71e97ce4ec9fd04e1d0cb9e5592192d53
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: ecb613dd2f624b9e0910a0ddcdf931f4b266aa96
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43112193"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51036589"
 ---
-# <a name="use-the-tez-ui-to-debug-tez-jobs-on-windows-based-hdinsight"></a>Отладка заданий Tez в HDInsight на платформе Windows с помощью пользовательского интерфейса Tez
+# <a name="use-the-apache-tez-ui-to-debug-tez-jobs-on-windows-based-hdinsight"></a>Отладка заданий Tez в HDInsight для Windows с помощью пользовательского интерфейса Apache Tez
 Пользовательский интерфейс Tez можно использовать для отладки заданий Hive, которые используют Tez в качестве подсистемы выполнения. Пользовательский интерфейс Tez визуализирует задание в виде схемы связанных элементов, может выполнять детализацию каждого элемента и получать статистические данные и данные журнала.
 
 > [!IMPORTANT]
@@ -26,13 +26,13 @@ ms.locfileid: "43112193"
 * Кластер HDInsight на платформе Windows Инструкции по созданию кластера см. в статье [Приступая к работе с HDInsight на платформе Windows](hdinsight-hadoop-tutorial-get-started-windows.md).
 
   > [!IMPORTANT]
-  > Пользовательский интерфейс Tez доступен только на кластерах HDInsight под управлением Windows, созданных после 8 февраля 2016.
+  > Пользовательский интерфейс Apache Tez доступен только на кластерах HDInsight для Windows, созданных после 8 февраля 2016 года.
   >
   >
 * Клиент удаленного рабочего стола под управлением Windows.
 
-## <a name="understanding-tez"></a>Общие сведения о Tez
-Tez — это расширяемая платформа для обработки данных в Hadoop, которая характеризуется более высокими скоростями по сравнению с традиционной обработкой MapReduce. Tez можно включить, добавив в запрос Hive следующий текст:
+## <a name="understanding-apache-tez"></a>Основные сведения об Apache Tez
+Tez — это расширяемая платформа для обработки данных в Apache Hadoop, которая характеризуется более высокими скоростями по сравнению с традиционной обработкой MapReduce. Tez можно включить, добавив в запрос Hive следующий текст:
 
     set hive.execution.engine=tez;
 

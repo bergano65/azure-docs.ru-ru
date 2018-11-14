@@ -3,7 +3,7 @@ title: Настройка и изменение политик службы уп
 description: В этой статье показано, как настроить или изменить политики службы управления API Azure.
 services: api-management
 documentationcenter: ''
-author: vladvino
+author: mikebudzynski
 manager: cflower
 editor: ''
 ms.service: api-management
@@ -11,14 +11,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/27/2017
+ms.date: 11/01/2018
 ms.author: apimpm
-ms.openlocfilehash: aaf86a440328e27c8c47b809536951eeaf2104b9
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 3d1847b6001ef8e32f00a4e1cd9728d5ca0662f8
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33936703"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51008272"
 ---
 # <a name="how-to-set-or-edit-azure-api-management-policies"></a>Настройка или изменение политик службы управления API Azure
 
@@ -33,15 +33,14 @@ ms.locfileid: "33936703"
 1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 2. Перейдите к экземпляру службы управления API Azure.
 3. Щелкните вкладку **Интерфейсы API**.
+
+    ![Изменение политики](./media/set-edit-policies/code-editor.png)
+
 4. Выберите один из API, которые вы импортировали ранее.
 5. Выберите вкладку **Конструктор**.
 6. Выберите операцию, к которой требуется применить политику. Если нужно применить политику ко всем операциям, выберите **Все операции**.
-7. Щелкните треугольник рядом со значком карандаша в разделе **обработки входящего запроса** или **исходящего запроса**.
-8. Выберите пункт **Редактор кода**.
-
-    ![Изменение политики](./media/set-edit-policies/set-edit-policies01.png)
-
-9. Вставьте код необходимой политики в один из соответствующих блоков.
+7. Выберите значок **</>** (редактор кода) в разделе **обработка входящих запросов** или **Обработка исходящих запросов**.
+8. Вставьте код необходимой политики в один из соответствующих блоков.
          
         <policies>
              <inbound>

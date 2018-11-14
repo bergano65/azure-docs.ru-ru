@@ -12,12 +12,12 @@ ms.devlang: nodejs
 ms.topic: reference
 ms.date: 10/26/2018
 ms.author: glenga
-ms.openlocfilehash: 1918ed664a79a46f25cfc5162a28b311bea29cd8
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: f99c0fe798baa272bc2c74e8a171dd6bc7ca4304
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50740459"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51036552"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -76,7 +76,7 @@ module.exports = function(context, myTrigger, myInput, myOtherInput) {
 
 Следующий пример — это простая функция, которая записывает в журнал, что она была запущена, и немедленно завершает выполнение.
 
-``` javascript
+```javascript
 module.exports = async function (context) {
     context.log('JavaScript trigger function processed a request.');
 };
@@ -109,22 +109,27 @@ module.exports = async function (context, req) {
 ## <a name="bindings"></a>Привязки 
 В JavaScript [привязки](functions-triggers-bindings.md) настраиваются и определяются в файле function.json функции. Функции взаимодействуют с привязками несколькими способами.
 
-### <a name="reading-trigger-and-input-data"></a>Чтение триггера и входных данных
-Привязки триггера и входные привязки (привязки `direction === "in"`) могут считываться функцией тремя способами.
+### <a name="inputs"></a>Входные данные
+Входные данные в Функциях Azure делятся на две категории: входные данные от триггера и дополнительные входные данных. Привязки триггера и другие привязки для ввода (привязки `direction === "in"`) могут считываться функцией тремя способами.
  - **_[Рекомендуется.]_ Как параметры, передаваемые функции.** Они передаются в функцию в том же порядке, в каком они определены в файле *function.json*. Обратите внимание, что свойство `name`, определенное в файле *function.json*, не должно совпадать с именем параметра, хотя и может.
-   ``` javascript
+ 
+   ```javascript
    module.exports = async function(context, myTrigger, myInput, myOtherInput) { ... };
    ```
+   
  - **Как элементы объекта [`context.bindings`](#contextbindings-property).** Каждый элемент назван по свойству `name`, определенному в файле *function.json*.
-   ``` javascript
+ 
+   ```javascript
    module.exports = async function(context) { 
        context.log("This is myTrigger: " + context.bindings.myTrigger);
        context.log("This is myInput: " + context.bindings.myInput);
        context.log("This is myOtherInput: " + context.bindings.myOtherInput);
    };
    ```
+   
  - **В качестве входных данных при использовании объекта JavaScript [`arguments`](https://msdn.microsoft.com/library/87dw3w1k.aspx).** Этот способ по сути идентичен передаче входных данных в качестве параметров, но позволяет динамически обрабатывать входные данные.
-   ``` javascript
+ 
+   ```javascript
    module.exports = async function(context) { 
        context.log("This is myTrigger: " + arguments[1]);
        context.log("This is myInput: " + arguments[2]);
@@ -132,12 +137,13 @@ module.exports = async function (context, req) {
    };
    ```
 
-### <a name="writing-data"></a>Запись данных
+### <a name="outputs"></a>outputs
 Выходные данные (привязки `direction === "out"`) могут быть записаны в функцию несколькими способами. Во всех случаях свойство `name` привязки, определенное в файле *function.json*, соответствует имени элемента объекта, записанного в функции. 
 
 Вы можете назначить данные выходным привязкам одним из следующих способов. Не следует объединять эти методы.
 - **_[Рекомендуется, если существует несколько экземпляров выходных данных.]_ Возврат объекта.** Если вы используете функцию возврата (асинхронную или функцию обещаний), вы можете возвращать объект с назначенными выходными данными. В приведенном ниже примере выходные привязки в файле *function.json* называются httpResponse и queueOutput.
-  ``` javascript
+
+  ```javascript
   module.exports = async function(context) {
       let retMsg = 'Hello, world!';
       return {
@@ -148,10 +154,12 @@ module.exports = async function (context, req) {
       };
   };
   ```
+  
   Если вы используете синхронную функцию, вы можете вернуть этот объект с помощью [`context.done`](#contextdone-method) (см. пример).
 - **_[Рекомендуется для одного экземпляра выходных данных.]_ Возвращает значение напрямую и с использованием имени привязки $return.** Этот метод работает для функций возврата (асинхронной или функции обещаний). См. пример в разделе [Экспорт асинхронной функции](#exporting-an-async-function). 
 - **Присвоение значений для свойства `context.bindings`**. Вы можете присвоить значения непосредственно для context.bindings.
-  ``` javascript
+
+  ```javascript
   module.exports = async function(context) {
       let retMsg = 'Hello, world!';
       context.bindings.httpResponse = {

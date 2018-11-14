@@ -299,6 +299,8 @@ items:
         href: azure-stack-app-service-release-notes-update-two.md
       - name: Служба приложений Azure в заметках о выпуске обновления 3 Azure Stack
         href: azure-stack-app-service-release-notes-update-three.md
+      - name: Служба приложений Azure в заметках о выпуске обновления 4 Azure Stack
+        href: azure-stack-app-service-release-notes-update-four.md
   - name: Создание планов, предложений и квот
     items:
     - name: Обзор планов, предложений, квот и подписок
@@ -388,9 +390,9 @@ items:
     href: http://stackoverflow.com/questions/tagged/azure-stack
   - name: Обучение и сертификация
     href: https://docs.microsoft.com/azure/azure-stack/azure-stack-train-and-cert
-ms.openlocfilehash: 60487f16002df5a55d2859a14ec34559acd5cd5f
-ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
+ms.openlocfilehash: b68cebd2d6e2a7965eef61bf35c50824f7102c8e
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "51578160"
+ms.locfileid: "51614758"
