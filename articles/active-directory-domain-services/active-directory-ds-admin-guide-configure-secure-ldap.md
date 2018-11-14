@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/25/2018
+ms.date: 11/02/2018
 ms.author: ergreenl
-ms.openlocfilehash: de77050206c98832b274e8bdbda8026fc115610e
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 850b721cfa78dde23ebc11944bf023de8798cec9
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50156227"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51236959"
 ---
 # <a name="configure-secure-ldap-ldaps-for-an-azure-ad-domain-services-managed-domain"></a>Настройка защищенного протокола LDAP (LDAPS) для управляемого домена доменных служб Azure AD
 В этой статье показано, как включить протокол LDAPS для управляемого домена доменных служб Azure AD. Защищенный протокол LDAP также называется "LDAP через SSL или TLS".
@@ -45,7 +45,7 @@ ms.locfileid: "50156227"
 
 1. **Надежный издатель**. Сертификат должен быть выдан центром сертификации, являющимся доверенным для компьютеров, подключающихся к управляемому домену по защищенному протоколу LDAP. Это может быть общедоступный центр сертификации (ЦС) или ЦС предприятия, которые являются доверенными для этих компьютеров.
 2. **Срок действия**. Сертификат должен быть допустимым в течение по крайней мере следующих 3–6 месяцев. Защищенный доступ LDAP к управляемому домену не будет прерван после истечения срока действия сертификата.
-3. **Имя субъекта**. Имя субъекта сертификата должно состоять из имени управляемого домена и подстановочного знака. Например, если имя вашего домена — contoso100.com, то имя субъекта сертификата должно быть *.contoso100.com. Задайте имя с подстановочными знаками в качестве DNS-имени (альтернативного имени субъекта).
+3. **Имя субъекта**. Имя субъекта сертификата должно состоять из имени управляемого домена. Например, если имя вашего домена — contoso100.com, то имя субъекта сертификата должно быть .contoso100.com. Для управляемого домена задайте имя с подстановочными знаками в качестве DNS-имени (альтернативного имени субъекта).
 4. **Использование ключа**. Сертификат необходимо настроить для создания цифровых подписей и шифрования ключей.
 5. **Назначение сертификата**. Сертификат должен быть допустимым для аутентификации на сервере SSL.
 
@@ -83,7 +83,7 @@ ms.locfileid: "50156227"
 $lifetime=Get-Date
 New-SelfSignedCertificate -Subject contoso100.com `
   -NotAfter $lifetime.AddDays(365) -KeyUsage DigitalSignature, KeyEncipherment `
-  -Type SSLServerAuthentication -DnsName *.contoso100.com
+  -Type SSLServerAuthentication -DnsName *.contoso100.com, contoso100.com
 ```
 
 В примере выше замените contoso100.com на DNS-имя своего управляемого домена. Например, если вы создали управляемый домен с именем contoso100.onmicrosoft.com, замените значение contoso100.com в атрибуте Subject значением contoso100.onmicrosoft.com, а значение *.contoso100.com в атрибуте DnsName — значение* .contoso100.onmicrosoft.com.

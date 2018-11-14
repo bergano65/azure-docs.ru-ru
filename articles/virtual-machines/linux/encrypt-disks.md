@@ -13,44 +13,38 @@ ms.devlang: azurecli
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 05/31/2018
+ms.date: 10/30/2018
 ms.author: cynthn
-ms.openlocfilehash: 044486424f8bcc9d66998f775154eff9c52e7d1b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: b80c2fe44ddd15e0e31a83e5baab37736dc57fca
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46981235"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50913773"
 ---
 # <a name="how-to-encrypt-a-linux-virtual-machine-in-azure"></a>Как зашифровать виртуальную машину Linux в Azure
 
 Для повышения уровня безопасности и соответствия требованиям виртуальной машины виртуальные диски и саму машину можно зашифровать. Виртуальные машины можно зашифровать с использованием криптографических ключей, защищенных в Azure Key Vault. Вы будете управлять этими криптографическими ключами и проводить аудит их использования. В этой статье описывается шифрование дисков в виртуальной машине Linux с помощью Azure CLI. 
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
+
+Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. 
+
+Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Cloud Shell можно также запустить в отдельной вкладке браузера, перейдя на страницу [https://shell.azure.com/bash](https://shell.azure.com/bash). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу "ВВОД", чтобы выполнить его.
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 ## <a name="overview-of-disk-encryption"></a>Общие сведения о шифровании дисков
-Виртуальные диски на виртуальных машинах Linux шифруются с помощью [dm-crypt](https://wikipedia.org/wiki/Dm-crypt). В Azure за шифрование виртуальных дисков плата не взимается. Криптографические ключи хранятся в хранилище ключей Azure с применением защиты программного обеспечения. В качестве альтернативы можно импортировать или создать ключи аппаратных модулей безопасности (HSM), сертифицированных по стандартам уровня 2 FIPS 140-2. Вы сохраняете контроль над этими криптографическими ключами и можете проводить аудит их использования. Эти криптографические ключи используются для шифрования и расшифровки виртуальных дисков, подключенных к виртуальной машине. Субъект-служба Azure Active Directory предоставляет безопасный механизм для выдачи этих криптографических ключей при включении и отключении виртуальных машин.
+Виртуальные диски на виртуальных машинах Linux шифруются с помощью [dm-crypt](https://wikipedia.org/wiki/Dm-crypt). В Azure за шифрование виртуальных дисков плата не взимается. Криптографические ключи хранятся в хранилище ключей Azure с применением защиты программного обеспечения. В качестве альтернативы можно импортировать или создать ключи аппаратных модулей безопасности (HSM), сертифицированных по стандартам уровня 2 FIPS 140-2. Вы сохраняете контроль над этими криптографическими ключами и можете проводить аудит их использования. Эти криптографические ключи используются для шифрования и расшифровки виртуальных дисков, подключенных к виртуальной машине. 
 
 Процесс шифрования виртуальной машины выполняется следующим образом.
 
 1. Создайте криптографический ключ в хранилище ключей Azure.
-2. Настройте криптографический ключ таким образом, чтобы его можно было использовать для шифрования дисков.
-3. Чтобы прочитать криптографический ключ из Azure Key Vault, создайте субъект-службу Azure Active Directory с соответствующими разрешениями.
-4. Выполните команду для шифрования виртуальных дисков, указав субъект-службу Azure Active Directory и соответствующий ключ шифрования, который необходимо использовать.
-5. Субъект-служба Azure Active Directory запрашивает требуемый криптографический ключ из Azure Key Vault.
-6. Виртуальные диски зашифровываются с использованием предоставленного криптографического ключа.
+1. Настройте криптографический ключ таким образом, чтобы его можно было использовать для шифрования дисков.
+1. Включите шифрование для виртуальных дисков.
+1. Необходимые ключи шифрования запрашиваются из Azure Key Vault.
+1. Виртуальные диски зашифровываются с использованием предоставленного криптографического ключа.
 
-## <a name="encryption-process"></a>Процесс шифрования
-Шифрование дисков зависит от следующих дополнительных компонентов.
-
-* **Хранилище ключей Azure.** Используется для защиты криптографических ключей и секретов, используемых для шифрования или расшифровки дисков.
-  * При наличии можно воспользоваться имеющимся хранилищем ключей Azure. Для шифрования дисков не нужно выделять хранилище ключей.
-  * Чтобы разделить административные границы и обеспечить видимость ключа, можно создать выделенное хранилище ключей.
-* **Azure Active Directory.** Осуществляет безопасный обмен необходимыми криптографическими ключами и проверку подлинности для запрошенных действий.
-  * Как правило, для размещения приложения можно использовать имеющийся экземпляр Azure Active Directory.
-  * Субъект-служба обеспечивает безопасный механизм для выполнения запроса и выдачи соответствующих криптографических ключей. При этом вы не разрабатываете фактическое приложение, которое интегрируется с Azure Active Directory.
 
 ## <a name="requirements-and-limitations"></a>Требования и ограничения
 Поддерживаемые сценарии и требования для шифрования дисков:
@@ -79,16 +73,17 @@ ms.locfileid: "46981235"
 
 ```azurecli-interactive
 az provider register -n Microsoft.KeyVault
-az group create --name myResourceGroup --location eastus
+resourcegroup="myResourceGroup"
+az group create --name $resourcegroup --location eastus
 ```
 
 Хранилище ключей Azure, содержащее криптографические ключи и связанные вычислительные ресурсы, такие как хранилище и виртуальная машина, должны находиться в одном и том же регионе. Создайте Azure Key Vault, выполнив команду [az keyvault create](/cli/azure/keyvault#az-keyvault-create), и включите Key Vault для использования при шифровании дисков. Укажите уникальное имя Key Vault для параметра *keyvault_name*, выполнив следующую команду:
 
 ```azurecli-interactive
-keyvault_name=myuniquekeyvaultname
+keyvault_name=myvaultname$RANDOM
 az keyvault create \
     --name $keyvault_name \
-    --resource-group myResourceGroup \
+    --resource-group $resourcegroup \
     --location eastus \
     --enabled-for-disk-encryption True
 ```
@@ -98,27 +93,10 @@ az keyvault create \
 Для обеих моделей защиты платформе Azure необходимо предоставить доступ на запрос криптографических ключей при загрузке виртуальной машины для расшифровки виртуальных дисков. Создайте криптографический ключ в своем Key Vault, выполнив команду [az keyvault key create](/cli/azure/keyvault/key#az-keyvault-key-create). В следующем примере создается ключ с именем *myKey*:
 
 ```azurecli-interactive
-az keyvault key create --vault-name $keyvault_name --name myKey --protection software
-```
-
-
-## <a name="create-an-azure-active-directory-service-principal"></a>Создание субъекта-службы Azure Active Directory
-При шифровании или расшифровке виртуальных дисков укажите учетную запись, чтобы выполнять проверку подлинности и обмен криптографическими ключами из Key Vault. Эта учетная запись, субъект-служба Azure Active Directory, позволяет платформе Azure запрашивать соответствующие криптографические ключи от имени виртуальной машины. Экземпляр Azure Active Directory по умолчанию доступен в вашей подписке, хотя во многих организациях есть выделенные каталоги Azure Active Directory.
-
-Создайте субъект-службу с помощью Azure Active Directory, выполнив команду [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac). В следующем примере считываются значения субъекта-службы и пароля, которые будут использоваться в последующих командах.
-
-```azurecli-interactive
-read sp_id sp_password <<< $(az ad sp create-for-rbac --query [appId,password] -o tsv)
-```
-
-Пароль отображается только при создании субъекта-службы. При необходимости можно просмотреть и записать пароль (`echo $sp_password`). Вы можете вывести список субъектов-служб, выполнив команду [az ad sp list](/cli/azure/ad/sp#az-ad-sp-list), и просмотреть дополнительные сведения о конкретном субъекте-службе, выполнив [az ad sp show](/cli/azure/ad/sp#az-ad-sp-show).
-
-Для успешного шифрования или расшифровки виртуальных дисков необходимо настроить разрешения на криптографические ключи, которые хранятся в Key Vault, так чтобы субъект-служба Azure Active Directory могла читать их. Задайте разрешение для Key Vault, выполнив команду [az keyvault set-policy](/cli/azure/keyvault#az-keyvault-set-policy). В следующем примере используется идентификатор субъекта-службы из предыдущей команды:
-
-```azurecli-interactive
-az keyvault set-policy --name $keyvault_name --spn $sp_id \
-  --key-permissions wrapKey \
-  --secret-permissions set
+az keyvault key create \
+    --vault-name $keyvault_name \
+    --name myKey \
+    --protection software
 ```
 
 
@@ -127,7 +105,7 @@ az keyvault set-policy --name $keyvault_name --spn $sp_id \
 
 ```azurecli-interactive
 az vm create \
-    --resource-group myResourceGroup \
+    --resource-group $resourcegroup \
     --name myVM \
     --image UbuntuLTS \
     --admin-username azureuser \
@@ -139,21 +117,14 @@ az vm create \
 
 
 ## <a name="encrypt-the-virtual-machine"></a>Шифрование виртуальной машины
-Чтобы шифровать виртуальные диски, объедините предыдущие компоненты.
 
-1. Укажите субъект-службу и пароль Azure Active Directory.
-2. Укажите хранилище ключей для хранения метаданных зашифрованных дисков.
-3. Укажите криптографические ключи для фактического шифрования и расшифровки.
-4. Укажите, что следует шифровать: диск ОС, диски данных или и то, и другое.
 
 Зашифруйте виртуальную машину, выполнив команду [az vm encryption enable](/cli/azure/vm/encryption#az-vm-encryption-enable). В следующем примере используются переменные *$sp_id* и *$sp_password* из предыдущей команды [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac):
 
 ```azurecli-interactive
 az vm encryption enable \
-    --resource-group myResourceGroup \
+    --resource-group $resourcegroup \
     --name myVM \
-    --aad-client-id $sp_id \
-    --aad-client-secret $sp_password \
     --disk-encryption-keyvault $keyvault_name \
     --key-encryption-key myKey \
     --volume-type all
@@ -162,53 +133,33 @@ az vm encryption enable \
 Для завершения шифрования диска потребуется некоторое время. Состояние процесса можно контролировать с помощью команды [az vm encryption show](/cli/azure/vm/encryption#az-vm-encryption-show):
 
 ```azurecli-interactive
-az vm encryption show --resource-group myResourceGroup --name myVM
+az vm encryption show --resource-group $resourcegroup --name myVM --query 'status'
 ```
 
-Вы должны увидеть результат, аналогичный сокращенному примеру ниже.
+По завершении выходные данные будут выглядеть примерно так:
 
 ```json
 [
-  "dataDisk": "EncryptionInProgress",
-  "osDisk": "EncryptionInProgress"
+  {
+    "code": "ProvisioningState/succeeded",
+    "displayStatus": "Provisioning succeeded",
+    "level": "Info",
+    "message": "Encryption succeeded for all volumes",
+    "time": null
+  }
 ]
 ```
 
-Подождите, пока состояние диска операционной системы изменится на **VMRestartPending**, а затем перезапустите виртуальную машину, выполнив команду [az vm restart](/cli/azure/vm#az-vm-restart):
-
-```azurecli-interactive
-az vm restart --resource-group myResourceGroup --name myVM
-```
-
-Процесс шифрования диска завершается во время загрузки, поэтому подождите 5 минут, прежде чем повторно проверять состояние шифрования, и выполните команду [az vm encryption show](/cli/azure/vm/encryption#az-vm-encryption-show):
-
-```azurecli-interactive
-az vm encryption show --resource-group myResourceGroup --name myVM
-```
-
-Теперь состояние диска операционной системы и диска данных должно быть **Encrypted**.
-
 
 ## <a name="add-additional-data-disks"></a>Добавление дополнительных дисков данных
-После того как вы зашифруете диски данных, позже вы сможете добавить дополнительные виртуальные диски в виртуальную машину, а также зашифровать их. Например, добавим второй виртуальный диск к виртуальной машине следующим образом:
+Когда вы зашифруете диски данных, вы сможете добавить виртуальные диски в виртуальную машину и зашифровать их. 
 
-```azurecli-interactive
-az vm disk attach \
-    --resource-group myResourceGroup \
-    --vm-name myVM \
-    --disk myDataDisk \
-    --new \
-    --size-gb 5
-```
-
-Повторно выполните команду для шифрования виртуальных дисков следующим образом:
+После добавления дисков данных в виртуальную машину повторно выполните команду, чтобы зашифровать виртуальные диски, следующим образом:
 
 ```azurecli-interactive
 az vm encryption enable \
-    --resource-group myResourceGroup \
+    --resource-group $resourcegroup \
     --name myVM \
-    --aad-client-id $sp_id \
-    --aad-client-secret $sp_password \
     --disk-encryption-keyvault $keyvault_name \
     --key-encryption-key myKey \
     --volume-type all

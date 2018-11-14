@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/17/2018
 ms.author: alkohli
 ms.component: common
-ms.openlocfilehash: 9ae0892d7de8a431227218ffc6db03eca20fcbdd
-ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
+ms.openlocfilehash: 60a92e35f1408d944e8091be4945c53abe3791d1
+ms.sourcegitcommit: 3dcb1a3993e51963954194ba2a5e42260d0be258
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47585719"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50754058"
 ---
 # <a name="use-the-azure-importexport-service-to-export-data-from-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для экспорта данных из хранилища BLOB-объектов Azure
 В этой статье содержатся пошаговые инструкции по использованию службы "Импорт и экспорт Azure" для безопасного экспорта больших объемов данных из хранилища BLOB-объектов Azure. Эта служба требует отправки пустых дисков в центр обработки данных Azure. Служба экспортирует данные из учетной записи хранения на диски, а затем отправляет эти диски обратно.

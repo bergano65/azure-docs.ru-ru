@@ -2,19 +2,19 @@
 title: Отправка заданий в кластер Spark в Azure HDInsight с помощью Livy Spark
 description: Узнайте, как выполнить удаленную отправку заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API.
 services: hdinsight
-author: jasonwhowell
-ms.author: jasonh
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 07/18/2018
-ms.openlocfilehash: 677c7d27d34725b75c5dfed70cc377735f5d7d61
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.date: 11/06/2018
+ms.openlocfilehash: 86a047fe291c7872fe275ba7246b9f3e59044723
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43045218"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51236829"
 ---
 # <a name="use-apache-spark-rest-api-to-submit-remote-jobs-to-an-hdinsight-spark-cluster"></a>Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API
 
@@ -152,9 +152,9 @@ Livy обеспечивает высокую доступность задани
    
     Последняя строка выходных данных показывает, что пакет удален. При удалении запущенного задания оно также завершается. Если задание удаляется после завершения (независимо от успешности выполнения), удаляются все данные об этом задании.
 
-## <a name="using-livy-spark-on-hdinsight-35-clusters"></a>Использование Livy Spark в кластерах HDInsight 3.5
+## <a name="updates-to-livy-configuration-starting-with-hdinsight-35-version"></a>Обновления конфигурации Livy, начиная с версии HDInsight 3.5
 
-Кластер HDInsight 3.5 по умолчанию запрещает использование локальных путей для доступа к примерам файлов данных или JAR-файлам. Мы рекомендуем использовать путь `wasb://` для доступа к JAR-файлам или примерам файлов данных из кластера. Если вы хотите использовать локальный путь, необходимо соответствующим образом обновить конфигурацию Ambari. Для этого выполните следующие действия:
+Кластер HDInsight версии 3.5 и выше по умолчанию запрещает использование локальных путей для доступа к примерам файлов данных или JAR-файлам. Мы рекомендуем использовать путь `wasb://` для доступа к JAR-файлам или примерам файлов данных из кластера. Если вы хотите использовать локальный путь, необходимо соответствующим образом обновить конфигурацию Ambari. Для этого выполните следующие действия:
 
 1. Перейдите на портал Ambari для кластера. Веб-интерфейс Ambari доступен по адресу https://**CLUSTERNAME**.azurehdidnsight.net, где CLUSTERNAME — это имя вашего кластера HDInsight.
 

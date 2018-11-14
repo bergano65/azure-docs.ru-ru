@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/25/2018
 ms.author: rajraj
-ms.openlocfilehash: cf25d08fc9a0e1ae458d350be93af31447928ecb
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: c8ba9ac3150b5a84b2902afaaefcf78c76764fed
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49069460"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51036196"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Автоматические обновления образа ОС масштабируемого набора виртуальных машин Azure
 
@@ -121,7 +121,7 @@ az vmss update --name myVMSS --resource-group myResourceGroup --set UpgradePolic
   ...
 ```
 > [!NOTE]
-> При использовании автоматического обновления ОС с помощью Service Fabric домен обновления развертывает новый образ ОС, чтобы обеспечить высокий уровень доступности для служб, работающих в Service Fabric. Дополнительные сведения о характеристиках устойчивости кластера Service Fabric см. в [этой документации](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-durability-characteristics-of-the-cluster).
+> При использовании автоматического обновления ОС с помощью Service Fabric домен обновления развертывает новый образ ОС, чтобы обеспечить высокий уровень доступности для служб, работающих в Service Fabric. Для использования автоматических обновлений ОС в Service Fabric ваш кластер должен быть настроен на использование уровня надежности Silver или выше. Дополнительные сведения о характеристиках устойчивости кластера Service Fabric см. в [этой документации](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-durability-characteristics-of-the-cluster).
 
 ### <a name="keep-credentials-up-to-date"></a>Поддержание актуальности учетных данных
 Если ваш масштабируемый набор использует любые учетные данные для доступа к внешним ресурсам, например, если настроено расширение виртуальной машины, которое использует маркер SAS для учетной записи хранения, убедитесь, что учетные данные обновлены. Если срок действия всех учетных данных, в том числе сертификатов и маркеров, истек, обновление завершится сбоем, а первый пакет виртуальных машин останется в состоянии сбоя.

@@ -4,19 +4,18 @@ titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
 ms.component: azds-kubernetes
-author: ghogen
-ms.author: ghogen
+author: iainfoulds
+ms.author: iainfou
 ms.date: 09/11/2018
 ms.topic: article
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-manager: douge
-ms.openlocfilehash: 3f30a62a2f351aecabc37206607c3e28ec5e3ab5
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: bca818cb4e13066f8a631111b75f50384e521ac1
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353364"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50978899"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -231,6 +230,16 @@ az provider register --namespace Microsoft.DevSpaces
 
 ### <a name="try"></a>Попробуйте выполнить следующее.
 Перезапуск узлов агента в кластере обычно устраняет эту проблему.
+
+## <a name="azure-dev-spaces-proxy-can-interfere-with-other-pods-running-in-a-dev-space"></a>Прокси-сервер Azure Dev Spaces может конфликтовать с модулями pod, запущенными в пространстве разработки
+
+### <a name="reason"></a>Причина
+При включении Dev Spaces в пространстве имен кластера AKS дополнительный контейнер _mindaro-proxy_ устанавливается в каждом модуле pod, выполняющемся в этом пространстве имен. Этот контейнер перехватывает вызовы к службам в модуле pod, который является неотъемлемой частью возможностей, реализованных командой Dev Spaces.
+
+К сожалению, он может конфликтовать с определенными службами, работающих в этих модулях. В частности, он конфликтует с модулями, выполняющими кэш Redis, вызывая ошибки подключения и сбои при обмене данными по модели "ведущий/ведомый".
+
+### <a name="try"></a>Попробуйте выполнить следующее.
+Конфликтующий модули можно переместить в пространство имен кластера, в котором _не_ включен Dev Spaces, а оставшуюся часть приложения продолжить выполнять в пространстве имен, в котором включен Dev Spaces. Dev Spaces не будет устанавливать контейнер _mindaro-proxy_ в пространствах имен, в которых не включен Dev Spaces.
 
 ## <a name="azure-dev-spaces-doesnt-seem-to-use-my-existing-dockerfile-to-build-a-container"></a>Azure Dev Spaces не использует существующий файл Dockerfile для сборки контейнера 
 

@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.reviewer: cawa
 ms.date: 08/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: 10cd05bd40262815e3b27c861982debc18e5b4f3
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 152632c55fc21d2b49f6dfd8ae734833ea870898
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50142910"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50978372"
 ---
 # <a name="profile-web-apps-running-on-an-azure-virtual-machine-or-virtual-machine-scale-set-with-application-insights-profiler"></a>Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с помощью Application Insights Profiler
 Вы можете развернуть Application Insights Profiler для таких служб:
@@ -63,11 +63,8 @@ ms.locfileid: "50142910"
 
 1. Разверните приложение.
 
-## <a name="enable-profiler-on-on-premises-servers"></a>Включение профилировщика на локальных серверах
-
-Включение профилировщика на локальном сервере приравнивается к работе Application Insights Profiler в автономном режиме. Он не привязан к изменениям расширения системы диагностики Azure.
-
-Мы не планируем официальную поддержку профилировщика для локальных серверов. Если вы хотите поэкспериментировать с этим сценарием, [скачайте код поддержки](https://github.com/ramach-msft/AIProfiler-Standalone). Мы *не* несем ответственности за обслуживание этого кода и не предоставляем ответы на запросы по поводу проблем и функций, связанных с ним.
+## <a name="can-profiler-run-on-on-premises-servers"></a>Можно ли запустить профилировщик на локальных серверах?
+Не планируется поддержка Application Insights Profiler на локальных серверах. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

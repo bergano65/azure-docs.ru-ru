@@ -9,14 +9,14 @@ tags: top-support-issue,azure-service-management,azure-resource-manager
 ms.service: virtual-machines
 ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
-ms.date: 05/01/2018
+ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 2ec5caab32e12411f5ccab4a9a6b98d3c4e57c0b
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 1de70b3ddea84fc0067a0e20ec613f01024f0ed4
+ms.sourcegitcommit: 6678e16c4b273acd3eaf45af310de77090137fa1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47412531"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50748040"
 ---
 # <a name="troubleshoot-storage-resource-deletion-errors"></a>Устранение ошибок при удалении ресурсов хранилища
 
@@ -69,10 +69,7 @@ ms.locfileid: "47412531"
 
 ### <a name="scenario-3-deleting-storage-account---identify-all-blobs-within-storage-account-that-are-attached-to-vms"></a>Сценарий 3. Удаление учетной записи хранения и определение всех подключенных к виртуальным машинам больших двоичных объектов в учетной записи хранения
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. В главном меню выберите **Все ресурсы**. Перейдите к учетной записи хранения в разделе **Blob Service** (Служба больших двоичных объектов), выберите **Контейнеры**.
-
-    ![Снимок экрана портала с контейнерами учетной записи хранения и выделенным состоянием аренды "В аренде"](./media/troubleshoot-vhds/utd-containers-sm.png)
-
+2. В главном меню выберите **Все ресурсы**. Перейдите к учетной записи хранения и в разделе **Служба BLOB-объектов** выберите **BLOB-объекты**.
 3. В области **Контейнеры** найдите все контейнеры, у которых **состояние аренды** соответствует значению **В аренде**, и выполните действия из [сценария 2](#scenario-2-deleting-a-container---identify-all-blobs-within-container-that-are-attached-to-vms) для каждого **арендованного** контейнера.
 4. Выполните [Шаг 2](#step-2-delete-vm-to-detach-os-disk) и [Шаг 3](#step-3-detach-data-disk-from-the-vm), чтобы удалить виртуальные машины с **OSDisk** и отсоединить **DataDisk**. 
 

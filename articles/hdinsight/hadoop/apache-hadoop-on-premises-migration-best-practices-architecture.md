@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: 02db6b4691beb4bfefa3815c87cf54f350219d81
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 62e15b5845ed9faa605f978f0d2fd427c9c3ee9b
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50418013"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51008187"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---architecture-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по архитектуре
 
@@ -113,7 +113,7 @@ HDInsight использует Базу данных SQL Azure для храни
 - Рассмотрите возможность замены запросов на основе Impala на запросы LLAP.
 - Рассмотрите возможность замены заданий MapReduce на задания Spark.
 - Обдумайте возможность замены пакетных заданий Spark с низкой задержкой на задания структурированной потоковой передачи Spark.
-- Рассмотрите возможность использования Фабрики данных Azure (ADF) 2.0 для оркестрации данных.
+- Рассмотрите возможность использования Фабрики данных Azure (ADF) версии 2.0 для оркестрации данных.
 - Рассмотрите использование Ambari для управления кластером.
 - Измените хранилище данных для обработки сценариев с локальной системы HDFS на WASB, ADLS или ADFS.
 - Рассмотрите использование Ranger RBAC для таблиц Hive и аудита.

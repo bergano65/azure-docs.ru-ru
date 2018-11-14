@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: 39fc5ef36bb581c3a81c9948fda048f6cb75eb7e
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: daab61a0ea9321b0fb918c60688215c80088e0bc
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "24102092"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51243357"
 ---
 # <a name="biztalk-services-throttling"></a>Службы BizTalk: регулирование
 
@@ -57,15 +57,15 @@ ms.locfileid: "24102092"
 * Сервер базы данных SQL Azure имеет также и встроенное регулирование.
 
 ## <a name="additional-azure-biztalk-services-topics"></a>Дополнительная информация о службах BizTalk в Azure
-* [Установка пакета SDK для служб BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=241589)<br/>
-* [Руководства по службам BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=236944)<br/>
-* [Как приступить к работе с пакетом SDK для служб BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
-* [Службы BizTalk Azure](http://go.microsoft.com/fwlink/p/?LinkID=303664)<br/>
+* [Установка пакета SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=241589)<br/>
+* [Руководства по службам BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=236944)<br/>
+* [Как приступить к работе с пакетом SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
+* [Службы BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=303664)<br/>
 
 ## <a name="see-also"></a>См. также
-* [Службы BizTalk. Диаграмма выпусков Developer, Basic, Standard и Premium](http://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
-* [Службы BizTalk. Диаграмма состояния подготовки](http://go.microsoft.com/fwlink/p/?LinkID=329870)<br/>
-* [Службы BizTalk: вкладки «Панель мониторинга», «Монитор» и «Масштаб»](http://go.microsoft.com/fwlink/p/?LinkID=302281)<br/>
-* [Службы BizTalk: резервное копирование и восстановление](http://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>
-* [Службы BizTalk: имя и ключ издателя](http://go.microsoft.com/fwlink/p/?LinkID=303941)<br/>
+* [Службы BizTalk. Диаграмма выпусков Developer, Basic, Standard и Premium](https://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
+* [Службы BizTalk. Диаграмма состояния подготовки](https://go.microsoft.com/fwlink/p/?LinkID=329870)<br/>
+* [Службы BizTalk: вкладки «Панель мониторинга», «Монитор» и «Масштаб»](https://go.microsoft.com/fwlink/p/?LinkID=302281)<br/>
+* [Службы BizTalk: резервное копирование и восстановление](https://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>
+* [Службы BizTalk: имя и ключ издателя](https://go.microsoft.com/fwlink/p/?LinkID=303941)<br/>
 

@@ -13,15 +13,15 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.custom: ''
-ms.date: 08/01/2018
+ms.date: 11/05/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: d166916ca54f3b8c26a418ff83093e53dcdbe515
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: ecdfb0f062ebad903d35401a2f5303d3e6d04b5d
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39413762"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51037385"
 ---
 # <a name="redeploy-the-asdk"></a>Повторное развертывание ASDK
 Из этой статьи вы узнаете, как выполнить повторное развертывание Пакета средств разработки Azure Stack (ASDK) в нерабочей среде. Так как обновление ASDK не поддерживается, чтобы перейти на новую версию необходимо его повторное развертывание. Кроме того, ASDK можно повторно развернуть в любой момент, когда понадобится начать работу с начала.
@@ -60,7 +60,10 @@ ms.locfileid: "39413762"
 3. При запуске скрипта вам будет предложено войти в подписку Azure и локальную установку ASDK.
 4. После выполнения скрипта появятся сообщения, аналогичные приведенным ниже:
 
-    ` De-Activating Azure Stack (this may take up to 10 minutes to complete).` ` Your environment is now unable to syndicate items and is no longer reporting usage data.` ` Remove registration resource from Azure...` ` "Deleting the resource..." on target "/subscriptions/<subscription information>"` ` ********** End Log: Remove-AzsRegistration ********* `
+    ` De-Activating Azure Stack (this may take up to 10 minutes to complete).` ` Your environment is now unable to syndicate items and is no longer reporting usage data.`
+    ` Remove registration resource from Azure...`
+    ` "Deleting the resource..." on target "/subscriptions/<subscription information>"`
+    ` ********** End Log: Remove-AzsRegistration ********* `
 
 
 
@@ -95,7 +98,7 @@ ms.locfileid: "39413762"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Настройка, выполняемая после установки ASDK](asdk-post-deploy.md)
+[Задачи, выполняемые после развертывания ASDK](asdk-post-deploy.md)
 
 
 

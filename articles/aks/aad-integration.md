@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/09/2018
 ms.author: iainfou
-ms.openlocfilehash: bd7f8748dc5260ed6574a1b48632318e9399bca0
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 0dc0421baf1e5cb19be925072b5fffb989e23a3b
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48042127"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50979256"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service"></a>rbИнтеграция Azure Active Directory со службой Azure Kubernetes
 
@@ -68,7 +68,9 @@ ms.locfileid: "48042127"
 
   ![Установка разрешений Graph приложения](media/aad-integration/delegated-permissions.png)
 
-7. Нажмите кнопку **Готово**, выберите *Microsoft Graph* из списка API, а затем щелкните **Предоставление разрешений**. Этот шаг завершится ошибкой, если текущая учетная запись не является администратором клиента.
+  Нажмите кнопку **Готово**.
+
+7. Выберите *Microsoft Graph* из списка API, а затем щелкните **Предоставление разрешений**. Этот шаг завершится ошибкой, если текущая учетная запись не является администратором клиента.
 
   ![Установка разрешений Graph приложения](media/aad-integration/grant-permissions.png)
 
@@ -98,7 +100,9 @@ ms.locfileid: "48042127"
 
   ![Выбор конечной точки приложения сервера AAD в AKS](media/aad-integration/select-server-app.png)
 
-4. Для завершения этого шага выберите **Готово** и **Предоставить разрешения**.
+  Щелкните **Готово**.
+
+4. Выберите свой API сервера из списка, а затем щелкните **Предоставить разрешения**:
 
   ![Предоставление разрешений](media/aad-integration/grant-permissions-client.png)
 

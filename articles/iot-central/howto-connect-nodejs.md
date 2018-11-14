@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 4702b0eb53897f173311c40469c912cf41751f24
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 9d97b14d52a33d6879ee92b38993f4526823c4a0
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50155156"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50964001"
 ---
 # <a name="connect-a-generic-client-application-to-your-azure-iot-central-application-nodejs"></a>Подключение универсального клиентского приложения к приложению Azure IoT Central (Node.js)
 
@@ -23,7 +23,7 @@ ms.locfileid: "50155156"
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-1. Приложение Azure IoT Central. Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](howto-create-application.md).
+1. Приложение Azure IoT Central. Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
 1. Компьютер для разработки с установленным [Node.js](https://nodejs.org/) 4.0.0 или более поздней версии. Вы можете запустить `node --version` в командной строке, чтобы проверить версию. Node.js доступен для разных операционных систем.
 
 ## <a name="create-a-device-template"></a>Создание шаблона устройства

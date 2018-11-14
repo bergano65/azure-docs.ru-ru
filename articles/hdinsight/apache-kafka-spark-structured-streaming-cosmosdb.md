@@ -2,27 +2,27 @@
 title: Структурированная потоковая передача Apache Spark из Kafka в Azure Cosmos DB в Azure HDInsight
 description: Узнайте, как использовать структурированную потоковую передачу Apache Spark для чтения данных из Apache Kafka и как сохранить эти данные в Azure Cosmos DB. В этом примере показано, как выполнить потоковую передачу данных, используя записную книжку Jupyter из Spark в HDInsight.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 03/26/2018
-ms.author: jasonh
-ms.openlocfilehash: 8f0a16320091f8b2efa98ee96a63801e841c082e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.date: 11/06/2018
+ms.author: hrasheed
+ms.openlocfilehash: fcedf4a9335a0d70cfbab5a7f803b68cb154e209
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46971320"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51278911"
 ---
-# <a name="use-spark-structured-streaming-with-kafka-and-azure-cosmos-db"></a>Использование структурированной потоковой передачи Spark с Kafka в Azure Cosmos DB
+# <a name="use-apache-spark-structured-streaming-with-kafka-and-azure-cosmos-db"></a>Использование структурированной потоковой передачи Apache Spark с Kafka в Azure Cosmos DB
 
-Узнайте, как использовать структурированную потоковую передачу Spark для чтения данных из Apache Kafka в Azure HDInsight и как сохранить эти данные в Azure Cosmos DB.
+Узнайте, как использовать структурированную потоковую передачу Apache Spark для чтения данных из Apache Kafka в Azure HDInsight и как сохранить эти данные в Azure Cosmos DB.
 
 Azure Cosmos DB — это многомодельная глобально распределенная база данных. В этом примере используется модель базы данных API SQL. Дополнительные сведения см. в документе [Добро пожаловать в базу данных Azure Cosmos DB](../cosmos-db/introduction.md).
 
-Структурированная потоковая передача Spark — это механизм обработки потока, встроенный в Spark SQL. Он позволяет выражать потоковые вычисления так же, как пакетные вычисления статических данных. Дополнительные сведения о структурированной потоковой передаче см. в разделе [Руководство по программированию структурированной потоковой передачи [альфа-версия]](http://spark.apache.org/docs/2.1.0/structured-streaming-programming-guide.html) на Apache.org.
+Структурированная потоковая передача Spark — это механизм обработки потока, встроенный в Spark SQL. Он позволяет выражать потоковые вычисления так же, как пакетные вычисления статических данных. Дополнительные сведения о структурированной потоковой передаче см. в [руководстве по программированию структурированной потоковой передачи](https://spark.apache.org/docs/2.2.0/structured-streaming-programming-guide.html) на Apache.org.
 
 > [!IMPORTANT]
 > В этом примере используется Spark 2.2 в HDInsight 3.6.
@@ -95,7 +95,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 3. Прочтите **условия использования** и установите флажок **Я принимаю указанные выше условия**.
 
-4. Установите флажок **Закрепить на панели мониторинга** и нажмите кнопку **Приобрести**. Процесс создания кластеров занимает около 20 минут.
+4. Наконец, щелкните **Приобрести**. Процесс создания кластеров занимает около 20 минут.
 
 > [!IMPORTANT]
 > Создание кластеров, виртуальной сети и учетной записи Cosmos DB может занять до 45 минут.

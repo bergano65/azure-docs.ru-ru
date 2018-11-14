@@ -5,15 +5,15 @@ author: johnkemnetz
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 8/21/2018
+ms.date: 11/01/2018
 ms.author: johnkem
 ms.component: ''
-ms.openlocfilehash: 18c0f8176a85eef79000fff8ed717ad7e57f20d8
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0c85b65e9b6eabcb5c74e1d178c0f26235cdf624
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46954846"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50961829"
 ---
 # <a name="stream-azure-monitoring-data-to-an-event-hub-for-consumption-by-an-external-tool"></a>Потоковая передача данных мониторинга Azure в концентратор событий для потребления внешним инструментом
 
@@ -27,8 +27,8 @@ Azure Monitor предоставляет единый конвейер для п
 
 - **Данные мониторинга приложений:** данные о производительности и функциональности кода, который вы написали и выполняете в Azure. Примеры данных мониторинга приложений включают в себя трассировки производительности, журналы приложений и пользовательскую телеметрию. Данные мониторинга приложений обычно собираются одним из следующих способов:
   - Посредством иснтрументирования кода с помощью пакета SDK, такого как [пакет SDK для Application Insights](../application-insights/app-insights-overview.md).
-  - Путем запуска агента мониторинга, который прослушивает новые журналы приложений на компьютере, где запущено приложение, например [агент диагностики Azure для Windows](./azure-diagnostics.md) или [агент диагностики Azure для Linux](../virtual-machines/linux/diagnostic-extension.md).
-- **Данные мониторинга гостевой ОС:** данные об операционной системе, в которой выполняется ваше приложение. К примерам данных мониторинга гостевой ОС относится системный журнал Linux или системные события Windows. Для сбора данных этого типа необходимо установить агент, такой как [агент диагностики Azure для Windows](./azure-diagnostics.md) или [агент диагностики Azure для Linux](../virtual-machines/linux/diagnostic-extension.md).
+  - Путем запуска агента мониторинга, который прослушивает новые журналы приложений на компьютере, где запущено приложение, например [агент диагностики Azure для Windows](./azure-diagnostics.md) или [агент диагностики Azure для Linux](../virtual-machines/extensions/diagnostics-linux.md).
+- **Данные мониторинга гостевой ОС:** данные об операционной системе, в которой выполняется ваше приложение. К примерам данных мониторинга гостевой ОС относится системный журнал Linux или системные события Windows. Для сбора данных этого типа необходимо установить агент, такой как [агент диагностики Azure для Windows](./azure-diagnostics.md) или [агент диагностики Azure для Linux](../virtual-machines/extensions/diagnostics-linux.md).
 - **Данные мониторинга ресурсов Azure:** данные о работе ресурса Azure. Для некоторых типов ресурсов Azure, например виртуальных машин, внутри этой службы Azure нужно выполнять мониторинг гостевой ОС и приложений. Для других ресурсов Azure, таких как группы безопасности сети, данные мониторинга ресурсов являются наивысшим из доступных уровней данных (так как в этих ресурсах не выполняется гостевая ОС или приложения). Эти данные можно собирать с помощью [параметров диагностики ресурсов](./monitoring-overview-of-diagnostic-logs.md#diagnostic-settings).
 - **Данные мониторинга подписки Azure.** Данные об операциях и управлении подпиской Azure, а также данные о работоспособности и операциях самой платформы Azure. [Журнал действий](./monitoring-overview-activity-logs.md) содержит большинство данных мониторинга подписки, например данные об инцидентах, связанных с работоспособностью службы, и сведения о событиях аудита Azure Resource Manager. Эти данные можно собирать с помощью профиля журнала.
 - **Данные мониторинга клиента Azure.** Данные о работе служб Azure уровня клиента (например, Azure Active Directory). Например, сведения об аудите Azure Active Directory и входе в систему. Сбор этих данных можно настроить с помощью параметров диагностики ресурсов клиента.
@@ -54,7 +54,7 @@ Azure Monitor предоставляет единый конвейер для п
 
 ### <a name="azure-active-directory-data"></a>Данные Azure Active Directory
 
-Для отправки данных из журнала Azure Active Directory в пространство имен Центров событий можно настроить параметры диагностики ресурсов клиента в клиенте AAD. [Следуйте этому руководству](../active-directory/reports-monitoring/quickstart-azure-monitor-stream-logs-to-event-hub.md), чтобы настроить параметр диагностики ресурсов клиента.
+Для отправки данных из журнала Azure Active Directory в пространство имен Центров событий можно настроить параметры диагностики ресурсов клиента в клиенте AAD. [Следуйте этому руководству](../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md), чтобы настроить параметр диагностики ресурсов клиента.
 
 ## <a name="azure-subscription-monitoring-data"></a>Данные мониторинга подписки Azure
 
@@ -71,7 +71,7 @@ Azure Monitor предоставляет единый конвейер для п
 
 Ресурсы Azure создают два вида данных мониторинга:
 1. [Журналы диагностики ресурсов](./monitoring-overview-of-diagnostic-logs.md).
-2. [Метрики](monitoring-overview-metrics.md)
+2. [Метрики](../monitoring/monitoring-data-collection.md)
 
 Оба типа данных отправляются в концентратор событий с использованием параметра диагностики ресурсов. [Следуя этому руководству](./monitoring-stream-diagnostic-logs-to-event-hubs.md), задайте параметр диагностики в каждом ресурсе, для которого вы хотите собирать журналы.
 
@@ -113,10 +113,11 @@ Azure Monitor предоставляет единый конвейер для п
     1. [Надстройка Azure Monitor для Splunk](https://splunkbase.splunk.com/app/3534/) доступна в Splunkbase и является проектом с отрытым кодом. [Документация](https://github.com/Microsoft/AzureMonitorAddonForSplunk/wiki/Azure-Monitor-Addon-For-Splunk).
     2. Если вам не удалось установить надстройку в своем экземпляре Splunk (например, при использовании прокси-сервера или запуске в Splunk Cloud), можно передать эти события в сборщик событий HTTP Splunk с помощью [этой функции, активируемой при поступлении новых сообщений в концентратор событий](https://github.com/Microsoft/AzureFunctionforSplunkVS).
 * **SumoLogic**. Инструкции по настройке SumoLogic для использования данных из концентратора событий [доступны здесь](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure-Audit/02Collect-Logs-for-Azure-Audit-from-Event-Hub).
+* **ArcSight**. Интеллектуальный соединитель ArcSight для Центров событий Azure доступен в составе [коллекции интеллектуальных соединителей ArcSight](https://community.softwaregrp.com/t5/Discussions/Announcing-General-Availability-of-ArcSight-Smart-Connectors-7/m-p/1671852).
 * **Сервер системных журналов**. Если данные Azure Monitor нужно передавать потоком непосредственно на сервер системных журналов, см. [этот репозиторий Github](https://github.com/miguelangelopereira/azuremonitor2syslog/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Архивация журнала действий Azure](monitoring-archive-activity-log.md)
 * [Общие сведения о журнале действий Azure](monitoring-overview-activity-logs.md)
-* [Настройка объекта webhook для оповещений журнала действий Azure](insights-auditlog-to-webhook-email.md)
+* [Настройка объекта webhook для оповещений журнала действий Azure](monitor-alerts-unified-log-webhook.md)
 

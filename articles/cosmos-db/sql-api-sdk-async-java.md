@@ -8,14 +8,14 @@ ms.service: cosmos-db
 ms.component: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 09/05/2018
-ms.author: sngun
-ms.openlocfilehash: 57172927011532af9b14fa7ff09d6aad9bac1e92
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.date: 11/02/2018
+ms.author: moderakh
+ms.openlocfilehash: 80beeda607c83bc2a583c140779766952efcc568
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50417605"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51252876"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Async Java для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -52,6 +52,15 @@ ms.locfileid: "50417605"
 </table></br>
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name221221"></a><a name="2.2.1"/>2.2.1
+* Исправлена ошибка с NPE, которая возникает при записи пути файла retry.
+* Исправлена ошибка NPE, которая возникает при управлении конечными точками.
+* Обновлены уязвимые зависимости ([github #68](https://github.com/Azure/azure-cosmosdb-java/issues/68)).
+* Добавлена поддержка ведения сетевого журнала Netty для устранения неполадок.
+
+### <a name="a-name220220"></a><a name="2.2.0"/>2.2.0
+* Добавлена поддержка для операций записи в нескольких регионах.
 
 ### <a name="a-name210210"></a><a name="2.1.0"/>2.1.0
 * Добавлена поддержка прокси-сервера.
@@ -110,6 +119,8 @@ ms.locfileid: "50417605"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.2.1](#2.1.0) |2 ноября 2018 г.|--- |
+| [2.2.0](#2.2.1) |22 сентября 2018 г.|--- |
 | [2.1.0](#2.1.0) |5 сентября 2018 г.|--- |
 | [2.0.1](#2.0.1) |16 августа 2018 г.|--- |
 | [2.0.0](#2.0.0) |20 июня 2018 г.|--- |

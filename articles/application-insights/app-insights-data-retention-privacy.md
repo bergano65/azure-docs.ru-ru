@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/10/2018
 ms.author: mbullwin
-ms.openlocfilehash: 5ea026de228f3c93eed04770ad931d072387aa95
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 1994c714f691177b526b44e277fea705d18b4335
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49079078"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51245704"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Сбор и хранение данных в Application Insights
 
@@ -108,9 +108,9 @@ ms.locfileid: "49079078"
 * Нет. Ваше приложение может выполняться где угодно, будь то ваш собственный локальный узел или облако.
 
 ## <a name="how-secure-is-my-data"></a>Насколько защищены мои данные?
-Application Insights — это служба Azure. Политики безопасности описаны в [техническом документе Azure о безопасности, конфиденциальности и соответствии требованиям](http://go.microsoft.com/fwlink/?linkid=392408).
+Application Insights — это служба Azure. Политики безопасности описаны в [техническом документе Azure о безопасности, конфиденциальности и соответствии требованиям](https://go.microsoft.com/fwlink/?linkid=392408).
 
-Данные хранятся на серверах Microsoft Azure. Ограничения для учетных записей на портале Azure описаны в документе [Безопасность, конфиденциальность и соответствие нормативам Azure](http://go.microsoft.com/fwlink/?linkid=392408).
+Данные хранятся на серверах Microsoft Azure. Ограничения для учетных записей на портале Azure описаны в документе [Безопасность, конфиденциальность и соответствие нормативам Azure](https://go.microsoft.com/fwlink/?linkid=392408).
 
 Доступ к данным сотрудников Майкрософт ограничен. Доступ производится только с вашего разрешения и в случае, если это необходимо для поддержки использования вами Application Insights. 
 
@@ -173,7 +173,7 @@ TelemetryConfiguration.Active.TelemetryChannel = channel;
 
 По умолчанию `ServerTelemetryChannel` использует локальную папку данных приложения текущего пользователя `%localAppData%\Microsoft\ApplicationInsights` или временную папку `%TMP%`. (См. [пример реализации](https://github.com/Microsoft/ApplicationInsights-dotnet/blob/91e9c91fcea979b1eec4e31ba8e0fc683bf86802/src/ServerTelemetryChannel/Implementation/ApplicationFolderProvider.cs#L54-L84) здесь.) В среде Linux локальное хранилище отключено, если только не указана 	папка хранилища.
 
-Следующий фрагмент кода демонстрирует как установить `ServerTelemetryChannel.StorageFolder` в метод `ConfigureServices()` вашего класса `Startup.cs`:
+Следующий фрагмент кода демонстрирует, как установить `ServerTelemetryChannel.StorageFolder` в метод `ConfigureServices()`  класса  `Startup.cs` .
 
 ```
 services.AddSingleton(typeof(ITelemetryChannel), new ServerTelemetryChannel () {StorageFolder = "/tmp/myfolder"});
@@ -232,7 +232,7 @@ openssl s_client -connect bing.com:443 -tls1_2
 
 ## <a name="personal-data-stored-in-application-insights"></a>Персональные данные, хранимые в Application Insights
 
-Этот вопрос подробно рассмотрен в нашей [статье о персональных данных в Application Insights](app-insights-customer-data.md).
+Этот вопрос подробно рассмотрен в нашей [статье о персональных данных в Application Insights](../log-analytics/log-analytics-personal-data-mgmt.md).
 
 #### <a name="can-my-users-turn-off-application-insights"></a>Могут ли мои пользователи отключить Application Insights?
 Не напрямую. Мы не предоставляем параметр, с помощью которого пользователи могут отключить Application Insights.

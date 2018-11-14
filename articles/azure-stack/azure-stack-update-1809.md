@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/29/2018
+ms.date: 11/01/2018
 ms.author: sethm
 ms.reviewer: justini
-ms.openlocfilehash: 38a8cd35d123f58d6379ade4d900e86b36b416ec
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: cca9307fd849f6b8537cf7484d2e56e1a710295b
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50240143"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51257196"
 ---
 # <a name="azure-stack-1809-update"></a>Обновление 1809 для Azure Stack
 
@@ -39,7 +39,7 @@ ms.locfileid: "50240143"
 
 Это обновление включает в себя следующие улучшения для Azure Stack:
 
-- В этом выпуске интегрированные системы Azure Stack поддерживают конфигурации с 4–16 узлами. Можно использовать [инструмент планирования ресурсов Azure Stack](http://aka.ms/azstackcapacityplanner) для планирования емкости и выбора конфигурации Azure Stack.
+- В этом выпуске интегрированные системы Azure Stack поддерживают конфигурации с 4–16 узлами. Можно использовать [инструмент планирования ресурсов Azure Stack](https://aka.ms/azstackcapacityplanner) для планирования емкости и выбора конфигурации Azure Stack.
 
 - <!--  2712869   | IS  ASDK --> **Клиент syslog Azure Stack (общедоступная версия)**. Этот клиент обеспечивает переадресацию событий аудита, оповещений и журналов безопасности, относящихся к инфраструктуре Azure Stack, на сервер syslog или в ПО SIEM, размещенное за пределами Azure Stack. Теперь клиент syslog поддерживает настройку порта, на котором сервер syslog ожидает передачи данных.
 
@@ -154,7 +154,8 @@ ms.locfileid: "50240143"
 
 ### <a name="post-update-steps"></a>Действия после обновления
 
-*Действия после обновления до версии 1809 отсутствуют.*
+> [!Important]  
+> Подготовьтесь к развертыванию Azure Stack для хост-процесса для расширений, поддерживаемого в следующем пакете обновления. Подготовьте систему, следуя инструкциям из статьи [Подготовка хост-процесса для расширений для Azure Stack](azure-stack-extension-host-prepare.md).
 
 <!-- After the installation of this update, install any applicable Hotfixes. For more information view the following knowledge base articles, as well as our [Servicing Policy](azure-stack-servicing-policy.md).  
  - [Link to KB]()  

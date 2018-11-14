@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 06/18/2018
 ms.author: asmalser
-ms.openlocfilehash: 2ab2ac34132eff65e1d6c77794486bc8d9858b40
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 62dc796de430e7c5926f3231db29ef554f210142
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49408186"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51016783"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning-preview"></a>Руководство по настройке Workday для автоматической подготовки пользователей (предварительная версия)
 
@@ -365,7 +365,7 @@ Azure Active Directory поддерживает готовые соединит�
 | **UserID**    |  cn    |   |   Записывается только при создании |
 | **Join("@", [UserID], "contoso.com")**   | userPrincipalName     |     | Записывается только при создании 
 | **Replace(Mid(Replace(\[UserID\], , "(\[\\\\/\\\\\\\\\\\\\[\\\\\]\\\\:\\\\;\\\\|\\\\=\\\\,\\\\+\\\\\*\\\\?\\\\&lt;\\\\&gt;\])", , "", , ), 1, 20), , "([\\\\.)\*\$](file:///\\.)*$)", , "", , )**      |    sAMAccountName            |     |         Записывается только при создании |
-| **Switch(\[Active\], , "0", "True", "1",)** |  accountDisabled      |     | Создание и обновление |
+| **Switch(\[Active\], , "0", "True", "1", "False")** |  accountDisabled      |     | Создание и обновление |
 | **FirstName**   | givenName       |     |    Создание и обновление |
 | **LastName**   |   sn   |     |  Создание и обновление |
 | **PreferredNameData**  |  displayName |     |   Создание и обновление |

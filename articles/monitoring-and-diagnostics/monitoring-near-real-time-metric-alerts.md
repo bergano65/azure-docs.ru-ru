@@ -8,28 +8,21 @@ ms.topic: conceptual
 ms.date: 06/29/2018
 ms.author: snmuvva
 ms.component: alerts
-ms.openlocfilehash: 47dee26c84d96ebf5b0a421c2f10d18892d6d933
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 15ecbcafd3397b425b669a48f19bee6073b71149
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47227254"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51279795"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Поддерживаемые ресурсы для оповещений метрик в Azure Monitor
 
-Azure Monitor теперь поддерживает [новый тип оповещений о метриках](monitoring-overview-unified-alerts.md), который имеет ряд преимуществ перед [классическими оповещениями](insights-alerts-portal.md). Метрики доступны для [большого числа служб Azure](monitoring-supported-metrics.md). Список типов ресурсов, поддерживаемых новыми оповещениями, постоянно расширяется. В этой статье рассматриваются новые возможности.
+Azure Monitor теперь поддерживает новый тип оповещений о метриках, который имеет ряд преимуществ перед [классическими оповещениями](alert-metric-classic.md). Метрики доступны для [большого числа служб Azure](monitoring-supported-metrics.md). Список типов ресурсов, поддерживаемых новыми оповещениями, постоянно расширяется. В этой статье рассматриваются новые возможности.
 
-Новые оповещения на основе метрик можно применять для популярных журналов Log Analytics, извлекаемых в виде метрик из журналов. 
-- [Счетчики производительности](../log-analytics/log-analytics-data-sources-performance-counters.md) для компьютеров Windows и Linux.
-- [Записи пульсов для решения "Работоспособность агентов"](../operations-management-suite/oms-solution-agenthealth.md).
-- Записи [управления обновлениями](../operations-management-suite/oms-solution-update-management.md).
-- Журналы [данных событий](../log-analytics/log-analytics-data-sources-windows-events.md)
- 
-> [!NOTE]
-> Конкретная метрика и (или) измерение отображается, только если для него есть данные за выбранный период. Эти метрики доступны для клиентов с рабочими областями Azure Log Analytics в восточной части США, центрально-западной части США и в Западной Европе. Метрики из Log Analytics сейчас находятся в общедоступной предварительной версии и могут быть изменены.
+Новые оповещения на основе метрик можно применять для популярных журналов Log Analytics, извлекаемых в виде метрик. Дополнительные сведения см. в статье [Создание оповещений о метриках для журналов в Azure Monitor](monitoring-metric-alerts-logs.md).
 
 ## <a name="portal-powershell-cli-rest-support"></a>Поддержка портала, PowerShell, CLI и REST
-В настоящее время новые оповещения на основе метрик можно создать только на портале Azure, с помощью [REST API](https://docs.microsoft.com/rest/api/monitor/metricalerts/createorupdate) или [шаблонов диспетчера ресурсов](monitoring-create-metric-alerts-with-templates.md). Возможность настройки новых оповещений с помощью PowerShell и Azure CLI версии 2.0 и выше будет реализована в ближайшее время.
+В настоящее время новые оповещения на основе метрик можно создать только на портале Azure, с помощью [REST API](https://docs.microsoft.com/rest/api/monitor/metricalerts/) или [шаблонов Resource Manager](monitoring-create-metric-alerts-with-templates.md). Возможность настройки новых оповещений с помощью PowerShell и Azure CLI версии 2.0 и выше будет реализована в ближайшее время.
 
 ## <a name="metrics-and-dimensions-supported"></a>Поддерживаемые метрики и измерения
 Новые оповещения на основе метрик поддерживают оповещения для метрик, использующих измерения. Измерения можно использовать для фильтрации метрик до необходимого уровня. Все поддерживаемые метрики с применимыми измерениями можно изучить и визуализировать с помощью [обозревателя метрик Azure Monitor](monitoring-metric-charts.md).
@@ -65,7 +58,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.ServiceBus/namespaces     |  Yes       |[Служебная шина](monitoring-supported-metrics.md#microsoftservicebusnamespaces)|
 |Microsoft.Storage/storageAccounts     |    Yes     | [Учетные записи хранения](monitoring-supported-metrics.md#microsoftstoragestorageaccounts)|
 |Microsoft.Storage/storageAccounts/services     |     Yes    | [Службы BLOB-объектов](monitoring-supported-metrics.md#microsoftstoragestorageaccountsblobservices), [службы файлов](monitoring-supported-metrics.md#microsoftstoragestorageaccountsfileservices), [службы очередей](monitoring-supported-metrics.md#microsoftstoragestorageaccountsqueueservices) и [службы таблиц](monitoring-supported-metrics.md#microsoftstoragestorageaccountstableservices)|
-|Microsoft.StreamAnalytics/streamingjobs     |  Недоступно       | [Stream Analytics](monitoring-supported-metrics.md#microsoftstreamanalyticsstreamingjobs)|
+|Microsoft.StreamAnalytics/streamingjobs     |  Недоступно       | [Анализ потока](monitoring-supported-metrics.md#microsoftstreamanalyticsstreamingjobs)|
 | Microsoft.Web/serverfarms | Yes | [Планы службы приложений](monitoring-supported-metrics.md#microsoftwebserverfarms)  |
 | Microsoft.Web/sites | Yes | [Службы приложений](monitoring-supported-metrics.md#microsoftwebsites-excluding-functions) и [Функции](monitoring-supported-metrics.md#microsoftwebsites-functions)|
 | Microsoft.Web/sites/slots | Yes | [Слоты Службы приложений](monitoring-supported-metrics.md#microsoftwebsitesslots)|

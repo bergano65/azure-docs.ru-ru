@@ -7,22 +7,22 @@ author: basilhariri
 manager: timlt
 ms.service: event-hubs
 ms.topic: article
-ms.date: 08/16/2018
+ms.date: 11/07/2018
 ms.author: bahariri
-ms.openlocfilehash: b1a046fdb62926d32c05bab5a1616b250911865b
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 7f452fe9797e688dc05b644c003117461b4f8bb9
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49352579"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51277500"
 ---
-# <a name="azure-event-hubs-for-apache-kafka-preview"></a>Центры событий Azure для Apache Kafka (предварительная версия)
+# <a name="azure-event-hubs-for-apache-kafka"></a>Центры событий Azure для Apache Kafka 
 
 Центры событий предоставляют конечную точку Kafka, которую существующие приложения на основе Kafka могут использовать в качестве альтернативы запуска собственного кластера Kafka. Центры событий поддерживают [Apache Kafka 1.0](https://kafka.apache.org/documentation/) и более новые версии протокола и работают с имеющимися приложениями Kafka, в том числе с MirrorMaker. 
 
 ## <a name="what-does-event-hubs-for-kafka-provide"></a>Возможности, предоставленные Центрами событий для Kafka
 
-Центры событий для компонента Kafka предоставляют заголовок протокола на основе концентраторов событий Azure, который совместим по двоичным файлам с Kafka 1.0 и более поздними версиями, для чтения из разделов Kafka и записи в них. Вы можете начать использовать конечную точку Kafka из своих приложений без изменения кода, но с минимальным изменением конфигурации. Чтобы указать конечную точку Kafka, предоставленную концентратором событий, вместо указания кластера Kafka можно обновить строку подключения в конфигурации. Затем вы можете начать потоковую передачу событий из приложений, использующих в Центрах событий протокол Kafka. 
+Центры событий для компонента Kafka предоставляют заголовок протокола на основе концентраторов событий Azure, который совместим по двоичным файлам с Kafka 1.0 и более поздними версиями, для чтения из разделов Kafka и записи в них. Вы можете начать использовать конечную точку Kafka из своих приложений без изменения кода, но с минимальным изменением конфигурации. Чтобы указать конечную точку Kafka, предоставленную концентратором событий, вместо указания кластера Kafka можно обновить строку подключения в конфигурации. Затем вы можете начать потоковую передачу событий из приложений, использующих в Центрах событий протокол Kafka. При такой интеграции также поддерживаются такие платформы, как [Kafka Connect](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/connect), которая сейчас доступна в предварительной версии. 
 
 По существу, Kafka и Центры событий практически идентичны: они являются секционированными журналами, созданными для потоковой передачи данных. В следующей таблице показано составление понятий Kafka и Центров событий.
 
@@ -50,9 +50,9 @@ ms.locfileid: "49352579"
 
 Центры событий для компонента Kafka позволяют использовать один протокол для записи, а другой для чтения. В этом случае текущие производители Kafka могут продолжить публикацию с помощью Kafka, а вы можете добавлять средства чтения с помощью Центров событий, например Azure Stream Analytics или Функции Azure. Кроме того, функции Центров событий, такие как [Захват](event-hubs-capture-overview.md) и [Геоизбыточное аварийное восстановление](event-hubs-geo-dr.md), также работают с концентраторами событий для компонента Kafka.
 
-## <a name="features-that-are-not-supported-in-the-preview"></a>Функции, которые не поддерживаются в предварительной версии
+## <a name="features-that-are-not-yet-supported"></a>Еще не реализованные функции 
 
-В общедоступной предварительной версии "Центры событий для интеграции Kafka" не поддерживаются следующие функции Kafka:
+Ниже приведен список функций Kafka, которые еще не поддерживаются:
 
 *   идемпотентный производитель;
 *   транзакция:
@@ -61,18 +61,20 @@ ms.locfileid: "49352579"
 *   сжатие журнала;
 *   добавлений секций в существующий раздел;
 *   поддержка API HTTP Kafka;
-*   Kafka Connect;
 *   потоки Kafka.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 В этой статье приведены ознакомительные сведения о Центрах событий для компонента Kafka. Дополнительные сведения см. по следующим ссылкам:
 
-* [Создание концентраторов событий с поддержкой Kafka](event-hubs-create-kafka-enabled.md)
-* [Потоковая передача данных в Центры событий из приложений Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md)
-* [Migrating to Azure Event Hubs for Apache Kafka Ecosystems](https://github.com/Azure/azure-event-hubs-for-kafka) (Миграция в Центры событий Azure для экосистем Apache Kafka)
-* Начало работы с помощью [учебника по Центрам событий](event-hubs-dotnet-standard-getstarted-send.md)
-* [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
+- [Создание концентраторов событий с поддержкой Kafka](event-hubs-create-kafka-enabled.md)
+- [Потоковая передача данных в Центры событий из приложений Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md)
+- [Использование Apache Kafka MirrorMaker с Центрами событий](event-hubs-kafka-mirror-maker-tutorial.md)
+- [Connect your Apache Spark application with Kafka-enabled Azure Event Hubs](event-hubs-kafka-spark-tutorial.md) (Подключение приложения Apache Spark к Центрам событий Azure с поддержкой Kafka)
+- [Использование Apache Flink с Центрами событий Azure для Apache Kafka](event-hubs-kafka-flink-tutorial.md)
+- [Интеграция поддержки Apache Kafka Connect в Центрах событий Azure (предварительная версия)](event-hubs-kafka-connect-tutorial.md)
+- [Использование Akka Streams с Центрами событий для Apache Kafka](event-hubs-kafka-akka-streams-tutorial.md)
+- [Примеры в GitHub](https://github.com/Azure/azure-event-hubs-for-kafka)
 
  
  

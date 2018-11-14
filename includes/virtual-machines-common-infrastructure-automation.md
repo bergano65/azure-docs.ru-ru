@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: bc273b8979b29057163e02dc9605e631aef173f1
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 28c943b2588270af823c0712d4e510a4f018da3e
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50226767"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981693"
 ---
 # <a name="use-infrastructure-automation-tools-with-virtual-machines-in-azure"></a>Использование средств автоматизации инфраструктуры на виртуальных машинах в Azure
 Средства автоматизации, как правило, позволяют быстро и согласованно создавать виртуальные машины Azure в нужном масштабе, а также управлять ими. Существует множество средств и решений, которые помогают полностью автоматизировать жизненный цикл развертывания и администрирования инфраструктуры Azure. В этой статье приведены сведения о некоторых средствах автоматизации инфраструктуры Azure. Обычно их используют с такими целями:
@@ -129,9 +129,9 @@ ms.locfileid: "50226767"
 ## <a name="azure-devops-services"></a>Azure DevOps Services
 [Azure DevOps Services](https://www.visualstudio.com/team-services/) — это набор средств, позволяющих отслеживать код и предоставлять к нему общий доступ, использовать автоматизированные сборки и создавать конвейеры непрерывной интеграции и разработки (CI/CD). Azure DevOps Services интегрируется с Visual Studio и другими редакторами, что упрощает его использование. Кроме того, этот набор средств позволяет создавать и настраивать виртуальные машины Azure, а затем развертывать код на них.
 
-Вы узнаете, как выполнять следующие задачи:
+См. также:
 
-- [Создание конвейера для непрерывной интеграции с помощью Azure DevOps Services](../articles/virtual-machines/windows/tutorial-vsts-iis-cicd.md).
+- [Azure DevOps Services](https://docs.microsoft.com/azure/devops/user-guide/index?view=vsts).
 
 
 ## <a name="jenkins"></a>Jenkins

@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.component: authentication
 ms.topic: article
-ms.date: 10/30/2018
+ms.date: 11/02/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: jsimmons
-ms.openlocfilehash: 6a61fdeaf1a751ab4001257335abdcbd6fac9cbf
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 92c8de0961f64eea8eef830ad99c7baa268099d9
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50739470"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51007592"
 ---
 # <a name="preview-azure-ad-password-protection-operational-procedures"></a>Предварительная версия: операционные процедуры службы защиты паролем Azure AD
 
@@ -67,7 +67,7 @@ ms.locfileid: "50739470"
 
 С помощью командлета `Get-AzureADPasswordProtectionSummaryReport` можно создать сводное представление о действиях. Пример выходных данных этого командлета выглядит следующим образом:
 
-```
+```PowerShell
 Get-AzureADPasswordProtectionSummaryReport -DomainController bplrootdc2
 DomainController                : bplrootdc2
 PasswordChangesValidated        : 6677
@@ -83,10 +83,26 @@ PasswordSetErrors               : 1
 Область, охватываемую отчетом этого командлета, можно указать с помощью параметра -Forest, -Domain или -DomainController. Если этот параметр не указан, используется параметр -Forest.
 
 > [!NOTE]
-> Для выполнения этого командлета на каждом контроллере домена запускается сеанс PowerShell. Для успешного выполнения на каждом контроллере домена необходимо включить поддержку удаленных сеансов PowerShell, а клиент должен иметь достаточные привилегии. Чтобы получить дополнительные сведения о требованиях к удаленным сеансам PowerShell, выполните команду Get-Help about_Remote_Troubleshooting в окне PowerShell.
+> Для выполнения этого командлета на каждом контроллере домена запускается сеанс PowerShell. Для успешного выполнения на каждом контроллере домена необходимо включить поддержку удаленных сеансов PowerShell, а клиент должен иметь достаточные привилегии. Чтобы получить дополнительные сведения о требованиях к удаленным сеансам PowerShell, выполните командлет Get-Help about_Remote_Troubleshooting в окне PowerShell.
 
 > [!NOTE]
 > Этот командлет удаленно запрашивает журнал событий администратора для каждого службы агента контроллера домена. Если журналы событий содержат большое количество событий, выполнение командлета может занять много времени. Кроме того, пакетные сетевые запросы для передачи больших наборов данных могут повлиять на производительность контроллера домена. Поэтому данный командлет следует осмотрительно использовать в рабочих средах.
+
+## <a name="dc-agent-discovery"></a>Обнаружение агента контроллера домена
+
+Командлет `Get-AzureADPasswordProtectionDCAgent` может использоваться для отображения базовой информации о различных агентах контроллера домена, работающих в домене или лесу. Эта информация извлекается из объектов serviceConnectionPoint, зарегистрированных запущенными службами агента контроллера домена. Пример выходных данных этого командлета выглядит следующим образом:
+
+```PowerShell
+Get-AzureADPasswordProtectionDCAgent
+ServerFQDN            : bplChildDC2.bplchild.bplRootDomain.com
+Domain                : bplchild.bplRootDomain.com
+Forest                : bplRootDomain.com
+Heartbeat             : 2/16/2018 8:35:01 AM
+```
+
+Различные свойства обновляются каждой службой агента контроллера домена приблизительно каждый час. Данные по-прежнему зависят от задержки репликации Active Directory.
+
+На объем запроса командлета может влиять использование параметров -Forest или -Domain.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

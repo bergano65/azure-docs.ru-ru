@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/09/2018
 ms.author: shtabriz
 ms.component: alerts
-ms.openlocfilehash: 221434a391f963a764ef36b9533cc8cfd0e16c01
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: a86a7188c488a634de7b0ac71657bea0105381c7
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43123454"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50961897"
 ---
 # <a name="create-activity-log-alerts-on-service-notifications"></a>Создание оповещений журнала действий для уведомлений службы
 ## <a name="overview"></a>Обзор
@@ -36,7 +36,7 @@ ms.locfileid: "43123454"
 
 Дополнительные сведения о группах действий см. в разделе [Создание групп действий и управление ими на портале Azure](monitoring-action-groups.md).
 
-Дополнительные сведения о том, как настроить уведомления о работоспособности службы с помощью шаблонов Resource Manager Azure, см. в статье [Создание оповещения журнала действий с помощью шаблона Resource Manager](monitoring-create-activity-log-alerts-with-resource-manager-template.md).
+Дополнительные сведения о том, как настроить уведомления о работоспособности службы с помощью шаблонов Resource Manager Azure, см. в статье [Создание оповещения журнала действий с помощью шаблона Resource Manager](alert-activity-log.md).
 
 ## <a name="create-an-alert-on-a-service-health-notification-for-a-new-action-group-by-using-the-azure-portal"></a>Создание оповещения для уведомления о работоспособности службы для новой группы действий с помощью портала Azure
 1. На [портале](https://portal.azure.com)выберите **Работоспособность службы**.

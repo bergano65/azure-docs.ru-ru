@@ -8,12 +8,12 @@ ms.date: 09/13/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: a782a7341e53420dbc31fefc86007951df967a9e
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: af1a14f87eaf20a7f49a8fc6112c4f3c7595f6bd
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46307983"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50914382"
 ---
 # <a name="azure-iot-edge-certificate-usage-detail"></a>Сведения об использовании сертификатов Azure IoT Edge
 
@@ -78,9 +78,9 @@ ms.locfileid: "46307983"
 
 ## <a name="devtest-implications"></a>Применение в среде разработки или тестирования
 
-Чтобы упростить разработку и тестирование, корпорация Майкрософт предоставляет набор [вспомогательных скриптов](https://github.com/Azure/azure-iot-sdk-c/tree/master/tools/CACertificates) для создания сертификатов, не предназначенных для рабочей среды. Они подходят для IoT Edge в сценарии прозрачного шлюза.
+Чтобы упростить разработку и тестирование, корпорация Майкрософт предоставляет набор [вспомогательных скриптов](https://github.com/Azure/azure-iot-sdk-c/tree/master/tools/CACertificates) для создания сертификатов, не предназначенных для рабочей среды. Они подходят для IoT Edge в сценарии прозрачного шлюза. Чтобы узнать, как работают эти сценарии, ознакомьтесь с примерами в статье [Configure an IoT Edge device to act as a transparent gateway](how-to-create-transparent-gateway.md) (Настройка устройства IoT Edge для использования в качестве прозрачного шлюза).
 
-Эти скрипты создают сертификаты с соблюдением структуры цепочки сертификатов, описанной в этой статье. Для [Linux](how-to-create-transparent-gateway-linux.md#certificate-creation) или [Windows](how-to-create-transparent-gateway-windows.md#certificate-creation). Следующие команды создают корневой сертификат ЦС и один промежуточный сертификат ЦС:
+Эти скрипты создают сертификаты с соблюдением структуры цепочки сертификатов, описанной в этой статье. Следующие команды создают корневой сертификат ЦС и один промежуточный сертификат ЦС:
 
 ```bash
 ./certGen.sh create_root_and_intermediate 
@@ -124,6 +124,4 @@ New-CACertsEdgeDevice "<gateway device name>"
 
 [Общие сведения о модулях IoT Edge Azure](iot-edge-modules.md)
 
-[Использование устройства IoT Edge в качестве прозрачного шлюза (Linux)](how-to-create-transparent-gateway-linux.md)
-
-[Использование устройства IoT Edge в качестве прозрачного шлюза (Windows)](how-to-create-transparent-gateway-windows.md)
+[Настройка устройства IoT Edge для использования в качестве прозрачного шлюза](how-to-create-transparent-gateway.md)

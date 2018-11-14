@@ -11,15 +11,15 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 10/19/2018
-ms.openlocfilehash: 053dbc27908b14e70fa2c7502ec7c4e3ae652bf5
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.date: 11/01/2018
+ms.openlocfilehash: 913e374e51b968650b14d3f6563f64c217b76ad0
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49469764"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50913817"
 ---
-# <a name="import-a-bacpac-file-to-a-new-azure-sql-database"></a>Импорт BACPAC-файла в новую базу данных SQL Azure
+# <a name="quickstart-import-a-bacpac-file-to-a-new-azure-sql-database"></a>Краткое руководство по импорту BACPAC-файла в новую базу данных SQL Azure
 
 При необходимости импортировать базу данных из архива или при миграции с другой платформы можно импортировать схему и данные базы данных из [BACPAC](https://msdn.microsoft.com/library/ee210546.aspx#Anchor_4)-файла. BACPAC-файл — это ZIP-файл с расширением BACPAC, содержащий метаданные и данные из базы данных SQL Server. BACPAC-файл можно импортировать из хранилища BLOB-объектов Azure (только уровня "Стандартный") или из локального хранилища. Чтобы обеспечить максимальную скорость импорта, рекомендуем указать более высокий уровень служб и объем вычислительных ресурсов, например P6, и затем, после успешного импорта, понизить его до необходимой емкости. Кроме того, уровень совместимости базы данных после импорта основан на уровне совместимости базы данных-источника.
 

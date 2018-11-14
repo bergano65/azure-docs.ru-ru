@@ -1,6 +1,6 @@
 ---
-title: Работа с управляемой клиентской библиотекой мобильных приложений службы приложений (Windows) | Документация Майкрософт
-description: Узнайте, как использовать клиент .NET для мобильных приложений службы приложений Azure с приложениями Windows и Xamarin.
+title: Работа с управляемой клиентской библиотекой мобильных приложений службы приложений | Документация Майкрософт
+description: Узнайте, как использовать клиентскую библиотеку .NET для мобильных приложений службы приложений Azure с приложениями Windows и Xamarin.
 services: app-service\mobile
 documentationcenter: ''
 author: conceptdev
@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 09/24/2018
 ms.author: crdun
-ms.openlocfilehash: 5e399a237fe533b46997365c16b75dce14149dec
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 4709d3afce890941689396200347b3212d85159d
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47064328"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51280866"
 ---
 # <a name="how-to-use-the-managed-client-for-azure-mobile-apps"></a>Использование управляемого клиента для мобильных приложений Azure
 [!INCLUDE [app-service-mobile-selector-client-library](../../includes/app-service-mobile-selector-client-library.md)]
@@ -47,7 +47,7 @@ ms.locfileid: "47064328"
 
 Соответствующий типизированный тип на стороне клиента является приведенным ниже классом в C#.
 
-```
+```csharp
 public class TodoItem
 {
     public string Id { get; set; }
@@ -72,7 +72,7 @@ public class TodoItem
 
 В своем основном файле действий не забудьте добавить следующий оператор **using** .
 
-```
+```csharp
 using Microsoft.WindowsAzure.MobileServices;
 ```
 
@@ -85,7 +85,7 @@ using Microsoft.WindowsAzure.MobileServices;
 ## <a name="create-client"></a>Создание клиента мобильных приложений
 Следующий код создает объект [MobileServiceClient][12], используемый для доступа к серверной части мобильного приложения.
 
-```
+```csharp
 var client = new MobileServiceClient("MOBILE_APP_URL");
 ```
 
@@ -112,13 +112,13 @@ var client = new MobileServiceClient("MOBILE_APP_URL");
 ### <a name="instantiating"></a>Практическое руководство. Создание ссылки на таблицу
 Весь код, который открывает или изменяет данные в таблице серверной части, вызывает функции для объекта `MobileServiceTable` . Получите ссылку на таблицу, вызвав метод [GetTable] , как показано ниже.
 
-```
+```csharp
 IMobileServiceTable<TodoItem> todoTable = client.GetTable<TodoItem>();
 ```
 
 Возвращаемый объект использует типизированную модель сериализации. Также поддерживается нетипизированная модель сериализации. Следующий пример [создает ссылку на нетипизированную таблицу].
 
-```
+```csharp
 // Get an untyped table reference
 IMobileServiceTable untypedTodoTable = client.GetTable("TodoItem");
 ```
@@ -140,7 +140,7 @@ IMobileServiceTable untypedTodoTable = client.GetTable("TodoItem");
 ### <a name="filtering"></a>Практическое руководство. Фильтрация возвращаемых данных
 Следующий код иллюстрирует способ фильтрации данных путем включения предложения `Where` в запрос. Он возвращает все элементы таблицы `todoTable`, свойство `Complete` которых равно `false`. Функция [Where] применяет предикат фильтрации строк для запросов к таблице.
 
-```
+```csharp
 // This query filters out completed TodoItems and items without a timestamp.
 List<TodoItem> items = await todoTable
     .Where(todoItem => todoItem.Complete == false)
@@ -149,13 +149,13 @@ List<TodoItem> items = await todoTable
 
 Универсальный код ресурса (URI) запроса, отправленного в серверную часть, можно просмотреть с помощью программы проверки сообщений, такой как средства разработчика браузера или [Fiddler]. Если взглянуть на универсальный код ресурса (URI) запроса, можно отметить, что сама строка запроса изменена.
 
-```
+```csharp
 GET /tables/todoitem?$filter=(complete+eq+false) HTTP/1.1
 ```
 
 Этот запрос OData с помощью пакета SDK для сервера преобразуется в SQL-запрос.
 
-```
+```csharp
 SELECT *
     FROM TodoItem
     WHERE ISNULL(complete, 0) = 0
@@ -163,7 +163,7 @@ SELECT *
 
 Функция, которая передается в метод `Where` , может включать в себя произвольное число условий.
 
-```
+```csharp
 // This query filters out completed TodoItems where Text isn't null
 List<TodoItem> items = await todoTable
     .Where(todoItem => todoItem.Complete == false && todoItem.Text != null)
@@ -172,7 +172,7 @@ List<TodoItem> items = await todoTable
 
 Этот пример должен быть преобразован в SQL-запрос с помощью пакета SDK для сервера.
 
-```
+```csharp
 SELECT *
     FROM TodoItem
     WHERE ISNULL(complete, 0) = 0
@@ -181,7 +181,7 @@ SELECT *
 
 Этот запрос также можно разбить на несколько предложений:
 
-```
+```csharp
 List<TodoItem> items = await todoTable
     .Where(todoItem => todoItem.Complete == false)
     .Where(todoItem => todoItem.Text != null)
@@ -205,7 +205,7 @@ List<TodoItem> items = await todoTable
 ### <a name="sorting"></a>Практическое руководство. Сортировка возвращаемых данных
 В следующем коде показано, как сортировать данные, включая в запрос функцию [OrderBy] или [OrderByDescending]. Он возвращает элементы таблицы `todoTable`, упорядочивая их по возрастанию значений в поле `Text`.
 
-```
+```csharp
 // Sort items in ascending order by Text field
 MobileServiceTableQuery<TodoItem> query = todoTable
                 .OrderBy(todoItem => todoItem.Text)
@@ -220,7 +220,7 @@ List<TodoItem> items = await query.ToListAsync();
 ### <a name="paging"></a>Практическое руководство. Возврат данных на страницах
 По умолчанию внутренний сервер возвращает только первые 50 строк. Число возвращенных строк можно увеличить путем вызова метода [Take] . Чтобы запросить определенную "страницу" общего набора данных, возвращенного запросом, используйте метод `Take` вместе с методом [Skip] . При выполнении следующего запроса будут возвращены три главных элемента в таблице.
 
-```
+```csharp
 // Define a filtered query that returns the top 3 items.
 MobileServiceTableQuery<TodoItem> query = todoTable.Take(3);
 List<TodoItem> items = await query.ToListAsync();
@@ -228,7 +228,7 @@ List<TodoItem> items = await query.ToListAsync();
 
 Следующий измененный запрос пропускает первые три результата и возвращает следующие три. Данный запрос фактически выдает вторую "страницу" данных, где размер страницы составляет три элемента.
 
-```
+```csharp
 // Define a filtered query that skips the top 3 items and returns the next 3 items.
 MobileServiceTableQuery<TodoItem> query = todoTable.Skip(3).Take(3);
 List<TodoItem> items = await query.ToListAsync();
@@ -236,7 +236,7 @@ List<TodoItem> items = await query.ToListAsync();
 
 Метод [IncludeTotalCount] запрашивает общее количество *всех* записей, которые должны быть возвращены, без учета указанных предложений paging/limit.
 
-```
+```csharp
 query = query.IncludeTotalCount();
 ```
 
@@ -251,7 +251,7 @@ query = query.IncludeTotalCount();
 ### <a name="selecting"></a>Практическое руководство. Выбор определенных столбцов
 Набор свойств, который войдет в результаты, можно задать, добавив в запрос предложение [Select] . Например, в следующем коде показано, как выбрать только одно поле, а также способы выбора и форматирования нескольких полей:
 
-```
+```csharp
 // Select one field -- just the Text
 MobileServiceTableQuery<TodoItem> query = todoTable
                 .Select(todoItem => todoItem.Text);
@@ -267,7 +267,7 @@ List<string> items = await query.ToListAsync();
 
 Все описанные функции являются аддитивными, поэтому мы можем создавать из них цепочки. Каждый последующий цепной вызов все больше влияет на запрос. Еще один пример:
 
-```
+```csharp
 MobileServiceTableQuery<TodoItem> query = todoTable
                 .Where(todoItem => todoItem.Complete == false)
                 .Select(todoItem => todoItem.Text)
@@ -279,7 +279,7 @@ List<string> items = await query.ToListAsync();
 ### <a name="lookingup"></a>Практическое руководство. Поиск данных по идентификатору
 Функцию [LookupAsync] можно использовать для поиска в базе данных объектов с определенным идентификатором.
 
-```
+```csharp
 // This query filters out the item with the ID of 37BBF396-11F0-4B39-85C8-B319C729AF6D
 TodoItem item = await todoTable.LookupAsync("37BBF396-11F0-4B39-85C8-B319C729AF6D");
 ```
@@ -287,7 +287,7 @@ TodoItem item = await todoTable.LookupAsync("37BBF396-11F0-4B39-85C8-B319C729AF6
 ### <a name="untypedqueries"></a>Практическое руководство. Выполнение нетипизированных запросов
 При выполнении запроса с помощью объекта нетипизированной таблицы необходимо явно указать строку запроса OData, вызвав функцию [ReadAsync], как показано в следующем примере.
 
-```
+```csharp
 // Lookup untyped data using OData
 JToken untypedItems = await untypedTodoTable.ReadAsync("$filter=complete eq 0&$orderby=text");
 ```
@@ -297,7 +297,7 @@ JToken untypedItems = await untypedTodoTable.ReadAsync("$filter=complete eq 0&$o
 ### <a name="inserting"></a>Практическое руководство. Вставка данных в серверную часть мобильных приложений
 Все типы клиентов должны содержать член с именем **Id**(идентификатор), который по умолчанию является строкой. Этот **идентификатор** необходим для выполнения операций CRUD и автономной синхронизации. В следующем коде показано, как вставить новые строки в таблицу с помощью метода [InsertAsync] . Параметр содержит данные, которые вставляются в качестве объекта .NET.
 
-```
+```csharp
 await todoTable.InsertAsync(todoItem);
 ```
 
@@ -306,7 +306,7 @@ await todoTable.InsertAsync(todoItem);
 
 Для вставки нетипизированных данных можно использовать Json.NET.
 
-```
+```csharp
 JObject jo = new JObject();
 jo.Add("Text", "Hello World");
 jo.Add("Complete", false);
@@ -315,7 +315,7 @@ var inserted = await table.InsertAsync(jo);
 
 Вот пример использования электронного адреса в качестве уникального строкового идентификатора.
 
-```
+```csharp
 JObject jo = new JObject();
 jo.Add("id", "myemail@emaildomain.com");
 jo.Add("Text", "Hello World");
@@ -332,7 +332,7 @@ var inserted = await table.InsertAsync(jo);
 
 Если для вставленной записи не задано значение строкового идентификатора, внутренний сервер мобильных приложений создает уникальное значение для идентификатора. Для создания собственных значений идентификатора в клиенте или серверной части можно использовать метод [Guid.NewGuid] .
 
-```
+```csharp
 JObject jo = new JObject();
 jo.Add("id", Guid.NewGuid().ToString("N"));
 ```
@@ -340,13 +340,13 @@ jo.Add("id", Guid.NewGuid().ToString("N"));
 ### <a name="modifying"></a>Практическое руководство. Изменение данных в серверной части мобильных приложений
 Следующий код показывает, как обновить существующую запись с тем же идентификатором с помощью метода [UpdateAsync] . Параметр содержит данные, которые обновляются в качестве объекта .NET.
 
-```
+```csharp
 await todoTable.UpdateAsync(todoItem);
 ```
 
 Для обновления нетипизированных данных можно использовать [Json.NET] следующим образом.
 
-```
+```csharp
 JObject jo = new JObject();
 jo.Add("id", "37BBF396-11F0-4B39-85C8-B319C729AF6D");
 jo.Add("Text", "Hello World");
@@ -359,13 +359,13 @@ var inserted = await table.UpdateAsync(jo);
 ### <a name="deleting"></a>Практическое руководство. Удаление данных в серверной части мобильных приложений
 Следующий код показывает, как удалить существующий экземпляр с помощью метода [DeleteAsync] . Экземпляр идентифицируется по полю `id`, заданному в свойстве `todoItem`.
 
-```
+```csharp
 await todoTable.DeleteAsync(todoItem);
 ```
 
 Для удаления нетипизированных данных можно использовать Json.NET следующим образом:
 
-```
+```csharp
 JObject jo = new JObject();
 jo.Add("id", "37BBF396-11F0-4B39-85C8-B319C729AF6D");
 await table.DeleteAsync(jo);
@@ -380,7 +380,7 @@ await table.DeleteAsync(jo);
 
 Чтобы включить оптимистичный параллелизм, определите столбец в классе таблицы для системного свойства `version` . Например: 
 
-```
+```csharp
 public class TodoItem
 {
     public string Id { get; set; }
@@ -399,14 +399,14 @@ public class TodoItem
 
 Приложения, в которых используются нетипизированные таблицы, включают оптимистичный параллелизм, устанавливая флаг `Version` в таблице `SystemProperties` следующим образом.
 
-```
+```csharp
 //Enable optimistic concurrency by retrieving version
 todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 ```
 
 Наряду с включением оптимистичного параллелизма при вызове [UpdateAsync] также необходимо перехватывать исключение `MobileServicePreconditionFailedException<T>` в коде.  Разрешите конфликт, применив правильный `version` к обновленной записи и вызвав [UpdateAsync] с разрешенной записью. В следующем коде показано, как разрешить конфликт записи после его обнаружения:
 
-```
+```csharp
 private async void UpdateToDoItem(TodoItem item)
 {
     MobileServicePreconditionFailedException<TodoItem> exception = null;
@@ -467,7 +467,7 @@ private async Task ResolveConflict(TodoItem localItem, TodoItem serverItem)
 ### <a name="binding"></a>Практическое руководство. Привязка данных мобильных приложений к пользовательскому интерфейсу Windows
 В этом разделе показано, как отображать возвращенные объекты данных с использованием элементов пользовательского интерфейса в приложении Windows.  Следующий пример кода осуществляет привязку к источнику списка с помощью запроса незавершенных элементов. При использовании [MobileServiceCollection] создается коллекция привязок, поддерживающих мобильные приложения.
 
-```
+```csharp
 // This query filters out completed TodoItems.
 MobileServiceCollection<TodoItem, TodoItem> items = await todoTable
     .Where(todoItem => todoItem.Complete == false)
@@ -483,7 +483,7 @@ lb.ItemsSource = items;
 
 Некоторые элементы управления в управляемой среде выполнения Windows поддерживают интерфейс [ISupportIncrementalLoading]. Этот интерфейс позволяет элементам управления запрашивать дополнительные данные во время прокрутки, выполняемой пользователем. Предусмотрена встроенная поддержка этого интерфейса для универсальных приложений Windows через коллекцию [MobileServiceIncrementalLoadingCollection], которая автоматически обрабатывает вызовы от элементов управления. Используйте `MobileServiceIncrementalLoadingCollection` в приложениях для Windows, как показано ниже.
 
-```
+```csharp
 MobileServiceIncrementalLoadingCollection<TodoItem,TodoItem> items;
 items = todoTable.Where(todoItem => todoItem.Complete == false).ToIncrementalLoadingCollection();
 
@@ -493,7 +493,7 @@ lb.ItemsSource = items;
 
 Чтобы использовать новую коллекцию в приложениях для Windows Phone 8 и Silverlight, используйте методы расширения `ToCollection` в интерфейсах `IMobileServiceTableQuery<T>` и `IMobileServiceTable<T>`. Для загрузки данных вызовите `LoadMoreItemsAsync()`.
 
-```
+```csharp
 MobileServiceCollection<TodoItem, TodoItem> items = todoTable.Where(todoItem => todoItem.Complete==false).ToCollection();
 await items.LoadMoreItemsAsync();
 ```
@@ -505,7 +505,7 @@ await items.LoadMoreItemsAsync();
 ### <a name="pagesize"></a>Изменение размера страницы
 По умолчанию мобильные приложения Azure выдают не больше 50 элементов на запрос.  Можно изменить параметры разбиения по страницам, увеличив максимальный размер страницы для клиента и сервера.  Чтобы увеличить размер запрошенной страницы, при использовании `PullAsync()` укажите `PullOptions`.
 
-```
+```csharp
 PullOptions pullOptions = new PullOptions
     {
         MaxPageSize = 100
@@ -528,7 +528,7 @@ PullOptions pullOptions = new PullOptions
 
 Перед созданием ссылки на таблицу необходимо подготовить локальное хранилище.
 
-```
+```csharp
 var store = new MobileServiceSQLiteStore(Constants.OfflineDbPath);
 store.DefineTable<TodoItem>();
 
@@ -543,7 +543,7 @@ await this.client.SyncContext.InitializeAsync(store);
 
 Ссылку на таблицу можно получить с помощью метода `GetSyncTable<>`.
 
-```
+```csharp
 var table = client.GetSyncTable<TodoItem>();
 ```
 
@@ -552,7 +552,7 @@ var table = client.GetSyncTable<TodoItem>();
 ### <a name="syncoffline"></a>Синхронизация автономной таблицы
 По умолчанию автономные таблицы не синхронизируются с серверной частью.  Синхронизация происходит в два этапа.  Можно передавать изменения отдельно от скачивания новых элементов.  Ниже приведен типичный метод синхронизации.
 
-```
+```csharp
 public async Task SyncAsync()
 {
     ReadOnlyCollection<MobileServiceTableOperationError> syncErrors = null;
@@ -646,7 +646,6 @@ InvokeApiAsync можно использовать для вызова любо�
 
 * [Библиотека проверки подлинности Active Directory](#adal)
 * [Facebook или Google](#client-facebook)
-* [Пакет Live SDK](#client-livesdk)
 
 #### <a name="adal"></a>Аутентификация пользователей с помощью библиотеки аутентификации Active Directory
 Вы можете использовать библиотеку проверки подлинности Active Directory (ADAL) для управления входом пользователей из клиента с помощью Azure Active Directory.
@@ -664,7 +663,7 @@ InvokeApiAsync можно использовать для вызова любо�
 
      **Windows:**
 
-    ```
+    ```csharp
     private MobileServiceUser user;
     private async Task AuthenticateAsync()
     {
@@ -700,7 +699,7 @@ InvokeApiAsync можно использовать для вызова любо�
 
      **Xamarin.iOS**
 
-    ```
+    ```csharp
     private MobileServiceUser user;
     private async Task AuthenticateAsync(UIViewController view)
     {
@@ -728,7 +727,7 @@ InvokeApiAsync можно использовать для вызова любо�
 
      **Xamarin.Android**
 
-    ```
+    ```csharp
     private MobileServiceUser user;
     private async Task AuthenticateAsync()
     {
@@ -766,7 +765,7 @@ InvokeApiAsync можно использовать для вызова любо�
 #### <a name="client-facebook"></a>Единый вход с помощью маркера Google или Facebook
 В этом фрагменте показан пример использования клиентского потока для Google или Facebook.
 
-```
+```csharp
 var token = new JObject();
 // Replace access_token_value with actual value of your access token obtained
 // using the Facebook or Google SDK.
@@ -797,66 +796,10 @@ private async Task AuthenticateAsync()
 }
 ```
 
-#### <a name="client-livesdk"></a>Единый вход с использованием учетной записи Майкрософт и пакета Live SDK
-Чтобы аутентифицировать пользователей, необходимо зарегистрировать свое приложение в центре разработчиков учетных записей Майкрософт. Настройте регистрационные данные для серверной части мобильного приложения. Выполните действия, описанные в разделе [Регистрация приложения для входа с использованием учетной записи Майкрософт], чтобы создать учетную запись Майкрософт и подключить ее к серверной части мобильного приложения. Если у вас есть версии приложения Microsoft Store и Windows Phone 8/Silverlight, сначала зарегистрируйте версию для Microsoft Store.
-
-Следующий код выполняет аутентификацию с помощью пакета Live SDK и использует возвращенный маркер для входа в серверную часть мобильного приложения.
-
-```
-private LiveConnectSession session;
-    //private static string clientId = "<microsoft-account-client-id>";
-private async System.Threading.Tasks.Task AuthenticateAsync()
-{
-
-    // Get the URL the Mobile App backend.
-    var serviceUrl = App.MobileService.ApplicationUri.AbsoluteUri;
-
-    // Create the authentication client for Microsoft Store using the service URL.
-    LiveAuthClient liveIdClient = new LiveAuthClient(serviceUrl);
-    //// Create the authentication client for Windows Phone using the client ID of the registration.
-    //LiveAuthClient liveIdClient = new LiveAuthClient(clientId);
-
-    while (session == null)
-    {
-        // Request the authentication token from the Live authentication service.
-        // The wl.basic scope should always be requested.  Other scopes can be added
-        LiveLoginResult result = await liveIdClient.LoginAsync(new string[] { "wl.basic" });
-        if (result.Status == LiveConnectSessionStatus.Connected)
-        {
-            session = result.Session;
-
-            // Get information about the logged-in user.
-            LiveConnectClient client = new LiveConnectClient(session);
-            LiveOperationResult meResult = await client.GetAsync("me");
-
-            // Use the Microsoft account auth token to sign in to App Service.
-            MobileServiceUser loginResult = await App.MobileService
-                .LoginWithMicrosoftAccountAsync(result.Session.AuthenticationToken);
-
-            // Display a personalized sign-in greeting.
-            string title = string.Format("Welcome {0}!", meResult.Result["first_name"]);
-            var message = string.Format("You are now logged in - {0}", loginResult.UserId);
-            var dialog = new MessageDialog(message, title);
-            dialog.Commands.Add(new UICommand("OK"));
-            await dialog.ShowAsync();
-        }
-        else
-        {
-            session = null;
-            var dialog = new MessageDialog("You must log in.", "Login Required");
-            dialog.Commands.Add(new UICommand("OK"));
-            await dialog.ShowAsync();
-        }
-    }
-}
-```
-
-Дополнительные сведения см. в документации по [Пакет SDK для Windows Live].
-
 ### <a name="serverflow"></a>Управляемая сервером проверка подлинности.
 После регистрации поставщика удостоверений вызовите метод [LoginAsync] для [MobileServiceClient], передав ему значение [MobileServiceAuthenticationProvider], соответствующее вашему поставщику. Например, следующий код запускает вход в систему через поток сервера с помощью Facebook.
 
-```
+```csharp
 private MobileServiceUser user;
 private async System.Threading.Tasks.Task Authenticate()
 {
@@ -889,7 +832,7 @@ private async System.Threading.Tasks.Task Authenticate()
 ### <a name="caching"></a>Кэширование маркера проверки подлинности
 В некоторых случаях после первой успешной аутентификации можно не выполнять вызов метода входа в систему. Для этого следует сохранить маркер аутентификации.  Приложения Microsoft Store и UWP могут использовать [PasswordVault] для сохранения текущего маркера аутентификации после успешного входа в систему.
 
-```
+```csharp
 await client.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
 
 PasswordVault vault = new PasswordVault();
@@ -899,7 +842,7 @@ vault.Add(new PasswordCredential("Facebook", client.currentUser.UserId,
 
 Значение идентификатора пользователя (UserId) хранится в параметре UserName учетных данных. Маркер проверки подлинности хранится в параметре Password. При последующих запусках вы можете проверить, сохранились ли учетные данные в **PasswordVault**. В следующем примере используются сохраненные учетные данные, если они есть. В противном случае выполняется новая попытка пройти проверку подлинности в серверной части.
 
-```
+```csharp
 // Try to retrieve stored credentials.
 var creds = vault.FindAllByResource("Facebook").FirstOrDefault();
 if (creds != null)
@@ -917,16 +860,16 @@ else
 
 При выходе пользователя из приложения необходимо удалить сохраненные учетные данные, как показано ниже.
 
-```
+```csharp
 client.Logout();
 vault.Remove(vault.Retrieve("Facebook", client.currentUser.UserId));
 ```
 
-Приложения Xamarin используют интерфейсы API [Xamarin.Auth], которые позволяют безопасно хранить учетные данные в объекте **Account**. Пример использования этих API см. в файле кода [AuthStore.cs], который включен в [пример совместного использования фотографий ContosoMoments](https://github.com/azure-appservice-samples/ContosoMoments).
+Приложения Xamarin используют интерфейсы API [Xamarin.Auth] для безопасного хранения учетных данных в объекте **Account**. Пример использования этих API см. в файле кода [AuthStore.cs], который включен в [пример совместного использования фотографий ContosoMoments](https://github.com/azure-appservice-samples/ContosoMoments).
 
 Если вы используете клиентский поток проверки подлинности, вы можете сохранить маркер доступа, полученный от поставщика, такого как Facebook или Twitter. Этот маркер можно использовать для запроса нового маркера проверки подлинности у серверной части:
 
-```
+```csharp
 var token = new JObject();
 // Replace <your_access_token_value> with actual value of your access token
 token.Add("access_token", "<your_access_token_value>");
@@ -945,7 +888,7 @@ Push-уведомления рассматриваются в следующих
 ### <a name="register-for-push"></a>Практическое руководство. Регистрация для получения push-уведомлений
 Клиент мобильных приложений позволяет выполнить регистрацию для получения push-уведомлений с помощью центров уведомлений Azure. При регистрации вы получаете маркер из службы push-уведомлений (PNS). Это значение необходимо указать при регистрации вместе со всеми тегами. Следующий код регистрирует ваше приложение Windows для получения push-уведомлений через службу уведомлений Windows (WNS):
 
-```
+```csharp
 private async void InitNotificationsAsync()
 {
     // Request a push notification channel.
@@ -982,14 +925,14 @@ private async void InitNotificationsAsync()
 ### <a name="register-xplat"></a>Использование шаблонов для отправки кроссплатформенных push- уведомлений
 Чтобы зарегистрировать шаблоны, используйте метод `RegisterAsync()` с шаблонами, как показано ниже.
 
-```
+```csharp
 JObject templates = myTemplates();
 MobileService.GetPush().RegisterAsync(channel.Uri, templates);
 ```
 
 Шаблоны должны иметь тип `JObject` и могут содержать несколько шаблонов в приведенном ниже формате JSON.
 
-```
+```csharp
 public JObject myTemplates()
 {
     // single template for Windows Notification Service toast
@@ -1014,7 +957,7 @@ public JObject myTemplates()
 
 Метод **RegisterAsync()** принимает также вспомогательные плитки:
 
-```
+```csharp
 MobileService.GetPush().RegisterAsync(string channelUri, JObject templates, JObject secondaryTiles);
 ```
 
@@ -1026,7 +969,7 @@ MobileService.GetPush().RegisterAsync(string channelUri, JObject templates, JObj
 ### <a name="errors"></a>Практическое руководство. Обработка ошибок
 При возникновении ошибки в серверной части пакет SDK для клиента порождает исключение `MobileServiceInvalidOperationException`.  Следующий пример демонстрирует обработку исключения, возвращенного серверной частью:
 
-```
+```csharp
 private async void InsertTodoItem(TodoItem todoItem)
 {
     // This code inserts a new TodoItem into the database. When the operation completes
@@ -1048,7 +991,7 @@ private async void InsertTodoItem(TodoItem todoItem)
 ### <a name="headers"></a>Практическое руководство. Настройка заголовков запроса
 Для поддержки определенного сценария приложения вам может потребоваться настроить связь с внутренним сервером мобильных приложений. Например, может возникнуть необходимость добавлять настраиваемый заголовок к каждому исходящему запросу или даже изменять коды состояний ответов. Вы можете использовать настраиваемый метод [DelegatingHandler], как показано в следующем примере.
 
-```
+```csharp
 public async Task CallClientWithHandler()
 {
     MobileServiceClient client = new MobileServiceClient("AppUrl", new MyHandler());
@@ -1099,7 +1042,7 @@ public class MyHandler : DelegatingHandler
 [Добавление аутентификации в приложение]: app-service-mobile-windows-store-dotnet-get-started-users.md
 [Автономная синхронизация данных в мобильных приложениях Azure]: app-service-mobile-offline-data-sync.md
 [Добавление push-уведомлений в приложение]: app-service-mobile-windows-store-dotnet-get-started-push.md
-[Регистрация приложения для входа с использованием учетной записи Майкрософт]: ../app-service/app-service-mobile-how-to-configure-microsoft-authentication.md
+[Register your app to use a Microsoft account login]: ../app-service/app-service-mobile-how-to-configure-microsoft-authentication.md
 [Как настроить службу приложений для входа с помощью Active Directory]: ../app-service/app-service-mobile-how-to-configure-active-directory-authentication.md
 
 <!-- Microsoft URLs. -->
@@ -1131,7 +1074,6 @@ public class MyHandler : DelegatingHandler
 [ISupportIncrementalLoading]: http://msdn.microsoft.com/library/windows/apps/Hh701916.aspx
 [Центр разработки для Windows]: https://dev.windows.com/overview
 [DelegatingHandler]: https://msdn.microsoft.com/library/system.net.http.delegatinghandler(v=vs.110).aspx
-[Пакет SDK для Windows Live]: https://msdn.microsoft.com/library/bb404787.aspx
 [PasswordVault]: http://msdn.microsoft.com/library/windows/apps/windows.security.credentials.passwordvault.aspx
 [ProtectedData]: http://msdn.microsoft.com/library/system.security.cryptography.protecteddata%28VS.95%29.aspx
 [справочниками по API]: https://msdn.microsoft.com/library/azure/dn495101.aspx

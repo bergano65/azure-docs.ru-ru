@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/30/2018
+ms.date: 11/06/2018
 ms.author: genli
-ms.openlocfilehash: 8d1415e996f65f0791b3e449a61fb30053add523
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 937d0be2e86adf00ac2707d5fd57eb905dcea3fb
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50240211"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51238332"
 ---
 # <a name="troubleshooting-azure-point-to-site-connection-problems"></a>Устранение неполадок подключения типа "точка — сеть" Azure
 
@@ -221,7 +221,7 @@ ms.locfileid: "50240211"
 
 ## <a name="too-many-vpn-clients-connected-at-once"></a>Слишком много одновременно подключенных VPN-клиентов
 
-Для каждого VPN-шлюза максимальное число допустимых подключений равно 128. Общее количество подключенных клиентов можно просмотреть на портале Azure.
+Достигнуто максимальное число допустимых подключений. Общее количество подключенных клиентов можно просмотреть на портале Azure.
 
 ## <a name="point-to-site-vpn-incorrectly-adds-a-route-for-100008-to-the-route-table"></a>VPN-подключение типа "точка — сеть" неправильно добавляет маршрут для 10.0.0.0/8 в таблицу маршрутов
 

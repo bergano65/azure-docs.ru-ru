@@ -7,12 +7,12 @@ editor: jasonwhowell
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/16/2018
-ms.openlocfilehash: 05bdc841108bf1fb909375b6f2c6399f8121ceeb
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 45d1f55e60763724aeb1b1685c5c69696475a424
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49344657"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50958106"
 ---
 # <a name="create-users-in-azure-database-for-postgresql-server"></a>Создание пользователей на сервере службы "База данных Azure для PostgreSQL" 
 В этой статье описывается создание пользователей на сервере службы "База данных Azure для PostgreSQL".
@@ -36,7 +36,7 @@ ms.locfileid: "49344657"
    Чтобы подключиться к серверу базы данных, вам потребуются учетные данные администратора для входа и полное имя сервера. Вы можете легко найти данные для входа на странице **Обзор** сервера или на странице **Свойства** на портале Azure. 
 
 2. Используйте учетную запись и пароль администратора для подключения к серверу базы данных. Используйте предпочитаемое клиентское средство, например pgAdmin или psql.
-   Если вы не знаете, как подключиться, см. раздел [Подключение к базе данных PostgreSQL с помощью psql в Cloud Shell](./quickstart-create-server-database-portal.md#connect-to-the-postgresql-database-by-using-psql-in-cloud-shell)
+   Если вы не знаете, как подключиться, см. раздел [Быстрое начало](./quickstart-create-server-database-portal.md)
 
 3. Измените и выполните следующий код SQL. Замените новым именем пользователя значение заполнителя <new_user>, а заполнитель пароля замените надежным паролем. 
 

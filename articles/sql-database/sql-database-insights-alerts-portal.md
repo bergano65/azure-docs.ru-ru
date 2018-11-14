@@ -11,13 +11,13 @@ author: aamalvea
 ms.author: aamalvea
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 09/14/2018
-ms.openlocfilehash: 27f807c8f2f6b6a65ef95136047f5eed1b3aab02
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.date: 11/02/2018
+ms.openlocfilehash: 11777013eca0ba3a759635ef99c2cfa04104e24b
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47159318"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50979001"
 ---
 # <a name="use-azure-portal-to-create-alerts-for-azure-sql-database-and-data-warehouse"></a>Создание оповещений для базы данных SQL Azure и хранилища данных с помощью портала Azure
 
@@ -37,26 +37,22 @@ ms.locfileid: "47159318"
 
 Для настройки правил генерации оповещений и получении сведений о них можно использовать:
 
-* [портала Azure](../monitoring-and-diagnostics/insights-alerts-portal.md)
+* [портал Azure](../monitoring-and-diagnostics/insights-alerts-portal.md)
 * [PowerShell](../monitoring-and-diagnostics/insights-alerts-powershell.md)
 * [интерфейс командной строки (CLI)](../monitoring-and-diagnostics/insights-alerts-command-line-interface.md)
 * [Azure Monitor REST API](https://msdn.microsoft.com/library/azure/dn931945.aspx)
 
 ## <a name="create-an-alert-rule-on-a-metric-with-the-azure-portal"></a>Создание правила генерации оповещений на основе метрики с помощью портала Azure
 1. На [портале](https://portal.azure.com/)найдите ресурс, который нужно отслеживать, и выберите его.
-2. Этот шаг выполняется по-разному для баз данных SQL Server и эластичных пулов и хранилищ данных SQL. 
-
-   - **Инструкция только для баз данных SQL и эластичных пулов:** в разделе "Отслеживание" выберите **Оповещения** или **Правила генерации оповещений**. Текст и значок для разных ресурсов могут незначительно отличаться.  
+2. В разделе "Мониторинг" выберите **Оповещения (классические)**. Текст и значок для разных ресурсов могут незначительно отличаться.  
    
-     ![Мониторинг](../monitoring-and-diagnostics/media/insights-alerts-portal/AlertRulesButton.png)
+     ![Мониторинг](../monitoring-and-diagnostics/media/insights-alerts-portal/AlertsClassicButton.JPG)
   
-   - **Инструкция только для хранилищ данных SQL:** выберите пункт **Отслеживание** в разделе "ОБЩИЕ ЗАДАЧИ. Выберите граф **Потребление DWU**.
+   - (**Только для хранилища данных SQL**.) Выберите граф **Потребление DWU**. Щелкните **Просмотреть классические оповещения**
 
-     ![ОБЩИЕ ЗАДАЧИ](../monitoring-and-diagnostics/media/insights-alerts-portal/AlertRulesButtonDW.png)
-
-3. Выберите **Добавить оповещение** и заполните поля.
+3. Нажмите кнопку **Добавить оповещение метрики (классическое)** и заполните поля.
    
-    ![Добавить оповещение](../monitoring-and-diagnostics/media/insights-alerts-portal/AddDBAlertPage.png)
+    ![Добавить оповещение](../monitoring-and-diagnostics/media/insights-alerts-portal/AddDBAlertPageClassic.JPG)
 4. Введите **имя** правила генерации оповещений и укажите **описание**, отображаемое также в уведомлениях по электронной почте.
 5. Если вы выбрали **метрику** для отслеживания, то выберите для нее **условие** и **пороговое значение**. Кроме того, выберите **период**, в течение которого должно быть выполнено правило метрики, прежде чем будет активировано оповещение. Например, если используется период "PT5M", а оповещение определяет загрузку ЦП выше 80 %, такое оповещение активируется, если **средняя** загрузка ЦП превышает 80 % не менее 5 минут. После первой активации оповещение активируется повторно, если средняя загрузка ЦП будет ниже 80 % не менее 5 минут. Измерение загрузки ЦП происходит раз в минуту. В следующей таблице представлены поддерживаемые временные окна и типы статистической обработки, используемые каждым оповещением. Не все оповещения используют среднее значение.   
 6. Установите флажок **Владельцы, авторы и читатели электронных писем** , если администраторы и соадминистраторы должны получать электронные сообщения при активации оповещения.

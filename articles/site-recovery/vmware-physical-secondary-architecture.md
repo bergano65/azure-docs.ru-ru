@@ -1,20 +1,20 @@
 ---
-title: Архитектура аварийного восстановления VMware и физических серверов в Azure Site Recovery | Документация Майкрософт
-description: В этой статье представлен обзор компонентов и архитектуры, используемых при аварийном восстановлении локальных виртуальных машин VMware или физических серверов Windows и Linux на дополнительный сайт VMware с помощью службы Azure Site Recovery.
+title: Архитектура для аварийного восстановления виртуальных машин VMware или физических серверов в дополнительном расположении с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье представлен обзор компонентов и архитектуры, используемых при аварийном восстановлении локальных виртуальных машин VMware или физических серверов Windows и Linux в дополнительном расположении VMware с помощью службы Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: raynew
-ms.openlocfilehash: 16e8a9719280b55e86d1d4622a32470b37287dd4
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 77387b52003923dffce7519df9cca47fad8f6e6c
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50215129"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51007439"
 ---
-# <a name="vmware-vmphysical-server-to-vmware-disaster-recovery-architecture"></a>Архитектура аварийного восстановления виртуальных машин VMware и физических серверов на дополнительный сайт VMware
+# <a name="architecture-for-vmwarephysical-server-replication-to-a-secondary-on-premises-site"></a>Архитектура для репликации виртуальных машин VMware или физических серверов в дополнительном локальном расположении
 
 В этой статье описаны архитектура и процессы, используемые при настройке репликации для аварийного восстановления, отработки отказов и восстановления локальных виртуальных машин VMware и физических серверов Windows и Linux на дополнительный сайт VMware с помощью службы [Azure Site Recovery](site-recovery-overview.md).
 

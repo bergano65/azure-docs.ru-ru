@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/29/2018
+ms.date: 11/01/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: 28344ac7c50b48b472ba6f907b116b3b202de454
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: ebf5a23743d1fdd9553b391bb0518c2887ddb096
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50238803"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50959993"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Как планировать гибридную реализацию присоединения к Azure Active Directory
 
@@ -49,6 +49,7 @@ ms.locfileid: "50238803"
 |---|---|
 |![Проверка][1]|Просмотр списка поддерживаемых устройств|
 |![Проверка][1]|Ознакомление с важными сведениями|
+|![Проверка][1]|Узнайте, как управлять гибридным присоединением устройств к Azure AD|
 |![Проверка][1]|Выбор сценария|
 
 
@@ -112,6 +113,11 @@ ms.locfileid: "50238803"
 Гибридное присоединение устройств к Azure AD — это процесс автоматической регистрации ваших локальных присоединенных к домену устройств в Azure AD. Бывают случаи, когда вам не нужно, чтобы все ваши устройства регистрировались автоматически. В таком случае см. сведения об [управлении гибридным присоединением устройств к Azure AD](hybrid-azuread-join-control.md).
 
 
+## <a name="review-how-to-control-the-hybrid-azure-ad-join-of-your-devices"></a>Узнайте, как управлять гибридным присоединением устройств к Azure AD
+
+Гибридное присоединение к Azure AD — это процесс автоматической регистрации ваших локальных присоединенных к домену устройств в Azure AD. Бывают случаи, когда не нужно, чтобы все ваши устройства регистрировались автоматически. Например, это актуально во время начального развертывания, когда необходимо убедиться, что все работает правильно.
+
+Для получения дополнительных сведений см. статью об [управлении гибридным присоединением устройств к Azure AD](hybrid-azuread-join-control.md).
 
 ## <a name="select-your-scenario"></a>Выбор сценария
 

@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 09/24/2018
 ms.author: rnagpal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b6983b49135b5a8adbef1d0cfc5a407cb7b0c7ac
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0dc7daebe91199cc6c54ac5e3a2d8f43e1592a73
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46960555"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51282430"
 ---
 # <a name="azure-cosmos-db-nodejs-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для Node.js для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -45,6 +45,26 @@ ms.locfileid: "46960555"
 | Текущая поддерживаемая платформа | [Node.js версии 6.x](https://nodejs.org/en/blog/release/v6.10.3/) — является обязательной для пакета SDK версии 2.0.0 и более поздних версий.<br/>[Node.js версии 4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)<br/> [Node.js версии 0.12](https://nodejs.org/en/blog/release/v0.12.0/)<br/> [Node.js версии 0.10](https://nodejs.org/en/blog/release/v0.10.0/) 
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="2.0.5"/>2.0.5</a>
+* Добавлен интерфейс для типа agent узла. Пользователям Typescript больше не нужно устанавливать @types/node как зависимость.
+* Предпочтительные расположения теперь обрабатываются правильно.
+* Представлен ряд улучшений для участвующих в написании документации по разработке.
+* Исправлены различные опечатки.
+
+### <a name="2.0.4"/>2.0.4</a>
+* Исправлена проблема с определением типа, появившаяся в версии 2.0.3.
+
+### <a name="2.0.3"/>2.0.3</a>
+* Удалена зависимость `big-integer`.
+* Реализована переориентация на директивы ссылок для типа AsyncIterable. Пользователям Typescript больше не нужно настраивать параметр lib.
+* Исправлены опечатки.
+
+### <a name="2.0.2"/>2.0.2</a>
+* Исправлены ссылки на файл сведений.
+
+### <a name="2.0.1"/>2.0.1</a>
+* Исправлены повторные попытки реализации интерфейса.
 
 ### <a name="2.0.0"/>2.0.0</a>
 * Общедоступная версия 2.0.0 пакета SDK для JavaScript

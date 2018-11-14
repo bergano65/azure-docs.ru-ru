@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: d5d75c25d03c02d6d49fc2fd8aeec995cea52314
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 7977dc55d101c99bf1f850a529083916367308b4
+ms.sourcegitcommit: 6678e16c4b273acd3eaf45af310de77090137fa1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50414273"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50747819"
 ---
 # <a name="how-to-set-a-static-internal-private-ip-address-using-powershell-classic"></a>Как задать статический внутренний частный IP-адрес с помощью PowerShell (классическая модель)
 В большинстве случаев для виртуальной машины не нужно указывать статический внутренний IP-адрес. Виртуальные машины в виртуальной сети будут автоматически получать внутренний IP-адрес из указанного вами диапазона. Однако в некоторых случаях указание статического IP-адреса для конкретной виртуальной машины имеет смысл. Например, если на виртуальной машине планируется запускать DNS или она будет контроллером домена. Статический внутренний IP-адрес остается у виртуальной машины даже при переходе в состояние остановки или отзыва. 
@@ -28,9 +28,14 @@ ms.locfileid: "50414273"
 > В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний корпорация Майкрософт рекомендует [использовать модель развертывания с помощью Resource Manager](virtual-networks-static-private-ip-arm-ps.md).
 > 
 > 
+## <a name="install-the-azure-powershell-service-management-module"></a>Установка модуля управления службами Azure PowerShell
+
+Прежде чем выполнять приведенные ниже команды, убедитесь, что [модуль управления службами Azure PowerShell](https://docs.microsoft.com/powershell/azure/servicemanagement/install-azure-ps?view=azuresmps-4.0.0
+) установлен на компьютере. Журнал версий для модуля управления службами Azure PowerShell см. на странице [модуля Azure в коллекции PowerShell](https://www.powershellgallery.com/packages/Azure/5.3.0).
 
 ## <a name="how-to-verify-if-a-specific-ip-address-is-available"></a>Проверка доступности определенного IP-адреса
-Чтобы проверить, доступен ли IP-адрес *10.0.0.7* в виртуальной сети с именем *TestVnet*, выполните следующую команду PowerShell и проверьте значение для *IsAvailable*:
+Чтобы проверить, доступен ли IP-адрес *10.0.0.7* в виртуальной сети с именем *TestVnet*, выполните следующую команду PowerShell и проверьте значение для *IsAvailable*.
+
 
     Test-AzureStaticVNetIP –VNetName TestVNet –IPAddress 10.0.0.7 
 

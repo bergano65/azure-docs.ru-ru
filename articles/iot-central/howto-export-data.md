@@ -8,12 +8,12 @@ ms.date: 09/18/2018
 ms.topic: conceptual
 ms.service: iot-central
 manager: peterpr
-ms.openlocfilehash: 86128abd82ee41459a84fc7d9169042179807793
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 3231a956648b80d88059b7b0fc8f790e0e58be99
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47034915"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50962798"
 ---
 # <a name="export-your-data-in-azure-iot-central"></a>Экспорт данных в Azure IoT Central
 
@@ -26,10 +26,10 @@ ms.locfileid: "47034915"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Расширенная 30-дневная пробная версия приложения IoT Central или платное приложение.
-- Учетная запись Azure с подпиской Azure.
-- Эта же учетная запись Azure должна иметь роль администратора в приложении IoT Central.
-- Эта же учетная запись Azure должна иметь разрешения на создание учетной записи хранения или на доступ к имеющейся учетной записи хранения в той же подписке Azure.
+- Приложение с оплатой по мере использования.
+- Роль администратора в приложении IoT Central, у которого есть следующее:
+    - учетная запись в подписке Azure, в которой находится приложение IoT Central;
+    - разрешения на создание учетной записи хранения или на доступ к имеющейся учетной записи хранения в этой подписке Azure.
 
 ## <a name="types-of-data-to-export"></a>Тип данных для экспорта
 

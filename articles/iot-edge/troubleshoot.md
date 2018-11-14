@@ -8,12 +8,12 @@ ms.date: 06/26/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 632a91e9c76f14bceace00c9cee29a189b604464
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 6728ea6e8c8323ed3d418a018de0ad64b7af8033
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50740218"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51283263"
 ---
 # <a name="common-issues-and-resolutions-for-azure-iot-edge"></a>Распространенные проблемы и их решения для Azure IoT Edge
 
@@ -340,4 +340,6 @@ Azure IoT Edge обеспечивает связь локального погр
 
 ## <a name="next-steps"></a>Дополнительная информация
 Считаете, что обнаружили ошибку в платформе IoT Edge? [Отправьте запрос](https://github.com/Azure/iotedge/issues), чтобы мы как можно скорее устранили неисправность. 
+
+Если у вас есть другие вопросы, создайте [запрос в службу поддержки](https://portal.azure.com/#create/Microsoft.Support) для получения справки. 
 

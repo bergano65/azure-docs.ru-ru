@@ -9,12 +9,12 @@ author: bryanla
 ms.author: bryanla
 manager: mbaldwin
 ms.date: 10/03/2018
-ms.openlocfilehash: 02fffe7c4a3acff6ce6d68046eee4286003b1766
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: f3f310c247aea3842b5ec7a9a1409032d5bdc0bf
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50232228"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50912923"
 ---
 # <a name="azure-key-vault-storage-account-keys"></a>Ключи учетной записи хранения Azure Key Vault
 
@@ -34,9 +34,12 @@ ms.locfileid: "50232228"
     - Следуйте [инструкциям](https://docs.microsoft.com/azure/storage/) по созданию учетной записи хранения.  
     - **Рекомендации по именованию**. Имя учетной записи хранения должно содержать от 3 до 24 знаков и состоять только из цифр и строчных букв.        
       
-<a name="step-by-step-instructions"></a>Пошаговые инструкции
--------------------------
+<a name="step-by-step-instructions-on-how-to-use-key-vault-to-manage-storage-account-keys"></a>Пошаговые инструкции по использованию Key Vault для управления ключами учетной записи хранения
+--------------------------------------------------------------------------------
 В приведенных ниже инструкциях мы назначаем Key Vault в качестве службы, чтобы у учетной записи хранения были разрешения оператора.
+
+> [!NOTE]
+> Обратите внимание, что после настройки ключей учетной записи хранения, которыми управляет Azure Key Vault, их можно изменить **только** через Key Vault. Под управляемыми ключами учетной записи подразумевается, что сменой ключей учетной записи хранения будет управлять Key Vault.
 
 1. После создания учетной записи хранения выполните следующую команду, чтобы получить идентификатор ресурса учетной записи хранения, которой требуется управлять.
 
@@ -71,6 +74,8 @@ ms.locfileid: "50232228"
 
     az keyvault set-policy --name <YourVaultName> --object-id <ObjectId> --storage-permissions backup delete list regeneratekey recover     purge restore set setsas update
     ```
+### <a name="relavant-azure-cli-cmdlets"></a>Соответствующие командлеты Azure CLI
+- [Командлеты Azure CLI для службы хранилища](https://docs.microsoft.com/cli/azure/keyvault/storage?view=azure-cli-latest)
 
 ### <a name="relevant-powershell-cmdlets"></a>Соответствующие командлеты PowerShell
 

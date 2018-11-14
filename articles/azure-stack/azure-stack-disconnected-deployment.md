@@ -12,20 +12,20 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/01/2018
+ms.date: 11/05/2018
 ms.author: jeffgilb
 ms.reviewer: wfayed
-ms.openlocfilehash: 4574b140e2e17462a5ff696b913bb4ef7bcb0ad0
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 5714257fce53fafa148b8ae4d5a3addf3b872c6f
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39412762"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51035481"
 ---
 # <a name="azure-disconnected-deployment-planning-decisions-for-azure-stack-integrated-systems"></a>Планирование развертываний без подключения к Azure для интегрированных систем Azure Stack
 Когда вы решите, [как интегрировать Azure Stack с гибридной облачной средой](azure-stack-connection-models.md), вы сможете спланировать развертывание Azure Stack.
 
-С помощью развертывания Azure без подключения можно развернуть и использовать Azure Stack без подключения к Интернету. Но при этом вы будете ограничены хранилищем удостоверений службы федерации Active Directory (AD FS) и моделью выставления счетов на основе емкости. 
+Вы можете развернуть и использовать Azure Stack без подключения к Интернету. Но при этом вы будете ограничены хранилищем удостоверений службы федерации Active Directory (AD FS) и моделью выставления счетов на основе емкости. 
 
 Выбирайте этот вариант в таких случаях:
 - Из-за ограничений, связанных с безопасностью, или других ограничений требуется развертывать Azure Stack в среде, не подключенной к Интернету.

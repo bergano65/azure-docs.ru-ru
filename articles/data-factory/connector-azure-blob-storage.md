@@ -9,12 +9,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: jingwang
-ms.openlocfilehash: 3a27f275cfc151b374ea2807580b430c4e9aa1e8
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 83be53edf240220726639b51381b487c5b742cee
+ms.sourcegitcommit: 3dcb1a3993e51963954194ba2a5e42260d0be258
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50420252"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50754092"
 ---
 # <a name="copy-data-to-or-from-azure-blob-storage-by-using-azure-data-factory"></a>Копирование данных в хранилище BLOB-объектов Azure и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -22,6 +22,8 @@ ms.locfileid: "50420252"
 > * [Текущая версия](connector-azure-blob-storage.md)
 
 В этой статье объясняется, как с помощью действия копирования в фабрике данных Azure копировать данные в хранилище BLOB-объектов Azure и обратно. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
+
+Дополнительные сведения о Фабрике данных Azure см. во [вводной статье](introduction.md).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 

@@ -8,14 +8,14 @@ tags: billing
 ms.assetid: 60d848f9-ff26-496e-a5ec-ccf92ad7d125
 ms.service: billing
 ms.topic: article
-ms.date: 09/11/2018
+ms.date: 11/05/2018
 ms.author: byvinyal
-ms.openlocfilehash: efaca1b9506ada02c52ad0833139d3b4e441d456
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: bd20ea58c7693b3be8f583810384aa26dde572d8
+ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47393619"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51219568"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет расширен и обновлен, чтобы охватить больше платформ.
@@ -78,7 +78,6 @@ ms.locfileid: "47393619"
 * [Служба Log Analytics](#log-analytics-limits)
 * [Управляемое удостоверение](#managed-identity-limits)
 * [Службы мультимедиа](#media-services-limits)
-* [Службы мобильного взаимодействия;](#mobile-engagement-limits)
 * [Мобильные службы](#mobile-services-limits)
 * [Многофакторная идентификация](#multi-factor-authentication)
 * [Сеть](#networking-limits)
@@ -102,13 +101,13 @@ ms.locfileid: "47393619"
 * [Наборы для масштабирования виртуальных машин](#virtual-machine-scale-sets-limits)
 
 ### <a name="subscription-limits"></a>Ограничения подписки
-#### <a name="subscription-limits"></a>Ограничения подписки
+#### <a name="subscription-limits---azure-service-management-classic-resources"></a>Ограничения подписки — управление службами Azure (классические ресурсы)
 [!INCLUDE [azure-subscription-limits](../includes/azure-subscription-limits.md)]
 
 #### <a name="subscription-limits---azure-resource-manager"></a>Ограничения подписки — Azure Resource Manager
 При использовании диспетчера ресурсов Azure и групп ресурсов Azure применяются следующие ограничения. Ограничения, которые не были изменены после выпуска диспетчера ресурсов Azure, ниже не перечислены. Их можно просмотреть в предыдущей таблице.
 
-Сведения о работе с ограничениями на запросы Resource Manager см. в разделе [Throttling Resource Manager requests](resource-manager-request-limits.md) (Регулирование запросов Resource Manager).
+Сведения об ограничениях на операции записи и чтения API Resource Manager см. в разделе [Регулирование запросов Resource Manager](resource-manager-request-limits.md).
 
 [!INCLUDE [azure-subscription-limits-azure-resource-manager](../includes/azure-subscription-limits-azure-resource-manager.md)]
 
@@ -145,6 +144,8 @@ ms.locfileid: "47393619"
 [!INCLUDE [azure-virtual-network-limits](../includes/azure-virtual-network-limits.md)]
 
 #### <a name="application-gateway-limits"></a>Ограничения шлюза приложений
+
+Сведения в следующей таблице относится к номерам SKU версии 1, версии 2, ценовой категории "Стандартный" и WAF, если не указано иное.
 [!INCLUDE [application-gateway-limits](../includes/application-gateway-limits.md)]
 
 #### <a name="network-watcher-limits"></a>Пределы наблюдателя за сетями

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.author: ramamill
 ms.date: 10/29/2018
-ms.openlocfilehash: c12683fee7022b84e097c2b71628776271611429
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 2051f37656b6717c879a24f6e06c31a0ade0b950
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50210998"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51012332"
 ---
 # <a name="troubleshoot-mobility-service-push-installation-issues"></a>Устранение неполадок с принудительной установкой службы Mobility Service
 
@@ -73,7 +73,7 @@ ms.locfileid: "50210998"
   * На панели навигации откройте следующие папки: "Политика локального компьютера", "Конфигурация пользователя", "Административные шаблоны", "Компоненты Windows" и "Общий доступ к сети".
   * В области сведений дважды щелкните **Запретить пользователям представлять общий доступ к файлам в профиле**. Чтобы отключить параметр "Групповая политика" и разрешить предоставлять общий доступ к файлам, нажмите "Отключено". Нажмите кнопку ОК, чтобы сохранить изменения. Для получения дополнительных сведений щелкните [здесь](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754359(v=ws.10)).
 
-Для **более поздних версий** следуйте инструкциям, приведенным [здесь](vmware-azure-install-mobility-service.md#install-mobility-service-by-push-installation-from-azure-site-recovery), чтобы включить общий доступ к файлам и принтерам.
+Для **более поздних версий** следуйте инструкциям, приведенным [здесь](vmware-azure-install-mobility-service.md), чтобы включить общий доступ к файлам и принтерам.
 
 ## <a name="windows-management-instrumentation-wmi-configuration-check"></a>Проверка инструментария управления Windows (WMI)
 

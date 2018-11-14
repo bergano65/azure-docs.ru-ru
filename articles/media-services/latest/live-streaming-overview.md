@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 10/16/2018
 ms.author: juliako
-ms.openlocfilehash: 533aa505c38d3cbfb46d70acecd43cc66614b13d
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: c8e4e84d7ae0defdb053108dc668956062c47ea5
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49378142"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50962390"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Потоковая трансляция в Службах мультимедиа Azure версии 3
 
@@ -45,7 +45,7 @@ ms.locfileid: "49378142"
 Следующие новые улучшения были выполнены в последнем выпуске.
 
 - Новый режим с низкой задержкой для трансляции (10 секунд полного процесса).
-- Улучшенная поддержка RTMP (повышенная стабильность и поддержка источника сигнала).
+- Улучшенная поддержка RTMP (повышенная стабильность и поддержка исходного кодировщика).
 - Безопасный прием RTMPS.
 
     При создании LiveEvent, вы получите 4 URL-адреса приема. 4 URL-адреса приема практически идентичны, они имеют тот же токен потоковой передачи (AppId) с отличной частью номера порта. Два из URL-адресов являются первичными и резервными для RTMPS.   

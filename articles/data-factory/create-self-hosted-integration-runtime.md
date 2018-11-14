@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: abnarain
-ms.openlocfilehash: 2dc81a96f1e83c3a6b1ddee92f57b2f0bae4196d
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: cae81bd2b856ae0fb4a648c03cbec1f87f222902
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50248937"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51038474"
 ---
 # <a name="create-and-configure-a-self-hosted-integration-runtime"></a>Создание и настройка локальной среды выполнения интеграции
 Среда выполнения интеграции (IR) — это инфраструктура вычислений, которую Фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. Дополнительные сведения о среде выполнения интеграции см. [в этом обзоре](concepts-integration-runtime.md).
@@ -148,6 +148,10 @@ ms.locfileid: "50248937"
 Вы можете повторно использовать существующую инфраструктуру локальной среды IR, которую вы уже настроили в фабрике данных. Это позволяет создать *связанную локальную среду IR* в другой фабрике данных, ссылаясь на имеющуюся локальную среду IR (общую).
 
 Сведения о предоставлении общего доступа к локальной среде выполнения интеграции с помощью PowerShell см. в статье о [создании локальной среды выполнения интеграции в Фабрике данных Azure с помощью PowerShell](create-shared-self-hosted-integration-runtime-powershell.md).
+
+Уделите 12 минут своего времени, чтобы просмотреть следующее видео с кратким обзором и демонстрацией этой функции:
+
+> [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Hybrid-data-movement-across-multiple-Azure-Data-Factories/player]
 
 ### <a name="terminology"></a>Терминология
 

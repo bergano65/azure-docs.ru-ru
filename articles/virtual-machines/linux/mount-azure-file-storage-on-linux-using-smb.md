@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/28/2018
 ms.author: cynthn
-ms.openlocfilehash: 7cd7f0f37f0d351d1d50d4c15e7132f072b5125d
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: fde8892f7a32d7b5405eef6661bbf29098325178
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46982211"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50958684"
 ---
 # <a name="mount-azure-file-storage-on-linux-vms-using-smb"></a>Подключение хранилища файлов Azure на виртуальных машинах Linux с помощью протокола SMB
 
@@ -100,6 +100,7 @@ mkdir -p /mnt/MyAzureFileShare
 sudo mount -t cifs //$STORAGEACCT.file.core.windows.net/myshare /mnt/MyAzureFileShare -o vers=3.0,username=$STORAGEACCT,password=$STORAGEKEY,dir_mode=0777,file_mode=0777,serverino
 ```
 
+Приведенная выше команда используется команду [mount](https://linux.die.net/man/8/mount), чтобы подключить общий файловый ресурс Azure и параметры, относящиеся к [cifs](https://linux.die.net/man/8/mount.cifs). Говоря конкретнее, параметры dir_mode и file_mode позволяют установить для каталогов и файлов разрешение `0777`. В рамках разрешения `0777` все пользователи получают доступ на чтение, запись и выполнение. Вы можете изменить эти разрешения. Для этого замените значения другими [разрешениями chmod](https://en.wikipedia.org/wiki/Chmod). Можно также использовать другие параметры [cifs](https://linux.die.net/man/8/mount.cifs), например gid или uid. 
 
 
 ## <a name="persist-the-mount"></a>Сохранение подключения

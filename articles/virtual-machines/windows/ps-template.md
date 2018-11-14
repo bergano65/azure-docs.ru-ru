@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/18/2017
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: df1cada5e730189546f65d9799926807390db083
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: b61ee3c3baa4590dc8a2fbf91b1ff941626a01e4
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47432262"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50959834"
 ---
 # <a name="create-a-windows-virtual-machine-from-a-resource-manager-template"></a>Создание виртуальной машины Windows с использованием шаблона Resource Manager
 
@@ -53,9 +53,9 @@ ms.locfileid: "47432262"
 
 ## <a name="create-the-files"></a>Создание файлов
 
-На этом шаге вы создадите файл шаблона, который развертывает ресурсы, и файл параметров, который предоставляет значения для параметров шаблона. Кроме того, вы создадите файл авторизации для выполнения операций Azure Resource Manager.
+На этом шаге вы создадите файл шаблона, который развертывает ресурсы, и файл параметров, который предоставляет значения для параметров шаблона. Кроме того, вы создадите файл авторизации для выполнения операций Azure Resource Manager. 
 
-1. Создайте файл с именем *CreateVMTemplate.json* и добавьте в него такой код JSON:
+1. Создайте файл с именем *CreateVMTemplate.json* и добавьте в него свой код JSON. Вместо значения `domainNameLabel` укажите уникальное имя.
 
     ```json
     {

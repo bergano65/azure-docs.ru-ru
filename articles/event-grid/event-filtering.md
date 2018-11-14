@@ -5,14 +5,14 @@ services: event-grid
 author: tfitzmac
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 10/29/2018
+ms.date: 11/05/2018
 ms.author: tomfitz
-ms.openlocfilehash: 24337863d4e3f8e093c2e33afbb39364ec37516d
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: fd33ca723bd00b4a9c25009ef5b4f444487244f0
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50252106"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51281954"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Общие сведения о фильтрации событий для подписок на службу "Сетка событий Azure"
 
@@ -57,9 +57,9 @@ ms.locfileid: "50252106"
 
 Вариант расширенной фильтрации позволяет выполнять фильтрацию по значениям в полях данных и указывать оператор сравнения. При расширенной фильтрации можно указать следующее:
 
-* оператор — тип сравнения;
+* operatorType — тип сравнения;
 * ключ — поле в данных события, которое используется для фильтрации (это может быть число, логическое значение или строка);
-* значения— значения для сравнения с ключом.
+* value или values — значения для сравнения с ключом.
 
 При фильтрации по типу события используется такой синтаксис JSON.
 
@@ -67,14 +67,14 @@ ms.locfileid: "50252106"
 "filter": {
   "advancedFilters": [
     {
-      "Operator": "NumberGreaterThanOrEquals",
-      "Key": "Data.Key1",
-      "Values": 5
+      "operatorType": "NumberGreaterThanOrEquals",
+      "key": "Data.Key1",
+      "value": 5
     },
     {
-      "Operator": "StringContains",
-      "Key": "Subject",
-      "Values": ["container1", "container2"]
+      "operatorType": "StringContains",
+      "key": "Subject",
+      "values": ["container1", "container2"]
     }
   ]
 }
@@ -122,7 +122,7 @@ ms.locfileid: "50252106"
 * EventTypeVersion;
 * дата события (например Data.key1).
 
-Для пользовательских схем ввода используются поля данных событий (например Data.key1 Data.key1.key2).
+Для пользовательских схем ввода используются поля данных событий (например, Data.key1).
 
 ### <a name="values"></a>Значения
 
@@ -140,7 +140,7 @@ ms.locfileid: "50252106"
 * пять расширенных фильтров на каждую подписку сетки событий;
 * 512 знаков для значения строки;
 * пять значений для операторов **in** и **not in**;
-* Ключ может иметь только два уровня вложения (например data.key1.key2).
+* Ключ может иметь только один уровень вложения (например, data.key1).
 
 Один ключ можно использовать в нескольких фильтрах.
 

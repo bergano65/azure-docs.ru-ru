@@ -4,19 +4,18 @@ titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
 ms.component: azds-kubernetes
-author: ghogen
-ms.author: ghogen
+author: iainfoulds
+ms.author: iainfou
 ms.date: 10/04/2018
 ms.topic: article
 description: Узнайте, как быстро создать кластер Kubernetes, поддерживающий Azure Dev Spaces, напрямую из браузера без какой-либо установки.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-manager: douge
-ms.openlocfilehash: f10a84a602ce152d5c428525aa50f678b50c8b41
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: 47c467e020a7a9253daa636352352d9a57dddf28
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48872562"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50978159"
 ---
 # <a name="create-a-kubernetes-cluster-using-azure-cloud-shell"></a>Создание кластера Kubernetes с помощью Azure Cloud Shell
 
@@ -24,7 +23,7 @@ ms.locfileid: "48872562"
 
 ## <a name="create-the-cluster"></a>Создание кластера
 
-Сначала создайте группу ресурсов. Используйте один из поддерживаемых регионов (EastUS, CentralUS, WestUS2, WestEurope, CanadaCentral или CanadaEast).
+Сначала создайте группу ресурсов. Используйте один из поддерживаемых регионов (EastUS, EastUS2, CentralUS, WestUS2, WestEurope, SoutheastAsia, CanadaCentral или CanadaEast).
 
 ```azurecli-interactive
 az group create --name MyResourceGroup --location <region>
@@ -33,7 +32,7 @@ az group create --name MyResourceGroup --location <region>
 Чтобы создать кластер Kubernetes, выполните следующую команду:
 
 ```azurecli-interactive
-az aks create -g MyResourceGroup -n MyAKS --location <region> --kubernetes-version 1.11.2 --enable-addons http_application_routing
+az aks create -g MyResourceGroup -n MyAKS --location <region> --kubernetes-version 1.11.3 --enable-addons http_application_routing
 ```
 
 Создание кластера занимает несколько минут.  По завершении выходные данные отображаются в формате JSON. Найдите `provisioningState` и убедитесь, что значение равно `Succeeded`.

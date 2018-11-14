@@ -8,13 +8,13 @@ manager: kfile
 editor: jasonwhowell
 ms.service: mysql
 ms.topic: article
-ms.date: 10/03/2018
-ms.openlocfilehash: c2248f185c5c1c5dd8c4e1d4a24e6145a82ec5cb
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.date: 11/05/2018
+ms.openlocfilehash: a66311cb35815b5db7724a277677ad41d7afec77
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49091561"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51035739"
 ---
 # <a name="monitoring-in-azure-database-for-mysql"></a>Мониторинг в базе данных Azure для MySQL
 Мониторинг данных о серверах помогает устранять неполадки и оптимизировать рабочую нагрузку. База данных Azure для MySQL предоставляет различные метрики, позволяющие понять действия сервера.
@@ -41,10 +41,12 @@ ms.locfileid: "49091561"
 |seconds_behind_master|Задержка репликации в секундах|Count|Количество секунд, на которое сервер-реплика отстает от главного сервера.|
 |network_bytes_egress|Сеть (исходящий трафик)|Байты|Исходящий сетевой трафик по активным подключениям.|
 |network_bytes_ingress|Сеть (входящий трафик)|Байты|Входящий сетевой трафик по активным подключениям.|
+|backup_storage_used|Используемое хранилище резервных копий|Байты|Объем используемого хранилища резервных копий.|
 
 ## <a name="server-logs"></a>Журналы сервера
-Можно включить ведение журнала медленных запросов на сервере. Эти журналы также доступны в журналах диагностики Azure в OMS Log Analytics, Центрах событий и учетной записи хранения. Дополнительные сведения о ведении журналов см. на странице [Журналы сервера в базе данных Azure для PostgreSQL](concepts-server-logs.md).
+Можно включить ведение журнала медленных запросов на сервере. Эти журналы также доступны в журналах диагностики Azure в OMS Log Analytics, Центрах событий и учетной записи хранения. Дополнительные сведения о ведении журналов см. в разделе  [Журналы сервера в базе данных Azure для MySQL](concepts-server-logs.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 - См. рекомендации по созданию оповещений для метрики в статье [Как настраивать оповещения](howto-alert-on-metric.md).
 - Дополнительные сведения о доступе к метрикам и их экспорте с помощью портала Azure, REST API или интерфейса командной строки см. в статье [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md).
+- Читайте наш блог, чтобы ознакомиться с [рекомендациями по мониторингу сервера](https://azure.microsoft.com/blog/best-practices-for-alerting-on-metrics-with-azure-database-for-mysql-monitoring/).

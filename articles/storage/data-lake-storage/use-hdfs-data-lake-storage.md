@@ -8,23 +8,23 @@ ms.topic: article
 ms.date: 06/27/2018
 ms.author: artek
 ms.component: data-lake-storage-gen2
-ms.openlocfilehash: c59331c772e140fccfefb89eef086a35837171e1
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: c5f11cbb12b727f5f308d7a71c51706fa8ec373f
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45576981"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51277092"
 ---
 # <a name="using-the-hdfs-cli-with-data-lake-storage-gen2"></a>Использование HDFS CLI в Data Lake Storage Gen2
 
-Предварительная версия хранилища Azure Data Lake Storage Gen2 позволяет получать доступ к данным и управлять ими так же, как и в [распределенной файловой системе Hadoop (HDFS)](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Если кластер HDInsight подключен или с помощью Azure Databricks выполняет задание Apache Spark по анализу данных, которые хранятся в Azure Data Lake Storage Gen2, вы можете использовать интерфейс командной строки (CLI) для извлечения и обработки загруженных данных. В остальной части статьи описываются параметры, которые вы можете использовать, пока [команда разработчиков службы хранилища Azure работает над добавлением поддержки Обозревателя службы хранилища Azure и портала Azure](https://azure.microsoft.com/roadmap/).
+Предварительная версия хранилища Azure Data Lake Storage Gen2 позволяет получать доступ к данным и управлять ими так же, как и в [распределенной файловой системе Hadoop (HDFS)](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Если кластер HDInsight подключен или с помощью Azure Databricks выполняет задание Apache Spark по анализу данных, которые хранятся в учетной записи хранения Azure, вы можете использовать интерфейс командной строки для извлечения и обработки загруженных данных.
 
 ## <a name="hdfs-cli-with-hdinsight"></a>Использование HDFS CLI в HDInsight
 
 HDInsight предоставляет доступ к распределенной файловой системе, которая локально присоединена к вычислительным узлам. Доступ к этой файловой системе можно получить с помощью оболочки, которая напрямую взаимодействует с HDFS и другими файловыми системами, поддерживаемыми Hadoop. Ниже приведен список стандартных команд и ссылки на полезные ресурсы.
 
 >[!IMPORTANT]
->Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Кластеры оплачиваются поминутно, поэтому всегда следует удалять кластер, когда он больше не нужен (дополнительные сведения о том, [как выполнить удаление кластера](../../hdinsight/hdinsight-delete-cluster.md)). Тем не менее данные, размещенные в хранилище Azure Data Lake Storage Gen2, сохраняются даже после удаления кластера HDInsight.
+>Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Кластеры оплачиваются поминутно, поэтому всегда следует удалять кластер, когда он больше не нужен. Сведения об удалении кластера см. в [статье на эту тему](../../hdinsight/hdinsight-delete-cluster.md). Данные, размещенные в учетной записи хранения с поддержкой Data Lake Storage 2-го поколения, сохраняются даже после удаления кластера HDInsight.
 
 Чтобы получить список файлов или папок:
 

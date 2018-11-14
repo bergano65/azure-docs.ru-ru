@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 04/13/2018
 ms.author: nitinme
 ms.custom: include file
-ms.openlocfilehash: 9b048c884f947fa4733595dc4ec339503781c28f
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.openlocfilehash: 984190176b75c932dcced2c846832428213df32c
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48250052"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50973953"
 ---
 > [!NOTE]
-> Средство для поиска аномалий теперь доступно в закрытой предварительной версии. Дополнительные сведения см. в разделе [Документация по средствам для поиска аномалий закрытой предварительной версии](https://aka.ms/AnomalyFinderPrivatePreview).
+> Средство для поиска аномалий теперь доступно в закрытой предварительной версии. Дополнительные сведения см. в разделе [Документация по средствам для поиска аномалий закрытой предварительной версии](https://aka.ms/AnomalyFinderPrivatePreview). Чтобы получить доступ к закрытой предварительной версии средств для поиска аномалий, [свяжитесь с нами](mailto:kenshoteam@microsoft.com).

@@ -1,6 +1,6 @@
 ---
 title: Установка опубликованного приложения "Сборщик данных StreamSets" в Azure HDInsight
-description: Установка и использование стороннего приложения Hadoop "Сборщик данных StreamSets".
+description: Установка и использование стороннего приложения Apache Hadoop "Сборщик данных StreamSets".
 services: hdinsight
 author: ashishthaps
 ms.reviewer: jasonh
@@ -9,16 +9,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: ashish
-ms.openlocfilehash: 72ace99a8124b0a288e8facf630e947151169d0b
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: f963ae53e1396b1ef6279f2bd6502e5ab0cd23a1
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43106888"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51034563"
 ---
 # <a name="install-published-application---streamsets-data-collector"></a>Установка опубликованного приложения "Сборщик данных StreamSets"
 
-В этой статье описывается, как установить и запустить опубликованное приложение Hadoop [Сборщик данных StreamSets](https://streamsets.com/) в Azure HDInsight. Обзор платформы приложений HDInsight и список доступных опубликованных приложений независимых поставщиков программного обеспечения приведены в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md). Инструкции по установке собственного приложения см. в статье [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md).
+В этой статье описывается, как установить и запустить опубликованное приложение Apache Hadoop [Сборщик данных StreamSets](https://streamsets.com/) в Azure HDInsight. Обзор платформы приложений HDInsight и список доступных опубликованных приложений независимых поставщиков программного обеспечения приведены в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md). Инструкции по установке собственного приложения см. в статье [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md).
 
 ## <a name="about-streamsets-data-collector"></a>Сведения о сборщике данных StreamSets
 

@@ -6,14 +6,14 @@ author: charwen
 manager: rossort
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 09/07/2018
+ms.date: 11/05/2018
 ms.author: charwen
-ms.openlocfilehash: c267e5002fbd603e4bb749550c19e8d022ce4d54
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: 96e2eb85bc96075e0673359910522f8e35bf5a5c
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44162348"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51243817"
 ---
 # <a name="configure-expressroute-and-site-to-site-coexisting-connections-using-powershell"></a>Настройка параллельных подключений "сеть — сеть" и ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -27,7 +27,9 @@ ms.locfileid: "44162348"
 * VPN типа "сеть — сеть" можно настроить как безопасный путь отработки отказа для ExpressRoute. 
 * Кроме того, VPN типа "сеть — сеть" можно использовать для подключения к сайтам, которые не подключены через ExpressRoute. 
 
-В этой статье описан порядок действий для каждого из этих вариантов. Эта статья посвящена модели развертывания Resource Manager. Кроме того, в ней используется PowerShell. Эти сценарии можно также настроить с помощью портала Azure, несмотря на то, что документация еще недоступна.
+В этой статье описан порядок действий для каждого из этих вариантов. Эта статья посвящена модели развертывания Resource Manager. Кроме того, в ней используется PowerShell. Эти сценарии можно также настроить с помощью портала Azure, несмотря на то, что документация еще недоступна. Вы можете начать настройку c любого шлюза. Как правило, не будет взиматься плата за простои при добавлении нового шлюза или подключении к шлюзу.
+
+
 
 >[!NOTE]
 >Если вы хотите создать VPN типа "сеть — сеть" через канал ExpressRoute, см. [эту статью](site-to-site-vpn-over-microsoft-peering.md).
@@ -224,7 +226,8 @@ VPN-подключение типа "сеть-сеть" можно настро�
   $p2sCertMatchName = "RootErVpnCoexP2S" 
   $p2sCertToUpload=get-childitem Cert:\CurrentUser\My | Where-Object {$_.Subject -match $p2sCertMatchName} 
   if ($p2sCertToUpload.count -eq 1){write-host "cert found"} else {write-host "cert not found" exit} 
-  $p2sCertData = [System.Convert]::ToBase64String($p2sCertToUpload.RawData) Add-AzureRmVpnClientRootCertificate -VpnClientRootCertificateName $p2sCertFullName -VirtualNetworkGatewayname $azureVpn.Name -ResourceGroupName $resgrp.ResourceGroupName -PublicCertData $p2sCertData
+  $p2sCertData = [System.Convert]::ToBase64String($p2sCertToUpload.RawData) 
+  Add-AzureRmVpnClientRootCertificate -VpnClientRootCertificateName $p2sCertFullName -VirtualNetworkGatewayname $azureVpn.Name -ResourceGroupName $resgrp.ResourceGroupName -PublicCertData $p2sCertData
   ```
 
 Дополнительные сведения см. в статье [Настройка подключения типа "точка — сеть" к виртуальной сети с помощью PowerShell](../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md).

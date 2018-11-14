@@ -11,14 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/24/2018
+ms.date: 11/6/2018
 ms.author: patricka
-ms.openlocfilehash: a1c516ebbeb33d2aa92f6a0e3031a2b2d9fb4e9c
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.reviewer: bryanr
+ms.openlocfilehash: fbf62e53ffe3fc3540086137955417bec56e7825
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50026166"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51240177"
 ---
 # <a name="multi-tenancy-in-azure-stack"></a>Мультитенантность в Azure Stack
 
@@ -26,9 +27,9 @@ ms.locfileid: "50026166"
 
 Вы можете настроить в Azure Stack поддержку пользователей из нескольких клиентов Azure Active Directory (Azure AD), чтобы они использовали службы в Azure Stack. Давайте рассмотрим следующий пример:
 
- - Вы являетесь администратором служб для contoso.onmicrosoft.com, где используется Azure Stack.
- - Мария является администратором каталога гостевых пользователей fabrikam.onmicrosoft.com. 
- - Компания, в которой работает Мария, использует службы IaaS и PaaS вашей компании. Вам нужно разрешить вход и использование ресурсов Azure Stack в contoso.onmicrosoft.com для пользователей из гостевого каталога (fabrikam.onmicrosoft.com).
+- Вы являетесь администратором служб для contoso.onmicrosoft.com, где установлен Azure Stack.
+- Мария является администратором каталога гостевых пользователей fabrikam.onmicrosoft.com.
+- Компания, в которой работает Мария, использует службы IaaS и PaaS вашей компании. Вам нужно разрешить вход и использование ресурсов Azure Stack в contoso.onmicrosoft.com для пользователей из гостевого каталога (fabrikam.onmicrosoft.com).
 
 Далее описана процедура, которая позволяет настроить мультитенантность в Azure Stack для описанного сценария. В нашем примере вам и Марии придется выполнить ряд действий, чтобы пользователи из компании Fabrikam могли выполнять вход в развертывание Azure Stack компании Contoso и использовать ресурсы этого развертывания.  
 
@@ -50,6 +51,8 @@ ms.locfileid: "50026166"
 В этом разделе вы настроите Azure Stack, чтобы разрешить вход с учетными данными клиентов каталога Fabrikam Azure AD.
 
 Подключите клиент гостевого каталога Fabrikam к Azure Stack, настроив Azure Resource Manager для приема пользователей и субъектов-служб из клиента гостевого каталога.
+
+Администратор служб contoso.onmicrosoft.com должен выполнить следующие команды.
 
 ````PowerShell  
 ## The following Azure Resource Manager endpoint is for the ASDK. If you are in a multinode environment, contact your operator or service provider to get the endpoint.
@@ -76,11 +79,11 @@ Register-AzSGuestDirectoryTenant -AdminResourceManagerEndpoint $adminARMEndpoint
 
 ### <a name="configure-guest-directory"></a>Настройка гостевого каталога
 
-Когда вы завершите все действия в каталоге Azure Stack, Мария должна подтвердить согласие на доступ Azure Stack к гостевому каталогу и зарегистрировать Azure Stack в этом гостевом каталоге. 
+После того как администратор или оператор Azure Stack разрешил использование каталога Fabrikam в Azure Stack, Мария должна зарегистрировать Azure Stack с клиентом каталога Fabrikam.
 
 #### <a name="registering-azure-stack-with-the-guest-directory"></a>Регистрация Azure Stack в гостевом каталоге
 
-Когда администратор гостевого каталога предоставит согласие на доступ Azure Stack к каталогу Fabrikam, Марие следует зарегистрировать Azure Stack в клиенте гостевого каталога Fabrikam.
+Мария, которая является администратором каталога Fabrikam, использует следующие команды в гостевом каталоге fabrikam.onmicrosoft.com.
 
 ````PowerShell
 ## The following Azure Resource Manager endpoint is for the ASDK. If you are in a multinode environment, contact your operator or service provider to get the endpoint.
@@ -99,14 +102,14 @@ Register-AzSWithMyDirectoryTenant `
 > Если в дальнейшем администратор Azure Stack будет устанавливать новые службы или обновления, возможно, потребуется снова запустить этот сценарий.
 >
 > Запускайте его в любое время, чтобы проверить состояние приложений Azure Stack в вашем каталоге.
-> 
+>
 > Для решения проблем с созданием виртуальных машин в Управляемых дисках (служба, добавленная с обновлением 1808) был добавлен новый **Поставщик дисковых ресурсов**, что требует перезапуска этого скрипта.
 
 ### <a name="direct-users-to-sign-in"></a>Информирование пользователей о возможности входа
 
 Итак, вы с Марией завершили все действия по подключению ее каталога, и теперь она может сообщить пользователям Fabrikam сведения о процедуре входа в ваш каталог.  Пользователи Fabrikam (то есть пользователи с суффиксом fabrikam.onmicrosoft.com) войти через страницу https://portal.local.azurestack.external.  
 
-Всем [внешним участникам](../role-based-access-control/rbac-and-directory-admin-roles.md) каталога Fabrikam (без суффикса fabrikam.onmicrosoft.com, но включенным в каталог Fabrikam) Мария предоставит другой URL-адрес для входа: https://portal.local.azurestack.external/fabrikam.onmicrosoft.com.  Если они попытаются использовать обычный URL-адрес, то будут перенаправлены к каталогу по умолчанию (Fabrikam) и увидят сообщение о том, что администратор не предоставил разрешение на подключение.
+Всем [внешним участникам](../role-based-access-control/rbac-and-directory-admin-roles.md) каталога Fabrikam (без суффикса fabrikam.onmicrosoft.com, но включенным в каталог Fabrikam) Мария предоставит другой URL-адрес для входа: https://portal.local.azurestack.external/fabrikam.onmicrosoft.com.  Если они не воспользуются этим URL-адресом, то они будут перенаправлены в каталог по умолчанию (Fabrikam) и получат сообщение об ошибке с указанием того, что администратор не дал согласия.
 
 ## <a name="disable-multi-tenancy"></a>Отключение поддержки мультитенантности
 

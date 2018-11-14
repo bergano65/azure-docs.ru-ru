@@ -6,16 +6,16 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 09/21/2018
 ms.author: snehaa
-ms.openlocfilehash: e39cf260cc4931fc0dddc4922479522cb521d08e
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 2f04fe103d010a64a77b7d80730cf80007c3c126
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49407067"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51256381"
 ---
 # <a name="azure-migrate---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Миграция Azure"
 
-Эта статья содержит часто задаваемые вопросы о службе "Миграция Azure". Если после прочтения статьи у вас возникли дополнительные запросы, вы можете опубликовать их на [форуме, посвященном службе "Миграция Azure"](http://aka.ms/AzureMigrateForum).
+Эта статья содержит часто задаваемые вопросы о службе "Миграция Azure". Если после прочтения статьи у вас возникли дополнительные запросы, вы можете опубликовать их на [форуме, посвященном службе "Миграция Azure"](https://aka.ms/AzureMigrateForum).
 
 ## <a name="general"></a>Общие сведения
 
@@ -141,9 +141,23 @@ ms.locfileid: "49407067"
 
 ## <a name="dependency-visualization"></a>Визуализация зависимостей
 
+### <a name="what-is-dependency-visualization"></a>Что такое визуализация зависимостей?
+
+Визуализация зависимостей позволяет оценивать группы виртуальных машин для миграции с большей уверенностью, перекрестно проверяя зависимости машин перед тем, как выполнить оценку. Визуализация зависимостей поможет избежать непредвиденных сбоев при миграции в Azure. Служба "Миграция Azure" использует решение "Сопоставление служб" в Log Analytics для визуализации зависимостей.
+
 ### <a name="do-i-need-to-pay-to-use-the-dependency-visualization-feature"></a>Нужно ли платить за использование функции визуализации зависимостей?
 
-За использование службы "Миграция Azure" не нужно дополнительно платить. См. дополнительные сведения о [ценах на Миграцию Azure](https://azure.microsoft.com/pricing/details/azure-migrate/).
+Нет. См. дополнительные сведения о [ценах на Миграцию Azure](https://azure.microsoft.com/pricing/details/azure-migrate/).
+
+### <a name="do-i-need-to-install-anything-for-dependency-visualization"></a>Нужно ли устанавливать дополнительные программы для визуализации зависимостей?
+
+Чтобы использовать визуализацию зависимостей, необходимо скачать и установить агенты на каждом локальном компьютере, который нужно оценить. 
+
+- Агент [Microsoft Monitoring Agent (MMA)](https://docs.microsoft.com/azure/log-analytics/log-analytics-agent-windows) должен быть установлен на каждом компьютере.
+- Программа [Dependency Agent](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure) должна быть установлена на каждом компьютере.
+- Кроме того, если у вас есть компьютеры без подключения к Интернету, необходимо скачать и установить на них шлюз Log Analytics.
+
+Если вы не используете визуализацию зависимостей, эти агенты не нужны на компьютерах, которые вы хотите оценить.
 
 ### <a name="can-i-use-an-existing-workspace-for-dependency-visualization"></a>Можно ли использовать существующую рабочую область для визуализации зависимостей?
 

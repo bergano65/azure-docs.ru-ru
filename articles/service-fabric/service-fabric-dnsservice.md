@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 7/20/2018
 ms.author: msfussell
-ms.openlocfilehash: 70ea33f2c3e3a79d1754b72d12e8fc27689e38ea
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 434f0639baa45dc83ee2fae4ec8b67a80517db14
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49387944"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51035936"
 ---
 # <a name="dns-service-in-azure-service-fabric"></a>Служба DNS в Azure Service Fabric
 Служба DNS является необязательной системной службой, которую можно включить в кластере для обнаружения других служб с помощью протокола DNS. 
@@ -43,6 +43,9 @@ ms.locfileid: "49387944"
 Динамические порты не поддерживаются службой DNS. Чтобы разрешать службы, предоставляемые через динамические порты, используйте [службу обратного прокси-сервера](./service-fabric-reverseproxy.md).
 
 ## <a name="enabling-the-dns-service"></a>Включение службы DNS
+> [!NOTE]
+> Служба DNS для служб Service Fabric пока что не поддерживается на платформе Linux.
+
 При создании кластера с помощью портала служба DNS включается по умолчанию с помощью флажка **Включить службу DNS** в меню **Конфигурация кластера**.
 
 ![Включение службы DNS на портале](./media/service-fabric-dnsservice/enable-dns-service.png)
@@ -251,6 +254,8 @@ public class ValuesController : Controller
 
 ## <a name="known-issues"></a>Известные проблемы
 * В Service Fabric 6.3 и более поздних версий возникает проблема с запросами DNS для служб, в именах которых содержится дефис в рамках имени DNS. Дополнительные сведения об этой проблеме см. [на сайте GitHub](https://github.com/Azure/service-fabric-issues/issues/1197). Эта проблема будет устранена в следующем обновлении 6.3. 
+
+* Служба DNS для служб Service Fabric пока что не поддерживается на платформе Linux. Служба DNS поддерживается для контейнеров в Linux. В качестве альтернативы можете выполнить разрешение вручную с помощью клиента Fabric или ServicePartitionResolver.
 
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о взаимодействии служб в кластере см. в статье [Подключение к службам в Service Fabric и взаимодействие с ними](service-fabric-connect-and-communicate-with-services.md).

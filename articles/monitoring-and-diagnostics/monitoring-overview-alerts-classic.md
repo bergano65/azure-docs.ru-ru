@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: robb
 ms.component: alerts
-ms.openlocfilehash: 7046a0c6ac84ad5f156098a26dcef2b8accd50af
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 02e69a9e3442f276e89e8515fb506ddd876ad2d2
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46987651"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51015780"
 ---
 # <a name="what-are-classic-alerts-in-microsoft-azure"></a>Что такое классические оповещения в Microsoft Azure?
 
@@ -29,7 +29,7 @@ ms.locfileid: "46987651"
 
 Просмотреть классические оповещения можно только на экране классических оповещений пользователя портала Azure. Вы увидите этот экран, нажав на кнопку **Просмотреть классические оповещения** на экране оповещений. 
 
- ![Варианты оповещений на портале Azure](./media/monitoring-overview-alerts-classic/monitor-alert-screen2.png) 
+ ![Варианты оповещений на портале Azure](./media/monitoring-overview-alerts-classic/monitor-alert-screen2.png)
 
 Новый интерфейс оповещений имеет следующие преимущества над классическим вариантом.
 -   **Усовершенствованная система уведомлений.** - Во всех новых оповещениях используются группы действий. Это именованные группы уведомлений и действий, которые можно использовать в нескольких оповещениях. В классических оповещениях метрик и оповещениях прежней версии Log Analytics группы действий не используются.
@@ -89,14 +89,14 @@ ms.locfileid: "46987651"
 ## <a name="next-steps"></a>Дополнительная информация
 Изучите правила создания оповещений и ознакомьтесь с их настройкой с помощью следующих средств:
 
-* Узнайте больше о [метриках](monitoring-overview-metrics.md).
-* Настройте [оповещения метрик на портале Azure](insights-alerts-portal.md).
-* Настройте [классические оповещения метрик с помощью PowerShell](insights-alerts-powershell.md).
-* Настройте [классические оповещения метрик с помощью интерфейса командной строки](insights-alerts-command-line-interface.md).
+* Узнайте больше о [метриках](../monitoring/monitoring-data-collection.md).
+* Настройте [оповещения метрик на портале Azure](alert-metric-classic.md).
+* Настройте [классические оповещения метрик с помощью PowerShell](alert-metric-classic.md).
+* Настройте [классические оповещения метрик с помощью интерфейса командной строки](alert-metric-classic.md).
 * Настройте [классические оповещения метрик с помощью REST API Azure Monitor](https://msdn.microsoft.com/library/azure/dn931945.aspx).
 * Узнайте больше о [журнале действий](monitoring-overview-activity-logs.md).
 * Настройте [оповещения журнала действий на портале Azure](monitoring-activity-log-alerts.md).
-* Настройте [оповещения журнала действий с помощью Resource Manager](monitoring-create-activity-log-alerts-with-resource-manager-template.md).
+* Настройте [оповещения журнала действий с помощью Resource Manager](alert-activity-log.md).
 * Просмотрите [схему webhook оповещений журнала действий](monitoring-activity-log-alerts-webhook.md).
 * Дополнительные сведения о [группах действий](monitoring-action-groups.md).
-* Настройте [новые оповещения](monitor-alerts-unified-usage.md).
+* Настройте [новые оповещения](alert-metric.md).

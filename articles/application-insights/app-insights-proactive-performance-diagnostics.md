@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 05/04/2017
 ms.reviewer: antonfr
 ms.author: mbullwin
-ms.openlocfilehash: b0256e899d47e3b6f8141218c11e1a7a62ca8e1a
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 099e597982172bcea39fedd0fd1445f466eb2bc1
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50419730"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50960826"
 ---
 # <a name="smart-detection---performance-anomalies"></a>Интеллектуальное обнаружение. Аномалии производительности
 
@@ -185,8 +185,8 @@ Application Insights определяет проблемы производит�
 
 * [Профилировщик](app-insights-profiler.md) 
 * [Отладчик моментальных снимков](app-insights-snapshot-debugger.md)
-* [Аналитика в Application Insights](app-insights-analytics-tour.md)
-* [Интеллектуальная диагностика и анализ](app-insights-analytics-diagnostics.md)
+* [Аналитика в Application Insights](../log-analytics/query-language/get-started-analytics-portal.md)
+* [Интеллектуальная диагностика и анализ](app-insights-analytics.md)
 
 Интеллектуальное обнаружение — это полностью автоматическая функция, но, возможно, вам потребуется настроить некоторые дополнительные оповещения.
 

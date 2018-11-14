@@ -15,12 +15,12 @@ ms.date: 10/17/2018
 ms.author: barbkess
 ms.reviewer: japere
 ms.custom: it-pro
-ms.openlocfilehash: c9c21b9beb891a685d7e264ec55817c0045455bc
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 62738cda8ce37ec7ca50e1e3f285dc71a37113f7
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49406283"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51036043"
 ---
 # <a name="understand-azure-ad-application-proxy-connectors"></a>Сведения о соединителях прокси приложения Azure AD
 
@@ -32,7 +32,7 @@ ms.locfileid: "49406283"
 
 ## <a name="requirements-and-deployment"></a>Требования и развертывание
 
-Чтобы успешно развернуть прокси приложения, необходим по крайней мере один соединитель, но мы рекомендуем использовать не меньше двух, чтобы повысить гибкость. Установите соединитель на компьютер Windows Server 2012 R2 или Windows Server 2016. Соединителю нужен доступ к службе прокси приложения, а также к локальным приложениям, которые вы публикуете. 
+Чтобы успешно развернуть прокси приложения, необходим по крайней мере один соединитель, но мы рекомендуем использовать не меньше двух, чтобы повысить гибкость. Установите соединитель на компьютер Windows Server 2012 R2 или Windows Server 2016. Соединителю нужен доступ к службе прокси приложения, а также к локальным приложениям, которые вы публикуете. Службе прокси приложения также требуется TLS 1.2 на базовой операционной системе. Чтобы перейти на использование TLS 1.2, нужно выполнить инструкции из раздела [Включение протокола TLS 1.2 для Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-prerequisites#enable-tls-12-for-azure-ad-connect). Хотя содержимое предназначено для Azure AD Connect, эта процедура одинакова для всех клиентов .NET.
 
 Дополнительные сведения о требованиях к сети для сервера соединителя см. в разделе [Начало работы с прокси приложения и установка соединителя](application-proxy-enable.md).
 

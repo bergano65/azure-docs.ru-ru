@@ -1,5 +1,5 @@
 ---
-title: Вызов защищенного веб-API ASP.NET в Azure Active Directory B2C | Документация Майкрософт
+title: Вызов веб-API NET из веб-приложения .NET в Azure Active Directory B2C | Документация Майкрософт
 description: Как создать веб-приложение .NET и обращаться к веб-API с использованием Azure Active Directory B2C и маркеров доступа OAuth 2.0.
 services: active-directory-b2c
 author: davidmu1
@@ -10,14 +10,14 @@ ms.topic: conceptual
 ms.date: 03/17/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 38ad6d8f3746d856d8c0a73520d55fad9d8344e6
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 7296954a17b21183eb8be2744b42289522cf7f57
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50157927"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51012502"
 ---
-# <a name="azure-ad-b2c-call-a-net-web-api-from-a-net-web-app"></a>Azure AD B2C: вызов веб-API .NET из веб-приложения .NET
+# <a name="call-a-net-web-api-from-a-net-web-app-in-azure-active-directory-b2c"></a>Вызов веб-API NET из веб-приложения .NET в Azure Active Directory B2C
 
 Azure AD B2C позволяет добавлять в веб-приложения и веб-API мощные функции для управления удостоверениями. В этой статье описывается запрос маркера доступа и вызов веб-API .NET из веб-приложения со списком дел.
 
@@ -31,10 +31,10 @@ Azure AD B2C позволяет добавлять в веб-приложени
 Чтобы создать веб-приложение, которое вызывает веб-API, выполните следующие действия.
 
 1. [Создайте клиента Azure AD B2C](active-directory-b2c-get-started.md).
-2. [Зарегистрируйте веб-API](active-directory-b2c-app-registration.md#register-a-web-api).
-3. [Зарегистрируйте веб-приложение](active-directory-b2c-app-registration.md#register-a-web-app).
+2. [Зарегистрируйте веб-API](active-directory-b2c-app-registration.md).
+3. [Зарегистрируйте веб-приложение](active-directory-b2c-app-registration.md).
 4. [Настройте политики](active-directory-b2c-reference-policies.md).
-5. [Предоставьте веб-приложению права для использования веб-API](active-directory-b2c-access-tokens.md#publishing-permissions).
+5. [Предоставьте веб-приложению права для использования веб-API](active-directory-b2c-access-tokens.md).
 
 > [!IMPORTANT]
 > Клиентское приложение и веб-API должны использовать один и тот же каталог Azure AD B2C.

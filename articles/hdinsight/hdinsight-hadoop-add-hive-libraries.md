@@ -1,24 +1,24 @@
 ---
-title: Добавление библиотек Hive во время создания кластера HDInsight в Azure
-description: Узнайте, как добавлять библиотеки Hive (JAR-файлы) в кластер HDInsight во время создания кластера.
+title: Добавление библиотек Apache Hive во время создания кластера HDInsight в Azure
+description: Узнайте, как добавлять библиотеки Apache Hive (JAR-файлы) в кластер HDInsight во время создания кластера.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/27/2018
-ms.author: jasonh
+ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: 40650c813efc8fe7389b0445c72007dbd97e3ce8
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: f9788c82e74b47d4550640a1069f6d97487eecc6
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43108692"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51035311"
 ---
-# <a name="add-custom-hive-libraries-when-creating-your-hdinsight-cluster"></a>Добавление пользовательских библиотек Hive при создании кластера HDInsight
+# <a name="add-custom-apache-hive-libraries-when-creating-your-hdinsight-cluster"></a>Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight
 
-Дополнительные сведения о предварительной загрузке библиотек Hive в HDInsight. Этот документ содержит сведения об использовании действия скрипта по предварительной загрузке библиотек во время создания кластера. Библиотеки, добавляемые с помощью инструкций в этом документе, глобально доступны в Hive. Для их загрузки нет необходимости использовать [ADD JAR](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli).
+Дополнительные сведения о предварительной загрузке библиотек Apache Hive в HDInsight. Этот документ содержит сведения об использовании действия скрипта по предварительной загрузке библиотек во время создания кластера. Библиотеки, добавляемые с помощью инструкций в этом документе, глобально доступны в Hive. Для их загрузки нет необходимости использовать [ADD JAR](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli).
 
 ## <a name="how-it-works"></a>Принцип работы
 

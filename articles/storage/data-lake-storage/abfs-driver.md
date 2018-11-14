@@ -9,20 +9,20 @@ ms.author: jamesbak
 ms.date: 06/27/2018
 ms.service: storage
 ms.component: data-lake-storage-gen2
-ms.openlocfilehash: f618b925839d6f501635748734327293a2073b64
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: f1eacaa33fd5d0c70e8a1d3547fa40bf9d0d616c
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49384861"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51282600"
 ---
 # <a name="the-azure-blob-filesystem-driver-abfs-a-dedicated-azure-storage-driver-for-hadoop"></a>Драйвер файловой системы больших двоичных объектов Azure (ABFS): выделенный драйвер хранилища Azure для Hadoop
 
-Один из основных способов доступа к данным в хранилище Azure Data Lake Storage Gen2 (предварительная версия) связан с использованием [файловой системы Hadoop](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/filesystem/index.html). Хранилище Azure Data Lake Storage Gen2 имеет связанный драйвер — драйвер файловой системы больших двоичных объектов Azure или `ABFS`. ABFS является частью Apache Hadoop и входит во многие коммерческие дистрибутивы Hadoop. При использовании этого драйвера многие приложения и платформы могут получить доступ к данным в хранилище Data Lake Gen2 без какого-либо кода, явно ссылающегося на службу хранилища Data Lake Gen2.
+Один из основных способов доступа к данным в хранилище Azure Data Lake Storage Gen2 (предварительная версия) связан с использованием [файловой системы Hadoop](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/filesystem/index.html). В Data Lake Storage 2-го поколения пользователи хранилища BLOB-объектов Azure могут получить доступ к новому драйверу, драйверу файловой системы BLOB-объектов Azure или `ABFS`. ABFS является частью Apache Hadoop и входит во многие коммерческие дистрибутивы Hadoop. При использовании этого драйвера многие приложения и платформы могут получить доступ к данным в хранилище BLOB-объектов Azure2 без какого-либо кода, явно ссылающегося на Data Lake Storage 2-го поколения.
 
 ## <a name="prior-capability-the-windows-azure-storage-blob-driver"></a>Предыдущая возможность: драйвер Windows Azure Storage Blob
 
-Драйвер Windows Azure Storage Blob или [WASB](https://hadoop.apache.org/docs/current/hadoop-azure/index.html) предоставлял оригинальную поддержку больших двоичных объектов хранилища Azure. Этот драйвер выполнял сложную задачу сопоставления семантики файловой системы (как это требуется интерфейсом файловой системы Hadoop) с семантикой интерфейса стиля хранилища объектов, предоставляемого хранилищем BLOB-объектов Azure. Этот драйвер продолжает поддерживать эту модель, обеспечивая высокопроизводительный доступ к данным, хранящимся в больших двоичных объектах. Также он содержит значительный объем кода, который выполняет это сопоставление, что и затрудняет его техническое обслуживание. Кроме того, при некоторых применяемых к каталогам операциях, таких как [FileSystem.rename()](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/filesystem/filesystem.html#boolean_renamePath_src_Path_d) и [FileSystem.delete()](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/filesystem/filesystem.html#boolean_deletePath_p_boolean_recursive), требуется, чтобы драйвер выполнил большое количество операций (из-за того, что объекты хранилища не поддерживают каталоги), что часто приводит к снижению производительности. Для преодоления присущих WASB недостатков разработана новая служба Azure Data Lake Storage.
+Драйвер Windows Azure Storage Blob или [WASB](https://hadoop.apache.org/docs/current/hadoop-azure/index.html) предоставлял оригинальную поддержку хранилища BLOB-объектов. Этот драйвер выполнял сложную задачу сопоставления семантики файловой системы (как это требуется интерфейсом файловой системы Hadoop) с семантикой интерфейса стиля хранилища объектов, предоставляемого хранилищем BLOB-объектов Azure. Этот драйвер продолжает поддерживать эту модель, обеспечивая высокопроизводительный доступ к данным, хранящимся в больших двоичных объектах. Также он содержит значительный объем кода, который выполняет это сопоставление, что и затрудняет его техническое обслуживание. Кроме того, при некоторых применяемых к каталогам операциях, таких как [FileSystem.rename()](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/filesystem/filesystem.html#boolean_renamePath_src_Path_d) и [FileSystem.delete()](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/filesystem/filesystem.html#boolean_deletePath_p_boolean_recursive), требуется, чтобы драйвер выполнил большое количество операций (из-за того, что объекты хранилища не поддерживают каталоги), что часто приводит к снижению производительности. Драйвер ABFS разработан для преодоления присущих WASB недостатков.
 
 ## <a name="the-azure-blob-file-system-driver"></a>Драйвер файловой системы больших двоичных объектов Azure
 

@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.component: core
 ms.topic: article
 ms.date: 09/24/2018
-ms.openlocfilehash: 2c4255b70ae9eb3b31b6fdfce33853f0d517aa1f
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 7eacc475145dac61db1717f1860e22cedd022262
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50215486"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51231453"
 ---
 # <a name="select-and-use-a-compute-target-to-train-your-model"></a>Выбор и использование целевого объекта вычислений для обучения вашей модели
 
@@ -463,7 +463,7 @@ run_config.auto_prepare_environment = True
 * отправка объекта `Pipeline`.
 
 > [!IMPORTANT]
-> Целевые объекты вычислений Azure Databricks, Azure Datalake Analytics и Azure HDInsight могут использоваться только в конвейере.
+> Целевые объекты вычислений Azure Databricks и Azure Datalake Analytics могут использоваться только в конвейере.
 > Локальный целевой объект вычислений не может использоваться в конвейере.
 
 ### <a name="submit-using-scriptrunconfig"></a>Отправка с помощью `ScriptRunConfig`
@@ -591,7 +591,7 @@ pipeline_run.wait_for_completion()
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Справка по пакету SDK для машинного обучения Azure](http://aka.ms/aml-sdk)
+* [Справка по пакету SDK для машинного обучения Azure](https://aka.ms/aml-sdk)
 * [Руководство. Обучение модели](tutorial-train-models-with-aml.md)
 * [Где следует развертывать модели](how-to-deploy-and-where.md)
 * [Создание конвейеров машинного обучения с помощью службы машинного обучения Azure](concept-ml-pipelines.md)

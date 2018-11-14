@@ -1,25 +1,18 @@
 ---
 title: Общие сведения о маршрутизации содержимого на основе URL-адресов | Документация Майкрософт
 description: Эта страница содержит общие сведения о маршрутизации содержимого шлюза приложений на основе URL-адресов, настройки UrlPathMap и правила PathBasedRouting.
-documentationcenter: na
 services: application-gateway
 author: vhorne
 manager: jpconnock
-editor: ''
-ms.assetid: 4409159b-e22d-4c9a-a103-f5d32465d163
 ms.service: application-gateway
-ms.devlang: na
-ms.topic: hero-article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 05/09/2017
+ms.date: 11/7/2018
 ms.author: victorh
-ms.openlocfilehash: f6108b5ac628b8bc2c1d74dcc871f96115094859
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: bc123307a3cc3a5040e93e517c60604dc75fc7e7
+ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32770344"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51218429"
 ---
 # <a name="url-path-based-routing-overview"></a>Общие сведения о маршрутизации на основе URL-путей
 
@@ -70,7 +63,7 @@ ms.locfileid: "32770344"
 ```
 
 > [!NOTE]
-> Параметр PathPattern представляет список шаблонов пути для сопоставления. Каждый шаблон должен начинаться с косой черты (/). Символ * может быть только в конце после косой черты. Строка, передаваемая для сопоставления пути, не должна содержать никакого текста после первого символа ? или # — эти символы не допускаются.
+> Параметр PathPattern представляет список шаблонов пути для сопоставления. Каждый шаблон должен начинаться с косой черты (/). Символ * может быть только в конце после косой черты. Строка, передаваемая в сопоставитель путей, не должна содержать текст после первого символа "?" или "#", и сами эти символы не допускаются. В остальных случаях все допустимые символы в URL-адресе допускаются и в PathPattern.
 
 Дополнительные сведения см. в статье [Resource Manager template using URL-based routing](https://azure.microsoft.com/documentation/templates/201-application-gateway-url-path-based-routing) (Шаблон Resource Manager с использованием маршрутизации на основе URL-адресов).
 

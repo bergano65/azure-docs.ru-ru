@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 04/09/2018
 ms.reviewer: sergkanz
 ms.author: mbullwin
-ms.openlocfilehash: d9b6f5c08eed5efceafc71feaf654ad8f4fcafa0
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: eb14a3bc76fef37cdff4ed49cdbb6a99eac40928
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49341129"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51280169"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -66,7 +66,7 @@ Application Insights определяет [модель данных](applicatio
 
 ## <a name="correlation-headers"></a>Заголовки корреляции
 
-Мы работаем над созданием предложения RFC для [протокола HTTP корреляции](https://github.com/lmolkova/correlation/blob/master/http_protocol_proposal_v1.md). Это предложение определяет два заголовка:
+Мы работаем над созданием предложения RFC для [протокола HTTP корреляции](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md). Это предложение определяет два заголовка:
 
 - `Request-Id` содержит глобальный уникальный идентификатор вызова.
 - `Correlation-Context` содержит коллекцию пар "имя-значение" свойств распределенной трассировки.
@@ -77,7 +77,7 @@ Application Insights определяет [модель данных](applicatio
 
 ### <a name="w3c-distributed-tracing"></a>Распределенная трассировка W3C
 
-Мы переходим на (формат распределенной трассировки W3C) [https://w3c.github.io/distributed-tracing/report-trace-context.html]. Он определяет следующее:
+Мы переходим на [формат распределенной трассировки W3C](https://w3c.github.io/trace-context/). Он определяет следующее:
 - `traceparent` — содержит глобальный уникальный идентификатор операции и уникальный идентификатор вызова;
 - `tracestate` — содержит специфический контекст трассировки системы.
 
@@ -156,7 +156,7 @@ public class CloudRoleNameInitializer extends WebTelemetryInitializerBase {
     }
   }
 ```
-Посредством [класса контекста устройства](https://docs.microsoft.com/et-ee/java/api/com.microsoft.applicationinsights.extensibility.context._device_context) (тег присваивается только этому элементу телеметрии)
+Посредством [класса контекста устройства](https://docs.microsoft.com/java/api/com.microsoft.applicationinsights.extensibility.context._device_context) (тег присваивается только этому элементу телеметрии)
 ```Java
 telemetry.getContext().getDevice().setRoleName("My Component Name");
 ```

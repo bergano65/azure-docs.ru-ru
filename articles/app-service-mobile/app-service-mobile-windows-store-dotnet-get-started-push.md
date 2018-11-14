@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/12/2016
 ms.author: crdun
-ms.openlocfilehash: bfbb72d6fd101932f00e12ad18ab079ec30a0d3a
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: c137f6cfdff9d043a656783f38ec9b894e644338
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42818826"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50913025"
 ---
 # <a name="add-push-notifications-to-your-windows-app"></a>Добавление push-уведомлений в приложение Windows
 
@@ -37,21 +37,23 @@ ms.locfileid: "42818826"
 
 ## <a name="register-your-app-for-push-notifications"></a>Регистрация приложения для работы с push-уведомлениями
 
-Вам нужно отправить свое приложение в Microsoft Store, а затем настроить в проекте сервера интеграцию со службами уведомлений Windows (WNS) для отправки push-уведомлений.
+Вам нужно отправить свое приложение в Microsoft Store, а затем настроить в проекте сервера интеграцию с [Windows Notification Services (WNS)](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview) для отправки push-уведомлений.
 
 1. В обозревателе решений Visual Studio щелкните правой кнопкой мыши проект приложения UWP, щелкните **Магазин** > **Связать приложение с Магазином…**.
 
     ![Сопоставление приложения с Microsoft Store](./media/app-service-mobile-windows-store-dotnet-get-started-push/notification-hub-associate-uwp-app.png)
+
 2. В окне мастера нажмите кнопку **Далее**, выполните вход с помощью учетной записи Майкрософт, введите имя приложения в поле **Зарезервировать новое имя приложения** и нажмите кнопку **Зарезервировать**.
 3. После успешного создания регистрации приложения выберите новое имя приложения, нажмите кнопку **Далее**, а затем кнопку **Связать**. Это позволяет добавить необходимые регистрационные данные Microsoft Store в манифест приложения.
-4. Перейдите в [Центр разработки для Windows](https://dev.windows.com/en-us/overview), войдите с помощью учетной записи Майкрософт, щелкните "Регистрация нового приложения" в области **Мои приложения**, а затем разверните **Службы** > **Push-уведомления**.
-5. На странице **Push-уведомления** в разделе **Мобильные службы Microsoft Azure** щелкните **Live Services site** (Сайт служб Live).
-6. На странице регистрации запишите значения полей **Секреты приложения** и **SID пакета**, которые вам понадобятся позже при настройке серверной части мобильного приложения.
+4. Перейдите на [портал регистрации приложений](https://apps.dev.microsoft.com/) и войдите с помощью своей учетной записи Майкрософт. Щелкните приложение для Microsoft Store, которое вы сопоставили на предыдущем шаге.
+5. На странице регистрации запишите значения полей **Секреты приложения** и **SID пакета**, которые вам понадобятся позже при настройке серверной части мобильного приложения.
 
     ![Сопоставление приложения с Microsoft Store](./media/app-service-mobile-windows-store-dotnet-get-started-push/app-service-mobile-uwp-app-push-auth.png)
 
    > [!IMPORTANT]
    > Секрет клиента и ИД безопасности пакета — это важные учетные данные для безопасного доступа. Не сообщайте никому эти значения и не распространяйте их вместе со своим приложением. **Идентификатор приложения** используется с секретным кодом для настройки аутентификации учетной записи Майкрософт .
+
+В разделе об использовании [Центра приложений](https://docs.microsoft.com/appcenter/sdk/push/uwp#prerequisite---register-your-app-for-windows-notification-services-wns) также содержатся инструкции по настройке приложений UWP для push-уведомлений.
 
 ## <a name="configure-the-backend-to-send-push-notifications"></a>Настройка серверной части для отправки push-уведомлений
 

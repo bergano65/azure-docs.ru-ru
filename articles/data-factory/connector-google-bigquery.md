@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/12/2018
+ms.date: 11/05/2018
 ms.author: jingwang
-ms.openlocfilehash: 51cacb385f28cf70a65b9c0e1c14d48e22be0a4d
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: ca12c7a3fe8a5ade8cf0e4ce00977bdcc9a300a6
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37051116"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51007660"
 ---
 # <a name="copy-data-from-google-bigquery-by-using-azure-data-factory"></a>Копирование данных из Google BigQuery с помощью фабрики данных Azure
 
@@ -28,7 +28,10 @@ ms.locfileid: "37051116"
 
 Данные из Google BigQuery можно скопировать в любое поддерживаемое хранилище данных, используемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
- В фабрике данных предоставляется встроенный драйвер, который обеспечивает подключение. Поэтому не нужно вручную устанавливать драйвер для использования этого соединителя.
+В фабрике данных предоставляется встроенный драйвер, который обеспечивает подключение. Поэтому не нужно вручную устанавливать драйвер для использования этого соединителя.
+
+>[!NOTE]
+>Этот соединитель Google BigQuery создан на основе API-интерфейсов BigQuery. Учтите, что в BigQuery ограничено максимальное число входящих запросов и применяются соответствующие квоты на каждый проект. Дополнительные сведения см. в разделе о [квотах и ограничениях на запросы API](https://cloud.google.com/bigquery/quotas#api_requests). Не активируйте слишком много одновременных запросов к учетной записи.
 
 ## <a name="get-started"></a>Начало работы
 

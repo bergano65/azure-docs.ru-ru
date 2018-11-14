@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/03/2018
 ms.author: spelluru
-ms.openlocfilehash: 8653056c5c4b0e5b6831d3cc2b0006e89ac01bdd
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.openlocfilehash: 8a661c94ecc660e0ebd0e9818acef81b8a7b819b
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48250879"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50978621"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---application-migration-and-integration"></a>Система управления инфраструктурой Azure DevTest Labs. Миграция и интеграция приложений
-После создания лабораторной среды для разработки и тестирования обдумайте следующие вопросы. 
+После создания лабораторной среды для разработки и тестирования обдумайте следующие вопросы.
 
-- Как проектная группа будет использовать эту среду? 
+- Как проектная группа будет использовать эту среду?
 - Как обеспечить соблюдение политик организации, сохраняя гибкость для повышения ценности приложения?
 
 ## <a name="azure-marketplace-images-vs-custom-images"></a>Образы Azure Marketplace и пользовательские образы
@@ -60,10 +60,10 @@ ms.locfileid: "48250879"
 ### <a name="answer"></a>Ответ
 Просмотрите [видео о шаблоне "Фабрика образов"](https://blogs.msdn.microsoft.com/devtestlab/2017/04/17/video-custom-image-factory-with-azure-devtest-labs/). Это достаточно сложный сценарием, и предлагаемые для него скрипты служат только примерами для изучения. Если потребуется внести в них изменения, поддерживайте и обслуживайте специально созданные для вашей среды скрипты.
 
-С помощью DevTest Labs создайте конвейер пользовательского образа в Visual Studio Team Services (VSTS).
+С помощью DevTest Labs создайте конвейер пользовательского образа в Azure Pipelines.
 
 - [Introduction: Get VMs ready in minutes by setting up an image factory in Azure DevTest Labs](https://blogs.msdn.microsoft.com/devtestlab/2016/09/14/introduction-get-vms-ready-in-minutes-by-setting-up-image-factory-in-azure-devtest-labs/) (Введение: подготовьте виртуальные машины за несколько минут, настроив фабрику образов в Azure DevTest Labs)
-- [Image Factory – Part 2! Setup VSTS and Factory Lab to Create VMs](https://blogs.msdn.microsoft.com/devtestlab/2017/10/25/image-factory-part-2-setup-vsts-to-create-vms-based-on-devtest-labs/) (Фабрика образов, часть 2. Установка VSTS и лаборатории фабрики для создания виртуальных машин)
+- [Image Factory – Part 2! Setup Azure Pipelines and Factory Lab to Create VMs](https://blogs.msdn.microsoft.com/devtestlab/2017/10/25/image-factory-part-2-setup-vsts-to-create-vms-based-on-devtest-labs/) (Фабрика образов, часть 2. Установка Azure Pipelines и лаборатории фабрики для создания виртуальных машин)
 - [Image Factory – Part 3: Save Custom Images and Distribute to Multiple Labs](https://blogs.msdn.microsoft.com/devtestlab/2018/01/10/image-factory-part-3-save-custom-images-and-distribute-to-multiple-labs/) (Фабрика образов, часть 3. Сохранение пользовательских образов и распространение их в несколько лабораторий)
 - [Video: Custom Image Factory with Azure DevTest Labs](https://blogs.msdn.microsoft.com/devtestlab/2017/04/17/video-custom-image-factory-with-azure-devtest-labs/) (Видео. Фабрика пользовательских образов в Azure DevTest Labs)
 
@@ -79,7 +79,7 @@ ms.locfileid: "48250879"
 
 **Исходящий трафик**. Если вы хотите, чтобы виртуальные машины не могли напрямую обращаться в общедоступный Интернет и генерировать трафик через корпоративный брандмауэр, вы можете локально перенаправить трафик на подключение express route или VPN с помощью принудительной маршрутизации.
 
-> [!NOTE] 
+> [!NOTE]
 > Если в вашей сети прокси-сервер блокирует весь трафик, для которого не настроены параметры прокси, не забудьте добавить исключения для учетной записи хранения артефактов в лаборатории.
 
 Вы также можете добавить группы безопасности сети для виртуальных машины или подсетей. Этот шаг добавит дополнительный уровень защиты, позволяющий разрешать или блокировать трафик.
@@ -100,9 +100,9 @@ ms.locfileid: "48250879"
 Когда мне лучше использовать общий, общедоступный и частный IP-адреса?
 
 ### <a name="answer"></a>Ответ
-Если вы используете подключение VPN или Express Route типа "сеть — сеть", лучше всего применить частные IP-адреса. Тогда ваши компьютеры будут доступны во внутренней сети, но недоступны через Интернет. 
+Если вы используете подключение VPN или Express Route типа "сеть — сеть", лучше всего применить частные IP-адреса. Тогда ваши компьютеры будут доступны во внутренней сети, но недоступны через Интернет.
 
-> [!NOTE] 
+> [!NOTE]
 > Владельцы лаборатории могут изменить эту политику подсетей, чтобы никто не мог случайно создать общедоступный IP-адрес для своей виртуальной машины. Владельцу подписки следует создать политику подписки, запрещающую создание общедоступных IP-адресов.
 
 При использовании общего общедоступного IP-адреса все виртуальные машины в лаборатории совместно используют один общедоступный IP-адрес. Такой подход может оказаться полезным, если важно не превысить ограничения на количество общедоступных IP-адресов для подписки.
@@ -125,7 +125,7 @@ ms.locfileid: "48250879"
 Как применить шаблоны Resource Manager в моей среде DevTest Labs?
 
 ### <a name="answer"></a>Ответ
-Шаблоны Resource Manager можно развернуть в среде DevTest Labs с помощью процедуры, описанной в статье [Использование Azure DevTest Labs для виртуальных машин и тестовых сред PaaS](devtest-lab-test-env.md). Вкратце, вам нужно разместить нужные шаблоны Resource Manager в репозиторий Git (Visual Studio Team Services или GitHub) и добавить в лабораторию [частный репозиторий для шаблонов](devtest-lab-test-env.md).
+Шаблоны Resource Manager можно развернуть в среде DevTest Labs с помощью процедуры, описанной в статье [Использование Azure DevTest Labs для виртуальных машин и тестовых сред PaaS](devtest-lab-test-env.md). Вкратце, вам нужно разместить нужные шаблоны Resource Manager в репозиторий Git (Azure Repos или GitHub) и добавить в лабораторию [частный репозиторий для шаблонов](devtest-lab-test-env.md).
 
 Этот сценарий не имеет смысла, если вы используете DevTest Labs только для размещения компьютеров разработки, но может оказаться полезен при создании промежуточной среды, которая должна хорошо соответствовать рабочей среде.
 

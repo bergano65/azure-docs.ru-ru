@@ -1,24 +1,7 @@
 ---
-title: PowerShell — смена предохранителя TDE — База данных SQL Azure | Документация Майкрософт
-description: Сведения о смене предохранителя прозрачного шифрования данных (TDE) для сервера Azure SQL.
-services: sql-database
-ms.service: sql-database
-ms.subservice: security
-ms.custom: ''
-ms.devlang: ''
-ms.topic: conceptual
-author: aliceku
-ms.author: aliceku
-ms.reviewer: vanto
-manager: jhubbard
-ms.date: 08/07/2017
-ms.openlocfilehash: fc8660b6fa6d9778a4eac9ce939181aa24d5097d
-ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49309644"
----
+title: "PowerShell — смена предохранителя TDE — База данных SQL Azure | Документация Майкрософт" description: Сведения о том, как сменить предохранитель прозрачного шифрования данных (TDE) для сервера Azure SQL.
+services: sql-database ms.service: sql-database ms.subservice: security ms.custom: ms.devlang: ms.topic: conceptual author: aliceku ms.author: aliceku ms.reviewer: vanto manager: jhubbard ms.date: 08/07/2017
+--- 
 # <a name="rotate-the-transparent-data-encryption-tde-protector-using-powershell"></a>Смена предохранителя TDE с помощью PowerShell 
 
 В этой статье описывается смена ключей для сервера SQL Azure, который использует предохранитель TDE из Azure Key Vault. Смена предохранителя TDE для сервера Azure SQL предусматривает переключение защиты баз данных на сервере на новый асимметричный ключ. Смена ключей выполняется через Интернет буквально за несколько секунд, так как для этой операции достаточно расшифровать и повторно шифровать только ключ шифрования данных, а не всю базу данных.

@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/29/2017
 ms.author: mbullwin
-ms.openlocfilehash: 91b5c2c23445e5cd3445d1d5b640cb3ecb8e5e7a
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 1e9170c955f2a36d68600372e3dcdac2a63056c1
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44301197"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50957766"
 ---
 # <a name="automate-application-insights-processes-by-using-logic-apps"></a>Автоматизация процессов Application Insights с помощью Logic Apps
 
@@ -51,7 +51,7 @@ ms.locfileid: "44301197"
 
 1. В поле поиска **Выберите действие** введите **Azure Application Insights**.
 
-1. В разделе **Действия** выберите **Azure Application Insights – Visualize Analytics query Preview** (Azure Application Insights — визуализация запроса Analytics [предварительная версия]).
+1. В разделе **Действия** выберите **Azure Application Insights – Visualize Analytics query Preview** (Azure Application Insights — визуализация запроса Analytics (предварительная версия)).
 
     ![Окно "Выберите действие" в конструкторе приложений логики](./media/automate-with-logic-apps/flow2.png)
 
@@ -132,7 +132,7 @@ ms.locfileid: "44301197"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Узнайте больше о создании [запросов Analytics](app-insights-analytics-using.md).
+- Узнайте больше о создании [запросов Analytics](../log-analytics/query-language/get-started-queries.md).
 - Дополнительные сведения о [Logic Apps](https://docs.microsoft.com/azure/logic-apps/logic-apps-what-are-logic-apps).
 
 

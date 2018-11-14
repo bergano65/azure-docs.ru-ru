@@ -12,21 +12,21 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/06/2018
+ms.date: 11/05/2018
 ms.author: barbkess
 ms.reviewer: luleon
-ms.openlocfilehash: f23c9976dacc1ca696772d6bf02b5d59e3e0b4d5
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: ee0b14123e193f219e403d2608368c27f953013d
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39368692"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51037980"
 ---
 # <a name="assign-a-user-or-group-to-an-enterprise-app-in-azure-active-directory"></a>Назначение пользователя или группы корпоративному приложению в Azure Active Directory
 Чтобы назначить пользователя или группу в корпоративном приложении, необходимо иметь соответствующие разрешения для управления корпоративным приложением, а также права глобального администратора для доступа к каталогу.
 
 > [!NOTE]
-> Чтобы воспользоваться функциями, описанными в этой статье, требуется лицензия Azure Active Directory Premium P1 или Premium P2. Дополнительные сведения см. на странице [цен на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory).
+> Требования к лицензированию компонентов, рассматриваемых в этой статье, см. на странице [цен на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory).
 
 > [!NOTE]
 > В приложениях Майкрософт (например, в приложениях Office 365) назначить пользователей в корпоративном приложении можно с помощью PowerShell.
@@ -35,7 +35,7 @@ ms.locfileid: "39368692"
 ## <a name="how-do-i-assign-user-access-to-an-enterprise-app-in-the-azure-portal"></a>Как назначить пользователю доступ к корпоративному приложению на портале Azure?
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи глобального администратора каталога.
 2. Выберите **Все службы**, в текстовом поле введите Azure Active Directory, а затем нажмите клавишу **ВВОД**.
-3. В колонке **Azure Active Directory — *имя_каталога*** (то есть в колонке Azure AD для каталога, которым вы управляете) выберите **Корпоративные приложения**.
+3. Выберите **Корпоративные приложения**.
 
     ![Открытие колонки "Корпоративные приложения"](./media/assign-user-or-group-access-portal/open-enterprise-apps.png)
 4. В колонке **Корпоративные приложения** выберите **Все приложения**. Отобразится список приложений, которыми вы можете управлять.

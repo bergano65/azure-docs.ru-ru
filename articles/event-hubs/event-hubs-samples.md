@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2018
 ms.author: shvija
-ms.openlocfilehash: ed337689360428d66657e5391ee52bb0ae39dc14
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 3db77a31dfe92e16d2ec145cc0be595082d0d927
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49365651"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51279387"
 ---
 # <a name="event-hubs-samples"></a>Примеры Центров событий 
 Примеры концентраторов событий можно найти на [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples). В примерах продемонстрированы основные функции [Центров событий Azure](/azure/event-hubs/). В этой статье приведены категории примеров с описаниями и ссылками.
@@ -60,7 +60,8 @@ ms.locfileid: "49365651"
 ## <a name="azure-powershell-samples"></a>Примеры сценариев Azure PowerShell
 Можно просмотреть примеры Azure PowerShell для концентраторов событий Azure в репозитории GitHub [azure-event-hubs](https://github.com/Azure/azure-event-hubs/tree/master/samples/Management/PowerShell).
  
-
+## <a name="apache-kafka-samples"></a>Примеры для Apache Kafka
+Примеры использования функции "Центры событий для Apache Kafka" можно найти в репозитории GitHub [azure-event-hubs-for-kafka](https://github.com/Azure/azure-event-hubs-for-kafka).
 
 ## <a name="next-steps"></a>Дополнительная информация
 Чтобы узнать больше о Центрах событий, обратитесь к следующим статьям:

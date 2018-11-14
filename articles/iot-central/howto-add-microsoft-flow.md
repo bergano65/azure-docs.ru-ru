@@ -8,12 +8,12 @@ ms.date: 09/18/2018
 ms.topic: conceptual
 ms.service: iot-central
 manager: peterpr
-ms.openlocfilehash: cc54a3a375fa2780e289a20b699df5d65aaf08cc
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: c06939ccb920954c08ef02f38e6d12471ac267db
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50155581"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50959296"
 ---
 # <a name="build-workflows-with-the-iot-central-connector-in-microsoft-flow"></a>Создание рабочих процессов с помощью соединителя IoT Central в Microsoft Flow
 
@@ -21,8 +21,10 @@ ms.locfileid: "50155581"
 
 Microsoft Flow позволяет автоматизировать рабочие процессы во многих приложениях и службах, которые используют бизнес-пользователи. С помощью соединителя IoT Central в Microsoft Flow можно настроить запуск рабочих процессов при срабатывании правила в IoT Central. В рабочем процессе, инициированном IoT Central или любым другим приложением, можно использовать действия соединителя IoT Central для создания или удаления устройства, а также обновления его свойств и параметров. Ознакомьтесь с [этими шаблонами Microsoft Flow](https://aka.ms/iotcentralflowtemplates), которые подключают IoT Central к другим службам, таким как мобильные уведомления и Microsoft Teams.
 
-> [!NOTE] 
-> Вам нужно будет войти в Microsoft Flow с помощью личной, рабочей или учебной учетной записи Майкрософт. Дополнительные сведения о планах Microsoft Flow см. на [этой странице](https://aka.ms/microsoftflowplans).
+## <a name="prerequisites"></a>Предварительные требования
+
+- приложение с оплатой по мере использования;
+- личная, рабочая или учебная учетная запись Майкрософт для входа в Microsoft Flow ([подробнее о планах подписки на Microsoft Flow](https://aka.ms/microsoftflowplans)).
 
 ## <a name="trigger-a-workflow-when-a-rule-is-triggered"></a>Запуск рабочего процесса при срабатывании правила
 

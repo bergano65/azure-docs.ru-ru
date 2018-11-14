@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ergreenl
-ms.openlocfilehash: 5bc1212cc6e894cd82a60abb42f92893c0bb2d43
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: bba7c70a5078d309a55f898c24389d42a8a604ab
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39579550"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51035041"
 ---
 # <a name="troubleshoot-invalid-service-principal-configuration-for-your-managed-domain"></a>Устранение неполадок с недопустимой конфигурацией субъекта-службы для управляемого домена
 
@@ -45,7 +45,7 @@ ms.locfileid: "39579550"
 | 2565bd9d-da50-47d4-8b85-4c97f669dc36 | [Повторное создание отсутствующего субъекта-службы с помощью PowerShell](#recreate-a-missing-service-principal-with-powershell) |
 | 443155a6-77f3-45e3-882b-22b3a8d431fb | [Повторная регистрация в пространстве имен Microsoft.AAD](#re-register-to-the-microsoft-aad-namespace-using-the-azure-portal) |
 | abba844e-bc0e-44b0-947a-dc74e5d09022  | [Повторная регистрация в пространстве имен Microsoft.AAD](#re-register-to-the-microsoft-aad-namespace-using-the-azure-portal) |
-| d87dcbc6-a371-462e-88e3-28ad15ec4e64 | [Субъекты-службы, которые являются самокорректирующимися](#service-principals-that-self-correct) |
+| d87dcbc6-a371-462e-88e3-28ad15ec4e64 | [Повторная регистрация в пространстве имен Microsoft.AAD](#re-register-to-the-microsoft-aad-namespace-using-the-azure-portal) |
 
 ## <a name="recreate-a-missing-service-principal-with-powershell"></a>Повторное создание отсутствующего субъекта-службы с помощью PowerShell
 Выполните следующие действия, если субъект-служба с идентификатором ```2565bd9d-da50-47d4-8b85-4c97f669dc36``` отсутствует в каталоге Azure AD.
@@ -76,7 +76,7 @@ ms.locfileid: "39579550"
 
 
 ## <a name="re-register-to-the-microsoft-aad-namespace-using-the-azure-portal"></a>Повторная регистрация в пространстве имен Microsoft.AAD с помощью портала Azure
-Выполните следующие действия, если субъект-служба с идентификатором ```443155a6-77f3-45e3-882b-22b3a8d431fb``` или ```abba844e-bc0e-44b0-947a-dc74e5d09022``` отсутствует в каталоге Azure AD.
+Выполните следующие действия, если субъект-служба с идентификатором ```443155a6-77f3-45e3-882b-22b3a8d431fb```, или ```abba844e-bc0e-44b0-947a-dc74e5d09022```, или ```d87dcbc6-a371-462e-88e3-28ad15ec4e64``` отсутствует в каталоге Azure AD.
 
 **Решение**. Чтобы восстановить доменные службы в каталоге, сделайте следующее.
 
@@ -85,12 +85,6 @@ ms.locfileid: "39579550"
 3. На панели навигации слева выберите **Поставщики ресурсов**
 4. Найдите Microsoft.AAD в таблице и нажмите кнопку **Повторная регистрация**.
 5. Чтобы убедиться, что причина оповещения устранена, просмотрите страницу работоспособности для управляемого домена через два часа.
-
-
-## <a name="service-principals-that-self-correct"></a>Субъекты-службы, которые являются самокорректирующимися
-Выполните следующие действия, если субъект-служба с идентификатором ```d87dcbc6-a371-462e-88e3-28ad15ec4e64``` отсутствует в каталоге Azure AD.
-
-**Решение**. Доменные службы Azure AD могут обнаружить отсутствие, неправильную настройку и удаление этого субъекта-службы. Служба автоматически восстанавливает этот субъект-службу. Но приложение и объект, которые работали с удаленным приложением, вам придется удалить вручную, так как после активации сертификата новый субъект-служба уже не может изменять приложение и объект. Из-за этого в вашем домене возникнуть новая ошибка. Чтобы устранить эту проблему, выполните шаги из [раздела для AADDS105](#alert-aadds105-password-synchronization-application-is-out-of-date). Чтобы убедиться, что субъект-служба создана повторно, проверьте работоспособность управляемого домена через два часа.
 
 
 ## <a name="alert-aadds105-password-synchronization-application-is-out-of-date"></a>Предупреждение AADDS105: приложение синхронизации пароля устарело
@@ -110,8 +104,8 @@ ms.locfileid: "39579550"
 2. Удалите старое приложение и объект с помощью следующих команд PowerShell:
 
     ```powershell
-    $app = Get-AzureADApplication -Filter "IdentifierUris eq 'https://sync.aaddc.activedirectory.windowsazure.com'"
-    Remove-AzureADApplication -ObjectId $app.ObjectId
+    $app = Get-AzureADApplication -Filter "IdentifierUris eq 'https://sync.aaddc.activedirectory.windowsazure.com'"
+    Remove-AzureADApplication -ObjectId $app.ObjectId
     $spObject = Get-AzureADServicePrincipal -Filter "DisplayName eq 'Azure AD Domain Services Sync'"
     Remove-AzureADServicePrincipal -ObjectId $app.ObjectId
     ```

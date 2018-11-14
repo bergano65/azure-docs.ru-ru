@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 10/11/2018
 ms.author: johnkem
 ms.component: logs
-ms.openlocfilehash: 3b665ed0539a41ffeca87511154f3607a57cff4a
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: 035b12c85720817501da9f4ad580aa8e7da8fdc4
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49116199"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51280530"
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-diagnostic-logs"></a>Поддерживаемые службы, схемы и категории для журналов диагностики Azure
 
@@ -47,7 +47,7 @@ ms.locfileid: "49116199"
 
 | Service | Схемы и документы |
 | --- | --- |
-| Azure Active Directory | [Общие сведения](../active-directory/reports-monitoring/overview-activity-logs-in-azure-monitor.md), [схема журнала аудита](../active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema.md) и [схема входов](../active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema.md) |
+| Azure Active Directory | [Общие сведения](../active-directory/reports-monitoring/concept-activity-logs-azure-monitor.md), [схема журнала аудита](../active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema.md) и [схема входов](../active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema.md) |
 | Analysis Services | https://azure.microsoft.com/blog/azure-analysis-services-integration-with-azure-diagnostic-logs/ |
 | Управление API | [Журналы диагностики управления API](../api-management/api-management-howto-use-azure-monitor.md#diagnostic-logs) |
 | Шлюзы приложений |[Ведение журнала диагностики для шлюза приложений](../application-gateway/application-gateway-diagnostics.md) |
@@ -92,9 +92,11 @@ ms.locfileid: "49116199"
 |Microsoft.Batch/batchAccounts|ServiceLog|Журналы служб|
 |Microsoft.Cdn/profiles/endpoints|CoreAnalytics|Возвращает метрики конечной точки, например пропускную способность, исходящий трафик и т. д.|
 |Microsoft.ClassicNetwork/networksecuritygroups|Событие потока правил группы безопасности сети|Событие потока правил группы безопасности сети|
-|Microsoft.CognitiveServices/accounts|Аудит|Аудит|
+|Microsoft.CognitiveServices/accounts|Аудит|Журналы аудита|
+|Microsoft.CognitiveServices/accounts|RequestResponse|Журналы запросов и ответов|
 |Microsoft.ContainerService/managedClusters|kube-apiserver|Сервер API Kubernetes|
 |Microsoft.ContainerService/managedClusters|kube-controller-manager|Диспетчер контроллеров Kubernetes|
+|Microsoft.ContainerService/managedClusters|cluster-autoscaler|Средство автомасштабирования кластера Kubernetes|
 |Microsoft.ContainerService/managedClusters|kube-scheduler|Планировщик Kubernetes|
 |Microsoft.ContainerService/managedClusters|guard|Веб-перехватчик проверки подлинности|
 |Microsoft.CustomerInsights/hubs|AuditEvents|AuditEvents|
@@ -105,7 +107,7 @@ ms.locfileid: "49116199"
 |Microsoft.DataLakeAnalytics/accounts|Запросы|Журналы запросов|
 |Microsoft.DataLakeStore/accounts|Аудит|Журналы аудита|
 |Microsoft.DataLakeStore/accounts|Requests|Журналы запросов|
-|Microsoft.DBforMySQL/servers|MySqlSlowLogs|Журналы медленных запросов MySQL|
+|Microsoft.DBforMySQL/servers|MySqlSlowLogs|Журналы сервера MySQL|
 |Microsoft.DBforPostgreSQL/servers|PostgreSQLLogs|Журналы сервера PostgreSQL|
 |Microsoft.Devices/IotHubs|Подключения|Подключения|
 |Microsoft.Devices/IotHubs|DeviceTelemetry|Телеметрия устройства|
@@ -128,6 +130,14 @@ ms.locfileid: "49116199"
 |Microsoft.EventHub/namespaces|ArchiveLogs|Журналы архивации|
 |Microsoft.EventHub/namespaces|OperationalLogs|Журналы операций|
 |Microsoft.EventHub/namespaces|AutoScaleLogs|Журналы автомасштабирования.|
+|Microsoft.Insights/AutoscaleSettings|AutoscaleEvaluations|Оценки автомасштабирования|
+|Microsoft.Insights/AutoscaleSettings|AutoscaleScaleActions|Действия автоматического увеличения масштаба|
+|Microsoft.IoTSpaces/Graph|Трассировка|Трассировка|
+|Microsoft.IoTSpaces/Graph|Рабочий режим|Рабочий режим|
+|Microsoft.IoTSpaces/Graph|Аудит|Аудит|
+|Microsoft.IoTSpaces/Graph|UserDefinedFunction|UserDefinedFunction|
+|Microsoft.IoTSpaces/Graph|Входящие|Входящие|
+|Microsoft.IoTSpaces/Graph|Исходящие|Исходящие|
 |Microsoft.KeyVault/vaults|AuditEvent|Журналы аудита|
 |Microsoft.Logic/workflows|WorkflowRuntime|События диагностики среды выполнения рабочего процесса|
 |Microsoft.Logic/integrationAccounts|IntegrationAccountTrackingEvents|Integration Account track events|
@@ -136,6 +146,8 @@ ms.locfileid: "49116199"
 |Microsoft.Network/loadBalancers|LoadBalancerAlertEvent|События оповещения балансировщика нагрузки|
 |Microsoft.Network/loadBalancers|LoadBalancerProbeHealthStatus|Состояние работоспособности балансировщика нагрузки|
 |Microsoft.Network/publicIPAddresses|DDoSProtectionNotifications|Уведомления о защите от атак DDoS|
+|Microsoft.Network/publicIPAddresses|DDoSMitigationFlowLogs|Журналы последовательностей принятия решений по защите от атак DDoS|
+|Microsoft.Network/publicIPAddresses|DDoSMitigationReports|Отчеты о защите от атак DDoS|
 |Microsoft.Network/virtualNetworks|VMProtectionAlerts|Оповещения о защите виртуальной машины|
 |Microsoft.Network/applicationGateways|ApplicationGatewayAccessLog|Журнал доступа к шлюзу приложений|
 |Microsoft.Network/applicationGateways|ApplicationGatewayPerformanceLog|Журнал производительности шлюза приложений|
@@ -151,6 +163,8 @@ ms.locfileid: "49116199"
 |Microsoft.Network/virtualNetworkGateways|P2SDiagnosticLog|Журналы диагностики P2S|
 |Microsoft.Network/trafficManagerProfiles|ProbeHealthStatusEvents|Событие вывода результатов проверки работоспособности диспетчера трафика|
 |Microsoft.Network/expressRouteCircuits|PeeringRouteLog|Журналы таблиц пиринга маршрутов|
+|Microsoft.Network/frontdoors|FrontdoorAccessLog|Журнал доступа Frontdoor|
+|Microsoft.Network/frontdoors|FrontdoorWebApplicationFirewallLog|Журнал брандмауэра веб-приложения Frontdoor|
 |Microsoft.PowerBIDedicated/capacities|Двигатель|Двигатель|
 |Microsoft.RecoveryServices/Vaults|AzureBackupReport|Данные отчетов службы архивации Azure|
 |Microsoft.RecoveryServices/Vaults|AzureSiteRecoveryJobs|Задания Azure Site Recovery|
@@ -173,10 +187,21 @@ ms.locfileid: "49116199"
 |Microsoft.Sql/servers/databases|Взаимоблокировки|Взаимоблокировки|
 |Microsoft.Sql/servers/databases|Аудит|Журналы аудита|
 |Microsoft.Sql/servers/databases|SQLSecurityAuditEvents|Событие аудита безопасности SQL|
-|Microsoft.Sql/servers/databases|SqlDw_Requests|Запросы SQL DW|
-|Microsoft.Sql/servers/databases|SqlDw_RequestSteps|Шаги запроса SQL DW|
+|Microsoft.Sql/servers/databases|DmsWorkers|Рабочие роли DMS|
+|Microsoft.Sql/servers/databases|ExecRequests|Выполняющиеся запросы|
+|Microsoft.Sql/servers/databases|RequestSteps|Действия, из которых состоит запрос|
+|Microsoft.Sql/servers/databases|SqlRequests|Запросы SQL|
+|Microsoft.Sql/servers/databases|Waits|Ожидания|
+|Microsoft.Sql/managedInstances|ResourceUsageStats|Статистика использования ресурсов|
+|Microsoft.Sql/managedInstances|SQLSecurityAuditEvents|Событие аудита безопасности SQL|
+|Microsoft.Sql/managedInstances/databases|SQLInsights|Аналитика SQL|
+|Microsoft.Sql/managedInstances/databases|QueryStoreRuntimeStatistics|Статистика среды выполнения хранилища запросов|
+|Microsoft.Sql/managedInstances/databases|QueryStoreWaitStatistics|Статистика времени ожидания хранилища запросов|
+|Microsoft.Sql/managedInstances/databases|Errors|Errors|
 |Microsoft.StreamAnalytics/streamingjobs|Выполнение|Выполнение|
 |Microsoft.StreamAnalytics/streamingjobs|Разработка|Разработка|
+|microsoft.web/sites|FunctionExecutionLogs|Журнал выполнения функции|
+|microsoft.web/sites/slots|FunctionExecutionLogs|Журнал выполнения функции|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

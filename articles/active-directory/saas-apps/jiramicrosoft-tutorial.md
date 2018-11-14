@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/31/2018
+ms.date: 11/01/2018
 ms.author: jeedes
-ms.openlocfilehash: 7d25b072ffc41608bca9e0b23116b2eb453dd160
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: f3f7fc3b837dd4eef9bab8ff34a36329436bad9a
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50740354"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51010734"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jira-saml-sso-by-microsoft"></a>Руководство по интеграции Azure Active Directory с JIRA SAML SSO by Microsoft
 
@@ -43,7 +43,7 @@ ms.locfileid: "50740354"
 Чтобы настроить интеграцию Azure AD с JIRA SAML SSO by Microsoft, вам потребуется следующее:
 
 - подписка Azure AD;
-- в 64-разрядной версии Windows должен быть установлен и настроен выпуск JIRA Core and Software 6.0–7.8 или JIRA Service Desk 3.0–3.2;
+- в 64-разрядной версии Windows должен быть установлен и настроен выпуск JIRA Core and Software 6.0 – 7.12 или JIRA Service Desk 3.0 – 3.5;
 - поддержка HTTPS на сервере JIRA;
 - поддерживаемые версии подключаемого модуля JIRA указаны в разделе ниже;
 - сервер JIRA должен быть доступен через Интернет, в частности, на странице входа Azure AD для аутентификации, и должен иметь возможность получать маркер из Azure AD;
@@ -140,7 +140,7 @@ ms.locfileid: "50740354"
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Если это именованный URL-адрес, то порт указывать необязательно. Эти значения предоставляются во время настройки подключаемого модуля JIRA, которая описывается далее в этом руководстве.
 
-5. На странице **Сертификат подписи SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
+5. На странице **Сертификат подписи SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**, а затем вставьте его в Блокнот.
 
     ![Ссылка для скачивания сертификата](./media/jiramicrosoft-tutorial/tutorial_metadataurl.png) 
 
@@ -277,7 +277,7 @@ ms.locfileid: "50740354"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "JIRA SAML SSO by Microsoft" на панели доступа, вы автоматически войдете в приложение JIRA SAML SSO by Microsoft.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

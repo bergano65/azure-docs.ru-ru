@@ -1,23 +1,23 @@
 ---
-title: Анализ данных о задержке рейсов с помощью Hadoop в HDInsight в Azure
+title: Анализ данных о задержке рейсов с помощью Apache Hadoop в HDInsight в Azure
 description: Узнайте, как использовать один сценарий Windows PowerShell для создания кластера HDInsight, выполнения задания Hive, выполнения задания Sqoop и удаления кластера.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/25/2017
-ms.author: jasonh
+ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 1d39fd1cf40834781375b2c7bd6cb801ccd3cb97
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: a7700de9bed7e5cfc003481a8e7d93720a767928
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43091904"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51036161"
 ---
 # <a name="analyze-flight-delay-data-by-using-hive-in-hdinsight"></a>Анализ данных о задержке рейсов с помощью Hive в HDInsight
-Hive предоставляет средства для выполнения заданий Hadoop MapReduce с помощью языка сценариев, аналогичного SQL, под названием *[HiveQL][hadoop-hiveql]*, который применяется для обобщения данных, создания запросов и анализа больших объемов данных.
+Hive предоставляет средства для выполнения заданий Apache Hadoop MapReduce с помощью скриптового языка, аналогичного SQL, под названием *[HiveQL][hadoop-hiveql]*, который применяется для обобщения данных, создания запросов и анализа больших объемов данных.
 
 > [!IMPORTANT]
 > Действия, описанные в этом документе, требуют наличия кластера HDInsight на основе Windows. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement). Инструкции по работе с кластерами под управлением Linux см. в статье [Анализ данных о задержке рейсов с помощью Hive в HDInsight в Linux](hdinsight-analyze-flight-delay-data-linux.md).

@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/25/2017
 ms.author: mbullwin
-ms.openlocfilehash: 449a6274b67f3eb72ea6d8bd19f555fc59158d7e
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 65909e13c75ae4d2577ea29f562b841a1eb20477
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44299106"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51256431"
 ---
 # <a name="automate-azure-application-insights-processes-with-the-connector-for-microsoft-flow"></a>Автоматизация процессов Azure Application Insights с помощью соединителя для Microsoft Flow
 
@@ -34,7 +34,7 @@ ms.locfileid: "44299106"
 В этом руководстве вы узнаете, как создать последовательность, использующую алгоритм автоматической кластеризации Analytics, для группирования атрибутов данных для веб-приложения. Отправка результатов по электронной почте — это лишь один из примеров того, как можно совместно использовать Microsoft Flow и Application Insights Analytics. 
 
 ### <a name="step-1-create-a-flow"></a>Шаг 1. Создание последовательности
-1. Войдите в службу [Microsoft Flow](http://flow.microsoft.com) и выберите **Мои последовательности**.
+1. Войдите в службу [Microsoft Flow](https://flow.microsoft.com) и выберите **Мои последовательности**.
 1. Щелкните **Create a flow from blank** (Создать последовательность с нуля).
 
 ### <a name="step-2-create-a-trigger-for-your-flow"></a>Шаг 2. Создание триггера для последовательности
@@ -47,7 +47,7 @@ ms.locfileid: "44299106"
 ### <a name="step-3-add-an-application-insights-action"></a>Шаг 3. Добавление действия Application Insights
 1. Выберите поле **+Новый шаг**, а затем щелкните **Добавить действие**.
 1. Выполните поиск по запросу **Azure Application Insights**.
-1. Выберите **Azure Application Insights – Visualize Analytics query Preview** (Azure Application Insights — визуализация запроса Analytics [предварительная версия]).
+1. Щелкните **Azure Application Insights – Visualize Analytics query Preview** (Azure Application Insights — визуализация запроса Analytics (предварительная версия)).
 
     ![Окно запуска запроса Analytics](./media/app-insights-automate-with-flow/flow2.png)
 
@@ -125,7 +125,7 @@ ms.locfileid: "44299106"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Узнайте больше о создании [запросов Analytics](app-insights-analytics-using.md).
+- Узнайте больше о создании [запросов Analytics](../log-analytics/query-language/get-started-queries.md).
 - Дополнительные сведения о [Microsoft Flow](https://ms.flow.microsoft.com).
 
 

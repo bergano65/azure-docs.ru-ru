@@ -5,38 +5,41 @@ services: event-grid
 author: tfitzmac
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 10/10/2018
+ms.date: 11/06/2018
 ms.author: tomfitz
-ms.openlocfilehash: fcf3ecaff6e8ba1421496a96d01428946cf8ab8e
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 0a89a315f9c97f3cc6a8683f13c22b5066dc5dab
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49077788"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51277755"
 ---
 # <a name="dead-letter-and-retry-policies"></a>Недоставленные сообщения и политики повтора
 
 При создании подписки на события, можно настроить параметры доставки событий. В этой статье показано, как настроить расположение недоставленных сообщений и параметры повторных попыток. Сведения об этих возможностях см. в разделе [Доставка и повторные попытки доставки сообщений сетки событий](delivery-and-retry.md).
 
+## <a name="install-preview-feature"></a>Установка предварительной версии функции
+
 [!INCLUDE [event-grid-preview-feature-note.md](../../includes/event-grid-preview-feature-note.md)]
 
 ## <a name="set-dead-letter-location"></a>Установка размещения недоставленных сообщений
 
-Чтобы задать расположение недоставленных сообщений, потребуется учетная запись хранения для хранения событий, которые невозможно доставить в конечную точку. Следующий скрипт возвращает идентификатор ресурса для существующей учетной записи хранения и создает подписку на событие, используя контейнер в этой учетной записи хранения для недоставленных сообщений конечной точки.
+Чтобы задать расположение недоставленных сообщений, потребуется учетная запись хранения для хранения событий, которые невозможно доставить в конечную точку. В этом примере возвращается идентификатор ресурса существующей учетной записи хранения. Также создается подписка на событие, которая использует контейнер в этой учетной записи хранения для недоставленных сообщений конечной точки.
+
+### <a name="azure-cli"></a>Инфраструктура CLI Azure
 
 ```azurecli-interactive
-# if you have not already installed the extension, do it now.
+# If you have not already installed the extension, do it now.
 # This extension is required for preview features.
 az extension add --name eventgrid
 
-storagename=demostorage
 containername=testcontainer
 
-storageid=$(az storage account show --name $storagename --resource-group gridResourceGroup --query id --output tsv)
+topicid=$(az eventgrid topic show --name demoTopic -g gridResourceGroup --query id --output tsv)
+storageid=$(az storage account show --name demoStorage --resource-group gridResourceGroup --query id --output tsv)
 
 az eventgrid event-subscription create \
-  -g gridResourceGroup \
-  --topic-name <topic_name> \
+  --source-resource-id $topicid \
   --name <event_subscription_name> \
   --endpoint <endpoint_URL> \
   --deadletter-endpoint $storageid/blobServices/default/containers/$containername
@@ -44,11 +47,34 @@ az eventgrid event-subscription create \
 
 Для отключения сохранения недоставленных сообщений выполните эту команду повторно, чтобы создать подписку на события, но не указывайте значение для `deadletter-endpoint`. Удалять подписку на события не нужно.
 
+### <a name="powershell"></a>PowerShell
+
+```azurepowershell-interactive
+# If you have not already installed the module, do it now.
+# This module is required for preview features.
+Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery
+
+$containername = "testcontainer"
+
+$topicid = (Get-AzureRmEventGridTopic -ResourceGroupName gridResourceGroup -Name demoTopic).Id
+$storageid = (Get-AzureRmStorageAccount -ResourceGroupName gridResourceGroup -Name demostorage).Id
+
+New-AzureRmEventGridSubscription `
+  -ResourceId $topicid `
+  -EventSubscriptionName <event_subscription_name> `
+  -Endpoint <endpoint_URL> `
+  -DeadLetterEndpoint "$storageid/blobServices/default/containers/$containername"
+```
+
+Для отключения сохранения недоставленных сообщений выполните эту команду повторно, чтобы создать подписку на события, но не указывайте значение для `DeadLetterEndpoint`. Удалять подписку на события не нужно.
+
 ## <a name="set-retry-policy"></a>Установка политики повтора
 
-При создании подписки на сетку событий, можно задать значения для продолжительности попыток доставки события службой "Сетка событий Azure". По умолчанию служба "Сетка событий Azure" осуществляет не более 30 попыток в течение 24 часов (1440 минут). В подписке на сетку событий можно установить любое из этих значений. Значение для срока жизни события должно представлять собой целое число от 1 до 1440. Значение максимального количества попыток доставки должно представлять собой целое число от 1 до 30.
+При создании подписки на сетку событий, можно задать значения для продолжительности попыток доставки события службой "Сетка событий Azure". По умолчанию служба "Сетка событий Azure" осуществляет не более 30 попыток в течение 24 часов (1440 минут). В подписке на сетку событий можно установить любое из этих значений. Значение для срока жизни события должно представлять собой целое число от 1 до 1440. Максимальное значение для попыток должно представлять собой целое число от 1 до 30.
 
 Настроить [интервал повтора](delivery-and-retry.md#retry-schedule-and-duration) невозможно.
+
+### <a name="azure-cli"></a>Инфраструктура CLI Azure
 
 Чтобы установить время жизни события на значение, отличное от 1440 минут, используйте следующий код.
 
@@ -65,7 +91,7 @@ az eventgrid event-subscription create \
   --event-ttl 720
 ```
 
-Чтобы установить максимальное количество попыток, отличное от 30, используйте следующий код.
+Чтобы установить максимальное количество попыток, отличающееся от 30, используйте следующий код:
 
 ```azurecli-interactive
 az eventgrid event-subscription create \
@@ -76,7 +102,39 @@ az eventgrid event-subscription create \
   --max-delivery-attempts 18
 ```
 
-Если заданы оба параметра `event-ttl` и `max-deliver-attempts`, служба "Сетка событий Azure" использует первый для истечения повторных попыток.
+Если заданы оба параметра `event-ttl` и `max-deliver-attempts`, служба "Сетка событий Azure" использует первый параметр для указания срока действия и определения того, когда прекращать доставку событий.
+
+### <a name="powershell"></a>PowerShell
+
+Чтобы установить время жизни события на значение, отличное от 1440 минут, используйте следующий код.
+
+```azurepowershell-interactive
+# If you have not already installed the module, do it now.
+# This module is required for preview features.
+Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery
+
+$topicid = (Get-AzureRmEventGridTopic -ResourceGroupName gridResourceGroup -Name demoTopic).Id
+
+New-AzureRmEventGridSubscription `
+  -ResourceId $topicid `
+  -EventSubscriptionName <event_subscription_name> `
+  -Endpoint <endpoint_URL> `
+  -EventTtl 720
+```
+
+Чтобы установить максимальное количество попыток, отличающееся от 30, используйте следующий код:
+
+```azurepowershell-interactive
+$topicid = (Get-AzureRmEventGridTopic -ResourceGroupName gridResourceGroup -Name demoTopic).Id
+
+New-AzureRmEventGridSubscription `
+  -ResourceId $topicid `
+  -EventSubscriptionName <event_subscription_name> `
+  -Endpoint <endpoint_URL> `
+  -MaxDeliveryAttempt 18
+```
+
+Если заданы оба параметра `EventTtl` и `MaxDeliveryAttempt`, служба "Сетка событий Azure" использует первый параметр для указания срока действия и определения того, когда прекращать доставку событий.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -11,15 +11,15 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 09/07/2018
-ms.openlocfilehash: 65cf954f5d91176715181620671f620264069bdc
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.date: 11/01/2018
+ms.openlocfilehash: 2508d43e876a7e463d68eed1b1ca93ddf0d1e9d1
+ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47166271"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50913350"
 ---
-# <a name="implement-a-geo-distributed-database"></a>Реализация географически распределенной базы данных
+# <a name="tutorial-implement-a-geo-distributed-database"></a>Руководство. Реализация географически распределенной базы данных
 
 В этом руководстве вы настроите базу данных SQL Azure и приложение для отработки отказа в удаленный регион, а затем протестируете план отработки отказа. Вы узнаете, как выполнять следующие задачи: 
 

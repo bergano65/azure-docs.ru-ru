@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 2ec712dcce1295a91f552176ddcf6572d3f23ecc
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 8bf87f9d1d1ab6da4b034890f1fbe058199eca41
+ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46993567"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51007150"
 ---
 # <a name="log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход на виртуальную машину Linux в Azure с аутентификацией Azure Active Directory (предварительная версия)
 
@@ -147,6 +147,20 @@ To sign in, use a web browser to open the page https://microsoft.com/devicelogin
     You have signed in to the Microsoft Azure Linux Virtual Machine Sign-In application on your device.
 
 Закройте окно браузера, вернитесь к запросу SSH и нажмите клавишу **ВВОД**. Теперь вы выполнили вход на виртуальную машину Azure под управлением Linux с разрешениями назначенных ролей, таких как *пользователь виртуальной машины* или *администратор виртуальной машины*. Если вашей учетной записи назначена роль *Имя для входа администратора виртуальной машины*, можно выполнять команды, для которых требуются права привилегированного пользователя, с помощью `sudo`.
+
+## <a name="sudo-and-aad-login"></a>Вход с использованием sudo и Azure AD
+
+При первом выполнении sudo вам нужно пройти проверку подлинности во второй раз. Чтобы не проходить повторную проверку подлинности при выполнении sudo, вы можете изменить в файле sudoers `/aad/etc/sudoers.d/aad_admins` следующую строку:
+
+```bash
+%aad_admins ALL=(ALL) ALL
+```
+Вставьте вместо нее эту строку:
+
+```bash
+%aad_admins ALL=(ALL) NOPASSWD:ALL
+```
+
 
 ## <a name="troubleshoot-sign-in-issues"></a>Устранение неполадок при входе
 

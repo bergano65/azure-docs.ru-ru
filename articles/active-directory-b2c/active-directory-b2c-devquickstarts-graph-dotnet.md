@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/07/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 32a887d54a239db0c1e40458e1b304d899befff5
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: 0f53d71cca70f9340689d3d01fb9c67090f917c5
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48870559"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51277556"
 ---
 # <a name="azure-ad-b2c-use-the-azure-ad-graph-api"></a>Azure AD B2C. Использование API Graph Azure AD
 
@@ -66,8 +66,8 @@ ms.locfileid: "48870559"
 > 
 > 
 
-## <a name="configure-delete-permissions-for-your-application"></a>Настройка разрешений на удаление для приложения
-В настоящее время разрешения на *чтение и запись данных каталога* **не** предусматривают возможность выполнять удаление, например удаление пользователей. Если вы хотите предоставить приложению возможность удалять пользователей, необходимо выполнить следующие дополнительные действия, требующие использования PowerShell. В противном случае перейдите к следующему разделу.
+## <a name="configure-delete-or-update-password-permissions-for-your-application"></a>Настройка разрешений на удаление или обновление паролей для вашего приложения
+Сейчас разрешение *Чтение и запись данных каталога* **не** включает возможность удаления пользователей или обновления их паролей. Если вы хотите предоставить приложению возможность удалять пользователей или обновлять пароли, необходимо выполнить следующие дополнительные действия, требующие использования PowerShell. В противном случае перейдите к следующему разделу.
 
 Если вы еще не сделали это, установите [модуль Azure AD PowerShell версии 1 (MSOnline)](https://docs.microsoft.com/powershell/azure/active-directory/install-msonlinev1?view=azureadps-1.0):
 
@@ -84,7 +84,7 @@ Install-Module MSOnline
 Connect-MsolService
 ```
 
-Теперь мы используем **идентификатор приложения** в приведенном ниже сценарии, чтобы назначить приложению роль администратора учетных записей пользователей, которая позволяет удалять пользователей. Идентификаторы этих ролей известны, поэтому можно просто ввести **идентификатор приложения** в приведенный ниже скрипт.
+Теперь мы используем **идентификатор приложения** в приведенном ниже скрипте, чтобы назначить приложению роль администратора учетных записей пользователей. Идентификаторы этих ролей известны, поэтому можно просто ввести **идентификатор приложения** в приведенный ниже скрипт.
 
 ```powershell
 $applicationId = "<YOUR_APPLICATION_ID>"
@@ -92,7 +92,7 @@ $sp = Get-MsolServicePrincipal -AppPrincipalId $applicationId
 Add-MsolRoleMember -RoleObjectId fe930be7-5e62-47db-91af-98c3a49a38b1 -RoleMemberObjectId $sp.ObjectId -RoleMemberType servicePrincipal
 ```
 
-Теперь приложение имеет разрешение на удаление пользователей из клиента B2C.
+Теперь ваше приложение также имеет разрешения на удаление пользователей или обновление паролей от клиента B2C.
 
 ## <a name="download-configure-and-build-the-sample-code"></a>Скачивание, настройка и создание примера кода
 Сначала скачайте и запустите пример кода. После этого мы сможем рассмотреть его подробнее.  Вы можете [скачать пример кода в виде ZIP-файла](https://github.com/AzureADQuickStarts/B2C-GraphAPI-DotNet/archive/master.zip). Его можно клонировать в необходимый каталог.

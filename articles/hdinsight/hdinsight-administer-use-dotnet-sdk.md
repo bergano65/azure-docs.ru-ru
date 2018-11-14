@@ -1,22 +1,22 @@
 ---
-title: Управление кластерами Hadoop в HDInsight с помощью пакета SDK для .NET в Azure
-description: Узнайте, как осуществлять управление кластерами Hadoop в HDInsight с помощью пакета SDK для HDInsight .NET.
+title: Управление кластерами Apache Hadoop в HDInsight с помощью пакета SDK для .NET в Azure
+description: Узнайте, как осуществлять управление кластерами Apache Hadoop в HDInsight с помощью пакета SDK для HDInsight .NET.
 services: hdinsight
 ms.reviewer: jasonh
-author: jasonwhowell
+author: hrasheed-msft
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.author: jasonh
-ms.openlocfilehash: 0d8238d5f1dca15aaba0f8f5a6580df97164006a
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.author: hrasheed
+ms.openlocfilehash: a7c06d53e3823bd81707608f566f581fa44638fc
+ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43110805"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51037768"
 ---
-# <a name="manage-hadoop-clusters-in-hdinsight-by-using-net-sdk"></a>Управление кластерами Hadoop в HDInsight с помощью пакета SDK для .NET
+# <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-net-sdk"></a>Управление кластерами Apache Hadoop в HDInsight с помощью пакета SDK для .NET
 [!INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
 
 Научитесь управлять кластерами HDInsight с помощью [пакета SDK для HDInsight.NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight).
@@ -142,12 +142,12 @@ _hdiManagementClient.Clusters.DeleteAsync("<Resource Group Name>", "<Cluster Nam
 
 Ниже представлены возможности, связанные с изменением количества узлов данных в кластере каждого типа, поддерживаемого в HDInsight.
 
-* Hadoop
+* Apache Hadoop
   
     Вы можете легко увеличить количество рабочих узлов в работающем кластере Hadoop. Это не помешает обработке заданий в состоянии ожидания и выполнения. В ходе выполнения операции можно также отправлять новые задания. Сбои операции масштабирования обрабатываются корректно, поэтому кластер всегда пребывает в функциональном состоянии.
   
     Если уменьшить масштаб кластера Hadoop, сократив количество узлов данных, некоторые службы в нем будут перезапущены. Это приведет к сбою всех выполняющихся и ожидающих заданий при завершении операции масштабирования. Однако после завершения операции вы можете повторно отправить задания.
-* hbase
+* Apache HBase
   
     Вы можете с легкостью добавлять и удалять узлы данных в работающем кластере HBase. Балансировка региональных серверов выполняется автоматически в течение нескольких минут после завершения операции масштабирования. Но их также можно сбалансировать вручную, выполнив вход в головной узел кластера и выполнив следующие команды в окне командной строки:
   
@@ -156,7 +156,7 @@ _hdiManagementClient.Clusters.DeleteAsync("<Resource Group Name>", "<Cluster Nam
     >hbase shell
     >balancer
     ```
-* Storm
+* Apache Storm
   
     Вы можете с легкостью добавлять и удалять узлы данных в работающем кластере Storm. Но после успешного завершения операции масштабирования потребуется повторная балансировка топологии.
   
@@ -192,9 +192,9 @@ _hdiManagementClient.Clusters.ResizeAsync("<Resource Group Name>", "<Cluster Nam
 
 * ODBC
 * JDBC
-* Ambari
-* Oozie
-* Templeton
+* Apache Ambari
+* Apache Oozie
+* Apache Templeton
 
 По умолчанию эти службы предоставляются для доступа. Вы можете отменить или предоставить доступ. Для отмены:
 
@@ -246,19 +246,19 @@ foreach (var key in results.Configuration.Keys)
 
 См. статью [Выполнение примеров Hadoop в HDInsight](hadoop/apache-hadoop-run-samples-linux.md).
 
-**Отправка заданий Hive** 
+**Отправка заданий Apache Hive** 
 
 См. статью [Выполнение запросов Hive с помощью пакета SDK HDInsight для .NET](hadoop/apache-hadoop-use-hive-dotnet-sdk.md).
 
-**Отправка заданий Pig**
+**Отправка заданий Apache Pig**
 
 См. статью [Выполнение заданий Pig с помощью пакета SDK для .NET для Hadoop в HDInsight](hadoop/apache-hadoop-use-pig-dotnet-sdk.md).
 
-**Отправка заданий Sqoop**
+**Отправка заданий Apache Sqoop**
 
 См. статью [Использование Sqoop с Hadoop в HDInsight](hadoop/apache-hadoop-use-sqoop-dotnet-sdk.md).
 
-**Отправка заданий Oozie**
+**Отправка заданий Apache Oozie**
 
 См. статью [Использование Oozie с Hadoop для определения и выполнения рабочего процесса в HDInsight](hdinsight-use-oozie-linux-mac.md).
 

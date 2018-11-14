@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.author: seanmck
 ms.custom: mvc
-ms.openlocfilehash: d2e4491f2ee21deedd674a5a8a64e4dd99149924
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 41e3f38817abbdd0cab9ab2c72d39cb6f3f69531
+ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49079364"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50978184"
 ---
 # <a name="troubleshoot-common-issues-in-azure-container-instances"></a>Устранение распространенных неполадок с помощью службы "Экземпляры контейнеров Azure"
 
@@ -102,7 +102,7 @@ az container create -g MyResourceGroup --name myapp --image ubuntu --command-lin
 
 ```azurecli-interactive 
 ## Deploying a Windows container
-az container create -g myResourceGroup --name mywindowsapp --os-type Windows --image windowsservercore:ltsc2016
+az container create -g myResourceGroup --name mywindowsapp --os-type Windows --image microsoft/windowsservercore:ltsc2016
  --command-line "ping -t localhost"
 ```
 
@@ -187,7 +187,7 @@ microsoft/aci-helloworld    latest    7f78509b568e    13 days ago    68.1MB
 
 ### <a name="windows-containers-slow-network-readiness"></a>Контейнеры Windows замедляют период готовности сети
 
-В контейнерах Windows при первоначальном создании в течение 5 секунд может отсутствовать входящее или исходящее соединение. После начальной установки работа с контейнерами в сети будет восстановлена соответствующим образом.
+В контейнерах Windows при первоначальном создании в течение 30 секунд (в редких случаях и дольше) может отсутствовать входящее или исходящее подключение. Если приложению-контейнеру требуется подключение к Интернету, добавьте логику задержки и повторного выполнения, позволяющую через 30 секунд установить подключение к Интернету. После начальной установки работа с контейнерами в сети будет восстановлена соответствующим образом.
 
 ## <a name="resource-not-available-error"></a>Ошибка при недоступном ресурсе
 

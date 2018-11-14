@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/22/2017
 ms.author: maxluk
-ms.openlocfilehash: 4438cff0dcf5e896f39729d9871d4deb3207b4b8
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: c3bdad6f1c199dda867370126eb7dcf5c296a12d
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43108001"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51230433"
 ---
 # <a name="capacity-planning-for-hdinsight-clusters"></a>Планирование загрузки кластеров HDInsight
 
@@ -38,7 +38,7 @@ ms.locfileid: "43108001"
 
 ### <a name="location-of-default-storage"></a>Расположение хранилища по умолчанию
 
-Хранилище по умолчанию (учетная запись хранения Azure или Azure Data Lake Store) должно находиться том же расположении, что и кластер. Служба хранилища Azure доступна во всех расположениях. Хранилище Data Lake Store доступно в некоторых регионах. Ознакомьтесь с актуальными сведениями о доступности Data Lake Store в разделе *Хранилище* на странице [Доступность продуктов по регионам](https://azure.microsoft.com/regions/services/).
+Хранилище по умолчанию (учетная запись хранения Azure или Azure Data Lake Store) должно находиться том же расположении, что и кластер. Служба хранилища Azure доступна во всех расположениях. Data Lake Storage 1-го поколения доступно в некоторых регионах. Ознакомьтесь с актуальными сведениями о доступности Data Lake Storage в разделе *Хранилище* на странице [Доступность продуктов по регионам](https://azure.microsoft.com/regions/services/).
 
 ### <a name="location-of-existing-data"></a>Расположение существующих данных
 
@@ -48,7 +48,7 @@ ms.locfileid: "43108001"
 
 После развертывания кластера HDInsight можно подключить дополнительные учетные записи хранения Azure или обращаться к другим хранилищам Data Lake Store. Все учетные записи хранения должны находиться в том же расположении, что и кластер. Data Lake Store может находиться в другом расположении, хотя это может привести к задержке при чтении и записи некоторых данных.
 
-Служба хранилища Azure накладывает некоторые [ограничения емкости](../azure-subscription-service-limits.md#storage-limits), тогда как емкость Data Lake Store практически не ограничена.
+Служба хранилища Azure накладывает некоторые [ограничения емкости](../azure-subscription-service-limits.md#storage-limits), тогда как емкость Data Lake Storage 1-го поколения практически не ограничена.
 
 Кластер может обращаться к разным учетным записям хранения. Некоторые распространенные примеры:
 

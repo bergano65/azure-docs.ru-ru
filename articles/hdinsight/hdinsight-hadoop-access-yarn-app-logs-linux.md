@@ -1,36 +1,33 @@
 ---
-title: Доступ к журналам приложений Hadoop YARN в HDInsight под управлением Linux в Azure
-description: Узнайте, как получить доступ к журналам приложений YARN в кластере HDInsight (Hadoop) под управлением Linux с помощью как командной строки, так и веб-браузера.
+title: Доступ к журналам приложений Apache Hadoop YARN в HDInsight под управлением Linux в Azure
+description: Узнайте, как получить доступ к журналам приложений YARN в кластере HDInsight (Apache Hadoop) под управлением Linux с помощью как командной строки, так и веб-браузера.
 services: hdinsight
-author: jasonwhowell
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/22/2018
-ms.author: jasonh
-ms.openlocfilehash: 179349d059fd75e2da01eb908a786e2e7ac91307
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.author: hrasheed
+ms.openlocfilehash: 302f2f96a7f17699411ab9fdbdb6ab1f9de149c8
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43092266"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51277605"
 ---
-# <a name="access-yarn-application-logs-on-linux-based-hdinsight"></a>Доступ к журналам приложений YARN в HDInsight под управлением Linux
+# <a name="access-apache-yarn-application-logs-on-linux-based-hdinsight"></a>Доступ к журналам приложений Apache YARN в HDInsight под управлением Linux
 
-Узнайте, как получить доступ к журналам приложений YARN (Yet Another Resource Negotiator) в кластере Hadoop в Azure HDInsight.
+Узнайте, как получить доступ к журналам приложений Apache YARN (Yet Another Resource Negotiator) в кластере Apache Hadoop в Azure HDInsight.
 
 > [!IMPORTANT]
-> Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Что представляют собой различные компоненты и версии Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md#hdinsight-windows-retirement)
+> Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.6 или более поздних версий. Дополнительные сведения см. в разделе [Что представляют собой различные компоненты и версии Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md#hdinsight-windows-retirement)
 
 ## <a name="YARNTimelineServer"></a>YARN Timeline Server
 
-[YARN Timeline Server](http://hadoop.apache.org/docs/r2.7.3/hadoop-yarn/hadoop-yarn-site/TimelineServer.html) предоставляет общие сведения о завершенных приложениях, а также зависящие от платформы сведения о приложениях через два разных интерфейса. В частности:
+[Apache YARN Timeline Server](http://hadoop.apache.org/docs/r2.7.3/hadoop-yarn/hadoop-yarn-site/TimelineServer.html) предоставляет общие сведения о приложениях, завершивших работу.
 
-* Возможность хранения и извлечения общей информации о приложениях в кластерах HDInsight появилась, начиная с версии 3.1.1.374.
-* В настоящее время компонент сервера временной шкалы, предоставляющий сведения о приложениях для конкретной платформы, недоступен в кластерах HDInsight.
-
-К общим сведениям о приложениях относятся следующие типы данных:
+YARN Timeline Server содержит следующие типы данных:
 
 * уникальный идентификатор приложения;
 * имя пользователя, запустившего приложение;

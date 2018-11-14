@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/28/2017
 ms.author: apimpm
-ms.openlocfilehash: dcd4d28341e766baeaf6d581a69312cc33a0282a
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: 803fa89145d3a38b2df34666754fe8949a74eb53
+ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30233832"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51262341"
 ---
 # <a name="api-management-advanced-policies"></a>Расширенные политики в службе управления API
-В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](http://go.microsoft.com/fwlink/?LinkID=398186).
+В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](https://go.microsoft.com/fwlink/?LinkID=398186).
 
 ##  <a name="AdvancedPolicies"></a> Расширенные политики
 
@@ -136,7 +136,7 @@ ms.locfileid: "30233832"
 |condition="Логическое выражение &#124; Логическая константа"|Логическое выражение или константа, которую необходимо вычислить, когда вычисляется правило политики, содержащей `when`.|Yes|
 
 ###  <a name="ChooseUsage"></a> Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound, backend, on-error.
 
@@ -247,7 +247,7 @@ ms.locfileid: "30233832"
 |follow-redirects="true &#124; false"|Указывает, что происходит с перенаправлениями от внутренней службы: шлюз выполняет их или они возвращаются вызывающему объекту.|Нет |false|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** backend.
 -   **Области политики:** все области.
@@ -294,7 +294,7 @@ ms.locfileid: "30233832"
 |max-count|Целое число. Указывает максимальное количество запросов для ввода политики.|Yes|Недоступно|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound, backend, on-error.
 
@@ -304,7 +304,7 @@ ms.locfileid: "30233832"
  Политика `log-to-eventhub` отправляет сообщения в определенном формате концентратору событий, который указан сущностью Logger. Как и предполагает ее имя, эта политика используется для сохранения контекстных сведений выбранного запроса или ответа для сетевого или автономного анализа.
 
 > [!NOTE]
->  Пошаговое руководство по настройке концентратора событий и ведению журнала событий см. в статье [Как регистрировать события в концентраторах событий Azure в службе управления Azure API](https://azure.microsoft.com/documentation/articles/api-management-howto-log-event-hubs/).
+>  Пошаговое руководство по настройке концентратора событий и ведению журнала событий см. в статье [Как регистрировать события службы управления API в Центрах событий Azure](https://azure.microsoft.com/documentation/articles/api-management-howto-log-event-hubs/).
 
 ### <a name="policy-statement"></a>Правило политики
 
@@ -316,7 +316,7 @@ ms.locfileid: "30233832"
 ```
 
 ### <a name="example"></a>Пример
- Любую строку можно использовать как значение для регистрации в концентраторе событий. В этом примере дата и время, имя службы развертывания, идентификатор запроса, IP-адрес и имя операции для всех входящих вызовов записываются в средство ведения журналов в концентраторе событий, зарегистрированное с помощью идентификатора `contoso-logger`.
+ Любую строку можно использовать как значение для регистрации в Центрах событий. В этом примере дата и время, имя службы развертывания, идентификатор запроса, IP-адрес и имя операции для всех входящих вызовов записываются в средство ведения журналов в концентраторе событий, зарегистрированное с помощью идентификатора `contoso-logger`.
 
 ```xml
 <policies>
@@ -345,7 +345,7 @@ ms.locfileid: "30233832"
 |partition-key|Указывает значение, используемое для назначения секции при отправке сообщений.|Необязательный элемент. Этот атрибут не может использоваться, если используется `partition-id`.|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound, backend, on-error.
 
@@ -387,7 +387,7 @@ status code and media type. If no example or schema found, the content is empty.
 |content-type|Указывает значение заголовка ответа `Content-Type` и позволяет выбрать соответствующий пример или схему.|Нет |None|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound, on-error.
 
@@ -452,7 +452,7 @@ status code and media type. If no example or schema found, the content is empty.
 > Если указаны параметры `interval`, `max-interval` и `delta`, применяется **экспоненциальный** алгоритм повторения, где время ожидания между повторениями растет экспоненциально от значения `interval` до значения `max-interval` согласно формуле `min(interval + (2^count - 1) * random(delta * 0.8, delta * 1.2), max-interval)`.
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes) политики. Обратите внимание, что эта политика наследует ограничения использования дочерних политик.
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes) политики. Обратите внимание, что эта политика наследует ограничения использования дочерних политик.
 
 -   **Разделы политики:** inbound, outbound, backend, on-error.
 
@@ -500,7 +500,7 @@ status code and media type. If no example or schema found, the content is empty.
 |response-variable-name|Имя переменной контекста, на которую ссылается, например, вышестоящая политика [send-request](api-management-advanced-policies.md#SendRequest) и которая содержит объект `Response`.|Необязательный элемент.|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound, backend, on-error.
 
@@ -572,7 +572,7 @@ status code and media type. If no example or schema found, the content is empty.
 |exists-action|Указывает действие, которое должно быть выполнено, когда заголовок уже задан. Атрибут должен иметь одно из следующих значений:<br /><br /> override — заменяет значение имеющегося заголовка;<br />skip — не заменяет значение имеющегося заголовка;<br />append — добавляет значение к значению имеющегося заголовка;<br />delete — удаляет заголовок из запроса.<br /><br /> Если установлено значение `override`, перечисление нескольких записей с одним и тем же именем будет приводить к тому, что заголовок будет устанавливаться в соответствии со всеми записями (будут перечисляться несколько раз). В результате будут установлены только перечисленные значения.|Нет |override|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound, backend, on-error.
 
@@ -649,14 +649,14 @@ status code and media type. If no example or schema found, the content is empty.
 |Атрибут|ОПИСАНИЕ|Обязательно|значение по умолчанию|
 |---------------|-----------------|--------------|-------------|
 |mode="строка"|Определяет, является ли это новым запросом или копией текущего запроса. В исходящем режиме mode=copy не инициализирует текст запроса.|Нет |Создать|
-|response-variable-name="строка"|Если не указано, используется `context.Response`.|Нет |Недоступно|
+|response-variable-name="строка"|Имя переменной контекста, которая примет объект response. Если переменная отсутствует, она будет создана при успешном выполнении условий политики. К переменной можно будет получить доступ с помощью коллекции [`context.Variable`](api-management-policy-expressions.md#ContextVariables).|Yes|Недоступно|
 |timeout="целое число"|Интервал времени ожидания в секундах до того, как вызов, адресованный URL-адресу, завершится сбоем.|Нет |60|
 |ignore-error|Если получено значение true и запрос завершился ошибкой:<br /><br /> если response-variable-name указано, он будет содержать значение null;<br />если response-variable-name не указано, контекст запроса не будет обновлен.|Нет |false|
 |name|Указывает имя заголовка, которое должно быть установлено.|Yes|Недоступно|
 |exists-action|Указывает действие, которое должно быть выполнено, когда заголовок уже задан. Атрибут должен иметь одно из следующих значений:<br /><br /> override — заменяет значение имеющегося заголовка;<br />skip — не заменяет значение имеющегося заголовка;<br />append — добавляет значение к значению имеющегося заголовка;<br />delete — удаляет заголовок из запроса.<br /><br /> Если установлено значение `override`, перечисление нескольких записей с одним и тем же именем будет приводить к тому, что заголовок будет устанавливаться в соответствии со всеми записями (будут перечисляться несколько раз). В результате будут установлены только перечисленные значения.|Нет |override|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound, backend, on-error.
 
@@ -695,7 +695,7 @@ status code and media type. If no example or schema found, the content is empty.
 |password="string"|Пароль, который следует использовать для проверки подлинности на прокси-сервере.|Нет |Недоступно|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound.
 
@@ -747,7 +747,7 @@ status code and media type. If no example or schema found, the content is empty.
 |set-method|Корневой элемент. Значение элемента задает метод HTTP.|Yes|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, on-error.
 
@@ -794,7 +794,7 @@ status code and media type. If no example or schema found, the content is empty.
 |reason="строка"|Описание причины для возврата кода состояния.|Yes|Недоступно|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** outbound, backend, on-error.
 -   **Области политики:** все области.
@@ -829,7 +829,7 @@ status code and media type. If no example or schema found, the content is empty.
 |значение|Значение переменной. Это может быть выражение или литеральное значение.|Yes|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound, backend, on-error.
 -   **Области политики:** все области.
@@ -895,7 +895,7 @@ status code and media type. If no example or schema found, the content is empty.
 |источник|Строковый литерал, понятный средству просмотра трассировки и указывающий источник сообщения.|Yes|Недоступно|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes) политики.
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes) политики.
 
 -   **Разделы политики:** inbound, outbound, backend, on-error.
 
@@ -963,7 +963,7 @@ status code and media type. If no example or schema found, the content is empty.
 
 ### <a name="usage"></a>Использование
 
-Эта политика может использоваться в следующих [разделах](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
 
 -   **Разделы политики:** inbound, outbound, backend.
 -   **Области политики:** все области.

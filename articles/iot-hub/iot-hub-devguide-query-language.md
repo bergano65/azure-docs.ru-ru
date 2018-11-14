@@ -1,18 +1,18 @@
 ---
 title: Общие сведения о языке запросов Центра Интернета вещей Azure | Документация Майкрософт
 description: Руководство разработчика. Описание похожего на SQL языка запросов Центра Интернета вещей, который используется для получения сведений о двойниках устройств и модулей, а также заданиях из Центра Интернета вещей.
-author: fsautomata
+author: rezasherafat
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 02/26/2018
-ms.author: elioda
-ms.openlocfilehash: f28a41f4a80806df14e314dae05405b7b45449b1
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.date: 10/29/2018
+ms.author: rezas
+ms.openlocfilehash: b7919a86c5f0b6b6990b465ed0c563fb42ea8bbc
+ms.sourcegitcommit: 6678e16c4b273acd3eaf45af310de77090137fa1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49318254"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50747921"
 ---
 # <a name="iot-hub-query-language-for-device-and-module-twins-jobs-and-message-routing"></a>Язык запросов Центра Интернета вещей для двойников устройств и двойников модулей, заданий и маршрутизации сообщений
 
@@ -389,6 +389,11 @@ GROUP BY <group_by_element>
 **Attribute_name** относится к любому свойству документа JSON в коллекции FROM.
 
 В настоящее время предложение GROUP BY поддерживается только при запросе к двойникам устройств.
+
+> [!IMPORTANT]
+> Сейчас термин `group` обрабатывается как специальное ключевое слово в запросах. Если вы используете `group` в качестве имени свойства, заключите этот термин в двойные скобки, чтобы избежать ошибок. Например, так: `SELECT * FROM devices WHERE tags.[[group]].name = 'some_value'`.
+>
+>
 
 ## <a name="expressions-and-conditions"></a>Выражения и условия
 В общем *выражение*:
