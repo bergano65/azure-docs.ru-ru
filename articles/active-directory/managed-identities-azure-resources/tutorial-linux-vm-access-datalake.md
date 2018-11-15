@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: daveba
-ms.openlocfilehash: 2a3a46b5f2adf052f04530a8d587a577b14b709b
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 212e0cf390f7a67325b111d4028e0908c772b081
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47106220"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51622727"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-data-lake-store"></a>Руководство. Получение доступа к Azure Data Lake Storage с помощью назначаемого системой управляемого удостоверения на виртуальной машине Linux
 
@@ -35,15 +35,7 @@ ms.locfileid: "47106220"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
-
 [!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
-
-- [Войдите на портал Azure](https://portal.azure.com).
-
-- [Создайте виртуальную машину Linux](/azure/virtual-machines/linux/quick-create-portal).
-
-- [Включите назначаемое системой удостоверение на виртуальной машине](/azure/active-directory/managed-service-identity/qs-configure-portal-windows-vm#enable-system-assigned-identity-on-an-existing-vm).
 
 ## <a name="grant-your-vm-access-to-azure-data-lake-store"></a>Предоставление виртуальной машине доступа к Azure Data Lake Store
 

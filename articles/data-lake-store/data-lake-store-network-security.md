@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 10/09/2018
 ms.author: elsung
-ms.openlocfilehash: b206b49914a448aa3fc9da63f72cca91f9f9ade1
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
+ms.openlocfilehash: 703a865eca90deabcb6bbc64a75fc2bad52b43b7
+ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51218973"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51288005"
 ---
 # <a name="virtual-network-integration-for-azure-data-lake-storage-gen1---preview"></a>Интеграция с виртуальной сетью для Azure Data Lake Storage 1-го поколения (предварительная версия)
 
@@ -29,8 +29,6 @@ ms.locfileid: "51218973"
 Функция интеграции с виртуальной сетью для ADLS 1-го поколения использует безопасность на уровне конечной точки службы виртуальной сети между виртуальной сетью и службой Azure Active Directory (Azure AD) для создания дополнительных утверждений безопасности в маркере доступа. Эти утверждения используются для проверки подлинности виртуальной сети в учетной записи ADLS 1-го поколения и для предоставления доступа.
 
 > [!NOTE]
-> Эта технология находится в предварительной версии. Мы не рекомендуем использовать ее в рабочих средах.
->
 > За использование этих возможностей не взимается дополнительная плата. Учетной записи будет выставлен счет по стандартному тарифу за Data Lake Storage 1-го поколения. Дополнительные сведения см. на странице [цен](https://azure.microsoft.com/pricing/details/data-lake-store/?cdn=disable). Дополнительные сведения о всех используемых службах Azure см. на странице [цен](https://azure.microsoft.com/pricing/#product-picker).
 
 ## <a name="scenarios-for-virtual-network-integration-for-data-lake-storage-gen1"></a>Сценарии для интеграции с виртуальной сетью для ADLS 1-го поколения

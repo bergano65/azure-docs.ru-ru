@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/03/2017
-ms.openlocfilehash: 4ca551ed07447e41ec94b0334eac0d235e0a5b6f
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 9543b1f3b10c246dadaf21b6960c7b6785fb66f4
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34835089"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51566386"
 ---
 # <a name="learn-how-to-manage-azureml-web-services-using-api-management"></a>Сведения об управлении веб-службами AzureML с помощью управления API
 ## <a name="overview"></a>Обзор
@@ -33,7 +33,7 @@ ms.locfileid: "34835089"
 ## <a name="what-is-azureml"></a>Что такое AzureML
 AzureML — это служба Azure для машинного обучения, которая позволяет вам легко создавать и развертывать решения аналитики и предоставлять к ним доступ. Сведения о службе AzureML см. [здесь](https://azure.microsoft.com/services/machine-learning/).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
 * Учетная запись Azure. Если у вас нет учетной записи Azure, щелкните [здесь](https://azure.microsoft.com/pricing/free-trial/) , чтобы узнать, как создать бесплатную пробную учетную запись.
@@ -377,7 +377,7 @@ AzureML — это служба Azure для машинного обучени�
 
     while True:
         print("Checking the job status...")
-        # If you are using Python 3+, replace urllib2 with urllib.request in the follwing code
+        # If you are using Python 3+, replace urllib2 with urllib.request in the following code
         req = urllib2.Request(url2, headers = { "Authorization":("Bearer " + api_key) })
         try:
             response = urllib2.urlopen(req)

@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 10/30/2018
+ms.date: 11/13/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 79572a364c2346ffd567cab7d3633ae398715210
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 6c75c0ce7d12f65878ec8cde0f265022c7beeb29
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50239959"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51613517"
 ---
 # <a name="tutorial-deploy-an-encrypted-azure-storage-account-with-resource-manager-template"></a>Руководство. Развертывание зашифрованной учетной записи службы хранилища Azure с помощью шаблона Resource Manager
 
@@ -31,7 +31,7 @@ ms.locfileid: "50239959"
 > [!div class="checklist"]
 > * Открытие шаблона быстрого запуска
 > * Общие сведения о шаблоне
-> * Поиск ссылки на шаблон.
+> * Поиск ссылки на шаблон
 > * Изменение шаблона
 > * Развертывание шаблона
 

@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 09/20/2018
 ms.author: robb
 ms.component: diagnostic-extension
-ms.openlocfilehash: 603ed12bf74f2d75543fd7e60834e695138c991d
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: dbe2619b99fdc5281375e2c6c1300432d9a4cbb9
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50963807"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51616135"
 ---
 # <a name="azure-diagnostics-extension-configuration-schema-versions-and-history"></a>Журнал и версии схемы конфигурации расширения системы диагностики Azure
 На этой странице приведен указатель версий схемы расширения системы диагностики Azure, которые поставляются в составе пакета Microsoft Azure SDK.  
@@ -67,7 +67,7 @@ ms.locfileid: "50963807"
 ### <a name="diagnostics-extension-111"></a>Расширение системы диагностики 1.11
 Добавлена поддержка для приемника Azure Monitor. Сейчас этот приемник работает только с данными счетчиков производительности. Он позволяет отправлять данные счетчиков производительности виртуальной машины, масштабируемого набора виртуальных машин или облачной службы в Azure Monitor в виде пользовательских метрик. Приемник Azure Monitor поддерживает такие функции:
 * Получение данных всех счетчиков производительности, отправляемых в Azure Monitor с помощью [API метрик Azure Monitor](https://docs.microsoft.com/rest/api/monitor/metrics/list).
-* Настройка оповещений для всех данных счетчиков производительности, отправляемых в Azure Monitor, с помощью нового [унифицированного интерфейса оповещений](monitoring-overview-unified-alerts.md) в Azure Monitor.
+* Настройка оповещений для всех данных счетчиков производительности, отправляемых в Azure Monitor, с помощью нового [унифицированного интерфейса оповещений](monitoring-overview-alerts.md) в Azure Monitor.
 * Обработка оператора подстановочного знака в счетчиках в контексте экземпляра в метрике. Например, если вы собираете данные счетчика LogicalDisk(\*)/DiskWrites/sec, вы можете отфильтровать или разделить эти данные по отдельным экземплярам для каждого логического диска (C:, D: и т. д.) для построения графика или настройки оповещения.
 
 Определение Azure Monitor в качестве нового приемника в конфигурации расширения системы диагностики

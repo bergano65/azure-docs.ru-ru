@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/02/2018
 ms.author: sethm
-ms.openlocfilehash: 8f45535b0e75c3f95a56148ea92a343bb0d8a9f5
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: d94b7f7f2f032278f71053e5de8bb2935af01f3f
+ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49079265"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51300155"
 ---
 # <a name="about-vpn-gateway-for-azure-stack"></a>Сведения о VPN-шлюзе для Azure Stack
 
@@ -33,7 +33,7 @@ VPN-шлюз — это тип шлюза виртуальной сети, ко
 
 У каждой виртуальной сети может быть два шлюза виртуальной сети, но обязательно разных типов. В зависимости от выбранных параметров можно создать несколько подключений к одному VPN-шлюзу. Примером такой конфигурации является многосайтовое подключение.
 
-Перед созданием и настройкой VPN-шлюзов для Azure Stack просмотрите [рекомендации для сетевых возможностях Azure Stack](/articles/azure-stack/user/azure-stack-network-differences.md), чтобы понять отличие конфигураций для Azure Stack от Azure.
+Перед созданием и настройкой VPN-шлюзов для Azure Stack просмотрите [рекомендации для сетевых возможностях Azure Stack](user/azure-stack-network-differences.md), чтобы понять отличие конфигураций для Azure Stack от Azure.
 
 >[!NOTE]
 >В Azure пропускная способность для выбранного номера SKU VPN-шлюза должна разделяться между всеми подключениями к шлюзу. А в Azure Stack значение пропускной способности для номера SKU VPN-шлюза применяется к каждому ресурсу подключения, подключенному к шлюзу.

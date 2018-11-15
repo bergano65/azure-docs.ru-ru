@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: mareat
-ms.openlocfilehash: 61354803f4fced7cd8fee31f10b5f72401f267da
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 6debfaed28be2b5dee5e24a443b791f75f7bea8f
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50414953"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51634198"
 ---
 # <a name="visualize-azure-network-watcher-nsg-flow-logs-using-open-source-tools"></a>Визуализация журнала потоков для групп безопасности сети Наблюдателя за сетями Azure с помощью инструментов с открытым кодом
 
@@ -43,7 +43,7 @@ ms.locfileid: "50414953"
 
 #### <a name="install-elasticsearch"></a>Установка Elasticsearch
 
-1. Для Elastic Stack версии 5.0 и более поздних версий требуется Java 8. Выполните команду `java -version`, чтобы проверить установленную версию. Если у вас не установлена среда Java, см. документацию о [версиях JDK, поддерживаемых в Azure](https://aka.ms/azure-jdks).
+1. Для Elastic Stack версии 5.0 и более поздних версий требуется Java 8. Выполните команду `java -version`, чтобы проверить установленную версию. Если компонент Java не установлен, обратитесь к документации [по поддерживаемым в Azure пакетам JDK](https://aka.ms/azure-jdks).
 2. Скачайте правильный двоичный пакет для своей системы.
 
    ```bash

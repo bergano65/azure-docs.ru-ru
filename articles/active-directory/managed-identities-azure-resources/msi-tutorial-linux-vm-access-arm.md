@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 12/22/2017
 ms.author: daveba
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 4abde91e04048d64a17f861825d1fb7779873155
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 638946f0ffa8b6540f55fb7a22ac17bd262269bf
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47106193"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51621689"
 ---
 # <a name="tutorial-use-a-user-assigned-managed-identity-on-a-linux-vm-to-access-azure-resource-manager"></a>Руководство. Получение доступа к Azure Resource Manager с помощью назначаемого пользователем управляемого удостоверения виртуальной машины Linux
 
@@ -40,13 +40,11 @@ ms.locfileid: "47106193"
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
-[!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
+- [Войдите на портал Azure](https://portal.azure.com).
 
-[Войдите на портал Azure](https://portal.azure.com).
+- [Создайте виртуальную машину Linux](/azure/virtual-machines/linux/quick-create-portal).
 
-[Создайте виртуальную машину Linux](/azure/virtual-machines/linux/quick-create-portal).
-
-Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+- Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 ## <a name="create-a-user-assigned-managed-identity"></a>Создание управляемого удостоверения, назначаемого пользователем
 
@@ -128,20 +126,20 @@ az role assignment create --assignee <UAMI PRINCIPALID> --role 'Reader' --scope 
 1. Войдите на [портал](https://portal.azure.com) Azure.
 2. На портале перейдите к разделу **Виртуальные машины**, выберите виртуальную машину Linux и в разделе **Обзор** щелкните **Подключить**. Скопируйте строку подключения к виртуальной машине.
 3. Подключитесь к виртуальной машине с помощью выбранного клиента SSH. Если вы используете Windows, можно использовать клиент SSH в [подсистеме Windows для Linux](https://msdn.microsoft.com/commandline/wsl/about). Если вам нужна помощь в настройке ключей SSH-клиента, ознакомьтесь с разделом [Использование ключей SSH с Windows в Azure](~/articles/virtual-machines/linux/ssh-from-windows.md) или [Как создать и использовать пару из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](~/articles/virtual-machines/linux/mac-create-ssh-keys.md).
-4. В окне терминала с помощью cURL выполните запрос к конечной точке службы метаданных экземпляров (IMDS) Azure, чтобы получить маркер доступа для Azure Resource Manager.  
+4. В окне терминала с помощью cURL выполните запрос к конечной точке службы метаданных экземпляров (IMDS) Azure, чтобы получить маркер доступа для Azure Resource Manager.  
 
-   В следующем примере показан запрос CURL для получения маркера доступа. Не забудьте заменить `<CLIENT ID>` свойством `clientId`, возвращенным командой `az identity create` при [создании назначаемого пользователем управляемого удостоверения](#create-a-user-assigned-managed-identity): 
+   В следующем примере показан запрос CURL для получения маркера доступа. Не забудьте заменить `<CLIENT ID>` свойством `clientId`, возвращенным командой `az identity create` при [создании назначаемого пользователем управляемого удостоверения](#create-a-user-assigned-managed-identity): 
     
    ```bash
-   curl -H Metadata:true "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com/&client_id=<UAMI CLIENT ID>"   
+   curl -H Metadata:true "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com/&client_id=<UAMI CLIENT ID>"   
    ```
     
     > [!NOTE]
-    > Значение параметра `resource` должно точно совпадать со значением, которое будет использоваться в Azure AD. Если используется идентификатор ресурса Resource Manager, добавьте косую черту после универсального кода ресурса (URI). 
+    > Значение параметра `resource` должно точно совпадать со значением, которое будет использоваться в Azure AD. Если используется идентификатор ресурса Resource Manager, добавьте косую черту после универсального кода ресурса (URI). 
     
-    Ответ включает маркер доступа, необходимый для доступа к Azure Resource Manager. 
+    Ответ включает маркер доступа, необходимый для доступа к Azure Resource Manager. 
     
-    Пример ответа:  
+    Пример ответа:  
 
     ```bash
     {
@@ -152,19 +150,19 @@ az role assignment create --assignee <UAMI PRINCIPALID> --role 'Reader' --scope 
     "not_before":"1504126627",
     "resource":"https://management.azure.com",
     "token_type":"Bearer"
-    } 
+    } 
     ```
 
 5. Используйте маркер для доступа к Azure Resource Manager и просмотрите свойства группы ресурсов, к которой вы предоставили доступ назначаемому пользователем управляемому удостоверению. Не забудьте заменить `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` значениями, указанными ранее, а `<ACCESS TOKEN>` — маркером, возвращенным на предыдущем шаге.
 
     > [!NOTE]
-    > URL-адрес указывается с учетом регистра, поэтому убедитесь, что используется тот же регистр, который использовался при присвоении имени группе ресурсов. Также проверьте, чтобы в значении `resourceGroups` была указана прописная буква "G".  
+    > URL-адрес указывается с учетом регистра, поэтому убедитесь, что используется тот же регистр, который использовался при присвоении имени группе ресурсов. Также проверьте, чтобы в значении `resourceGroups` была указана прописная буква "G".  
 
     ```bash 
-    curl https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>?api-version=2016-09-01 -H "Authorization: Bearer <ACCESS TOKEN>" 
+    curl https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>?api-version=2016-09-01 -H "Authorization: Bearer <ACCESS TOKEN>" 
     ```
 
-    Ответ содержит сведения об определенной группе ресурсов, подобные следующему примеру: 
+    Ответ содержит сведения об определенной группе ресурсов, подобные следующему примеру: 
 
     ```bash
     {
@@ -172,9 +170,9 @@ az role assignment create --assignee <UAMI PRINCIPALID> --role 'Reader' --scope 
     "name":"DevTest",
     "location":"westus",
     "properties":{"provisioningState":"Succeeded"}
-    } 
+    } 
     ```
-    
+    
 ## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как создать назначаемое пользователем управляемое удостоверение и подключить его к виртуальной машине Linux, чтобы получить доступ к API Azure Resource Manager.  Сведения об Azure Resource Manager см. здесь:

@@ -8,13 +8,13 @@ manager: kfile
 editor: jasonwhowell
 ms.service: postgresql
 ms.topic: article
-ms.date: 05/30/2018
-ms.openlocfilehash: 67f5e6d4674f876b2cfd4d879ab40c5a5b12c0cc
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.date: 11/12/2018
+ms.openlocfilehash: 43db0e66c05b6b5c3331d3fba3e4db363d61c9f8
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49985053"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51624358"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql"></a>Расширения PostgreSQL в базе данных Azure для PostgreSQL
 PostgreSQL предоставляет возможность расширить функциональность базы данных с помощью расширений. Расширения позволяют объединить несколько связанных объектов SQL в одном пакете, который затем можно загрузить или удалить из базы данных с помощью одной команды. После загрузки в базу данных расширения могут работать как встроенные функции. Дополнительные сведения о расширениях PostgreSQL см. на странице  [Упаковка связанных объектов в расширение](https://www.postgresql.org/docs/9.6/static/extend-extensions.html).
@@ -75,6 +75,7 @@ PostgreSQL предоставляет возможность расширить 
 | **Расширение** | **Описание** |
 |---|---|
 | [plpgsql](https://www.postgresql.org/docs/9.6/static/plpgsql.html) | Загружаемый процедурный язык PL/pgSQL. |
+| [plv8](https://plv8.github.io/) | Расширение языка Javascript для PostgreSQL, которое можно использовать для хранимых процедур, триггеров и т. д. |
 
 ### <a name="miscellaneous-extensions"></a>Прочие расширения
 
@@ -88,7 +89,7 @@ PostgreSQL предоставляет возможность расширить 
 | [pgstattuple](https://www.postgresql.org/docs/9.6/static/pgstattuple.html) | Предоставляет средства для отображения статистических данных на уровне кортежей. |
 | [postgres\_fdw](https://www.postgresql.org/docs/9.6/static/postgres-fdw.html) | Оболочка для внешних данных, используемая для доступа к данным на внешних серверах PostgreSQL. |
 | [hypopg](https://hypopg.readthedocs.io/en/latest/) | Предоставляет способ создания гипотетических индексов, которые используют ЦП или диск. |
-| [plv8](https://plv8.github.io/) | Расширение языка Javascript для PostgreSQL, которое можно использовать для хранимых процедур, триггеров и т. д. |
+
 
 ### <a name="postgis-extensions"></a>Расширения PostGIS
 
@@ -101,7 +102,7 @@ PostgreSQL предоставляет возможность расширить 
 
 
 ### <a name="using-pgstatstatements"></a>Использование pg_stat_statements
-\_Расширение инструкций](https://www.postgresql.org/docs/9.6/static/pgstatstatements.html) [pg\_stat предварительно загружено на каждом сервере базы данных Azure для PostgreSQL, что предоставляет вам средства отслеживания статистики выполнения инструкций SQL.
+[Расширение инструкций](https://www.postgresql.org/docs/9.6/static/pgstatstatements.html) \_pg\_stat предварительно загружено на каждом сервере базы данных Azure для PostgreSQL, что предоставляет вам средства отслеживания статистики выполнения инструкций SQL.
 Параметр `pg_stat_statements.track`, который управляет тем, какие инструкции учитываются расширением, по умолчанию имеет значение `top`. Это означает, что все инструкции, выпущенные непосредственно клиентами, отслеживаются. Два других уровня отслеживания: `none` и `all`. Этот параметр можно настроить в качестве параметра сервера с помощью [портала Azure](https://docs.microsoft.com/azure/postgresql/howto-configure-server-parameters-using-portal) или [Azure CLI](https://docs.microsoft.com/azure/postgresql/howto-configure-server-parameters-using-cli).
 
 Существует компромисс между информацией о выполнении запроса, предоставляемой pg_stat_statements, и воздействием на производительность сервера при регистрации каждой инструкции SQL. Если расширение pg_stat_statements не используется активно, рекомендуется задать для параметра `pg_stat_statements.track` значение `none`. Обратите внимание, что некоторые сторонние службы мониторинга могут зависеть от pg_stat_statements при предоставлении информации о производительности запроса, поэтому подтвердите ваш ли это случай.

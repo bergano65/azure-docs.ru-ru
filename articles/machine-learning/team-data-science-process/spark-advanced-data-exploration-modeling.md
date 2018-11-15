@@ -15,15 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/15/2017
 ms.author: deguhath
-ms.openlocfilehash: 6fa59a176eaea08b612eb32eeb608fa7373d5c36
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 3763b7df8830d2555afd9beb492cb6878505afa4
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51249750"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51566505"
 ---
 # <a name="advanced-data-exploration-and-modeling-with-spark"></a>Расширенное исследование и моделирование данных с помощью Spark
-[!INCLUDE [machine-learning-spark-modeling](../../../includes/machine-learning-spark-modeling.md)]
 
 В этом пошаговом руководстве рассматривается исследование, обучение бинарной классификации и моделей регрессии; при этом используются перекрестная проверка и оптимизация гиперпараметров для обучения моделей на примере набора данных о поездках в такси по Нью-Йорку и тарифах за 2013 г. с помощью HDInsight Spark. Здесь также подробно описаны этапы [анализа и обработки данных](https://aka.ms/datascienceprocess) с использованием кластера HDInsight Spark по обработке данных и больших двоичных объектов Azure для хранения данных и моделей. В ходе этой процедуры данные из большого двоичного объекта службы хранилища Azure сначала исследуются и визуализируются, а затем подготавливаются для создания прогнозных моделей. Чтобы создать код решения и составить соответствующие графики, использовался язык Python. Эти модели создаются с помощью набора средств Spark MLlib для выполнения задач двоичной классификации и регрессии. 
 
@@ -1254,7 +1253,7 @@ R-sqr = 0.732680354389
     # cvModel uses the best model found (lrModel).
     predictionAndLabels = cv_model.transform(testDataFrame)
 
-    # CONVERT TO DF AND SAVE REGISER DF AS TABLE
+    # CONVERT TO DF AND SAVE REGISTER DF AS TABLE
     predictionAndLabels.registerTempTable("tmp_results");
 
     # PRINT ELAPSED TIME

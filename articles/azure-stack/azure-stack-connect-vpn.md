@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 10/24/2018
 ms.author: sethm
 ms.reviewer: scottnap
-ms.openlocfilehash: bcdd5b6d28a6c08b7b36e170fcb7d184fcf65eb0
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: d215af253471258e487dadcfae0cfd7edafd1c26
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50024466"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51634657"
 ---
 # <a name="connect-azure-stack-to-azure-using-vpn"></a>Подключение Azure Stack к Azure с помощью VPN
 
@@ -127,7 +127,7 @@ ms.locfileid: "50024466"
 
 1. Выберите **+ Создать ресурс** на портале Azure.
 2. Щелкните **Marketplace**, а затем выберите **Вычисление**.
-3. В списке образов виртуальных машин выберите образ **Windows Server 2016 Datacenter Oval**.
+3. В списке образов виртуальных машин выберите образ **Windows Server 2016 Datacenter Eval**.
 4. В разделе **Основные сведения** в поле **Имя** введите **AzureVM**.
 5. Введите допустимое имя пользователя и пароль. С помощью этой учетной записи вы войдете на виртуальную машину после ее создания.
 6. Заполните поля **Подписка**, **Группа ресурсов** и **Расположение**, а затем нажмите кнопку **ОК**.
@@ -227,7 +227,7 @@ ms.locfileid: "50024466"
 
 1. Выберите **+ Создать ресурс** на портале Azure.
 2. Щелкните **Marketplace**, а затем выберите **Вычисление**.
-3. В списке образов виртуальных машин выберите образ **Windows Server 2016 Datacenter Oval**.
+3. В списке образов виртуальных машин выберите образ **Windows Server 2016 Datacenter Eval**.
 4. В разделе **Основные сведения** в поле **Имя** введите **Azs-VM**.
 5. Введите допустимое имя пользователя и пароль. С помощью этой учетной записи вы войдете на виртуальную машину после ее создания.
 6. Заполните поля **Подписка**, **Группа ресурсов** и **Расположение**, а затем нажмите кнопку **ОК**.

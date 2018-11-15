@@ -10,12 +10,12 @@ ms.date: 09/11/2018
 ms.topic: article
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: bca818cb4e13066f8a631111b75f50384e521ac1
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.openlocfilehash: a1c68f7e1d0a24be173137d3a7c920876cc8ba66
+ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50978899"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "51515749"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -64,9 +64,9 @@ azds remove -g <resource group name> -n <cluster name>
 
 При использовании _azds.exe_ используйте параметр командной строки --verbose и параметр командной строки --output, чтобы указать формат выходных данных.
  
-    ```cmd
-    azds up --verbose --output json
-    ```
+```cmd
+azds up --verbose --output json
+```
 
 В Visual Studio:
 

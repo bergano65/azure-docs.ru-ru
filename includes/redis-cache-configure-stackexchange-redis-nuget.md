@@ -1,3 +1,16 @@
+---
+author: wesmc7777
+ms.service: redis-cache
+ms.topic: include
+ms.date: 11/09/2018
+ms.author: wesmc
+ms.openlocfilehash: ba73c481dace43dc72f6740a94bca362763dabac
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51572668"
+---
 Приложения .NET могут использовать клиент кэша **StackExchange.Redis** , который можно настроить в Visual Studio, используя пакет NuGet, упрощающий настройку клиентских приложений кэша. 
 
 > [!NOTE]

@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: mayg
-ms.openlocfilehash: e7c63fba892f70ca0e18c1bffcda0782316b7ada
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: af57dc50dd156a3398c2c685e436d22ba3daea95
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50211559"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51567780"
 ---
 # <a name="integrate-azure-expressroute-with-disaster-recovery-for-azure-vms"></a>Интеграция Azure ExpressRoute и аварийного восстановления виртуальных машин Azure
 
@@ -185,7 +185,7 @@ ExpressRoute позволяет перенести локальные сети �
 - Целевой регион Azure для восстановления — "Юго-Восточная Азия".
 - Дополнительный канал ExpressRoute подключается через партнерский пограничный сервер в Сингапуре.
 
-Простая топология, которая использует один канал ExpressRoute и сохраняет IP-адрес после отработки отказа, [описана в этой статье](site-recovery-retain-ip-azure-vm-failover.md#on-premises-to-azure-connectivity).
+Простая топология, которая использует один канал ExpressRoute и сохраняет IP-адрес после отработки отказа, [описана в этой статье](site-recovery-retain-ip-azure-vm-failover.md#hybrid-resources-full-failover).
 
 ### <a name="example-steps"></a>Примеры действий
 Чтобы автоматизировать восстановление в этом примере, нужно сделать следующее.

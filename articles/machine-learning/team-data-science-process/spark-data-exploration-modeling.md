@@ -15,15 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/15/2017
 ms.author: deguhath
-ms.openlocfilehash: f6f0393fa3c7a1c0851c18ebd4e48f2ef426f893
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 12757bca2e0fcff6a79263909fafd59c94b5eef2
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51248492"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51566522"
 ---
 # <a name="data-exploration-and-modeling-with-spark"></a>Исследование и моделирование данных с помощью Spark
-[!INCLUDE [machine-learning-spark-modeling](../../../includes/machine-learning-spark-modeling.md)]
 
 В этом пошаговом руководстве рассматривается исследование и моделирование данных с применением двоичной классификации и регрессии на примере набора данных о поездках в такси по Нью-Йорку и тарифах за 2013 г. с помощью HDInsight Spark.  Здесь также подробно описаны этапы [анализа и обработки данных](https://aka.ms/datascienceprocess) с использованием кластера HDInsight Spark по обработке данных и больших двоичных объектов Azure для хранения данных и моделей. В ходе этой процедуры данные из большого двоичного объекта службы хранилища Azure сначала исследуются и визуализируются, а затем подготавливаются для создания прогнозных моделей. Эти модели создаются с помощью набора средств Spark MLlib для выполнения задач двоичной классификации и регрессии.
 
@@ -1002,7 +1001,7 @@ R-sqr = 0.759661334921
     dirfilename = modelDir + btregressionfilename;
     gbtModel.save(sc, dirfilename)
 
-    # CONVER RESULTS TO DF AND REGISER TEMP TABLE
+    # CONVERT RESULTS TO DF AND REGISTER TEMP TABLE
     test_predictions = sqlContext.createDataFrame(predictionAndLabels)
     test_predictions.registerTempTable("tmp_results");
 

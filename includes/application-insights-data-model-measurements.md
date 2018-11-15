@@ -1,3 +1,16 @@
+---
+author: mrbullwinkle
+ms.service: application-insights
+ms.topic: include
+ms.date: 11/09/2018
+ms.author: mbullwin
+ms.openlocfilehash: 3986b77cfad167134bf8ada1e3cbb73ad64dd3ca
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51572636"
+---
 Коллекция пользовательских измерений. Используйте эту коллекцию для создания отчета с именем измерения, связанного с элементом телеметрии. Типичные случаи использования:
 - Размер полезных данных телеметрии зависимостей.
 - Число элементов очереди, обрабатываемых телеметрией запросов.

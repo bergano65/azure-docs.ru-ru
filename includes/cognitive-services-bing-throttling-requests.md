@@ -1,3 +1,16 @@
+---
+author: nitinme
+ms.service: cognitive-services
+ms.topic: include
+ms.date: 11/09/2018
+ms.author: nitinme
+ms.openlocfilehash: 1d8340054ace25a0cdc36eef9c3d5b4238a6f99b
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51572648"
+---
 Служба и тип подписки определяют число запросов, которые можно выполнить за секунду (QPS). Убедитесь, что приложение содержит логику, необходимую, чтобы оставаться в пределах вашей квоты. Если лимит частоты запросов достигнут или превышен, запрос возвращает ошибку с кодом состояния HTTP 429. Ответ включает заголовок `Retry-After`, который указывает, сколько необходимо ждать перед отправкой другого запроса.
 
 ## <a name="denial-of-service-versus-throttling"></a>Отказ в обслуживании и регулирование

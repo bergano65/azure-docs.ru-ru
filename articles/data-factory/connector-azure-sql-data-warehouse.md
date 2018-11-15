@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/28/2018
+ms.date: 11/08/2018
 ms.author: jingwang
-ms.openlocfilehash: d3cddc729e40b5591922fc7b5c7d3d6a258219a7
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 5c45167255ec91030f07e550de223a7ebed93168
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49955819"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51345765"
 ---
 #  <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you're using:"]
@@ -217,7 +217,7 @@ ms.locfileid: "49955819"
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | Тип | Свойство **type** для набора данных должно иметь значение: **AzureSqlDWTable**. | Yes |
-| tableName | Имя таблицы или представления в экземпляре хранилища данных SQL Azure, на которое ссылается связанная служба. | Yes |
+| tableName | Имя таблицы или представления в экземпляре хранилища данных SQL Azure, на которое ссылается связанная служба. | "Нет" для источника, "Да" для приемника |
 
 #### <a name="dataset-properties-example"></a>Пример свойств набора данных
 
@@ -257,7 +257,6 @@ ms.locfileid: "49955819"
 
 - Если для **SqlSource** указано **sqlReaderQuery**, то действие копирования выполняет этот запрос для хранилища данных SQL Azure с целью получения данных. Кроме того, можно создать хранимую процедуру. Укажите параметр **sqlReaderStoredProcedureName** и **storedProcedureParameters**, если хранимая процедура принимает параметры.
 - Если не указать **sqlReaderQuery** или **sqlReaderStoredProcedureName**, то столбцы, определенные в разделе **structure** набора данных JSON, будут использоваться для построения запроса. `select column1, column2 from mytable` выполняется по отношению к хранилищу данных SQL Azure. Если в определении набора данных нет раздела **structure**, выбираются все столбцы из таблицы.
-- При использовании **sqlReaderStoredProcedureName** по-прежнему необходимо указать фиктивное свойство **tableName** в наборе данных JSON.
 
 #### <a name="sql-query-example"></a>Пример SQL-запроса
 

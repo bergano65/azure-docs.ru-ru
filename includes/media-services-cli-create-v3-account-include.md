@@ -5,15 +5,15 @@ services: media-services
 author: Juliako
 ms.service: media-services
 ms.topic: include
-ms.date: 04/13/2018
+ms.date: 11/11/2018
 ms.author: juliako
 ms.custom: include file
-ms.openlocfilehash: 9ecb07a2cb278f6cde4ffdc3b252cb9e816d08da
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 513d9a3a044daacd84b810e4795522c2bd6763f8
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38733302"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51616577"
 ---
 ## <a name="create-a-media-services-account"></a>Создание учетной записи служб мультимедиа
 
@@ -23,7 +23,7 @@ ms.locfileid: "38733302"
 
 Чтобы создать группу ресурсов, выполните указанную ниже команду. Группа ресурсов Azure — это логический контейнер, в котором происходит развертывание ресурсов, таких как учетные записи Служб мультимедиа Azure и связанные с ними учетные записи хранения, а также управление ими.
 
-```azurecli-interactive
+```azurecli
 az group create --name amsResourceGroup --location westus2
 ```
 
@@ -37,7 +37,7 @@ az group create --name amsResourceGroup --location westus2
 
 Следующая команда создает учетную запись хранения, которая будет связана с учетной записью Служб мультимедиа. В приведенном ниже скрипте `storageaccountforams` можно заменить своим значением. Имя учетной записи должно содержать не более 24 символов.
 
-```azurecli-interactive
+```azurecli
 az storage account create --name storageaccountforams \  
 --kind StorageV2 \
 --sku Standard_RAGRS \
@@ -48,6 +48,6 @@ az storage account create --name storageaccountforams \
 
 Указанная ниже команда Azure CLI создает новую учетную запись Служб мультимедиа. Вы можете заменить следующие значения: `amsaccount` `storageaccountforams` (должно совпадать со значением, заданным для учетной записи хранения) и `amsResourceGroup` (должно совпадать со значением, заданным для группы ресурсов).
 
-```azurecli-interactive
+```azurecli
 az ams account create --name amsaccount --resource-group amsResourceGroup --storage-account storageaccountforams
 ```

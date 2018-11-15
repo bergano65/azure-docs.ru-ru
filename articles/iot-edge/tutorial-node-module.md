@@ -3,18 +3,18 @@ title: Руководство по использованию Azure IoT Edge с 
 description: В этом руководстве показано, как создать модуль IoT Edge с кодом Node.js и развернуть его на пограничном устройстве
 services: iot-edge
 author: shizn
-manager: timlt
+manager: philmea
 ms.author: xshi
 ms.date: 09/21/2018
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: be0c3e7e09e61230332b1275289fd93e59c7c0b2
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 40fa0357245ad77fbdb08c5dbb4839d69322954f
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50156992"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51566798"
 ---
 # <a name="tutorial-develop-and-deploy-a-nodejs-iot-edge-module-to-your-simulated-device"></a>Руководство. Разработка модуля IoT Edge с кодом Node.js и его развертывание на имитированном устройстве
 

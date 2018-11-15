@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 08/08/2017
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: d906515214e042a09d434f02be1778c275f214a8
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 8afefa95e0a7b4f10f4a2bf6c7f099ba9eb4a957
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50958140"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51613225"
 ---
 # <a name="create-a-custom-dashboard-for-use-in-log-analytics"></a>Создание пользовательской панели мониторинга для Log Analytics
 
@@ -88,4 +88,4 @@ ms.locfileid: "50958140"
 ![Удаление плитки](./media/log-analytics-dashboards/oms-dashboards-remove-tile.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Создайте [оповещения](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md) в службе Log Analytics для создания уведомлений и устранения проблем.
+* Создайте [оповещения](../monitoring-and-diagnostics/monitoring-overview-alerts.md) в службе Log Analytics для создания уведомлений и устранения проблем.

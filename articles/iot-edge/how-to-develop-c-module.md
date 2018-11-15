@@ -4,17 +4,17 @@ description: Использование Visual Studio Code для разрабо
 services: iot-edge
 keywords: ''
 author: shizn
-manager: timlt
+manager: philmea
 ms.author: xshi
 ms.date: 09/13/2018
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 3ec7f6043c1d2e8e8f090ffc60822768ab9bc9d9
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.openlocfilehash: d40b82b5beac2da78038e303cb50402d6fa0be7a
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45984007"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51566030"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-c-modules-for-azure-iot-edge"></a>Использование Visual Studio Code для разработки и отладки модулей C для Azure IoT Edge
 
@@ -94,7 +94,7 @@ VS Code принимает предоставленные сведения, со
 2. Замените модуль C createOptions в файле **deployment.template.json** содержимым ниже и сохраните этот файл: 
     
     ```json
-    "createOptions": "{\"HostConfig\": {\"Privileged\": true}}"
+    "createOptions": "{\"HostConfig\": {\"Privileged\": true}}"
     ```
 
 2. В палитре команд VS Code введите и выполните команду **Azure IoT Edge: Build and Push IoT Edge solution**.

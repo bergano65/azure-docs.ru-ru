@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 10/14/2018
 ms.author: cherylmc
-ms.openlocfilehash: a6bdafffb11fce40ecdd876105e17edd2660c751
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: d890aabd6b0acad324ef4b632daaed1db6452ac5
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49466909"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51686965"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-powershell"></a>Настройка подключения VPN-шлюза между виртуальными сетями с помощью PowerShell
 
@@ -125,7 +125,7 @@ ms.locfileid: "49466909"
 1. Объявите переменные. В этом примере объявлены переменные со значениями для этого упражнения. В большинстве случаев эти значения вам нужно заменить собственными. Но вы можете использовать указанные переменные, чтобы ознакомиться с этим типом конфигурации. Измените переменные (при необходимости), а затем скопируйте и вставьте их в консоль PowerShell.
 
   ```powershell
-  $Sub1 = "Replace_With_Your_Subcription_Name"
+  $Sub1 = "Replace_With_Your_Subscription_Name"
   $RG1 = "TestRG1"
   $Location1 = "East US"
   $VNetName1 = "TestVNet1"
@@ -323,7 +323,7 @@ ms.locfileid: "49466909"
 1. Объявите переменные. Не забудьте заменить значения теми, которые вы хотите использовать для конфигурации.
 
   ```powershell
-  $Sub5 = "Replace_With_the_New_Subcription_Name"
+  $Sub5 = "Replace_With_the_New_Subscription_Name"
   $RG5 = "TestRG5"
   $Location5 = "Japan East"
   $VnetName5 = "TestVNet5"

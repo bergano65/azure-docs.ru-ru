@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/11/2017
 ms.author: juliako
-ms.openlocfilehash: f55e8aa652d65ea751a77742fa5823b09d9ee87b
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 953cd536c390e571ee4c40dc670316197718eff2
+ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33783813"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51279200"
 ---
 # <a name="how-to-build-a-smooth-streaming-windows-store-application"></a>Создание приложения для магазина Windows с бесперебойной потоковой передачей
 
@@ -32,20 +32,20 @@ ms.locfileid: "33783813"
 3. Выбор потоков для бесперебойной потоковой передачи
 4. Выбор дорожек для бесперебойной потоковой передачи
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 > [!NOTE]
 > Проекты для Магазина Windows версии 8.1 и более ранней версии не поддерживаются в Visual Studio 2017.  Дополнительные сведения см. в статье [Целевая платформа и совместимость для Visual Studio 2017](https://www.visualstudio.com/en-us/productinfo/vs2017-compatibility-vs).
 
 * Windows 8 (32-разрядная или 64-разрядная).
 * Visual Studio версий 2012–2015.
-* [Клиентский пакет SDK для бесперебойной потоковой передачи Microsoft для Windows 8](http://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Homehttp://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Home)
+* [Клиентский пакет SDK для бесперебойной потоковой передачи Microsoft для Windows 8](https://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Home http://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Home)
 
 Готовое решение для каждого урока можно загрузить из раздела образцов кода для разработчиков MSDN (коллекция кодов): 
 
-* [Урок 1.](http://code.msdn.microsoft.com/Smooth-Streaming-Client-0bb1471f) Простой мультимедиапроигрыватель для Windows 8 с потоковой передачей Smooth Streaming. 
-* [Урок 2.](http://code.msdn.microsoft.com/A-simple-Windows-8-Smooth-ee98f63a) Простой мультимедиапроигрыватель для Windows 8 с потоковой передачей Smooth Streaming и элементом управления «Ползунок». 
-* [Урок 3.](http://code.msdn.microsoft.com/A-Windows-8-Smooth-883c3b44) Простой мультимедиапроигрыватель для Windows 8 с потоковой передачей Smooth Streaming и выбором потока.  
-* [Урок 4.](http://code.msdn.microsoft.com/A-Windows-8-Smooth-aa9e4907) Мультимедиапроигрыватель для Windows 8 с потоковой передачей Smooth Streaming и выбором дорожки.
+* [Урок 1.](https://code.msdn.microsoft.com/Smooth-Streaming-Client-0bb1471f) Простой мультимедиапроигрыватель для Windows 8 с потоковой передачей Smooth Streaming. 
+* [Урок 2.](https://code.msdn.microsoft.com/A-simple-Windows-8-Smooth-ee98f63a) Простой мультимедиапроигрыватель для Windows 8 с потоковой передачей Smooth Streaming и элементом управления «Ползунок». 
+* [Урок 3.](https://code.msdn.microsoft.com/A-Windows-8-Smooth-883c3b44) Простой мультимедиапроигрыватель для Windows 8 с потоковой передачей Smooth Streaming и выбором потока.  
+* [Урок 4.](https://code.msdn.microsoft.com/A-Windows-8-Smooth-aa9e4907) Мультимедиапроигрыватель для Windows 8 с потоковой передачей Smooth Streaming и выбором дорожки.
 
 ## <a name="lesson-1-create-a-basic-smooth-streaming-store-application"></a>Урок 1. Создание базового приложения для магазина с бесперебойной потоковой передачей
 
@@ -53,7 +53,7 @@ ms.locfileid: "33783813"
 
 ![Пример приложения для магазина Windows с бесперебойной потоковой передачей][PlayerApplication]
 
-Дополнительные сведения о разработке приложений Магазина Windows см. в разделе, посвященном [разработке потрясающих приложений для Windows 8](http://msdn.microsoft.com/windows/apps/br229512.aspx). Это занятие содержит следующие процедуры:
+Дополнительные сведения о разработке приложений Магазина Windows см. в разделе, посвященном [разработке потрясающих приложений для Windows 8](https://msdn.microsoft.com/windows/apps/br229512.aspx). Это занятие содержит следующие процедуры:
 
 1. Создание проекта для магазина Windows
 2. Проектирование пользовательского интерфейса (XAML)
@@ -95,7 +95,7 @@ ms.locfileid: "33783813"
 
 1. В обозревателе решений дважды щелкните **MainPage.xaml** , чтобы открыть его в режиме конструктора.
 2. Найдите теги **&lt;Grid&gt;** и **&lt;/Grid&gt;** в XAML-файле и вставьте между ними код ниже:
-
+```xml
          <Grid.RowDefinitions>
 
             <RowDefinition Height="20"/>    <!-- spacer -->
@@ -138,7 +138,7 @@ ms.locfileid: "33783813"
                FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
             <TextBox x:Name="txtStatus" FontSize="10" Width="700" VerticalAlignment="Center"/>
          </StackPanel>
-   
+```
    Элемент управления MediaElement используется для воспроизведения мультимедиа. Для управления мультимедиа в следующем уроке будет использоваться ползунок с именем sliderProgress.
 3. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
 
@@ -160,7 +160,7 @@ ms.locfileid: "33783813"
         extensions.RegisterByteStreamHandler("Microsoft.Media.AdaptiveStreaming.SmoothByteStreamHandler", ".ism", "text/xml");
         extensions.RegisterByteStreamHandler("Microsoft.Media.AdaptiveStreaming.SmoothByteStreamHandler", ".ism", "application/vnd.ms-sstr+xml");
 5. Добавьте в конце класса **MainPage** следующий код:
-   
+```csharp
          # region UI Button Click Events
          private void btnPlay_Click(object sender, RoutedEventArgs e)
          {
@@ -202,7 +202,7 @@ ms.locfileid: "33783813"
          mediaElement.Position = new TimeSpan(0, 0, (int)(sliderProgress.Value));
          }
          # endregion
-
+```
 Здесь определяется обработчик события sliderProgress_PointerPressed.  Для его запуска требуется выполнить ряд дополнительных действий, которые будут рассматриваться на следующем уроке этого учебного курса.
 6. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
 
@@ -242,22 +242,25 @@ ms.locfileid: "33783813"
 
 1. В обозревателе решений щелкните правой кнопкой мыши файл **MainPage.xaml** и выберите команду **Просмотреть код**.
 2. Добавьте следующую инструкцию using в начало файла:
-
+```csharp
         using Microsoft.Media.AdaptiveStreaming;
+```
 3. В начале класса MainPage добавьте следующие члены данных:
-
+```csharp
          private Windows.Foundation.Collections.PropertySet propertySet = new Windows.Foundation.Collections.PropertySet();             
          private IAdaptiveSourceManager adaptiveSourceManager;
+```
 4. В конструкторе **MainPage** добавьте следующий код после строки **this.Initialize Components();** и строк кода регистрации, добавленных на предыдущем занятии:
-
+```csharp
         // Gets the default instance of AdaptiveSourceManager which manages Smooth 
         //Streaming media sources.
         adaptiveSourceManager = AdaptiveSourceManager.GetDefault();
         // Sets property key value to AdaptiveSourceManager default instance.
         // {A5CE1DE8-1D00-427B-ACEF-FB9A3C93DE2D}" must be hardcoded.
         propertySet["{A5CE1DE8-1D00-427B-ACEF-FB9A3C93DE2D}"] = adaptiveSourceManager;
+```
 5. В конструкторе **MainPage** измените два метода RegisterByteStreamHandler для добавления следующих параметров:
-
+```csharp
          // Registers Smooth Streaming byte-stream handler for ".ism" extension and, 
          // "text/xml" and "application/vnd.ms-ss" mime-types and pass the propertyset. 
          // http://*.ism/manifest URI resources will be resolved by Byte-stream handler.
@@ -273,16 +276,18 @@ ms.locfileid: "33783813"
             ".ism", 
             "application/vnd.ms-sstr+xml", 
          propertySet);
+```
 6. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
 
 **Добавление обработчиков событий уровня диспетчера адаптивных источников**
 
 1. В обозревателе решений щелкните правой кнопкой мыши файл **MainPage.xaml** и выберите команду **Просмотреть код**.
 2. В классе **MainPage** добавьте следующий член данных:
-   
+```csharp
      private AdaptiveSource adaptiveSource = null;
+```
 3. В конце класса **MainPage** добавьте следующий обработчик событий:
-   
+```csharp
          # region Adaptive Source Manager Level Events
          private void mediaElement_AdaptiveSourceOpened(AdaptiveSource sender, AdaptiveSourceOpenedEventArgs args)
          {
@@ -291,20 +296,24 @@ ms.locfileid: "33783813"
          }
 
          # endregion Adaptive Source Manager Level Events
+```
 4. В конце конструктора **MainPage** добавьте следующую строку для подписки на событие открытия адаптивного источника:
-   
+```csharp
          adaptiveSourceManager.AdaptiveSourceOpenedEvent += 
            new AdaptiveSourceOpenedEventHandler(mediaElement_AdaptiveSourceOpened);
+```
 5. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
 
 **Добавление обработчиков событий уровня адаптивного источника**
 
 1. В обозревателе решений щелкните правой кнопкой мыши файл **MainPage.xaml** и выберите команду **Просмотреть код**.
 2. В классе **MainPage** добавьте следующий член данных:
-   
-     private AdaptiveSourceStatusUpdatedEventArgs adaptiveSourceStatusUpdate;   private Manifest manifestObject;
+```csharp
+     private AdaptiveSourceStatusUpdatedEventArgs adaptiveSourceStatusUpdate; 
+     private Manifest manifestObject;
+```
 3. В конце класса **MainPage** добавьте следующие обработчики событий:
-
+```csharp
          # region Adaptive Source Level Events
          private void mediaElement_ManifestReady(AdaptiveSource sender, ManifestReadyEventArgs args)
          {
@@ -326,7 +335,7 @@ ms.locfileid: "33783813"
          }
 
          # endregion Adaptive Source Level Events
-4. В конце метода **mediaElement AdaptiveSourceOpened** добавьте следующий код, чтобы подписаться на события:
+4. At the end of the **mediaElement AdaptiveSourceOpened** method, add the following code to subscribe to the events:
    
          adaptiveSource.ManifestReadyEvent +=
 
@@ -337,6 +346,7 @@ ms.locfileid: "33783813"
          adaptiveSource.AdaptiveSourceFailedEvent += 
 
             mediaElement_AdaptiveSourceFailed;
+```
 5. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
 
 Эти же события доступны на уровне диспетчера адаптивных источников, который может использоваться для обработки функций, общих для всех элементов мультимедиа в приложении. Каждый адаптивный источник имеет свои собственные события, и все события AdaptiveSource будут передаваться каскадом в диспетчер AdaptiveSourceManager.
@@ -345,7 +355,7 @@ ms.locfileid: "33783813"
 
 1. В обозревателе решений щелкните правой кнопкой мыши файл **MainPage.xaml** и выберите команду **Просмотреть код**.
 2. В конце класса **MainPage** добавьте следующие обработчики событий:
-
+```csharp
          # region Media Element Event Handlers
          private void MediaOpened(object sender, RoutedEventArgs e)
          {
@@ -366,30 +376,35 @@ ms.locfileid: "33783813"
          }
 
          # endregion Media Element Event Handlers
+```
 3. В конце конструктора **MainPage** добавьте следующий код для подписки на события:
-
+```csharp
          mediaElement.MediaOpened += MediaOpened;
          mediaElement.MediaEnded += MediaEnded;
          mediaElement.MediaFailed += MediaFailed;
+```
 4. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
 
 **Добавление кода, связанного с ползунком**
 
 1. В обозревателе решений щелкните правой кнопкой мыши файл **MainPage.xaml** и выберите команду **Просмотреть код**.
 2. Добавьте следующую инструкцию using в начало файла:
-      
+```csharp
         using Windows.UI.Core;
+```
 3. В классе **MainPage** добавьте следующий член данных:
-   
+```csharp
          public static CoreDispatcher _dispatcher;
          private DispatcherTimer sliderPositionUpdateDispatcher;
+```
 4. В конце конструктора **MainPage** добавьте следующий код:
-   
+```csharp
          _dispatcher = Window.Current.Dispatcher;
          PointerEventHandler pointerpressedhandler = new PointerEventHandler(sliderProgress_PointerPressed);
          sliderProgress.AddHandler(Control.PointerPressedEvent, pointerpressedhandler, true);    
+```
 5. Добавьте в конце класса **MainPage** следующий код:
-
+```csharp
          # region sliderMediaPlayer
          private double SliderFrequency(TimeSpan timevalue)
          {
@@ -471,25 +486,30 @@ ms.locfileid: "33783813"
          }
 
          # endregion sliderMediaPlayer
-      
+```
+
 >[!NOTE]
 >CoreDispatcher используется для внесения изменений в поток пользовательского интерфейса из других потоков. В случае возникновения узких мест в потоке-отправителе разработчик может использовать отправитель, предоставленный элементом пользовательского интерфейса, который планируется обновить.  Например: 
-   
+
+```csharp
          await sliderProgress.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => { TimeSpan 
 
          timespan = new TimeSpan(adaptiveSourceStatusUpdate.EndTime); 
          double absvalue  = (int)Math.Round(timespan.TotalSeconds, MidpointRounding.AwayFromZero); 
 
          sliderProgress.Maximum = absvalue; }); 
+```
 6. В конце метода **mediaElement_AdaptiveSourceStatusUpdated** добавьте следующий код:
-
+```csharp
          setSliderStartTime(args.StartTime);
          setSliderEndTime(args.EndTime);
+```
 7. В конце метода **MediaOpened** добавьте следующий код:
-
+```csharp
          sliderProgress.StepFrequency = SliderFrequency(mediaElement.NaturalDuration.TimeSpan);
          sliderProgress.Width = mediaElement.Width;
          setupTimer();
+```
 8. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
 
 **Компиляция и тестирование приложения**
@@ -506,14 +526,14 @@ ms.locfileid: "33783813"
 Бесперебойная потоковая передача способна передавать контент с аудиодорожками на нескольких языках, которые могут быть выбраны просматривающими.  На этом занятии предстоит включить средства просмотра для выбора потоков. Это занятие содержит следующие процедуры:
 
 1. Изменение XAML-файла
-2. Изменение кода файла behand
+2. Изменение кода в файле
 3. Компиляция и тестирование приложения
 
 **Изменение XAML-файла**
 
 1. В обозревателе решений щелкните правой кнопкой мыши файл **MainPage.xaml** и выберите команду **Конструктор представлений**.
 2. Найдите &lt;Grid.RowDefinitions&gt; и измените RowDefinitions следующим образом:
-   
+```xml
          <Grid.RowDefinitions>            
             <RowDefinition Height="20"/>
             <RowDefinition Height="50"/>
@@ -521,8 +541,9 @@ ms.locfileid: "33783813"
             <RowDefinition Height="80"/>
             <RowDefinition Height="50"/>
          </Grid.RowDefinitions>
+```
 3. Внутри тегов &lt;Grid&gt;&lt;/Grid&gt; добавьте следующий код, чтобы определить элемент управления типа "поле со списком", который позволит пользователям просматривать список доступных потоков и выбирать нужные:
-
+```xml
          <Grid Name="gridStreamAndBitrateSelection" Grid.Row="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="300"/>
@@ -546,13 +567,14 @@ ms.locfileid: "33783813"
                 </ListBox>
             </StackPanel>
          </Grid>
+```
 4. Нажмите клавишу **CTRL+S** , чтобы сохранить изменения.
 
 **Изменение файла кода программной части**
 
 1. В обозревателе решений щелкните правой кнопкой мыши файл **MainPage.xaml** и выберите команду **Просмотреть код**.
 2. В пространстве имен SSPlayer добавьте следующий новый класс:
-   
+```csharp
         #region class Stream
    
         public class Stream
@@ -597,14 +619,16 @@ ms.locfileid: "33783813"
             }
         }
         #endregion class Stream
+```
 3. В начале класса MainPage добавьте следующие определения переменных:
-   
+```csharp
          private List<Stream> availableStreams;
          private List<Stream> availableAudioStreams;
          private List<Stream> availableTextStreams;
          private List<Stream> availableVideoStreams;
+```
 4. Добавьте в класс MainPage следующую область:
-   
+```csharp
         #region stream selection
         ///<summary>
         ///Functionality to select streams from IManifestStream available streams
@@ -691,7 +715,7 @@ ms.locfileid: "33783813"
                 }
             }
    
-            // Select the frist video stream from the list if no video stream is selected
+            // Select the first video stream from the list if no video stream is selected
             if (!isOneVideoSelected)
             {
                 availableVideoStreams[0].isChecked = true;
@@ -709,7 +733,7 @@ ms.locfileid: "33783813"
                 }
             }
    
-            // Select the frist audio stream from the list if no audio steam is selected.
+            // Select the first audio stream from the list if no audio steam is selected.
             if (!isOneAudioSelected)
             {
                 availableAudioStreams[0].isChecked = true;
@@ -740,14 +764,15 @@ ms.locfileid: "33783813"
             }
         }
         #endregion stream selection
+```
 5. Найдите метод mediaElement_ManifestReady, измените следующий код в конце функции:
-   
+```csharp
         getStreams(manifestObject);
         refreshAvailableStreamsListBoxItemSource();
-   
-    Таким образом, если манифест MediaElement готов, код получает список доступных потоков и заполняет поле со списком пользовательского интерфейса этими значениями.
+```
+    So when MediaElement manifest is ready, the code gets a list of the available streams, and populates the UI list box with the list.
 6. В классе MainPage найдите область событий щелчка кнопок пользовательского интерфейса и добавьте следующее определение функции:
-   
+```csharp
         private void btnChangeStream_Click(object sender, RoutedEventArgs e)
         {
             List<IManifestStream> selectedStreams = new List<IManifestStream>();
@@ -758,7 +783,7 @@ ms.locfileid: "33783813"
             // Change streams on the presentation
             changeStreams(selectedStreams);
         }
-
+```
 **Компиляция и тестирование приложения**
 
 1. Нажмите клавишу **F6** для компиляции проекта. 
@@ -780,7 +805,7 @@ ms.locfileid: "33783813"
 
 1. В обозревателе решений щелкните правой кнопкой мыши файл **MainPage.xaml** и выберите команду **Конструктор представлений**.
 2. Найдите тег &lt;Grid&gt; с именем **gridStreamAndBitrateSelection** и добавьте следующий код в конце этого тега:
-   
+```xml
          <StackPanel Name="spBitRateSelection" Grid.Row="1" Grid.Column="1">
          <StackPanel Orientation="Horizontal">
              <TextBlock Name="tbBitRate" Text="Available Bitrates:" FontSize="16" VerticalAlignment="Center"/>
@@ -795,13 +820,14 @@ ms.locfileid: "33783813"
              </ListBox.ItemTemplate>
          </ListBox>
          </StackPanel>
+```
 3. Нажмите клавиши **CTRL+S** , чтобы сохранить изменения
 
 **Изменение файла кода программной части**
 
 1. В обозревателе решений щелкните правой кнопкой мыши файл **MainPage.xaml** и выберите команду **Просмотреть код**.
 2. В пространстве имен SSPlayer добавьте следующий новый класс:
-   
+```csharp
         #region class Track
         public class Track
         {
@@ -838,11 +864,13 @@ ms.locfileid: "33783813"
             //public Track() { }
         }
         #endregion class Track
+```
 3. В начале класса MainPage добавьте следующие определения переменных:
-   
+```csharp
         private List<Track> availableTracks;
+```
 4. Добавьте в класс MainPage следующую область:
-   
+```csharp
         #region track selection
         /// <summary>
         /// Functionality to select video streams
@@ -939,12 +967,14 @@ ms.locfileid: "33783813"
             }
         }
         #endregion track selection
+```
 5. Найдите метод mediaElement_ManifestReady, измените следующий код в конце функции:
-   
+```csharp
          getTracks(manifestObject);
          refreshAvailableTracksListBoxItemSource();
+```
 6. В классе MainPage найдите область событий щелчка кнопок пользовательского интерфейса и добавьте следующее определение функции:
-   
+```csharp
          private void btnChangeStream_Click(object sender, RoutedEventArgs e)
          {
             List<IManifestStream> selectedStreams = new List<IManifestStream>();
@@ -955,7 +985,7 @@ ms.locfileid: "33783813"
             // Change streams on the presentation
             changeStreams(selectedStreams);
          }
-
+```
 **Компиляция и тестирование приложения**
 
 1. Нажмите клавишу **F6** для компиляции проекта. 

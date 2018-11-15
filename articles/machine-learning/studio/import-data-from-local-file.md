@@ -16,15 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2017
-ms.openlocfilehash: 0365492b2814d686dd0bfa099e94717137b51725
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 70e159e7b7b2b5934cc584e9eb2e511d2b0ce0db
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34834776"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51346216"
 ---
 # <a name="import-training-data-from-a-file-on-your-hard-drive-into-machine-learning-studio"></a>Импорт данных для обучения из файла на жестком диске в Студию машинного обучения
-[!INCLUDE [import-data-into-aml-studio-selector](../../../includes/machine-learning-import-data-into-aml-studio.md)]
 
 Узнайте, как отправить файл с данными с жесткого диска и использовать его в качестве данных для обучения в Студии машинного обучения Azure. Импортируя файл с данными, вы получаете модуль набора данных, готовый к использованию в рабочей области.
 

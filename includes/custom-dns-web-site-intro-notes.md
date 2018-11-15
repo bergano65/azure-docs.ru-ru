@@ -1,3 +1,16 @@
+---
+author: cephalin
+ms.service: app-service-web
+ms.topic: include
+ms.date: 11/09/2018
+ms.author: cephalin
+ms.openlocfilehash: 4ab12a4ccb3aa4acecabd076c774558f904297a1
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51572610"
+---
 Эта статья посвящена службе приложений Azure (веб-приложениям, приложениям API, мобильным приложениям и приложениям логики). Информацию об облачных службах можно найти в статье [Настройка пользовательского доменного имени для облачной службы Azure](../articles/cloud-services/cloud-services-custom-domain-name.md).
 
 > [!NOTE]

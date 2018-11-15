@@ -95,12 +95,11 @@
 ## [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/dls)
 
 # Ресурсы
-## [Стратегия развития Azure](https://azure.microsoft.com/roadmap/)
+## [Стратегия развития Azure](https://azure.microsoft.com/updates/?product=data-lake-store)
 ## [Блог Data Lake Store](https://blogs.msdn.microsoft.com/azuredatalake/)
 ## [Отправка отзывов с помощью UserVoice](https://feedback.azure.com/forums/327234-data-lake)
 ## [Форум MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDataLake)
 ## [Цены](https://azure.microsoft.com/pricing/details/data-lake-store/)
 ## [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
-## [Обновления службы](https://azure.microsoft.com/updates/?product=data-lake-store)
 ## [Форум Stack Overflow](http://stackoverflow.com/questions/tagged/azure-data-lake)
 ## [Видеоролики](https://azure.microsoft.com/documentation/videos/index/?services=data-lake-store)

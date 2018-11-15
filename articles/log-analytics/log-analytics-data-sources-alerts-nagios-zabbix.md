@@ -15,16 +15,16 @@ ms.workload: infrastructure-services
 ms.date: 04/13/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 469d97385fd86952c2d287e2b5d15d7470a9e34e
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 6050771ee1d129edd4370079c07da721f60d2065
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51008340"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51613551"
 ---
 # <a name="collect-alerts-from-nagios-and-zabbix-in-log-analytics-from-log-analytics-agent-for-linux"></a>Сбор оповещений Nagios и Zabbix с помощью агента Log Analytics для Linux в службу Log Analytics 
 [!INCLUDE [log-analytics-agent-note](../../includes/log-analytics-agent-note.md)]
-[Nagios](https://www.nagios.org/) и [Zabbix](http://www.zabbix.com/) — средства мониторинга с открытым исходным кодом. Оповещения от этих средств мониторинга можно собирать в Log Analytics для анализа вместе с [оповещениями из других источников](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md).  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
+[Nagios](https://www.nagios.org/) и [Zabbix](http://www.zabbix.com/) — средства мониторинга с открытым исходным кодом. Оповещения от этих средств мониторинга можно собирать в Log Analytics для анализа вместе с [оповещениями из других источников](../monitoring-and-diagnostics/monitoring-overview-alerts.md).  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
  
 ## <a name="prerequisites"></a>Предварительные требования
 Агент Log Analytics для Linux поддерживает сбор оповещений из Nagios до версии 4.2.x и Zabbix до версии 2.x.
@@ -118,5 +118,5 @@ ms.locfileid: "51008340"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Ознакомьтесь с дополнительными сведениями об [оповещениях](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md) в Log Analytics.
+* Ознакомьтесь с дополнительными сведениями об [оповещениях](../monitoring-and-diagnostics/monitoring-overview-alerts.md) в Log Analytics.
 * Узнайте больше об [операциях поиска по журналу](log-analytics-queries.md) , которые можно применять для анализа данных, собираемых из источников данных и решений. 

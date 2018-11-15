@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: glenga
-ms.openlocfilehash: cc3a835c0322aded4a92b15c1320259780ffb6d2
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: 6ba2fd85e23f3a0b634319f7399f97bec9ef3954
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50249226"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51346428"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -113,16 +113,6 @@ npm install -g azure-functions-core-tools@v1
     ```bash
     sudo apt-get install azure-functions-core-tools
     ```
-
-### <a name="v1"></a>Версия 1.x
-
-В исходной версии инструментов используется среда выполнения Функций 1.x. Эта версия использует .NET Framework (4.7.1) и поддерживается только на компьютерах с Windows. Прежде чем устанавливать инструменты версии 1.x, необходимо [установить NodeJS](https://docs.npmjs.com/getting-started/installing-node), в состав которого входит пакет npm.
-
-Чтобы установить инструменты версии 1.x, используйте следующую команду:
-
-```bash
-npm install -g azure-functions-core-tools@v1
-```
 
 ## <a name="create-a-local-functions-project"></a>Создание локального проекта службы "Функции"
 
@@ -226,7 +216,7 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 
 Даже при использовании эмулятора хранилища для разработки приложений можно проверить подключение к фактическому хранилищу. При условии, что ваша [учетная запись хранения создана](../storage/common/storage-create-storage-account.md), действительную строку подключения к хранилищу можно получить одним из следующих способов:
 
-+ [портал Azure]. Перейдите к учетной записи хранения, выберите **Ключи доступа** в разделе **Параметры**, а затем скопируйте одно из значений **Строка подключения**.
++ На [портале Azure]. Перейдите к учетной записи хранения, выберите **Ключи доступа** в разделе **Параметры**, а затем скопируйте одно из значений **Строка подключения**.
 
   ![Копирование строки подключения с портала Microsoft Azure](./media/functions-run-local/copy-storage-connection-portal.png)
 
@@ -444,7 +434,7 @@ func azure functionapp publish <FunctionAppName>
 
 Эта команда публикует в существующее приложение-функцию в Azure. Если в подписке не существует `<FunctionAppName>`, то возникает ошибка. Чтобы узнать, как создать приложение-функцию из командной строки или из окна терминала, используя Azure CLI, см. статью [Создание приложения-функции для выполнения без сервера](./scripts/functions-cli-create-serverless.md).
 
-Команда `publish` отправляет содержимое в каталог проекта функций. При удалении файлов в локальной среде команда `publish` не удаляет их из Azure. Удалить файлы в Azure можно с помощью [средства Kudu](functions-how-to-use-azure-function-app-settings.md#kudu) на [портал Azure].  
+Команда `publish` отправляет содержимое в каталог проекта функций. При удалении файлов в локальной среде команда `publish` не удаляет их из Azure. Удалить файлы в Azure можно с помощью [средства Kudu](functions-how-to-use-azure-function-app-settings.md#kudu) на [портале Azure].  
 
 >[!IMPORTANT]  
 > При создании приложения-функции на портале Azure по умолчанию используется версия 2.x среды выполнения Функций. Чтобы в приложении-функции использовалась среда выполнения версии 1.x, следуйте инструкциям, приведенным в разделе [Создание приложений 1.x](functions-versions.md#creating-1x-apps).  
@@ -497,5 +487,5 @@ func deploy
 <!-- LINKS -->
 
 [Основные инструменты службы "Функции Azure"]: https://www.npmjs.com/package/azure-functions-core-tools
-[портал Azure]: https://portal.azure.com 
+[портале Azure]: https://portal.azure.com 
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows

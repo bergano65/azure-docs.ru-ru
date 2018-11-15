@@ -1,3 +1,16 @@
+---
+author: linda33wj
+ms.service: data-factory
+ms.topic: include
+ms.date: 11/09/2018
+ms.author: jingwang
+ms.openlocfilehash: 1ab404b838af65dcb75395dfeee1ca0553e497a1
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51572645"
+---
 ## <a name="specifying-structure-definition-for-rectangular-datasets"></a>Указание определения структуры для прямоугольных наборов данных
 Раздел structure в JSON наборов данных, содержащий коллекцию столбцов для таблицы, является **необязательным** для прямоугольных таблиц (со строками и столбцами). Раздел structure следует использовать либо для указания сведений о типе при преобразовании типов, либо при выполнении сопоставления столбцов. В следующих разделах эти функции описаны более подробно. 
 

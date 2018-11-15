@@ -3,7 +3,7 @@ title: Просмотр журналов контейнеров в Azure Service
 description: Описывает способы просмотра журналов контейнеров в запущенных службах контейнеров Service Fabric с помощью Service Fabric Explorer.
 services: service-fabric
 documentationcenter: .net
-author: rwike77
+author: TylerMSFT
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/15/2018
-ms.author: ryanwi
-ms.openlocfilehash: c8b6bc791700e6811f5681ee70329e4d2ac05991
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.author: twhitney
+ms.openlocfilehash: 85623f5acfb33d73774e5898e3f8937b4e07a5a9
+ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34824617"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51299084"
 ---
 # <a name="view-logs-for-a-service-fabric-container-service"></a>Просмотр журналов службы контейнеров Service Fabric
 Azure Service Fabric — это оркестратор контейнеров, который поддерживает [Linux-контейнеры и Windows-контейнеры](service-fabric-containers-overview.md).  В этой статье описывается, как просматривать журналы контейнеров работающей службы контейнеров или неработающих контейнеров, чтобы проводить диагностику и устранение проблем.

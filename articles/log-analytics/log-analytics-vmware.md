@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/04/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: fe2407f67e2ef7a2eb14105db0fef10917f34ba9
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 5c9f37d326d66e69e87ec846ca6f22d1788203f5
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51005229"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51613993"
 ---
 # <a name="vmware-monitoring-preview-solution-in-log-analytics"></a>Решение для мониторинга VMware (предварительная версия) в Log Analytics | Microsoft Azure
 
@@ -165,7 +165,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 ![DockerDashboardView](./media/log-analytics-vmware/dockerdashboardview.png)
 
 #### <a name="create-alerts-from-queries"></a>Создание оповещений из запросов
-Созданные запросы можно использовать для оповещения при возникновении определенных событий. Подробные сведения о создании оповещений см. в статье [Оповещения в Log Analytics](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md). Примеры оповещающих и других запросов см. в записи блога [Monitor VMware using OMS Log Analytics](https://blogs.technet.microsoft.com/msoms/2016/06/15/monitor-vmware-using-oms-log-analytics) (Мониторинг VMware с помощью OMS Log Analytics).
+Созданные запросы можно использовать для оповещения при возникновении определенных событий. Подробные сведения о создании оповещений см. в статье [Оповещения в Log Analytics](../monitoring-and-diagnostics/monitoring-overview-alerts.md). Примеры оповещающих и других запросов см. в записи блога [Monitor VMware using OMS Log Analytics](https://blogs.technet.microsoft.com/msoms/2016/06/15/monitor-vmware-using-oms-log-analytics) (Мониторинг VMware с помощью OMS Log Analytics).
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 ### <a name="what-do-i-need-to-do-on-the-esxi-host-setting-what-impact-will-it-have-on-my-current-environment"></a>Что нужно настраивать для узла ESXi? Какое влияние это окажет на мою текущую среду?
@@ -208,4 +208,4 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 ## <a name="next-steps"></a>Дополнительная информация
 * Используйте [поиск по журналам в Log Analytics](log-analytics-queries.md) для просмотра подробных данных об узле VMware.
 * [Создавайте собственные панели мониторинга](log-analytics-dashboards.md), отображающие данные об узле VMware.
-* [Создавайте оповещения](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md), информирующие о возникновении определенных событий узла VMware.
+* [Создавайте оповещения](../monitoring-and-diagnostics/monitoring-overview-alerts.md), информирующие о возникновении определенных событий узла VMware.

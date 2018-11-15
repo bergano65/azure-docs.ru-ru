@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 09/26/2018
 ms.author: diberry
-ms.openlocfilehash: ce0a2f36ca11c704062deb28bf47c45a91a32222
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: a26fa1f64f1ef8ecef8140b1feab89fdd57875fe
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47435407"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51569205"
 ---
 # <a name="language-and-region-support-for-luis"></a>Поддержка языков и регионов в LUIS
 
@@ -32,10 +32,10 @@ ms.locfileid: "47435407"
 | Язык |Языковой стандарт  |  Предварительно созданная предметная область | Предварительно созданная сущность | Предложения фраз | **[Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)<br>(Тональность и<br>ключевые слова)|
 |--|--|:--:|:--:|:--:|:--:|
 | Английский (США) |`en-US` | ✔ | ✔  |✔|✔|
-| Французский (Канада) |`fr-CA` |-|   -   |-|✔|
 | *[Китайский](#chinese-support-notes) |`zh-CN` | ✔ | ✔ |✔|-|
 | Нидерландский |`nl-NL` |-|  -   |-|✔|
 | французский (Франция) |`fr-FR` |-| ✔ |✔ |✔|
+| французский (Канада) |`fr-CA` |-|   -   |-|✔|
 | Немецкий |`de-DE` |-| ✔ |✔ |✔|
 | Итальянский |`it-IT` |-| ✔ |✔|✔|
 | *[Японский](#japanese-support-notes) |`ja-JP` |-| ✔ |✔|Только ключевая фраза|

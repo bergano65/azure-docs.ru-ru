@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/09/2017
 ms.author: cawa
-ms.openlocfilehash: d1e4177dff3f9ae8c78fb2e22b12e40ff2682c58
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 7578950af2dafdade3c97650dfd212240053dd3b
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51037572"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51625459"
 ---
 # <a name="securely-save-secret-application-settings-for-a-web-application"></a>Безопасное хранение секретных параметров веб-приложения
 
@@ -100,7 +100,7 @@ ms.locfileid: "51037572"
 
 1. Установите следующий пакет NuGet в своем проекте.
     ```
-    Microsoft.Configuration.ConfigurationBuilders.Basic.1.0.0-alpha1.nupkg
+    Microsoft.Configuration.ConfigurationBuilders.Basic
     ```
 
 2. Создайте файл, похожий на приведенный ниже. Сохраните его за пределами папки проекта.
@@ -145,7 +145,7 @@ ms.locfileid: "51037572"
 
 1. Установите следующий пакет NuGet в своем проекте.
 ```
-Microsoft.Configuration.ConfigurationBuilders.UserSecrets.1.0.0-preview2.nupkg
+Microsoft.Configuration.ConfigurationBuilders.UserSecrets
 ```
 
 2. Определите построитель конфигурации Key Vault в файле Web.config. Поместите этот раздел перед разделом *appSettings*. Замените имя Key Vault на *vaultName*, если ваше хранилище размещено в общедоступном облаке Azure, или укажите полный универсальный код ресурса (URI), если вы используете независимое облако.

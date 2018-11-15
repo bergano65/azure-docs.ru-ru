@@ -5,17 +5,17 @@ services: azure-stack
 keywords: ''
 author: mattbriggs
 ms.author: mabrigg
-ms.date: 11/02/2018
+ms.date: 11/09/2018
 ms.topic: article
 ms.service: azure-stack
 ms.reviewer: thoroet
 manager: femila
-ms.openlocfilehash: 4376b9e89aeef32987f7a3bb29ca6815e941ba00
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 049e859f1d736e7c06ac5d40e33d91d1540c3d9e
+ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50960248"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "51514372"
 ---
 # <a name="prepare-for-extension-host-for-azure-stack"></a>Подготовка хост-процесса для расширений для Azure Stack
 
@@ -84,8 +84,7 @@ ms.locfileid: "50960248"
 
 1. Для выполнения следующих шагов используйте компьютер, который может подключиться к привилегированной конечной точке Azure Stack. Проверьте доступ к новым файлам сертификатов с этого компьютера.
 2. Откройте интегрированную среду сценариев PowerShell, чтобы выполнить следующие блоки сценария.
-3. Импортируйте сертификат для размещения конечной точки. Измените сценарий в соответствии со своей средой.
-4. Импортируйте сертификат для конечной точки размещения администратора.
+3. Импортируйте сертификат для конечной точки размещения администратора.
 
     ```PowerShell  
 
@@ -104,7 +103,7 @@ ms.locfileid: "50960248"
             Import-AdminHostingServiceCert $AdminHostingCertContent $certPassword
     }
     ```
-5. Импортируйте сертификат для конечной точки размещения.
+4. Импортируйте сертификат для конечной точки размещения.
     ```PowerShell  
     $CertPassword = read-host -AsSecureString -prompt "Certificate Password"
 

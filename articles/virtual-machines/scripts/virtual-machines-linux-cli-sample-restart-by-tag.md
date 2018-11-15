@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 03/01/2017
 ms.author: allclark
 ms.custom: mvc
-ms.openlocfilehash: 4c409dfcfba14093d5e2cf28df4bb6c5d1bd9533
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: a5837a922f14a779260ad6719b01a9c882eb5768
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34725978"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51622947"
 ---
 # <a name="restart-vms"></a>Перезапуск виртуальных машин
 
@@ -37,7 +37,7 @@ ms.locfileid: "34725978"
 az vm restart --ids $(az vm list --resource-group myResourceGroup --query "[].id" -o tsv)
 ```
 
-Второй возвращает виртуальные машины с тегами с помощью команды `az resouce list`, применяет фильтр, оставляя только те ресурсы, которые являются виртуальными машинами, и перезапускает их.
+Второй возвращает виртуальные машины с тегами с помощью команды `az resource list`, применяет фильтр, оставляя только те ресурсы, которые являются виртуальными машинами, и перезапускает их.
 
 ```bash
 az vm restart --ids $(az resource list --tag "restart-tag" --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
@@ -85,7 +85,7 @@ az group delete -n myResourceGroup --no-wait --yes
 
 Для создания группы ресурсов, виртуальной машины, группы доступности, балансировщика нагрузки и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Заметки |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az_group_create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az vm create](https://docs.microsoft.com/cli/azure/vm/availability-set#az_vm_availability_set_create) | Создает виртуальные машины.  |

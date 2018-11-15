@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
-ms.openlocfilehash: ea5e393ebe204041d96d18481a5c64d2877755f2
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: d2d4957e7fa3114c1d5e8fa7696366fcb7c77002
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44304617"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51615710"
 ---
 # <a name="tutorial-copy-data-from-an-on-premises-sql-server-database-to-azure-blob-storage"></a>Руководство. Копирование данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure
 В этом руководстве для создания конвейера фабрики данных, который копирует данные из локальной базы данных SQL Server в хранилище BLOB-объектов Azure, будет использоваться Azure PowerShell. Вы создадите и будете использовать локальную среду выполнения интеграции, которая перемещает данные между локальным и облачным хранилищами данных. 
@@ -104,7 +104,7 @@ ms.locfileid: "44304617"
 
 1. В списке контейнеров выберите **adftutorial**.  
 
-    ![Выбор контейнера](media/tutorial-hybrid-copy-powershell/seelct-adftutorial-container.png)
+    ![Выбор контейнера](media/tutorial-hybrid-copy-powershell/select-adftutorial-container.png)
 
 1. Не закрывайте окно **контейнера** **adftutorial**. Она понадобится для проверки выходных данных в конце этого руководства. Фабрика данных автоматически создает выходную папку в этом контейнере, поэтому ее не нужно создавать.
 

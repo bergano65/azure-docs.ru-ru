@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 06/26/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: d514728b892126522a73827bb79952612f34704b
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 071e4694bc3e2a8dc70a199fe7d6021332693b88
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51014029"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51613874"
 ---
 # <a name="data-sources-in-log-analytics"></a>Источники данных в Log Analytics
 Служба Log Analytics собирает данные из подключенных источников и сохраняет их в рабочей области Log Analytics.  Собираемые данные зависят от заданного вами источника данных.  Данные в Log Analytics хранятся как набор записей.  Каждый источник данных создает записи определенного типа, а каждый тип обладает собственным набором свойств.
@@ -69,4 +69,4 @@ ms.locfileid: "51014029"
 ## <a name="next-steps"></a>Дополнительная информация
 * Узнайте больше о [решениях](../monitoring/monitoring-solutions.md), которые расширяют функции службы Log Analytics и собирают данные в рабочей области.
 * Узнайте больше об [операциях поиска по журналу](log-analytics-queries.md) , которые можно применять для анализа данных, собираемых из источников данных и решений.  
-* Настройте [оповещения](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md) для получения заблаговременных уведомлений о получении критически важных данных из источников данных и решений.
+* Настройте [оповещения](../monitoring-and-diagnostics/monitoring-overview-alerts.md) для получения заблаговременных уведомлений о получении критически важных данных из источников данных и решений.

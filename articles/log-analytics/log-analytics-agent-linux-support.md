@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/15/2018
+ms.date: 11/13/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 2720ecece86133bf551ab42c415b2e9a87420e93
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 55a3f3d7ac08554273464ed7c6f665e27661c6f8
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51237831"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51625527"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
 
@@ -85,7 +85,7 @@ ms.locfileid: "51237831"
 | --- | --- |
 | 2 | Скрипту omsadmin предоставлен недопустимый параметр. Выполните `sudo sh /opt/microsoft/omsagent/bin/omsadmin.sh -h`, чтобы получить сведения об использовании. |
 | 3 | Скрипту omsadmin предоставлена недопустимая конфигурация. Выполните `sudo sh /opt/microsoft/omsagent/bin/omsadmin.sh -h`, чтобы получить сведения об использовании. |
-| 4. | Скрипту omsadmin предоставлена недопустимый прокси-сервер. Проверьте прокси-сервер и изучите [документацию по использованию прокси-сервера HTTP](log-analytics-concept-hybrid.md#network-firewall-requirements). |
+| 4. | Скрипту omsadmin предоставлена недопустимый прокси-сервер. Проверьте прокси-сервер и изучите [документацию по использованию прокси-сервера HTTP](log-analytics-agent-overview.md#network-firewall-requirements). |
 | 5 | Получена ошибка HTTP 403 от службы Log Analytics. Изучите выходные данные скрипта omsadmin, чтобы получить подробные сведения. |
 | 6 | От службы Log Analytics получен статус HTTP, отличный от кода 200. Изучите выходные данные скрипта omsadmin, чтобы получить подробные сведения. |
 | 7 | Не удалось подключиться к службе Log Analytics. Изучите выходные данные скрипта omsadmin, чтобы получить подробные сведения. |

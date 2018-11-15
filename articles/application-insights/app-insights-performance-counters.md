@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/11/2016
 ms.author: mbullwin
-ms.openlocfilehash: bb1b1e2934de052479f39d40bfe143345e91bc26
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: e5915f18799386ae92019073fb50dac96da107ea
+ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47094100"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50960112"
 ---
 # <a name="system-performance-counters-in-application-insights"></a>Системные счетчики производительности в Application Insights
 В Windows предусмотрены самые разные [счетчики производительности](http://www.codeproject.com/Articles/8590/An-Introduction-To-Performance-Counters), которые отображают показатели использования ЦП, памяти, диска и сети. Также вы можете определить собственные счетчики. [Application Insights](app-insights-overview.md) отображает эти счетчики производительности, если приложение запущено под управлением службы IIS на локальном узле или виртуальной машине, к которой у вас есть доступ с правами администратора. Диаграммы показывают, какие ресурсы доступны для запущенного приложения, а также позволяют обнаружить неравномерность в загрузке экземпляров сервера.
@@ -27,7 +27,7 @@ ms.locfileid: "47094100"
 
 ![Счетчики производительности, отображаемые в Application Insights](./media/app-insights-performance-counters/counters-by-server-instance.png)
 
-(Счетчики производительности недоступны для веб-приложений Azure. Но зато вы можете [отправить данные системы диагностики Azure в Application Insights](app-insights-azure-diagnostics.md).)
+(Счетчики производительности недоступны для веб-приложений Azure. Но зато вы можете [отправить данные системы диагностики Azure в Application Insights](../monitoring-and-diagnostics/azure-diagnostics-configure-application-insights.md).)
 
 ## <a name="view-counters"></a>Просмотр счетчиков
 В колонке "Серверы" показывается стандартный набор счетчиков производительности. 
@@ -96,7 +96,7 @@ ms.locfileid: "47094100"
 ## <a name="performance-counters-in-analytics"></a>Счетчики производительности в службе аналитики
 В [службе аналитики](app-insights-analytics.md) можно выполнять поиск отчетов по счетчикам производительности и отображать их.
 
-Схема **PerformanceCounters** предоставляет `category`, имя `counter` и имя `instance` каждого счетчика производительности.  В данных телеметрии для каждого приложения вы увидите только счетчики для этого приложения. Например, вот как можно увидеть, какие счетчики доступны. 
+Схема **PerformanceCounters** предоставляет `category`, имя `counter` и имя `instance` каждого счетчика производительности.  В данных телеметрии для каждого приложения вы увидите только счетчики для соответствующего приложения. Например, вот как можно увидеть, какие счетчики доступны. 
 
 ![Счетчики производительности в аналитике Application Insights](./media/app-insights-performance-counters/analytics-performance-counters.png)
 

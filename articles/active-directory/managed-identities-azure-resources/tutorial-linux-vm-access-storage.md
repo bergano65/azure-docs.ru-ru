@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/09/2018
 ms.author: daveba
-ms.openlocfilehash: 79c75c2fd77fbb7cc10626a559e1b68352743550
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 3d223807d58fc03c0daabb7f800690b1b839d770
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47224972"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51620806"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-storage"></a>Руководство. Использование назначаемого системой управляемого удостоверения на виртуальной машине Linux для доступа к службе хранилища Azure 
 
@@ -38,15 +38,7 @@ ms.locfileid: "47224972"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
-
 [!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
-
-- [Войдите на портал Azure](https://portal.azure.com).
-
-- [Создайте виртуальную машину Linux](/azure/virtual-machines/linux/quick-create-portal).
-
-- [Включите назначаемое системой управляемое удостоверение на виртуальной машине](/azure/active-directory/managed-service-identity/qs-configure-portal-windows-vm#enable-system-assigned-identity-on-an-existing-vm).
 
 Запустить примеры сценариев CLI в этом руководстве можно двумя способами:
 

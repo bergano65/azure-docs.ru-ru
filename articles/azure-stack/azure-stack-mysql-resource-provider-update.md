@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/16/2018
+ms.date: 11/14/2018
 ms.author: jeffgilb
 ms.reviewer: quying
-ms.openlocfilehash: f58ba1af301379810d5072f55c7b9365f205911f
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 46671a559f4db9aaa798e2c0d8cc668794687a58
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49364699"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51686336"
 ---
 # <a name="update-the-mysql-resource-provider"></a>Обновление поставщика ресурсов MySQL 
 
@@ -41,9 +41,6 @@ ms.locfileid: "49364699"
 >[!NOTE]
 >Мы рекомендуем загрузить последний образ основных компонентов Windows Server 2016 из служб управления Marketplace. Если необходимо установить обновление, **один** MSU-пакет можно поместить в локальный каталог зависимого элемента. Если поместить несколько MSU-файлов в этом расположении, выполнение скрипта завершится ошибкой.
 
->[!NOTE]  
-> 
-
 Этот сценарий необходимо использовать с аргументами, описанными для сценария DeployMySqlProvider.ps1. Также укажите сертификат.  
 
 Ниже приведен пример сценария *UpdateMySQLProvider.ps1*, который можно запустить в командной строке PowerShell. (Не забудьте изменить данные учетной записи и пароли, если это требуется).  
@@ -52,9 +49,10 @@ ms.locfileid: "49364699"
 > Этот процесс обновления применим только к интегрированным системам. 
 
 ```powershell 
-# Install the AzureRM.Bootstrapper module and set the profile. 
-Install-Module -Name AzureRm.BootStrapper -Force 
-Use-AzureRmProfile -Profile 2017-03-09-profile 
+# Install the AzureRM.Bootstrapper module, set the profile and install the AzureStack module
+Install-Module -Name AzureRm.BootStrapper -Force
+Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
+Install-Module -Name AzureStack -RequiredVersion 1.5.0
 
 # Use the NetBIOS name for the Azure Stack domain. On the Azure Stack SDK, the default is AzureStack but could have been changed at install time. 
 $domain = "AzureStack" 

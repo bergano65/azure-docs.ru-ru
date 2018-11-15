@@ -2,18 +2,18 @@
 title: Автономные возможности Azure IoT Edge | Документы Майкрософт
 description: Понять, как устройства и модули IoT Edge могут работать автономно в течение долгого периода времени и как обычные устройства Интернета вещей могут работать автономно с помощью IoT Edge.
 author: kgremban
-manager: timlt
+manager: philmea
 ms.author: kgremban
 ms.date: 09/20/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: c4ab33f4d706eb677b2b790ff871c1fb900846ff
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: eb44d6b0a4ea69d92f91af7ce1d6b19deff4e753
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51235638"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51567032"
 ---
 # <a name="understand-extended-offline-capabilities-for-iot-edge-devices-modules-and-child-devices-preview"></a>Сведения о расширенных возможностях автономной работы устройств, модулей и дочерних устройств IoT Edge (предварительная версия)
 
