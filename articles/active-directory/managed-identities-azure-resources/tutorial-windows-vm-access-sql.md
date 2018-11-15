@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/07/2018
 ms.author: daveba
-ms.openlocfilehash: 61b176f4f1fccbb975ee53de497d5afcc8ede060
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 5d67d25912df5040665b3a04858be0f3807e8112
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238120"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51623831"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-sql"></a>Руководство. Использование назначаемого системой управляемого удостоверения на виртуальной машине Windows для доступа к SQL Azure
 
@@ -35,15 +35,7 @@ ms.locfileid: "51238120"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
-
 [!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
-
-- [Войдите на портал Azure](https://portal.azure.com).
-
-- [Создайте виртуальную машину Windows](/azure/virtual-machines/windows/quick-create-portal).
-
-- [Включите назначаемое системой управляемое удостоверение на виртуальной машине](/azure/active-directory/managed-service-identity/qs-configure-portal-windows-vm#enable-system-assigned-identity-on-an-existing-vm).
 
 ## <a name="grant-your-vm-access-to-a-database-in-an-azure-sql-server"></a>Предоставление виртуальной машине доступа к базе данных на сервере SQL Azure
 
@@ -51,7 +43,7 @@ ms.locfileid: "51238120"
 
 Предоставление виртуальной машине доступа к базе данных выполняется в два этапа:
 
-1.  Включение аутентификации Azure AD для сервера SQL.
+1.  Включить аутентификацию Azure AD для сервера SQL.
 2.  Создание в базе данных **автономного пользователя**, который представляет назначаемое системой удостоверение виртуальной машины.
 
 ## <a name="enable-azure-ad-authentication-for-the-sql-server"></a>Включение аутентификации Azure AD для сервера SQL

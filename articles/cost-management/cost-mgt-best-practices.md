@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 09/10/2018
+ms.date: 01/09/2018
 ms.topic: conceptual
 ms.service: cost-management
 manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: f52a849fee4005628fb6a8ad567d89f5046d4765
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 43a682568708ab0286328cf3e483ddc3d5cf9dd8
+ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46968079"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "51515358"
 ---
 # <a name="how-to-optimize-your-cloud-investment-with-azure-cost-management"></a>Как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure"
 
@@ -186,10 +186,6 @@ Azure предоставляет множество скидок, которым
 Если у вас уже есть лицензии Windows Server или SQL Server в локальных развертываниях, вы можете использовать программу "Преимущество гибридного использования Azure" для экономии в Azure. При использовании преимущества Windows Server каждая лицензия покрывает стоимость ОС (до двух виртуальных машин), и вы платите только за базовые расходы на вычисление. Вы можете использовать существующие лицензии SQL Server, чтобы сэкономить до 55 % на предложениях базы данных SQL на основе виртуального ядра. К предложениям относятся SQL Server на виртуальных машинах Azure и SQL Server Integration Services.
 
 Дополнительные сведения см. на странице [Преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/) с калькулятором.
-
-#### <a name="monetary-commitment"></a>Денежное обязательство
-
-Клиенты, которые подписывают Соглашение Enterprise, могут создавать дополнительные денежные обязательства перед корпорацией Майкрософт. Наряду с простым способом выделения бюджетов на облачные ресурсы благодаря денежным обязательствам вы также получаете сниженные тарифы на службы Azure. Снижение ставок может привести к значительной экономии затрат для вашей организации.
 
 ### <a name="other-resources"></a>Другие ресурсы:
 

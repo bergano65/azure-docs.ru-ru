@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/06/2018
+ms.date: 11/13/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: a16230b6f51f0ce93f4a9bf53591abbcd6b4bd3b
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 4e99656319f543fb40d8509cb4ae9e1c25cfc75b
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51283688"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51622488"
 ---
 # <a name="connect-windows-computers-to-the-log-analytics-service-in-azure"></a>Подключение компьютеров Windows к службе Log Analytics в Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "51283688"
 * Сценарий PowerShell.
 * Шаблон Resource Manager для локальных виртуальных машин под управлением Windows в Azure Stack.  
 
-Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](log-analytics-concept-hybrid.md#supported-windows-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-concept-hybrid.md#network-firewall-requirements).
+Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](log-analytics-agent-overview.md#supported-windows-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-agent-overview.md#network-firewall-requirements).
 
 ## <a name="obtain-workspace-id-and-key"></a>Получение идентификатора и ключа рабочей области
 Перед установкой Microsoft Monitoring Agent для Windows требуется получить идентификатор и ключ для рабочей области Log Analytics.  При любом методе установки эта информация необходима для правильной настройки агента и обеспечения его взаимодействия с Log Analytics в Azure для коммерческих организаций и облаке для государственных организаций США.  

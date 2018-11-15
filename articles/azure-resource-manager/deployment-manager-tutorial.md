@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 10/04/2018
+ms.date: 11/08/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 5d18a1f86e1d870db64199c575450dd475590b55
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: 70a7829c14997287ed130b0b4300c7f5aa0f3a30
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49394483"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51345578"
 ---
 # <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-private-preview"></a>Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)
 
@@ -52,7 +52,7 @@ ms.locfileid: "49394483"
 * Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
 * Командлеты диспетчера развертывания. Чтобы установить эти командлеты предварительной версии, вам понадобится последняя версия PowerShellGet. Сведения о получении последней версии см. в статье [Установка PowerShellGet](/powershell/gallery/installing-psget). После установки PowerShellGet закройте окно PowerShell. Откройте новое окно PowerShell и используйте следующую команду:
 
-    ```
+    ```powershell
     Install-Module -Name AzureRM.DeploymentManager -AllowPrerelease
     ```
 * [Обозреватель службы хранилища Microsoft Azure](https://go.microsoft.com/fwlink/?LinkId=708343&clcid=0x409). Обозреватель службы хранилища не требуется, но он упрощает работу.
@@ -287,7 +287,7 @@ Azure PowerShell можно использовать для развертыва
 
 1. Запустите сценарий для развертывания топологии службы.
 
-    ```powershell
+    ```azurepowershell-interactive
     $deploymentName = "<Enter a Deployment Name>"
     $resourceGroupName = "<Enter a Resource Group Name>"
     $location = "Central US"  
@@ -312,7 +312,7 @@ Azure PowerShell можно использовать для развертыва
 
 3. Развертывание шаблона выпуска
 
-    ```powershell
+    ```azurepowershell-interactive
     # Create the rollout
     New-AzureRmResourceGroupDeployment `
         -Name $deploymentName `
@@ -323,7 +323,7 @@ Azure PowerShell можно использовать для развертыва
 
 4. Проверьте выполнение развертывания с помощью следующего сценария PowerShell:
 
-    ```powershell
+    ```azurepowershell-interactive
     # Get the rollout status
     $rolloutname = "<Enter the Rollout Name>"
     Get-AzureRmDeploymentManagerRollout `

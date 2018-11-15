@@ -14,12 +14,12 @@ ms.tgt_pltfrm: Azure
 ms.workload: na
 ms.date: 01/05/2017
 ms.author: hascipio; v-divte
-ms.openlocfilehash: 2ec758d9457b75cd7e5f6f29757d3201f3a6d62e
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 0dc33c669a73dd92926eef6a9c4a476160ce60a4
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51283484"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51686370"
 ---
 # <a name="guide-to-create-a-virtual-machine-image-for-the-azure-marketplace"></a>Руководство по созданию образа виртуальной машины для Azure Marketplace
 Эта статья ( **шаг 2**) содержит инструкции по подготовке виртуальных жестких дисков (VHD), развертываемых в Azure Marketplace. Виртуальные жесткие диски являются основой номера SKU. Процесс подготовки будет отличаться в зависимости от типа номера SKU (на основе Linux или Windows). В этой статье рассматриваются оба сценария. Описываемую процедуру можно выполнять параллельно с [созданием учетной записи разработчика Майкрософт][link-acct-creation].
@@ -191,7 +191,7 @@ VHD с операционной системой Windows в образе вир�
 
 ### <a name="set-up-the-necessary-tools-powershell-and-azure-classic-cli"></a>Настройка необходимых средств: PowerShell и классического Azure CLI
 * [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/overview)
-* [Установка Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+* [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 
 ### <a name="41-create-a-user-vm-image"></a>4.1. Создание пользовательского образа виртуальной машины
 #### <a name="capture-vm"></a>Запись виртуальной машины

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/12/2018
 ms.author: daveba
-ms.openlocfilehash: 46be9469e67a4f456be100823d475b8720262b1b
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: d032d8cc33d33954406ad45e64fc199d569abf41
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44163181"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51620941"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-storage"></a>Руководство. Использование управляемого удостоверения, назначаемого системой, на виртуальной машине Windows для доступа к службе хранилища Azure
 
@@ -37,15 +37,7 @@ ms.locfileid: "44163181"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
-
 [!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
-
-- [Войдите на портал Azure](https://portal.azure.com).
-
-- [Создайте виртуальную машину Windows](/azure/virtual-machines/windows/quick-create-portal).
-
-- [Включите назначаемое системой управляемое удостоверение на виртуальной машине](/azure/active-directory/managed-service-identity/qs-configure-portal-windows-vm#enable-system-assigned-identity-on-an-existing-vm).
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения 
 
@@ -90,7 +82,7 @@ ms.locfileid: "44163181"
 
     ![Назначение разрешений](./media/tutorial-linux-vm-access-storage/access-storage-perms.png)
 
-## <a name="get-an-access-token-and-use-it-to-call-azure-storage"></a>Получение маркера доступа и его использование для вызова службы хранилища Azure 
+## <a name="get-an-access-token-and-use-it-to-call-azure-storage"></a>Получение маркера доступа и его использование для вызова службы хранилища Azure 
 
 В службе хранилища Azure изначально реализована поддержка аутентификации Azure AD, поэтому она может напрямую принимать маркеры доступа, полученные с помощью управляемого удостоверения. Эта реализация является частью интеграции службы хранилища Azure с Azure AD и отличается от указания учетных данных в строке подключения.
 

@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 09/26/2018
 ms.author: mabrigg
 ms.reviewer: Anjay.Ajodha
-ms.openlocfilehash: 28ff8dbf073596e5f9565c56ae903af6af68f3e2
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 8a5ca4f94a6f1186b6d1a26b1c7e12357cd9e799
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353722"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51616373"
 ---
 # <a name="tutorial-create-an-edge-machine-learning-solution-with-azure-and-azure-stack"></a>Руководство по созданию пограничного решения машинного обучения с помощью Azure и Azure Stack
 
@@ -992,7 +992,7 @@ Azure Machine Learning Workbench доступна для Windows или macOS. �
 1.  Убедитесь, что поставщик ресурсов Azure **Microsoft.ContainerRegistry** зарегистрирован в вашей подписке. Зарегистрировать этот поставщик ресурсов нужно до создания среды на шаге 3. С помощью следующей команды вы можете проверить, зарегистрирован ли он:
 
     ```CLI
-        az provider list --query "\[\].{Provider:namespace, Status:registrationState}" --out table
+        az provider list --query "[].{Provider:namespace, Status:registrationState}" --out table
     ```
 
     Проверьте эти выходные данные:
@@ -1175,7 +1175,7 @@ Kubernetes можно использовать для следующих цел�
 
 ### <a name="create-a-service-principal-in-azure-ad"></a>Создание субъекта-службы в Azure AD
 
-1.  Войдите на глобальный [*портал Azure*](http://www.poartal.azure.com/).
+1.  Войдите на глобальный [*портал Azure*](http://portal.azure.com/).
 
 2.  Для входа используйте клиент Azure AD, связанный с экземпляром Azure Stack.
 
@@ -1271,10 +1271,8 @@ Install-kubectl.ps1 -downloadlocation “C:\Users\<Current User>\Documents\Kube
 
 ```Bash  
     apt-get update && apt-get install -y apt-transport-https
-    curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-    cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
-    deb http://apt.kubernetes.io/ kubernetes-xenial main
-    EOF
+    curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add
+    sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
     apt-get update
     apt-get install -y kubectl
 ```

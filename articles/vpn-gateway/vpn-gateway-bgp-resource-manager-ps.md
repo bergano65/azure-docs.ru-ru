@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/12/2017
 ms.author: yushwang
-ms.openlocfilehash: fc9337188fd439082c4aa34f0cbebe3eb2da5d99
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 4eb62786522dd1ad7cbf1d5668a4c4493028733c
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31603223"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51684347"
 ---
 # <a name="how-to-configure-bgp-on-azure-vpn-gateways-using-powershell"></a>Настройка BGP на VPN-шлюзах Azure с помощью PowerShell
 В этой статье содержится пошаговое описание процесса, который позволит с помощью модели развертывания Resource Manager и PowerShell включить BGP для VPN-подключения типа "сеть — сеть" (S2S), настроенного между локальными сетями, или для подключения между виртуальными сетями.
@@ -58,7 +58,7 @@ ms.locfileid: "31603223"
 В этом упражнении мы начнем с объявления переменных. В примере ниже объявлены переменные со значениями для этого упражнения. Обязательно замените значения своими при настройке для рабочей среды. Эти переменные можно использовать для ознакомления с этим типом конфигурации. Измените переменные, а затем скопируйте и вставьте код в консоль PowerShell.
 
 ```powershell
-$Sub1 = "Replace_With_Your_Subcription_Name"
+$Sub1 = "Replace_With_Your_Subscription_Name"
 $RG1 = "TestBGPRG1"
 $Location1 = "East US"
 $VNetName1 = "TestVNet1"

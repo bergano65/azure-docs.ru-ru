@@ -6,16 +6,16 @@ author: jeffgilb
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 10/22/2018
+ms.date: 11/08/2018
 ms.author: jeffgilb
 ms.reviewer: wfayed
 keywords: ''
-ms.openlocfilehash: 8a33d4edb4107b936c36a744bb082c02b7830868
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: b59d503b8aadef9e8f9c2d7db71ff60aee3b6387
+ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50024449"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51300716"
 ---
 # <a name="azure-stack-datacenter-integration---identity"></a>Интеграция центра обработки данных Azure Stack: идентификация
 Azure Stack можно развернуть с помощью Azure Active Directory (Azure AD) или служб федерации Active Directory (AD FS) в качестве поставщика удостоверений. Сделать выбор следует перед развертыванием Azure Stack. Развертывание с помощью AD FS также называется развертыванием Azure Stack в отключенном режиме.
@@ -173,8 +173,6 @@ Graph поддерживает только интеграцию с отдель
 |CustomAdfsName|Имя поставщика утверждений. Так оно отображается на целевой странице AD FS.|Contoso|
 |CustomADFSFederationMetadataFileContent|Содержимое метаданных|$using:federationMetadataFileContent|
 
-
-
 ### <a name="create-federation-metadata-file"></a>Создание файла метаданных федерации
 
 Для выполнения следующей процедуры необходимо использовать компьютер с сетевым подключением к существующему развертыванию AD FS, которое становится службой токенов безопасности для учетной записи. Кроме того, нужно установить необходимые сертификаты.
@@ -182,9 +180,11 @@ Graph поддерживает только интеграцию с отдель
 1. Откройте сеанс Windows PowerShell с повышенными правами и выполните следующую команду, указав параметры, подходящие для используемой среды.
 
    ```PowerShell  
-    $metadata = (Invoke-WebRequest -URI " https://win-SQOOJN70SGL.contoso.com/federationmetadata/2007-06/federationmetadata.xml " -UseBasicParsing).Content
-    Set-Content -Path c:\metadata.xml -Encoding Unicode -Value $metadata 
-
+    $url = "https://win-SQOOJN70SGL.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml"
+    $webclient = New-Object System.Net.WebClient
+    $webclient.Encoding = [System.Text.Encoding]::UTF8
+    $metadataAsString = $webclient.DownloadString($url)
+    Set-Content -Path c:\metadata.xml -Encoding UTF8 -Value $metadataAsString
    ```
 
 2. Копируйте файл метаданных на компьютер, который может взаимодействовать с привилегированной конечной точкой.

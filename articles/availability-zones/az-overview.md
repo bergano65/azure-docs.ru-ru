@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 08/31/2018
 ms.author: cynthn
 ms.custom: mvc I am an ITPro and application developer, and I want to protect (use Availability Zones) my applications and data against data center failure (to build Highly Available applications).
-ms.openlocfilehash: a98e2ef8cb1f1cd7ad06cc482f24590d59eea3e0
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: f1fd272bc25486e3abd068be5ddc01f5ac5f5f76
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51248645"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51566284"
 ---
 # <a name="what-are-availability-zones-in-azure"></a>Что такое Зоны доступности в Azure?
 Зоны доступности являются предложением, обеспечивающим высокий уровень доступности и защищающим приложения и данные от сбоев центров обработки данных. Зоны доступности — уникальные физические расположения в пределах одного региона Azure. Каждая зона состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. Чтобы обеспечить отказоустойчивость, во всех включенных регионах используются минимум три отдельные зоны. Физическое разделение зон доступности в пределах региона защищает приложения и данные от сбоев центров обработки данных. Избыточные между зонами службы реплицируют приложения и данные в зонах доступности, чтобы обеспечить защиту от возникновения единых точек отказа. Благодаря зонам доступности Azure предлагает наилучшее в отрасли соглашение об уровне обслуживания с гарантией времени непрерывной работы 99,99 % для виртуальных машин. В полном [соглашении об уровне обслуживания Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/) поясняется гарантированная доступность Azure в целом.
@@ -43,7 +43,7 @@ ms.locfileid: "51248645"
 - Восточная часть США 2 (предварительная версия)
 - Центральная Франция
 - Северная Европа
-- Юго-Восточная Азия (предварительная версия)
+- Юго-Восточная Азия 
 - Западная Европа
 - Западный регион США 2
 
@@ -77,11 +77,11 @@ ms.locfileid: "51248645"
 - [Создание избыточного между зонами масштабируемого набора виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md)
 - [Распределение нагрузки виртуальных машин по зонам с помощью службы Load Balancer уровня "Стандартный" с избыточным между зонами внешним интерфейсом](../load-balancer/load-balancer-standard-public-zone-redundant-cli.md).
 - [Распределение нагрузки виртуальных машин в пределах зоны с помощью Load Balancer уровня "Стандартный" с зональным внешним интерфейсом](../load-balancer/load-balancer-standard-public-zonal-cli.md).
-- [хранилище, избыточное между зонами](../storage/common/storage-redundancy-zrs.md)
+- [Хранилище, избыточное между зонами](../storage/common/storage-redundancy-zrs.md)
 - [База данных SQL](../sql-database/sql-database-high-availability.md#zone-redundant-configuration)
 - [Географическое аварийное восстановление в Центрах событий](../event-hubs/event-hubs-geo-dr.md#availability-zones-preview)
 - [Географическое аварийное восстановление в служебной шине](../service-bus-messaging/service-bus-geo-dr.md#availability-zones-preview)
-- [Создание избыточного между зонами шлюза виртуальной сети](../vpn-gateway/create-zone-redundant-vnet-gateway.md)
+- [Создание шлюза виртуальной сети, избыточного между зонами](../vpn-gateway/create-zone-redundant-vnet-gateway.md)
 
 
 ## <a name="next-steps"></a>Дополнительная информация

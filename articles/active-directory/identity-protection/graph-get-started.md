@@ -17,15 +17,15 @@ ms.date: 10/26/2018
 ms.author: markvi
 ms.reviewer: nigu
 ms.custom: seohack1
-ms.openlocfilehash: 3cbded3224e7622d13e7af362cb3532a1813787e
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: a415258b8127bb78d8a8d1b5ef228234b34b3e26
+ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50242166"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51287518"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph
-Microsoft Graph — это конечная точка Unified API (Майкрософт) и источник интерфейсов API [защиты идентификации Azure Active Directory](../active-directory-identityprotection.md). Первый API, **identityRiskEvents**, позволяет запрашивать у Microsoft Graph список [событий риска](../reports-monitoring/concept-risk-events.md) и связанные с ними сведения. В статье описывается, как выполнять запросы к этому API. Дополнительные сведения, полную документацию и доступ к Graph Explorer можно получить на [сайте Microsoft Graph](https://graph.microsoft.io/).
+Microsoft Graph — это конечная точка Unified API (Майкрософт) и источник интерфейсов API [защиты идентификации Azure Active Directory](../active-directory-identityprotection.md). Первый API, **identityRiskEvents**, позволяет запрашивать у Microsoft Graph список [событий риска](../reports-monitoring/concept-risk-events.md) и связанные с ними сведения. В статье описывается, как выполнять запросы к этому API. Дополнительные сведения, полную документацию и доступ к Graph Explorer можно получить на [сайте Microsoft Graph](https://developer.microsoft.com/graph/).
 
 
 Получить доступ к данным защиты идентификации с помощью Microsoft Graph можно в четыре этапа:
@@ -219,7 +219,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 Поздравляем, вы только что выполнили первый вызов Microsoft Graph.  
 Теперь вы можете запрашивать рисковые события идентификации и использовать данные по своему усмотрению.
 
-Дополнительные сведения о Microsoft Graph и инструкции по созданию приложения с помощью API Graph см. в [документации](https://graph.microsoft.io/docs), а также на [веб-сайте Microsoft Graph](https://graph.microsoft.io/). Кроме того, сохраните в закладки страницу, посвященную [API защиты идентификации Azure AD](https://graph.microsoft.io/docs/api-reference/beta/resources/identityprotection_root). Она содержит список всех доступных в Graph интерфейсов API защиты идентификации. Мы будем добавлять на эту страницу новые способы работы с защитой идентификации через API, поэтому следите за новостями.
+Дополнительные сведения о Microsoft Graph и инструкции по созданию приложения с помощью API Graph см. в [документации](https://developer.microsoft.com/graph/docs), а также на [веб-сайте Microsoft Graph](https://developer.microsoft.com/graph/). Кроме того, сохраните в закладки страницу, посвященную [API защиты идентификации Azure AD](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityprotection_root). Она содержит список всех доступных в Graph интерфейсов API защиты идентификации. Мы будем добавлять на эту страницу новые способы работы с защитой идентификации через API, поэтому следите за новостями.
 
 Связанные сведения:
 
@@ -227,9 +227,9 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
 -  [Типы событий риска, обнаруживаемые защитой идентификации Azure Active Directory](../reports-monitoring/concept-risk-events.md)
 
-- [Microsoft Graph](https://graph.microsoft.io/)
+- [Microsoft Graph](https://developer.microsoft.com/graph/)
 
-- [Overview of Microsoft Graph (Обзор Microsoft Graph)](https://graph.microsoft.io/docs)
+- [Overview of Microsoft Graph (Обзор Microsoft Graph)](https://developer.microsoft.com/graph/docs)
 
-- [Azure AD Identity Protection Service Root (Корень службы защиты идентификации Azure AD)](https://graph.microsoft.io/docs/api-reference/beta/resources/identityprotection_root)
+- [Azure AD Identity Protection Service Root (Корень службы защиты идентификации Azure AD)](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityprotection_root)
 

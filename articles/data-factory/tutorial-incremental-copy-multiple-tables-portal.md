@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/20/2018
 ms.author: yexu
-ms.openlocfilehash: ea1e3ca76f779f442c9d22478ea93de3d5ab83f2
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 95f2947a30499ce563d5943dfa423ee89a172f47
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43088112"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51614528"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в базу данных SQL Azure
 В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц локальной базы данных SQL Server в базу данных SQL Azure.    
@@ -279,7 +279,7 @@ END
    ![Имя локальной среды выполнения интеграции](./media/tutorial-incremental-copy-multiple-tables-portal/self-hosted-ir-name.png)
 1. Щелкните элемент **Click here to launch the express setup for this computer** (Щелкните здесь, чтобы запустить экспресс-установку для этого компьютера) в разделе **Option 1: Express setup** (Вариант 1. Экспресс-установка). 
 
-   ![Ссылка экспресс-установки](./media/tutorial-incremental-copy-multiple-tables-portal/click-exress-setup.png)
+   ![Ссылка экспресс-установки](./media/tutorial-incremental-copy-multiple-tables-portal/click-express-setup.png)
 1. В окне **Экспресс-установка Integration Runtime (Self-hosted)** щелкните **Закрыть**. 
 
    ![Настройка среды выполнения интеграции — успешное завершение](./media/tutorial-incremental-copy-multiple-tables-portal/integration-runtime-setup-successful.png)

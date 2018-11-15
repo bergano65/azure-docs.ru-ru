@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/15/2018
 ms.author: bwren
-ms.openlocfilehash: 04211a00bcdce3baf8060e00a9ce81831a39acb9
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 22e22a2eb6eefb84c6745de9b19e7710913b4ee7
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51257669"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51616288"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -711,4 +711,4 @@ At line:12 char:18
 ## <a name="next-steps"></a>Дополнительная информация
 * Используйте поиск по журналам в [Log Analytics](../log-analytics/log-analytics-queries.md), чтобы просматривать подробные данные об обновлениях.
 * [Создайте собственные панели мониторинга](../log-analytics/log-analytics-dashboards.md) для отображения избранных поисковых запросов Office 365.
-* [Создайте оповещения](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md), чтобы заранее получать уведомления о важных действиях в Office 365.  
+* [Создайте оповещения](../monitoring-and-diagnostics/monitoring-overview-alerts.md), чтобы заранее получать уведомления о важных действиях в Office 365.  

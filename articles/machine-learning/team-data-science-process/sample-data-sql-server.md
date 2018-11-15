@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: deguhath
-ms.openlocfilehash: 74dcef9e927fc537cba56b03fcbfb9528c952ad0
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 7852a0fc548980227723c9f6a259c63367159201
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34837877"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51346245"
 ---
 # <a name="heading"></a>Выборка данных на сервере SQL Server в Azure
+
 В этой статье описывается процесс выборки данных, хранящихся на сервере SQL Server в Azure, с помощью SQL или языка программирования Python. В нем также показано, как переместить данные выборки в службу машинного обучения Azure, сохранив их в файл, передав его в BLOB-объект Azure, а затем считав в студии машинного обучения Azure.
 
 Процедура выборки Python использует библиотеку [pyodbc](https://code.google.com/p/pyodbc/) ODBC для подключения к SQL Server в Azure и библиотеку [Pandas](http://pandas.pydata.org/) для выполнения выборки.
@@ -31,10 +32,6 @@ ms.locfileid: "34837877"
 > Образец кода SQL в этом документе предполагает, что данные содержатся на сервере SQL Server на платформе Azure. Если это не так, воспользуйтесь инструкциями по переносу данных на сервер SQL Server в среде Azure, изложенными в статье [Перемещение данных в SQL Server на виртуальной машине Azure](move-sql-server-virtual-machine.md).
 > 
 > 
-
-**Меню** ниже содержит ссылки на статьи, в которых описана выборка данных из различных сред хранения. 
-
-[!INCLUDE [cap-sample-data-selector](../../../includes/cap-sample-data-selector.md)]
 
 **Для чего нужна выборка данных?**
 Если размер набора данных, который планируется проанализировать, слишком большой, обычно рекомендуется уменьшить выборку данных до размера, который останется репрезентативным и будет более управляемым. Это способствует пониманию данных, их исследованию и проектированию характеристик. Роль этой операции в [процессе обработки и анализа данных группы (TDSP)](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/) состоит в том, чтобы сделать возможным быстрое прототипирование функций обработки данных и моделей машинного обучения.

@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/11/2018
+ms.date: 11/12/2018
 ms.author: barbkess
 ms.reviewer: asmalser,luleon
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: fc7510fdc635de03ac4dd4f64118bc5be040e969
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: 29a2be1735561d31f934f1353a336b5e4d198227
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44719415"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51622199"
 ---
 # <a name="configure-single-sign-on-to-applications-that-are-not-in-the-azure-active-directory-application-gallery"></a>Настройка единого входа для приложений, которых нет в коллекции приложений Azure Active Directory
 
@@ -31,9 +31,9 @@ ms.locfileid: "44719415"
 Клиенты, у которых есть лицензия [Azure Active Directory Premium](../fundamentals/active-directory-whatis.md), также получают приведенные ниже дополнительные возможности:
 
 * самостоятельная интеграция любого приложения, которое совместимо с поставщиками удостоверений SAML 2.0 (инициированная поставщиком услуг или поставщиком удостоверений);
-* самостоятельная интеграция любого веб-приложения, где есть HTML-страница входа, с использованием функции [единого входа на основе пароля](what-is-single-sign-on.md#password-based-single-sign-on)
+* самостоятельная интеграция любого веб-приложения, где есть HTML-страница входа, с использованием функции [единого входа на основе пароля](what-is-single-sign-on.md#password-based-sso)
 * Самостоятельное подключение приложений, которые используют протокол SCIM для подготовки пользователей ([процесс описан здесь](use-scim-to-provision-users-and-groups.md))
-* Возможность добавлять ссылки на любые приложения в [Средство запуска приложений Office 365](https://blogs.office.com/2014/10/16/organize-office-365-new-app-launcher-2/) или [Панель доступа Azure AD](what-is-single-sign-on.md#deploying-azure-ad-integrated-applications-to-users).
+* Возможность добавлять ссылки на любые приложения в [Средство запуска приложений Office 365](https://blogs.office.com/2014/10/16/organize-office-365-new-app-launcher-2/) или [Панель доступа Azure AD](what-is-single-sign-on.md#linked-sso).
 
 Подключать можно не только приложения SaaS, которых еще нет в коллекции приложений Azure AD, но и любые сторонние веб-приложения, которые ваша организация развернула на локальных или облачных серверах, к управлению которыми вы имеете доступ.
 
@@ -165,7 +165,7 @@ ms.locfileid: "44719415"
 ## <a name="existing-single-sign-on"></a>Существующий единый вход
 Выберите этот вариант, чтобы добавить ссылку на ваше приложение в панель доступа Azure AD или на портал Office 365. Этот метод подходит для добавления ссылок на пользовательские веб-приложения, которые используют для проверки подлинности службы федерации Active Directory Azure (или другую службу федерации), а не Azure AD. Еще он позволяет просто добавить глубокие ссылки на определенные страницы SharePoint или другие веб-сайты. Они появятся на панели доступа пользователя. 
 
-Когда вы нажмете кнопку **Далее**, вам будет предложено ввести URL-адрес приложения. После завершения процесса вы сможете назначить для приложения пользователей и группы. У этих пользователей появится элемент приложения в [средстве запуска приложений Office 365](https://blogs.office.com/2014/10/16/organize-office-365-new-app-launcher-2/) или на [панели доступа Azure AD](what-is-single-sign-on.md#deploying-azure-ad-integrated-applications-to-users).
+Когда вы нажмете кнопку **Далее**, вам будет предложено ввести URL-адрес приложения. После завершения процесса вы сможете назначить для приложения пользователей и группы. У этих пользователей появится элемент приложения в [средстве запуска приложений Office 365](https://blogs.office.com/2014/10/16/organize-office-365-new-app-launcher-2/) или на [панели доступа Azure AD](end-user-experiences.md).
 
 > [!NOTE] 
 > Вы можете загрузить логотип, который будет отображаться на плитке приложения. Для этого нажмите кнопку **Загрузить логотип** на вкладке **Настройка** для этого приложения. 

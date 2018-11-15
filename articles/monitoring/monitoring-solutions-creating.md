@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 03/20/2017
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 09dd046f9dc7d6b73207ab1ab739e913a8ed5b92
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: b7839fc498b54d2128528c8d655d78bb759a7cd5
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51282056"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51612445"
 ---
 # <a name="design-and-build-a-management-solution-in-azure-preview"></a>Проектирование и сборка решения по управлению в Azure (предварительная версия)
 > [!NOTE]
@@ -54,7 +54,7 @@ ms.locfileid: "51282056"
 Определите любые запросы, которые, по вашему мнению, пригодятся пользователю, даже если эти запросы не используются представлениями или оповещениями.  Запросы будут доступны пользователю как сохраненные условия поиска на портале. Их также можно включить в [часть визуализации списка запросов](../log-analytics/log-analytics-view-designer-parts.md#list-of-queries-part) в вашем представлении.
 
 ### <a name="alerts"></a>Оповещения
-Для [оповещений в Log Analytics](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md) ошибки определяются с помощью [поиска по журналам](#log-searches) в данных репозитория.  В итоге либо пользователь получает уведомление об ошибке, либо эти ошибки обрабатываются автоматически. Вы должны определить разные условия оповещений для приложения и включить соответствующие правила оповещений в файл решения.
+Для [оповещений в Log Analytics](../monitoring-and-diagnostics/monitoring-overview-alerts.md) ошибки определяются с помощью [поиска по журналам](#log-searches) в данных репозитория.  В итоге либо пользователь получает уведомление об ошибке, либо эти ошибки обрабатываются автоматически. Вы должны определить разные условия оповещений для приложения и включить соответствующие правила оповещений в файл решения.
 
 Если проблема устранима с помощью автоматизированного процесса, создайте модуль runbook в службе автоматизации Azure. Ошибка будет исправлена автоматически.  Большинством служб Azure можно управлять с помощью [командлетов](/powershell/azure/overview), используемых модулем runbook.
 

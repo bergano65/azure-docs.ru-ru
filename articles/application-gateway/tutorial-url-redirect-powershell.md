@@ -7,15 +7,15 @@ manager: jpconnock
 ms.service: application-gateway
 ms.topic: tutorial
 ms.workload: infrastructure-services
-ms.date: 7/13/2018
+ms.date: 11/13/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 11cd052ca07e074ce8303891f7a372890fdf7291
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 785f3e5f55520b3851e8989b79c340bce55c2135
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45580605"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51566914"
 ---
 # <a name="create-an-application-gateway-with-url-path-based-redirection-using-azure-powershell"></a>Создание шлюза приложений с перенаправлением на основе URL-пути при помощи Azure PowerShell
 
@@ -32,6 +32,8 @@ ms.locfileid: "45580605"
 Ниже приведен пример трафика сайта. Трафик поступает из портов 8080 и 8081 и перенаправляется в те же внутренние пулы.
 
 ![Пример маршрутизации для URL-адресов](./media/tutorial-url-redirect-powershell/scenario.png)
+
+При необходимости инструкции из этого руководства можно выполнить с помощью [Azure CLI](tutorial-url-redirect-cli.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -516,14 +518,6 @@ Get-AzureRmPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublic
 Remove-AzureRmResourceGroup -Name myResourceGroupAG
 ```
 ## <a name="next-steps"></a>Дополнительная информация
-
-Из этого руководства вы узнали, как выполнить следующие задачи:
-
-> [!div class="checklist"]
-> * Настройка сети
-> * Создание шлюза приложений
-> * добавление прослушивателей и правил маршрутизации;
-> * создание масштабируемых наборов виртуальных машин для внутренних пулов.
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о возможностях шлюза приложений](application-gateway-introduction.md)

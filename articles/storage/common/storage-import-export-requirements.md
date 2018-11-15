@@ -9,10 +9,10 @@ ms.date: 10/15/2018
 ms.author: alkohli
 ms.component: common
 ms.openlocfilehash: 3a42f09967ec42b47947823025f2f0dcd081d1b1
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
+ms.lasthandoff: 11/09/2018
 ms.locfileid: "49352243"
 ---
 # <a name="azure-importexport-system-requirements"></a>Требования к системе для импорта и экспорта Azure
@@ -49,7 +49,7 @@ ms.locfileid: "49352243"
 Каждое задание может использоваться для обмена данными только с одной учетной записью хранения. Другими словами, отдельное задание импорта и экспорта не может распространяться на несколько учетных записей хранения. Сведения о создании учетной записи хранения см. в разделе [Создание учетной записи хранения](storage-quickstart-create-account.md).
 
 > [!IMPORTANT] 
-> Служба импорта и экспорта Azure не поддерживает учетные записи хранения с включенной функцией [конечных точек службы для виртуальных сетей](../../virtual-network/virtual-network-service-endpoints-overview.md). 
+> Служба импорта и экспорта Azure не поддерживает учетные записи хранения с включенной функцией [конечных точек службы для виртуальных сетей](../../virtual-network/virtual-network-service-endpoints-overview.md) . 
 
 ## <a name="supported-storage-types"></a>Поддерживаемые типы хранилищ
 

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/03/2018
 ms.author: v-daljep
 ms.component: ''
-ms.openlocfilehash: b20a142007b3422d071de47410f4c9cdd1ff62a7
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 5eb398cf981edbcfe9b98ee89c3dd4e12b3f758f
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51006742"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51615499"
 ---
 # <a name="monitor-azure-sql-database-using-azure-sql-analytics-preview"></a>Мониторинг базы данных SQL Azure с помощью решения "Аналитика SQL Azure" (предварительная версия)
 
@@ -291,4 +291,4 @@ AzureDiagnostics
 
 - Используйте [поиск по журналам](log-analytics-queries.md) в Log Analytics для просмотра подробных данных SQL Azure.
 - [Создавайте пользовательские панели мониторинга](log-analytics-dashboards.md), отображающие данные SQL Azure.
-- [Создавайте оповещения](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md), предупреждающие о возникновении определенных событий SQL Azure.
+- [Создавайте оповещения](../monitoring-and-diagnostics/monitoring-overview-alerts.md), предупреждающие о возникновении определенных событий SQL Azure.

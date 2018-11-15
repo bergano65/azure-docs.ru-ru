@@ -12,21 +12,21 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 08/02/2018
+ms.date: 11/13/2018
 ms.author: magoedte
 ms.custom: mvc
 ms.component: ''
-ms.openlocfilehash: e3d1ad02c8d5df7e9dac7437f2e442c2dc9dfcb9
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 5c064c7b369b7f695d9166cb93f2a018b5329bef
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51279183"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51625612"
 ---
 # <a name="configure-log-analytics-agent-for-windows-computers-in-a-hybrid-environment"></a>Настройка агента Log Analytics для компьютеров Windows в гибридной среде
 [Azure Log Analytics](log-analytics-agent-windows.md) может собирать данные напрямую c физических компьютеров или виртуальных машин Windows в вашем центре обработки данных или в другой облачной среде в один репозиторий для подробного анализа и исправления.  В этом кратком руководстве показано, как настроить и собирать данные c компьютера Windows с помощью нескольких простых действий.  Сведения о виртуальных машинах Windows в Azure приведены далее в разделе [Сбор данных о виртуальных машинах Azure](log-analytics-quick-collect-azurevm.md).  
 
-Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](log-analytics-concept-hybrid.md#supported-windows-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-concept-hybrid.md#network-firewall-requirements).
+Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](log-analytics-agent-overview.md#supported-windows-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-agent-overview.md#network-firewall-requirements).
  
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2017
-ms.openlocfilehash: ab806f8191bc8edc4d5be6003cd177d8c24d71e7
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 87a7e968073d8625375ea837f9377145b6dfb45a
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34834681"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51344867"
 ---
 # <a name="import-data-into-azure-machine-learning-studio-from-various-online-data-sources-with-the-import-data-module"></a>Импорт данных в Студию машинного обучения Azure из разных сетевых источников данных с помощью модуля "Импорт данных"
 В этой статье описывается поддержка импорта сетевых данных из разных источников и приводятся сведения, необходимые для переноса данных из этих источников в эксперимент машинного обучения Azure.
@@ -30,10 +30,6 @@ ms.locfileid: "34834681"
 > Эта статья содержит общие сведения о модуле [Импорт данных][import-data]. Дополнительные сведения о типах данных, к которым можно получить доступ, форматах, параметрах, а также ответы на часто задаваемые вопросы см. в разделе справки по модулю [Импорт данных][import-data].
 > 
 > 
-
-<!-- -->
-
-[!INCLUDE [import-data-into-aml-studio-selector](../../../includes/machine-learning-import-data-into-aml-studio.md)]
 
 ## <a name="introduction"></a>Введение
 В ходе эксперимента в [Студии машинного обучения Azure](https://studio.azureml.net/Home) с использованием модуля [Импорт данных][import-data] вы можете получить доступ к данным одного из нескольких сетевых источников данных:

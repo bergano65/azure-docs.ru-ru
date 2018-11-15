@@ -15,15 +15,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/13/2017
-ms.openlocfilehash: d9d9bfc6f8571ab30804d76b9ab9490b0d2e43c7
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: 4ea0a247116db521e03d7092be0bb86a6528f44d
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37934196"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51346394"
 ---
 # <a name="perform-advanced-analytics-with-azure-machine-learning-using-data-from-an-on-premises-sql-server-database"></a>Выполнение расширенной аналитики с помощью Машинного обучения Azure на основе данных из локальной базы данных SQL Server
-[!INCLUDE [import-data-into-aml-studio-selector](../../../includes/machine-learning-import-data-into-aml-studio.md)]
 
 Зачастую на предприятиях, работающих с локальными данными, используются преимущества масштабируемости и гибкости облака для рабочих нагрузок машинного обучения. Но при этом на предприятиях не хотят нарушать свои текущие бизнес-процессы и рабочие процессы, перемещая их локальные данные в облако. Машинное обучение Azure теперь поддерживает чтение данных из локальной базы данных SQL Server с последующим обучением и оценкой модели по этим данным. Больше не требуется вручную копировать и синхронизировать данные между облаком и локальным сервером. Вместо этого модуль **Импорт данных** в Студии машинного обучения Azure теперь может считывать данные для заданий обучения и оценки непосредственно из локальной базы данных SQL Server.
 

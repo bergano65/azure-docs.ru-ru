@@ -15,17 +15,17 @@ ms.topic: quickstart
 ms.date: 09/05/2018
 ms.author: cephalin
 ms.custom: mvc, devcenter, vs-azure
-ms.openlocfilehash: 00a1f7edfb24d9bd44e48161f3cd2e69cba36bfc
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: ad17488c4e1fd5eb3965049b26d3f00270dce50f
+ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44052128"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51301039"
 ---
 # <a name="create-an-aspnet-core-web-app-in-azure"></a>Создание веб-приложения ASP.NET Core в Azure
 
 > [!NOTE]
-> В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть приложение .NET Core в службе приложений на платформе _Linux_, см. статью [Создание веб-приложения .NET Core в службе приложений на платформе Linux](./containers/quickstart-dotnetcore.md).
+> В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть приложение .NET Core в службе приложений на платформе _Linux_, см. статью [Создание веб-приложения .NET Core в службе приложений на платформе Linux](./containers/quickstart-dotnetcore.md). 
 >
 
 [Веб-приложения Azure](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.  В этом кратком руководстве рассматривается развертывание первого веб-приложения ASP.NET Core при помощи функции Azure "Веб-приложения". В результате будет создана группа ресурсов, состоящая из плана службы приложений и развернутого веб-приложения Azure.

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: daveba
-ms.openlocfilehash: 92553fc8867a482c0af99c4ba3937dcc0d2f09e6
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: eeb615a89469ef8c165ed7ad76acaa01493f78ec
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44158108"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51625544"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-storage-via-access-key"></a>Руководство по использованию управляемого удостоверения, назначаемого системой, на виртуальной машине Windows для доступа к службе хранилища Azure
 
@@ -35,15 +35,7 @@ ms.locfileid: "44158108"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
-
 [!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
-
-- [Войдите на портал Azure](https://portal.azure.com).
-
-- [Создайте виртуальную машину Windows](/azure/virtual-machines/windows/quick-create-portal).
-
-- [Включите назначаемое системой управляемое удостоверение на виртуальной машине](/azure/active-directory/managed-service-identity/qs-configure-portal-windows-vm#enable-system-assigned-identity-on-an-existing-vm).
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения 
 
@@ -83,7 +75,7 @@ ms.locfileid: "44158108"
 
     ![Замещающий текст](./media/msi-tutorial-linux-vm-access-storage/msi-storage-role.png)
 
-## <a name="get-an-access-token-using-the-vms-system-assigned-managed-identity-to-call-azure-resource-manager"></a>Получение маркера доступа с помощью управляемого удостоверения виртуальной машины, назначаемого системой, для вызова Azure Resource Manager 
+## <a name="get-an-access-token-using-the-vms-system-assigned-managed-identity-to-call-azure-resource-manager"></a>Получение маркера доступа с помощью управляемого удостоверения виртуальной машины, назначаемого системой, для вызова Azure Resource Manager 
 
 Далее в этом руководстве мы будем работать с виртуальной машиной, которую только что создали. 
 

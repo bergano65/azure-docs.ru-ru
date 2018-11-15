@@ -10,14 +10,14 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/25/2018
+ms.date: 11/08/2018
 ms.author: tomfitz
-ms.openlocfilehash: e2d1ccbc6532da3600c952236c3904c9e55294c8
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: c65f5364ccd4943d1d3e703ed27099408d3a2a27
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51279426"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51346598"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -28,11 +28,10 @@ ms.locfileid: "51279426"
 Расположение ресурса изменить невозможно. При перемещении ресурс всего лишь перемещается в новую группу ресурсов. Даже если новая группа ресурсов находится в другом расположении, расположение ресурса не меняется.
 
 > [!NOTE]
-> В этой статье описывается, как перемещать ресурсы в рамках существующего предложения для учетной записи Azure. Если вы действительно хотите изменить предложение для учетной записи Azure, (например, повысить уровень с бесплатного до уровня с оплатой по мере использования), необходимо перейти на другую подписку. 
+> В этой статье описывается, как перемещать ресурсы в рамках существующего предложения для учетной записи Azure. Если вы действительно хотите изменить предложение для учетной записи Azure, (например, повысить уровень с бесплатного до уровня с оплатой по мере использования), необходимо перейти на другую подписку.
 > * Сведения о том, как перейти с бесплатной пробной версии или подписки Azure Microsoft Imagine на подписку с оплатой по мере использования, см. [здесь](..//billing/billing-upgrade-azure-subscription.md).
 > * Сведения о том, как перейти с подписки с оплатой по мере использования на другое предложение, см. [здесь](../billing/billing-how-to-switch-azure-offer.md).
 > * Если вам не удается перейти на другую подписку, [создайте запрос на поддержку Azure](../azure-supportability/how-to-create-azure-support-request.md). Выберите тип проблемы **Управление подпиской**.
->
 
 ## <a name="checklist-before-moving-resources"></a>Рекомендации перед перемещением ресурсов
 
@@ -42,7 +41,7 @@ ms.locfileid: "51279426"
 
   Для Azure PowerShell:
 
-  ```powershell
+  ```azurepowershell-interactive
   (Get-AzureRmSubscription -SubscriptionName <your-source-subscription>).TenantId
   (Get-AzureRmSubscription -SubscriptionName <your-destination-subscription>).TenantId
   ```
@@ -63,14 +62,14 @@ ms.locfileid: "51279426"
 
   Для PowerShell используйте следующие команды, чтобы получить состояние регистрации:
 
-  ```powershell
+  ```azurepowershell-interactive
   Set-AzureRmContext -Subscription <destination-subscription-name-or-id>
   Get-AzureRmResourceProvider -ListAvailable | Select-Object ProviderNamespace, RegistrationState
   ```
 
   Чтобы зарегистрировать поставщик ресурсов, воспользуйтесь командой:
 
-  ```powershell
+  ```azurepowershell-interactive
   Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Batch
   ```
 
@@ -325,7 +324,6 @@ Authorization: Bearer <access-token>
 * Масштабируемые наборы виртуальных машин Load Balancer со SKU ценовой категории "Стандартный" и общедоступные IP-адреса со SKU ценовой категории "Стандартный" не могут быть перемещены.
 * Виртуальные машины, созданные из ресурсов Marketplace с подключенными планами, невозможно переместить между группами ресурсов или подписками. Отзовите виртуальную машину в текущей подписке и разверните ее в новой подписке.
 
-
 ## <a name="virtual-networks-limitations"></a>Ограничения для виртуальных сетей
 
 При перемещении виртуальной сети также необходимо переместить зависимые от нее ресурсы, Для VPN-шлюзов необходимо переместить IP-адреса, шлюзы виртуальной сети и все связанные с ними ресурсы подключения. Локальные сетевые шлюзы могут находиться в другой группе ресурсов.
@@ -346,9 +344,9 @@ Authorization: Bearer <access-token>
 
 Чтобы переместить SSL-сертификат с веб-приложением, сделайте следующее:
 
-1.  Удалите отправленный сертификат из веб-приложения.
-2.  Переместите веб-приложение.
-3.  Добавьте сертификат в перемещенное веб-приложение.
+1. Удалите отправленный сертификат из веб-приложения.
+2. Переместите веб-приложение.
+3. Добавьте сертификат в перемещенное веб-приложение.
 
 ### <a name="moving-across-subscriptions"></a>Перемещение между подписками
 
@@ -503,7 +501,7 @@ Authorization: Bearer <access-token>
 
 Чтобы переместить существующие ресурсы в другую группу ресурсов или подписку, используйте команду [Move-AzureRmResource](/powershell/module/azurerm.resources/move-azurermresource) . В следующем примере показано, как переместить несколько ресурсов в новую группу ресурсов.
 
-```powershell
+```azurepowershell-interactive
 $webapp = Get-AzureRmResource -ResourceGroupName OldRG -ResourceName ExampleSite
 $plan = Get-AzureRmResource -ResourceGroupName OldRG -ResourceName ExamplePlan
 Move-AzureRmResource -DestinationResourceGroupName NewRG -ResourceId $webapp.ResourceId, $plan.ResourceId

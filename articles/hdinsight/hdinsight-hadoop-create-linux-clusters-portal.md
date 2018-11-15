@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: 8d5e29b89d65bc8777feac0c496b3253bc2a6763
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 42b0a2440fa459fa31a7d6e137d124883646c205
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51278996"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51686017"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-using-the-azure-portal"></a>Создание кластеров под управлением Linux в HDInsight с помощью портала Azure
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
@@ -65,7 +65,7 @@ ms.locfileid: "51278996"
 
     * Щелкните **Далее**.
 
-4. В разделе **безопасности и сетей** вы можете подключить кластер к виртуальной сети с помощью раскрывающегося списка. Выберите виртуальную сеть Azure и подсеть для размещения кластера в виртуальной сети. Сведения об использовании HDInsight в виртуальной сети, включая требования к конфигурации виртуальной сети, см. в статье [Расширение возможностей HDInsight с помощью виртуальной сети Azure](hdinsight-extend-hadoop-virtual-network.md). Если вам нужно использовать **Корпоративный пакет безопасности**, вы также можете выполнить инструкции, приведенные в статье [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](https://docs.microsoft.com/en-us/azure/hdinsight/domain-joined/apache-domain-joined-configure-using-azure-adds).
+4. В разделе **безопасности и сетей** вы можете подключить кластер к виртуальной сети с помощью раскрывающегося списка. Выберите виртуальную сеть Azure и подсеть для размещения кластера в виртуальной сети. Сведения об использовании HDInsight в виртуальной сети, включая требования к конфигурации виртуальной сети, см. в статье [Расширение возможностей HDInsight с помощью виртуальной сети Azure](hdinsight-extend-hadoop-virtual-network.md). Если вам нужно использовать **Корпоративный пакет безопасности**, вы также можете выполнить инструкции, приведенные в статье [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](https://docs.microsoft.com/azure/hdinsight/domain-joined/apache-domain-joined-configure-using-azure-adds).
 
 5. В колонке **Хранилище** укажите нужное хранилище по умолчанию: службу хранилища Azure (WASB) или Data Lake Storage. Дополнительные сведения см. в таблице ниже.
 

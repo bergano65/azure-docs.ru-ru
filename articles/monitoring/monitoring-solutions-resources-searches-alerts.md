@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 06/18/2018
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 427ac67b812da449333e4868e54ca36d2c6f54af
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: b4d6e1137b9e0404675a48260ea6c9f2c0d5c76f
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51282342"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51614079"
 ---
 # <a name="adding-log-analytics-saved-searches-and-alerts-to-management-solution-preview"></a>Добавление сохраненных поисковых запросов и оповещений Log Analytics в решение по управлению (предварительная версия)
 
@@ -27,7 +27,7 @@ ms.locfileid: "51282342"
 > Это предварительная версия документации по созданию решений по управлению, доступных в режиме предварительной версии. Любые схемы, приведенные ниже, могут измениться.   
 
 
-[Решения по управлению](monitoring-solutions.md) обычно включают в себя возможность [сохранения поисковых запросов](../log-analytics/log-analytics-queries.md) в Log Analytics для анализа данных, собранных этим решением.  Они могут также определять [оповещения](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md) для уведомления пользователя или автоматического выполнения действия в ответ на критическую ошибку.  В этой статье описывается, как определить сохраненные поиски и оповещения Log Analytics в [шаблоне Resource Manager](../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md), чтобы их можно было добавлять в [решения для управления](monitoring-solutions-creating.md).
+[Решения по управлению](monitoring-solutions.md) обычно включают в себя возможность [сохранения поисковых запросов](../log-analytics/log-analytics-queries.md) в Log Analytics для анализа данных, собранных этим решением.  Они могут также определять [оповещения](../monitoring-and-diagnostics/monitoring-overview-alerts.md) для уведомления пользователя или автоматического выполнения действия в ответ на критическую ошибку.  В этой статье описывается, как определить сохраненные поиски и оповещения Log Analytics в [шаблоне Resource Manager](../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md), чтобы их можно было добавлять в [решения для управления](monitoring-solutions-creating.md).
 
 > [!NOTE]
 > В примерах этой статьи используются обязательные или общие параметры и переменные для решений по управлению, описанные в статье [Проектирование и сборка решения по управлению в Azure (предварительная версия)](monitoring-solutions-creating.md).  
@@ -380,8 +380,7 @@ ms.locfileid: "51282342"
             "dependsOn": [
               "[resourceId('Microsoft.OperationalInsights/workspaces/savedSearches', parameters('workspacename'), variables('MySearch').Name)]",
               "[resourceId('Microsoft.OperationalInsights/workspaces/savedSearches/schedules', parameters('workspacename'), variables('MySearch').Name, variables('MyAlert').Schedule.Name)]",
-              "[resourceId('Microsoft.OperationalInsights/workspaces/savedSearches/schedules/actions', parameters('workspacename'), variables('MySearch').Name, variables('MyAlert').Schedule.Name, variables('MyAlert').Name)]",
-              "[resourceId('Microsoft.OperationalInsights/workspaces/savedSearches/schedules/actions', parameters('workspacename'), variables('MySearch').Name, variables('MyAlert').Schedule.Name, variables('MyAlert').Webhook.Name)]"
+              "[resourceId('Microsoft.OperationalInsights/workspaces/savedSearches/schedules/actions', parameters('workspacename'), variables('MySearch').Name, variables('MyAlert').Schedule.Name, variables('MyAlert').Name)]"
             ],
             "properties": {
               "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspacename'))]",

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/04/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: a470299df86f6b8f7fd61279af0334d01ef94f8d
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 325da912c8fc4e453df895976df970f8e0f56412
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50957427"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51614960"
 ---
 # <a name="extend-alerts-from-log-analytics-into-azure-alerts"></a>Расширение оповещений из Log Analytics в оповещения Azure
 В службе анализа журналов Azure функция оповещения заменяется на оповещения Azure. В рамках этого процесса оповещения, которые были изначально настроены в Log Analytics, будут расширены в Azure. Если вы не хотите ждать, когда они будут перенесены в Azure автоматически, то процесс инициализации можно запустить:
@@ -479,5 +479,5 @@ $response = armclient post "/subscriptions/$subscriptionId/resourceGroups/$resou
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Дополнительные сведения см. в статье [Функция "Унифицированные оповещения" в Azure Monitor](monitoring-overview-unified-alerts.md).
+* Дополнительные сведения см. в статье [Функция "Унифицированные оповещения" в Azure Monitor](monitoring-overview-alerts.md).
 * Дополнительные сведения см. в статье [Оповещения журнала в Azure Monitor. Оповещения Azure (предварительная версия)](monitor-alerts-unified-log.md).

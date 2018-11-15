@@ -8,16 +8,17 @@ ms.topic: conceptual
 ms.date: 06/29/2018
 ms.author: snmuvva
 ms.component: alerts
-ms.openlocfilehash: 15ecbcafd3397b425b669a48f19bee6073b71149
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 89b412a58291dd542b38cd0cbfa1288795024151
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51279795"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51613721"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Поддерживаемые ресурсы для оповещений метрик в Azure Monitor
 
-Azure Monitor теперь поддерживает новый тип оповещений о метриках, который имеет ряд преимуществ перед [классическими оповещениями](alert-metric-classic.md). Метрики доступны для [большого числа служб Azure](monitoring-supported-metrics.md). Список типов ресурсов, поддерживаемых новыми оповещениями, постоянно расширяется. В этой статье рассматриваются новые возможности.
+Azure Monitor теперь поддерживает [новый тип оповещений о метриках](monitoring-overview-alerts.md), который имеет ряд преимуществ перед [классическими оповещениями](monitoring-overview-alerts-classic.md). Метрики доступны для [большого числа служб Azure](monitoring-supported-metrics.md). Список типов ресурсов, поддерживаемых новыми оповещениями, постоянно расширяется. В этой статье рассматриваются новые возможности.
+
 
 Новые оповещения на основе метрик можно применять для популярных журналов Log Analytics, извлекаемых в виде метрик. Дополнительные сведения см. в статье [Создание оповещений о метриках для журналов в Azure Monitor](monitoring-metric-alerts-logs.md).
 
@@ -120,6 +121,6 @@ Azure Monitor теперь поддерживает новый тип опове
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Получите дополнительные сведения об [интерфейсе оповещений](monitoring-overview-unified-alerts.md).
+* Получите дополнительные сведения об [интерфейсе оповещений](monitoring-overview-alerts.md).
 * Ознакомьтесь со сведениями об [оповещениях журналов в Azure](monitor-alerts-unified-log.md).
 * [Подробнее об оповещениях в Azure](monitoring-overview-alerts.md)

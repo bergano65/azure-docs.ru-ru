@@ -7,12 +7,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: andrl
-ms.openlocfilehash: 36b57fd98de206641422d80bf3ea3d2a3853f578
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 006d0ef28d82a7648a56b3bf871c5a3afd6a55a6
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51252570"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51624426"
 ---
 # <a name="unique-keys-in-azure-cosmos-db"></a>Уникальные ключи в Azure Cosmos DB
 
@@ -48,17 +48,6 @@ ms.locfileid: "51252570"
 * Разреженные уникальные ключи не поддерживаются. Если значения некоторых уникальных путей отсутствуют, они рассматриваются как имеющие значение null, которое принимает участие в ограничении уникальности. Таким образом, может существовать только один элемент со значением null для удовлетворения этого ограничения.
 
 * В именах уникальных ключей учитывается регистр. Например, рассмотрим контейнер с ограничением уникального ключа равным /address/zipcode. Если в данных есть поле с именем ZipCode, Cosmos DB вставляет "null" в качестве уникального ключа, так как "zipcode" не совпадает с "ZipCode". Во всех других записях, которые содержат ZipCode, в уникальный ключ невозможно вставить еще одно значение null, поскольку это нарушит требование уникальности ключа.
-
-## <a name="supported-apis-and-sdks"></a>Поддерживаемые API-интерфейсы и пакеты SDK
-
-Компонент уникальных ключей в настоящее время поддерживается следующими API Cosmos DB и клиентскими пакетами SDK: 
-
-|Клиентские драйверы|API-интерфейс SQL|API Cassandra|API MongoDB|API Gremlin|API таблицы|
-|---|---|---|---|---|---|
-|.NET|Yes|Нет |Yes|Нет |Нет |
-|Java|Yes|Нет |Yes|Нет |Нет |
-|Python|Yes|Нет |Yes|Нет |Нет |
-|Node/JS|Yes|Нет |Yes|Нет |Нет |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

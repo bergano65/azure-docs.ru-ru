@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 ms.author: sanpil
 author: sanpil
 ms.date: 11/07/2018
-ms.openlocfilehash: 59a35cd7ca3af446853d518fc7e7d48d2321ff10
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 099b59cde4ee438f16b9d7e77bd81c004006cb71
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51278979"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51684874"
 ---
 # <a name="pipelines-and-azure-machine-learning"></a>Конвейеры и служба "Машинное обучение Azure"
 
@@ -44,7 +44,7 @@ ms.locfileid: "51278979"
 
 При использовании службы "Машинное обучение Azure" для каждого шага в конвейере можно применять различные наборы средств и платформы, такие как Microsoft Cognitive Toolkit или TensorFlow. Azure выполняет координацию между различными используемыми [целевыми объектами вычислений](concept-azure-machine-learning-architecture.md), чтобы промежуточные данные можно было легко совместно использовать с подчиненными целевыми объектами вычислений. 
 
-Можно [отслеживать метрики для экспериментов в конвейере](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-track-experiments) непосредственно на портале Azure. 
+Можно [отслеживать метрики для экспериментов в конвейере](https://docs.microsoft.com/azure/machine-learning/service/how-to-track-experiments) непосредственно на портале Azure. 
 
 ## <a name="key-advantages"></a>Ключевые преимущества
 

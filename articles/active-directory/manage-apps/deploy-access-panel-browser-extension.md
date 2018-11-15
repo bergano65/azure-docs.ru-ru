@@ -11,19 +11,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/11/2018
+ms.date: 11/08/2018
 ms.author: barbkess
 ms.reviewer: asteen
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4540b68dedc3086c3ea0fb12ebbe3cfe2344698b
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: a21a21f40e731e8bc1d20e01d3671c372df65d84
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44718803"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51622046"
 ---
 # <a name="how-to-deploy-the-access-panel-extension-for-internet-explorer-using-group-policy"></a>Развертывание расширения панели доступа для Internet Explorer с помощью групповой политики
-В этом руководстве описывается удаленная установка расширения панели доступа для Internet Explorer на компьютерах пользователей с помощью групповой политики. Это расширение является обязательным для пользователей Internet Explorer, выполняющих вход в приложения, для которых настроен [единый вход по паролю](what-is-single-sign-on.md#password-based-single-sign-on).
+В этом руководстве описывается удаленная установка расширения панели доступа для Internet Explorer на компьютерах пользователей с помощью групповой политики. Это расширение является обязательным для пользователей Internet Explorer, выполняющих вход в приложения, для которых настроен [единый вход по паролю](what-is-single-sign-on.md#password-based-sso).
 
 Мы рекомендуем автоматизировать развертывание этого расширения. В противном случае пользователям нужно будет самостоятельно загружать и устанавливать расширение. Для этого требуются права администратора, к тому же пользователи могут совершать ошибки при установке. В этом руководстве рассматривается один из методов автоматизированного развертывания программного обеспечения с помощью групповой политики. [Дополнительные сведения о групповой политике.](https://technet.microsoft.com/windowsserver/bb310732.aspx)
 

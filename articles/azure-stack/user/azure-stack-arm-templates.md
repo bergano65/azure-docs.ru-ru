@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/07/2018
+ms.date: 11/14/2018
 ms.author: sethm
 ms.reviewer: jeffgo
-ms.openlocfilehash: d520a33fd6729f4a9d4778cfdb8d3380c9ac09b0
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 38e85ede1e984aa3d26fe509d68b4582d11b6c26
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51237848"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636226"
 ---
 # <a name="use-azure-resource-manager-templates-in-azure-stack"></a>Использование шаблонов диспетчера ресурсов Azure в Azure Stack
 
@@ -34,7 +34,7 @@ ms.locfileid: "51237848"
 
 ## <a name="deploy-sharepoint-server-non-high-availability-deployment"></a>Развертывание SharePoint Server (с обычным уровнем доступности)
 
-Используйте расширение PowerShell DSC для [создания фермы SharePoint Server 2013](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/AzureStackTechnicalPreview1/sharepoint-2013-non-ha), которая включает в себя следующие ресурсы:
+Используйте расширение PowerShell DSC для [создания фермы SharePoint Server 2013](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/sharepoint-2013-non-ha), которая включает в себя следующие ресурсы:
 
 * виртуальную сеть;
 * три учетные записи хранения;
@@ -45,7 +45,7 @@ ms.locfileid: "51237848"
 
 ## <a name="deploy-ad-non-high-availability-deployment"></a>Развертывание AD (с обычным уровнем доступности)
 
-Используйте расширение PowerShell DSC для [создания сервера контроллера домена AD](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/AzureStackTechnicalPreview1/ad-non-ha), который включает в себя следующие ресурсы:
+Используйте расширение PowerShell DSC для [создания сервера контроллера домена AD](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/ad-non-ha), который включает в себя следующие ресурсы:
 
 * виртуальную сеть;
 * одна учетная запись хранения;
@@ -54,7 +54,7 @@ ms.locfileid: "51237848"
 
 ## <a name="deploy-adsql-non-high-availability-deployment"></a>Развертывание AD и SQL (с обычным уровнем доступности)
 
-Используйте расширение PowerShell DSC для [создания изолированного сервера SQL Server 2014](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/AzureStackTechnicalPreview1/sql-2014-non-ha), который включает в себя следующие ресурсы:
+Используйте расширение PowerShell DSC для [создания изолированного сервера SQL Server 2014](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/sql-2014-non-ha), который включает в себя следующие ресурсы:
 
 * виртуальную сеть;
 * две учетные записи хранения;
@@ -68,11 +68,11 @@ ms.locfileid: "51237848"
 
 ## <a name="create-a-virtual-machine-from-a-user-image"></a>Создание виртуальной машины из пользовательского образа
 
-[Можно создать виртуальную машину из настраиваемого пользовательского образа.](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/AzureStackTechnicalPreview1/101-vm-from-user-image) Этот шаблон также развертывает виртуальную сеть (с DNS), общедоступный IP-адрес и сетевой интерфейс.
+[Можно создать виртуальную машину из настраиваемого пользовательского образа.](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-from-user-image) Этот шаблон также развертывает виртуальную сеть (с DNS), общедоступный IP-адрес и сетевой интерфейс.
 
 ## <a name="basic-virtual-machine"></a>Виртуальная машина уровня "Базовый"
 
-[Разверните виртуальную машину Windows](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/AzureStackTechnicalPreview1/101-simple-windows-vm) с виртуальной сетью (с DNS), общедоступным IP-адресом и сетевым интерфейсом.
+[Разверните виртуальную машину Windows](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-simple-windows-vm) с виртуальной сетью (с DNS), общедоступным IP-адресом и сетевым интерфейсом.
 
 ## <a name="cancel-a-running-template-deployment"></a>Отмена выполняющегося развертывания шаблона
 

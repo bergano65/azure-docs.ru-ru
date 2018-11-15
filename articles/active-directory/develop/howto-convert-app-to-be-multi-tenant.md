@@ -17,12 +17,12 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: justhu, elisol
 ms.custom: aaddev
-ms.openlocfilehash: abca81e0db565c6c84d9be9df07b46c8c338030b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 6581081f0f34f73c915f0b026a3ed50816f6731f
+ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46960283"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51298949"
 ---
 # <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>Реализация входа любого пользователя Azure Active Directory с помощью шаблона мультитенантного приложения
 
@@ -118,7 +118,7 @@ ms.locfileid: "46960283"
 
 Для разрешений "только для приложения" всегда требуется согласие администратора клиента. Если приложение запрашивает разрешение "только для приложения" и пользователь пытается войти в приложение, появится сообщение об ошибке. Это сообщение говорит о том, что пользователь не может принять это разрешение.
 
-Для некоторых делегированных разрешений также требуется согласие администратора клиента. Например, оно требуется для возможности обратной записи в Azure AD в качестве выполнившего вход пользователя. Как и в случае с разрешениями "только для приложения", если обычный пользователь пытается войти в приложение, запрашивающее делегированное разрешение, для которого требуется согласие администратора, в приложении появится сообщение об ошибке. Требует ли разрешение согласия администратора, определяет разработчик, опубликовавший ресурс. Эти сведения можно найти в документации по данному ресурсу. В документации по разрешениям [Azure AD Graph API][AAD-Graph-Perm-Scopes] и [Microsoft Graph API][MSFT-Graph-permision-scopes] указывается, для каких разрешений требуется согласие администратора.
+Для некоторых делегированных разрешений также требуется согласие администратора клиента. Например, оно требуется для возможности обратной записи в Azure AD в качестве выполнившего вход пользователя. Как и в случае с разрешениями "только для приложения", если обычный пользователь пытается войти в приложение, запрашивающее делегированное разрешение, для которого требуется согласие администратора, в приложении появится сообщение об ошибке. Требует ли разрешение согласия администратора, определяет разработчик, опубликовавший ресурс. Эти сведения можно найти в документации по данному ресурсу. В документации по разрешениям [Azure AD Graph API][AAD-Graph-Perm-Scopes] и [Microsoft Graph API][MSFT-Graph-permission-scopes] указывается, для каких разрешений требуется согласие администратора.
 
 Если приложение использует разрешения, требующие согласия администратора, то в приложении должен быть элемент, такой как кнопка или ссылка, с помощью которого администратор может инициировать действие. Запрос, отправляемый приложением для этого действия, является обычным запросом авторизации OAuth2 или OpenID Connect, но он также включает в себя параметр строки запроса `prompt=admin_consent`. После того как администратор предоставит свое согласие, а в клиенте пользователя будет создан субъект-служба, в последующих запросах входа не нужно будет указывать параметр `prompt=admin_consent`. После того как администратор решил, что запрошенные разрешения являются приемлемыми, у других пользователей клиента согласие запрашиваться не будет.
 
@@ -184,7 +184,7 @@ ms.locfileid: "46960283"
 * [Объекты приложения и субъекта-службы в Azure Active Directory (Azure AD)][AAD-App-SP-Objects]
 * [Интеграция приложений с Azure Active Directory][AAD-Integrating-Apps]
 * [Обзор платформы согласия][AAD-Consent-Overview]
-* [Справочник по разрешениям Microsoft Graph][MSFT-Graph-permision-scopes]
+* [Справочник по разрешениям Microsoft Graph][MSFT-Graph-permission-scopes]
 * [Области разрешений | Основные понятия API Graph][AAD-Graph-Perm-Scopes]
 
 <!--Reference style links IN USE -->
@@ -201,8 +201,8 @@ ms.locfileid: "46960283"
 [AAD-Samples-MT]: https://azure.microsoft.com/documentation/samples/?service=active-directory&term=multitenant
 [AAD-Why-To-Integrate]: ./active-directory-how-to-integrate.md
 [AZURE-portal]: https://portal.azure.com
-[MSFT-Graph-overview]: https://graph.microsoft.io/en-us/docs/overview/overview
-[MSFT-Graph-permision-scopes]: https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference
+[MSFT-Graph-overview]: https://developer.microsoft.com/graph/docs/overview/overview
+[MSFT-Graph-permission-scopes]: https://developer.microsoft.com/graph/docs/concepts/permissions_reference
 
 <!--Image references-->
 [AAD-Sign-In]: ./media/active-directory-devhowto-multi-tenant-overview/sign-in-with-microsoft-light.png

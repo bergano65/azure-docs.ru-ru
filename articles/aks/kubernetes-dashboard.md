@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: iainfou
-ms.openlocfilehash: 127f6a5cd8f46b72a4cddcef09cb31b60edd0582
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 9d953cdb82412c07fe0ed4bef75dece4a929cad9
+ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50157196"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51299135"
 ---
 # <a name="access-the-kubernetes-web-dashboard-in-azure-kubernetes-service-aks"></a>Подключение веб-панели мониторинга Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -33,9 +33,6 @@ ms.locfileid: "50157196"
 ```azurecli
 az aks browse --resource-group myResourceGroup --name myAKSCluster
 ```
-
-> [!TIP]
-> При запуске этой команды в Azure Cloud Shell добавьте параметр `--enable-cloud-console-aks-browse`, чтобы правильно открыть панель мониторинга.
 
 Эта команда создает прокси-сервер между системой разработки и API Kubernetes и открывает панель мониторинга Kubernetes в веб-браузере. Если панель мониторинга Kubernetes не открывается, скопируйте и вставьте URL-адрес, указанный в Azure CLI (обычно *http://127.0.0.1:8001*).
 
