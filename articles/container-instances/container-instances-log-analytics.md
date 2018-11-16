@@ -7,12 +7,12 @@ ms.service: container-instances
 ms.topic: overview
 ms.date: 07/17/2018
 ms.author: danlep
-ms.openlocfilehash: 5d3ba4ac4a86b6051ea5dafbff8c038c9198108c
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 7f4af06222141eb0e143e67ba4bfcdcb2f5f92fa
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51279557"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51614010"
 ---
 # <a name="container-instance-logging-with-azure-log-analytics"></a>Ведение журнала для экземпляров контейнеров с помощью Azure Log Analytics
 
@@ -134,8 +134,9 @@ ContainerInstanceLog_CL
 
 Дополнительные сведения о запросах по журналам и настройке предупреждений в Azure Log Analytics см. в следующих статьях:
 
-* [Основные сведения о поисках по журналам в Log Analytics](../log-analytics/log-analytics-queries.md)
-* [Новые возможности оповещений в Azure Monitor](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md)
+* [Основные сведения о поисках по журналам в Log Analytics](../log-analytics/log-analytics-log-search.md)
+* [Новые возможности оповещений в Azure Monitor](../monitoring-and-diagnostics/monitoring-overview-alerts.md)
+
 
 ### <a name="monitor-container-cpu-and-memory"></a>Мониторинг использования ЦП и памяти
 

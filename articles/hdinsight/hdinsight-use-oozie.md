@@ -10,12 +10,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/25/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5611830d4d9950a7781062997b13555d95d8e703
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: affef85c917804f0b99200dcfa8e53f6d08fcbe4
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51625969"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51684228"
 ---
 # <a name="use-oozie-with-hadoop-to-define-and-run-a-workflow-in-hdinsight"></a>Использование Oozie с Hadoop для определения и выполнения рабочего процесса в HDInsight
 [!INCLUDE [oozie-selector](../../includes/hdinsight-oozie-selector.md)]
@@ -63,7 +63,7 @@ Apache Oozie — это система рабочих процессов и ко
 
 ## <a name="define-oozie-workflow-and-the-related-hiveql-script"></a>Определение рабочего процесса Oozie и связанного с ним скрипта HiveQL
 Определения рабочих процессов Oozie записываются в hPDL (язык определения процессов XML). Для файла рабочего процесса по умолчанию используется имя *workflow.xml*. Ниже приведен файл рабочего процесса, используемый в этом руководстве.
-
+```xml
     <workflow-app name="useooziewf" xmlns="uri:oozie:workflow:0.2">
         <start to = "RunHiveScript"/>
 
@@ -118,7 +118,7 @@ Apache Oozie — это система рабочих процессов и ко
 
         <end name="end"/>
     </workflow-app>
-
+```
 Существует два действия, определенные в рабочем процессе. Первым действием является *RunHiveScript*. Если действие выполняется успешно, запускается следующее действие ( *RunSqoopExport*).
 
 RunHiveScript имеет несколько переменных. Вы передадите эти значения при отправке задания Oozie с рабочей станции с помощью Azure PowerShell.
@@ -191,7 +191,7 @@ RunHiveScript имеет несколько переменных. Вы пере�
     Чтобы проанализировать результаты задания Oozie, используйте Visual Studio или другие инструменты для подключения к базе данных SQL Azure.
 
 Ниже приведен сценарий.  Его можно выполнить в интегрированной среде сценариев Windows PowerShell. Необходимо настроить только 7 первых переменных.
-
+```powershell
     #region - provide the following values
 
     $subscriptionID = "<Enter your Azure subscription ID>"
@@ -200,7 +200,7 @@ RunHiveScript имеет несколько переменных. Вы пере�
     $sqlDatabaseLogin = "<Enter SQL Database Login Name>"
     $sqlDatabasePassword = "<Enter SQL Database Login Password>"
 
-    # HDInsight cluster HTTP user credential used for creating and connectin
+    # HDInsight cluster HTTP user credential used for creating and connecting
     $httpUserName = "admin"  # The default name is "admin"
     $httpPassword = "<Enter HDInsight Cluster HTTP User Password>"
 
@@ -529,8 +529,8 @@ RunHiveScript имеет несколько переменных. Вы пере�
     $response = Invoke-RestMethod -Method Get -Uri $clusterUriStatus -Credential $httpCredential -OutVariable $OozieServerStatus
 
     $jsonResponse = ConvertFrom-Json (ConvertTo-Json -InputObject $response)
-    $oozieServerSatus = $jsonResponse[0].("systemMode")
-    Write-Host "Oozie server status is $oozieServerSatus."
+    $oozieServerStatus = $jsonResponse[0].("systemMode")
+    Write-Host "Oozie server status is $oozieServerStatus."
 
     # create Oozie job
     Write-Host "Sending the following Payload to the cluster:" -ForegroundColor Green
@@ -570,7 +570,7 @@ RunHiveScript имеет несколько переменных. Вы пере�
     Write-Host "$(Get-Date -format 'G'): $oozieJobId is in $JobStatus state!" -ForegroundColor Green
 
     #endregion
-
+```
 
 **Повторное выполнение учебника**
 
@@ -580,7 +580,7 @@ RunHiveScript имеет несколько переменных. Вы пере�
 * данные в таблице log4jLogsCount.
 
 Ниже приведен пример скрипта PowerShell, который можно использовать:
-
+```powershell
     $resourceGroupName = "<AzureResourceGroupName>"
 
     $defaultStorageAccountName = "<AzureStorageAccountName>"
@@ -610,6 +610,7 @@ RunHiveScript имеет несколько переменных. Вы пере�
     $cmd.executenonquery()
 
     $conn.close()
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 Из этого учебника вы узнали, как определить рабочий процесс Oozie и выполнять задания Oozie с помощью PowerShell. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
@@ -647,7 +648,6 @@ RunHiveScript имеет несколько переменных. Вы пере�
 
 [hdinsight-develop-mapreduce]:hadoop/apache-hadoop-develop-deploy-java-mapreduce-linux.md
 
-[sqldatabase-create-configue]: ../sql-database-create-configure.md
 [sqldatabase-get-started]: ../sql-database-get-started.md
 
 [azure-management-portal]: https://portal.azure.com/

@@ -10,12 +10,12 @@ ms.workload: identity
 ms.date: 10/12/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: ced100f0bdd20841648ca84dfcab1847bdcd3096
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: d7097886b746c225bb420f9a96e2b7ef5c95c913
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49362489"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51684745"
 ---
 # <a name="track-user-behavior-in-azure-active-directory-b2c-using-application-insights"></a>Отслеживание поведения пользователей в Azure Active Directory B2C с использованием Application Insights
 
@@ -31,7 +31,7 @@ ms.locfileid: "49362489"
 
 ## <a name="how-it-works"></a>Принцип работы
 
-Identity Experience Framework в Azure AD B2C включает поставщика `Handler="Web.TPEngine.Providers.UserJourneyContextProvider, Web.TPEngine, Version=1.0.0.0`. Он отправляет данные о событиях непосредственно в Application Insights с использованием ключа инструментирования, предоставляемого в Azure AD B2C.
+Identity Experience Framework в Azure AD B2C включает поставщика `Handler="Web.TPEngine.Providers.AzureApplicationInsightsProvider, Web.TPEngine, Version=1.0.0.0`. Он отправляет данные о событиях непосредственно в Application Insights с использованием ключа инструментирования, предоставляемого в Azure AD B2C.
 
 Этот поставщик использует технический профиль для определения события из Azure AD B2C. Профиль определяет имя события, утверждения, которые записаны, и ключ инструментирования. Чтобы опубликовать событие, технический профиль добавляется как `orchestration step` или `validation technical profile` в настраиваемый путь взаимодействия пользователя.
 

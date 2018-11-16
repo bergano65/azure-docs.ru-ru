@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/25/2018
 ms.author: magoedte
-ms.openlocfilehash: af3d2b997a4d58f2d32705c55151c4cf13bdcc7c
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: ac96de2669a75a5966650afc0b49cc2f926537fa
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50095484"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51614214"
 ---
 # <a name="using-azure-monitor-for-vms-preview-map-to-understand-application-components"></a>Использование сопоставления Azure Monitor для виртуальных машин (предварительная версия), чтобы получать сведения о компонентах приложения
 При просмотре обнаруженных компонентов приложений в виртуальных машинах с ОС Windows и Linux, работающих в Azure, за средой можно наблюдать двумя способами с помощью Azure Monitor для виртуальных машин: непосредственно из виртуальной машины либо в группах виртуальных машин в Azure Monitor. 
@@ -52,7 +52,7 @@ ms.locfileid: "50095484"
 - Добавьте предложение для группирования по компьютеру (например, **by Computer interval 1 minute**).
 - Выберите предупреждение на основе измерения метрики.
 
-Дополнительные сведения об оповещениях Azure и создании правил генерации оповещений см. в статье [Объединенные оповещения в Azure Monitor](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md).
+Дополнительные сведения об оповещениях Azure и создании правил генерации оповещений см. в статье [Объединенные оповещения в Azure Monitor](../monitoring-and-diagnostics/monitoring-overview-alerts.md).
 
 Параметр **Условные обозначения** в верхнем правом углу описывает символы и роли на схеме.  Чтобы увеличить схему и перемещаться по ней, можно использовать элементы управления масштабом в нижней правой части страницы. С их помощью можно настроить масштаб и подогнать страницу к текущему размеру страницы.  
 

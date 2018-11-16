@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/11/2018
 ms.author: meirm
 ms.component: ''
-ms.openlocfilehash: ef1956f5283105548ba8790b87e82c35d6c9e1cd
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: dc6a52462dffcb735e845c9150b2189e37273496
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50960945"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51615438"
 ---
 # <a name="log-analytics-for-service-providers"></a>Log Analytics для поставщиков служб
 Log Analytics позволяет поставщикам управляемых служб (MSP), крупным предприятиям, независимым поставщикам программного обеспечения (ISV) и поставщикам услуг размещения управлять серверами, размещенными в локальной сети клиента или в облачной инфраструктуре, и осуществлять мониторинг таких серверов. 
@@ -82,6 +82,6 @@ Log Analytics входит в число служб Azure, доступных в
 ## <a name="next-steps"></a>Дальнейшие действия
 * Автоматизация создания и настройки рабочих областей с помощью [шаблонов Resource Manager](log-analytics-template-workspace-configuration.md).
 * Автоматизация создания рабочих областей с помощью [PowerShell](log-analytics-powershell-workspace-configuration.md). 
-* Использование [оповещений](../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md) для интеграции с существующими системами.
+* Использование [оповещений](../monitoring-and-diagnostics/monitoring-overview-alerts.md) для интеграции с существующими системами.
 * Создание сводных отчетов с помощью [Power BI](log-analytics-powerbi.md)
 * Ознакомьтесь с процессом [Создание панели мониторинга Power BI для облачных поставщиков решений с помощью Log Analytics](https://docs.microsoft.com/azure/cloud-solution-provider/support/monitor-multiple-customers)

@@ -1,3 +1,16 @@
+---
+author: linda33wj
+ms.service: data-factory
+ms.topic: include
+ms.date: 11/09/2018
+ms.author: jingwang
+ms.openlocfilehash: 4189d3a09625f211c6f9eddc7c1c5fe43ad31732
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51572642"
+---
 ## <a name="create-a-self-hosted-integration-runtime"></a>Создание локальной среды выполнения интеграции
 
 В этом разделе вы создадите локальную среду выполнения интеграции и свяжете ее с локальным компьютером, на котором находится база данных SQL Server. Локальная среда выполнения интеграции — это компонент, который копирует данные из SQL Server на компьютере в хранилище BLOB-объектов Azure. 
@@ -113,7 +126,7 @@
 
     a. На странице **Configuration Manager** перейдите на вкладку **Diagnostics** (Диагностика).
 
-    Б. В качестве типа источника данных выберите **SqlServer**.
+    b. В качестве типа источника данных выберите **SqlServer**.
 
     c. Введите имя сервера.
 
@@ -121,7 +134,7 @@
 
     д. Выберите режим проверки подлинности.
 
-    f. Введите имя пользователя.
+    Е. Введите имя пользователя.
 
     ж. Введите пароль для этого имени пользователя,
 

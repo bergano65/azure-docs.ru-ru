@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/11/2018
 ms.author: jingwang
-ms.openlocfilehash: f408d24a5957061bf03d340a555b87bdc6b2aacc
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: f4edd1632203e2f8723fa7880683727f8fb69c4d
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44304141"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51614027"
 ---
 # <a name="copy-data-from-an-on-premises-sql-server-database-to-azure-blob-storage"></a>Копирование данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure
 В этом руководстве вы создадите конвейер фабрики данных, в котором данные из локальной базы данных SQL Server копируются в хранилище BLOB-объектов Azure, с помощью пользовательского интерфейса службы "Фабрика данных Azure". Вы создадите и будете использовать локальную среду выполнения интеграции, которая перемещает данные между локальным и облачным хранилищами данных.
@@ -111,7 +111,7 @@ ms.locfileid: "44304141"
 
 1. В списке контейнеров выберите **adftutorial**.
 
-    ![Выбор контейнера](media/tutorial-hybrid-copy-powershell/seelct-adftutorial-container.png)
+    ![Выбор контейнера](media/tutorial-hybrid-copy-powershell/select-adftutorial-container.png)
 
 1. Не закрывайте окно **контейнера** **adftutorial**. Она понадобится для проверки выходных данных в конце этого руководства. Фабрика данных автоматически создает выходную папку в этом контейнере, поэтому ее не нужно создавать.
 
@@ -197,7 +197,7 @@ ms.locfileid: "44304141"
 
 1. В разделе **Option 1: Express setup** (Вариант 1. Экспресс-установка) выберите элемент **Click here to launch the express setup for this computer** (Щелкните здесь, чтобы запустить экспресс-установку для этого компьютера). 
 
-    ![Ссылка на экспресс-установку](./media/tutorial-hybrid-copy-portal/click-exress-setup.png)
+    ![Ссылка на экспресс-установку](./media/tutorial-hybrid-copy-portal/click-express-setup.png)
 
 1. В окне **Экспресс-установка Integration Runtime (Self-hosted)** выберите **Закрыть**. 
 
@@ -237,7 +237,7 @@ ms.locfileid: "44304141"
 
 1. Перейдите на вкладку **SQLServerToBlobPipeline** или выберите элемент **SQLServerToBlobPipeline** в представлении в виде дерева. 
 
-    ![Вкладка конвейера](./media/tutorial-hybrid-copy-portal/pipeliene-tab.png)
+    ![Вкладка конвейера](./media/tutorial-hybrid-copy-portal/pipeline-tab.png)
 
 1. Перейдите на вкладку **Приемник** в нижней части окна **свойств** и выберите **+ Создать**. 
 

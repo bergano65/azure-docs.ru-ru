@@ -10,12 +10,12 @@ ms.component: speech-service
 ms.topic: quickstart
 ms.date: 11/05/2018
 ms.author: wolfma
-ms.openlocfilehash: 2dd001ebebd5cdf90d7d0b8163a85a5f83c855f6
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 502f59c88808480f26e6ea5a6d2c5b362c78869b
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51281300"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51683507"
 ---
 # <a name="quickstart-recognize-and-transcribe-speech-using-the-speech-sdk-and-net-framework-windows"></a>Краткое руководство: распознавание и преобразование речи с помощью пакета SDK службы "Речь" и .NET Framework (Windows).
 
@@ -23,7 +23,7 @@ ms.locfileid: "51281300"
 
 Сведения в этом руководстве помогут создать консольное приложение для преобразования речи в текст с помощью .NET Framework для Windows и пакета SDK службы "Речь". После завершения вы сможете преобразовывать речь в текст в режиме реального времени с использованием микрофона компьютера.
 
-Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с включенной службой "Речь" (Майкрософт). Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/get-started), чтобы получить ключ подписки.
+Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с включенной службой "Речь" (Майкрософт). Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started), чтобы получить ключ подписки.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

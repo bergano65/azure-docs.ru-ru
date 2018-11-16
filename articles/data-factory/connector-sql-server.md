@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/12/2018
+ms.date: 11/08/2018
 ms.author: jingwang
-ms.openlocfilehash: b0e9f72bad685d569b4a09baecec8cebc33fefde
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: b528507d0f12cda72855db19aa28c7b06a4e26c1
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44717902"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51345221"
 ---
 # <a name="copy-data-to-and-from-sql-server-using-azure-data-factory"></a>Копирование данных в базу данных SQL Server и из нее с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -119,7 +119,7 @@ ms.locfileid: "44717902"
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | Тип | Свойство type для набора данных должно иметь значение **SqlServerTable**. | Yes |
-| tableName |Имя таблицы или представления экземпляра базы данных SQL Server, на который ссылается связанная служба. | Yes |
+| tableName |Имя таблицы или представления экземпляра базы данных SQL Server, на который ссылается связанная служба. | "Нет" для источника, "Да" для приемника |
 
 **Пример.**
 
@@ -159,7 +159,6 @@ ms.locfileid: "44717902"
 
 - Если для SqlSource указано **sqlReaderQuery**, то действие копирования выполняет этот запрос с целью получения данных у источника базы данных SQL Server. Кроме того, можно создать хранимую процедуру, указав **sqlReaderStoredProcedureName** и **storedProcedureParameters** (если хранимая процедура принимает параметры).
 - Если не указать sqlReaderQuery или sqlReaderStoredProcedureName, то для создания запроса (`select column1, column2 from mytable`) к базе данных SQL Server будут использованы столбцы, определенные в разделе structure набора данных JSON. Если в определении набора данных нет раздела structure, выбираются все столбцы из таблицы.
-- При использовании **sqlReaderStoredProcedureName** по-прежнему необходимо указать фиктивное свойство **tableName** в наборе данных JSON.
 
 **Пример. Использование SQL-запроса**
 

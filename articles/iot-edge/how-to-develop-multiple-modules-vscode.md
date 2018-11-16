@@ -4,17 +4,17 @@ description: Использование расширения Интернета 
 services: iot-edge
 keywords: ''
 author: shizn
-manager: timlt
+manager: philmea
 ms.author: xshi
 ms.date: 06/27/2018
 ms.topic: conceptual
 ms.service: iot-edge
-ms.openlocfilehash: 31fe210b87a052438956d813db0d104e0f2cdb6e
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: d895e10c6b667a05156b2ce0f83f7776b9ba4f0a
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39041263"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51568766"
 ---
 # <a name="develop-an-iot-edge-solution-with-multiple-modules-in-visual-studio-code"></a>Разработка решения IoT Edge с несколькими модулями в Visual Studio Code
 

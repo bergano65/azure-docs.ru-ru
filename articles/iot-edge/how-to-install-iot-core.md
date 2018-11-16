@@ -2,19 +2,19 @@
 title: Установка Azure IoT Edge в ОС Windows IoT Базовая | Документация Майкрософт
 description: Установка среды выполнения Azure IoT Edge на устройстве под управлением ОС Windows IoT Базовая
 author: kgremban
-manager: timlt
+manager: philmea
 ms.author: kgremban
 ms.reviewer: veyalla
 ms.date: 03/05/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: ac729963e63bd97c83719e21dad3ad2cfc9b4fee
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: 17afc095fa0500ca98559a9523282d75949faa60
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49392800"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51564832"
 ---
 # <a name="install-the-iot-edge-runtime-on-windows-iot-core---preview"></a>Установка среды выполнения Azure IoT Edge в ОС Windows IoT Базовая (предварительная версия)
 

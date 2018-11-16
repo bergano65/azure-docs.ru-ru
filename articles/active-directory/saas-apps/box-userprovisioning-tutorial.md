@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2017
 ms.author: jeedes
-ms.openlocfilehash: f7fa4c9b0926d796c0c12b39d0056fe72e4028c7
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 3dac1d18a021c8d6c1b6e3db370c60b9aa782f1c
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44349030"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51625357"
 ---
 # <a name="tutorial-configure-box-for-automatic-user-provisioning"></a>Руководство по настройке Box для автоматической подготовки пользователей
 
@@ -55,7 +55,7 @@ ms.locfileid: "44349030"
 В портале Azure на вкладке **Box > Пользователи и группы** можно указать, каким пользователям и группам следует предоставить доступ к Box. Назначение пользователей или группы приводит к указанным далее результатам.
 
 * Azure AD позволяет назначенному пользователю (путем прямого назначения или членства в группе) проходить проверку подлинности в Box. Если пользователь не назначен, Azure AD запретит этому пользователю вход в Box, а на странице входа Azure AD будет показано сообщение об ошибке.
-* В [средство запуска приложений](../manage-apps/what-is-single-sign-on.md#deploying-azure-ad-integrated-applications-to-users)будет добавлена плитка приложения Box.
+* В [средство запуска приложений](../manage-apps/end-user-experiences.md)будет добавлена плитка приложения Box.
 * Если включена автоматическая подготовка, назначенные пользователи и (или) группы добавляются в очередь подготовки.
   
   * Если для подготовки были настроены только объекты пользователей, то в очередь подготовки помещаются все напрямую назначенные пользователи и все пользователи, входящие в назначенные группы. 

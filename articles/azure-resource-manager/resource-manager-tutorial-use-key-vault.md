@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 10/30/2018
+ms.date: 11/13/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 601d022917adc71ff3a3c728c7b674ae47a632c4
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: a3ca6422bf5335604e561b71db6c75a889a74586
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50238484"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51615761"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-resource-manager-template-deployment"></a>Руководство. Интеграция Azure Key Vault в развертывание шаблона Resource Manager
 
@@ -30,7 +30,7 @@ ms.locfileid: "50238484"
 
 > [!div class="checklist"]
 > * Создание Key Vault
-> * Открытие шаблона быстрого запуска
+> * открытие шаблона быстрого запуска;
 > * Изменение файла параметров
 > * Развертывание шаблона
 > * Проверка развертывания

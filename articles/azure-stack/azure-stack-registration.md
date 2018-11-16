@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 11/02/2018
 ms.author: jeffgilb
 ms.reviewer: brbartle
-ms.openlocfilehash: 4128f5e389ac6e35f863f02ff5b09ff96fadc527
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: be88e84c48ba31ce564c31eca1f54f164aeb9f93
+ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50962492"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51288243"
 ---
 # <a name="register-azure-stack-with-azure"></a>Регистрация Azure Stack в Azure
 
 Регистрация Azure Stack в Azure позволяет скачивать элементы marketplace из Azure и настраивать передачу коммерческих данных в корпорацию Майкрософт. После регистрации Azure Stack данные об использовании отсылаются в отдел коммерческих предложений Azure и их можно просматривать в подписке, используемой для регистрации.
 
-В этой статье описывается регистрация интегрированных систем Azure Stack с помощью Azure. Сведения о регистрации ASDK с помощью Azure см. в статье [Регистрация Azure Stack](.\asdk\asdk-register.md).
+В этой статье описывается регистрация интегрированных систем Azure Stack с помощью Azure. Сведения о регистрации ASDK с помощью Azure см. в статье [Регистрация Azure Stack](https://docs.microsoft.com/azure/azure-stack/asdk/asdk-register).
 
 > [!IMPORTANT]  
 > Регистрация требуется для поддержки полной функциональности Azure Stack, включая предложение элементов в marketplace. Кроме того, вы нарушите условия лицензии на Azure Stack, если не выполните регистрацию при применении модели выставления счетов с оплатой по мере использования. Дополнительные сведения о лицензировании Azure Stack см. на странице [Как купить](https://azure.microsoft.com/overview/azure-stack/how-to-buy/).

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: 60ecc2bc1d700c223d4a52b05e3b9362241f3f82
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: a4d62dd0bc984ce80324b405ddd0dcb625694b21
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50414623"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51612579"
 ---
 # <a name="extend-log-analytics-alerts-to-azure-alerts"></a>Расширение оповещений Log Analytics в оповещения Azure
 До недавнего времени в Azure Log Analytics были функции, которые позволяли заблаговременно уведомлять о некоторых условиях на основе данных Log Analytics. Ранее правила генерации оповещений задавались на портале Microsoft Operations Management Suite. Новые возможности оповещений теперь интегрированы в различные службы Microsoft Azure. Они доступны в разделе **Оповещения** в Azure Monitor на портале Azure и позволяют реализовать оповещения на основе журнала действий, метрик и журналов Log Analytics и Application Insights. 
@@ -60,5 +60,5 @@ ms.locfileid: "50414623"
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения о средствах [инициирования расширения оповещений из Log Analytics в Azure](monitoring-alerts-extend-tool.md).
-* Дополнительные сведения об [оповещениях Azure](monitoring-overview-unified-alerts.md).
+* Дополнительные сведения об [оповещениях Azure](monitoring-overview-alerts.md).
 * Узнайте о том, как создать [журнал оповещений в оповещениях Azure](monitor-alerts-unified-log.md).

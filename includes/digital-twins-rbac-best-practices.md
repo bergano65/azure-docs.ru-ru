@@ -1,19 +1,19 @@
 ---
 title: включение файла
 description: включение файла
-services: azure-digital-twins
-author: adamgerard
-ms.service: azure-digital-twins
+services: digital-twins
+author: kingdomofends
+ms.service: digital-twins
 ms.topic: include
-ms.date: 09/27/2018
+ms.date: 11/13/2018
 ms.author: adgera
 ms.custom: include file
-ms.openlocfilehash: a03f2b4e8d216db3764af03dc06b5188289ffc92
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 42aa275e692e4e2e9b7ca38825c828c1f56247fb
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50964209"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51628200"
 ---
 Управление доступом на основе ролей — это стратегия обеспечения безопасности на основе наследования для управления доступом, разрешениями и ролями. Дочерние роли наследуют разрешения от родительских. Разрешения также можно назначить без наследования от родительской роли и для настройки роли по мере необходимости.
 

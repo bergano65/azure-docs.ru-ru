@@ -2,19 +2,19 @@
 title: Установка Azure IoT Edge в ОС Windows с контейнерами Linux | Документация Майкрософт
 description: Инструкции по установке Azure IoT Edge в ОС Windows с контейнерами Linux
 author: kgremban
-manager: timlt
+manager: philmea
 ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
 ms.topic: conceptual
 ms.date: 08/27/2018
 ms.author: kgremban
-ms.openlocfilehash: c389f904fb3ea21c9bcc538a62c7a866ef3b254d
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 7bae81f2f8b9ef9f7da45aed3bf8d7b6e15c9d0b
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50739266"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51568273"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-windows-to-use-with-linux-containers"></a>Установка среды выполнения Azure IoT Edge в ОС Windows для использования с контейнерами Linux
 
@@ -64,7 +64,7 @@ Azure IoT Edge может использоваться для разработк
 
 ### <a name="option-2-install-and-automatically-provision"></a>Вариант 2. Установка и автоматическая подготовка
 
-1. Выполните действия, описанные в статье [Создание и подготовка имитированного устройства IoT Edge TPM в Windows](how-to-auto-provision-simulated-device-windows.md), чтобы установить службу подготовки устройств и получить для нее **идентификатор области**. После этого сымитируйте устройство доверенного платформенного модуля (TPM) и получите для него **идентификатор регистрации**, а затем создайте отдельную регистрацию. Зарегистрировав устройство в Центре Интернета вещей, продолжите установку.  
+1. Выполните действия, описанные в статье [Создание и подготовка имитированного устройства IoT Edge TPM в Windows](how-to-auto-provision-simulated-device-windows.md), чтобы установить Службу подготовки устройств и получить для нее **идентификатор области**. После этого сымитируйте устройство доверенного платформенного модуля (TPM) и получите для него **идентификатор регистрации**, а затем создайте отдельную регистрацию. Зарегистрировав устройство в Центре Интернета вещей, продолжите установку.  
 
    >[!TIP]
    >Не закрывайте окно с запущенным симулятором TPM во время установки и тестирования. 
