@@ -35,7 +35,7 @@
 # Практическое руководство
 ## Подключение к Интернету
 ### [Общедоступные серверы: балансировка сетевой нагрузки](../load-balancer/load-balancer-get-started-internet-portal.md?toc=%2fazure%2fnetworking%2ftoc.json)
-### [Общедоступные серверы: балансировка нагрузки приложений](../application-gateway/application-gateway-create-gateway-portal.md?toc=%2fazure%2fnetworking%2ftoc.json)
+### [Общедоступные серверы: балансировка нагрузки приложений](../application-gateway/quick-create-portal.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [Защита веб-приложений](../application-gateway/application-gateway-web-application-firewall-portal.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [Распределение трафика между расположениями](../traffic-manager/traffic-manager-configure-geographic-routing-method.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ## Внутренние подключения

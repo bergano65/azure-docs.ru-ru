@@ -28,8 +28,8 @@
 ### [Оценка базовых показателей в Интернете](../security-center/security-center-customize-os-security-config.md)
 
 ## Использование решений
-### [Решения для управления](../monitoring/monitoring-solutions.md)
-### [Целевые решения](../monitoring/monitoring-solution-targeting.md)
+### [Решения для управления](../azure-monitor/insights/solutions.md)
+### [Целевые решения](../azure-monitor/insights/solution-targeting.md)
 ### Информация и аналитика
 #### [Оценка AD](../log-analytics/log-analytics-ad-assessment.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 #### [Состояние репликации AD](../log-analytics/log-analytics-ad-replication-status.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
@@ -57,12 +57,12 @@
 #### [Оценка защиты от вредоносных программ](../log-analytics/log-analytics-malware.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 
 ## Создание решений
-### [Проектирование и сборка](../monitoring/monitoring-solutions-creating.md)
-### [Файл решения](../monitoring/monitoring-solutions-solution-file.md)
-### [Ресурсы службы автоматизации](../monitoring/monitoring-solutions-resources-automation.md)
-### [Поиск по журналам и оповещения](../monitoring/monitoring-solutions-resources-searches-alerts.md)
-### [Представления](../monitoring/monitoring-solutions-resources-views.md)
-### [Рекомендации по использованию хранилища данных SQL Azure](../monitoring/monitoring-solutions-best-practices.md)
+### [Проектирование и сборка](../azure-monitor/insights/solutions-creating.md)
+### [Файл решения](../azure-monitor/insights/solutions-solution-file.md)
+### [Ресурсы службы автоматизации](../azure-monitor/insights/solutions-resources-automation.md)
+### [Поиск по журналам и оповещения](../azure-monitor/insights/solutions-resources-searches-alerts.md)
+### [Представления](../azure-monitor/insights/solutions-resources-views.md)
+### [Рекомендации по использованию хранилища данных SQL Azure](../azure-monitor/insights/solutions-best-practices.md)
 
 ## Сценарии управления
 ### [Сбор аналитических данных из модуля runbook](../monitoring/monitoring-runbook-datacollect.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)

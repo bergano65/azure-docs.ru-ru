@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: dd5817cd2c6c3ce3e1205136232253c42a6b1ab6
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.openlocfilehash: 96efb64ce7d77da567d587857e4a25ae334a3ffc
+ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51298564"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51707118"
 documentType: LandingData
 title: Документация по службе "Машинное обучение Azure" (предварительная версия)
 metadata:
@@ -52,14 +52,14 @@ sections:
     - html: <a href="tutorial-auto-train-models">Автоматическое создание и настройка моделей</a>
     - html: <a href="tutorial-deploy-models-with-aml">Развертывание модели в качестве веб-службы</a>
   - type: paragraph
-    text: '<b>Примеры записных книжек</b>: изучите службу Машинного обучения Azure с помощью <a href="http://aka.ms/aml-notebooks">этих записных книжкек Jupyter</a>, доступных на GitHub.'
+    text: '<b>Примеры записных книжек</b>: изучите службу Машинного обучения Azure с помощью <a href="https://aka.ms/aml-notebooks">этих записных книжкек Jupyter</a>, доступных на GitHub.'
 - title: Справочные материалы
   items:
   - type: list
     style: unordered
     items:
-    - html: <a href="http://aka.ms/data-prep-sdk">Пакет SDK azureml-dataprep службы "Машинное обучение Azure"</a>
-    - html: <a href="http://aka.ms/aml-sdk">Пакет SDK службы "Машинное обучение Azure" для Python (основной пакет SDK)</a>
+    - html: <a href="https://aka.ms/data-prep-sdk">Пакет SDK azureml-dataprep службы "Машинное обучение Azure"</a>
+    - html: <a href="https://aka.ms/aml-sdk">Пакет SDK службы "Машинное обучение Azure" для Python (основной пакет SDK)</a>
     - html: <a href="https://aka.ms/aml-monitoring-sdk">Пакет SDK для мониторинга службы "Машинное обучение Azure"</a>
 - title: Другие технологии службы "Машинное обучение Azure"
   items:
