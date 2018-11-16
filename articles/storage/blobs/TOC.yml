@@ -11,34 +11,34 @@ items:
   items:
   - name: Создание учетной записи хранения
     href: ../common/storage-quickstart-create-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-  - name: Работа с большими двоичными объектами на портале Azure
-    href: storage-quickstart-blobs-portal.md
-  - name: Работа с большими двоичными объектами с помощью обозревателя хранилища
-    href: storage-quickstart-blobs-storage-explorer.md
-  - name: Работа с большими двоичными объектами с помощью PowerShell
-    href: storage-quickstart-blobs-powershell.md
-  - name: Работа с большими двоичными объектами с помощью интерфейса командной строки
-    href: storage-quickstart-blobs-cli.md
-  - name: Работа с большими двоичными объектами с помощью .NET
-    href: storage-quickstart-blobs-dotnet.md
-  - name: Работа с большими двоичными объектами с использованием Java (пакет SDK службы хранилища версии 10)
-    href: storage-quickstart-blobs-java-v10.md
-  - name: Работа с большими двоичными объектами с использованием Java (пакет SDK службы хранилища версии 7)
-    href: storage-quickstart-blobs-java.md
-  - name: Работа с большими двоичными объектами с помощью Python
-    href: storage-quickstart-blobs-python.md
-  - name: Работа с большими двоичными объектами с использованием Go
-    href: storage-quickstart-blobs-go.md
-  - name: Работа с большими двоичными объектами с помощью Ruby
-    href: storage-quickstart-blobs-ruby.md
-  - name: Работа с большими двоичными объектами с использованием Node.js (пакет SDK для Службы хранилища версии 10)
-    href: storage-quickstart-blobs-nodejs-v10.md
-  - name: Работа с большими двоичными объектами с использованием Node.js (пакет SDK для Службы хранилища (версия 2))
-    href: storage-quickstart-blobs-nodejs.md
-  - name: Работа с большими двоичными объектами с использованием JavaScript и HTML
-    href: storage-quickstart-blobs-javascript-client-libraries.md
-  - name: Работа с большими двоичными объектами с помощью PHP
-    href: storage-quickstart-blobs-php.md
+  - name: Управление большими двоичными объектами без кода
+    items:
+    - name: Портал Azure
+      href: storage-quickstart-blobs-portal.md
+    - name: Обозреватель хранилищ
+      href: storage-quickstart-blobs-storage-explorer.md
+    - name: PowerShell
+      href: storage-quickstart-blobs-powershell.md
+    - name: Интерфейс командной строки
+      href: storage-quickstart-blobs-cli.md
+  - name: Разработка с использованием большими двоичных объектов
+    items:
+    - name: .NET
+      href: storage-quickstart-blobs-dotnet.md
+    - name: Java (пакет SDK Службы хранилища версии 10)
+      href: storage-quickstart-blobs-java-v10.md
+    - name: Python
+      href: storage-quickstart-blobs-python.md
+    - name: Go
+      href: storage-quickstart-blobs-go.md
+    - name: Ruby
+      href: storage-quickstart-blobs-ruby.md
+    - name: Node.js (пакет SDK Службы хранилища версии 10)
+      href: storage-quickstart-blobs-nodejs-v10.md
+    - name: JS/HTML
+      href: storage-quickstart-blobs-javascript-client-libraries.md
+    - name: PHP
+      href: storage-quickstart-blobs-php.md
 - name: Учебники
   items:
   - name: Передача и обработка изображения
@@ -295,7 +295,7 @@ items:
         href: ../common/storage-import-export-file-format-log.md
 - name: Практическое руководство
   items:
-  - name: Разработка
+  - name: Разработка с использованием большими двоичных объектов
     items:
     - name: REST
       href: ../common/storage-rest-api-auth.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -305,6 +305,12 @@ items:
       href: storage-ios-how-to-use-blob-storage.md
     - name: Xamarin
       href: storage-xamarin-blob-storage.md
+    - name: Устаревшие пакеты SDK
+      items:
+      - name: Java (пакет SDK Службы хранилища версии 7)
+        href: storage-quickstart-blobs-java.md
+      - name: Node.js (пакет SDK Службы хранилища версии 2)
+        href: storage-quickstart-blobs-nodejs.md
   - name: управление
     items:
     - name: PowerShell для службы хранилища Azure
@@ -461,9 +467,9 @@ items:
       href: https://github.com/Azure/azure-storage-ruby
     - name: iOS
       href: https://github.com/Azure/azure-storage-ios
-ms.openlocfilehash: b4dbce75cab97213cdee9f248c245e4dd9fcf74f
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: d0273edd4660fb0b646844022205243a0af3b6b9
+ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51634045"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51712081"
