@@ -42,9 +42,9 @@
 #### [Office 365](oms-solution-office-365.md)
 #### [Анализ Service Fabric](../log-analytics/log-analytics-service-fabric.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 #### Схема услуги
-##### [Использование](../monitoring/monitoring-service-map.md)
-##### [Настройка](../monitoring/monitoring-service-map-configure.md)
-##### [Интеграция с Operations Manager](../monitoring/monitoring-service-map-scom.md)
+##### [Использование](../azure-monitor/insights/service-map.md)
+##### [Настройка](../azure-monitor/insights/service-map-configure.md)
+##### [Интеграция с Operations Manager](../azure-monitor/insights/service-map-scom.md)
 #### [Оценка SQL](../log-analytics/log-analytics-sql-assessment.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 #### [Surface Hub](../log-analytics/log-analytics-surface-hubs.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 #### [Анализ обновлений](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-analytics?f=255&MSPPError=-2147217396)
@@ -65,7 +65,7 @@
 ### [Рекомендации по использованию хранилища данных SQL Azure](../azure-monitor/insights/solutions-best-practices.md)
 
 ## Сценарии управления
-### [Сбор аналитических данных из модуля runbook](../monitoring/monitoring-runbook-datacollect.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
+### [Сбор аналитических данных из модуля runbook](../azure-monitor/platform/runbook-datacollect.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 
 # Ресурсы
 ## [Стратегия развития Azure](https://azure.microsoft.com/roadmap/)
