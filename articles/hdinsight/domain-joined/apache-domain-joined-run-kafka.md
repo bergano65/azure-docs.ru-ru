@@ -1,5 +1,5 @@
 ---
-title: Настройка политик Kafka в HDInsight с корпоративным пакетом безопасности — Azure
+title: Настройка политик Apache Kafka в HDInsight с Корпоративным пакетом безопасности — Azure
 description: Сведения о настройке политик Apache Ranger для Kafka в Azure HDInsight с корпоративным пакетом безопасности.
 services: hdinsight
 ms.service: hdinsight
@@ -8,16 +8,16 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.topic: tutorial
 ms.date: 09/24/2018
-ms.openlocfilehash: 48cfba6f62d75470efd27e3a4cdcb995e716798b
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: aa6702ccf00faa3d63d5458cfbd77ac15fbfbeaa
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51037147"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51633054"
 ---
-# <a name="tutorial-configure-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство. Настройка политик Kafka в HDInsight с использованием Корпоративного пакета безопасности (предварительная версия)
+# <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство. Настройка политик Apache Kafka в HDInsight с использованием Корпоративного пакета безопасности (предварительная версия)
 
-Сведения о настройке политик Apache Ranger для кластеров Kafka с корпоративным пакетом безопасности (ESP). Кластеры ESP подключены к домену, благодаря чему пользователи могут проходить аутентификацию с учетными данными домена. В этом руководстве вы создадите две политики Ranger для ограничения доступа к разделам `sales*` и `marketingspend`.
+Сведения о настройке политик Apache Ranger для кластеров Apache Kafka с Корпоративным пакетом безопасности (ESP). Кластеры ESP подключены к домену, благодаря чему пользователи могут проходить аутентификацию с учетными данными домена. В этом руководстве вы создадите две политики Ranger для ограничения доступа к разделам `sales*` и `marketingspend`.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 

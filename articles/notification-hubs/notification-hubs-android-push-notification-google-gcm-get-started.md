@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/05/2018
 ms.author: dimazaid
-ms.openlocfilehash: ab47db7629c92b0e6a5b268c9d233135485a37a1
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: dc2535bb8cae91e5df4554cdbc4239a5e81a4d90
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51237725"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51616271"
 ---
 # <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-cloud-messaging"></a>Руководство по отправке push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -148,8 +148,8 @@ ms.locfileid: "51237725"
     Обновите три заполнителя в следующем коде для класса `NotificationSettings`:
    
    * **SenderId**: укажите номер проекта, полученный ранее в [консоли Google Cloud](http://cloud.google.com/console).
-   * **HubListenConnectionString** — укажите для Центра строку подключения **DefaultListenAccessSignature**. Эту строку подключения можно скопировать, щелкнув **Политики доступа** на странице **Параметры** центра на [портал Azure].
-   * **HubName**: используйте имя центра уведомлений, которое отображается на [портал Azure] на странице центра.
+   * **HubListenConnectionString** — укажите для Центра строку подключения **DefaultListenAccessSignature**. Эту строку подключения можно скопировать, щелкнув **Политики доступа** на странице **Параметры** центра на [портале Azure].
+   * **HubName**: используйте имя центра уведомлений, которое отображается на [портале Azure] на странице центра.
      
      `NotificationSettings` :
      
@@ -447,7 +447,7 @@ ms.locfileid: "51237725"
       ![Тестирование на устройстве Android — уведомления][21]
 
 ### <a name="test-send-push-notifications-from-the-azure-portal"></a>Проверка отправки push-уведомлений с портала Azure
-Чтобы проверить получение push-уведомлений в приложении, отправьте уведомления на [портал Azure]. 
+Чтобы проверить получение push-уведомлений в приложении, отправьте уведомления на [портале Azure]. 
 
 1. В разделе **Устранение неполадок** выберите **Тестовая отправка**. 
 2. В качестве **платформы** выберите **Android**.
@@ -496,7 +496,7 @@ ms.locfileid: "51237725"
     ```
 3. В файле `NotificationSetting.java` добавьте приведенный ниже параметр в класс `NotificationSettings`.
    
-    Добавьте в `HubFullAccess` следующую строку подключения к центру: **DefaultFullSharedAccessSignature** . Чтобы скопировать эту строку подключения на [портал Azure], щелкните **Политики доступа** на странице **Параметры** в центре уведомлений.
+    Добавьте в `HubFullAccess` следующую строку подключения к центру: **DefaultFullSharedAccessSignature** . Чтобы скопировать эту строку подключения на [портале Azure], щелкните **Политики доступа** на странице **Параметры** в центре уведомлений.
    
     ```java
     public static String HubFullAccess = "<Enter Your DefaultFullSharedAccess Connection string>";
@@ -663,7 +663,7 @@ ms.locfileid: "51237725"
                         bodyStream.write(json.getBytes());
                         bodyStream.close();
 
-                        // Get reponse
+                        // Get response
                         urlConnection.connect();
                         int responseCode = urlConnection.getResponseCode();
                         if ((responseCode != 200) && (responseCode != 201)) {
@@ -731,4 +731,4 @@ ms.locfileid: "51237725"
 [Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
 [Use Notification Hubs to push notifications to users]: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
 [Use Notification Hubs to send breaking news]: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md
-[портал Azure]: https://portal.azure.com
+[портале Azure]: https://portal.azure.com

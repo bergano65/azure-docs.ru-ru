@@ -10,12 +10,12 @@ ms.component: bing-video-search
 ms.topic: quickstart
 ms.date: 02/12/2018
 ms.author: rosh
-ms.openlocfilehash: 4dcc9220d4d38bfe34514edd6a3ad47c7a7d4ba8
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 9a2544fe5a3c0bac763b9aee79c36893ec56f351
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47225622"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51686693"
 ---
 # <a name="quickstart-bing-video-search-sdk-with-node"></a>Краткое руководство: пакет SDK для поиска видео Bing с использованием Node
 
@@ -23,11 +23,13 @@ ms.locfileid: "47225622"
 
 [Исходный код примеров для пакета SDK Bing для поиска видео для Node](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples/blob/master/Samples/videoSearch.js) доступен на сайте GitHub.
 
-## <a name="application-dependencies"></a>Установка зависимостей
+## <a name="application-dependencies"></a>Зависимости приложения
 
-Чтобы установить консольное приложение, использующее пакет SDK Bing для поиска видео, выполните команду `npm install azure-cognitiveservices-videosearch` в среде разработки.
+Чтобы установить консольное приложение с помощью пакета SDK для API "Поиск видео Bing", сделайте следующее:
+* Выполните команду `npm install ms-rest-azure` в своей среде разработки.
+* Выполните команду `npm install azure-cognitiveservices-videosearch` в своей среде разработки.
 
-## <a name="video-search-client"></a>Клиент для поиска видео
+## <a name="video-search-client"></a>Клиент для API "Поиск видео"
 Получите [ключ доступа Cognitive Services](https://azure.microsoft.com/try/cognitive-services/) в разделе *Поиск*. Создайте экземпляр `CognitiveServicesCredentials`:
 ```
 const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;
