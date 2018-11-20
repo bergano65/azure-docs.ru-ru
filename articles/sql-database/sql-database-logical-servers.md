@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 10/15/2018
-ms.openlocfilehash: 83db2bcfe21edc9f8f2649ef8c2b3a23e412e39d
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.date: 10/19/2018
+ms.openlocfilehash: 6432c6b2c1c224f44b962df63e1502729f69e57f
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353991"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49470665"
 ---
 # <a name="azure-sql-database-logical-servers-and-their-management"></a>Логические серверы Базы данных SQL Azure и управление ими
 
@@ -170,22 +170,22 @@ ms.locfileid: "49353991"
 
 | Get-Help | ОПИСАНИЕ |
 | --- | --- |
-|[Серверы: создание или обновление](https://docs.microsoft.com/rest/api/sql/servers/servers_createorupdate/rest/api)|Создает или обновляет сервер.|
-|[Серверы: удаление](https://docs.microsoft.com/rest/api/sql/servers/servers_delete)|Удаляет сервер SQL Server.|
-|[Серверы: получение](https://docs.microsoft.com/rest/api/sql/servers/servers_get)|Получает сервер.|
-|[Серверы: вывод списка](https://docs.microsoft.com/rest/api/sql/servers/servers_list)|Возвращает список серверов.|
-|[Серверы: вывод списка по группе ресурсов](https://docs.microsoft.com/rest/api/sql/servers/servers_listbyresourcegroup)|Возвращает список серверов в группе ресурсов.|
-|[Серверы: обновление](https://docs.microsoft.com/rest/api/sql/servers/servers_update)|Обновляет существующий сервер.|
-|[Базы данных: создание или обновление](https://docs.microsoft.com/rest/api/sql/databases/databases_createorupdate)|Создает новую базу данных или обновляет имеющуюся.|
-|[Базы данных: удаление](https://docs.microsoft.com/rest/api/sql/databases/databases_delete)|Удаляет базу данных.|
-|[Базы данных: получение](https://docs.microsoft.com/rest/api/sql/databases/databases_get)|Получает базу данных.|
-|[Базы данных: вывод списка по эластичному пулу](https://docs.microsoft.com/rest/api/sql/databases/databases_listbyelasticpool)|Возвращает список баз данных в пуле эластичных баз данных.|
-|[Базы данных: вывод списка по серверу](https://docs.microsoft.com/rest/api/sql/databases/databases_listbyserver)|Возвращает список баз данных на сервере.|
-|[Базы данных: обновление](https://docs.microsoft.com/rest/api/sql/databases/databases_update)|Обновляет имеющуюся базу данных.|
-|[Правила брандмауэра: создание и изменение](https://docs.microsoft.com/rest/api/sql/firewallrules/firewallrules_createorupdate)|Создает или обновляет правило брандмауэра.|
-|[Правила брандмауэра: удаление](https://docs.microsoft.com/rest/api/sql/firewallrules/firewallrules_delete)|Удаляет правило брандмауэра.|
-|[Правила брандмауэра: получение](https://docs.microsoft.com/rest/api/sql/firewallrules/firewallrules_get)|Получает правило брандмауэра.|
-|[Правила брандмауэра: вывод списка по серверу](https://docs.microsoft.com/rest/api/sql/firewallrules/firewallrules_listbyserver)|Возвращает список правил брандмауэра.|
+|[Серверы: создание или обновление](https://docs.microsoft.com/rest/api/sql/servers/createorupdate)|Создает или обновляет сервер.|
+|[Серверы: удаление](https://docs.microsoft.com/rest/api/sql/servers/delete)|Удаляет сервер SQL Server.|
+|[Серверы: получение](https://docs.microsoft.com/rest/api/sql/servers/get)|Получает сервер.|
+|[Серверы: вывод списка](https://docs.microsoft.com/rest/api/sql/servers/list)|Возвращает список серверов.|
+|[Серверы: вывод списка по группе ресурсов](https://docs.microsoft.com/rest/api/sql/servers/listbyresourcegroup)|Возвращает список серверов в группе ресурсов.|
+|[Серверы: обновление](https://docs.microsoft.com/rest/api/sql/servers/update)|Обновляет существующий сервер.|
+|[Базы данных: создание или обновление](https://docs.microsoft.com/rest/api/sql/databases/createorupdate)|Создает новую базу данных или обновляет имеющуюся.|
+|[Базы данных: удаление](https://docs.microsoft.com/rest/api/sql/databases/delete)|Удаляет базу данных.|
+|[Базы данных: получение](https://docs.microsoft.com/rest/api/sql/databases/get)|Получает базу данных.|
+|[Базы данных: вывод списка по эластичному пулу](https://docs.microsoft.com/rest/api/sql/databases/listbyelasticpool)|Возвращает список баз данных в пуле эластичных баз данных.|
+|[Базы данных: вывод списка по серверу](https://docs.microsoft.com/rest/api/sql/databases/listbyserver)|Возвращает список баз данных на сервере.|
+|[Базы данных: обновление](https://docs.microsoft.com/rest/api/sql/databases/update)|Обновляет имеющуюся базу данных.|
+|[Правила брандмауэра: создание и изменение](https://docs.microsoft.com/rest/api/sql/firewallrules/createorupdate)|Создает или обновляет правило брандмауэра.|
+|[Правила брандмауэра: удаление](https://docs.microsoft.com/rest/api/sql/firewallrules/delete)|Удаляет правило брандмауэра.|
+|[Правила брандмауэра: получение](https://docs.microsoft.com/rest/api/sql/firewallrules/get)|Получает правило брандмауэра.|
+|[Правила брандмауэра: вывод списка по серверу](https://docs.microsoft.com/rest/api/sql/firewallrules/listbyserver)|Возвращает список правил брандмауэра.|
 
 ## <a name="next-steps"></a>Дополнительная информация
 

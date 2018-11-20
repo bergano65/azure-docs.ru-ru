@@ -15,22 +15,15 @@ items:
       href: ingest-data-event-hub.md
     - name: Пакетная обработка данных — Python
       href: python-ingest-data.md
-    - name: Пакетная обработка данных — пакет SDK для Node
-      href: node-ingest-data.md
+    expanded: true
   - name: Запрос данных
     items:
     - name: Веб-интерфейс
       href: web-query-data.md
     - name: Python
       href: python-query-data.md
-  - name: Визуализируйте данные
-    items:
-    - name: Power BI — соединитель
-      href: power-bi-connector.md
-    - name: Power BI — импортированный запрос
-      href: power-bi-imported-query.md
-    - name: Power BI — SQL-запрос
-      href: power-bi-sql-query.md
+    expanded: true
+  expanded: true
 - name: Учебники
   items:
   - name: Визуализация данных — Power BI
@@ -38,25 +31,17 @@ items:
 - name: Основные понятия
   items:
   - name: Общие сведения о приеме данных
-    displayName: pipelines, connectors, plugins, Python, .NET, Java, Node, REST
     href: ingest-data-overview.md
-  - name: Аналитика временных рядов
-    href: time-series-analysis.md
-  expanded: true
 - name: Практические руководства
   items:
   - name: Написание запросов
     href: write-queries.md
   - name: Принятие демонстрационных данных
     href: ingest-sample-data.md
-  - name: Удаление данных
-    href: delete-data.md
   - name: Управление разрешениями базы данных
     href: manage-database-permissions.md
   - name: Проверка работоспособности кластера
     href: check-cluster-health.md
-  - name: Управление масштабированием кластеров
-    href: manage-cluster-scaling.md
   - name: Устранение неполадок
     items:
     - name: Создание кластера
@@ -67,39 +52,11 @@ items:
       href: troubleshoot-database-table.md
 - name: Справочные материалы
   items:
-  - name: Язык запросов
-    href: /azure/kusto/query/
-  - name: Команды управления
-    href: /azure/kusto/management/
-  - name: Интерфейсы API
-    href: /azure/kusto/api/
-  - name: Средства
-    href: /azure/kusto/tools/
-  - name: Основные понятия
-    href: /azure/kusto/concepts/
-- name: Ресурсы
-  items:
-  - name: Блог
-    href: https://azure.microsoft.com/blog/tag/azure-data-explorer/
-  - name: Форумы
-    items:
-    - name: Переполнение стека
-      href: https://stackoverflow.com/questions/tagged/azure-data-explorer
-    - name: Техническое сообщество Майкрософт
-      href: https://techcommunity.microsoft.com/t5/Azure-Data-Explorer/bd-p/Kusto
-    - name: Форум MSDN
-      href: https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureKusto
-  - name: Отзыв о продукте
-    href: http://aka.ms/adefeedback
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/data-explorer/
-  - name: Калькулятор стоимости
-    href: http://aka.ms/adecostestimator
-  - name: Обновления службы
-    href: https://azure.microsoft.com/updates/?product=data-explorer
-ms.openlocfilehash: 2a46211975e094db74b501285b9725d78ddd4166
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+  - name: Справочник по языку
+    href: https://aka.ms/kustolangref
+ms.openlocfilehash: 6373afdadf9d3916cb8e10be976d141ba55177cf
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51852026"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46964945"

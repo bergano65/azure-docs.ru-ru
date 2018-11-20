@@ -6,12 +6,12 @@ description: Узнайте, как создавать мощные прилож
 ms.topic: hub-page
 featureFlags:
 - clicktale
-ms.openlocfilehash: b2819f0b3f59b4ca7b08c7caed0ce059b28a62e6
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: cf8564ed36402a3d42516c6aedb1eded566a7971
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51252434"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46977729"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -63,7 +63,7 @@ ms.locfileid: "51252434"
                                     </div>
                                 </div>
                                 <div class="cardText">
-                                    <span class="likeAnH3">Бесплатные курсы по Azure от Pluralsight</span>
+                                    <span class="likeAnH3">Бесплатные видеоуроки Pluralsight. Работа с Azure</span>
                                 </div>
                             </div>
                         </div>
@@ -169,7 +169,7 @@ Node.js</a>
                                                     </li>
                                                     <li>
                                                         <a class="barLink" href="/go/azure/">
-                                                            <img src="https://docs.microsoft.com/media/logos/logo_Go-lightblue.svg" alt="">
+                                                            <img src="https://docs.microsoft.com/en-us/media/logos/logo_Go-lightblue.svg" alt="">
 Go</a>
                                                     </li>
                                                 </ul></td></tr></table>
@@ -248,16 +248,6 @@ Azure PowerShell </a>
                                                 <h3>DevOps</h3>
                                                 <ul class="noBullet">
                                                     <li>
-                                                        <a class="barLink" href="https://docs.microsoft.com/azure/devops">
-                                                            <img src="https://docs.microsoft.com/media/logos/logo_vs-team-services.svg" alt="">
-Azure DevOps </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="barLink" href="https://docs.microsoft.com/azure/devops/pipelines/index">
-                                                            <img src="https://docs.microsoft.com/azure/devops/_img/index/devopsiconpipelines96.svg" alt="">
-Azure Pipelines </a>
-                                                    </li>
-                                                    <li>
                                                         <a class="barLink" href="/azure/ansible/">
                                                             <img src="media/index/ansible.svg" alt="">
 Ansible </a>
@@ -276,6 +266,16 @@ Jenkins </a>
                                                         <a class="barLink" href="/azure/terraform">
                                                             <img src="https://docs.microsoft.com/media/logos/logo_terraform.svg" alt="">
 Terraform </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="barLink" href="https://docs.microsoft.com/azure/devops/">
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_vs-team-services.svg" alt="">
+Azure DevOps </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="barLink" href="https://docs.microsoft.com/azure/devops">
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_vs-team-services.svg" alt="">
+Изучение DevOps в Azure </a>
                                                     </li>
                                                     <li>
                                                         <a class="barLink" href="/azure/devops-project/">
@@ -304,6 +304,11 @@ Terraform </a>
                                                         <a class="barLink" href="/learn/modules/principles-cloud-computing/">
                                                             <img src="/learn/achievements/principles-cloud-computing.svg" alt="">
 Принципы облачных вычислений </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="barLink" href="/learn/modules/build-a-serverless-web-app/">
+                                                            <img src="/learn/achievements/build-a-serverless-web-app.svg" alt="">
+Создание бессерверного веб-приложения </a>
                                                     </li>
                                                     <li>
                                                         <a class="barLink" href="/learn/modules/control-azure-services-with-cli/">
@@ -422,12 +427,6 @@ Terraform </a>
                                             <a href="/azure/virtual-machines/workloads/sap/hana-overview-architecture">
                                                 <img src="media/index/VirtualMachine.svg" alt="" />
                                                 <p>SAP HANA на крупных экземплярах Azure</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/azure/cyclecloud/">
-                                                <img src="media/index/logo_cyclecloud.svg" alt="" />
-                                                <p>CycleCloud</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -1050,7 +1049,7 @@ Terraform </a>
                                         <li>
                                             <a href="/azure/storage/">
                                                 <img src="media/index/Storage.svg" alt="" />
-                                                <p>Хранилище</p>
+                                                <p>служба хранилища.</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1102,15 +1101,9 @@ Terraform </a>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/azure/databox-family/">
+                                            <a href="/azure/databox/">
                                                 <img src="media/index/Service-icon.png" alt="" />
                                                 <p>Data Box</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/azure/avere-vfxt/">
-                                                <img src="media/index/avere.svg" alt="" />
-                                                <p>Avere vFXT</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1330,12 +1323,6 @@ Terraform </a>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/azure/iot-central/">
-                                                <img src="media/index/iot-central.svg" alt="" />
-                                                <p>IoT Central</p>
-                                            </a>
-                                        </li>
-                                        <li>
                                             <a href="/azure/iot-hub/">
                                                 <img src="media/index/IoTHub.svg" alt="" />
                                                 <p>Центр Интернета вещей</p>
@@ -1348,27 +1335,27 @@ Terraform </a>
                                             </a>
                                         </li>
                                         <li>
+                                            <a href="/azure/iot-central/">
+                                                <img src="media/index/iot-central.svg" alt="" />
+                                                <p>IoT Central</p>
+                                            </a>
+                                        </li>
+                                        <li>
                                             <a href="/azure/iot-suite/">
                                                 <img src="media/index/iot-solution-accelerators.svg" alt="" />
                                                 <p>Акселераторы решений для Интернета вещей</p>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/azure/digital-twins/">
-                                                <img src="media/index/digital_twin.svg" alt="" />
-                                                <p>Azure Digital Twins</p>
+                                            <a href="/azure/time-series-insights/">
+                                                <img src="media/index/time-series-insights.svg" alt="" />
+                                                <p>Аналитика временных рядов Azure</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/iot-dps/">
                                                 <img src="media/index/dps.svg" alt="" />
                                                 <p>Служба подготовки устройств к добавлению в Центр Интернета вещей</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/azure/time-series-insights/">
-                                                <img src="media/index/time-series-insights.svg" alt="" />
-                                                <p>Аналитика временных рядов Azure</p>
                                             </a>
                                         </li>
                                         <li>
@@ -2027,25 +2014,6 @@ Terraform </a>
                                     </div>
                                 </a>
                             </li>
-                            <li>
-                                <a href="/azure/cyclecloud/">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img src="media/index/logo_cyclecloud.svg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>CycleCloud</h3>
-                                                    <p>Кластеры HPC и большие вычислительные кластеры: создание, управление, использование, оптимизация</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
                         </ul>
                     </li>
                     <li>
@@ -2494,7 +2462,7 @@ Terraform </a>
                                 </a>
                             </li>
                             <li>
-                                <a href="/en-us/azure/databox-family/" data-linktype="absolute-path">
+                                <a href="/en-us/azure/databox/" data-linktype="absolute-path">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -2504,27 +2472,8 @@ Terraform </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Семейство устройств Data Box</h3>
-                                                    <p>Семейство устройств хранения, которые позволяют передавать данные в автономном и сетевом режимах</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/en-us/azure/avere-vfxt/" data-linktype="absolute-path">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img alt="" src="media/index/avere.svg" data-linktype="relative-path">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Avere vFXT</h3>
-                                                    <p>Выполнение высокопроизводительных рабочих нагрузок на основе файлов в Azure</p>
+                                                    <h3>Data Box</h3>
+                                                    <p>Экономичная и безопасная передача больших объемов данных при ограниченной доступности сети</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -3323,7 +3272,7 @@ Terraform </a>
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage">
-                                                        <img src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />
+                                                        <img src="https://docs.microsoft.com/en-us/media/logos/logo_azure.svg" alt="" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -3942,25 +3891,6 @@ Terraform </a>
                                 </a>
                             </li>
                             <li>
-                                <a href="/azure/iot-central/">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img src="media/index/iot-central.svg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>IoT Central</h3>
-                                                    <p>Откройте для себя решения SaaS для Интернета вещей, не требующие опыта работы в облаке</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
                                 <a href="/azure/iot-hub/">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -3999,6 +3929,25 @@ Terraform </a>
                                 </a>
                             </li>
                             <li>
+                                <a href="/azure/iot-central/">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage">
+                                                        <img src="media/index/iot-central.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>IoT Central</h3>
+                                                    <p>Откройте для себя решения SaaS для Интернета вещей, не требующие опыта работы в облаке</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="/azure/iot-suite/">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -4018,18 +3967,18 @@ Terraform </a>
                                 </a>
                             </li>
                             <li>
-                                <a href="/azure/digital-twins/">
+                                <a href="/azure/time-series-insights/">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage">
-                                                        <img src="media/index/digital_twin.svg" alt="" />
+                                                        <img src="media/index/time-series-insights.svg" alt="" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Azure Digital Twins</h3>
-                                                    <p>Создание цифровых реплик сред и инфраструктуры</p>
+                                                    <h3>Аналитика временных рядов Azure</h3>
+                                                    <p>Мгновенный просмотр и анализ данных временных рядов</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -4049,25 +3998,6 @@ Terraform </a>
                                                 <div class="cardText">
                                                     <h3>Служба подготовки устройств к добавлению в Центр Интернета вещей</h3>
                                                     <p>Полностью автоматическая JIT-подготовка для Центра Интернета вещей Azure</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/azure/time-series-insights/">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img src="media/index/time-series-insights.svg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Аналитика временных рядов Azure</h3>
-                                                    <p>Мгновенный просмотр и анализ данных временных рядов</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5888,7 +5818,7 @@ Azure для разработчиков Java </h3>
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage">
-                                                    <img src="https://docs.microsoft.com/media/logos/logo_Go-lightblue.svg" alt="" />
+                                                    <img src="https://docs.microsoft.com/en-us/media/logos/logo_Go-lightblue.svg" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
@@ -5978,30 +5908,6 @@ Azure CLI </h3>
                             <li>
                                 <div class="container">
                                     <h2>Инструменты и расширения</h2>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="https://docs.microsoft.com/media/logos/logo_visual-studio.svg" alt="" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>
-                                                    <a href="/visualstudio/azure/">Visual Studio</a>
-                                                </h3>
-                                                <p>
-                                                    <a href="https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=navigation+cta&utm_content=download+vs2017">Загрузки для Windows</a>
-                                                </p>
-                                                 <p>
-                                                    <a href="https://visualstudio.microsoft.com/vs/mac/">Загрузка для Mac</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </li>
                             <li>
@@ -6159,13 +6065,13 @@ Azure Resource Manager </h3>
                                                     <a href="/azure/vs-azure-tools-storage-manage-with-storage-explorer">Начало работы</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=722418">Загрузка для Linux</a>
+                                                    <a href="http://go.microsoft.com/fwlink/?LinkId=722418">Загрузка для Linux</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=708342">Загрузка для Mac</a>
+                                                    <a href="http://go.microsoft.com/fwlink/?LinkId=708342">Загрузка для Mac</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=708343">Загрузки для Windows</a>
+                                                    <a href="http://go.microsoft.com/fwlink/?LinkId=708343">Загрузки для Windows</a>
                                                 </p>
                                             </div>
                                         </div>

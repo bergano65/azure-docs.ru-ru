@@ -11,13 +11,13 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 10/15/2018
-ms.openlocfilehash: 169ebe45287721305800e511174784417569d7b4
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.date: 10/19/2018
+ms.openlocfilehash: deadbc8186d80b050fdb40879ecf29fd229c8709
+ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49352716"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49465459"
 ---
 # <a name="use-read-only-replicas-to-load-balance-read-only-query-workloads-preview"></a>Использование реплик только для чтения для распределения рабочих нагрузок запросов только для чтения (предварительная версия)
 
@@ -31,7 +31,7 @@ ms.locfileid: "49352716"
 
 Эти реплики имеют тот же объем вычислительных ресурсов, что и реплика для чтения и записи, используемая при обычном подключении к базе данных. Благодаря функции **Горизонтальное масштабирование для чтения** можно распределять рабочие нагрузки базы данных SQL только для чтения за счет емкости одной из реплик только для чтения вместо совместного использования реплики для чтения и записи. Таким образом рабочая нагрузка только для чтения изолируется от главных рабочих нагрузок чтения и записи и не влияет на их производительность. Эта функция предназначена для приложений, в которые включены такие логически разделенные рабочие нагрузки только для чтения, как аналитика, и поэтому она может обеспечить повышение производительности с помощью этой дополнительной емкости без дополнительных затрат.
 
-Чтобы использовать горизонтальное масштабирование для чтения вместе с определенной базой данных, его следует явно включить в момент создания базы данных. Эту функцию также можно включить позже путем изменения ее конфигурации с помощью PowerShell, вызвав командлет [Set-AzureRmSqlDatabase](/powershell/module/azurerm.sql/set-azurermsqldatabase) или [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase), или путем использования метода [создания или обновления базы данных](https://docs.microsoft.com/rest/api/sql/databases/databases_createorupdate) в REST API Azure Resource Manager.
+Чтобы использовать горизонтальное масштабирование для чтения вместе с определенной базой данных, его следует явно включить в момент создания базы данных. Эту функцию также можно включить позже путем изменения ее конфигурации с помощью PowerShell, вызвав командлет [Set-AzureRmSqlDatabase](/powershell/module/azurerm.sql/set-azurermsqldatabase) или [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase), или путем использования метода [создания или обновления базы данных](https://docs.microsoft.com/rest/api/sql/databases/createorupdate) в REST API Azure Resource Manager.
 
 Когда для базы данных будет включена функция горизонтального масштабирования для чтения, приложения, которые подключаются к ней, будут перенаправлены к реплике для чтения и записи или к реплике только для чтения текущей базы данных в соответствии со свойством `ApplicationIntent`, настроенным в строке подключения приложения. Дополнительные сведения о свойстве `ApplicationIntent` см. в разделе об [указании назначения приложения](https://docs.microsoft.com/sql/relational-databases/native-client/features/sql-server-native-client-support-for-high-availability-disaster-recovery#specifying-application-intent).
 
@@ -118,7 +118,7 @@ Body:
 }
 ```
 
-Дополнительные сведения см. в статье о [создании или обновлении базы данных](https://docs.microsoft.com/rest/api/sql/databases/databases_createorupdate).
+Дополнительные сведения см. в статье о [создании или обновлении базы данных](https://docs.microsoft.com/rest/api/sql/databases/createorupdate).
 
 ## <a name="using-read-scale-out-with-geo-replicated-databases"></a>Использование горизонтального масштабирования для чтения с геореплицированными базами данных
 
@@ -130,4 +130,4 @@ Body:
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения об использовании PowerShell для установки функции горизонтального масштабирования для чтения см. в разделах о командлетах [Set-AzureRmSqlDatabase](/powershell/module/azurerm.sql/set-azurermsqldatabase) или [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase).
-- Дополнительные сведения об использовании интерфейса REST API для включения функции горизонтального масштабирования для чтения см. в [этой статье](https://docs.microsoft.com/rest/api/sql/databases/databases_createorupdate).
+- Дополнительные сведения об использовании интерфейса REST API для включения функции горизонтального масштабирования для чтения см. в [этой статье](https://docs.microsoft.com/rest/api/sql/databases/createorupdate).
