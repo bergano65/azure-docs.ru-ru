@@ -11,12 +11,12 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: mmontwil
-ms.openlocfilehash: f07c5a3e28abc3600b13da2320e55860ede2f7c5
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.openlocfilehash: 6bee2d4e41c383edac81a6b511cf5cfc5d68da9f
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50978286"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636634"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-java"></a>Начало работы в Azure Dev Spaces с использованием Java
 
@@ -71,7 +71,7 @@ az group create --name MyResourceGroup --location <region>
 Чтобы создать кластер Kubernetes, выполните следующую команду:
 
 ```cmd
-az aks create -g MyResourceGroup -n MyAKS --location <region> --kubernetes-version 1.11.2 --enable-addons http_application_routing
+az aks create -g MyResourceGroup -n MyAKS --location <region> --kubernetes-version 1.11.2 --enable-addons http_application_routing --generate-ssh-keys
 ```
 
 Создание кластера занимает несколько минут.
@@ -83,6 +83,9 @@ az aks create -g MyResourceGroup -n MyAKS --location <region> --kubernetes-versi
    ```cmd
    az aks use-dev-spaces -g MyResourceGroup -n MyAKS
    ```
+
+> [!IMPORTANT]
+> Процесс настройки Azure Dev Spaces удалит пространство имен `azds` в кластере, если оно существует.
 
 ## <a name="get-kubernetes-debugging-for-vs-code"></a>Получение функции отладки Kubernetes для VS Code
 Для разработчиков .NET Core и Node.js, которые используют VS Code, доступны широкие возможности, такие как функция отладки Kubernetes.

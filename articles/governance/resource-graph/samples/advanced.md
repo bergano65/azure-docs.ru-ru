@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: resource-graph
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: fbbdc4a67cd6f2e7d74031f7acc584bf0004bea4
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: 43cf9f5ec0f9c265efa0e59eadbf6c9bbe4f7c3f
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50085382"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51682885"
 ---
 # <a name="advanced-resource-graph-queries"></a>Продвинутые запросы графика ресурсов
 
@@ -72,7 +72,7 @@ Search-AzureRmGraph -Query "project tags | summarize buildschema(tags)"
 ## <a name="vm-regex"></a>Виртуальные машины, сопоставленные по регулярному выражению
 
 Этот запрос выполняет поиск виртуальных машин, которые соответствуют [регулярному выражению](/dotnet/standard/base-types/regular-expression-language-quick-reference) (известному как _регулярное выражение_).
-**Соответствие регулярному выражению @** позволяет определить регулярное выражение для сопоставления, которое является **^Contoso(.*) [0-9]+$**. Дополнительные сведения об определении регулярного выражения см. в разделе:
+**matches regex @** позволяет определить регулярное выражение для сопоставления, которое равно `^Contoso(.*)[0-9]+$`. Дополнительные сведения об определении регулярного выражения см. в разделе:
 
 - `^` — Сопоставление должно начаться в начале строки.
 - `Contoso` — Строка с учетом регистра.

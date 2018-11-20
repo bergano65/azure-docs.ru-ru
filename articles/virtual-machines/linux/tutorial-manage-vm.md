@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 03/23/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 01e8f74f409271810652a9202b634762ad88dcea
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 5605ac9f3ac4f9a1c85cfedf257cb721205564db
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46981252"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51613432"
 ---
 # <a name="tutorial-create-and-manage-linux-vms-with-the-azure-cli"></a>Руководство по созданию виртуальных машин Linux и управлению ими с помощью Azure CLI
 
@@ -262,7 +262,7 @@ az vm start --resource-group myResourceGroupVM --name myVM
 | Освобождено | Указывает, что виртуальная машина удалена из гипервизора, но по-прежнему доступна в плоскости управления. За виртуальные машины в освобожденном состоянии не взимается плата за вычислительные операции. |
 | - | Указывает, что состояние включенной виртуальной машины неизвестно. |
 
-### <a name="find-power-state"></a>Поиск состояние включения
+### <a name="find-the-power-state"></a>Поиск состояния электропитания
 
 Чтобы получить сведения о состоянии конкретной виртуальной машины, используйте команду [az vm get-instance-view](/cli/azure/vm#az_vm_get_instance_view). Необходимо указать допустимое имя виртуальной машины и группы ресурсов. 
 

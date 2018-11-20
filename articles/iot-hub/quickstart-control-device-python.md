@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 04/30/2018
 ms.author: dobett
-ms.openlocfilehash: 06ca8269fc41807dd6cb27bab22d10e45f025ee2
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 08b2018ec1f1d34291778df0fa217b874cc3ffab
+ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49363866"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "51515103"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-python"></a>Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Python)
 
@@ -26,6 +26,7 @@ ms.locfileid: "49363866"
 В этом кратком руководстве используется два предварительно созданных приложения Python:
 
 * Приложение имитированного устройства, реагирующее на прямые методы, вызванные из внутреннего приложения. Чтобы получать вызовы прямого метода, это приложение подключается к конечной точке конкретного устройства в Центре Интернета вещей.
+
 * Внутреннее приложение, вызывающее прямые методы в имитированном устройстве. Чтобы вызвать прямой метод в устройстве, это приложение подключается к конечной точке на стороне службы в Центре Интернета вещей.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
@@ -54,7 +55,7 @@ python3 --version
 
 Если вы закончили работу с предыдущим [руководством по отправке данных телеметрии с устройства в Центр Интернета вещей](quickstart-send-telemetry-python.md), этот шаг можно пропустить.
 
-[!INCLUDE [iot-hub-quickstarts-create-hub](../../includes/iot-hub-quickstarts-create-hub.md)]
+[!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
 ## <a name="register-a-device"></a>Регистрация устройства
 
@@ -73,7 +74,7 @@ python3 --version
     az iot hub device-identity create --hub-name YourIoTHubName --device-id MyPythonDevice
     ```
 
-1. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
+2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
 
     **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
 
@@ -87,12 +88,14 @@ python3 --version
 
     Это значение понадобится позже в рамках этого краткого руководства.
 
-1. Чтобы разрешить внутреннему приложению подключаться к Центру Интернета вещей и получать сообщения, вам необходима _строка подключения к службе_. Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
+3. Чтобы разрешить внутреннему приложению подключаться к Центру Интернета вещей и получать сообщения, вам необходима _строка подключения к службе_. Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
 
     **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub show-connection-string --hub-name YourIoTHubName --output table
+    az iot hub show-connection-string \
+      --hub-name YourIoTHubName \
+      --output table
     ```
 
     Запишите строку подключения к службе, которая выглядит так:
@@ -125,7 +128,7 @@ python3 --version
 
     На следующем снимке экрана показан пример выходных данных, когда приложение имитированного устройства отправляет данные телеметрии в Центр Интернета вещей:
 
-    ![Запуск виртуального устройства](media/quickstart-control-device-python/SimulatedDevice-1.png)
+    ![Запуск виртуального устройства](./media/quickstart-control-device-python/SimulatedDevice-1.png)
 
 ## <a name="call-the-direct-method"></a>Вызов прямого метода
 
@@ -151,11 +154,11 @@ python3 --version
 
     На следующем снимке экрана показан пример выходных данных, когда приложение выполняет вызов прямого метода к устройству и получает подтверждение:
 
-    ![Запуск внутреннего приложения](media/quickstart-control-device-python/BackEndApplication.png)
+    ![Запуск внутреннего приложения](./media/quickstart-control-device-python/BackEndApplication.png)
 
     После запуска внутреннего приложения в окне консоли, в котором выполняется имитированное устройство, отобразится сообщение и изменится интервал, с которым это приложение отправляет сообщения:
 
-    ![Изменения в имитированном клиенте](media/quickstart-control-device-python/SimulatedDevice-2.png)
+    ![Изменения в имитированном клиенте](./media/quickstart-control-device-python/SimulatedDevice-2.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

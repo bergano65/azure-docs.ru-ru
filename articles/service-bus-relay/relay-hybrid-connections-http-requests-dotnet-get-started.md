@@ -12,72 +12,65 @@ ms.devlang: tbd
 ms.topic: get-started-article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 08/16/2018
+ms.date: 11/01/2018
 ms.author: spelluru
-ms.openlocfilehash: 55e97ff95245ce222ccbc2a99f6ae2882cef3715
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: de905466d47774decf864ace5464bb2a68e5e6bc
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51248781"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51612004"
 ---
 # <a name="get-started-with-relay-hybrid-connections-http-requests-in-net"></a>Начало работы с HTTP-запросами гибридных подключений Azure Relay в .NET
 [!INCLUDE [relay-selector-hybrid-connections](../../includes/relay-selector-hybrid-connections.md)]
 
-В этом руководстве содержатся основные сведения о [гибридных подключениях ретранслятора Azure](relay-what-is-it.md#hybrid-connections). Узнайте, как с помощью Microsoft .NET создать клиентское приложение, которое отправляет запросы к соответствующему приложению, ожидающему передачи данных. 
+В этом кратком руководстве описано, как создать приложения .NET, которые отправляют и получают сообщения по протоколу HTTP. Приложения используют функцию гибридных подключений службы Azure Relay. См. дополнительные сведения о [службе Azure Relay](relay-what-is-it.md). 
 
-## <a name="what-will-be-accomplished"></a>Что будет выполнено
-Для гибридных подключений требуется как компонент клиента, так и компонент сервера. В этом руководстве необходимо выполнить следующие инструкции, чтобы создать два консольных приложения:
+При работе с этим кратким руководством вы выполните следующие задачи:
 
 1. Создайте пространство имен ретранслятора с помощью портала Azure.
 2. Создайте гибридное подключение в этом пространстве имен с помощью портала Azure.
-3. Создайте серверное консольное приложение (прослушиватель) для получения запросов.
-4. Создайте клиентское консольное приложение (отправитель) для отправки запросов.
+3. Создайте серверное консольное приложение (прослушиватель) для получения сообщений.
+4. Создайте клиентское консольное приложение (отправитель) для отправки сообщений.
+5. Запустите приложения. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с данным руководством вам потребуется:
 
-* [Visual Studio 2015 или более поздней версии](https://www.visualstudio.com). В описанных в этом руководстве примерах используется Visual Studio 2017.
-* Подписка Azure.
+* [Visual Studio 2015 или более поздней версии](http://www.visualstudio.com). В описанных в этом руководстве примерах используется Visual Studio 2017.
+* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
 
-[!INCLUDE [create-account-note](../../includes/create-account-note.md)]
-
-## <a name="1-create-a-namespace-by-using-the-azure-portal"></a>1. Создание пространства имен с помощью портала Azure.
-Если пространство имен ретранслятора уже создано, перейдите к разделу [Создание гибридного подключения с помощью портала Azure](#2-create-a-hybrid-connection-using-the-azure-portal).
-
+## <a name="create-a-namespace"></a>Создание пространства имен
 [!INCLUDE [relay-create-namespace-portal](../../includes/relay-create-namespace-portal.md)]
 
-## <a name="2-create-a-hybrid-connection-by-using-the-azure-portal"></a>2. Создание гибридного подключения с помощью портала Azure.
-Если гибридное подключение уже создано, перейдите к разделу о [создании серверного приложения](#3-create-a-server-application-listener).
-
+## <a name="create-a-hybrid-connection"></a>Создание гибридного подключения
 [!INCLUDE [relay-create-hybrid-connection-portal](../../includes/relay-create-hybrid-connection-portal.md)]
 
-## <a name="3-create-a-server-application-listener"></a>3. Создание серверного приложения (прослушивателя)
+## <a name="create-a-server-application-listener"></a>Создание серверного приложения (прослушивателя)
 Создайте в Visual Studio консольное приложение C# для прослушивания и получения сообщений, отправленных ретранслятором.
 
 [!INCLUDE [relay-hybrid-connections-http-requests-dotnet-get-started-server](../../includes/relay-hybrid-connections-http-requests-dotnet-get-started-server.md)]
 
-## <a name="4-create-a-client-application-sender"></a>4. Создание клиентского приложения (отправителя)
+## <a name="create-a-client-application-sender"></a>Создание клиентского приложения (отправителя)
 Создайте в Visual Studio консольное приложение C# для отправки сообщений в ретранслятор.
 
 [!INCLUDE [relay-hybrid-connections-http-requests-dotnet-get-started-client](../../includes/relay-hybrid-connections-http-requests-dotnet-get-started-client.md)]
 
-## <a name="5-run-the-applications"></a>5. Запуск приложений
+## <a name="run-the-applications"></a>Запуск приложений
 1. Запустите серверное приложение. В консоли отображается пример выходных данных.
 
     ```
     Online
     Server listening
     ```
-1. Выполните клиентское приложение В окне клиента вы увидите `hello!`. Клиент отправил HTTP-запрос серверу, и получил ответ `hello!`. 
+1. Выполните клиентское приложение В окне клиента вы увидите `hello!`. Клиент отправил HTTP-запрос к серверу и получил ответ `hello!`. 
 3. Теперь, чтобы закрыть окна консоли, в обоих ее окнах нажмите клавишу **ВВОД**. 
 
 Поздравляем, вы создали приложение для гибридных подключений.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Вопросы и ответы по ретранслятору](relay-faq.md)
-* [Создание пространства имен](relay-create-namespace-portal.md)
-* [Приступая к работе с Node](relay-hybrid-connections-node-get-started.md)
+В этом кратком руководстве описано, как создать клиентские и серверные приложения .NET, которые отправляют и получают сообщения по протоколу HTTP. Функция гибридных подключений службы Azure Relay также поддерживает использование протокола WebSocket для отправки и получения сообщений. См. дополнительные сведения об [использовании протокола WebSocket с гибридными подключениями Azure Relay](relay-hybrid-connections-dotnet-get-started.md).
 
+В этом кратком руководстве описано, как использовать .NET Framework для создания клиентских и серверных приложений. Сведения о том, как создавать клиентские и серверные приложения с помощью Node.js, см. в руководствах по использованию [Node.js и WebSocket](relay-hybrid-connections-node-get-started.md) или [Node.js и HTTP](relay-hybrid-connections-http-requests-dotnet-get-started.md).

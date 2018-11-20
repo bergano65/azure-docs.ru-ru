@@ -10,25 +10,24 @@ ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 10/16/2018
+ms.date: 11/11/2018
 ms.author: juliako
-ms.openlocfilehash: 404a40f8949add77153d3fbf53b5c68dfb866128
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: d2d648dd02426596e1c070ffd494458c68060085
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49377886"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51613449"
 ---
 # <a name="tutorial-upload-encode-and-stream-videos-using-apis"></a>Руководство. Отправка, кодирование и потоковая передача видео с помощью API
 
-Службы мультимедиа позволяют кодировать файлы мультимедиа в разные форматы, пригодные для воспроизведения в разных браузерах и на различных устройствах. Например, можно организовать потоковую передачу содержимого в форматах HLS или MPEG DASH от Apple. Перед тем как передавать файл мультимедиа высокого качества, его нужно закодировать. Рекомендации по кодировке см. в статье [Encoding with Azure Media Services](encoding-concept.md) (Кодирование в Службах мультимедиа Azure). В этом руководстве описана отправка локального файла видео и кодирование загруженного файла. Также можно закодировать содержимое, которое доступно через URL-адрес HTTPS. Дополнительные сведения см. в разделе [Создание входных данных задания из URL-адреса HTTP (HTTPS)](job-input-from-http-how-to.md).
+Службы мультимедиа Azure позволяют кодировать файлы мультимедиа в разные форматы, пригодные для воспроизведения в разных браузерах и на различных устройствах. Например, можно организовать потоковую передачу содержимого в форматах HLS или MPEG DASH от Apple. Перед тем как передавать файл мультимедиа высокого качества, его нужно закодировать. Рекомендации по кодировке см. в статье [Encoding with Azure Media Services](encoding-concept.md) (Кодирование в Службах мультимедиа Azure). В этом руководстве описана отправка локального файла видео и кодирование загруженного файла. Также можно закодировать содержимое, которое доступно через URL-адрес HTTPS. Дополнительные сведения см. в разделе [Создание входных данных задания из URL-адреса HTTP (HTTPS)](job-input-from-http-how-to.md).
 
 ![Воспроизведение видео](./media/stream-files-tutorial-with-api/final-video.png)
 
 В этом учебнике описаны следующие процедуры.    
 
 > [!div class="checklist"]
-> * Создание учетной записи служб мультимедиа
 > * Доступ к API Служб мультимедиа.
 > * Настройка примера приложения
 > * Проверка кода, который загружает, кодирует и выполняет потоковую передачу
@@ -40,7 +39,14 @@ ms.locfileid: "49377886"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Вы можете скачать [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) бесплатно, если у вас нет Visual Studio.
+- Вы можете скачать [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) бесплатно, если у вас нет Visual Studio.
+- Установите и используйте CLI на локальном компьютере. Для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
+
+    Сейчас в Azure Cloud Shell работают не все команды [интерфейса командной строки Служб мультимедиа версии 3](https://aka.ms/ams-v3-cli-ref). Рекомендуется использовать интерфейс командной строки локально.
+
+- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
+
+    Запишите значения, которые вы использовали в качестве имени группы ресурсов и имени учетной записи Служб мультимедиа.
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
 
@@ -51,10 +57,6 @@ ms.locfileid: "49377886"
  ```
 
 Этот образец находится в папке [UploadEncodeAndStreamFiles](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/tree/master/AMSV3Tutorials/UploadEncodeAndStreamFiles).
-
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
-
-[!INCLUDE [media-services-cli-create-v3-account-include](../../../includes/media-services-cli-create-v3-account-include.md)]
 
 [!INCLUDE [media-services-v3-cli-access-api-include](../../../includes/media-services-v3-cli-access-api-include.md)]
 
@@ -185,11 +187,11 @@ ms.locfileid: "49377886"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вам больше не нужны какие-либо ресурсы в группе ресурсов, включая Службы мультимедиа и учетные записи хранения, созданные для этого руководства, удалите группу ресурсов, созданную ранее. Для этого можно использовать средство **CloudShell**.
+Если вам больше не нужны какие-либо ресурсы в группе ресурсов, включая Службы мультимедиа и учетные записи хранения, созданные для этого руководства, удалите группу ресурсов, созданную ранее.
 
-В **CloudShell** выполните следующую команду:
+Выполните следующую команду CLI:
 
-```azurecli-interactive
+```azurecli
 az group delete --name amsResourceGroup
 ```
 

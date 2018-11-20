@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 08/24/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: abd751cf867fea2e634161c4cf0b1e84acbe18c6
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: a543561658d593398ca74f8ae68dd6d0d27bcdaa
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49354112"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636462"
 ---
 # <a name="tutorial-bind-an-existing-custom-ssl-certificate-to-azure-web-apps"></a>Руководство. Привязывание существующего настраиваемого SSL-сертификата к веб-приложениям Azure
 
@@ -260,7 +260,9 @@ New-AzureRmWebAppSSLBinding `
     -SslState SniEnabled
 ```
 ## <a name="public-certificates-optional"></a>Открытые сертификаты (необязательно)
-Вы можете передать в свое веб-приложение [открытые сертификаты](https://blogs.msdn.microsoft.com/appserviceteam/2017/11/01/app-service-certificates-now-supports-public-certificates-cer/), чтобы оно могло подключаться к внешней службе, которая использует аутентификацию по сертификатам.  Дополнительные сведения о загрузке и использовании открытых сертификатов в приложении см. в статье [Использование SSL-сертификата в коде приложения службы приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-web-ssl-cert-load).  Кроме того, вы можете использовать открытые сертификаты в приложениях службы приложений. Чтобы хранить сертификат в хранилище сертификатов LocalMachine, нужно использовать веб-приложение в среде службы приложений. Дополнительные сведения см. в статье о [настройке открытых сертификатов в веб-приложении](https://blogs.msdn.microsoft.com/appserviceteam/2017/11/01/app-service-certificates-now-supports-public-certificates-cer).
+Если вашему приложению требуется доступ к удаленным ресурсам от имени клиента, а удаленный ресурс требует проверки подлинности на основе сертификата, вы можете передать в веб-приложение [открытые сертификаты](https://blogs.msdn.microsoft.com/appserviceteam/2017/11/01/app-service-certificates-now-supports-public-certificates-cer/). Для SSL-привязок приложения открытые сертификаты не требуются.
+
+Дополнительные сведения о загрузке и использовании открытых сертификатов в приложении см. в статье [Использование SSL-сертификата в коде приложения службы приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-web-ssl-cert-load). Кроме того, можно использовать открытые сертификаты для приложений в средах службы приложений. Чтобы хранить сертификат в хранилище сертификатов LocalMachine, нужно использовать веб-приложение в среде службы приложений. Дополнительные сведения см. в статье о [настройке открытых сертификатов в веб-приложении](https://blogs.msdn.microsoft.com/appserviceteam/2017/11/01/app-service-certificates-now-supports-public-certificates-cer).
 
 ![Передача открытого сертификата](./media/app-service-web-tutorial-custom-ssl/upload-certificate-public1.png)
 

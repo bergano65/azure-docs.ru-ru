@@ -1,7 +1,6 @@
 ---
-title: Пример. Как извлечь ключевые фразы с помощью Анализа текста
-titleSuffix: Azure Cognitive Services
-description: Узнайте, как извлечь ключевые фразы с помощью REST API анализа текста.
+title: Инструкции по извлечению ключевой фразы в REST API анализа текста (Microsoft Cognitive Services в Azure) | Документация Майкрософт
+description: Инструкции по извлечению ключевой фразы с помощью REST API анализа текста в Microsoft Cognitive Services в Azure в этом пошаговом руководстве.
 services: cognitive-services
 author: HeidiSteen
 manager: cgronlun
@@ -10,12 +9,12 @@ ms.component: text-analytics
 ms.topic: sample
 ms.date: 09/12/2018
 ms.author: heidist
-ms.openlocfilehash: 62c078a8a72cd0a3633b7dd5fda1545f01067dbc
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: d38886d40a92d5e75f5d0b6b189dbf7c067e1635
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45605493"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51632396"
 ---
 # <a name="example-how-to-extract-key-phrases-in-text-analytics"></a>Пример. Как извлечь ключевые фразы с помощью Анализа текста
 
@@ -24,6 +23,9 @@ ms.locfileid: "45605493"
 Эта возможность полезна, если необходимо быстро определить основные тезисы в коллекции документов. Например, данный входной текст "Еда была вкусной, и были замечательные сотрудники", служба вернет основные тезисы в записи: "еда" и "замечательные сотрудники".
 
 В настоящее время извлечение ключевых фраз поддерживает английский, немецкий, испанский и японский языки. Другие языки находятся на этапе предварительной версии. Дополнительные сведения см. в [списке поддерживаемых языков](../text-analytics-supported-languages.md).
+
+> [!TIP]
+> API анализа текста также предоставляет образ контейнера Docker под управлением Linux для извлечения ключевых фраз, поэтому вы можете [установить и запустить контейнер API анализа текста](text-analytics-how-to-install-containers.md) в непосредственной близости к своим данным.
 
 ## <a name="preparation"></a>Подготовка
 
@@ -71,7 +73,7 @@ ms.locfileid: "45605493"
 
 + Создайте запрос **POST**. Проверьте документацию по API для этого запроса: [API ключевых фраз](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6)
 
-+ Создайте конечную точку HTTP для извлечения ключевых фраз. Она должна включать ресурс `/keyphrases`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases`
++ Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса API анализа текста в Azure или экземпляра [контейнера API анализа текста](text-analytics-how-to-install-containers.md). Она должна включать ресурс `/keyPhrases`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases`
 
 + Задайте заголовок запроса, чтобы включить ключ доступа для операций Анализа текста. Дополнительные сведения см. в статье [о поиске конечных точек и ключей доступа](text-analytics-how-to-access-key.md).
 

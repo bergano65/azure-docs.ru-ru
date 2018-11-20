@@ -13,17 +13,17 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.component: report-monitor
-ms.date: 07/13/2018
+ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: c8157820f7137eb06a0fe10c42645ec91f33edbc
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 7582c578e91fb3e36d7a0ecc1da7ede0cefc0f4c
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46364081"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51623787"
 ---
-# <a name="tutorial-stream-azure-ad-logs-to-an-azure-event-hub-preview"></a>Руководство: потоковая передача журналов Azure AD в концентратор событий Azure (предварительная версия)
+# <a name="tutorial-stream-azure-active-directory-logs-to-an-azure-event-hub-preview"></a>Руководство. Потоковая передача журналов Azure Active Directory в концентратор событий Azure (предварительная версия)
 
 В этом руководстве описано, как настроить параметры диагностики Azure Monitor для потоковой передачи журналов Azure Active Directory (Azure AD) в концентратор событий Azure. Используйте этот механизм для интеграции своих журналов со сторонними инструментами управления информационной безопасностью и событиями безопасности (SIEM), такими как Splunk и QRadar.
 
@@ -36,7 +36,7 @@ ms.locfileid: "46364081"
 * Пользователь, который является *глобальным администратором* или *администратором безопасности* для этого клиента Azure AD.
 * Пространство имен Центров событий и концентратор событий в подписке Azure. Узнайте, как [создать концентратор событий](https://docs.microsoft.com/azure/event-hubs/event-hubs-create).
 
-## <a name="archive-logs-to-an-event-hub"></a>Архивация журналов в концентратор событий
+## <a name="stream-logs-to-an-event-hub"></a>Потоковая передача журналов в концентратор событий
 
 1. Войдите на [портале Azure](https://portal.azure.com). 
 

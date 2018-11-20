@@ -10,18 +10,18 @@ ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 10/15/2018
+ms.date: 11/08/2018
 ms.author: juliako
-ms.openlocfilehash: 5bb840be119f5eac380c44e2cf45b3f73a9d981e
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 3f0d6784f7b7c476313c5cc4190cacd99e4c3973
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49985715"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51612770"
 ---
-# <a name="tutorial-analyze-videos-with-azure-media-services"></a>Руководство. Анализ видео с помощью Служб мультимедиа Azure 
+# <a name="tutorial-analyze-videos-with-media-services-v3-using-apis"></a>Руководство. Анализ видео с помощью Служб мультимедиа версии 3 и API-интерфейсов
 
-Это руководство содержит сведения об анализе видео с помощью Служб мультимедиа Azure. Имеется множество сценариев, в которых может потребоваться получить подробные сведения о видео- и аудиозаписях. Например, чтобы повысить удовлетворенность клиентов, организации могут выполнить преобразование речи в текст. Таким образом можно сделать записи клиентов доступным для поиска каталогом с индексами и панелями мониторинга. Затем они могут получить информативные бизнес-сведения, например список распространенных жалоб, источники этих жалоб и т. д.
+Это руководство содержит сведения об анализе видео с помощью Служб мультимедиа Azure. Имеется множество сценариев, в которых может потребоваться получить подробные сведения о видео- и аудиозаписях. Например, чтобы повысить удовлетворенность клиентов, организации могут выполнить преобразование речи в текст. Таким образом можно сделать записи клиентов доступным для поиска каталогом с индексами и панелями мониторинга. Затем они могут получить информативные бизнес-сведения, например список распространенных жалоб, источники этих жалоб и другую полезную информацию.
 
 В этом учебнике описаны следующие процедуры.    
 
@@ -38,7 +38,14 @@ ms.locfileid: "49985715"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Вы можете скачать [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) бесплатно, если у вас нет Visual Studio.
+- Вы можете скачать [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) бесплатно, если у вас нет Visual Studio.
+- Установите и используйте CLI на локальном компьютере. Для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
+
+    Сейчас в Azure Cloud Shell работают не все команды [интерфейса командной строки Служб мультимедиа версии 3](https://aka.ms/ams-v3-cli-ref). Рекомендуется использовать интерфейс командной строки локально.
+
+- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
+
+    Запишите значения, которые вы использовали в качестве имени группы ресурсов и имени учетной записи Служб мультимедиа.
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
 
@@ -49,10 +56,6 @@ ms.locfileid: "49985715"
  ```
 
 Этот образец находится в папке [AnalyzeVideos](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/tree/master/AMSV3Tutorials/AnalyzeVideos).
-
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
-
-[!INCLUDE [media-services-cli-create-v3-account-include](../../../includes/media-services-cli-create-v3-account-include.md)]
 
 [!INCLUDE [media-services-v3-cli-access-api-include](../../../includes/media-services-v3-cli-access-api-include.md)]
 
@@ -70,7 +73,7 @@ ms.locfileid: "49985715"
 6. Загружает файлы, полученные в результате выполнения задания. 
 
 > [!NOTE]
-> Используя наборы настроек анализаторов, установите 10 зарезервированных единиц кодирования S3 для своей учетной записи на портале Azure. Дополнительные сведения см. в [этой статье](../previous/media-services-scale-media-processing-overview.md).
+> Используя наборы настроек анализаторов, установите 10 зарезервированных единиц мультимедиа S3 для своей учетной записи на портале Azure. Дополнительные сведения см. в [этой статье](../previous/media-services-scale-media-processing-overview.md).
 
 ### <a name="start-using-media-services-apis-with-net-sdk"></a>Начало использования API Служб мультимедиа с пакетом SDK для .NET
 
@@ -154,11 +157,11 @@ ms.locfileid: "49985715"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вам больше не нужны какие-либо ресурсы в группе ресурсов, включая Службы мультимедиа и учетные записи хранения, созданные для этого руководства, удалите группу ресурсов, созданную ранее. Для этого можно использовать средство **CloudShell**.
+Если вам больше не нужны какие-либо ресурсы в группе ресурсов, включая Службы мультимедиа и учетные записи хранения, созданные для этого руководства, удалите группу ресурсов, созданную ранее. 
 
-В **CloudShell** выполните следующую команду:
+Выполните следующую команду CLI:
 
-```azurecli-interactive
+```azurecli
 az group delete --name amsResourceGroup
 ```
 

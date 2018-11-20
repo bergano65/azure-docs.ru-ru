@@ -7,16 +7,16 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 10/17/2018
 ms.author: chrande
-ms.openlocfilehash: 67cd78d4900b8ce53cf0c50116c02a9c1b967687
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 0683516d16bf1501eee83901c5171811b8c0e44d
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50958769"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51621553"
 ---
 # <a name="manage-database-accounts-in-azure-cosmos-db"></a>Управление учетными записями базы данных в Azure Cosmos DB
 
-В этой статье описывается, как управлять учетной записью Cosmos DB для настройки поддержки нескольких веб-сайтов, добавления и удаления региона, настройки нескольких регионов записи и установки приоритетов при отработке отказа. 
+В этой статье описывается, как управлять учетной записью Azure Cosmos DB для настройки поддержки нескольких веб-сайтов, добавления и удаления региона, настройки нескольких регионов записи и установки приоритетов при отработке отказа. 
 
 ## <a name="create-a-database-account"></a>Создание учетной записи базы данных
 
@@ -28,7 +28,7 @@ ms.locfileid: "50958769"
 
 ```bash
 # Create an account
-az cosmosdb create --name <Cosmos DB Account name> --resource-group <Resource Group Name>
+az cosmosdb create --name <Azure Cosmos account name> --resource-group <Resource Group Name>
 ```
 
 ## <a name="configure-clients-for-multi-homing"></a>Настройка клиентов для поддержки нескольких веб-сайтов
@@ -122,13 +122,13 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {'masterKey': self.ac
 
 ```bash
 # Given an account created with 1 region like so
-az cosmosdb create --name <Cosmos DB Account name> --resource-group <Resource Group name> --locations 'eastus=0'
+az cosmosdb create --name <Azure Cosmos account name> --resource-group <Resource Group name> --locations 'eastus=0'
 
 # Add a new region by adding another region to the list
-az cosmosdb update --name <Cosmos DB Account name> --resource-group <Resource Group name> --locations 'eastus=0 westus=1'
+az cosmosdb update --name <Azure Cosmos account name> --resource-group <Resource Group name> --locations 'eastus=0 westus=1'
 
 # Remove a region by removing a region from the list
-az cosmosdb update --name <Cosmos DB Account name> --resource-group <Resource Group name> --locations 'westus=0'
+az cosmosdb update --name <Azure Cosmos account name> --resource-group <Resource Group name> --locations 'westus=0'
 ```
 
 ## <a name="configure-multiple-write-regions"></a>Настройка нескольких регионов записи
@@ -137,17 +137,17 @@ az cosmosdb update --name <Cosmos DB Account name> --resource-group <Resource Gr
 
 При создании учетной записи базы данных убедитесь, что параметр **Multi-Region Writes** (Записи в нескольких регионах) включен.
 
-![Снимок экрана создания учетной записи Cosmos DB](./media/how-to-manage-database-account/account-create.png)
+![Снимок экрана создания учетной записи Azure Cosmos](./media/how-to-manage-database-account/account-create.png)
 
 ### <a id="configure-multiple-write-regions-cli"></a>Интерфейс командной строки Azure
 
 ```bash
-az cosmosdb create --name <Cosmos DB Account name> --resource-group <Resource Group name> --enable-multiple-write-locations true
+az cosmosdb create --name <Azure Cosmos account name> --resource-group <Resource Group name> --enable-multiple-write-locations true
 ```
 
 ### <a id="configure-multiple-write-regions-arm"></a>шаблон Resource Manager
 
-Следующий код JSON представляет собой пример шаблона Resource Manager. Вы можете использовать его для развертывания учетной записи Azure Cosmos DB с политикой согласованности с ограниченным устареванием. При этом максимальный интервал устаревания составляет 5 секунд, а максимальное количество устаревших запросов — 100. Дополнительные сведения о формате шаблона Resource Manager и синтаксисе см. в документации по [Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md).
+Следующий код JSON представляет собой пример шаблона Resource Manager. Вы можете использовать его для развертывания учетной записи Azure Cosmos с политикой согласованности с ограниченным устареванием. При этом максимальный интервал устаревания составляет 5 секунд, а максимальное количество устаревших запросов — 100. Дополнительные сведения о формате шаблона Resource Manager и синтаксисе см. в документации по [Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md).
 
 ```json
 {
@@ -202,11 +202,11 @@ az cosmosdb create --name <Cosmos DB Account name> --resource-group <Resource Gr
 ```
 
 
-## <a name="enable-manual-failover-for-your-cosmos-account"></a>Включение перехода на другой ресурс вручную для учетной записи Cosmos
+## <a id="manual-failover"></a>Включение перехода на другой ресурс вручную для учетной записи Azure Cosmos
 
 ### <a id="enable-manual-failover-via-portal"></a>Портал Azure
 
-1. Перейдите к своей учетной записи Azure Cosmos DB и откройте меню **Глобальная репликация данных**.
+1. Перейдите к своей учетной записи Azure Cosmos и откройте меню **Глобальная репликация данных**.
 
 2. В верхней части меню щелкните **Переход на другой ресурс вручную**.
 
@@ -223,14 +223,14 @@ az cosmosdb create --name <Cosmos DB Account name> --resource-group <Resource Gr
 ```bash
 # Given your account currently has regions with priority like so: 'eastus=0 westus=1'
 # Change the priority order to trigger a failover of the write region
-az cosmosdb update --name <Cosmos DB Account name> --resource-group <Resource Group name> --locations 'eastus=1 westus=0'
+az cosmosdb update --name <Azure Cosmos account name> --resource-group <Resource Group name> --locations 'eastus=1 westus=0'
 ```
 
-## <a name="enable-automatic-failover-for-your-cosmos-account"></a>Включение автоматического перехода на другой ресурс вручную для учетной записи Cosmos
+## <a id="automatic-failover"></a>Включение автоматического перехода на другой ресурс для учетной записи Azure Cosmos
 
 ### <a id="enable-automatic-failover-via-portal"></a>Портал Azure
 
-1. В учетной записи Azure Cosmos DB откройте панель **Глобальная репликация данных**. 
+1. В учетной записи Azure Cosmos откройте панель **Глобальная репликация данных**. 
 
 2. В верхней части панели щелкните **Автоматический переход на другой ресурс**.
 
@@ -248,20 +248,20 @@ az cosmosdb update --name <Cosmos DB Account name> --resource-group <Resource Gr
 
 ```bash
 # Enable automatic failover on account creation
-az cosmosdb create --name <Cosmos DB Account name> --resource-group <Resource Group name> --enable-automatic-failover true
+az cosmosdb create --name <Azure Cosmos account name> --resource-group <Resource Group name> --enable-automatic-failover true
 
 # Enable automatic failover on an existing account
-az cosmosdb update --name <Cosmos DB Account name> --resource-group <Resource Group name> --enable-automatic-failover true
+az cosmosdb update --name <Azure Cosmos account name> --resource-group <Resource Group name> --enable-automatic-failover true
 
 # Disable automatic failover on an existing account
-az cosmosdb update --name <Cosmos DB Account name> --resource-group <Resource Group name> --enable-automatic-failover false
+az cosmosdb update --name <Azure Cosmos account name> --resource-group <Resource Group name> --enable-automatic-failover false
 ```
 
-## <a name="set-failover-priorities-for-your-cosmos-account"></a>Настройка приоритетов при отработке отказа для учетной записи Cosmos
+## <a name="set-failover-priorities-for-your-azure-cosmos-account"></a>Настройка приоритетов при отработке отказа для учетной записи Azure Cosmos
 
 ### <a id="set-failover-priorities-via-portal"></a>Портал Azure
 
-1. В учетной записи Azure Cosmos DB откройте панель **Глобальная репликация данных**. 
+1. В учетной записи Azure Cosmos откройте панель **Глобальная репликация данных**. 
 
 2. В верхней части панели щелкните **Автоматический переход на другой ресурс**.
 
@@ -280,12 +280,12 @@ az cosmosdb update --name <Cosmos DB Account name> --resource-group <Resource Gr
 ### <a id="set-failover-priorities-via-cli"></a>Интерфейс командной строки Azure
 
 ```bash
-az cosmosdb failover-priority-change --name <Cosmos DB Account name> --resource-group <Resource Group name> --failover-policies 'eastus=0 westus=2 southcentralus=1'
+az cosmosdb failover-priority-change --name <Azure Cosmos account name> --resource-group <Resource Group name> --failover-policies 'eastus=0 westus=2 southcentralus=1'
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Сведения об управлении уровнями согласованности и конфликтами данных в базе данных Cosmos DB см. по следующим ссылкам:
+Сведения об управлении уровнями согласованности и конфликтами данных в Azure Cosmos DB см. в следующих документах:
 
 * [Управление согласованностью](how-to-manage-consistency.md)
 * [Управление конфликтами между регионами](how-to-manage-conflicts.md)

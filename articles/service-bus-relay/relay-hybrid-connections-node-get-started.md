@@ -12,75 +12,63 @@ ms.devlang: tbd
 ms.topic: get-started-article
 ms.tgt_pltfrm: node
 ms.workload: na
-ms.date: 05/02/2018
+ms.date: 11/01/2018
 ms.author: spelluru
-ms.openlocfilehash: 25e9095561f72583bad86aa96b64a412e0983ab6
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 9bdf3d319735d8d4ca85235dfb949d440bba9a02
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43702363"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51615082"
 ---
-# <a name="get-started-with-relay-hybrid-connections-websockets-in-node"></a>Начало работы с функциями WebSocket гибридных подключений к Azure Relay в Node
+# <a name="get-started-with-relay-hybrid-connections-websockets-in-nodejs"></a>Начало работы с гибридными подключениями Azure Relay с использованием WebSocket и Node.js
 
 [!INCLUDE [relay-selector-hybrid-connections](../../includes/relay-selector-hybrid-connections.md)]
 
-В этом руководстве описаны функции Websockets [гибридных подключений Azure Relay](relay-what-is-it.md#hybrid-connections) и показано, как с помощью Node.js создать клиентское приложение, которое отправляет сообщения Websocket соответствующему приложению прослушивателя.
+В этом кратком руководстве описано, как создать приложения Node.js, которые отправляют и получают сообщения с использованием гибридных подключений по протоколу WebSocket в Azure Relay. См. дополнительные сведения о [службе Azure Relay](relay-what-is-it.md). 
 
-## <a name="what-will-be-accomplished"></a>Что будет выполнено
-
-Так как для гибридных подключений требуется компонент клиента и сервера, в этом руководстве нужно создать два консольных приложения. Для этого выполните следующие действия:
+При работе с этим кратким руководством вы выполните следующие задачи: 
 
 1. Создайте пространство имен ретранслятора с помощью портала Azure.
-2. Создайте гибридное подключение с помощью портала Azure.
-3. Создайте серверное консольное приложение для получения сообщений.
-4. Создайте клиентское консольное приложение для отправки сообщений.
+2. Создайте гибридное подключение в этом пространстве имен с помощью портала Azure.
+3. Создайте серверное консольное приложение (прослушиватель) для получения сообщений.
+4. Создайте клиентское консольное приложение (отправитель) для отправки сообщений.
+5. Запустите приложения. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-1. [Node.js](https://nodejs.org/en/).
-2. Подписка Azure.
+- [Node.js](https://nodejs.org/en/).
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
 
-[!INCLUDE [create-account-note](../../includes/create-account-note.md)]
-
-## <a name="1-create-a-namespace-using-the-azure-portal"></a>1. Создание пространства имен с помощью портала Azure
-
-Если пространство имен ретранслятора уже создано, перейдите к разделу [Создание гибридного подключения с помощью портала Azure](#2-create-a-hybrid-connection-using-the-azure-portal).
-
+## <a name="create-a-namespace"></a>Создание пространства имен
 [!INCLUDE [relay-create-namespace-portal](../../includes/relay-create-namespace-portal.md)]
 
-## <a name="2-create-a-hybrid-connection-using-the-azure-portal"></a>2. Создание гибридного подключения с помощью портала Azure
-
-Если гибридное подключение уже создано, перейдите к разделу [Создание серверного приложения](#3-create-a-server-application-listener).
-
+## <a name="create-a-hybrid-connection"></a>Создание гибридного подключения
 [!INCLUDE [relay-create-hybrid-connection-portal](../../includes/relay-create-hybrid-connection-portal.md)]
 
-## <a name="3-create-a-server-application-listener"></a>3. Создание серверного приложения (прослушивателя)
-
+## <a name="create-a-server-application-listener"></a>Создание серверного приложения (прослушивателя)
 Для ожидания передачи данных и получения сообщений, отправленных ретранслятором, создайте консольное приложение Node.js.
 
 [!INCLUDE [relay-hybrid-connections-node-get-started-server](../../includes/relay-hybrid-connections-node-get-started-server.md)]
 
-## <a name="4-create-a-client-application-sender"></a>4. Создание клиентского приложения (отправителя)
-
+## <a name="create-a-client-application-sender"></a>Создание клиентского приложения (отправителя)
 Для отправки сообщений в ретранслятор создайте консольное приложение Node.js.
 
 [!INCLUDE [relay-hybrid-connections-node-get-started-client](../../includes/relay-hybrid-connections-node-get-started-client.md)]
 
-## <a name="5-run-the-applications"></a>5. Запуск приложений
+## <a name="run-the-applications"></a>Запуск приложений
 
 1. Запустите серверное приложение. Для этого в командной строке Node.js введите `node listener.js`.
 2. Запустите клиентское приложение. Для этого в командной строке Node.js введите `node sender.js`, а затем любой текст.
 3. Убедитесь, что серверное консольное приложение выводит текст, введенный в клиентском приложении.
 
-![running-applications](./media/relay-hybrid-connections-node-get-started/running-applications.png)
+    ![running-applications](./media/relay-hybrid-connections-node-get-started/running-applications.png)
 
 Поздравляем, вы создали приложение для гибридных подключений с помощью Node.js!
 
 ## <a name="next-steps"></a>Дополнительная информация
+В этом кратком руководстве описано, как создать клиентские и серверные приложения Node.js, которые отправляют и получают сообщения по протоколу WebSocket. Функция гибридных подключений службы Azure Relay также поддерживает использование протокола HTTP для отправки и получения сообщений. См. дополнительные сведения об [использовании протокола HTTP с Node.js и гибридными подключениями Azure Relay](relay-hybrid-connections-http-requests-node-get-started.md).
 
-* [Вопросы и ответы по ретранслятору](relay-faq.md)
-* [Создание пространства имен](relay-create-namespace-portal.md)
-* [Приступая к работе с .NET](relay-hybrid-connections-dotnet-get-started.md)
-* [Приступая к работе с Node](relay-hybrid-connections-node-get-started.md)
+В этом кратком руководстве описано, как использовать Node.js для создания клиентских и серверных приложений. Сведения о том, как создавать клиентские и серверные приложения с помощью .NET Framework, см. в руководствах по использованию [.NET и WebSocket](relay-hybrid-connections-dotnet-get-started.md) или [.NET и HTTP](relay-hybrid-connections-http-requests-dotnet-get-started.md).
+
 

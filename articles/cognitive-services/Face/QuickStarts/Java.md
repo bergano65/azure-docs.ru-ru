@@ -1,51 +1,46 @@
 ---
-title: Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Java
+title: Краткое руководство. Определение лиц на изображении с помощью Azure REST API и Java
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве вы узнаете, как обнаруживать лица на изображениях, используя API распознавания лиц и Java.
+description: В этом кратком руководстве описано, как определить лица на изображении с помощью REST API распознавания лиц Azure и Java.
 services: cognitive-services
 author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: face-api
 ms.topic: quickstart
-ms.date: 05/10/2018
+ms.date: 11/09/2018
 ms.author: pafarley
-ms.openlocfilehash: df9490a3ee2af115b48dafd323e1afdec24b392d
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 0a8a97be89893dbf072942501be51b82d20c1ef4
+ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49956227"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51578068"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-java"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Java
 
-Из этого краткого руководства вы узнаете, как определять лица людей на изображениях с помощью API распознавания лиц.
+В этом кратком руководстве описано, как определить человеческие лица на изображении с помощью REST API распознавания лиц Azure и Java.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить пример, нужен ключ подписки. Вы можете получить ключи бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
+- Ключ подписки на API распознавания лиц. Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на API распознавания лиц и свой ключ.
+- Любая интегрированная среда разработки Java (Java IDE).
 
-## <a name="detect-faces-in-an-image"></a>определение лиц на изображении.
+## <a name="create-the-java-project"></a>Создание проекта Java
 
-Используйте метод [определения лица](https://westcentralus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), чтобы распознать лица на изображении и вернуть их атрибуты, в том числе:
+Создайте приложение командной строки Java в своей среде IDE и добавьте класс **Main** с методом **main**. Затем скачайте следующие глобальные библиотеки из репозитория Maven в каталог `lib` в своем проекте:
+* `org.apache.httpcomponents:httpclient:4.2.4`
+* `org.json:json:20170516`
 
-* Идентификатор лица: уникальный идентификатор, используемый в различных сценариях API распознавания лиц.
-* Границы лица: отступ слева, сверху, а также ширина и высота лица, определяющие его место на изображении.
-* Ориентиры: массив из 27-точечных ориентиров, указывающий на важные позиции компонентов лица.
-* Атрибуты лица, в т. ч. возраст, пол, интенсивность улыбки, положение головы и наличие усов и бороды.
+## <a name="add-face-detection-code"></a>Добавление кода определения лиц
 
-Чтобы выполнить наш пример, сделайте следующее:
+Откройте класс main своего проекта. Здесь вы добавите код, необходимый для загрузки изображений и определения лиц.
 
-1. Создайте приложение командной строки в интегрированной среде разработки Java на ваш выбор.
-2. Замените класс Main следующим кодом (сохранив все инструкции `package`).
-3. Замените `<Subscription Key>` действительным ключом подписки.
-4. При необходимости замените значение `uriBase` расположением, в котором вы получили ключи подписки.
-5. Скачайте эти глобальные библиотеки из репозитория Maven в каталог `lib` в своем проекте:
-   * `org.apache.httpcomponents:httpclient:4.2.4`
-   * `org.json:json:20170516`
-6. Выполните класс Main.
+### <a name="import-packages"></a>Импорт пакетов
 
-### <a name="face---detect-request"></a>Запрос на определение лица
+Добавьте в начало файла следующие инструкции `import`.
 
 ```java
 // This sample uses Apache HttpComponents:
@@ -63,87 +58,101 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
+```
 
-public class Main
+### <a name="add-essential-fields"></a>Добавление важных полей
+
+Добавьте следующие поля в класс **Main**. Они указывают, как подключиться к службе распознавания лиц и где получить входные данные. Вам нужно будет обновить поле `subscriptionKey`, указав значение вашего ключа подписки, и может потребоваться изменить строку `uriBase`, чтобы она содержала идентификатор правильного региона. Вы также можете задать для `imageWithFaces` путь, указывающий на файл другого изображения.
+
+Поле `faceAttributes` — это просто список некоторых типов атрибутов. Оно определяет, какую информацию о распознанных лицах нужно получить.
+
+```Java
+// Replace <Subscription Key> with your valid subscription key.
+private static final String subscriptionKey = "<Subscription Key>";
+
+// NOTE: You must use the same region in your REST call as you used to
+// obtain your subscription keys. For example, if you obtained your
+// subscription keys from westus, replace "westcentralus" in the URL
+// below with "westus".
+//
+// Free trial subscription keys are generated in the westcentralus region. If you
+// use a free trial subscription key, you shouldn't need to change this region.
+private static final String uriBase =
+    "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
+
+private static final String imageWithFaces =
+    "{\"url\":\"https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg\"}";
+
+private static final String faceAttributes =
+    "age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise";
+```
+
+### <a name="call-the-face-detection-rest-api"></a>Вызов REST API распознавания лиц
+
+Добавьте следующий метод в метод **main**. Он создает вызов REST к API распознавания лиц, чтобы определить информацию о лицах на удаленном изображении (строка `faceAttributes` указывает, какие атрибуты лица нужно получить). Затем он записывает выходные данные в строку JSON.
+
+```Java
+HttpClient httpclient = new DefaultHttpClient();
+
+try
 {
-    // Replace <Subscription Key> with your valid subscription key.
-    private static final String subscriptionKey = "<Subscription Key>";
+    URIBuilder builder = new URIBuilder(uriBase);
 
-    // NOTE: You must use the same region in your REST call as you used to
-    // obtain your subscription keys. For example, if you obtained your
-    // subscription keys from westus, replace "westcentralus" in the URL
-    // below with "westus".
-    //
-    // Free trial subscription keys are generated in the westcentralus region. If you
-    // use a free trial subscription key, you shouldn't need to change this region.
-    private static final String uriBase =
-        "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
+    // Request parameters. All of them are optional.
+    builder.setParameter("returnFaceId", "true");
+    builder.setParameter("returnFaceLandmarks", "false");
+    builder.setParameter("returnFaceAttributes", faceAttributes);
 
-    private static final String imageWithFaces =
-        "{\"url\":\"https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg\"}";
+    // Prepare the URI for the REST API call.
+    URI uri = builder.build();
+    HttpPost request = new HttpPost(uri);
 
-    private static final String faceAttributes =
-        "age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise";
+    // Request headers.
+    request.setHeader("Content-Type", "application/json");
+    request.setHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
 
-    public static void main(String[] args)
+    // Request body.
+    StringEntity reqEntity = new StringEntity(imageWithFaces);
+    request.setEntity(reqEntity);
+
+    // Execute the REST API call and get the response entity.
+    HttpResponse response = httpclient.execute(request);
+    HttpEntity entity = response.getEntity();
+```
+
+### <a name="parse-the-json-response"></a>Проанализируйте ответ JSON.
+
+Прямо под предыдущим кодом добавьте следующий блок, который преобразует возвращенные данные JSON в более удобный для чтения формат, прежде чем вывести их на консоль. Наконец, закройте блок try-catch.
+
+```Java
+    if (entity != null)
     {
-        HttpClient httpclient = new DefaultHttpClient();
+        // Format and display the JSON response.
+        System.out.println("REST Response:\n");
 
-        try
-        {
-            URIBuilder builder = new URIBuilder(uriBase);
-
-            // Request parameters. All of them are optional.
-            builder.setParameter("returnFaceId", "true");
-            builder.setParameter("returnFaceLandmarks", "false");
-            builder.setParameter("returnFaceAttributes", faceAttributes);
-
-            // Prepare the URI for the REST API call.
-            URI uri = builder.build();
-            HttpPost request = new HttpPost(uri);
-
-            // Request headers.
-            request.setHeader("Content-Type", "application/json");
-            request.setHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-
-            // Request body.
-            StringEntity reqEntity = new StringEntity(imageWithFaces);
-            request.setEntity(reqEntity);
-
-            // Execute the REST API call and get the response entity.
-            HttpResponse response = httpclient.execute(request);
-            HttpEntity entity = response.getEntity();
-
-            if (entity != null)
-            {
-                // Format and display the JSON response.
-                System.out.println("REST Response:\n");
-
-                String jsonString = EntityUtils.toString(entity).trim();
-                if (jsonString.charAt(0) == '[') {
-                    JSONArray jsonArray = new JSONArray(jsonString);
-                    System.out.println(jsonArray.toString(2));
-                }
-                else if (jsonString.charAt(0) == '{') {
-                    JSONObject jsonObject = new JSONObject(jsonString);
-                    System.out.println(jsonObject.toString(2));
-                } else {
-                    System.out.println(jsonString);
-                }
-            }
+        String jsonString = EntityUtils.toString(entity).trim();
+        if (jsonString.charAt(0) == '[') {
+            JSONArray jsonArray = new JSONArray(jsonString);
+            System.out.println(jsonArray.toString(2));
         }
-        catch (Exception e)
-        {
-            // Display error message.
-            System.out.println(e.getMessage());
+        else if (jsonString.charAt(0) == '{') {
+            JSONObject jsonObject = new JSONObject(jsonString);
+            System.out.println(jsonObject.toString(2));
+        } else {
+            System.out.println(jsonString);
         }
     }
 }
+catch (Exception e)
+{
+    // Display error message.
+    System.out.println(e.getMessage());
+}
 ```
 
-### <a name="face---detect-response"></a>Результат распознавания лица
+## <a name="run-the-app"></a>Запуск приложения
 
-Успешный ответ будет возвращен в формате JSON.
+Скомпилируйте код и запустите его. При успешном ответе в окне консоли отобразятся данные распознавания лиц в легко читаемом формате JSON. Например: 
 
 ```json
 [{
@@ -237,7 +246,7 @@ public class Main
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Узнайте, как создать приложение Android, которое использует службу "Распознавание лиц" для обнаружения лиц на изображении. Приложение отображает изображение с рамкой вокруг каждого лица.
+В этом кратком руководстве вы создали простое консольное приложение Java, которое использует вызовы REST с API распознавания лиц Azure для определения лиц на изображении и возврата их атрибутов. Узнайте, что еще можно делать с помощью этой функции в приложении Android.
 
 > [!div class="nextstepaction"]
-> [Руководство. Приступая к работе с API распознавания лиц в Android](../Tutorials/FaceAPIinJavaForAndroidTutorial.md)
+> [Руководство. Создание приложения Android для обнаружения и выделения лиц на изображении](../Tutorials/FaceAPIinJavaForAndroidTutorial.md)

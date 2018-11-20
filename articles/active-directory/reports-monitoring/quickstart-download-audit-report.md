@@ -13,15 +13,15 @@ ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.component: report-monitor
-ms.date: 09/13/2018
+ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: d6ecf62b46c25ec7cf4ab80219d1bc220e4eb4cc
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 3f4090f1724850b0263905a0593fc77cc6dbfd16
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46367412"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51620740"
 ---
 # <a name="quickstart-download-an-audit-report-using-the-azure-portal"></a>Быстрое начало. Загрузка отчета по аудиту с помощью портала Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "46367412"
 Вам необходимы:
 
 * Клиент Azure Active Directory. 
-* Пользователь с ролью администратора безопасности, читатель безопасности или глобальный администратор для этого клиента. Любой пользователь клиента, который имеет доступ к своим собственным журналам аудита.
+* Пользователь с ролью **администратора безопасности**, **читателя безопасности** или **глобального администратора** для этого клиента. Любой пользователь клиента, который имеет доступ к своим собственным журналам аудита.
 
 ## <a name="quickstart-download-an-audit-report"></a>Быстрое начало. загрузка отчета по аудиту
 

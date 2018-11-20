@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.custom: ''
 ms.date: 10/30/2018
 ms.author: bahariri
-ms.openlocfilehash: 2a9f1ea069bdb45adb1b8c6b52392f15a4660b5c
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: a2ab9a77728509b794c2f5b810fb939f6d1a16e3
+ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285124"
+ms.locfileid: "51286781"
 ---
 # <a name="connect-your-apache-spark-application-with-kafka-enabled-azure-event-hubs"></a>Подключение приложения Apache Spark с помощью Центров событий Azure с поддержкой Kafka
 В этом руководстве описывается, как подключить приложение Spark к Центрам событий с поддержкой Kafka для потоковой передачи в режиме реального времени. Такая интеграция обеспечивает потоковую передачу без необходимости изменять клиенты протокола или запускать собственные кластеры Kafka или Zookeeper. Для работы с этим руководством требуется Apache Spark v2.4+ и Apache Kafka v2.0+.
@@ -79,7 +79,7 @@ val df_write = df.writeStream
     .start()
 ```
 
-## <a name="write-to-event-hubs-for-kafka"></a>Запись в Центры событий для Kafka
+## <a name="write-to-event-hubs-for-kafka"></a>Запись в Центры событий для Kafka.
 Вы также можете выполнить запись в Центры событий таким же образом, как и в Kafka. Обновите конфигурацию, чтобы заменить сведения в **BOOTSTRAP_SERVERS** и **EH_SASL** сведениями о пространстве имен в Центре событий.  Чтобы ознакомиться с полным примером кода, просмотрите файл sparkProducer.scala на сайте GitHub. 
 
 ```scala

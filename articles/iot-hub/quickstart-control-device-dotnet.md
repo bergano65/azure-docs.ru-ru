@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/20/2018
 ms.author: dobett
-ms.openlocfilehash: 475fda79d3f5d844b494f1b0ae5eab8eba5ed8bc
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: c8ef958b2f39a9271b9fa344f61329d48eccdee4
+ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49363569"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "51514752"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-net"></a>Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (.NET)
 
@@ -26,6 +26,7 @@ ms.locfileid: "49363569"
 В этом кратком руководстве используются два предварительно созданных приложения .NET:
 
 * Приложение имитированного устройства, реагирующее на прямые методы, вызванные из внутреннего приложения. Чтобы получать вызовы прямого метода, это приложение подключается к конечной точке конкретного устройства в Центре Интернета вещей.
+
 * Внутреннее приложение, вызывающее прямые методы в имитированном устройстве. Чтобы вызвать прямой метод в устройстве, это приложение подключается к конечной точке на стороне службы в Центре Интернета вещей.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
@@ -50,7 +51,7 @@ dotnet --version
 
 Если вы закончили работу с предыдущим [руководством по отправке данных телеметрии с устройства в Центр Интернета вещей](quickstart-send-telemetry-dotnet.md), этот шаг можно пропустить.
 
-[!INCLUDE [iot-hub-quickstarts-create-hub](../../includes/iot-hub-quickstarts-create-hub.md)]
+[!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
 ## <a name="register-a-device"></a>Регистрация устройства
 
@@ -66,7 +67,8 @@ dotnet --version
 
     ```azurecli-interactive
     az extension add --name azure-cli-iot-ext
-    az iot hub device-identity create --hub-name YourIoTHubName --device-id MyDotnetDevice
+    az iot hub device-identity create \
+      --hub-name YourIoTHubName --device-id MyDotnetDevice
     ```
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
@@ -74,7 +76,10 @@ dotnet --version
    **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyDotnetDevice --output table
+    az iot hub device-identity show-connection-string \
+      --hub-name YourIoTHubName \
+      --device-id MyDotnetDevice 
+      --output table
     ```
 
     Запишите строку подключения устройства, которая выглядит так:
@@ -121,7 +126,7 @@ az iot hub show-connection-string --hub-name YourIoTHubName --output table
 
     На следующем снимке экрана показан пример выходных данных, когда приложение имитированного устройства отправляет данные телеметрии в Центр Интернета вещей:
 
-    ![Запуск виртуального устройства](media/quickstart-control-device-dotnet/SimulatedDevice-1.png)
+    ![Запуск виртуального устройства](./media/quickstart-control-device-dotnet/SimulatedDevice-1.png)
 
 ## <a name="call-the-direct-method"></a>Вызов прямого метода
 
@@ -147,11 +152,11 @@ az iot hub show-connection-string --hub-name YourIoTHubName --output table
 
     На следующем снимке экрана показан пример выходных данных, когда приложение выполняет вызов прямого метода к устройству и получает подтверждение:
 
-    ![Запуск внутреннего приложения](media/quickstart-control-device-dotnet/BackEndApplication.png)
+    ![Запуск внутреннего приложения](./media/quickstart-control-device-dotnet/BackEndApplication.png)
 
     После запуска внутреннего приложения в окне консоли, в котором выполняется имитированное устройство, отобразится сообщение и изменится интервал, с которым это приложение отправляет сообщения:
 
-    ![Изменения в имитированном клиенте](media/quickstart-control-device-dotnet/SimulatedDevice-2.png)
+    ![Изменения в имитированном клиенте](./media/quickstart-control-device-dotnet/SimulatedDevice-2.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -159,7 +164,7 @@ az iot hub show-connection-string --hub-name YourIoTHubName --output table
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В рамках этого краткого руководства вы вызвали прямой метод в устройстве из внутреннего приложения, а также ответили на этот вызов в приложении имитированного устройства.
+В рамках этого краткого руководства вы вызвали прямой метод на устройстве из внутреннего приложения, а также ответили на этот вызов в приложении имитированного устройства.
 
 Чтобы узнать, как маршрутизировать сообщения с устройства в облако в разные расположения в облаке, перейдите к следующему руководству.
 

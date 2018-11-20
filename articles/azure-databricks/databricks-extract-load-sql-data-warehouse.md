@@ -10,16 +10,16 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.workload: Active
 ms.date: 07/26/2018
-ms.openlocfilehash: c67a223a95e73161b58f8cd4f2aeba2614a9ee76
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: bf7351f5d62958b77473440d618d31cda2c983ea
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50419085"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51615523"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-azure-databricks"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
-В этом руководстве рассматривается выполнение операций извлечения, преобразования и загрузки данных с помощью Azure Databricks. Мы извлечем данные из Azure Data Lake Store в Azure Databricks, выполним преобразование данных в Azure Databricks, а затем загрузим преобразованные данные в хранилище данных SQL Azure. 
+В этом руководстве рассматривается выполнение операций извлечения, преобразования и загрузки данных с помощью Azure Databricks. Мы извлечем данные из Azure Data Lake Store в Azure Databricks, выполним преобразование данных в Azure Databricks, а затем загрузим преобразованные данные в хранилище данных SQL Azure.
 
 Для действий, описанных в этом руководстве, используется соединитель хранилища данных SQL для Azure Databricks, позволяющий передавать данные в Azure Databricks. Этот соединитель, в свою очередь, использует хранилище BLOB-объектов Azure как временное хранилище для данных, передаваемых между кластером Azure Databricks и хранилищем данных SQL Azure.
 
@@ -27,7 +27,7 @@ ms.locfileid: "50419085"
 
 ![Azure Databricks с Data Lake Store и хранилищем данных SQL](./media/databricks-extract-load-sql-data-warehouse/databricks-extract-transform-load-sql-datawarehouse.png "Azure Databricks с Data Lake Store и хранилищем данных SQL")
 
-В рамках этого руководства рассматриваются следующие задачи: 
+В рамках этого руководства рассматриваются следующие задачи:
 
 > [!div class="checklist"]
 > * Создание рабочей области Azure Databricks
@@ -64,7 +64,7 @@ ms.locfileid: "50419085"
 
     ![Создание рабочей области Azure Databricks](./media/databricks-extract-load-sql-data-warehouse/create-databricks-workspace.png "Create an Azure Databricks workspace")
 
-    Укажите следующие значения. 
+    Укажите следующие значения.
      
     |Свойство  |ОПИСАНИЕ  |
     |---------|---------|
@@ -95,14 +95,14 @@ ms.locfileid: "50419085"
     Для всех остальных параметров примите значения по умолчанию, кроме следующих.
 
     * Введите имя кластера.
-    * В рамках этой статьи создайте кластер со средой выполнения **4.0**. 
+    * В рамках этой статьи создайте кластер со средой выполнения **4.0**.
     * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через ___ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
     
     Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
 
 ## <a name="create-an-azure-data-lake-store-account"></a>Создание учетной записи хранения озера данных Azure
 
-В этом разделе мы создадим учетную запись Azure Data Lake Store и свяжем ее с субъектом-службой Azure Active Directory. Далее в этом руководстве этот субъект-служба будет использоваться в Azure Databricks для получения доступа к Azure Data Lake Store. 
+В этом разделе мы создадим учетную запись Azure Data Lake Store и свяжем ее с субъектом-службой Azure Active Directory. Далее в этом руководстве этот субъект-служба будет использоваться в Azure Databricks для получения доступа к Azure Data Lake Store.
 
 1. На [портале Azure](https://portal.azure.com) последовательно выберите **Создать ресурс** > **Хранилище** > **Data Lake Store**.
 3. В колонке **Создать Data Lake Store** задайте значения, как показано на следующем снимке экрана:
@@ -189,7 +189,7 @@ ms.locfileid: "50419085"
 
 1. Скопируйте **идентификатор каталога**. Это и есть ваш идентификатор клиента.
 
-   ![tenant ID](./media/databricks-extract-load-sql-data-warehouse/copy-directory-id.png) 
+   ![tenant ID](./media/databricks-extract-load-sql-data-warehouse/copy-directory-id.png)
 
 ## <a name="upload-data-to-data-lake-store"></a>Передача данных в хранилище озера данных
 
@@ -306,7 +306,7 @@ ms.locfileid: "50419085"
 
 ## <a name="transform-data-in-azure-databricks"></a>Преобразование данных в Azure Databricks
 
-Пример необработанных данных **small_radio_json.json** содержит сведения о слушателях радиостанции и имеет множество столбцов. В этом разделе мы преобразуем данные, чтобы извлечь только определенные столбцы из набора данных. 
+Пример необработанных данных **small_radio_json.json** содержит сведения о слушателях радиостанции и имеет множество столбцов. В этом разделе мы преобразуем данные, чтобы извлечь только определенные столбцы из набора данных.
 
 1. Сначала извлеките только столбцы *firstName*, *lastName*, *gender*, *location* и *level* из кадра данных, который был создан ранее.
 
@@ -340,7 +340,7 @@ ms.locfileid: "50419085"
         |  Margaux|     Smith|     F|Atlanta-Sandy Spr...| free|
         +---------+----------+------+--------------------+-----+
 
-2.  Эти данные можно еще преобразовывать, переименовав столбец **level** на **subscription_type**.
+2. Эти данные можно еще преобразовывать, переименовав столбец **level** на **subscription_type**.
 
         val renamedColumnsDf = specificColumnsDf.withColumnRenamed("level", "subscription_type")
         renamedColumnsDf.show()
@@ -382,7 +382,7 @@ ms.locfileid: "50419085"
 
         val blobStorage = "<STORAGE ACCOUNT NAME>.blob.core.windows.net"
         val blobContainer = "<CONTAINER NAME>"
-        val blobAccessKey =  "<ACCESS KEY>"
+        val blobAccessKey = "<ACCESS KEY>"
 
 2. Укажите временную папку, которая будет использоваться при перемещении данных между Azure Databricks и хранилищем данных SQL Azure.
 
@@ -397,15 +397,15 @@ ms.locfileid: "50419085"
 
         //SQL Data Warehouse related settings
         val dwDatabase = "<DATABASE NAME>"
-        val dwServer = "<DATABASE SERVER NAME>" 
+        val dwServer = "<DATABASE SERVER NAME>"
         val dwUser = "<USER NAME>"
         val dwPass = "<PASSWORD>"
-        val dwJdbcPort =  "1433"
+        val dwJdbcPort = "1433"
         val dwJdbcExtraOptions = "encrypt=true;trustServerCertificate=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;"
         val sqlDwUrl = "jdbc:sqlserver://" + dwServer + ".database.windows.net:" + dwJdbcPort + ";database=" + dwDatabase + ";user=" + dwUser+";password=" + dwPass + ";$dwJdbcExtraOptions"
         val sqlDwUrlSmall = "jdbc:sqlserver://" + dwServer + ".database.windows.net:" + dwJdbcPort + ";database=" + dwDatabase + ";user=" + dwUser+";password=" + dwPass
 
-5. Выполните следующий фрагмент кода, чтобы загрузить преобразованный кадр данных **renamedColumnsDf** в качестве таблицы в хранилище данных SQL. Этот фрагмент кода создает таблицу с именем **SampleTable** в базе данных SQL. Обратите внимание на то, что хранилищу данных SQL Azure требуется главный ключ.  Главный ключ можно создать, выполнив команду "CREATE MASTER KEY;" в SQL Server Management Studio.
+5. Выполните следующий фрагмент кода, чтобы загрузить преобразованный кадр данных **renamedColumnsDf** в качестве таблицы в хранилище данных SQL. Этот фрагмент кода создает таблицу с именем **SampleTable** в базе данных SQL. Обратите внимание на то, что хранилищу данных SQL Azure требуется главный ключ. Главный ключ можно создать, выполнив команду "CREATE MASTER KEY;" в SQL Server Management Studio.
 
         spark.conf.set(
           "spark.sql.parquet.writeLegacyFormat",
@@ -413,7 +413,7 @@ ms.locfileid: "50419085"
         
         renamedColumnsDf.write
             .format("com.databricks.spark.sqldw")
-            .option("url", sqlDwUrlSmall) 
+            .option("url", sqlDwUrlSmall)
             .option("dbtable", "SampleTable")
             .option( "forward_spark_azure_storage_credentials","True")
             .option("tempdir", tempDir)
@@ -434,9 +434,9 @@ ms.locfileid: "50419085"
 
 ![Завершение работы кластера Databricks](./media/databricks-extract-load-sql-data-warehouse/terminate-databricks-cluster.png "Stop a Databricks cluster")
 
-Если не завершить работу кластера вручную, это можно сделать автоматически, выбрав флажок **Terminate after __ minutes of inactivity** (Завершить работу после __ минут бездействия) во время создания кластера. В этом случае работа кластера завершается автоматически, если кластер был неактивным в течение определенного времени.
+Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после __ мин бездействия). В этом случае работа кластера завершается автоматически, если кластер был неактивным в течение определенного времени.
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дополнительная информация
 Из этого руководства вы узнали, как выполнить следующие задачи:
 
 > [!div class="checklist"]

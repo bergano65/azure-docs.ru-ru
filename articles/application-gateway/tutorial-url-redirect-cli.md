@@ -1,6 +1,6 @@
 ---
-title: Создание шлюза приложений с перенаправлением на основе URL-пути при помощи Azure CLI
-description: Узнайте, как создать шлюз приложений с перенаправлением трафика на основе URL-пути с помощью Azure CLI.
+title: Руководство. Создание шлюза приложений с перенаправлением на основе URL-пути при помощи Azure CLI
+description: Из этого руководства вы узнаете, как создать шлюз приложений с перенаправлением трафика на основе URL-пути с помощью Azure CLI.
 services: application-gateway
 author: vhorne
 manager: jpconnock
@@ -10,12 +10,12 @@ ms.workload: infrastructure-services
 ms.date: 7/14/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 3515d603c16bffe911df1b927d02644fcffa0788
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 8489cf79848eb41e3c6334242ca607e925ae0b31
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46947556"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51568154"
 ---
 # <a name="tutorial-create-an-application-gateway-with-url-path-based-redirection-using-the-azure-cli"></a>Руководство по созданию шлюза приложений с перенаправлением на основе URL-пути при помощи Azure CLI
 
@@ -313,14 +313,6 @@ az network public-ip show \
 az group delete --name myResourceGroupAG --location eastus
 ```
 ## <a name="next-steps"></a>Дополнительная информация
-
-Из этого руководства вы узнали, как выполнить следующие задачи:
-
-> [!div class="checklist"]
-> * Настройка сети
-> * Создание шлюза приложений
-> * добавление прослушивателей и правил маршрутизации;
-> * создание масштабируемых наборов виртуальных машин для внутренних пулов.
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о возможностях шлюза приложений](application-gateway-introduction.md)

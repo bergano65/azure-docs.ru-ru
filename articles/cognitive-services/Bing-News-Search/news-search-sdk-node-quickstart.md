@@ -10,12 +10,12 @@ ms.component: bing-news-search
 ms.topic: quickstart
 ms.date: 02/12/2018
 ms.author: v-gedod
-ms.openlocfilehash: 2279a6475ab8c39b3ff599f7244caea59d622651
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: bc168cf696d6280ce4c0e7cb46f90af4a2ad7aa0
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48803007"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51686501"
 ---
 # <a name="quickstart-bing-news-search-sdk-with-node"></a>Краткое руководство по работе с пакетом SDK для API Bing для поиска новостей с использованием Node
 
@@ -25,9 +25,11 @@ ms.locfileid: "48803007"
 
 ## <a name="application-dependencies"></a>Зависимости приложения
 
-Чтобы настроить консольное приложение, использующее пакет SDK для Поиска новостей Bing, выполните команду `npm install azure-cognitiveservices-newssearch` в среде разработки.
+Чтобы установить консольное приложение с помощью пакета SDK для API "Поиск новостей Bing", сделайте следующее:
+* Выполните команду `npm install ms-rest-azure` в своей среде разработки.
+* Выполните команду `npm install azure-cognitiveservices-newssearch` в своей среде разработки.
 
-## <a name="news-search-client"></a>Клиент API Bing для поиска новостей
+## <a name="news-search-client"></a>Клиент для API "Поиск новостей"
 Получите [ключ доступа Cognitive Services](https://azure.microsoft.com/try/cognitive-services/) с помощью *поиска*. Создайте экземпляр `CognitiveServicesCredentials`:
 ```
 const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 11/22/2017
 ms.author: apimpm
-ms.openlocfilehash: 717ce40caccd1114f8bae762fe38ce986421a4c9
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 120fe358e5c8afe63e98038ad353d5ebc45a1937
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38306699"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636477"
 ---
 # <a name="import-an-api-app-as-an-api"></a>Импорт приложения API в качестве API
 
@@ -31,10 +31,10 @@ ms.locfileid: "38306699"
 > * проверка API на портале Azure;
 > * проверка API на портале разработчика.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 + Выполните задачи из краткого руководства по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md)
-+ Убедитесь, что в вашей подписке есть приложение API. Дополнительные сведения см. в [документации по службе приложений][https://docs.microsoft.com/azure/app-service/]
++ Убедитесь, что в вашей подписке есть приложение API. Дополнительные сведения см. в [документации по службе приложений](https://docs.microsoft.com/azure/app-service/).
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
@@ -43,7 +43,7 @@ ms.locfileid: "38306699"
 1. Выберите **Интерфейсы API** в разделе **Управление API**.
 2. Выберите **Приложение API** в списке **Add a new API** (Добавление нового API).
 
-    !(Приложение API)[./media/import-api-app-as-api/api-app.png]
+    ![приложение API;](./media/import-api-app-as-api/api-app.png)
 3. Нажмите кнопку **Обзор**, чтобы просмотреть список приложений API в вашей подписке.
 4. Выберите приложение. Служба управления API найдет файл Swagger, связанный с выбранным приложением, извлечет и импортирует его. 
 

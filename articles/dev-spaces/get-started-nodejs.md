@@ -10,12 +10,12 @@ ms.date: 09/26/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: 662c324da3b644b7ccdb33fc428c0886ae93d78d
-ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
+ms.openlocfilehash: c1263efbef4d4bd2d3a0a709fa488ed9aef6c027
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51515307"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51684983"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-nodejs"></a>Начало работы в Azure Dev Spaces с Node.js
 
@@ -84,6 +84,9 @@ az aks create -g MyResourceGroup -n MyAKS --location <region> --kubernetes-versi
    ```cmd
    az aks use-dev-spaces -g MyResourceGroup -n MyAKS
    ```
+
+> [!IMPORTANT]
+> Процесс настройки Azure Dev Spaces удалит пространство имен `azds` в кластере, если оно существует.
 
 ## <a name="get-kubernetes-debugging-for-vs-code"></a>Получение функции отладки Kubernetes для VS Code
 Для разработчиков .NET Core и Node.js, которые используют VS Code, доступны широкие возможности, такие как функция отладки Kubernetes.

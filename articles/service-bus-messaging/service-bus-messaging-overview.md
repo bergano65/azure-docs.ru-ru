@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 09/22/2018
 ms.custom: mvc
 ms.author: spelluru
-ms.openlocfilehash: 870cfcf8712cc5bee2674b82d5292e4241433386
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 7b4045737ea2be466a436e6abb0de6a1a61e6a5b
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49342213"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636600"
 ---
 # <a name="what-is-azure-service-bus"></a>Что такое служебная шина Azure?
 
@@ -39,7 +39,7 @@ ms.locfileid: "49342213"
 
 ![Очередь](./media/service-bus-messaging-overview/about-service-bus-queue.png)
 
-Сообщения в очередях упорядочиваются и получают отметку времени поступления. Принятые сообщения безопасно хранятся в хранилище с избыточностью. Сообщения доставляются в режиме *запроса*, то есть процессом доставки управляет приложение.
+Сообщения в очередях упорядочиваются и получают отметку времени поступления. Принятые сообщения безопасно хранятся в избыточном хранилище. Сообщения доставляются в режиме  *запроса*.
 
 ## <a name="topics"></a>Разделы
 
@@ -115,9 +115,9 @@ ms.locfileid: "49342213"
 
 Служебная шина полностью интегрируется со следующими службами Azure:
 
-- [Сетка событий](https://azure.microsoft.com/services/event-grid/) 
-- [Logic Apps](https://azure.microsoft.com/services/logic-apps/) 
-- [Функции](https://azure.microsoft.com/services/functions/) 
+- [Сетка событий](https://azure.microsoft.com/services/event-grid/) 
+- [Logic Apps](https://azure.microsoft.com/services/logic-apps/) 
+- [Функции](https://azure.microsoft.com/services/functions/) 
 - [Dynamics 365](https://dynamics.microsoft.com)
 - [Анализ потока](https://azure.microsoft.com/services/stream-analytics/)
  

@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 06/26/2018
+ms.date: 11/13/2018
 ms.author: magoedte
 ms.custom: mvc
 ms.component: ''
-ms.openlocfilehash: 59133eb9ebc24bc423764523aa9c74430d63b30a
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: ca753085efef241ea14443eabf19d7bf8b996361
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50962531"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51621536"
 ---
 # <a name="collect-data-about-azure-virtual-machines"></a>Сбор данных о виртуальных машинах Azure
 [Azure Log Analytics](log-analytics-queries.md) может собирать данные напрямую c виртуальных машин Azure и других ресурсов в среде в один репозиторий для подробного анализа и корреляции.  В этом кратком руководстве показано, как настроить и собирать данные c виртуальных машин под управлением Linux или Windows с помощью нескольких простых действий.  
@@ -54,7 +54,7 @@ ms.locfileid: "50962531"
 
 [!INCLUDE [log-analytics-agent-note](../../includes/log-analytics-agent-note.md)] 
 
-На виртуальные машины Windows и Linux, развернутые в Azure, устанавливается агент Log Analytics с расширением виртуальной машины Log Analytics.  Использование расширения упрощает процесс установки и автоматически настраивает агент на отправку данных в указанную вами рабочую область службы Log Analytics. Кроме того, агент обновляется автоматически, обеспечивая наличие новейших компонентов и исправлений.
+На виртуальные машины Windows и Linux, развернутые в Azure, устанавливается агент Log Analytics с расширением виртуальной машины Log Analytics. Использование расширения упрощает процесс установки и автоматически настраивает агент на отправку данных в указанную вами рабочую область службы Log Analytics. Кроме того, агент обновляется автоматически, обеспечивая наличие новейших компонентов и исправлений. Прежде чем продолжить, проверьте, запущена ли виртуальная машина. В противном случае процесс не будет успешно завершен.  
 
 >[!NOTE]
 >Агент Log Analytics для Linux невозможно настроить для отправки отчетов в несколько рабочих областей Log Analytics. 

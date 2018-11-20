@@ -1,60 +1,65 @@
 ---
-title: Краткое руководство. Обнаружение лиц на изображении с помощью REST API и cURL
+title: Краткое руководство. Определение лиц на изображении с помощью Azure REST API и cURL
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве вы узнаете, как обнаруживать лица на изображениях, используя API распознавания лиц и cURL.
+description: В этом кратком руководстве описано, как определить лица на изображении с помощью REST API распознавания лиц Azure и cURL.
 services: cognitive-services
 author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: face-api
 ms.topic: quickstart
-ms.date: 05/10/2018
+ms.date: 11/09/2018
 ms.author: pafarley
-ms.openlocfilehash: ab403ec6a9db4d1a0dc03074044eeb424e4ba875
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: a9e3b4713e11b5f01ea8343471aa33a327210338
+ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49953354"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51578052"
 ---
-# <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-curl"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и cURL
+# <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-curl"></a>Краткое руководство. Определение лиц на изображении с помощью REST API распознавания лиц и cURL
 
-В этом кратком руководстве вы узнаете, как определять лица на изображении с помощью API распознавания лиц.
+В этом кратком руководстве описано, как определить лица на изображении с помощью REST API распознавания лиц Azure и cURL.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить пример, нужен ключ подписки. Вы можете получить ключи бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
+- Ключ подписки на API распознавания лиц. Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на API распознавания лиц и свой ключ.
 
-## <a name="detect-faces-in-an-image"></a>определение лиц на изображении.
-
-Используйте метод [определения лица](https://westcentralus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), чтобы распознать лица на изображении и вернуть их атрибуты, в том числе:
-
-* Идентификатор лица: уникальный идентификатор, используемый в различных сценариях API распознавания лиц.
-* Границы лица: отступ слева, сверху, а также ширина и высота лица, определяющие его место на изображении.
-* Ориентиры: массив из 27-точечных ориентиров, указывающий на важные позиции компонентов лица.
-* Атрибуты лица, в т. ч. возраст, пол, интенсивность улыбки, положение головы и наличие усов и бороды.
-
-Чтобы выполнить наш пример, сделайте следующее:
-
-1. Откройте окно командной строки.
-2. Замените `<Subscription Key>` действительным ключом подписки.
-3. При необходимости вместо URL-адреса (`https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect`) укажите расположение, в котором вы получили ключи подписки.
-4. Если нужно, измените анализируемое изображение (`"{\"url\":...`).
-5. Вставьте код в командное окно.
-6. Выполните команду.
-
-### <a name="face---detect-request"></a>Запрос на определение лица
-
-> [!NOTE]
-> В вызове REST необходимо использовать то же расположение, что и для получения ключей подписки. Например, если вы получили ключи подписки в регионе "Западная часть США", в URL-адресе ниже замените westcentralus на westus.
+## <a name="write-the-command"></a>Написание команды
+ 
+Для вызова API распознавания лиц и получения данных об атрибутах лиц из изображения будет использоваться приведенная ниже команда. Сначала скопируйте код в текстовый редактор. Вам потребуется внести изменения в определенные части команды перед ее запуском.
 
 ```shell
 curl -H "Ocp-Apim-Subscription-Key: <Subscription Key>" "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise" -H "Content-Type: application/json" --data-ascii "{\"url\":\"https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg\"}"
 ```
 
-### <a name="face---detect-response"></a>Результат распознавания лица
+### <a name="subscription-key"></a>Ключ подписки
+Замените `<Subscription Key>` действительным ключом подписки API распознавания лиц.
 
-Успешный ответ будет возвращен в формате JSON.
+### <a name="face-endpoint-url"></a>URL-адрес конечной точки API распознавания лиц
+
+URL-адрес `https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect` определяет конечную точку API распознавания лиц Azure, которая будет запрашиваться. Первую часть этого URL-адреса нужно будет изменить, указав регион, соответствующий ключу подписки (если указан не тот регион).
+
+### <a name="url-query-string"></a>Строка запроса URL-адреса
+
+Строка запроса URL-адреса конечной точки API распознавания лиц указывает атрибуты лица, которые нужно получить. Вы можете изменить эту строку в зависимости от предполагаемого использования.
+
+```
+?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise
+```
+
+### <a name="image-source-url"></a>URL-адрес источника изображения
+URL-адрес источника указывает на изображение, используемое в качестве входных данных. Вы можете изменить значение в этом поле, указав URL-адрес любого изображения, которое нужно проанализировать.
+
+```
+https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg
+``` 
+
+## <a name="run-the-command"></a>Выполните команду следующую команду.
+
+После внесения изменений откройте командную строку и введите новую команду. В окне консоли должна появиться информация о лицах в виде данных JSON. Например: 
 
 ```json
 [
@@ -150,7 +155,7 @@ curl -H "Ocp-Apim-Subscription-Key: <Subscription Key>" "https://westcentralus.a
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с API-интерфейсами распознавания лиц, которые используются для обнаружения лиц, обозначения их границ и возврата таких атрибутов, как возраст и пол.
+В этом кратком руководстве вы написали команду cURL, которая вызывает API распознавания лиц Azure для определения лиц на изображении и возвращения их атрибутов. Ознакомьтесь со справочной документацией по API распознавания лиц, чтобы узнать больше.
 
 > [!div class="nextstepaction"]
-> [API-интерфейсы распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
+> [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

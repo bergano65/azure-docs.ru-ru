@@ -10,12 +10,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: dech
-ms.openlocfilehash: 7eeb4fdba8272d9bc2b67d8a33dd7b1d210f5e47
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 61d9d33ae7e8e2104e61bbd24862a709dd6d78ec
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51278605"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636498"
 ---
 # <a name="tutorial-build-a-nodejs-console-app-with-javascript-sdk-to-manage-azure-cosmos-db-sql-api-data"></a>Руководство. Создание консольного приложения Node.js с помощью пакета SDK JavaScript для управления данными API SQL для Azure Cosmos DB
 
@@ -218,7 +218,7 @@ ms.locfileid: "51278605"
    const containerId = config.container.id;
    ```
 
-   [Базу данных](sql-api-resources.md#databases) можно создать с помощью метода [createIfNotExists](/javascript/api/%40azure/cosmos/databases) или функции [create](/javascript/api/%40azure/cosmos/databases) класса **Databases**. База данных представляет собой логический контейнер элементов, разделенных между контейнерами. 
+   Вы можете создать базу данных с помощью метода [createIfNotExists](/javascript/api/%40azure/cosmos/databases) или функции [create](/javascript/api/%40azure/cosmos/databases) класса **Databases**. База данных представляет собой логический контейнер элементов, разделенных между контейнерами. 
 
 2. Скопируйте и вставьте методы **createDatabase** и **readDatabase** в файл app.js в определениях ```databaseId``` и ```containerId```. Функция **createDatabase** создаст базу данных с идентификатором ```FamilyDatabase```, указанным из объекта ```config```, если она не была создана ранее. Функция **readDatabase** считает определение базы данных, чтобы удостовериться в ее наличии.
 

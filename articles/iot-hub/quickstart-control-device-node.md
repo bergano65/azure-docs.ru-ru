@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/19/2018
 ms.author: dobett
-ms.openlocfilehash: 614e1dc7af174952bb1db0f47e989a91f7334622
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 73eae5f024c6dc707e5fa7c0a55d88672271e313
+ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49363883"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "51515784"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-nodejs"></a>Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Node.js)
 
@@ -26,6 +26,7 @@ ms.locfileid: "49363883"
 В этом кратком руководстве используется два предварительно созданных приложения Node.js:
 
 * Приложение имитированного устройства, реагирующее на прямые методы, вызванные из внутреннего приложения. Чтобы получать вызовы прямого метода, это приложение подключается к конечной точке конкретного устройства в Центре Интернета вещей.
+
 * Внутреннее приложение, вызывающее прямые методы в имитированном устройстве. Чтобы вызвать прямой метод в устройстве, это приложение подключается к конечной точке на стороне службы в Центре Интернета вещей.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
@@ -50,7 +51,7 @@ node --version
 
 Если вы закончили работу с предыдущим [руководством по отправке данных телеметрии с устройства в Центр Интернета вещей](quickstart-send-telemetry-node.md), этот шаг можно пропустить.
 
-[!INCLUDE [iot-hub-quickstarts-create-hub](../../includes/iot-hub-quickstarts-create-hub.md)]
+[!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
 ## <a name="register-a-device"></a>Регистрация устройства
 
@@ -66,15 +67,19 @@ node --version
 
     ```azurecli-interactive
     az extension add --name azure-cli-iot-ext
-    az iot hub device-identity create --hub-name YourIoTHubName --device-id MyNodeDevice
+    az iot hub device-identity create \
+      --hub-name YourIoTHubName --device-id MyNodeDevice
     ```
 
-1. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
+2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
 
     **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyNodeDevice --output table
+    az iot hub device-identity show-connection-string \
+      --hub-name YourIoTHubName \
+      --device-id MyNodeDevice \
+      --output table
     ```
 
     Запишите строку подключения устройства, которая выглядит так:
@@ -83,12 +88,13 @@ node --version
 
     Это значение понадобится позже в рамках этого краткого руководства.
 
-1. Чтобы разрешить внутреннему приложению подключаться к Центру Интернета вещей и получать сообщения, вам необходима _строка подключения к службе_. Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
+3. Чтобы разрешить внутреннему приложению подключаться к Центру Интернета вещей и получать сообщения, вам необходима _строка подключения к службе_. Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
 
     **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub show-connection-string --hub-name YourIoTHubName --output table
+    az iot hub show-connection-string \
+      --hub-name YourIoTHubName --output table
     ```
 
     Запишите строку подключения к службе, которая выглядит так:
@@ -103,11 +109,11 @@ node --version
 
 1. В окне терминала на локальном компьютере перейдите в корневую папку примера проекта Node.js. Затем перейдите в папку **iot-hub\Quickstarts\simulated-device-2**.
 
-1. Откройте файл **SimulatedDevice.js** в любом текстовом редакторе.
+2. Откройте файл **SimulatedDevice.js** в любом текстовом редакторе.
 
     Замените значение переменной `connectionString` записанной ранее строкой подключения к устройству. Сохраните изменения в файле **SimulatedDevice.js**.
 
-1. Установите необходимые библиотеки и запустите приложение имитированного устройства, выполнив в окне локального терминала следующие команды:
+3. Установите необходимые библиотеки и запустите приложение имитированного устройства, выполнив в окне локального терминала следующие команды:
 
     ```cmd/sh
     npm install
@@ -116,7 +122,7 @@ node --version
 
     На следующем снимке экрана показан пример выходных данных, когда приложение имитированного устройства отправляет данные телеметрии в Центр Интернета вещей:
 
-    ![Запуск виртуального устройства](media/quickstart-control-device-node/SimulatedDevice-1.png)
+    ![Запуск виртуального устройства](./media/quickstart-control-device-node/SimulatedDevice-1.png)
 
 ## <a name="call-the-direct-method"></a>Вызов прямого метода
 
@@ -124,11 +130,11 @@ node --version
 
 1. В другом окне терминала на локальном компьютере перейдите в корневую папку примера проекта Node.js. Затем перейдите в папку **iot-hub\Quickstarts\back-end-application**.
 
-1. Откройте файл **BackEndApplication.js** в любом текстовом редакторе.
+2. Откройте файл **BackEndApplication.js** в любом текстовом редакторе.
 
     Замените значение переменной `connectionString` записанной ранее строкой подключения к службе. Сохраните изменения в файле **BackEndApplication.js**.
 
-1. Установите необходимые библиотеки и запустите внутреннее приложение, выполнив в окне локального терминала следующие команды:
+3. Установите необходимые библиотеки и запустите внутреннее приложение, выполнив в окне локального терминала следующие команды:
 
     ```cmd/sh
     npm install
@@ -137,20 +143,19 @@ node --version
 
     На следующем снимке экрана показан пример выходных данных, когда приложение выполняет вызов прямого метода к устройству и получает подтверждение:
 
-    ![Запуск внутреннего приложения](media/quickstart-control-device-node/BackEndApplication.png)
+    ![Запуск внутреннего приложения](./media/quickstart-control-device-node/BackEndApplication.png)
 
     После запуска внутреннего приложения в окне консоли, в котором выполняется имитированное устройство, отобразится сообщение и изменится интервал, с которым это приложение отправляет сообщения:
 
-    ![Изменения в имитированном клиенте](media/quickstart-control-device-node/SimulatedDevice-2.png)
+    ![Изменения в имитированном клиенте](./media/quickstart-control-device-node/SimulatedDevice-2.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources.md)]
 
-
 ## <a name="next-steps"></a>Дополнительная информация
 
-В рамках этого краткого руководства вы вызвали прямой метод в устройстве из внутреннего приложения, а также ответили на этот вызов в приложении имитированного устройства.
+В рамках этого краткого руководства вы вызвали прямой метод на устройстве из внутреннего приложения, а также ответили на этот вызов в приложении имитированного устройства.
 
 Чтобы узнать, как маршрутизировать сообщения с устройства в облако в разные расположения в облаке, перейдите к следующему руководству.
 

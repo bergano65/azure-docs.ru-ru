@@ -11,12 +11,12 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 06/29/2018
 ms.author: sngun
-ms.openlocfilehash: 66e937e92528e2f0a1fca9d9aac78f7265eef4f7
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: f79455166ef0d1bec9a2fb1d6045005f844e55ac
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50741238"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636753"
 ---
 # <a name="tutorial-build-a-java-app-with-async-java-sdk-to-manage-azure-cosmos-db-sql-api-data"></a>Руководство. Создание приложения Java с помощью пакета SDK Async Java для управления данными API SQL для Azure Cosmos DB
 
@@ -116,7 +116,7 @@ client = new AsyncDocumentClient.Builder()
 
 ## <a id="CreateDatabase"></a>Шаг 5. Создание базы данных
 
-[Базу данных](sql-api-resources.md#databases) Azure Cosmos DB можно создать с помощью метода CreateDatabaseIfNotExists() класса DocumentClient. База данных представляет собой логический контейнер для хранения документов JSON, разделенных между коллекциями.
+[Базу данных](databases-containers-items.md#azure-cosmos-databases) Azure Cosmos DB можно создать с помощью метода CreateDatabaseIfNotExists() класса DocumentClient. База данных представляет собой логический контейнер для хранения документов JSON, разделенных между коллекциями.
 
 ```java
 private void createDatabaseIfNotExists() throws Exception 
@@ -203,7 +203,7 @@ private void createDocumentCollectionIfNotExists() throws Exception
 
 ## <a id="CreateDoc"></a>Шаг 7. Создание документов JSON
 
-[Документ](sql-api-resources.md#documents) можно создать с помощью метода createDocument класса DocumentClient. Документы относятся к пользовательскому (произвольному) содержимому JSON. Теперь мы можем добавить один или несколько документов. Файл "src/main/java/com/microsoft/azure/cosmosdb/sample/Families.java" определяет семейство документов JSON 
+Вы можете создать документ с помощью метода createDocument, который относится к классу DocumentClient. Документы относятся к пользовательскому (произвольному) содержимому JSON. Теперь мы можем добавить один или несколько документов. Файл "src/main/java/com/microsoft/azure/cosmosdb/sample/Families.java" определяет семейство документов JSON 
 
 ```java
 public static Family getJohnsonFamilyDocument() {

@@ -1,7 +1,6 @@
 ---
-title: Пример. Анализ тональности с помощью REST API анализа текста
-titleSuffix: Azure Cognitive Services
-description: Узнайте, как определить тональность с помощью REST API анализа текста.
+title: Инструкции по анализу тональности в REST API анализа текста (Microsoft Cognitive Services в Azure) | Документация Майкрософт
+description: Инструкции по обнаружению тональности с помощью REST API анализа текста в Microsoft Cognitive Services в Azure в этом пошаговом руководстве.
 services: cognitive-services
 author: HeidiSteen
 manager: cgronlun
@@ -10,12 +9,12 @@ ms.component: text-analytics
 ms.topic: sample
 ms.date: 09/12/2018
 ms.author: heidist
-ms.openlocfilehash: 981e663b6a93abed1da9c2765a1b43063c70ad43
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: bbe9ffd0709157b5f0389ccc68a285b9c3829db9
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45605901"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51632872"
 ---
 # <a name="example-how-to-detect-sentiment-in-text-analytics"></a>Пример. Как определить тональность с помощью Анализа текста
 
@@ -24,6 +23,9 @@ ms.locfileid: "45605901"
 Эта возможность нужна для обнаружения положительных и отрицательных тональностей в социальных сетях, отзывах клиентов и на форумах. Содержимое предоставляете вы, а модели и данные для обучения — служба.
 
 В настоящий момент анализ тональности поддерживает английский, немецкий, испанский и французский языки. Другие языки находятся на этапе предварительной версии. Дополнительные сведения см. в [списке поддерживаемых языков](../text-analytics-supported-languages.md).
+
+> [!TIP]
+> API анализа текста также предоставляет образ контейнера Docker под управлением Linux для анализа тональности, поэтому вы можете [установить и запустить контейнер API анализа текста](text-analytics-how-to-install-containers.md) в непосредственной близости к своим данным.
 
 ## <a name="concepts"></a>Основные понятия
 
@@ -77,7 +79,7 @@ ms.locfileid: "45605901"
 
 + Создайте запрос **POST**. Изучите документацию по API для этого запроса: [API анализа тональности](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9)
 
-+ Создайте конечную точку HTTP для извлечения ключевых фраз. Она должна включать ресурс `/sentiment`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment`
++ Задайте конечную точку HTTP для анализа тональности с помощью ресурса API анализа текста в Azure или экземпляра [контейнера API анализа текста](text-analytics-how-to-install-containers.md). Она должна включать ресурс `/sentiment`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment`
 
 + Задайте заголовок запроса, чтобы включить ключ доступа для операций Анализа текста. Дополнительные сведения см. в статье [о поиске конечных точек и ключей доступа](text-analytics-how-to-access-key.md).
 

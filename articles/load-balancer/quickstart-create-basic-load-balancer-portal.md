@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 03/22/2018
 ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: 7451d6ade7f8b042a68f456e604e2919cacab0a5
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 523f5eba632b15eaaf45f24be820f7b255aae7c0
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44378437"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51616033"
 ---
 # <a name="quickstart-create-a-public-basic-load-balancer-by-using-the-azure-portal"></a>Краткое руководство по созданию общедоступной подсистемы балансировки нагрузки уровня "Базовый" с помощью портала Azure
 
@@ -159,6 +159,7 @@ ms.locfileid: "44378437"
    - **myHealthProbe** — для имени зонда работоспособности.
    - **HTTP** — для типа протокола.
    - **80** — для номера порта.
+   - **Healthprobe.aspx** — для пути URI. Можно заменить это значение любым другим URI или оставить стандартное значение пути **"\\"**, чтобы использовать URI по умолчанию.
    - **15** — для поля **Интервал** (количество попыток выполнения зонда (в секундах)).
    - **2** — для поля **Порог состояния неработоспособности** (количество последовательных сбоев зонда, которые должны произойти, прежде чем виртуальная машина будет считаться неработоспособной).
 

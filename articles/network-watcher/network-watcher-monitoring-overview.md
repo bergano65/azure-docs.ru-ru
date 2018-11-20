@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 04/24/2018
 ms.author: jdial
 ms.custom: mvc
-ms.openlocfilehash: 7cccb47bd7489e88649ee82c4d52c72af0d91e8e
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
+ms.openlocfilehash: 983b966ad304afb467df26193dd609f6f21a1b32
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44390951"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51614283"
 ---
 # <a name="what-is-azure-network-watcher"></a>Наблюдатель за сетями Azure
 
@@ -98,6 +98,9 @@ ms.locfileid: "44390951"
 ### <a name="view-diagnostic-logs-for-network-resources"></a>Просмотр журналов диагностики для сетевых ресурсов
 
 Вы можете включить ведение журнала диагностики для сетевых ресурсов Azure, таких как группы безопасности сети, общедоступные IP-адреса, подсистемы балансировки нагрузки, шлюзы виртуальной сети и шлюзы приложений. Функция *Журналы диагностики* предоставляет единый интерфейс для включения и отключения журналов диагностики сетевых ресурсов для любого имеющегося сетевого ресурса, который создает журнал диагностики. Вы можете просматривать журналы диагностики с помощью таких инструментов, как Microsoft Power BI и Azure Log Analytics. Подробнее об анализе журналов диагностики сети Azure см. в статье [Azure networking monitoring solutions in Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) (Решения для мониторинга сетей Azure в Log Analytics).
+
+## <a name="network-watcher-automatic-enablement"></a>Автоматическое включение Наблюдателя за сетями
+При создании или обновлении виртуальной сети в подписке Наблюдатель за сетями включается автоматически в регионе, где расположена ваша виртуальная сеть. Автоматическое включение Наблюдателя за сетями не влияет на ваши ресурсы, и за него не взимается дополнительная плата. Дополнительные сведения см. в статье [Создание экземпляра Наблюдателя за сетями Azure](network-watcher-create.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

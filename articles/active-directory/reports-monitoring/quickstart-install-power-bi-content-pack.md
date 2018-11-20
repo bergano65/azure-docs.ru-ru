@@ -12,15 +12,15 @@ ms.component: report-monitor
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 07/23/2018
+ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: ba2784663a585aebb82ee149be3b54e73920f6dd
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: cd5da2a3c5fa3d9cd67715493eb649926badb694
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48816656"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51622540"
 ---
 # <a name="quickstart-install-azure-active-directory-power-bi-content-pack"></a>Краткое руководство. Установка пакета содержимого Power BI для Azure Active Directory
 
@@ -29,7 +29,7 @@ ms.locfileid: "48816656"
 |В настоящее время пакет содержимого Azure AD Power BI использует API-интерфейсы Azure AD Graph для получения данных от вашего клиента Azure AD. Таким образом, можно заметить некоторые несоответствия между данными, доступными в пакете содержимого и данными, полученными с помощью [API-интерфейсов Microsoft Graph для создания отчетов](concept-reporting-api.md). |
 |  |
 
-Пакет содержимого Power BI для Azure Active Directory дает возможность получать полное представление о происходящем с Active Directory. Вы можете загрузить готовый пакет содержимого и с его помощью создавать отчеты о всех действиях в каталоге, используя разные средства визуализации Power BI. Кроме того, вы можете создавать собственные панели мониторинга и легко предоставлять к ним доступ любому пользователю в организации. 
+Пакет содержимого Power BI для Azure Active Directory (Azure AD) дает возможность просматривать данные отчетов из своей среды. Вы можете загрузить готовый пакет содержимого и с его помощью создавать отчеты о всех действиях в каталоге, используя разные средства визуализации Power BI. Кроме того, вы можете создавать собственные панели мониторинга и легко предоставлять к ним доступ любому пользователю в организации. 
 
 В этом кратком руководстве описано, как установить этот пакет содержимого.
 

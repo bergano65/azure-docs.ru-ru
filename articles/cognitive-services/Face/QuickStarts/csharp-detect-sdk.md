@@ -1,192 +1,91 @@
 ---
-title: Краткое руководство. Обнаружение лиц на изображении с помощью .NET SDK и C#
+title: Краткое руководство. Распознавание лиц на изображении с помощью пакета SDK распознавания лиц Azure для .NET
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве вы узнаете, как обнаруживать лица на изображениях, используя клиентскую библиотеку службы распознавания лиц для Windows для C# в Cognitive Services.
+description: В этом кратком руководстве описано, как определять лица на изображении с помощью пакета SDK распознавания лиц Azure и C#.
 services: cognitive-services
 author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: face-api
 ms.topic: quickstart
-ms.date: 09/14/2018
+ms.date: 11/07/2018
 ms.author: pafarley
-ms.openlocfilehash: a4b0b8b277ed6bc6e2bc3c7549d1e67d5f18c615
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 4fbbde167a8c895a71ab3614e8c3ecbce26604a9
+ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49954969"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51578167"
 ---
-# <a name="quickstart-detect-faces-in-an-image-using-the-net-sdk-with-c"></a>Краткое руководство. Обнаружение лиц на изображении с помощью .NET SDK и C#
+# <a name="quickstart-detect-faces-in-an-image-using-the-face-net-sdk"></a>Краткое руководство. Распознавание лиц на изображении с помощью пакета SDK распознавания лиц для .NET
 
-В этом кратком руководстве вы узнаете, как определять лица людей на изображении с помощью клиентской библиотеки распознавания лиц для Windows.
+В этом кратком руководстве описано, как определять лица на изображении с помощью пакета SDK распознавания лиц и C#. Рабочий пример кода, используемого в этом кратком руководстве, можно найти в проекте Face в репозитории [Cognitive Services Vision csharp quickstarts](https://github.com/Azure-Samples/cognitive-services-vision-csharp-sdk-quickstarts/tree/master/Face) на GitHub.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Чтобы выполнить пример, нужен ключ подписки. Вы можете получить ключи бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
-* Любой выпуск [Visual Studio 2017](https://www.visualstudio.com/downloads/).
-* Пакет NuGet клиентской библиотеки [Microsoft.Azure.CognitiveServices.Vision.Face 2.2.0-preview](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.2.0-preview). Скачивать пакет не нужно. Инструкции по установке приведены ниже.
+- Ключ подписки на API распознавания лиц. Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на API распознавания лиц и свой ключ.
+- Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/).
 
-## <a name="detectwithurlasync-method"></a>Метод DetectWithUrlAsync
+## <a name="create-the-visual-studio-project"></a>Создание проекта Visual Studio
 
-> [!TIP]
-> Получите последнюю версию кода, предоставленного в решении Visual Studio, с сайта [GitHub](https://github.com/Azure-Samples/cognitive-services-vision-csharp-sdk-quickstarts/tree/master/Face).
+1. В Visual Studio создайте проект **Консольное приложение (.NET Framework)** и назовите его **FaceDetection**. 
+1. При наличии других проектов в решении выберите этот в качестве единого запускаемого проекта.
+1. Получите необходимые пакеты NuGet. В обозревателе решений щелкните свой проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. Нажмите кнопку **Обзор** и выберите **Включить предварительные выпуски**, а затем найдите и установите следующий пакет:
+    - [Microsoft.Azure.CognitiveServices.Vision.Face 2.2.0-preview](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.2.0-preview).
 
-Методы `DetectWithUrlAsync` и `DetectWithStreamAsync` создают программу-оболочку [API распознавания лиц](https://westcentralus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) для удаленных и локальных изображений соответственно. С помощью этих методов можно распознать лица на изображении и вернуть их атрибуты, в том числе:
+## <a name="add-face-detection-code"></a>Добавление кода определения лиц
 
-* Идентификатор лица: уникальный идентификатор, используемый в различных сценариях API распознавания лиц.
-* Границы лица: отступ слева, сверху, а также ширина и высота лица, определяющие его место на изображении.
-* Ориентиры: массив из 27-точечных ориентиров, указывающий на важные позиции компонентов лица.
-* Атрибуты лица, в т. ч. возраст, пол, интенсивность улыбки, положение головы и наличие усов и бороды.
+Откройте файл *Program.cs* нового проекта. Здесь вы добавите код, необходимый для загрузки изображений и определения лиц.
 
-Чтобы выполнить наш пример, сделайте следующее:
+### <a name="include-namespaces"></a>Включение пространства имен
 
-1. Создайте консольное приложение Visual C# в Visual Studio.
-1. Установите пакет NuGet клиентской библиотеки распознавания лиц.
-    1. В верхнем меню щелкните **Средства**, выберите **Диспетчер пакетов NuGet**, а затем **Manage NuGet Packages for Solution** (Управление пакетами NuGet для решения).
-    1. Щелкните вкладку **Обзор** и выберите **Включить предварительные выпуски**.
-    1. В поле **Поиск** введите "Microsoft.Azure.CognitiveServices.Vision.Face".
-    1. Выберите **Microsoft.Azure.CognitiveServices.Vision.Face**, установите флажок рядом с именем своего проекта и щелкните **Установить**.
-1. Замените *Program.cs* следующим кодом.
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. При необходимости замените `faceEndpoint` регионом Azure, связанным с ключами подписки.
-1. При необходимости вместо `LocalImage>` укажите путь к файлу и имя локального файла изображения (этот параметр игнорируется, если значение не задано).
-1. При необходимости задайте `remoteImageUrl` другого изображения.
-1. Запустите программу.
+Добавьте следующие инструкции `using` в начало файла *Program.cs*.
 
-```csharp
-using Microsoft.Azure.CognitiveServices.Vision.Face;
-using Microsoft.Azure.CognitiveServices.Vision.Face.Models;
+[!code-csharp[](~/cognitive-services-vision-csharp-sdk-quickstarts/Face/Program.cs?range=1-7)]
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
+### <a name="add-essential-fields"></a>Добавление важных полей
 
-namespace DetectFace
-{
-    class Program
-    {
-        // subscriptionKey = "0123456789abcdef0123456789ABCDEF"
-        private const string subscriptionKey = "<SubscriptionKey>";
+Добавьте следующие поля в класс **Program** . Они указывают, как подключиться к службе распознавания лиц и где получить входные данные. Вам нужно будет обновить поле `subscriptionKey`, указав значение вашего ключа подписки, и может потребоваться изменить строку `faceEndpoint`, чтобы она содержала идентификатор правильного региона. Необходимо также задать для `localImagePath` и (или) `remoteImageUrl` пути, которые указывают на фактические файлы изображений.
 
-        // You must use the same region as you used to get your subscription
-        // keys. For example, if you got your subscription keys from westus,
-        // replace "westcentralus" with "westus".
-        //
-        // Free trial subscription keys are generated in the westcentralus
-        // region. If you use a free trial subscription key, you shouldn't
-        // need to change the region.
-        // Specify the Azure region
-        private const string faceEndpoint =
-            "https://westcentralus.api.cognitive.microsoft.com";
+Поле `faceAttributes` — это просто массив определенных типов атрибутов. Оно определяет, какую информацию о распознанных лицах нужно получить.
 
-        // localImagePath = @"C:\Documents\LocalImage.jpg"
-        private const string localImagePath = @"<LocalImage>";
+[!code-csharp[](~/cognitive-services-vision-csharp-sdk-quickstarts/Face/Program.cs?range=13-34)]
 
-        private const string remoteImageUrl =
-            "https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg";
+### <a name="create-and-use-the-face-client"></a>Создание и использование клиента службы распознавания лиц
 
-        private static readonly FaceAttributeType[] faceAttributes =
-            { FaceAttributeType.Age, FaceAttributeType.Gender };
+Далее добавьте следующий код в метод **Main** класса **Program**. Он настраивает клиент API распознавания лиц.
 
-        static void Main(string[] args)
-        {
-            FaceClient faceClient = new FaceClient(
-                new ApiKeyServiceClientCredentials(subscriptionKey),
-                new System.Net.Http.DelegatingHandler[] { });
-            faceClient.Endpoint = faceEndpoint;
+[!code-csharp[](~/cognitive-services-vision-csharp-sdk-quickstarts/Face/Program.cs?range=38-41)]
 
-            Console.WriteLine("Faces being detected ...");
-            var t1 = DetectRemoteAsync(faceClient, remoteImageUrl);
-            var t2 = DetectLocalAsync(faceClient, localImagePath);
+Кроме того, в методе **Main** добавьте следующий код, чтобы использовать созданный клиент службы распознавания лиц для определения лиц на удаленном и локальном изображениях. Методы распознавания лиц будут определены в следующем разделе. 
 
-            Task.WhenAll(t1, t2).Wait(5000);
-            Console.WriteLine("Press any key to exit");
-            Console.ReadLine();
-        }
+[!code-csharp[](~/cognitive-services-vision-csharp-sdk-quickstarts/Face/Program.cs?range=43-49)]
 
-        // Detect faces in a remote image
-        private static async Task DetectRemoteAsync(
-            FaceClient faceClient, string imageUrl)
-        {
-            if (!Uri.IsWellFormedUriString(imageUrl, UriKind.Absolute))
-            {
-                Console.WriteLine("\nInvalid remoteImageUrl:\n{0} \n", imageUrl);
-                return;
-            }
+### <a name="detect-faces"></a>Распознавание лиц
 
-            try
-            {
-                IList<DetectedFace> faceList =
-                    await faceClient.Face.DetectWithUrlAsync(
-                        imageUrl, true, false, faceAttributes);
+Добавьте следующий метод в класс **Program**. Он использует клиент службы распознавания лиц для определения лиц на удаленном изображении, указанном по URL-адресу. Обратите внимание, что он использует поле `faceAttributes` &mdash; объекты **DetectedFace**, добавленные в `faceList`, будут иметь указанные атрибуты (в этом случае возраст и пол).
 
-                DisplayAttributes(GetFaceAttributes(faceList, imageUrl), imageUrl);
-            }
-            catch (APIErrorException e)
-            {
-                Console.WriteLine(imageUrl + ": " + e.Message);
-            }
-        }
+[!code-csharp[](~/cognitive-services-vision-csharp-sdk-quickstarts/Face/Program.cs?range=52-74)]
 
-        // Detect faces in a local image
-        private static async Task DetectLocalAsync(FaceClient faceClient, string imagePath)
-        {
-            if (!File.Exists(imagePath))
-            {
-                Console.WriteLine(
-                    "\nUnable to open or read localImagePath:\n{0} \n", imagePath);
-                return;
-            }
+Аналогичным образом добавьте метод **DetectLocalAsync**. Он использует клиент службы распознавания лиц для определения лиц на локальном изображении, указанном по пути к файлу.
 
-            try
-            {
-                using (Stream imageStream = File.OpenRead(imagePath))
-                {
-                    IList<DetectedFace> faceList =
-                            await faceClient.Face.DetectWithStreamAsync(
-                                imageStream, true, false, faceAttributes);
-                    DisplayAttributes(
-                        GetFaceAttributes(faceList, imagePath), imagePath);
-                }
-            }
-            catch (APIErrorException e)
-            {
-                Console.WriteLine(imagePath + ": " + e.Message);
-            }
-        }
+[!code-csharp[](~/cognitive-services-vision-csharp-sdk-quickstarts/Face/Program.cs?range=76-101)]
 
-        private static string GetFaceAttributes(
-            IList<DetectedFace> faceList, string imagePath)
-        {
-            string attributes = string.Empty;
+### <a name="retrieve-and-display-face-attributes"></a>Извлечение и отображение атрибутов лица
 
-            foreach (DetectedFace face in faceList)
-            {
-                double? age = face.FaceAttributes.Age;
-                string gender = face.FaceAttributes.Gender.ToString();
-                attributes += gender + " " + age + "   ";
-            }
+Теперь определите метод **GetFaceAttributes**. Он возвращает строку с информацией о соответствующих атрибутах.
 
-            return attributes;
-        }
+[!code-csharp[](~/cognitive-services-vision-csharp-sdk-quickstarts/Face/Program.cs?range=103-116)]
 
-        // Display the face attributes
-        private static void DisplayAttributes(string attributes, string imageUri)
-        {
-            Console.WriteLine(imageUri);
-            Console.WriteLine(attributes + "\n");
-        }
-    }
-}
-```
+Наконец, определите метод **DisplayAttributes** для записи данных об атрибутах лица в выходные данные консоли.
 
-### <a name="detectwithurlasync-response"></a>Ответ DetectWithUrlAsync
+[!code-csharp[](~/cognitive-services-vision-csharp-sdk-quickstarts/Face/Program.cs?range=118-123)]
 
-Успешный ответ отображает пол и возраст для каждого лица на изображении.
+## <a name="run-the-app"></a>Запуск приложения
 
-Пример необработанных данных в формате JSON приведен в разделе [Краткое руководство. Обнаружение лиц на изображении с помощью C#](CSharp.md).
+При успешном ответе отобразится пол и возраст каждого лица на изображении. Например: 
 
 ```
 https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg
@@ -195,7 +94,7 @@ Male 37   Female 56
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Узнайте, как создать Windows-приложение WPF, которое использует службу "Распознавание лиц" для обнаружения лиц на изображении. Приложение выделяет рамкой каждое лицо и отображает его описание в строке состояния.
+В этом кратком руководстве вы создали простое консольное приложение .NET, которое может использовать службу API распознавания лиц для распознавания лиц на локальных и удаленных изображениях. Перейдите к более подробному руководству, чтобы узнать, как можно интуитивно понятным образом предоставлять информацию о лицах пользователю.
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание приложения WPF для обнаружения и выделения лиц на изображении](../Tutorials/FaceAPIinCSharpTutorial.md)
+> [Руководство. Создание приложения WPF для обнаружения и выделения лиц на изображении с помощью пакета SDK .NET](../Tutorials/FaceAPIinCSharpTutorial.md)

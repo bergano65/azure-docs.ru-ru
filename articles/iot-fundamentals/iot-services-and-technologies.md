@@ -7,14 +7,14 @@ services: iot-fundamentals
 ms.topic: overview
 ms.date: 10/09/2018
 ms.author: robinsh
-ms.openlocfilehash: 6834ad6c6915ceb3306284ea738d76027e2c9479
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: ba4f5fcb08d671937c677d8a14c27aaec16bcb1b
+ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49365362"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51288719"
 ---
-# <a name="azure-iot-technologies-and-solutions-paas-and-saas"></a>Технологии и решения Интернета вещей Azure: PaaS и SaaS
+# <a name="internet-of-things-iot-technologies-and-solutions-paas-and-saas"></a>Технологии и решения Интернета вещей: PaaS и SaaS
 
 Корпорация Майкрософт создала портфель, который удовлетворяет потребности всех клиентов, предоставляя возможность использовать преимущества цифрового преобразования. Портфель продуктов Интернета вещей Azure представляет собой обзор доступных технологий и решений PaaS и SaaS. Он предоставляет два пути для создания собственного решения:
 
@@ -24,7 +24,7 @@ ms.locfileid: "49365362"
 
 - Программное обеспечение как услуга (SaaS). Приступите к работе с помощью [Azure IoT Central](https://azure.microsoft.com/services/iot-central/), нового решения SaaS для разработки приложений Интернета вещей без сложных решений Интернета вещей. Если в вашей организации не хватает ресурсов для создания собственного решения Интернета вещей, используйте Azure IoT Central. Это решение Интернета вещей без программирования, с помощью которого за считаные минуты можно создавать модели устройств, панели мониторинга и правила.
 
-![Технологии и решения Интернета вещей Azure](./media/iot-comparison/paas-saas-technologies-solutions.png)
+![Технологии и решения Интернета вещей Azure](./media/iot-services-and-technologies/paas-saas-technologies-solutions.png)
 
 ## <a name="solutions"></a>Решения
 

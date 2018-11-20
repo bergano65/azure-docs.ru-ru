@@ -8,17 +8,18 @@ ms.topic: quickstart
 ms.reviewer: sgilley
 author: hning86
 ms.author: haining
-ms.date: 09/24/2018
-ms.openlocfilehash: e4624b115143f9f2e6dd77aa8ee79597c86ba31c
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.date: 11/09/2018
+ms.openlocfilehash: fff08131af277b20034ad23c354b70e73ae32f2e
+ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49456210"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51578286"
 ---
 # <a name="quickstart-use-python-to-get-started-with-azure-machine-learning"></a>Краткое руководство. Использование Python для начала работы со службой "Машинное обучение Azure"
 
-В рамках этого краткого руководства будет использоваться пакет SDK для Машинного обучения Azure для Python для создания и применения [рабочей области](concept-azure-machine-learning-architecture.md) Службы машинного обучения. Эта рабочая область — основной блок в облаке для экспериментов, обучения и развертывания моделей машинного обучения с помощью Машинного обучения Azure.
+В рамках этого краткого руководства будет использоваться пакет SDK для Машинного обучения Azure для Python для создания и применения [рабочей области](concept-azure-machine-learning-architecture.md) Службы машинного обучения. Эта рабочая область — основной блок в облаке для экспериментов, обучения и развертывания моделей машинного обучения с помощью Машинного обучения Azure. В этом кратком руководстве вы начнете с настройки собственного окружения Python и сервера Jupyter Notebook. Сведения о том, как приступить к работе без установки компонентов, см. в статье [Краткое руководство. Начало работы со Службой машинного обучения Azure с помощью портала Azure](quickstart-get-started.md).
+
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2G9N6]
 
@@ -38,6 +39,9 @@ ms.locfileid: "49456210"
 - [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) 
 - [Хранилище ключей Azure](https://azure.microsoft.com/services/key-vault/)
 
+>[!NOTE]
+> Код в этой статье был протестирован с пакетом SDK для службы "Машинное обучение Azure" версии 0.1.74. 
+
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 
@@ -56,28 +60,31 @@ ms.locfileid: "49456210"
 
 Откройте окно командной строки. Затем создайте среду conda с именем `myenv`, используя Python 3.6.
 
-```sh
+```shell
 conda create -n myenv -y Python=3.6
 ```
 
 Активируйте среду.
 
-  ```sh
+  ```shell
   conda activate myenv
   ```
 
 ### <a name="install-the-sdk"></a>Установка пакета SDK
 
-В активированной среде conda установите пакет SDK. Этот код устанавливает основные компоненты пакета SDK для Машинного обучения. Он также устанавливает сервер Jupyter Notebook в среду conda `myenv`. Установка занимает **около 4 минут**.
+В активированной среде conda установите пакет SDK. Приведенная ниже команда устанавливает основные компоненты пакета SDK для Машинного обучения. Он также устанавливает сервер Jupyter Notebook в среду conda `myenv`. Установка занимает несколько минут в зависимости от конфигурации компьютера.
 
-```sh
+```shell
+# install the base SDK and Jupyter Notebook
 pip install azureml-sdk[notebooks]
 ```
+
+
 
 ## <a name="create-a-workspace"></a>Создание рабочей области
 
 Чтобы запустить Jupyter Notebook, введите эту команду.
-```sh
+```shell
 jupyter notebook
 ```
 
@@ -85,10 +92,7 @@ jupyter notebook
 
 Чтобы просмотреть версию пакета SDK, введите следующий код Python в ячейку записной книжки и выполните его.
 
-```python
-import azureml.core
-print(azureml.core.VERSION)
-```
+[!code-python[](~/aml-sdk-samples/ignore/doc-qa/quickstart-create-workspace-with-python/quickstart.py?name=import)]
 
 Создайте группу ресурсов Azure и рабочую область.
 
@@ -97,10 +101,10 @@ print(azureml.core.VERSION)
 ```python
 from azureml.core import Workspace
 ws = Workspace.create(name='myworkspace',
-                      subscription_id='<azure-subscription-id>',
+                      subscription_id='<azure-subscription-id>',    
                       resource_group='myresourcegroup',
                       create_resource_group=True,
-                      location='eastus2' # or other supported Azure region
+                      location='eastus2' # or other supported Azure region  
                      )
 ```
 
@@ -108,9 +112,8 @@ ws = Workspace.create(name='myworkspace',
 
 Чтобы просмотреть сведения о рабочей области, например связанное хранилище, реестр контейнеров и хранилище ключей, введите следующий код.
 
-```python
-ws.get_details()
-```
+[!code-python[](~/aml-sdk-samples/ignore/doc-qa/quickstart-create-workspace-with-python/quickstart.py?name=getDetails)]
+
 
 ## <a name="write-a-configuration-file"></a>Запись файла конфигурации
 
@@ -118,14 +121,8 @@ ws.get_details()
 
 Этот файл конфигурации рабочей области упрощает дальнейшую загрузку этой же рабочей области. Вы можете загрузить ее с помощью других записных книжек и скриптов в том же каталоге или подкаталоге. 
 
-```python
-# Create the configuration file.
-ws.write_config()
+[!code-python[](~/aml-sdk-samples/ignore/doc-qa/quickstart-create-workspace-with-python/quickstart.py?name=writeConfig)]
 
-# Use this code to load the workspace from 
-# other scripts and notebooks in this directory.
-# ws = Workspace.from_config()
-```
 
 Вызов API `write_config()` позволяет создать файл конфигурации в текущем каталоге. Файл `config.json` содержит следующий скрипт.
 
@@ -141,24 +138,8 @@ ws.write_config()
 
 Напишите код, использующий базовые интерфейсы API пакета SDK для отслеживания нескольких экспериментальных запусков.
 
-```python
-from azureml.core import Experiment
+[!code-python[](~/aml-sdk-samples/ignore/doc-qa/quickstart-create-workspace-with-python/quickstart.py?name=useWs)]
 
-# create a new experiment
-exp = Experiment(workspace=ws, name='myexp')
-
-# start a run
-run = exp.start_logging()
-
-# log a number
-run.log('my magic number', 42)
-
-# log a list (Fibonacci numbers)
-run.log_list('my list', [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]) 
-
-# finish the run
-run.complete()
-```
 
 ## <a name="view-logged-results"></a>Просмотр зарегистрированных результатов
 После завершения выполнения сведения об экспериментальном запуске можно просмотреть на портале Azure. Используйте следующий код для вывода URL-адреса в результатах последнего запуска.
@@ -177,9 +158,8 @@ print(run.get_portal_url())
 
 Если вы не планируете использовать созданные здесь ресурсы, удалите их, чтобы с вас не взималась плата.
 
-```python
-ws.delete(delete_dependent_resources=True)
-```
+[!code-python[](~/aml-sdk-samples/ignore/doc-qa/quickstart-create-workspace-with-python/quickstart.py?name=delete)]
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -191,10 +171,34 @@ ws.delete(delete_dependent_resources=True)
 1. В окне командной строки используйте комбинацию клавиш `Ctrl`+`C`, чтобы остановить работу сервера записной книжки.
 1. Установите дополнительные пакеты.
 
-    ```sh
+    ```shell
     conda install -y cython matplotlib scikit-learn pandas numpy
     pip install azureml-sdk[automl]
+
+    # install run history widget
+    jupyter nbextension install --py --user azureml.train.widgets
+
+    # enable run history widget
+    jupyter nbextension enable --py --user azureml.train.widgets
     ```
+
+    Для установки дополнительных компонентов пакета SDK можно использовать дополнительные ключевые слова.
+
+    ```shell
+    # install the base SDK and auto ml components
+    pip install azureml-sdk[automl]
+
+    # install the base SDK and model explainability component
+    pip install azureml-sdk[explain]
+
+    # install the base SDK and experimental components
+    pip install azureml-sdk[contrib]
+
+    # install the base SDK and automl components in Azure Databricks environment
+    # read more at: https://github.com/Azure/MachineLearningNotebooks/tree/master/databricks
+    pip install azureml-sdk[databricks]
+    ```
+
 
 После установки этих пакетов следуйте инструкциям в руководствах по обучению и развертыванию моделей. 
 

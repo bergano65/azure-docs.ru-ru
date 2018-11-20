@@ -13,15 +13,15 @@ ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.component: report-monitor
-ms.date: 06/21/2018
+ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 334649dbe315cb54ba95a29f4c69441fcd2c3417
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 0e6e72424530d18b55f68077ba7c3328d9a2e549
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46362975"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51621435"
 ---
 # <a name="quickstart-download-a-sign-in-report-using-the-azure-portal"></a>Краткое руководство. Загрузка отчета по входу в систему с помощью портала Azure | Документация Майкрософт
 
@@ -32,7 +32,7 @@ ms.locfileid: "46362975"
 Вам необходимы:
 
 * клиент Azure Active Directory с лицензией уровня Premium для просмотра отчета о действиях входа; 
-* пользователь с ролью администратора безопасности, читатель безопасности, читатель отчетов или глобальный администратор для этого клиента; а также любой пользователь клиента, который имеет доступ к своим собственным данным для входа в систему.
+* пользователь с ролью **администратора безопасности**, **читателя безопасности**, **читателя отчетов** или **глобального администратора** для этого клиента; а также любой пользователь клиента, который имеет доступ к своим собственным данным для входа в систему.
 
 ## <a name="quickstart-download-a-sign-in-report"></a>Краткое руководство. Загрузка отчета по входу в систему
 

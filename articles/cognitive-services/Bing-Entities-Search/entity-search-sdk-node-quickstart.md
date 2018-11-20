@@ -10,23 +10,25 @@ ms.component: bing-entity-search
 ms.topic: quickstart
 ms.date: 02/12/2018
 ms.author: v-gedod
-ms.openlocfilehash: 1f2a5f6a1473cde40928ada6e30f6bd9b780543d
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: 69bcca7871d9bf4bebf64c0c0ae1b54cd8408927
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48814888"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51684126"
 ---
 # <a name="quickstart-bing-entity-search-sdk-with-node"></a>Краткое руководство по работе с пакетом SDK для API Bing для поиска сущностей с использованием Node
 
 Пакет SDK Bing для поиска сущностей содержит функции REST API для обработки запросов сущностей и анализа результатов. 
 
 [Исходный код примеров для пакета SDK Bing для поиска сущностей для C#](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples/blob/master/Samples/entitySearch.js) доступен на сайте GitHub.
-## <a name="application-dependencies"></a>Установка зависимостей
+## <a name="application-dependencies"></a>Зависимости приложения
 
-Чтобы установить консольное приложение, использующее пакет SDK Bing для поиска сущностей, выполните команду `npm install azure-cognitiveservices-entitysearch` в среде разработки.
+Чтобы установить консольное приложение с помощью пакета SDK для API "Поиск сущностей Bing", сделайте следующее:
+* Выполните команду `npm install ms-rest-azure` в своей среде разработки.
+* Выполните команду `npm install azure-cognitiveservices-entitysearch` в своей среде разработки.
 
-## <a name="entity-search-client"></a>Клиент API для поиска сущностей
+## <a name="entity-search-client"></a>Клиент Поиска сущностей
 Получите [ключ доступа Cognitive Services](https://azure.microsoft.com/try/cognitive-services/) в разделе *Поиск*. Создайте экземпляр `CognitiveServicesCredentials`.
 ```
 const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;

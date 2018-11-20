@@ -1,7 +1,6 @@
 ---
-title: Пример. Определение языка с помощью REST API анализа текста
-titleSuffix: Azure Cognitive Services
-description: Узнайте, как определить язык с помощью REST API анализа текста.
+title: Инструкции по распознаванию языка в REST API анализа текста (Microsoft Cognitive Services в Azure) | Документация Майкрософт
+description: Инструкции по распознаванию языка с помощью REST API анализа текста в Microsoft Cognitive Services в Azure в этом пошаговом руководстве.
 services: cognitive-services
 author: HeidiSteen
 manager: cgronlun
@@ -10,18 +9,21 @@ ms.component: text-analytics
 ms.topic: sample
 ms.date: 09/12/2018
 ms.author: heidist
-ms.openlocfilehash: fa71e4ce2e5cb5967bb583c7314072830de08051
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: 460dfb168894d28d5fbc5e5585a6054917127931
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45604558"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51633570"
 ---
 # <a name="example-how-to-detect-language-in-text-analytics"></a>Пример. Как определить язык с помощью Анализа текста
 
 [API распознавания языка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7) оценивает текст входных данных каждого документа и возвращает идентификаторы языка с оценкой, указывающая степень анализа. Анализ текста распознает до 120 языков.
 
 Эта возможность нужна для содержимого хранилищ, которое собирает произвольный текст, где язык неизвестен. Вы можете проанализировать результаты этого анализа, чтобы определить, какой язык используется во входном документе. Оценка, указывающая на достоверность модели (значение между 0 и 1) также возвращается в ответе.
+
+> [!TIP]
+> API анализа текста также предоставляет образ контейнера Docker под управлением Linux для распознавания языка, поэтому вы можете [установить и запустить контейнер API анализа текста](text-analytics-how-to-install-containers.md) в непосредственной близости к своим данным.
 
 ## <a name="preparation"></a>Подготовка
 
@@ -62,7 +64,7 @@ ms.locfileid: "45604558"
 
 + Создайте запрос **POST**. Изучите документацию по API для этого запроса: [API распознавания языка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7)
 
-+ Задайте конечную точку HTTP для распознавание языка. Она должна включать ресурс `/languages`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/languages`
++ Задайте конечную точку HTTP для распознавания языка с помощью ресурса API анализа текста в Azure или экземпляра [контейнера API анализа текста](text-analytics-how-to-install-containers.md). Она должна включать ресурс `/languages`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/languages`
 
 + Задайте заголовок запроса, чтобы включить ключ доступа для операций Анализа текста. Дополнительные сведения см. в статье [о поиске конечных точек и ключей доступа](text-analytics-how-to-access-key.md).
 

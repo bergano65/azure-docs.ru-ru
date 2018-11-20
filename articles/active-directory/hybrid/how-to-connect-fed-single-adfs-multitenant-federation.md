@@ -16,12 +16,12 @@ ms.topic: get-started-article
 ms.date: 07/17/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 5239788f06ed3e738d1f0b62ddcde77c2a13b5f2
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: afc24d75b128c192efe14af061ac1df7521c7ef2
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50241741"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51621269"
 ---
 # <a name="federate-multiple-instances-of-azure-ad-with-single-instance-of-ad-fs"></a>Федерация нескольких экземпляров Azure AD с одним экземпляром AD FS
 
@@ -47,7 +47,7 @@ ms.locfileid: "50241741"
  
 Издателем отдельного домена, включенного в федерацию AD FS, по умолчанию выступает http://ADFSServiceFQDN/adfs/services/trust, например http://fs.contoso.com/adfs/services/trust. Служба Azure Active Directory требует отдельного издателя для каждого федеративного домена. Так как один и тот же экземпляр AD FS будет включать в федерацию два домена, значение издателя должно быть изменено, чтобы оно было уникальным для каждого домена AD FS, которое входит в федерацию с Azure Active Directory. 
  
-На сервере AD FS откройте Azure AD PowerShell и выполните следующие действия.
+На сервере AD FS откройте Azure AD PowerShell (убедитесь, что модуль MSOnline установлен) и выполните следующие действия:
  
 Подключитесь к службе Azure Active Directory, которая содержит домен contoso.com (Connect-MsolService). Обновите параметры федерации для contoso.com (Update-MsolFederatedDomain - DomainName contoso.com — SupportMultipleDomain).
  

@@ -3,29 +3,31 @@ title: Руководство по использованию Azure IoT Edge с 
 description: В этом руководстве показано, как создать модуль IoT Edge c кодом C# и развернуть его на граничном устройстве.
 services: iot-edge
 author: kgremban
-manager: timlt
+manager: philmea
 ms.author: kgremban
 ms.date: 09/21/2018
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: ec8cd52d8a91c76033d52f9b49ee84dde98eada2
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 4c20ab78ba4da44d4746ef6f68674fe494392347
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50156771"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51633994"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-and-deploy-to-your-simulated-device"></a>Руководство по разработке модуля IoT Edge с кодом C# и его развертывание на имитированном устройстве
 
 Вы можете использовать модули Azure IoT Edge для развертывания кода, который реализует бизнес-логику непосредственно на устройствах IoT Edge. В этом руководстве рассматриваются создание и развертывание модуля IoT Edge, который фильтрует данные датчика. Вы будете использовать имитированное устройство IoT Edge, созданное с помощью процедуры развертывания Azure IoT Edge на имитированном устройстве, описанной в кратких руководствах для [Windows](quickstart.md) или [Linux](quickstart-linux.md). Из этого руководства вы узнаете, как выполнять следующие задачи:    
 
 > [!div class="checklist"]
-> * Использовать Visual Studio Code для создания модуля IoT Edge на основе пакета SDK .NET Core 2.0.
+> * Создать модуль IoT Edge на основе пакета SDK .NET Core 2.1 с помощью Visual Studio Code.
 > * Использовать Visual Studio Code и Docker для создания образа Docker и его публикации в реестре.
 > * Развертывать модуль на устройстве IoT Edge.
 > * Просматривать сформированные данные.
 
+>[!NOTE]
+>[Visual Studio 2017 также можно использовать для разработки, отладки и развертывания модулей IoT Edge](how-to-visual-studio-develop-csharp-module.md).
 
 Модуль IoT Edge, создаваемый в этом руководстве, фильтрует данные температуры, которые создаются устройством. Оно отправляет сообщения, только если температура превышает заданное пороговое значение. Такой тип пограничного анализа удобен для сокращения объема данных, передаваемых в облако и сохраняемых в нем. 
 

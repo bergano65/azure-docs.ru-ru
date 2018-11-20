@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: get-started-article
 ms.date: 09/26/2018
 ms.author: iainfou
-ms.openlocfilehash: ef3139c4b3f06644b219e177fad0c094ed600fb6
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 4af4cae07f4e02bc8306c0b317da3a58e4586494
+ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47394596"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51578355"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Субъекты-службы со службой Azure Kubernetes
 
@@ -24,7 +24,7 @@ ms.locfileid: "47394596"
 
 Чтобы создать субъект-службу в Azure AD, вы должны иметь права на регистрацию приложения в клиенте Azure AD и назначение приложению роли в подписке Azure. Если у вас нет необходимых разрешений, может потребоваться попросить администратора Azure AD или администратора подписки предоставить их или предварительно создать субъект-службу для использования с кластером AKS.
 
-Кроме того, нужно установить и настроить Azure CLI 2.0.46 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
+Кроме того, нужно установить и настроить Azure CLI 2.0.46 или более поздней версии. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ## <a name="automatically-create-and-use-a-service-principal"></a>Автоматическое создание и использование субъект-службы
 
@@ -75,6 +75,45 @@ az aks create \
 
 ![Изображение перехода к приложению Azure для голосования](media/kubernetes-service-principal/portal-configure-service-principal.png)
 
+## <a name="delegate-access-to-other-azure-resources"></a>Делегирование прав доступа другим ресурсам Azure
+
+Субъект-службу для кластера AKS можно использовать для доступа к другим ресурсам. Например, если вы хотите использовать расширенное сетевое взаимодействие для подключения к существующей виртуальной сети или Реестру контейнеров Azure (ACR), необходимо делегировать доступ субъекту-службе.
+
+Чтобы делегировать разрешения, создайте назначение роли, используя команду [az role assignment create][az-role-assignment-create]. Вы назначаете `appId` определенной области, например группе ресурсов или ресурсу виртуальной сети. Затем роль определяет разрешения субъекта-службы по отношению к ресурсу, как показано в следующем примере:
+
+```azurecli
+az role assignment create --assignee <appId> --scope <resourceScope> --role Contributor
+```
+
+Для `--scope` ресурса нужно указать полный идентификатор ресурса, например */subscriptions/\<GUID\>/resourceGroups/myResourceGroup* или */subscriptions/\<GUID\>/resourceGroups/myResourceGroupVnet/providers/Microsoft.Network/virtualNetworks/myVnet*
+
+В следующих разделах описываются распространенные делегирования, которые вам могут потребоваться.
+
+### <a name="azure-container-registry"></a>Реестр контейнеров Azure
+
+Если вы используете Реестр контейнеров Azure (ACR) как хранилище образов контейнера, необходимо предоставить кластеру AKS разрешения на чтение и извлечение образов. Субъекту-службе кластера AKS необходимо делегировать роль *Читатель* в реестре. Подробные инструкции см. в разделе [Предоставление AKS доступа к ACR][aks-to-acr].
+
+### <a name="networking"></a>Сеть
+
+Вы можете использовать расширенное сетевое взаимодействие, где виртуальная сеть и подсеть или общедоступные IP-адреса находятся в другой группе ресурсов. Назначьте одно разрешение из следующего набора разрешений роли:
+
+- Создайте [пользовательскую роль][rbac-custom-role] и определите следующие разрешения роли:
+  - *Microsoft.Network/virtualNetworks/subnets/join/action*
+  - *Microsoft.Network/virtualNetworks/subnets/read*
+  - *Microsoft.Network/publicIPAddresses/read*
+  - *Microsoft.Network/publicIPAddresses/write*
+  - *Microsoft.Network/publicIPAddresses/join/action*
+- Или назначьте встроенную роль [Участник сетей][rbac-network-contributor] в подсети виртуальной сети.
+
+### <a name="storage"></a>Хранилище
+
+Вам может потребоваться доступ к существующим дисковым ресурсам в другой группе ресурсов. Назначьте одно разрешение из следующего набора разрешений роли:
+
+- Создайте [пользовательскую роль][rbac-custom-role] и определите следующие разрешения роли:
+  - *Microsoft.Compute/disks/read*
+  - *Microsoft.Compute/disks/write*
+- Или назначьте встроенную роль [Участник учетных записей хранения][rbac-storage-contributor] для группы ресурсов.
+
 ## <a name="additional-considerations"></a>Дополнительные замечания
 
 При использовании AKS и субъект-служб Azure AD учитывайте приведенные ниже аспекты.
@@ -107,3 +146,8 @@ az aks create \
 [az-ad-app-list]: /cli/azure/ad/app#az-ad-app-list
 [az-ad-app-delete]: /cli/azure/ad/app#az-ad-app-delete
 [az-aks-create]: /cli/azure/aks#az-aks-create
+[rbac-network-contributor]: ../role-based-access-control/built-in-roles.md#network-contributor
+[rbac-custom-role]: ../role-based-access-control/custom-roles.md
+[rbac-storage-contributor]: ../role-based-access-control/built-in-roles.md#storage-account-contributor
+[az-role-assignment-create]: /cli/azure/role/assignment#az-role-assignment-create
+[aks-to-acr]: ../container-registry/container-registry-auth-aks.md?toc=%2fazure%2faks%2ftoc.json#grant-aks-access-to-acr

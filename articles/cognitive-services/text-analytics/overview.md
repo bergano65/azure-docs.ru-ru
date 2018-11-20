@@ -10,12 +10,12 @@ ms.component: text-analytics
 ms.topic: overview
 ms.date: 10/01/2018
 ms.author: ashmaka
-ms.openlocfilehash: fcc10723b2fb750b099f99999de01ab699d5d5e8
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: 545d60207bbd1941920bc0e70096417c35486634
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48887774"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51634606"
 ---
 # <a name="what-is-text-analytics"></a>Что такое API анализа текста?
 
@@ -32,7 +32,11 @@ API поддерживается ресурсами в [Microsoft Cognitive Serv
 |[**Анализ тональности**](how-tos/text-analytics-how-to-sentiment-analysis.md) | Узнайте, что клиенты думают о вашем бренде или торговой марке, анализируя необработанный текст для получения сведений о тональности выражений (положительная или отрицательная). Этот API возвращает оценку тональности (0 или 1) для каждого документа, где 1 означает положительную тональность.<br /> Модели анализа предварительно обучены с использованием обширного набора текстов и технологий естественного языка корпорации Майкрософт. Для [выбранных языков](text-analytics-supported-languages.md) API может анализировать и оценивать любой необработанный текст, напрямую возвращая результаты вызывающему приложению. | [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9) <br /> [.NET](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/csharp#install-the-nuget-sdk-package)  |
 |[**Извлечение ключевых фраз**](how-tos/text-analytics-how-to-keyword-extraction.md) | Автоматическое извлечение ключевых фраз в тексте поможет быстро определить основные мысли. Например, для входного текста "Еда была вкусной и персонал был замечательным" API вернет основные тезисы в записи: "еда" и "замечательный персонал".  | [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6) <br /> [.NET](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/csharp#install-the-nuget-sdk-package) |
 |[**Распознавание языка**](how-tos/text-analytics-how-to-language-detection.md) | Решение может определить язык введенного текста (более чем 120 языков) и сообщить код одного языка для каждого документа, отправленного по запросу. Код языка сопряжен с показателем, указывающим степень оценки. | [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7) <br />  [.NET](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/csharp#install-the-nuget-sdk-package) | 
-|[**Распознавание сущностей (предварительная версия)**](how-tos/text-analytics-how-to-entity-linking.md) | Определение сущностей и их распределение по категориям, таким как текст, люди, места, организации, дата и время, количество, проценты, валюта и многое другое. Также можно определить известные сущности и связать их с дополнительной информацией в Интернете. | [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634) | 
+|[**Распознавание сущностей (предварительная версия)**](how-tos/text-analytics-how-to-entity-linking.md) | Определение сущностей и их распределение по категориям, таким как текст, люди, места, организации, дата и время, количество, проценты, валюта и многое другое. Также можно определить известные сущности и связать их с дополнительной информацией в Интернете. | [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634) |
+
+## <a name="use-containers"></a>Использование контейнеров
+
+[Контейнеры API анализа текста](how-tos/text-analytics-how-to-install-containers.md) можно использовать для извлечения ключевых фраз, распознавания языка и анализа тональности на локальном компьютере, установив стандартные контейнеры Docker в непосредственной близости к своим данным.
 
 ## <a name="typical-workflow"></a>Стандартный рабочий процесс
 

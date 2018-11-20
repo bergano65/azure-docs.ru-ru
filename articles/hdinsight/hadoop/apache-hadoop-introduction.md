@@ -1,6 +1,6 @@
 ---
-title: Что представляют собой HDInsight и стек технологий Hadoop и Spark — Azure
-description: Обзор HDInsight, а также стека технологий и компонентов Hadoop и Spark, включая Kafka, Hive, Storm и HBase для анализа больших данных.
+title: Что представляют собой HDInsight и стек технологий Apache Hadoop и Apache Spark — Azure
+description: Обзор HDInsight, а также стека технологий и компонентов Apache Hadoop и Apache Spark, включая Kafka, Hive, Storm и HBase для анализа больших данных.
 keywords: azure hadoop, hadoop azure, введение в hadoop, обзор hadoop, технологическая платформа hadoop, приступая к работе с hadoop, знакомство с hadoop, что такое кластер hadoop, кластер hadoop, для чего используется hadoop
 services: hdinsight
 author: hrasheed-msft
@@ -9,14 +9,14 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017, mvc
 ms.topic: overview
 ms.date: 05/07/2018
-ms.openlocfilehash: 0c617f09c846811f876206e6045b640e63ad90b1
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 190d6203c4a00ed3f448bdbb7366db5bc22c45f8
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51007059"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51634521"
 ---
-# <a name="what-is-azure-hdinsight-and-the-hadoop-technology-stack"></a>Что такое Azure HDInsight и стек технологий Hadoop
+# <a name="what-is-azure-hdinsight-and-the-apache-hadoop-technology-stack"></a>Что такое Azure HDInsight и стек технологий Apache Hadoop
 
 В этой статье содержатся общие сведения об использовании Apache Hadoop в Azure HDInsight. Azure HDInsight — это полностью управляемая комплексная служба аналитики с открытым исходным кодом, предназначенная для предприятий. Вы можете использовать такие платформы с открытым кодом, как Hadoop, Spark, Hive, LLAP, Kafka, Storm, R и др. 
 

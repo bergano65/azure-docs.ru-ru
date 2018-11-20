@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения узла | Документация Майкрософт
-description: Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения узла
+description: Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения .NET
 services: key-vault
 author: prashanthyv
 manager: sumedhb
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 09/12/2018
 ms.author: barclayn
 ms.custom: mvc
-ms.openlocfilehash: 4f7955c013ce7f45ebe6db8bb23eeec92303876e
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: a53130dcc489764ce9284f15b8de0de37e0827e5
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50230937"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51686676"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-by-using-a-net-web-app"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения .NET
 
@@ -175,7 +175,6 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <PrincipalId> --s
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Домашняя страница Azure Key Vault](https://azure.microsoft.com/services/key-vault/)
-* [Документация по Azure Key Vault](https://docs.microsoft.com/azure/key-vault/)
+* [Что такое хранилище ключей Azure?](https://docs.microsoft.com/azure/key-vault/key-vault-whatis)
 * [Пакет Azure SDK для .NET](https://github.com/Azure/azure-sdk-for-net)
 * [Справочник по REST API Azure](https://docs.microsoft.com/rest/api/keyvault/)

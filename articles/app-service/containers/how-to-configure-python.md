@@ -15,24 +15,38 @@ ms.topic: quickstart
 ms.date: 10/09/2018
 ms.author: astay;cephalin;kraigb
 ms.custom: mvc
-ms.openlocfilehash: a29f0f4be6286f8acf367a3ea0b4b0e6b31e7d98
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 9474b2d64c97b6e6d0fc06c3c448fa6e0515e70c
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49406472"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51633654"
 ---
 # <a name="configure-your-python-app-for-the-azure-app-service-on-linux"></a>Настройка приложений Python для Службы приложений Azure под управлением Linux
 
 В этой статье описывается, как [Служба приложений Azure под управлением Linux](app-service-linux-intro.md) запускает приложения Python, а также как вы можете настроить поведение службы приложений при необходимости.
 
+## <a name="set-python-version"></a>Выбор версии Python
+
+Доступны два базовых образа: Python 3.6 и Python 3.7. Вы можете создать приложение с помощью нужного образа на базе Python. Например, чтобы создать приложение с помощью Python 3.7, выполните в Cloud Shell следующую команду:
+
+```azurecli-interactive
+az webapp create --resource-group <group_name> --plan <plan_name> --name <app_name> --runtime "PYTHON|3.7"
+```
+
+Чтобы изменить версию Python (базовый образ), например, на Python 3.6, выполните в Cloud Shell следующую команду:
+
+```azurecli-interactive
+az webapp config set --resource-group <group_name> --name <app_name> --linux-fx-version "PYTHON|3.6"
+```
+
+Если требуется другая версия Python, вместо этого образа контейнера необходимо создать и развернуть собственный. Дополнительные сведения см. в статье [Использование пользовательского образа Docker для платформы "Веб-приложения для контейнеров"](tutorial-custom-docker-image.md).
+
 ## <a name="container-characteristics"></a>Характеристики контейнера
 
-Приложения Python, развернутые в службе приложений под управлением Linux, выполняются в контейнере Docker, который определен в репозитории GitHub, [контейнере Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7.0).
+Приложения Python, развернутые в службе приложений под управлением Linux, выполняются в контейнере Docker, который определен в репозитории GitHub, [Python 3.6](https://github.com/Azure-App-Service/python/tree/master/3.6.6) или [Python 3.7](https://github.com/Azure-App-Service/python/tree/master/3.7.0).
 
 Этот контейнер отличается следующими характеристиками.
-
-- Образ базового контейнера — `python-3.7.0-slim-stretch`, это означает, что приложения запускаются с помощью Python 3.7. Если требуется другая версия Python, вместо этого образа контейнера необходимо создать и развернуть собственный. Дополнительные сведения см. в статье [Использование пользовательского образа Docker для платформы "Веб-приложения для контейнеров"](tutorial-custom-docker-image.md).
 
 - Приложения запускаются с помощью [HTTP-сервера Gunicorn WSGI](http://gunicorn.org/), используя дополнительные аргументы `--bind=0.0.0.0 --timeout 600`.
 
