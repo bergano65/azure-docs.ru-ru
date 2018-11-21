@@ -92,7 +92,7 @@ ms.locfileid: "44356167"
 
 7.  Войдите в панель доступа и посмотрите, можете ли вы **запустить** приложения с единым входом по паролю.
 
-Чтобы скачать расширение для Chrome и Edge, воспользуйтесь следующими ссылками:
+Чтобы скачать расширение для Chrome и Microsoft Edge, воспользуйтесь следующими ссылками:
 
 -   [Расширение "Панель доступа" для Chrome](https://chrome.google.com/webstore/detail/access-panel-extension/ggjhpefgjjfobnfoldnjipclpcfbgbhl)
 
