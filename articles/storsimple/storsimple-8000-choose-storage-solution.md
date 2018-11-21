@@ -5,21 +5,21 @@ services: storsimple
 author: alkohli
 ms.service: storsimple
 ms.topic: article
-ms.date: 11/01/2018
+ms.date: 11/12/2018
 ms.author: alkohli
-ms.openlocfilehash: 0cb1a0bccbb989506988f36c515d59cddb832265
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: c28eaf22d05bfda5085f9e269bda85ca0d46a7d3
+ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51263399"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51578133"
 ---
 # <a name="compare-storsimple-with-azure-file-sync-and-data-box-edge-data-transfer-options"></a>Сравнение StorSimple с Синхронизацией файлов Azure и параметрами передачи данных Data Box Edge 
  
-В этом документе представлен обзор параметров для локальной передачи данных в Azure, сравнение Data Box Edge и Синхронизация файлов Azure (AFS) и StorSimple серии 8000.
+Этот документ содержит обзор возможностей по передаче данных из локальной среды в Azure, а также сравнение решений Data Box Edge, Azure File Sync и StorSimple серии 8000.
 
 - **[Data Box Edge](/azure/databox-online/data-box-edge-overview.md)**. Data Box Edge — это локальное сетевое устройство, которое может перемещать данные на платформу Azure и с нее, а также добавлять пограничные вычисления с использованием ИИ для обработки данных во время передачи. О нем было объявлено на конференции Ignite 2018 г., и оно находится в общедоступной предварительной версии. Шлюз Data Box — виртуальная версия устройства с теми же возможностями передачи данных.
-- **[Синхронизация файлов Azure](/azure/storage/files/storage-sync-files-deployment-guide.md)**. Вы можете использовать службу синхронизации файлов Azure, чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Общедоступную версию AFS было объявлено ранее в 2018 г.
+- **[Синхронизация файлов Azure](/azure/storage/files/storage-sync-files-deployment-guide.md)**. Вы можете использовать службу синхронизации файлов Azure, чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Общедоступный выпуск службы Синхронизация файлов Azure был объявлен ранее в 2018 г.
 - **[StorSimple](/azure/storsimple/storsimple-overview.md)**. StorSimple — это гибридное устройство, которое помогает предприятиям консолидировать их инфраструктуру хранилища для основного хранилища, защиты данных, архивации и аварийного восстановления для одного решения, тесно интегрируя с хранилищем Azure. Жизненный цикл продукта для StorSimple можно найти [здесь](https://support.microsoft.com/lifecycle/search?alpha=Azure%20StorSimple%208000%20Series).
 
 ## <a name="comparison-summary"></a>Сводка сравнения
@@ -33,9 +33,9 @@ ms.locfileid: "51263399"
 |Оборудование         |Физическое устройство, предоставленное корпорацией Майкрософт как часть службы | Предоставляемый пользователем |Физическое устройство, предоставленное корпорацией Майкрософт как часть службы  |
 |Формат данных      |Специальный формат   |Файлы         |Большие двоичные объекты или файлы    |
 |Поддержка протоколов |iSCSI          |SMB, NFS    | SMB или NFS      |
-|Цены          |[Цены на StorSimple](https://azure.microsoft.com/pricing/details/storsimple/) |[Цены на AFS](https://azure.microsoft.com/pricing/details/storage/files/)  |[Цены на Data Box Edge](https://azure.microsoft.com/pricing/details/storage/databox/edge/)  |
+|Цены          |[StorSimple](https://azure.microsoft.com/pricing/details/storsimple/) |[Служба "Синхронизация файлов Azure"](https://azure.microsoft.com/pricing/details/storage/files/)  |[Data Box Edge](https://azure.microsoft.com/pricing/details/storage/databox/edge/)  |
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Узнайте о [Azure Data Box Edge](/azure/databox-online/data-box-edge-overview.md) и [Шлюзе Azure Data Box](/azure/databox-online/data-box-gateway-overview.md)
-- Узнайте о [Синхронизации файлов Azure](/azure/storage/files/storage-sync-files-deployment-guide.md)
+- Узнайте о [Azure Data Box Edge](/azure/databox-online/data-box-edge-overview) и [Шлюзе Azure Data Box](/azure/databox-online/data-box-gateway-overview)
+- Узнайте о [Синхронизации файлов Azure](/azure/storage/files/storage-sync-files-deployment-guide)

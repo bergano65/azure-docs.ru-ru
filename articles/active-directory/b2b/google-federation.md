@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.component: B2B
 ms.topic: conceptual
-ms.date: 08/20/2018
+ms.date: 11/07/2018
 ms.author: mimart
 author: msmimart
 manager: mtillman
 ms.reviewer: mal
-ms.openlocfilehash: 396fb947a95ebc634ab0dea24d20f35126bc006e
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 5bc94b6fe69a9ffec11fcbab952a6f8aa3e2259a
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49389451"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51569011"
 ---
 # <a name="add-google-as-an-identity-provider-for-b2b-guest-users"></a>Добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B
 
@@ -43,15 +43,21 @@ ms.locfileid: "49389451"
 
    ![Учетные данные Google API](media/google-federation/google-api.png)
  
-4. Щелкните вкладку **Окно запроса доступа OAuth** и введите значение в поле **Название продукта, которое видят пользователи**. (Оставьте другие параметры без изменений.) Щелкните **Сохранить**.
+4. Щелкните вкладку с **окном получения согласия OAuth** и введите значение в поле **Имя приложения**. (Оставьте другие параметры без изменений.)
 
    ![Google: окно запроса доступа OAuth](media/google-federation/google-oauth-consent-screen.png)
 
-5. Щелкните вкладку **Учетные данные**. В меню **Создать учетные данные** выберите **Идентификатор клиента OAuth**.
+5. Прокрутите страницу до раздела **Авторизованные домены** и введите microsoftonline.com.
+
+   ![Раздел "Авторизованные домены"](media/google-federation/google-oauth-authorized-domains.png)
+
+6. Щелкните **Сохранить**.
+
+7. Щелкните вкладку **Учетные данные**. В меню **Создать учетные данные** выберите **Идентификатор клиента OAuth**.
 
    ![Учетные данные Google API](media/google-federation/google-api-credentials.png)
 
-6. В разделе **Тип приложения** выберите **Веб-приложение**, а затем в поле **Разрешенные URI перенаправления** ведите следующие URI:
+8. В разделе **Тип приложения** выберите **Веб-приложение**, а затем в поле **Разрешенные URI перенаправления** ведите следующие URI:
    - `https://login.microsoftonline.com` 
    - `https://login.microsoftonline.com/te/<directory id>/oauth2/authresp` <br>(где `<directory id>` является идентификатором каталога).
    
@@ -60,7 +66,7 @@ ms.locfileid: "49389451"
 
    ![Создание идентификатора клиента OAuth](media/google-federation/google-create-oauth-client-id.png)
 
-7. Нажмите кнопку **Создать**. Скопируйте идентификатор и секрет клиента, которые будут использоваться при добавлении поставщика удостоверений на портале Azure AD.
+9. Нажмите кнопку **Создать**. Скопируйте идентификатор и секрет клиента, которые будут использоваться при добавлении поставщика удостоверений на портале Azure AD.
 
    ![Получение идентификатора клиента и секрета клиента OAuth](media/google-federation/google-auth-client-id-secret.png)
 

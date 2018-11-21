@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 3b38cc265b4adfb301dc1165e02b17a8aa7c9589
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: f344424c372f65cd8bfe5779cc65f0e866e58a11
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51252553"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51633977"
 ---
 # <a name="how-to-use-alternative-inputs"></a>Как использовать альтернативные входные данные
 
@@ -137,8 +137,10 @@ ms.locfileid: "51252553"
     3. Щелкните "Submit Changes" (Отправить изменения).
 4. Щелчком выберите "denver" в области слева:
     1. В поле "Add alternative input" (Добавьте альтернативные входные данные) введите "for denver" (для Денвера).
-    2. Введите "forecast for austin" (прогноз для Остина).
-        - Выделена полная фраза. Щелкните эту фразу, а затем щелкните красный крестик. Теперь выберите "Austin" (Остин) и щелкните сущность city.
+    1. Введите "forecast for austin" (прогноз для Остина).
+        - Отобразится сообщение об ошибке Text Variations must contain the same detected Entities as the original input text (Варианты текста должны содержать те же обнаруженные сущности, что и исходный введенный текст).
+        - Щелкните слово austin.
+        - Отобразится всплывающее окно, в котором можно выбрать сущность для austin. Щелкните **city**.
         - Щелкните "Submit Changes" (Отправить изменения).
     1. Щелкните "Done" (Готово), чтобы запустить повторное обучение модели.
 

@@ -1,6 +1,6 @@
 ---
 title: Разработка заданий потоковой передачи Python MapReduce в HDInsight в Azure
-description: Узнайте, как использовать Python для заданий потоковой передачи MapReduce. Hadoop предоставляет интерфейс API потоковой передачи для MapReduce с целью написания заданий на языках, отличных от Java.
+description: Узнайте, как использовать Python для заданий потоковой передачи MapReduce. Apache Hadoop предоставляет API потоковой передачи для MapReduce с целью написания заданий на языках, отличных от Java.
 services: hdinsight
 keyword: mapreduce python,python map reduce,python mapreduce
 author: hrasheed-msft
@@ -10,20 +10,20 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/10/2018
 ms.author: hrasheed
-ms.openlocfilehash: 5ed61eb05d0aa4360e042097d6b8c632c17ea59c
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: d6a9de293d62ec6f25bd3a665d5ced5a1ac671ae
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51008731"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51634028"
 ---
 # <a name="develop-python-streaming-mapreduce-programs-for-hdinsight"></a>Разработка программ MapReduce с потоковой передачей Python для HDInsight
 
-Узнайте, как использовать Python для операций потоковой передачи MapReduce. Hadoop предоставляет API-интерфейс для MapReduce, позволяющий создавать функции map и reduce на языках, отличных от Java. Действия, описанные в этом документе, предназначены для реализации компонентов Map и Reduce на языке Python.
+Узнайте, как использовать Python для операций потоковой передачи MapReduce. Apache Hadoop предоставляет API для MapReduce, позволяющий создавать функции map и reduce на языках, отличных от Java. Действия, описанные в этом документе, предназначены для реализации компонентов Map и Reduce на языке Python.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Hadoop в кластере HDInsight на платформе Linux
+* Apache Hadoop на базе Linux в кластере HDInsight
 
   > [!IMPORTANT]
   > Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).

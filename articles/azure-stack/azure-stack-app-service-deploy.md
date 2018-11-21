@@ -12,14 +12,14 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/12/2018
+ms.date: 11/13/2018
 ms.author: anwestg
-ms.openlocfilehash: 08f08d926a9e27e421ff8db46051d8a1e7229041
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: aa745d827db7633dc9f8601f65fa31dfadbb4076
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49166888"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51614061"
 ---
 # <a name="add-an-app-service-resource-provider-to-azure-stack"></a>Добавление поставщика ресурсов службы приложений в Azure Stack
 
@@ -28,7 +28,7 @@ ms.locfileid: "49166888"
 Используйте руководство в этой статье, чтобы развернуть службу приложений в Azure Stack.
 
 > [!IMPORTANT]  
-> Прежде чем развернуть Службу приложений Azure 1.3, примените обновление 1807 к интегрированной системе Azure Stack или разверните последний Пакет средств разработки Azure Stack (ASDK).
+> Прежде чем развернуть Службу приложений Azure 1.4, примените обновление 1809 к интегрированной системе Azure Stack или разверните последний Пакет средств разработки Azure Stack (ASDK).
 
 Вы можете предоставить пользователям возможность создавать веб-приложения и приложения API. Чтобы разрешить пользователям создавать эти приложения, необходимо выполнить следующие действия.
 
@@ -74,8 +74,8 @@ ms.locfileid: "49166888"
 
    b. В **Azure Stack Subscriptions** (Подписки Azure Stack) выберите **Default Provider Subscription** (Подписка поставщика по умолчанию).
 
-     >[!NOTE]
-     >Сейчас службу приложений Azure можно развернуть только в **Default Provider Subscription** (Подписка поставщика по умолчанию).
+     > [!IMPORTANT]  
+     > Сейчас Службу приложений Azure **необходимо** разворачивать только в **Default Provider Subscription** (Подписка поставщика по умолчанию).
 
    c. В **Azure Stack Locations** (Расположения Azure Stack) выберите расположение, соответствующее региону, в который выполняется развертывание. Например, **локальный** регион при развертывании в Пакете средств разработки Azure Stack.
 

@@ -15,18 +15,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
-ms.openlocfilehash: 6b8cb104c734edf688d875a8e9674a660f2db4e2
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: b586639cc6c9d4e25d65fa9f3a510e22789acfb2
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34834606"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51346041"
 ---
 # <a name="discover-and-share-collections-in-azure-ai-gallery"></a>Поиск и публикация коллекций в коллекции решений ИИ Azure
-[!INCLUDE [machine-learning-gallery-item-selector](../../../includes/machine-learning-gallery-item-selector.md)]
 
-## <a name="collections"></a>Коллекции
-[Коллекция](https://gallery.cortanaintelligence.com/collections) позволяет объединить эксперименты, интерфейсы API и другие элементы, относящиеся к конкретному решению или понятию. Их можно объединять в группы для дальнейшего использования или предоставления к ним общего доступа.
+[Коллекция](https://gallery.cortanaintelligence.com/collections) из [Коллекции решений ИИ Azure](http://gallery.cortanaintelligence.com) позволяет объединить эксперименты, интерфейсы API и другие элементы, относящиеся к конкретному решению или понятию. Их можно объединять в группы для дальнейшего использования или предоставления к ним общего доступа.
 
 ## <a name="discover"></a>Поиск
 Чтобы перейти к [коллекциям](http://gallery.cortanaintelligence.com), щелкните **More** (Дополнительно) и выберите **Collections** (Коллекции).

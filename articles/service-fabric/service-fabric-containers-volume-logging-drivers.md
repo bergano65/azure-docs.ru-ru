@@ -3,7 +3,7 @@ title: Драйвер тома службы файлов Azure для Service Fa
 description: Service Fabric поддерживает использование службы файлов Azure для резервного копирования томов в контейнере. Сейчас этот компонент доступен в предварительной версии.
 services: service-fabric
 documentationcenter: other
-author: mani-ramaswamy
+author: TylerMSFT
 manager: timlt
 editor: ''
 ms.assetid: ab49c4b9-74a8-4907-b75b-8d2ee84c6d90
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 6/10/2018
-ms.author: subramar
-ms.openlocfilehash: 0ce1ca09327fa0bd7fbbb82b8dc3c3bdc70d5028
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.author: twhitney, subramar
+ms.openlocfilehash: fabb44f9369dd7b7050ae353ab94263f140aae48
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50239378"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51346411"
 ---
 # <a name="service-fabric-azure-files-volume-driver-preview"></a>Драйвер тома службы файлов Azure для Service Fabric (предварительная версия)
 Подключаемый модуль тома службы файлов Azure — это [подключаемый модуль тома Docker](https://docs.docker.com/engine/extend/plugins_volume/), предоставляющий тома [службы файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) для контейнеров Docker. Этот подключаемый модуль тома Docker упакован в виде приложения Service Fabric, которое можно развернуть в кластерах Service Fabric. Он позволяет предоставить тома службы файлов Azure для других контейнерных приложений Service Fabric, развернутых в кластере.
@@ -166,12 +166,11 @@ sfctl application create --app-name fabric:/AzureFilesVolumePluginApp --app-type
 - **Destination**. Этот тег указывает расположение, к которому подключается том в работающем контейнере. Таким образом, конечной папкой не может быть существующее в контейнере расположение.
 
 Как показано в элементах **DriverOption** в приведенном выше фрагменте кода, подключаемый модуль тома службы файлов Azure поддерживает следующие параметры драйвера.
-
-Поддерживаемые параметры драйвера:
 - **shareName**. Имя файлового ресурса службы файлов Azure, предоставляющего том для контейнера.
 - **storageAccountName**. Имя учетной записи хранения Azure, которая содержит файловый ресурс службы файлов Azure.
 - **storageAccountKey**. Ключ доступа учетной записи хранения Azure, которая содержит файловый ресурс службы файлов Azure.
-- **storageAccountFQDN** — доменное имя, связанное с учетной записью хранения. Если параметр storageAccountFQDN не указан, доменное имя будет сформировано с использованием суффикса по умолчанию (.file.core.windows.net) с именем storageAccountName. 
+- **storageAccountFQDN** — доменное имя, связанное с учетной записью хранения. Если параметр storageAccountFQDN не указан, доменное имя будет сформировано с использованием суффикса по умолчанию (.file.core.windows.net) с именем storageAccountName.  
+
     ```xml
     - Example1: 
         <DriverOption Name="shareName" Value="myshare1" />
@@ -184,6 +183,7 @@ sfctl application create --app-name fabric:/AzureFilesVolumePluginApp --app-type
         <DriverOption Name="storageAccountKey" Value="mykey2" />
         <DriverOption Name="storageAccountFQDN" Value="myaccount2.file.core.chinacloudapi.cn" />
     ```
+
 ## <a name="using-your-own-volume-or-logging-driver"></a>Использование драйвера собственного тома или ведения журнала
 Service Fabric дает возможность использовать драйверы пользовательских [томов](https://docs.docker.com/engine/extend/plugins_volume/) и драйверы [ведения журналов](https://docs.docker.com/engine/admin/logging/overview/). Если в кластере не установлен драйвер тома или ведения журнала Docker, его можно установить вручную с помощью протоколов RDP и SSH. Используя эти протоколы, можно выполнить установку с помощью [скрипта запуска масштабируемого набора виртуальных машин](https://azure.microsoft.com/resources/templates/201-vmss-custom-script-windows/) или [скрипта SetupEntryPoint](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-model#describe-a-service).
 

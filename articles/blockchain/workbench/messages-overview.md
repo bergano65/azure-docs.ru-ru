@@ -5,23 +5,327 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 10/1/2018
+ms.date: 11/12/2018
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: mmercuri
 manager: femila
-ms.openlocfilehash: b4a816c887d1cca78ff845858dce29049946b09f
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: f8f3584475415cf9ca19458f6da78d34df37f438
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51235995"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51614367"
 ---
 # <a name="azure-blockchain-workbench-messaging-integration"></a>Интеграция службы сообщений Azure Blockchain Workbench
 
 Помимо REST API, Azure Blockchain Workbench также предоставляет интеграции на основе обмена сообщениями. Workbench публикует связанные с реестром события через службу "Сетка событий Azure", позволяя нисходящим объектам-получателям получать данные или предпринимать действия на основе этих событий. Для клиентов, которым требуется надежный обмен сообщениями, Azure Blockchain Workbench также доставляет сообщения в конечную точку служебной шины Azure.
 
-Разработчики также заинтересованы в возможности внешних систем инициировать транзакции для создания пользователей, создания контрактов и обновления контрактов в реестре. Хотя эти функции в текущее время не предоставляются в общедоступной предварительной версии, пример, предоставляющий эти возможности, можно найти по адресу [http://aka.ms/blockchain-workbench-integration-sample](https://aka.ms/blockchain-workbench-integration-sample).
+## <a name="input-apis"></a>API ввода
+
+Если вы хотите инициировать транзакции из внешних систем для создания пользователей, создания и обновления контрактов, можно использовать API ввода службы сообщений, чтобы осуществлять транзакции в реестре. Пример, демонстрирующий API ввода, см. в репозитории с [примерами интеграции службы сообщений](https://aka.ms/blockchain-workbench-integration-sample).
+
+Ниже перечислены API ввода, которые доступны в настоящее время.
+
+### <a name="create-user"></a>Создать пользователя
+
+Создает пользователя.
+
+Для данного запроса требуются следующие поля:
+
+| **Имя**             | **Описание**                                      |
+|----------------------|------------------------------------------------------|
+| requestId            | GUID, предоставляемый клиентом                                |
+| firstName            | Имя пользователя                              |
+| lastName             | Фамилия пользователя                               |
+| emailAddress         | Адрес электронной почты пользователя                           |
+| externalId           | Идентификатор объекта пользователя Azure AD                      |
+| connectionId         | Уникальный идентификатор подключения блокчейна |
+| messageSchemaVersion | Версия схемы службы приложений                            |
+| messageName          | **CreateUserRequest**                               |
+
+Пример:
+
+``` json
+{
+    "requestId": "e2264523-6147-41fc-bbbb-edba8e44562d",
+    "firstName": "Ali",
+    "lastName": "Alio",
+    "emailAddress": "aa@contoso.com",
+    "externalId": "6a9b7f65-ffff-442f-b3b8-58a35abd1bcd",
+    "connectionId": 1,
+    "messageSchemaVersion": "1.0.0",
+    "messageName": "CreateUserRequest"
+}
+```
+
+Blockchain Workbench возвращает ответ со следующими полями:
+
+| **Имя**              | **Описание**                                                                                                             |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| requestId             | GUID, предоставляемый клиентом |
+| userId                | Идентификатор созданного пользователя |
+| userChainIdentifier   | Адрес пользователя, который был создан в сети блокчейна. В Ethereum это будет адрес пользователя  **в цепочке** . |
+| connectionId          | Уникальный идентификатор подключения блокчейна|
+| messageSchemaVersion  | Версия схемы службы приложений |
+| messageName           | **CreateUserUpdate** |
+| status                | Состояние запроса на создание пользователя.  При успешном выполнении значение будет **Success**. При сбое значение будет **Failure**.     |
+| additionalInformation | Предоставляемые дополнительные сведения на основе состояния |
+
+Пример ответа при успешном выполнении запроса на **создание пользователя** из Blockchain Workbench:
+
+``` json
+{ 
+    "requestId": "e2264523-6147-41fc-bb59-edba8e44562d", 
+    "userId": 15, 
+    "userChainIdentifier": "0x9a8DDaCa9B7488683A4d62d0817E965E8f248398", 
+    "connectionId": 1, 
+    "messageSchemaVersion": "1.0.0", 
+    "messageName": "CreateUserUpdate", 
+    "status": "Success", 
+    "additionalInformation": { } 
+} 
+```
+
+Если запрос не удалось выполнить, в дополнительных сведениях будут указаны подробности сбоя.
+
+``` json
+{
+    "requestId": "e2264523-6147-41fc-bb59-edba8e44562d", 
+    "userId": 15, 
+    "userChainIdentifier": null, 
+    "connectionId": 1, 
+    "messageSchemaVersion": "1.0.0", 
+    "messageName": "CreateUserUpdate", 
+    "status": "Failure", 
+    "additionalInformation": { 
+        "errorCode": 4000, 
+        "errorMessage": "User cannot be provisioned on connection." 
+    }
+}
+```
+
+### <a name="create-contract"></a>Создание контракта
+
+Создает контракт.
+
+Для данного запроса требуются следующие поля:
+
+| **Имя**             | **Описание**                                                                                                           |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------|
+| requestId            | GUID, предоставляемый клиентом |
+| userChainIdentifier  | Адрес пользователя, который был создан в сети блокчейна. В Ethereum это адрес пользователя **в цепочке**. |
+| applicationName      | Имя приложения |
+| workflowName         | Имя рабочего процесса |
+| parameters           | Параметры для создания контракта |
+| connectionId         | Уникальный идентификатор подключения блокчейна |
+| messageSchemaVersion | Версия схемы службы приложений |
+| messageName          | **CreateContractRequest** |
+
+Пример:
+
+``` json
+{ 
+    "requestId": "ce3c429b-a091-4baa-b29b-5b576162b211", 
+    "userChainIdentifier": "0x9a8DDaCa9B7488683A4d62d0817E965E8f248398", 
+    "applicationName": "AssetTransfer", 
+    "workflowName": "AssetTransfer", 
+    "parameters": [ 
+        { 
+            "name": "description", 
+            "value": "a 1969 dodge charger" 
+        }, 
+        { 
+            "name": "price", 
+            "value": "12345" 
+        } 
+    ], 
+    "connectionId": 1, 
+    "messageSchemaVersion": "1.0.0", 
+    "messageName": "CreateContractRequest" 
+}
+```
+
+Blockchain Workbench возвращает ответ со следующими полями:
+
+| **Имя**                 | **Описание**                                                                   |
+|--------------------------|-----------------------------------------------------------------------------------|
+| requestId                | GUID, предоставляемый клиентом                                                             |
+| contractId               | Уникальный идентификатор контракта в Azure Blockchain Workbench |
+| contractLedgerIdentifier | Адрес контракта в реестре                                            |
+| connectionId             | Уникальный идентификатор подключения блокчейна                               |
+| messageSchemaVersion     | Версия схемы службы приложений                                                         |
+| messageName              | **CreateContractUpdate**                                                      |
+| status                   | Состояние запроса на создание контракта.  Возможные значения: **Submitted**, **Committed**, **Failure**.  |
+| additionalInformation    | Предоставляемые дополнительные сведения на основе состояния                              |
+
+Пример ответа при отправленном запросе на **создание контракта** из Blockchain Workbench:
+
+``` json
+{
+    "requestId": "ce3c429b-a091-4baa-b29b-5b576162b211",
+    "contractId": 55,
+    "contractLedgerIdentifier": "0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe",
+    "connectionId": 1,
+    "messageSchemaVersion": "1.0.0",
+    "messageName": "CreateContractUpdate",
+    "status": "Submitted"
+    "additionalInformation": { }
+}
+```
+
+Пример ответа при исполненном запросе на **создание контракта** из Blockchain Workbench:
+
+``` json
+{
+    "requestId": "ce3c429b-a091-4baa-b29b-5b576162b211",
+    "contractId": 55,
+    "contractLedgerIdentifier": "0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe",
+    "connectionId": 1,
+    "messageSchemaVersion": "1.0.0",
+    "messageName": "CreateContractUpdate",
+    "status": "Committed",
+    "additionalInformation": { }
+}
+```
+
+Если запрос не удалось выполнить, в дополнительных сведениях будут указаны подробности сбоя.
+
+``` json
+{
+    "requestId": "ce3c429b-a091-4baa-b29b-5b576162b211",
+    "contractId": 55,
+    "contractLedgerIdentifier": null,
+    "connectionId": 1,
+    "messageSchemaVersion": "1.0.0",
+    "messageName": "CreateContractUpdate",
+    "status": "Failure"
+    "additionalInformation": {
+        "errorCode": 4000,
+        "errorMessage": "Contract cannot be provisioned on connection."
+    }
+}
+```
+
+### <a name="create-contract-action"></a>Создание действия контракта
+
+Создает действие контракта.
+
+Для данного запроса требуются следующие поля:
+
+| **Имя**                 | **Описание**                                                                                                           |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| requestId                | GUID, предоставляемый клиентом |
+| userChainIdentifier      | Адрес пользователя, который был создан в сети блокчейна. В Ethereum это адрес пользователя **в цепочке**. |
+| contractLedgerIdentifier | Адрес контракта в реестре |
+| workflowFunctionName     | Имя функции рабочего процесса |
+| parameters               | Параметры для создания контракта |
+| connectionId             | Уникальный идентификатор подключения блокчейна |
+| messageSchemaVersion     | Версия схемы службы приложений |
+| messageName              | **CreateContractActionRequest** |
+
+Пример:
+
+``` json
+{
+    "requestId": "a5530932-9d6b-4eed-8623-441a647741d3",
+    "userChainIdentifier": "0x9a8DDaCa9B7488683A4d62d0817E965E8f248398",
+    "contractLedgerIdentifier": "0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe",
+    "workflowFunctionName": "modify",
+    "parameters": [
+        {
+            "name": "description",
+            "value": "a 1969 dodge charger"
+        },
+        {
+            "name": "price",
+            "value": "12345"
+        }
+    ],
+    "connectionId": 1,
+    "messageSchemaVersion": "1.0.0",
+    "messageName": "CreateContractActionRequest"
+}
+```
+
+Blockchain Workbench возвращает ответ со следующими полями:
+
+| **Имя**              | **Описание**                                                                   |
+|-----------------------|-----------------------------------------------------------------------------------|
+| requestId             | GUID, предоставляемый клиентом|
+| contractId            | Уникальный идентификатор контракта в Azure Blockchain Workbench |
+| connectionId          | Уникальный идентификатор подключения блокчейна |
+| messageSchemaVersion  | Версия схемы службы приложений |
+| messageName           | **CreateContractActionUpdate** |
+| status                | Состояние запроса на создание действия контракта. Возможные значения: **Submitted**, **Committed**, **Failure**.                         |
+| additionalInformation | Предоставляемые дополнительные сведения на основе состояния |
+
+Пример ответа при отправленном запросе на **создание действия контракта** из Blockchain Workbench:
+
+``` json
+{
+    "requestId": "a5530932-9d6b-4eed-8623-441a647741d3",
+    "contractId": 105,
+    "connectionId": 1,
+    "messageSchemaVersion": "1.0.0",
+    "messageName": "CreateContractActionUpdate",
+    "status": "Submitted",
+    "additionalInformation": { }
+}
+```
+
+Пример ответа при исполненном запросе на **создание действия контракта** из Blockchain Workbench:
+
+``` json
+{
+    "requestId": "a5530932-9d6b-4eed-8623-441a647741d3",
+    "contractId": 105,
+    "connectionId": 1,
+    "messageSchemaVersion": "1.0.0",
+    "messageName": "CreateContractActionUpdate",
+    "status": "Committed"
+    "additionalInformation": { }
+}
+```
+
+Если запрос не удалось выполнить, в дополнительных сведениях будут указаны подробности сбоя.
+
+``` json
+{
+    "requestId": "a5530932-9d6b-4eed-8623-441a647741d3",
+    "contractId": 105,
+    "connectionId": 1,
+    "messageSchemaVersion": "1.0.0",
+    "messageName": "CreateContractActionUpdate",
+    "status": "Failure"
+    "additionalInformation": {
+        "errorCode": 4000,
+        "errorMessage": "Contract action cannot be provisioned on connection."
+    }
+}
+```
+
+### <a name="input-api-error-codes-and-messages"></a>Коды и сообщения ошибок API ввода
+
+**Код ошибки 4000. Недопустимый запрос**
+- Недопустимое connectionId
+- Не удалось выполнить десериализацию CreateUserRequest
+- Не удалось выполнить десериализацию CreateContractRequest
+- Не удалось выполнить десериализацию CreateContractActionRequest
+- Приложение {определяемое по имени} не существует
+- В приложении {определяемому по имени} нет рабочего процесса
+- UserChainIdentifier не существует
+- Контракт {определяемый по идентификатору реестра} не существует
+- Контракт {определяемый по идентификатору реестра} не имеет функции {имя функции рабочего процесса}
+- UserChainIdentifier не существует
+
+**Код ошибки 4090. Ошибка из-за конфликта**
+- Пользователь уже существует
+- Контракт уже существует
+- Действие контракта уже существует
+
+**Код ошибки 5000. Внутренняя ошибка сервера**
+- Сообщения об исключении
 
 ## <a name="event-notifications"></a>Уведомления о событиях
 
@@ -92,15 +396,15 @@ public class NewAccountRequest : MessageModelBase
 
 | ИМЯ | ОПИСАНИЕ |
 |-----|--------------|
-| ChainID | Уникальный идентификатор цепочки, связанной с запросом.|
-| BlockId | Уникальный идентификатор блока в реестре.|
-| ContractId | Уникальный идентификатор контракта.|
-| ContractAddress |       Адрес контракта в реестре.|
-| TransactionHash  |     Хэш транзакции в реестре.|
-| OriginatingAddress |   Адрес инициатора транзакции.|
-| ActionName       |     Имя действия.|
-| IsUpdate        |      Определяет, является ли это обновлением.|
-| Параметры       |     Список объектов, которые определяют имя, значение и тип данных параметров, отправленных действию.|
+| ChainID | Уникальный идентификатор цепочки, связанной с запросом |
+| BlockId | Уникальный идентификатор блока в реестре |
+| ContractId | Уникальный идентификатор контракта |
+| ContractAddress |       Адрес контракта в реестре |
+| TransactionHash  |     Хэш транзакции в реестре |
+| OriginatingAddress |   Адрес инициатора транзакции |
+| ActionName       |     Имя действия |
+| IsUpdate        |      Определяет, является ли это обновлением |
+| Параметры       |     Список объектов, которые определяют имя, значение и тип данных параметров, отправленных действию |
 | TopLevelInputParams |  В сценариях, где контракт подключен к одному или нескольким контрактам, это параметры из контракта верхнего уровня. |
 
 ``` csharp
@@ -126,18 +430,17 @@ public class ContractInsertOrUpdateRequest : MessageModelBase
 
 | ИМЯ                     | ОПИСАНИЕ                                                                                                                                                                   |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ContractActionId         | Уникальный идентификатор этого действия контракта.                                                                                                                                |
-| ChainIdentifier          | Уникальный идентификатор цепочки.                                                                                                                                           |
-| ConnectionId             | Уникальный идентификатор подключения.                                                                                                                                      |
-| UserChainIdentifier      | Адрес пользователя, который был создан в сети блокчейна. В Ethereum это будет адрес пользователя в цепочке.                                                     |
-| ContractLedgerIdentifier | Адрес контракта в реестре.                                                                                                                                        |
-| WorkflowFunctionName     | Имя функции рабочего процесса.                                                                                                                                                |
-| WorkflowName             | Имя рабочего процесса.                                                                                                                                                         |
-| WorkflowBlobStorageURL   | URL-адрес контракта в хранилище BLOB-объектов.                                                                                                                                      |
-| ContractActionParameters | Параметры для действия контракта.                                                                                                                                           |
-| TransactionHash          | Хэш транзакции в реестре.                                                                                                                                    |
-| ProvisioningStatus      | Текущее состояние подготовки действия.</br>0 — Created (Создано).</br>1 — In Process (Выполняется).</br>2 — Complete (Завершено).</br> Состояние Complete указывает на подтверждение успешного добавления от реестра.                                               |
-|                          |                                                                                                                                                                               |
+| ContractActionId         | Уникальный идентификатор этого действия контракта |
+| ChainIdentifier          | Уникальный идентификатор цепочки |
+| ConnectionId             | Уникальный идентификатор подключения |
+| UserChainIdentifier      | Адрес пользователя, который был создан в сети блокчейна. В Ethereum это адрес пользователя **в цепочке**. |
+| ContractLedgerIdentifier | Адрес контракта в реестре |
+| WorkflowFunctionName     | Имя функции рабочего процесса |
+| WorkflowName             | Имя рабочего процесса |
+| WorkflowBlobStorageURL   | URL-адрес контракта в хранилище BLOB-объектов |
+| ContractActionParameters | Параметры для действия контракта |
+| TransactionHash          | Хэш транзакции в реестре |
+| ProvisioningStatus      | Текущее состояние подготовки действия.</br>0 — Created (Создано).</br>1 — In Process (Выполняется).</br>2 — Complete (Завершено).</br> Состояние Complete указывает на подтверждение успешного добавления от реестра |
 
 ```csharp
 public class ContractActionRequest : MessageModelBase
@@ -165,9 +468,9 @@ public class ContractActionRequest : MessageModelBase
 
 | ИМЯ    | ОПИСАНИЕ                              |
 |---------|------------------------------------------|
-| Адрес | Адрес финансируемого пользователя. |
-| Balance | Пользовательский баланс.         |
-| ChainID | Уникальный идентификатор цепочки.     |
+| Адрес | Адрес финансируемого пользователя |
+| Balance | Пользовательский баланс         |
+| ChainID | Уникальный идентификатор цепочки     |
 
 
 ``` csharp
@@ -185,10 +488,10 @@ public class UpdateUserBalanceRequest : MessageModelBase
 
 | ИМЯ           | ОПИСАНИЕ                                                            |
 |----------------|------------------------------------------------------------------------|
-| ChainID        | Уникальный идентификатор цепочки, в которую был добавлен блок.             |
-| BlockId        | Уникальный идентификатор блока в Azure Blockchain Workbench. |
-| BlockHash      | Хэш блока.                                                 |
-| BlockTimestamp | Метка времени блока.                                            |
+| ChainID        | Уникальный идентификатор цепочки, в которую был добавлен блок             |
+| BlockId        | Уникальный идентификатор блока в Azure Blockchain Workbench |
+| BlockHash      | Хэш блока                                                 |
+| BlockTimestamp | Метка времени блока                                            |
 
 ``` csharp
 public class InsertBlockRequest : MessageModelBase
@@ -206,13 +509,13 @@ public class InsertBlockRequest : MessageModelBase
 
 | ИМЯ            | ОПИСАНИЕ                                                            |
 |-----------------|------------------------------------------------------------------------|
-| ChainID         | Уникальный идентификатор цепочки, в которую был добавлен блок.             |
-| BlockId         | Уникальный идентификатор блока в Azure Blockchain Workbench. |
-| TransactionHash | Хэш транзакции.                                           |
-| Из            | Адрес инициатора транзакции.                      |
-| Кому              | Адрес целевого получателя транзакции.              |
-| Значение           | Значение, включенное в транзакцию.                                 |
-| IsAppBuilderTx  | Определяет, является ли это транзакцией Blockchain Workbench.                         |
+| ChainID         | Уникальный идентификатор цепочки, в которую был добавлен блок             |
+| BlockId         | Уникальный идентификатор блока в Azure Blockchain Workbench |
+| TransactionHash | Хэш транзакции                                           |
+| Из            | Адрес инициатора транзакции                      |
+| Кому              | Адрес целевого получателя транзакции              |
+| Значение           | Значение, включенное в транзакцию                                 |
+| IsAppBuilderTx  | Определяет, является ли это транзакцией Blockchain Workbench                         |
 
 ``` csharp
 public class InsertTransactionRequest : MessageModelBase
@@ -233,8 +536,8 @@ public class InsertTransactionRequest : MessageModelBase
 
 | ИМЯ            | ОПИСАНИЕ                                                                       |
 |-----------------|-----------------------------------------------------------------------------------|
-| ContractId      | Уникальный идентификатор контракта в Azure Blockchain Workbench. |
-| ChainIdentifier | Идентификатор контракта в цепочке.                             |
+| ContractId      | Уникальный идентификатор контракта в Azure Blockchain Workbench |
+| ChainIdentifier | Идентификатор контракта в цепочке                             |
 
 ``` csharp
 public class AssignContractChainIdentifierRequest : MessageModelBase
@@ -252,8 +555,8 @@ public class AssignContractChainIdentifierRequest : MessageModelBase
 
 | ИМЯ          | ОПИСАНИЕ                          |
 |---------------|--------------------------------------|
-| OperationName | Имя операции.           |
-| RequestId     | Уникальный идентификатор запроса. |
+| OperationName | Имя операции           |
+| RequestId     | Уникальный идентификатор запроса |
 
 ``` csharp
 public class MessageModelBase
@@ -269,9 +572,9 @@ public class MessageModelBase
 
 | ИМЯ  | ОПИСАНИЕ                 |
 |-------|-----------------------------|
-| ИМЯ  | Имя параметра.  |
-| Значение | Значение параметра. |
-| type  | Тип параметра.  |
+| ИМЯ  | Имя параметра  |
+| Значение | Значение параметра |
+| type  | Тип параметра  |
 
 ``` csharp
 public class ContractInputParameter
@@ -288,10 +591,10 @@ public class ContractInputParameter
 
 | ИМЯ  | ОПИСАНИЕ                |
 |-------|----------------------------|
-| Идентификатор    | Идентификатор свойства.    |
-| ИМЯ  | Имя свойства.  |
+| Идентификатор    | Идентификатор свойства    |
+| ИМЯ  | Имя свойства  |
 | Значение | Значение свойства. |
-| type  | Тип свойства.  |
+| type  | Тип свойства  |
 
 ``` csharp
 public class ContractProperty

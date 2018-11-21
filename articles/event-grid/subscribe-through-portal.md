@@ -5,14 +5,14 @@ services: event-grid
 author: tfitzmac
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 08/17/2018
+ms.date: 11/08/2018
 ms.author: tomfitz
-ms.openlocfilehash: 72eaa17e78086a4e5338bb3198ef7471c44b785f
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: eb48e40007a25992a9a399176b6a4f93be89efc8
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "40234789"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51344096"
 ---
 # <a name="subscribe-to-events-through-portal"></a>Подписка на события через портал
 
@@ -45,6 +45,16 @@ ms.locfileid: "40234789"
 1. Укажите дополнительные сведения о подписке на события, например конечной точки для обработки событий и название подписки.
 
    ![Указание сведений о подписке](./media/subscribe-through-portal/provide-subscription-details.png)
+
+1. Чтобы включить сохранение недоставленых событий и настроить политики повтора, выберите **Дополнительные функции**.
+
+   ![Выбор дополнительных функций](./media/subscribe-through-portal/select-additional-features.png)
+
+1. Выберите контейнер, который будет использоваться для хранения недоставленых событий, и настройте параметры повтора отправки.
+
+   ![Включение сохранения недоставленных событий и повтора](./media/subscribe-through-portal/set-deadletter-retry.png)
+
+1. Затем выберите **Создать**.
 
 ## <a name="create-subscription-on-resource"></a>Создание подписки на ресурсе
 

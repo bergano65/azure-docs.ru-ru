@@ -1,5 +1,5 @@
 ---
-title: Использование представлений Ambari для работы с Hive в HDInsight (Hadoop) в Azure
+title: Использование представлений Apache Ambari для работы с Hive в HDInsight (Apache Hadoop) — Azure
 description: Узнайте, как использовать представление Hive в веб-браузере для отправки запросов Hive. Представление Hive — это компонент веб-интерфейса Ambari, поставляемого с кластером HDInsight на основе Linux.
 services: hdinsight
 author: hrasheed-msft
@@ -9,22 +9,22 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: c481889eda53ff46a8899676da2529fe4165dfd5
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 1328119917276b8135c4a6d4188b67bcff2fc069
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51233162"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51632753"
 ---
-# <a name="use-ambari-hive-view-with-hadoop-in-hdinsight"></a>Использование представления Hive с Hadoop в HDInsight
+# <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Использование представления Hive Apache Ambari с Apache Hadoop в HDInsight
 
 [!INCLUDE [hive-selector](../../../includes/hdinsight-selector-use-hive.md)]
 
-Узнайте, как выполнять запросы Hive с помощью представления Hive в Ambari. Представление Hive позволяет создавать, оптимизировать и выполнять запросы Hive из веб-браузера.
+Узнайте, как выполнять запросы Hive с использованием представления Hive Apache Ambari. Представление Hive позволяет создавать, оптимизировать и выполнять запросы Hive из веб-браузера.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Hadoop в кластере HDInsight версии 3.4 или выше на платформе Linux.
+* Apache Hadoop на базе Linux в кластере HDInsight версии 3.4 или более поздней.
 
   > [!IMPORTANT]
   > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).

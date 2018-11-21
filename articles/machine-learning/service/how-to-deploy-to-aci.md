@@ -9,12 +9,12 @@ ms.author: raymondl
 author: raymondlaghaeian
 ms.reviewer: sgilley
 ms.date: 09/24/2018
-ms.openlocfilehash: 8a736516a598eee051b416834d2b737211e66b96
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: b004abb3959bbfe36fc200bf762114f88f3d2ead
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49429469"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51345052"
 ---
 # <a name="deploy-web-services-to-azure-container-instances"></a>Развертывание веб-служб в экземплярах контейнеров Azure 
 
@@ -50,7 +50,10 @@ ms.locfileid: "49429469"
 Настройте образ Docker, служащий для хранения всех файлов модели.
 1. Создайте скрипт оценки (score.py), [следуя этим инструкциям](tutorial-deploy-models-with-aml.md#create-scoring-script).
 
-1. Создайте файл среды (myenv.yml), [следуя этим инструкциям](tutorial-deploy-models-with-aml.md#create-environment-file). 
+    > [!IMPORTANT]
+    > Скрипт оценки получает данные, передаваемые из клиентов, и передает их в модель для оценки. Задокументируйте структуру данных, планируемую для скрипта и модели. Такой документ упрощает работу при создании клиента для веб-службы.
+
+1. Создайте файл среды (myenv.yml), [следуя этим инструкциям](tutorial-deploy-models-with-aml.md#create-environment-file).
 
 1. Используйте эти два файла для настройки образа Docker на Python с помощью пакета SDK следующим образом:
 
@@ -217,8 +220,7 @@ model = Model.register(model_path = "sklearn_mnist_model.pkl",
 
 Теперь можно протестировать веб-службу.
 
-<a name='test-web-service'/>
-## <a name="test-the-web-service"></a>Тестирование веб-службы
+## <a name="a-nametest-web-servicetest-the-web-service"></a><a name='test-web-service'/>Тестирование веб-службы
 
 Веб-служба будет одинаковой, независимо от применяемого способа.  Для получения прогнозов используйте метод `run` службы.  
 
@@ -261,4 +263,5 @@ service.delete()
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Узнайте, как произвести масштабное [развертывание в службе Azure Kubernetes](how-to-deploy-to-aks.md). 
+* Узнайте, как [использовать модель машинного обучения, развернутую в виде веб-службы](how-to-consume-web-service.md).
+* Узнайте, как произвести масштабное [развертывание в службе Azure Kubernetes](how-to-deploy-to-aks.md). 

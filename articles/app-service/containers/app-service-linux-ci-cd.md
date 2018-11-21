@@ -13,60 +13,52 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/29/2018
-ms.author: msangapu
-ms.openlocfilehash: 20ca63b7126a6800538129115ff339308c11d8c5
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.date: 11/08/2018
+ms.author: msangapu;yili
+ms.openlocfilehash: b26366edddc223b842cc5d38473bda42422f1840
+ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48867032"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51298547"
 ---
 # <a name="continuous-deployment-with-web-app-for-containers"></a>Непрерывное развертывание с использованием платформы Azure "Веб-приложения для контейнеров"
 
 В этом руководстве описывается настройка непрерывного развертывания для настраиваемого образа контейнера из управляемых репозиториев [реестра контейнеров Azure](https://azure.microsoft.com/services/container-registry/) или [Docker Hub](https://hub.docker.com).
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+## <a name="enable-continuous-deployment-with-acr"></a>Включение непрерывного развертывания с помощью ACR
 
-Войдите на [портале Azure](https://portal.azure.com).
+![Снимок экрана с веб-перехватчиком ACR](./media/app-service-webapp-service-linux-ci-cd/ci-cd-acr-02.png)
 
-## <a name="enable-the-continuous-deployment-feature"></a>Включение функции непрерывного развертывания
+1. Войдите на [портале Azure](https://portal.azure.com).
+2. Выберите **Служба приложений** в левой части страницы.
+3. Выберите имя приложения, для которого следует настроить непрерывное развертывание.
+4. На странице **Параметры контейнера** выберите **Один контейнер**.
+5. Выберите **Реестр контейнеров Azure**.
+6. Выберите **Непрерывное развертывание > Вкл.**
+7. Нажмите кнопку **Сохранить**, чтобы включить непрерывное развертывание.
 
-Включите функцию непрерывного развертывания с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli), выполнив следующую команду:
+## <a name="use-the-acr-webhook"></a>Использование веб-перехватчика ACR
 
-```azurecli-interactive
-az webapp deployment container config --name name --resource-group myResourceGroup --enable-cd true
-```
+После включения непрерывного развертывания можно просмотреть созданный веб-перехватчик на странице веб-перехватчиков Реестра контейнеров Azure.
 
-На [портале Azure](https://portal.azure.com/) выберите **Служба приложений** в левой части страницы.
+![Снимок экрана с веб-перехватчиком ACR](./media/app-service-webapp-service-linux-ci-cd/ci-cd-acr-03.png)
 
-Выберите имя приложения, для которого следует настроить непрерывное развертывание Docker Hub.
+В Реестре контейнеров щелкните "Веб-перехватчики", чтобы просмотреть текущие веб-перехватчики.
 
-Чтобы включить непрерывное развертывание, на странице **Настройки контейнера** выберите **ВКЛ.**, а затем нажмите кнопку **Сохранить**.
+## <a name="enable-continuous-deployment-with-docker-hub-optional"></a>Включение непрерывного развертывания с помощью Docker Hub (необязательно)
 
-![Снимок экрана с параметрами приложения](./media/app-service-webapp-service-linux-ci-cd/step2.png)
+1. Войдите на [портале Azure](https://portal.azure.com).
+2. Выберите **Служба приложений** в левой части страницы.
+3. Выберите имя приложения, для которого следует настроить непрерывное развертывание.
+4. На странице **Параметры контейнера** выберите **Один контейнер**.
+5. Выберите **Docker Hub**.
+6. Выберите **Непрерывное развертывание > Вкл.**
+7. Нажмите кнопку **Сохранить**, чтобы включить непрерывное развертывание.
 
-## <a name="prepare-the-webhook-url"></a>Подготовка URL-адреса веб-перехватчика
+![Снимок экрана с параметрами приложения](./media/app-service-webapp-service-linux-ci-cd/ci-cd-docker-02.png)
 
-Получите URL-адрес веб-перехватчика с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli), выполнив следующую команду:
-
-```azurecli-interactive
-az webapp deployment container show-cd-url --name sname1 --resource-group rgname
-```
-
-Запишите URL-адрес веб-перехватчика. Он понадобится в следующем разделе.
-`https://<publishingusername>:<publishingpwd>@<sitename>.scm.azurewebsites.net/docker/hook`.
-
-Вы можете получить `publishingusername` и `publishingpwd`, скачав профиль публикации веб-приложения с помощью портала Azure.
-
-![Снимок экрана с добавлением веб-перехватчика (2)](./media/app-service-webapp-service-linux-ci-cd/step3-3.png)
-
-## <a name="add-a-webhook"></a>Добавление веб-перехватчика
-
-Чтобы добавить веб-перехватчик, выполните инструкции в этих руководствах:
-
-- [Реестр контейнеров Azure](../../container-registry/container-registry-webhook.md) (с использованием URL-адреса веб-перехватчика).
-- [Веб-перехватчики для центра Docker](https://docs.docker.com/docker-hub/webhooks/).
+Скопируйте URL-адрес веб-перехватчика. Чтобы добавить веб-перехватчик для Docker Hub, ознакомьтесь со статьей о <a href="https://docs.docker.com/docker-hub/webhooks/" target="_blank">веб-перехватчиках для Docker Hub</a>.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

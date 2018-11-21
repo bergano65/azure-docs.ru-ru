@@ -10,12 +10,12 @@ author: raymondlaghaeian
 manager: cgronlun
 ms.reviewer: larryfr
 ms.date: 09/24/2018
-ms.openlocfilehash: 3ab32388e0a35f4abf3866aa0a84ee0628b0570c
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: efaaa196220213877283040120d6c2eeed86dbf3
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49318203"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51346326"
 ---
 # <a name="how-to-deploy-models-from-azure-machine-learning-service-to-azure-kubernetes-service"></a>Развертывание моделей из службы машинного обучения Azure в службе Azure Kubernetes
 
@@ -63,6 +63,9 @@ model = Model.register(model_path = "model.pkl", # this points to a local file
 1. Чтобы настроить образ, необходимо создать сценарий оценки и файл среды. Пример создания сценария и файла среды см. в следующих разделах примера классификации изображений:
 
     * [Создание сценария оценки (score.py)](tutorial-deploy-models-with-aml.md#create-scoring-script)
+
+        > [!IMPORTANT]
+        > Скрипт оценки получает данные, передаваемые из клиентов и передает их в модель для оценки. Задокументируйте структуру данных, планируемую для скрипта и модели. Такой документ упрощает работу при создании клиента для веб-службы.
 
     * [Создание файла среды (myenv.yml)](tutorial-deploy-models-with-aml.md#create-environment-file) 
 
@@ -190,3 +193,7 @@ aks_service.delete()
 image.delete()
 model.delete()
 ```
+
+## <a name="next-steps"></a>Дополнительная информация
+
+Узнайте, как [использовать модель машинного обучения, развернутую в виде веб-службы](how-to-consume-web-service.md).

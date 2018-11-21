@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: rimman
-ms.openlocfilehash: eabfe503d9b92252ada0014eba4c83390dd6fd97
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 709cd16c7eee30dd2d88ea87b5f704ad20530ffb
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51236081"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51621349"
 ---
 # <a name="request-units-in-azure-cosmos-db"></a>Единицы запроса в базе данных Azure Cosmos DB
 
@@ -52,8 +52,8 @@ Cosmos DB поддерживает различные интерфейсы API (
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Дополнительные сведения см. в статье [Настройка и получение пропускной способности контейнеров и базы данных Azure Cosmos DB](set-throughput.md)
-* Подробнее о [логических разделах](partition-data.md).
-* Дополнительные сведения см. в статье [Масштабирование пропускной способности в Azure Cosmos DB](scaling-throughput.md)
+* Дополнительные сведения см. в статье [Подготовка пропускной способности для контейнеров и баз данных Cosmos DB](set-throughput.md).
+* Дополнительные сведения о [логических разделах](partition-data.md).
+* Дополнительные сведения о [глобальном масштабировании подготовленной пропускной способности](scaling-throughput.md).
 * Сведения о том, [как подготовить пропускную способность для контейнера Cosmos](how-to-provision-container-throughput.md).
-* Дополнительные сведения см. в статье [Provision throughput for an Azure Cosmos DB container](how-to-provision-database-throughput.md) (Подготовка пропускной способности для базы данных в Azure Cosmos DB)
+* Сведения о том, [как подготовить пропускную способность для базы данных Cosmos](how-to-provision-database-throughput.md).

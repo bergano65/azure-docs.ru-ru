@@ -9,12 +9,12 @@ ms.reviewer: omidm
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 8d344adc367eb9b93e52d9423a2ab4dda657b298
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: 35768aed3509d6ec5b73c64c7a8a6b132957ace1
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49115545"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51632736"
 ---
 # <a name="use-enterprise-security-package-in-hdinsight"></a>Корпоративный пакет безопасности для HDInsight
 
@@ -24,11 +24,11 @@ ms.locfileid: "49115545"
 
 HDInsight использует наиболее популярный поставщик удостоверений — управляемую службу Active Directory. Благодаря интеграции HDInsight с [доменными службами Azure Active Directory (Azure AD DS)](../../active-directory-domain-services/active-directory-ds-overview.md) доступ к кластерам можно получить с помощью учетных данных домена. 
 
-Виртуальные машины в HDInsight присоединены к указанному домену. Поэтому все службы, запущенные в HDInsight (Ambari, сервер Hive, Ranger, сервер Spark Thrift и т. д.), работают прозрачно для аутентифицированного пользователя. Администраторы могут настраивать строгие политики авторизации на основе Apache Ranger, чтобы применять управление доступом на основе ролей для ресурсов в кластере.
+Виртуальные машины в HDInsight присоединены к указанному домену. Все службы, запущенные в HDInsight (Apache Ambari, сервер Apache Hive, Apache Ranger, сервер Apache Spark Thrift и т. п.), согласованно работают для пользователя, прошедшего поддержку подлинности. Администраторы могут настраивать строгие политики авторизации на основе Apache Ranger, чтобы применять управление доступом на основе ролей для ресурсов в кластере.
 
 ## <a name="integrate-hdinsight-with-active-directory"></a>Интеграция HDInsight с Active Directory
 
-Hadoop с открытым кодом использует протокол Kerberos для аутентификации и обеспечения безопасности. Таким образом, узлы кластера HDInsight с корпоративным пакетом безопасности присоединены к домену под управлением Azure AD DS. Для включенных в кластер компонентов Hadoop настраиваются параметры безопасности Kerberos. 
+Apache Hadoop с открытым кодом использует протокол Kerberos для аутентификации и обеспечения безопасности. Таким образом, узлы кластера HDInsight с корпоративным пакетом безопасности присоединены к домену под управлением Azure AD DS. Для включенных в кластер компонентов Hadoop настраиваются параметры безопасности Kerberos. 
 
 Указанные ниже действия создаются автоматически.
 - Субъект-служба для каждого компонента Hadoop. 

@@ -1,6 +1,6 @@
 ---
-title: Использование Pig с Hadoop в HDInsight с помощью PowerShell в Azure
-description: Узнайте, как отправлять задания Pig в кластер Hadoop в HDInsight с помощью Azure PowerShell.
+title: Использование Apache Pig с PowerShell в HDInsight — Azure
+description: Узнайте, как отправлять задания Apache Pig в кластер Apache Hadoop в HDInsight с использованием Azure PowerShell.
 services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: e50c551381a065e8651ab7970ef9cf18c6c3a765
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 1e9f6778f12f4f6260bfc20c3a78f7929f13405b
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51011023"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51634538"
 ---
-# <a name="use-azure-powershell-to-run-pig-jobs-with-hdinsight"></a>Использование Azure PowerShell для выполнения заданий Pig в HDInsight
+# <a name="use-azure-powershell-to-run-apache-pig-jobs-with-hdinsight"></a>Использование Azure PowerShell для запуска заданий Apache Pig в HDInsight
 
 [!INCLUDE [pig-selector](../../../includes/hdinsight-selector-use-pig.md)]
 
-В этом документе приведен пример использования Azure PowerShell для отправки заданий Pig в Hadoop в кластере HDInsight. Pig позволяет написать задания MapReduce с использованием языка (Pig Latin), который моделирует преобразования данных, а не функции сопоставления и приведения.
+Этот документ содержит пример использования Azure PowerShell для отправки заданий Apache Pig в кластер Apache Hadoop в HDInsight. Pig позволяет написать задания MapReduce с использованием языка (Pig Latin), который моделирует преобразования данных, а не функции сопоставления и приведения.
 
 > [!NOTE]
 > В этом документе не приводится подробное описание процессов, которые выполняют операторы Pig Latin, используемые в примерах. Информацию об операторах Pig Latin, используемых в данном примере, см. в статье [Использование Pig с Hadoop в HDInsight](hdinsight-use-pig.md).

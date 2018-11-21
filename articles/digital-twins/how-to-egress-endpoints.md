@@ -8,173 +8,200 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 10/26/2018
 ms.author: alinast
-ms.openlocfilehash: c09ee84cda5f0a9747d3ee1f8f1b37d1323f2cc2
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: c94d29f16c011a9ff9951d064d7496d3a87f70ef
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50212256"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636311"
 ---
 # <a name="egress-and-endpoints"></a>Исходящий трафик и конечные точки
 
-Azure Digital Twins поддерживает концепцию _конечных точек_, где каждая конечная точка представляет брокер событий или сообщений в пользовательской подписке Azure. События и сообщения могут отправляться в **концентратор событий**, **Сетку событий** и в **разделы служебной шины**.
+Azure Digital Twins поддерживает концепцию **конечных точек**. Каждая конечная точка представляет собой брокер сообщений или событий в подписке Azure пользователя. События и сообщения могут отправляться в Центры событий Azure, Сетку событий Azure и в разделы служебной шины Azure.
 
-События будут отправляться в конечные точки в соответствии с предопределенными параметрами маршрутизации. Пользователь может указать, в какую конечную точку будет отправлено событие: **TopologyOperation**, **UdfCustom**, **SensorChange**, **SpaceChange** или **DeviceMessage**.
+События отправляются конечным точкам в соответствии с предопределенными настройками маршрутизации. Пользователь может указать, какая конечная точка должна получить любое из следующих событий: 
+
+- TopologyOperation
+- UdfCustom
+- SensorChange
+- SpaceChange
+- DeviceMessage
 
 Общие сведения о маршрутизации и типах событий см. в статье [Маршрутизация событий и сообщений](concepts-events-routing.md).
 
 ## <a name="event-types-description"></a>Описание типов событий
 
-Ниже приведены форматы событий для каждого типа.
+В следующих разделах описываются форматы для каждого из типов событий.
 
-- **TopologyOperation**
+### <a name="topologyoperation"></a>TopologyOperation
 
-  Применяется к изменениям графа. Свойство *subject* указывает тип затронутого объекта. Это событие могут вызывать объекты следующих типов: **Device**, **DeviceBlobMetadata**, **DeviceExtendedProperty**, **ExtendedPropertyKey**, **ExtendedType**, **KeyStore**, **Report**, **RoleDefinition**, **Sensor**, **SensorBlobMetadata**, **SensorExtendedProperty**, **Space**,  **SpaceBlobMetadata**, **SpaceExtendedProperty**, **SpaceResource**, **SpaceRoleAssignment**, **System**, **User**, **UserBlobMetadata**, **UserExtendedProperty**.
+**TopologyOperation** применяется к изменениям графа. Свойство **subject** указывает тип затронутого объекта. Это событие могут вызвать следующие типы объектов. 
 
-  Пример:
+- Устройство
+- DeviceBlobMetadata
+- DeviceExtendedProperty
+- ExtendedPropertyKey
+- ExtendedType
+- KeyStore
+- Отчет
+- RoleDefinition
+- Датчик
+- SensorBlobMetadata
+- SensorExtendedProperty
+- Пробел
+- SpaceBlobMetadata
+- SpaceExtendedProperty
+- SpaceResource
+- SpaceRoleAssignment
+- системный;
+- Пользователь
+- UserBlobMetadata
+- UserExtendedProperty
 
-  ```JSON
-  {
-    "id": "00000000-0000-0000-0000-000000000000",
-    "subject": "ExtendedPropertyKey",
-    "data": {
-      "SpacesToNotify": [
-        "3a16d146-ca39-49ee-b803-17a18a12ba36"
-      ],
-      "Id": "00000000-0000-0000-0000-000000000000",
+#### <a name="example"></a>Пример
+
+```JSON
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "subject": "ExtendedPropertyKey",
+  "data": {
+    "SpacesToNotify": [
+      "3a16d146-ca39-49ee-b803-17a18a12ba36"
+    ],
+    "Id": "00000000-0000-0000-0000-000000000000",
       "Type": "ExtendedPropertyKey",
-      "AccessType": "Create"
-    },
-    "eventType": "TopologyOperation",
-    "eventTime": "2018-04-17T17:41:54.9400177Z",
-    "dataVersion": "1",
-    "metadataVersion": "1",
-    "topic": "/subscriptions/yourTopicName"
-  }
-  ```
+    "AccessType": "Create"
+  },
+  "eventType": "TopologyOperation",
+  "eventTime": "2018-04-17T17:41:54.9400177Z",
+  "dataVersion": "1",
+  "metadataVersion": "1",
+  "topic": "/subscriptions/YOUR_TOPIC_NAME"
+}
+```
 
-    | Имя настраиваемого атрибута | Заменить на |
-    | --- | --- |
-    | *yourTopicName* | Имя настраиваемого раздела |
+| Значение | Заменить на |
+| --- | --- |
+| YOUR_TOPIC_NAME | Имя настраиваемого раздела |
 
-- **UdfCustom**
+### <a name="udfcustom"></a>UdfCustom
 
-  Событие, отправленное определяемой пользователем функцией (UDF). 
+**UdfCustom** — это событие, отправленное определяемой пользователем функцией (UDF). 
   
-  > [!IMPORTANT]
-  > Это событие нужно явным образом отправлять из определяемой пользователем функции.
+> [!IMPORTANT]  
+> Это событие нужно явным образом отправлять из определяемой пользователем функции.
 
-  Пример:
+#### <a name="example"></a>Пример
 
-  ```JSON
-  {
-    "id": "568fd394-380b-46fa-925a-ebb96f658cce",
-    "subject": "UdfCustom",
-    "data": {
-      "TopologyObjectId": "7c799bfc-1bff-4b9e-b15a-669933969d20",
-      "ResourceType": "Space",
-      "Payload": "\"Room is not available or air quality is poor\"",
-      "CorrelationId": "568fd394-380b-46fa-925a-ebb96f658cce"
-    },
-    "eventType": "UdfCustom",
-    "eventTime": "2018-10-02T06:50:15.198Z",
-    "dataVersion": "1.0",
-    "metadataVersion": "1",
-    "topic": "/subscriptions/yourTopicName"
-  }
-  ```
+```JSON
+{
+  "id": "568fd394-380b-46fa-925a-ebb96f658cce",
+  "subject": "UdfCustom",
+  "data": {
+    "TopologyObjectId": "7c799bfc-1bff-4b9e-b15a-669933969d20",
+    "ResourceType": "Space",
+    "Payload": "\"Room is not available or air quality is poor\"",
+    "CorrelationId": "568fd394-380b-46fa-925a-ebb96f658cce"
+  },
+  "eventType": "UdfCustom",
+  "eventTime": "2018-10-02T06:50:15.198Z",
+  "dataVersion": "1.0",
+  "metadataVersion": "1",
+  "topic": "/subscriptions/YOUR_TOPIC_NAME"
+}
+```
 
-    | Имя настраиваемого атрибута | Заменить на |
-    | --- | --- |
-    | *yourTopicName* | Имя настраиваемого раздела |
+| Значение | Заменить на |
+| --- | --- |
+| YOUR_TOPIC_NAME | Имя настраиваемого раздела |
 
-- **SensorChange**
+### <a name="sensorchange"></a>SensorChange
 
-  Обновление состояния датчика на основе изменений телеметрии.
+**SensorChange** — это обновление состояния датчика на основе изменений телеметрии.
 
-  Пример:
+#### <a name="example"></a>Пример
 
-  ```JSON
-  {
-    "id": "60bf5336-2929-45b4-bb4c-b45699dfe95f",
-    "subject": "SensorChange",
-    "data": {
-      "Type": "Classic",
-      "DataType": "Motion",
-      "Id": "60bf5336-2929-45b4-bb4c-b45699dfe95f",
-      "Value": "False",
-      "PreviousValue": "True",
-      "EventTimestamp": "2018-04-17T17:46:15.4964262Z",
-      "MessageType": "sensor",
-      "Properties": {
-        "ms-client-request-id": "c9e576b7-5eea-4f61-8617-92a57add5179",
-        "ms-activity-id": "ct22YwXEGJ5u.605.0"
-      }
-    },
-    "eventType": "SensorChange",
-    "eventTime": "2018-04-17T17:46:18.5452993Z",
-    "dataVersion": "1",
-    "metadataVersion": "1",
-    "topic": "/subscriptions/yourTopicName"
-  }
-  ```
+```JSON
+{
+  "id": "60bf5336-2929-45b4-bb4c-b45699dfe95f",
+  "subject": "SensorChange",
+  "data": {
+    "Type": "Classic",
+    "DataType": "Motion",
+    "Id": "60bf5336-2929-45b4-bb4c-b45699dfe95f",
+    "Value": "False",
+    "PreviousValue": "True",
+    "EventTimestamp": "2018-04-17T17:46:15.4964262Z",
+    "MessageType": "sensor",
+    "Properties": {
+      "ms-client-request-id": "c9e576b7-5eea-4f61-8617-92a57add5179",
+      "ms-activity-id": "ct22YwXEGJ5u.605.0"
+    }
+  },
+  "eventType": "SensorChange",
+  "eventTime": "2018-04-17T17:46:18.5452993Z",
+  "dataVersion": "1",
+  "metadataVersion": "1",
+  "topic": "/subscriptions/YOUR_TOPIC_NAME"
+}
+```
 
-    | Имя настраиваемого атрибута | Заменить на |
-    | --- | --- |
-    | *yourTopicName* | Имя настраиваемого раздела |
+| Значение | Заменить на |
+| --- | --- |
+| YOUR_TOPIC_NAME | Имя настраиваемого раздела |
 
-- **SpaceChange**
+### <a name="spacechange"></a>SpaceChange
 
-  Обновление состояния пространства на основе изменений телеметрии.
+**SpaceChange** — это обновление состояния пространства на основе изменений телеметрии.
 
-  Пример:
+#### <a name="example"></a>Пример
 
-  ```JSON
-  {
-    "id": "42522e10-b1aa-42ff-a5e7-7181788ffc4b",
-    "subject": "SpaceChange",
-    "data": {
-      "Type": null,
-      "DataType": "AvailableAndFresh",
-      "Id": "7c799bfc-1bff-4b9e-b15a-669933969d20",
-      "Value": "Room is not available or air quality is poor",
-      "PreviousValue": null,
-      "RawData": null,
-      "transactionId": null,
-      "EventTimestamp": null,
-      "MessageType": null,
-      "Properties": null,
-      "CorrelationId": "42522e10-b1aa-42ff-a5e7-7181788ffc4b"
-    },
-    "eventType": "SpaceChange",
-    "eventTime": "2018-10-02T06:50:20.128Z",
-    "dataVersion": "1.0",
-    "metadataVersion": "1",
-    "topic": "/subscriptions/yourTopicName"
-  }
-  ```
+```JSON
+{
+  "id": "42522e10-b1aa-42ff-a5e7-7181788ffc4b",
+  "subject": "SpaceChange",
+  "data": {
+    "Type": null,
+    "DataType": "AvailableAndFresh",
+    "Id": "7c799bfc-1bff-4b9e-b15a-669933969d20",
+    "Value": "Room is not available or air quality is poor",
+    "PreviousValue": null,
+    "RawData": null,
+    "transactionId": null,
+    "EventTimestamp": null,
+    "MessageType": null,
+    "Properties": null,
+    "CorrelationId": "42522e10-b1aa-42ff-a5e7-7181788ffc4b"
+  },
+  "eventType": "SpaceChange",
+  "eventTime": "2018-10-02T06:50:20.128Z",
+  "dataVersion": "1.0",
+  "metadataVersion": "1",
+  "topic": "/subscriptions/YOUR_TOPIC_NAME"
+}
+```
 
-    | Имя настраиваемого атрибута | Заменить на |
-    | --- | --- |
-    | *yourTopicName* | Имя настраиваемого раздела |
+| Значение | Заменить на |
+| --- | --- |
+| YOUR_TOPIC_NAME | Имя настраиваемого раздела |
 
-- **DeviceMessage**
+### <a name="devicemessage"></a>DeviceMessage
 
-  Позволяет указать подключение к **EventHub**, в которое можно направлять необработанные события телеметрии из Azure Digital Twins.
+**DeviceMessage** позволяет указать подключение к **EventHub**, в которое можно направлять необработанные события телеметрии из Azure Digital Twins.
 
 > [!NOTE]
-> - **DeviceMessage** можно объединить только с **EventHub**, но не с другими типами событий.
-> - Вы сможете указать только одну конечную точку с комбинацией типов **EventHub** или **DeviceMessage**.
+> - **DeviceMessage** комбинируется только с **EventHub**. Нельзя объединять **DeviceMessage** с любым из других типов событий.
+> - Вы можете указать только одну конечную точку с комбинацией типов **EventHub** или **DeviceMessage**.
 
-## <a name="configuring-endpoints"></a>Настройка конечных точек
+## <a name="configure-endpoints"></a>Настройка конечных точек
 
-Управление конечными точками выполняется через API конечных точек. Ниже приведены некоторые примеры настройки различных поддерживаемых конечных точек. Учитывайте массив типов событий, так как он определяет маршрутизацию для конечной точки.
+Управление конечными точками выполняется через API конечных точек. В следующих примерах показано, как настроить различные поддерживаемые конечные точки. Учитывайте массив типов событий, так как он определяет маршрутизацию для конечной точки.
 
 ```plaintext
 POST https://endpoints-demo.azuresmartspaces.net/management/api/v1.0/endpoints
 ```
 
-- Направляйте в **служебную шины** события следующих типов: **SensorChange**, **SpaceChange**, **TopologyOperation**
+- Направляйте в служебную шину события следующих типов: **SensorChange**, **SpaceChange** и **TopologyOperation**.
 
   ```JSON
   {
@@ -184,20 +211,20 @@ POST https://endpoints-demo.azuresmartspaces.net/management/api/v1.0/endpoints
       "SpaceChange",
       "TopologyOperation"
     ],
-    "connectionString": "Endpoint=sb://yourNamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourPrimaryKey",
-    "secondaryConnectionString": "Endpoint=sb://yourNamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourSecondaryKey",
-    "path": "yourTopicName"
+    "connectionString": "Endpoint=sb://YOUR_NAMESPACE.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=YOUR_PRIMARY_KEY",
+    "secondaryConnectionString": "Endpoint=sb://YOUR_NAMESPACE.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=YOUR_SECONDARY_KEY",
+    "path": "YOUR_TOPIC_NAME"
   }
   ```
 
-    | Имя настраиваемого атрибута | Заменить на |
+    | Значение | Заменить на |
     | --- | --- |
-    | *yourNamespace* | Пространство имен конечной точки |
-    | *yourPrimaryKey* | Первичная строка подключения, которая используется для аутентификации |
-    | *yourSecondaryKey* | Вторичная строка подключения, которая используется для аутентификации |
-    | *yourTopicName* | Имя настраиваемого раздела |
+    | YOUR_NAMESPACE | Пространство имен конечной точки |
+    | YOUR_PRIMARY_KEY | Первичная строка подключения, которая используется для аутентификации |
+    | YOUR_SECONDARY_KEY | Вторичная строка подключения, которая используется для аутентификации |
+    | YOUR_TOPIC_NAME | Имя настраиваемого раздела |
 
-- Направляйте в **Сетку событий** события следующих типов: **SensorChange**, **SpaceChange**, **TopologyOperation**
+- Направляйте в Сетку событий события следующих типов: **SensorChange**, **SpaceChange** и **TopologyOperation**:
 
   ```JSON
   {
@@ -207,19 +234,19 @@ POST https://endpoints-demo.azuresmartspaces.net/management/api/v1.0/endpoints
       "SpaceChange",
       "TopologyOperation"
     ],
-    "connectionString": "yourPrimaryKey",
-    "secondaryConnectionString": "yourSecondaryKey",
-    "path": "yourTopicName.westus-1.eventgrid.azure.net"
+    "connectionString": "YOUR_PRIMARY_KEY",
+    "secondaryConnectionString": "YOUR_SECONDARY_KEY",
+    "path": "YOUR_TOPIC_NAME.westus-1.eventgrid.azure.net"
   }
   ```
 
-    | Имя настраиваемого атрибута | Заменить на |
+    | Значение | Заменить на |
     | --- | --- |
-    | *yourPrimaryKey* | Первичная строка подключения, которая используется для аутентификации|
-    | *yourSecondaryKey* | Вторичная строка подключения, которая используется для аутентификации |
-    | *yourTopicName* | Имя настраиваемого раздела |
+    | YOUR_PRIMARY_KEY | Первичная строка подключения, которая используется для аутентификации|
+    | YOUR_SECONDARY_KEY | Вторичная строка подключения, которая используется для аутентификации |
+    | YOUR_TOPIC_NAME | Имя настраиваемого раздела |
 
-- Направляйте в **концентратор событий** события следующих типов: **SensorChange**, **SpaceChange**, **TopologyOperation**
+- Направляйте в Центры событий события следующих типов: **SensorChange**, **SpaceChange** и **TopologyOperation**:
 
   ```JSON
   {
@@ -229,20 +256,20 @@ POST https://endpoints-demo.azuresmartspaces.net/management/api/v1.0/endpoints
       "SpaceChange",
       "TopologyOperation"
     ],
-    "connectionString": "Endpoint=sb://yourNamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourPrimaryKey",
-    "secondaryConnectionString": "Endpoint=sb://yourNamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourSecondaryKey",
-    "path": "yourEventHubName"
+    "connectionString": "Endpoint=sb://YOUR_NAMESPACE.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=YOUR_PRIMARY_KEY",
+    "secondaryConnectionString": "Endpoint=sb://YOUR_NAMESPACE.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=YOUR_SECONDARY_KEY",
+    "path": "YOUR_EVENT_HUB_NAME"
   }
   ```
 
-    | Имя настраиваемого атрибута | Заменить на |
+    | Значение | Заменить на |
     | --- | --- |
-    | *yourNamespace* | Пространство имен конечной точки |
-    | *yourPrimaryKey* | Первичная строка подключения, которая используется для аутентификации |
-    | *yourSecondaryKey* | Вторичная строка подключения, которая используется для аутентификации |
-    | *yourEventHubName* | Имя **концентратора событий** |
+    | YOUR_NAMESPACE | Пространство имен конечной точки |
+    | YOUR_PRIMARY_KEY | Первичная строка подключения, которая используется для аутентификации |
+    | YOUR_SECONDARY_KEY | Вторичная строка подключения, которая используется для аутентификации |
+    | YOUR_EVENT_HUB_NAME | Имя концентратора событий |
 
-- Направляйте в **концентратор событий** события следующих типов: **DeviceMessage**. Включение `EntityPath` в **connectionString** является обязательным.
+- Направляйте в Центры событий события следующих типов: **DeviceMessage**. Включение `EntityPath` в **connectionString** является обязательным.
 
   ```JSON
   {
@@ -250,21 +277,21 @@ POST https://endpoints-demo.azuresmartspaces.net/management/api/v1.0/endpoints
     "eventTypes": [
       "DeviceMessage"
     ],
-    "connectionString": "Endpoint=sb://yourNamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourPrimaryKey;EntityPath=yourEventHubName",
-    "secondaryConnectionString": "Endpoint=sb://yourNamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourSecondaryKey;EntityPath=yourEventHubName",
-    "path": "yourEventHubName"
+    "connectionString": "Endpoint=sb://YOUR_NAMESPACE.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=YOUR_PRIMARY_KEY;EntityPath=YOUR_EVENT_HUB_NAME",
+    "secondaryConnectionString": "Endpoint=sb://YOUR_NAMESPACE.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=YOUR_SECONDARY_KEY;EntityPath=YOUR_EVENT_HUB_NAME",
+    "path": "YOUR_EVENT_HUB_NAME"
   }
   ```
 
-    | Имя настраиваемого атрибута | Заменить на |
+    | Значение | Заменить на |
     | --- | --- |
-    | *yourNamespace* | Пространство имен конечной точки |
-    | *yourPrimaryKey* | Первичная строка подключения, которая используется для аутентификации |
-    | *yourSecondaryKey* | Вторичная строка подключения, которая используется для аутентификации |
-    | *yourEventHubName* | Имя **концентратора событий** |
+    | YOUR_NAMESPACE | Пространство имен конечной точки |
+    | YOUR_PRIMARY_KEY | Первичная строка подключения, которая используется для аутентификации |
+    | YOUR_SECONDARY_KEY | Вторичная строка подключения, которая используется для аутентификации |
+    | YOUR_EVENT_HUB_NAME | Имя концентратора событий |
 
-> [!NOTE]
-> После создании конечной точки для начала приема событий может пройти до 5 или даже 10 минут.
+> [!NOTE]  
+> После создания конечной точки для начала приема событий может пройти до 5 или даже 10 минут.
 
 ## <a name="primary-and-secondary-connection-keys"></a>Первичный и вторичный ключи подключения
 
@@ -280,6 +307,6 @@ POST https://endpoints-demo.azuresmartspaces.net/management/api/v1.0/endpoints
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Сведения об использовании Swagger Azure Digital Twins см. в [этой статье](how-to-use-swagger.md).
+- Дополнительные сведения см. в статье [Использование Swagger с Digital Twins](how-to-use-swagger.md).
 
-Дополнительные сведения о маршрутизации событий и сообщений в Azure Digital Twins см. в [этой статье](concepts-events-routing.md).
+- Дополнительные сведения см. в статье [Маршрутизация событий и сообщений](concepts-events-routing.md).

@@ -1,8 +1,18 @@
 ---
-title: Включение репликации виртуальных машин VMware для аварийного восстановления VMware в Azure с помощью Azure Site Recovery| Документация Майкрософт' description: В этой статье описано, как включить репликацию виртуальных машин VMware для аварийного восстановления Azure с использованием Azure Site Recovery.
-author: asgang ms.service: site-recovery ms.date: 07/06/2018 ms.topic: conceptual ms.author: asgang
-
-
+title: Включение репликации виртуальных машин VMware для аварийного восстановления в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: В этой статье рассказывается о том, как включить репликацию виртуальных машин VMware для аварийного восстановления в Azure с помощью Azure Site Recovery.
+author: asgang
+ms.service: site-recovery
+ms.date: 07/06/2018
+ms.topic: conceptual
+ms.author: asgang
+ms.openlocfilehash: c6c5aeece9e49a44654d63a7dc243991a62f2d9a
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51566369"
+---
 # <a name="enable-replication-to-azure-for-vmware-vms"></a>Включение репликации в Azure для виртуальных машин VMware
 
 
@@ -68,10 +78,7 @@ author: asgang ms.service: site-recovery ms.date: 07/06/2018 ms.topic: conceptua
     ![Включение репликации](./media/vmware-azure-enable-replication/enable-replication7.png)
 14. Щелкните **Включить репликацию**. Ход выполнения задания **включения защиты** можно отслеживать, выбрав **Параметры** > **Задания** > **Задания Site Recovery**. После выполнения задания **Завершить подготовку защиты** виртуальная машина будет готова к отработке отказа.
 
-> [!NOTE]
-> Если компьютер готов к принудительной установке, компонент службы Mobility устанавливается при включении защиты. После установки компонента на компьютере задание защиты будет запущено и завершится ошибкой. После сбоя каждый компьютер необходимо будет перезапустить вручную. После перезапуска будет снова запущено задание защиты и начнется начальная репликация.
->
->
+
 
 ## <a name="view-and-manage-vm-properties"></a>Просмотр свойств виртуальной машины и управление ими
 

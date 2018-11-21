@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 ms.author: marthalc
 author: marthalc
 ms.date: 10/01/2018
-ms.openlocfilehash: fa425a5ecd8cf8f4c7b3516534b4c4f0f4257850
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: 285486d5fe641d49ee21d7340b62f83d75862553
+ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50085348"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51578306"
 ---
 # <a name="monitor-your-azure-machine-learning-models-in-production-with-application-insights"></a>Выполняйте мониторинг моделей службы машинного обучение Azure в рабочей среде с помощью Application Insights
 
@@ -24,6 +24,10 @@ ms.locfileid: "50085348"
 * Исключения.
 
 [Дополнительные сведения об Application Insights](../../application-insights/app-insights-overview.md). 
+
+>[!NOTE]
+> Код в этой статье был протестирован с пакетом SDK для службы "Машинное обучение Azure" версии 0.1.74.
+
 
 ## <a name="prerequisites"></a>Предварительные требования
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начать работу.
@@ -109,8 +113,11 @@ ms.locfileid: "50085348"
 ## <a name="evaluate-data"></a>Данные оценки
 Данные службы будут храниться в учетной записи Application Insights в той же группе ресурсов, что и рабочая среда службы машинного обучения Azure.
 Чтобы их просмотреть:
-1. Перейдите на [портале Azure](https://portal.azure.com) к группе ресурсов и найдите ресурс Application Insights. 
-2. На вкладке **Общие сведения** отображается базовый набор метрик службы.
+1. Откройте рабочее пространство Службы машинного обучения на [портале Azure](https://portal.azure.com) и щелкните ссылку Application Insights.
+
+    [![AppInsightsLoc](media/how-to-enable-app-insights/AppInsightsLoc.png)](./media/how-to-enable-app-insights/AppInsightsLoc.png#lightbox)
+
+1. Выберите вкладку **Обзор**, чтобы увидеть базовый набор метрик для своей службы.
 
    [![Обзор](media/how-to-enable-app-insights/overview.png)](./media/how-to-enable-app-insights/overview.png#lightbox)
 
@@ -130,3 +137,7 @@ ms.locfileid: "50085348"
 
 ## <a name="next-steps"></a>Дополнительная информация
 Также данные можно собирать с моделей в рабочей среде. Ознакомьтесь со статьей [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md). 
+
+
+## <a name="other-references"></a>Прочие ссылки
+* [Azure Monitor для контейнеров](https://docs.microsoft.com/azure/monitoring/monitoring-container-insights-overview?toc=%2fazure%2fmonitoring%2ftoc.json)

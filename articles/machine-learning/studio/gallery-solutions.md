@@ -15,18 +15,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
-ms.openlocfilehash: 19861955dcf82d0ffae674400552ca1f0c439a81
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: cb02ed61ea050c17bc7e6dc0ebc724f29f885dd7
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34834891"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51344341"
 ---
 # <a name="discover-solutions-in-the-azure-ai-gallery"></a>Поиск решений в коллекции решений ИИ Azure
-[!INCLUDE [machine-learning-gallery-item-selector](../../../includes/machine-learning-gallery-item-selector.md)]
 
-## <a name="solutions"></a>Решения
-**[Решения](https://gallery.cortanaintelligence.com/solutions)** из коллекции позволяют быстро создавать решения Cortana Intelligence из заранее настроенных решений, эталонных архитектур и конструктивных шаблонов.
+**[Решение](https://gallery.cortanaintelligence.com/solutions)** из [Коллекции решений ИИ Azure](http://gallery.cortanaintelligence.com) позволяют быстро создавать решения Cortana Intelligence из заранее настроенных решений, эталонных архитектур и конструктивных шаблонов.
 Вы можете самостоятельно развернуть решение в своей среде, воспользовавшись приведенными инструкциями, или же обратиться за помощью к одному из партнеров.  
 
 ## <a name="discover"></a>Поиск

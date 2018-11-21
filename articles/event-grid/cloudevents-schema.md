@@ -6,24 +6,26 @@ author: banisadr
 manager: timlt
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 07/13/2018
+ms.date: 11/07/2018
 ms.author: babanisa
-ms.openlocfilehash: 4f1f0e95ae74ef41ed91be55f4c964671e8f723b
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 3865a94192a65a2cb8a761cc1da30317f605548b
+ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39044555"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51287206"
 ---
 # <a name="use-cloudevents-schema-with-event-grid"></a>Использование схемы CloudEvents со службой "Сетка событий"
 
-В дополнение к [схеме событий по умолчанию](event-schema.md), служба "Сетка событий Azure" поддерживает события в [схеме CloudEvents JSON](https://github.com/cloudevents/spec/blob/master/json-format.md). [CloudEvents](http://cloudevents.io/) — [открытая стандартная спецификация](https://github.com/cloudevents/spec/blob/master/spec.md) для описания данных событий в общем формате.
+В дополнение к [схеме событий по умолчанию](event-schema.md), служба "Сетка событий Azure" поддерживает события в [схеме CloudEvents JSON](https://github.com/cloudevents/spec/blob/master/json-format.md). [CloudEvents](http://cloudevents.io/) — [открытая спецификация](https://github.com/cloudevents/spec/blob/master/spec.md) для описания данных о событиях.
 
 CloudEvents упрощает взаимодействие, предоставляя общую схему событий для публикации и использования событий на основе облака. Эта схема предоставляет обычные средства, стандартные способы маршрутизации и обработки событий, а также универсальные методы десериализации внешней схемы событий. Общая схема позволяет легко интегрировать работу на разных платформах.
 
 Создание CloudEvents — это [совместная работа](https://github.com/cloudevents/spec/blob/master/community/contributors.md) нескольких компаний, включая корпорацию Майкрософт и компанию [Cloud Native Compute Foundation](https://www.cncf.io/). В настоящее время доступна версия 0.1.
 
 В этой статье описывается использование схемы CloudEvents со службой "Сетка событий".
+
+## <a name="install-preview-feature"></a>Установка предварительной версии функции
 
 [!INCLUDE [event-grid-preview-feature-note.md](../../includes/event-grid-preview-feature-note.md)]
 
@@ -91,12 +93,12 @@ CloudEvents упрощает взаимодействие, предоставл�
 
 ### <a name="input-schema"></a>Схема ввода
 
-Чтобы установить для настраиваемого раздела схему ввода CloudEvents, при создании этого раздела используйте в Azure CLI следующий параметр: `--input-schema cloudeventv01schema`. Теперь настраиваемый раздел ожидает входящие события в формате CloudEvents v0.1.
+Схема ввода для пользовательского раздела указывается при создании этого раздела.
 
-Чтобы создать раздел службы сетки событий, выполните следующую команду.
+Для интерфейса командной строки Azure:
 
-```azurecli
-# if you have not already installed the extension, do it now.
+```azurecli-interactive
+# If you have not already installed the extension, do it now.
 # This extension is required for preview features.
 az extension add --name eventgrid
 
@@ -107,24 +109,50 @@ az eventgrid topic create \
   --input-schema cloudeventv01schema
 ```
 
+Для PowerShell используйте команду:
+
+```azurepowershell-interactive
+# If you have not already installed the module, do it now.
+# This module is required for preview features.
+Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery
+
+New-AzureRmEventGridTopic `
+  -ResourceGroupName gridResourceGroup `
+  -Location westcentralus `
+  -Name <topic_name> `
+  -InputSchema CloudEventV01Schema
+```
+
 Текущая версия CloudEvents не поддерживает пакетную обработку событий. При публикации в разделе с помощью схемы CloudEvent необходимо публиковать каждое событие отдельно.
 
 ### <a name="output-schema"></a>Схема вывода
 
-Чтобы установить схему вывода CloudEvents в подписке на события, во время создания подписки на события используйте в Azure CLI следующий параметр: `--event-delivery-schema cloudeventv01schema`. События для этой подписки на события доставляются в формате CloudEvents v0.1.
+Схема вывода указывается при создании подписки на событие.
 
-Чтобы создать подписку на события, выполните следующую команду:
+Для интерфейса командной строки Azure:
 
-```azurecli
+```azurecli-interactive
+topicID=$(az eventgrid topic show --name <topic-name> -g gridResourceGroup --query id --output tsv)
+
 az eventgrid event-subscription create \
   --name <event_subscription_name> \
-  --topic-name <topic_name> \
-  -g gridResourceGroup \
+  --source-resource-id $topicID \
   --endpoint <endpoint_URL> \
   --event-delivery-schema cloudeventv01schema
 ```
 
-Текущая версия CloudEvents не поддерживает пакетную обработку событий. Подписка на события, настроенная для схемы CloudEvent, получает каждое событие отдельно. Сейчас, если событие доставляется в схему CloudEvents, триггер службы "Сетка событий" нельзя использовать в приложении "Функции Azure". В этом случае необходимо использовать триггер HTTP. Примеры реализации триггера HTTP, который получает события в схеме CloudEvents, см. в разделе [Использование триггера HTTP в качестве триггера службы "Сетка событий"](../azure-functions/functions-bindings-event-grid.md#use-an-http-trigger-as-an-event-grid-trigger).
+Для PowerShell используйте команду:
+```azurepowershell-interactive
+$topicid = (Get-AzureRmEventGridTopic -ResourceGroupName gridResourceGroup -Name <topic-name>).Id
+
+New-AzureRmEventGridSubscription `
+  -ResourceId $topicid `
+  -EventSubscriptionName <event_subscription_name> `
+  -Endpoint <endpoint_URL> `
+  -DeliverySchema CloudEventV01Schema
+```
+
+Текущая версия CloudEvents не поддерживает пакетную обработку событий. Подписка на события, настроенная для схемы CloudEvent, получает каждое событие отдельно. Сейчас, если событие доставляется в схему CloudEvents, триггер службы "Сетка событий" нельзя использовать в приложении "Функции Azure". Используйте триггер HTTP. Примеры реализации триггера HTTP, который получает события в схеме CloudEvents, см. в разделе [Использование триггера HTTP в качестве триггера службы "Сетка событий"](../azure-functions/functions-bindings-event-grid.md#use-an-http-trigger-as-an-event-grid-trigger).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

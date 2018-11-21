@@ -6,18 +6,20 @@ author: tfitzmac
 manager: timlt
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 10/02/2018
+ms.date: 11/07/2018
 ms.author: tomfitz
-ms.openlocfilehash: f79fa096484edc34294ea0a69584e12788dba647
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: ce9df1d45de82c759883dc90d50c28551bf62cdf
+ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48043403"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51287310"
 ---
 # <a name="map-custom-fields-to-event-grid-schema"></a>Сопоставление настраиваемых полей со схемой службы "Сетка событий Azure"
 
 Если данные события не соответствуют ожидаемой [схеме службы "Сетка событий"](event-schema.md), вы по-прежнему можете использовать службу "Сетка событий", чтобы выполнять маршрутизацию событий для подписчиков. В этой статье описывается сопоставление схемы со схемой службы "Сетка событий".
+
+## <a name="install-preview-feature"></a>Установка предварительной версии функции
 
 [!INCLUDE [event-grid-preview-feature-note.md](../../includes/event-grid-preview-feature-note.md)]
 
@@ -39,18 +41,18 @@ ms.locfileid: "48043403"
 
 ## <a name="create-custom-topic-with-mapped-fields"></a>Создание настраиваемого раздела с сопоставленными полями
 
-При создании настраиваемого раздела укажите способ сопоставления полей исходного события со схемой службы "Сетка событий". Существует три свойства, которые позволяют настраивать сопоставление.
+При создании настраиваемого раздела укажите способ сопоставления полей исходного события со схемой службы "Сетка событий". Существует три значения, которые позволяют настраивать сопоставление:
 
-* Параметр `--input-schema` указывает тип схемы. Доступные варианты: *cloudeventv01schema*, *customeventschema* и *eventgridschema*. Значение по умолчанию — eventgridschema. При создании настраиваемого сопоставления между своей схемой и схемой службы "Сетка событий" используйте значение customeventschema. Если события находятся в схеме CloudEvents, используйте значение cloudeventv01schema.
+* Значение **input schema** указывает тип схемы. Его возможные значения: схема CloudEvents, схема custom event или схема "Сетка событий". Значение по умолчанию — схема "Сетка событий". При создании настраиваемого сопоставления между своей схемой и схемой "Сетка событий" используйте значение "схема custom event". Если события находятся в схеме CloudEvents, используйте значение "схема Cloudevents".
 
-* Параметр `--input-mapping-default-values` задает значения по умолчанию для полей в схеме службы "Сетка событий". Можно задать значения по умолчанию для `subject`, `eventtype`, и `dataversion`. Как правило, этот параметр используется, если настраиваемая схема не содержит поле, которое соответствует одному из этих трех полей. Например, можно указать, что версия данных всегда имеет значение **1.0**.
+* Свойство **mapping default values** задает значения по умолчанию для полей в схеме "Сетка событий". Можно задать значения по умолчанию для `subject`, `eventtype`, и `dataversion`. Как правило, этот параметр используется, если настраиваемая схема не содержит поле, которое соответствует одному из этих трех полей. Например, можно указать, что версия данных всегда имеет значение **1.0**.
 
-* Параметр `--input-mapping-fields` сопоставляет поля из вашей схемы со схемой службы "Сетка событий". Необходимо указать значения в разделенных пробелами парах "ключ — значение". В качестве имени ключа используйте имя поля сетки событий. В качестве значения используйте имя поля. Можно использовать имена ключей для `id`, `topic`, `eventtime`, `subject`, `eventtype`, и `dataversion`.
+* Значение **mapping fields** сопоставляет поля из вашей схемы со схемой "Сетка событий". Необходимо указать значения в разделенных пробелами парах "ключ — значение". В качестве имени ключа используйте имя поля сетки событий. В качестве значения используйте имя поля. Можно использовать имена ключей для `id`, `topic`, `eventtime`, `subject`, `eventtype`, и `dataversion`.
 
-В следующем примере создается настраиваемый раздел с несколькими сопоставленными полями и полями по умолчанию.
+Чтобы создать настраиваемый раздел с помощью Azure CLI, выполните следующий действия.
 
 ```azurecli-interactive
-# if you have not already installed the extension, do it now.
+# If you have not already installed the extension, do it now.
 # This extension is required for preview features.
 az extension add --name eventgrid
 
@@ -63,39 +65,77 @@ az eventgrid topic create \
   --input-mapping-default-values subject=DefaultSubject dataVersion=1.0
 ```
 
+Для PowerShell используйте команду:
+
+```azurepowershell-interactive
+# If you have not already installed the module, do it now.
+# This module is required for preview features.
+Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery
+
+New-AzureRmEventGridTopic `
+  -ResourceGroupName myResourceGroup `
+  -Name demotopic `
+  -Location eastus2 `
+  -InputSchema CustomEventSchema `
+  -InputMappingField @{eventType="myEventTypeField"} `
+  -InputMappingDefaultValue @{subject="DefaultSubject"; dataVersion="1.0" }
+```
+
 ## <a name="subscribe-to-event-grid-topic"></a>Подписка на раздел службы "Сетка событий"
 
-При подписке на настраиваемый раздел укажите схему, которую вы хотите использовать для получения событий. Используйте параметр `--event-delivery-schema`, задав значение *cloudeventv01schema*, *eventgridschema* или *inputeventschema*. Значение по умолчанию — eventgridschema.
+При подписке на настраиваемый раздел укажите схему, которую вы хотите использовать для получения событий. Задайте значение: схема CloudEvents, схема custom event или схема "Сетка событий". Значение по умолчанию — схема "Сетка событий".
 
-В примерах в этом разделе для обработчика событий используется хранилище очередей. Дополнительные сведения см. в статье [Route custom events to Azure Queue storage with Azure CLI and Event Grid](custom-event-to-queue-storage.md) (Маршрутизация настраиваемых событий в хранилище очередей Azure с помощью Azure CLI и службы "Сетки событий").
-
-В следующем примере показана подписка на раздел службы "Сетка событий" и использование схемы службы "Сетка событий" по умолчанию.
+В следующем примере показана подписка на раздел службы "Сетка событий" и использование схемы "Сетка событий". Для интерфейса командной строки Azure:
 
 ```azurecli-interactive
+topicid=$(az eventgrid topic show --name demoTopic -g myResourceGroup --query id --output tsv)
+
 az eventgrid event-subscription create \
-  --topic-name demotopic \
-  -g myResourceGroup \
+  --source-resource-id $topicid \
   --name eventsub1 \
   --event-delivery-schema eventgridschema \
-  --endpoint-type storagequeue \
-  --endpoint <storage-queue-url>
+  --endpoint <endpoint_URL>
 ```
 
 В следующем примере используется входная схема события:
 
 ```azurecli-interactive
 az eventgrid event-subscription create \
-  --topic-name demotopic \
-  -g myResourceGroup \
+  --source-resource-id $topicid \
   --name eventsub2 \
   --event-delivery-schema inputeventschema \
-  --endpoint-type storagequeue \
-  --endpoint <storage-queue-url>
+  --endpoint <endpoint_URL>
+```
+
+В следующем примере показана подписка на раздел службы "Сетка событий" и использование схемы "Сетка событий". Для PowerShell используйте команду:
+
+```azurepowershell-interactive
+$topicid = (Get-AzureRmEventGridTopic -ResourceGroupName myResourceGroup -Name demoTopic).Id
+
+New-AzureRmEventGridSubscription `
+  -ResourceId $topicid `
+  -EventSubscriptionName eventsub1 `
+  -EndpointType webhook `
+  -Endpoint <endpoint-url> `
+  -DeliverySchema EventGridSchema
+```
+
+В следующем примере используется входная схема события:
+
+```azurepowershell-interactive
+New-AzureRmEventGridSubscription `
+  -ResourceId $topicid `
+  -EventSubscriptionName eventsub2 `
+  -EndpointType webhook `
+  -Endpoint <endpoint-url> `
+  -DeliverySchema CustomInputSchema
 ```
 
 ## <a name="publish-event-to-topic"></a>Публикация события в разделе
 
 Теперь вы можете отправить событие в настраиваемый раздел и просмотреть результат сопоставления. Отправьте событие в [пример схемы](#original-event-schema) с помощью следующего скрипта:
+
+Для интерфейса командной строки Azure:
 
 ```azurecli-interactive
 endpoint=$(az eventgrid topic show --name demotopic -g myResourceGroup --query "endpoint" --output tsv)
@@ -106,23 +146,43 @@ event='[ { "myEventTypeField":"Created", "resource":"Users/example/Messages/1000
 curl -X POST -H "aeg-sas-key: $key" -d "$event" $endpoint
 ```
 
-Теперь просмотрите хранилище очередей. Две подписки доставили события в разных схемах.
+Для PowerShell используйте команду:
+
+```azurepowershell-interactive
+$endpoint = (Get-AzureRmEventGridTopic -ResourceGroupName myResourceGroup -Name demotopic).Endpoint
+$keys = Get-AzureRmEventGridTopicKey -ResourceGroupName myResourceGroup -Name demotopic
+
+$htbody = @{
+    myEventTypeField="Created"
+    resource="Users/example/Messages/1000"
+    resourceData= @{
+        someDataField1="SomeDataFieldValue"
+    }
+}
+
+$body = "["+(ConvertTo-Json $htbody)+"]"
+Invoke-WebRequest -Uri $endpoint -Method POST -Body $body -Headers @{"aeg-sas-key" = $keys.Key1}
+```
+
+Теперь посмотрите на конечную точку веб-перехватчика. Две подписки доставили события в разных схемах.
 
 Первая подписка использует схему сетки событий. Событие доставлено в следующем формате:
 
 ```json
 {
-  "Id": "016b3d68-881f-4ea3-8a9c-ed9246582abe",
-  "EventTime": "2018-05-01T20:00:25.2606434Z",
-  "EventType": "Created",
-  "DataVersion": "1.0",
-  "MetadataVersion": "1",
-  "Topic": "/subscriptions/<subscription-id>/resourceGroups/myResourceGroup/providers/Microsoft.EventGrid/topics/demotopic",
-  "Subject": "DefaultSubject",
-  "Data": {
+  "id": "aa5b8e2a-1235-4032-be8f-5223395b9eae",
+  "eventTime": "2018-11-07T23:59:14.7997564Z",
+  "eventType": "Created",
+  "dataVersion": "1.0",
+  "metadataVersion": "1",
+  "topic": "/subscriptions/<subscription-id>/resourceGroups/myResourceGroup/providers/Microsoft.EventGrid/topics/demotopic",
+  "subject": "DefaultSubject",
+  "data": {
     "myEventTypeField": "Created",
     "resource": "Users/example/Messages/1000",
-    "resourceData": { "someDataField1": "SomeDataFieldValue" } 
+    "resourceData": {
+      "someDataField1": "SomeDataFieldValue"
+    }
   }
 }
 ```
@@ -135,7 +195,9 @@ curl -X POST -H "aeg-sas-key: $key" -d "$event" $endpoint
 {
   "myEventTypeField": "Created",
   "resource": "Users/example/Messages/1000",
-  "resourceData": { "someDataField1": "SomeDataFieldValue" }
+  "resourceData": {
+    "someDataField1": "SomeDataFieldValue"
+  }
 }
 ```
 

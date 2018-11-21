@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/15/2018
 ms.author: juliako
-ms.openlocfilehash: d4b7d8ec5cb162e5fc844f107fbd5eb08fb00639
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: bf5bc66ce55b0b9d6095cd395a11f68b40af1639
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353539"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51685724"
 ---
 # <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -28,7 +28,7 @@ ms.locfileid: "49353539"
 
 Вопрос. Как осуществляется потоковая передача на устройства Apple iOS?
 
-Ответ. Добавьте путь (format=m3u8-aapl) в часть /Manifest URL-адреса, чтобы сообщить серверу-источнику потоковой передачи о необходимости возврата содержимого HLS для использования на собственных устройствах Apple iOS. (Дополнительные сведения см. в разделе о (доставке содержимого)[media-services-deliver-content-overview.md].)
+Ответ. Добавьте путь (format=m3u8-aapl) в часть /Manifest URL-адреса, чтобы сообщить серверу-источнику потоковой передачи о необходимости возврата содержимого HLS для использования на собственных устройствах Apple iOS. (см. дополнительные сведения о [доставке содержимого](media-services-deliver-content-overview.md)).
 
 Вопрос. Как осуществляется масштабирование индексирования?
 

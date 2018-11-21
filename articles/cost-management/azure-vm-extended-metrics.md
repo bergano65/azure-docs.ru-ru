@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 09/27/2018
+ms.date: 11/13/2018
 ms.topic: conceptual
 ms.service: cost-management
 manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: bc3eb2721dd9fc0c4cde407a8257f6be73201a2a
-ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
+ms.openlocfilehash: 5f1b4cf63379f0007b87c44164168b8510612f52
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47423363"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51624103"
 ---
 # <a name="add-extended-metrics-for-azure-virtual-machines"></a>Добавление расширенных метрик для виртуальных машин Azure
 
@@ -67,6 +67,8 @@ ms.locfileid: "47423363"
 При создании новых виртуальных машин на вкладке "Управление" выберите значение **Включить** для параметра **диагностики гостевой ОС**.
 
 ![Включение диагностики гостевой ОС](./media/azure-vm-extended-metrics/new-enable-diag.png)
+
+Дополнительные сведения о включении расширенных метрик для виртуальных машин Azure см. в руководствах по использованию [агента Linux для Azure](../virtual-machines/extensions/agent-linux.md) и [агента виртуальной машины Azure](../virtual-machines/extensions/agent-windows.md).
 
 ## <a name="resource-manager-credentials"></a>Учетные данные Resource Manager
 

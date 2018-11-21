@@ -10,12 +10,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 04/11/2018
 ms.author: rangv
-ms.openlocfilehash: c8e2dcfef1db8bfe3d76ac917f8c14a4060e3968
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 20c26c5daa66edd7705e850f14a79a2cbe2964fc
+ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49318764"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "51515681"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-c"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (C)
 
@@ -43,7 +43,7 @@ ms.locfileid: "49318764"
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
-![Необходимые элементы](media/iot-hub-raspberry-pi-kit-c-get-started/0_starter_kit.jpg)
+![Необходимые элементы](./media/iot-hub-raspberry-pi-kit-c-get-started/0_starter_kit.jpg)
 
 * Плата Raspberry Pi 2 или Raspberry Pi 3.
 * Активная подписка Azure. Если ее нет, можно создать [бесплатную пробную учетную запись Azure](https://azure.microsoft.com/free/) всего за несколько минут.
@@ -65,7 +65,17 @@ ms.locfileid: "49318764"
 > Эти компоненты необязательны, поскольку пример кода поддерживает использование смоделированных данных датчиков.
 >
 
-[!INCLUDE [iot-hub-get-started-create-hub-and-device](../../includes/iot-hub-get-started-create-hub-and-device.md)]
+## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
+
+[!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
+
+### <a name="retrieve-connection-string-for-iot-hub"></a>Получение строки подключения для центра Интернета вещей
+
+[!INCLUDE [iot-hub-include-find-connection-string](../../includes/iot-hub-include-find-connection-string.md)]
+
+## <a name="register-a-new-device-in-the-iot-hub"></a>Регистрация нового устройства в центре Интернета вещей
+
+[!INCLUDE [iot-hub-include-create-device](../../includes/iot-hub-include-create-device.md)]
 
 ## <a name="setup-raspberry-pi"></a>Настройка Raspberry Pi
 
@@ -89,11 +99,11 @@ ms.locfileid: "49318764"
 1. Подключите Pi к монитору, клавиатуре и мыши, запустите Pi, а затем войдите в Raspbian, используя `pi` в качестве имени пользователя и `raspberry` в качестве пароля.
 1. Щелкните значок Raspberry и выберите **Preferences** (Параметры) > **Raspberry Pi Configuration** (Конфигурация Raspberry Pi).
 
-   ![Меню параметров Raspbian](media/iot-hub-raspberry-pi-kit-c-get-started/1_raspbian-preferences-menu.png)
+   ![Меню параметров Raspbian](./media/iot-hub-raspberry-pi-kit-c-get-started/1_raspbian-preferences-menu.png)
 
 1. На вкладке **Interfaces** (Интерфейсы) установите для параметров **SPI** и **SSH** значение **Enable** (Включить), а затем нажмите кнопку **ОК**. Этот шаг является необязательным, если у вас нет физических датчиков и вы будете использовать симулированные данные датчика.
 
-   ![Включение SPI и SSH на Raspberry Pi](media/iot-hub-raspberry-pi-kit-c-get-started/2_enable-spi-ssh-on-raspberry-pi.png)
+   ![Включение SPI и SSH на Raspberry Pi](./media/iot-hub-raspberry-pi-kit-c-get-started/2_enable-spi-ssh-on-raspberry-pi.png)
 
 > [!NOTE] 
 > Сведения о том, как включить SSH и SPI, можно найти в дополнительных справочных документах на [raspberrypi.org](https://www.raspberrypi.org/documentation/remote-access/ssh/) и [RASPI-CONFIG](https://www.raspberrypi.org/documentation/configuration/raspi-config.md).
@@ -103,7 +113,7 @@ ms.locfileid: "49318764"
 
 Подключите светодиодный индикатор и датчик BME280 к Pi с помощью монтажной платы и оптоволоконных кабелей, как показано ниже. Если у вас нет датчика, [пропустите этот раздел](#connect-pi-to-the-network).
 
-![Подключение Raspberry Pi и датчика](media/iot-hub-raspberry-pi-kit-c-get-started/3_raspberry-pi-sensor-connection.png)
+![Подключение Raspberry Pi и датчика](./media/iot-hub-raspberry-pi-kit-c-get-started/3_raspberry-pi-sensor-connection.png)
 
 Датчик BME280 может собирать данные о температуре и влажности. Светодиодный индикатор мигает при обмене данными между устройством и облаком. 
 
@@ -124,13 +134,13 @@ ms.locfileid: "49318764"
 
 После успешного подключения датчика BME280 к Raspberry Pi схема должна выглядеть так, как на изображении ниже.
 
-![Подключенный компьютер Pi и датчик BME280](media/iot-hub-raspberry-pi-kit-c-get-started/4_connected-pi.jpg)
+![Подключенный компьютер Pi и датчик BME280](./media/iot-hub-raspberry-pi-kit-c-get-started/4_connected-pi.jpg)
 
 ### <a name="connect-pi-to-the-network"></a>Подключение устройства Pi к сети
 
 Включите устройство Pi, используя кабель Micro USB и источник питания. Подключите Pi к проводной сети с помощью кабеля Ethernet или выполните [инструкции](https://www.raspberrypi.org/learning/software-guide/wifi/) от Raspberry Pi Foundation для подключения устройства Pi к беспроводной сети. После успешного подключения Pi к сети необходимо запомнить [IP-адрес устройства Pi](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/finding-your-pis-ip-address).
 
-![Подключение к проводной сети](media/iot-hub-raspberry-pi-kit-c-get-started/5_power-on-pi.jpg)
+![Подключение к проводной сети](./media/iot-hub-raspberry-pi-kit-c-get-started/5_power-on-pi.jpg)
 
 
 ## <a name="run-a-sample-application-on-pi"></a>Запуск примера приложения на Pi
@@ -143,7 +153,7 @@ ms.locfileid: "49318764"
    1. Скачайте и установите [PuTTY](http://www.putty.org/) для Windows. 
    1. Скопируйте IP-адрес устройства Pi в разделе с именем узла (или IP-адресом) и выберите SSH как тип подключения.
    
-   ![PuTTy](media/iot-hub-raspberry-pi-kit-node-get-started/7_putty-windows.png)
+   ![PuTTy](./media/iot-hub-raspberry-pi-kit-node-get-started/7_putty-windows.png)
    
    **Пользователи MAC и Ubuntu**
    
@@ -181,7 +191,7 @@ ms.locfileid: "49318764"
    cmake . && make
    ```
    
-   ![Выходные данные при создании](media/iot-hub-raspberry-pi-kit-c-get-started/7_build-output.png)
+   ![Выходные данные при создании](./media/iot-hub-raspberry-pi-kit-c-get-started/7_build-output.png)
 
 1. Запустите пример приложения, выполнив следующую команду:
 
@@ -195,7 +205,7 @@ ms.locfileid: "49318764"
 
 Должны отобразиться следующие результаты, содержащие данные датчика и сообщения, которые отправляются в Центр Интернета вещей.
 
-![Выходные данные — данные датчика, отправленные с Raspberry Pi в Центр Интернета вещей](media/iot-hub-raspberry-pi-kit-c-get-started/8_run-output.png)
+![Выходные данные — данные датчика, отправленные с Raspberry Pi в Центр Интернета вещей](./media/iot-hub-raspberry-pi-kit-c-get-started/8_run-output.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

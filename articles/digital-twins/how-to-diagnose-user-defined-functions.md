@@ -6,14 +6,14 @@ manager: deshner
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 10/22/2018
+ms.date: 11/13/2018
 ms.author: stefanmsft
-ms.openlocfilehash: 852b2d35ae605f5529d162d52655fd258ca07c5a
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.openlocfilehash: ac7664e94c6e02ab90dbb1b32a54c8234614afe2
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49946102"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636277"
 ---
 # <a name="how-to-debug-issues-with-user-defined-functions-in-azure-digital-twins"></a>Отладка проблем с пользовательскими функциями в Azure Digital Twins
 
@@ -42,12 +42,12 @@ ms.locfileid: "49946102"
 
 ```Kusto
 AzureDiagnostics
-| where CorrelationId = 'yourCorrelationIdentifier'
+| where CorrelationId = 'YOUR_CORRELATION_IDENTIFIER'
 ```
 
-| Имя настраиваемого атрибута | Заменить на |
+| Значение запроса | Заменить на |
 | --- | --- |
-| *yourCorrelationIdentifier* | Идентификатор корреляции, который был указан для данных событий |
+| YOUR_CORRELATION_IDENTIFIER | Идентификатор корреляции, который был указан для данных событий |
 
 Если журналы создаются для пользовательской функции, они будут отображаться в вашем экземпляре Azure Log Analytics под категорией `UserDefinedFunction`. Чтобы получить их, введите следующее условие запроса в Azure Log Analytics:
 
@@ -62,6 +62,8 @@ AzureDiagnostics
 
 Диагностика и выявление стандартных проблем одинаково важны для устранения неполадок, возникающих в решении. Ниже представлены несколько распространенных проблем, возникающих при разработке пользовательских функций.
 
+[!INCLUDE [Digital Twins Management API](../../includes/digital-twins-management-api.md)]
+
 ### <a name="ensure-a-role-assignment-was-created"></a>Проверка создания назначения роли
 
 Если в API управления не создано назначение роли, пользовательская функция не сможет использовать в топологии многие действия, например отправку уведомлений, получение метаданных и установку вычисляемых значений.
@@ -69,13 +71,12 @@ AzureDiagnostics
 Проверьте, существует ли назначенная роль для пользовательской функции, используя API управления:
 
 ```plaintext
-GET https://yourManagementApiUrl/api/v1.0/roleassignments?path=/&traverse=Down&objectId=yourUserDefinedFunctionId
+GET YOUR_MANAGEMENT_API_URL/roleassignments?path=/&traverse=Down&objectId=YOUR_USER_DEFINED_FUNCTION_ID
 ```
 
-| Имя настраиваемого атрибута | Заменить на |
+| Параметр | Заменить на |
 | --- | --- |
-| *yourManagementApiUrl* | Полный URL-путь к нужному API управления  |
-| *yourUserDefinedFunctionId* | Идентификатор пользовательской функции, для которой нужно извлечь назначенные роли|
+| *YOUR_USER_DEFINED_FUNCTION_ID* | Идентификатор пользовательской функции, для которой нужно извлечь назначенные роли|
 
 Если назначения ролей извлечь не удается, выполните инструкции из статьи [Использование пользовательских функций в Azure Digital Twins](./how-to-user-defined-functions.md).
 
@@ -84,14 +85,13 @@ GET https://yourManagementApiUrl/api/v1.0/roleassignments?path=/&traverse=Down&o
 Следующий вызов API службы управления для экземпляров Azure Digital Twins позволяет определить, подходит ли выбранный сопоставитель для определенного датчика.
 
 ```plaintext
-GET https://yourManagementApiUrl/api/v1.0/matchers/yourMatcherIdentifier/evaluate/yourSensorIdentifier?enableLogging=true
+GET YOUR_MANAGEMENT_API_URL/matchers/YOUR_MATCHER_IDENTIFIER/evaluate/YOUR_SENSOR_IDENTIFIER?enableLogging=true
 ```
 
-| Имя настраиваемого атрибута | Заменить на |
+| Параметр | Заменить на |
 | --- | --- |
-| *yourManagementApiUrl* | Полный URL-путь к нужному API управления  |
-| *yourMatcherIdentifier* | Идентификатор оцениваемого сопоставителя |
-| *yourSensorIdentifier* | Идентификатор оцениваемого датчика |
+| *YOUR_MATCHER_IDENTIFIER* | Идентификатор оцениваемого сопоставителя |
+| *YOUR_SENSOR_IDENTIFIER* | Идентификатор оцениваемого датчика |
 
 Ответ:
 
@@ -109,13 +109,12 @@ GET https://yourManagementApiUrl/api/v1.0/matchers/yourMatcherIdentifier/evaluat
 Следующий вызов к API управления экземпляров Azure Digital Twins позволяет определить идентификаторы пользовательских функций, которые будут вызываться при поступлении телеметрии от этого датчика:
 
 ```plaintext
-GET https://yourManagementApiUrl/api/v1.0/sensors/yourSensorIdentifier/matchers?includes=UserDefinedFunctions
+GET YOUR_MANAGEMENT_API_URL/sensors/YOUR_SENSOR_IDENTIFIER/matchers?includes=UserDefinedFunctions
 ```
 
-| Имя настраиваемого атрибута | Заменить на |
+| Параметр | Заменить на |
 | --- | --- |
-| *yourManagementApiUrl* | Полный URL-путь к нужному API управления  |
-| *yourSensorIdentifier* | Идентификатор датчика, который будет отправлять данные телеметрии |
+| *YOUR_SENSOR_IDENTIFIER* | Идентификатор датчика, который будет отправлять данные телеметрии |
 
 Ответ:
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 820fd904ac4ab983f4bd9858f3cf1ecff147876e
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 2a4519484c3319ca73bef2862db4d279ba117c4f
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49386626"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636736"
 ---
 # <a name="set-up-sign-in-with-an-azure-active-directory-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи Azure Active Directory с использованием пользовательских политик 
 
@@ -31,20 +31,19 @@ ms.locfileid: "49386626"
 
 Чтобы включить вход для пользователей из определенной организации Azure AD, вам необходимо зарегистрировать приложение в клиенте организации Azure AD.
 
->[!NOTE]
->В следующих инструкциях клиент организации Azure AD будет называться `Contoso.com`, а клиент Azure AD B2C — `fabrikamb2c.onmicrosoft.com`.
-
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. Убедитесь, что используете каталог, содержащий клиент организации Azure AD (contoso.com), щелкнув **фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Регистрация приложений**.
 4. Выберите **Регистрация нового приложения**.
 5. Введите имя приложения. Например, `Azure AD B2C App`.
 6. В качестве **типа приложения** выберите `Web app / API`.
-7. В поле **URL-адрес входа** введите следующий URL-адрес в нижнем регистре, где `your-tenant` заменяется именем вашего клиента Azure AD B2C (fabrikamb2c.onmicrosoft.com).
+7. В поле **URL-адрес входа** введите следующий URL-адрес в нижнем регистре, где `your-B2C-tenant-name` заменяется именем вашего клиента Azure AD B2C:
 
     ```
-    https://yourtenant.b2clogin.com/your-tenant.onmicrosoft.com/oauth2/authresp
+    https://your-B2C-tenant-name.b2clogin.com/your-B2C-tenant-name.onmicrosoft.com/oauth2/authresp
     ```
+
+    Например, `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp`.
 
 8. Нажмите кнопку **Создать**. Скопируйте **идентификатор приложения** для использования в будущем.
 9. Выберите приложение, а затем щелкните **Параметры**.
@@ -85,7 +84,7 @@ ms.locfileid: "49386626"
           <Protocol Name="OpenIdConnect"/>
           <OutputTokenFormat>JWT</OutputTokenFormat>
           <Metadata>
-            <Item Key="METADATA">https://login.windows.net/your-tenant/.well-known/openid-configuration</Item>
+            <Item Key="METADATA">https://login.windows.net/your-AD-tenant-name.onmicrosoft.com/.well-known/openid-configuration</Item>
             <Item Key="ProviderName">https://sts.windows.net/00000000-0000-0000-0000-000000000000/</Item>
             <Item Key="client_id">00000000-0000-0000-0000-000000000000</Item>
             <Item Key="IdTokenAudience">00000000-0000-0000-0000-000000000000</Item>
@@ -119,7 +118,7 @@ ms.locfileid: "49386626"
     </ClaimsProvider>
     ```
 
-4. В элементе **ClaimsProvider** укажите для **Domain** уникальное значение, позволяющее отличить этот поставщик удостоверений от других.
+4. В элементе **ClaimsProvider** укажите для **Domain** уникальное значение, позволяющее отличить этот поставщик удостоверений от других. Пример: `Contoso`. Не помещайте `.com` в конец этого параметра домена.
 5. В элементе **ClaimsProvider** обновите значение **DisplayName**, указав понятное имя поставщика утверждений. В настоящее время это значение не используется.
 
 ### <a name="update-the-technical-profile"></a>Обновление технического профиля
@@ -130,7 +129,7 @@ ms.locfileid: "49386626"
 2. Обновите значение **DisplayName**. Это значение будет отображаться на кнопке входа на экране входа в систему.
 3. Обновите значение **Description**.
 4. Azure AD использует протокол OpenID Connect, поэтому для параметра **Protocol** должно быть задано значение `OpenIdConnect`.
-5. Задайте для параметра **METADATA** значение `https://login.windows.net/your-tenant/.well-known/openid-configuration`, где `your-tenant` — это имя клиента Azure AD (contoso.com).
+5. Задайте для параметра **METADATA** значение `https://login.windows.net/your-AD-tenant-name.onmicrosoft.com/.well-known/openid-configuration`, где `your-AD-tenant-name` — это имя клиента Azure AD. Например, `https://login.windows.net/fabrikam.onmicrosoft.com/.well-known/openid-configuration`
 6. Откройте браузер и перейдите по URL-адресу **метаданных**, который вы только что обновили. Найдите для объект **issuer**, скопируйте и вставьте его в качестве значения **ProviderName** в XML-файле.
 8. Задайте для параметров **client_id** и **IdTokenAudience** значение идентификатора приложения из регистрации приложения.
 9. В разделе **CryptograhicKeys** измените значение **StorageReferenceId**, указав ключ политики, который был определен. Например, `ContosoAppSecret`.
@@ -158,7 +157,7 @@ ms.locfileid: "49386626"
 Элемент **ClaimsProviderSelection** является аналогом кнопки поставщика удостоверений на экранах регистрации и входа. Если вы добавите для учетной записи Azure AD элемент **ClaimsProviderSelection**, при переходе пользователя на страницу отобразится новая кнопка.
 
 1. Найдите элемент **OrchestrationStep**, содержащий `Order="1"` в созданном пути взаимодействия пользователя.
-2. Добавьте следующий элемент в тэг **ClaimsProviderSelects**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `ContosoExchange`:
+2. Добавьте следующий элемент под элементом **ClaimsProviderSelections**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `ContosoExchange`:
 
     ```XML
     <ClaimsProviderSelection TargetClaimsExchangeId="ContosoExchange" />

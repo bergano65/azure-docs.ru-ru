@@ -12,18 +12,18 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/02/2018
+ms.date: 11/14/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: fcdc14534e833ee394645e19cf8bc4bd9d6a7aaa
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: c8bba283a0c3fde75966ae123023e50d497abd5a
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50961149"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51687560"
 ---
 # <a name="connect-operations-manager-to-log-analytics"></a>Подключение Operations Manager к Log Analytics
-Чтобы не увеличивать затраты на System Center Operations Manager и использовать расширенные возможности в Log Analytics, Operations Manager можно интегрировать с рабочей областью Log Analytics. Таким образом вы сможете использовать функции Log Analytics, располагая следующими возможностями благодаря интеграции с Operations Manager:
+Чтобы не увеличивать затраты на [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/key-concepts?view=sc-om-1807) и использовать расширенные возможности в Log Analytics, Operations Manager можно интегрировать с рабочей областью Log Analytics. Таким образом вы сможете использовать функции Log Analytics, располагая следующими возможностями благодаря интеграции с Operations Manager:
 
 * мониторинг работоспособности ИТ-служб с помощью Operations Manager;
 * управление интеграцией с решениями ITSM, поддерживающими управление различными инцидентами и неполадками;
@@ -44,7 +44,7 @@ ms.locfileid: "50961149"
 
 * Log Analytics поддерживает только System Center Operations Manager 1807, 1801, 2016, Operations Manager 2012 с пакетом обновления 1 (SP1) и накопительным пакетом обновления 6 (UR6) или более поздней версии и Operations Manager 2012 R2 с накопительным пакетом обновления 2 (UR2) или более поздней версии. Поддержка прокси-сервера была добавлена в Operations Manager 2012 с пакетом обновления 1 (SP1) и накопительным пакетом обновления 7 (UR7) и в Operations Manager 2012 R2 с накопительным пакетом обновления 3 (UR3).
 * Все агенты Operations Manager должны удовлетворять минимальным требованиям поддержки. Убедитесь, что агенты соответствуют минимальным требованиям, иначе взаимодействие с агентом Windows может завершиться сбоем и привести к созданию ошибок в журнале событий Operations Manager.
-* Рабочая область Log Analytics. Дополнительные сведения см. в статье [Сбор данных с компьютеров в среде с помощью Log Analytics](log-analytics-concept-hybrid.md).
+* Рабочая область Log Analytics. Дополнительные сведения см. в статье [Управление рабочими областями](log-analytics-manage-access.md?toc=/azure/azure-monitor/toc.json).
 * Вы прошли проверку подлинности в Azure с учетной записью, которая является членом [роли участника Log Analytics](log-analytics-manage-access.md#manage-accounts-and-users).  
 
 >[!NOTE]
@@ -52,7 +52,7 @@ ms.locfileid: "50961149"
 >Новый пакет управления был выпущен для каждой версии Operations Manager:  
 >* для System Center Operations Manager 1801 загрузите пакет управления [здесь](https://www.microsoft.com/download/details.aspx?id=57173);  
 >* для System Center Operations Manager 2016 загрузите пакет управления [здесь](https://www.microsoft.com/download/details.aspx?id=57172);  
->* для System Center Operations Manager 2012 R2 загрузите пакет управления [здесь](https://www.microsoft.com/en-us/download/details.aspx?id=57171).  
+>* для System Center Operations Manager 2012 R2 загрузите пакет управления [здесь](https://www.microsoft.com/download/details.aspx?id=57171).  
 
 ### <a name="network"></a>Сеть
 Ниже приведены сведения о конфигурации прокси-сервера и брандмауэра, необходимые для взаимодействия агента Operations Manager, серверов управления и консоли управления с Log Analytics. Трафик с каждого компонента является исходящим из локальной сети к службе Log Analytics.   

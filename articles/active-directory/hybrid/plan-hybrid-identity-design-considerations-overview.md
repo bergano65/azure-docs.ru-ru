@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 05/30/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 6d916e884e7764a1ba5ebaf224750f38e7d7673e
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: d85157c3f1aafd33a2b996168f2f9eac613a209c
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46308663"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51344888"
 ---
 # <a name="azure-active-directory-hybrid-identity-design-considerations"></a>Рекомендации по разработке архитектуры гибридной идентификации в Azure Active Directory
 Потребительские устройства распространяются в корпоративной среде, и облачные приложения, использующие принцип "Программное обеспечение как услуга" (SaaS), можно легко адаптировать для этих устройств. В результате усложняется управление доступом к приложениям пользователей в различных внутренних центрах обработки данных и облачных платформах.  
@@ -62,6 +62,6 @@ ms.locfileid: "46308663"
 | Планирование повышения безопасности данных благодаря надежному решению для идентификации |[Определение требований к защите данных](plan-hybrid-identity-design-considerations-dataprotection-requirements.md) <br> [Определение требований к управлению содержимым](plan-hybrid-identity-design-considerations-contentmgt-requirements.md)<br> [Определение требований к контролю доступа](plan-hybrid-identity-design-considerations-accesscontrol-requirements.md)<br> [Определение требований по реагированию на инциденты](plan-hybrid-identity-design-considerations-incident-response-requirements.md) <br> [Определение стратегии защиты данных](plan-hybrid-identity-design-considerations-data-protection-strategy.md) |
 | Планирование жизненного цикла гибридной идентификации |[Определение задач управления гибридной идентификацией](plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md) <br> [Управление синхронизацией](plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md)<br> [Определение стратегии внедрения гибридной идентификации](plan-hybrid-identity-design-considerations-lifecycle-adoption-strategy.md) |
 
-## <a name="download-this-guide"></a>Загрузка руководства
-Загрузить PDF-версию руководства по разработке архитектуры гибридной идентификации можно из [галереи Technet](https://gallery.technet.microsoft.com/Azure-Hybrid-Identity-b06c8288). 
+## <a name="next-steps"></a>Дальнейшие действия
+[Определение требований к идентификации](plan-hybrid-identity-design-considerations-business-needs.md)
 

@@ -1,6 +1,6 @@
 ---
-title: Использование Hadoop Pig с REST в HDInsight в Azure
-description: Узнайте, как с помощью REST выполнять задания Pig Latin в кластере Hadoop в Azure HDInsight.
+title: Использование Apache Hadoop Pig с REST в HDInsight в Azure
+description: Узнайте, как с помощью REST выполнять задания Pig Latin в кластере Apache Hadoop в Azure HDInsight.
 services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -9,21 +9,21 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/10/2018
 ms.author: hrasheed
-ms.openlocfilehash: bd729d0d2cd095339a82b8a7f38a17a20b709c15
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: cb96933569c18b8c70d8991c9ba19f9f3e1243e6
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51013094"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51633705"
 ---
-# <a name="run-pig-jobs-with-hadoop-on-hdinsight-by-using-rest"></a>Выполнение заданий Pig с помощью REST с использованием Hadoop в HDInsight
+# <a name="run-pig-jobs-with-apache-hadoop-on-hdinsight-by-using-rest"></a>Выполнение заданий Pig с помощью REST с использованием Apache Hadoop в HDInsight
 
 [!INCLUDE [pig-selector](../../../includes/hdinsight-selector-use-pig.md)]
 
-Узнайте, как выполнять задания Pig Latin с помощью запросов REST к кластеру Azure HDInsight. Curl используется для демонстрации возможностей взаимодействия с HDInsight с помощью REST API WebHCat.
+Узнайте, как выполнять задания Apache Pig Latin с помощью запросов REST к кластеру Azure HDInsight. Curl используется для демонстрации возможностей взаимодействия с HDInsight с помощью REST API WebHCat.
 
 > [!NOTE]
-> Если вы уже знаете, как использовать серверы Hadoop на платформе Linux, но не знакомы с HDInsight, ознакомьтесь со статьей [Советы по использованию HDInsight на платформе Linux](../hdinsight-hadoop-linux-information.md).
+> Если вы уже знаете, как использовать серверы Apache Hadoop на платформе Linux, но не знакомы с HDInsight, ознакомьтесь со статьей [Сведения об использовании HDInsight в Linux](../hdinsight-hadoop-linux-information.md).
 
 ## <a id="prereq"></a>Предварительные требования
 

@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/24/2018
+ms.date: 11/14/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: d4f44deac1e8833af064e0abea4e65c5ca2b2f93
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 6172195a9914d841e480cd7ebbf9566616911378
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46309173"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51686200"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Устранение неполадок в работе сквозной аутентификации Azure Active Directory
 
@@ -125,7 +125,7 @@ ms.locfileid: "46309173"
 
 Чтобы посмотреть ошибки, связанные с агентом проверки подлинности, откройте на сервере приложение "Просмотр событий" и проверьте расположение **Application and Service Logs\Microsoft\AzureAdConnect\AuthenticationAgent\Admin**.
 
-Для более детального анализа включите журнал "Сеанс". Не запускайте агент аутентификации со включенным журналом во время обычной работы. Используйте его только для устранения неполадок. Содержимое этого журнала будет видно только после того, как он снова будет отключен.
+Для получения подробных сведений включите журнал "Сеанс" (кликните правой кнопкой мыши в приложении "Просмотр событий", чтобы найти этот параметр). Не запускайте агент аутентификации со включенным журналом во время обычной работы. Используйте его только для устранения неполадок. Содержимое этого журнала будет видно только после того, как он снова будет отключен.
 
 ### <a name="detailed-trace-logs"></a>Подробные журналы трассировки
 

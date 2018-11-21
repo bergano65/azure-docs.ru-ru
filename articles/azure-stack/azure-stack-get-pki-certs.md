@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 10/22/2018
 ms.author: mabrigg
 ms.reviewer: ppacent
-ms.openlocfilehash: 9f88e71df7697156e0745aeaf6b989548bcc223f
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.openlocfilehash: a4a9fefa98d30d0f9815a935f000c8a663dffd21
+ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49945117"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "51514202"
 ---
 # <a name="azure-stack-certificates-signing-request-generation"></a>Создание запроса на подпись сертификата Azure Stack
 
@@ -29,7 +29,7 @@ ms.locfileid: "49945117"
  - **Стандартные запросы сертификатов**  
     В [этой статье](azure-stack-get-pki-certs.md) описано, как выполнять эти запросы.
  - **Платформа как услуга (PaaS)**  
-    При необходимости запросите сертификаты PaaS, как описано в разделе [Необязательные сертификаты PaaS](azure-stack-pki-certs.md#optional-paas-certificates).
+    Можно запросить имена PaaS для сертификатов, как описано в разделе [Необязательные сертификаты PaaS](azure-stack-pki-certs.md#optional-paas-certificates).
 
 
 
@@ -102,7 +102,7 @@ ms.locfileid: "49945117"
 
     Для включения служб PaaS укажите параметр ```-IncludePaaS```
 
-7. Альтернативный подход для сред разработки и тестирования. Чтобы создать единый запрос на сертификат с несколькими альтернативными именами субъекта, добавьте параметр **-RequestType SingleCSR** и значение (**не** рекомендуется для рабочих сред):
+7. Также в средах разработки и тестирования для создания одного запроса на сертификат с несколькими альтернативными именами субъекта можно добавить параметр и значение **-RequestType SingleCSR** (**не** рекомендуется для рабочих сред):
 
     ```PowerShell  
     New-AzsCertificateSigningRequest -RegionName $regionName -FQDN $externalFQDN -subject $subjectHash -RequestType SingleCSR -OutputRequestPath $OutputDirectory -IdentitySystem $IdentitySystem

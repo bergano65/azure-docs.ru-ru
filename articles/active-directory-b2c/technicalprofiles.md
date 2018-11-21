@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: f1242b299c6d2278bd75b576f225987854a2d8a5
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 45ea2a28b4b2fb3d55d7ae949152e6f51b5d3162
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44383117"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51566539"
 ---
 # <a name="technicalprofiles"></a>TechnicalProfiles
 
@@ -72,7 +72,7 @@ ms.locfileid: "44383117"
 </ClaimsProvider>
 ```
 
-Элемент **TechnicalProfile** содержит следующие атрибуты.
+Элемент **TechnicalProfile** содержит следующий атрибут.
 
 | Атрибут | Обязательно | ОПИСАНИЕ |
 |---------|---------|---------|
@@ -108,7 +108,7 @@ ms.locfileid: "44383117"
 
 | Атрибут | Обязательно | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
-| ИМЯ | Yes | Имя допустимым протоколов, поддерживаемых в Azure AD B2C, которые используются в составе технического профиля. Возможные значения: `OAuth1`, `OAuth2`, `SAML2`, `OpenIdConnect`, `WsFed`, `WsTrust`, `Proprietary`, `session management`, `self-asserted` или `None`. |
+| ИМЯ | Yes | Имя допустимого протокола, поддерживаемого в Azure AD B2C и используемого в составе технического профиля. Возможные значения: `OAuth1`, `OAuth2`, `SAML2`, `OpenIdConnect`, `WsFed`, `WsTrust`, `Proprietary`, `session management`, `self-asserted` или `None`. |
 | Обработчик | Нет  | Если имя протокола имеет значение `Proprietary`, здесь должно быть указано полное имя сборки, которую Azure AD B2C использует для определения обработчика протокола. |
 
 ### <a name="metadata"></a>Метаданные
@@ -202,7 +202,7 @@ ms.locfileid: "44383117"
 
 | Элемент | Вхождения | ОПИСАНИЕ |
 | ------- | ----------- | ----------- |
-| OutputClaim | 1:n | Ожидаемый тип исходящего утверждения. |
+| outputClaim | 1:n | Ожидаемый тип исходящего утверждения. |
 
 #### <a name="outputclaim"></a>OutputClaim 
 

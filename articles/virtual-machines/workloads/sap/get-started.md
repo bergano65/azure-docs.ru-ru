@@ -14,15 +14,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 09/13/2018
+ms.date: 11/06/2018
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2deacb7d15f370c9182c3239493ed60f735d738c
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 6fbb09d41535bf811a42b204f4e3d38b87c2846c
+ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45736841"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51287954"
 ---
 # <a name="using-azure-for-hosting-and-running-sap-workload-scenarios"></a>Размещение и выполнение сценариев рабочей нагрузки SAP с помощью Azure
 
@@ -35,6 +35,11 @@ Azure для SAP HANA — это уникальное предложение, к
 При размещении сценариев рабочей нагрузки SAP в Azure может потребоваться интеграция удостоверений и единого входа с помощью Azure Active Directory для других компонентов SAP, а также для предложений SAP SaaS или PaaS. Список таких сценариев интеграции и единого входа с помощью сущностей Azure Active Directory (AAD) и SAP представлен в разделе "Интеграция AAD с приложением для управления удостоверениями SAP и единый вход".
 
 ## <a name="latest-changes"></a>Последние изменения
+
+В следующих статьях объясняется, как использовать и настраивать [виртуальных сетевые модули Azure](https://azure.microsoft.com/solutions/network-appliances/) в зависящих от задержки критически важных путях взаимодействия систем SAP:
+
+- [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general)
+- [Конфигурации и операции инфраструктуры SAP HANA в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations)
 
 Документация по динамическому распределению уровней SAP HANA для виртуальных машин Azure
 
@@ -64,7 +69,7 @@ Azure для SAP HANA — это уникальное предложение, к
 
 
 ## <a name="sap-hana-on-azure-virtual-machines"></a>SAP HANA на виртуальных машинах Azure
-Этот раздел документации охватывает различные аспекты SAP HANA. Перед началом работы необходимо ознакомиться с понятием субъекта-службы в Azure, которая предоставляет элементарные службы Azure IaaS, то есть вы должны знать о вычислениях, хранении и сетях в Azure. Многие из этих тем рассматриваются в [Руководстве по планированию Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide) для SAP NetWeaver. 
+Этот раздел документации охватывает различные аспекты SAP HANA. Перед началом работы необходимо ознакомиться с понятием субъекта-службы в Azure, которая предоставляет элементарные службы Azure IaaS, то есть вы должны знать о вычислениях, хранении и сетях в Azure. Многие из этих тем рассматриваются в [руководстве по планированию Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide) для SAP NetWeaver. 
 
 Документация для HANA в Azure состоит из следующих статей и подразделов:
 
@@ -103,7 +108,7 @@ Azure для SAP HANA — это уникальное предложение, к
 
 Для баз данных SAP HANA в Azure ознакомьтесь с разделом "SAP HANA на виртуальных машинах Azure".
 
-Базовый документ о высоком уровне доступности рабочих нагрузок SAP в Azure:
+Документ с общими сведениями об обеспечении высокого уровня доступности для рабочих нагрузок SAP в Azure:
 
 - [Руководство по обеспечению высокого уровня доступности SAP NetWeaver на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-guide-start)
 

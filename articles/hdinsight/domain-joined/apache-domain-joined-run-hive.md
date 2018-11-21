@@ -9,15 +9,15 @@ ms.reviewer: mamccrea
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: bdad0bac0d320b641359df4093ae10c9505b7de2
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 43b3e293bf2990c953aeb2947b1113ee30175dee
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46993431"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51632821"
 ---
-# <a name="configure-hive-policies-in-hdinsight-with-enterprise-security-package"></a>Настройка политик Hive в HDInsight с Корпоративным пакетом безопасности
-Узнайте, как настроить политики Apache Ranger для Hive. В этой статье вы создадите две политики Ranger, чтобы ограничить доступ к таблице hivesampletable. Таблица hivesampletable поставляется с кластерами HDInsight. После настройки политик подключитесь к таблицам Hive в HDInsight с помощью Excel и драйвера ODBC.
+# <a name="configure-apache-hive-policies-in-hdinsight-with-enterprise-security-package"></a>Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности
+Узнайте, как настроить политики Apache Ranger для Apache Hive. В этой статье вы создадите две политики Ranger, чтобы ограничить доступ к таблице hivesampletable. Таблица hivesampletable поставляется с кластерами HDInsight. После настройки политик подключитесь к таблицам Hive в HDInsight с помощью Excel и драйвера ODBC.
 
 ## <a name="prerequisites"></a>Предварительные требования
 * Кластер HDInsight с Корпоративным пакетом безопасности. Ознакомьтесь со статьей [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md).

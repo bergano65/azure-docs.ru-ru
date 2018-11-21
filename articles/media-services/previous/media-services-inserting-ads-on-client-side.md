@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/26/2016
 ms.author: juliako
-ms.openlocfilehash: 0ca9c7ff1ac4cfbb50f251679286a933429bf03f
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 71ac963f00993f8a66d41a8d6f3f67528d9c0583
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37903053"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51625155"
 ---
 # <a name="inserting-ads-on-the-client-side"></a>Вставка рекламы на стороне клиента
 В этой статье описано, как использовать разные типы рекламы на стороне клиента.
@@ -107,7 +107,7 @@ VAST-файл определяет, какие рекламные ролики �
           <Description>Unknown</Description>
           <Survey></Survey>
           <Error></Error>
-          <Impression id="Atlas"><![CDATA[http://myserver.com/Impression/Ad1trackingResouce]]></Impression>
+          <Impression id="Atlas"><![CDATA[http://myserver.com/Impression/Ad1trackingResource]]></Impression>
           <Creatives>
             <Creative id="video" sequence="0" AdID="">
               <Linear>
@@ -127,7 +127,7 @@ VAST-файл определяет, какие рекламные ролики �
           <Description>Unknown</Description>
           <Survey></Survey>
           <Error></Error>
-          <Impression id="Atlas"><![CDATA[http://myserver.com/Impression/Ad2trackingResouce]]></Impression>
+          <Impression id="Atlas"><![CDATA[http://myserver.com/Impression/Ad2trackingResource]]></Impression>
           <Creatives>
             <Creative id="video" sequence="0" AdID="">
               <Linear>
@@ -160,7 +160,7 @@ VAST-файл определяет, какие рекламные ролики �
     </Creative>
 ```
 
-В элементе <**NonLinearAds**> могут содержаться один или несколько элементов <**NonLinear**>, каждый из которых описывает нелинейное рекламное объявление. Элемент <**NonLinear**> определяет ресурс для нелинейной рекламы. Ресурсом может быть <**StaticResouce**>, <**IFrameResource**> или <**HTMLResouce**>. <**StaticResource** описывает отличающийся от HTML ресурс и определяет атрибут creativeType, который указывает способ отображения ресурса:
+В элементе <**NonLinearAds**> могут содержаться один или несколько элементов <**NonLinear**>, каждый из которых описывает нелинейное рекламное объявление. Элемент <**NonLinear**> определяет ресурс для нелинейной рекламы. Ресурсом может быть <**StaticResource**>, <**IFrameResource**> или <**HTMLResource**>. <**StaticResource** описывает отличающийся от HTML ресурс и определяет атрибут creativeType, который указывает способ отображения ресурса:
 
 Image/gif, image/jpeg, image/png — ресурс отображается в HTML-теге <**img**>.
 

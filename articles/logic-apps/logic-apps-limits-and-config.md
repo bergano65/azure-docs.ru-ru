@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 10/11/2018
-ms.openlocfilehash: 1ae350e74a9b56aaaa72b38a9e3a43bddfbefefc
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: f4d8030918804dc30437aae34de87615ce7e82b5
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50232279"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51346708"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Ограничения и сведения о конфигурации для Azure Logic Apps
 
@@ -321,9 +321,9 @@ ms.locfileid: "50232279"
 | Западная часть Великобритании | 51.141.48.98, 51.141.51.145, 51.141.53.164, 51.141.119.150 |
 | | |
 
-### <a name="connectors"></a>Соединители
+### <a name="managed-connectors"></a>Управляемые соединители
 
-Для поддержки вызовов [соединителей](../connectors/apis-list.md) настройте конфигурацию брандмауэра так, чтобы она включала исходящие IP-адреса на основе регионов, где размещены приложения логики.
+Для поддержки вызовов [соединителей, управляемых Майкрософт](../connectors/apis-list.md), настройте конфигурацию брандмауэра так, чтобы она включала исходящие IP-адреса на основе регионов, где размещены приложения логики.
 
 > [!IMPORTANT]
 > При наличии существующих конфигураций обновите их **как можно быстрее — до 1 сентября 2018 г.**, чтобы они включали и сопоставляли IP-адреса в этом списке для регионов, где размещены ваши приложения логики. 

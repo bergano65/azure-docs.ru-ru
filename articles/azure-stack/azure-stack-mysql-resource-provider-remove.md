@@ -11,30 +11,36 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/16/2018
+ms.date: 11/14/2018
 ms.author: jeffgilb
 ms.reviewer: quying
-ms.openlocfilehash: dcd1c40717cb35fe4daa9ab9e2c66f334ffff5fe
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 7d3b0e179972464a1ed857c576ca8a7c8fc2e162
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49361504"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51686812"
 ---
 # <a name="remove-the-mysql-resource-provider"></a>Удаление поставщика ресурсов MySQL
 
 Прежде чем удалить поставщик ресурсов MySQL, необходимо удалить все его зависимости. Кроме того, потребуется скопировать пакет развертывания, который был использован для установки поставщика ресурсов.
 
+  |Минимальная версия Azure Stack|Версия MySQL RP|
+  |-----|-----|
+  |Версия 1808 (1.1808.0.97)|[MySQL RP версии 1.1.30.0](https://aka.ms/azurestacksqlrp11300)|
+  |Версия 1804 (1.0.180513.1)|[MySQL RP версии 1.1.24.0](https://aka.ms/azurestackmysqlrp11240)
+  |     |     |
+
 ## <a name="dependency-cleanup"></a>Очистка зависимостей
 
 Есть несколько задач очистки, которые нужно запустить перед выполнением скрипта DeployMySqlProvider.ps1 для удаления поставщика ресурсов.
 
-Некоторые из задач очистки выполняют сами клиенты:
+Некоторые из задач очистки выполняют пользователи клиентов Azure Stack:
 
 * Удаление всех своих баз данных из поставщика ресурсов. (При удалении баз данных клиента данные не удаляются).
 * Отмена регистрации в пространстве имен поставщика.
 
-Администраторы выполняют следующие задачи очистки:
+Некоторые из задач очистки выполняет оператор Azure Stack:
 
 * Удаление серверов размещения из адаптера MySQL.
 * Удаление всех планов, которые ссылаются на этот адаптер MySQL.

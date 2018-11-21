@@ -12,14 +12,14 @@ ms.workload: ''
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 11/01/2018
+ms.date: 11/14/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 83acdb320e0be0837ec5188a11cb86b91ed077fa
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.openlocfilehash: 81f7e46e626bb061881be53e8cace36e1478e0e1
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50980343"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51683984"
 ---
 # <a name="container-skus-tab"></a>Вкладка номеров SKU контейнера
 
@@ -46,7 +46,7 @@ ms.locfileid: "50980343"
 
 ### <a name="container-metadata"></a>Метаданные контейнера
 
-В метаданных контейнера содержатся справочные сведения о репозитории образа внутри Реестра контейнеров Azure (ACR). Azure Marketplace копирует этот образ в общедоступный реестр Marketplace и делает его доступным для клиентов после сертификации. Все запросы от пользователя Azure на использование образа контейнера обслуживаются из реестра контейнеров Marketplace.
+В метаданных контейнера содержатся справочные сведения о репозитории образа внутри Реестра контейнеров Azure (ACR). Azure Marketplace скопирует этот образ в собственный общедоступный реестр и сделает его доступным для клиентов после сертификации. Все запросы от пользователей Azure для загрузки образов контейнеров из Azure Marketplace выполняются общедоступным реестром Azure Marketplace, а не ACR.
 
 ![Метаданные контейнера](./media/containers-image-repository.png)
     

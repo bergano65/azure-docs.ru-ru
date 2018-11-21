@@ -14,16 +14,37 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: 9d3e579cd58bc6c7d67b29998ea5a48a65548b0a
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: ea10e83e8a5963c1ea0073179c15b1c2f3230805
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30904006"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51615225"
 ---
 # <a name="create-an-azure-network-watcher-instance"></a>Создание экземпляра Наблюдателя за сетями Azure
 
-Наблюдатель за сетями — это региональная служба, обеспечивающая мониторинг и диагностику условий на уровне сетевого сценария на платформе Azure. Мониторинг на уровне сценария позволяет диагностировать проблемы в сети с помощью комплексного представления сетевого уровня. Инструменты диагностики сети и визуализации, доступные в Наблюдателе за сетями, помогают понять, как работает сеть в Azure, диагностировать ее и получить ценную информацию.
+Наблюдатель за сетями — это региональная служба, обеспечивающая мониторинг и диагностику условий на уровне сетевого сценария на платформе Azure. Мониторинг на уровне сценария позволяет диагностировать проблемы в сети с помощью комплексного представления сетевого уровня. Инструменты диагностики сети и визуализации, доступные в Наблюдателе за сетями, помогают понять, как работает сеть в Azure, диагностировать ее и получить ценную информацию. Наблюдатель за сетями включается при создании ресурса "Наблюдатель за сетями". Этот ресурс позволяет использовать возможности Наблюдателя за сетями.
+
+## <a name="network-watcher-is-automatically-enabled"></a>Наблюдатель за сетями включается автоматически
+При создании или обновлении виртуальной сети в подписке Наблюдатель за сетями включается автоматически в регионе вашей виртуальной сети. Автоматическое включение Наблюдателя за сетями не влияет на ваши ресурсы, и за него не взимается дополнительная плата.
+
+#### <a name="opt-out-of-network-watcher-automatic-enablement"></a>Отказ от автоматического включения Наблюдателя за сетями
+Если вы хотите отказаться от автоматического включения Наблюдателя за сетями, выполните такие команды.
+
+> [!WARNING]
+> Отказ от автоматического включения Наблюдателя за сетями — действие необратимое. Чтобы возобновить автоматическое включение после отказа от него, придется [обратиться в службу поддержки](https://azure.microsoft.com/support/options/).
+
+```azurepowershell-interactive
+Register-AzureRmProviderFeature -FeatureName DisableNetworkWatcherAutocreation -ProviderNamespace Microsoft.Network
+Register-AzureRMResourceProvider -ProviderNamespace Microsoft.Network
+```
+
+```azurecli-interactive
+az feature register --name DisableNetworkWatcherAutocreation --namespace Microsoft.Network
+az provider register -n Microsoft.Network
+```
+
+
 
 ## <a name="create-a-network-watcher-in-the-portal"></a>Создание Наблюдателя за сетями на портале
 

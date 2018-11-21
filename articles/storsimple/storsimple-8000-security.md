@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 05/18/2018
 ms.author: alkohli
-ms.openlocfilehash: fb8c3fe9dd5ca207e4ae37faf9a5a1c4edfffc63
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: ded3c89774c39b5edee02b9e3c6807ce75ff16a4
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51233819"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51566199"
 ---
 # <a name="storsimple-security-and-data-protection"></a>Защита устройства StorSimple и данных
 
@@ -205,7 +205,7 @@ StorSimple использует следующие алгоритмы шифро
 
 [!INCLUDE [storsimple Cloud Appliance security](../../includes/storsimple-virtual-device-security.md)]
 
-## <a name="managing-personal-inforamation"></a>Управление персональными данными
+## <a name="managing-personal-information"></a>Управление персональными данными
 
 Диспетчер устройств StorSimple для физической и виртуальной серии собирает персональные данные в двух ключевых экземплярах:
 

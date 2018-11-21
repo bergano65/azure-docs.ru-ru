@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2018
 ms.author: deguhath
-ms.openlocfilehash: b703cb4d3ddd8b62895c9c40c7fa2fba728e884e
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 9f86d1d74f5139458999a8c91ac35ec76ac278c8
+ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51262288"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51300937"
 ---
 # <a name="vehicle-telemetry-analytics-solution-template-power-bi-dashboard-setup-instructions"></a>Инструкции по настройке панели мониторинга Power BI шаблона решения для аналитики телеметрии автомобилей
-Из этого меню можно переходить к другим разделам обзора. 
-
-[!INCLUDE [cap-vehicle-telemetry-playbook-selector](../../../includes/cap-vehicle-telemetry-playbook-selector.md)]
 
 Решение для аналитики телеметрии автомобилей демонстрирует, как поставщики и производители автомобилей, а также страховые компании могут использовать возможности Cortana Intelligence. Они могут получать прогнозы и актуальную информацию об исправности автомобиля и манере вождения в реальном времени, чтобы повышать качество обслуживания клиентов, оптимизировать исследования, разработку и маркетинговые кампании. В этих пошаговых инструкциях показано, как настроить отчеты и панель мониторинга Power BI после развертывания решения в подписке. 
+
+См. [общие сведения о решении для анализа данных телеметрии, полученных с автомобиля](cortana-analytics-playbook-vehicle-telemetry.md).
+См. также [сборник тренировочных заданий по решению для аналитики телеметрии автомобиля](cortana-analytics-playbook-vehicle-telemetry-deep-dive.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 * Разверните решение [аналитики телеметрии автомобиля](https://gallery.cortanaintelligence.com/Solution/5bdb23f3abb448268b7402ab8907cc90). 

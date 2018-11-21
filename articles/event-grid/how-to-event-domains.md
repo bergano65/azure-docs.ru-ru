@@ -1,46 +1,65 @@
 ---
-title: Сведения об управлении большими наборами разделов в Сетке событий Azure и публикация событий в этих разделах с помощью Доменов событий
-description: Сведения о создании разделов и управлении ими в Сетке событий Azure и публикация событий в этих разделах с помощью Доменов событий.
+title: Управление большими наборами разделов в Сетке событий Azure с использованием доменов событий
+description: Сведения об управлении большими наборами разделов в Сетке событий Azure и публикация событий в этих разделах с помощью доменов событий.
 services: event-grid
 author: banisadr
 ms.service: event-grid
 ms.author: babanisa
 ms.topic: conceptual
-ms.date: 10/30/2018
-ms.openlocfilehash: d6da1ee603c85556693b145ba17d1e0cd0dfabd7
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.date: 11/08/2018
+ms.openlocfilehash: ad23599d1df5d07e912f634435f8b44b441d87e6
+ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51034546"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51298540"
 ---
-# <a name="manage-topics-and-publish-events-using-event-domains"></a>Управление разделами и публикация событий с помощью Доменов событий
+# <a name="manage-topics-and-publish-events-using-event-domains"></a>Управление разделами и публикация событий с помощью доменов событий
 
 В этой статье показано, как сделать следующее:
 
-* создать Домен в Сетке событий;
-* оформить подписку на разделы;
+* создать домен в Сетке событий;
+* подписаться на разделы службы "Сетка событий";
 * получение списка ключей;
-* опубликовать события в Домен.
+* опубликовать события в домен.
+
+Общие сведения о доменах событий см. в статье [Общие сведения о доменах событий, используемых для управления разделами службы "Сетка событий Azure"](event-domains.md).
+
+## <a name="install-preview-feature"></a>Установка предварительной версии функции
 
 [!INCLUDE [event-grid-preview-feature-note.md](../../includes/event-grid-preview-feature-note.md)]
 
 ## <a name="create-an-event-domain"></a>Создание Домена событий
 
-Создать Домен событий можно с помощью расширения `eventgrid` для [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). После создания Домена его можно использовать для управления большими наборами разделов.
+Чтобы управлять большими наборами разделов, создайте домен событий.
+
+Для интерфейса командной строки Azure:
 
 ```azurecli-interactive
-# if you haven't already installed the extension, do it now.
+# If you haven't already installed the extension, do it now.
 # This extension is required for preview features.
 az extension add --name eventgrid
 
 az eventgrid domain create \
   -g <my-resource-group> \
-  --name <my-domain-name>
+  --name <my-domain-name> \
   -l <location>
 ```
 
-После успешного создания вернется следующий результат:
+Для PowerShell используйте команду:
+
+```azurepowershell-interactive
+# If you have not already installed the module, do it now.
+# This module is required for preview features.
+Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery
+
+New-AzureRmEventGridDomain `
+  -ResourceGroupName <my-resource-group> `
+  -Name <my-domain-name> `
+  -Location <location>
+```
+
+После успешного создания возвращаются следующие значения:
 
 ```json
 {
@@ -57,24 +76,59 @@ az eventgrid domain create \
 }
 ```
 
-Запишите значения `endpoint` и `id`, так как они понадобятся для управления Доменом и публикации событий.
+Запишите значения `endpoint` и `id`, так как они необходимы для управления доменом и публикации событий.
+
+## <a name="manage-access-to-topics"></a>Управление доступом к разделам
+
+Управление доступом к разделам выполняется через [назначение ролей](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli). Назначение ролей использует управление доступом на основе ролей, чтобы ограничить операции с ресурсами Azure для авторизованных пользователей в определенной области.
+
+Сетка событий имеет две встроенные роли, которые можно использовать для назначения определенным пользователям доступа к различным разделам в пределах домена. Это роль `EventGrid EventSubscription Contributor (Preview)`, которая позволяет создавать и удалять подписки, и роль `EventGrid EventSubscription Reader (Preview)`, которая позволяет только перечислять подписки на события.
+
+Следующая команда интерфейса командной строки Azure ограничивает `alice@contoso.com` созданием и удалением подписок на события только в разделе `demotopic1`:
+
+```azurecli-interactive
+az role assignment create \
+  --assignee alice@contoso.com \
+  --role "EventGrid EventSubscription Contributor (Preview)" \
+  --scope /subscriptions/<sub-id>/resourceGroups/<my-resource-group>/providers/Microsoft.EventGrid/domains/<my-domain-name>/topics/demotopic1
+```
+
+Следующая команда PowerShell ограничивает `alice@contoso.com` созданием и удалением подписок на события только в разделе `demotopic1`:
+
+```azurepowershell-interactive
+New-AzureRmRoleAssignment `
+  -SignInName alice@contoso.com `
+  -RoleDefinitionName "EventGrid EventSubscription Contributor (Preview)" `
+  -Scope /subscriptions/<sub-id>/resourceGroups/<my-resource-group>/providers/Microsoft.EventGrid/domains/<my-domain-name>/topics/demotopic1
+```
+
+Дополнительные сведения об управлении доступом для операций службы "Сетка событий" см. в статье [Сетка событий: безопасность и проверка подлинности](./security-authentication.md).
 
 ## <a name="create-topics-and-subscriptions"></a>Создание разделов и подписок
 
-Служба "Сетка событий" автоматически создает соответствующий раздел в Домене и управляет им на основе вызова для создания подписки на событие для раздела Домена. Отдельного шага по созданию раздела в Домене нет. Аналогичным образом, когда последняя подписка на событие для раздела удаляется, сам раздел также удаляется.
+Служба "Сетка событий" автоматически создает соответствующий раздел в домене и управляет им на основе вызова для создания подписки на событие для раздела домена. Отдельного шага по созданию раздела в домене нет. Аналогичным образом, когда последняя подписка на событие для раздела удаляется, сам раздел также удаляется.
 
-Подписка на раздел в домене совпадает с подпиской на любой другой ресурс Azure:
+Подписка на раздел в домене совпадает с подпиской на любой другой ресурс Azure. Для идентификатора исходного ресурса укажите идентификатор домена событий, возвращенный при создании домена ранее. Чтобы указать раздел, на который вы хотите подписаться, добавьте `/topics/<my-topic>` в конец идентификатора исходного ресурса. Чтобы создать подписку на события в области домена, которая принимает все события в домене, укажите идентификатор домена событий без указания каких-либо разделов.
+
+Как правило, пользователь, которому вы предоставили доступ в предыдущем разделе, создаст подписку. Для упрощения этой статьи создайте подписку. 
+
+Для интерфейса командной строки Azure:
 
 ```azurecli-interactive
 az eventgrid event-subscription create \
   --name <event-subscription> \
-  --resource-id "/subscriptions/<sub-id>/resourceGroups/<my-resource-group>/providers/Microsoft.EventGrid/domains/<my-domain-name>/topics/<my-topic>" \
-  --endpoint https://contoso.azurewebsites.net/api/f1?code=code
+  --source-resource-id "/subscriptions/<sub-id>/resourceGroups/<my-resource-group>/providers/Microsoft.EventGrid/domains/<my-domain-name>/topics/demotopic1" \
+  --endpoint https://contoso.azurewebsites.net/api/updates
 ```
 
-Идентификатор ресурса — это тот же идентификатор, который был возвращен при создании Домена ранее. Чтобы указать раздел, на который вы хотите подписаться, добавьте `/topics/<my-topic>` в конец идентификатора ресурса.
+Для PowerShell используйте команду:
 
-Чтобы создать подписку на событие в области Домена, которая принимает все события в Домене, укажите домен как `resource-id`, не вводя какие-либо разделы, например `/subscriptions/<sub-id>/resourceGroups/<my-resource-group>/providers/Microsoft.EventGrid/domains/<my-domain-name>`.
+```azurepowershell-interactive
+New-AzureRmEventGridSubscription `
+  -ResourceId "/subscriptions/<sub-id>/resourceGroups/<my-resource-group>/providers/Microsoft.EventGrid/domains/<my-domain-name>/topics/demotopic1" `
+  -EventSubscriptionName <event-subscription> `
+  -Endpoint https://contoso.azurewebsites.net/api/updates
+```
 
 Если вам нужна тестовая конечная точка, куда будут отправляться события, вы всегда можете развернуть [предварительно готовое веб-приложение](https://github.com/Azure-Samples/azure-event-grid-viewer), отображающее входящие события. Вы можете отправлять события на веб-сайт тестирования по адресу `https://<your-site-name>.azurewebsites.net/api/updates`.
 
@@ -82,31 +136,14 @@ az eventgrid event-subscription create \
 
 Разрешения, заданные для раздела, хранятся в Azure Active Directory и должны быть явно удалены. Удаление подписки на событие не отменяет доступ пользователей к созданию подписок на события, если у них есть доступ на запись в разделе.
 
-## <a name="manage-access-to-topics"></a>Управление доступом к разделам
-
-Управление доступом к разделам выполняется через [назначение ролей](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli). Назначение ролей использует проверку доступа на основе ролей, чтобы ограничить операции с ресурсами Azure для авторизованных пользователей в определенной области.
-
-Сетка событий имеет две встроенные роли, которые можно использовать для назначения определенным пользователям доступа к различным разделам в пределах домена. Это роль `EventGrid EventSubscription Contributor (Preview)`, которая позволяет создавать и удалять подписки, и роль `EventGrid EventSubscription Reader (Preview)`, которая позволяет только перечислять подписки на события.
-
-Следующая команда ограничивала бы `alice@contoso.com` созданием и удалением подписки на события только в разделе `foo`:
-
-```azurecli-interactive
-az role assignment create --assignee alice@contoso.com --role "EventGrid EventSubscription Contributor (Preview)" --scope /subscriptions/<sub-id>/resourceGroups/<my-resource-group>/providers/Microsoft.EventGrid/domains/<my-domain-name>/topics/foo
-```
-
-В статье [Сетка событий: безопасность и проверка подлинности](./security-authentication.md) см. дополнительные сведения о:
-
-* контроле доступа к управлению;
-* Типы операций
-* создании настраиваемых определений роли.
 
 ## <a name="publish-events-to-an-event-grid-domain"></a>Публикация событий в Домен службы "Сетка событий"
 
-Публикация событий в Домен совпадает с публикацией [в настраиваемый раздел](./post-to-custom-topic.md). Единственное различие заключается в том, что вам нужно указать раздел, к которому должно перенаправляться каждое событие. Следующий массив событий приведет к публикации события с идентификатором `"id": "1111"` в раздел `foo`, а событие с идентификатором `"id": "2222"` будет отправлено в раздел `bar`:
+Публикация событий в домен совпадает с публикацией [в настраиваемый раздел](./post-to-custom-topic.md). Единственное различие заключается в том, что вам нужно указать раздел, к которому должно перенаправляться каждое событие. Следующий массив событий приведет к публикации события с идентификатором `"id": "1111"` в раздел `foo`, а событие с идентификатором `"id": "2222"` будет отправлено в раздел `bar`:
 
 ```json
 [{
-  "topic": "foo",
+  "topic": "demotopic1",
   "id": "1111",
   "eventType": "maintenanceRequested",
   "subject": "myapp/vehicles/diggers",
@@ -118,7 +155,7 @@ az role assignment create --assignee alice@contoso.com --role "EventGrid EventSu
   "dataVersion": "1.0"
 },
 {
-  "topic": "bar",
+  "topic": "demotopic2",
   "id": "2222",
   "eventType": "maintenanceCompleted",
   "subject": "myapp/vehicles/tractors",
@@ -131,7 +168,7 @@ az role assignment create --assignee alice@contoso.com --role "EventGrid EventSu
 }]
 ```
 
-Чтобы получить ключи, которые будет использовать Домен, выполните команду ниже:
+Чтобы получить ключи, которые будет использовать домен, с помощью Azure CLI:
 
 ```azurecli-interactive
 az eventgrid domain key list \
@@ -139,8 +176,16 @@ az eventgrid domain key list \
   -n <my-domain>
 ```
 
-Затем используйте предпочтительный метод создания запроса HTTP POST для публикации событий в Домен Сетки событий.
+Для PowerShell используйте команду:
+
+```azurepowershell-interactive
+Get-AzureRmEventGridDomainKey `
+  -ResourceGroupName <my-resource-group> `
+  -Name <my-domain>
+```
+
+Затем используйте предпочтительный метод создания запроса HTTP POST для публикации событий в домен Сетки событий.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Общие понятия, касающиеся Доменов событий, и сведения об их эффективности см. в [этой статье](./event-domains.md).
+* Общие понятия, касающиеся доменов событий, и сведения об их эффективности см. в [этой статье](event-domains.md).

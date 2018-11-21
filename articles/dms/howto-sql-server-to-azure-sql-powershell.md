@@ -10,13 +10,13 @@ ms.service: database-migration
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 10/09/2018
-ms.openlocfilehash: 0a4e88ed52e2da814d1b10dbc695c9c61b899ef1
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.date: 11/10/2018
+ms.openlocfilehash: 771b89fda4e37d9e8ba47df95f7fd57b41f792a3
+ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50248210"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "51515545"
 ---
 # <a name="migrate-sql-server-on-premises-to-azure-sql-database-using-azure-powershell"></a>Перенос данных из локального экземпляра SQL Server в базу данных SQL Azure с помощью Azure PowerShell
 В этой статье выполняется перенос базы данных **Adventureworks2012**, восстановленной на локальном экземпляре SQL Server 2016 (или более поздней версии), в базу данных SQL Azure с помощью Microsoft Azure PowerShell. Вы можете выполнить перенос баз данных из локального экземпляра SQL Server в базу данных SQL Azure с помощью модуля `AzureRM.DataMigration` в Microsoft Azure PowerShell.
@@ -61,7 +61,7 @@ New-AzureRmResourceGroup -ResourceGroupName myResourceGroup -Location EastUS
 - *ResourceGroupName.* Вы можете выполнить команду [New-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/azurerm.resources/new-azurermresourcegroup?view=azurermps-4.4.1), чтобы создать группу ресурсов Azure, как описано в предыдущем разделе, и указать ее имя в качестве параметра.
 - *ServiceName.* Строка, соответствующая требуемому уникальному имени службы для Azure Database Migration Service. 
 - *Расположение.* Указывает расположение службы. Укажите расположение центра обработки данных Azure, например западная часть США или Юго-Восточная Азия.
-- *Sku.* Этот параметр соответствует имени SKU DMS. Сейчас поддерживаются такие имена SKU: *Basic_1vCore*, *Basic_2vCores*, *GeneralPurpose_4vCores*.
+- *Sku.* Этот параметр соответствует имени SKU DMS. Поддерживаемое сейчас имя Sku — *GeneralPurpose_4vCores*.
 - *VirtualSubnetId.* Вы можете создать подсеть, выполнив командлет [New-AzureRmVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/azurerm.network/new-azurermvirtualnetworksubnetconfig?view=azurermps-4.4.1). 
 
 В указанном ниже примере создается служба с именем *MyDMS* в группе ресурсов *MyDMSResourceGroup*, которая расположена в регионе *Восточная часть США*, с использованием виртуальной сети с именем *MyVNET* и подсети с именем *MySubnet*.

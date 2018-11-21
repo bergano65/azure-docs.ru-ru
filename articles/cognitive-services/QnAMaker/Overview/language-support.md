@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: article
-ms.date: 09/25/2018
+ms.date: 11/09/2018
 ms.author: tulasim
-ms.openlocfilehash: 1a61d8f4008b0183ab5ddb51332d887217f52f48
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 8c47c4a59f03328b1dc8d3df7771bac81864bb34
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47435410"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51566641"
 ---
 # <a name="language-and-region-support-for-qna-maker"></a>Поддержка языков и регионов в QnA Maker
 
@@ -34,6 +34,8 @@ QnA Maker поддерживает извлечение вопросов и от
 
 ## <a name="query-matching-and-relevance"></a>Сопоставление запросов и релевантность
 Служба QnA Maker зависит от [анализаторов языков](https://docs.microsoft.com/rest/api/searchservice/language-support) в службе "Поиск Azure" при предоставлении результатов. Для языков en-* доступны специальные функции повторного ранжирования, позволяющие улучшить релевантность.
+
+Хотя возможности службы "Поиск Azure" работают одинаково для поддерживаемых языков, в QnA Maker предусмотрено дополнительное средство ранжирования, расположенное над результатами поиска Azure. В этой модели ранжирования используются некоторые специальные функции на основе семантики и слов в en-*, которые пока что недоступны для других языков. Мы не делаем эти функции общедоступными, так как они являются частью внутреннего процесса работы над средством ранжирования. 
 
 QnA Maker автоматически определяет язык базы знаний во время создания и настраивает анализатор соответствующим образом. Базы знаний можно создавать на указанных ниже языках. Прочитайте [эту статью](../How-To/language-knowledge-base.md) для получения дополнительных сведений о том, как QnA Maker обрабатывает языки.
 

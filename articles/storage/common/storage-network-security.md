@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/25/2017
 ms.author: cbrooks
 ms.component: common
-ms.openlocfilehash: 7c01940c41067029bc3d47d19c2ded1d710cc2c6
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 51404c35b42d1c98116e74b5b7a47afe05b7d2a9
+ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49470070"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51300563"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 Служба хранилища Azure предоставляет модель многоуровневой безопасности, которая обеспечивает безопасность учетных записей хранения, открывая к ним доступ только по определенным разрешенным сетям.  При настройке правил сети к учетной записи хранения могут получать доступ только приложения из разрешенных сетей.  Однако и из разрешенной сети доступ к учетной записи хранения имеют только приложения с надлежащим уровнем авторизации (допустимый ключ доступа или токен SAS).
@@ -201,7 +201,7 @@ az storage account network-rule remove --resource-group "myresourcegroup" --acco
 ### <a name="configuring-access-from-on-premises-networks"></a>Настройка доступа из локальных сетей
 Чтобы предоставить доступ из вашей локальной сети к учетной записи хранения в правиле IP-сети, необходимо определить IP-адреса для Интернета, используемые в сети.  За помощью обращайтесь к администратору сети.
 
-Если сеть подключена к сети Azure с помощью [ExpressRoute](/azure/expressroute/expressroute-introduction), для каждого канала в Microsoft Edge настроено два общедоступных IP-адреса, используемые для подключения к службам Майкрософт, таким как служба хранилища Azure, с использованием [общедоступного пиринга Azure](/azure/expressroute/expressroute-circuit-peerings#expressroute-routing-domains).  Чтобы разрешить взаимодействие канала со службой хранилища Azure, необходимо создать правила IP-сети для общих IP-адресов каналов.  Чтобы найти общедоступные IP-адреса канала ExpressRoute, [отправьте запрос ExpressRoute в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) через портал Azure.
+Если сеть подключена к сети Azure с помощью [ExpressRoute](/azure/expressroute/expressroute-introduction), для каждого канала в Microsoft Edge настроено два общедоступных IP-адреса, используемые для подключения к службам Майкрософт, таким как служба хранилища Azure, с использованием [общедоступного пиринга Azure](/azure/expressroute/expressroute-circuit-peerings#expressroute-routing-domains).  Чтобы разрешить взаимодействие канала со службой хранилища Azure, необходимо создать правила IP-сети для общих IP-адресов каналов.  Чтобы найти общедоступные IP-адреса канала ExpressRoute, [отправьте запрос ExpressRoute в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) на портале Azure.
 
 
 ### <a name="managing-ip-network-rules"></a>Управление правилами IP-сети

@@ -11,21 +11,23 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/16/2016
+ms.date: 11/08/2018
 ms.author: mbullwin
-ms.openlocfilehash: f943f0e371b3092717a62a2e83a98211723e5302
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 4b7b663b95bee12848f4afe2d2f48504a4408266
+ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44304413"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "51515188"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Заметки к диаграммам метрик в Application Insights
+
 Заметки к диаграммам [обозревателя метрик](app-insights-metrics-explorer.md) показывают, где развернута новая сборка, а также отображают другие важные события. С их помощью легко увидеть, повлияли ли ваши изменения на производительность приложения. Заметки могут создаваться автоматически [системой сборки Azure DevOps Services](https://docs.microsoft.com/azure/devops/pipelines/tasks/). Заметки можно также создавать, чтобы помечать какие-либо события, [используя PowerShell](#create-annotations-from-powershell).
 
+> [!NOTE]
+> В этой статье описывается **классический интерфейс для работы с метриками**, который не рекомендуется к использованию. Сейчас заметки доступны только в классическом интерфейсе и в **[книгах](app-insights-usage-workbooks.md)**. Сведения об интерфейсе для работы с метриками, который используется сейчас, см. в [этой статье](../monitoring-and-diagnostics/monitoring-metric-charts.md).
+
 ![Пример заметок с видимой корреляцией с временем ответа сервера](./media/app-insights-annotations/00.png)
-
-
 
 ## <a name="release-annotations-with-azure-devops-services-build"></a>Заметки к выпуску со сборкой Azure DevOps Services
 

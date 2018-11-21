@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 10/05/2018
 ms.author: yushwang
-ms.openlocfilehash: cbbba60f42c2e0ef7a6e53c34e883e2fdf6f8781
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: e93f1174f0beaa7b1c8b3164081714281d5b1050
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51229175"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51687543"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз
 
@@ -39,7 +39,7 @@ ms.locfileid: "51229175"
 
 В сотрудничестве с поставщиками устройств мы утвердили набор стандартных VPN-устройств. Все устройства из приведенного ниже списка семейств должны работать с VPN-шлюзами. Чтобы понять, какой тип VPN (PolicyBased или RouteBased) использовать для VPN-шлюза, который необходимо настроить, ознакомьтесь с [этим разделом](vpn-gateway-about-vpn-gateway-settings.md#vpntype).
 
-Чтобы настроить VPN-устройство, обратитесь к ссылкам, соответствующим семейству устройств. Ссылки на инструкции по настройке будут предоставляться по мере возможности. За поддержкой VPN-устройства обратитесь к его изготовителю.
+Чтобы настроить VPN-устройство, перейдите по ссылкам, соответствующим семейству устройств. Ссылки на инструкции по настройке будут предоставляться по мере возможности. За поддержкой VPN-устройства обратитесь к его изготовителю.
 
 |**поставщик**          |**Семейство устройств**     |**Минимальная версия ОС** |**Инструкции по настройке PolicyBased** |**Инструкции по настройке RouteBased** |
 | ---                | ---                  | ---                   | ---            | ---           |
@@ -155,24 +155,24 @@ ms.locfileid: "51229175"
 
 |-  |**Шифрование**|**Аутентификация**|**Группа PFS**|
 |---| ---          |---               |---          |
-| 1 |GCM AES256    |GCM (AES256)      |None         |
-| 2 |AES256        |SHA1              |None         |
-| 3 |3DES          |SHA1              |None         |
-| 4. |AES256        |SHA256            |None         |
-| 5 |AES128        |SHA1              |None         |
-| 6 |3DES          |SHA256            |None         |
+| 1 |GCM AES256    |GCM (AES256)      |Нет         |
+| 2 |AES256        |SHA1              |Нет         |
+| 3 |3DES          |SHA1              |Нет         |
+| 4. |AES256        |SHA256            |Нет         |
+| 5 |AES128        |SHA1              |Нет         |
+| 6 |3DES          |SHA256            |Нет         |
 
 #### <a name="azure-gateway-as-responder"></a>Шлюз Azure в качестве ответчика
 
 |-  |**Шифрование**|**Аутентификация**|**Группа PFS**|
 |---| ---          | ---              |---          |
-| 1 |GCM AES256    |GCM (AES256)      |None         |
-| 2 |AES256        |SHA1              |None         |
-| 3 |3DES          |SHA1              |None         |
-| 4. |AES256        |SHA256            |None         |
-| 5 |AES128        |SHA1              |None         |
-| 6 |3DES          |SHA256            |None         |
-| 7 |DES           |SHA1              |None         |
+| 1 |GCM AES256    |GCM (AES256)      |Нет         |
+| 2 |AES256        |SHA1              |Нет         |
+| 3 |3DES          |SHA1              |Нет         |
+| 4. |AES256        |SHA256            |Нет         |
+| 5 |AES128        |SHA1              |Нет         |
+| 6 |3DES          |SHA256            |Нет         |
+| 7 |DES           |SHA1              |Нет         |
 | 8 |AES256        |SHA1              |1            |
 | 9 |AES256        |SHA1              |2            |
 | 10|AES256        |SHA1              |14           |
@@ -187,7 +187,7 @@ ms.locfileid: "51229175"
 | 19|AES256        |SHA256            |14           |
 | 20|AES256        |SHA1              |24           |
 | 21|AES256        |SHA256            |24           |
-| 22|AES128        |SHA256            |None         |
+| 22|AES128        |SHA256            |Нет         |
 | 23|AES128        |SHA256            |1            |
 | 24|AES128        |SHA256            |2            |
 | 25|AES128        |SHA256            |14           |

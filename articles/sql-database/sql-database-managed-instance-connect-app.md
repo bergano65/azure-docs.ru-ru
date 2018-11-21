@@ -12,12 +12,12 @@ ms.author: srbozovi
 ms.reviewer: bonova, carlrab
 manager: craigg
 ms.date: 09/14/2018
-ms.openlocfilehash: 0221965c51f2287cb6042c33b9ab3402e104abc3
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: fe73d5a2aa63cf127f5df835484cfcc75ef702aa
+ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48870484"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "51514967"
 ---
 # <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>Подключение приложения к Управляемому экземпляру Базы данных SQL
 
@@ -83,6 +83,10 @@ ms.locfileid: "48870484"
 Этот вариант сценария показан на схеме ниже.
 
 ![Пиринговая связь с интеграцией приложения](./media/sql-database-managed-instance/integrated-app-peering.png)
+
+>[!NOTE]
+>Функция интеграции c виртуальной сетью не предусматривает интеграции приложения с виртуальной сетью, в которой установлен шлюз ExpressRoute. Даже если шлюз ExpressRoute настроен в режиме сосуществования, функция интеграции c виртуальной сетью работать не будет. Если требуется получить доступ к ресурсам через соединение ExpressRoute, можно использовать Среду службы приложений, которая работает в виртуальной сети.
+>
  
 ## <a name="troubleshooting-connectivity-issues"></a>Устранение неполадок с подключением
 

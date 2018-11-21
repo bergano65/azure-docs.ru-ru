@@ -1,29 +1,29 @@
 ---
 title: Автоматическая установка Azure Backup Server версии 2
-description: Использование скрипта PowerShell для автоматической установки Azure Backup Server версии 2. Этот тип установки также называется "тихой" установкой.
+description: Использование скрипта PowerShell для автоматической установки Azure Backup Server версии 2. Этот тип установки также называется "тихой" установкой.
 services: backup
 author: markgalioto
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 05/30/2017
+ms.date: 11/13/2018
 ms.author: markgal
-ms.openlocfilehash: 126c1971d83a8874c096caf407231fb6dee2ff59
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 8f7bda070e613e5495d3733dd1610cb291e12c36
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34606415"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51612701"
 ---
-# <a name="run-an-unattended-installation-of-azure-backup-server-v2"></a>Запуск автоматической установки Azure Backup Server версии 2
+# <a name="run-an-unattended-installation-of-azure-backup-server"></a>Запуск автоматической установки Azure Backup Server
 
-Узнайте, как запустить автоматическую установку Azure Backup Server версии 2. 
+Узнайте, как запустить автоматическую установку Azure Backup Server.
 
-Эти действия не применяются, если выполняется установка Azure Backup Server версии 1.
+Эти действия не применимы, если выполняется установка Azure Backup Server версии 1.
 
-## <a name="install-backup-server-v2"></a>Установка Backup Server версии 2
+## <a name="install-backup-server"></a>Установка Backup Server
 
-1. Создайте текстовый файл на сервере, на котором размещен Azure Backup Server версии 2. (Файл можно создать в блокноте или в другом текстовом редакторе.) Сохраните файл как MABSSetup.ini. 
+1. На сервере, где будет использоваться Azure Backup Server версии 2 или более поздней, создайте текстовый файл. (Файл можно создать в блокноте или в другом текстовом редакторе.) Сохраните файл как MABSSetup.ini.
 
 2. Вставьте следующий код в файл MABSSetup.ini. Замените текст в скобках (\< \>) значениями из среды. Ниже приведен пример текста.
 

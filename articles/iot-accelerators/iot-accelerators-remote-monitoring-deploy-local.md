@@ -1,6 +1,6 @@
 ---
 title: Локальное развертывание решения для удаленного мониторинга (через Visual Studio IDE) в Azure | Документация Майкрософт
-description: В этом руководстве показано, как развернуть акселератор решений для удаленного мониторинга на локальном компьютере в целях тестирования и разработки.
+description: В этом руководстве показано, как развернуть акселератор решений для удаленного мониторинга на локальном компьютере с помощью Visual Studio для тестирования и разработки.
 author: avneet723
 manager: hegate
 ms.author: avneet723
@@ -8,18 +8,18 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 10/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: c667782ef49f41cda8ccefc2f56e5f1265531037
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 5068f0277726b7c468aa24d0629c4350b60b78b5
+ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/08/2018
-ms.locfileid: "51278826"
+ms.locfileid: "51287614"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---visual-studio"></a>Локальное развертывание акселератора решений для удаленного мониторинга в Visual Studio
 
 [!INCLUDE [iot-accelerators-selector-local](../../includes/iot-accelerators-selector-local.md)]
 
-В этой статье показано, как развернуть акселератор решений для удаленного мониторинга на локальном компьютере в целях тестирования и разработки. В статье показано, как запустить микрослужбы в Visual Studio. Для развертывания локальных микрослужб используются следующие облачные службы: Центр Интернета вещей, Cosmos DB, Azure Streaming Analytics и службы Аналитики временных рядов Azure.
+В этой статье показано, как развернуть акселератор решений для удаленного мониторинга на локальном компьютере в целях тестирования и разработки. Вы узнаете, как запустить микрослужбы в Visual Studio. Для развертывания локальных микрослужб используются следующие облачные службы: Центр Интернета вещей, Cosmos DB, Azure Streaming Analytics и службы Аналитики временных рядов Azure.
 
 Если вы хотите запустить акселератор решений для удаленного мониторинга в Docker на локальном компьютере, см. статью [Deploy the Remote Monitoring solution accelerator locally — Docker](iot-accelerators-remote-monitoring-deploy-local-docker.md) (Локальное развертывание ускорителя решения удаленного мониторинга в Docker).
 
@@ -115,14 +115,4 @@ npm start
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
-
-> [!div class="checklist"]
-> * настройка локальной среды разработки;
-> * настройка акселератора решений;
-> * развертывание акселератора решений;
-> * вход в акселератор решений.
-
 Теперь, когда вы развернули решение для удаленного мониторинга, [изучите возможности панели мониторинга решения](quickstart-remote-monitoring-deploy.md).
-
-<!-- Next tutorials in the sequence -->

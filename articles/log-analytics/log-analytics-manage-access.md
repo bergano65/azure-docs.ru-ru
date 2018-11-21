@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/30/2018
+ms.date: 11/13/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 796e10053df79f8f7106d98dd9c9be6083d9f719
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: de464cfeca01e492139e8bf9679d8f9876eedda6
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50964158"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51625629"
 ---
 # <a name="manage-workspaces"></a>Управление рабочими областями
 
@@ -239,7 +239,7 @@ ms.locfileid: "50964158"
 ![Лента OMS](./media/log-analytics-manage-access/data-plan-changed.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Сведения о сборе данных с компьютеров в вашем центре обработки данных или другой облачной среде см. в статье [Сбор данных с компьютеров в среде с помощью Log Analytics](log-analytics-concept-hybrid.md).
+* Сведения о сборе данных с компьютеров в центре обработки данных или в другой облачной среде см в статье об [агенте Log Analytics](log-analytics-agent-overview.md).
 * Сведения о настройке сбора данных на виртуальных машинах Azure см. в [этой статье](log-analytics-quick-collect-azurevm.md).  
 * [добавьте решения Log Analytics из коллекции решений](../monitoring/monitoring-solutions.md) .
 

@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 7f85de79b683ba7b10f5466c4a8042fc0ffdea90
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 3f1e34b4d527d076a0bac2e0cb6ef3a901296c57
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44382874"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51612481"
 ---
 # <a name="define-a-oauth2-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля OAuth2 в пользовательской политике в Azure Active Directory B2C
 
@@ -25,7 +25,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 ## <a name="protocol"></a>Протокол
 
-Для атрибута **Name** элемента **Protocol** необходимо задать значение `OAuth2`. Например, `OAuth2` — это протокол для технического профиля **Facebook-OAUTH**.
+Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `OAuth2`. Например, `OAuth2` — это протокол для технического профиля **Facebook-OAUTH**.
 
 ```XML
 <TechnicalProfile Id="Facebook-OAUTH">
@@ -98,11 +98,11 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 
-Элемент **CryptographicKeys** содержит следующие атрибуты:
+Элемент **CryptographicKeys** содержит следующий атрибут:
 
 | Атрибут | Обязательно | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
-| client_secret | Yes | Секрет клиента от приложения поставщика удостоверений. Ключ шифрования является обязательным, только если для метаданных **response_types** задано значение `code`. В этом случае Azure AD B2C выполняет другой вызов для получения маркера доступа в обмен на код авторизации. Если для метаданных задано значение `id_token`, криптографический ключ можно не указывать.  |  
+| client_secret | Yes | Секрет клиента приложения поставщика удостоверений. Ключ шифрования является обязательным, только если для метаданных **response_types** задано значение `code`. В этом случае Azure AD B2C выполняет другой вызов для обмена кода авторизации на маркер доступа. Если для метаданных задано значение `id_token`, криптографический ключ можно не указывать.  |  
 
 ## <a name="redirect-uri"></a>URI перенаправления
 

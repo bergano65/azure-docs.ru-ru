@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 09/28/2018
 ms.author: sutalasi
-ms.openlocfilehash: 5d1beb124bbb857d13aecad7bf0cef493d42dac5
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 6d47fe29dab37523913b96ebae0ef3ef31d11210
+ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48043283"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51300580"
 ---
 # <a name="replicate-azure-disk-encryption-ade-enabled-virtual-machines-to-another-azure-region"></a>Репликация виртуальных машин с поддержкой шифрования дисков Azure в другой регион Azure
 
@@ -104,7 +104,7 @@ ms.locfileid: "48043283"
 
 1. Нажмите кнопку **Настройка** рядом с пунктом "Целевая подписка", чтобы изменить целевую подписку по умолчанию. Выберите подписку из списка подписок, доступных в одном клиенте Azure Active Directory (AAD).
 
-2. Чтобы изменить указанные ниже параметры по умолчанию, щелкните **Настройка** рядом с заголовком "Resource group, Storage, Network, and Availability sets" (Группа ресурсов, хранилище, сеть и группы доступности):
+2. Чтобы изменить указанные ниже параметры по умолчанию, щелкните **Настройка** рядом с заголовком "Resource group, Network and Availability sets" (Группа ресурсов, сеть и группы доступности):
     - **Целевая группа ресурсов**. Выберите группу ресурсов из списка групп ресурсов в целевом расположении подписки.
     - **Target Virtual Network** (Целевая виртуальная сеть). Выберите сеть из списка всех виртуальных сетей в целевой локации.
     - **Группа доступности**. Здесь можно добавить параметры группы доступности для виртуальной машины, если она является частью группы доступности исходного региона.

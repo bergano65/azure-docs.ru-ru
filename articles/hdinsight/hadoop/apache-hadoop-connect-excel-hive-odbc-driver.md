@@ -1,5 +1,5 @@
 ---
-title: Подключение Excel к Hadoop с помощью драйвера Hive ODBC в Azure HDInsight
+title: Подключение Excel к Apache Hadoop с помощью драйвера Hive ODBC в Azure HDInsight
 description: Узнайте, как установить и использовать драйвер Microsoft Hive ODBC для Excel, чтобы запрашивать данные в кластерах HDInsight из Microsoft Excel.
 keywords: hadoop excel, hive excel, hive odbc
 services: hdinsight
@@ -10,14 +10,14 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: ecdde9b5ac4c6c303edf553af3eb33986d4fb199
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 09642aba1cd0daa05e56e418330f21361d9263a2
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51005093"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51632515"
 ---
-# <a name="connect-excel-to-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Подключение Excel к Hadoop в Azure HDInsight с помощью драйвера Microsoft Hive ODBC
+# <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Подключение Excel к Apache Hadoop с помощью драйвера Microsoft Hive ODBC в Azure HDInsight
 
 [!INCLUDE [ODBC-JDBC-selector](../../../includes/hdinsight-selector-odbc-jdbc.md)]
 
@@ -39,7 +39,7 @@ ms.locfileid: "51005093"
 
 Этот драйвер можно установить на 32-разрядной или 64-разрядной версии Windows 7, Windows 8, Windows 10, Windows Server 2008 R2 и Windows Server 2012. Драйвер позволяет подключиться к Azure HDInsight. Необходимо установить версию, которая соответствует версии приложения, на котором будет использоваться драйвер ODBC. В рамках этого руководства используется драйвер из Office Excel.
 
-## <a name="create-hive-odbc-data-source"></a>Создание источника данных Hive ODBC
+## <a name="create-apache-hive-odbc-data-source"></a>Создание источника данных Apache Hive ODBC
 Ниже показано, как создать источник данных Hive ODBC.
 
 1. В Windows 8 или Windows 10 нажмите клавишу Windows, чтобы открыть начальный экран, затем введите **источники данных**.

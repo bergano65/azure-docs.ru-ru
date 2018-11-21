@@ -15,18 +15,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
-ms.openlocfilehash: 08434007c7ef66349cae2a368d3be94ee522bab1
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: bfc2f40231b5e28ffa3721eef70311da8dcb6da9
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51242354"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51343674"
 ---
 # <a name="discover-competitions-in-the-azure-ai-gallery"></a>Поиск конкурсов в коллекции решений ИИ Azure
-[!INCLUDE [machine-learning-gallery-item-selector](../../../includes/machine-learning-gallery-item-selector.md)]
 
-## <a name="cortana-intelligence-competitions"></a>Конкурсы Cortana Intelligence
-**[Конкурсы](https://gallery.cortanaintelligence.com/competitions)** позволяют бросить вызов сообществу специалистов по обработке и анализу данных в решении сложных проблем с помощью пакета Cortana Intelligence Suite.
+**[Конкурсы](https://gallery.cortanaintelligence.com/competitions)** из [Коллекции решений ИИ Azure](http://gallery.cortanaintelligence.com) позволяют бросить вызов сообществу специалистов по обработке и анализу данных в решении сложных проблем с помощью пакета Cortana Intelligence Suite.
 
 Ответы на часто задаваемые вопросы о конкурсах см. в статье [Часто задаваемые вопросы о конкурсах Microsoft Cortana Intelligence](competition-faq.md).
 

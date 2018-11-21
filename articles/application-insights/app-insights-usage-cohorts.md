@@ -14,12 +14,12 @@ ms.date: 04/10/2018
 ms.reviewer: mbullwin
 ms.pm_owner: daviste;NumberByColors
 ms.author: daviste
-ms.openlocfilehash: 35737b91d8ef0b58223f51530f56408df1c7eb8e
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: d8bb7a975bd5bab8698d20e5d21514b79945eac6
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50138798"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51564924"
 ---
 # <a name="application-insights-cohorts"></a>Когорты Application Insights
 
@@ -49,9 +49,9 @@ ms.locfileid: "50138798"
     В этой когорте есть три параметра:
     * **Действия**. Позволяют выбрать, какие события и просмотры страницы считаются "использованием".
     * **Период**. Определение месяца.
-    * **UsedAtleastCustom**. Количество раз, когда нужно что-то использовать в течение периода, чтобы считаться активным пользователем.
+    * **UsedAtLeastCustom**. Количество раз, когда нужно что-то использовать в течение периода, чтобы считаться активным пользователем.
 
-4. Установите для параметра **UsedAtleastCustom** (Использование не менее) значение **5+ дней**, а для **периода** оставьте значение по умолчанию — 28 дней.
+4. Установите для параметра **UsedAtLeastCustom** (Использование не менее) значение **5+ дней**, а для **Периода** оставьте значение по умолчанию — 28 дней.
 
     ![Активные пользователи](.\media\app-insights-usage-cohorts\003.png)
 

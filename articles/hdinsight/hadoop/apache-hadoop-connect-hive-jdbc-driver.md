@@ -1,6 +1,6 @@
 ---
-title: Выполнение запроса Hive с помощью драйвера JDBC в Azure HDInsight
-description: Используйте драйвер JDBC из приложения Java для отправки запросов Hive в Hadoop на основе HDInsight. Подключение можно осуществлять программными средствами и из клиента SQL SQuirrel.
+title: Отправка запросов в Apache Hive с помощью драйвера JDBC — Azure HDInsight
+description: Используйте драйвер JDBC из приложения Java для отправки запросов Apache Hive в Hadoop в службе HDInsight. Подключение можно осуществлять программными средствами и из клиента SQL SQuirrel.
 services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -9,18 +9,18 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/02/2018
 ms.author: hrasheed
-ms.openlocfilehash: d47d6abe3adaf76b67b88cffd53b0b46258931c8
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 577f36f53bfad79af968a4c34f4b6ab0b49527c7
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51014420"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51633450"
 ---
-# <a name="query-hive-through-the-jdbc-driver-in-hdinsight"></a>Выполнение запроса Hive с помощью драйвера JDBC в HDInsight
+# <a name="query-apache-hive-through-the-jdbc-driver-in-hdinsight"></a>Отправка запросов в Apache Hive с помощью драйвера JDBC в HDInsight
 
 [!INCLUDE [ODBC-JDBC-selector](../../../includes/hdinsight-selector-odbc-jdbc.md)]
 
-Узнайте, как использовать драйвер JDBC из приложения Java для отправки запросов Hive в Hadoop на основе Azure HDInsight. Из этой статьи вы узнаете, как подключиться программным способом или из клиента SQuirreL SQL.
+Узнайте, как использовать драйвер JDBC из приложения Java для отправки запросов Apache Hive в Apache Hadoop в Azure HDInsight. Из этой статьи вы узнаете, как подключиться программным способом или из клиента SQuirreL SQL.
 
 Дополнительные сведения об интерфейсе JDBC Hive см. в статье [HiveJDBCInterface](https://cwiki.apache.org/confluence/display/Hive/HiveJDBCInterface).
 

@@ -2,18 +2,18 @@
 title: Регистрация нового устройства Azure IoT Edge с помощью портала | Документация Майкрософт
 description: Регистрация нового устройства IoT Edge с помощью портала Azure
 author: kgremban
-manager: timlt
+manager: philmea
 ms.author: kgremban
 ms.date: 06/05/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: b61594469df33e11c23c9cbe0b9542da374fefa3
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 6657203c76bc03a262fbcbd30b5bf74b5be140eb
+ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37035248"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51577504"
 ---
 # <a name="register-a-new-azure-iot-edge-device-from-the-azure-portal"></a>Регистрация нового устройства Azure IoT Edge на портале Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "37035248"
 
 В этой статье объясняется, как зарегистрировать новое устройство IoT Edge с помощью портала Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) в подписке Azure. 
 
@@ -44,7 +44,7 @@ ms.locfileid: "37035248"
 Когда все будет готово к настройке устройства, вам понадобится строка подключения, которая связывает физическое устройство с его идентификатором в Центре Интернета вещей.
 
 1. На странице **IoT Edge** на портале выберите идентификатор устройства в списке устройств IoT Edge. 
-2. Скопируйте значение в поле **Строка подключения — первичный ключ** или **Строка подключения — вторичный ключ**. 
+2. Скопируйте значение в поле **Строка подключения (первичный ключ)** или **Строка подключения (вторичный ключ)**. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

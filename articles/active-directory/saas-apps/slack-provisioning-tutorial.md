@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 01/26/2018
 ms.author: asmalser-msft
 ms.reviewer: asmalser
-ms.openlocfilehash: 7d6056987ee05f68eecf026e954327a2f62cf886
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 83155e448f350618446fb22bf52e831b1cc8d499
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44348911"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636549"
 ---
 # <a name="tutorial-configure-slack-for-automatic-user-provisioning"></a>Руководство по настройке Slack для автоматической подготовки пользователей
 
@@ -57,7 +57,7 @@ ms.locfileid: "44348911"
 
 В этом разделе описывается подключение к API подготовки учетной записи пользователя Azure AD в Slack и настройка подготовки службы для создания, обновления и отмены назначения учетных записей пользователей в Slack на основе назначения пользователей и групп в Azure AD.
 
-**Совет.** Для Slack можно также включить единый вход на основе SAML. Для этого следуйте инструкциям, указанным на портале Azure[https://portal.azure.com]. Единый вход можно настроить независимо от автоматической подготовки, хотя эти две возможности дополняют друг друга.
+**Совет.** Для Slack можно также включить единый вход на основе SAML. Для этого следуйте инструкциям на [портале Azure](https://portal.azure.com). Единый вход можно настроить независимо от автоматической подготовки, хотя эти две возможности дополняют друг друга.
 
 
 ### <a name="to-configure-automatic-user-account-provisioning-to-slack-in-azure-ad"></a>Настройка автоматической подготовки учетных записей пользователей Azure AD в Slack.

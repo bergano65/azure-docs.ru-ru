@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 08/09/2018
 ms.author: ryanwi
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 3b350deff2883761af6a3a2b3c5c9ef22235bde0
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: cb5b421c1bcfe888d65335f3ab7f67bed80eec34
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038354"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51614265"
 ---
 # <a name="store-state-in-an-azure-service-fabric-mesh-application-by-mounting-an-azure-files-based-volume-inside-the-container"></a>Сохранение состояния в приложении "Сетка Azure Service Fabric" путем подключения тома службы файлов Azure внутри контейнера
 
@@ -62,10 +62,10 @@ az group create --name myResourceGroup --location eastus
 
 Параметр `storageAccountKey` в шаблоне представляет собой защищенную строку. Он не отображается в данных состояния развертывания и выходных данных команд `az mesh service show`. Убедитесь, что он правильно указан в следующей команде.
 
-Следующая команда развертывает приложение Linux с помощью шаблона [mesh_rp.linux.json](https://sfmeshsamples.blob.core.windows.net/templates/counter/mesh_rp.linux.json). Чтобы развернуть приложение Windows, используйте шаблон [mesh_rp.windows.json](https://sfmeshsamples.blob.core.windows.net/templates/counter/mesh_rp.windows.json). Имейте в виду, что развертывание больших образов контейнеров может занять больше времени.
+Следующая команда развертывает приложение Linux с помощью [шаблона counter.azurefilesvolume.linux.json](https://sfmeshsamples.blob.core.windows.net/templates/counter/counter.azurefilesvolume.linux.json). Чтобы развернуть приложение Windows, используйте [шаблон counter.azurefilesvolume.windows.json](https://sfmeshsamples.blob.core.windows.net/templates/counter/counter.azurefilesvolume.windows.json). Имейте в виду, что развертывание больших образов контейнеров может занять больше времени.
 
 ```azurecli-interactive
-az mesh deployment create --resource-group myResourceGroup --template-uri https://sfmeshsamples.blob.core.windows.net/templates/counter/mesh_rp.linux.json  --parameters "{\"location\": {\"value\": \"eastus\"}, \"fileShareName\": {\"value\": \"<fileShareName>\"}, \"storageAccountName\": {\"value\": \"<storageAccountName>\"}, \"storageAccountKey\": {\"value\": \"<storageAccountKey>\"}}"
+az mesh deployment create --resource-group myResourceGroup --template-uri https://sfmeshsamples.blob.core.windows.net/templates/counter/counter.azurefilesvolume.linux.json  --parameters "{\"location\": {\"value\": \"eastus\"}, \"fileShareName\": {\"value\": \"<fileShareName>\"}, \"storageAccountName\": {\"value\": \"<storageAccountName>\"}, \"storageAccountKey\": {\"value\": \"<storageAccountKey>\"}}"
 ```
 
 Через несколько минут команда должна вернуть результат `counterApp has been deployed successfully on counterAppNetwork with public ip address <IP Address>`

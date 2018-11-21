@@ -13,24 +13,21 @@ ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.component: report-monitor
-ms.date: 05/10/2018
+ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 68028fd1ba116251860e5c370e9e9ce61fd314bb
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 601169cc62a99438f661adc06ab166b545606edb
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47106696"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51624596"
 ---
 # <a name="azure-active-directory-report-retention-policies"></a>Политики хранения отчетов Azure Active Directory
 
+Из этой статьи вы узнаете о политиках хранения данных, которые используются для разных отчетов о действиях в Azure Active Directory. 
 
-Эта статья содержит ответы на часто задаваемые вопросы о хранении данных для разных отчетов о действиях в Azure Active Directory. 
-
-### <a name="q-how-can-you-get-the-collection-of-activity-data-started"></a>Вопрос. Как начать сбор данных о действиях?
-
-**Ответ.**
+### <a name="when-does-azure-ad-start-collecting-data"></a>Когда Azure AD начинает сбор данных?
 
 | Выпуск Azure AD | Начало сбора |
 | :--              | :--   |
@@ -38,25 +35,21 @@ ms.locfileid: "47106696"
 | Azure AD уровня "Бесплатный" | При первом открытии [колонки Azure Active Directory](https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) или использовании [API-интерфейсов отчетности](https://aka.ms/aadreports)  |
 
 ---
-### <a name="q-when-is-your-activity-data-available-in-the-azure-portal"></a>Вопрос. Когда данные о действиях становятся доступными на портале Azure?
 
-**Ответ.**
+### <a name="when-is-the-activity-data-available-in-the-azure-portal"></a>Когда данные о действиях становятся доступными на портале Azure?
 
 - **Немедленно** — если вы уже работали с отчетами на портале Azure.
 - **В течение 2 часов** — если вы не включили функцию создания отчетов на портале Azure.
 
 ---
 
-### <a name="q-how-can-you-get-the-collection-of-security-signals-started"></a>Вопрос. Как начать сбор сигналов системы безопасности?  
+### <a name="when-does-azure-ad-start-collecting-security-signal-data"></a>Когда Azure AD начинает сбор данных о сигналах системы безопасности?  
 
-**Ответ.** Процесс сбора сигналов системы безопасности начинается, когда вы соглашаетесь использовать центр защиты идентификации. 
-
+Процесс сбора сигналов системы безопасности начинается, когда вы соглашаетесь использовать **центр защиты идентификации**. 
 
 ---
 
-### <a name="q-for-how-long-is-the-collected-data-stored"></a>Вопрос. Как долго хранятся собранные данные?
-
-**Ответ.**
+### <a name="how-long-does-azure-ad-store-the-data"></a>Как долго в Azure AD хранятся данные?
 
 **Отчеты о действиях**    
 

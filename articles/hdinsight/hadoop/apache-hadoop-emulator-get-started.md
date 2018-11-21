@@ -1,6 +1,6 @@
 ---
-title: Сведения об использовании эмулятора песочницы Hadoop в Azure HDInsight
-description: 'Чтобы начать ознакомление с экосистемой Hadoop, можно настроить на виртуальной машине Azure песочницу Hadoop с платформы Hortonworks. '
+title: Сведения об использовании эмулятора песочницы Apache Hadoop в Azure HDInsight
+description: 'Чтобы начать ознакомление с экосистемой Hadoop, настройте на виртуальной машине Azure песочницу Hadoop от Hortonworks. '
 keywords: эмулятор hadoop,песочница hadoop
 ms.reviewer: jasonh
 services: hdinsight
@@ -10,16 +10,16 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 12/11/2017
 ms.author: hrasheed
-ms.openlocfilehash: add1833671b995e747af6a447c65114d1add76e9
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: fc5f27ee17ba750e47c5609d9deb94d7f7c9dd8a
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51013111"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51631563"
 ---
-# <a name="get-started-with-a-hadoop-sandbox-an-emulator-on-a-virtual-machine"></a>Начало работы с песочницей Hadoop, эмулятором на виртуальной машине
+# <a name="get-started-with-a-apache-hadoop-sandbox-an-emulator-on-a-virtual-machine"></a>Начало работы с песочницей Apache Hadoop, эмулятором на виртуальной машине
 
-Узнайте, как настроить на виртуальной машине песочницу Hadoop с платформы Hortonworks, чтобы ознакомиться с экосистемой Hadoop. Песочница представляет собой локальную среду разработки для ознакомления с Hadoop, распределенной файловой системой Hadoop (HDFS) и отправкой заданий. Если вы знакомы с Hadoop, вы можете начать использовать Hadoop в Azure, создав кластер HDInsight. Дополнительные сведения см. в статье [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux](apache-hadoop-linux-tutorial-get-started.md).
+Узнайте, как настроить на виртуальной машине песочницу Apache Hadoop от Hortonworks, чтобы ознакомиться с экосистемой Hadoop. Песочница представляет собой локальную среду разработки для ознакомления с Hadoop, распределенной файловой системой Hadoop (HDFS) и отправкой заданий. Если вы знакомы с Hadoop, вы можете начать использовать Hadoop в Azure, создав кластер HDInsight. Дополнительные сведения см. в статье [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux](apache-hadoop-linux-tutorial-get-started.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 * [Oracle VirtualBox](https://www.virtualbox.org/). Скачайте и установите приложение [отсюда](https://www.virtualbox.org/wiki/Downloads).

@@ -8,27 +8,27 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: article
-ms.date: 09/25/2018
+ms.date: 11/08/2018
 ms.author: tulasim
-ms.openlocfilehash: 4c96eb5b49c72fe9bb5ab977c773407889c56805
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: e6c654b00ee6be0ed87feb0fb2a5ccba38e5cbe4
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50213310"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51624883"
 ---
 # <a name="data-sources-for-qna-maker-content"></a>Источники данных для содержимого QnA Maker
 
-QnA Maker автоматически извлекает пары "вопрос — ответ" из слабоструктурированного содержимого, такого как страницы вопросов и ответов, руководства по продукции, рекомендации, документы поддержки и политики, которые хранятся в виде веб-страниц, PDF-файлов или файлов документации MS Word. Также содержимое можно добавлять в базу знаний из структурированных файлов с содержимым вопросов и ответов (QnA). 
+QnA Maker автоматически извлекает пары "вопрос — ответ" из частично структурированного содержимого, такого как страницы вопросов и ответов, руководства по продукции, рекомендации, справочные документы и политики, которые хранятся в виде веб-страниц, PDF-файлов или файлов документации MS Word. Также содержимое можно добавлять в базу знаний из структурированных файлов с содержимым вопросов и ответов (QnA). 
 
 В приведенной ниже таблице представлены типы содержимого и форматы файлов, поддерживаемые QnA Maker.
 
 |Тип источника|Тип содержимого| Примеры|
 |--|--|--|
 |URL-адрес|Часто задаваемые вопросы (неструктурированные, с разделами или темами на домашней страницей)|[простые вопросы и ответы](https://docs.microsoft.com/azure/cognitive-services/qnamaker/faqs), [часто задаваемые вопросы со ссылками](https://www.microsoft.com/software-download/faq), [часто задаваемые вопросы с темами на домашней странице](https://support.microsoft.com/products/windows?os=windows-10)|
-|PDF/DOC|Часто задаваемые вопросы, руководство по продуктам, брошюры, документы, объявления политики, руководства поддержки, структурированные вопросы и ответы (QnA) и т. д.|[Структурированные вопросы и ответы.doc](https://qnamakerstore.blob.core.windows.net/qnamakerdata/docs/Bot%20Service%20Sample%20FAQ.docx), [Пример руководства по продукту.pdf](https://download.microsoft.com/download/2/9/B/29B20383-302C-4517-A006-B0186F04BE28/surface-pro-4-user-guide-EN.pdf), [Пример слабоструктурированного файла.doc](https://qnamakerstore.blob.core.windows.net/qnamakerdata/docs/Manage%20Azure%20Blob%20Storage.docx), [Пример технического документа.pdf](https://azure.microsoft.com/mediahandler/files/resourcefiles/azure-stack-wortmann-bring-the-power-of-the-public-cloud-into-your-data-center/Azure_Stack_Wortmann_Bring_the_Power_of_the_Public_Cloud_into_Your_Data_Center.pdf)|
-|Excel|Файл структурированных вопросов и ответов (включая поддержку RTF, HTML)|[Пример часто задаваемых вопросов QnA.xls](https://qnamakerstore.blob.core.windows.net/qnamakerdata/docs/QnA%20Maker%20Sample%20FAQ.xlsx)|
-|TXT/TSV|Файл структурированных вопросов и ответов (QnA)|[Пример беседы.tsv](https://github.com/Microsoft/BotBuilder-PersonalityChat/blob/master/CSharp/Datasets/scenario_responses_the_friend.tsv)|
+|PDF/DOC|Часто задаваемые вопросы, руководство по продуктам, брошюры, документы, объявления политики, руководства поддержки, структурированные вопросы и ответы (QnA) и т. д.|[Структурированные вопросы и ответы.doc](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/semi-structured.docx), [Пример руководства по продукту.pdf](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/product-manual.pdf), [Пример слабоструктурированного файла.doc](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/semi-structured.docx), [Пример технического документа.pdf](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/white-paper.pdf)|
+|Excel|Файл структурированных вопросов и ответов (включая поддержку RTF, HTML)|[Пример часто задаваемых вопросов QnA.xls](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/QnA%20Maker%20Sample%20FAQ.xlsx)|
+|TXT/TSV|Файл структурированных вопросов и ответов (QnA)|[Пример беседы.tsv](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/Scenario_Responses_Friendly.tsv)|
 
 ## <a name="faq-urls"></a>URL-адреса вопросов и ответов
 
@@ -131,6 +131,10 @@ Answer2
 ## <a name="editorially-add-to-knowledge-base"></a>Добавление в базу знаний в режиме редактирования
 
 Если у вас нет готового содержимого для заполнения базы знаний, вы можете добавить вопросы и ответы в режиме редактирования прямо в базу знаний QnA Maker. Узнайте, как [обновить базу знаний](../How-To/edit-knowledge-base.md).
+
+## <a name="formatting-considerations"></a>Рекомендации по форматированию
+
+Импортированный файл или URL-адрес преобразуется в Markdown и хранится в таком формате. Если в процессе преобразования ссылки в файлах и URL-адреса будут преобразованы неправильно, измените вопросы и ответы на странице **изменения**. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

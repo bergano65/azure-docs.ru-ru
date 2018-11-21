@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 10/19/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 7d044559d72b07dc86a5ee1c2269452a9059de61
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 4f2fc320d0d66e19ec8a1e591377c482a7ec64d9
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49471515"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51626139"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -395,7 +395,7 @@ ms.locfileid: "49471515"
 > | --- | --- | --- |
 > | Действие | Microsoft.Authorization/checkAccess/action | Проверка того, может ли вызывающий объект выполнять определенное действие. |
 > | Действие | Microsoft.Authorization/classicAdministrators/delete | Удаляет учетные данные администратора из подписки. |
-> | Действие | Microsoft.Authorization/classicAdministrators/operationstatuses/read | Получает сведения о состоянии операций администратора подписки. |
+> | Действие | Microsoft.Authorization/classicAdministrators/operationstatuses/read | Получает сведения о состоянии операции администратора подписки. |
 > | Действие | Microsoft.Authorization/classicAdministrators/read | Считывает администраторов для подписки. |
 > | Действие | Microsoft.Authorization/classicAdministrators/write | Добавляет или изменяет администратора подписки. |
 > | Действие | Microsoft.Authorization/denyAssignments/delete | Удаление запрета назначения в указанной области. |
@@ -975,7 +975,7 @@ ms.locfileid: "49471515"
 > | Действие | Microsoft.ClassicNetwork/networkSecurityGroups/delete | Удаляет группу безопасности сети. |
 > | Действие | Microsoft.ClassicNetwork/networkSecurityGroups/operationStatuses/read | Считывает состояние операции группы безопасности сети. |
 > | Действие | Microsoft.ClassicNetwork/networksecuritygroups/providers/Microsoft.Insights/diagnosticSettings/read | Получение параметров диагностики групп безопасности сети. |
-> | Действие | Microsoft.ClassicNetwork/networksecuritygroups/providers/Microsoft.Insights/diagnosticSettings/write | Создание или обновление параметров диагностики групп безопасности сети. Эта операция осуществляется при задействовании поставщика ресурсов аналитики. |
+> | Действие | Microsoft.ClassicNetwork/networksecuritygroups/providers/Microsoft.Insights/diagnosticSettings/write | Создание или обновление параметров диагностики групп безопасности сети. Эта операция осуществляется при задействовании поставщика ресурсов аналитики. | 
 > | Действие | Microsoft.ClassicNetwork/networksecuritygroups/providers/Microsoft.Insights/logDefinitions/read | Получение событий группы безопасности сети. |
 > | Действие | Microsoft.ClassicNetwork/networkSecurityGroups/read | Возвращает группу безопасности сети. |
 > | Действие | Microsoft.ClassicNetwork/networkSecurityGroups/securityRules/delete | Удаляет правило безопасности. |
@@ -3188,7 +3188,7 @@ ms.locfileid: "49471515"
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.Migrate/locations/assessmentOptions/read | Получает параметры оценки, которые можно найти в указанном расположении |
-> | Действие | Microsoft.Migrate/locations/checknameavailability/action | Проверяет доступность имени ресурса для заданной подписки в заданном расположении |
+> | Действие | Microsoft.Migrate/locations/checknameavailability/action | Проверка доступности имени ресурса для заданной подписки в заданном расположении |
 > | Действие | Microsoft.Migrate/Operations/read | Список операций, доступных в поставщике ресурсов Microsoft.Migrate |
 > | Действие | Microsoft.Migrate/projects/assessments/read | Выводит список оценок в пределах проекта. |
 > | Действие | Microsoft.Migrate/projects/delete | Удаляет проект |

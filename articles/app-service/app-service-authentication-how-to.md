@@ -1,5 +1,5 @@
 ---
-title: Настройка проверки подлинности и авторизации в службе приложений Azure | Документация Майкрософт
+title: Расширенное использование проверки подлинности и авторизации в Службе приложений Azure | Документация Майкрософт
 description: В этой статье показано, как настроить проверку подлинности и авторизацию в службе приложений и получить утверждения пользователей, а также различные токены.
 services: app-service
 documentationcenter: ''
@@ -11,18 +11,18 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: article
-ms.date: 03/14/2018
+ms.date: 11/08/2018
 ms.author: cephalin
-ms.openlocfilehash: 629a76ab5610625e14780d7b5c57d3979c2224c9
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: e1109ec8cc98c7e5fc72d7f56ade19968b0056cc
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43344176"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51685333"
 ---
-# <a name="customize-authentication-and-authorization-in-azure-app-service"></a>Настройка проверки подлинности и авторизации в службе приложений Azure
+# <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
-В этой статье показано, как настроить [проверку подлинности и авторизацию в службе приложений](app-service-authentication-overview.md), а также управлять удостоверениями, используя приложение. 
+В этой статье показано, как настроить встроенные [проверку подлинности и авторизацию в службе приложений](app-service-authentication-overview.md), а также управлять удостоверениями, используя приложение. 
 
 Чтобы быстро приступить к работе, ознакомьтесь с одним из следующих руководств:
 
@@ -58,6 +58,48 @@ ms.locfileid: "43344176"
 
 ```HTML
 <a href="/.auth/login/<provider>?post_login_redirect_url=/Home/Index">Log in</a>
+```
+
+## <a name="validate-tokens-from-providers"></a>Проверка токенов от поставщиков
+
+При входе с помощью клиента приложение входит в систему поставщика вручную, а затем отправляет токен проверки подлинности службе приложений для проверки (см. [Поток проверки подлинности](app-service-authentication-overview.md#authentication-flow)). Эта проверка сама по себе не предоставляет вам доступ к требуемым ресурсам приложения, но успешная проверка даст вам токен сеанса, который вы можете использовать для доступа к ресурсам приложений. 
+
+Чтобы проверить токен поставщика, для приложения службы приложений сначала нужно настроить требуемый поставщик. Получив токен проверки подлинности у своего поставщика, во время выполнения отправьте токен по адресу `/.auth/login/<provider>` для проверки. Например:  
+
+```
+POST https://<appname>.azurewebsites.net/.auth/login/aad HTTP/1.1
+Content-Type: application/json
+
+{"id_token":"<token>","access_token":"<token>"}
+```
+
+Формат токена незначительно отличается в соответствии с поставщиком. Дополнительные сведения см. в таблице, приведенной ниже.
+
+| Значение поставщика | Требуется в тексте запроса | Комментарии |
+|-|-|-|
+| `aad` | `{"access_token":"<access_token>"}` | |
+| `microsoftaccount` | `{"access_token":"<token>"}` | Свойство `expires_in` необязательное. <br/>При запросе маркера из служб Live всегда запрашиваются области `wl.basic`. |
+| `google` | `{"id_token":"<id_token>"}` | Свойство `authorization_code` необязательное. Если указано, при необходимости оно может сопровождаться свойством `redirect_uri`. |
+| `facebook`| `{"access_token":"<user_access_token>"}` | Используйте допустимый [токен доступа пользователя](https://developers.facebook.com/docs/facebook-login/access-tokens) из Facebook. |
+| `twitter` | `{"access_token":"<access_token>", "access_token_secret":"<acces_token_secret>"}` | |
+| | | |
+
+При успешной проверке токена поставщика API возвращается с `authenticationToken` в тексте ответа, который является вашим токеном сеанса. 
+
+```json
+{
+    "authenticationToken": "...",
+    "user": {
+        "userId": "sid:..."
+    }
+}
+```
+
+Получив этот токен сеанса, вы можете получить доступ к защищенным ресурсам приложений, добавив заголовок `X-ZUMO-AUTH` к HTTP-запросам. Например:  
+
+```
+GET https://<appname>.azurewebsites.net/api/products/1
+X-ZUMO-AUTH: <authenticationToken_value>
 ```
 
 ## <a name="sign-out-of-a-session"></a>Выход из сеанса
@@ -119,7 +161,7 @@ az webapp config appsettings set --name <app_name> --resource-group <group_name>
 
 Токены, предоставляющиеся поставщиком, вводятся в заголовке запроса из кода сервера, что позволяет легко получить к ним доступ. В следующей таблице показаны возможные заголовки токена.
 
-| | |
+| Поставщик | Имена заголовков |
 |-|-|
 | Azure Active Directory | `X-MS-TOKEN-AAD-ID-TOKEN` <br/> `X-MS-TOKEN-AAD-ACCESS-TOKEN` <br/> `X-MS-TOKEN-AAD-EXPIRES-ON`  <br/> `X-MS-TOKEN-AAD-REFRESH-TOKEN` |
 | Токен Facebook | `X-MS-TOKEN-FACEBOOK-ACCESS-TOKEN` <br/> `X-MS-TOKEN-FACEBOOK-EXPIRES-ON` |

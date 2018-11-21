@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 09/05/2018
 ms.author: cherylmc
-ms.openlocfilehash: cdb1fa7dd9bada5615a0dcd706184a5213ff917b
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 11d23102ca807ab1ddf41f1d0e72aed8a8513ac8
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44299259"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636651"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 
@@ -67,19 +67,19 @@ ms.locfileid: "44299259"
 
 1. Выберите файлы конфигурации VPN-клиента, которые соответствуют архитектуре компьютера Windows. Для 64-разрядной архитектуры процессора выберите пакет установщика VpnClientSetupAmd64. Для 32-разрядной архитектуры процессора выберите пакет установщика VpnClientSetupX86. 
 2. Дважды щелкните пакет, чтобы установить его. При появлении всплывающего окна SmartScreen щелкните **Дополнительно**, а затем выберите **Выполнить в любом случае**.
-3. На клиентском компьютере перейдите в раздел **Параметры сети** и щелкните **VPN**. Для VPN-подключения отображается имя виртуальной сети, к которой оно устанавливается. 
+3. На клиентском компьютере перейдите в раздел **Параметры сети** и щелкните **VPN**. Для VPN-подключения отображается имя виртуальной сети, к которой оно устанавливается. 
 4. Перед попыткой подключения убедитесь, что вы установили сертификат клиента на клиентском компьютере. Сертификат клиента требуется при использовании собственной аутентификации Azure на основе сертификата. Дополнительную информацию о создании сертификатов см. в разделе [Настройка подключения "точка — сеть" к виртуальной сети с использованием собственной аутентификации Azure на основе сертификата и портала Azure](vpn-gateway-howto-point-to-site-resource-manager-portal.md#generatecert). Инструкции по установке сертификата клиента см. в разделе [Установка сертификата клиента для аутентификации Azure на основе сертификата при подключениях типа "точка — сеть"](point-to-site-how-to-vpn-client-install-azure-cert.md).
 
 ## <a name="installmac"></a>Mac (OS X)
 
  Необходимо вручную настроить VPN-клиент IKEv2 на каждом компьютере Mac, который будет подключаться к Azure. Azure не предоставляет файл mobileconfig для собственной аутентификации Azure на основе сертификата. В папке **Generic** содержатся все необходимые для конфигурации сведения. Если папки Generic нет в скачанных файлах, вполне вероятно, что IKEv2 не был выбран в качестве типа туннеля. Выбрав IKEv2, создайте ZIP-файл еще раз для получения папки Generic.<br>Эта папка содержит следующие файлы:
 
-* Файл **VpnSettings.xml** — содержит такие важные параметры, как адрес сервера и тип туннеля. 
+* Файл **VpnSettings.xml** — содержит такие важные параметры, как адрес сервера и тип туннеля. 
 * Файл **VpnServerRoot.cer** — содержит корневой сертификат, который требуется для проверки VPN-шлюза Azure при настройке подключения типа "точка — сеть".
 
 Чтобы настроить на устройстве Mac собственный VPN-клиент для аутентификации на основе сертификата, сделайте следующее: Выполните следующие действия на каждом компьютере Mac, который будет подключаться к Azure:
 
-1. Импортируйте корневой сертификат **VpnServerRoot** на компьютер Mac. Для этого скопируйте файл на устройство Mac и дважды щелкните его.  
+1. Импортируйте корневой сертификат **VpnServerRoot** на компьютер Mac. Для этого скопируйте файл на устройство Mac и дважды щелкните его.  
 Чтобы выполнить импорт, щелкните **Add** (Добавить).
 
   ![Добавление сертификата](./media/point-to-site-vpn-client-configuration-azure-cert/addcert.png)
@@ -97,7 +97,7 @@ ms.locfileid: "44299259"
 4. В папке **Generic** из файла **VpnSettings.xml** скопируйте значение тега **VpnServer**. Вставьте это значение в поля профиля **Server Address** (Адрес сервера) и **Remote ID** (Удаленный ИД).
 
   ![Сведения о сервере](./media/point-to-site-vpn-client-configuration-azure-cert/server.png)
-5. Щелкните **Authentication Settings** (Параметры аутентификации) и выберите **Certificate** (Сертификат). 
+5. Щелкните **Authentication Settings** (Параметры аутентификации) и выберите **Certificate** (Сертификат). 
 
   ![Параметры аутентификации](./media/point-to-site-vpn-client-configuration-azure-cert/authsettings.png)
 6. Щелкните **Select…** (Выбрать), чтобы выбрать сертификат клиента, который будет использоваться для аутентификации. Это сертификат, установленный на шаге 2.
@@ -172,7 +172,7 @@ ms.locfileid: "44299259"
 1. Загрузите пакет VPN-клиента с портала Azure.
 2. Извлеките файл.
 3. Из папки **Generic** копируйте или переместите файл VpnServerRoot.cer в папку /etc/ipsec.d/cacerts.
-4. Из папки **Generic** копируйте или переместите файл cp client.p12 в папку /etc/ipsec.d/private/.
+4. Скопируйте или переместите файл cp client.p12 в папку /etc/ipsec.d/private/. Это сертификат клиента для VPN-шлюза Azure.
 5. Откройте файл VpnSettings.xml и скопируйте значение <VpnServer>. Это значение потребуется на следующем шаге.
 6. Измените значения в приведенном ниже примере, а затем добавьте этот код в файл конфигурации /etc/ipsec.conf.
   
@@ -185,7 +185,7 @@ ms.locfileid: "44299259"
   leftauth=eap-tls
   leftid=%client # use the DNS alternative name prefixed with the %
   right= Enter the VPN Server value here# Azure VPN gateway address
-  rightid=%Enter the VPN Server value here# Azure VPN gateway address, prefixed with %
+  rightid=% # Enter the VPN Server value here# Azure VPN gateway FQDN with %
   rightsubnet=0.0.0.0/0
   leftsourceip=%config
   auto=add

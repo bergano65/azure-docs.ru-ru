@@ -15,12 +15,12 @@ ms.date: 11/07/2018
 ms.author: celested
 ms.reviewer: jlu
 ms.custom: aaddev
-ms.openlocfilehash: 298afda7549690a9ea0314bff63a714be50a33b9
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 0f0de122dc3dbd770e91a8412430423bee222b30
+ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51019977"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51577974"
 ---
 # <a name="how-to-reactivate-disabled-access-control-service-namespaces"></a>Практическое руководство. Повторная активация отключенных пространств имен службы контроля доступа
 
@@ -35,7 +35,7 @@ ms.locfileid: "51019977"
 Если вы еще не дали согласие на расширение, пространства имен ACS будут отключены начиная с 7 ноября 2018 года. Если вы пропустили сообщение, но все еще хотите дать согласие на расширение до 4 февраля 2019 года, следуйте указаниям в следующих разделах.
 
 > [!NOTE]
-> Чтобы запустить команды PowerShell и запросить расширение, необходимо иметь права администратора подписки.
+> Чтобы запустить команды PowerShell и запросить расширение, необходимо иметь права администратора служб или соадминистратора подписки.
 
 ## <a name="find-and-enable-your-acs-namespaces"></a>Поиск и включение пространств имен ACS
 
@@ -62,6 +62,9 @@ ms.locfileid: "51019977"
         ```
     
         где `[Command-Name]` — это имя команды ACS.
+1. Подключитесь к ACS с помощью командлета **Connect-AcsAccount**. 
+
+    Прежде чем вы сможете выполнить команду, может потребоваться изменить политику выполнения путем выполнения команды **Set-ExecutionPolicy**.
 1. Получите список доступных подписок Azure с помощью командлета **Get-AcsSubscription**.
 1. Получите список пространств имен ACS с помощью командлета **Get-AcsNamespace**.
 1. Удостоверьтесь, что пространства имен отключены. Для этого убедитесь, что для `State` задано значение `Disabled`.

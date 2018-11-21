@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/30/2018
 ms.author: johnkem
 ms.component: activitylog
-ms.openlocfilehash: 538481088d6355729486c1d9fbaaa6af16a1b841
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 0f69a7f5e7aef4da798ec7c9ce3b7af3a456c00e
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51006028"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51613364"
 ---
 # <a name="monitor-subscription-activity-with-the-azure-activity-log"></a>Мониторинг действий подписки с помощью журнала действий Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "51006028"
 События из журнала изменений можно получить с помощью портала Azure, интерфейса командной строки, командлетов PowerShell или REST API Azure Monitor.
 
 > [!NOTE]
->  [Новые оповещения](monitoring-overview-unified-alerts.md) сейчас предоставляют дополнительные возможности для создания и администрирования правил генерации оповещений для журнала действий.  [Узнайте больше](alert-activity-log.md).
+> [Новые оповещения](monitoring-overview-alerts.md) предоставляют дополнительные возможности для создания и администрирования правил генерации оповещений для журнала действий.  [Узнайте больше](alert-activity-log.md).
 
 
 ## <a name="categories-in-the-activity-log"></a>Категории в журнале действий

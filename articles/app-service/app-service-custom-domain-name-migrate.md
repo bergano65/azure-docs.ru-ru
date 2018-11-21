@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2017
 ms.author: cephalin
-ms.openlocfilehash: a5d031622103183fa9aa7a3f3771a055fc16edb2
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 632558760d0b4a00384763cc30de3b9241bb1ae6
+ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39049982"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51300172"
 ---
 # <a name="migrate-an-active-dns-name-to-azure-app-service"></a>Перенос активного DNS-имени в службу приложений Azure
 
@@ -60,6 +60,13 @@ ms.locfileid: "39049982"
 | \* (с подстановочным знаком) | _awverify.\*_ | _&lt;имя_приложения>.azurewebsites.net_ |
 
 На странице записей DNS запомните тип DNS-имени, которое требуется перенести. Служба приложений поддерживает сопоставление из записей CNAME и записей A.
+
+> [!NOTE]
+> Для некоторых поставщиков, например CloudFlare, `awverify.*` не является допустимой записью. Вместо нее используйте только `*`.
+
+> [!NOTE]
+> Записи `*` с подстановочными знаками не позволяют проверять поддомены с существующей записью CNAME. Возможно, понадобится явным образом создать запись типа TXT для каждого поддомена.
+
 
 ### <a name="enable-the-domain-for-your-app"></a>Включение домена для приложения
 

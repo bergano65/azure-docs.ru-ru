@@ -1,5 +1,5 @@
 ---
-title: Использование Hadoop Hive и удаленного рабочего стола в HDInsight в Azure
+title: Использование Apache Hive и удаленного рабочего стола в HDInsight в Azure
 description: Узнайте, как подключиться к кластеру HDInsight с помощью удаленного рабочего стола, а затем выполнить запросы Hive с помощью интерфейса командной строки Hive.
 services: hdinsight
 author: hrasheed-msft
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.date: 01/12/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 32fb2bc9514b911d0a1ce295eee651e4b6b6388a
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 03eb5958e1c447ec1239289538906a0cb3e4b30d
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51015083"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51634215"
 ---
-# <a name="use-hive-with-hadoop-on-hdinsight-with-remote-desktop"></a>Использование Hive с Hadoop в HDInsight с помощью удаленного рабочего стола
+# <a name="use-apache-hive-with-apache-hadoop-on-hdinsight-with-remote-desktop"></a>Использование Apache Hive с Apache Hadoop в HDInsight с помощью удаленного рабочего стола
 [!INCLUDE [hive-selector](../../../includes/hdinsight-selector-use-hive.md)]
 
 В этой статье вы узнаете, как подключиться к кластеру HDInsight с помощью удаленного рабочего стола, а затем выполнить запросы Hive с помощью интерфейса командной строки Hive.

@@ -1,6 +1,6 @@
 ---
-title: Выполнение запросов Hive с помощью пакета SDK HDInsight для .NET в Azure
-description: Узнайте, как отправлять задания Hadoop в Azure HDInsight Hadoop с помощью пакета SDK HDInsight для .NET.
+title: Выполнение запросов Apache Hive с использованием пакета SDK .NET для HDInsight — Azure
+description: Узнайте, как отправлять задания Apache Hadoop в Azure HDInsight с использованием пакета SDK .NET для HDInsight.
 ms.reviewer: jasonh
 services: hdinsight
 author: hrasheed-msft
@@ -9,17 +9,17 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 5cababaa7c808969e6e24a70581f54639f269621
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 790cc11e3d4cf1d0260b1099efd82bdddec85785
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51016018"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51634572"
 ---
-# <a name="run-hive-queries-using-hdinsight-net-sdk"></a>Выполнение запросов Hive с помощью пакета SDK HDInsight для .NET
+# <a name="run-apache-hive-queries-using-hdinsight-net-sdk"></a>Выполнение запросов Apache Hive с использованием пакета SDK .NET для HDInsight
 [!INCLUDE [hive-selector](../../../includes/hdinsight-selector-use-hive.md)]
 
-Узнайте, как отправлять запросы Hive с помощью пакета SDK HDInsight для .NET. Напишите программу на языке C#, чтобы отправить запрос Hive для перечисления таблиц Hive и отобразить результаты.
+Узнайте, как отправлять запросы Apache Hive с использованием пакета SDK .NET для HDInsight. Напишите программу на языке C#, чтобы отправить запрос Hive для перечисления таблиц Hive и отобразить результаты.
 
 > [!NOTE]
 > Действия, описанные в этой статье, необходимо выполнять из клиента Windows. Чтобы получить сведения об использовании клиента Linux, OS X или Unix для работы с Hive, воспользуйтесь выбором вкладок в верхней части статьи.
@@ -27,7 +27,7 @@ ms.locfileid: "51016018"
 ## <a name="prerequisites"></a>Предварительные требования
 Перед началом работы с этой статьей необходимо иметь следующее:
 
-* **Кластер Hadoop в HDInsight**. См. статью [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux](apache-hadoop-linux-tutorial-get-started.md).
+* **Кластер Apache Hadoop в HDInsight**. См. статью [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux](apache-hadoop-linux-tutorial-get-started.md).
 
     > [!WARNING]
     > Начиная с 15 сентября 2017 г. пакет SDK для HDInsight .NET поддерживает возвращение результатов запроса Hive только из учетных записей хранения Azure. Если использовать этот пример с кластером HDInsight, который использует Azure Data Lake Store в качестве основного хранилища, вы не сможете получить результаты поиска с помощью пакета SDK для .NET.

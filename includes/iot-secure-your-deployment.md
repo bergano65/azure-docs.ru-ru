@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 08/07/2018
 ms.author: robinsh
 ms.custom: include file
-ms.openlocfilehash: 744d9929d7f82242d2bb75452b70b11af19b3af7
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: 6179086c6a2cf187c976ff23bf24180257023d28
+ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49084297"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51289178"
 ---
-# <a name="secure-your-iot-deployment"></a>Защита развертывания IoT
+# <a name="secure-your-internet-of-things-iot-deployment"></a>Общие сведения по обеспечению безопасности в "Интернете вещей"
 
 В этой статье более подробно рассматривается защита инфраструктуры "Интернета вещей" (IoT) на основе Azure IoT. Она содержит ссылки на сведения о настройке и развертывании каждого компонента на уровне реализации. Кроме того, в статье представлены сравнения различных конкурирующих методов и рекомендации по их выбору.
 

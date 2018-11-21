@@ -11,21 +11,21 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/10/2018
+ms.date: 11/13/2018
 ms.author: anwestg
-ms.openlocfilehash: fcbc924675a97a17b4fcfdf0e1ac39ad5aae9ffd
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
+ms.openlocfilehash: e8a75afe2c7dbe91c7c98d0d35c319088f40748f
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51218514"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51612684"
 ---
 # <a name="update-azure-app-service-on-azure-stack"></a>Обновление Службы приложений Azure в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!IMPORTANT]  
-> Прежде чем развертывать службу приложений Azure, примените обновление 1807 к интегрированной системе Azure Stack или разверните последний пакет средств разработки Azure Stack 1.3.
+> Прежде чем развертывать службу приложений Azure, примените обновление 1809 к интегрированной системе Azure Stack или разверните последний пакет средств разработки Azure Stack 1.4.
 >
 >
 
@@ -33,7 +33,6 @@ ms.locfileid: "51218514"
 
 > [!IMPORTANT]  
 > Перед обновлением [разверните службу приложений Azure для поставщика ресурсов Azure Stack](azure-stack-app-service-deploy.md).
-
 
 ## <a name="run-the-app-service-resource-provider-installer"></a>Запуск установщика поставщика ресурсов службы приложений
 
@@ -53,7 +52,7 @@ ms.locfileid: "51218514"
 
 Чтобы обновить развертывание Службы приложений Azure в Azure Stack, сделайте следующее:
 
-1. Скачайте [установщик Службы приложений](https://aka.ms/appsvcupdate3installer).
+1. Скачайте [установщик Службы приложений](https://aka.ms/appsvcupdate4installer).
 
 2. Запустите файл appservice.exe от имени администратора.
 

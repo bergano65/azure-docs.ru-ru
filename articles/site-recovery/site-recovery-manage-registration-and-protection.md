@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: raynew
-ms.openlocfilehash: 4dac0ed85500e4339f6389f05113dfd68b72c5ff
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: d7dcf27e106f73c828c2c46d4d7180b1f906e4d8
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51244344"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51614860"
 ---
 # <a name="remove-servers-and-disable-protection"></a>Удаление серверов и отключение защиты
 
@@ -51,7 +51,7 @@ ms.locfileid: "51244344"
 5. Если узел Hyper-V был **отключен**, то на каждом удаленном узле Hyper-V запустите приведенный ниже сценарий. Этот скрипт очистит параметры на сервере и отменит его регистрацию в хранилище.
 
 
-
+```powershell
         pushd .
         try
         {
@@ -112,7 +112,7 @@ ms.locfileid: "51244344"
                 "Registry keys removed."
             }
 
-            # First retrive all the certificates to be deleted
+            # First retrieve all the certificates to be deleted
             $ASRcerts = Get-ChildItem -Path cert:\localmachine\my | where-object {$_.friendlyname.startswith('ASR_SRSAUTH_CERT_KEY_CONTAINER') -or $_.friendlyname.startswith('ASR_HYPER_V_HOST_CERT_KEY_CONTAINER')}
             # Open a cert store object
             $store = New-Object System.Security.Cryptography.X509Certificates.X509Store("My","LocalMachine")
@@ -131,7 +131,7 @@ ms.locfileid: "51244344"
             Write-Host "FAILED" -ForegroundColor "Red"
         }
         popd
-
+```
 
 
 ## <a name="disable-protection-for-a-vmware-vm-or-physical-server-vmware-to-azure"></a>Отключение защиты для виртуальной машины VMware или физического сервера (из VMware в Azure)
@@ -158,10 +158,12 @@ ms.locfileid: "51244344"
     > Если вы выбрали параметр **Удалить**, то выполните приведенный ниже набор сценариев для очистки настроек репликации локального сервера Hyper-V.
 1. Удалите репликацию для виртуальной машины на исходном сервере узла Hyper-V. Замените SQLVM1 именем виртуальной машины и запустите сценарий с правами администратора PowerShell.
 
-
-    
-    $vmName = "SQLVM1"  $vm = Get-WmiObject -Namespace "root\virtualization\v2" -Query "Select * From Msvm_ComputerSystem Where ElementName = '$vmName'"  $replicationService = Get-WmiObject -Namespace "root\virtualization\v2"  -Query "Select * From Msvm_ReplicationService"  $replicationService.RemoveReplicationRelationship($vm.__PATH)
-    
+```powershell
+    $vmName = "SQLVM1"
+    $vm = Get-WmiObject -Namespace "root\virtualization\v2" -Query "Select * From Msvm_ComputerSystem Where ElementName = '$vmName'"
+    $replicationService = Get-WmiObject -Namespace "root\virtualization\v2"  -Query "Select * From Msvm_ReplicationService"
+    $replicationService.RemoveReplicationRelationship($vm.__PATH)
+```
 
 ## <a name="disable-protection-for-a-hyper-v-virtual-machine-replicating-to-azure-using-the-system-center-vmm-to-azure-scenario"></a>Отключение защиты для виртуальной машины Hyper-V, реплицируемой в Azure, при использовании сценария репликации из System Center VMM в Azure
 
@@ -179,11 +181,14 @@ ms.locfileid: "51244344"
         Set-SCVirtualMachine -VM $vm -ClearDRProtection
 4. После выполнения описанных выше действий параметры репликации на сервере VMM будут удалены. Чтобы остановить репликацию для виртуальной машины, работающей на сервере узлов Hyper-V, запустите приведенный ниже скрипт. Замените SQLVM1 именем виртуальной машины и host01.contoso.com именем сервера узлов Hyper-V.
 
-    
-    $vmName = "SQLVM1"  $hostName  = "host01.contoso.com"  $vm = Get-WmiObject -Namespace "root\virtualization\v2" -Query "Select * From Msvm_ComputerSystem Where ElementName = '$vmName'" -computername $hostName  $replicationService = Get-WmiObject -Namespace "root\virtualization\v2"  -Query "Select * From Msvm_ReplicationService"  -computername $hostName  $replicationService.RemoveReplicationRelationship($vm.__PATH)
-    
-       
- 
+```powershell
+    $vmName = "SQLVM1"
+    $hostName  = "host01.contoso.com"
+    $vm = Get-WmiObject -Namespace "root\virtualization\v2" -Query "Select * From Msvm_ComputerSystem Where ElementName = '$vmName'" -computername $hostName
+    $replicationService = Get-WmiObject -Namespace "root\virtualization\v2"  -Query "Select * From Msvm_ReplicationService"  -computername $hostName
+    $replicationService.RemoveReplicationRelationship($vm.__PATH)
+```
+
 ## <a name="disable-protection-for-a-hyper-v-virtual-machine-replicating-to-secondary-vmm-server-using-the-system-center-vmm-to-vmm-scenario"></a>Отключение защиты виртуальной машины Hyper-V, реплицируемой на сервер-получатель VMM, при использовании сценария репликации из System Center VMM в VMM
 
 1. Выберите **Защищенные элементы** > **Реплицированные элементы**, щелкните виртуальную машину правой кнопкой мыши и выберите **Отключить репликацию**.

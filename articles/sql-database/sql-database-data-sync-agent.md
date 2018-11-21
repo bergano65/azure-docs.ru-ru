@@ -11,13 +11,13 @@ author: allenwux
 ms.author: xiwu
 ms.reviewer: douglasl
 manager: craigg
-ms.date: 11/07/2018
-ms.openlocfilehash: 032676528120995dab980207ee9d09ccad712142
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.date: 11/12/2018
+ms.openlocfilehash: bb80b512176e8fe260eb4572ea9fa801a6ffc80a
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285376"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51685146"
 ---
 # <a name="data-sync-agent-for-azure-sql-data-sync"></a>Агент синхронизации данных для синхронизации данных SQL Azure
 
@@ -31,8 +31,14 @@ ms.locfileid: "51285376"
 
 Чтобы установить Агент синхронизации данных в автоматическом режиме с командной строки, введите команду, аналогичную примеру. Проверьте имя скачанного файла .msi и предоставьте ваши значения для аргументов **TARGETDIR** и **SERVICEACCOUNT**.
 
+- Если не указать значение для **TARGETDIR**, `C:\Program Files (x86)\Microsoft SQL Data Sync 2.0` будет значением по умолчанию.
+
+- Если указать `LocalSystem` в качестве параметра **SERVICEACCOUNT**, используйте проверку подлинности SQL Server при настройке агента для подключения к локальному экземпляру SQL Server.
+
+- Если указать учетную запись пользователя домена или учетную запись локального пользователя в качестве параметра **SERVICEACCOUNT**, необходимо также указать пароль в аргументе **SERVICEPASSWORD**. Например, `SERVICEACCOUNT="<domain>\<user>"  SERVICEPASSWORD="<password>"`.
+
 ```cmd
-msiexec /i SQLDataSyncAgent-2.0--ENU.msi TARGETDIR="C:\Program Files (x86)\Microsoft SQL Data Sync 2.0" SERVICEACCOUNT="LocalSystem" /qn 
+msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\Microsoft SQL Data Sync 2.0" SERVICEACCOUNT="LocalSystem" /qn
 ```
 
 ## <a name="sync-data-with-sql-server-on-premises"></a>Синхронизация данных с локальным сервером SQL Server
@@ -91,10 +97,10 @@ msiexec /i SQLDataSyncAgent-2.0--ENU.msi TARGETDIR="C:\Program Files (x86)\Micro
 
 - **Причина**. Этот сбой может произойти во множестве случаев. Чтобы определить конкретную причину этого сбоя, просмотрите журналы.
 
-- **Способы устранения**. Чтобы найти конкретную причину сбоя, следует создать и просмотреть журналы установщика Windows. Включить ведение журнала можно с помощью командной строки. Например, если скачанный файл AgentServiceSetup.msi — LocalAgentHost.msi, создайте и изучите файлы журналов, используя следующие команды.
+- **Способы устранения**. Чтобы найти конкретную причину сбоя, следует создать и просмотреть журналы установщика Windows. Включить ведение журнала можно с помощью командной строки. Например, если `SQLDataSyncAgent-2.0-x86-ENU.msi` — это скачанный файл установки, создайте и изучите файлы журналов, используя следующие команды:
 
-    -   Для установки: `msiexec.exe /i SQLDataSyncAgent-Preview-ENU.msi /l\*v LocalAgentSetup.InstallLog`
-    -   Для удаления: `msiexec.exe /x SQLDataSyncAgent-se-ENU.msi /l\*v LocalAgentSetup.InstallLog`
+    -   Для установки: `msiexec.exe /i SQLDataSyncAgent-2.0-x86-ENU.msi /l*v LocalAgentSetup.Log`
+    -   Для удаления: `msiexec.exe /x SQLDataSyncAgent-2.0-x86-ENU.msi /l*v LocalAgentSetup.Log`
 
     Вы также можете включить ведение журнала для всех установок, выполняемых установщиком Windows. Дополнительные сведения см. в статье базы знаний Майкрософт [Как включить ведение журнала работы установщика Windows](https://support.microsoft.com/help/223300/how-to-enable-windows-installer-logging). В ней также описано расположение этих журналов.
 
@@ -268,13 +274,15 @@ SqlDataSyncAgentCommand.exe -action registerdatabase -servername [on-premisesdat
 #### <a name="examples"></a>Примеры
 
 ```cmd
-SqlDataSyncAgentCommand.exe -action "registerdatabase" -serverName localhost -databaseName testdb -authentication sql -username xiwu -password Yukon900 -encryption true
+SqlDataSyncAgentCommand.exe -action "registerdatabase" -serverName localhost -databaseName testdb -authentication sql -username <user name> -password <password> -encryption true
 
 SqlDataSyncAgentCommand.exe -action "registerdatabase" -serverName localhost -databaseName testdb -authentication windows -encryption true
 
 ```
 
 ### <a name="unregister-a-database"></a>Отмена регистрации базы данных
+
+При использовании этой команды для отмены регистрации базы данных, она полностью отзывает базу данных. Если база присутствует в других группах синхронизации, такая операция нарушит другие группы синхронизации.
 
 #### <a name="usage"></a>Использование
 
@@ -308,6 +316,15 @@ SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -da
 
 Дополнительные сведения о Синхронизации данных SQL см. в следующих статьях:
 
-- [Настройка синхронизации данных SQL между Базой данных SQL Azure и локальным сервером SQL Server](sql-database-get-started-sql-data-sync.md)
-
-- [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL](sql-database-sync-data.md)
+-   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL](sql-database-sync-data.md).
+-   Настройка синхронизации данных
+    - На портале: [Руководство по настройке синхронизации данных SQL между Базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md).
+    - С помощью PowerShell
+        -  [Использование PowerShell для синхронизации данных между несколькими базами данных SQL Azure](scripts/sql-database-sync-data-between-sql-databases.md)
+        -  [Использование PowerShell для синхронизации данных между базой данных SQL Azure и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md)
+-   Рекомендации: [Рекомендации по синхронизации данных SQL](sql-database-best-practices-data-sync.md).
+-   Мониторинг: [Мониторинг синхронизации данных SQL с помощью Log Analytics](sql-database-sync-monitor-oms.md).
+-   Устранение неполадок: [Устранение неполадок с синхронизацией данных SQL](sql-database-troubleshoot-data-sync.md).
+-   Обновление схемы синхронизации
+    -   С помощью Transact-SQL: [Автоматическая репликация изменений схемы при синхронизации данных SQL Azure](sql-database-update-sync-schema.md).
+    -   С помощью PowerShell: [Использование PowerShell для обновления схемы синхронизации в существующей группе синхронизации](scripts/sql-database-sync-update-schema.md).
