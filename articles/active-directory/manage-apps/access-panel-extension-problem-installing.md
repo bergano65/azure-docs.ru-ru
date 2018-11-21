@@ -62,7 +62,7 @@ ms.locfileid: "44355526"
 Вы также можете скачать расширение для Chrome и Microsoft Edge отсюда:
 
 - [Расширение для Chrome](https://chrome.google.com/webstore/detail/access-panel-extension/ggjhpefgjjfobnfoldnjipclpcfbgbhl)
-- [Расширение для Edge](https://www.microsoft.com/store/apps/9pc9sckkzk84) 
+- [Расширение для Microsoft Edge](https://www.microsoft.com/store/apps/9pc9sckkzk84) 
 
 ## <a name="use-the-my-apps-secure-sign-in-extension"></a>Использование расширения защищенного входа на странице "Мои приложения"
 * Если для страницы "Мои приложения" вы используете URL-адрес, отличный от `https://myapps.microsoft.com`, настройте URL-адрес по умолчанию следующим образом:
