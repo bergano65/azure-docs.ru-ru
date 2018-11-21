@@ -60,7 +60,7 @@ ms.locfileid: "50913937"
 - Это бесплатная функция, и для ее использования не требуются платные выпуски Azure AD.
 - Она доступна в клиентах на основе веб-браузера и клиентах Office, поддерживающих [современную проверку подлинности](https://docs.microsoft.com/office365/enterprise/modern-auth-for-office-2013-and-2016) на платформах и в браузерах с поддержкой проверки подлинности Kerberos.
 
-| Операционная система и браузер |Internet Explorer|Edge|Google Chrome|Mozilla Firefox|Safari|
+| Операционная система и браузер |Internet Explorer|Microsoft Edge|Google Chrome|Mozilla Firefox|Safari|
 | --- | --- |--- | --- | --- | -- 
 |Windows 10|Да\*|Нет |Yes|Да\*\*\*|Недоступно
 |Windows 8.1|Да\*|Недоступно|Yes|Да\*\*\*|Недоступно
