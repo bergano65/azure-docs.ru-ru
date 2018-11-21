@@ -1,6 +1,6 @@
 ---
-title: Использование Hadoop Hive в консоли запросов в HDInsight в Azure
-description: Узнайте, как выполнять запросы Hive в кластере HDInsight Hadoop из браузера с помощью консоли запросов HDInsight для Интернета.
+title: Использование Apache Hive в консоли запросов в HDInsight — Azure
+description: Узнайте, как выполнять запросы Apache Hive в кластере HDInsight Hadoop из браузера с помощью веб-консоли запросов.
 services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -9,17 +9,17 @@ ms.topic: conceptual
 ms.date: 01/12/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 4083ceca8c9181c8acb1a90e782cb5bca981e684
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: da270792c8987ff43c422c5b03eb8b789b8bda5e
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51013978"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51634597"
 ---
-# <a name="run-hive-queries-using-the-query-console"></a>Выполнение запросов Hive с помощью консоли запросов
+# <a name="run-apache-hive-queries-using-the-query-console"></a>Выполнение запросов Apache Hive с помощью консоли запросов
 [!INCLUDE [hive-selector](../../../includes/hdinsight-selector-use-hive.md)]
 
-В этой статье вы узнаете, как выполнять запросы Hive в кластере HDInsight Hadoop из браузера с помощью консоли запросов HDInsight.
+Из этой статьи вы узнаете, как выполнять запросы Apache Hive в кластере HDInsight Hadoop из браузера с помощью консоли запросов HDInsight.
 
 > [!IMPORTANT]
 > Консоль запросов HDInsight доступна только в кластерах HDInsight на платформе Windows. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).

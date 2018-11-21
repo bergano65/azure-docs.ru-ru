@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 10/22/2018
+ms.date: 11/09/2018
 ms.author: juliako
-ms.openlocfilehash: db68f979239a5783338d99360209ae231a75c936
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.openlocfilehash: 70a3de35f6fd942bca5355db3a7c6b57aec6adbc
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49945041"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51613942"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3 
 
@@ -27,6 +27,54 @@ ms.locfileid: "49945041"
 * Исправления ошибок
 * Нерекомендуемые функции.
 * Планы по изменениям.
+
+## <a name="november-2018"></a>Ноябрь 2018 г.
+
+Модуль CLI 2.0 теперь доступен для [Службы мультимедиа Azure, общедоступная версия 3](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest) — версия 2.0.50.
+
+### <a name="new-commands"></a>Новые команды
+
+- [az ams account](https://docs.microsoft.com/cli/azure/ams/account?view=azure-cli-latest)
+- [az ams account-filter](https://docs.microsoft.com/cli/azure/ams/account-filter?view=azure-cli-latest)
+- [az ams asset](https://docs.microsoft.com/cli/azure/ams/asset?view=azure-cli-latest)
+- [az ams asset-filter](https://docs.microsoft.com/cli/azure/ams/asset-filter?view=azure-cli-latest)
+- [az ams content-key-policy](https://docs.microsoft.com/cli/azure/ams/content-key-policy?view=azure-cli-latest)
+- [az ams job](https://docs.microsoft.com/cli/azure/ams/job?view=azure-cli-latest)
+- [az ams live-event](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest)
+- [az ams live-output](https://docs.microsoft.com/cli/azure/ams/live-output?view=azure-cli-latest)
+- [az ams streaming-endpoint](https://docs.microsoft.com/cli/azure/ams/streaming-endpoint?view=azure-cli-latest)
+- [az ams streaming-locator](https://docs.microsoft.com/cli/azure/ams/streaming-locator?view=azure-cli-latest)
+- [az ams account mru](https://docs.microsoft.com/cli/azure/ams/account/mru?view=azure-cli-latest) — позволяет управлять зарезервированными единицами мультимедиа
+
+### <a name="new-features-and-breaking-changes"></a>Новые функции и критические изменения
+
+#### <a name="asset-commands"></a>Команды для ресурсов
+
+- Добавлены аргументы ```--storage-account``` и ```--container```.
+- Добавлены значения по умолчанию для времени истечения срока действия (23 часа от текущего момента) и разрешений (чтение) в команду ```az ams asset get-sas-url```.
+
+#### <a name="job-commands"></a>Команды для заданий
+
+- Добавлены аргументы ```--correlation-data``` и ```--label```.
+- Аргумент ```--output-asset-names``` переименован в ```--output-assets```. Теперь он принимает список ресурсов, разделенных пробелами, в формате assetName=label. Ресурс без метки можно передать следующим образом: assetName=.
+
+#### <a name="streaming-locator-commands"></a>Команды для потокового указателя
+
+- Базовая команда ```az ams streaming locator``` заменена на ```az ams streaming-locator```.
+- Добавлены аргументы ```--streaming-locator-id``` и ```--alternative-media-id support```.
+- Обновлен аргумент ```--content-keys argument```.
+- Аргумент ```--content-policy-name``` переименован в ```--content-key-policy-name```.
+
+#### <a name="streaming-policy-commands"></a>Команды для политики потоковой передачи
+
+- Базовая команда ```az ams streaming policy``` заменена на ```az ams streaming-policy```.
+- Добавлена поддержка параметров шифрования в ```az ams streaming-policy create```.
+
+#### <a name="transform-commands"></a>Команды преобразования
+
+- Аргумент ```--preset-names``` заменен на ```--preset```. Теперь можно одновременно задавать только один вывод/набор параметров (для добавления дополнительных нужно запустить команду ```az ams transform output add```). Также можно задать пользовательский параметр StandardEncoderPreset, указав путь к пользовательскому файлу JSON.
+- ```az ams transform output remove``` теперь можно выполнять путем передачи выходного индекса для удаления.
+- Аргументы ```--relative-priority, --on-error, --audio-language and --insights-to-extract``` добавлены в команды ```az ams transform create``` и ```az ams transform output add```.
 
 ## <a name="october-2018---ga"></a>Октябрь 2018 г. Общедоступная версия
 
@@ -120,5 +168,4 @@ ms.locfileid: "49945041"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-> [!div class="nextstepaction"]
-> [Обзор](media-services-overview.md)
+[Обзор](media-services-overview.md)

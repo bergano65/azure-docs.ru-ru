@@ -12,14 +12,14 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/20/2018
+ms.date: 11/13/2018
 ms.author: anwestg
-ms.openlocfilehash: 786f6ca3b3a1ad26d36c751c54d3cf69ae1d2fd4
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 4f669d44582c47cc6c7c090627f957288fee0f1a
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50240874"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51615880"
 ---
 # <a name="before-you-get-started-with-app-service-on-azure-stack"></a>Подготовка к работе со службой приложений в Azure Stack
 
@@ -28,7 +28,7 @@ ms.locfileid: "50240874"
 Перед развертыванием Службы приложений Azure в Azure Stack необходимо выполнить предварительные действия, описанные в этой статье.
 
 > [!IMPORTANT]
-> Прежде чем развернуть Службу приложений Azure 1.3, примените обновление 1807 к интегрированной системе Azure Stack или разверните последний Пакет средств разработки Azure Stack (ASDK).
+> Прежде чем развернуть Службу приложений Azure 1.4, примените обновление 1809 к интегрированной системе Azure Stack или разверните последний пакет средств разработки Azure Stack (ASDK).
 
 ## <a name="download-the-installer-and-helper-scripts"></a>Скачивание установочного и вспомогательного скриптов
 
@@ -44,6 +44,10 @@ ms.locfileid: "50240874"
    - Remove-AppService.ps1;
    - Папка для модулей
      - GraphAPI.psm1
+
+## <a name="syndicate-the-custom-script-extension-from-the-marketplace"></a>Синдикация расширения пользовательских сценариев из Marketplace
+
+Служба приложений Azure в Azure Stack требует расширение пользовательских сценариев версии 1.9.0.  Расширение нужно [синдицировать из Marketplace](https://docs.microsoft.com/azure/azure-stack/azure-stack-download-azure-marketplace-item) до запуска развертывания или обновления Службы приложений Azure в Azure Stack.
 
 ## <a name="high-availability"></a>высокую доступность;
 
@@ -151,6 +155,9 @@ ms.locfileid: "50240874"
 
 ## <a name="virtual-network"></a>Виртуальная сеть
 
+> [!NOTE]
+> Предварительное создание пользовательской виртуальной сети является необязательным, так как Служба приложений Azure в Azure Stack может создать необходимую виртуальную сеть, но затем ей нужно будет взаимодействовать с SQL и файловым сервером через общедоступные IP-адреса.
+
 Служба приложений Azure в Azure Stack позволяет развертывать поставщик ресурсов в имеющейся виртуальной сети или создавать виртуальную сеть в процессе развертывания. Имеющаяся виртуальная сеть позволяет подключаться к файловому серверу и серверу SQL Server, требуемому Службе приложений Azure в Azure Stack, через внутренние IP-адреса. Перед установкой Службы приложений Azure в Azure Stack в виртуальной сети необходимо настроить следующий диапазон адресов и подсети:
 
 Virtual Network - /16
@@ -167,12 +174,20 @@ Virtual Network - /16
 
 Служба приложений Azure требует использования файлового сервера. Для развертываний в рабочей среде файловый сервер должен быть настроен так, чтобы обеспечивать высокую доступность и обрабатывать сбои.
 
+### <a name="quickstart-template-for-file-server-for-deployments-of-azure-app-service-on-asdk"></a>Шаблон быстрого начала для файлового сервера для развертываний Службы приложений Azure на базе ASDK.
+
 Этот [пример шаблона развертывания Azure Resource Manager](https://aka.ms/appsvconmasdkfstemplate) для развертывания настроенного файлового сервера на одном узле можно использовать только при развертываниях Пакета средств разработки Azure Stack. В рабочей группе будет файловый сервер с одним узлом.
+
+### <a name="quickstart-template-for-highly-available-file-server-and-sql-server"></a>Шаблон быстрого начала для высокодоступного файлового сервера и SQL Server
+
+Сейчас доступен [шаблон быстрого начала работы с эталонной архитектурой](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/appservice-fileserver-sqlserver-ha), который будет выполнять развертывание файлового сервера, SQL Server, поддерживая инфраструктуру Active Directory в виртуальной сети, настроенной для поддержки высокодоступного развертывания Службы приложений Azure в Azure Stack.  
+
+### <a name="steps-to-deploy-a-custom-file-server"></a>Инструкции по развертыванию пользовательского файлового сервера
 
 >[!IMPORTANT]
 > Если вы решите развернуть Службу приложений в имеющейся виртуальной сети, файловый сервер необходимо развернуть в отдельной подсети.
 
-### <a name="provision-groups-and-accounts-in-active-directory"></a>Подготовка групп и учетных записей в Active Directory
+#### <a name="provision-groups-and-accounts-in-active-directory"></a>Подготовка групп и учетных записей в Active Directory
 
 1. Создайте следующие группы глобальной безопасности Active Directory:
 
@@ -195,7 +210,7 @@ Virtual Network - /16
    - Добавьте **FileShareOwner** в группу **FileShareOwners**.
    - Добавьте **FileShareUser** в группу **FileShareUsers**.
 
-### <a name="provision-groups-and-accounts-in-a-workgroup"></a>Подготовка групп и учетных записей в рабочей группе
+#### <a name="provision-groups-and-accounts-in-a-workgroup"></a>Подготовка групп и учетных записей в рабочей группе
 
 >[!NOTE]
 > При настройке файлового сервера выполните все указанные ниже команды в **окне командной строки с правами администратора**. <br>***Не используйте PowerShell.***
@@ -225,7 +240,7 @@ Virtual Network - /16
    net localgroup FileShareOwners FileShareOwner /add
    ```
 
-### <a name="provision-the-content-share"></a>Подготовка общей папки содержимого
+#### <a name="provision-the-content-share"></a>Подготовка общей папки содержимого
 
 В общей папке содержимого размещается содержимое веб-сайта клиента. Процедура подготовки общей папки содержимого на одном файловом сервере одинакова для сред Active Directory и рабочей группы. Однако для отказоустойчивого кластера в Active Directory эта процедура отличается.
 

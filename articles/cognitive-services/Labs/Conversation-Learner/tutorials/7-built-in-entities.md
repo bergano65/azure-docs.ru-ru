@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 2dbbf2a47cdc4240e5b0ba38658a4cb8d5307ff8
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: cdd9ad16096c85db21829840b2bfd7acaced5942
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51260063"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51683514"
 ---
 # <a name="how-to-add-pre-built-entities"></a>Добавление предварительно созданных сущностей
 В этом руководстве описано, как добавить предварительно созданные сущности в модель Conversation Learner.
@@ -47,24 +47,25 @@ ms.locfileid: "51260063"
     - Программируемые и отрицаемые параметры недоступны, так как они не применяются к предварительно созданным сущностям.
 3. Щелкните Создать.
 
-![](../media/tutorial7_entities.PNG)
+![](../media/tutorial7_entities_a.PNG)
 
 ### <a name="create-two-actions"></a>Создание двух действий
 
-1. Последовательно щелкните "Действия" и "Создать действие".
-2. В поле "Ответ" введите "Дата $luis-datetimev2".
-3. Щелкните Создать.
+1. Щелкните "Actions" (Действия) и "New Action" (Новое действие).
+1. В поле Response (Ответ) введите The date is $builtin-datetimev2.
+1. В поле Required Entities (Обязательные сущности) введите $builtin-datetimev2.
+1. Щелкните Создать.
 
-![](../media/tutorial7_actions.PNG)
+![](../media/tutorial7_actions_a.PNG)
 
 Теперь создайте второе действие.
 
 1. Выберите "Действия", затем "Создать действие", чтобы создать второе действие.
-3. В поле "Ответ" введите "What's the date?" (Какая дата?).
-4. В поле Disqualifying Entities (Блокирующие сущности) введите "luis-datetimev2".
-4. Щелкните Создать. 
+1. В поле "Ответ" введите "What's the date?" (Какая дата?).
+1. В поле Disqualifying Entities (Блокирующие сущности) введите $builtin-datetimev2.
+1. Щелкните Создать.
 
-![](../media/tutorial7_actions2.PNG)
+![](../media/tutorial7_actions2_a.PNG)
 
 Теперь у вас есть два действия.
 
@@ -75,11 +76,11 @@ ms.locfileid: "51260063"
 3. Щелкните Score Actions (Оценка действий) и выберите "What's the date?" (Какая дата?).
 2. Введите "today" (сегодня). 
     - Обратите внимание, что ответ "today" (сегодня) снабжен тегом и отображается во второй строке, так как это предварительно созданная сущность и она не подлежит редактированию.
-5. Щелкните Score Actions (Оценка действий).
+5. Щелкните Score Actions (Оценить действия).
     - Обратите внимание, что дата теперь отображается в разделе Entity Memory (Память сущности). 
     - Если навести указатель мыши на дату, отобразятся дополнительные данные, предоставленные службой LUIS, которые могут быть полезны и в дальнейшем обработаны в коде. 
-6. Выберите "The date is $luis-datetimev2" (Дата $luis-datetimev2).
-7. Щелкните "Done Teaching" (Завершить обучение).
+6. Выберите The date is $builtin-datetimev2.
+7. Щелкните Done Teaching (Завершить обучение).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

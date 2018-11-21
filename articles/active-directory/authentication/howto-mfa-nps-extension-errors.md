@@ -5,21 +5,21 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.component: authentication
 ms.topic: conceptual
-ms.date: 07/11/2018
+ms.date: 11/13/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: michmcla
-ms.openlocfilehash: 58bb3ae39ecd5631508ca1d09bf1d9d8f4d75063
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 3820aae1e926e51ffa88fabc94e3572b286162de
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51036671"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51634232"
 ---
 # <a name="resolve-error-messages-from-the-nps-extension-for-azure-multi-factor-authentication"></a>Устранение ошибок, связанных с расширением NPS для Многофакторной идентификации Azure.
 
-В этой статье приведены способы быстрого устранения ошибок, связанных с расширением NPS для Многофакторной идентификации Azure. 
+В этой статье приведены способы быстрого устранения ошибок, связанных с расширением NPS для Многофакторной идентификации Azure. Журналы расширения NPS можно найти в средстве просмотра событий в разделе **Custom Views** > **Server Roles** > **Network Policy and Access Services** (Настраиваемые представления > Роли сервера > Службы доступа и политики сети) на сервере, на котором установлено расширение NPS.
 
 ## <a name="troubleshooting-steps-for-common-errors"></a>Действия по устранению распространенных ошибок
 
@@ -36,9 +36,6 @@ ms.locfileid: "51036671"
 | **REQUEST_MISSING_CODE** | Убедитесь, что протокол шифрования паролей между серверами NAS и NPS поддерживает дополнительный метод аутентификации, который вы используете. **PAP** поддерживает все методы аутентификации Azure MFA в облаке: телефонный звонок, одностороннее текстовое сообщение, уведомление мобильного приложения и код проверки мобильного приложения. **CHAPV2** и **EAP** поддерживают телефонный звонок или уведомление мобильного приложения. |
 | **USERNAME_CANONICALIZATION_ERROR** | В локальном экземпляре Active Directory должен присутствовать пользователь, а у службы NPS должны быть разрешения на доступ к каталогу. Если вы используете отношения доверия между лесами, [обратитесь в службу поддержки](#contact-microsoft-support) для получения дополнительных сведений. |
 
-
-   
-
 ### <a name="alternate-login-id-errors"></a>Ошибки с альтернативным именем пользователя
 
 | Код ошибки | Сообщение об ошибке | Действия по устранению неполадок |
@@ -46,7 +43,6 @@ ms.locfileid: "51036671"
 | **ALTERNATE_LOGIN_ID_ERROR** | Ошибка. Сбой поиска userObjectSid. | Убедитесь, что такой пользователь существует в экземпляре локальной службы Active Directory. Если вы используете отношения доверия между лесами, [обратитесь в службу поддержки](#contact-microsoft-support) для получения дополнительных сведений. |
 | **ALTERNATE_LOGIN_ID_ERROR** | Ошибка. Сбой поиска альтернативного имени пользователя. | Убедитесь, что для значения реестра LDAP_ALTERNATE_LOGINID_ATTRIBUTE указан [допустимый атрибут Active Directory](https://msdn.microsoft.com/library/ms675090(v=vs.85).aspx). <br><br> Если для LDAP_FORCE_GLOBAL_CATALOG задано значение True, а LDAP_LOOKUP_FORESTS имеет непустое значение, проверьте, настроен ли глобальный каталог и добавлен ли к нему атрибут AlternateLoginId. <br><br> Если LDAP_LOOKUP_FORESTS имеет непустое значение, убедитесь, что это значение правильно. Если указано несколько имен леса, такие имена должны быть разделены точками с запятой без пробелов. <br><br> Если с помощью этих шагов не удалось устранить проблему, обратитесь в [службу поддержки](#contact-microsoft-support) для получения дополнительных сведений. |
 | **ALTERNATE_LOGIN_ID_ERROR** | Ошибка. Пустое значение альтернативного имени пользователя. | Убедитесь, что атрибут AlternateLoginId настроен для пользователя. |
-
 
 ## <a name="errors-your-users-may-encounter"></a>Ошибки, с которыми могут столкнуться пользователи
 
@@ -97,7 +93,7 @@ ms.locfileid: "51036671"
 
 ### <a name="troubleshoot-user-accounts"></a>Устранение неполадок, связанных с учетными данными пользователей
 
-Если пользователи столкнулись с проблемами [двухфакторной проверки подлинности](../user-help/multi-factor-authentication-end-user-troubleshoot.md), они могут выполнить самостоятельную диагностику. 
+Если пользователи столкнулись с проблемами [двухфакторной проверки подлинности](../user-help/multi-factor-authentication-end-user-troubleshoot.md), они могут выполнить самостоятельную диагностику.
 
 ### <a name="contact-microsoft-support"></a>Обратиться в службу поддержки Майкрософт
 
@@ -131,5 +127,3 @@ ms.locfileid: "51036671"
 
 5. Откройте редактор реестра и перейдите по пути HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureMfa. Установите для **VERBOSE_LOG** значение **FALSE**.
 6. Выполните архивацию содержимого папки C:\NPS и прикрепите ZIP-файл к запросу в службу поддержки.
-
-

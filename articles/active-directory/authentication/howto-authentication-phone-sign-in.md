@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: librown
-ms.openlocfilehash: 81c249c8dc8475428f4cb0014e57f09e28a3d9af
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 3a9fba644bd379f3f54cf07cf35c0a54029756da
+ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48804333"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51287189"
 ---
 # <a name="password-less-phone-sign-in-with-the-microsoft-authenticator-app-public-preview"></a>Вход с телефона без пароля через приложение Microsoft Authenticator (общедоступная предварительная версия)
 
@@ -37,11 +37,16 @@ ms.locfileid: "48804333"
 
 ### <a name="steps-to-enable"></a>Действия для включения
 
-1. Установите [общедоступную предварительную версию модуля Azure Active Directory V2 PowerShell](https://www.powershellgallery.com/packages/AzureADPreview/).  
-2. Выполните следующие команды в PowerShell:
-   1. `Connect-AzureAD`
-      1. В диалоговом окне аутентификации выполните вход в учетную запись клиента. Это должна быть учетная запись администратора безопасности или глобального администратора.
-   2. `New-AzureADPolicy -Type AuthenticatorAppSignInPolicy -Definition '{"AuthenticatorAppSignInPolicy":{"Enabled":true}}' -isOrganizationDefault $true -DisplayName AuthenticatorAppSignIn`
+Убедитесь, что используете последнюю общедоступную предварительную версию модуля PowerShell (версии 2) для Azure Active Directory. Возможно, для этого потребуется удалить и повторно установить модуль, выполнив следующие команды:
+
+1. `Uninstall-Module -Name AzureADPreview`
+2. `Install-Module -Name AzureADPreview`
+
+Вы можете включить вход без пароля с помощью телефона (предварительная версия) с помощью следующих команд PowerShell:
+
+1. `Connect-AzureAD`
+   1. В диалоговом окне аутентификации выполните вход в учетную запись клиента. Это должна быть учетная запись администратора безопасности или глобального администратора.
+1. `New-AzureADPolicy -Type AuthenticatorAppSignInPolicy -Definition '{"AuthenticatorAppSignInPolicy":{"Enabled":true}}' -isOrganizationDefault $true -DisplayName AuthenticatorAppSignIn`
 
 ## <a name="how-do-my-end-users-enable-phone-sign-in"></a>Как пользователи смогут включить вход с телефона?
 

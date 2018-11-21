@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 10/25/2018
 ms.author: iainfou
-ms.openlocfilehash: c3256b2b1e8be0e883d0f7b47e66ab1fee95b042
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 5f151db9cb2cf7a5ef242f777cd2ad1820c856a8
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50138175"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636696"
 ---
 # <a name="enable-and-review-kubernetes-master-node-logs-in-azure-kubernetes-service-aks"></a>Включение и просмотр журналов главного узла Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -116,7 +116,7 @@ AzureDiagnostics
 | *resourceId*             | Ресурс Azure, с помощью которого был создан журнал |
 | *time*                   | Метка времени — время передачи журнала |
 | *category*               | Имя контейнера или компонента, генерирующего журнал |
-| *operationName*          | Всегда *Microsoft.ContainerService/managedClusters/diagnositicLogs/Read* |
+| *operationName*          | Всегда *Служба контейнеров Майкрософт, управляемые кластеры, журналы диагностики, чтение* |
 | *properties.log*         | Полный текст журнала из компонента |
 | *properties.stream*      | *stderr* или *stdout* |
 | *properties.pod*         | Имя модуля pod, из которого получен журнал |

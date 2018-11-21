@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 10/15/2018
 ms.author: yijenj
-ms.openlocfilehash: 7937f3d0db414d7a9cc2adaefd4324d49d734fcb
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 3a1c5341e391c8be1af42eea940fbf147b88e7c8
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51280679"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51685707"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -59,12 +59,13 @@ ms.locfileid: "51280679"
 1. [Проверка GUID в развертывании шаблона](#verify-the-guid-deployment).
 
 ### <a name="sample-resource-manager-template-code"></a>Пример кода шаблона Resource Manager
-Обязательно измените данные в примере кода ниже своими входными данными, когда будете добавлять его в основной файл шаблона.
+
+Чтобы включить отслеживание ресурсов для шаблона, необходимо добавить следующие дополнительные ресурсы в разделе ресурсов. Обязательно измените данные в примере кода ниже своими входными данными, когда будете добавлять его в основной файл шаблона.
 Этот ресурс должен быть добавлен только в файл **mainTemplate.json** или **azuredeploy.json**, но не во вложенные или связанные шаблоны.
 ```
 // Make sure to modify this sample code with your own inputs where applicable
 
-{ // add this resource to the mainTemplate.json (do not add the entire file)
+{ // add this resource to the resources section in the mainTemplate.json (do not add the entire file)
     "apiVersion": "2018-02-01",
     "name": "pid-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", // use your generated GUID here
     "type": "Microsoft.Resources/deployments",
@@ -126,14 +127,14 @@ export AZURE_HTTP_USER_AGENT='pid-eb7927c8-dd66-43e1-b0cf-c346a422063'
 > [!Note]
 > Настоятельно рекомендуется использовать [формы генератора GUID хранилища Azure](https://aka.ms/StoragePartners) для создания уникального идентификатора. Дополнительные сведения см. в разделе [Часто задаваемые вопросы](#faq).
 
-Создайте уникальный GUID для каждого сочетания предложений и каналов распространения. Если вы развертываете с помощью шаблона два решения, каждое из которых доступно в Azure Marketplace и GitHub, вам потребуется четыре идентификатора GUID.
+Рекомендуется создавать уникальные GUID для всех предложений и каналов распределения каждого продукта. Можно использовать один идентификатор GUID для нескольких каналов распределения, если дробить отчетность нежелательно. 
 
-*   для предложения А в Azure Marketplace; 
-*   для предложения А на сайте GitHub;
-*   для предложения Б в Azure Marketplace; 
-*   для предложения Б на сайте GitHub.
+Если развернутый с помощью шаблона продукт доступен в Azure Marketplace и на сайте GitHub, можно создать и зарегистрировать два уникальных идентификатора GUID:
 
-Отчеты группируются по сочетанию идентификатора партнера Майкрософт и идентификатора GUID. 
+*   продукт А в Azure Marketplace; 
+*   продукт А на сайте GitHub.
+
+Отчеты подготавливаются по идентификатору партнера Майкрософт и идентификатору GUID. 
 
 Кроме того, идентификаторы GUID можно отслеживать на более детальном уровне, например на уровне номеров SKU, которые обозначают разные варианты одного предложения.
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/14/2016
 ms.author: stefsch
-ms.openlocfilehash: fcb9fa9004039205fa49f63c50d5907a8029a079
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 7873192e4a66cd2faed5a1a1255377139d33d750
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32153224"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51616067"
 ---
 # <a name="network-configuration-details-for-app-service-environments-with-expressroute"></a>Сведения о конфигурации сети для сред службы приложений с ExpressRoute
 ## <a name="overview"></a>Обзор
@@ -93,7 +93,7 @@ ms.locfileid: "32153224"
 
     Get-AzureRouteTable -Name 'DirectInternetRouteTable' | Set-AzureRoute -RouteName 'Direct Internet Range 0' -AddressPrefix 0.0.0.0/0 -NextHopType Internet
 
-Помните, что 0.0.0.0/0 — это широкий диапазон адресов, поэтому он будет замещен более узкими диапазонами адресов, объявленными в ExpressRoute.  Повторим уже упоминавшуюся рекомендацию: UDR с маршрутом 0.0.0.0/0 следует использовать вместе с конфигурацией ExressRoute, которая также объявляет лишь 0.0.0.0/0. 
+Помните, что 0.0.0.0/0 — это широкий диапазон адресов, поэтому он будет замещен более узкими диапазонами адресов, объявленными в ExpressRoute.  Повторим уже упоминавшуюся рекомендацию: UDR с маршрутом 0.0.0.0/0 следует использовать вместе с конфигурацией ExpressRoute, которая также объявляет лишь 0.0.0.0/0. 
 
 В качестве альтернативы можно загрузить полный и обновленный список диапазонов CIDR, используемый Azure.  XML-файл, содержащий все диапазоны IP-адресов Azure, доступен в [Центре загрузки Майкрософт][DownloadCenterAddressRanges].  
 

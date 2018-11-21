@@ -10,12 +10,12 @@ ms.component: manage
 ms.date: 08/22/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 9b2c5fa38d0ad21a374d3e5acee8534aeb9c0384
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: fe1f2e026aaa4260d34b9b1cb96064053af1c3c7
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45580554"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51568018"
 ---
 # <a name="optimize-performance-by-upgrading-sql-data-warehouse"></a>Оптимизация производительности путем обновления хранилища данных SQL
 Обновление хранилища данных SQL Azure до последнего поколения аппаратного обеспечения и архитектуры службы хранилища Azure.
@@ -45,13 +45,17 @@ ms.locfileid: "45580554"
 
 ## <a name="start-the-upgrade"></a>Начало обновления
 
-1. На портале Azure перейдите к хранилищу данных 1-го поколения "Оптимизировано для вычислений", а затем щелкните **Upgrade to Gen2**: ![Upgrade_1](./media/sql-data-warehouse-upgrade-to-latest-generation/Upgrade_to_Gen2_1.png) (Обновить до поколения 2: обновить 1).
+1. На портале Azure перейдите к хранилищу данных 1-го поколения "Оптимизировано для вычислений", а затем на вкладке "Задачи" щелкните карту **Повысить до Gen2**: ![Upgrade_1](./media/sql-data-warehouse-upgrade-to-latest-generation/Upgrade_to_Gen2_1.png)
+    
+> [!NOTE]
+> Если карта **Повысить до Gen2** не отображается на вкладке "Задачи", для типа вашей подписки действуют ограничения в текущем регионе. [Отправьте запрос в службу поддержки](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-get-started-create-support-ticket) на добавление вашей подписки в список разрешений.
 
 2. На уровне 1-го поколения "Оптимизировано для вычислений" **выберите предлагаемый по умолчанию уровень производительности** для хранилища данных на основе текущего уровня производительности, используя представленное ниже сопоставление.
     
    | Уровень 1-го поколения "Оптимизировано для вычислений" | Уровень 2-го поколения "Оптимизировано для вычислений" |
    | :----------------------: | :-------------------: |
-   |      DW100–DW1000      |        DW1000c        |
+   |      DW100–DW600       |        DW500c         |
+   |          DW1000          |        DW1000c        |
    |          DW1200          |        DW1500c        |
    |          DW1500          |        DW1500c        |
    |          DW2000          |        DW2000c        |

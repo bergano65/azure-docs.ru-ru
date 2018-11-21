@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/29/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 37492e22b5615ae0b266bc8b2bb6d8f039fdaabe
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 6b2a6d84fffecbe30bd2a47c795ee6143458ee2b
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336861"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51345006"
 ---
 # <a name="azure-active-directory-b2c-modify-sign-up-to-add-new-claims-and-configure-user-input"></a>Azure Active Directory B2C. Изменение регистрации для добавления новых утверждений и настройки входных данных пользователя
 
@@ -277,8 +277,8 @@ ms.locfileid: "43336861"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Добавьте новое утверждение в рабочий процесс входа с использованием учетных записей социальных сетей, изменив технические профили, указанные ниже. Они используются при входе с использованием учетной записи социальной сети или федеративной учетной записи для записи и чтения данных пользователя с применением alternativeSecurityId в качестве указателя.
-```xml
-<TechnicalProfile Id="AAD-UserWriteUsingAlternativeSecurityId">
-<TechnicalProfile Id="AAD-UserReadUsingAlternativeSecurityId">
-```
+Если ваша политика поддерживает учетные записи социальных сетей, добавьте новое утверждение в рабочий процесс входа с использованием этих учетных записей, изменив технические профили, указанные ниже. Эти утверждения используются при входе с использованием учетной записи социальной сети для сбора и записи данных, полученных у пользователя.
+
+1. Найдите технический профиль **SelfAsserted-Social** и добавьте исходящее утверждение. Порядок утверждений в **OutputClaims** управляет порядком отображения утверждений на экране в Azure AD B2C. Например, `<OutputClaim ClaimTypeReferenceId="city" />`.
+2. Найдите технические профиль **AAD-UserWriteUsingAlternativeSecurityId** и добавьте сохраненное утверждение. Например, `<PersistedClaim ClaimTypeReferenceId="city" />`.
+3. Найдите технические профиль **AAD-UserReadUsingAlternativeSecurityId** и добавьте исходящее утверждение. Например, `<OutputClaim ClaimTypeReferenceId="city" />`.

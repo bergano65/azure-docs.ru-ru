@@ -15,19 +15,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2018
 ms.author: deguhath
-ms.openlocfilehash: fc4b2d0beef1c91cd937ba901974796441657441
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 8c4946ebef8d17d2016d482010768207d5e859ff
+ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51234771"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51300954"
 ---
 # <a name="vehicle-telemetry-analytics-solution-playbook-deep-dive-into-the-solution"></a>Сборник тренировочных заданий по решению для аналитики телеметрии автомобиля. Подробный обзор решения
-В этом меню содержатся ссылки на разделы сборника тренировочных заданий: 
 
-[!INCLUDE [cap-vehicle-telemetry-playbook-selector](../../../includes/cap-vehicle-telemetry-playbook-selector.md)]
+Эта статья детализирует каждый из этапов, описанных в архитектуре решения. с инструкциями и ссылками для настройки. 
 
-В этом документе детально рассматривается каждый этап, входящий в архитектуру решения, с инструкциями и ссылками для настройки. 
+Сводное описание этого решения см. в статье [Обзор решения для анализа данных телеметрии, полученных с автомобиля](cortana-analytics-playbook-vehicle-telemetry.md).
+
 
 ## <a name="data-sources"></a>Источники данных
 Это решение предусматривает использование двух разных источников данных:
@@ -675,3 +675,7 @@ Power BI предоставляет для этого решения расши
 * [Перемещение данных с помощью действия копирования](../../data-factory/copy-activity-overview.md)
 * [Использование настраиваемых действий в конвейере фабрики данных Azure](../../data-factory/transform-data-using-dotnet-custom-activity.md)
 * [Документация по Машинному обучению Azure (предварительная версия)](https://go.microsoft.com/fwlink/?LinkId=717077) 
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Сведения о настройке отчетов и панелей мониторинга Power BI для этого решения см. в статье [Инструкции по настройке панели мониторинга Power BI шаблона решения для аналитики телеметрии автомобилей](cortana-analytics-playbook-vehicle-telemetry-powerbi.md).

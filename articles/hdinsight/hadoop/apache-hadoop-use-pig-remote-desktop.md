@@ -1,6 +1,6 @@
 ---
-title: Использование Hadoop Pig и удаленного рабочего стола в HDInsight в Azure
-description: Узнайте, использовать команду Pig для выполнения операторов Pig Latin через подключение к удаленному рабочему столу, установленное с кластером Hadoop под управлением Windows в HDInsight.
+title: Использование Apache Pig и удаленного рабочего стола в HDInsight в Azure
+description: Узнайте как, использовать команду Pig для выполнения операторов Apache Pig Latin через подключение к удаленному рабочему столу, установленное с кластером Apache Hadoop для Windows в HDInsight.
 services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -9,17 +9,17 @@ ms.topic: conceptual
 ms.date: 01/17/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3a7dff2c44b7cc8ccd921d2371666cb19acffbb8
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 9ab3c5399263e301760b7822488fe00145149d2a
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51007235"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51633348"
 ---
-# <a name="run-pig-jobs-from-a-remote-desktop-connection"></a>Выполнение заданий Pig через подключение к удаленному рабочему столу
+# <a name="run-apache-pig-jobs-from-a-remote-desktop-connection"></a>Выполнение заданий Apache Pig через подключение к удаленному рабочему столу
 [!INCLUDE [pig-selector](../../../includes/hdinsight-selector-use-pig.md)]
 
-Этот документ содержит пошаговое руководство по использованию команды Pig для выполнения операторов Pig Latin через подключение к удаленному рабочему столу, установленное с кластером HDInsight под управлением Windows. Pig Latin позволяет создавать приложения MapReduce, описывая преобразования данных, а не функции сопоставления и приведения.
+Этот документ содержит пошаговые инструкции по использованию команды Apache Pig для выполнения операторов Pig Latin через подключение к удаленному рабочему столу, установленное с кластером HDInsight для Windows. Pig Latin позволяет создавать приложения MapReduce, описывая преобразования данных, а не функции сопоставления и приведения.
 
 > [!IMPORTANT]
 > Удаленный рабочий стол доступен только в кластерах HDInsight под управлением операционной системы Windows. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).

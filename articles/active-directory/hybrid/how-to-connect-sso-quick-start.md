@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/21/2018
+ms.date: 11/14/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: c16da55540faaf165faa592c3565b317a8eab922
-ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
+ms.openlocfilehash: 6d6b8d2bddcd3ac622a2a5f51ebe78cbecc29c29
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50914096"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51687339"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quick-start"></a>Простой единый вход Azure Active Directory — быстрый запуск
 
@@ -91,7 +91,7 @@ ms.locfileid: "50914096"
 ![Портал Azure: область "Azure AD Connect"](./media/how-to-connect-sso-quick-start/sso10.png)
 
 >[!IMPORTANT]
-> При использовании функции простого единого входа в каждом лесу AD в локальной службе Active Directory (AD) создается учетная запись компьютера с именем `AZUREADSSOACC` (представляет Azure AD). Для работы функции требуется учетная запись компьютера. Переместите учетную запись `AZUREADSSOACC` компьютера в подразделение (OU), где хранятся другие учетные записи компьютеров, чтобы управлять им таким же образом и избежать удаления.
+> При использовании функции простого единого входа в каждом лесу AD в локальной службе Active Directory (AD) создается учетная запись компьютера с именем `AZUREADSSOACC` (представляет Azure AD). Для работы функции требуется учетная запись компьютера. Если в своей локальной среде вы используете архитектуру Pass-the-Hash и архитектуру с защитой от кражи учетных данных, убедитесь, что учетная запись компьютера `AZUREADSSOACC` не помещена в контейнер карантина. Внесите соответствующие изменения, чтобы создать учетную запись компьютера в контейнере "Компьютеры". Когда в мастере Azure AD Connect будет включен простой единый вход, переместите учетную запись компьютера `AZUREADSSOACC` в подразделение (OU), где выполняется управление другими учетными записями компьютеров, чтобы избежать случайного удаления.
 
 ## <a name="step-3-roll-out-the-feature"></a>Шаг 3. Развертывание компонента
 

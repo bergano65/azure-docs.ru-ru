@@ -1,6 +1,6 @@
 ---
 title: Подключение к Azure HDInsight с помощью средств Data Lake для Visual Studio
-description: Узнайте, как установить и использовать средства Data Lake для Visual Studio, чтобы подключиться к кластерам Hadoop в Azure HDInsight, а затем выполнить запросы Hive.
+description: Узнайте, как установить и использовать средства Data Lake для Visual Studio, чтобы подключиться к кластерам Apache Hadoop в Azure HDInsight, а затем выполнить запросы Hive.
 keywords: средства hadoop, запрос hive, visual studio, visual studio hadoop
 services: hdinsight
 author: hrasheed-msft
@@ -10,16 +10,16 @@ ms.service: hdinsight
 ms.custom: hdinsightactive, hdiseo17may2017
 ms.topic: conceptual
 ms.date: 05/16/2018
-ms.openlocfilehash: 281c3744dc311fdced20f810e0a9f2b233076472
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 670de3f61047bcc8b168863f5981e41084225ec4
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51247149"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51634674"
 ---
-# <a name="use-data-lake-tools-for-visual-studio-to-connect-to-azure-hdinsight-and-run-hive-queries"></a>Подключение к Azure HDInsight и выполнение запросов Hive с помощью средств Data Lake для Visual Studio
+# <a name="use-data-lake-tools-for-visual-studio-to-connect-to-azure-hdinsight-and-run-apache-hive-queries"></a>Подключение к Azure HDInsight и выполнение запросов Apache Hive с помощью средств Data Lake для Visual Studio
 
-В этой статье описано, как использовать средства Data Lake для Visual Studio (они также называются средства Azure Data Lake и Stream Analytics для Visual Studio), чтобы подключиться к кластерам Hadoop в [Azure HDInsight](../hdinsight-hadoop-introduction.md) и отправлять запросы Hive. 
+В этой статье описано, как использовать средства Data Lake для Visual Studio (они также называются средства Azure Data Lake и Stream Analytics для Visual Studio), чтобы подключиться к кластерам Apache Hadoop в [Azure HDInsight](../hdinsight-hadoop-introduction.md) и отправлять запросы Hive. 
 
 Дополнительные сведения об использовании HDInsight см. в статьях [Введение в экосистему Hadoop в Azure HDInsight](../hdinsight-hadoop-introduction.md) и [Руководство по Hadoop. Приступая к работе с Hadoop в HDInsight](apache-hadoop-linux-tutorial-get-started.md). 
 

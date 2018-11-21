@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: pbutlerm
-ms.openlocfilehash: a216f3ddd89ad92dbbae617c51d5fc9c478c0c03
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 205fd258ed397f5a9588773549368fc3c4aec058
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49433276"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51684823"
 ---
 # <a name="iot-edge-module-skus-tab"></a>Вкладка номеров SKU для модуля IoT Edge
 
@@ -90,7 +90,7 @@ ms.locfileid: "49433276"
 
 ## <a name="sku-content"></a>Содержимое номера SKU
 
-В разделе образов для модуля Edge укажите сведения, которые нам нужны для передачи модуля IoT Edge.
+В разделе **Образов для модуля Edge** укажите сведения, которые нам нужны для передачи модуля IoT Edge.
 
 Предоставьте нам доступ к своему [Реестру контейнеров Azure](https://azure.microsoft.com/services/container-registry/), который содержит образ модуля IoT Edge, чтобы мы могли передать и сертифицировать его. После публикации модуля IoT Edge он будет копироваться и распространяться через общедоступный реестр контейнеров, размещенный в Azure Marketplace.
 

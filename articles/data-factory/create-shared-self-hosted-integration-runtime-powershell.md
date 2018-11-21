@@ -1,6 +1,6 @@
 ---
 title: Создание общей локальной среды выполнения интеграции в Фабрике данных Azure с помощью PowerShell | Документация Майкрософт
-description: Узнайте, как в Фабрике данных Azure создать общую локальную среду выполнения интеграции, обеспечивающую доступ к среде выполнения интеграции другим фабрикам данных.
+description: Узнайте, как создать общую локальную среду выполнения интеграции в Фабрике данных Azure, обеспечивающую нескольким фабрикам данных доступ к среде выполнения интеграции.
 services: data-factory
 documentationcenter: ''
 author: nabhishek
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: abnarain
-ms.openlocfilehash: d7f3fbcb3235c8c620876e68a62f3e491770779d
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: b32ea4293daa9206c6b0da4bdee777677c5d340d
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50252036"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51685520"
 ---
 # <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory-with-powershell"></a>Создание общей локальной среды выполнения интеграции в Фабрике данных Azure с помощью PowerShell
 
-В этом пошаговом руководстве показано, как создать общую локальную среду выполнения интеграции в Фабрике данных Azure с помощью Azure PowerShell. Общую локальную среду выполнения интеграции затем можно использовать в другой фабрике данных. Вот какие шаги выполняются в этом руководстве: 
+В этом пошаговом руководстве показано, как создать общую локальную среду выполнения интеграции в Фабрике данных Azure с помощью Azure PowerShell. Общую локальную среду выполнения интеграции затем можно использовать в другой фабрике данных. При работе с этим руководством вы выполните следующие задачи: 
 
 1. Создали фабрику данных. 
 1. Создайте локальную среду выполнения интеграции.
@@ -33,18 +33,16 @@ ms.locfileid: "50252036"
 
 - **Подписка Azure**. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. 
 
-- **Azure PowerShell**. Выполните инструкции из руководства по [установке Azure PowerShell в Windows](/powershell/azure/install-azurerm-ps). С помощью PowerShell выполните скрипт, чтобы создать локальную среду выполнения интеграции, которую можно использовать совместно с другими фабриками данных. 
+- **Azure PowerShell**. Выполните инструкции из руководства [Install Azure PowerShell on Windows with PowerShellGet](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps?view=azurermps-6.11.0) (Установка Azure PowerShell в Windows c помощью PowerShellGet). С помощью PowerShell выполните скрипт, чтобы создать локальную среду выполнения интеграции, которую можно использовать совместно с другими фабриками данных. 
 
-> [!NOTE]
+> [!NOTE]  
 > Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=data-factory).
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
-1. Запустите интегрированную среду сценариев Windows PowerShell.
+1. Откройте интегрированную среду сценариев (ISE) Windows PowerShell.
 
-1. Создайте переменные.
-
-    Скопируйте и вставьте следующий скрипт и замените переменные (SubscriptionName, ResourceGroupName и т.д.) соответствующими значениями. 
+1. Создайте переменные. Скопируйте и вставьте следующий скрипт. Замените переменные, такие как **SubscriptionName** и **ResourceGroupName**, фактическими значениями: 
 
     ```powershell
     # If input contains a PSH special character, e.g. "$", precede it with the escape character "`" like "`$". 
@@ -65,20 +63,19 @@ ms.locfileid: "50252036"
     $LinkedIntegrationRuntimeDescription = "[Description for Linked Integration Runtime]"
     ```
 
-1. Войдите в систему и выберите подписку.
-
-    Добавьте следующий код в скрипт, чтобы войти и выбрать подписку Azure.
+1. Войдите в систему и выберите подписку. Добавьте следующий код в скрипт, чтобы войти и выбрать подписку Azure.
 
     ```powershell
     Connect-AzureRmAccount
     Select-AzureRmSubscription -SubscriptionName $SubscriptionName
     ```
 
-1. Создайте группу ресурсов и Фабрику данных.
+1. Создайте группу ресурсов и фабрику данных.
 
-    *(Этот шаг не является обязательным. Если у вас уже есть фабрика данных, пропустите этот шаг.)* 
+    > [!NOTE]  
+    > Этот шаг не является обязательным. Если у вас уже есть фабрика данных, пропустите этот шаг. 
 
-    Создайте [группу ресурсов Azure ](../azure-resource-manager/resource-group-overview.md) с помощью команды [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении WestEurope. 
+    Создайте [группу ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с помощью команды [New-AzureRmResourceGroup](https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/new-azurermresourcegroup?view=azurermps-6.11.0). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении WestEurope. 
 
     ```powershell
     New-AzureRmResourceGroup -Location $DataFactoryLocation -Name $ResourceGroupName
@@ -94,7 +91,8 @@ ms.locfileid: "50252036"
 
 ## <a name="create-a-self-hosted-integration-runtime"></a>Создание локальной среды выполнения интеграции
 
-*(Этот шаг не является обязательным. Если у вас уже есть локальная среда выполнения интеграции, которую вы хотите использовать совместно с другими фабриками данных, пропустите этот шаг.)*
+> [!NOTE]  
+> Этот шаг не является обязательным. Если у вас уже есть локальная среда выполнения интеграции, которую вы хотите использовать совместно с другими фабриками данных, пропустите этот шаг.
 
 Выполните следующую команду, чтобы создать локальную среду выполнения интеграции.
 
@@ -132,7 +130,8 @@ Get-AzureRmDataFactoryV2IntegrationRuntimeKey `
 
 ### <a name="create-another-data-factory"></a>Создание другой фабрикой данных
 
-*(Этот шаг не является обязательным. Если у вас уже есть фабрика данных, которой вы хотите предоставить общий доступ, пропустите этот шаг.)*
+> [!NOTE]  
+> Этот шаг не является обязательным. Если у вас уже есть фабрика данных, которой вы хотите предоставить общий доступ, пропустите этот шаг.
 
 ```powershell
 $factory = Set-AzureRmDataFactoryV2 -ResourceGroupName $ResourceGroupName `
@@ -143,7 +142,7 @@ $factory = Set-AzureRmDataFactoryV2 -ResourceGroupName $ResourceGroupName `
 
 Предоставьте разрешение фабрике данных, которой требуется доступ к созданной и зарегистрированной локальной среде выполнения интеграции.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Не пропускайте этот шаг!
 
 ```powershell
@@ -171,7 +170,7 @@ Set-AzureRmDataFactoryV2IntegrationRuntime `
 
 ## <a name="revoke-integration-runtime-sharing-from-a-data-factory"></a>Отмена для фабрики данных общего доступа к среде выполнения интеграции
 
-Выполните следующую команду, чтобы отменить для фабрики данных доступ к общей среде выполнения интеграции.
+Выполните следующую команду, чтобы отменить для фабрики данных доступ к общей среде выполнения интеграции:
 
 ```powershell
 Remove-AzureRMRoleAssignment `
@@ -180,7 +179,7 @@ Remove-AzureRMRoleAssignment `
     -Scope $SharedIR.Id
 ```
 
-Выполните следующую команду, чтобы удалить существующую связанную среду выполнения интеграции.
+Выполните следующую команду для общей среды выполнения интеграции, чтобы удалить имеющуюся связанную среду выполнения интеграции:
 
 ```powershell
 Remove-AzureRmDataFactoryV2IntegrationRuntime `
@@ -193,6 +192,6 @@ Remove-AzureRmDataFactoryV2IntegrationRuntime `
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- См. дополнительные сведения о [среде выполнения интеграции в Фабрике данных Azure](concepts-integration-runtime.md).
+- Ознакомьтесь с [основными понятиями среды выполнения интеграции в Фабрике данных Azure](https://docs.microsoft.com/en-us/azure/data-factory/concepts-integration-runtime).
 
-- См. дополнительные сведения о [создании и настройке локальной среды выполнения интеграции на портале Azure](create-self-hosted-integration-runtime.md).
+- Узнайте, как [создать локальную среду выполнения интеграции на портале Azure](https://docs.microsoft.com/en-us/azure/data-factory/create-self-hosted-integration-runtime).

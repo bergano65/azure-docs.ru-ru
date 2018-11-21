@@ -15,18 +15,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
 ms.author: garye
-ms.openlocfilehash: c1ca9c45a7bd070ba0dbcee3b428f986ebac47d3
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: d64395314f73c5d359b30c15ef11bfd3078e068f
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37062103"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51346309"
 ---
 # <a name="discover-industry-specific-solutions-in-the-azure-ai-gallery"></a>Поиск решений для определенных отраслей в коллекции решений ИИ Azure
-[!INCLUDE [machine-learning-gallery-item-selector](../../../includes/machine-learning-gallery-item-selector.md)]
 
-## <a name="industry-specific-cortana-intelligence-solutions"></a>Решения Cortana Intelligence для определенных отраслей
-Раздел коллекции **[Industries](https://gallery.azure.ai/industries)** (Отрасли) объединяет различные ресурсы, относящиеся к следующим отраслям.
+Раздел**[Industries](https://gallery.azure.ai/industries)** (Отрасли) [Коллекция решений ИИ Azure](http://gallery.cortanaintelligence.com) объединяет различные ресурсы, относящиеся к следующим отраслям.
 
 * [Розничная торговля](https://gallery.azure.ai/industries/retail) — поиск решений для розничной торговли, таких как прогнозирование продаж, предсказание оттока клиентов и разработка моделей ценообразования.
 * [Производство](https://gallery.azure.ai/industries/manufacturing) — поиск производственных решений, таких как планирование технического обслуживания оборудования и прогнозирование стоимости энергии.

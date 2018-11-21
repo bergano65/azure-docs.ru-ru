@@ -15,18 +15,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
-ms.openlocfilehash: 3ca7897455f763237533aa15680fbfcf805cdaf9
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 4ef653a603bccc001a5bbbb4c2af97e5ca0b20a8
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34834732"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51344439"
 ---
 # <a name="discover-and-share-tutorials-in-azure-ai-gallery"></a>Поиск и публикация руководств в коллекции решений ИИ Azure
-[!INCLUDE [machine-learning-gallery-item-selector](../../../includes/machine-learning-gallery-item-selector.md)]
 
-## <a name="tutorials"></a>Учебники
-В коллекции решений ИИ Azure доступен ряд [руководств](https://gallery.cortanaintelligence.com/tutorials), в которых описаны технологии и основные понятия машинного обучения. В них также описываются передовые методы решения различных задач машинного обучения.
+В [Коллекции решений ИИ Azure](http://gallery.cortanaintelligence.com) доступен ряд [руководств](https://gallery.cortanaintelligence.com/tutorials), в которых описаны технологии и основные понятия машинного обучения. В них также описываются передовые методы решения различных задач машинного обучения.
 
 ## <a name="discover"></a>Поиск
 Для поиска руководств [в коллекции](http://gallery.cortanaintelligence.com) в разделе **More** (Дополнительно) выберите **Tutorials** (Руководства).

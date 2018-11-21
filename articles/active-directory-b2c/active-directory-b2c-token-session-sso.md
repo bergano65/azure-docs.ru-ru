@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/16/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 0058ce8316fa8202cf53eaa1048a44b77efdecb5
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 15064e90690064e67b296e7a46749f27773c0814
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51012451"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636906"
 ---
 # <a name="token-session-and-single-sign-on-configuration-in-azure-active-directory-b2c"></a>Конфигурация токена, сеанса и единого входа в Azure Active Directory B2C
 
@@ -26,9 +26,9 @@ ms.locfileid: "51012451"
 - Форматы важных утверждений в маркерах безопасности, создаваемых Azure AD B2C.
 - Поведение единого входа (SSO) в нескольких приложениях и политиках в клиенте Azure AD B2C.
 
-Для встроенных политик можно использовать эту функцию в каталоге Azure AD B2C следующим образом:
+Эту функцию можно использовать с любым типом политики, а не только с политиками входа или регистрации, как показано в этом примере. Для встроенных политик можно использовать эту функцию в каталоге Azure AD B2C следующим образом:
 
-1. Щелкните **Sign-up or sign-in policies**(Политики регистрации или входа в систему). *Примечание. Эту функцию можно использовать с любым типом политики, а не только с **политиками входа или регистрации*\*\*.
+1. Щелкните **Sign-up or sign-in policies**(Политики регистрации или входа в систему).
 2. Откройте политику, щелкнув ее. Например, щелкните **B2C_1_SiUpIn**.
 3. Щелкните **Изменить** в верхней части меню.
 4. Щелкните **Конфигурация маркера, сеанса и единого входа**.

@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/15/2017
 ms.author: rafats
-ms.openlocfilehash: e0cbf806b7999a56ccdf2826a735238fe8130bf5
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 6e14ce19d691cc60cb65353bdb025dfa741e1eca
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50240585"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636532"
 ---
 # <a name="azure-cosmos-db-database-security"></a>Безопасность базы данных в Azure Cosmos DB
 
@@ -80,7 +80,7 @@ ms.locfileid: "50240585"
 |Шифрование при хранении|Все данные, хранимые в Azure Cosmos DB, хранятся в зашифрованном виде. Дополнительные сведения см. в статье [Шифрование неактивных данных базы данных в Azure Cosmos DB](.\database-encryption-at-rest.md).|
 |Установка исправлений на серверы|Являясь управляемой базой данных, Azure Cosmos DB избавляет от необходимости управлять серверами и устанавливать на них исправления. Это делается автоматически.|
 |Административные учетные записи с надежными паролями|Пожалуй, даже не нужно упоминать об этом требовании, но, в отличие от некоторых наших конкурентов, в Azure Cosmos DB не может быть учетной записи администратора без пароля.<br><br> Для обеспечения безопасности в службу по умолчанию интегрированы функции SSL и аутентификации на основе секрета HMAC.|
-|Сертификаты безопасности и защиты данных|Последний список данных о сертификатах см. на сайте с общими сведениями о соответствии Azure нормативным требованиям [https://www.microsoft.com/en-us/trustcenter/compliance/complianceofferings] или в последней версии документа о соответствии Azure нормативным требованиям [https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942] со всеми сертификатами (выполните поиск по слову Cosmos). Больше сведений по этой теме приведено в записи за 25 апреля 2018 г. "Azure #CosmosDB: Secure, private, compliant" (Azure #CosmosDB: защита, конфиденциальность и соответствие стандартам) [https://azure.microsoft.com/blog/azure-cosmosdb-secure-private-compliant/]. В ней приводятся сертификаты SOC 1 и 2 типа 2, HITRUST, PCI DSS (уровень 1), ISO 27001, HIPPAA, FedRAMP High и многие другие.
+|Сертификаты безопасности и защиты данных|Актуальный список данных о сертификатах см. на [сайте с общими сведениями о соответствии Azure нормативным требованиям](https://www.microsoft.com/en-us/trustcenter/compliance/complianceofferings) или в последней версии [документа о соответствии Azure нормативным требованиям](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) со всеми сертификатами (выполните поиск по слову Cosmos). Больше сведений по этой теме приведено в записи за 25 апреля 2018 г. об [обеспечении защиты, конфиденциальности и соответствия стандартам Azure CosmosDB](https://azure.microsoft.com/blog/azure-cosmosdb-secure-private-compliant/) с сертификатами SOC 1 и 2 типа 2, HITRUST, PCI DSS (уровень 1), ISO 27001, HIPPAA, FedRAMP High и многими другими.
 
 На следующем снимке экрана показана интеграция Active Directory (RBAC) с помощью управления доступом (IAM) на портале Azure: ![управления доступом (IAM) на портале Azure, демонстрация безопасности базы данных](./media/database-security/nosql-database-security-identity-access-management-iam-rbac.png)
 

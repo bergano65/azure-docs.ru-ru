@@ -1,5 +1,5 @@
 ---
-title: 'Отладка Hadoop в среде HDInsight: просмотр журналов и интерпретация сообщений об ошибках в Azure '
+title: 'Отладка Apache Hadoop в среде HDInsight. Просмотр журналов и интерпретация сообщений об ошибках в Azure '
 description: Познакомьтесь с сообщениями об ошибках, которые могут поступать во время администрирования HDInsight с помощью PowerShell, а также с мерами, которые следует предпринять для восстановления нормальной работоспособности.
 services: hdinsight
 ms.reviewer: jasonh
@@ -9,16 +9,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
-ms.openlocfilehash: 694129fa39a84deac118c35da52a0617fe805d6c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 1589a5c1cab5a37322249762c840620d9ba4fc7e
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51261155"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51634640"
 ---
 # <a name="analyze-hadoop-logs"></a>Анализ журналов Hadoop
 
-У каждого кластера Hadoop в Azure HDInsight есть учетная запись хранения Azure, которая используется в качестве файловой системы по умолчанию. Эта учетная запись называется учетной записью хранения по умолчанию. Для хранения журналов кластер использует хранилище таблиц Azure и хранилище BLOB-объектов в учетной записи хранения по умолчанию.  Для получения учетной записи хранения по умолчанию для кластера обратитесь к разделу [Управление кластерами Hadoop в HDInsight](../hdinsight-administer-use-management-portal.md#find-the-default-storage-account). Журналы сохраняются в учетной записи хранения даже после удаления кластера.
+У каждого кластера Apache Hadoop в Azure HDInsight есть учетная запись хранения Azure, которая используется в качестве файловой системы по умолчанию. Эта учетная запись называется учетной записью хранения по умолчанию. Для хранения журналов кластер использует хранилище таблиц Azure и хранилище BLOB-объектов в учетной записи хранения по умолчанию.  Для получения учетной записи хранения по умолчанию для кластера обратитесь к разделу [Управление кластерами Hadoop в HDInsight](../hdinsight-administer-use-management-portal.md#find-the-default-storage-account). Журналы сохраняются в учетной записи хранения даже после удаления кластера.
 
 ## <a name="logs-written-to-azure-tables"></a>Журналы, записываемые в таблицы Azure
 
@@ -131,7 +131,7 @@ Power Query можно установить со страницы скачива
 
 Некоторые из этих сообщений об ошибке также могут отображаться на портале Azure, когда он используется для управления кластерами HDinsight. Существуют и другие сообщения об ошибках, которые менее подробны в связи с ограниченными возможностями по устранению таких ошибок в данном контексте. В контекстах, где подобные действия осуществимы, выводятся другие сообщения об ошибках. 
 
-### <a id="AtleastOneSqlMetastoreMustBeProvided"></a>AtleastOneSqlMetastoreMustBeProvided
+### <a id="AtLeastOneSqlMetastoreMustBeProvided"></a>AtLeastOneSqlMetastoreMustBeProvided
 * **Описание.** Предоставьте сведения о Базе данных SQL Azure по меньшей мере для одного компонента, чтобы использовать настраиваемые параметры для хранилищ метаданных Hive и Oozie.
 * **Устранение.** Пользователь должен указать допустимое хранилище метаданных SQL Azure и повторить запрос.  
 

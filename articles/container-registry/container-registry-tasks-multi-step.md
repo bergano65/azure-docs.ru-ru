@@ -5,14 +5,14 @@ services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: article
-ms.date: 09/24/2018
+ms.date: 10/29/2018
 ms.author: danlep
-ms.openlocfilehash: cdabafc4f70b08076820e7e0d39300b3eb0bc1e7
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: 4492e05339c72c371eb2c935d0397b469440c4f6
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48856724"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51632698"
 ---
 # <a name="run-multi-step-build-test-and-patch-tasks-in-acr-tasks"></a>Выполнение многошаговых задач сборки, тестирования и исправления в службе "Задачи ACR"
 
@@ -53,7 +53,7 @@ ms.locfileid: "48856724"
 * [`push`](container-registry-tasks-reference-yaml.md#push). Отправка созданных образов в реестр контейнеров. Поддерживаются такие закрытые реестры, как Реестр контейнеров Azure, а также общедоступный Центр Docker.
 * [`cmd`](container-registry-tasks-reference-yaml.md#cmd). Выполнение контейнера таким образом, чтобы он мог работать в качестве функции в контексте выполняемой задачи. Вы можете передавать параметры в `[ENTRYPOINT]` контейнера и указать такие свойства, как env, detach, и другие знакомые параметры `docker run`. Тип шага `cmd` включает модульное и функциональное тестирование, а также параллельное выполнение контейнеров.
 
-Многошаговые задачи могут быть простыми, как например сборка и отправка одного образа:
+Следующие фрагменты кода демонстрируют, как объединить эти типы шагов задач. Многошаговая задача может быть такой же простой, как создание единого образа из файла Docker и отправка его в реестр с помощью файла YAML, аналогично этому примеру.
 
 ```yaml
 version: 1.0-preview-1
@@ -62,7 +62,7 @@ steps:
   - push: ["{{.Run.Registry}}/hello-world:{{.Run.ID}}"]
 ```
 
-Они также могут быть более сложными, например, как эта задача, включающая шаги по сборке, тестированию, упаковку и развертывание helm:
+Или она может быть сложной, как это вымышленное многошаговое определение, включающее шаги по сборке и тестированию пакета Helm и его развертыванию (реестр контейнеров и конфигурация репозитория Helm не показаны).
 
 ```yaml
 version: 1.0-preview-1
@@ -84,6 +84,8 @@ steps:
   - cmd: {{.Run.Registry}}/functions/helm package --app-version {{.Run.ID}} -d ./helm ./helm/helloworld/
   - cmd: {{.Run.Registry}}/functions/helm upgrade helloworld ./helm/helloworld/ --reuse-values --set helloworld.image={{.Run.Registry}}/helloworld:{{.Run.ID}}
 ```
+
+Файлы YAML для полного выполнения многошаговых задач и файлы Docker для нескольких сценариев см. в [примерах задач][task-examples].
 
 ## <a name="run-a-sample-task"></a>Выполнение простой задачи
 
@@ -163,6 +165,7 @@ Run ID: yd14 was successful after 19s
 
 * [Справочник по задачам](container-registry-tasks-reference-yaml.md). Типы шагов задач, их свойства и использование.
 * [Примеры задач][task-examples]. Примеры файлов `task.yaml` для нескольких сценариев любой сложности.
+* [Репозиторий команд](https://github.com/AzureCR/cmd). Набор контейнеров и команд для Задач ACR.
 
 <!-- IMAGES -->
 

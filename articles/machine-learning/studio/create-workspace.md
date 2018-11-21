@@ -12,19 +12,16 @@ ms.component: studio
 ms.workload: data-services
 ms.topic: article
 ms.date: 12/07/2017
-ms.openlocfilehash: 94502cbb0946ad1568cf33716480406b17fd57ac
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 19cbb27221bfb95a0900eb7a604e540cb066037e
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34833960"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51345561"
 ---
 # <a name="create-and-share-an-azure-machine-learning-workspace"></a>Создание рабочей области машинного обучения Azure и предоставление к ней общего доступа
-Это меню содержит ссылки на разделы, описывающие настройку различных сред обработки и анализа данных, используемых процессом Cortana Analytics (CAP).
 
-[!INCLUDE [data-science-environment-setup](../../../includes/cap-setup-environments.md)]
-
-Для использования Студии машинного обучения Azure требуется рабочая область машинного обучения. Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
+Для использования Студии машинного обучения Azure требуется рабочая область Студии машинного обучения. Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
 
 [!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
 

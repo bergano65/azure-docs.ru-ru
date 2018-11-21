@@ -1,7 +1,21 @@
-title: Справочник по API. API распознавания лиц titleSuffix: Microsoft Cognitive Services description: Этот справочник по API содержит сведения об API управления данными о людях, API управления данными о группах людей и больших групп людей, API управления списками лиц и большими списками лиц, а также API алгоритмов распознавания лиц.
-services: cognitive-services author: SteveMSFT manager: cgronlun
-
-ms.service: cognitive-services ms.component: face-api ms.topic: reference ms.date: 01.03.2018 ms.author: sbowles
+---
+title: Справочник по API распознавания лиц
+titleSuffix: Azure Cognitive Services
+description: Этот справочник по API содержит сведения об API управления данными о людях, API управления группами людей и большими группами людей, API управления списками лиц и большими списками лиц, а также API алгоритмов распознавания лиц.
+services: cognitive-services
+author: SteveMSFT
+manager: cgronlun
+ms.service: cognitive-services
+ms.component: face-api
+ms.topic: reference
+ms.date: 03/01/2018
+ms.author: sbowles
+ms.openlocfilehash: 283a042bb8ea32f8f6db9bebb211bc2762a3a4c1
+ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51578082"
 ---
 # <a name="api-reference"></a>Справочник по API
 

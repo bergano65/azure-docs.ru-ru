@@ -1,6 +1,6 @@
 ---
-title: Выполнение заданий Sqoop с помощью .NET и HDInsight в Azure
-description: Узнайте, как использовать пакет SDK HDInsight для .NET, чтобы выполнять импорт и экспорт Sqoop между кластером HDInsight и базой данных SQL Azure.
+title: Выполнение заданий Apache Sqoop с помощью .NET и HDInsight в Azure
+description: Узнайте, как использовать пакет SDK HDInsight для .NET, чтобы выполнять импорт и экспорт Apache Sqoop между кластером Apache Hadoop и базой данных SQL Azure.
 keywords: задание sqoop
 ms.reviewer: jasonh
 services: hdinsight
@@ -10,17 +10,17 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 423934dee0b490bb12522cec6d37393a1ec5e2f4
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 0b8d408482f1f6e2bcd25182208a46d28f7b4f7a
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51014879"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51633044"
 ---
-# <a name="run-sqoop-jobs-by-using-net-sdk-for-hadoop-in-hdinsight"></a>Выполнение заданий Sqoop с помощью пакета SDK для .NET для Hadoop в HDInsight
+# <a name="run-apache-sqoop-jobs-by-using-net-sdk-for-apache-hadoop-in-hdinsight"></a>Выполнение заданий Apache Sqoop с помощью пакета SDK для .NET для Apache Hadoop в HDInsight
 [!INCLUDE [sqoop-selector](../../../includes/hdinsight-selector-use-sqoop.md)]
 
-Узнайте, как использовать пакет SDK Azure HDInsight для .NET, чтобы выполнять задания Sqoop: импорт и экспорт между кластером HDInsight и базой данных SQL Azure или базой данных SQL Server.
+Узнайте, как использовать пакет SDK Azure HDInsight для .NET, чтобы выполнять задания Apache Sqoop: импорт и экспорт между кластером HDInsight и базой данных SQL Azure или базой данных SQL Server.
 
 > [!NOTE]
 > Инструкции, приведенные в этой статье, можно использовать для кластера HDInsight под управлением Windows или Linux. Но эти действия можно выполнять только из клиента Windows. Чтобы выбрать другие методы, используйте селектор вкладок в верхней части этой статьи.

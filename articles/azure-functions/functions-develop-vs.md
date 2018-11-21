@@ -10,12 +10,12 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 10/08/2018
 ms.author: glenga
-ms.openlocfilehash: b2676e8f86955a7601f9656f0a038b5ba904a462
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 888b9a256a68b77b91145bb3ccfeea820c97ccfa
+ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51036433"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "51515381"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Разработка Функций Azure с помощью Visual Studio  
 
@@ -189,7 +189,7 @@ For an example of how to test a queue triggered function, see the [queue trigger
 
 Все параметры, которые вы добавили в файл local.settings.json, необходимо также добавить в приложение-функцию в Azure. Эти параметры не передаются автоматически при публикации проекта.
 
-Проще всего передать необходимые параметры в приложение-функцию в Azure с помощью ссылки **Управление параметрами приложения…**, которая появляется после успешной публикации проекта. 
+Проще всего передать необходимые параметры в приложение-функцию в Azure с помощью ссылки **Управление параметрами приложения…**, которая появляется после успешной публикации проекта.
 
 ![](./media/functions-develop-vs/functions-vstools-app-settings.png)
 
@@ -197,11 +197,13 @@ For an example of how to test a queue triggered function, see the [queue trigger
 
 ![](./media/functions-develop-vs/functions-vstools-app-settings2.png)
 
+**Локальный** — значение параметра в файле local.settings.json, а **Удаленный** — текущий параметр в приложении-функции в Azure.  Чтобы создать параметр приложения, выберите **Добавьте параметр**. Используйте ссылку **Вставка локального значения**, чтобы скопировать значение параметра в поле **Удаленный**. Когда вы нажмете кнопку **ОК**, ожидающие изменения запишутся в файл с локальными параметрами и приложение-функцию.
+
 Управление параметрами приложения также можно осуществлять с помощью одного из способов ниже.
 
 * [С помощью портала Azure](functions-how-to-use-azure-function-app-settings.md#settings).
 * [С помощью параметра публикации `--publish-local-settings` в основных инструментах Функций Azure](functions-run-local.md#publish).
-* [С помощью Azure CLI](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set). 
+* [С помощью Azure CLI](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set).
 
 ## <a name="monitoring-functions"></a>Мониторинг функций
 

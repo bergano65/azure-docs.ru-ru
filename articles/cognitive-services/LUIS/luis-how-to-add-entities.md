@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 10/24/2018
 ms.author: diberry
-ms.openlocfilehash: 178f4314f9ede86444ee60fd2a64f85dc283080b
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 5beb952c2330d44ffe090fc422afa6da67376b0d
+ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50138537"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51288056"
 ---
 # <a name="create-entities-without-utterances"></a>Создание сущностей без высказываний
 
@@ -116,7 +116,7 @@ ms.locfileid: "50138537"
 
 1. В разделе **Сборка** на левой панели выберите **Сущности**, а затем — **Создать сущность**.
 
-1. В диалоговом окне **Добавление сущности** откройте поле "Имя сущности" и выберите **Pattern.any** как **Тип сущности**.
+1. В диалоговом окне **Добавление сущности** введите `HumanResourcesFormTitle` в поле **Имя сущности** и выберите **Pattern.any** как **Тип сущности**.
 
     Чтобы использовать сущность pattern.any, добавьте шаблон на странице **Шаблоны** в разделе **Повышение производительности приложения** с помощью правильных фигурных скобок, например `Where is **{HumanResourcesFormTitle}** on the server?`.
 

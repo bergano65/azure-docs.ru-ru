@@ -13,18 +13,17 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.component: report-monitor
-ms.date: 01/15/2018
+ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 9138da42eeb87e45b86be10aff67792ee6de09b4
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 2607c5dacf6f261f27e7805e02df189a2753404c
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42142488"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51625660"
 ---
-# <a name="i-cant-find-any-data-in-the-azure-active-directory-activity-logs-i-downloaded"></a>Не удается найти данные в скачанном журнале действий Azure Active Directory
-
+# <a name="i-cant-find-all-the-data-in-the-azure-active-directory-activity-logs-i-downloaded"></a>Я не могу найти данные в скачанном журнале действий Azure Active Directory
 
 ## <a name="symptoms"></a>Проблемы
 
@@ -32,15 +31,15 @@ ms.locfileid: "42142488"
 
  ![Отчеты](./media/troubleshoot-missing-data-download/01.png)
  
-
 ## <a name="cause"></a>Причина:
 
 К журналам действий, скачиваемым на портале Azure, применяется ограничение в 5000 последних записей, отсортированных в хронологическом порядке (начиная с самых новых). 
 
 ## <a name="resolution"></a>Способы устранения:
 
-Вы можете в любой момент использовать [интерфейсы API отчетов Azure AD](concept-reporting-api.md), чтобы извлечь до миллиона записей. Рекомендуем настроить расписание выполнения скрипта, который вызывает интерфейсы API отчетов для получения данных за определенный период (например, ежедневно или еженедельно).
+Вы можете в любой момент использовать [интерфейсы API отчетов Azure AD](concept-reporting-api.md), чтобы извлечь до миллиона записей. Рекомендуем [настроить расписание выполнения скрипта](tutorial-signin-logs-download-script.md), который вызывает API отчетов для последовательного получения записей за определенный период (например, ежедневно или еженедельно). 
 
 ## <a name="next-steps"></a>Дополнительная информация
-См. сведения в статье [Часто задаваемые вопросы об отчетах Azure Active Directory](reports-faq.md).
+
+* [Вопросы и ответы об отчетах Azure Active Directory](reports-faq.md)
 

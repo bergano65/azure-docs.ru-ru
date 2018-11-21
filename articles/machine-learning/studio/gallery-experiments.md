@@ -15,18 +15,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/26/2017
-ms.openlocfilehash: d57e780fbf5187f2481d40bde28b113181c15b4a
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 22432a98a7ac5ecba46201d0166940e069f6031b
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34834664"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51346445"
 ---
 # <a name="discover-experiments-in-azure-ai-gallery"></a>Поиск экспериментов в коллекции решений ИИ Azure
-[!INCLUDE [machine-learning-gallery-item-selector](../../../includes/machine-learning-gallery-item-selector.md)]
 
-## <a name="experiments-for-machine-learning-studio"></a>Эксперименты для Студии машинного обучения
-Коллекция содержит разнообразные [эксперименты](https://gallery.cortanaintelligence.com/experiments), разработанные в [Студии машинного обучения Azure](https://studio.azureml.net). Это могут быть как эксперименты, демонстрирующие конкретный метод машинного обучения, так и готовые решения для сложных задач в этой сфере.
+[Коллекция решений ИИ Azure](http://gallery.cortanaintelligence.com) содержит разнообразные [эксперименты](https://gallery.cortanaintelligence.com/experiments), разработанные в [Студии машинного обучения Azure](https://studio.azureml.net). Это могут быть как эксперименты, демонстрирующие конкретный метод машинного обучения, так и готовые решения для сложных задач в этой сфере.
 
 > [!NOTE]
 > ***Эксперимент*** — это холст в Студии машинного обучения, на котором можно создать модель прогнозной аналитики. Модель создается путем связывания данных с различными аналитическими модулями. Вы можете пробовать различные идеи, выполнять пробные запуски и в конечном итоге развернуть свою модель в виде веб-службы в Azure. Пример создания базового эксперимента см. в разделе [Руководство по машинному обучению. Создание первого эксперимента в Студии машинного обучения Azure](create-experiment.md). Исчерпывающее пошаговое руководство по созданию решения прогнозной аналитики см. в разделе [Пошаговое руководство по разработке решения для прогнозной аналитики в службе машинного обучения Azure для оценки кредитных рисков](walkthrough-develop-predictive-solution.md).

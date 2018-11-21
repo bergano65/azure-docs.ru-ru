@@ -1,6 +1,6 @@
 ---
-title: Использование C# с Hive и Pig в Hadoop в HDInsight в Azure
-description: Узнайте, как использовать определяемые пользователем функции C# при потоковой передаче Hive и Pig в Azure HDInsight.
+title: Использование C# с Apache Hive и Apache Pig в Apache Hadoop в HDInsight — Azure
+description: Узнайте, как использовать определяемые пользователем функции C# при потоковой передаче Apache Hive и Apache Pig в Azure HDInsight.
 services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -9,16 +9,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
-ms.openlocfilehash: 8011a9b8009abd2688d76dc3f1cda84ca453fde1
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 2ef88fff1313a0e7b1aa0abb502629512daaf636
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51014692"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51633841"
 ---
-# <a name="use-c-user-defined-functions-with-hive-and-pig-streaming-on-hadoop-in-hdinsight"></a>Использование определяемых пользователем функций C# при потоковой передаче Hive и Pig в Hadoop HDInsight.
+# <a name="use-c-user-defined-functions-with-apache-hive-and-apache-pig-streaming-on-apache-hadoop-in-hdinsight"></a>Использование определяемых пользователем функций C# при потоковой передаче Apache Hive и Apache Pig в Apache Hadoop в HDInsight
 
-Узнайте, как использовать определяемые пользователем функции C# с Apache Hive и Pig в HDInsight.
+Узнайте, как использовать определяемые пользователем функции C# с Apache Hive и Apache Pig в HDInsight.
 
 > [!IMPORTANT]
 > Инструкции, описанные в этом документе, можно применять к кластерам HDInsight под управлением Linux или Windows. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Что представляют собой различные компоненты и версии Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md)

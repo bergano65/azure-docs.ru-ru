@@ -15,18 +15,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/14/2017
-ms.openlocfilehash: c53bab2e838425dfdd124e64c3d7d3114fa30429
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: fe58b335a029e558ce29871483589908f17c03cd
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34834436"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51345697"
 ---
 # <a name="discover-custom-machine-learning-modules-in-azure-ai-gallery"></a>Поиск пользовательских модулей машинного обучения в коллекции решений ИИ Azure
-[!INCLUDE [machine-learning-gallery-item-selector](../../../includes/machine-learning-gallery-item-selector.md)]
 
-## <a name="custom-modules-for-machine-learning-studio"></a>Пользовательские модули для Студии машинного обучения
-В коллекции решений ИИ Azure есть несколько [пользовательских модулей](https://gallery.cortanaintelligence.com/customModules), которые расширяют возможности Студии машинного обучения Azure. Вы можете импортировать эти модули и использовать их в экспериментах, чтобы создать еще более сложные решения для прогнозной аналитики.
+В [Коллекции решений ИИ Azure](http://gallery.cortanaintelligence.com) есть несколько [пользовательских модулей](https://gallery.cortanaintelligence.com/customModules), которые расширяют возможности Студии машинного обучения Azure. Вы можете импортировать эти модули и использовать их в экспериментах, чтобы создать еще более сложные решения для прогнозной аналитики.
 
 В настоящее время коллекция предлагает модули для *аналитики временных рядов*, *правил взаимосвязей*, *алгоритмов кластеризации* (помимо К-средних), а также для *визуализаций* и других основных служебных модулей.
 

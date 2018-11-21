@@ -7,14 +7,14 @@ manager: timlt
 ms.service: event-hubs
 ms.workload: core
 ms.topic: article
-ms.date: 10/18/2018
+ms.date: 11/12/2018
 ms.author: shvija
-ms.openlocfilehash: 87d3261d5d9604b004c949e384e9d48e957229d7
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: 510f1a2bc23d14e1bb9e8e561b52936ae9d53685
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49455731"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51624545"
 ---
 # <a name="send-events-to-azure-event-hubs-using-java"></a>Отправка событий в Центры событий Azure с помощью Java
 
@@ -143,7 +143,7 @@ eventHubClient.closeSync();
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы научились отправлять сообщения в концентратор событий с помощью Java. Чтобы узнать, как получать события из концентратора событий с помощью .NET Framework, см. статью [Получение событий от Центров событий Azure с помощью Java](event-hubs-java-get-started-receive-eph.md).
+В этом кратком руководстве вы научились отправлять сообщения в концентратор событий с помощью Java. Чтобы узнать, как получать события из концентратора событий с помощью Java, см. статью о [получении событий из концентраторов событий с помощью Java](event-hubs-java-get-started-receive-eph.md).
 
 <!-- Links -->
 [Event Hubs overview]: event-hubs-overview.md

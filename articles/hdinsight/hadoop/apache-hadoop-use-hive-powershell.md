@@ -1,6 +1,6 @@
 ---
-title: Использование Hive с Hadoop в HDInsight с помощью PowerShell в Azure
-description: Использование PowerShell для выполнения запросов Hive в Hadoop в HDInsight.
+title: Использование Apache Hive с PowerShell в HDInsight — Azure
+description: Использование PowerShell для выполнения запросов Hive в Apache Hadoop в HDInsight.
 services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -9,24 +9,24 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: hrasheed
-ms.openlocfilehash: e02f6b17dff93ce2df1f06ad9681e3086c35300c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: d29199c5e1534e3f98fbdbb73799840cf9c9e75f
+ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51257873"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51633117"
 ---
-# <a name="run-hive-queries-using-powershell"></a>Выполнение запросов Hive с помощью PowerShell
+# <a name="run-apache-hive-queries-using-powershell"></a>Выполнение запросов Apache Hive с помощью PowerShell
 [!INCLUDE [hive-selector](../../../includes/hdinsight-selector-use-hive.md)]
 
-В этом документе приведен пример использования Azure PowerShell в режиме группы ресурсов Azure для выполнения запросов Hive в Hadoop в кластере HDInsight.
+В этом документе приведен пример использования Azure PowerShell в режиме группы ресурсов Azure для выполнения запросов Hive в Apache Hadoop в кластере HDInsight.
 
 > [!NOTE]
 > В этом документе не приводится подробное описание процессов, которые выполняют инструкции HiveQL, используемые в примерах. Информацию об операторах HiveQL, используемых в данном примере, см. в статье [Использование Hive с Hadoop в HDInsight](hdinsight-use-hive.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Hadoop в кластере HDInsight версии 3.4 или выше на платформе Linux.
+* Apache Hadoop на базе Linux в кластере HDInsight версии 3.4 или более поздней.
 
   > [!IMPORTANT]
   > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).

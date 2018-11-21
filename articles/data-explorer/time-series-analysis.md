@@ -1,6 +1,6 @@
 ---
 title: Анализ временных рядов в службе Azure Data Explorer
-description: Сведения об анализе временных рядов в службе Azure Data Explorer
+description: 'Сведения об анализе временных рядов в службе Azure Data Explorer '
 services: data-explorer
 author: orspod
 ms.author: v-orspod
@@ -8,12 +8,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 10/30/2018
-ms.openlocfilehash: fafaf0b4721c45b002e67896223877da43d66e56
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
+ms.openlocfilehash: 53ef96b561ccaa1480125f2c509381e980084b7a
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51220017"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636700"
 ---
 # <a name="time-series-analysis-in-azure-data-explorer"></a>Анализ временных рядов в службе Azure Data Explorer
 
@@ -35,7 +35,7 @@ demo_make_series1 | take 10
 
 |   |   |   |   |   |
 | --- | --- | --- | --- | --- |
-|   | TimeStamp (метка времени) | BrowserVer (версия браузера) | OsVer (версия ОС) | Страна |
+|   | TimeStamp | BrowserVer (версия браузера) | OsVer (версия ОС) | Страна |
 |   | 2016-08-25 09:12:35.4020000 | Chrome 51.0 | Windows 7 | Великобритания |
 |   | 2016-08-25 09:12:41.1120000 | Chrome 52.0 | Windows 10 |   |
 |   | 2016-08-25 09:12:46.2300000 | Chrome 52.0 | Windows 7 | Великобритания |
@@ -57,10 +57,10 @@ demo_make_series1
 | render timechart 
 ```
 
-- С помощью оператора [`make-series`](https://docs.microsoft.com/azure/kusto/query/make-seriesoperator) создайте набор из трех временных рядов, где:
+- С помощью оператора [`make-series`](/azure/kusto/query/make-seriesoperator) создайте набор из трех временных рядов, где:
     - `num=count()`: временной ряд трафика.
     - `range(min_t, max_t, 1h)`: временной ряд создается по 1-часовым ячейкам в указанном диапазоне времени (самые старые и самые новые метки времени записей таблицы).
-    - `default=0`: укажите метод заполнения отсутствующих ячеек для создания регулярных временных рядов. Также можно использовать [`series_fill_const()`](https://docs.microsoft.com/azure/kusto/query/series-fill-constfunction), [`series_fill_forward()`](https://docs.microsoft.com/azure/kusto/query/series-fill-forwardfunction), [`series_fill_backward()`](https://docs.microsoft.com/azure/kusto/query/series-fill-backwardfunction) и [`series_fill_linear()`](https://docs.microsoft.com/azure/kusto/query/series-fill-linearfunction) для изменений.
+    - `default=0`: укажите метод заполнения отсутствующих ячеек для создания регулярных временных рядов. Также можно использовать [`series_fill_const()`](/azure/kusto/query/series-fill-constfunction), [`series_fill_forward()`](/azure/kusto/query/series-fill-forwardfunction), [`series_fill_backward()`](/azure/kusto/query/series-fill-backwardfunction) и [`series_fill_linear()`](/azure/kusto/query/series-fill-linearfunction) для изменений.
     - `byOsVer`: секционирование по ОС.
 - Фактическая структура данных во временных рядах представляет собой числовой массив агрегированных значений по каждой ячейке времени. Мы используем `render timechart` для визуализации.
 
@@ -71,14 +71,14 @@ demo_make_series1
 ## <a name="time-series-analysis-functions"></a>Функции анализа временных рядов
 
 В этом разделе мы выполним типичные функции обработки рядов.
-После создания набора временных рядов ADX поддерживает постоянно обновляемый список функций для их обработки и анализа, которые можно найти в [документации по временным рядам](https://docs.microsoft.com/azure/kusto/query/machine-learning-and-tsa). Опишем несколько репрезентативных функций для обработки и анализа временных рядов.
+После создания набора временных рядов ADX поддерживает постоянно обновляемый список функций для их обработки и анализа, которые можно найти в [документации по временным рядам](/azure/kusto/query/machine-learning-and-tsa). Опишем несколько репрезентативных функций для обработки и анализа временных рядов.
 
 ### <a name="filtering"></a>Фильтрация
 
 Фильтрация — это распространенная практика при обработке сигналов, которая полезна в задачах обработки временных рядов (например, для сглаживания сигнала с шумами, обнаружения изменений).
 - Существует две универсальные функции фильтрации.
-    - [`series_fir()`](https://docs.microsoft.com/azure/kusto/query/series-firfunction): применение фильтра FIR. Используется для простого вычисления скользящего среднего и дифференциации временных рядов для обнаружения изменений.
-    - [`series_iir()`](https://docs.microsoft.com/azure/kusto/query/series-iirfunction): применение фильтра IIR. Используется для экспоненциального сглаживания и вычисления кумулятивной суммы.
+    - [`series_fir()`](/azure/kusto/query/series-firfunction): применение фильтра FIR. Используется для простого вычисления скользящего среднего и дифференциации временных рядов для обнаружения изменений.
+    - [`series_iir()`](/azure/kusto/query/series-iirfunction): применение фильтра IIR. Используется для экспоненциального сглаживания и вычисления кумулятивной суммы.
 - Можно расширить временной ряд функцией `Extend` путем добавления в запрос нового ряда скользящих средних с размером в 5 ячеек (с именем *ma_num*):
 
 ```kusto
@@ -95,8 +95,8 @@ demo_make_series1
 ### <a name="regression-analysis"></a>Регрессионный анализ
 
 ADX поддерживает сегментированный анализ линейной регрессии для оценки тенденций временного ряда.
-- Функция [series_fit_line()](https://docs.microsoft.com/azure/kusto/query/series-fit-linefunction) позволяет подобрать оптимальную линию для временного ряда с целью определения общей тенденции.
-- Функция [series_fit_2lines()](https://docs.microsoft.com/azure/kusto/query/series-fit-2linesfunction) позволяет обнаруживать изменения тенденций относительно базовой линии, которые важны в сценариях мониторинга.
+- Функция [series_fit_line()](/azure/kusto/query/series-fit-linefunction) позволяет подобрать оптимальную линию для временного ряда с целью определения общей тенденции.
+- Функция [series_fit_2lines()](/azure/kusto/query/series-fit-2linesfunction) позволяет обнаруживать изменения тенденций относительно базовой линии, которые важны в сценариях мониторинга.
 
 Пример использования функций `series_fit_line()` и `series_fit_2lines()` в запросе по временному ряду:
 
@@ -128,8 +128,9 @@ demo_series3
 
 ![Сезонность временного ряда](media/time-series-analysis/time-series-seasonality.png)
 
-- Функция [series_periods_detect()](https://docs.microsoft.com/azure/kusto/query/series-periods-detectfunction) позволяет автоматически обнаружить периоды во временных рядах. 
-- Функция [series_periods_validate()](https://docs.microsoft.com/azure/kusto/query/series-periods-validatefunction) полезна, если мы знаем, что метрика должна иметь определенные отличительные периоды, и хотим убедиться, что они существуют.
+- Функция [series_periods_detect()](/azure/kusto/query/series-periods-detectfunction) позволяет автоматически обнаружить периоды во временных рядах. 
+- Функция [series_periods_validate()](/azure/kusto/query/series-periods-validatefunction) полезна, если мы знаем, что метрика должна иметь определенные отличительные периоды, и хотим убедиться, что они существуют.
+
 > [!NOTE]
 > Если определенных отличительных периодов нет, это аномалия.
 
@@ -142,7 +143,7 @@ demo_series3
 
 |   |   |   |   |
 | --- | --- | --- | --- |
-|   | periods (периоды) | scores (баллы) | days (дни) |
+|   | periods | scores (баллы) | days |
 |   | 84 | 0,820622786055595 | 7 |
 |   | 12 | 0,764601405803502 | 1 |
 
@@ -150,7 +151,7 @@ demo_series3
 
 ### <a name="element-wise-functions"></a>Функции с учетом элементов
 
-Над временным рядом можно выполнять арифметические и логические операции. С помощью функции [series_subtract()](https://docs.microsoft.com/azure/kusto/query/series-subtractfunction) мы можем вычислить остаточный временной ряд, то есть разность между исходной необработанной метрикой и сглаженной метрикой, и поискать аномалии в остаточном сигнале:
+Над временным рядом можно выполнять арифметические и логические операции. С помощью функции [series_subtract()](/azure/kusto/query/series-subtractfunction) мы можем вычислить остаточный временной ряд, то есть разность между исходной необработанной метрикой и сглаженной метрикой, и поискать аномалии в остаточном сигнале:
 
 ```kusto
 let min_t = toscalar(demo_make_series1 | summarize min(TimeStamp));
@@ -165,7 +166,9 @@ demo_make_series1
 
 ![Операции над временным рядом](media/time-series-analysis/time-series-operations.png)
 
-Синий: исходный временной ряд. Красный: сглаженный временной ряд. Зеленый: остаточный временной ряд.
+- Синий: исходный временной ряд
+- Красный: сглаженный временной ряд
+- Зеленый: остаточный временной ряд
 
 ## <a name="time-series-workflow-at-scale"></a>Масштабирование рабочего процесса с временными рядами
 
@@ -255,6 +258,6 @@ demo_many_series1
 |   | Loc 15 | -3207352159611332166 | 1151 | -102743.910227889 |
 |   | Loc 13 | -3207352159611332166 | 1249 | -86303.2334644601 |
 
-Менее чем за две минуты служба ADX обнаружила два аномальных временных ряда (из 23115), в которых количество операций чтения резко упало.
+Менее чем за две минуты служба ADX проанализировала свыше 20 тыс. временных рядов и обнаружила два ряда с отклонениями, в которых число операций чтения неожиданно уменьшилось.
 
 Эти расширенные возможности в сочетании с высокой производительностью ADX предоставляют уникальное и эффективное решение для анализа временных рядов.

@@ -6,14 +6,14 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 10/10/2018
+ms.date: 11/13/2018
 ms.author: lyrana
-ms.openlocfilehash: 42c1b0fbb6d87e9ed35d4ecce3971d8512eed4d4
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: f032e3ebf6a10411057cd6d41df0cad6248f328b
+ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51012468"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51636243"
 ---
 # <a name="create-and-manage-role-assignments"></a>Создание назначений ролей и управление ими
 
@@ -26,6 +26,8 @@ ms.locfileid: "51012468"
 * **Идентификатор определения роли**.
 * **Путь к пространству**.
 * **Идентификатор клиента**. В большинстве случаев идентификатор клиента Azure Active Directory.
+
+[!INCLUDE [Digital Twins Management API](../../includes/digital-twins-management-api.md)]
 
 ## <a name="role-definition-identifiers"></a>Идентификаторы определения ролей
 
@@ -57,7 +59,7 @@ ms.locfileid: "51012468"
 ## <a name="create-a-role-assignment"></a>Создание назначения роли
 
 ```plaintext
-HTTP POST /api/v1.0/roleassignments
+HTTP POST YOUR_MANAGEMENT_API_URL/roleassignments
 ```
 
 | **Имя** | **Обязательный** | **Тип** | **Описание** |
@@ -108,22 +110,22 @@ HTTP POST /api/v1.0/roleassignments
 Используйте GET, чтобы получить назначение роли.
 
 ```plaintext
-HTTP GET /api/v1/roleassignments?path={path}
+HTTP GET YOUR_MANAGEMENT_API_URL/roleassignments?path=YOUR_PATH
 ```
 
 | **Имя** | **Где** | **Обязательный** |    **Тип** |  **Описание** |
 | --- | --- | --- | --- | --- |
-| Путь | Путь | Истина | Строка | Полный путь к пространству |
+| YOUR_PATH | Путь | Истина | Строка |    Полный путь к пространству |
 
 Используйте DELETE, чтобы удалить назначение роли.
 
 ```plaintext
-HTTP DELETE /api/v1/roleassignments/{id}
+HTTP DELETE YOUR_MANAGEMENT_API_URL/roleassignments/YOUR_ROLE_ID
 ```
 
 | **Имя** | **Где** | **Обязательный** | **Тип** | **Описание** |
 | --- | --- | --- | --- | --- |
-| ИД | Путь | Истина | Строка |   Идентификатор назначения ролей |
+| YOUR_ROLE_ID | Путь | Истина | Строка | Идентификатор назначения ролей |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

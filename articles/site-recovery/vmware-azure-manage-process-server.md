@@ -6,12 +6,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: ramamill
-ms.openlocfilehash: 8a9342a2354cd4c92fa0230965b4eef6284ee826
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: d99b5d1fdca39466d5e09ca077329b7ffa8622bc
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50209128"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51568858"
 ---
 # <a name="manage-process-servers"></a>Управление серверами обработки
 
@@ -79,4 +79,16 @@ ms.locfileid: "50209128"
 
 [!INCLUDE [site-recovery-vmware-unregister-process-server](../../includes/site-recovery-vmware-unregister-process-server.md)]
 
+## <a name="manage-anti-virus-software-on-process-servers"></a>Управление антивирусным ПО на серверах обработки
+
+Если на изолированном сервере обработки или главном целевом сервере запущено антивирусное ПО, добавьте следующие папки в список исключений из антивирусной проверки:
+
+
+- C:\Program Files\Microsoft Azure Recovery Services Agent
+- C:\ProgramData\ASR.
+- C:\ProgramData\ASRLogs.
+- C:\ProgramData\ASRSetupLogs.
+- C:\ProgramData\LogUploadServiceLogs.
+- C:\ProgramData\Microsoft Azure Site Recovery.
+- Установочный каталог сервера обработки, например C:\Program Files (x86)\Microsoft Azure Site Recovery.
 

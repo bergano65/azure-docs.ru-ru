@@ -15,18 +15,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
-ms.openlocfilehash: 336949d3c3c23041d1907ae2b2a9151ca626d94f
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 81a2f444012085782c377de050e7cb5445f8ebb3
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34834647"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51344660"
 ---
 # <a name="discover-jupyter-notebooks-in-the-azure-ai-gallery"></a>Поиск записных книжек Jupyter в коллекции решений ИИ Azure
-[!INCLUDE [machine-learning-gallery-item-selector](../../../includes/machine-learning-gallery-item-selector.md)]
 
-## <a name="jupyter-notebooks"></a>Записные книжки Jupyter
-**[Записные книжки Jupyter](https://gallery.cortanaintelligence.com/notebooks)** содержат код, визуализации данных и документацию на отдельном интерактивном холсте.
+**[Записные книжки Jupyter](https://gallery.cortanaintelligence.com/notebooks)** в [Коллекция решений ИИ Azure](http://gallery.cortanaintelligence.com) содержат код, визуализации данных и документацию на отдельном интерактивном холсте.
 Записные книжки в коллекции предоставляют руководства и подробное описание передовых методов и решений машинного обучения.
 
 ## <a name="discover"></a>Поиск
