@@ -94,7 +94,7 @@ ms.locfileid: "49406405"
 
 - Windows Phone
 
-- Windows
+-  Windows
 
 - macOS
 
@@ -125,7 +125,7 @@ ms.locfileid: "49406405"
 
 | ОС                     | Браузеры                            | Поддержка     |
 | :--                    | :--                                 | :-:         |
-| Windows 10             | Internet Explorer, Edge, Chrome     | ![Проверка][1] |
+| Windows 10             | Internet Explorer, Microsoft Edge, Chrome     | ![Проверка][1] |
 | Windows 8, Windows 8.1        | Internet Explorer, Chrome           | ![Проверка][1] |
 | Windows 7              | Internet Explorer, Chrome           | ![Проверка][1] |
 | iOS                    | Safari, Intune Managed Browser      | ![Проверка][1] |

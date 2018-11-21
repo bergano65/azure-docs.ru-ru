@@ -5,7 +5,6 @@
 ### [Как стать издателем в Marketplace](./become-publisher.md)  
 #### [Создание учетной записи Майкрософт](./guidelines.md)
 #### [Регистрация в центре разработчиков](./register-dev-center.md) 
-#### [Варианты выставления счетов за использование Azure Marketplace](./billing-options-azure-marketplace.md)  
 #### [Определение потребления услуг Azure клиентами партнеров](./azure-partner-customer-usage-attribution.md)
 #### [Управление потенциальными клиентами из Marketplace](./lead-management-for-cloud-marketplace.md)
 
@@ -13,7 +12,7 @@
 
 ### [Выбор варианта публикации решения](./determine-your-listing-type.md)  
 
-### Руководство по публикации разных типов предложений 
+### [Руководство по публикации разных типов предложений](./publisher-guide-by-offer-type.md)
 #### [Виртуальные машины](./marketplace-virtual-machines.md)
 #### [Приложения Azure: шаблоны решений](./marketplace-solution-templates.md)
 #### [Приложения Azure: управляемые приложения](./marketplace-managed-apps.md)
@@ -27,6 +26,8 @@
 ### [Развитие бизнеса с помощью marketplace](./grow-your-business-with-azure-marketplace.md)  
 #### [Предпочтительные решения](./preferred-solutions.md) 
 #### [Проверка содержимого Marketplace](./marketplace-criteria-content-validation.md)
+#### [Частные предложения](./private-offers.md)
+#### [Возможности коммерческих транзакций в Marketplace и рекомендации по их использованию](./marketplace-commercial-transaction-capabilities-and-considerations.md)
 
 ### [Поддержка Microsoft Azure Marketplace и AppSource](./support-azure-marketplace.md)  
 
@@ -34,6 +35,16 @@
 <!-- Following section is for Cloud Partner Portal (CPP). -->
 
 # [Облачный портал для партнеров](./cloud-partner-portal-orig/cloud-partner-portal-getting-started-with-the-cloud-partner-portal.md) 
+
+## [Знакомство с порталом](./cloud-partner-portal/portal-tour/cpp-portal-tour.md)
+### [Навигация по порталу](./cloud-partner-portal/portal-tour/cpp-portal-navigation.md)
+### [Меню "Новое предложение"](./cloud-partner-portal/portal-tour/cpp-new-offer-menu.md)
+### [Страница "Все предложения"](./cloud-partner-portal/portal-tour/cpp-all-offers-page.md)
+### [Страница "Утверждения"](./cloud-partner-portal/portal-tour/cpp-approvals-page.md)
+### [Страница "Все издатели"](./cloud-partner-portal/portal-tour/cpp-all-publishers-page.md)
+### [Страница "Пользователи"](./cloud-partner-portal/portal-tour/cpp-users-page.md)
+### [Страница "Журнал аудита"](./cloud-partner-portal/portal-tour/cpp-history-page.md)
+### [Страница "Аналитические сведения"](./cloud-partner-portal/portal-tour/cpp-insights-page.md)
 
 ## Управление на портале
 ### [Регистрация учетной записи центра разработчиков](./cloud-partner-portal-orig/cloud-partner-portal-dev-center-accounts-registration.md)

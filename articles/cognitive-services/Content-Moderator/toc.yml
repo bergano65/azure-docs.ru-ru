@@ -100,12 +100,10 @@ items:
       href: ecommerce-retail-catalog-moderation.md
     - name: Модерация видео и расшифровки
       href: video-transcript-moderation-review-tutorial-dotnet.md
-- name: Примеры
-  items:
-  - name: Примеры пакета SDK для .NET
-    href: samples-dotnet.md
-  - name: Примеры для REST API на C#
-    href: samples-rest.md
+  - name: Экспорт или удаление данных учетной записи
+    href: ./export-delete-data.md
+  - name: Серии вебинаров по Azure
+    href: https://info.microsoft.com/cognitive-services-content-moderator-ondemand.html
 - name: Справочные материалы
   items:
   - name: API Content Moderator
@@ -122,29 +120,33 @@ items:
       href: https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator
 - name: Ресурсы
   items:
+  - name: Примеры
+    items:
+    - name: Примеры пакета SDK для .NET
+      href: samples-dotnet.md
+    - name: Примеры для REST API на C#
+      href: samples-rest.md
+    - name: Другие примеры для Azure
+      href: https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=content+moderator
   - name: Часто задаваемые вопросы
     href: FAQs.md
-  - name: Поддержка языков и региональных параметров
-    href: language-support.md
-  - name: Доступ по регионам
-    href: https://azure.microsoft.com/global-infrastructure/services/
   - name: Цены и ограничения
     href: https://azure.microsoft.com/pricing/details/cognitive-services/content-moderator
-  - name: Экспорт или удаление данных учетной записи
-    href: ./export-delete-data.md
   - name: UserVoice
     href: https://cognitive.uservoice.com/forums/559960-content-moderator
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/microsoft-cognitive
   - name: База знаний
     href: https://cognitive.uservoice.com/knowledgebase/topics/132073-content-moderator
+  - name: Поддержка языков
+    href: language-support.md
+  - name: Переполнение стека
+    href: https://stackoverflow.com/questions/tagged/microsoft-cognitive
+  - name: Доступ по регионам
+    href: https://azure.microsoft.com/global-infrastructure/services/
   - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=ai-machine-learning
-  - name: Вебинар по запросу
-    href: https://info.microsoft.com/cognitive-services-content-moderator-ondemand.html
-ms.openlocfilehash: 69f3e50614340b610438cdae1cac20e263d0f618
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+    href: https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services
+ms.openlocfilehash: f7072fef1d0dea42d20f5cdd5a98dd5c7c20713f
+ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51852220"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52276420"
