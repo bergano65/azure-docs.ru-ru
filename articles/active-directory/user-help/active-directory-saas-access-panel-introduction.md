@@ -79,7 +79,7 @@ ms.locfileid: "51239850"
 - Вы можете использовать внутренний URL-адрес компании при удаленном подключении через [прокси приложения](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)
 
 > [!NOTE]
-> Дополнительные функции доступны только для Edge, Chrome и Firefox.
+> Дополнительные функции доступны только для Microsoft Edge, Chrome и Firefox.
 >
 Расширение можно скачать непосредственно со следующих сайтов:
 - [Chrome](https://go.microsoft.com/fwlink/?linkid=866367)

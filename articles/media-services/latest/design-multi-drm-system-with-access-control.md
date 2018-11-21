@@ -50,7 +50,7 @@ ms.locfileid: "49958199"
 | **Платформа клиента** | **Собственная подсистема DRM** | **EME** |
 | --- | --- | --- | --- |
 | **Смарт-ТВ, STB** | PlayReady, Widevine и др. | Встроенный браузер и EME для PlayReady и/или Widevine|
-| **Windows 10** | PlayReady | MS Edge и IE11 для PlayReady|
+| **Windows 10** | PlayReady | Microsoft Edge и IE11 для PlayReady|
 | **Устройства Android (телефоны, планшеты, телевизоры)** |Widevine |Chrome для Widevine |
 | **iOS** | FairPlay | Safari для FairPlay (начиная с iOS версии 11.2) |
 | **macOS** | FairPlay | Safari для FairPlay (начиная с Safari 9+ на Mac OS X 10.11+ El Capitan)|

@@ -36,7 +36,7 @@ ms.locfileid: "46366052"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этом руководстве используется функция "Средства для разработчиков" (другое название — DevTools или F12), которая доступна в большинстве современных веб-браузеров, включая [Edge](/microsoft-edge/devtools-guide), [Chrome](https://developers.google.com/web/tools/chrome-devtools/), [FireFox](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools), [Safari](https://developer.apple.com/safari/tools/) и другие. При необходимости вы можете ознакомиться с ней в своем браузере, прежде чем продолжить.
+В этом руководстве используется функция "Средства для разработчиков" (другое название — DevTools или F12), которая доступна в большинстве современных веб-браузеров, включая [Microsoft Edge](/microsoft-edge/devtools-guide), [Chrome](https://developers.google.com/web/tools/chrome-devtools/), [FireFox](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools), [Safari](https://developer.apple.com/safari/tools/) и другие. При необходимости вы можете ознакомиться с ней в своем браузере, прежде чем продолжить.
 
 ## <a name="time-series-insights-sample-application"></a>Пример приложения TSI
 

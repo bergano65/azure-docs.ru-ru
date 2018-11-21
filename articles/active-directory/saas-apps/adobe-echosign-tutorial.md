@@ -124,7 +124,7 @@ ms.locfileid: "39054004"
 
     ![Снимок экрана раздела Adobe Sign Configuration (Конфигурация Adobe Sign) с выделенным параметром Configure Adobe Sign (Настроить Adobe Sign)](./media/adobe-echosign-tutorial/tutorial_adobesign_configure.png)
 
-7. Перед настройкой необходимо связаться с [группой поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html), чтобы добавить домен в белый список Adobe Sign. Домен можно добавить следующим образом:
+7. Перед настройкой необходимо связаться с [группой поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html), чтобы добавить домен в утвержденный список Adobe Sign. Домен можно добавить следующим образом:
 
     a. [Группа поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html) отправит случайно сгенерированный токен. Для вашего домена токен будет выглядеть примерно так: **adobe-sign-verification= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
 

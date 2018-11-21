@@ -18,7 +18,7 @@ ms.locfileid: "49476392"
 ---
 Войдите на [портал Azure](https://portal.azure.com/) с помощью учетных данных для используемой подписки Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-Панель мониторинга для рабочей области портала поддерживается только в браузерах Edge, Chrome и Firefox.
+Панель мониторинга для рабочей области портала поддерживается только в браузерах Microsoft Edge, Chrome и Firefox.
 
    ![Портал Azure](./media/aml-create-in-portal/portal-dashboard.png)
 

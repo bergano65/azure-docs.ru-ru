@@ -25,7 +25,7 @@ ms.locfileid: "36936689"
 
 ## <a name="limits"></a>Ограничения
 * В настоящее время результаты запросов ограничены данными за последнюю неделю.
-* Тестируемые браузеры: последние выпуски Chrome, Edge и Internet Explorer.
+* Тестируемые браузеры: последние выпуски Chrome, Microsoft Edge и Internet Explorer.
 
 ## <a name="known-incompatible-browser-extensions"></a>Известные несовместимые расширения браузеров
 * Ghostery

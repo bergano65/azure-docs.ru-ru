@@ -60,7 +60,7 @@ ms.locfileid: "49958428"
 | **Платформа клиента** | **Поддержка собственного DRM** | **Браузер или приложение** | **Форматы потоковой передачи** |
 | --- | --- | --- | --- |
 | **Смарт-ТВ, операторские STB, OTT STB** |В основном PlayReady и (или) Widevine и (или) другие |Linux, Opera и WebKit, другие |Различные форматы |
-| **Устройства Windows 10 (компьютер с Windows, планшеты с Windows, Windows Phone, Xbox)** |PlayReady |MS Edge/IE11/EME<br/><br/><br/>Универсальные приложения Windows |DASH (PlayReady не поддерживается для HLS)<br/><br/>DASH, Smooth Streaming (PlayReady не поддерживается для HLS) |
+| **Устройства Windows 10 (компьютер с Windows, планшеты с Windows, Windows Phone, Xbox)** |PlayReady |Microsoft Edge/IE11/EME<br/><br/><br/>Универсальные приложения Windows |DASH (PlayReady не поддерживается для HLS)<br/><br/>DASH, Smooth Streaming (PlayReady не поддерживается для HLS) |
 | **Устройства Android (телефоны, планшеты, телевизоры)** |Widevine |Chrome или EME |DASH, HLS |
 | **iOS (iPhone, iPad), клиенты OS X и Apple TV** |FairPlay |Safari 8+ или EME |HLS |
 
