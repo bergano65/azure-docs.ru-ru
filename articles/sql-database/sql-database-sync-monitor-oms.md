@@ -12,12 +12,12 @@ ms.author: xiwu
 ms.reviewer: douglasl
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 712c729a214cdab66961fb399c9d797a758fcf7b
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 0a130613d6d2086fda55ca015b1c0ca77c909e3d
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49409685"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51684619"
 ---
 # <a name="monitor-sql-data-sync-with-log-analytics"></a>Мониторинг синхронизации данных SQL с помощью Log Analytics 
 
@@ -196,14 +196,18 @@ ms.locfileid: "49409685"
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о синхронизации данных SQL:
 
--   [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL](sql-database-sync-data.md)
--   [Начало работы с синхронизацией данных SQL Azure (предварительная версия)](sql-database-get-started-sql-data-sync.md)
--   [Best practices for SQL Data Sync (Preview)](sql-database-best-practices-data-sync.md) (Рекомендации по синхронизации данных SQL (предварительная версия))
--   [Устранение неполадок с синхронизацией данных SQL Azure (предварительная версия)](sql-database-troubleshoot-data-sync.md)
-
--   Полные примеры PowerShell, которые демонстрируют, как настроить синхронизацию данных SQL:
-    -   [Использование PowerShell для синхронизации данных между несколькими базами данных SQL Azure](scripts/sql-database-sync-data-between-sql-databases.md)
-    -   [Использование PowerShell для синхронизации данных между базой данных SQL Azure и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md)
+-   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью функции синхронизации данных SQL Azure](sql-database-sync-data.md).
+-   Настройка синхронизации данных
+    - На портале: [Руководство по настройке синхронизации данных SQL между Базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md).
+    - С помощью PowerShell
+        -  [Использование PowerShell для синхронизации данных между несколькими базами данных SQL Azure](scripts/sql-database-sync-data-between-sql-databases.md)
+        -  [Использование PowerShell для синхронизации данных между базой данных SQL Azure и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md)
+-   Агент синхронизации данных: [Агент синхронизации данных для синхронизации данных SQL Azure](sql-database-data-sync-agent.md).
+-   Рекомендации: [Рекомендации по синхронизации данных SQL](sql-database-best-practices-data-sync.md).
+-   Устранение неполадок: [Устранение неполадок с синхронизацией данных SQL](sql-database-troubleshoot-data-sync.md).
+-   Обновление схемы синхронизации
+    -   С помощью Transact-SQL: [Автоматическая репликация изменений схемы при синхронизации данных SQL Azure](sql-database-update-sync-schema.md).
+    -   С помощью PowerShell: [Использование PowerShell для обновления схемы синхронизации в существующей группе синхронизации](scripts/sql-database-sync-update-schema.md).
 
 Дополнительные сведения о Базе данных SQL:
 

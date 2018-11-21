@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.reviewer: hrasheed
 ms.topic: conceptual
 ms.date: 10/9/2018
-ms.openlocfilehash: 5707f97dff099d1ad914dcf3faa96cc287d48de9
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 8b92191b60f8eb7e3c63f465926b434e205ef1b4
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51245670"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51684755"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 
@@ -22,7 +22,7 @@ ms.locfileid: "51245670"
 Из этой статьи вы узнаете, как настроить присоединенный к домену кластер HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory (Azure AD-DS).
 
 >[!NOTE]
->Корпоративный пакет безопасности доступен в общедоступной версии в HDI 3.6 для Spark, Interactive и Hadoop. Корпоративный пакет безопасности для типов кластеров HBase и Kafka находится на этапе предварительной версии.
+>Общедоступная версия корпоративного пакета безопасности включена в HDI версии 3.6 для Spark, Interactive и Apache Hadoop. Корпоративный пакет безопасности для типов кластеров HBase и Kafka находится на этапе предварительной версии.
 
 ## <a name="enable-azure-ad-ds"></a>Включение Azure AD-DS
 
@@ -64,6 +64,9 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 ![Назначение роли оператора управляемого удостоверения HDInsight](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-managed-identity-operator-role-assignment.png)
 
 ## <a name="networking-considerations"></a>Рекомендации по работе с сетями
+
+> [!NOTE]
+> Azure AD-DS необходимо развертывать в виртуальной сети на базе Azure Resource Manager (ARM). Azure AD-DS не поддерживает классические виртуальные сети. Дополнительные сведения см. в статье [Включение доменных служб Azure Active Directory с помощью портала Azure](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started-network).
 
 После включения доменных служб Azure AD локальный сервер службы доменных имен (DNS) будет запущен на виртуальных машинах AD. Настройте виртуальную сеть Azure AD DS, чтобы использовать эти настраиваемые DNS-серверы. Чтобы найти нужные IP-адреса, выберите **Свойства** в категории **управления** и просмотрите IP-адреса, появившиеся в списке под параметром **IP-адрес в виртуальной сети**.
 

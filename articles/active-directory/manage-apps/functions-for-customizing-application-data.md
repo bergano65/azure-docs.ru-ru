@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: barbkess
-ms.openlocfilehash: d8e390fc185c3cb0b63bcea56feb4b133652673d
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 7a7f959f54281dcce5b8d1349f5d6607f0e5da30
+ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51258839"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51345799"
 ---
 # <a name="writing-expressions-for-attribute-mappings-in-azure-active-directory"></a>Запись выражений для сопоставления атрибутов в Azure Active Directory
 При настройке подготовки для приложения SaaS одним из типов сопоставления атрибутов, которые можно указать, является сопоставление выражений. Для этого необходимо написать выражение, похожее на скрипт. Оно позволит вам преобразовать данные пользователей в форматы, более подходящие для приложений SaaS.
@@ -37,13 +37,13 @@ ms.locfileid: "51258839"
 * Если в строковых константах необходимо использовать обратную косую черту (\) или кавычки (""), такие символы следует экранировать обратной косой чертой (\). Например: "Название компании: \"Contoso\"".
 
 ## <a name="list-of-functions"></a>Список функций
-[Append](#append) &nbsp;&nbsp;&nbsp;&nbsp; [FormatDateTime](#formatdatetime) &nbsp;&nbsp;&nbsp;&nbsp; [Join](#join) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; [NormalizeDiacritics](#normalizediacritics) [Not](#not) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [SingleAppRoleAssignment](#singleapproleassignment)&nbsp;&nbsp;&nbsp;&nbsp; [StripSpaces](#stripspaces) &nbsp;&nbsp;&nbsp;&nbsp; [Switch](#switch)
+[Append](#append) &nbsp;&nbsp;&nbsp;&nbsp; [FormatDateTime](#formatdatetime) &nbsp;&nbsp;&nbsp;&nbsp; [Join](#join) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; [NormalizeDiacritics](#normalizediacritics) [Not](#not) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [SelectUniqueValue](#selectuniquevalue)&nbsp;&nbsp;&nbsp;&nbsp; [SingleAppRoleAssignment](#singleapproleassignment)&nbsp;&nbsp;&nbsp;&nbsp; [StripSpaces](#stripspaces) &nbsp;&nbsp;&nbsp;&nbsp; [Switch](#switch)
 
 - - -
 ### <a name="append"></a>Добавить
-**Функция:**<br> Append(source, suffix)
+**Функция:**<br>  Append(source, suffix)
 
-**Описание.**<br> Получает исходное строковое значение и присоединяет к его концу суффикс.
+**Описание.**<br>  Получает исходное строковое значение и присоединяет к его концу суффикс.
 
 **Параметры:**<br> 
 
@@ -54,7 +54,7 @@ ms.locfileid: "51258839"
 
 - - -
 ### <a name="formatdatetime"></a>FormatDateTime
-**Функция:**<br> FormatDateTime(source, inputFormat, outputFormat)
+**Функция:**<br>  FormatDateTime(source, inputFormat, outputFormat)
 
 **Описание.**<br> Преобразовывает строку даты из одного формата в другой.
 
@@ -68,7 +68,7 @@ ms.locfileid: "51258839"
 
 - - -
 ### <a name="join"></a>Объединение
-**Функция:**<br> Join(separator, source1, source2, …)
+**Функция:**<br>  Join(separator, source1, source2, …)
 
 **Описание.**<br> Функция Join() схожа с функцией Append() за исключением того, что она может объединять несколько строковых значений **source** в одну строку. При этом каждое значение разделяется строкой **separator**.
 
@@ -83,9 +83,9 @@ ms.locfileid: "51258839"
 
 - - -
 ### <a name="mid"></a>Mid
-**Функция:**<br> Mid(source, start, length)
+**Функция:**<br>  Mid(source, start, length)
 
-**Описание.**<br> Возвращает подстроку исходного значения. Подстрокой является строка, содержащая только некоторые символы из исходной строки.
+**Описание.**<br>  Возвращает подстроку исходного значения. Подстрокой является строка, содержащая только некоторые символы из исходной строки.
 
 **Параметры:**<br> 
 
@@ -109,7 +109,7 @@ ms.locfileid: "51258839"
 
 - - -
 ### <a name="not"></a>not
-**Функция:**<br> Not(источник)
+**Функция:**<br>  Not(источник)
 
 **Описание.**<br> Обращает логическое значение **source**. Если значение **source** равно *True*, возвращается значение *False*. В противном случае возвращает значение*True*.
 
@@ -124,7 +124,7 @@ ms.locfileid: "51258839"
 **Функция:**<br> Replace(source, oldValue, regexPattern, regexGroupName, replacementValue, replacementAttributeName, template)
 
 **Описание.**<br>
-Заменяет значения в пределах строки. Ее работа зависит от указанных параметров.
+ Заменяет значения в пределах строки. Ее работа зависит от указанных параметров.
 
 * Если указаны параметры **oldValue** и **replacementValue**:
   
@@ -152,6 +152,24 @@ ms.locfileid: "51258839"
 | **шаблон** |Необязательно |Строка |Если указано значение **template**, будет выполнен поиск **oldValue** в шаблоне с последующей заменой исходным значением. |
 
 - - -
+### <a name="selectuniquevalue"></a>SelectUniqueValue
+**Функция:**<br> SelectUniqueValue(uniqueValueRule1, uniqueValueRule2, uniqueValueRule3, …)
+
+**Описание.**<br> Требуется как минимум два аргумента, которые являются правилами формирования уникальных значений, определенными с помощью выражений. Функция вычисляет каждое правило, а затем проверяет сформированное значение на уникальность в целевом приложении/каталоге. Будет возвращено первое найденное уникальное значение. Если все значения уже существуют в целевом объекте, запись будет дополнительно обработана, а причина записана в журналы аудита. Предельной границы числа аргументов, которые можно указать, не существует.
+
+> [!NOTE]
+>1. Это функция верхнего уровня, которую нельзя вложить.
+>2. Эта функция предназначена только для создания записей. При использовании ее с атрибутом задайте для свойства **Apply Mapping** (Применить сопоставление) значение **Только в ходе создания объектов**.
+
+
+**Параметры:**<br> 
+
+| ИМЯ | Обязательно/повторяется | type | Примечания |
+| --- | --- | --- | --- |
+| **uniqueValueRule1  … uniqueValueRuleN ** |Требуется не менее 2, нет верхней границы |Строка | Список правил формирования уникальных значений для оценки |
+
+
+- - -
 ### <a name="singleapproleassignment"></a>SingleAppRoleAssignment
 **Функция:**<br> SingleAppRoleAssignment([appRoleAssignments])
 
@@ -165,9 +183,9 @@ ms.locfileid: "51258839"
 
 - - -
 ### <a name="stripspaces"></a>StripSpaces
-**Функция:**<br> StripSpaces(source)
+**Функция:**<br>  StripSpaces(source)
 
-**Описание.**<br> Удаляет все пробелы (« ») из исходной строки.
+**Описание.**<br>  Удаляет все пробелы (« ») из исходной строки.
 
 **Параметры:**<br> 
 
@@ -177,7 +195,7 @@ ms.locfileid: "51258839"
 
 - - -
 ### <a name="switch"></a>Switch
-**Функция:**<br> Switch(source, defaultValue, key1, value1, key2, value2, …)
+**Функция:**<br>  Switch(source, defaultValue, key1, value1, key2, value2, …)
 
 **Описание.**<br> Если значение **source** соответствует **key**, возвращается **value** для этого параметра **key**. Если значение **source** не соответствует ни одному параметру, то возвращается **defaultValue**.  Параметры **key** и **value** должны всегда быть парными. Для функции необходимо всегда использовать четное количество параметров.
 
@@ -193,7 +211,7 @@ ms.locfileid: "51258839"
 ## <a name="examples"></a>Примеры
 ### <a name="strip-known-domain-name"></a>Извлечение известного доменного имени
 Необходимо извлечь известное доменное имя из адреса электронной почты пользователя, чтобы получить имя пользователя. <br>
-Например, если домен — contoso.com, можно использовать следующее выражение:
+ Например, если домен — contoso.com, можно использовать следующее выражение:
 
 **Выражение:** <br>
 `Replace([mail], "@contoso.com", , ,"", ,)`
@@ -238,8 +256,9 @@ NormalizeDiacritics([givenName])
 * **Выходные данные**: "Zoe".
 
 ### <a name="output-date-as-a-string-in-a-certain-format"></a>Вывод даты в виде строки в определенном формате
+
 Необходимо отправить в приложение SaaS даты в определенном формате. <br>
-Например, требуется отформатировать даты для ServiceNow.
+ Например, требуется отформатировать даты для ServiceNow.
 
 **Выражение:** <br>
 
@@ -251,8 +270,9 @@ NormalizeDiacritics([givenName])
 * **Выходные данные**: "2015-01-23"
 
 ### <a name="replace-a-value-based-on-predefined-set-of-options"></a>Замена значения на основе предопределенного набора параметров
+
 Необходимо определить часовой пояс пользователя на основе кода государства, сохраненного в Azure AD. <br>
-Если код государства не совпадает с предопределенными параметрами, используйте значение по умолчанию «Australia/Sydney».
+ Если код государства не совпадает с предопределенными параметрами, используйте значение по умолчанию «Australia/Sydney».
 
 **Выражение:** <br>
 
@@ -262,6 +282,26 @@ NormalizeDiacritics([givenName])
 
 * **ВВОД** : (state): "QLD"
 * **ВЫВОД**: "Australia/Brisbane"
+
+### <a name="generate-unique-value-for-userprincipalname-upn-attribute"></a>Создание уникального значения для атрибута userPrincipalName (имя участника-пользователя)
+
+На основе имени, отчества и фамилии пользователя необходимо создать значение для атрибута имени участника-пользователя и проверить его на уникальность в целевом каталоге AD перед присвоением этого значения атрибуту имени участника-пользователя.
+
+**Выражение:** <br>
+
+    SelectUniqueValue( 
+        Join("@", NormalizeDiacritics(StripSpaces(Join(".",  [PreferredFirstName], [PreferredLastName]))), "contoso.com"), 
+        Join("@", NormalizeDiacritics(StripSpaces(Join(".",  Mid([PreferredFirstName], 1, 1), [PreferredLastName]))), "contoso.com")
+        Join("@", NormalizeDiacritics(StripSpaces(Join(".",  Mid([PreferredFirstName], 1, 2), [PreferredLastName]))), "contoso.com")
+    )
+
+**Пример ввода и вывода:**
+
+* **Входные данные** (предпочитаемое имя): "John".
+* **Входные данные** (предпочитаемая фамилия): "Smith".
+* **Выходные данные**: "John.Smith@contoso.com", если значение имени участника-пользователя John.Smith@contoso.com еще не существует в каталоге.
+* **Выходные данные**: "J.Smith@contoso.com", если значение John.Smith@contoso.com уже существует в каталоге.
+* **Выходные данные**: "Jo.Smith@contoso.com", если два указанные выше значения имени участника-пользователя уже существуют в каталоге.
 
 ## <a name="related-articles"></a>Связанные статьи
 * [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS](user-provisioning.md)

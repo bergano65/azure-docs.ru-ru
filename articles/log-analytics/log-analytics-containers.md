@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/26/2018
+ms.date: 11/13/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 087e11f906fe7f5c2fe67c43a597de8551dfc951
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 575b3ec5e729b325cad216ae463063acbb68f20b
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51013060"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51685945"
 ---
 # <a name="container-monitoring-solution-in-log-analytics"></a>Решение для мониторинга контейнеров в Log Analytics
 
@@ -49,7 +49,7 @@ ms.locfileid: "51013060"
 ### <a name="container-monitoring-solution-support-for-docker-orchestrator-and-os-platform"></a>Поддержка решений для мониторинга контейнеров: оркестратор Docker и платформа ОС
 Ниже представлена таблица поддержки мониторинга операционных систем и оркестрации Docker с помощью Log Analytics. В частности, в таблице описана поддержка мониторинга списка контейнеров, производительности и журналов.   
 
-| | ACS | Linux | Windows | Контейнер<br>Список | Образ —<br>Список | Узел<br>Список | Контейнер<br>Производительность | Контейнер<br>Событие | Событие<br>Журнал | Контейнер<br>Журнал |
+| | ACS | Linux |  Windows | Контейнер<br>Список | Образ —<br>Список | Узел<br>Список | Контейнер<br>Производительность | Контейнер<br>Событие | Событие<br>Журнал | Контейнер<br>Журнал |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | kubernetes | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; |
 | Mesosphere<br>DC/OS | &#8226; | &#8226; | | &#8226; | &#8226; | &#8226; | &#8226;| &#8226; | &#8226; | &#8226; |
@@ -108,7 +108,7 @@ ms.locfileid: "51013060"
     - Если вы используете среду Red Hat OpenShift, ознакомьтесь с разделом по [настройке агента Log Analytics для Red Hat OpenShift](#configure-an-oms-agent-for-red-hat-openshift).
     - Если вы используете кластер Kubernetes с помощью Службы контейнеров Azure (AKS), см. следующие разделы:
        - Ознакомьтесь с разделом [Настройка агента Log Analytics в Linux для Kubernetes](#configure-an-oms-linux-agent-for-kubernetes).
-       - Ознакомьтесь с разделом [Настройка агента Log Analytics в Windows для Kubernetes](#configure-an-oms-windows-agent-for-kubernetes).
+       - См. дополнительные сведения о [настройке агента Log Analytics в Windows для Kubernetes](#configure-an-oms-windows-agent-for-kubernetes).
        - Ознакомьтесь с разделом [Использование Helm для развертывания агента Log Analytics в Kubernetes для Linux](#use-helm-to-deploy-oms-agent-on-linux-kubernetes).
     - При наличии кластера DC/OS в службе контейнеров Azure дополнительные сведения см. в статье [Мониторинг кластера DC/OS Службы контейнеров Azure с использованием Log Analytics](../container-service/dcos-swarm/container-service-monitoring-oms.md).
     - При наличии среды режима Docker Swarm ознакомьтесь с разделом [Настройка агента Log Analytics для Docker Swarm](#configure-an-oms-agent-for-docker-swarm).
@@ -126,7 +126,7 @@ ms.locfileid: "51013060"
 
 **Для всех узлов контейнера Linux, за исключением CoreOS:**
 
-- Дополнительные сведения и шаги по установке агента Log Analytics для Linux см. в статье [Сбор данных в гибридной среде с помощью агента Azure Log Analytics](log-analytics-concept-hybrid.md).
+- См. дополнительные сведения об [установке агента Log Analytics для Linux](log-analytics-agent-overview.md).
 
 **Для всех узлов контейнера Linux, включая CoreOS:**
 

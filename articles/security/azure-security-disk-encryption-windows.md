@@ -7,12 +7,12 @@ ms.subservice: Azure Disk Encryption
 ms.topic: article
 ms.author: mstewart
 ms.date: 10/12/2018
-ms.openlocfilehash: 2034616d7c701dfe03761d5a01848171fd264903
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 545723a020609766b9556746e6547eb8b93e5de9
+ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51625121"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51687526"
 ---
 # <a name="enable-azure-disk-encryption-for-windows-iaas-vms"></a>Включение шифрования дисков Azure для виртуальных машин IaaS под управлением Windows 
 
@@ -125,7 +125,7 @@ ms.locfileid: "51625121"
 | Параметр | ОПИСАНИЕ |
 | --- | --- |
 | vmName | Имя виртуальной машины для выполнения операции шифрования. |
-| keyVaultName | Имя хранилища ключей, в которое будет передан ключ BitLocker. Его можно получить с помощью командлета `(Get-AzureRmKeyVault -ResourceGroupName <MyResourceGroupName>). Vaultname` или команды Azure CLI az keyvault list --resource-group "MySecureGroup" |ConvertFrom-JSON.|
+| keyVaultName | Имя хранилища ключей, в которое будет передан ключ BitLocker. Его можно получить с помощью командлета `(Get-AzureRmKeyVault -ResourceGroupName <MyResourceGroupName>). Vaultname` или команды Azure CLI az keyvault list --resource-group "MySecureGroup" |ConvertFrom-JSON`|
 | keyVaultResourceGroup | Имя группы ресурсов, содержащей хранилище ключей.|
 |  keyEncryptionKeyURL | URL-адрес ключа шифрования ключей, который используется для шифрования созданного ключа BitLocker. Это необязательный параметр, если выбрать **nokek** из раскрывающегося списка UseExistingKek. Если из раскрывающегося списка UseExistingKek выбрано значение **kek**, то потребуется ввести значение _keyEncryptionKeyURL_. |
 | volumeType | Тип тома, для которого будет выполняться шифрование. Допустимые значения: _OS_, _Data_ и _All_. 
@@ -145,7 +145,7 @@ ms.locfileid: "51625121"
 Register-AzureRmProviderFeature -ProviderNamespace Microsoft.Compute -FeatureName "UnifiedDiskEncryption"
 ```
 
-Распространение запроса на регистрацию может занять 10 минут. Состояние регистрации можно проверить с помощью команды [Get-AzureRmProviderFeature](/powershell/module/AzureRM.Resources/Get-AzureRmProviderFeature). Когда `RegistrationState` будет иметь значение *Registered*, повторно зарегистрируйте поставщик *Mirosoft.Compute* с помощью команды [Register-AzureRmResourceProvider](/powershell/module/AzureRM.Resources/Register-AzureRmResourceProvider).
+Распространение запроса на регистрацию может занять 10 минут. Состояние регистрации можно проверить с помощью команды [Get-AzureRmProviderFeature](/powershell/module/AzureRM.Resources/Get-AzureRmProviderFeature). Когда `RegistrationState` будет иметь значение *Registered*, повторно зарегистрируйте поставщик *Miсrosoft.Compute* с помощью команды [Register-AzureRmResourceProvider](/powershell/module/AzureRM.Resources/Register-AzureRmResourceProvider).
 
 ```azurepowershell-interactive
 Get-AzureRmProviderFeature -ProviderNamespace "Microsoft.Compute" -FeatureName "UnifiedDiskEncryption"
@@ -200,7 +200,7 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Compute
 az feature register --name UnifiedDiskEncryption --namespace Microsoft.Compute
 ```
 
-Распространение запроса на регистрацию может занять 10 минут. Состояние регистрации можно проверить с помощью команды [az feature show](/cli/azure/feature#az_feature_show). Когда `State` будет иметь значение *Registered*, повторно зарегистрируйте поставщик *Mirosoft.Compute* с помощью команды [az provider register](/cli/azure/provider#az_provider_register):
+Распространение запроса на регистрацию может занять 10 минут. Состояние регистрации можно проверить с помощью команды [az feature show](/cli/azure/feature#az_feature_show). Когда `State` будет иметь значение *Registered*, повторно зарегистрируйте поставщик *Microsoft.Compute* с помощью команды [az provider register](/cli/azure/provider#az_provider_register).
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.Compute

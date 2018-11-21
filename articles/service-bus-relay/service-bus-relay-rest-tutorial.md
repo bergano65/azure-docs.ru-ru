@@ -12,26 +12,42 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/06/2017
+ms.date: 11/06/2018
 ms.author: spelluru
-ms.openlocfilehash: a0f2cc0d76ef3c857bb7c13f46f1397f05b60977
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 40562c77cf38ad316d64f68b54dd4174dae6da1a
+ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51232449"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51614478"
 ---
 # <a name="azure-wcf-relay-rest-tutorial"></a>Руководство по REST для ретранслятора WCF Azure
-
 В этом руководстве описано, как создать простое ведущее приложение ретранслятора Azure, предоставляющее интерфейс на основе REST. REST позволяет веб-клиенту, например веб-браузеру, получить доступ к интерфейсам API служебной шины с помощью HTTP-запросов.
 
 В этом руководстве для создания службы REST в ретрансляторе Azure используется модель программирования REST Windows Communication Foundation (WCF). Дополнительные сведения см. в разделах [Модель программирования REST WCF](/dotnet/framework/wcf/feature-details/wcf-web-http-programming-model) и [Разработка и реализация служб](/dotnet/framework/wcf/designing-and-implementing-services) в документации по WCF.
 
-## <a name="step-1-create-a-namespace"></a>Шаг 1. Создание пространства имен
+При работе с этим руководством вы выполните следующие задачи:
+
+> [!div class="checklist"]
+> * Создание пространства имен ретранслятора.
+> * Определение контракта службы WCF на основе REST.
+> * Реализация контракта службы WCF на основе REST.
+> * Размещение и запуск службы WCF на основе REST.
+> * Запуск и тестирование службы.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Для работы с данным руководством вам потребуется:
+
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
+- [Visual Studio 2015 или более поздней версии](http://www.visualstudio.com). В описанных в этом руководстве примерах используется Visual Studio 2017.
+- Пакет Azure SDK для .NET. Установите его со [страницы загрузки SDK](https://azure.microsoft.com/downloads/).
+
+## <a name="create-a-relay-namespace"></a>Создание пространства имен ретранслятора
 
 Чтобы начать использовать функции ретранслятора Azure, необходимо сначала создать пространство имен службы. Пространство имен предоставляет контейнер для адресации ресурсов Azure в вашем приложении. Выполните [эти инструкции](relay-create-namespace-portal.md), чтобы создать пространство имен ретранслятора.
 
-## <a name="step-2-define-a-rest-based-wcf-service-contract-to-use-with-azure-relay"></a>Шаг 2. Определение контракта службы WCF на основе REST, используемого в ретрансляторе Azure
+## <a name="define-a-rest-based-wcf-service-contract-to-use-with-azure-relay"></a>Определение контракта службы WCF на основе REST, используемого в Azure Relay
 
 При создании службы WCF на основе REST необходимо определить контракт. Контракт определяет, какие операции поддерживает узел. Операцию службы можно рассматривать как метод веб-службы. Контракты создаются путем определения интерфейса C++, C# или Visual Basic. Каждый метод в интерфейсе соответствует определенной операции службы. К каждому интерфейсу должен быть применен атрибут [ServiceContractAttribute](/dotnet/api/system.servicemodel.servicecontractattribute), а к каждой операции — атрибут [OperationContractAttribute](/dotnet/api/system.servicemodel.operationcontractattribute). Если у метода в интерфейсе с атрибутом [ServiceContractAttribute](/dotnet/api/system.servicemodel.servicecontractattribute) нет атрибута [OperationContractAttribute](/dotnet/api/system.servicemodel.operationcontractattribute), такой метод не предоставляется. Код для выполнения этих задач показан в примере, приведенном после описания последовательности выполнения действий.
 
@@ -136,7 +152,7 @@ namespace Microsoft.ServiceBus.Samples
 }
 ```
 
-## <a name="step-3-implement-a-rest-based-wcf-service-contract-to-use-service-bus"></a>Шаг 3. Реализуйте контракт службы WCF на основе REST, используемого в служебной шине
+## <a name="implement-the-rest-based-wcf-service-contract"></a>Реализация контракта службы WCF на основе REST
 Перед созданием службы ретрансляции WCF на основе REST необходимо сначала создать контракт, который определяется с помощью интерфейса. Следующим шагом является реализация интерфейса. Она предполагает создание класса с именем **ImageService**, который реализует пользовательский интерфейс **IImageContract**. После реализации контракта необходимо настроить интерфейс с помощью файла App.config. Файл конфигурации содержит сведения, необходимые для приложения, такие как имя службы, имя контракта и тип протокола, используемого для взаимодействия с службой ретрансляции. Код для выполнения этих задач приведен в примере после описания последовательности выполнения действий.
 
 Как и на предыдущих шагах, разница между реализацией контракта REST и контракта ретранслятора WCF невелика.
@@ -430,7 +446,7 @@ namespace Microsoft.ServiceBus.Samples
 </configuration>
 ```
 
-## <a name="step-4-host-the-rest-based-wcf-service-to-use-azure-relay"></a>Шаг 4. Размещение службы WCF на основе REST для использования ретранслятора Azure
+## <a name="host-the-rest-based-wcf-service-to-use-azure-relay"></a>Размещение службы WCF на основе REST для использования Azure Relay
 В этом разделе описан запуск веб-службы с помощью консольного приложения и ретранслятора WCF. Полный код этого шага представлен в примере после описания последовательности выполнения действий.
 
 ### <a name="to-create-a-base-address-for-the-service"></a>Создание базового адреса для службы
@@ -476,7 +492,7 @@ namespace Microsoft.ServiceBus.Samples
     host.Close();
     ```
 
-## <a name="example"></a>Пример
+### <a name="example"></a>Пример
 В следующем примере показаны контракт и реализация службы, созданные на предыдущих шагах, а также размещение службы в консольном приложении. Скомпилируйте следующий код в исполняемый файл с именем "ImageListener.exe":
 
 ```csharp
@@ -551,7 +567,7 @@ namespace Microsoft.ServiceBus.Samples
 }
 ```
 
-### <a name="compiling-the-code"></a>Компиляция кода
+## <a name="run-and-test-the-service"></a>Запуск и тестирование службы
 После построения решения выполните следующие действия, чтобы запустить приложение:
 
 1. Нажмите клавишу **F5** или перейдите в расположение исполняемого файла (ImageListener\bin\Debug\ImageListener.exe), чтобы запустить службу. Оставьте приложение в работающем состоянии, так как это необходимо для выполнения следующего этапа.

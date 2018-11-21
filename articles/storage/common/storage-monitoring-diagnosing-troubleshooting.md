@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/11/2017
 ms.author: fhryo-msft
 ms.component: common
-ms.openlocfilehash: 1b949d2baedc7a7da3230212e267c3ac98b30bbd
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 64e7b6ad79fc26f8ab2ba796bbca2909417b113c
+ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51239548"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51626003"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -642,7 +642,7 @@ client.SetServiceProperties(sp);
 Важно отметить, что эти операции успешно выполнены и поэтому не влияют на другие метрики, например доступность. Вот несколько примеров операций, которые при успешном выполнении могут сопровождаться кодами состояния HTTP, свидетельствующими о неудаче:
 
 * **ResourceNotFound** (Not Found 404) (Ресурс не найден, не найдено 404), например, после запроса GET к несуществующему BLOB-объекту;
-* **ResouceAlreadyExists** (Conflict 409) (Ресурс уже существует, конфликт 409), например после операции **CreateIfNotExist**, если ресурс уже существует.
+* **ResourceAlreadyExists** (Conflict 409) (Ресурс уже существует, конфликт 409), например после операции **CreateIfNotExist**, если ресурс уже существует.
 * **ConditionNotMet** (Not Modified 304) (Условие не выполнено, не изменено 304), например после условной операции, когда клиент отправляет значение **ETag** и заголовок HTTP **If-None-Match**, чтобы запросить изображение только в том случае, если оно было изменено после последней операции.
 
 Полный список кодов ошибок REST API, возвращаемых службами хранилища, см. на странице [Общие коды ошибок API-интерфейса REST](https://msdn.microsoft.com/library/azure/dd179357.aspx).
