@@ -12,12 +12,12 @@ ms.devlang: nodejs
 ms.topic: reference
 ms.date: 10/26/2018
 ms.author: glenga
-ms.openlocfilehash: f99c0fe798baa272bc2c74e8a171dd6bc7ca4304
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 506bbcf31833b20a6ee06e85fbad166d1f0b80e2
+ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51036552"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51567151"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -419,7 +419,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 | Версия службы "Функции" | Версия Node.js | 
 |---|---|
 | 1.x | 6.11.2 (заблокировано средой выполнения) |
-| 2.x  | _Активная версия LTS_ и _текущая_ версия Node.js (рекомендуются версии 8.11.1 и 10.6.0). Установите версию, используя [параметр приложения](functions-how-to-use-azure-function-app-settings.md#settings) WEBSITE_NODE_DEFAULT_VERSION.|
+| 2.x  | _Активная версия LTS_ и четная _текущая_ версия Node.js (рекомендуются версии 8.11.1 и 10.6.0). Установите версию, используя [параметр приложения](functions-how-to-use-azure-function-app-settings.md#settings) WEBSITE_NODE_DEFAULT_VERSION.|
 
 Введя `process.version` из любой функции или путем проверки параметра приложения, указанного выше, можно увидеть текущую версию, которую использует среда выполнения.
 
