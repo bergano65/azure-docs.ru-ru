@@ -8,12 +8,12 @@ ms.service: search
 ms.topic: quickstart
 ms.date: 05/01/2018
 ms.author: heidist
-ms.openlocfilehash: 23a62197d20901347be247d331e21d076bcf9e83
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
+ms.openlocfilehash: bc88ca63f14c5480210455abcf403771b6a4c232
+ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51288039"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52264134"
 ---
 # <a name="quickstart-create-a-cognitive-search-pipeline-using-skills-and-sample-data"></a>Краткое руководство по созданию конвейера когнитивного поиска с использованием навыков и примера данных
 
@@ -33,9 +33,16 @@ ms.locfileid: "51288039"
 * Западно-центральная часть США
 * Центрально-южная часть США
 * Восточная часть США
+* Восток США 2
+* Западный регион США 2
+* Центральная Канада
 * Западная Европа
+* Южная часть Великобритании
 * Северная Европа
+* Южная часть Бразилии
 * Юго-Восточная Азия
+* Центральная Индия
+* Восточная часть Австралии
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

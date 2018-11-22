@@ -3,19 +3,19 @@ title: Краткое руководство. Использование пак�
 titleSuffix: Azure Cognitive Services
 description: Пакет SDK Поиска в Интернете Bing позволяет интегрировать поиск Bing в любое приложение Python. В этом кратком руководстве описано, как отправлять запрос, получать ответ в формате JSON, фильтровать и анализировать результаты.
 services: cognitive-services
-author: erhopf
+author: aahill
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 08/16/2018
-ms.author: erhopf
-ms.openlocfilehash: c83848bc3c8f14aa49c1f87f1cd44224bb3e8081
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.author: aahi
+ms.openlocfilehash: d810704d0f18915d805a4db46818df30147c8dfa
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46127644"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52283296"
 ---
 # <a name="quickstart-use-the-bing-web-search-sdk-for-python"></a>Краткое руководство. Использование пакета SDK Поиска в Интернете Bing для Python
 
@@ -206,7 +206,7 @@ python -m pip install azure-cognitiveservices-search-websearch
 
 ### <a name="filter-for-news-and-freshness"></a>Фильтрация по новостям и актуальности
 
-В этом примере используются параметры `response_filter` и `freshness` для фильтрации результатов поиска в [методе `search`](https://docs.microsoft.com//api/azure-cognitiveservices-search-websearch/azure.cognitiveservices.search.websearch.operations.weboperations?view=azure-python#search) пакета SDK. Будут возвращаться только те результаты поиска, которые соответствуют новостям и страницам, обнаруженным Bing за последние 24 часа. Для первого результата возвращаются `name` и `URL`.
+В этом примере используются параметры `response_filter` и `freshness` для фильтрации результатов поиска в [методе `search`](/python/api/azure-cognitiveservices-search-websearch/azure.cognitiveservices.search.websearch.operations.weboperations#search) пакета SDK. Будут возвращаться только те результаты поиска, которые соответствуют новостям и страницам, обнаруженным Bing за последние 24 часа. Для первого результата возвращаются `name` и `URL`.
 
 1. Добавьте следующий код в проект Python:
     ```python

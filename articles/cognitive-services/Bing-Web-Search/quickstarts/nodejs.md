@@ -3,19 +3,19 @@ title: Быстрое начало. Поиск с помощью Node.js. API Bi
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, вызвать API Bing для поиска в Интернете и получить ответ в формате JSON, используя Node.js.
 services: cognitive-services
-author: erhopf
+author: aahill
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 9/26/2018
-ms.author: erhopf
-ms.openlocfilehash: debaa63adeb97063d0ea42e1da36352dc2c9c4e7
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.author: aahi
+ms.openlocfilehash: 80d527baa5d919290bc80c65745bcaaf6ef5639d
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47405862"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52164360"
 ---
 # <a name="quickstart-use-nodejs-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием Node.js  
 

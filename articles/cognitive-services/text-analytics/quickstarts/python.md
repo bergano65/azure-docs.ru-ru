@@ -10,12 +10,12 @@ ms.component: text-analytics
 ms.topic: quickstart
 ms.date: 10/01/2018
 ms.author: ashmaka
-ms.openlocfilehash: 07b7327b01987d79a6447ed67de27b69c02c14ee
-ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
+ms.openlocfilehash: 5169f6c7ff3d34d90f3f2e4b37b01733384966ff
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48268365"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52283593"
 ---
 # <a name="quickstart-using-python-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство по использованию Python для вызова API анализа текста в Cognitive Services 
 <a name="HOLTop"></a>
@@ -30,7 +30,7 @@ ms.locfileid: "48268365"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Необходимо иметь [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API анализа текста**. Для выполнения действий в этом пошаговом руководстве можно использовать **категорию "Бесплатный" на 5000 транзакций в месяц**.
+[!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
 
 Также требуются [конечная точка и ключ доступа](../How-tos/text-analytics-how-to-access-key.md), созданный автоматически во время регистрации. 
 

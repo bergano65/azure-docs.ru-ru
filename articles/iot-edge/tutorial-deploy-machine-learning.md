@@ -4,21 +4,21 @@ description: В этом руководстве вы развернете слу
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 09/21/2018
+ms.date: 11/15/2018
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 692dce4c3fcb31bcfbffbba06e5a69722b5fb5fa
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: c98dc9019421133b83ab9aec29f725852315f6ba
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51566117"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51977219"
 ---
 # <a name="tutorial-deploy-azure-machine-learning-as-an-iot-edge-module-preview"></a>Руководство: развертывание службы "Машинное обучение Azure" в качестве модуля IoT Edge (предварительная версия)
 
-Вы можете использовать модули IoT Edge для развертывания кода, который реализует вашу бизнес-логику непосредственно на устройствах IoT Edge. В этом руководстве рассматривается развертывание модуля машинного обучения Azure, который прогнозирует, когда устройство выходит из строя на основе данных моделируемой машинной температуры. Дополнительные сведения о Машинном обучении Azure в IoT Edge см. в [документации по Машинному обучению Azure](../machine-learning/desktop-workbench/use-azure-iot-edge-ai-toolkit.md).
+Вы можете использовать модули IoT Edge для развертывания кода, который реализует вашу бизнес-логику непосредственно на устройствах IoT Edge. В этом руководстве рассматривается развертывание модуля машинного обучения Azure, который прогнозирует, когда устройство выходит из строя на основе данных моделируемой машинной температуры. Дополнительные сведения о Машинном обучении Azure в IoT Edge см. в [документации по Машинному обучению Azure](../machine-learning/service/how-to-deploy-to-iot.md).
 
 Модуль машинного обучения Azure, который вы создадите в этом руководстве, считывает сформированные устройством данные об окружающей среде и отмечает сообщения как аномальные или нет.
 

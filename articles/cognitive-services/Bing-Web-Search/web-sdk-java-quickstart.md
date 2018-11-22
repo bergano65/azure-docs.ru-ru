@@ -3,19 +3,19 @@ title: Краткое руководство. Использование пак�
 titleSuffix: Azure Cognitive Services
 description: Пакет SDK Bing для поиска в Интернете позволяет интегрировать API Bing для поиска в Интернете в Java-приложение. В этом кратком руководстве описано, как отправлять запрос, получать ответ в формате JSON, фильтровать и анализировать результаты.
 services: cognitive-services
-author: erhopf
+author: aahill
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 08/22/2018
-ms.author: erhopf
-ms.openlocfilehash: 854cf1646d716f7cd721a7286b79a0f733243268
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.author: aahi
+ms.openlocfilehash: 71628862c7949df303f10181737a140a7f1e9ac4
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50416237"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52165311"
 ---
 # <a name="quickstart-use-the-bing-web-search-sdk-for-java"></a>Краткое руководство. Использование пакета SDK Bing для поиска в Интернете для Java
 

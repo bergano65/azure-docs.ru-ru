@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 05/10/2017
 ms.author: rafats
-ms.openlocfilehash: 5f5a98f0f28eba499b7ea3fa76944c21cf8bf8db
-ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
+ms.openlocfilehash: a56147432d4ef1cc9ac2568259cc2bbf2c7da7ab
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36958874"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52162676"
 ---
 # <a name="tutorial-query-azure-cosmos-db-by-using-the-sql-api"></a>Руководство. Выполнение запросов в Azure Cosmos DB с использованием API SQL
 
@@ -65,9 +65,9 @@ ms.locfileid: "36958874"
 Вы можете выполнять запросы с помощью обозревателя данных на портале Azure, через [REST API и пакеты SDK](sql-api-sdk-dotnet.md) и даже через [площадку для запросов](https://www.documentdb.com/sql/demo), которая выполняет запросы с использованием существующего набора примера данных.
 
 Дополнительные сведения об SQL-запросах см. в статье:
-* [SQL-запросы и синтаксис SQL в DocumentDB](sql-api-sql-query.md)
+* [SQL-запросы и синтаксис SQL в DocumentDB](how-to-sql-query.md)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом руководстве предполагается, что у вас есть учетная запись и коллекция базы данных Azure Cosmos DB. У вас их нет? Выполните задачи [5-минутного краткого руководства](create-mongodb-nodejs.md).
 

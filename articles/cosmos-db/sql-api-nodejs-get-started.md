@@ -10,12 +10,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: dech
-ms.openlocfilehash: 61d9d33ae7e8e2104e61bbd24862a709dd6d78ec
-ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
+ms.openlocfilehash: 08fe85ae88b1f53941d490a6c22684d223da24a8
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51636498"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52160959"
 ---
 # <a name="tutorial-build-a-nodejs-console-app-with-javascript-sdk-to-manage-azure-cosmos-db-sql-api-data"></a>Руководство. Создание консольного приложения Node.js с помощью пакета SDK JavaScript для управления данными API SQL для Azure Cosmos DB
 
@@ -497,9 +497,9 @@ ms.locfileid: "51636498"
 
 
 ## <a id="Query"></a>Шаг 8. Запрос ресурсов Azure Cosmos DB
-Azure Cosmos DB поддерживает [полнофункциональные запросы](sql-api-sql-query.md) к документам JSON, хранящимся в каждом контейнере. В следующем примере кода показан выполняемый запрос к документам в контейнере.
+Azure Cosmos DB поддерживает [полнофункциональные запросы](how-to-sql-query.md) к документам JSON, хранящимся в каждом контейнере. В следующем примере кода показан выполняемый запрос к документам в контейнере.
 
-1. Скопируйте и вставьте функцию **queryContainer** после функции **createFamilyItem** в файле app.js. Azure Cosmos DB поддерживает SQL-подобные запросы, как показано ниже. Дополнительные сведения о создании сложных запросов см. на [площадке для запросов](https://www.documentdb.com/sql/demo) и в [документации по запросам](sql-api-sql-query.md).
+1. Скопируйте и вставьте функцию **queryContainer** после функции **createFamilyItem** в файле app.js. Azure Cosmos DB поддерживает SQL-подобные запросы, как показано ниже. Дополнительные сведения о создании сложных запросов см. на [площадке для запросов](https://www.documentdb.com/sql/demo) и в [документации по запросам](how-to-sql-query.md).
 
    ```nodejs
    /**

@@ -3,19 +3,19 @@ title: 'Краткое руководство: поиск видео Bing, Pytho
 titlesuffix: Azure Cognitive Services
 description: Сведения и примеры кода для быстрого начала работы с API Bing для поиска видео.
 services: cognitive-services
-author: v-jerkin
+author: aahill
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-video-search
 ms.topic: quickstart
 ms.date: 9/21/2017
-ms.author: v-jerkin
-ms.openlocfilehash: 797eb476aa3386949b08efb957edf48a97e40d6b
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.author: aahi
+ms.openlocfilehash: ccc27481289ffc686e3e480685ba421c762e3718
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47220022"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52161092"
 ---
 # <a name="quickstart-bing-video-search-api-with-python"></a>Краткое руководство: API Bing для поиска видео с использованием Python
 

@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 06/28/2018
 ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: 7c1e56b7c94c51a00fabdac56dd2d8c3eb621ae0
-ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.openlocfilehash: a5b6ae833fcd340a639c068156940e6b9ad469ca
+ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42139600"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51711996"
 ---
 # <a name="tutorial-load-balance-internal-traffic-with-basic-load-balancer-to-vms-using-the-azure-portal"></a>Руководство по балансировке нагрузки внутреннего трафика на виртуальных машинах с помощью Load Balancer уровня "Базовый" на портале Azure
 
@@ -102,7 +102,7 @@ ms.locfileid: "42139600"
 
 ## <a name="create-basic-load-balancer-resources"></a>Создание ресурсов подсистемы балансировки нагрузки уровня "Базовый"
 
-В этом разделе вы настраиваете параметры подсистемы балансировки нагрузки для внутреннего пула адресов и зонда работоспособности, а также указываете правила подсистемы балансировки нагрузки и NAT.
+В этом разделе описано, как настроить параметры подсистемы балансировки нагрузки для внутреннего пула адресов и пробы работоспособности, а также указать правила подсистемы балансировки нагрузки.
 
 
 ### <a name="create-a-backend-address-pool"></a>Создание внутреннего пула адресов

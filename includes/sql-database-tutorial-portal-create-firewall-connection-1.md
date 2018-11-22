@@ -1,4 +1,17 @@
-## <a name="sign-in-to-the-azure-portal"></a>Выполните вход на портал Azure.
+---
+author: MightyPen
+ms.service: sql-database
+ms.topic: include
+ms.date: 11/09/2018
+ms.author: genemi
+ms.openlocfilehash: a999a18ccd504d6928a5eb1e209fbf55cb8506f5
+ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52271990"
+---
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 Войдите на [портале Azure](https://portal.azure.com/).
 
@@ -47,7 +60,7 @@
    > [!IMPORTANT]
    > \* Размеры хранилища, превышающие включенный объем, доступны в предварительной версии. За их использование взимается дополнительная плата. Подробнее об этом можно узнать в статье [Стоимость использования Базы данных SQL](https://azure.microsoft.com/pricing/details/sql-database/). 
    >
-   >\* На уровне "Премиум" хранилище объемом свыше 1 ТБ сейчас доступно в следующих регионах: Виргиния (для обслуживания государственных организаций США), восточная Канада, восточная часть США 2, восточная Япония, Западная Европа, западная часть США, Республика Корея (центральный регион), центральная Германия, центральная Канада, центральная Франция, Юго-Восточная Азия и юго-центральный регион США. См. [текущие ограничения для баз данных P11–P15](../articles/sql-database/sql-database-dtu-resource-limits-single-databases.md#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
+   >\* На уровне "Премиум" хранилище объемом свыше 1 ТБ сейчас доступно в следующих регионах: US Gov (Вирджиния), Восточная Канада, восточная часть США 2, Восточная Япония, Западная Европа, западная часть США, Республика Корея (центральный регион), Центральная Германия, Центральная Канада, Центральная Франция, Юго-Восточная Азия и центрально-южная часть США. См. [текущие ограничения для баз данных P11–P15](../articles/sql-database/sql-database-dtu-resource-limits-single-databases.md#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
    > 
 
 9. Выбрав уровень сервера, число DTU и объем хранилища, нажмите кнопку **Применить**.  

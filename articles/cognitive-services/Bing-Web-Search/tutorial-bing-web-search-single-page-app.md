@@ -3,19 +3,19 @@ title: Руководство по созданию одностраничног
 titleSuffix: Azure Cognitive Services
 description: Это одностраничное приложение показывает, как можно использовать API Bing для поиска в Интернете, чтобы извлекать, анализировать и отображать актуальные результаты поиска в одностраничном приложении.
 services: cognitive-services
-author: erhopf
+author: aahill
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-web-search
 ms.topic: tutorial
 ms.date: 09/12/2018
-ms.author: erhopf
-ms.openlocfilehash: 670f02cbd8e994664e7c4edd75940ff43f9616b6
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.author: aahi
+ms.openlocfilehash: b94e6f70d4a28dc59ddaa62cfad55c6c8383b761
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46126485"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52161928"
 ---
 # <a name="tutorial-create-a-single-page-app-using-the-bing-web-search-api"></a>Руководство. Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
 
@@ -27,7 +27,7 @@ ms.locfileid: "46126485"
 > * Вызов API Bing для поиска в Интернете с параметрами поиска.
 > * Отображение результатов веб-поиска, а также результатов поиска новостей, видео и изображений.
 > * Разбивка результатов на страницы.
-> * Управление ключами подписки.
+> * Управление ключами подписки
 > * Обработка ошибок
 
 Чтобы использовать это приложение, требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с API-интерфейсами поиска Bing. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api), чтобы получить ключ подписки.

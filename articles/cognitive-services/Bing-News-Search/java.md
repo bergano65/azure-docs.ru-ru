@@ -3,19 +3,19 @@ title: Краткое руководство. API Bing для поиска но�
 titlesuffix: Azure Cognitive Services
 description: В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API Bing для поиска новостей, который входит в состав Microsoft Cognitive Services в Azure.
 services: cognitive-services
-author: v-jerkin
+author: aahill
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-news-search
 ms.topic: quickstart
 ms.date: 9/21/2017
-ms.author: v-jerkin
-ms.openlocfilehash: f7011ceb51d4fb4a5a92c6aeb56a0c26e7d86388
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.author: aahi
+ms.openlocfilehash: 7cd15addcb5e717a0dd3f13b3979b4f342fe9f0a
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48803636"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52162591"
 ---
 # <a name="quickstart-for-bing-news-search-api-with-java"></a>Краткое руководство по API Bing для поиска новостей с использованием Java
 

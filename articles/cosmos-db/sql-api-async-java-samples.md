@@ -11,12 +11,12 @@ ms.devlang: java
 ms.topic: sample
 ms.date: 06/18/2018
 ms.author: sngun
-ms.openlocfilehash: 02e60b3899280afde2927d40ad54cb514bf0fa0e
-ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
+ms.openlocfilehash: 08ef3651b08534b94e1e1a55c16b17313bbbe9f2
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43246737"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52284971"
 ---
 # <a name="azure-cosmos-db-async-java-examples-for-the-sql-api"></a>Azure Cosmos DB. Примеры Async Java для API SQL
 
@@ -134,7 +134,7 @@ $ cd azure-cosmosdb-java
 | --- | --- |
 | [Создание индекса и установка политики индексирования](https://github.com/Azure/azure-cosmosdb-java/blob/master/examples/src/test/java/com/microsoft/azure/cosmosdb/rx/examples/CollectionCRUDAsyncAPITest.java#L394-L410) | [Индекс](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb._index)<br>[IndexingPolicy](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb._indexing_policy) |
 
-Дополнительные сведения об индексации Azure Cosmos DB см. в [этой статье](indexing-policies.md).
+Дополнительные сведения об индексации Azure Cosmos DB см. в [этой статье](index-policy.md).
 
 ## <a name="query-examples"></a>Примеры запросов
 В файле [DocumentQuerySamples](https://github.com/Azure/azure-cosmosdb-java/blob/master/examples/src/test/java/com/microsoft/azure/cosmosdb/rx/examples/DocumentQueryAsyncAPITest.java) показано, как выполнять следующие задачи:
@@ -147,7 +147,7 @@ $ cd azure-cosmosdb-java
 | [Выполнение простого запроса к документу и фильтрация результатов](https://github.com/Azure/azure-cosmosdb-java/blob/master/examples/src/test/java/com/microsoft/azure/cosmosdb/rx/examples/DocumentQueryAsyncAPITest.java#L318-L368) | |
 | [Выполнение межсекционного запроса orderBy к документу](https://github.com/Azure/azure-cosmosdb-java/blob/master/examples/src/test/java/com/microsoft/azure/cosmosdb/rx/examples/DocumentQueryAsyncAPITest.java#L410-L457) | [FeedOptions.setEnableCrossPartitionQuery](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb._feed_options.setenablecrosspartitionquery) |
 
-Дополнительные сведения о создании запросов см. в статье [SQL-запрос в Azure Cosmos DB](sql-api-sql-query.md).
+Дополнительные сведения о создании запросов см. в статье [SQL-запрос в Azure Cosmos DB](how-to-sql-query.md).
 
 ## <a name="offer-examples"></a>Примеры предложения
 В файле [OfferCRUDAsyncAPITest](https://github.com/Azure/azure-cosmosdb-java/blob/master/examples/src/test/java/com/microsoft/azure/cosmosdb/rx/examples/OfferCRUDAsyncAPITest.java) показано, как выполнять следующие задачи:

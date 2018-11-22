@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 09/26/2018
 ms.author: mabrigg
 ms.reviewer: Anjay.Ajodha
-ms.openlocfilehash: 8a5ca4f94a6f1186b6d1a26b1c7e12357cd9e799
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: 8c947e2effab84b17ea88623695e0a6b0d020d0f
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51616373"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52285124"
 ---
 # <a name="tutorial-create-an-edge-machine-learning-solution-with-azure-and-azure-stack"></a>Руководство по созданию пограничного решения машинного обучения с помощью Azure и Azure Stack
 
@@ -89,7 +89,7 @@ ms.locfileid: "51616373"
 
  -  Используйте систему с Azure Stack или разверните Пакет средств разработки Azure Stack.
 
-    - Инструкции по установке Azure Stack см. в статье [Установка Пакета средств разработки Azure Stack (ASDK)](/articles/azure-stack/asdk/asdk-install).
+    - Инструкции по установке Azure Stack см. в статье [Установка Пакета средств разработки Azure Stack (ASDK)](../asdk/asdk-install.md).
      - [https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1](https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1) Для завершения этой установки может потребоваться несколько часов.
 
  -  Развертывание служб PaaS [Службы приложений](https://docs.microsoft.com/azure/azure-stack/azure-stack-app-service-deploy) в Azure Stack
