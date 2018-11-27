@@ -10,12 +10,12 @@ ms.component: face-api
 ms.topic: quickstart
 ms.date: 11/13/2018
 ms.author: sbowles
-ms.openlocfilehash: e8b16f7ebe918e5b8d59c6b57794c4f35a89b5f3
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: dc84014f3dce027c830f3f46b4aba16b775251d8
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51684007"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51853155"
 ---
 # <a name="quickstart-create-a-python-script-to-detect-and-frame-faces-in-an-image"></a>Краткое руководство. Создание скрипта Python для определения и выделения лиц на изображении
 
@@ -35,7 +35,7 @@ ms.locfileid: "51684007"
 
 ## <a name="detect-faces-in-an-image"></a>Определение лиц на изображении
 
-Создайте новый скрипт Python _FaceQuickstart.py_. Добавьте следующий код. Это основные функции определения лиц. Замените `<Subscription Key>` фактическим значением ключа. Вам также может потребоваться изменить значение `BASE_URL`, чтобы использовать правильный идентификатор региона для ключа. Ключи бесплатной пробной подписки создаются в регионе **westus**. При необходимости задайте для `img_url` URL-адрес любого изображения, которое вы хотите использовать.
+Создайте новый скрипт Python _FaceQuickstart.py_. Добавьте следующий код. Это основные функции определения лиц. Замените `<Subscription Key>` фактическим значением ключа. Вам также может потребоваться изменить значение `BASE_URL`, чтобы использовать правильный идентификатор региона для ключа (список конечных точек для всех регионов см. в документации по [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)). Ключи бесплатной пробной подписки создаются в регионе **westus**. При необходимости задайте для `img_url` URL-адрес любого изображения, которое вы хотите использовать.
 
 Скрипт определяет лица, вызвав метод **cognitive_face.face.detect**, который инкапсулирует REST API [обнаружения](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) и возвращает список лиц.
 

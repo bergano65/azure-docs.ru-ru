@@ -12,15 +12,15 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 12/13/2017
+ms.date: 11/15/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 7f14151224a9e2baa74183696c92bca06695bf4f
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 5d53250ebdc14b7b6631e2f419b5b24ac98f3038
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44380154"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51853748"
 ---
 # <a name="tutorial-deploy-an-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство. Развертывание приложения с непрерывной интеграцией и непрерывным развертыванием в кластере Service Fabric
 
@@ -94,23 +94,23 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 Откройте веб-браузер и перейдите к новому проекту по адресу: [https://&lt;учетная_запись&gt;.visualstudio.com/Voting/Voting%20Team/_git/Voting](https://myaccount.visualstudio.com/Voting/Voting%20Team/_git/Voting).
 
-Перейдите на вкладку **Сборка и выпуск**, выберите **Сборки** и щелкните **Новый конвейер**.
+Перейдите на вкладку **Контейнеры**, выберите **Сборки** и щелкните **Создать конвейер**.
 
 ![Новый конвейер][new-pipeline]
 
-Выберите источник **Azure DevOps Git**, проект **Voting**, репозиторий **Voting** и ветвь **master** по умолчанию или сборки, выполняемые вручную или по расписанию.  Затем нажмите кнопку **Продолжить**.
+Выберите **Azure Repos Git** как источник, командный проект **Voting**, репозиторий **Voting** и ветвь **master** по умолчанию или сборки, выполняемые вручную или по расписанию.  Затем нажмите кнопку **Продолжить**.
+
+![Выбор репозитория][select-repo]
 
 В области **Выбор шаблона** выберите шаблон **Приложение Azure Service Fabric** и нажмите кнопку **Применить**.
 
 ![Выбор шаблона сборки][select-build-template]
 
-Выберите **Задачи**, введите "Размещается в VS2017" в качестве значения параметра **Очередь агента**.
+Выберите **Задачи** и введите "Размещается в VS2017" в качестве значения параметра **Очередь агента**.
 
 ![Выбор задач][save-and-queue]
 
-В разделе **Триггеры** включите непрерывную интеграцию, установив флажок **Включить непрерывную интеграцию**. В **фильтрах ветвей** щелкните **+Добавить** и **спецификация ветви** будет по умолчанию назначена ветви **master**. Щелкните **Сохранить и поместить в очередь**, чтобы выполнить сборку вручную.
-
-В диалоговом окне **сохранения конвейера сборки и очереди** нажмите щелкните **Сохранить и поместить в очередь**.
+В разделе **Триггеры** включите непрерывную интеграцию, установив флажок **Включить непрерывную интеграцию**. В **фильтрах ветвей** ветви **master** будет по умолчанию назначена **спецификация ветви**. Щелкните **Сохранить и поместить в очередь**, чтобы выполнить сборку вручную.
 
 ![Выбор триггеров][save-and-queue2]
 
@@ -118,7 +118,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 ### <a name="create-a-release-pipeline"></a>Создание конвейера выпуска
 
-Перейдите на вкладку **Сборка и выпуск**, выберите **Выпуски** и щелкните **Новый конвейер**.  В области **Выбор шаблона** выберите шаблон **Развертывание Azure Service Fabric** в списке и нажмите кнопку **Применить**.
+Перейдите на вкладку **Контейнеры**, выберите **Выпуски** и щелкните **+Создать конвейер**.  В области **Выбор шаблона** выберите шаблон **Развертывание Azure Service Fabric** в списке и нажмите кнопку **Применить**.
 
 ![Выбор шаблона выпуска][select-release-template]
 
@@ -198,6 +198,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 [push-git-repo]: ./media/service-fabric-tutorial-deploy-app-with-cicd-vsts/PublishGitRepo.png
 [publish-code]: ./media/service-fabric-tutorial-deploy-app-with-cicd-vsts/PublishCode.png
 [new-pipeline]: ./media/service-fabric-tutorial-deploy-app-with-cicd-vsts/NewPipeline.png
+[select-repo]: ./media/service-fabric-tutorial-deploy-app-with-cicd-vsts/SelectRepo.png
 [select-build-template]: ./media/service-fabric-tutorial-deploy-app-with-cicd-vsts/SelectBuildTemplate.png
 [save-and-queue]: ./media/service-fabric-tutorial-deploy-app-with-cicd-vsts/SaveAndQueue.png
 [save-and-queue2]: ./media/service-fabric-tutorial-deploy-app-with-cicd-vsts/SaveAndQueue2.png

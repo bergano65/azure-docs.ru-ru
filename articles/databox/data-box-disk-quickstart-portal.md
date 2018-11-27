@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 09/07/2018
 ms.author: alkohli
 Customer intent: As an IT admin, I need to quickly deploy Data Box Disk so as to import data into Azure.
-ms.openlocfilehash: f84eda2269df0bbe7186a2f1a9abb9c594b75455
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: fbe286313bce9b735665b134a5ea18ba4995548b
+ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51245075"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51712268"
 ---
 # <a name="quickstart-deploy-azure-data-box-disk-using-the-azure-portal-preview"></a>Краткое руководство. Развертывание диска Azure Data Box с помощью портала Azure (предварительная версия)
 
@@ -67,7 +67,7 @@ ms.locfileid: "51245075"
 
     1. На портале Azure перейдите в раздел **Общие > Сведения об устройстве** и получите ключ доступа.
     2. Скачайте и извлеките инструмент разблокировки Диска для определенной ОС на компьютер, используемый для копирования данных на диски. 
-    3. Запустите средство разблокировки Диска и укажите ключ доступа. При повторном подключении диска снова запустите средство unlock и укажите ключ доступа. **Не используйте диалоговое окно или ключ BitLocker для разблокировки диска.** См. дополнительные сведения о разблокировке дисков на клиентах [Windows]() и [Linux]().
+    3. Запустите средство разблокировки Диска и укажите ключ доступа. При повторном подключении диска снова запустите средство unlock и укажите ключ доступа. **Не используйте диалоговое окно или ключ BitLocker для разблокировки диска.** См. дополнительные сведения о разблокировке дисков на клиентах [Windows](data-box-disk-deploy-set-up.md#unlock-disks-on-windows-client) и [Linux](data-box-disk-deploy-set-up.md#unlock-disks-on-linux-client).
     4. Инструмент отобразит букву, присвоенную диску. Запишите букву диска. Она будет использоваться в последующих действиях.
 
 ## <a name="copy-data-and-validate"></a>Копирование и проверка данных
@@ -85,7 +85,6 @@ ms.locfileid: "51245075"
 2. (Дополнительно) После завершения копирования рекомендуется запустить `DataBoxDiskValidation.cmd` в папке *AzureImportExport*, чтобы создать контрольные суммы для проверки. В зависимости от размера данных, это действие может занять некоторое время. 
 3. Отсоедините диск. 
 
-
 ## <a name="ship-to-azure"></a>Отправка в Azure
 
 Это действие занимает около 5-7 минут.
@@ -94,7 +93,6 @@ ms.locfileid: "51245075"
 2. Оставьте запечатанный пакет на отправке.  
 
 Служба Data Box Disk отправляет уведомления по электронной почте и обновляет состояние заказа на портале Azure.
-
 
 ## <a name="verify-your-data"></a>Проверка данных
 
@@ -126,5 +124,3 @@ ms.locfileid: "51245075"
 
 > [!div class="nextstepaction"]
 > [Use Azure portal to administer your Data Box](data-box-portal-ui-admin.md)(Использование портала Azure для управления диском Data Box)
-
-

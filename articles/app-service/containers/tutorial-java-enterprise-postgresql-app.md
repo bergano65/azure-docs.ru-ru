@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 11/13/2018
 ms.author: jafreebe
-ms.openlocfilehash: 40bee31b7880a323a48e92912ee323c43c3a97da
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 0772dbb1aaa6b00994bd653c19b006114377dc5f
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51634777"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52165464"
 ---
 # <a name="tutorial-build-a-java-ee-and-postgres-web-app-in-azure"></a>Руководство. Создание веб-приложения Java EE с подключением к базе данных Postgres в Azure
 
@@ -51,13 +51,38 @@ git clone https://github.com/Azure-Samples/wildfly-petstore-quickstart.git
 
 Обновите файл объектной модели проекта Maven, указав нужное имя и группу ресурсов вашей службы приложений. Эти значения будут внесены в подключаемый модуль Azure, который находится ниже в файле _pom.xml_. Вам не нужно заранее создавать план или экземпляр службы приложений. При необходимости подключаемый модуль Maven создаст группу ресурсов и службу приложений.
 
+Чтобы проверить подключаемый модуль Azure, прокрутите вниз до раздела `<plugins>` файла _pom.xml_. В разделе конфигурации `<plugin>` в файле _pom.xml_ для azure-webapp-maven-plugin должна быть указана такая конфигурация:
+
+```xml
+      <!--*************************************************-->
+      <!-- Deploy to WildFly in App Service Linux           -->
+      <!--*************************************************-->
+ 
+      <plugin>
+        <groupId>com.microsoft.azure</groupId>
+        <artifactId>azure-webapp-maven-plugin</artifactId>
+        <version>1.5.0</version>
+        <configuration>
+ 
+          <!-- Web App information -->
+          <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
+          <appServicePlanName>${WEBAPP_PLAN_NAME}</appServicePlanName>
+          <appName>${WEBAPP_NAME}</appName>
+          <region>${REGION}</region>
+ 
+          <!-- Java Runtime Stack for Web App on Linux-->
+          <linuxRuntime>wildfly 14-jre8</linuxRuntime>
+ 
+        </configuration>
+      </plugin>
+```
+
 Замените значения заполнителей необходимыми именами ресурсов:
 ```xml
 <azure.plugin.appname>YOUR_APP_NAME</azure.plugin.appname>
 <azure.plugin.resourcegroup>YOUR_RESOURCE_GROUP</azure.plugin.resourcegroup>
 ```
 
-Чтобы проверить подключаемый модуль Azure, прокрутите вниз до раздела `<plugins>` файла _pom.xml_.
 
 ## <a name="build-and-deploy-the-application"></a>Создание и развертывание приложения.
 

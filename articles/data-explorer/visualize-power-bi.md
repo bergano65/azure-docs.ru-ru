@@ -8,12 +8,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: tutorial
 ms.date: 09/24/2018
-ms.openlocfilehash: fc2d96c4dc8184ba26001fd77732ce7c45253d5a
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: c04c9d9618cfc507ebdba170e0697aeaeecb1e99
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49393718"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51854107"
 ---
 # <a name="tutorial-visualize-data-from-azure-data-explorer-in-power-bi"></a>Руководство. Визуализация данных из обозревателя данных Azure в Power BI
 
@@ -34,11 +34,11 @@ ms.locfileid: "49393718"
 
 В дополнение к подпискам Azure и Power BI для работы с этим руководством вам потребуется следующее:
 
-* [Тестовый кластер и база данных](create-cluster-database-portal.md)
+* [тестовый кластер и база данных](create-cluster-database-portal.md);
 
-* [Образец данных StormEvents](ingest-sample-data.md)
+* [образец данных StormEvents](ingest-sample-data.md); [!INCLUDE [data-explorer-storm-events](../../includes/data-explorer-storm-events.md)]
 
-* [Power BI Desktop](https://powerbi.microsoft.com/get-started/) (щелкните **СКАЧАТЬ БЕСПЛАТНО**)
+* [Power BI Desktop](https://powerbi.microsoft.com/get-started/) (выберите **Скачать бесплатно**).
 
 ## <a name="render-visuals-in-azure-data-explorer"></a>Отображение визуальных элементов в обозревателе данных Azure
 
@@ -82,17 +82,17 @@ ms.locfileid: "49393718"
 
 Теперь вы подключитесь к обозревателю данных Azure в Power BI Desktop.
 
-1. В Power BI Desktop выберите **Получить данные** и **Еще**.
+1. В Power BI Desktop на вкладке **Главная** выберите **Получение данных**, а затем — **Дополнительно**.
 
     ![Получение данных](media/visualize-power-bi/get-data-more.png)
 
-1. Найдите *Kusto*, выберите **Azure Kusto (бета-версия)** и **Подключиться**.
+1. Выполните поисковой запрос *Azure Data Explorer*, выберите **Azure Data Explorer (Beta)** и нажмите **Подключиться**.
 
     ![Поиск и получение данных](media/visualize-power-bi/search-get-data.png)
 
 1. На странице **Предварительная версия соединителя** нажмите кнопку **Продолжить**.
 
-1. На экране **Kusto** укажите имя тестового кластера и базы данных. Он должен быть указан в формате `https://<ClusterName>.<Region>.kusto.windows.net`. Введите *StormEvents* для имени таблицы. Оставьте все остальные параметры со значениями по умолчанию и выберите **ОК**.
+1. На следующей странице укажите имя тестового кластера и базы данных. Он должен быть указан в формате `https://<ClusterName>.<Region>.kusto.windows.net`. Введите *StormEvents* для имени таблицы. Оставьте все остальные параметры со значениями по умолчанию и выберите **ОК**.
 
     ![Кластер, база данных, параметры таблицы](media/visualize-power-bi/cluster-database-table.png)
 

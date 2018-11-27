@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: hning86
 ms.author: haining
 ms.reviewer: sgilley
-ms.date: 09/24/2018
-ms.openlocfilehash: e6e49a03ee76c50cb2fff492bfd50b2820abafe4
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.date: 11/21/2018
+ms.openlocfilehash: 067a8deb935fb8a49d72c6ce441e8d9760c5390c
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49343764"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52283661"
 ---
 # <a name="tutorial-1-train-an-image-classification-model-with-azure-machine-learning-service"></a>Руководство 1. Обучение модели классификации изображений с помощью службы машинного обучения Azure
 
@@ -33,7 +33,10 @@ ms.locfileid: "49343764"
 
 Во второй [части этого руководства](tutorial-deploy-models-with-aml.md) вы узнаете, как выбрать и развернуть модель. 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLfree), прежде чем начинать работу.
+
+>[!NOTE]
+> Код в этой статье протестирован с использованием пакеты SDK для службы "Машинное обучение Azure" версии 0.1.79.
 
 ## <a name="get-the-notebook"></a>Получение записной книжки
 
@@ -42,7 +45,7 @@ ms.locfileid: "49343764"
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-in-azure-notebook.md)]
 
 >[!NOTE]
-> Это руководство протестировано с использованием пакета SDK версии 0.168 для службы "Машинное обучение Azure" 
+> Это руководство протестировано с использованием пакета SDK версии 0.1.74 для службы "Машинное обучение Azure" 
 
 ## <a name="set-up-your-development-environment"></a>Настройка среды разработки
 
@@ -93,41 +96,43 @@ exp = Experiment(workspace=ws, name=experiment_name)
 
 ### <a name="create-remote-compute-target"></a>Создание удаленного целевого объекта вычислений
 
-Azure Batch AI — это управляемая служба, которая позволяет специалистам по анализу данных обучать модели машинного обучения в кластерах виртуальных машин Azure, в том числе виртуальных машин с поддержкой GPU.  В этом руководстве вы научитесь создавать кластер Azure Batch AI. Этот код создаст кластер, если он еще не существует в вашей рабочей области. 
+Управляемая служба вычислений "Машинное обучение Azure" позволяет специалистам по анализу данных обучать модели машинного обучения в кластерах виртуальных машин Azure, в том числе виртуальных машин с поддержкой GPU.  В этом руководстве описано, как создать управляемый вычислительный кластер. Этот код создаст кластер, если он еще не существует в вашей рабочей области. 
 
  **Создание кластера занимает около 5 минут.** Если кластер уже находится в рабочей области, этот код будет использовать его, пропуская процесс создания.
 
 
 ```python
-from azureml.core.compute import ComputeTarget, BatchAiCompute
-from azureml.core.compute_target import ComputeTargetException
+from azureml.core.compute import AmlCompute
+from azureml.core.compute import ComputeTarget
+import os
 
 # choose a name for your cluster
-batchai_cluster_name = "traincluster"
+compute_name = os.environ.get("BATCHAI_CLUSTER_NAME", "cpucluster")
+compute_min_nodes = os.environ.get("BATCHAI_CLUSTER_MIN_NODES", 0)
+compute_max_nodes = os.environ.get("BATCHAI_CLUSTER_MAX_NODES", 4)
 
-try:
-    # look for the existing cluster by name
-    compute_target = ComputeTarget(workspace=ws, name=batchai_cluster_name)
-    if type(compute_target) is BatchAiCompute:
-        print('found compute target {}, just use it.'.format(batchai_cluster_name))
-    else:
-        print('{} exists but it is not a Batch AI cluster. Please choose a different name.'.format(batchai_cluster_name))
-except ComputeTargetException:
+# This example uses CPU VM. For using GPU VM, set SKU to STANDARD_NC6
+vm_size = os.environ.get("BATCHAI_CLUSTER_SKU", "STANDARD_D2_V2")
+
+
+if compute_name in ws.compute_targets:
+    compute_target = ws.compute_targets[compute_name]
+    if compute_target and type(compute_target) is AmlCompute:
+        print('found compute target. just use it. ' + compute_name)
+else:
     print('creating a new compute target...')
-    compute_config = BatchAiCompute.provisioning_configuration(vm_size="STANDARD_D2_V2", # small CPU-based VM
-                                                                #vm_priority='lowpriority', # optional
-                                                                autoscale_enabled=True,
-                                                                cluster_min_nodes=0, 
-                                                                cluster_max_nodes=4)
+    provisioning_config = AmlCompute.provisioning_configuration(vm_size = vm_size,
+                                                                min_nodes = compute_min_nodes, 
+                                                                max_nodes = compute_max_nodes)
 
     # create the cluster
-    compute_target = ComputeTarget.create(ws, batchai_cluster_name, compute_config)
+    compute_target = ComputeTarget.create(ws, compute_name, provisioning_config)
     
     # can poll for a minimum number of nodes and for a specific timeout. 
-    # if no min node count is provided it uses the scale settings for the cluster
+    # if no min node count is provided it will use the scale settings for the cluster
     compute_target.wait_for_completion(show_output=True, min_node_count=None, timeout_in_minutes=20)
     
-    # Use the 'status' property to get a detailed status for the current cluster. 
+     # For a more detailed view of current BatchAI cluster status, use the 'status' property    
     print(compute_target.status.serialize())
 ```
 
@@ -143,7 +148,7 @@ except ComputeTargetException:
 
 ### <a name="download-the-mnist-dataset"></a>Скачивание набора данных MNIST
 
-Скачайте набор данных MNIST и сохраните файлы в локальном каталоге `data`.  Загрузите изображения и метки для обучения и тестирования.  
+Скачайте набор данных MNIST и сохраните файлы в локальном каталоге `data`.  Загрузите изображения и метки для обучения и тестирования.
 
 
 ```python
@@ -160,7 +165,7 @@ urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ub
 
 ### <a name="display-some-sample-images"></a>Отображение некоторых примеров изображений
 
-Загрузите сжатые файлы в массивы `numpy`. Затем с помощью `matplotlib` постройте график 30 случайных изображений из набора данных с подписями над ними. Учтите, что на этом шаге требуется функция `load_data`, которая содержится в файле `util.py`. Этот файл находится в папке примера. Убедитесь, что он размещен в той же папке, что и этот элемент Notebook. Функция `load_data` выполняет анализ файлов compresse, преобразовывая их в массивы numpy.
+Загрузите сжатые файлы в массивы `numpy`. Затем с помощью `matplotlib` постройте график 30 случайных изображений из набора данных с подписями над ними. Учтите, что на этом шаге требуется функция `load_data`, которая содержится в файле `util.py`. Этот файл находится в папке примера. Убедитесь, что он размещен в той же папке, что и этот элемент Notebook. Функция `load_data` выполняет анализ сжатых файлов, преобразовывая их в массивы numpy.
 
 
 
@@ -209,9 +214,9 @@ ds.upload(src_dir='./data', target_path='mnist', overwrite=True, show_progress=T
 ```
 Теперь у вас есть все необходимое для начала обучения модели. 
 
-## <a name="train-a-model-locally"></a>Локальное обучение модели
+## <a name="train-a-local-model"></a>Обучение локальной модели
 
-Обучайте простую логистическую регрессию из библиотеки scikit-learn локально.
+Обучите модель простой логистической регрессии с использованием библиотеки scikit-learn локально.
 
 **Локальное обучение может занять одну или две минуты** в зависимости от конфигурации компьютера.
 
@@ -243,7 +248,7 @@ print(np.average(y_hat == y_test))
 Для выполнения этой задачи отправьте задание в кластер удаленного обучения, который мы настроили ранее.  Чтобы отправить задание, нужно:
 * создать каталог;
 * Создание сценария обучения
-* Создание оценщика
+* Создание объекта оценщика
 * отправить задание. 
 
 ### <a name="create-a-directory"></a>создать каталог;
@@ -314,11 +319,10 @@ joblib.dump(value=clf, filename='outputs/sklearn_mnist_model.pkl')
 
 Обратите внимание на то, как сценарий получает данные и сохраняет модели.
 
-+ Сценарий обучения считывает аргумент, чтобы найти каталог, содержащий данные.  При отправке задания позже вы указываете хранилище данных для этого аргумента: `parser.add_argument('--data-folder', type = str, dest = 'data_folder', help = 'data directory mounting point')`.
-
++ Сценарий обучения считывает аргумент, чтобы найти каталог, содержащий данные.  При отправке задания позже вы указываете хранилище данных для этого аргумента: `parser.add_argument('--data-folder', type=str, dest='data_folder', help='data directory mounting point')`.
     
 + Сценарий обучения сохраняет модель в каталог с именем выходных данных. <br/>
-`joblib.dump(value = clf, filename = 'outputs/sklearn_mnist_model.pkl')`<br/>
+`joblib.dump(value=clf, filename='outputs/sklearn_mnist_model.pkl')`<br/>
 Все записи в этом каталоге автоматически передаются в рабочую область. Далее в этом руководстве вы узнаете, как получить доступ к своей модели из этого каталога.
 
 Файл `utils.py` — это ссылка из скрипта обучения для правильной загрузки набора данных.  Скопируйте этот скрипт в папку таким образом, чтобы он был доступен вместе со скриптом обучения на удаленном ресурсе.
@@ -341,7 +345,7 @@ shutil.copy('utils.py', script_folder)
 * Параметры, требуемые от сценария обучения. 
 * Пакеты Python, необходимые для обучения.
 
-В этом руководстве целевой объект — это кластер Batch AI. Все файлы в этом каталоге передаются в узел кластера для выполнения. Data_folder настроен на использование хранилища данных (`ds.as_mount()`).
+В этом руководстве целевой объект — это кластер Batch AI. Все файлы в папке скриптов передаются в узлы кластера для выполнения. Data_folder настроен на использование хранилища данных (`ds.as_mount()`).
 
 ```python
 from azureml.train.estimator import Estimator
@@ -395,7 +399,7 @@ run
 
 
 ```python
-from azureml.train.widgets import RunDetails
+from azureml.widgets import RunDetails
 RunDetails(run).show()
 ```
 
@@ -423,7 +427,7 @@ print(run.get_metrics())
 
 `{'regularization rate': 0.8, 'accuracy': 0.9204}`
 
-В руководстве развертывания эта модель будет изучена более подробно.
+В следующем руководстве эта модель будет описана подробнее.
 
 ## <a name="register-model"></a>Регистрация модели
 

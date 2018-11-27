@@ -10,12 +10,12 @@ ms.component: face-api
 ms.topic: tutorial
 ms.date: 11/05/2018
 ms.author: pafarley
-ms.openlocfilehash: 5319584d892c261dcc6290703e9ca6518640cc94
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 8db2437b7f78271aee131cf5b4dfd9f06f744c66
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685486"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51852679"
 ---
 # <a name="tutorial-create-a-wpf-app-to-display-face-data-in-an-image"></a>Руководство. Создание приложения WPF для отображения данных о лицах на изображении
 
@@ -67,7 +67,7 @@ ms.locfileid: "51685486"
 
 [!code-csharp[](~/Cognitive-Face-CSharp-sample/FaceTutorialCS/FaceTutorialCS/MainWindow.xaml.cs?range=1-12)]
 
-Вставьте следующий код в класс **MainWindow**. Он создает экземпляр **FaceClient** с использованием ключа подписки, который нужно ввести самостоятельно. Для параметра `faceEndpoint` нужно указать строку с правильным регионом для вашей подписки.
+Вставьте следующий код в класс **MainWindow**. Он создает экземпляр **FaceClient** с использованием ключа подписки, который нужно ввести самостоятельно. Для параметра `faceEndpoint` нужно указать строку с правильным регионом для вашей подписки (список конечных точек для всех регионов см. в [документации по API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)).
 
 [!code-csharp[](~/Cognitive-Face-CSharp-sample/FaceTutorialCS/FaceTutorialCS/MainWindow.xaml.cs?range=18-46)]
 

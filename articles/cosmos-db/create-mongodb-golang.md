@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 07/21/2017
 ms.author: sclyon
 ms.custom: mvc
-ms.openlocfilehash: 7bfcbf2c72dbe33727097841f34f3f6869e9d2d8
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: 79196e2e89ec28236b7256571ccaa087866c2e76
+ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44053137"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51706472"
 ---
 # <a name="azure-cosmos-db-build-a-mongodb-api-console-app-with-golang-and-the-azure-portal"></a>Azure Cosmos DB. Создание консольного приложения API MongoDB с использованием языка Golang и портала Azure
 
@@ -42,7 +42,7 @@ Azure Cosmos DB — это глобально распределенная мн
   [!INCLUDE [cosmos-db-emulator-mongodb](../../includes/cosmos-db-emulator-mongodb.md)]
 
 - [Go](https://golang.org/dl/) и базовые знания о языке [Go](https://golang.org/).
-- Интегрированная среда разработки: [Gogland](https://www.jetbrains.com/go/), созданная Jetbrains, [Visual Studio Code](https://code.visualstudio.com/) корпорации Майкрософт или [Atom](https://atom.io/). В этом руководстве используется Goglang.
+- Интегрированная среда разработки: [Gogland](https://www.jetbrains.com/go/) от Jetbrains, [Visual Studio Code](https://code.visualstudio.com/) от Майкрософт или [Atom](https://atom.io/). В этом руководстве используется Goglang.
 
 <a id="create-account"></a>
 ## <a name="create-a-database-account"></a>Создание учетной записи базы данных
@@ -65,7 +65,7 @@ Azure Cosmos DB — это глобально распределенная мн
     go get gopkg.in/mgo.v2
     ```
 
-Драйвер [mgo](http://labix.org/mgo) (произносится *mango*) — это драйвер [MongoDB](http://www.mongodb.org/) для [языка Go](http://golang.org/), реализующий полнофункциональный и хорошо проверенный набор функций в очень простом API, следуя стандартным идиомам Go.
+Драйвер [mgo](http://labix.org/mgo) — это драйвер [MongoDB](http://www.mongodb.org/) для [языка Go](http://golang.org/), реализующий расширенный и протестированный набор функций в очень простом API в соответствии со стандартными идиомами Go.
 
 <a id="connection-string"></a>
 

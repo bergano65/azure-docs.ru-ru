@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: jdial
-ms.openlocfilehash: 65dc420b6832b7b0a4cf14d63203d4c66e2a4254
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 6b8bf4a0bc6b5e5e9b9ad7f91ba409aaf922e8e9
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46993601"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51822241"
 ---
 # <a name="ip-address-types-and-allocation-methods-in-azure"></a>Типы IP-адресов и методы распределения в Azure
 
@@ -75,7 +75,7 @@ ms.locfileid: "46993601"
 
 - Назначаются только с помощью статического выделения.
 - Защищены по умолчанию и закрыты для входящего трафика. Весь допустимый входящий трафик необходимо явным образом включить в белый список [сетевой группы безопасности](security-overview.md#network-security-groups).
-- Назначаются сетевым интерфейсам или общедоступным подсистемам балансировки нагрузки уровня "Стандартный". См. дополнительные сведения в статье [Azure Load Balancer Standard overview](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (Обзор Load Balancer уровня "Стандартный").
+- Назначенные сетевые интерфейсы, общедоступные стандартные подсистемы балансировки нагрузки, шлюзы приложений или VPN-шлюзы. См. дополнительные сведения в статье [Azure Load Balancer Standard overview](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (Обзор Load Balancer уровня "Стандартный").
 - По умолчанию являются избыточными в пределах зоны. Могут создаваться как зональные IP-адреса и гарантироваться в определенной зоне доступности. Дополнительные сведения о зонах доступности см. в статьях [с обзорной информацией о зонах доступности](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [об использовании Load Balancer уровня "Стандартный" с зонами доступности](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
  
 > [!NOTE]
@@ -132,8 +132,8 @@ ms.locfileid: "46993601"
 | --- | --- | --- | --- |
 | Виртуальная машина. |сетевому интерфейсу |Yes |Yes |
 | Подсистема балансировки нагрузки, доступная в Интернете |Интерфейсная конфигурация |Yes |Yes |
-| VPN-шлюз |Конфигурация IP шлюза |Yes |Нет  |
-| Шлюз приложений |Интерфейсная конфигурация |Yes |Нет  |
+| VPN-шлюз |Конфигурация IP шлюза |Yes |Yes |
+| Шлюз приложений |Интерфейсная конфигурация |Yes |Yes |
 
 ## <a name="private-ip-addresses"></a>Частные IP-адреса
 С помощью частных IP-адресов ресурсы Azure взаимодействуют с другими ресурсами в [виртуальной сети](virtual-networks-overview.md) либо в локальной сети через VPN-шлюз или канал ExpressRoute, и для этого не нужен IP-адрес, доступный через Интернет.

@@ -6,14 +6,14 @@ author: seguler
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
-ms.date: 10/23/2018
+ms.date: 11/14/2018
 ms.author: seguler
-ms.openlocfilehash: d3f6f2c9a1ca5016eb9a6597ba32dc1471f77cb4
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 2939bd5c7b32cc9fe05326ee72dbb7367a72ef7f
+ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51038330"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51711163"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-go"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью языка Go
 
@@ -21,17 +21,20 @@ ms.locfileid: "51038330"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством сделайте следующее: 
-* Установите [Go 1.8 или более поздней версии](https://golang.org/dl/).
-* Скачайте и установите [пакет SDK Azure Storage Blob для Go](https://github.com/azure/azure-storage-blob-go/), используя команду `go get -u github.com/Azure/azure-storage-blob-go/azblob`. 
+[!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
 
-> [!NOTE]
-> Убедитесь, что в URL-адресе слово "Azure" написано с прописной буквы. В противном случае при работе с пакетом SDK могут возникнуть проблемы импорта, связанные с регистром. "Azure" также нужно указывать с прописной буквы в операторах импорта.
+Прежде чем приступить к работе, убедитесь, что у вас установлены следующие дополнительные компоненты:
+ 
+* [Go версии 1.8 или выше](https://golang.org/dl/).
+* [Пакет SDK Azure Storage Blob для Go](https://github.com/azure/azure-storage-blob-go/), установленный с помощью следующей команды:
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+    ```
+    go get -u github.com/Azure/azure-storage-blob-go/azblob
+    ``` 
 
-[!INCLUDE [storage-create-account-portal-include](../../../includes/storage-create-account-portal-include.md)]
-
+    > [!NOTE]
+    > Убедитесь, что `Azure` указывается в URL-адресе с прописной буквы, иначе при работе с пакетом SDK могут возникнуть проблемы с импортом. `Azure` также нужно указывать с прописной буквы в операторах импорта.
+    
 ## <a name="download-the-sample-application"></a>Загрузка примера приложения
 В этом кратком руководстве как [пример](https://github.com/Azure-Samples/storage-blobs-go-quickstart.git) используется простое приложение Go.  
 

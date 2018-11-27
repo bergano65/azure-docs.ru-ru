@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: nacharya1
 ms.author: nilesha
 ms.reviewer: sgilley
-ms.date: 09/24/2018
-ms.openlocfilehash: 29d673f48671ec917e45b7ff76feeebf0b868c4b
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.date: 11/21/2018
+ms.openlocfilehash: 76436da1013c6747e9167c006e0d7c5e89ec8d9c
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49426895"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52284750"
 ---
 # <a name="tutorial-train-a-classification-model-with-automated-machine-learning-in-azure-machine-learning-service"></a>Руководство. Автоматическое машинное обучение модели классификации в службе "Машинное обучение Azure"
 
@@ -34,7 +34,10 @@ ms.locfileid: "49426895"
 > * Проверка результатов обучения.
 > * Регистрация наилучшей модели.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLfree), прежде чем начинать работу.
+
+>[!NOTE]
+> Код в этой статье протестирован с использованием пакета SDK для службы "Машинное обучение Azure" версии 0.1.79
 
 ## <a name="get-the-notebook"></a>Получение записной книжки
 
@@ -214,7 +217,7 @@ local_run = experiment.submit(Automl_config, show_output=True)
 Используйте мини-приложение Jupyter Notebook для просмотра графика и таблицы всех результатов.
 
 ```python
-from azureml.train.widgets import RunDetails
+from azureml.widgets import RunDetails
 RunDetails(local_run).show()
 ```
 

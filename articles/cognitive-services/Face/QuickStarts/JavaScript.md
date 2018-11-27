@@ -10,12 +10,12 @@ ms.component: face-api
 ms.topic: quickstart
 ms.date: 05/10/2018
 ms.author: pafarley
-ms.openlocfilehash: 355d3258392fa722fbdc3762a9125a22e8a69b67
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 0d0ff627ad2549ff9b6f09b6c934c5a17a102962
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49954308"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51852378"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-javascript"></a>Краткое руководство: обнаружение лиц на изображении с помощью REST API и JavaScript
 
@@ -37,10 +37,10 @@ ms.locfileid: "49954308"
 Чтобы выполнить наш пример, сделайте следующее:
 
 1. Скопируйте следующий код и сохраните его в файл, например `detectFaces.html`.
-2. Замените `<Subscription Key>` действительным ключом подписки.
-3. При необходимости замените значение `uriBase` расположением, в котором вы получили ключи подписки.
-4. Перетащите файл в браузер.
-5. Нажмите кнопку `Analyze faces`.
+1. Замените `<Subscription Key>` действительным ключом подписки.
+1. При необходимости измените значение `uriBase`, чтобы использовать расположение, в котором вы получили ключи подписки (список конечных точек для всех регионов см. в [документации по API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)).
+1. Перетащите файл в браузер.
+1. Нажмите кнопку `Analyze faces`.
 
 ### <a name="face---detect-request"></a>Запрос на определение лица
 
@@ -63,7 +63,7 @@ ms.locfileid: "49954308"
         // subscription keys from westus, replace "westcentralus" in the URL
         // below with "westus".
         //
-        // Free trial subscription keys are generated in the westcentralus region.
+        // Free trial subscription keys are generated in the "westus" region.
         // If you use a free trial subscription key, you shouldn't need to change 
         // this region.
         var uriBase =

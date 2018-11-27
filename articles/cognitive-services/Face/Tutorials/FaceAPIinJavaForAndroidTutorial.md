@@ -10,12 +10,12 @@ ms.component: face-api
 ms.topic: tutorial
 ms.date: 11/12/2018
 ms.author: pafarley
-ms.openlocfilehash: 4378d04d8909ecb0cd77c3196b74ecd51eb19638
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 92344943d2ec19f6730387221974a001e6a2045a
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51686234"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51852900"
 ---
 # <a name="tutorial-create-an-android-app-to-detect-and-frame-faces-in-an-image"></a>Руководство. Создание приложения Android для обнаружения и выделения лиц на изображении
 
@@ -92,11 +92,7 @@ ms.locfileid: "51686234"
 
 [!code-java[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/java/com/contoso/facetutorial/MainActivity.java?range=17-27)]
 
-Замените `<Subscription Key>` ключом своей подписки. Кроме того, замените `<API endpoint>` конечной точкой API распознавания лиц, используя соответствующий идентификатор региона для ключа. Ключи бесплатной пробной подписки создаются в регионе **westus**. Значение конечной точки API в примере будет следующим:
-
-```java
-apiEndpoint = "https://westus.api.cognitive.microsoft.com/face/v1.0";
-```
+Замените `<Subscription Key>` ключом своей подписки. Кроме того, замените `<API endpoint>` конечной точкой API распознавания лиц, используя соответствующий идентификатор региона для ключа (список конечных точек для всех регионов см. в [документации по API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)). Ключи бесплатной пробной подписки создаются в регионе **westus**.
 
 В области **Project** (Проект) разверните раздел **app** (приложение), затем **manifests** (манифесты) и откройте файл *AndroidManifest.xml*. Добавьте следующий элемент в качестве непосредственного дочернего элемента для элемента `manifest`:
 

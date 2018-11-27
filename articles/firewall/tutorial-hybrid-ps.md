@@ -1,5 +1,5 @@
 ---
-title: Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
+title: Руководство по развертыванию и настройке Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
 description: В этом руководстве вы можете узнать, как развернуть и настроить службу "Брандмауэр Azure" с помощью портала Azure.
 services: firewall
 author: vhorne
@@ -7,32 +7,44 @@ ms.service: firewall
 ms.topic: tutorial
 ms.date: 10/27/2018
 ms.author: victorh
-ms.openlocfilehash: 3c225e6fbfb13c04d650b8e6b72ee18d23139a8e
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 781365e32ce5602e9fb99b620e068ddf68de8c44
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50158964"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51854175"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Руководство по развертыванию и настройке Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
+
+Возможность контролировать доступ к сетевым ресурсам Azure при подключении локальной сети к виртуальной сети Azure для создания гибридной сети является важной частью общего плана безопасности.
+
+Брандмауэр Azure позволяет контролировать доступ к гибридной сети с помощью правил, которые определяют разрешенный и запрещенный сетевой трафик.
+
+В этом руководстве описано, как создать три виртуальные сети:
+
+- **VNet-Hub** — виртуальная сеть, в которой размещен брандмауэр;
+- **VNet-Spoke** — периферийная виртуальная сеть, которая представляет рабочую нагрузку, размещенную в Azure;
+- **VNet-Onprem** — локальная виртуальная сеть, которая представляет локальную среду. При фактическом развертывании ее можно подключить либо через соединение VPN, либо через Express Route. Для простоты в этом руководстве используется подключение к шлюзу VPN, а виртуальная сеть, размещенная в Azure, представляет локальную сеть.
+
+![Брандмауэр в гибридной сети](media/tutorial-hybrid-ps/hybrid-network-firewall.png)
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Настройка сетевой среды
+> * Объявление переменных
+> * Создание центральной виртуальной сети с брандмауэром
+> * Создание периферийной виртуальной сети
+> * Создание локальной виртуальной сети
 > * Настройка и развертывание брандмауэра
+> * Создание и подключение шлюзов VPN
+> * Настройка пиринга между центральной и периферийной виртуальными сетями
 > * Создание маршрутов.
 > * Создание виртуальных машин
 > * тестирование брандмауэра.
 
-При работе с этим руководством вы создадите три виртуальные сети:
-- **VNet-Hub** — в этой виртуальной сети находится брандмауэр.
-- **VNet-Spoke** — виртуальная сеть периферийных зон, которая представляет собой рабочую нагрузку, расположенную в Azure.
-- **VNet-Onprem** — локальная виртуальная сеть. При фактическом развертывании ее можно подключить либо через соединение VPN, либо через Express Route. Для простоты в этом руководстве используется подключение к VPN-шлюзу, а виртуальная сеть, размещенная в Azure, используется для представления локальной сети.
+## <a name="prerequisites"></a>Предварительные требования
 
-![Брандмауэр в гибридной сети](media/tutorial-hybrid-ps/hybrid-network-firewall.png)
-
-## <a name="key-requirements"></a>Основные требования
+В этом руководстве подразумевается, что PowerShell выполняется на локальном компьютере. Необходим модуль Azure PowerShell 6.12.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps). После проверки версии PowerShell выполните командлет `Login-AzureRmAccount`, чтобы создать подключение к Azure.
 
 Чтобы этот сценарий работал правильно, есть три ключевых требования:
 
@@ -45,11 +57,9 @@ ms.locfileid: "50158964"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-[!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
-
 ## <a name="declare-the-variables"></a>Объявление переменных
 
-В примере ниже объявлены переменные со значениями для этого руководства. В большинстве случаев эти значения вам нужно заменить собственными. Но вы можете использовать указанные переменные, чтобы ознакомиться с этим типом конфигурации. Измените переменные (при необходимости), а затем скопируйте и вставьте их в консоль PowerShell.
+В примере ниже объявлены переменные со значениями для этого руководства. В ряде случаев для работы со своей подпиской требуется заменить некоторые значения собственными. Измените переменные (при необходимости), а затем скопируйте и вставьте их в консоль PowerShell.
 
 ```azurepowershell
 $RG1 = "FW-Hybrid-Test"
@@ -67,7 +77,7 @@ $GWHubpipName = "VNet-hub-GW-pip"
 $GWIPconfNameHub = "GW-ipconf-hub"
 $ConnectionNameHub = "hub-to-Onprem"
 
-# Variables for the spoke VNet
+# Variables for the spoke virtual network
 
 $VnetNameSpoke = "VNet-Spoke"
 $SNnameSpoke = "SN-Workload"
@@ -75,7 +85,7 @@ $VNetSpokePrefix = "10.6.0.0/16"
 $SNSpokePrefix = "10.6.0.0/24"
 $SNSpokeGWPrefix = "10.6.1.0/24"
 
-# Variables for the OnPrem VNet
+# Variables for the on-premises virtual network
 
 $VNetnameOnprem = "Vnet-Onprem"
 $SNNameOnprem = "SN-Corp"
@@ -90,15 +100,14 @@ $GWOnprempipName = "VNet-Onprem-GW-pip"
 $SNnameGW = "GatewaySubnet"
 ```
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов, которая будет содержать все ресурсы, требуемые в рамках этого руководства.
+## <a name="create-the-firewall-hub-virtual-network"></a>Создание центральной виртуальной сети с брандмауэром
+
+Сначала создайте группу ресурсов, которая будет содержать ресурсы для работы с этим руководством:
 
 ```azurepowershell
   New-AzureRmResourceGroup -Name $RG1 -Location $Location1
   ```
-
-## <a name="create-and-configure-the-firewall-hub-vnet"></a>Создание и настройка виртуальной сети центра брандмауэра
 
 Определите подсети, которые будут включены в виртуальную сеть:
 
@@ -107,23 +116,23 @@ $FWsub = New-AzureRmVirtualNetworkSubnetConfig -Name $SNnameHub -AddressPrefix $
 $GWsub = New-AzureRmVirtualNetworkSubnetConfig -Name $SNnameGW -AddressPrefix $SNGWHubPrefix
 ```
 
-Теперь создайте виртуальную сеть центра брандмауэра:
+Теперь создайте центральную виртуальную сеть с брандмауэром:
 
 ```azurepowershell
 $VNetHub = New-AzureRmVirtualNetwork -Name $VNetnameHub -ResourceGroupName $RG1 `
 -Location $Location1 -AddressPrefix $VNetHubPrefix -Subnet $FWsub,$GWsub
 ```
 
-Запросите выделение общедоступного IP-адреса для шлюза VPN, который будет создан для виртуальной сети. Учтите, что параметр *AllocationMethod* является **динамическим**. Указать необходимый IP-адрес нельзя. Он выделяется для шлюза VPN динамически. 
+Запросите общедоступный IP-адрес для шлюза VPN, который будет создан для виртуальной сети. Учтите, что параметр *AllocationMethod* является **динамическим**. Указать необходимый IP-адрес нельзя. Он выделяется для шлюза VPN динамически. 
 
   ```azurepowershell
   $gwpip1 = New-AzureRmPublicIpAddress -Name $GWHubpipName -ResourceGroupName $RG1 `
   -Location $Location1 -AllocationMethod Dynamic
 ```
 
-## <a name="create-and-configure-the-spoke-vnet"></a>Создание и настройка виртуальной сети периферийных зон
+## <a name="create-the-spoke-virtual-network"></a>Создание периферийной виртуальной сети
 
-Определите подсети, которые будут включены в виртуальную сеть периферийных зон:
+Определите подсети, которые будут включены в периферийную виртуальную сеть:
 
 ```azurepowershell
 $Spokesub = New-AzureRmVirtualNetworkSubnetConfig -Name $SNnameSpoke -AddressPrefix $SNSpokePrefix
@@ -137,7 +146,7 @@ $VNetSpoke = New-AzureRmVirtualNetwork -Name $VnetNameSpoke -ResourceGroupName $
 -Location $Location1 -AddressPrefix $VNetSpokePrefix -Subnet $Spokesub,$GWsubSpoke
 ```
 
-## <a name="create-and-configure-the-onprem-vnet"></a>Создание и настройка локальной виртуальной сети
+## <a name="create-the-on-premises-virtual-network"></a>Создание локальной виртуальной сети
 
 Определите подсети, которые будут включены в виртуальную сеть:
 
@@ -146,14 +155,14 @@ $Onpremsub = New-AzureRmVirtualNetworkSubnetConfig -Name $SNNameOnprem -AddressP
 $GWOnpremsub = New-AzureRmVirtualNetworkSubnetConfig -Name $SNnameGW -AddressPrefix $SNGWOnpremPrefix
 ```
 
-Теперь создайте виртуальную сеть локальной среды:
+Теперь создайте локальную виртуальную сеть:
 
 ```azurepowershell
 $VNetOnprem = New-AzureRmVirtualNetwork -Name $VNetnameOnprem -ResourceGroupName $RG1 `
 -Location $Location1 -AddressPrefix $VNetOnpremPrefix -Subnet $Onpremsub,$GWOnpremsub
 ```
 
-Запросите выделение общедоступного IP-адреса для шлюза, который будет создан для виртуальной сети. Учтите, что параметр *AllocationMethod* является **динамическим**. Указать необходимый IP-адрес нельзя. Он выделяется для шлюза динамически. 
+Запросите общедоступный IP-адрес для шлюза, который будет создан для виртуальной сети. Учтите, что параметр *AllocationMethod* является **динамическим**. Указать необходимый IP-адрес нельзя. Он выделяется для шлюза динамически. 
 
   ```azurepowershell
   $gwOnprempip = New-AzureRmPublicIpAddress -Name $GWOnprempipName -ResourceGroupName $RG1 `
@@ -162,7 +171,7 @@ $VNetOnprem = New-AzureRmVirtualNetwork -Name $VNetnameOnprem -ResourceGroupName
 
 ## <a name="configure-and-deploy-the-firewall"></a>Настройка и развертывание брандмауэра
 
-Теперь разверните брандмауэр в виртуальной сети центра.
+Теперь разверните брандмауэр в центральной виртуальной сети.
 
 ```azurepowershell
 # Get a Public IP for the firewall
@@ -198,9 +207,9 @@ Set-AzureRmFirewall -AzureFirewall $Azfw
 
 ## <a name="create-and-connect-the-vpn-gateways"></a>Создание и подключение шлюзов VPN
 
-Локальная виртуальная сеть и сеть центра подключены через VPN-шлюзы.
+Центральная и локальная виртуальные сети подключены друг к другу с помощью VPN-шлюзов.
 
-### <a name="create-a-vpn-gateway-for-the-hub-vnet"></a>Создание VPN-шлюза для виртуальной сети центра
+### <a name="create-a-vpn-gateway-for-the-hub-virtual-network"></a>Создание VPN-шлюза в центральной виртуальной сети
 
 Создайте конфигурацию VPN-шлюза. Конфигурация VPN-шлюза определяет используемые подсеть и общедоступный IP-адрес.
 
@@ -211,7 +220,7 @@ Set-AzureRmFirewall -AzureFirewall $Azfw
   -Subnet $subnet1 -PublicIpAddress $gwpip1
   ```
 
-Создайте VPN-шлюз для виртуальной сети центра. Для подключений типа VNet-to-VNet необходимо использовать тип VPN RouteBased. Создание VPN-шлюза часто занимает 45 минут и более, в зависимости от выбранного SKU VPN-шлюза.
+Теперь создайте VPN-шлюз в центральной виртуальной сети. Параметр VpnType для конфигураций межсетевых подключений должен иметь значение RouteBased. Создание VPN-шлюза часто занимает 45 минут и более, в зависимости от выбранного SKU VPN-шлюза.
 
 ```azurepowershell
 New-AzureRmVirtualNetworkGateway -Name $GWHubName -ResourceGroupName $RG1 `
@@ -219,7 +228,7 @@ New-AzureRmVirtualNetworkGateway -Name $GWHubName -ResourceGroupName $RG1 `
 -VpnType RouteBased -GatewaySku basic
 ```
 
-### <a name="create-a-vpn-gateway-for-the-onprem-vnet"></a>Создание VPN-шлюза для локальной виртуальной сети
+### <a name="create-a-vpn-gateway-for-the-on-premises-virtual-network"></a>Создание VPN-шлюза для локальной виртуальной сети
 
 Создайте конфигурацию VPN-шлюза. Конфигурация VPN-шлюза определяет используемые подсеть и общедоступный IP-адрес.
 
@@ -230,7 +239,7 @@ $gwipconf2 = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfNameOnprem 
   -Subnet $subnet2 -PublicIpAddress $gwOnprempip
   ```
 
-Создайте VPN-шлюз для локальной виртуальной сети. Для подключений типа VNet-to-VNet необходимо использовать тип VPN RouteBased. Создание VPN-шлюза часто занимает 45 минут и более, в зависимости от выбранного SKU VPN-шлюза.
+Теперь создайте VPN-шлюз для локальной виртуальной сети. Параметр VpnType для конфигураций межсетевых подключений должен иметь значение RouteBased. Создание VPN-шлюза часто занимает 45 минут и более, в зависимости от выбранного SKU VPN-шлюза.
 
 ```azurepowershell
 New-AzureRmVirtualNetworkGateway -Name $GWOnpremName -ResourceGroupName $RG1 `
@@ -240,7 +249,7 @@ New-AzureRmVirtualNetworkGateway -Name $GWOnpremName -ResourceGroupName $RG1 `
 
 ### <a name="create-the-vpn-connections"></a>Создание VPN-подключений
 
-Теперь можно создать VPN-подключения между шлюзами виртуальной сети центра и локальной сети.
+Теперь можно создать VPN-подключения между центральным и локальным шлюзами.
 
 #### <a name="get-the-vpn-gateways"></a>Получение VPN-шлюзов
 
@@ -251,14 +260,14 @@ $vnetOnpremgw = Get-AzureRmVirtualNetworkGateway -Name $GWOnpremName -ResourceGr
 
 #### <a name="create-the-connections"></a>Создание подключений
 
-Теперь создайте подключение между виртуальной сетью центра и локальной виртуальной сетью. Вы увидите ссылки на общий ключ в примерах. Можно использовать собственные значения для общего ключа. Важно, чтобы общий ключ в обоих подключениях был одинаковым. Создание подключения может занять некоторое время.
+На этом этапе вы создадите подключение между центральной и локальной виртуальными сетями. Вы увидите ссылки на общий ключ в примерах. Можно использовать собственные значения для общего ключа. Важно, чтобы общий ключ в обоих подключениях был одинаковым. Создание подключения может занять некоторое время.
 
 ```azurepowershell
 New-AzureRmVirtualNetworkGatewayConnection -Name $ConnectionNameHub -ResourceGroupName $RG1 `
 -VirtualNetworkGateway1 $vnetHubgw -VirtualNetworkGateway2 $vnetOnpremgw -Location $Location1 `
 -ConnectionType Vnet2Vnet -SharedKey 'AzureA1b2C3'
 ```
-Создайте подключение между виртуальной сетью центра и локальной виртуальной сетью. Этот шаг похож на предыдущий, за исключением того, что вы создаете подключение из Vnet-Onprem к VNet-hub. Убедитесь, что общие ключи совпадают. Подключение установится через несколько минут.
+Создайте подключение между локальной и центральной виртуальными сетями. Этот шаг похож на предыдущий, за исключением того, что вы создаете подключение из VNet-Onprem к VNet-hub. Убедитесь, что общие ключи совпадают. Подключение установится через несколько минут.
 
   ```azurepowershell
   New-AzureRmVirtualNetworkGatewayConnection -Name $ConnectionNameOnprem -ResourceGroupName $RG1 `
@@ -282,9 +291,9 @@ Get-AzureRmVirtualNetworkGatewayConnection -Name $ConnectionNameHub -ResourceGro
 "egressBytesTransferred": 4142431
 ```
 
-## <a name="peer-the-hub-and-spoke-vnets"></a>Установление пиринга между виртуальными сетями периферийных зон и центра
+## <a name="peer-the-hub-and-spoke-virtual-networks"></a>Настройка пиринга между центральной и периферийной виртуальными сетями
 
-Теперь установите пиринг между виртуальными сетями периферийных зон и центра.
+Теперь создайте пиринговое подключение между центральной и периферийной виртуальными сетями.
 
 ```azurepowershell
 # Peer hub to spoke
@@ -294,7 +303,7 @@ Add-AzureRmVirtualNetworkPeering -Name HubtoSpoke -VirtualNetwork $VNetHub -Remo
 Add-AzureRmVirtualNetworkPeering -Name SpoketoHub -VirtualNetwork $VNetSpoke -RemoteVirtualNetworkId $VNetHub.Id -AllowForwardedTraffic -UseRemoteGateways
 ```
 
-## <a name="create-routes"></a>Создание маршрутов
+## <a name="create-the-routes"></a>Создание маршрутов.
 
 Создайте несколько маршрутов:
 
@@ -302,7 +311,7 @@ Add-AzureRmVirtualNetworkPeering -Name SpoketoHub -VirtualNetwork $VNetSpoke -Re
 - Маршрут по умолчанию из периферийной подсети через IP-адрес брандмауэра.
 
 > [!NOTE]
-> Брандмауэр Azure определит ваши локальные сети, используя BGP. Это может быть маршрут по умолчанию, по которому интернет-трафик будет перенаправляться обратно через вашу локальную сеть. Если вы хотите, чтобы интернет-трафик отправлялся непосредственно из брандмауэра в Интернет, добавьте определенный пользователем маршрут (0.0.0.0/0) в AzureFirewallSubnet со следующим прыжком типа **Internet**. Трафик, предназначенный для локальной сети, по-прежнему будет принудительно туннелироваться через шлюз VPN или ExpressRoute, используя более конкретные маршруты, полученные из BGP.
+> Брандмауэр Azure определит ваши локальные сети, используя BGP. При этом может использоваться маршрут по умолчанию, который направляет интернет-трафик назад в локальную сеть. В рабочем развертывании интернет-трафик может перенаправляться непосредственно из брандмауэра в Интернет. В AzureFirewallSubnet можно добавить пользовательский маршрут по умолчанию (0.0.0.0/0) с типом следующего прыжка **Интернет**. Трафик, предназначенный для локальной сети, по-прежнему будет принудительно туннелироваться через шлюз VPN или ExpressRoute, используя определенные маршруты, полученные из BGP.
 
 ```azurepowershell
 #Create a route table
@@ -367,7 +376,7 @@ Set-AzureRmVirtualNetwork
 
 ### <a name="create-the-workload-virtual-machine"></a>Создание виртуальной машины с рабочей нагрузкой
 
-Создайте виртуальную машину в периферийной виртуальной сети, запустив IIS, без общедоступного IP-адреса и проверьте связь.
+В периферийной виртуальной сети создайте виртуальную машину со службами IIS без общедоступного IP-адреса и с разрешенной проверкой связи.
 При появлении запроса введите имя пользователя и пароль для виртуальной машины.
 
 ```azurepowershell
@@ -415,9 +424,9 @@ Set-AzureRmVMExtension `
     -SettingString '{"commandToExecute":"powershell New-NetFirewallRule –DisplayName “Allow ICMPv4-In” –Protocol ICMPv4"}' `
     -Location $Location1--->
 
-### <a name="create-the-onprem-virtual-machine"></a>Создание виртуальной машины в локальной сети
+### <a name="create-the-on-premises-virtual-machine"></a>Создание локальной виртуальной машины
 
-Это стандартная виртуальная машина, из которой можно подключиться к удаленному рабочему столу с помощью общедоступного IP-адреса. Оттуда вы можете подключиться к серверу локальной виртуальной сети через брандмауэр. При появлении запроса введите имя пользователя и пароль для виртуальной машины.
+Это простая машина, из которой можно подключиться к удаленному рабочему столу с помощью общедоступного IP-адреса. Далее можно подключиться к локальному серверу за брандмауэром. При появлении запроса введите имя пользователя и пароль для виртуальной машины.
 
 ```azurepowershell
 New-AzureRmVm `
@@ -432,29 +441,29 @@ New-AzureRmVm `
 
 ## <a name="test-the-firewall"></a>тестирование брандмауэра.
 
-Сначала получите частный IP-адрес для виртуальной машины **VM-spoke-01**.
+Сначала получите и запишите частный IP-адрес для виртуальной машины **VM-spoke-01**.
 
 ```azurepowershell
 $NIC.IpConfigurations.privateipaddress
 ```
 
-1. На портале Azure подключитесь к виртуальной машине **VM-Onprem**.
+На портале Azure подключитесь к виртуальной машине **VM-Onprem**.
 <!---2. Open a Windows PowerShell command prompt on **VM-Onprem**, and ping the private IP for **VM-spoke-01**.
 
    You should get a reply.--->
-2. Откройте веб-браузер в **VM-Onprem** и перейдите по адресу http://\<частный IP-адрес VM-spoke-01\>.
+Откройте веб-браузер в **VM-Onprem** и перейдите по адресу http://\<частный IP-адрес VM-spoke-01\>.
 
-   Вы должны увидеть веб-страницу по умолчанию "Службы IIS".
+Вы должны увидеть веб-страницу по умолчанию "Службы IIS".
 
-3. На виртуальной машине **VM-Onprem** откройте удаленный рабочий стол и выполните подключение к **VM-talk-01** с помощью частного IP-адреса.
+На виртуальной машине **VM-Onprem** откройте удаленный рабочий стол и выполните подключение к **VM-talk-01** с помощью частного IP-адреса.
 
-   Ваше соединение должно успешно выполниться, и вы сможете войти в систему, используя свое имя пользователя и пароль.
+Ваше соединение должно успешно выполниться, и вы сможете войти в систему, используя свое имя пользователя и пароль.
 
 Итак, теперь вы убедились в том, что правила брандмауэра работают:
 
 <!---- You can ping the server on the spoke VNet.--->
-- Вы можете перейти на веб-сервер в периферийной виртуальной сети.
-- Вы можете подключиться к серверу в периферийной виртуальной сети по протоколу удаленного рабочего стола.
+- При помощи браузера можно подключиться к веб-серверу в периферийной виртуальной сети.
+- К серверу в периферийной виртуальной сети можно подключиться с помощью RDP.
 
 Затем измените действие коллекции сетевых правил брандмауэра на **Запретить**, чтобы убедиться, что правила брандмауэра работают должным образом. Выполните следующий скрипт, чтобы изменить действие коллекции правил на **Запретить**.
 
@@ -472,15 +481,6 @@ Set-AzureRmFirewall -AzureFirewall $azfw
 Вы можете сохранить ресурсы брандмауэра для следующего руководства или, если он больше не нужен, удалить группу ресурсов **FW-Hybrid-Test**, чтобы удалить ресурсы, связанные с брандмауэром.
 
 ## <a name="next-steps"></a>Дополнительная информация
-
-Из этого руководства вы узнали, как выполнить следующие задачи:
-
-> [!div class="checklist"]
-> * Настройка сетевой среды
-> * Настройка и развертывание брандмауэра
-> * Создание маршрутов.
-> * Создание виртуальных машин
-> * тестирование брандмауэра.
 
 Теперь вы можете отследить журналы Брандмауэра Azure.
 

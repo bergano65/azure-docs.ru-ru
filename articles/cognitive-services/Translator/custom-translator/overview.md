@@ -9,12 +9,12 @@ ms.component: custom-translator
 ms.date: 11/13/2018
 ms.author: v-rada
 ms.topic: overview
-ms.openlocfilehash: b7cba2959bead5eeed72a87219c70f896b5a48b8
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 76e6bc006ff6049b631409a3515628fbd169f713
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51682968"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51976984"
 ---
 # <a name="what-is-custom-translator-preview"></a>Что такое Custom Translator (предварительная версия)?
 
@@ -32,7 +32,7 @@ Custom Translator предоставляет разные возможности
 |---------|---------|
 |[Использование технологии нейронного машинного перевода](https://blogs.msdn.microsoft.com/translation/2016/11/15/microsoft-translator-launching-neural-network-based-translations-for-all-its-speech-languages/)     |  Оптимизация перевода за счет использования нейронного машинного перевода (NMT), предоставляемого Custom Translator.       |
 |[Создание систем, которые знают терминологию вашей бизнес-отрасли](what-are-parallel-documents.md)     |  Настройка и сборка систем перевода с помощью параллельных документов, которые понимают особую терминологию вашего бизнеса и отрасли.       |
-|[Использование словаря для создания моделей](what-is-dictionary.md)     |   Если у вас нет набора данных для обучения, вы можете обучить модель только с использованием данных словаря.       |
+|[Использование словаря для создания моделей](what-is-dictionary.md)     |   Если у вас нет набора данных для обучения, вы можете обучить модель только с использованием данных из словаря.       |
 |[Совместная работа с другими пользователями](how-to-manage-settings.md#share-your-workspace)     |   Взаимодействие с другими участниками команды путем совместного использования результатов работы.     |
 |[Доступ к вашей пользовательской модели перевода](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl)     |  Ваши существующие приложения или программы могут в любое время получать доступ к вашей пользовательской модели перевода с помощью API перевода текстов Майкрософт версии 3.       |
 

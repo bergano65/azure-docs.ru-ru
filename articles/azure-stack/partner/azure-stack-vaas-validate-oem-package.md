@@ -10,15 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 10/19/2018
+ms.date: 11/19/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: bcfc4cb65c94e34e9f6056ada53726f88489fefb
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: 8268a6b04d7ddbb35821999142d3a33bdd2bedcc
+ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49646657"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52261808"
 ---
 # <a name="validate-oem-packages"></a>Проверка пакетов OEM
 
@@ -58,22 +58,17 @@ ms.locfileid: "49646657"
 
 #### <a name="option-1-generating-an-account-sas-url"></a>Вариант 1. Создание URL-адреса SAS учетной записи
 
-1. [!INCLUDE [azure-stack-vaas-sas-step_navigate](includes/azure-stack-vaas-sas-step_navigate.md)]
+1. Перейдите в свою учетную запись хранения на [портале Azure](https://portal.azure.com/) и откройте ZIP-архив с вашим пакетом.
 
-1. Выберите **Большой двоичный объект** в разделе **Разрешенные службы**. Снимите все остальные флажки.
+2. В контекстном меню выберите **Generate SAS** (Создать SAS).
 
-1. В разделе **Разрешенные типы ресурсов** выберите **Контейнер** и **Объект**. Снимите все остальные флажки.
+3. Выберите **Read** (Чтение) в списке **разрешений**.
 
-1. Выберите **Read** (Чтение) и **List** (Список) в разделе **Предоставленные разрешения**. Снимите все остальные флажки.
+4. Задайте текущее время в поле **Start time** (Время начала), а в поле **End time** (Время окончания) — время, отстоящее минимум на 48 часов от значения **Start time** (Время начала). Если вы будете запускать другие тесты с помощью этого пакета, можно увеличить **время окончания** для выполнения тестирования. Все тесты, подготовленные к выполнению с помощью VaaS после истечения **времени окончания**, будут отклонены, и вам нужно будет повторно создать SAS.
 
-1. Задайте текущее время в поле **Время начала**, а в поле **Время окончания** — время, отстоящее на 1 час от текущего.
+5. Щелкните **Generate blob SAS token and URL** (Создать маркер и URL-адрес SAS большого двоичного объекта).
 
-1. [!INCLUDE [azure-stack-vaas-sas-step_generate](includes/azure-stack-vaas-sas-step_generate.md)]
-    Вот какой формат должен появиться: `https://storageaccountname.blob.core.windows.net/?sv=2016-05-31&ss=b&srt=co&sp=rl&se=2017-05-11T21:41:05Z&st=2017-05-11T13:41:05Z&spr=https`
-
-1. Измените созданный URL-адрес SAS для включения контейнера пакета, `{containername}`, и имя большого двоичного объекта пакета, `{mypackage.zip}`, как показано ниже: `https://storageaccountname.blob.core.windows.net/{containername}/{mypackage.zip}?sv=2016-05-31&ss=b&srt=co&sp=rl&se=2017-05-11T21:41:05Z&st=2017-05-11T13:41:05Z&spr=https`
-
-    Используйте это значение при запуске нового рабочего процесса **проверки пакета** на портале VaaS.
+Используйте **URL-адрес SAS большого двоичного объекта** при запуске нового рабочего процесса **проверки пакета** на портале VaaS.
 
 #### <a name="option-2-using-public-read-container"></a>Вариант 2. Использование контейнера с общим доступом на чтение
 

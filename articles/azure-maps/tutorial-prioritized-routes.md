@@ -3,18 +3,18 @@ title: Использование нескольких маршрутов с п�
 description: Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
 author: walsehgal
 ms.author: v-musehg
-ms.date: 10/29/2018
+ms.date: 11/14/2018
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 67b68489f2e06b9149f842f293a769fa7f688be0
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 0a278eb1612ec9573c4d12611ccce2d1b5b971bc
+ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50412709"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51705285"
 ---
 # <a name="find-routes-for-different-modes-of-travel-using-azure-maps"></a>Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
 
@@ -291,12 +291,7 @@ ms.locfileid: "50412709"
 
 [См. этот пример в интерактивном режиме](https://azuremapscodesamples.azurewebsites.net/?sample=Multiple%20routes%20by%20mode%20of%20travel)
 
-Дополнительные сведения о времени сервисного обслуживания и возможностях службы Azure Maps см. здесь:
+В этом руководстве показано, как создать простой указатель магазинов с помощью Azure Maps.
 
 > [!div class="nextstepaction"]
-> [Уровни увеличения и параметры сетки](zoom-levels-and-tile-grid.md)
-
-Дополнительные примеры кода и сведения о возможностях интерактивного программирования см. здесь:
-
-> [!div class="nextstepaction"]
-> [Как использовать библиотеку Map Control в службе "Карты Azure"](how-to-use-map-control.md)
+> [Создание указателя магазинов с помощью Azure Maps](./tutorial-create-store-locator.md)

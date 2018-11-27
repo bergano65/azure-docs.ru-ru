@@ -8,12 +8,12 @@ ms.service: search
 ms.topic: overview
 ms.date: 11/09/2018
 ms.author: heidist
-ms.openlocfilehash: bf616dda602edff6add5070ad1f1ab85b6a21380
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: 85a071017f4394f4ccde297fb229f7786d9249b3
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51568977"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52285141"
 ---
 # <a name="what-is-azure-search"></a>Что такое поиск Azure?
 Поиск Azure — это облачное решение "поиск как услуга", которое предоставляет разработчикам API и средства для реализации расширенных возможностей при работе с конфиденциальным и разнородным содержимым веб-, мобильных и корпоративных приложений. Выполнение запроса осуществляется по пользовательскому индексу.

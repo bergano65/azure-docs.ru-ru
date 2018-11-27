@@ -9,12 +9,12 @@ ms.component: custom-translator
 ms.date: 11/13/2018
 ms.author: v-rada
 ms.topic: quickstart
-ms.openlocfilehash: 949fb2487c3ca519c1d7022c1434d0a029ed20bb
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: cb713ac53b399d8ba79d003ee6d948bb5af5220b
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51626582"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51975778"
 ---
 # <a name="quickstart-build-deploy-and-use-a-custom-model-for-translation"></a>Краткое руководство. Создание, развертывание и использование пользовательской модели перевода
 
@@ -26,7 +26,7 @@ ms.locfileid: "51626582"
 
 2. Подписка на API перевода текстов, которую можно получить на портале Azure. Вам потребуется связать ключ подписки API перевода текстов с рабочей областью в Custom Translator. [Сведения о регистрации для использования API перевода текстов](https://docs.microsoft.com/azure/cognitive-services/translator/translator-text-how-to-signup).
 
-3. Если у вас есть все указанные выше компоненты, войдите на портал [Custom Translator](https://portal.customtranslator.azure.ai). На портале Custom Translator перейдите на страницу параметров, где вы можете связать ключ подписки API перевода текстов Майкрософт с рабочей областью. 
+3. Если у вас есть все указанные выше компоненты, войдите на портал [Custom Translator](https://portal.customtranslator.azure.ai). На портале Custom Translator перейдите на страницу параметров, где вы можете связать ключ подписки API перевода текстов Майкрософт с рабочей областью.
 
 ## <a name="create-a-project"></a>Создание проекта
 
@@ -49,11 +49,11 @@ ms.locfileid: "51626582"
 
 После передачи всех необходимых документов нужно переходить к созданию модели.
 
-Выберите проект, который вы создали. Вы увидите все отправленные вами документы, языковая пара которых совпадает с настроенной для этого проекта. Выберите документы, которые необходимо включить в модель. Вы можете выбрать данные для [обучения](training-and-model.md#training-dataset-for-custom-translator), [настройки](training-and-model.md#tuning-dataset-for-custom-translator) или [тестирования](training-and-model.md#testing-dataset-for-custom-translator) или выбрать только данные для обучения и разрешить Custom Translator автоматически создать для модели наборы для настройки и тестирования.
+Выберите проект, который вы создали. Вы увидите все отправленные вами документы, языковая пара которых совпадает с настроенной для этого проекта. Выберите документы, которые необходимо включить в модель. Вы можете выбрать данные для [обучения](training-and-model.md#training-dataset-for-custom-translator), [настройки](training-and-model.md#tuning-dataset-for-custom-translator) или [тестирования](training-and-model.md#testing-dataset-for-custom-translator) либо выбрать только данные для обучения и разрешить Custom Translator автоматически создать для модели наборы для настройки и тестирования.
 
 ![Создание модели](media/quickstart/ct-how-to-train.png)
 
-Когда вы выберете нужные документы, нажмите кнопку Create Model (Создать модель) для создания модели и начала обучения. На вкладке Models (Модели) вы увидите состояние обучения и сведения обо всех обученных моделях.
+Когда вы выберете нужные документы, нажмите кнопку Create Model (Создать модель), чтобы создать модель и начать обучение. На вкладке Models (Модели) вы увидите состояние обучения и сведения обо всех обученных моделях.
 
 [Дополнительные сведения об обучении модели](how-to-train-model.md).
 

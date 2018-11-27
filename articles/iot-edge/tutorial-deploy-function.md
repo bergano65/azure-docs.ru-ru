@@ -4,17 +4,17 @@ description: В этом руководстве выполняется разв�
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 09/21/2018
+ms.date: 10/19/2018
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 27aac9431c3f4cd801d090ddf11114c98edab405
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: d0ae009db0d9470942a4ff5d7c09e2cdd7bcdd53
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51567321"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52165629"
 ---
 # <a name="tutorial-deploy-azure-functions-as-iot-edge-modules"></a>Руководство по развертыванию Функций Azure в качестве модулей IoT Edge
 
@@ -41,7 +41,7 @@ ms.locfileid: "51567321"
 
 Устройство Azure IoT Edge.
 
-* В качестве устройства Azure IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для устройств [Linux](quickstart-linux.md) или [Windows](quickstart.md).
+* В качестве устройства Azure IoT Edge можно настроить компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве по устройствам [Linux](quickstart-linux.md) или [Windows](quickstart.md).
 
 Облачные ресурсы.
 
@@ -57,9 +57,9 @@ ms.locfileid: "51567321"
 
 ## <a name="create-a-container-registry"></a>Создание реестра контейнеров
 
-В этом руководстве вы используете расширение Azure IoT Edge для Visual Studio Code, чтобы создать модуль, и создадите **образ контейнера** из файлов. Затем вы отправите этот образ в **реестр**, содержащий ваши образы и управляющий ими. Наконец, вы развернете свой образ из реестра для выполнения на устройстве IoT Edge.  
+В этом руководстве описано, как создать модуль с помощью расширение Azure IoT Edge для Visual Studio Code и **образ контейнера** из файлов. Затем вы отправите этот образ в **реестр**, содержащий ваши образы и управляющий ими. Наконец, вы развернете свой образ из реестра для выполнения на устройстве IoT Edge.  
 
-Для работы с этим руководством можно использовать любые реестры, совместимые с Docker. Две популярные службы реестров Docker, доступные в облаке — [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) и [Docker Hub](https://docs.docker.com/docker-hub/repos/#viewing-repository-tags). В этом руководстве используется реестр контейнеров Azure. 
+Для хранения образов контейнеров можно использовать любые реестры, совместимые с Docker. Две популярные службы реестров Docker — [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) и [Docker Hub](https://docs.docker.com/docker-hub/repos/#viewing-repository-tags). В этом руководстве используется реестр контейнеров Azure. 
 
 1. На [портале Azure](https://portal.azure.com) выберите **Создать ресурс** > **Контейнеры** > **Реестр контейнеров**.
 
@@ -80,7 +80,7 @@ ms.locfileid: "51567321"
 
 6. После создания реестра контейнеров перейдите к нему, а затем выберите **Ключи доступа**. 
 
-7. Скопируйте значения **Сервер входа**, **Имя пользователя** и **Пароль**. Эти значения при работе с этим руководством понадобятся позже. 
+7. Скопируйте значения **Сервер входа**, **Имя пользователя** и **Пароль**. Они потребуются позже в этом руководстве для предоставления доступа к реестру контейнеров. 
 
 ## <a name="create-a-function-project"></a>Создание проекта функции
 
@@ -90,90 +90,89 @@ ms.locfileid: "51567321"
 
 2. Выберите **Представление** > **Палитра команд** для открытия палитры команд VS Code.
 
-3. В палитре команд введите и выполните команду **Azure: Вход**. Следуйте инструкциям, чтобы войти в свою учетную запись Azure.
+3. В палитре команд введите и выполните команду **Azure IoT Edge: New IoT Edge solution**. Следуйте инструкциям на экране в палитре команд для создания решения.
 
-4. В палитре команд введите и выполните команду **Azure IoT Edge: New IoT Edge solution**. Следуйте инструкциям на экране в палитре команд для создания решения.
-
-   1. Выберите папку, где требуется создать решение. 
-   2. Введите имя своего решения или примите имя по умолчанию **EdgeSolution**.
-   3. Выберите **Azure Functions — C#** (Функции Azure — C#) как шаблон модуля. 
-   4. Назовите модуль **CSharpFunction**. 
-   5. В качестве репозитория образов первого модуля необходимо указать реестр контейнеров Azure, который был создан в предыдущем разделе. Замените **localhost:5000** скопированным значением имени входа на сервер. Убедитесь, что имя модуля (например, /csharpfunction) осталось нетронутым как часть строки. Последняя строка выглядит следующим образом: \<имя реестра\>.azurecr.io/csharpfunction.
+   | Поле | Значение |
+   | ----- | ----- |
+   | Выбор папки | Выберите расположение на компьютере разработчика для VS Code, чтобы создать файлы решения. |
+   | Введите название решения. | Введите описательное имя для решения, например **FunctionSolution**, или примите значение по умолчанию. |
+   | Выбор шаблона модуля | Выберите **Функции Azure — C#**. |
+   | Указание имени модуля | Назовите модуль **CSharpFunction**. |
+   | Указание репозитория изображений Docker для модуля | Репозиторий изображений включает в себя имя реестра контейнеров и имя образа контейнера. Образ контейнера предварительно заполняется на последнем шаге. Замените **localhost:5000** на значение сервера входа из реестра контейнеров Azure. Вы можете извлечь сервер входа на странице "Обзор" реестра контейнеров на портале Azure. Последняя строка выглядит следующим образом: \<имя реестра\>.azurecr.io/CSharpFunction. |
 
    ![Выбор репозитория образа Docker](./media/tutorial-deploy-function/repository.png)
 
 4. В окне VS Code будет загружена рабочая область решения IoT Edge, которая состоит из папки \.vscode, папки модулей, файла шаблона манифеста развертывания и файла \.env. В обозревателе VS Code откройте **Модули** > **CSharpFunction** > **CSharpFunction.cs**.
 
-5. Замените содержимое файла **CSharpFunction.cs** на код, приведенный ниже.
+5. Измените содержимое файла **CSharpFunction.cs** на код, приведенный ниже. Этот код получает данные телеметрии о температуре компьютера и окружающей среды и передает сообщение в Центр Интернета вещей, только если температура компьютера превышает указанный порог.
 
    ```csharp
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Text;
-    using System.Threading.Tasks;
-    using Microsoft.Azure.Devices.Client;
-    using Microsoft.Azure.WebJobs;
-    using Microsoft.Azure.WebJobs.Extensions.EdgeHub;
-    using Microsoft.Azure.WebJobs.Host;
-    using Microsoft.Extensions.Logging;
-    using Newtonsoft.Json;
+   using System;
+   using System.Collections.Generic;
+   using System.IO;
+   using System.Text;
+   using System.Threading.Tasks;
+   using Microsoft.Azure.Devices.Client;
+   using Microsoft.Azure.WebJobs;
+   using Microsoft.Azure.WebJobs.Extensions.EdgeHub;
+   using Microsoft.Azure.WebJobs.Host;
+   using Microsoft.Extensions.Logging;
+   using Newtonsoft.Json;
 
-    namespace Functions.Samples
-    {
-        public static class CSharpFunction
-        {
-            [FunctionName("CSharpFunction")]
-            public static async Task FilterMessageAndSendMessage(
-                        [EdgeHubTrigger("input1")] Message messageReceived,
-                        [EdgeHub(OutputName = "output1")] IAsyncCollector<Message> output,
-                        ILogger logger)
-            {
-                const int temperatureThreshold = 20;
-                byte[] messageBytes = messageReceived.GetBytes();
-                var messageString = System.Text.Encoding.UTF8.GetString(messageBytes);
+   namespace Functions.Samples
+   {
+       public static class CSharpFunction
+       {
+           [FunctionName("CSharpFunction")]
+           public static async Task FilterMessageAndSendMessage(
+               [EdgeHubTrigger("input1")] Message messageReceived,
+               [EdgeHub(OutputName = "output1")] IAsyncCollector<Message> output,
+               ILogger logger)
+           {
+               const int temperatureThreshold = 20;
+               byte[] messageBytes = messageReceived.GetBytes();
+               var messageString = System.Text.Encoding.UTF8.GetString(messageBytes);
 
-                if (!string.IsNullOrEmpty(messageString))
-                {
-                    logger.LogInformation("Info: Received one non-empty message");
-                    // Get the body of the message and deserialize it.
-                    var messageBody = JsonConvert.DeserializeObject<MessageBody>(messageString);
+               if (!string.IsNullOrEmpty(messageString))
+               {
+                   logger.LogInformation("Info: Received one non-empty message");
+                   // Get the body of the message and deserialize it.
+                   var messageBody = JsonConvert.DeserializeObject<MessageBody>(messageString);
 
-                    if (messageBody != null && messageBody.machine.temperature > temperatureThreshold)
-                    {
-                        // Send the message to the output as the temperature value is greater than the threashold.
-                        var filteredMessage = new Message(messageBytes);
-                        // Copy the properties of the original message into the new Message object.
-                        foreach (KeyValuePair<string, string> prop in messageReceived.Properties)
-                        {
-                            filteredMessage.Properties.Add(prop.Key, prop.Value);                }
-                        // Add a new property to the message to indicate it is an alert.
-                        filteredMessage.Properties.Add("MessageType", "Alert");
-                        // Send the message.       
-                        await output.AddAsync(filteredMessage);
-                        logger.LogInformation("Info: Received and transferred a message with temperature above the threshold");
-                    }
-                }
-            }
-        }
-        //Define the expected schema for the body of incoming messages.
-        class MessageBody
-        {
-            public Machine machine {get; set;}
-            public Ambient ambient {get; set;}
-            public string timeCreated {get; set;}
-        }
-        class Machine
-        {
-            public double temperature {get; set;}
-            public double pressure {get; set;}         
-        }
-        class Ambient
-        {
-            public double temperature {get; set;}
-            public int humidity {get; set;}         
-        }
-    }
+                   if (messageBody != null && messageBody.machine.temperature > temperatureThreshold)
+                   {
+                       // Send the message to the output as the temperature value is greater than the threashold.
+                       var filteredMessage = new Message(messageBytes);
+                       // Copy the properties of the original message into the new Message object.
+                       foreach (KeyValuePair<string, string> prop in messageReceived.Properties)
+                       {filteredMessage.Properties.Add(prop.Key, prop.Value);}
+                       // Add a new property to the message to indicate it is an alert.
+                       filteredMessage.Properties.Add("MessageType", "Alert");
+                       // Send the message.       
+                       await output.AddAsync(filteredMessage);
+                       logger.LogInformation("Info: Received and transferred a message with temperature above the threshold");
+                   }
+               }
+           }
+       }
+       //Define the expected schema for the body of incoming messages.
+       class MessageBody
+       {
+           public Machine machine {get; set;}
+           public Ambient ambient {get; set;}
+           public string timeCreated {get; set;}
+       }
+       class Machine
+       {
+           public double temperature {get; set;}
+           public double pressure {get; set;}         
+       }
+       class Ambient
+       {
+           public double temperature {get; set;}
+           public int humidity {get; set;}         
+       }
+   }
    ```
 
 6. Сохраните файл.
@@ -186,12 +185,13 @@ ms.locfileid: "51567321"
 
 1. Откройте интегрированный терминал VS Code, выбрав **Вид** > **Терминал**. 
 
-1. Войдите в свой реестр контейнеров, введя следующую команду в окне интегрированного терминала. Затем образ модуля можно отправить в реестр контейнеров Azure. 
+2. Войдите в свой реестр контейнеров, введя следующую команду в окне интегрированного терминала. Укажите имя пользователя и сервер входа, которые были скопированы из реестра контейнеров Azure ранее.
      
     ```csh/sh
     docker login -u <ACR username> <ACR login server>
     ```
-    Укажите имя пользователя и сервер входа, которые были скопированы из реестра контейнеров Azure ранее. Когда будет предложено ввести пароль, вставьте пароль реестра контейнеров и нажмите клавишу **ВВОД**.
+
+    Когда будет предложено ввести пароль, вставьте пароль реестра контейнеров и нажмите клавишу **ВВОД**.
 
     ```csh/sh
     Password: <paste in the ACR password and press enter>
@@ -235,9 +235,9 @@ Visual Studio Code выводит сообщение об успешном за�
 
 6. Щелкните имя устройства IoT Edge правой кнопкой мыши, а затем выберите **Create Deployment for Single Device** (Создание развертывания для одного устройства). 
 
-7. Перейдите в папку решения, содержащую **CSharpFunction**. Откройте папку конфигурации, выберите файл deployment.json и щелкните **Select Edge Deployment Manifest** (Выбрать манифест развертывания Edge).
+7. Перейдите в папку решения, содержащую **CSharpFunction**. Откройте папку конфигурации, выберите файл **deployment.json** и затем **Select Edge Deployment Manifest** (Выбрать манифест развертывания Edge).
 
-8. Обновите раздел **Azure IoT Hub Devices** (Устройства Центра Интернета вещей Azure). Вы должны увидеть новый модуль **CSharpFunction**, работающий вместе с модулем **TempSensor**, а также **$edgeAgent** и **$edgeHub**. 
+8. Обновите раздел **Azure IoT Hub Devices** (Устройства Центра Интернета вещей Azure). Вы должны увидеть новый модуль **CSharpFunction**, работающий вместе с модулем **TempSensor**, а также **$edgeAgent** и **$edgeHub**. Может потребоваться несколько минут, чтобы новые модули отобразились. Устройство IoT Edge должно получить сведения о новом развертывании из Центра Интернета вещей, запустить новые контейнеры и затем сообщить о своем состоянии в Центр Интернета вещей. 
 
    ![Просмотр развернутых модулей в VS Code](./media/tutorial-deploy-function/view-modules.png)
 
