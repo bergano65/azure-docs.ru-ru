@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: 2ce6e7c796faf0c7377a33dabe1e8c05e81fde2f
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: a4e294687b6c3ea2ba6ff8003e7a8f1ac69ea639
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51280718"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52425077"
 ---
 # <a name="tutorial-4-extract-exact-text-matches"></a>Руководство 4. Извлечение точных текстовых совпадений
 В этом руководстве вы узнаете, как получить данные, соответствующие предварительно определенному списку элементов. Каждый элемент в списке может содержать список синонимов. Для приложения для управления персоналом можно выбрать сотрудника с помощью нескольких ключевых факторов (имени, адреса электронной почты, номера телефона и федерального ИНН США). 
@@ -41,7 +41,7 @@ ms.locfileid: "51280718"
 > * Опубликовать
 > * Получать намерения и сущности из конечной точки.
 
-[!INCLUDE[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
+[!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="use-existing-app"></a>Использование существующего приложения
 Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
@@ -57,7 +57,7 @@ ms.locfileid: "51280718"
 
 ## <a name="moveemployee-intent"></a>Намерение MoveEmployee
 
-1. [!INCLUDE[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
+1. [!INCLUDE [Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
 2. Выберите **Create new intent**. (Создать намерение). 
 
@@ -84,7 +84,7 @@ ms.locfileid: "51280718"
 
     Помните, что номер и datetimeV2 были добавлены в предыдущем руководстве и будут назначаться автоматически при их обнаружении в любом примере высказывания.
 
-    [!INCLUDE[Do not use too few utterances](../../../includes/cognitive-services-luis-too-few-example-utterances.md)]  
+    [!INCLUDE [Do not use too few utterances](../../../includes/cognitive-services-luis-too-few-example-utterances.md)]  
 
 ## <a name="employee-list-entity"></a>Сущность списка сотрудников
 Теперь, когда намерение **MoveEmployee** содержит высказывания, интеллектуальная служба распознавания речи должна распознавать сотрудников. 

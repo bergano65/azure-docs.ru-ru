@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: 82d7e5ab57d9cf12c6917386282182faacb07725
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 5e8345deb629d293d9673819893181e652d5dbb9
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51282396"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52423424"
 ---
 # <a name="tutorial-3-extract-well-formatted-data"></a>Руководство 3. Извлечение данных в правильном формате
 В этом руководстве изменяется приложение "Управление персоналом" для извлечения согласованно отформатированных данных из высказывания с помощью сущности **регулярного выражения**.
@@ -48,7 +48,7 @@ HRF-456098 title?
 > * Опубликовать
 > * Получать намерения и сущности из конечной точки.
 
-[!INCLUDE[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
+[!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="use-existing-app"></a>Использование существующего приложения
 Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
@@ -63,7 +63,7 @@ HRF-456098 title?
 
 ## <a name="findform-intent"></a>Намерение FindForm
 
-1. [!INCLUDE[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
+1. [!INCLUDE [Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
 2. Выберите **Create new intent**. (Создать намерение). 
 
@@ -90,7 +90,7 @@ HRF-456098 title?
 
     В приложении есть предварительно созданная сущность номера, добавленная в предыдущем руководстве, поэтому каждый номер формы помечен. Этого может быть достаточно для клиентского приложения, но номер не будет помечен типом. Благодаря созданию сущности с соответствующим именем клиентское приложение может обрабатывать возвращенную из LUIS сущность соответствующим образом.
 
-    [!INCLUDE[Do not use too few utterances](../../../includes/cognitive-services-luis-too-few-example-utterances.md)]  
+    [!INCLUDE [Do not use too few utterances](../../../includes/cognitive-services-luis-too-few-example-utterances.md)]  
 
 ## <a name="regular-expression-entity"></a>Сущность регулярного выражения 
 Сущность регулярного выражения для поиска номера формы — `hrf-[0-9]{6}`. Это регулярное выражение сопоставляет символьные литералы `hrf-`, но не учитывает регистр и варианты языка и региональных параметров. Оно ищет цифры 0–9 (всего 6 цифр).

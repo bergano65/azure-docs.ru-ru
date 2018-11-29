@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 08/20/2018
 ms.author: daveba
-ms.openlocfilehash: 18141e0f58a0b5227c3f5f5c36210017da101780
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 6e8f7f18196eb23900c815048e12d57a238d08f7
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51625340"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52423062"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-ad-graph-api"></a>Руководство. Использование назначаемого системой управляемого удостоверения виртуальной машины Windows для доступа к API Graph в Azure AD
 
-[!INCLUDE[preview-notice](~/includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE [preview-notice](~/includes/active-directory-msi-preview-notice.md)]
 
 В этом руководстве описано, как получить доступ к API Microsoft Graph с помощью назначенного системой управляемого удостоверения на виртуальной машине Windows для получения сведений о ее членстве в группах. Управляемыми удостоверениями для ресурсов Azure автоматически управляет Azure. Они позволяют проходить проверку подлинности в службах, поддерживающих аутентификацию Azure Active Directory, без указания учетных данных в коде.  В этом руководстве описано, как выполнить запрос на членство удостоверения виртуальной машины в группах Azure AD. Сведения о группе часто используются при принятии решений об авторизации, например. На уровне платформы AAD управляемое удостоверение виртуальной машины представляется **субъектом-службой**. Перед выполнением запроса на членство в группе добавьте субъект-службу, представляющий удостоверение виртуальной машины, в группу Azure AD. Это можно сделать с помощью Azure PowerShell, Azure AD PowerShell или Azure CLI.
 

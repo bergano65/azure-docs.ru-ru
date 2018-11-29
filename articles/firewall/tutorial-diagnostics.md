@@ -7,18 +7,18 @@ ms.service: firewall
 ms.topic: tutorial
 ms.date: 10/24/2018
 ms.author: victorh
-ms.openlocfilehash: 875efddfff9b50ab05665cb8c158467dc46c8d0d
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 1354faad4abf9a8a4b56414628d39d9a6f90d721
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49987438"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52426173"
 ---
 # <a name="tutorial-monitor-azure-firewall-logs-and-metrics"></a>Руководство. Мониторинг журналов и метрик Брандмауэра Azure
 
 Работу брандмауэра Azure можно отслеживать с помощью журналов брандмауэра. Также журналы действий можно использовать для аудита операций на ресурсах брандмауэра Azure. С помощью метрик можно просматривать счетчики производительности на портале. 
 
-Доступ к некоторым из этих журналов можно получить через портал. Журналы можно передавать в [Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.md), службу хранилища, Центры событий, а затем анализировать в Log Analytics или при помощи различных инструментов, таких как Excel и Power BI.
+Доступ к некоторым из этих журналов можно получить через портал. Журналы можно передавать в [Log Analytics](../azure-monitor/insights/azure-networking-analytics.md), службу хранилища, Центры событий, а затем анализировать в Log Analytics или при помощи различных инструментов, таких как Excel и Power BI.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -94,7 +94,7 @@ ms.locfileid: "49987438"
 
 ## <a name="view-and-analyze-the-network-and-application-rule-logs"></a>Просмотр и анализ журналов правил сети и приложений
 
-Azure [Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.md) собирает файлы счетчика и журнала событий. Эта служба предоставляет средства визуализации и эффективные возможности поиска для анализа журналов.
+Azure [Log Analytics](../azure-monitor/insights/azure-networking-analytics.md) собирает файлы счетчика и журнала событий. Эта служба предоставляет средства визуализации и эффективные возможности поиска для анализа журналов.
 
 См. [примеры запросов Log Analytics для Брандмауэра Azure](log-analytics-samples.md).
 
@@ -111,7 +111,7 @@ Azure [Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.
 Теперь, когда брандмауэр для сбора журналов настроен, можно открыть Log Analytics, чтобы просмотреть данные.
 
 > [!div class="nextstepaction"]
-> [Решения для мониторинга сетей в Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.md)
+> [Решения для мониторинга сетей в Log Analytics](../azure-monitor/insights/azure-networking-analytics.md)
 
 [1]: ./media/tutorial-diagnostics/figure1.png
 [2]: ./media/tutorial-diagnostics/figure2.png

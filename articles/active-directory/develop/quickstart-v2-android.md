@@ -16,12 +16,12 @@ ms.workload: identity
 ms.date: 09/23/2018
 ms.author: andret
 ms.custom: aaddev
-ms.openlocfilehash: 6eb06a2a4e83c9c293474f1692c2d33d4d0dfb36
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 3e9c46e1315257d619f1624c06441adc08daddb2
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46995743"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52427021"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Краткое руководство. Вход пользователей и вызов Microsoft Graph API из приложения Android
 
@@ -123,7 +123,7 @@ ms.locfileid: "46995743"
 
 ### <a name="msal"></a>MSAL
 
-MSAL ([com.microsoft.identity.client](http://javadoc.io/doc/com.microsoft.identity.client/msal)) — это библиотека, используемая для входа пользователей и запросов маркеров, которые используются для доступа к API, защищенному Microsoft Azure Active Directory (Azure AD). Вы можете использовать Gradle для его установки, добавив следующее в **Gradle Scripts** > **build.gradle (Module: app)** в разделе **Зависимости**.
+MSAL ([com.microsoft.identity.client](https://javadoc.io/doc/com.microsoft.identity.client/msal)) — это библиотека, используемая для входа пользователей и запросов маркеров, которые используются для доступа к API, защищенному Microsoft Azure Active Directory (Azure AD). Вы можете использовать Gradle для его установки, добавив следующее в **Gradle Scripts** > **build.gradle (Module: app)** в разделе **Зависимости**.
 
 ```gradle  
 implementation 'com.android.volley:volley:1.1.1'
@@ -158,10 +158,10 @@ MSAL имеет два метода получения маркеров: `acquir
 
 Некоторые ситуации требуют принуждения пользователей к взаимодействию с конечной точкой Azure Active Directory версии 2.0, что приводит к переключению контекста в системный браузер для проверки учетных данных пользователей или для получения согласия. Некоторые примеры:
 
-* Первый вход пользователей в приложение.
-* Пользователям может потребоваться повторно ввести учетные данные, так как истек срок действия пароля.
-* Ваше приложение запрашивает доступ к ресурсу, на обращение к которому пользователь должен дать согласие.
-* Требуется двухфакторная проверка подлинности.
+* первый вход пользователей в приложение;
+* когда пользователям может потребоваться повторно ввести учетные данные, так как истек срок действия пароля;
+* когда ваше приложение запрашивает доступ к ресурсу, на обращение к которому пользователь должен дать согласие.
+* когда требуется двухфакторная проверка подлинности.
 
 ```java
 sampleApp.acquireToken(this, SCOPES, getAuthInteractiveCallback());

@@ -14,12 +14,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
-ms.openlocfilehash: a874e37246a143a1ca9fa0ca64218df9aa5c9062
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: c3c79e7bd68e7c96b57ea66951c080b7d952ee8c
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50420512"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52441763"
 ---
 # <a name="customize-the-style-of-the-developer-portal-pages"></a>Настройка стиля страниц для портала разработчика
 
@@ -42,6 +42,8 @@ ms.locfileid: "50420512"
 + Ознакомьтесь с [терминологией службы управления API в Azure](api-management-terminology.md).
 + Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
 + Кроме того, выполните задачи из руководства по [импорту и публикации API](import-and-publish.md).
+
+[!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
 ## <a name="customize-the-developer-portal"></a>Настройка портала разработчика
 

@@ -9,12 +9,12 @@ author: hning86
 ms.author: haining
 ms.reviewer: sgilley
 ms.date: 11/21/2018
-ms.openlocfilehash: 067a8deb935fb8a49d72c6ce441e8d9760c5390c
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: 53de4715a458c5713a31541da64a4a671bf8c132
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52283661"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52496228"
 ---
 # <a name="tutorial-1-train-an-image-classification-model-with-azure-machine-learning-service"></a>Руководство 1. Обучение модели классификации изображений с помощью службы машинного обучения Azure
 
@@ -36,11 +36,11 @@ ms.locfileid: "52283661"
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLfree), прежде чем начинать работу.
 
 >[!NOTE]
-> Код в этой статье протестирован с использованием пакеты SDK для службы "Машинное обучение Azure" версии 0.1.79.
+> Код в этой статье протестирован с использованием пакета SDK для службы "Машинное обучение Azure" версии 0.1.79
 
 ## <a name="get-the-notebook"></a>Получение записной книжки
 
-Для удобства это руководство доступно в формате [Jupyter Notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/01.train-models.ipynb). Запустите записную книжку `01.train-models.ipynb` в Записных книжках Azure или на своем сервере Jupyter Notebook.
+Для удобства это руководство доступно в формате [Jupyter Notebook](https://aka.ms/aml-notebook-tut-01). Запустите записную книжку `01.train-models.ipynb` в Записных книжках Azure или на своем сервере Jupyter Notebook.
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-in-azure-notebook.md)]
 

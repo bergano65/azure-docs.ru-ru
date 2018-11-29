@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: tutorial
 ms.date: 10/27/2018
 ms.author: victorh
-ms.openlocfilehash: 781365e32ce5602e9fb99b620e068ddf68de8c44
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.openlocfilehash: d69bd055c95592961216f5da1efaedc4a642fd63
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51854175"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52316405"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Руководство по развертыванию и настройке Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
 
@@ -309,9 +309,6 @@ Add-AzureRmVirtualNetworkPeering -Name SpoketoHub -VirtualNetwork $VNetSpoke -Re
 
 - Маршрут от подсети шлюза центра до периферийной подсети через IP-адрес брандмауэра.
 - Маршрут по умолчанию из периферийной подсети через IP-адрес брандмауэра.
-
-> [!NOTE]
-> Брандмауэр Azure определит ваши локальные сети, используя BGP. При этом может использоваться маршрут по умолчанию, который направляет интернет-трафик назад в локальную сеть. В рабочем развертывании интернет-трафик может перенаправляться непосредственно из брандмауэра в Интернет. В AzureFirewallSubnet можно добавить пользовательский маршрут по умолчанию (0.0.0.0/0) с типом следующего прыжка **Интернет**. Трафик, предназначенный для локальной сети, по-прежнему будет принудительно туннелироваться через шлюз VPN или ExpressRoute, используя определенные маршруты, полученные из BGP.
 
 ```azurepowershell
 #Create a route table

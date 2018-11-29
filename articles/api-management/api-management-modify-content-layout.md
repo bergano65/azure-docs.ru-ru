@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 02/09/2017
 ms.author: vlvinogr
-ms.openlocfilehash: 4a372b54ace87816b9e7cccbd38466331b5ebfc7
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: 91463520547ca534048bba77d3b979b462ded6b5
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37437602"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52442358"
 ---
 # <a name="modify-the-content-and-layout-of-pages-on-the-developer-portal-in-azure-api-management"></a>Изменение содержимого и макета страниц на портале разработчика в службе управления API Azure
 Существуют три основных способа настройки портала разработчика в службе управления Azure API.
@@ -27,6 +27,8 @@ ms.locfileid: "37437602"
 * [Изменение содержимого статических страниц и элементов макета страницы][modify-content-layout] (описывается в этом руководстве).
 * [Обновление стилей, которые используются для элементов страницы на портале разработчика][customize-styles].
 * [Изменение шаблонов, используемых для страниц, созданных порталом][portal-templates] (например, документы по API, продукты, аутентификация пользователей и т. д.).
+
+[!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
 ## <a name="page-structure"> </a>Структура страниц портала разработчика
 

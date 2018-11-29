@@ -4,17 +4,17 @@ description: Эта статья поможет выполнить шаги по
 services: resource-graph
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 09/18/2018
+ms.date: 11/27/2018
 ms.topic: quickstart
 ms.service: resource-graph
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: 001805aaf87ed6c3481a8ad8378cdc22ef74d274
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: 6bd7ceaeaf0b064ebbd8f069a4741489349bb980
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49646394"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52427511"
 ---
 # <a name="run-your-first-resource-graph-query-using-azure-powershell"></a>Выполните первый запрос графика ресурсов с помощью Azure PowerShell
 
@@ -32,14 +32,11 @@ ms.locfileid: "49646394"
 
 Модуль Azure Resource Graph требует следующее программное обеспечение.
 
-- Среда Azure PowerShell версии 6.3.0 и более поздней. Если она еще не установлена, выполните [эти инструкции](/powershell/azure/install-azurerm-ps).
+- Azure PowerShell версии 6.3.0 и более поздней. Если она еще не установлена, выполните [эти инструкции](/powershell/azure/install-azurerm-ps).
 
   - Для PowerShell Core используйте версию модуля Azure PowerShell **Az**.
 
   - Для Windows PowerShell используйте версию модуля Azure PowerShell **AzureRm**.
-
-  > [!NOTE]
-  > В настоящее время не рекомендуется устанавливать модуль в Cloud Shell.
 
 - Модуль PowerShellGet 2.0.1 или более поздней версии. Если он еще не установлен или не обновлен, выполните [эти инструкции](/powershell/gallery/installing-psget).
 

@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: mabrigg
 ms.reviewer: Anjay.Ajodha
-ms.openlocfilehash: 68021d25e3deab1c6551d29b0febd9f07e144b57
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: 645a32f56ee2bdc4132377f2d56f61b963104e42
+ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50095344"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52334896"
 ---
 # <a name="tutorial-create-cross-cloud-scaling-solutions-with-azure"></a>Руководство по созданию решений для масштабирования в нескольких облаках в Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "50095344"
 -   Подписка Azure. При необходимости для начала создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 - Используйте систему с Azure Stack или разверните Пакет средств разработки Azure Stack.
-    - Инструкции по установке Azure Stack см. в статье [Установка Пакета средств разработки Azure Stack (ASDK)](/articles/azure-stack/asdk/asdk-install).
+    - Инструкции по установке Azure Stack см. в статье [Установка Пакета средств разработки Azure Stack (ASDK)](../asdk/asdk-install.md).
     - [https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1](https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1) Для завершения этой установки может потребоваться несколько часов.
 
 -   Разверните службы PaaS [службы приложений](https://docs.microsoft.com/azure/azure-stack/azure-stack-app-service-deploy) в Azure Stack.
@@ -97,7 +97,7 @@ ms.locfileid: "50095344"
 Настройте гибридный конвейер непрерывной интеграции и непрерывного развертывания, чтобы развернуть веб-приложение в Azure и Azure Stack, а также автоматически отправлять изменения в оба облака.
 
 > [!Note]  
-> Вам необходим Azure Stack с подходящими образами, объединенными для запуска (Windows Server и SQL), и развернутой службой приложений. Дополнительные сведения об операторе Azure Stack см. в документации по Службе приложений в разделе о [подготовке к работе в Azure Stack](/articles/azure-stack/azure-stack-app-service-before-you-get-started).
+> Вам необходим Azure Stack с подходящими образами, объединенными для запуска (Windows Server и SQL), и развернутой службой приложений. Дополнительные сведения об операторе Azure Stack см. в документации по Службе приложений в разделе о [подготовке к работе в Azure Stack](../azure-stack-app-service-before-you-get-started.md).
 
 ### <a name="add-code-to-visual-studio-team-services-project"></a>Добавление кода в проект Visual Studio Team Services
 
@@ -259,7 +259,7 @@ Visual Studio Team Services и Team Foundation Server предоставляют
 ## <a name="develop-the-application-build"></a>Разработка сборки приложения
 
 > [!Note]  
-> Вам необходим Azure Stack с подходящими образами, объединенными для запуска (Windows Server и SQL), и развернутой службой приложений. Дополнительные сведения об операторе Azure Stack см. в документации по Службе приложений в разделе о [подготовке к работе в Azure Stack](/articles/azure-stack/azure-stack-app-service-before-you-get-started).
+> Вам необходим Azure Stack с подходящими образами, объединенными для запуска (Windows Server и SQL), и развернутой службой приложений. Дополнительные сведения об операторе Azure Stack см. в документации по Службе приложений в разделе о [подготовке к работе в Azure Stack](../azure-stack-app-service-before-you-get-started.md).
 
 Используйте такие [шаблоны Azure Resource Manager](https://azure.microsoft.com/resources/templates/), как код веб-приложения из VSTS, для развертывания в обоих облаках.
 

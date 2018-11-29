@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: 3903f247df0bc9dc4bc27d61b195492c585d7634
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: d3b8d0597f0732a4a3cfab79125a885b2d141c9f
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51282277"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52424712"
 ---
 # <a name="tutorial-5-extract-contextually-related-data"></a>Руководство 5. Извлечение контекстуально связанных данных
 Из данного руководства можно узнать, как выполнять поиск связанных частей данных на основе контекста. Например, места исходного расположения и назначения при перемещении из одного здания и офиса в другое связаны между собой. Чтобы создать заказ на работу могут потребоваться фрагменты данных, которые связаны друг с другом.  
@@ -57,7 +57,7 @@ ms.locfileid: "51282277"
 ## <a name="remove-prebuilt-number-entity-from-app"></a>Удаление предварительно созданной сущности номера из приложения
 Чтобы просмотреть всю фразу и пометить иерархические дочерние элементы, временно удалите предварительно созданную сущность номера.
 
-1. [!INCLUDE[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
+1. [!INCLUDE [Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
 2. Выберите **Entities** (Сущности) в меню слева.
 
@@ -83,7 +83,7 @@ ms.locfileid: "51282277"
 
     В соответствии со статьей [Руководство: 4. Добавление сущности списка](luis-quickstart-intent-and-list-entity.md) сотрудник назначается по имени, адресу электронной почты, дополнительному номеру телефона, номеру мобильного телефона или по федеральному номеру социального страхования США. Эти номера сотрудников используются во фразе. Предыдущий пример фразы содержит различные способы, позволяющие записать исходное и целевое расположения и пометить их жирным шрифтом. В некоторых фразах используются только целевые расположения. Это позволяет приложению LUIS определить размещение этих расположений во фразе, если исходное расположение не указано.     
 
-    [!INCLUDE[Do not use too few utterances](../../../includes/cognitive-services-luis-too-few-example-utterances.md)]  
+    [!INCLUDE [Do not use too few utterances](../../../includes/cognitive-services-luis-too-few-example-utterances.md)]  
 
 ## <a name="create-a-location-entity"></a>Создание сущности расположения
 Приложению LUIS необходимо определить расположение, отмечая исходное и целевое расположения во фразах. Если необходимо просмотреть фразу в представлении токенов (необработанном представлении), выберите переключатель в строке над фразой с меткой **Entities View** (Представление сущностей). Выбрав переключатель, вы увидите, что этот элемент управления обозначен **Tokens View** (Представление токенов).

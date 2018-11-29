@@ -10,12 +10,12 @@ ms.reviewer: klam
 ms.assetid: 3ef16fab-d18a-48ba-8e56-3f3e0a1bcb92
 ms.topic: get-started-article
 ms.date: 08/18/2016
-ms.openlocfilehash: 07b7cce4b026464ba34296b54c4ae90d6d2b1afa
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 5ed15a58e5b709b003e9f45d04c3654f814aefc7
+ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46981167"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52334233"
 ---
 # <a name="concepts-terminology-and-entities-in-azure-scheduler"></a>Основные понятия, терминология и сущности планировщика Azure
 
@@ -244,7 +244,7 @@ REST API планировщика Azure предоставляет и испол
 | **frequency** | Да, если используется **recurrence** | "Minute", "Hour", "Day", "Week", "Month", "Year". | Единица измерения времени между выполнениями. | 
 | **interval** | Нет  | От 1 до 1000 включительно. | Положительное целое число, которое определяет количество единиц времени между каждым повторением на основании значения **frequency**. | 
 | **schedule** | Нет  | Varies | Сведения о более сложных и расширенных расписаниях. См. параметры **hours**, **minutes**, **weekDays**, **months** и **monthDays**. | 
-| **hours** | Нет  | От 1 до 24. | Массив, содержащий часы, который задает время запуска задания. | 
+| **hours** | Нет  | От 1 до 60. | Массив, содержащий часы, который задает время запуска задания. | 
 | **minutes** | Нет  | От 1 до 60. | Массив, содержащий минуты, который задает время запуска задания. | 
 | **months** | Нет  | От 1 до 12. | Массив, содержащий месяцы, который задает время запуска задания. | 
 | **monthDays** | Нет  | Varies | Массив, содержащий дни месяца, который задает время запуска задания. | 
@@ -319,5 +319,5 @@ REST API планировщика Azure предоставляет и испол
 * [Основные понятия, терминология и иерархия сущностей](scheduler-concepts-terms.md)
 * [Создание сложных расписаний и расширенных схем повторения](scheduler-advanced-complexity.md)
 * [Лимиты, квоты, значения по умолчанию и коды ошибок](scheduler-limits-defaults-errors.md)
-* [Справочник по API REST планировщика Azure](https://docs.microsoft.com/rest/api/schedule)
+* [Справочник по API REST планировщика Azure](/rest/api/scheduler)
 * [Справочник по командлетам PowerShell планировщика Azure](scheduler-powershell-reference.md)

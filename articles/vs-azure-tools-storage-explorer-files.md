@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 03/09/2017
 ms.author: cawa
-ms.openlocfilehash: 536092c1ee50045e6df4e2933c7d6eb0ee7a8b42
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: d039654fc1d652a3997515a12caa48acaac124fe
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39429793"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52425298"
 ---
 # <a name="using-storage-explorer-with-azure-file-storage"></a>Использование обозревателя хранилищ с хранилищем файлов Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "39429793"
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-- [Скачайте и установите Обозреватель службы хранилища](http://www.storageexplorer.com/).
+- [Скачайте и установите Обозреватель службы хранилища](https://www.storageexplorer.com/).
 
 - [Установите подключение к учетной записи хранения или службе хранилища Azure](https://docs.microsoft.com//azure/vs-azure-tools-storage-manage-with-storage-explorer#connect-to-a-storage-account-or-service).
 
@@ -259,6 +259,6 @@ ms.locfileid: "39429793"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Последние заметки о выпуске Обозревателя службы хранилищ и связанные с ним видео см. [здесь](http://www.storageexplorer.com/).
+- Последние заметки о выпуске Обозревателя службы хранилищ и связанные с ним видео см. [здесь](https://www.storageexplorer.com/).
 
 - Узнайте, как [создавать приложения с помощью больших двоичных объектов (BLOB), таблиц, очередей и файлов Azure](https://azure.microsoft.com/documentation/services/storage/).
