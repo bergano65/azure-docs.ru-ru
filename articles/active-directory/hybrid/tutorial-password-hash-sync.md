@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 09/17/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: f830a27e9caf032443c2b27bdd2f95fa8069bcf2
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 4e8a39e16bd67169aac8dd7328338197b604e93f
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51247285"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52426916"
 ---
 # <a name="tutorial--integrate-a-single-ad-forest-using-password-hash-sync-phs"></a>Учебник. Интеграция одного леса AD с помощью синхронизации хэша паролей (PHS)
 
@@ -30,7 +30,7 @@ ms.locfileid: "51247285"
 Для работы с этим учебником требуется следующее:
 - Компьютер с установленным [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-technology-overview).  Рекомендуется использовать компьютер с ОС [Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os) или [Windows Server 2016](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
 - [Внешний сетевой адаптер](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/connect-to-network) для связи виртуальной машины с Интернетом.
-- [Подписка Azure](https://azure.microsoft.com/free)
+-  [Подписка Azure](https://azure.microsoft.com/free)
 - Копия Windows Server 2016.
 
 > [!NOTE]
@@ -224,7 +224,7 @@ Set-ADUser -Identity $Identity -PasswordNeverExpires $true -ChangePasswordAtLogo
 
 ## <a name="test-signing-in-with-one-of-our-users"></a>Проверка входа с помощью одной из учетных записей
 
-1.  Перейдите на сайт [http://myapps.microsoft.com](https://myapps.microsoft.com).
+1.  Перейдите на сайт [https://myapps.microsoft.com](httpss://myapps.microsoft.com).
 2. Выполните вход с помощью учетной записи пользователя, которая была создана в новом клиенте.  Для этого следует использовать следующий формат: (user@domain.onmicrosoft.com). Используйте тот же пароль, что и для входа в локальную среду.</br>
 ![Проверка](media/tutorial-password-hash-sync/verify1.png)</br>
 

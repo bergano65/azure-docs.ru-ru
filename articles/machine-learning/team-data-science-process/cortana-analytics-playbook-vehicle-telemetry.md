@@ -2,25 +2,21 @@
 title: Прогнозирование исправности автомобиля и манеры вождения с помощью Azure | Документация Майкрософт
 description: Используйте возможности Cortana Intelligence, чтобы получить прогнозы и актуальную информацию об исправности и манере вождения автомобиля в режиме реального времени.
 services: machine-learning
-documentationcenter: ''
-author: deguhath
-ms.author: deguhath
+author: marktab
+ms.author: tdsp
 manager: cgronlun
 editor: cgronlun
-ms.assetid: 09fad60b-2f48-488b-8a7e-47d1f969ec6f
 ms.service: machine-learning
 ms.component: team-data-science-process
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2018
-ms.openlocfilehash: 0594b9b40fdf8647f99946a31dbb47a95c9694ac
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.custom: (previous author=deguhath, ms.author=deguhath)
+ms.openlocfilehash: 688a821667b38423b43af87b7a26525e52d9a7aa
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51300359"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52444165"
 ---
 # <a name="vehicle-telemetry-analytics-solution-playbook"></a>Обзор решения для анализа данных телеметрии, полученных с автомобиля
 

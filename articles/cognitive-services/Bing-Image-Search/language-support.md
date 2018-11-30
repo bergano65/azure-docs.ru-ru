@@ -3,19 +3,19 @@ title: Поддержка языков — API Bing для поиска изоб
 titleSuffix: Azure Cognitive Services
 description: Узнайте, какие страны, регионы и языки поддерживаются в API Bing для поиска новостей.
 services: cognitive-services
-author: v-jerkin
+author: aahill
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-image-search
 ms.topic: article
 ms.date: 10/06/2017
-ms.author: v-jerkin
-ms.openlocfilehash: db9e1acec881a182b111cb1c913da607e4f8311a
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.author: aahi
+ms.openlocfilehash: e5c9a4291501c657a94509aec2edd90d00ab795d
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47435371"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52160433"
 ---
 # <a name="language-and-region-support-for-the-bing-image-search-api"></a>Поддержка языков и регионов в API Bing для поиска изображений
 

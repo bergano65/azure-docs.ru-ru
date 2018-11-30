@@ -16,12 +16,12 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: justhu
 ms.custom: aaddev
-ms.openlocfilehash: 8986f18b9f1f2953ad0612679d31996628870cb1
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: a965cd70e3eba04f278cf432196b9386b537462d
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46988229"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52424346"
 ---
 # <a name="tenancy-in-azure-active-directory"></a>Аренда в Azure Active Directory
 
@@ -29,7 +29,7 @@ Azure Active Directory (Azure AD) дает возможность организ
 
 ## <a name="who-can-sign-in-to-your-app"></a>Доступ к приложению
 
-Когда речь идет о разработке приложений, разработчики могут сконфигурировать свое приложение во время регистрации на [портале Azure](http://portal.azure.com) как однотенантное или мультитенантное.
+Когда речь идет о разработке приложений, разработчики могут сконфигурировать свое приложение во время регистрации на [портале Azure](https://portal.azure.com) как однотенантное или мультитенантное.
 * Однотенантные приложения доступны только в клиенте, для которого они были зарегистрированы, который также называется "домашний клиент".
 * Мультитенантные приложения доступны пользователям как в своих домашних, так и в других клиентах.
 

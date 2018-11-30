@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 10/25/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: bb7e422e0eb4a71e0f88a911083f8f5d6fb0ef2f
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: d42a9458afa6244e0b6d8e7deb420a8ac49a130f
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50092174"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52634172"
 ---
 # <a name="automate-resources-in-your-datacenter-or-cloud-by-using-hybrid-runbook-worker"></a>Автоматизация ресурсов в центре обработки данных или в облаке с помощью использования гибридной рабочей роли Runbook
 
@@ -36,7 +36,7 @@ ms.locfileid: "50092174"
 
 |ОС  |Типы развертывания  |
 |---------|---------|
-|Windows     | [PowerShell](automation-windows-hrw-install.md#automated-deployment)<br>[Вручную](automation-windows-hrw-install.md#manual-deployment)        |
+| Windows     | [PowerShell](automation-windows-hrw-install.md#automated-deployment)<br>[Вручную](automation-windows-hrw-install.md#manual-deployment)        |
 |Linux     | [Python](automation-linux-hrw-install.md#installing-a-linux-hybrid-runbook-worker)        |
 
 > [!NOTE]
@@ -53,7 +53,7 @@ ms.locfileid: "50092174"
 1. На портале Azure перейдите в свою учетную запись в службе автоматизации.
 2. В разделе **Параметры** выберите **Ключи** и запишите значения **URL-адреса** и **Первичного ключа доступа**. Эти сведения потребуются для выполнения следующего шага.
 
-### <a name="windows"></a>Windows
+### <a name="windows"></a> Windows
 
 Откройте сеанс PowerShell в режиме администратора и выполните следующую команду. Получить подробный журнал процедуры удаления можно с помощью параметра **-Verbose** .
 
@@ -95,7 +95,7 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 
 ### <a name="hybrid-worker-role"></a>Гибридная рабочая роль
 
-Чтобы гибридная рабочая роль Runbook могла подключаться и регистрироваться в службе Log Analytics, ей нужен доступ к номерам портов и URL-адресам, описанным в этом разделе. Этот доступ является дополнением к [списку URL-адресов и портов, необходимых для подключения Microsoft Monitoring Agent](../log-analytics/log-analytics-agent-windows.md) к Log Analytics.
+Чтобы гибридная рабочая роль Runbook могла подключаться и регистрироваться в службе Log Analytics, ей нужен доступ к номерам портов и URL-адресам, описанным в этом разделе. Этот доступ является дополнением к [списку URL-адресов и портов, необходимых для подключения Microsoft Monitoring Agent](../azure-monitor/platform/agent-windows.md) к Log Analytics.
 
 При использовании прокси-сервера для обмена данными между агентом и службой Log Analytics необходимо убедиться, что соответствующие ресурсы доступны. Если доступ к Интернету ограничивается брандмауэром, вам нужно изменить его настройки, чтобы разрешить доступ к OMS. Если в качестве прокси-сервера используется шлюз Log Analytics, он должен быть настроен для гибридных рабочих ролей. Инструкции см. в разделе [Настройка поддержки гибридных рабочих ролей службы автоматизации](https://docs.microsoft.com/azure/log-analytics/log-analytics-oms-gateway#configure-for-automation-hybrid-workers).
 

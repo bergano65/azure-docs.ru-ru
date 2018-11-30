@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/07/2018
+ms.date: 11/19/2018
 ms.author: jingwang
-ms.openlocfilehash: 26a1448ddf3f7ffb08ab581b1dad1abfd3ca8e12
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 600b64eceb3d3187349ce6c0e4a0270f24ab8621
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37045149"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51976559"
 ---
 # <a name="copy-data-from-and-to-odbc-data-stores-using-azure-data-factory"></a>Копирование данных из хранилищ данных ODBC и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -33,7 +33,7 @@ ms.locfileid: "37045149"
 
 В частности, этот соединитель ODBC поддерживает копирование данных из **любого хранилища данных, совместимого с ODBC**, и в него с использованием **базовой** или **анонимной** проверки подлинности.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать этот соединитель ODBC, сделайте следующее:
 
@@ -194,7 +194,7 @@ ms.locfileid: "37045149"
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | Тип | Свойство type приемника действия копирования должно иметь значение **OdbcSink**. | Yes |
-| writeBatchTimeout |Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия.<br/>Допустимые значения: промежуток времени. Пример: 00:30:00 (30 минут). |Нет  |
+| writeBatchTimeout |Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия.<br/>Допустимые значения: промежуток времени.  Пример: 00:30:00 (30 минут). |Нет  |
 | writeBatchSize |Вставляет данные в таблицу SQL, когда размер буфера достигает значения writeBatchSize.<br/>Допустимые значения: целое число (количество строк). |Нет (по умолчанию — 0 (автоматическое обнаружение)) |
 | preCopyScript |Перед записью данных в хранилище данных при каждом запуске указывайте SQL-запрос для выполнения операции копирования. Это свойство можно использовать для очистки предварительно загруженных данных. |Нет  |
 
@@ -289,43 +289,6 @@ ms.locfileid: "37045149"
             "connectionString": {
                 "type": "SecureString",
                 "value": "Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=<path to your DB file e.g. C:\\mydatabase.accdb>;"
-            },
-            "authenticationType": "Basic",
-            "userName": "<username>",
-            "password": {
-                "type": "SecureString",
-                "value": "<password>"
-            }
-        },
-        "connectVia": {
-            "referenceName": "<name of Integration Runtime>",
-            "type": "IntegrationRuntimeReference"
-        }
-    }
-}
-```
-
-В начале статьи приводится подробный обзор использования хранилищ данных ODBC в качестве исходных и целевых хранилищ данных (источников и приемников) в ходе операции копирования.
-
-## <a name="ge-historian-source"></a>Источник GE Historian
-
-Вы можете копировать данные из GE Historian, используя универсальный соединитель ODBC.
-
-Настройте локальную среду IR на компьютере с доступом к хранилищу данных. Среда выполнения интеграции использует драйвер ODBC для GE Historian, чтобы подключаться к хранилищу данных. Поэтому необходимо установить драйвер на том же компьютере. Дополнительные сведения см. в разделе [Предварительные требования](#prerequisites).
-
-Прежде чем использовать источник GE Historian в решении фабрики данных, убедитесь, что Integration Runtime может подключаться к хранилищу данных, выполнив инструкции из раздела [Устранение проблем подключения](#troubleshoot-connectivity-issues).
-
-Создайте связанную службу ODBC для связи базы данных Microsoft Access с фабрикой данных Azure, как показано в следующем примере:
-
-```json
-{
-    "name": "HistorianLinkedService",
-    "properties": {
-        "type": "Odbc",
-        "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "<GE Historian store connection string or DSN>"
             },
             "authenticationType": "Basic",
             "userName": "<username>",

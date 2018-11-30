@@ -1,3 +1,16 @@
+---
+author: rothja
+ms.service: billing
+ms.topic: include
+ms.date: 11/09/2018
+ms.author: jroth
+ms.openlocfilehash: 1e1316ef568cbc6409a8653022d9acff9837b59d
+ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52279897"
+---
 >[!NOTE]
 >Для ресурсов, которые не являются фиксированными, можно попросить увеличить квоты, отправив запрос в службу поддержки. **Не** создавайте дополнительные учетные записи служб мультимедиа Azure, пытаясь расширить ограничения.
 

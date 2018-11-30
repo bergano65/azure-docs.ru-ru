@@ -15,12 +15,12 @@ ms.date: 10/19/2018
 ms.author: barbkess
 ms.reviewer: japere
 ms.custom: it-pro
-ms.openlocfilehash: ad0ab8790c9d66dbba87d466e9661ef8cf33eef3
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: 89852e90daa548dc82455cb6317d367b7423ba65
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49456904"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52425214"
 ---
 # <a name="enable-remote-access-to-sharepoint-with-azure-ad-application-proxy"></a>Настройка удаленного доступа к SharePoint с помощью прокси приложения Azure AD
 
@@ -119,7 +119,7 @@ HTTP/sharepoint.demo.o365identity.us demo
 1. Перейдите к сайту с другого компьютера, используя имя субъекта-службы.
  При этом соответствующий набор билетов Kerberos кэшируется на этом компьютере. Эти билеты содержат имя субъекта-службы целевого сайта, на который вы перешли.
 
-2. Можно извлечь имя субъекта-службы этого сайта, используя средство [Klist](http://web.mit.edu/kerberos/krb5-devel/doc/user/user_commands/klist.html). В командном окне, запущенном в том же контексте, что и пользователь, который перешел на сайт в браузере, выполните следующую команду:
+2. Можно извлечь имя субъекта-службы этого сайта, используя средство [Klist](https://web.mit.edu/kerberos/krb5-devel/doc/user/user_commands/klist.html). В командном окне, запущенном в том же контексте, что и пользователь, который перешел на сайт в браузере, выполните следующую команду:
 ```
 Klist
 ```

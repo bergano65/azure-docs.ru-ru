@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/22/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: a5deccbe87bc8de6f6438259c2a43cc4618c24ab
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: a4c429b1c54c6bf71175abbc763a178792281a0f
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51016715"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52633152"
 ---
 # <a name="connect-configuration-manager-to-log-analytics"></a>Подключение Configuration Manager к Log Analytics
 Среду System Center Configuration Manager можно подключить к Azure Log Analytics для синхронизации данных коллекций устройств и указания этих коллекций в Log Analytics и службе автоматизации Azure.  
@@ -57,7 +57,7 @@ ms.locfileid: "51016715"
 6. Из раскрывающегося списка **Назначение доступа к** выберите приложение Configuration Manager, ранее созданное в AD, и нажмите кнопку **ОК**.  
 
 ## <a name="download-and-install-the-agent"></a>Загрузка и установка агента
-Ознакомьтесь со статьей [Создание рабочей области Log Analytics на портале Azure](log-analytics-agent-windows.md), чтобы понять, какие методы доступны для установки Microsoft Monitoring Agent на компьютере, на котором размещена роль системы сайта для точки подключения службы Configuration Manager.  
+Ознакомьтесь со статьей [Создание рабочей области Log Analytics на портале Azure](../azure-monitor/platform/agent-windows.md), чтобы понять, какие методы доступны для установки Microsoft Monitoring Agent на компьютере, на котором размещена роль системы сайта для точки подключения службы Configuration Manager.  
 
 ## <a name="add-a-log-analytics-connection-to-configuration-manager"></a>Добавление подключения к Log Analytics в Configuration Manager
 Чтобы добавить подключение к Log Analytics, необходимо настроить [точку подключения службы](https://technet.microsoft.com/library/mt627781.aspx) в среде Configuration Manager для работы в оперативном режиме.

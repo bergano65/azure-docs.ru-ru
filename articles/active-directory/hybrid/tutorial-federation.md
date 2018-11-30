@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 08/16/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 161a5710766db626e4c4ec6bb6fdfafcc20650d5
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 50868d32b35e77495965b9ee9d0023d23b43fd5a
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51248050"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52426389"
 ---
 # <a name="tutorial-federate-a-single-ad-forest-environment-to-the-cloud"></a>Учебник. Федерация среды одного леса AD с облаком
 
@@ -29,7 +29,7 @@ ms.locfileid: "51248050"
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим учебником требуется следующее:
 - Компьютер с установленным [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-technology-overview).  Рекомендуется использовать компьютер с ОС [Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os) или [Windows Server 2016](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
-- [Подписка Azure](https://azure.microsoft.com/free)
+-  [Подписка Azure](https://azure.microsoft.com/free)
 - - [Внешний сетевой адаптер](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/connect-to-network) для связи виртуальной машины с Интернетом.
 - Копия Windows Server 2016.
 - [Личный домен](../../active-directory/fundamentals/add-custom-domain.md), который можно проверить.
@@ -280,7 +280,7 @@ New-SelfSignedCertificate -DnsName $DNSname -CertStoreLocation $Location
 
 ## <a name="test-signing-in-with-one-of-our-users"></a>Проверка входа с помощью одной из учетных записей
 
-1.  Перейдите на сайт [http://myapps.microsoft.com](https://myapps.microsoft.com).
+1.  Перейдите на сайт [https://myapps.microsoft.com](httpss://myapps.microsoft.com).
 2. Выполните вход с помощью учетной записи пользователя, которая была создана в новом клиенте.  Для этого следует использовать следующий формат: (user@domain.onmicrosoft.com). Используйте тот же пароль, что и для входа в локальную среду.
 ![Проверка](media/tutorial-password-hash-sync/verify1.png)
 

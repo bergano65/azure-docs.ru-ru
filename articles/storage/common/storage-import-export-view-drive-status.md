@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/17/2018
 ms.author: alkohli
 ms.component: common
-ms.openlocfilehash: 49a2c03664ba39a624871b24c0b86a968a67eddb
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 4a0fcb95ed34ed3d98c6b25b475c0866135897f3
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39521529"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52584678"
 ---
 # <a name="view-the-status-of-azure-importexport-jobs"></a>Просмотр состояния заданий службы "Импорт и экспорт Azure"
 
@@ -23,7 +23,6 @@ ms.locfileid: "39521529"
 Состояние задания импорта или экспорта можно отслеживать на портале Azure. Щелкните вкладку **Импорт и экспорт**. На странице появится список заданий.
 
 ![Просмотр состояния задания](./media/storage-import-export-service/jobstate.png)
-
 
 ## <a name="view-job-status"></a>Просмотр состояния задания
 
@@ -74,7 +73,7 @@ ms.locfileid: "39521529"
 -  тип задания и размер копируемых данных;
 -  количество дисков в задании. 
 
-В службе "Импорт и экспорт" не предусмотрено соглашение об уровне обслуживания, однако служба стремится выполнить копирование в течение 7–10 дней после получения дисков. В дополнение к состоянию, размещенному на портале Azure, REST API можно использовать для отслеживания прогресса задания. В вызове API операции [Список заданий]() есть параметр процентного выполнения, отражающий ход копирования.
+В службе "Импорт и экспорт" не предусмотрено соглашение об уровне обслуживания, однако служба стремится выполнить копирование в течение 7–10 дней после получения дисков. В дополнение к состоянию, размещенному на портале Azure, REST API можно использовать для отслеживания прогресса задания. В вызове API операции [Список заданий](/previous-versions/azure/dn529083(v=azure.100)) есть параметр процентного выполнения, отражающий ход копирования.
 
 
 ## <a name="next-steps"></a>Дополнительная информация
@@ -82,4 +81,3 @@ ms.locfileid: "39521529"
 * [Настройка инструмента WAImportExport](storage-import-export-tool-how-to.md)
 * [Передача данных с помощью служебной программы командной строки AzCopy](storage-use-azcopy.md)
 * [Пример REST API службы импорта и экспорта Azure](https://azure.microsoft.com/documentation/samples/storage-dotnet-import-export-job-management/)
-

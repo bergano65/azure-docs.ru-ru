@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: harijay
-ms.openlocfilehash: 0a4a31a4905de38de444604c8ffdf4d4a2e632d4
-ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
+ms.openlocfilehash: e4deb40f2c9dfb080739f4426129223b152baea9
+ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51515868"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52335663"
 ---
 # <a name="virtual-machine-serial-console-for-windows"></a>Последовательная консоль виртуальной машины для Windows
 
@@ -133,7 +133,7 @@ ms.locfileid: "51515868"
 > Чтобы включить или отключить последовательную консоль для подписки, у вас должно быть разрешение на запись в этой подписке. Эти разрешения есть у ролей администратора и владельца (но не только). У пользовательских ролей также может быть разрешение на запись.
 
 ### <a name="subscription-level-disable"></a>Отключение на уровне подписки
-Последовательную консоль можно отключить для всей подписки с помощью [вызова REST API отключения консоли](https://docs.microsoft.com/rest/api/serialconsole/console/console_disableconsole). Вы можете нажать кнопку **Попробовать**, доступную на странице документации по API, чтобы отключить и включить последовательную консоль для подписки. В поле **subscriptionId** введите идентификатор подписки, в поле **default** — значение "default", а затем нажмите кнопку **Запуск**. Команды для Azure CLI пока недоступны.
+Последовательную консоль можно отключить для всей подписки с помощью [вызова REST API отключения консоли](/rest/api/serialconsole/console/disableconsole). Вы можете нажать кнопку **Попробовать**, доступную на странице документации по API, чтобы отключить и включить последовательную консоль для подписки. В поле **subscriptionId** введите идентификатор подписки, в поле **default** — значение "default", а затем нажмите кнопку **Запуск**. Команды для Azure CLI пока недоступны.
 
 ![Попробуйте в REST API](../media/virtual-machines-serial-console/virtual-machine-serial-console-rest-api-try-it.png)
 

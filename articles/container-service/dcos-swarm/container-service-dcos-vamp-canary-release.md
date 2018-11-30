@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 04/17/2017
 ms.author: rasquill
 ms.custom: mvc
-ms.openlocfilehash: 0f6c0e9206d9e056ee0496b6cc515625b08b1e4a
-ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
+ms.openlocfilehash: 116f8ad1760f8e61c70b34d614a0265d11e3ae65
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36959922"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51975862"
 ---
 # <a name="canary-release-microservices-with-vamp-on-an-azure-container-service-dcos-cluster"></a>Ранний выпуск микрослужб с помощью Vamp в кластере DC/OS Службы контейнеров Azure
 
@@ -291,7 +291,7 @@ Vamp использует **условия** для фильтрации тра�
 
 * Ознакомьтесь со сведениями об управлении действиями Vamp через интерфейс [REST API Vamp](http://vamp.io/documentation/api/api-reference/).
 
-* Создайте сценарии автоматизации Vamp, используя Node.js, и выполните их как [рабочие процессы Vamp](http://vamp.io/documentation/tutorials/create-a-workflow/).
+* Создайте сценарии автоматизации Vamp, используя Node.js, и выполните их как [рабочие процессы Vamp](https://vamp.io/documentation/using-vamp/v1.0.0/workflows/#create-a-workflow).
 
 * Также ознакомьтесь с дополнительными [руководствами по VAMP](http://vamp.io/documentation/tutorials/).
 

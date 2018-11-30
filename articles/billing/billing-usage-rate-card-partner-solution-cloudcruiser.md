@@ -4,7 +4,7 @@ description: В нем описан уникальный опыт Cloud Cruiser 
 services: ''
 documentationcenter: ''
 author: tonguyen
-manager: tonguyen
+manager: mumami
 editor: ''
 tags: billing
 ms.assetid: b65128cf-5d4d-4cbd-b81e-d3dceab44271
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: billing
 ms.date: 10/09/2017
 ms.author: erikre
-ms.openlocfilehash: 95d90e898ddc8766cf96a5a72c315407cd596393
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 79582e59d9ad9396acf29d6e35d640edcb20dca3
+ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47393865"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52275961"
 ---
 # <a name="cloud-cruiser-and-microsoft-azure-billing-api-integration"></a>Интеграция Cloud Cruiser и API выставления счетов Microsoft Azure
 В этой статье описаны способы использования сведений, собранных из новых API выставления счетов Microsoft Azure , в Cloud Cruiser для моделирования и анализа стоимости рабочих процессов.
@@ -50,7 +50,7 @@ Cloud Cruiser может по-разному использовать сведе
 
 Для демонстрации данного варианта использования представьте себе рабочую нагрузку нескольких экземпляров, работающих в Microsoft Azure Pack (WAP). Целью является моделирование  той же самой рабочей нагрузки в Azure и оценка затрат на осуществление такой миграции. Чтобы обеспечить такое моделирование, необходимо выполнить две основные задачи:
 
-1. **Импорт и обработка информации о службе, полученной из API RateCard.** Эта задача также выполняется с книгами, где извлеченные из API RateCard сведения преобразуются и публикуются в новом тарифном плане. Этот новый тарифный план используется при моделировании для оценки цен Azure.
+1. **Импорт и обработка информации о службе, полученной из API RateCard.**  Эта задача также выполняется с книгами, где извлеченные из API RateCard сведения преобразуются и публикуются в новом тарифном плане. Этот новый тарифный план используется при моделировании для оценки цен Azure.
 2. **Нормализация служб WAP и служб Azure для IaaS.** По умолчанию службы WAP основаны на отдельных ресурсах (ЦП, объем памяти, размер диска и т. д.), а службы Azure основаны на размере экземпляра (A0, A1, A2 и т. д.). Первую задачу может выполнить ядро извлечения, преобразования и загрузки Cloud Cruiser, которое называется книгами, где эти ресурсы могут объединяться по размерам экземпляров, аналогично службам экземпляров Azure.
 
 ### <a name="import-data-from-the-ratecard-api"></a>Импорт данных из API RateCard

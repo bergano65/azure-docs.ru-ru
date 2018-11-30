@@ -8,14 +8,14 @@ ms.author: banders
 ms.date: 11/14/2018
 ms.topic: troubleshooting
 ms.service: cost-management
-manager: dougeby
+manager: benshy
 ms.custom: ''
-ms.openlocfilehash: 7ac115118a06df28dd5569cede4430b6f834336d
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 3b137a170edf2be13fa4999947994ee12a374aa9
+ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51684840"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52276284"
 ---
 # <a name="frequently-asked-questions-for-cloudyn"></a>Часто задаваемые вопросы об Cloudyn
 
@@ -154,7 +154,7 @@ Cloudyn имеет следующие временные шкалы обновл
 
 ## <a name="is-cloudyn-agent-based"></a>Основан ли агент Cloudyn?
 
-Нет. Агенты не используются. Данные метрик виртуальных машин Azure для виртуальных машин собираются с помощью API Microsoft Insights. Если необходим сбор данных метрик из виртуальных машин Azure, на них нужно включить параметры диагностики.
+ Нет. Агенты не используются. Данные метрик виртуальных машин Azure для виртуальных машин собираются с помощью API Microsoft Insights. Если необходим сбор данных метрик из виртуальных машин Azure, на них нужно включить параметры диагностики.
 
 ## <a name="do-cloudyn-reports-show-more-than-one-ad-tenant-per-report"></a>В отчетах Cloudyn представлено больше одного клиента AD на отчет?
 

@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 06/19/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 6c8dc240172451118fd75b042ba267740999882d
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 38e2589365c2f1c88145fbf068d3ed267d4a4621
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49321773"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52284579"
 ---
 # <a name="troubleshoot-hybrid-runbook-workers"></a>Устранение неполадок с гибридными рабочими ролями Runbook
 
@@ -30,7 +30,7 @@ ms.locfileid: "49321773"
 
 Происходит сбой выполнения модуля Runbook со следующей ошибкой:
 
-```
+```error
 "The job action 'Activate' cannot be run, because the process stopped unexpectedly. The job action was attempted three times."
 ```
 
@@ -90,7 +90,7 @@ nxautom+   8595      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfi
 wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w <WorkspaceID> -s <WorkspaceKey>
 ```
 
-## <a name="windows"></a>Windows
+## <a name="windows"></a> Windows
 
 Гибридная рабочая роль Runbook для Windows зависит от службы Microsoft Monitoring Agent, которая используется для взаимодействия с учетной записью службы автоматизации для регистрации рабочей роли, получения заданий Runbook и сообщения о состоянии. Если при регистрации рабочей роли произошла ошибка, это могло произойти по следующим причинам:
 

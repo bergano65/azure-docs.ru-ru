@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: billmath
-ms.openlocfilehash: 264e7f3d885535304470c833e228660ba51fefc6
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 83ff526eb0bd0c51822fc52c90b958d50022a834
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46306393"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52497734"
 ---
 # <a name="azure-ad-connect-health-frequently-asked-questions"></a>Часто задаваемые вопросы об Azure AD Connect Health
 Эта статья содержит ответы на часто задаваемые вопросы о расширении Azure Active Directory (Azure AD) Connect Health. Здесь представлены сведения об использовании службы, в частности о модели выставления счетов, возможностях, ограничениях и поддержке.
@@ -62,7 +62,7 @@ ms.locfileid: "46306393"
 
 **Вопрос. Поддерживает ли расширение Azure AD Connect Health облако Azure Germany?**
 
-Azure AD Connect Health не поддерживается в облаке для Германии, кроме [функции отчетов об ошибках синхронизации](how-to-connect-health-sync.md#object-level-synchronization-error-report-preview). 
+Azure AD Connect Health не поддерживается в облаке для Германии, кроме [функции отчетов об ошибках синхронизации](how-to-connect-health-sync.md#object-level-synchronization-error-report). 
 
 | Роли | Функции | Поддерживается в облаке для Германии |
 | ------ | --------------- | --- |
@@ -94,7 +94,7 @@ Azure AD Connect Health не поддерживается в облаке для
 
 **Потребуется ли перезагружать серверы во время установки агентов Azure AD Connect Health?**
 
-Нет. При установке агентов перезагрузка сервера не требуется. Однако при установке некоторых необходимых компонентов она может потребоваться.
+ Нет. При установке агентов перезагрузка сервера не требуется. Однако при установке некоторых необходимых компонентов она может потребоваться.
 
 Например, при установке платформы .NET Framework 4.5 на Windows Server 2008 R2 необходима перезагрузка сервера.
 
@@ -111,7 +111,7 @@ Azure AD Connect Health не поддерживается в облаке для
 
 **Вопрос. Поддерживает ли Azure AD Connect Health обычную проверку подлинности при подключении к прокси-серверам HTTP?**
 
-Нет. Сейчас механизм указания произвольного имени пользователя и пароля для обычной проверки подлинности не поддерживается.
+ Нет. Сейчас механизм указания произвольного имени пользователя и пароля для обычной проверки подлинности не поддерживается.
 
 **Какие порты брандмауэра следует открыть для работы агента Azure AD Connect Health?**
 

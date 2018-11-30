@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: cephalin;dariagrigoriu
-ms.openlocfilehash: bd440e0ef017e2bf116e80ad049883e2338efddb
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 9dead2c8801340a736b6f67010a85f3dd34fbe85
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44298953"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51820267"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Непрерывное развертывание в службе приложений Azure
 В этой статье показано, как настроить непрерывное развертывание для [службы приложений Azure](app-service-web-overview.md). Служба приложений обеспечивает непрерывное развертывание из BitBucket, GitHub и [Azure DevOps Services](https://www.visualstudio.com/team-services/), выбирая самые последние обновления из существующего репозитория в одной из этих служб.
@@ -50,7 +50,7 @@ ms.locfileid: "44298953"
 ### <a name="option-2-use-azure-devops-services-continuous-delivery"></a>Вариант 2. Использование непрерывной поставки Azure DevOps Services
 
 > [!NOTE]
-> Чтобы Служба приложений создавала необходимые конвейеры Azure Pipelines в организации Azure DevOps Services, ваша учетная запись Azure должна иметь роль **владельца** в подписке Azure.
+> Чтобы служба приложений создавала необходимые конвейеры Azure Pipelines в организации Azure DevOps Services, ваша учетная запись Azure должна иметь роль **владельца** в подписке Azure.
 >
 
 На странице **Настроить** в разделе **Код** выберите организацию, репозиторий и ветку, из которых будет происходить непрерывное развертывание. По завершении нажмите кнопку **Продолжить**.
@@ -58,7 +58,7 @@ ms.locfileid: "44298953"
 На странице **Настроить** в разделе **Сборка** настройте новую организацию Azure DevOps Services или укажите имеющуюся. По завершении нажмите кнопку **Продолжить**.
 
 > [!NOTE]
-> Чтобы использовать имеющуюся организацию Azure DevOps Services, не указанную в списке, [ее необходимо связать с подпиской Azure](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App).
+> Чтобы использовать существующую организацию Azure DevOps Services, не указанную в списке, [ее необходимо связать с подпиской Azure](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App).
 
 На странице **Тест** выберите, следует ли включать тесты нагрузки, затем нажмите **Продолжить**.
 
@@ -113,7 +113,7 @@ ms.locfileid: "44298953"
 На странице **Настроить** в разделе **Код** выберите организацию Azure DevOps Services, проект, репозиторий и ветку, из которых будет происходить непрерывное развертывание. По завершении нажмите кнопку **Продолжить**.
 
 > [!NOTE]
-> Чтобы использовать имеющуюся организацию Azure DevOps Services, не указанную в списке, [ее необходимо связать с подпиской Azure](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App).
+> Чтобы использовать существующую организацию Azure DevOps Services, не указанную в списке, [ее необходимо связать с подпиской Azure](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App).
 
 На странице **Настроить** в разделе **Сборка** укажите структуру языка, которую должен использовать Azure DevOps Services для запуска задач сборки для выбранного репозитория. По завершении нажмите кнопку **Продолжить**.
 
@@ -152,5 +152,5 @@ ms.locfileid: "44298953"
 [Документация по Git]: http://git-scm.com/documentation
 
 [Create a repo (GitHub)]: https://help.github.com/articles/create-a-repo (Создание репозитория GitHub)
-[Create a repo (BitBucket)]: https://confluence.atlassian.com/display/BITBUCKET/Create+an+Account+and+a+Git+Repo (Создание репозитория BitBucket)
+[Create a repo (BitBucket)]: https://confluence.atlassian.com/get-started-with-bitbucket/create-a-repository-861178559.html (Создание репозитория BitBucket)
 [DevOps overview for Azure DevOps Services and TFS]: https://www.visualstudio.com/docs/vsts-tfs-overview (Общие сведения о DevOps для Azure DevOps Services и TFS)

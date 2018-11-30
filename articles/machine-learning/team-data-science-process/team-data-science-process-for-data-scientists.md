@@ -2,25 +2,21 @@
 title: Командный процесс обработки и анализа данных для специалистов по обработке и анализу данных | Документация Майкрософт
 description: Руководство по анализу рабочих нагрузок аналитики с использованием командного процесса обработки и анализа данных и службы "Машинное обучение Azure".
 services: machine-learning
-documentationcenter: ''
-author: deguhath
+author: marktab
 manager: cgronlun
 editor: cgronlun
-ms.assetid: ''
 ms.service: machine-learning
 ms.component: team-data-science-process
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/21/2017
-ms.author: deguhath
-ms.openlocfilehash: 80f006c4e8f051c3f744168be114f1c9fb3b1a0f
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.author: tdsp
+ms.custom: (previous author=deguhath, ms.author=deguhath)
+ms.openlocfilehash: ddf73f15dc7c269ba3bf9a2912c3713fd4e847f2
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50092497"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52497583"
 ---
 # <a name="team-data-science-process-for-data-scientists"></a>Командный процесс обработки и анализа данных для специалистов по обработке и анализу данных
 
@@ -65,7 +61,7 @@ ms.locfileid: "50092497"
 | Визуализировать результаты с помощью Power BI                                                         | [Power BI](https://powerbi.microsoft.com/guided-learning/)                                                                                     | Power BI — инструмент визуализации данных корпорации Майкрософт. Он доступен на нескольких платформах: от Интернета до мобильных устройств и настольных компьютеров. В этой статье описано, как работать с выходными данными созданного решения путем доступа к результатам из хранилища Azure и создания визуализаций с помощью Power BI.                                                                                                                                                                                                                                                                                                                             | [Выполните задания в этом руководстве по Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-get-started/). Затем подключите Power BI к большому двоичному объекту CSV, созданному при запуске эксперимента.                                                                                                                                                                                                                                                                       |
 | Выполнить мониторинг решения                                                                     | [Application Insights](../../application-insights/app-insights-overview.md)                                            | Есть несколько инструментов, которые можно использовать для мониторинга конечного решения. Azure Application Insights позволяет легко интегрировать встроенный мониторинг в решение.                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | [Настройте Application Insights для мониторинга приложения](https://cmatskas.com/visual-studio-code-integration-with-azure-application-insights/).                                                                                                                                                                                                                                                                                                                  |
 |                                                                                           | [Мониторинг базы данных SQL Azure с помощью служб анализа SQL Azure (предварительная версия) в Log Analytics](../../log-analytics/log-analytics-overview.md).                                                   | Другим методом мониторинга приложения является его интеграция с процессом DevOps. Система Azure Log Analytics предоставляет большой набор функций, которые позволяют просматривать решения аналитики после их развертывания.                                                                                                                                                                                                                                                                                                                                                                                                                       | [Завершите это руководство](https://docs.loganalytics.io/docs/Learn/Getting-Started/Getting-started-with-the-Analytics-portal) по использованию Azure Log Analytics.                                                                                                                                                                                                                                                                                                       |
-| Выполнить эту схему обучения                                                               | Дополнительные проекты для пробного использования                                                                                                                           | Поздравляем! Вы завершили эту схему обучения. Но вы еще многого не знаете. Более сложным примером является создание модели оттока клиентов в службе "Машинное обучение Azure". [Попробуйте его здесь](../desktop-workbench/scenario-churn-prediction.md).                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+| Выполнить эту схему обучения                                                               |                                                                                                                           | Поздравляем! Вы завершили эту схему обучения. Но вы еще многого не знаете.                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 
 ## <a name="next-steps"></a>Дополнительная информация
 [Team Data Science Process for Developer Operations](team-data-science-process-for-devops.md) (Командный процесс обработки и анализа данных группы для операций разработки). В этой статье рассматриваются функции операций разработки (DevOps), которые относятся к реализации решения расширенной аналитики и Cognitive Services. 

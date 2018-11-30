@@ -15,12 +15,12 @@ ms.date: 05/24/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: H1Hack27Feb2017, it-pro
-ms.openlocfilehash: 1178d85f295c6ac01f367db8adc2c9b855cdc829
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: dbb7fca08e8d5c59842f7ddfb02b463a42efadb7
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44347839"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52422293"
 ---
 # <a name="kerberos-constrained-delegation-for-single-sign-on-to-your-apps-with-application-proxy"></a>Ограниченное делегирование Kerberos для поддержки единого входа в приложения с помощью прокси приложения
 
@@ -144,5 +144,5 @@ Sharepointserviceaccount может содержать учетную запис
 * [Устранение неполадок с прокси приложения](application-proxy-troubleshoot.md)
 
 
-Последние новости и обновления см. в [блоге, посвященном прокси приложения](http://blogs.technet.com/b/applicationproxyblog/).
+Последние новости и обновления см. в [блоге, посвященном прокси приложения](https://blogs.technet.com/b/applicationproxyblog/).
 

@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/14/2018
+ms.date: 11/15/2018
 ms.author: jeffgilb
 ms.reviewer: quying
-ms.openlocfilehash: 8a1bae4a05a0054960771b61ac186c1a48c3aea1
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 633597785d42f8bdd150a3b4a839a9595ebde7a4
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51686251"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51852577"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack"></a>Развертывание поставщика ресурсов SQL Server в Azure Stack
 
@@ -37,10 +37,11 @@ ms.locfileid: "51686251"
 - Добавьте необходимую виртуальную машину ядра Windows Server в Azure Stack Marketplace, загрузив образ **Windows Server 2016 Datacenter — ядро сервера**.
 - Загрузите двоичный файл поставщика ресурсов SQL и запустите файл для самостоятельного извлечения содержимого во временный каталог. У поставщика ресурсов есть минимальная соответствующая сборка Azure Stack.
 
-    |Минимальная версия Azure Stack|Версия SQL RP|
-    |-----|-----|
-    |Версия 1808 (1.1808.0.97)|[SQL RP версии 1.1.30.0](https://aka.ms/azurestacksqlrp11300)|
-    |     |     |
+  |Минимальная версия Azure Stack|Версия SQL RP|
+  |-----|-----|
+  |Версия 1808 (1.1808.0.97)|[SQL RP версии 1.1.30.0](https://aka.ms/azurestacksqlrp11300)|
+  |Версия 1804 (1.0.180513.1)|[SQL RP версии 1.1.24.0](https://aka.ms/azurestacksqlrp11240)
+  |     |     |
 
 - Убедитесь, что выполнены предварительные требования для интеграции центра обработки данных.
 

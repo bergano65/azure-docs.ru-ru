@@ -7,18 +7,18 @@ ms.service: firewall
 ms.topic: article
 ms.date: 9/24/2018
 ms.author: victorh
-ms.openlocfilehash: 6d8d0b2dc0f6baf48d2aacb9c7203937aef08d15
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0698f1dbc491781089ef94eec32f2a427fd3cca4
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46957803"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52422394"
 ---
 # <a name="azure-firewall-logs"></a>Журналы Брандмауэра Azure
 
 Работу брандмауэра Azure можно отслеживать с помощью журналов брандмауэра. Также журналы действий можно использовать для аудита операций на ресурсах брандмауэра Azure.
 
-Доступ к некоторым из этих журналов можно получить через портал. Журналы можно передавать в [Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.md), службу хранилища, Центры событий, а затем анализировать в Log Analytics или при помощи различных инструментов, таких как Excel и Power BI.
+Доступ к некоторым из этих журналов можно получить через портал. Журналы можно передавать в [Log Analytics](../azure-monitor/insights/azure-networking-analytics.md), службу хранилища, Центры событий, а затем анализировать в Log Analytics или при помощи различных инструментов, таких как Excel и Power BI.
 
 ## <a name="diagnostic-logs"></a>Журналы диагностики
 

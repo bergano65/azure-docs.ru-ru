@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 10/27/2016
 ms.author: sumuth
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: cce6555c71829110781a6dd13757078b105dbb41
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 253f817099bd2705d8b9ea98741dc8fd28f09efe
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51230637"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52421663"
 ---
 # <a name="faq-for-cleardb-mysql-databases-with-azure-app-service"></a>Часто задаваемые вопросы о базах данных ClearDB MySql в службе приложений Azure
 Ответы на часто задаваемые вопросы об использовании и покупке баз данных ClearDB MySql для службы веб-приложений Azure.
@@ -25,7 +25,7 @@ ms.locfileid: "51230637"
 > [!IMPORTANT]
 > По состоянию на 13 июня 2018 г. клиенты ClearDB на базе Azure, для которых сейчас выставляются счета корпорацией Майкрософт, переведены на модель прямого выставления счетов организацией ClearDB. Информация в этой статье теперь является устаревшей. Вы больше не сможете создавать базы данных ClearDB в Azure или обновлять базы данных ClearDB, созданные в Azure.
 >
-> Дополнительные сведения и описание дальнейших действий см. в статье об [изменениях в планах служб ClearDB](http://w2.cleardb.net/important-change-of-billing-notice-for-all-azure-cleardb-service-plans/).
+> Дополнительные сведения и описание дальнейших действий см. в статье об [изменениях в планах служб ClearDB](https://w2.cleardb.net/important-change-of-billing-notice-for-all-azure-cleardb-service-plans/).
 
 
 ## <a name="what-options-do-i-have-for-mysql-on-azure"></a>Какие параметры баз данных MySQL доступны в Azure?
@@ -77,7 +77,7 @@ Azure Marketplace недоступен для клиентов из Азерба
 По всем вопросам, связанным с базами данных, обращайтесь в [службу поддержки ClearDB](https://www.cleardb.com/developers/help/support) . Вам нужно будет сообщить данные вашей подписки Azure.
 
 ## <a name="can-i-create-additional-users-for-my-cleardb-mysql-database-cluster-solution"></a>Можно ли создавать дополнительных пользователей для кластера баз данных ClearDB MySQL?
-Нет. Создавать дополнительных пользователей в кластере баз данных ClearDB нельзя, но можно создавать дополнительные базы данных.  
+ Нет. Создавать дополнительных пользователей в кластере баз данных ClearDB нельзя, но можно создавать дополнительные базы данных.  
 
 ## <a name="can-basicpro-series-databases-be-upgraded-in-place-similar-to-planetary-plans-today-on-cleardb-portal"></a>Можно ли обновить базы данных серий Basic и Pro на месте, как в случае с текущими планами Planetary, на портале ClearDB?
 Да, базы данных серии Basic (Basic 60 – Basic 500) можно обновить на месте. Вы можете обновить на месте базы данных серии Pro (Pro 125–1000), за исключением Pro 60. В настоящее время обновление базы данных Pro 60 не поддерживается. 

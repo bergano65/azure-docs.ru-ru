@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: article
 ms.date: 08/30/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 4785f87515663831b1177c6c0958d3d965351797
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 45cf987d9af7b7dd0e8f05056b49ba56835603e7
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46996576"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52313951"
 ---
 # <a name="azure-machine-learning-frequently-asked-questions"></a>Часто задаваемые вопросы о службе "Машинное обучение Azure"
 
@@ -112,11 +112,11 @@ Azure Machine Learning Workbench — это дополнительное при
 
 **Является ли Workbench средой IDE?**
 
-Нет. Machine Learning Workbench разработано как дополнительное приложение для популярных IDE, таких как записные книжки Jupyter, Visual Studio Code и PyCharm. Оно не является полнофункциональной средой IDE. В Machine Learning Workbench предусмотрены некоторые базовые возможности редактирования текста, но отладка, функция IntelliSense и другие часто используемые возможности IDE в нем не поддерживаются. Для разработки, редактирования и отладки кода мы рекомендуем использовать удобную для вас среду IDE. Кроме того, вы можете поработать со [средствами Visual Studio Code для ИИ](https://www.visualstudio.com/downloads/ai-tools-vscode).
+ Нет. Machine Learning Workbench разработано как дополнительное приложение для популярных IDE, таких как записные книжки Jupyter, Visual Studio Code и PyCharm. Оно не является полнофункциональной средой IDE. В Machine Learning Workbench предусмотрены некоторые базовые возможности редактирования текста, но отладка, функция IntelliSense и другие часто используемые возможности IDE в нем не поддерживаются. Для разработки, редактирования и отладки кода мы рекомендуем использовать удобную для вас среду IDE. Кроме того, вы можете поработать со [средствами Visual Studio Code для ИИ](https://www.visualstudio.com/downloads/ai-tools-vscode).
 
 **Взимается ли плата за использование Azure Machine Learning Workbench?**
 
-Нет. Azure Machine Learning Workbench — бесплатное приложение. Вы можете скачать его на любое число компьютеров и для любого числа пользователей. Для использования Azure Machine Learning Workbench требуется учетная запись службы "Экспериментирование". .  
+ Нет. Azure Machine Learning Workbench — бесплатное приложение. Вы можете скачать его на любое число компьютеров и для любого числа пользователей. Для использования Azure Machine Learning Workbench требуется учетная запись службы "Экспериментирование". .  
 
 **Поддерживаются ли возможности командной строки?**
 
@@ -125,7 +125,7 @@ Azure Machine Learning Workbench — это дополнительное при
 
 **Можно ли использовать записные книжки Jupyter с Workbench?**
 
-Да! Вы можете запускать записные книжки Jupyter в Workbench, используя Workbench в качестве клиентского приложения для размещения так же, как вы используете браузер в качестве клиента. 
+ Да! Вы можете запускать записные книжки Jupyter в Workbench, используя Workbench в качестве клиентского приложения для размещения так же, как вы используете браузер в качестве клиента. 
 
 **Какие поддерживаются ядра для записных книжек Jupyter?**
 
@@ -171,4 +171,4 @@ Azure Machine Learning Workbench — это дополнительное при
 
 **Как служба "Машинное обучение Azure" связана с Microsoft Cognitive Toolkit?**
 
-[Microsoft Cognitive Toolkit](https://www.microsoft.com/cognitive-toolkit/) — одна из многих платформ, поддерживаемых новыми инструментами и службами. Cognitive Toolkit — это набор средств глубокого обучения, который позволяет использовать и объединять популярные модели машинного обучения, включая глубокие нейронные сети прямого распространения, сверточные сети, сети типа "последовательность-в-последовательность" и рекуррентные сети. Дополнительные сведения о Microsoft Cognitive Toolkit см. в [документации по продукту](https://docs.microsoft.com/cognitive-toolkit/). 
+[Microsoft Cognitive Toolkit](https://docs.microsoft.com/cognitive-toolkit/) — одна из многих платформ, поддерживаемых новыми инструментами и службами. Cognitive Toolkit — это набор средств глубокого обучения, который позволяет использовать и объединять популярные модели машинного обучения, включая глубокие нейронные сети прямого распространения, сверточные сети, сети типа "последовательность-в-последовательность" и рекуррентные сети. Дополнительные сведения о Microsoft Cognitive Toolkit см. в [документации по продукту](https://docs.microsoft.com/cognitive-toolkit/). 

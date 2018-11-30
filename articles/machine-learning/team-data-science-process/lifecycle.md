@@ -2,25 +2,21 @@
 title: Жизненный цикл процесса обработки и анализа данных группы в Azure | Документация Майкрософт
 description: Порядок выполнения проектов по обработке и анализу данных
 services: machine-learning
-documentationcenter: ''
-author: deguhath
+author: marktab
 manager: cgronlun
 editor: cgronlun
-ms.assetid: b1f677bb-eef5-4acb-9b3b-8a5819fb0e78
 ms.service: machine-learning
 ms.component: team-data-science-process
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/04/2017
-ms.author: deguhath
-ms.openlocfilehash: 611793297559c99ffa46f7c0266ed6865eb650fd
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.author: tdsp
+ms.custom: (previous author=deguhath, ms.author=deguhath)
+ms.openlocfilehash: 24807d00170ed46a95d2726e1172b15775e0376d
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51234278"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52443398"
 ---
 # <a name="the-team-data-science-process-lifecycle"></a>Жизненный цикл процесса обработки и анализа данных группы
 
@@ -53,4 +49,4 @@ ms.locfileid: "51234278"
 
 Кроме того, предоставляются полные пошаговые руководства, которые демонстрируют все этапы процесса для конкретных сценариев. Статья [Пошаговые руководства по процессу обработки и анализа данных группы](walkthroughs.md) содержит список сценариев, ссылки и описания эскизов. В пошаговых руководствах показано, как объединить облачные, локальные инструменты и службы в единый рабочий процесс или конвейер, чтобы создать интеллектуальное приложение. 
 
-Примеры выполнения шагов в процессе обработки и анализа данных группы, который использует среду "Студия машинного обучения Azure", см. в статье [Командный процесс обработки и анализа данных с использованием службы "Машинное обучение Azure"](https://aka.ms/datascienceprocess).
+Примеры выполнения шагов в процессе обработки и анализа данных группы, который использует среду "Студия машинного обучения Azure", см. в статье [Командный процесс обработки и анализа данных с использованием службы "Машинное обучение Azure"](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/).

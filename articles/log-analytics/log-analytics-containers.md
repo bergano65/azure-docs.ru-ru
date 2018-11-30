@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 575b3ec5e729b325cad216ae463063acbb68f20b
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 81728e7963767cd90bf2486a35fbce55043a76f7
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685945"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52633475"
 ---
 # <a name="container-monitoring-solution-in-log-analytics"></a>Решение для мониторинга контейнеров в Log Analytics
 
@@ -36,7 +36,7 @@ ms.locfileid: "51685945"
 - Service Fabric
 - Red Hat OpenShift.
 
-Если вы заинтересованы в мониторинге производительности рабочих нагрузок, развернутых в средах Kubernetes, которые размещены в Службе Azure Kubernetes (AKS), см. статью [Обзор службы "Azure Monitor для контейнеров"](../monitoring/monitoring-container-insights-overview.md). Решение мониторинга контейнеров не поддерживает мониторинг этой платформы.  
+Если вы заинтересованы в мониторинге производительности рабочих нагрузок, развернутых в средах Kubernetes, которые размещены в Службе Azure Kubernetes (AKS), см. статью [Обзор службы "Azure Monitor для контейнеров"](../azure-monitor/insights/container-insights-overview.md). Решение мониторинга контейнеров не поддерживает мониторинг этой платформы.  
 
 На схеме ниже показаны связи между разными узлами контейнера и агентами с Log Analytics.
 
@@ -97,7 +97,7 @@ ms.locfileid: "51685945"
 ## <a name="installing-and-configuring-the-solution"></a>Установка и настройка решения
 Для установки и настройки решений используйте указанные ниже данные.
 
-1. Решение для мониторинга контейнеров необходимо добавить в рабочую область Log Analytics из [Azure Мarketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.ContainersOMS?tab=Overview) или в соответствии с инструкциями по [добавлению решений Log Analytics из коллекции решений](../monitoring/monitoring-solutions.md).
+1. Решение для мониторинга контейнеров необходимо добавить в рабочую область Log Analytics из [Azure Мarketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.ContainersOMS?tab=Overview) или в соответствии с инструкциями по [добавлению решений Log Analytics из коллекции решений](../azure-monitor/insights/solutions.md).
 
 2. Установите и используйте Docker с агентом Log Analytics. В зависимости от операционной системы и оркестратора Docker можно использовать следующие методы настройки агента.
   - Для автономных узлов:
@@ -126,7 +126,7 @@ ms.locfileid: "51685945"
 
 **Для всех узлов контейнера Linux, за исключением CoreOS:**
 
-- См. дополнительные сведения об [установке агента Log Analytics для Linux](log-analytics-agent-overview.md).
+- См. дополнительные сведения об [установке агента Log Analytics для Linux](../azure-monitor/platform/log-analytics-agent.md).
 
 **Для всех узлов контейнера Linux, включая CoreOS:**
 
@@ -524,9 +524,9 @@ KEY:    88 bytes
 
 #### <a name="install-windows-agents"></a>Установка агентов Windows
 
-Чтобы включить мониторинг контейнеров Windows и Hyper-V, установите Microsoft Monitoring Agent (MMA) на компьютерах Windows, которые являются узлами контейнера. Сведения для компьютеров под управлением Windows в локальной среде см. в статье [Подключение компьютеров Windows к Log Analytics](log-analytics-agent-windows.md). Виртуальные машины, запущенные в Azure, следует подключить к Log Analytics с помощью [расширения виртуальной машины](log-analytics-quick-collect-azurevm.md).
+Чтобы включить мониторинг контейнеров Windows и Hyper-V, установите Microsoft Monitoring Agent (MMA) на компьютерах Windows, которые являются узлами контейнера. Сведения для компьютеров под управлением Windows в локальной среде см. в статье [Подключение компьютеров Windows к Log Analytics](../azure-monitor/platform/agent-windows.md). Виртуальные машины, запущенные в Azure, следует подключить к Log Analytics с помощью [расширения виртуальной машины](log-analytics-quick-collect-azurevm.md).
 
-Вы можете отслеживать контейнеры Windows, запущенные в Service Fabric. Однако сейчас для Service Fabric поддерживаются только [виртуальные машины, работающие в Azure](log-analytics-quick-collect-azurevm.md), и [компьютеры под управлением Windows в локальной среде](log-analytics-agent-windows.md).
+Вы можете отслеживать контейнеры Windows, запущенные в Service Fabric. Однако сейчас для Service Fabric поддерживаются только [виртуальные машины, работающие в Azure](log-analytics-quick-collect-azurevm.md), и [компьютеры под управлением Windows в локальной среде](../azure-monitor/platform/agent-windows.md).
 
 Убедитесь, что решение для мониторинга контейнеров правильно установлено в Windows. Чтобы проверить, был ли пакет управления скачан должным образом, найдите файл *ContainerManagement.xxx*. Файлы должны находиться в папке, расположенной по адресу C:\Program Files\Microsoft Monitoring Agent\Agent\Health Service State\Management Packs.
 
@@ -543,7 +543,7 @@ KEY:    88 bytes
 Данные собираются каждые три минуты следующими типами агентов.
 
 - [Агент Log Analytics для Linux](log-analytics-quick-collect-linux-computer.md)
-- [Агент Windows](log-analytics-agent-windows.md)
+- [Агент Windows](../azure-monitor/platform/agent-windows.md)
 - [Расширение виртуальной машины Log Analytics](log-analytics-quick-collect-azurevm.md)
 
 

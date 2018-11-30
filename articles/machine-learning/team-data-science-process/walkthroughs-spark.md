@@ -2,25 +2,21 @@
 title: Пошаговое руководство HDInsight Spark с использованием PySpark и Scala в Azure | Документация Майкрософт
 description: Примеры процесса обработки и анализа данных группы, которые объясняют, как использовать PySpark и Scala в Azure HDInsight Spark для прогнозной аналитики.
 services: machine-learning
-documentationcenter: ''
-author: deguhath
+author: marktab
 manager: cgronlun
 editor: cgronlun
-ms.assetid: ''
 ms.service: machine-learning
 ms.component: team-data-science-process
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2017
-ms.author: deguhath
-ms.openlocfilehash: 3d39e752e874b6b0c6fbdf678d6eddda0b0d9404
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.author: tdsp
+ms.custom: (previous author=deguhath, ms.author=deguhath)
+ms.openlocfilehash: a7697d2be1a43af93109bb7bbdab50828275f5aa
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51226554"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52446406"
 ---
 # <a name="hdinsight-spark-data-science-walkthroughs-using-pyspark-and-scala-on-azure"></a>Пошаговое руководство обработки и анализа данных HDInsight Spark с использованием PySpark и Scala в Azure
 

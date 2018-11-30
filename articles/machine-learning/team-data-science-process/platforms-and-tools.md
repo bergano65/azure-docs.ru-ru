@@ -1,25 +1,21 @@
 ---
 title: Платформы и средства Azure для командных проектов обработки и анализа данных | Документация Майкрософт
 description: Список и описание ресурсов для получения и анализа данных, которые предприятия могут использовать для стандартизации командного процесса обработки и анализа данных.
-documentationcenter: ''
-author: deguhath
+author: marktab
 manager: cgronlun
 editor: cgronlun
-ms.assetid: ''
 ms.service: machine-learning
 ms.component: team-data-science-process
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2017
-ms.author: deguhath
-ms.openlocfilehash: 5cfe86414473f352673f39850a34f8ef265c91f5
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.author: tdsp
+ms.custom: (previous author=deguhath, ms.author=deguhath)
+ms.openlocfilehash: 5df2cbabeb704453d71a0ac1db14c618dae352d2
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51258907"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52446455"
 ---
 # <a name="platforms-and-tools-for-data-science-projects"></a>Платформы и средства для проектов обработки и анализа данных
 
@@ -152,4 +148,4 @@ Hive позволяет включать пользовательские фун
 
 Также предоставляются полные пошаговые руководства, которые демонстрируют все этапы процесса для **конкретных сценариев** . Эти этапы с иллюстрациями и краткими описаниями перечислены в [примерах пошаговых руководств](walkthroughs.md). В них показано, как объединить облачные и локальные средства и службы в единый рабочий процесс или конвейер, чтобы создать интеллектуальное приложение. 
 
-Примеры выполнения шагов командного процесса обработки и анализа данных, в которых задействуется студия машинного обучения Azure, см. в [схеме обучения с использованием службы "Машинное обучение Azure"](https://aka.ms/datascienceprocess).
+Примеры выполнения шагов командного процесса обработки и анализа данных, в которых задействуется студия машинного обучения Azure, см. в [схеме обучения с использованием службы "Машинное обучение Azure"](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/).

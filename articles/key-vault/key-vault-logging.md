@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/16/2017
 ms.author: barclayn
-ms.openlocfilehash: e86d68107278641e40346327fa3a8cb7059b7d71
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: 9790cd7c79efa1b64220f9e128de9a3b8eb902c0
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44159594"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52426950"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала хранилища ключей Azure
 Хранилище ключей Azure доступно в большинстве регионов. Дополнительные сведения см. на странице [цен на хранилище ключей](https://azure.microsoft.com/pricing/details/key-vault/).
@@ -265,7 +265,7 @@ ms.locfileid: "44159594"
 
 ## <a id="loganalytics"></a>Использование Log Analytics
 
-Решение хранилища ключей Azure в Log Analytics позволяет просматривать журналы AuditEvent хранилища ключей Azure. Дополнительные сведения, включая инструкции по настройке, см. в статье [Решение Azure Key Vault Analytics в Log Analytics](../log-analytics/log-analytics-azure-key-vault.md). В этой статье также содержатся инструкции на случай переноса из старого решения Key Vault, которое предлагалось в предварительной версии Log Analytics, где сначала требовалось направить журналы в учетную запись хранения Azure и настроить Log Analytics для чтения из этой учетной записи.
+Решение хранилища ключей Azure в Log Analytics позволяет просматривать журналы AuditEvent хранилища ключей Azure. Дополнительные сведения, включая инструкции по настройке, см. в статье [Решение Azure Key Vault Analytics в Log Analytics](../azure-monitor/insights/azure-key-vault.md). В этой статье также содержатся инструкции на случай переноса из старого решения Key Vault, которое предлагалось в предварительной версии Log Analytics, где сначала требовалось направить журналы в учетную запись хранения Azure и настроить Log Analytics для чтения из этой учетной записи.
 
 ## <a id="next"></a>Дальнейшие действия
 Руководство по использованию хранилища ключей Azure в веб-приложении см. в статье [Использование хранилища ключей Azure из веб-приложения](key-vault-use-from-web-application.md).
