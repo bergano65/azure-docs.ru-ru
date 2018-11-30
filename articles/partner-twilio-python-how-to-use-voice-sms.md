@@ -14,12 +14,12 @@ ms.devlang: python
 ms.topic: article
 ms.date: 02/19/2015
 ms.author: MicrosoftHelp@twilio.com
-ms.openlocfilehash: 62e7c601b70f3560dcc324c28f10f7d8e00bb9ed
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: f6d144daa165d350c6615f323b25f8860697f2c1
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37865337"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52422499"
 ---
 # <a name="how-to-use-twilio-for-voice-and-sms-capabilities-in-python"></a>Использование Twilio для поддержки голосовых возможностей и SMS на Python
 В этом руководстве показано, как выполнять типовые задачи программирования с помощью службы Twilio API в Azure. Здесь описываются такие сценарии, как телефонный звонок и отправка SMS-сообщения. Дополнительные сведения о Twilio и использовании голосовых функций и SMS в приложениях см. в разделе [Дальнейшие действия](#NextSteps).
@@ -78,7 +78,7 @@ TwiML — это набор инструкций на основе XML и с и�
 При регистрации учетной записи Twilio вы получите идентификатор безопасности учетной записи и маркер проверки подлинности. Эти элементы необходимы для вызовов Twilio API. Чтобы предотвратить несанкционированный доступ к учетной записи, храните маркер проверки подлинности в безопасности. Идентификатор безопасности учетной записи и маркер проверки подлинности отображаются на [консоли Twilio][twilio_console] в полях **ACCOUNT SID** (Идентификатор безопасности учетной записи) и **AUTH TOKEN** (Маркер проверки подлинности) соответственно.
 
 ## <a id="create_app"></a> Создание приложения Python
-Приложение Python, которое использует службу Twilio и выполняется в Azure, не отличается от других приложений Python, которые используют службу Twilio. Хотя службы Twilio поддерживают интерфейс REST и могут вызываться из Python несколькими способами, в этой статье основное внимание уделяется использованию служб Twilio с [библиотекой Twilio для Python из GitHub][twilio_python]. Дополнительные сведения об использовании библиотеки Twilio для Python, см. по адресу [http://readthedocs.org/docs/twilio-python/en/latest/index.html][twilio_lib_docs].
+Приложение Python, которое использует службу Twilio и выполняется в Azure, не отличается от других приложений Python, которые используют службу Twilio. Хотя службы Twilio поддерживают интерфейс REST и могут вызываться из Python несколькими способами, в этой статье основное внимание уделяется использованию служб Twilio с [библиотекой Twilio для Python из GitHub][twilio_python]. Дополнительные сведения об использовании библиотеки Twilio для Python, см. по адресу [https://readthedocs.org/docs/twilio-python/en/latest/index.html][twilio_lib_docs].
 
 Во-первых, [настройте новую виртуальную машину Linux Azure] [azure_vm_setup] в качестве узла для нового веб-приложения Python. После запуска виртуальной машины необходимо будет предоставить доступ к приложению через открытый порт, как описано ниже.
 
@@ -135,7 +135,7 @@ TwiML — это набор инструкций на основе XML и с и�
     to_number = "NNNNNNNNNNN"
 
     # Use the Twilio-provided site for the TwiML response.
-    url = "http://twimlets.com/message?"
+    url = "https://twimlets.com/message?"
 
     # The phone message text.
     message = "Hello world."
@@ -174,7 +174,7 @@ TwiML — это набор инструкций на основе XML и с и�
                                      body=message)
 
 ## <a id="howto_provide_twiml_responses"></a>Практическое руководство. Предоставление ответов TwiML с собственного веб-сайта
-Когда приложение инициирует вызов API Twilio, Twilio отправляет ваш запрос на URL-адрес, который должен возвратить ответ TwiML. В примере выше используется предоставляемый Twilio URL-адрес [http://twimlets.com/message][twimlet_message_url]. (Хотя TwiML предназначается для использования службой Twilio, его можно также просмотреть в браузере. Например, щелкните [http://twimlets.com/message][twimlet_message_url], чтобы просмотреть пустой элемент `<Response>`, или щелкните [http://twimlets.com/message?Message%5B0%5D=Hello%20World][twimlet_message_url_hello_world], чтобы просмотреть элемент `<Response>`, который содержит элемент `<Say>`.)
+Когда приложение инициирует вызов API Twilio, Twilio отправляет ваш запрос на URL-адрес, который должен возвратить ответ TwiML. В примере выше используется предоставляемый Twilio URL-адрес [https://twimlets.com/message][twimlet_message_url]. (Хотя TwiML предназначается для использования службой Twilio, его можно также просмотреть в браузере. Например, щелкните [https://twimlets.com/message][twimlet_message_url], чтобы просмотреть пустой элемент `<Response>`, или щелкните [https://twimlets.com/message?Message%5B0%5D=Hello%20World][twimlet_message_url_hello_world], чтобы просмотреть элемент `<Response>`, который содержит элемент `<Say>`.)
 
 Вместо того чтобы использовать URL-адрес, предоставленный Twilio, можно создать собственный сайт для возврата HTTP-ответов. Веб-сайт можно создавать на любом языке, который возвращает XML-ответы; в этом разделе предполагается, что для создания TwiML будет использоваться язык Python.
 
@@ -236,23 +236,23 @@ TwiML — это набор инструкций на основе XML и с и�
 * [Twilio на GitHub][twilio_on_github]
 * [Обращение в службу поддержки Twilio][twilio_support]
 
-[special_offer]: http://ahoy.twilio.com/azure
+[special_offer]: https://ahoy.twilio.com/azure
 [twilio_python]: https://github.com/twilio/twilio-python
-[twilio_lib_docs]: http://readthedocs.org/docs/twilio-python/en/latest/index.html
+[twilio_lib_docs]: https://readthedocs.org/docs/twilio-python/en/latest/index.html
 [twilio_github_readme]: https://github.com/twilio/twilio-python/blob/master/README.md
 
-[twimlet_message_url]: http://twimlets.com/message
-[twimlet_message_url_hello_world]: http://twimlets.com/message?Message%5B0%5D=Hello%20World
+[twimlet_message_url]: https://twimlets.com/message
+[twimlet_message_url_hello_world]: https://twimlets.com/message?Message%5B0%5D=Hello%20World
 [twiml_reference]: https://www.twilio.com/docs/api/twiml
-[twilio_pricing]: http://www.twilio.com/pricing
+[twilio_pricing]: https://www.twilio.com/pricing
 
 [twilio_libraries]: https://www.twilio.com/docs/libraries
-[twiml]: http://www.twilio.com/docs/api/twiml
-[twilio_api]: http://www.twilio.com/api
+[twiml]: https://www.twilio.com/docs/api/twiml
+[twilio_api]: https://www.twilio.com/api
 [try_twilio]: https://www.twilio.com/try-twilio
 [twilio_console]:  https://www.twilio.com/console
-[twilio_security_guidelines]: http://www.twilio.com/docs/security
-[twilio_howtos]: http://www.twilio.com/docs/howto
+[twilio_security_guidelines]: https://www.twilio.com/docs/security
+[twilio_howtos]: https://www.twilio.com/docs/howto
 [twilio_on_github]: https://github.com/twilio
-[twilio_support]: http://www.twilio.com/help/contact
-[twilio_quickstarts]: http://www.twilio.com/docs/quickstart
+[twilio_support]: https://www.twilio.com/help/contact
+[twilio_quickstarts]: https://www.twilio.com/docs/quickstart

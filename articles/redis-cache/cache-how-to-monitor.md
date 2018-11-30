@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2017
 ms.author: wesmc
-ms.openlocfilehash: 03c6d45cb3a20244ddbb9c0aec693f7802a95b22
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 19de4164f8d5049d72c3dd5c0a04b7ba4cee7065
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46976364"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51821146"
 ---
 # <a name="how-to-monitor-azure-redis-cache"></a>Как отслеживать кэш Redis для Azure
 В кэше Redis для Azure используется платформа [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/), которая предоставляет несколько функций для мониторинга экземпляров кэша. Вы можете просматривать метрики, закреплять диаграммы метрик на начальной панели, настраивать диапазоны дат и времени для диаграмм мониторинга, добавлять и удалять метрики в диаграммах, а также настраивать отправку оповещений при выполнении определенных условий. Эти инструменты позволяют наблюдать за работоспособностью экземпляров кэша Redis для Azure и помогают управлять кэшируемыми приложениями.
@@ -61,7 +61,7 @@ ms.locfileid: "46976364"
 <a name="how-to-view-metrics-and-customize-chart"></a>
 <a name="enable-cache-diagnostics"></a>
 ## <a name="export-cache-metrics"></a>Экспорт метрик кэша
-По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../monitoring/monitoring-data-collection.md#metrics), а затем удаляются. Чтобы хранить метрики кэша дольше 30 дней, назначьте для метрик кэша [выделенную учетную запись хранения](../monitoring-and-diagnostics/monitoring-archive-diagnostic-logs.md) и укажите для них политику **Хранение (дни)**. 
+По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../azure-monitor/platform/data-collection.md#metrics), а затем удаляются. Чтобы хранить метрики кэша дольше 30 дней, назначьте для метрик кэша [выделенную учетную запись хранения](../monitoring-and-diagnostics/monitoring-archive-diagnostic-logs.md) и укажите для них политику **Хранение (дни)**. 
 
 Чтобы настроить учетную запись хранения для метрик кэша, сделайте следующее:
 

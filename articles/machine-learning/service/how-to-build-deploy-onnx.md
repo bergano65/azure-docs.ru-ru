@@ -9,16 +9,16 @@ ms.reviewer: jmartens
 ms.author: prasantp
 author: prasanthpul
 ms.date: 09/24/2018
-ms.openlocfilehash: 97350c90ab4ce9c3623a293c3a6637edc65ced08
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.openlocfilehash: 2e5c0e479d5564a48048b9fa9c67ad8870122601
+ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51345476"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51706064"
 ---
 # <a name="onnx-and-azure-machine-learning-create-and-deploy-interoperable-ai-models"></a>ONNX и машинное обучение Azure: создание и развертывание совместимых моделей AI
 
-Формат [Open Neural Network Exchange](http://onnx.ai) (ONNX) — это открытый стандарт для представления моделей машинного обучения. ONNX поддерживается [сообществом партнеров](http://onnx.ai/supported-tools), включая корпорацию Майкрософт, которое создает совместимые платформы и средства. Корпорация Майкрософт стремится к созданию открытого, совместимого AI, чтобы ученые и разработчики могли делать следующее:
+Формат [Open Neural Network Exchange](https://onnx.ai) (ONNX) — это открытый стандарт для представления моделей машинного обучения. ONNX поддерживается [сообществом партнеров](https://onnx.ai/supported-tools), включая корпорацию Майкрософт, которое создает совместимые платформы и средства. Корпорация Майкрософт стремится к созданию открытого, совместимого AI, чтобы ученые и разработчики могли делать следующее:
 
 + использовать для создания и обучения моделей платформу по своему выбору;
 + развертывать кроссплатформенные модели с минимальной работой над интеграцией.
@@ -207,6 +207,6 @@ results = session.run([], {"input1": indata1, "input2": indata2})
 ## <a name="more-info"></a>Подробнее
 
 Узнайте больше об ONNX или поддержите проект:
-+ [Веб-сайт проекта ONNX](http://onnx.ai)
++ [Веб-сайт проекта ONNX](https://onnx.ai)
 
 + [Код ONNX в GitHub](https://github.com/onnx/onnx)

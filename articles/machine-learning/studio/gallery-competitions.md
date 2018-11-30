@@ -3,8 +3,9 @@ title: Конкурсы в коллекции решений ИИ Azure | Док
 description: Поиск конкурсов в коллекции решений ИИ Azure.
 services: machine-learning
 documentationcenter: ''
-author: YasinMSFT
-ms.author: yahajiza
+author: ericlicoding
+ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: ef74f411-bce4-4b02-aa34-902fc8d7b519
@@ -15,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
-ms.openlocfilehash: bfc2f40231b5e28ffa3721eef70311da8dcb6da9
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.openlocfilehash: a209b53893da8f0c7e86102a703334091f982c78
+ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51343674"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52260671"
 ---
 # <a name="discover-competitions-in-the-azure-ai-gallery"></a>Поиск конкурсов в коллекции решений ИИ Azure
 

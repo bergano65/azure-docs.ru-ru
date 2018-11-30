@@ -1,26 +1,22 @@
 ---
 title: Планирование проекта командного процесса обработки и анализа данных | Документация Майкрософт
 description: Шаблоны Microsoft Project и Microsoft Excel для планирования проектов обработки и анализа данных и управления ими.
-documentationcenter: ''
-author: deguhath
+author: marktab
 manager: cgronlun
 editor: cgronlun
 services: machine-learning
-ms.assetid: ''
 ms.service: machine-learning
 ms.component: team-data-science-process
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/27/2017
-ms.author: deguhath
-ms.openlocfilehash: 1ebd640191ffbb1b3ea70ca07081522b370e4e2d
-ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
+ms.author: tdsp
+ms.custom: (previous author=deguhath, ms.author=deguhath)
+ms.openlocfilehash: 702ea6152ce5bf90d1d1f61b566e91d1859e672b
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39308193"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52443106"
 ---
 # <a name="team-data-science-process-project-planning"></a>Планирование проекта командного процесса обработки и анализа данных
 

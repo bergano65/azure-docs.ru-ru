@@ -1,3 +1,16 @@
+---
+author: rayne-wiselman
+ms.service: backup
+ms.topic: include
+ms.date: 11/09/2018
+ms.author: raynew
+ms.openlocfilehash: e62771096bc59bc05879ce7b7e2da19f050b27b0
+ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52279895"
+---
 ## <a name="defining-a-backup-policy"></a>Добавление политики резервного копирования
 Политика резервного копирования определяет расписание создания моментальных снимков и период их хранения. В параметрах политики резервного копирования виртуальной машины можно задать *ежедневное*выполнение задания резервного копирования. Созданная политика применяется к хранилищу. Интерфейс политики резервного копирования выглядит следующим образом:
 

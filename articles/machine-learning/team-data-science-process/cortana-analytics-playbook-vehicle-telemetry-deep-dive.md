@@ -2,31 +2,27 @@
 title: Подробный обзор прогнозирования исправности автомобиля и манеры вождения с помощью Azure | Документация Майкрософт
 description: Используйте возможности Cortana Intelligence, чтобы получить прогнозы и актуальную информацию об исправности и манере вождения автомобиля в режиме реального времени.
 services: machine-learning
-documentationcenter: ''
-author: deguhath
+author: marktab
 manager: cgronlun
 editor: cgronlun
-ms.assetid: d8866fa6-aba6-40e5-b3b3-33057393c1a8
 ms.service: machine-learning
 ms.component: team-data-science-process
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2018
-ms.author: deguhath
-ms.openlocfilehash: 8c4946ebef8d17d2016d482010768207d5e859ff
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.author: tdsp
+ms.custom: (previous author=deguhath, ms.author=deguhath)
+ms.openlocfilehash: b1c01bcd15c5cfc63eae7c2b1983fc9075d4220c
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51300954"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52444390"
 ---
 # <a name="vehicle-telemetry-analytics-solution-playbook-deep-dive-into-the-solution"></a>Сборник тренировочных заданий по решению для аналитики телеметрии автомобиля. Подробный обзор решения
 
 Эта статья детализирует каждый из этапов, описанных в архитектуре решения. с инструкциями и ссылками для настройки. 
 
-Сводное описание этого решения см. в статье [Обзор решения для анализа данных телеметрии, полученных с автомобиля](cortana-analytics-playbook-vehicle-telemetry.md).
+См. [общие сведения о решении для анализа данных телеметрии, полученных с автомобиля](cortana-analytics-playbook-vehicle-telemetry.md).
 
 
 ## <a name="data-sources"></a>Источники данных
@@ -670,7 +666,7 @@ Power BI предоставляет для этого решения расши
 ### <a name="references"></a>Ссылки
 
 * [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/)
-* [Фабрика данных Azure](https://azure.microsoft.com/documentation/learning-paths/data-factory/)
+* [Фабрика данных Azure](https://docs.microsoft.com/rest/api/datafactory/)
 * [Приступая к отправке событий в Центры событий Azure на платформе .NET Standard](../../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
 * [Перемещение данных с помощью действия копирования](../../data-factory/copy-activity-overview.md)
 * [Использование настраиваемых действий в конвейере фабрики данных Azure](../../data-factory/transform-data-using-dotnet-custom-activity.md)

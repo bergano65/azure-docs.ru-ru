@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/21/2018
 ms.author: rkarlin
-ms.openlocfilehash: 0376f09d4d7d6c952cbef40751a2729045f68061
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 9cfb098fd8e6cb777b6cd968f92b20baabfab705
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51255846"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52313997"
 ---
 # <a name="file-integrity-monitoring-in-azure-security-center"></a>Мониторинг целостности файлов в центре безопасности Azure
 В этом руководстве объясняется, как настроить мониторинг целостности файлов в центре безопасности Azure.
@@ -205,7 +205,7 @@ FIM передает данные в рабочую область службы 
 ## <a name="next-steps"></a>Дополнительная информация
 Из этой статьи вы узнали, как использовать мониторинг целостности файла в центре безопасности. Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
-* [Настройка политик безопасности](security-center-policies.md). Узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
+* [Настройка политик безопасности](security-center-azure-policy.md). Узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
 * [Рекомендации по управлению безопасностью](security-center-recommendations.md) — сведения об использовании рекомендаций для защиты ресурсов Azure.
 * [Мониторинг работоспособности системы безопасности](security-center-monitoring.md) — сведения об отслеживании работоспособности ресурсов Azure.
 * [Управление оповещениями о безопасности](security-center-managing-and-responding-alerts.md). Узнайте, как управлять оповещениями системы безопасности и реагировать на них.

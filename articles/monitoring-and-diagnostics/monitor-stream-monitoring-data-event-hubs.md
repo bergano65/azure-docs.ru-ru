@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: johnkem
 ms.component: ''
-ms.openlocfilehash: 0c85b65e9b6eabcb5c74e1d178c0f26235cdf624
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 4c6765e54dc881c35e344f111e82721be0852052
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50961829"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51823764"
 ---
 # <a name="stream-azure-monitoring-data-to-an-event-hub-for-consumption-by-an-external-tool"></a>Потоковая передача данных мониторинга Azure в концентратор событий для потребления внешним инструментом
 
@@ -71,7 +71,7 @@ Azure Monitor предоставляет единый конвейер для п
 
 Ресурсы Azure создают два вида данных мониторинга:
 1. [Журналы диагностики ресурсов](./monitoring-overview-of-diagnostic-logs.md).
-2. [Метрики](../monitoring/monitoring-data-collection.md)
+2. [Метрики](../azure-monitor/platform/data-collection.md)
 
 Оба типа данных отправляются в концентратор событий с использованием параметра диагностики ресурсов. [Следуя этому руководству](./monitoring-stream-diagnostic-logs-to-event-hubs.md), задайте параметр диагностики в каждом ресурсе, для которого вы хотите собирать журналы.
 

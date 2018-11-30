@@ -347,5 +347,5 @@
 ## [Цены](https://azure.microsoft.com/pricing/details/active-directory/)
 ## [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
 ## [Обновления службы](https://azure.microsoft.com/updates/?product=active-directory)
-## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-active-directory)
+## [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-active-directory)
 ## [Видеоролики](https://azure.microsoft.com/documentation/videos/index/?services=active-directory)

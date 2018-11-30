@@ -10,12 +10,12 @@ ms.author: netahw
 author: nhaiby
 ms.date: 05/07/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: 97d988332a2c5234cb260cef29f195f0fecfee45
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 73f95280cc02b6f891c4ef67cd11084768d7d282
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46994944"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51853019"
 ---
 # <a name="build-and-deploy-text-classification-models-with-azure-machine-learning"></a>Создание и развертывание моделей классификации текстов с помощью Машинного обучения Azure
 
@@ -436,7 +436,7 @@ text_classifier.fit(df_train)
 
 В следующих примерах кода показано, как обучать модель с использованием параметров конвейера и модели по умолчанию. 
 
-Чтобы узнать, какие параметры включены в text_word_ngrams, используйте [get_step_param_names_by_name](https://docs.microsoft.com/python/api/tatk.core.base_text_model.basetextmodel). Эта функция возвращает такие параметры, как нижний регистр, input_col, output_col и т. д. 
+Чтобы узнать, какие параметры включены в text_word_ngrams, используйте [get_step_param_names_by_name](/python/api/msft-tatk/tatk.core.base_text_model.basetextmodel#get-step-param-names-by-name). Эта функция возвращает такие параметры, как нижний регистр, input_col, output_col и т. д. 
 
 ```python
 text_classifier.get_step_param_names_by_name("text_word_ngrams")
@@ -625,7 +625,7 @@ text_classifier.export_params(params_file_path)
 </div>
 
 ## <a name="evaluate-model-performance"></a>Оценка работы модели.
-[Модуль оценки](https://docs.microsoft.com/python/api/tatk.evaluation) оценивает точность обученного текстового классификатора в тестовом наборе данных. Функция оценки создает матрицу неточностей и дает оценку macro-F1.
+[Модуль оценки](/python/api/msft-tatk/tatk.evaluation) оценивает точность обученного текстового классификатора в тестовом наборе данных. Функция оценки создает матрицу неточностей и дает оценку macro-F1.
 
 ```python
  text_classifier.evaluate(df_test)          

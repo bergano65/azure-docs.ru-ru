@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: robb
 ms.component: alerts
-ms.openlocfilehash: e7622ffcfbaca4f83f0b5233159fc94720148365
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: 2caf3d6373e764f5d5538a14a1750f1bfee2871d
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51614146"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51822285"
 ---
 # <a name="what-are-classic-alerts-in-microsoft-azure"></a>Что такое классические оповещения в Microsoft Azure?
 
@@ -89,7 +89,7 @@ ms.locfileid: "51614146"
 ## <a name="next-steps"></a>Дополнительная информация
 Изучите правила создания оповещений и ознакомьтесь с их настройкой с помощью следующих средств:
 
-* Узнайте больше о [метриках](../monitoring/monitoring-data-collection.md).
+* Узнайте больше о [метриках](../azure-monitor/platform/data-collection.md).
 * Настройте [оповещения метрик на портале Azure](alert-metric-classic.md).
 * Настройте [классические оповещения метрик с помощью PowerShell](alert-metric-classic.md).
 * Настройте [классические оповещения метрик с помощью интерфейса командной строки](alert-metric-classic.md).

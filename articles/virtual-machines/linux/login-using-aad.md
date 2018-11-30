@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 8bf87f9d1d1ab6da4b034890f1fbe058199eca41
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 4f86dee539e3cc5a90db828ed11dbd225a00555d
+ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51007150"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52334641"
 ---
 # <a name="log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход на виртуальную машину Linux в Azure с аутентификацией Azure Active Directory (предварительная версия)
 
@@ -39,7 +39,7 @@ ms.locfileid: "51007150"
 
 - **Беспрепятственная совместная работа.** С помощью управления доступом на основе ролей (RBAC) можно указать, кто может выполнить вход на заданную виртуальную машину как обычный пользователь или с правами администратора. По мере присоединения пользователей к вашей группе или ухода из нее можно обновлять политику RBAC для виртуальной машины, предоставляя соответствующий доступ. Это намного проще, чем очистка виртуальных машин вручную для удаления ненужных открытых ключей SSH. Когда сотрудники уходят из вашей организации, а их учетная запись пользователя отключается или удаляется из Azure AD, они теряют доступ к вашим ресурсам.
 
-### <a name="supported-azure-regions-and-linux-distributions"></a>Поддерживаемые регионы Azure и дистрибутивы Linux
+## <a name="supported-azure-regions-and-linux-distributions"></a>Поддерживаемые регионы Azure и дистрибутивы Linux
 
 В режиме предварительной версии этой функции сейчас поддерживаются следующие дистрибутивы Linux:
 

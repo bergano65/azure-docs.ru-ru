@@ -11,12 +11,12 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 03/01/2018
 ms.author: orkostak
-ms.openlocfilehash: a3dadfc4257d43f9df1b93f5d486e5577b7889d6
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: ad04976136fc8db04dbe52bf78bea49a9149e5db
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44055317"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52312703"
 ---
 # <a name="indexing-in-the-azure-cosmos-db-mongodb-api"></a>Индексирование в Azure Cosmos DB: API MongoDB
 
@@ -99,5 +99,5 @@ globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})
 В настоящее время создание уникальных индексов возможно только в том случае, если коллекция не содержит документов. Популярные средства перемещения MongoDB пытаются создавать уникальные индексы после импорта данных. Для обхода этой проблемы пользователям рекомендуется вручную создавать соответствующие коллекции и уникальные индексы, отключив это действие для средств перемещения (в ```mongorestore``` для этого в командной строке следует указать параметр --noIndexRestore).
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Как работает индексирование данных в Azure Cosmos DB?](../cosmos-db/indexing-policies.md)
+* [Как работает индексирование данных в Azure Cosmos DB?](../cosmos-db/index-policy.md)
 * [Автоматическое завершение срока действия данных в коллекциях Azure Cosmos DB с использованием срока жизни](../cosmos-db/time-to-live.md)

@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 06/23/2017
 ms.author: genli
 ms.custom: ''
-ms.openlocfilehash: 5267ce5c50e8a57843f0bc54165289b38013ad91
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 2baae0a1932bdcb7fa5e29ac06dd8ae7a7020a30
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46986121"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52421850"
 ---
 # <a name="configure-a-virtual-network-classic-using-a-network-configuration-file"></a>Настройка (классической) виртуальной сети с помощью файла конфигурации сети
 > [!IMPORTANT]
@@ -134,7 +134,7 @@ ms.locfileid: "46986121"
 
 ### <a name="azure-classic-cli"></a>Классический Azure CLI
 
-1. [Установите классический Azure CLI](/cli/azure/install-cli-version-1.0.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Выполните оставшиеся шаги в командной строке классического интерфейса командной строки.
+1. [Установите классический Azure CLI](/cli/azure/install-classic-cli). Выполните оставшиеся шаги в командной строке классического интерфейса командной строки.
 2. Войдите в Azure, выполнив команду `azure login`.
 3. Выполните команду `azure config mode asm`, чтобы убедиться, что используется режим ASM.
 4. При необходимости измените каталог и имя файла в указанной ниже команде. Затем выполните команду, чтобы импортировать файл конфигурации сети.

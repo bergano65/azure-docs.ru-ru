@@ -15,17 +15,17 @@ ms.workload: big-compute
 ms.date: 04/05/2018
 ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: 0c045d82e47d2554c2767e6f52491c780618abc2
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 61db5e9eedc57ef6316cb760499362ed856e38c6
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49409532"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51822761"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Метрики, оповещения и журналы пакетной службы для диагностики и мониторинга
 
  
-В этой статье описывается, как выполнять мониторинг учетной записи пакетной службы с помощью функций [Azure Monitor](../azure-monitor/overview.md). Azure Monitor собирает [метрики](../monitoring/monitoring-data-collection.md#metrics) и [журналы диагностики](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) для ресурсов в учетной записи пакетной службы. Эти данные можно собирать и использовать разными способами. Они позволяют выполнять мониторинг и диагностику проблем для учетной записи пакетной службы. Вы также можете настроить [метрики оповещений](../monitoring-and-diagnostics/monitoring-overview-alerts.md), чтобы получать уведомления о достижении определенных значений. 
+В этой статье описывается, как выполнять мониторинг учетной записи пакетной службы с помощью функций [Azure Monitor](../azure-monitor/overview.md). Azure Monitor собирает [метрики](../azure-monitor/platform/data-collection.md#metrics) и [журналы диагностики](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) для ресурсов в учетной записи пакетной службы. Эти данные можно собирать и использовать разными способами. Они позволяют выполнять мониторинг и диагностику проблем для учетной записи пакетной службы. Вы также можете настроить [метрики оповещений](../monitoring-and-diagnostics/monitoring-overview-alerts.md), чтобы получать уведомления о достижении определенных значений. 
 
 ## <a name="batch-metrics"></a>Метрики пакетной службы
 

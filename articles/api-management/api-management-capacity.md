@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 06/18/2018
 ms.author: apimpm
-ms.openlocfilehash: 4983854a14a6efe9214692dc677dedeada73933b
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: 31959cc1bef6b6434f6d3f586052a845837aa438
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36296801"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52442597"
 ---
 # <a name="capacity-of-an-azure-api-management-instance"></a>Емкость экземпляра управления API Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "36296801"
 
 В этой статье объясняется, что такое **емкость** и ее поведение. Здесь показано, как получить доступ к метрикам **емкости** на портале Azure, и описаны случаи, когда следует рассмотреть возможность масштабирования или обновления экземпляра управления API.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить шаги из этой статьи, понадобится следующее:
 
@@ -33,6 +33,8 @@ ms.locfileid: "36296801"
     [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 + Экземпляр APIM. Дополнительные сведения см. в статье о [создании экземпляра управления API Azure](get-started-create-service-instance.md).
+
+[!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
 ## <a name="what-is-capacity"></a>Что такое емкость
 

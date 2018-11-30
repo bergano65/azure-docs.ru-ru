@@ -1,17 +1,18 @@
 ---
 title: Исключение дисков из репликации для аварийного восстановления виртуальных машин VMware в Azure с помощью Azure Site Recovery | Документация Майкрософт
 description: В статье объясняется, как и зачем исключать диски виртуальных машин из репликации для аварийного восстановления VMware в Azure.
-author: nsoneji
+author: Rajeswari-Mamilla
+manager: rochakm
 ms.service: site-recovery
 ms.workload: storage-backup-recovery
 ms.date: 10/11/2018
-ms.author: nisoneji
-ms.openlocfilehash: f8e5fd094e453088dab83c1967bc0733f91a2b98
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.author: ramamill
+ms.openlocfilehash: 667cbbbcc0a74550b389d7a75e17cecd00b88d06
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50210592"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51976627"
 ---
 # <a name="exclude-disks-from-replication-of-vmware-vms-to-azure"></a>Исключение дисков из репликации виртуальных машин VMware в Azure
 

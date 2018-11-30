@@ -4,12 +4,12 @@ ms.service: application-gateway
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: victorh
-ms.openlocfilehash: 44f9400a1ecebd3c204ec0b891c5d7fe01bdfd25
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: 3d66d825306c5183bdd8d8e611d98904eef2022a
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51628198"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52440407"
 ---
 | Ресурс | Ограничение по умолчанию | Примечание |
 | --- | --- | --- |
@@ -26,7 +26,7 @@ ms.locfileid: "51628198"
 | Сертификаты аутентификации клиента |40 | |
 | Минимальное время ожидания запроса |1 с | |
 | Максимальное время ожидания запроса |24 часа | |
-| Количество сайтов |20 |1 на HTTP-прослушиватель |
+| Количество сайтов |40 |1 на HTTP-прослушиватель |
 | Сопоставлений URL-адреса на прослушиватель |1 | |
 | Максимальное количество правил на основе путей на сопоставление URL-адреса|100|
 | Конфигурации перенаправления |40| |

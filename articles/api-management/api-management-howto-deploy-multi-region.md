@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/15/2018
 ms.author: apimpm
-ms.openlocfilehash: 2ec8d53b0d8da3a7d643362abf58d3a5d4b42e74
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 27bfd3176ecad847f9bba2a62abd66b55484443b
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42142952"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52443021"
 ---
 # <a name="how-to-deploy-an-azure-api-management-service-instance-to-multiple-azure-regions"></a>Развертывание экземпляра службы управления Azure API в различных регионах Azure
 
@@ -26,11 +26,10 @@ ms.locfileid: "42142952"
 
 Новая служба управления API Azure изначально содержит только одну [единицу][unit] в одном регионе Azure, который считается основным. Однако через портал Azure можно легко добавить дополнительные регионы. В каждом регионе развертывается сервер шлюза управления API, и весь трафик вызовов направляется на ближайший из таких шлюзов. Если регион переходит в автономный режим, трафик автоматически перенаправляется к другому ближайшему шлюзу.
 
-> [!IMPORTANT]
-> Развертывание в нескольких регионах доступно только для уровня **[Премиум][Premium]**.
-
 > [!NOTE]
 > Служба управления API Azure в разных регионах может реплицировать только компонент шлюза API. Компонент службы управления размещается только в основном регионе. В случае сбоя в основном регионе невозможно применить изменения конфигураций экземпляра службы управления API Azure (включая обновления настроек или политик).
+
+[!INCLUDE [premium.md](../../includes/api-management-availability-premium.md)]
 
 ## <a name="add-region"> </a>Создание экземпляра службы управления API в новом регионе
 

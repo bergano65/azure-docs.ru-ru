@@ -1,26 +1,22 @@
 ---
 title: DevOps в приложениях с искусственным интеллектом (AI). Создание конвейера непрерывной интеграции в Azure с помощью Docker, Kubernetes и приложения Flask Python
 description: DevOps в приложениях с искусственным интеллектом (AI). Создание конвейера непрерывной интеграции в Azure с помощью Docker и Kubernetes
-services: machine-learning, team-data-science-process
-documentationcenter: ''
-author: jainr
-manager: deguhath
+services: machine-learning
+author: marktab
+manager: cgronlun
 editor: cgronlun
-ms.assetid: b8fbef77-3e80-4911-8e84-23dbf42c9bee
 ms.service: machine-learning
 ms.component: team-data-science-process
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/22/2018
-ms.author: jainr
-ms.openlocfilehash: fb162c45b8bd53fd4d994e0eb83a38438873d627
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.author: tdsp
+ms.custom: (previous author=jainr, ms.author=jainr)
+ms.openlocfilehash: c232680d5d1bf0eb761ff974ebf6608b67922f33
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50094400"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52496744"
 ---
 # <a name="devops-for-artificial-intelligence-ai-applications-creating-continuous-integration-pipeline-on-azure-using-docker-and-kubernetes"></a>DevOps в приложениях с искусственным интеллектом (AI). Создание конвейера непрерывной интеграции в Azure с помощью Docker и Kubernetes
 Для приложения AI существуют часто используемые два рабочих потока, создаваемые модели машинного обучения с помощью обработки и анализа данных и разработчики приложений, которые создают приложение и предоставляют его для потребления конечным пользователям. В этой статье будет продемонстрирована реализация конвейера непрерывной интеграции (CI) или непрерывной доставки (CD) для приложения AI. AI-приложение является сочетанием кода приложения, который внедрен в модель предварительного машинного обучения (ML). Из этой статьи вы узнаете, как извлекать предварительно обработанную модель из частной учетной записи хранения BLOB-объектов (вместо нее можно использовать учетную запись AWS S3). В этой статье будут использованы простые примеры веб-приложения Flask Python.
@@ -55,7 +51,7 @@ ms.locfileid: "50094400"
 1. Разработчики работают над кодом приложения в выбранной ими интегрированной среде разработки (IDE).
 2. Затем они передают код выбранной системе управления версиями для проверки (в Azure DevOps присутствует качественная поддержка различных систем управления версиями).
 3. В свою очередь, специалисты по анализу и обработке данных отдельно работают над разработкой моделей разработчиков.
-4. После получения удовлетворительных результатов они публикуют модель в репозитории моделей. Для этого используется учетная запись хранилища BLOB-объектов. Эти действия можно легко заменить с помощью службы управления моделью Azure ML Workbench посредством их API REST.
+4. После получения удовлетворительных результатов они публикуют модель в репозитории моделей. Для этого используется учетная запись хранилища BLOB-объектов. 
 5. Сборка запускается в Azure DevOps на основе результатов фиксации в GitHub.
 6. Конвейер сборки Azure DevOps извлекает последнюю модель из контейнера BLOB-объектов и создает новый контейнер.
 7. Azure DevOps отправляет изображение в частный репозиторий изображений в Реестре контейнеров Azure.

@@ -3,8 +3,9 @@ title: Создание моделей текстовой аналитики в 
 description: Узнайте, как с помощью модулей для предварительной обработки текста, N-грамм и хэширования признаков создавать модели текстовой аналитики в Студии машинного обучения Azure.
 services: machine-learning
 documentationcenter: ''
-author: rastala
-ms.author: roastala
+author: ericlicoding
+ms.custom: (previous ms.author=roastala, author=rastala)
+ms.author: amlstudiodocs
 manager: cgronlun
 editor: ''
 ms.assetid: 08cd6723-3ae6-4e99-a924-e650942e461b
@@ -15,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2018
-ms.openlocfilehash: a9d4ee9015b5781301dcc9c0fe4f8944dbf244e8
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 10b4f8a494a9effc04db731f05eeb010f4fb0b6a
+ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34835888"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52262488"
 ---
 # <a name="create-text-analytics-models-in-azure-machine-learning-studio"></a>Создание моделей текстовой аналитики в Студии машинного обучения Azure
 Машинное обучения Azure можно использовать для создания и ввода в эксплуатацию моделей текстовой аналитики. Эти модели могут быть полезными, например, при решении проблем с классификацией документов или анализом мнений.

@@ -16,12 +16,12 @@ ms.workload: identity
 ms.date: 10/03/2018
 ms.author: celested
 ms.reviewer: jlu, annaba, hirsin
-ms.openlocfilehash: da114cc343d04165d5a6a2137aeb2b675258230a
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 805270fa4cc051929ecb1362f2d3cd4455a17a60
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51015338"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52423387"
 ---
 # <a name="how-to-migrate-from-the-azure-access-control-service"></a>Руководство. Перенос из службы контроля доступа Azure
 
@@ -113,7 +113,7 @@ https://<mynamespace>.accesscontrol.windows.net
 
 Вот график устаревания компонентов службы контроля доступа:
 
-- **Ноябрь 2017 года**. [Прекращается использование](https://blogs.technet.microsoft.com/enterprisemobility/2017/09/18/marching-into-the-future-of-the-azure-ad-admin-experience-retiring-the-azure-classic-portal/) интерфейса администрирования Azure AD на классическом портале Azure. На этом этапе управлять пространством имен службы контроля доступа можно по следующему новому выделенному URL-адресу: `http://manage.windowsazure.com?restoreClassic=true`. По этому URL-адресу можно просматривать существующие пространства имен, включать, отключать и удалять их.
+- **Ноябрь 2017 года**. [Прекращается использование](https://blogs.technet.microsoft.com/enterprisemobility/2017/09/18/marching-into-the-future-of-the-azure-ad-admin-experience-retiring-the-azure-classic-portal/) интерфейса администрирования Azure AD на классическом портале Azure. На этом этапе управлять пространством имен службы контроля доступа можно по следующему новому выделенному URL-адресу: `https://manage.windowsazure.com?restoreClassic=true`. По этому URL-адресу можно просматривать существующие пространства имен, включать, отключать и удалять их.
 - **2 апреля 2018 года**. Использование классического портала Azure полностью прекращено, то есть управление пространствами имен службы контроля доступа через любой URL-адрес больше недоступно. Вы больше не сможете отключить, включить, удалить или перечислить пространства имен контроля доступа. Однако портал управления службы контроля доступа будет полностью функционален и размещен по адресу `https://\<namespace\>.accesscontrol.windows.net`. Все другие компоненты службы контроля доступом будут по-прежнему работать в обычном режиме.
 - **7 ноября 2018 года**. Все компоненты службы контроля доступа будут окончательно отключены. К ним относится портал управления службы контроля доступа, служба управления, STS и модуль правил преобразования маркеров. На этом этапе все запросы, адресованные службе контроля доступа (размещенной по адресу \<пространство имен\>.accesscontrol.windows.net) будут завершаться с ошибкой. До этого времени вы должны перенести все имеющиеся приложения и службы на другие технологии.
 
@@ -139,7 +139,7 @@ https://<mynamespace>.accesscontrol.windows.net
 | Служба архивации Azure | [Вопросы об агенте службы Azure Backup](https://docs.microsoft.com/azure/backup/backup-azure-file-folder-backup-faq) |
 
 <!-- Dynamics CRM: Migrate to new SDK, Dynamics team handling privately -->
-<!-- Azure RemoteApp deprecated in favor of Citrix: http://www.zdnet.com/article/microsoft-to-drop-azure-remoteapp-in-favor-of-citrix-remoting-technologies/ -->
+<!-- Azure RemoteApp deprecated in favor of Citrix: https://www.zdnet.com/article/microsoft-to-drop-azure-remoteapp-in-favor-of-citrix-remoting-technologies/ -->
 <!-- Exchange push notifications are moving, customers don't need to move -->
 <!-- Retail federation services are moving, customers don't need to move -->
 <!-- Azure StorSimple: TODO -->

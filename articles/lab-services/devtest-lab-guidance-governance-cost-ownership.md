@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/03/2018
 ms.author: spelluru
-ms.openlocfilehash: 623e4392ff8ff75d09da92c54b9e4dc620146432
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.openlocfilehash: 9b83d6ac908be1e62e3c6c2025ae31aa374bdeea
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48250852"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51975079"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---manage-cost-and-ownership"></a>Система управления инфраструктурой Azure DevTest Labs — контроль затрат и владение
 Затраты и владение являются основными сложностями при создании собственных сред разработки и тестирования. В этом разделе приведены сведения, которые помогут оптимизировать затраты и согласовать владельца в средах.
@@ -57,7 +57,7 @@ ms.locfileid: "48250852"
 
 Участникам команды проекта или приложения нужно назначить роли пользователей DevTest Labs. Эти пользователи могут создавать виртуальные машины в соответствии с политиками на уровне лаборатории и подписки. Кроме того, они могут управлять собственными виртуальными машинами. Они не могут управлять виртуальными машинами, которые принадлежат другим пользователям.
 
-Дополнительные сведения см. в документации [Корпоративный каркас Azure: рекомендуемая система управления подписками](/architecture/cloud-adoption/appendix/azure-scaffold).
+Дополнительные сведения см. в документации [Корпоративный каркас Azure: рекомендуемая система управления подписками](/azure/architecture/cloud-adoption/appendix/azure-scaffold).
 
 
 ## <a name="next-steps"></a>Дополнительная информация

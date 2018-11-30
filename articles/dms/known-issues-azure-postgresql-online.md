@@ -11,19 +11,19 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
 ms.date: 09/22/2018
-ms.openlocfilehash: e30ffe2dd79d55e856ef297608745b60578cf7e7
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: b83c889e72acb320c308c3ad5ee6243e715fd523
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46131034"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52282882"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-db-for-postgresql"></a>Известные проблемы и ограничения при сетевых миграциях в базу данных Azure для PostgreSQL
 
 В следующих разделах описываются известные проблемы и ограничения, связанные с сетевыми миграциями из PostgreSQL в базу данных Azure для PostgreSQL. 
 
 ## <a name="online-migration-configuration"></a>Настройка сетевой миграции
-- На исходном сервере должен использоваться PostgreSQL версии 9.5.11, 9.6.7, 10.3 или более поздней. Дополнительные сведения см. в статье [Поддерживаемые версии базы данных PostgreSQL](1.2.%09https:/docs.microsoft.com/azure/postgresql/concepts-supported-versions).
+- На исходном сервере должен использоваться PostgreSQL версии 9.5.11, 9.6.7, 10.3 или более поздней. Дополнительные сведения см. в статье [Поддерживаемые версии базы данных PostgreSQL](../postgresql/concepts-supported-versions.md).
 - Поддерживаются только миграции на ту же версию. Например, миграция PostgreSQL 9.5.11 в базу данных Azure для PostgreSQL 9.6.7 не поддерживается.
 - Чтобы включить логическую репликацию в **исходном файле PostgreSQL postgresql.conf**, задайте следующие параметры:
     - **wal_level** = logical

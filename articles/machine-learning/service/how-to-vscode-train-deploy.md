@@ -5,16 +5,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.component: core
 ms.topic: conceptual
-ms.author: jmartens
-author: j-martens
+ms.author: shwinne
+author: swinner95
 ms.reviewer: jmartens
 ms.date: 10/1/2018
-ms.openlocfilehash: 6372aada8c3d380f8d3cefb0479e45bbd7c63898
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.openlocfilehash: 377a4bbf359b2c65136625fcef8a1093e49da728
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49945252"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51854311"
 ---
 # <a name="vs-code-tools-for-ai-train-and-deploy-ml-models-from-vs-code"></a>VS Code Tools for AI. Обучение и развертывание моделей машинного обучения с помощью VS Code
 Из этой статьи вы узнаете о том, как использовать расширение **VS Code Tools for AI** для обучения и развертывания моделей машинного и глубокого обучения в службе "Машинное обучение Azure" с помощью VS Code.
@@ -29,7 +29,7 @@ ms.locfileid: "49945252"
 
 + [Пакет SDK службы "Машинного обучения Azure" для Python](how-to-vscode-tools.md), установленный в VS Code.
 
-+ Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
++ Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLfree), прежде чем начинать работу.
 
 ## <a name="create-and-manage-compute-targets"></a>Создание целевых объектов вычислений и управление ими
 

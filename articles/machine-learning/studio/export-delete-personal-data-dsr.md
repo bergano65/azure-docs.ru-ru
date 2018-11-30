@@ -2,20 +2,21 @@
 title: Экспорт и удаление данных из службы "Студия машинного обучения" в Azure | Документация Майкрософт
 description: Внутренние данные продукта, хранимые службой "Студия машинного обучения", доступны для экспорта и удаления через портал Azure, а также через аутентифицированные REST API. Доступ к данным телеметрии может осуществляться через портал конфиденциальности Azure. В этой статье показано, как это сделать.
 services: machine-learning
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: cgronlun
 ms.reviewer: jmartens, mldocs
 ms.service: machine-learning
 ms.component: studio
 ms.topic: conceptual
 ms.date: 05/25/2018
-ms.openlocfilehash: 2ebd777a9723732de6ebbdf07020802190cb4b61
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 04b26dc9ad9f4b7a4feb03039d92854385d75465
+ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38969288"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52262380"
 ---
 # <a name="export-and-delete-in-product-user-data-from-machine-learning-studio"></a>Экспорт и удаление встроенных в продукт данных пользователей из службы "Студия машинного обучения"
 

@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 09/06/2018
 ms.author: mabrigg
 ms.reviewer: ppacent
-ms.openlocfilehash: 5d2f4fc77d5849dc2be80ada9610098c9a381f92
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 8d84801aacfc60bb11aac4c9046a433378a59b79
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51244106"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52314479"
 ---
 # <a name="rotate-secrets-in-azure-stack"></a>Смена секретов в Azure Stack
 
@@ -167,10 +167,10 @@ Start-SecretRotation [-PfxFilesPath <string>] [-PathAccessCredential] <PSCredent
 
 | Параметр | type | Обязательно | Позиция | значение по умолчанию | ОПИСАНИЕ |
 | -- | -- | -- | -- | -- | -- |
-| PfxFilesPath | Строка  | Ложь  | именованная  | None  | Путь к общей папке в каталоге **\Certificates**, который содержит все сертификаты конечных точек внешней сети. Требуется только при смене внешних секретов или всех секретов. Конечным каталогом должен быть **\Certificates**. |
-| CertificatePassword | SecureString | Ложь  | именованная  | None  | Пароль для всех сертификатов, предоставляемых в -PfXFilesPath. Необходимое значение, если PfxFilesPath предоставлен, когда сменяются внешние и внутренние секреты. |
-| PathAccessCredential | PSCredential | Ложь  | именованная  | None  | Учетные данные PowerShell для общего ресурса каталога **\Certificates**, который содержит все сертификаты конечных точек внешней сети. Требуется только при смене внешних секретов или всех секретов.  |
-| Rerun | SwitchParameter | Ложь  | именованная  | None  | Повторное выполнение необходимо использовать при каждой повторной попытке смены секретов после неудачи. |
+| PfxFilesPath | Строка  | Ложь  | именованная  | Нет  | Путь к общей папке в каталоге **\Certificates**, который содержит все сертификаты конечных точек внешней сети. Требуется только при смене внешних секретов или всех секретов. Конечным каталогом должен быть **\Certificates**. |
+| CertificatePassword | SecureString | Ложь  | именованная  | Нет  | Пароль для всех сертификатов, предоставляемых в -PfXFilesPath. Необходимое значение, если PfxFilesPath предоставлен, когда сменяются внешние и внутренние секреты. |
+| PathAccessCredential | PSCredential | Ложь  | именованная  | Нет  | Учетные данные PowerShell для общего ресурса каталога **\Certificates**, который содержит все сертификаты конечных точек внешней сети. Требуется только при смене внешних секретов или всех секретов.  |
+| Rerun | SwitchParameter | Ложь  | именованная  | Нет  | Повторное выполнение необходимо использовать при каждой повторной попытке смены секретов после неудачи. |
 
 ### <a name="examples"></a>Примеры
  
@@ -220,7 +220,7 @@ Remove-PSSession -Session $PEPSession
     ```powershell
     # Static Version
     $PEip = "<Privileged Endpoint IP or Name>" # You can also use the machine name instead of IP here.
-    $PEUser = "<Privileged Endpoint user for exmaple Domain\CloudAdmin>"
+    $PEUser = "<Privileged Endpoint user for example Domain\CloudAdmin>"
     $PEpwd = ConvertTo-SecureString "<Privileged Endpoint Password>" -AsPlainText -Force
     $PECred = New-Object System.Management.Automation.PSCredential ($PEUser, $PEpwd) 
     $NewBMCpwd = ConvertTo-SecureString "<New BMC Password>" -AsPlainText -Force 

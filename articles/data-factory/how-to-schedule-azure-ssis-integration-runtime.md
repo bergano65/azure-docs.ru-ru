@@ -13,12 +13,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: f83715d2a382db271686210d9df285c255c09216
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: 7e93e83f7594d30d223d37454e09943beba6d3ce
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39114000"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51976742"
 ---
 # <a name="how-to-start-and-stop-the-azure-ssis-integration-runtime-on-a-schedule"></a>Запуск и остановка среды выполнения интеграции Azure–SSIS по расписанию
 В этой статье описан процесс планирования запуска и остановки IR Azure SSIS с помощью службы автоматизации Azure и фабрики данных Azure. Запуск среды выполнения интеграции (IR) Azure–SSIS (SQL Server Integration Services) связан с издержками. Поэтому следует запускать среду выполнения интеграции только в том случае, когда требуется выполнение пакетов SSIS в Azure, и останавливать среду выполнения интеграции при ненадобности. Вы можете [запустить или остановить IR Azure SSIS вручную](manage-azure-ssis-integration-runtime.md) с помощью пользовательского интерфейса фабрики данных или Azure PowerShell.
@@ -347,7 +347,7 @@ ms.locfileid: "39114000"
     6. Щелкните правой кнопкой мыши пакет SSIS и выберите **Отчеты** -> **Стандартные отчеты** -> **Все выполнения**. 
     7. Убедитесь, что пакет SSIS запущен. 
 
-        ![Проверка запуска пакета SSIS](./media/how-to-schedule-azure-ssis-integration-runtime/verfiy-ssis-package-run.png)
+        ![Проверка запуска пакета SSIS](./media/how-to-schedule-azure-ssis-integration-runtime/verify-ssis-package-run.png)
 
 ### <a name="schedule-the-pipeline"></a>Планирование запуска конвейера 
 Теперь, когда конвейер работает правильно, можно создать триггер для запуска этого конвейера с указанной периодичностью. Дополнительные сведения о связывании триггера расписания с конвейером см. в разделе [Запуск конвейера по расписанию](quickstart-create-data-factory-portal.md#trigger-the-pipeline-on-a-schedule).

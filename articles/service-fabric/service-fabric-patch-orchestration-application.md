@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 5/22/2018
 ms.author: nachandr
-ms.openlocfilehash: a8b2070b6f5b10cb60c6658aefc8cc90331ecfd9
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 3416d257a23e94460199a1ddfe63302ff55ad5a5
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49409362"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52285056"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Установка исправлений операционной системы Windows в кластере Service Fabric
 
@@ -167,7 +167,7 @@ POA — это приложение Azure Service Fabric, которое поз
 
 1. Завершите все предварительные шаги, чтобы подготовить кластер.
 2. Разверните приложение для управления исправлениями, как любое другое приложение Service Fabric. Развернуть приложение можно с помощью PowerShell. Выполните инструкции из статьи [Развертывание и удаление приложений с помощью PowerShell](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-remove-applications).
-3. Чтобы настроить приложение во время развертывания, передайте `ApplicationParamater` для командлета `New-ServiceFabricApplication`. Для вашего удобства мы сопроводили приложение сценарием Deploy.ps1. Использование сценария
+3. Чтобы настроить приложение во время развертывания, передайте `ApplicationParameter` для командлета `New-ServiceFabricApplication`. Для вашего удобства мы сопроводили приложение сценарием Deploy.ps1. Использование сценария
 
     - Подключитесь к кластеру Service Fabric при помощи `Connect-ServiceFabricCluster`.
     - Выполните сценарий PowerShell Deploy.ps1 с соответствующим значением `ApplicationParameter`.

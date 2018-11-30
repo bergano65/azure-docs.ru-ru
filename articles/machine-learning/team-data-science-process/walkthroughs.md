@@ -2,25 +2,21 @@
 title: Пошаговые руководства по процессу обработки и анализа данных группы в Azure | Документация Майкрософт
 description: Узнайте, как объединить облачные и локальные инструменты и службы в единый рабочий процесс или конвейер, чтобы создать интеллектуальное приложение.
 services: machine-learning
-documentationcenter: ''
-author: deguhath
+author: marktab
 manager: cgronlun
 editor: cgronlun
-ms.assetid: aa63d5a5-25ee-4c4b-9a4c-7553b98d7f6e
 ms.service: machine-learning
 ms.component: team-data-science-process
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
-ms.author: deguhath
-ms.openlocfilehash: 86024316344ccbce87f48adbc0598c94e61c5e6d
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.author: tdsp
+ms.custom: (previous author=deguhath, ms.author=deguhath)
+ms.openlocfilehash: 28586d960bab75704a0aae6e39517ae83a74d60e
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51253573"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52495891"
 ---
 # <a name="walkthroughs-executing-the-team-data-science-process"></a>Пошаговые руководства по процессу обработки и анализа данных группы
 
@@ -32,7 +28,6 @@ ms.locfileid: "51253573"
 Ниже приведены краткие описания примеров, которые предоставляют эти пошаговые руководства для соответствующих платформ.
 
 
-- [Azure Machine Learning Workbench](walkthroughs-aml-with-tdsp.md). Эти пошаговые руководства и примеры показывают, как создать структурированные проекты обработки и анализа данных группы с помощью Azure Machine Learning Workbench для обработки естественного языка и классификации.
 - [HDInsight Spark walkthroughs using PySpark and Scala](walkthroughs-spark.md) (Пошаговые руководства по HDInsight Spark с использованием PySpark и Scala). В этих пошаговых руководствах для выполнения прогнозной аналитики в кластере Azure Spark используются PySpark и Scala.
 - [HDInsight Hadoop walkthroughs using Hive](walkthroughs-hdinsight-hadoop.md) (Пошаговые руководства по HDInsight Hadoop с использованием Hive). В этих пошаговых руководствах для выполнения прогнозной аналитики с кластером HDInsight Hadoop используется Hive.
 - [Azure Data Lake walkthroughs using U-SQL](walkthroughs-azure-data-lake.md) (Пошаговые руководства по Azure Data Lake с использованием U-SQL). В этих пошаговых руководствах для выполнения прогнозной аналитики с Azure Data Lake используется U-SQL.

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 32571d88ffc08c19f819335254b4f5dda521bdb0
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: c77467efbbc1c33be5bc2aaf3251a5803beee864
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48885927"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52317115"
 ---
 # <a name="choose-a-map-style-in-azure-maps"></a>Выбор стиля карты в службе Azure Maps
 
@@ -42,7 +42,7 @@ ms.locfileid: "48885927"
 
 Первый блок приведенного выше кода устанавливает ключ подписки и создает объект map, задавая карте стиль grayscale_dark. См. инструкции по [созданию карты](./map-create.md).
 
-Второй блок кода создает селектор стиля с помощью атласа [StyleControl](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.control.stylecontrol?view=azure-iot-typescript-latest#stylecontrol).
+Второй блок кода создает селектор стиля с помощью атласа [StyleControl](/javascript/api/azure-maps-control/atlas.controls.stylecontrol).
 
 Элемент выбора стиля позволяет выбрать стиль для карты. Третий блок кода добавляет элемент выбора стиля на карту с помощью метода карты [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#addcontrol). Селектор стиля находится в пределах **прослушивателя событий** карты для того, чтобы обеспечить его загрузку после полной загрузки карты.
 

@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/14/2018
+ms.date: 11/15/2018
 ms.author: jeffgilb
 ms.reviewer: quying
-ms.openlocfilehash: f0c627c1b0ab5f551ed71c3c30eb1dccc6c930a3
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 2017e08361c9ff060fde96b78549133d48372e34
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51686353"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51853903"
 ---
 # <a name="deploy-the-mysql-resource-provider-on-azure-stack"></a>Развертывание поставщика ресурсов MySQL в Azure Stack
 
@@ -43,10 +43,11 @@ ms.locfileid: "51686353"
 
 * У поставщика ресурсов есть минимальная соответствующая сборка Azure Stack.
 
-    | Минимальная версия Azure Stack | Версия MySQL RP|
-    | --- | --- |
-    | Версия 1808 (1.1808.0.97)|[MySQL RP версии 1.1.30.0](https://aka.ms/azurestackmysqlrp11300) |
-    |     |     |
+  |Минимальная версия Azure Stack|Версия MySQL RP|
+  |-----|-----|
+  |Версия 1808 (1.1808.0.97)|[MySQL RP версии 1.1.30.0](https://aka.ms/azurestackmysqlrp11300)|
+  |Версия 1804 (1.0.180513.1)|[MySQL RP версии 1.1.24.0](https://aka.ms/azurestackmysqlrp11240)
+  |     |     |
 
 * Убедитесь, что выполнены предварительные требования для интеграции центра обработки данных.
 

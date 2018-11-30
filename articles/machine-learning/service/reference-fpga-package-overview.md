@@ -10,12 +10,12 @@ ms.author: tedway
 author: tedway
 ms.date: 05/07/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: 344423ea9943e04dc5f02ebee0903d179be90bbd
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: 83c5a788f85fcc47c221f5c8f9e6944c4448fbf9
+ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48887587"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51712132"
 ---
 # <a name="azure-machine-learning-hardware-acceleration-package"></a>Пакет аппаратного ускорения для службы "Машинное обучение Azure"
 
@@ -32,7 +32,7 @@ ms.locfileid: "48887587"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLfree), прежде чем начинать работу.
 
 1. Учетная запись службы "Управление моделями Машинного обучения". Дополнительные сведения о создании учетной записи см. в документе [Краткое руководство. Установка и начало работы со службами Машинного обучения Azure](../desktop-workbench/quickstart-installation.md). 
 

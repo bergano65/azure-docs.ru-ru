@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 06/20/2018
+ms.date: 11/26/2018
 ms.author: diberry
-ms.openlocfilehash: f424abd339bda6c29079e3d286cbe96593f16f52
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 287a0986d921798bc7735e5a75d279f010712b16
+ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47040046"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52335629"
 ---
 # <a name="prebuilt-domain-reference"></a>Справочник по предварительно созданным доменам
 В этом справочнике представлены сведения о [предварительно созданных доменах](luis-how-to-use-prebuilt-domains.md), которые представляют собой предварительно созданные коллекции намерений и сущностей, предлагаемые приложением LUIS.

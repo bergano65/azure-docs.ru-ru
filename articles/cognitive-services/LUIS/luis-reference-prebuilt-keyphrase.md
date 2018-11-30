@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 07/09/2018
+ms.date: 11/26/2018
 ms.author: diberry
-ms.openlocfilehash: 4133b7c7c3fabbe92a3208c567d7b4c6c2c27283
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: a543e60c6e77ed9fdb825ad6cb2a936119677671
+ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47434404"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52334590"
 ---
 # <a name="keyphrase-entity"></a>Сущность keyPhrase
 keyPhrase извлекает различные ключевые фразы из высказывания. Добавление в приложение примеров высказываний, содержащих keyPhrase, не требуется. Сущность keyPhrase поддерживается во [многих языках и региональных параметрах](luis-language-support.md#languages-supported) как часть функции [текстовой аналитики](../text-analytics/overview.md). 

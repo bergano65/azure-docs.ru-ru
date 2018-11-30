@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2018
 ms.author: rkarlin
-ms.openlocfilehash: 69fbbe13c2c6c8a2bb193054a9b8e613832005e2
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 7bd6b6fa82d2c7c8129f7e88df6803b697bfc6d6
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51257322"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52307428"
 ---
 # <a name="enable-encryption-for-azure-storage-account-in-azure-security-center"></a>Включение шифрования данных для учетной записи хранения Azure в центре безопасности Azure
 Центр безопасности Azure может рекомендовать включить шифрование службы хранилища Azure для неактивных данных.
@@ -58,7 +58,7 @@ ms.locfileid: "51257322"
 
 Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
-* [Настройка политик безопасности в центре безопасности Azure](security-center-policies.md). Узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
+* [Настройка политик безопасности в центре безопасности Azure](security-center-azure-policy.md). Узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
 * [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md). Узнайте, как отслеживать работоспособность ресурсов Azure.
 * [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md). Узнайте, как управлять оповещениями системы безопасности и реагировать на них.
 * [Управление рекомендациями по безопасности в Центре безопасности Azure](security-center-recommendations.md). Узнайте, как рекомендации могут помочь вам защитить ресурсы Azure.

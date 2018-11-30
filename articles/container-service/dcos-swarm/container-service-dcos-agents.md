@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 01/04/2017
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 17029f51be9fed8fc36c5f919ece84acbf0461d9
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: 9c614d18b96c182fa166a4bc43fb1bb2f8d5d6f5
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "42145180"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51976743"
 ---
 # <a name="dcos-agent-pools-for-azure-container-service"></a>Пулы агентов DC/OS для службы контейнеров Azure
 Кластеры DC/OS службы контейнеров Azure содержат узлы агентов в двух пулах —общедоступном и частном. Приложение может быть развернуто в любом пуле, что повлияет на доступность между компьютерами в службе контейнеров. Компьютеры можно подключить к Интернету (общедоступный пул) или только к внутренней сети (частный пул). В этой статье приводятся общие сведения о причинах использования общедоступных и частных пулов.
@@ -37,7 +37,7 @@ ms.locfileid: "42145180"
 Частный и общедоступный пулы являются масштабируемыми наборами виртуальных машин Azure. Размер этих пулов можно изменить после развертывания.
 
 ## <a name="use-agent-pools"></a>Использование пулов агента
-По умолчанию **Marathon** развертывает все новые приложения на *частных* узлах агентов. Приложение на *общедоступных* узлах необходимо явно развернуть во время создания приложения. Перейдите на вкладку **Необязательно** и присвойте параметру **Accepted Resource Roles** (Принятые роли ресурсов) значение **slave_public**. Этот процесс описан [здесь](container-service-mesos-marathon-ui.md#deploy-a-docker-formatted-container) и в документации по [DC/OS](https://dcos.io/docs/1.7/administration/installing/custom/create-public-agent/).
+По умолчанию **Marathon** развертывает все новые приложения на *частных* узлах агентов. Приложение на *общедоступных* узлах необходимо явно развернуть во время создания приложения. Перейдите на вкладку **Необязательно** и присвойте параметру **Accepted Resource Roles** (Принятые роли ресурсов) значение **slave_public**. Этот процесс описан [здесь](container-service-mesos-marathon-ui.md#deploy-a-docker-formatted-container) и в документации по [DC/OS](https://docs.mesosphere.com/1.7/administration/installing/oss/custom/create-public-agent/).
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Узнайте больше об [управлении контейнерами DC/OS](container-service-mesos-marathon-ui.md).

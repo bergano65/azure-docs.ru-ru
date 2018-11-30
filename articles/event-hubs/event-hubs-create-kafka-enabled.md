@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/16/2018
 ms.author: bahariri
-ms.openlocfilehash: 7ce12f9dcaa15ade95274419f99c13d5915dbaaa
-ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
+ms.openlocfilehash: b72f6b190aad436398629c67f271020ffd0a8da9
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42144445"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51822081"
 ---
 # <a name="create-apache-kafka-enabled-event-hubs"></a>Создание Центров событий с поддержкой Apache Kafka
 
@@ -39,7 +39,7 @@ ms.locfileid: "42144445"
  
 3. Укажите уникальное имя и включите Kafka в пространстве имен. Нажмите кнопку **Создать**.
     
-    ![Создание пространства имен](./media/event-hubs-create-kafka-enabled/create-kafka-namespace.png)
+    ![Создание пространства имен](./media/event-hubs-create-kafka-enabled/create-kafka-namespace.jpg)
  
 4. Создав пространство имен, на вкладке **Параметры** щелкните **Политики общего доступа** для получения строки подключения.
 

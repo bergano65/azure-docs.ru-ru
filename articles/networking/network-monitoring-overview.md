@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: ajaycode
-ms.openlocfilehash: 0656cfcc2dcded284be1a337f797681117f3b313
-ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
+ms.openlocfilehash: 4107b292a606ea629e7de0c7be66621d699c5f42
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42145943"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52427392"
 ---
 # <a name="network-monitoring-solutions"></a>Решения для мониторинга сетей 
 
@@ -51,7 +51,7 @@ Azure предлагает целый ряд решений для монито�
 
 Дополнительные сведения см. в следующих статьях:
 
-* [Решение монитора производительности сети в Azure Log Analytics](../log-analytics/log-analytics-network-performance-monitor.md) 
+* [Решение монитора производительности сети в Azure Log Analytics](../azure-monitor/insights/network-performance-monitor.md) 
 * [Варианты использования](https://blogs.technet.microsoft.com/msoms/2016/08/30/monitor-on-premises-cloud-iaas-and-hybrid-networks-using-oms-network-performance-monitor/)
 *  Обновления продукта: [февраль 2017 г.](https://blogs.technet.microsoft.com/msoms/2017/02/27/oms-network-performance-monitor-is-now-generally-available/), [август 2017 г.](https://blogs.technet.microsoft.com/msoms/2017/08/14/improvements-to-oms-network-performance-monitor/)
 

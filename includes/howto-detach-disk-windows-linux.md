@@ -1,3 +1,16 @@
+---
+author: cynthn
+ms.service: virtual-machines
+ms.topic: include
+ms.date: 11/25/2018
+ms.author: cynthn
+ms.openlocfilehash: 343ffb8daf19711d6c2a61b819ece92448146446
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52331410"
+---
 Когда диск данных, подключенный к виртуальной машине, больше не нужен, его можно легко отключить. При отключении диска происходит удаление диска из виртуальной машины, но не из учетной записи хранения Azure.
 
 Если вы хотите снова использовать существующие данные на диске, его можно легко повторно подключить как к той же самой, так и к другой виртуальной машине.  

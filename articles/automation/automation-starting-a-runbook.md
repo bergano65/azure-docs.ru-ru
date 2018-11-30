@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 020923a76c94b10165e95bb4c5950419595dff0b
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: d2aea370d7de063805eb584cd7d90395ca725b4c
+ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51252349"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52275493"
 ---
 # <a name="starting-a-runbook-in-azure-automation"></a>Запуск модуля Runbook в службе автоматизации Azure
 Следующая таблица поможет определить метод запуска модуля runbook в службе автоматизации Azure, наиболее подходящий для конкретной ситуации. Данная статья содержит сведения о запуске модуля Runbook с помощью портала Azure и Windows PowerShell. Сведения об остальных методах приведены в другой документации, доступной по ссылкам, которые указаны ниже.
@@ -43,13 +43,13 @@ ms.locfileid: "51252349"
 ## <a name="starting-a-runbook-with-windows-powershell"></a>Запуск модуля Runbook с помощью Windows PowerShell
 Чтобы запустить модуль Runbook с помощью Windows PowerShell, воспользуйтесь командлетом [Start-AzureRmAutomationRunbook](https://docs.microsoft.com/powershell/module/azurerm.automation/start-azurermautomationrunbook) . В следующем примере кода будет запущен модуль Runbook с именем Test-Runbook.
 
-```
+```azurepowershell-interactive
 Start-AzureRmAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" -ResourceGroupName "ResourceGroup01"
 ```
 
 Командлет Start-AzureRmAutomationRunbook возвращает объект задания, который позволяет отслеживать его состояние после запуска. Используйте командлет [Get-AzureRmAutomationRunbook](https://docs.microsoft.com/powershell/module/azurerm.automation/get-azurermautomationjob), чтобы определить состояние задания, и [Get-AzureRmAutomationJobOutput](https://docs.microsoft.com/powershell/module/azurerm.automation/get-azurermautomationjoboutput), чтобы получить его выходные данные. В следующем примере кода будет запущен модуль Runbook с именем Test-Runbook и после его завершения выводится результат.
 
-```
+```azurepowershell-interactive
 $runbookName = "Test-Runbook"
 $ResourceGroup = "ResourceGroup01"
 $AutomationAcct = "MyAutomationAccount"
@@ -68,7 +68,7 @@ Get-AzureRmAutomationJobOutput –AutomationAccountName $AutomationAcct -Id $job
 
 Если для модуля Runbook требуются параметры, то необходимо указать их в виде [хэш-таблицы](https://technet.microsoft.com/library/hh847780.aspx), где ключ в хэш-таблице совпадает с именем параметра, а значение — это значение параметра. В следующем примере показано, как запустить модуль Runbook с двумя строковыми параметрами FirstName и LastName, целочисленным параметром RepeatCount и логическим параметром Show. Дополнительные сведения о параметрах см. в разделе [Параметры модуля Runbook](#Runbook-parameters) ниже.
 
-```
+```azurepowershell-interactive
 $params = @{"FirstName"="Joe";"LastName"="Smith";"RepeatCount"=2;"Show"=$true}
 Start-AzureRmAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" -ResourceGroupName "ResourceGroup01" –Parameters $params
 ```
@@ -83,7 +83,7 @@ Start-AzureRmAutomationRunbook –AutomationAccountName "MyAutomationAccount" �
 
 Рассмотрим следующий тестовый модуль Runbook, который принимает параметр user.
 
-```
+```powershell
 Workflow Test-Parameters
 {
    param (
@@ -101,13 +101,13 @@ Workflow Test-Parameters
 
 Для параметра user может быть использован следующий текст.
 
-```
+```json
 {FirstName:'Joe',LastName:'Smith',RepeatCount:'2',Show:'True'}
 ```
 
 Результат должен быть таким:
 
-```
+```output
 Joe
 Smith
 Joe
@@ -119,7 +119,7 @@ Smith
 
 Рассмотрим следующий тестовый модуль Runbook, который принимает параметр *user*.
 
-```
+```powershell
 Workflow Test-Parameters
 {
    param (
@@ -136,13 +136,13 @@ Workflow Test-Parameters
 
 Для параметра user может быть использован следующий текст.
 
-```
+```input
 ["Joe","Smith",2,true]
 ```
 
 Результат должен быть таким:
 
-```
+```output
 Joe
 Smith
 Joe
@@ -154,7 +154,7 @@ Smith
 
 Рассмотрим следующий тестовый модуль Runbook, который принимает параметр credential.
 
-```
+```powershell
 Workflow Test-Parameters
 {
    param (
@@ -166,13 +166,13 @@ Workflow Test-Parameters
 
 Следующий текст можно использовать для параметра user, если используется учетная запись *My Credential*.
 
-```
+```input
 My Credential
 ```
 
 Если имя пользователя в параметре credential — *jsmith*, будет получен следующий результат:
 
-```
+```output
 jsmith
 ```
 

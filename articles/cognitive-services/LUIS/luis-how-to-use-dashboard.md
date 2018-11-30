@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 03/01/2018
+ms.date: 11/26/2018
 ms.author: diberry
-ms.openlocfilehash: 6a4e8dbee34402f57d3e697e93d10573aaf10998
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 0daf25b3c7edc69ada57fb3ce2b8dbb7e50e5aed
+ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50212819"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52335016"
 ---
 # <a name="application-dashboard"></a>Панель мониторинга приложений
 Панель мониторинга приложений позволяет отслеживать приложения в одном расположении. **Панель мониторинга** отображается при открытии приложения: щелкните имя приложения на странице **Мои приложения** и выберите **Панель мониторинга** на верхней панели. 
@@ -26,15 +26,7 @@ ms.locfileid: "50212819"
 > * использовать ключ конечной точки LUIS для всех запросов конечной точки, включая [API](https://aka.ms/luis-endpoint-apis) LUIS и бот;
 > * для каждого приложения LUIS использовать другой ключ конечной точки. Не используйте один ключ конечной точки для всех приложений. Ключ конечной точки отслеживается на уровне ключа, а не на уровне приложения.  
 
-На странице **мониторинга** приводятся общие сведения о приложении LUIS, включая текущее состояние модели, а также сведения об использовании [конечной точки](luis-glossary.md#endpoint) в динамике по времени. <!--The following image shows the **Dashboard** page.-->
-
-<!-- TBD: Get a working screen shot
-![The Dashboard](./media/luis-how-to-use-dashboard/dashboard.png)
--->
-
-<!-- TBD: IS THIS STILL TRUE?
-At the top of the **Dashboard** page, a contextual notification bar constantly displays notifications to update you on the required or recommended actions appropriate for the current state of your app. It also provides useful tips and alerts as needed. A detailed description of the data reported on the **Dashboard** page follows.
--->
+На странице **мониторинга** приводятся общие сведения о приложении LUIS, включая текущее состояние модели, а также сведения об использовании [конечной точки](luis-glossary.md#endpoint) в динамике по времени. 
   
 ## <a name="app-status"></a>Состояние приложения
 На панели мониторинга отображается состояние обучения и публикации приложения, включая дату и время последнего обучения и публикации.  
@@ -49,7 +41,6 @@ At the top of the **Dashboard** page, a contextual notification bar constantly d
 ## <a name="endpoint-hits"></a>Совпадения конечной точки
 На панели мониторинга отображается общее число совпадений конечной точки, полученных приложением LUIS, кроме того, вы можете выводить на экран совпадения за указанный период. Показанное общее число совпадений представляет собой сумму совпадений конечной точки, которые используют [ключ конечной точки](./luis-concept-keys.md#endpoint-key), и совпадений конечной точки, которые используют [ключ авторизации](./luis-concept-keys.md#authoring-key).
 
-<!-- TBD: this image is old but I don't have a new one based on usage -->
 ![Совпадения конечной точки](./media/luis-how-to-use-dashboard/dashboard-endpointhits.png)
 
 > [!NOTE] 

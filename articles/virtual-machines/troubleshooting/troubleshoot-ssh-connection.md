@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 05/30/2017
 ms.author: genli
-ms.openlocfilehash: 45ddb31a20b830de29cf77231bb3acd6f8917601
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 2a17cf3aca439c40d187e06fb29b76e78a036ccc
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51230909"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51976229"
 ---
 # <a name="troubleshoot-ssh-connections-to-an-azure-linux-vm-that-fails-errors-out-or-is-refused"></a>Устранение неполадок с SSH-подключением к виртуальной машине Azure Linux: сбой, ошибка или отклонение
 При попытке подключения к виртуальной машине Azure под управлением Linux ошибка, сбой или отклонение подключения Secure Shell (SSH) может возникнуть по нескольким причинам. В этой статье вы узнаете, как их выявить и устранить. Для устранения неполадок и решения проблем с подключением можно воспользоваться порталом Azure, Azure CLI или расширением для доступа к виртуальной машине для Linux.
@@ -242,7 +242,7 @@ az vm redeploy --resource-group myResourceGroup --name myVM
 * Повторно разверните виртуальную машину на новом узле Azure. Сведения о повторном развертывании виртуальной машины на новом узле Azure см. [здесь](../windows/redeploy-to-new-node.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
   
     Обратите внимание, что после этой операции будут потеряны данные на временном диске, а также изменятся динамические IP-адреса, связанные с виртуальной машиной.
-* Следуйте указаниям в статье о [сбросе пароля или ключа SSH в виртуальных машинах Linux](../linux/classic/reset-access-classic.md?), чтобы сделать следующее:
+* Следуйте указаниям в статье о [сбросе пароля или ключа SSH в виртуальных машинах Linux](../linux/classic/reset-access-classic.md), чтобы сделать следующее:
   
   * сбросить пароль или ключ SSH;
   * Создайте учетную запись пользователя *sudo*.

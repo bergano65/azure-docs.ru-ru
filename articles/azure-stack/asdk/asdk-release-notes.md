@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 11/09/2018
 ms.author: sethm
 ms.reviewer: misainat
-ms.openlocfilehash: 27dbd4215deef6574622ffcd2c62a64503459258
-ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
+ms.openlocfilehash: f853bb32f7c452f1b09ca337db2a866bd0890b82
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51515766"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52427256"
 ---
 # <a name="asdk-release-notes"></a>Заметки о выпуске ASDK  
 Статья содержит сведения об улучшениях, исправлениях ошибок и известных проблемах в пакете средств разработки Azure Stack (ASDK). Если вы не знаете, какая версия используется, проверьте ее [с помощью портала](.\.\azure-stack-updates.md#determine-the-current-version).
@@ -233,7 +233,7 @@ ms.locfileid: "51515766"
 
 - <!-- ASDK --> **Масштабируемые наборы виртуальных машин теперь имеют встроенные элементы коллекции**.  Элементы коллекции масштабируемого набора виртуальных машин теперь доступны на порталах пользователей и администраторов без необходимости скачивания. 
 
-- <!-- IS, ASDK --> **Масштабирование масштабируемого набора виртуальных машин**.  Можно использовать портал, чтобы [масштабировать масштабируемый набор виртуальных машин](/azure/azure-stack/azure-stack-compute-add-scalesets.md#scale-a-virtual-machine-scale-set).   
+- <!-- IS, ASDK --> **Масштабирование масштабируемого набора виртуальных машин**.  Можно использовать портал, чтобы [масштабировать масштабируемый набор виртуальных машин](../azure-stack-compute-add-scalesets.md#scale-a-virtual-machine-scale-set).   
 
 - <!-- 2489570 | IS ASDK--> **Поддержка пользовательских настроек политики IPSec/IKE** для [VPN-шлюзов в Azure Stack](/azure/azure-stack/azure-stack-vpn-gateway-about-vpn-gateways).
 

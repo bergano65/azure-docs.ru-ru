@@ -2,30 +2,26 @@
 title: Проектирование признаков при обработке и анализе данных | Документация Майкрософт
 description: Описывает цели реконструирования характеристик и приводит примеры, поясняющие его роль в совершенствовании данных в процессе машинного обучения.
 services: machine-learning
-documentationcenter: ''
-author: deguhath
+author: marktab
 manager: cgronlun
 editor: cgronlun
-ms.assetid: 3fde69e8-5e7b-49ad-b3fb-ab8ef6503a4d
 ms.service: machine-learning
 ms.component: team-data-science-process
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/21/2017
-ms.author: deguhath
-ms.openlocfilehash: fd3f010c3fccca679daa6639c1427d17ae64a0d1
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.author: tdsp
+ms.custom: (previous author=deguhath, ms.author=deguhath)
+ms.openlocfilehash: 80e925fddf1aebd9f699ee8e22b96cc496faeba6
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51343998"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52446681"
 ---
 # <a name="feature-engineering-in-data-science"></a>Проектирование признаков при обработке и анализе данных
 В этой статье описано, зачем проектировать признаки, а также на примерах показана их роль в процессе оптимизации данных в ходе машинного обучения. Примеры, представленные для иллюстрирования этого процесса, взяты из студии машинного обучения Azure. 
 
-Эта задача является одним из этапов [процесса обработки и анализа данных группы (TDSP)](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/).
+Эта задача является одним из этапов [процесса обработки и анализа данных группы (TDSP)](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/).
 
 Реконструирование характеристик пытается повысить эффективность прогнозирования алгоритмов обучения путем создания характеристик из необработанных данных, позволяющих упростить процесс обучения. Проектирование и выбор признаков являются частью процесса TDSP, описанного в статье [Что такое процесс обработки и анализа данных группы (TDSP)?](overview.md) Проектирование и выбор характеристик входят в этап **разработки характеристик** процесса TDSP. 
 

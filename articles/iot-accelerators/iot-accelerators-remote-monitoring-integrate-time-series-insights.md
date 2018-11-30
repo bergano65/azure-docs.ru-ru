@@ -8,12 +8,12 @@ ms.date: 09/12/2018
 ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.openlocfilehash: ba6d79661a2c07ba3eef1f16a117992a858830b5
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: 3ae41ff4cf501a58668d25b16027029f6bae4749
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45605935"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52317501"
 ---
 # <a name="integrate-azure-time-series-insights-with-remote-monitoring"></a>Интеграция службы "Аналитика временных рядов Azure" с решением удаленного мониторинга
 
@@ -292,6 +292,6 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Сведения об изучении данных и диагностике оповещений в обозревателе Аналитики временных рядов см. в учебнике по [проведению анализа первопричин](/tutorials).
+* Сведения об изучении данных и диагностике оповещений в обозревателе Аналитики временных рядов см. в учебнике по [проведению анализа первопричин](iot-accelerators-remote-monitoring-root-cause-analysis.md).
 
 * Сведения о том, как изучать и запрашивать данные в обозревателе Аналитики временных рядов, см. в документации по [обозревателю Аналитики временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-explorer).

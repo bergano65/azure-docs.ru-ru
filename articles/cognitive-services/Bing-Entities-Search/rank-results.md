@@ -3,19 +3,19 @@ title: Использование ранжирования для отображ
 titlesuffix: Azure Cognitive Services
 description: Сведения об использовании ранжирования для отображения ответов, возвращаемых API Bing для поиска сущностей
 services: cognitive-services
-author: v-jerkin
+author: aahill
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-entity-search
 ms.topic: conceptual
 ms.date: 12/12/2017
-ms.author: v-jerkin
-ms.openlocfilehash: 4a336ccaea18ab84464f28aef170ccdc423b216d
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.author: aahi
+ms.openlocfilehash: 56ca56afc799658c12293fdacaa1ccd5ca17bbf9
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48814599"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52160891"
 ---
 # <a name="using-ranking-to-display-results"></a>Использование ранжирования для отображения ответов  
 

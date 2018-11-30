@@ -10,12 +10,12 @@ ms.component: speech-service
 ms.topic: conceptual
 ms.date: 09/08/2018
 ms.author: erhopf
-ms.openlocfilehash: 162b690d4b371cfe76738cd83ce484a3062d139f
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 16b7de909ce57a7f8d3cea54a59996dc6f0a6ba0
+ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49469923"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51712013"
 ---
 # <a name="use-text-to-speech-in-speech-service"></a>Использование преобразования текста в речь в службе "Речь"
 
@@ -92,7 +92,7 @@ Response audio payload
 429|Слишком много запросов|Вы превысили квоту или частоту запросов, разрешенных для вашей подписки.
 |502|Недопустимый шлюз    | Проблема с сетью или сервером. Может также указывать на недопустимые заголовки.
 
-Дополнительные сведения об API-интерфейсах REST функции "Преобразование текста в речь" см. в разделе [REST APIs](rest-apis.md#text-to-speech) (Речевые службы REST API).
+Дополнительные сведения об API-интерфейсах REST функции "Преобразование текста в речь" см. в разделе [REST APIs](rest-apis.md#text-to-speech-api) (Речевые службы REST API).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

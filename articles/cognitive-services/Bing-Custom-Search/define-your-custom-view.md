@@ -3,19 +3,19 @@ title: Определение пользовательского предста�
 titlesuffix: Azure Cognitive Services
 description: Описание способа создания сайта и служб вертикального поиска
 services: cognitive-services
-author: brapel
+author: aahill
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-custom-search
 ms.topic: conceptual
 ms.date: 09/28/2017
-ms.author: v-brapel
-ms.openlocfilehash: 5e168608202f81f698221b52315de83e9713feab
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.author: aahi
+ms.openlocfilehash: d45d917d733727eca3286bb6335ce77591f39685
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51282929"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52427290"
 ---
 # <a name="configure-your-custom-search-experience"></a>Настройка режима пользовательского поиска
 
@@ -160,7 +160,7 @@ ms.locfileid: "51282929"
 5.  Щелкните **Add site** (Добавить сайт) рядом с результатом, который необходимо добавить.
 6.  Нажмите кнопку **ОК** .
 
-[!INCLUDE[publish or revert](./includes/publish-revert.md)]
+[!INCLUDE [publish or revert](./includes/publish-revert.md)]
 
 ## <a name="view-statistics"></a>Просмотр статистики
 

@@ -1,3 +1,16 @@
+---
+author: rothja
+ms.service: billing
+ms.topic: include
+ms.date: 11/09/2018
+ms.author: jroth
+ms.openlocfilehash: ed0c387f9785336fbf18b3fd3c0cd9a7b09df633
+ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52279898"
+---
 Основные транзакции (максимальное количество транзакций, разрешенных в течение 10 секунд, на хранилище для одного региона<sup>1</sup>):
 
 |Тип ключа|Ключ HSM<br>Создание ключа|Ключ HSM<br>Все остальные транзакции|Программный ключ<br>Создание ключа|Программный ключ<br>Все остальные транзакции|

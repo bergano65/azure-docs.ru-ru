@@ -8,12 +8,12 @@ ms.date: 06/19/2018
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 40a1955e88b23ecfb86412b388413b920dd2eb1a
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: c11013c926e77447a69ce0dfe697fdda1ecc2b8c
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49407611"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52284852"
 ---
 # <a name="troubleshoot-errors-when-onboarding-solutions"></a>Устранение неполадок при подключении решения
 
@@ -61,7 +61,7 @@ ms.locfileid: "49407611"
 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)] 
 
-При развертывании решения также развертывается множество связанных ресурсов. Одним из этих ресурсов является расширение Microsoft Monitoring Agent или агент Log Analytics для Linux. К ним также можно отнести расширения виртуальных машин, устанавливаемые гостевым агентом виртуальной машины, который отвечает за связь с настроенной рабочей областью Log Analytics и целью которого является последующая координация загрузки двоичных и прочих файлов, от которых зависит запуск решения, к которому выполняется подключение.
+При развертывании решения, также развертывается множество связанных ресурсов. Одним из этих ресурсов является расширение Microsoft Monitoring Agent или агент Log Analytics для Linux. К ним также можно отнести расширения виртуальных машин, устанавливаемые гостевым агентом виртуальной машины, который отвечает за связь с настроенной рабочей областью Log Analytics и целью которого является последующая координация загрузки двоичных и прочих файлов, от которых зависит запуск решения, к которому выполняется подключение.
 Обычно об ошибках установки MMA или агента Log Analytics для Linux можно узнать из уведомления, которое появляется в центре уведомлений. Щелкнув уведомление, можно получить дополнительные сведения о конкретной ошибке. Дополнительные сведения о произошедших сбоях развертывания можно получить, перейдя к элементу "Развертывания" в разделе "Группы ресурсов".
 К неудачной установке MMA или агента Log Analytics для Linux могут привести множество причин, а шаги, которые необходимо предпринять для их устранения, в каждом случае отличаются. Действия по устранению неполадок подробнее описываются далее.
 
@@ -75,11 +75,11 @@ ms.locfileid: "49407611"
 
 Ниже приведены примеры возвращаемых сообщений об ошибках.
 
-```
+```error
 Please verify the VM has a running VM agent, and can establish outbound connections to Azure storage.
 ```
 
-```
+```error
 'Manifest download error from https://<endpoint>/<endpointId>/Microsoft.EnterpriseCloud.Monitoring_MicrosoftMonitoringAgent_australiaeast_manifest.xml. Error: UnknownError. An exception occurred during a WebClient request.
 ```
 
@@ -103,15 +103,15 @@ Please verify the VM has a running VM agent, and can establish outbound connecti
 
 Ниже приведены примеры сообщений об ошибках, которые могут отображаться на экране.
 
-```
+```error
 The Microsoft Monitoring Agent failed to install on this machine. Please try to uninstall and reinstall the extension. If the issue persists, please contact support.
 ```
 
-```
+```error
 'Install failed for plugin (name: Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent, version 1.0.11081.4) with exception Command C:\Packages\Plugins\Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent\1.0.11081.4\MMAExtensionInstall.exe of Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent has exited with Exit code: 1618'
 ```
 
-```
+```error
 'Install failed for plugin (name: Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent, version 1.0.11081.2) with exception Command C:\Packages\Plugins\Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent\1.0.11081.2\MMAExtensionInstall.exe of Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent has exited with Exit code: 1601'
 ```
 
@@ -134,7 +134,7 @@ The Microsoft Monitoring Agent failed to install on this machine. Please try to 
 
 Ниже приведен пример сообщения об ошибке, которое может отображаться на экране.
 
-```
+```error
 Install failed for plugin (name: Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent, version 1.0.11081.4) with exception Command C:\Packages\Plugins\Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent\1.0.11081.4\MMAExtensionInstall.exe of Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent has exited with Exit code: 15614
 ```
 

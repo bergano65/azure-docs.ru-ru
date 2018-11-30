@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/12/2018
 ms.author: johnkem
 ms.component: ''
-ms.openlocfilehash: b01dafcda9ed8fe14e3f0d50daf25bae1658faee
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: e5b2f071370ec6551e05960c708e2b83918d83ff
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51282634"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51821384"
 ---
 # <a name="consume-monitoring-data-from-azure"></a>Использование данных мониторинга из Azure
 
@@ -46,6 +46,6 @@ ms.locfileid: "51282634"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Узнайте больше о [метриках Azure Monitor](../monitoring/monitoring-data-collection.md).
+- Узнайте больше о [метриках Azure Monitor](../azure-monitor/platform/data-collection.md).
 - Узнайте больше о [журнале действий Azure](monitoring-overview-activity-logs.md).
 - Узнайте больше о [журналах диагностики Azure](monitoring-overview-of-diagnostic-logs.md).

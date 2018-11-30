@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 07/27/201
 ms.author: v-jamebr
-ms.openlocfilehash: c590c9d1ccbbb84a76ba09021a97464ec85c5784
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: 2f84550c83c646b44f4a59c3ae506df7c18d1555
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39507215"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51852985"
 ---
 # <a name="set-up-and-configure-reverse-proxy-in-azure-service-fabric"></a>Установка и настройка обратного прокси-сервера в Azure Service Fabric
 Необязательный обратный прокси-сервер в службе Azure Service Fabric помогает микрослужбам, работающим в кластере Service Fabric, обнаруживать другие службы с конечными точками HTTP и обмениваться данными с этими службами. См. дополнительные сведения об [обратном прокси-сервере в Azure Service Fabric](service-fabric-reverseproxy.md). В этой статье показано, как установить и настроить обратный прокси-сервер в кластере. 
@@ -231,7 +231,7 @@ ms.locfileid: "39507215"
 
    Дополнительные сведения о настройке и управлении сертификатами для изолированного кластера, а также подробные сведения о настройке сертификатов для защиты обратного прокси-сервера, см. в руководстве по [обеспечению защиты с использованием сертификата X509](./service-fabric-windows-cluster-x509-security.md).
 
-Изменив настройки в файле ClusterConfig.json для включения обратного прокси, выполните инструкции из руководства по [обновлению конфигурации кластера](./service-fabric-cluster-upgrade-windows-server.md#upgrade-the-cluster-configuration), чтобы применить эти настройки к кластеру.
+Изменив настройки в файле ClusterConfig.json для включения обратного прокси, выполните инструкции из руководства по [обновлению конфигурации кластера](service-fabric-cluster-config-upgrade-windows-server.md), чтобы применить эти настройки к кластеру.
 
 
 ## <a name="expose-reverse-proxy-on-a-public-port-through-azure-load-balancer"></a>Предоставление обратного прокси-сервера на общедоступном порту с помощью Azure Load Balancer
@@ -332,7 +332,7 @@ ms.locfileid: "39507215"
    }
    ``` 
 
-Дополнительные сведения об обновлении параметров структуры для кластеров Azure см. в руководстве по [настройке параметров кластера с помощью шаблонов Resource Manager](./service-fabric-cluster-fabric-settings.md#customize-cluster-settings-using-resource-manager-templates). Для автономных кластеров см. руководство по [настройке параметров кластера для автономных кластеров](./service-fabric-cluster-fabric-settings.md#customize-cluster-settings-for-standalone-clusters). 
+Дополнительные сведения об обновлении параметров структуры для кластеров Azure см. в руководстве по [настройке параметров кластера с помощью шаблонов Resource Manager](service-fabric-cluster-config-upgrade-azure.md). Для автономных кластеров см. руководство по [настройке параметров кластера для автономных кластеров](service-fabric-cluster-config-upgrade-windows-server.md). 
 
 Несколько параметров структуры используются для создания защищенного подключения между обратным прокси-сервером и службами. Дополнительные сведения об этих настройках см. в руководстве по [подключению к защищенной службе с помощью обратного прокси-сервера](service-fabric-reverseproxy-configure-secure-communication.md).
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/28/2018
 ms.author: rkarlin
-ms.openlocfilehash: 42220a94eb0d0259b8b410e7343ffbfe09e8bfa5
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: e853ea6d05585fa764ad6e019a3a4390ed840263
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51007864"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52313453"
 ---
 # <a name="permissions-in-azure-security-center"></a>Разрешения в центре безопасности Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "51007864"
 ## <a name="next-steps"></a>Дополнительная информация
 В этой статье объясняется, как центр безопасности использует управление доступом на основе ролей для назначения разрешений пользователям и определяет разрешенные действия для каждой роли. Теперь, когда вы ознакомились с назначениями ролей, необходимых для наблюдения за состоянием безопасности подписки, изменения политик безопасности и применения рекомендаций, вы можете изучить следующие темы.
 
-- [Настройка политик безопасности в центре безопасности](security-center-policies.md)
+- [Настройка политик безопасности в центре безопасности](security-center-azure-policy.md)
 - [Управление рекомендациями по безопасности в Центре безопасности](security-center-recommendations.md)
 - [Отслеживание работоспособности защиты ресурсов Azure](security-center-monitoring.md)
 - [Управление оповещениями системы безопасности и управление ими в центре безопасности](security-center-managing-and-responding-alerts.md)

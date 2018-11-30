@@ -17,12 +17,12 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: dadobali
 ms.custom: aaddev
-ms.openlocfilehash: c7d1665eece966053f52e118bb0d6f7f5ec4cba6
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 2c7ccd8d2022631e32c240007a782d2382aac518
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46957869"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52422853"
 ---
 # <a name="how-to-enable-cross-app-sso-on-android-using-adal"></a>Включение единого входа для нескольких приложений Android с помощью ADAL
 
@@ -130,7 +130,7 @@ AuthenticationSettings.Instance.setUseBroker(true);
 
 #### <a name="step-3-set-up-the-correct-permissions-in-your-application"></a>Шаг 3. Настройка требуемых разрешений в приложении
 
-Приложение брокера в Android использует функцию диспетчера учетных записей ОС Android для управления учетными данными в разных приложениях. Чтобы использовать брокер в приложении Android, ваш манифест приложения должен содержать разрешения на использование учетных записей AccountManager. Дополнительные сведения об этих разрешениях см. в [документации Google по использованию диспетчера учетных записей](http://developer.android.com/reference/android/accounts/AccountManager.html).
+Приложение брокера в Android использует функцию диспетчера учетных записей ОС Android для управления учетными данными в разных приложениях. Чтобы использовать брокер в приложении Android, ваш манифест приложения должен содержать разрешения на использование учетных записей AccountManager. Дополнительные сведения об этих разрешениях см. в [документации Google по использованию диспетчера учетных записей](https://developer.android.com/reference/android/accounts/AccountManager.html).
 
 Речь идет о следующих разрешениях:
 

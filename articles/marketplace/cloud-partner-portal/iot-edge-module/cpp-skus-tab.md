@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 205fd258ed397f5a9588773549368fc3c4aec058
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 370d8160661c1f73124151a3a49d0bb3170dfb77
+ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51684823"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52276046"
 ---
 # <a name="iot-edge-module-skus-tab"></a>Вкладка номеров SKU для модуля IoT Edge
 
@@ -125,7 +125,7 @@ ms.locfileid: "51684823"
 
 |  **Поле**       |     **Описание**                                                          |
 |  ---------       |     ---------------                                                          |
-| **Маршруты по умолчанию**        | Имя и значение каждого маршрута по умолчанию не могут быть длиннее 512 символов. Вы можете определить не более пяти маршрутов по умолчанию. Обязательно используйте правильный [синтаксис маршрута](https://docs.microsoft.com/azure/iot-edge/module-composition#declare-routes) в значениях маршрутов. Для обращения к модулю используйте имя модуля по умолчанию, которое совпадает со значением **заголовка SKU** без пробелов и специальных символов. Чтобы обращаться к другим, пока неизвестным модулям, используйте соглашение `<FROM_MODULE_NAME>`, которое позволит клиентам понять, что эти данные необходимо предоставить. Подробные сведения о маршрутах IoT Edge см. [в этой статье](https://docs.microsoft.com/azure/iot-edge/module-composition#declare-routes). <br/> Например, если модуль `ContosoModule` прослушивает входные данные в `ContosoInput` и выводит данные в `ContosoOutput`, будет разумным определить следующие два маршрута по умолчанию:<br/>– Имя №1: `ToContosoModule`<br/>– Значение №1: `FROM /messages/modules/<FROM_MODULE_NAME>/outputs/* INTO BrokeredEndpoint("/modules/ContosoModule/inputs/ContosoInput")`<br/>– Имя №2: `FromContosoModuleToCloud`<br/>– Значение №2: `FROM /messages/modules/ContonsoModule/outputs/ContosoOuput INTO $upstream`<br/>  |
+| **Маршруты по умолчанию**        | Имя и значение каждого маршрута по умолчанию не могут быть длиннее 512 символов. Вы можете определить не более пяти маршрутов по умолчанию. Обязательно используйте правильный [синтаксис маршрута](https://docs.microsoft.com/azure/iot-edge/module-composition#declare-routes) в значениях маршрутов. Для обращения к модулю используйте имя модуля по умолчанию, которое совпадает со значением **заголовка SKU** без пробелов и специальных символов. Чтобы обращаться к другим, пока неизвестным модулям, используйте соглашение `<FROM_MODULE_NAME>`, которое позволит клиентам понять, что эти данные необходимо предоставить. Подробные сведения о маршрутах IoT Edge см. [в этой статье](https://docs.microsoft.com/azure/iot-edge/module-composition#declare-routes). <br/> Например, если модуль `ContosoModule` прослушивает входные данные в `ContosoInput` и выводит данные в `ContosoOutput`, будет разумным определить следующие два маршрута по умолчанию:<br/>– Имя №1: `ToContosoModule`<br/>– Значение №1: `FROM /messages/modules/<FROM_MODULE_NAME>/outputs/* INTO BrokeredEndpoint("/modules/ContosoModule/inputs/ContosoInput")`<br/>– Имя №2: `FromContosoModuleToCloud`<br/>– Значение №2: `FROM /messages/modules/ContonsoModule/outputs/ContosoOutput INTO $upstream`<br/>  |
 | **Требуемые свойства двойника по умолчанию**      | Имя и значение каждого требуемого свойства двойника по умолчанию не могут быть длиннее 512 символов. Вы можете определить до пяти пар "имя — значение" для требуемых свойств двойника. Значения требуемых свойств двойника должны содержать допустимый код JSON без экранирования, без массивов и с вложенной иерархией не более четырех уровней. Дополнительные сведения о требуемых свойствах двойника см. [здесь](https://docs.microsoft.com/azure/iot-edge/module-composition#define-or-update-desired-properties). <br/> Например, если модуль поддерживает динамически настраиваемую частоту обновления через требуемые свойства двойника, будет разумным определить следующее требуемое свойство двойника по умолчанию:<br/> – Имя №1: `RefreshRate`<br/>– Значение №1: `60`|
 | **Переменные среды по умолчанию**  | Имя и значение каждой переменной среды по умолчанию не могут быть длиннее 512 символов. Вы можете определить до пяти пар "имя — значение" для переменных среды. <br/>Например, если модуль требует перед запуском принять условия использования, вы можете определить следующую переменную среды:<br/> – Имя №1: `ACCEPT_EULA`<br/>– Значение №1: `Y`|
 | **createOptions по умолчанию**  | В значении createOptions должно быть менее 512 символов. Оно должно содержать допустимый код JSON без экранирования. Узнайте больше об использовании [createOptions](https://docs.microsoft.com/azure/iot-edge/module-composition#configure-modules). <br/> Например, если для модуля требуется привязка порта, вы можете определить следующее значение createOptions:<br/>  `"HostConfig":{"PortBindings":{"5012/tcp":[{"HostPort":"5012"}]}`|

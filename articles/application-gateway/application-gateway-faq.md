@@ -8,12 +8,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 10/6/2018
 ms.author: victorh
-ms.openlocfilehash: 8c2856f41b4623519c7bcdd97b5018129f1f23cf
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: 0187ef3d3b6853c1d1225fc9f208f2508372978d
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50092599"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52425733"
 ---
 # <a name="frequently-asked-questions-for-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
@@ -212,7 +212,7 @@ Set-AzureRmApplicationGateway -ApplicationGateway $gw
 
 Шлюз приложений сейчас предлагается в трех размерах: **малый**, **средний** и **большой**. Экземпляры малого размера предназначены для разработки и тестирования сценариев.
 
-На каждую подписку можно создавать до 50 шлюзов приложений, а у каждого шлюза может быть до 10 экземпляров. Каждый шлюз приложений может состоять из 20 прослушивателей HTTP. Полный список ограничений шлюза приложений см. [здесь](../azure-subscription-service-limits.md?toc=%2fazure%2fapplication-gateway%2ftoc.json#application-gateway-limits).
+Полный список ограничений шлюза приложений см. [здесь](../azure-subscription-service-limits.md?toc=%2fazure%2fapplication-gateway%2ftoc.json#application-gateway-limits).
 
 В таблице ниже показана средняя пропускная способность каждого экземпляра шлюза приложений с активированной разгрузкой SSL.
 

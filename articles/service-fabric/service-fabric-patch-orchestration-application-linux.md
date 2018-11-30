@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 5/22/2018
 ms.author: nachandr
-ms.openlocfilehash: 0aadb5964b5fe08b02397588dd9b2695fb4db4ce
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: 27650605601a24e11d63e56343535c35c8b72f5d
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42746723"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52285158"
 ---
 # <a name="patch-the-linux-operating-system-in-your-service-fabric-cluster"></a>Установка исправлений операционной системы Linux в кластере Service Fabric
 
@@ -147,7 +147,7 @@ ms.locfileid: "42746723"
 
 1. Подготовьте кластер, закончив все обязательные шаги.
 2. Разверните приложение для управления исправлениями, как любое другое приложение Service Fabric. Приложение можно развернуть с помощью PowerShell или Azure Service Fabric CLI. Выполните инструкции из статьи [Развертывание и удаление приложений с помощью PowerShell](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-remove-applications) или [Развертывание приложения в кластере Service Fabric](https://docs.microsoft.com/azure/service-fabric/scripts/cli-deploy-application).
-3. Чтобы настроить приложение во время развертывания, передайте `ApplicationParamater` в командлет `New-ServiceFabricApplication` или предоставленный сценарий. Для удобства сценарии PowerShell (Deploy.ps1) и bash (Deploy.sh) предоставляются вместе с приложением. Использование сценария
+3. Чтобы настроить приложение во время развертывания, передайте `ApplicationParameter` в командлет `New-ServiceFabricApplication` или предоставленный сценарий. Для удобства сценарии PowerShell (Deploy.ps1) и bash (Deploy.sh) предоставляются вместе с приложением. Использование сценария
 
     - Подключение к кластеру Service Fabric
     - Выполните сценарий развертывания. При необходимости передайте сценарию параметр приложения. Например: .\Deploy.ps1 -ApplicationParameter @{ UpdateFrequency = "Ежедневно, 11:00:00"} OR ./Deploy.sh "{\"UpdateFrequency\":\"Daily, 11:00:00\"}" 

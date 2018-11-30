@@ -1,20 +1,21 @@
 ---
 title: Развертывание сервера конфигурации для аварийного восстановления VMware с помощью Azure Site Recovery | Документация Майкрософт
-description: В этой статье описывается, как развернуть сервер конфигурации для аварийного восстановления VMware в Azure с помощью Azure Site Recovery.
-author: rayne-wiselman
-manager: carmonm
+description: В этой статье описывается, как развернуть сервер конфигурации для аварийного восстановления VMware с помощью Azure Site Recovery.
+services: site-recovery
+author: Rajeswari-Mamilla
+manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 10/29/2018
-ms.author: raynew
-ms.openlocfilehash: 516edd922d6ead9a71f81c3b9b777b15f1fb28ae
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.date: 11/18/2018
+ms.author: ramamill
+ms.openlocfilehash: 8b67947412055d0c0b9f39cb49961e435393cec9
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233163"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52162608"
 ---
-# <a name="deploy-a-configuration-server-for-vmware-disaster-recovery-to-azure"></a>Развертывание сервера конфигурации для аварийного восстановления VMware в Azure
+# <a name="deploy-a-configuration-server"></a>Развертывание сервера конфигурации.
 
 При использовании [Azure Site Recovery](site-recovery-overview.md) для аварийного восстановления виртуальных машин VMware и физических серверов в Azure развертывается локальный сервер конфигурации. Сервер конфигурации используется для управления обменом данными между локальной средой VMware и Azure. Он также управляет репликацией данных. В этой статье рассматриваются действия, необходимые для развертывания сервера конфигурации при репликации виртуальных машин VMware в Azure. Если вам нужно настроить сервер конфигурации для репликации физических серверов, [см. эту статью](physical-azure-set-up-source.md).
 

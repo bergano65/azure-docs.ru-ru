@@ -1,3 +1,16 @@
+---
+author: spelluru
+ms.service: service-bus
+ms.topic: include
+ms.date: 11/09/2018
+ms.author: spelluru
+ms.openlocfilehash: b8cf4217ca6c80be998b92e71c3ba29c4f68bce2
+ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52272014"
+---
 ## <a name="webapi-project"></a>Проект веб-интерфейса API
 1. В Visual Studio откройте проект **AppBackend**, созданный в руководстве об **уведомлении пользователей**.
 2. Замените в файле Notifications.cs целый класс **Уведомления** на следующий код. Убедитесь, что заменили заполнители на строку подключения (с полным доступом) для центра уведомлений и имени центра. Эти значения можно получить на [портале Azure](http://portal.azure.com). В этом модуле теперь представлены разные уведомления безопасности, которые будут отправлены. При полной реализации уведомления будут сохранены в базе данных; для упрощения в этом случае мы сохраняем их память.

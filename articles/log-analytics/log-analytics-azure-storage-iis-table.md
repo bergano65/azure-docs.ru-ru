@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 04/12/2017
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: 83c7862e8a9e3ce069765f81607bfbbeee272be2
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 3d1170845968cd5c9d4a4c09c9906dea962138d7
+ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51278656"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51712965"
 ---
 # <a name="use-azure-blob-storage-for-iis-and-azure-table-storage-for-events-with-log-analytics"></a>Использование хранилища BLOB-объектов Azure для IIS и хранилища таблиц Azure для событий в Azure Log Analytics
 
@@ -194,5 +194,5 @@ Log Analytics может собирать эти журналы системы �
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Сбор журналов и метрик для поддерживаемых служб Azure](log-analytics-azure-storage.md).
-* [Включите решения](../monitoring/monitoring-solutions.md) , чтобы обеспечить глубокое понимание данных.
+* [Включите решения](../azure-monitor/insights/solutions.md) , чтобы обеспечить глубокое понимание данных.
 * [Воспользуйтесь запросами поиска](log-analytics-queries.md) для анализа данных.

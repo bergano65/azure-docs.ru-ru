@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/17/2018
+ms.date: 11/20/2018
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: d9bdc35e732a84920800424a260610fd6f068c94
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 3bc7dd8103bed9a5a04566d08a1daec0708a59c4
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39626096"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52285039"
 ---
 # <a name="what-is-the-what-if-tool-in-azure-active-directory-conditional-access"></a>Что собой представляет инструмент What If для условного доступа Azure Active Directory
 
@@ -51,9 +51,6 @@ ms.locfileid: "39626096"
 
 По завершении оценки инструмент создает отчет о задействованных политиках.
 
-
-> [!NOTE]
-> В настоящее время инструмент What If не поддерживает вложенные группы. Если пользователь входит в группу, а эта группа является членом другой группы, которая используется в политике условного доступа, то инструмент what if неправильно отображает пользователю результат воздействия этой политики. 
 
 
 ## <a name="running-the-tool"></a>Запуск инструмента

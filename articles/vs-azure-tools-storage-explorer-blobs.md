@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/18/2016
 ms.author: cawa
-ms.openlocfilehash: 8315647afec0166b41ce7a75f491077edd56db46
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: fd13cb25fbe3696bf67615ef956f478b7c355547
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51036266"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52422058"
 ---
 # <a name="manage-azure-blob-storage-resources-with-storage-explorer"></a>Управление ресурсами хранилища BLOB-объектов Azure с помощью обозревателя хранилищ
 ## <a name="overview"></a>Обзор
@@ -29,7 +29,7 @@ ms.locfileid: "51036266"
 ## <a name="prerequisites"></a>Предварительные требования
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-* [Скачайте и установите Обозреватель службы хранилища](http://www.storageexplorer.com).
+* [Скачайте и установите Обозреватель службы хранилища](https://www.storageexplorer.com).
 * [Установите подключение к учетной записи хранения или службе хранилища Azure](vs-azure-tools-storage-manage-with-storage-explorer.md#connect-to-a-storage-account-or-service).
 
 ## <a name="create-a-blob-container"></a>Создание контейнера BLOB-объектов
@@ -213,7 +213,7 @@ ms.locfileid: "51036266"
      3. Щелкните **Да** в диалоговом окне подтверждения.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Последние заметки о выпуске Обозревателя службы хранилищ и связанные с ним видео см. [здесь](http://www.storageexplorer.com).
+* Последние заметки о выпуске Обозревателя службы хранилищ и связанные с ним видео см. [здесь](https://www.storageexplorer.com).
 * Узнайте, как [создавать приложения с помощью больших двоичных объектов (BLOB), таблиц, очередей и файлов Azure](https://azure.microsoft.com/documentation/services/storage/).
 
 [0]: ./media/vs-azure-tools-storage-explorer-blobs/blob-containers-create-context-menu.png

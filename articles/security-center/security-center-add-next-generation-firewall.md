@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2018
 ms.author: rkarlin
-ms.openlocfilehash: a0f472d32e878412532927327a36fe674d4cf6bb
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 7daefc1de06ac704f0449d065ed748bbe0f1ac61
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51261678"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52307661"
 ---
 # <a name="add-a-next-generation-firewall-in-azure-security-center"></a>Добавление брандмауэра следующего поколения в центре безопасности Azure
 Для повышения безопасности центр безопасности Azure может порекомендовать вам добавить брандмауэр следующего поколения (NGFW) от партнера корпорации Майкрософт. В этом документе вы найдете пример применения такой рекомендации.
@@ -62,7 +62,7 @@ ms.locfileid: "51261678"
 
 Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
-* [Настройка политик безопасности в Центре безопасности Azure](security-center-policies.md) — узнайте, как настраивать политики безопасности.
+* [Настройка политик безопасности в Центре безопасности Azure](security-center-azure-policy.md) — узнайте, как настраивать политики безопасности.
 * [Управление рекомендациями по безопасности в Центре безопасности Azure](security-center-recommendations.md) — узнайте, как рекомендации могут помочь вам защитить ресурсы Azure.
 * [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md) — узнайте, как наблюдать за работоспособностью ресурсов Azure.
 * [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md) — узнайте, как управлять оповещениями системы безопасности и реагировать на них.

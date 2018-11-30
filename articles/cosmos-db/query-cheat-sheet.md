@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: sngun
-ms.openlocfilehash: 22f8384105ed31ac2b11e0c6094b01549a270144
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: c79a1c0e6449e1ae87c2ed09acdc1ecd380cfaaf
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51230875"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52160976"
 ---
 # <a name="azure-cosmos-db-query-cheat-sheets"></a>Памятка по запросам Azure Cosmos DB
 
@@ -36,7 +36,7 @@ ms.locfileid: "51230875"
 
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о написании запросов см. в следующих статьях.
-* См. дополнительные сведения о [создании запросов с помощью API SQL](tutorial-query-sql-api.md), [SQL-запросах для Azure Cosmos DB](sql-api-sql-query.md); также доступен [справочник по SQL-синтаксису](sql-api-sql-query-reference.md)
+* См. дополнительные сведения о [создании запросов с помощью API SQL](tutorial-query-sql-api.md), [SQL-запросах для Azure Cosmos DB](how-to-sql-query.md); также доступен [справочник по SQL-синтаксису](sql-api-sql-query-reference.md)
 * См. дополнительные сведения о [создании запросов с помощью API MongoDB](tutorial-query-mongodb.md) и [поддержке возможностей и синтаксиса MongoDB в API-интерфейсе MongoDB](mongodb-feature-support.md)
 * См. дополнительные сведения о [создании запросов с помощью API Gremlin](tutorial-query-graph.md) и [поддержке графа Gremlin в базе данных Azure Cosmos DB](gremlin-support.md).
 * См. дополнительные сведения о [создании запросов с помощью API таблиц](tutorial-query-table.md)

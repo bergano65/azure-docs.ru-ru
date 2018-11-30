@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/14/2018
 ms.author: spelluru
-ms.openlocfilehash: ef1b8b2dd96a89a553239168d412d84e63a29f2a
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: daefb07761217ff4bb0800dfd9f1f05b6e22c1e1
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51254593"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52284920"
 ---
 # <a name="service-bus-access-control-with-shared-access-signatures"></a>Управление доступом к служебной шине с помощью подписанных URL-адресов
 
@@ -31,7 +31,7 @@ ms.locfileid: "51254593"
 
 Подписанные URL-адреса — это механизм авторизации на основе утверждений, использующий простые маркеры. При использовании SAS ключи никогда не передаются по сети. Ключи криптографически подписывают сведения, которые впоследствии будут проверены службой. SAS можно использовать так же, как и имя пользователя и пароль, где клиент немедленно получает имя и соответствующий ключ правила авторизации. Кроме того, SAS можно использовать подобно федеративной модели безопасности, где клиент получает подписанный маркер доступа с ограниченным временем действия из службы маркеров безопасности, не используя ключ для подписи.
 
-Проверка подлинности SAS в служебной шине выполняется с помощью именованных [правил авторизации общего доступа](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule) со связанными правами доступа и пары первичного и вторичного криптографических ключей. Ключи представляют собой 256-разрядные значения в кодировке Base64. Вы можете настроить правила на уровне пространства имен в [ретрансляторах](../service-bus-relay/relay-what-is-it.md), [очередях](/service-bus-messaging/service-bus-messaging-overview.md#queues) и [разделах](/service-bus-messaging/service-bus-messaging-overview.md#topics) служебной шины.
+Проверка подлинности SAS в служебной шине выполняется с помощью именованных [правил авторизации общего доступа](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule) со связанными правами доступа и пары первичного и вторичного криптографических ключей. Ключи представляют собой 256-разрядные значения в кодировке Base64. Вы можете настроить правила на уровне пространства имен в [ретрансляторах](../service-bus-relay/relay-what-is-it.md), [очередях](service-bus-messaging-overview.md#queues) и [разделах](service-bus-messaging-overview.md#topics) служебной шины.
 
 Маркер [подписанного URL-адреса](/dotnet/api/microsoft.servicebus.sharedaccesssignaturetokenprovider) содержит имя выбранного правила авторизации, универсальный код ресурса (URI), к которому запрашивается доступ, срок действия и криптографическую подпись HMAC-SHA256, вычисленную на основе этих полей с помощью первичного или вторичного криптографического ключа выбранного правила авторизации.
 

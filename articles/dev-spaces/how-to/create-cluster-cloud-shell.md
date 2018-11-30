@@ -4,18 +4,18 @@ titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
 ms.component: azds-kubernetes
-author: iainfoulds
-ms.author: iainfou
+author: zr-msft
+ms.author: zarhoads
 ms.date: 10/04/2018
 ms.topic: article
 description: Узнайте, как быстро создать кластер Kubernetes, поддерживающий Azure Dev Spaces, напрямую из браузера без какой-либо установки.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: 47c467e020a7a9253daa636352352d9a57dddf28
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.openlocfilehash: 61a466efdacb56889a7e437d84d3c9de43927e65
+ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50978159"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51705758"
 ---
 # <a name="create-a-kubernetes-cluster-using-azure-cloud-shell"></a>Создание кластера Kubernetes с помощью Azure Cloud Shell
 
@@ -23,7 +23,7 @@ ms.locfileid: "50978159"
 
 ## <a name="create-the-cluster"></a>Создание кластера
 
-Сначала создайте группу ресурсов. Используйте один из поддерживаемых регионов (EastUS, EastUS2, CentralUS, WestUS2, WestEurope, SoutheastAsia, CanadaCentral или CanadaEast).
+Сначала создайте группу ресурсов. Используйте один из поддерживаемых регионов: EastUS (восточная часть США), EastUS2 (восточная часть США 2), CentralUS (центральная часть США), WestUS2 (западная часть США 2), WestEurope (Западная Европа), SoutheastAsia (Юго-Восточная Азия), CanadaCentral (Центральная Канада) или CanadaEast (Восточная Канада).
 
 ```azurecli-interactive
 az group create --name MyResourceGroup --location <region>

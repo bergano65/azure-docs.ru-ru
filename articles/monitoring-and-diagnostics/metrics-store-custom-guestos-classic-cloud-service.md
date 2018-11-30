@@ -8,14 +8,15 @@ ms.topic: howto
 ms.date: 09/24/2018
 ms.author: ancav
 ms.component: metrics
-ms.openlocfilehash: 30b08062aa360c4a43dc1bfe9f574447b58521f5
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: 7f10495e22cf6750fdc5891d760885a238175da8
+ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50095217"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51711790"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-classic-cloud-services"></a>Отправка метрик гостевых ОС в хранилище метрик Azure Monitor для классических облачных служб 
+
 [Расширение диагностики](azure-diagnostics.md) для Azure Monitor позволяет собирать метрики и журналы из гостевой операционной системы (гостевой ОС), работающей на виртуальной машине, в облачной службе или в кластере Service Fabric. Это расширение может отправлять данные телеметрии во [множество различных расположений](https://docs.microsoft.com/azure/monitoring/monitoring-data-collection?toc=/azure/azure-monitor/toc.json).
 
 В этой статье описывается процесс отправки метрик производительности гостевой ОС для классической облачной службы Azure в хранилище метрик Azure Monitor. Начиная с версии 1.11 расширение диагностики позволяет записывать метрики напрямую в хранилище метрик Azure Monitor, где уже собраны стандартные метрики платформы. 
@@ -23,16 +24,14 @@ ms.locfileid: "50095217"
 Хранение их в этом расположении позволяет получить доступ к тем же действиям, которые доступны для метрик платформы. К этим действиям относятся оповещения практически в реальном времени, построение диаграмм, маршрутизация, доступ из REST API и многое другое.  Ранее расширение диагностики записывало данные в службу хранилища Azure, а не в хранилище данных Azure Monitor.  
 
 Процесс, описанный в этой статье, выполняется только для счетчиков производительности в облачных службах Azure. Он не подходит для других пользовательских метрик. 
-   
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Вам необходимы права [администратора службы или соадминистратора](https://docs.microsoft.com/azure/billing/billing-add-change-azure-subscription-administrator.md) в подписке Azure. 
+- Вам необходимы права [администратора службы или соадминистратора](~/articles/billing/billing-add-change-azure-subscription-administrator.md) в подписке Azure. 
 
 - Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services#portal). 
 
 - Необходимо установить [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-6.8.1) или [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
-
 
 ## <a name="provision-a-cloud-service-and-storage-account"></a>Подготовка облачной службы и учетной записи хранения 
 
@@ -42,15 +41,13 @@ ms.locfileid: "50095217"
 
    ![Ключи учетной записи хранения](./media/metrics-store-custom-guestos-classic-cloud-service/storage-keys.png)
 
-
-
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы 
 
 Создайте субъект-службу для своего клиента Azure Active Directory согласно инструкциям в статье о [создании приложения и субъекта-службы Azure Active Directory с правами доступа к ресурсам с помощью портала](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal). Выполняя это действие, обратите внимание на следующие моменты: 
 
-  - Вы можете указать любой URL-адрес для входа в систему.  
-  - Создайте новый секрет клиента для этого приложения.  
-  - Сохраните ключ и идентификатор клиента, чтобы использовать их в дальнейшем.  
+- Вы можете указать любой URL-адрес для входа в систему.  
+- Создайте новый секрет клиента для этого приложения.  
+- Сохраните ключ и идентификатор клиента, чтобы использовать их в дальнейшем.  
 
 Предоставьте приложению, созданному на предыдущем шаге, права *издателя метрик мониторинга* для доступа к ресурсу, из которого вы хотите передавать метрики. Если вы планируете использовать приложение для генерации пользовательских метрик ко многим ресурсам, можно предоставить эти разрешения группе ресурсов или уровню подписки.  
 
@@ -136,7 +133,7 @@ ms.locfileid: "50095217"
     </AzureMonitorAccount> 
 </PrivateConfig> 
 ```
- 
+
 Сохраните этот файл диагностики локально.  
 
 ## <a name="deploy-the-diagnostics-extension-to-your-cloud-service"></a>Развертывание расширения диагностики в облачной службе 
@@ -153,19 +150,19 @@ Login-AzureRmAccount
 $storage_account = <name of your storage account from step 3> 
 $storage_keys = <storage account key from step 3> 
 ```
- 
+
 Аналогичным образом укажите путь к файлу диагностики в переменной с помощью следующей команды:
 
 ```PowerShell
 $diagconfig = “<path of the Diagnostics configuration file with the Azure Monitor sink configured>” 
 ```
- 
+
 Разверните расширение диагностики в облачной службе с помощью файла диагностики, содержащего настроенный приемник Azure Monitor, используя следующую команду:  
 
 ```PowerShell
 Set-AzureServiceDiagnosticsExtension -ServiceName <classicCloudServiceName> -StorageAccountName $storage_account -StorageAccountKey $storage_keys -DiagnosticsConfigurationPath $diagconfig 
 ```
- 
+
 > [!NOTE] 
 > В процессе установки расширения диагностики по-прежнему необходимо указывать учетную запись хранения. Все журналы и счетчики производительности, указанные в файле конфигурации диагностики, должны записываться в указанную учетную запись хранения.  
 
@@ -190,7 +187,5 @@ Set-AzureServiceDiagnosticsExtension -ServiceName <classicCloudServiceName> -Sto
  ![Метрики портала Azure](./media/metrics-store-custom-guestos-classic-cloud-service/metrics-graph.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
-
-
-

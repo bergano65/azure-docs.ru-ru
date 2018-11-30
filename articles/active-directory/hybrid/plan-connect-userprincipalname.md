@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: identity
 ms.service: active-Directory
 manager: mtillman
-ms.openlocfilehash: 35f1ed2fbeeea7ff3beffeae91f775c829deedec
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
+ms.openlocfilehash: 59df0dc61be1f670f21b94fe24e56a2f040f950e
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49637720"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52426814"
 ---
 # <a name="azure-ad-userprincipalname-population"></a>Указание атрибута UserPrincipalName в Azure AD
 
@@ -34,7 +34,7 @@ ms.locfileid: "49637720"
 |Альтернативное имя пользователя|Атрибут в локальной среде, который не является UserPrincipalName, например атрибут mail, используется для входа.|
 
 ## <a name="what-is-userprincipalname"></a>Что такое UserPrincipalName?
-UserPrincipalName — это атрибут, который является именем пользователя для входа через Интернет на основе интернет-стандарта [RFC 822](http://www.ietf.org/rfc/rfc0822.txt). 
+UserPrincipalName — это атрибут, который является именем пользователя для входа через Интернет на основе интернет-стандарта [RFC 822](https://www.ietf.org/rfc/rfc0822.txt). 
 
 ### <a name="upn-format"></a>Формат имени участника-пользователя
 Имя участника-пользователя состоит из префикса (имя участника-пользователя) и суффикса (имя субъекта-пользователя). Префикс объединяется с суффиксом с помощью символа "\@". Например, "someone\@example.com". Имя участника-пользователя должно быть уникальным среди всех объектов субъекта безопасности в пределах леса каталога. 

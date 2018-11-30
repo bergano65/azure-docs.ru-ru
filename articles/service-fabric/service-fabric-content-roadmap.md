@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/08/2017
 ms.author: ryanwi
-ms.openlocfilehash: 6cf2aa31e8a7207b041b9789ddde23b616f47150
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 58db410fe5a6c2b081507eae2ccad3a258ec0864
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51258453"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52427596"
 ---
 # <a name="so-you-want-to-learn-about-service-fabric"></a>Что бы вы хотели узнать о Service Fabric?
 Azure Service Fabric — это платформа распределенных систем, которая дает возможность не только легко упаковывать и развертывать масштабируемые и надежные микрослужбы, но и управлять ими.  Service Fabric имеет большую контактную зону и вы можете многому научиться.  Здесь представлен краткий обзор Service Fabric и описаны основные понятия, модели программирования, жизненный цикл приложения, тестирование, кластеры и мониторинг работоспособности. Обзор и сведения о том, как создавать микрослужбы с помощью Service Fabric, см. в статьях [Общие сведения о Service Fabric](service-fabric-overview.md) и [Разработка приложений с использованием микрослужб](service-fabric-overview-microservices.md). Эта статья не содержит полный список связанной документации, но предоставляет ссылки на руководства по началу работы для каждой области Service Fabric. 
@@ -104,7 +104,7 @@ Service Fabric интегрируется с [ASP.NET Core](service-fabric-relia
 ## <a name="application-lifecycle"></a>Жизненный цикл приложения
 Как и в случае с другими платформами, приложение в Service Fabric обычно проходит следующие фазы: проектирование, разработка, тестирование, развертывание, обновление, техническое обслуживание и удаление. Service Fabric предоставляет первоклассную поддержку полного жизненного цикла приложений в облаке: от разработки, развертывания, ежедневного управления и технического обслуживания до вывода приложения из эксплуатации. Модель службы использует несколько различных ролей для независимого участия в жизненном цикле приложения. [Жизненный цикл приложения в Service Fabric](service-fabric-application-lifecycle.md) представляет обзор интерфейсов API, а также их использование различными ролями на протяжении всех фаз жизненного цикла приложения в Service Fabric. 
 
-Всем жизненным циклом приложения можно управлять с помощью [командлетов PowerShell](/powershell/module/ServiceFabric/), [команд CLI](service-fabric-sfctl.md), [C# APIs](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient), [API Java](/java/api/system.fabric._application_management_client) и [REST API](/rest/api/servicefabric/). Вы также можете настроить конвейеры непрерывной интеграции и разработки с помощью средств [Azure Pipelines](service-fabric-set-up-continuous-integration.md) или [Jenkins](service-fabric-cicd-your-linux-applications-with-jenkins.md).
+Всем жизненным циклом приложения можно управлять с помощью [командлетов PowerShell](/powershell/module/ServiceFabric/), [команд CLI](service-fabric-sfctl.md), [C# APIs](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient), [API Java](/java/api/overview/azure/servicefabric) и [REST API](/rest/api/servicefabric/). Вы также можете настроить конвейеры непрерывной интеграции и разработки с помощью средств [Azure Pipelines](service-fabric-set-up-continuous-integration.md) или [Jenkins](service-fabric-cicd-your-linux-applications-with-jenkins.md).
 
 В следующем видео от Академии Microsoft Virtual Academy также описывается процесс управления жизненным циклом приложения: <center><a target="_blank" href="https://mva.microsoft.com/en-US/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=My3Ka56yC_6106218965">
 <img src="./media/service-fabric-content-roadmap/AppLifecycleVid.png" WIDTH="360" HEIGHT="244">

@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: michmcla
-ms.openlocfilehash: 0754b13704810816b1650010a00185031ca41f5d
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: f08bf6a65a93c31d76c5b336cc6ef433153d71c4
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46297577"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52423123"
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Интеграция инфраструктуры VPN с Azure MFA с помощью расширения сервера политики сети для Azure
 
@@ -438,7 +438,7 @@ ms.locfileid: "46297577"
 
 Чтобы расширить возможности устранения неполадок, просмотрите файлы журнала в формате базы данных NPS в расположении, в котором установлена служба NPS. Эти файлы журнала создаются в папке _%SystemRoot%\System32\Logs_ в виде текстовых файлов с разделителями-запятыми. Описание этих файлов журнала см. в разделе [Interpret NPS Database Format Log Files](https://technet.microsoft.com/library/cc771748.aspx) (Интерпретация файлов журнала в формате базы данных NPS). 
 
-Записи в этих файлах журнала сложно интерпретировать, не импортировав их в электронную таблицу или базу данных. В Интернете можно найти множество инструментов анализа для службы проверки подлинности в Интернете (IAS), которые упростят интерпретацию файлов журнала. Ниже показаны выходные данные одной из таких скачиваемых [условно бесплатных программ](http://www.deepsoftware.com/iasviewer). 
+Записи в этих файлах журнала сложно интерпретировать, не импортировав их в электронную таблицу или базу данных. В Интернете можно найти множество инструментов анализа для службы проверки подлинности в Интернете (IAS), которые упростят интерпретацию файлов журнала. Ниже показаны выходные данные одной из таких скачиваемых [условно бесплатных программ](https://www.deepsoftware.com/iasviewer). 
 
 ![Условно бесплатная программа](./media/howto-mfa-nps-extension-vpn/image49.png)
 

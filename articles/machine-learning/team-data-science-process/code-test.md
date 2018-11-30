@@ -1,26 +1,22 @@
 ---
 title: Тестирование кода обработки и анализа данных в Azure на примере набора данных UCI для прогнозирования дохода совершеннолетних лиц — командный процесс обработки и анализа данных и Azure DevOps Services
 description: Тестирование кода обработки и анализа данных на примере данных UCI для прогноза дохода совершеннолетних лиц
-services: machine-learning, team-data-science-process
-documentationcenter: ''
-author: weig
-manager: deguhath
+services: machine-learning
+author: marktab
+manager: cgronlun
 editor: cgronlun
-ms.assetid: b8fbef77-3e80-4911-8e84-23dbf42c9bee
 ms.service: machine-learning
 ms.component: team-data-science-process
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/19/2018
-ms.author: weig
-ms.openlocfilehash: ad0a8b5b0bb9afbbe626c9481961f20ccd4797bf
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.author: tdsp
+ms.custom: (previous author=weig, ms.author=weig)
+ms.openlocfilehash: d04f50bc3de34c28c10be7ba429f85a99096de47
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44294701"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52443956"
 ---
 # <a name="data-science-code-testing-with-the-uci-adult-income-prediction-dataset"></a>Тестирование кода обработки и анализа данных на примере набора данных UCI для прогноза дохода совершеннолетних лиц
 В этой статье приведены предварительные рекомендации по тестированию кода в рабочем потоке обработки и анализа данных. Такое тестирование предоставляет специалистам по обработке и анализу данных системный и эффективный способ проверки качества и ожидаемого результата выполнения созданного кода. Мы продемонстрируем тестирование кода на примере [проекта для командного процесса обработки и анализа данных (TDSP), основанного на наборе данных UCI с данными о доходе совершеннолетних лиц](https://github.com/Azure/MachineLearningSamples-TDSPUCIAdultIncome), который мы опубликовали ранее. 

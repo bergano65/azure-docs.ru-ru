@@ -11,15 +11,15 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/10/2018
+ms.date: 11/19/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 765a10a336b908d399f46b2248aab3903c594d24
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 1039cde45824491bcc82f324c05e4819e66355e0
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39628551"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51975998"
 ---
 # <a name="move-data-from-odbc-data-stores-using-azure-data-factory"></a>Перемещение данных из хранилищ данных ODBC с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -355,33 +355,6 @@ ms.locfileid: "39628551"
 
 ## <a name="repeatable-read-from-relational-sources"></a>Повторяющиеся операции чтения из реляционных источников
 При копировании данных из реляционных хранилищ важно помнить о повторяемости, чтобы избежать непредвиденных результатов. В фабрике данных Azure можно вручную повторно выполнить срез. Вы можете также настроить для набора данных политику повтора, чтобы при сбое срез выполнялся повторно. При повторном выполнении среза в любом случае необходимо убедиться в том, что считываются те же данные, независимо от того, сколько раз выполняется срез. Ознакомьтесь с разделом [Повторяющиеся операции чтения из реляционных источников](data-factory-repeatable-copy.md#repeatable-read-from-relational-sources).
-
-## <a name="ge-historian-store"></a>Хранилище GE Historian
-Создание связанной службы ODBC для связи хранилища данных [Proficy Historian GE (теперь GE Historian)](http://www.geautomation.com/products/proficy-historian) с фабрикой данных Azure выполняется, как показано в следующем примере:
-
-```json
-{
-    "name": "HistorianLinkedService",
-    "properties":
-    {
-        "type": "OnPremisesOdbc",
-        "typeProperties":
-        {
-            "connectionString": "DSN=<name of the GE Historian store>;",
-            "gatewayName": "<gateway name>",
-            "authenticationType": "Basic",
-            "userName": "<user name>",
-            "password": "<password>"
-        }
-    }
-}
-```
-
-Установите шлюз управления данными на локальном компьютере и зарегистрируйте этот шлюз на портале. Шлюз, установленный на локальном компьютере, использует драйвер ODBC для GE Historian для подключения к хранилищу данных GE Historian. Поэтому необходимо установить драйвер на компьютере шлюза. Подробные сведения см. в разделе [Включение соединения](#enabling-connectivity).
-
-Прежде чем использовать хранилище GE Historian в решении фабрики данных, убедитесь, что шлюз может подключаться к хранилищу данных с помощью инструкций в следующем разделе.
-
-В начале статьи приводится подробный обзор использования хранилищ данных ODBC в качестве исходных хранилищ данных в ходе операции копирования.  
 
 ## <a name="troubleshoot-connectivity-issues"></a>Устранение проблем подключения
 Для устранения проблем подключения используйте вкладку **Диагностика** **диспетчера конфигурации шлюза управления данными**.

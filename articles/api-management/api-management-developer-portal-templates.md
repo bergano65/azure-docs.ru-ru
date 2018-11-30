@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: 2bdb8c30ffa630f85d666f3a16ce2b9dcdab6492
-ms.sourcegitcommit: 059dae3d8a0e716adc95ad2296843a45745a415d
+ms.openlocfilehash: 90084f6c4fb270c34165bf12763109d9be2398aa
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "29118230"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52446965"
 ---
 # <a name="how-to-customize-the-azure-api-management-developer-portal-using-templates"></a>Настройка портала разработчика в службе управления API Azure с помощью шаблонов
 
@@ -31,7 +31,10 @@ ms.locfileid: "29118230"
 
 Шаблоны используются для настройки содержимого страниц портала разработчика, создаваемых системой (например, документы API, продукты, аутентификация пользователей и т. д.). С помощью синтаксиса [DotLiquid](http://dotliquidmarkup.org/) и указанного набора локализованных строковых ресурсов, значков и элементов управления на странице можно гибко настраивать содержимое страниц по своему усмотрению.
 
+[!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
+
 ## <a name="developer-portal-templates-overview"></a>Обзор шаблонов портала разработчика
+
 Чтобы изменить шаблоны, войдите на **портал разработчика** в качестве администратора. Чтобы открыть его, войдите на портал Azure и щелкните на панели инструментов **Портал разработчика** для вашего экземпляра службы управления API.
 
 Чтобы открыть шаблоны портала разработчиков, щелкните значок настройки слева, чтобы открылось меню настройки, а затем **Шаблоны**.

@@ -2,25 +2,21 @@
 title: Определение сценариев углубленной аналитики для Машинного обучения Azure | Документация Майкрософт
 description: Выберите оптимальные сценарии использования процесса обработки и анализа данных группы для расширенной прогнозной аналитики.
 services: machine-learning
-documentationcenter: ''
-author: deguhath
+author: marktab
 manager: cgronlun
 editor: cgronlun
-ms.assetid: 53aecc1e-5089-42cf-8d44-77678653f92d
 ms.service: machine-learning
 ms.component: team-data-science-process
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/13/2017
-ms.author: deguhath
-ms.openlocfilehash: bf5ee52c98c173dbdde0a00c5657b8694b363279
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.author: tdsp
+ms.custom: (previous author=deguhath, ms.author=deguhath)
+ms.openlocfilehash: 16d8457e5605ce0e3c10ed95296b5a883a4c602c
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42142861"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52444840"
 ---
 # <a name="scenarios-for-advanced-analytics-in-azure-machine-learning"></a>Сценарии для расширенной аналитики в Машинном обучении Azure
 В этой статье описаны различные источники примеров данных и типовые сценарии, в которых можно использовать [процесс обработки и анализа данных группы (TDSP)](overview.md). Процесс TDSP предоставляет систематический подход для совместной работы групп над созданием интеллектуальных приложений. В представленных сценариях продемонстрированы варианты рабочих процессов обработки данных на основе характеристик данных, исходных расположений и целевых репозиториев в Azure.

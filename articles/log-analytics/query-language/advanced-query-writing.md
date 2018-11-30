@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/16/2018
+ms.date: 11/15/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: 2f9868abd0eb8bf96928aeba6f96c10bcb91c4e2
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 3bb7e9837f74fd04d38cc77a9504cc26c6dcf803
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46958564"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51854192"
 ---
 # <a name="writing-advanced-queries-in-log-analytics"></a>Составление расширенных запросов в Log Analytics
 
@@ -76,28 +76,6 @@ Event
 | extend USTimeGenerated = utc_to_us_date_format(TimeGenerated)
 | project TimeGenerated, USTimeGenerated, Source, Computer, EventLevel, EventData 
 ```
-
-## <a name="functions"></a>Функции Azure
-Вы можете сохранить запрос с псевдонимом функции, чтобы на него могли ссылаться другие запросы. Например, следующий стандартный запрос возвращает все отсутствующие обновления безопасности, о которых сообщалось в последний день:
-
-```Kusto
-Update
-| where TimeGenerated > ago(1d) 
-| where Classification == "Security Updates" 
-| where UpdateState == "Needed"
-```
-
-Вы можете сохранить этот запрос как функцию и присвоить ему псевдоним, например _security_updates_last_day_. Затем вы можете использовать его в другом запросе для поиска необходимых обновлений безопасности SQL:
-
-```Kusto
-security_updates_last_day | where Title contains "SQL"
-```
-
-Чтобы сохранить запрос как функцию, нажмите кнопку **Сохранить** на портале и измените **Сохранить как** на _Функция_. Псевдоним функции может содержать буквы, цифры или символы подчеркивания, но должен начинаться с буквы или символа подчеркивания.
-
-> [!NOTE]
-> Функции можно сохранять в запросах Log Analytics, но это пока недоступно для запросов Application Insights.
-
 
 ## <a name="print"></a>Оператор print
 `print` возвращает таблицу с одним столбцом и одной строкой, содержащей результаты вычисления. Это часто используется в тех случаях, когда нужно простое вычисление. Например, чтобы найти текущее время в формате PST и добавить столбец с временем в формате EST.

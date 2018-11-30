@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: shlo
-ms.openlocfilehash: eee68481f4396f8a09241b664d4c3d7d4a4f6567
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: c27c9c16e493dc596856288c4dbecff655e89396
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37054359"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51976355"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-on-a-schedule"></a>Создание триггера, который запускает конвейер по расписанию
 В этой статье описан триггер расписания и шаги по его созданию, запуску и мониторингу. Сведения о других типах триггеров см. в статье [Выполнение конвейера и триггеры в фабрике данных Azure](concepts-pipeline-execution-triggers.md).
@@ -242,7 +242,7 @@ ms.locfileid: "37054359"
 
 Сведения о том, как отслеживать выполнения триггера и конвейера на портале Azure, см. в разделе [Мониторинг конвейера](quickstart-create-data-factory-resource-manager-template.md#monitor-the-pipeline).
 
-## <a name="azure-resource-manager-template"></a>Шаблон диспетчера ресурсов Azure
+## <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
 Для создания триггера можно использовать шаблон Azure Resource Manager. Пошаговые инструкции см. в статье [Руководство. Создание фабрики данных Azure с помощью шаблона Azure Resource Manager](quickstart-create-data-factory-resource-manager-template.md).  
 
 ## <a name="pass-the-trigger-start-time-to-a-pipeline"></a>Передача времени запуска триггера в конвейер
@@ -315,7 +315,7 @@ ms.locfileid: "37054359"
 | **startTime** | Значение даты и времени. Для простых расписаний значение свойства **startTime** применяется к первому выполнению. В сложных расписаниях триггер не запускается раньше, чем определяется значением **startTime**. |
 | **endTime** | Дата и время завершения триггера. После указанной даты и времени триггер перестает выполняться. Значение свойства не может быть в прошлом. Это необязательное свойство. |
 | **timeZone** | Часовой пояс. В настоящее время поддерживается только часовой пояс UTC. |
-| **recurrence** | Объект recurrence указывает правила повторения для триггера. Объект recurrence поддерживает следующие элементы: **frequency**, **interval**, **endTime**, **count** и **schedule**. Если определен объект recurrence, элемент **frequency** является обязательным. Другие элементы объекта recurrence являются необязательными. |
+| **recurrence** | Объект recurrence указывает правила повторения для триггера. Этот объект поддерживает следующие элементы: **frequency**, **interval**, **endTime**, **count** и **schedule**. Если определен объект recurrence, элемент **frequency** является обязательным. Другие элементы объекта recurrence являются необязательными. |
 | **frequency** | Единица частоты, с которой выполняется триггер. Поддерживаются следующие значения: "минута", "час", "день", "неделя" и "месяц". |
 | **interval** | Положительное целое число, указывающее интервал для значения **frequency**, которое определяет, как часто выполняется триггер. Например, если **interval** имеет значение 3, а для элемента **frequency** выбран вариант week (неделя), триггер выполняется один раз каждые 3 недели. |
 | **schedule** | Расписание повторения для триггера. Триггер с указанным значением **частоты** выполняется по расписанию. Свойство **schedule** содержит изменения для повторения, основанного на минутах, часах, неделях, днях месяца и номере недели.
@@ -325,11 +325,11 @@ ms.locfileid: "37054359"
 
 | Свойство JSON | type | Обязательно | Значение по умолчанию | Допустимые значения | Пример |
 |:--- |:--- |:--- |:--- |:--- |:--- |
-| **startTime** | Строка | Yes | None | Дата и время по спецификации ISO-8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
-| **recurrence** | Объект. | Yes | None | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
+| **startTime** | Строка | Yes | Нет | Дата и время по спецификации ISO-8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
+| **recurrence** | Объект. | Yes | Нет | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
 | **interval** | Number | Нет  | 1 | 1–1000 | `"interval":10` |
-| **endTime** | Строка | Yes | None | Значение даты и времени, представляющее время в будущем. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
-| **schedule** | Объект. | Нет  | None | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
+| **endTime** | Строка | Yes | Нет | Значение даты и времени, представляющее время в будущем. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
+| **schedule** | Объект. | Нет  | Нет | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
 
 ### <a name="starttime-property"></a>Свойство startTime
 В следующей таблице показано, как свойство **startTime** управляет запуском триггера:

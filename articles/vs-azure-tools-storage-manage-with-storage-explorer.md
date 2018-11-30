@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2017
 ms.author: cawa
-ms.openlocfilehash: 20aa1824656ee6eb861f3848d969d678b07e9378
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: a540e6c585210f7b1dc36a89eaae7a4b4bf8fc70
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51038439"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52422734"
 ---
 # <a name="get-started-with-storage-explorer"></a>Начало работы с Обозревателем службы хранилища
 
@@ -41,7 +41,7 @@ ms.locfileid: "51038439"
 
 Обязательно для всех версий Windows и .NET Framework версии 4.6.2 или выше.
 
-[Скачайте и установите Обозреватель службы хранилища](http://www.storageexplorer.com).
+[Скачайте и установите Обозреватель службы хранилища](https://www.storageexplorer.com).
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
@@ -49,7 +49,7 @@ ms.locfileid: "51038439"
 
 * macOS 10.12 "Sierra" и более поздних версий.
 
-[Скачайте и установите Обозреватель службы хранилища](http://www.storageexplorer.com).
+[Скачайте и установите Обозреватель службы хранилища](https://www.storageexplorer.com).
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
@@ -70,7 +70,7 @@ ms.locfileid: "51038439"
 
 В [заметках о выпуске](https://go.microsoft.com/fwlink/?LinkId=838275&clcid=0x409) для Обозревателя службы хранилища Azure содержатся конкретные инструкции для некоторых дистрибутивов.
 
-[Скачайте и установите Обозреватель службы хранилища](http://www.storageexplorer.com).
+[Скачайте и установите Обозреватель службы хранилища](https://www.storageexplorer.com).
 
 ---
 

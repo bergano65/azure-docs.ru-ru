@@ -1,3 +1,16 @@
+---
+author: tfitzmac
+ms.service: azure-resource-manager
+ms.topic: include
+ms.date: 11/25/2018
+ms.author: tomfitz
+ms.openlocfilehash: 5e483ecfcbddfcf5aa7f8a41c1ee75136c86b656
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52440395"
+---
 Для добавления тега к ресурсу во время развертывания добавьте элемент `tags` к развертываемому ресурсу и укажите имя и значение тега.
 
 ### <a name="apply-a-literal-value-to-the-tag-name"></a>Применение литерального значения к имени тега

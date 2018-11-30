@@ -1,3 +1,16 @@
+---
+author: genlin
+ms.service: virtual-network
+ms.topic: include
+ms.date: 11/09/2018
+ms.author: genli
+ms.openlocfilehash: 3df4108907a4e1e65a444faf1049163966b7accf
+ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52272017"
+---
 ## <a name="scenario"></a>Сценарий
 Создается виртуальная машина с одним сетевым адаптером. Она подключается к виртуальной сети. Виртуальной машине нужно присвоить три разных *частных* и два *общедоступных* IP-адреса. IP-адреса назначаются следующим IP-конфигурациям.
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/05/2017
 ms.author: apimpm
-ms.openlocfilehash: 843b03ce33d1897e2e985ac832f883e1fae12960
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: dd876462559ac10fc0463c64413bf11eabbc88a1
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49959049"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52443531"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Обзор виртуальной сети](../virtual-network/virtual-networks-overview.md).
@@ -27,7 +27,8 @@ ms.locfileid: "49959049"
 
 > [!NOTE]
 > Служба управления API Azure поддерживает классические виртуальные сети и виртуальные сети Azure Resource Manager.
->
+
+[!INCLUDE [premium-dev.md](../../includes/api-management-availability-premium-dev.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -38,7 +39,6 @@ ms.locfileid: "49959049"
     [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 + Экземпляр APIM. Дополнительные сведения см. в статье о [создании экземпляра управления API Azure](get-started-create-service-instance.md).
-+ Возможность подключения к виртуальным сетям доступна только на уровнях Premium и Developer. Чтобы перейти на один из этих уровней, выполните инструкции по [обновлению и масштабированию](upgrade-and-scale.md#upgrade-and-scale).
 
 ## <a name="enable-vpn"> </a>Включение подключения к виртуальной сети
 

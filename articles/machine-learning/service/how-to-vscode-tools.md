@@ -5,16 +5,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.component: core
 ms.topic: conceptual
-ms.author: jmartens
-author: j-martens
+ms.author: shwinne
+author: swinner95
 ms.reviewer: jmartens
 ms.date: 10/1/2018
-ms.openlocfilehash: a2f37cffb37ce7008c3e372763784240e0d4250b
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.openlocfilehash: 57fe511e5de0d73f2a372da0ecab3e9a3039b194
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49945558"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51854209"
 ---
 # <a name="vs-code-tools-for-ai-get-started-with-azure-machine-learning-from-visual-studio-code"></a>VS Code Tools for AI. Начало работы со службой "Машинное обучение Azure" в Visual Studio Code
 
@@ -28,7 +28,7 @@ ms.locfileid: "49945558"
 
 + [Установка Python версии 3.5 или более поздней](https://www.anaconda.com/download/).
 
-+ Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
++ Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLfree), прежде чем начинать работу.
 
 ## <a name="install-vs-code-tools-for-ai-extension"></a>Установка расширения VS Code Tools for AI
 
@@ -40,7 +40,7 @@ ms.locfileid: "49945558"
 
 1. Запустите VS Code.
 
-1. В веб-браузере откройте страницу http://aka.ms/vscodetoolsforai. 
+1. В веб-браузере откройте страницу https://aka.ms/vscodetoolsforai. 
 
 1. На этой странице нажмите **Install** (Установить). 
 

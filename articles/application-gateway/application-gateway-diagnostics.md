@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 6/20/2018
 ms.author: amitsriva
-ms.openlocfilehash: 3163d4d61dba958cdf71dd0470b943bba69b0191
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: d2f3c2ba6849540f90117ef127e25030ff56b569
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51237204"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52427171"
 ---
 # <a name="back-end-health-diagnostic-logs-and-metrics-for-application-gateway"></a>Работоспособность серверной части, журналы диагностики и метрики для шлюза приложений
 
@@ -95,7 +95,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 
 ## <a name="diagnostic-logging"></a>Журналы диагностики
 
-В Azure можно использовать различные виды журналов для управления шлюзами приложений и устранения возникающих в них неполадок. Доступ к некоторым из этих журналов можно получить через портал. Также можно извлечь все журналы из хранилища BLOB-объектов Azure и просматривать их с помощью таких средств, как [Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.md), Excel и Power BI. В списке ниже приведены дополнительные сведения о разных типах журналов:
+В Azure можно использовать различные виды журналов для управления шлюзами приложений и устранения возникающих в них неполадок. Доступ к некоторым из этих журналов можно получить через портал. Также можно извлечь все журналы из хранилища BLOB-объектов Azure и просматривать их с помощью таких средств, как [Log Analytics](../azure-monitor/insights/azure-networking-analytics.md), Excel и Power BI. В списке ниже приведены дополнительные сведения о разных типах журналов:
 
 * **Журнал действий.** В [журналах действий Azure](../monitoring-and-diagnostics/insights-debugging-with-events.md) (прежнее название — операционные журналы и журналы аудита) можно просматривать все операции, отправляемые в вашу подписку Azure, и состояние этих операций. Записи этого журнала собираются по умолчанию, и их можно просмотреть на портале Azure.
 * **Журнал доступа.** С помощью этого журнала можно просматривать шаблоны доступа шлюза приложений и анализировать важную информацию, включая IP-адрес вызывающей стороны, запрошенный URL-адрес, сведения о задержке отклика, возвращаемом коде и переданных и полученных байтах. Данные для журнала доступа собираются каждые 300 секунд. Этот журнал содержит одну запись для каждого экземпляра шлюза приложений. Экземпляр шлюза приложений определяется свойством instanceId.
@@ -303,7 +303,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 
 ### <a name="view-and-analyze-the-access-performance-and-firewall-logs"></a>Просмотр и анализ журналов доступа, производительности и брандмауэра
 
-Azure [Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.md) может собирать файлы журналов счетчиков и событий из вашей учетной записи хранилища BLOB-объектов. Эта служба предоставляет средства визуализации и эффективные возможности поиска для анализа журналов.
+Azure [Log Analytics](../azure-monitor/insights/azure-networking-analytics.md) может собирать файлы журналов счетчиков и событий из вашей учетной записи хранилища BLOB-объектов. Эта служба предоставляет средства визуализации и эффективные возможности поиска для анализа журналов.
 
 Вы также можете подключиться к учетной записи хранения и извлечь записи журнала JSON для журналов доступа и производительности. После скачивания JSON-файлов их можно преобразовать в формат CSV и просматривать в Excel, Power BI или другом средстве визуализации данных.
 
@@ -379,7 +379,7 @@ Azure [Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* См. сведения о визуализации журналов счетчиков и событий с помощью [Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.md).
+* См. сведения о визуализации журналов счетчиков и событий с помощью [Log Analytics](../azure-monitor/insights/azure-networking-analytics.md).
 * Прочтите запись блога [Visualize your Azure Activity Log with Power BI](https://blogs.msdn.com/b/powerbi/archive/2015/09/30/monitor-azure-audit-logs-with-power-bi.aspx) (Визуализация журналов действий Azure с помощью Power BI).
 * Прочтите запись блога [View and analyze Azure Audit Logs in Power BI and more](https://azure.microsoft.com/blog/analyze-azure-audit-logs-in-powerbi-more/) (Просмотр и анализ журналов аудита Azure с помощью Power BI и других средств).
 

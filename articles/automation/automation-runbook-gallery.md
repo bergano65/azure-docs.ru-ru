@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 09/11/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: ca19ce2cca314950adc40bbf065dec80e7fa3e1f
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: a518d00a50c0fc6ec83626852f30f739d64b18ea
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51227932"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52283303"
 ---
 # <a name="runbook-and-module-galleries-for-azure-automation"></a>Коллекции модулей Runbook и других модулей для службы автоматизации Azure
 Вы можете не создавать собственные модули Runbook и другие модули в службе автоматизации Azure, а воспользоваться разнообразными сценариями, уже созданными корпорацией Майкрософт и сообществом.  Эти готовые сценарии можно применять без изменений или использовать в качестве отправной точки, модифицируя их под свои задачи.
@@ -68,7 +68,7 @@ ms.locfileid: "51227932"
 * Служба автоматизации обновляет коллекцию один раз в час, поэтому вы не сразу увидите в ней добавленный модуль Runbook.
 
 ## <a name="modules-in-powershell-gallery"></a>Модули в коллекции PowerShell
-Модули PowerShell содержат командлеты, которые можно использовать в модулях Runbook, а в [коллекции PowerShell](http://www.powershellgallery.com) собраны готовые модули, которые можно установить в службе автоматизации Azure.  Вы можете открыть эту коллекцию на портале Azure и устанавливать модули из нее непосредственно в службе автоматизации Azure. Также вы можете скачать модули для установки вручную.  
+Модули PowerShell содержат командлеты, которые можно использовать в модулях Runbook, а в [коллекции PowerShell](https://www.powershellgallery.com) собраны готовые модули, которые можно установить в службе автоматизации Azure.  Вы можете открыть эту коллекцию на портале Azure и устанавливать модули из нее непосредственно в службе автоматизации Azure. Также вы можете скачать модули для установки вручную.  
 
 ### <a name="to-import-a-module-from-the-automation-module-gallery-with-the-azure-portal"></a>Импорт модуля из коллекции модулей службы автоматизации с помощью портала Azure
 1. На портале Azure выберите свою учетную запись службы автоматизации.

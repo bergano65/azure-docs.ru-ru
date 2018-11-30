@@ -9,23 +9,23 @@ ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 4f49adf006e8d55337220fad9ee84de65209880b
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 8a5b34cd92f3afd166d5d67ca445c99a52c684e2
+ms.sourcegitcommit: beb4fa5b36e1529408829603f3844e433bea46fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34193487"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "52290898"
 ---
 # <a name="azure-automation-scenario---provision-an-aws-virtual-machine"></a>Сценарий службы автоматизации Azure: подготовка виртуальной машины AWS
 В этой статье вы узнаете, как с помощью службы автоматизации Azure подготовить виртуальную машину в подписке Amazon Web Service (AWS) и присвоить виртуальной машине конкретное имя, которое в AWS называется "тегом" виртуальной машины.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для выполнения инструкций из этой статьи вам понадобится учетная запись службы автоматизации Azure и подписка AWS. Дополнительные сведения о настройке учетной записи службы автоматизации Azure и об указании в ней учетных данных подписки AWS см. в статье [Проверка подлинности модулей Runbook с помощью Amazon Web Services](automation-config-aws-account.md). Перед выполнением дальнейших действий необходимо создать эту учетную запись с учетными данными подписки AWS или указать в ней эти учетные данные, так как вы будете ссылаться на нее при выполнении указанных ниже шагов.
 
 ## <a name="deploy-amazon-web-services-powershell-module"></a>Развертывание модуля PowerShell для Amazon Web Services
 В процессе работы ваш модуль Runbook для подготовки виртуальной машины использует модуль PowerShell для AWS. Выполните следующие действия, чтобы добавить в учетную запись службы автоматизации модуль, настроенный с учетными данными подписки AWS.  
 
-1. Откройте браузер и перейдите к [коллекции PowerShell](http://www.powershellgallery.com/packages/AWSPowerShell/), а затем нажмите кнопку **Deploy to Azure Automation** (Развернуть в службе автоматизации Azure).<br><br> ![Импорт модуля AWS PS](./media/automation-scenario-aws-deployment/powershell-gallery-download-awsmodule.png)
+1. Откройте браузер и перейдите к [коллекции PowerShell](https://www.powershellgallery.com/packages/AWSPowerShell/), а затем нажмите кнопку **Deploy to Azure Automation** (Развернуть в службе автоматизации Azure).<br><br> ![Импорт модуля AWS PS](./media/automation-scenario-aws-deployment/powershell-gallery-download-awsmodule.png)
 2. Вы перейдете на страницу входа в Azure. После проверки подлинности откроется следующая страница портала Azure.<br><br> ![Страница импорта модуля](./media/automation-scenario-aws-deployment/deploy-aws-powershell-module-parameters.png)
 3. Выберите учетную запись службы автоматизации и нажмите кнопку **ОК** для запуска развертывания.
 
@@ -41,11 +41,11 @@ ms.locfileid: "34193487"
 После развертывания модуля AWS PowerShell можно создать модуль Runbook для автоматизации подготовки виртуальной машины в AWS с помощью сценария PowerShell. Приведенные ниже шаги показывают, как использовать собственный сценарий PowerShell в службе автоматизации Azure.  
 
 > [!NOTE]
-> Дополнительные параметры и сведения, касающиеся этого сценария, можно найти в [коллекции PowerShell](https://www.powershellgallery.com/packages/New-AwsVM/DisplayScript).
+> Дополнительные параметры и сведения, касающиеся этого сценария, можно найти в [коллекции PowerShell](https://www.powershellgallery.com/packages/New-AwsVM/).
 > 
 
 1. Загрузите сценарий PowerShell New-AwsVM из коллекции PowerShell, открыв сеанс PowerShell и введя следующую команду:<br>
-   ```
+   ```powershell
    Save-Script -Name New-AwsVM -Path <path>
    ```
    <br>
@@ -60,11 +60,12 @@ ms.locfileid: "34193487"
     > 
     > * Модуль Runbook содержит несколько параметров по умолчанию. Проверьте все значения по умолчанию и при необходимости обновите их.
     > * Если вы сохранили учетные данные AWS как ресурс учетных данных с именем, отличным от **AWScred**, потребуется соответствующим образом обновить скрипт в строке 57.  
-    > * При работе с командами AWS в PowerShell, особенно в этом примере модуля Runbook, необходимо указывать регион AWS. В противном случае командлеты завершатся с ошибкой. Дополнительные сведения на сайте AWS см. в разделе [Specify AWS Region](http://docs.aws.amazon.com/powershell/latest/userguide/pstools-installing-specifying-region.html) (Указание региона AWS) документации "AWS Tools for Windows PowerShell" (Инструменты AWS для Windows PowerShell).  
+    > * При работе с командами AWS в PowerShell, особенно в этом примере модуля Runbook, необходимо указывать регион AWS. В противном случае командлеты завершатся с ошибкой. Дополнительные сведения на сайте AWS см. в разделе [Specify AWS Region](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-installing-specifying-region.html) (Указание региона AWS) документации "AWS Tools for Windows PowerShell" (Инструменты AWS для Windows PowerShell).  
     >
 
 7. Чтобы получить список имен образов из подписки AWS, запустите PowerShell ISE и импортируйте модуль AWS PowerShell. Пройдите аутентификацию в AWS, заменив в среде ISE **Get-AutomationPSCredential** на **AWScred = Get-Credential**. После этого появится запрос на ввод учетных данных, и вы сможете указать **идентификатор ключа доступа** в качестве имени пользователя и **секретный ключ доступа** в качестве пароля. См. пример ниже.  
 
+        ```powershell
         #Sample to get the AWS VM available images
         #Please provide the path where you have downloaded the AWS PowerShell module
         Import-Module AWSPowerShell
@@ -78,7 +79,8 @@ ms.locfileid: "34193487"
         Set-DefaultAWSRegion -Region $AwsRegion
    
         Get-EC2ImageByName -ProfileName AWSProfile
-
+        ```
+        
     Возвращается следующий результат:<br><br>
    ![Получение образов AWS](./media/automation-scenario-aws-deployment/powershell-ise-output.png)<br>  
 8. Скопируйте и вставьте имя одного из образов в переменную службы автоматизации, которая в модуле Runbook указана как **$InstanceType**. Так как в этом примере используется подписка AWS уровня "Бесплатный", в примере модуля Runbook нужно использовать **t2.micro**.  

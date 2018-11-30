@@ -10,17 +10,19 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 09/06/2018
 ms.author: diberry
-ms.openlocfilehash: b4c58a13c8b66add8ebd7e535ecac9d7b0f1075b
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 1560b8e574b0932e258353648c73f030ef19d314
+ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47032127"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52333502"
 ---
 # <a name="batch-testing-with-a-set-of-example-utterances"></a>Пакетное тестирование с помощью набора примеров высказываний
+
  Пакетное тестирование представляет собой комплексный тест текущей обученной модели для оценки ее производительности в LUIS. 
 
 <a name="batch-testing"></a>
+
 ## <a name="import-a-dataset-file-for-batch-testing"></a>Импорт файла набора данных для пакетного тестирования
 
 1. В верхней строке нажмите кнопку **Test** (Тестировать), а затем щелкните ссылку **Batch testing panel** (Панель пакетного тестирования).
@@ -36,6 +38,7 @@ ms.locfileid: "47032127"
 4. Нажмите кнопку **Готово**. Будет добавлен файл набора данных.
 
 ## <a name="run-rename-export-or-delete-dataset"></a>Запуск, переименование, экспорт и удаление набора данных
+
 Чтобы запустить, переименовать, экспортировать или удалить набор данных, используйте кнопку с многоточием (***...*** ) в конце строки набора данных.
 
 ![Действия с набором данных](./media/luis-how-to-batch-test/batch-testing-options.png)
@@ -55,7 +58,9 @@ ms.locfileid: "47032127"
 |![Значок готовности к тестированию](./media/luis-how-to-batch-test/batch-test-result-blue.png)|Тест готов к запуску.|
 
 <a name="access-batch-test-result-details-in-a-visualized-view"></a>
+
 ## <a name="view-batch-test-results"></a>Просмотр результатов пакетного тестирования 
+
 Чтобы просмотреть результаты пакетного тестирования, щелкните **See results** (Просмотреть результаты).
 
 ![Результаты пакетного тестирования](./media/luis-how-to-batch-test/run-test-results.png)
@@ -64,6 +69,7 @@ ms.locfileid: "47032127"
 
 
 <a name="filter-chart-results-by-intent-or-entity"></a>  
+
 ## <a name="filter-chart-results"></a>Фильтрация результатов на диаграмме
 
 Чтобы отфильтровать диаграмму по определенному намерению или сущности, выберите намерение или сущность на панели фильтрации справа. Точки данных и их распределение на диаграмме обновляются в зависимости от выбора. 
@@ -71,6 +77,7 @@ ms.locfileid: "47032127"
 ![Визуализированный результат пакетного тестирования](./media/luis-how-to-batch-test/filter-by-entity.png) 
 
 ## <a name="view-single-point-utterance-data"></a>Просмотр данных высказывания для одной точки
+
 На диаграмме наведите указатель мыши на точку данных, чтобы увидеть оценку достоверности ее прогнозирования. Выберите точку данных для извлечения ее соответствующего высказывания из списка высказываний в нижней части страницы. 
 
 ![Выбранное высказывание](./media/luis-how-to-batch-test/selected-utterance.png)
@@ -78,7 +85,9 @@ ms.locfileid: "47032127"
 
 <a name="relabel-utterances-and-retrain"></a>
 <a name="false-test-results"></a>
+
 ## <a name="view-section-data"></a>Просмотр данных раздела
+
 В диаграмме из четырех частей выберите имя раздела, например **False Positive** (Ложноположительный результат), в правой верхней части диаграммы. Под диаграммой в списке отображаются все высказывания в указанном разделе. 
 
 ![Высказывания, выбранные по разделу](./media/luis-how-to-batch-test/selected-utterances-by-section.png)

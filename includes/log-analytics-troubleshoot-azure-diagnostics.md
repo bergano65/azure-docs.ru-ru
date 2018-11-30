@@ -1,3 +1,16 @@
+---
+author: mgoedtel
+ms.service: log-analytics
+ms.topic: include
+ms.date: 11/09/2018
+ms.author: magoedte
+ms.openlocfilehash: 44febf95c660601df78047fc473f61e0d3169890
+ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52272002"
+---
 ### <a name="troubleshoot-azure-diagnostics"></a>Устранение неполадок системы диагностики Azure
 
 Если появляется следующее сообщение об ошибке, это значит, что поставщик ресурсов Microsoft.insights не зарегистрирован:
