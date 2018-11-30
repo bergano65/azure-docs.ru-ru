@@ -10,12 +10,12 @@ ms.author: netahw
 author: nhaiby
 ms.date: 04/23/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: f5917cd7a5e4fcc2733765f642ad0958092372c1
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: ab9e04b8a9eb4290891b3c7d55f8262c4ba64d44
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51616220"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52584052"
 ---
 # <a name="build-and-deploy-image-classification-models-with-azure-machine-learning"></a>Построение и развертывание моделей классификации изображений с помощью Машинного обучения Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "51616220"
 7. Развертывание веб-службы.
 8. Нагрузочное тестирование веб-службы.
 
-[CNTK](https://www.microsoft.com/cognitive-toolkit/) используется как платформа глубокого обучения, которое выполняется локально на компьютере с графическим процессором, например [виртуальная машина для обработки и анализа данных для глубокого обучения](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.dsvm-deep-learning?tab=Overview), а в развертывании используется Operationalization CLI Машинного обучения Azure.
+[CNTK](https://docs.microsoft.com/cognitive-toolkit/) используется как платформа глубокого обучения, которое выполняется локально на компьютере с графическим процессором, например [виртуальная машина для обработки и анализа данных для глубокого обучения](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.dsvm-deep-learning?tab=Overview), а в развертывании используется Operationalization CLI Машинного обучения Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -175,7 +175,7 @@ display(annotation_ui.ui)
 
 ## <a name="augment-images"></a>Дополнение изображений
 
-Модуль [`augmentation`](https://docs.microsoft.com/python/api/cvtk.augmentation) предоставляет функциональные возможности для расширения объекта набора данных с использованием всех преобразований, описанных в библиотеке [imgaug](https://github.com/aleju/imgaug). Преобразования изображений могут быть сгруппированы в одном конвейере, и в этом случае все преобразования одновременно применяются к каждому изображению. 
+Модуль [`augmentation`](/python/api/cvtk/cvtk.augmentation.augmentation) предоставляет функциональные возможности для расширения объекта набора данных с использованием всех преобразований, описанных в библиотеке [imgaug](https://github.com/aleju/imgaug). Преобразования изображений могут быть сгруппированы в одном конвейере, и в этом случае все преобразования одновременно применяются к каждому изображению. 
 
 Если вы хотите применить различные шаги дополнения отдельно или любым другим способом, вы можете определить несколько конвейеров и передать их в функцию *augment_dataset*. Дополнительные сведения и примеры дополнения изображений см. в документации [imgaug](https://github.com/aleju/imgaug).
 

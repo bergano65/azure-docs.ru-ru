@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 09/18/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 245cbd86ae43560e4e41f4b97350f9a5857e1b25
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: d84596b586ea54dd4a64faf46b32226862d83198
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49956628"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52584627"
 ---
 # <a name="manage-pre-and-post-scripts-preview"></a>Управление сценариями предварительного и последующего выполнения (предварительная версия)
 
@@ -220,8 +220,6 @@ if ($summary.Type -eq "Error")
 ## <a name="known-issues"></a>Известные проблемы
 
 * Для сценариев предварительного и последующего выполнения нельзя передавать параметры, содержащие объекты или массивы. При такой попытке модуль Runbook возвратит ошибку.
-* В окне выбора сценария предварительного и последующего выполнения также отображаются неопубликованные модули Runbook. Выбирать следует только опубликованные модули Runbook, иначе вызов завершится сбоем.
-* Компьютеры, добавленные в развертывание с помощью [динамических групп (предварительная версия)](automation-update-management.md#using-dynamic-groups), пока не являются частью параметра **SoftwareUpdateConfigurationRunContext**, который передается в сценарии предварительного и последующего выполнения.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

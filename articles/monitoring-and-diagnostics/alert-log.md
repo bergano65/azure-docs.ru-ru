@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: f7122c6147af2ed1af1f3b5e08458fd73f9aef6d
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 6e6db7ef2f2de075aea41a29e69b2c674efafa17
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51279114"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52635362"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor  
 
@@ -132,7 +132,7 @@ ms.locfileid: "51279114"
 ### <a name="azure-resource-template-for-log-analytics"></a>Шаблон ресурсов Azure для Log Analytics
 Оповещения журнала для Log Analytics создаются правилами генерации оповещений, которые выполняют сохраненный поиск через равные промежутки времени. Если результаты запроса соответствуют указанным условиям, то создается запись оповещения и выполняются одно или несколько действий. 
 
-Шаблон ресурсов для сохраненного поиска Log Analytics и оповещений Log Analytics доступен в разделе документации по Log Analytics. Дополнительные сведения см. в статье [Добавление сохраненных поисковых запросов и оповещений Log Analytics в решение по управлению (предварительная версия)](../monitoring/monitoring-solutions-resources-searches-alerts.md), которая содержит демонстрационные примеры и сведения о схеме.
+Шаблон ресурсов для сохраненного поиска Log Analytics и оповещений Log Analytics доступен в разделе документации по Log Analytics. Дополнительные сведения см. в статье [Добавление сохраненных поисковых запросов и оповещений Log Analytics в решение по управлению (предварительная версия)](../azure-monitor/insights/solutions-resources-searches-alerts.md), которая содержит демонстрационные примеры и сведения о схеме.
 
 ### <a name="azure-resource-template-for-application-insights"></a>Шаблон ресурсов Azure для Application Insights
 Оповещение журнала для ресурсов Application Insights имеет тип `Microsoft.Insights/scheduledQueryRules/`. Дополнительные сведения о данном типе ресурса приведены в разделе [Scheduled Query Rules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) (Правила запланированных запросов).
@@ -223,7 +223,7 @@ ms.locfileid: "51279114"
 ### <a name="powershell-cli-or-api-for-log-analytics"></a>PowerShell, CLI или API для Log Analytics
 В службе Log Analytics используется REST API, поддерживающий RESTful. К нему можно получить доступ с помощью REST API Azure Resource Manager. Следовательно, к этому API можно обратиться из командной строки PowerShell, и он будет выдавать результаты поиска в формате JSON, позволяя программно использовать эти результаты различными способами.
 
-Ознакомьтесь с разделом [Создание правил генерации оповещений и управление ими в Log Analytics с помощью REST API](../log-analytics/log-analytics-api-alerts.md), включая примеры доступа к API из PowerShell.
+Ознакомьтесь с разделом [Создание правил генерации оповещений и управление ими в Log Analytics с помощью REST API](../azure-monitor/platform/api-alerts.md), включая примеры доступа к API из PowerShell.
 
 ### <a name="powershell-cli-or-api-for-application-insights"></a>PowerShell, CLI или API для Application Insights
 [Scheduled Query Rules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) (Правила запланированных запросов) — это интерфейс REST API, который полностью совместим с REST API Azure Resource Manager. Поэтому он может использоваться в PowerShell с помощью командлета Resource Manager, а также в Azure CLI.

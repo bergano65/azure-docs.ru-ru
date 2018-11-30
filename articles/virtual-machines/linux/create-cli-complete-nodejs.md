@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 02/09/2017
 ms.author: cynthn
-ms.openlocfilehash: 560d1c55b159ed817c0b080171862c28ebe73f3e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: d0a38defe41ea7c4e0da32cb73cf2bd73fd80950
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46952806"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52498209"
 ---
 # <a name="create-a-complete-linux-environment-with-the-azure-classic-cli"></a>Создание полной среды Linux с помощью Azure Classic CLI
 В этой статье мы создаем простую сеть с балансировщиком нагрузки и парой виртуальных машин, подходящих для разработки и простых вычислений. Мы поэтапно выполняем полное развертывание, от первой до последней команды, в результате чего создаем две защищенные рабочие виртуальные машины Linux, к которым можно подключиться откуда угодно через Интернет. Затем вы сможете работать с более сложными сетями и средами.

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 07/24/2017
 ms.author: adigan
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 32ce9cb456e302647e2e09db6ed549cd4795fed7
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: f9cdb11bad5d4aa94fdc083a0fc7dc6a2c5787cd
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37448396"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52635158"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Модель данных Log Analytics для данных Azure Backup
 Для создания отчетов используйте модель данных Log Analytics. С помощью модели данных можно создавать пользовательские запросы и панели мониторинга или настраивать как удобно данные Azure Backup.
@@ -235,7 +235,7 @@ ms.locfileid: "37448396"
 | ResourceProvider |текст |Поставщик ресурсов, для которого собираются данные. Например, Microsoft.RecoveryServices |
 | ResourceType |текст |Тип ресурса, для которого собираются данные. Например, "Хранилище" |
 
-### <a name="storage"></a>Служба хранилища
+### <a name="storage"></a>Хранилище
 Эта таблица содержит сведения о полях, связанных с хранилищем.
 
 | Поле | Тип данных | ОПИСАНИЕ |
@@ -281,4 +281,4 @@ ms.locfileid: "37448396"
 | ResourceType |текст |Тип ресурса, для которого собираются данные. Например, "Хранилище" |
 
 ## <a name="next-steps"></a>Дополнительная информация
-После просмотра модели данных для создания отчетов Azure Backup вы можете приступить к [созданию панели мониторинга](../log-analytics/log-analytics-dashboards.md) в Log Analytics.
+После просмотра модели данных для создания отчетов Azure Backup вы можете приступить к [созданию панели мониторинга](../azure-monitor/platform/dashboards.md) в Log Analytics.

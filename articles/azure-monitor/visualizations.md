@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/15/2018
 ms.author: bwren
-ms.openlocfilehash: 7a3545e3fdf37f33db4c3b77be6cf6d5db0f6aef
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 4200accee94840a8a4455308f24a857fd5d7034a
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46973581"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52632982"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Визуализация данных из Azure Monitor
-В этой статье приводится обзор доступных методов для визуализации данных, хранящихся в Azure Monitor. В число этих данных входят [метрики в хранилище метрик Azure](../monitoring/monitoring-data-collection.md#metrics) и [данные журналов в Log Analytics](../monitoring/monitoring-data-collection.md#logs). 
+В этой статье приводится обзор доступных методов для визуализации данных, хранящихся в Azure Monitor. В число этих данных входят [метрики в хранилище метрик Azure](../azure-monitor/platform/data-collection.md#metrics) и [данные журналов в Log Analytics](../azure-monitor/platform/data-collection.md#logs). 
 
 Визуализации, такие как диаграммы и графики, упрощают анализ отслеживаемых данных для детализации проблем и определения схем. В зависимости от используемого средства вы можете использовать визуализации совместно с пользователями в вашей организации и за ее пределами.
 
@@ -50,7 +50,7 @@ ms.locfileid: "46973581"
 - Ограниченная контекстная детализация.
 
 ## <a name="azure-monitor-views"></a>Представления Azure Monitor
-[Представления в Azure Monitor](../log-analytics/log-analytics-view-designer.md) позволяют создавать пользовательские визуализации на основе данных журналов, хранящихся в Log Analytics. Они используются в [решениях для мониторинга](../monitoring/monitoring-solutions.md) для представления собираемых данных.
+[Представления в Azure Monitor](../azure-monitor/platform/view-designer.md) позволяют создавать пользовательские визуализации на основе данных журналов, хранящихся в Log Analytics. Они используются в [решениях для мониторинга](../azure-monitor/insights/solutions.md) для представления собираемых данных.
 
 ![Просмотр](media/visualizations/view.png)
 
@@ -58,7 +58,7 @@ ms.locfileid: "46973581"
 - Широкие возможности визуализации данных Log Analytics.
 - Экспорт и импорт представлений для их передачи их в другие группы ресурсов и подписки.
 - Интеграция с моделью управления Log Analytics с рабочими областями и решениями для мониторинга.
-- [Фильтры](../log-analytics/log-analytics-view-designer-filters.md) для пользовательских параметров.
+- [Фильтры](../azure-monitor/platform/view-designer-filters.md) для пользовательских параметров.
 - Интерактивность, поддержка многоуровневой детализации (представление, которое переходит в другое представление).
 
 ### <a name="limitations"></a>Ограничения
@@ -138,9 +138,9 @@ ms.locfileid: "46973581"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-- Дополнительные сведения о [данных, собранных Azure Monitor](../monitoring/monitoring-data-collection.md).
+- Дополнительные сведения о [данных, собранных Azure Monitor](../azure-monitor/platform/data-collection.md).
 - Дополнительные сведения о [панелях мониторинга Azure](../azure-portal/azure-portal-dashboards.md).
-- Дополнительные сведения о [представлениях в Azure Monitor](../log-analytics/log-analytics-view-designer.md).
+- Дополнительные сведения о [представлениях в Azure Monitor](../azure-monitor/platform/view-designer.md).
 - Дополнительные сведения о [книгах в Application Insights](../application-insights/app-insights-usage-workbooks.md).
 - Дополнительные сведения об [импорте данных журналов в Power BI](../log-analytics/log-analytics-powerbi.md).
 - Дополнительные сведения о [подключаемом модуле источника данных Grafana для Azure Monitor](../monitoring-and-diagnostics/monitor-send-to-grafana.md).

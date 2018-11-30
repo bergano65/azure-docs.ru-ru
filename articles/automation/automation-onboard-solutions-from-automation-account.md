@@ -9,12 +9,12 @@ ms.date: 10/16/2018
 ms.topic: conceptual
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: b91c3dec1dda401fbacab39325b2c8980ec7254f
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 6ee89f3d57ded382b4d4519e4054448c144b10c5
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51625070"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52632699"
 ---
 # <a name="onboard-update-management-change-tracking-and-inventory-solutions"></a>Подключение решений для управления обновлениями, отслеживания изменений и инвентаризации
 
@@ -81,7 +81,7 @@ ms.locfileid: "51625070"
 
 Компьютеры, не зарегистрированные в Azure, необходимо добавлять вручную. В учетной записи службы автоматизации в разделе **Управление конфигурацией** выберите **Инвентаризация** или **Отслеживание изменений**, или же выберите **Управление обновлениями** в разделе **Управление обновлениями**.
 
-Щелкните **Добавить компьютер, не связанный с Azure**. Это действие откроет новое окно браузера с [инструкциями о том, как установить и настроить Microsoft Monitoring Agent на виртуальной машине](../log-analytics/log-analytics-agent-overview.md), чтобы она начала отправлять отчеты в решение. Для подключения виртуальной машины, управляемой с помощью System Center Operations Manager, новый агент не требуется. Сведения о рабочей области указываются в существующем агенте.
+Щелкните **Добавить компьютер, не связанный с Azure**. Это действие откроет новое окно браузера с [инструкциями о том, как установить и настроить Microsoft Monitoring Agent на виртуальной машине](../azure-monitor/platform/log-analytics-agent.md), чтобы она начала отправлять отчеты в решение. Для подключения виртуальной машины, управляемой с помощью System Center Operations Manager, новый агент не требуется. Сведения о рабочей области указываются в существующем агенте.
 
 ## <a name="onboard-machines-in-the-workspace"></a>Подключение компьютеров в рабочей области
 

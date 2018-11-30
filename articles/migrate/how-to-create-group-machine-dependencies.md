@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 09/21/2018
 ms.author: raynew
-ms.openlocfilehash: de093976a318b2658ff4009f4c5e314851f66b81
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 2755cc4e8e0e5a1b2a0e491b00fc73530dd9b958
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49403815"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52635685"
 ---
 # <a name="group-machines-using-machine-dependency-mapping"></a>Группирование компьютеров с помощью зависимостей
 
@@ -35,7 +35,7 @@ ms.locfileid: "49403815"
 > Изменить рабочую область, связанную с проектом миграции, невозможно.
 
 ### <a name="download-and-install-the-vm-agents"></a>Скачивание и установка агентов виртуальной машины
-Настроив рабочую область, необходимо скачать и установить агенты на каждом локальном компьютере, который нужно оценить. Кроме того, если у вас есть компьютеры без подключения к Интернету, на них необходимо скачать и установить [шлюз Log Analytics](../log-analytics/log-analytics-oms-gateway.md).
+Настроив рабочую область, необходимо скачать и установить агенты на каждом локальном компьютере, который нужно оценить. Кроме того, если у вас есть компьютеры без подключения к Интернету, на них необходимо скачать и установить [шлюз Log Analytics](../azure-monitor/platform/gateway.md).
 
 1. На странице **Обзор** выберите **Управление** > **Компьютеры** и выберите необходимый компьютер.
 2. В столбце **Зависимости** щелкните **Установить агенты**.
@@ -72,7 +72,7 @@ ms.locfileid: "49403815"
 
     ```sh InstallDependencyAgent-Linux64.bin```
 
-Узнайте больше о поддержке агента зависимостей для ОС [Windows](../monitoring/monitoring-service-map-configure.md#supported-windows-operating-systems) и [Linux](../monitoring/monitoring-service-map-configure.md#supported-linux-operating-systems).
+Узнайте больше о поддержке агента зависимостей для ОС [Windows](../azure-monitor/insights/service-map-configure.md#supported-windows-operating-systems) и [Linux](../azure-monitor/insights/service-map-configure.md#supported-linux-operating-systems).
 
 [Узнайте больше](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#installation-script-examples) о том, как установить агент зависимостей с помощью скриптов.
 

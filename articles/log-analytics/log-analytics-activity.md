@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: fab4bcb62d15be11ab0a588b7a58447f05b4466a
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 6e711b99fa197a2092a673c87124e49fcf3c293e
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51014675"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52635532"
 ---
 # <a name="collect-and-analyze-azure-activity-logs-in-log-analytics"></a>Сбор и анализ журналов действий Azure в Log Analytics
 
@@ -54,7 +54,7 @@ ms.locfileid: "51014675"
 
 | Подключенный источник | Поддерживаются | ОПИСАНИЕ |
 | --- | --- | --- |
-| [Агенты Windows](log-analytics-agent-windows.md) | Нет  | Решение не собирает сведения из агентов Windows. |
+| [Агенты Windows](../azure-monitor/platform/agent-windows.md) | Нет  | Решение не собирает сведения из агентов Windows. |
 | [Агенты Linux](log-analytics-quick-collect-linux-computer.md) | Нет  | Решение не собирает сведения из агентов Linux. |
 | [Группы управления SCOM](log-analytics-om-agents.md) | Нет  | Решение не собирает сведения из агентов в подключенной группе управления SCOM. |
 | [Учетная запись хранения Azure](log-analytics-azure-storage.md) | Нет  | Решение не собирает сведения из службы хранилища Azure. |
@@ -67,7 +67,7 @@ ms.locfileid: "51014675"
 
 Выполните следующие действия, чтобы настроить решение для анализа журналов действий в своих рабочих областях.
 
-1. Включите решение для анализа журналов действий из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureActivityOMS?tab=Overview) или выполните инструкции из статьи [Добавление решений для управления Azure Log Analytics в рабочую область](../monitoring/monitoring-solutions.md).
+1. Включите решение для анализа журналов действий из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureActivityOMS?tab=Overview) или выполните инструкции из статьи [Добавление решений для управления Azure Log Analytics в рабочую область](../azure-monitor/insights/solutions.md).
 2. Настройте журналы действий так, чтобы они поступали в вашу рабочую область Log Analytics.
     1. На портале Azure выберите рабочую область и нажмите **Журнал действий Azure**.
     2. Щелкните имя каждой подписки.  

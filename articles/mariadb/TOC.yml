@@ -24,6 +24,10 @@ items:
       href: tutorial-design-database-using-portal.md
     - name: Инфраструктура CLI Azure
       href: tutorial-design-database-cli.md
+- name: Примеры
+  items:
+  - name: Инфраструктура CLI Azure
+    href: sample-scripts-azure-cli.md
 - name: Основные понятия
   items:
   - name: Серверы и базы данных
@@ -120,6 +124,8 @@ items:
     items:
     - name: Портал Azure
       href: howto-manage-vnet-portal.md
+    - name: Инфраструктура CLI Azure
+      href: howto-manage-vnet-cli.md
 - name: Справочные материалы
   items:
   - name: REST API
@@ -144,9 +150,9 @@ items:
     href: https://azure.microsoft.com/regions/services/
   - name: Варианты поддержки
     href: https://azure.microsoft.com/support/options/
-ms.openlocfilehash: ed84d8f75bed2f5b49219fc740308b0c1c106adf
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: e9e6e9c8eba42e00a15fbb495cae0d0096da81a4
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52274523"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52581403"

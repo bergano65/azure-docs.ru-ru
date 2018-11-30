@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 09/25/2018
 ms.author: raynew
-ms.openlocfilehash: 2d2688799b1a0b4518b9c91bbc530936c834c5e3
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: d79513569b53d2b8958f44fbfac3839c91caaff8
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49407442"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52634308"
 ---
 # <a name="refine-a-group-using-group-dependency-mapping"></a>Уточнение группы с помощью сопоставления зависимостей группы
 
@@ -39,7 +39,7 @@ ms.locfileid: "49407442"
 > Изменить рабочую область, связанную с проектом миграции, невозможно.
 
 ### <a name="download-and-install-the-vm-agents"></a>Скачивание и установка агентов виртуальной машины
-Чтобы просмотреть зависимости группы, необходимо скачать и установить агенты на каждом локальном компьютере, который входит в эту группу. Кроме того, если у вас есть компьютеры без подключения к Интернету, на них необходимо скачать и установить [шлюз Log Analytics](../log-analytics/log-analytics-oms-gateway.md).
+Чтобы просмотреть зависимости группы, необходимо скачать и установить агенты на каждом локальном компьютере, который входит в эту группу. Кроме того, если у вас есть компьютеры без подключения к Интернету, на них необходимо скачать и установить [шлюз Log Analytics](../azure-monitor/platform/gateway.md).
 
 1. В области **Обзор** щелкните **Управление** > **Группы** и перейдите к необходимой группе.
 2. В списке компьютеров в столбце **Агент зависимостей** щелкните **Требует установки** для просмотра инструкций о том, как скачать и установить агенты.
@@ -71,7 +71,7 @@ ms.locfileid: "49407442"
 
     ```sh InstallDependencyAgent-Linux64.bin```
 
-Узнайте больше о поддержке агента зависимостей для ОС [Windows](../monitoring/monitoring-service-map-configure.md#supported-windows-operating-systems) и [Linux](../monitoring/monitoring-service-map-configure.md#supported-linux-operating-systems).
+Узнайте больше о поддержке агента зависимостей для ОС [Windows](../azure-monitor/insights/service-map-configure.md#supported-windows-operating-systems) и [Linux](../azure-monitor/insights/service-map-configure.md#supported-linux-operating-systems).
 
 ## <a name="refine-the-group-based-on-dependency-visualization"></a>Уточнение группы на основе визуализации зависимостей
 После установки агентов на всех компьютерах группы можно визуализировать зависимости группы и уточнить ее, выполнив приведенные ниже действия.

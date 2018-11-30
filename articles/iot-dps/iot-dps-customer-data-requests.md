@@ -7,12 +7,12 @@ ms.date: 05/16/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: d6355926c8fac62b01c36d28265842b1233ce213
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 5dd027c886e8102e77ddefe93817daee0e1ec29b
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38666949"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52584158"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
 
@@ -39,9 +39,9 @@ ms.locfileid: "38666949"
 
 Удалять регистрации и записи о них можно также с помощью REST API:
 
-* Чтобы удалить информацию о регистрации одного устройства, перейдите к [этой статье](https://docs.microsoft.com/rest/api/iot-dps/deviceenrollment/delete).
-* Чтобы удалить информацию о регистрации для группы устройств, перейдите к [этой статье](https://docs.microsoft.com/rest/api/iot-dps/deviceenrollmentgroup/delete).
-* Чтобы удалить сведения о подготовленных устройствах, перейдите к [этой статье](https://docs.microsoft.com/rest/api/iot-dps/registrationstate/deleteregistrationstate).
+* Чтобы удалить информацию о регистрации одного устройства, перейдите к [этой статье](/rest/api/iot-dps/deleteindividualenrollment/deleteindividualenrollment).
+* Чтобы удалить информацию о регистрации для группы устройств, перейдите к [этой статье](/rest/api/iot-dps/deleteenrollmentgroup/deleteenrollmentgroup).
+* Чтобы удалить сведения о подготовленных устройствах, перейдите к [этой статье](/rest/api/iot-dps/deletedeviceregistrationstate/deletedeviceregistrationstate).
 
 ## <a name="exporting-customer-data"></a>Экспорт данных клиента
 
@@ -53,9 +53,9 @@ ms.locfileid: "38666949"
 
 Экспортировать регистрации и записи о них можно также с помощью REST API:
 
-* Чтобы экспортировать информацию о регистрации одного устройства, перейдите к [этой статье](https://docs.microsoft.com/rest/api/iot-dps/deviceenrollment/get).
-* Чтобы экспортировать информацию о регистрации для группы устройств, перейдите к [этой статье](https://docs.microsoft.com/rest/api/iot-dps/deviceenrollmentgroup/get).
-* Чтобы экспортировать сведения об устройствах, которые уже были подготовлены, перейдите к [этой статье](https://docs.microsoft.com/rest/api/iot-dps/registrationstate/getregistrationstate).
+* Чтобы экспортировать информацию о регистрации одного устройства, перейдите к [этой статье](/rest/api/iot-dps/getindividualenrollment/getindividualenrollment).
+* Чтобы экспортировать информацию о регистрации для группы устройств, перейдите к [этой статье](/rest/api/iot-dps/getenrollmentgroup/getenrollmentgroup).
+* Чтобы экспортировать сведения об устройствах, которые уже были подготовлены, перейдите к [этой статье](/rest/api/iot-dps/getdeviceregistrationstate/getdeviceregistrationstate).
 
 > [!NOTE]
 > При использовании корпоративных служб корпорация Майкрософт создает некоторые данные, известные как создаваемые системой журналы. Создаваемые системой журналы службы подготовки устройств недоступны и не подлежат экспорту администраторами клиента. Эти журналы содержат сведения о фактических действиях, выполненных в службе, и диагностические данные, связанные с отдельными устройствами.

@@ -10,12 +10,12 @@ ms.component: bing-local-business
 ms.topic: article
 ms.date: 11/01/2018
 ms.author: rosh, v-gedod
-ms.openlocfilehash: 100d2a6163c6b2b7a7bf8a557e69e1082b48eaee
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.openlocfilehash: b985521fdcfc5ca67b6410719ad72c0962004df6
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50979222"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52499604"
 ---
 # <a name="bing-local-business-search-api-v7-reference"></a>Справочник по API Bing Local Business Search версии 7
 
@@ -267,7 +267,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search
 |InsufficientAuthorization|AuthorizationDisabled<br/>AuthorizationExpired|Bing возвращает InsufficientAuthorization, когда вызывающая сторона не имеет разрешений на доступ к ресурсу. Это может произойти, если ключ подписки отключен или срок его действия истек. <br/><br/>При ошибке InsufficientAuthorization возвращается код состояния HTTP 403.
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Quickstart: Send a query to the Bing Local Business Search API in C#](quickstarts/local-quickstart.md) (Краткое руководство. Отправить запрос в API Bing Local Business Search с помощью C#)
+- [Quickstart: Send a query to the Bing Local Business Search API in C#](quickstarts/local-quickstart.md) (Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#)
 - [Quickstart: Send a query to the Bing Local Business Search API using Java](quickstarts/local-search-java-quickstart.md) (Краткое руководство. Отправить запрос в API Bing Local Business Search с помощью Java)
-- [Quickstart: Send a query to the Bing Local Business Search API using Node.js](quickstarts/local-search-node-quickstart.md) (Краткое руководство. Отправить запрос в API Bing Local Business Search с помощью Node.js)
-- [Quickstart: Send a query to the Bing Local Business Search API in Python](quickstarts/local-search-python-quickstart.md) (Краткое руководство. Отправить запрос в API Bing Local Business Search с помощью Python)
+- [Краткое руководство. Использование Local Business Search с помощью Node](quickstarts/local-search-node-quickstart.md)
+- [Краткое руководство. Использование Local Business Search с помощью Python](quickstarts/local-search-python-quickstart.md)

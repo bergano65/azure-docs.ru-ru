@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: de464cfeca01e492139e8bf9679d8f9876eedda6
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: d291a46eaac0f5e4023d343f700448d029765098
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51625629"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52634886"
 ---
 # <a name="manage-workspaces"></a>Управление рабочими областями
 
@@ -52,7 +52,7 @@ ms.locfileid: "51625629"
 * Вы являетесь поставщиком управляемой службы, и вам необходимо хранить данные службы Log Analytics по каждому клиенту отдельно от данных других клиентов.
 * Вы управляете несколькими клиентами и хотите, чтобы каждый клиент, отдел или бизнес-группа видели только свои данные.
 
-При использовании агентов Windows для сбора данных [каждый агент можно настроить таким образом, чтобы он отправлял отчеты в одну или несколько рабочих областей](log-analytics-agent-windows.md).
+При использовании агентов Windows для сбора данных [каждый агент можно настроить таким образом, чтобы он отправлял отчеты в одну или несколько рабочих областей](../azure-monitor/platform/agent-windows.md).
 
 При использовании System Center Operations Manager, каждую группу управления Operations Manager можно подключить только к одной рабочей области. Microsoft Monitoring Agent можно установить на компьютеры под управлением Operations Manager и настроить его таким образом, чтобы он отправлял отчеты и в Operations Manager, и в другую рабочую область Log Analytics.
 
@@ -239,7 +239,7 @@ ms.locfileid: "51625629"
 ![Лента OMS](./media/log-analytics-manage-access/data-plan-changed.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Сведения о сборе данных с компьютеров в центре обработки данных или в другой облачной среде см в статье об [агенте Log Analytics](log-analytics-agent-overview.md).
+* Сведения о сборе данных с компьютеров в центре обработки данных или в другой облачной среде см в статье об [агенте Log Analytics](../azure-monitor/platform/log-analytics-agent.md).
 * Сведения о настройке сбора данных на виртуальных машинах Azure см. в [этой статье](log-analytics-quick-collect-azurevm.md).  
-* [добавьте решения Log Analytics из коллекции решений](../monitoring/monitoring-solutions.md) .
+* [добавьте решения Log Analytics из коллекции решений](../azure-monitor/insights/solutions.md) .
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: a4d62dd0bc984ce80324b405ddd0dcb625694b21
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: 8aabcf342cde6de9fd4438014c9c400b28470e9b
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51612579"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52632676"
 ---
 # <a name="extend-log-analytics-alerts-to-azure-alerts"></a>Расширение оповещений Log Analytics в оповещения Azure
 До недавнего времени в Azure Log Analytics были функции, которые позволяли заблаговременно уведомлять о некоторых условиях на основе данных Log Analytics. Ранее правила генерации оповещений задавались на портале Microsoft Operations Management Suite. Новые возможности оповещений теперь интегрированы в различные службы Microsoft Azure. Они доступны в разделе **Оповещения** в Azure Monitor на портале Azure и позволяют реализовать оповещения на основе журнала действий, метрик и журналов Log Analytics и Application Insights. 
@@ -55,7 +55,7 @@ ms.locfileid: "51612579"
 > Убедитесь, что индивидуальным пользователям, которым необходимо добавлять или редактировать оповещения, должным образом присвоены разрешения в Azure. Чтобы понять, какие разрешения необходимо предоставить, см. раздел [Разрешения для использования оповещений и Azure Monitor](monitoring-roles-permissions-security.md).  
 > 
 
-Можно продолжить создание оповещений в [Log Analytics API](../log-analytics/log-analytics-api-alerts.md) и в [Шаблоне ресурсов Log Analytics](../monitoring/monitoring-solutions-resources-searches-alerts.md). При этом необходимо включить группы действий.
+Можно продолжить создание оповещений в [Log Analytics API](../azure-monitor/platform/api-alerts.md) и в [Шаблоне ресурсов Log Analytics](../azure-monitor/insights/solutions-resources-searches-alerts.md). При этом необходимо включить группы действий.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

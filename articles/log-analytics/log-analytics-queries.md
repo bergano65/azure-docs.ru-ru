@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: bwren
 ms.component: ''
-ms.openlocfilehash: 0a8a1ab41972aa2ae184b900c2dab94ec58f3e7c
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: 4aeb14bd7962205b89e1207e082f551999f54558
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51612760"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52634529"
 ---
 # <a name="analyze-log-analytics-data-in-azure-monitor"></a>Анализ данных Log Analytics в Azure Monitor
 
@@ -42,8 +42,8 @@ ms.locfileid: "51612760"
 
 - **Порталы.** На [портале Azure](log-analytics-log-search-portals.md) можно выполнять интерактивный анализ данных журнала.  Так вы можете изменить запрос и анализировать результаты в различных форматах и визуализациях.  
 - **Правила генерации оповещений.** [Правила генерации оповещений](../monitoring-and-diagnostics/monitoring-overview-alerts.md) заранее выявляют проблемы с данными в рабочей области.  Каждое правило генерации оповещений основано на поиске по журналам, который автоматически выполняется через определенные интервалы.  Результаты проверяются, чтобы определить, следует ли создавать оповещение.
-- **Панели мониторинга.** Результаты любого запроса можно закрепить на [панели мониторинга Azure](), что даст вам возможность визуализировать данные журналов и метрик вместе и при необходимости использовать совместно с другими пользователями Azure. 
-- **Представления.**  Вы можете создавать визуализации данных, которые добавлены на панели мониторинга пользователя, с помощью [конструктора представлений](log-analytics-view-designer.md).  Запросы к журналам предоставляют данные, используемые [плитками](log-analytics-view-designer-tiles.md) и [элементами визуализации](log-analytics-view-designer-parts.md) в каждом просмотре.  
+- **Панели мониторинга.** Результаты любого запроса можно закрепить на [панели мониторинга Azure](../azure-monitor/platform/dashboards.md), что даст вам возможность визуализировать данные журналов и метрик вместе и при необходимости использовать совместно с другими пользователями Azure. 
+- **Представления.**  Вы можете создавать визуализации данных, которые добавлены на панели мониторинга пользователя, с помощью [конструктора представлений](../azure-monitor/platform/view-designer.md).  Запросы к журналам предоставляют данные, используемые [плитками](../azure-monitor/platform/view-designer-tiles.md) и [элементами визуализации](../azure-monitor/platform/view-designer-parts.md) в каждом просмотре.  
 - **Экспорт.**  Когда вы экспортируете данные из рабочей области Log Analytics в Excel или [Power BI](log-analytics-powerbi.md), вы создаете запрос к журналам для определения экспортируемых данных.
 - **PowerShell.** Вы можете запустить скрипт PowerShell из командной строки или модуль Runbook службы автоматизации Azure, использующий командлет [Get-AzureRmOperationalInsightsSearchResults](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/get-azurermoperationalinsightssearchresults?view=azurermps-4.0.0), для получения данных из Log Analytics.  Для этого командлета требуется запрос, чтобы определить извлекаемые данные.
 - **API Log Analytics.**  [API поиска по журналам службы Log Analytics](../monitoring-and-diagnostics/monitoring-overview-alerts.md) позволяет любому клиенту REST API извлекать данные из рабочей области.  Запрос API включает запрос, который выполняется в Log Analytics, чтобы определить извлекаемые данные.
@@ -111,4 +111,4 @@ union Update, workspace("contoso-workspace").Update
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте о [порталах, которые можно использовать для создания и изменения поисков по журналам](log-analytics-log-search-portals.md).
-- Изучите [руководство по написанию запросов](log-analytics-tutorial-viewdata.md) на новом языке.
+- Изучите [руководство по написанию запросов](query-language/get-started-queries.md) на новом языке.

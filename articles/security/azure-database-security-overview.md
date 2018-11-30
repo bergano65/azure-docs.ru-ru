@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/30/2018
 ms.author: TomSh
-ms.openlocfilehash: 7ead955be3835f4ce3e602fe27a06c00d014195c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 984c74c44cb5149e0c4af83ea8ca4d88e67877ae
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51262205"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52584780"
 ---
 # <a name="azure-database-security-overview"></a>Общие сведения о защите базы данных Azure
 
@@ -199,7 +199,7 @@ Always Encrypted разделяет пользователей на владел
 - Доступ из потенциально опасного приложения. 
 - Подбор учетных данных Базы данных Azure для PostgreSQL. 
 
-[Расширенная защита от угроз Azure для Базы данных Azure для MySQL](/mysql/concepts-data-access-and-security-threat-protection.md) обеспечивает защиту, аналогичную Расширенную защиту для PostgreSQL.  
+[Расширенная защита от угроз Azure для Базы данных Azure для MySQL](../mysql/concepts-data-access-and-security-threat-protection.md) обеспечивает защиту, аналогичную Расширенную защиту для PostgreSQL.  
 
 ## <a name="centralized-security-management"></a>Централизованное управление защитой
 
@@ -220,7 +220,7 @@ Always Encrypted разделяет пользователей на владел
 
 Кроме того, эта служба вычисляет результирующий набор конфиденциальности запросов SQL, чтобы запросы, которые извлекают конфиденциальные данные, можно было проверить явным образом и обеспечить защиту данных. Дополнительные сведения о политике SQL Information Protection см. в разделе "Обнаружение и классификация данных в службе "База данных SQL Azure"".
 
-В центре безопасности Azure можно настроить [политики SQL Information Protection](/security-center/security-center-info-protection-policy.md).
+В центре безопасности Azure можно настроить [политики SQL Information Protection](../security-center/security-center-info-protection-policy.md).
 
 ## <a name="azure-marketplace"></a>Azure Marketplace
 

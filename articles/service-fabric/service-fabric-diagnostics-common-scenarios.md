@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/16/2018
 ms.author: srrengar
-ms.openlocfilehash: 35d1fa5f8963d007b1d8b59ccf0f1dec7abafa09
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 146ea6431516f7b78d23cd4b36aff43110639e83
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49402240"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52633101"
 ---
 # <a name="diagnose-common-scenarios-with-service-fabric"></a>Диагностика распространенных сценариев с помощью Service Fabric
 
@@ -142,6 +142,6 @@ ms.locfileid: "49402240"
 * [Настройте оповещения в Application Insights](../application-insights/app-insights-alerts.md), чтобы узнавать об изменениях в производительности или характере использования.
 * [Интеллектуальное обнаружение в Application Insights](../application-insights/app-insights-proactive-diagnostics.md) осуществляет упреждающий анализ данных телеметрии, отправляемых в Application Insights, и предупреждает о потенциальных проблемах с производительностью.
 * Подробнее об [оповещениях](../log-analytics/log-analytics-alerts.md) Log Analytics, которые помогут в обнаружении и диагностике.
-* Для локальных кластеров Log Analytics предлагает шлюз (прокси-сервер переадресации HTTP), который можно использовать для отправки данных в Log Analytics. Дополнительные сведения см. в разделе [Подключение компьютеров к Log Analytics с помощью шлюза Log Analytics без доступа к Интернету](../log-analytics/log-analytics-oms-gateway.md).
+* Для локальных кластеров Log Analytics предлагает шлюз (прокси-сервер переадресации HTTP), который можно использовать для отправки данных в Log Analytics. Дополнительные сведения см. в разделе [Подключение компьютеров к Log Analytics с помощью шлюза Log Analytics без доступа к Интернету](../azure-monitor/platform/gateway.md).
 * Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../log-analytics/log-analytics-log-searches.md), которые являются частью решения Log Analytics.
 * Более подробные сведения о службе Log Analytics и ее возможностях см. в статье [Что такое Operations Management Suite (OMS)?](../operations-management-suite/operations-management-suite-overview.md)

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/10/2017
 ms.author: juliako
-ms.openlocfilehash: 89d1838eb9fed1751581b026d82b06bc20de4ecc
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: aa9386182f521119012ea59fe6b64fb31099169e
+ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33783273"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52620274"
 ---
 # <a name="managing-media-services-assets-across-multiple-storage-accounts"></a>Управление активами служб мультимедиа в нескольких учетных записях хранения
 Начиная с версии 2.2 служб мультимедиа Microsoft Azure, можно подключать несколько учетных записей хранения к одной учетной записи служб мультимедиа. Возможность подключить несколько учетных записей хранения к учетной записи служб мультимедиа дает несколько преимуществ:
@@ -26,7 +26,7 @@ ms.locfileid: "33783273"
 * балансирование нагрузки ваших ресурсов-контейнеров между несколькими учетными записями хранения;
 * масштабирование служб мультимедиа для больших объемов обработки содержимого (сейчас действует ограничение в 500 ТБ на одну учетную запись хранения). 
 
-В этой статье показано, как подключить несколько учетных записей хранения к учетной записи служб мультимедиа с помощью [интерфейсов API Azure Resource Manager](https://docs.microsoft.com/rest/api/media/mediaservice) и [Powershell](/powershell/module/azurerm.media). Здесь также описывается, как указывать другие учетные записи хранения при создании файлов с помощью пакета SDK служб мультимедиа. 
+В этой статье показано, как подключить несколько учетных записей хранения к учетной записи служб мультимедиа с помощью [интерфейсов API Azure Resource Manager](/rest/api/media/operations/azure-media-services-rest-api-reference) и [Powershell](/powershell/module/azurerm.media). Здесь также описывается, как указывать другие учетные записи хранения при создании файлов с помощью пакета SDK служб мультимедиа. 
 
 ## <a name="considerations"></a>Рекомендации
 При подключении нескольких учетных записей хранения к своей учетной записи служб мультимедиа обратите внимание на следующее.
@@ -42,7 +42,7 @@ ms.locfileid: "33783273"
 
 ## <a name="to-attach-storage-accounts"></a>Присоединение учетных записей хранения  
 
-Чтобы присоединить учетные записи хранения к учетной записи AMS, используйте [интерфейсы API Azure Resource Manager](https://docs.microsoft.com/rest/api/media/mediaservice) и [Powershell](/powershell/module/azurerm.media), как показано в следующем примере.
+Чтобы присоединить учетные записи хранения к учетной записи AMS, используйте [интерфейсы API Azure Resource Manager](/rest/api/media/operations/azure-media-services-rest-api-reference) и [Powershell](/powershell/module/azurerm.media), как показано в следующем примере.
 
     $regionName = "West US"
     $subscriptionId = " xxxxxxxx-xxxx-xxxx-xxxx- xxxxxxxxxxxx "

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 09/20/2017
 ms.author: vturecek
-ms.openlocfilehash: ddd78e2fad401add35bc246a64236e2679c33cbc
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
+ms.openlocfilehash: b8abf7a0dc85d20e9075b51b8d42a068cf56846f
+ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44023551"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52620529"
 ---
 # <a name="service-remoting-in-c-with-reliable-services"></a>Удаленное взаимодействие в Reliable Services с помощью C#
 
@@ -98,7 +98,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 
 ### <a name="service-proxy-factory-lifetime"></a>Время существования фабрики прокси-сервера службы
 
-[ServiceProxyFactory](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.services.remoting.client.serviceproxyfactory) — это фабрика, которая создает экземпляры прокси-сервера для различных интерфейсов удаленного взаимодействия. Если для создания прокси-сервера вы используете API `ServiceProxy.Create`, платформа создает отдельный прокси-сервер службы.
+[ServiceProxyFactory](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.services.remoting.client.serviceproxyfactory) — это фабрика, которая создает экземпляры прокси-сервера для различных интерфейсов удаленного взаимодействия. Если для создания прокси-сервера вы используете API `ServiceProxyFactory.CreateServiceProxy`, платформа создает отдельный прокси-сервер службы.
 При необходимости переопределить свойства [IServiceRemotingClientFactory](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.services.remoting.v1.client.iserviceremotingclientfactory) имеет смысл создать фабрику вручную.
 Создание фабрики — ресурсоемкая операция. Фабрика прокси службы поддерживает внутренний кэш для клиента обмена данными.
 Мы рекомендуем кэшировать фабрику прокси-сервера службы на максимально возможный период времени.
