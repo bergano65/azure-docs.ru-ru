@@ -72,7 +72,7 @@ items:
     items:
     - name: Использование DVR в облаке
       href: live-event-cloud-dvr.md
-    - name: Сравнение типов
+    - name: Сравнение возможностей
       href: live-event-types-comparison.md
     - name: Состояния и выставление счетов
       href: live-event-states-billing.md
@@ -94,7 +94,7 @@ items:
       href: job-input-from-local-file-how-to.md
   - name: Создание фильтров
     items:
-    - name: С помощью .NET
+    - name: Использование .NET
       href: filters-dynamic-manifest-dotnet-howto.md
     - name: С помощью REST
       href: filters-dynamic-manifest-rest-howto.md
@@ -182,9 +182,9 @@ items:
     href: limits-quotas-constraints.md
   - name: Часто задаваемые вопросы
     href: frequently-asked-questions.md
-ms.openlocfilehash: 499be85399b338ba12a4904cc06be4ffd9bdc06c
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: adde15ac255a6d6d918bd0caa12b8ffe47762a09
+ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "52633033"
+ms.locfileid: "52678463"
