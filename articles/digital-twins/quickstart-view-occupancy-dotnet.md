@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 11/7/2018
 ms.author: alinast
-ms.openlocfilehash: 590a7aa875f5f8c40576d69d7e73bdfc31fffbf8
-ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
+ms.openlocfilehash: e11ae90655e1d4ce7a2475f0eacefb25491416da
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51636260"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52582400"
 ---
 # <a name="quickstart-find-available-rooms-by-using-azure-digital-twins"></a>Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins
 
@@ -134,7 +134,7 @@ https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 
 | ИМЯ | Заменить на |
 | --- | --- |
-| YOUR_INSTANCE_NAME | Имя вашего экземпляра Digital Twins |
+| YOUR_INSTANCE_NAME | Имя экземпляра Digital Twins |
 | YOUR_LOCATION | Регион сервера, в котором размещен ваш экземпляр |
 
 Дополнительные сведения об [API управления службы Digital Twins](https://docs.westcentralus.azuresmartspaces.net/management/swagger).
@@ -150,6 +150,10 @@ https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 
 1. Удалите папку, созданную при загрузке примера репозитория.
 1. В меню слева на [портале Azure](http://portal.azure.com) щелкните **Все ресурсы**. Выберите свой ресурс Digital Twins. В верхней части области **Все ресурсы** выберите **Удалить**.
+   
+    > [!TIP]
+    > Если при удалении экземпляра Digital Twins у вас возникла проблема, запустите обновление службы, в котором эта проблема исправлена. Затем повторите попытку удалить свой экземпляр.
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 

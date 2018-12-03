@@ -10,12 +10,12 @@ ms.component: bing-video-search
 ms.topic: quickstart
 ms.date: 01/29/2018
 ms.author: rosh
-ms.openlocfilehash: 6cf7a16fa28602e5e3733741db8bfb7296882487
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: bf8eece4b5afe34635d80a57cc12c26a8ed157d6
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47219946"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52314138"
 ---
 # <a name="quickstart-bing-video-search-sdk-with-c"></a>Краткое руководство: пакет SDK для поиска видео Bing с использованием C# 
 
@@ -24,6 +24,7 @@ ms.locfileid: "47219946"
 [Исходный код примеров для пакета SDK для API "Поиск видео Bing" для C#](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/BingSearchv7/BingVideoSearch) доступен на сайте GitHub.
 
 ## <a name="application-dependencies"></a>Зависимости приложения
+Получите [ключ доступа Cognitive Services](https://azure.microsoft.com/try/cognitive-services/) с помощью **поиска**.  См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
 Чтобы настроить консольное приложение с помощью пакета SDK для API "Поиск видео Bing", в обозревателе решений Visual Studio перейдите к параметру `Manage NuGet Packages`.  Добавьте пакет `Microsoft.Azure.CognitiveServices.Search.VideoSearch`.
 

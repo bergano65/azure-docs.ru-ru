@@ -10,16 +10,16 @@ ms.component: bing-video-search
 ms.topic: quickstart
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: abeeec95755a566216ac65b2edf5c831a8ab93b6
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 5b1ac98ee9ad5625d8db9790a3be10d42236874b
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47225520"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52307463"
 ---
 # <a name="quickstart-your-first-video-search-query"></a>Краткое руководство: ваш первый запрос для поиска видео
 
-Прежде чем выполнить первый вызов, необходимо получить ключ подписки Cognitive Services для Поиска Bing. Сведения о получении ключа см. в на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-video-search-api).
+Получите [ключ доступа Cognitive Services](https://azure.microsoft.com/try/cognitive-services/) с помощью **поиска**.  См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
 Для получения результатов поиска видео необходимо отправить запрос GET к следующей конечной точке:  
   

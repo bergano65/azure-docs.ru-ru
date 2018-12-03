@@ -8,30 +8,30 @@ ms.topic: get-started-article
 ms.date: 09/19/2017
 ms.author: renash
 ms.component: files
-ms.openlocfilehash: ec952aa26d7bc6b185b425700080a4f474564b76
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 83829264f16fb295a1f5fa4f2efc74d8b35ec6eb
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46955815"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52309197"
 ---
 # <a name="create-a-file-share-in-azure-files"></a>Создание общей папки в службе файлов Azure
-Вы можете создавать общие папки Azure с помощью [портала Azure](https://portal.azure.com/), командлетов PowerShell службы хранилища Azure, клиентских библиотек службы хранилища Azure и интерфейса REST API службы хранилища Azure. Из этого руководства вы узнаете:
+Создавать общие папки Azure можно с помощью  [портала Azure](https://portal.azure.com/), командлетов PowerShell службы хранилища Azure, клиентских библиотек службы хранилища Azure и REST API службы хранилища Azure. Из этого руководства вы узнаете:
 * [как создать общую папку Azure с помощью портала Azure](#create-file-share-through-the-azure-portal);
 * [как создать общую папку Azure с помощью PowerShell](#create-file-share-through-powershell);
-* [как создать общую папку Azure с помощью CLI](#create-file-share-through-command-line-interface-cli).
+* [Создание файлового ресурса Azure с помощью CLI](#create-file-share-through-command-line-interface-cli)
 
 ## <a name="prerequisites"></a>Предварительные требования
-Чтобы создать общую папку в Azure, вы можете использовать существующую учетную запись хранения Azure или [создать новую](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json). Чтобы создать общую папку в Azure с помощью PowerShell, вам потребуется ключ учетной записи и имя учетной записи хранения. Если вы планируете использовать PowerShell или интерфейс командной строки, вам потребуется ключ учетной записи хранения.
+Чтобы создать общую папку в Azure, вы можете использовать существующую учетную запись хранения Azure или [создать новую](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json). Чтобы создать общую папку в Azure с помощью PowerShell, вам потребуется ключ учетной записи и имя учетной записи хранения. Если вы планируете использовать PowerShell или CLI, вам потребуется ключ учетной записи хранения.
 
-## <a name="create-file-share-through-the-azure-portal"></a>Создание общей папки с помощью портала Azure
+## <a name="create-a-file-share-through-the-azure-portal"></a>Создание файлового ресурса с помощью портала Azure
 1. **Перейдите в колонку учетной записи хранения на портале Azure**:    
     ![Колонка учетной записи хранения](./media/storage-how-to-create-file-share/create-file-share-portal1.png)
 
 2. **Нажмите кнопку "Общая папка"**:    
     ![Кнопка "Общая папка"](./media/storage-how-to-create-file-share/create-file-share-portal2.png)
 
-3. **Укажите имя и квоту. Сейчас квота ограничена 5 ТБ**:    
+3. **Укажите имя и квоту. Текущее максимальное значение квоты — 5 Тиб**:    
     ![Указание имени и необходимой квоты для новой общей папки](./media/storage-how-to-create-file-share/create-file-share-portal3.png)
 
 4. **Просмотрите новую общую папку**: ![просмотр новой общей папки](./media/storage-how-to-create-file-share/create-file-share-portal4.png)
@@ -42,12 +42,12 @@ ms.locfileid: "46955815"
 
 
 ## <a name="create-file-share-through-powershell"></a>Создание общей папки с помощью PowerShell
-Для подготовки к использованию PowerShell загрузите и установите командлеты Azure PowerShell. Инструкции по установке см. в статье [Установка и настройка Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/).
+Для подготовки к использованию PowerShell загрузите и установите командлеты Azure PowerShell. См.  [инструкции по установке и настройке Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/) .
 
 > [!Note]  
 > Рекомендуется загрузить и установить или обновить версию модуля Azure PowerShell.
 
-1. **Создайте контекст для учетной записи хранения и ключ**. Контекст инкапсулирует имя и ключ учетной записи хранения. Инструкции по копированию ключа учетной записи с [портала Azure](https://portal.azure.com/) см. в разделе [Ключи доступа](../common/storage-account-manage.md#access-keys).
+1. **Создайте контекст для учетной записи хранения и ключ**. Контекст инкапсулирует имя и ключ учетной записи хранения. См. инструкции по  [копированию ключа доступа учетной записи](../common/storage-account-manage.md#access-keys) с  [портала Azure](https://portal.azure.com/).
 
     ```powershell
     $storageContext = New-AzureStorageContext <storage-account-name> <storage-account-key>
@@ -60,14 +60,14 @@ ms.locfileid: "46955815"
     ```
 
 > [!Note]  
-> Имя общей папки должно состоять из символов в нижнем регистре. Дополнительные сведения о присвоении имен общим папкам и файлам см. в статье [Naming and Referencing Shares, Directories, Files, and Metadata](https://msdn.microsoft.com/library/azure/dn167011.aspx) (Именование общих ресурсов, каталогов, файлов и метаданных и ссылка на них).
+> Имя общей папки должно состоять из символов в нижнем регистре. См. дополнительные сведения о  [присвоении имен общим ресурсам, каталогам, файлам и метаданным и создание ссылок на них](https://msdn.microsoft.com/library/azure/dn167011.aspx).
 
 ## <a name="create-file-share-through-command-line-interface-cli"></a>Создание общей папки с помощью интерфейса командной строки (CLI)
-1. **Чтобы подготовиться к использованию интерфейса командной строки (CLI), загрузите и установите Azure CLI.**  
-    Дополнительные сведения см. в руководстве по [установке Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli), а также в руководстве по [началу работы с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli).
+1. **Чтобы подготовиться к использованию интерфейса командной строки (CLI), скачайте и установите Azure CLI.**  
+    См. дополнительные сведения об  [установке Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) и [использовании Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli).
 
 2. **Создайте строку подключения для учетной записи хранения, где нужно создать общую папку.**  
-    В примере ниже замените значения ```<storage-account>``` и ```<resource_group>``` именем учетной записи хранения и именем группы ресурса:
+    В примере ниже замените значения  ```<storage-account>```  и  ```<resource_group>```  именем учетной записи хранения и именем группы ресурса:
 
    ```azurecli
     current_env_conn_string = $(az storage account show-connection-string -n <storage-account> -g <resource-group> --query 'connectionString' -o tsv)
@@ -77,7 +77,7 @@ ms.locfileid: "46955815"
     fi
     ```
 
-3. **Создайте общую папку**.
+3. **Создание файлового ресурса**
     ```azurecli
     az storage share create --name files --quota 2048 --connection-string $current_env_conn_string 1 > /dev/null
     ```

@@ -9,16 +9,16 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 05/07/2018
-ms.openlocfilehash: 529dc37187f6709ecfa93bf3a6d71f053ba49103
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: d83c04946b67dd25bae306c2fa41a0864287bfc8
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51008969"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52499307"
 ---
-# <a name="tutorial-create-a-scala-maven-application-for-spark-in-hdinsight-using-intellij"></a>Руководство. Создание приложения Scala Maven для Spark в HDInsight с помощью IntelliJ
+# <a name="tutorial-create-a-scala-maven-application-for-apache-spark-in-hdinsight-using-intellij"></a>Руководство. Создание приложения Scala Maven для Apache Spark в HDInsight с помощью IntelliJ
 
-Из этого руководства вы узнаете, как создать приложение Spark на языке Scala в Maven с помощью IntelliJ IDEA. В качестве системы сборки в этой статье используется Apache Maven и изначально применяется существующий архетип Maven для Scala, который обеспечивает IntelliJ IDEA.  Создание приложения Scala в IntelliJ IDEA включает в себя следующие этапы:
+Из этого руководства вы узнаете, как создать приложение [Apache Spark](https://spark.apache.org/) на языке [Scala](https://www.scala-lang.org/) в [Apache Maven](https://maven.apache.org/) с помощью IntelliJ IDEA. В качестве системы сборки в этой статье используется Apache Maven и изначально применяется существующий архетип Maven для Scala, который обеспечивает IntelliJ IDEA.  Создание приложения Scala в IntelliJ IDEA включает в себя следующие этапы:
 
 * использование Maven в качестве системы сборки;
 * обновление файла объектной модели проектов для разрешения зависимостей модуля Spark;
@@ -27,7 +27,7 @@ ms.locfileid: "51008969"
 * запуск приложений с помощью Livy в кластере Spark.
 
 > [!NOTE]
-> HDInsight также предоставляет подключаемый модуль IntelliJ IDEA для упрощения процесса создания и отправки приложений в кластер HDInsight Spark на платформе Linux. Дополнительные сведения см. в статье [Создание приложений Spark для кластера HDInsight Spark на платформе Linux с помощью средств HDInsight в наборе средств Azure для IntelliJ](apache-spark-intellij-tool-plugin.md).
+> HDInsight также предоставляет подключаемый модуль IntelliJ IDEA для упрощения процесса создания и отправки приложений в кластер HDInsight Spark на платформе Linux. Дополнительные сведения см. в статье [Создание приложений Apache Spark для кластера HDInsight с помощью набора средств Azure для IntelliJ](apache-spark-intellij-tool-plugin.md).
 > 
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
@@ -183,16 +183,16 @@ ms.locfileid: "51008969"
        
         ![Создание JAR-файла](./media/apache-spark-create-standalone-application/output.png)
 
-## <a name="run-the-application-on-the-spark-cluster"></a>Запуск приложения в кластере Spark
+## <a name="run-the-application-on-the-apache-spark-cluster"></a>Запуск приложения в кластере Apache Spark
 Чтобы запустить приложение в кластере, можно использовать следующие методы:
 
-* **Скопируйте приложение JAR в большой двоичный объект службы хранилища Azure**, связанный с кластером. Вы можете использовать для этого служебную программу командной строки [**AzCopy**](../../storage/common/storage-use-azcopy.md). Кроме того, для отправки данных можно использовать множество других клиентов. Дополнительные сведения о них см. в статье [Отправка данных для заданий Hadoop в HDInsight](../hdinsight-upload-data.md).
-* **Используйте Livy для удаленной отправки задания приложения** для кластера Spark. В кластерах HDInsight Spark есть сервер Livy, который использует конечные точки REST для удаленной отправки заданий Spark. Дополнительные сведения см. в статье [Удаленная отправка заданий Spark в кластер Apache Spark в HDInsight на платформе Linux с помощью Livy](apache-spark-livy-rest-interface.md).
+* **Скопируйте приложение JAR в большой двоичный объект службы хранилища Azure**, связанный с кластером. Вы можете использовать для этого служебную программу командной строки [**AzCopy**](../../storage/common/storage-use-azcopy.md). Кроме того, для отправки данных можно использовать множество других клиентов. Дополнительные сведения о них см. в статье [Отправка данных для заданий Apache Hadoop в HDInsight](../hdinsight-upload-data.md).
+* **Используйте Apache Livy для удаленной отправки задания приложения** в кластер Spark. В кластерах HDInsight Spark есть сервер Livy, который использует конечные точки REST для удаленной отправки заданий Spark. Дополнительные сведения см. в статье об [удаленной отправке заданий Apache Spark с помощью Apache Livy и кластеров Spark в HDInsight ](apache-spark-livy-rest-interface.md).
 
 ## <a name="next-step"></a>Дальнейшие действия
 
-В этой статье вы узнали, как создать приложение Spark Scala. Из следующей статьи вы узнаете, как запустить это приложение на кластере HDInsight Spark, используя Livy.
+Из этой статьи вы узнали, как создать приложение Apache Spark на языке Scala. Из следующей статьи вы узнаете, как запустить это приложение на кластере HDInsight Spark, используя Livy.
 
 > [!div class="nextstepaction"]
->[Удаленный запуск заданий с помощью Livy в кластере Spark](./apache-spark-livy-rest-interface.md)
+>[Удаленный запуск заданий с помощью Apache Livy в кластере Apache Spark](./apache-spark-livy-rest-interface.md)
 

@@ -2,21 +2,21 @@
 title: Запуск параллельной рабочей нагрузки с помощью пакетной службы Azure для .NET
 description: Руководство. Перекодировка медиафайлов параллельно с ffmpeg в пакетной службе с помощью клиентской библиотеки пакетной службы для .NET
 services: batch
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 ms.assetid: ''
 ms.service: batch
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 09/07/2018
-ms.author: danlep
+ms.date: 11/20/2018
+ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 02b715ade9a9a537f6bd0e476ada299140bff4bb
-ms.sourcegitcommit: 6f59cdc679924e7bfa53c25f820d33be242cea28
+ms.openlocfilehash: 7e654e070ce64b0f5e7f9fb5734bf0ec1584dbf6
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48815517"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52423615"
 ---
 # <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-net-api"></a>Руководство. Запуск параллельной рабочей нагрузки с помощью пакета Azure с использованием .NET API
 
@@ -41,7 +41,7 @@ ms.locfileid: "48815517"
 
 * учетная запись пакетной службы и связанная учетная запись службы хранилища Azure. Чтобы создать эти учетные записи, см. примеры быстрого начала работы с пакетной службой с помощью [портала Azure](quick-create-portal.md) или [Azure CLI](quick-create-cli.md).
 
-* [64-разрядная версия ffmpeg 3.4 для Windows](https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-3.4-win64-static.zip) (.zip). Загрузите ZIP-файл на локальный компьютер. Для этого руководства вам нужен только ZIP-файл. Вам не нужно распаковывать или локально устанавливать файл. 
+* [64-разрядная версия ffmpeg 3.4 для Windows](https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-3.4-win64-static.zip) (.zip). Загрузите ZIP-файл на локальный компьютер. Для этого руководства вам нужен только ZIP-файл. Вам не нужно распаковывать или локально устанавливать файл.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -71,7 +71,7 @@ git clone https://github.com/Azure-Samples/batch-dotnet-ffmpeg-tutorial.git
 
 Перейдите в каталог, в котором содержится файл решения Visual Studio `BatchDotNetFfmpegTutorial.sln`.
 
-Откройте файл решения в Visual Studio и замените строки учетных данных в `program.cs` значениями, полученными для своих учетных записей. Например: 
+Откройте файл решения в Visual Studio и замените строки учетных данных в `Program.cs` значениями, полученными для своих учетных записей. Например: 
 
 ```csharp
 // Batch account credentials
@@ -104,7 +104,7 @@ const string appPackageVersion = "3.4";
 Затем запустите его. Когда вы запустите пример приложения, консоль будет выглядеть так. Во время выполнения может возникнуть пауза на этапе `Monitoring all tasks for 'Completed' state, timeout in 00:30:00...`, когда будут запускаться вычислительные узлы пула. 
 
 ```
-Sample start: 12/12/2017 3:20:21 PM
+Sample start: 11/19/2018 3:20:21 PM
 
 Container [input] created.
 Container [output] created.
@@ -120,17 +120,15 @@ Monitoring all tasks for 'Completed' state, timeout in 00:30:00...
 Success! All tasks completed successfully within the specified timeout period.
 Deleting container [input]...
 
-Sample end: 12/12/2017 3:29:36 PM
+Sample end: 11/19/2018 3:29:36 PM
 Elapsed time: 00:09:14.3418742
 ```
-
 
 Перейдите в учетную запись пакетной службы на портале Azure, чтобы отследить пул, вычислительные узлы, задания и задачи. Например, чтобы увидеть тепловую карту вычислительных узлов в вашем пуле, выберите **Пулы** > *WinFFmpegPool*.
 
 Во время выполнения задач тепловая карта выглядит следующим образом:
 
 ![Тепловая карта пула](./media/tutorial-parallel-dotnet/pool.png)
-
 
 Обычное время выполнения — примерно **10 минут**, если для приложения задана конфигурация по умолчанию. Для создания пула потребуется больше всего времени.
 
@@ -155,7 +153,7 @@ CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageConnection
 CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 ```
 
-Приложение создает объект [BatchClient](/dotnet/api/microsoft.azure.batch.batchclient) для создания пулов, заданий и задач в пакетной службе, а также для управления ими. В примере клиент пакетной службы использует проверку подлинности с общим ключом. Пакетная служба Azure также поддерживает проверку подлинности отдельных пользователей или приложений с помощью [Azure Active Directory](batch-aad-auth.md).
+Приложение создает объект [BatchClient](/dotnet/api/microsoft.azure.batch.batchclient) для создания пулов, заданий и задач в пакетной службе, а также для управления ими. В примере клиент пакетной службы использует проверку подлинности с общим ключом. Пакетная служба Azure также поддерживает аутентификацию отдельных пользователей или автоматических приложений с помощью [Azure Active Directory](batch-aad-auth.md).
 
 ```csharp
 BatchSharedKeyCredentials sharedKeyCredentials = new BatchSharedKeyCredentials(BatchAccountUrl, BatchAccountName, BatchAccountKey);
@@ -178,7 +176,7 @@ CreateContainerIfNotExistAsync(blobClient, outputContainerName);
 При загрузке файлов задействованы два метода из `Program.cs`.
 
 * `UploadResourceFilesToContainerAsync`. Возвращает коллекцию объектов ResourceFile и выполняет внутренний вызов `UploadResourceFileToContainerAsync`, чтобы отправить каждый файл, переданный в параметре `inputFilePaths`.
-* `UploadResourceFileToContainerAsync`. Загружает каждый файл в качестве большого двоичного объекта в контейнер входных данных. После отправки файла метод получает подписанный URL-адрес (SAS) для большого двоичного объекта и возвращает объект ResourceFile, который его представляет. 
+* `UploadResourceFileToContainerAsync`. Загружает каждый файл в качестве большого двоичного объекта в контейнер входных данных. После отправки файла метод получает подписанный URL-адрес (SAS) для большого двоичного объекта и возвращает объект ResourceFile, который его представляет.
 
 ```csharp
 string inputPath = Path.Combine(Environment.CurrentDirectory, "InputFiles");
@@ -198,9 +196,9 @@ List<ResourceFile> inputFiles = await UploadResourceFilesToContainerAsync(
 
 Затем в учетной записи пакетной службы создается пул вычислительных узлов с помощью вызова `CreatePoolIfNotExistAsync`. С помощью метода [BatchClient.PoolOperations.CreatePool](/dotnet/api/microsoft.azure.batch.pooloperations.createpool) можно настроить количество узлов, размер виртуальной машины и конфигурацию пула. Объект [VirtualMachineConfiguration](/dotnet/api/microsoft.azure.batch.virtualmachineconfiguration) указывает [ImageReference](/dotnet/api/microsoft.azure.batch.imagereference) в образе Windows Server, опубликованном в Azure Marketplace. Пакетная служба Azure поддерживает широкий спектр образов виртуальной машины в Azure Marketplace, а также пользовательских образов виртуальной машины.
 
-Количество узлов и размер виртуальной машины настраиваются с помощью определенных констант. Пакетная служба Azure поддерживает выделенные узлы и узлы [с низким приоритетом](batch-low-pri-vms.md). Вы можете использовать их в своих пулах. Выделенные узлы зарезервированы для пула. Низкоприоритетные узлы предлагаются по сниженной цене с учетом избыточных ресурсов виртуальной машины в Azure. Эти узлы становятся недоступны, если в Azure недостаточно ресурсов. Пример по умолчанию создает пул, содержащий только 5 низкоприоритетных узлов размером *Standard_A1_v2*. 
+Количество узлов и размер виртуальной машины настраиваются с помощью определенных констант. Пакетная служба Azure поддерживает выделенные узлы и узлы [с низким приоритетом](batch-low-pri-vms.md). Вы можете использовать их в своих пулах. Выделенные узлы зарезервированы для пула. Низкоприоритетные узлы предлагаются по сниженной цене с учетом избыточных ресурсов виртуальной машины в Azure. Эти узлы становятся недоступны, если в Azure недостаточно ресурсов. Пример по умолчанию создает пул, содержащий только 5 низкоприоритетных узлов размером *Standard_A1_v2*.
 
-Приложение ffmpeg развертывается на вычислительных узлах, добавляя [ApplicationPackageReference](/dotnet/api/microsoft.azure.batch.applicationpackagereference) к конфигурации пула. 
+Приложение ffmpeg развертывается на вычислительных узлах, добавляя [ApplicationPackageReference](/dotnet/api/microsoft.azure.batch.applicationpackagereference) к конфигурации пула.
 
 Метод [CommitAsync](/dotnet/api/microsoft.azure.batch.cloudpool.commitasync) отправляет пул в пакетную службу.
 
@@ -208,7 +206,7 @@ List<ResourceFile> inputFiles = await UploadResourceFilesToContainerAsync(
 ImageReference imageReference = new ImageReference(
     publisher: "MicrosoftWindowsServer",
     offer: "WindowsServer",
-    sku: "2012-R2-Datacenter-smalldisk",
+    sku: "2016-Datacenter-smalldisk",
     version: "latest");
 
 VirtualMachineConfiguration virtualMachineConfiguration =
@@ -220,7 +218,7 @@ pool = batchClient.PoolOperations.CreatePool(
     poolId: poolId,
     targetDedicatedComputeNodes: DedicatedNodeCount,
     targetLowPriorityComputeNodes: LowPriorityNodeCount,
-    virtualMachineSize: PoolVMSize,                                                
+    virtualMachineSize: PoolVMSize,
     virtualMachineConfiguration: virtualMachineConfiguration);
 
 pool.ApplicationPackageReferences = new List<ApplicationPackageReference>
@@ -234,7 +232,7 @@ await pool.CommitAsync();
 
 ### <a name="create-a-job"></a>создать задание;
 
-Пакетное задание указывает пул для запуска задач и дополнительные параметры, такие как приоритет и расписание работы. Пример создает задание путем вызова `CreateJobAsync`. С помощью метода [BatchClient.JobOperations.CreateJob](/dotnet/api/microsoft.azure.batch.joboperations.createjob) можно создать задание в пуле. 
+Пакетное задание указывает пул для запуска задач и дополнительные параметры, такие как приоритет и расписание работы. Пример создает задание путем вызова `CreateJobAsync`. С помощью метода [BatchClient.JobOperations.CreateJob](/dotnet/api/microsoft.azure.batch.joboperations.createjob) можно создать задание в пуле.
 
 Метод [CommitAsync](/dotnet/api/microsoft.azure.batch.cloudjob.commitasync) отправляет задание в пакетную службу. Изначально у задания нет задач.
 
@@ -252,7 +250,7 @@ await job.CommitAsync();
 
 В примере создается объект [OutputFile](/dotnet/api/microsoft.azure.batch.outputfile) для файла MP3 после запуска командной строки. Выходные файлы каждой задачи (в этом случае один) передаются в контейнер в связанной учетной записи с помощью свойства задачи [OutputFiles](/dotnet/api/microsoft.azure.batch.cloudtask.outputfiles).
 
-Затем в примере к заданию добавляются задачи с помощью метода [AddTaskAsync](/dotnet/api/microsoft.azure.batch.joboperations.addtaskasync), который ставит их в очередь для запуска на вычислительных узлах. 
+Затем в примере к заданию добавляются задачи с помощью метода [AddTaskAsync](/dotnet/api/microsoft.azure.batch.joboperations.addtaskasync), который ставит их в очередь для запуска на вычислительных узлах.
 
 ```csharp
 for (int i = 0; i < inputFiles.Count; i++)
@@ -289,7 +287,7 @@ return tasks
 
 ### <a name="monitor-tasks"></a>Мониторинг задач
 
-Когда пакетная служба добавляет задачи к заданию, служба автоматически ставит в очередь и назначает их для выполнения на вычислительных узлах в связанном пуле. Пакетная служба обрабатывает постановку задач в очередь, их планирование, повтор и другие задачи администрирования с учетом указанных параметров. 
+Когда пакетная служба добавляет задачи к заданию, служба автоматически ставит в очередь и назначает их для выполнения на вычислительных узлах в связанном пуле. Пакетная служба обрабатывает постановку задач в очередь, их планирование, повтор и другие задачи администрирования с учетом указанных параметров.
 
 Есть несколько подходов к отслеживанию выполнения задач. Этот пример определяет метод `MonitorTasks` для отчета о завершении и состоянии задачи (успешного выполнения или сбоя). Код `MonitorTasks` указывает [ODATADetailLevel](/dotnet/api/microsoft.azure.batch.odatadetaillevel), чтобы эффективно выбирать только минимум сведений о задачах. Затем он создает [TaskStateMonitor ](/dotnet/api/microsoft.azure.batch.taskstatemonitor), который предоставляет вспомогательные утилиты для мониторинга состояний задач. В `MonitorTasks` пример ждет, пока все задачи не перейдут в состояние `TaskState.Completed` в течение определенного времени. Затем он завершает работу задания и сообщает о любых выполненных задачах. Однако он может обнаружить сбой, например с ненулевым кодом выхода.
 

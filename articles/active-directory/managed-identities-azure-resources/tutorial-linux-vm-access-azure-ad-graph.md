@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 08/20/2018
 ms.author: daveba
-ms.openlocfilehash: 57e719c6ef75b08d8c188d2d2d344867bbf590b1
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: b58bfc5345e06f82b2550ea2a1a53443946f2096
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51623107"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52427461"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-ad-graph-api"></a>Руководство. Использование назначаемого системой управляемого удостоверения на виртуальной машине Linux для доступа к API Graph AAD
 
-[!INCLUDE[preview-notice](~/includes/active-directory-msi-preview-notice.md)]
+[!INCLUDE [preview-notice](~/includes/active-directory-msi-preview-notice.md)]
 
 В этом руководстве описано, как получить доступ к API Graph AAD с помощью назначенного системой управляемого удостоверения на виртуальной машине Linux для получения сведений о членстве в группах. Управляемыми удостоверениями для ресурсов Azure автоматически управляет Azure. Они позволяют проходить проверку подлинности в службах, поддерживающих аутентификацию Azure Active Directory, без указания учетных данных в коде.  
 
@@ -135,7 +135,7 @@ Azure AD Graph:
 
 1. На портале перейдите на виртуальную машину Linux и в разделе **Обзор** щелкните **Подключиться**.  
 2. **Подключитесь** к виртуальной машине с помощью выбранного клиента SSH. 
-3. В окне терминала выполните запрос к управляемым удостоверениям для локальной конечной точки ресурсов Azure с помощью CURL, чтобы получить маркер доступа к API Graph в AAD.  
+3. В окне терминала выполните запрос к управляемым удостоверениям для локальной конечной точки ресурсов Azure с помощью cURL, чтобы получить маркер доступа к API Graph в AAD.  
     
    ```bash
    curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://graph.windows.net' -H Metadata:true

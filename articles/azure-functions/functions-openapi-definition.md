@@ -8,18 +8,19 @@ manager: jeconnoc
 ms.assetid: ''
 ms.service: azure-functions
 ms.topic: tutorial
-ms.date: 12/15/2017
+ms.date: 11/26/2018
 ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: 62c04e5893eaefcc5eb7272eb9a99cf932086205
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: 2d50e4c2352444d29bdb090bc9a2a7947ecc6a50
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50086874"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52496036"
 ---
 # <a name="create-an-openapi-definition-for-a-function"></a>Создание определения OpenAPI функции
+
 Интерфейсы REST API часто описываются с помощью определения OpenAPI (ранее известное как файл [Swagger](http://swagger.io/)). Это определение содержит сведения о доступных операция в API и о том, как необходимо структурировать данные запросов и ответов для API.
 
 В этом руководстве вы создадите функцию, определяющую экономичность аварийного ремонта ветроэлектрической установки. Затем создадите определение OpenAPI для приложения-функции, чтобы иметь возможность вызвать функцию из приложений и служб.
@@ -33,7 +34,7 @@ ms.locfileid: "50086874"
 > * проверять определения путем вызова функции.
 
 > [!IMPORTANT]
-> Предварительная версия OpenAPI доступна сейчас только в среде выполнения версии 1.x. Сведения о том, как создать приложение-функцию 1.x, см. [здесь](./functions-versions.md#creating-1x-apps).
+> Сейчас функция OpenAPI предоставляется в предварительной версии и доступна только для версии 1.x среды выполнения Функций Azure.
 
 ## <a name="create-a-function-app"></a>Создание приложения-функции
 
@@ -41,6 +42,11 @@ ms.locfileid: "50086874"
 
 [!INCLUDE [Create function app Azure portal](../../includes/functions-create-function-app-portal.md)]
 
+## <a name="set-the-functions-runtime-version"></a>Указание версии среды выполнения Функций
+
+По умолчанию созданное приложение-функция использует среду выполнения версии 2.x. Но перед созданием функции нужно указать для среды выполнения версию 1.x.
+
+[!INCLUDE [Set the runtime version in the portal](../../includes/functions-view-update-version-portal.md)]
 
 ## <a name="create-the-function"></a>Создание функции
 
@@ -50,34 +56,27 @@ ms.locfileid: "50086874"
 
     ![Страница быстрого начала работы с функциями на портале Azure](media/functions-openapi-definition/add-first-function.png)
 
-2. В поле поиска введите `http` и выберите **C#** для шаблона триггера HTTP. 
- 
+1. В поле поиска введите `http` и выберите **C#** для шаблона триггера HTTP. 
+
     ![Выбор триггера HTTP](./media/functions-openapi-definition/select-http-trigger-portal.png)
 
-3. Введите `TurbineRepair` для **имени** функции, выберите `Function` в качестве **[уровня аутентификации](functions-bindings-http-webhook.md#http-auth)**, а затем нажмите кнопку **Создать**.  
+1. Введите `TurbineRepair` для **имени** функции, выберите `Function` в качестве **[уровня аутентификации](functions-bindings-http-webhook.md#http-auth)**, а затем нажмите кнопку **Создать**.  
 
     ![Создание функции, активируемой HTTP](./media/functions-openapi-definition/select-http-trigger-portal-2.png)
 
 1. Замените содержимое файла run.csx следующим кодом и нажмите кнопку **Сохранить**:
 
     ```csharp
-    #r "Newtonsoft.Json"
-
     using System.Net;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Extensions.Logging;
-    using Microsoft.Extensions.Primitives;
-    using Newtonsoft.Json;
 
-    const double revenuePerkW = 0.12; 
-    const double technicianCost = 250; 
+    const double revenuePerkW = 0.12;
+    const double technicianCost = 250;
     const double turbineCost = 100;
 
-    public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
-    {   
+    public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
+    {
         //Get request body
-        string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-        dynamic data = JsonConvert.DeserializeObject(requestBody);
+        dynamic data = await req.Content.ReadAsAsync<object>();
         int hours = data.hours;
         int capacity = data.capacity;
 
@@ -93,13 +92,14 @@ ms.locfileid: "50086874"
             repairTurbine = "No";
         }
 
-        return (ActionResult) new OkObjectResult(new{
+        return req.CreateResponse(HttpStatusCode.OK, new{
             message = repairTurbine,
             revenueOpportunity = "$"+ revenueOpportunity,
-            costToFix = "$"+ costToFix         
-        }); 
+            costToFix = "$"+ costToFix
+        });
     }
     ```
+
     Этот код функции возвращает сообщение `Yes` или `No`, чтобы указать, является ли аварийный ремонт экономично выгодным, а также возможности получения дохода, которые предоставляет турбина, и стоимость ремонта турбины. 
 
 1. Чтобы проверить функцию, щелкните **Тест** в правой области сверху. После этого откроется вкладка "Тест". В разделе **Текст запроса** введите указанное ниже значение, а затем нажмите кнопку **Запуск**.
@@ -132,7 +132,7 @@ ms.locfileid: "50086874"
     1. Для параметра **Выбранные методы HTTP** снимите все флажки (кроме **POST**) и щелкните **Сохранить**.
 
         ![Выбранные методы HTTP](media/functions-openapi-definition/selected-http-methods.png)
-        
+
 1. Щелкните имя приложения-функции (например, **function-demo-energy**) > **Функции платформы** > **Определение API**.
 
     ![определения API](media/functions-openapi-definition/api-definition.png)
@@ -185,6 +185,7 @@ ms.locfileid: "50086874"
     Определение описывается как _шаблон_, так как требуются дополнительные метаданные, чтобы превратить его в полное определение OpenAPI. Вы измените его на следующем шаге.
 
 ## <a name="modify-the-openapi-definition"></a>Изменение определения OpenAPI
+
 Теперь, когда у вас есть определение шаблона, измените его, чтобы предоставить дополнительные метаданные об операциях API и структурах данных. В области **Определение API** полностью удалите созданное определение из `post`, вставьте содержимое ниже и щелкните **Сохранить**.
 
 ```yaml
@@ -249,15 +250,15 @@ securityDefinitions:
 
 В этом случае можно просто вставить отправленные метаданные, но необходимо знать типы изменений, внесенных в шаблон по умолчанию:
 
-+ API создает и потребляет данные в формате JSON.
+* API создает и потребляет данные в формате JSON.
 
-+ Указаны необходимые параметры с именами и типами данных.
+* Указаны необходимые параметры с именами и типами данных.
 
-+ Указаны возвращаемые значения успешного ответа с именами и типами данных.
+* Указаны возвращаемые значения успешного ответа с именами и типами данных.
 
-+ Предоставлены понятные сводки и описания интерфейса API, а также его операций и параметров. Это важно для пользователей функции.
+* Предоставлены понятные сводки и описания интерфейса API, а также его операций и параметров. Это важно для пользователей функции.
 
-+ Добавлены расширения x-ms-summary и x-ms-visibility, использующиеся в пользовательском интерфейсе Microsoft Flow и Logic Apps. Дополнительные сведения см. в статье [Расширения OpenAPI для настраиваемых соединителей в Microsoft Flow](https://preview.flow.microsoft.com/documentation/customapi-how-to-swagger/).
+* Добавлены расширения x-ms-summary и x-ms-visibility, использующиеся в пользовательском интерфейсе Microsoft Flow и Logic Apps. Дополнительные сведения см. в статье [Расширения OpenAPI для настраиваемых соединителей в Microsoft Flow](https://preview.flow.microsoft.com/documentation/customapi-how-to-swagger/).
 
 > [!NOTE]
 > Для определения безопасности мы использовали метод проверки подлинности ключа API по умолчанию. Вы можете изменить раздел определения, если использовали разные типы аутентификации.
@@ -265,6 +266,7 @@ securityDefinitions:
 Дополнительные сведения об определении операций API см. в статье о [спецификации Open API](https://swagger.io/specification/#operationObject).
 
 ## <a name="test-the-openapi-definition"></a>Проверка определения OpenAPI
+
 Прежде чем использовать определение API, рекомендуется проверить его в пользовательском интерфейсе Функции Azure.
 
 1. На вкладке **Управление** вашей функции в разделе **Host Keys** (Ключи узла) скопируйте **стандартный** ключ.
@@ -305,5 +307,6 @@ securityDefinitions:
 > * проверять определения путем вызова функции.
 
 Перейти к следующему руководству, чтобы научиться создавать приложение PowerApps, в котором используется созданное вами определение OpenAPI.
+
 > [!div class="nextstepaction"]
 > [Вызов функции из PowerApps](functions-powerapps-scenario.md)

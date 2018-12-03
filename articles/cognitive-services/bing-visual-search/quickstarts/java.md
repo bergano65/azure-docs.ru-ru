@@ -10,12 +10,12 @@ ms.component: bing-visual-search
 ms.topic: quickstart
 ms.date: 5/16/2018
 ms.author: scottwhi
-ms.openlocfilehash: f54914b846c6a001a9fb10d938a038e390abf6bf
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: c1b63b12a48f5ccfb1a396ffa9282249b03893fe
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50416449"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52445180"
 ---
 # <a name="quickstart-your-first-bing-visual-search-query-in-java"></a>Краткое руководство: первый запрос для API визуального поиска Bing на Java
 
@@ -36,10 +36,17 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 
 
 ## <a name="prerequisites"></a>Предварительные требования
+Для выполнения действий, описанных в этом кратком руководстве, нужно создать подписку в ценовой категории S9, как указано на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/). 
+
+Чтобы создать подписку на портале Azure:
+1. Введите запрос BingSearchV7 в строке поиска с текстом `Search resources, services, and docs` в верхней части страницы на портале Azure.  
+2. В меню Marketplace в раскрывающемся списке выберите `Bing Search v7`.
+3. В поле `Name` (Имя) введите имя нового ресурса.
+4. Выберите подписку `Pay-As-You-Go` (Оплата по мере использования).
+5. Выберите ценовую категорию `S9`.
+6. Щелкните `Enable` (Активировать), чтобы создать подписку.
 
 Для компиляции и запуска этого кода вам потребуется [пакет JDK 7 или 8](https://aka.ms/azure-jdks). При желании можно воспользоваться интегрированной средой разработки Java, но и обычного текстового редактора будет достаточно.
-
-В рамках этого краткого руководства можно использовать ключ [бесплатной пробной](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api) подписки или ключ платной подписки.
 
 ## <a name="running-the-application"></a>Запуск приложения
 

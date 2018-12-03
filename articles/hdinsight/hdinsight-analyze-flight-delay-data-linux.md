@@ -9,16 +9,16 @@ ms.topic: tutorial
 ms.date: 05/07/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive,mvc
-ms.openlocfilehash: ac56475f39f820c2d2af961a1813859ec42b0a46
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: fa84d5a09eab56dc01a6e841323ca11d12886582
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51038457"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52495510"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-apache-hive-on-azure-hdinsight"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight
 
-В этом руководстве вы извлечете CSV-файл с необработанными данными, импортируете их в хранилище кластера HDInsight, а затем преобразуете данные с помощью Apache Hive в Azure HDInsight. После преобразования вы загрузите эти данные в базу данных SQL Azure с использованием Apache Sqoop. В этой статье используются общедоступные данные о рейсах.
+В этом руководстве объясняется, как извлечь CSV-файл с необработанными данными, импортировать их в хранилище кластера HDInsight, а затем преобразовать данные с помощью [Apache Hive](https://hive.apache.org/) в Azure HDInsight. После преобразования вы загрузите эти данные в базу данных SQL Azure с использованием [Apache Sqoop](http://sqoop.apache.org/). В этой статье используются общедоступные данные о рейсах.
 
 > [!IMPORTANT]
 > Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с Azure HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
@@ -41,13 +41,13 @@ ms.locfileid: "51038457"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Кластер Hadoop в HDInsight на платформе Linux**. Пошаговые инструкции по созданию кластера HDInsight под управлением Linux см. в статье [Руководство по Hadoop. Приступая к работе с Hadoop в HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md).
+* **Кластер Hadoop в HDInsight на платформе Linux**. Пошаговые инструкции по созданию кластера HDInsight под управлением Linux см. в статье [Краткое руководство по началу работы с Apache Hadoop и Apache Hive в Azure HDInsight с помощью шаблона Resource Manager](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
 * **База данных SQL Azure**. Вы используете базу данных SQL Azure в качестве конечного хранилища данных. Если у вас нет базы данных SQL, см. сведения в статье [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started.md).
 
 * **Azure CLI**. Если вы еще не установили Azure CLI, обратитесь к статье [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-* **Клиент SSH**. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
+* **Клиент SSH**. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 ## <a name="download-the-flight-data"></a>Скачивание данных о рейсах
 
@@ -102,7 +102,7 @@ ms.locfileid: "51038457"
 
 ## <a name="transform-data-using-a-hive-query"></a>Преобразование данных с помощью запроса Hive
 
-Существует множество способов запуска задания Hive в кластере HDInsight. В этом разделе используется клиент Beeline. Сведения о других методах выполнения задания Hive см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](./hadoop/hdinsight-use-hive.md).
+Существует множество способов запуска задания Hive в кластере HDInsight. В этом разделе для выполнения задания используется клиент [Beeline](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-Beeline%E2%80%93CommandLineShell). Сведения о других методах выполнения задания Hive см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](./hadoop/hdinsight-use-hive.md).
 
 В рамках задания Hive вы импортируете данные из CSV-файла в таблицу Hive с именем **Delays**.
 
@@ -269,7 +269,7 @@ ms.locfileid: "51038457"
 
 5. Enter `exit` at the `1>` , чтобы выйти из служебной программы tsql.
 
-## <a name="export-data-to-sql-database-using-sqoop"></a>Экспорт данных в базу данных SQL с помощью Sqoop
+## <a name="export-data-to-sql-database-using-apache-sqoop"></a>Экспорт данных в базу данных SQL с помощью Apache Sqoop
 
 В предыдущих разделах вы скопировали преобразованные данные в папку `/tutorials/flightdelays/output`. В этом разделе вы с помощью Sqoop экспортируете данные из папки /tutorials/flightdelays/output в созданную в базе данных SQL Azure таблицу. 
 
@@ -311,17 +311,17 @@ ms.locfileid: "51038457"
 В этом руководстве вы узнали, как выполнить извлечение, преобразование и загрузку данных с помощью кластера Apache Hadoop в HDInsight. Ознакомьтесь со следующим руководством, чтобы научиться создавать кластеры Hadoop в HDInsight по запросу с помощью фабрики данных Azure.
 
 > [!div class="nextstepaction"]
->[Создание кластеров Hadoop в HDInsight по запросу с помощью фабрики данных Azure](hdinsight-hadoop-create-linux-clusters-adf.md)
+>[Создание кластеров Apache Hadoop в HDInsight по запросу с помощью Фабрики данных Azure](hdinsight-hadoop-create-linux-clusters-adf.md)
 
 Чтобы узнать дополнительные возможности работы с данными в HDInsight, ознакомьтесь со следующими статьями:
 
 * [Руководство. Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight](../storage/data-lake-storage/tutorial-extract-transform-load-hive.md)
-* [Использование Hive с HDInsight][hdinsight-use-hive]
-* [Использование Pig с HDInsight][hdinsight-use-pig]
-* [Разработка программ MapReduce на Java для Hadoop в HDInsight][hdinsight-develop-mapreduce]
+* [Использование Apache Hive с HDInsight][hdinsight-use-hive]
+* [Использование Apache Pig с HDInsight][hdinsight-use-pig]
+* [Разработка программ MapReduce на Java для Apache Hadoop в HDInsight][hdinsight-develop-mapreduce]
 * [Разработка программ MapReduce с потоковой передачей Python для HDInsight][hdinsight-develop-streaming]
-* [Использование Oozie с HDInsight][hdinsight-use-oozie]
-* [Использование Sqoop с Hadoop в HDInsight][hdinsight-use-sqoop]
+* [Использование Apache Oozie с HDInsight][hdinsight-use-oozie]
+* [Использование Apache Sqoop с HDInsight][hdinsight-use-sqoop]
 
 
 

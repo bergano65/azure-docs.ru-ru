@@ -10,12 +10,12 @@ ms.component: bing-visual-search
 ms.topic: quickstart
 ms.date: 5/16/2018
 ms.author: scottwhi
-ms.openlocfilehash: 16d3d0ddf77e37e32cc50961a3870b820ac2748e
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: 3a0d92e42eed097e244118a60ec0a4223c9cedf5
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48884247"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52440947"
 ---
 # <a name="quickstart-your-first-bing-visual-search-query-in-python"></a>Краткое руководство: ваш первый запрос для API визуального поиска Bing на Python
 
@@ -27,7 +27,7 @@ API Bing для наглядного поиска возвращает свед�
 --boundary_1234-abcd
 Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 
-ÿØÿà JFIF ÖÆ68g-¤CWŸþ29ÌÄøÖ‘º«™æ±èuZiÀ)"óÓß°Î= ØJ9á+*G¦...
+ÿØÿà JFIF ÖÆ68g-¤CWŸþ29ÌÄøÖ‘º«™æ±èuZiÀ)"óÓß°Î= ØJ9á+*G¦...
 
 --boundary_1234-abcd--
 ```
@@ -38,7 +38,15 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 
 Для запуска этого кода требуется [Python 3](https://www.python.org/).
 
-В рамках этого краткого руководства можно использовать ключ [бесплатной пробной](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api) подписки или ключ платной подписки.
+Для выполнения действий, описанных в этом кратком руководстве, нужно создать подписку в ценовой категории S9, как указано на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/). 
+
+Чтобы создать подписку на портале Azure:
+1. Введите запрос BingSearchV7 в строке поиска с текстом `Search resources, services, and docs` в верхней части страницы на портале Azure.  
+2. В меню Marketplace в раскрывающемся списке выберите `Bing Search v7`.
+3. В поле `Name` (Имя) введите имя нового ресурса.
+4. Выберите подписку `Pay-As-You-Go` (Оплата по мере использования).
+5. Выберите ценовую категорию `S9`.
+6. Щелкните `Enable` (Активировать), чтобы создать подписку.
 
 ## <a name="running-the-walkthrough"></a>Выполнение пошагового руководства
 

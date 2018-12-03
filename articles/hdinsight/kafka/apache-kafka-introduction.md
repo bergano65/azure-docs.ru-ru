@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: overview
 ms.date: 04/11/2018
-ms.openlocfilehash: c08c9a292350adf588296c13a5ce007564899053
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 587279d247b945b787051721d256f00a090d56db
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51005774"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52313968"
 ---
 # <a name="what-is-apache-kafka-on-hdinsight"></a>Что такое Apache Kafka в HDInsight?
 
@@ -26,7 +26,7 @@ ms.locfileid: "51005774"
 
 * Корпорация Майкрософт предоставляет соглашение об уровне обслуживания (SLA), гарантирующее 99,9 % время непрерывной работы Kafka. Дополнительные сведения см. в документе [Соглашение об уровне обслуживания для HDInsight](https://azure.microsoft.com/support/legal/sla/hdinsight/v1_0/).
 
-* В качестве резервного хранилища для Kafka используются управляемые диски Azure. Управляемые диски могут обеспечить до 16 ТБ хранилища для каждого брокера Kafka. См. сведения о [настройке числа управляемых дисков и повышении степени масштабируемости для Kafka в HDInsight](apache-kafka-scalability.md).
+* В качестве резервного хранилища для Kafka используются управляемые диски Azure. Управляемые диски могут обеспечить до 16 ТБ хранилища для каждого брокера Kafka. См. сведения о [настройке числа управляемых дисков и повышении степени масштабируемости для Apache Kafka в HDInsight](apache-kafka-scalability.md).
 
     См. дополнительные сведения об [управляемых дисках Azure](../../virtual-machines/windows/managed-disks-overview.md).
 
@@ -42,7 +42,7 @@ ms.locfileid: "51005774"
 
     Дополнительные сведения см. в статье [Анализ журналов для Apache Kafka в HDInsight](apache-kafka-log-analytics-operations-management.md).
 
-### <a name="kafka-on-hdinsight-architecture"></a>Архитектура Kafka в HDInsight
+### <a name="apache-kafka-on-hdinsight-architecture"></a>Архитектура Apache Kafka в HDInsight
 
 На приведенной ниже схеме показана стандартная конфигурация Kafka, в которой предусмотрены группы потребителей, секционирование и репликация, чтобы обеспечить параллельное считывание событий и отказоустойчивость.
 
@@ -56,29 +56,29 @@ Apache ZooKeeper управляет состоянием кластера Kafka.
 
 Репликация используется для дублирования секций между узлами, чтобы обеспечить защиту от сбоев узлов (брокеров). Секция, обозначенная на схеме буквой *(L)*, является ведущей (leader) в определенном разделе. Трафик производителя направляется в ведущую секцию каждого узла в зависимости от состояния, которым управляет ZooKeeper.
 
-## <a name="why-use-kafka-on-hdinsight"></a>Преимущества Apache Kafka в HDInsight
+## <a name="why-use-apache-kafka-on-hdinsight"></a>Для чего использовать Apache Kafka в HDInsight?
 
 Ниже приведены распространенные задачи и шаблоны, которые могут быть выполнены с помощью Kafka в HDInsight.
 
-* **Репликация данных Kafka.** Kafka предоставляет программу MirrorMaker, которая производит репликацию данных между кластерами Kafka.
+* **Репликация данных Apache Kafka.** Kafka предоставляет служебную программу MirrorMaker, которая реплицирует данные между кластерами Kafka.
 
     Сведения об использовании MirrorMaker см. в статье [Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker](apache-kafka-mirroring.md).
 
 * **Модель обмена сообщениями по схеме "публикация — подписка"**. Kafka предоставляет API производителя для публикации записей в разделе Kafka. При подписке на раздел используется API пользователя.
 
-    Дополнительные сведения см. в статье [Приступая к работе с Apache Kafka в HDInsight](apache-kafka-get-started.md).
+    Дополнительные сведения см. в статье [Краткое руководство по созданию Apache Kafka в кластере HDInsight](apache-kafka-get-started.md).
 
 * **Потоковая обработка.** Kafka часто используется с Apache Storm или Spark для потоковой обработки в режиме реального времени. В Kafka 0.10.0.0 (HDInsight 3.5 и 3.6) представлен API для потоковой передачи, позволяющий создавать соответствующие решения без использования Storm или Spark.
 
-    Дополнительные сведения см. в статье [Приступая к работе с Apache Kafka в HDInsight](apache-kafka-get-started.md).
+    Дополнительные сведения см. в статье [Краткое руководство по созданию Apache Kafka в кластере HDInsight](apache-kafka-get-started.md).
 
 * **Горизонтальное масштабирование.** В Kafka потоки разделяются между узлами в кластере HDInsight. Процессы пользователя можно связать с отдельными секциями для обеспечения балансировки нагрузки при использовании записей.
 
-    Дополнительные сведения см. в статье [Приступая к работе с Apache Kafka в HDInsight](apache-kafka-get-started.md).
+    Дополнительные сведения см. в статье [Краткое руководство по созданию Apache Kafka в кластере HDInsight](apache-kafka-get-started.md).
 
 * **Порядок доставки.** В каждой секции записи сохраняются в потоке в том порядке, в котором они были получены. Достаточно связать один процесс пользователя с секцией — и записи будут обрабатываться в определенном порядке.
 
-    Дополнительные сведения см. в статье [Приступая к работе с Apache Kafka в HDInsight](apache-kafka-get-started.md).
+    Дополнительные сведения см. в статье [Краткое руководство по созданию Apache Kafka в кластере HDInsight](apache-kafka-get-started.md).
 
 ## <a name="use-cases"></a>Варианты использования
 
@@ -94,8 +94,8 @@ Apache ZooKeeper управляет состоянием кластера Kafka.
 
 Ниже приведены ссылки на статьи об использовании Apache Kafka в HDInsight.
 
-* [Приступая к работе с Apache Kafka в HDInsight](apache-kafka-get-started.md)
+* [Краткое руководство по созданию Apache Kafka в кластере HDInsight](apache-kafka-get-started.md)
 
-* [Пример потоковой передачи Apache Spark (DStream) с использованием Kafka в HDInsight](../hdinsight-apache-spark-with-kafka.md)
+* [Пример потоковой передачи Apache Spark (DStream) с использованием Apache Kafka в HDInsight](../hdinsight-apache-spark-with-kafka.md)
 
-* [Использование Apache Kafka со Storm в HDInsight](../hdinsight-apache-storm-with-kafka.md)
+* [Краткое руководство. Использование Apache Storm с Apache Kafka в HDInsight](../hdinsight-apache-storm-with-kafka.md)

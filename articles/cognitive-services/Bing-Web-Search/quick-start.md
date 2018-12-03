@@ -11,18 +11,18 @@ ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: af32abe1c61c44b14d0f70033aee54aa7eba7c8b
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 6e4c5a47ea19a4308865de78f3a4c059a9f8ac79
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46126247"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52312407"
 ---
 # <a name="your-first-bing-search-query"></a>Ваш первый поисковый запрос к службе Bing
 
-Прежде чем выполнить первый вызов, необходимо получить ключ подписки Cognitive Services. Сведения о получении ключа см. на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).
+Прежде чем выполнить первый вызов, необходимо получить ключ подписки Cognitive Services. Для получения ключа см. статью [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api). См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
-Для получения результатов поиска в Интернете необходимо отправить запрос GET к следующей конечной точке.  
+Чтобы получить результаты поиска в Интернете, необходимо отправить запрос GET к следующей конечной точке:  
 
 ```
 https://api.cognitive.microsoft.com/bing/v7.0/search

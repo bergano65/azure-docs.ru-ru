@@ -1,6 +1,7 @@
 # Обзор
 ## [Сведения о виртуальных машинах Windows SQL Server](virtual-machines-windows-sql-server-iaas-overview.md) 
- 
+## [Заметки о выпуске](virtual-machines-windows-sql-server-iaas-release-notes.md) 
+
 # Быстрое начало работы
 ## [Создание виртуальной машины SQL при помощи портала](quickstart-sql-vm-create-portal.md)
 ## [Создание виртуальной машины SQL при помощи PowerShell](quickstart-sql-vm-create-powershell.md)
@@ -40,10 +41,11 @@
 #### [Различные регионы](virtual-machines-windows-portal-sql-availability-group-dr.md)
 ### Экземпляр отказоустойчивого кластера
 #### [Настройка](virtual-machines-windows-portal-sql-create-failover-cluster.md)
+## [Изменение модели лицензирования для виртуальной машины SQL](virtual-machines-windows-sql-ahb.md)
 
 # Справочные материалы
 ## [Azure PowerShell](/powershell/azure/overview)
-## [интерфейс командной строки Azure](/cli/azure/)
+## [Интерфейс командной строки Azure](/cli/azure/)
 ## [T-SQL](https://docs.microsoft.com/sql/t-sql/language-reference)
 ## [Драйверы SQL Server](https://docs.microsoft.com/sql/connect/sql-connection-libraries)
 ## [REST](/rest/api/)

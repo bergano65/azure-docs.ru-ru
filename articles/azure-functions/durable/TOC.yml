@@ -1,0 +1,137 @@
+items:
+- name: Документация по расширению "Устойчивые функции"
+- name: Обзор
+  items:
+  - name: Сведения о решении "Функции Azure"
+    href: ../functions-overview.md
+  - name: Сведения о расширении "Устойчивые функции"
+    href: durable-functions-overview.md
+  - name: Сравнение с бессерверными службами
+    href: ../functions-compare-logic-apps-ms-flow-webjobs.md?toc=%2fazure%2fazure-functions%2fdurable%2ftoc.json
+- name: Быстрое начало работы
+  items:
+  - name: 'Создание устойчивой функции: C#'
+    displayName: get started, chaining
+    href: durable-functions-create-first-csharp.md
+  - name: 'Создание устойчивой функции: JavaScript'
+    displayName: get started, chaining
+    href: quickstart-js-vscode.md
+  expanded: true
+- name: Учебники
+  items:
+  - name: Объединение и развертывание
+    href: durable-functions-cloud-backup.md
+  - name: Мониторы
+    href: durable-functions-monitor.md
+  - name: Участие пользователя
+    href: durable-functions-phone-verification.md
+  - name: Публикация в службе "Сетка событий"
+    href: durable-functions-event-publishing.md
+- name: Примеры
+  items:
+  - name: Примеры кода
+    href: https://azure.microsoft.com/en-us/resources/samples/?service=functions&sort=0&term=durable+
+  - name: Инфраструктура CLI Azure
+    href: ../functions-cli-samples.md
+- name: Основные понятия
+  items:
+  - name: Типы функций и возможности
+    href: durable-functions-types-features-overview.md
+  - name: Привязки
+    href: durable-functions-bindings.md
+  - name: Таймеры
+    href: durable-functions-timers.md
+  - name: Внешние события
+    href: durable-functions-external-events.md
+  - name: Вложенные оркестрации
+    href: durable-functions-sub-orchestrations.md
+  - name: Центры задач
+    href: durable-functions-task-hubs.md
+  - name: Надежное выполнение
+    href: durable-functions-checkpointing-and-replay.md
+  - name: Управление версиями
+    href: durable-functions-versioning.md
+- name: Практические руководства
+  items:
+  - name: Планирование и проектирование
+    items:
+    - name: Цепочка функций
+      href: durable-functions-sequence.md
+    - name: Нескончаемые оркестрации
+      href: durable-functions-eternal-orchestrations.md
+    - name: Одноэкземплярные оркестрации
+      href: durable-functions-singletons.md
+    - name: Производительность и масштаб
+      href: durable-functions-perf-and-scale.md
+    - name: высокую доступность;
+      href: durable-functions-disaster-recovery-geo-distribution.md
+  - name: Разработка
+    items:
+    - name: Создание на портале Azure
+      href: durable-functions-create-portal.md
+    - name: Управление подключениями
+      href: ../manage-connections.md?toc=%2fazure%2fazure-functions%2fdurable%2ftoc.json
+    - name: Обработка ошибок
+      href: durable-functions-error-handling.md
+    - name: Модульное тестирование
+      href: durable-functions-unit-testing.md
+    - name: Создание в качестве веб-заданий
+      href: durable-functions-webjobs-sdk.md
+  - name: Развертывание
+    items:
+    - name: Непрерывное развертывание
+      href: ../functions-continuous-deployment.md?toc=%2fazure%2fazure-functions%2fdurable%2ftoc.json
+    - name: Развертывание из ZIP-файла
+      href: ../deployment-zip-push.md?toc=%2fazure%2fazure-functions%2fdurable%2ftoc.json
+    - name: Запуск из пакета
+      href: ../run-functions-from-deployment-package.md?toc=%2fazure%2fazure-functions%2fdurable%2ftoc.json
+  - name: управление
+    items:
+    - name: Управление экземплярами
+      href: durable-functions-instance-management.md
+  - name: Мониторинг
+    items:
+    - name: Мониторинг функций
+      href: ../functions-monitoring.md?toc=%2fazure%2fazure-functions%2fdurable%2ftoc.json
+    - name: Настраиваемое значение состояния оркестрации
+      href: durable-functions-custom-orchestration-status.md
+  - name: Устранение неполадок
+    items:
+    - name: Диагностика
+      href: durable-functions-diagnostics.md
+- name: Справочные материалы
+  items:
+  - name: API HTTP
+    href: durable-functions-http-api.md
+- name: Ресурсы
+  items:
+  - name: Развитие навыков с помощью Microsoft Learn
+    href: /learn/browse/?products=azure-functions
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=compute
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/functions/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Доступ по регионам
+    href: https://azure.microsoft.com/regions/services/
+  - name: Видеоролики
+    href: https://www.youtube.com/c/AzureFunctions
+  - name: Форум MSDN
+    href: https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureFunctions
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-functions
+  - name: Twitter
+    href: https://twitter.com/hashtag/DurableFunctions?src=hash
+  - name: Отзыв о продукте
+    href: https://feedback.azure.com/forums/355860-azure-functions
+  - name: Репозиторий GitHub для расширения "Устойчивые функции"
+    href: https://github.com/Azure/azure-functions-durable-extension
+  - name: Обновления службы
+    href: https://azure.microsoft.com/updates/?product=functions&updatetype=&platform=
+ms.openlocfilehash: a6a0849aa272b53131c1bef7883fd0b0f76938fa
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52636620"

@@ -9,12 +9,12 @@ ms.component: bing-visual-search
 ms.topic: tutorial
 ms.date: 06/20/2018
 ms.author: rosh
-ms.openlocfilehash: 66e17c00da898e575bb858dbe16a35d1c44a2780
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 27141c014c9ccdf9d62c9bde5c96bd31abfc025e
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47226916"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52447101"
 ---
 # <a name="tutorial-bing-visual-search-sdk-image-crop-area-and-results"></a>Руководство по выбору области обрезки для изображения в пакете SDK для визуального поиска Bing и результаты применения
 В пакет SDK для визуального поиска входит возможность выбора области изображения и поиска изображений в Интернете, аналогичных области обрезки более крупного изображения.  В этом примере указывается область обрезки, на которой показан один человек с изображения, содержащего несколько человек.  Код отправляет область обрезки и URL-адрес более крупного изображения и возвращает результаты, содержащие URL-адреса поиска Bing и URL-адреса схожих изображений, найденных в Интернете.
@@ -23,7 +23,15 @@ ms.locfileid: "47226916"
 
 Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017](https://www.visualstudio.com/downloads/). (Будет работать бесплатный выпуск Community Edition.)
 
-Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с API-интерфейсами поиска Bing. Для данного краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api). Требуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
+Для выполнения действий, описанных в этом руководстве, нужно создать подписку в ценовой категории S9, как указано на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/). 
+
+Чтобы создать подписку на портале Azure:
+1. Введите запрос BingSearchV7 в строке поиска с текстом `Search resources, services, and docs` в верхней части страницы на портале Azure.  
+2. В меню Marketplace в раскрывающемся списке выберите `Bing Search v7`.
+3. В поле `Name` (Имя) введите имя нового ресурса.
+4. Выберите подписку `Pay-As-You-Go` (Оплата по мере использования).
+5. Выберите ценовую категорию `S9`.
+6. Щелкните `Enable` (Активировать), чтобы создать подписку.
 
 ## <a name="application-dependencies"></a>Зависимости приложения
 Чтобы настроить консольное приложение с помощью пакета SDK для поиска в Интернете Bing, в Visual Studio в обозревателе решений перейдите к параметру "Управление пакетами NuGet". Добавьте пакет Microsoft.Azure.CognitiveServices.Search.VisualSearch.

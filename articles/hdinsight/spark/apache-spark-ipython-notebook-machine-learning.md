@@ -9,22 +9,22 @@ ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: eac44d3b8daae27afec8aa24f4767bdb5dbf991a
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: a730f6ccba9f935855b233ca804a8180aa7f504b
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51239565"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52580576"
 ---
-# <a name="tutorial-build-a-spark-machine-learning-application-in-hdinsight"></a>Руководство. Создание приложений машинного обучения Spark в HDInsight 
+# <a name="tutorial-build-an-apache-spark-machine-learning-application-in-hdinsight"></a>Руководство. Создание приложения машинного обучения Apache Spark в HDInsight 
 
-Из этого руководства вы узнаете, как с помощью записной книжки Jupyter создать приложение машинного обучения Apache Spark для Azure HDInsight. 
+Из этого руководства вы узнаете, как с помощью [Jupyter Notebook](https://jupyter.org/) создать приложение машинного обучения [Apache Spark](https://spark.apache.org/) для Azure HDInsight. 
 
 [MLlib](https://spark.apache.org/docs/1.1.0/mllib-guide.html) — масштабируемая библиотека машинного обучения Spark, состоящая из общих алгоритмов и служебных программ обучения, включая классификацию, регрессию, кластеризацию, совместную фильтрацию, сокращение размерности, а также базовые элементы оптимизации.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
-> * разработка приложения машинного обучения Spark.
+> * разработка приложения машинного обучения Apache Spark.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -190,7 +190,7 @@ ms.locfileid: "51239565"
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 
-* разработка приложения машинного обучения Spark.
+* разработка приложения машинного обучения Apache Spark.
 
 Перейдите к следующему руководству, чтобы научиться использовать IntelliJ IDEA для заданий Spark. 
 

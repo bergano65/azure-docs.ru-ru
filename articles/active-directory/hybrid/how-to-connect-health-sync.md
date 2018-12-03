@@ -14,12 +14,12 @@ ms.topic: get-started-article
 ms.date: 07/18/2017
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: eebeb8d1f27631e7ecb40072f78d6a04b5152a8f
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 9811c51485ec30e7fe692c52f4e65cefd93e5cb0
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51277143"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52499069"
 ---
 # <a name="monitor-azure-ad-connect-sync-with-azure-ad-connect-health"></a>Мониторинг синхронизации Azure AD Connect с помощью Azure AD Connect Health
 Приведенная ниже документация относится к мониторингу синхронизации Azure AD Connect с помощью Azure AD Connect Health.  Сведения о мониторинге AD FS с помощью Azure AD Connect Health см. в [этой статье](how-to-connect-health-adfs.md). Кроме того, сведения о мониторинге доменных служб Active Directory с помощью Azure AD Connect Health можно найти [здесь](how-to-connect-health-adds.md).
@@ -62,7 +62,7 @@ ms.locfileid: "51277143"
 
 ![Задержка синхронизации](./media/how-to-connect-health-sync/syncobjectchanges02.png)
 
-## <a name="object-level-synchronization-error-report-preview"></a>Отчет об ошибках синхронизации на уровне объектов (предварительная версия)
+## <a name="object-level-synchronization-error-report"></a>Отчет об ошибках синхронизации на уровне объектов
 Этот компонент предоставляет отчет об ошибках синхронизации, которые могут возникать при синхронизации данных удостоверений между Windows Server AD и Azure AD с помощью Azure AD Connect.
 
 * В отчете содержатся ошибки, записанные клиентом синхронизации (Azure AD Connect версии 1.1.281.0 или выше).
@@ -74,7 +74,7 @@ ms.locfileid: "51277143"
   * вывод списка объектов с ошибками по категориям;
   * хранение данных об ошибках в одном месте;
   * параллельное сравнение объектов с ошибкой, возникшей в результате конфликта;
-  * скачивание отчета об ошибках в формате CVS (ожидается в ближайшее время).
+  * Скачивание отчета об ошибках в формате CVS
 
 ### <a name="categorization-of-errors"></a>Классификация ошибок
 Имеющиеся ошибки синхронизации группируются в отчете по следующим категориям.

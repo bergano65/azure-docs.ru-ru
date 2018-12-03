@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 11/08/2018
+ms.date: 11/27/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 70a7829c14997287ed130b0b4300c7f5aa0f3a30
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.openlocfilehash: e4489fd9119bce0e38e14f536f41940b74205e95
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51345578"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52425009"
 ---
 # <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-private-preview"></a>Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)
 
@@ -41,6 +41,8 @@ ms.locfileid: "51345578"
 > * Развертывание более новой версии.
 > * Очистка ресурсов
 
+См. [справочник по REST API диспетчера развертывания Azure](https://docs.microsoft.com/rest/api/deploymentmanager/).
+
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -50,12 +52,12 @@ ms.locfileid: "51345578"
 * Опыт разработки [шаблонов Azure Resource Manager](./resource-group-overview.md).
 * Диспетчер развертывания Azure предоставляется в закрытой предварительной версии. Чтобы зарегистрироваться с помощью диспетчера развертывания Azure, заполните [регистрационный лист](https://aka.ms/admsignup). 
 * Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
-* Командлеты диспетчера развертывания. Чтобы установить эти командлеты предварительной версии, вам понадобится последняя версия PowerShellGet. Сведения о получении последней версии см. в статье [Установка PowerShellGet](/powershell/gallery/installing-psget). После установки PowerShellGet закройте окно PowerShell. Откройте новое окно PowerShell и используйте следующую команду:
+* Командлеты диспетчера развертывания. Чтобы установить эти командлеты предварительной версии, вам понадобится последняя версия PowerShellGet. Сведения о получении последней версии см. в статье [Установка PowerShellGet](/powershell/gallery/installing-psget). После установки PowerShellGet закройте окно PowerShell. Откройте новое окно PowerShell с повышенными привилегиями и выполните следующую команду:
 
     ```powershell
     Install-Module -Name AzureRM.DeploymentManager -AllowPrerelease
     ```
-* [Обозреватель службы хранилища Microsoft Azure](https://go.microsoft.com/fwlink/?LinkId=708343&clcid=0x409). Обозреватель службы хранилища не требуется, но он упрощает работу.
+* [Обозреватель службы хранилища Microsoft Azure](https://azure.microsoft.com/features/storage-explorer/). Обозреватель службы хранилища не требуется, но он упрощает работу.
 
 ## <a name="understand-the-scenario"></a>Ознакомление со сценарием
 
@@ -145,10 +147,10 @@ ms.locfileid: "51345578"
 Вам необходимо создать управляемое удостоверение, назначаемое пользователем, и настроить управление доступом для своей подписки.
 
 > [!IMPORTANT]
-> Управляемое удостоверение, назначаемое пользователем, должно быть в том же расположении, что и [выпуск](#create-the-rollout-template). В настоящее время ресурсы диспетчера развертывания, включая выпуск, могут создаваться только в центральной части США или восточной части США 2.
+> Управляемое удостоверение, назначаемое пользователем, должно быть в том же расположении, что и [выпуск](#create-the-rollout-template). В настоящее время ресурсы диспетчера развертывания, включая выпуск, могут создаваться только в центральной части США или восточной части США 2. Но это справедливо только для ресурсов диспетчера развертывания (например, топологии службы, служб, модулей служб, развертываний и действий). Ваш целевые ресурсы можно развернуть в любом поддерживаемом регионе Azure. В этом руководстве соответствующие ресурсы развертываются в центральной части США, а службы — в восточной и западной частях США. Это ограничение будет снято в будущем.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Создайте [управляемое удостоверение, назначаемое пользователем](../active-directory/managed-identities-azure-resources/overview.md).
+2. Создайте [управляемое удостоверение, назначаемое пользователем](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md).
 3. На портале щелкните **Подписки** в меню слева и выберите свою подписку.
 4. Выберите **Управление доступом (IAM)** и нажмите кнопку **Добавить**.
 5. Введите или выберите следующие значения:
@@ -200,6 +202,9 @@ ms.locfileid: "51345578"
 - **dependsOn**: все ресурсы топологии службы зависят от исходного ресурса артефакта.
 - **artifacts** указывает артефакты шаблонов.  Здесь используются относительные пути. Полный путь формируется путем сцепления artifactSourceSASLocation (определенный в источнике артефакта), artifactRoot (определенный в источнике артефакта) и templateArtifactSourceRelativePath (или parametersArtifactSourceRelativePath).
 
+> [!NOTE]
+> Имена модулей служб должно содержать не более 31 символа. 
+
 ### <a name="topology-parameters-file"></a>Файл параметров топологии
 
 Создайте файл параметров, используемый с шаблоном топологии.
@@ -242,7 +247,7 @@ ms.locfileid: "51345578"
 
 На корневом уровне определено три ресурса: источник артефакта, топология службы и выпуск.
 
-Определение источника артефактов идентично определению шаблона топологии.  Дополнительные сведения см. в статье [Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (предварительная версия)](#create-the-service-topology-tempate).
+Определение источника артефактов идентично определению шаблона топологии.  Дополнительные сведения см. в статье [Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (предварительная версия)](#create-the-service-topology-template).
 
 На следующем снимке экрана показано определение шага ожидания:
 
@@ -310,7 +315,7 @@ Azure PowerShell можно использовать для развертыва
 
     Для просмотра ресурсов необходимо выбрать **Показать скрытые типы**.
 
-3. Развертывание шаблона выпуска
+3. <a id="deploy-the-rollout-template"></a>Развертывание шаблона выпуска
 
     ```azurepowershell-interactive
     # Create the rollout
@@ -325,7 +330,7 @@ Azure PowerShell можно использовать для развертыва
 
     ```azurepowershell-interactive
     # Get the rollout status
-    $rolloutname = "<Enter the Rollout Name>"
+    $rolloutname = "<Enter the Rollout Name>" # "adm0925Rollout" is the rollout name used in this tutorial
     Get-AzureRmDeploymentManagerRollout `
         -ResourceGroupName $resourceGroupName `
         -Name $rolloutName
@@ -365,7 +370,7 @@ Azure PowerShell можно использовать для развертыва
 
 1. Откройте CreateADMRollout.Parameters.json.
 2. Обновите **binaryArtifactRoot** до версии **binaries/1.0.0.1**.
-3. Повторите развертывание, как указано в разделе [Развертывание шаблонов](#deploy-the-templates).
+3. Повторите развертывание, как указано в разделе [Развертывание шаблонов](#deploy-the-rollout-template).
 4. Проверьте развертывание, как указано в разделе [Проверка развертывания](#verify-the-deployment). На веб-странице должна быть показана версия 1.0.0.1.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

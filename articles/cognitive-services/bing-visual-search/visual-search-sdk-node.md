@@ -10,12 +10,12 @@ ms.component: bing-visual-search
 ms.topic: quickstart
 ms.date: 05/18/2018
 ms.author: v-gedod
-ms.openlocfilehash: 77b8f956ca2a6985121cb5dbfebc2755fa73a35c
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: cca39fb16c47eb13887f6198833dafc64974d301
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685979"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52444466"
 ---
 # <a name="quickstart-bing-visual-search-sdk-node"></a>Краткое руководство: пакет SDK визуального поиска Bing для Node 
 
@@ -28,7 +28,15 @@ ms.locfileid: "51685979"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Для проверки подлинности вызовов пакета SDК требуется ключ API Cognitive Services. Зарегистрируйтесь для получения [ключа бесплатной демонстрационной версии](https://azure.microsoft.com/try/cognitive-services/?api=search-api-v7). Ключ бесплатной пробной версии действует в течение семи дней с одним вызовом в секунду. Для производственной эксплуатации следует [приобрести ключ доступа](https://portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7). Ознакомьтесь также со [сведениями о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/visual/).
+* Для выполнения действий, описанных в этом кратком руководстве, нужно создать подписку в ценовой категории S9, как указано на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/). 
+
+Чтобы создать подписку на портале Azure:
+1. Введите запрос BingSearchV7 в строке поиска с текстом `Search resources, services, and docs` в верхней части страницы на портале Azure.  
+2. В меню Marketplace в раскрывающемся списке выберите `Bing Search v7`.
+3. В поле `Name` (Имя) введите имя нового ресурса.
+4. Выберите подписку `Pay-As-You-Go` (Оплата по мере использования).
+5. Выберите ценовую категорию `S9`.
+6. Щелкните `Enable` (Активировать), чтобы создать подписку.
 
 ## <a name="application-dependencies"></a>Зависимости приложения
 

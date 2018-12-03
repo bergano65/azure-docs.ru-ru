@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 06/07/2018
 ms.author: renash
 ms.component: files
-ms.openlocfilehash: f1dd07756ca484171a3d662df35493efbe5a5ee7
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: ee6b93c26918b4f70eb23e7055db813f35d3787d
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50415625"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52445741"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно легко использовать в Windows и Windows Server. В этой статье рассматриваются рекомендации по использованию общей папки Azure в Windows и Windows Server.
@@ -24,9 +24,9 @@ ms.locfileid: "50415625"
 
 | Версия Windows        | Версия SMB | Возможность подключения на виртуальной машине Azure | Возможность подключения в локальной среде |
 |------------------------|-------------|-----------------------|----------------------|
-| Windows Server 2019 (предварительная версия)<sup>1</sup> | SMB 3.0 | Yes | Yes |
-| Windows 10<sup>2</sup> | SMB 3.0 | Yes | Yes |
-| Semi-Annual Channel для Windows Server<sup>3</sup> | SMB 3.0 | Yes | Yes |
+| Windows Server 2019    | SMB 3.0 | Yes | Yes |
+| Windows 10<sup>1</sup> | SMB 3.0 | Yes | Yes |
+| Semi-Annual Channel<sup>2</sup> для Windows Server | SMB 3.0 | Yes | Yes |
 | Windows Server 2016    | SMB 3.0     | Yes                   | Yes                  |
 | Windows 8.1            | SMB 3.0     | Yes                   | Yes                  |
 | Windows Server 2012 R2 | SMB 3.0     | Yes                   | Yes                  |
@@ -34,9 +34,8 @@ ms.locfileid: "50415625"
 | Windows 7              | SMB 2.1     | Yes                   | Нет                    |
 | Windows Server 2008 R2 | SMB 2.1     | Yes                   | Нет                    |
 
-<sup>1</sup> Windows Server 2019 доступна в предварительной версии в рамках [программы предварительной оценки Windows Server](https://insider.windows.com/for-business-getting-started-server/). Хотя Windows Server 2019 еще не поддерживается для использования в рабочей среде, сообщите нам, если у вас есть какие-либо проблемы с подключением к общим папкам Azure, за исключением того, что описано в [руководстве по устранению неполадок для Windows](storage-troubleshoot-windows-file-connection-problems.md).  
-<sup>2</sup> Windows 10 версии 1507, 1607, 1703, 1709 и 1803.  
-<sup>3</sup> Windows Server версии 1709 и 1803.
+<sup>1</sup> Windows 10 версий 1507, 1607, 1703, 1709, 1803 и 1809.  
+<sup>3</sup> Windows Server версий 1709 и 1803.
 
 > [!Note]  
 > Мы всегда рекомендуем использовать последнюю версию KB для своей версии Windows.

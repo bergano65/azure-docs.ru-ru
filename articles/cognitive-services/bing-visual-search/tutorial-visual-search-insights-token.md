@@ -10,12 +10,12 @@ ms.component: bing-visual-search
 ms.topic: tutorial
 ms.date: 06/21/2018
 ms.author: rosh
-ms.openlocfilehash: 06d6bc8e53276b5542210c2843d7221d6fd79c09
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 62780500d29c891182d3869bf0ba3ccdc5e2f715
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49386440"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52441067"
 ---
 # <a name="tutorial-bing-visual-search-sdk-imageinsightstoken-and-results"></a>Руководство по ImageInsightsToken в пакете SDK для визуального поиска Bing и результаты применения
 В пакет SDK для визуального поиска входит возможность поиска изображений в Интернете из предыдущей операции поиска, возвращающей `ImageInsightsToken`.  В этом примере показано получение `ImageInsightsToken` и использование токена в последующих операциях поиска.  Код отправляет `ImageInsightsToken` в Bing и возвращает результаты, содержащие URL-адреса поиска Bing и URL-адреса схожих изображений, найденных в Интернете.
@@ -24,6 +24,16 @@ ms.locfileid: "49386440"
 Visual Studio 2017. При необходимости можно скачать бесплатную версию сообщества. Ее можно найти по адресу https://www.visualstudio.com/vs/community/.
 Для проверки подлинности вызовов пакета SDК требуется ключ API Cognitive Services. Зарегистрируйтесь для получения ключа бесплатной пробной версии. Ключ бесплатной пробной версии действует в течение семи дней с одним вызовом в секунду. Для производственной эксплуатации следует приобрести ключ доступа. Ознакомьтесь также со сведениями о ценах.
 Поддерживается возможность запуска пакета SDK для .NET Core, приложений .NET Core 1.1. Загрузить .NET Core, Framework и среду выполнения можно по адресу https://www.microsoft.com/net/download/.
+
+Для выполнения действий, описанных в этом руководстве, нужно создать подписку в ценовой категории S9, как указано на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/). 
+
+Чтобы создать подписку на портале Azure:
+1. Введите запрос BingSearchV7 в строке поиска с текстом `Search resources, services, and docs` в верхней части страницы на портале Azure.  
+2. В меню Marketplace в раскрывающемся списке выберите `Bing Search v7`.
+3. В поле `Name` (Имя) введите имя нового ресурса.
+4. Выберите подписку `Pay-As-You-Go` (Оплата по мере использования).
+5. Выберите ценовую категорию `S9`.
+6. Щелкните `Enable` (Активировать), чтобы создать подписку.
 
 ## <a name="application-dependencies"></a>Зависимости приложения
 Чтобы настроить консольное приложение с помощью пакета SDK для поиска в Интернете Bing, в Visual Studio в обозревателе решений перейдите к параметру "Управление пакетами NuGet". Добавьте следующие пакеты:

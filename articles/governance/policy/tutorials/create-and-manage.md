@@ -1,5 +1,5 @@
 ---
-title: Использование службы "Политика Azure" для создания политик и управления ими, чтобы обеспечить соответствие требованиям организации
+title: Использование службы "Политика Azure" для создания политик и управления ими, чтобы обеспечить соответствие требованиям
 description: Использование Политики Azure для обеспечения соблюдения стандартов, соответствия нормам и требованиям аудита, контроля затрат, обеспечения безопасности и согласованности производительности, а также установки корпоративных принципов проектирования.
 services: azure-policy
 author: DCtheGeek
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: azure-policy
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: a7495ca1153fa6b84902423ee79c69f24316cb40
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 6ee7a4190248c8c18f747ee579aadc04a136696b
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46980963"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52583086"
 ---
 # <a name="create-and-manage-policies-to-enforce-compliance"></a>Создание политик и управление ими для обеспечения соответствия требованиям
 

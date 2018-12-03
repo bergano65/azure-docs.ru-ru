@@ -10,12 +10,12 @@ ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 05/16/2018
 ms.author: v-gedod
-ms.openlocfilehash: 4cb6e79b563ac0172f93b3a721b79c230a96a1d5
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: 25b01de47767e335d614aa0a8cf32c344c7305d8
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49457992"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52442852"
 ---
 # <a name="quickstart-bing-visual-search-sdk-c"></a>Краткое руководство: пакет SDK визуального поиска Bing для C#
 
@@ -33,7 +33,16 @@ ms.locfileid: "49457992"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Visual Studio 2017. При необходимости можно скачать бесплатную версию сообщества. Ее можно найти по адресу https://www.visualstudio.com/vs/community/.
-* Для проверки подлинности вызовов пакета SDК требуется ключ API Cognitive Services. Зарегистрируйтесь для получения [ключа бесплатной демонстрационной версии](https://azure.microsoft.com/try/cognitive-services/?api=search-api-v7). Ключ бесплатной демонстрационной версии действует в течение семи дней с одним вызовом в секунду. Чтобы использовать производственный сценарий, следует [приобрести ключ доступа](https://portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7). См. статью [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/visual/).
+* Для выполнения действий, описанных в этом кратком руководстве, нужно создать подписку в ценовой категории S9, как указано на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/). 
+
+Чтобы создать подписку на портале Azure:
+1. Введите запрос BingSearchV7 в строке поиска с текстом `Search resources, services, and docs` в верхней части страницы на портале Azure.  
+2. В меню Marketplace в раскрывающемся списке выберите `Bing Search v7`.
+3. В поле `Name` (Имя) введите имя нового ресурса.
+4. Выберите подписку `Pay-As-You-Go` (Оплата по мере использования).
+5. Выберите ценовую категорию `S9`.
+6. Щелкните `Enable` (Активировать), чтобы создать подписку.
+
 * Поддерживается возможность запуска пакета SDK для .NET Core и приложений для .NET Core 1.1. Загрузить .NET Core, Framework и среду выполнения можно по адресу https://www.microsoft.com/net/download/.
 
 ## <a name="application-dependencies"></a>Установка зависимостей

@@ -9,21 +9,21 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 11/06/2018
-ms.openlocfilehash: b22a701d9e876ca011381810e330fed60b7177d4
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 8319376c597f16a5bfe1a357d74c59453b797e51
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51278707"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52495125"
 ---
 # <a name="tutorial-apache-kafka-streams-api"></a>Руководство. API Потоков Apache Kafka
 
-Узнайте, как создать приложение, использующее API Потоков Kafka и запустить его с Kafka в HDInsight. 
+Узнайте, как создать приложение, использующее API для Apache Kafka Streams, и запустить его с помощью Kafka в HDInsight. 
 
 В этом руководстве используется приложение для подсчета слов во время потоковой передачи. Оно считывает текстовые данные из раздела Kafka, извлекает отдельные слова, а затем сохраняет слово и количество слов в другом разделе Kafka.
 
 > [!NOTE]
-> Потоковая обработка Kafka часто выполняется с помощью Apache Spark или Storm. В Kafka версии 0.10.0 (в HDInsight 3.5 и 3.6) появился API Потоков Kafka. Этот API позволяет преобразовать потоки данных между входными и выходными разделами. В некоторых случаях это может быть альтернативой созданию решения потоковой передачи Spark или Storm. 
+> Потоковая обработка Kafka часто выполняется с помощью Apache Spark или Apache Storm. В Kafka версии 0.10.0 (в HDInsight 3.5 и 3.6) появился API Потоков Kafka. Этот API позволяет преобразовать потоки данных между входными и выходными разделами. В некоторых случаях это может быть альтернативой созданию решения потоковой передачи Spark или Storm. 
 >
 > Дополнительные сведения о Потоках Kafka см. в [вводной документации ](https://kafka.apache.org/10/documentation/streams/) на сайте Apache.org.
 
@@ -38,9 +38,9 @@ ms.locfileid: "51278707"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Kafka в кластере HDInsight 3.6; Чтобы узнать, как создавать Kafka в кластере HDInsight, см. статью [Приступая к работе с Apache Kafka в HDInsight](apache-kafka-get-started.md).
+* Kafka в кластере HDInsight 3.6; Чтобы узнать, как создавать Kafka в кластере HDInsight, см. статью [Краткое руководство по созданию Apache Kafka в кластере HDInsight](apache-kafka-get-started.md).
 
-* Выполните шаги, приведенные в статье [Приступая к работе с Apache Kafka в HDInsight](apache-kafka-producer-consumer-api.md). В шагах, описанных в этом документе, используется пример приложения и разделы, созданные в этом руководстве.
+* Выполните шаги, приведенные в статье [Руководство. Использование API производителя и потребителя Apache Kafka](apache-kafka-producer-consumer-api.md). В шагах, описанных в этом документе, используется пример приложения и разделы, созданные в этом руководстве.
 
 ## <a name="set-up-your-development-environment"></a>Настройка среды разработки
 
@@ -158,7 +158,7 @@ public class Stream
    
     Замените `sshuser` именем пользователя SSH для кластера, а `clustername` — именем кластера. При появлении запроса введите пароль для учетной записи пользователя SSH. Дополнительные сведения об использовании `scp` с HDInsight см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-## <a name="create-kafka-topics"></a>Создание разделов Kafka
+## <a name="create-apache-kafka-topics"></a>Создание разделов Apache Kafka
 
 1. Чтобы открыть SSH-подключение к кластеру, выполните следующую команду:
 
@@ -175,7 +175,7 @@ public class Stream
     read -p 'Enter your Kafka cluster name:' CLUSTERNAME
     ```
 
-3. Чтобы получить узлы Zookeeper и брокера Kafka, используйте следующие команды. При появлении запроса введите пароль для учетной записи администратора, чтобы войти на кластер. Запрос на ввод пароля появится дважды.
+3. Чтобы получить узлы Apache Zookeeper и брокера Kafka, используйте приведенные ниже команды. При появлении запроса введите пароль для учетной записи администратора, чтобы войти на кластер. Запрос на ввод пароля появится дважды.
 
     ```bash
     export KAFKAZKHOSTS=`curl -sS -u admin -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/ZOOKEEPER/components/ZOOKEEPER_SERVER | jq -r '["\(.host_components[].HostRoles.host_name):2181"] | join(",")' | cut -d',' -f1,2`; \
@@ -255,7 +255,7 @@ public class Stream
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом документе вы узнали, как использовать API Потоков Kafka с Kafka в HDInsight. Дополнительные сведения о работе с Kafka см. в следующих материалах.
+Из этого документа вы узнали, как использовать API для Apache Kafka Streams с Kafka в HDInsight. Дополнительные сведения о работе с Kafka см. в следующих материалах.
 
-* [Анализ журналов Kafka](apache-kafka-log-analytics-operations-management.md)
-* [Репликация разделов Apache Kafka с помощью Kafka в HDInsight (предварительная версия) и MirrorMaker](apache-kafka-mirroring.md)
+* [Анализ журналов для Apache Kafka в HDInsight](apache-kafka-log-analytics-operations-management.md)
+* [Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker](apache-kafka-mirroring.md)

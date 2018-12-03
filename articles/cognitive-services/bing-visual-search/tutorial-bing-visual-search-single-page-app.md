@@ -10,16 +10,26 @@ ms.component: bing-visual-search
 ms.topic: tutorial
 ms.date: 10/04/2017
 ms.author: aahi
-ms.openlocfilehash: b493f65e47f5e4c932ed1229e4c00ee1af3cd5ab
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: fe7159e88bd70ba8af23909559264fa5f210ef10
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52161860"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52443908"
 ---
 # <a name="tutorial-visual-search-single-page-web-app"></a>Руководство по одностраничным веб-приложениям для наглядного поиска
 
 API Bing для наглядного поиска предоставляет примерно такие же возможности, как просмотр сведений об изображении на Bing.com/images. Функция визуального поиска позволяет указать изображение и получить о нем аналитические сведения, например визуально подобные изображения, ресурсы покупок, веб-страницы, которые содержат это изображения, и многое другое. 
+
+Для выполнения действий, описанных в этом руководстве, нужно создать подписку в ценовой категории S9, как указано на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/). 
+
+Чтобы создать подписку на портале Azure:
+1. Введите запрос BingSearchV7 в строке поиска с текстом `Search resources, services, and docs` в верхней части страницы на портале Azure.  
+2. В меню Marketplace в раскрывающемся списке выберите `Bing Search v7`.
+3. В поле `Name` (Имя) введите имя нового ресурса.
+4. Выберите подписку `Pay-As-You-Go` (Оплата по мере использования).
+5. Выберите ценовую категорию `S9`.
+6. Щелкните `Enable` (Активировать), чтобы создать подписку.
 
 Это руководство дополняет сведения по одностраничному веб-приложению, которые приведены в руководстве по службе "Поиск изображений Bing" (см. [Руководство: одностраничное веб-приложение](../Bing-Image-Search/tutorial-bing-image-search-single-page-app.md)). Полный исходный код для работы с этим руководством приведен в разделе [Одностраничное веб-приложение (исходный код)](../Bing-Image-Search/tutorial-bing-image-search-single-page-app-source.md). Итоговый исходный код этого руководства приведен в разделе [Одностраничное веб-приложение для наглядного поиска](tutorial-bing-visual-search-single-page-app-source.md).
 

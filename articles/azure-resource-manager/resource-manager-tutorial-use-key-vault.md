@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 11/13/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: a3ca6422bf5335604e561b71db6c75a889a74586
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: 0bcff6e0cec234f17b0aaab9828602eb4a194d85
+ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51615761"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52334216"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-resource-manager-template-deployment"></a>Руководство. Интеграция Azure Key Vault в развертывание шаблона Resource Manager
 
@@ -93,7 +93,7 @@ ms.locfileid: "51615761"
     * **Имя Key Vault** . Укажите уникальное имя. 
     * **Идентификатор клиента**. Функция шаблона автоматически получает идентификатор клиента.  Не изменяйте значение по умолчанию.
     * **Ad User Id** (Идентификатор пользователя AD). Введите идентификатор объекта пользователя Azure AD, который вы получили на последнем этапе.
-    * **Имя секрета**. Имя по умолчанию — **mAdminPassword**. Если изменить имя секрета здесь, то нужно обновить имя секрета при развертывании виртуальной машины.
+    * **Имя секрета.** Имя по умолчанию — **vmAdminPassword**. Если изменить имя секрета здесь, то нужно обновить имя секрета при развертывании виртуальной машины.
     * **Secret Value** (Значение секрета). Ведите ваш секрет.  Секрет — это пароль, используемый для входа в виртуальную машину. Рекомендуется использовать созданный на последнем шаге пароль.
     * **I agree to the terms and conditions state above** (Я принимаю указанные выше условия). Установите этот флажок.
 3. Выберите **Изменить параметры** в верхней части экрана, чтобы взглянуть на шаблон.

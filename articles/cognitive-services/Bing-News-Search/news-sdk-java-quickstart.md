@@ -10,16 +10,16 @@ ms.component: bing-news-search
 ms.topic: quickstart
 ms.date: 02/16/2018
 ms.author: v-gedod
-ms.openlocfilehash: 7919f13e8c5aaa592a416190d3cd11edbf31af2c
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: f01f31c5cfc30ac31ea41db2a8504454e1f05799
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48802483"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52316877"
 ---
 # <a name="quickstart-bing-news-search-sdk-with-java"></a>Краткое руководство. Использование пакета SDK API Bing для поиска новостей для Java
 
-Пакет SDK для API "Поиск новостей Bing" предоставляет функциональные возможности интерфейса REST API для поиска новостей и анализа результатов. 
+Пакет SDK для API "Поиск новостей Bing" предоставляет функциональные возможности интерфейса REST API для поиска новостей и анализа результатов.  Получите [ключ доступа Cognitive Services](https://azure.microsoft.com/try/cognitive-services/) с помощью **поиска**.  См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/). 
 
 [Исходный код примеров для пакета SDK для службы "Поиск новостей Bing" для Java](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples/tree/master/Search/BingNewsSearch) доступен на сайте GitHub.
 

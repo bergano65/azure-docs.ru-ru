@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/14/2017
 ms.author: dekapur
 ms.custom: mvc
-ms.openlocfilehash: b592ac10d483bbf0ca058e87f819b8f67847c54e
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 9bbff92b7706fd207894616b83580c4ddf85e5eb
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44296114"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52444790"
 ---
 # <a name="tutorial-monitor-and-diagnose-an-aspnet-core-application-on-service-fabric-using-application-insights"></a>Руководство. Мониторинг и диагностика приложения ASP.NET Core в Service Fabric с помощью Application Insights
 
@@ -79,6 +79,8 @@ Application Insights — это платформа для управления �
 1. Щелкните правой кнопкой мыши имя службы и выберите **Настроить Application Insights**.
 
     ![Настройка Application Insights](./media/service-fabric-tutorial-monitoring-aspnet/configure-ai.png)
+>[!NOTE]
+>В зависимости от типа проекта, когда вы щелкните правой кнопкой мыши имя службы, может потребоваться выбрать "Добавить" -> "Телеметрия Application Insights".
 
 2. Щелкните **Начать бесплатно**.
 3. Войдите в свою учетную запись (с помощью которой была настроена подписка Azure) и выберите подписку, в которой был создан ресурс Application Insights. Найдите ресурс в разделе *Существующий ресурс Application Insights* в раскрывающемся списке "Ресурс". Щелкните **Зарегистрировать**, чтобы добавить Application Insights в службу.

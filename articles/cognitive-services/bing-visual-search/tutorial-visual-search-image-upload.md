@@ -10,12 +10,12 @@ ms.component: bing-visual-search
 ms.topic: tutorial
 ms.date: 07/10/2018
 ms.author: scottwhi
-ms.openlocfilehash: 2e65313207e2bb29ae269425012cc6c340261ba4
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: b13f2e5c96ba50fc76d7bfae256e5fcc1c8b56ce
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48888345"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52443463"
 ---
 # <a name="tutorial-breaking-down-bing-visual-search-upload"></a>Пошаговое руководство по передаче изображения в Bing Visual Search
 
@@ -23,6 +23,15 @@ ms.locfileid: "48888345"
 
 Это руководство предназначено для разработчика, который хочет изучить содержимое ответа Bing Visual Search. Оно не охватывает все варианты использования и требования к отображению (например, в нем нет ссылки на политику конфиденциальности корпорации Майкрософт). Все требования к использованию приведены в разделе [Требования к использованию и отображению API поиска Bing](./use-and-display-requirements.md).
 
+Для выполнения действий, описанных в этом руководстве, нужно создать подписку в ценовой категории S9, как указано на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/). 
+
+Чтобы создать подписку на портале Azure, сделайте следующее:
+1. Введите запрос BingSearchV7 в строке поиска с текстом `Search resources, services, and docs` вверху портала Azure.  
+2. В раскрывающемся списке Marketplace выберите `Bing Search v7`.
+3. В поле `Name` (Имя) введите имя нового ресурса.
+4. Выберите подписку `Pay-As-You-Go` (Оплата по мере использования).
+5. Выберите ценовую категорию `S9`.
+6. Щелкните `Enable` (Активировать), чтобы создать подписку.
 
 ## <a name="where-to-start"></a>Как начать работу?
 

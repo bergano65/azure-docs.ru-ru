@@ -9,16 +9,16 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 05/07/2018
-ms.openlocfilehash: dcd28d8e33045f4c0324f964a854e98dfe004321
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.openlocfilehash: e862000df1edc5101c0768f1f96c11953f1485c7
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51712421"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52583284"
 ---
 # <a name="tutorial-analyze-apache-spark-data-using-power-bi-in-hdinsight"></a>Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight 
 
-Узнайте, как использовать Microsoft Power BI для визуализации данных в кластере Apache Spark в Azure HDInsight.
+Узнайте, как использовать [Microsoft Power BI](https://powerbi.microsoft.com/) для визуализации данных в кластере [Apache Spark](https://spark.apache.org/) в [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/).
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
@@ -34,7 +34,7 @@ ms.locfileid: "51712421"
 
 ## <a name="verify-the-data"></a>Проверка данных
 
-Записная книжка Jupyter, созданная при работе с [предыдущим руководством](apache-spark-load-data-run-query.md), содержит код для создания таблицы `hvac`. Эта таблица базируется на CSV-файле, доступном во всех кластерах HDInsight Spark в **\HdiSamples\HdiSamples\SensorSampleData\hvac\hvac.csv**. Ниже описана процедура проверки данных.
+[Записная книжка Jupyter Notebook](https://jupyter.org/), созданная при работе с [предыдущим руководством](apache-spark-load-data-run-query.md), содержит код для создания таблицы `hvac`. Эта таблица базируется на CSV-файле, доступном во всех кластерах HDInsight Spark в **\HdiSamples\HdiSamples\SensorSampleData\hvac\hvac.csv**. Ниже описана процедура проверки данных.
 
 1. В записной книжке Jupyter вставьте приведенный ниже пример кода и нажмите клавиши **SHIFT + ВВОД**. Этот код предназначен для проверки наличия таблиц.
 
@@ -164,7 +164,7 @@ ms.locfileid: "51712421"
 
 10. В отчете нажмите кнопку **Перейти к информационной панели**. 
 
-Ваш визуальный элемент закреплен на информационной панели. Вы можете добавить в отчет другие визуальные элементы, а затем закрепить их на этой же информационной панели. Дополнительные сведения об отчетах и информационных панелях см. в статьях [Отчеты в Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-reports/) и [Панели мониторинга в службе Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-dashboards/).
+Ваш визуальный элемент закреплен на информационной панели. Вы можете добавить в отчет другие визуальные элементы, а затем закрепить их на этой же информационной панели. Дополнительные сведения об отчетах и информационных панелях см. в статьях [Отчеты в Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-reports/) и [Общие сведения о панелях мониторинга для разработчиков Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-dashboards/).
 
 <!--
 ## <a name="tableau"></a>Use Tableau Desktop 
@@ -214,9 +214,9 @@ ms.locfileid: "51712421"
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 
-- Визуализация данных Spark с помощью Power BI.
+- Визуализация данных Apache Spark с помощью Power BI.
 
 Теперь переходите к следующей статье, в которой объясняется, как перенести зарегистрированные в Spark данные в средство бизнес-аналитики, например в Power BI. 
 > [!div class="nextstepaction"]
-> [Запуск задания Spark для потоковой передачи](apache-spark-eventhub-streaming.md)
+> [Запуск потоковой задачи Apache Spark](apache-spark-eventhub-streaming.md)
 

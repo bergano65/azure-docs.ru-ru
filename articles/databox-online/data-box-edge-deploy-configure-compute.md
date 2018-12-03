@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 10/19/2018
+ms.date: 11/27/2018
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Data Box Edge so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: e970f7cc0d4c4620f2da69286be36d0c22e0d747
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 77a2b8d2b5d3ac42dcbbe2db2b05d38657290073
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51260369"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52443795"
 ---
 # <a name="tutorial-transform-data-with-azure-data-box-edge-preview"></a>Руководство по преобразованию данных с помощью Azure Data Box Edge (предварительная версия)
 
@@ -163,7 +163,7 @@ ms.locfileid: "51260369"
  
 6.  В разделе **Укажите маршруты** настройте маршруты между модулями. В этом случае укажите имя локального общего ресурса, который будет отправлять данные в облачный общий ресурс. Щелкните **Далее**.
 
-    Маршрут можно заменить следующей строкой маршрута:       "route": "FROM /* WHERE topic = 'mysmblocalshare' INTO BrokeredEndpoint(\"/modules/filemovemodule/inputs/input1\")"
+    Маршрут можно заменить следующей строкой маршрута:       `"route": "FROM /* WHERE topic = 'mysmblocalshare' INTO BrokeredEndpoint(\"/modules/filemovemodule/inputs/input1\")"`
 
     ![Добавление настраиваемого модуля](./media/data-box-edge-deploy-configure-compute/add-a-custom-module-10.png) 
  

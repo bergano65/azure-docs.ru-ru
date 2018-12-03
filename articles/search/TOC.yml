@@ -174,6 +174,8 @@ items:
         href: search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md
       - name: Сопоставления полей
         href: search-indexer-field-mappings.md
+      - name: Устранение распространенных неполадок
+        href: search-indexer-troubleshooting.md
   - name: Запрос данных
     items:
     - name: Типы запросов и составление запросов
@@ -241,6 +243,8 @@ items:
       href: cognitive-search-skill-language-detection.md
     - name: Распознавание именованных сущностей
       href: cognitive-search-skill-named-entity-recognition.md
+    - name: Распознавание сущностей
+      href: cognitive-search-skill-entity-recognition.md
     - name: Слияние текста
       href: cognitive-search-skill-textmerger.md
     - name: Разделение текста
@@ -253,6 +257,8 @@ items:
       href: cognitive-search-skill-ocr.md
     - name: Формирователь
       href: cognitive-search-skill-shaper.md
+    - name: Устаревшие навыки
+      href: cognitive-search-skill-deprecated.md
 - name: Ресурсы
   items:
   - name: Поддержка сообщества Azure
@@ -277,9 +283,9 @@ items:
     href: https://azure.microsoft.com/pricing/details/search/
   - name: Видеоролики
     href: https://azure.microsoft.com/resources/videos/index/?services=search
-ms.openlocfilehash: 1ce3cf4ff32037d8e1e70a7c724aa4c53c2539ea
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: deca0a4888dba48011d73f39d11c27bc6fd52737
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49116075"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52584513"
