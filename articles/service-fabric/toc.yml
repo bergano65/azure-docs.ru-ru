@@ -227,6 +227,10 @@ items:
       items:
       - name: Основные сведения о настройке периодического резервного копирования
         href: service-fabric-backuprestoreservice-configure-periodic-backup.md
+      - name: Активация восстановления раздела
+        href: service-fabric-backup-restore-service-trigger-restore.md
+      - name: Резервное копирование раздела по запросу
+        href: service-fabric-backup-restore-service-ondemand-backup.md
   - name: Кластеры
     items:
     - name: Общие сведения о кластерах
@@ -459,6 +463,8 @@ items:
       href: service-fabric-backuprestoreservice-quickstart-azurecluster.md
     - name: Настройка периодического резервного копирования (изолированные кластеры)
       href: service-fabric-backuprestoreservice-quickstart-standalonecluster.md
+    - name: Резервное копирование раздела по запросу
+      href: service-fabric-backuprestoreservice-ondemand-backup.md
     - name: Перенос старого приложения Java для поддержки Maven
       href: service-fabric-migrate-old-javaapp-to-use-maven.md
   - name: Работа в IDE
@@ -663,10 +669,14 @@ items:
         href: service-fabric-diagnostics-event-analysis-oms.md
       - name: Запрос к API EventStore
         href: service-fabric-diagnostics-eventstore-query.md
-      - name: Настройка агента WAD
+      - name: Диагностика кластера Windows
         href: service-fabric-diagnostics-event-aggregation-wad.md
-      - name: Настройка агента LAD
-        href: service-fabric-diagnostics-event-aggregation-lad.md
+      - name: Диагностика кластера Linux
+        href: service-fabric-diagnostics-oms-syslog.md
+      - name: Настройка службы Log Analytics
+        href: service-fabric-diagnostics-oms-setup.md
+      - name: Мониторинг с помощью Log Analytics
+        href: service-fabric-diagnostics-event-analysis-oms.md
     - name: Мониторинг инфраструктуры
       items:
       - name: Сбор данных счетчиков производительности с помощью агента Log Analytics
@@ -782,9 +792,9 @@ items:
     href: https://azure.microsoft.com/updates/?product=service-fabric
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=service-fabric
-ms.openlocfilehash: 320399b277b7b6aa05b128994f68058455353e7b
-ms.sourcegitcommit: beb4fa5b36e1529408829603f3844e433bea46fe
+ms.openlocfilehash: 1b610207303b7a1b7ec283217830fe89f07f43e9
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52291510"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52721754"
