@@ -1,55 +1,86 @@
+items:
 - name: Принципы работы Azure IoT
   href: ../iot-fundamentals/index.yml
 - name: Документация по Azure Time Series Insights
   href: index.yml
 - name: Обзор
   items:
-    - name: Сведения о службе "Аналитика временных рядов"
-      href: time-series-insights-overview.md
+  - name: Аналитика временных рядов Azure (предварительная версия)
+    href: time-series-insights-update-overview.md
 - name: Быстрое начало работы
   items:
+  - name: Аналитика временных рядов Azure (общедоступная версия)
+    items:
     - name: Знакомство со службой "Аналитика временных рядов"
       href: time-series-quickstart.md
+  - name: Аналитика временных рядов Azure (предварительная версия)
+    items:
+    - name: Аналитика временных рядов Azure (предварительная версия)
+      href: time-series-insights-update-quickstart.md
 - name: Учебники
   items:
-    - name: Обзор клиентской библиотеки TSI JavaScript
-      href: tutorial-explore-js-client-lib.md
+  - name: Обзор клиентской библиотеки TSI JavaScript
+    href: tutorial-explore-js-client-lib.md
+  - name: Создание веб-приложения TSI с одной страницей
+    href: tutorial-create-tsi-sample-spa.md
+  - name: Аналитика временных рядов Azure (общедоступная версия)
+    items:
     - name: Создание среды TSI
       href: tutorial-create-populate-tsi-environment.md
-    - name: Создание веб-приложения TSI с одной страницей
-      href: tutorial-create-tsi-sample-spa.md
+  - name: Аналитика временных рядов Azure (предварительная версия)
+    items:
+    - name: Создание среды TSI
+      href: time-series-insights-update-create-environment.md
 - name: Основные понятия
   items:
+  - name: Аналитика временных рядов Azure (общедоступная версия)
+    items:
+    - name: Сведения о службе "Аналитика временных рядов"
+      href: time-series-insights-overview.md
     - name: Планирование среды
       href: time-series-insights-environment-planning.md
     - name: Визуализация данных в обозревателе
       href: time-series-insights-explorer.md
-    - name: Устранение регулирования
-      href: time-series-insights-environment-mitigate-latency.md
     - name: Концепция срока хранения данных
       href: time-series-insights-concepts-retention.md
-    - name: Диагностирование и устранение неполадок
-      href: time-series-insights-diagnose-and-solve-problems.md
-    - name: Разработка
-      items:
-        - name: Проверка подлинности и авторизация
-          href: time-series-insights-authentication-and-authorization.md
-        - name: 'Запрос данных с помощью C#'
-          href: time-series-insights-query-data-csharp.md
-        - name: 'Управление эталонными данными с помощью C#'
-          href: time-series-insights-manage-reference-data-csharp.md
-        - name: Совместное использование пользовательского представления
-          href: time-series-insights-parameterized-urls.md
+  - name: Аналитика временных рядов Azure (предварительная версия)
+    items:
+    - name: Планирование среды
+      href: time-series-insights-update-plan.md
+    - name: Хранилище данных и входящие данные
+      href: time-series-insights-update-storage-ingress.md
+    - name: Варианты использования
+      href: time-series-insights-update-use-cases.md
+    - name: Модель временных рядов
+      href: time-series-insights-update-tsm.md
+    - name: Запрос временных рядов
+      href: time-series-insights-update-tsq.md
+    - name: Визуализация данных в обозревателе (обновление)
+      href: time-series-insights-update-explorer.md
+  - name: Разработка
+    items:
+    - name: Проверка подлинности и авторизация
+      href: time-series-insights-authentication-and-authorization.md
+    - name: Запрос данных с помощью C#
+      href: time-series-insights-query-data-csharp.md
+    - name: Управление эталонными данными с помощью C#
+      href: time-series-insights-manage-reference-data-csharp.md
+    - name: Совместное использование пользовательского представления
+      href: time-series-insights-parameterized-urls.md
 - name: Практические руководства
   items:
+  - name: Предоставление доступа к данным
+    href: time-series-insights-data-access.md
+  - name: Подключение к концентратору событий
+    href: time-series-insights-how-to-add-an-event-source-eventhub.md
+  - name: Подключение к Центру Интернета вещей
+    href: time-series-insights-how-to-add-an-event-source-iothub.md
+  - name: Управление ресурсами с помощью шаблонов
+    href: time-series-insights-manage-resources-using-azure-resource-manager-template.md
+  - name: Аналитика временных рядов Azure (общедоступная версия)
+    items:
     - name: Создание среды
       href: time-series-insights-get-started.md
-    - name: Предоставление доступа к данным
-      href: time-series-insights-data-access.md
-    - name: Подключение к концентратору событий
-      href: time-series-insights-how-to-add-an-event-source-eventhub.md
-    - name: Подключение к Центру Интернета вещей
-      href: time-series-insights-how-to-add-an-event-source-iothub.md
     - name: Настройка времени хранения данных
       href: time-series-insights-how-to-configure-retention.md
     - name: Создание набора эталонных данных
@@ -58,61 +89,96 @@
       href: time-series-insights-send-events.md
     - name: Масштабирование среды
       href: time-series-insights-how-to-scale-your-environment.md
-    - name: Управление ресурсами с помощью шаблонов
-      href: time-series-insights-manage-resources-using-azure-resource-manager-template.md
     - name: Использование JSON для запросов
       href: how-to-shape-query-json.md
+    - name: Устранение регулирования
+      href: time-series-insights-environment-mitigate-latency.md
+    - name: Диагностирование и устранение неполадок
+      href: time-series-insights-diagnose-and-solve-problems.md
+  - name: Аналитика временных рядов Azure (предварительная версия)
+    items:
+    - name: Выбор идентификатора временных рядов
+      href: time-series-insights-update-how-to-id.md
+    - name: Диагностирование и устранение неполадок
+      href: time-series-insights-update-how-to-troubleshoot.md
+    - name: Моделирование данных
+      href: time-series-insights-update-how-to-tsm.md
+    - name: Использование JSON для запросов
+      href: time-series-insights-update-how-to-shape-events.md
 - name: Справочные материалы
   items:
-    - name: API запроса
-      href: /rest/api/time-series-insights/time-series-insights-reference-queryapi
-    - name: Синтаксис запросов
-      href: /rest/api/time-series-insights/time-series-insights-reference-query-syntax
+  - name: Аналитика временных рядов Azure
+    items:
+    - name: Аналитика временных рядов (общедоступная версия)
+      items:
+      - name: Запрос
+        items:
+        - name: API
+          href: /rest/api/time-series-insights/time-series-insights-reference-queryapi
+        - name: Синтаксис
+          href: /rest/api/time-series-insights/time-series-insights-reference-query-syntax
+      - name: API эталонных данных
+    - name: Аналитика временных рядов Azure (предварительная версия)
+      items:
+      - name: Запрос временных рядов
+        href: /rest/api/time-series-insights/time-series-insights-reference-update-tsq
+      - name: Модель временных рядов
+        href: /rest/api/time-series-insights/time-series-insights-reference-update-tsm
+      - name: API среды временных рядов
+        href: /rest/api/time-series-insights/time-series-insights-reference-update-env
+      - name: Синтаксис и выражение временных рядов
+        href: /rest/api/time-series-insights/time-series-insights-reference-update-tsx
 - name: Сопутствующие материалы
   items:
-    - name: Решения
-      items:
-        - name: Предварительно настроенные решения Azure IoT Suite
-          href: /azure/iot-suite
-        - name: IoT Central
-          href: 'https://docs.microsoft.com/microsoft-iot-central/'
-    - name: Службы платформы
-      items:
-        - name: Центр Интернета вещей
-          href: /azure/iot-hub
-        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
-          href: /azure/iot-dps
-        - name: Карты
-          href: /azure/azure-maps
-        - name: Пакеты SDK службы
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
-        - name: Аналитика временных рядов Azure
-          href: /azure/time-series-insights
-    - name: Edge
-      items:
-        - name: IoT Edge
-          href: /azure/iot-edge
-        - name: Пакеты SDK для устройств IoT
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
-    - name: Azure Stream Analytics
-      href: /azure/stream-analytics/
+  - name: Решения
+    items:
+    - name: Предварительно настроенные решения Azure IoT Suite
+      href: /azure/iot-suite
+    - name: IoT Central
+      href: https://docs.microsoft.com/microsoft-iot-central/
+  - name: Службы платформы
+    items:
+    - name: Центр Интернета вещей
+      href: /azure/iot-hub
+    - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
+      href: /azure/iot-dps
+    - name: Карты
+      href: /azure/azure-maps
+    - name: Пакеты SDK службы
+      href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
+    - name: Аналитика временных рядов Azure
+      href: /azure/time-series-insights
+  - name: Microsoft Edge
+    items:
+    - name: IoT Edge
+      href: /azure/iot-edge
+    - name: Пакеты SDK для устройств IoT
+      href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
+  - name: Azure Stream Analytics
+    href: /azure/stream-analytics/
 - name: Ресурсы
   items:
-    - name: Запросы данных клиентов
-      href: time-series-insights-customer-data-requests.md
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=iot'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/time-series-insights/'
-    - name: Калькулятор цен
-      href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Регионы доступности
-      href: 'https://azure.microsoft.com/regions/services/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureTimeSeriesInsights'
-    - name: Переполнение стека
-      href: 'https://stackoverflow.com/questions/tagged/azure-timeseries-insights'
-    - name: Варианты поддержки
-      href: 'https://azure.microsoft.com/support/options/'
-    - name: Видеоролики
-      href: 'https://azure.microsoft.com/resources/videos/index/?services=time-series-insights'
+  - name: Запросы данных клиентов
+    href: time-series-insights-customer-data-requests.md
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=iot
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/time-series-insights/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Регионы доступности
+    href: https://azure.microsoft.com/regions/services/
+  - name: Форум MSDN
+    href: https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureTimeSeriesInsights
+  - name: Переполнение стека
+    href: https://stackoverflow.com/questions/tagged/azure-timeseries-insights
+  - name: Варианты поддержки
+    href: https://azure.microsoft.com/support/options/
+  - name: Видеоролики
+    href: https://azure.microsoft.com/resources/videos/index/?services=time-series-insights
+ms.openlocfilehash: d30b4b2b19a4f055647b4723c91a15a1a977de6d
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52849519"

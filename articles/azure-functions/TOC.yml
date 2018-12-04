@@ -11,16 +11,18 @@ items:
     href: functions-compare-logic-apps-ms-flow-webjobs.md
 - name: Быстрое начало работы
   items:
-  - name: 'Создание функции: портал'
-    href: functions-create-first-azure-function.md
   - name: Создание функций (Visual Studio)
     href: functions-create-your-first-function-visual-studio.md
   - name: 'Создание функции: Visual Studio Code'
     href: functions-create-first-function-vs-code.md
   - name: 'Создание функции: Java/Maven'
     href: functions-create-first-java-maven.md
+  - name: 'Создание функции: Python'
+    href: functions-create-first-function-python.md
   - name: 'Создание функции: Azure CLI'
     href: functions-create-first-azure-function-azure-cli.md
+  - name: 'Создание функции: портал'
+    href: functions-create-first-azure-function.md
   - name: 'Создание функции: Linux'
     href: functions-create-first-azure-function-azure-cli-linux.md
   - name: триггеры;
@@ -86,6 +88,8 @@ items:
       href: functions-reference-node.md
     - name: Java
       href: functions-reference-java.md
+    - name: Python
+      href: functions-reference-python.md
   - name: Диагностика
     href: ../app-service/app-service-diagnostics.md
   - name: Рекомендации по производительности
@@ -114,6 +118,8 @@ items:
       href: functions-create-maven-intellij.md
     - name: Разработка в Eclipse
       href: functions-create-maven-eclipse.md
+    - name: Создание приложения-функции Linux
+      href: create-function-app-linux-app-service-plan.md
     - name: Управление подключениями
       href: manage-connections.md
     - name: Обработка ошибок
@@ -188,6 +194,14 @@ items:
       href: functions-recover-storage-account.md
 - name: Справочные материалы
   items:
+  - name: Справочники по API
+    items:
+    - name: Java
+      href: https://docs.microsoft.com/java/api/overview/azure/functions/runtime?view=azure-java-stable
+    - name: Python
+      href: https://docs.microsoft.com/python/api/azure-functions/azure.functions?view=azure-python
+  - name: Справочник по параметрам приложения
+    href: functions-app-settings.md
   - name: Привязки
     items:
     - name: Хранилище BLOB-объектов
@@ -229,13 +243,12 @@ items:
     - name: Twilio
       href: functions-bindings-twilio.md
   - name: Справочник по host.json
+    href: functions-host-json.md
     items:
     - name: Функции 2.x
       href: functions-host-json.md
     - name: Функции 1.x
       href: functions-host-json-v1.md
-  - name: Справочник по параметрам приложения
-    href: functions-app-settings.md
   - name: Справочник по OpenAPI
     href: functions-api-definition.md
 - name: Ресурсы
@@ -264,9 +277,9 @@ items:
     href: https://github.com/Azure/Azure-Functions/
   - name: Обновления службы
     href: https://azure.microsoft.com/updates/?product=functions&updatetype=&platform=
-ms.openlocfilehash: facc469c576bf1de905441bb5b56a00bd745e924
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: bd85d1f3afa9e6ebc580f252782756bff278b9d8
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52632302"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52850661"
