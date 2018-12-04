@@ -600,7 +600,7 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 > [!TIP]
 > Приложение PHP может использовать стандартный метод [error_log()](http://php.net/manual/function.error-log.php) для вывода в консоль. Пример приложения использует этот подход в файле конфигурации _app/Http/routes.php_.
 >
-> Являясь веб-платформой, [Laravel использует Monolog](https://laravel.com/docs/5.4/errors) в качестве поставщика службы ведения журнала. Чтобы узнать, как настроить Monolog для вывода сообщений в консоль, ознакомьтесь с разделом [PHP: How to use monolog to log to console (php://out)](http://stackoverflow.com/questions/25787258/php-how-to-use-monolog-to-log-to-console-php-out) (PHP: как использовать Monolog для вывода журналов в консоль (php://out)).
+> Являясь веб-платформой, [Laravel использует Monolog](https://laravel.com/docs/5.4/errors) в качестве поставщика службы ведения журнала. Чтобы узнать, как настроить Monolog для вывода сообщений в консоль, ознакомьтесь с разделом [PHP: как использовать Monolog для вывода журналов в консоль (php://out)](http://stackoverflow.com/questions/25787258/php-how-to-use-monolog-to-log-to-console-php-out).
 >
 >
 

@@ -82,7 +82,7 @@ ms.locfileid: "52425716"
 [Шаг 5. Прогнозирование цен на новые автомобили]: #step-5-predict-new-automobile-prices
 
 > [!TIP] 
-> Рабочую копию этого эксперимента вы можете найти в [коллекции решений Azure AI](https://gallery.cortanaintelligence.com). Выберите пункт **[Your first data science experiment - Automobile price prediction](https://gallery.cortanaintelligence.com/Experiment/Your-first-data-science-experiment-Automobile-price-prediction-1)** (Ваш первый эксперимент по анализу данных. Прогнозирование цен на автомобили), затем щелкните **Open in Studio** (Открыть в студии), чтобы загрузить в рабочее пространство студии копию этого эксперимента.
+> Рабочую копию этого эксперимента вы можете найти в [коллекции решений Azure AI](https://gallery.cortanaintelligence.com). Выберите пункт **[Ваш первый эксперимент по анализу данных. Прогнозирование цен на автомобили](https://gallery.cortanaintelligence.com/Experiment/Your-first-data-science-experiment-Automobile-price-prediction-1)**, затем щелкните **Open in Studio** (Открыть в студии), чтобы загрузить в рабочее пространство студии копию этого эксперимента.
 
 
 ## <a name="step-1-get-data"></a>Шаг 1. Получение данных
