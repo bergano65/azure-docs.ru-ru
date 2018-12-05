@@ -1,5 +1,5 @@
 items:
-- name: Документация по Машинному обучению Azure (предварительная версия)
+- name: Документация по машинному обучению Azure
   href: index.yml
 - name: Обзор
   items:
@@ -25,18 +25,22 @@ items:
     href: quickstart-create-workspace-with-python.md
 - name: Учебники
   items:
-  - name: Обучение моделей. Часть 1
-    href: tutorial-train-models-with-aml.md
-  - name: Развертывание моделей. Часть 2
-    href: tutorial-deploy-models-with-aml.md
-  - name: Обучение автоматизированных моделей Машинного обучения
-    displayName: automl
-    href: tutorial-auto-train-models.md
+  - name: Классификация изображений (данные MNIST)
+    items:
+    - name: 1. Обучение модели
+      href: tutorial-train-models-with-aml.md
+    - name: 2. Развертывание модели
+      href: tutorial-deploy-models-with-aml.md
+  - name: Регрессия (данные о такси Нью-Йорка)
+    items:
+    - name: 1. Подготовка данных для построения модели
+      href: tutorial-data-prep.md
+    - name: 2. Автоматическое обучение модели машинного обучения
+      displayName: automl, automated, auto ml,
+      href: tutorial-auto-train-models.md
 - name: Примеры
-  items:
-  - name: Записные книжки Jupyter (GitHub)
-    displayName: example, examples
-    href: https://aka.ms/aml-notebooks
+  displayName: example, examples, jupyter, azure notebooks, python, notebook, github
+  href: samples-notebooks.md
 - name: Основные понятия
   items:
   - name: Управление моделями
@@ -52,11 +56,11 @@ items:
     href: how-to-manage-workspace.md
   - name: Настройка среды разработки 
     items:
-    - name: Настройка среды
-      displayName: local, remote, azure notebooks, notebook, jupyter, dsvm
+    - name: Настройка среды разработки
+      displayName: local, remote, azure notebooks, notebook, jupyter, dsvm, Databricks, ADB
       href: how-to-configure-environment.md
-    - name: Инструменты VS Code для решений ИИ
-      displayName: Visual Studio Code, vscode
+    - name: Расширение Visual Studio Code
+      displayName: Visual Studio Code, vscode, tools, ai, vs
       items:
       - name: Начало работы
         href: how-to-vscode-tools.md
@@ -75,7 +79,7 @@ items:
   - name: Обучение моделей
     items:
     - name: Настройка сред обучения
-      displayName: compute target, dsvm, Data Science Virtual Machine, batchai, batch ai, local, cluster, aci, container instance, databricks, data lake, lake, hdi, hdinsights
+      displayName: compute target, dsvm, Data Science Virtual Machine, local, cluster, aci, container instance, databricks, data lake, lake, hdi, hdinsights
       href: how-to-set-up-training-targets.md
     - name: Доступ к данным во время обучения
       href: how-to-access-data.md
@@ -127,12 +131,16 @@ items:
     - name: Использование в режиме реального времени
       displayName: create client, client, consume
       href: how-to-consume-web-service.md
+    - name: Составление пакетных прогнозов
+      href: how-to-run-batch-predictions.md
   - name: Мониторинг веб-служб
     items:
     - name: Сбор и оценка данных модели
       href: how-to-enable-data-collection.md
     - name: Мониторинг с помощью Application Insights
       href: how-to-enable-app-insights.md
+  - name: Создание первого конвейера
+    href: how-to-create-your-first-pipeline.md
   - name: Управление квотами ресурсов
     displayName: limits
     href: how-to-manage-quotas.md
@@ -368,9 +376,9 @@ items:
       href: ../desktop-workbench/frequently-asked-questions.md
     - name: Старые проблемы
       href: ../desktop-workbench/known-issues-and-troubleshooting-guide.md
-ms.openlocfilehash: 308c767eb4a4bd332037093e23a1cb53a9fd1dc7
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 67bf0dfb2939cfd561f4558f9003c36883dcef93
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/04/2018
-ms.locfileid: "52845065"
+ms.locfileid: "52864831"

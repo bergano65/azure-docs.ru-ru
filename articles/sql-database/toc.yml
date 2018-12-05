@@ -89,56 +89,62 @@ items:
   items:
   - name: Модели приобретения
     items:
-    - name: Виртуальное ядро и DTU
+    - name: Обзор
       href: sql-database-service-tiers.md
-    - name: Модель покупки на основе числа виртуальных ядер
-      items:
-      - name: Выбор уровня службы при использовании модели покупки на основе числа виртуальных ядер
-        href: sql-database-service-tiers-vcore.md
-      - name: Уровни "Общего назначения" и "Критически важный для бизнеса"
-        href: sql-database-service-tiers-general-purpose-business-critical.md
-      - name: Уровень "Гипермасштабирование"
-        href: sql-database-service-tier-hyperscale.md
-      - name: Часто задаваемые вопросы о гипермасштабировании
-        href: sql-database-service-tier-hyperscale-faq.md
-    - name: Выбор уровня службы на основе DTU
+    - name: Модель приобретения на основе виртуальных ядер
+      href: sql-database-service-tiers-vcore.md
+    - name: Модель с DTU
       href: sql-database-service-tiers-dtu.md
     - name: Предварительная оплата резервной мощности
       href: sql-database-reserved-capacity.md
-  - name: Логические серверы
+  - name: Вычисления и хранение
     items:
-    - name: Создание и управление
-      href: sql-database-logical-servers.md
-    - name: Ограничения ресурсов
-      href: sql-database-resource-limits-logical-server.md
-    - name: Архитектура подключения
-      href: sql-database-connectivity-architecture.md
-    - name: Отличия T-SQL
-      href: sql-database-transact-sql-information.md
-    - name: Репликация транзакций — одна база данных и эластичный пул
-      href: replication-to-sql-database.md
+    - name: Обзор
+      href: sql-database-service-tiers-general-purpose-business-critical.md
+    - name: Общего назначения (цен. категория "Стандартный")
+      href: sql-database-service-tier-general-purpose.md
+    - name: Критически важный для бизнеса (цен. категория "Премиум")
+      href: sql-database-service-tier-business-critical.md
+    - name: Уровень "Гипермасштабирование"
+      href: sql-database-service-tier-hyperscale.md
+    - name: Часто задаваемые вопросы о гипермасштабировании
+      href: sql-database-service-tier-hyperscale-faq.md
   - name: Отдельные базы данных
     items:
+    - name: Отдельная база данных
+      href: sql-database-single-index.yml
     - name: Создание и управление
       href: sql-database-single-databases-manage.md
+    - name: Логические серверы
+      items:
+      - name: Создание и управление
+        href: sql-database-logical-servers.md
+      - name: Ограничения ресурсов
+        href: sql-database-resource-limits-logical-server.md
+      - name: Архитектура подключения
+        href: sql-database-connectivity-architecture.md
+      - name: Отличия T-SQL
+        href: sql-database-transact-sql-information.md
+      - name: Репликация транзакций — одна база данных и эластичный пул
+        href: replication-to-sql-database.md
+    - name: Пулы эластичных БД
+      items:
+      - name: Пулы эластичных БД
+        href: sql-database-elastic-pool.md
+      - name: Создание и управление
+        href: sql-database-elastic-pool-manage.md
+      - name: Ограничения ресурсов на основе виртуальных ядер
+        href: sql-database-vcore-resource-limits-elastic-pools.md
+      - name: Ограничения ресурсов на основе DTU
+        href: sql-database-dtu-resource-limits-elastic-pools.md
+      - name: Масштабирование ресурсов
+        href: sql-database-elastic-pool-scale.md
     - name: Ограничения ресурсов на основе виртуальных ядер
       href: sql-database-vcore-resource-limits-single-databases.md
     - name: Ограничения ресурсов на основе DTU
       href: sql-database-dtu-resource-limits-single-databases.md
     - name: Масштабирование ресурсов
       href: sql-database-single-database-scale.md
-  - name: Пулы эластичных БД
-    items:
-    - name: Пулы эластичных БД
-      href: sql-database-elastic-pool.md
-    - name: Создание и управление
-      href: sql-database-elastic-pool-manage.md
-    - name: Ограничения ресурсов на основе виртуальных ядер
-      href: sql-database-vcore-resource-limits-elastic-pools.md
-    - name: Ограничения ресурсов на основе DTU
-      href: sql-database-dtu-resource-limits-elastic-pools.md
-    - name: Масштабирование ресурсов
-      href: sql-database-elastic-pool-scale.md
   - name: Управляемые экземпляры
     items:
     - name: Управляемые экземпляры
@@ -159,7 +165,7 @@ items:
         href: sql-database-managed-instance-sync-network-configuration.md
       - name: Архитектура подключения
         href: sql-database-managed-instance-connectivity-architecture.md
-      - name: Конечные точки управления
+      - name: Конечная точка управления
         href: sql-database-managed-instance-management-endpoint.md
       - name: Подключение приложений
         href: sql-database-managed-instance-connect-app.md
@@ -656,9 +662,9 @@ items:
     href: /azure/architecture/
   - name: Истории клиентов
     href: http://customers.microsoft.com/en-us/search?sq=%22Azure%20SQL%20Database%22&ff=&p=0&so=story_publish_date%20desc
-ms.openlocfilehash: 2cc5240aa7302d687f0b7a2fad2af29105e86de0
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: ea998e50af9b6b2f4f6331a0f02f84d08eff425c
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52840424"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52890166"

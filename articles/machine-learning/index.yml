@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 6dc003473ed228fa8e10bd6a10d5b4b9a3d0ac49
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: ef0ecc7a9e89168ed57c75ab24c3233692d77151
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51621366"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52863573"
 documentType: LandingData
 title: Документация по машинному обучению Azure
 metadata:
@@ -17,7 +17,7 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 10/31/2018
+  ms.date: 12/04/2018
   ms.author: jmartens
 abstract:
   description: Узнайте, как встраивать интеллектуальные алгоритмы в приложения и веб-сайты, используя решения "Машинное обучение Azure".  Руководства, краткие инструкции, справочники по API и примеры использования.
@@ -32,53 +32,42 @@ sections:
       html: <p>Узнайте, как эта служба помогает специалистам по обработке и анализу данных разрабатывать и администрировать решения ИИ<br/> с помощью CLI и средств Python, а также библиотек с разными данными Azure и службами вычислений. Подробнее</p>
       image:
         src: /azure/machine-learning/media/index/i_machine-learning.svg
-      title: Служба "Машинное обучение Azure" (предварительная версия)
-    - href: /azure/machine-learning/studio/
-      html: <p>Узнайте, как использовать этот инструмент для совместной работы, поддерживающий функцию перетаскивания объектов и предназначенный для создания, тестирования и развертывания решений для прогнозной аналитики. Подробнее &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-      image:
-        src: /azure/machine-learning/media/index/machine-learning-studio.svg
-      title: Студия машинного обучения Azure
+      title: Служба "Машинное обучение Azure"
 - title: Краткие руководства
   items:
   - type: paragraph
-    text: 'Узнайте, как быстро настроить и использовать службу "Машинное обучение Azure" и Студию машинного обучения:'
+    text: 'Узнайте, как быстро настроить и начать использовать службу "Машинное обучение Azure":'
   - type: table
     style: dataMatrix
     columns:
     - image:
         src: media/index/i_machine-learning.svg
-    - image:
-        src: media/index/machine-learning-studio.svg
     rows:
-    - title: Начало работы со службой
+    - title: Начало работы со службой на портале Azure
       values:
       - href: /azure/machine-learning/service/quickstart-get-started
-      - href: /azure/machine-learning/studio/create-workspace
+    - title: Начало работы со службой в Python
+      values:
+      - href: /azure/machine-learning/service/quickstart-create-workspace-with-python
     - title: Подготовка данных для построения модели
       values:
-      - href: /azure/machine-learning/service/how-to-data-prep
-      - href: /azure/machine-learning/studio/walkthrough-2-upload-data
+      - href: /azure/machine-learning/service/tutorial-data-prep
     - title: Создание собственных моделей машинного обучения
       values:
       - href: /azure/machine-learning/service/tutorial-train-models-with-aml
-      - href: /azure/machine-learning/studio/walkthrough-3-create-new-experiment
     - title: Автоматическое создание и настройка алгоритмов
       values:
       - href: /azure/machine-learning/service/tutorial-auto-train-models
-      - href: 
     - title: Развертывание модели в качестве веб-службы
       values:
       - href: /azure/machine-learning/service/tutorial-deploy-models-with-aml
-      - href: /azure/machine-learning/studio/walkthrough-5-publish-web-service
     - title: Использование моделей машинного обучения
       values:
       - href: /azure/machine-learning/service/how-to-consume-web-service
-      - href: /azure/machine-learning/studio/walkthrough-6-access-web-service
-    - title: Создание, оптимизация и администрирование конвейеров ML
+    - title: Создание конвейеров машинного обучения и управление ими
       values:
-      - href: /azure/machine-learning/service/concept-ml-pipelines
-      - href: 
-- title: Другие технологии службы "Машинное обучение Azure"
+      - href: /azure/machine-learning/service/how-to-create-your-first-pipeline
+- title: Другие технологии машинного обучения Майкрософт
   items:
   - type: list
     style: cards
@@ -90,11 +79,11 @@ sections:
       image:
         src: /azure/machine-learning/media/index/cognitive-services.png
       title: Cognitive Services
-    - href: /azure/batch-ai/
-      html: <p>Управляемая служба, которая помогает параллельно экспериментировать с моделями искусственного интеллекта на любой платформе и массово обучает их, используя кластеризованные GPU.</p>
+    - href: /azure/machine-learning/studio/
+      html: <p>Узнайте, как использовать этот инструмент для совместной работы, поддерживающий функцию перетаскивания объектов и предназначенный для создания, тестирования и развертывания решений для прогнозной аналитики. Подробнее &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
       image:
-        src: /azure/machine-learning/media/index/batch.png
-      title: Пакетное обучение искусственного интеллекта
+        src: /azure/machine-learning/media/index/machine-learning-studio.svg
+      title: Студия машинного обучения Azure
     - href: /sql/advanced-analytics/r/r-services
       html: <p>Аналитика в базе данных с поддержкой R и Python.</p>
       image:

@@ -5,7 +5,7 @@ items:
   href: index.yml
 - name: Обзор
   items:
-  - name: Аналитика временных рядов Azure (предварительная версия)
+  - name: Сведения о службе "Аналитика временных рядов"
     href: time-series-insights-update-overview.md
 - name: Быстрое начало работы
   items:
@@ -15,7 +15,7 @@ items:
       href: time-series-quickstart.md
   - name: Аналитика временных рядов Azure (предварительная версия)
     items:
-    - name: Аналитика временных рядов Azure (предварительная версия)
+    - name: Обзор службы "Аналитика временных рядов" (предварительная версия)
       href: time-series-insights-update-quickstart.md
 - name: Учебники
   items:
@@ -29,7 +29,7 @@ items:
       href: tutorial-create-populate-tsi-environment.md
   - name: Аналитика временных рядов Azure (предварительная версия)
     items:
-    - name: Создание среды TSI
+    - name: Руководство по службе "Аналитика временных рядов Azure" (предварительная версия)
       href: time-series-insights-update-create-environment.md
 - name: Основные понятия
   items:
@@ -51,9 +51,9 @@ items:
       href: time-series-insights-update-storage-ingress.md
     - name: Варианты использования
       href: time-series-insights-update-use-cases.md
-    - name: Модель временных рядов
+    - name: Моделирование данных
       href: time-series-insights-update-tsm.md
-    - name: Запрос временных рядов
+    - name: Запрашивание данных
       href: time-series-insights-update-tsq.md
     - name: Визуализация данных в обозревателе (обновление)
       href: time-series-insights-update-explorer.md
@@ -109,25 +109,29 @@ items:
   items:
   - name: Аналитика временных рядов Azure
     items:
-    - name: Аналитика временных рядов (общедоступная версия)
+    - name: Аналитика временных рядов Azure (общедоступная версия)
+      href: /rest/api/time-series-insights/ga
       items:
       - name: Запрос
+        href: /rest/api/time-series-insights/ga-query
         items:
         - name: API
-          href: /rest/api/time-series-insights/time-series-insights-reference-queryapi
+          href: /rest/api/time-series-insights/ga-query-api
         - name: Синтаксис
-          href: /rest/api/time-series-insights/time-series-insights-reference-query-syntax
+          href: /rest/api/time-series-insights/ga-query-syntax
       - name: API эталонных данных
+        href: /rest/api/time-series-insights/ga-reference-data-api
     - name: Аналитика временных рядов Azure (предварительная версия)
+      href: /rest/api/time-series-insights/preview
       items:
       - name: Запрос временных рядов
-        href: /rest/api/time-series-insights/time-series-insights-reference-update-tsq
+        href: /rest/api/time-series-insights/preview-query
       - name: Модель временных рядов
-        href: /rest/api/time-series-insights/time-series-insights-reference-update-tsm
+        href: /rest/api/time-series-insights/preview-model
       - name: API среды временных рядов
-        href: /rest/api/time-series-insights/time-series-insights-reference-update-env
+        href: /rest/api/time-series-insights/preview-env
       - name: Синтаксис и выражение временных рядов
-        href: /rest/api/time-series-insights/time-series-insights-reference-update-tsx
+        href: /rest/api/time-series-insights/preview-tsx
 - name: Сопутствующие материалы
   items:
   - name: Решения
@@ -176,9 +180,9 @@ items:
     href: https://azure.microsoft.com/support/options/
   - name: Видеоролики
     href: https://azure.microsoft.com/resources/videos/index/?services=time-series-insights
-ms.openlocfilehash: d30b4b2b19a4f055647b4723c91a15a1a977de6d
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: c75c034e0f54b33e28aa7f0ef5d0c18ad0004e55
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52849519"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52889997"
