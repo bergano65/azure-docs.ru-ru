@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 09/07/2018
 ms.author: glenga
 ms.custom: mvc, devcenter
-ms.openlocfilehash: ce4adface65237ec6f4ed0ef8f8ba9bbdf72355c
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: c5889d89ec8c913d9300fa85318a16b4eb452d3b
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50421056"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52633764"
 ---
 # <a name="create-your-first-function-using-visual-studio-code"></a>Создание функции в Azure с помощью Visual Studio Code
 
@@ -49,39 +49,9 @@ ms.locfileid: "50421056"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="install-the-azure-function-extension"></a>Установка расширения "Функции Azure"
+[!INCLUDE [functions-install-vs-code-extension](../../includes/functions-install-vs-code-extension.md)]
 
-Расширение "Функции Azure" предназначено для создания, тестирования и развертывания функций в Azure.
-
-1. В Visual Studio Code откройте **Extensions** (Расширения) и найдите `azure functions` или [перейдите по этой ссылке](vscode:extension/ms-azuretools.vscode-azurefunctions).
-
-1. Выберите **Install** (Установить), чтобы установить расширение для Visual Studio Code. 
-
-    ![Установка расширения "Функции Azure"](./media/functions-create-first-function-vs-code/vscode-install-extension.png)
-
-1. Перезапустите Visual Studio Code и щелкните значок Azure на панели действий. Вы увидите область Azure Functions (Функции Azure) на боковой панели.
-
-    ![Область Функций Azure на боковой панели](./media/functions-create-first-function-vs-code/azure-functions-window-vscode.png)
-
-## <a name="create-an-azure-functions-project"></a>Создание проекта Функций Azure
-
-С помощью шаблона проекта Функции Azure в Visual Studio Code можно создать проект и затем опубликовать его в виде приложения-функции в Azure. Приложение-функция позволяет группировать функции в логические единицы для развертывания и совместного использования ресурсов, а также управления ими.
-
-1. В Visual Studio Code выберите логотип Azure, чтобы отобразить область **Azure: Functions** (Azure: Функции), после чего щелкните значок Create New Project (Создать проект).
-
-    ![Создание проекта приложения-функции](./media/functions-create-first-function-vs-code/create-function-app-project.png)
-
-1. Выберите расположение для рабочей области проекта и нажмите **Select** (Выбрать).
-
-    > [!NOTE]
-    > Рассматриваемый в этой статье пример выполняется вне рабочей области. В этом случае не нужно указывать папку проекта, которая является частью рабочей области.
-
-1. Выберите язык для проекта приложения-функции. В этом примере используется JavaScript.
-    ![Выбор языка проекта](./media/functions-create-first-function-vs-code/create-function-app-project-language.png)
-
-1. Когда появится запрос, выберите **Add to workspace** (Добавить в рабочую область).
-
-Редактор Visual Studio Code создаст проект приложения-функции в новой рабочей области. Проект будет содержать файлы конфигурации [host.json](functions-host-json.md) и [local.settings.json](functions-run-local.md#local-settings-file), а также файлы проекта для указанного языка. В папке проекта также появится новый репозиторий Git.
+[!INCLUDE [functions-create-function-app-vs-code](../../includes/functions-create-function-app-vs-code.md)]
 
 ## <a name="create-an-http-triggered-function"></a>Создание функции, активируемой HTTP
 
@@ -127,57 +97,9 @@ ms.locfileid: "50421056"
 
 Убедившись, что функция выполняется правильно на локальном компьютере, опубликуйте проект в Azure.
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+[!INCLUDE [functions-sign-in-vs-code](../../includes/functions-sign-in-vs-code.md)]
 
-Прежде чем публиковать приложение, необходимо войти в Azure.
-
-1. В области **Azure: Functions** (Azure: Функции) выберите **Sign in to Azure** (Войти в Azure). Если у вас нет учетной записи, можно создать **бесплатную учетную запись Azure**.
-
-    ![Ответ функции localhost в браузере](./media/functions-create-first-function-vs-code/functions-sign-into-azure.png)
-
-1. При появлении запроса выберите **Copy & Open** (Копировать и открыть) или скопируйте отображаемый код и откройте <https://aka.ms/devicelogin> в браузере.
-
-1. Скопированный код вставьте на странице **Device Login** (Вход на устройство), проверьте, выполнен ли вход в Visual Studio Code, и щелкните **Continue** (Продолжить).  
-
-1. Войдите в учетную запись, используя учетные данные Azure. Выполнив вход, можно закрыть браузер.
-
-## <a name="publish-the-project-to-azure"></a>Публикация проекта в Azure
-
-Visual Studio Code позволяет опубликовать проект функций непосредственно в Azure. При этом вы создаете приложение-функцию и связанные ресурсы в своей подписке Azure. Приложение-функция обеспечивает контекст выполнения функций. Проект упаковывается и развертывается в новом приложении-функции в вашей подписке Azure. 
-
-В этой статье предполагается, что вы создаете новое приложение-функцию. Публикация в существующее приложение-функцию перезаписывает содержимое этого приложения в Azure.
-
-1. В области **Azure: Functions** ( Azure: Функции) щелкните значок Deploy to Function App (Развернуть в приложение-функцию).
-
-    ![Параметры приложения-функции](./media/functions-create-first-function-vs-code/function-app-publish-project.png)
-
-1. Выберите папку проекта, которая является текущей рабочей областью.
-
-1. Если у вас есть несколько подписок, выберите ту, в которой будет размещено приложение-функция, после чего щелкните **+Create New Function App** (Создать приложение-функцию).
-
-1. Введите глобальное уникальное имя для приложения-функции и нажмите клавишу ВВОД. Допустимые символы для имени приложения-функции: `a-z`, `0-9` и `-`.
-
-1. Выберите **+Create New Resource Group** (Создать группу ресурсов), назначьте глобальное уникальное имя группе ресурсов, например `myResourceGroup`, и нажмите клавишу ВВОД. Вы также можете использовать существующую группу ресурсов.
-
-1. Выберите **+Create New Storage Account** (Создать учетную запись хранения), введите глобальное уникальное имя группы ресурсов для вашего приложения-функции и нажмите клавишу ВВОД. Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв. Вы также можете использовать имеющуюся учетную запись.
-
-1. Выберите расположение в ближайшем к вам [регионе](https://azure.microsoft.com/regions/) или регионе, ближайшем к другим службам, к которым обращаются ваши функции.
-
-    После того как вы укажете расположение, начнется создание приложения-функции. После создания приложения-функции и применения пакета развертывания отобразится уведомление.
-
-1. Выберите **View Output** (Просмотреть выходные данные) в уведомлении, чтобы просмотреть результаты создания и развертывания ресурсов Azure.
-
-    ![Результат создания приложения-функции](./media/functions-create-first-function-vs-code/function-create-notifications.png)
-
-1. Запишите URL-адрес нового приложения-функции в Azure. Он понадобится для тестирования функции после публикации проекта в Azure.
-
-    ![Результат создания приложения-функции](./media/functions-create-first-function-vs-code/function-create-output.png)
-
-1. В области **Azure: Functions** (Azure: Функции) вы увидите новое приложение-функцию, появившееся в вашей подписке. Если развернуть этот узел, отобразятся функции в приложении-функции, а также параметры приложения и прокси-серверы функций.
-
-    ![Параметры приложения-функции](./media/functions-create-first-function-vs-code/function-app-project-settings.png)
-
-    В узле приложения-функции нажмите клавишу CTRL и щелкните правой кнопкой мыши, чтобы отобразить список доступных задач по управлению и настройке приложения-функции в Azure. Приложение-функцию можно также просмотреть на портале Azure.
+[!INCLUDE [functions-publish-project-vscode](../../includes/functions-publish-project-vscode.md)]
 
 ## <a name="test-your-function-in-azure"></a>Тестирование функции в Azure
 
