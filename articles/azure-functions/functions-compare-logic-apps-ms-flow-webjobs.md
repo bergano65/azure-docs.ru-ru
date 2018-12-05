@@ -12,12 +12,12 @@ ms.topic: overview
 ms.date: 04/09/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: c5c2e4cd26954efb92d470f5432f709e4dc3f887
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: c22d75b4eb058942da5a3b0699cbb4a23eec42f3
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51240585"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52634937"
 ---
 # <a name="compare-flow-logic-apps-functions-and-webjobs"></a>Сравнение Microsoft Flow, Logic Apps, функций и веб-заданий
 
@@ -53,7 +53,7 @@ Microsoft Flow и Azure Logic Apps спроектированы в рамках 
 
 Функции и Logic Apps — это службы Azure для использования бессерверных рабочих нагрузок. Функции Azure — это бессерверная служба вычислений, а Azure Logic Apps предоставляет бессерверные рабочие процессы. Обе службы можно использовать для создания сложных *оркестраций*. Оркестрация — это коллекция функций или шагов, называемых *действиями*  в Logic Apps, которые выполняются для реализации сложных задач. Например, для обработки пакета заказов можно запустить параллельное выполнение множества экземпляров функции, дождаться завершения их работы, а затем выполнить функцию, которая вычислит все полученные результаты.
 
-Для Функций Azure оркестрации разрабатываются путем написания кода и использования [расширения "Устойчивые функции"](durable-functions-overview.md). Для Logic Apps оркестрации можно создавать с помощью графического пользовательского интерфейса или изменения файлов конфигурации.
+Для Функций Azure оркестрации разрабатываются путем написания кода и использования [расширения "Устойчивые функции"](durable/durable-functions-overview.md). Для Logic Apps оркестрации можно создавать с помощью графического пользовательского интерфейса или изменения файлов конфигурации.
 
 Вы можете комбинировать и сопоставлять служба при создании оркестраций, вызывая функции из приложений логики и приложения логики из функций. Выберите способ создания оркестраций с учетом ваших предпочтений и возможностей, предоставляемых каждой службой. В следующей таблице представлены некоторые основные различия между этими службами:
  
@@ -63,7 +63,7 @@ Microsoft Flow и Azure Logic Apps спроектированы в рамках 
 | Соединение | [Около десяти встроенных типов привязки](functions-triggers-bindings.md#supported-bindings); написание кода для пользовательских привязок | [Большая коллекция соединителей](../connectors/apis-list.md), [пакет интеграции Enterprise для сценариев B2B](../logic-apps/logic-apps-enterprise-integration-overview.md), [создание пользовательских соединителей](../logic-apps/custom-connector-overview.md) |
 | Действия | Каждое действие является функцией Azure; написание кода для функций действий |[Большая коллекция готовых действий](../logic-apps/logic-apps-workflow-actions-triggers.md)|
 | Мониторинг | [Azure Application Insights](../application-insights/app-insights-overview.md) | [Портал Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md), [Log Analytics](../logic-apps/logic-apps-monitor-your-logic-apps.md)|
-| управления | [REST API](durable-functions-http-api.md), [Visual Studio](https://docs.microsoft.com/azure/vs-azure-tools-resources-managing-with-cloud-explorer) | [Портал Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md), [REST API](https://docs.microsoft.com/rest/api/logic/), [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.logicapp/?view=azurermps-5.6.0), [Visual Studio](https://docs.microsoft.com/azure/logic-apps/manage-logic-apps-with-visual-studio) |
+| управления | [REST API](durable/durable-functions-http-api.md), [Visual Studio](https://docs.microsoft.com/azure/vs-azure-tools-resources-managing-with-cloud-explorer) | [Портал Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md), [REST API](https://docs.microsoft.com/rest/api/logic/), [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.logicapp/?view=azurermps-5.6.0), [Visual Studio](https://docs.microsoft.com/azure/logic-apps/manage-logic-apps-with-visual-studio) |
 | Контекст выполнения | Можно запускать [локально](functions-runtime-overview.md) или в облаке | Можно запускать только в облаке|
 
 <a name="function"></a>

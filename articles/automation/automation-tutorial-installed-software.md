@@ -11,12 +11,12 @@ ms.service: automation
 ms.component: change-inventory-management
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: ad9fc7deb73cdcbcf83cc10b9b28f7d7e4ac7661
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: 6ff8bccc7037782b2709340312f0602b4cd7ab1f
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52283797"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52834338"
 ---
 # <a name="discover-what-software-is-installed-on-your-azure-and-non-azure-machines"></a>Получение данных об установленном программном обеспечении на виртуальных машинах Azure и других компьютерах
 
@@ -70,7 +70,7 @@ ms.locfileid: "52283797"
 
 ## <a name="onboard-a-non-azure-machine"></a>Подключение компьютера, не относящегося к Azure
 
-Чтобы добавить компьютеры, не относящиеся к Azure, установите агент для [Windows](../log-analytics/log-analytics-agent-windows.md) или [Linux](automation-linux-hrw-install.md) в зависимости от операционной системы. Когда агент будет установлен, перейдите к своей учетной записи службы автоматизации и в разделе **Управление конфигурацией** выберите элемент **Инвентаризация**. Щелкнув **Управление компьютерами**, вы увидите список компьютеров, которые передают данные в рабочую область Log Analytics, для которых решение не включено. Выберите параметр с учетом вашего окружения.
+Чтобы добавить компьютеры, не относящиеся к Azure, установите агент для [Windows](../azure-monitor/platform/agent-windows.md) или [Linux](automation-linux-hrw-install.md) в зависимости от операционной системы. Когда агент будет установлен, перейдите к своей учетной записи службы автоматизации и в разделе **Управление конфигурацией** выберите элемент **Инвентаризация**. Щелкнув **Управление компьютерами**, вы увидите список компьютеров, которые передают данные в рабочую область Log Analytics, для которых решение не включено. Выберите параметр с учетом вашего окружения.
 
 * **Enable on all available machines** (Включить на всех доступных компьютерах) — этот параметр включает решение на всех компьютерах, которые в данный момент передают данные в рабочую область Log Analytics.
 * **Enable on all available machines and future machines** (Включить на всех доступных и добавляемых компьютерах) — этот параметр включает решение на всех компьютерах, которые передают данные в рабочую область Log Analytics, а также всех компьютерах, добавляемых в рабочую область.
@@ -113,7 +113,7 @@ ConfigurationData
 | summarize arg_max(TimeGenerated, *) by SoftwareName, Computer
 ```
 
-Дополнительные сведения о поиске по файлам журналов в Log Analytics см. в статье [Что такое Log Analytics?](../log-analytics/log-analytics-queries.md)
+Дополнительные сведения о поиске по файлам журналов в Log Analytics см. в статье [Что такое Log Analytics?](../azure-monitor/log-query/log-query-overview.md)
 
 ### <a name="single-machine-inventory"></a>Инвентаризация одного компьютера
 

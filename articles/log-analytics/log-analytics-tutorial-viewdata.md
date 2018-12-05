@@ -9,18 +9,17 @@ editor: ''
 ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.author: magoedte
 ms.custom: mvc
 ms.component: ''
-ms.openlocfilehash: 46bc932011a3699dbaced8316bc0e1b514c9a385
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: f953d13de78702328aef2b75d121e775c5f58f44
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48043062"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52876801"
 ---
 # <a name="view-or-analyze-data-collected-with-log-analytics-log-search"></a>Просмотр и анализ данных, собранных с помощью поиска по журналам Log Analytics
 
@@ -32,7 +31,7 @@ ms.locfileid: "48043062"
 
 Для выполнения примера в этом руководстве требуется виртуальная машина [, подключенная к рабочей области Log Analytics](log-analytics-quick-collect-azurevm.md).  
 
-Вы можете создавать и изменять запросы, а также работать с возвращенными данными в интерактивном режиме одним из двух способов.  Для простых запросов используйте страницу поиска по журналам на портале Azure, а для расширенных — портал расширенной аналитики. Дополнительные сведения о различиях в функциональных возможностях двух порталов см. в статье [Порталы для создания и изменения запросов к журналу в службе Azure Log Analytics](log-analytics-log-search-portals.md)
+Вы можете создавать и изменять запросы, а также работать с возвращенными данными в интерактивном режиме одним из двух способов.  Для простых запросов используйте страницу поиска по журналам на портале Azure, а для расширенных — портал расширенной аналитики. Дополнительные сведения о различиях в функциональных возможностях двух порталов см. в статье [Порталы для создания и изменения запросов к журналу в службе Azure Log Analytics](../azure-monitor/log-query/portals.md)
 
 В этом руководстве мы будет работать с поиском по журналам на портале Azure. 
 

@@ -10,23 +10,22 @@ ms.assetid: ''
 ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 11/13/2018
 ms.author: magoedte
 ms.custom: mvc
 ms.component: ''
-ms.openlocfilehash: dc7fbce18bc6593c561b2b3ed2563573879f89d2
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 1c5dfeb6f4f1bb1b56981b61671bb76a1b835e2a
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51625748"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52720275"
 ---
 # <a name="configure-log-analytics-agent-for-linux-computers-in-a-hybrid-environment"></a>Настройка агента Log Analytics для компьютеров Linux в гибридной среде
-[Azure Log Analytics](log-analytics-agent-windows.md) может собирать данные напрямую c физических компьютеров или виртуальных машин Linux в вашем центре обработки данных или в другой облачной среде в один репозиторий для подробного анализа и исправления.  В этом кратком руководстве показано, как настроить и собирать данные c компьютера Linux с помощью нескольких простых действий.  Сведения о виртуальных машинах Linux в Azure приведены далее в разделе [Сбор данных о виртуальных машинах Azure](log-analytics-quick-collect-azurevm.md).  
+[Azure Log Analytics](../azure-monitor/platform/agent-windows.md) может собирать данные напрямую c физических компьютеров или виртуальных машин Linux в вашем центре обработки данных или в другой облачной среде в один репозиторий для подробного анализа и исправления.  В этом кратком руководстве показано, как настроить и собирать данные c компьютера Linux с помощью нескольких простых действий.  Сведения о виртуальных машинах Linux в Azure приведены далее в разделе [Сбор данных о виртуальных машинах Azure](log-analytics-quick-collect-azurevm.md).  
 
-Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Linux](log-analytics-agent-overview.md#supported-linux-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-agent-overview.md#network-firewall-requirements).
+Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Linux](../azure-monitor/platform/log-analytics-agent.md#supported-linux-operating-systems) и [требованиях к сетевым брандмауэрам](../azure-monitor/platform/log-analytics-agent.md#network-firewall-requirements).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

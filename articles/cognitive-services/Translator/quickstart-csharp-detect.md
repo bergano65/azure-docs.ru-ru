@@ -10,12 +10,12 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 11/26/2018
 ms.author: erhopf
-ms.openlocfilehash: 8f98c4cbca87fd77e3c09c1028bfcb3181907412
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 89aedb33a88a7fb5f0a4e0abed172ba4e1cd091e
+ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52335702"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52682080"
 ---
 # <a name="quickstart-detect-text-language-with-the-translator-text-rest-api-c"></a>Краткое руководство. Определение языка текста с помощью и API перевода текстов (C#)
 
@@ -27,8 +27,8 @@ ms.locfileid: "52335702"
 
 * [ПАКЕТ SDK .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
 * [пакет NuGet .NET для JSON](https://www.nuget.org/packages/Newtonsoft.Json/);
-* [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода.
-* Ключ подписки Azure для службы "Речь".
+* [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
+* ключ подписки Azure для API перевода текстов.
 
 ## <a name="create-a-net-core-project"></a>Создание проекта .NET Core
 
@@ -39,7 +39,7 @@ dotnet new console -o detect-sample
 cd detect-sample
 ```
 
-Первая команда делает две вещи. Она создает консольное приложение .NET и каталог с именем `detect-sample`. Вторая команда изменяет каталог для проекта.
+С помощью первой команды создается консольное приложение .NET и каталог с именем `detect-sample`. Вторая команда позволяет изменить каталог для проекта.
 
 Вам нужно будет установить модуль вручную. В каталоге проекта выполните следующую команду:
 
@@ -49,7 +49,7 @@ dotnet add package Newtonsoft.Json --version 11.0.2
 
 ## <a name="add-required-namespaces-to-your-project"></a>Добавление обязательных пространств имен в проект
 
-Команда `dotnet new console`, которую вы выполнили ранее, создала проект, включая `Program.cs`. Этот файл находится там, где будет размещаться код приложения. Откройте файл `Program.cs` и замените существующие инструкции using. Эти инструкции обеспечивают доступ ко всем типам, требуемым для создания и запуска примера приложения.
+С помощью команды `dotnet new console`, которую вы выполнили ранее, был создан проект, включая `Program.cs`. Этот файл находится там, где будет размещаться код приложения. Откройте файл `Program.cs` и замените существующие инструкции using. Эти инструкции обеспечивают доступ ко всем типам, требуемым для создания и запуска примера приложения.
 
 ```csharp
 using System;
@@ -91,7 +91,7 @@ var requestBody = JsonConvert.SerializeObject(body);
 
 ## <a name="instantiate-the-client-and-make-a-request"></a>Создание экземпляра клиента и выполнение запроса
 
-Эти строки создают экземпляр `HttpClient` и `HttpRequestMessage`:
+С помощью этих строк создается экземпляр `HttpClient` и `HttpRequestMessage`:
 
 ```csharp
 using (var client = new HttpClient())
@@ -105,11 +105,11 @@ using (var request = new HttpRequestMessage())
 
 При использовании `HttpRequestMessage` выполняются следующие операции:
 
-* Объявление метода HTTP
-* Создание URI запроса
-* Вставка текста запроса (сериализованный объект JSON)
-* Добавление требуемых заголовков
-* Выполнение асинхронного запроса
+* объявление метода HTTP;
+* создание URI запроса;
+* вставка текста запроса (сериализованный объект JSON);
+* добавление требуемых заголовков;
+* выполнение асинхронного запроса;
 * Вывод ответа
 
 Добавьте следующий код в `HttpRequestMessage`:
@@ -138,7 +138,7 @@ Console.WriteLine("Press any key to continue.");
 
 ## <a name="put-it-all-together"></a>Сборка
 
-Последним шагом является вызов `Detect()` в функции `Main`. Найдите `static void Main(string[] args)` и добавьте следующие строки:
+Последний этап — вызов `Detect()` в функции `Main`. Найдите `static void Main(string[] args)` и добавьте следующие строки:
 
 ```csharp
 Detect();
@@ -147,7 +147,7 @@ Console.ReadLine();
 
 ## <a name="run-the-sample-app"></a>Запуск примера приложения
 
-Теперь вы готовы к запуску примера приложения. В командной строке или сеансе терминала перейдите в каталог проекта и выполните следующее:
+Теперь все готово к запуску примера приложения. В командной строке или сеансе терминала перейдите к каталогу проекта и выполните следующую команду:
 
 ```console
 dotnet run

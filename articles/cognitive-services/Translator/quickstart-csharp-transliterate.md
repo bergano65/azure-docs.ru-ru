@@ -10,12 +10,12 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 11/21/2018
 ms.author: erhopf
-ms.openlocfilehash: 4987a50f7a689b74062154b8427fd7bec8e2e8a6
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: d032471ef588e3ae415915e5b4d817ca5738888a
+ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52334316"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52678375"
 ---
 # <a name="quickstart-transliterate-text-with-the-translator-text-rest-api-c"></a>Краткое руководство. Транслитерация текста с помощью REST API перевода текстов (C#)
 
@@ -28,7 +28,7 @@ ms.locfileid: "52334316"
 * [ПАКЕТ SDK .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
 * [пакет NuGet .NET для JSON](https://www.nuget.org/packages/Newtonsoft.Json/);
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
-* ключ подписки Azure для службы "Речь".
+* ключ подписки Azure для API перевода текстов.
 
 ## <a name="create-a-net-core-project"></a>Создание проекта .NET Core
 
@@ -49,7 +49,7 @@ dotnet add package Newtonsoft.Json --version 11.0.2
 
 ## <a name="add-required-namespaces-to-your-project"></a>Добавление обязательных пространств имен в проект
 
-С помощью команды `dotnet new console`, которую вы выполнили ранее, был создан проект, включая `Program.cs`. Этот файл находится там, где будет размещаться код приложения. Откройте файл `Program.cs` и замените существующие операторы using. Эти операторы обеспечивают доступ ко всем типам, требуемым для создания и запуска примера приложения.
+С помощью команды `dotnet new console`, которую вы выполнили ранее, был создан проект, включая `Program.cs`. Этот файл находится там, где будет размещаться код приложения. Откройте файл `Program.cs` и замените существующие инструкции using. Эти операторы обеспечивают доступ ко всем типам, требуемым для создания и запуска примера приложения.
 
 ```csharp
 using System;

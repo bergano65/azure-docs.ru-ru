@@ -10,23 +10,22 @@ ms.assetid: ''
 ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 11/13/2018
 ms.author: magoedte
 ms.custom: mvc
 ms.component: ''
-ms.openlocfilehash: 5c064c7b369b7f695d9166cb93f2a018b5329bef
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 85b0b1a4b6c34fb56a575e86439fb2c22cff28bc
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51625612"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52725358"
 ---
 # <a name="configure-log-analytics-agent-for-windows-computers-in-a-hybrid-environment"></a>Настройка агента Log Analytics для компьютеров Windows в гибридной среде
-[Azure Log Analytics](log-analytics-agent-windows.md) может собирать данные напрямую c физических компьютеров или виртуальных машин Windows в вашем центре обработки данных или в другой облачной среде в один репозиторий для подробного анализа и исправления.  В этом кратком руководстве показано, как настроить и собирать данные c компьютера Windows с помощью нескольких простых действий.  Сведения о виртуальных машинах Windows в Azure приведены далее в разделе [Сбор данных о виртуальных машинах Azure](log-analytics-quick-collect-azurevm.md).  
+[Azure Log Analytics](../azure-monitor/platform/agent-windows.md) может собирать данные напрямую c физических компьютеров или виртуальных машин Windows в вашем центре обработки данных или в другой облачной среде в один репозиторий для подробного анализа и исправления.  В этом кратком руководстве показано, как настроить и собирать данные c компьютера Windows с помощью нескольких простых действий.  Сведения о виртуальных машинах Windows в Azure приведены далее в разделе [Сбор данных о виртуальных машинах Azure](log-analytics-quick-collect-azurevm.md).  
 
-Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](log-analytics-agent-overview.md#supported-windows-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-agent-overview.md#network-firewall-requirements).
+Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](../azure-monitor/platform/log-analytics-agent.md#supported-windows-operating-systems) и [требованиях к сетевым брандмауэрам](../azure-monitor/platform/log-analytics-agent.md#network-firewall-requirements).
  
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

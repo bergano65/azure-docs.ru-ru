@@ -1,22 +1,20 @@
 ---
-title: Как использовать Хранилище таблиц Azure и API таблиц Azure Cosmos DB с Ruby | Документация Майкрософт
+title: Как использовать Хранилище таблиц Azure и API таблиц Azure Cosmos DB с Ruby
 description: Хранение структурированных данных в облаке с помощью хранилища таблиц Azure или API таблиц Azure Cosmos DB.
 services: cosmos-db
 author: SnehaGunda
-manager: kfile
-editor: ''
 ms.service: cosmos-db
 ms.component: cosmosdb-table
 ms.devlang: ruby
 ms.topic: sample
 ms.date: 04/05/2018
 ms.author: sngun
-ms.openlocfilehash: d1583001550f5f272f4070006a4a6ac3be000de6
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 7ddf9c3ef848537cb68dce043bb22680439e9cd5
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34798276"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52877941"
 ---
 # <a name="how-to-use-azure-table-storage-and-the-azure-cosmos-db-table-api-with-ruby"></a>Как использовать Хранилище таблиц Azure и API таблиц Azure Cosmos DB с Ruby
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
