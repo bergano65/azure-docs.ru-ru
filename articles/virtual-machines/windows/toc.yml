@@ -30,7 +30,7 @@ items:
     href: tutorial-create-vmss.md
   - name: 7. Балансировка нагрузки виртуальных машин
     href: tutorial-load-balancer.md
-  - name: 8. Управление сетями
+  - name: 8. Подключение виртуальных машин к сетевой инфраструктуре
     href: tutorial-virtual-network.md
   - name: 9. Резервное копирование виртуальных машин
     href: tutorial-backup-vms.md
@@ -39,7 +39,7 @@ items:
     href: tutorial-govern-resources.md
   - name: 11. Мониторинг и обновление виртуальных машин
     href: tutorial-monitoring.md
-  - name: 12. Управление безопасностью виртуальных машин
+  - name: 12. Центр безопасности для виртуальных машин
     href: tutorial-azure-security.md
   - name: 13. Установка стека SQL\IIS\.NET
     href: tutorial-iis-sql.md
@@ -409,8 +409,6 @@ items:
         href: migration-classic-resource-manager-community-tools.md
       - name: Часто задаваемые вопросы
         href: migration-classic-resource-manager-faq.md
-- name: Устранение неполадок
-  href: ../troubleshooting/index.md
 - name: Справочные материалы
   items:
   - name: Инфраструктура CLI Azure
@@ -449,9 +447,11 @@ items:
     href: https://azure.microsoft.com/documentation/videos/index/?services=virtual-machines
   - name: Часто задаваемые вопросы
     href: faq.md
-ms.openlocfilehash: 45e2dba5a95660e123754c1770d68de5493a1c10
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+- name: Устранение неполадок
+  href: ../troubleshooting/index.md
+ms.openlocfilehash: bb8bf3fdd1b49987013fbb6b2f508019cedc811e
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50979443"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52958258"
