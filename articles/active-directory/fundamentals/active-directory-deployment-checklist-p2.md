@@ -10,28 +10,28 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: ''
-ms.openlocfilehash: 7931cd8a6f8b3de826e8dd563a837f80fc15d88a
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 86561cd835a36282ca1b38638ab4372c6b360617
+ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46310413"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51705657"
 ---
 # <a name="azure-active-directory-premium-p2-licensing-feature-checklist"></a>Контрольный список лицензирования компонентов Azure Active Directory Premium P2
 
-Развертывание и обеспечение безопасности Azure Active Directory (Azure AD) в организации может казаться трудновыполнимой задачей. В этой статье описаны некоторые стандартные действия, которые может быть полезно выполнить в течение 30 дней, 90 дней или более длительного срока с целью усиления безопасности. Для получения максимальной отдачи от инвестиций этим контрольным списком могут воспользоваться даже организации, которые уже развернули Azure AD.
+Развертывание и обеспечение безопасности Azure Active Directory (Azure AD) в организации может казаться слишком трудоемким. В этой статье описано несколько распространенных задач, которые могут быть полезны для клиентов. Чтобы обеспечить высокий уровень безопасности, клиенты обычно выполняют такие задачи в течение 30, 90 или более дней. Для получения максимальной отдачи от инвестиций этим контрольным списком могут воспользоваться даже организации, которые уже развернули Azure AD.
 
 Правильно спланированная и реализованная инфраструктура удостоверений является залогом более безопасного доступа к рабочим нагрузкам и данным только со стороны проверенных пользователей и устройств.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этом руководстве предполагается, что у вас есть лицензии Azure AD Premium P2, а также Enterprise Mobility + Security E5, Microsoft 365 E5 или аналогичный пакет лицензий.
+В этом руководстве предполагается, что у вас есть лицензии Azure AD Premium P2, а также Enterprise Mobility + Security E5, Microsoft 365 E5 или подобный пакет лицензий.
 
 [Лицензирование Azure AD](https://azure.microsoft.com/pricing/details/active-directory/)
 
-[Microsoft 365 корпоративный](https://www.microsoft.com/licensing/product-licensing/microsoft-365-enterprise.aspx).
+[Microsoft 365 корпоративный](https://www.microsoft.com/en-us/licensing/product-licensing/microsoft-365-enterprise).
 
-[Enterprise Mobility + Security](https://www.microsoft.com/licensing/product-licensing/enterprise-mobility-security.aspx).
+[Enterprise Mobility + Security](https://www.microsoft.com/en-us/licensing/product-licensing/enterprise-mobility-security).
 
 ## <a name="plan-and-deploy-day-1-30"></a>Планирование и развертывание: дни 1–30
 
@@ -71,7 +71,7 @@ ms.locfileid: "46310413"
    - [Предоставление или отзыв приглашений пользователям B2B из отдельных организаций](../b2b/allow-deny-list.md)
    - [Предоставление пользователям B2B в Azure AD доступа к локальным приложениям](../b2b/hybrid-cloud-to-on-premises.md)
 - Примите решения, касающиеся стратегии управления жизненным циклом пользователей
-- [Выработка стратегии управления устройствами](../devices/overview.md)
+- [Определите стратегию управления устройствами](../devices/overview.md).
    - [Сценарии использования и рекомендации по развертыванию для присоединения к Azure AD](../devices/azureadjoin-plan.md)
 - [Управление Windows Hello для бизнеса в организации](/windows/security/identity-protection/hello-for-business/hello-manage-in-organization)
 

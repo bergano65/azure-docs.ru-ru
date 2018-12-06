@@ -1,6 +1,6 @@
 ---
-title: Проверка доступа с помощью проверок доступа Azure AD | Документация Майкрософт
-description: Узнайте, как проверять доступ с помощью проверок доступа Azure Active Directory.
+title: Проверка доступа с помощью Проверок доступа Azure AD | Документация Майкрософт
+description: Узнайте, как проверять доступ с помощью Проверок доступа Azure Active Directory.
 services: active-directory
 author: rolyon
 manager: mtillman
@@ -14,14 +14,14 @@ ms.component: compliance
 ms.date: 07/16/2018
 ms.author: rolyon
 ms.reviewer: mwahl
-ms.openlocfilehash: 09247a430d2ece44c307297838b7f4dc2819d56d
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: 455a4922dfd0832c49729bed007dd696562be07a
+ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45607034"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52263432"
 ---
-# <a name="review-access-with-azure-ad-access-reviews"></a>Проверка доступа с помощью проверок доступа Azure AD
+# <a name="start-an-access-review-with-azure-ad-access-reviews"></a>Проверка доступа с помощью Проверок доступа Azure AD
 
 Azure Active Directory (Azure AD) позволяет предприятиям упростить управление доступом для приложений и участников групп в Azure AD, а также других служб Microsoft Online Services с помощью функции проверки доступа. Вы могли получить от корпорации Майкрософт электронное сообщение, предлагающее вам проверить доступ участников группы или пользователей, имеющих доступ к приложению. 
 

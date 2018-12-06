@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: b8a9973738ac28a686488a816da0f7da5fe2ac3e
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 0865c8b88788387eff173443d190658cc6488946
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238528"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51976865"
 ---
 # <a name="process-large-scale-datasets-by-using-data-factory-and-batch"></a>Обработка больших наборов данных с помощью фабрики данных и пакетной службы
 > [!NOTE]
@@ -41,7 +41,7 @@ ms.locfileid: "51238528"
 * [Выполнение реальных параллельных рабочих нагрузок с использованием пакетной службы](../../batch/batch-technical-overview.md)
 * [Обзор функций пакетной службы](../../batch/batch-api-basics.md)
 
-Дополнительные сведения о пакетной службе см. в [этой статье](https://azure.microsoft.com/documentation/learning-paths/batch/) (необязательно).
+Дополнительные сведения о пакетной службе см. в [документации по пакетной службе](https://docs.microsoft.com/en-us/azure/batch/).
 
 ## <a name="why-azure-data-factory"></a>Сведения о фабрике данных Azure
 Фабрика данных представляет собой облачную службу интеграции информации, которая организует и автоматизирует перемещение и преобразование данных. С помощью фабрики данных можно создать управляемые конвейеры данных, которые перемещают данные из локальных и облачных хранилищ данных в централизованное. Например, в хранилище BLOB-объектов Azure. Фабрика данных также позволяет обрабатывать и преобразовывать данные с помощью служб, таких как Azure HDInsight и Машинное обучение Azure. Кроме того, вы можете планировать запуск конвейеров данных по расписанию (например, ежечасно, ежедневно и еженедельно), отслеживать их состояние и управлять ими, чтобы обнаруживать проблемы и принимать меры.
@@ -51,7 +51,7 @@ ms.locfileid: "51238528"
 * [Введение в службу фабрики данных](data-factory-introduction.md)
 * [Построение конвейера данных](data-factory-build-your-first-pipeline.md)   
 
-Чтобы получить дополнительные сведения о фабрике данных, ознакомьтесь со [схемой обучения по фабрике данных](https://azure.microsoft.com/documentation/learning-paths/data-factory/) (необязательно).
+Дополнительные сведения о Фабрике данных Azure см. в [документации по Фабрике данных Azure](https://docs.microsoft.com/en-us/rest/api/datafactory/v1/data-factory-data-factory).
 
 ## <a name="data-factory-and-batch-together"></a>Совместное использование фабрики данных и пакетной службы
 Фабрика данных включает в себя встроенные действия. Например, действие копирования используется, чтобы копировать и перемещать данные из исходного хранилища данных в целевое. Действие Hive используется, чтобы обрабатывать данные с использованием кластеров Hadoop (HDInsight) в Azure. Список поддерживаемых действий преобразования см. в [этой статье](data-factory-data-transformation-activities.md).

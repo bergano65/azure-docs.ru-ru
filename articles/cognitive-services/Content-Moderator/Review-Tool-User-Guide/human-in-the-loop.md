@@ -9,18 +9,18 @@ ms.service: cognitive-services
 ms.component: content-moderator
 ms.topic: article
 ms.author: sajagtap
-ms.openlocfilehash: 2e1a912f2d2aa8a6f9b165524351f2a16232537c
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: f1a3a401363866bdd803093e894615d90536f408
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50212205"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51854226"
 ---
-# <a name="human-in-the-loop"></a>Участие человека
+# <a name="review-tool-overview"></a>Обзор средства проверки
 
 Наилучшие результаты достигаются, когда люди и компьютеры вместе работают над модерацией содержимого. Компьютеры эффективно дополняют пользовательские проверки в случаях, когда достоверность прогноза должна быть подтверждена или опровергнута в контексте реального мира. В результате появился гибридный процесс модерации контента, который эффективнее, чем пользователи или компьютеры, работающие по-отдельности.
 
-## <a name="how-the-review-tool-helps"></a>Как помогает инструмент проверки ##
+## <a name="what-it-does"></a>Действие
 
 Когда инструмент пользовательской проверки используется вместе с интерфейсами API машинной модерации, это позволяет выполнять эти важные задачи в соответствии с жизненным циклом модерации контента.
 

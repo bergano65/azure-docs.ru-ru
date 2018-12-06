@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: v-erkell
-ms.openlocfilehash: c8bad3642f1e98cac3857d536f539554235e1a51
-ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
+ms.openlocfilehash: d7c207f89b9cb50f940f071fbbf6ee81b4d44976
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51578643"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52164329"
 ---
 # <a name="deploy-the-vfxt-cluster"></a>Развертывание кластера vFXT
 
@@ -286,7 +286,7 @@ RESOURCE_GROUP=
 * Имя подсети
 * Имя роли для среды выполнения Azure AD. Если вы следовали примеру, приведенному в разделе [Создание роли доступа к узлу кластера](#create-the-cluster-node-access-role), используйте ``avere-cluster``. 
 * Имя учетной записи хранения (в случае создания контейнера больших двоичных объектов).
-* Имя кластера. У вас не может быть два кластера vFXT с одинаковым именем в одной группе ресурсов. 
+* Имя кластера. У вас не может быть два кластера vFXT с одинаковым именем в одной группе ресурсов. Присвойте уникальное имя каждому кластеру.
 * Пароль администратора. Выберите защищенный пароль для мониторинга и администрирования кластера. Этот пароль назначается пользователю ``admin``. 
 * Тип экземпляра узла. Сведения см. в разделе [vFXT node sizes](avere-vfxt-deploy-plan.md#vfxt-node-sizes) (Размеры узлов vFXT).
 * Размер кэша узла. Сведения см. в разделе [vFXT node sizes](avere-vfxt-deploy-plan.md#vfxt-node-sizes) (Размеры узлов vFXT).

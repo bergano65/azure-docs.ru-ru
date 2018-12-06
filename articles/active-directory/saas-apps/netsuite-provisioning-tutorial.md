@@ -1,6 +1,6 @@
 ---
-title: Руководство по настройке Netsuite для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
-description: Узнайте, как настроить единый вход Azure Active Directory в Netsuite.
+title: Руководство по настройке Netsuite OneWorld для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+description: Сведения о том, как настроить единый вход Azure Active Directory в Netsuite OneWorld.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -14,26 +14,26 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: e14f74f3dd6d49b882dedcb2ae01029a50a459a3
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 81e590297283a8fe88d9257e201259056a3e3744
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44346752"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51823863"
 ---
 # <a name="tutorial-configuring-netsuite-for-automatic-user-provisioning"></a>Руководство по настройке Netsuite для автоматической подготовки пользователей
 
-Цель этого руководства — показать, как в Netsuite и Azure AD настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в Netsuite.
+Цель этого руководства — показать, как в Netsuite OneWorld и Azure AD настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в Netsuite.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
 *   клиент Azure Active Directory;
-*   подписка Netsuite с поддержкой единого входа;
-*   учетная запись пользователя в Netsuite с разрешениями администратора команды.
+*   Подписка Netsuite OneWorld. Обратите внимание, что автоматическую подготовку пользователей сейчас поддерживает только NetSuite OneWorld.
+*   Учетная запись пользователя в Netsuite с разрешениями администратора.
 
-## <a name="assigning-users-to-netsuite"></a>Назначение пользователей в Netsuite
+## <a name="assigning-users-to-netsuite-oneworld"></a>Назначение пользователей в Netsuite OneWorld
 
 В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая "назначение". В контексте автоматической подготовки учетной записи синхронизированы будут только те пользователи и группы, которые были "назначены" приложению в Azure AD.
 
@@ -41,7 +41,7 @@ ms.locfileid: "44346752"
 
 [Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
 
-### <a name="important-tips-for-assigning-users-to-netsuite"></a>Важные советы по назначению пользователей в Netsuite
+### <a name="important-tips-for-assigning-users-to-netsuite-oneworld"></a>Важные советы по назначению пользователей в Netsuite OneWorld:
 
 *   Рекомендуется назначить одного пользователя Azure AD в Netsuite для тестирования конфигурации подготовки. Дополнительные пользователи и/или группы можно назначить позднее.
 

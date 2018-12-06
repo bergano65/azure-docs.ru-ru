@@ -16,12 +16,12 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviwer: lenalepa, sureshja
 ms.custom: aaddev
-ms.openlocfilehash: 2195a43665f99e8388b13fc6dc3e528496bd3901
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: b1276ab227f4bf65483fb2cdec57c759573bc7c5
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50242693"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51853597"
 ---
 # <a name="terms-of-service-and-privacy-statement-for-registered-azure-active-directory-apps"></a>Условия обслуживания и заявление о конфиденциальности для зарегистрированных приложений Azure Active Directory
 
@@ -64,10 +64,10 @@ ms.locfileid: "50242693"
 
 Если приложение зарегистрировано на портале Azure, выполните следующие действия.
 
-1. Войдите на  [портал Azure](https://portal.azure.com/).
-2. Перейдите к разделу  **Регистрация приложений**  и выберите свое приложение.
-3. Откройте раздел  **Свойства** для приложения.
-4. Заполните поля  **Terms of Service URL**  (URL-адрес условий обслуживания) и  **URL-адрес заявления о конфиденциальности** .
+1. Войдите на [портале Azure](https://portal.azure.com/).
+2. Перейдите к разделу **Регистрация приложений** и выберите свое приложение.
+3. Откройте раздел **Свойства** для приложения.
+4. Заполните поля **URL-адрес условий предоставления услуг** и **URL-адрес заявления о конфиденциальности**.
 5. Сохраните изменения.
 
     ![Раздел свойств приложения с URL-адресами условий обслуживания и заявления о конфиденциальности](./media/howto-add-terms-of-service-privacy-statement/azure-portal-terms-service-privacy-statement-urls.png)
@@ -76,9 +76,9 @@ ms.locfileid: "50242693"
 
 Если приложение зарегистрировано на портале регистрации приложений или в Центре разработки, выполните следующие действия.
 
-1. Войдите на  [портал регистрации приложений](https://apps.dev.microsoft.com/).
-2. Выберите свое приложение и прокрутите экран до раздела  **Профиль** .
-3. Заполните поля  **Terms of Service URL**  (URL-адрес условий обслуживания) и  **URL-адрес заявления о конфиденциальности** .
+1. Войдите на [портал регистрации приложений](https://apps.dev.microsoft.com/).
+2. Выберите свое приложение и прокрутите до раздела **Профиль**.
+3. Заполните поля **URL-адрес условий предоставления услуг** и **URL-адрес заявления о конфиденциальности**.
 4. Сохраните изменения.
 
     ![Раздел профиля приложения с URL-адресами условий обслуживания и заявления о конфиденциальности](./media/howto-add-terms-of-service-privacy-statement/app-registration-portal-profile-terms-service-privacy-statement-urls.png)

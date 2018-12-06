@@ -1,18 +1,18 @@
 ---
 title: Управление сервером конфигурации для аварийного восстановления VMware и физических серверов с помощью Azure Site Recovery | Документация Майкрософт
 description: Из этой статьи вы узнаете, как управлять существующим сервером конфигурации для аварийного восстановления виртуальных машин VMware и физических серверов в Azure с помощью службы Azure Site Recovery.
-author: rayne-wiselman
-manager: carmonm
+author: Rajeswari-Mamilla
+manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/11/2018
-ms.author: raynew
-ms.openlocfilehash: e8f41ef44adbd72e8ab16329d5fec94c08df2fe7
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.author: ramamill
+ms.openlocfilehash: a58de808816bf80cf950d7b032ca042c7913a2e5
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51568460"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51976390"
 ---
 # <a name="manage-the-configuration-server-for-vmware-vm-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления виртуальных машин VMware
 
@@ -222,7 +222,14 @@ ms.locfileid: "51568460"
 2. Дата окончания срока действия отображается в разделе **Работоспособность сервера конфигурации**.
 3. Выберите **Обновить сертификаты**.
 
-## <a name="update-windows-licence"></a>Обновление лицензии Windows
+## <a name="refresh-configuration-server"></a>Обновление сервера конфигураций
+
+1. На портале Azure последовательно выберите **Хранилище служб восстановления** > **Управление** > **Инфраструктура Site Recovery** > **Для VMware и физических компьютеров** > **Серверы конфигурации**.
+2. Щелкните сервер конфигурации, который нужно обновить.
+3. В колонке со сведениями о выбранном сервере конфигурации, щелкните **Дополнительно** > **Обновить сервер**.
+4. Отслеживайте ход выполнения задания в разделе **Хранилище служб восстановления** > **Мониторинг** > **Задания Site Recovery**.
+
+## <a name="update-windows-license"></a>Обновление лицензии Windows
 
 Вместе с шаблоном OVF предоставляется пробная лицензия сроком на 180 дней. Для бесперебойной работы необходимо активировать Windows с использованием приобретенной лицензии.
 

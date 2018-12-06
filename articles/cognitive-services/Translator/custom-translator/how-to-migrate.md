@@ -9,12 +9,12 @@ ms.component: custom-translator
 ms.date: 11/13/2018
 ms.author: v-rada
 ms.topic: article
-ms.openlocfilehash: 378baad0735238dc0921e5e78e2a27b3ae907e19
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 611cd0878e88d2e1c0a988f73b57e391c5a8551d
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51627290"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51975913"
 ---
 # <a name="migrate-hub-workspace-and-projects-to-custom-translator"></a>Перенос рабочей области и проектов центра в Custom Translator
 
@@ -134,6 +134,19 @@ ms.locfileid: "51627290"
 
 >[!Note]
 >Перенос поддерживается только для языковых пар, в которых присутствуют языки NMT. Проверьте список [языков NMT, которые сейчас поддерживаются](https://www.microsoft.com/translator/business/languages/). Для языковых пар, в которых отсутствуют языки NMT, данные будут перемещены из центра в Custom Translator, но учебные курсы не будут проводиться в этих языковых парах.
+
+## <a name="custom-translator-versus-hub"></a>Сравнение Custom Translator и центра
+
+В этой таблице сравниваются возможности Microsoft Translator Hub и Custom Translator.
+
+|   | Microsoft Translator Hub | Custom Translator |
+|:-----|:----:|:----:|
+|Состояние компонента настройки   | Общедоступная версия  | Предварительный просмотр |
+| Версия API перевода текстов  | V2    | V3  |
+| Настройка SMT | Yes   | Нет  |
+| Настройка NMT | Нет     | Yes |
+| Настройка новых единых служб распознавания речи | Нет     | Yes |
+| Без трассировки | Yes | Yes |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

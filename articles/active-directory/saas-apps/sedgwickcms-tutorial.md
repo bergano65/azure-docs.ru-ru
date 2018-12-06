@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/09/2017
 ms.author: jeedes
-ms.openlocfilehash: ff9f3186602b9047e53fb78edbf52c2c0d9ee574
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 796ed1cb0fde6b29a931099336fd91e2e931fc29
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39423595"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51820502"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sedgwick-cms"></a>Руководство по интеграции Azure Active Directory с Sedgwick CMS
 
@@ -134,7 +134,7 @@ ms.locfileid: "39423595"
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/sedgwickcms-tutorial/tutorial_general_400.png)
 
-1. Чтобы настроить единый вход на стороне **Sedgwick CMS**, отправьте [группе поддержки Sedgwick CMS](https://www.sedgwick.com/contact/Pages/contactform.aspx) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **Sedgwick CMS**, отправьте [группе поддержки Sedgwick CMS](https://www.sedgwick.com/help) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -173,7 +173,7 @@ ms.locfileid: "39423595"
   
 ### <a name="create-a-sedgwick-cms-test-user"></a>Создание тестового пользователя Sedgwick CMS
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Sedgwick CMS. Обратитесь к [группе поддержки Sedgwick CMS](https://www.sedgwick.com/contact/Pages/contactform.aspx) для добавления пользователей на платформу Sedgwick CMS. Перед использованием единого входа необходимо создать и активировать пользователей.  
+В этом разделе описано, как создать пользователя Britta Simon в приложении Sedgwick CMS. Обратитесь к  [группе поддержки Sedgwick CMS](https://www.sedgwick.com/help)  для добавления пользователей на платформу Sedgwick CMS. Перед использованием единого входа необходимо создать и активировать пользователей.  
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -210,7 +210,7 @@ ms.locfileid: "39423595"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Sedgwick CMS" на панели доступа, вы автоматически войдете в приложение Sedgwick CMS.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

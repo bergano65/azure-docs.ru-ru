@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 06/18/2018
 ms.author: martincoetzer
-ms.openlocfilehash: 8ce75efae2d735c5653f9dae72c670b0714351ac
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: 3e2fa822698f3888e1168ab7773d87e41db9eb5c
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51567956"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52165651"
 ---
 # <a name="five-steps-to-securing-your-identity-infrastructure"></a>Пять шагов по защите инфраструктуры удостоверений
 
@@ -77,6 +77,9 @@ ms.locfileid: "51567956"
 * В случае сбоя в локальной среде (например, при атаке программы-шантажиста) вы сможете перейти на [проверку подлинности в облаке, выполнив синхронизацию хэшей паролей](https://docs.microsoft.com/azure/security/azure-ad-choose-authn). Этот резервный метод проверки подлинности позволит продолжать обращаться к приложениям (включая Office 365), настроенным для проверки подлинности в Azure Active Directory. В этом случае ИТ-персоналу не нужно будет прибегать к личным учетным записям электронной почты для обмена данными до тех пор, пока не будет устранен локальный сбой.
 
 Узнайте больше о том, [как работает синхронизация хэшей паролей](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-implement-password-hash-synchronization).
+
+> [!NOTE]
+> Если включить синхронизацию хэша паролей при использовании Доменных служб Azure AD, хэши Kerberos (AES 256) и при необходимости хэши NTLM (RC4, без добавления случайных данных) также зашифровываются и синхронизируются с Azure AD. 
 
 ### <a name="implement-ad-fs-extranet-smart-lockout"></a>Реализация интеллектуальной блокировки экстрасети служб федерации Active Directory
 

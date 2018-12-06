@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/18/2017
 ms.author: glenga
-ms.openlocfilehash: 4c56a1164a589af5d325d1378f331a7d0ee138b7
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 55d4f53a23c92bb96934e84c0400bc182bc3d87e
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49956448"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51976814"
 ---
 # <a name="get-started-guide-for-azure-developers"></a>Руководство по началу работы для разработчиков Azure
 
@@ -92,7 +92,7 @@ Azure предлагает службы, обеспечивающие потре
 
 Azure Service Fabric — это платформа распределенных систем, которая дает возможность не только легко создавать, упаковывать и развертывать масштабируемые и надежные микрослужбы, но и управлять ими. Кроме того, эта платформа содержит полный набор функций для управления приложениями, который позволяет подготавливать, развертывать, отслеживать, обновлять и исправлять приложения, а также удалять развернутые приложения. Приложения, которые выполняются в общем пуле компьютеров, можно создавать с небольшими ресурсами и при необходимости масштабировать до сотен или тысяч компьютеров.
 
-Service Fabric поддерживает веб-API благодаря использованию Open Web Interface для .NET (OWIN) и ASP.NET Core. Эта служба предоставляет пакеты SDK для создания служб в среде Linux с помощью .NET Core и Java. Чтобы узнать больше о Service Fabric, ознакомьтесь со [схемой обучения Service Fabric](https://azure.microsoft.com/documentation/learning-paths/service-fabric/).
+Service Fabric поддерживает веб-API благодаря использованию Open Web Interface для .NET (OWIN) и ASP.NET Core. Эта служба предоставляет пакеты SDK для создания служб в среде Linux с помощью .NET Core и Java. Дополнительные сведения о Service Fabric см. в [документации по Service Fabric](https://docs.microsoft.com/en-us/azure/service-fabric/).
 
 >**Когда следует использовать**. Service Fabric будет хорошим выбором, если вы создаете новое или изменяете существующее приложение с намерением использовать архитектуру микрослужб. Используйте Service Fabric, если требуется больший контроль над базовой инфраструктурой или прямой доступ к ней.
 

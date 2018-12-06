@@ -9,12 +9,12 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: kgremban
-ms.openlocfilehash: cab3e5ee64ced59e9eb861e468f7a3c1dc600e8e
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 8c8cf77107f87522f9ae121845f53d8993449651
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47220744"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51824801"
 ---
 # <a name="send-cloud-to-device-messages-with-iot-hub-python"></a>Отправка сообщений из облака на устройства с помощью Центра Интернета вещей (Python)
 [!INCLUDE [iot-hub-selector-c2d](../../includes/iot-hub-selector-c2d.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "47220744"
 * **SendCloudToDeviceMessage.py**, которое отправляет сообщение из облака через Центр Интернета вещей в приложение имитированного устройства, а затем получает подтверждение доставки.
 
 > [!NOTE]
-> В Центре Интернета вещей реализована поддержка для пакетов SDK для многих платформ устройств и языков (включая C, Java и Javascript). Эти пакеты работают на основе пакетов SDK для устройств Azure IoT. Пошаговые указания по связыванию устройства с кодом из этого руководства, а также по подключению к Центру Интернета вещей Azure см. в [Центре разработчика для Центра Интернета вещей Azure].
+> В Центре Интернета вещей реализована поддержка для пакетов SDK для многих платформ устройств и языков (включая C, Java и Javascript). Эти пакеты работают на основе пакетов SDK для устройств Azure IoT. Пошаговые указания по связыванию устройства с кодом из этого руководства, а также по подключению к Центру Интернета вещей Azure см. в [центре разработчиков для Интернета вещей Azure].
 > 
 
 Для работы с этим учебником требуется:
@@ -165,7 +165,7 @@ ms.locfileid: "47220744"
 
 
 ## <a name="send-a-cloud-to-device-message"></a>Отправка сообщения из облака на устройство
-В этом разделе вам предстоит создать консольное приложение Python, которое отправляет в приложение имитации устройства сообщения, передаваемые из облака на устройство. Необходим идентификатор устройства, добавленного при изучении руководства [Начало работы с Центром Интернета вещей]. Кроме того, нужна строка подключения для вашего экземпляра Центра Интернета вещей, которую можно найти на [портала Azure].
+В этом разделе вам предстоит создать консольное приложение Python, которое отправляет в приложение имитации устройства сообщения, передаваемые из облака на устройство. Необходим идентификатор устройства, добавленного при изучении руководства [Начало работы с Центром Интернета вещей]. Кроме того, нужна строка подключения для вашего экземпляра Центра Интернета вещей, которую можно найти на [портал Azure].
 
 1. В текстовом редакторе создайте файл **SendCloudToDeviceMessage.py**.
 
@@ -291,20 +291,20 @@ ms.locfileid: "47220744"
    
 1. Обратите внимание на сообщения, принятые устройством.
 
-    ![Полученное сообщение][img-message-recieved]
+    ![Полученное сообщение][img-message-received]
 
 
 ## <a name="next-steps"></a>Дополнительная информация
 В этом учебнике вы научились отправлять и получать сообщения с облака на устройство. 
 
-Примеры комплексных решений, в которых используется Центр Интернета вещей, см. в [Акселераторы решений для удаленного мониторинга Интернета вещей Azure].
+Примеры комплексных решений, в которых используется Центр Интернета вещей, см. в [документации по акселераторам решений для удаленного мониторинга Интернета вещей Azure].
 
 Дополнительные сведения о разработке решений с помощью Центра Интернета вещей см. в [Руководство разработчика для Центра Интернета вещей].
 
 <!-- Images -->
 [img-simulated-device]: media/iot-hub-python-python-c2d/simulated-device.png
 [img-send-command]:  media/iot-hub-python-python-c2d/send-command.png
-[img-message-recieved]: media/iot-hub-python-python-c2d/message-recieved.png
+[img-message-received]: media/iot-hub-python-python-c2d/message-received.png
 
 <!-- Links -->
 [lnk-python-download]: https://www.python.org/downloads/
@@ -314,8 +314,8 @@ ms.locfileid: "47220744"
 [Начало работы с Центром Интернета вещей]: quickstart-send-telemetry-node.md
 [IoT Hub developer guide - C2D]: iot-hub-devguide-messaging.md
 [Руководство разработчика для Центра Интернета вещей]: iot-hub-devguide.md
-[Центре разработчика для Центра Интернета вещей Azure]: http://www.azure.com/develop/iot
+[центре разработчиков для Интернета вещей Azure]: http://www.azure.com/develop/iot
 [lnk-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md
-[портала Azure]: https://portal.azure.com
-[Акселераторы решений для удаленного мониторинга Интернета вещей Azure]: https://azure.microsoft.com/documentation/suites/iot-suite/
+[портал Azure]: https://portal.azure.com
+[документации по акселераторам решений для удаленного мониторинга Интернета вещей Azure]: https://azure.microsoft.com/documentation/suites/iot-suite/

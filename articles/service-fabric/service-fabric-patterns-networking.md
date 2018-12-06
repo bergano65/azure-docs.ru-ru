@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/19/2018
 ms.author: ryanwi
-ms.openlocfilehash: b180e62804b875ca4547a9d09f19efff32ae0cd9
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 2fce90f971d13b94c73012d4089cca05739c5440
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34207229"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51853716"
 ---
 # <a name="service-fabric-networking-patterns"></a>Схемы сетевых подключений Service Fabric
 Кластер Azure Service Fabric можно интегрировать с другими сетевыми компонентами Azure. В этой статье показано, как создавать кластеры, использующие следующие компоненты:
@@ -106,15 +106,20 @@ DnsSettings              : {
             },*/
     ```
 
+2. Закомментируйте атрибут `nicPrefixOverride` в `Microsoft.Compute/virtualMachineScaleSets`, так как вы используете существующую подсеть и отключили эту переменную на шаге 1.
 
-2. Измените переменную `vnetID`, чтобы она указывала на существующую виртуальную сеть:
+    ```
+            /*"nicPrefixOverride": "[parameters('subnet0Prefix')]",*/
+    ```
+
+3. Измените переменную `vnetID`, чтобы она указывала на существующую виртуальную сеть:
 
     ```
             /*old "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",*/
             "vnetID": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', parameters('existingVNetRGName'), '/providers/Microsoft.Network/virtualNetworks/', parameters('existingVNetName'))]",
     ```
 
-3. Удалите `Microsoft.Network/virtualNetworks` из ресурсов, чтобы платформа Azure не создала виртуальную сеть:
+4. Удалите `Microsoft.Network/virtualNetworks` из ресурсов, чтобы платформа Azure не создала виртуальную сеть:
 
     ```
     /*{
@@ -144,7 +149,7 @@ DnsSettings              : {
     },*/
     ```
 
-4. Закомментируйте виртуальную сеть из атрибута `dependsOn` в `Microsoft.Compute/virtualMachineScaleSets`, чтобы не зависеть от создания виртуальной сети:
+5. Закомментируйте виртуальную сеть из атрибута `dependsOn` в `Microsoft.Compute/virtualMachineScaleSets`, чтобы не зависеть от создания виртуальной сети:
 
     ```
     "apiVersion": "[variables('vmssApiVersion')]",
@@ -158,7 +163,7 @@ DnsSettings              : {
 
     ```
 
-5. Разверните шаблон.
+6. Разверните шаблон.
 
     ```powershell
     New-AzureRmResourceGroup -Name sfnetworkingexistingvnet -Location westus

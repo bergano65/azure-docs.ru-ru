@@ -8,13 +8,13 @@ author: ecfan
 ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
-ms.date: 10/11/2018
-ms.openlocfilehash: f4d8030918804dc30437aae34de87615ce7e82b5
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.date: 11/16/2018
+ms.openlocfilehash: 62235c0c06621169997cc4ad16816c0a4d638e78
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51346708"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51853835"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Ограничения и сведения о конфигурации для Azure Logic Apps
 
@@ -323,9 +323,10 @@ ms.locfileid: "51346708"
 
 ### <a name="managed-connectors"></a>Управляемые соединители
 
-Для поддержки вызовов [соединителей, управляемых Майкрософт](../connectors/apis-list.md), настройте конфигурацию брандмауэра так, чтобы она включала исходящие IP-адреса на основе регионов, где размещены приложения логики.
+Для поддержки вызовов [соединителей, управляемых Майкрософт](../connectors/apis-list.md), настройте конфигурацию брандмауэра так, чтобы она включала все исходящие IP-адреса, указанные для регионов, где размещены приложения логики. В [Azure для государственных организаций](/azure-government/documentation-government-welcome) и [21Vianet в Azure для Китая](/azure/china/china-welcome) зарезервированные IP-адреса для соединителей сейчас недоступны.
 
 > [!IMPORTANT]
+> 
 > При наличии существующих конфигураций обновите их **как можно быстрее — до 1 сентября 2018 г.**, чтобы они включали и сопоставляли IP-адреса в этом списке для регионов, где размещены ваши приложения логики. 
 > 
 > Logic Apps не поддерживает непосредственное подключение к учетным записям хранения Azure через брандмауэры. Чтобы получить доступ к этим учетным записям хранения, используйте любой из этих вариантов: 

@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/11/2018
 ms.author: ramkris
-ms.openlocfilehash: 26479ade27b18e817d7ad03d70d27b0cef687e8d
-ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
+ms.openlocfilehash: 62395ff5370a057ca1888dd135b83be9d6f34f8d
+ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48269417"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51707186"
 ---
 # <a name="accelerate-big-data-analytics-by-using-the-apache-spark-to-azure-cosmos-db-connector"></a>Ускорение аналитики больших данных с помощью соединителя Apache Spark для Azure Cosmos DB
  
@@ -83,7 +83,7 @@ ms.locfileid: "48269417"
 
 6. В диалоговом окне **создания записной книжки** введите понятное имя, а в качестве языка выберите **Python**. Из раскрывающегося списка выберите кластер, который был создан ранее, а затем щелкните **Создать**.  
 
-7. Запустите несколько запросов Spark, используя пример данных о полетах, размещенный в учетной записи Azure Cosmos DB "doctorwho". (Эта учетная запись является общедоступной.) HTML-версия записной книжки находится в репозитории GitHub [azure-cosmosdb-spark](https://github.com/Azure/azure-cosmosdb-spark/tree/master). Загрузите файлы репозитория и перейдите в `\samples\Documentation_Samples\Read_Batch_PyDocumentDB.html`. Вы можете импортировать записную книжку в свою учетную запись Azure Databricks и запустить ее. В следующем разделе указаны подробные сведения о функциях блоков кода.
+7. Запустите несколько запросов Spark, используя пример данных о полетах, размещенный в учетной записи Azure Cosmos DB "doctorwho". Эта учетная запись является общедоступной. Записная книжка [Read_Batch_PyDocumentDB](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/Documentation_Samples/Read_Batch_PyDocumentDB.ipynb) находится в репозитории GitHub [azure-cosmosdb-spark](https://github.com/Azure/azure-cosmosdb-spark/tree/master). Вы можете импортировать записную книжку в свою учетную запись Azure Databricks и запустить ее. В следующем разделе указаны подробные сведения о функциях блоков кода.
 
 В следующем фрагменте кода указано, как в контексте Spark можно импортировать пакет SDK для pyDocumentDB и запустить запрос. Во фрагменте кода указано, что пакет SDK для pydocumentdb содержит параметры подключения, которые необходимы для соединения с учетной записью Azure Cosmos DB. Он импортирует необходимые библиотеки, настраивает главный ключ и узел для создания клиента Azure Cosmos DB (pydocumentdb.document_client).
 
@@ -209,7 +209,7 @@ df.show()
 
 ### <a name="read-twitter-data-from-azure-cosmos-db"></a>Чтение данных Twitter из Azure Cosmos DB
  
-В этом разделе описано выполнение запросов Spark на чтение пакета данных Twitter из Azure Cosmos DB. HTML-версия записной книжки находится в репозитории GitHub [azure-cosmosdb-spark](https://github.com/Azure/azure-cosmosdb-spark/tree/master). Загрузите файлы репозитория и перейдите в `\samples\Documentation_Samples\Read_Batch_Twitter_Data.html`. Вы можете импортировать записную книжку в свою учетную запись Azure Databricks и обновить значения универсального кода ресурса (URI) учетной записи, основного ключа, базы данных и коллекции. Вы можете запустить записную книжку или создать ее следующим образом:
+В этом разделе описано выполнение запросов Spark на чтение пакета данных Twitter из Azure Cosmos DB. Записная книжка [Read_Batch_Twitter_Data](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/Documentation_Samples/Read_Batch_Twitter_Data.ipynb) находится в репозитории GitHub [azure-cosmosdb-spark](https://github.com/Azure/azure-cosmosdb-spark/tree/master). Вы можете импортировать записную книжку в свою учетную запись Azure Databricks и обновить значения универсального кода ресурса (URI) учетной записи, основного ключа, базы данных и коллекции. Вы можете запустить записную книжку или создать ее следующим образом:
 
 1. Перейдите к учетной записи Azure Databricks и последовательно выберите **Рабочая область** > **Создать** > **Записная книжка**. 
 
@@ -268,7 +268,7 @@ df.show()
 
 ### <a name="read-twitter-data-that-is-streaming-to-azure-cosmos-db"></a>Чтение данных Twitter, которые передаются в Azure Cosmos DB
 
-В этом разделе описано выполнение запросов Spark на чтение веб-канала изменений в потоковых данных Twitter. При выполнении запросов из этого раздела убедитесь, что приложение веб-канала Twitter запущено и оно наполняет Azure Cosmos DB данными. HTML-версия записной книжки находится в репозитории GitHub [azure-cosmosdb-spark](https://github.com/Azure/azure-cosmosdb-spark/tree/master). Загрузите файлы репозитория и перейдите в `\samples\Documentation_Samples\Read_Stream_Twitter_Data.html`. Вы можете импортировать записную книжку в свою учетную запись Azure Databricks и обновить значения универсального кода ресурса (URI) учетной записи, основного ключа, базы данных и коллекции. Вы можете запустить записную книжку или создать ее следующим образом:
+В этом разделе описано выполнение запросов Spark на чтение веб-канала изменений в потоковых данных Twitter. При выполнении запросов из этого раздела убедитесь, что приложение веб-канала Twitter запущено и оно наполняет Azure Cosmos DB данными. Записная книжка [Read_Stream_Twitter_Data](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/Documentation_Samples/Read_Stream_Twitter_Data.scala) находится в репозитории GitHub [azure-cosmosdb-spark](https://github.com/Azure/azure-cosmosdb-spark/tree/master). Вы можете импортировать записную книжку в свою учетную запись Azure Databricks и обновить значения универсального кода ресурса (URI) учетной записи, основного ключа, базы данных и коллекции. Вы можете запустить записную книжку или создать ее следующим образом:
 
 1. Перейдите к учетной записи Azure Databricks и последовательно выберите **Рабочая область** > **Создать** > **Записная книжка**.  
 
@@ -335,7 +335,7 @@ df.show()
 
 ### <a name="write-twitter-data-to-azure-cosmos-db"></a>Запись данных Twitter в Azure Cosmos DB 
 
-В этом разделе описано выполнение запросов Spark на запись пакета данных Twitter в новую коллекцию в той же базе данных. HTML-версия записной книжки находится в репозитории GitHub [azure-cosmosdb-spark](https://github.com/Azure/azure-cosmosdb-spark/tree/master). Загрузите файлы репозитория и перейдите в `\samples\Documentation_Samples\Write_Batch_Twitter_Data.html`. Вы можете импортировать записную книжку в свою учетную запись Azure Databricks и обновить значения универсального кода ресурса (URI) учетной записи, основного ключа, базы данных и коллекции. Вы можете запустить записную книжку или создать ее следующим образом:
+В этом разделе описано выполнение запросов Spark на запись пакета данных Twitter в новую коллекцию в той же базе данных. Записная книжка [Write_Batch_Twitter_Data](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/Documentation_Samples/Write_Batch_Twitter_Data.ipynb) находится в репозитории GitHub [azure-cosmosdb-spark](https://github.com/Azure/azure-cosmosdb-spark/tree/master). Вы можете импортировать записную книжку в свою учетную запись Azure Databricks и обновить значения универсального кода ресурса (URI) учетной записи, основного ключа, базы данных и коллекции. Вы можете запустить записную книжку или создать ее следующим образом:
 
 1. Перейдите к учетной записи Azure Databricks и последовательно выберите **Рабочая область** > **Создать** > **Записная книжка**.  
 
@@ -428,7 +428,7 @@ df.show()
 
 ### <a name="write-twitter-data-that-is-streaming-to-azure-cosmos-db"></a>Запись данных, которые передаются из Twitter в Azure Cosmos DB 
 
-В этом разделе описано выполнение запросов Spark на запись веб-канала изменений потоковых данных Twitter в новую коллекцию в той же базе данных. HTML-версия записной книжки находится в репозитории GitHub [azure-cosmosdb-spark](https://github.com/Azure/azure-cosmosdb-spark/tree/master). Загрузите файлы репозитория и перейдите в `\samples\Documentation_Samples\Write_Stream_Twitter_Data.html`. Вы можете импортировать записную книжку в свою учетную запись Azure Databricks и обновить значения универсального кода ресурса (URI) учетной записи, основного ключа, базы данных и коллекции. Вы можете запустить записную книжку или создать ее следующим образом:
+В этом разделе описано выполнение запросов Spark на запись веб-канала изменений потоковых данных Twitter в новую коллекцию в той же базе данных. Записная книжка [Write_Stream_Twitter_Data](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/Documentation_Samples/Write_Stream_Data.scala) находится в репозитории GitHub [azure-cosmosdb-spark](https://github.com/Azure/azure-cosmosdb-spark/tree/master). Вы можете импортировать записную книжку в свою учетную запись Azure Databricks и обновить значения универсального кода ресурса (URI) учетной записи, основного ключа, базы данных и коллекции. Вы можете запустить записную книжку или создать ее следующим образом:
 
 1. Перейдите к учетной записи Azure Databricks и последовательно выберите **Рабочая область** > **Создать** > **Записная книжка**.  
 

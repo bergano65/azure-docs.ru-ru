@@ -8,12 +8,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 952d8801c189322161bbf8b795676af48b92c29f
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: 71e39c6430231ae8d175f9c09a9059c3da4c9a1e
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49394344"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51854260"
 ---
 # <a name="write-queries-for-azure-data-explorer"></a>Написание запросов для обозревателя данных Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "49394344"
 
 - На вашем собственном кластере, который включает примеры данных StormEvents. Дополнительные сведения см. в разделах [Краткое руководство. Создание кластера и базы данных обозревателя данных Azure](create-cluster-database-portal.md) и [Передача данных примера в обозреватель данных Azure](ingest-sample-data.md).
 
-Набор данных примера StormEvents содержит данные о погоде из [Национальных центров Соединенных Штатов по экологической информации](https://www.ncdc.noaa.gov/stormevents/).
+[!INCLUDE [data-explorer-storm-events](../../includes/data-explorer-storm-events.md)]
 
 ## <a name="overview-of-the-query-language"></a>Общие сведения о языке запросов
 
@@ -147,7 +147,7 @@ StormEvents
 
 ### <a name="top"></a>top
 
-[**top**](https://docs.microsoft.com/azure/kusto/query/topoperator): возвращает первые *N* записей, отсортированные по указанным столбцам.
+[**top**](https://docs.microsoft.com/azure/kusto/query/topoperator): возвращает первые  *N*  записей, отсортированные по указанным столбцам.
 
 Следующий запрос возвращает те же результаты, что приведенный выше запрос. При этом запрос содержит на один оператор меньше по сравнению с предыдущим.
 
@@ -570,7 +570,7 @@ StormEvents
 
 ### <a name="dcounthll"></a>dcount_hll()
 
-[**dcount_hll()**](https://docs.microsoft.com/azure/kusto/query/dcount-hllfunction): вычисляет **dcount** для результатов HyperLogLog (созданных [**hll**](https://docs.microsoft.com/azure/kusto/query/hll-aggfunction) или [**hll_merge**](https://docs.microsoft.com/azure/kusto/query/hll-merge-aggfunction).
+[**dcount_hll()**](https://docs.microsoft.com/azure/kusto/query/dcount-hllfunction): вычисляет  **dcount**  для результатов HyperLogLog (созданных [**hll**](https://docs.microsoft.com/azure/kusto/query/hll-aggfunction) или [**hll_merge**](https://docs.microsoft.com/azure/kusto/query/hll-merge-aggfunction).
 
 Следующий запрос использует алгоритм HLL для получения количества.
 
@@ -632,7 +632,7 @@ FloodDataSet
 
 ### <a name="percentiles"></a>percentiles()
 
-[**percentiles()**](https://docs.microsoft.com/azure/kusto/query/percentiles-aggfunction): возвращает оценку указанного [**процентиля с ближайшим рангом**](https://docs.microsoft.com/azure/kusto/query/percentiles-aggfunction) для популяции, определяемой выражением. Точность зависит от плотности заполнения области процентиля. Может использоваться только в контексте статистической обработки в операторе [**summarize**](https://docs.microsoft.com/azure/kusto/query/summarizeoperator).
+[**percentiles()**](https://docs.microsoft.com/azure/kusto/query/percentiles-aggfunction): возвращает оценку указанного [**процентиля с ближайшим рангом**](https://docs.microsoft.com/azure/kusto/query/percentiles-aggfunction) для популяции, определяемой выражением. Точность зависит от плотности заполнения области процентиля. Может использоваться только в контексте статистической обработки в операторе [**summarize**](https://docs.microsoft.com/azure/kusto/query/summarizeoperator).
 
 Следующий запрос вычисляет процентили для продолжительности шторма.
 
@@ -685,7 +685,7 @@ LightningStorms
 
 ### <a name="join"></a>join
 
-[**join**](https://docs.microsoft.com/azure/kusto/query/joinoperator): объединение строк двух таблиц для формирования новой таблицы путем сопоставления значений указанных столбцов каждой таблицы. Kusto поддерживает весь диапазон типов объединения: **fullouter**, **inner**, **innerunique**, **leftanti**, **leftantisemi**, **leftouter**, **leftsemi**, **rightanti**, **rightantisemi**, **rightouter** и **rightsemi**.
+[**join**](https://docs.microsoft.com/azure/kusto/query/joinoperator): объединение строк двух таблиц для формирования новой таблицы путем сопоставления значений указанных столбцов каждой таблицы. Kusto поддерживает весь диапазон типов объединения: **fullouter**, **inner**, **innerunique**, **leftanti**, **leftantisemi**, **leftouter**, **leftsemi**, **rightanti**, **rightantisemi**, **rightouter** и **rightsemi**.
 
 В следующем примере две таблицы соединяются с помощью внутреннего соединения.
 
@@ -842,7 +842,7 @@ range _day from _start to _end step 1d
 
 ### <a name="newactivitymetrics-plugin"></a>Подключаемый модуль new_activity_metrics
 
-[**Подключаемый модуль new_activity_metrics**](https://docs.microsoft.com/azure/kusto/query/new-activity-metrics-plugin): вычисляет полезные метрики действий (число различных значений, число различных новых значений, частоту удержания и скорость изменения) для когорты новых пользователей. Идея этого подключаемого модуля похожа на идею [**подключаемого модуля activity_metrics**](https://docs.microsoft.com/azure/kusto/query/activity-metrics-plugin), но он сосредоточен на новых пользователях.
+[**Подключаемый модуль new_activity_metrics**](https://docs.microsoft.com/azure/kusto/query/new-activity-metrics-plugin): вычисляет полезные метрики действий (число различных значений, число различных новых значений, частоту удержания и скорость изменения) для когорты новых пользователей. Идея этого подключаемого модуля похожа на идею [**подключаемого модуля activity_metrics**](https://docs.microsoft.com/azure/kusto/query/activity-metrics-plugin), но он сосредоточен на новых пользователях.
 
 Следующий запрос вычисляет скорость изменения и частоту удержания для недельных окон для когорты новых пользователей (пользователей, которые появились на первой неделе).
 
@@ -902,7 +902,7 @@ StormEvents
 
 [**Подключаемый модуль funnel_sequence_completion**](https://docs.microsoft.com/azure/kusto/query/funnel-sequence-completion-plugin): вычисляет воронку завершенных шагов последовательности для различных периодов времени.
 
-Следующий запрос проверяет завершение воронки последовательности: `Hail -> Tornado -> Thunderstorm -> Wind` за "общее" время в один час, четыре часа и один день (`[1h, 4h, 1d]`).
+Следующий запрос проверяет завершение воронки последовательности: `Hail -> Tornado -> Thunderstorm -> Wind`  за "общее" время в один час, четыре часа и один день (`[1h, 4h, 1d]`).
 
 **\[**[**Щелкните, чтобы выполнить запрос**](https://dataexplorer.azure.com/clusters/help/databases/Samples?query=H4sIAAAAAAAAA12QTYvCMBCG74L/YW6tkIV2XT9g8SjsnlvwICKhM9JAOqlJqrj4402CW0RIIB/PPLwzmjwcnZfWwwZQevKqo/yzKFYfRRnW7Hs60ZEhxjdi/UZcFaO5VuqPAjhfLvD/w9F5IG7iM95YdqrJ99mPVDoTkNXGskSTju3ASNZ5Y7t43wVhdhj9PVll0L1aylbAV9glJqyKldsLsXfTyR3oIvUQAsNpYCY95jg2puuDUhnOt71yBukXBVRxCnVoTjwnIlLX4rUzAUlf3/pEPYViDDd7AOyqowFQAQAA)**\]**
 
@@ -918,7 +918,7 @@ StormEvents
 
 ## <a name="functions"></a>Функции Azure
 
-В этом разделе рассматриваются [**функции**](https://docs.microsoft.com/azure/kusto/query/functions): многократно используемые запросы, которые хранятся на сервере. Функции могут вызываться запросами и другими функциями (рекурсивные функции не поддерживаются).
+В этом разделе рассматриваются [**функции**](https://docs.microsoft.com/azure/kusto/query/functions): многократно используемые запросы, которые хранятся на сервере. Функции могут вызываться запросами и другими функциями (рекурсивные функции не поддерживаются).
 
 > [!NOTE]
 > Создавать функции на учебном кластере, который доступен только для чтения, невозможно. Для этого используйте собственный тестовый кластер.

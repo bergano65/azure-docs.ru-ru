@@ -12,12 +12,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 08/29/2018
 ms.author: routlaw
-ms.openlocfilehash: 6613def8891109e3a0ddf818111898a893a8035d
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: a6d50e6f405294bf8e91018dd4d7b6008cd49ada
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51628846"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52161883"
 ---
 # <a name="java-enterprise-guide-for-app-service-on-linux"></a>Руководство разработчика по Java Enterprise для Службы приложений в Linux
 
@@ -27,17 +27,18 @@ ms.locfileid: "51628846"
 
 ## <a name="scale-with-app-service"></a>Масштабирование с помощью Службы приложений 
 
-Сервер приложений WildFly работает в Службе приложений на платформе Linux в автономном режиме, а не в конфигурации домена. 
+Сервер приложений WildFly работает в Службе приложений на платформе Linux в автономном режиме, а не в конфигурации домена. При масштабировании плана службы приложений каждый экземпляр WildFly настраивается как отдельный сервер.
 
- Вы можете выполнять вертикальное или горизонтальное масштабирование своего приложения, придерживаясь [правил масштабирования](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-autoscale-get-started?toc=%2Fazure%2Fapp-service%2Fcontainers%2Ftoc.json) и [увеличивая число экземпляров](https://docs.microsoft.com/azure/app-service/web-sites-scale?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
+ Вы можете выполнять вертикальное или горизонтальное масштабирование своего приложения, придерживаясь [правил масштабирования](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-autoscale-get-started?toc=%2Fazure%2Fapp-service%2Fcontainers%2Ftoc.json) и [увеличивая число экземпляров](https://docs.microsoft.com/azure/app-service/web-sites-scale?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json). 
 
 ## <a name="customize-application-server-configuration"></a>Настройка параметров сервера приложений
 
-Разработчики могут создавать скрипт запуска Bash для дополнительной настройки своего приложения, включая следующее:
+В экземплярах веб-приложений не отслеживается состояние, поэтому каждый новый экземпляр необходимо настроить при запуске для поддержки конфигурации WildFly, необходимой для приложения.
+Вы можете написать скрипт запуска Bash для вызова интерфейса командной строки WildFly и выполнения таких действий:
 
-- настройку источников данных;
-- настройку поставщиков службы обмена сообщениями;
-- добавление других модулей и зависимостей Wildfly к конфигурации сервера.
+- настройка источников данных;
+- настройка поставщиков службы обмена сообщениями;
+- добавление других модулей и зависимостей Wildfly в конфигурацию сервера.
 
  Скрипт выполняется после запуска Wildfly, но перед запуском приложения. Для настройки запущенного сервера приложений с применением требуемых конфигурации или изменений скрипт должен использовать [интерфейс командной строки JBOSS](https://docs.jboss.org/author/display/WFLY/Command+Line+Interface), вызываемый из `/opt/jboss/wildfly/bin/jboss-cli.sh`. 
 
@@ -51,7 +52,7 @@ ms.locfileid: "51628846"
 
 Укажите в поле **Сценарий запуска** на портале Azure расположение скрипта запуска оболочки, например `/home/site/deployments/tools/your-startup-script.sh`.
 
-Используйте [параметры приложения](/azure/app-service/web-sites-configure#application-settings), чтобы указать переменные среды для использования в скрипте. Эти параметры предоставляются для среды скрипта запуска. Они исключают строки подключения и другие секретные данные из системы управления версиями.
+Укажите [параметры приложения](/azure/app-service/web-sites-configure#application-settings) в конфигурации приложения, чтобы передать переменные среды для использования в скрипте. В параметрах приложения хранятся строки подключения и другие секретные данные, необходимые для настройки приложения из системы управления версиями.
 
 ## <a name="modules-and-dependencies"></a>Модули и зависимости
 

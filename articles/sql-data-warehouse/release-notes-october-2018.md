@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: manage
-ms.date: 11/11/2018
+ms.date: 11/14/2018
 ms.author: mausher
 ms.reviewer: twounder
-ms.openlocfilehash: 82f55c87c54fa5197a2bd5c24ea3863da1700c7b
-ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
+ms.openlocfilehash: 1edac9f7eac1f47974f4c94f3cae5bb3451f92fd
+ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579293"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51705384"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-october-2018"></a>Что нового в Хранилище данных SQL Azure? Октябрь 2018 г.
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с октября 2018 года.
@@ -49,11 +49,8 @@ ms.locfileid: "51579293"
 - [sys.dm_pdw_waits](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql)
 - [sys.dm_pdw_sql_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-sql-requests-transact-sql)
 
-## <a name="instant-data-movement"></a>Мгновенное перемещение данных 
-Мгновенное перемещение данных теперь распространяется не только на смешение, но и на вещание и перемещение секций.
-
-## <a name="scale-up-column-store-columnstore-metadata-memory-management-sql-server"></a>Увеличение масштаба Columnstore: управление памятью метаданных Columnstore (SQL Server)
-Оптимизированное управление памятью для метаданных Columnstore 
+## <a name="columnstore-memory-management"></a>Управление памятью columnstore
+По мере того как количество групп строк для хранилища столбцов возрастает, увеличивается и объем памяти, необходимый для управления внутренними метаданными сегментов столбцов для этих групп строк.  В результате общая производительность запросов и результативность запросов к одному из динамических административных представлений columnstore может снизиться.  В этом выпуске реализованы улучшения, которые позволят оптимизировать размер внутренних метаданных в таких случаях. Это обеспечит удобство и высокую производительность при выполнении запросов. 
 
 ## <a name="azure-data-lake-storage-gen2-integration-ga"></a>Интеграция с Azure Data Lake Storage 2-го поколения (общедоступная версия)
 Хранилище данных SQL Azure теперь имеет встроенную возможности интеграции с Azure Data Lake Storage 2-го поколения Клиенты теперь могут с помощью внешних таблиц загружать данные из ABFS в Хранилище данных SQL. Эта функция позволяет пользователям интегрировать пулы данных в Azure Data Lake Storage 2-го поколения. 

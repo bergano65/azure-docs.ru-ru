@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/17/2018
+ms.date: 11/15/2018
 ms.author: spelluru
-ms.openlocfilehash: 6f9b85ec4821ff2454970136b3c8af2cb0f92154
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: c672634e79cbc0850edfe7f7fbdb0a880d5cf0d8
+ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50140829"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51707135"
 ---
 # <a name="manage-lab-accounts-in-azure-lab-services"></a>Управление учетными записями лабораторий в Службах лабораторий Azure 
 Учетная запись лаборатории Служб лабораторий Azure является контейнером управляемых лабораторий, таких как лаборатории для аудиторий. Администратор задает учетную запись лаборатории с помощью Служб лабораторий Azure и предоставляет доступ владельцам лабораторий, которые могут создать лаборатории в учетной записи. В этой статье содержатся подробные сведения о том, как создавать, просматривать и удалять учетные записи лабораторий.
@@ -114,7 +114,9 @@ ms.locfileid: "50140829"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-Начальная информация о настройке лаборатории в Службах лабораторий Azure:
+Ознакомьтесь со следующими статьями:
 
-- [Руководство по настройке лаборатории для аудитории](tutorial-setup-classroom-lab.md)
-- [Настройка лаборатории](../tutorial-create-custom-lab.md)
+- [Создание и администрирование учетных записей лаборатории (для владельцев лаборатории)](how-to-manage-classroom-labs.md)
+- [Настройка и публикация шаблонов (для владельцев лаборатории)](how-to-create-manage-template.md)
+- [Настройка, администрирование и контроль использования лаборатории (для владельцев лаборатории)](how-to-configure-student-usage.md)
+- [Доступ к лабораториям для аудитории (для пользователей лаборатории)](how-to-use-classroom-lab.md)

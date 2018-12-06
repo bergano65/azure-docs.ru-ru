@@ -1,6 +1,6 @@
 ---
-title: Обновление автономного кластера Azure Service Fabric в Windows Server | Документы Майкрософт
-description: Обновление кода и (или) конфигурации Azure Service Fabric, под управлением которой работает автономный кластер Service Fabric, включая изменение режима обновления кластера.
+title: Обновление версии изолированного кластера Azure Service Fabric | Документация Майкрософт
+description: Обновление кода Azure Service Fabric в автономном кластере Service Fabric.
 services: service-fabric
 documentationcenter: .net
 author: dkkapur
@@ -12,26 +12,18 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/15/2017
+ms.date: 11/09/2018
 ms.author: dekapur
-ms.openlocfilehash: 2190978b2583b2f5d8a1b10431c65fd24fe6842d
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: cac0b620ae0361ba6903599799f80adb9a917fc7
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51228153"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51853121"
 ---
-# <a name="upgrade-your-standalone-azure-service-fabric-cluster-on-windows-server"></a>Обновление автономного кластера Azure Service Fabric в Windows Server 
-> [!div class="op_single_selector"]
-> * [Кластер Azure](service-fabric-cluster-upgrade.md)
-> * [Автономный кластер](service-fabric-cluster-upgrade-windows-server.md)
->
->
+# <a name="upgrade-the-service-fabric-version-that-runs-on-your-cluster"></a>Изменение версии Service Fabric в кластере 
 
-Для любой современной системы возможность обновления является ключом к успеху вашего продукта в долгосрочной перспективе. Кластер Azure Service Fabric — это ресурс, владельцем которого вы являетесь. В этой статье описывается, как настроить в кластере выполнение только поддерживаемых версий кода и конфигураций Service Fabric.
-
-## <a name="control-the-service-fabric-version-that-runs-on-your-cluster"></a>Управление версией Service Fabric в кластере
-Чтобы настроить кластер для скачивания обновлений Service Fabric после того, как корпорация Майкрософт выпускает новую версию, присвойте параметру кластера fabricClusterAutoupgradeEnabled значение *true*. Чтобы выбрать поддерживаемую версию Service Fabric для кластера, присвойте параметру кластера fabricClusterAutoupgradeEnabled значение *false*.
+Для любой современной системы возможность обновления является ключом к успеху вашего продукта в долгосрочной перспективе. Кластер Azure Service Fabric — это ресурс, владельцем которого вы являетесь. В этой статье описано, как обновить версию Service Fabric в автономном или частном кластере.
 
 > [!NOTE]
 > Кластер должен всегда работать под управлением поддерживаемой версии Service Fabric. Когда корпорация Майкрософт объявляет о выпуске новой версии Service Fabric, для предыдущей версии определяется срок завершения жизненного цикла. Этот срок составляет по меньшей мере 60 дней с даты объявления. О доступности новых выпусков сообщается в [блоге группы разработчиков Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/), после чего вы можете их использовать.
@@ -42,7 +34,10 @@ ms.locfileid: "51228153"
 
 Обновить кластер до последней или поддерживаемой версии Service Fabric можно с помощью двух разных рабочих процессов. Один используется для кластеров с возможностью подключения для автоматического скачивания последней версии. Другой рабочий процесс используется для кластеров без возможности подключения для скачивания последней версии Service Fabric.
 
-### <a name="upgrade-clusters-that-have-connectivity-to-download-the-latest-code-and-configuration"></a>Обновление кластеров с возможностью подключения для скачивания последней версии кода и конфигурации
+## <a name="enable-auto-upgrade-of-the-service-fabric-version-of-your-cluster"></a>Включение автоматического обновления версии Service Fabric для кластера
+Чтобы настроить кластер для скачивания обновлений Service Fabric после того, как корпорация Майкрософт выпускает новую версию, присвойте параметру кластера `fabricClusterAutoupgradeEnabled` значение *true*. Чтобы выбрать поддерживаемую версию Service Fabric для кластера вручную, присвойте параметру кластера `fabricClusterAutoupgradeEnabled` значение *false*.
+
+## <a name="upgrade-clusters-that-have-connectivity-to-download-the-latest-code-and-configuration"></a>Обновление кластеров с возможностью подключения для скачивания последней версии кода и конфигурации
 Выполните приведенные ниже действия, чтобы обновить до поддерживаемой версии кластер с возможностью интернет-подключения к [Центру загрузки Майкрософт](https://download.microsoft.com).
 
 Для кластеров с возможностью подключения к [Центру загрузки Майкрософт](https://download.microsoft.com) корпорация Майкрософт рекомендует периодически проверять наличие новых версий Service Fabric.
@@ -53,13 +48,11 @@ ms.locfileid: "51228153"
 
 После запуска последней версии кластера это предупреждение исчезнет.
 
-#### <a name="cluster-upgrade-workflow"></a>Рабочий процесс обновления кластера
-Как только вы увидите предупреждение о работоспособности кластера, сделайте следующее:
+Когда вы увидите предупреждение о работоспособности кластера, обновите этот кластер:
 
 1. Подключитесь к кластеру с любой виртуальной машины, на которой есть доступ администратора ко всем ВМ, перечисленным в качестве узлов в файле конфигурации кластера. Компьютер, на котором выполняется этот скрипт, может и не входить в кластер.
 
     ```powershell
-
     ###### connect to the secure cluster using certs
     $ClusterName= "mysecurecluster.something.com:19000"
     $CertThumbprint= "70EF5E22ADB649799DA3C8B6A6BF7FG2D630F8F3"
@@ -75,7 +68,6 @@ ms.locfileid: "51228153"
 2. Получите список версий Service Fabric, до которых можно выполнить обновление.
 
     ```powershell
-
     ###### Get the list of available Service Fabric versions
     Get-ServiceFabricRegisteredClusterCodeVersion
     ```
@@ -85,19 +77,16 @@ ms.locfileid: "51228153"
     ![Получение версий Service Fabric][getfabversions]
 3. Запустите обновление кластера до доступной версии с помощью команды Windows PowerShell [Start-ServiceFabricClusterUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricclusterupgrade).
 
-    ```Powershell
-
+    ```powershell
     Start-ServiceFabricClusterUpgrade -Code -CodePackageVersion <codeversion#> -Monitored -FailureAction Rollback
 
     ###### Here is a filled-out example
 
     Start-ServiceFabricClusterUpgrade -Code -CodePackageVersion 5.3.301.9590 -Monitored -FailureAction Rollback
-
     ```
    За ходом обновления можно следить в Service Fabric Explorer. Также можно выполнить следующую команду PowerShell:
 
     ```powershell
-
     Get-ServiceFabricClusterUpgrade
     ```
 
@@ -105,38 +94,38 @@ ms.locfileid: "51228153"
 
     Устранив проблемы, которые привели к откату, запустите обновление снова, выполнив уже описанные действия.
 
-### <a name="upgrade-clusters-that-have-no-connectivity-to-download-the-latest-code-and-configuration"></a>Обновление кластеров *без возможности подключения* для скачивания последней версии кода и конфигурации
+## <a name="upgrade-clusters-that-have-no-connectivity-to-download-the-latest-code-and-configuration"></a>Обновление кластеров *без возможности подключения* для скачивания последней версии кода и конфигурации
 Выполните следующие действия, чтобы обновить до поддерживаемой версии кластер без возможности интернет-подключения к [Центру загрузки Майкрософт](https://download.microsoft.com).
 
 > [!NOTE]
-> Если вы используете кластер без возможности подключения к Интернету, вам потребуется отслеживать блог команды разработчиков Service Fabric, чтобы узнавать о новых выпусках. Система не будет показывать предупреждения о работоспособности кластера, чтобы оповещать вас о новых выпусках.  
+> Если вы используете кластер без возможности подключения к Интернету, вам нужно будет просматривать [блог команды разработчиков Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/), чтобы узнавать о новых выпусках. Система не будет показывать предупреждения о работоспособности кластера, чтобы оповещать вас о новых выпусках.  
 >
 >
 
-#### <a name="auto-provisioning-vs-manual-provisioning"></a>Автоматическая подготовка и подготовка вручную
-Чтобы включить автоматические операции скачивания и регистрации для получения последней версии кода, настройте службу обновления Service Fabric. Инструкции см. в файле Tools\ServiceFabricUpdateService.zip\Readme_InstructionsAndHowTos.txt в [изолированном пакете](service-fabric-cluster-standalone-package-contents.md).
+### <a name="auto-provisioning-vs-manual-provisioning"></a>Автоматическая подготовка и подготовка вручную
+Чтобы включить автоматические операции скачивания и регистрации для получения последней версии кода, настройте службу обновления Service Fabric. Инструкции см. в файле *Tools\ServiceFabricUpdateService.zip\Readme_InstructionsAndHowTos.txt* в [изолированном пакете](service-fabric-cluster-standalone-package-contents.md).
+
 Для выполнения операций вручную сделайте следующее.
 
 Прежде чем начать обновление конфигурации, измените конфигурацию кластера, присвоив следующему свойству значение *false*:
 
-        "fabricClusterAutoupgradeEnabled": false,
+```json
+"fabricClusterAutoupgradeEnabled": false,
+```
 
 См. дополнительные сведения об использовании [команды PowerShell Start-ServiceFabricClusterConfigurationUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricclusterconfigurationupgrade). Обязательно обновите параметр clusterConfigurationVersion в JSON, прежде чем запускать обновление конфигурации.
 
 ```powershell
-
     Start-ServiceFabricClusterConfigurationUpgrade -ClusterConfigPath <Path to Configuration File>
-
 ```
 
-#### <a name="cluster-upgrade-workflow"></a>Рабочий процесс обновления кластера
+### <a name="cluster-upgrade-workflow"></a>Рабочий процесс обновления кластера
 
 1. Выполните командлет [Get-ServiceFabricClusterUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricclusterupgrade) на одном из узлов в кластере и запишите значение *TargetCodeVersion*.
 
 2. Выполните следующую команду с компьютера, подключенного к Интернету, чтобы получить список всех версий, совместимых с обновлением, для текущей версии и скачайте соответствующий пакет с помощью связанных ссылок для загрузки.
 
     ```powershell
-
     ###### Get list of all upgrade compatible packages  
     Get-ServiceFabricRuntimeUpgradeVersion -BaseVersion <TargetCodeVersion as noted in Step 1> 
     ```
@@ -144,41 +133,34 @@ ms.locfileid: "51228153"
 3. Подключитесь к кластеру с любой виртуальной машины, на которой есть доступ администратора ко всем ВМ, перечисленным в качестве узлов в файле конфигурации кластера. Компьютер, на котором выполняется этот скрипт, может и не входить в кластер.
 
     ```powershell
-
-   ###### Get the list of available Service Fabric versions
+    ###### Get the list of available Service Fabric versions
     Copy-ServiceFabricClusterPackage -Code -CodePackagePath <name of the .cab file including the path to it> -ImageStoreConnectionString "fabric:ImageStore"
 
-   ###### Here is a filled-out example
+    ###### Here is a filled-out example
     Copy-ServiceFabricClusterPackage -Code -CodePackagePath .\MicrosoftAzureServiceFabric.5.3.301.9590.cab -ImageStoreConnectionString "fabric:ImageStore"
-
     ```
 4. Скопируйте скачанный пакет в хранилище образов кластера.
 
 5. Зарегистрируйте скопированный пакет.
 
     ```powershell
-
     ###### Get the list of available Service Fabric versions
     Register-ServiceFabricClusterPackage -Code -CodePackagePath <name of the .cab file>
 
     ###### Here is a filled-out example
     Register-ServiceFabricClusterPackage -Code -CodePackagePath .\MicrosoftAzureServiceFabric.5.3.301.9590.cab
-
-     ```
+    ```
 6. Запустите обновление кластера до доступной версии.
 
-    ```Powershell
-
+    ```powershell
     Start-ServiceFabricClusterUpgrade -Code -CodePackageVersion <codeversion#> -Monitored -FailureAction Rollback
 
     ###### Here is a filled-out example
     Start-ServiceFabricClusterUpgrade -Code -CodePackageVersion 5.3.301.9590 -Monitored -FailureAction Rollback
-
     ```
-   За ходом обновления можно следить в Service Fabric Explorer. Можно также выполнить следующую команду PowerShell:
+    За ходом обновления можно следить в Service Fabric Explorer. Можно также выполнить следующую команду PowerShell:
 
     ```powershell
-
     Get-ServiceFabricClusterUpgrade
     ```
 
@@ -186,51 +168,10 @@ ms.locfileid: "51228153"
 
     Устранив проблемы, которые привели к откату, запустите обновление снова, выполнив уже описанные действия.
 
-
-## <a name="upgrade-the-cluster-configuration"></a>Обновление конфигурации кластера
-Прежде чем начинать обновление конфигурации, можно протестировать новый JSON-файл конфигурации кластера, выполнив следующий скрипт PowerShell в изолированном пакете:
-
-```powershell
-
-    TestConfiguration.ps1 -ClusterConfigFilePath <Path to the new Configuration File> -OldClusterConfigFilePath <Path to the old Configuration File>
-
-```
-Также можно выполнить этот скрипт:
-
-```powershell
-
-    TestConfiguration.ps1 -ClusterConfigFilePath <Path to the new Configuration File> -OldClusterConfigFilePath <Path to the old Configuration File> -FabricRuntimePackagePath <Path to the .cab file which you want to test the configuration against>
-
-```
-
-Некоторые конфигурации невозможно обновить, например конечные точки, имена кластеров, IP-адреса узлов и т. д. Мы протестируем новый JSON-файл конфигурации кластера, используя старый файл. При наличии каких-либо проблем в окне PowerShell отобразятся сведения об ошибках.
-
-Чтобы обновить конфигурацию кластера, выполните команду [Start-ServiceFabricClusterConfigurationUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricclusterconfigurationupgrade). Обновление конфигурации обрабатывает домен обновления.
-
-```powershell
-
-    Start-ServiceFabricClusterConfigurationUpgrade -ClusterConfigPath <Path to Configuration File>
-
-```
-
-### <a name="cluster-certificate-config-upgrade"></a>Обновление конфигурации сертификата кластера  
-Сертификат кластера используется для аутентификации между узлами кластера. Смену сертификата следует выполнять с особой осторожностью, так как в случае сбоя заблокируется связь между узлами кластера.
-
-Технически поддерживаются четыре варианта:  
-
-* Однократное обновление сертификата. Путь обновления: ''сертификат А (основной) -> сертификат B (основной) -> сертификат C (основной) ->…''.
-
-* Двойное обновление сертификата. Путь обновления ''сертификат А (основной) -> сертификат А (основной) и В (дополнительный) -> сертификат В (основной) -> сертификат В (основной) и С (дополнительный) -> сертификат C (основной)->…''.
-
-* Тип обновления сертификатов: сертификат на основе отпечатка <-> сертификаты на основе конфигурации CommonName. Например, отпечаток сертификата A (основной) и отпечаток B (дополнительный) -> CommonName сертификата C.
-
-* Обновление отпечатка издателя сертификата. Путь обновления "общее имя сертификата — A, отпечаток издателя — IT1 (основной) > общее имя сертификата — A, отпечаток издателя — IT1, IT2 (основной) > общее имя сертификата — A, отпечаток издателя — IT2 (основной)".
-
-
 ## <a name="next-steps"></a>Дополнительная информация
-* Узнайте, как настроить некоторые [параметры кластера Service Fabric](service-fabric-cluster-fabric-settings.md).
-* Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-up-down.md).
-* Узнайте об [обновлениях приложений](service-fabric-application-upgrade.md).
+* [Обновление конфигурации изолированного кластера](service-fabric-cluster-config-upgrade-windows-server.md)
+* [Настройка параметров кластера Service Fabric](service-fabric-cluster-fabric-settings.md).
+* [Масштабирование кластера](service-fabric-cluster-scale-up-down.md).
 
 <!--Image references-->
 [getfabversions]: ./media/service-fabric-cluster-upgrade-windows-server/getfabversions.PNG

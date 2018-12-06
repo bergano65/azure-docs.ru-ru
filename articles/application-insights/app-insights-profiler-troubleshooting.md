@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.reviewer: cawa
 ms.date: 08/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: 6013c0a1b404336ad7cca21edafb7adec5c7f7ca
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.openlocfilehash: fa6e70fe58e5066fcf308425a4c0d104c072a756
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50978848"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52164309"
 ---
 # <a name="troubleshoot-problems-enabling-or-viewing-application-insights-profiler"></a>Устранение неполадок по включению и просмотру Application Insights Profiler
 
@@ -46,9 +46,6 @@ Application Insights Profiler собирает данные профилиров
 
 1. Если запросы возникают во время работы профилировщика, убедитесь, что они обрабатываются в рамках вашего приложения, которое включено профилировщиком. Иногда приложения состоят из нескольких компонентов, но Profiler доступен не для всех компонентов, а лишь для некоторых. На странице настроек профилировщика Application Insights отобразятся компоненты с отправленной трассировкой.
 
-### <a name="net-core-21-bug"></a>Ошибка .NET Core 2.1
-Это ошибка в агенте профилировщика, которая препятствует передаче трассировки из приложений под управлением ASP.NET Core 2.1. Мы работаем над решением, и оно будет готово в ближайшее время. Для устранения этой ошибки приложение будет развернуто в конце октября.
-
 ### <a name="other-things-to-check"></a>Что нужно еще проверить:
 * Приложение на платформе .NET Framework 4.6.
 * Если веб-приложение является приложением ASP.NET Core, оно должно работать под управлением ASP.NET Core 2.0.
@@ -69,10 +66,11 @@ Application Insights Profiler собирает данные профилиров
 ## <a name="troubleshooting-profiler-on-app-services"></a>Устранение неполадок с помощью Profiler в службах приложений
 ### <a name="for-the-profiler-to-work-properly"></a>Для правильной работы профилировщика выполните следующее:
 * Необходимо использовать план службы веб-приложений уровня "Базовый" или выше.
-* Веб-приложение должно иметь установленное расширение Application Insights для служб приложений (2.6.5).
+* Для веб-приложения нужно включить Application Insights.
 * Веб-приложение должно содержать параметр приложения **APPINSIGHTS_INSTRUMENTATIONKEY**, настроенный с тем же ключом инструментирования, который использует пакет SDK Application Insights.
 * Веб-приложение должно иметь параметр приложения **APPINSIGHTS_PROFILERFEATURE_VERSION**, определенный и настроенный в соответствии с версией 1.0.0.
-* Веб-задание **ApplicationInsightsProfiler2** должно быть запущено. Чтобы проверить веб-задание, выберите [Kudu](https://blogs.msdn.microsoft.com/cdndevs/2015/04/01/the-kudu-debug-console-azure-websites-best-kept-secret/), затем в меню "Средства"откройте **Панель мониторинга веб-заданий**. Как показано на скриншотах ниже, щелкнув ссылку ApplicationInsightsProfiler2, можно получить подробную информацию о веб-задании, включая журнал.
+* В веб-приложении должен быть определен параметр **DiagnosticServices_EXTENSION_VERSION** со значением ~3.
+* Веб-задание **ApplicationInsightsProfiler3** должно быть запущено. Чтобы проверить веб-задание, выберите [Kudu](https://blogs.msdn.microsoft.com/cdndevs/2015/04/01/the-kudu-debug-console-azure-websites-best-kept-secret/), затем в меню "Средства"откройте **Панель мониторинга веб-заданий**. Как показано на скриншотах ниже, щелкнув ссылку ApplicationInsightsProfiler2, можно получить подробную информацию о веб-задании, включая журнал.
 
     Для просмотра сведений о веб-задании перейдите по этой ссылке: 
 
@@ -91,11 +89,7 @@ Application Insights Profiler собирает данные профилиров
 1. Установите для параметра **Всегда включено** значение **Включено**.
 1. Добавьте параметр приложения **APPINSIGHTS_INSTRUMENTATIONKEY** и задайте для него значение с тем же ключом инструментирования, который используется пакетом SDK.
 1. Добавьте параметр приложения **APPINSIGHTS_PROFILERFEATURE_VERSION** и задайте ему значение 1.0.0.
-1. Откройте 	**Дополнительные инструменты**.
-1. Выберите **Перейти**, чтобы открыть веб-сайт Kudu.
-1. На веб-сайте Kudu выберите **Site extensions** (Расширения сайта).
-1. Установите **Application Insights** из коллекции веб-приложений Azure.
-1. Перезапустите веб-приложение.
+1. Добавьте параметр **DiagnosticServices_EXTENSION_VERSION** и укажите значение ~3.
 
 ### <a name="too-many-active-profiling-sessions"></a>Слишком много активных сеансов профилирования
 

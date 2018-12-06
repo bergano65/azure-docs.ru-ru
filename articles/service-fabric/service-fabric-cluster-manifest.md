@@ -12,20 +12,19 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/06/2017
+ms.date: 11/12/2018
 ms.author: dekapur
-ms.openlocfilehash: 37859a117c88238089a681e3814c2a52f62bfce4
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: c71473e975333d33406d78130ad28f417b9b967e
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39412589"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51853342"
 ---
 # <a name="configuration-settings-for-a-standalone-windows-cluster"></a>Параметры конфигурации для изолированного кластера Windows
-В этой статье описана настройка изолированного кластера Azure Service Fabric с помощью файла ClusterConfig.json. Этот файл используется для указания сведений об узлах кластера, конфигурациях безопасности, а также топологии сети в плане доменов сбоя и обновления.
+В этой статье описаны параметры конфигурации изолированного кластера Azure Service Fabric, которые можно задать в файле *ClusterConfig.json*. Этот файл используется для указания сведений об узлах кластера, конфигурациях безопасности, а также топологии сети в плане доменов сбоя и обновления.  После изменения или добавления параметров конфигурации вы можете [создать изолированный кластер](service-fabric-cluster-creation-for-windows-server.md) или [обновить конфигурацию изолированного кластера](service-fabric-cluster-config-upgrade-windows-server.md).
 
 В [загружаемый изолированный пакет Service Fabric](service-fabric-cluster-creation-for-windows-server.md#downloadpackage) также включены примеры ClusterConfig.json. Примеры с DevCluster в имени позволяют создать кластер с тремя узлами на одном и том же компьютере, используя логические узлы. По крайней мере один узел должен быть помечен как первичный. Этот тип кластера удобен для работы в среде разработки или тестирования. Но он не предназначен для использования в качестве рабочего кластера. Примеры с MultiMachine в имени позволяют создать кластер рабочего уровня, каждый узел которого размещен на отдельном компьютере. Число первичных узлов такого кластера основано на его [уровне надежности](#reliability). В выпуске 5.7 (версия API 05-2017) мы удалили свойство уровня надежности (reliability-level). Вместо этого код вычисляет наиболее оптимизированный уровень надежности для кластера. Не пытайтесь задать значение для этого свойства начиная с версии 5.7.
-
 
 * В примерах ClusterConfig.Unsecure.DevCluster.json и ClusterConfig.Unsecure.MultiMachine.json показано, как создать незащищенный тестовый или рабочий кластер соответственно.
 
@@ -48,26 +47,27 @@ ms.locfileid: "39412589"
 
 ## <a name="nodes-on-the-cluster"></a>Узлы в кластере
 Можно настроить узлы в кластере Service Fabric с помощью раздела nodes, как показано в следующем фрагменте кода:
-
-    "nodes": [{
-        "nodeName": "vm0",
-        "iPAddress": "localhost",
-        "nodeTypeRef": "NodeType0",
-        "faultDomain": "fd:/dc1/r0",
-        "upgradeDomain": "UD0"
-    }, {
-        "nodeName": "vm1",
-        "iPAddress": "localhost",
-        "nodeTypeRef": "NodeType1",
-        "faultDomain": "fd:/dc1/r1",
-        "upgradeDomain": "UD1"
-    }, {
-        "nodeName": "vm2",
-        "iPAddress": "localhost",
-        "nodeTypeRef": "NodeType2",
-        "faultDomain": "fd:/dc1/r2",
-        "upgradeDomain": "UD2"
-    }],
+```json
+"nodes": [{
+    "nodeName": "vm0",
+    "iPAddress": "localhost",
+    "nodeTypeRef": "NodeType0",
+    "faultDomain": "fd:/dc1/r0",
+    "upgradeDomain": "UD0"
+}, {
+    "nodeName": "vm1",
+    "iPAddress": "localhost",
+    "nodeTypeRef": "NodeType1",
+    "faultDomain": "fd:/dc1/r1",
+    "upgradeDomain": "UD1"
+}, {
+    "nodeName": "vm2",
+    "iPAddress": "localhost",
+    "nodeTypeRef": "NodeType2",
+    "faultDomain": "fd:/dc1/r2",
+    "upgradeDomain": "UD2"
+}],
+```
 
 Кластер Service Fabric должен содержать по крайней мере три узла. Можно добавить дополнительные узлы в этот раздел в соответствии с вашей конфигурацией. В следующей таблице описаны параметры конфигурации для каждого узла:
 
@@ -88,57 +88,65 @@ ms.locfileid: "39412589"
 ### <a name="diagnostics"></a>Диагностика
 В разделе diagnosticsStore вы можете настроить параметры, чтобы включить диагностику и устранение неполадок узлов и кластера, как показано в следующем фрагменте кода: 
 
-    "diagnosticsStore": {
-        "metadata":  "Please replace the diagnostics store with an actual file share accessible from all cluster machines.",
-        "dataDeletionAgeInDays": "7",
-        "storeType": "FileShare",
-        "IsEncrypted": "false",
-        "connectionstring": "c:\\ProgramData\\SF\\DiagnosticsStore"
-    }
+```json
+"diagnosticsStore": {
+    "metadata":  "Please replace the diagnostics store with an actual file share accessible from all cluster machines.",
+    "dataDeletionAgeInDays": "7",
+    "storeType": "FileShare",
+    "IsEncrypted": "false",
+    "connectionstring": "c:\\ProgramData\\SF\\DiagnosticsStore"
+}
+```
 
 Переменная metadata представляет собой описание диагностики кластера и может быть задана в соответствии с вашей конфигурацией. Эти переменные помогают собирать журналы трассировки событий Windows, аварийные дампы и данные счетчиков производительности. Дополнительные сведения о журналах трассировки событий Windows см. в статье [Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994.aspx) и [Трассировка событий Windows](https://msdn.microsoft.com/library/ms751538.aspx). Все журналы, в том числе [аварийные дампы](https://blogs.technet.microsoft.com/askperf/2008/01/08/understanding-crash-dump-files/) и данные [счетчиков производительности](https://msdn.microsoft.com/library/windows/desktop/aa373083.aspx), можно перенаправить в папку connectionString на вашем компьютере. Службу хранилища Azure можно также использовать для хранения данных диагностики. См. следующий образец фрагмента кода:
 
-    "diagnosticsStore": {
-        "metadata":  "Please replace the diagnostics store with an actual file share accessible from all cluster machines.",
-        "dataDeletionAgeInDays": "7",
-        "storeType": "AzureStorage",
-        "IsEncrypted": "false",
-        "connectionstring": "xstore:DefaultEndpointsProtocol=https;AccountName=[AzureAccountName];AccountKey=[AzureAccountKey]"
-    }
+```json
+"diagnosticsStore": {
+    "metadata":  "Please replace the diagnostics store with an actual file share accessible from all cluster machines.",
+    "dataDeletionAgeInDays": "7",
+    "storeType": "AzureStorage",
+    "IsEncrypted": "false",
+    "connectionstring": "xstore:DefaultEndpointsProtocol=https;AccountName=[AzureAccountName];AccountKey=[AzureAccountKey]"
+}
+```
 
 ### <a name="security"></a>Безопасность
 Раздел security необходим для защиты изолированного кластера Service Fabric. В следующем фрагменте кода показана часть этого раздела:
 
-    "security": {
-        "metadata": "This cluster is secured using X509 certificates.",
-        "ClusterCredentialType": "X509",
-        "ServerCredentialType": "X509",
-        . . .
-    }
+```json
+"security": {
+    "metadata": "This cluster is secured using X509 certificates.",
+    "ClusterCredentialType": "X509",
+    "ServerCredentialType": "X509",
+    . . .
+}
+```
 
 Переменная metadata представляет собой описание защищенного кластера и может быть задана в соответствии с вашей конфигурацией. Переменные ClusterCredentialType и ServerCredentialType определяют тип безопасности, реализуемой кластером и узлами. Можно задать значение *X509* для защиты на основе сертификатов или *Windows* для защиты на основе Azure Active Directory. Остальная часть раздела security зависит от выбранного типа безопасности. Сведения о том, как заполнить остальную часть раздела security, см. в статьях [Защита автономного кластера под управлением Windows с помощью сертификатов X.509](service-fabric-windows-cluster-x509-security.md) или [Защита изолированного кластера под управлением Windows с помощью системы безопасности Windows](service-fabric-windows-cluster-windows-security.md).
 
 ### <a name="node-types"></a>Типы узлов
 В разделе nodeTypes описывается тип узлов в кластере. Для кластера нужно указать по крайней мере один тип узла, как показано в следующем фрагменте кода: 
 
-    "nodeTypes": [{
-        "name": "NodeType0",
-        "clientConnectionEndpointPort": "19000",
-        "clusterConnectionEndpointPort": "19001",
-        "leaseDriverEndpointPort": "19002"
-        "serviceConnectionEndpointPort": "19003",
-        "httpGatewayEndpointPort": "19080",
-        "reverseProxyEndpointPort": "19081",
-        "applicationPorts": {
-            "startPort": "20575",
-            "endPort": "20605"
-        },
-        "ephemeralPorts": {
-            "startPort": "20606",
-            "endPort": "20861"
-        },
-        "isPrimary": true
-    }]
+```json
+"nodeTypes": [{
+    "name": "NodeType0",
+    "clientConnectionEndpointPort": "19000",
+    "clusterConnectionEndpointPort": "19001",
+    "leaseDriverEndpointPort": "19002"
+    "serviceConnectionEndpointPort": "19003",
+    "httpGatewayEndpointPort": "19080",
+    "reverseProxyEndpointPort": "19081",
+    "applicationPorts": {
+        "startPort": "20575",
+        "endPort": "20605"
+    },
+    "ephemeralPorts": {
+        "startPort": "20606",
+        "endPort": "20861"
+    },
+    "isPrimary": true
+}]
+```
 
 name — понятное имя этого конкретного типа узла. Чтобы создать узел данного типа, присвойте его понятное имя переменной nodeTypeRef для этого узла, как [упоминалось раньше](#nodes-on-the-cluster). Для каждого типа узла определите конечные точки подключения, которые будут использоваться. Для этих конечных точек подключения можно выбрать любой номер порта, если он не конфликтует с другими конечными точками в данном кластере. В кластере с несколькими узлами будет один или несколько первичных узлов (т. е. isPrimary имеет значение *true*), в зависимости от значения [reliabilityLevel](#reliability). Сведения о первичных и непервичных типах узлов, в частности о параметрах nodeTypes и reliabilityLevel, см. в статье [Рекомендации по планированию загрузки кластера Service Fabric](service-fabric-cluster-capacity.md). 
 
@@ -155,44 +163,53 @@ name — понятное имя этого конкретного типа уз
 ### <a name="log-settings"></a>Параметры журнала
 В разделе fabricSettings вы можете задать корневые каталоги для данных и журналов Service Fabric. Эти каталоги можно настроить только во время создания исходного кластера. Ниже приведен фрагмент кода этого раздела.
 
-    "fabricSettings": [{
-        "name": "Setup",
-        "parameters": [{
-            "name": "FabricDataRoot",
-            "value": "C:\\ProgramData\\SF"
-        }, {
-            "name": "FabricLogRoot",
-            "value": "C:\\ProgramData\\SF\\Log"
-    }]
+```json
+"fabricSettings": [{
+    "name": "Setup",
+    "parameters": [{
+        "name": "FabricDataRoot",
+        "value": "C:\\ProgramData\\SF"
+    }, {
+        "name": "FabricLogRoot",
+        "value": "C:\\ProgramData\\SF\\Log"
+}]
+```
 
 Рекомендуется использовать диск без ОС в качестве FabricDataRoot и FabricLogRoot. Он обеспечивает большую надежность и независимость от ситуаций, когда операционная система перестает отвечать на запросы. Если настроить только корневой каталог данных, то корневой каталог файлов журнала будет помещен на один уровень ниже корневого каталога данных.
 
 ### <a name="stateful-reliable-services-settings"></a>Параметры надежной службы с отслеживанием состояния
 В разделе KtlLogger можно задать глобальные параметры конфигурации для Reliable Services. Дополнительные сведения об этих параметрах см. в статье [Настройка надежных служб с отслеживанием состояния](service-fabric-reliable-services-configuration.md). Следующий пример показывает, как изменить общий журнал транзакций, который создается для обслуживания Reliable Collections для служб с отслеживанием состояния:
 
-    "fabricSettings": [{
-        "name": "KtlLogger",
-        "parameters": [{
-            "name": "SharedLogSizeInMB",
-            "value": "4096"
-        }]
+```json
+"fabricSettings": [{
+    "name": "KtlLogger",
+    "parameters": [{
+        "name": "SharedLogSizeInMB",
+        "value": "4096"
     }]
+}]
+```
 
 ### <a name="add-on-features"></a>Функции надстройки
 Для настройки функций надстройки параметр apiVersion должен иметь значение 04-2017 или выше, а для параметра addonFeatures необходимо задать следующее:
 
-    "apiVersion": "04-2017",
-    "properties": {
-      "addOnFeatures": [
-          "DnsService",
-          "RepairManager"
-      ]
-    }
+```json
+"apiVersion": "04-2017",
+"properties": {
+    "addOnFeatures": [
+        "DnsService",
+        "RepairManager"
+    ]
+}
+```
 
 ### <a name="container-support"></a>Поддержка контейнеров
 Чтобы включить в изолированных кластерах поддержку контейнеров для контейнеров Windows Server и Hyper-V, необходимо включить компонент надстройки DnsService.
 
-
 ## <a name="next-steps"></a>Дополнительная информация
-Завершив настройку файла ClusterConfig.json в соответствии с конфигурацией изолированного кластера, вы можете развернуть этот кластер. Следуйте инструкциям в статье [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md), а затем перейдите к статье [Визуализация кластера с помощью Service Fabric Explorer](service-fabric-visualizing-your-cluster.md).
+Завершив настройку файла *ClusterConfig.json* в соответствии с конфигурацией изолированного кластера, вы можете развернуть этот кластер. Следуйте инструкциям в статье [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md), 
+
+Если у вас развернут изолированный кластер, вы также можете [обновить его конфигурацию](service-fabric-cluster-config-upgrade-windows-server.md). 
+
+Узнайте, как [визуализировать кластер с помощью Service Fabric Explorer](service-fabric-visualizing-your-cluster.md).
 

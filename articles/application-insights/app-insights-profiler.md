@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.reviewer: cawa
 ms.date: 08/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: 9aae08aa5906f341a890ac15e30d2863109d83a2
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: b0fc10099f1388169146d90efcd7c20dcbe8df27
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50140014"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52164954"
 ---
 # <a name="profile-live-azure-web-apps-with-application-insights"></a>Профилирование динамических веб-приложений Azure с помощью Application Insights
 
@@ -31,18 +31,18 @@ ms.locfileid: "50140014"
 * [Виртуальные машины](app-insights-profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 
 
-Application Insights Profiler поставляется в комплекте с расширением сайта Application Insights. Чтобы получить профиль для веб-приложения Azure, необходимо установить расширение сайта и настроить его. Чтобы активировать после развертывания веб-приложения, даже если в исходный код был включено пакета SDK для App Insights, выполните следующие.
+Средство Application Insights Profiler предварительно установлено в среде выполнения Службы приложений. Но это средство нужно включить, чтобы получать профили для веб-приложений Службы приложений Azure. Чтобы активировать после развертывания веб-приложения, даже если в исходный код был включено пакета SDK для App Insights, выполните следующие.
 
 1. Перейдите к панели **служб приложений** на портале Azure.
 1. Перейдите к панели **Параметры > Мониторинг**.
 
    ![Включение Application Insights на портале служб приложений](./media/app-insights-profiler/AppInsights-AppServices.png)
 
-1. Следуйте инструкциям на панели, чтобы создать новый ресурс Application Insights или выбрать имеющийся ресурс для отслеживания веб-приложения. Примите все параметры по умолчанию. **Диагностика на уровне кода** включена по умолчанию. Этот параметр включает профилировщик.
+1. Следуйте инструкциям на панели, чтобы создать новый ресурс Application Insights или выбрать имеющийся ресурс для отслеживания веб-приложения. Также убедитесь, что средство Profiler **включено**.
 
    ![Добавление расширения сайта Application Insights][Enablement UI]
 
-1. Профилировщик теперь устанавливается вместе с расширением сайта Application Insights, а также включается с помощью параметра приложения службы приложений.
+1. Теперь средство Profiler включается с помощью параметра приложения Службы приложений.
 
     ![Параметр приложения для профилировщика][profiler-app-setting]
 

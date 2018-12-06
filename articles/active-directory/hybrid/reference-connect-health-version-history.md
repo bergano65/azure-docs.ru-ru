@@ -14,17 +14,32 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: billmath
-ms.openlocfilehash: 8ca04fef8a17c43c9d1f761e36d8da7f1e07d4d5
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: f3684a1fa22982b62992db28cccd88d67738bc94
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51283586"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52161707"
 ---
 # <a name="azure-ad-connect-health-version-release-history"></a>Azure AD Connect Health: история выпусков версий
 Команда Azure Active Directory регулярно добавляет в Azure AD Connect Health новые функции и возможности. В этой статье перечислены выпущенные версии и компоненты.
-Агент Azure AD Connect Health для синхронизации интегрируется с установленным средством Azure AD Connect. Дополнительные сведения см. в [истории выпусков версий Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-version-history).
+Агент Azure AD Connect Health для синхронизации интегрируется с установленным средством Azure AD Connect. Дополнительные сведения см. в [истории выпусков версий Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-version-history). Вы можете оставить отзыв и проголосовать за функцию на [канале Connnect Health на сайте User Voice](https://feedback.azure.com/forums/169401-azure-active-directory/filters/new?category_id=165591).
 
+## <a name="november-2018"></a>Ноябрь 2018 г.
+**Новые функции общедоступной версии:** 
+* Azure AD Connect Health для синхронизации. Диагностика и устранение ошибок синхронизации повторяющихся атрибутов с помощью портала
+
+**Обновление агента:** 
+*  Агент Azure AD Connect Health для AD DS (версия 3.1.24.0). 
+1. Реализована поддержка и обязательное использование протокола TLS версии 1.2.
+2. Снижено количество лишних оповещений о глобальном каталоге.
+3. Исправлены ошибки с регистрацией агента Health.
+
+*   Агент Azure AD Connect Health для AD FS (версия 3.1.24.0).
+1. Реализована поддержка и обязательное использование протокола TLS версии 1.2.
+2. Поддержка Test-ADFSRequestToken для локализованной версии операционной системы.
+3. Устранена проблема, блокирующая EventHandler агента диагностики.
+4. Исправлены ошибки с регистрацией агента Health.
 
 ## <a name="august-2018"></a>Август 2018 г. 
 *  Агент Azure AD Connect Health для синхронизации (версия 3.1.7.0) выпущен вместе с Azure AD Connect версии 1.1.880.0.    

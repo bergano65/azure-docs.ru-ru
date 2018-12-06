@@ -1,19 +1,21 @@
 ---
 title: Ручная установка службы Mobility Service для аварийного восстановления виртуальных машин VMware и физических серверов с помощью Azure Site Recovery | Документация Майкрософт
 description: Узнайте, как установить агент службы Mobility Service для аварийного восстановления виртуальных машин VMware и физических серверов в Azure с помощью службы Azure Site Recovery.
-author: rayne-wiselman
-manager: carmonm
+author: Rajeswari-Mamilla
+manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/04/2018
-ms.author: raynew
-ms.openlocfilehash: dfed0209131379843b97ff8050c2f2ba7294537d
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.author: ramamill
+ms.openlocfilehash: b3b6d7a64873d77336b2fcf14e22f4d6ae33e3a2
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51019998"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51976797"
 ---
+автор ms: ramamill
+
 # <a name="install-the-mobility-service-manually-on-vmware-vms-and-physical-servers"></a>Ручная установка службы Mobility Service на виртуальных машинах VMware и физических серверах
 
 При настройке аварийного восстановления для виртуальных машин VMware и физических серверов используйте [Azure Site Recovery](site-recovery-overview.md). Требуется установить [службу мобильности Site Recovery](vmware-physical-mobility-service-overview.md) на каждую локальную виртуальную машину VMware и физический сервер.  Служба Mobility Service фиксирует операции записи данных на компьютере и перенаправляет их на сервер обработки Site Recovery.
@@ -61,7 +63,7 @@ ms.locfileid: "51019998"
 
 ## <a name="install-the-service-from-the-command-prompt"></a>Установка службы из командной строки
 
-### <a name="on-a-windows-machine"></a>На компьютере с ОС Windows
+### <a name="on-a-windows-machine"></a>На компьютере с Windows
 
 1. Скопируйте установщик в локальную папку (например, C:\Temp) на сервере, который необходимо защитить. 
 
@@ -103,7 +105,7 @@ ms.locfileid: "51019998"
 /PassphraseFilePath |  (Обязательный параметр.) Расположение файла с парольной фразой. Используйте любой допустимый локальный путь к файлу или UNC.
 
 
-### <a name="on-a-linux-machine"></a>На компьютере с ОС Linux
+### <a name="on-a-linux-machine"></a>На компьютере с Linux
 
 1. Скопируйте установщик в локальную папку (например, /tmp) на сервере, который необходимо защитить. Выполните следующие команды в окне терминала.
   ```

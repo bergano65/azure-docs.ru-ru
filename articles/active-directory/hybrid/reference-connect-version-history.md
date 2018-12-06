@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 09/06/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 1f74538deab38db536bfcdc6d0f703d455039d51
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: b42dc0f86a70feb06b32a20c7cbdd513920f65d6
+ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51235910"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52263527"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect. История выпусков версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -36,6 +36,17 @@ ms.locfileid: "51235910"
 Необходимые разрешения | Разрешения, необходимые для установки обновления, см. в [этом](reference-connect-accounts-permissions.md#upgrade) разделе.
 
 Скачивание | [Скачать Azure AD Connect ](https://go.microsoft.com/fwlink/?LinkId=615771).
+
+
+## <a name="12670"></a>1.2.67.0
+
+### <a name="release-status"></a>Состояние выпуска 
+
+Версия для скачивания выпущена 19.11.2018
+
+### <a name="fixed-issues"></a>Исправленные проблемы
+
+Эта сборка с исправлениями исправляет ухудшение, проявившееся в предыдущей сборки и выражавшееся в сбое компонент обратной записи паролей при использовании контроллера домена ADDS на Windows Server 2008 или R2.
 
 ## <a name="12650"></a>1.2.65.0 
 

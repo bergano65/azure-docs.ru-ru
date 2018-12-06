@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: lizross
 ms.reviewer: asteen
-ms.openlocfilehash: d0d07e235c33877ede7f47a6095482b2acec18d0
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: d9ed140d404387b94428cea5d925911806b62552
+ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51239850"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51705862"
 ---
 # <a name="what-is-the-myapps-portal"></a>Что такое портал MyApps?
 
@@ -83,7 +83,7 @@ ms.locfileid: "51239850"
 >
 Расширение можно скачать непосредственно со следующих сайтов:
 - [Chrome](https://go.microsoft.com/fwlink/?linkid=866367)
-- [Edge](https://go.microsoft.com/fwlink/?linkid=845176)
+- [Microsoft Edge](https://go.microsoft.com/fwlink/?linkid=845176)
 - [Firefox](https://go.microsoft.com/fwlink/?linkid=866366)
 
 Если для страницы "Мои приложения" вы используете URL-адрес, отличный от `https://myapps.microsoft.com`, настройте URL-адрес по умолчанию следующим образом:

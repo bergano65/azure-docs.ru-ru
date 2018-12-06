@@ -10,14 +10,14 @@ tags: top-support-issue, azure-resource-manager
 ms.service: virtual-machines-windows
 ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
-ms.date: 10/31/2018
+ms.date: 11/16/2018
 ms.author: genli
-ms.openlocfilehash: 23cf02e8cc33b3a66a04ae0472b1e5a6baa59cc2
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 61001d4926dcce68872a368afb5b28f2d3a8e2c0
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50418999"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51819006"
 ---
 # <a name="how-to-reset-network-interface-for-azure-windows-vm"></a>Как сбросить сетевой интерфейс для виртуальной машины Azure под управлением Windows 
 
@@ -32,6 +32,8 @@ ms.locfileid: "50418999"
 
 Чтобы сбросить сетевой интерфейс, сделайте следующее:
 
+#### <a name="use-azure-portal"></a>Использование портала Azure
+
 1.  Перейдите на [портал Azure]( https://ms.portal.azure.com).
 2.  Выберите **Виртуальные машины (классика)**.
 3.  Выберите задействованную виртуальную машину.
@@ -41,6 +43,31 @@ ms.locfileid: "50418999"
 7.  Щелкните "Сохранить".
 8.  Виртуальная машина будет перезапущена, чтобы инициализировать новый NIC в системе.
 9.  Попробуйте подключиться к компьютеру по протоколу удаленного рабочего стола. В случае успешного подключения при необходимости можно изменить частный IP-адрес на исходный или использовать прежний. 
+
+#### <a name="use-azure-powershell"></a>Использование Azure PowerShell
+
+1. Убедитесь, что у вас установлена [последняя версия Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
+2. Откройте расширенный сеанс Azure PowerShell (Запуск от имени администратора). Выполните следующие команды:
+
+    ```powershell
+    #Set the variables 
+    $SubscriptionID = "<Suscription ID>"
+    $VM = "<VM Name>"
+    $CloudService = "<Cloud Service>"
+    $VNET = "<Virtual Network>"
+    $IP = "NEWIP"
+
+    #Log in to the subscription 
+    Add-AzureAccount
+    Select-AzureSubscription -SubscriptionId $SubscriptionId 
+
+    #Check whether the new IP address is available in the virtual network.
+    Test-AzureStaticVNetIP –VNetName $VNET –IPAddress  $IP
+    
+    #Add/Change static IP. This process will not change MAC address
+    Get-AzureVM -ServiceName $CloudService -Name $VM | Set-AzureStaticVNetIP -IPAddress $IP |Update-AzureVM
+    ```
+3. Попробуйте подключиться к компьютеру по протоколу удаленного рабочего стола. В случае успешного подключения при необходимости можно изменить частный IP-адрес на исходный или использовать прежний. 
 
 ### <a name="for-vms-deployed-in-resource-group-model"></a>Виртуальные машины, развернутые в модели группы ресурсов
 
@@ -54,6 +81,31 @@ ms.locfileid: "50418999"
 8.  Изменение **IP-адреса** на другой, который доступен в подсети.
 9. Виртуальная машина будет перезапущена, чтобы инициализировать новый NIC в системе.
 10. Попробуйте подключиться к компьютеру по протоколу удаленного рабочего стола. В случае успешного подключения при необходимости можно изменить частный IP-адрес на исходный или использовать прежний. 
+
+#### <a name="use-azure-powershell"></a>Использование Azure PowerShell
+
+1. Убедитесь, что у вас установлена [последняя версия Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
+2. Откройте расширенный сеанс Azure PowerShell (Запуск от имени администратора). Выполните следующие команды:
+
+    ```powershell
+    #Set the variables 
+    $SubscriptionID = "<Suscription ID>"
+    $VM = "<VM Name>"
+    $ResourceGroup = "<Resource Group>"
+    $VNET = "<Virtual Network>"
+    $IP = "NEWIP"
+
+    #Log in to the subscription 
+    Add-AzureRMAccount
+    Select-AzureRMSubscription -SubscriptionId $SubscriptionId 
+    
+    #Check whether the new IP address is available in the virtual network.
+    Test-AzureStaticVNetIP –VNetName $VNET –IPAddress  $IP
+
+    #Add/Change static IP. This process will not change MAC address
+    Get-AzureRMVM -ServiceName $ResourceGroup -Name $VM | Set-AzureStaticVNetIP -IPAddress $IP | Update-AzureRMVM
+    ```
+3. Попробуйте подключиться к компьютеру по протоколу удаленного рабочего стола.  В случае успешного подключения при необходимости можно изменить частный IP-адрес на исходный или использовать прежний. 
 
 ## <a name="delete-the-unavailable-nics"></a>Удаление недоступных сетевых интерфейсов
 После подключения к компьютеру с помощью удаленного рабочего стола необходимо удалить устарелые сетевые интерфейсы во избежание возможных проблем.

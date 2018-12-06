@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: lmolkova
-ms.openlocfilehash: 770d8950e25431e1edc496e0710cf199b45e5847
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 4584104e9c9833b5f3f586581dd5a58f420fe0bd
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51283841"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52165345"
 ---
 # <a name="distributed-tracing-and-correlation-through-service-bus-messaging"></a>Распределенная трассировка и корреляция путем обмена сообщениями через служебную шину
 
@@ -155,27 +155,27 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 
 | Имя операции | Отслеживаемый API | Определенные свойства полезных данных|
 |----------------|-------------|---------|
-| Microsoft.Azure.ServiceBus.Send | [MessageSender.SendAsync](/dotnet/api/microsoft.azure.servicebus.core.messagesender.sendasync) | IList<Message> Messages — список отправляемых сообщений |
-| Microsoft.Azure.ServiceBus.ScheduleMessage | [MessageSender.ScheduleMessageAsync](/dotnet/api/microsoft.azure.servicebus.core.messagesender.schedulemessageasync) | Message Message — обрабатываемое сообщение<br/>DateTimeOffset ScheduleEnqueueTimeUtc — смещение запланированного сообщения<br/>long SequenceNumber — порядковый номер запланированного сообщения (полезные данные события Stop) |
-| Microsoft.Azure.ServiceBus.Cancel | [MessageSender.CancelScheduledMessageAsync](/dotnet/api/microsoft.azure.servicebus.core.messagesender.cancelscheduledmessageasync) | long SequenceNumber — порядковый номер сообщения, которое будет отменено | 
-| Microsoft.Azure.ServiceBus.Receive | [MessageReceiver.ReceiveAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.receiveasync) |int RequestedMessageCount — максимальное количество сообщений, которые можно получить.<br/>IList<Message> Messages — список полученных сообщений (полезные данные события Stop) |
-| Microsoft.Azure.ServiceBus.Peek | [MessageReceiver.PeekAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.peekasync) | int FromSequenceNumber — отправная точка, с которой нужно начинать просмотр сообщений.<br/>int RequestedMessageCoun — количество сообщений для извлечения.<br/>IList<Message> Messages — список полученных сообщений (полезные данные события Stop) |
-| Microsoft.Azure.ServiceBus.ReceiveDeferred | [MessageReceiver.ReceiveDeferredMessageAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.receivedeferredmessageasync) | IEnumerable<long> SequenceNumbers — список, содержащий порядковые номера для получения.<br/>IList<Message> Messages — список полученных сообщений (полезные данные события Stop) |
-| Microsoft.Azure.ServiceBus.Complete | [MessageReceiver.CompleteAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.completeasync) | IList<string> LockTokens — список, содержащий маркеры блокировки соответствующих сообщений для выполнения.|
-| Microsoft.Azure.ServiceBus.Abandon | [MessageReceiver.AbandonAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.abandonasync) | string LockToken — маркер блокировки соответствующего сообщения для отказа. |
-| Microsoft.Azure.ServiceBus.Defer | [MessageReceiver.DeferAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.deferasync) | string LockToken — маркер блокировки соответствующего сообщения для откладывания. | 
-| Microsoft.Azure.ServiceBus.DeadLetter | [MessageReceiver.DeadLetterAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.deadletterasync) | string LockToken — маркер блокировки соответствующего сообщения для недоставленных сообщений. | 
-| Microsoft.Azure.ServiceBus.RenewLock | [MessageReceiver.RenewLockAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.renewlockasync) | string LockToken — маркер блокировки соответствующего сообщения для продления блокировки.<br/>DateTime LockedUntilUtc — новые дата и время истечения срока действия маркера блокировки в формате UTC. (Полезные данные события Stop)|
-| Microsoft.Azure.ServiceBus.Process | Лямбда-функция обработчика сообщений, указанная в [IReceiverClient.RegisterMessageHandler](/dotnet/api/microsoft.azure.servicebus.core.ireceiverclient.registermessagehandler) | Message Message — обрабатываемое сообщение. |
-| Microsoft.Azure.ServiceBus.ProcessSession | Лямбда-функция обработчика сеанса обмена сообщений, указанная в [IQueueClient.RegisterSessionHandler](/dotnet/api/microsoft.azure.servicebus.iqueueclient.registersessionhandler) | Message Message — обрабатываемое сообщение.<br/>IMessageSession Session — обрабатываемый сеанс |
-| Microsoft.Azure.ServiceBus.AddRule | [SubscriptionClient.AddRuleAsync](/dotnet/api/microsoft.azure.servicebus.subscriptionclient.addruleasync) | RuleDescription Rule — описание правила, которое определяет правило для добавления. |
-| Microsoft.Azure.ServiceBus.RemoveRule | [SubscriptionClient.RemoveRuleAsync](/dotnet/api/microsoft.azure.servicebus.subscriptionclient.removeruleasync) | string RuleName — имя правила для удаления. |
-| Microsoft.Azure.ServiceBus.GetRules | [SubscriptionClient.GetRulesAsync](/dotnet/api/microsoft.azure.servicebus.subscriptionclient.getrulesasync) | IEnumerable<RuleDescription> Rules — все правила, связанные с подпиской. (только полезные данные Stop) |
-| Microsoft.Azure.ServiceBus.AcceptMessageSession | [ISessionClient.AcceptMessageSessionAsync](/dotnet/api/microsoft.azure.servicebus.isessionclient.acceptmessagesessionasync) | string SessionId — идентификатор сеанса, присутствующий в сообщениях. |
-| Microsoft.Azure.ServiceBus.GetSessionState | [IMessageSession.GetStateAsync](/dotnet/api/microsoft.azure.servicebus.imessagesession.getstateasync) | string SessionId — идентификатор сеанса, присутствующий в сообщениях.<br/>byte [] State — состояние сеанса (полезных данных события Stop) |
-| Microsoft.Azure.ServiceBus.SetSessionState | [IMessageSession.SetStateAsync](/dotnet/api/microsoft.azure.servicebus.imessagesession.setstateasync) | string SessionId — идентификатор сеанса, присутствующий в сообщениях.<br/>byte [] State — состояние сеанса |
-| Microsoft.Azure.ServiceBus.RenewSessionLock | [IMessageSession.RenewSessionLockAsync](/dotnet/api/microsoft.azure.servicebus.imessagesession.renewsessionlockasync) | string SessionId — идентификатор сеанса, присутствующий в сообщениях. |
-| Microsoft.Azure.ServiceBus.Exception | любой инструментированный API| Exception Exception — экземпляр исключения |
+| Microsoft.Azure.ServiceBus.Send | [MessageSender.SendAsync](/dotnet/api/microsoft.azure.servicebus.core.messagesender.sendasync) | `IList<Message> Messages` — список отправляемых сообщений. |
+| Microsoft.Azure.ServiceBus.ScheduleMessage | [MessageSender.ScheduleMessageAsync](/dotnet/api/microsoft.azure.servicebus.core.messagesender.schedulemessageasync) | `Message Message` — обрабатываемое сообщение.<br/>`DateTimeOffset ScheduleEnqueueTimeUtc` — смещение запланированных сообщений.<br/>`long SequenceNumber` — порядковый номер запланированного сообщения (полезные данные события Stop). |
+| Microsoft.Azure.ServiceBus.Cancel | [MessageSender.CancelScheduledMessageAsync](/dotnet/api/microsoft.azure.servicebus.core.messagesender.cancelscheduledmessageasync) | `long SequenceNumber` — порядковый номер сообщения, которое будет отменено. | 
+| Microsoft.Azure.ServiceBus.Receive | [MessageReceiver.ReceiveAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.receiveasync) | `int RequestedMessageCount` — максимальное количество сообщений, которые можно получить.<br/>`IList<Message> Messages` — список полученных сообщений (полезные данные события Stop). |
+| Microsoft.Azure.ServiceBus.Peek | [MessageReceiver.PeekAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.peekasync) | `int FromSequenceNumber` — отправная точка, с которой нужно начинать просмотр сообщений.<br/>`int RequestedMessageCount` — число извлекаемых сообщений.<br/>`IList<Message> Messages` — список полученных сообщений (полезные данные события Stop). |
+| Microsoft.Azure.ServiceBus.ReceiveDeferred | [MessageReceiver.ReceiveDeferredMessageAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.receivedeferredmessageasync) | `IEnumerable<long> SequenceNumbers` — список, содержащий порядковые номера для получения.<br/>`IList<Message> Messages` — список полученных сообщений (полезные данные события Stop). |
+| Microsoft.Azure.ServiceBus.Complete | [MessageReceiver.CompleteAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.completeasync) | `IList<string> LockTokens` — список, содержащий маркеры блокировки соответствующих сообщений для выполнения.|
+| Microsoft.Azure.ServiceBus.Abandon | [MessageReceiver.AbandonAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.abandonasync) | `string LockToken` — маркер блокировки соответствующего сообщения для отказа. |
+| Microsoft.Azure.ServiceBus.Defer | [MessageReceiver.DeferAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.deferasync) | `string LockToken` — маркер блокировки соответствующего сообщения для откладывания. | 
+| Microsoft.Azure.ServiceBus.DeadLetter | [MessageReceiver.DeadLetterAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.deadletterasync) | `string LockToken` — маркер блокировки соответствующего сообщения для недоставленных сообщений. | 
+| Microsoft.Azure.ServiceBus.RenewLock | [MessageReceiver.RenewLockAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.renewlockasync) | `string LockToken` — маркер блокировки соответствующего сообщения для продления блокировки.<br/>`DateTime LockedUntilUtc` — новые дата и время истечения срока действия маркера блокировки в формате UTC. (Полезные данные события Stop)|
+| Microsoft.Azure.ServiceBus.Process | Лямбда-функция обработчика сообщений, указанная в [IReceiverClient.RegisterMessageHandler](/dotnet/api/microsoft.azure.servicebus.core.ireceiverclient.registermessagehandler) | `Message Message` — обрабатываемое сообщение. |
+| Microsoft.Azure.ServiceBus.ProcessSession | Лямбда-функция обработчика сеанса обмена сообщений, указанная в [IQueueClient.RegisterSessionHandler](/dotnet/api/microsoft.azure.servicebus.iqueueclient.registersessionhandler) | `Message Message` — обрабатываемое сообщение.<br/>`IMessageSession Session` — обрабатываемый сеанс. |
+| Microsoft.Azure.ServiceBus.AddRule | [SubscriptionClient.AddRuleAsync](/dotnet/api/microsoft.azure.servicebus.subscriptionclient.addruleasync) | `RuleDescription Rule` — описание правила, которое определяет правило для добавления. |
+| Microsoft.Azure.ServiceBus.RemoveRule | [SubscriptionClient.RemoveRuleAsync](/dotnet/api/microsoft.azure.servicebus.subscriptionclient.removeruleasync) | `string RuleName` — имя правила для удаления. |
+| Microsoft.Azure.ServiceBus.GetRules | [SubscriptionClient.GetRulesAsync](/dotnet/api/microsoft.azure.servicebus.subscriptionclient.getrulesasync) | `IEnumerable<RuleDescription> Rules` — все правила, связанные с подпиской. (только полезные данные Stop) |
+| Microsoft.Azure.ServiceBus.AcceptMessageSession | [ISessionClient.AcceptMessageSessionAsync](/dotnet/api/microsoft.azure.servicebus.isessionclient.acceptmessagesessionasync) | `string SessionId` — идентификатор сеанса, присутствующий в сообщениях. |
+| Microsoft.Azure.ServiceBus.GetSessionState | [IMessageSession.GetStateAsync](/dotnet/api/microsoft.azure.servicebus.imessagesession.getstateasync) | `string SessionId` — идентификатор сеанса, присутствующий в сообщениях.<br/>`byte [] State` — состояние сеанса (полезные данные события Stop). |
+| Microsoft.Azure.ServiceBus.SetSessionState | [IMessageSession.SetStateAsync](/dotnet/api/microsoft.azure.servicebus.imessagesession.setstateasync) | `string SessionId` — идентификатор сеанса, присутствующий в сообщениях.<br/>`byte [] State` — состояние сеанса. |
+| Microsoft.Azure.ServiceBus.RenewSessionLock | [IMessageSession.RenewSessionLockAsync](/dotnet/api/microsoft.azure.servicebus.imessagesession.renewsessionlockasync) | `string SessionId` — идентификатор сеанса, присутствующий в сообщениях. |
+| Microsoft.Azure.ServiceBus.Exception | любой инструментированный API| `Exception Exception` — экземпляр исключения. |
 
 В каждом событии вы можете получить доступ к `Activity.Current`, где содержится контекст текущей операции.
 

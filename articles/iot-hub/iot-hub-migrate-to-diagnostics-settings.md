@@ -5,14 +5,14 @@ author: kgremban
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 10/10/2017
+ms.date: 11/19/2018
 ms.author: kgremban
-ms.openlocfilehash: 3cb0f91f3143e6a4828548f3a15678b3814cba17
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 236adb45ec6663ad361df1afbf6389a449f2a529
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50154867"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52159905"
 ---
 # <a name="migrate-your-iot-hub-from-operations-monitoring-to-diagnostics-settings"></a>Перенос Центра Интернета вещей для перехода с операций мониторинга к параметрам диагностики
 
@@ -49,6 +49,10 @@ ms.locfileid: "50154867"
 * Прямые методы
 
 Сведения об определенных структурах схем см. в разделе с [описанием схемы для параметров диагностики](iot-hub-monitor-resource-health.md#understand-the-logs).
+
+## <a name="monitoring-device-connect-and-disconnect-events-with-low-latency"></a>Мониторинг событий подключения и отключения устройств с низкой задержкой
+
+Для мониторинга событий подключения и отключения устройств мы рекомендуем подписаться на событие [**device disconnected** ](iot-hub-event-grid.md#event-types)в службе "Сетка событий", чтобы получать оповещения и отслеживать состояние подключения устройства. Используйте это [руководство](iot-hub-how-to-order-connection-state-events.md), чтобы узнать, как интегрировать события подключения и отключения устройства из Центра Интернета вещей в решение Интернета вещей.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.author: seanmck
 ms.custom: mvc
-ms.openlocfilehash: 41e3f38817abbdd0cab9ab2c72d39cb6f3f69531
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.openlocfilehash: 062308622e3170a4eb8f75a96300f04f683a90e7
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50978184"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51820364"
 ---
 # <a name="troubleshoot-common-issues-in-azure-container-instances"></a>Устранение распространенных неполадок с помощью службы "Экземпляры контейнеров Azure"
 
@@ -205,6 +205,9 @@ microsoft/aci-helloworld    latest    7f78509b568e    13 days ago    68.1MB
 ## <a name="cannot-connect-to-underlying-docker-api-or-run-privileged-containers"></a>Не удается подключиться к основному API Docker или запустить привилегированные контейнеры.
 
 Служба "Экземпляры контейнеров Azure" не предоставляет прямой доступ к базовой инфраструктуре, в которой размещены группы контейнеров. Это включает в себя доступ к API Docker, запущенному на узле контейнера, и выполнение привилегированных контейнеров. Если требуется взаимодействие с Docker, обратитесь к [справочной документации по REST](https://aka.ms/aci/rest), чтобы узнать о поддерживаемых API в службе "Экземпляры контейнеров Azure". Также можно отправить запрос на [форумах обратной связи ACI](https://aka.ms/aci/feedback).
+
+## <a name="ips-may-not-be-accessible-due-to-mismatched-ports"></a>IP-адреса могут быть недоступны из-за несоответствия портов
+Сейчас для службы "Экземпляры контейнеров Azure" не поддерживается сопоставление портов, как для обычной конфигурации Docker. Но мы планируем это исправить. Если IP-адреса не доступны, но вы уверены, что они должны быть доступны, убедитесь, что образ контейнера ожидает передачи данных на те же порты, которые вы указали в группе контейнеров с помощью свойства `ports`.
 
 ## <a name="next-steps"></a>Дополнительная информация
 Узнайте, как [получить журналы контейнеров и события](container-instances-get-logs.md), чтобы помочь в отладке контейнеров.

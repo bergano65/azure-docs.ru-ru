@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 8b12e3cdc53b926f660e12b7cf4b79a8cb6f40c2
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 25e70b3a685f3b777a74c4cc6bf0e56dd37741a7
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50960163"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51821520"
 ---
 # <a name="troubleshoot-an-rdp-general-error-in-azure-vm"></a>Устранение общей ошибки RDP на виртуальной машине Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "50960163"
 
 ### <a name="serial-console"></a>Серийная консоль
 
-#### <a name="step-1-turn-on-remote-desktop"></a>Шаг 1. Включение удаленного рабочего стола
+#### <a name="step-1-open-cmd-instance-in-serial-console"></a>Шаг 1. Открытие экземпляра CMD в Серийной консоли
 
 1. Откройте [последовательную консоль](serial-console-windows.md), выбрав **Поддержка и устранение неисправностей** > **Последовательная консоль (предварительная версия)**. Если эта функция включена на виртуальной машине, вы сможете успешно подключиться к виртуальной машине.
 

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: reference
 ms.date: 09/14/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 3f0f087c98f2b6594ab7e841f92ffac7ffe4003e
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: a7666ada6c4535010297415eac8b0bd9e5226d9e
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807821"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51974473"
 ---
 <a name="retrieve-operations"></a>Получение операций
 ===================
@@ -58,7 +58,7 @@ ms.locfileid: "48807821"
 |  |  |
 
 
-<a name="body-example"></a>Пример текста
+<a name="body-example"></a>Пример текста запроса
 ------------
 
 ### <a name="response"></a>Ответ
@@ -189,7 +189,7 @@ ms.locfileid: "48807821"
 |  submissionType              | Определяет тип операции, которая возвращается на предложения, например `Publish/GGoLive`.      |
 |  createdDateTime             | Дата и время создания операции в формате UTC.                                                       |
 |  lastActionDateTime          | Дата и время выполнения последнего обновления операции в формате UTC.                                       |
-|  status                      | Состояние операции, если не запущено | выполнение | сбой | Вовремя завершенное управление`. Only one operation can have status `. |
+|  status                      | Возможные состояния операции: `not started`, \|, `running`, \|, `failed`, \|, `completed`. Только одна операция может иметь состояние `running` за раз. |
 |  error                       | Сообщение об ошибке, появившееся при сбое операций                                                               |
 |  |  |
 

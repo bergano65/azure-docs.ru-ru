@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: manage
-ms.date: 08/01/2018
+ms.date: 11/15/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: ecde7cb3662fc80e7968acfcac99bc8f28e8b15b
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: 60bd7cc2084ce64477cf89a5fd28d9a505fbfbfb
+ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43287579"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51852645"
 ---
 # <a name="quickstart-create-and-query-an-azure-sql-data-warehouse-with-azure-powershell"></a>Краткое руководство. Создание хранилища данных SQL Azure и его запрос с помощью Azure PowerShell
 
@@ -31,7 +31,7 @@ ms.locfileid: "43287579"
 >
 >
 
-## <a name="log-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 С помощью команды [Add-AzureRmAccount](/powershell/module/azurerm.profile/add-azurermaccount) войдите в подписку Azure и следуйте инструкциям на экране.
 
@@ -45,10 +45,10 @@ Add-AzureRmAccount
 Get-AzureRmSubscription
 ```
 
-Если необходимо использовать не подписку по умолчанию, выполните командлет [Select-AzureRmSubscription](/powershell/module/azurerm.profile/select-azurermsubscription).
+Если необходимо использовать не подписку по умолчанию, выполните командлет [Set-AzureRmContext](/powershell/module/azurerm.profile/set-azurermcontext).
 
 ```powershell
-Select-AzureRmSubscription -SubscriptionName "MySubscription"
+Set-AzureRmContext -SubscriptionName "MySubscription"
 ```
 
 
@@ -60,10 +60,10 @@ Select-AzureRmSubscription -SubscriptionName "MySubscription"
 # The data center and resource name for your resources
 $resourcegroupname = "myResourceGroup"
 $location = "WestEurope"
-# The logical server name: Use a random value or replace with your own value (do not capitalize)
+# The logical server name: Use a random value or replace with your own value (don't capitalize)
 $servername = "server-$(Get-Random)"
-# Set an admin login and password for your database
-# The login information for the server
+# Set an admin name and password for your database
+# The sign-in information for the server
 $adminlogin = "ServerAdmin"
 $password = "ChangeYourAdminPassword1"
 # The ip address range that you want to allow to access your server - change as appropriate
@@ -123,14 +123,14 @@ New-AzureRmSqlDatabase `
 Ниже перечислены необходимые параметры.
 
 * **RequestedServiceObjectiveName** — количество запрашиваемых [единиц хранилища данных](what-is-a-data-warehouse-unit-dwu-cdwu.md). Увеличение этого количества приведет к повышению стоимости вычислений. Список поддерживаемых значений см. в статье [Ограничения параллелизма и памяти для хранилища данных SQL Azure](memory-and-concurrency-limits.md).
-* **DatabaseName**: имя создаваемого хранилища данных SQL.
-* **ServerName**: имя сервера, который используется для создания.
-* **ResourceGroupName**: используемая группа ресурсов. Чтобы найти доступные группы ресурсов, входящие в вашу подписку, используйте командлет Get-AzureResource.
+* **DatabaseName** — имя создаваемого Хранилища данных SQL.
+* **ServerName** — имя сервера, который используется для создания.
+* **ResourceGroupName** — используемая группа ресурсов. Чтобы найти доступные группы ресурсов, входящие в вашу подписку, используйте командлет Get-AzureResource.
 * **Edition**: для создания хранилища данных необходим выпуск DataWarehouse.
 
 Необязательные параметры.
 
-- **CollationName** — если параметры сортировки не указаны, по умолчанию используется SQL_Latin1_General_CP1_CI_AS. Нельзя изменить параметры сортировки базы данных.
+- **CollationName** — если параметры сортировки не указаны, по умолчанию используется SQL_Latin1_General_CP1_CI_AS. Параметры сортировки базы данных изменить нельзя.
 - **MaxSizeBytes**: по умолчанию максимальный размер базы данных составляет 10 ГБ.
 
 Дополнительные сведения о параметрах см. в статье о командлете [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase).
@@ -141,7 +141,7 @@ New-AzureRmSqlDatabase `
 Другие краткие руководства в этой серии созданы на основе этого документа. 
 
 > [!TIP]
-> Если вы планируете продолжать работу с этими краткими руководствами, не удаляйте созданные ресурсы. Если вы не планируете продолжать работу, удалите все созданные ресурсы, выполнив на портале Azure следующие действия.
+> Если вы собираетесь продолжать работу с ними, не удаляйте ресурсы, которые вы создали при работе с этим руководством. В противном случае удалите все созданные ресурсы, выполнив на портале Azure следующие действия.
 >
 
 ```powershell

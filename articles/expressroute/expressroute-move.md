@@ -1,25 +1,18 @@
 ---
 title: Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания Resource Manager | Документация Майкрософт
 description: На этой странице содержатся необходимые сведения о связывании классический модели с моделью развертывания с помощью Resource Manager.
-documentationcenter: na
 services: expressroute
 author: ganesr
-manager: carmonm
-editor: ''
-ms.assetid: bdf01217-1a98-4ec0-a08e-d84fd37f78af
 ms.service: expressroute
-ms.devlang: na
-ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
+ms.topic: conceptual
 ms.date: 05/02/2017
 ms.author: ganesr
-ms.openlocfilehash: 7f8386b518ada850fc03e23c5cae3b159b3b213e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 6b9ac7408f83677ed9898dc37fc234b9b9a6386f
+ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "22710071"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51977035"
 ---
 # <a name="moving-expressroute-circuits-from-the-classic-to-the-resource-manager-deployment-model"></a>Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager
 В этой статье описывается перемещение канала Azure ExpressRoute из классической модели развертывания в модель развертывания с помощью Azure Resource Manager.
@@ -64,7 +57,7 @@ ms.locfileid: "22710071"
 * создание, обновление, получение и удаление связей виртуальных сетей с классическими виртуальными сетями;
 * создание, обновление, получение и удаление авторизации связей с виртуальными сетями для подключений между подписками.
 
-Если задать для параметра **allowClassicOperations** значение TRUE, не будут поддерживаться следующие классические операции:
+Но, если для параметра **allowClassicOperations** задано значение TRUE, следующие классические операции не будут поддерживаться:
 
 * создание, обновление, получение и удаление частных и общедоступных пирингов протокола BGP Azure, а также пиринга Майкрософт;
 * удаление каналов ExpressRoute.

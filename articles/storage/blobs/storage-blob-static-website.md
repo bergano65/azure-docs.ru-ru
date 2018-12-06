@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/19/18
 ms.author: tamram
 ms.component: blobs
-ms.openlocfilehash: ddc85cb7c9bd4488295b22e687d199a73d23922c
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 36b4fbac13e012de2fbef137c6637fd7e2daea8f
+ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49955632"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52161299"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Размещение статических веб-сайтов в службе хранилища Azure
 Учетные записи хранения GPv2 Azure позволяют передавать статическое содержимое (HTML, CSS, JavaScript и файлы изображений) непосредственно из контейнера хранилища с именем *$web*. Преимущества размещения в службе хранилища Azure заключаются в использовании бессерверной архитектуры, в том числе [Функций Azure](/azure/azure-functions/functions-overview) и других служб PaaS.
@@ -109,7 +109,7 @@ az storage blob upload-batch -s <SOURCE_PATH> -d $web --account-name <ACCOUNT_NA
 
 - [AzCopy](../common/storage-use-azcopy.md)
 - [Обозреватель хранилища](https://azure.microsoft.com/features/storage-explorer/)
-- [Visual Studio Team System](https://code.visualstudio.com/tutorials/static-website/deploy-VSTS)
+- [Azure Pipelines](https://code.visualstudio.com/tutorials/static-website/deploy-VSTS)
 - [Расширение Visual Studio Code](https://code.visualstudio.com/tutorials/static-website/getting-started)
 
 В любом случае убедитесь, что копирование файлов происходит в контейнер *$web*.
