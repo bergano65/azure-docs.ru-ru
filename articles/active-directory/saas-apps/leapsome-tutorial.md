@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/22/2018
 ms.author: jeedes
-ms.openlocfilehash: e55d161b7c95118736f4443c3fed0312418feee7
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 898d7cf6cdded08cd09c4b1f1f845473af1650a3
+ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39441941"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51824014"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-leapsome"></a>Руководство по интеграции Azure Active Directory с Leapsome
 
@@ -134,7 +134,7 @@ ms.locfileid: "39441941"
     | picture | URL-адрес к рисунку сотрудника | http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
 
     > [!Note]
-    > Значение атрибута picture приведено для примера. Обновите это значение фактическим URL-адресом рисунка. Для получения этого значения обратитесь в [службу поддержки клиентов Leapsome](mailto:support@leapsome.com).
+    > Значение атрибута picture приведено для примера. Обновите это значение фактическим URL-адресом рисунка. Для получения этого значения обратитесь в  [службу поддержки клиентов Leapsome](mailto:support@leapsome.com).
     
     a. Щелкните **Добавить атрибут**, чтобы открыть диалоговое окно **Добавление атрибута**.
 
@@ -176,7 +176,7 @@ ms.locfileid: "39441941"
 
     b. Скопируйте значение в поле **Login URL (point your users here to start login) (URL-адрес входа, укажите его, чтобы пользователи начали вход)** и вставьте его в текстовое поле **URL-адрес входа** в разделе **домены и URL-адреса Leapsome** на портале Azure.
 
-    c. Скопируйте значение в поле **Reply URL (recieves response from your identity provider)** (URL-адрес ответа (получает ответ от поставщика удостоверений)) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Домены и URL-адреса приложения Leapsome** на портале Azure.
+    c. Скопируйте значение в поле **Reply URL (receives response from your identity provider)** (URL-адрес ответа (получает ответ от поставщика удостоверений)) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Домены и URL-адреса приложения Leapsome** на портале Azure.
 
     d. В текстовое поле **SSO Login URL (provided by identity provider)** (URL-адрес единого входа, предоставленный поставщиком удостоверений) вставьте значение поля **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
 
@@ -218,7 +218,7 @@ ms.locfileid: "39441941"
  
 ### <a name="create-a-leapsome-test-user"></a>Создание тестового пользователя Leapsome
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Leapsome. Обратитесь в [службу поддержки клиентов Leapsome](mailto:support@leapsome.com), чтобы добавить домен или пользователей, которых нужно включить в список разрешенных на платформе Leapsome. Когда служба поддержки добавит домен, его пользователи будут автоматически подготовлены для платформы Leapsome. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении Leapsome. Обратитесь в  [службу поддержки клиентов Leapsome](mailto:support@leapsome.com), чтобы добавить домен или пользователей, которых нужно включить в список разрешенных на платформе Leapsome. Когда служба поддержки добавит домен, его пользователи будут автоматически подготовлены для платформы Leapsome. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -255,7 +255,7 @@ ms.locfileid: "39441941"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Leapsome на панели доступа, вы автоматически войдете в приложение Leapsome.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
