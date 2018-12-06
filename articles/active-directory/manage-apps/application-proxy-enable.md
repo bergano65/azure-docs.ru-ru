@@ -8,34 +8,52 @@ manager: mtillman
 ms.service: active-directory
 ms.component: app-mgmt
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/26/2018
+ms.date: 11/14/2018
 ms.author: barbkess
 ms.reviewer: japere
 ms.custom: it-pro
-ms.openlocfilehash: 59ca9ca7711904fe7882aac4878bd62c597645d8
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 683b5b24fe8e7da086e000ff38411d3eb1c2f781
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51034972"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52495750"
 ---
 # <a name="get-started-with-application-proxy-and-install-the-connector"></a>Начало работы с прокси приложения и установка соединителя
-В этой статье описывается процедура включения прокси приложения Microsoft Azure AD для облачного каталога в Azure AD.
+В этой статье подробно описывается, как включить Application Proxy в Azure Active Directory (Azure AD).
 
 Если вы не еще не знаете, какие преимущества в сфере безопасности и эффективности обеспечит вашей организации прокси приложения, см. статью [Как обеспечить безопасный удаленный доступ к локальным приложениям](application-proxy.md).
 
-## <a name="application-proxy-prerequisites"></a>Необходимые условия для прокси приложения
-Прежде чем можно будет включить и использовать службы прокси приложения служб, потребуется:
+## <a name="prerequisites"></a>Предварительные требования
+Чтобы включить Application Proxy, вам потребуется:
 
-* [Подписка на Microsoft Azure AD Basic или Premium](../fundamentals/active-directory-whatis.md) , а также каталог Azure AD, для которого вы являетесь глобальным администратором.
-* Сервер под управлением Windows Server 2012 R2 или 2016, на котором можно установить соединитель прокси приложения. Серверу нужна возможность подключаться к службам прокси приложения в облаке, а также к локальным приложениям, которые вы публикуете.
-  * Чтобы использовать единый вход в опубликованные приложения через ограниченное делегирование Kerberos, компьютер необходимо присоединить к тому же домену AD, который используют публикуемые приложения. Дополнительные сведения см. в статье [Реализация единого входа в приложения с помощью прокси приложения](application-proxy-configure-single-sign-on-with-kcd.md).
-* Протокол TLS 1.2, работающий в базовой операционной системе. Чтобы перейти на использование TLS 1.2, нужно выполнить инструкции из раздела [Включение протокола TLS 1.2 для Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-prerequisites#enable-tls-12-for-azure-ad-connect). Хотя содержимое предназначено для Azure AD Connect, эта процедура одинакова для всех клиентов .NET.
+* [подписка Microsoft Azure AD ценовой категории "Базовый" или "Премиум"](https://azure.microsoft.com/pricing/details/active-directory); 
+* учетная запись администратора приложения.
 
-Если ваша организация использует прокси-серверы для подключения к Интернету, вам будет полезна статья [Работа с имеющимися локальными прокси-серверами](application-proxy-configure-connectors-with-proxy-servers.md), которая поможет разобраться с настройкой прокси-серверов до начала работы с прокси приложения.
+### <a name="windows-server"></a>Windows Server
+Вам также потребуется сервер под управлением Windows Server 2012 R2 или более поздней версии, на котором можно установить соединитель Application Proxy. Серверу нужна возможность подключаться к службам Application Proxy в Azure, а также к локальным приложениям, которые вы публикуете.
+
+Прежде чем установить этот соединитель, на сервере Windows Server нужно включить протокол TLS 1.2. Существующие соединители версий ниже 1.5.612.0 будут продолжать работать с предыдущими версиями TLS до последующего уведомления. Включение протокола TLS 1.2
+
+1. Настройте следующие разделы реестра:
+    
+    ```
+    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2]
+    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
+    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319] "SchUseStrongCrypto"=dword:00000001
+    ```
+
+2. Перезапустите сервер.
+
+Для реализации единого входа в приложении, использующем ограниченное делегирование Kerberos (KCD), сервер Windows и приложения, которые вы публикуете, должны находиться в одном домене Active Directory. Дополнительные сведения см. в статье [Ограниченное делегирование Kerberos для поддержки единого входа в приложения с помощью прокси приложения](application-proxy-configure-single-sign-on-with-kcd.md).
+  
+### <a name="proxy-servers"></a>Прокси-серверы
+
+Если в вашей организации для подключения к Интернету используются прокси-серверы, необходимо настроить их для Application Proxy.  Дополнительные сведения см. в статье [Работа с имеющимися локальными прокси-серверами](application-proxy-configure-connectors-with-proxy-servers.md). 
+
+
 
 ## <a name="open-your-ports"></a>Открытие портов
 

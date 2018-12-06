@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/15/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 1e9ca18d2075d40f6f55bc84723f79ae7e10850b
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 2a28c8056e6dc25148299415a63a32993e874e01
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51261219"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52284546"
 ---
 # <a name="connection-assets-in-azure-automation"></a>Ресурсы подключений в службе автоматизации Azure
 
@@ -102,11 +102,11 @@ Connect-AzureRmAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $
 
 Можно добавить действие **Get-AutomationConnection** в графический Runbook, щелкнув правой кнопкой мыши подключение в области "Библиотека" графического редактора и выбрав пункт **Добавить на холст**.
 
-![](media/automation-connections/connection-add-canvas.png)
+![Добавление на холст](media/automation-connections/connection-add-canvas.png)
 
 На следующем рисунке показан пример использования подключения в графическом Runbook.  Это тот же пример, который представлен выше. Он выполняет аутентификацию с помощью учетной записи запуска от имени с текстовым Runbook.  В этом примере используется **константа**, установленная для действия **получения подключения запуска от имени**, в котором объект подключения используется для аутентификации.  Здесь используется [конвейерная связь](automation-graphical-authoring-intro.md#links-and-workflow), так как набор параметров ServicePrincipalCertificate ожидает получить один объект.
 
-![](media/automation-connections/automation-get-connection-object.png)
+![Установление подключений](media/automation-connections/automation-get-connection-object.png)
 
 ### <a name="python2-runbook-sample"></a>Пример модуля Runbook Python2
 В следующем примере показано, как выполнить аутентификацию с помощью подключения запуска от имени в модуле Runbook Python2.

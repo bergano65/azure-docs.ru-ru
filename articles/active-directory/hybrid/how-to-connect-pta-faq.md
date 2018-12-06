@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/14/2018
+ms.date: 11/27/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 400f266b1f63de675b9cefae289878dbef0a278c
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 77872ab809f4375523a91f4ebc9b24f8606e6c94
+ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685656"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52619829"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Сквозная проверка подлинности Azure Active: ответы на часто задаваемые вопросы
 
@@ -34,7 +34,7 @@ ms.locfileid: "51685656"
 
 Функция сквозной аутентификации предоставляется бесплатно. Для ее использования не требуются платные выпуски Azure AD.
 
-## <a name="is-pass-through-authentication-available-in-the-microsoft-azure-germany-cloudhttpwwwmicrosoftdecloud-deutschland-and-the-microsoft-azure-government-cloudhttpsazuremicrosoftcomfeaturesgov"></a>Доступна ли сквозная аутентификация в [Microsoft Azure — Германия](http://www.microsoft.de/cloud-deutschland) и [Azure для государственных организаций](https://azure.microsoft.com/features/gov/)?
+## <a name="is-pass-through-authentication-available-in-the-microsoft-azure-germany-cloudhttpswwwmicrosoftdecloud-deutschland-and-the-microsoft-azure-government-cloudhttpsazuremicrosoftcomfeaturesgov"></a>Доступна ли сквозная аутентификация в [Microsoft Azure — Германия](https://www.microsoft.de/cloud-deutschland) и [Azure для государственных организаций](https://azure.microsoft.com/features/gov/)?
 
  Нет. Сквозная аутентификация доступна только в доступном по всему миру экземпляре Azure AD.
 
@@ -44,7 +44,7 @@ ms.locfileid: "51685656"
 
 ## <a name="does-pass-through-authentication-support-alternate-id-as-the-username-instead-of-userprincipalname"></a>Поддерживает ли сквозная проверка подлинности в качестве имени пользователя "Alternate ID", а не "userPrincipalName"?
 
-Да. Сквозная аутентификация поддерживает `Alternate ID` в качестве имени пользователя, если это настроено в Azure AD Connect. Дополнительные сведения см. в статье [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md). Не все приложения Office 365 поддерживают `Alternate ID`. Ознакомьтесь с заявлением о поддержке в документации по конкретным приложениям.
+Да, сквозная проверка подлинности поддерживает `Alternate ID` в качестве имени пользователя, если это настроено в Azure AD Connect. В качестве предварительного требования Azure AD Connect требуется синхронизировать локальный атрибут `UserPrincipalName` Active Directory с Azure AD. Дополнительные сведения см. в статье [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md). Не все приложения Office 365 поддерживают `Alternate ID`. Ознакомьтесь с заявлением о поддержке в документации по конкретным приложениям.
 
 ## <a name="does-password-hash-synchronization-act-as-a-fallback-to-pass-through-authentication"></a>Действует ли синхронизация хэша паролей как переход на резервный ресурс при сквозной аутентификации?
 
@@ -119,6 +119,10 @@ ms.locfileid: "51685656"
 
 Да. Среды с несколькими лесами поддерживаются, если между лесами Active Directory существуют отношения доверия и правильно настроена маршрутизация по суффиксу имени.
 
+## <a name="does-pass-through-authentication-provide-load-balancing-across-multiple-authentication-agents"></a>Обеспечивает ли сквозная проверка подлинности балансировку нагрузки в нескольких агентах проверки подлинности?
+
+Нет, установка нескольких агентов сквозной проверки подлинности обеспечивает [высокий уровень доступности](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability). Эта установка не поддерживает детерминированную балансировку нагрузки между агентами проверки подлинности. Любой агент проверки подлинности (в произвольном порядке) может обработать запрос на вход в систему от определенного пользователя.
+
 ## <a name="how-many-pass-through-authentication-agents-do-i-need-to-install"></a>Сколько агентов сквозной аутентификации следует установить?
 
 Установка нескольких агентов сквозной аутентификации обеспечивает [высокий уровень доступности](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability). Но эта установка не поддерживает детерминированную балансировку нагрузки между агентами аутентификации.
@@ -132,7 +136,7 @@ ms.locfileid: "51685656"
 Для большинства клиентов двух или трех агентов аутентификации будет достаточно, чтобы обеспечить высокий уровень доступности и емкость. Рекомендуется устанавливать агенты аутентификации как можно ближе к контроллерам домена, чтобы сократить задержку входа.
 
 >[!NOTE]
->Существует системное ограничение в 12 агентов аутентификации для каждого клиента.
+>Существует системное ограничение в 40 агентов проверки подлинности для каждого клиента.
 
 ## <a name="can-i-install-the-first-pass-through-authentication-agent-on-a-server-other-than-the-one-that-runs-azure-ad-connect"></a>Можно ли установить первый агент сквозной проверки подлинности на сервере, отличном от того, на котором выполняется Azure AD Connect?
 
@@ -149,6 +153,22 @@ ms.locfileid: "51685656"
 ## <a name="what-happens-when-i-uninstall-a-pass-through-authentication-agent"></a>Что происходит при удалении агента сквозной проверки подлинности?
 
 Если удалить агент сквозной аутентификации с сервера, то этот сервер прекратит принимать запросы на вход. Чтобы избежать нарушения функции входа пользователей в клиенте, перед удалением агента сквозной аутентификации убедитесь, что запущен другой агент аутентификации.
+
+## <a name="i-have-an-older-tenant-that-was-originally-setup-using-ad-fs--we-recently-migrated-to-pta-but-now-are-not-seeing-our-upn-changes-synchronizing-to-azure-ad--why-are-our-upn-changes-not-being-synchronized"></a>У меня есть старый клиент, изначально настроенный с помощью AD FS.  Мы недавно перешли на PTA, но теперь изменения нашего имени участника-пользователя не синхронизируются с Azure AD.  Почему так происходит?
+
+Ответ. Изменения локального имени участника-пользователя могут не синхронизироваться при следующих условиях:
+
+- клиент Azure AD создан до 15 июня 2015 г.;
+- вы изначально включены в федерацию с клиентом Azure AD и используете AD FS для проверки подлинности;
+- вы перешли на управляемых пользователей, используя PTA в качестве механизма проверки подлинности.
+
+Это обусловлено тем, что по умолчанию в клиентах, созданных до 15 июня 2015 г., блокируются изменения имени участника-пользователя.  Если необходимо разблокировать изменения имени участника-пользователя, нужно выполнить следующий командлет PowerShell:  
+
+`Set-MsolDirSyncFeature -Feature SynchronizeUpnForManagedUsers-Enable $True`
+
+Клиенты, созданные после 15 июня 2015 г., синхронизируют изменения имени участника-пользователя по умолчанию.   
+
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Текущие ограничения](how-to-connect-pta-current-limitations.md). Сведения о том, какие сценарии поддерживаются, а какие нет.

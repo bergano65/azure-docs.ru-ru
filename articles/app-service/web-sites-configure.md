@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/25/2017
 ms.author: cephalin
-ms.openlocfilehash: cf3a6fe24082a10db6a5b1267b70435d9e36b720
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: 73d2da542c4f7da0933187d800f562de76bfb3e6
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49115528"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52443514"
 ---
 # <a name="configure-web-apps-in-azure-app-service"></a>Настройка веб-приложений в службе приложений Azure
 
@@ -78,6 +78,8 @@ ms.locfileid: "49115528"
 
 Параметры приложения всегда шифруются при хранении.
 
+Параметры приложения можно разрешить из Key Vault с помощью [ссылок на Key Vault](app-service-key-vault-references.md).
+
 ### <a name="connection-strings"></a>Строки подключения
 Строки подключения для связанных ресурсов. 
 
@@ -93,6 +95,8 @@ ms.locfileid: "49115528"
 Например, если строка подключения MySql будет иметь имя `connectionstring1`, доступ к ней будет выполняться через переменную среды `MYSQLCONNSTR_connectionString1`.
 
 Строки подключения всегда шифруются при хранении.
+
+Строки подключения можно разрешить из Key Vault с помощью [ссылок на Key Vault](app-service-key-vault-references.md).
 
 ### <a name="default-documents"></a>Стандартные документы
 Документ по умолчанию — это веб-страница, которая отображается при открытии корневого URL-адреса веб-сайта.  Используется первый найденный файл в списке. 

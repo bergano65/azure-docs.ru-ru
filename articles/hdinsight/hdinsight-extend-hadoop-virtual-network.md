@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: 62502e946922928b8b4179d38ce9f9ae55f9930d
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 308527bce2048921c2af65aa78a12d8ef2c2bed2
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238987"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52497787"
 ---
 # <a name="extend-azure-hdinsight-using-an-azure-virtual-network"></a>Расширение возможностей HDInsight с помощью виртуальной сети Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "51238987"
 
 * Подключение к хранилищам данных HDInsight в виртуальной сети Azure.
 
-* Прямой доступ к службам Apache Hadoop, недоступным из Интернета. Например, возможность напрямую работать с API Kafka или использовать API Java для HBase.
+* Прямой доступ к службам [Apache Hadoop](https://hadoop.apache.org/), недоступным из Интернета. Например, возможность напрямую работать с API [Apache Kafka](https://kafka.apache.org/) или использовать API Java для [Apache HBase](https://hbase.apache.org/).
 
 > [!WARNING]
 > Информация в этом документе требует понимания принципов работы сети TCP/IP. Если вы не знакомы с ними, перед внесением изменений в рабочие сети обратитесь к специалистам, знакомым с сетями TCP/IP.
@@ -171,11 +171,11 @@ Azure предоставляет разрешение имен для служб
 
 Дополнительные сведения см. в документе [Разрешение имен для виртуальных машин и экземпляров ролей](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
-## <a name="directly-connect-to-hadoop-services"></a>Подключение напрямую к службам Hadoop
+## <a name="directly-connect-to-apache-hadoop-services"></a>Прямое соединение со службами Apache Hadoop
 
 Вы можете подключиться к кластеру по адресу https://CLUSTERNAME.azurehdinsight.net. Этот адрес использует общедоступный IP-адрес, который может быть недоступен, если вы использовали NSG для ограничения входящего трафика из Интернета. Кроме того, при развертывании кластера в виртуальной сети доступ к нему можно получить с помощью частной конечной точки https://CLUSTERNAME-int.azurehdinsight.net. Эта конечная точка разрешается в частный IP-адрес виртуальной сети для доступа к кластеру.
 
-Для прямого подключения к Ambari и другим веб-страницам через виртуальную сеть сделайте следующее:
+Для подключения к Apache Ambari и другим веб-страницам через виртуальную сеть сделайте следующее:
 
 1. Чтобы найти внутренние полные доменные имена (FQDN) узлов кластера HDInsight, используйте один из следующих методов:
 
@@ -316,7 +316,7 @@ HDInsight предоставляет службы на нескольких по
 * 11000–11999;
 * 14000–14999.
 
-Список портов для определенных служб см. в документе [Порты, используемые службами Hadoop в HDInsight](hdinsight-hadoop-port-settings-for-services.md).
+См. [список портов, используемых службами Hadoop в HDInsight](hdinsight-hadoop-port-settings-for-services.md).
 
 Дополнительные сведения о правилах межсетевого экрана для виртуальных модулей см. в документе [Сценарий использования виртуальных устройств](../virtual-network/virtual-network-scenario-udr-gw-nva.md).
 
@@ -660,10 +660,10 @@ $vnet | Set-AzureRmVirtualNetwork
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Полный пример настройки HDInsight для подключения к локальной сети см. в статье [Подключение HDInsight к локальной сети](./connect-on-premises-network.md).
-* Инструкции по настройке кластеров Hbase в виртуальных сетях Azure см. в статье [Создание кластеров HBase в HDInsight в виртуальной сети Azure](hbase/apache-hbase-provision-vnet.md).
-* Инструкции по настройке георепликации HBase см. в статье [Настройка репликации кластера HBase в виртуальных сетях Azure](hbase/apache-hbase-replication.md).
+* См. инструкции по [созданию кластеров Apache HBase в HDInsight в виртуальной сети Azure](hbase/apache-hbase-provision-vnet.md).
+* См. инструкции по [настройке георепликации кластера Apache HBase в виртуальных сетях Azure](hbase/apache-hbase-replication.md).
 * Дополнительные сведения о виртуальных сетях Azure см. в статье [Виртуальная сеть Azure](../virtual-network/virtual-networks-overview.md).
 
 * Дополнительные сведения о группах безопасности сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](../virtual-network/security-overview.md).
 
-* Дополнительные сведения о пользовательских маршрутах см. в статье [Определяемые пользователем маршруты и IP-пересылка](../virtual-network/virtual-networks-udr-overview.md).
+* Дополнительные сведения о пользовательских маршрутах см. в статье [User-defined routes and IP forwarding](../virtual-network/virtual-networks-udr-overview.md) (Определяемые пользователем маршруты и IP-пересылка).

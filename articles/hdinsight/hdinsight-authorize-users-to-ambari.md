@@ -9,18 +9,18 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/26/2017
 ms.author: maxluk
-ms.openlocfilehash: 4e05d4ff9c090fac0242921e15ef16439d3ed27f
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: d2e7077e1196ab862d9f610f242fe30dde18ded4
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46954455"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52496877"
 ---
-# <a name="authorize-users-for-ambari-views"></a>Разрешение пользователям доступа к Ambari Views
+# <a name="authorize-users-for-apache-ambari-views"></a>Предоставление пользователям доступа к представлениям Apache Ambari
 
-[Кластеры HDInsight с поддержкой Корпоративного пакета безопасности](./domain-joined/apache-domain-joined-introduction.md) обеспечивают возможности корпоративного уровня, включая аутентификацию на основе Azure Active Directory. Вы можете [синхронизировать новых пользователей](hdinsight-sync-aad-users-to-cluster.md), добавленных в группы Azure Active Directory, которым был предоставлен доступ к кластеру, что позволит определенным пользователям выполнять конкретные действия. Работа с пользователями, группами и разрешениями в Ambari поддерживается как для кластера ESP HDInsight, так и для стандартного кластера HDInsight.
+[Кластеры HDInsight с поддержкой Корпоративного пакета безопасности](./domain-joined/apache-domain-joined-introduction.md) обеспечивают возможности корпоративного уровня, включая аутентификацию на основе Azure Active Directory. Вы можете [синхронизировать новых пользователей](hdinsight-sync-aad-users-to-cluster.md), добавленных в группы Azure Active Directory, которым был предоставлен доступ к кластеру, что позволит определенным пользователям выполнять конкретные действия. Работа с пользователями, группами и разрешениями в [Apache Ambari](https://ambari.apache.org/) поддерживается как для кластера ESP HDInsight, так и для стандартного кластера HDInsight.
 
-Пользователи Active Directory могут входить на узлы кластера с использованием своих учетных данных домена. Кроме того, эти учетные данные можно использовать для аутентификации в других утвержденных конечных точках, например Hue, Ambari Views, ODBC, JDBC, PowerShell и интерфейсах REST API.
+Пользователи Active Directory могут входить на узлы кластера с использованием своих учетных данных домена. Кроме того, эти учетные данные можно использовать для аутентификации в других утвержденных конечных точках, например [Hue](http://gethue.com/), Ambari Views, ODBC, JDBC, PowerShell и интерфейсах REST API.
 
 > [!WARNING]
 > Не изменяйте пароль модуля наблюдения Ambari (hdinsightwatchdog) в кластере HDInsight под управлением Linux. Это не позволит выполнять действия сценария или операции масштабирования в кластере.
@@ -29,13 +29,13 @@ ms.locfileid: "46954455"
 
 ## <a name="access-the-ambari-management-page"></a>Переход на страницу управления Ambari
 
-Чтобы открыть **страницу управления Ambari** в [пользовательском веб-интерфейсе Ambari](hdinsight-hadoop-manage-ambari.md), перейдите по адресу **`https://<YOUR CLUSTER NAME>.azurehdinsight.net`**. Введите имя пользователя и пароль администратора кластера, определенные при создании кластера. Затем на панели мониторинга Ambari выберите **Manage Ambari** (Управление Ambari) в меню **admin** (Администрирование).
+Чтобы открыть **страницу управления Ambari** в [пользовательском веб-интерфейсе Apache Ambari](hdinsight-hadoop-manage-ambari.md), перейдите по адресу **`https://<YOUR CLUSTER NAME>.azurehdinsight.net`**. Введите имя пользователя и пароль администратора кластера, определенные при создании кластера. Затем на панели мониторинга Ambari выберите **Manage Ambari** (Управление Ambari) в меню **admin** (Администрирование).
 
 ![Управление Ambari](./media/hdinsight-authorize-users-to-ambari/manage-ambari.png)
 
-## <a name="grant-permissions-to-hive-views"></a>Предоставление разрешений для представлений Hive
+## <a name="grant-permissions-to-apache-hive-views"></a>Предоставление разрешений для представлений Apache Hive
 
-В Ambari доступны экземпляры представлений для Hive и Tez, среди прочих. Чтобы предоставить доступ к одному или нескольким экземплярам представлений Hive, перейдите на **страницу управления Ambari**.
+В Ambari доступны экземпляры представлений для [Apache Hive](https://hive.apache.org/) и [Apache TEZ](https://tez.apache.org/), среди прочих. Чтобы предоставить доступ к одному или нескольким экземплярам представлений Hive, перейдите на **страницу управления Ambari**.
 
 1. На странице управления щелкните ссылку **Views** (Представления) под заголовком меню **Views** (Представления) в левой части экрана.
 
@@ -72,9 +72,9 @@ ms.locfileid: "46954455"
 
 Непосредственное добавление пользователей для представления удобно, когда пользователю нужно назначить разрешения для использования этого представления, но вы не хотите добавлять его в группу, имеющую дополнительные разрешения. Чтобы уменьшить объем административных операций, может оказаться проще назначать разрешения группам.
 
-## <a name="grant-permissions-to-tez-views"></a>Предоставление разрешений для представлений Tez
+## <a name="grant-permissions-to-apache-tez-views"></a>Предоставление разрешений для представлений Apache TEZ
 
-С помощью экземпляров представлений Tez пользователи могут отслеживать и отлаживать все задания Tez, отправляемые запросами Hive и сценариями Pig. Доступен один экземпляр представления по умолчанию Tez, создаваемый при подготовке кластера.
+С помощью экземпляров представлений [Apache TEZ](https://tez.apache.org/) пользователи могут отслеживать и отлаживать все задания Tez, отправляемые запросами [Apache Hive](https://hive.apache.org/) и сценариями [Apache Pig](https://pig.apache.org/). Доступен один экземпляр представления по умолчанию Tez, создаваемый при подготовке кластера.
 
 Чтобы назначить пользователей и группы для экземпляра представления Tez, разверните строку **TEZ** на странице "Views" (Представления), как было описано выше.
 
@@ -136,7 +136,7 @@ ms.locfileid: "46954455"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Настройка политик Hive в кластере HDInsight с ESP](./domain-joined/apache-domain-joined-run-hive.md)
+* [Настройка политик Apache Hive в кластере HDInsight с ESP](./domain-joined/apache-domain-joined-run-hive.md)
 * [Управление кластерами в HDInsight с ESP](./domain-joined/apache-domain-joined-manage.md)
-* [Использование представления Hive с Hadoop в HDInsight](hadoop/apache-hadoop-use-hive-ambari-view.md)
+* [Использование представления Apache Hive с Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-hive-ambari-view.md)
 * [Синхронизация пользователей Azure Active Directory с кластером HDInsight](hdinsight-sync-aad-users-to-cluster.md)

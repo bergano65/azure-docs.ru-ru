@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 09/21/2018
 ms.author: cherylmc
-ms.openlocfilehash: 400ac3232b7e7dcd594734d818e3cafef09188fd
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: ade5fa78191fe670bd898e8edcbb1fab3b9b2379
+ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51614554"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52274003"
 ---
 # <a name="create-a-zone-redundant-virtual-network-gateway-in-azure-availability-zones"></a>Создание избыточного между зонами шлюза виртуальной сети в Зонах доступности Azure
 
@@ -152,7 +152,7 @@ New-AzureRmVirtualNetworkGateway -ResourceGroup $RG1 -Location $Location1 -Name 
 
 ### <a name="what-regions-are-available-for-me-to-use-the-new-skus"></a>В каких регионах доступны новые номера SKU?
 
-Новые номера SKU доступны в тех регионах Azure, в которых есть Зоны доступности Azure: это центральная часть США, центральная Франция и Западная Европа. В будущем шлюзы, избыточные между зонами, будут доступны и в других общедоступных регионах Azure.
+Новые номера SKU доступны в тех регионах Azure, в которых есть Зоны доступности Azure: центральная часть США, Центральная Франция, Северная Европа, Западная Европа и западная часть США 2. В будущем шлюзы, избыточные между зонами, будут доступны и в других общедоступных регионах Azure.
 
 ### <a name="can-i-changemigrateupgrade-my-existing-virtual-network-gateways-to-zone-redundant-or-zonal-gateways"></a>Можно ли обновить существующие шлюзы виртуальной сети до шлюзов, избыточных между зонами, или зональных шлюзов?
 

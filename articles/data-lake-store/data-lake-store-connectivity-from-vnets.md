@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/31/2018
 ms.author: elsung
-ms.openlocfilehash: 130d0154fc0558ae7284e8407ba88fda3a2a53d5
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
+ms.openlocfilehash: a2367eff3095df82662f7b56571ecdbd966609fd
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44391306"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52284018"
 ---
 # <a name="access-azure-data-lake-storage-gen1-from-vms-within-an-azure-vnet"></a>Доступ к Azure Data Lake Storage 1-го поколения с виртуальных машин в виртуальной сети Azure
 Azure Data Lake Storage 1-го поколения — это служба PaaS, которая использует общедоступные IP-адреса в Интернете. Любой сервер с доступом к общедоступному Интернету, как правило, может подключаться к конечным точкам Azure Data Lake Storage 1-го поколения. По умолчанию все виртуальные машины, которые находятся в виртуальных сетях Azure, могут подключиться к Интернету, а значит и получить доступ к Azure Data Lake Storage 1-го поколения. Тем не менее для виртуальных машин в виртуальной сети можно настроить ограничение доступа к Интернету. Такие виртуальные машины также не смогут подключаться к Azure Data Lake Storage 1-го поколения. Блокировать доступ к общедоступному Интернету для виртуальных машин в виртуальных сетях Azure можно с помощью одного из следующих методов.
@@ -29,7 +29,7 @@ Azure Data Lake Storage 1-го поколения — это служба PaaS, 
 В этой статье вы узнаете, как включить доступ к Azure Data Lake Storage 1-го поколения с виртуальных машин Azure, для которых был ограничен доступ к ресурсам, с помощью одного из трех перечисленных выше методов.
 
 ## <a name="enabling-connectivity-to-azure-data-lake-storage-gen1-from-vms-with-restricted-connectivity"></a>Настройка подключения к Azure Data Lake Storage 1-го поколения с виртуальных машин с ограниченным доступом
-Чтобы обеспечить подключение к Azure Data Lake Storage 1-го поколения с таких виртуальных машин, для них необходимо настроить доступ к IP-адресу, по которому доступна учетная запись Azure Data Lake Storage 1-го поколения. IP-адреса для учетных записей Azure Data Lake Storage 1-го поколения можно определить, разрешая DNS-имена учетных записей (`<account>.azuredatalakestore.net`). Для разрешения DNS-имен учетных записей можно использовать такой инструмент, как **nslookup**. Откройте окно командной строки на компьютере и выполните следующую команду.
+Чтобы обеспечить подключение к Azure Data Lake Storage 1-го поколения с таких виртуальных машин, для них необходимо настроить доступ к IP-адресу для региона, в котором доступна учетная запись Azure Data Lake Storage 1-го поколения. IP-адреса для регионов учетных записей Data Lake Storage 1-го поколения можно определить, разрешая DNS-имена учетных записей (`<account>.azuredatalakestore.net`). Для разрешения DNS-имен учетных записей можно использовать такой инструмент, как **nslookup**. Откройте окно командной строки на компьютере и выполните следующую команду.
 
     nslookup mydatastore.azuredatalakestore.net
 

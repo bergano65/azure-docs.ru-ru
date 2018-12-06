@@ -4,7 +4,7 @@ description: Узнайте, как получать и интерпретиро
 services: ''
 documentationcenter: ''
 author: tonguyen10
-manager: tonguyen
+manager: jureid
 editor: ''
 tags: billing
 ms.service: billing
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/31/2017
 ms.author: cwatson
-ms.openlocfilehash: 4bfaaa51e39a7db297626a8009306eef9e3efa80
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 50909a51786bf6118c4fb867f2482c93bf59c28e
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47393787"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52581566"
 ---
 # <a name="understand-terms-on-your-microsoft-azure-invoice"></a>Значение терминов в счете Microsoft Azure
 
@@ -114,5 +114,6 @@ ms.locfileid: "47393787"
 ## <a name="how-do-i-make-sure-that-the-charges-in-my-invoice-are-correct"></a>Как мне убедиться в правильности формирования моего счета?
 Если в вашем счете есть какое-то списание, о котором вы хотите узнать подробнее, то см. статью [Расшифровка счета за использование Microsoft Azure](billing-understand-your-bill.md).
 
-## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
-Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
+
+Если у вас есть вопросы или нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

@@ -1,11 +1,12 @@
 ---
-title: Импорт данных в Студию машинного обучения из источников данных в сети | Документация Майкрософт
-description: Импорт обучающих данных в Студию машинного обучения Azure из разных сетевых источников.
+title: Импорт данных в Студию машинного обучения Azure из сетевых источников данных | Документация Майкрософт
+description: В этой статье описывается поддержка импорта сетевых данных из разных источников и приводятся сведения, необходимые для переноса данных из этих источников в эксперимент Студии машинного обучения Azure.
 keywords: импорт данных, формат данных, типы данных, источники данных, обучающие данные
 services: machine-learning
 documentationcenter: ''
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 701b93fe-765b-4d15-a1cf-9b607f17add6
@@ -16,15 +17,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2017
-ms.openlocfilehash: 87a7e968073d8625375ea837f9377145b6dfb45a
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.openlocfilehash: 89e2414b32dfb3cc6773d09dcdc3e711e56492ef
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51344867"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52315036"
 ---
 # <a name="import-data-into-azure-machine-learning-studio-from-various-online-data-sources-with-the-import-data-module"></a>Импорт данных в Студию машинного обучения Azure из разных сетевых источников данных с помощью модуля "Импорт данных"
-В этой статье описывается поддержка импорта сетевых данных из разных источников и приводятся сведения, необходимые для переноса данных из этих источников в эксперимент машинного обучения Azure.
+В этой статье описывается поддержка импорта сетевых данных из разных источников и приводятся сведения, необходимые для переноса данных из этих источников в эксперимент Студии машинного обучения Azure.
 
 > [!NOTE]
 > Эта статья содержит общие сведения о модуле [Импорт данных][import-data]. Дополнительные сведения о типах данных, к которым можно получить доступ, форматах, параметрах, а также ответы на часто задаваемые вопросы см. в разделе справки по модулю [Импорт данных][import-data].

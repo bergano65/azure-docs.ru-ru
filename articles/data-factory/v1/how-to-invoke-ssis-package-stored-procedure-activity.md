@@ -13,12 +13,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: jingwang
-ms.openlocfilehash: fe2b509b62884c1cea554bc8dc5df25489205264
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: eb9d35b132a0aa3f0702604444f8a760bf66cf9a
+ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46966965"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52275587"
 ---
 # <a name="invoke-an-ssis-package-using-stored-procedure-activity-in-azure-data-factory"></a>Вызов пакета SSIS с помощью действия хранимой процедуры в фабрике данных Azure
 В этой статье описывается, как вызвать пакет SSIS из конвейера фабрики данных Azure, используя действие хранимой процедуры. 
@@ -236,7 +236,7 @@ ms.locfileid: "46966965"
 ### <a name="create-an-output-dataset"></a>Создание выходного набора данных
 Этот пустой выходной набор данных используется для выполнения расписания конвейера. Обратите внимание, что частота составляет час, а интервал — 1. Это значит, что конвейер выполняется раз в час на протяжении всего периода между временем начала и окончания конвейера. 
 
-1. Создайте файл OuputDataset.json со следующим содержимым: 
+1. Создайте файл OutputDataset.json со следующим содержимым: 
     
     ```json
     {

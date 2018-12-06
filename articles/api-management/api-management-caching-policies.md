@@ -12,14 +12,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/27/2017
+ms.date: 11/27/2018
 ms.author: apimpm
-ms.openlocfilehash: 1706364ca0281240b5b887bea219620c7b4add5e
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: c1fd0f462a3eb960e27b002f4f7c940a6bf978c8
+ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51246843"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52620580"
 ---
 # <a name="api-management-caching-policies"></a>Политики кэширования в службе управления API
 В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](https://go.microsoft.com/fwlink/?LinkID=398186).  
@@ -46,7 +46,7 @@ ms.locfileid: "51246843"
 ### <a name="policy-statement"></a>Правило политики  
   
 ```xml  
-<cache-lookup vary-by-developer="true | false" vary-by-developer-groups="true | false" downstream-caching-type="none | private | public" must-revalidate="true | false" allow-private-response-caching="@(expression to evaluate)">  
+<cache-lookup vary-by-developer="true | false" vary-by-developer-groups="true | false" cache-preference="prefer-external | external | internal" downstream-caching-type="none | private | public" must-revalidate="true | false" allow-private-response-caching="@(expression to evaluate)">  
   <vary-by-header>Accept</vary-by-header>  
   <!-- should be present in most cases -->  
   <vary-by-header>Accept-Charset</vary-by-header>  
@@ -68,7 +68,7 @@ ms.locfileid: "51246843"
 <policies>  
     <inbound>  
         <base />  
-        <cache-lookup vary-by-developer="false" vary-by-developer-groups="false" downstream-caching-type="none" must-revalidate="true">  
+        <cache-lookup vary-by-developer="false" vary-by-developer-groups="false" downstream-caching-type="none" must-revalidate="true" cache-preference="internal" >  
             <vary-by-query-parameter>version</vary-by-query-parameter>  
         </cache-lookup>           
     </inbound>  
@@ -112,14 +112,15 @@ ms.locfileid: "51246843"
   
 ### <a name="attributes"></a>Атрибуты  
   
-|ИМЯ|ОПИСАНИЕ|Обязательно|значение по умолчанию|  
-|----------|-----------------|--------------|-------------|  
-|allow-private-response-caching|Если задано значение `true`, разрешается кэширование запросов, содержащих заголовок авторизации.|Нет |false|  
-|downstream-caching-type|Для этого атрибута следует указать одно из таких значений:<br /><br /> - none — нисходящее кэширование не разрешено;<br />- private — разрешено нисходящее частное кэширование;<br />- public — разрешено частное и совместно используемое нисходящее кэширование.|Нет |Нет|  
-|must-revalidate|Если включено нисходящее кэширование, этот атрибут включает или отключает директиву управления кэшем `must-revalidate` в ответах шлюза.|Нет |Да|  
-|vary-by-developer|Установите значение `true`, если нужно кэшировать ответы в зависимости от ключа разработчика.|Yes||  
-|vary-by-developer-groups|Установите значение `true`, если нужно кэшировать ответы в зависимости от роли пользователя.|Yes||  
-  
+| ИМЯ                           | ОПИСАНИЕ                                                                                                                                                                                                                                                                                                                                                 | Обязательно | значение по умолчанию           |
+|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------------------|
+| allow-private-response-caching | Если задано значение `true`, разрешается кэширование запросов, содержащих заголовок авторизации.                                                                                                                                                                                                                                                                        | Нет        | false             |
+| cache-preference               | Выберите одно из следующих значений атрибута:<br />- `internal` — использование встроенного кэша в службе управления API;<br />- `external` — использование внешнего кэша, как описано в статье [Use an external Redis cache in Azure API Management](api-management-howto-cache-external.md) (Использование внешнего кэша в службе управления API Azure);<br />- `prefer-external` — использование внешнего кэша, если он настроен. В противном случае используется внутренний кэш. | Нет        | `prefer-external` |
+| downstream-caching-type        | Для этого атрибута следует указать одно из таких значений:<br /><br /> - none — нисходящее кэширование не разрешено;<br />- private — разрешено нисходящее частное кэширование;<br />- public — разрешено частное и совместно используемое нисходящее кэширование.                                                                                                          | Нет        | Нет              |
+| must-revalidate                | Если включено нисходящее кэширование, этот атрибут включает или отключает директиву управления кэшем `must-revalidate` в ответах шлюза.                                                                                                                                                                                                                      | Нет        | Да              |
+| vary-by-developer              | Установите значение `true`, если нужно кэшировать ответы в зависимости от ключа разработчика.                                                                                                                                                                                                                                                                                                         | Yes      |                   |
+| vary-by-developer-groups       | Установите значение `true`, если нужно кэшировать ответы в зависимости от роли пользователя.                                                                                                                                                                                                                                                                                                             | Yes      |                   |  
+
 ### <a name="usage"></a>Использование  
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
   
@@ -188,10 +189,10 @@ ms.locfileid: "51246843"
   
 ### <a name="attributes"></a>Атрибуты  
   
-|ИМЯ|ОПИСАНИЕ|Обязательно|значение по умолчанию|  
-|----------|-----------------|--------------|-------------|  
-|длительность|Срок жизни кэшированных записей (в секундах).|Yes|Недоступно|  
-  
+| ИМЯ             | ОПИСАНИЕ                                                                                                                                                                                                                                                                                                                                                 | Обязательно | значение по умолчанию           |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------------------|
+| длительность         | Срок жизни кэшированных записей (в секундах).                                                                                                                                                                                                                                                                                                   | Yes      | Недоступно               |  
+
 ### <a name="usage"></a>Использование  
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
   
@@ -209,7 +210,8 @@ ms.locfileid: "51246843"
 ```xml  
 <cache-lookup-value key="cache key value"   
     default-value="value to use if cache lookup resulted in a miss"   
-    variable-name="name of a variable looked up value is assigned to" />  
+    variable-name="name of a variable looked up value is assigned to"  
+    cache-preference="prefer-external | external | internal" />  
 ```  
   
 ### <a name="example"></a>Пример  
@@ -230,12 +232,13 @@ ms.locfileid: "51246843"
   
 ### <a name="attributes"></a>Атрибуты  
   
-|ИМЯ|ОПИСАНИЕ|Обязательно|значение по умолчанию|  
-|----------|-----------------|--------------|-------------|  
-|default-value|Значение, которое присваивается переменной, если поиск в кэше по ключу не дал результатов. Если этот атрибут не указан, присваивается значение `null`.|Нет |`null`|  
-|key|Значение ключа кэша, которое нужно использовать при поиске.|Yes|Недоступно|  
-|variable-name|Имя [переменной контекста](api-management-policy-expressions.md#ContextVariables), которой присваивается найденное значение, если поиск завершится успешно. Если поиск не даст результатов, этой переменной присваивается значение, указанное в атрибуте `default-value`. Если атрибут `default-value` не задан, присваивается значение `null`.|Yes|Недоступно|  
-  
+| ИМЯ             | ОПИСАНИЕ                                                                                                                                                                                                                                                                                                                                                 | Обязательно | значение по умолчанию           |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------------------|
+| cache-preference | Выберите одно из следующих значений атрибута:<br />- `internal` — использование встроенного кэша в службе управления API;<br />- `external` — использование внешнего кэша, как описано в статье [Use an external Redis cache in Azure API Management](api-management-howto-cache-external.md) (Использование внешнего кэша в службе управления API Azure);<br />- `prefer-external` — использование внешнего кэша, если он настроен. В противном случае используется внутренний кэш. | Нет        | `prefer-external` |
+| default-value    | Значение, которое присваивается переменной, если поиск в кэше по ключу не дал результатов. Если этот атрибут не указан, присваивается значение `null`.                                                                                                                                                                                                           | Нет        | `null`            |
+| key              | Значение ключа кэша, которое нужно использовать при поиске.                                                                                                                                                                                                                                                                                                                       | Yes      | Недоступно               |
+| variable-name    | Имя [переменной контекста](api-management-policy-expressions.md#ContextVariables), которой присваивается найденное значение, если поиск завершится успешно. Если поиск не даст результатов, этой переменной присваивается значение, указанное в атрибуте `default-value`. Если атрибут `default-value` не задан, присваивается значение `null`.                                       | Yes      | Недоступно               |  
+
 ### <a name="usage"></a>Использование  
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
   
@@ -251,7 +254,7 @@ ms.locfileid: "51246843"
 ### <a name="policy-statement"></a>Правило политики  
   
 ```xml  
-<cache-store-value key="cache key value" value="value to cache" duration="seconds" />  
+<cache-store-value key="cache key value" value="value to cache" duration="seconds" cache-preference="prefer-external | external | internal" />  
 ```  
   
 ### <a name="example"></a>Пример  
@@ -272,11 +275,12 @@ ms.locfileid: "51246843"
   
 ### <a name="attributes"></a>Атрибуты  
   
-|ИМЯ|ОПИСАНИЕ|Обязательно|значение по умолчанию|  
-|----------|-----------------|--------------|-------------|  
-|длительность|Кэшированные значения сохраняются в течение указанного здесь времени (в секундах).|Yes|Недоступно|  
-|key|Ключ кэша, под которым будет храниться значение.|Yes|Недоступно|  
-|value|Значение, которое нужно кэшировать.|Yes|Недоступно|  
+| ИМЯ             | ОПИСАНИЕ                                                                                                                                                                                                                                                                                                                                                 | Обязательно | значение по умолчанию           |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------------------|
+| cache-preference | Выберите одно из следующих значений атрибута:<br />- `internal` — использование встроенного кэша в службе управления API;<br />- `external` — использование внешнего кэша, как описано в статье [Use an external Redis cache in Azure API Management](api-management-howto-cache-external.md) (Использование внешнего кэша в службе управления API Azure);<br />- `prefer-external` — использование внешнего кэша, если он настроен. В противном случае используется внутренний кэш. | Нет        | `prefer-external` |
+| длительность         | Кэшированные значения сохраняются в течение указанного здесь времени (в секундах).                                                                                                                                                                                                                                                                                 | Yes      | Недоступно               |
+| key              | Ключ кэша, под которым будет храниться значение.                                                                                                                                                                                                                                                                                                                   | Yes      | Недоступно               |
+| value            | Значение, которое нужно кэшировать.                                                                                                                                                                                                                                                                                                                                     | Yes      | Недоступно               |
   
 ### <a name="usage"></a>Использование  
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
@@ -291,7 +295,7 @@ ms.locfileid: "51246843"
   
 ```xml  
   
-<cache-remove-value key="cache key value"/>  
+<cache-remove-value key="cache key value" cache-preference="prefer-external | external | internal"  />  
   
 ```  
   
@@ -311,9 +315,10 @@ ms.locfileid: "51246843"
   
 #### <a name="attributes"></a>Атрибуты  
   
-|ИМЯ|ОПИСАНИЕ|Обязательно|значение по умолчанию|  
-|----------|-----------------|--------------|-------------|  
-|key|Ключ кэшированного ранее значения, которое нужно удалить из кэша.|Yes|Недоступно|  
+| ИМЯ             | ОПИСАНИЕ                                                                                                                                                                                                                                                                                                                                                 | Обязательно | значение по умолчанию           |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------------------|
+| cache-preference | Выберите одно из следующих значений атрибута:<br />- `internal` — использование встроенного кэша в службе управления API;<br />- `external` — использование внешнего кэша, как описано в статье [Use an external Redis cache in Azure API Management](api-management-howto-cache-external.md) (Использование внешнего кэша в службе управления API Azure);<br />- `prefer-external` — использование внешнего кэша, если он настроен. В противном случае используется внутренний кэш. | Нет        | `prefer-external` |
+| key              | Ключ кэшированного ранее значения, которое нужно удалить из кэша.                                                                                                                                                                                                                                                                                        | Yes      | Недоступно               |
   
 #### <a name="usage"></a>Использование  
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes) политики.  

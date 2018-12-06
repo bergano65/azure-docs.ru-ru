@@ -7,15 +7,15 @@ manager: femila
 cloud: azure-stack
 ms.service: azure-stack
 ms.topic: article
-ms.date: 11/13/2018
+ms.date: 11/20/2018
 ms.author: jeffgilb
 ms.reviewer: adshar
-ms.openlocfilehash: f9a7ae76f2d52b3439bfb33f306e164bb81549eb
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: ef8a01228ff31afa78f469b2ad80b864fc9d3497
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51623984"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52283458"
 ---
 # <a name="azure-stack-diagnostics-tools"></a>Средства диагностики Azure Stack
 
@@ -70,13 +70,14 @@ if($s)
     Remove-PSSession $s
 }
 ```
-- Параметры **OutputSharePath** и **OutputShareCredential** используются для сохранения журналов в указанном пользователем расположении.
-- Параметры **FromDate** и **ToDate** можно использовать для сбора журналов за конкретный период времени. Если эти параметры не указаны, по умолчанию журналы собираются за последние четыре часа.
+
 
 
 ### <a name="to-run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system"></a>Выполнение командлета Get-AzureStackLog в системе Пакета средств разработки Azure Stack (ASDK)
-1. Войдите на узел с именем пользователя **AzureStack\CloudAdmin**.
-2. Откройте окно PowerShell от имени администратора.
+Выполните следующие действия для запуска командлета Get-AzureStackLog на главном компьютере ASDK.
+
+1. Войдите на узел управления с именем **AzureStack\CloudAdmin**.
+2. Откройте новое окно PowerShell от имени администратора.
 3. Выполните командлет PowerShell **Get-AzureStackLog**.
 
 **Примеры**
@@ -107,7 +108,10 @@ if($s)
 
 ### <a name="parameter-considerations-for-both-asdk-and-integrated-systems"></a>Рекомендации по настройке параметров для ASDK и интегрированных систем
 
-- Если параметры **FromDate** и **ToDate** не указаны, по умолчанию журналы собираются за последние четыре часа.
+- Параметры **OutputSharePath** и **OutputShareCredential** используются для сохранения журналов в указанном пользователем расположении.
+
+- Параметры **FromDate** и **ToDate** можно использовать для сбора журналов за конкретный период времени. Если эти параметры не указаны, по умолчанию журналы собираются за последние четыре часа.
+
 - Чтобы фильтровать журналы по имени компьютера, используйте параметр **FilterByNode**. Например: 
 
     ```powershell

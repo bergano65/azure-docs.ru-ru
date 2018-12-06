@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 10/19/2018
+ms.date: 11/26/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 72a8a09d04dc009598dafc35b65304662b7b8915
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 58bec272733d0ad83665f4e06f37ae528eb2f8b9
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49955921"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52499662"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 [Управление доступом на основе ролей (RBAC)](overview.md) имеет несколько определений встроенной роли, которую можно назначить для пользователей, групп и субъектов-служб. Назначение ролей является способом управления доступом к ресурсам в Azure. Если встроенные роли не соответствуют потребностям вашей организации, вы можете создать собственные [настраиваемые роли](custom-roles.md).
@@ -39,7 +39,7 @@ ms.locfileid: "49955921"
 | [AcrImageSigner](#acrimagesigner) | Средство подписывания образов ACR. |
 | [AcrQuarantineReader](#acrquarantinereader) | Модуль чтения данных карантина ACR. |
 | [AcrQuarantineWriter](#acrquarantinewriter) | Модуль записи данных карантина ACR. |
-| [Участник службы управления API](#api-management-service-contributor) | Позволяет управлять службами управления API, но не доступом к ним. |
+| [Участник службы управления API](#api-management-service-contributor) | Может управлять службой и интерфейсами API. |
 | [Роль оператора службы управления API](#api-management-service-operator-role) | Может управлять службой, но не интерфейсами API. |
 | [Роль читателя данных службы управления API](#api-management-service-reader-role) | Доступ к службе и интерфейсам API в режиме "только для чтения". |
 | [Участник компонента Application Insights](#application-insights-component-contributor) | Может управлять компонентами Application Insights |
@@ -53,7 +53,7 @@ ms.locfileid: "49955921"
 | [Участник резервного копирования](#backup-contributor) | Позволяет управлять службой архивации, но не разрешает создавать хранилища и предоставлять доступ другим пользователям |
 | [Оператор резервного копирования](#backup-operator) | Позволяет управлять службами архивации, но не удалять архивные копии, создавать хранилища или предоставлять доступ другим пользователям |
 | [Читатель резервных копий](#backup-reader) | Может просматривать службы резервного копирования, но не может вносить изменения. |
-| [Читатель счетов](#billing-reader) | Позволяет читать данные выставления счетов. |
+| [Читатель счетов](#billing-reader) | Разрешает читать данные выставления счетов. |
 | [Участник BizTalk](#biztalk-contributor) | Позволяет управлять службами BizTalk, но не доступом к ним. |
 | [Участник конечных точек CDN](#cdn-endpoint-contributor) | Может управлять конечными точками CDN, но не может предоставлять доступ другим пользователям. |
 | [Читатель конечной точки CDN](#cdn-endpoint-reader) | Может просматривать конечные точки CDN, но не может вносить изменения. |
@@ -70,12 +70,14 @@ ms.locfileid: "49955921"
 | [Читатель службы "Управление затратами"](#cost-management-reader) | Позволяет просматривать данные о расходах и конфигурации (например, бюджеты, экспорты) |
 | [Участник Data Box](#data-box-contributor) | Позволяет управлять всеми данными службы Data Box, кроме предоставления доступа другим пользователям. |
 | [Читатель Data Box](#data-box-reader) | Позволяет управлять службой Data Box, но не позволяет создавать заказы и менять их порядок, а также предоставлять доступ другим пользователям. |
-| [Участник фабрики данных](#data-factory-contributor) | Позволяет управлять фабриками данных, но не доступом к ним. |
+| [Участник фабрики данных](#data-factory-contributor) | Создание фабрик данных и управление ими, а также их дочерними ресурсами. |
 | [Разработчик Data Lake Analytics](#data-lake-analytics-developer) | Позволяет отправлять, отслеживать задания и управлять ими, но не позволяет создавать или удалять учетные записи Data Lake Analytics. |
 | [Средство очистки данных](#data-purger) | Может выполнить очистку данных аналитики. |
 | [Пользователь DevTest Labs](#devtest-labs-user) | Позволяет подключать, запускать, перезапускать виртуальные машины и завершать их работу в Azure DevTest Labs. |
 | [Участник зоны DNS](#dns-zone-contributor) | Позволяет управлять зонами DNS и наборами записей в Azure DNS, но не тем, кому они будут доступны. |
 | [Участник учетной записи DocumentDB](#documentdb-account-contributor) | Может управлять учетными записями Azure Cosmos DB Служба Azure Cosmos DB раньше называлась DocumentDB. |
+| [Участник EventGrid EventSubscription (предварительная версия)](#eventgrid-eventsubscription-contributor-preview) | Позволяет управлять операциями с подписками на события Сетки событий. |
+| [Читатель EventGrid EventSubscription (предварительная версия)](#eventgrid-eventsubscription-reader-preview) | Позволяет получить доступ на чтение к подпискам на события Сетки событий. |
 | [Участник доменных служб HDInsight](#hdinsight-domain-services-contributor) | Позволяет читать, создавать, изменять и удалять операции, связанные с доменными службами, необходимыми для Корпоративного пакета безопасности HDInsight |
 | [Участник учетной записи интеллектуальных систем](#intelligent-systems-account-contributor) | Позволяет управлять учетными записями интеллектуальных систем, но не доступом к ним. |
 | [Участник Key Vault](#key-vault-contributor) | Позволяет управлять хранилищами ключей, но не доступом к ним. |
@@ -101,7 +103,7 @@ ms.locfileid: "49955921"
 | [Участник коллекции заданий планировщика](#scheduler-job-collections-contributor) | Позволяет управлять коллекциями заданий планировщика, но не доступом к ним. |
 | [Участник службы поиска](#search-service-contributor) | Позволяет управлять службами поиска, но не доступом к ним. |
 | [Администратор безопасности](#security-admin) | Только в центре безопасности: может просматривать политики безопасности и состояния безопасности, изменять политики безопасности, просматривать оповещения и рекомендации, а также закрывать предупреждения и рекомендации |
-| [Диспетчер безопасности](#security-manager) | Позволяет управлять компонентами и политиками безопасности, а также виртуальными машинами. |
+| [Диспетчер безопасности (устаревший)](#security-manager-legacy) | Это устаревшая роль. Используйте роль администратора безопасности |
 | [Читатель безопасности](#security-reader) | Только в центре безопасности: может просматривать оповещения и рекомендации, просматривать политики безопасности и состояния безопасности, но не может вносить изменения |
 | [Участник Site Recovery](#site-recovery-contributor) | Позволяет управлять службой Site Recovery, за исключением создания хранилищ и назначения ролей. |
 | [Оператор Site Recovery](#site-recovery-operator) | Позволяет выполнять отработку отказа и восстановление размещения, но не другие операции управления Site Recovery. |
@@ -165,8 +167,7 @@ ms.locfileid: "49955921"
 > | **Описание** | Средство подписывания образов ACR. |
 > | **Id** | 6cef56e8-d556-48e5-a04f-b8e64114680f |
 > | **Действия** |  |
-> | Microsoft.ContainerRegistry/registries/*/read |  |
-> | Microsoft.ContainerRegistry/registries/*/write |  |
+> | Microsoft.ContainerRegistry/registries/sign/write | Передача или извлечение метаданных доверия к содержимому для реестра контейнеров. |
 
 ## <a name="acrquarantinereader"></a>AcrQuarantineReader
 > [!div class="mx-tableFixed"]
@@ -175,7 +176,7 @@ ms.locfileid: "49955921"
 > | **Описание** | Модуль чтения данных карантина ACR. |
 > | **Id** | cdda3590-29a3-44f6-95f2-9f980659eb04 |
 > | **Действия** |  |
-> | Microsoft.ContainerRegistry/registries/*/read |  |
+> | Microsoft.ContainerRegistry/registries/quarantineRead/read | Извлечение или получение помещенных в карантин образов из реестра контейнеров. |
 
 ## <a name="acrquarantinewriter"></a>AcrQuarantineWriter
 > [!div class="mx-tableFixed"]
@@ -184,14 +185,14 @@ ms.locfileid: "49955921"
 > | **Описание** | Модуль записи данных карантина ACR. |
 > | **Id** | c8d4ff99-41c3-41a8-9f60-21dfdad59608 |
 > | **Действия** |  |
-> | Microsoft.ContainerRegistry/registries/*/write |  |
-> | Microsoft.ContainerRegistry/registries/*/read |  |
+> | Microsoft.ContainerRegistry/registries/quarantineRead/read | Извлечение или получение помещенных в карантин образов из реестра контейнеров. |
+> | Microsoft.ContainerRegistry/registries/quarantineWrite/write | Запись и изменение состояния карантина образов, помещенных в карантин. |
 
 ## <a name="api-management-service-contributor"></a>Участник службы управления API
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Позволяет управлять службами управления API, но не доступом к ним. |
+> | **Описание** | Может управлять службой и интерфейсами API. |
 > | **Id** | 312a565d-c81f-4fd8-895a-4e21e48d571c |
 > | **Действия** |  |
 > | Microsoft.ApiManagement/service/* | Создание службы управления API и управление ею |
@@ -536,7 +537,7 @@ ms.locfileid: "49955921"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Позволяет читать данные выставления счетов. |
+> | **Описание** | Разрешает читать данные выставления счетов. |
 > | **Id** | fa23ad8b-c56e-40d8-ac0c-ce449e1d2c64 |
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
@@ -813,7 +814,7 @@ ms.locfileid: "49955921"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Позволяет управлять фабриками данных, но не доступом к ним. |
+> | **Описание** | Создание фабрик данных и управление ими, а также их дочерними ресурсами. |
 > | **Id** | 673868aa-7521-48a0-acc6-0f60742d39f5 |
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
@@ -883,13 +884,14 @@ ms.locfileid: "49955921"
 > | Microsoft.Compute/virtualMachines/restart/action | Перезапускает виртуальную машину. |
 > | Microsoft.Compute/virtualMachines/start/action | Запускает виртуальную машину. |
 > | Microsoft.DevTestLab/*/read | Чтение свойств лаборатории |
-> | Microsoft.DevTestLab/labs/createEnvironment/action | Создает виртуальные машины в лаборатории. |
 > | Microsoft.DevTestLab/labs/claimAnyVm/action | Отправляет заявку на доступ к случайной запрашиваемой виртуальной машине в лаборатории. |
+> | Microsoft.DevTestLab/labs/createEnvironment/action | Создает виртуальные машины в лаборатории. |
 > | Microsoft.DevTestLab/labs/formulas/delete | Удаляет формулы. |
 > | Microsoft.DevTestLab/labs/formulas/read | Считывает формулы. |
 > | Microsoft.DevTestLab/labs/formulas/write | Добавляет или изменяет формулы. |
 > | Microsoft.DevTestLab/labs/policySets/evaluatePolicies/action | Оценивает политику лаборатории. |
 > | Microsoft.DevTestLab/labs/virtualMachines/claim/action | Присваивает владение существующей виртуальной машиной. |
+> | Microsoft.DevTestLab/labs/virtualmachines/listApplicableSchedules/action | Выводит список применимых расписаний запуска и остановки, если они есть. |
 > | Microsoft.Network/loadBalancers/backendAddressPools/join/action | Выполняет присоединение к внутреннему пулу адресов подсистемы балансировки нагрузки. |
 > | Microsoft.Network/loadBalancers/inboundNatRules/join/action | Присоединяет правило NAT для входящего трафика подсистемы балансировки нагрузки. |
 > | Microsoft.Network/networkInterfaces/*/read | Чтение свойств сетевого интерфейса (например, всех балансировщиков нагрузки, частью которых является сетевой интерфейс) |
@@ -936,6 +938,37 @@ ms.locfileid: "49955921"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+
+## <a name="eventgrid-eventsubscription-contributor-preview"></a>участник EventGrid EventSubscription (предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет управлять операциями с подписками на события Сетки событий. |
+> | **Id** | 428e0ff0-5e57-4d9c-a221-2c70d0e0a443 |
+> | **Действия** |  |
+> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft.EventGrid/eventSubscriptions/* |  |
+> | Microsoft.EventGrid/topicTypes/eventSubscriptions/read | Создание списка подписок на глобальные события по типу темы |
+> | Microsoft.EventGrid/locations/eventSubscriptions/read | Создание списка подписок на события в регионе |
+> | Microsoft.EventGrid/locations/topicTypes/eventSubscriptions/read | Создание списка подписок на события в регионе по типу темы |
+> | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
+> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+
+## <a name="eventgrid-eventsubscription-reader-preview"></a>и читатель EventGrid EventSubscription (предварительная версия).
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет получить доступ на чтение к подпискам на события Сетки событий. |
+> | **Id** | 2414bbcf-6497-4faf-8c65-045460748405 |
+> | **Действия** |  |
+> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft.EventGrid/eventSubscriptions/read | Чтение подписки на события. |
+> | Microsoft.EventGrid/topicTypes/eventSubscriptions/read | Создание списка подписок на глобальные события по типу темы |
+> | Microsoft.EventGrid/locations/eventSubscriptions/read | Создание списка подписок на события в регионе |
+> | Microsoft.EventGrid/locations/topicTypes/eventSubscriptions/read | Создание списка подписок на события в регионе по типу темы |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 
 ## <a name="hdinsight-domain-services-contributor"></a>Участник доменных служб HDInsight
 > [!div class="mx-tableFixed"]
@@ -1089,6 +1122,7 @@ ms.locfileid: "49955921"
 > | **Описание** | Позволяет читать и выполнять действия с ресурсами управляемого приложения. |
 > | **Id** | c7393b34-138c-406f-901b-d8cf2b17e6ae |
 > | **Действия** |  |
+> | */чтение | Чтение ресурсов всех типов, кроме секретов. |
 > | Microsoft.Solutions/applications/read | Извлечение списка приложений. |
 
 ## <a name="managed-applications-reader"></a>Читатель Управляемых приложений
@@ -1185,7 +1219,6 @@ ms.locfileid: "49955921"
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | Microsoft.WorkloadMonitor/monitors/* |  |
 > | Microsoft.WorkloadMonitor/notificationSettings/* |  |
-> | Microsoft.WorkloadMonitor/workloadInsights/* |  |
 
 ## <a name="monitoring-metrics-publisher"></a>Издатель метрик мониторинга
 > [!div class="mx-tableFixed"]
@@ -1332,15 +1365,17 @@ ms.locfileid: "49955921"
 > | Microsoft.Security/locations/tasks/activate/action | Активирует рекомендацию по безопасности. |
 > | Microsoft.Security/locations/tasks/dismiss/action | Закрывает рекомендацию по безопасности. |
 > | Microsoft.Security/policies/write | Обновляет политику безопасности. |
-> | Microsoft.Security/securityContacts/write | Обновление контактного лица по вопросам безопасности. |
+> | Microsoft.Security/pricings/write | Обновление параметров ценообразования для области. |
+> | Microsoft.Security/pricings/delete | Удаление параметров ценообразования для области. |
 > | Microsoft.Security/securityContacts/delete | Удаление контактного лица по вопросам безопасности. |
+> | Microsoft.Security/securityContacts/write | Обновление контактного лица по вопросам безопасности. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
-## <a name="security-manager"></a>Диспетчер безопасности
+## <a name="security-manager-legacy"></a>Диспетчер безопасности (устаревший)
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Позволяет управлять компонентами и политиками безопасности, а также виртуальными машинами. |
+> | **Описание** | Это устаревшая роль. Используйте роль администратора безопасности |
 > | **Id** | e3d13bf0-dd5a-482e-ba6b-9b8433878d10 |
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
@@ -1559,11 +1594,13 @@ ms.locfileid: "49955921"
 > | Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/auditingPolicies/* | Создание политик аудита SQL Server и управление ими |
 > | Microsoft.Sql/servers/auditingSettings/* | Создание параметров аудита SQL Server и управление ими |
+> | Microsoft.Sql/servers/extendedAuditingSettings/read | Извлечение сведений о расширенной политике аудита больших двоичных объектов, настроенной на заданном сервере. |
 > | Microsoft.Sql/servers/databases/auditingPolicies/* | Создание политик аудита баз данных SQL Server и управление ими |
 > | Microsoft.Sql/servers/databases/auditingSettings/* | Создание параметров аудита баз данных SQL Server и управление ими |
 > | Microsoft.Sql/servers/databases/auditRecords/read | Чтение записей аудита |
 > | Microsoft.Sql/servers/databases/connectionPolicies/* | Создание политик подключения баз данных SQL Server и управление ими |
 > | Microsoft.Sql/servers/databases/dataMaskingPolicies/* | Создание политик маскирования данных баз данных SQL Server и управление ими |
+> | Microsoft.Sql/servers/databases/extendedAuditingSettings/read | Извлечение сведений о расширенной политике аудита больших двоичных объектов, настроенной для заданной базы данных. |
 > | Microsoft.Sql/servers/databases/read | Возвращение списка баз данных или возвращение свойств указанной базы данных. |
 > | Microsoft.Sql/servers/databases/schemas/read | Получение списка схем базы данных. |
 > | Microsoft.Sql/servers/databases/schemas/tables/columns/read | Извлекает список столбцов таблицы. |

@@ -9,14 +9,14 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/19/2018
-ms.openlocfilehash: 3cd27438247b801e384b80d96ba288896b4c5aae
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: d422b56acd56f87cb855c5e045e3a91666eee571
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51234228"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52499402"
 ---
-# <a name="create-a-spark-machine-learning-pipeline"></a>Создание конвейера машинного обучения Spark
+# <a name="create-an-apache-spark-machine-learning-pipeline"></a>Создание конвейера машинного обучения Apache Spark
 
 Масштабируемая библиотека машинного обучения Apache Spark предоставляет возможности моделирования для распределенной среды. Пакет Spark [`spark.ml`](http://spark.apache.org/docs/latest/ml-pipeline.html) — это набор API высокого уровня, созданных на основе таблиц данных. Эти API позволяют создавать и настраивать практические конвейеры машинного обучения.  *Машинное обучение Spark* использует этот API на основе таблиц данных библиотеки машинного обучения, а не более старый API конвейера на основе RDD.
 

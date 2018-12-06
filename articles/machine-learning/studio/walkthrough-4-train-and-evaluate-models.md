@@ -1,10 +1,11 @@
 ---
-title: Шаг 4. Обучение и анализ моделей прогнозирующей аналитики | Документация Майкрософт
+title: Шаг 4. Обучение моделей прогнозирующей аналитики в Студии машинного обучения Azure | Документация Майкрософт
 description: 'Четвертый этап пошагового руководства по разработке прогнозного решения: обучение и оценка нескольких моделей в студии машинного обучения Azure.'
 services: machine-learning
 documentationcenter: ''
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: d905f6b3-9201-4117-b769-5f9ed5ee1cac
@@ -15,17 +16,17 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/23/2017
-ms.openlocfilehash: 95937ee74be3f6facbc482c3cfd80a8af9128ea3
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 4b4ffcf8e6c886a2f182c844f940e53c24d1efa0
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34836019"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52313475"
 ---
-# <a name="walkthrough-step-4-train-and-evaluate-the-predictive-analytic-models"></a>Шаг 4. Обучение и анализ моделей прогнозирующей аналитики
+# <a name="walkthrough-step-4-train-and-evaluate-the-predictive-analytic-models-in-machine-learning-studio"></a>Шаг 4. Обучение и анализ моделей прогнозирующей аналитики в Студии машинного обучения
 Это четвертая часть пошагового руководства [по разработке решения для прогнозной аналитики в Машинном обучении Azure](walkthrough-develop-predictive-solution.md).
 
-1. [Создание рабочей области машинного обучения](walkthrough-1-create-ml-workspace.md)
+1. [Создание рабочей области Студии машинного обучения](walkthrough-1-create-ml-workspace.md)
 2. [Отправка существующих данных](walkthrough-2-upload-data.md)
 3. [Создание нового эксперимента](walkthrough-3-create-new-experiment.md)
 4. **Обучение и анализ моделей**
@@ -40,7 +41,7 @@ ms.locfileid: "34836019"
 Существует множество моделей, которые можно выбрать. Чтобы просмотреть доступные модели, разверните узел **Машинное обучение** в палитре модулей, а затем **Initialize Model** (Инициализация модели) и узлы под ним. Для этого эксперимента мы выберем модули [Two-Class Support Vector Machine][two-class-support-vector-machine] (Двухклассовый метод опорных векторов) и [Two-Class Boosted Decision Tree][two-class-boosted-decision-tree] (Двухклассовое увеличивающееся дерево решений).    
 
 > [!TIP]
-> Чтобы решить, какой алгоритм машинного обучения лучше всего подойдет для решения конкретной задачи, изучите статью [Выбор алгоритмов Машинного обучения Microsoft Azure](algorithm-choice.md).
+> Чтобы решить, какой алгоритм машинного обучения лучше всего подойдет для решения конкретной задачи, изучите статью [Выбор алгоритмов Студии машинного обучения Azure](algorithm-choice.md).
 > 
 > 
 

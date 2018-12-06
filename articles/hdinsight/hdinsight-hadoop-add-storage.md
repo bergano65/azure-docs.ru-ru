@@ -9,19 +9,19 @@ ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: 31461e1d316953c2e69d252f1313180c57562dfd
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 194f84d2ce5360aa9ad9f3d771bf24f153ac6f5c
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51009197"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52496296"
 ---
 # <a name="add-additional-storage-accounts-to-hdinsight"></a>Добавление дополнительных учетных записей хранения в HDInsight
 
 Узнайте, как использовать действия сценариев для добавления дополнительных учетных записей хранения Azure в кластер HDInsight. В этом документе описаны действия по добавлению учетной записи хранения в существующий кластер HDInsight под управлением Linux.
 
 > [!IMPORTANT]
-> В этом документе описано, как добавить дополнительное хранилище в кластер после его создания. Сведения о добавлении учетных записей хранения во время создания кластера см. в статье о [настройке кластеров HDInsight с Hadoop, Spark, Kafka и другими платформами](hdinsight-hadoop-provision-linux-clusters.md).
+> В этом документе описано, как добавить дополнительное хранилище в кластер после его создания. Сведения о добавлении учетных записей хранения во время создания кластера см. в статье о [настройке кластеров HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других платформ](hdinsight-hadoop-provision-linux-clusters.md).
 
 ## <a name="how-it-works"></a>Принцип работы
 
@@ -43,7 +43,7 @@ ms.locfileid: "51009197"
 
 * Добавляет учетную запись хранилища в файл core-site.xml.
 
-* Останавливает и перезапускает службы Oozie, YARN, MapReduce2 и HDFS. Остановка и запуск этих служб позволяет им использовать новую учетную запись хранения.
+* Останавливает и перезапускает службы [Apache Oozie](https://oozie.apache.org/), [Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html), [Apache Hadoop MapReduce2](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html) и [Apache Hadoop HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html). Остановка и запуск этих служб позволяет им использовать новую учетную запись хранения.
 
 > [!WARNING]
 > Использование учетной записи хранения, расположение которой отличается от расположения кластера HDInsight, не поддерживается.

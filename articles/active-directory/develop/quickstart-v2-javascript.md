@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 09/24/2018
 ms.author: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 69c77896f894201d1419aaef33470a02ac45ff91
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: d044b1ad18df6eee1235e881038bbb9734a999ff
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49986294"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52317353"
 ---
 # <a name="quickstart-sign-in-users-and-acquire-an-access-token-from-a-javascript-application"></a>Краткое руководство. Выполнение входа пользователей и получение маркера доступа из приложения JavaScript
 
@@ -37,7 +37,7 @@ ms.locfileid: "49986294"
 >
 > 1. Чтобы зарегистрировать приложение, войдите на [портал Azure](https://portal.azure.com/).
 > 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
-> 1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **Регистрация приложений (предварительная версия) > Новая регистрация**.
+> 1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **App registrations (Preview) (Регистрация приложений (предварительная версия)) > Новая регистрация**.
 > 1. Когда откроется страница **Register an application** (Регистрация приложения), введите имя приложения.
 > 1. В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт).
 > 1. Выберите платформу **Веб** в разделе **URI перенаправления** и установите значение `http://localhost:30662/`.
@@ -66,7 +66,7 @@ ms.locfileid: "49986294"
 #### <a name="step-3-configure-your-javascript-app"></a>Шаг 3. Настройка приложения JavaScript
 
 > [!div renderon="docs"]
-> В файле `index.html` замените `Enter_the_Application_Id_here` в разделе `applicationConfig` идентификатором зарегистрированного приложения.
+> Измените `index.html` и задайте `clientID` и `authority` для `applicationConfig`.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > В файле `index.html` измените `applicationConfig` на:
@@ -74,13 +74,25 @@ ms.locfileid: "49986294"
 ```javascript
 var applicationConfig = {
     clientID: "Enter_the_Application_Id_here",
+    authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here",
     graphScopes: ["user.read"],
     graphEndpoint: "https://graph.microsoft.com/v1.0/me"
 };
 ```
+> [!div renderon="docs"]
+>
+> Описание
+> - `Enter_the_Application_Id_here` — это **идентификатор приложения (клиента)**, которое вы зарегистрировали.
+> - `Enter_the_Tenant_Info_Here` может иметь несколько значений.
+>   - Если приложение поддерживает **учетные записи только в этом каталоге организации**, замените это значение **идентификатором клиента** или **именем клиента** (например, contoso.microsoft.com).
+>   - Если ваше приложение поддерживает вариант **Учетные записи в любом каталоге организации**, замените это значение на `organizations`.
+>   - Если приложение поддерживает **учетные записи в любом каталоге организации и личные учетные записи Майкрософт**, укажите значение `common`.
+>
+> > [!TIP]
+> > Чтобы найти значения параметров **Идентификатор приложения (клиента)**, **Идентификатор каталога (клиента)** и **Поддерживаемые типы учетных записей**, на портале Azure перейдите на страницу **Обзор**.
+
 > [!NOTE]
->Если вы используете [Node.js](https://nodejs.org/en/download/), файл *server.js* настраивается таким образом, чтобы сервер ожидал передачи данных через порт 30662.
-> Если вы используете пример кода [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/), файл *CSPROJ* из примера кода настраивается таким образом, чтобы сервер ожидал передачи данных через порт 30662.
+> Сервер настроен на прослушивание порта 30662 в файле *server.js* проекта [Node.js](https://nodejs.org/en/download/) и файле *.csproj* проекта [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/).
 >
 
 #### <a name="step-4-run-the-project"></a>Шаг 4. Запуск проекта
@@ -121,7 +133,7 @@ npm install msal
 В примере кода ниже показано, как инициализировать библиотеку:
 
 ```javascript
-var myMSALObj = new Msal.UserAgentApplication(applicationConfig.clientID, null, acquireTokenRedirectCallBack, {storeAuthStateInCookie: true, cacheLocation: "localStorage"});
+var myMSALObj = new Msal.UserAgentApplication(applicationConfig.clientID, applicationConfig.authority, acquireTokenRedirectCallBack, {storeAuthStateInCookie: true, cacheLocation: "localStorage"});
 ```
 
 > |Where  |  |

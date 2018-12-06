@@ -9,16 +9,16 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,mvc
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: eb2145d2e7b787bafa0b546449282454f7059999
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 537ae87fa694a8b0e82cb2830dd8ad1f62986093
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51283416"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52496431"
 ---
-# <a name="tutorial-process-tweets-using-azure-event-hubs-and-spark-in-hdinsight"></a>Руководство. Обработка твитов с помощью Центров событий Azure и Spark в HDInsight
+# <a name="tutorial-process-tweets-using-azure-event-hubs-and-apache-spark-in-hdinsight"></a>Руководство. Обработка твитов с помощью Центров событий Azure и Apache Spark в HDInsight
 
-В этом руководстве вы научитесь создавать приложение потоковой передачи Apache Spark для отправки твитов в концентратор событий Azure, а также приложение для чтения твитов из концентратора событий. Подробное описание потоковой передачи Spark см. в [этом разделе](http://spark.apache.org/docs/latest/streaming-programming-guide.html#overview). HDInsight предоставляет аналогичные функции потоковой передачи для кластера Spark в Azure.
+В этом руководстве вы научитесь создавать приложение потоковой передачи [Apache Spark](https://spark.apache.org/) для отправки твитов в концентратор событий Azure, а также приложение для чтения твитов из концентратора событий. Подробное описание потоковой передачи Spark см. в [этом разделе](http://spark.apache.org/docs/latest/streaming-programming-guide.html#overview). HDInsight предоставляет аналогичные функции потоковой передачи для кластера Spark в Azure.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
@@ -102,7 +102,7 @@ ms.locfileid: "51283416"
 
 Создайте записную книжку Jupyter с именем **SendTweetsToEventHub**. 
 
-1. Добавьте внешние библиотеки Maven, выполнив следующий код:
+1. Добавьте внешние библиотеки Apache Maven, выполнив следующий код:
 
     ```
     %%configure
@@ -184,7 +184,7 @@ ms.locfileid: "51283416"
 
 Создайте другую записную книжку Jupyter с именем **ReadTweetsFromEventHub**. 
 
-1. Добавьте внешнюю библиотеку Maven, выполнив следующий код:
+1. Добавьте внешнюю библиотеку Apache Maven, выполнив следующий код:
 
     ```
     %%configure -f

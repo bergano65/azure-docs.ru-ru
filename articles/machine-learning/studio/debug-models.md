@@ -1,10 +1,11 @@
 ---
-title: Отладка модели в Машинном обучении Azure | Документация Майкрософт
-description: Узнайте, как выполнять отладку ошибок, возникающих в модулях "Train Model" (Обучение модели) и "Score Model" (Оценка модели) в машинном обучении Azure.
+title: Отладка модели в Студии машинного обучения Azure | Документация Майкрософт
+description: Узнайте, как выполнять отладку ошибок, возникающих в модулях "Train Model" (Обучение модели) и "Score Model" (Оценка модели) в Студии машинного обучения Azure.
 services: machine-learning
 documentationcenter: ''
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 629dc45e-ac1e-4b7d-b120-08813dc448be
@@ -15,14 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2017
-ms.openlocfilehash: 144edca6d2e6fc8d0d8e59e6cff1d3f37eb233aa
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: bb1a3e778dcbcfacbc9e605ebf2d855786d71510
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34834317"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52312601"
 ---
-# <a name="debug-your-model-in-azure-machine-learning"></a>Отладка машинного обучения модели в Azure
+# <a name="debug-your-model-in-azure-machine-learning-studio"></a>Отладка модели в Студии машинного обучения Azure
 
 В этой статье объясняются потенциальные причины, по которым при запуске модели могут возникнуть два сбоя:
 

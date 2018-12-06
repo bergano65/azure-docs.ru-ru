@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: design
-ms.date: 10/06/2018
+ms.date: 11/27/2018
 ms.author: anvang
 ms.reviewer: igorstan
-ms.openlocfilehash: db5502b796fc345b2e2bf083f864d80bd59e7293
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 3c683d5819ded4eb3d286969b8c3fc3f0bd42865
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49427133"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52497513"
 ---
 # <a name="view-a-maintenance-schedule"></a>Просмотр расписания обслуживания 
 
@@ -34,6 +34,7 @@ ms.locfileid: "49427133"
 ## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения о создании, просмотре оповещений и управлении ими с помощью Azure Monitor см. в [этой статье](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitor-alerts-unified-usage).
 - Дополнительные сведения о действиях веб-перехватчика для правил генерации оповещений журнала см. в [этой статье](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitor-alerts-unified-log-webhook).
+- [Дополнительные сведения](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-action-groups) о создании групп действий и управлении ими.
 - Дополнительные сведения о службе "Работоспособность служб Azure" см. в [этой статье](https://docs.microsoft.com/azure/service-health/service-health-overview).
 
 

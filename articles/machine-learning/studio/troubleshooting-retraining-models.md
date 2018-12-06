@@ -1,10 +1,11 @@
 ---
-title: Устранение неполадок при повторном обучении классической веб-службы машинного обучения Azure | Документация Майкрософт
-description: С помощью этой статьи вы сможете выявить и исправить распространенные проблемы, которые возникают при повторном обучении модели для веб-службы машинного обучения Azure.
+title: Устранение неполадок при повторном обучении классической веб-службы Студии машинного обучения Azure | Документация Майкрософт
+description: С помощью этой статьи вы сможете выявить и исправить распространенные проблемы, которые возникают при повторном обучении модели для веб-службы Студии машинного обучения Azure.
 services: machine-learning
 documentationcenter: ''
-author: YasinMSFT
-ms.author: yahajiza
+author: ericlicoding
+ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 75cac53c-185c-437d-863a-5d66d871921e
@@ -15,14 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/01/2017
-ms.openlocfilehash: 989bf010320501050a37fbf2f0799f50a5a3e2ba
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 1105b81d0f8ba80bd76bcdf140fe79b9e8a7102d
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34835779"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52307208"
 ---
-# <a name="troubleshooting-the-retraining-of-an-azure-machine-learning-classic-web-service"></a>Устранение неполадок при повторном обучении классической веб-службы машинного обучения Azure
+# <a name="troubleshooting-the-retraining-of-an-azure-machine-learning-studio-classic-web-service"></a>Устранение неполадок при повторном обучении классической веб-службы Студии машинного обучения Azure
 ## <a name="retraining-overview"></a>Сведения о повторном обучении
 Когда вы развертываете прогнозный эксперимент в качестве оценивающей веб-службы, вы получаете статическую модель. Если появляются новые данные или у пользователя API есть свои данные, эту модель нужно переобучить. 
 

@@ -9,23 +9,23 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: 066734c88890d5f1a6e42c5350db47d1a398b60a
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: f6393d15572eadb376cbd88dc94c3de0fd8fa80b
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51277585"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52495566"
 ---
 # <a name="apache-hadoop-architecture-in-hdinsight"></a>Архитектура Apache Hadoop в HDInsight
 
-Apache Hadoop состоит из двух основных компонентов — распределенной файловой системы Hadoop, обеспечивающей хранение, и модуля управления ресурсами YARN, обеспечивающего обработку. Благодаря возможностям хранения и обработки на кластере можно запускать программы MapReduce, чтобы выполнять требуемую обработку данных.
+[Apache Hadoop](https://hadoop.apache.org/) состоит из двух основных компонентов — [распределенной файловой системы (HDFS) Apache Hadoop](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html), обеспечивающей хранение, и [модуля управления ресурсами Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html), обеспечивающего обработку. Благодаря возможностям хранения и обработки на кластере можно запускать программы [Apache Hadoop MapReduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html), чтобы выполнять требуемую обработку данных.
 
 > [!NOTE]
 > Обычно HDFS не развернута в кластере HDInsight для предоставления хранилища. Вместо этого компоненты Hadoop используют HDFS-совместимый слой интерфейса. Фактическая емкость хранилища предоставляется службой хранилища Azure или Azure Data Lake Store. Для Hadoop задания MapReduce выполняются в кластере HDInsight как будто HDFS присутствует и поэтому не требуют изменений для удовлетворения потребностей в хранении. В Hadoop в HDInsight хранилище является внешним, но обработка YARN остается внутренним компонентом. Дополнительную информацию см. во [введении в Azure HDInsight](hadoop/apache-hadoop-introduction.md).
 
 В этой статье описан модуль YARN и как он координирует выполнение приложений в HDInsight.
 
-## <a name="apache-yarn-basics"></a>Основные сведения об Apache YARN 
+## <a name="apache-hadoop-yarn-basics"></a>Основные сведения об Apache Hadoop YARN 
 
 Платформа YARN управляет обработкой данных в Hadoop. Она состоит из двух основных служб, выполняющихся в качестве процессов на узлах кластера: 
 
@@ -50,5 +50,5 @@ YARN развертывается во всех типах кластера HDIn
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Использование MapReduce в Hadoop в HDInsight](hadoop/hdinsight-use-mapreduce.md)
+* [Использование MapReduce в Apache Hadoop в HDInsight](hadoop/hdinsight-use-mapreduce.md)
 * [Введение в Azure HDInsight](hadoop/apache-hadoop-introduction.md)

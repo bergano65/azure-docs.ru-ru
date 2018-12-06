@@ -1,10 +1,11 @@
 ---
-title: Пользовательские модули в коллекции решений ИИ Azure | Документация Майкрософт
+title: Пользовательские модули в Коллекции решений ИИ Azure — Студия машинного обучения Azure | Документация Майкрософт
 description: Поиск пользовательских модулей машинного обучения в коллекции решений ИИ Azure.
 services: machine-learning
 documentationcenter: ''
-author: YasinMSFT
-ms.author: yahajiza
+author: ericlicoding
+ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 16037a84-dad0-4a8c-9874-a1d3bd551cf0
@@ -15,14 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/14/2017
-ms.openlocfilehash: fe58b335a029e558ce29871483589908f17c03cd
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.openlocfilehash: a504bcfbbcd70c1d6fc8402d4c232e7e8a5476b0
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51345697"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52313747"
 ---
-# <a name="discover-custom-machine-learning-modules-in-azure-ai-gallery"></a>Поиск пользовательских модулей машинного обучения в коллекции решений ИИ Azure
+# <a name="machine-learning-studio-discover-custom-machine-learning-modules-in-azure-ai-gallery"></a>Студия машинного обучения Azure: поиск пользовательских модулей машинного обучения в Коллекции решений ИИ Azure
 
 В [Коллекции решений ИИ Azure](http://gallery.cortanaintelligence.com) есть несколько [пользовательских модулей](https://gallery.cortanaintelligence.com/customModules), которые расширяют возможности Студии машинного обучения Azure. Вы можете импортировать эти модули и использовать их в экспериментах, чтобы создать еще более сложные решения для прогнозной аналитики.
 

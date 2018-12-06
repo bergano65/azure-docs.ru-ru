@@ -4,7 +4,7 @@ description: Описывает оплату подписок Azure по сче�
 services: ''
 documentationcenter: ''
 author: genlin
-manager: jlian
+manager: jureid
 editor: ''
 tags: billing
 ms.service: billing
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/11/2018
 ms.author: cwatson
-ms.openlocfilehash: 27d84748e932ae438f68ca7b84004c98c26e42d7
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: bea7f0e88a371474db907dd74f08bd74c0e7c9e1
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47393899"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52584372"
 ---
 # <a name="submit-a-request-to-pay-azure-subscription-by-invoice"></a>Отправка запроса на оплату подписки Azure по счету
 
@@ -50,6 +50,6 @@ ms.locfileid: "47393899"
 
 Если в связи с требуемой суммой кредита нужно выполнить проверку кредитоспособности, мы направим вам соответствующее заявление. После подачи заявки для ее обработки потребоваться 5–7 рабочих дней.
 
-## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

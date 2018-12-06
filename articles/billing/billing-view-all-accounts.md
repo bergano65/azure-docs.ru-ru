@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/11/2018
 ms.author: cwatson
-ms.openlocfilehash: 769d810eb20b70a955560e6bf2a5b533ea6e55f0
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: f27b80a99dbe65d628453c5222ef4fcdf7e0f982
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47395531"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52580394"
 ---
 # <a name="view-all-your-billing-accounts-in-azure-portal"></a>Просмотр всех учетных записей выставления счетов на портале Azure  
 
@@ -41,7 +41,6 @@ ms.locfileid: "47395531"
 
     ![Снимок экрана списка учетных записей выставления счетов](./media/billing-view-all-accounts/billing-list-of-accounts.png)
 
- 
-## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если вам нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

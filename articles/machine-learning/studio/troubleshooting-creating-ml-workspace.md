@@ -1,10 +1,11 @@
 ---
-title: Устранение неполадок, связанных с созданием рабочей области машинного обучения и подключением к ней | Документация Майкрософт
-description: Решения для распространенных проблем с созданием рабочей области Машинного обучения Azure и подключением к ней
+title: Устранение неполадок, связанных с созданием рабочей области Студии машинного обучения Azure и подключением к ней | Документация Майкрософт
+description: В этом руководстве приведены решения некоторых проблем, часто возникающих при настройке рабочих областей для Студии машинного обучения Azure.
 services: machine-learning
 documentationcenter: ''
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 1a8aec4b-35f9-44e8-9570-2575b8979ab1
@@ -15,15 +16,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2017
-ms.openlocfilehash: 1d53e13798f24fa6225b0a587dde71b4f34f48fc
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 5e52abeeef7d40ac5594f4edfa2b80ef553081e4
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51243391"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52312075"
 ---
-# <a name="troubleshooting-guide-create-and-connect-to-an-machine-learning-workspace"></a>Руководство по устранению неполадок: создание рабочей области машинного обучения и подключение к ней
-В этом руководстве приведены решения некоторых проблем, часто возникающих при настройке рабочих областей для Машинного обучения Azure.
+# <a name="troubleshooting-guide-create-and-connect-to-an-machine-learning-studio-workspace"></a>Руководство по устранению неполадок. Создание рабочей области Студии машинного обучения и подключение к ней
+В этом руководстве приведены решения некоторых проблем, часто возникающих при настройке рабочих областей для Студии машинного обучения Azure.
 
 [!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
 

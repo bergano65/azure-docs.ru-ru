@@ -1,11 +1,12 @@
 ---
-title: Создание экспериментов на примерах машинного обучения в Azure | Документация Майкрософт
-description: Узнайте, как использовать примеры экспериментов машинного обучения из коллекции для создания экспериментов с использованием коллекции решений Azure AI и Машинного обучения Microsoft Azure.
+title: Создание экспериментов Студии машинного обучения Azure на примерах в Azure | Документация Майкрософт
+description: Узнайте, как использовать примеры экспериментов машинного обучения для создания экспериментов с использованием Коллекции решений ИИ Azure и Студии машинного обучения Azure.
 keywords: machine learning examples, sample experiment, machine learning sample, AI examples
 services: machine-learning
 documentationcenter: ''
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 81e6c1d8-682c-4db3-bfd5-d7bfb1150ff3
@@ -16,12 +17,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/05/2018
-ms.openlocfilehash: f93d0d4e12d97fadb23476afc3199599b3268580
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 568732c5a1d2abbb9f304b624d885b2a3c692706
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46998055"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52306686"
 ---
 # <a name="create-machine-learning-experiments-from-working-examples-in-azure-ai-gallery"></a>Создание экспериментов машинного обучения на основе рабочих примеров в коллекции решений Azure AI
 

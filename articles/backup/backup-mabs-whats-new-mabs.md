@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: adigan; kasinh
-ms.openlocfilehash: 8e80d935bac94f3d4b2380799a1aed256828af75
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: e963f675dfe2a57fc19f3169beeb1d7d4066af93
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51625884"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52315602"
 ---
 # <a name="whats-new-in-microsoft-azure-backup-server"></a>Новые возможности в Microsoft Azure Backup Server
 
@@ -60,6 +60,7 @@ MABS V3 — это полный выпуск, который можно уста
 ## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте, как подготовить сервер или обеспечить защиту рабочей нагрузки:
+- [Known issues in MABS V3](backup-mabs-release-notes-v3.md) (Известные проблемы с MABS V3)
 - [Подготовка к резервному копированию рабочих нагрузок с использованием Azure Backup Server](backup-azure-microsoft-azure-backup.md)
 - [Резервное копирование сервера VMware в Azure](backup-azure-backup-server-vmware.md)
 - [Архивация баз данных SQL Server в Azure с помощью Azure Backup Server](backup-azure-sql-mabs.md)

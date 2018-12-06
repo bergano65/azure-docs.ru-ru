@@ -12,36 +12,34 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 08/20/2018
+ms.date: 11/15/2018
 ms.author: roiyz
-ms.openlocfilehash: 307bdb5fa7a5d14a77c71d0ea40634a55d8507b6
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: e36390bbdc243237c97d605d4721fc1ad2cbe0ea
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42143605"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52498889"
 ---
 # <a name="nvidia-gpu-driver-extension-for-linux"></a>Расширение драйвера GPU NVIDIA для Linux
 
 ## <a name="overview"></a>Обзор
 
-Это расширение устанавливает драйверы GPU NVIDIA на виртуальных машинах серии N для Linux. В зависимости от семейства виртуальных машин расширение устанавливает драйверы CUDA или GRID. При установке драйверов NVIDIA с помощью этого расширения требуется принять условия лицензионного соглашения NVIDIA. Во время установки драйвера виртуальная машина может быть перезагружена для завершения процедуры.
+Это расширение устанавливает драйверы GPU NVIDIA на виртуальных машинах серии N для Linux. В зависимости от семейства виртуальных машин расширение устанавливает драйверы CUDA или GRID. При установке драйверов NVIDIA с помощью этого расширения требуется принять условия [лицензионного соглашения NVIDIA](https://go.microsoft.com/fwlink/?linkid=874330). Во время установки драйвера виртуальная машина может быть перезагружена для завершения процедуры.
 
 Это расширение также доступно для установки драйверов GPU NVIDIA на [виртуальных машинах Windows серии N](hpccompute-gpu-windows.md).
-
-Лицензионное соглашение NVIDIA см. здесь: https://go.microsoft.com/fwlink/?linkid=874330.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
-Это расширение поддерживает следующие операционные системы:
+Это расширение поддерживает указанные ниже дистрибутивы, в зависимости от поддержки драйвера в конкретной версии ОС.
 
 | Дистрибутив | Version (версия) |
 |---|---|
-| Linux: Ubuntu | 16.04 LTS |
-| Linux: Red Hat Enterprise Linux | 7.3, 7.4 |
-| Linux: CentOS | 7.3, 7.4 |
+| Linux: Ubuntu | 16.04 LTS, 18.04 LTS |
+| Linux: Red Hat Enterprise Linux | 7.3, 7.4, 7.5 |
+| Linux: CentOS | 7.3, 7.4, 7.5 |
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
@@ -63,7 +61,7 @@ ms.locfileid: "42143605"
   "properties": {
     "publisher": "Microsoft.HpcCompute",
     "type": "NvidiaGpuDriverLinux",
-    "typeHandlerVersion": "1.1",
+    "typeHandlerVersion": "1.2",
     "autoUpgradeMinorVersion": true,
     "settings": {
     }
@@ -71,14 +69,24 @@ ms.locfileid: "42143605"
 }
 ```
 
-### <a name="property-values"></a>Значения свойств
+### <a name="properties"></a>properties
 
 | ИМЯ | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | версия_API | 2015-06-15 | дата |
 | publisher | Microsoft.HpcCompute | строка |
 | Тип | NvidiaGpuDriverLinux | строка |
-| typeHandlerVersion | 1,1 | int |
+| typeHandlerVersion | 1.2 | int |
+
+### <a name="settings"></a>Параметры
+
+Эти параметры не являются обязательными. По умолчанию ядро не обновляется (если это не требуется для установки драйвера), устанавливается последний поддерживаемый драйвер и набор инструментов CUDA Toolkit (если это применимо).
+
+| ИМЯ | ОПИСАНИЕ | По умолчанию | Допустимые значения | Тип данных |
+| ---- | ---- | ---- | ---- | ---- |
+| updateOS | Обновление ядра, даже если для установки драйвера это не требуется | false | true, false | Логическое |
+| driverVersion | NV: версия драйвера GRID<br> NC/ND: версия набора инструментов CUDA Toolkit. Последние версии драйверов для выбранного набора CUDA Toolkit устанавливаются автоматически. | последняя | GRID: 410.71, 390.75, 390.57, 390.42<br> CUDA: 10.0.130, 9.2.88, 9.1.85 | строка |
+| installCUDA | Установка набора инструментов CUDA Toolkit. Это относится только к виртуальным машинам серии NC/ND. | Да | true, false | Логическое |
 
 
 ## <a name="deployment"></a>Развертывание
@@ -104,7 +112,7 @@ ms.locfileid: "42143605"
   "properties": {
     "publisher": "Microsoft.HpcCompute",
     "type": "NvidiaGpuDriverLinux",
-    "typeHandlerVersion": "1.1",
+    "typeHandlerVersion": "1.2",
     "autoUpgradeMinorVersion": true,
     "settings": {
     }
@@ -122,12 +130,14 @@ Set-AzureRmVMExtension
     -Publisher "Microsoft.HpcCompute" `
     -ExtensionName "NvidiaGpuDriverLinux" `
     -ExtensionType "NvidiaGpuDriverLinux" `
-    -TypeHandlerVersion 1.1 `
+    -TypeHandlerVersion 1.2 `
     -SettingString '{ `
     }'
 ```
 
 ### <a name="azure-cli"></a>Инфраструктура CLI Azure
+
+Ниже показаны примеры Azure Resource Manager и PowerShell, о которых говорилось ранее. Также в них добавлены настраиваемые параметры в качестве примера установки драйвера, отличного от драйвера умолчанию. В частности, обновляется ядро ОС и устанавливается конкретный драйвер версии набора инструментов CUDA Toolkit.
 
 ```azurecli
 az vm extension set `
@@ -135,8 +145,10 @@ az vm extension set `
   --vm-name myVM `
   --name NvidiaGpuDriverLinux `
   --publisher Microsoft.HpcCompute `
-  --version 1.1 `
+  --version 1.2 `
   --settings '{ `
+    "updateOS": true, `
+    "driverVersion": "9.1.85", `
   }'
 ```
 
@@ -165,13 +177,12 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 | Код выхода | Значение | Возможное действие |
 | :---: | --- | --- |
 | 0 | Операция выполнена успешно |
-| 1 | Неправильное использование расширения. | Обратитесь в службу поддержки, предоставив журнал выходных данных выполнения. |
-| 10 | Integration Services в Linux для Hyper-V и Azure недоступны или не установлены. | Проверьте выходные данные lspci. |
-| 11 | Для этого размера виртуальной машины не обнаружен GPU NVIDIA. | Используйте [поддерживаемые размер виртуальной машины и ОС](../linux/n-series-driver-setup.md). |
+| 1 | Неправильное использование расширения | Проверьте выходные данные журнала выполнения |
+| 10 | Службы Integration Services в Linux для Hyper-V и Azure недоступны или не установлены | Проверьте выходные данные lspci |
+| 11 | Для этого размера виртуальной машины не обнаружен драйвер GPU NVIDIA | Используйте [поддерживаемые размер виртуальной машины и ОС](../linux/n-series-driver-setup.md) |
 | 12 | Предложение образа не поддерживается |
 | 13 | Размер виртуальной машины не поддерживается | Для развертывания используйте виртуальную машину серии N |
-| 14 | Не удалось выполнить операцию. | |
-| 21 | Сбой обновления в Ubuntu. | Проверьте выходные данные команды "sudo apt-get update". |
+| 14 | Не удалось выполнить операцию. | Проверьте выходные данные журнала выполнения |
 
 
 ### <a name="support"></a>Поддержка

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/20/2018
 ms.author: barclayn
-ms.openlocfilehash: e7bb7f0c4cb63390b91012e071589611991a2866
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.openlocfilehash: 4bd2b72596912d968ad6fc323ce32e620336d932
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49068338"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52316996"
 ---
 # <a name="windows-defender-advanced-threat-protection-with-azure-security-center"></a>Интеграция Advanced Threat Protection в Защитнике Windows с центром безопасности Azure
 
@@ -99,12 +99,12 @@ ms.locfileid: "49068338"
 
 3. Если команда выполнена успешно, на панели мониторинга центра безопасности Azure и на портале ATP в Защитнике Windows появится новое оповещение. Это оповещение может отобразиться через несколько минут.
 
-4. Чтобы просмотреть оповещение в центре безопасности, перейдите в раздел **Оповещения системы безопасности** >  **Suspicious Powershell CommandLine** (Подозрительная командная строка PowerShell).
+4. Чтобы просмотреть оповещение в центре безопасности, перейдите в раздел **Оповещения системы безопасности** >  **Suspicious Powershell CommandLine** (Подозрительная командная строка PowerShell).
 
 5. В окне исследования щелкните ссылку, чтобы перейти на портал ATP в Защитнике Windows.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Настройка политик безопасности в центре безопасности Azure](security-center-policies.md) — сведения о настройке политик безопасности для подписок и групп ресурсов Azure.
+- [Настройка политик безопасности в центре безопасности Azure](security-center-azure-policy.md) — сведения о настройке политик безопасности для подписок и групп ресурсов Azure.
 - [Управление рекомендациями по безопасности в центре безопасности Azure](security-center-recommendations.md) — сведения об использовании рекомендаций для защиты ресурсов Azure.
 - [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md) — узнайте, как отслеживать работоспособность ресурсов Azure.

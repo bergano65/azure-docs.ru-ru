@@ -14,20 +14,26 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/22/2017
 ms.author: vturecek
-ms.openlocfilehash: 6bf7ea90bb5351411984110fd8fb05c2f8cb0650
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 01b67cc0c20710fcf7c9a072e0ba3baaf286852a
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34205167"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52423649"
 ---
 # <a name="service-fabric-with-azure-api-management-overview"></a>Общие сведения о Service Fabric со службой управления API Azure
 
-Обычно, облачным приложениям требуется интерфейсный шлюз, который предоставляет единую точку передачи входящего трафика пользователей, устройств или других приложений. В Service Fabric в качестве шлюза может выступать любая служба без отслеживания состояния, например [приложение ASP.NET Core](service-fabric-reliable-services-communication-aspnetcore.md), или другая служба, предназначенная для обработки входящего трафика, например [концентраторы событий](https://docs.microsoft.com/azure/event-hubs/), [Центр Интернета вещей](https://docs.microsoft.com/azure/iot-hub/) или [служба управления API Azure](https://docs.microsoft.com/azure/api-management/).
+Обычно, облачным приложениям требуется интерфейсный шлюз, который предоставляет единую точку передачи входящего трафика пользователей, устройств или других приложений. В Service Fabric в качестве шлюза может выступать любая служба без отслеживания состояния, например [приложение ASP.NET Core](service-fabric-reliable-services-communication-aspnetcore.md), или другая служба, предназначенная для обработки входящего трафика, например [Центры событий](https://docs.microsoft.com/azure/event-hubs/), [Центр Интернета вещей](https://docs.microsoft.com/azure/iot-hub/) или [служба управления API Azure](https://docs.microsoft.com/azure/api-management/).
 
 Эта статья содержит вводную информацию об использовании службы управления API Azure в качестве шлюза к приложениям Service Fabric. Служба управления API непосредственно интегрируется с Service Fabric. Это позволяет публиковать интерфейсы API с широким набором правил маршрутизации к внутренним службам Service Fabric. 
 
+## <a name="availability"></a>Доступность
+
+> [!IMPORTANT]
+> Эта функция доступна в ценовой категории **Премиум** и **Разработка** управления API, так как необходима поддержка виртуальной сети.
+
 ## <a name="architecture"></a>Архитектура
+
 Общая архитектура Service Fabric основана на одностраничном веб-приложении, которое выполняет HTTP-вызовы к внутренним службам, предоставляющим API-интерфейсы HTTP. Пример такой архитектуры см. в статье [Service Fabric Getting Started Sample](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started) (Пример приложения для начала работы с Service Fabric).
 
 В рамках этого сценария в качестве шлюза к приложению Service Fabric используется веб-служба без отслеживания состояния. При этом подходе вам потребуется написать веб-службу с поддержкой проксирования HTTP-запросов к внутренним службам, как показано на следующей схеме:

@@ -1,11 +1,12 @@
 ---
-title: Использование линейной регрессии в машинном обучении | Документация Майкрософт
+title: Использование линейной регрессии в Студии машинного обучения Azure | Документация Майкрософт
 description: Сравнение моделей линейной регрессии в Excel и Студии машинного обучения Azure
 metakeywords: ''
 services: machine-learning
 documentationcenter: ''
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 417ae6ab-de4f-4bdd-957a-d96133234656
@@ -16,14 +17,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2017
-ms.openlocfilehash: 162fc96c44db3c92103e12922de14b543daec9bf
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: d7ff9e157f776ebf683846652fe4788fc35e19af
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34836231"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52311064"
 ---
-# <a name="using-linear-regression-in-azure-machine-learning"></a>Использование линейной регрессии в Машинном обучении Azure
+# <a name="using-linear-regression-in-azure-machine-learning-studio"></a>Использование линейной регрессии в Студии машинного обучения Azure
 > *Кейт Барони* (Kate Baroni) и *Бен Боутмен* (Ben Boatman) — архитекторы корпоративных решений в Научно-инновационном центре анализа данных корпорации Майкрософт. В этой статье они описывают свой опыт миграции существующего набора для регрессионного анализа в облачное решение с помощью Машинного обучения Azure. 
 > 
 > 

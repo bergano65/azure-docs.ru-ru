@@ -9,16 +9,16 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/05/2018
-ms.openlocfilehash: 229c3eff0db4f3689f4e2e3fd457410ecccb8ba7
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 86d64ef0e9abab4368569c2f7c5ccd633660085c
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43041528"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52583219"
 ---
-# <a name="overview-of-spark-streaming"></a>Общие сведения о потоковой передаче Spark
+# <a name="overview-of-apache-spark-streaming"></a>Общие сведения о потоковой передаче Apache Spark
 
-Потоковая передача Spark обеспечивает обработку потока данных в кластерах HDInsight Spark. При этом гарантируется, что любое входящее событие обрабатывается всего один раз, даже если происходит сбой узла. Потоковая передача Spark — это долго выполняющееся задание, которое получает входные данные из разнообразных источников, включая Центры событий Azure, Центр Интернета вещей, Kafka, Flume, Twitter, ZeroMQ, незащищенные сокеты TCP, либо из файловых систем мониторинга HDFS. В отличие от процесса на основе исключительно событий потоковая передача Spark подразумевает объединение входных данных в пакеты, упорядоченное по временным промежуткам, например, 2 секунды, а затем преобразует каждый пакет данных с помощью операций сопоставления, уменьшения, соединения и извлечения. Затем поток Spark записывает преобразованные данные в файловые системы, базы данных, панели мониторинга и консоль.
+Потоковая передача [Apache Spark](https://spark.apache.org/) обеспечивает обработку потока данных в кластерах HDInsight Spark. При этом гарантируется, что любое входящее событие обрабатывается всего один раз, даже если происходит сбой узла. Потоковая передача Spark — это долго выполняющееся задание, которое получает входные данные из различных источников, включая Центры событий Azure, Центр Интернета вещей, [Apache Kafka](https://kafka.apache.org/), [Apache Flume](https://flume.apache.org/), Twitter, [ZeroMQ](http://zeromq.org/), незащищенные сокеты TCP, либо из файловых систем мониторинга [Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html). В отличие от процесса на основе исключительно событий потоковая передача Spark подразумевает объединение входных данных в пакеты, упорядоченное по временным промежуткам, например, 2 секунды, а затем преобразует каждый пакет данных с помощью операций сопоставления, уменьшения, соединения и извлечения. Затем поток Spark записывает преобразованные данные в файловые системы, базы данных, панели мониторинга и консоль.
 
 ![Потоковая обработка с помощью HDInsight и потоковой передачи Spark](./media/apache-spark-streaming-overview/hdinsight-spark-streaming.png)
 
@@ -86,7 +86,7 @@ ms.locfileid: "43041528"
     ssc.start()            
     ssc.awaitTermination()
 
-Дополнительные сведения об API-интерфейсе потоковой передачи Spark, а также источниках событий, преобразованиях и операциях вывода, которые он поддерживает, см. в [руководстве по программированию потоковой передачи Spark](https://people.apache.org/~pwendell/spark-releases/latest/streaming-programming-guide.html).
+Дополнительные сведения об API-интерфейсе потоковой передачи Spark, а также источниках событий, преобразованиях и операциях вывода, которые он поддерживает, см. в [руководстве по программированию потоковой передачи Apache Spark](https://people.apache.org/~pwendell/spark-releases/latest/streaming-programming-guide.html).
 
 Следующий пример приложения является автономным, поэтому его можно запустить в [блокноте Jupyter](apache-spark-jupyter-notebook-kernels.md). В этом примере создается макет источника данных в классе DummySource, который выводит значение счетчика и текущее время в миллисекундах каждые пять секунд. Для нового объекта StreamingContext интервал пакетной обработки составляет 30 секунд. Каждый раз при создании пакета приложение потоковой передачи проверяет полученный набор RDD, преобразует его в кадр данных Spark и создает для этого кадра данных временную таблицу.
 
@@ -216,5 +216,5 @@ ms.locfileid: "43041528"
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md)
-* [Руководство по программированию потоковой передачи Spark](https://people.apache.org/~pwendell/spark-releases/latest/streaming-programming-guide.html)
+* [Руководство по программированию потоковой передачи Apache Spark](https://people.apache.org/~pwendell/spark-releases/latest/streaming-programming-guide.html)
 * [Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](apache-spark-livy-rest-interface.md)

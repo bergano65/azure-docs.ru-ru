@@ -9,20 +9,20 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/09/2018
-ms.openlocfilehash: 5aaf169418962c08f5f45413f53d4c92588a98bd
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: f8c296fddaafb8364cc5e0f07b54d850606322d9
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43041488"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52581431"
 ---
-# <a name="run-spark-from-the-spark-shell"></a>Запуск Spark из оболочки Spark
+# <a name="run-apache-spark-from-the-spark-shell"></a>Запуск Apache Spark из оболочки Spark
 
-Интерактивная оболочка Spark предоставляет среду REPL (цикл чтения, выполнения и вывода) для поочередного выполнения команд Spark и просмотра результатов. Этот процесс применяется при развертывании и отладке. Spark предоставляет оболочки для каждого из поддерживаемых языков: Scala, Python и R.
+Интерактивная оболочка [Apache Spark](https://spark.apache.org/) предоставляет среду REPL (цикл чтения, выполнения и вывода) для поочередного выполнения команд Spark и просмотра результатов. Этот процесс применяется при развертывании и отладке. Spark предоставляет оболочки для каждого из поддерживаемых языков: Scala, Python и R.
 
-## <a name="get-to-a-spark-shell-with-ssh"></a>Доступ к оболочке Spark по протоколу SSH
+## <a name="get-to-an-apache-spark-shell-with-ssh"></a>Доступ к оболочке Apache Spark по протоколу SSH
 
-Получите доступ к оболочке Spark в HDInsight, подключившись к первичному головному узлу кластера по протоколу SSH:
+Получите доступ к оболочке Apache Spark в HDInsight, подключившись к первичному головному узлу кластера по протоколу SSH:
 
      ssh <sshusername>@<clustername>-ssh.azurehdinsight.net
 
@@ -40,7 +40,7 @@ ms.locfileid: "43041488"
 
 Дополнительные сведения об использовании SSH для подключения к HDInsight см. в разделе [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-## <a name="run-a-spark-shell"></a>Запуск оболочки Spark
+## <a name="run-an-apache-spark-shell"></a>Запуск оболочки Apache Spark
 
 Spark предоставляет оболочки для Scala (spark-shell), Python (pyspark) и R (sparkR). В сеансе SSH на головном узле кластера HDInsight введите одну из следующих команд:
 
@@ -69,7 +69,7 @@ Spark предоставляет оболочки для Scala (spark-shell), Py
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Вводную информацию см. в статье [Общие сведения о Spark в Azure HDInsight](apache-spark-overview.md).
+- Вводную информацию см. в статье [Общие сведения об Apache Spark в Azure HDInsight](apache-spark-overview.md).
 - Сведения о работе со SparkSQL и кластерами Spark см. в статье [Создание кластера Apache Spark в Azure HDInsight](apache-spark-jupyter-spark-sql.md).
-- Сведения о создании приложений для обработки потоковых данных с помощью Spark см. в статье [Overview of Spark Streaming](apache-spark-streaming-overview.md) (Обзор потоковой передачи Spark).
+- Сведения о создании приложений для обработки потоковых данных с помощью Spark см. в статье [Общие сведения о потоковой передаче Apache Spark](apache-spark-streaming-overview.md).
 

@@ -1,5 +1,5 @@
 ---
-title: Экспорт данных безопасности Azure в SIEM. Конфигурация конвейера [предварительная версия] | Документация Майкрософт
+title: Экспорт данных безопасности Azure в SIEM. Конфигурация конвейера | Документация Майкрософт
 description: В этой статье описывается процедура передачи журналов центра безопасности Azure в SIEM.
 services: security-center
 documentationcenter: na
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/01/2018
+ms.date: 11/26/2018
 ms.author: barclayn
-ms.openlocfilehash: aede60a729fe9c0594ded485e189c0b467e34271
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 4cc9478197b39198a94ace1cbefab81de3cdb32b
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44298239"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52306732"
 ---
-# <a name="azure-security-data-export-to-siem--pipeline-configuration-preview"></a>Экспорт данных безопасности Azure в SIEM. Конфигурация конвейера [предварительная версия]
+# <a name="azure-security-data-export-to-siem-pipeline-configuration"></a>Экспорт данных безопасности Azure в SIEM. Конфигурация конвейера
 
 В этом документе описана процедура экспорта данных безопасности из центра безопасности Azure в SIEM.
 
@@ -37,11 +37,11 @@ ms.locfileid: "44298239"
 
 ## <a name="what-is-the-azure-security-data-exposed-to-siem"></a>Какие данные безопасности Azure передаются в SIEM?
 
-В этой предварительной версии предоставляются [оповещения системы безопасности](../security-center/security-center-managing-and-responding-alerts.md). В будущих выпусках мы дополним их рекомендациями по безопасности.
+В этой версии предоставляются [оповещения системы безопасности](../security-center/security-center-managing-and-responding-alerts.md). В будущих выпусках мы дополним их рекомендациями по безопасности.
 
-## <a name="how-to-setup-the-pipeline"></a>Как можно настроить конвейер? 
+## <a name="how-to-setup-the-pipeline"></a>Как можно настроить конвейер
 
-### <a name="create-an-event-hub"></a>Создание концентратора событий 
+### <a name="create-an-event-hub"></a>Создание концентратора событий
 
 Вначале следует [создать пространство имен Центров событий](../event-hubs/event-hubs-create.md). Это пространство имен и концентратор событий — место назначения всех ваших данных мониторинга.
 

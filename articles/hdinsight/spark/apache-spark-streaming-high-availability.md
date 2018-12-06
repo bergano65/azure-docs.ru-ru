@@ -9,16 +9,16 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/26/2018
-ms.openlocfilehash: 8f680b60a8f457e1a8619ac044798ff02df15694
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 9898a56991a44f3ac87fde4c34676943b1ab8341
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51013655"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52581907"
 ---
-# <a name="create-high-availability-spark-streaming-jobs-with-yarn"></a>Создание высокодоступных заданий потоковой передачи Spark в YARN
+# <a name="create-high-availability-apache-spark-streaming-jobs-with-yarn"></a>Создание в YARN заданий потоковой передачи Apache Spark с высоким уровнем доступности
 
-Потоковая передача Spark дает возможность реализовывать масштабируемые отказоустойчивые приложения с высокой пропускной способностью для обработки потоков данных. Вы можете подключить приложения потоковой передачи Spark в кластере HDInsight Spark к ряду источников данных, таких как Центры событий Azure, Центр Интернета вещей Azure, Kafka, Flume, Twitter, ZeroMQ, незащищенные сокеты TCP. Можно также отслеживать изменения в файловой системе HDFS. Потоковая передача Spark поддерживает отказоустойчивость с гарантией того, что любое указанное событие обрабатывается один раз даже в случае сбоя узла.
+Потоковая передача [Apache Spark](https://spark.apache.org/) дает возможность реализовывать масштабируемые отказоустойчивые приложения с высокой пропускной способностью для обработки потоков данных. Вы можете подключить приложения потоковой передачи Spark в кластере HDInsight Spark к ряду источников данных, таких как Центры событий Azure, Центр Интернета вещей Azure, [Apache Kafka](https://kafka.apache.org/), [Apache Flume](https://flume.apache.org/), Twitter, [ZeroMQ](http://zeromq.org/), незащищенные сокеты TCP. Можно также отслеживать изменения в файловой системе [Apache Hadoop HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html). Потоковая передача Spark поддерживает отказоустойчивость с гарантией того, что любое указанное событие обрабатывается один раз даже в случае сбоя узла.
 
 Потоковая передача Spark создает долго выполняющиеся задания, в течение которых можно применить преобразования к данным, а затем передать результаты в файловые системы, базы данных, панели мониторинга и консоль. При такой передаче выполняется обработка микропакетов данных — сначала выполняется сбор пакета событий через определенный интервал времени, а затем этот пакет отправляется на обработку и формирование выходных результатов. Интервалы времени для обработки пакета обычно определяются в долях секунды.
 
@@ -54,7 +54,7 @@ ms.locfileid: "51013655"
 
 Чтобы создать приложение, обрабатывающее каждое событие только один раз, нужно учитывать, как все системные точки отказа перезапускаются после сбоя, а также как избежать потери данных. Семантика обработки только один раз требует, чтобы никакие данные не терялись в какой-либо точке, а обработка сообщений перезапускалась, независимо от того, где произошел сбой. Дополнительные сведения см. в статье [Создание заданий потоковой передачи Spark со строго однократной обработкой событий](apache-spark-streaming-exactly-once.md).
 
-## <a name="spark-streaming-and-yarn"></a>Потоковая передача Spark и YARN
+## <a name="spark-streaming-and-apache-hadoop-yarn"></a>Потоковая передача Spark и Apache Hadoop YARN
 
 В HDInsight работа кластера координируется согласователем *Yet Another Resource Negotiator* (YARN). Проектирование заданий потоковой передачи Spark высокого уровня доступности включает методы для потоковой передачи Spark и компонентов YARN.  Ниже приведен пример конфигурации, в которой используется YARN. 
 
@@ -120,8 +120,8 @@ ms.locfileid: "51013655"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Общие сведения о потоковой передаче Spark](apache-spark-streaming-overview.md)
-* [Создание заданий потоковой передачи Spark со строго однократной обработкой событий](apache-spark-streaming-exactly-once.md)
-* [Long-running Spark Streaming Jobs on YARN](http://mkuthan.github.io/blog/2016/09/30/spark-streaming-on-yarn/) (Долго выполняющиеся задания потоковой передачи Spark в YARN) 
+* [Общие сведения о потоковой передаче Apache Spark](apache-spark-streaming-overview.md)
+* [Создание заданий потоковой передачи Apache Spark со строго однократной обработкой событий](apache-spark-streaming-exactly-once.md)
+* [Long-running Apache Spark Streaming Jobs on YARN](http://mkuthan.github.io/blog/2016/09/30/spark-streaming-on-yarn/) (Долго выполняющиеся задания потоковой передачи Apache Spark в YARN) 
 * [Structured Streaming: Fault Tolerant Semantics](http://spark.apache.org/docs/2.1.0/structured-streaming-programming-guide.html#fault-tolerance-semantics) (Структурированная потоковая передача: отказоустойчивая семантика)
 * [Discretized Streams: A Fault-Tolerant Model for Scalable Stream Processing](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2012/EECS-2012-259.pdf) (Дискретизированные потоки: отказоустойчивая модель для обработки масштабируемого потока)

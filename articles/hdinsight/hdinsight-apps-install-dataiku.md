@@ -9,16 +9,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: ashish
-ms.openlocfilehash: feb94f450621e999da01f77f0b5550258377d6c9
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 4ba1e325ec978114016682aaee35be35a20ec028
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51038269"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52499126"
 ---
 # <a name="install-published-application---dataiku-dds"></a>Установка опубликованного приложения Dataiku DDS
 
-В этой статье описывается, как установить и запустить опубликованное приложение Apache Hadoop [Dataiku DDS](https://www.dataiku.com/) в Azure HDInsight. Обзор платформы приложений HDInsight и список доступных опубликованных приложений независимых поставщиков программного обеспечения приведены в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md). Инструкции по установке собственного приложения см. в статье [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md).
+В этой статье описывается, как установить и запустить опубликованное приложение [Apache Hadoop](https://hadoop.apache.org/) [Dataiku DDS](https://www.dataiku.com/) в Azure HDInsight. Обзор платформы приложений HDInsight и список доступных опубликованных приложений независимых поставщиков программного обеспечения приведены в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md). Инструкции по установке собственного приложения см. в статье [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md).
 
 ## <a name="about-dataiku-dss"></a>Сведения о Dataiku DDS
 
@@ -26,9 +26,9 @@ Dataiku [Data Science Studio (DSS)](https://www.dataiku.com/dss/features/connect
 
 С помощью DSS можно полностью реализовать аналитическое решение, начиная с приема, подготовки и обработки данных. Решение DSS также может включать обучение и применение моделей машинного обучения, визуализацию, а затем их ввод в эксплуатацию.
 
-Вы можете установить DSS в HDInsight с помощью кластеров Hadoop или Spark, а также при создании новых кластеров или на имеющиеся работающие кластеры. DSS также поддерживает использование хранилища BLOB-объектов Azure в качестве соединителя для чтения данных.
+Вы можете установить DSS в HDInsight с помощью кластеров [Apache Hadoop](https://hadoop.apache.org/) или [Apache Spark](https://spark.apache.org/), а также при создании новых кластеров или на имеющиеся работающие кластеры. DSS также поддерживает использование хранилища BLOB-объектов Azure в качестве соединителя для чтения данных.
 
-Вы можете использовать DSS для сборки проектов, которые будут создавать задания MapReduce или Spark. Эти задания выполняются как обычные задания MapReduce или Spark на HDInsight, поэтому кластер можно масштабировать по запросу.
+Вы можете использовать DSS для сборки проектов, которые будут создавать задания [Apache Hadoop MapReduce](https://hadoop.apache.org/docs/r1.2.1/mapred_tutorial.html) или Spark. Эти задания выполняются как обычные задания MapReduce или Spark на HDInsight, поэтому кластер можно масштабировать по запросу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,7 +40,7 @@ Dataiku [Data Science Studio (DSS)](https://www.dataiku.com/dss/features/connect
 
 ## <a name="install-the-dataiku-dss-published-application"></a>Установка опубликованного приложения Dataiku DSS
 
-Пошаговые инструкции по установке этого и других доступных приложений независимых поставщиков программного обеспечения см. в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md).
+Пошаговые инструкции по установке этого и других доступных приложений независимых поставщиков программного обеспечения см. в статье [Установка сторонних приложений Apache Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md).
 
 ## <a name="launch-dataiku-dss"></a>Запуск Dataiku DSS
 

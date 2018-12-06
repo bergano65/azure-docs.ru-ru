@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/23/2018
+ms.date: 11/27/2018
 ms.author: ergreenl
-ms.openlocfilehash: 0dc4019d2b3f33bfc92d73aeadadc0c64ecaab3b
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: cac1814057b5adbb75d9484b332bd3f8aaa31a18
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50158522"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52446864"
 ---
 # <a name="enable-azure-active-directory-domain-services-using-the-azure-portal"></a>Включение доменных служб Azure Active Directory с помощью портала Azure.
 
@@ -42,6 +42,22 @@ ms.locfileid: "50158522"
 
 3. Закончив, нажмите кнопку **ОК** для перехода на страницу **Сводка** мастера.
 
+## <a name="configure-synchronization"></a>Настройка синхронизации
+
+Доменные службы Azure AD позволяют либо выполнять полную синхронизацию всех пользователей и групп, доступных в Azure AD, либо выбрать синхронизацию в области, чтобы выполнять синхронизацию только с определенными группами. Если использовать полную синхронизацию, в дальнейшем **нельзя** будет выбрать синхронизацию в области. Дополнительные сведения о синхронизации в области в доменных службах Azure AD см. в [этой статье](active-directory-ds-scoped-synchronization.md).
+
+### <a name="full-synchronization"></a>Полная синхронизация
+
+1. Чтобы выполнить полную синхронизацию, просто нажмите кнопку "ОК" в нижней части экрана, так как этот параметр выбран по умолчанию.
+    ![Полная синхронизация](./media\active-directory-domain-services-admin-guide\create-sync-all.PNG)
+
+### <a name="scoped-synchronization"></a>Синхронизация в области
+
+1. Переключите кнопку на синхронизацию в области. Отобразится страница выбора групп. На этой странице можно увидеть, какие группы уже выбраны для синхронизации с управляемым доменом.
+    ![Синхронизация в области](media\active-directory-domain-services-admin-guide\create-sync-scoped.PNG)
+2. Щелкните **Выбор групп** на верхней панели навигации. Сбоку появится всплывающее окно выбора групп. Оно позволяет выбрать любые дополнительные группы для синхронизации с доменными службами Azure AD. По окончании нажмите кнопку **Выбрать**, чтобы закрыть окно выбора групп и добавить эти группы в список.
+    ![Выбор групп для синхронизации в области](media\active-directory-domain-services-admin-guide\create-sync-scoped-groupselect.PNG)
+3. Нажмите **OK**, чтобы перейти к странице сводки.
 
 ## <a name="deploy-your-managed-domain"></a>Развертывание управляемого домена
 

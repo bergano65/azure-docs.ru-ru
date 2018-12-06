@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/28/2017
 ms.author: apimpm
-ms.openlocfilehash: 803fa89145d3a38b2df34666754fe8949a74eb53
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: a36ad31531e41782f5be457450737a74f476c543
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51262341"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52584882"
 ---
 # <a name="api-management-advanced-policies"></a>Расширенные политики в службе управления API
 В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](https://go.microsoft.com/fwlink/?LinkID=398186).
@@ -384,7 +384,7 @@ status code and media type. If no example or schema found, the content is empty.
 |Атрибут|ОПИСАНИЕ|Обязательно|значение по умолчанию|
 |---------------|-----------------|--------------|--------------|
 |status-code|Указывает код состояния ответа и позволяет выбрать соответствующий пример или схему.|Нет |200|
-|content-type|Указывает значение заголовка ответа `Content-Type` и позволяет выбрать соответствующий пример или схему.|Нет |None|
+|content-type|Указывает значение заголовка ответа `Content-Type` и позволяет выбрать соответствующий пример или схему.|Нет |Нет|
 
 ### <a name="usage"></a>Использование
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
@@ -876,7 +876,7 @@ status code and media type. If no example or schema found, the content is empty.
 
 ```xml
 
-<trace source="arbitrary string literal"/>
+<trace source="arbitrary string literal">
     <!-- string expression or literal -->
 </trace>
 

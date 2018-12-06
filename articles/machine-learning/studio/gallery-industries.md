@@ -1,9 +1,9 @@
 ---
-title: Решения для определенных отраслей в коллекции решений ИИ Azure | Документация Майкрософт
-description: Поиск решений для определенных отраслей в коллекции решений ИИ Azure.
+title: Отраслевые решения Коллекции решений ИИ Azure — Студия машинного обучения Azure | Документация Майкрософт
+description: Раздел "Отрасли" в Коллекция решений ИИ Azure объединяет различные ресурсы, относящиеся к таким отраслям, как розничная торговля, производство, банковское дело и здравоохранение.
 services: machine-learning
 documentationcenter: ''
-author: garyericson
+author: ericlicoding
 manager: jhubbard
 editor: cgronlun
 ms.assetid: fd2ecf9a-ff76-4a0f-8d68-7f762249648c
@@ -14,13 +14,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
-ms.author: garye
-ms.openlocfilehash: d64395314f73c5d359b30c15ef11bfd3078e068f
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.custom: (previous ms.author=garye, author=garyericson)
+ms.author: amlstudiodocs
+ms.openlocfilehash: 760f47bf42be32201eea86748d69875b0bf04ce4
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51346309"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52317404"
 ---
 # <a name="discover-industry-specific-solutions-in-the-azure-ai-gallery"></a>Поиск решений для определенных отраслей в коллекции решений ИИ Azure
 

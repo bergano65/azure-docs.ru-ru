@@ -1,10 +1,11 @@
 ---
-title: Повторное обучение новой веб-службы машинного обучения Azure с помощью PowerShell | Документация Майкрософт
+title: Переобучение новой веб-службы Студии машинного обучения Azure с помощью PowerShell | Документация Майкрософт
 description: Узнайте, как с помощью командлетов управления PowerShell для машинного обучения осуществить программное переобучение модели и обновить веб-службу так, чтобы она использовала заново обученную модель в машинном обучении Azure.
 services: machine-learning
 documentationcenter: ''
-author: YasinMSFT
-ms.author: yahajiza
+author: ericlicoding
+ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 3953a398-6174-4d2d-8bbd-e55cf1639415
@@ -15,14 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/28/2017
-ms.openlocfilehash: abef73a477355d89236b1f62cffc1f3d05ba03d0
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 59d12ae91f8c75ab0fdd2058057cc8de158897e7
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51687237"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52314190"
 ---
-# <a name="retrain-a-new-resource-manager-based-web-service-using-the-machine-learning-management-powershell-cmdlets"></a>Переобучение нового экземпляра Resource Manager с помощью командлетов PowerShell для управления машинным обучением
+# <a name="retrain-a-new-resource-manager-based-web-service-using-the-machine-learning-studio-management-powershell-cmdlets"></a>Переобучение нового экземпляра Resource Manager с помощью командлетов PowerShell для управления Студией машинного обучения Azure
 При переобучении новой веб-службы следует обновить определение прогнозной веб-службы, чтобы оно ссылалось на новую обученную модель.
 
 ## <a name="prerequisites"></a>Предварительные требования

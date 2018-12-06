@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: 212e7ea7bb2ffea63c7ba210195df0da38aa8f0a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 36b64912eb3393ad496d04ff656bed5b0c41566c
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "22983789"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52444773"
 ---
 # <a name="azure-api-management-template-resources"></a>Ресурсы шаблонов управления API Azure
 Служба управления API Azure предоставляет следующие типы ресурсов для использования в шаблонах портала разработчика:  
@@ -27,6 +27,8 @@ ms.locfileid: "22983789"
 -   [строковые ресурсы](#strings);  
   
 -   [ресурсы глифов](#glyphs).  
+
+[!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
 ##  <a name="strings"></a> Строковые ресурсы  
  Служба управления API предусматривает множество строковых ресурсов, которые можно использовать на портале разработчика. Эти ресурсы переведены на все языки, поддерживаемые службой управления API. В наборе шаблонов по умолчанию эти ресурсы используются для заголовков страниц, меток и любых константных строк, отображаемых на портале разработчика. Чтобы использовать строковый ресурс в шаблонах, укажите префикс строкового ресурса, а затем имя строки, как показано в следующем примере.  
@@ -145,7 +147,7 @@ ms.locfileid: "22983789"
 |PagerButtonLabelLast|Последний|  
 |PagerButtonLabelNext|Далее|  
 |PagerButtonLabelPrevious|Предыдущий|  
-|PagerLabelPageNOfM|Стр. {0} из {1}|  
+|PagerLabelPageNOfM|Страница {0} из {1}|  
 |PasswordTooShort|Пароль слишком короткий|  
 |EmailAsPassword|Не используйте адрес электронной почты в качестве пароля|  
 |PasswordSameAsUserName|Пароль не может содержать имя пользователя|  
@@ -161,20 +163,20 @@ ms.locfileid: "22983789"
   
 |ИМЯ|текст|  
 |----------|----------|  
-|WebDocumentationInvalidHeaderErrorMessage|Недопустимый заголовок "{0}"|  
+|WebDocumentationInvalidHeaderErrorMessage|Недопустимый заголовок {0}|  
 |WebDocumentationInvalidRequestErrorMessage|Недопустимый URL-адрес запроса|  
 |TextboxLabelAccessToken|Маркер доступа*|  
-|DropdownOptionPrimaryKeyFormat|Primary-{0}|  
-|DropdownOptionSecondaryKeyFormat|Secondary-{0}|  
+|DropdownOptionPrimaryKeyFormat|Основной — {0}|  
+|DropdownOptionSecondaryKeyFormat|Дополнительный — {0}|  
 |WebDocumentationSubscriptionKeyText|Ваш ключ подписки|  
 |WebDocumentationTemplatesAddHeaders|Добавьте необходимые заголовки HTTP|  
 |WebDocumentationTemplatesBasicAuthSample|Пример базовой авторизации|  
 |WebDocumentationTemplatesCurlForBasicAuth|Для использования базовой авторизации: --user {имя_пользователя}:{пароль}|  
 |WebDocumentationTemplatesCurlValuesForPath|Укажите значения для параметров пути (отображаются как {...}), ключ подписки и значения для параметров запроса|  
 |WebDocumentationTemplatesDeveloperKey|Укажите свой ключ подписки|  
-|WebDocumentationTemplatesJavaApache|В этом примере используется клиент HTTP Apache из компонентов HTTP (http://hc.apache.org/httpcomponents-client-ga/)|  
+|WebDocumentationTemplatesJavaApache|В этом примере используется HTTP-клиент Apache от HTTP Components (http://hc.apache.org/httpcomponents-client-ga/)|  
 |WebDocumentationTemplatesOptionalParams|Укажите значения для необязательных параметров при необходимости|  
-|WebDocumentationTemplatesPhpPackage|В этом примере используется пакет HTTP_Request2 (дополнительные сведения: http://pear.php.net/package/HTTP_Request2)|  
+|WebDocumentationTemplatesPhpPackage|В этом примере используется пакет HTTP_Request2 (см. дополнительные сведения: http://pear.php.net/package/HTTP_Request2)|  
 |WebDocumentationTemplatesPythonValuesForPath|Укажите значения для параметров пути (отображаются как {...}) и текст запроса при необходимости|  
 |WebDocumentationTemplatesRequestBody|Укажите текст запроса|  
 |WebDocumentationTemplatesRequiredParams|Укажите значения для следующих обязательных параметров|  
@@ -273,7 +275,7 @@ ms.locfileid: "22983789"
 |OAuth2TokenType_ImplicitGrant_AuthorizationResponse|Обязательный параметр. Тип выдаваемого маркера.|  
 |OAuth2TokenType_ResourceOwnerPasswordCredentialsGrant_TokenResponse|Обязательный параметр. Тип выдаваемого маркера.|  
 |OAuth2UserName_ResourceOwnerPasswordCredentialsGrant_TokenRequest|Обязательный параметр. Имя пользователя владельца ресурса.|  
-|OAuth2UnsupportedTokenType|Тип маркера "{0}" не поддерживается|  
+|OAuth2UnsupportedTokenType|Тип маркера {0} не поддерживается.|  
 |OAuth2InvalidState|Недопустимый ответ из сервера авторизации|  
 |OAuth2GrantType_AuthorizationCode|Код авторизации|  
 |OAuth2GrantType_Implicit|Неявный|  
@@ -283,7 +285,7 @@ ms.locfileid: "22983789"
 |WebDocumentation400Code|400 (недопустимый запрос)|  
 |OAuth2SendingMethod_AuthHeader|Заголовок авторизации|  
 |OAuth2SendingMethod_QueryParam|Параметр запроса|  
-|OAuth2AuthorizationServerGeneralException|Произошла ошибка при авторизации доступа через {0}.|  
+|OAuth2AuthorizationServerGeneralException|Произошла ошибка при авторизации доступа с использованием {0}.|  
 |OAuth2AuthorizationServerCommunicationException|Не удалось установить подключение HTTP к серверу авторизации или оно неожиданно закрыто.|  
 |WebDocumentationOAuth2GeneralErrorMessage|Произошла непредвиденная ошибка.|  
 |AuthorizationServerCommunicationException|Произошло исключение взаимодействия с сервером авторизации. Обратитесь к администратору.|  
@@ -303,7 +305,7 @@ ms.locfileid: "22983789"
 |SectionHeadingRequestHeaders|Заголовки запросов|  
 |FormLabelSubtextOptional|необязательный|  
 |SectionHeadingCodeSamples|Примеры кода|  
-|TextblockOpenidConnectHeaderDescription|Маркер идентификатора OpenID Connect получен из <i\>{0}</i\>. Поддерживаемые типы предоставления: <i\>{1}</i\>.|  
+|TextblockOpenidConnectHeaderDescription|Маркер идентификатора OpenID Connect, полученный из <i\>{0}</i\>. Поддерживаемые типы предоставления: <i\>{1}</i\>.|  
   
 ###  <a name="ErrorPageStrings"></a> ErrorPageStrings  
   
@@ -317,9 +319,9 @@ ms.locfileid: "22983789"
 |TextblockPotentialCauseOldLink|Возможно, ссылка, которую вы щелкнули, старая или больше не указывает на правильное расположение.|  
 |TextblockPotentialCauseTechnicalProblem|Возможно, возникли технические проблемы на нашей стороне.|  
 |TextblockPotentialSolutionRefresh|Попробуйте обновить страницу.|  
-|TextblockPotentialSolutionStartOver|Начните с {0}.|  
+|TextblockPotentialSolutionStartOver|Начните отсюда: {0}.|  
 |TextblockPotentialSolutionTryAgain|Перейдите к свойству {0} и повторите выполненное действие.|  
-|TextReportProblem|Свойство {0}, описывающее проблему. На основе этого свойства мы рассмотрим проблему в кратчайшие сроки.|  
+|TextReportProblem|{0} описывает проблему, которую мы рассмотрим в кратчайшие сроки.|  
 |TitlePotentialCause|Возможная причина|  
 |TitlePotentialSolution|Возможно, это временная проблема. Ниже приведено несколько способов ее исправить.|  
   
@@ -329,10 +331,10 @@ ms.locfileid: "22983789"
 |----------|----------|  
 |WebIssuesIndexTitle|Проблемы|  
 |WebIssuesNoActiveSubscriptions|У вас нет активных подписок. Чтобы сообщить о проблеме, необходимо подписаться на продукт.|  
-|WebIssuesNotSignin|Вы не выполнили вход. {0}, чтобы сообщить о проблеме или опубликовать комментарий.|  
+|WebIssuesNotSignin|Вы не выполнили вход. Выполните {0}, чтобы сообщить о проблеме или опубликовать комментарий.|  
 |WebIssuesReportIssueButton|Сообщить о проблеме|  
 |WebIssuesSignIn|войти|  
-|WebIssuesStatusReportedBy|Состояние: {0}. &#124 Сообщил {1}.|  
+|WebIssuesStatusReportedBy|Состояние: {0} &#124; сообщение от {1}.|  
   
 ###  <a name="NotFoundStrings"></a> NotFoundStrings  
   
@@ -344,8 +346,8 @@ ms.locfileid: "22983789"
 |TextblockPotentialCauseMisspelledUrl|Возможно, вы допустили опечатку при вводе URL-адреса.|  
 |TextblockPotentialCauseOldLink|Возможно, ссылка, которую вы щелкнули, старая или больше не указывает на правильное расположение.|  
 |TextblockPotentialSolutionRetype|Попробуйте повторно ввести URL-адрес.|  
-|TextblockPotentialSolutionStartOver|Начните с {0}.|  
-|TextReportProblem|Свойство {0}, описывающее проблему. На основе этого свойства мы рассмотрим проблему в кратчайшие сроки.|  
+|TextblockPotentialSolutionStartOver|Начните отсюда: {0}.|  
+|TextReportProblem|{0} описывает проблему, которую мы рассмотрим в кратчайшие сроки.|  
 |TitlePotentialCause|Возможная причина|  
 |TitlePotentialSolution|Возможное решение|  
   
@@ -353,7 +355,7 @@ ms.locfileid: "22983789"
   
 |ИМЯ|текст|  
 |----------|----------|  
-|WebProductsAgreement|Подписавшись на продукт {0}, я принимаю `<a data-toggle='modal' href='#legal-terms'\>Terms of Use</a\>`.|  
+|WebProductsAgreement|Подписавшись на продукт `<a data-toggle='modal' href='#legal-terms'\>Terms of Use</a\>`, я принимаю {0}.|  
 |WebProductsLegalTermsLink|Условия использования|  
 |WebProductsSubscribeButton|Подписаться|  
 |WebProductsUsageLimitsHeader|Ограничения использования|  
@@ -363,8 +365,8 @@ ms.locfileid: "22983789"
 |ButtonLabelAddSubscription|Добавить подписку|  
 |LinkLabelChangeSubscriptionName|Изменить|  
 |ButtonLabelConfirm|Подтверждение|  
-|TextblockMultipleSubscriptionsCount|У вас есть такое количество подписок на продукт: {0}.|  
-|TextblockSingleSubscriptionsCount|У вас есть такое количество подписок на продукт: {0}.|  
+|TextblockMultipleSubscriptionsCount|У вас есть такое количество подписок на продукт: {0}|  
+|TextblockSingleSubscriptionsCount|У вас есть такое количество подписок на продукт: {0}|  
 |TextblockSingleApisCount|Этот продукт содержит такое количество API: {0}.|  
 |TextblockMultipleApisCount|Этот продукт содержит такое количество API: {0}.|  
 |TextblockHeaderSubscribe|Подписаться на продукт|  
@@ -393,10 +395,10 @@ ms.locfileid: "22983789"
 |ErrorSsoAuthenticationFailed|Сбой проверки подлинности SSO.|  
 |ErrorSsoAuthenticationFailedDetailed|Указан недопустимый маркер или не удается проверить подпись.|  
 |ErrorSsoTokenInvalid|Маркер SSO недопустим.|  
-|ValidationErrorSpecificEmailAlreadyExists|Адрес электронной почты "{0}" уже зарегистрирован.|  
-|ValidationErrorSpecificEmailInvalid|Адрес электронной почты "{0}" недопустим.|  
+|ValidationErrorSpecificEmailAlreadyExists|Адрес электронной почты {0} уже зарегистрирован.|  
+|ValidationErrorSpecificEmailInvalid|Адрес электронной почты {0} недопустимый.|  
 |ValidationErrorPasswordInvalid|Недопустимый пароль. Исправьте ошибки и повторите попытку.|  
-|PropertyTooShort|Свойство {0} слишком короткое.|  
+|PropertyTooShort|{0} содержит слишком мало символов.|  
 |WebAuthenticationAddresserEmailInvalidErrorMessage|Недопустимый адрес электронной почты.|  
 |ValidationMessageNewPasswordConfirmationRequired|Подтвердите новый пароль.|  
 |ValidationErrorPasswordConfirmationRequired|Поле подтверждения пароля пустое.|  
@@ -409,7 +411,7 @@ ms.locfileid: "22983789"
 |TextboxLabelEmail|Email|  
 |ValidationErrorEmailRequired|Требуется указать адрес электронной почты.|  
 |WebAuthenticationErrorNoticeHeader|Ошибка|  
-|WebAuthenticationFieldLengthErrorMessage|Максимальная длина {0} — {1}.|  
+|WebAuthenticationFieldLengthErrorMessage|Максимальная длина {0} — {1}.|  
 |TextboxLabelEmailFirstName|Имя|  
 |ValidationErrorFirstNameRequired|Имя — обязательное поле.|  
 |ValidationErrorFirstNameInvalid|Недопустимое имя.|  
@@ -440,7 +442,7 @@ ms.locfileid: "22983789"
 |WebAuthenticationRequestNotFoundNotice|Запрос не найден.|  
 |WebAuthenticationSenderEmailRequiredErrorMessage|Поле электронной почты отправителя уведомлений пустое.|  
 |WebAuthenticationSigninPasswordLabel|Подтвердите изменение путем ввода пароля.|  
-|WebAuthenticationSignupConfirmNotice|Ожидание сообщения электронной почты с подтверждением регистрации для {0}.<br> /\> Следуйте инструкциям в этом сообщении, чтобы активировать учетную запись.<br> /\> Если сообщение электронной почты не поступит в папку "Входящие" в течение следующих нескольких минут, проверьте папку нежелательной почты.|  
+|WebAuthenticationSignupConfirmNotice|Ожидание сообщения электронной почты с подтверждением регистрации для {0}.<br /\> Следуйте инструкциям в этом сообщении, чтобы активировать учетную запись.<br> /\> Если сообщение электронной почты не поступит в папку "Входящие" в течение следующих нескольких минут, проверьте папку нежелательной почты.|  
 |WebAuthenticationSignupConfirmNoticeHeader|Ваша учетная запись успешно создана.|  
 |WebAuthenticationSignupConfirmNoticeRepeatHeader|Сообщение электронной почты с подтверждением регистрации повторно отправлено.|  
 |WebAuthenticationSignupConfirmNoticeTitle|Созданная учетная запись|  
@@ -455,7 +457,7 @@ ms.locfileid: "22983789"
 |ValidationErrorCredentialsInvalid|Недопустимый адрес электронной почты или пароль. Исправьте ошибки и повторите попытку.|  
 |WebAuthenticationRequestIsNotValid|Недопустимый запрос.|  
 |WebAuthenticationUserIsNotConfirm|Прежде чем войти, подтвердите регистрацию.|  
-|WebAuthenticationInvalidEmailFormated|Недопустимый адрес электронной почты: {0}.|  
+|WebAuthenticationInvalidEmailFormated|Адрес электронной почты {0} недопустимый.|  
 |WebAuthenticationUserNotFound|Не удалось найти пользователя.|  
 |WebAuthenticationTenantNotRegistered|Ваша учетная запись принадлежит клиенту Azure Active Directory, которому не разрешен доступ к этому порталу.|  
 |WebAuthenticationAuthenticationFailed|Сбой проверки подлинности.|  
@@ -463,17 +465,17 @@ ms.locfileid: "22983789"
 |ValidationErrorAllowedTenantIsRequired|Требуется разрешенный клиент.|  
 |ValidationErrorTenantIsNotValid|Клиент Azure Active Directory {0} недопустимый.|  
 |WebAuthenticationActiveDirectoryTitle|Azure Active Directory|  
-|WebAuthenticationLoginUsingYourProvider|Выполните вход с использованием учетной записи {0}.|  
+|WebAuthenticationLoginUsingYourProvider|Войдите со своей учетной записью {0}.|  
 |WebAuthenticationUserLimitNotice|В этой службе достигнуто максимальное число разрешенных пользователей. `<a href="mailto:{0}"\>contact the administrator</a\>`, чтобы обновить службу и повторно включить регистрацию пользователей.|  
 |WebAuthenticationUserLimitNoticeHeader|Регистрация пользователей отключена.|  
 |WebAuthenticationUserLimitNoticeTitle|Регистрация пользователей отключена.|  
 |WebAuthenticationUserRegistrationDisabledNotice|Регистрация пользователей отключена администратором. Войдите в систему с помощью внешнего поставщика удостоверений.|  
 |WebAuthenticationUserRegistrationDisabledNoticeHeader|Регистрация пользователей отключена.|  
 |WebAuthenticationUserRegistrationDisabledNoticeTitle|Регистрация пользователей отключена.|  
-|WebAuthenticationSignupPendingConfirmationNotice|Прежде чем мы сможем завершить создание вашей учетной записи, нам необходимо проверить ваш адрес электронной почты. Мы отправили вам сообщение электронной почты на {0}. Чтобы активировать учетную запись, следуйте инструкциям в этом сообщении. Если вы не получите сообщение электронной почты в течение нескольких минут, проверьте папку нежелательной почты.|  
-|WebAuthenticationSignupPendingConfirmationAccountFoundNotice|Мы обнаружили неподтвержденную учетную запись для адреса электронной почты {0}. Чтобы завершить создание вашей учетной записи, нам необходимо проверить ваш адрес электронной почты. Мы отправили вам сообщение электронной почты на {0}. Чтобы активировать учетную запись, следуйте инструкциям в этом сообщении. Если вы не получили сообщение электронной почты в течение нескольких минут, проверьте папку нежелательной почты.|  
+|WebAuthenticationSignupPendingConfirmationNotice|Прежде чем мы сможем завершить создание вашей учетной записи, нам необходимо проверить ваш адрес электронной почты. Мы отправили сообщение электронной почты на этот адрес: {0}. Чтобы активировать учетную запись, следуйте инструкциям в этом сообщении. Если вы не получите сообщение электронной почты в течение нескольких минут, проверьте папку нежелательной почты.|  
+|WebAuthenticationSignupPendingConfirmationAccountFoundNotice|Мы обнаружили неподтвержденную учетную запись, связанную с адресом электронной почты {0}. Чтобы завершить создание вашей учетной записи, нам необходимо проверить ваш адрес электронной почты. Мы отправили сообщение электронной почты на этот адрес: {0}. Чтобы активировать учетную запись, следуйте инструкциям в этом сообщении. Если вы не получили сообщение электронной почты в течение нескольких минут, проверьте папку нежелательной почты.|  
 |WebAuthenticationSignupConfirmationAlmostDone|Все почти готово.|  
-|WebAuthenticationSignupConfirmationEmailSent|Мы отправили вам сообщение электронной почты на {0}. Чтобы активировать учетную запись, следуйте инструкциям в этом сообщении. Если вы не получите сообщение электронной почты в течение нескольких минут, проверьте папку нежелательной почты.|  
+|WebAuthenticationSignupConfirmationEmailSent|Мы отправили сообщение электронной почты на этот адрес: {0}. Чтобы активировать учетную запись, следуйте инструкциям в этом сообщении. Если вы не получите сообщение электронной почты в течение нескольких минут, проверьте папку нежелательной почты.|  
 |WebAuthenticationEmailSentNotificationMessage|Сообщение электронной почты успешно отправлено по адресу {0}.|  
 |WebAuthenticationNoAadTenantConfigured|Для службы не настроен клиент Azure Active Directory.|  
 |CheckboxLabelUserRegistrationTermsConsentRequired|Я принимаю `<a data-toggle="modal" href="#" data-target="#terms"\>Terms of Use</a\>`.|  
@@ -515,7 +517,7 @@ ms.locfileid: "22983789"
 |WebDevelopersSecondaryKey|Вторичный ключ|  
 |ButtonLabelShowKey|Показать|  
 |ButtonLabelRenewSubscription|Возобновление|  
-|WebDevelopersSubscriptionReqested|Дата запроса: {0}|  
+|WebDevelopersSubscriptionReqested|Дата запроса: {0}.|  
 |WebDevelopersSubscriptionRequestedState|Запрошено|  
 |WebDevelopersSubscriptionTableNameHeader|ИМЯ|  
 |WebDevelopersSubscriptionTableStateHeader|Состояние|  
@@ -562,8 +564,8 @@ ms.locfileid: "22983789"
 |SubscriptionStateRejected|Отклонено|  
 |SubscriptionStateRequested|Запрошено|  
 |SubscriptionStateSuspended|Приостановлено|  
-|DefaultSubscriptionNameTemplate|{0} (по умолчанию)|  
-|SubscriptionNameTemplate|Доступ для разработчика #{0}|  
+|DefaultSubscriptionNameTemplate|{0} (значение по умолчанию).|  
+|SubscriptionNameTemplate|Доступ для разработчика #{0}.|  
 |TextboxLabelSubscriptionName|Имя подписки|  
 |ValidationMessageSubscriptionNameRequired|Имя подписки не может быть пустым.|  
 |ApiManagementUserLimitReached|В этой службе достигнуто максимальное число разрешенных пользователей. Выполните обновление до более высокой ценовой категории.|  

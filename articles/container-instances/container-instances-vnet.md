@@ -5,14 +5,14 @@ services: container-instances
 author: dlepow
 ms.service: container-instances
 ms.topic: article
-ms.date: 11/05/2018
+ms.date: 11/28/2018
 ms.author: danlep
-ms.openlocfilehash: e2f0d90a0a4384560c0a4126c028761765cb9e45
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
+ms.openlocfilehash: e03a35b31c9089abe973c7e4388b508f668a3970
+ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51288872"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52619849"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Развертывание экземпляров контейнеров в виртуальной сети Azure
 
@@ -44,6 +44,7 @@ ms.locfileid: "51288872"
 
 **Поддерживаемые** регионы:
 
+* Северная Европа (northeurope)
 * Западная Европа (westeurope).
 * Западная часть США (westus).
 
@@ -72,7 +73,7 @@ ms.locfileid: "51288872"
 
 Сетевой профиль — это шаблон конфигурации сети для ресурсов Azure. Он задает определенные свойства сети для ресурса, например подсеть, в который его следует развернуть. При первом использовании команды [az container create][az-container-create] для развертывания группы контейнеров в подсеть (и, соответственно, в виртуальную сеть) Azure создаст сетевой профиль. Затем этот сетевой профиль можно использовать для будущих развертываний в подсети. 
 
-Чтобы использовать шаблон Resource Manager, файл YAML или программный метод для развертывания группы контейнеров в подсеть, необходимо указать полный идентификатор ресурса Resource Manager сетевого профиля. Вы можете использовать ранее созданный профиль с помощью команды [az container create][az-container-create] или создать профиль с помощью шаблона Resource Manager (ознакомьтесь со [справочной документацией](https://docs.microsoft.com/azure/templates/microsoft.network/networkprofiles)). Чтобы получить идентификатор ранее созданного профиля, используйте команду [az network profile list][az-network-profile-list]. 
+Чтобы использовать шаблон Resource Manager, файл YAML или программный метод для развертывания группы контейнеров в подсеть, необходимо указать полный идентификатор ресурса Resource Manager сетевого профиля. Вы можете использовать профиль, созданный ранее с использованием команды [az container create][az-container-create], или создать профиль с помощью шаблона Resource Manager (ознакомьтесь с [примером шаблона](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet) и [справочной документацией](https://docs.microsoft.com/azure/templates/microsoft.network/networkprofiles)). Чтобы получить идентификатор ранее созданного профиля, используйте команду [az network profile list][az-network-profile-list]. 
 
 На следующей схеме несколько групп контейнеров развернуты в подсети, делегированной службе "Экземпляры контейнеров Azure". Развернув одну группу контейнеров в подсети, можно развернуть в ней дополнительные группы контейнеров, указав тот же сетевой профиль.
 
@@ -295,6 +296,9 @@ az network vnet delete --resource-group $RES_GROUP --name aci-vnet
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
+
+Чтобы развернуть новую виртуальную сеть, подсеть, сетевой профиль и группу контейнеров с помощью шаблона Resource Manager, см. страницу [создания группы контейнеров Azure с виртуальной сетью](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet
+).
 
 В этой статье были кратко описаны несколько ресурсов и функций виртуальной сети. Более подробно эти темы рассматриваются в следующей документации по виртуальным сетям Azure:
 

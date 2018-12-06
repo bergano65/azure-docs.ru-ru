@@ -1,10 +1,11 @@
 ---
-title: Развертывание веб-службы машинного обучения | Документация Майкрософт
-description: Как преобразовать обучающий эксперимент в прогностический эксперимент, подготовить его к развертыванию, а затем развернуть как веб-службу машинного обучения Azure.
+title: Развертывание веб-службы Студии машинного обучения Azure | Документация Майкрософт
+description: Как преобразовать обучающий эксперимент в прогностический эксперимент, подготовить его к развертыванию, а затем развернуть как веб-службу Студии машинного обучения Azure.
 services: machine-learning
 documentationcenter: ''
-author: YasinMSFT
-ms.author: yahajiza
+author: ericlicoding
+ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 73a3e9c6-00d0-41d4-8cf1-2ec87713867e
@@ -15,14 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/06/2017
-ms.openlocfilehash: 0f22f22d40410b258b3945d9e78938384ce64767
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: d96755f00aa5023d57c9c4c2b2457902c337e29d
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37128407"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52314274"
 ---
-# <a name="deploy-an-azure-machine-learning-web-service"></a>Развертывание веб-службы машинного обучения Azure
+# <a name="deploy-an-azure-machine-learning-studio-web-service"></a>Развертывание веб-службы Студии машинного обучения Azure
 Машинное обучение Azure позволяет создавать, тестировать и развертывать решения для прогнозной аналитики.
 
 Этот процесс можно обобщить до трех этапов:

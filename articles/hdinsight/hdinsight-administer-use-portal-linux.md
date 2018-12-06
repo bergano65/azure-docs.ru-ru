@@ -9,18 +9,18 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/18/2018
 ms.author: hrasheed
-ms.openlocfilehash: b96712c3a920a70e121f0a72954680ced2ba96ff
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 77f1d0f9d1f9ad07b977750e7701b660781d63e5
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51252298"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52499376"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure
 
 [!INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
 
-[Портал Azure][azure-portal] позволяет управлять кластерами Apache Hadoop в Azure HDInsight. Используйте другие вкладки выше, чтобы перейти к статьям об управлении кластерами Hadoop в HDInsight с помощью других инструментов.
+[Портал Azure][azure-portal] позволяет управлять кластерами [Apache Hadoop](https://hadoop.apache.org/) в Azure HDInsight. Используйте другие вкладки выше, чтобы перейти к статьям об управлении кластерами Hadoop в HDInsight с помощью других инструментов.
 
 **Предварительные требования**
 
@@ -46,7 +46,7 @@ ms.locfileid: "51252298"
 ## <a name="create-clusters"></a>Создание кластеров
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
-HDInsight работает со множеством компонентов Hadoop. Список проверенных и поддерживаемых компонентов см. в статье [Что представляют собой компоненты и версии Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md) Общие сведения о создании кластеров см. в статье о [создании кластеров Hadoop в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
+HDInsight работает со множеством компонентов Hadoop. Список проверенных и поддерживаемых компонентов см. в статье [Что представляют собой компоненты и версии Apache Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md) Общие сведения о создании кластеров см. в статье [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](hdinsight-hadoop-provision-linux-clusters.md).
 
 ### <a name="access-control-requirements"></a>Требования к контролю доступа
 
@@ -70,7 +70,7 @@ HDInsight работает со множеством компонентов Hado
 
 ## <a name="list-and-show-clusters"></a>Отображение кластеров
 1. Войдите на портал [https://portal.azure.com](https://portal.azure.com).
-2. В меню слева щелкните **Кластеры HDInsight** , чтобы просмотреть список существующих кластеров. Если вы не видите **кластеры HDInsight**, сначала щелкните **Все службы**.
+2. В меню слева щелкните **Кластеры HDInsight**, чтобы просмотреть список существующих кластеров. Если вы не видите **кластеры HDInsight**, сначала щелкните **Все службы**.
 3. Щелкните имя кластера. Если список кластеров длинный, можно использовать фильтр в верхней части страницы.
 4. Щелкните кластер в списке, чтобы просмотреть страницу с общими сведениями:
 
@@ -89,7 +89,7 @@ HDInsight работает со множеством компонентов Hado
     * **Быстрое начало работы.** Отображение сведений, необходимых для начала работы с HDInsight.
     * **Средства для HDInsight.** Справочные сведения об инструментах, связанных с HDInsight.
 **Параметры**
-* **Размер кластера**: проверка, увеличение и уменьшение количества рабочих узлов кластера. Ознакомьтесь с разделом [Масштабирование кластеров](hdinsight-administer-use-management-portal.md#scale-clusters).
+* **Размер кластера**: проверка, увеличение и уменьшение количества рабочих узлов кластера. См. раздел о [масштабировании кластеров](hdinsight-administer-use-management-portal.md#scale-clusters).
     * **Квоты**: вывод сведений об используемых и доступных ядрах процессора в вашей подписке.
     * **SSH + Cluster login** (SSH и вход в кластер): отображение сведений, необходимых для подключения к кластеру по протоколу SSH. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
 * **Data Lake Store 1-го поколения**: настройка доступа к Data Lake Store 1-го поколения.  Дополнительные сведения см. в статье [Краткое руководство по установке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
@@ -99,7 +99,7 @@ HDInsight работает со множеством компонентов Hado
     * **Партнер HDInsight**: добавление и удаление текущего партнера HDInsight.
     * **Свойства**: просмотр свойств кластера.
 * **Блокировки.** Добавляйте блокировку во избежание изменения или удаления кластера.
-    * **Сценарий автоматизации.** Отображайте и экспортируйте шаблон Azure Resource Manager для кластера. В настоящее время можно экспортировать только зависимую учетную запись хранения Azure. Ознакомьтесь со статьей [Создание кластеров Hadoop под управлением Linux в HDInsight с помощью шаблонов Azure Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
+    * **Сценарий автоматизации.** Отображайте и экспортируйте шаблон Azure Resource Manager для кластера. В настоящее время можно экспортировать только зависимую учетную запись хранения Azure. См. статью [Создание кластеров Apache Hadoop в HDInsight с помощью шаблонов Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 **Мониторинг**
 * **Оповещения**: мониторинг оповещений и действий.
     * **Метрики**: мониторинг метрик кластера в Azure Log Analytics.
@@ -159,12 +159,12 @@ HDInsight работает со множеством компонентов Hado
 
 Ниже представлены возможности, связанные с изменением количества узлов данных в кластере каждого типа, поддерживаемого в HDInsight:
 
-* Hadoop
+* Apache Hadoop
 
     Вы можете легко увеличить количество рабочих узлов в работающем кластере Hadoop. Это не помешает обработке заданий в состоянии ожидания и выполнения. В ходе выполнения операции можно также отправлять новые задания. Сбои операции масштабирования обрабатываются корректно, поэтому кластер всегда пребывает в функциональном состоянии.
 
     Если уменьшить масштаб кластера Hadoop, сократив количество узлов данных, некоторые службы в нем будут перезапущены. Это приведет к сбою всех выполняющихся и ожидающих заданий при завершении операции масштабирования. Однако после завершения операции вы можете повторно отправить задания.
-* hbase
+* Apache HBase
 
     Вы можете с легкостью добавлять и удалять узлы данных в работающем кластере HBase. Балансировка региональных серверов выполняется автоматически в течение нескольких минут после завершения операции масштабирования. Но их также можно сбалансировать вручную, выполнив вход в головной узел кластера и выполнив следующие команды в окне командной строки:
 
@@ -176,7 +176,7 @@ HDInsight работает со множеством компонентов Hado
 
     Дополнительные сведения об использовании оболочки HBase см. в статье [Начало работы с примером Apache HBase в HDInsight](hbase/apache-hbase-tutorial-get-started-linux.md).
 
-* Storm
+* Apache Storm
 
     Вы можете с легкостью добавлять и удалять узлы данных в работающем кластере Storm. Но после успешного завершения операции масштабирования потребуется повторная балансировка топологии.
 
@@ -208,7 +208,7 @@ HDInsight работает со множеством компонентов Hado
 
 Этот процесс можно выполнять автоматически несколькими способами:
 
-* С помощью фабрики данных Azure. Дополнительные сведения о создании связанных служб HDInsight по запросу см. в статье [Создание кластеров Hadoop под управлением Linux в HDInsight по запросу с помощью фабрики данных Azure](hdinsight-hadoop-create-linux-clusters-adf.md).
+* С помощью фабрики данных Azure. Сведения о создании связанных служб HDInsight по запросу см. в статье [Руководство. Создание кластеров Apache Hadoop в HDInsight по запросу с помощью Фабрики данных Azure](hdinsight-hadoop-create-linux-clusters-adf.md).
 * С помощью Azure PowerShell.  См. статью [Анализ данных о задержке рейсов с помощью Hive в HDInsight](hdinsight-analyze-flight-delay-data.md).
 * Используйте классический интерфейс командной строки Azure. См. раздел [Управление кластерами HDInsight с помощью классического интерфейса командной строки Azure](hdinsight-administer-use-command-line.md).
 * С помощью пакета SDK для HDInsight .NET. См. статью [Отправка заданий Hadoop в HDInsight](hadoop/submit-apache-hadoop-jobs-programmatically.md).
@@ -223,7 +223,7 @@ HDInsight работает со множеством компонентов Hado
 
 Ознакомьтесь с разделом [Обновление кластера HDInsight до более новой версии](./hdinsight-upgrade-cluster.md).
 
-## <a name="open-the-ambari-web-ui"></a>Открытие веб-интерфейса Ambari
+## <a name="open-the-apache-ambari-web-ui"></a>Открытие веб-интерфейса Apache Ambari
 
 Ambari предоставляет интуитивно понятный и простой веб-интерфейс управления Hadoop, который поддерживают API-интерфейсы RESTful. Ambari дает системным администраторам возможность управлять кластерами Hadoop и наблюдать за ними.
 
@@ -308,7 +308,7 @@ Ambari изменит пароль на всех узлах в кластере.
 ## <a name="find-the-resource-group"></a>Поиск группы ресурсов
 В режиме Azure Resource Manager каждый кластер HDInsight создается с группой Azure Resource Manager. Группу Resource Manager, к которой принадлежит кластер, можно увидеть:
 
-* в списке кластеров в столбце **Группа ресурсов** ;
+* в списке кластеров в столбце **Группа ресурсов**;
 * на плитке кластера **Основное** .  
 
 См. раздел [Отображение кластеров](#list-and-show-clusters).
@@ -323,7 +323,7 @@ Ambari изменит пароль на всех узлах в кластере.
 
 Чтобы вывести список учетных записей Data Lake Store, щелкните **Доступ к Data Lake Store** (см. предыдущий снимок экрана).
 
-## <a name="run-hive-queries"></a>Выполнение запросов Hive
+## <a name="run-apache-hive-queries"></a>Выполнение запросов Apache Hive
 Задание Hive нельзя выполнить непосредственно из портала Azure. Для этого можно использовать представление Hive в веб-интерфейсе Ambari.
 
 **Выполнение запросов Hive с помощью представления Hive в Ambari**
@@ -337,13 +337,13 @@ Ambari изменит пароль на всех узлах в кластере.
 4. Введите запрос Hive в **редактор запросов**, а затем нажмите кнопку **Execute** (Выполнить).
 
 ## <a name="monitor-jobs"></a>Мониторинг заданий
-Дополнительные сведения см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md#monitoring).
+См. статью [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md#monitoring).
 
 ## <a name="browse-files"></a>Обзор файлов
 На портале Azure можно просмотреть содержимое контейнера по умолчанию.
 
 1. Войдите на портал [https://portal.azure.com](https://portal.azure.com).
-2. В меню слева щелкните **Кластеры HDInsight** , чтобы просмотреть список существующих кластеров.
+2. В меню слева щелкните **Кластеры HDInsight**, чтобы просмотреть список существующих кластеров.
 3. Щелкните имя кластера. Если список кластеров длинный, можно использовать фильтр в верхней части страницы.
 4. Щелкните **Учетные записи хранения** в меню слева для кластера.
 5. Щелкните учетную запись хранения.
@@ -358,7 +358,7 @@ Ambari изменит пароль на всех узлах в кластере.
 
 ## <a name="connect-to-a-cluster"></a>Подключение к кластеру
 
-* [Использование Hive с HDInsight](hadoop/apache-hadoop-use-hive-ambari-view.md)
+* [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hadoop/apache-hadoop-use-hive-ambari-view.md)
 * [Использование SSH с HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md)
 
 ## <a name="next-steps"></a>Дополнительная информация
@@ -370,11 +370,11 @@ Ambari изменит пароль на всех узлах в кластере.
 * [Создание кластеров HDInsight](hdinsight-hadoop-provision-linux-clusters.md)
 * [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)
 * [Управление кластерами HDInsight с помощью REST API Ambari](hdinsight-hadoop-manage-ambari-rest-api.md)
-* [Использование Hive в HDInsight](hadoop/hdinsight-use-hive.md)
-* [Использование Pig в HDInsight](hadoop/hdinsight-use-pig.md)
-* [Использование Hadoop Sqoop в HDInsight](hadoop/hdinsight-use-sqoop.md)
+* [Использование Apache Hive в HDInsight](hadoop/hdinsight-use-hive.md)
+* [Использование Apache Pig с Apache Hadoop в HDInsight](hadoop/hdinsight-use-pig.md)
+* [Использование Sqoop с Hadoop в HDInsight](hadoop/hdinsight-use-sqoop.md)
 * [Начало работы с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md)
-* [Какая версия Hadoop включена в Azure HDInsight?](hdinsight-component-versioning.md)
+* [Что представляют собой компоненты и версии Apache Hadoop, доступные в HDInsight](hdinsight-component-versioning.md)
 
 [azure-portal]: https://portal.azure.com
 [image-hadoopcommandline]: ./media/hdinsight-administer-use-portal-linux/hdinsight-hadoop-command-line.png "Командная строка Hadoop"

@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/28/2018
+ms.date: 11/23/2018
 ms.author: jingwang
-ms.openlocfilehash: c67f6c14dc396367e0179fe5bdb4663fcb7725da
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 1e0bbfafcda77ca48fb22ad919c5848a7670a102
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37045972"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52309680"
 ---
 # <a name="copy-data-from-servicenow-using-azure-data-factory"></a>Копирование данных из ServiceNow с помощью фабрики данных Azure
 
@@ -107,13 +107,14 @@ ms.locfileid: "37045972"
 | Тип | Свойство type источника действия копирования должно иметь значение **ServiceNowSource**. | Yes |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Actual.alm_asset"`. | Yes |
 
-Указывая схему и столбец для ServiceNow в запросе, обратите внимание на следующее:
+Указывая в запросе схему и столбец для ServiceNow, обратите внимание на следующую информацию. Также просмотрите **советы по [улучшению производительности](#performance-tips) копирования**.
 
-- **Схема.** В запросе к ServiceNow укажите схему как `Actual` или `Display`, что можно рассматривать как параметр `sysparm_display_value` со значением true или false при вызове [REST API ServiceNow](https://developer.servicenow.com/app.do#!/rest_api_doc?v=jakarta&id=r_AggregateAPI-GET). 
+- **Схема.** В запросе к ServiceNow укажите схему как `Actual` или `Display`, что можно рассматривать как параметр `sysparm_display_value` со значением true или false при вызове [REST API ServiceNow](https://developer.servicenow.com/app.do#!/rest_api_doc?v=jakarta&id=r_AggregateAPI-GET). 
 - **Столбец.** Имя столбца для фактического значения в схеме `Actual` — это `[columne name]_value`, а отображаемое имя в `Display` — это `[columne name]_display_value`. Обратите внимание, что имя столбца должно соответствовать имени в схеме, используемой в запросе.
 
 **Пример запроса:**
-`SELECT col_value FROM Actual.alm_asset` или `SELECT col_display_value FROM Display.alm_asset`
+`SELECT col_value FROM Actual.alm_asset` или  
+`SELECT col_display_value FROM Display.alm_asset`
 
 **Пример.**
 
@@ -146,6 +147,17 @@ ms.locfileid: "37045972"
     }
 ]
 ```
+## <a name="performance-tips"></a>Советы по улучшению производительности
+
+### <a name="schema-to-use"></a>Используемые схемы
+
+В ServiceNow есть две разные схемы: **Actual** (возвращает фактические данные) и **Display** (возвращает отображаемые значения данных). 
+
+При наличии фильтра в запросе используйте схему Actual, так как она обеспечивает лучшую производительность копирования. Если используется схема Actual, ServiceNow нативно поддерживает фильтр при выборке данных и возвращает только отфильтрованный набор результатов. Если же используется схема Display, ADF извлекает все данные, а затем фильтрует их.
+
+### <a name="index"></a>Индекс
+
+Индекс таблицы ServiceNow может помочь повысить производительность запросов. Подробности см. [здесь](https://docs.servicenow.com/bundle/geneva-servicenow-platform/page/administer/table_administration/task/t_CreateCustomIndex.html).
 
 ## <a name="next-steps"></a>Дополнительная информация
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

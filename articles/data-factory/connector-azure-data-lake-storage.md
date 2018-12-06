@@ -8,14 +8,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 11/09/2018
+ms.date: 11/28/2018
 ms.author: jingwang
-ms.openlocfilehash: 2fad3ad8bc6e1c0ca87038af6c461d863065fc95
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.openlocfilehash: ca2591f34a0aba598c12815de684ec6bb8fca929
+ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51345969"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52620359"
 ---
 # <a name="copy-data-to-or-from-azure-data-lake-storage-gen2-preview-using-azure-data-factory-preview"></a>Копирование данных в хранилище Azure Data Lake Gen2 (предварительная версия) или из нее с помощью фабрики данных (предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "51345969"
 
 Этот соединитель в частности поддерживает следующее.
 
-- Копирование данных с помощью ключа учетной записи.
+- Копирование данных с использованием аутентификации на основе ключа учетной записи, субъекта-службы или управляемого удостоверения ресурсов Azure.
 - Копирование файлов "как есть", анализ файлов или создание файлов с использованием [поддерживаемых форматов файлов и кодеков сжатия](supported-file-formats-and-compression-codecs.md).
 
 >[!TIP]
@@ -49,7 +49,15 @@ ms.locfileid: "51345969"
 
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 
-Для связанной службы Data Lake Storage Gen2 поддерживаются следующие свойства.
+Дополнительные сведения о типах аутентификации, поддерживаемых соединителем Azure Data Lake Storage 2-го поколения, см. в следующих разделах.
+
+- [Проверка подлинности на основе ключа учетной записи](#account-key-authentication)
+- [Проверка подлинности субъекта-службы](#service-principal-authentication)
+- [Проверка подлинности на основе управляемого удостоверения службы](#managed-identity)
+
+### <a name="account-key-authentication"></a>Проверка подлинности на основе ключа учетной записи
+
+При использовании проверки подлинности на основе ключа учетной записи поддерживаются следующие свойства.
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
@@ -62,7 +70,7 @@ ms.locfileid: "51345969"
 
 ```json
 {
-    "name": "AzureDataLakeStorageLinkedService",
+    "name": "AzureDataLakeStorageGen2LinkedService",
     "properties": {
         "type": "AzureBlobFS",
         "typeProperties": {
@@ -71,6 +79,95 @@ ms.locfileid: "51345969"
                 "type": "SecureString", 
                 "value": "<accountkey>" 
             }
+        },
+        "connectVia": {
+            "referenceName": "<name of Integration Runtime>",
+            "type": "IntegrationRuntimeReference"
+        }
+    }
+}
+```
+
+### <a name="service-principal-authentication"></a>Проверка подлинности субъекта-службы
+
+Чтобы использовать проверку подлинности субъекта-службы, выполните следующие действия.
+
+1. Чтобы зарегистрировать сущность приложения в Azure Active Directory (Azure AD), необходимо следовать указаниям из раздела [Регистрация приложения в клиенте Azure AD](../storage/common/storage-auth-aad-app.md#register-your-application-with-an-azure-ad-tenant). Запишите следующие значения, которые используются для определения связанной службы:
+
+    - Идентификатор приложения
+    - Ключ приложения
+    - Tenant ID
+
+2. Предоставьте правильное разрешение субъекту-службе в хранилище Azure.
+
+    - В Системе управления идентификацией и доступом (IAM) **источнику** необходимо выделить роль не ниже **чтения данных больших двоичных объектов хранилища**.
+    - В Системе управления идентификацией и доступом (IAM) **приемнику** необходимо выделить роль не ниже **участника для данных больших двоичных объектов хранилища**.
+
+Следующие свойства поддерживаются в связанной службе.
+
+| Свойство | ОПИСАНИЕ | Обязательно |
+|:--- |:--- |:--- |
+| Тип | Для свойства type необходимо задать значение **AzureBlobFS**. |Yes |
+| URL-адрес | Конечная точка службы Data Lake Storage Gen2 с шаблоном `https://<accountname>.dfs.core.windows.net`. | Yes | 
+| servicePrincipalId | Укажите идентификатора клиента приложения. | Yes |
+| servicePrincipalKey | Укажите ключ приложения. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
+| tenant | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Его можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Yes |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
+
+**Пример.**
+
+```json
+{
+    "name": "AzureDataLakeStorageGen2LinkedService",
+    "properties": {
+        "type": "AzureBlobFS",
+        "typeProperties": {
+            "url": "https://<accountname>.dfs.core.windows.net", 
+            "servicePrincipalId": "<service principal id>",
+            "servicePrincipalKey": {
+                "type": "SecureString",
+                "value": "<service principal key>"
+            },
+            "tenant": "<tenant info, e.g. microsoft.onmicrosoft.com>" 
+        },
+        "connectVia": {
+            "referenceName": "<name of Integration Runtime>",
+            "type": "IntegrationRuntimeReference"
+        }
+    }
+}
+```
+
+### <a name="managed-identity"></a> Управляемые удостоверения для аутентификации ресурсов Azure
+
+Фабрика данных может быть связана с [управляемым удостоверением для ресурсов Azure](data-factory-service-identity.md), которое представляет эту фабрику данных. Это удостоверение службы можно использовать для проверки подлинности хранилища BLOB-объектов, так же как и собственный субъект-службу. Оно разрешает назначенной фабрике данных обращаться к данным и копировать их из службы хранилища BLOB-объектов и в нее.
+
+Чтобы использовать управляемые удостоверения для проверки подлинности ресурсов Azure, выполните следующие действия.
+
+1. [Получите удостоверение службы фабрики данных](data-factory-service-identity.md#retrieve-service-identity), скопировав значение идентификатора приложения удостоверения службы (SERVICE IDENTITY APPLICATION ID), созданного вместе с фабрикой.
+
+2. Предоставьте правильное разрешение управляемому удостоверению в хранилище Azure. 
+
+    - В Системе управления идентификацией и доступом (IAM) **источнику** необходимо выделить роль не ниже **чтения данных больших двоичных объектов хранилища**.
+    - В Системе управления идентификацией и доступом (IAM) **приемнику** необходимо выделить роль не ниже **участника для данных больших двоичных объектов хранилища**.
+
+Следующие свойства поддерживаются в связанной службе.
+
+| Свойство | ОПИСАНИЕ | Обязательно |
+|:--- |:--- |:--- |
+| Тип | Для свойства type необходимо задать значение **AzureBlobFS**. |Yes |
+| URL-адрес | Конечная точка службы Data Lake Storage Gen2 с шаблоном `https://<accountname>.dfs.core.windows.net`. | Yes | 
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
+
+**Пример.**
+
+```json
+{
+    "name": "AzureDataLakeStorageGen2LinkedService",
+    "properties": {
+        "type": "AzureBlobFS",
+        "typeProperties": {
+            "url": "https://<accountname>.dfs.core.windows.net", 
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",

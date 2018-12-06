@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/12/2018
+ms.date: 11/26/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: a3bce69236586bcd0a250c47f1129ac0d94e8b26
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: ef8b621b41bb43c46ef728e28d3b312ac49f1da3
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51231488"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52308789"
 ---
 # <a name="azure-ad-connect-accounts-and-permissions"></a>Azure AD Connect: учетные записи и разрешения
 
@@ -39,7 +39,10 @@ Azure AD Connect использует 3 учетные записи, чтобы 
 
 Помимо этих трех учетных записей, используемых для запуска Azure AD Connect, для установки Azure AD Connect потребуются также следующие учетные записи.  а именно:
 
-- **Учетная запись администратора предприятия AD DS**: используется для установки Azure AD Connect.
+- **Учетная запись локального администратора**, который устанавливает Azure AD Connect и имеет права локального администратора на компьютере.
+
+- **Учетная запись администратора предприятия AD DS**: используется, если нужно создать учетную запись соединителя Azure AD, описанную выше.
+
 - **Учетная запись глобального администратора Azure AD**: используется для создания учетной записи соединителя Azure AD и настройки Azure AD.
 
 - **Учетная запись SQL SA** (необязательная): используется для создания базы данных ADSync при использовании полной версии SQL Server.  Этот сервер SQL Server может быть локальным или удаленным для установки Azure AD Connect.  Этой учетной записью может быть учетная запись администратора предприятия.  Внешнюю подготовку базы данных может выполнять администратор SQL, а установку — администратор Azure AD Connect с правами владельца базы данных.  Дополнительные сведения см. в статье [Установка Azure AD Connect с использованием делегированных разрешений администратора SQL](how-to-connect-install-sql-delegation.md).

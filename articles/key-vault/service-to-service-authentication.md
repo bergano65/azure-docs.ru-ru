@@ -6,18 +6,18 @@ author: bryanla
 manager: mbaldwin
 services: key-vault
 ms.author: bryanla
-ms.date: 09/05/2018
+ms.date: 11/27/2018
 ms.topic: conceptual
 ms.prod: ''
 ms.service: key-vault
 ms.technology: ''
 ms.assetid: 4be434c4-0c99-4800-b775-c9713c973ee9
-ms.openlocfilehash: d9fc845316d6e785d8215ac738b893ebc080d911
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 1eadea53dda60ef5ac8bbbc3d9e9cfe4b5b373dc
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44300976"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52423598"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET
 
@@ -183,18 +183,16 @@ az account list
 
 1. Создайте [сертификат субъекта-службы](/azure/azure-resource-manager/resource-group-authenticate-service-principal). 
 
-2. Разверните сертификат в хранилище _LocalMachine_ или _CurrentUser_. 
+2. Разверните сертификат в хранилище *LocalMachine* или *CurrentUser*. 
 
 3. Задайте переменную среды с именем **AzureServicesAuthConnectionString**, как показано в следующем примере:
 
     ```
     RunAs=App;AppId={AppId};TenantId={TenantId};CertificateThumbprint={Thumbprint};
-          CertificateStoreLocation={LocalMachine or CurrentUser}
+          CertificateStoreLocation={CertificateStore}
     ```
  
-    Замените _{AppId}_, _{TenantId}_ и _{Thumbprint}_ идентификатором приложения, идентификатором клиента и отпечатком, созданными на шаге 1.
-
-    Свойство **CertificateStoreLocation** должно иметь значение _CurrentUser_ или _LocalMachine_ в зависимости от плана развертывания.
+    Замените *{AppId}*, *{TenantId}* и *{Thumbprint}* идентификатором приложения, идентификатором клиента и отпечатком, созданными на шаге 1. Замените *{CertificateStore}* на `LocalMachine` или `CurrentUser` в зависимости от плана развертывания.
 
 4. Запустите приложение. 
 

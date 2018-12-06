@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/01/2018
+ms.date: 11/22/2018
 ms.author: jeedes
-ms.openlocfilehash: f3f7fc3b837dd4eef9bab8ff34a36329436bad9a
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 608269a05ae1ed699954cd301aa03056e089fa8a
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51010734"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52426107"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jira-saml-sso-by-microsoft"></a>Руководство по интеграции Azure Active Directory с JIRA SAML SSO by Microsoft
 
@@ -154,11 +154,26 @@ ms.locfileid: "51010734"
 
     ![Настройка единого входа](./media/jiramicrosoft-tutorial/addon12.png)
 
-9. После установки подключаемый модуль появится в разделе **Управление надстройками**, подраздел **Установленные пользователем**. Щелкните **Configure** (Настройка), чтобы настроить новый подключаемый модуль.
+9. Для сценария использования обратного прокси-сервера JIRA или подсистемы балансировки нагрузки выполните приведенные ниже действия.
+
+    > [!NOTE]
+    > Сначала нужно настроить сервер, выполнив инструкции ниже, а затем установить подключаемый модуль.
+
+    a. Добавьте следующий атрибут в раздел порта **соединителя** в файле **server.xml** серверного приложения JIRA.
+
+    `scheme="https" proxyName="<subdomain.domain.com>" proxyPort="<proxy_port>" secure="true"`
+
+    ![Настройка единого входа](./media/jiramicrosoft-tutorial/reverseproxy1.png)
+
+    b. Измените **базовый URL-адрес** в разделе **системных параметров** на соответствующий для подсистемы балансировки нагрузки или прокси-сервера.
+
+    ![Настройка единого входа](./media/jiramicrosoft-tutorial/reverseproxy2.png)
+
+10. После установки подключаемый модуль появится в разделе **Управление надстройками**, подраздел **Установленные пользователем**. Щелкните **Configure** (Настройка), чтобы настроить новый подключаемый модуль.
 
     ![Настройка единого входа](./media/jiramicrosoft-tutorial/addon13.png)
 
-10. Выполните следующие действия на странице настройки:
+11. Выполните следующие действия на странице настройки:
 
     ![Настройка единого входа](./media/jiramicrosoft-tutorial/addon52.png)
 

@@ -1,10 +1,11 @@
 ---
-title: Интерпретация результатов модели в машинном обучении | Документация Майкрософт
+title: Интерпретация результатов модели в Студии машинного обучения Azure | Документация Майкрософт
 description: Выбор оптимального набора параметров для использования алгоритмов и визуализации выходных данных модели оценки.
 services: machine-learning
 documentationcenter: ''
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 6230e5ab-a5c0-4c21-a061-47675ba3342c
@@ -15,14 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2017
-ms.openlocfilehash: e62f4716a95a6c1840afde27361eeb756abff335
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: c06b05989270b4199e5d97ca399a1411b73a702b
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34837010"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52310275"
 ---
-# <a name="interpret-model-results-in-azure-machine-learning"></a>Интерпретация результатов модели в машинном обучении Azure
+# <a name="interpret-model-results-in-azure-machine-learning-studio"></a>Интерпретация результатов модели в Студии машинного обучения Azure
 В этой статье объясняется, как визуализировать и интерпретировать результаты прогнозирования в студии машинного обучения Azure. Когда вы обучите модель и получите с ее помощью прогнозы (оценки модели), этот результат нужно интерпретировать.
 
 [!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]

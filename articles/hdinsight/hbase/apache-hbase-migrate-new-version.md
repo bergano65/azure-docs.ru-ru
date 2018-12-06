@@ -9,16 +9,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: ashishth
-ms.openlocfilehash: 64b3762c40cc2e01944d78c546ebe267503526a7
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 71285ce3b1fb3cc592fc65b4ad96c6783de0c408
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43049336"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52499300"
 ---
-# <a name="migrate-an-hbase-cluster-to-a-new-version"></a>Перенос данных кластера HBase в новую версию
+# <a name="migrate-an-apache-hbase-cluster-to-a-new-version"></a>Перенос данных кластера Apache HBase в новую версию
 
-Кластеры на основе заданий, такие как Spark и Hadoop, можно быстро обновить (см. сведения в статье [Обновление кластера HDInsight до более новой версии](../hdinsight-upgrade-cluster.md)):
+Кластеры на основе заданий, такие как [Apache Spark](https://spark.apache.org/) и [Apache Hadoop](https://hadoop.apache.org/), можно быстро обновить (см. сведения в статье [Обновление кластера HDInsight до более новой версии](../hdinsight-upgrade-cluster.md)):
 
 1. Создайте резервную копию временных (хранимых локально) данных.
 2. Удалите существующий кластер.
@@ -26,14 +26,14 @@ ms.locfileid: "43049336"
 4. Импортируйте временные данные.
 5. Запустите задания и продолжите обработку в новом кластере.
 
-Чтобы обновить кластер HBase, требуются некоторые дополнительные действия, описанные в этой статье.
+Чтобы обновить кластер [Apache HBase](http://hbase.apache.org/), требуются некоторые дополнительные действия, описанные в этой статье.
 
 > [!NOTE]
 > Время простоя при обновлении должно быть минимальным, порядка нескольких минут. Простой связан с действиями по записи всех данных в памяти на диск, а также настройкой и перезапуском служб в новом кластере. Результаты будут различаться в зависимости от количества узлов, объема данных и других переменных.
 
-## <a name="review-hbase-compatibility"></a>Проверка совместимости HBase
+## <a name="review-apache-hbase-compatibility"></a>Проверка совместимости Apache HBase
 
-Перед обновлением HBase убедитесь, что версии HBase в исходном и конечном кластерах совместимы. Дополнительные сведения см. в статье [Что представляют собой компоненты и версии Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md)
+Перед обновлением Apache HBase убедитесь, что версии HBase в исходном и конечном кластерах совместимы. Дополнительные сведения см. в статье [Что представляют собой компоненты и версии Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md)
 
 > [!NOTE]
 > Настоятельно рекомендуем изучить матрицу совместимости версий в [руководстве по HBase](https://hbase.apache.org/book.html#upgrading).
@@ -57,7 +57,7 @@ ms.locfileid: "43049336"
 > [!NOTE]
 > Все критические несовместимости должны быть описаны в заметках о выпуске версии HBase.
 
-## <a name="upgrade-with-same-hbase-major-version"></a>Обновление с тем же основным номером версии HBase
+## <a name="upgrade-with-same-apache-hbase-major-version"></a>Обновление с тем же основным номером версии Apache HBase
 
 Ниже описан сценарий обновления HDInsight 3.4 до 3.6 (обе версии предоставляются с Apache HBase 1.1.2) с той же основной версией HBase. Другие обновления версий схожи при условии, что между исходной версией и версией назначения нет никаких проблем совместимости.
 
@@ -187,7 +187,7 @@ ms.locfileid: "43049336"
     
 4. Остановите прием данных в старом кластере HBase.
 5. Чтобы убедиться, что все последние данные в хранилище memstore записаны на диск, еще раз выполните предыдущий скрипт.
-6. Войдите в Ambari на старом кластере (https://OLDCLUSTERNAME.azurehdidnsight.net) и остановите работу служб HBase. При появлении запроса подтвердите, что вы хотите остановить службы, и установите флажок, чтобы включить режим обслуживания для HBase. Подробные сведения о подключении к платформе Ambari и ее использовании см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](../hdinsight-hadoop-manage-ambari.md).
+6. Войдите в [Apache Ambari](https://ambari.apache.org/) на старом кластере (https://OLDCLUSTERNAME.azurehdidnsight.net) и остановите работу служб HBase. При появлении запроса подтвердите, что вы хотите остановить службы, и установите флажок, чтобы включить режим обслуживания для HBase. Подробные сведения о подключении к платформе Ambari и ее использовании см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](../hdinsight-hadoop-manage-ambari.md).
 
     ![В Ambari перейдите на вкладку Services (Службы), выберите "HBase" в меню слева, а затем в разделе Service Actions (Действия службы) выберите Stop (Остановить).](./media/apache-hbase-migrate-new-version/stop-hbase-services.png)
 
@@ -211,9 +211,9 @@ ms.locfileid: "43049336"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о HBase и обновлении кластеров HDInsight см. в следующих статьях:
+Дополнительные сведения о [Apache HBase](http://hbase.apache.org/) и обновлении кластеров HDInsight см. в следующих статьях:
 
 * [Обновление кластера HDInsight до более новой версии](../hdinsight-upgrade-cluster.md)
-* [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](../hdinsight-hadoop-manage-ambari.md)
-* [Что представляют собой компоненты и версии Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md)
-* [Оптимизация конфигураций с использованием Ambari](../hdinsight-changing-configs-via-ambari.md#hbase-optimization-with-the-ambari-web-ui)
+* [Управление кластерами HDInsight с помощью веб-интерфейса Apache Ambari](../hdinsight-hadoop-manage-ambari.md)
+* [Компоненты и версии Apache Hadoop](../hdinsight-component-versioning.md)
+* [Оптимизация конфигураций с использованием Apache Ambari](../hdinsight-changing-configs-via-ambari.md#apache-hbase-optimization-with-the-ambari-web-ui)

@@ -9,22 +9,22 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 09/14/2018
-ms.openlocfilehash: 4627593e4ab96c63423a7afd6152f3a004bc6c3f
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 349298ba30de5540d5c86c81f483a1bd344dba9c
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47042369"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52497272"
 ---
-# <a name="use-extended-spark-history-server-to-debug-and-diagnose-spark-applications"></a>Отладка и диагностика приложений Spark с использованием расширенного сервера журнала Spark
+# <a name="use-extended-apache-spark-history-server-to-debug-and-diagnose-apache-spark-applications"></a>Отладка и диагностика приложений Apache Spark с использованием расширенного сервера журнала Apache Spark
 
-Эта статья содержит рекомендации по использованию расширенного сервера журнала Spark для отладки и диагностики готовых и запущенных приложений Spark. Расширение включает вкладки "Данные", "Граф" и "Диагностика". На вкладке **Данные** пользователи могут проверить входные и выходные данные задания Spark. На вкладке **Граф** пользователи могут проверить поток данных и воспроизвести граф задания. На вкладке **Диагностика** пользователь может перейти в разделы **неравномерного распределения данных**, **неравномерного распределения времени** и **анализа использования исполнителей**.
+Эта статья содержит рекомендации по использованию расширенного сервера журнала Apache Spark для отладки и диагностики готовых и запущенных приложений Spark. Расширение включает вкладки "Данные", "Граф" и "Диагностика". На вкладке **Данные** пользователи могут проверить входные и выходные данные задания Spark. На вкладке **Граф** пользователи могут проверить поток данных и воспроизвести граф задания. На вкладке **Диагностика** пользователь может перейти в разделы **неравномерного распределения данных**, **неравномерного распределения времени** и **анализа использования исполнителей**.
 
-## <a name="get-access-to-spark-history-server"></a>Доступ к серверу журнала Spark
+## <a name="get-access-to-apache-spark-history-server"></a>Доступ к серверу журнала Apache Spark
 
-Сервер журнала Spark — это пользовательский веб-интерфейс для готовых и запущенных приложений Spark. 
+Сервер журнала Apache Spark — это пользовательский веб-интерфейс для готовых и запущенных приложений Spark. 
 
-### <a name="open-the-spark-history-server-web-ui-from-azure-portal"></a>Открытие пользовательского веб-интерфейса сервера журнала Spark на портале Azure
+### <a name="open-the-apache-spark-history-server-web-ui-from-azure-portal"></a>Открытие пользовательского веб-интерфейса сервера журнала Apache Spark на портале Azure
 
 1. Откройте кластер Spark на [портале Azure](https://portal.azure.com/). Дополнительные сведения см. в разделе [Отображение кластеров](../hdinsight-administer-use-portal-linux.md#list-and-show-clusters).
 2. В разделе **Быстрые ссылки** щелкните **Панель мониторинга кластера**, а затем — **Сервер журнала Spark**. При появлении запроса введите учетные данные администратора для кластера Spark. 
@@ -87,7 +87,7 @@ ms.locfileid: "47042369"
     ![отзыв о графе](./media/apache-azure-spark-history-server/sparkui-graph-feedback.png)
 
 
-## <a name="graph-tab-in-spark-history-server"></a>Вкладка "Граф" на сервере журнала Spark
+## <a name="graph-tab-in-apache-spark-history-server"></a>Вкладка "Граф" на сервере журнала Apache Spark
 Выберите идентификатор задания, а затем щелкните **Граф** в меню средств, чтобы получить представление графа задания.
 
 + Просмотрите сведения о задании путем создания графа задания. 
@@ -158,7 +158,7 @@ ms.locfileid: "47042369"
     ![отзыв о графе](./media/apache-azure-spark-history-server/sparkui-graph-feedback.png)
 
 
-## <a name="diagnosis-tab-in-spark-history-server"></a>Вкладка "Диагностика" на сервере журнала Spark
+## <a name="diagnosis-tab-in-apache-spark-history-server"></a>Вкладка "Диагностика" на сервере журнала Apache Spark
 Выберите идентификатор задания, а затем щелкните **Диагностика** в меню средств, чтобы получить представление диагностики задания. Вкладка "Диагностика" содержит разделы **неравномерного распределения данных**, **неравномерного распределения времени** и **анализа использования исполнителей**.
     
 + Просмотрите разделы **Неравномерное распределение данных**, **Неравномерное распределение времени** и **Executor Usage Analysis** (Анализ использования исполнителей), выбрав соответствующие вкладки.
@@ -326,8 +326,8 @@ ms.locfileid: "47042369"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Управление ресурсами для кластера Apache Spark в Azure HDInsight](apache-spark-resource-manager.md)
-* [Настройка параметров Spark](apache-spark-settings.md)
+* [Управление ресурсами для кластера Apache Spark в HDInsight](apache-spark-resource-manager.md)
+* [Настройка параметров Apache Spark](apache-spark-settings.md)
 
 
 ## <a name="contact-us"></a>Свяжитесь с нами

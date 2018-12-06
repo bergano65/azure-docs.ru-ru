@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/25/2018
 ms.author: ergreenl
-ms.openlocfilehash: 7726a28e0254f4316759c3d8c74f57db6a9e399e
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 1df9b07d5a0a9e5018fc024038e65723c606ef71
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50242200"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52442987"
 ---
 # <a name="configure-scoped-synchronization-from-azure-ad-to-your-managed-domain"></a>Настройка синхронизации определенных учетных записей из Azure AD с управляемым доменом
 В этой статье показано, как настроить синхронизацию учетных записей только определенных пользователей из каталога Azure AD с управляемым доменом доменных служб Azure AD.
@@ -47,7 +47,12 @@ ms.locfileid: "50242200"
 >
 
 
-## <a name="create-a-new-managed-domain-and-enable-group-based-scoped-synchronization"></a>Создание управляемого домена и включение синхронизации определенных учетных записей на основе группы
+## <a name="create-a-new-managed-domain-and-enable-group-based-scoped-synchronization-using-azure-portal"></a>Создание управляемого домена и включение синхронизации определенных учетных записей на основе группы с помощью портала Azure
+
+1. Следуйте шагам, описанным в руководстве по [началу работы](active-directory-ds-getting-started.md), чтобы создать управляемый домен.
+2. В мастере создания доменных служб Azure AD выберите **С заданной областью** для способа синхронизации.
+
+## <a name="create-a-new-managed-domain-and-enable-group-based-scoped-synchronization-using-powershell"></a>Создание управляемого домена и включение синхронизации определенных учетных записей на основе группы с помощью PowerShell
 Выполните эти шаги с помощью PowerShell. Чтобы включить доменные службы Azure Active Directory с помощью PowerShell, [обратитесь к инструкциям](active-directory-ds-enable-using-powershell.md). Несколько шагов в этой статье немного изменены для настройки синхронизации определенных учетных записей.
 
 Чтобы настроить синхронизацию определенных учетных записей на основе группы с управляемым доменом, сделайте следующее:

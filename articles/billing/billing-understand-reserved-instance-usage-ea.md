@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/28/2018
 ms.author: cwatson
-ms.openlocfilehash: a33a360d25930f1468f1c9240be2d0f306d682c7
-ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
+ms.openlocfilehash: 87f6437f836d46fc24ae016823a1b091bcd81943
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47585753"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52582063"
 ---
 # <a name="understand-azure-reservation-usage-for-your-enterprise-enrollment"></a>Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise
 
@@ -53,7 +53,7 @@ ms.locfileid: "47585753"
 
 ## <a name="usage-for-sql-database--cosmos-db-reserved-capacity-reservations"></a>Сведения об использовании для резервирования Базы данных SQL и Cosmos DB с получением резервной мощности
 
-В следующих разделах используйте Базу данных SQL Azure в качестве примера описания отчета об использовании. Для получения данных об использовании для Azure Cosmos DB также можно использовать те же действия. 
+В следующих разделах используйте Базу данных SQL Azure в качестве примера описания отчета об использовании. Чтобы получить данные об использовании Azure Cosmos DB можно выполнить те же действия. 
 
 Предполагается, что запущена База данных SQL 4-го поколения в регионе "Восточная часть США", а данные резервирования выглядят, как в приведенной ниже таблице:
 
@@ -93,7 +93,7 @@ ms.locfileid: "47585753"
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
 - [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure](billing-reserved-instance-windows-software-costs.md)
 
-## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть дополнительные вопросы, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.
+Если у вас есть вопросы или нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 

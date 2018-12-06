@@ -9,22 +9,22 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: ashish
-ms.openlocfilehash: f963ae53e1396b1ef6279f2bd6502e5ab0cd23a1
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: ac287f2ee50501d703b7d7b79a436ecb5335d1bd
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51034563"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52497379"
 ---
 # <a name="install-published-application---streamsets-data-collector"></a>Установка опубликованного приложения "Сборщик данных StreamSets"
 
-В этой статье описывается, как установить и запустить опубликованное приложение Apache Hadoop [Сборщик данных StreamSets](https://streamsets.com/) в Azure HDInsight. Обзор платформы приложений HDInsight и список доступных опубликованных приложений независимых поставщиков программного обеспечения приведены в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md). Инструкции по установке собственного приложения см. в статье [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md).
+В этой статье описывается, как установить и запустить опубликованное приложение [сборщика данных StreamSets для HDInsight](https://streamsets.com/) на базе [Apache Hadoop](https://hadoop.apache.org/) в Azure HDInsight. Обзор платформы приложений HDInsight и список доступных опубликованных приложений независимых поставщиков программного обеспечения приведены в статье [Установка сторонних приложений Apache Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md). Инструкции по установке собственного приложения см. в статье [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md).
 
 ## <a name="about-streamsets-data-collector"></a>Сведения о сборщике данных StreamSets
 
 Сборщик данных StreamSets развертывается в дополнение к приложению Azure HDInsight. Сборщик данных StreamSets предоставляет полнофункциональную интегрированную среду разработки (IDE), которая позволяет создавать, тестировать, развертывать любые конвейеры и управлять ими. Эти конвейеры могут объединять потоковые и пакетные данные, а также включают различные преобразования в поток. И все это без необходимости писать пользовательский код.
 
-Сборщик данных StreamSets позволяет создавать потоки данных с помощью множества компонентов больших данных, таких как HDFS, Kafka, Solr, Hive, HBASE и Kudu. Так как сборщик данных StreamSets работает на пограничном сервере или в кластере Hadoop, вы можете отслеживать аномалии данных и операции потока данных в режиме реального времени. Этот мониторинг включает оповещение на основе пороговых значений, обнаружение аномалий и автоматическое исправление ошибок.
+Сборщик данных StreamSets позволяет создавать потоки данных с помощью множества компонентов для работы с большими данными, таких как Apache [Hadoop HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html), [Apache Kafka](https://kafka.apache.org/), [Apache Solr](https://lucene.apache.org/solr/), [Apache Hive](https://hive.apache.org/), [Apache HBase](https://hbase.apache.org/) и [Apache Kudu](https://kudu.apache.org/). Так как сборщик данных StreamSets работает на пограничном сервере или в кластере Hadoop, вы можете отслеживать аномалии данных и операции потока данных в режиме реального времени. Этот мониторинг включает оповещение на основе пороговых значений, обнаружение аномалий и автоматическое исправление ошибок.
 
 Сборщик данных StreamSets предназначен для логической изоляции каждого этапа в конвейере, поэтому вы можете отказаться от новых процессоров и соединителей и достигнуть нужного результата без кодирования и с минимальным временем простоя.
 
@@ -46,7 +46,7 @@ ms.locfileid: "51034563"
 
 ## <a name="install-the-streamsets-data-collector-published-application"></a>Установка опубликованного приложения "Сборщик данных StreamSets"
 
-Пошаговые инструкции по установке этого и других доступных приложений независимых поставщиков программного обеспечения см. в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md).
+Пошаговые инструкции по установке этого и других доступных приложений независимых поставщиков программного обеспечения см. в статье [Установка сторонних приложений Apache Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md).
 
 ## <a name="launch-streamsets-data-collector"></a>Запуск сборщика данных StreamSets
 

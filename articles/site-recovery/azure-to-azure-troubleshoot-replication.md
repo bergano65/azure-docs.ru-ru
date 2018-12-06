@@ -9,12 +9,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 10/30/2018
 ms.author: asgang
-ms.openlocfilehash: 0ac90d8ef29d4293a5eeb5f932687788320c218e
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: 22ea3d955fe2910dc99ab4015165008da899d48e
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51615802"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52312856"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-ongoing-replication-issues"></a>Устранение неполадок текущей репликации виртуальных машин из Azure в Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "51615802"
 Azure Site Recovery постоянно реплицирует данные из исходного региона в регион аварийного восстановления и создает отказоустойчивые точки каждые 5 минут. Если Site Recovery не сможет создать точки восстановления в течение 60 минут, он оповещает пользователя. Ниже приведены причины, которые могли вызвать эту ошибку:
 
 **Причина 1.[Высокая скорость изменения данных на исходной виртуальной машине](#high-data-change-rate-on-the-source-virtal-machine)**    
-**Причина 2.[ Проблемы с подключением к сети](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**
+**Причина 2.[ Проблемы с подключением к сети](#Network-connectivity-issue)**
 
 ## <a name="causes-and-solutions"></a>Причины и решения
 
@@ -77,5 +77,10 @@ Azure Site Recovery запускает событие, если скорость
 
 ### <a name="Network-connectivity-issue"></a>Проблемы с подключением к сети
 
+#### <a name="network-latency-to-cache-storage-account-"></a>Задержка сети при подключении к учетной записи хранения кэша
+ Site Recovery отправляет реплицированные данные в учетную запись хранения кэша. Проблема может возникнуть, если передача данных из виртуальной машины в учетную запись хранения кэша происходит на скорости, меньшей чем 4 МБ в 3 секунды. Чтобы узнать, существуют ли проблемы с задержкой, с помощью [azcopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy) передайте данные из виртуальной машины в учетную запись хранения кэша.<br>
+Если задержка большая, проверьте, используются ли сетевые виртуальные модули для управления исходящим сетевым трафиком виртуальных машин. Если весь трафик репликации проходит через сетевой виртуальный модуль, к модулю может применяться регулирование. Мы рекомендуем создать конечную точку службы сети в виртуальной сети для хранилища, чтобы трафик репликации не передавался на виртуальный сетевой модуль. См. раздел о [настройке сетевого виртуального модуля](https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-about-networking#network-virtual-appliance-configuration).
+
+#### <a name="network-connectivity"></a>Сетевое подключение
 Чтобы реплика Site Recovery заработала, от виртуальной машины требуется исходящее подключение для конкретного URL-адреса или IP-диапазонов. Если виртуальная машина находится за брандмауэром или использует правила группы безопасности сети (NSG) для управления исходящими подключениями, могут возникнуть следующие проблемы.</br>
-Ознакомьтесь с разделом [Исходящие подключения для URL-адресов Site Recovery или IP-диапазонов (код ошибки 151037 или 151072)](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-troubleshoot-errors?#outbound-connectivity-for-site-recovery-urls-or-ip-ranges-error-code-151037-or-151072)
+Сведения о том, как убедиться, что все URL-адреса подключены, см. в разделе [Исходящие подключения для диапазонов IP-адресов](https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-about-networking#outbound-connectivity-for-ip-address-ranges). 

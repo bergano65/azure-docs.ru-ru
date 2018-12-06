@@ -8,14 +8,14 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 10/19/2018
+ms.date: 11/19/2018
 ms.author: diberry
-ms.openlocfilehash: db8fc0b6926930521f11285dc56c886c10c42fc2
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: d371ead3280bca5239a9ee6bf2c4275414141fb4
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49649318"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52284376"
 ---
 # <a name="language-understanding-faq"></a>Вопросы и ответы о службе "Распознавание речи"
 
@@ -60,6 +60,16 @@ ms.locfileid: "49649318"
 
 ## <a name="luis-endpoint"></a>Конечная точка LUIS
 
+### <a name="my-endpoint-query-returned-unexpected-results-what-should-i-do"></a>Запрос конечной точки вернул непредвиденные результаты. Что делать?
+
+Непредвиденные результаты прогнозирования, полученные при запросе, основаны на состоянии опубликованной модели. Чтобы скорректировать модель, возможно, потребуется изменить ее, обучить и опубликовать повторно. 
+
+Начните корректировку модели с [активного обучения](luis-how-to-review-endoint-utt.md).
+
+Можно удалить результаты недетерминированного обучения. Для этого настройте [API параметров версии приложения](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) для использования всех данных обучения. 
+
+Другие советы см. в [статье с рекомендациями](luis-concept-best-practices.md). 
+
 ### <a name="why-does-luis-add-spaces-to-the-query-around-or-in-the-middle-of-words"></a>Почему LUIS добавляет пробелы вокруг или между словами запроса?
 LUIS [помечает](luis-glossary.md#token) высказывание на основе [языка и региональных параметров](luis-language-support.md#tokenization). Исходное и помеченное значения можно использовать для [извлечения данных](luis-concept-data-extraction.md#tokenized-entity-returned).
 
@@ -67,7 +77,7 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 [Создайте ключ конечной точки](luis-how-to-azure-subscription.md#create-luis-endpoint-key) в Azure для уровня вашей [службы](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/). [Назначьте ключ](luis-how-to-manage-keys.md#assign-endpoint-key) на странице **[Keys and endpoints](luis-how-to-manage-keys.md)** (Ключи и конечные точки). Это действие можно выполнить с помощью любого API. Затем необходимо изменить HTTP-запрос к конечной точке, чтобы [использовать новый ключ конечной точки](luis-concept-keys.md#use-endpoint-key-in-query).
 
 ### <a name="how-do-i-interpret-luis-scores"></a>Как интерпретировать оценки LUIS?
-В системе должно использоваться намерение с самой высокой оценкой, независимо от его значения. Например, оценка ниже 0,5 (меньше 50%) не означает, что данные LUIS имеют низкую степень достоверности. Предоставляя дополнительные обучающие данные, можно повысить показатель наиболее вероятного намерения.
+В системе должно использоваться намерение с самой высокой оценкой, независимо от его значения. Например, оценка ниже 0,5 (меньше 50%) не означает, что данные LUIS имеют низкую степень достоверности. Предоставляя дополнительные данные обучения, можно повысить [показатель](luis-concept-prediction-score.md) наиболее вероятного намерения.
 
 ### <a name="why-dont-i-see-my-endpoint-hits-in-my-apps-dashboard"></a>Почему для меня недоступны обращения конечной точки на панели мониторинга приложения?
 Общее количество обращений конечной точки на панели мониторинга приложения периодически обновляется, но более часто обновляются показатели, связанные с ключом конечной точки LUIS на портале Azure.
@@ -187,7 +197,7 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 ## <a name="luis-service"></a>Служба LUIS
 
 ### <a name="is-luis-available-on-premises-or-in-private-cloud"></a>Доступна ли служба LUIS в локальной среде или в частном облаке?
-Нет.
+ Нет.
 
 
 ### <a name="at-the-build-2018-conference-i-heard-about-a-language-understanding-feature-or-demo-but-i-dont-remember-what-it-was-called"></a>На конференции Build 2018 г. говорилось об одной функции или демоверсии службы "Распознавание речи", но я не помню ее названия.

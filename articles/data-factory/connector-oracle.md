@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/14/2018
+ms.date: 11/21/2018
 ms.author: jingwang
-ms.openlocfilehash: ec0fc11ac2caf421f331a8fe72f1dacdf6b8a702
-ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.openlocfilehash: 1e561a59ebe503e0088362087dbda4d7d89fee4c
+ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42312169"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52275692"
 ---
 # <a name="copy-data-from-and-to-oracle-by-using-azure-data-factory"></a>Копирование данных из Oracle и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -65,11 +65,46 @@ ms.locfileid: "42312169"
 >[!TIP]
 >Если при использовании версии Oracle 8i возникает ошибка "ORA-01025: значение параметра UPI вне допустимого диапазона", добавьте `WireProtocolMode=1` в строку подключения и повторите попытку.
 
-Существует два варианта, чтобы включить шифрование для подключения Oracle:
+**Включить шифрование для подключения Oracle** можно двумя способами:
 
-1.  На стороне сервера Oracle перейдите к Oracle Advanced Security (OAS) и задайте настройки шифрования, которые поддерживают шифрование Triple-DES (3DES) и Advanced Encryption Standard (AES). Подробности см. в [Документации Oracle Advanced Security](https://docs.oracle.com/cd/E11882_01/network.112/e40393/asointro.htm#i1008759). Соединитель ADF Oracle автоматически согласовывает метод шифрования таким образом, чтобы при установлении соединения с Oracle использовался тот метод шифрования, который вы настроили в OAS.
+1.  Чтобы использовать **шифрование 3DES и AES**, на стороне сервера Oracle перейдите к Oracle Advanced Security (OAS) и настройте соответствующие параметры (см. [дополнительные сведения](https://docs.oracle.com/cd/E11882_01/network.112/e40393/asointro.htm#i1008759)). Соединитель ADF Oracle автоматически согласовывает метод шифрования таким образом, чтобы при установлении соединения с Oracle использовался тот метод шифрования, который вы настроили в OAS.
 
-2.  Со стороны клиента в строку подключения можно добавить `EncryptionMethod=1`. В таком случае в качестве метода шифрования будут использоваться протоколы SSL/TLS. Чтобы использовать эту функцию, необходимо отключить параметры шифрования без SSL в OAS на стороне сервера Oracle, чтобы избежать конфликтов шифрования.
+2.  Чтобы использовать **SSL**, выполните следующие действия:
+
+    1.  Получите сведения о сертификате SSL. Получите сведения о SSL-сертификате в кодировке DER и сохраните выходные данные (----- Begin Certificate ... End Certificate -----) как текстовый файл.
+
+        ```
+        openssl x509 -inform DER -in [Full Path to the DER Certificate including the name of the DER Certificate] -text
+        ```
+
+        **Пример.** Извлеките сведения о сертификате из файла DERcert.cer и сохраните выходные данные в файле cert.txt.
+
+        ```
+        openssl x509 -inform DER -in DERcert.cer -text
+        Output:
+        -----BEGIN CERTIFICATE-----
+        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        XXXXXXXXX
+        -----END CERTIFICATE-----
+        ```
+    
+    2.  Создавайте хранилище ключей или truststore. Следующая команда создает файл truststore с паролем или без него в формате PKCS-12.
+
+        ```
+        openssl pkcs12 -in [Path to the file created in the previous step] -out [Path and name of TrustStore] -passout pass:[Keystore PWD] -nokeys -export
+        ```
+
+        **Пример.** Создайте файл truststore в формате PKCS-12 с именем MyTrustStoreFile и паролем.
+
+        ```
+        openssl pkcs12 -in cert.txt -out MyTrustStoreFile -passout pass:ThePWD -nokeys -export  
+        ```
+
+    3.  Скопируйте файл truststore на компьютер с запущенной локальной средой выполнения интеграции, например в расположении C:\MyTrustStoreFile.
+    4.  Настройте в ADF строку подключения Oracle с использованием `EncryptionMethod=1` и соответствующего значения `TrustStore`/`TrustStorePassword`, например `Host=<host>;Port=<port>;Sid=<sid>;User Id=<username>;Password=<password>;EncryptionMethod=1;TrustStore=C:\\MyTrustStoreFile;TrustStorePassword=<trust_store_password>`.
 
 **Пример.**
 

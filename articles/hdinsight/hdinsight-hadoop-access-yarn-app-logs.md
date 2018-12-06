@@ -9,26 +9,26 @@ ms.topic: conceptual
 ms.date: 05/25/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: b7b93ca9c8638451d23a27edeed823e593a95b23
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 62499c35fd71d83f80a60e0511e6a27ce0109275
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51035651"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52495863"
 ---
-# <a name="access-apache-yarn-application-logs-on-windows-based-hdinsight"></a>Доступ к журналам приложений Apache YARN в HDInsight для Windows
-Из этой статьи вы узнаете, как получить доступ к журналам приложений Apache YARN, завершивших работу в кластере Hadoop для Windows в Azure HDInsight.
+# <a name="access-apache-hadoop-yarn-application-logs-on-windows-based-hdinsight"></a>Доступ к журналам приложений Apache Hadoop YARN в HDInsight для Windows
+Из этой статьи вы узнаете, как получить доступ к журналам приложений [Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html), завершивших работу в кластере Apache Hadoop для Windows в Azure HDInsight.
 
 > [!IMPORTANT]
-> Информация, содержащаяся в данном документе, относится только к кластерам HDInsight под управлением Windows. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement). Сведения о доступе к журналам YARN в кластерах HDInsight под управлением Linux см. в статье [Доступ к журналам приложений Apache YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md).
+> Информация, содержащаяся в данном документе, относится только к кластерам HDInsight под управлением Windows. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement). Сведения о доступе к журналам YARN в кластерах HDInsight под управлением Linux см. в статье [Доступ к журналам приложений Apache Hadoop YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md).
 >
 
 
 ### <a name="prerequisites"></a>Предварительные требования
-* Кластер HDInsight на платформе Windows См.  статью [Создание кластеров Hadoop под управлением Windows в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
+* Кластер HDInsight на платформе Windows См.  статью [Создание кластеров Apache Hadoop под управлением Windows в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
 ## <a name="yarn-timeline-server"></a>Сервер временной шкалы YARN
-<a href="http://hadoop.apache.org/docs/r2.4.0/hadoop-yarn/hadoop-yarn-site/TimelineServer.html" target="_blank">YARN Timeline Server</a> предоставляет общие сведения о завершенных приложениях, а также зависящие от платформы сведения о приложениях через два разных интерфейса. В частности:
+<a href="http://hadoop.apache.org/docs/r2.4.1/hadoop-yarn/hadoop-yarn-site/TimelineServer.html" target="_blank">Apache Hadoop YARN Timeline Server</a> предоставляет общие сведения о завершенных приложениях, а также зависящие от платформы сведения о приложениях в двух разных интерфейсах. В частности:
 
 * Возможность хранения и извлечения общей информации о приложениях в кластерах HDInsight появилась, начиная с версии 3.1.1.374.
 * В настоящее время компонент сервера временной шкалы, предоставляющий сведения о приложениях для конкретной платформы, недоступен в кластерах HDInsight.
@@ -53,7 +53,7 @@ YARN поддерживает несколько моделей программ
 * Контейнер предоставляет контекст для базовой единицы работы. 
 * Вся работа, выполняемая в контексте контейнера, выполняется на одном рабочем узле, которому был выделен контейнер. 
 
-Дополнительные сведения см. [здесь][YARN-concepts].
+Дополнительные сведения см. в статье с [основными понятиям об Apache Hadoop YARN ][YARN-concepts].
 
 Журналы приложений (и соответствующие журналы контейнеров) крайне важны для отладки проблемных приложений Hadoop. YARN предоставляет хорошую платформу для сбора, объединения и хранения журналов приложений с функцией [объединения журналов][log-aggregation]. Функция объединения журналов делает доступ к журналам приложений более детерминированным, так как она объединяет журналы со всех контейнеров на рабочем узле и хранит их как один сводный файл журнала в файловой системе по умолчанию после завершения приложения. Ваше приложение может использовать сотни и даже тысячи контейнеров, но журналы всех контейнеров, запущенных на одном рабочем узле, объединяются в один файл. В результате на каждый рабочий узел, используемый приложением, приходится один файл журнала. Объединение журналов включено по умолчанию в кластерах HDInsight (3.0 и более поздних версий), а сводные журналы можно найти в контейнере кластера по умолчанию по следующему адресу:
 

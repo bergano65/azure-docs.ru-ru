@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.author: sngun
-ms.openlocfilehash: 233296a825653938da158fc70952c7fe7931498c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: a2c66894270a537239c5328eff0acdc4b8339994
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51261831"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52443548"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-async-java"></a>Советы по повышению производительности для Azure Cosmos DB и Async Java
 
@@ -53,7 +53,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
 4. **Настройка параллельных запросов для секционированных коллекций**
 
-    В пакете SDK для Async Java и SQL Azure Cosmos DB поддерживаются параллельные запросы, которые позволяют обращаться к секционированным коллекциям в параллельном режиме (дополнительные сведения см. в разделе [Работа с пакетами SDK для базы данных Azure Cosmos DB](sql-api-partition-data.md#working-with-the-azure-cosmos-db-sdks) и в [примерах кода](https://github.com/Azure/azure-cosmosdb-java/tree/master/examples/src/test/java/com/microsoft/azure/cosmosdb/rx/examples) к нему). Параллельные запросы используются для сокращения задержки при обработке запросов и улучшения пропускной способности при использовании их последовательных аналогов.
+    В пакете SDK Async Java для Azure Cosmos DB SQL поддерживаются параллельные запросы, позволяющие обращаться к секционированным коллекциям в параллельном режиме. Дополнительные сведения см. в [примерах кода](https://github.com/Azure/azure-cosmosdb-java/tree/master/examples/src/test/java/com/microsoft/azure/cosmosdb/rx/examples) для работы с пакетами SDK. Параллельные запросы предназначены для сокращения задержки при обработке запросов и улучшения пропускной способности посредством их последовательных аналогов.
 
     (а) ***Применение setMaxDegreeOfParallelism.\:*** Параллельный режим запросов позволяет одновременно обращаться к нескольким секциям. При этом данные из каждой секционированной коллекции извлекаются в рамках запроса последовательно. С помощью параметра setMaxDegreeOfParallelism установите значение, соответствующее числу секций, что обеспечит максимальную вероятность высокой производительности запроса при сохранении всех остальных параметров системы. Если вы не знаете число секций, просто используйте высокое значение для параметра setMaxDegreeOfParallelism. Система автоматически выберет минимальное из двух значений: число секций или число, указанное пользователем. 
 

@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 10/24/2018
 ms.author: maquaran
-ms.openlocfilehash: a57e7ccedd0c3b776a39c6750a3d5b4b5cc41d88
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 327873d228fe92a9da495f802c97eb73612caef9
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685452"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52632489"
 ---
 # <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>Пакет SDK для обработчика канала изменений в .NET: скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -43,8 +43,18 @@ ms.locfileid: "51685452"
 
 ### <a name="v2-builds"></a>Сборки версии 2
 
+### <a name="a-name224224"></a><a name="2.2.4"/>2.2.4
+* Добавлено новое свойство ChangeFeedProcessorOptions.StartContinuation для включения поддержки при запуске канала изменений из маркера продолжения запроса. Используется, только если возвращается пустая коллекция аренды или для аренды не настроен параметр ContinuationToken. Для аренды в коллекции аренды с настроенным и используемым параметром ContinuationToken свойство ChangeFeedProcessorOptions.StartContinuation игнорируется.
+
+### <a name="a-name223223"></a><a name="2.2.3"/>2.2.3
+* Добавлена поддержка пользовательского хранилища для хранения маркеров продолжения для секций.
+  * Например, хранилище пользовательской аренды может быть коллекцией аренд Azure Cosmos DB, секционированной любым способом.
+  * Хранилища пользовательских аренд могут использовать новый общедоступный интерфейс ILeaseStoreManager и свойство ChangeFeedProcessorBuilder.WithLeaseStoreManager(ILeaseStoreManager) точки расширяемости.
+  * Для интерфейса ILeaseManager выполнен рефакторинг в нескольких интерфейсах роли.
+* Незначительное критическое изменение: удалено свойство точки расширяемости ChangeFeedProcessorBuilder.WithLeaseManager(ILeaseManager). Вместо этого используйте свойство ChangeFeedProcessorBuilder.WithLeaseStoreManager(ILeaseStoreManager).
+
 ### <a name="a-name222222"></a><a name="2.2.2"/>2.2.2
-* Исправлена проблема, которая возникает во время разделения обработки при секционировании коллекции аренд. Эта проблема может привести к тому, что аренды удаленных разделов не удаляются из коллекции аренд. В этом выпуске эта проблема исправлена.
+* Этот выпуск устраняет проблему, которая происходит во время обработки разбиения в отслеживаемой коллекции и использования секционированной коллекции аренд. При обработке аренды для разбиения секций, аренда, соответствующая этой секции, не будет удалена. В этом выпуске эта проблема исправлена.
 
 ### <a name="a-name221221"></a><a name="2.2.1"/>2.2.1
 * Исправлено вычисление оценки для учетных записей с несколькими источниками и нового формата токена сеанса.

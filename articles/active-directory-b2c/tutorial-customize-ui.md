@@ -7,15 +7,15 @@ manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/12/2018
+ms.date: 11/26/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: ee6d7735a2983f642eff82a7dabe036af100e60e
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 588ce454248f0577a52515a4327d1e43013d34a5
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51622675"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52581805"
 ---
 # <a name="tutorial-customize-the-user-interface-of-your-applications-in-azure-active-directory-b2c"></a>Руководство по настройке пользовательского интерфейса приложений в Azure Active Directory B2C
 
@@ -64,10 +64,10 @@ ms.locfileid: "51622675"
  Код Azure AD B2C в браузере использует современный стандартный подход для загрузки пользовательского содержимого по URL-адресу, указанному в политике. Механизм CORS (общий доступ к ресурсам независимо от источника) позволяет запрашивать из других доменов ресурсы с ограничением доступа, представленные на веб-странице.
 
 1. В меню выберите **CORS**.
-2. В поле **Разрешенные источники** введите `your-tenant-name.b2clogin.com`. Замените `your-tenant-name` именем вашего клиента Azure AD B2C. Например, `fabrikam.b2clogin.com`.
+2. В поле **Допустимые источники** введите `https://your-tenant-name.b2clogin.com`. Замените `your-tenant-name` именем вашего клиента Azure AD B2C. Например, `https://fabrikam.b2clogin.com`. Необходимо использовать только строчные буквы в имени вашего клиента.
 3. В поле **Допустимые методы** выберите `GET` и `OPTIONS`.
 4. В поле **Допустимые заголовки** введите звездочку (*).
-5. В поле **Предоставляемые заголовки** введите звездочку (*).
+5. В поле **Доступные заголовки** введите звездочку (*).
 6. В поле **Максимальный возраст** введите 200.
 
     ![Включение CORS](./media/tutorial-customize-ui/enable-cors.png)

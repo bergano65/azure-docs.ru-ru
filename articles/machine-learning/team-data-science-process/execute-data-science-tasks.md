@@ -1,25 +1,21 @@
 ---
 title: Выполнение задач обработки и анализа данных — служба "Машинное обучение Azure" | Документация Майкрософт
 description: Вы узнаете, как выполнять проекты по обработке и анализу данных с отслеживанием, контролем версий и поддержкой совместной работы.
-documentationcenter: ''
-author: deguhath
+author: marktab
 manager: cgronlun
 editor: cgronlun
-ms.assetid: ''
 ms.service: machine-learning
 ms.component: team-data-science-process
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/28/2017
-ms.author: deguhath
-ms.openlocfilehash: 19267429510207129b0229dc55fbd46f12977d5d
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.author: tdsp
+ms.custom: (previous author=deguhath, ms.author=deguhath)
+ms.openlocfilehash: 7e25e2c95f377b1ad40cba24b29ababd0561e32a
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39112650"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52495683"
 ---
 # <a name="execute-data-science-tasks-exploration-modeling-and-deployment"></a>Выполнение задач обработки и анализа данных: изучение, моделирование и развертывание
 
@@ -34,7 +30,7 @@ ms.locfileid: "39112650"
 
 Специалист по обработке и анализу данных может выполнять изучение данных и создание отчетов различными способами: с помощью библиотек и пакетов, доступных для Python (например, matplotlib), или с помощью R (например, ggplot или lattice). Специалисты по обработке и анализу данных могут настроить такой код в соответствии с потребностями изучения данных для конкретных сценариев. Требования к работе со структурированными и неструктурированными данными (например, текстом и изображениями) отличаются. 
 
-Такие продукты, как Azure Machine Learning Workbench, также предоставляют [расширенную подготовку данных](../desktop-workbench/tutorial-bikeshare-dataprep.md) для повышения качества этих данных и их изучения, включая создание возможностей. Пользователь должен выбрать инструменты, библиотеки и пакеты, которые лучше всего подходят для выполнения его задач. 
+Такие продукты, как Azure Machine Learning Workbench, также обеспечивают [дополнительную подготовку данных](../service/how-to-transform-data.md) для первичной обработки данных и их изучения, включая создание возможностей. Пользователь должен выбрать инструменты, библиотеки и пакеты, которые лучше всего подходят для выполнения его задач. 
 
 Конечный результат этого этапа — это отчет об изучении данных. Он должен дать достаточно полное представление о данных, используемых для моделирования, и предоставить оценку пригодности данных для перехода к шагу моделирования. Служебные программы для командного процесса обработки и анализа данных (TDSP), рассматриваемые в следующих разделах и предназначенные для полуавтоматического изучения, моделирования и создания отчетов, также позволяют получить стандартизированные отчеты об изучении данных и моделировании. 
 
@@ -90,7 +86,7 @@ ms.locfileid: "39112650"
 Поместить модели в рабочую среду можно с использованием разных подходов и платформ. Вот некоторые из них:
 
 
-- [Развертывание модели в службе "Машинное обучение Azure"](../desktop-workbench/model-management-overview.md)
+- [Развертывание модели в Службе "Машинное обучение Azure"](../service/how-to-deploy-and-where.md)
 - [Развертывание модели на сервере SQL Server](https://docs.microsoft.com/sql/advanced-analytics/tutorials/sqldev-py6-operationalize-the-model)
 - [Microsoft Machine Learning Server](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
 

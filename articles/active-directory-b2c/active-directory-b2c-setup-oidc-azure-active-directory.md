@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/22/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 9b9754c9087f2d0064cc1aa75e76520731dfb3a9
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 86e5381096633e58d7a1a28ac94728136273c685
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50242864"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52312788"
 ---
 # <a name="set-up-sign-in-azure-active-directory-accounts-a-built-in-policy-in-azure-active-directory-b2c"></a>Конфигурация входа в учетные записи Azure Active Directory со встроенной политикой в Azure Active Directory B2C
 
@@ -26,7 +26,7 @@ ms.locfileid: "50242864"
 
 ## <a name="create-an-azure-ad-app"></a>Создание приложения Azure AD
 
-Чтобы включить вход для пользователей из определенной организации Azure AD, вам необходимо зарегистрировать приложение в клиенте организации Azure AD, который отличается от клиента Azure AD B2C.
+Чтобы включить вход для пользователей из определенной организации Azure AD, вам необходимо зарегистрировать приложение в клиенте Azure AD этой организации, а не в вашем клиенте Azure AD B2C.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. Убедитесь, что используете каталог, содержащий клиента организации Azure AD, щелкнув "Фильтр каталога и подписки" в верхнем меню и выбрав каталог, который содержит ваш клиент.

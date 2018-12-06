@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: jsimmons
-ms.openlocfilehash: 59c89c81f618876de48de66a38e1063eb658fba4
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: d3d42a3c81153d54690f0825368eaa950dbac18e
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50742959"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52314785"
 ---
 # <a name="preview-azure-ad-password-protection-on-premises---frequently-asked-questions"></a>Часто задаваемые вопросы о локальной службе защиты паролем Azure AD (предварительная версия)
 
@@ -50,7 +50,7 @@ ms.locfileid: "50742959"
 
 [The Case for Migrating sysvol replication to DFSR](https://blogs.technet.microsoft.com/askds/2010/04/22/the-case-for-migrating-sysvol-to-dfsr) (Вариант переноса репликации SYSVOL в DFSR)
 
-[The End is Nigh for DRS](https://blogs.technet.microsoft.com/filecab/2014/06/25/the-end-is-nigh-for-frs) (Близится конец DRS)
+[The End is Nigh for FRS](https://blogs.technet.microsoft.com/filecab/2014/06/25/the-end-is-nigh-for-frs) (Близится конец FRS)
 
 **Вопрос. Почему для установки или обновления программного обеспечения агента контроллера домена требуется перезагрузка?**
 
@@ -58,7 +58,7 @@ ms.locfileid: "50742959"
 
 **В. Имеется ли способ настроить агент контроллера домена для использования конкретного прокси-сервера?**
 
-Нет.
+ Нет.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

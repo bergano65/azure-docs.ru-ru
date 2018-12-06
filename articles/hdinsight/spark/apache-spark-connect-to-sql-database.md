@@ -9,16 +9,16 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: b8494150a060e02145eab3674bdd2dd62cdda225
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 603aa8d85d42167accd2a5e71c4ab3e5245f5d07
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51277296"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52499260"
 ---
 # <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>Чтение данных из базы данных SQL Azure и запись в нее с использованием кластера HDInsight Spark
 
-Узнайте, как подключить кластер Apache Spark в Azure HDInsight с помощью базы данных SQL Azure, а также как выполнять чтение из базы данных SQL, запись и потоковую передачу данных в нее. В приведенных здесь инструкциях для выполнения фрагментов кода Scala используется записная книжка Jupyter. Тем не менее вы можете создать изолированное приложение на языке Scala или Python и выполнять такие же задачи. 
+Узнайте, как подключить кластер Apache Spark в Azure HDInsight с помощью базы данных SQL Azure, а также как выполнять чтение из базы данных SQL, запись и потоковую передачу данных в нее. В приведенных здесь инструкциях для выполнения фрагментов кода Scala используется [Jupyter Notebook](https://jupyter.org/). Тем не менее вы можете создать изолированное приложение на языке Scala или Python и выполнять такие же задачи. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -32,19 +32,14 @@ ms.locfileid: "51277296"
 
 * **SQL Server Management Studio.** Инструкции см. в статье [Подключайтесь к базе данных Azure SQL и создавайте запросы к ней с помощью SQL Server Management Studio](../../sql-database/sql-database-connect-query-ssms.md).
 
-## <a name="create-a-jupyter-notebook"></a>Создание записной книжки Jupyter
+## <a name="create-a-jupyter-notebook"></a>Создание записной книжки Jupyter 
 
-Сначала создайте записную книжку Jupyter, связанную с кластером Spark. Она понадобится для выполнения фрагментов кода, используемых в этой статье. 
+Сначала создайте [записную книжку Jupyter](https://jupyter.org/), связанную с кластером Spark. Она понадобится для выполнения фрагментов кода, используемых в этой статье. 
 
-1. Откройте кластер на [портале Azure](https://portal.azure.com/). 
+1. Откройте кластер на [портале Azure](https://portal.azure.com/).
+1. Выберите **Записная книжка Jupyter** в разделе **Панели мониторинга кластера** справа.  Если раздел **Панели мониторинга кластера** не отображается, в колонке в меню слева щелкните **Обзор**. При появлении запроса введите учетные данные администратора для кластера.
 
-1. В разделе **Быстрые ссылки** щелкните **Панели мониторинга кластера**, чтобы открыть представление **Панели мониторинга кластера**.  Если раздел **Быстрые ссылки** не отображается, в колонке в меню слева щелкните **Обзор**.
-
-    ![Панель мониторинга кластера в Spark](./media/apache-spark-connect-to-sql-database/hdinsight-cluster-dashboard-on-spark.png "Панель мониторинга кластера в Spark") 
-
-1. Щелкните **Записная книжка Jupyter**. При появлении запроса введите учетные данные администратора для кластера.
-
-    ![Записная книжка Jupyter в Spark](./media/apache-spark-connect-to-sql-database/hdinsight-jupyter-notebook-on-spark.png "Записная книжка Jupyter в Spark")
+    ![Записная книжка Jupyter в Spark](./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png "Записная книжка Jupyter в Spark")
    
    > [!NOTE]
    > Вы также можете получить доступ к записной книжке Jupyter в кластере Spark, открыв следующий URL-адрес в браузере. Замените **CLUSTERNAME** именем кластера:
@@ -242,4 +237,4 @@ ms.locfileid: "51277296"
 
 * [Использование кластера HDInsight Spark для анализа данных в Data Lake Store](apache-spark-use-with-data-lake-store.md)
 * [Структурированная потоковая передача Apache Spark в HDInsight для обработки событий из концентраторов событий](apache-spark-eventhub-structured-streaming.md)
-* [Использование структурированной потоковой передачи Spark с Kafka в HDInsight](../hdinsight-apache-kafka-spark-structured-streaming.md)
+* [Использование структурированной потоковой передачи Apache Spark с Apache Kafka в HDInsight](../hdinsight-apache-kafka-spark-structured-streaming.md)

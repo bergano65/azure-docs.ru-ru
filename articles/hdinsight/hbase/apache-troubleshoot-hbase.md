@@ -8,14 +8,14 @@ ms.author: nitinver
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 7/7/2017
-ms.openlocfilehash: e25a2dcaf9b7c820f5d7e0312fb2cb55fc558882
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 771f01f18c5cb54a0458d624a65ec1a69345cadd
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39593905"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52317234"
 ---
-# <a name="troubleshoot-hbase-by-using-azure-hdinsight"></a>Устранение неполадок в HBase с помощью Azure HDInsight
+# <a name="troubleshoot-apache-hbase-by-using-azure-hdinsight"></a>Устранение неполадок в Apache HBase с помощью Azure HDInsight
 
 Ознакомьтесь с основными проблемами и их разрешением при работе с полезными данными Apache HBase в Apache Ambari.
 
@@ -30,7 +30,7 @@ ms.locfileid: "39593905"
 Чтобы вернуть неназначенные регионы в нормальное состояние, выполните такие действия:
 
 1. Войдите в кластер HDInsight HBase с помощью SSH.
-2. Для подключения к оболочке ZooKeeper выполните команду `hbase zkcli`.
+2. Для подключения к оболочке Apache ZooKeeper выполните команду `hbase zkcli`.
 3. Выполните команду `rmr /hbase/regions-in-transition` или `rmr /hbase-unsecure/regions-in-transition`.
 4. Для выхода из оболочки `hbase zkcli` используйте команду `exit`.
 5. Откройте пользовательский интерфейс Ambari Apache и перезапустите службу активного главного узла HBase.
@@ -46,7 +46,7 @@ ms.locfileid: "39593905"
 ### <a name="resolution-steps"></a>Способы устранения
 
 1. Войдите в кластер HDInsight HBase с помощью SSH.
-2. Для подключения к оболочке ZooKeeper выполните команду `hbase zkcli`.
+2. Для подключения к оболочке Apache ZooKeeper выполните команду `hbase zkcli`.
 3. Выполните команду `rmr /hbase/regions-in-transition` или `rmr /hbase-unsecure/regions-in-transition`.
 4. Чтобы выйти из оболочки `hbase zkcli`, используйте команду `exit`.
 5. Перезапустите службу активного главного узла HBase в пользовательском интерфейсе Ambari.
@@ -56,7 +56,7 @@ ms.locfileid: "39593905"
 
 ### <a name="issue"></a>Проблема
 
-Локальная распределенная файловая система Hadoop (HDFS) зависла в безопасном режиме в кластере HDInsight.
+Локальная распределенная файловая система Apache Hadoop (HDFS) зависла в безопасном режиме в кластере HDInsight.
 
 ### <a name="detailed-description"></a>Подробное описание
 
@@ -211,7 +211,7 @@ mkdir: Cannot create directory /temp. Name node is in safe mode.
 
 ### <a name="resolution-steps"></a>Способы устранения
 
-Чтобы подключиться к Phoenix, необходимо предоставить IP-адрес активного узла ZooKeeper. Убедитесь, что служба Zookeeper, к которой подключается sqlline.py, запущена и работает.
+Чтобы подключиться к Apache Phoenix, необходимо предоставить IP-адрес активного узла Apache ZooKeeper. Убедитесь, что служба Zookeeper, к которой подключается sqlline.py, запущена и работает.
 1. Войдите в кластер HDInsight с помощью SSH.
 2. Введите следующую команду:
                 
@@ -247,7 +247,7 @@ mkdir: Cannot create directory /temp. Name node is in safe mode.
    ```apache
            ERROR: org.apache.hadoop.hbase.NotServingRegionException: Region SYSTEM.CATALOG,,1485464083256.c0568c94033870c517ed36c45da98129. is not online on 10.2.0.5,16020,1489466172189) 
    ```
-6. В пользовательском интерфейсе Ambari выполните следующие действия, чтобы перезапустить службу HMaster на всех узлах ZooKeeper:
+6. В пользовательском интерфейсе Apache Ambari выполните следующие действия, чтобы перезапустить службу HMaster на всех узлах ZooKeeper:
 
     1. В разделе **Summary** (Сводка) HBase перейдите к **HBase** > **Active HBase Master** (Активный главный узел HBase). 
     2. В разделе **Components** (Компоненты) перезапустите службу главного узла HBase.
@@ -331,7 +331,7 @@ mkdir: Cannot create directory /temp. Name node is in safe mode.
   
 ### <a name="resolution-steps"></a>Способы устранения
 
-1. В пользовательском интерфейсе Ambari перейдите к **HBase** > **Configs** (Конфигурации). В пользовательском файле hbase-site.xml file добавьте следующий параметр: 
+1. В пользовательском интерфейсе Apache Ambari перейдите к **HBase** > **Configs** (Конфигурации). В пользовательском файле hbase-site.xml file добавьте следующий параметр: 
 
    ```apache
    Key: hbase.master.namespace.init.timeout Value: 2400000  
@@ -344,9 +344,9 @@ mkdir: Cannot create directory /temp. Name node is in safe mode.
 
 ### <a name="issue"></a>Проблема
 
-Сбой перезапуска на региональном сервере можно предотвратить, следуя рекомендациям. Рекомендуется приостановить действие высокой рабочей нагрузки при планировании перезагрузки региональных серверов HBase. Если приложение продолжит подключаться к региональным серверам во время завершения работы, это замедлит перезапуск регионального сервера на несколько минут. Кроме того рекомендуется сначала очистить все таблицы. Подробные сведения об очистке таблиц см. в статье [HDInsight HBase: How to improve the HBase cluster restart time by flushing tables](https://blogs.msdn.microsoft.com/azuredatalake/2016/09/19/hdinsight-hbase-how-to-improve-hbase-cluster-restart-time-by-flushing-tables/) (HDInsight HBase: как уменьшить время перезапуска кластера HBase с помощью очистки таблиц).
+Сбой перезапуска на региональном сервере можно предотвратить, следуя рекомендациям. Рекомендуется приостановить действие высокой рабочей нагрузки при планировании перезагрузки региональных серверов HBase. Если приложение продолжит подключаться к региональным серверам во время завершения работы, это замедлит перезапуск регионального сервера на несколько минут. Кроме того рекомендуется сначала очистить все таблицы. Подробные сведения об очистке таблиц см. в статье [HDInsight HBase: How to improve the Apache HBase cluster restart time by flushing tables](https://blogs.msdn.microsoft.com/azuredatalake/2016/09/19/hdinsight-hbase-how-to-improve-hbase-cluster-restart-time-by-flushing-tables/) (HDInsight HBase: как уменьшить время перезапуска кластера Apache HBase с помощью очистки таблиц).
 
-При запуске операции перезапуска на региональных серверах HBase в пользовательском интерфейсе Ambari региональные серверы будут сразу же отключены, но они не будут немедленно перезапущены. 
+При запуске операции перезапуска на региональных серверах HBase в пользовательском интерфейсе Apache Ambari региональные серверы будут сразу же отключены, но они не будут немедленно перезапущены. 
 
 Вот, что происходит в этот момент: 
 

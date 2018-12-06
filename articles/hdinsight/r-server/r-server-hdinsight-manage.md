@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: 35b80223552181e44beac011f5fb541158466acc
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: bdb2e355b29306c8a78a3a773269baeee13fc9d1
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51255410"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52497540"
 ---
 # <a name="manage-ml-services-cluster-on-azure-hdinsight"></a>Управление кластером служб машинного обучения в Azure HDInsight
 
@@ -33,7 +33,7 @@ ms.locfileid: "51255410"
 
 ![Параллельное подключение пользователя 1](./media/r-server-hdinsight-manage/concurrent-users-1.png)
 
-- **Имя пользователя для входа в кластер** — пользователь HTTP для проверки подлинности с помощью шлюза HDInsight, который применяется для защиты созданных вами кластеров HDInsight. Этот пользователь HTTP служит для доступа к пользовательскому интерфейсу Ambari, пользовательскому интерфейсу YARN, а также другим компонентам пользовательского интерфейса.
+- **Имя пользователя для входа в кластер** — пользователь HTTP для проверки подлинности с помощью шлюза HDInsight, который применяется для защиты созданных вами кластеров HDInsight. Эти учетные данные пользователя HTTP нужны для доступа к пользовательскому интерфейсу Apache Ambari, пользовательскому интерфейсу Apache Hadoop YARN, а также другим компонентам пользовательского интерфейса.
 - **Имя пользователя Secure Shell (SSH)**  — пользователь SSH для доступа к кластеру через безопасную оболочку. Этот пользователь применяется в системе Linux для всех головных, рабочих и граничных узлов. Таким образом, с помощью безопасной оболочки вы можете получить доступ к любому узлу в удаленном кластере.
 
 Версия RStudio Server Community, которая используется в кластере служб машинного обучения в HDInsight, поддерживает только один метод входа: имя пользователя и пароль Linux. Эта версия не поддерживает передачу токенов. Таким образом, при первом входе в RStudio в кластере служб машинного обучения потребуется ввести учетные данные два раза.
@@ -52,7 +52,7 @@ ms.locfileid: "51255410"
 
 ### <a name="step-1-use-the-created-ssh-user-to-sign-in-to-the-edge-node"></a>Шаг 1. Вход на граничный узел с помощью созданного пользователя SSH
 
-Чтобы войти на граничный узел, следуйте инструкциям по [подключению к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md). Адрес граничного узла кластера служб машинного обучения в HDInsight: `CLUSTERNAME-ed-ssh.azurehdinsight.net`.
+Чтобы получить доступ к граничному узлу, следуйте инструкциям по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md). Адрес граничного узла кластера служб машинного обучения в HDInsight: `CLUSTERNAME-ed-ssh.azurehdinsight.net`.
 
 ### <a name="step-2-add-more-linux-users-in-edge-node"></a>Шаг 2. Добавление дополнительных пользователей Linux на граничный узел
 
@@ -104,7 +104,7 @@ ms.locfileid: "51255410"
       consoleOutput= TRUE
     )
 
-Дополнительные сведения см. в разделе "Использование Machine Learning Server в качестве клиента Hadoop" в статье [How to use RevoScaleR in a Spark compute context](https://docs.microsoft.com/machine-learning-server/r/how-to-revoscaler-spark#more-spark-scenarios) (Как использовать RevoScaleR в контексте вычислений Spark)
+Дополнительные сведения см. в разделе об использовании Microsoft Machine Learning Server в качестве клиента Apache Hadoop в статье [How to use RevoScaleR in a Spark compute context](https://docs.microsoft.com/machine-learning-server/r/how-to-revoscaler-spark#more-spark-scenarios) (Как использовать RevoScaleR в контексте вычислений Spark).
 
 ## <a name="use-a-compute-context"></a>Использование контекста вычислений
 
@@ -250,7 +250,7 @@ ms.locfileid: "51255410"
         nodename
     "wn3-mymlser"
 
-## <a name="access-data-in-hive-and-parquet"></a>Доступ к данным в Hive и Parquet
+## <a name="access-data-in-apache-hive-and-parquet"></a>Доступ к данным в Apache Hive и Parquet
 
 Службы машинного обучения HDInsight обеспечивают прямой доступ к данным в Hive и Parquet для использования функций ScaleR в контексте вычислений Spark. Эти возможности, доступные в рамках новых функций источника данных ScaleR, называются RxHiveData и RxParquetData. Они используются со Spark SQL для загрузки данных непосредственно в Spark DataFrame и последующего анализа с помощью ScaleR.
 

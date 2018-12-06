@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 09/06/2017
+ms.date: 11/27/2018
 ms.author: diberry
-ms.openlocfilehash: 42bd8ef95ac1b55e76fe1cf0702b79de91832741
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: aca81bd529fe6151dce7aba6754874355189fc59
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48870185"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52444398"
 ---
 # <a name="usage-data-for-luis-service-from-azure-cloud-shell"></a>Получение сведений об использовании LUIS из Azure Cloud Shell
 С помощью портала Azure можно использовать командлеты PowerShell для работы с ресурсами LUIS. 
@@ -32,7 +32,7 @@ ms.locfileid: "48870185"
 ## <a name="open-cloud-shell"></a>Открытие Cloud Shell
 Для работы с Cloud Shell на портале Azure всегда используется самая последняя версия PowerShell. 
 
-Чтобы открыть Cloud Shell, воспользуйтесь кнопкой **Запустить Cloud Shell** или откройте в браузере [https://shell.azure.com](https://shell.azure.com). 
+Чтобы открыть Cloud Shell, воспользуйтесь кнопкой **Запустить Cloud Shell** или откройте в браузере [https://shell.azure.com](https://shell.azure.com). Выберите Power Shell в качестве среды. Если у вас нет учетной записи службы хранилища Azure, вам потребуется ее создать. 
 
 <a style="cursor:pointer" onclick='javascript:window.open("https://shell.azure.com", "_blank", "toolbar=no,scrollbars=yes,resizable=yes,menubar=no,location=no,status=no")'><image src="https://shell.azure.com/images/launchcloudshell.png" /></a>
 

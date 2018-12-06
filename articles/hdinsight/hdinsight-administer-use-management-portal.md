@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.date: 05/25/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 651a03f69a7664b68ce3fe5c512c59c01762a505
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 378f52f0418c8c99e9ce6ca393ca10a77504698d
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51282481"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52499584"
 ---
 # <a name="manage-windows-based-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Управление кластерами Apache Hadoop для Windows в HDInsight с помощью портала Azure
 
-На [портале Azure][azure-portal] можно создавать кластеры Apache Hadoop для Windows в Azure HDInsight, менять пароль пользователя Hadoop и включать протокол удаленного рабочего стола (RDP) для работы с командной консолью Hadoop в кластере.
+На [портале Azure][azure-portal] можно создавать кластеры [Apache Hadoop](https://hadoop.apache.org/) для Windows в Azure HDInsight, менять пароль пользователя Hadoop и включать протокол удаленного рабочего стола (RDP) для работы с командной консолью Hadoop в кластере.
 
-Эта статья посвящена только кластерам HDInsight под управлением Windows. Сведения об управлении кластерами на платформе Linux см. в статье [Управление кластерами Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md).
+Эта статья посвящена только кластерам HDInsight под управлением Windows. См. дополнительные сведения об [управлении кластерами Hadoop на основе Linux в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md).
 
 [!INCLUDE [windows-retirement-notice](../../includes/windows-retirement-notice.md)]
 
@@ -49,11 +49,11 @@ ms.locfileid: "51282481"
 ## <a name="create-clusters"></a>Создание кластеров
 Инструкции по созданию кластеров с помощью портала см. в статье [Создание кластеров Hadoop под управлением Windows в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
-HDInsight работает со множеством компонентов Hadoop. Список проверенных и поддерживаемых компонентов см. в статье [Что представляют собой различные компоненты Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md) Вы можете настраивать HDInsight с использованием одного из следующих вариантов.
+HDInsight работает с разными компонентами Apache Hadoop. См. [список проверенных и поддерживаемых компонентов Apache Hadoop, доступных в Azure HDInsight](hdinsight-component-versioning.md). Вы можете настраивать HDInsight с использованием одного из следующих вариантов.
 
 * Используйте действие скрипта для запуска пользовательских скриптов, которые могут настраивать кластер для изменения конфигурации кластера или для установки настраиваемых компонентов, таких как Giraph или Solr. Дополнительные сведения см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster.md).
 * При создании кластера используйте параметры настройки кластера в Azure PowerShell или в пакете SDK для HDInsight .NET. Такие изменения конфигурации сохраняются на протяжении всего срока существования кластера и не попадают под воздействие операций повторного создания образа узла, которые периодически выполняет платформа Azure в рамках обслуживания. Дополнительные сведения об использовании параметров настройки кластера см. в статье [Создание кластеров Hadoop под управлением Windows в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
-* Некоторые собственные компоненты Java, такие как Mahout и Cascading, могут выполняться в кластере как JAR-файлы. Эти JAR-файлы можно распространить в хранилище больших двоичных объектов Azure и отправить в кластеры HDInsight с помощью механизмов отправки заданий Hadoop. Подробные сведения см. в статье [Отправка заданий Hadoop в HDInsight](hadoop/submit-apache-hadoop-jobs-programmatically.md).
+* Некоторые собственные компоненты Java, такие как [Apache Mahout](https://mahout.apache.org/) и [Cascading](https://www.cascading.org/), могут выполняться в кластере как JAR-файлы. Эти JAR-файлы можно распространить в хранилище больших двоичных объектов Azure и отправить в кластеры HDInsight с помощью механизмов отправки заданий Hadoop. См. дополнительные сведения об [отправке заданий Apache Hadoop программными средствами](hadoop/submit-apache-hadoop-jobs-programmatically.md).
 
   > [!NOTE]
   > Если при развертывании или вызове JAR-файлов в кластерах HDInsight возникают проблемы, обратитесь в [службу поддержки Майкрософт](https://azure.microsoft.com/support/options/).
@@ -91,7 +91,7 @@ HDInsight работает со множеством компонентов Hado
    * **Просмотры Ambari**: ссылки на веб-интерфейс Ambari.
 
      > [!IMPORTANT]
-     > Для управления службами, предоставляемыми кластером HDInsight, необходимо использовать интерфейс Ambari Web или API REST Ambari. Дополнительные сведения об использовании Ambari см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md).
+     > Для управления службами, предоставляемыми кластером HDInsight, необходимо использовать интерфейс Ambari Web или API REST Ambari. См. дополнительные сведения об [управлении кластерами HDInsight с помощью Apache Ambari](hdinsight-hadoop-manage-ambari.md).
      >
      >
 
@@ -106,7 +106,7 @@ HDInsight работает со множеством компонентов Hado
    * **Идентификатор AAD кластера**:
    * **Ключи к хранилищу данных Azure**: просмотр стандартной учетной записи хранения и ключа к ней. Учетная запись хранения настраивается во время создания кластера.
    * **Вход в кластер**: изменение имени пользователя и пароля для входа в кластер по протоколу HTTP.
-   * **Внешние метахранилища**: просмотр метахранилищ Hive и Oozie. Метахранилища можно настроить только во время создания кластера.
+   * **Внешние метахранилища**: просмотр метахранилищ [Apache Hive](https://hive.apache.org/) и [Apache Oozie](https://oozie.apache.org/). Метахранилища можно настроить только во время создания кластера.
    * **Масштабирование кластера**: увеличение или уменьшение количества рабочих узлов в кластере.
    * **Удаленный рабочий стол**: включение и отключение доступа по протоколу RDP, а также настройка имени пользователя для входа.  Имя пользователя RDP должно отличаться от имени пользователя HTTP.
    * **Зарегистрированный партнер**:
@@ -152,12 +152,12 @@ HDInsight работает со множеством компонентов Hado
 
 Ниже представлены возможности, связанные с изменением количества узлов данных в кластере каждого типа, поддерживаемого в HDInsight.
 
-* Hadoop
+* Apache Hadoop
 
     Вы можете легко увеличить количество рабочих узлов в работающем кластере Hadoop. Это не помешает обработке заданий в состоянии ожидания и выполнения. В ходе выполнения операции можно также отправлять новые задания. Сбои операции масштабирования обрабатываются корректно, поэтому кластер всегда пребывает в функциональном состоянии.
 
     Если уменьшить масштаб кластера Hadoop, сократив количество узлов данных, некоторые службы в нем будут перезапущены. Это приведет к сбою всех выполняющихся и ожидающих заданий при завершении операции масштабирования. Однако после завершения операции вы можете повторно отправить задания.
-* hbase
+* Apache HBase
 
     Вы можете с легкостью добавлять и удалять узлы данных в работающем кластере HBase. Балансировка региональных серверов выполняется автоматически в течение нескольких минут после завершения операции масштабирования. Но их также можно сбалансировать вручную, выполнив вход в головной узел кластера и выполнив следующие команды в окне командной строки:
 
@@ -166,13 +166,13 @@ HDInsight работает со множеством компонентов Hado
         >balancer
 
     Дополнительные сведения об использовании оболочки HBase см. []
-* Storm
+* Apache Storm
 
     Вы можете с легкостью добавлять и удалять узлы данных в работающем кластере Storm. Но после успешного завершения операции масштабирования потребуется повторная балансировка топологии.
 
     Повторную балансировку можно выполнить двумя способами:
 
-  * с помощью веб-интерфейса Storm;
+  * Веб-интерфейс Apache Storm
   * с помощью программы командной строки.
 
     Дополнительные сведения см. в [документации по Apache Storm](http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html).
@@ -206,7 +206,7 @@ HDInsight работает со множеством компонентов Hado
 * С помощью фабрики данных Azure. Выполняемые по запросу и самоопределяющиеся связанные службы HDInsight описаны в статьях [Связанные службы вычислений](../data-factory/compute-linked-services.md) и [Преобразование данных в фабрике данных Azure](../data-factory/transform-data.md).
 * С помощью Azure PowerShell.  См. статью [Анализ данных о задержке рейсов с помощью Hive в HDInsight](hdinsight-analyze-flight-delay-data.md).
 * Используйте классический интерфейс командной строки Azure. См. раздел [Управление кластерами HDInsight с помощью классического интерфейса командной строки Azure](hdinsight-administer-use-command-line.md).
-* С помощью пакета SDK для HDInsight .NET. См. статью [Отправка заданий Hadoop в HDInsight](hadoop/submit-apache-hadoop-jobs-programmatically.md).
+* С помощью пакета SDK для HDInsight .NET. См. дополнительные сведения об [отправке заданий Apache Hadoop](hadoop/submit-apache-hadoop-jobs-programmatically.md).
 
 Сведения о ценах см. на странице [цен на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/). Удаление кластера на портале описано в разделе [Удаление кластеров](#delete-clusters).
 
@@ -264,7 +264,7 @@ HDInsight работает со множеством компонентов Hado
 ## <a name="open-hdinsight-query-console"></a>Открытие консоли запросов HDInsight
 Консоль запросов HDInsight содержит следующие компоненты.
 
-* **Редактор кустов**. Графический пользовательский веб-интерфейс для отправки заданий Hive.  См. статью [Выполнение запросов Hive с помощью консоли запросов](hadoop/apache-hadoop-use-hive-query-console.md).
+* **Редактор кустов**. Графический пользовательский веб-интерфейс для отправки заданий Hive.  См. дополнительные сведения о [выполнении запросов Apache Hive с помощью консоли запросов](hadoop/apache-hadoop-use-hive-query-console.md).
 
     ![Редактор кустов на портале HDInsight](./media/hdinsight-administer-use-management-portal/hdinsight-hive-editor.png)
 * **Журнал заданий**. Позволяет отслеживать задания Hadoop.  
@@ -301,7 +301,7 @@ HDInsight работает со множеством компонентов Hado
 В колонке кластера HDInsight в разделе **Использование** отображаются сведения о количестве ядер, доступных для HDInsight в рамках вашей подписки, а также о количестве ядер, выделенных для этого кластера, и их распределении между узлами в кластере. См. раздел [Отображение кластеров](#list-and-show-clusters).
 
 > [!IMPORTANT]
-> Для мониторинга служб, предоставляемых кластером HDInsight, необходимо использовать интерфейс Ambari Web или API REST Ambari. Дополнительные сведения об использовании Ambari см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md).
+> Для мониторинга служб, предоставляемых кластером HDInsight, необходимо использовать интерфейс Ambari Web или API REST Ambari. См. дополнительные сведения об [управлении кластерами HDInsight с помощью Apache Ambari](hdinsight-hadoop-manage-ambari.md).
 >
 >
 
@@ -347,7 +347,7 @@ HDInsight работает со множеством компонентов Hado
 
     ![HDI.HadoopCommandLine][image-hadoopcommandline]
 
-    Дополнительные сведения о командах Hadoop см. в [справочнике по командам Hadoop](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/CommandsManual.html).
+    См. дополнительные сведения о [командах Apache Hadoop](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/CommandsManual.html).
 
 На предыдущем снимке экрана в имя папки включен номер версии Hadoop. Номер версии может меняться в зависимости от версии компонентов Hadoop, установленных в кластере. Для ссылки на эти папки можно использовать переменные среды Hadoop. Например: 
 
@@ -359,14 +359,14 @@ HDInsight работает со множеством компонентов Hado
     cd %hcatalog_home%
 
 ## <a name="next-steps"></a>Дополнительная информация
-Из этой статьи вы узнали, как создать кластер HDInsight с помощью портала и как открыть программу командной строки Hadoop. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
+Из этой статьи вы узнали, как создать кластер HDInsight с помощью портала и открыть программу командной строки Apache Hadoop. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
 
 * [Администрирование HDInsight с помощью Azure PowerShell](hdinsight-administer-use-powershell.md)
 * [Администрирование HDInsight с помощью классического интерфейса командной строки Azure CLI](hdinsight-administer-use-command-line.md)
 * [Создание кластеров HDInsight](hdinsight-hadoop-provision-linux-clusters.md)
-* [Отправка заданий Hadoop в HDInsight](hadoop/submit-apache-hadoop-jobs-programmatically.md)
+* [Отправка заданий Apache Hadoop программными средствами](hadoop/submit-apache-hadoop-jobs-programmatically.md)
 * [Начало работы с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md)
-* [Какая версия Hadoop включена в Azure HDInsight?](hdinsight-component-versioning.md)
+* [Какая версия Apache Hadoop включена в Azure HDInsight?](hdinsight-component-versioning.md)
 
 [azure-portal]: https://portal.azure.com
 [image-hadoopcommandline]: ./media/hdinsight-administer-use-management-portal/hdinsight-hadoop-command-line.png "Командная строка Hadoop"

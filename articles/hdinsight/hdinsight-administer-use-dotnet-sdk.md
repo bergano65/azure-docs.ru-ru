@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: hrasheed
-ms.openlocfilehash: a7c06d53e3823bd81707608f566f581fa44638fc
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 2371f52591db667498398daa889ebc14708a9674
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51037768"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52499214"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-net-sdk"></a>Управление кластерами Apache Hadoop в HDInsight с помощью пакета SDK для .NET
 [!INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
@@ -228,7 +228,7 @@ _hdiManagementClient.Clusters.ConfigureHttpSettings("<Resource Group Name>, <Clu
 Это также можно сделать через портал. Ознакомьтесь с разделом [Администрирование HDInsight с помощью портала Azure][hdinsight-admin-portal].
 
 ## <a name="update-http-user-credentials"></a>Обновление учетных данных пользователя HTTP
-Эта процедура аналогична [предоставлению или запрету доступа HTTP](#grant/revoke-access). Если кластеру был предоставлен доступ по протоколу HTTP, необходимо сначала отменить его.  После этого предоставьте доступ с новыми учетными данными пользователя HTTP.
+Процедура та же, что и при [предоставлении или отмене доступа по протоколу HTTP](#grant/revoke-access).  Если кластеру был предоставлен доступ по протоколу HTTP, то сначала его необходимо отменить.  После этого предоставьте доступ с новыми учетными данными пользователя HTTP.
 
 ## <a name="find-the-default-storage-account"></a>Поиск учетной записи хранения по умолчанию
 В следующем фрагменте кода показано получение имени учетной записи хранения по умолчанию и ключа учетной записи хранения по умолчанию для кластера.
@@ -242,25 +242,25 @@ foreach (var key in results.Configuration.Keys)
 ```
 
 ## <a name="submit-jobs"></a>Отправка заданий
-**Отправка заданий MapReduce**
+**Отправка заданий Apache Hadoop MapReduce**
 
-См. статью [Выполнение примеров Hadoop в HDInsight](hadoop/apache-hadoop-run-samples-linux.md).
+См. статью о [выполнении примеров Apache Hadoop MapReduce в HDInsight](hadoop/apache-hadoop-run-samples-linux.md).
 
 **Отправка заданий Apache Hive** 
 
-См. статью [Выполнение запросов Hive с помощью пакета SDK HDInsight для .NET](hadoop/apache-hadoop-use-hive-dotnet-sdk.md).
+См. статью о [выполнении запросов Apache Hive с помощью пакета SDK для .NET](hadoop/apache-hadoop-use-hive-dotnet-sdk.md).
 
 **Отправка заданий Apache Pig**
 
-См. статью [Выполнение заданий Pig с помощью пакета SDK для .NET для Hadoop в HDInsight](hadoop/apache-hadoop-use-pig-dotnet-sdk.md).
+См. статью о [выполнении заданий Apache Pig с помощью пакета SDK для .NET](hadoop/apache-hadoop-use-pig-dotnet-sdk.md).
 
 **Отправка заданий Apache Sqoop**
 
-См. статью [Использование Sqoop с Hadoop в HDInsight](hadoop/apache-hadoop-use-sqoop-dotnet-sdk.md).
+См. статью об [использовании Apache Sqoop с HDInsight](hadoop/apache-hadoop-use-sqoop-dotnet-sdk.md).
 
 **Отправка заданий Apache Oozie**
 
-См. статью [Использование Oozie с Hadoop для определения и выполнения рабочего процесса в HDInsight](hdinsight-use-oozie-linux-mac.md).
+См. статью об [использовании Apache Oozie с Hadoop для определения и выполнения рабочего процесса в HDInsight](hdinsight-use-oozie-linux-mac.md).
 
 ## <a name="upload-data-to-azure-blob-storage"></a>Отправка данных в хранилище BLOB-объектов Azure
 Ознакомьтесь со статьей [Отправка данных в HDInsight][hdinsight-upload-data].

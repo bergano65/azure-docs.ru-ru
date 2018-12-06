@@ -12,12 +12,12 @@ ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
 ms.date: 10/05/2018
-ms.openlocfilehash: 639795824bf75bb99d34f12d4dfc4e0695341986
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: f3da1a8cef5abc8fd30a0dc7760005ad5fff5446
+ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48868418"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52335375"
 ---
 # <a name="copy-an-transactionally-consistent-copy-of-an-azure-sql-database"></a>Скопируйте транзакционную копию базы данных Azure SQL
 
@@ -26,6 +26,9 @@ ms.locfileid: "48868418"
 ## <a name="overview"></a>Обзор
 
 Копия базы данных представляет собой моментальный снимок исходной базы данных на момент запроса копирования. Вы можете выбрать тот же или другой сервер, его уровень служб и объем вычислительных ресурсов, а также другой объем вычислительных ресурсов в рамках установленного уровня служб (выпуска). После завершения копирования копия становится полностью работоспособной и независимой базой данных. На этом этапе можно перейти на использование любой более поздней или более ранней версии. Именами входа, пользователями и разрешениями можно управлять независимо.  
+
+> [!NOTE]
+> [Создаваемые автоматически резервные копии базы данных](sql-database-automated-backups.md) используются при создании копии базы данных.
 
 ## <a name="logins-in-the-database-copy"></a>Имена входа в копии базы данных
 

@@ -9,16 +9,16 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/22/2018
-ms.openlocfilehash: 6cb3102206174422a3d8b4a0fb18f989d875e093
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 61f5f0d0b9e88174f82e960eb5d92db99d0cae71
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51259060"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52582857"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Развертывание и администрирование топологий Apache Storm в Azure HDInsight 
 
-С помощью этого документа вы ознакомитесь с основами управления и мониторинга топологий Storm, работающих в Storm в кластерах HDInsight.
+С помощью этого документа вы ознакомитесь с основами управления и мониторинга топологий [Apache Storm](http://storm.apache.org/), работающих в Storm в кластерах HDInsight.
 
 > [!IMPORTANT]
 > Для выполнения действий, описанных в этой статье, вам потребуется Storm под управлением Linux в кластере HDInsight. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement). 
@@ -186,7 +186,7 @@ ms.locfileid: "51259060"
   * **Deactivate**(Отключить) — приостановка выполняемой топологии.
   * **Rebalance**(Повторная балансировка) — корректировка параллелизма топологии. После изменения числа узлов в кластере необходимо выполнить повторную балансировку топологий. Эта операция позволяет топологии скорректировать параллелизм для компенсации увеличения или уменьшения количества узлов в кластере.
 
-    Дополнительные сведения см. в статье <a href="http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html" target="_blank">Understanding the parallelism of a Storm topology</a> (Общие сведения о параллелизме топологии Storm).
+    Дополнительные сведения см. в статье о <a href="http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html" target="_blank">параллелизме топологии Apache Storm</a>.
   * **Kill**(Удалить) — останавливает выполнение топологии Storm по истечении заданного времени ожидания.
 * **Topology stats**(Статистика топологии) — статистика по топологии. С помощью ссылок в столбце **Window** (Окно) можно установить интервал времени для оставшихся записей на странице.
 * **Spouts**(Воронки) — используемые в топологии источники данных, которые называются воронками. С помощью ссылок в этом разделе можно получить дополнительную информацию о конкретных воронках.
@@ -208,10 +208,10 @@ ms.locfileid: "51259060"
 
 Пользовательский интерфейс Storm построен на базе REST API, поэтому функциональность отслеживания и управления можно реализовать аналогичным образом с помощью API. С помощью REST API можно создать пользовательские средства для отслеживания топологий Storm и управления ими.
 
-Дополнительные сведения см. в разделе [API-интерфейс REST пользовательского интерфейса Storm](http://storm.apache.org/releases/current/STORM-UI-REST-API.html). Следующая информация касается использования REST API с Apache Storm в HDInsight.
+Дополнительные сведения см. в статье о [REST API пользовательского интерфейса Apache Storm](http://storm.apache.org/releases/current/STORM-UI-REST-API.html). Следующая информация касается использования REST API с Apache Storm в HDInsight.
 
 > [!IMPORTANT]
-> API-интерфейс REST для Storm не является общедоступным через Интернет, и обращаться к нему необходимо с помощью туннеля SSH на головной узел кластера HDInsight. Дополнительные сведения о создании и использовании туннеля SSH см. в статье [Использование туннелирования SSH для доступа к веб-интерфейсу Ambari, JobHistory, NameNode, Oozie и другим веб-интерфейсам](../hdinsight-linux-ambari-ssh-tunnel.md).
+> API-интерфейс REST для Storm не является общедоступным через Интернет, и обращаться к нему необходимо с помощью туннеля SSH на головной узел кластера HDInsight. Дополнительные сведения см. в статье об [использовании туннелирования SSH для доступа к пользовательскому веб-интерфейсу Apache Ambari, JobHistory, NameNode, Apache Oozie и другим пользовательским веб-интерфейсам](../hdinsight-linux-ambari-ssh-tunnel.md).
 
 ### <a name="base-uri"></a>Базовый универсальный код ресурса
 
@@ -232,10 +232,10 @@ ms.locfileid: "51259060"
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-Сведения, возвращаемые из REST API, могут использоваться только в пределах кластера. Например, полное доменное имя, возвращаемое для серверов Zookeeper, недоступно из Интернета.
+Сведения, возвращаемые из REST API, могут использоваться только в пределах кластера. Например, полное доменное имя, возвращаемое для серверов [Apache ZooKeeper](https://zookeeper.apache.org/), недоступно из Интернета.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. дополнительные сведения о [разработке топологий на основе Java с помощью Maven](apache-storm-develop-java-topology.md).
+См. дополнительные сведения о [разработке топологий на основе Java с помощью Apache Maven](apache-storm-develop-java-topology.md).
 
-Другие примеры топологий Storm см. в разделе [Примеры топологий для Storm в HDInsight](apache-storm-example-topology.md).
+См. другие [примеры топологий для Apache Storm в HDInsight](apache-storm-example-topology.md).

@@ -1,10 +1,11 @@
 ---
-title: Руководство по языку спецификаций нейронных сетей Net# для машинного обучения Azure | Документация Майкрософт
-description: Синтаксис языка спецификации нейронных сетей Net# и примеры создания пользовательской модели нейронной сети с помощью Net#
+title: Нейронные сети Net#. Студия машинного обучения Azure | Документация Майкрософт
+description: Синтаксис языка спецификации нейронных сетей Net# и примеры создания пользовательской модели нейронной сети с помощью Net# в Студии машинного обучения Azure.
 services: machine-learning
 documentationcenter: ''
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: cfd1454b-47df-4745-b064-ce5f9b3be303
@@ -15,14 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
 ms.date: 03/01/2018
-ms.openlocfilehash: 8a96cfdedcde9b4037627f3e61af862c0600ca20
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 3aa364e92dd7ce3742d28ac2b36d9a7f16cbebbf
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51258483"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52315313"
 ---
-# <a name="guide-to-net-neural-network-specification-language-for-azure-machine-learning"></a>Руководство по языку спецификаций нейронных сетей Net# для машинного обучения Azure
+# <a name="guide-to-net-neural-network-specification-language-for-azure-machine-learning-studio"></a>Руководство по языку спецификаций нейронных сетей Net# для Студии машинного обучения Azure
 
 Net# — это язык, разработанный корпорацией Майкрософт, который используется при определении архитектур нейронных сетей. Использование Net# для определения структуры нейронной сети позволяет задавать такие сложные структуры, как глубокие нейронные сети или свертки произвольных размеров для улучшения обучения на основе данных — изображений, аудио и видео.
 

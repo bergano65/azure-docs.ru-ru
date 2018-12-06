@@ -7,22 +7,22 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.topic: conceptual
 ms.date: 11/2/2017
-ms.openlocfilehash: 835a56413a4274a2be2511278b4dedd7f83c54c3
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: ab7602f7bae4dfb77a733dd7efe011a29b730377
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51016681"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52581602"
 ---
-# <a name="troubleshoot-spark-by-using-azure-hdinsight"></a>Устранение неполадок в Spark с помощью Azure HDInsight
+# <a name="troubleshoot-apache-spark-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Spark с помощью Azure HDInsight
 
-Ознакомьтесь с основными проблемами и их разрешением при работе с полезными данными Apache Spark в Apache Ambari.
+Ознакомьтесь с основными проблемами, которые возникают при работе с полезными данными [Apache Spark](https://spark.apache.org/) в [Apache Ambari](https://ambari.apache.org/), и способами их решения.
 
-## <a name="how-do-i-configure-a-spark-application-by-using-ambari-on-clusters"></a>Как настроить приложение Spark с помощью Ambari в кластерах?
+## <a name="how-do-i-configure-an-apache-spark-application-by-using-apache-ambari-on-clusters"></a>Как настроить приложение Apache Spark с помощью Apache Ambari в кластерах?
 
 ### <a name="resolution-steps"></a>Способы устранения
 
-Значения конфигурации для этой процедуры были предварительно заданы в HDInsight. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел [Что вызывает в приложении Spark исключение OutOfMemoryError?](#what-causes-a-spark-application-outofmemoryerror-exception) 
+Значения конфигурации для этой процедуры были предварительно заданы в HDInsight. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел [Что вызывает в приложении Apache Spark исключение OutOfMemoryError?](#what-causes-a-spark-application-outofmemoryerror-exception) 
 
 1. В списке кластеров выберите **Spark2**.
 
@@ -84,14 +84,14 @@ ms.locfileid: "51016681"
 
 ### <a name="additional-reading"></a>Дополнительные материалы
 
-[Отправка задания Spark в кластерах HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
+[Отправка заданий Apache Spark в кластерах HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
 
-## <a name="how-do-i-configure-a-spark-application-by-using-a-jupyter-notebook-on-clusters"></a>Как настроить приложение Spark с помощью Jupyter Notebook в кластерах?
+## <a name="how-do-i-configure-an-apache-spark-application-by-using-a-jupyter-notebook-on-clusters"></a>Как настроить приложение Apache Spark с помощью Jupyter Notebook в кластерах?
 
 ### <a name="resolution-steps"></a>Способы устранения
 
-1. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел [Что вызывает в приложении Spark исключение OutOfMemoryError?](#what-causes-a-spark-application-outofmemoryerror-exception)
+1. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел [Что вызывает в приложении Apache Spark исключение OutOfMemoryError?](#what-causes-a-spark-application-outofmemoryerror-exception)
 
 2. Укажите конфигурации Spark в допустимом формате JSON в первой ячейке Jupyter Notebook после директивы **%%configure**. При необходимости измените фактические значения:
 
@@ -99,14 +99,14 @@ ms.locfileid: "51016681"
 
 ### <a name="additional-reading"></a>Дополнительные материалы
 
-[Отправка задания Spark в кластерах HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
+[Отправка заданий Apache Spark в кластерах HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
 
-## <a name="how-do-i-configure-a-spark-application-by-using-livy-on-clusters"></a>Как настроить приложение Spark с помощью Livy в кластерах?
+## <a name="how-do-i-configure-an-apache-spark-application-by-using-apache-livy-on-clusters"></a>Как настроить приложение Apache Spark с помощью Apache Livy в кластерах?
 
 ### <a name="resolution-steps"></a>Способы устранения
 
-1. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел [Что вызывает в приложении Spark исключение OutOfMemoryError?](#what-causes-a-spark-application-outofmemoryerror-exception) 
+1. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел [Что вызывает в приложении Apache Spark исключение OutOfMemoryError?](#what-causes-a-spark-application-outofmemoryerror-exception) 
 
 2. Отправьте приложение Spark в Livy с помощью клиента REST, например cURL. Используйте команду, аналогичную приведенной ниже. При необходимости измените фактические значения:
 
@@ -116,14 +116,14 @@ ms.locfileid: "51016681"
 
 ### <a name="additional-reading"></a>Дополнительные материалы
 
-[Отправка задания Spark в кластерах HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
+[Отправка заданий Apache Spark в кластерах HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
 
-## <a name="how-do-i-configure-a-spark-application-by-using-spark-submit-on-clusters"></a>Как настроить приложение Spark с помощью spark-submit в кластерах?
+## <a name="how-do-i-configure-an-apache-spark-application-by-using-spark-submit-on-clusters"></a>Как настроить приложение Apache Spark с помощью spark-submit в кластерах?
 
 ### <a name="resolution-steps"></a>Способы устранения
 
-1. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел [Что вызывает в приложении Spark исключение OutOfMemoryError?](#what-causes-a-spark-application-outofmemoryerror-exception)
+1. Чтобы определить, какие конфигурации Spark нужно настроить и с какими значениями, см. раздел [Что вызывает в приложении Apache Spark исключение OutOfMemoryError?](#what-causes-a-spark-application-outofmemoryerror-exception)
 
 2. Запустите оболочку Spark с помощью команды, аналогичной приведенной ниже. При необходимости измените фактические значения конфигураций: 
 
@@ -133,10 +133,10 @@ ms.locfileid: "51016681"
 
 ### <a name="additional-reading"></a>Дополнительные материалы
 
-[Отправка задания Spark в кластерах HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
+[Отправка заданий Apache Spark в кластерах HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
 
-## <a name="what-causes-a-spark-application-outofmemoryerror-exception"></a>Что вызывает в приложении Spark исключение OutOfMemoryError?
+## <a name="what-causes-an-apache-spark-application-outofmemoryerror-exception"></a>Что вызывает в приложении Apache Spark исключение OutOfMemoryError?
 
 ### <a name="detailed-description"></a>Подробное описание
 
@@ -217,8 +217,8 @@ java.lang.OutOfMemoryError
 
 ### <a name="additional-reading"></a>Дополнительные материалы
 
-- [Раздел об управлении памятью Spark](http://spark.apache.org/docs/latest/tuning.html#memory-management-overview)
-- [Debug a Spark application on an HDInsight cluster](https://blogs.msdn.microsoft.com/azuredatalake/2016/12/19/spark-debugging-101/) (Отладка приложения Spark в кластере HDInsight)
+- [Обзор управления памятью в Apache Spark](http://spark.apache.org/docs/latest/tuning.html#memory-management-overview)
+- [Отладка приложения Apache Spark в кластере HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2016/12/19/spark-debugging-101/)
 
 
 ### <a name="see-also"></a>См. также

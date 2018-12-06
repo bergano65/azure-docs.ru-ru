@@ -17,12 +17,12 @@ ms.date: 10/02/2018
 ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: da681500ccff24e6e9bfa6b7bb9e5a14a725f158
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 8e00674f331a56be9abe6f2356aa88d7dcf1d0b0
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51279642"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52282390"
 ---
 # <a name="whats-new-for-authentication"></a>Новые возможности для проверки подлинности. 
 
@@ -56,7 +56,7 @@ ms.locfileid: "51279642"
 
 Если ваше приложение повторно использует коды проверки подлинности для получения маркеров для нескольких ресурсов, мы рекомендуем использовать код для получения маркера обновления, а затем использовать этот маркер для получения дополнительных маркеров для других ресурсов. Коды проверки подлинности можно использовать только один раз, однако маркеры обновления можно использовать несколько раз для нескольких ресурсов. Любое новое приложение, которое пытается повторно использовать код проверки подлинности во время потока кода OAuth, получит ошибку invalid_grant.
 
-Дополнительные сведения о маркерах обновления см. в статье [Обновление маркеров доступа](v1-protocols-oauth-code.md#refreshing-the-access-tokens).
+Дополнительные сведения о маркерах обновления см. в статье [Обновление маркеров доступа](v1-protocols-oauth-code.md#refreshing-the-access-tokens).  При использовании ADAL или MSAL обработку выполняет библиотека — замените второй экземпляр AcquireTokenByAuthorizationCodeAsync на AcquireTokenSilentAsync. 
 
 ## <a name="may-2018"></a>Май 2018 г.
 

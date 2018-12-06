@@ -1,11 +1,12 @@
 ---
-title: Задайте вопрос, на который можно ответить с помощью данных. Задачи обработки и анализа данных в Azure. Машинное обучение Azure | Документация Майкрософт
+title: Задайте вопрос, на который можно ответить с помощью данных, — Студия машинного обучения Azure| Документация Майкрософт
 description: Узнайте, как формулировать точные вопросы обработки и анализа данных. В этом вам поможет видео 3 из цикла "Обработка и анализ данных для начинающих". Включает сравнение вопросов классификации и регрессии.
 keywords: задачи обработки и анализа данных,вопросы обработки и анализа данных,формулирование вопроса,вопросы регрессии,вопросы классификации,точный вопрос
 services: machine-learning
 documentationcenter: na
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cjgronlund
 ms.assetid: 5b9501e3-9964-417a-8ffc-8913103da77b
@@ -16,12 +17,12 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/03/2018
-ms.openlocfilehash: 2078f7e84522a40cf6fcf6dff860d24307084467
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: c6d42ed7920b634994adf5313656c77e2df6dd5b
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34833807"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52310843"
 ---
 # <a name="ask-a-question-you-can-answer-with-data"></a>Задайте вопрос, на который можно ответить с помощью данных
 ## <a name="video-3-data-science-for-beginners-series"></a>Видео 3. Обработка и анализ данных для начинающих

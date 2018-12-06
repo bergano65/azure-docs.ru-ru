@@ -5,15 +5,15 @@ author: dkamstra
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 09/12/2018
+ms.date: 11/26/2018
 ms.author: dukek
 ms.component: alerts
-ms.openlocfilehash: 3ce7c5111fa176bb7fa734f54084b9e14e7afbef
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 1b66f40594d0dd578e2e5680fb0d5bb0f82f1241
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51016052"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52311812"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Создание групп действий и управление ими на портале Azure
 ## <a name="overview"></a>Обзор ##
@@ -76,6 +76,8 @@ ms.locfileid: "51016052"
 **Управление ИТ-услугами.** Можно иметь не более 10 действий ITSM в группе действий, которые требуют подключение ITSM. Дополнительные сведения о создании подключения ITSM см. в статье [Централизованное управление рабочими элементами ITSM с помощью соединителя управления ИТ-службами (предварительная версия)](../log-analytics/log-analytics-itsmc-overview.md).
 
 **Приложение логики.** Можно иметь не более 10 действий приложения логики в группе действий.
+
+**Приложение-функция**. Ключи функций для приложений-функций, настроенные в качестве действий, считываются с помощью API решения "Функции". Сейчас для этого API требуется, чтобы в настройках приложения-функции версии 2 для параметра AzureWebJobsSecretStorageType было задано значение files. Дополнительные сведения см. статье об [изменениях в управлении ключами в решении "Функции" версии 2]( https://aka.ms/funcsecrets).
 
 **Runbook.** Можно иметь не более 10 действий модуля Runbook в группе действий, сведения об ограничениях на полезные данные модуля Runbook см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).
 

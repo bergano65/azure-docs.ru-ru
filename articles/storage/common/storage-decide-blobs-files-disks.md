@@ -5,15 +5,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 03/28/2018
+ms.date: 11/28/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: bc6d615409f3c2d0f46286d2ad2ba20c32574afd
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: c7e9c841e7a1d73fcdedd99e210eefb1e52bbf3e
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49091726"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52498758"
 ---
 # <a name="deciding-when-to-use-azure-blobs-azure-files-or-azure-disks"></a>Выбор между большими двоичными объектами Azure, службой файлов Azure и дисками Azure
 
@@ -42,7 +42,7 @@ Microsoft Azure предоставляет несколько функций в 
 |Конечные точки|`http://myaccount.blob.core.windows.net/mycontainer/myblob`|`\\myaccount.file.core.windows.net\myshare\myfile.txt`<br /><br /> `http://myaccount.file.core.windows.net/myshare/myfile.txt`|  
 |Каталоги|Плоское пространство имен|Фактические объекты каталога|  
 |Чувствительность имен к регистру|С учетом регистра|Без учета регистра, но с его сохранением|  
-|Capacity|Контейнеры до 500 ТиБ|Файловые ресурсы до 5 ТиБ|  
+|Capacity|До 2 ПиБ для учетной записи |Файловые ресурсы до 5 ТиБ|  
 |Пропускная способность|До 60 МиБ/с на блочный BLOB-объект|До 60 МиБ/с на общедоступный ресурс|  
 |Размер объекта|До 4,75 TиБ на блочный BLOB-объект|До 1 ТиБ на файл|  
 |Оплачиваемая емкость|На основании записанных байтов|На основании размера файла|  

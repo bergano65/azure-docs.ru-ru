@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/18/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 7f34b0015a4a6d7b8c2c23f539cf21232adaec58
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 5d5eee525c6f071840d186cb6bd54faf9bf2787b
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46304673"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52310673"
 ---
 # <a name="troubleshoot-connectivity-issues-with-azure-ad-connect"></a>Устранение неполадок подключения в Azure AD Connect
 В этой статье рассказывается, как работает подключение между Azure AD Connect и Azure AD и как устранять неполадки подключения. Как правило, проблемы возникают в среде с прокси-сервером.
@@ -46,7 +46,7 @@ Azure AD Connect использует для аутентификации сов
 | --- | --- | --- |
 | mscrl.microsoft.com |HTTP/80 |Используется для загрузки списков CRL. |
 | \*.verisign.com |HTTP/80 |Используется для загрузки списков CRL. |
-| \*.entrust.com |HTTP/80 |Используется для загрузки списков CRL для MFA. |
+| \*.entrust.net |HTTP/80 |Используется для загрузки списков CRL для MFA. |
 | \*.windows.net |HTTPS/443 |Используется для входа в Azure AD. |
 | secure.aadcdn.microsoftonline-p.com |HTTPS/443 |Используется для многофакторной проверки подлинности (MFA). |
 | \*.microsoftonline.com |HTTPS/443 |Используется для настройки каталога Azure AD, а также импорта и экспорта данных. |

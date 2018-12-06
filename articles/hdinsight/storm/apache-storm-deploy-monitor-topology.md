@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.date: 03/01/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 53f729e23ced00bd0acb5674308f8c610bff8868
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: ce39e3ffce0b7721bde84254c7e5a35ec28465dc
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51005382"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52583165"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-windows-based-hdinsight"></a>Развертывание топологий Apache Storm в HDInsight под управлением Windows и управление ими
 
-Панель мониторинга Storm позволяет легко развернуть и запустить топологии Apache Storm в кластере HDInsight с помощью браузера. С помощью панели мониторинга можно также следить за топологиями и управлять их работой. Если используется Visual Studio, средства HDInsight для Visual Studio предоставляют аналогичные функциональные возможности в Visual Studio.
+Панель мониторинга [Apache Storm](http://storm.apache.org/) позволяет легко развернуть и запустить топологии Apache Storm в кластере HDInsight с помощью браузера. С помощью панели мониторинга можно также следить за топологиями и управлять их работой. Если используется Visual Studio, средства HDInsight для Visual Studio предоставляют аналогичные функциональные возможности в Visual Studio.
 
 Панель мониторинга и компоненты Storm в средствах HDInsight используют интерфейс REST API для Storm, с помощью которого можно создавать собственные решения для мониторинга и управления.
 
@@ -88,7 +88,7 @@ ms.locfileid: "51005382"
 
   * **Rebalance**(Повторная балансировка) — корректировка параллелизма топологии. После изменения числа узлов в кластере необходимо выполнить повторную балансировку топологий. Это позволяет топологии скорректировать параллелизм для компенсации увеличения или уменьшения количества узлов в кластере.
 
-      Дополнительные сведения см. в статье [Understanding the parallelism of a Storm topology](http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html) (Общие сведения о параллелизме топологии Storm).
+      Дополнительные сведения см. в статье о [параллелизме топологии Apache Storm](http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html).
 
   * **Kill**(Удалить) — останавливает выполнение топологии Storm по истечении заданного времени ожидания.
 
@@ -118,7 +118,7 @@ ms.locfileid: "51005382"
 
 ## <a name="hdinsight-tools-for-visual-studio"></a>Средства HDInsight для Visual Studio
 
-Средства HDInsight можно использовать для отправки топологии C# или гибридной топологии в кластер Storm. Далее используется пример приложения. Информацию о создании собственных топологий с помощью средств HDInsight см. в разделе [Разработка топологий для Apache Storm в HDInsight на C# с помощью средств Hadoop для Visual Studio](apache-storm-develop-csharp-visual-studio-topology.md).
+[Средства HDInsight](https://azure.microsoft.com/resources/videos/hdinsight-tools-for-visual-studio/) можно использовать для отправки топологии C# или гибридной топологии в кластер Storm. Далее используется пример приложения. Информацию о создании собственных топологий с помощью средств HDInsight см. в разделе [Разработка топологий для Apache Storm в HDInsight на C# с помощью средств Hadoop для Visual Studio](apache-storm-develop-csharp-visual-studio-topology.md).
 
 Чтобы развернуть пример в Storm в кластере HDInsight, а затем просмотреть топологию и управлять ею, сделайте следующее.
 
@@ -159,7 +159,7 @@ ms.locfileid: "51005382"
 
 Пользовательский интерфейс Storm построен на базе REST API, поэтому функциональность отслеживания и управления можно реализовать аналогичным образом с помощью API. С помощью REST API можно создать пользовательские средства для отслеживания топологий Storm и управления ими.
 
-Дополнительные сведения см. в разделе [API-интерфейс REST пользовательского интерфейса Storm](https://github.com/apache/storm/blob/0.9.3-branch/STORM-UI-REST-API.md). Следующая информация касается использования REST API с Apache Storm в HDInsight.
+Дополнительные сведения см. в статье о [REST API пользовательского интерфейса Apache Storm](https://github.com/apache/storm/blob/0.9.3-branch/STORM-UI-REST-API.md). Следующая информация касается использования REST API с Apache Storm в HDInsight.
 
 ### <a name="base-uri"></a>Базовый универсальный код ресурса
 
@@ -174,7 +174,7 @@ ms.locfileid: "51005382"
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-Информацию, возвращаемую REST API, можно использовать только в пределах кластера или виртуальной машины в одной виртуальной сети Azure, выполняющей функцию кластера. Например, полное доменное имя (FQDN), возвращаемое для серверов Zookeeper, недоступно из Интернета.
+Информацию, возвращаемую REST API, можно использовать только в пределах кластера или виртуальной машины в одной виртуальной сети Azure, выполняющей функцию кластера. Например, полное доменное имя (FQDN), возвращаемое для серверов [Apache ZooKeeper](https://zookeeper.apache.org/), недоступно из Интернета.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -182,9 +182,9 @@ ms.locfileid: "51005382"
 
 * [Развертывание топологий C# с помощью средств HDInsight для Visual Studio](apache-storm-develop-csharp-visual-studio-topology.md)
 
-* [Разработка топологий на платформе Java с помощью Maven](apache-storm-develop-java-topology.md)
+* См. статью о [разработке топологий на платформе Java с помощью Apache Maven](apache-storm-develop-java-topology.md).
 
-Другие примеры топологий Storm см. в разделе [Примеры топологий для Storm в HDInsight](apache-storm-example-topology.md).
+См. другие [примеры топологий для Apache Storm в HDInsight](apache-storm-example-topology.md).
 
 [hdinsight-dashboard]: ./media/apache-storm-deploy-monitor-topology/dashboard-link.png
 [storm-dashboard-submit]: ./media/apache-storm-deploy-monitor-topology/submit.png

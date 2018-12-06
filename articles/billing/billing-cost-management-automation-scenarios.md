@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: billing
 ms.date: 6/13/2018
 ms.author: erikre
-ms.openlocfilehash: 97f6339e5c9532250245a97a81dade12db139e98
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 09ecd46837a12f5f1a8278b1644dc099701bcd00
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47227373"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52584729"
 ---
 # <a name="billing-and-cost-management-automation-scenarios"></a>Сценарии автоматизации для выставления счетов и управления затратами
 
@@ -122,4 +122,4 @@ API-интерфейсы выставления счетов и управлен
 
 - Дополнительные сведения по использованию API Azure для получения аналитики о потреблении Azure программными средствами см. в статье [Общие сведения об API потребления ресурсов Azure](billing-consumption-api-overview.md) и [Использование API выставления счетов Azure для программного получения ценных сведений об использовании Azure](billing-usage-rate-card-overview.md).
 - Чтобы сравнить счет и файл с подробными данными о ежедневном использовании, а также отчеты об управлении затратами на портале Azure, ознакомьтесь со статьей [Расшифровка счета за использование Microsoft Azure](billing-understand-your-bill.md)
-- Если у вас есть дополнительные вопросы, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.
+- Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

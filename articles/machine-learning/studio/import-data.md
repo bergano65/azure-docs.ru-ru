@@ -1,11 +1,12 @@
 ---
-title: Импорт данных в Студию машинного обучения | Документация Майкрософт
+title: Импорт данных в Студию машинного обучения Azure | Документация Майкрософт
 description: Импорт данных в студию машинного обучения Azure из разных источников данных Узнайте, какие типы данных и форматы данных поддерживаются.
 keywords: импорт данных, формат данных, типы данных, источники данных, обучающие данные
 services: machine-learning
 documentationcenter: ''
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: c194ee3b-838c-4efe-bb2a-c1d052326216
@@ -16,12 +17,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2017
-ms.openlocfilehash: 575e17f214561bde06b70bf87c4895ae379659f2
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.openlocfilehash: 8f6bc6e1e13de879f81e6fc6f1f447d0c2856ced
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51344728"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52315262"
 ---
 # <a name="import-your-training-data-into-azure-machine-learning-studio-from-various-data-sources"></a>Импорт обучающих данных в Студию машинного обучения Azure из разных источников данных
 

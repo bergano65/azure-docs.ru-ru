@@ -9,12 +9,12 @@ ms.author: xshi
 ms.date: 09/13/2018
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: d40b82b5beac2da78038e303cb50402d6fa0be7a
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: b8d8223647d42213eff53c2ff8310bed0cfe6cdb
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51566030"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52446744"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-c-modules-for-azure-iot-edge"></a>Использование Visual Studio Code для разработки и отладки модулей C для Azure IoT Edge
 
@@ -59,7 +59,7 @@ ms.locfileid: "51566030"
 
 7. Введите имя модуля. Оно должно быть уникальным в пределах реестра контейнеров. 
 
-8. Укажите имя репозитория образов для модуля. VS Code автоматически заполняет имя модуля значением **localhost:5000**. Замените его собственными данными реестра. Если для тестирования вы используете локальный реестр Docker, вполне подойдет значение **localhost**. Если используется Реестр контейнеров Azure, укажите сервер входа, заданный в параметрах реестра. Значение для сервера входа выглядит так: **\<имя реестра\>.azurecr.io**. Замените только часть строки localhost, не удаляйте имя модуля. 
+8. Укажите имя репозитория образов для модуля. VS Code автоматически заполняет имя модуля значением **localhost:5000**. Замените его собственными данными реестра. Если для тестирования вы используете локальный реестр Docker, вполне подойдет значение **localhost**. Если используется Реестр контейнеров Azure, укажите сервер входа, заданный в параметрах реестра. Значение для сервера входа выглядит так: **\<имя реестра\>.azurecr.io**. Замените только часть строки localhost, не удаляйте имя модуля. Окончательная строка выглядит так: \<registry name\>.azurecr.io/\<modulename\>.
 
    ![Выбор репозитория образа Docker](./media/how-to-develop-c-module/repository.png)
 
@@ -87,20 +87,11 @@ VS Code принимает предоставленные сведения, со
 
 В папке каждого модуля находится несколько файлов Docker для разных типов контейнеров. Вы можете использовать любой **DEBUG**-файл, чтобы создать модуль для тестирования. Сейчас модули C поддерживают отладку только в контейнерах amd64 Linux.
 
-1. В VS Code перейдите к файлу `deployment.template.json`. Обновите URL-адрес образа модуля, добавив в конце **.debug**.
-
-    ![Добавление **.debug** к имени образа](./media/how-to-develop-c-module/image-debug.png)
-
-2. Замените модуль C createOptions в файле **deployment.template.json** содержимым ниже и сохраните этот файл: 
-    
-    ```json
-    "createOptions": "{\"HostConfig\": {\"Privileged\": true}}"
-    ```
-
+1. В VS Code перейдите к файлу `deployment.debug.template.json`. Этот файл содержит образы отладочной версии модуля с соответствующими вариантами создания. 
 2. В палитре команд VS Code введите и выполните команду **Azure IoT Edge: Build and Push IoT Edge solution**.
-3. Выберите файл `deployment.template.json` для решения из палитры команд. 
+3. Выберите файл `deployment.debug.template.json` для решения из палитры команд. 
 4. В Device Explorer Центра Интернета вещей Azure щелкните правой кнопкой мыши идентификатор устройства IoT Edge. Затем выберите **Create Deployment for Single Device** (Создание развертывания для одного устройства). 
-5. Откройте папку **config** решения. Выберите файл `deployment.json`. Щелкните **Select Edge Deployment Manifest** (Выбрать манифест развертывания Edge). 
+5. Откройте папку **config** решения. Выберите файл `deployment.debug.amd64.json`. Щелкните **Select Edge Deployment Manifest** (Выбрать манифест развертывания Edge). 
 
 Ход развертывания можно отслеживать по идентификатору развертывания во встроенном терминале VS Code.
 

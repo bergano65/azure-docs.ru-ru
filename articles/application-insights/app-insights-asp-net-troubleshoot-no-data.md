@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/23/2018
 ms.author: mbullwin
-ms.openlocfilehash: 47cf32a57fc4a2d0e20a9f2c242db1f3dec96fe5
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 8bc4c0617ebf9b400260a217462abbcc439ae440
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51228544"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52284682"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-net"></a>Устранение неполадок, связанных с тем, что в Application Insights для .NET не отображаются данные
 ## <a name="some-of-my-telemetry-is-missing"></a>Некоторая телеметрия отсутствует
@@ -175,8 +175,14 @@ ms.locfileid: "51228544"
 
 Ее можно отключить, но это не рекомендуется. Выборка разработана таким образом, чтобы связанные данные телеметрии правильно передавались для диагностических целей. 
 
-## <a name="client-ip-address-is-0000"></a>IP-адрес клиента — 0.0.0.0 
-В феврале 2018 года мы [объявили](https://blogs.msdn.microsoft.com/applicationinsights-status/2018/02/01/all-octets-of-ip-address-will-be-set-to-zero/) об удалении протоколирования IP-адреса клиента. Это не влияет на географическое расположение.
+## <a name="client-ip-address-is-0000"></a>IP-адрес клиента — 0.0.0.0
+
+О прекращении ведения журналов с IP-адресами клиентов было объявлено 5 февраля 2018 г. Это не влияет на географическое расположение.
+
+> [!NOTE]
+> Если вам требуются первые три октета IP-адресов, можно использовать [инициализатор телеметрии](https://docs.microsoft.com/azure/application-insights/app-insights-api-filtering-sampling#add-properties-itelemetryinitializer) для добавления пользовательского свойства.
+> Это изменение не влияет на данные, собранные до 5 февраля 2018 г.
+
 
 ## <a name="wrong-geographical-data-in-user-telemetry"></a>Неправильные географические данные в телеметрии пользователя
 Город, область и страна определяются по IP-адресу и не всегда являются точными. Эти IP-адреса сначала обрабатываются для расположения, а затем изменяются на IP-адрес 0.0.0.0 для хранения.

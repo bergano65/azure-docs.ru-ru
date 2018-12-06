@@ -1,10 +1,11 @@
 ---
-title: Переобучение имеющейся веб-службы прогнозной аналитики | Документация Майкрософт
-description: Узнайте, как переобучить модель и обновить веб-службу так, чтобы она использовала заново обученную модель в службе машинного обучения Azure.
+title: Переобучение имеющейся веб-службы прогнозной аналитики — Студия машинного обучения Azure | Документация Майкрософт
+description: Узнайте, как переобучить модель и обновить веб-службу так, чтобы она использовала заново обученную модель в Студии машинного обучения Azure.
 services: machine-learning
 documentationcenter: ''
-author: YasinMSFT
-ms.author: yahajiza
+author: ericlicoding
+ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: cc4c26a2-5672-4255-a767-cfd971e46775
@@ -15,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2017
-ms.openlocfilehash: 1a30f9166c81c4757267c95b13b08f3202748467
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 8da3c5d5c79ce52f1f5176a8b3317ce2a0e0bc5f
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51684653"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52311302"
 ---
 # <a name="retrain-an-existing-predictive-web-service"></a>Переобучение прогнозной веб-службы
 В этом документе описан процесс переобучения для следующего сценария:

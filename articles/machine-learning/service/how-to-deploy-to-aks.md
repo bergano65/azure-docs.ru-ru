@@ -10,12 +10,12 @@ author: raymondlaghaeian
 manager: cgronlun
 ms.reviewer: larryfr
 ms.date: 09/24/2018
-ms.openlocfilehash: efaaa196220213877283040120d6c2eeed86dbf3
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.openlocfilehash: d9328b293d38114d319d79e38b91b1b67e410d94
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51346326"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52581845"
 ---
 # <a name="how-to-deploy-models-from-azure-machine-learning-service-to-azure-kubernetes-service"></a>Развертывание моделей из службы машинного обучения Azure в службе Azure Kubernetes
 
@@ -25,7 +25,7 @@ ms.locfileid: "51346326"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начать работу.
+- Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://aka.ms/AMLfree), прежде чем начать работу.
 
 - Должны быть установлены: рабочая область службы "Машинное обучение Azure", локальный каталог со сценариями и пакет SDK Машинного обучения Azure для Python. Дополнительные сведения о получении этих необходимых компонентов см. в документе [Настройка среды разработки](how-to-configure-environment.md).
 
@@ -65,7 +65,7 @@ model = Model.register(model_path = "model.pkl", # this points to a local file
     * [Создание сценария оценки (score.py)](tutorial-deploy-models-with-aml.md#create-scoring-script)
 
         > [!IMPORTANT]
-        > Скрипт оценки получает данные, передаваемые из клиентов и передает их в модель для оценки. Задокументируйте структуру данных, планируемую для скрипта и модели. Такой документ упрощает работу при создании клиента для веб-службы.
+        > Скрипт оценки получает данные, передаваемые из клиентов, и передает их в модель для оценки. Задокументируйте структуру данных, планируемую для скрипта и модели. Такой документ упрощает работу при создании клиента для веб-службы.
 
     * [Создание файла среды (myenv.yml)](tutorial-deploy-models-with-aml.md#create-environment-file) 
 
@@ -127,7 +127,7 @@ print(aks_target.provisioning_errors)
 Если в вашей подписке Azure уже есть кластер AKS, его можно использовать для развертывания вашего образа. В следующем фрагменте кода показано, как присоединить кластер к рабочей области. 
 
 > [!IMPORTANT]
-> Поддерживается только AKS версии 1.11.2.
+> Поддерживается только AKS версии 1.11.3.
 
 ```python
 # Get the resource id from https://porta..azure.com -> Find your resource group -> click on the Kubernetes service -> Properties

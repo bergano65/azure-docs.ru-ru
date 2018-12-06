@@ -6,15 +6,15 @@ ms.service: automation
 ms.component: update-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 11/05/2018
+ms.date: 11/28/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 6d981d9dc7433d957819d0beb6aa6265882f1890
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: caa1b6f31325cd67aad106f7829bd32a5e7aeb53
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51037402"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52635821"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -69,7 +69,7 @@ ms.locfileid: "51037402"
 |Операционная система  |Примечания  |
 |---------|---------|
 |Windows Server 2008, Windows Server 2008 R2 RTM    | Поддерживает только оценки обновлений.         |
-|Windows Server 2008 R2 с пакетом обновления 1 и более поздней версии     |Требуется .NET Framework 4.5.1 или более поздней версии. ([Скачать .NET Framework](/dotnet/framework/install/guide-for-developers).)<br/> Windows PowerShell, начиная с версии 4.0. ([Скачать WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855).)<br/> Для повышения надежности рекомендуем использовать Windows PowerShell 5.1.  ([Скачать WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616).)        |
+|Windows Server 2008 R2 SP1 и более поздней версии (включая Windows Server 2012 и 2016)    |Требуется .NET Framework 4.5.1 или более поздней версии. ([Скачать .NET Framework](/dotnet/framework/install/guide-for-developers).)<br/> Windows PowerShell, начиная с версии 4.0. ([Скачать WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855).)<br/> Для повышения надежности рекомендуем использовать Windows PowerShell 5.1.  ([Скачать WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616).)        |
 |CentOS 6 (x86 или x64) и 7 (x64).      | У агентов Linux должен быть доступ к репозиторию обновлений. Для исправления на основе классификации требуется, чтобы программа yum вернула данные безопасности, которых нет в CentOS, без дополнительной настройки.         |
 |Red Hat Enterprise 6 (x86 или x64) и 7 (x64).     | У агентов Linux должен быть доступ к репозиторию обновлений.        |
 |SUSE Linux Enterprise Server 11 (x86 или x64) и 12 (x64)     | У агентов Linux должен быть доступ к репозиторию обновлений.        |
@@ -86,9 +86,9 @@ ms.locfileid: "51037402"
 
 ### <a name="client-requirements"></a>Требования к клиенту
 
-#### <a name="windows"></a>Windows
+#### <a name="windows"></a> Windows
 
-На агентах Windows необходимо настроить связь с сервером служб WSUS или доступ к Центру обновления Майкрософт. Решение "Управление обновлениями" можно использовать вместе с System Center Configuration Manager. Дополнительные сведения о сценариях интеграции см. в разделе [Параметр Configuration](oms-solution-updatemgmt-sccmintegration.md#configuration). [Агент Windows](../log-analytics/log-analytics-agent-windows.md) является обязательным компонентом. При подключении виртуальной машины Azure этот агент устанавливается автоматически.
+На агентах Windows необходимо настроить связь с сервером служб WSUS или доступ к Центру обновления Майкрософт. Решение "Управление обновлениями" можно использовать вместе с System Center Configuration Manager. Дополнительные сведения о сценариях интеграции см. в разделе [Параметр Configuration](oms-solution-updatemgmt-sccmintegration.md#configuration). [Агент Windows](../azure-monitor/platform/agent-windows.md) является обязательным компонентом. При подключении виртуальной машины Azure этот агент устанавливается автоматически.
 
 #### <a name="linux"></a>Linux
 
@@ -136,7 +136,7 @@ Heartbeat
 | where OSType == "Linux" | summarize arg_max(TimeGenerated, *) by SourceComputerId | top 500000 by Computer asc | render table
 ```
 
-#### <a name="windows"></a>Windows
+#### <a name="windows"></a> Windows
 
 ```
 Heartbeat
@@ -148,7 +148,7 @@ Heartbeat
 1. На панели управления откройте **Microsoft Monitoring Agent**. На вкладке **Azure Log Analytics** агент отобразит сообщение: **The Microsoft Monitoring Agent has successfully connected to Log Analytics** (Microsoft Monitoring Agent успешно подключен к Log Analytics).
 2. Откройте журнал событий Windows. Перейдите к **журналам приложения и служб или Operations Manager** и выполните поиск идентификатора события 3000 или 5002 в исходном **соединителе службы**. Эти события указывают, что компьютер был зарегистрирован для рабочей области Log Analytics и получает конфигурации.
 
-Если агент не может взаимодействовать с Log Analytics, а агент настроен на взаимодействие с Интернетом через брандмауэр или прокси-сервер, вам необходимо подтвердить корректную настройку брандмауэра или прокси-сервера. Чтобы узнать, как проверить это, ознакомьтесь со статьей [Подключение компьютеров Windows к службе Log Analytics в Azure](../log-analytics/log-analytics-agent-windows.md) и [Сбор данных с компьютеров Linux, размещенных в вашем окружении](../log-analytics/log-analytics-agent-linux.md).
+Если агент не может взаимодействовать с Log Analytics, а агент настроен на взаимодействие с Интернетом через брандмауэр или прокси-сервер, вам необходимо подтвердить корректную настройку брандмауэра или прокси-сервера. Чтобы узнать, как проверить это, ознакомьтесь со статьей [Подключение компьютеров Windows к службе Log Analytics в Azure](../azure-monitor/platform/agent-windows.md) и [Сбор данных с компьютеров Linux, размещенных в вашем окружении](../log-analytics/log-analytics-agent-linux.md).
 
 > [!NOTE]
 > Если при подключении этого решения системы Linux настроены для взаимодействия с прокси-сервером или шлюзом Log Analytics, обновите разрешения *proxy.conf*, чтобы предоставить группе omiuser разрешение на чтение файла. Для этого выполните следующие команды:
@@ -236,7 +236,7 @@ Heartbeat
 
 В следующих таблицах содержатся списки классификаций обновлений в Управлении обновлениями с определениями для каждой классификации.
 
-### <a name="windows"></a>Windows
+### <a name="windows"></a> Windows
 
 |классификация;  |ОПИСАНИЕ  |
 |---------|---------|
@@ -323,7 +323,7 @@ https://dev.loganalytics.io/).
 
 ##### <a name="missing-updates-summary"></a>Сводка об отсутствующих обновлениях
 
-```
+```loganalytics
 Update
 | where TimeGenerated>ago(14h) and OSType!="Linux" and (Optional==false or Classification has "Critical" or Classification has "Security") and VMUUID=~"b08d5afa-1471-4b52-bd95-a44fea6e4ca8"
 | summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification, Approved) by Computer, SourceComputerId, UpdateID
@@ -334,7 +334,7 @@ Update
 
 ##### <a name="missing-updates-list"></a>Список отсутствующих обновлений
 
-```
+```loganalytics
 Update
 | where TimeGenerated>ago(14h) and OSType!="Linux" and (Optional==false or Classification has "Critical" or Classification has "Security") and VMUUID=~"8bf1ccc6-b6d3-4a0b-a643-23f346dfdf82"
 | summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification, Title, KBID, PublishedDate, Approved) by Computer, SourceComputerId, UpdateID
@@ -353,7 +353,7 @@ Update
 
 ##### <a name="missing-updates-summary"></a>Сводка об отсутствующих обновлениях
 
-```
+```loganalytics
 Update
 | where TimeGenerated>ago(5h) and OSType=="Linux" and (VMUUID=~"625686a0-6d08-4810-aae9-a089e68d4911" or VMUUID=~"a0865662-086d-1048-aae9-a089e68d4911")
 | summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification) by Computer, SourceComputerId, Product, ProductArch
@@ -364,7 +364,7 @@ Update
 
 ##### <a name="missing-updates-list"></a>Список отсутствующих обновлений
 
-```
+```loganalytics
 Update
 | where TimeGenerated>ago(5h) and OSType=="Linux" and (VMUUID=~"625686a0-6d08-4810-aae9-a089e68d4911" or VMUUID=~"a0865662-086d-1048-aae9-a089e68d4911")
 | summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification, BulletinUrl, BulletinID) by Computer, SourceComputerId, Product, ProductArch
@@ -381,7 +381,7 @@ Update
 
 ##### <a name="computers-summary"></a>Сводка по компьютерам
 
-```
+```loganalytics
 Heartbeat
 | where TimeGenerated>ago(12h) and OSType=~"Windows" and notempty(Computer)
 | summarize arg_max(TimeGenerated, Solutions) by SourceComputerId
@@ -423,7 +423,7 @@ on SourceComputerId
 
 ##### <a name="missing-updates-summary"></a>Сводка об отсутствующих обновлениях
 
-```
+```loganalytics
 Update
 | where TimeGenerated>ago(5h) and OSType=="Linux" and SourceComputerId in ((Heartbeat
 | where TimeGenerated>ago(12h) and OSType=="Linux" and notempty(Computer)
@@ -447,7 +447,7 @@ Update
 
 ##### <a name="computers-list"></a>Список компьютеров
 
-```
+```loganalytics
 Heartbeat
 | where TimeGenerated>ago(12h) and OSType=="Linux" and notempty(Computer)
 | summarize arg_max(TimeGenerated, Solutions, Computer, ResourceId, ComputerEnvironment, VMUUID) by SourceComputerId
@@ -494,7 +494,7 @@ on SourceComputerId
 
 ##### <a name="missing-updates-list"></a>Список отсутствующих обновлений
 
-```
+```loganalytics
 Update
 | where TimeGenerated>ago(5h) and OSType=="Linux" and SourceComputerId in ((Heartbeat
 | where TimeGenerated>ago(12h) and OSType=="Linux" and notempty(Computer)
@@ -583,6 +583,6 @@ Update
 > [Устранение неполадок при изменениях в среде](automation-tutorial-update-management.md)
 
 * Используйте поиск по журналам в [Log Analytics](../log-analytics/log-analytics-log-searches.md), чтобы просматривать подробные данные об обновлениях.
-* [Создавайте оповещения](../log-analytics/log-analytics-alerts.md) об обнаружении важных критических обновлений, отсутствующих на компьютерах, или отключении автоматических обновлений на компьютере.
+* [Создавайте оповещения](../monitoring-and-diagnostics/monitoring-overview-alerts.md) об обнаружении важных критических обновлений, отсутствующих на компьютерах, или отключении автоматических обновлений на компьютере.
 
 * Чтобы узнать, как взаимодействовать с Управлением обновлениями с помощью REST API, ознакомьтесь со статьей [Software Update Configurations](/rest/api/automation/softwareupdateconfigurations) (Конфигурации обновления программного обеспечения).

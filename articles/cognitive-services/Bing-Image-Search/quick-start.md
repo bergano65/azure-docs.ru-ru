@@ -10,16 +10,16 @@ ms.component: bing-image-search
 ms.topic: article
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: 9e211cf5acd17ab80948d0b7161bdd2a9220c4a6
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 5742efb2dca02565735cf308d9ede9316ce6d12e
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380172"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52314870"
 ---
 # <a name="your-first-images-search-query"></a>Ваш первый запрос по поиску изображений
 
-Прежде чем выполнить первый вызов, необходимо получить ключ подписки Cognitive Services для поиска Bing. Для получения ключа см. статью [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-image-search-api).
+Прежде чем выполнить первый вызов, необходимо получить ключ подписки Cognitive Services для поиска Bing. Для получения ключа см. статью [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-image-search-api).  См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
 Чтобы получить результаты поиска изображений, необходимо отправить запрос GET к следующей конечной точке:  
   
@@ -29,7 +29,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/images/search
   
 В запросе должен использоваться протокол HTTPS.
 
-Рекомендуется, чтобы все запросы поступали с сервера. Распространение ключа в рамках клиентского приложения создает больше возможностей для доступа злоумышленников к нему. Осуществление вызовов с сервера также предоставляет единую точку обновления для будущих версий API.
+Рекомендуется, чтобы все запросы поступали с сервера. Распространение ключа в рамках клиентского приложения создает больше возможностей для доступа к нему злоумышленников. Осуществление вызовов с сервера также предоставляет единую точку обновления для будущих версий API.
 
 В запросе необходимо указать параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#query), который содержит условие поиска пользователя. В запросе можно также указать необязательный параметр [mkt](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#mkt), определяющий рынок, для которого будут отображаться результаты. Список необязательных параметров запроса, таких как `freshness` и `size`, можно найти в разделе [Параметры запроса](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#query-parameters). Все значения параметров запроса должны быть указаны в формате URL-адреса.  
   

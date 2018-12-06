@@ -15,12 +15,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 09/18/2018
 ms.author: anithaa
-ms.openlocfilehash: 3c28181e1d1a4fd1cdac530ed8f393c7e0c7ea92
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 6bd318da5b3cd667d0a39b9c963e8d3ffd472f41
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49426311"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52633016"
 ---
 # <a name="create-change-or-delete-service-endpoint-policy-using-the-azure-portal"></a>Создание, изменение или удаление политик конечной точки службы с помощью портала Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "49426311"
    
    ![Создание определений политики конечной точки службы](./media/virtual-network-service-endpoint-policies-portal/virtual-network-endpoint-policies-create-policydefinitionspane.PNG)
    
-5. В колонке **Теги** введите или выберите следующие сведения (необязательно)
+5. В колонке **Теги** введите или выберите следующие сведения (необязательно).
    
    - "Ключ": выберите ключ для политики. Пример: "Dept".     
    - "Значение": введите значение для ключа. Пример: "Finance".

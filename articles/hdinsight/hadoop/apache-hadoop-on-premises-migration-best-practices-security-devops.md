@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: 9489d6e8780a30c5c54ee307d6c45c4bc2eb0e5d
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: fa72765e02592b72efb09320958a0aa244ae8b08
+ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50419288"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52265293"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---security-and-devops-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по обеспечению безопасности и операциям DevOps
 
@@ -24,7 +24,7 @@ ms.locfileid: "50419288"
 
 Корпоративный пакет безопасности (ESP) предоставляет поддержку аутентификации на основе Active Directory, многопользовательского режима и управления доступом на основе ролей. Если выбрать ESP, кластер HDInsight подключается к домену Active Directory, а администратор предприятия может настроить управление доступом на основе ролей (RBAC) для обеспечения безопасности Hive с помощью Apache Ranger. Кроме того, администратор может проводить аудит доступа сотрудников к данным, а также аудит любых изменений, внесенных в политики управления доступом.
 
-Возможности ESP в настоящее время находятся в режиме предварительной версии и доступны только для следующих типов кластеров: Apache Hadoop, Apache Spark, Apache HBase, Apache Kafka и Apache Interactive Query.
+Возможности ESP доступны для кластеров таких типов: Apache Hadoop, Apache Spark, Apache HBase, Apache Kafka и Interactive Query (Hive LLAP). 
 
 Чтобы развернуть кластер HDInsight, присоединенный к домену, выполните следующие действия:
 

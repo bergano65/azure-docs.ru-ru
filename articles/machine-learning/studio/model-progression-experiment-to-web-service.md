@@ -1,10 +1,11 @@
 ---
-title: Как модель Машинного обучения Azure превращается в веб-службу | Документация Майкрософт
+title: Как модель Студии машинного обучения Azure превращается в веб-службу | Документация Майкрософт
 description: Обзор процесса развития модели машинного обучения Azure от эксперимента по разработке до рабочей веб-службы.
 services: machine-learning
 documentationcenter: ''
-author: YasinMSFT
-ms.author: yahajiza
+author: ericlicoding
+ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 25e0c025-f8b0-44ab-beaf-d0f2d485eb91
@@ -15,14 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2017
-ms.openlocfilehash: 7b9aec2815f836b3b220de37fe6428c54d39c3e5
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 1254f41d4961956acc8f7abc7d5490fedbb8c5d0
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34835578"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52310105"
 ---
-# <a name="how-a-machine-learning-model-progresses-from-an-experiment-to-an-operationalized-web-service"></a>Развитие модели машинного обучения от эксперимента до рабочей веб-службы
+# <a name="how-a-machine-learning-studio-model-progresses-from-an-experiment-to-an-operationalized-web-service"></a>Развитие модели Студии машинного обучения Azure от эксперимента до рабочей веб-службы
 Студия машинного обучения Azure обеспечивает интерактивный холст, на котором вы можете выполнять разработку, запуск, тестирование и интеграцию ***эксперимента*** модели прогнозной аналитики. Существует множество модулей для следующих задач:
 
 * ввод данных в эксперимент;

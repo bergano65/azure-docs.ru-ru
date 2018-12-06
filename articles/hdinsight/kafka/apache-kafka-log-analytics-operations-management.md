@@ -9,18 +9,18 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: 809196411df56c7448a9d0f983c17c60d5d3b4ae
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: bd8bfb8775bc9c988bb7484ac25f189c3ff46991
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51015423"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52317285"
 ---
 # <a name="analyze-logs-for-apache-kafka-on-hdinsight"></a>Анализ журналов для Apache Kafka в HDInsight
 
 Сведения о том, как использовать Log Analytics для анализа журналов, созданных в Apache Kafka в Azure HDInsight.
 
-## <a name="enable-log-analytics-for-kafka"></a>Включение Log Analytics для Kafka
+## <a name="enable-log-analytics-for-apache-kafka"></a>Включение Log Analytics для Apache Kafka
 
 Инструкции по включению Log Analytics для HDInsight идентичны для всех кластеров HDInsight. Чтобы узнать, как создать и настроить необходимые службы, воспользуйтесь ссылками ниже.
 
@@ -74,9 +74,9 @@ ms.locfileid: "51015423"
 
 Дополнительные сведения о Log Analytics см. в документе [Начало работы с рабочей областью Log Analytics](../../log-analytics/log-analytics-get-started.md).
 
-Дополнительные сведения о работе с Kafka см. в следующих документах:
+Дополнительные сведения о работе с Apache Kafka см. в следующих документах:
 
- * [Зеркальное отображение Kafka в кластерах HDInsight](apache-kafka-mirroring.md).
- * [Повышение уровня масштабируемости Kafka в HDInsight](apache-kafka-scalability.md).
- * [Использование потоковой передачи Spark с Kafka](../hdinsight-apache-spark-with-kafka.md).
- * [Использование структурированной потоковой передачи Spark с Kafka](../hdinsight-apache-kafka-spark-structured-streaming.md).
+ * [Зеркальное отображение Apache Kafka в кластерах HDInsight](apache-kafka-mirroring.md)
+ * [Повышение уровня масштабируемости Apache Kafka в HDInsight](apache-kafka-scalability.md)
+ * [Использование потоковой передачи Apache Spark (DStream) с Apache Kafka](../hdinsight-apache-spark-with-kafka.md)
+ * [Использование структурированной потоковой передачи Apache Spark с Apache Kafka](../hdinsight-apache-kafka-spark-structured-streaming.md)

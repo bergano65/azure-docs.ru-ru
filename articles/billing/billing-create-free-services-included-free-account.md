@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/25/2017
 ms.author: cwatson
-ms.openlocfilehash: ab0b48f8c8579af8a3314bad14dafbe79f9a9781
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 77022b442a78c8d14284e06af4f156302c1e6ffc
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47393746"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52584406"
 ---
 # <a name="create-services-included-with-azure-free-account"></a>Создание служб, доступных в бесплатной учетной записи Azure
 
@@ -34,6 +34,6 @@ ms.locfileid: "47393746"
 ## <a name="multiple-instances-of-services-can-be-created-within-allowed-limits"></a>Несколько экземпляров служб могут быть созданы в допустимых пределах
 Вы можете создать несколько экземпляров служб бесплатно при условии, что сумма использования находится в пределах использования. Например, вы получаете 750 часов бесплатной виртуальной машины Windows B1S каждый месяц в бесплатной учетной записи Azure. Эти 750 часов можно использовать в любой необходимой комбинации. Например, можно создать 5 виртуальных машин B1S и использовать их по 150 часов каждую. 
 
-## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если вам нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.
+Если у вас есть вопросы или нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

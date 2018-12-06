@@ -8,24 +8,29 @@ ms.service: search
 ms.devlang: NA
 ms.workload: search
 ms.topic: conceptual
-ms.date: 05/01/2018
+ms.date: 11/27/2018
 ms.author: luisca
-ms.openlocfilehash: 653a4675d546432eea8478ba6203be1df71ec4f4
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: f9ff3f66f3a73fbaf1a4c2ca280c85f4bde65444
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45731399"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52442035"
 ---
 #    <a name="named-entity-recognition-cognitive-skill"></a>Когнитивный навык распознавания именованных сущностей
 
 Навык **Распознавание именованных сущностей** извлекает именованные сущности из текста. Доступные сущности включают в себя типы `person`, `location` и `organization`.
 
 > [!NOTE]
-> Служба "Когнитивный поиск" находится в общедоступной предварительной версии. Выполнение набора навыков, а также извлечение и нормализация изображений в настоящее время предлагаются бесплатно. Цена на эти функции будет объявлена позже. 
+> <ul>
+> <li>Служба "Когнитивный поиск" находится в общедоступной предварительной версии. Выполнение набора навыков, а также извлечение и нормализация изображений в настоящее время предлагаются бесплатно. Цена на эти функции будет объявлена позже. </li>
+> <li> Навык распознавания именованных сущностей признан устаревшим, и его поддержка будет официально прекращена с 15 февраля 2019 г. Следуйте рекомендациям, приведенным в статье об <a href="cognitive-search-skill-deprecated.md">устаревших навыках когнитивного поиска</a>, чтобы перейти на поддерживаемые навыки.</li>
 
 ## <a name="odatatype"></a>@odata.type  
 Microsoft.Skills.Text.NamedEntityRecognitionSkill
+
+## <a name="data-limits"></a>Ограничения данных
+Максимальный размер записи — 50 000 знаков, как определено в `String.Length`. Если вам нужно разбить данные перед отправкой для извлечения ключевой фразы, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
 
 ## <a name="skill-parameters"></a>Параметры навыков
 
@@ -34,7 +39,7 @@ Microsoft.Skills.Text.NamedEntityRecognitionSkill
 | Имя параметра     | ОПИСАНИЕ |
 |--------------------|-------------|
 | Категории    | Массив категорий, который следует извлекать.  Возможные типы категорий: `"Person"`, `"Location"`, `"Organization"`. Если категория не указана, возвращаются все типы.|
-|defaultLanguageCode |  Код языка вводимого текста. Поддерживается следующие языки: `ar, cs, da, de, en, es, fi, fr, he, hu, it, ko, pt-br, pt`.|
+|defaultLanguageCode |  Код языка вводимого текста. Поддерживается следующие языки: `de, en, es, fr, it`.|
 | minimumPrecision  | Число от 0 до 1. Если точность меньше этого значения, сущность не возвращается. Значение по умолчанию — 0.|
 
 ## <a name="skill-inputs"></a>Входные данные навыков
@@ -58,7 +63,7 @@ Microsoft.Skills.Text.NamedEntityRecognitionSkill
 ```json
   {
     "@odata.type": "#Microsoft.Skills.Text.NamedEntityRecognitionSkill",
-    "categories": [ "Person"],
+    "categories": [ "Person", "Location", "Organization"],
     "defaultLanguageCode": "en",
     "inputs": [
       {
@@ -83,7 +88,7 @@ Microsoft.Skills.Text.NamedEntityRecognitionSkill
         "recordId": "1",
         "data":
            {
-             "text": "This is a the loan application for Joe Romero, he is a Microsoft employee who was born in Chile and then moved to Australia… Ana Smith is provided as a reference.",
+             "text": "This is the loan application for Joe Romero, he is a Microsoft employee who was born in Chile and then moved to Australia… Ana Smith is provided as a reference.",
              "languageCode": "en"
            }
       }
@@ -101,32 +106,38 @@ Microsoft.Skills.Text.NamedEntityRecognitionSkill
       "data" : 
       {
         "persons": [ "Joe Romero", "Ana Smith"],
-        "locations": ["Seattle"],
-        "organizations":["Microsoft Corporation"],
+        "locations": ["Chile", "Australia"],
+        "organizations":["Microsoft"],
         "entities":  
         [
           {
             "category":"person",
             "value": "Joe Romero",
-            "offset": 45,
+            "offset": 33,
             "confidence": 0.87
           },
           {
             "category":"person",
             "value": "Ana Smith",
-            "offset": 59,
+            "offset": 124,
             "confidence": 0.87
           },
           {
             "category":"location",
-            "value": "Seattle",
-            "offset": 5,
+            "value": "Chile",
+            "offset": 88,
+            "confidence": 0.99
+          },
+          {
+            "category":"location",
+            "value": "Australia",
+            "offset": 112,
             "confidence": 0.99
           },
           {
             "category":"organization",
-            "value": "Microsoft Corporation",
-            "offset": 120,
+            "value": "Microsoft",
+            "offset": 54,
             "confidence": 0.99
           }
         ]
@@ -138,9 +149,10 @@ Microsoft.Skills.Text.NamedEntityRecognitionSkill
 
 
 ## <a name="error-cases"></a>Варианты ошибок
-При указании неподдерживаемого кода языка или если содержимое не совпадает с указанным языком, возвращается ошибка, а сущности не извлекаются.
+Если код языка для документа не поддерживается, возвращается ошибка и сущности не извлекаются.
 
 ## <a name="see-also"></a>См. также
 
 + [Предопределенные навыки](cognitive-search-predefined-skills.md)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Навык распознавания сущностей](cognitive-search-skill-entity-recognition.md)

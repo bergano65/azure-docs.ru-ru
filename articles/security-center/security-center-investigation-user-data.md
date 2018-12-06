@@ -3,7 +3,7 @@ title: Управление данными пользователя, наход�
 description: " Сведения об управлении данными пользователя, находящимися в анализе центра безопасности Azure. "
 services: operations-management-suite
 documentationcenter: na
-author: TerryLanfear
+author: rkarlin
 manager: MBaldwin
 editor: ''
 ms.assetid: 411d7bae-c9d4-4e83-be63-9f2f2312b075
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/23/2018
-ms.author: terrylan
-ms.openlocfilehash: d3b5f0ee4aa656fa66d577aa40f66fc98dff148d
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.date: 11/20/2018
+ms.author: rkarlin
+ms.openlocfilehash: d9bf3618b32ce7c5ba7a300a929428dd0614743d
+ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44301656"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52276250"
 ---
 # <a name="manage-user-data-found-in-an-azure-security-center-investigation"></a>Управление данными пользователя, находящимися в анализе центра безопасности Azure
 В этой статье содержатся сведения об управлении данными пользователя, находящимися в анализе центра безопасности Azure. Данные анализа хранятся в [Azure Log Analytics](../log-analytics/log-analytics-overview.md) и отображаются в центре безопасности. Управление данными пользователя включает в себя возможность удаления и экспорта данных.
@@ -58,3 +58,4 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{reso
 
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения об управлении данными пользователя в центре безопасности Azure см. в [этой статье](security-center-privacy.md).
+Дополнительные сведения об удалении персональных данных в Log Analytics, см. в разделе [Как экспортировать и удалять персональные данные](../log-analytics/log-analytics-personal-data-mgmt.md#how-to-export-and-delete-private-data).

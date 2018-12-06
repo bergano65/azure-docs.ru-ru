@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 4e7cc47bddf3663cbc1c8bb5c4470020a84073e4
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 11a14bc8b593e5e7d81e9bdbd4ac4ee3b2bbecaa
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37441657"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52582893"
 ---
 # <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики
 
@@ -23,7 +23,7 @@ ms.locfileid: "37441657"
 
 Пользовательские политики Azure Active Directory B2C (Azure AD B2C) позволяют отправлять параметр в строке запроса. Передавая параметр в конечную точку HTML, вы можете динамически изменять содержимое страницы. Например, можно изменить фоновое изображение страницы регистрации или входа в Azure AD B2C на основе параметра, передаваемого из веб-приложения или мобильного приложения. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Эта статья посвящена настройке пользовательского интерфейса Azure AD B2C с помощью *динамического содержимого*, используя пользовательские политики. Сведения по началу работы см. в статье [Azure Active Directory B2C. Настройка пользовательского интерфейса с помощью настраиваемой политики](active-directory-b2c-ui-customization-custom.md). 
 
 >[!NOTE]
@@ -178,7 +178,7 @@ ms.locfileid: "37441657"
 
 3. В окне **CORS** в поле **Разрешенные источники** выполните одно из следующих действий.
 
-    * Введите URL-адреса, с которых следует разрешить вызовы JavaScript.
+    * Введите URL-адреса, с которых следует разрешить вызовы JavaScript. Необходимо использовать только строчные буквы в вводимых URL-адресах.
     * Введите символ звездочки (*). В таком случае будут приниматься вызовы из всех исходных доменов.
 
 4. Щелкните **Сохранить**.
@@ -321,7 +321,7 @@ ms.locfileid: "37441657"
 
     a. Скачайте файл *selfasserted*.
 
-    Б. Скопируйте содержимое файла.
+    b. Скопируйте содержимое файла.
 
     c. Создайте представление *selfasserted*.
 
@@ -331,7 +331,7 @@ ms.locfileid: "37441657"
 
     a. В политике расширения найдите узел `<ContentDefinition>`, который содержит `Id="api.selfasserted"`, `Id="api.localaccountsignup"` и `Id="api.localaccountpasswordreset"`.
 
-    Б. Задайте для атрибута `LoadUri` универсальный код ресурса (URI) *selfasserted*.
+    b. Задайте для атрибута `LoadUri` универсальный код ресурса (URI) *selfasserted*.
 
 3. Вернитесь к шагу 8.2 и измените код так, чтобы принимать параметры строки запроса, но на этот раз укажите функцию *selfasserted*. 
 

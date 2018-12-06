@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 333e73af3578cdc363e7ede08ca52207cfd0fdb0
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: a20dec67201cb7d8b7ccd3a7662438f2afabfe63
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50248921"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52446795"
 ---
 # <a name="azure-functions-http-triggers-and-bindings"></a>Триггеры и привязки HTTP в службе "Функции Azure"
 
@@ -157,7 +157,7 @@ public static string Run(CustomObject req, ILogger log)
 }
 
 public class CustomObject {
-     public String name {get; set;}
+     public string name {get; set;}
 }
 ```
 
@@ -434,6 +434,45 @@ module.exports = function (context, req) {
 }
 ```
 
+### <a name="working-with-client-identities"></a>Работа с удостоверениями клиентов
+
+Если в приложении-функции используется [аутентификация и авторизация Службы приложений](../app-service/app-service-authentication-overview.md), сведения об аутентифицированных клиентах можно посмотреть прямо в коде. Эта информация доступна в виде [заголовков запросов, которые вставляет платформа](../app-service/app-service-authentication-how-to.md#access-user-claims). 
+
+Эти сведения также можно считывать из данных привязки. Эта возможность доступна только в среде выполнения Функций версии 2.x. Кроме того, сейчас она доступна только для языков .NET.
+
+В языках .NET эта информация доступна как класс [ClaimsPrincipal](https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsprincipal?view=netstandard-2.0). ClaimsPrincipal доступен как часть контекста запроса, как показано в следующем примере:
+
+```csharp
+using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+
+public static IActionResult Run(HttpRequest req, ILogger log)
+{
+    ClaimsPrincipal identities = req.HttpContext.User;
+    // ...
+    return new OkResult();
+}
+```
+
+Кроме того, ClaimsPrincipal можно включить как дополнительный параметр в сигнатуру функции:
+
+```csharp
+#r "Newtonsoft.Json"
+
+using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+using Newtonsoft.Json.Linq;
+
+public static void Run(JObject input, ClaimsPrincipal principal, ILogger log)
+{
+    // ...
+    return;
+}
+
+```
+
 ### <a name="authorization-keys"></a>Ключи авторизации
 
 Служба "Функции" позволяет использовать ключи, чтобы затруднить несанкционированный доступ к конечным точкам функции HTTP во время развертывания.  Стандартному триггеру HTTP может потребоваться, чтобы такой ключ API был в запросе. 
@@ -483,7 +522,7 @@ module.exports = function (context, req) {
 
 Чтобы полностью защитить функции конечных точек в рабочей среде, необходимо реализовать один из следующих вариантов безопасности на уровне приложения-функции:
 
-* Включить аутентификацию и авторизацию в Службе приложений для приложения-функции. Платформа службы приложений позволяет использовать Azure Active Directory (AAD) и несколько сторонних поставщиков удостоверений для аутентификации клиентов. Эта возможность позволяет реализовать пользовательские правила авторизации для функций и работать с информацией пользователя из кода функции. Дополнительные сведения см. в статье [Проверка подлинности и авторизация в службе приложений Azure](../app-service/app-service-authentication-overview.md).
+* Включить аутентификацию и авторизацию в Службе приложений для приложения-функции. Платформа службы приложений позволяет использовать Azure Active Directory (AAD) и несколько сторонних поставщиков удостоверений для аутентификации клиентов. Эта возможность позволяет реализовать пользовательские правила авторизации для функций и работать с информацией пользователя из кода функции. Дополнительные сведения см. в разделе [Работа с удостоверениями клиентов](#working-with-client-identities) и статье [Проверка подлинности и авторизация в службе приложений Azure](../app-service/app-service-authentication-overview.md).
 
 * Используйте службу управления API Azure (APIM) для аутентификации запросов. APIM предоставляет широкий набор параметров безопасности API для входящих запросов. Дополнительные сведения см. [в статье о политиках аутентификации службы "Управление API"](../api-management/api-management-authentication-policies.md). С помощью службы "Управление API" можно настроить приложение-функцию на прием запросов только с IP-адреса вашего экземпляра этой службы. Дополнительные сведения см. в разделе [Ограничения IP-адресов](ip-addresses.md#ip-address-restrictions).
 

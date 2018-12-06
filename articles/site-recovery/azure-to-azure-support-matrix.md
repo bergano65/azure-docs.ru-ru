@@ -9,12 +9,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/28/2018
 ms.author: raynew
-ms.openlocfilehash: 5cce3005a0058604136e05d9c3bf9700d5296bf3
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: bc671a598d975fb732b668d579561a253f04ded3
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50964085"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52317727"
 ---
 # <a name="support-matrix-for-replicating-from-one-azure-region-to-another"></a>Матрицы поддержки для репликации из одного региона Azure в другой
 
@@ -74,7 +74,7 @@ Azure Government    | US Gov (Вирджиния), US Gov (Айова), US Gov (
 
 Site Recovery поддерживает репликацию виртуальных машин Azure с ниже перечисленными операционными системами.
 
-### <a name="windows"></a>Windows
+### <a name="windows"></a> Windows
 
 **Операционная система** | **Дополнительные сведения**
 --- | ---
@@ -87,8 +87,8 @@ Windows Server 2008 R2 | Выполняется пакет обновлений 
 
 **Операционная система** | **Дополнительные сведения**
 --- | ---
-Red Hat Enterprise Linux. | 6.7, 6.8, 6.9, 6.10, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5   
-CentOS | 6.5, 6.6, 6.7, 6.8, 6.9, 6.10, 7.0, 7.1, 7.2, 7.3,7.4, 7.5
+Red Hat Enterprise Linux. | 6.7, 6.8, 6.9, 6.10, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6  
+CentOS | 6.5, 6.6, 6.7, 6.8, 6.9, 6.10, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6
 Сервер Ubuntu 14.04 LTS | [Поддерживаемые версии ядра](#supported-ubuntu-kernel-versions-for-azure-virtual-machines)
 Сервер Ubuntu 16.04 LTS | [Поддерживаемая версия ядра](#supported-ubuntu-kernel-versions-for-azure-virtual-machines)<br/><br/> На серверах Ubuntu с поддержкой входа и аутентификации на основе пароля, а также пакета cloud-init для настройки облачных виртуальных машин вход на основе пароля может быть отключен после отработки отказа (в зависимости от конфигурации cloud-init). Вход на основе пароля можно повторно включить на виртуальной машине. На портале Azure сбросьте пароль машины, на которой выполнена отработка отказа: Поддержка > Устранение неполадок > Меню параметров.
 Debian 7 | [Поддерживаемые версии ядра](#supported-debian-kernel-versions-for-azure-virtual-machines)
@@ -96,39 +96,39 @@ Debian 8; | [Поддерживаемые версии ядра](#supported-debi
 SUSE Linux Enterprise Server 12 | Пакеты обновлений 1 (SP1), 2 (SP2), 3 (SP3). [Поддерживаемые версии ядра](#supported-suse-linux-enterprise-server-12-kernel-versions-for-azure-virtual-machines)
 SUSE Linux Enterprise Server 11 | Пакет обновления 3 (SP3)<br/><br/> Обновление реплицируемых компьютеров с пакета обновления 3 (SP3) до пакета 4 (SP4) не поддерживается. Если обновления реплицируемого компьютера были установлены, нужно отключить репликацию и повторно включить ее после завершения обновления.
 SUSE Linux Enterprise Server 11 | Пакет обновления 4 (SP4)
-Oracle Linux | 6.4, 6.5, 6.6, 6.7<br/><br/> Совместимы или с ядром Red Hat, или с ядром Unbreakable Enterprise Kernel Release 3 (UEK3).
+Oracle Linux | 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 6.10, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5 <br/><br/> Совместимы или с ядром Red Hat, или с ядром Unbreakable Enterprise Kernel Release 3 (UEK3).
 
 
 #### <a name="supported-ubuntu-kernel-versions-for-azure-virtual-machines"></a>Поддерживаемые версии ядра Ubuntu для виртуальных машин Azure
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
+14.04 LTS | 9.20 | С 3.13.0-24-generic по 3.13.0-161-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-138-generic,<br/>с 4.15.0-1023-azure по 4.15.0-1030-azure |
 14.04 LTS | 9.19 | С 3.13.0-24-generic по 3.13.0-153-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-131-generic. |
 14.04 LTS | 9.18 | С 3.13.0-24-generic по 3.13.0-151-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-128-generic. |
 14.04 LTS | 9.17 | С 3.13.0-24-generic по 3.13.0-147-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>С 4.4.0-21-generic по 4.4.0-124-generic |
-14.04 LTS | 9.16 | С 3.13.0-24-generic по 3.13.0-144-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-119-generic. |
 |||
+16.04 LTS | 9.20 | с 4.4.0-21-generic по 4.4.0-138-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.15.0-13-generic по 4.15.0-38-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>с 4.15.0-1012-azure по 4.15.0-1030-azure.|
 16.04 LTS | 9.19 | с 4.4.0-21-generic по 4.4.0-131-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.15.0-13-generic по 4.15.0-30-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>с 4.15.0-1012-azure по 4.15.0-1019-azure.|
 16.04 LTS | 9.18 | С 4.4.0-21-generic по 4.4.0-128-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. |
 16.04 LTS | 9.17 | С 4.4.0-21-generic по 4.4.0-124-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>С 4.13.0-16-generic по 4.13.0-41-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>С 4.13.0-1005-azure по 4.13.0-1016-azure |
-16.04 LTS | 9.16 | С 4.4.0-21-generic по 4.4.0-119-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-38-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1012-azure. |
 
 
 #### <a name="supported-debian-kernel-versions-for-azure-virtual-machines"></a>Поддерживаемые версии ядра Debian для виртуальных машин Azure
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
-Debian 7 | 9.17, 9.18, 9.19 | С 3.2.0-4-amd64 по 3.2.0-6-amd64, 3.16.0-0.bpo.4-amd64 |
-Debian 7 | 9.16 | С 3.2.0-4-amd64 по 3.2.0-5-amd64, 3.16.0-0.bpo.4-amd64 |
+Debian 7 | 9.17,9.18,9.19,9.20 | С 3.2.0-4-amd64 по 3.2.0-6-amd64, 3.16.0-0.bpo.4-amd64 |
 |||
+Debian 8; | 9.20 | С 3.16.0-4-amd64 по 3.16.0-7-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.8-amd64 |
 Debian 8; | 9.19 | С 3.16.0-4-amd64 по 3.16.0-6-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.7-amd64 |
 Debian 8; | 9.17, 9.18 | С 3.16.0-4-amd64 по 3.16.0-6-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.6-amd64 |
-Debian 8; | 9.16 | С 3.16.0-4-amd64 по 3.16.0-5-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.5-amd64 |
 
 #### <a name="supported-suse-linux-enterprise-server-12-kernel-versions-for-azure-virtual-machines"></a>Поддерживаемые версии ядра SUSE Linux Enterprise Server 12 для виртуальных машин Azure
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
+SUSE Linux Enterprise Server 12 (SP1, SP2, SP3) | 9.20 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.107-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>С SP2(LTSS) 4.4.121-92.73-default по 4.4.121-92.98-default</br></br>С SP3 4.4.73-5-default по 4.4.140-94.69-default |
 SUSE Linux Enterprise Server 12 (SP1, SP2, SP3) | 9.19 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.93-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>С SP2(LTSS) 4.4.121-92.73-default по 4.4.121-92.80-default</br></br>С SP3 4.4.73-5-default по 4.4.140-94.42-default |
 SUSE Linux Enterprise Server 12 (SP1, SP2, SP3) | 9.18 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.93-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>С SP2(LTSS) 4.4.121-92.73-default по 4.4.121-92.80-default</br></br>С SP3 4.4.73-5-default по 4.4.138-94.39-default |
 SUSE Linux Enterprise Server 12 (SP1, SP2, SP3) | 9.17 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.88-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2(LTSS) 4.4.121-92.73-default</br></br>С SP3 4.4.73-5-default по 4.4.126-94.22-default |
@@ -219,7 +219,7 @@ Azure DNS | Поддерживаются |
 Прокси-сервер, прошедший проверку подлинности | Не поддерживается | Если виртуальная машина использует прокси-сервер, прошедший проверку подлинности для исходящих подключений, ее нельзя реплицировать с помощью Azure Site Recovery.    
 VPN типа "сеть — сеть" с локальной средой (с или без ExpressRoute)| Поддерживаются | Убедитесь, что определяемые пользователем маршруты и сетевые группы безопасности настраиваются так, чтоб трафик Site Recovery не перенаправлялся в локальную среду. Дополнительные сведения см.в статье [Руководство по организации сети для репликации виртуальных машин Azure](site-recovery-azure-to-azure-networking-guidance.md).  
 Подключение типа "виртуальная сеть — виртуальная сеть" | Поддерживаются | Дополнительные сведения см.в статье [Руководство по организации сети для репликации виртуальных машин Azure](site-recovery-azure-to-azure-networking-guidance.md).  
-Конечные точки службы виртуальной сети | Поддерживаются | При ограничении доступа для учетных записей хранения к виртуальной сети убедитесь, что доверенные службы Майкрософт имеют доступ к учетной записи хранения. 
+Конечные точки службы виртуальной сети | Поддерживаются | При ограничении доступа для учетных записей хранения к виртуальной сети убедитесь, что доверенные службы Майкрософт имеют доступ к учетной записи хранения.
 Ускорение работы в сети | Поддерживаются | На исходной виртуальной машине необходимо включить ускоренную работу в сети. [Узнайте больше](azure-vm-disaster-recovery-with-accelerated-networking.md).
 
 

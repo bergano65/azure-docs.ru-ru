@@ -5,17 +5,17 @@ author: rthorn17
 manager: rithorn
 ms.service: azure-resource-manager
 ms.devlang: na
-ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/18/2018
+ms.date: 11/20/2018
 ms.author: rithorn
-ms.openlocfilehash: a3de0df8fde3b271b7ba9bb9aab01dbcd5c3bf08
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.topic: conceptual
+ms.openlocfilehash: 10dfa9812a0546f3a8c57e28227851b6f72657fc
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46991227"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52582423"
 ---
 # <a name="manage-your-resources-with-management-groups"></a>Управление ресурсами с помощью групп управления
 
@@ -207,7 +207,7 @@ az account management-group show --name 'Contoso'
 
 ### <a name="move-subscriptions-in-powershell"></a>Перемещение подписок в PowerShell
 
-Чтобы переместить подписку в PowerShell, используйте команду Add-AzureRmManagementGroupSubscription.  
+Чтобы переместить подписку в PowerShell, используйте команду New-AzureRmManagementGroupSubscription.  
 
 ```azurepowershell-interactive
 New-AzureRmManagementGroupSubscription -GroupName 'Contoso' -SubscriptionId '12345678-1234-1234-1234-123456789012'
@@ -272,12 +272,26 @@ Update-AzureRmManagementGroup -GroupName 'Contoso' -ParentName 'ContosoIT'
 az account management-group update --name 'Contoso' --parent 'Contoso Tenant'
 ```
 
+## <a name="audit-management-groups-using-activity-logs"></a>Аудит групп управления с помощью журналов действий
+
+Для отслеживания групп управления с помощью этого API, используйте [API журнала действий клиента](/rest/api/monitor/tenantactivitylogs). Сейчас для отслеживания действий группы управления нельзя использовать PowerShell, интерфейс командной строки или портал Azure.
+
+1. В качестве администратора клиента Azure AD [повысьте права доступа](../../role-based-access-control/elevate-access-global-admin.md), а затем назначьте роль читателя пользователю-аудитору для области `/providers/microsoft.insights/eventtypes/management`.
+1. В качестве пользователя-аудитора вызовите [API журнала действий клиента](/rest/api/monitor/tenantactivitylogs) для просмотра действий группы управления. Вам нужно будет выполнить фильтрацию с использованием **Microsoft.Management** по поставщикам ресурсов для всех действий группы управления.  Пример:
+
+```xml
+GET "/providers/Microsoft.Insights/eventtypes/management/values?api-version=2015-04-01&$filter=eventTimestamp ge '{greaterThanTimeStamp}' and eventTimestamp le '{lessThanTimestamp}' and eventChannels eq 'Operation' and resourceProvider eq 'Microsoft.Management'"
+```
+
+> [!NOTE]
+> Для удобного вызова API из командной строки попробуйте использовать [ARMClient](https://github.com/projectkudu/ARMClient).
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о группах управления:
 
-- [Упорядочение ресурсов с помощью групп управления Azure](overview.md)
 - [Создание групп управления для организации ресурсов Azure](create.md)
-- [Страница для установки модуля Azure PowerShell](https://www.powershellgallery.com/packages/AzureRM.ManagementGroups)
-- [Просмотр спецификации REST API](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/managementgroups/resource-manager/Microsoft.Management/preview)
-- [Установка расширения Azure CLI](/cli/azure/extension?view=azure-cli-latest#az-extension-list-available)
+- [Изменение, удаление групп управления и управление ими](manage.md)
+- [Просмотр групп управления в модуле ресурсов Azure PowerShell](https://aka.ms/mgPSdocs)
+- [Просмотр групп управления в REST API](https://aka.ms/mgAPIdocs)
+- [Просмотр групп управления в Azure CLI](https://aka.ms/mgclidoc)

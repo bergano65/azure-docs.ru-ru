@@ -9,16 +9,16 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 11/27/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5dcc9dcada981a6a4174ce34748356d49582f598
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 6f26ec6f1743a72a4a396ba245d80227f6f75913
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51237576"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52584287"
 ---
 # <a name="develop-c-topologies-for-apache-storm-by-using-the-data-lake-tools-for-visual-studio"></a>Разработка топологий для Apache Storm на C# с помощью средств Data Lake для Visual Studio
 
-Сведения о создании топологии Storm на языке C# с помощью средств Azure Data Lake (Hadoop) для Visual Studio. В этом документе приведены пошаговые инструкции по созданию проекта Storm в Visual Studio, его локальному тестированию и развертыванию в Apache Storm в кластере Azure HDInsight.
+Сведения о создании топологии Apache Storm на языке C# с помощью средств Azure Data Lake (Apache Hadoop) для Visual Studio. В этом документе приведены пошаговые инструкции по созданию проекта Storm в Visual Studio, его локальному тестированию и развертыванию в Apache Storm в кластере Azure HDInsight.
 
 Вы также узнаете о том, как создавать гибридные топологии, использующие компоненты C# и Java.
 
@@ -27,7 +27,7 @@ ms.locfileid: "51237576"
 
 Чтобы использовать топологию C# с кластером под управлением Linux, обновите пакет NuGet Microsoft.SCP.Net.SDK, использующийся в проекте, до версии 0.10.0.6 или более поздней. Версия пакета также должна соответствовать основной версии Storm, установленной на HDInsight.
 
-| Версия HDInsight | Версия Storm | Версия SCP.NET | Версия Mono по умолчанию |
+| Версия HDInsight | Версия Apache Storm | Версия SCP.NET | Версия Mono по умолчанию |
 |:-----------------:|:-------------:|:---------------:|:--------------------:|
 | 3.3 |0.10.x |0.10.x.x</br>(только в HDInsight под управлением Windows) | Нет данных |
 | 3.4 | 0.10.0.x | 0.10.0.x | 3.2.8 |
@@ -97,7 +97,7 @@ namespace ConsoleApplication2
 }
 ```
 
-## <a name="storm-templates"></a>Шаблоны Storm
+## <a name="apache-storm-templates"></a>Шаблоны Apache Storm
 
 Средства Data Lake для Visual Studio предоставляют следующие шаблоны:
 
@@ -119,7 +119,7 @@ namespace ConsoleApplication2
 
 На данном этапе в этом документе используется базовый тип проекта приложения Storm для создания топологии.
 
-### <a name="hbase-templates-notes"></a>Заметки о шаблонах HBase
+### <a name="apache-hbase-templates-notes"></a>Заметки о шаблонах Apache HBase
 
 Для взаимодействия с HBase в кластере HDInsight шаблоны модулей чтения и записи HBase используют REST API HBase, а не API Java HBase.
 
@@ -754,14 +754,14 @@ Context.Logger.Info("Component started");
 **Apache Storm в HDInsight**
 
 * [Развертывание и мониторинг топологии с помощью Apache Storm в HDInsight.](apache-storm-deploy-monitor-topology.md)
-* [Примеры топологий для Storm в HDInsight](apache-storm-example-topology.md)
+* [Примеры топологий и компонентов Storm для Apache Storm в HDInsight](apache-storm-example-topology.md)
 
 **Apache Hadoop в HDInsight**
 
-* [Использование Hive с Hadoop в HDInsight](../hadoop/hdinsight-use-hive.md)
-* [Использование Pig с Hadoop в HDInsight](../hadoop/hdinsight-use-pig.md)
-* [Использование MapReduce с Hadoop в HDInsight](../hadoop/hdinsight-use-mapreduce.md)
+* [Использование Apache Hive с Apache Hadoop в HDInsight](../hadoop/hdinsight-use-hive.md)
+* [Использование Apache Pig с Apache Hadoop в HDInsight](../hadoop/hdinsight-use-pig.md)
+* [Использование Apache Hadoop MapReduce с Apache Hadoop в HDInsight](../hadoop/hdinsight-use-mapreduce.md)
 
 **Apache HBase в HDInsight**
 
-* [Начало работы с HBase в HDInsight](../hbase/apache-hbase-tutorial-get-started-linux.md)
+* [Начало работы с Apache HBase в HDInsight](../hbase/apache-hbase-tutorial-get-started-linux.md)

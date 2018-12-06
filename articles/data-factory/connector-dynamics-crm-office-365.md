@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/26/2018
+ms.date: 11/28/2018
 ms.author: jingwang
-ms.openlocfilehash: ce3c494dc0b8c962c8dae0af38d3cb5476cdf48b
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: d58e72c4487a3ab6d7b562fd328098d98761da5e
+ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47406181"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52620342"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Копирование данных из Dynamics 365 (Common Data Service) или Dynamics CRM и в эти решения с помощью фабрики данных Azure
 
@@ -43,7 +43,10 @@ ms.locfileid: "47406181"
 - Dynamics 365 for Project Service Automation;
 - Dynamics 365 for Marketing.
 
-Другие типы приложений (например, Dynamics 365 for Finance and Operations и Dynamics 365 for Talent и т. д.) не поддерживаются.
+Другие типы приложений (например, Dynamics 365 for Finance and Operations, Dynamics 365 for Talent и т. д.) не поддерживаются в этом соединителе.
+
+>[!TIP]
+>[Соединитель Dynamics AX](connector-dynamics-ax.md) также можно использовать для копирования данных из **Dynamics 365 Finance and Operations**.
 
 ## <a name="get-started"></a>Начало работы
 

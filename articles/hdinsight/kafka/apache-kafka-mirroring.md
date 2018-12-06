@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 21fa41db2e205a7b17deae6d018308fe6e7ff213
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: fd9094d646b917cf811c28c9770fc2427a404ab4
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51006776"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52309044"
 ---
 # <a name="use-mirrormaker-to-replicate-apache-kafka-topics-with-kafka-on-hdinsight"></a>Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker
 
@@ -25,11 +25,11 @@ ms.locfileid: "51006776"
 > [!WARNING]
 > Зеркальное отображение нельзя рассматривать как средство обеспечения отказоустойчивости. Из-за разного смещения элементов в разделах исходного и целевого кластерах они не могут использоваться как взаимозаменяемые.
 >
-> Если вас интересует отказоустойчивость, настройте репликацию для разделов в пределах кластера. Дополнительные сведения см. в статье по [началу работы с Kafka в HDInsight](apache-kafka-get-started.md).
+> Если вас интересует отказоустойчивость, настройте репликацию для разделов в пределах кластера. Дополнительные сведения см. в статье по [началу работы с Apache Kafka в HDInsight](apache-kafka-get-started.md).
 
-## <a name="how-kafka-mirroring-works"></a>Как работает зеркальное отображение Kafka
+## <a name="how-apache-kafka-mirroring-works"></a>Как работает зеркальное отображение Apache Kafka
 
-Зеркальное отображение выполняется с помощью средства MirrorMaker (часть Apache Kafka). Это средство использует записи из разделов в исходном кластере, а затем создает локальную копию в целевом. MirrorMaker использует один (или несколько) *получателей*, которые считывают исходный кластер, и *производитель*, который записывает данные в локальный (целевой) кластер.
+Зеркальное отображение выполняется с помощью средства [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) (входит в состав Apache Kafka). Это средство использует записи из разделов в исходном кластере, а затем создает локальную копию в целевом кластере. MirrorMaker использует один (или несколько) *получателей*, которые считывают исходный кластер, и *производитель*, который записывает данные в локальный (целевой) кластер.
 
 На схеме ниже показан процесс зеркального отображения.
 
@@ -56,7 +56,7 @@ Apache Kafka в HDInsight не предоставляет доступ к слу
 
 Дополнительные сведения о подключении двух виртуальных сетей Azure см. в статье [Настройка подключения между виртуальными сетями в развертывании Resource Manager с помощью PowerShell](../../vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md).
 
-## <a name="create-kafka-clusters"></a>Создание кластеров Kafka
+## <a name="create-apache-kafka-clusters"></a>Создание кластеров Apache Kafka
 
 Виртуальную сеть Azure и кластеры Kafka можно создать вручную, но лучше использовать шаблон Azure Resource Manager. Выполните следующие действия, чтобы развернуть виртуальную сеть Azure и два кластера Kafka в подписке Azure.
 
@@ -106,7 +106,7 @@ Apache Kafka в HDInsight не предоставляет доступ к слу
 
     См. дополнительные сведения об [использовании SSH в HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-2. Чтобы найти узлы Zookeeper для исходного кластера, используйте следующие команды:
+2. Чтобы найти узлы Apache Zookeeper для исходного кластера, используйте следующие команды:
 
     ```bash
     # Install jq if it is not installed
@@ -295,10 +295,10 @@ Apache Kafka в HDInsight не предоставляет доступ к слу
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом документе вы узнали, как создать реплику кластер Kafka с помощью MirrorMaker. Другие материалы, посвященные работе с Kafka, доступны по следующим ссылкам:
+Из этого документа вы узнали, как создать реплику кластера [Apache Kafka](https://kafka.apache.org/) с помощью [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330). Другие материалы, посвященные работе с Kafka, доступны по следующим ссылкам:
 
 * [Документация по Apache Kafka MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) на сайте cwiki.apache.org.
 * [Get started with Apache Kafka on HDInsight (preview)](apache-kafka-get-started.md) (Приступая к работе с Apache Kafka в HDInsight (предварительная версия))
-* [Совместное использование Apache Spark и Kafka (предварительная версия) в HDInsight](../hdinsight-apache-spark-with-kafka.md)
-* [Совместное использование Apache Kafka (предварительная версия) и Storm в HDInsight](../hdinsight-apache-storm-with-kafka.md)
-* [Подключение к Kafka через виртуальную сеть Azure](apache-kafka-connect-vpn-gateway.md)
+* [Пример потоковой передачи Apache Spark (DStream) с использованием Apache Kafka в HDInsight](../hdinsight-apache-spark-with-kafka.md)
+* [Краткое руководство. Использование Apache Storm с Apache Kafka в HDInsight](../hdinsight-apache-storm-with-kafka.md)
+* [Подключение к Kafka в HDInsight с помощью виртуальной сети Azure](apache-kafka-connect-vpn-gateway.md)

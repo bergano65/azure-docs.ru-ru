@@ -1,10 +1,11 @@
 ---
-title: Программное переобучение моделей машинного обучения | Документация Майкрософт
+title: Программное переобучение моделей в Студии машинного обучения Azure | Документация Майкрософт
 description: Узнайте о том, как осуществить программное переобучение модели и обновить веб-службу так, чтобы она использовала переобученную модель при задействовании функций машинного обучения Azure.
 services: machine-learning
 documentationcenter: ''
-author: YasinMSFT
-ms.author: yahajiza
+author: ericlicoding
+ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 7ae4f977-e6bf-4d04-9dde-28a66ce7b664
@@ -15,15 +16,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2017
-ms.openlocfilehash: b2090b39991363ee2a5b2e12945d97dc0fa9f2b2
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: b38143fe6f1f1cf3e65a2989e1b0a71c28530b2a
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34835510"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52313391"
 ---
-# <a name="retrain-machine-learning-models-programmatically"></a>Программное переобучение моделей машинного обучения
-В этом пошаговом руководстве вы узнаете, как выполнить программное переобучение веб-службы машинного обучения Azure с использованием C# и службы пакетного выполнения машинного обучения.
+# <a name="retrain-machine-learning-studio-models-programmatically"></a>Программное переобучение моделей в Студии машинного обучения
+В этом пошаговом руководстве вы узнаете, как выполнить программное переобучение веб-службы Студии машинного обучения Azure с использованием C# и службы пакетного выполнения машинного обучения.
 
 Следующие руководства содержат инструкции по обновлению модели в прогнозной веб-службе после переобучения модели.
 

@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: f9788c82e74b47d4550640a1069f6d97487eecc6
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 79ee129390c6b364ec65e8ae1e893e98f358751e
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51035311"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52497097"
 ---
 # <a name="add-custom-apache-hive-libraries-when-creating-your-hdinsight-cluster"></a>Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight
 
-Дополнительные сведения о предварительной загрузке библиотек Apache Hive в HDInsight. Этот документ содержит сведения об использовании действия скрипта по предварительной загрузке библиотек во время создания кластера. Библиотеки, добавляемые с помощью инструкций в этом документе, глобально доступны в Hive. Для их загрузки нет необходимости использовать [ADD JAR](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli).
+Дополнительные сведения о предварительной загрузке библиотек [Apache Hive](https://hive.apache.org/) в HDInsight. Этот документ содержит сведения об использовании действия скрипта по предварительной загрузке библиотек во время создания кластера. Библиотеки, добавляемые с помощью инструкций в этом документе, глобально доступны в Hive. Для их загрузки нет необходимости использовать [ADD JAR](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli).
 
 ## <a name="how-it-works"></a>Принцип работы
 
@@ -93,4 +93,4 @@ ms.locfileid: "51035311"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о работе с Hive см. в статье [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hadoop/hdinsight-use-hive.md).
+Дополнительные сведения о работе с Hive см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](hadoop/hdinsight-use-hive.md).

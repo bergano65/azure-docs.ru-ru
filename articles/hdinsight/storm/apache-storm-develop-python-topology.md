@@ -10,16 +10,16 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/30/2018
 ms.author: hrasheed
-ms.openlocfilehash: b46fa5eb9772a19a5613fc276071167d884f6057
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 04046b4c7c36418b9024a690ad5279f9e34578a5
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51008765"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52583641"
 ---
 # <a name="develop-apache-storm-topologies-using-python-on-hdinsight"></a>Разработка топологий Apache Storm с помощью Python в HDInsight
 
-В этой статье приведены сведения о создании топологии Apache Storm, использующей компоненты Python. Apache Storm поддерживает несколько языков и даже позволяет объединять компоненты из нескольких языков в одной топологии. Платформа Flux (впервые появилась в Storm 0.10.0) позволяет легко создавать решения, использующие компоненты Python.
+Узнайте, как создать топологию [Apache Storm](http://storm.apache.org/), использующую компоненты Python. Apache Storm поддерживает несколько языков и даже позволяет объединять компоненты из нескольких языков в одной топологии. Платформа [Flux](http://storm.apache.org/releases/current/flux.html) (которая впервые была представлена в Storm 0.10.0) позволяет легко создавать решения, использующие компоненты Python.
 
 > [!IMPORTANT]
 > Сведения в этом документе были проверены с использованием Storm в HDInsight 3.6. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
@@ -32,7 +32,7 @@ ms.locfileid: "51008765"
 
 * Пакет Java JDK 1.8 или более поздней версии.
 
-* Maven 3.
+* [Apache Maven 3](https://maven.apache.org/download.cgi).
 
 * (Необязательно.) Локальная среда разработки Storm. Локальная среда разработки Storm требуется только в том случае, если вы хотите запускать топологию локально. Дополнительные сведения см. в разделе [Setting up a development environment](http://storm.apache.org/releases/1.1.2/Setting-up-development-environment.html) (Настройка среды разработки).
 
@@ -148,5 +148,5 @@ storm jar WordCount-1.0-SNAPSHOT.jar org.apache.storm.flux.Flux -l -R /topology.
 
 Чтобы узнать о других способах использования Python с HDInsight, см. следующие документы.
 
-* [Использование Python для потоковой передачи заданий MapReduce.](../hadoop/apache-hadoop-streaming-python.md)
-* [Использование определяемых пользователем функций Python (UDF) в Pig и Hive.](../hadoop/python-udf-hdinsight.md)
+* [Использование Python для заданий потоковой передачи Apache Hadoop MapReduce](../hadoop/apache-hadoop-streaming-python.md)
+* [Использование определяемых пользователем функций Python (UDF) в Apache Pig и Apache Hive](../hadoop/python-udf-hdinsight.md)

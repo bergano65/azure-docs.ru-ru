@@ -10,14 +10,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 11/26/2018
 ms.author: douglasl
-ms.openlocfilehash: 77e5d6c278436a1fc192421c9867106409389a66
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: 424de36dbbd3b09e635679900110148b9edd0242
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48888227"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52422888"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -278,8 +278,8 @@ namespace SampleApp
   Activity Output section:
   "exitcode": 0
   "outputs": [
-    "https://shengcstorbatch.blob.core.windows.net/adfjobs/<GUID>/output/stdout.txt",
-    "https://shengcstorbatch.blob.core.windows.net/adfjobs/<GUID>/output/stderr.txt"
+    "https://<container>.blob.core.windows.net/adfjobs/<GUID>/output/stdout.txt",
+    "https://<container>.blob.core.windows.net/adfjobs/<GUID>/output/stderr.txt"
   ]
   "effectiveIntegrationRuntime": "DefaultIntegrationRuntime (East US)"
   Activity Error section:
@@ -292,7 +292,11 @@ namespace SampleApp
 
   > [!IMPORTANT]
   > - Свойства activity.json, linkedServices.json и datasets.json хранятся в папке среды выполнения пакетной задачи. Для этого примера файлы activity.json, linkedServices.json и datasets.json хранятся по адресу https://adfv2storage.blob.core.windows.net/adfjobs/<GUID>/runtime/. При необходимости их следует очищать отдельно. 
-  > - Для связанных служб, использующих локальную среду выполнения интеграции, конфиденциальная информация, например ключи или пароли, шифруется локальной средой выполнения интеграции. Это гарантирует, что учетные данные останутся в пределах частных сетевых сред, определенных клиентами. Некоторые поля с конфиденциальными данными, на которые таким образом ссылается пользовательский код приложения, могут отсутствовать. При необходимости в extendedProperties используйте SecureString, а не ссылку на связанную службу. 
+  > - Если связанные службы используют локальную среду выполнения интеграции, конфиденциальная информация, например ключи и пароли, шифруется локальной средой выполнения интеграции. Это гарантирует, что учетные данные останутся в пределах частных сетевых сред клиентов. Некоторые поля с конфиденциальными данными, на которые таким образом ссылается пользовательский код приложения, могут отсутствовать. При необходимости в extendedProperties используйте SecureString, а не ссылку на связанную службу. 
+
+## <a name="pass-outputs-to-another-activity"></a>Передача выходных данных в другое действие
+
+Пользовательские значения из кода настраиваемого действия можно отправлять обратно в Фабрику данных Azure. Для этого ваше приложение должно записывать их в файл `outputs.json`. Фабрика данных копирует содержимое файла `outputs.json` и добавляет его в выходные данные действия в качестве значения свойства `customOutput` (максимальный размер составляет 2 МБ). Если вы хотите использовать содержимое файла `outputs.json` в последующих действиях, значение можно получить с помощью выражения `@activity('<MyCustomActivity>').output.customOutput`.
 
 ## <a name="retrieve-securestring-outputs"></a>Получение выходных данные SecureString
 

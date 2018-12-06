@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 08/11/2018
 ms.author: magoedte
 ms.component: ''
-ms.openlocfilehash: ad3deaad8c069cfb11bb0eb997d886807ecdb0f8
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: e702e1f5eb1816b007317765e4c9a9f88bb99bfd
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51006504"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52635430"
 ---
 # <a name="analyze-data-usage-in-log-analytics"></a>Анализ использования данных в службе Log Analytics
 
@@ -29,37 +29,136 @@ ms.locfileid: "51006504"
 > - В статье [Управление затратами на хранение путем регулирования объема и срока хранения данных в Log Analytics](log-analytics-manage-cost-storage.md) описано, как контролировать затраты, изменяя срок хранения данных.
 > - В статье [Мониторинг использования и ожидаемых затрат](../monitoring-and-diagnostics/monitoring-usage-and-estimated-costs.md) описано, как можно просмотреть сведения об использовании и оценить затраты по нескольким функциям мониторинга Azure для разных моделей ценообразования. Там также описано, как можно изменить модель ценообразования.
 
-Служба Log Analytics содержит сведения об объеме собранных данных, источниках, из которых отправляются эти данные, а также различных типах отправленных данных.  Просматривать и анализировать использование данных можно с помощью панели мониторинга **Использование службы анализа журналов**. На панели мониторинга отображаются объем данных, собранных каждым решением, и объем данных, отправляемый компьютерами.
+## <a name="understand-usage"></a>Общие сведения о потреблении
 
-## <a name="understand-the-usage-dashboard"></a>Основные сведения о панели мониторинга "Использование"
-На панели мониторинга **Log Analytics usage** (Использование Log Analytics) отображается следующая информация.
+Просматривать и анализировать использование данных можно в разделе **Использование и ожидаемые затраты** для Log Analytics. Здесь вы узнаете, какой объем данных был собран каждым решением, какой объем данных сохраняется, и получите оценку затрат на основании объема полученных данных и дополнительных объемов хранения сверх включенных в тариф.
 
-- Объем данных:
-    - объем данных по времени (зависит от текущего периода времени);
-    - объем данных для каждого решения;
-    - данные, не связанные с компьютером.
-- Компьютеры
-    - компьютеры, отправляющие данные;
-    - компьютеры без данных за последние 24 часа.
-- Предложения:
-    - узлы решения "Аналитика";
-    - узлы автоматизации и управления;
-    - узлы безопасности.  
-- Производительность
-    - время, затраченное на сбор и индексирование данных;  
-- список запросов.
+![Использование и ожидаемые затраты](media/log-analytics-usage/usage-estimated-cost-dashboard-01.png)<br>
 
-![Панель мониторинга использования и затрат](media/log-analytics-usage/usage-estimated-cost-dashboard-01.png)<br>
+Чтобы подробнее изучить данные, щелкните значок в верхней правой части любой диаграммы на странице **Использование и ожидаемые затраты**. Теперь вы можете доработать этот запрос, чтобы получить дополнительные сведения о потреблении.  
+
+![Представление журналов](media/log-analytics-usage/logs.png)<br>
+
+## <a name="troubleshooting-why-usage-is-higher-than-expected"></a>Превышенный объем данных: причины и устранение
+Превышенное использование вызывается одной (или двумя) причинами:
+- отправлен превышенный объем данных в службу Log Analytics;
+- больше узлов, чем ожидалось, отправляют данные в Log Analytics или некоторые узлы отправляют больше данных, чем обычно.
+
+Давайте рассмотрим получение подробных сведений в обоих из этих случаев. 
+
+> [!NOTE]
+> Некоторые поля с типом данных Usage (Потребление) уже устарели и данные в них не заполняются, хотя они пока сохраняются в схеме. Например, сюда относятся поля **Computer** и ряд данных о приеме данных (**TotalBatches**, **BatchesWithinSla**, **BatchesOutsideSla**, **BatchesCapped** и **AverageProcessingTimeMs**).
+
+### <a name="data-volume"></a>Объем данных: 
+На странице **Использование и ожидаемые затраты** есть диаграмма *Data ingestion per solution* (Прием данных по решениям), которая позволяет отобразить объем отправленных данных в целом и для каждого решения отдельно. Это позволяет выявить некоторые тенденции, например оценить изменения общего объема используемых данных (или по определенному решению). Для создания этой диаграммы применяется такой запрос:
+
+`Usage| where TimeGenerated > startofday(ago(31d))| where IsBillable == true
+| summarize TotalVolumeGB = sum(Quantity) / 1024 by bin(TimeGenerated, 1d), Solution| render barchart`
+
+Обратите внимание, что предложение "where IsBillable = true" отсеивает выбранные типы данных из определенных решений, для которых не взимается плата за прием данных. 
+
+Вы можете изучить данные еще подробнее, чтобы найти тенденции для определенных типов данных, например для данных из журналов IIS:
+
+`Usage| where TimeGenerated > startofday(ago(31d))| where IsBillable == true
+| where DataType == "W3CIISLog"
+| summarize TotalVolumeGB = sum(Quantity) / 1024 by bin(TimeGenerated, 1d), Solution| render barchart`
+
+### <a name="nodes-sending-data"></a>Узлы, отправляющие данные
+
+Чтобы узнать, сколько количество узлов отправили данные за последний месяц, выполните такой запрос:
+
+`Heartbeat | where TimeGenerated > startofday(ago(31d))
+| summarize dcount(ComputerIP) by bin(TimeGenerated, 1d)    
+| render timechart`
+
+Чтобы узнать количество полученных событий для каждого компьютера, выполните такой запрос:
+
+`union withsource = tt *
+| summarize count() by Computer | sort by count_ nulls last`
+
+Это довольно дорогостоящий запрос, поэтому применяйте его осторожно. Чтобы узнать количество полученных оплачиваемых событий для каждого компьютера, выполните такой запрос: 
+
+`union withsource = tt * 
+| where _IsBillable == true 
+| summarize count() by Computer  | sort by count_ nulls last`
+
+Чтобы узнать, какие оплачиваемые типы данных отправляются на конкретный компьютер, выполните такой запрос:
+
+`union withsource = tt *
+| where Computer == "*computer name*"
+| where _IsBillable == true 
+| summarize count() by tt | sort by count_ nulls last `
+
+Чтобы получить более подробную информацию об источнике данных по определенному типу данных, воспользуйтесь приведенными ниже примерами запросов.
+
++ Решение по **безопасности**
+  - `SecurityEvent | summarize AggregatedValue = count() by EventID`
++ Решение для **управления журналами**
+  - `Usage | where Solution == "LogManagement" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true | summarize AggregatedValue = count() by DataType`
++ Тип данных **Perf**
+  - `Perf | summarize AggregatedValue = count() by CounterPath`
+  - `Perf | summarize AggregatedValue = count() by CounterName`
++ Тип данных **Event**
+  - `Event | summarize AggregatedValue = count() by EventID`
+  - `Event | summarize AggregatedValue = count() by EventLog, EventLevelName`
++ Тип данных **Syslog**
+  - `Syslog | summarize AggregatedValue = count() by Facility, SeverityLevel`
+  - `Syslog | summarize AggregatedValue = count() by ProcessName`
++ Тип данных **AzureDiagnostics**
+  - `AzureDiagnostics | summarize AggregatedValue = count() by ResourceProvider, ResourceId`
+
+### <a name="tips-for-reducing-data-volume"></a>Советы по снижению объемов данных
+
+Вот несколько рекомендаций, которые помогут снизить объем собираемых журналов.
+
+| Источник превышенного объема данных | Как сократить объем данных |
+| -------------------------- | ------------------------- |
+| События безопасности            | Выберите [события со стандартным или минимальным уровнем безопасности](https://blogs.technet.microsoft.com/msoms/2016/11/08/filter-the-security-events-the-oms-security-collects/). <br> Измените политику аудита безопасности таким образом, чтобы собирать только необходимые события. В частности проверьте необходимость сбора следующих событий: <br> - [аудит платформы фильтрации](https://technet.microsoft.com/library/dd772749(WS.10).aspx); <br> - [аудит реестра](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941614(v%3dws.10));<br> - [аудит файловой системы](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772661(v%3dws.10));<br> - [аудит объектов ядра](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941615(v%3dws.10));<br> - [аудит работы с дескрипторами](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772626(v%3dws.10));<br> — аудит съемных носителей. |
+| Счетчики производительности       | Измените [конфигурацию счетчика производительности](log-analytics-data-sources-performance-counters.md), чтобы <br> уменьшить частоту сбора или <br> сократить число счетчиков производительности. |
+| Журналы событий                 | Измените [конфигурацию журнала событий](log-analytics-data-sources-windows-events.md), чтобы <br> сократить число собранных журналов событий или <br> выполнять сбор только необходимых уровней событий. Например, не выполняйте сбор событий уровня *сведений*. |
+| syslog                     | Измените [конфигурацию системного журнала](log-analytics-data-sources-syslog.md), чтобы <br> сократить число собранных объектов или <br> выполнять сбор только необходимых уровней событий. Например, не выполняйте сбор событий уровня *сведений* и *отладки*. |
+| AzureDiagnostics           | Измените коллекцию журнала ресурсов, чтобы: <br> Уменьшить число ресурсов, отправляющих журналы в Log Analytics. <br> Выполнять сбор только необходимых журналов. |
+| Данные решений с компьютеров, которым не требуется решение | Используйте [нацеливание решений](../azure-monitor/insights/solution-targeting.md), чтобы выполнять сбор данных только в нужных группах компьютеров. |
+
+### <a name="getting-node-counts"></a>Получение счетчиков узлов 
+
+Если вы используете ценовую категорию "За узел (OMS)", плата взимается в зависимости от количества используемых узлов и решений. Количество узлов для предложения "Аналитика", для которых выставляются счета, отображается в таблице на странице **Использование и предполагаемые затраты**.  
+
+Чтобы просмотреть количество отдельных узлов безопасности, выполните такой запрос:
+
+`union
+(
+    Heartbeat
+    | where (Solutions has 'security' or Solutions has 'antimalware' or Solutions has 'securitycenter')
+    | project Computer
+),
+(
+    ProtectionStatus
+    | where Computer !in~
+    (
+        (
+            Heartbeat
+            | project Computer
+        )
+    )
+    | project Computer
 )
+| distinct Computer
+| project lowComputer = tolower(Computer)
+| distinct lowComputer
+| count`
 
-### <a name="to-work-with-usage-data"></a>Работа с данными об использовании
-1. Войдите на [портале Azure](https://portal.azure.com).
-2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.<br><br> ![портал Azure](media/log-analytics-usage/azure-portal-01.png)<br><br>  
-3. В списке рабочих областей Log Analytics выберите рабочую область.
-4. В списке на панели слева выберите пункт **Использование и ожидаемые затраты**.
-5. На панели мониторинга **Использование и ожидаемые затраты** можно изменить диапазон времени. Для этого выберите **Time: Last 24 hours** (Время: последние 24 часа) и измените интервал времени.<br><br> ![период времени](./media/log-analytics-usage/usage-time-filter-01.png)<br><br>
-6. Просмотрите колонки категорий использования, которые вас интересуют. Выберите колонку, а затем щелкните в ней элемент, чтобы увидеть дополнительные сведения на панели мониторинга [Поиск по журналу](log-analytics-queries.md).<br><br> ![Пример КПЭ использования данных](media/log-analytics-usage/data-volume-kpi-01.png)<br><br>
-7. На панели мониторинга "Поиск по журналу" просмотрите результаты, возвращенные в результате поиска.<br><br> ![пример поиска по журналу использования](./media/log-analytics-usage/usage-log-search-01.png)
+Чтобы просмотреть количество отдельных узлов службы автоматизации, выполните такой запрос:
+
+` ConfigurationData 
+ | where (ConfigDataType == "WindowsServices" or ConfigDataType == "Software" or ConfigDataType =="Daemons") 
+ | extend lowComputer = tolower(Computer) | summarize by lowComputer 
+ | join (
+     Heartbeat 
+       | where SCAgentChannel == "Direct"
+       | extend lowComputer = tolower(Computer) | summarize by lowComputer, ComputerEnvironment
+ ) on lowComputer
+ | summarize count() by ComputerEnvironment | sort by ComputerEnvironment asc`
 
 ## <a name="create-an-alert-when-data-collection-is-higher-than-expected"></a>Создание оповещения для превышенного объема сбора данных
 В этом разделе описывается создание оповещения для следующих случаев:
@@ -110,72 +209,10 @@ ms.locfileid: "51006504"
 
 Когда вы получите оповещение, выполните действия, описанные в следующем разделе, чтобы определить причину использования превышенного объема данных.
 
-## <a name="troubleshooting-why-usage-is-higher-than-expected"></a>Превышенный объем данных: причины и устранение
-Панель мониторинга "Использование" поможет вам определить, почему превышено использование (и, соответственно, затраты).
-
-Превышенное использование вызывается одной (или двумя) причинами:
-- отправлен превышенный объем данных в службу Log Analytics;
-- превышено число узлов, отправляющих данные в службу Log Analytics.
-
-### <a name="check-if-there-is-more-data-than-expected"></a>Проверьте, превышен ли объем данных 
-Существует два основных раздела страницы использования, с помощью которых вы можете определить, что именно вызывает превышенный сбор данных.
-
-Диаграмма *объема данных по времени* отображает общий объем отправленных данных, а также компьютеры, отправляющие больший объем данных. В верхней области диаграммы вы можете увидеть, что происходит с общим объемом данных: увеличивается ли он, остается стабильным или уменьшается. Список компьютеров отображает 10 компьютеров, которые отправляют наибольший объем данных.
-
-Диаграмма *объема данных для каждого решения* отображает объем данных, отправляемый каждым решением, а также решения, отправляющие наибольший объем данных. В верхней области диаграммы вы можете увидеть общий объем данных, отправляемый каждым решением за определенное время. Эта информация позволяет определить, отправляет ли решение превышенный объем данных, средний объем или меньший, чем необходимо, объем за определенное время. Список решений отображает 10 решений, которые отправляют наибольший объем данных. 
-
-На этих двух диаграммах отображаются все данные. Одни данные оплачиваются, другие — нет. Чтобы оставить только оплачиваемые данные, изменить запрос на странице поиска, добавив элемент `IsBillable=true`.  
-
-![диаграммы объема данных](./media/log-analytics-usage/log-analytics-usage-data-volume.png)
-
-Обратите внимание на диаграмму *объема данных по времени*. Чтобы просмотреть решения и типы данных, которые отправляют наибольший объем данных для определенного компьютера, щелкните имя компьютера. Щелкните имя первого компьютера в списке.
-
-На следующем снимке экрана тип данных *Управление журналами / Perf* отправляет наибольший объем данных для определенного компьютера.<br><br> ![объем данных для компьютера](./media/log-analytics-usage/log-analytics-usage-data-volume-computer.png)<br><br>
-
-Затем вернитесь на панель мониторинга *Использование* и просмотрите диаграмму *Том данных по решениям*. Чтобы просмотреть компьютеры, отправляющие наибольший объем данных для решения, щелкните имя решения в списке. Щелкните имя первого решения в списке. 
-
-На следующем снимке экрана мы видим подтверждение, что компьютер *mycon* отправляет наибольший объем данных для решения по управлению журналами.<br><br> ![Объем данных решения](./media/log-analytics-usage/log-analytics-usage-data-volume-solution.png)<br><br>
-
-При необходимости выполните дополнительный анализ, чтобы определить большие объемы в рамках типа данных или решения. Примеры запросов приведены ниже.
-
-+ Решение по **безопасности**
-  - `SecurityEvent | summarize AggregatedValue = count() by EventID`
-+ Решение для **управления журналами**
-  - `Usage | where Solution == "LogManagement" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true | summarize AggregatedValue = count() by DataType`
-+ Тип данных **Perf**
-  - `Perf | summarize AggregatedValue = count() by CounterPath`
-  - `Perf | summarize AggregatedValue = count() by CounterName`
-+ Тип данных **Event**
-  - `Event | summarize AggregatedValue = count() by EventID`
-  - `Event | summarize AggregatedValue = count() by EventLog, EventLevelName`
-+ Тип данных **Syslog**
-  - `Syslog | summarize AggregatedValue = count() by Facility, SeverityLevel`
-  - `Syslog | summarize AggregatedValue = count() by ProcessName`
-+ Тип данных **AzureDiagnostics**
-  - `AzureDiagnostics | summarize AggregatedValue = count() by ResourceProvider, ResourceId`
-
-Чтобы уменьшить объем собранных журналов, сделайте следующее:
-
-| Источник превышенного объема данных | Как сократить объем данных |
-| -------------------------- | ------------------------- |
-| События безопасности            | Выберите [события со стандартным или минимальным уровнем безопасности](https://blogs.technet.microsoft.com/msoms/2016/11/08/filter-the-security-events-the-oms-security-collects/). <br> Измените политику аудита безопасности таким образом, чтобы собирать только необходимые события. В частности проверьте необходимость сбора следующих событий: <br> - [аудит платформы фильтрации](https://technet.microsoft.com/library/dd772749(WS.10).aspx); <br> - [аудит реестра](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941614(v%3dws.10));<br> - [аудит файловой системы](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772661(v%3dws.10));<br> - [аудит объектов ядра](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941615(v%3dws.10));<br> - [аудит работы с дескрипторами](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772626(v%3dws.10));<br> — аудит съемных носителей. |
-| Счетчики производительности       | Измените [конфигурацию счетчика производительности](log-analytics-data-sources-performance-counters.md), чтобы <br> уменьшить частоту сбора или <br> сократить число счетчиков производительности. |
-| Журналы событий                 | Измените [конфигурацию журнала событий](log-analytics-data-sources-windows-events.md), чтобы <br> сократить число собранных журналов событий или <br> выполнять сбор только необходимых уровней событий. Например, не выполняйте сбор событий уровня *сведений*. |
-| syslog                     | Измените [конфигурацию системного журнала](log-analytics-data-sources-syslog.md), чтобы <br> сократить число собранных объектов или <br> выполнять сбор только необходимых уровней событий. Например, не выполняйте сбор событий уровня *сведений* и *отладки*. |
-| AzureDiagnostics           | Измените коллекцию журнала ресурсов, чтобы: <br> Уменьшить число ресурсов, отправляющих журналы в Log Analytics. <br> Выполнять сбор только необходимых журналов. |
-| Данные решений с компьютеров, которым не требуется решение | Используйте [нацеливание решений](../monitoring/monitoring-solution-targeting.md), чтобы выполнять сбор данных только в нужных группах компьютеров. |
-
-### <a name="check-if-there-are-more-nodes-than-expected"></a>Проверьте, превышено ли число узлов
-Если ваша ценовая категория предполагает оплату *за каждый узел (Log Analytics)*, плата взимается на основании количества используемых узлов и решений. В разделе *offerings* (предложения) панели мониторинга "Использование" можно увидеть, сколько узлов из каждого предложения используется.<br><br> ![Панель мониторинга "Использование"](./media/log-analytics-usage/log-analytics-usage-offerings.png)<br><br>
-
-Щелкните **Просмотреть все**, чтобы просмотреть полный список компьютеров, отправляющих данные для выбранного предложения.
-
-Используйте [нацеливание решений](../monitoring/monitoring-solution-targeting.md), чтобы выполнять сбор данных только в нужных группах компьютеров.
-
 ## <a name="next-steps"></a>Дополнительная информация
 * Ознакомьтесь со статьей [Поиск данных по журналам](log-analytics-queries.md), чтобы узнать, как использовать язык поиска. Вы можете использовать поисковые запросы, чтобы выполнить дополнительный анализ данных об использовании.
 * Выполните действия, описанные в разделе о [создании оповещений журналов](../monitoring-and-diagnostics/alert-metric.md), чтобы получать уведомления при выполнении условий поиска.
-* Используйте [нацеливание решений](../monitoring/monitoring-solution-targeting.md), чтобы выполнять сбор данных только в нужных группах компьютеров.
+* Используйте [нацеливание решений](../azure-monitor/insights/solution-targeting.md), чтобы выполнять сбор данных только в нужных группах компьютеров.
 * Сведения о настройке эффективной политики сбора событий безопасности см. в статье [Сбор данных в центре безопасности Azure](../security-center/security-center-enable-data-collection.md).
 * Измените [конфигурацию счетчика производительности](log-analytics-data-sources-performance-counters.md).
 * Сведения об изменении параметров сбора событий см. в статье [Источники данных для журнала событий Windows в Log Analytics](log-analytics-data-sources-windows-events.md).

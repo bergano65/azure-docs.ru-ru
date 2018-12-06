@@ -1,10 +1,11 @@
 ---
-title: Шаг 6. Доступ к веб-службе машинного обучения | Документация Майкрософт
-description: 'Шестой этап разработки прогнозного решения: доступ к активной веб-службе машинного обучения Azure.'
+title: Шаг 6. Доступ к веб-службе Студии машинного обучения Azure | Документация Майкрософт
+description: 'Шестой этап разработки решения прогнозирования: доступ к активной веб-службе Студии машинного обучения Azure.'
 services: machine-learning
 documentationcenter: ''
-author: YasinMSFT
-ms.author: yahajiza
+author: ericlicoding
+ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 6a65c89a-40ab-4673-8dd8-8eee0a150e3b
@@ -15,14 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/23/2017
-ms.openlocfilehash: be63a04d0fe71039b19eb6bc0678a319f622a811
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 5402f228a650a1a3d3282180a52f9e9f9cc10a3a
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34836710"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52306460"
 ---
-# <a name="walkthrough-step-6-access-the-azure-machine-learning-web-service"></a>Шаг 6 пошагового руководства: доступ к веб-службе Машинного обучения Azure
+# <a name="walkthrough-step-6-access-the-azure-machine-learning-studio-web-service"></a>Шаг 6 пошагового руководства: доступ к веб-службе Студии машинного обучения Azure
 
 Это последний этап пошагового руководства [Разработка решения для прогнозной аналитики в службе машинного обучения Azure](walkthrough-develop-predictive-solution.md)
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/30/2018
 ms.author: jeedes
-ms.openlocfilehash: 1f83dd64c7f6773ddb8956e6ebbc37b8c55aacec
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 2e072a27087f90bddd3f7c416904758e40c2f6b9
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39423877"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52425196"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workplace-by-facebook"></a>Руководство по интеграции Azure Active Directory с Workplace by Facebook
 
@@ -140,7 +140,7 @@ ms.locfileid: "39423877"
    > [!NOTE] 
    > В рамках процесса проверки подлинности SAML приложение Workplace может использовать строки запросов размером до 2,5 КБ для передачи параметров в Azure AD.
 
-1. На **панели мониторинга компании** перейдите на вкладку **Authentication** (Аутентификация).
+1. В **панели администратора** перейдите на вкладку **Security** (Безопасность) и выберите **Authentication** (Проверка подлинности).
 
 1. Из раскрывающегося списка **SAML Authentication** (Аутентификация SAML) выберите **SSO Only** (Только единый вход).
 

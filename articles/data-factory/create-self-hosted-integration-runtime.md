@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: abnarain
-ms.openlocfilehash: cae81bd2b856ae0fb4a648c03cbec1f87f222902
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 0f48d65d1b3e6d1f608d85cff3a24ef379caa9cf
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51038474"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52284835"
 ---
 # <a name="create-and-configure-a-self-hosted-integration-runtime"></a>Создание и настройка локальной среды выполнения интеграции
 Среда выполнения интеграции (IR) — это инфраструктура вычислений, которую Фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. Дополнительные сведения о среде выполнения интеграции см. [в этом обзоре](concepts-integration-runtime.md).
@@ -198,7 +198,9 @@ ms.locfileid: "51038474"
 
 * Версия Azure PowerShell с поддержкой этой функции — 6.6.0 или более поздняя (AzureRM.DataFactoryV2, 0.5.7 или более поздней версии).
 
-* Чтобы предоставить разрешение, пользователю нужна роль "Владелец" или наследование этой роли в фабрике данных, где существует общая среда выполнения интеграции. 
+* Чтобы предоставить разрешение, пользователю нужна роль "Владелец" или наследование этой роли в фабрике данных, где существует общая среда выполнения интеграции.
+
+* Функция совместного использования работает только у фабрик данных, относящихся к одному клиенту Azure Active Directory.
 
 * Для [гостевых пользователей](https://docs.microsoft.com/azure/active-directory/governance/manage-guest-access-with-access-reviews) Active Directory функция поиска (вывод списка всех фабрик данных с помощью поиска по ключевому слову) в пользовательском интерфейсе [не работает](https://msdn.microsoft.com/library/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#SearchLimits). Но пока гостевой пользователь является владельцем этой фабрики данных, он может совместно использовать среду выполнения интеграции без функции поиска, непосредственно указав MSI фабрики данных, которой необходимо предоставить среду выполнения интеграции, в текстовом поле **Assign Permission** (Назначить разрешение) и выбрав **Добавить** в пользовательском интерфейсе Фабрики данных Azure. 
 

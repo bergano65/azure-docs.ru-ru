@@ -9,17 +9,17 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/22/2018
 ms.author: hrasheed
-ms.openlocfilehash: 183f8fd47ea5239e31f03f3aecf420cfb5842098
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 6c1307fcb472f6c66a95b76ad3c1b1686ce4f998
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51009833"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52308946"
 ---
-# <a name="create-hbase-clusters-on-hdinsight-in-azure-virtual-network"></a>Создание кластеров HBase в HDInsight в виртуальной сети Azure
-Узнайте, как создавать кластеры Azure HDInsight HBase в [виртуальной сети Azure][1].
+# <a name="create-apache-hbase-clusters-on-hdinsight-in-azure-virtual-network"></a>Создание кластеров Apache HBase в HDInsight в виртуальной сети Azure
+Узнайте, как создавать кластеры Azure HDInsight Apache HBase в [виртуальной сети Azure][1].
 
-Благодаря интеграции виртуальной сети кластеры HBase могут быть развернуты в той же виртуальной сети, что и приложения. Это позволяет приложениям взаимодействовать с HBase непосредственно. К преимуществам относятся:
+Благодаря интеграции виртуальной сети кластеры Apache HBase можно развернуть в той же виртуальной сети, что и приложения. Это позволяет приложениям взаимодействовать с HBase напрямую. К преимуществам относятся:
 
 * прямое подключение веб-приложения к узлам кластера HBase, который обеспечивает обмен данными с помощью интерфейсов API удаленного вызова процедур (RPC) Java для HBase;
 * повышение производительности без необходимости организации пропуска трафика через множество шлюзов и подсистемы балансировки нагрузки;
@@ -31,8 +31,8 @@ ms.locfileid: "51009833"
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 * **Рабочая станция с Azure PowerShell**. Обратитесь к разделу [Установка и использование Azure PowerShell](https://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/).
 
-## <a name="create-hbase-cluster-into-virtual-network"></a>Создание кластера HBase в виртуальной сети
-В этом разделе мы создадим кластер HBase под управлением Linux с зависимой учетной записью службы хранилища Azure в виртуальной сети Azure c помощью [шаблона Azure Resource Manager](../../azure-resource-manager/resource-group-template-deploy.md). Сведения о других способах создания кластеров и их параметрах см. в статье [Создание кластеров Hadoop под управлением Linux в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md). Дополнительные сведения о создании в HDInsight кластеров Hadoop с помощью шаблонов ARM см. в статье [Создание кластеров Hadoop под управлением Windows в HDInsight с помощью шаблонов Azure Resource Manager](../hdinsight-hadoop-create-linux-clusters-arm-templates.md).
+## <a name="create-apache-hbase-cluster-into-virtual-network"></a>Создание кластера Apache HBase в виртуальной сети
+В этом разделе описывается, как создать кластер Apache HBase под управлением Linux с зависимой учетной записью службы хранилища Azure в виртуальной сети Azure c помощью [шаблона Azure Resource Manager](../../azure-resource-manager/resource-group-template-deploy.md). Сведения о других способах создания кластеров и их параметрах см. в статье [Создание кластеров Hadoop под управлением Linux в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md). Дополнительные сведения о создании в HDInsight кластеров Apache Hadoop с помощью шаблонов см. в [этой статье](../hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
 > [!NOTE]
 > Некоторые свойства жестко заданы в шаблоне. Например: 
@@ -64,11 +64,11 @@ ms.locfileid: "51009833"
    * **Я принимаю указанные выше условия**. Установите этот флажок.
 3. Щелкните **Приобрести**. Процесс создания кластера занимает около 20 минут. Когда кластер будет создан, щелкните его колонку на портале, чтобы открыть его.
 
-После завершения работы с этим руководством кластер можно удалить. В случае с HDInsight ваши данные хранятся в службе хранилища Azure, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Поскольку стоимость кластера во много раз превышает стоимость хранилища, экономически целесообразно удалять неиспользуемые кластеры. Инструкции по удалению кластера см. в статье [Управление кластерами Hadoop в HDInsight с помощью портала Azure](../hdinsight-administer-use-management-portal.md#delete-clusters).
+После завершения работы с этим руководством кластер можно удалить. В случае с HDInsight ваши данные хранятся в службе хранилища Azure, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Поскольку стоимость кластера во много раз превышает стоимость хранилища, экономически целесообразно удалять неиспользуемые кластеры. Инструкции по удалению кластера см. в статье [Управление кластерами Apache Hadoop для Windows в HDInsight с помощью портала Azure](../hdinsight-administer-use-management-portal.md#delete-clusters).
 
-Чтобы начать работу с новым HBase кластером, можно использовать процедуры, которые представлены в разделе [Приступая к работе с HBase с Hadoop в HDInsight](./apache-hbase-tutorial-get-started-linux.md).
+Чтобы начать работу с новым кластером HBase, выполните процедуры, которые представлены в статье [Начало работы с примером Apache HBase в HDInsight](./apache-hbase-tutorial-get-started-linux.md).
 
-## <a name="connect-to-the-hbase-cluster-using-hbase-java-rpc-apis"></a>Подключитесь к кластеру HBase с помощью API-интерфейсов удаленного вызова процедур Java HBase
+## <a name="connect-to-the-apache-hbase-cluster-using-apache-hbase-java-rpc-apis"></a>Подключение к кластеру Apache HBase с помощью API-интерфейсов удаленного вызова процедур Java Apache HBase
 1. Создайте виртуальную машину IaaS в той же виртуальной сети Azure и той же подсети. Инструкции по созданию виртуальной машины IaaS см. в статье [Создание первой виртуальной машины Windows на портале Azure](../../virtual-machines/windows/quick-create-portal.md). При выполнении действий, описанных в этом документе, необходимо использовать следующие значения для конфигурации сети.
 
    * **Виртуальная сеть**: &lt;имя_кластера>-vnet.
@@ -83,7 +83,7 @@ ms.locfileid: "51009833"
 
 2. При использовании Java-приложения для удаленного подключения к HBase необходимо использовать полное доменное имя (FQDN). Чтобы определить это, вам необходимо получить DNS-суффикс кластера HBase. Для этого используйте один из следующих методов.
 
-   * С помощью веб-браузера сделайте вызов Ambari.
+   * С помощью веб-браузера вызовите [Apache Ambari](https://ambari.apache.org/).
 
      Перейдите по адресу: https://&lt;имя_кластера>.azurehdinsight.net/api/v1/clusters/&lt;имя_кластера>/hosts?minimal_response=true. Он вернет файл JSON с DNS-суффиксами.
    * Используйте веб-сайт Ambari.
@@ -225,7 +225,7 @@ ms.locfileid: "51009833"
 
 Чтобы проверить обмен данными между виртуальной машиной и кластером HBase, используйте следующую команду `ping headnode0.<dns suffix>` на виртуальной машине. Например, ping headnode0.mycluster.b1.cloudapp.net.
 
-Чтобы использовать эту информацию в Java-приложении, для создания приложения можно придерживаться шагов, представленных в разделе [Использование Maven для создания Java-приложений, использующих HBase с HDInsight (Hadoop)](./apache-hbase-build-java-maven-linux.md) . Чтобы приложение подключилось к удаленному серверу HBase, измените файл **hbase-site.xml** в этом примере, чтобы использовать полное доменное имя для ZooKeeper. Например: 
+Чтобы использовать эту информацию в Java-приложении, создайте приложение, выполнив шаги, представленные в статье [Создание приложений Java для Apache HBase](./apache-hbase-build-java-maven-linux.md). Чтобы приложение подключилось к удаленному серверу HBase, измените файл **hbase-site.xml** в этом примере, чтобы использовать полное доменное имя для ZooKeeper. Например: 
 
     <property>
         <name>hbase.zookeeper.quorum</name>
@@ -238,13 +238,13 @@ ms.locfileid: "51009833"
 >
 
 ## <a name="next-steps"></a>Дополнительная информация
-Из этого руководства вы узнали, как создать кластер HBase. Дополнительные сведения см. на следующих ресурсах:
+Из этого руководства вы узнали, как создать кластер Apache HBase. Дополнительные сведения см. на следующих ресурсах:
 
 * [Приступая к работе с HDInsight](../hadoop/apache-hadoop-linux-tutorial-get-started.md)
 * [Использование пустых граничных узлов в HDInsight](../hdinsight-apps-use-edge-node.md)
-* [Настройка репликации HBase в HDInsight](apache-hbase-replication.md)
-* [Создание кластеров Hadoop в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md)
-* [Приступая к работе с HBase с Hadoop в HDInsight](./apache-hbase-tutorial-get-started-linux.md)
+* [Настройка репликации кластера HBase в виртуальных сетях Azure](apache-hbase-replication.md)
+* [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](../hdinsight-hadoop-provision-linux-clusters.md)
+* [Начало работы с примером Apache HBase в HDInsight](./apache-hbase-tutorial-get-started-linux.md)
 * [Обзор виртуальной сети](../../virtual-network/virtual-networks-overview.md)
 
 [1]: http://azure.microsoft.com/services/virtual-network/

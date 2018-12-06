@@ -4,7 +4,7 @@ description: Описание процедуры изменения кредит
 services: ''
 documentationcenter: ''
 author: genlin
-manager: jlian
+manager: jureid
 editor: ''
 tags: billing
 ms.assetid: 15252ced-1841-4a66-ae79-2e58af1d3370
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/11/2018
 ms.author: cwatson
-ms.openlocfilehash: 68f987daff5bc0ef81c248f6f5e75aaf1318b025
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 69c24e08ce2434c39b8bb67cb53173f9ceaee51b
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47395497"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52581449"
 ---
 # <a name="add-update-or-remove-a-credit-or-debit-card-for-azure"></a>Добавление, обновление или удаление кредитной или дебетовой карты, используемой для оплаты в Azure
 
@@ -102,6 +102,6 @@ ms.locfileid: "47395497"
 
 Чтобы добавить или обновить код налогоплательщика, перейдите в раздел [**Профиль** в Центре управления учетной записью Azure](https://account.azure.com/Profile), а затем выберите **Налоговая информация**. Этот код налогоплательщика используется для расчета налоговых льгот и отображается в счете.
 
-## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.
+Если у вас есть вопросы или нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

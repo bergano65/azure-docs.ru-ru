@@ -1,10 +1,11 @@
 ---
-title: Управление рабочей областью в службе машинного обучения | Документация Майкрософт
+title: Управление рабочей областью машинного обучения — Студия машинного обучения Azure | Документация Майкрософт
 description: Управление доступом к рабочим областям Машинного обучения Azure, а также развертывание веб-служб API ML и управление ими
 services: machine-learning
 documentationcenter: ''
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: daf3d413-7a77-4beb-9a7a-6b4bdf717719
@@ -15,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/27/2017
-ms.openlocfilehash: 6e1febfff211dd92f8990d1880562e64382de5f0
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: c470d10b933b31d4cfe151fb541c2182562a2805
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47095452"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52314110"
 ---
 # <a name="manage-an-azure-machine-learning-workspace"></a>Управление рабочей областью машинного обучения Azure
 

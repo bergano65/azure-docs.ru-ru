@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 9/11/2018
+ms.date: 11/21/2018
 ms.author: srrengar
-ms.openlocfilehash: 68374cd1675f76555ff313b42e35bdf2aed96874
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 2cdc9f780e0d9ddb6e688e53208e5597b000aa56
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49408087"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52632778"
 ---
 # <a name="set-up-log-analytics-for-a-cluster"></a>Настройка Log Analytics для кластера
 
@@ -72,7 +72,7 @@ ms.locfileid: "49408087"
 Вы успешно добавили решение "Аналитика Service Fabric" в рабочую область Log Analytics, подключенную должным образом к платформе кластера и таблице журналов приложения. Аналогичным образом вы можете добавить в рабочую область дополнительные источники.
 
 
-## <a name="deploy-log-analytics-by-using-a-resource-manager-template"></a>Развертывание Log Analytics с помощью шаблона Resource Manager
+## <a name="deploy-log-analytics-with-azure-resource-manager"></a>Развертывание Log Analytics с помощью шаблона Azure Resource Manager
 
 При развертывании кластера с помощью шаблона Resource Manager этот шаблон создает рабочую область Log Analytics, добавляет в нее решение Service Fabric и настраивает в ней чтение данных из соответствующих таблиц службы хранилища.
 
@@ -93,7 +93,7 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName "<resourceGroupName>" -Tem
 
 Azure Resource Manager определит, что эта команда — это обновление имеющегося ресурса. Он обработает только изменения между шаблоном, управляющим имеющимся развертыванием, и новым предоставленным шаблоном.
 
-## <a name="deploy-log-analytics-by-using-azure-powershell"></a>Развертывание Log Analytics с помощью Azure PowerShell
+## <a name="deploy-log-analytics-with-azure-powershell"></a>Развертывание Log Analytics с помощью Azure PowerShell
 
 Ресурс Log Analytics можно также развернуть через PowerShell с помощью команды `New-AzureRmOperationalInsightsWorkspace`. Чтобы использовать этот метод, обязательно установите [Azure Powershell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-5.1.1). Чтобы создать рабочую область Log Analytics и добавить в нее решение Service Fabric, используйте следующий сценарий: 
 
@@ -128,4 +128,4 @@ Set-AzureRmOperationalInsightsIntelligencePack -ResourceGroupName $ResourceGroup
 ## <a name="next-steps"></a>Дополнительная информация
 * [Разверните агент Log Analytics](service-fabric-diagnostics-oms-agent.md) на узлах для сбора данных счетчиков производительности и статистики Docker, а также журналов для контейнеров.
 * Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../log-analytics/log-analytics-log-searches.md), которые являются частью решения Log Analytics.
-* [Использование конструктора представлений для создания пользовательских представлений Log Analytics](../log-analytics/log-analytics-view-designer.md)
+* [Использование конструктора представлений для создания пользовательских представлений Log Analytics](../azure-monitor/platform/view-designer.md)

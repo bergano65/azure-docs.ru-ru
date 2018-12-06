@@ -11,14 +11,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/28/2018
+ms.date: 11/19/2018
 ms.author: jeedes
-ms.openlocfilehash: 49516523abdd927c3ae60235fcd74473689c6856
-ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
+ms.openlocfilehash: 65649c3fdc11d74b5888b26b81ae85e10f2788bd
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48020709"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52426882"
 ---
 # <a name="atlassian-jira-and-confluence-admin-guide-for-azure-active-directory"></a>Atlassian JIRA и Confluence в руководстве администратора для Azure Active Directory
 
@@ -67,9 +67,23 @@ ms.locfileid: "48020709"
 
 Подключаемый модуль поддерживает следующие версии Jira и Confluence:
 
-* Jira Core и Jira Software: 6.0–7.8;
-* Jira Service Desk: версии с 3.0 по 3.2;
+* Jira Core и Jira Software: версии 6.0–7.12;
+* Jira Service Desk: версии 3.0.0–3.5.0.
+* JIRA поддерживает также 5.2. Дополнительные сведения см. в статье об [использовании единого входа Microsoft Azure Active Directory для JIRA 5.2](https://docs.microsoft.com/azure/active-directory/saas-apps/jira52microsoft-tutorial).
 * Confluence: версии c 5.0 по 5.10
+* Confluence: версия 6.0.1;
+* Confluence: версия 6.1.1;
+* Confluence: версия 6.2.1;
+* Confluence: версия 6.3.4;
+* Confluence: версия 6.4.0;
+* Confluence: версия 6.5.0;
+* Confluence: версия 6.6.2;
+* Confluence: версия 6.7.0;
+* Confluence: версия 6.8.1;
+* Confluence: версия 6.9.0;
+* Confluence: версия 6.10.0;
+* Confluence: версия 6.11.0;
+* Confluence: версия 6.12.0.
 
 ## <a name="installation"></a>Установка
 
@@ -79,7 +93,7 @@ ms.locfileid: "48020709"
 
 2. Откройте консоль администрирования Jira или Confluence и установите флажок **Надстройки**.
 
-3. На сайте Atlassian Marketplace выполните поиск по запросу **Microsoft SAML SSO Plugin** (Подключаемый модуль единого входа SAML Microsoft).
+3. В центре загрузки Майкрософт скачайте [Подключаемый модуль SAML SSO для Jira от Microsoft](https://www.microsoft.com/download/details.aspx?id=56506)/ [Подключаемый модуль SAML SSO для Confluence от Microsoft](https://www.microsoft.com/download/details.aspx?id=56503).
 
    Соответствующая версия подключаемого модуля появится в результатах поиска.
 
@@ -165,15 +179,29 @@ ms.locfileid: "48020709"
 
 ### <a name="does-the-plug-in-work-on-cloud-versions"></a>Работает ли подключаемый модуль с облачной версией?
 
-Нет. Подключаемый модуль поддерживает только локальные версии Jira и Confluence.
+ Нет. Подключаемый модуль поддерживает только локальные версии Jira и Confluence.
 
 ### <a name="which-versions-of-jira-and-confluence-does-the-plug-in-support"></a>Какие версии Jira и Confluence поддерживает этот подключаемый модуль?
 
 Подключаемый модуль поддерживает следующие версии:
 
-* Jira Core и Jira Software: 6.0–7.8;
-* Jira Service Desk: версии с 3.0 по 3.2;
+* Jira Core и Jira Software: версии 6.0–7.12;
+* Jira Service Desk: версии 3.0.0–3.5.0.
+* JIRA поддерживает также 5.2. Дополнительные сведения см. в статье об [использовании единого входа Microsoft Azure Active Directory для JIRA 5.2](https://docs.microsoft.com/azure/active-directory/saas-apps/jira52microsoft-tutorial).
 * Confluence: версии c 5.0 по 5.10
+* Confluence: версия 6.0.1;
+* Confluence: версия 6.1.1;
+* Confluence: версия 6.2.1;
+* Confluence: версия 6.3.4;
+* Confluence: версия 6.4.0;
+* Confluence: версия 6.5.0;
+* Confluence: версия 6.6.2;
+* Confluence: версия 6.7.0;
+* Confluence: версия 6.8.1;
+* Confluence: версия 6.9.0;
+* Confluence: версия 6.10.0;
+* Confluence: версия 6.11.0;
+* Confluence: версия 6.12.0.
 
 ### <a name="is-the-plug-in-free-or-paid"></a>Этот подключаемый модуль предоставляется бесплатно или на платной основе?
 
@@ -195,7 +223,7 @@ ms.locfileid: "48020709"
 
 ### <a name="does-the-plug-in-work-with-idps-other-than-azure-ad"></a>Работает ли этот подключаемый модуль с другими поставщиками удостоверений, кроме Azure AD?
 
-Нет. Он работает только с Azure AD.
+ Нет. Он работает только с Azure AD.
 
 ### <a name="what-version-of-saml-does-the-plug-in-work-with"></a>Какая версия SAML нужна для работы подключаемого модуля?
 
@@ -203,12 +231,12 @@ ms.locfileid: "48020709"
 
 ### <a name="does-the-plug-in-do-user-provisioning"></a>Поддерживает ли этот подключаемый модуль подготовку пользователей?
 
-Нет. Сейчас подключаемый модуль поддерживает только единый вход на основе SAML 2.0. Прежде чем использовать единый вход, необходимо подготовить пользователя в приложении.
+ Нет. Сейчас подключаемый модуль поддерживает только единый вход на основе SAML 2.0. Прежде чем использовать единый вход, необходимо подготовить пользователя в приложении.
 
 ### <a name="does-the-plug-in-support-cluster-versions-of-jira-and-confluence"></a>Поддерживает ли этот подключаемый модуль кластерные версии Jira и Confluence?
 
-Нет. Подключаемый модуль работает только с локальными версиями Jira и Confluence.
+ Нет. Подключаемый модуль работает только с локальными версиями Jira и Confluence.
 
 ### <a name="does-the-plug-in-work-with-http-versions-of-jira-and-confluence"></a>Поддерживает ли этот подключаемый модуль HTTP-версии Jira и Confluence?
 
-Нет. Этот подключаемый модуль работает только с системами, поддерживающими протокол HTTPS.
+ Нет. Этот подключаемый модуль работает только с системами, поддерживающими протокол HTTPS.

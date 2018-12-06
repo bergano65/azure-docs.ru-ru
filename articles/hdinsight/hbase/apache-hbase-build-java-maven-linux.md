@@ -3,24 +3,24 @@ title: Использование клиента Java HBase в Azure HDInsight
 description: Сведения об использовании Apache Maven для создания приложения Java для Apache HBase и его последующем развертывании в HBase в Azure HDInsight.
 services: hdinsight
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 04/30/2018
-ms.author: hrasheed
-ms.openlocfilehash: 677714487aac6e25a0505cce978792c76bb1cee4
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.date: 11/27/2018
+ms.openlocfilehash: 721e37349b406705a2cdfb52c64b5796cb590d78
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51016086"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52445657"
 ---
 # <a name="build-java-applications-for-apache-hbase"></a>Создание приложений Java для Apache HBase
 
 Узнайте, как создать приложение [Apache HBase](http://hbase.apache.org/) в среде Java. Затем вы будете использовать приложение с HBase в Azure HDInsight.
 
-В этом руководстве используется [Maven](http://maven.apache.org/) для создания и сборки проекта. Maven — это инструмент для управления и повышения обозримости проектов программного обеспечения, позволяющий создавать ПО, документацию и отчеты для проектов Java.
+В этом руководстве для создания и сборки проекта используется [Apache Maven](https://maven.apache.org/). Maven — это инструмент для управления и повышения обозримости проектов программного обеспечения, позволяющий создавать ПО, документацию и отчеты для проектов Java.
 
 > [!NOTE]
 > Действия, описанные в этом документе, в последний раз были протестированы с помощью HDInsight 3.6.
@@ -35,9 +35,9 @@ ms.locfileid: "51016086"
     > [!NOTE]
     > Для HDInsight 3.5 и более поздних версий требуется Java 8. Для работы более ранних версий HDInsight требуется Java 7.
 
-* [Maven](http://maven.apache.org/)
+* [Apache Maven](https://maven.apache.org/)
 
-* [Кластер Azure HDInsight под управлением Linux с HBase.](apache-hbase-tutorial-get-started-linux.md#create-hbase-cluster)
+* [Кластер Azure HDInsight под управлением Linux с Apache HBase.](apache-hbase-tutorial-get-started-linux.md#create-apache-hbase-cluster)
 
 ## <a name="create-the-project"></a>Создание проекта
 
@@ -81,9 +81,9 @@ ms.locfileid: "51016086"
     В этом разделе показано, что для проекта требуются компоненты **hbase-client** и **phoenix-core**. При компиляции эти зависимости скачиваются из репозитория Maven по умолчанию. Можно воспользоваться [поиском в центральном репозитории Maven](http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar) , чтобы получить дополнительную информацию об этой зависимости.
 
    > [!IMPORTANT]
-   > Номер версии hbase-client должен соответствовать версии HBase, которая поставляется с кластером HDInsight. Воспользуйтесь следующей таблицей, чтобы найти правильный номер версии.
+   > Номер версии hbase-client должен соответствовать версии Apache HBase, которая поставляется с кластером HDInsight. Воспользуйтесь следующей таблицей, чтобы найти правильный номер версии.
 
-   | Версия кластера HDInsight | Используемая версия HBase |
+   | Версия кластера HDInsight | Используемая версия Apache HBase |
    | --- | --- |
    | 3.2 |0.98.4-hadoop2 |
    | 3.3, 3.4, 3.5 и 3.6 |1.1.2 |
@@ -363,7 +363,7 @@ ms.locfileid: "51016086"
 
 ## <a name="upload-the-jar-and-run-jobs-ssh"></a>Передача JAR-файла и запуск заданий (SSH)
 
-В следующих действиях используется команда `scp` для копирования JAR-файла в головной узел HBase в кластере HDInsight. С помощью команды `ssh` выполняется подключение к кластеру; пример запускается непосредственно на головном узле.
+В следующих действиях используется команда `scp` для копирования JAR-файла в головной узел Apache HBase в кластере HDInsight. С помощью команды `ssh` выполняется подключение к кластеру; пример запускается непосредственно на головном узле.
 
 1. Чтобы отправить JAR-файл в кластер, используйте следующую команду:
 
@@ -412,7 +412,7 @@ ms.locfileid: "51016086"
 
 ## <a name="upload-the-jar-and-run-jobs-powershell"></a>Передача JAR-файла и запуск заданий (PowerShell)
 
-Далее используется Azure PowerShell для передачи JAR-файла в хранилище по умолчанию для кластера HBase. Затем командлеты HDInsight используются для удаленного запуска примеров.
+Далее используется Azure PowerShell для передачи JAR-файла в хранилище по умолчанию для кластера Apache HBase. Затем командлеты HDInsight используются для удаленного запуска примеров.
 
 1. После установки и настройки Azure PowerShell создайте файл с именем `hbase-runner.psm1`. В качестве содержимого файла добавьте следующий текст:
 
@@ -671,7 +671,7 @@ ms.locfileid: "51016086"
 
 ## <a name="delete-the-table"></a>Удаление таблицы
 
-Завершив работу с примером, удалите таблицу **people**, используя следующую команду в сеансе Azure PowerShell.
+Завершив работу с примером, удалите таблицу **people**, используя следующую команду:
 
 __Из сеанса `ssh`__ :
 

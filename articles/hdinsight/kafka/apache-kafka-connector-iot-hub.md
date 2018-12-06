@@ -9,18 +9,18 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: 8941a7332c19b1a9d5c04abb0e4b03ae83e98016
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 143df8a8c82e84b193bdb48a3d41682fca19156b
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51260488"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52315433"
 ---
 # <a name="use-apache-kafka-on-hdinsight-with-azure-iot-hub"></a>Использование Apache Kafka в HDInsight с Центром Интернета вещей
 
-Узнайте, как использовать соединитель [Центра Интернета вещей Kafka Connect](https://github.com/Azure/toketi-kafka-connect-iothub) для перемещения данных между Apache Kafka в HDInsight и Центром Интернета вещей. В этом документе показано, как запускать соединитель Центра Интернета вещей из граничного узла кластера.
+Узнайте, как использовать соединитель [Apache Kafka Connect Azure IoT Hub](https://github.com/Azure/toketi-kafka-connect-iothub) для перемещения данных между Apache Kafka в HDInsight и Центром Интернета вещей. В этом документе показано, как запускать соединитель Центра Интернета вещей из граничного узла кластера.
 
-API Kafka Connect позволяет реализовать соединители, которые будут постоянно извлекать данные в Kafka или отправлять их из Kafka в другую систему. [Центр Интернета вещей Kafka Connect](https://github.com/Azure/toketi-kafka-connect-iothub) является соединителем, извлекающим данные из Центра Интернета вещей в Kafka. Он также может отправлять данные из Kafka в Центр Интернета вещей. 
+API Kafka Connect позволяет реализовать соединители, которые будут постоянно извлекать данные в Kafka или отправлять их из Kafka в другую систему. [Apache Kafka Connect Azure IoT Hub](https://github.com/Azure/toketi-kafka-connect-iothub) — это соединитель, который извлекает данные из Центра Интернета вещей в Apache Kafka. Он также может отправлять данные из Kafka в Центр Интернета вещей. 
 
 При извлечении из Центра Интернета вещей используется соединитель __источника__. При отправке в Центр Интернета вещей используется соединитель __приемника__. Соединитель Центра Интернета вещей может выступать как соединителем источника, так и соединителем приемника.
 
@@ -84,7 +84,7 @@ API Kafka Connect позволяет реализовать соединител
 >
 >    Эта команда создает файл с именем `kafka-connect-iothub-assembly_2.11-0.6.jar` в каталоге `target/scala-2.11` проекта.
 
-## <a name="configure-kafka"></a>Настройка Kafka
+## <a name="configure-apache-kafka"></a>Настройка Apache Kafka
 
 В SSH-подключении к граничному узлу используйте следующие шаги, чтобы настроить в Kafka выполнение соединителя в автономном режиме:
 
@@ -111,7 +111,7 @@ API Kafka Connect позволяет реализовать соединител
 
     `wn0-kafka.w5ijyohcxt5uvdhhuaz5ra4u5f.ex.internal.cloudapp.net:9092,wn1-kafka.w5ijyohcxt5uvdhhuaz5ra4u5f.ex.internal.cloudapp.net:9092`
 
-4. Получите адреса узлов Zookeeper. В кластере имеется несколько узлов Zookeeper, но необходимо ссылаться только на один или два. Чтобы получить адреса двух узлов Zookeeper, используйте следующую команду:
+4. Получите адреса узлов Apache Zookeeper. В кластере имеется несколько узлов Zookeeper, но необходимо ссылаться только на один или два. Чтобы получить адреса двух узлов Zookeeper, используйте следующую команду:
 
     ```bash
     export KAFKAZKHOSTS=`curl -sS -u admin -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/ZOOKEEPER/components/ZOOKEEPER_SERVER | jq -r '["\(.host_components[].HostRoles.host_name):2181"] | join(",")' | cut -d',' -f1,2`
@@ -335,7 +335,7 @@ t.runtime.WorkerSinkTask:262)
     > [!WARNING]
     > Так как это новое подключение SSH, переменная `$KAFKABROKERS` не содержит никакой информации. Чтобы задать его, используйте один из следующих методов:
     >
-    > * Используйте первые три шага в разделе [Настройка Kafka](#configure-kafka).
+    > * Используйте первые три шага, приведенные в разделе [Настройка Apache Kafka](#configure-apache-kafka).
     > * Используйте `echo $KAFKABROKERS` из предыдущего SSH-подключения, чтобы получить значения, а затем замените `$KAFKABROKERS` в следующей команде фактическими значениями.
 
     ```bash
@@ -367,7 +367,7 @@ t.runtime.WorkerSinkTask:262)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого документа вы узнали, как использовать API Kafka Connect для запуска соединителя Kafka Центра Интернета вещей в HDInsight. Другие материалы, посвященные работе с Kafka, доступны по следующим ссылкам:
+Из этого документа вы узнали, как использовать API Apache Kafka Connect для запуска соединителя IoT Kafka в HDInsight. Другие материалы, посвященные работе с Kafka, доступны по следующим ссылкам:
 
-* [Совместное использование Apache Spark и Kafka (предварительная версия) в HDInsight](../hdinsight-apache-spark-with-kafka.md)
-* [Совместное использование Apache Kafka (предварительная версия) и Storm в HDInsight](../hdinsight-apache-storm-with-kafka.md)
+* [Пример потоковой передачи Apache Spark (DStream) с использованием Apache Kafka в HDInsight](../hdinsight-apache-spark-with-kafka.md)
+* [Краткое руководство. Использование Apache Storm с Apache Kafka в HDInsight](../hdinsight-apache-storm-with-kafka.md)

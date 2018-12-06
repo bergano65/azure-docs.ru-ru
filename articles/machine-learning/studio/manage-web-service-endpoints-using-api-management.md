@@ -1,11 +1,12 @@
 ---
-title: Сведения об управлении веб-службами AzureML с помощью управления API | Документация Майкрософт
+title: Управление веб-службами Студии машинного обучения с помощью службы управления API в Azure | Документация Майкрософт
 description: Руководство по управлению веб-службами AzureML с помощью управления API.
 keywords: машинное обучение, управление api
 services: machine-learning
 documentationcenter: ''
-author: YasinMSFT
-ms.author: yahajiza
+author: ericlicoding
+ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 05150ae1-5b6a-4d25-ac67-fb2f24a68e8d
@@ -16,16 +17,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/03/2017
-ms.openlocfilehash: 9543b1f3b10c246dadaf21b6960c7b6785fb66f4
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: 0a262b2f8716c6d950dc84793a88277f62c3e6a9
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51566386"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52308245"
 ---
-# <a name="learn-how-to-manage-azureml-web-services-using-api-management"></a>Сведения об управлении веб-службами AzureML с помощью управления API
+# <a name="manage-azure-machine-learning-studio-web-services-using-api-management"></a>Управление веб-службами Студии машинного обучения Azure с помощью службы управления API
 ## <a name="overview"></a>Обзор
-Это руководство поможет быстро начать работу с управлением API, чтобы управлять веб-службами AzureML.
+Это руководство поможет быстро начать работу со службой управления API, чтобы управлять веб-службами Студии машинного обучения Azure.
 
 ## <a name="what-is-azure-api-management"></a>Что собой представляет управление Azure API
 Управление API Azure — это служба Azure, которая позволяет управлять конечными точками REST API, настраивая доступ пользователей, регулирование использования и мониторинг панели мониторинга. Сведения об управлении API Azure см. [здесь](https://azure.microsoft.com/services/api-management/). Руководство по началу работы с управлением API Azure находится [здесь](../../api-management/api-management-get-started.md). Это руководство, на котором основана данная статья, содержит больше разделов, включая информацию о конфигурациях оборудования, ценовых категориях, обработке ответов, проверке подлинности пользователей, создании продуктов, подписках разработчика и компактном отображении данных об использовании.

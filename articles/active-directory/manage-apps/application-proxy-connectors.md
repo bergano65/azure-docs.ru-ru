@@ -2,25 +2,21 @@
 title: Сведения о соединителях прокси приложения Azure AD | Документация Майкрософт
 description: Основные сведения о соединителях прокси приложения Azure AD.
 services: active-directory
-documentationcenter: ''
 author: barbkess
 manager: mtillman
 ms.service: active-directory
 ms.component: app-mgmt
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/17/2018
+ms.date: 11/15/2018
 ms.author: barbkess
 ms.reviewer: japere
-ms.custom: it-pro
-ms.openlocfilehash: 62738cda8ce37ec7ca50e1e3f285dc71a37113f7
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: dce9c26d9f836a2238642521be4d88ba089058d7
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51036043"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52445964"
 ---
 # <a name="understand-azure-ad-application-proxy-connectors"></a>Сведения о соединителях прокси приложения Azure AD
 
@@ -32,7 +28,24 @@ ms.locfileid: "51036043"
 
 ## <a name="requirements-and-deployment"></a>Требования и развертывание
 
-Чтобы успешно развернуть прокси приложения, необходим по крайней мере один соединитель, но мы рекомендуем использовать не меньше двух, чтобы повысить гибкость. Установите соединитель на компьютер Windows Server 2012 R2 или Windows Server 2016. Соединителю нужен доступ к службе прокси приложения, а также к локальным приложениям, которые вы публикуете. Службе прокси приложения также требуется TLS 1.2 на базовой операционной системе. Чтобы перейти на использование TLS 1.2, нужно выполнить инструкции из раздела [Включение протокола TLS 1.2 для Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-prerequisites#enable-tls-12-for-azure-ad-connect). Хотя содержимое предназначено для Azure AD Connect, эта процедура одинакова для всех клиентов .NET.
+Чтобы успешно развернуть прокси приложения, необходим по крайней мере один соединитель, но мы рекомендуем использовать не меньше двух, чтобы повысить гибкость. Установите соединитель на компьютер Windows Server 2012 R2 или Windows Server 2016. Соединителю нужен доступ к службе прокси приложения, а также к локальным приложениям, которые вы публикуете. 
+
+### <a name="windows-server"></a>Windows Server
+Вам также потребуется сервер под управлением Windows Server 2012 R2 или более поздней версии, на котором можно установить соединитель Application Proxy. Серверу нужна возможность подключаться к службам Application Proxy в Azure, а также к локальным приложениям, которые вы публикуете.
+
+Прежде чем установить этот соединитель, на сервере Windows Server нужно включить протокол TLS 1.2. Существующие соединители версий ниже 1.5.612.0 будут продолжать работать с предыдущими версиями TLS до последующего уведомления. Включение протокола TLS 1.2
+
+1. Настройте следующие разделы реестра:
+    
+    ```
+    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2]
+    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
+    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319] "SchUseStrongCrypto"=dword:00000001
+    ```
+
+2. Перезапустите сервер.
+
 
 Дополнительные сведения о требованиях к сети для сервера соединителя см. в разделе [Начало работы с прокси приложения и установка соединителя](application-proxy-enable.md).
 

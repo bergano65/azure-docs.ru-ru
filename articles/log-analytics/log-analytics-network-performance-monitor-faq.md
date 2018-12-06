@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/12/2018
 ms.author: vinynigam
-ms.openlocfilehash: 91cfa35cd10772da0042566bdd9030f780329f93
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 31070d03711891353823a72ed9c805995d36024b
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50415191"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52633169"
 ---
 # <a name="network-performance-monitor-solution-faq"></a>Вопросы и ответы по решению "Монитор производительности сети"
 
@@ -26,7 +26,7 @@ ms.locfileid: "50415191"
 
 В этой статье собраны часто задаваемые вопросы о решении "Монитор производительности сети" в Azure
 
-[Монитор производительности сети](/azure/networking/network-monitoring-overview) — это облачное [гибридное решение для сетевого мониторинга](log-analytics-network-performance-monitor-performance-monitor.md), которое позволяет отслеживать производительность сети между разными точками в сетевой инфраструктуре. Это решение также помогает отслеживать сетевое подключение к [конечным точкам служб и приложений](log-analytics-network-performance-monitor-service-endpoint.md), а также [производительность Azure ExpressRoute](log-analytics-network-performance-monitor-expressroute.md). 
+[Монитор производительности сети](/azure/networking/network-monitoring-overview) — это облачное [гибридное решение для сетевого мониторинга](../azure-monitor/insights/network-performance-monitor-performance-monitor.md), которое позволяет отслеживать производительность сети между разными точками в сетевой инфраструктуре. Это решение также помогает отслеживать сетевое подключение к [конечным точкам служб и приложений](../azure-monitor/insights/network-performance-monitor-service-endpoint.md), а также [производительность Azure ExpressRoute](../azure-monitor/insights/network-performance-monitor-expressroute.md). 
 
 Монитор производительности сети обнаруживает проблемы сети, такие как появление "черных дыр" в трафике, ошибки маршрутизации и проблемы, которые невозможно обнаружить с помощью традиционных методов мониторинга сети. Решение создает предупреждения и уведомляет о превышении порогового значения для сетевого соединения. Кроте того, оно обеспечивает своевременное обнаружение проблем с производительностью сети и определяет конкретный сегмент сети или сетевое устройство как источник проблемы. 
 
@@ -47,7 +47,7 @@ ms.locfileid: "50415191"
 Чтобы решение "Монитор производительности сети" работало на виртуальных машинах узла и выполняло мониторинг сети, этот узел должен располагать как минимум 500 МБ памяти и одним ядром. Для работы решения "Монитор производительности сети" нет необходимости выделять отдельные узлы. Это решение может выполняться на узлах, которые выполняют другие рабочие нагрузки. Решение может остановить процесс мониторинга, если он использует более 5 % ресурсов ЦП.
 
 ### <a name="to-use-npm-should-i-connect-my-nodes-as-direct-agent-or-through-system-center-operations-manager"></a>Нужно ли подключать узлы как прямой агент? Или же для решения "Монитор производительности сети" следует использовать System Center Operations Manager?
-Монитор производительности и монитор подключений службы поддерживают оба варианта подключения узлов: [в качестве прямых агентов](log-analytics-agent-windows.md) и [через Operations Manager](log-analytics-om-agents.md).
+Монитор производительности и монитор подключений службы поддерживают оба варианта подключения узлов: [в качестве прямых агентов](../azure-monitor/platform/agent-windows.md) и [через Operations Manager](log-analytics-om-agents.md).
 
 Для функции мониторинга ExpressRoute узлы Azure должны быть обязательно подключены как прямые агенты. Эта функция не поддерживает узлы Azure, подключенные через Operations Manager. Что касается локальных узлов, мониторинг ExpressRoute поддерживает узлы, подключенные как прямые агенты и (или) через Operations Manager.
 
@@ -56,12 +56,12 @@ ms.locfileid: "50415191"
 
 ICMP рекомендуется для настольных компьютеров под управлением Windows и узлов на базе клиентской операционной системы. Эта платформа не позволяет отправлять данные TCP через сокеты прямого доступа, используемые NPM для обнаружения топологии сети.
 
-Дополнительные сведения о сравнительных преимуществах протоколов вы можете получить [здесь](log-analytics-network-performance-monitor-performance-monitor.md#choose-the-protocol).
+Дополнительные сведения о сравнительных преимуществах протоколов вы можете получить [здесь](../azure-monitor/insights/network-performance-monitor-performance-monitor.md#choose-the-protocol).
 
 ### <a name="how-can-i-configure-a-node-to-support-monitoring-using-tcp-protocol"></a>Как настроить узел для поддержки мониторинга по протоколу TCP?
 Чтобы узел поддерживал мониторинг по протоколу TCP, нужно сделать следующее: 
 * Убедитесь, что узел использует платформу Windows Server (2008 с пакетом обновления 1 или более поздней версии).
-* Выполните на этом узле скрипт Powershell [EnableRules.ps1](https://aka.ms/npmpowershellscript). Дополнительные сведения см. в разделе [инструкций](log-analytics-network-performance-monitor.md#configure-log-analytics-agents-for-monitoring).
+* Выполните на этом узле скрипт Powershell [EnableRules.ps1](https://aka.ms/npmpowershellscript). Дополнительные сведения см. в разделе [инструкций](../azure-monitor/insights/network-performance-monitor.md#configure-log-analytics-agents-for-monitoring).
 
 
 ### <a name="how-can-i-change-the-tcp-port-being-used-by-npm-for-monitoring"></a>Как изменить порт TCP, используемый решением "Монитор производительности сети"?
@@ -126,10 +126,10 @@ ICMP рекомендуется для настольных компьютеро
     | project CircuitName,PrimaryBytesInPerSecond, PrimaryBytesOutPerSecond,SecondaryBytesInPerSecond,SecondaryBytesOutPerSecond
 
 ### <a name="which-regions-are-supported-for-npms-performance-monitor"></a>Какие регионы поддерживаются для монитора производительности, входящего в решение "Монитор производительности сети"?
-Решение "Монитор производительности сети" может отслеживать подключение между сетями, расположенными в любых частях мира, если он размещен в рабочей области в одном из [поддерживаемых регионов](log-analytics-network-performance-monitor.md#supported-regions).
+Решение "Монитор производительности сети" может отслеживать подключение между сетями, расположенными в любых частях мира, если он размещен в рабочей области в одном из [поддерживаемых регионов](../azure-monitor/insights/network-performance-monitor.md#supported-regions).
 
 ### <a name="which-regions-are-supported-for-npms-service-connectivity-monitor"></a>Какие регионы поддерживаются для монитора подключений службы, входящего в решение "Монитор производительности сети"?
-Решение "Монитор производительности сети" может отслеживать подключение к службам, расположенными в любых частях мира, если он размещен в рабочей области в одном из [поддерживаемых регионов](log-analytics-network-performance-monitor.md#supported-regions).
+Решение "Монитор производительности сети" может отслеживать подключение к службам, расположенными в любых частях мира, если он размещен в рабочей области в одном из [поддерживаемых регионов](../azure-monitor/insights/network-performance-monitor.md#supported-regions).
 
 ### <a name="which-regions-are-supported-for-npms-expressroute-monitor"></a>Какие регионы поддерживаются для монитора ExpressRoute, входящего в решение "Монитор производительности сети"?
 Решение "Монитор производительности сети" может отслеживать каналы ExpressRoute, расположенные в любом регионе Azure. Чтобы подключить канал к решению "Монитор производительности сети", нужно создать рабочую область Log Analytics в одном из [поддерживаемых регионов](/azure/expressroute/how-to-npm#regions).
@@ -222,4 +222,4 @@ ICMP рекомендуется для настольных компьютеро
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения о решении "Монитор производительности сети" в Azure вы можете получить [в этой статье](log-analytics-network-performance-monitor.md).
+- Дополнительные сведения о решении "Монитор производительности сети" в Azure вы можете получить [в этой статье](../azure-monitor/insights/network-performance-monitor.md).

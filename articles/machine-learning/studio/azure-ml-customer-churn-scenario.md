@@ -1,10 +1,11 @@
 ---
-title: Анализ оттока клиентов с помощью машинного обучения | Документация Майкрософт
-description: Пример разработки интегрированной модели для анализа и оценки ухода клиентов
+title: Анализ оттока клиентов с помощью Студии машинного обучения Azure | Документация Майкрософт
+description: Пример разработки интегрированной модели для анализа и оценки оттока клиентов с помощью Студии машинного обучения Azure.
 services: machine-learning
 documentationcenter: ''
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: 1333ffe2-59b8-4f40-9be7-3bf1173fc38d
@@ -15,14 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/18/2017
-ms.openlocfilehash: 1beba951a6785aa90eef22a63a8064e9da1bb27f
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 0ab398cc87472e3ede361f48f8e755ef294746da
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34835123"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52314990"
 ---
-# <a name="analyzing-customer-churn-using-azure-machine-learning"></a>Анализ оттока клиентов с помощью службы "Машинное обучение Azure"
+# <a name="analyzing-customer-churn-using-azure-machine-learning-studio"></a>Анализ оттока клиентов с помощью Студии машинного обучения Azure
 ## <a name="overview"></a>Обзор
 В этой статье содержатся сведения об эталонной реализации проекта анализа оттока клиентов, созданного в Машинном обучении Azure. Кроме того, здесь рассматриваются соответствующие универсальные модели для комплексного решения проблем оттока промышленных клиентов. Здесь также измеряется точность моделей, построенных с использованием машинного обучения, и оцениваются направления дальнейшего развития.  
 

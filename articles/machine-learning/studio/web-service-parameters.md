@@ -1,10 +1,11 @@
 ---
-title: Использование параметров веб-службы машинного обучения Azure | Документация Майкрософт
+title: Использование параметров веб-службы Студия машинного обучения Azure | Документация Майкрософт
 description: Как использовать параметры веб-службы машинного обучения Azure для изменения поведения модели при доступе к веб-службе.
 services: machine-learning
 documentationcenter: ''
-author: YasinMSFT
-ms.author: yahajiza
+author: ericlicoding
+ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: c49187db-b976-4731-89d6-11a0bf653db1
@@ -15,14 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/12/2017
-ms.openlocfilehash: 91b3c9df8a7fd0e1abb79c21b1e1d833e57c24d5
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 0e8a1a4bb90f935bf3890bd803b9375d10261aa7
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34835932"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52312016"
 ---
-# <a name="use-azure-machine-learning-web-service-parameters"></a>Параметры веб-службы машинного обучения Azure
+# <a name="use-azure-machine-learning-studio-web-service-parameters"></a>Использование параметров веб-службы Студии машинного обучения Azure
 Веб-служба машинного обучения Azure создается при публикации эксперимента, содержащего модули с настраиваемыми параметрами. В некоторых случаях может потребоваться изменение поведения модуля, пока веб-служба выполняется. *Параметры веб-службы* позволяют это сделать. 
 
 Типичный пример — настройка модуля [Импорт данных][reader], благодаря которому пользователь опубликованной веб-службы может указать другой источник данных при обращении к веб-службе. Или настройка модуля [Export Data][writer] (Экспорт данных), позволяющего указать другое назначение. Некоторые другие примеры включают изменение количества битов модуля [Feature Hashing][feature-hashing] (Хэширование функций) или количества желаемых функций для модуля [Filter-Based Feature Selection][filter-based-feature-selection] (Выбор компонентов на основе фильтра). 

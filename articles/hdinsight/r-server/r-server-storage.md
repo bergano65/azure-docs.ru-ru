@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: 466cb9ea116030d3f6ee6b41809011dae9acc00b
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 578479d43279dc1edb9edd24fd57d6841784166a
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51011210"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52498140"
 ---
 # <a name="azure-storage-solutions-for-ml-services-on-azure-hdinsight"></a>Решения службы хранилища Azure для служб машинного обучения в Azure HDInsight
 
@@ -26,7 +26,7 @@ ms.locfileid: "51011210"
 
 Кроме того, из кластера HDInsight вы можете обращаться к нескольким учетным записям хранения или контейнерам Azure. Хранилище файлов Azure — это удобный способ хранения данных на граничном узле, который позволяет подключить общую папку службы хранилища Azure, например, к файловой системе Linux. Общие папки Azure можно подключить и использовать на любом устройстве с поддерживаемой операционной системой, например Windows или Linux. 
 
-При создании кластера Hadoop в HDInsight нужно указать **учетную запись хранения Azure** или **Data Lake Store**. Определенный контейнер хранилища в этой учетной записи используется для хранения файловой системы создаваемого кластера, например распределенной файловой системы Hadoop (HDFS). Дополнительные сведения и рекомендации см. в следующих статьях:
+При создании кластера Apache Hadoop в HDInsight нужно указать **учетную запись хранения Azure** или **Data Lake Store**. Определенный контейнер хранилища в этой учетной записи используется для хранения файловой системы создаваемого кластера, например распределенной файловой системы Hadoop (HDFS). Дополнительные сведения и рекомендации см. в следующих статьях:
 
 - [Использование службы хранилища Azure с HDInsight](../hdinsight-hadoop-use-blob-storage.md)
 - [Использование Data Lake Store с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-store.md)
@@ -170,6 +170,6 @@ ms.locfileid: "51011210"
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Основные сведения о кластере служб машинного обучения в HDInsight](r-server-overview.md)
-* [Начало работы с кластером служб машинного обучения в Hadoop](r-server-get-started.md)
-* [Варианты контекста вычислений для служб машинного обучения в HDInsight](r-server-compute-contexts.md)
+* [Начало работы со службами машинного обучения в Azure HDInsight](r-server-get-started.md)
+* [Варианты контекста вычислений для кластера служб машинного обучения в HDInsight](r-server-compute-contexts.md)
 

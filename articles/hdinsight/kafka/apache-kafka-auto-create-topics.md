@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/18/2018
-ms.openlocfilehash: 65dd4b172c0913e11bb7f25909eb062e93a4a03a
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: e78f0d2012cf4f6152e69fff1bab04f827c0eef7
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51015236"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52310894"
 ---
 # <a name="how-to-configure-apache-kafka-on-hdinsight-to-automatically-create-topics"></a>Настройка автоматического создания разделов в Apache Kafka в HDInsight
 
-По умолчанию в Kafka в HDInsight автоматическое создание разделов отключено. Но вы можете включить автоматическое создание разделов для существующих кластеров с помощью Ambari. Также автоматическое создание разделов можно включить при создании нового кластера Kafka с помощью шаблона Azure Resource Manager.
+По умолчанию в [Apache Kafka](https://kafka.apache.org/) в HDInsight автоматическое создание разделов отключено. Но вы можете включить автоматическое создание разделов для существующих кластеров с помощью [Apache Ambari](https://ambari.apache.org/). Также автоматическое создание разделов можно включить при создании нового кластера Kafka с помощью шаблона Azure Resource Manager.
 
-## <a name="ambari-web-ui"></a>Веб-интерфейс Ambari
+## <a name="apache-ambari-web-ui"></a>Веб-интерфейс Apache Ambari
 
 Чтобы включить автоматическое создание разделов в существующем кластере через пользовательский веб-интерфейс Ambari, выполните следующие действия:
 
@@ -79,7 +79,7 @@ ms.locfileid: "51015236"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого документа вы узнали, как включить автоматическое создание разделов для Kafka в HDInsight. Дополнительные сведения о работе с Kafka вы можете получить по следующим ссылкам.
+Из этого документа вы узнали, как включить автоматическое создание разделов для Apache Kafka в HDInsight. Дополнительные сведения о работе с Kafka вы можете получить по следующим ссылкам.
 
-* [Анализ журналов Kafka](apache-kafka-log-analytics-operations-management.md)
-* [Репликация разделов Apache Kafka с помощью Kafka в HDInsight (предварительная версия) и MirrorMaker](apache-kafka-mirroring.md)
+* [Анализ журналов для Apache Kafka](apache-kafka-log-analytics-operations-management.md)
+* [Репликация данных между кластерами Apache Kafka](apache-kafka-mirroring.md)

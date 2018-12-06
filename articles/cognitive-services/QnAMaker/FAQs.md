@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: article
-ms.date: 11/08/2018
+ms.date: 11/27/2018
 ms.author: tulasim
-ms.openlocfilehash: 2e4a5d9b7ee2a1a88bcfe819be6540385458108f
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 28153e71ba6f2336398517454a81cfce39b93956
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51622369"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52496339"
 ---
 # <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -25,7 +25,7 @@ ms.locfileid: "51622369"
 
 Все операции удаления являются безвозвратными, включая удаление пар вопросов и ответов, файлов, URL-адресов, пользовательских вопросов и ответов, баз знаний или ресурсов Azure. Убедитесь, что база знаний была экспортирована на странице **Параметры**, прежде чем удалять часть базы знаний. 
 
-### <a name="why-is-my-urlsfiles-is-not-extracting-question-answer-pairs"></a>Почему для указанных мной URL-адресов или файлов не извлекаются пары "вопрос — ответ"?
+### <a name="why-is-my-urlsfiles-not-extracting-question-answer-pairs"></a>Почему для указанных мной URL-адресов или файлов не извлекаются пары "вопрос — ответ"?
 
 В некоторых случаях QnA Maker не может автоматически извлечь содержимое в формате "вопрос — ответ" по допустимым URL-адресам. В таких случаях поместите нужное содержимое в TXT-файл и проверьте, сможет ли средство извлечь содержимое в таком формате. Кроме того, вы можете использовать интерфейс редактора для добавления содержимого в базу знаний на [портале QnA Maker](https://qnamaker.ai).
 
@@ -41,11 +41,11 @@ ms.locfileid: "51622369"
 
 Совместное использование работает на уровне службы QnA Maker, т. е. все базы знаний в службах предоставляются для общего доступа. [Здесь](./How-To/collaborate-knowledge-base.md) подробно описана совместная работа над базой знаний.
 
-### <a name="can-you-share-a-kb-with-a-contributor-that-is-not-in-the-same-aad-tenant-to-modify-a-kb"></a>Можно ли предоставить базу знаний для редактирования участнику, который находится в другом клиенте AAD? 
+### <a name="can-you-share-a-knowledge-base-with-a-contributor-that-is-not-in-the-same-aad-tenant-to-modify-a-knowledge-base"></a>Можно ли предоставить базу знаний для редактирования участнику, который находится в другом клиенте AAD? 
 
 При совместном использовании используется механизм управления доступом на основе ролей (RBAC) Azure. Если вы можете предоставить общий доступ к _любому_ ресурсу в Azure другому пользователю, вы можете сделать то же самое с QnA Maker.
 
-### <a name="if-you-have-an-app-service-plan-with-5-qnamaker-kbs-can-you-assign-readwrite-rights-to-5-different-users-so-each-of-them-can-access-only-1-qnamaker-kb"></a>Предположим, у вас есть план службы приложений с пятью базами знаний QnA Maker. Можно ли предоставить пяти разным пользователям права на чтение и запись так, чтобы каждый из них мог использовать только одну базу знаний QnA Maker?
+### <a name="if-you-have-an-app-service-plan-with-5-qnamaker-knowledge-bases-can-you-assign-readwrite-rights-to-5-different-users-so-each-of-them-can-access-only-1-qnamaker-knowledge-base"></a>Предположим, у вас есть план службы приложений с 5 базами знаний QnA Maker. Можно ли предоставить 5 разным пользователям права на чтение и запись так, чтобы каждый из них мог использовать только 1 базу знаний QnA Maker?
 
 Общий доступ предоставляется к службе QnA Maker в целом, а не к отдельным базам знаний.
 
@@ -65,8 +65,7 @@ ms.locfileid: "51622369"
 
 ### <a name="why-is-my-sharepoint-link-not-getting-extracted"></a>Почему ничего не извлекается по ссылке на SharePoint?
 
-Это средство анализирует только общедоступные URL-адреса и сейчас не поддерживает источники данных с аутентификацией. Но вы всегда можете скачать нужный файл и отправить его в службу для извлечения вопросов и ответов.
-
+Дополнительные сведения см. в разделе о [расположениях источников данных](./Concepts/data-sources-supported.md#data-source-locations).
 
 ### <a name="the-updates-that-i-made-to-my-knowledge-base-are-not-reflected-on-publish-why-not"></a>Обновления, выполненные в базе знаний, не отразились в публикации. Почему так происходит?
 
@@ -94,9 +93,13 @@ ms.locfileid: "51622369"
 
 Обновляйте ключи конечной точки каждый раз, когда есть основания подозревать их компрометацию.
 
-### <a name="can-i-use-the-same-azure-search-resource-for-kbs-using-multiple-languages"></a>Можно ли использовать один и тот же ресурс службы поиска Azure для статей базы знаний на разных языках?
+### <a name="can-i-use-the-same-azure-search-resource-for-knowledge-bases-using-multiple-languages"></a>Можно ли использовать один и тот же ресурс службы "Поиск Azure" для баз знаний на разных языках?
 
 Чтобы использовать несколько языков и несколько баз знаний, пользователю придется создать ресурс QnA Maker для каждого языка. При этом для каждого языка будет создана отдельная служба поиска Azure. Сочетание баз знаний на нескольких языках в одной службе поиска Azure приведет к снижению релевантности результатов.
+
+### <a name="how-can-i-change-the-name-of-the-azure-search-resource-used-by-qna-maker"></a>Как изменить имя ресурса службы "Поиск Azure", используемого QnA Maker?
+
+Имя ресурса службы "Поиск Azure" — это имя ресурса QnA Maker с добавлением случайных букв в конце. Из-за этого QnA Maker трудно различить несколько ресурсов службы "Поиск". Создайте отдельную службу "Поиск Azure" (назовите ее, как вам удобно) и подключите ее к своей службе QnA. Шаги похожи на шаги, необходимые для [обновления службы "Поиск Azure"](How-To/upgrade-qnamaker-service.md#upgrade-azure-search-service).
 
 ## <a name="integrate-with-other-services-including-bots"></a>Интеграция с другими службами, в том числе ботами
 

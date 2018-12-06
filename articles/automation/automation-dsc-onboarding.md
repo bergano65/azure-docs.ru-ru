@@ -9,12 +9,12 @@ ms.author: robreed
 ms.topic: conceptual
 ms.date: 08/08/2018
 manager: carmonm
-ms.openlocfilehash: fea0a0dfd2e138fa4f33f4f489be74f5038b4ca6
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 50f8fea04da3b1e414917a6404cb3f6e838bf716
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51244531"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52284818"
 ---
 # <a name="onboarding-machines-for-management-by-azure-automation-state-configuration"></a>Подключение компьютеров для управления с помощью службы "Настройка состояния службы автоматизации Azure"
 
@@ -42,7 +42,7 @@ ms.locfileid: "51244531"
 
 ### <a name="azure-portal"></a>Портал Azure
 
-На [портале Azure](http://portal.azure.com/) последовательно выберите **Обзор** -> **Виртуальные машины (классика)**. Выберите виртуальную машину Windows, которую необходимо подключить. В колонке панели мониторинга виртуальной машины щелкните **Все параметры** -> **Расширения** -> **Добавить** -> **Azure Automation DSC** -> **Создать**.
+На [портале Azure](https://portal.azure.com/) последовательно выберите **Обзор** -> **Виртуальные машины (классика)**. Выберите виртуальную машину Windows, которую необходимо подключить. В колонке панели мониторинга виртуальной машины щелкните **Все параметры** -> **Расширения** -> **Добавить** -> **Azure Automation DSC** -> **Создать**.
 Введите необходимые [значения локального диспетчера конфигураций DSC PowerShell](/powershell/dsc/metaconfig4), регистрационный ключ вашей учетной записи и URL-адрес регистрации. Кроме того, можно ввести конфигурацию узла, которая будет назначена виртуальной машине.
 
 ![Расширения виртуальной машины Azure для DSC](./media/automation-dsc-onboarding/DSC_Onboarding_1.png)
@@ -132,7 +132,7 @@ $VM | Update-AzureVM
 
 В разделе **Регистрация** введите необходимые вам [значения локального диспетчера конфигураций DSC PowerShell](/powershell/dsc/metaconfig4). Кроме того, можно ввести конфигурацию узла, которая будет назначена виртуальной машине.
 
-![](./media/automation-dsc-onboarding/DSC_Onboarding_6.png)
+![Подключение](./media/automation-dsc-onboarding/DSC_Onboarding_6.png)
 
 ### <a name="azure-resource-manager-templates"></a>Шаблоны Azure Resource Manager
 

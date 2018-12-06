@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
-ms.openlocfilehash: 966f05fba96cc829c3a11331e2a66609705f6f4f
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 58f4827910d863aef14171574d40e4b3acfc04d9
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51037721"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52498683"
 ---
 # <a name="enable-heap-dumps-for-apache-hadoop-services-on-linux-based-hdinsight"></a>Включение дампов кучи для служб Apache Hadoop в HDInsight под управлением Linux
 
@@ -39,7 +39,7 @@ ms.locfileid: "51037721"
 
 ## <a name="configuration"></a>Основные сведения о настройке дампа кучи
 
-Дампы кучи включаются путем передачи параметров в виртуальную машину Java при запуске службы. Чтобы передать эти параметры, для большинства служб Hadoop можно изменить сценарий оболочки, используемый для запуска службы.
+Дампы кучи включаются путем передачи параметров в виртуальную машину Java при запуске службы. Чтобы передать эти параметры, для большинства служб [Apache Hadoop](https://hadoop.apache.org/) можно изменить скрипт оболочки, используемый для запуска службы.
 
 В каждом сценарии есть экспорт для **\*\_OPTS**, который содержит параметры, передаваемые в виртуальную машину Java. Например, в сценарии **hadoop-env.sh** строка, начинающаяся с `export HADOOP_NAMENODE_OPTS=`, содержит параметры для службы NameNode.
 
@@ -49,7 +49,7 @@ ms.locfileid: "51037721"
 * **mapreduce.admin.reduce.child.java.opts**
 
 > [!NOTE]
-> Рекомендуется использовать платформу Apache Ambari для изменения скриптов и параметров mapred-site.xml, поскольку Ambari обрабатывает репликации изменений по всем узлам в кластере. Подробные сведения см. в разделе [Использование Ambari](#using-ambari).
+> Рекомендуется использовать платформу [Apache Ambari](https://ambari.apache.org/) для изменения скриптов и параметров mapred-site.xml, так как Ambari обрабатывает реплицируемые изменения по всем узлам в кластере. Подробные сведения см. в разделе об [использовании Apache Ambari](#using-apache-ambari).
 
 ### <a name="enable-heap-dumps"></a>Включение дампов кучи
 
@@ -77,11 +77,11 @@ ms.locfileid: "51037721"
     -XX:OnOutOfMemoryError=/path/to/script
 
 > [!NOTE]
-> Поскольку Hadoop является распределенной системой, каждый используемый сценарий необходимо помещать во все узлы кластера, на которых запущена служба.
+> Так как Apache Hadoop является распределенной системой, каждый используемый скрипт необходимо помещать во все узлы кластера, на которых запущена служба.
 > 
 > Сценарий также должен быть в расположении, доступном из учетной записи, с использованием которой запущена служба, и необходимо предоставить разрешение на выполнение. Например, вы можете сохранить сценарии в `/usr/local/bin` и использовать `chmod go+rx /usr/local/bin/filename.sh` для предоставления прав на чтение и выполнение.
 
-## <a name="using-ambari"></a>Использование Ambari
+## <a name="using-apache-ambari"></a>Использование Apache Ambari
 
 Чтобы изменить конфигурацию службы, выполните следующие действия.
 

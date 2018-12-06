@@ -1,5 +1,5 @@
 ---
-title: Настройка резервного копирования и репликации HBase и Phoenix в Azure HDInsight
+title: Настройка резервного копирования и репликации Apache HBase и Apache Phoenix в Azure HDInsight
 description: Сведения о настройке резервного копирования и репликации HBase и Phoenix.
 services: hdinsight
 author: ashishthaps
@@ -9,16 +9,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: ashishth
-ms.openlocfilehash: 0dfb1cf5ce16e9aa30bb7f9fcc43bd24ccb90d76
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 00402b7ba6004d382693d5f6f82c1108a254fba8
+ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43042225"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52283576"
 ---
-# <a name="set-up-backup-and-replication-for-hbase-and-phoenix-on-hdinsight"></a>Настройка резервного копирования и репликации HBase и Phoenix в HDInsight
+# <a name="set-up-backup-and-replication-for-apache-hbase-and-apache-phoenix-on-hdinsight"></a>Настройка резервного копирования и репликации Apache HBase и Apache Phoenix в HDInsight
 
-HBase поддерживает несколько способов защиты от потери данных:
+Apache HBase поддерживает несколько способов защиты от потери данных:
 
 * копирование папки `hbase`;
 * экспорт и импорт;
@@ -101,7 +101,7 @@ HBase в HDInsight использует хранилище по умолчани
 
     <destinationAddress> = <ZooKeeperQuorum>:<Port>:<ZnodeParent>
 
-* `<ZooKeeperQuorum>` — это список узлов ZooKeeper, разделенный запятыми, например:
+* `<ZooKeeperQuorum>` — это список узлов Apache ZooKeeper, разделенный запятыми, например:
 
     zk0-hdizc2.54o2oqawzlwevlfxgay2500xtg.dx.internal.cloudapp.net,zk4-hdizc2.54o2oqawzlwevlfxgay2500xtg.dx.internal.cloudapp.net,zk3-hdizc2.54o2oqawzlwevlfxgay2500xtg.dx.internal.cloudapp.net
 
@@ -109,7 +109,7 @@ HBase в HDInsight использует хранилище по умолчани
 
     zk0-hdizc2.54o2oqawzlwevlfxgay2500xtg.dx.internal.cloudapp.net,zk4-hdizc2.54o2oqawzlwevlfxgay2500xtg.dx.internal.cloudapp.net,zk3-hdizc2.54o2oqawzlwevlfxgay2500xtg.dx.internal.cloudapp.net:2181:/hbase-unsecure
 
-Сведения о том, как получить эти значения кластера HDInsight, см. в разделе [Сбор списка кворума ZooKeeper вручную](#manually-collect-the-zookeeper-quorum-list).
+Сведения о том, как получить эти значения кластера HDInsight, см. в разделе [Сбор списка кворума Apache ZooKeeper вручную](#manually-collect-the-apache-zookeeper-quorum-list).
 
 Служебная программа CopyTable также поддерживает параметры, которые позволяют указать диапазон времени копируемых строк и подмножество семейств столбцов в копируемой таблице. Чтобы просмотреть полный список поддерживаемых параметров, запустите CopyTable без параметров:
 
@@ -120,7 +120,7 @@ CopyTable сканирует все содержимое исходной таб
 > [!NOTE]
 > Автоматизировать копирование данных между таблицами можно с помощью скрипта `hdi_copy_table.sh` в репозитории со [служебными программами HBase Azure](https://github.com/Azure/hbase-utils/tree/master/replication) в GitHub.
 
-### <a name="manually-collect-the-zookeeper-quorum-list"></a>Сбор списка кворума ZooKeeper вручную
+### <a name="manually-collect-the-apache-zookeeper-quorum-list"></a>Сбор списка кворума Apache ZooKeeper вручную
 
 Когда оба кластера HDInsight находятся в той же виртуальной сети, как описано выше, разрешение имен внутренних узлов выполняется автоматически. Чтобы использовать CopyTable в кластерах HDInsight, расположенных в двух отдельных виртуальных сетях, соединенных через VPN-шлюз, необходимо указать IP-адреса узлов Zookeeper в кворуме.
 
@@ -201,8 +201,8 @@ CopyTable сканирует все содержимое исходной таб
 5. Скопируйте имеющиеся данные из исходных таблиц в целевые.
 6. Репликация автоматически копирует новые измененные данные в исходные таблицы в целевых таблицах.
 
-Чтобы включить репликацию в HDInsight, примените действие скрипта к выполняющемуся исходному кластеру HDInsight. Пошаговое руководство по включению репликации в кластере или настройке репликации в образцах кластеров, созданных в виртуальных сетях с помощью шаблонов Azure Resource Manager, см. в статье [Настройка репликации кластера HBase в виртуальных сетях Azure](apache-hbase-replication.md). Эта статья также содержит инструкции по включению репликации метаданных Phoenix.
+Чтобы включить репликацию в HDInsight, примените действие скрипта к выполняющемуся исходному кластеру HDInsight. Пошаговые инструкции по включению репликации в кластере или настройке репликации в образцах кластеров, созданных в виртуальных сетях с помощью шаблонов Azure Resource Manager, см. в статье о [Настройке репликации Apache HBase](apache-hbase-replication.md). Эта статья также содержит инструкции по включению репликации метаданных Phoenix.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Настройка репликации HBase](apache-hbase-replication.md)
+* [Настройка репликации Apache HBase](apache-hbase-replication.md)

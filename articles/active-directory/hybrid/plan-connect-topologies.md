@@ -12,15 +12,15 @@ ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.topic: article
-ms.date: 10/09/2018
+ms.date: 11/27/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 4362a6b936c52319f6f6fc625370733f3c84e361
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 74b2cea8e3adfb6689d4ac7049e7892f8f0ecf4a
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50158862"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52582639"
 ---
 # <a name="topologies-for-azure-ad-connect"></a>Топологии Azure AD Connect.
 В этой статье описываются различные локальные топологии и топологии Active Directory Azure (Azure AD), в которых служба синхронизации Azure AD Connect используется в качестве основного решения интеграции. Здесь описываются и поддерживаемые, и неподдерживаемые конфигурации.
@@ -84,7 +84,9 @@ ms.locfileid: "50158862"
 
 Подключение нескольких серверов синхронизации Azure AD Connect к одному клиенту Azure AD не поддерживается. В порядке исключения можно использовать [промежуточный сервер](#staging-server).
 
-### <a name="multiple-forests-separate-topologies"></a>Несколько лесов, отдельные топологии
+Эта топология отличается от описанной ниже тем, что подключение **нескольких серверов синхронизации** к одному клиенту Azure AD не поддерживается.
+
+### <a name="multiple-forests-single-sync-server-users-are-represented-in-only-one-directory"></a>Несколько лесов, один сервер синхронизации, пользователи представлены только в одном каталоге
 ![Параметр для представления пользователей во всех каталогах только один раз](./media/plan-connect-topologies/MultiForestUsersOnce.png)
 
 ![Изображение нескольких лесов и отдельных топологий](./media/plan-connect-topologies/MultiForestSeparateTopologies.png)

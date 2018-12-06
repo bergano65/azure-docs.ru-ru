@@ -14,12 +14,12 @@ ms.devlang: ruby
 ms.topic: article
 ms.date: 11/25/2014
 ms.author: MicrosoftHelp@twilio.com
-ms.openlocfilehash: 41b5383dd319f2cb6fad4316e963f86dd7a4bc61
-ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
+ms.openlocfilehash: 40b633c4e51a34e6640a9557be49bbe30543daf5
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39036614"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52426441"
 ---
 # <a name="how-to-use-twilio-for-voice-and-sms-capabilities-in-ruby"></a>Использование Twilio для поддержки голосовых возможностей и SMS в Ruby
 В этом руководстве показано, как выполнять типовые задачи программирования с помощью службы Twilio API в Azure. Здесь описываются такие сценарии, как телефонный звонок и отправка SMS-сообщения. Дополнительные сведения о Twilio и использовании голосовых функций и SMS в приложениях см. в разделе [Дальнейшие действия](#NextSteps).
@@ -30,7 +30,7 @@ Twilio — это API веб-службы телефонии, позволяющ
 **Twilio Voice** позволяет приложениям осуществлять и принимать телефонные вызовы. **Twilio SMS** позволяет приложениям отправлять и принимать SMS-сообщения. **Twilio Client** позволяет приложениям реализовать речевую связь с помощью существующих интернет-подключений, в том числе на мобильных устройствах.
 
 ## <a id="Pricing"></a>Цены и специальные предложения Twilio
-Сведения о ценах на Twilio доступны на веб-сайте [цен на Twilio][twilio_pricing]. Клиентам Azure доступно [специальное предложение][special_offer]: бесплатный кредит на 1000 текстовых сообщений или 1000 минут входящих вызовов. Чтобы воспользоваться этим предложением или получить дополнительные сведения, посетите сайт [http://ahoy.twilio.com/azure][special_offer].  
+Сведения о ценах на Twilio доступны на веб-сайте [цен на Twilio][twilio_pricing]. Клиентам Azure доступно [специальное предложение][special_offer]: бесплатный кредит на 1000 текстовых сообщений или 1000 минут входящих вызовов. Чтобы воспользоваться этим предложением или получить дополнительные сведения, посетите сайт [https://ahoy.twilio.com/azure][special_offer].  
 
 ## <a id="Concepts"></a>Основные понятия
 Twilio API — это интерфейс API RESTful, который предоставляет приложениям функции для работы с голосовыми вызовами и SMS. Полный список клиентских библиотек API Twilio, которые доступны на разных языках, см. на [этой странице][twilio_libraries].
@@ -146,7 +146,7 @@ TwiML — это набор инструкций на основе XML, кото
 
 Третий параметр (`url`) — URL-адрес, который Twilio запрашивает для получения инструкций по действиям после подключения вызова. В этом случае мы задаем URL-адрес (`http://yourdomain.cloudapp.net`), который возвращает простой документ TwiML и использует команду `<Say>`, чтобы преобразовать текст в речь и сказать "Hello Monkey" для принимающего вызов абонента.
 
-## <a id="howto_recieve_sms"></a>Руководство: получение SMS-сообщения
+## <a id="howto_receive_sms"></a>Руководство: получение SMS-сообщения
 В предыдущем примере мы инициировали **исходящий** звонок. На этот раз мы используем номер телефона, предоставленный Twilio во время регистрации, для обработки **входящего** SMS-сообщения.
 
 Сначала войдите на [панель мониторинга Twilio][twilio_account]. Щелкните "Номера" на верхней панели навигации и выберите предоставленный вам номер Twilio. Вы увидите два URL-адреса, которые можно настроить: URL-адрес запроса голосового вызова и URL-адрес запроса SMS. Эти URL-адреса используются Twilio при осуществлении голосового вызова или отправке SMS-сообщения на ваш номер. Эти адреса также называют "веб-привязками".
@@ -179,19 +179,19 @@ TwiML — это набор инструкций на основе XML, кото
 
 
 
-[twilio_pricing]: http://www.twilio.com/pricing
-[special_offer]: http://ahoy.twilio.com/azure
+[twilio_pricing]: https://www.twilio.com/pricing
+[special_offer]: https://ahoy.twilio.com/azure
 [twilio_libraries]: https://www.twilio.com/docs/libraries
-[twiml]: http://www.twilio.com/docs/api/twiml
-[twilio_api]: http://www.twilio.com/api
+[twiml]: https://www.twilio.com/docs/api/twiml
+[twilio_api]: https://www.twilio.com/api
 [try_twilio]: https://www.twilio.com/try-twilio
 [twilio_account]:  https://www.twilio.com/user/account
 [verify_phone]: https://www.twilio.com/user/account/phone-numbers/verified#
-[twilio_api_documentation]: http://www.twilio.com/api
-[twilio_security_guidelines]: http://www.twilio.com/docs/security
-[twilio_howtos]: http://www.twilio.com/docs/howto
+[twilio_api_documentation]: https://www.twilio.com/api
+[twilio_security_guidelines]: https://www.twilio.com/docs/security
+[twilio_howtos]: https://www.twilio.com/docs/howto
 [twilio_on_github]: https://github.com/twilio
-[twilio_support]: http://www.twilio.com/help/contact
-[twilio_quickstarts]: http://www.twilio.com/docs/quickstart
+[twilio_support]: https://www.twilio.com/help/contact
+[twilio_quickstarts]: https://www.twilio.com/docs/quickstart
 [sinatra]: http://www.sinatrarb.com/
 [azure_vm_setup]: https://docs.microsoft.com/azure/virtual-machines/linux/classic/ruby-rails-web-app

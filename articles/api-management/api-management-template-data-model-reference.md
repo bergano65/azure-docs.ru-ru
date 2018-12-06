@@ -14,18 +14,24 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/05/2017
 ms.author: apimpm
-ms.openlocfilehash: 0f27b6b529c2591e37d48e3386190077fc8efc32
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 8c21ed737cab98c9136e1c1991997ff3931a4c9d
+ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "29378162"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52447203"
 ---
 # <a name="azure-api-management-template-data-model-reference"></a>Справочник по модели данных шаблона в службе управления API Azure
 В этой статье описываются представления сущностей и типов для распространенных элементов, используемых в моделях данных для шаблонов портала разработчика в службе управления API Azure.  
   
  Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](https://azure.microsoft.com/documentation/articles/api-management-developer-portal-templates/).  
-  
+
+[!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
+
+Портал разработчика недоступен для ценовой категории "Потребление".
+
+## <a name="reference"></a>Справочные материалы
+
 -   [API](#API)  
 -   [Сводные данные API](#APISummary)  
 -   [Приложения](#Application)  

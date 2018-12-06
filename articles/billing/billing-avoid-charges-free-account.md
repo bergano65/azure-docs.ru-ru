@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/25/2017
 ms.author: cwatson
-ms.openlocfilehash: 37e43e4bb8b2aea21e0fa396dd197ca41793469d
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: e20faa36f14e681b6eb81203024e79a649f47c95
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47394171"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52582559"
 ---
 # <a name="avoid-getting-charged-for-your-azure-free-account"></a>Как не платить за бесплатную учетную запись Azure
 
@@ -62,6 +62,6 @@ ms.locfileid: "47394171"
 
 После окончания срока действия по использованию бесплатных служб Azure будет взиматься оплата по мере использования служб. Портал Azure можно использовать для удаления ресурсов неиспользуемых служб. Если вы не собираетесь использовать какие-либо службы Azure, можно [отказаться от подписки](billing-how-to-cancel-azure-subscription.md).
 
-## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если вам нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.
+Если у вас есть вопросы или нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

@@ -12,12 +12,12 @@ ms.author: v-daljep
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 09/20/2018
-ms.openlocfilehash: 8f66c95202e0ccdef86f9630f7a98c20023a8955
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: b903d0ddbccac8fe4fa8b251d409bd8addebb435
+ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50087752"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52426005"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Ведение журналов метрик и диагностики Базы данных SQL Azure 
 
@@ -101,7 +101,7 @@ ms.locfileid: "50087752"
    ![Настройка диагностики Базы данных SQL](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-sql-selection.png)
 
 > [!NOTE]
-> Журнал аудита невозможно включить из параметров диагностики базы данных. Сведения о том, как включить потоковую передачу данных журнала аудита см. в руководстве по [настройке аудита базы данных](sql-database-auditing.md#subheading-2), а также статье о [журналах аудита SQL в Azure Log Analytics и Центрах событий Azure](https://blogs.msdn.microsoft.com/sqlsecurity/2018/09/13/sql-audit-logs-in-azure-log-analytics-and-azure-event-hubs/).
+> Журналы аудита безопасности невозможно включить из параметров диагностики базы данных. Сведения о том, как включить потоковую передачу данных журнала аудита см. в руководстве по [настройке аудита базы данных](sql-database-auditing.md#subheading-2), а также статье о [журналах аудита SQL в Azure Log Analytics и Центрах событий Azure](https://blogs.msdn.microsoft.com/sqlsecurity/2018/09/13/sql-audit-logs-in-azure-log-analytics-and-azure-event-hubs/).
 >
 
 > [!TIP]
@@ -182,7 +182,7 @@ ms.locfileid: "50087752"
 2. Выберите **Параметры диагностики**.
 3. Выберите **Включить диагностику**, если предыдущие параметры отсутствуют, или **Настройка параметра**, чтобы изменить предыдущий параметр.
 
-   ![Включение диагностики Управляемого экземпляра](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-mi-enable.png)
+   ![Включение диагностики Управляемого экземпляра](./media/sql-database-metrics-diag-logging/diagnostics-settings-container-mi-enable.png)
 
 4. Введите имя параметра — для собственных нужд.
 5. Выберите ресурсы для потоковой передачи данных диагностики из эластичного пула: **Архивировать в учетной записи хранения**, **Передать в концентратор событий** или **Отправить в Log Analytics**
@@ -190,7 +190,7 @@ ms.locfileid: "50087752"
 7. Установите флажок для диагностических данных телеметрии экземпляра **ResourceUsageStats**.
 8. Нажмите кнопку **Сохранить**
 
-   ![Настройка диагностики Управляемого экземпляра](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-mi-selection.png)
+   ![Настройка диагностики Управляемого экземпляра](./media/sql-database-metrics-diag-logging/diagnostics-settings-container-mi-selection.png)
 
 > [!TIP]
 > Повторите описанные выше действия для каждого Управляемого экземпляра, который вы хотите отслеживать.

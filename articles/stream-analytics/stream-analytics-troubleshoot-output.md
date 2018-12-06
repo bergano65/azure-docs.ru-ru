@@ -7,13 +7,13 @@ ms.author: sidram
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 10/11/2018
-ms.openlocfilehash: 4209ce8d15bf53381825e8bb3e47f0a16366a436
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.date: 11/21/2018
+ms.openlocfilehash: 5124e06296962f1b673c77bfe318ff48d7fb11aa
+ms.sourcegitcommit: beb4fa5b36e1529408829603f3844e433bea46fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49346607"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "52291329"
 ---
 # <a name="troubleshoot-azure-stream-analytics-outputs"></a>Устранение неполадок с выходными данными в Azure Stream Analytics
 
@@ -29,7 +29,7 @@ ms.locfileid: "49346607"
       - Если задание использует концентратор событий, проверьте, задано ли для текста сообщения значение *null*.
       
     - Если обнаружены ошибки преобразования данных и показатель растет, должны выполняться следующие условия:
-      - Заданию не удастся выполнить десериализацию событий.
+      - Выходное событие не соответствует схеме целевого приемника. 
       - Схема событий может не соответствовать определенной или ожидаемой схеме событий в запросе.
       - В событии могут обнаружиться неожиданные типы данных в некоторых полях.
       

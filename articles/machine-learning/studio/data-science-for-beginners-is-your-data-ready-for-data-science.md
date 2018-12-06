@@ -1,11 +1,12 @@
 ---
-title: Готовы ли ваши данные к обработке и анализу? Оценка данных с помощью Машинного обучения Azure | Документация Майкрософт
+title: Готовы ли ваши данные к обработке и анализу? Оценка данных в Студии машинного обучения Azure | Документация Майкрософт
 description: Четыре критерия, которым должны соответствовать ваши данные, чтобы быть готовыми для обработки и анализа данных. Это видео содержит конкретные примеры общей оценки данных.
 keywords: соответствующие данные,оценить данные,подготовить данные,критерии данных,данные готовы
 services: machine-learning
 documentationcenter: na
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cjgronlund
 ms.assetid: d502062c-da70-4b21-9054-0bfd9902612e
@@ -16,12 +17,12 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/03/2018
-ms.openlocfilehash: 5ab3c7716485053432240cb74be8ebc60c9ad274
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 5e7949edb13bfec72fa7d80d86d2e77214ceaa37
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34834623"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52316214"
 ---
 # <a name="is-your-data-ready-for-data-science"></a>Готовы ли ваши данные к обработке и анализу?
 ## <a name="video-2-data-science-for-beginners-series"></a>Видео 2. Обработка и анализ данных для начинающих

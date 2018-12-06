@@ -4,7 +4,7 @@ description: Описывается, как изменить профиль уч
 services: ''
 documentationcenter: ''
 author: genlin
-manager: jlian
+manager: alherz
 editor: ''
 tags: billing
 ms.assetid: 9d4ef5d9-11fc-4684-ace6-467f4ce26ba8
@@ -16,12 +16,12 @@ ms.topic: conceptual
 ms.date: 05/11/2018
 ms.author: cwatson
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 622a8777f5ed329636c7023bb52790756f8d7206
-ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
+ms.openlocfilehash: 09ac7659487a81d68089a060bf038213722d4dbb
+ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47422632"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52580433"
 ---
 # <a name="change-your-azure-account-profile-information-such-as-contact-email-address-and-phone-number"></a>Изменение сведений в профиле учетной записи Azure, например контактного адреса электронной почты, адреса и номера телефона
 
@@ -46,7 +46,7 @@ ms.locfileid: "47422632"
 
 ### <a name="does-updating-my-profile-email-also-update-my-login-email-address"></a>Обновление электронной почты в профиле приводит к обновлению адреса электронной почты для входа?
 
-Нет. При обновлении электронной почты в профиле адрес электронной почты для входа не обновляется. Чтобы изменить адрес электронной почты для входа, необходимо передать владение учетной записью.
+ Нет. При обновлении электронной почты в профиле адрес электронной почты для входа не обновляется. Чтобы изменить адрес электронной почты для входа, необходимо передать владение учетной записью.
 
 ### <a name="does-updating-my-profile-address-also-update-my-credit-card-billing-address"></a>Обновление электронной почты в профиле приводит к обновлению адреса для выставления счетов по кредитной карте?
 
@@ -56,7 +56,7 @@ ms.locfileid: "47422632"
 
 В связи с техническими ограничениями нельзя изменить страну существующей учетной записи. Однако вы можете создать учетную запись в нужной стране, а затем обратиться в службу поддержки Azure с просьбой о переносе служб в эту учетную запись.
 
-## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему. 
+Если у вас есть вопросы или нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 

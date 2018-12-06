@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/23/2018
 ms.author: hrasheed
-ms.openlocfilehash: d8ab61d99b617f21557b6f1ef476418e25bcee55
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 1d5a6dc6db3eaa46f6f2bd9944af7aefe759fbc7
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51016936"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52496117"
 ---
 # <a name="connect-hdinsight-to-your-on-premises-network"></a>Подключение HDInsight к локальной сети
 
@@ -321,12 +321,12 @@ nslookup dnsproxy.icb0d0thtw0ebifqt0g1jycdxd.ex.internal.cloudapp.net 196.168.0.
     az network nic list --resource-group <resourcegroupname> --output table --query "[?contains(name,'node')].{NICname:name,InternalIP:ipConfigurations[0].privateIpAddress,InternalFQDN:dnsSettings.internalFqdn}"
     ```
 
-2. Чтобы определить порт, через который доступна служба, см. документ [Порты и универсальные коды ресурсов (URI), используемые кластерами HDInsight](./hdinsight-hadoop-port-settings-for-services.md).
+2. Чтобы определить порт, через который доступна служба, см. статью [Порты, используемые службами Hadoop в HDInsight](./hdinsight-hadoop-port-settings-for-services.md).
 
     > [!IMPORTANT]
     > Некоторые службы, размещенные на головных узлах, одновременно активны только на одном узле. Если при попытке доступа к службе на одном головном узле происходит сбой, переключитесь к другому головному узлу.
     >
-    > Например, Ambari одновременно активен только на одном головном узле. Если при попытке доступа к Ambari на одном головном узле он возвращает ошибку 404, значит он выполняется на другом головном узле.
+    > Например, Apache Ambari одновременно активен только на одном головном узле. Если при попытке доступа к Ambari на одном головном узле он возвращает ошибку 404, значит он выполняется на другом головном узле.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

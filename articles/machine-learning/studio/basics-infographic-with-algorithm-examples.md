@@ -1,11 +1,12 @@
 ---
-title: Инфографика по основам машинного обучения с примерами алгоритмов | Документация Майкрософт
+title: Инфографика по основам машинного обучения с примерами алгоритмов — Студия машинного обучения Azure | Документация Майкрософт
 description: Доходчивый обзор основ машинного обучения включает примеры алгоритмов. Загружаемая инфографика охватывает большинство вопросов по машинному обучению.
 keywords: основы машины обучения, примеры алгоритмов,машинное обучение для начинающих, вопросы машины обучения, популярные алгоритмы, инфографика по алгоритмам
 services: machine-learning
 documentationcenter: ''
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cgronlun
 ms.assetid: cf4e2308-9285-4adc-9f00-408e3ee7931b
@@ -16,12 +17,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/18/2017
-ms.openlocfilehash: 8ef67add44428e08a1851a039e7e8c2c747e930d
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: ccbe152901ff7f59548239a1d59e585b8e356c23
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51253862"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52308008"
 ---
 # <a name="downloadable-infographic-machine-learning-basics-with-algorithm-examples"></a>Загружаемая инфографика по основам машинного обучения с примерами алгоритмов
 Скачайте понятную инфографику по основам машинного обучения и ознакомьтесь с популярными алгоритмами, которые используются для ответа на распространенные вопросы о машинном обучении. Примеры алгоритмов помогут начинающему пользователю машинного обучения понять, какие алгоритмы используются и с какой целью.

@@ -9,17 +9,17 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/6/2018
 ms.author: tylerfox
-ms.openlocfilehash: 4bf46501a75b9dd5be7ae1b446a0db90c20be559
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 936e53ca328b0f54bfd75e7b3d4f6747b0037669
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51235264"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52495172"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-azure-powershell"></a>Управление кластерами Apache Hadoop в HDInsight с помощью Azure PowerShell
 [!INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
 
-Azure PowerShell можно использовать для контроля и автоматизации развертывания рабочих нагрузок, а также управления ими в Azure. Из этой статьи вы узнаете, как управлять кластерами Apache Hadoop в Azure HDInsight с помощью Azure PowerShell. Список командлетов HDInsight PowerShell см. в [справочнике по командлетам HDInsight](https://msdn.microsoft.com/library/azure/dn479228.aspx).
+Azure PowerShell можно использовать для контроля и автоматизации развертывания рабочих нагрузок, а также управления ими в Azure. Из этой статьи вы узнаете, как управлять кластерами [Apache Hadoop](https://hadoop.apache.org/) в Azure HDInsight с помощью Azure PowerShell. Список командлетов HDInsight PowerShell см. в [справочнике по командлетам HDInsight](https://msdn.microsoft.com/library/azure/dn479228.aspx).
 
 **Предварительные требования**
 
@@ -80,12 +80,12 @@ Remove-AzureRmResourceGroup -Name <Resource Group Name>
 
 Ниже представлены возможности, связанные с изменением количества узлов данных в кластере каждого типа, поддерживаемого в HDInsight.
 
-* Hadoop
+* Apache Hadoop
 
     Вы можете легко увеличить количество рабочих узлов в работающем кластере Hadoop. Это не помешает обработке заданий в состоянии ожидания и выполнения. В ходе выполнения операции можно также отправлять новые задания. Сбои операции масштабирования обрабатываются корректно, поэтому кластер всегда пребывает в функциональном состоянии.
 
     Если уменьшить масштаб кластера Hadoop, сократив количество узлов данных, некоторые службы в нем будут перезапущены. Перезапуск служб приведет к сбою всех выполняющихся и ожидающих заданий при завершении операции масштабирования. Однако после завершения операции вы можете повторно отправить задания.
-* hbase
+* Apache HBase
 
     Вы можете с легкостью добавлять и удалять узлы данных в работающем кластере HBase. Балансировка региональных серверов выполняется автоматически в течение нескольких минут после завершения операции масштабирования. Но их также можно сбалансировать вручную, выполнив вход на головной узел кластера и выполнив приведенные ниже команды в окне командной строки.
 
@@ -95,7 +95,7 @@ Remove-AzureRmResourceGroup -Name <Resource Group Name>
     >balancer
     ```
 
-* Storm
+* Apache Storm
 
     Вы можете с легкостью добавлять и удалять узлы данных в работающем кластере Storm. Но после успешного завершения операции масштабирования потребуется повторная балансировка топологии.
 
@@ -207,25 +207,25 @@ $resourceGroupName = $cluster.ResourceGroup
 
 
 ## <a name="submit-jobs"></a>Отправка заданий
-**Отправка заданий MapReduce**
+**Отправка заданий Apache Hadoop MapReduce**
 
-См. статью [Выполнение примеров MapReduce, включенных в HDInsight](hadoop/apache-hadoop-run-samples-linux.md).
+См. статью о [выполнении примеров Apache Hadoop MapReduce, включенных в HDInsight](hadoop/apache-hadoop-run-samples-linux.md).
 
-**Отправка заданий Hive**
+**Отправка заданий Apache Hive**
 
-См. статью [Выполнение запросов Hive с помощью PowerShell](hadoop/apache-hadoop-use-hive-powershell.md).
+См. статью о [выполнении запросов Apache Hive с помощью PowerShell](hadoop/apache-hadoop-use-hive-powershell.md).
 
-**Отправка заданий Pig**
+**Отправка заданий Apache Pig**
 
-См. статью [Выполнение заданий Pig с помощью PowerShell](hadoop/apache-hadoop-use-pig-powershell.md).
+См. статью о [выполнении заданий Apache Pig с помощью PowerShell](hadoop/apache-hadoop-use-pig-powershell.md).
 
-**Отправка заданий Sqoop**
+**Отправка заданий Apache Sqoop**
 
-См. статью [Использование Sqoop с Hadoop в HDInsight](hadoop/hdinsight-use-sqoop.md).
+См. статью об [использовании Apache Sqoop с HDInsight](hadoop/hdinsight-use-sqoop.md).
 
-**Отправка заданий Oozie**
+**Отправка заданий Apache Oozie**
 
-См. статью [Использование Oozie с Hadoop для определения и выполнения рабочего процесса в HDInsight](hdinsight-use-oozie.md).
+См. статью об [использовании Apache Oozie с Apache Hadoop для определения и выполнения рабочего процесса в HDInsight](hdinsight-use-oozie.md).
 
 ## <a name="upload-data-to-azure-blob-storage"></a>Отправка данных в хранилище BLOB-объектов Azure
 Ознакомьтесь со статьей [Отправка данных в HDInsight][hdinsight-upload-data].
@@ -236,7 +236,7 @@ $resourceGroupName = $cluster.ResourceGroup
 * [Администрирование HDInsight с помощью интерфейса командной строки][hdinsight-admin-cli]
 * [Создание кластеров Hadoop в HDInsight][hdinsight-provision]
 * [Отправка данных в HDInsight][hdinsight-upload-data]
-* [Отправка заданий Hadoop в HDInsight][hdinsight-submit-jobs]
+* [Отправка заданий Apache Hadoop программными средствами][hdinsight-submit-jobs]
 * [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux][hdinsight-get-started]
 
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/

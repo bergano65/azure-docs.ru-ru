@@ -1,11 +1,12 @@
 ---
-title: 5 вопросов об обработке и анализе данных. Обработка и анализ данных для начинающих. Машинное обучение Azure | Документация Майкрософт
+title: Пять вопросов об обработке и анализе данных. Обработка и анализ данных для начинающих. Студия машинного обучения Azure | Документация Майкрософт
 description: Обработка и анализ данных для начинающих объясняет основные понятия в пяти коротких видеороликах. Первое видео содержит ответы на 5 вопросов об обработке и анализе данных. Из машинного обучения Azure.
 keywords: выполнение обработки и анализа данных,введение в обработку и анализ данных,обработка и анализ данных для начинающих,основы обработки и анализа данных,вопросы по обработке и анализу данных,видео по обработке и анализу данных,введение в обработку и анализ данных
 services: machine-learning
 documentationcenter: na
-author: heatherbshapiro
-ms.author: hshapiro
+author: ericlicoding
+ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.author: amlstudiodocs
 manager: hjerez
 editor: cjgronlund
 ms.assetid: a01f93ee-01eb-4afe-abbd-cfa035c119b0
@@ -16,12 +17,12 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/03/2018
-ms.openlocfilehash: 1d004eb16fcac13d6ba7592cbe432cbeac0401e8
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: c59b4783c59c44604738a3056b3484e11ff90363
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34834157"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52314172"
 ---
 # <a name="data-science-for-beginners-video-1-the-5-questions-data-science-answers"></a>Обработка и анализ данных для начинающих (видео 1): 5 вопросов, на которые дают ответ обработка и анализ данных
 Ознакомьтесь с кратким введением *Обработка и анализ данных для начинающих*, которое состоит из пяти коротких видео с участием ведущих специалистов по обработке и анализу данных. Эти простые видео будут полезны как тем, кто только интересуется обработкой и анализом данных, так и тем, кто работает со специалистами в этой области.

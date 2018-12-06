@@ -1,6 +1,6 @@
 ---
 ms.assetid: ''
-title: Ключи учетной записи хранения Azure Key Vault
+title: Учетная запись хранения, управляемая с помощью Azure Key Vault, — CLI
 description: Ключи учетной записи хранения обеспечивают простую интеграцию между Azure Key Vault и доступом по ключу к учетной записи хранения Azure.
 ms.topic: conceptual
 services: key-vault
@@ -9,14 +9,14 @@ author: bryanla
 ms.author: bryanla
 manager: mbaldwin
 ms.date: 10/03/2018
-ms.openlocfilehash: e62c599d82f488bf1fc30ce503c271084c5ae59d
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.openlocfilehash: e110a24af6a0d49ea949db6bc30ab344c81d0f48
+ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51300229"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52619288"
 ---
-# <a name="azure-key-vault-storage-account-keys"></a>Ключи учетной записи хранения Azure Key Vault
+# <a name="azure-key-vault-managed-storage-account---cli"></a>Учетная запись хранения, управляемая с помощью Azure Key Vault, — CLI
 
 > [!NOTE]
 > [Служба хранилища Azure теперь поддерживает авторизацию AAD](https://docs.microsoft.com/azure/storage/common/storage-auth-aad). Мы рекомендуем использовать Azure Active Directory для аутентификации и авторизации в хранилище, так как пользователям не придется беспокоиться о смене ключей учетной записи хранения.

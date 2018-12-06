@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 01/26/2018
 ms.author: asmalser-msft
 ms.reviewer: asmalser
-ms.openlocfilehash: 83155e448f350618446fb22bf52e831b1cc8d499
-ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
+ms.openlocfilehash: 74bfd49fd69353e95a275f31fa0bba9e9b558227
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51636549"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52632931"
 ---
 # <a name="tutorial-configure-slack-for-automatic-user-provisioning"></a>Руководство по настройке Slack для автоматической подготовки пользователей
 
@@ -113,6 +113,14 @@ ms.locfileid: "51636549"
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../manage-apps/check-status-user-account-provisioning.md).
 
+## <a name="connector-limitations"></a>Ограничения соединителя
+
+  * При настройке атрибута **displayName** в Slack возможно следующее: 
+  * Значения не полностью уникальны (например, у двух пользователей может быть одно и то же отображаемое имя).
+  * Поддержка символов, не принадлежащих английскому языку, пробелов, разных регистров. 
+  * Допускаются следующие знаки пунктуации: точки, символы подчеркивания, дефисы, апострофы, скобки (например, **( [ { } ] )**) и разделители (например, **, / ;**).
+  * Обновление выполняется, только если в рабочей области или организации Slack **включена синхронизации профиля** и указано, что **пользователи не могут изменять свои отображаемые имена**.
+  * Атрибут **userName** в Slack должен содержать до 21 символа и иметь уникальное значение. 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/16/2016
 ms.author: cephalin
-ms.openlocfilehash: b5a06cff653007568b4ab2b44624b6314413f8a6
-ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
+ms.openlocfilehash: cb7b114836c83338f71c85f59299ecf1dc4613a9
+ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51636073"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52317625"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Настройка промежуточных сред в службе приложений Azure
 <a name="Overview"></a>
@@ -75,6 +75,7 @@ ms.locfileid: "51636073"
 * Сопоставления обработчиков
 * Настройки диагностики и мониторинга
 * Содержимое веб-заданий
+* Гибридные подключения
 
 **Непереносимые параметры**:
 
@@ -168,7 +169,7 @@ ms.locfileid: "51636073"
 <a name="Warm-up"></a>
 
 ## <a name="custom-warm-up-before-swap"></a>Пользовательский прогрев перед заменой
-Некоторые приложения могут потребовать пользовательских действий прогрева перед заменой. В элементе конфигурации `applicationInitialization` в файле web.config можно указать пользовательские действия инициализации, которые должны быть выполнены до получения запроса. Операция переключения ожидает, пока завершатся эти пользовательские действия подготовки. Ниже приведен пример фрагмента файла web.config.
+При использовании [Auto-Swap](#Auto-Swap) некоторые приложения могут потребовать пользовательских действий прогрева. В элементе конфигурации `applicationInitialization` в файле web.config можно указать пользовательские действия инициализации, которые должны быть выполнены до получения запроса. Операция переключения ожидает, пока завершатся эти пользовательские действия подготовки. Ниже приведен пример фрагмента файла web.config.
 
     <system.webServer>
         <applicationInitialization>

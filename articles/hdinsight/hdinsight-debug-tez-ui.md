@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.date: 01/17/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: ecb613dd2f624b9e0910a0ddcdf931f4b266aa96
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: c96e195d425cff640a4961e34305c1af447f6f28
+ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51036589"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52499430"
 ---
 # <a name="use-the-apache-tez-ui-to-debug-tez-jobs-on-windows-based-hdinsight"></a>Отладка заданий Tez в HDInsight для Windows с помощью пользовательского интерфейса Apache Tez
-Пользовательский интерфейс Tez можно использовать для отладки заданий Hive, которые используют Tez в качестве подсистемы выполнения. Пользовательский интерфейс Tez визуализирует задание в виде схемы связанных элементов, может выполнять детализацию каждого элемента и получать статистические данные и данные журнала.
+Пользовательский интерфейс [Apache TEZ](https://tez.apache.org/) можно использовать для отладки заданий [Apache Hive](https://hive.apache.org/), которые используют Tez в качестве подсистемы выполнения. Пользовательский интерфейс Tez визуализирует задание в виде схемы связанных элементов, может выполнять детализацию каждого элемента и получать статистические данные и данные журнала.
 
 > [!IMPORTANT]
 > Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Windows. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
@@ -32,7 +32,7 @@ ms.locfileid: "51036589"
 * Клиент удаленного рабочего стола под управлением Windows.
 
 ## <a name="understanding-apache-tez"></a>Основные сведения об Apache Tez
-Tez — это расширяемая платформа для обработки данных в Apache Hadoop, которая характеризуется более высокими скоростями по сравнению с традиционной обработкой MapReduce. Tez можно включить, добавив в запрос Hive следующий текст:
+Tez — это расширяемая платформа для обработки данных в Apache Hadoop, которая характеризуется более высокими скоростями по сравнению с традиционной обработкой [Apache Hadoop MapReduce](https://hadoop.apache.org/docs/r1.2.1/mapred_tutorial.html). Tez можно включить, добавив в запрос Hive следующий текст:
 
     set hive.execution.engine=tez;
 
@@ -134,6 +134,6 @@ Tez создает направленный ациклический граф (D
     ![Сведения о задаче](./media/hdinsight-debug-tez-ui/taskdetails.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Теперь, когда вы поняли, как работать с представлением Tez, узнайте больше об [использовании Hive в HDInsight](hadoop/hdinsight-use-hive.md).
+Теперь, когда вы поняли, как работать с представлением [Apache TEZ](https://tez.apache.org/), узнайте больше об [использовании Apache Hive в HDInsight](hadoop/hdinsight-use-hive.md).
 
-Более подробные технические сведения о Tez см. на [странице Tez на сайте Hortonworks](http://hortonworks.com/hadoop/tez/).
+Более подробные технические сведения о Tez см. на [странице Apache Tez на сайте Hortonworks](http://hortonworks.com/hadoop/tez/).
