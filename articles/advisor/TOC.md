@@ -19,7 +19,7 @@
 # Сопутствующие материалы
 ## [Центр безопасности](https://azure.microsoft.com/services/security-center/)
 ## [Помощник по базам данных SQL](https://azure.microsoft.com/documentation/articles/sql-database-advisor/)
-## [Кэш Redis](https://azure.microsoft.com/documentation/articles/cache-configure/#redis-cache-advisor)
+## [Кэш Azure для Redis](https://azure.microsoft.com/documentation/articles/cache-configure/#redis-cache-advisor)
 ## [Служба приложений](https://azure.microsoft.com/documentation/articles/app-service-best-practices/)
 
 # Ресурсы
