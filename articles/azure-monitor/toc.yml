@@ -85,7 +85,7 @@ items:
       - name: Данные журнала
         href: platform/data-security.md
       - name: Обработка персональных данных
-        href: ../log-analytics/log-analytics-personal-data-mgmt.md?toc=/azure/azure-monitor/toc.json
+        href: platform/personal-data-mgmt.md
       - name: Сбор и хранение данных приложений
         href: ../application-insights/app-insights-data-retention-privacy.md?toc=/azure/azure-monitor/toc.json
   - name: Аналитика
@@ -115,9 +115,9 @@ items:
     - name: Переход на портал OMS
       items:
       - name: Обзор
-        href: ../log-analytics/log-analytics-oms-portal-transition.md?toc=/azure/azure-monitor/toc.json
+        href: platform/oms-portal-transition.md
       - name: Часто задаваемые вопросы
-        href: ../log-analytics/log-analytics-oms-portal-faq.md?toc=/azure/azure-monitor/toc.json
+        href: platform/oms-portal-faq.md
   - name: Реагирование на инциденты
     items:
     - name: Оповещения
@@ -153,7 +153,7 @@ items:
       - name: Роли, разрешения и безопасность
         href: ../monitoring-and-diagnostics/monitoring-roles-permissions-security.md?toc=/azure/azure-monitor/toc.json
       - name: Рабочие области
-        href: ../log-analytics/log-analytics-manage-access.md?toc=/azure/azure-monitor/toc.json
+        href: platform/manage-access.md
       - name: ПРИЛОЖЕНИЯ
         href: ../application-insights/app-insights-resources-roles-access-control.md?toc=/azure/azure-monitor/toc.json
       - name: IP-адреса;
@@ -166,8 +166,6 @@ items:
         href: ../application-insights/app-insights-web-monitor-performance.md?toc=/azure/azure-monitor/toc.json
       - name: Разделение среды разработки, тестирования и рабочей среды
         href: ../application-insights/app-insights-separate-resources.md?toc=/azure/azure-monitor/toc.json
-      - name: Отслеживание приложений с несколькими компонентами
-        href: ../application-insights/app-insights-monitor-multi-role-apps.md?toc=/azure/azure-monitor/toc.json
       - name: Как работать с Application Insights
         href: ../application-insights/app-insights-how-do-i.md?toc=/azure/azure-monitor/toc.json
     - name: Управление рабочими областями
@@ -181,7 +179,7 @@ items:
         - name: Использование Azure PowerShell
           href: learn/quick-create-workspace-posh.md
       - name: Удаление рабочей области
-        href: ../log-analytics/log-analytics-manage-del-workspace.md?toc=/azure/azure-monitor/toc.json
+        href: platform/delete-workspace.md
       - name: Архитектура для поставщиков служб
         href: platform/service-providers.md
   - name: Сбор данных
@@ -562,7 +560,7 @@ items:
         - name: Цены
           href: insights/network-performance-monitor-pricing-faq.md
         - name: Часто задаваемые вопросы
-          href: ../log-analytics/log-analytics-network-performance-monitor-faq.md?toc=/azure/azure-monitor/toc.json
+          href: insights/network-performance-monitor-faq.md
     - name: Мониторинг работоспособности виртуальных машин
       items:
       - name: Azure Monitor для виртуальных машин
@@ -647,7 +645,7 @@ items:
     - name: Power BI
       items:
       - name: Экспорт данных журналов
-        href: ../log-analytics/log-analytics-powerbi.md?toc=/azure/azure-monitor/toc.json
+        href: platform/powerbi.md
       - name: Экспорт данных приложения
         href: ../application-insights/app-insights-export-power-bi.md?toc=/azure/azure-monitor/toc.json
     - name: Отправка данных в Grafana
@@ -838,7 +836,7 @@ items:
     - name: Сведения о плане "Корпоративный"
       href: ../application-insights/app-insights-pricing-enterprise-details.md?toc=/azure/azure-monitor/toc.json
     - name: Управление объемом и хранением данных журналов
-      href: ../log-analytics/log-analytics-manage-cost-storage.md?toc=/azure/azure-monitor/toc.json
+      href: platform/manage-cost-storage.md
     - name: Анализ использования данных
       href: ../log-analytics/log-analytics-usage.md?toc=/azure/azure-monitor/toc.json
   - name: Автоматизация
@@ -1010,9 +1008,9 @@ items:
     href: https://stackoverflow.com/search?q=monitoring
   - name: Примеры кода
     href: https://azure.microsoft.com/resources/samples/?service=monitor
-ms.openlocfilehash: ee2702e834ce782f5b690cbfc78d300efa1ee602
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: dc89f1634040b7002e58206aaf6d1ade6965b2a8
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52968175"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53017908"
