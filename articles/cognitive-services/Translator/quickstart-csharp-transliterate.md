@@ -10,14 +10,14 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 11/21/2018
 ms.author: erhopf
-ms.openlocfilehash: d032471ef588e3ae415915e5b4d817ca5738888a
-ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
+ms.openlocfilehash: d67fbdad32612f23b1de31f7d2a1d7b4dee3b68e
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52678375"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52889146"
 ---
-# <a name="quickstart-transliterate-text-with-the-translator-text-rest-api-c"></a>Краткое руководство. Транслитерация текста с помощью REST API перевода текстов (C#)
+# <a name="quickstart-use-the-translator-text-api-to-transliterate-text-using-c"></a>Краткое руководство. Транслитерация текста с помощью API перевода текстов и C#
 
 Из этого краткого руководства вы узнаете, как транслитерировать (преобразовывать) текст из одного набора символов в другой с помощью .NET Core (C#) и REST API перевода текстов. В приведенном примере японский текст транслитерируется в текст на латинице.
 

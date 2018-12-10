@@ -11,12 +11,12 @@ ms.author: andrela
 ms.reviewer: v-masebo
 manager: craigg
 ms.date: 11/20/2018
-ms.openlocfilehash: afa975a593fd962050c9f894ec091d7f64579138
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 5c12bd54c0ea96ac915fedab94f03cf044330dcf
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52332619"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52723301"
 ---
 # <a name="quickstart-use-java-to-query-an-azure-sql-database"></a>Краткое руководство. Создание запросов к базе данных SQL Azure с использованием Java
 
@@ -44,13 +44,13 @@ ms.locfileid: "52332619"
 
 ## <a name="create-the-project"></a>Создание проекта
 
-1. В терминале создайте проект Maven с именем *sqltest*.
+1. В командной строке создайте проект Maven с именем *sqltest*.
 
     ```bash
     mvn archetype:generate "-DgroupId=com.sqldbsamples" "-DartifactId=sqltest" "-DarchetypeArtifactId=maven-archetype-quickstart" "-Dversion=1.0.0" --batch-mode
     ```
 
-1. Перейдите в каталог *sqltest* и откройте *pom.xml* с помощью предпочитаемого текстового редактора. Добавьте **Microsoft JDBC Driver для SQL Server** к зависимостям проекта, используя следующий код:
+1. Перейдите в папку *sqltest* и откройте *pom.xml* с помощью предпочитаемого текстового редактора. Добавьте **Microsoft JDBC Driver для SQL Server** к зависимостям проекта, используя следующий код:
 
     ```xml
     <dependency>
@@ -93,10 +93,10 @@ ms.locfileid: "52332619"
         public static void main(String[] args) {
 
             // Connect to database
-            String hostName = "your_server.database.windows.net";
-            String dbName = "your_database";
-            String user = "your_username";
-            String password = "your_password";
+            String hostName = "your_server.database.windows.net"; // update me
+            String dbName = "your_database"; // update me
+            String user = "your_username"; // update me
+            String password = "your_password"; // update me
             String url = String.format("jdbc:sqlserver://%s:1433;database=%s;user=%s;password=%s;encrypt=true;"
                 + "hostNameInCertificate=*.database.windows.net;loginTimeout=30;", hostName, dbName, user, password);
             Connection connection = null;
@@ -139,7 +139,7 @@ ms.locfileid: "52332619"
 
 ## <a name="run-the-code"></a>Выполнение кода
 
-1. Запустите программу в командной строке.
+1. Запустите приложение в командной строке.
 
     ```bash
     mvn package -DskipTests

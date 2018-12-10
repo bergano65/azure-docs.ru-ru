@@ -11,15 +11,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 10/24/2018
+ms.date: 11/30/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 42a25d6c13fe1052f4aa14696a66c9c7f1fb4d65
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 8c31e410713e4ba8ce6443170ba5ad5c2e740419
+ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685690"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52677939"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство. Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -174,6 +174,10 @@ az ad group member list -g $groupid
 ### <a name="reconfigure-azure-ad-administrator"></a>Перенастройка администратора Azure AD
 
 Ранее вы назначили для управляемого удостоверения роль администратора Azure AD в Базе данных SQL. Вы не можете использовать это удостоверение для интерактивного входа (для добавления пользователей базы данных), поэтому вам нужно использовать настоящего пользователя Azure AD. Чтобы сделать это, выполните шаги, описанные в разделе [Подготовка администратора Azure Active Directory для сервера базы данных SQL Azure](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server). 
+
+> [!IMPORTANT]
+> После добавления не удаляйте этот администратор Azure AD для базы данных SQL, только если вы не хотите полностью отключить доступ Azure AD к базе данных SQL (из всех учетных записей Azure AD).
+> 
 
 ### <a name="grant-permissions-to-azure-active-directory-group"></a>Предоставление разрешений группе Azure Active Directory
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Получение списка поддерживаемых языков, C# — API перевода текстов
+title: Краткое руководство. Получение списка поддерживаемых языков с помощью C# и API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, а также результаты поиска по словарю с помощью API перевода текстов.
 services: cognitive-services
@@ -8,16 +8,16 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
-ms.date: 06/15/2018
+ms.date: 11/26/2018
 ms.author: erhopf
-ms.openlocfilehash: cc5d9efd017ec2045cc94bbad98e26e8b95e071d
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 54896e96658286297d90f488bd02f11da505ec50
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52334692"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52889095"
 ---
-# <a name="quickstart-get-supported-languages-with-the-translator-text-rest-api-c"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью API перевода текстов (C#)
+# <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages-using-c"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью C# и API перевода текстов
 
 Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, а также результаты поиска по словарю с помощью API перевода текстов.
 
@@ -28,7 +28,7 @@ ms.locfileid: "52334692"
 * [ПАКЕТ SDK .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
 * [пакет NuGet .NET для JSON](https://www.nuget.org/packages/Newtonsoft.Json/);
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
-* ключ подписки Azure для службы "Речь".
+* ключ подписки Azure для API перевода текстов.
 
 ## <a name="create-a-net-core-project"></a>Создание проекта .NET Core
 

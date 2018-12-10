@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: bec94e2017660e9804bbc232e0a3163afdaafcb6
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 0c5554ca929cbd5231c99e568e987e6e0b7cf6eb
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51277772"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52844844"
 ---
 # <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Руководство. Сброс пароля Azure AD в окне входа
 
@@ -101,23 +101,29 @@ ms.locfileid: "51277772"
 
 Инструкции по использованию этой функции пользователи могут найти в статье [Я не помню свой пароль Azure AD](../user-help/active-directory-passwords-update-your-own-password.md#reset-password-at-sign-in).
 
-## <a name="common-issues"></a>Распространенные проблемы
+Журнал аудита Azure AD включают в себя сведения об IP-адресе и типе клиента (ClientType), на котором произошел сброс пароля.
+
+![Пример сброса пароля на экране входа в журнале аудита Azure AD](media/tutorial-sspr-windows/windows-sspr-azure-ad-audit-log.png)
+
+## <a name="limitations"></a>Ограничения
 
 При тестировании этой функции с помощью Hyper-V ссылка "Сброс пароля" не отображается.
 
 * Перейдите на виртуальную машину, которая используется для тестирования, щелкните **Вид** и снимите флажок **Расширенный сеанс**.
 
-При тестировании этой функции с помощью удаленного рабочего стола ссылка "Сброс пароля" не отображается.
+При тестировании этой функции с помощью удаленного рабочего стола или расширенного сеанса виртуальной машины ссылка "Сброс пароля" не отображается.
 
 * Сброс пароля сейчас не поддерживается на удаленном рабочем столе.
 
-Если экран блокировки Windows отключен с использованием раздела реестра или групповой политики, функция **Сброс пароля** будет недоступна.
-
 Если согласно политике нужно нажать CTRL+ALT+DEL или уведомления на экране блокировки отключены, **сброс пароля** не будет работать.
 
-Журнал аудита Azure AD включают в себя сведения об IP-адресе и типе клиента (ClientType), на котором произошел сброс пароля.
+Следующие параметры политики влияют на возможность сброса паролей:
 
-![Пример сброса пароля на экране входа в журнале аудита Azure AD](media/tutorial-sspr-windows/windows-sspr-azure-ad-audit-log.png)
+   * HideFastUserSwitching со значением Enabled (Вкл.) или 1;
+   * DontDisplayLastUserName со значением Enabled (Вкл.) или 1;
+   * NoLockScreen со значением Enabled (Вкл.) или 1;
+   * EnableLostMode, установленный на устройстве;
+   * файл Explorer.exe, замененный на файл пользовательской оболочки.
 
 Если компьютеры с Windows 10 защищены прокси-сервером или брандмауэром, следует разрешить трафик HTTPS (443) на сайты passwordreset.microsoftonline.com и ajax.aspnetcdn.com.
 

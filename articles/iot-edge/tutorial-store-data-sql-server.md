@@ -5,16 +5,16 @@ services: iot-edge
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 10/19/2018
+ms.date: 12/01/2018
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 95041ca77930d87bff6ea31e2eab89a6634cfcf5
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: b0d26704d287f2e02541cc667250af8e8005f864
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52442970"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52833999"
 ---
 # <a name="tutorial-store-data-at-the-edge-with-sql-server-databases"></a>Руководство по хранению данных в пограничной системе с помощью баз данных SQL Server
 
@@ -36,7 +36,7 @@ ms.locfileid: "52442970"
 
 Устройство Azure IoT Edge.
 
-* В качестве устройства Azure IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для устройств [Linux](quickstart-linux.md) или [Windows](quickstart.md).
+* В качестве устройства Azure IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для устройств [Linux](quickstart-linux.md) или [Windows](quickstart.md). 
 
 Облачные ресурсы.
 
@@ -97,9 +97,13 @@ ms.locfileid: "52442970"
    | Указание имени модуля | Назовите модуль **sqlFunction**. |
    | Указание репозитория изображений Docker для модуля | Репозиторий изображений включает в себя имя реестра контейнеров и имя образа контейнера. Образ контейнера предварительно заполняется на последнем шаге. Замените **localhost:5000** на значение сервера входа из реестра контейнеров Azure. Вы можете извлечь сервер входа на странице "Обзор" реестра контейнеров на портале Azure. Последняя строка выглядит следующим образом: \<имя реестра\>.azurecr.io/sqlFunction. |
 
-   В окне VS Code будет загружена рабочая область решения IoT Edge, которая состоит из папки \.vscode, папки модулей, файла шаблона манифеста развертывания и файла \.env. 
+   Окно VS Code загружает рабочую область решения IoT Edge. 
    
-4. При создании решения IoT Edge VS Code предлагает ввести учетные данные реестра в файл с расширением \.env. Этот файл игнорируется Git. Расширение IoT Edge использует его позже для предоставления устройству IoT Edge доступа к реестру. Откройте файл с расширением \.env. 
+4. Откройте ENV-файл с расширением в рабочей области решения IoT Edge\. 
+
+   При создании решения IoT Edge VS Code предлагает ввести учетные данные реестра в файл с расширением \.env. Этот файл игнорируется Git. Расширение IoT Edge использует его позже для предоставления устройству IoT Edge доступа к реестру. 
+
+   У вас не будет ENV-файла, если вы не предоставили реестр контейнеров на предыдущем шаге, но приняли по умолчанию localhost:5000\.
 
 5. В ENV-файле предоставьте среде выполнения IoT Edge учетные данные реестра, чтобы она могла получить доступ к образам модулей. Найдите переменные **CONTAINER_REGISTRY_USERNAME** и **CONTAINER_REGISTRY_PASSWORD** и вставьте свои учетные данные после знака равенства: 
 
@@ -207,6 +211,16 @@ ms.locfileid: "52442970"
 
 7. Сохраните файл **sqlFunction.cs**. 
 
+8. Откройте файл **sqlFunction.csproj**.
+
+9. Найдите группу ссылок на пакеты и добавьте новую для SqlClient. 
+
+   ```csproj
+   <PackageReference Include="System.Data.SqlClient" Version="4.5.1"/>
+   ```
+
+10. Сохраните файл **sqlFunction.csproj**.
+
 ## <a name="add-a-sql-server-container"></a>Добавление контейнера SQL Server
 
 [Манифест развертывания](module-composition.md) объявляет модули, которые среда выполнения IoT Edge установит на вашем устройстве IoT Edge. Вы добавили код для создания настраиваемого модуля службы "Функции" в предыдущем разделе, но модуль SQL Server уже создан. Необходимо сообщить среде выполнения IoT Edge о том, что его нужно включить и настроить на устройстве. 
@@ -225,15 +239,15 @@ ms.locfileid: "52442970"
 
    ```json
    "sql": {
-       "version": "1.0",
-       "type": "docker",
-       "status": "running",
-       "restartPolicy": "always",
-       "env":{},
-       "settings": {
-           "image": "",
-           "createOptions": ""
-       }
+     "version": "1.0",
+     "type": "docker",
+     "status": "running",
+     "restartPolicy": "always",
+     "env":{},
+     "settings": {
+       "image": "",
+       "createOptions": ""
+     }
    }
    ```
 
@@ -244,19 +258,19 @@ ms.locfileid: "52442970"
 
       ```json
       "env": {
-         "ACCEPT_EULA": {"value": "Y"},
-         "SA_PASSWORD": {"value": "Strong!Passw0rd"}
-       },
-       "settings": {
-          "image": "microsoft/mssql-server-windows-developer",
-          "createOptions": {
-              "HostConfig": {
-                  "Mounts": [{"Target": "C:\\\\mssql","Source": "sqlVolume","Type": "volume"}],
-                  "PortBindings": {
-                      "1433/tcp": [{"HostPort": "1401"}]
-                  }
-              }
+        "ACCEPT_EULA": {"value": "Y"},
+        "SA_PASSWORD": {"value": "Strong!Passw0rd"}
+      },
+      "settings": {
+        "image": "microsoft/mssql-server-windows-developer",
+        "createOptions": {
+          "HostConfig": {
+            "Mounts": [{"Target": "C:\\\\mssql","Source": "sqlVolume","Type": "volume"}],
+            "PortBindings": {
+              "1433/tcp": [{"HostPort": "1401"}]
+            }
           }
+        }
       }
       ```
 
@@ -264,19 +278,19 @@ ms.locfileid: "52442970"
 
       ```json
       "env": {
-         "ACCEPT_EULA": {"value": "Y"},
-         "SA_PASSWORD": {"value": "Strong!Passw0rd"}
-       },
-       "settings": {
-          "image": "mcr.microsoft.com/mssql/server:latest",
-          "createOptions": {
-              "HostConfig": {
-                  "Mounts": [{"Target": "/var/opt/mssql","Source": "sqlVolume","Type": "volume"}],
-                  "PortBindings": {
-                      "1433/tcp": [{"HostPort": "1401"}]
-                  }
-              }
+        "ACCEPT_EULA": {"value": "Y"},
+        "SA_PASSWORD": {"value": "Strong!Passw0rd"}
+      },
+      "settings": {
+        "image": "mcr.microsoft.com/mssql/server:latest",
+        "createOptions": {
+          "HostConfig": {
+            "Mounts": [{"Target": "/var/opt/mssql","Source": "sqlVolume","Type": "volume"}],
+            "PortBindings": {
+              "1433/tcp": [{"HostPort": "1401"}]
+            }
           }
+        }
       }
       ```
 
@@ -295,7 +309,7 @@ ms.locfileid: "52442970"
     docker login -u <ACR username> <ACR login server>
     ```
     
-    Появится запрос на ввод пароля. Вставьте пароль в командной строке (он будет скрыт в целях безопасности) и нажмите клавишу **ВВОД**. 
+    Появится запрос на ввод пароля. Вставьте пароль в командную строку (он будет скрыт в целях безопасности) и нажмите клавишу **ВВОД**. 
 
     ```csh/sh
     Password: <paste in the ACR password and press enter>
@@ -322,11 +336,11 @@ ms.locfileid: "52442970"
 
    ![Создание развертывания для одного устройства](./media/tutorial-store-data-sql-server/create-deployment.png)
 
-6. В проводнике перейдите к папке **config** в решении и выберите **deployment.json**. Щелкните **Select Edge Deployment Manifest** (Выбрать манифест развертывания Edge). 
+6. В проводнике файлов перейдите к папке **config** в решении и выберите **deployment.amd64**. Щелкните **Select Edge Deployment Manifest** (Выбрать манифест развертывания Edge). 
 
 Если развертывание завершено успешно, сообщение о подтверждении будет выведено в выходных данных VS Code. 
 
-Кроме того, можно проверить, все ли модули отображаются и запущены на своем устройстве. На своем устройстве IoT Edge выполните следующую команду, чтобы увидеть состояние модулей. Это может занять несколько минут.
+Обновите состояние вашего устройства в разделе Visual Studio Code "Устройства Центра Интернета вещей Azure". Новые модули указаны, и через несколько минут после установки и запуска контейнеров они начнут потоковое выполнение. Кроме того, можно проверить, все ли модули отображаются и запущены на своем устройстве. На своем устройстве IoT Edge выполните следующую команду, чтобы увидеть состояние модулей. 
 
    ```cmd/sh
    iotedge list
@@ -334,11 +348,11 @@ ms.locfileid: "52442970"
 
 ## <a name="create-the-sql-database"></a>Создание базы данных SQL
 
-При применении манифеста развертывания на устройстве вы получаете три выполняемых модуля. Модуль tempSensor создает данные имитируемой среды. Модуль sqlFunction принимает данные и форматирует их для базы данных. 
+При применении манифеста развертывания на устройстве вы получаете три выполняемых модуля. Модуль tempSensor создает данные имитируемой среды. Модуль sqlFunction принимает данные и форматирует их для базы данных. В этом разделе показано, как настроить базу данных SQL для хранения данных температуры, полученных с датчиков. 
 
-В этом разделе показано, как настроить базу данных SQL для хранения данных температуры, полученных с датчиков. 
+Выполните следующие команды на устройстве IoT Edge. Эти команды подключаются к модулю **sql**, запущенному на устройстве, и который создает базу данных и таблицу для хранения отправляемых ему данных температуры. 
 
-1. В программе командной строки подключитесь к базе данных. 
+1. В программе командной строки устройства IoT Edge подключитесь к базе данных. 
    * Контейнер Windows:
    
       ```cmd

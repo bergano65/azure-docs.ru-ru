@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/23/2018
+ms.date: 12/04/2018
 ms.author: sethm
 ms.reviewer: ''
-ms.openlocfilehash: 0a46344893c8ad62bd85f9abb84d434c0331d507
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 61562450d484f34385b4e6e111bf62326eaca159
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49984202"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52888381"
 ---
 # <a name="validate-azure-identity"></a>Проверка удостоверения Azure 
 Средство проверки готовности Azure Stack (AzsReadinessChecker) позволяет убедиться, что ваша служба Azure Active Directory (Azure AD) готова к работе с Azure Stack. Прежде чем развертывать Azure Stack, проверьте решение для работы с удостоверениями Azure.  
@@ -48,7 +48,7 @@ ms.locfileid: "49984202"
 **В среде Azure Active Directory:**
  - Определите учетную запись Azure AD, которую вы намерены использовать для Azure Stack и убедитесь, что она предоставляет права глобального администратора Azure Active Directory.
  - Определите имя клиента Azure AD. Это имя должно совпадать с *основным* доменным именем в Azure Active Directory. Например, *contoso.onmicrosoft.com*. 
- - Определите окружение (AzureEnvironement), которое вы намерены использовать: *AzureCloud*, *AzureGermanCloud* или *AzureChinaCloud*.
+ - Задайте параметр AzureEnvironement, который будет использоваться. Поддерживаемые значения имени параметра среды: AzureCloud, AzureChinaCloud или AzureUSGovernment в зависимости от используемой подписки Azure.
 
 ## <a name="validate-azure-identity"></a>Проверка удостоверения Azure 
 1. На компьютере, который соответствует всем предварительным требованиям, откройте командную строку PowerShell с правами администратора и выполните следующую команду, чтобы установить AzsReadinessChecker:  
@@ -59,10 +59,10 @@ ms.locfileid: "49984202"
    > `$serviceAdminCredential = Get-Credential serviceadmin@contoso.onmicrosoft.com -Message "Enter Credentials for Service Administrator of Azure Active Directory Tenant"` 
 
 3. В командной строке PowerShell выполните приведенную ниже команду, чтобы начать проверку Azure AD. 
-   - Для параметра AzureEnvironement укажите значение *AzureCloud*, *AzureGermanCloud* или *AzureChinaCloud*.  
+   - Укажите значение имени среды для AzureEnvironment. Поддерживаемые значения имени параметра среды: AzureCloud, AzureChinaCloud или AzureUSGovernment в зависимости от используемой подписки Azure.  
    - Задайте правильное имя клиента Azure Active Directory вместо *contoso.onmicrosoft.com*. 
 
-   > `Invoke-AzsAzureIdentityValidation -AADServiceAdministrator $serviceAdminCredential -AzureEnvironment AzureCloud -AADDirectoryTenantName contoso.onmicrosoft.com`
+   > `Invoke-AzsAzureIdentityValidation -AADServiceAdministrator $serviceAdminCredential -AzureEnvironment <environment name> -AADDirectoryTenantName contoso.onmicrosoft.com`
 4. Когда средство завершит работу, просмотрите выходные данные. Убедитесь, что система соответствует требованиям для установки (**OK**). При успешном завершении проверки отобразится следующий результат: 
  
 ````PowerShell

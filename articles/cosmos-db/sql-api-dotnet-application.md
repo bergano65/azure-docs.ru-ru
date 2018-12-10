@@ -1,24 +1,22 @@
 ---
-title: Руководство по ASP.NET MVC для Azure Cosmos DB. Разработка веб-приложения | Документация Майкрософт
+title: Руководство по ASP.NET MVC для Azure Cosmos DB. Разработка веб-приложения
 description: Это руководство по MVC для ASP.NET поможет вам создать веб-приложение MVC с использованием Azure Cosmos DB. С помощью этого руководства по ASP NET MVC вы сможете сохранить файл JSON и получить доступ к данным из приложения "Список дел", размещенного на веб-сайтах Azure.
 keywords: руководство по asp.net mvc, разработка веб-приложений, веб-приложение mvc, пошаговое руководство asp net mvc
 services: cosmos-db
 author: SnehaGunda
-manager: kfile
 ms.service: cosmos-db
 ms.component: cosmosdb-sql
-ms.workload: azure-vs
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 08/03/2017
 ms.author: sngun
 ms.custom: devcenter, vs-azure
-ms.openlocfilehash: 22856b6e9b543504db66bce074d32d9ad70f5238
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 8230c2ba8c7fdb10d7e37a317d4eeb5abb120d60
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51247676"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52868724"
 ---
 # <a name="_Toc395809351"></a>Руководство по ASP.NET MVC. Разработка веб-приложений в Azure Cosmos DB
 
@@ -61,7 +59,7 @@ ms.locfileid: "51247676"
 [!INCLUDE [keys](../../includes/cosmos-db-keys.md)]
 
 <br/>
-Теперь рассмотрим создание нового приложения ASP.NET MVC с нуля. 
+ Теперь рассмотрим создание нового приложения ASP.NET MVC с нуля. 
 
 ## <a name="_Toc395637762"></a>Шаг 2. Создание нового приложения ASP.NET MVC
 

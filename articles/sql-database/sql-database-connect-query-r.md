@@ -11,13 +11,13 @@ author: dphansen
 ms.author: davidph
 ms.reviewer: ''
 manager: cgronlun
-ms.date: 11/07/2018
-ms.openlocfilehash: 382ac23ea4c8e0ec54314bb754c00a8e6e43e9f6
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.date: 11/30/2018
+ms.openlocfilehash: fc5398b4ffb0b9310b6ab13561830d8d3db7a611
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51300971"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52725749"
 ---
 # <a name="quickstart-use-machine-learning-services-with-r-in-azure-sql-database-preview"></a>Краткое руководство: использование Служб машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия)
 
@@ -31,7 +31,7 @@ ms.locfileid: "51300971"
 
 Общедоступная предварительная версия Служб машинного обучения (с использованием R) в Базе данных SQL не включена по умолчанию. Отправьте письмо в корпорацию Майкрософт по адресу [sqldbml@microsoft.com](mailto:sqldbml@microsoft.com), чтобы зарегистрироваться для получения общедоступной предварительной версии.
 
-Как только вы зарегистрируетесь в программе, корпорация Майкрософт подключит вас к общедоступной предварительной версии и перенесет существующую базу данных или создаст новые базы данных в службе с поддержкой R.
+Как только вы зарегистрируетесь в программе, корпорация Майкрософт подключит вас к общедоступной предварительной версии и перенесет существующую базу данных или создаст новую базу данных в службе с поддержкой R.
 
 Службы машинного обучения (с использованием R) в Базе данных SQL в настоящее время доступны только в модели приобретения на основе виртуальных ядер в уровнях обслуживания **Общее назначение** и **Критически важный для бизнеса** для одиночных и пулов баз данных. В этой начальной общедоступной предварительной версии не поддерживаются уровни обслуживания **Гипермасштабирование** и **Управляемый экземпляр**. Не следует использовать Службы машинного обучения с R для рабочих нагрузок в общедоступной предварительной версии.
 
@@ -51,11 +51,10 @@ ms.locfileid: "51300971"
 
 ## <a name="different-from-sql-server"></a>Отличия от SQL Server
 
-Функциональные возможности Служб машинного обучения (с использованием R) в Базе данных SQL Azure похожи на возможности [Служб машинного обучения SQL Server](https://review.docs.microsoft.com/sql/advanced-analytics/what-is-sql-server-machine-learning). Но между ними существуют некоторые отличия.
+Функциональные возможности Служб машинного обучения (с использованием R) в Базе данных SQL Azure похожи на возможности [Служб машинного обучения SQL Server](https://docs.microsoft.com/sql/advanced-analytics/what-is-sql-server-machine-learning). Но между ними существуют некоторые отличия.
 
 - Только R. В настоящее время Python не поддерживается.
 - Нет необходимости настраивать `external scripts enabled` через `sp_configure`.
-- Нет необходимости давать разрешение на выполнение скриптов пользователям.
 - Пакеты нужно устанавливать с помощью **sqlmlutils**.
 - Внешнее управление ресурсами не предусмотрено. Ресурсы R — это определенный процент ресурсов SQL в зависимости от уровня обслуживания.
 
@@ -82,16 +81,26 @@ ms.locfileid: "51300971"
 
 1. Если вы получаете какие-либо ошибки, это может быть связано с тем, что общедоступная предварительная версия Служб машинного обучения (с использованием R) не включена для базы данных SQL. Узнайте, как зарегистрироваться для получения общедоступной предварительной версии, выше.
 
+## <a name="grant-permissions"></a>Предоставление разрешений
+
+Если вы являетесь администратором, можете настроить автоматическое выполнение внешнего кода. Другим пользователям нужно предоставить разрешение.
+
+Прежде чем выполнить команду, замените `<username>` допустимым именем пользователя для входа в базу данных.
+
+```sql
+GRANT EXECUTE ANY EXTERNAL SCRIPT TO <username>
+```
+
 ## <a name="basic-r-interaction"></a>Основное взаимодействие с R
 
 Код R можно выполнять в Базе данных SQL двумя способами:
 
-+ Добавьте скрипт R в качестве аргумента системной хранимой процедуры [sp_execute_external_script](https://docs.microsoft.com/sql//relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md).
-+ Из [удаленного R-клиента](https://review.docs.microsoft.com/sql/advanced-analytics/r/set-up-a-data-science-client) подключитесь к базе данных SQL и выполните код, используя Базу данных SQL в качестве контекста вычисления.
++ Добавьте скрипт R в качестве аргумента системной хранимой процедуры [sp_execute_external_script](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql).
++ Из [удаленного R-клиента](https://docs.microsoft.com/sql/advanced-analytics/r/set-up-a-data-science-client) подключитесь к базе данных SQL и выполните код, используя Базу данных SQL в качестве контекста вычисления.
 
 Следующее упражнение сфокусировано на первой модели взаимодействия: как передать код R в хранимую процедуру.
 
-1. Запустите простой скрипт, чтобы увидеть, как скрипт R может выполняться в базе данных SQL.
+1. Запустите простой скрипт, чтобы увидеть, как скрипт R выполняется в базе данных SQL.
 
     ```sql
     EXECUTE sp_execute_external_script
@@ -119,7 +128,7 @@ ms.locfileid: "51300971"
 
 ## <a name="inputs-and-outputs"></a>Входные и выходные данные
 
-По умолчанию [sp_execute_external_script](https://review.docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) принимает один набор входных данных, который обычно можно указать в форме допустимого SQL-запроса. Другие типы входных данных могут передаваться как переменные SQL.
+По умолчанию [sp_execute_external_script](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql) принимает один набор входных данных, который обычно можно указать в форме допустимого SQL-запроса. Другие типы входных данных могут передаваться как переменные SQL.
 
 Хранимая процедура возвращает один фрейм данных R как выходные данные, но можно также выводить скаляры и модели в виде переменных. Например, можно вывести обученную модель в виде двоичной переменной и передать ее в инструкцию T-SQL INSERT, чтобы записать эту модель в таблицу. Вы также можете создавать графики (в двоичном формате) или скаляры (отдельные значения, такие как дата и время, время, затраченное на обучение модели, и т. д.).
 
@@ -284,7 +293,7 @@ ms.locfileid: "51300971"
     - Предоставьте входные данные для использования при обучении модели.
 
     > [!TIP]
-    > Если вам нужно переподготовить линейные модели, мы рекомендуем это руководство, в котором описан процесс установки модели с помощью rxLinMod: [Fitting Linear Models using RevoScaleR](https://docs.microsoft.com/r-server/r/how-to-revoscaler-linear-model) (Подготовка линейных моделей с помощью RevoScaleR)
+    > Если вам нужно переподготовить линейные модели, мы рекомендуем это руководство, в котором описан процесс установки модели с помощью rxLinMod: [Fitting Linear Models using RevoScaleR](https://docs.microsoft.com/machine-learning-server/r/how-to-revoscaler-linear-model) (Подготовка линейных моделей с помощью RevoScaleR)
 
     Для построения модели необходимо определить формулу внутри кода R и передать данные в качестве входного параметра.
 
@@ -337,7 +346,7 @@ ms.locfileid: "51300971"
     WHERE model_name = 'default model'
     ```
 
-4. Как правило, выходные данные R из хранимой процедуры [sp_execute_external_script](https://review.docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) ограничиваются одним фреймом данных.
+4. Как правило, выходные данные R из хранимой процедуры [sp_execute_external_script](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql) ограничиваются одним фреймом данных.
 
     Однако в дополнение к фрейму данных можно возвращать выходные данные других типов, таких как скаляры.
 
@@ -381,7 +390,7 @@ ms.locfileid: "51300971"
     VALUES (40), (50), (60), (70), (80), (90), (100)
     ```
 
-    В этом примере, так как модель основана на алгоритме **rxLinMod**, предоставленном в составе пакета **RevoScaleR**, вызовите функцию [rxPredict](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxpredict), а не универсальную функцию R `predict`.
+    В этом примере, так как модель основана на алгоритме **rxLinMod**, предоставленном в составе пакета **RevoScaleR**, вызовите функцию [rxPredict](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxpredict), а не универсальную функцию R `predict`.
 
     ```sql
     DECLARE @speedmodel varbinary(max) = 
@@ -410,7 +419,7 @@ ms.locfileid: "51300971"
     + После извлечения модели из таблицы вызовите функцию `unserialize` для модели.
 
         > [!TIP] 
-        > Кроме того, проверьте новые [функции сериализации](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxserializemodel), предоставляемые RevoScaleR, которые поддерживают оценку в реальном времени.
+        > Кроме того, проверьте новые [функции сериализации](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxserializemodel), предоставляемые RevoScaleR, которые поддерживают оценку в реальном времени.
     + Примените функцию `rxPredict` с соответствующими аргументами к модели и предоставьте новые входные данные.
 
     + В этом примере функция `str` добавляется на этапе тестирования, чтобы проверить схему данных, возвращаемых из R. Оператор можно удалить позже.
@@ -439,7 +448,7 @@ ms.locfileid: "51300971"
     R -e "install.packages('RODBCext', repos='https://cran.microsoft.com')"
     ```
 
-    Если вы получаете сообщение об ошибке, такое как **, R не распознается как внутренняя или внешняя команда, исполняемая программа или пакетный файл.**  — это, скорее всего, означает, что путь к R.exe не включен в вашу переменную среды **PATH** в Windows. Вы можете либо добавить каталог в переменную среды, либо перейти к каталогу в командной строке (например, `cd C:\Program Files\R\R-3.5.1\bin`).
+    Если вы получаете сообщение об ошибке, например "R не является внутренней или внешней командой, исполняемой программой или пакетным файлом", скорее всего, это означает, что путь к R.exe не включен в вашу переменную среды **PATH** в Windows. Вы можете либо добавить каталог в переменную среды, либо перейти к каталогу в командной строке (например, `cd C:\Program Files\R\R-3.5.1\bin`), прежде чем выполнить команду.
 
 1. Используйте команду **R CMD INSTALL** для установки **sqlmlutils**. Укажите путь к каталогу, в который вы скачали ZIP-файл, и имя ZIP-файла. Например: 
 
@@ -523,7 +532,7 @@ ms.locfileid: "51300971"
 
 Дополнительные сведения о Службах машинного обучения содержатся в указанных ниже статьях о Службах машинного обучения SQL Server. Хотя эти статьи предназначены для SQL Server, большая часть информации также применима к Службам машинного обучения (с использованием R) в Базе данных SQL Azure.
 
-- [Службы машинного обучения SQL Server](https://review.docs.microsoft.com/sql/advanced-analytics/what-is-sql-server-machine-learning)
-- [Руководство по изучению аналитики в базе данных с помощью R в SQL Server](https://review.docs.microsoft.com/sql/advanced-analytics/tutorials/sqldev-in-database-r-for-sql-developers)
-- [Комплексное пошаговое руководство по обработке и анализу данных для R и SQL Server](https://review.docs.microsoft.com/sql/advanced-analytics/tutorials/walkthrough-data-science-end-to-end-walkthrough)
-- [Руководство по использованию функций RevoScaleR R с данными SQL Server](https://review.docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-data-science-deep-dive-using-the-revoscaler-packages)
+- [Службы машинного обучения SQL Server](https://docs.microsoft.com/sql/advanced-analytics/what-is-sql-server-machine-learning)
+- [Руководство по изучению аналитики в базе данных с помощью R в SQL Server](https://docs.microsoft.com/sql/advanced-analytics/tutorials/sqldev-in-database-r-for-sql-developers)
+- [Комплексное пошаговое руководство по обработке и анализу данных для R и SQL Server](https://docs.microsoft.com/sql/advanced-analytics/tutorials/walkthrough-data-science-end-to-end-walkthrough)
+- [Руководство по использованию функций RevoScaleR R с данными SQL Server](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-data-science-deep-dive-using-the-revoscaler-packages)

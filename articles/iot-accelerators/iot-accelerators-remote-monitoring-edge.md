@@ -9,12 +9,12 @@ services: iot-accelerators
 ms.date: 11/08/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 329bc41555f2def0e2b7001a7b445cd3de16d439
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: 51c19447e115426bd39d39fedc86193c8f091df1
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51826399"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52843314"
 ---
 # <a name="tutorial-detect-anomalies-at-the-edge-with-the-remote-monitoring-solution-accelerator"></a>Руководство. Обнаружение аномалий на пограничных устройствах с помощью акселератора решений для удаленного мониторинга
 
@@ -24,16 +24,26 @@ ms.locfileid: "51826399"
 
 Компания Contoso хочет развернуть интеллектуальный пограничный модуль, подключенный к станку-качалке, который обнаруживает температурные аномалии. Еще один пограничный модуль отправляет предупреждения в решение удаленного мониторинга. При получении предупреждения оператор Contoso может отправить на вызов специалиста по техническому обслуживанию. Contoso также может настроить автоматическое действие, например отправку сообщения электронной почты, в случаях, когда в решение поступает предупреждение.
 
-В этом руководстве в качестве устройства IoT Edge используется локальный компьютер разработки под управлением Windows. На нем устанавливаются модули Edge для имитации станка-качалки и для обнаружения температурных аномалий.
+На схеме ниже показаны ключевые компоненты сценария, который рассматривается в этом руководстве:
+
+![Обзор](media/iot-accelerators-remote-monitoring-edge/overview.png)
 
 Из этого руководства вы узнаете, как:
 
 >[!div class="checklist"]
 > * добавить устройство IoT Edge в решение;
-> * создать манифест Edge;
-> * импортировать пакеты, определяющие модули, которые будут выполняться на устройстве;
+> * Создание манифеста Edge
+> * импортировать манифесты в виде пакетов, определяющих модули, которые будут выполняться на устройстве;
 > * развернуть пакет на устройстве IoT Edge;
 > * просматривать предупреждения, поступающие с устройства.
+
+На устройстве IoT Edge выполняется следующее:
+
+* Среда выполнения получает пакет, а затем в ней устанавливаются модули.
+* Модуль Stream Analytics обнаруживает температурные аномалии в станке-качалке и отправляет команды для устранения проблемы.
+* Модуль Stream Analytics пересылает отфильтрованные данные в акселератор решений.
+
+При работе с этим руководством в качестве устройства IoT Edge используется виртуальная машина Linux. На ней устанавливается модуль Edge для имитации станка-качалки.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -111,54 +121,23 @@ ms.locfileid: "51826399"
     az vm create \
       --resource-group IoTEdgeDevices \
       --name EdgeVM \
-      --image Canonical:UbuntuServer:16.04-LTS:latest \
+      --image microsoft_iot_edge:iot_edge_vm_ubuntu:ubuntu_1604_edgeruntimeonly:latest \
       --admin-username azureuser \
       --generate-ssh-keys \
       --size Standard_B1ms
     ```
 
-    Запишите общедоступный IP-адрес — он понадобится вам на следующем шаге при подключении по протоколу SSH.
-
-1. Чтобы подключиться к виртуальной машине по протоколу SSH, в Cloud Shell выполните следующую команду:
+1. Чтобы настроить среду выполнения Edge с использованием строки подключения устройства, выполните следующую команду, указав строку подключения устройства, которую вы записали ранее:
 
     ```azurecli-interactive
-    ssh azureuser@{vm IP address}
+    az vm run-command invoke \
+      --resource-group IoTEdgeDevices \
+      --name EdgeVM \
+      --command-id RunShellScript \
+      --scripts 'sudo /etc/iotedge/configedge.sh "YOUR_DEVICE_CONNECTION_STRING"'
     ```
 
-1. После подключения к виртуальной машине выполните следующие команды, чтобы настроить репозиторий на виртуальной машине:
-
-    ```azurecli-interactive
-    curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > ./microsoft-prod.list
-    sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
-    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-    sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/
-    ```
-
-1. Чтобы установить контейнер и среду выполнения Edge на виртуальной машине, выполните следующие команды:
-
-    ```azurecli-interactive
-    sudo apt-get update
-    sudo apt-get install moby-engine
-    sudo apt-get install moby-cli
-    sudo apt-get update
-    sudo apt-get install iotedge
-    ```
-
-1. Чтобы настроить в среде выполнения Edge строку подключения устройства, внесите изменения в файл конфигурации:
-
-    ```azurecli-interactive
-    sudo nano /etc/iotedge/config.yaml
-    ```
-
-    Назначьте строку подключения устройства переменной **device_connection_string**, сохраните изменения и закройте редактор.
-
-1. Перезапустите среду выполнения Edge, чтобы использовать новую конфигурацию:
-
-    ```azurecli-interactive
-    sudo systemctl restart iotedge
-    ```
-
-1. Теперь можно выйти из сеанса SSH и закрыть Cloud Shell.
+    Обязательно заключите строку подключения в двойные кавычки.
 
 Вы только что установили и настроили среду выполнения IoT Edge на устройстве под управлением Linux. Далее в руководстве объясняется, как развернуть на этом устройстве модули IoT Edge с помощью решения для удаленного мониторинга.
 

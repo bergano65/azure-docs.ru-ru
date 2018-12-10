@@ -1,21 +1,19 @@
 ---
-title: Общие сведения об API Gremlin для Azure Cosmos DB | Документация Майкрософт
+title: 'Общие сведения об Azure Cosmos DB: API Gremlin'
 description: Узнайте, как можно использовать базу данных Azure Cosmos DB, чтобы хранить, запрашивать и передавать массивные графы с минимальной задержкой с помощью языка запросов графа Gremlin в Apache TinkerPop.
 services: cosmos-db
 author: LuisBosquez
-manager: kfile
 ms.service: cosmos-db
 ms.component: cosmosdb-graph
-ms.devlang: na
 ms.topic: overview
 ms.date: 09/05/2018
 ms.author: lbosq
-ms.openlocfilehash: 809dead23a12f761d46c1be6a24951b8762dc1e1
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: f2ca118e137104c6dddd2945b7b88b2f535621eb
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49092224"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52849239"
 ---
 # <a name="introduction-to-azure-cosmos-db-gremlin-api"></a>Общие сведения об Azure Cosmos DB: API Gremlin
 

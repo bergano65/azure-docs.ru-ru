@@ -1,352 +1,234 @@
 ---
-title: Краткое руководство. Поиск других вариантов перевода, Java — API перевода текстов
+title: Краткое руководство. Получение других вариантов перевода с помощью Java и API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве вы узнаете, как искать варианты перевода и контекстуальные термины, используя API перевода текстов и Java.
+description: Из этого краткого руководства вы узнаете, как с помощью API перевода текстов и Java найти варианты перевода определенного термина и примеры их использования.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
-ms.date: 06/21/2018
+ms.date: 12/03/2018
 ms.author: erhopf
-ms.openlocfilehash: 4d828161408a06175c917affb0eef9290b575051
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 2c5517b470e46423631f6a63a24ceccf5de0a919
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50416670"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52888843"
 ---
-# <a name="quickstart-find-alternate-translations-with-the-translator-text-rest-api-java"></a>Краткое руководство. Поиск других вариантов перевода с помощью REST API перевода текстов (Java)
+# <a name="quickstart-use-the-translator-text-api-to-get-alternate-translations-using-java"></a>Краткое руководство. Получение других вариантов перевода с помощью API перевода текстов (Java)
 
-Из этого краткого руководства вы узнаете, как с помощью API перевода текстов найти варианты перевода определенного термина и примеры их использования.
+Из этого краткого руководства вы узнаете, как с помощью API перевода текстов и Java найти варианты перевода определенного термина и примеры их использования.
+
+Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом API перевода текстов. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для компиляции и запуска этого кода вам потребуется [пакет JDK 7 или 8](https://aka.ms/azure-jdks). При желании можно воспользоваться интегрированной средой разработки Java, но обычный текстовый редактор также подойдет.
+* [JDK 7 или более поздней версии](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* [Gradle](https://gradle.org/install/)
+* ключ подписки Azure для API перевода текстов.
 
-Чтобы использовать API перевода текстов, вам также потребуется ключ подписки. Сведения об этом см. в статье [Регистрация для использования API перевода текстов](translator-text-how-to-signup.md).
+## <a name="initialize-a-project-with-gradle"></a>Инициализация проекта с помощью Gradle
 
-## <a name="dictionary-lookup-request"></a>Запрос на поиск в словаре
+Начнем с создания рабочего каталога для этого проекта. Из командной строки (или терминала) выполните приведенную ниже команду.
 
-Выполнив следующие действия, можно найти варианты перевода слова с помощью метода [поиска в словаре](./reference/v3-0-dictionary-lookup.md).
+```console
+mkdir alt-translation-sample
+cd alt-translation-sample
+```
 
-1. Создайте проект Java в любом редакторе кода.
-2. Добавьте указанный ниже код.
-3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
-4. Запустите программу.
+После этого вы инициализируете проект Gradle. Что самое важное, эта команда создает необходимый файл сборки для Gradle (`build.gradle.kts`), который используется во время выполнения для создания и настройки приложения. Выполните следующую команду из рабочего каталога.
+
+```console
+gradle init --type basic
+```
+
+Когда появится запрос на выбор **предметно-ориентированного языка**, выберите **Kotlin**.
+
+## <a name="configure-the-build-file"></a>Настройка файла сборки
+
+Найдите файл `build.gradle.kts` и откройте его с помощью любой интегрированной среды разработки или текстового редактора. Затем скопируйте и вставьте в файл эту конфигурацию сборки:
+
+```
+plugins {
+    java
+    application
+}
+application {
+    mainClassName = "AltTranslation"
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile("com.squareup.okhttp:okhttp:2.5.0")
+    compile("com.google.code.gson:gson:2.8.5")
+}
+```
+
+Примите во внимание, что этот пример зависим от OkHttp для HTTP-запросов и Gson для обработки и анализа JSON. Дополнительные сведения о конфигурациях сборки см. в разделе [Creating New Gradle Builds](https://guides.gradle.org/creating-new-gradle-builds/) (Создание сборок Gradle).
+
+## <a name="create-a-java-file"></a>Создание файла Java
+
+Создайте папку для примера приложения. Выполните следующую команду из рабочего каталога:
+
+```console
+mkdir -p src/main/java
+```
+
+Затем в этой папке создайте файл с именем `AltTranslation.java`.
+
+## <a name="import-required-libraries"></a>Импорт обязательных библиотек
+
+Откройте файл `AltTranslation.java` и добавьте следующие инструкции импорта:
 
 ```java
 import java.io.*;
 import java.net.*;
 import java.util.*;
-import javax.net.ssl.HttpsURLConnection;
+import com.google.gson.*;
+import com.squareup.okhttp.*;
+```
 
-/*
- * Gson: https://github.com/google/gson
- * Maven info:
- *     groupId: com.google.code.gson
- *     artifactId: gson
- *     version: 2.8.1
- */
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
-/* NOTE: To compile and run this code:
-1. Save this file as DictionaryLookup.java.
-2. Run:
-    javac DictionaryLookup.java -cp .;gson-2.8.1.jar -encoding UTF-8
-3. Run:
-    java -cp .;gson-2.8.1.jar DictionaryLookup
-*/
+## <a name="define-variables"></a>Определение переменных
 
-public class DictionaryLookup {
+Сначала создайте открытый класс для проекта.
 
-// **********************************************
-// *** Update or verify the following values. ***
-// **********************************************
+```java
+public class AltTranslation {
+  // All project code goes here...
+}
+```
 
-// Replace the subscriptionKey string value with your valid subscription key.
-    static String subscriptionKey = "ENTER KEY HERE";
+Добавьте эти строки в класс `AltTranslation`. Вы заметите, что кроме `api-version` в `url` добавлены два дополнительных параметра. Эти параметры используются для настройки входных и выходных данных перевода. В этом примере мы используем английский и испанский языки: `en` и `es`.
 
-    static String host = "https://api.cognitive.microsofttranslator.com";
-    static String path = "/dictionary/lookup?api-version=3.0";
+```java
+String subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
+String url = "https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0&from=en&to=es";
+```
 
-    static String params = "&from=en&to=fr";
+## <a name="create-a-client-and-build-a-request"></a>Создание клиента и выполнение запроса
 
-    static String text = "great";
+Добавьте приведенную ниже строку в класс `AltTranslation` для создания экземпляра `OkHttpClient`.
 
-    public static class RequestBody {
-        String Text;
+```java
+// Instantiates the OkHttpClient.
+OkHttpClient client = new OkHttpClient();
+```
 
-        public RequestBody(String text) {
-            this.Text = text;
-        }
-    }
+Затем создайте запрос POST. Текст для перевода можно легко изменить.
 
-    public static String Post (URL url, String content) throws Exception {
-        HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
-        connection.setRequestMethod("POST");
-        connection.setRequestProperty("Content-Type", "application/json");
-        connection.setRequestProperty("Content-Length", content.length() + "");
-        connection.setRequestProperty("Ocp-Apim-Subscription-Key", subscriptionKey);
-        connection.setRequestProperty("X-ClientTraceId", java.util.UUID.randomUUID().toString());
-        connection.setDoOutput(true);
+```java
+// This function performs a POST request.
+public String Post() throws IOException {
+    MediaType mediaType = MediaType.parse("application/json");
+    RequestBody body = RequestBody.create(mediaType,
+            "[{\n\t\"Text\": \"Pineapples\"\n}]");
+    Request request = new Request.Builder()
+            .url(url).post(body)
+            .addHeader("Ocp-Apim-Subscription-Key", subscriptionKey)
+            .addHeader("Content-type", "application/json").build();
+    Response response = client.newCall(request).execute();
+    return response.body().string();
+}
+```
 
-        DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
-        byte[] encoded_content = content.getBytes("UTF-8");
-        wr.write(encoded_content, 0, encoded_content.length);
-        wr.flush();
-        wr.close();
+## <a name="create-a-function-to-parse-the-response"></a>Создание функции для анализа ответа
 
-        StringBuilder response = new StringBuilder ();
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
-        String line;
-        while ((line = in.readLine()) != null) {
-            response.append(line);
-        }
-        in.close();
+Эта простая функция анализирует и упорядочивает ответ JSON от службы "Перевод текстов".
 
-        return response.toString();
-    }
+```java
+// This function prettifies the json response.
+public static String prettify(String json_text) {
+    JsonParser parser = new JsonParser();
+    JsonElement json = parser.parse(json_text);
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    return gson.toJson(json);
+}
+```
 
-    public static String DictionaryLookup () throws Exception {
-        URL url = new URL (host + path + params);
+## <a name="put-it-all-together"></a>Сборка
 
-        List<RequestBody> objList = new ArrayList<RequestBody>();
-        objList.add(new RequestBody(text));
-        String content = new Gson().toJson(objList);
+Последний шаг — это сделать запрос и получить ответ. Добавьте следующие строки в функцию:
 
-        return Post(url, content);
-    }
-
-    public static String prettify(String json_text) {
-        JsonParser parser = new JsonParser();
-        JsonElement json = parser.parse(json_text);
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        return gson.toJson(json);
-    }
-
-    public static void main(String[] args) {
-        try {
-            String response = DictionaryLookup ();
-            System.out.println (prettify (response));
-        }
-        catch (Exception e) {
-            System.out.println (e);
-        }
+```java
+public static void main(String[] args) {
+    try {
+        AltTranslation altTranslationRequest = new AltTranslation();
+        String response = altTranslationRequest.Post();
+        System.out.println(prettify(response));
+    } catch (Exception e) {
+        System.out.println(e);
     }
 }
 ```
 
-## <a name="dictionary-lookup-response"></a>Результат поиска в словаре
+## <a name="run-the-sample-app"></a>Запуск примера приложения
 
-В случае успешного выполнения ответ возвращается в формате JSON, как показано в примере ниже:
+Теперь все готово к запуску примера приложения. В командной строке (или сеансе терминала) перейдите в основную часть каталога проекта и выполните следующую команду.
+
+```console
+gradle build
+```
+
+## <a name="sample-response"></a>Пример ответа
 
 ```json
 [
   {
-    "normalizedSource": "great",
-    "displaySource": "great",
+    "normalizedSource": "pineapples",
+    "displaySource": "pineapples",
     "translations": [
       {
-        "normalizedTarget": "grand",
-        "displayTarget": "grand",
-        "posTag": "ADJ",
-        "confidence": 0.2783,
+        "normalizedTarget": "piñas",
+        "displayTarget": "piñas",
+        "posTag": "NOUN",
+        "confidence": 0.7016,
         "prefixWord": "",
         "backTranslations": [
           {
-            "normalizedText": "great",
-            "displayText": "great",
-            "numExamples": 15,
-            "frequencyCount": 34358
+            "normalizedText": "pineapples",
+            "displayText": "pineapples",
+            "numExamples": 5,
+            "frequencyCount": 158
           },
           {
-            "normalizedText": "big",
-            "displayText": "big",
-            "numExamples": 15,
-            "frequencyCount": 21770
+            "normalizedText": "cones",
+            "displayText": "cones",
+            "numExamples": 5,
+            "frequencyCount": 13
           },
-...
+          {
+            "normalizedText": "piña",
+            "displayText": "piña",
+            "numExamples": 3,
+            "frequencyCount": 5
+          },
+          {
+            "normalizedText": "ganks",
+            "displayText": "ganks",
+            "numExamples": 2,
+            "frequencyCount": 3
+          }
         ]
       },
       {
-        "normalizedTarget": "super",
-        "displayTarget": "super",
-        "posTag": "ADJ",
-        "confidence": 0.1514,
+        "normalizedTarget": "ananás",
+        "displayTarget": "ananás",
+        "posTag": "NOUN",
+        "confidence": 0.2984,
         "prefixWord": "",
         "backTranslations": [
           {
-            "normalizedText": "super",
-            "displayText": "super",
-            "numExamples": 15,
-            "frequencyCount": 12023
-          },
-          {
-            "normalizedText": "great",
-            "displayText": "great",
-            "numExamples": 15,
-            "frequencyCount": 10931
-          },
-...
+            "normalizedText": "pineapples",
+            "displayText": "pineapples",
+            "numExamples": 2,
+            "frequencyCount": 16
+          }
         ]
-      },
-...
-    ]
-  }
-]
-```
-
-## <a name="dictionary-examples-request"></a>Запрос на примеры из словаря
-
-Выполнив следующие действия, можно найти в словаре примеры использования термина в контексте с помощью метода [примеров из словаря](./reference/v3-0-dictionary-examples.md).
-
-1. Создайте проект Java в любом редакторе кода.
-2. Добавьте указанный ниже код.
-3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
-4. Запустите программу.
-
-```java
-import java.io.*;
-import java.net.*;
-import java.util.*;
-import javax.net.ssl.HttpsURLConnection;
-
-/*
- * Gson: https://github.com/google/gson
- * Maven info:
- *     groupId: com.google.code.gson
- *     artifactId: gson
- *     version: 2.8.1
- */
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-/* NOTE: To compile and run this code:
-1. Save this file as DictionaryExamples.java.
-2. Run:
-    javac DictionaryExamples.java -cp .;gson-2.8.1.jar -encoding UTF-8
-3. Run:
-    java -cp .;gson-2.8.1.jar DictionaryExamples
-*/
-
-public class DictionaryExamples {
-
-// **********************************************
-// *** Update or verify the following values. ***
-// **********************************************
-
-// Replace the subscriptionKey string value with your valid subscription key.
-    static String subscriptionKey = "ENTER KEY HERE";
-
-    static String host = "https://api.cognitive.microsofttranslator.com";
-    static String path = "/dictionary/examples?api-version=3.0";
-
-    static String params = "&from=en&to=fr";
-
-    static String text = "great";
-    static String translation = "formidable";
-
-    public static class RequestBody {
-        String Text;
-        String Translation;
-
-        public RequestBody(String text, String translation) {
-            this.Text = text;
-            this.Translation = translation;
-        }
-    }
-
-    public static String Post (URL url, String content) throws Exception {
-        HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
-        connection.setRequestMethod("POST");
-        connection.setRequestProperty("Content-Type", "application/json");
-        connection.setRequestProperty("Content-Length", content.length() + "");
-        connection.setRequestProperty("Ocp-Apim-Subscription-Key", subscriptionKey);
-        connection.setRequestProperty("X-ClientTraceId", java.util.UUID.randomUUID().toString());
-        connection.setDoOutput(true);
-
-        DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
-        byte[] encoded_content = content.getBytes("UTF-8");
-        wr.write(encoded_content, 0, encoded_content.length);
-        wr.flush();
-        wr.close();
-
-        StringBuilder response = new StringBuilder ();
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
-        String line;
-        while ((line = in.readLine()) != null) {
-            response.append(line);
-        }
-        in.close();
-
-        return response.toString();
-    }
-
-    public static String DictionaryExamples () throws Exception {
-        URL url = new URL (host + path + params);
-
-        List<RequestBody> objList = new ArrayList<RequestBody>();
-        objList.add(new RequestBody(text, translation));
-        String content = new Gson().toJson(objList);
-
-        return Post(url, content);
-    }
-
-    public static String prettify(String json_text) {
-        JsonParser parser = new JsonParser();
-        JsonElement json = parser.parse(json_text);
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        return gson.toJson(json);
-    }
-
-    public static void main(String[] args) {
-        try {
-            String response = DictionaryExamples ();
-            System.out.println (prettify (response));
-        }
-        catch (Exception e) {
-            System.out.println (e);
-        }
-    }
-}
-```
-
-## <a name="dictionary-examples-response"></a>Результат поиска примеров из словаря
-
-В случае успешного выполнения ответ возвращается в формате JSON, как показано в примере ниже:
-
-```json
-[
-  {
-    "normalizedSource": "great",
-    "normalizedTarget": "formidable",
-    "examples": [
-      {
-        "sourcePrefix": "You have a ",
-        "sourceTerm": "great",
-        "sourceSuffix": " expression there.",
-        "targetPrefix": "Vous avez une expression ",
-        "targetTerm": "formidable",
-        "targetSuffix": "."
-      },
-      {
-        "sourcePrefix": "You played a ",
-        "sourceTerm": "great",
-        "sourceSuffix": " game today.",
-        "targetPrefix": "Vous avez été ",
-        "targetTerm": "formidable",
-        "targetSuffix": "."
-      },
-...
+      }
     ]
   }
 ]
@@ -358,3 +240,11 @@ public class DictionaryExamples {
 
 > [!div class="nextstepaction"]
 > [Примеры для Java на сайте GitHub](https://aka.ms/TranslatorGitHub?type=&language=java)
+
+## <a name="see-also"></a>См. также
+
+* [перевод текста](quickstart-java-translate.md);
+* [транслитерация текста](quickstart-java-transliterate.md);
+* [определение языка по входным данным](quickstart-java-detect.md);
+* [получение списка поддерживаемых языков](quickstart-java-languages.md);
+* [определение длины предложения на основе входных данных](quickstart-java-sentences.md).

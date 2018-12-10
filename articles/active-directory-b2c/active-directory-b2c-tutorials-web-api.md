@@ -5,17 +5,17 @@ services: active-directory-b2c
 author: davidmu1
 manager: mtillman
 ms.author: davidmu
-ms.date: 01/23/2018
+ms.date: 11/30/2018
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.component: B2C
-ms.openlocfilehash: 2b70ed174331b88f9afc9aa30d14a585986496a5
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: bd900071bbcd894d4fe71e0f8a265d98348eb262
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45604347"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52726412"
 ---
 # <a name="tutorial-grant-access-to-an-aspnet-web-api-from-a-web-app-using-azure-active-directory-b2c"></a>Руководство. Предоставление доступа к веб-API ASP.NET из веб-приложения с помощью Azure Active Directory B2C
 
@@ -120,7 +120,7 @@ ms.locfileid: "45604347"
 
 Пример решения состоит из двух проектов.
 
-**Пример веб-приложения (TaskWebApp):** веб-приложение для создания и изменения списка задач. Веб-приложение использует **политику регистрации или входа** для регистрации или входа в систему с помощью адреса электронной почты.
+**Пример веб-приложения (TaskWebApp):** веб-приложение для создания и изменения списка задач. Веб-приложение использует поток **регистрации или входа** пользователя для регистрации пользователей или их входа в систему с помощью адреса электронной почты.
 
 **Пример веб-API (TaskService):** веб-API, который поддерживает функции создания, чтения, обновления и удаления списка задач. Веб-API защищен с помощью Azure AD B2C и вызывается веб-приложением.
 
@@ -162,10 +162,10 @@ ms.locfileid: "45604347"
     <add key="ida:ClientId" value="<The Application ID for your web API obtained from the Azure portal>"/>
     ```
 
-4. Обновите параметр политики, указав имя, сгенерированное при создании политики регистрации и входа.
+4. Обновите параметр потока пользователя, указав имя, сгенерированное при создании потока регистрации и входа пользователя.
 
     ```C#
-    <add key="ida:SignUpSignInPolicyId" value="B2C_1_SiUpIn" />
+    <add key="ida:SignUpSignInUserFlowId" value="B2C_1_SiUpIn" />
     ```
 
 5. Настройте параметр области в соответствии с тем, что вы создали на портале.

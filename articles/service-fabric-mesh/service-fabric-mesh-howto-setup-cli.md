@@ -5,38 +5,87 @@ services: service-fabric-mesh
 keywords: ''
 author: tylermsft
 ms.author: twhitney
-ms.date: 07/26/2018
+ms.date: 11/28/2018
 ms.topic: get-started-article
 ms.service: service-fabric-mesh
 manager: timlt
-ms.openlocfilehash: c30f4b9de279f8c02b7f6bc7fa7d9765972899b1
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.openlocfilehash: dc37ff85deccdd5a1f8703033d300d878f9a7e4c
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50977437"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52887990"
 ---
-# <a name="set-up-the-service-fabric-mesh-cli"></a>Настройка CLI для Сетки Service Fabric
-Интерфейс командной строки (CLI) вложенной службы "Сетка Service Fabric" требуется для развертывания и администрирования ресурсов в этой службе. 
+# <a name="set-up-service-fabric-mesh-cli"></a>Настройка CLI для Сетки Service Fabric
+Интерфейс командной строки (CLI) вложенной службы "Сетка Service Fabric" требуется для развертывания и администрирования ресурсов локально в этой службе. 
+
+Существует три вида интерфейса командной строки, который может использоваться. Они перечислены в таблице, приведенной ниже. 
+
+| Модуль CLI | Целевое окружение |  ОПИСАНИЕ | 
+|---|---|---|
+| az mesh | Служба "Сетка Azure Service Fabric" | Основной интерфейс командной строки для развертывания приложений и управления ресурсами в среде сетки Azure Service Fabric. 
+| sfctl | Локальные кластеры | Служба Service Fabric CLI позволяет развертывать и тестировать ресурсы Service Fabric для локальных кластеров.  
+| Интерфейс командной строки Maven | Локальные кластеры и Сетка Azure Service Fabric | Оболочка "az mesh" и "sfctl", которая позволяет разработчикам Java использовать знакомый интерфейс командной строки для локальной работы и разработки в Azure.  
 
 В режиме предварительной версии CLI для Сетки Azure Service Fabric записывается как расширение для Azure CLI. Вы можете установить его в Azure Cloud Shell или локально в Azure CLI. 
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)] 
 
-## <a name="install-the-service-fabric-mesh-cli-locally"></a>Установка интерфейса командной строки Сетки Azure Service Fabric локально
-Если вы решили установить и использовать CLI локально, используйте Azure CLI версии 2.0.43 и выше. Чтобы узнать версию, выполните команду `az --version`. Если необходимо установить или обновить CLI, ознакомьтесь с [этим разделом][azure-cli-install].
+## <a name="install-the-azure-service-fabric-mesh-cli"></a>Установка интерфейса командной строки Сетки Azure Service Fabric
+1. Необходимо установить Azure CLI версии 2.0.43 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если необходимо установить или обновить CLI, ознакомьтесь с [этим разделом][azure-cli-install].
 
-Установите модуль расширения CLI для Сетки Azure Service Fabric. 
+2. Установите модуль расширения CLI для Сетки Azure Service Fabric. 
 
-```azurecli-interactive
-az extension add --name mesh
+    ```azurecli-interactive
+    az extension add --name mesh
+    ```
+
+3. Обновите существующий модуль службы "Сетка Azure Service Fabric", используя следующую команду.
+
+    ```azurecli-interactive
+    az extension update --name mesh
+    ```
+
+## <a name="install-the-service-fabric-cli-sfctl"></a>Установка интерфейса командной строки Service Fabric (sfctl) 
+
+Следуйте инструкциям раздела [Настройка интерфейса командной строки Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli). Модуль **sfctl** можно использовать для развертывания приложений на основе модели ресурсов для кластеров Service Fabric на локальном компьютере. 
+
+## <a name="install-the-maven-cli"></a>Установка интерфейса командной строки Maven 
+
+Чтобы использовать интерфейс командной строки Maven, необходимо установить на компьютере: 
+
+* [Java](https://www.azul.com/downloads/zulu/)
+* [Maven](http://maven.apache.org/download.cgi)
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* Интерфейс командной строки Сетка Azure (az mesh) для Сетки Azure Service Fabric 
+* SFCTL (sfctl) для локальных кластеров 
+
+Интерфейс командной строки Maven для Service Fabric все еще находится в предварительной версии. 
+
+Чтобы использовать подключаемый модуль Maven в приложении Maven Java, добавьте следующий фрагмент кода в файл pom.xml:
+
+```XML
+<project>
+  ...
+  <build>
+    ...
+    <plugins>
+      ...
+      <plugin>
+        <groupId>com.microsoft.azure</groupId>
+          <artifactId>azure-sf-maven-plugin</artifactId>
+          <version>0.1.0</version>
+          <configuration>
+            ...
+          </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
 ```
 
-Чтобы обновить существующий модуль службы "Сетка Azure Service Fabric", выполните следующую команду.
+Дополнительные сведения см. в разделе [Руководство по интерфейсу командной строки Maven](service-fabric-mesh-reference-maven.md).
 
-```azurecli-interactive
-az extension update --name mesh
-```
 ## <a name="next-steps"></a>Дополнительная информация
 
 Вы также можете настроить [среду разработки Windows](service-fabric-mesh-howto-setup-developer-environment-sdk.md).

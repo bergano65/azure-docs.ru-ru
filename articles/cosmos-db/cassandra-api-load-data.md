@@ -1,30 +1,32 @@
 ---
-title: Загрузка примера данных в таблицу Azure Cosmos DB Cassandra API с помощью приложения Java | Документы Майкрософт
-description: Данная статья описывает загрузку примера данных пользователя в таблицу в учетной записи Azure Cosmos DB Cassandra API с помощью приложения java.
-services: cosmos-db
+title: Руководство. Загрузка примера данных в таблицу Cassandra API в Azure Cosmos DB с помощью приложения Java
+description: Данное руководство описывает, как в Azure Cosmos DB загрузить пример данных пользователя в таблицу учетной записи API Cassandra с помощью приложения Java.
 author: kanshiG
 ms.service: cosmos-db
 ms.component: cosmosdb-cassandra
 ms.topic: tutorial
-ms.date: 09/24/2018
+ms.date: 12/03/2018
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: e116dbf1d49fed1a47b830f9a57cd77a33b7ea9c
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+Customer intent: As a developer, I want to build a Java application to load data to a Cassandra API table in Azure Cosmos DB so that customers can store and manage the key/value data and utilize the global distribution, elastic scaling, multi-master, and other capabilities offered by Azure Cosmos DB.
+ms.openlocfilehash: fad6d34a3d3712a036e0275717754f75d5314aae
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50740726"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52863659"
 ---
-# <a name="tutorial-load-sample-data-into-an-azure-cosmos-db-cassandra-api-table"></a>Краткое руководство. Загрузка примера данных в таблицу API Cassandra в Azure Cosmos DB
+# <a name="tutorial-load-sample-data-into-a-cassandra-api-table-in-azure-cosmos-db"></a>Руководство. Загрузка примера данных в таблицу API Cassandra в Azure Cosmos DB
 
-Данное руководство описывает, как загрузить пример данных пользователя в таблицу в учетной записи API Cassandra Azure для Cosmos DB с помощью приложения Java. Приложение Java использует [драйвер Java](https://github.com/datastax/java-driver) и загружает данные пользователя, например идентификатор пользователя, имя пользователя, город пользователя. 
+Как у разработчика у вас должно быть приложение, использующее пары "ключ-значение". Можно использовать учетную запись Cassandra API в Azure Cosmos DB для хранения данных "ключ-значение" и управления ими. Данное руководство описывает, как в Azure Cosmos DB загрузить пример данных пользователя в таблицу в учетной записи API Cassandra с помощью приложения Java. Приложение Java использует [драйвер Java](https://github.com/datastax/java-driver) и загружает данные пользователя, например, идентификатор пользователя, имя пользователя, город пользователя. 
 
 В рамках этого руководства рассматриваются следующие задачи:
 
 > [!div class="checklist"]
 > * Загрузка данных в таблицу Cassandra
 > * Запуск приложения
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -34,7 +36,7 @@ ms.locfileid: "50740726"
 
 Чтобы загрузить данные в таблицу API Cassandra, выполните следующие шаги:
 
-1. Откройте файл "UserRepository.java" в папке "src\main\java\com\azure\cosmosdb\cassandra" и добавьте код для вставки полей user_id и user_name user_bcity в таблицу:
+1. Откройте файл "UserRepository.java" в папке "src\main\java\com\azure\cosmosdb\cassandra" и добавьте код для вставки полей user_id, user_name и user_bcity в таблицу.
 
    ```java
    /**
@@ -74,7 +76,7 @@ ms.locfileid: "50740726"
 
 ## <a name="run-the-app"></a>Запуск приложения
 
-Откройте командную строку или окно терминала и измените путь к папке, в которой вы создали проект. Выполните команду "mvn clean install", чтобы создать файл cosmosdb-cassandra-examples.jar в целевой папке и запустить приложение. 
+Откройте командную строку или окно терминала и измените путь к папке, в которой был создан проект. Выполните команду "mvn clean install", чтобы в целевой папке создать файл cosmosdb-cassandra-examples.jar и запустить приложение. 
 
 ```bash
 cd "cassandra-demo"
@@ -88,7 +90,7 @@ java -cp target/cosmosdb-cassandra-examples.jar com.azure.cosmosdb.cassandra.exa
     
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы узнали, как загрузить демонстрационные данные в учетную запись Azure Cosmos DB Cassandra API. Теперь вы можете перейти к следующей статье:
+В этом руководстве вы узнали, как в Azure Cosmos DB загрузить демонстрационные данные в учетную запись Cassandra API. Теперь вы можете перейти к следующей статье:
 
 > [!div class="nextstepaction"]
 > [Запрос данных из учетной записи Cassandra API](cassandra-api-query-data.md)

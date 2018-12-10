@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/14/2018
 ms.author: sethm
-ms.openlocfilehash: 2fa062621e551ce7182facc45ec84b39d4c2dad7
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: a770c88b294de24eb9e0f482681038e4d36b1d6f
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49078755"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52874606"
 ---
 # <a name="vpn-gateway-configuration-settings-for-azure-stack"></a>Параметры конфигурации VPN-шлюза для Azure Stack
 
@@ -185,7 +185,7 @@ New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg
 |Алгоритмы шифрования и хэширования (шифрование)     | GCMAES256|
 |Алгоритмы шифрования и хэширования (аутентификация) | GCMAES256|
 |Срок действия SA (время)  | 27 000 секунд  |
-|Срок действия SA (байты) | 33 553 408     |
+|Срок действия SA (килобайты) | 33 553 408     |
 |Полная безопасность пересылки (PFS) |Нет<sup>см. примечание 1</sup> |
 |Обнаружение неиспользуемых одноранговых узлов | Поддерживаются|  
 

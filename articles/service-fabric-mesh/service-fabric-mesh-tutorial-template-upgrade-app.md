@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/18/2018
 ms.author: ryanwi
 ms.custom: mvc, devcenter
-ms.openlocfilehash: c82e0cd5bd6a15ff33f51b4e88f68c13080f595d
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f617be79cb61932f79728feef76f056ce72ae0ab
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46967971"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52891135"
 ---
 # <a name="tutorial-upgrade-a-service-fabric-application-running-in-service-fabric-mesh"></a>Руководство. Обновление приложения Service Fabric, работающего в Сетке Service Fabric
 
@@ -30,7 +30,7 @@ ms.locfileid: "46967971"
 
 > [!div class="checklist"]
 > * изменение конфигураций приложения;
-> * обновление приложения, работающего в Сетке Service Fabric.
+> * обновление приложения, работающего в Сетке Service Fabric;
 
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
@@ -47,7 +47,7 @@ ms.locfileid: "46967971"
 
 * Если у вас еще нет Azure подписки до начала работы, можно [создать бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-* Откройте [Azure Cloud Shell](service-fabric-mesh-howto-setup-cli.md) или [установите Azure CLI и интерфейс командной строки Сетки Azure Service Fabric на локальный компьютер](service-fabric-mesh-howto-setup-cli.md#install-the-service-fabric-mesh-cli-locally).
+* Откройте [Azure Cloud Shell](service-fabric-mesh-howto-setup-cli.md) или [установите Azure CLI и интерфейс командной строки Сетки Azure Service Fabric на локальный компьютер](service-fabric-mesh-howto-setup-cli.md#install-the-azure-service-fabric-mesh-cli).
 
 ## <a name="upgrade-application-configurations"></a>Обновление конфигураций приложения
 
@@ -59,7 +59,7 @@ ms.locfileid: "46967971"
 az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-name todolistapp
 ```
 
-В шаблоне развертывания ресурса приложения для каждой службы определено свойство *cpu*, с помощью которого можно установить запрашиваемые ресурсы ЦП. Приложение может состоять из нескольких служб с уникальными параметрами *cpu*, развертывание и управление которыми осуществляется совместно. Чтобы увеличить ресурсы ЦП службы веб-интерфейса, измените значение *cpu* в шаблоне развертывания или файле параметров.  Затем обновите приложение.
+В шаблоне развертывания ресурса приложения для каждой службы определено свойство *cpu*, с помощью которого можно установить запрашиваемые ресурсы ЦП. Приложение может состоять из нескольких служб с уникальными параметрами *cpu*, развертывание и управление которыми осуществляется совместно. Чтобы увеличить ресурсы ЦП службы веб-интерфейса, измените значение *cpue* в шаблоне развертывания или файле параметров.  Затем обновите приложение.
 
 ### <a name="modify-the-deployment-template-parameters"></a>Изменение параметров шаблона развертывания
 
@@ -139,7 +139,7 @@ az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-n
 
 > [!div class="checklist"]
 > * изменение конфигураций приложения;
-> * обновление приложения, работающего в Сетке Service Fabric.
+> * обновление приложения, работающего в Сетке Service Fabric;
 
 Перейдите к следующему руководству:
 > [!div class="nextstepaction"]

@@ -1,7 +1,6 @@
 ---
-title: Запрос данных из учетной записи API Cassandra для Azure Cosmos DB
-description: В этой статье описывается запрос данных пользователя из учетной записи API Cassandra для Azure Cosmos DB с помощью приложения Java.
-services: cosmos-db
+title: Руководство. Запрашивание данных из учетной записи API Cassandra в Azure Cosmos DB
+description: В этом руководстве описывается запрос данных пользователя из учетной записи API Cassandra для Azure Cosmos DB с помощью приложения Java.
 ms.service: cosmos-db
 author: kanshiG
 ms.author: govindk
@@ -9,16 +8,17 @@ ms.reviewer: sngun
 ms.component: cosmosdb-cassandra
 ms.topic: tutorial
 ms.date: 09/24/2018
-ms.openlocfilehash: a06e7e6159953bfeffa966759d29b91bbcbafd37
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+Customer intent: As a developer, I want to build a Java application to query data stored in a Cassandra API account of Azure Cosmos DB so that customers can manage the key/value data and utilize the global distribution, elastic scaling, multi-master, and other capabilities offered by Azure Cosmos DB.
+ms.openlocfilehash: 57d83516708e3105ba32f8b83420f06aadf0ace1
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50739215"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52867518"
 ---
-# <a name="tutorial-query-data-from-an-azure-cosmos-db-cassandra-api-account"></a>Руководство. Запрашивание данных из учетной записи API Cassandra для Azure Cosmos DB
+# <a name="tutorial-query-data-from-a-cassandra-api-account-in-azure-cosmos-db"></a>Руководство. Запрашивание данных из учетной записи API Cassandra в Azure Cosmos DB
 
-В этом руководстве описывается запрос данных пользователя из учетной записи API Cassandra для Azure Cosmos DB с помощью приложения Java. Приложение Java использует [драйвер Java](https://github.com/datastax/java-driver) и запрашивает данные пользователя, например идентификатор пользователя, имя пользователя, город пользователя. 
+Как у разработчика у вас должно быть приложение, использующее пары "ключ-значение". Можно использовать учетную запись Cassandra API в Azure Cosmos DB для хранения и запроса данных "ключ-значение". В этом руководстве описывается, как в Azure Cosmos DB запрашивать данные пользователя из учетной записи API Cassandra с помощью приложения Java. Приложение Java использует [драйвер Java](https://github.com/datastax/java-driver) и запрашивает данные пользователя, например, идентификатор пользователя, имя пользователя, город пользователя. 
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -26,9 +26,11 @@ ms.locfileid: "50739215"
 > * Запрос данных из таблицы Cassandra
 > * Запуск приложения
 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Эта статья относится к руководству из нескольких частей. Прежде чем начать, обязательно выполните предыдущие шаги, чтобы [создать учетную запись API Cassandra, пространство ключей и таблицу, а также [загрузить пример данных в эту таблицу](cassandra-api-load-data.md). 
+* Эта статья относится к руководству из нескольких частей. Прежде чем начать, обязательно выполните предыдущие шаги, чтобы создать учетную запись API Cassandra, пространство ключей и таблицу, а также [загрузить пример данных в эту таблицу](cassandra-api-load-data.md). 
 
 ## <a name="query-data"></a>Запрос данных
 
@@ -103,9 +105,13 @@ ms.locfileid: "50739215"
 
 2. Теперь на портале Azure откройте **обозреватель данных** и убедитесь, что таблица пользователя удалена.
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Можно удалить группу ресурсов, учетную запись Azure Cosmos и все связанные ресурсы, когда они больше не нужны. Для этого выберите группу ресурсов для виртуальной машины, выберите **Удалить** и подтвердите имя удаляемой группы ресурсов.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-* В этом руководстве вы узнали, как запросить данные из учетной записи API Cassandra для Azure Cosmos DB. Теперь вы можете перейти к следующей статье:
+В этом руководстве вы узнали, как в Azure Cosmos DB запросить данные из учетной записи API Cassandra. Теперь вы можете перейти к следующей статье:
 
 > [!div class="nextstepaction"]
 > [Перенос данных в учетную запись API Cassandra](cassandra-import-data.md)

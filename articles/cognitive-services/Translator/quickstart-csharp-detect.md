@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Определение языка текста, C# — API перевода текстов
+title: Краткое руководство. Определение языка текста с помощью C# и API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как с помощью REST API перевода текстов и .NET Core определить язык заданного текста.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 11/26/2018
 ms.author: erhopf
-ms.openlocfilehash: 89aedb33a88a7fb5f0a4e0abed172ba4e1cd091e
-ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
+ms.openlocfilehash: de5088a012a7f5fd210a5aa66805fe865cc09bbe
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52682080"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52889265"
 ---
-# <a name="quickstart-detect-text-language-with-the-translator-text-rest-api-c"></a>Краткое руководство. Определение языка текста с помощью и API перевода текстов (C#)
+# <a name="quickstart-use-the-translator-text-api-to-detect-text-language-using-c"></a>Краткое руководство. Определение языка текста с помощью C# и API перевода текстов
 
 Из этого краткого руководства вы узнаете, как с помощью REST API перевода текстов и .NET Core определить язык заданного текста.
 

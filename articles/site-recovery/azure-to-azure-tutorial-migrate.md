@@ -5,17 +5,17 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 10/28/2018
+ms.date: 11/27/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 9ad994ad3dc1fc350a9a41c23574acfa2bae9629
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 656f58bb9864757635ab5752da6bf31320504415
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50212290"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52843263"
 ---
-# <a name="migrate-azure-vms-to-another-region"></a>Перенос виртуальных машин Azure в другой регион
+# <a name="move-azure-vms-to-another-region"></a>Перенос виртуальных машин Azure в другой регион
 
 Службу [Azure Site Recovery](site-recovery-overview.md) можно использовать не только для управления и координации аварийного восстановления локальных компьютеров и виртуальных машин Azure в целях обеспечения непрерывности бизнеса и аварийного восстановления (BCDR), но и для управления миграцией виртуальных машин Azure в дополнительный регион. Чтобы перенести виртуальные машины Azure, следует включить для них репликацию и отработать их отказ из основного региона в требуемый дополнительный.
 

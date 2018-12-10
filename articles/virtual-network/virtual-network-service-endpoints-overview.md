@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 08/15/2018
 ms.author: sumeet.mittal
 ms.custom: ''
-ms.openlocfilehash: 77fad7b0035a9ba21d71e6c493a4f1a5bd9a2111
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: 0a582dc3acf17a10bd143988da7dd12627650dff
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49395213"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52834873"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки службы виртуальной сети
 
@@ -74,7 +74,7 @@ ms.locfileid: "49395213"
 
   По умолчанию ресурсы служб Azure, которые защищены в виртуальной сети, недоступны для локальных сетей. Чтобы разрешить трафик из локальной среды, необходимо также разрешить общедоступные IP-адреса (обычно это NAT) из локальных каналов или каналов ExpressRoute. Эти IP-адреса можно добавить в конфигурации брандмауэра IP-адресов для ресурсов служб Azure.
 
-  ExpressRoute. Если вы используете [ExpressRoute](../expressroute/expressroute-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json) для локальной среды, для общедоступного пиринга или пиринга Майкрософт, то вам необходимо определить используемые IP-адреса NAT. Для общедоступного пиринга в каждом канале ExpressRoute по умолчанию используется два IP-адреса NAT для трафика служб Azure, когда он входит в основную магистральную сеть Microsoft Azure. Для пиринга Майкрософт используются IP-адреса NAT, предоставленные клиентом или поставщиком услуг. Чтобы разрешить доступ к ресурсам служб, необходимо разрешить эти общедоступные IP-адреса в настройках брандмауэра IP-адресов ресурсов. Чтобы найти IP-адреса канала ExpressRoute для общедоступного пиринга, [отправьте запрос по ExpressRoute в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) через портал Azure. Узнайте больше о [NAT для общедоступного пиринга и пиринга Майкрософт](../expressroute/expressroute-nat.md?toc=%2fazure%2fvirtual-network%2ftoc.json#nat-requirements-for-azure-public-peering).
+  ExpressRoute. Если вы используете [ExpressRoute](../expressroute/expressroute-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json) для локальной среды, для общедоступного пиринга или пиринга Майкрософт, то вам необходимо определить используемые IP-адреса NAT. Для общедоступного пиринга в каждом канале ExpressRoute по умолчанию используется два IP-адреса NAT для трафика служб Azure, когда он входит в основную магистральную сеть Microsoft Azure. Для пиринга Майкрософт используются IP-адреса NAT, предоставленные клиентом или поставщиком услуг. Чтобы разрешить доступ к ресурсам служб, необходимо разрешить эти общедоступные IP-адреса в настройках брандмауэра IP-адресов ресурсов. Чтобы найти IP-адреса канала ExpressRoute для общедоступного пиринга, [отправьте запрос по ExpressRoute в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) через портал Azure. Узнайте больше о [NAT для общедоступного пиринга и пиринга Майкрософт](../expressroute/expressroute-nat.md?toc=%2fazure%2fvirtual-network%2ftoc.json#nat-requirements-for-azure-public-peering).
 
 ![Защита служб Azure в виртуальных сетях](./media/virtual-network-service-endpoints-overview/VNet_Service_Endpoints_Overview.png)
 
@@ -133,11 +133,17 @@ ms.locfileid: "49395213"
 
 Для ресурса службы Azure (например, учетной записи хранения Azure) в службах могут применяться ограничения на количество подсетей, которые используются для защиты ресурса. Дополнительные сведения см. в документации по различным службам в разделе [Дальнейшие действия](#next-steps).
 
+## <a name="virtual-network-service-endpoint-policies"></a>Политики конечных точек служб виртуальной сети 
+
+Политики конечных точек служб виртуальной сети позволяют фильтровать трафик из виртуальной сети к службам Azure, разрешая трафик определенных ресурсов служб через конечные точки служб. Политики конечных точек служб предоставляют возможность детального контроля доступа трафика из виртуальной сети к службам Azure. Дополнительные сведения см. в статье [Политики конечных точек служб виртуальной сети](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoint-policies-overview).
+
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте, как [настроить конечные точки служб виртуальной сети](tutorial-restrict-network-access-to-resources.md).
 - Узнайте, как [защитить учетную запись хранения Azure с помощью виртуальной сети](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 - Узнайте, как [защитить базу данных SQL Azure с помощью виртуальной сети](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 - Узнайте об [интеграции служб Azure в виртуальных сетях](virtual-network-for-azure-services.md).
+- Узнайте о [политиках конечных точек служб виртуальной сети](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoint-policies-overview).
 -  Краткое руководство: [шаблон Azure Resource Manager](https://azure.microsoft.com/resources/templates/201-vnet-2subnets-service-endpoints-storage-integration) для настройки конечной точки службы в подсети виртуальной сети и защиты учетной записи службы хранилища Azure в этой подсети.
 

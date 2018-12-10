@@ -7,16 +7,16 @@ author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.topic: quickstart
-ms.date: 09/05/2018
+ms.date: 12/03/2018
 ms.author: mabrigg
-ms.reviewer: ''
+ms.reviewer: kivenkat
 ms.custom: mvc
-ms.openlocfilehash: e82c3de4461e2d663496cd4ae4a98c10e7819466
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
+ms.openlocfilehash: 0664316d73b1473ab52b08f8abead2ec33d121b6
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44025416"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52836752"
 ---
 # <a name="quickstart-create-a-linux-server-virtual-machine-with-the-azure-stack-portal"></a>Краткое руководство. Создание виртуальной машины для сервера Linux с помощью портала Azure Stack
 
@@ -36,7 +36,7 @@ ms.locfileid: "44025416"
 
 * **Образ Linux в Azure Stack Marketplace**.
 
-   По умолчанию Azure Stack Marketplace не содержит образ Linux. Прежде чем создавать виртуальную машину для сервера Linux, убедитесь, что ваш оператор Azure Stack предоставляет нужный образ **Ubuntu Server 16.04 LTS**. Оператор может добавить его, выполнив инструкции из статьи [Download marketplace items from Azure to Azure Stack](../azure-stack-download-azure-marketplace-item.md) (Скачивание элементов Marketplace из Azure в Azure Stack).
+   По умолчанию Azure Stack Marketplace не содержит образа Linux. Убедитесь, что вашим оператором Azure Stack предоставлен образ **Ubuntu Server 16.04 LTS** в Azure Stack Marketplace. Оператор может добавить его, выполнив инструкции из статьи [Download marketplace items from Azure to Azure Stack](../azure-stack-download-azure-marketplace-item.md) (Скачивание элементов Marketplace из Azure в Azure Stack).
 
 * **Доступ к клиенту SSH**.
 
@@ -71,7 +71,7 @@ ms.locfileid: "44025416"
 
 2. Выберите **Вычисления**, а затем — **Сервер Ubuntu 16.04 LTS**.
    
-   ![Выберите сервер Linux](media/azure-stack-quick-linux-portal/select.png)
+   ![Выбор сервера Linux](media/azure-stack-quick-linux-portal/select.png)
 1. Нажмите кнопку **Создать**.
 
 4. Введите сведения о виртуальной машине. Для параметра **Тип проверки подлинности** выберите значение **Открытый ключ SSH**. Вставьте сохраненный ранее открытый ключ SSH и щелкните **ОК**.
@@ -97,11 +97,11 @@ ms.locfileid: "44025416"
 
 ## <a name="connect-to-the-virtual-machine"></a>Подключение к виртуальной машине
 
-1. На странице виртуальной машины щелкните **Подключить**. Откроется строка подключения по протоколу SSH, которая нужна для подключения к виртуальной машине. 
+1. На странице виртуальной машины щелкните **Подключить**. Отобразится строка подключения по протоколу SSH, которая нужна для подключения к виртуальной машине. 
 
 2. Откройте PuTTY.
 
-3. На экране **PuTTY Configuration** (Конфигурация PuTTY) есть окно **Category** (Категория), в котором можно прокручивать элементы вверх или вниз. Прокрутите вниз до элемента **SSH**, разверните **SSH** и щелкните **Auth** (Аутентификация). Щелкните **Browse** (Обзор) и выберите сохраненный файл закрытого ключа.
+3. На экране PuTTY Configuration (Конфигурация PuTTY) есть окно **Category** (Категория), в котором можно прокручивать элементы вверх или вниз. Прокрутите вниз до элемента **SSH**, разверните **SSH** и щелкните **Auth** (Аутентификация). Щелкните **Browse** (Обзор) и выберите сохраненный файл закрытого ключа.
    ![Подключение к виртуальной машине](media/azure-stack-quick-linux-portal/putty03.PNG)
 
 4. Прокрутите окно **Category** (Категория) вверх и выберите элемент **Session** (Сеанс).
@@ -154,4 +154,4 @@ sudo apt-get -y install nginx
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-С помощью этого краткого руководства вы развернули виртуальную машину для базового сервера Linux с веб-сервером. Дополнительные сведения о виртуальных машинах Azure Stack см. в [рекомендациях по работе с виртуальными машинами в Azure Stack](azure-stack-vm-considerations.md).
+С помощью этого краткого руководства вы развернули простую виртуальную машину с сервером Linux и веб-сервером. Дополнительные сведения о виртуальных машинах Azure Stack см. в [рекомендациях по работе с виртуальными машинами в Azure Stack](azure-stack-vm-considerations.md).

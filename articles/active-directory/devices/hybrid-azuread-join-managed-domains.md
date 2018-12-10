@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 11/01/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: 48bedff0cd09c3f0dbffdabe6a94847d035a0cf9
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 7061776ba5325a333033d0f272de3b2663b44351
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50963937"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52887803"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по настройке гибридного присоединения к Azure Active Directory для управляемых доменов
 
@@ -140,6 +140,8 @@ ms.locfileid: "50963937"
  
 - Настройка параметров локальной интрасети для регистрации устройств.
 
+- Настройка простого единого входа
+
 - Управление устройствами Windows нижнего уровня 
 
 
@@ -166,6 +168,11 @@ ms.locfileid: "50963937"
 - `https://autologon.microsoftazuread-sso.com`.
 
 Кроме того, необходимо включить параметр **Allow updates to status bar via script** (Разрешить обновление строки состояния с помощью сценария) в локальной зоне интрасети пользователя.
+
+
+### <a name="configure-seamless-sso"></a>Настройка простого единого входа
+
+Для успешного завершения гибридного присоединения к Azure AD устройств Windows нижнего уровня в управляемом домене, использующем сквозную проверку подлинности (PTA) или синхронизацию хэша паролей (PHS) для проверки подлинности в Azure AD, необходимо также [включить простой единый вход](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sso-quick-start#step-2-enable-the-feature). 
 
 
 ### <a name="control-windows-down-level-devices"></a>Управление устройствами Windows нижнего уровня 

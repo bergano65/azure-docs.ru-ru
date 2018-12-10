@@ -8,19 +8,19 @@ ms.topic: tutorial
 author: hning86
 ms.author: haining
 ms.reviewer: sgilley
-ms.date: 11/21/2018
-ms.openlocfilehash: 53de4715a458c5713a31541da64a4a671bf8c132
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.date: 12/04/2018
+ms.openlocfilehash: 8d3dd87adaad168d193b53507dbbb40efab57810
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52496228"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52879491"
 ---
 # <a name="tutorial-1-train-an-image-classification-model-with-azure-machine-learning-service"></a>Руководство 1. Обучение модели классификации изображений с помощью службы машинного обучения Azure
 
-В этом руководстве необходимо обучить модель машинного обучения как локально, так и на удаленных вычислительных ресурсах. Вы будете использовать рабочий процесс обучения и развертывания для службы "Машинное обучение Azure" (предварительная версия) в Jupyter Notebook для Python.  Затем можно использовать записную книжку как шаблон для обучения собственной модели машинного обучения со своими данными. Это руководство представляет собой **первую часть серии, состоящей из двух частей**.  
+В этом руководстве необходимо обучить модель машинного обучения как локально, так и на удаленных вычислительных ресурсах. Вы будете использовать рабочий процесс обучения и развертывания для службы "Машинное обучение Azure" в Jupyter Notebook для Python.  Затем можно использовать записную книжку как шаблон для обучения собственной модели машинного обучения со своими данными. Это руководство представляет собой **первую часть серии, состоящей из двух частей**.  
 
-Это руководство обучает простой логистической регрессии с помощью набора данных [MNIST](http://yann.lecun.com/exdb/mnist/) и библиотеки [scikit-learn](http://scikit-learn.org) с использованием службы машинного обучения Azure.  MNIST — это популярный набор данных, состоящий из 70 000 изображений в оттенках серого. Каждый образ является рукописной цифрой 28 x 28 пикселей, представляющей собой число от 0 до 9. Целью является создание многоклассового классификатора для идентификации цифры, которую отображает данное изображение. 
+Это руководство обучает простой логистической регрессии с помощью набора данных [MNIST](https://yann.lecun.com/exdb/mnist/) и библиотеки [scikit-learn](https://scikit-learn.org) с использованием службы машинного обучения Azure.  MNIST — это популярный набор данных, состоящий из 70 000 изображений в оттенках серого. Каждый образ является рукописной цифрой 28 x 28 пикселей, представляющей собой число от 0 до 9. Целью является создание многоклассового классификатора для идентификации цифры, которую отображает данное изображение. 
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -36,16 +36,14 @@ ms.locfileid: "52496228"
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLfree), прежде чем начинать работу.
 
 >[!NOTE]
-> Код в этой статье протестирован с использованием пакета SDK для службы "Машинное обучение Azure" версии 0.1.79
+> Код в этой статье протестирован с использованием пакета SDK для службы "Машинное обучение Azure" версии 1.0.2
 
 ## <a name="get-the-notebook"></a>Получение записной книжки
 
-Для удобства это руководство доступно в формате [Jupyter Notebook](https://aka.ms/aml-notebook-tut-01). Запустите записную книжку `01.train-models.ipynb` в Записных книжках Azure или на своем сервере Jupyter Notebook.
+Для удобства это руководство доступно в формате [Jupyter Notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/img-classification-part1-training.ipynb). Запустите записную книжку `tutorials/img-classification-part1-training.ipynb` в Записных книжках Azure или на своем сервере Jupyter Notebook.
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-in-azure-notebook.md)]
 
->[!NOTE]
-> Это руководство протестировано с использованием пакета SDK версии 0.1.74 для службы "Машинное обучение Azure" 
 
 ## <a name="set-up-your-development-environment"></a>Настройка среды разработки
 
@@ -94,11 +92,11 @@ from azureml.core import Experiment
 exp = Experiment(workspace=ws, name=experiment_name)
 ```
 
-### <a name="create-remote-compute-target"></a>Создание удаленного целевого объекта вычислений
+### <a name="create-or-attach-existing-amlcompute"></a>Создание или подключение существующего класса AMlCompute
 
-Управляемая служба вычислений "Машинное обучение Azure" позволяет специалистам по анализу данных обучать модели машинного обучения в кластерах виртуальных машин Azure, в том числе виртуальных машин с поддержкой GPU.  В этом руководстве описано, как создать управляемый вычислительный кластер. Этот код создаст кластер, если он еще не существует в вашей рабочей области. 
+Управляемая служба вычислений "Машинное обучение Azure" (AMLCompute) позволяет специалистам по анализу данных обучать модели машинного обучения в кластерах виртуальных машин Azure, в том числе виртуальных машин с поддержкой GPU.  В рамках этого руководства вы создадите AMLCompute в качестве среды для обучения. Этот код создаст вычислительные кластеры, если они не существуют в вашей рабочей области.
 
- **Создание кластера занимает около 5 минут.** Если кластер уже находится в рабочей области, этот код будет использовать его, пропуская процесс создания.
+ **Создание вычислительного кластера занимает около 5 минут.** Если вычислительный кластер уже находится в рабочей области, этот код будет использовать его, пропуская процесс создания.
 
 
 ```python
@@ -107,12 +105,17 @@ from azureml.core.compute import ComputeTarget
 import os
 
 # choose a name for your cluster
-compute_name = os.environ.get("BATCHAI_CLUSTER_NAME", "cpucluster")
-compute_min_nodes = os.environ.get("BATCHAI_CLUSTER_MIN_NODES", 0)
-compute_max_nodes = os.environ.get("BATCHAI_CLUSTER_MAX_NODES", 4)
+from azureml.core.compute import AmlCompute
+from azureml.core.compute import ComputeTarget
+import os
+
+# choose a name for your cluster
+compute_name = os.environ.get("AML_COMPUTE_CLUSTER_NAME", "cpucluster")
+compute_min_nodes = os.environ.get("AML_COMPUTE_CLUSTER_MIN_NODES", 0)
+compute_max_nodes = os.environ.get("AML_COMPUTE_CLUSTER_MAX_NODES", 4)
 
 # This example uses CPU VM. For using GPU VM, set SKU to STANDARD_NC6
-vm_size = os.environ.get("BATCHAI_CLUSTER_SKU", "STANDARD_D2_V2")
+vm_size = os.environ.get("AML_COMPUTE_CLUSTER_SKU", "STANDARD_D2_V2")
 
 
 if compute_name in ws.compute_targets:
@@ -132,7 +135,7 @@ else:
     # if no min node count is provided it will use the scale settings for the cluster
     compute_target.wait_for_completion(show_output=True, min_node_count=None, timeout_in_minutes=20)
     
-     # For a more detailed view of current BatchAI cluster status, use the 'status' property    
+     # For a more detailed view of current AmlCompute status, use the 'status' property    
     print(compute_target.status.serialize())
 ```
 
@@ -320,11 +323,10 @@ joblib.dump(value=clf, filename='outputs/sklearn_mnist_model.pkl')
 Обратите внимание на то, как сценарий получает данные и сохраняет модели.
 
 + Сценарий обучения считывает аргумент, чтобы найти каталог, содержащий данные.  При отправке задания позже вы указываете хранилище данных для этого аргумента: `parser.add_argument('--data-folder', type=str, dest='data_folder', help='data directory mounting point')`.
-    
+
 + Сценарий обучения сохраняет модель в каталог с именем выходных данных. <br/>
 `joblib.dump(value=clf, filename='outputs/sklearn_mnist_model.pkl')`<br/>
 Все записи в этом каталоге автоматически передаются в рабочую область. Далее в этом руководстве вы узнаете, как получить доступ к своей модели из этого каталога.
-
 Файл `utils.py` — это ссылка из скрипта обучения для правильной загрузки набора данных.  Скопируйте этот скрипт в папку таким образом, чтобы он был доступен вместе со скриптом обучения на удаленном ресурсе.
 
 
@@ -340,12 +342,12 @@ shutil.copy('utils.py', script_folder)
 
 * Назовите объект оценщика как `est`.
 * Выберите каталог, который содержит скрипт. Все файлы в этом каталоге передаются в узел кластера для выполнения. 
-* Целевой объект вычисления.  В этом случае будет использоваться созданный кластер Batch AI.
+* Целевой объект вычисления.  В этом случае будет использоваться созданный вычислительный кластер для службы "Машинное обучение Azure".
 * Имя скрипта обучения — train.py.
 * Параметры, требуемые от сценария обучения. 
 * Пакеты Python, необходимые для обучения.
 
-В этом руководстве целевой объект — это кластер Batch AI. Все файлы в папке скриптов передаются в узлы кластера для выполнения. Data_folder настроен на использование хранилища данных (`ds.as_mount()`).
+В этом руководстве целевой средой является AMLCompute. Все файлы в папке скриптов передаются в узлы кластера для выполнения. Data_folder настроен на использование хранилища данных (`ds.as_mount()`).
 
 ```python
 from azureml.train.estimator import Estimator

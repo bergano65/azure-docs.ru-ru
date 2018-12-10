@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 08/07/2018
+ms.date: 11/30/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: 5e32968ae83ef826fbc8e81f1b04eca687642343
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
+ms.openlocfilehash: 9fce35f811a4d2440ba73e4f305ede6891928069
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49637674"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52633288"
 ---
 # <a name="classic-subscription-administrator-roles-azure-rbac-roles-and-azure-ad-administrator-roles"></a>Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD
 
@@ -77,13 +77,13 @@ RBAC Azure — это система авторизации на основе [
 
 Модель RBAC поддерживается только порталом Azure и API-интерфейсами Azure Resource Manager. Пользователи, группы и приложения, которым назначены роли RBAC, не могут использовать [API классической модели развертывания Azure](../azure-resource-manager/resource-manager-deployment-model.md).
 
-На портале Azure сведения о назначении ролей RBAC отображаются в колонке **Управление доступом (IAM)**. Эта колонка представлена в различных разделах портала, в том числе для подписок, групп ресурсов и различных ресурсов.
+На портале Azure сведения о назначении ролей RBAC отображаются в колонке **Управление доступом (IAM)**. Эта колонка представлена в различных разделах портала, в том числе в группах управления, подписках, группах ресурсов и различных ресурсах.
 
-![Колонка "Управление доступом (IAM)" на портале Azure](./media/rbac-and-directory-admin-roles/access-control.png)
+![Колонка "Управление доступом (IAM)" на портале Azure](./media/rbac-and-directory-admin-roles/access-control-role-assignments.png)
 
 При выборе параметра **Роли** появится список встроенных и пользовательских ролей.
 
-![Встроенные роли на портале Azure](./media/rbac-and-directory-admin-roles/built-in-roles.png)
+![Встроенные роли на портале Azure](./media/rbac-and-directory-admin-roles/roles-list.png)
 
 ## <a name="azure-ad-administrator-roles"></a>Роли администратора в Azure AD
 

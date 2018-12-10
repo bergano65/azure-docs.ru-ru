@@ -7,15 +7,15 @@ manager: jeconnoc
 ms.service: batch
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 11/26/2018
+ms.date: 11/27/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 0ce9d6854f464efdf0ff6eea8644fedc5ad90d1f
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 13ed37dddefc5e71e972248545c3e9242bd233ad
+ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52427335"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52678206"
 ---
 # <a name="quickstart-run-your-first-batch-job-with-the-python-api"></a>Краткое руководство по выполнению первого пакетного задания с помощью API Python
 
@@ -110,7 +110,7 @@ Batch processing began with mainframe computers and punch cards. Today it still 
 Приложение Python в этом кратком руководстве выполняет следующие задачи.
 
 * Отправляет три небольших текстовых файла в контейнер больших двоичных объектов в учетной записи хранения Azure. Эти файлы являются входными данными для обработки в пакетных задачах.
-* Создает пул из двух вычислительных узлов под управлением Ubuntu 16.04 LTS.
+* Создает пул из двух вычислительных узлов под управлением Ubuntu 18.04 LTS.
 * Создает задание, а также три задачи, выполняемые на узлах. Каждая задача обрабатывает один из входных файлов, используя командную строку оболочки Bash.
 * Отображает файлы, возвращаемые задачами.
 
@@ -151,7 +151,7 @@ batch_client = batch.BatchServiceClient(
 
 ### <a name="create-a-pool-of-compute-nodes"></a>Создание пула вычислительных узлов
 
-Чтобы создать пул пакетной службы, приложение использует класс [PoolAddParameter](/python/api/azure.batch.models.pooladdparameter) для настройки количества узлов, размера виртуальной машины и конфигурации пула. Объект [VirtualMachineConfiguration](/python/api/azure.batch.models.virtualmachineconfiguration) указывает [ImageReference](/python/api/azure.batch.models.imagereference) в образе Ubuntu Server 16.04 LTS, опубликованном в Azure Marketplace. Пакетная служба поддерживает широкий спектр образов Linux и Windows Server в Azure Marketplace, а также пользовательских образов виртуальной машины.
+Чтобы создать пул пакетной службы, приложение использует класс [PoolAddParameter](/python/api/azure.batch.models.pooladdparameter) для настройки количества узлов, размера виртуальной машины и конфигурации пула. Объект [VirtualMachineConfiguration](/python/api/azure.batch.models.virtualmachineconfiguration) указывает [ImageReference](/python/api/azure.batch.models.imagereference) в образе Ubuntu Server 18.04 LTS, опубликованном в Azure Marketplace. Пакетная служба поддерживает широкий спектр образов Linux и Windows Server в Azure Marketplace, а также пользовательских образов виртуальной машины.
 
 Количество узлов (`_POOL_NODE_COUNT`) и размер виртуальной машины (`_POOL_VM_SIZE`) являются определенными константами. В образце по умолчанию создается пул с 2 узлами размера *Standard_A1_v2*. Предлагаемый размер в этом кратком руководстве обеспечивает оптимальный баланс производительности и стоимости.
 
@@ -164,10 +164,10 @@ new_pool = batch.models.PoolAddParameter(
         image_reference=batchmodels.ImageReference(
             publisher="Canonical",
             offer="UbuntuServer",
-            sku="16.04-LTS",
+            sku="18.04-LTS",
             version="latest"
             ),
-        node_agent_sku_id="batch.node.ubuntu 16.04"),
+        node_agent_sku_id="batch.node.ubuntu 18.04"),
     vm_size=config._POOL_VM_SIZE,
     target_dedicated_nodes=config._POOL_NODE_COUNT
 )

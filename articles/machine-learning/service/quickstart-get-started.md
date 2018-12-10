@@ -8,13 +8,13 @@ ms.topic: quickstart
 ms.reviewer: sgilley
 author: rastala
 ms.author: roastala
-ms.date: 09/24/2018
-ms.openlocfilehash: 7ed45b5e8a8c3cab26c0998260055ffd7a0f0c5d
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.date: 12/04/2018
+ms.openlocfilehash: 59887c46e3ce06eae250e106a01239a1ba969e7f
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51710262"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52875320"
 ---
 # <a name="quickstart-use-the-azure-portal-to-get-started-with-azure-machine-learning"></a>Краткое руководство. Начало работы со Службой машинного обучения Azure с помощью портала Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "51710262"
   - [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) 
   - [Хранилище ключей Azure](https://azure.microsoft.com/services/key-vault/)
 
-Созданные ресурсы могут использоваться в качестве необходимых компонентов для других руководств и статей с практическими рекомендациями по Службе машинного обучения. Как и в других службах Azure, существуют ограничения на некоторые ресурсы, связанные со Службой машинного обучения. Например, размер кластера Azure Batch AI. Информацию об ограничениях по умолчанию и порядке увеличения квоты см. в [этой статье](how-to-manage-quotas.md).
+Созданные ресурсы могут использоваться в качестве необходимых компонентов для других руководств и статей с практическими рекомендациями по Службе машинного обучения. Как и в других службах Azure, существуют ограничения на некоторые ресурсы, связанные со Службой машинного обучения, например, на размер вычислительного кластера. Дополнительные сведения см. в статье [Управление квотами для ресурсов Azure и их запрашивание](how-to-manage-quotas.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLfree), прежде чем начинать работу.
 
@@ -69,7 +69,7 @@ Azure Notebooks предоставляет бесплатную облачную
 
 Ваша организация может требовать [согласия администратора](https://notebooks.azure.com/help/signing-up/work-or-school-account/admin-consent) для входа.
 
-После входа откроется вкладка и отобразится подсказка `Clone Library`. Выберите `Clone`
+После входа откроется вкладка и отобразится подсказка `Clone Library`. Выберите `Clone`.
 
 
 ### <a name="run-the-notebook"></a>Запустите записную книжку

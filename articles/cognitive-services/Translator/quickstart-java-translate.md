@@ -1,151 +1,178 @@
 ---
 title: Краткое руководство. Перевод текста, Java — API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве вы узнаете, как перевести текст с одного языка на другой, используя API перевода текстов и Java.
+description: Из этого краткого руководства вы узнаете, как перевести строку с текстом с английского на итальянский и немецкий с помощью Java и REST API перевода текстов.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-text
 ms.topic: quickstart
-ms.date: 06/21/2018
+ms.date: 12/03/2018
 ms.author: erhopf
-ms.openlocfilehash: f9f9b6758a74ac846e7b44ab9024620e6176218d
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 537132a5d77927f130f2737e0ba597b9e74ace6e
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50414630"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52890251"
 ---
-# <a name="quickstart-translate-text-with-the-translator-text-rest-api-java"></a>Краткое руководство. Перевод текста с помощью REST API перевода текстов (Java)
+# <a name="quickstart-use-the-translator-text-api-to-translate-a-string-using-java"></a>Краткое руководство. Использование API перевода текстов для перевода строки с помощью Java
 
-Из этого краткого руководства вы узнаете, как перевести текст с одного языка на другой, используя API перевода текстов.
+Из этого краткого руководства вы узнаете, как перевести строку с текстом с английского на итальянский и немецкий с помощью Java и REST API перевода текстов.
+
+Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом API перевода текстов. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для компиляции и запуска этого кода вам потребуется [пакет JDK 7 или 8](https://aka.ms/azure-jdks). При желании можно воспользоваться интегрированной средой разработки Java, но обычный текстовый редактор также подойдет.
+* [JDK 7 или более поздней версии](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* [Gradle](https://gradle.org/install/)
+* ключ подписки Azure для API перевода текстов.
 
-Чтобы использовать API перевода текстов, вам также потребуется ключ подписки. Сведения об этом см. в статье [Регистрация для использования API перевода текстов](translator-text-how-to-signup.md).
+## <a name="initialize-a-project-with-gradle"></a>Инициализация проекта с помощью Gradle
 
-## <a name="translate-request"></a>Запрос метода Translate
+Начнем с создания рабочего каталога для этого проекта. Из командной строки (или терминала) выполните приведенную ниже команду.
 
-В приведенном ниже коде исходный текст переводится с одного языка на другой с помощью метода [Translate](./reference/v3-0-translate.md).
+```console
+mkdir translator-sample
+cd translator-sample
+```
 
-1. Создайте проект Java в любом редакторе кода.
-2. Добавьте указанный ниже код.
-3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
-4. Запустите программу.
+После этого вы инициализируете проект Gradle. Что самое важное, эта команда создает необходимый файл сборки для Gradle (`build.gradle.kts`), который используется во время выполнения для создания и настройки приложения. Выполните следующую команду из рабочего каталога.
+
+```console
+gradle init --type basic
+```
+
+Когда появится запрос на выбор **предметно-ориентированного языка**, выберите **Kotlin**.
+
+## <a name="configure-the-build-file"></a>Настройка файла сборки
+
+Найдите файл `build.gradle.kts` и откройте его с помощью любой интегрированной среды разработки или текстового редактора. Затем скопируйте и вставьте в файл эту конфигурацию сборки:
+
+```
+plugins {
+    java
+    application
+}
+application {
+    mainClassName = "Translate"
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile("com.squareup.okhttp:okhttp:2.5.0")
+    compile("com.google.code.gson:gson:2.8.5")
+}
+```
+
+Примите во внимание, что этот пример зависим от OkHttp для HTTP-запросов и Gson для обработки и анализа JSON. Дополнительные сведения о конфигурациях сборки см. в разделе [Creating New Gradle Builds](https://guides.gradle.org/creating-new-gradle-builds/) (Создание сборок Gradle).
+
+## <a name="create-a-java-file"></a>Создание файла Java
+
+Создайте папку для примера приложения. Выполните следующую команду из рабочего каталога:
+
+```console
+mkdir -p src/main/java
+```
+
+Затем в этой папке создайте файл с именем `Translate.java`.
+
+## <a name="import-required-libraries"></a>Импорт обязательных библиотек
+
+Откройте файл `Translate.java` и добавьте следующие инструкции импорта:
 
 ```java
 import java.io.*;
 import java.net.*;
 import java.util.*;
-import javax.net.ssl.HttpsURLConnection;
+import com.google.gson.*;
+import com.squareup.okhttp.*;
+```
 
-/*
- * Gson: https://github.com/google/gson
- * Maven info:
- *     groupId: com.google.code.gson
- *     artifactId: gson
- *     version: 2.8.1
- */
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+## <a name="define-variables"></a>Определение переменных
 
-/* NOTE: To compile and run this code:
-1. Save this file as Translate.java.
-2. Run:
-    javac Translate.java -cp .;gson-2.8.1.jar -encoding UTF-8
-3. Run:
-    java -cp .;gson-2.8.1.jar Translate
-*/
+Сначала создайте открытый класс для проекта.
 
+```java
 public class Translate {
+  // All project code goes here...
+}
+```
 
-// **********************************************
-// *** Update or verify the following values. ***
-// **********************************************
+Добавьте эти строки в класс `Translate`. Вы заметите, что кроме `api-version` в `url` добавлены два дополнительных параметра. Эти параметры используются для настройки выходных данных перевода. В этом примере для параметров указан немецкий (`de`) и итальянский язык (`it`). Обязательно обновите значение ключа подписки.
 
-// Replace the subscriptionKey string value with your valid subscription key.
-    static String subscriptionKey = "ENTER KEY HERE";
+```java
+String subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
+String url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=de,it";
+```
 
-    static String host = "https://api.cognitive.microsofttranslator.com";
-    static String path = "/translate?api-version=3.0";
+## <a name="create-a-client-and-build-a-request"></a>Создание клиента и выполнение запроса
 
-    // Translate to German and Italian.
-    static String params = "&to=de&to=it";
+Добавьте приведенную ниже строку в класс `Translate` для создания экземпляра `OkHttpClient`.
 
-    static String text = "Hello world!";
+```java
+// Instantiates the OkHttpClient.
+OkHttpClient client = new OkHttpClient();
+```
 
-    public static class RequestBody {
-        String Text;
+Затем создайте запрос POST. Текст для перевода можно легко изменить. Текст необходимо экранировать.
 
-        public RequestBody(String text) {
-            this.Text = text;
-        }
-    }
+```java
+// This function performs a POST request.
+public String Post() throws IOException {
+    MediaType mediaType = MediaType.parse("application/json");
+    RequestBody body = RequestBody.create(mediaType,
+            "[{\n\t\"Text\": \"Welcome to Microsoft Translator. Guess how many languages I speak!\"\n}]");
+    Request request = new Request.Builder()
+            .url(url).post(body)
+            .addHeader("Ocp-Apim-Subscription-Key", subscriptionKey)
+            .addHeader("Content-type", "application/json").build();
+    Response response = client.newCall(request).execute();
+    return response.body().string();
+}
+```
 
-    public static String Post (URL url, String content) throws Exception {
-        HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
-        connection.setRequestMethod("POST");
-        connection.setRequestProperty("Content-Type", "application/json");
-        connection.setRequestProperty("Content-Length", content.length() + "");
-        connection.setRequestProperty("Ocp-Apim-Subscription-Key", subscriptionKey);
-        connection.setRequestProperty("X-ClientTraceId", java.util.UUID.randomUUID().toString());
-        connection.setDoOutput(true);
+## <a name="create-a-function-to-parse-the-response"></a>Создание функции для анализа ответа
 
-        DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
-        byte[] encoded_content = content.getBytes("UTF-8");
-        wr.write(encoded_content, 0, encoded_content.length);
-        wr.flush();
-        wr.close();
+Эта простая функция анализирует и упорядочивает ответ JSON от службы "Перевод текстов".
 
-        StringBuilder response = new StringBuilder ();
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
-        String line;
-        while ((line = in.readLine()) != null) {
-            response.append(line);
-        }
-        in.close();
+```java
+// This function prettifies the json response.
+public static String prettify(String json_text) {
+    JsonParser parser = new JsonParser();
+    JsonElement json = parser.parse(json_text);
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    return gson.toJson(json);
+}
+```
 
-        return response.toString();
-    }
+## <a name="put-it-all-together"></a>Сборка
 
-    public static String Translate () throws Exception {
-        URL url = new URL (host + path + params);
+Последний шаг — это сделать запрос и получить ответ. Добавьте следующие строки в функцию:
 
-        List<RequestBody> objList = new ArrayList<RequestBody>();
-        objList.add(new RequestBody(text));
-        String content = new Gson().toJson(objList);
-
-        return Post(url, content);
-    }
-
-    public static String prettify(String json_text) {
-        JsonParser parser = new JsonParser();
-        JsonElement json = parser.parse(json_text);
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        return gson.toJson(json);
-    }
-
-    public static void main(String[] args) {
-        try {
-            String response = Translate ();
-            System.out.println (prettify (response));
-        }
-        catch (Exception e) {
-            System.out.println (e);
-        }
+```java
+public static void main(String[] args) {
+    try {
+        Translate translateRequest = new Translate();
+        String response = translateRequest.Post();
+        System.out.println(prettify(response));
+    } catch (Exception e) {
+        System.out.println(e);
     }
 }
 ```
 
-## <a name="translate-response"></a>Ответ метода Translate
+## <a name="run-the-sample-app"></a>Запуск примера приложения
 
-В случае успешного выполнения ответ возвращается в формате JSON, как показано в примере ниже:
+Теперь все готово к запуску примера приложения. В командной строке (или сеансе терминала) перейдите в основную часть каталога проекта и выполните следующую команду.
+
+```console
+gradle build
+```
+
+## <a name="sample-response"></a>Пример ответа
 
 ```json
 [
@@ -156,11 +183,11 @@ public class Translate {
     },
     "translations": [
       {
-        "text": "Hallo Welt!",
+        "text": "Willkommen bei Microsoft Translator. Erraten Sie, wie viele Sprachen ich spreche!",
         "to": "de"
       },
       {
-        "text": "Salve, mondo!",
+        "text": "Benvenuti a Microsoft Translator. Indovinate quante lingue parlo!",
         "to": "it"
       }
     ]
@@ -174,3 +201,11 @@ public class Translate {
 
 > [!div class="nextstepaction"]
 > [Примеры для Java на сайте GitHub](https://aka.ms/TranslatorGitHub?type=&language=java)
+
+## <a name="see-also"></a>См. также
+
+* [транслитерация текста](quickstart-java-transliterate.md);
+* [определение языка по входным данным](quickstart-java-detect.md);
+* [получение вариантов перевода](quickstart-java-dictionary.md);
+* [получение списка поддерживаемых языков](quickstart-java-languages.md);
+* [определение длины предложения на основе входных данных](quickstart-java-sentences.md).

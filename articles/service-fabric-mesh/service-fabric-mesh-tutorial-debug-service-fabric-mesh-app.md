@@ -12,21 +12,21 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 09/18/2018
+ms.date: 10/31/2018
 ms.author: twhitney
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 27e4c8f6ac24d40a6afacf10175413745f5151d9
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 06a7ce6301af6e5a7c04ac5c5a0a1240c21f834e
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46997018"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52887514"
 ---
 # <a name="tutorial-debug-a-service-fabric-mesh-application-running-in-your-local-development-cluster"></a>Руководство по отладке приложения Сетки Service Fabric, выполняющегося в локальном кластере разработки.
 
 Это руководство является вторым из серии руководств. Здесь показано, как создать и отладить приложение Сетки Azure Service Fabric в локальном кластере разработки.
 
-В этом руководстве описано следующее.
+В этом руководстве рассматривается следующее:
 
 > [!div class="checklist"]
 > * Процессы, происходящие при создании приложения Сетки Azure Service Fabric
@@ -52,7 +52,7 @@ ms.locfileid: "46997018"
 
 ## <a name="download-the-to-do-sample-application"></a>Загрузка образца приложения
 
-Можно просто скачать образец приложения, если вы не создавали его в [первой части этой серии руководств](service-fabric-mesh-tutorial-create-dotnetcore.md). В окне терминала выполните следующую команду, чтобы клонировать репозиторий с примером приложения на локальный компьютер.
+Можно просто скачать пример приложения, если вы не создавали его в [первой части этой серии руководств](service-fabric-mesh-tutorial-create-dotnetcore.md). В окне терминала выполните следующую команду, чтобы клонировать репозиторий с примером приложения на локальный компьютер.
 
 ```
 git clone https://github.com/azure-samples/service-fabric-mesh
@@ -74,7 +74,9 @@ git clone https://github.com/azure-samples/service-fabric-mesh
 
 После завершения локального развертывания и запуска приложения Visual Studio в окне браузера откроется веб-страница с образцом по умолчанию.
 
-**Советы по отладке**
+## <a name="debugging-tips"></a>Советы по отладке
+
+Ускорьте первый процесс отладки (F5), следуя инструкциям в статье об [оптимизации производительности Visual Studio](service-fabric-mesh-howto-optimize-vs.md).
 
 Сейчас есть проблема, которая приводит сбою подключения к службе при вызове `using (HttpResponseMessage response = client.GetAsync("").GetAwaiter().GetResult())`. Это может произойти при каждом изменении IP-адреса узла. Чтобы устранить эту проблему:
 
@@ -95,8 +97,8 @@ git clone https://github.com/azure-samples/service-fabric-mesh
 2. В проекте **ToDoService** откройте **TodoController.cs** и задайте точку останова методом **OnGet** (строка 15).
 3. Затем вернитесь в браузер и обновите страницу. Вы попадете в точку останова во внешнем интерфейсе методом `OnGet()`. Чтобы увидеть как переменные среды, определенные в файле **service.yaml**, объединены в URL-адрес, используемый для связи с внутренней службой, можно проверить переменную `backendUrl`.
 4. Шаг назад (F10) к запросу `client.GetAsync(backendUrl).GetAwaiter().GetResult())` и вы окажетесь в точке останова оператора `Get()`. При помощи этого метода можно увидеть как список работающих элементов извлекается из списка в памяти.
-5. После окончания остановите отладку проекта в Visual Studio, нажав комбинацию клавиш **Shift+F5**.
- 
+5. После окончания остановите отладку проекта в Visual Studio, нажав комбинацию клавиш **SHIFT+F5**.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 В этой части руководства было показано следующее.

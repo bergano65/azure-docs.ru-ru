@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/18/2018
 ms.author: ryanwi
 ms.custom: mvc, devcenter
-ms.openlocfilehash: cca18b2aa5cb6f27df45e4b63e55251bea058625
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 19a9ae18c7fbf3b0f663396099f065c76969206f
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46968855"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52890387"
 ---
 # <a name="tutorial-deploy-an-application-to-service-fabric-mesh-using-a-template"></a>Руководство. Развертывание приложения в Сетке Service Fabric с помощью шаблона
 
@@ -51,7 +51,7 @@ ms.locfileid: "46968855"
 
 * [Установка Docker](service-fabric-mesh-howto-setup-developer-environment-sdk.md#install-docker)
 
-* [Установите Azure CLI и интерфейса командной строки Сетки Azure Service Fabric локально](service-fabric-mesh-howto-setup-cli.md#install-the-service-fabric-mesh-cli-locally).
+* [Установите Azure CLI и интерфейса командной строки Сетки Azure Service Fabric локально](service-fabric-mesh-howto-setup-cli.md#install-the-azure-service-fabric-mesh-cli).
 
 ## <a name="create-a-container-registry"></a>Создание реестра контейнеров
 
@@ -122,7 +122,7 @@ docker pull seabreeze/azure-mesh-todo-service:1.0-nanoserver-1709
 
 Прежде чем отправить образ в реестр, нужно добавить в него тег с полным именем сервера входа для ACR.
 
-Выполните следующую команду для получения полного имени входа сервера для экземпляра ACR.
+Выполните следующую команду для получения полного имени сервера входа для экземпляра ACR.
 
 ```azurecli
 az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
@@ -205,7 +205,7 @@ az acr credential show --name myContainerRegistry --query "passwords[0].value"
 В этом руководстве используется пример приложения списка дел.  Вместо создания новых файлов шаблона и параметров скачайте файлы [шаблона развертывания mesh_rp.windows.json](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/todolist/mesh_rp.windows.json) и [параметров mesh_rp.windows.parameter.json](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/todolist/mesh_rp.windows.parameters.json).
 
 ### <a name="parameters"></a>Параметры
-Если в шаблоне есть значения, которые изменятся после развертывания приложения или которые вы хотели бы иметь возможность изменять для разных развертываний (если планируете повторно использовать этот шаблон), рекомендуется параметризировать эти значения. Лучше всего создать раздел "parameters" в верхней части шаблона развертывания и указать в нем имена и свойства параметров, которые встречаются ниже в шаблоне развертывания. Каждое определение параметра включает *type*, *defaultValue* и дополнительный раздел *metadata* с *description*.
+Если в шаблоне есть значения, которые изменятся после развертывания приложения или которые вы хотели бы изменять для разных развертываний (если планируете повторно использовать этот шаблон), рекомендуется параметризировать эти значения. Лучше всего создать раздел "parameters" в верхней части шаблона развертывания и указать в нем имена и свойства параметров, которые встречаются ниже в шаблоне развертывания. Каждое определение параметра включает *type*, *defaultValue* и дополнительный раздел *metadata* с *description*.
 
 Раздел параметров определяется в верхней части шаблона развертывания, сразу над разделом *recources*:
 
@@ -359,9 +359,27 @@ az acr credential show --name myContainerRegistry --query "passwords[0].value"
 az mesh deployment create --resource-group myResourceGroup --template-file c:\temp\mesh_rp.windows.json --parameters c:\temp\mesh_rp.windows.parameters.json
 ```
 
-Через несколько минут вы увидите:
+Эта команда создает такой фрагмент кода JSON. В разделе ```outputs``` выходных данных JSON скопируйте свойство ```publicIPAddress```.
 
-`todolistappNetwork has been deployed successfully on todolistappNetwork with public ip address <IP Address>`
+```json
+"outputs": {
+    "publicIPAddress": {
+    "type": "String",
+    "value": "40.83.78.216"
+    }
+}
+```
+
+Эти сведения поступают из раздела ```outputs``` шаблона ARM. Как показано ниже, этот раздел ссылается на ресурс шлюза, чтобы получить общедоступный IP-адрес. 
+
+```json
+  "outputs": {
+    "publicIPAddress": {
+      "value": "[reference('helloWorldGateway').ipAddress]",
+      "type": "string"
+    }
+  }
+```
 
 ## <a name="open-the-application"></a>Запуск приложения
 
@@ -398,4 +416,4 @@ az mesh code-package-log get --resource-group myResourceGroup --application-name
 
 Перейдите к следующему руководству:
 > [!div class="nextstepaction"]
-> [Масштабирование приложения, работающего в Сетке Service Fabric](service-fabric-mesh-tutorial-template-scale-services.md)
+> [масштабирование приложения, работающего в Сетке Service Fabric](service-fabric-mesh-tutorial-template-scale-services.md);

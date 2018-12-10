@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 06/18/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: dfaee72be883ee8902fe4550890d757f114ff932
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: e526c5f2f446a1ae8134a3e2ca72fcc42024d904
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39426113"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52724100"
 ---
 # <a name="create-a-batch-account-with-the-azure-portal"></a>Создание учетной записи пакетной службы на портале Azure
 
@@ -91,11 +91,11 @@ ms.locfileid: "39426113"
 
     ![Регистрация поставщика Microsoft.Batch][register_provider]
 
-1. На странице **подписки** выберите **Управление доступом (IAM)** > **Добавить**.
+1. На странице **Подписка** выберите **Управление доступом (IAM)** > **Назначения ролей** > **Добавление назначения ролей**.
 
     ![Управление доступом к подписке][subscription_access]
 
-1. На странице **Добавление разрешений** выберите роль **Участник** и выполните поиск API пакетной службы. Продолжайте поиск для каждой из этих строк, пока не найдете API:
+1. На странице **Добавление назначения ролей** выберите роль **Участник** и выполните поиск API пакетной службы. Продолжайте поиск для каждой из этих строк, пока не найдете API:
     1. **MicrosoftAzureBatch**;
     1. **Microsoft Azure Batch**. Более новые клиенты Azure AD могут использовать это имя.
     1. **ddbf3205-c6bd-46ae-8127-60eb93363864** — это идентификатор API пакетной службы. 

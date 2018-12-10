@@ -15,18 +15,18 @@ ms.workload: NA
 ms.date: 09/27/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 12880c3aada46b1656cf37b0cb539292cce930ef
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: a720bb906192731b8b636939e22b13a8e52bbe76
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51625714"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52632897"
 ---
 # <a name="tutorial-deploy-a-service-fabric-windows-cluster-into-an-azure-virtual-network"></a>Руководство. Развертывание кластера Service Fabric на платформе Windows в виртуальной сети Azure
 
 Это руководство представляет первую часть цикла. Вы узнаете, как развернуть кластер Service Fabric на платформе Windows в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md) и [группе безопасности сети](../virtual-network/virtual-networks-nsg.md) с помощью шаблона и PowerShell. После окончания этого учебника у вас будет кластер в облаке, в который можно разворачивать приложения.  Создание кластера Linux с помощью Azure CLI описывается в разделе [Развертывание безопасного кластера Service Fabric на платформе Linux в виртуальной сети Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
 
-В этом руководстве описывается рабочий сценарий.  Если вы хотите быстро создать небольшой кластер для тестирования, см. статью [Create a three-node test Service Fabric cluster](./scripts/service-fabric-powershell-create-test-cluster.md) (Создание тестового кластера Service Fabric с тремя узлами).
+В этом руководстве описывается рабочий сценарий.  Если вы хотите быстро создать небольшой кластер для тестирования, см. статью [Создание кластера Service Fabric](./scripts/service-fabric-powershell-create-secure-cluster-cert.md).
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 

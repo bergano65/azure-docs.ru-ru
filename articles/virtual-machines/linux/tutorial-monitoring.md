@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 06/06/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: f8310885ddf7e2229054f36b8fda92b92c1ab01e
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: c271efceacab7f310b8e08a28d101f653c73a186
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49406506"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52868554"
 ---
 # <a name="tutorial-monitor-and-update-a-linux-virtual-machine-in-azure"></a>Руководство по мониторингу и обновлению виртуальных машин Linux в Azure
 
@@ -208,7 +208,7 @@ az vm boot-diagnostics get-boot-log --resource-group myResourceGroupMonitor --na
 * **Update classification** (Классификация обновлений). Выберите типы программного обеспечения, которые были включены в развертывание обновления. Ниже приведены типы классификации:
   * критические обновления и обновления для системы безопасности;
   * Другие обновления
-* **Обновления, которые нужно исключить.** Вы можете указать список имен пакетов, которые следует пропустить при развертывании обновлений. В именах пакетов поддерживаются подстановочные знаки (например, \*kernal\*).
+* **Обновления, которые нужно исключить.** Вы можете указать список имен пакетов, которые следует пропустить при развертывании обновлений. В именах пакетов поддерживаются подстановочные знаки (например \*kernel\*).
 
   ![Экран параметров обновления расписания](./media/tutorial-monitoring/manage-updates-exclude-linux.png)
 

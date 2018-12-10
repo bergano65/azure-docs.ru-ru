@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Поиск других вариантов перевода, C# — API перевода текстов
+title: Краткое руководство. Получение других вариантов перевода с помощью API перевода текстов и C#
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как с помощью API перевода текстов и .NET Core найти варианты перевода определенного термина и примеры их использования.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 11/26/2018
 ms.author: erhopf
-ms.openlocfilehash: b77113378803b3d40e3612c668a5048a936edbe2
-ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
+ms.openlocfilehash: 034b6e102d008039ddd138798900dbee17faf51d
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52679330"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52887956"
 ---
-# <a name="quickstart-find-alternate-translations-with-the-translator-text-rest-api-c"></a>Краткое руководство. Поиск других вариантов перевода с помощью REST API перевода текстов (C#)
+# <a name="quickstart-use-the-translator-text-api-to-get-alternate-translations-using-c"></a>Краткое руководство. Получение других вариантов перевода с помощью API перевода текстов и C#
 
 Из этого краткого руководства вы узнаете, как с помощью API перевода текстов и .NET Core найти варианты перевода определенного термина и примеры их использования.
 

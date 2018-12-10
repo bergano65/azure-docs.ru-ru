@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 05/17/2018
 ms.author: spelluru
-ms.openlocfilehash: c3eecfdf4bc2e6bf6798a6b3845cdc2e2e243341
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: ee2def6287a845cd0fd0260254efb20f9638ab2c
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49467435"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52839047"
 ---
 # <a name="tutorial-set-up-a-lab-by-using-azure-devtest-labs"></a>Руководство. Настройка лаборатории с помощью Azure DevTest Labs
 С помощью этого руководства вы создадите лабораторию на портале Azure. Администратор лаборатории настраивает в организации лабораторию, в которой он создает виртуальные машины и настраивает политики. Пользователи лаборатории (например, разработчик и тестировщики) запрашивают виртуальные машины лаборатории, подключаются к ним и используют их. 
@@ -80,15 +80,11 @@ ms.locfileid: "49467435"
 1. В меню слева выберите **Конфигурация и политики**. 
 
     ![Configuration and Policies (Конфигурация и политики)](./media/tutorial-create-custom-lab/configuration-and-policies-menu.png)
-1. В меню выберите **Управление доступом (IAM)** и нажмите кнопку **+ Добавить** на панели инструментов. 
-
-    ![Управление доступом -> кнопка "Добавить пользователя"](./media/tutorial-create-custom-lab/access-control-add.png)
+1. В меню выберите **Управление доступом (IAM)** и нажмите кнопку **+ Добавить назначение ролей** на панели инструментов. 
 1. На странице **Добавление разрешений** выполните следующие действия:
     1. Для **роли** выберите **Пользователь DevTest Labs**. 
     2. Выберите **пользователя**, которого нужно добавить. 
     3. Щелкните **Сохранить**.
-
-        ![Добавление разрешений](./media/tutorial-create-custom-lab/add-lab-user.png)
 4. Чтобы закрыть **Конфигурация и политики — Управление доступом (IAM)**, щелкните **Х** в правом углу. 
 
 ## <a name="cleanup-resources"></a>Очистка ресурсов

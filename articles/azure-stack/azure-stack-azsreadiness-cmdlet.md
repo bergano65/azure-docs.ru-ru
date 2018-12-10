@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/26/2018
+ms.date: 12/04/2018
 ms.author: sethm
 ms.reviewer: ''
-ms.openlocfilehash: 60e9a790a9b74bce7ccbdd58b320ad969c0932f3
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 03fd91b8412c75a994f55f589179f718189e67a7
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49079289"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52891169"
 ---
 # <a name="start-azsreadinesschecker-cmdlet-reference"></a>Справочник по командлету Start-AzsReadinessChecker
 
@@ -228,7 +228,8 @@ Start-AzsReadinessChecker -PaaSCertificates $PaaSCertificates -DeploymentDataJSO
 **Пример. Проверка удостоверения Azure**
 ```PowerShell
 $serviceAdminCredential = Get-Credential -Message "Enter Credentials for Service Administrator of Azure Active Directory Tenant e.g. serviceadmin@contoso.onmicrosoft.com"
-Start-AzsReadinessChecker -AADServiceAdministrator $serviceAdminCredential -AzureEnvironment AzureCloud -AzureDirectoryTenantName azurestack.contoso.com
+# Supported values for the <environment name> parameter are AzureCloud, AzureChinaCloud or AzureUSGovernment depending which Azure subscription you are using.
+Start-AzsReadinessChecker -AADServiceAdministrator $serviceAdminCredential -AzureEnvironment "<environment name>" -AzureDirectoryTenantName azurestack.contoso.com
 ```
 
 В этом примере учетные данные учетной записи администратора сервера безопасно запрашиваются, а Start-AzsReadinessChecker проверяет, допустимы ли учетная запись Azure и Azure Active Directory для развертывания AAD с именем каталога клиента "azurestack.contoso.com".
@@ -245,9 +246,10 @@ Start-AzsReadinessChecker -AADServiceAdministrator $serviceAdminCredential -Depl
 
 **Пример. Проверка регистрации в Azure**
 ```PowerShell
-$registrationCredential = Get-Credential -Message "Enter Credentials for Subscription Owner"e.g. subscriptionowner@contoso.onmicrosoft.com"
-$subscriptionID = "f7c26209-cd2d-4625-86ba-724ebeece794"
-Start-AzsReadinessChecker -RegistrationAccount $registrationCredential -RegistrationSubscriptionID $subscriptionID -AzureEnvironment AzureCloud
+$registrationCredential = Get-Credential -Message "Enter Credentials for Subscription Owner e.g. subscriptionowner@contoso.onmicrosoft.com"
+$subscriptionID = "<subscription ID"
+# Supported values for the <environment name> parameter are AzureCloud, AzureChinaCloud or AzureUSGovernment depending which Azure subscription you are using.
+Start-AzsReadinessChecker -RegistrationAccount $registrationCredential -RegistrationSubscriptionID $subscriptionID -AzureEnvironment "<environment name>"
 ```
 
 В этом примере учетные данные владельца подписки безопасно запрашиваются, а затем Start-AzsReadinessChecker выполняет проверку данной учетной записи и подписки, чтобы убедиться, что их можно использовать для регистрации в Azure Stack. 
@@ -255,8 +257,8 @@ Start-AzsReadinessChecker -RegistrationAccount $registrationCredential -Registra
 
 **Пример. Проверка регистрации Azure с помощью данных развертывания (команда развертывания)**
 ```PowerShell
-$registrationCredential = Get-Credential -Message "Enter Credentials for Subscription Owner"e.g. subscriptionowner@contoso.onmicrosoft.com"
-$subscriptionID = "f7c26209-cd2d-4625-86ba-724ebeece794"
+$registrationCredential = Get-Credential -Message "Enter Credentials for Subscription Owner e.g. subscriptionowner@contoso.onmicrosoft.com"
+$subscriptionID = "<subscription ID>"
 Start-AzsReadinessChecker -RegistrationAccount $registrationCredential -RegistrationSubscriptionID $subscriptionID -DeploymentDataJSONPath .\contoso-deploymentdata.json
 ```
 
@@ -295,7 +297,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|--------------|
 |Тип:                       |Строка        |
 |Позиция:                   |именованная         |
-|Значение по умолчанию:              |None          |
+|Значение по умолчанию:              |Нет          |
 |Принимает входные данные конвейера:      |Ложь         |
 |Принимает подстановочные знаки: |Ложь         |
 
@@ -319,7 +321,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|--------------|
 |Тип:                       |Строка        |
 |Позиция:                   |именованная         |
-|Значение по умолчанию:              |None          |
+|Значение по умолчанию:              |Нет          |
 |Допустимые значения:                |'AAD','ADFS'  |
 |Принимает входные данные конвейера:      |Ложь         |
 |Принимает подстановочные знаки: |Ложь         |
@@ -331,7 +333,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |SecureString |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |None     |
+|Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
@@ -342,7 +344,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |Хэш-таблицы |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |None     |
+|Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
@@ -353,7 +355,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |Строка   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |None     |
+|Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
@@ -364,7 +366,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |Строка   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |None     |
+|Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
@@ -375,7 +377,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |Строка   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |None     |
+|Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
@@ -386,7 +388,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |OrderedDictionary   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |None     |
+|Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
@@ -400,7 +402,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |Строка   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |None     |
+|Значение по умолчанию:              |Нет     |
 |Допустимые значения:                |'MultipleCSR','SingleCSR' |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
@@ -412,7 +414,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |Строка   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |None     |
+|Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
@@ -423,7 +425,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |PSCredential   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |None     |
+|Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
@@ -434,7 +436,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |Строка   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |None     |
+|Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
@@ -445,8 +447,8 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |Строка   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |None     |
-|Допустимые значения:                |'AzureCloud','AzureChinaCloud','AzureGermanCloud' |
+|Значение по умолчанию:              |Нет     |
+|Допустимые значения:                |AzureCloud, AzureChinaCloud, AzureGermanCloud |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
@@ -457,7 +459,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |Строка   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |None     |
+|Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
@@ -468,7 +470,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |Guid     |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |None     |
+|Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 

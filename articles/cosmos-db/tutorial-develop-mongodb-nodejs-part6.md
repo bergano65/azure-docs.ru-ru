@@ -1,10 +1,8 @@
 ---
-title: Руководство по MongoDB, Angular и Node — часть 6 | Документация Майкрософт
+title: Руководство по MongoDB, Angular и Node — часть 6
 description: Часть 6 из серии руководств по созданию в Azure Cosmos DB приложения MongoDB с помощью Angular и Node и тех же API, которые используются для MongoDB
 services: cosmos-db
 author: johnpapa
-manager: kfile
-editor: ''
 ms.service: cosmos-db
 ms.component: cosmosdb-mongo
 ms.devlang: nodejs
@@ -12,12 +10,12 @@ ms.topic: tutorial
 ms.date: 06/17/2018
 ms.author: jopapa
 ms.custom: mvc
-ms.openlocfilehash: 667c1fbce398e06f9f2a6edca21935ae1062a737
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 5188065022ef19a72068aa0bbb36b1c603d830dd
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50740576"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52869272"
 ---
 # <a name="create-a-mongodb-app-with-angular-and-azure-cosmos-db---part-6-add-post-put-and-delete-functions-to-the-app"></a>Создание приложения MongoDB с помощью Angular и Azure Cosmos DB — часть 6. Добавление функций Post, Put и Delete в приложение
 

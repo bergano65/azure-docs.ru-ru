@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 10/17/2018
 ms.author: chrande
-ms.openlocfilehash: 6b44e08fc1dce489e703bea1cbef2a7e94ae0f2a
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 83785e532523c3e921b0772ddaa50502b2dc867d
+ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50961047"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52633798"
 ---
 # <a name="manage-conflicts-between-regions"></a>Управление конфликтами между регионами
 
@@ -20,7 +20,7 @@ ms.locfileid: "50961047"
 
 ## <a name="create-a-custom-conflict-resolution-policy"></a>Создание политики разрешения конфликтов
 
-В этих примерах показано, как настроить контейнер с пользовательской политикой разрешения конфликтов. Эти конфликты будут отображаться в веб-канале конфликтов.
+В этих примерах показано, как настроить контейнер с пользовательской политикой разрешения конфликтов. Эти конфликты отображаются в веб-канале конфликтов.
 
 ### <a id="create-custom-conflict-resolution-policy-dotnet"></a>Пакет SDK для .NET
 
@@ -83,9 +83,9 @@ manual_collection = {
 manual_collection = client.CreateContainer(database['_self'], collection)
 ```
 
-## <a name="create-a-custom-conflict-resolution-policy-with-stored-procedure"></a>Создание пользовательской политики разрешения конфликтов с использованием хранимой процедуры
+## <a name="create-a-custom-conflict-resolution-policy-with-a-stored-procedure"></a>Создание пользовательской политики разрешения конфликтов с использованием хранимой процедуры
 
-В этих примерах показано, как настроить контейнер с пользовательской политикой разрешения конфликтов, использующей хранимую процедуру для решения конфликтов. Эти конфликты **не** будут отображаться в веб-канале конфликтов, если в хранимой процедуре содержится ошибка.
+В этих примерах показано, как настроить контейнер с пользовательской политикой разрешения конфликтов, использующей хранимую процедуру для решения конфликтов. Эти конфликты не будут отображаться в веб-канале конфликтов, если в хранимой процедуре нет ошибки.
 
 ### <a id="create-custom-conflict-resolution-policy-stored-proc-dotnet"></a>Пакет SDK для .NET
 
@@ -102,7 +102,7 @@ DocumentCollection udpCollection = await createClient.CreateDocumentCollectionIf
   });
 ```
 
-Вам потребуется создать хранимую процедуру `resolver` после создания контейнера.
+После создания контейнера создайте хранимую процедуру `resolver`.
 
 ### <a id="create-custom-conflict-resolution-policy-stored-proc-java-async"></a>Пакет SDK для Java (асинхронная модель)
 
@@ -114,7 +114,7 @@ collection.setConflictResolutionPolicy(policy);
 DocumentCollection createdCollection = client.createCollection(databaseUri, collection, null).toBlocking().value();
 ```
 
-Вам потребуется создать хранимую процедуру `resolver` после создания контейнера.
+После создания контейнера создайте хранимую процедуру `resolver`.
 
 ### <a id="create-custom-conflict-resolution-policy-stored-proc-java-sync"></a>Пакет SDK для Java (синхронная модель)
 
@@ -127,7 +127,7 @@ udpCollection.setConflictResolutionPolicy(udpPolicy);
 DocumentCollection createdCollection = this.tryCreateDocumentCollection(createClient, database, udpCollection);
 ```
 
-Вам потребуется создать хранимую процедуру `resolver` после создания контейнера.
+После создания контейнера создайте хранимую процедуру `resolver`.
 
 ### <a id="create-custom-conflict-resolution-policy-stored-proc-javascript"></a>Пакет SDK для Node.js, JavaScript и TypeScript
 
@@ -146,7 +146,7 @@ const { container: udpContainer } = await database.containers.createIfNotExists(
 );
 ```
 
-Вам потребуется создать хранимую процедуру `resolver` после создания контейнера.
+После создания контейнера создайте хранимую процедуру `resolver`.
 
 ### <a id="create-custom-conflict-resolution-policy-stored-proc-python"></a>Пакет SDK для Python
 
@@ -154,11 +154,11 @@ const { container: udpContainer } = await database.containers.createIfNotExists(
 
 ```
 
-Вам потребуется создать хранимую процедуру `resolver` после создания контейнера.
+После создания контейнера создайте хранимую процедуру `resolver`.
 
 ## <a name="create-a-last-writer-wins-conflict-resolution-policy"></a>Создание политики разрешения конфликтов, реализующей подход "Сохраняются изменения, внесенные последними"
 
-В этих примерах показано, как настроить контейнер с политикой разрешения конфликтов, реализующей подход "Сохраняются изменения, внесенные последними". Если путь не задан или является недопустимым, в качестве пути по умолчанию будет устанавливаться свойство `_ts` (поле метки времени). Эти конфликты **не** будут отображаться в веб-канале конфликтов.
+В этих примерах показано, как настроить контейнер с политикой разрешения конфликтов, реализующей подход "Сохраняются изменения, внесенные последними". Если путь не задан или является недопустимым, в качестве пути по умолчанию устанавливается свойство `_ts`. Это свойство представляет собой поле метки времени. Эти конфликты не будут отображаться в веб-канале конфликтов.
 
 ### <a id="create-custom-conflict-resolution-policy-lww-dotnet"></a>Пакет SDK для .NET
 
@@ -210,7 +210,7 @@ const { container: lwwContainer } = await database.containers.createIfNotExists(
 );
 ```
 
-Если опустить свойство `conflictResolutionPath`, по умолчанию будет использоваться свойство `_ts`.
+Если вы не указали свойство `conflictResolutionPath`, по умолчанию будет использоваться свойство `_ts`.
 
 ### <a id="create-custom-conflict-resolution-policy-lww-python"></a>Пакет SDK для Python
 
@@ -277,8 +277,8 @@ while conflict:
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь вы можете перейти к изучению следующих понятий Cosmos DB:
+Узнайте больше о следующих понятиях Azure Cosmos DB.
 
 * [Секционирование и масштабирование в Azure Cosmos DB](partition-data.md)
-* [Индексирование в Cosmos DB](indexing-policies.md)
+* [Индексирование в Azure Cosmos DB](indexing-policies.md)
 

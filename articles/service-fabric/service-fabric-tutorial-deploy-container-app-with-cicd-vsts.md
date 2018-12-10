@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 08/29/2018
 ms.author: twhitney
 ms.custom: mvc
-ms.openlocfilehash: 06bc4be6ee485e61523d210b692c3fe2567cc62c
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: 2320aaf2d502280a29562a49dfff1e4e9244d079
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52443497"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52872974"
 ---
 # <a name="tutorial-deploy-a-container-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство. Развертывание приложения-контейнера с помощью CI/CD в кластере Service Fabric
 
@@ -65,7 +65,7 @@ ms.locfileid: "52443497"
 
 При публикации репозитория в вашей учетной записи создается новый командный проект с тем же именем, что и у локального репозитория. Чтобы создать репозиторий в существующем командном проекте, щелкните **Расширенный** рядом с **именем репозитория** и выберите командный проект. Код можно просматривать в Интернете, выбрав **Просмотреть на веб-сайте**.
 
-## <a name="configure-continuous-delivery-with-vsts"></a>Настройка непрерывной поставки с помощью VSTS
+## <a name="configure-continuous-delivery-with-azure-pipelines"></a>Настройка непрерывной поставки с помощью Azure Pipelines
 
 В определении сборки Azure DevOps описывается рабочий процесс, состоящий из последовательных этапов сборки. Создайте определение сборки, которое создает пакет приложения Service Fabric и другие артефакты для развертывания в кластер Service Fabric. См. дополнительные сведения об [определениях сборки](https://www.visualstudio.com/docs/build/define/create) Azure DevOps. 
 
