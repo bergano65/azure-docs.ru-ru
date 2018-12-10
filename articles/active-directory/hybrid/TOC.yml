@@ -17,8 +17,56 @@ items:
   expanded: true
 - name: Основные понятия
   items:
+  - name: Azure AD Connect с расширением Azure AD Connect Health
+    href: how-to-connect-syncservice-duplicate-attribute-resiliency.md
+    items:
+    - name: Что такое Azure AD Connect с расширением Azure AD Connect Health
+      href: whatis-azure-ad-connect.md
+    - name: Выбор правильного метода аутентификации
+      href: https://docs.microsoft.com/azure/security/azure-ad-choose-authn
+    - name: Синхронизация удостоверений и устойчивость повторяющихся атрибутов
+  - name: Синхронизация хэша паролей
+    items:
+    - name: Что такое синхронизация хэша паролей
+      href: whatis-phs.md
+    - name: Как работает синхронизация хэшированных паролей
+      href: how-to-connect-password-hash-synchronization.md
+  - name: Сквозная аутентификация
+    items:
+    - name: Что собой представляет сквозная аутентификация
+      href: how-to-connect-pta.md
+    - name: Принцип работы сквозной аутентификации
+      href: how-to-connect-pta-how-it-works.md
+    - name: Текущие ограничения сквозной аутентификации
+      href: how-to-connect-pta-current-limitations.md
+    - name: Подробный анализ возможностей защиты, предоставляемых сквозной аутентификацией
+      href: how-to-connect-pta-security-deep-dive.md
+    - name: Сквозная аутентификация и конфиденциальность пользователей
+      href: how-to-connect-pta-user-privacy.md
+  - name: Федерация
+    items:
+    - name: Что такое федерация
+      href: whatis-fed.md
+    - name: Принцип работы федерации
+      href: how-to-connect-fed-whatis.md
+    - name: Список совместимости с федерацией Azure AD
+      href: how-to-connect-fed-compatibility.md
+  - name: Единый вход
+    items:
+    - name: Что собой представляет единый вход
+      href: how-to-connect-sso.md
+    - name: Принцип работы единого входа
+      href: how-to-connect-sso-how-it-works.md
+    - name: Единый вход и конфиденциальность пользователей
+      href: how-to-connect-sso-user-privacy.md
   - name: Синхронизация Azure AD Connect
     items:
+    - name: Что такое синхронизация Azure AD Connect?
+      href: how-to-connect-sync-whatis.md
+    - name: Функции синхронизации Azure AD Connect
+      href: how-to-connect-syncservice-features.md
+    - name: Что собой представляет диспетчер службы синхронизации Azure AD Connect
+      href: how-to-connect-sync-service-manager-ui.md
     - name: Технические понятия службы синхронизации Azure AD Connect
       href: how-to-connect-sync-technical-concepts.md
     - name: Общие сведения об архитектуре службы синхронизации Azure AD Connect
@@ -33,8 +81,6 @@ items:
       href: concept-azure-ad-connect-sync-user-and-contacts.md
     - name: Общие сведения о теневых атрибутах
       href: how-to-connect-syncservice-shadow-attributes.md
-  - name: Синхронизация удостоверений и устойчивость повторяющихся атрибутов
-    href: how-to-connect-syncservice-duplicate-attribute-resiliency.md
 - name: Практические руководства
   items:
   - name: Установка и обновление
@@ -119,8 +165,6 @@ items:
         href: plan-hybrid-identity-design-considerations-tools-comparison.md
   - name: Управление Azure AD Connect
     items:
-    - name: Что такое синхронизация хэша паролей
-      href: how-to-connect-password-hash-synchronization.md
     - name: Включение обратной записи устройства
       href: how-to-connect-device-writeback.md
     - name: Параметры устройств
@@ -141,10 +185,14 @@ items:
       href: how-to-connect-sync-change-addsacct-pass.md
     - name: Что собой представляет модуль PowerShell ADConnectivityTools
       href: how-to-connect-adconnectivitytools.md
+  - name: Управление сквозной аутентификацией
+    items:
+    - name: Начало работы со сквозной аутентификацией
+      href: how-to-connect-pta-quick-start.md
+    - name: Часто задаваемые вопросы о сквозной аутентификации
+      href: how-to-connect-pta-faq.md
   - name: Управление службами федерации
     items:
-    - name: Что собой представляет федерация с Azure AD Connect
-      href: how-to-connect-fed-whatis.md
     - name: Управление федерацией с Azure AD Connect
       href: how-to-connect-fed-management.md
     - name: Поддержка нескольких доменов для федерации
@@ -159,40 +207,14 @@ items:
       href: how-to-connect-azure-ad-trust.md
     - name: Изменение хэш-алгоритма для проверяющей стороны Office 365
       href: how-to-connect-fed-sha256-guidance.md
-    - name: Список совместимости с федерацией Azure AD
-      href: how-to-connect-fed-compatibility.md
     - name: Использование сервера SAML 2.0 в качестве поставщика удостоверений
       href: how-to-connect-fed-saml-idp.md
     - name: Задачи постконфигурации для гибридного присоединения устройств к Azure AD
       href: how-to-connect-fed-hybrid-azure-ad-join-post-config-tasks.md
-  - name: Управление сквозной аутентификацией
-    items:
-    - name: Что собой представляет сквозная аутентификация
-      href: how-to-connect-pta.md
-    - name: Начало работы со сквозной аутентификацией
-      href: how-to-connect-pta-quick-start.md
-    - name: Принцип работы сквозной аутентификации
-      href: how-to-connect-pta-how-it-works.md
-    - name: Текущие ограничения сквозной аутентификации
-      href: how-to-connect-pta-current-limitations.md
-    - name: Подробный анализ возможностей защиты, предоставляемых сквозной аутентификацией
-      href: how-to-connect-pta-security-deep-dive.md
-    - name: Сквозная аутентификация и конфиденциальность пользователей
-      href: how-to-connect-pta-user-privacy.md
-    - name: Текущие ограничения сквозной аутентификации
-      href: how-to-connect-pta-security-deep-dive.md
-    - name: Часто задаваемые вопросы о сквозной аутентификации
-      href: how-to-connect-pta-faq.md
   - name: Управление единым входом
     items:
-    - name: Что собой представляет единый вход
-      href: how-to-connect-sso.md
     - name: Начало работы с единым входом
       href: how-to-connect-sso-quick-start.md
-    - name: Принцип работы единого входа
-      href: how-to-connect-sso-how-it-works.md
-    - name: Единый вход и конфиденциальность пользователей
-      href: how-to-connect-sso-user-privacy.md
     - name: Часто задаваемые вопросы о едином входе
       href: how-to-connect-sso-faq.md
   - name: Управление Azure AD Connect Health
@@ -213,10 +235,6 @@ items:
       href: how-to-connect-health-alert-catalog.md
   - name: Управление синхронизацией Azure AD Connect
     items:
-    - name: Что такое синхронизация Azure AD Connect?
-      href: how-to-connect-sync-whatis.md
-    - name: Функции синхронизации Azure AD Connect
-      href: how-to-connect-syncservice-features.md
     - name: Управление операционной задачей
       href: how-to-connect-sync-operations.md
     - name: Рекомендации по изменению конфигурации по умолчанию
@@ -233,8 +251,6 @@ items:
       href: how-to-connect-sync-feature-scheduler.md
     - name: Диспетчер службы синхронизации Azure AD Connect
       items:
-      - name: Что собой представляет диспетчер службы синхронизации Azure AD Connect
-        href: how-to-connect-sync-service-manager-ui.md
       - name: Управление вкладкой операций в диспетчере служб
         href: how-to-connect-sync-service-manager-ui-operations.md
       - name: Использование соединителей с помощью диспетчера служб
@@ -303,9 +319,9 @@ items:
     href: reference-connect-adsynctools.md
   - name: Справочник по ADConnectivityTools
     href: reference-connect-adconnectivitytools.md
-ms.openlocfilehash: 07a3bfd816cd57ecbe77bf7e7435be99a0321fd2
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: b3488ec5aec1c5bd1d3f38a2bf87ab1d8d3a87f1
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52335459"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53080152"

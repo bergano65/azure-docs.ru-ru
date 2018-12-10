@@ -1,15 +1,15 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: b6765fea8087a21d92a349244f883dbaeb1e730f
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: a4402d33bda8ece965608a19c8150ec616118b1c
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52273565"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53105977"
 documentType: LandingData
 title: Документация по QnA Maker
 metadata:
   title: Документация по QnA Maker. Microsoft Cognitive Services | Документация Майкрософт
-  description: Дополнительные сведения о функциях QnA Maker
+  description: Ознакомьтесь со службой QnA Maker и узнайте, как с помощью баз знаний в этой службе обрабатываются ваши вопросы и ответы.
   services: cognitive-services
   author: tulasim88
   manager: cgronlun

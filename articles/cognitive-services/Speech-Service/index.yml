@@ -1,18 +1,16 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 452032e21a649fe4d34616225bd168d441ac0267
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
+ms.openlocfilehash: 6fa6a0f5a46d8e9a47a0750a66e9ca007864d40a
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51218647"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53092637"
 documentType: LandingData
 title: Документация по службе "Речь"
 metadata:
-  title: Документация по службе "Речь". Инструкции, краткие руководства и справочник по API — Cognitive Services | Документация Майкрософт
-  meta.description: >
-    The Speech service gives developers an easy way to add powerful speech-enabled features to their applications.
-
-    Examples include voice command control and dialogue, natural speech conversation, speech transcription and dictation, and speech translation.
+  title: Документация по службе "Речь". Руководства, краткие инструкции и справочник по API
+  titleSuffix: Azure Cognitive Services
+  description: Служба "Речь" упрощает для разработчиков добавление в приложения эффективных голосовых функций. В примерах демонстрируются элементы управления и построения диалога с помощью голосовых команд, диалоги с применением естественной речи, транскрибирование речи и средства диктовки, а также перевод речи.
   services: cognitive-services
   author: nitinme
   manager: cgronlun
@@ -22,8 +20,9 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 09/24/2018
-  ms.author: nitinme
+  ms.date: 12/06/2018
+  ms.author: erhopf
+  ms.custom: seodec18
 abstract:
   description: Узнайте, как использовать службу "Речь" и пакет SDK для службы "Речь", чтобы добавить речевые функции в свои приложения. Пакет SDK для службы распознавания речи можно использовать для добавления в свои приложения функций <i>преобразования речи в текст</i> (распознавание речи), <i>определения намерений</i>, <i>перевода</i> и <i>преобразования текста в речь</i>. Служба "Речь" также имеет REST API, который работает с любым языком программирования, поддерживающим HTTP-запросы.
 sections:
@@ -34,12 +33,12 @@ sections:
     columns: 3
     items:
     - href: /azure/cognitive-services/speech-service/overview
-      html: <p>Узнайте о службе "Речь" Azure.</p>
+      html: <p>Ознакомьтесь со службой "Речь" в Azure.</p>
       image:
         src: ../media/index/i_overview.svg
       title: Что такое служба "Речь"?
     - href: /azure/cognitive-services/speech-service/get-started
-      html: <p>Узнайте, как бесплатно зарегистрироваться для использования службы "Речь".</p>
+      html: <p>Зарегистрируйтесь для использования бесплатной версии.</p>
       image:
         src: ../media/index/i_get-started.svg
       title: Регистрация для использования службы "Речь"
