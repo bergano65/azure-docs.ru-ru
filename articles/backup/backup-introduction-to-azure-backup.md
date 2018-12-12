@@ -2,20 +2,20 @@
 title: Что такое служба архивации Azure?
 description: С помощью службы архивации можно архивировать и восстанавливать данные и рабочие нагрузки на серверах Windows Server, рабочих станциях Windows, серверах System Center DPM, а также на виртуальных машинах Azure.
 services: backup
-author: markgalioto
+author: rayne-wiselman
 manager: carmonm
 keywords: резервное копирование и восстановление; службы восстановления; решения для резервного копирования
 ms.service: backup
 ms.topic: overview
 ms.date: 8/2/2018
-ms.author: markgal
+ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 0a5b9e6cdb5329705cb3c6d4676dfc8d987119e4
-ms.sourcegitcommit: fc5555a0250e3ef4914b077e017d30185b4a27e6
+ms.openlocfilehash: b0d920c1a41ff679c3dedcb6745e250b77cb769a
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39480979"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52878339"
 ---
 # <a name="overview-of-the-features-in-azure-backup"></a>Общие сведения о возможностях в службе архивации Azure
 Служба архивации Azure — это служба на платформе Azure, используемая для резервного копирования (защиты) и восстановления данных в Microsoft Cloud. Служба архивации Azure позволяет заменить существующее локальное или автономное решение для резервного копирования на надежное, безопасное и экономичное облачное решение. Служба архивации Azure включает несколько компонентов, которые можно загрузить и установить на соответствующем компьютере, сервере или в облаке. В зависимости от того, что вам нужно защитить, развертываются различные компоненты или агенты. Все компоненты службы архивации Azure можно использовать для резервного копирования данных в хранилище служб восстановления Azure, независимо от того, защищаются ли локальные или облачные данные. В разделе [Таблица компонентов службы архивации Azure](backup-introduction-to-azure-backup.md#which-azure-backup-components-should-i-use) (далее в этой статье) вы найдете сведения о том, какие компоненты следует использовать для защиты определенных типов данных, приложений и рабочих нагрузок.

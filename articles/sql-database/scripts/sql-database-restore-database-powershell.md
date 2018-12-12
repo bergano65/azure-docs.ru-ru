@@ -3,7 +3,7 @@ title: Пример для PowerShell. Восстановление и архи�
 description: Пример сценария Azure PowerShell для восстановления базы данных SQL Azure из геоизбыточных резервных копий.
 services: sql-database
 ms.service: sql-database
-ms.subservice: operations
+ms.subservice: backup-restore
 ms.custom: ''
 ms.devlang: PowerShell
 ms.topic: sample
@@ -12,12 +12,12 @@ ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
 ms.date: 09/07/2018
-ms.openlocfilehash: b6e44e8aeeb0e0dd6ea11922e93549fc74482bba
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.openlocfilehash: 95ce6b0b7cabd5d677bcfa4434d419c7bfc0b7b5
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47055260"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52869880"
 ---
 # <a name="use-powershell-to-restore-an-azure-sql-database-from-backups"></a>Восстановление базы данных SQL Azure из резервных копий с помощью PowerShell
 
