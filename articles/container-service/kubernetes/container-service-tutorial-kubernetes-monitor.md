@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 04/05/2018
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: 249e286b16b78643c33b567f705a4c92991f5553
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: b2243851d62cc17dc52407dce051cc2e0f4bcb12
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49404874"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52889214"
 ---
 # <a name="monitor-a-kubernetes-cluster-with-log-analytics"></a>Мониторинг кластера Kubernetes с помощью Log Analytics
 
@@ -143,7 +143,7 @@ omsagent   3         3         3         0            3           <none>        
 
 ## <a name="access-monitoring-data"></a>Доступ к данным мониторинга
 
-Просматривать и анализировать данные мониторинга контейнера можно с помощью [решения "Контейнер"](../../log-analytics/log-analytics-containers.md) на портале Azure или на портале Log Analytics.
+Просматривать и анализировать данные мониторинга контейнера можно с помощью [решения "Контейнер"](../../azure-monitor/insights/containers.md) на портале Azure или на портале Log Analytics.
 
 Для установки решения "Контейнер" с помощью [портала Log Analytics](https://mms.microsoft.com) перейдите к разделу **Коллекция решений**. Затем добавьте **решение "Контейнер"**. Кроме того, можно добавить решение "Контейнеры" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft.containersoms?tab=Overview).
 
@@ -153,7 +153,7 @@ omsagent   3         3         3         0            3           <none>        
 
 На портале Azure перейдите к **Log Analytics** и выберите имя рабочей области. Чтобы увидеть плитку сводки **Контейнеры**, щелкните **Решения** > **Контейнеры**. Чтобы просмотреть сведения, щелкните плитку.
 
-Подробные сведения о создании запросов и анализе данных мониторинга см. в [документации по Log Analytics](../../log-analytics/log-analytics-queries.md).
+Подробные сведения о создании запросов и анализе данных мониторинга см. в [документации по Log Analytics](../../azure-monitor/log-query/log-query-overview.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

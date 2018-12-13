@@ -126,13 +126,13 @@
 ### [Обработка длительных операций](media-services-dotnet-long-operations.md)
 ### [Спецификация Fragmented MP4 Live Ingest](media-services-fmp4-live-ingest-overview.md)
 
-## [Обрезка содержимого](media-services-azure-media-clipper-overview.md)
-### [Приступая к работе](media-services-azure-media-clipper-getting-started.md)
-### [Загрузка видео](media-services-azure-media-clipper-load-assets.md)
-### [Настройка сочетаний клавиш](media-services-azure-media-clipper-keyboard-shortcuts.md)
-### [Настройка локализации](media-services-azure-media-clipper-localization.md)
-### [Отправка заданий обрезки](media-services-azure-media-clipper-submit-job.md)
-### [портал Azure](media-services-azure-media-clipper-portal.md)
+<!-- ## [Clip content](media-services-azure-media-clipper-overview.md)
+### [Getting started](media-services-azure-media-clipper-getting-started.md)
+### [Load videos](media-services-azure-media-clipper-load-assets.md)
+### [Configure keyboard shortcuts](media-services-azure-media-clipper-keyboard-shortcuts.md)
+### [Configure localization](media-services-azure-media-clipper-localization.md)
+### [Submit clipping jobs](media-services-azure-media-clipper-submit-job.md)
+### [Azure portal](media-services-azure-media-clipper-portal.md) -->
 
 ## [Защита содержимого](media-services-content-protection-overview.md)
 ### [Шифрование хранилища](media-services-rest-storage-encryption.md)
