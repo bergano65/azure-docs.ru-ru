@@ -79,7 +79,7 @@ items:
     - name: Время приема данных журналов
       href: platform/data-ingestion-time.md
     - name: Сбор пользовательских метрик в хранилище метрик
-      href: ../monitoring-and-diagnostics/metrics-custom-overview.md?toc=/azure/azure-monitor/toc.json
+      href: platform/metrics-custom-overview.md
     - name: Защита данных
       items:
       - name: Данные журнала
@@ -123,17 +123,17 @@ items:
     - name: Оповещения
       href: ../monitoring-and-diagnostics/monitoring-overview-alerts.md?toc=/azure/azure-monitor/toc.json
     - name: Классические оповещения
-      href: ../monitoring-and-diagnostics/monitoring-overview-alerts-classic.md?toc=/azure/azure-monitor/toc.json
+      href: platform/alerts-classic.overview.md
     - name: Смарт-группы
       href: ../monitoring-and-diagnostics/monitoring-overview-alerts-smartgroups.md?toc=/azure/azure-monitor/toc.json
     - name: Autoscale
       href: ../monitoring-and-diagnostics/monitoring-overview-autoscale.md?toc=/azure/azure-monitor/toc.json
     - name: Оповещения о метриках
-      href: ../monitoring-and-diagnostics/alert-metric-overview.md?toc=/azure/azure-monitor/toc.json
+      href: platform/alerts-metric-overview.md
     - name: Оповещения журналов
-      href: ../monitoring-and-diagnostics/monitor-alerts-unified-log.md?toc=/azure/azure-monitor/toc.json
+      href: platform/alerts-unified-log.md
     - name: оповещения журнала действий;
-      href: ../monitoring-and-diagnostics/monitoring-activity-log-alerts.md?toc=/azure/azure-monitor/toc.json
+      href: platform/activity-log-alerts.md
   - name: Визуализируйте данные
     href: visualizations.md?toc=/azure/azure-monitor/toc.json
   - name: Интеграция с партнерскими решениями
@@ -207,27 +207,27 @@ items:
       - name: Расширение системы диагностики Azure
         items:
         - name: Обзор
-          href: ../monitoring-and-diagnostics/azure-diagnostics.md?toc=/azure/azure-monitor/toc.json
+          href: platform/diagnostics-extension-overview.md
         - name: Отправка в службу хранилища Azure
-          href: ../monitoring-and-diagnostics/azure-diagnostics-storage.md?toc=/azure/azure-monitor/toc.json
+          href: platform/diagnostics-extension-to-storage.md
         - name: Отправка в Application Insights
-          href: ../monitoring-and-diagnostics/azure-diagnostics-configure-application-insights.md?toc=/azure/azure-monitor/toc.json
+          href: platform/diagnostics-extension-to-application-insights.md
         - name: Отправка в Центры событий
-          href: ../monitoring-and-diagnostics/azure-diagnostics-streaming-event-hubs.md?toc=/azure/azure-monitor/toc.json
+          href: platform/diagnostics-extension-stream-event-hubs.md
         - name: Устранение неполадок
-          href: ../monitoring-and-diagnostics/azure-diagnostics-troubleshooting.md?toc=/azure/azure-monitor/toc.json
+          href: platform/diagnostics-extension-troubleshooting.md
         - name: Включение параметров диагностики с помощью шаблонов Resource Manager
           href: ../monitoring-and-diagnostics/monitoring-enable-diagnostic-logs-using-template.md?toc=/azure/azure-monitor/toc.json
         - name: Подготовка к использованию формата журналов диагностики JSON Lines
           href: ../monitoring-and-diagnostics/monitor-diagnostic-logs-append-blobs.md?toc=/azure/azure-monitor/toc.json
         - name: Отправка в хранилище метрик гостевой ОС для виртуальной машины
-          href: ../monitoring-and-diagnostics/metrics-store-custom-guestos-resource-manager-vm.md?toc=/azure/azure-monitor/toc.json
+          href: platform/collect-custom-metrics-guestos-resource-manager-vm.md
         - name: Отправка в хранилище метрик гостевой ОС для масштабируемого набора виртуальных машин
-          href: ../monitoring-and-diagnostics/metrics-store-custom-guestos-resource-manager-vmss.md?toc=/azure/azure-monitor/toc.json
+          href: platform/collect-custom-metrics-guestos-resource-manager-vmss.md
         - name: Отправка в хранилище метрик гостевой ОС для классической виртуальной машины
-          href: ../monitoring-and-diagnostics/metrics-store-custom-guestos-classic-vm.md?toc=/azure/azure-monitor/toc.json
+          href: platform/collect-custom-metrics-guestos-vm-classic.md
         - name: Отправка в хранилище метрик гостевой ОС для облачной службы
-          href: ../monitoring-and-diagnostics/metrics-store-custom-guestos-classic-cloud-service.md?toc=/azure/azure-monitor/toc.json
+          href: platform/collect-custom-metrics-guestos-vm-cloud-service-classic.md
       - name: Устранение неполадок
         items:
         - name: Расширение виртуальной машины Log Analytics
@@ -431,7 +431,7 @@ items:
       - name: REST API хранилища метрик
         href: ../monitoring-and-diagnostics/metrics-store-custom-rest-api.md?toc=/azure/azure-monitor/toc.json
       - name: Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf
-        href: ../monitoring-and-diagnostics/metrics-store-custom-linux-telegraf.md?toc=/azure/azure-monitor/toc.json
+        href: platform/collect-custom-metrics-linux-telegraf.md
     - name: System Center
       items:
       - name: Менеджер конфигураций
@@ -734,11 +734,11 @@ items:
       - name: Использование оповещений метрик
         items:
         - name: Создание, просмотр и администрирование оповещений метрик в Azure Monitor
-          href: ../monitoring-and-diagnostics/alert-metric.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-metric.md
         - name: Создание, просмотр и администрирование классических оповещений метрик в Azure Monitor
-          href: ../monitoring-and-diagnostics/alert-metric-classic.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-classic-portal.md
         - name: Оповещения с динамическими порогами
-          href: ../monitoring-and-diagnostics/monitoring-alerts-dynamic-thresholds.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-dynamic-thresholds.md
         - name: Настройка оповещений метрик для журналов
           href: ../monitoring-and-diagnostics/monitoring-metric-alerts-logs.md?toc=/azure/azure-monitor/toc.json
         - name: Создание более новых оповещений метрик с помощью шаблона Resource Manager
@@ -746,23 +746,23 @@ items:
         - name: Создание классического оповещения метрики с помощью шаблона Resource Manager
           href: ../monitoring-and-diagnostics/monitoring-enable-alerts-using-template.md?toc=/azure/azure-monitor/toc.json
         - name: Вызов веб-перехватчика с помощью классического оповещения метрики
-          href: ../monitoring-and-diagnostics/insights-webhooks-alerts.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-webhooks.md
       - name: Использование оповещений журналов
         items:
         - name: Создание, просмотр и администрирование оповещений журналов
-          href: ../monitoring-and-diagnostics/alert-log.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-log.md
         - name: Действия веб-перехватчика для оповещений журнала
-          href: ../monitoring-and-diagnostics/monitor-alerts-unified-log-webhook.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-log-webhook.md
         - name: Устранение неполадок с оповещениями журналов
           href: ../monitoring-and-diagnostics/alert-log-troubleshoot.md?toc=/azure/azure-monitor/toc.json
       - name: Использование оповещений журналов действий
         items:
         - name: Настройка оповещений о событиях журнала действий
-          href: ../monitoring-and-diagnostics/alert-activity-log.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-activity-log.md
         - name: Переход к использованию оповещений журнала действий
           href: ../monitoring-and-diagnostics/monitoring-migrate-management-alerts.md?toc=/azure/azure-monitor/toc.json
         - name: Настройка оповещений об уведомлениях службы
-          href: ../monitoring-and-diagnostics/monitoring-activity-log-alerts-on-service-notifications.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-activity-log-service-notifications.md
       - name: Использование оповещений приложений
         items:
         - name: Доступность
@@ -772,9 +772,9 @@ items:
       - name: Использование групп действий с оповещениями
         items:
         - name: Создание групп действий
-          href: ../monitoring-and-diagnostics/monitoring-action-groups.md?toc=/azure/azure-monitor/toc.json
+          href: platform/action-groups.md
         - name: Дополнительные сведения о схеме веб-перехватчика
-          href: ../monitoring-and-diagnostics/monitoring-activity-log-alerts-webhook.md?toc=/azure/azure-monitor/toc.json
+          href: platform/activity-log-alerts-webhook.md
         - name: Поведение оповещений SMS
           href: ../monitoring-and-diagnostics/monitoring-sms-alert-behavior.md?toc=/azure/azure-monitor/toc.json
         - name: Ограничение частоты создания оповещений
@@ -782,13 +782,13 @@ items:
         - name: Создание групп действий с помощью Resource Manager
           href: ../monitoring-and-diagnostics/monitoring-create-action-group-with-resource-manager-template.md?toc=/azure/azure-monitor/toc.json
         - name: Реализация действия для приложения логики
-          href: ../monitoring-and-diagnostics/monitoring-action-groups-logic-app.md?toc=/azure/azure-monitor/toc.json
+          href: platform/action-groups-logic-app.md
       - name: Оповещения из Operations Manager
         href: platform/alert-management-solution.md
       - name: Управление оповещениями
         items:
         - name: Управление экземплярами оповещений
-          href: ../monitoring-and-diagnostics/monitoring-alerts-managing-alert-instances.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-managing-alert-instances.md
         - name: Управление смарт-группами
           href: ../monitoring-and-diagnostics/monitoring-alerts-managing-smart-groups.md?toc=/azure/azure-monitor/toc.json
         - name: Управление состоянием оповещений и смарт-групп
@@ -802,25 +802,25 @@ items:
       - name: Основные сведения о параметрах автомасштабирования
         href: ../monitoring-and-diagnostics/monitoring-understanding-autoscale-settings.md?toc=/azure/azure-monitor/toc.json
       - name: Рекомендации
-        href: ../monitoring-and-diagnostics/insights-autoscale-best-practices.md?toc=/azure/azure-monitor/toc.json
+        href: platform/autoscale-best-practices.md
       - name: Распространенные метрики
-        href: ../monitoring-and-diagnostics/insights-autoscale-common-metrics.md?toc=/azure/azure-monitor/toc.json
+        href: platform/autoscale-common-metrics.md
       - name: Распространенные шаблоны
         href: ../monitoring-and-diagnostics/monitoring-autoscale-common-scale-patterns.md?toc=/azure/azure-monitor/toc.json
       - name: Автомасштабирование с помощью пользовательской метрики
         href: ../monitoring-and-diagnostics/monitoring-autoscale-scale-by-custom-metric.md?toc=/azure/azure-monitor/toc.json
       - name: Автомасштабирование масштабируемых наборов виртуальных машин с помощью шаблонов Resource Manager
-        href: ../monitoring-and-diagnostics/insights-advanced-autoscale-virtual-machine-scale-sets.md?toc=/azure/azure-monitor/toc.json
+        href: platform/autoscale-virtual-machine-scale-sets.md
       - name: Автомасштабирование виртуальных машин в масштабируемых наборах виртуальных машин
         href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md?toc=/azure/azure-monitor/toc.json?toc=/azure/azure-monitor/toc.json
       - name: Настройка веб-перехватчиков и уведомлений по электронной почте для автомасштабирования
-        href: ../monitoring-and-diagnostics/insights-autoscale-to-webhook-email.md?toc=/azure/azure-monitor/toc.json
+        href: platform/autoscale-webhook-email.md
     - name: Уведомления службы
       items:
       - name: Просмотр уведомлений службы
         href: ../monitoring-and-diagnostics/monitoring-service-notifications.md?toc=/azure/azure-monitor/toc.json
       - name: Настройка оповещений об уведомлениях службы
-        href: ../monitoring-and-diagnostics/monitoring-activity-log-alerts-on-service-notifications.md?toc=/azure/azure-monitor/toc.json
+        href: platform/alerts-activity-log-service-notifications.md
     - name: Управление ИТ-службами
       items:
       - name: Соединитель управления ИТ-службами
@@ -860,7 +860,7 @@ items:
         - name: Получение данных диагностики Azure
           href: ../application-insights/app-insights-powershell-azure-diagnostics.md?toc=/azure/azure-monitor/toc.json
     - name: Примеры Azure CLI
-      href: ../monitoring-and-diagnostics/insights-cli-samples.md?toc=/azure/azure-monitor/toc.json
+      href: platform/cli-samples.md
     - name: Шаблоны диспетчера ресурсов
       href: platform/template-workspace-configuration.md
     - name: API
@@ -962,14 +962,14 @@ items:
     - name: Схема событий журнала действий
       href: ../monitoring-and-diagnostics/monitoring-activity-log-schema.md?toc=/azure/azure-monitor/toc.json
     - name: Схема расширения системы диагностики Azure
-      href: ../monitoring-and-diagnostics/azure-diagnostics-schema.md?toc=/azure/azure-monitor/toc.json
+      href: platform/diagnostics-extension-schema.md
       items:
       - name: Версия 1.3 и более поздняя версия
-        href: ../monitoring-and-diagnostics/azure-diagnostics-schema-1dot3-and-later.md?toc=/azure/azure-monitor/toc.json
+        href: platform/diagnostics-extension-schema-1dot3.md
       - name: "1.2"
-        href: ../monitoring-and-diagnostics/azure-diagnostics-schema-1dot2.md?toc=/azure/azure-monitor/toc.json
+        href: platform/diagnostics-extension-schema-1dot2.md
       - name: "1"
-        href: ../monitoring-and-diagnostics/azure-diagnostics-schema-1dot0.md?toc=/azure/azure-monitor/toc.json
+        href: platform/diagnostics-extension-schema-1dot0.md
   - name: Прекращение поддержки функций и API
     items:
     - name: Классический API автомасштабирования и метрик
@@ -977,9 +977,9 @@ items:
     - name: Классические оповещения и мониторинг
       href: ../monitoring-and-diagnostics/monitoring-classic-retirement.md?toc=/azure/azure-monitor/toc.json
     - name: Расширение оповещений из Log Analytics в Azure
-      href: ../monitoring-and-diagnostics/monitoring-alerts-extend.md?toc=/azure/azure-monitor/toc.json
+      href: platform/alerts-extend.md
     - name: Копирование оповещений с портала OMS на портал Azure
-      href: ../monitoring-and-diagnostics/monitoring-alerts-extend-tool.md?toc=/azure/azure-monitor/toc.json
+      href: platform/alerts-extend-tool.md
 - name: Ресурсы
   items:
   - name: Стратегия развития Azure
@@ -1010,9 +1010,9 @@ items:
     href: https://stackoverflow.com/search?q=monitoring
   - name: Примеры кода
     href: https://azure.microsoft.com/resources/samples/?service=monitor
-ms.openlocfilehash: 84203f76d998b197fca3834857881f0a347f2cca
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 06ea6e43343a0cf9982a6161fbd60d5bfce6b0ba
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53106742"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53322556"

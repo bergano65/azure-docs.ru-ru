@@ -14,20 +14,8 @@ items:
   items:
   - name: Создание учетной записи
     href: cognitive-services-apis-create-account.md
-- name: Учебники
-  items:
-  - name: Создание приложения с помощью Компьютерного зрения
-    href: ./Computer-vision/tutorials/csharptutorial.md
-  - name: Распознавание намерений с помощью пакета SDK для распознавания речи и LUIS
-    href: ./speech-service/how-to-recognize-intents-from-speech-csharp.md
-  - name: Создание приложения LUIS
-    href: ./luis/luis-quickstart-intents-only.md
-  - name: Использование API анализа текста с Power BI
-    href: ./Text-Analytics/tutorials/tutorial-power-bi-key-phrases.md
-  - name: Создание приложения для Поиска в Интернете Bing
-    href: ./bing-web-search/tutorial-bing-web-search-single-page-app.md
-  - name: Создание приложения для Поиска изображений Bing
-    href: ./bing-image-search/tutorial-bing-image-search-single-page-app.md
+  - name: Authentication
+    href: authentication.md
 - name: Ресурсы
   items:
   - name: Стратегия развития Azure
@@ -44,9 +32,9 @@ items:
     href: http://go.microsoft.com/fwlink/?LinkId=698895
   - name: База знаний
     href: https://cognitive.uservoice.com/knowledgebase
-ms.openlocfilehash: 43358d176db8642862a49d755a766cc22dbd57b9
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 28b17af092a1e336cb830772541dcdefe472ed3a
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51630985"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53320869"

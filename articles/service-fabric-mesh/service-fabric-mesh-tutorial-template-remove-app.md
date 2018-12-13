@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/15/2018
 ms.author: ryanwi
 ms.custom: mvc, devcenter
-ms.openlocfilehash: f366413ae5f758601dfebc2a29ff848feb756083
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 9b72ca2a166e805d960eab47835f449e0f5b991e
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46960436"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52889520"
 ---
 # <a name="tutorial-remove-an-application-and-resources"></a>Руководство. Удаление приложения и ресурсов
 
@@ -34,7 +34,7 @@ ms.locfileid: "46960436"
 
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
-> * [Развертывание приложения в Сетке Service Fabric с помощью шаблона](service-fabric-mesh-tutorial-template-deploy-app.md)
+> * [развертывание приложения в Сетке Service Fabric с помощью шаблона](service-fabric-mesh-tutorial-template-deploy-app.md);
 > * [Масштабирование приложения, работающего в Сетке Service Fabric](service-fabric-mesh-tutorial-template-scale-services.md)
 > * [Обновление приложения, работающего в Сетке Service Fabric](service-fabric-mesh-tutorial-template-upgrade-app.md)
 > * Удаление приложения
@@ -47,7 +47,7 @@ ms.locfileid: "46960436"
 
 * Если у вас еще нет Azure подписки до начала работы, можно [создать бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-* Откройте [Azure Cloud Shell](service-fabric-mesh-howto-setup-cli.md) или [установите Azure CLI и интерфейс командной строки Сетки Azure Service Fabric на локальный компьютер](service-fabric-mesh-howto-setup-cli.md#install-the-service-fabric-mesh-cli-locally).
+* Откройте [Azure Cloud Shell](service-fabric-mesh-howto-setup-cli.md) или [установите Azure CLI и интерфейс командной строки Сетки Azure Service Fabric на локальный компьютер](service-fabric-mesh-howto-setup-cli.md#install-the-azure-service-fabric-mesh-cli).
 
 ## <a name="delete-the-resource-group-and-all-the-resources"></a>Удаление группы ресурсов и ее содержимого
 
