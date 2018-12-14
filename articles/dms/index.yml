@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: a314401883d0325029ce50502f85c335458e3959
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 9bbf1c5e5ff58d746a0749f0423f8ca42d2971b4
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285056"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53338266"
 documentType: LandingData
 title: Документация по Azure Database Migration Service
 metadata:
@@ -18,7 +18,7 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 10/30/2018
+  ms.date: 12/12/2018
   ms.author: rajpo
 abstract:
   description: Azure Database Migration Service обеспечивает бесперебойную миграцию из нескольких источников баз данных на платформы данных Azure с минимальным временем простоя. Служба использует Помощник по миграции данных для создания экспертных отчетов с рекомендациями по изменениям, которые необходимы для переноса данных. Когда вы будете готовы приступить к переносу, Azure Database Migration Service выполнит все необходимые действия.
@@ -70,6 +70,8 @@ sections:
     style: unordered
     className: spaced noBullet
     items:
+    - html: <a href="/azure/dms/resource-scenario-status">Состояние сценариев миграции, поддерживаемых службой Azure Database Migration Service</a>
     - html: <a href="/azure/dms/pre-reqs">Предварительные требования для использования службы Azure Database Migration Service</a>
     - html: <a href="/azure/dms/faq">Часто задаваемые вопросы о службе Azure Database Migration Service</a>
     - html: <a href="/azure/dms/known-issues-azure-sql-online">Известные проблемы и ограничения при сетевых миграциях в Базу данных SQL Azure</a>
+    - html: <a href="/azure/dms/dms-tools-matrix">Службы и средства для сценариев переноса данных</a>
