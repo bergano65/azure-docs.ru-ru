@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 30a415fb0df910333b81f36cfb925faafd1c8c1b
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: da46b78d764465d8b9e5ce438b0843e0b79e16a9
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53080169"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53271153"
 documentType: LandingData
 title: Документация по службе "Машинное обучение Azure"
 metadata:
@@ -27,13 +27,13 @@ sections:
 - items:
   - type: list
     style: cards
-    className: cardsB
-    columns: 1
+    className: cardsFTitle
     items:
-    - html: <p>Обучайте и развертывайте модели машинного обучения в облачной службе Azure. <a href="overview-what-is-azure-ml.md">Подробнее о службе</a></p>
+    - title: Приступите к ознакомлению со службой "Машинное обучение Azure"
+      href: /azure/machine-learning/service/overview-what-is-azure-ml
       image:
         src: /azure/machine-learning/media/index/i_machine-learning.svg
-      title: Служба "Машинное обучение Azure"
+        href: /azure/machine-learning/service/overview-what-is-azure-ml
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
@@ -46,16 +46,23 @@ sections:
 - title: Пошаговые руководства
   items:
   - type: paragraph
-    text: <b>Руководства:</b> узнайте, как настроить эксперимент и подготовить модели к использованию.
+    text: Узнайте, как настроить эксперимент подготовить модели у использованию.
+  - type: paragraph
+    text: <b>Руководство по классификации изображений с использованием данных MNIST</b>
   - type: list
     style: unordered
     items:
-    - html: Классификация изображений (часть 1)&#58; <a href="tutorial-train-models-with-aml">Обучение собственной модели машинного обучения</a>
-    - html: Классификация изображений (часть 2)&#58; <a href="tutorial-deploy-models-with-aml">Развертывание модели</a></br>&nbsp;
-    - html: Регрессия (часть 1)&#58; <a href="tutorial-data-prep">Подготовка данных о такси Нью-Йорка к моделированию</a>
-    - html: Регрессия (часть 2)&#58; <a href="tutorial-auto-train-models">Создание модели с помощью автоматического машинного обучения</a>
+    - html: Часть 1&#58; <a href="tutorial-train-models-with-aml">Обучение собственной модели машинного обучения</a>
+    - html: Часть 2&#58; <a href="tutorial-deploy-models-with-aml">Развертывание этой модели</a>
   - type: paragraph
-    text: '<b>Примеры записных книжек</b>: изучите службу Машинного обучения Azure с помощью <a href="https://aka.ms/aml-notebooks">этих записных книжкек Jupyter</a>, доступных на GitHub.'
+    text: <b>Руководство по моделированию регрессии с данными о поездках в такси Нью-Йорка</b>
+  - type: list
+    style: unordered
+    items:
+    - html: Часть 1&#58; <a href="tutorial-data-prep">Подготовка данных о такси Нью-Йорка к моделированию</a>
+    - html: Часть 2&#58; <a href="tutorial-auto-train-models">Использование автоматического машинного обучения для создания моделей</a>
+  - type: paragraph
+    text: <b>Примеры записных книжек</b> Ознакомьтесь с возможностями службы на примере этих <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://aka.ms/aml-notebooks">записных книжек Jupyter</a> на сайте GitHub.
 - title: Справочные материалы
   items:
   - type: list

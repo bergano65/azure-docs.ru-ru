@@ -7,6 +7,12 @@ items:
     href: Overview/overview.md
 - name: Быстрое начало работы
   items:
+  - name: Получение ответов из базы знаний
+    items:
+    - name: Использование Postman
+      href: Quickstarts/get-answer-from-kb-using-postman.md
+    - name: Использование cURL
+      href: Quickstarts/get-answer-from-kb-using-cURL.md
   - name: С помощью REST API
     items:
     - name: Создание базы знаний
@@ -77,8 +83,6 @@ items:
       href: How-To/create-knowledge-base.md
     - name: Добавление беседы в базу знаний
       href: How-to/chit-chat-knowledge-base.md
-    - name: Использование метаданных с помощью API GenerateAnswer
-      href: How-To/metadata-generateanswer-usage.md
     - name: Перенос базы знаний с предварительной версии
       href: Tutorials/migrate-knowledge-base.md
     - name: Редактирование базы знаний
@@ -91,9 +95,11 @@ items:
       href: How-To/publish-knowledge-base.md
     - name: Тестирование базы знаний
       href: How-To/test-knowledge-base.md
-  - name: Интеграция с другими службами
+  - name: Использование базы знаний
     items:
-    - name: Интеграция QnA Maker и LUIS
+    - name: Использование метаданных с помощью API GenerateAnswer
+      href: How-To/metadata-generateanswer-usage.md
+    - name: Использование ботов
       href: Tutorials/integrate-qnamaker-luis.md
   - name: Управление службой
     items:
@@ -136,6 +142,20 @@ items:
   - name: Коды отклика HTTP
     displayName: 200, 2xx, 400, 401, 403, 404
     href: http-response-codes.md
+  - name: Пакеты SDK
+    items:
+    - name: C#
+      items:
+      - name: NuGet
+        href: https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Knowledge.QnAMaker/
+    - name: Node.js
+      items:
+      - name: npm
+        href: https://www.npmjs.com/package/azure-cognitiveservices-qnamaker
+    - name: Ruby
+      items:
+      - name: GEM
+        href: https://rubygems.org/gems/azure_cognitiveservices_qnamaker
 - name: Ресурсы
   items:
   - name: Доступ по регионам
@@ -154,9 +174,9 @@ items:
     href: https://docs.microsoft.com/search/index?search=QnAMaker
   - name: Блог
     href: https://blog.botframework.com/category/QnAMaker/
-ms.openlocfilehash: e9adfa628172efa5417a14202e5f5832088fedca
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: f4323dcd58b35fefcfa91864bd58ce2129f1a53c
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52835766"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53272452"

@@ -7,7 +7,7 @@ items:
     href: what-is-application-management.md
 - name: Быстрое начало работы
   items:
-  - name: Добавление приложения (портал)
+  - name: Добавление приложения из коллекции — портал
     href: add-application-portal.md
   - name: Просмотр приложений клиента (портал)
     href: view-applications-portal.md
@@ -16,6 +16,8 @@ items:
   items:
   - name: Настройка единого входа (портал)
     href: configure-single-sign-on-portal.md
+  - name: Добавление локального приложения — портал
+    href: application-proxy-add-on-premises-application.md
 - name: Основные понятия
   items:
   - name: Планирование интеграции облачных приложений
@@ -86,10 +88,6 @@ items:
       href: change-name-or-logo-portal.md
   - name: Интеграция локальных приложений
     items:
-    - name: Включение прокси приложения
-      href: application-proxy-enable.md
-    - name: Публикация приложения для удаленного доступа
-      href: application-proxy-publish-azure-portal.md
     - name: Настройка соединителей
       href: application-proxy-configure-connectors-with-proxy-servers.md
     - name: Настройка приложений с поддержкой утверждений
@@ -284,9 +282,9 @@ items:
     href: https://stackoverflow.com/questions/tagged/azure-active-directory
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
-ms.openlocfilehash: ff883fd034f3ceabc556071d7a9e8f40d87fc75d
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 0d2f830cd3f5e66c69ae5f839c8f536747ce4d36
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52848167"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53141906"

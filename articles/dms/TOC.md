@@ -13,6 +13,7 @@
 ## [Перенос баз данных с SQL Server в Управляемый экземпляр Базы данных SQL Azure в сетевом режиме](tutorial-sql-server-managed-instance-online.md)
 ## [Миграция с MySQL в базу данных Azure для MySQL через Интернет](tutorial-mysql-azure-mysql-online.md)
 ## [Миграция с PostgreSQL в базу данных Azure для PostgreSQL через Интернет](tutorial-postgresql-azure-postgresql-online.md)
+## [Миграция с MongoDB в Azure Cosmos DB Mongo API в автономном режиме](tutorial-mongodb-cosmos-db.md)
 
 # Практические руководства
 ## [Перенос данных из SQL Server в базу данных SQL Azure с помощью PowerShell](howto-sql-server-to-azure-sql-powershell.md)
@@ -20,16 +21,17 @@
 ## [Монитор активности миграции](how-to-monitor-migration-activity.md)
 
 # Ресурсы
+## [Состояние сценария миграции базы данных](resource-scenario-status.md)
+## [Обзор предварительных требований](pre-reqs.md)
+## [Сетевые топологии для переноса Управляемых экземпляров Базы данных SQL](resource-network-topologies.md)
 ## [Известные проблемы при миграции в базу данных SQL Azure через Интернет](known-issues-azure-sql-online.md)
 ## [Известные проблемы при миграции в базу данных Azure для MySQL через Интернет](known-issues-azure-mysql-online.md)
 ## [Известные проблемы при миграции в базу данных Azure для PostgreSQL](known-issues-azure-postgresql-online.md)
 ## [Доступные службы и средства для сценариев переноса данных](dms-tools-matrix.md)
-## [Обзор предварительных требований](pre-reqs.md)
 ## [Часто задаваемые вопросы](faq.md)
-## [Сетевые топологии для переноса Управляемых экземпляров Базы данных SQL](resource-network-topologies.md)
-## [Обновления службы](https://azure.microsoft.com/updates/?product=database-migration)
-## [Цены](https://aka.ms/dms-pricing)
 ## [Отзывы на User Voice](https://feedback.azure.com/forums/906100-azure-database-migration-service)
+## [Цены](https://aka.ms/dms-pricing)
+## [Обновления службы](https://azure.microsoft.com/updates/?product=database-migration)
 ## [Руководство по переносу баз данных](https://aka.ms/datamigration)
 ## [Помощник по миграции данных](https://aka.ms/dma)
 ## [Помощник по миграции SQL Server](https://aka.ms/ssma)

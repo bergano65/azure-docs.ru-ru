@@ -3,12 +3,12 @@ items:
   href: /azure/hdinsight
 - name: Обзор
   items:
-  - name: Сведения о Hadoop в HDInsight
+  - name: Сведения об Apache Hadoop в HDInsight
     href: apache-hadoop-introduction.md
-  - name: Архитектура Hadoop в HDInsight
+  - name: Архитектура Apache Hadoop в HDInsight
     href: ../hdinsight-hadoop-architecture.md
     maintainContext: true
-  - name: Компоненты Hadoop в HDInsight
+  - name: Компоненты Apache Hadoop в HDInsight
     href: ../hdinsight-component-versioning.md
     maintainContext: true
   - name: HDInsight 4.0
@@ -16,9 +16,9 @@ items:
     maintainContext: true
 - name: Быстрый запуск
   items:
-  - name: Создание кластера Hadoop — портал
+  - name: Создание кластера Apache Hadoop — портал
     href: apache-hadoop-linux-create-cluster-get-started-portal.md
-  - name: Создание кластера Hadoop — Resource Manager
+  - name: Создание кластера Apache Hadoop — Resource Manager
     href: apache-hadoop-linux-tutorial-get-started.md
 - name: Учебники
   items:
@@ -41,7 +41,7 @@ items:
     maintainContext: true
 - name: Практическое руководство
   items:
-  - name: Использование песочницы Hadoop
+  - name: Использование песочницы Apache Hadoop
     href: apache-hadoop-emulator-get-started.md
   - name: Использование системы хранения данных кластера
     items:
@@ -51,9 +51,9 @@ items:
     - name: Использование Azure Data Lake Store
       href: ../hdinsight-hadoop-use-data-lake-store.md
       maintainContext: true
-  - name: Использование Hadoop для пакетных запросов
+  - name: Использование Apache Hadoop для пакетных запросов
     items:
-    - name: Использование Hive с Hadoop
+    - name: Apache Hive с Apache Hadoop
       href: hdinsight-use-hive.md
       items:
       - name: Использование средств HDInsight для Visual Studio Code
@@ -61,7 +61,7 @@ items:
         maintainContext: true
       - name: Использование средств HDInsight для Visual Studio
         href: apache-hadoop-use-hive-visual-studio.md
-      - name: Использование представления Hive
+      - name: Использование представления Apache Hive
         href: apache-hadoop-use-hive-ambari-view.md
       - name: Использование BeeLine
         href: apache-hadoop-use-hive-beeline.md
@@ -77,7 +77,7 @@ items:
         href: apache-hadoop-use-hive-query-console.md
     - name: Использование определяемых пользователем функций Java с Hive
       href: apache-hadoop-hive-java-udf.md
-    - name: Использование MapReduce с Hadoop
+    - name: Использование MapReduce с Apache Hadoop
       href: hdinsight-use-mapreduce.md
       items:
       - name: Использование протокола SSH
@@ -92,10 +92,10 @@ items:
         href: apache-hadoop-use-mapreduce-dotnet-sdk.md
       - name: Выполнение примеров MapReduce
         href: apache-hadoop-run-samples-linux.md
-    - name: Использование Pig с Hadoop
+    - name: Использование Apache Pig с Apache Hadoop
       href: hdinsight-use-pig.md
       items:
-      - name: Использование SSH и Pig
+      - name: Использование SSH и Apache Pig
         href: apache-hadoop-use-pig-ssh.md
       - name: Использование Azure PowerShell
         href: apache-hadoop-use-pig-powershell.md
@@ -105,13 +105,13 @@ items:
         href: apache-hadoop-use-pig-curl.md
       - name: Использование удаленного рабочего стола
         href: apache-hadoop-use-pig-remote-desktop.md
-    - name: Использование DataFu с Pig
+    - name: Использование DataFu с Apache Pig
       href: apache-hadoop-use-pig-datafu-udf.md
-    - name: Отправка заданий Hadoop
+    - name: Отправка заданий Apache Hadoop
       href: submit-apache-hadoop-jobs-programmatically.md
   - name: Разработка
     items:
-    - name: Запуск настраиваемых программ MapReduce
+    - name: Запуск пользовательских программ Apache Hadoop MapReduce
       href: apache-hadoop-run-custom-programs.md
     - name: Разработка программ MapReduce для потоковой передачи на C#
       href: apache-hadoop-dotnet-csharp-mapreduce-streaming.md
@@ -132,7 +132,7 @@ items:
       href: apache-hadoop-dotnet-avro-serialization.md
     - name: Использование определяемых пользователем функций C#
       href: apache-hadoop-hive-pig-udf-dotnet-csharp.md
-    - name: Использование Python с Hive и Pig
+    - name: Использование Python с Apache Hive и Apache Pig
       href: python-udf-hdinsight.md
     - name: Создание приложений .NET HDInsight с неинтерактивной проверкой подлинности
       href: ../hdinsight-create-non-interactive-authentication-dotnet-applications.md
@@ -155,20 +155,20 @@ items:
     - name: Подключение Power BI к Interactive Query
       href: ../interactive-query/apache-hadoop-connect-hive-power-bi-directquery.md
       maintainContext: true
-    - name: Подключение Power BI к Hadoop
+    - name: Подключение Power BI к Apache Hadoop
       href: apache-hadoop-connect-hive-power-bi.md
-    - name: Подключение Excel к Hadoop
+    - name: Подключение Excel к Apache Hadoop
       href: apache-hadoop-connect-excel-hive-odbc-driver.md
-    - name: Подключение с помощью драйвера Hive JDBC
+    - name: Подключение с помощью драйвера Apache Hive JDBC
       href: apache-hadoop-connect-hive-jdbc-driver.md
     - name: Анализ сохраненных данных от датчиков
       href: apache-hive-analyze-sensor-data.md
     - name: Анализ сохраненных твитов
       href: ../hdinsight-analyze-twitter-data-linux.md
       maintainContext: true
-    - name: Формирование рекомендаций с помощью Mahout
+    - name: Формирование рекомендаций с помощью Apache Mahout
       href: apache-hadoop-mahout-linux-mac.md
-    - name: Анализ журналов веб-сайтов с помощью Hive
+    - name: Анализ журналов веб-сайтов с помощью Apache Hive
       href: apache-hive-analyze-website-log.md
     - name: Анализ журналов телеметрии Application Insights
       href: ../spark/apache-spark-analyze-application-insight-logs.md
@@ -204,16 +204,16 @@ items:
     - name: Добавление библиотек Hive
       href: ../hdinsight-hadoop-add-hive-libraries.md
       maintainContext: true
-    - name: Использование Giraph
+    - name: Использование Apache Giraph
       href: ../hdinsight-hadoop-giraph-install-linux.md
       maintainContext: true
     - name: Использование Hue
       href: ../hdinsight-hadoop-hue-linux.md
       maintainContext: true
-    - name: Использование Solr
+    - name: Использование Apache Solr
       href: ../hdinsight-hadoop-solr-install-linux.md
       maintainContext: true
-    - name: Использование Zeppelin
+    - name: Использование Apache Zeppelin
       href: ../hdinsight-apache-spark-zeppelin-notebook.md
       maintainContext: true
     - name: Сборка приложений HDInsight
@@ -252,7 +252,7 @@ items:
     - name: Ограничение доступа к данным
       href: ../hdinsight-storage-sharedaccesssignature-permissions.md
       maintainContext: true
-    - name: Разрешение пользователям доступа к Ambari Views
+    - name: Предоставление пользователям доступа к представлениям Apache Ambari
       href: ../hdinsight-authorize-users-to-ambari.md
       maintainContext: true
   - name: Миграция
@@ -299,7 +299,7 @@ items:
         href: ../hdinsight-hadoop-create-linux-clusters-arm-templates.md
         maintainContext: true
       maintainContext: true
-    - name: Управление кластеров Hadoop
+    - name: Управление кластерами Apache Hadoop
       href: ../hdinsight-administer-use-portal-linux.md
       items:
       - name: Использование пакета SDK для .NET
@@ -312,13 +312,13 @@ items:
         href: ../hdinsight-administer-use-command-line.md
         maintainContext: true
       maintainContext: true
-    - name: Управление кластерами с помощью пользовательского веб-интерфейса Ambari
+    - name: Управление кластерами с помощью пользовательского веб-интерфейса Apache Ambari
       href: ../hdinsight-hadoop-manage-ambari.md
       items:
-      - name: Оптимизация кластеров с пользовательским веб-интерфейсом Ambari
+      - name: Оптимизация кластеров с помощью пользовательского веб-интерфейса Apache Ambari
         href: ../hdinsight-changing-configs-via-ambari.md
         maintainContext: true
-      - name: Использование Ambari REST API
+      - name: Использование Apache Ambari REST API
         href: ../hdinsight-hadoop-manage-ambari-rest-api.md
         maintainContext: true
       maintainContext: true
@@ -334,13 +334,13 @@ items:
     - name: Добавление учетных записей хранения
       href: ../hdinsight-hadoop-add-storage.md
       maintainContext: true
-    - name: Передача данных для заданий Hadoop
+    - name: Отправка данных для заданий Apache Hadoop
       href: ../hdinsight-upload-data.md
       maintainContext: true
     - name: Использование нескольких кластеров HDInsight с Data Lake Store
       href: ../hdinsight-multiple-clusters-data-lake-store.md
       maintainContext: true
-    - name: Импорт и экспорт данных с помощью Sqoop
+    - name: Импорт и экспорт данных с помощью Apache Sqoop
       href: hdinsight-use-sqoop.md
       items:
       - name: Подключение по SSH
@@ -354,10 +354,10 @@ items:
     - name: Ввод в эксплуатацию конвейера аналитики данных
       href: ../hdinsight-operationalize-data-pipeline.md
       maintainContext: true
-    - name: Использование Oozie для рабочих процессов
+    - name: Использование Apache Oozie для рабочих процессов
       href: ../hdinsight-use-oozie-linux-mac.md
       maintainContext: true
-    - name: Использование временного координатора Oozie
+    - name: Использование координаторов Apache Oozie на основе времени
       href: ../hdinsight-use-oozie-coordinator-time.md
       maintainContext: true
     - name: Порты и универсальные коды ресурса (URI) кластеров и служб
@@ -378,13 +378,13 @@ items:
     - name: Устранение задержки работы или сбоя кластера HDInsight
       href: ../hdinsight-troubleshoot-failed-cluster.md
       maintainContext: true
-    - name: Устранение неполадок с HDFS
+    - name: Устранение неполадок с Apache Hadoop HDFS
       href: ../hdinsight-troubleshoot-hdfs.md
       maintainContext: true
-    - name: Устранение неполадок с Hive
+    - name: Устранение неполадок с Apache Hive
       href: ../hdinsight-troubleshoot-hive.md
       maintainContext: true
-    - name: Устранение неполадок с YARN
+    - name: Устранение неполадок с Apache Hadoop YARN
       href: ../hdinsight-troubleshoot-yarn.md
       maintainContext: true
     - name: Ресурсы
@@ -392,25 +392,25 @@ items:
       - name: Сведения об использовании HDInsight в Linux
         href: ../hdinsight-hadoop-linux-information.md
         maintainContext: true
-      - name: 'Hadoop: память и производительность'
+      - name: 'Apache Hadoop: память и производительность'
         href: ../hdinsight-hadoop-stack-trace-error-messages.md
         maintainContext: true
-      - name: Доступ к журналам приложений YARN в Hadoop под управлением Linux
+      - name: Доступ к журналам приложений Apache Hadoop YARN в Linux
         href: ../hdinsight-hadoop-access-yarn-app-logs-linux.md
         maintainContext: true
-      - name: Включение дампов кучи для служб Hadoop
+      - name: Включение дампов кучи для служб Apache Hadoop
         href: ../hdinsight-hadoop-collect-debug-heap-dump-linux.md
         maintainContext: true
       - name: Анализ и устранение ошибок WebHCat
         href: ../hdinsight-hadoop-templeton-webhcat-debug-errors.md
         maintainContext: true
-      - name: Исправление ошибки "нехватка памяти" в параметрах Hive
+      - name: Исправление ошибки "Недостаточно памяти" в параметрах Apache Hive
         href: ../hdinsight-hadoop-hive-out-of-memory-error-oom.md
         maintainContext: true
-      - name: Отладка заданий Tez с помощью представлений Ambari
+      - name: Отладка заданий Apache Tez с помощью представлений Apache Ambari
         href: ../hdinsight-debug-ambari-tez-view.md
         maintainContext: true
-      - name: Оптимизация запросов Hive
+      - name: Оптимизация запросов Apache Hive
         href: ../hdinsight-hadoop-optimize-hive-query.md
         maintainContext: true
     maintainContext: true
@@ -430,7 +430,7 @@ items:
     - name: Настройка системы корпоративной безопасности в HDInsight с помощью Azure AD DS
       href: ../domain-joined/apache-domain-joined-configure-using-azure-adds.md
       maintainContext: true
-    - name: Настройка политик Hive
+    - name: Настройка политик Apache Hive
       href: ../domain-joined/apache-domain-joined-run-hive.md
       maintainContext: true
     - name: Управление кластерами с помощью системы корпоративной безопасности
@@ -458,7 +458,7 @@ items:
     - name: Мониторинг производительности кластера
       href: ../hdinsight-key-scenarios-to-monitor.md
       maintainContext: true
-    - name: Анализ журналов Hadoop
+    - name: Анализ журналов Apache Hadoop
       href: apache-hadoop-debug-jobs.md
 - name: Справочные материалы
   items:
@@ -474,13 +474,13 @@ items:
     href: https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-preview
   - name: Пакет SDK для GO
     href: ../hdinsight-go-sdk-overview.md
-  - name: .NET (HBase)
+  - name: .NET (Apache HBase)
     href: https://www.nuget.org/packages/Microsoft.HBase.Client/
   - name: .NET (Avro)
     href: https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library
   - name: REST
     href: /rest/api/hdinsight/
-  - name: REST (Spark)
+  - name: REST (Apache Spark)
     href: /rest/api/hdinsightspark/
 - name: Сопутствующие материалы
   items:
@@ -492,34 +492,34 @@ items:
     - name: Перенос решений .NET в кластеры Linux
       href: ../hdinsight-hadoop-migrate-dotnet-to-linux.md
       maintainContext: true
-    - name: Запуск примеров Hadoop MapReduce
+    - name: Запуск примеров Apache Hadoop MapReduce
       href: ../hdinsight-run-samples.md
       maintainContext: true
-    - name: Использование Solr в кластерах
+    - name: Использование Apache Solr в кластерах
       href: ../hdinsight-hadoop-solr-install-linux.md
       maintainContext: true
-    - name: Использование Giraph для обработки крупномасштабных графов
+    - name: Использование Apache Giraph для обработки крупномасштабных графов
       href: ../hdinsight-hadoop-giraph-install.md
       maintainContext: true
-    - name: Использование Oozie для рабочих процессов
+    - name: Использование Apache Oozie для рабочих процессов
       href: ../hdinsight-use-oozie.md
       maintainContext: true
-    - name: Развертывание топологий Storm и управление ими
+    - name: Развертывание топологий Apache Storm и управление ими
       href: ../storm/apache-storm-deploy-monitor-topology.md
       maintainContext: true
-    - name: Использование Maven для сборки приложений Java
+    - name: Использование Apache Maven для сборки приложений Java
       href: ../hdinsight-hbase-build-java-maven.md
       maintainContext: true
-    - name: Отладка заданий Tez с помощью пользовательского интерфейса Tez
+    - name: Отладка заданий Tez с помощью пользовательского интерфейса Apache Tez
       href: ../hdinsight-debug-tez-ui.md
       maintainContext: true
     - name: Настройка с помощью действия сценария
       href: ../hdinsight-hadoop-customize-cluster.md
       maintainContext: true
-    - name: Доступ к журналам приложения YARN
+    - name: Доступ к журналам приложений YARN в Apache Hadoop
       href: ../hdinsight-hadoop-access-yarn-app-logs.md
       maintainContext: true
-    - name: Создание списка рекомендуемых к просмотру фильмов с использованием Mahout
+    - name: Создание списка рекомендуемых фильмов с использованием Apache Mahout
       href: ../hdinsight-mahout.md
       maintainContext: true
     - name: Анализ данных о задержке рейсов
@@ -534,7 +534,7 @@ items:
     - name: Управление кластерами с помощью портала Azure
       href: ../hdinsight-administer-use-management-portal.md
       maintainContext: true
-    - name: Отслеживание кластеров с помощью Ambari API
+    - name: Мониторинг кластеров с помощью API Apache Ambari
       href: ../hdinsight-monitor-use-ambari-api.md
       maintainContext: true
 - name: Ресурсы
@@ -559,9 +559,9 @@ items:
   - name: Средства Windows для HDInsight
     href: ../hdinsight-hadoop-windows-tools.md
     maintainContext: true
-ms.openlocfilehash: 99ee7d4fd5830c9416ff9a9ffaf37afa1504096e
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 43ebb63bdda8c484ce1c2d2828293032ea90013c
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52962619"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53321158"

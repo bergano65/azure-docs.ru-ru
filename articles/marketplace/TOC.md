@@ -1,16 +1,18 @@
 # [Документация по Azure Marketplace и AppSource](index.md)
-## [Политики оценки и проверки](./rating-review-policies.md)   
+
 ## [Общие сведения об Azure Marketplace и AppSource и их преимуществах](./marketplace-publishers-guide.md)  
 
 ### [Как стать издателем в Marketplace](./become-publisher.md)  
 #### [Создание учетной записи Майкрософт](./guidelines.md)
 #### [Регистрация в центре разработчиков](./register-dev-center.md) 
 #### [Определение потребления услуг Azure клиентами партнеров](./azure-partner-customer-usage-attribution.md)
-#### [Управление потенциальными клиентами из Marketplace](./lead-management-for-cloud-marketplace.md)
 
-### [Онлайн-магазины](./comparing-appsource-azure-marketplace.md)  
+### [Два онлайн-магазина на одной площадке Marketplace](./comparing-appsource-azure-marketplace.md)  
 
-### [Выбор варианта публикации решения](./determine-your-listing-type.md)  
+### [Варианты публикации и рекомендации](./determine-your-listing-type.md)
+#### [Управление потенциальными клиентами](./lead-management-for-cloud-marketplace.md)
+#### [Транзакции в Azure Marketplace](./marketplace-commercial-transaction-capabilities-and-considerations.md)
+#### [Частные предложения](./private-offers.md)
 
 ### [Руководство по публикации разных типов предложений](./publisher-guide-by-offer-type.md)
 #### [Виртуальные машины](./marketplace-virtual-machines.md)
@@ -26,8 +28,7 @@
 ### [Развитие бизнеса с помощью marketplace](./grow-your-business-with-azure-marketplace.md)  
 #### [Предпочтительные решения](./preferred-solutions.md) 
 #### [Проверка содержимого Marketplace](./marketplace-criteria-content-validation.md)
-#### [Частные предложения](./private-offers.md)
-#### [Возможности коммерческих транзакций в Marketplace и рекомендации по их использованию](./marketplace-commercial-transaction-capabilities-and-considerations.md)
+#### [Политики оценки и проверки](./rating-review-policies.md)   
 
 ### [Поддержка Microsoft Azure Marketplace и AppSource](./support-azure-marketplace.md)  
 
@@ -67,8 +68,15 @@
 #### [Распространенные проблемы при создании VHD](./cloud-partner-portal/virtual-machine/cpp-common-vhd-creation-issues.md)
 #### [Подключение к виртуальной машине](./cloud-partner-portal/virtual-machine/cpp-connect-vm.md)
 #### [Настройка виртуальной машины](./cloud-partner-portal/virtual-machine/cpp-configure-vm.md)
-#### [Развертывание виртуальной машины на основе виртуальных жестких дисков](./cloud-partner-portal/virtual-machine/cpp-deploy-vm-vhd.md)
-##### [Шаблон развертывания VHD (JSON)](./cloud-partner-portal/virtual-machine/cpp-deploy-json-template.md)
+#### [Служба удаленного управления Windows](./cloud-partner-portal/virtual-machine/cpp-winrm-over-https.md) 
+##### [Настройка WinRM после создания виртуальной машины](./cloud-partner-portal/virtual-machine/cpp-configure-winrm-after-vm-creation.md)
+#### [Развертывание виртуальной машины](./cloud-partner-portal/virtual-machine/cpp-deploy-vm-vhd.md)
+##### [Создание пользовательского образа виртуальной машины](./cloud-partner-portal/virtual-machine/cpp-create-user-image.md)
+##### [Создание сертификата Key Vault](./cloud-partner-portal/virtual-machine/cpp-create-key-vault-cert.md)
+###### [Шаблон развертывания Key Vault](./cloud-partner-portal/virtual-machine/cpp-key-vault-deploy-template.md)
+#### [Развертывание виртуальной машины из виртуального жесткого диска пользователя](./cloud-partner-portal/virtual-machine/cpp-deploy-vm-user-image.md)
+##### [Шаблон развертывания VHD](./cloud-partner-portal/virtual-machine/cpp-deploy-json-template.md)
+##### [Развертывание виртуальной машины из Marketplace](./cloud-partner-portal/virtual-machine/cpp-deploy-vm-marketplace.md)
 #### [Сертификация образа виртуальной машины](./cloud-partner-portal/virtual-machine/cpp-certify-vm.md)
 #### [Получение универсального кода ресурса SAS](./cloud-partner-portal/virtual-machine/cpp-get-sas-uri.md)
 #### [Распространенные проблемы с URL-адресом SAS](./cloud-partner-portal/virtual-machine/cpp-common-sas-url-issues.md)
@@ -88,21 +96,53 @@
 ### [Migrate offers](./cloud-partner-portal-orig/cloud-partner-portal-how-to-migrate-to-the-new-cloud-partner-portal.md)
 ### [Automate offer publishing](./cloud-partner-portal-orig/cloud-partner-portal-automate-offer-publishing.md)
 -->
+<!-- new section for Azure apps -->
 
-## [Предложение приложения Azure](./cloud-partner-portal-orig/cpp-azure-app-offer.md)
-### [Создание управляемого приложения](./cloud-partner-portal-orig/cloud-partner-portal-managed-app-publish.md)
-### [Создание шаблона решения](./cloud-partner-portal-orig/cloud-partner-portal-solution-template-offer-publish.md)
-### [Публикация решения по управлению](./cloud-partner-portal-orig/cloud-partner-portal-management-solution-publish.md)
-### [Руководство по SEO](./cloud-partner-portal-orig/cloud-partner-portal-seo-guidance.md)
-### [Запуск предложения](./cloud-partner-portal-orig/cloud-partner-portal-managed-app-offer-go-live.md)
-### [Обновление имеющегося предложения](./cloud-partner-portal-orig/cloud-partner-portal-managed-app-offer-update.md)
-### [Удаление предложения](./cloud-partner-portal-orig/cloud-partner-portal-managed-app-offer-delete.md)
-<!-- Obsolete ### [Migrate offers](./cloud-partner-portal-orig/cloud-partner-portal-how-to-migrate-to-the-new-cloud-partner-portal.md)  -->
+## [Предложение приложения Azure](./cloud-partner-portal/azure-applications/cpp-azure-app-offer.md)
+### [Предварительные требования](./cloud-partner-portal/azure-applications/cpp-prerequisites.md)
+### [Создание предложения приложения Azure](./cloud-partner-portal/azure-applications/cpp-create-offer.md)
+#### [Вкладка с параметрами предложения](./cloud-partner-portal/azure-applications/cpp-offer-settings-tab.md)
+#### [Вкладка "Номера SKU"](./cloud-partner-portal/azure-applications/cpp-skus-tab.md)
+#### [Вкладка "Тестовый выпуск"](./cloud-partner-portal/azure-applications/cpp-testdrive-tab.md)
+#### [Вкладка Marketplace](./cloud-partner-portal/azure-applications/cpp-marketplace-tab.md)
+#### [Вкладка "Поддержка"](./cloud-partner-portal/azure-applications/cpp-support-tab.md)
+<!-- ### [Create technical assets](./cloud-partner-portal/azure-applications/cpp-create-technical-assets.md) -->
+### [Публикация предложения приложения Azure](./cloud-partner-portal/azure-applications/cpp-publish-offer.md)
+### [Обновление имеющегося предложения](./cloud-partner-portal/azure-applications/cpp-update-existing-offer.md)
 
-## [Предложение приложения SaaS](./cloud-partner-portal-orig/cpp-saas-app-offer.md)
-### [Техническое руководство по публикации приложений SaaS](./cloud-partner-portal-orig/cloud-partner-portal-saas-offers-tech-publishing-guide.md)
-### [Продажа SaaS с помощью Azure](./cloud-partner-portal-orig/cloud-partner-portal-saas-offer-subscriptions.md)
+<!-- Legacy Azure App section replaced
+## [Azure application offer](./cloud-partner-portal-orig/cpp-azure-app-offer.md)
+    Obsolete ### [Author managed application](./cloud-partner-portal-orig/cloud-partner-portal-managed-app-publish.md)
+### [Author solution template](./cloud-partner-portal-orig/cloud-partner-portal-solution-template-offer-publish.md)
+### [Publish a Management Solution](./cloud-partner-portal-orig/cloud-partner-portal-management-solution-publish.md)
+### [SEO guidance](./cloud-partner-portal-orig/cloud-partner-portal-seo-guidance.md)
+### [Make offer live](./cloud-partner-portal-orig/cloud-partner-portal-managed-app-offer-go-live.md)
+### [Update existing offer](./cloud-partner-portal-orig/cloud-partner-portal-managed-app-offer-update.md)
+### [Delete offer](./cloud-partner-portal-orig/cloud-partner-portal-managed-app-offer-delete.md)
+   Obsolete ### [Migrate offers](./cloud-partner-portal-orig/cloud-partner-portal-how-to-migrate-to-the-new-cloud-partner-portal.md)  
+-->
+
+<!-- new for SaaS 12/05/2018 -->
+## [Предложение приложения SaaS](./cloud-partner-portal/saas-app/cpp-saas-offer.md)
+### [Предварительные требования](./cloud-partner-portal/saas-app/cpp-prerequisites.md)
+### [Создание предложения приложения SaaS](./cloud-partner-portal/saas-app/cpp-create-offer.md)
+#### [Вкладка с параметрами предложения](./cloud-partner-portal/saas-app/cpp-offer-settings-tab.md)
+#### [Вкладка с техническими сведениями](./cloud-partner-portal/saas-app/cpp-technical-info-tab.md)
+#### [Вкладка с данными о планах](./cloud-partner-portal/saas-app/cpp-plans-tab.md)
+#### [Вкладка со сведениями о канале](./cloud-partner-portal/saas-app/cpp-channel-info-tab.md)
+#### [Вкладка "Тестовый выпуск"](./cloud-partner-portal/saas-app/cpp-testdrive-tab.md)
+#### [Вкладка со сведениями об онлайн-магазине](./cloud-partner-portal/saas-app/cpp-storefront-tab.md)
+#### [Вкладка "Контакты"](./cloud-partner-portal/saas-app/cpp-contacts-tab.md)
+### [Публикация предложения](./cloud-partner-portal/saas-app/cpp-publish-offer.md)
+### [Обновление имеющегося предложения](./cloud-partner-portal/saas-app/cpp-update-existing-offer.md)
 ### [API SaaS](./cloud-partner-portal-orig/cloud-partner-portal-saas-subscription-apis.md)
+
+<!-- Legacy SaaS Offer replaced
+## [SaaS application offer](./cloud-partner-portal-orig/cpp-saas-app-offer.md)
+### [SaaS apps technical publishing guide](./cloud-partner-portal-orig/cloud-partner-portal-saas-offers-tech-publishing-guide.md)
+### [SaaS Sell through Azure](./cloud-partner-portal-orig/cloud-partner-portal-saas-offer-subscriptions.md)
+### [SaaS APIs](./cloud-partner-portal-orig/cloud-partner-portal-saas-subscription-apis.md)
+-->
 
 ## [Предложение "Контейнеры"](./cloud-partner-portal/containers/cpp-containers-offer.md)
 ### [Предварительные требования](./cloud-partner-portal/containers/cpp-prerequisites.md)

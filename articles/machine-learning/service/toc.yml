@@ -4,30 +4,32 @@ items:
 - name: Обзор
   items:
   - name: Что такое служба машинного обучения Azure
-    displayName: AML, services, overview
+    displayName: AML services overview
     href: overview-what-is-azure-ml.md
   - name: Как работает служба
-    displayName: architecture
+    displayName: architecture concepts definitions
     href: concept-azure-machine-learning-architecture.md
   - name: Что происходит с Workbench
-    displayName: desktop
+    displayName: desktop ui
     href: overview-what-happened-to-workbench.md
   - name: Заметки о выпуске
-    displayName: what's new
+    displayName: what's new issues bugs
     href: azure-machine-learning-release-notes.md
   expanded: true
 - name: Быстрое начало работы
   items:
   - name: Приступая к работе с помощью портала
+    displayName: install sdk workspace
     href: quickstart-get-started.md
   - name: Начало работы с использованием Python
-    displayName: create workspace
+    displayName: create workspace install sdk
     href: quickstart-create-workspace-with-python.md
 - name: Учебники
   items:
   - name: Классификация изображений (данные MNIST)
     items:
     - name: 1. Обучение модели
+      displayName: build modeling
       href: tutorial-train-models-with-aml.md
     - name: 2. Развертывание модели
       href: tutorial-deploy-models-with-aml.md
@@ -43,6 +45,9 @@ items:
   href: samples-notebooks.md
 - name: Основные понятия
   items:
+  - name: Автоматическое машинное обучение
+    displayName: automl, auto ml
+    href: concept-automated-ml.md
   - name: Управление моделями
     displayName: deploy, deployment
     href: concept-model-management-and-deployment.md
@@ -68,7 +73,6 @@ items:
         href: how-to-vscode-train-deploy.md
   - name: Подготовка данных
     displayName: data prep, etl, elt, data preparation
-    href: how-to-data-prep.md
     items:
     - name: Загрузка данных
       href: how-to-load-data.md
@@ -79,7 +83,7 @@ items:
   - name: Обучение моделей
     items:
     - name: Настройка сред обучения
-      displayName: compute target, dsvm, Data Science Virtual Machine, local, cluster, aci, container instance, databricks, data lake, lake, hdi, hdinsights
+      displayName: compute target, dsvm, Data Science Virtual Machine, local, cluster, aci, container instance, Databricks, data lake, lake, hdi, hdinsights
       href: how-to-set-up-training-targets.md
     - name: Доступ к данным во время обучения
       href: how-to-access-data.md
@@ -96,11 +100,11 @@ items:
       href: how-to-track-experiments.md
   - name: Автоматизация машинного обучения
     displayName: automl, auto ml
-    href: how-to-automated-ml.md
     items:
     - name: Настройка автоматического обучения
       href: how-to-configure-auto-train.md
     - name: Использование удаленных целевых объектов вычислений
+      displayName: automl automated auto ml
       href: how-to-auto-train-remote.md
   - name: Модели ONNX
     items:
@@ -109,9 +113,9 @@ items:
   - name: Развертывание моделей
     items:
     - name: Где следует развертывать модели
-      displayName: publish, azure kubernetes, azure container instances
+      displayName: publish azure kubernetes azure container instances
       href: how-to-deploy-and-where.md
-    - name: Развертывание в FPGA
+    - name: FPGA
       href: how-to-deploy-fpga-web-service.md
     - name: Устранение неполадок
       href: how-to-troubleshoot-deployment.md
@@ -120,7 +124,7 @@ items:
   - name: Использование веб-служб
     items:
     - name: Использование в режиме реального времени
-      displayName: create client, client, consume
+      displayName: create client consume
       href: how-to-consume-web-service.md
     - name: Составление пакетных прогнозов
       href: how-to-run-batch-predictions.md
@@ -136,18 +140,18 @@ items:
     displayName: limits
     href: how-to-manage-quotas.md
   - name: Использование интерфейса командной строки службы "Машинное обучение"
-    displayName: cli, command line, command-line, az,
+    displayName: cli command line command-line az ci/cd automate automated
     href: reference-azure-machine-learning-cli.md
 - name: Справочные материалы
   items:
   - name: Пакет SDK для Машинного обучения
-    displayName: api, core, package
+    displayName: api core package python
     href: https://aka.ms/aml-sdk
   - name: Пакет SDK для подготовки данных
-    displayName: api, preparation, package
+    displayName: api preparation package python
     href: https://aka.ms/data-prep-sdk
   - name: Пакет SDK для мониторинга
-    displayName: api, package
+    displayName: api package python monitor
     href: https://aka.ms/aml-monitoring-sdk
 - name: Ресурсы
   items:
@@ -158,6 +162,7 @@ items:
   - name: Доступ по регионам
     href: https://azure.microsoft.com/regions/services/
   - name: Известные проблемы
+    displayName: bugs errors troubleshoot
     href: resource-known-issues.md
   - name: Получение поддержки
     href: support-for-aml-services.md
@@ -167,19 +172,19 @@ items:
   - name: Нерекомендуемая документация
     items:
     - name: Миграция из Workbench
-      displayName: Workbench, upgrade, update, transfer
+      displayName: Workbench upgrade update transfer
       href: how-to-migrate.md
     - name: Экспорт или удаление данных учетной записи (не рекомендуется)
       href: ../desktop-workbench/export-delete-experimentation-model-management-data-dsr.md
     - name: Краткое руководство по Workbench (не рекомендуется)
       href: ../desktop-workbench/quickstart-installation.md
-    - name: Руководство 1. Подготовка данных
+    - name: Руководство 1. Подготовка данных
       href: ../desktop-workbench/tutorial-classifying-iris-part-1.md
-    - name: Руководство 2. Создание моделей
+    - name: Руководство 2. Создание моделей
       href: ../desktop-workbench/tutorial-classifying-iris-part-2.md
-    - name: Руководство 3. Развертывание моделей
+    - name: Руководство 3. Развертывание моделей
       href: ../desktop-workbench/tutorial-classifying-iris-part-3.md
-    - name: Руководство 4. Расширенная подготовка данных
+    - name: Руководство 4. Расширенная подготовка данных
       href: ../desktop-workbench/tutorial-bikeshare-dataprep.md
     - name: Обзор службы "Управление моделями"
       href: ../desktop-workbench/model-management-overview.md
@@ -365,9 +370,9 @@ items:
       href: ../desktop-workbench/frequently-asked-questions.md
     - name: Старые проблемы
       href: ../desktop-workbench/known-issues-and-troubleshooting-guide.md
-ms.openlocfilehash: a5c26bd2ef020ca737907c8a66776a3769bfeefd
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: cf7216271dea4bcdda7bea91c1b386a4ba612f8f
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53101251"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53310517"
