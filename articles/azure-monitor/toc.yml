@@ -121,13 +121,13 @@ items:
   - name: Реагирование на инциденты
     items:
     - name: Оповещения
-      href: ../monitoring-and-diagnostics/monitoring-overview-alerts.md?toc=/azure/azure-monitor/toc.json
+      href: platform/alerts-overview.md
     - name: Классические оповещения
       href: platform/alerts-classic.overview.md
     - name: Смарт-группы
-      href: ../monitoring-and-diagnostics/monitoring-overview-alerts-smartgroups.md?toc=/azure/azure-monitor/toc.json
+      href: platform/alerts-smartgroups-overview.md
     - name: Autoscale
-      href: ../monitoring-and-diagnostics/monitoring-overview-autoscale.md?toc=/azure/azure-monitor/toc.json
+      href: platform/autoscale-overview.md
     - name: Оповещения о метриках
       href: platform/alerts-metric-overview.md
     - name: Оповещения журналов
@@ -151,7 +151,7 @@ items:
     - name: Управление доступом
       items:
       - name: Роли, разрешения и безопасность
-        href: ../monitoring-and-diagnostics/monitoring-roles-permissions-security.md?toc=/azure/azure-monitor/toc.json
+        href: platform/roles-permissions-security.md
       - name: Рабочие области
         href: platform/manage-access.md
       - name: ПРИЛОЖЕНИЯ
@@ -217,7 +217,7 @@ items:
         - name: Устранение неполадок
           href: platform/diagnostics-extension-troubleshooting.md
         - name: Включение параметров диагностики с помощью шаблонов Resource Manager
-          href: ../monitoring-and-diagnostics/monitoring-enable-diagnostic-logs-using-template.md?toc=/azure/azure-monitor/toc.json
+          href: platform/diagnostic-logs-stream-template.md
         - name: Подготовка к использованию формата журналов диагностики JSON Lines
           href: ../monitoring-and-diagnostics/monitor-diagnostic-logs-append-blobs.md?toc=/azure/azure-monitor/toc.json
         - name: Отправка в хранилище метрик гостевой ОС для виртуальной машины
@@ -441,9 +441,9 @@ items:
     - name: Отправка данных
       items:
       - name: Архивация журнала действий
-        href: ../monitoring-and-diagnostics/monitoring-archive-activity-log.md?toc=/azure/azure-monitor/toc.json
+        href: platform/archive-activity-log.md
       - name: Архивация журналов диагностики
-        href: ../monitoring-and-diagnostics/monitoring-archive-diagnostic-logs.md?toc=/azure/azure-monitor/toc.json
+        href: platform/archive-diagnostic-logs.md
       - name: Отправка журналов диагностики в Log Analytics
         href: ../monitoring-and-diagnostics/monitor-stream-diagnostic-logs-log-analytics.md?toc=/azure/azure-monitor/toc.json
       - name: Потоковая передача журналов действий в Центры событий
@@ -655,7 +655,7 @@ items:
   - name: Анализ данных
     items:
     - name: Создание диаграмм метрик в обозревателе метрик
-      href: ../monitoring-and-diagnostics/monitoring-metric-charts.md?toc=/azure/azure-monitor/toc.json
+      href: platform/metrics-charts.md
     - name: Просмотр событий в журнале действий
       href: ../azure-resource-manager/resource-group-audit.md?toc=/azure/azure-monitor/toc.json
     - name: Просмотр уведомлений службы
@@ -740,11 +740,11 @@ items:
         - name: Оповещения с динамическими порогами
           href: platform/alerts-dynamic-thresholds.md
         - name: Настройка оповещений метрик для журналов
-          href: ../monitoring-and-diagnostics/monitoring-metric-alerts-logs.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-metric-logs.md
         - name: Создание более новых оповещений метрик с помощью шаблона Resource Manager
-          href: ../monitoring-and-diagnostics/monitoring-create-metric-alerts-with-templates.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-metric-create-templates.md
         - name: Создание классического оповещения метрики с помощью шаблона Resource Manager
-          href: ../monitoring-and-diagnostics/monitoring-enable-alerts-using-template.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-enable-template.md
         - name: Вызов веб-перехватчика с помощью классического оповещения метрики
           href: platform/alerts-webhooks.md
       - name: Использование оповещений журналов
@@ -760,7 +760,7 @@ items:
         - name: Настройка оповещений о событиях журнала действий
           href: platform/alerts-activity-log.md
         - name: Переход к использованию оповещений журнала действий
-          href: ../monitoring-and-diagnostics/monitoring-migrate-management-alerts.md?toc=/azure/azure-monitor/toc.json
+          href: platform/migrate-management-alerts.md
         - name: Настройка оповещений об уведомлениях службы
           href: platform/alerts-activity-log-service-notifications.md
       - name: Использование оповещений приложений
@@ -776,11 +776,11 @@ items:
         - name: Дополнительные сведения о схеме веб-перехватчика
           href: platform/activity-log-alerts-webhook.md
         - name: Поведение оповещений SMS
-          href: ../monitoring-and-diagnostics/monitoring-sms-alert-behavior.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-sms-behavior.md
         - name: Ограничение частоты создания оповещений
-          href: ../monitoring-and-diagnostics/monitoring-alerts-rate-limiting.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-rate-limiting.md
         - name: Создание групп действий с помощью Resource Manager
-          href: ../monitoring-and-diagnostics/monitoring-create-action-group-with-resource-manager-template.md?toc=/azure/azure-monitor/toc.json
+          href: platform/action-groups-create-resource-manager-template.md
         - name: Реализация действия для приложения логики
           href: platform/action-groups-logic-app.md
       - name: Оповещения из Operations Manager
@@ -790,11 +790,11 @@ items:
         - name: Управление экземплярами оповещений
           href: platform/alerts-managing-alert-instances.md
         - name: Управление смарт-группами
-          href: ../monitoring-and-diagnostics/monitoring-alerts-managing-smart-groups.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-managing-smart-groups.md
         - name: Управление состоянием оповещений и смарт-групп
-          href: ../monitoring-and-diagnostics/monitoring-alerts-managing-alert-states.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-managing-alert-states.md
         - name: Управление оповещениями из других служб мониторинга
-          href: ../monitoring-and-diagnostics/monitoring-alerts-managing-nagios-zabbix-scom.md?toc=/azure/azure-monitor/toc.json
+          href: platform/alerts-managing-nagios-zabbix-scom.md
     - name: Autoscale
       items:
       - name: Пошаговое руководство по автомасштабированию
@@ -808,7 +808,7 @@ items:
       - name: Распространенные шаблоны
         href: ../monitoring-and-diagnostics/monitoring-autoscale-common-scale-patterns.md?toc=/azure/azure-monitor/toc.json
       - name: Автомасштабирование с помощью пользовательской метрики
-        href: ../monitoring-and-diagnostics/monitoring-autoscale-scale-by-custom-metric.md?toc=/azure/azure-monitor/toc.json
+        href: platform/autoscale-custom-metric.md
       - name: Автомасштабирование масштабируемых наборов виртуальных машин с помощью шаблонов Resource Manager
         href: platform/autoscale-virtual-machine-scale-sets.md
       - name: Автомасштабирование виртуальных машин в масштабируемых наборах виртуальных машин
@@ -958,9 +958,9 @@ items:
   - name: Схемы
     items:
     - name: Службы, категории и схемы для журналов диагностики
-      href: ../monitoring-and-diagnostics/monitoring-diagnostic-logs-schema.md?toc=/azure/azure-monitor/toc.json
+      href: platform/tutorial-dashboards.md
     - name: Схема событий журнала действий
-      href: ../monitoring-and-diagnostics/monitoring-activity-log-schema.md?toc=/azure/azure-monitor/toc.json
+      href: platform/activity-log-schema.md
     - name: Схема расширения системы диагностики Azure
       href: platform/diagnostics-extension-schema.md
       items:
@@ -1010,9 +1010,9 @@ items:
     href: https://stackoverflow.com/search?q=monitoring
   - name: Примеры кода
     href: https://azure.microsoft.com/resources/samples/?service=monitor
-ms.openlocfilehash: 06ea6e43343a0cf9982a6161fbd60d5bfce6b0ba
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: 037ec2d246e30725448fb3da98263b557e11186d
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53322556"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53384435"

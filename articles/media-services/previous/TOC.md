@@ -177,8 +177,8 @@
 ### [Использование Content Moderator](media-services-content-moderation.md)
 
 ## [Настройка телеметрии](media-services-telemetry-overview.md)
-###[.NET](media-services-dotnet-telemetry.md)
-###[REST](media-services-rest-telemetry.md)
+### [.NET](media-services-dotnet-telemetry.md)
+### [REST](media-services-rest-telemetry.md)
 
 ## Масштаб
 ### [Обработка мультимедиа](media-services-scale-media-processing-overview.md)
