@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 4d719a0fe078d427a87b32f85497cc927ea77632
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: de92f8d8be6744f7004da4cc662b31a387e8920a
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53263050"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53385590"
 documentType: LandingData
 title: Документация по Azure Resource Manager
 metadata:
@@ -74,9 +74,9 @@ sections:
     className: cardsD
     items:
     - title: Шаблоны
-      html: <p><a href="/azure/resource-group-template-functions">Функции шаблонов</a></p><p><a href="/azure/templates/">Справочник по шаблонам</a></p><p><a href="/azure/azure-resource-manager/managed-application-createuidefinition-functions">Функции определения пользовательского интерфейса</a></p><p><a href="/azure/azure-resource-manager/managed-application-createuidefinition-elements">Элементы CreateUiDefinition</a></p>
+      html: <p><a href="/azure/templates/">Справочник по шаблонам</a></p><p><a href="/azure/resource-group-template-functions">Функции шаблонов</a></p><p><a href="/azure/azure-resource-manager/managed-application-createuidefinition-functions">Функции определения пользовательского интерфейса</a></p><p><a href="/azure/azure-resource-manager/managed-application-createuidefinition-elements">Элементы CreateUiDefinition</a></p>
     - title: Командная строка
-      html: <p><a href="/powershell/module/azurerm.resources">PowerShell</a></p><p><a href="/cli/azure/resource">Интерфейс командной строки Azure</a></p>
+      html: <p><a href="/cli/azure/resource">Интерфейс командной строки Azure</a></p><p><a href="/powershell/module/azurerm.resources">PowerShell</a></p>
     - title: Языки
       html: <p><a href="/dotnet/api/microsoft.azure.management.resourcemanager">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.resources">Java</a></p><p><a href="/python/azure/">Python</a></p>
     - title: REST

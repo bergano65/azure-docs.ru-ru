@@ -7,6 +7,10 @@ items:
     href: Overview/overview.md
 - name: Быстрое начало работы
   items:
+  - name: Создание базы знаний
+    href: How-To/create-knowledge-base.md
+  - name: Публикация базы знаний
+    href: How-To/publish-knowledge-base.md
   - name: Получение ответов из базы знаний
     items:
     - name: Использование Postman
@@ -80,8 +84,6 @@ items:
     - name: Создание и публикация базы знаний
       href: Quickstarts/create-publish-knowledge-base.md
     - name: Создание базы знаний
-      href: How-To/create-knowledge-base.md
-    - name: Добавление беседы в базу знаний
       href: How-to/chit-chat-knowledge-base.md
     - name: Перенос базы знаний с предварительной версии
       href: Tutorials/migrate-knowledge-base.md
@@ -91,8 +93,6 @@ items:
       href: How-To/collaborate-knowledge-base.md
     - name: Создание базы знаний на разных языках
       href: How-To/language-knowledge-base.md
-    - name: Публикация базы знаний
-      href: How-To/publish-knowledge-base.md
     - name: Тестирование базы знаний
       href: How-To/test-knowledge-base.md
   - name: Использование базы знаний
@@ -174,9 +174,9 @@ items:
     href: https://docs.microsoft.com/search/index?search=QnAMaker
   - name: Блог
     href: https://blog.botframework.com/category/QnAMaker/
-ms.openlocfilehash: f4323dcd58b35fefcfa91864bd58ce2129f1a53c
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: a7edca422a935ff98c823a50ef62e62683729687
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53272452"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53343553"
