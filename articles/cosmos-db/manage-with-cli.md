@@ -1,19 +1,18 @@
 ---
-title: Управление ресурсами Azure Cosmos DB с помощью Azure CLI | Документация Майкрософт
+title: Управление ресурсами Azure Cosmos DB с помощью Azure CLI
 description: Управляйте учетной записью, базой данных и контейнерами Azure Cosmos DB с помощью службы Azure CLI.
 services: cosmos-db
 author: markjbrown
 ms.service: cosmos-db
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/23/2018
 ms.author: mjbrown
-ms.openlocfilehash: 3446f4f71349d0b7290a2514edf46efb37203324
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: d79cae16c109b407840b8565eb80fb87bbed6432
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51019957"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52877553"
 ---
 # <a name="manage-azure-cosmos-db-resources-using-azure-cli"></a>Управление ресурсами Azure Cosmos DB с помощью Azure CLI
 

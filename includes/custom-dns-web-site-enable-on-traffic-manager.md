@@ -4,17 +4,17 @@ ms.service: app-service-web
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: cephalin
-ms.openlocfilehash: 2e6697b07f305a78ef4cc3f462c76804160a9d12
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: 67b9c0ba2566206b0e70db51844b21e5d5d3c261
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51572671"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53344608"
 ---
 После завершения распространения записей для вашего доменного имени необходимо воспользоваться браузером, чтобы удостовериться, что пользовательское доменное имя может использоваться для доступа к веб-приложению в службе приложений Azure.
 
 > [!NOTE]
-> Распространение CNAME через систему DNS может занять некоторое время. Чтобы проверить доступность CNAME, можно воспользоваться службой <a href="http://www.digwebinterface.com/">http://www.digwebinterface.com/</a>.
+> Распространение CNAME через систему DNS может занять некоторое время. Чтобы проверить доступность CNAME, можно воспользоваться службой <a href="https://www.digwebinterface.com/">https://www.digwebinterface.com/</a>.
 > 
 > 
 

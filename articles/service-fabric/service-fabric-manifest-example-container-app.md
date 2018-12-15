@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 06/08/2018
 ms.author: ryanwi
-ms.openlocfilehash: 6f538fa821e546d12c5a2bdb9585cc85871241fa
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 010fd442419f57f8b53705be8d3f49fdb84e28fd
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47094158"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53262458"
 ---
 # <a name="multi-container-application-and-service-manifest-examples"></a>Примеры манифестов многоконтейнерных приложений и служб
 Ниже приведены примеры манифестов приложений и служб для многоконтейнерного приложения Service Fabric. Цель этих примеров — показать, какие параметры являются доступными и как их использовать. Эти манифесты приложений и служб основаны на манифестах [контейнера Windows Server 2016](https://github.com/Azure-Samples/service-fabric-containers/tree/master/Windows).
@@ -295,7 +295,7 @@ ms.locfileid: "47094158"
 Учетные данные репозитория образов контейнеров для получения образов. Дополнительные сведения см. в разделе [Элемент RepositoryCredentials](service-fabric-service-model-schema-elements.md#RepositoryCredentialsElementRepositoryCredentialsTypeComplexTypeDefinedInContainerHostPoliciesTypecomplexType).
 
 ### <a name="portbinding-element"></a>Элемент PortBinding
-Указывает, какой ресурс конечной точки следует привязать к предоставленному порту контейнера. Дополнительные сведения см. в разделе [Элемент PortBinding](service-fabric-service-model-schema-elements.md#PortBindingElementPortBindingTypeComplexTypeDefinedInContainerHostPoliciesTypecomplexType).
+Указывает, какой ресурс конечной точки следует привязать к предоставленному порту контейнера. Дополнительные сведения см. в разделе [Элемент PortBinding](service-fabric-service-model-schema-elements.md#PortBindingElementPortBindingTypeComplexTypeDefinedInServicePackageContainerPolicyTypecomplexTypeDefinedInContainerHostPoliciesTypecomplexType).
 
 ### <a name="volume-element"></a>Элемент Volume
 Указывает том для привязки к контейнеру. Дополнительные сведения см. в разделе [Элемент Volume](service-fabric-service-model-schema-elements.md#VolumeElementContainerVolumeTypeComplexTypeDefinedInContainerHostPoliciesTypecomplexType).
@@ -313,7 +313,7 @@ ms.locfileid: "47094158"
  Дополнительные сведения см. в разделе [Элемент EnvironmentOverrides](service-fabric-service-model-schema-elements.md#EnvironmentOverridesElementEnvironmentOverridesTypeComplexTypeDefinedInServiceManifestImportelement).
 
 ### <a name="environmentvariable-element"></a>Элемент EnvironmentVariable
-Переменная среды. Дополнительные сведения см. в разделе [Элемент EnvironmentVariable](service-fabric-service-model-schema-elements.md#EnvironmentVariableElementEnvironmentVariableTypeComplexTypeDefinedInEnvironmentOverridesTypecomplexTypeDefinedInEnvironmentVariablesTypecomplexType).
+Переменная среды. Дополнительные сведения см. в разделе [Элемент EnvironmentVariable](service-fabric-service-model-schema-elements.md#EnvironmentVariableElementEnvironmentVariableOverrideTypeComplexTypeDefinedInEnvironmentOverridesTypecomplexType).
 
 ### <a name="certificateref-element"></a>Элемент CertificateRef
 Указывает сведения о сертификате X509, который должен быть предоставлен в среде контейнера. Этот сертификат должен быть установлен в хранилище LocalMachine на всех узлах в кластере.
@@ -356,7 +356,7 @@ ms.locfileid: "47094158"
 Передает переменные среды в контейнер или EXE-файл.  Дополнительные сведения см. в разделе [Элемент EnvironmentVariables](service-fabric-service-model-schema-elements.md#EnvironmentVariablesElementEnvironmentVariablesTypeComplexTypeDefinedInCodePackageTypecomplexType).
 
 ### <a name="environmentvariable-element"></a>Элемент EnvironmentVariable
-Переменная среды. Дополнительные сведения см. в разделе [Элемент EnvironmentVariable](service-fabric-service-model-schema-elements.md#EnvironmentVariableElementEnvironmentVariableTypeComplexTypeDefinedInEnvironmentOverridesTypecomplexTypeDefinedInEnvironmentVariablesTypecomplexType).
+Переменная среды. Дополнительные сведения см. в разделе [Элемент EnvironmentVariable](service-fabric-service-model-schema-elements.md#EnvironmentVariableElementEnvironmentVariableOverrideTypeComplexTypeDefinedInEnvironmentOverridesTypecomplexType).
 
 ### <a name="configpackage-element"></a>Элемент ConfigPackage
 Объявляет папку с именем, указанным в атрибуте Name, которая содержит файл Settings.xml. Этот файл содержит разделы заданных пользователем параметров пар "ключ-значение", которые могут считываться процессом во время выполнения. Во время обновления при изменении одного только атрибута version для ConfigPackage перезапуск процесса не выполняется. Вместо этого при помощи обратного вызова в процесс передается уведомление о том, что параметры конфигурации изменились, поэтому они были перезагружены в динамическом режиме. Дополнительные сведения см. в разделе [Элемент ConfigPackage](service-fabric-service-model-schema-elements.md#ConfigPackageElementConfigPackageTypeComplexTypeDefinedInServiceManifestTypecomplexTypeDefinedInDigestedConfigPackageelement).
@@ -403,7 +403,7 @@ ms.locfileid: "47094158"
 Передает переменные среды в контейнер или EXE-файл.  Дополнительные сведения см. в разделе [Элемент EnvironmentVariables](service-fabric-service-model-schema-elements.md#EnvironmentVariablesElementEnvironmentVariablesTypeComplexTypeDefinedInCodePackageTypecomplexType).
 
 ### <a name="environmentvariable-element"></a>Элемент EnvironmentVariable
-Переменная среды. Дополнительные сведения см. в разделе [Элемент EnvironmentVariable](service-fabric-service-model-schema-elements.md#EnvironmentVariableElementEnvironmentVariableTypeComplexTypeDefinedInEnvironmentOverridesTypecomplexTypeDefinedInEnvironmentVariablesTypecomplexType).
+Переменная среды. Дополнительные сведения см. в разделе [Элемент EnvironmentVariable](service-fabric-service-model-schema-elements.md#EnvironmentVariableElementEnvironmentVariableOverrideTypeComplexTypeDefinedInEnvironmentOverridesTypecomplexType).
 
 ### <a name="configpackage-element"></a>Элемент ConfigPackage
 Объявляет папку с именем, указанным в атрибуте Name, которая содержит файл Settings.xml. Этот файл содержит разделы заданных пользователем параметров пар "ключ-значение", которые могут считываться процессом во время выполнения. Во время обновления при изменении одного только атрибута version для ConfigPackage перезапуск процесса не выполняется. Вместо этого при помощи обратного вызова в процесс передается уведомление о том, что параметры конфигурации изменились, поэтому они были перезагружены в динамическом режиме. Дополнительные сведения см. в разделе [Элемент ConfigPackage](service-fabric-service-model-schema-elements.md#ConfigPackageElementConfigPackageTypeComplexTypeDefinedInServiceManifestTypecomplexTypeDefinedInDigestedConfigPackageelement).

@@ -15,12 +15,12 @@ ms.custom: vs-azure
 ms.workload: azure-vs
 ms.date: 09/12/2017
 ms.author: glenga;david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: 08cbff7bc58f5925dee9b77ff195d362af4379d8
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 300ccf5da3528be63ae618338b8953d05b0e799d
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51245751"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53337467"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio---azure-app-service"></a>Разработка и развертывание веб-заданий в службе приложений Azure с помощью Visual Studio
 
@@ -35,7 +35,7 @@ ms.locfileid: "51245751"
 
 Проект с поддержкой веб-заданий содержит следующие добавленные элементы.
 
-* Пакет NuGet [Microsoft.Web.WebJobs.Publish](http://www.nuget.org/packages/Microsoft.Web.WebJobs.Publish/) .
+* Пакет NuGet [Microsoft.Web.WebJobs.Publish](https://www.nuget.org/packages/Microsoft.Web.WebJobs.Publish/) .
 * Файл [webjob-publish-settings.json](#publishsettings) , который содержит параметры развертывания и планировщика. 
 
 ![Диаграмма, отображающая добавленные элементы в приложение консоли для реализации развертывания как веб-задания](./media/websites-dotnet-deploy-webjobs/convert.png)
@@ -97,7 +97,7 @@ ms.locfileid: "51245751"
     Создайте проект, настроенный для автоматического развертывания, как веб-задание при развертывании веб-проекта в том же решении. Используйте этот параметр, если нужно запустить веб-задание в том же веб-приложении, в котором запущено связанное веб-приложение.
 
 > [!NOTE]
-> Шаблон нового проекта веб-задания автоматически устанавливает пакеты NuGet и включает в файл *Program.cs* код для [пакета SDK веб-заданий](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs). Если вы не хотите использовать пакет SDK для веб-заданий, удалите или измените инструкцию `host.RunAndBlock` в файле *Program.cs*.
+> Шаблон нового проекта веб-задания автоматически устанавливает пакеты NuGet и включает в файл *Program.cs* код для [пакета SDK веб-заданий](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs). Если вы не хотите использовать пакет SDK для веб-заданий, удалите или измените инструкцию `host.RunAndBlock` в файле *Program.cs*.
 > 
 > 
 
@@ -130,7 +130,7 @@ ms.locfileid: "51245751"
 > 
 
 ## <a id="publishsettings"></a>webjob-publish-settings.json
-При настройке консольного приложения для развертывания веб-заданий Visual Studio устанавливает пакет NuGet [Microsoft.Web.WebJobs.Publish](http://www.nuget.org/packages/Microsoft.Web.WebJobs.Publish/) и сохраняет сведения о планировании в файле *webjob-publish-settings.json* в папке *Properties* проекта веб-заданий. Вот пример этого файла:
+При настройке консольного приложения для развертывания веб-заданий Visual Studio устанавливает пакет NuGet [Microsoft.Web.WebJobs.Publish](https://www.nuget.org/packages/Microsoft.Web.WebJobs.Publish/) и сохраняет сведения о планировании в файле *webjob-publish-settings.json* в папке *Properties* проекта веб-заданий. Вот пример этого файла:
 
         {
           "$schema": "http://schemastore.org/schemas/json/webjob-publish-settings.json",
@@ -142,7 +142,7 @@ ms.locfileid: "51245751"
           "runMode": "Continuous"
         }
 
-Вы можете изменить этот файл напрямую, и Visual Studio предоставит IntelliSense. Схема файла сохранена на сайте [http://schemastore.org](http://schemastore.org/schemas/json/webjob-publish-settings.json), и ее можно просмотреть здесь.  
+Вы можете изменить этот файл напрямую, и Visual Studio предоставит IntelliSense. Схема файла сохранена на сайте [https://schemastore.org](https://schemastore.org/schemas/json/webjob-publish-settings.json), и ее можно просмотреть здесь.  
 
 ## <a id="webjobslist"></a>webjobs-list.json
 При связывании проекта с поддержкой веб-заданий с веб-проектом Visual Studio сохраняет имя проекта веб-заданий в файле *webjobs-list.json* в папке веб-проекта *Properties*. Список может содержать несколько проектов веб-заданий, как показано в следующем примере:
@@ -159,7 +159,7 @@ ms.locfileid: "51245751"
           ]
         }
 
-Вы можете изменить этот файл напрямую, и Visual Studio предоставит IntelliSense. Схема файла сохранена на сайте [http://schemastore.org](http://schemastore.org/schemas/json/webjobs-list.json), и ее можно просмотреть здесь.
+Вы можете изменить этот файл напрямую, и Visual Studio предоставит IntelliSense. Схема файла сохранена на сайте [https://schemastore.org](https://schemastore.org/schemas/json/webjobs-list.json), и ее можно просмотреть здесь.
 
 ## <a id="deploy"></a>Развертывание проекта веб-заданий
 Проект веб-заданий, связанный с веб-проектом, развертывается автоматически с веб-проектом. Информацию о развертывании веб-проектов см. в левой области навигации **Практические руководства** > **Развертывание приложения**.

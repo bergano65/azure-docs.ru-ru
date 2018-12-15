@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 3/27/2018
 ms.author: shtabriz
-ms.openlocfilehash: 8535caf482b10912e6f7bc6df445756094d7603f
-ms.sourcegitcommit: c3d53d8901622f93efcd13a31863161019325216
+ms.openlocfilehash: 5d32c3539446482f2dcdaeb954bb704dc9b78c58
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2018
-ms.locfileid: "30261418"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53274932"
 ---
 # <a name="configure-health-notifications-for-existing-problem-management-systems-using-a-webhook"></a>Настройка уведомлений о работоспособности для существующих систем управления проблемами с помощью веб-перехватчика
 
@@ -37,7 +37,7 @@ ms.locfileid: "30261418"
 ## <a name="configuring-a-custom-notification-using-the-service-health-webhook-payload"></a>Настройка пользовательского уведомления с помощью полезных данных веб-перехватчика работоспособности служб
 Если вы хотите настроить собственную интеграцию пользовательского веб-перехватчика, необходимо проанализировать полезные данные JSON, которые отправляются во время уведомлений о работоспособности служб.
 
-Просмотрите [пример](../monitoring-and-diagnostics/monitoring-activity-log-alerts-webhook.md) того, как выглядят полезные данные веб-перехватчика `ServiceHealth`.
+Просмотрите [пример](../azure-monitor/platform/activity-log-alerts-webhook.md) того, как выглядят полезные данные веб-перехватчика `ServiceHealth`.
 
 Оповещение о работоспособности службы можно распознать по `context.eventSource == "ServiceHealth"`. Наиболее значимые свойства для приема:
  * `data.context.activityLog.status`
@@ -102,7 +102,7 @@ https://app.azure.com/h/0DET-URB/bbadb3
 
 
 ## <a name="testing-your-webhook-integration-via-an-http-post-request"></a>Проверка интеграции с веб-перехватчиком с помощью запроса HTTP POST
-1. Создайте полезные данные о работоспособности служб, которые хотите отправить. Пример полезных данных для веб-перехватчика службы работоспособности служб см. в статье [Веб-перехватчики для оповещений журнала действий Azure](../monitoring-and-diagnostics/monitoring-activity-log-alerts-webhook.md).
+1. Создайте полезные данные о работоспособности служб, которые хотите отправить. Пример полезных данных для веб-перехватчика службы работоспособности служб см. в статье [Веб-перехватчики для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md).
 
 2. Создайте запрос HTTP POST следующим образом:
 
@@ -118,6 +118,6 @@ https://app.azure.com/h/0DET-URB/bbadb3
 4. Откройте [PagerDuty](https://www.pagerduty.com/) и убедитесь, что интеграция настроена успешно.
 
 ## <a name="next-steps"></a>Дополнительная информация
-- Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](../monitoring-and-diagnostics/monitoring-activity-log-alerts-webhook.md). 
+- Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md). 
 - Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../monitoring-and-diagnostics/monitoring-service-notifications.md).
-- Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../monitoring-and-diagnostics/monitoring-action-groups.md).
+- Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../azure-monitor/platform/action-groups.md).

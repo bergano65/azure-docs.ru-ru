@@ -11,14 +11,17 @@ ms.topic: article
 ms.date: 08/14/2018
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 42697f7f4bb8c6b9ef785eef0fe2f5f33b2b38a7
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ROBOTS: NOINDEX
+ms.openlocfilehash: 1e9a4c6355c60b18bb78aae362c1e2f142e2d864
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51615609"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53408006"
 ---
 # <a name="store-batch-ai-job-input-and-output-with-azure-storage"></a>Хранение входных и выходных данных задания Batch AI с помощью хранилища Azure
+
+[!INCLUDE [batch-ai-retiring](../../includes/batch-ai-retiring.md)]
 
 В этом руководстве описывается использование службы хранилища Azure для хранения входных и выходных файлов при выполнении задания. Хранилище Azure — один из нескольких вариантов хранения, поддерживаемых службой Batch AI. Batch AI интегрируется с хранилищем Azure при помощи подключения систем хранения данных Azure к заданию Batch AI или файловой системе кластера, обеспечивая прозрачный доступ к файлам, хранящимся в облаке. 
 

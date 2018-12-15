@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: d085777e347e1e892c3a49f4f37aa1d8130ef18c
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: a5475ad2f487bca90f600406ca9bb8f0925a4988
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51005739"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52964821"
 ---
 # <a name="create-a-telemetry-rule-and-set-up-notifications-in-your-azure-iot-central-application"></a>Создание правила телеметрии и настройка уведомлений в приложении Azure IoT Central
 
@@ -36,19 +36,19 @@ ms.locfileid: "51005739"
 
 1. Если вы еще не создали правило, появится следующий экран:
 
-    ![Правила отсутствуют](media\howto-create-telemetry-rules\Rules_Landing_Page.png)
+    ![Правила отсутствуют](media/howto-create-telemetry-rules/Rules_Landing_Page.png)
 
 1. На вкладке **Правила** щелкните **Изменить шаблон** и выберите **+Новое правило**, чтобы просмотреть доступные для создания типы правил.
 
 1. Щелкните **Телеметрия**, чтобы создать правило для мониторинга телеметрии устройства.
 
-    ![Типы правил](media\howto-create-telemetry-rules\Rule_Types.png)
+    ![Типы правил](media/howto-create-telemetry-rules/Rule_Types.png)
 
 1. Введите имя, определяющее правило в этом шаблоне устройства.
 
 1. Чтобы немедленно включить правило для всех устройств, созданных на основе этого шаблона, переведите переключатель **Включить правило** в положение "Вкл." для всех устройств в этом шаблоне.
 
-   ![Сведения о правиле](media\howto-create-telemetry-rules\Rule_Detail.png)
+   ![Сведения о правиле](media/howto-create-telemetry-rules/Rule_Detail.png)
     
     Правило автоматически применяется ко всем устройствам в шаблоне устройств.
     
@@ -61,7 +61,7 @@ ms.locfileid: "51005739"
 
 1. Выберите телеметрию, которую нужно отслеживать, в раскрывающемся списке **Измерение**.
 
-   ![Условие](media\howto-create-telemetry-rules\Aggregate_Condition_Filled_Out.png)
+   ![Условие](media/howto-create-telemetry-rules/Aggregate_Condition_Filled_Out.png)
 
 1. Затем выберите **Агрегирование**, **Оператор** и введите **пороговое значение**.
     - Агрегирование не является обязательным. Без агрегирования правило запускается для каждой точки данных телеметрии, которая соответствует условию. Например, если правило настроено на активацию, когда температура превышает 80, то правило будет активироваться почти мгновенно, когда устройство сообщит о температуре больше 80.
@@ -78,14 +78,14 @@ ms.locfileid: "51005739"
 
 1. Выберите **+** рядом с разделом **Действия**. Здесь отобразится список доступных действий.  
 
-    ![Добавление действия](media\howto-create-telemetry-rules\Add_Action.png)
+    ![Добавление действия](media/howto-create-telemetry-rules/Add_Action.png)
 
 1. Выберите действие **Электронное письмо**, введите допустимый адрес электронной почты в поле **Кому** и укажите примечание, отображаемое в тексте сообщения при срабатывании правила.
 
     > [!NOTE]
     > Письма отправляются только пользователям, которые были добавлены в приложение и входили в систему минимум один раз. Узнайте больше об [управлении пользователями](howto-administer.md) в Azure IoT Central.
 
-   ![Настройка действия](media\howto-create-telemetry-rules\Configure_Action.png)
+   ![Настройка действия](media/howto-create-telemetry-rules/Configure_Action.png)
 
 1. Чтобы сохранить правило, нажмите кнопку **Сохранить**. Правило станет активным в течение нескольких минут и начнет выполнять мониторинг данных телеметрии, отправляемых в приложение. Если указанное в правиле условие соблюдается, правило активирует настроенное действие отправки электронной почты.
 

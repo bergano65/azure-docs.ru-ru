@@ -9,21 +9,20 @@ ms.assetid: 05d6a9e0-77a2-4a35-9052-a7768d23a196
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/31/2016
 ms.author: mbullwin
-ms.openlocfilehash: 2a5717f95e5e40fe04f4fa22eaedf168539e20f3
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: dda4e26de74dbd5579f2dd45ea47f42c904f028f
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52309235"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53271731"
 ---
 # <a name="use-powershell-to-set-alerts-in-application-insights"></a>Настройка оповещений в Application Insights с помощью PowerShell
 Вы можете автоматизировать настройку [оповещений](app-insights-alerts.md) в [Application Insights](app-insights-overview.md).
 
-Кроме того, вы можете [установить объекты webhook, чтобы автоматизировать реагирование на оповещения](../monitoring-and-diagnostics/insights-webhooks-alerts.md).
+Кроме того, вы можете [установить объекты webhook, чтобы автоматизировать реагирование на оповещения](../azure-monitor/platform/alerts-webhooks.md).
 
 > [!NOTE]
 > Если вы хотите создать ресурсы и оповещения одновременно, рассмотрите возможность [использования шаблона Azure Resource Manager](app-insights-powershell.md).
@@ -133,10 +132,10 @@ GUID — это идентификатор подписки (не ключ ин�
 | request,<br/>requestFailed |[Server request](app-insights-configuration-with-applicationinsights-config.md) |
 
 ## <a name="webhooks"></a>Объекты Webhook
-Вы можете [автоматизировать реагирование на оповещения](../monitoring-and-diagnostics/insights-webhooks-alerts.md). При возникновении оповещения Azure будет вызывать выбранный вами веб-адрес.
+Вы можете [автоматизировать реагирование на оповещения](../azure-monitor/platform/alerts-webhooks.md). При возникновении оповещения Azure будет вызывать выбранный вами веб-адрес.
 
 ## <a name="see-also"></a>См. также
 * [Сценарий настройки Application Insights](app-insights-powershell-script-create-resource.md)
 * [Создание ресурсов Application Insights и веб-тестов на основе шаблонов](app-insights-powershell.md)
 * [Автоматизация связывания системы диагностики Microsoft Azure с Application Insights](app-insights-powershell-azure-diagnostics.md)
-* [Автоматизация реагирования на оповещения](../monitoring-and-diagnostics/insights-webhooks-alerts.md)
+* [Автоматизация реагирования на оповещения](../azure-monitor/platform/alerts-webhooks.md)

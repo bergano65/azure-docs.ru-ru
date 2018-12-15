@@ -15,12 +15,12 @@ ms.date: 05/23/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d5a67cdcef7f39830b747dec5f2c980483e1ab91
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: c1ba7798fd8c1a18bc84aeb9ab8c4c2e0ff718cc
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46978341"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52967901"
 ---
 # <a name="view-activity-logs-for-rbac-changes"></a>Просмотр журналов действий на предмет изменений в RBAC
 
@@ -117,15 +117,15 @@ az monitor activity-log list --resource-provider "Microsoft.Authorization" --sta
 
 Ниже приведены основные шаги, позволяющие приступить к работе.
 
-1. [Создание рабочей области Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md).
+1. [Создание рабочей области Log Analytics](../azure-monitor/learn/quick-create-workspace.md).
 
-1. [Настройка решения аналитики журнала действий](../log-analytics/log-analytics-activity.md#configuration) для рабочей области.
+1. [Настройка решения аналитики журнала действий](../azure-monitor/platform/collect-activity-logs.md#configuration) для рабочей области.
 
-1. [Просмотр журналов действий](../log-analytics/log-analytics-activity.md#using-the-solution). Чтобы быстро перейти к странице "Обзор Activity Log Analytics", нажмите кнопку **Log Analytics**.
+1. [Просмотр журналов действий](../azure-monitor/platform/collect-activity-logs.md#using-the-solution). Чтобы быстро перейти к странице "Обзор Activity Log Analytics", нажмите кнопку **Log Analytics**.
 
    ![Кнопка "Log Analytics" на портале](./media/change-history-report/azure-log-analytics-option.png)
 
-1. При необходимости используйте страницу [Поиска по журналам](../log-analytics/log-analytics-log-search.md) или [портал расширенной аналитики](../log-analytics/query-language/get-started-analytics-portal.md) для формирования запросов и просмотра журналов. Дополнительные сведения об этих двух вариантах см. в разделах о [странице "Поиск по журналам" или портале расширенной аналитики](../log-analytics/log-analytics-log-search-portals.md).
+1. При необходимости используйте страницу [Поиска по журналам](../log-analytics/log-analytics-log-search.md) или [портал расширенной аналитики](../azure-monitor/log-query/get-started-portal.md) для формирования запросов и просмотра журналов. Дополнительные сведения об этих двух вариантах см. в разделах о [странице "Поиск по журналам" или портале расширенной аналитики](../azure-monitor/log-query/portals.md).
 
 Ниже приведен запрос, возвращающий новые назначения ролей, упорядоченные по целевому поставщику ресурсов.
 

@@ -8,28 +8,28 @@ manager: jeconnoc
 ms.author: tarcher
 ms.date: 09/02/2018
 ms.topic: article
-ms.openlocfilehash: 977fef390c0efecd47ec5e19b1a82c05e2ecfd0f
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: 22eeb3993cd408a8369236683da3db466a348a30
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44160751"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52956785"
 ---
 # <a name="ansible-with-azure"></a>Использование Ansible с Azure
 
-[Ansible](http://www.ansible.com) — этот продукт с открытым кодом, который автоматизирует подготовку облачных решений, управление конфигурацией и развертывание приложений. С помощью Ansible можно подготовить виртуальные машины, контейнеры и сети, а также готовые облачные инфраструктуры. Кроме того, ПО Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде.
+[Ansible](https://www.ansible.com) — этот продукт с открытым кодом, который автоматизирует подготовку облачных решений, управление конфигурацией и развертывание приложений. С помощью Ansible можно подготовить виртуальные машины, контейнеры и сети, а также готовые облачные инфраструктуры. Кроме того, ПО Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде.
 
 Эта статья описывает некоторые преимущества использования Ansible с Azure.
 
 ## <a name="ansible-playbooks"></a>Модули playbook Ansible
 
-[Модули playbook Ansible](http://docs.ansible.com/ansible/latest/playbooks.html) — это язык Ansible для настройки, развертывания и оркестрации. Они могут описывать политики, которые вы хотите применять в удаленных системах, или набор шагов в универсальном ИТ-процессе. При создании playbook используется формат YAML, который определяет модель конфигурации или процесса.
+[Модули playbook Ansible](https://docs.ansible.com/ansible/latest/playbooks.html) — это язык Ansible для настройки, развертывания и оркестрации. Они могут описывать политики, которые вы хотите применять в удаленных системах, или набор шагов в универсальном ИТ-процессе. При создании playbook используется формат YAML, который определяет модель конфигурации или процесса.
 
 ## <a name="ansible-modules"></a>Модули Ansible
 
-Ansible содержит набор [модулей Ansible](http://docs.ansible.com/ansible/latest/modules_by_category.html), которые можно выполнять непосредственно на удаленных узлах или с помощью модулей [playbook](http://docs.ansible.com/ansible/latest/playbooks.html). Пользователи также могут создавать собственные модули. Модули можно использовать для управления системными ресурсами, например службами, пакетами или файлами, или выполнения системных команд.
+Ansible содержит набор [модулей Ansible](https://docs.ansible.com/ansible/latest/modules_by_category.html), которые можно выполнять непосредственно на удаленных узлах или с помощью модулей [playbook](https://docs.ansible.com/ansible/latest/playbooks.html). Пользователи также могут создавать собственные модули. Модули можно использовать для управления системными ресурсами, например службами, пакетами или файлами, или выполнения системных команд.
 
-Для взаимодействия со службами Azure в Ansible есть набор [облачных модулей Ansible](http://docs.ansible.com/ansible/list_of_cloud_modules.html#azure), который позволяет легко создавать инфраструктуру в Azure и управлять ею. 
+Для взаимодействия со службами Azure в Ansible есть набор [облачных модулей Ansible](https://docs.ansible.com/ansible/list_of_cloud_modules.html#azure), который позволяет легко создавать инфраструктуру в Azure и управлять ею. 
 
 ## <a name="migrate-existing-workload-to-azure"></a>Миграция существующей рабочей нагрузки в Azure
 
@@ -40,7 +40,7 @@ Ansible содержит набор [модулей Ansible](http://docs.ansible
 Ansible позволяет автоматизировать собственные облачные приложения в Azure с помощью таких микрослужб Azure, как [Функции Azure](https://azure.microsoft.com//services/functions/) и [Kubernetes в Azure](https://azure.microsoft.com/services/container-service/kubernetes/).  
 
 ## <a name="manage-deployments-with-dynamic-inventory"></a>Управление развертываниями с помощью динамического списка
-С помощью [динамического списка](http://docs.ansible.com/ansible/intro_dynamic_inventory.html) в Ansible можно извлекать список из ресурсов Azure. Вы можете обозначить тегами существующие развертывания Azure и управлять этими отмеченными развертываниями с помощью Ansible.
+С помощью [динамического списка](https://docs.ansible.com/ansible/intro_dynamic_inventory.html) в Ansible можно извлекать список из ресурсов Azure. Вы можете обозначить тегами существующие развертывания Azure и управлять этими отмеченными развертываниями с помощью Ansible.
 
 ## <a name="additional-azure-marketplace-options"></a>Дополнительные параметры Azure Marketplace
 Образ [Ansible Tower](https://azuremarketplace.microsoft.com/marketplace/apps/redhat.ansible-tower) Red Hat, доступный в Azure Marketplace, позволяет организациям автоматизировать ИТ-процессы в нужном масштабе и управлять сложными развертываниями в физической, виртуальной или облачной инфраструктуре. Ansible Tower включает возможности, которые обеспечивают дополнительные уровни видимости, управления, безопасности и эффективности, необходимые современным предприятиям. Ansible Tower шифрует учетные данные, такие как ключи Azure и SSH, чтобы можно было делегировать задания менее опытным сотрудникам без риска раскрытия учетных данных.

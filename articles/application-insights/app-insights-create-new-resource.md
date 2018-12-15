@@ -9,16 +9,15 @@ ms.assetid: 878b007e-161c-4e36-8ab2-3d7047d8a92d
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: mbullwin
-ms.openlocfilehash: 59bb8564613e9a0cebda00c2c847283ff218b882
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 3c3ff606958503efcf2df5fd99b6e52e4687de4a
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35294723"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52996260"
 ---
 # <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 В Azure Application Insights данные о приложении отображаются в *ресурсе* Microsoft Azure. Таким образом, создание ресурса является частью [настройки Application Insights для мониторинга нового приложения][start]. Во многих случаях создать ресурс можно автоматически с помощью IDE. Однако в некоторых случаях создавать ресурс необходимо вручную. Например, чтобы иметь отдельные ресурсы для сборок разработки и производственных сборок приложения.
@@ -26,11 +25,11 @@ ms.locfileid: "35294723"
 После создания ресурса можно получить его ключ инструментирования и использовать этот ключ для настройки пакета SDK в приложении. Ключ ресурса позволяет связать данные телеметрии с ресурсом.
 
 ## <a name="sign-up-to-microsoft-azure"></a>Регистрация в Microsoft Azure
-Если у вас еще нет [учетной записи Майкрософт, получите ее сейчас](http://live.com). (Если вы используете такие службы, как Outlook.com, OneDrive, Windows Phone или XBox Live, значит, у вас уже есть учетная запись Майкрософт.)
+Если у вас еще нет [учетной записи Майкрософт, получите ее сейчас](https://live.com). (Если вы используете такие службы, как Outlook.com, OneDrive, Windows Phone или XBox Live, значит, у вас уже есть учетная запись Майкрософт.)
 
-Вам также потребуется подписка [Microsoft Azure](http://azure.com). Если у вашей группы или организации есть подписка Azure, владелец может добавить вас в нее с помощью вашей учетной записи Windows Live ID. Плата взимается только за используемый объем, а базовый план по умолчанию предусматривает бесплатное использование определенного объема в экспериментальных целях.
+Вам также потребуется подписка [Microsoft Azure](https://azure.com). Если у вашей группы или организации есть подписка Azure, владелец может добавить вас в нее с помощью вашей учетной записи Windows Live ID. Плата взимается только за используемый объем, а базовый план по умолчанию предусматривает бесплатное использование определенного объема в экспериментальных целях.
 
-Если у вас есть доступ к подписке, войдите в Application Insights по адресу [http://portal.azure.com](https://portal.azure.com) с помощью Live ID.
+Если у вас есть доступ к подписке, войдите в Application Insights по адресу [https://portal.azure.com](https://portal.azure.com) с помощью Live ID.
 
 ## <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 Перейдите по адресу [portal.azure.com](https://portal.azure.com)и добавьте новый ресурс Application Insights.

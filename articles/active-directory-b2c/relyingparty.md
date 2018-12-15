@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 8f56f287fde9e17d2a17298ca04eda63b69e3636
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: aaae119ec72a713adc2faa311dbcb6bd204035fd
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47159930"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52835103"
 ---
 # <a name="relyingparty"></a>RelyingParty
 
@@ -28,8 +28,8 @@ ms.locfileid: "47159930"
 ```XML
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TrustFrameworkPolicy
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="https://www.w3.org/2001/XMLSchema"
   xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06"
   PolicySchemaVersion="0.3.0.0"
   TenantId="your-tenant.onmicrosoft.com"
@@ -132,12 +132,12 @@ ms.locfileid: "47159930"
 
 | Атрибут | Обязательно | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
-| TelemetryEngine | Yes | Значение должно быть `ApplicationInsights`. | 
+| TelemetryEngine | Yes | Значение должно быть равно `ApplicationInsights`. | 
 | InstrumentationKey | Yes | Строка, содержащая ключ инструментирования для элемента Application Insights. |
 | DeveloperMode | Yes | Возможные значения: `true` или `false`. Если параметр имеет значение `true`, Application Insights передает телеметрию через конвейер обработки. Этот параметр подходит для разработки, но ограничен при больших объемах. Подробные журналы действий предназначены только для помощи в разработке настраиваемых политик. Не используйте режим разработки в рабочей среде. В журналах регистрируются все утверждения, отправляемые и принимаемые поставщиками удостоверений во время разработки. При использовании режима разработки в рабочей среде разработчик несет ответственность за персональные данные (личные сведения), собранные в его журнале App Insights. Эти подробные журналы собираются только в том случае, когда этот параметр имеет значение `true`.|
 | ClientEnabled | Yes | Возможные значения: `true` или `false`. Если параметр имеет значение `true`, клиентский сценарий Application Insights отправляется для отслеживания представления страницы и ошибок на стороне клиента. | 
 | ServerEnabled | Yes | Возможные значения: `true` или `false`. Если параметр имеет значение `true`, отправляется существующие данные JSON UserJourneyRecorder как пользовательское событие в Application Insights. | 
-| TelemetryVersion | Yes | Значение должно быть `1.0.0`. | 
+| TelemetryVersion | Yes | Значение должно быть равно `1.0.0`. | 
 
 Дополнительные сведения см. в статье о [сборе журналов](active-directory-b2c-troubleshoot-custom.md).
 
@@ -169,9 +169,9 @@ ms.locfileid: "47159930"
 
 | Атрибут | Обязательно | ОПИСАНИЕ |
 | --------- | -------- | ----------- | 
-| Идентификатор | Yes | Значение должно быть `PolicyProfile`. |
+| Идентификатор | Yes | Значение должно быть равно `PolicyProfile`. |
 
-Элемент **TechnicalProfile** содержит следующие элементы.
+Элемент **TechnicalProfile** содержит следующие элементы:
 
 | Элемент | Вхождения | ОПИСАНИЕ |
 | ------- | ----------- | ----------- |
@@ -190,13 +190,13 @@ ms.locfileid: "47159930"
 
 ## <a name="outputclaims"></a>OutputClaims
 
-Элемент **OutputClaims** содержит следующий элемент.
+Элемент **PersistedClaim** содержит следующие элементы:
 
 | Элемент | Вхождения | ОПИСАНИЕ |
 | ------- | ----------- | ----------- |
-| OutputClaim | 0:n | Имя ожидаемого типа утверждения в поддерживаемом списке для политики, на которую подписывается проверяющая сторона. Это утверждение служит в качестве выходных данных технического профиля. |
+| outputClaim | 0:n | Имя ожидаемого типа утверждения в поддерживаемом списке для политики, на которую подписывается проверяющая сторона. Это утверждение служит в качестве выходных данных технического профиля. |
 
-Элемент **OutputClaim** содержит следующие атрибуты.
+Элемент **OutputClaim** содержит следующие атрибуты:
 
 | Атрибут | Обязательно | ОПИСАНИЕ |
 | --------- | -------- | ----------- |

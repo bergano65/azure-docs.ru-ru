@@ -2,19 +2,19 @@
 title: Использование агента Azure Backup для резервного копирования файлов и папок
 description: Использование агента Microsoft Azure Backup для резервного копирования файлов и папок Windows в Azure. Создание хранилища служб восстановления, установка агента службы архивации, определение политики архивации и начальная архивация файлов и папок.
 services: backup
-author: markgalioto
+author: rayne-wiselman
 manager: carmonm
 keywords: хранилище архивации; архивация сервера Windows; архивация Windows;
 ms.service: backup
 ms.topic: conceptual
 ms.date: 8/5/2018
-ms.author: markgal
-ms.openlocfilehash: 8107af53a78960d29f506c77f8ba9697c7a49d1c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.author: raynew
+ms.openlocfilehash: 4e138311b58d56f3a188347d43ed12287d43e1bd
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51252910"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52874011"
 ---
 # <a name="back-up-a-windows-server-or-client-to-azure-using-the-resource-manager-deployment-model"></a>Архивация сервера Windows Server или клиента Windows в Azure с использованием модели развертывания с помощью Resource Manager
 В этой статье описывается, как выполнить архивацию файлов и папок Windows Server или клиентского компьютера Windows в Azure с помощью службы архивации Azure, используя модель развертывания Resource Manager.

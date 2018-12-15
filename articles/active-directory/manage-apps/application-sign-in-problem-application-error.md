@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/11/2017
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: 4cce49509a452153815c845d9ab72a1b4a8a5b7f
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 13a628d37ef67d0a1dc3ad8231229493191c4e7f
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44355423"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52849570"
 ---
 # <a name="error-on-an-applications-page-after-signing-in"></a>Ошибка на странице приложения после входа
 
@@ -30,7 +30,7 @@ ms.locfileid: "44355423"
 
 -   Если приложение является коллекцией Azure AD, выполните все действия, описанные в статье [Отладка единого входа на основе SAML в приложения в Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-saml-debugging).
 
--   Используйте такое средство, как [Fiddler](http://www.telerik.com/fiddler), для захвата запроса, ответа и токена SAML.
+-   Используйте такое средство, как [Fiddler](https://www.telerik.com/fiddler), для захвата запроса, ответа и токена SAML.
 
 -   Предоставьте ответ SAML поставщику приложения, чтобы узнать, чего именно не хватает.
 

@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/05/2018
 ms.author: hrasheed
-ms.openlocfilehash: 23c8098927a051da48c7da2bac0c96173da1d2f2
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.openlocfilehash: 2af68c0b9deb9d5b065f5fae42cf4bf927f0c671
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51713305"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53386460"
 ---
 # <a name="use-azure-log-analytics-to-monitor-hdinsight-clusters"></a>Использование Azure Log Analytics для мониторинга кластеров HDInsight
 
@@ -26,7 +26,7 @@ ms.locfileid: "51713305"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Рабочая область Log Analytics**. Рабочую область можно представить как уникальную среду Log Analytics с собственным репозиторием данных, источниками данных и решениями. С инструкциями можно ознакомиться в разделе [Создание рабочей области](../log-analytics/log-analytics-quick-collect-azurevm.md#create-a-workspace).
+* **Рабочая область Log Analytics**. Рабочую область можно представить как уникальную среду Log Analytics с собственным репозиторием данных, источниками данных и решениями. С инструкциями можно ознакомиться в разделе [Создание рабочей области](../azure-monitor/learn/quick-collect-azurevm.md#create-a-workspace).
 
 * **Кластер Azure HDInsight**. Сейчас вы можете использовать Log Analytics со следующими типами кластеров HDInsight:
 
@@ -39,7 +39,7 @@ ms.locfileid: "51713305"
 
   Инструкции по созданию кластера HDInsight см. в руководстве по [началу работы с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
-> [!NOTE]
+> [!NOTE]  
 > Для повышения производительности рекомендуется разместить кластер HDInsight и рабочую область Log Analytics в одном регионе. Azure Log Analytics доступна не во всех регионах Azure.
 
 ## <a name="enable-log-analytics-by-using-the-portal"></a>Включение Log Analytics с помощью портала

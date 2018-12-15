@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: 3c7a1dd9ba688c5cc9776dbfba0841c9a06065dc
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 6447061e79946abf8070daf29eeb57bad7b6fa55
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50419696"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53184973"
 ---
 # <a name="create-and-provision-a-simulated-x509-device-using-java-device-and-service-sdk-and-group-enrollments-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства X.509 с помощью Java устройства, SDK службы и групп регистрации для службы подготовки устройств Центра Интернета вещей
 
@@ -49,20 +49,20 @@ ms.locfileid: "50419696"
             - Выберите созданный файл **_RootCA.pem_**.
             - Затем нажмите кнопку **Сохранить**.
 
-        ![Добавление сертификата](./media/tutorial-group-enrollments/add-certificate.png)
+           ![Добавление сертификата](./media/tutorial-group-enrollments/add-certificate.png)
 
         1. Выберите только что созданный сертификат.
             - Щелкните **Создать код проверки**. Скопируйте созданный код.
             - Выполните этап проверки. Введите _код проверки_ или щелкните правой кнопкой мыши в открытом окне PowerShell, чтобы вставить код.  Нажмите клавишу **ВВОД**.
             - На портале Azure выберите созданный файл **_verifyCert4.pem_**. Нажмите кнопку **Проверка**.
 
-            ![Проверка сертификата](./media/tutorial-group-enrollments/validate-certificate.png)
+              ![Проверка сертификата](./media/tutorial-group-enrollments/validate-certificate.png)
 
     1. Выполните шаги по созданию сертификатов для устройства и удалению ресурсов.
 
-    > [!NOTE]
-    > Создавая сертификаты устройств убедитесь, что в имени устройства используются только строчные буквы, цифры и дефисы.
-    >
+       > [!NOTE]
+       > Создавая сертификаты устройств убедитесь, что в имени устройства используются только строчные буквы, цифры и дефисы.
+       >
 
 
 ## <a name="create-a-device-enrollment-entry"></a>Создание записи о регистрации устройства

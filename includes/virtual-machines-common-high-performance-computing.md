@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/02/2018
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 8f43edfe468958bbc4a6fde14e8e03e5b4d4e0f2
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 88aeaf1246583345d1d28218e8e91b3ecbcd166b
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51264293"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53430029"
 ---
 Организациям требуются крупномасштабные вычисления. Рабочие нагрузки крупномасштабных вычислений включают техническое проектирование и анализ, вычисление финансовых рисков, отрисовку образов, комплексное моделирование, моделирование методом Монте-Карло и другие задачи. 
 
@@ -86,7 +86,6 @@ ms.locfileid: "51264293"
 
 ### <a name="ai-and-deep-learning"></a>Искусственный интеллект и глубокое обучение
 
-* Обучение по службе [Batch AI](../articles/batch-ai/overview.md) для моделей глубокого обучения
 * [Microsoft Cognitive Toolkit](https://docs.microsoft.com/cognitive-toolkit/cntk-on-azure)
 * [Виртуальная машина для глубокого обучения](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.dsvm-deep-learning)
 * [Инструкции Batch Shipyard для глубокого обучения](https://github.com/Azure/batch-shipyard/tree/master/recipes#deeplearning)
@@ -168,7 +167,6 @@ Azure предлагает различные размеры для виртуа
 
 ### <a name="ai-and-machine-learning"></a>ИИ и машинное обучение
 * [Службы машинного обучения](../articles/machine-learning/service/overview-what-is-azure-ml.md)
-* [Искусственный интеллект пакетной службы](../articles/batch-ai/overview.md)
 * [Genomics](../articles/genomics/overview-what-is-genomics.md)
 
 ### <a name="networking"></a>Сеть

@@ -10,17 +10,15 @@ ms.assetid: 51617a6f-ffdd-4ed2-8b74-1257149ce3d4
 ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: magoedte
-ms.component: ''
-ms.openlocfilehash: 7902a4fb747a53b26b6f100291c77e6fec4c8d05
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 41508a1d99ed243d377cc72c0accc005c5ca737d
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52633441"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53189206"
 ---
 # <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-preview"></a>Планирование ресурсов виртуальной машины Hyper-V с помощью решения "Емкость и производительность" (предварительная версия)
 
@@ -51,9 +49,9 @@ ms.locfileid: "52633441"
 | Подключенный источник | Поддержка | ОПИСАНИЕ |
 |---|---|---|
 | [Агенты Windows](../../azure-monitor/platform/agent-windows.md) | Yes | Решение собирает сведения о емкости и производительности из агентов Windows. |
-| [Агенты Linux](../../log-analytics/log-analytics-quick-collect-linux-computer.md) | Нет     | Решение не собирает сведения о емкости и производительности из прямых агентов Linux.|
-| [Группы управления SCOM](../../log-analytics/log-analytics-om-agents.md) | Yes |Решение собирает сведения о емкости и производительности из агентов в подключенной группе управления SCOM. Прямое подключение агента SCOM к Log Analytics не требуется.|
-| [Учетная запись хранения Azure](../../log-analytics/log-analytics-azure-storage.md) | Нет  | Служба хранилища Azure не содержит сведения о емкости и производительности.|
+| [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет     | Решение не собирает сведения о емкости и производительности из прямых агентов Linux.|
+| [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Yes |Решение собирает сведения о емкости и производительности из агентов в подключенной группе управления SCOM. Прямое подключение агента SCOM к Log Analytics не требуется.|
+| [Учетная запись хранения Azure](../../azure-monitor/platform/collect-azure-metrics-logs.md) | Нет  | Служба хранилища Azure не содержит сведения о емкости и производительности.|
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -81,7 +79,7 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 
 При обновлении решения "Емкость и производительность" номер версии изменится.
 
-Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../../log-analytics/log-analytics-om-agents.md).
+Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../../azure-monitor/platform/om-agents.md).
 
 ## <a name="using-the-solution"></a>Использование решения
 
@@ -138,4 +136,4 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Используйте [поиск по журналам в Log Analytics](../../log-analytics/log-analytics-queries.md), чтобы просмотреть подробные сведения о емкости и производительности.
+* Используйте [поиск по журналам в Log Analytics](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные сведения о емкости и производительности.

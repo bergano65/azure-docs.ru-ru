@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/08/2018
 ms.author: dharmas
 ms.reviewer: sngun
-ms.openlocfilehash: e73c295c214728bf07b65ae4402c3b5abe21932f
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 9f237d9eed5b8500f0f80b8b73d638f374bf5ca9
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52165294"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52999512"
 ---
 # <a name="working-with-azure-cosmos-account"></a>Работа с учетной записью Azure Cosmos
 
@@ -38,7 +38,7 @@ Azure Cosmos DB — это полностью управляемая платф�
 * [Глобальное распределение](distribute-data-globally.md)
 * [Уровни согласованности](consistency-levels.md)
 * [Работа с базами данных, контейнерами и элементами Azure Cosmos](databases-containers-items.md)
-* [Безопасный доступ к учетной записи Azure Cosmos DB с использованием конечной точки службы виртуальной сети Azure](firewall-support.md)
-* [Поддержка брандмауэра для Azure Cosmos DB](vnet-service-endpoint.md)
+* [Безопасный доступ к учетной записи Azure Cosmos DB с использованием конечной точки службы виртуальной сети Azure](vnet-service-endpoint.md)
+* [Поддержка брандмауэра для Azure Cosmos DB](firewall-support.md)
 * [Добавление и удаление регионов из учетной записи базы данных](how-to-manage-database-account.md)
 * [Соглашение об уровне обслуживания для Azure Cosmos DB](https://azure.microsoft.com/support/legal/sla/cosmos-db/v1_2/)

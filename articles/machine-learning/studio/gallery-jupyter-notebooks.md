@@ -1,12 +1,11 @@
 ---
 title: Записные книжки Jupyter в Коллекции решений ИИ Azure — Студия машинного обучения Azure | Документация Майкрософт
-description: Поиск записных книжек Jupyter в коллекции решений ИИ Azure.
+description: Поиск записных книжек Jupyter в коллекции решений ИИ Azure. Записные книжки в коллекции предоставляют руководства и подробное описание передовых методов и решений машинного обучения.
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: 556e0671-1b50-4bcb-92eb-889962310633
 ms.service: machine-learning
@@ -16,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
-ms.openlocfilehash: efc24f957a4c1288212fed2792d3dd14a49e1a2b
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: b927b63744c9871c2a2d5451c685714c2d2ea6de
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52307719"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53268229"
 ---
 # <a name="discover-jupyter-notebooks-in-the-azure-ai-gallery"></a>Поиск записных книжек Jupyter в коллекции решений ИИ Azure
 
@@ -69,5 +68,5 @@ ms.locfileid: "52307719"
 
 **[ПЕРЕЙТИ В КОЛЛЕКЦИЮ >>](http://gallery.cortanaintelligence.com)**
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 

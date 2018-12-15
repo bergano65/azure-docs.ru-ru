@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/15/2018
 ms.author: apimpm
-ms.openlocfilehash: 27bfd3176ecad847f9bba2a62abd66b55484443b
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: 82ae0ef72bb4f546a1f946f3127aa5d74bec3c3b
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52443021"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52957765"
 ---
 # <a name="how-to-deploy-an-azure-api-management-service-instance-to-multiple-azure-regions"></a>Развертывание экземпляра службы управления Azure API в различных регионах Azure
 
@@ -119,5 +119,5 @@ ms.locfileid: "52443021"
 [Deploy an API Management service instance to a new region]: #add-region
 [Delete an API Management service instance from a region]: #remove-region
 
-[unit]: http://azure.microsoft.com/pricing/details/api-management/
-[Premium]: http://azure.microsoft.com/pricing/details/api-management/
+[unit]: https://azure.microsoft.com/pricing/details/api-management/
+[Premium]: https://azure.microsoft.com/pricing/details/api-management/

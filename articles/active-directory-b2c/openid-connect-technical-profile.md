@@ -10,22 +10,22 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 40922080857563b86d538586b90513381edb5d89
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 9a20b8df1f0d9cddbde4c4886e11967bc8c04160
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44383057"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52842421"
 ---
 # <a name="define-a-openid-connect-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля OpenId Connect в пользовательской политике в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Azure Active Directory (Azure AD) B2C поддерживает протокол [OpenId Connect](http://openid.net/2015/04/17/openid-connect-certification-program/) для поставщиков удостоверений. OpenID Connect 1.0 определяет уровень идентификации поверх OAuth 2.0 и представляет собой оптимизированный протокол среди современных протоколов аутентификации.  С помощью технического профиля OpenId Connect можно создавать федерацию с поставщиками удостоверений на основе OpenId Connect, что позволяет пользователям выполнять вход с применением удостоверений для социальных или корпоративных сетей.
+Azure Active Directory (Azure AD) B2C поддерживает протокол [OpenId Connect](https://openid.net/2015/04/17/openid-connect-certification-program/) для поставщиков удостоверений. OpenID Connect 1.0 определяет уровень идентификации поверх OAuth 2.0 и представляет собой оптимизированный протокол среди современных протоколов аутентификации.  С помощью технического профиля OpenId Connect можно создавать федерацию с поставщиками удостоверений на основе OpenId Connect, что позволяет пользователям выполнять вход с применением удостоверений для социальных или корпоративных сетей.
 
 ## <a name="protocol"></a>Протокол
 
-Атрибуту **Name** элемента **Protocol** необходимо задать значение `OpenIdConnect`. Например, `OpenIdConnect` — это протокол для технического профиля **MSA-OIDC**.
+Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `OpenIdConnect`. Например, `OpenIdConnect` — это протокол для технического профиля **MSA-OIDC**.
 
 ```XML
 <TechnicalProfile Id="MSA-OIDC">
@@ -100,7 +100,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
  
 При настройке URI перенаправления поставщика удостоверений введите `https://login.microsoftonline.com/te/tenant/oauth2/authresp`. Замените **tenant** именем своего клиента (например, contosob2c.onmicrosoft.com) или идентификатором клиента. URI перенаправления должен содержать только строчные символы.
 
-Если вы используете домен **b2clogin.com** вместо **login.microsoftonline.com**, убедитесь, что используется нужный домен.
+Если вы используете домен **b2clogin.com** вместо **login.microsoftonline.com**, удостоверьтесь, что єто действительно требуется.
 
 Примеры:
 

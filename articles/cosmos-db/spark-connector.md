@@ -1,33 +1,31 @@
 ---
-title: Подключение Apache Spark к Azure Cosmos DB | Документация Майкрософт
+title: Подключение Apache Spark к Azure Cosmos DB
 description: Сведения о соединителе Spark для Azure Cosmos DB, который позволяет подключать Apache Spark к Azure Cosmos DB. Вы можете выполнять распределенные агрегирования в мультитенантной, глобально распределенной системе баз данных от корпорации Майкрософт.
 keywords: apache spark
 services: cosmos-db
 author: tknandu
-manager: kfile
 ms.service: cosmos-db
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/11/2018
 ms.author: ramkris
-ms.openlocfilehash: 62395ff5370a057ca1888dd135b83be9d6f34f8d
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
+ms.openlocfilehash: fd1fa105a880acb0d2b18a3b69ba8d475d8f82a3
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51707186"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53081597"
 ---
 # <a name="accelerate-big-data-analytics-by-using-the-apache-spark-to-azure-cosmos-db-connector"></a>Ускорение аналитики больших данных с помощью соединителя Apache Spark для Azure Cosmos DB
  
-Соединитель Apache Spark для Azure Cosmos DB дает возможность использовать Azure Cosmos DB в качестве входных или выходных данных для заданий Apache Spark. Подключение [Spark](http://spark.apache.org/) к [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/) ускоряет возможность решения проблем обработки и анализа данных. Вы можете использовать Azure Cosmos DB для быстрого сохранения и запроса данных. Соединитель эффективно использует собственные управляемые индексы Azure Cosmos DB. Эти индексы позволяют использовать обновляемые столбцы при выполнении анализа, применять фильтры предиката к быстро меняющимся глобально распределенным данным, начиная от Интернета вещей и заканчивая сценариями аналитики и обработки и анализа данных.
+Соединитель Apache Spark для Azure Cosmos DB дает возможность использовать Azure Cosmos DB в качестве входных или выходных данных для заданий Apache Spark. Подключение [Spark](https://spark.apache.org//) к [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/) ускоряет возможность решения проблем обработки и анализа данных. Вы можете использовать Azure Cosmos DB для быстрого сохранения и запроса данных. Соединитель эффективно использует собственные управляемые индексы Azure Cosmos DB. Эти индексы позволяют использовать обновляемые столбцы при выполнении анализа, применять фильтры предиката к быстро меняющимся глобально распределенным данным, начиная от Интернета вещей и заканчивая сценариями аналитики и обработки и анализа данных.
 
 ## <a name="connector-components"></a>Компоненты соединителя
 
 Соединитель Spark для Azure Cosmos DB содержит следующие компоненты.
 
-* [Azure Cosmos DB](http://documentdb.com) позволяет вам подготавливать и эластично масштабировать пропускную способность и ресурсы хранилища в любом количестве географических регионов.  
+* [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/) позволяет вам подготавливать и эластично масштабировать пропускную способность и ресурсы хранилища в любом количестве географических регионов.  
 
-* [Apache Spark](http://spark.apache.org/) — это высокопроизводительная подсистема обработки с открытым исходным кодом, призванная ускорить разработку, повысить удобство использования и реализовать сложную аналитику.  
+* [Apache Spark](https://spark.apache.org/) — это высокопроизводительная подсистема обработки с открытым исходным кодом, призванная ускорить разработку, повысить удобство использования и реализовать сложную аналитику.  
 
 * [Кластер Apache Spark в Azure Databricks](https://docs.azuredatabricks.net/getting-started/index.html) позволяет выполнять задания Spark в кластере Spark.
 
@@ -179,7 +177,7 @@ df.show()
 
 4. Извлеките содержимое образца веб-канала Twitter и откройте файл "config.py". Обновите значения masterKey, host, databaseId, collectionId и preferredLocations.  
 
-5. Перейдите в `http://apps.twitter.com/` и зарегистрируйте приложение веб-канала Twitter. **Ключ клиента, секрет клиента, маркер доступа и секрет маркера доступа** будут предоставлены после выбора имени для приложения. Чтобы предоставить программный доступ к приложению веб-канала Twitter, скопируйте эти значения и обновите их в файле config.py.   
+5. Перейдите в `https://apps.twitter.com/` и зарегистрируйте приложение веб-канала Twitter. **Ключ клиента, секрет клиента, маркер доступа и секрет маркера доступа** будут предоставлены после выбора имени для приложения. Чтобы предоставить программный доступ к приложению веб-канала Twitter, скопируйте эти значения и обновите их в файле config.py.   
 
 6. Сохраните файл config.py. Откройте командную строку и запустите приложение Python с помощью следующей команды.
 
@@ -513,4 +511,4 @@ df.show()
 * [Примеры агрегирований](https://github.com/Azure/azure-cosmosdb-spark/wiki/Aggregations-Examples)
 * [Примеры скриптов и записных книжек](https://github.com/Azure/azure-cosmosdb-spark/tree/master/samples)
 
-Дополнительные сведения см. в [руководстве по Apache Spark SQL, таблицам и наборам данных](http://spark.apache.org/docs/latest/sql-programming-guide.html), а также статье [Краткое руководство по созданию кластера Spark в HDInsight с помощью шаблона](../hdinsight/spark/apache-spark-jupyter-spark-sql.md).
+Дополнительные сведения см. в [руководстве по Apache Spark SQL, таблицам и наборам данных](https://spark.apache.org/docs/latest/sql-programming-guide.html), а также статье [Краткое руководство по созданию кластера Spark в HDInsight с помощью шаблона](../hdinsight/spark/apache-spark-jupyter-spark-sql.md).

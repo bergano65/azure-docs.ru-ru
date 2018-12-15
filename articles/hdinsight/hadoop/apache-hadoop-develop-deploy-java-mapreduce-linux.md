@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: hrasheed
-ms.openlocfilehash: 3c16d85479399d7988be18f9b852563617bb824b
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: e1b4681bc8e42294be6b47a04a24e28f81703e6f
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51632660"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53436863"
 ---
 # <a name="develop-java-mapreduce-programs-for-apache-hadoop-on-hdinsight"></a>Разработка программ MapReduce на Java для Apache Hadoop в HDInsight
 
@@ -25,12 +25,12 @@ ms.locfileid: "51632660"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Пакет [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/) 8 или более поздней версии (или эквивалентный пакет, например OpenJDK).
+* Пакет [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/) 8 или более поздней версии (или эквивалентный пакет, например OpenJDK).
     
     > [!NOTE]
     > Для HDInsight 3.4 и более ранних версий используйте Java 7. В HDInsight 3.5 и более поздних версиях используется Java 8.
 
-* [Apache Maven](http://maven.apache.org/)
+* [Apache Maven](https://maven.apache.org/)
 
 ## <a name="configure-development-environment"></a>Настройка среды разработки
 
@@ -63,7 +63,7 @@ ms.locfileid: "51632660"
 
     Эта команда создает каталог с именем, указанным в параметре `artifactID` (в этом примере — **wordcountjava**). Этот каталог содержит следующие элементы:
 
-   * `pom.xml` — это [объектная модель проекта (POM)](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html), которая содержит сведения и данные конфигурации, использующиеся при сборке проекта;
+   * `pom.xml` — это [объектная модель проекта (POM)](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html), которая содержит сведения и данные конфигурации, использующиеся при сборке проекта;
 
    * `src` — это каталог, содержащий приложение.
 
@@ -94,7 +94,7 @@ ms.locfileid: "51632660"
     </dependency>
    ```
 
-    Это означает, что требуются библиотеки (перечисленные в параметре &lt;artifactId\>) определенной версии (указанной в параметре &lt;version\>). При компиляции эти зависимости скачиваются из репозитория Maven по умолчанию. Можно воспользоваться [поиском по репозиторию Maven](http://search.maven.org/#artifactdetails%7Corg.apache.hadoop%7Chadoop-mapreduce-examples%7C2.5.1%7Cjar) , чтобы получить дополнительную информацию.
+    Это означает, что требуются библиотеки (перечисленные в параметре &lt;artifactId\>) определенной версии (указанной в параметре &lt;version\>). При компиляции эти зависимости скачиваются из репозитория Maven по умолчанию. Можно воспользоваться [поиском по репозиторию Maven](https://search.maven.org/#artifactdetails%7Corg.apache.hadoop%7Chadoop-mapreduce-examples%7C2.5.1%7Cjar) , чтобы получить дополнительную информацию.
    
     `<scope>provided</scope>` сообщает Maven, что эти зависимости не должны быть упакованы с приложением, так как они будут предоставлены кластером HDInsight во время выполнения.
 
@@ -138,7 +138,7 @@ ms.locfileid: "51632660"
     </build>
    ```
 
-    Первый подключаемый модуль настраивает [подключаемый модуль Maven Shade](http://maven.apache.org/plugins/maven-shade-plugin/), используемый для создания uberjar (иногда называется fatjar), который содержит требуемые приложению зависимости. Он также предотвращает дублирование лицензий в рамках пакета JAR, которое может вызвать проблемы в некоторых системах.
+    Первый подключаемый модуль настраивает [подключаемый модуль Maven Shade](https://maven.apache.org/plugins/maven-shade-plugin/), используемый для создания uberjar (иногда называется fatjar), который содержит требуемые приложению зависимости. Он также предотвращает дублирование лицензий в рамках пакета JAR, которое может вызвать проблемы в некоторых системах.
 
     Второй подключаемый модуль настраивает целевую версию Java.
 
@@ -285,15 +285,15 @@ ms.locfileid: "51632660"
 
 В этом документе объясняется, как разработать задание MapReduce на Java. Чтобы узнать о других методах работы с HDInsight, см. следующие документы.
 
-* [Использование Hive с HDInsight](hdinsight-use-hive.md)
-* [Использование Pig с HDInsight](hdinsight-use-pig.md)
+* [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hdinsight-use-hive.md)
+* [Использование Pig с Hadoop в HDInsight](hdinsight-use-pig.md)
 * [Использование MapReduce с HDInsight](hdinsight-use-mapreduce.md)
 
 Дополнительную информацию см. также в [Центре разработчика Java](https://azure.microsoft.com/develop/java/).
 
-[azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
+[azure-purchase-options]: https://azure.microsoft.com/pricing/purchase-options/
+[azure-member-offers]: https://azure.microsoft.com/pricing/member-offers/
+[azure-free-trial]: https://azure.microsoft.com/pricing/free-trial/
 
 [hdinsight-use-sqoop]:hdinsight-use-sqoop.md
 [hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver.md
@@ -303,5 +303,5 @@ ms.locfileid: "51632660"
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
 [hdinsight-power-query]:apache-hadoop-connect-excel-power-query.md
 
-[powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
+[powershell-PSCredential]: https://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 

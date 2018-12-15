@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/11/2018
 ms.author: zhiweiw
-ms.openlocfilehash: c077e8592157b5c09dd1bc99934afd9f687b1da1
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 8841a4d216160af4ed731570b40754307ffbb5a4
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51282532"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52996043"
 ---
 # <a name="diagnose-and-remediate-duplicated-attribute-sync-errors"></a>Диагностика и устранение ошибок синхронизации повторяющихся атрибутов
 
@@ -28,7 +28,7 @@ ms.locfileid: "51282532"
 - Она предоставляет диагностическую процедуру, которая позволяет сузить сведения об ошибках синхронизации повторяющихся атрибутов. И обеспечивает соответствующие исправления.
 - Она применяет исправление для выделенных сценариев из Azure AD, позволяя устранить ошибку одним действием.
 - для включения этой функции не требуется обновление или настройка
-Дополнительные сведения об Azure AD см. в статье [Синхронизация удостоверений и устойчивость повторяющихся атрибутов](https://aka.ms/dupattributeresdocs).
+Дополнительные сведения об Azure AD см. в статье [Синхронизация удостоверений и устойчивость повторяющихся атрибутов](how-to-connect-syncservice-duplicate-attribute-resiliency.md).
 
 ## <a name="problems"></a>Проблемы
 ### <a name="a-common-scenario"></a>Стандартный сценарий

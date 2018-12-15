@@ -10,18 +10,17 @@ ms.service: application-insights
 ms.custom: vs-azure
 ms.workload: azure-vs
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/17/2017
 ms.reviewer: mbullwin
 ms.pm_owner: daviste;NumberByColors
 ms.author: daviste
-ms.openlocfilehash: 70b0f66fcbcd54b5eb2f3dc938b005090a08c62f
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 298fb7350ad8bb5029414b63797f62ef292a315e
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50137265"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52721635"
 ---
 # <a name="application-insights-telemetry-in-visual-studio-codelens"></a>Телеметрия Application Insights в Visual Studio CodeLens
 Методы в коде веб-приложения можно обозначить с помощью данных телеметрии об исключениях во время выполнения и времени ответа на запрос. Если установить в приложении [Azure Application Insights](app-insights-overview.md), данные телеметрии будут отображаться в Visual Studio [CodeLens](https://msdn.microsoft.com/library/dn269218.aspx) в виде примечаний в верхней части данных о функции. Там обычно приведены такие полезные сведения, как число расположений со ссылками на функцию или имя пользователя, который последним вносил в нее изменения.

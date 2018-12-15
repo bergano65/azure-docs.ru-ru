@@ -9,25 +9,25 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 10/23/2018
-ms.openlocfilehash: 15bfe871731f5a6a04cae623faf0bd27cdba27fc
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: d7a32abe52e6f1109becc18c84b19d0ccd69719c
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233197"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53385471"
 ---
 # <a name="monitor-b2b-messages-with-azure-log-analytics-in-azure-logic-apps"></a>Мониторинг сообщений B2B с помощью Azure Log Analytics в Azure Logic Apps
 
 Когда вы настроите взаимодействие B2B между торговыми партнерами в учетной записи интеграции, эти партнеры смогут обмениваться сообщениями друг с другом. Чтобы проверить, осуществляется ли это взаимодействие ожидаемым образом, можно использовать мониторинг сообщений AS2, X12 и EDIFACT, а также настроить ведение журналов диагностики для учетной записи интеграции с помощью [Azure Log Analytics](../log-analytics/log-analytics-overview.md). Эта служба выполняет мониторинг облачной и локальной сред, помогает обеспечить их доступность и производительность, а также собирает сведения о среде выполнения и событиях для отладки. Также вы можете [использовать полученные данные в других службах](#extend-diagnostic-data), таких как служба хранилища Azure и Центры событий Azure.
 
 > [!NOTE]
-> Эта страница может содержать упоминания консоли Microsoft Operations Management Suite (OMS), которая [будет считаться устаревшей с января 2019 г.](../log-analytics/log-analytics-oms-portal-transition.md), но везде, где это возможно, устаревшие шаги заменяются новыми для Azure Log Analytics. 
+> Эта страница может содержать упоминания консоли Microsoft Operations Management Suite (OMS), которая [будет считаться устаревшей с января 2019 г.](../azure-monitor/platform/oms-portal-transition.md), но везде, где это возможно, устаревшие шаги заменяются новыми для Azure Log Analytics. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Приложение логики, настроенное на ведение журнала диагностики. Узнайте подробнее о [создании приложения логики](quickstart-create-first-logic-app-workflow.md) и [настройке ведения журнала для такого приложения логики](../logic-apps/logic-apps-monitor-your-logic-apps.md#azure-diagnostics).
 
-* Помимо описанных выше требований, вам нужна рабочая область Log Analytics для отслеживания и мониторинга обмена данными в сценариях B2B через Log Analytics. См. дополнительные сведения о [создании рабочей области Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md).
+* Помимо описанных выше требований, вам нужна рабочая область Log Analytics для отслеживания и мониторинга обмена данными в сценариях B2B через Log Analytics. См. дополнительные сведения о [создании рабочей области Log Analytics](../azure-monitor/learn/quick-create-workspace.md).
 
 * Учетная запись интеграции, связанная с приложением логики. Узнайте, [как создать учетную запись интеграции и связать ее с приложениями логики](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md).
 
@@ -121,10 +121,10 @@ ms.locfileid: "50233197"
 
 Помимо Azure Log Analytics, можно расширить возможности использования диагностических данных приложения логики в других службах Azure, например: 
 
-* [Архивация журналов диагностики Azure в службе хранилища Azure](../monitoring-and-diagnostics/monitoring-archive-diagnostic-logs.md)
+* [Архивация журналов диагностики Azure в службе хранилища Azure](../azure-monitor/platform/archive-diagnostic-logs.md)
 * [Потоковая передача журналов диагностики в Центры событий Azure](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md) 
 
-После этого можно организовать мониторинг в режиме реального времени с помощью данных телеметрии и аналитики из других служб, таких как [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) и [Power BI](../log-analytics/log-analytics-powerbi.md). Например: 
+После этого можно организовать мониторинг в режиме реального времени с помощью данных телеметрии и аналитики из других служб, таких как [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) и [Power BI](../azure-monitor/platform/powerbi.md). Например: 
 
 * [Потоковая передача данных из Центров событий в Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md)
 * [Анализ потоковой передачи данных с помощью Stream Analytics и создание панели мониторинга в Power BI для анализа данных в режиме реального времени](../stream-analytics/stream-analytics-power-bi-dashboard.md)

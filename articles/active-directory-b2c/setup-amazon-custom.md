@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/05/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 3c06a0b0af306aaf46f4aa542e26c3fcf885e754
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: fc762a4cf500713a09ba325e8b4e41c4cc2b8f15
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49168251"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52848949"
 ---
 # <a name="set-up-sign-in-with-an-amazon-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с использованием пользовательских политик учетной записи Amazon
 
@@ -26,7 +26,7 @@ ms.locfileid: "49168251"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
-- Создайте учетную запись Amazon на сайте [http://www.amazon.com/](https://www.amazon.com/), если у вас ее еще нет.
+- Создайте учетную запись Amazon на сайте [https://www.amazon.com/](https://www.amazon.com/), если у вас ее еще нет.
 
 ## <a name="register-the-application"></a>Регистрация приложения
 

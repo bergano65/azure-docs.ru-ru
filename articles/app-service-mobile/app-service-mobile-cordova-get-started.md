@@ -16,12 +16,12 @@ ms.devlang: javascript
 ms.topic: hero-article
 ms.date: 07/07/2017
 ms.author: crdun
-ms.openlocfilehash: 223e9e35fcab347f9b5b8db01a9fd667b9f5d55d
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 0c00709417f3b393e8505dc7232abd5541c4e961
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38488652"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52954975"
 ---
 # <a name="create-an-apache-cordova-app"></a>Создание приложения Apache Cordova
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "38488652"
 
 Выполнение инструкций из этого учебника необходимо для работы с другими учебниками по Apache Cordova, посвященными использованию функции мобильных приложений в службе приложений Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с данным руководством вам потребуется:
 
 * компьютер с [Visual Studio Community 2017] или более поздней версии;
@@ -61,7 +61,7 @@ ms.locfileid: "38488652"
 Дополнительные сведения об основных понятиях, связанных со службой приложений Azure.
 
 * [Автономные данные]
-* [Аутентификация]
+* [Проверка подлинности]
 * [Push-уведомления]
 
 Подробнее об использовании пакетов SDK.
@@ -74,10 +74,10 @@ ms.locfileid: "38488652"
 
 <!-- URLs -->
 [Azure portal]: https://portal.azure.com/
-[Visual Studio Community 2017]: http://www.visualstudio.com/
+[Visual Studio Community 2017]: https://www.visualstudio.com/
 [Инструменты Visual Studio для Apache Cordova]: https://www.visualstudio.com/en-us/features/cordova-vs.aspx
 [Автономные данные]: app-service-mobile-offline-data-sync.md
-[Аутентификация]: app-service-mobile-auth.md
+[Проверка подлинности]: app-service-mobile-auth.md
 [Push-уведомления]: ../notification-hubs/notification-hubs-push-notification-overview.md
 [Пакет SDK для Apache Cordova]: app-service-mobile-cordova-how-to-use-client-library.md
 [Серверный пакет SDK для ASP.NET]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md

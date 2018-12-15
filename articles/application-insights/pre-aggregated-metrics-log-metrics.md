@@ -10,12 +10,12 @@ ms.date: 09/18/2018
 ms.service: application-insights
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 136279a94d64b846247c436eb7a5fb487e05b41a
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: d095be8c5d921001ab4a492d2385938020fa8ce0
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46946907"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52967220"
 ---
 # <a name="log-based-and-pre-aggregated-metrics-in-application-insights"></a>Метрики на основе журналов и предварительно агрегированные метрики в Application Insights
 
@@ -55,7 +55,7 @@ ms.locfileid: "46946907"
 
 Все отправляемые вами метрики, которые используют вызовы API [trackMetric](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackmetric) или [GetMetric и TrackValue](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#getmetric), автоматически сохраняются и в журналах, и в хранилищах метрик. В то время как для версии пользовательской метрики, основанной на журналах, всегда хранятся все измерения, для предварительно агрегированной версии по умолчанию метрики измерения не хранятся. Вы можете включить сбор измерений пользовательских метрик на вкладке [Использование и ожидаемые затраты](https://docs.microsoft.com/azure/application-insights/app-insights-pricing), установив флажок "Включить оповещения об измерениях пользовательских метрик": 
 
-![Использование и ожидаемые затраты](.\media\pre-aggregated-metrics-log-metrics\001-cost.png)
+![Использование и ожидаемые затраты](./media/pre-aggregated-metrics-log-metrics/001-cost.png)
 
 ## <a name="why-is-collection-of-custom-metrics-dimensions-turned-off-by-default"></a>Почему сбор измерений пользовательских метрик выключен по умолчанию?
 
@@ -65,7 +65,7 @@ ms.locfileid: "46946907"
 
 С помощью обозревателя метрик Azure Monitor вы можете строить диаграммы, используя предварительно агрегированные метрики и метрики на основе журналов, а также создавать панели мониторинга с диаграммами. Выбрав нужный ресурс Application Insights, с помощью средства выбора пространства имен вы можете переключаться между стандартными (ознакомительная версия) метриками и метриками на основе журналов либо выбирать пространства имен пользовательских метрик:
 
-![Пространство имен метрик](.\media\pre-aggregated-metrics-log-metrics\002-metric-namespace.png)
+![Пространство имен метрик](./media/pre-aggregated-metrics-log-metrics/002-metric-namespace.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

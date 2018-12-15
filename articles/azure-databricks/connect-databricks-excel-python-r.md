@@ -9,12 +9,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: mamccrea
-ms.openlocfilehash: 2a59d5788898fae23345d179fb037f11599f912e
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: c57550a8b683ad8f184884374c4f09216417fc40
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51230399"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52995619"
 ---
 # <a name="connect-to-azure-databricks-from-excel-python-or-r"></a>Подключение к Azure Databricks из Excel, Python или R
 
@@ -102,7 +102,7 @@ ms.locfileid: "51230399"
 В этом разделе вы используете интегрированную среду разработки для языка R, чтобы обратиться к данным, доступным в Azure Databricks. Перед началом работы на вашем компьютере должны быть установлены следующие компоненты.
 
 * Интегрированная среда разработки для языка R. В этой статье используется приложение RStudio для рабочего стола. Его можно установить со страницы [загрузки RStudio](https://www.rstudio.com/products/rstudio/download/).
-* При использовании RStudio для рабочего стола в качестве интегрированной среды разработки установите Microsoft R Client, перейдя по адресу [http://aka.ms/rclient/](https://aka.ms/rclient/). 
+* При использовании RStudio для рабочего стола в качестве интегрированной среды разработки установите Microsoft R Client, перейдя по адресу [https://aka.ms/rclient/](https://aka.ms/rclient/). 
 
 Откройте RStudio и выполните описанные ниже действия.
 

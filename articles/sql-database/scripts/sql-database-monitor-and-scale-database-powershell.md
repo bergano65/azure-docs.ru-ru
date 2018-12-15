@@ -12,16 +12,16 @@ ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
 ms.date: 09/14/2018
-ms.openlocfilehash: 8586a4eb5c4325f258ad8f461b05e7368750d17a
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.openlocfilehash: 07cf57ab7095c51567caf33905fca78dd51be0fc
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47056127"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52966625"
 ---
 # <a name="use-powershell-to-monitor-and-scale-a-single-sql-database"></a>Мониторинг и масштабирование отдельной базы данных SQL с помощью PowerShell
 
-Этот пример сценария PowerShell отслеживает метрики производительности базы данных, увеличивает ее вычислительную мощность и создает правило генерации оповещений для одной из метрик производительности. 
+Этот пример сценария PowerShell отслеживает метрики производительности базы данных, увеличивает ее вычислительную мощность и создает правило генерации оповещений для одной из метрик производительности.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 [!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]

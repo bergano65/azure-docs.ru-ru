@@ -9,16 +9,15 @@ ms.assetid: 7ec10a2d-c669-448d-8d45-b486ee32c8db
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/03/2017
 ms.author: mbullwin
-ms.openlocfilehash: a1244076efe1c920a23f29de9d25ab6845747fe4
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 48232402ee091d6e41381f54cbfa3276cefc47ac
+ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51245857"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52682237"
 ---
 # <a name="more-telemetry-from-application-insights"></a>Дополнительные данные телеметрии из Application Insights
 После [добавления Application Insights в код ASP.NET](app-insights-asp-net.md)можно сделать еще кое-что, чтобы получать дополнительные данные телеметрии. 

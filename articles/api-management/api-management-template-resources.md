@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: 36b64912eb3393ad496d04ff656bed5b0c41566c
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: 790d05201550461b095cfefd32f0330f37697e0b
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52444773"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52970337"
 ---
 # <a name="azure-api-management-template-resources"></a>Ресурсы шаблонов управления API Azure
 Служба управления API Azure предоставляет следующие типы ресурсов для использования в шаблонах портала разработчика:  
@@ -176,7 +176,7 @@ ms.locfileid: "52444773"
 |WebDocumentationTemplatesDeveloperKey|Укажите свой ключ подписки|  
 |WebDocumentationTemplatesJavaApache|В этом примере используется HTTP-клиент Apache от HTTP Components (http://hc.apache.org/httpcomponents-client-ga/)|  
 |WebDocumentationTemplatesOptionalParams|Укажите значения для необязательных параметров при необходимости|  
-|WebDocumentationTemplatesPhpPackage|В этом примере используется пакет HTTP_Request2 (см. дополнительные сведения: http://pear.php.net/package/HTTP_Request2)|  
+|WebDocumentationTemplatesPhpPackage|В этом примере используется пакет HTTP_Request2 (см. дополнительные сведения: https://pear.php.net/package/HTTP_Request2)|  
 |WebDocumentationTemplatesPythonValuesForPath|Укажите значения для параметров пути (отображаются как {...}) и текст запроса при необходимости|  
 |WebDocumentationTemplatesRequestBody|Укажите текст запроса|  
 |WebDocumentationTemplatesRequiredParams|Укажите значения для следующих обязательных параметров|  
@@ -571,13 +571,13 @@ ms.locfileid: "52444773"
 |ApiManagementUserLimitReached|В этой службе достигнуто максимальное число разрешенных пользователей. Выполните обновление до более высокой ценовой категории.|  
   
 ##  <a name="glyphs"></a> Ресурсы глифов  
- В шаблонах портала разработчика управления API можно использовать глифы со страницы с [Glyphicons на сайте Bootstrap](http://getbootstrap.com/components/#glyphicons). Этот набор глифов содержит более 250 глифов в формате шрифта из набора Halflings [Glyphicon](http://glyphicons.com/). Чтобы использовать глиф из этого набора, используйте следующий синтаксис.  
+ В шаблонах портала разработчика управления API можно использовать глифы со страницы с [Glyphicons на сайте Bootstrap](https://getbootstrap.com/components/#glyphicons). Этот набор глифов содержит более 250 глифов в формате шрифта из набора Halflings [Glyphicon](https://glyphicons.com/). Чтобы использовать глиф из этого набора, используйте следующий синтаксис.  
   
 ```html  
 <span class="glyphicon glyphicon-user">  
 ```  
   
- Полный список глифов см. на странице с [Glyphicons на сайте Bootstrap](http://getbootstrap.com/components/#glyphicons).
+ Полный список глифов см. на странице с [Glyphicons на сайте Bootstrap](https://getbootstrap.com/components/#glyphicons).
 
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: 4c96ca70b9b6a82dcccec443ac0b1e06f96a2396
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 2035d342a89ace6d286fc205c346591b29646c5d
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31597417"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53270150"
 ---
 # <a name="use-packet-capture-for-proactive-network-monitoring-with-alerts-and-azure-functions"></a>Использование записи пакетов для упреждающего мониторинга сети с помощью оповещений и функций Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "31597417"
 
 ![Сценарий][scenario]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Последняя версия [Azure PowerShell](/powershell/azure/install-azurerm-ps).
 * Существующий экземпляр службы "Наблюдатель за сетями". Если у вас нет экземпляра этой службы, [создайте его](network-watcher-create.md).
@@ -331,7 +331,7 @@ $Encryptedpassword
 
     ![Копирование URL-адреса функции][2]
 
-Если вы хотите передавать пользовательские свойства в полезных данных запроса POST, передаваемого в веб-перехватчике, см. статью [Настройка объектов webhook для оповещений на основе метрик Azure](../monitoring-and-diagnostics/insights-webhooks-alerts.md).
+Если вы хотите передавать пользовательские свойства в полезных данных запроса POST, передаваемого в веб-перехватчике, см. статью [Настройка объектов webhook для оповещений на основе метрик Azure](../azure-monitor/platform/alerts-webhooks.md).
 
 ## <a name="configure-an-alert-on-a-vm"></a>Настройка оповещения на виртуальной машине
 

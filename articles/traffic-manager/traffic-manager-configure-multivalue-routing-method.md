@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: kumud
-ms.openlocfilehash: d9a0342332c2483b859e916b50fd05c9cb1e3395
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 521a9dd49abee8fdeaa42b1ea8c13b9a648f1875
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49986771"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53187374"
 ---
 # <a name="configure-multivalue-routing-method-in-traffic-manager"></a>Настройка метода маршрутизации MultiValue в диспетчере трафика
 
@@ -39,6 +39,7 @@ ms.locfileid: "49986771"
 
 1. В верхней левой части экрана выберите **Создать ресурс** > **Сети** > **Профиль диспетчера трафика** > **Создать**.
 2. В разделе **Создание профиля диспетчера трафика** введите или выберите следующие сведения, примите значения по умолчанию для остальных параметров и нажмите кнопку **Создать**:
+    
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
     | ИМЯ                   | Оно должно быть уникальным в пределах зоны trafficmanager.net. В результате будет создано DNS-имя trafficmanager.net, которое будет использоваться для доступа к профилю диспетчера трафика.                                   |
@@ -46,7 +47,7 @@ ms.locfileid: "49986771"
     | Подписка            | Выберите свою подписку.                          |
     | Группа ресурсов          | Выберите *myResourceGroupTM1*. |
     | Расположение                | Этот параметр задает расположение группы ресурсов и не влияет на профиль диспетчера трафика, который будет развернут глобально.                              |
-    |
+    
   
     ![Создание профиля диспетчера трафика](./media/traffic-manager-multivalue-routing-method/create-traffic-manager-profile.png)
 

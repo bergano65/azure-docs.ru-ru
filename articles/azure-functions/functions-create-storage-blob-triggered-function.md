@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 10/01/2018
 ms.author: glenga
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: f71db50678ad0f1b37e30a4120b90d47d9090942
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: fcc5052d73d921a8181ad068453111e5ead4361a
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49113858"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52999874"
 ---
 # <a name="create-a-function-triggered-by-azure-blob-storage"></a>Создание функции, активируемой хранилищем BLOB-объектов Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "49113858"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-+ Скачайте и установите [обозреватель хранилищ Microsoft Azure](http://storageexplorer.com/).
++ Скачайте и установите [обозреватель хранилищ Microsoft Azure](https://storageexplorer.com/).
 + Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начать работу.
 
 ## <a name="create-an-azure-function-app"></a>Создание приложения-функции Azure
@@ -76,7 +76,7 @@ ms.locfileid: "49113858"
 
     ![Получение учетных данных для подключения к учетной записи хранения.](./media/functions-create-storage-blob-triggered-function/functions-storage-account-connection.png)
 
-1. Запустите инструмент [Обозреватель службы хранилища Microsoft Azure](http://storageexplorer.com/), щелкните значок подключения слева, выберите **Use a storage account name and key** (Использовать имя и ключ учетной записи хранения), а затем щелкните **Далее**.
+1. Запустите инструмент [Обозреватель службы хранилища Microsoft Azure](https://storageexplorer.com/), щелкните значок подключения слева, выберите **Use a storage account name and key** (Использовать имя и ключ учетной записи хранения), а затем щелкните **Далее**.
 
     ![Запуск инструмента "Обозреватель учетной записи хранения"](./media/functions-create-storage-blob-triggered-function/functions-storage-manager-connect-1.png)
 

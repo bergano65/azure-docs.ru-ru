@@ -14,15 +14,14 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 2d75a432e84c3490186da6f8342562fddcaa32e1
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: c0109839144775e9064db4f8396f19688fcc13e8
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807071"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53308640"
 ---
-<a name="lcs-subscription"></a>Подписка LCS
-================
+# <a name="lcs-subscription"></a>Подписка LCS
 
 Из этого руководства вы узнаете, как создать подписку. Эта подписка предоставит тестовый клиент Microsoft Online и проект Microsoft Dynamics Lifecycle Services, в котором можно развернуть среду. Кроме того, вы настроите дополнительных пользователей в клиенте Microsoft Online и получите опыт работы со следующими возможностями администрирования службы. Вы получите следующие навыки:
 
@@ -32,8 +31,7 @@ ms.locfileid: "48807071"
 - добавление дополнительных пользователей в Microsoft Azure Active Directory и клиенте;
 - просмотр ресурсов в электронной почте подписки.
 
-<a name="key-terms"></a>Основные термины
-=========
+## <a name="key-terms"></a>Основные термины
 
 **Клиент Microsoft Online Services** — это группа всех подписок и пользователей в организации. Клиент создается одновременно с первой подпиской в Microsoft Online Services.
 

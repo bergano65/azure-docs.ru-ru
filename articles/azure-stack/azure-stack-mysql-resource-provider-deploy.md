@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 11/15/2018
 ms.author: jeffgilb
 ms.reviewer: quying
-ms.openlocfilehash: 2017e08361c9ff060fde96b78549133d48372e34
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.openlocfilehash: da88be76d01b246e273739566d629348895b68b6
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51853903"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52972003"
 ---
 # <a name="deploy-the-mysql-resource-provider-on-azure-stack"></a>Развертывание поставщика ресурсов MySQL в Azure Stack
 
@@ -32,8 +32,8 @@ ms.locfileid: "51853903"
 
 Существует несколько предварительных требований, которые должны быть выполнены перед развертыванием поставщика ресурсов MySQL Azure Stack. Чтобы обеспечить соответствие этим требованиям, выполните описанные в этой статье действия на компьютере, который имеет доступ к привилегированной конечной точке виртуальной машины.
 
-* Если вы еще этого не сделали, [зарегистрируйте Azure Stack](.\azure-stack-registration.md) в Azure, чтобы можно было загружать элементы Azure Marketplace.
-* В системе, в которой будет запускаться эта установка, необходимо установить модули PowerShell для Azure и Azure Stack. В системе должен быть развернут образ Windows 10 или Windows Server 2016 с последней версией среды выполнения .NET. См. статью [Установка PowerShell для Azure Stack](.\azure-stack-powershell-install.md).
+* Если вы еще этого не сделали, [зарегистрируйте Azure Stack](./azure-stack-registration.md) в Azure, чтобы можно было загружать элементы Azure Marketplace.
+* В системе, в которой будет запускаться эта установка, необходимо установить модули PowerShell для Azure и Azure Stack. В системе должен быть развернут образ Windows 10 или Windows Server 2016 с последней версией среды выполнения .NET. См. статью [Установка PowerShell для Azure Stack](./azure-stack-powershell-install.md).
 * Добавьте необходимую виртуальную машину ядра Windows Server в Azure Stack Marketplace, загрузив образ **Windows Server 2016 Datacenter — ядро сервера**.
 
 * Скачайте двоичный файл поставщика ресурсов MySQL и запустите файл для самостоятельного извлечения содержимого во временный каталог.
@@ -60,7 +60,7 @@ ms.locfileid: "51853903"
 
 ### <a name="certificates"></a>Сертификаты
 
-_Только для интегрированных систем_. Укажите сертификат SQL PaaS PKI, описанный в разделе о необязательных сертификатах PaaS в статье [Требования к инфраструктуре открытых ключей (PKI) для развертывания Azure Stack](.\azure-stack-pki-certs.md#optional-paas-certificates). Поместите PFX-файл в каталог, указанный параметром **DependencyFilesLocalPath**. Не предоставляйте сертификат для систем ASDK.
+_Только для интегрированных систем_. Укажите сертификат SQL PaaS PKI, описанный в разделе о необязательных сертификатах PaaS в статье [Требования к инфраструктуре открытых ключей (PKI) для развертывания Azure Stack](./azure-stack-pki-certs.md#optional-paas-certificates). Поместите PFX-файл в каталог, указанный параметром **DependencyFilesLocalPath**. Не предоставляйте сертификат для систем ASDK.
 
 ## <a name="deploy-the-resource-provider"></a>Развертывание поставщика ресурсов
 

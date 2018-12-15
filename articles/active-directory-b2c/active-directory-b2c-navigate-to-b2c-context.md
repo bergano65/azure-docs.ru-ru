@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 4/13/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 9b8ff03ff90a0962a6a890cf7cc99e7134559b7f
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 8c0b6cb411618b01adfc23fa124ff624206da7b2
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37442976"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52836106"
 ---
 # <a name="switching-to-your-azure-ad-b2c-tenant"></a>Переключение на клиент Azure AD B2C
 
@@ -25,7 +25,7 @@ ms.locfileid: "37442976"
 
 Чтобы перейти к вашему клиенту Azure AD B2C, необходимо войти на портал Azure как глобальный администратор клиента Azure AD B2C.
 
-1. Войдите на [портал Azure](http://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Щелкните адрес электронной почты или картинку в правом верхнем углу, чтобы переключить клиентов.
 1. В списке `Directory` выберите клиента Azure AD B2C, которым вы хотите управлять.
 

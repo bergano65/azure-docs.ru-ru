@@ -14,18 +14,18 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/06/2017
 ms.author: ryanwi
-ms.openlocfilehash: e4c3bf627c4a5e01c4d9001fcbb0feed0b92209f
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: e41e5d48141b120ec1f80b0faa899bda07a2934e
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39008048"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52962069"
 ---
 # <a name="open-ports-for-a-service-fabric-cluster"></a>Открытие портов для кластера Service Fabric
 
 Подсистема балансировки нагрузки, развернутая вместе с кластером Azure Service Fabric, направляет трафик в ваше приложение, работающее на узле. Если изменить настройки приложения, чтобы использовать другой порт, необходимо предоставить этот порт в Azure Load Balancer (или направлять трафик через другой порт).
 
-Подсистема балансировки нагрузки автоматически создается при развертывании кластера Service Fabric в Azure. Если у вас нет подсистемы балансировки нагрузки, ознакомьтесь с разделом [Создание балансировщика нагрузки для Интернета на портале Azure](..\load-balancer\load-balancer-get-started-internet-portal.md).
+Подсистема балансировки нагрузки автоматически создается при развертывании кластера Service Fabric в Azure. Если у вас нет подсистемы балансировки нагрузки, ознакомьтесь с разделом [Создание балансировщика нагрузки для Интернета на портале Azure](../load-balancer/load-balancer-get-started-internet-portal.md).
 
 ## <a name="configure-service-fabric"></a>Настройка Service Fabric
 
@@ -33,7 +33,7 @@ ms.locfileid: "39008048"
 
 ## <a name="create-a-load-balancer-rule"></a>Создание правила балансировщика нагрузки
 
-Правило Load Balancer открывает порт с доступом к Интернету и перенаправляет трафик на порт внутреннего узла, используемый вашим приложением. Если у вас нет подсистемы балансировки нагрузки, ознакомьтесь с разделом [Создание балансировщика нагрузки для Интернета на портале Azure](..\load-balancer\load-balancer-get-started-internet-portal.md).
+Правило Load Balancer открывает порт с доступом к Интернету и перенаправляет трафик на порт внутреннего узла, используемый вашим приложением. Если у вас нет подсистемы балансировки нагрузки, ознакомьтесь с разделом [Создание балансировщика нагрузки для Интернета на портале Azure](../load-balancer/load-balancer-get-started-internet-portal.md).
 
 Чтобы создать правило Load Balancer, необходимо собрать следующие сведения:
 
@@ -68,7 +68,7 @@ az network lb rule create --backend-port 40000 --frontend-port 39999 --protocol 
 
 
 >[!NOTE]
->Дополнительные сведения о создании подсистемы балансировки нагрузки с помощью Azure CLI см. в разделе [Создание балансировщика нагрузки для Интернета с помощью Azure CLI](..\load-balancer\load-balancer-get-started-internet-arm-cli.md).
+>Дополнительные сведения о создании подсистемы балансировки нагрузки с помощью Azure CLI см. в разделе [Создание балансировщика нагрузки для Интернета с помощью Azure CLI](../load-balancer/load-balancer-get-started-internet-arm-cli.md).
 
 ## <a name="powershell"></a>PowerShell
 
@@ -104,7 +104,7 @@ $lb | Set-AzureRmLoadBalancer
 В команде `New-AzureRmLoadBalancerRuleConfig` `-FrontendPort` представляет порт, который подсистема балансировки нагрузки предоставляет для внешних подключений, а `-BackendPort` представляет порт, через который приложение Service Fabric ожидает передачи данных.
 
 >[!NOTE]
->Дополнительные сведения о создании подсистемы балансировки нагрузки с помощью PowerShell см. в разделе [Создание балансировщика нагрузки для Интернета в Resource Manager с помощью PowerShell](..\load-balancer\load-balancer-get-started-internet-arm-ps.md).
+>Дополнительные сведения о создании подсистемы балансировки нагрузки с помощью PowerShell см. в разделе [Создание балансировщика нагрузки для Интернета в Resource Manager с помощью PowerShell](../load-balancer/load-balancer-get-started-internet-arm-ps.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

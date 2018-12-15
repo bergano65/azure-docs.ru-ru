@@ -1,5 +1,5 @@
 ---
-title: Устранение проблем со службой Azure Monitor для контейнеров (предварительная версия) | Документация Майкрософт
+title: Устранение неполадок с Azure Monitor для контейнеров | Документация Майкрософт
 description: В этой статье описывается, как устранить неполадки и проблемы с Azure Monitor для контейнеров.
 services: azure-monitor
 documentationcenter: ''
@@ -8,20 +8,19 @@ manager: carmonm
 editor: ''
 ms.assetid: ''
 ms.service: azure-monitor
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/19/2018
+ms.date: 11/30/2018
 ms.author: magoedte
-ms.openlocfilehash: da35f88550bb7bd1a4543f03936dcd52ddd926d9
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 5a9211abdbc4c9ea7907dfac00d449317dd13089
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52308365"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53190753"
 ---
-# <a name="troubleshooting-azure-monitor-for-containers-preview"></a>Устранение проблем со службой Azure Monitor для контейнеров (предварительная версия)
+# <a name="troubleshooting-azure-monitor-for-containers"></a>Устранение неполадок с Azure Monitor для контейнеров
 
 Когда вы настраиваете мониторинг кластера Azure Kubernetes Service (AKS) с помощью Azure Monitor для контейнеров, могут возникнуть проблемы, которые препятствуют сбору данных и отправке отчетов о состоянии. В этой статье описаны некоторые распространенные проблемы и действия по устранению неполадок.
 
@@ -99,7 +98,7 @@ ms.locfileid: "52308365"
 | Сообщения об ошибках  | Действие |  
 | ---- | --- |  
 | Сообщение об ошибке `No data for selected filters`  | Потребуется некоторое время, чтобы установить мониторинг потока данных для только что созданных кластеров. Подождите примерно 10–15 минут, чтобы данные отобразились для кластера. |   
-| Сообщение об ошибке `Error retrieving data` | В то время как кластер службы Azure Kubenetes настраивается для мониторинга работоспособности и производительности, устанавливается соединение между кластером и рабочим пространством Azure Log Analytics. Рабочая область Log Analytics используется для хранения всех данных мониторинга для кластера. Когда рабочая область Log Analytics удалена или утеряна, может возникнуть эта ошибка. Проверьте, доступна ли рабочая область, просмотрев [Сведения о рабочей области](../../log-analytics/log-analytics-manage-access.md?toc=/azure/azure-monitor/toc.json#workspace-information). Если рабочая область отсутствует, необходимо повторно установить подключение кластера с помощью Azure Monitor для контейнеров. Чтобы повторно установить подключение, необходимо [отключить](container-insights-optout.md) мониторинг для кластера и [подключить](container-insights-onboard.md?toc=%2fazure%2fmonitoring%2ftoc.json#enable-monitoring-for-a-new-cluster) его еще раз для Azure Monitor для контейнеров. |  
+| Сообщение об ошибке `Error retrieving data` | В то время как кластер службы Azure Kubenetes настраивается для мониторинга работоспособности и производительности, устанавливается соединение между кластером и рабочим пространством Azure Log Analytics. Рабочая область Log Analytics используется для хранения всех данных мониторинга для кластера. Когда рабочая область Log Analytics удалена или утеряна, может возникнуть эта ошибка. Проверьте, доступна ли рабочая область, просмотрев [Сведения о рабочей области](../../azure-monitor/platform/manage-access.md?toc=/azure/azure-monitor/toc.json#workspace-information). Если рабочая область отсутствует, необходимо повторно установить подключение кластера с помощью Azure Monitor для контейнеров. Чтобы повторно установить подключение, необходимо [отключить](container-insights-optout.md) мониторинг для кластера и [подключить](container-insights-onboard.md?toc=%2fazure%2fmonitoring%2ftoc.json#enable-monitoring-for-a-new-cluster) его еще раз для Azure Monitor для контейнеров. |  
 | `Error retrieving data` после добавления Azure Monitor для контейнеров с помощью az aks cli | В редких случаях при использовании `az aks cli` Azure Monitor для контейнеров может быть неправильно подключено. Проверьте, подключено ли решение. Чтобы сделать это, перейдите в рабочую область Log Analytics и проверьте, доступно ли решение, выбрав на панели в левой части окна **Решения**. Чтобы устранить эту проблему, необходимо повторно развернуть решение, следуя инструкциям в статье [Подключение Azure Monitor для контейнеров](container-insights-onboard.md?toc=%2fazure%2fmonitoring%2ftoc.json). |  
 
 Чтобы помочь диагностировать данную проблему, [здесь](https://github.com/Microsoft/OMS-docker/tree/ci_feature_prod/Troubleshoot#troubleshooting-script) предоставлен сценарий устранения неполадок.  

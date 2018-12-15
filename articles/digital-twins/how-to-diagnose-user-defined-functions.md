@@ -8,12 +8,12 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: stefanmsft
-ms.openlocfilehash: ac7664e94c6e02ab90dbb1b32a54c8234614afe2
-ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
+ms.openlocfilehash: 9476db888a4bfae2d43ae4eec340972d4c2eb714
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51636277"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53413019"
 ---
 # <a name="how-to-debug-issues-with-user-defined-functions-in-azure-digital-twins"></a>Отладка проблем с пользовательскими функциями в Azure Digital Twins
 
@@ -25,7 +25,7 @@ ms.locfileid: "51636277"
 
 ### <a name="enable-log-analytics-for-your-instance"></a>Включение Log Analytics для используемого экземпляра
 
-Журналы и метрики для экземпляра Azure Digital Twins предоставляются через Azure Monitor. В этой документации предполагается, что вы уже создали рабочую область [Azure Log Analytics](../log-analytics/log-analytics-queries.md) с помощью [портала Azure](../log-analytics/log-analytics-quick-create-workspace.md), [Azure CLI](../log-analytics/log-analytics-quick-create-workspace-cli.md) или [ PowerShell](../log-analytics/log-analytics-quick-create-workspace-posh.md).
+Журналы и метрики для экземпляра Azure Digital Twins предоставляются через Azure Monitor. В этой документации предполагается, что вы уже создали рабочую область [Azure Log Analytics](../azure-monitor/log-query/log-query-overview.md) с помощью [портала Azure](../azure-monitor/learn/quick-create-workspace.md), [Azure CLI](../azure-monitor/learn/quick-create-workspace-cli.md) или [ PowerShell](../azure-monitor/learn/quick-create-workspace-posh.md).
 
 > [!NOTE]
 > При первой отправке событий в **Log Analytics** возможна задержка до 5 минут.
@@ -42,7 +42,7 @@ ms.locfileid: "51636277"
 
 ```Kusto
 AzureDiagnostics
-| where CorrelationId = 'YOUR_CORRELATION_IDENTIFIER'
+| where CorrelationId == 'YOUR_CORRELATION_IDENTIFIER'
 ```
 
 | Значение запроса | Заменить на |
@@ -53,7 +53,7 @@ AzureDiagnostics
 
 ```Kusto
 AzureDiagnostics
-| where Category = 'UserDefinedFunction'
+| where Category == 'UserDefinedFunction'
 ```
 
 Дополнительные сведения о мощных операциях с запросами см. в статье [о начале работы с запросами](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries).

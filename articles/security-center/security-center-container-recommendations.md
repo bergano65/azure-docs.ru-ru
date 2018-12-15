@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/20/2018
 ms.author: rkarlin
-ms.openlocfilehash: 1bb28f3ae972e4227265231080b8f37abaf8e130
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 5f6334f80b9c48832facba97b816d254baeb94bc
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52317551"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53341309"
 ---
 # <a name="understand-azure-security-center-container-recommendations"></a>Общие сведения о рекомендациях центра безопасности Azure в отношении контейнеров
 
@@ -42,7 +42,7 @@ ms.locfileid: "52317551"
 Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
 * [Защита виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
-* [Настройка политик безопасности в Центре безопасности Azure](security-center-azure-policy.md) — узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
+* [Настройка политик безопасности в Центре безопасности Azure](tutorial-security-policy.md) — узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
 * [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md) — узнайте, как управлять оповещениями системы безопасности и реагировать на них.
 * [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md) — часто задаваемые вопросы об использовании этой службы.
 

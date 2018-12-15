@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/11/2017
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: 8ae8fa823b919ec4a67832e7c42088c994bd2d97
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 2dade35b05a07b649282ae00bb6fee354adcd195
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44355346"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52845500"
 ---
 # <a name="problems-signing-in-to-an-custom-developed-application"></a>Проблемы при входе в специально разработанное приложение
 
@@ -32,7 +32,7 @@ ms.locfileid: "44355346"
 
 * Сравните ресурсы, к которым вы обращаетесь из кода с помощью настроенных на вкладке **Необходимые ресурсы** разрешений, чтобы запрашивались только настроенные ресурсы.
 
-* Сведения об аналогичных ошибках или проблемах см. в разделе [StackOverflow в Azure AD](http://stackoverflow.com/questions/tagged/azure-active-directory).
+* Сведения об аналогичных ошибках или проблемах см. в разделе [StackOverflow в Azure AD](https://stackoverflow.com/questions/tagged/azure-active-directory).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -42,4 +42,4 @@ ms.locfileid: "44355346"
 
 [Согласие и разрешения для конвергированных приложений в Azure AD версии 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes)<br>
 
-[StackOverflow в Azure AD](http://stackoverflow.com/questions/tagged/azure-active-directory>)
+[StackOverflow в Azure AD](https://stackoverflow.com/questions/tagged/azure-active-directory>)
